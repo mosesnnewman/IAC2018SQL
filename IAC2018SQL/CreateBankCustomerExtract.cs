@@ -1229,7 +1229,7 @@ namespace IAC2018SQL
                 {
                     if (excelWorkSheet.Cells[i, 1].Value == "Units")
                     {
-                        excelWorkSheet.Cells[i, 1].Value = "Totals DLR# " + excelWorkSheet.Cells[i - 1, 9].Text;
+                        excelWorkSheet.Cells[i, 1].Value = "Totals DLR# " + excelWorkSheet.Cells[i - 1, 8].Text;
                         excelWorkSheet.Cells[i, 3].Value = Convert.ToDecimal(excelWorkSheet.Cells[i + 1, 3].Value);
                         if (excelWorkSheet.Cells[i - 1, 2].Value == "C")
                             TotalClosedLoans += excelWorkSheet.Cells[i + 1, 3].Value;
