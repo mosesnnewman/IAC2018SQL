@@ -1,0 +1,323 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Windows.Forms;
+using System.IO;
+using Renci.SshNet;
+using Renci.SshNet.Sftp;
+using Microsoft.SqlServer.Dts.Runtime;
+using Microsoft.SqlServer.Management.Smo;
+using Microsoft.SqlServer.Management.Common;
+using Excel = Microsoft.Office.Interop.Excel;
+
+
+namespace IAC2018SQL
+{
+    // Moses Newman 11/06/2019 Create PayNSeconds SFTP download and import int PAYMENTS routines.
+    public partial class frmPNSImport : Form
+    {
+        private string host = @"204.13.110.68";
+        private string username = @"iacinc_0";
+        private string password = @"LAK2zWqNqF2LQm42";
+        private string remoteDirectory = @"/00000000-0000-2d07-e9ea-08d6fe68bbde/Download";
+        private string remoteArchive = @"/00000000-0000-2d07-e9ea-08d6fe68bbde/Download/Archive";
+
+
+        public frmPNSImport()
+        {
+            InitializeComponent();
+        }        
+
+        private void buttonCancel_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        /// <summary>
+        /// Downloads a file in the desktop synchronously
+        /// </summary>
+        public Boolean downloadFile(string pathRemoteFile, string pathLocalFile, int FileCount, int FileNumber)
+        {
+            Int32 Progress = (Int32)(Math.Round(((Double)FileNumber / (Double)FileCount), 2) * 100);
+            String FullLocalPath = pathLocalFile + @"\" + pathRemoteFile,
+                   FullRemotePath = remoteDirectory + @"\" + pathRemoteFile,
+                   FullRemoteArchivePath = remoteDirectory + @"\Archive\" + pathRemoteFile;
+            using (SftpClient sftp = new SftpClient(host, username, password))
+            {
+                try
+                {
+                    sftp.Connect();
+ 
+                    labelDownload.Text = "Downloading: " + pathRemoteFile;
+                    labelDownload.Refresh();
+
+                    using (Stream fileStream = File.Create(FullLocalPath))
+                    {
+                        try
+                        {
+                            sftp.DownloadFile(FullRemotePath, fileStream);
+                        }
+                        // Moses Newman 01/06/2020 File Not Found because it is in the Archive Folder So Redo!
+                        catch (Renci.SshNet.Common.SftpPathNotFoundException)
+                        {
+                            sftp.DownloadFile(FullRemoteArchivePath, fileStream);
+                        }
+                        sftp.Disconnect();
+                        progressBarDownload.Value = Progress;
+                    }
+                }
+                catch (Exception er)
+                {
+                    MessageBox.Show("Download Failed due to " + er.Message,"*** Download File Error ***",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        private Int32 DownloadPNSPayments() 
+        {
+            int FileNumber = 0;
+            var FilesOnly = new List<SftpFile>();
+            Boolean success = false;
+
+            labelDownload.Text = "";
+            labelDownload.Visible = true;
+
+            using (SftpClient sftp = new SftpClient(host, username, password))
+            {
+                try
+                {
+                    sftp.Connect();
+
+                    var files = sftp.ListDirectory(remoteDirectory);
+                    // Moses Newman 01/01/2020 Add Archive folder files
+                    var archivefiles = sftp.ListDirectory(remoteArchive);
+
+                    files = files.Union(archivefiles);
+
+                    SftpFile orgFile;
+                    foreach (var file in files)
+                    {
+                        if(!file.IsDirectory)
+                        {
+                            FilesOnly.Add(file);
+                        }
+                    }
+                    foreach (var file in FilesOnly)
+                    {
+                        FileNumber += 1;
+                        success = downloadFile(file.Name, @"\\dc-iac\Public\PayNSeconds", FilesOnly.Count(), FileNumber);
+                        if (!success)
+                        {
+                            MessageBox.Show("*** Error downloading: " + file.Name + " Import not completed! ***","PNS Download Failure",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                            return 0;
+                        }
+                        orgFile = (SftpFile)file;
+                        // Moses Newman 01/06/2020 Delete successful downloads
+                        orgFile.Delete();
+                        //orgFile.MoveTo(remoteDirectory + "/Archive/" + file.Name);
+                    }
+
+                    sftp.Disconnect();
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show("An exception has been caught " + e.ToString(),"PNS Download Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    return 0;
+                }
+            }
+            labelDownload.Text = "*** Download(s) Completed Sucessfully! ***";
+            return FilesOnly.Count();
+        }
+
+        private Boolean ReadPNSFile(PaymentDataSet PNS)
+        {
+            IACDataSet PNSIAC = new IACDataSet();
+            Boolean ReturnCode = false;
+            SQLBackupandRestore SQLBR = new SQLBackupandRestore();
+            PaymentDataSetTableAdapters.PayNSecondsTableAdapter PayNSecondsTableAdapter = new PaymentDataSetTableAdapters.PayNSecondsTableAdapter();
+            IACDataSetTableAdapters.PAYMENTTableAdapter PAYMENTTableAdapter = new IACDataSetTableAdapters.PAYMENTTableAdapter();
+            IACDataSetTableAdapters.OPNPAYTableAdapter OPNPAYTableAdapter = new IACDataSetTableAdapters.OPNPAYTableAdapter();
+            PaymentDataSetTableAdapters.PNSRejectsTableAdapter PNSRejectsTableAdapter = new PaymentDataSetTableAdapters.PNSRejectsTableAdapter();
+            PaymentDataSetTableAdapters.PNSIMPORTParamsTableAdapter PNSIMPORTParamsTableAdapter = new PaymentDataSetTableAdapters.PNSIMPORTParamsTableAdapter();
+            Int32 FileNumber = 0, TotalFiles = 0, Progress = 0;
+            String FilePath = @"\\dc-iac\Public\PayNSeconds\",FullFileName,
+                   ConnStringStart = @"Data Source=SQL-IAC;",
+                   lsConnect = lsConnect = IAC2018SQL.Properties.Settings.Default.IAC2010SQLConnectionString.ToUpper(),
+                   DataBase = lsConnect.Substring(lsConnect.IndexOf("INITIAL CATALOG=") + 16,
+                        (lsConnect.IndexOf(";", lsConnect.IndexOf("INITIAL CATALOG=") + 16) - (lsConnect.IndexOf("INITIAL CATALOG=") + 16))),
+                   ConnStringEnd = @";Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;",
+                   ConnString = ConnStringStart + "INITIAL CATALOG=" + DataBase + ConnStringEnd;
+
+            //Package pkg;
+            //Microsoft.SqlServer.Dts.Runtime.Application app;
+            //DTSExecResult pkgResults;
+
+            /*pkgLocation =
+              @"\\sql-iac\e\SSISPackages\LeeMasonToVehicle\LeeMasonToVehicle" +
+              @"\PNSIMPORT.dtsx";*/
+            //app = new Microsoft.SqlServer.Dts.Runtime.Application();
+            //pkg = app.LoadPackage(pkgLocation, null);
+            //pkg.Variables["ConnString"].Value = ConnString;
+            if (DownloadPNSPayments() > 0)
+            {
+                PayNSecondsTableAdapter.DeleteAll();
+                var filenames = Directory
+                            .EnumerateFiles(FilePath, "*.xlsx", SearchOption.TopDirectoryOnly)
+                            .Select(Path.GetFileName); // <-- note you can shorten the lambda
+                TotalFiles = filenames.Count()-1;
+                Excel.Application excelApp = new Excel.Application();
+                excelApp.Visible = false;
+
+
+                foreach (String FileName in filenames)
+                {
+                    if (FileName.IndexOf("Template.xlsx") == -1)
+                    {
+                        FileNumber += 1;
+                        Progress = (Int32)(Math.Round(((Double)FileNumber / (Double)TotalFiles), 2) * 100);
+                        // Moses Newman 11/06/2019 open, save, and close xlsx files to make certain EXCEL 2016 format!
+                        FullFileName = FilePath + FileName;
+                        excelApp.Workbooks.Open(FullFileName);
+                        excelApp.Workbooks[1].Save();
+                        excelApp.Workbooks.Close();
+
+                        PNSIMPORTParamsTableAdapter.DeleteAll();
+                        PNSIMPORTParamsTableAdapter.Insert(ConnString, FileName, @"\\DC-IAC\Public\PayNSeconds\");
+
+
+                        if (SQLBR.RunJob("PNSIMPORT", "Import from PayNSeconds", false))
+                        {
+                            Thread.Sleep(5000);
+                            try
+                            {
+                                PayNSecondsTableAdapter.Fill(PNS.PayNSeconds);
+                            }
+                            catch
+                            {
+                                PayNSecondsTableAdapter.Fill(PNS.PayNSeconds);
+                            }
+                        }
+                        //pkg.Variables["PNSXLSFileName"].Value = FileName;
+                        labelDownload.Text = "Executing PNSIMPORT.dtsx for file " + FileNumber.ToString().Trim() + " of " + TotalFiles.ToString().Trim();
+                        labelDownload.Refresh();
+                        //pkgResults = pkg.Execute();
+                        progressBarDownload.Value = Progress;
+                    }
+                }
+                excelApp.Quit();
+                PayNSecondsTableAdapter.Fill(PNS.PayNSeconds);
+
+                // Moses Newman 11/06/2019 Create Rejects Report if any customers are Inactive.
+                if (PNS.PayNSeconds.Rows.Count != 0)
+                {
+                    PNSRejectsTableAdapter.Create();
+                    PNSRejectsTableAdapter.FillByAll(PNS.PNSRejects);
+                    if (PNS.PNSRejects.Rows.Count > 0)
+                    {
+                        MDIIAC2013 MDImain = (MDIIAC2013)MdiParent;
+                        Hide();
+                        MDImain.CreateFormInstance("ReportViewer", false);
+                        ReportViewer rptViewer = (ReportViewer)MDImain.ActiveMdiChild;
+
+                        PNSRejects myReportObject = new PNSRejects();
+                        myReportObject.SetDataSource(PNS);
+                        myReportObject.SetParameterValue("gsUserID", Program.gsUserID);
+                        myReportObject.SetParameterValue("gsUserName", Program.gsUserName);
+                        myReportObject.SetParameterValue("gsTitle", "PNS PAYMENT REJECTS REPORT");
+                        rptViewer.crystalReportViewer.ReportSource = myReportObject;
+                        rptViewer.crystalReportViewer.Refresh();
+                        rptViewer.Show();
+                    }
+                }
+                if (SQLBR.RunJob("PNSToPayment", "Insert into Payment", false))
+                {
+                    Thread.Sleep(5000);
+                    try
+                    {
+                        PAYMENTTableAdapter.FillByAll(PNSIAC.PAYMENT);
+                        OPNPAYTableAdapter.FillByAll(PNSIAC.OPNPAY);
+                    }
+                    catch
+                    {
+                        PAYMENTTableAdapter.FillByAll(PNSIAC.PAYMENT);
+                        OPNPAYTableAdapter.FillByAll(PNSIAC.OPNPAY);
+                    }
+                }
+
+                /*pkgLocation =
+                  @"\\sql-iac\e\SSISPackages\LeeMasonToVehicle\LeeMasonToVehicle" +
+                  @"\PNSToPayment.dtsx";*/
+                //pkg = app.LoadPackage(pkgLocation, null);
+                //pkg.Variables["ConnString"].Value = ConnString;
+                labelDownload.Text = "Executing PNSToPayments.dtsx";
+                labelDownload.Refresh();
+                //pkgResults = pkg.Execute();
+                progressBarDownload.Value = (Int32)100;
+                //Thread.Sleep(5000);
+
+                labelDownload.Text = "";
+                labelDownload.Refresh();
+
+                ReturnCode = true;
+            }
+            else
+            {
+                MessageBox.Show("*** Download Failure(s)! No files updated! ***", "PNSIMPORT FAILURE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ReturnCode = false;
+            }
+            PNS.PayNSeconds.Clear();
+           
+            PayNSecondsTableAdapter.Dispose();
+            PAYMENTTableAdapter.Dispose();
+           
+            PNS.Dispose();
+            return ReturnCode;
+        }
+
+        public void RenameFile(string originalName, string newName)
+        {
+            File.Move(originalName, newName);
+        }
+
+        private void buttonTransfer_Click(object sender, EventArgs e)
+        {
+            PaymentDataSetTableAdapters.PayNSecondsTableAdapter PayNSecondsTableAdapter = new PaymentDataSetTableAdapters.PayNSecondsTableAdapter();
+            PaymentDataSet PNS = new PaymentDataSet();
+            if (ReadPNSFile(PNS))
+            {
+                PayNSecondsTableAdapter.Fill(PNS.PayNSeconds);
+                String lsUNCROOT = Program.GsDataPath, lsOldFile, lsNewFile, FilePath = @"\\dc-iac\Public\PayNSeconds\";
+
+                var filenames = Directory
+                .EnumerateFiles(FilePath, "*.xlsx", SearchOption.TopDirectoryOnly)
+                .Select(Path.GetFileName); // <-- note you can shorten the lambda
+
+                if (PNS.PayNSeconds.Rows.Count != 0)
+                {
+                    foreach (String FileName in filenames)
+                    {
+                        if (FileName.IndexOf("Template.xlsx") == -1)
+                        {
+                            lsOldFile = lsUNCROOT + @"PayNSeconds\" + FileName;
+                            lsNewFile = lsUNCROOT + @"PayNSeconds\Archive\" + FileName;
+                            RenameFile(lsOldFile, lsNewFile);
+                        }
+                    }
+                    MessageBox.Show("*** Import of " + PNS.PayNSeconds.Rows.Count.ToString().Trim() + " PayNSeconds RECORDS complete. ***", "PNS Payments Import");
+                }
+                else
+                    MessageBox.Show("*** NO IVR RECORDS FOUND! ***", "IVR Payments Import");
+            }
+            PayNSecondsTableAdapter.Dispose();
+            PNS.Dispose();
+            this.Close();
+        }
+    }
+}

@@ -1,0 +1,1100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://SBTService/ServiceContracts/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="MessageWSService" targetNamespace="http://SBTService/ServiceContracts/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="MessageWSServiceHttpEndpoint_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://SBTService/ServiceContracts/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://SBTAPIService/DataContract/" />
+      <xs:element name="GetMessageStatusByNote">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="securityToken" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="note" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="orgCode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="sentTo" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetMessageStatusByNoteResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q1="http://SBTAPIService/DataContract/" minOccurs="0" name="GetMessageStatusByNoteResult" nillable="true" type="q1:WSTransactionResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetMessageStatus">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="securityToken" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="transactionTicketId" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="orgCode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="sentTo" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetMessageStatusResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q2="http://SBTAPIService/DataContract/" minOccurs="0" name="GetMessageStatusResult" nillable="true" type="q2:WSTransactionResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ConfirmVBT">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="securityToken" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="orgCode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="phone" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="pin" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ConfirmVBTResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q3="http://SBTAPIService/DataContract/" minOccurs="0" name="ConfirmVBTResult" nillable="true" type="q3:WSVerificationResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="RequestVBT">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="securityToken" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="orgCode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="phone" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="RequestVBTResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q4="http://SBTAPIService/DataContract/" minOccurs="0" name="RequestVBTResult" nillable="true" type="q4:WSVerificationResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="RequireVBT">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="securityToken" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="orgCode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="phone" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="note" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="statusUrl" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="RequireVBTResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q5="http://SBTAPIService/DataContract/" minOccurs="0" name="RequireVBTResult" nillable="true" type="q5:WSVerificationResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ConfirmVBTWithTransactionTicket">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="securityToken" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="orgCode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="phone" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="pin" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ConfirmVBTWithTransactionTicketResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q6="http://SBTAPIService/DataContract/" minOccurs="0" name="ConfirmVBTWithTransactionTicketResult" nillable="true" type="q6:WSVBTResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="RequestVBTWithTransactionTicket">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="securityToken" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="orgCode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="phone" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="RequestVBTWithTransactionTicketResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q7="http://SBTAPIService/DataContract/" minOccurs="0" name="RequestVBTWithTransactionTicketResult" nillable="true" type="q7:WSVBTResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="RequireVBTWithTransactionTicket">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="securityToken" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="orgCode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="phone" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="note" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="statusUrl" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="RequireVBTWithTransactionTicketResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q8="http://SBTAPIService/DataContract/" minOccurs="0" name="RequireVBTWithTransactionTicketResult" nillable="true" type="q8:WSVBTResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SendMessage">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="securityToken" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="message" nillable="true" type="xs:string" />
+            <xs:element xmlns:q9="http://SBTAPIService/DataContract/" minOccurs="0" name="sendTo" nillable="true" type="q9:ArrayOfWSRecipient" />
+            <xs:element minOccurs="0" name="orgCode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="note" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="statusUrl" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SendMessageResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q10="http://SBTAPIService/DataContract/" minOccurs="0" name="SendMessageResult" nillable="true" type="q10:WSMessageResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SendMessageToOrg">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="securityToken" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="message" nillable="true" type="xs:string" />
+            <xs:element xmlns:q11="http://SBTAPIService/DataContract/" minOccurs="0" name="orgCode" nillable="true" type="q11:ArrayOfWSOrgRecipient" />
+            <xs:element minOccurs="0" name="note" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="statusUrl" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SendMessageToOrgResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q12="http://SBTAPIService/DataContract/" minOccurs="0" name="SendMessageToOrgResult" nillable="true" type="q12:WSMessageResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SendTemplateMessage">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="securityToken" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="templateID" type="xs:int" />
+            <xs:element xmlns:q13="http://SBTAPIService/DataContract/" minOccurs="0" name="sendTo" nillable="true" type="q13:ArrayOfWSRecipient" />
+            <xs:element minOccurs="0" name="orgCode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="note" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="statusUrl" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SendTemplateMessageResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q14="http://SBTAPIService/DataContract/" minOccurs="0" name="SendTemplateMessageResult" nillable="true" type="q14:WSMessageResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ScheduleSendMessage">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="securityToken" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="message" nillable="true" type="xs:string" />
+            <xs:element xmlns:q15="http://SBTAPIService/DataContract/" minOccurs="0" name="sendTo" nillable="true" type="q15:ArrayOfWSRecipient" />
+            <xs:element minOccurs="0" name="orgCode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="scheduleDateTime" type="xs:dateTime" />
+            <xs:element minOccurs="0" name="timeZone" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="note" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="statusUrl" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ScheduleSendMessageResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q16="http://SBTAPIService/DataContract/" minOccurs="0" name="ScheduleSendMessageResult" nillable="true" type="q16:WSMessageResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ScheduleSendTemplateMessage">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="securityToken" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="templateID" type="xs:int" />
+            <xs:element xmlns:q17="http://SBTAPIService/DataContract/" minOccurs="0" name="sendTo" nillable="true" type="q17:ArrayOfWSRecipient" />
+            <xs:element minOccurs="0" name="orgCode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="scheduleDateTime" type="xs:dateTime" />
+            <xs:element minOccurs="0" name="timeZone" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="note" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="statusUrl" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ScheduleSendTemplateMessageResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q18="http://SBTAPIService/DataContract/" minOccurs="0" name="ScheduleSendTemplateMessageResult" nillable="true" type="q18:WSMessageResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ScheduleSendMessageToOrg">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="securityToken" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="message" nillable="true" type="xs:string" />
+            <xs:element xmlns:q19="http://SBTAPIService/DataContract/" minOccurs="0" name="orgCode" nillable="true" type="q19:ArrayOfWSOrgRecipient" />
+            <xs:element minOccurs="0" name="scheduleDateTime" type="xs:dateTime" />
+            <xs:element minOccurs="0" name="timeZone" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="note" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="statusUrl" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ScheduleSendMessageToOrgResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q20="http://SBTAPIService/DataContract/" minOccurs="0" name="ScheduleSendMessageToOrgResult" nillable="true" type="q20:WSMessageResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ScheduleSendTemplateMessageToOrg">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="securityToken" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="templateID" type="xs:int" />
+            <xs:element xmlns:q21="http://SBTAPIService/DataContract/" minOccurs="0" name="orgCode" nillable="true" type="q21:ArrayOfWSOrgRecipient" />
+            <xs:element minOccurs="0" name="scheduleDateTime" type="xs:dateTime" />
+            <xs:element minOccurs="0" name="timeZone" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="note" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="statusUrl" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ScheduleSendTemplateMessageToOrgResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q22="http://SBTAPIService/DataContract/" minOccurs="0" name="ScheduleSendTemplateMessageToOrgResult" nillable="true" type="q22:WSMessageResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SendTemplateMessageToOrg">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="securityToken" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="templateID" type="xs:int" />
+            <xs:element xmlns:q23="http://SBTAPIService/DataContract/" minOccurs="0" name="orgCode" nillable="true" type="q23:ArrayOfWSOrgRecipient" />
+            <xs:element minOccurs="0" name="note" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="statusUrl" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SendTemplateMessageToOrgResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q24="http://SBTAPIService/DataContract/" minOccurs="0" name="SendTemplateMessageToOrgResult" nillable="true" type="q24:WSMessageResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="anyType" nillable="true" type="xs:anyType" />
+      <xs:element name="anyURI" nillable="true" type="xs:anyURI" />
+      <xs:element name="base64Binary" nillable="true" type="xs:base64Binary" />
+      <xs:element name="boolean" nillable="true" type="xs:boolean" />
+      <xs:element name="byte" nillable="true" type="xs:byte" />
+      <xs:element name="dateTime" nillable="true" type="xs:dateTime" />
+      <xs:element name="decimal" nillable="true" type="xs:decimal" />
+      <xs:element name="double" nillable="true" type="xs:double" />
+      <xs:element name="float" nillable="true" type="xs:float" />
+      <xs:element name="int" nillable="true" type="xs:int" />
+      <xs:element name="long" nillable="true" type="xs:long" />
+      <xs:element name="QName" nillable="true" type="xs:QName" />
+      <xs:element name="short" nillable="true" type="xs:short" />
+      <xs:element name="string" nillable="true" type="xs:string" />
+      <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte" />
+      <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt" />
+      <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong" />
+      <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort" />
+      <xs:element name="char" nillable="true" type="tns:char" />
+      <xs:simpleType name="char">
+        <xs:restriction base="xs:int" />
+      </xs:simpleType>
+      <xs:element name="duration" nillable="true" type="tns:duration" />
+      <xs:simpleType name="duration">
+        <xs:restriction base="xs:duration">
+          <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?" />
+          <xs:minInclusive value="-P10675199DT2H48M5.4775808S" />
+          <xs:maxInclusive value="P10675199DT2H48M5.4775807S" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="guid" nillable="true" type="tns:guid" />
+      <xs:simpleType name="guid">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:attribute name="FactoryType" type="xs:QName" />
+      <xs:attribute name="Id" type="xs:ID" />
+      <xs:attribute name="Ref" type="xs:IDREF" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://SBTAPIService/DataContract/" elementFormDefault="qualified" targetNamespace="http://SBTAPIService/DataContract/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="WSTransactionResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ErrorCode" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Response" nillable="true" type="tns:ArrayOfTransactionDetail">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Result" type="xs:boolean">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="WSTransactionResponse" nillable="true" type="tns:WSTransactionResponse" />
+      <xs:complexType name="ArrayOfTransactionDetail">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="TransactionDetail" nillable="true" type="tns:TransactionDetail" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfTransactionDetail" nillable="true" type="tns:ArrayOfTransactionDetail" />
+      <xs:complexType name="TransactionDetail">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SendTo" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="StatusCode" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="StatusMessage" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="TransactionDetail" nillable="true" type="tns:TransactionDetail" />
+      <xs:complexType name="WSVerificationResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Result" type="xs:boolean">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="ErrorCode" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Pin" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Verified" type="xs:boolean">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="WSVerificationResponse" nillable="true" type="tns:WSVerificationResponse" />
+      <xs:complexType name="WSVBTResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Result" type="xs:boolean">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="ErrorCode" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Pin" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Verified" type="xs:boolean">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="TransactionTicket" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="WSVBTResponse" nillable="true" type="tns:WSVBTResponse" />
+      <xs:complexType name="ArrayOfWSRecipient">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="WSRecipient" nillable="true" type="tns:WSRecipient" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfWSRecipient" nillable="true" type="tns:ArrayOfWSRecipient" />
+      <xs:complexType name="WSRecipient">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="SendTo" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="CustomFields" nillable="true" type="tns:ArrayOfCustomField">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="WSRecipient" nillable="true" type="tns:WSRecipient" />
+      <xs:complexType name="ArrayOfCustomField">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="CustomField" nillable="true" type="tns:CustomField" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfCustomField" nillable="true" type="tns:ArrayOfCustomField" />
+      <xs:complexType name="CustomField">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Key" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="CustomField" nillable="true" type="tns:CustomField" />
+      <xs:complexType name="WSMessageResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Result" type="xs:boolean">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="ErrorCode" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="TransactionTicket" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="note" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="WSMessageResponse" nillable="true" type="tns:WSMessageResponse" />
+      <xs:complexType name="ArrayOfWSOrgRecipient">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="WSOrgRecipient" nillable="true" type="tns:WSOrgRecipient" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfWSOrgRecipient" nillable="true" type="tns:ArrayOfWSOrgRecipient" />
+      <xs:complexType name="WSOrgRecipient">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="OrgCode" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="CustomFields" nillable="true" type="tns:ArrayOfCustomField">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="WSOrgRecipient" nillable="true" type="tns:WSOrgRecipient" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="IMessage_GetMessageStatusByNote_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMessageStatusByNote" />
+  </wsdl:message>
+  <wsdl:message name="IMessage_GetMessageStatusByNote_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMessageStatusByNoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMessage_GetMessageStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMessageStatus" />
+  </wsdl:message>
+  <wsdl:message name="IMessage_GetMessageStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMessageStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMessage_ConfirmVBT_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConfirmVBT" />
+  </wsdl:message>
+  <wsdl:message name="IMessage_ConfirmVBT_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConfirmVBTResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMessage_RequestVBT_InputMessage">
+    <wsdl:part name="parameters" element="tns:RequestVBT" />
+  </wsdl:message>
+  <wsdl:message name="IMessage_RequestVBT_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RequestVBTResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMessage_RequireVBT_InputMessage">
+    <wsdl:part name="parameters" element="tns:RequireVBT" />
+  </wsdl:message>
+  <wsdl:message name="IMessage_RequireVBT_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RequireVBTResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMessage_ConfirmVBTWithTransactionTicket_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConfirmVBTWithTransactionTicket" />
+  </wsdl:message>
+  <wsdl:message name="IMessage_ConfirmVBTWithTransactionTicket_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConfirmVBTWithTransactionTicketResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMessage_RequestVBTWithTransactionTicket_InputMessage">
+    <wsdl:part name="parameters" element="tns:RequestVBTWithTransactionTicket" />
+  </wsdl:message>
+  <wsdl:message name="IMessage_RequestVBTWithTransactionTicket_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RequestVBTWithTransactionTicketResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMessage_RequireVBTWithTransactionTicket_InputMessage">
+    <wsdl:part name="parameters" element="tns:RequireVBTWithTransactionTicket" />
+  </wsdl:message>
+  <wsdl:message name="IMessage_RequireVBTWithTransactionTicket_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RequireVBTWithTransactionTicketResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMessage_SendMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendMessage" />
+  </wsdl:message>
+  <wsdl:message name="IMessage_SendMessage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMessage_SendMessageToOrg_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendMessageToOrg" />
+  </wsdl:message>
+  <wsdl:message name="IMessage_SendMessageToOrg_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendMessageToOrgResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMessage_SendTemplateMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendTemplateMessage" />
+  </wsdl:message>
+  <wsdl:message name="IMessage_SendTemplateMessage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendTemplateMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMessage_ScheduleSendMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:ScheduleSendMessage" />
+  </wsdl:message>
+  <wsdl:message name="IMessage_ScheduleSendMessage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ScheduleSendMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMessage_ScheduleSendTemplateMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:ScheduleSendTemplateMessage" />
+  </wsdl:message>
+  <wsdl:message name="IMessage_ScheduleSendTemplateMessage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ScheduleSendTemplateMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMessage_ScheduleSendMessageToOrg_InputMessage">
+    <wsdl:part name="parameters" element="tns:ScheduleSendMessageToOrg" />
+  </wsdl:message>
+  <wsdl:message name="IMessage_ScheduleSendMessageToOrg_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ScheduleSendMessageToOrgResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMessage_ScheduleSendTemplateMessageToOrg_InputMessage">
+    <wsdl:part name="parameters" element="tns:ScheduleSendTemplateMessageToOrg" />
+  </wsdl:message>
+  <wsdl:message name="IMessage_ScheduleSendTemplateMessageToOrg_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ScheduleSendTemplateMessageToOrgResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMessage_SendTemplateMessageToOrg_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendTemplateMessageToOrg" />
+  </wsdl:message>
+  <wsdl:message name="IMessage_SendTemplateMessageToOrg_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendTemplateMessageToOrgResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IMessage">
+    <wsdl:operation name="GetMessageStatusByNote">
+      <wsdl:input wsaw:Action="http://SBTService/ServiceContracts/IMessage/GetMessageStatusByNote" message="tns:IMessage_GetMessageStatusByNote_InputMessage" />
+      <wsdl:output wsaw:Action="http://SBTService/ServiceContracts/IMessage/GetMessageStatusByNoteResponse" message="tns:IMessage_GetMessageStatusByNote_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageStatus">
+      <wsdl:input wsaw:Action="http://SBTService/ServiceContracts/IMessage/GetMessageStatus" message="tns:IMessage_GetMessageStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://SBTService/ServiceContracts/IMessage/GetMessageStatusResponse" message="tns:IMessage_GetMessageStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmVBT">
+      <wsdl:input wsaw:Action="http://SBTService/ServiceContracts/IMessage/ConfirmVBT" message="tns:IMessage_ConfirmVBT_InputMessage" />
+      <wsdl:output wsaw:Action="http://SBTService/ServiceContracts/IMessage/ConfirmVBTResponse" message="tns:IMessage_ConfirmVBT_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RequestVBT">
+      <wsdl:input wsaw:Action="http://SBTService/ServiceContracts/IMessage/RequestVBT" message="tns:IMessage_RequestVBT_InputMessage" />
+      <wsdl:output wsaw:Action="http://SBTService/ServiceContracts/IMessage/RequestVBTResponse" message="tns:IMessage_RequestVBT_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RequireVBT">
+      <wsdl:input wsaw:Action="http://SBTService/ServiceContracts/IMessage/RequireVBT" message="tns:IMessage_RequireVBT_InputMessage" />
+      <wsdl:output wsaw:Action="http://SBTService/ServiceContracts/IMessage/RequireVBTResponse" message="tns:IMessage_RequireVBT_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmVBTWithTransactionTicket">
+      <wsdl:input wsaw:Action="http://SBTService/ServiceContracts/IMessage/ConfirmVBTWithTransactionTicket" message="tns:IMessage_ConfirmVBTWithTransactionTicket_InputMessage" />
+      <wsdl:output wsaw:Action="http://SBTService/ServiceContracts/IMessage/ConfirmVBTWithTransactionTicketResponse" message="tns:IMessage_ConfirmVBTWithTransactionTicket_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RequestVBTWithTransactionTicket">
+      <wsdl:input wsaw:Action="http://SBTService/ServiceContracts/IMessage/RequestVBTWithTransactionTicket" message="tns:IMessage_RequestVBTWithTransactionTicket_InputMessage" />
+      <wsdl:output wsaw:Action="http://SBTService/ServiceContracts/IMessage/RequestVBTWithTransactionTicketResponse" message="tns:IMessage_RequestVBTWithTransactionTicket_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RequireVBTWithTransactionTicket">
+      <wsdl:input wsaw:Action="http://SBTService/ServiceContracts/IMessage/RequireVBTWithTransactionTicket" message="tns:IMessage_RequireVBTWithTransactionTicket_InputMessage" />
+      <wsdl:output wsaw:Action="http://SBTService/ServiceContracts/IMessage/RequireVBTWithTransactionTicketResponse" message="tns:IMessage_RequireVBTWithTransactionTicket_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMessage">
+      <wsdl:input wsaw:Action="http://SBTService/ServiceContracts/IMessage/SendMessage" message="tns:IMessage_SendMessage_InputMessage" />
+      <wsdl:output wsaw:Action="http://SBTService/ServiceContracts/IMessage/SendMessageResponse" message="tns:IMessage_SendMessage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMessageToOrg">
+      <wsdl:input wsaw:Action="http://SBTService/ServiceContracts/IMessage/SendMessageToOrg" message="tns:IMessage_SendMessageToOrg_InputMessage" />
+      <wsdl:output wsaw:Action="http://SBTService/ServiceContracts/IMessage/SendMessageToOrgResponse" message="tns:IMessage_SendMessageToOrg_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendTemplateMessage">
+      <wsdl:input wsaw:Action="http://SBTService/ServiceContracts/IMessage/SendTemplateMessage" message="tns:IMessage_SendTemplateMessage_InputMessage" />
+      <wsdl:output wsaw:Action="http://SBTService/ServiceContracts/IMessage/SendTemplateMessageResponse" message="tns:IMessage_SendTemplateMessage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ScheduleSendMessage">
+      <wsdl:input wsaw:Action="http://SBTService/ServiceContracts/IMessage/ScheduleSendMessage" message="tns:IMessage_ScheduleSendMessage_InputMessage" />
+      <wsdl:output wsaw:Action="http://SBTService/ServiceContracts/IMessage/ScheduleSendMessageResponse" message="tns:IMessage_ScheduleSendMessage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ScheduleSendTemplateMessage">
+      <wsdl:input wsaw:Action="http://SBTService/ServiceContracts/IMessage/ScheduleSendTemplateMessage" message="tns:IMessage_ScheduleSendTemplateMessage_InputMessage" />
+      <wsdl:output wsaw:Action="http://SBTService/ServiceContracts/IMessage/ScheduleSendTemplateMessageResponse" message="tns:IMessage_ScheduleSendTemplateMessage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ScheduleSendMessageToOrg">
+      <wsdl:input wsaw:Action="http://SBTService/ServiceContracts/IMessage/ScheduleSendMessageToOrg" message="tns:IMessage_ScheduleSendMessageToOrg_InputMessage" />
+      <wsdl:output wsaw:Action="http://SBTService/ServiceContracts/IMessage/ScheduleSendMessageToOrgResponse" message="tns:IMessage_ScheduleSendMessageToOrg_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ScheduleSendTemplateMessageToOrg">
+      <wsdl:input wsaw:Action="http://SBTService/ServiceContracts/IMessage/ScheduleSendTemplateMessageToOrg" message="tns:IMessage_ScheduleSendTemplateMessageToOrg_InputMessage" />
+      <wsdl:output wsaw:Action="http://SBTService/ServiceContracts/IMessage/ScheduleSendTemplateMessageToOrgResponse" message="tns:IMessage_ScheduleSendTemplateMessageToOrg_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendTemplateMessageToOrg">
+      <wsdl:input wsaw:Action="http://SBTService/ServiceContracts/IMessage/SendTemplateMessageToOrg" message="tns:IMessage_SendTemplateMessageToOrg_InputMessage" />
+      <wsdl:output wsaw:Action="http://SBTService/ServiceContracts/IMessage/SendTemplateMessageToOrgResponse" message="tns:IMessage_SendTemplateMessageToOrg_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MessageWSServiceHttpEndpoint" type="tns:IMessage">
+    <wsp:PolicyReference URI="#MessageWSServiceHttpEndpoint_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetMessageStatusByNote">
+      <soap:operation soapAction="http://SBTService/ServiceContracts/IMessage/GetMessageStatusByNote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageStatus">
+      <soap:operation soapAction="http://SBTService/ServiceContracts/IMessage/GetMessageStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmVBT">
+      <soap:operation soapAction="http://SBTService/ServiceContracts/IMessage/ConfirmVBT" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequestVBT">
+      <soap:operation soapAction="http://SBTService/ServiceContracts/IMessage/RequestVBT" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequireVBT">
+      <soap:operation soapAction="http://SBTService/ServiceContracts/IMessage/RequireVBT" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmVBTWithTransactionTicket">
+      <soap:operation soapAction="http://SBTService/ServiceContracts/IMessage/ConfirmVBTWithTransactionTicket" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequestVBTWithTransactionTicket">
+      <soap:operation soapAction="http://SBTService/ServiceContracts/IMessage/RequestVBTWithTransactionTicket" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequireVBTWithTransactionTicket">
+      <soap:operation soapAction="http://SBTService/ServiceContracts/IMessage/RequireVBTWithTransactionTicket" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMessage">
+      <soap:operation soapAction="http://SBTService/ServiceContracts/IMessage/SendMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMessageToOrg">
+      <soap:operation soapAction="http://SBTService/ServiceContracts/IMessage/SendMessageToOrg" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendTemplateMessage">
+      <soap:operation soapAction="http://SBTService/ServiceContracts/IMessage/SendTemplateMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ScheduleSendMessage">
+      <soap:operation soapAction="http://SBTService/ServiceContracts/IMessage/ScheduleSendMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ScheduleSendTemplateMessage">
+      <soap:operation soapAction="http://SBTService/ServiceContracts/IMessage/ScheduleSendTemplateMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ScheduleSendMessageToOrg">
+      <soap:operation soapAction="http://SBTService/ServiceContracts/IMessage/ScheduleSendMessageToOrg" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ScheduleSendTemplateMessageToOrg">
+      <soap:operation soapAction="http://SBTService/ServiceContracts/IMessage/ScheduleSendTemplateMessageToOrg" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendTemplateMessageToOrg">
+      <soap:operation soapAction="http://SBTService/ServiceContracts/IMessage/SendTemplateMessageToOrg" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MessageWSServiceHttpEndpoint1" type="tns:IMessage">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetMessageStatusByNote">
+      <soap:operation soapAction="http://SBTService/ServiceContracts/IMessage/GetMessageStatusByNote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageStatus">
+      <soap:operation soapAction="http://SBTService/ServiceContracts/IMessage/GetMessageStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmVBT">
+      <soap:operation soapAction="http://SBTService/ServiceContracts/IMessage/ConfirmVBT" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequestVBT">
+      <soap:operation soapAction="http://SBTService/ServiceContracts/IMessage/RequestVBT" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequireVBT">
+      <soap:operation soapAction="http://SBTService/ServiceContracts/IMessage/RequireVBT" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmVBTWithTransactionTicket">
+      <soap:operation soapAction="http://SBTService/ServiceContracts/IMessage/ConfirmVBTWithTransactionTicket" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequestVBTWithTransactionTicket">
+      <soap:operation soapAction="http://SBTService/ServiceContracts/IMessage/RequestVBTWithTransactionTicket" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RequireVBTWithTransactionTicket">
+      <soap:operation soapAction="http://SBTService/ServiceContracts/IMessage/RequireVBTWithTransactionTicket" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMessage">
+      <soap:operation soapAction="http://SBTService/ServiceContracts/IMessage/SendMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMessageToOrg">
+      <soap:operation soapAction="http://SBTService/ServiceContracts/IMessage/SendMessageToOrg" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendTemplateMessage">
+      <soap:operation soapAction="http://SBTService/ServiceContracts/IMessage/SendTemplateMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ScheduleSendMessage">
+      <soap:operation soapAction="http://SBTService/ServiceContracts/IMessage/ScheduleSendMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ScheduleSendTemplateMessage">
+      <soap:operation soapAction="http://SBTService/ServiceContracts/IMessage/ScheduleSendTemplateMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ScheduleSendMessageToOrg">
+      <soap:operation soapAction="http://SBTService/ServiceContracts/IMessage/ScheduleSendMessageToOrg" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ScheduleSendTemplateMessageToOrg">
+      <soap:operation soapAction="http://SBTService/ServiceContracts/IMessage/ScheduleSendTemplateMessageToOrg" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendTemplateMessageToOrg">
+      <soap:operation soapAction="http://SBTService/ServiceContracts/IMessage/SendTemplateMessageToOrg" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MessageWSService">
+    <wsdl:port name="MessageWSServiceHttpEndpoint" binding="tns:MessageWSServiceHttpEndpoint">
+      <soap:address location="https://ui.solutionsbytext.com/SBT.App.SetUp/WSServices/MessageWSService.svc" />
+    </wsdl:port>
+    <wsdl:port name="MessageWSServiceHttpEndpoint1" binding="tns:MessageWSServiceHttpEndpoint1">
+      <soap:address location="http://ui.solutionsbytext.com/SBT.App.SetUp/WSServices/MessageWSService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
