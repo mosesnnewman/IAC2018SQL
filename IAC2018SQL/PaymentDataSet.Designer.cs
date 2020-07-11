@@ -4562,12 +4562,6 @@ namespace IAC2018SQL {
             
             private global::System.Data.DataColumn columnVEHICLE_AGENT_PHONE;
             
-            private global::System.Data.DataColumn columnTier1;
-            
-            private global::System.Data.DataColumn columnCosignerCreditScore1;
-            
-            private global::System.Data.DataColumn columnMileage1;
-            
             private global::System.Data.DataColumn columnTotalPayments;
             
             private global::System.Data.DataColumn columnStatus;
@@ -5927,30 +5921,6 @@ namespace IAC2018SQL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn Tier1Column {
-                get {
-                    return this.columnTier1;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn CosignerCreditScore1Column {
-                get {
-                    return this.columnCosignerCreditScore1;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn Mileage1Column {
-                get {
-                    return this.columnMileage1;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn TotalPaymentsColumn {
                 get {
                     return this.columnTotalPayments;
@@ -6167,9 +6137,6 @@ namespace IAC2018SQL {
                         string VEHICLE_JOINT_NAME, 
                         string VEHICLE_INS_AGENT, 
                         string VEHICLE_AGENT_PHONE, 
-                        int Tier1, 
-                        int CosignerCreditScore1, 
-                        int Mileage1, 
                         decimal TotalPayments, 
                         decimal Status) {
                 CustomerExtractRow rowCustomerExtractRow = ((CustomerExtractRow)(this.NewRow()));
@@ -6339,9 +6306,6 @@ namespace IAC2018SQL {
                         VEHICLE_JOINT_NAME,
                         VEHICLE_INS_AGENT,
                         VEHICLE_AGENT_PHONE,
-                        Tier1,
-                        CosignerCreditScore1,
-                        Mileage1,
                         TotalPayments,
                         Status};
                 rowCustomerExtractRow.ItemArray = columnValuesArray;
@@ -6538,9 +6502,6 @@ namespace IAC2018SQL {
                 this.columnVEHICLE_JOINT_NAME = base.Columns["VEHICLE_JOINT_NAME"];
                 this.columnVEHICLE_INS_AGENT = base.Columns["VEHICLE_INS_AGENT"];
                 this.columnVEHICLE_AGENT_PHONE = base.Columns["VEHICLE_AGENT_PHONE"];
-                this.columnTier1 = base.Columns["Tier1"];
-                this.columnCosignerCreditScore1 = base.Columns["CosignerCreditScore1"];
-                this.columnMileage1 = base.Columns["Mileage1"];
                 this.columnTotalPayments = base.Columns["TotalPayments"];
                 this.columnStatus = base.Columns["Status"];
             }
@@ -6878,12 +6839,6 @@ namespace IAC2018SQL {
                 base.Columns.Add(this.columnVEHICLE_INS_AGENT);
                 this.columnVEHICLE_AGENT_PHONE = new global::System.Data.DataColumn("VEHICLE_AGENT_PHONE", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnVEHICLE_AGENT_PHONE);
-                this.columnTier1 = new global::System.Data.DataColumn("Tier1", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTier1);
-                this.columnCosignerCreditScore1 = new global::System.Data.DataColumn("CosignerCreditScore1", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCosignerCreditScore1);
-                this.columnMileage1 = new global::System.Data.DataColumn("Mileage1", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnMileage1);
                 this.columnTotalPayments = new global::System.Data.DataColumn("TotalPayments", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTotalPayments);
                 this.columnStatus = new global::System.Data.DataColumn("Status", typeof(decimal), null, global::System.Data.MappingType.Element);
@@ -6907,6 +6862,7 @@ namespace IAC2018SQL {
                 this.columnCUSTOMER_NO.AllowDBNull = false;
                 this.columnCUSTOMER_NO.MaxLength = 6;
                 this.columnCUSTOMER_PAID_THRU.MaxLength = 5;
+                this.columnTier.DefaultValue = ((decimal)(0m));
                 this.columnVEHICLE_VIN.MaxLength = 25;
                 this.columnVEHICLE_MAKE.MaxLength = 50;
                 this.columnVEHICLE_MODEL.MaxLength = 50;
@@ -6983,9 +6939,6 @@ namespace IAC2018SQL {
                 this.columnVEHICLE_JOINT_NAME.MaxLength = 25;
                 this.columnVEHICLE_INS_AGENT.MaxLength = 15;
                 this.columnVEHICLE_AGENT_PHONE.MaxLength = 10;
-                this.columnTier1.Caption = "Tier";
-                this.columnCosignerCreditScore1.Caption = "CosignerCreditScore";
-                this.columnMileage1.Caption = "Mileage";
                 this.columnTotalPayments.DefaultValue = ((decimal)(0m));
             }
             
@@ -10136,11 +10089,11 @@ namespace IAC2018SQL {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public decimal Tier {
                 get {
-                    try {
-                        return ((decimal)(this[this.tableCustomerExtract.TierColumn]));
+                    if (this.IsTierNull()) {
+                        return 0m;
                     }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Tier\' in table \'CustomerExtract\' is DBNull.", e);
+                    else {
+                        return ((decimal)(this[this.tableCustomerExtract.TierColumn]));
                     }
                 }
                 set {
@@ -12263,55 +12216,6 @@ namespace IAC2018SQL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int Tier1 {
-                get {
-                    try {
-                        return ((int)(this[this.tableCustomerExtract.Tier1Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Tier1\' in table \'CustomerExtract\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableCustomerExtract.Tier1Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int CosignerCreditScore1 {
-                get {
-                    try {
-                        return ((int)(this[this.tableCustomerExtract.CosignerCreditScore1Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'CosignerCreditScore1\' in table \'CustomerExtract\' is DBNull." +
-                                "", e);
-                    }
-                }
-                set {
-                    this[this.tableCustomerExtract.CosignerCreditScore1Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int Mileage1 {
-                get {
-                    try {
-                        return ((int)(this[this.tableCustomerExtract.Mileage1Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Mileage1\' in table \'CustomerExtract\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableCustomerExtract.Mileage1Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public decimal TotalPayments {
                 get {
                     if (this.IsTotalPaymentsNull()) {
@@ -14284,42 +14188,6 @@ namespace IAC2018SQL {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetVEHICLE_AGENT_PHONENull() {
                 this[this.tableCustomerExtract.VEHICLE_AGENT_PHONEColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsTier1Null() {
-                return this.IsNull(this.tableCustomerExtract.Tier1Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetTier1Null() {
-                this[this.tableCustomerExtract.Tier1Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsCosignerCreditScore1Null() {
-                return this.IsNull(this.tableCustomerExtract.CosignerCreditScore1Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetCosignerCreditScore1Null() {
-                this[this.tableCustomerExtract.CosignerCreditScore1Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsMileage1Null() {
-                return this.IsNull(this.tableCustomerExtract.Mileage1Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetMileage1Null() {
-                this[this.tableCustomerExtract.Mileage1Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -18824,9 +18692,6 @@ namespace IAC2018SQL.PaymentDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("VEHICLE_JOINT_NAME", "VEHICLE_JOINT_NAME");
             tableMapping.ColumnMappings.Add("VEHICLE_INS_AGENT", "VEHICLE_INS_AGENT");
             tableMapping.ColumnMappings.Add("VEHICLE_AGENT_PHONE", "VEHICLE_AGENT_PHONE");
-            tableMapping.ColumnMappings.Add("Tier", "Tier1");
-            tableMapping.ColumnMappings.Add("CosignerCreditScore", "CosignerCreditScore1");
-            tableMapping.ColumnMappings.Add("Mileage", "Mileage1");
             tableMapping.ColumnMappings.Add("TotalPayments", "TotalPayments");
             tableMapping.ColumnMappings.Add("Status", "Status");
             this._adapter.TableMappings.Add(tableMapping);

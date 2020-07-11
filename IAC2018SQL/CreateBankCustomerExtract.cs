@@ -800,7 +800,7 @@ namespace IAC2018SQL
 
             Excel.Range FundingDate = excelWorkSheet.get_Range("BC:BC");
             FundingDate.Columns.EntireColumn.AutoFit();
-            FundingDate.Columns.ColumnWidth = 10.57;
+            FundingDate.Columns.ColumnWidth = 12;
             FundingDate.Columns.NumberFormat = "mm/dd/yyyy";
             excelWorkSheet.get_Range("BC1:BC1").Font.FontStyle = "Bold";
             excelWorkSheet.get_Range("BC1:BC1").Value = "Funding Date";
@@ -1157,7 +1157,7 @@ namespace IAC2018SQL
                 for (int i = 2; i <= last.Row; i++)
                 {
                     excelWorkSheet.Cells[i, 2].Value = Convert.ToDecimal(excelWorkSheet.Cells[i, 2].Value);
-                    excelWorkSheet.Cells[i, 8].Value = Convert.ToInt32(excelWorkSheet.Cells[i, 8].Value);
+                    excelWorkSheet.Cells[i, 7].Value = Convert.ToInt32(excelWorkSheet.Cells[i, 7].Value);
                 }
 
 
@@ -1830,7 +1830,7 @@ namespace IAC2018SQL
                 else
                     Extensions.CustomerExtract.Rows[RowCount].SetField<Decimal>("CosignerTierPoints", 0);
                 if (Bank.CUSTOMER.Rows[i].Field<DateTime?>("FundingDate") != null)
-                    Extensions.CustomerExtract.Rows[RowCount].SetField<DateTime>("FundingDate", Bank.CUSTOMER.Rows[i].Field<DateTime>("FundingDate"));
+                    Extensions.CustomerExtract.Rows[RowCount].SetField<DateTime>("FundingDate", Bank.CUSTOMER.Rows[i].Field<DateTime>("FundingDate").Date);
                 else
                     Extensions.CustomerExtract.Rows[RowCount].SetField<DateTime>("FundingDate", Convert.ToDateTime("01/01/1980"));
                 if (Bank.VEHICLE.Rows.Count > 0)
