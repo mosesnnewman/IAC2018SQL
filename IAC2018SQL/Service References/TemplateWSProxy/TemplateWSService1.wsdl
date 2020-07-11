@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://SBTService/ServiceContracts/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="TemplateWSService" targetNamespace="http://SBTService/ServiceContracts/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="TemplateWSServiceHttpEndpoint_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://SBTService/ServiceContracts/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://SBTAPIService/DataContract/" />
+      <xs:element name="CreateTemplate">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="securityToken" nillable="true" type="xs:string" />
+            <xs:element xmlns:q1="http://SBTAPIService/DataContract/" minOccurs="0" name="template" nillable="true" type="q1:TemplateDetail" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CreateTemplateResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q2="http://SBTAPIService/DataContract/" minOccurs="0" name="CreateTemplateResult" nillable="true" type="q2:WSTemplateResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="UpdateTemplate">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="securityToken" nillable="true" type="xs:string" />
+            <xs:element xmlns:q3="http://SBTAPIService/DataContract/" minOccurs="0" name="template" nillable="true" type="q3:TemplateDetail" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="UpdateTemplateResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q4="http://SBTAPIService/DataContract/" minOccurs="0" name="UpdateTemplateResult" nillable="true" type="q4:WSTemplateResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetTemplates">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="securityToken" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="orgCode" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetTemplatesResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q5="http://SBTAPIService/DataContract/" minOccurs="0" name="GetTemplatesResult" nillable="true" type="q5:WSTemplateListResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReadTemplate">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="securityToken" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="orgCode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="templateID" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReadTemplateResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q6="http://SBTAPIService/DataContract/" minOccurs="0" name="ReadTemplateResult" nillable="true" type="q6:WSTemplateResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DeleteTemplate">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="securityToken" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="orgCode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="templateID" type="xs:int" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="DeleteTemplateResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q7="http://SBTAPIService/DataContract/" minOccurs="0" name="DeleteTemplateResult" nillable="true" type="q7:WSTemplateResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="anyType" nillable="true" type="xs:anyType" />
+      <xs:element name="anyURI" nillable="true" type="xs:anyURI" />
+      <xs:element name="base64Binary" nillable="true" type="xs:base64Binary" />
+      <xs:element name="boolean" nillable="true" type="xs:boolean" />
+      <xs:element name="byte" nillable="true" type="xs:byte" />
+      <xs:element name="dateTime" nillable="true" type="xs:dateTime" />
+      <xs:element name="decimal" nillable="true" type="xs:decimal" />
+      <xs:element name="double" nillable="true" type="xs:double" />
+      <xs:element name="float" nillable="true" type="xs:float" />
+      <xs:element name="int" nillable="true" type="xs:int" />
+      <xs:element name="long" nillable="true" type="xs:long" />
+      <xs:element name="QName" nillable="true" type="xs:QName" />
+      <xs:element name="short" nillable="true" type="xs:short" />
+      <xs:element name="string" nillable="true" type="xs:string" />
+      <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte" />
+      <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt" />
+      <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong" />
+      <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort" />
+      <xs:element name="char" nillable="true" type="tns:char" />
+      <xs:simpleType name="char">
+        <xs:restriction base="xs:int" />
+      </xs:simpleType>
+      <xs:element name="duration" nillable="true" type="tns:duration" />
+      <xs:simpleType name="duration">
+        <xs:restriction base="xs:duration">
+          <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?" />
+          <xs:minInclusive value="-P10675199DT2H48M5.4775808S" />
+          <xs:maxInclusive value="P10675199DT2H48M5.4775807S" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="guid" nillable="true" type="tns:guid" />
+      <xs:simpleType name="guid">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:attribute name="FactoryType" type="xs:QName" />
+      <xs:attribute name="Id" type="xs:ID" />
+      <xs:attribute name="Ref" type="xs:IDREF" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://SBTAPIService/DataContract/" elementFormDefault="qualified" targetNamespace="http://SBTAPIService/DataContract/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="TemplateDetail">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="TemplateID" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Subject" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Text" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Description" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="OrgCode" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="TemplateDetail" nillable="true" type="tns:TemplateDetail" />
+      <xs:complexType name="WSTemplateResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Result" type="xs:boolean">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="ErrorCode" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Response" nillable="true" type="tns:TemplateDetail">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="WSTemplateResponse" nillable="true" type="tns:WSTemplateResponse" />
+      <xs:complexType name="WSTemplateListResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Result" type="xs:boolean">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="ErrorCode" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Response" nillable="true" type="tns:ArrayOfTemplateDetail">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="WSTemplateListResponse" nillable="true" type="tns:WSTemplateListResponse" />
+      <xs:complexType name="ArrayOfTemplateDetail">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="TemplateDetail" nillable="true" type="tns:TemplateDetail" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfTemplateDetail" nillable="true" type="tns:ArrayOfTemplateDetail" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="ITemplate_CreateTemplate_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateTemplate" />
+  </wsdl:message>
+  <wsdl:message name="ITemplate_CreateTemplate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateTemplateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITemplate_UpdateTemplate_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTemplate" />
+  </wsdl:message>
+  <wsdl:message name="ITemplate_UpdateTemplate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTemplateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITemplate_GetTemplates_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTemplates" />
+  </wsdl:message>
+  <wsdl:message name="ITemplate_GetTemplates_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTemplatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITemplate_ReadTemplate_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadTemplate" />
+  </wsdl:message>
+  <wsdl:message name="ITemplate_ReadTemplate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadTemplateResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITemplate_DeleteTemplate_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteTemplate" />
+  </wsdl:message>
+  <wsdl:message name="ITemplate_DeleteTemplate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteTemplateResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ITemplate">
+    <wsdl:operation name="CreateTemplate">
+      <wsdl:input wsaw:Action="http://SBTService/ServiceContracts/ITemplate/CreateTemplate" message="tns:ITemplate_CreateTemplate_InputMessage" />
+      <wsdl:output wsaw:Action="http://SBTService/ServiceContracts/ITemplate/CreateTemplateResponse" message="tns:ITemplate_CreateTemplate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTemplate">
+      <wsdl:input wsaw:Action="http://SBTService/ServiceContracts/ITemplate/UpdateTemplate" message="tns:ITemplate_UpdateTemplate_InputMessage" />
+      <wsdl:output wsaw:Action="http://SBTService/ServiceContracts/ITemplate/UpdateTemplateResponse" message="tns:ITemplate_UpdateTemplate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTemplates">
+      <wsdl:input wsaw:Action="http://SBTService/ServiceContracts/ITemplate/GetTemplates" message="tns:ITemplate_GetTemplates_InputMessage" />
+      <wsdl:output wsaw:Action="http://SBTService/ServiceContracts/ITemplate/GetTemplatesResponse" message="tns:ITemplate_GetTemplates_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadTemplate">
+      <wsdl:input wsaw:Action="http://SBTService/ServiceContracts/ITemplate/ReadTemplate" message="tns:ITemplate_ReadTemplate_InputMessage" />
+      <wsdl:output wsaw:Action="http://SBTService/ServiceContracts/ITemplate/ReadTemplateResponse" message="tns:ITemplate_ReadTemplate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTemplate">
+      <wsdl:input wsaw:Action="http://SBTService/ServiceContracts/ITemplate/DeleteTemplate" message="tns:ITemplate_DeleteTemplate_InputMessage" />
+      <wsdl:output wsaw:Action="http://SBTService/ServiceContracts/ITemplate/DeleteTemplateResponse" message="tns:ITemplate_DeleteTemplate_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TemplateWSServiceHttpEndpoint" type="tns:ITemplate">
+    <wsp:PolicyReference URI="#TemplateWSServiceHttpEndpoint_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateTemplate">
+      <soap:operation soapAction="http://SBTService/ServiceContracts/ITemplate/CreateTemplate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTemplate">
+      <soap:operation soapAction="http://SBTService/ServiceContracts/ITemplate/UpdateTemplate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTemplates">
+      <soap:operation soapAction="http://SBTService/ServiceContracts/ITemplate/GetTemplates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadTemplate">
+      <soap:operation soapAction="http://SBTService/ServiceContracts/ITemplate/ReadTemplate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTemplate">
+      <soap:operation soapAction="http://SBTService/ServiceContracts/ITemplate/DeleteTemplate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TemplateWSServiceHttpEndpoint1" type="tns:ITemplate">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateTemplate">
+      <soap:operation soapAction="http://SBTService/ServiceContracts/ITemplate/CreateTemplate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTemplate">
+      <soap:operation soapAction="http://SBTService/ServiceContracts/ITemplate/UpdateTemplate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTemplates">
+      <soap:operation soapAction="http://SBTService/ServiceContracts/ITemplate/GetTemplates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadTemplate">
+      <soap:operation soapAction="http://SBTService/ServiceContracts/ITemplate/ReadTemplate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTemplate">
+      <soap:operation soapAction="http://SBTService/ServiceContracts/ITemplate/DeleteTemplate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TemplateWSService">
+    <wsdl:port name="TemplateWSServiceHttpEndpoint" binding="tns:TemplateWSServiceHttpEndpoint">
+      <soap:address location="https://ui.solutionsbytext.com/SBT.App.SetUp/wsservices/TemplateWSService.svc" />
+    </wsdl:port>
+    <wsdl:port name="TemplateWSServiceHttpEndpoint1" binding="tns:TemplateWSServiceHttpEndpoint1">
+      <soap:address location="http://ui.solutionsbytext.com/SBT.App.SetUp/wsservices/TemplateWSService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

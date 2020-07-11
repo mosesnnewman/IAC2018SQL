@@ -1,0 +1,908 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://SBTService/ServiceContracts/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="GeneralWSService" targetNamespace="http://SBTService/ServiceContracts/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="ReportWSServiceHttpEndpoint_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://SBTService/ServiceContracts/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xs:import namespace="http://SBTAPIService/DataContract/" />
+      <xs:element name="GetCellularCarrier">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="securityToken" nillable="true" type="xs:string" />
+            <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="phone" nillable="true" type="q1:ArrayOfstring" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetCellularCarrierResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q2="http://SBTAPIService/DataContract/" minOccurs="0" name="GetCellularCarrierResult" nillable="true" type="q2:WSReportInboundMessagesResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetCarrierLookup">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="securityToken" nillable="true" type="xs:string" />
+            <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="phone" nillable="true" type="q3:ArrayOfstring" />
+            <xs:element minOccurs="0" name="orgCode" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetCarrierLookupResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q4="http://SBTAPIService/DataContract/" minOccurs="0" name="GetCarrierLookupResult" nillable="true" type="q4:WSCarrierLookupResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetOrgTree">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="securityToken" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="orgCode" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetOrgTreeResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q5="http://SBTAPIService/DataContract/" minOccurs="0" name="GetOrgTreeResult" nillable="true" type="q5:WSOrganizationTreeResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReadVerificationType">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="securityToken" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="orgCode" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReadVerificationTypeResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q6="http://SBTAPIService/DataContract/" minOccurs="0" name="ReadVerificationTypeResult" nillable="true" type="q6:WSVerificationTypeResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReversePhoneLookup">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="securityToken" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="orgCode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="phone" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReversePhoneLookupResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q7="http://SBTAPIService/DataContract/" minOccurs="0" name="ReversePhoneLookupResult" nillable="true" type="q7:WSReversePhoneResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="anyType" nillable="true" type="xs:anyType" />
+      <xs:element name="anyURI" nillable="true" type="xs:anyURI" />
+      <xs:element name="base64Binary" nillable="true" type="xs:base64Binary" />
+      <xs:element name="boolean" nillable="true" type="xs:boolean" />
+      <xs:element name="byte" nillable="true" type="xs:byte" />
+      <xs:element name="dateTime" nillable="true" type="xs:dateTime" />
+      <xs:element name="decimal" nillable="true" type="xs:decimal" />
+      <xs:element name="double" nillable="true" type="xs:double" />
+      <xs:element name="float" nillable="true" type="xs:float" />
+      <xs:element name="int" nillable="true" type="xs:int" />
+      <xs:element name="long" nillable="true" type="xs:long" />
+      <xs:element name="QName" nillable="true" type="xs:QName" />
+      <xs:element name="short" nillable="true" type="xs:short" />
+      <xs:element name="string" nillable="true" type="xs:string" />
+      <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte" />
+      <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt" />
+      <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong" />
+      <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort" />
+      <xs:element name="char" nillable="true" type="tns:char" />
+      <xs:simpleType name="char">
+        <xs:restriction base="xs:int" />
+      </xs:simpleType>
+      <xs:element name="duration" nillable="true" type="tns:duration" />
+      <xs:simpleType name="duration">
+        <xs:restriction base="xs:duration">
+          <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?" />
+          <xs:minInclusive value="-P10675199DT2H48M5.4775808S" />
+          <xs:maxInclusive value="P10675199DT2H48M5.4775807S" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="guid" nillable="true" type="tns:guid" />
+      <xs:simpleType name="guid">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:attribute name="FactoryType" type="xs:QName" />
+      <xs:attribute name="Id" type="xs:ID" />
+      <xs:attribute name="Ref" type="xs:IDREF" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/Arrays" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="ArrayOfstring">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfstring" nillable="true" type="tns:ArrayOfstring" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://SBTAPIService/DataContract/" elementFormDefault="qualified" targetNamespace="http://SBTAPIService/DataContract/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xs:complexType name="WSReportInboundMessagesResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Result" type="xs:boolean">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="ErrorCode" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Response" nillable="true" type="tns:ArrayOfWSCarrierPhoneRow">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="WSReportInboundMessagesResponse" nillable="true" type="tns:WSReportInboundMessagesResponse" />
+      <xs:complexType name="ArrayOfWSCarrierPhoneRow">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="WSCarrierPhoneRow" nillable="true" type="tns:WSCarrierPhoneRow" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfWSCarrierPhoneRow" nillable="true" type="tns:ArrayOfWSCarrierPhoneRow" />
+      <xs:complexType name="WSCarrierPhoneRow">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="CarrierCode" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Carrier" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="International" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Invalid" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Landline" type="xs:boolean" />
+          <xs:element minOccurs="0" name="Phone" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="WSCarrierPhoneRow" nillable="true" type="tns:WSCarrierPhoneRow" />
+      <xs:complexType name="WSCarrierLookupResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Result" type="xs:boolean">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="ErrorCode" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Response" nillable="true" type="tns:ArrayOfWSCarrierPhoneRow">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="WSCarrierLookupResponse" nillable="true" type="tns:WSCarrierLookupResponse" />
+      <xs:complexType name="WSOrganizationTreeResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Result" type="xs:boolean">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="ErrorCode" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Response" nillable="true" type="tns:WSOrganization">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="WSOrganizationTreeResponse" nillable="true" type="tns:WSOrganizationTreeResponse" />
+      <xs:complexType name="WSOrganization">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="OrgStructureName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OrgCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CommunicationCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="EmailID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Address" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Street" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ZipCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PhoneNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="City" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="State" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="StateAbbr" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Country" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ContactFName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ContactLName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ContactPhoneNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ContactMobilePhoneNo" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ContactEmailID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="URL" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="organization" nillable="true" type="tns:ArrayOfWSOrganization" />
+          <xs:element minOccurs="0" name="Group" nillable="true" type="tns:ArrayOfGroupWS" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="WSOrganization" nillable="true" type="tns:WSOrganization" />
+      <xs:complexType name="ArrayOfWSOrganization">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="WSOrganization" nillable="true" type="tns:WSOrganization" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfWSOrganization" nillable="true" type="tns:ArrayOfWSOrganization" />
+      <xs:complexType name="ArrayOfGroupWS">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="GroupWS" nillable="true" type="tns:GroupWS" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfGroupWS" nillable="true" type="tns:ArrayOfGroupWS" />
+      <xs:complexType name="GroupWS">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="GroupCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="GroupName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsSubscriptionPublic" type="xs:int" />
+          <xs:element minOccurs="0" name="StackOrder" type="xs:int" />
+          <xs:element minOccurs="0" name="CommunicationCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Keyword" nillable="true" type="tns:ArrayOfKeywordWS" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="GroupWS" nillable="true" type="tns:GroupWS" />
+      <xs:complexType name="ArrayOfKeywordWS">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="KeywordWS" nillable="true" type="tns:KeywordWS" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfKeywordWS" nillable="true" type="tns:ArrayOfKeywordWS" />
+      <xs:complexType name="KeywordWS">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="KeywordCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="KeyWordName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="KeywordNote" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="KeywordResponse" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CallbackURL" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="App_Identifier" type="xs:int" />
+          <xs:element minOccurs="0" name="SubscribedResponse" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Active" type="xs:int" />
+          <xs:element minOccurs="0" name="KeywordTypeID" type="xs:int" />
+          <xs:element minOccurs="0" name="KeywordType" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="IsAutoSubscribe" type="xs:int" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="KeywordWS" nillable="true" type="tns:KeywordWS" />
+      <xs:complexType name="WSVerificationTypeResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ErrorCode" type="xs:int" />
+          <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Result" type="xs:boolean" />
+          <xs:element minOccurs="0" name="VerficationType" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="WSVerificationTypeResponse" nillable="true" type="tns:WSVerificationTypeResponse" />
+      <xs:complexType name="WSReversePhoneResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ResponseCode" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Result" type="xs:boolean">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Response" nillable="true" type="tns:WSReversePhoneOwner">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="WSReversePhoneResponse" nillable="true" type="tns:WSReversePhoneResponse" />
+      <xs:complexType name="WSReversePhoneOwner">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="id" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="phone_number" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="is_valid" nillable="true" type="xs:boolean">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="country_calling_code" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="line_type" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="carrier" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="is_prepaid" nillable="true" type="xs:boolean">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="is_commercial" nillable="true" type="xs:boolean">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="belongs_to" nillable="true" type="tns:ArrayOfWSResversePhoneOwnerName">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="current_addresses" nillable="true" type="tns:ArrayOfWSReversePhoneOwnerAddress">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="historical_addresses" nillable="true" type="tns:ArrayOfWSReversePhoneOwnerAddress">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="associated_people" nillable="true" type="tns:ArrayOfWSReversePhoneAssociatedPeople">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="alternate_phones" nillable="true" type="q1:ArrayOfstring">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="error" nillable="true" type="tns:ErrorDetails">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="warnings" nillable="true" type="q2:ArrayOfstring">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="WSReversePhoneOwner" nillable="true" type="tns:WSReversePhoneOwner" />
+      <xs:complexType name="ArrayOfWSResversePhoneOwnerName">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="WSResversePhoneOwnerName" nillable="true" type="tns:WSResversePhoneOwnerName" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfWSResversePhoneOwnerName" nillable="true" type="tns:ArrayOfWSResversePhoneOwnerName" />
+      <xs:complexType name="WSResversePhoneOwnerName">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="name" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="firstname" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="middlename" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="lastname" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="age_range" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="type" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="link_to_phone_start_date" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="WSResversePhoneOwnerName" nillable="true" type="tns:WSResversePhoneOwnerName" />
+      <xs:complexType name="ArrayOfWSReversePhoneOwnerAddress">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="WSReversePhoneOwnerAddress" nillable="true" type="tns:WSReversePhoneOwnerAddress" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfWSReversePhoneOwnerAddress" nillable="true" type="tns:ArrayOfWSReversePhoneOwnerAddress" />
+      <xs:complexType name="WSReversePhoneOwnerAddress">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="location_type" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="street_line_1" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="street_line_2" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="city" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="postal_code" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="zip4" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="state_code" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="country_code" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="lat_long" nillable="true" type="tns:WSReversePhoneLocation">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="is_active" nillable="true" type="xs:boolean">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="delivery_point" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="link_to_person_start_date" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="WSReversePhoneOwnerAddress" nillable="true" type="tns:WSReversePhoneOwnerAddress" />
+      <xs:complexType name="WSReversePhoneLocation">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="latitude" nillable="true" type="xs:decimal">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="longitude" nillable="true" type="xs:decimal">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="accuracy" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="WSReversePhoneLocation" nillable="true" type="tns:WSReversePhoneLocation" />
+      <xs:complexType name="ArrayOfWSReversePhoneAssociatedPeople">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="WSReversePhoneAssociatedPeople" nillable="true" type="tns:WSReversePhoneAssociatedPeople" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfWSReversePhoneAssociatedPeople" nillable="true" type="tns:ArrayOfWSReversePhoneAssociatedPeople" />
+      <xs:complexType name="WSReversePhoneAssociatedPeople">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="id" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="name" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="relation" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="WSReversePhoneAssociatedPeople" nillable="true" type="tns:WSReversePhoneAssociatedPeople" />
+      <xs:complexType name="ErrorDetails">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="name" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="message" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ErrorDetails" nillable="true" type="tns:ErrorDetails" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="IGroup_GetCellularCarrier_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCellularCarrier" />
+  </wsdl:message>
+  <wsdl:message name="IGroup_GetCellularCarrier_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCellularCarrierResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGroup_GetCarrierLookup_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCarrierLookup" />
+  </wsdl:message>
+  <wsdl:message name="IGroup_GetCarrierLookup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCarrierLookupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGroup_GetOrgTree_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrgTree" />
+  </wsdl:message>
+  <wsdl:message name="IGroup_GetOrgTree_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrgTreeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGroup_ReadVerificationType_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReadVerificationType" />
+  </wsdl:message>
+  <wsdl:message name="IGroup_ReadVerificationType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReadVerificationTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGroup_ReversePhoneLookup_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReversePhoneLookup" />
+  </wsdl:message>
+  <wsdl:message name="IGroup_ReversePhoneLookup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReversePhoneLookupResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IGroup">
+    <wsdl:operation name="GetCellularCarrier">
+      <wsdl:input wsaw:Action="http://SBTService/ServiceContracts/IGroup/GetCellularCarrier" message="tns:IGroup_GetCellularCarrier_InputMessage" />
+      <wsdl:output wsaw:Action="http://SBTService/ServiceContracts/IGroup/GetCellularCarrierResponse" message="tns:IGroup_GetCellularCarrier_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCarrierLookup">
+      <wsdl:input wsaw:Action="http://SBTService/ServiceContracts/IGroup/GetCarrierLookup" message="tns:IGroup_GetCarrierLookup_InputMessage" />
+      <wsdl:output wsaw:Action="http://SBTService/ServiceContracts/IGroup/GetCarrierLookupResponse" message="tns:IGroup_GetCarrierLookup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrgTree">
+      <wsdl:input wsaw:Action="http://SBTService/ServiceContracts/IGroup/GetOrgTree" message="tns:IGroup_GetOrgTree_InputMessage" />
+      <wsdl:output wsaw:Action="http://SBTService/ServiceContracts/IGroup/GetOrgTreeResponse" message="tns:IGroup_GetOrgTree_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadVerificationType">
+      <wsdl:input wsaw:Action="http://SBTService/ServiceContracts/IGroup/ReadVerificationType" message="tns:IGroup_ReadVerificationType_InputMessage" />
+      <wsdl:output wsaw:Action="http://SBTService/ServiceContracts/IGroup/ReadVerificationTypeResponse" message="tns:IGroup_ReadVerificationType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReversePhoneLookup">
+      <wsdl:input wsaw:Action="http://SBTService/ServiceContracts/IGroup/ReversePhoneLookup" message="tns:IGroup_ReversePhoneLookup_InputMessage" />
+      <wsdl:output wsaw:Action="http://SBTService/ServiceContracts/IGroup/ReversePhoneLookupResponse" message="tns:IGroup_ReversePhoneLookup_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ReportWSServiceHttpEndpoint" type="tns:IGroup">
+    <wsp:PolicyReference URI="#ReportWSServiceHttpEndpoint_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetCellularCarrier">
+      <soap:operation soapAction="http://SBTService/ServiceContracts/IGroup/GetCellularCarrier" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCarrierLookup">
+      <soap:operation soapAction="http://SBTService/ServiceContracts/IGroup/GetCarrierLookup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrgTree">
+      <soap:operation soapAction="http://SBTService/ServiceContracts/IGroup/GetOrgTree" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadVerificationType">
+      <soap:operation soapAction="http://SBTService/ServiceContracts/IGroup/ReadVerificationType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReversePhoneLookup">
+      <soap:operation soapAction="http://SBTService/ServiceContracts/IGroup/ReversePhoneLookup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ReportWSServiceHttpEndpoint1" type="tns:IGroup">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetCellularCarrier">
+      <soap:operation soapAction="http://SBTService/ServiceContracts/IGroup/GetCellularCarrier" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCarrierLookup">
+      <soap:operation soapAction="http://SBTService/ServiceContracts/IGroup/GetCarrierLookup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrgTree">
+      <soap:operation soapAction="http://SBTService/ServiceContracts/IGroup/GetOrgTree" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadVerificationType">
+      <soap:operation soapAction="http://SBTService/ServiceContracts/IGroup/ReadVerificationType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReversePhoneLookup">
+      <soap:operation soapAction="http://SBTService/ServiceContracts/IGroup/ReversePhoneLookup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="GeneralWSService">
+    <wsdl:port name="ReportWSServiceHttpEndpoint" binding="tns:ReportWSServiceHttpEndpoint">
+      <soap:address location="https://ui.solutionsbytext.com/SBT.App.SetUp/WSServices/GeneralWSService.svc" />
+    </wsdl:port>
+    <wsdl:port name="ReportWSServiceHttpEndpoint1" binding="tns:ReportWSServiceHttpEndpoint1">
+      <soap:address location="http://ui.solutionsbytext.com/SBT.App.SetUp/WSServices/GeneralWSService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

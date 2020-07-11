@@ -1,0 +1,2348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://SBTService/ServiceContracts/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ReportWSService" targetNamespace="http://SBTService/ServiceContracts/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="ReportWSServiceHttpEndpoint_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Strict />
+              </wsp:Policy>
+            </sp:Layout>
+          </wsp:Policy>
+        </sp:TransportBinding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://SBTService/ServiceContracts/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://SBTAPIService/DataContract/" />
+      <xs:element name="InboundMessages">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="securityToken" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="orgCode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="fromDate" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="toDate" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="InboundMessagesResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q1="http://SBTAPIService/DataContract/" minOccurs="0" name="InboundMessagesResult" nillable="true" type="q1:WSReportInboundMessagesResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ArchiveInboundMessages">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="securityToken" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="orgCode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="fromDate" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="toDate" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ArchiveInboundMessagesResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q2="http://SBTAPIService/DataContract/" minOccurs="0" name="ArchiveInboundMessagesResult" nillable="true" type="q2:WSReportArchiveInboundMessageResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="MessagesSent">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="securityToken" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="orgCode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="fromDate" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="toDate" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="note" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="MessagesSentResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q3="http://SBTAPIService/DataContract/" minOccurs="0" name="MessagesSentResult" nillable="true" type="q3:WSReportSentMessagesResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="MessagesSentbyType">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="securityToken" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="orgCode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="fromDate" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="toDate" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="content_type" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="note" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="MessagesSentbyTypeResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q4="http://SBTAPIService/DataContract/" minOccurs="0" name="MessagesSentbyTypeResult" nillable="true" type="q4:WSReportSentMessagesResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ArchiveMessagesSent">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="securityToken" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="orgCode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="fromDate" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="toDate" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="note" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ArchiveMessagesSentResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q5="http://SBTAPIService/DataContract/" minOccurs="0" name="ArchiveMessagesSentResult" nillable="true" type="q5:WSReportArchiveSentMessagesResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Subscribers">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="securityToken" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="orgCode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="fromDate" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="toDate" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="all" type="xs:boolean" />
+            <xs:element minOccurs="0" name="unique" type="xs:boolean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="SubscribersResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q6="http://SBTAPIService/DataContract/" minOccurs="0" name="SubscribersResult" nillable="true" type="q6:WSReportSubscribersResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="Keywords">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="securityToken" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="orgCode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="fromDate" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="toDate" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="KeywordsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q7="http://SBTAPIService/DataContract/" minOccurs="0" name="KeywordsResult" nillable="true" type="q7:WSReportKeywordsResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="MessageHistoryDetails">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="orgCode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="mobileno" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="fromDate" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="toDate" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="securityToken" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="MessageHistoryDetailsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q8="http://SBTAPIService/DataContract/" minOccurs="0" name="MessageHistoryDetailsResult" nillable="true" type="q8:WSReportMessageHistoryDetails" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="InboundMessagesbyType">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="securityToken" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="orgCode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="fromDate" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="toDate" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="content_type" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="InboundMessagesbyTypeResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q9="http://SBTAPIService/DataContract/" minOccurs="0" name="InboundMessagesbyTypeResult" nillable="true" type="q9:WSReportInboundMsgTypeResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetDeactivationNumbers">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="securityToken" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="orgCode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="fromDate" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="toDate" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="status" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetDeactivationNumbersResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q10="http://SBTAPIService/DataContract/" minOccurs="0" name="GetDeactivationNumbersResult" nillable="true" type="q10:WSReportDeactResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReversePhoneLookUpDetails">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="securityToken" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="orgCode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="fromDate" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="toDate" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ReversePhoneLookUpDetailsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q11="http://SBTAPIService/DataContract/" minOccurs="0" name="ReversePhoneLookUpDetailsResult" nillable="true" type="q11:WSReportReversePhoneLookUpResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetCarrierLookUpDetails">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="securityToken" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="orgCode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="fromDate" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="toDate" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="lookup_Type" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetCarrierLookUpDetailsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q12="http://SBTAPIService/DataContract/" minOccurs="0" name="GetCarrierLookUpDetailsResult" nillable="true" type="q12:WSReportCarrierLookupResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetDeactivationDataLibrary">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="securityToken" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="orgCode" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="fromDate" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="toDate" nillable="true" type="xs:string" />
+            <xs:element minOccurs="0" name="mobilePhoneNo" nillable="true" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetDeactivationDataLibraryResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q13="http://SBTAPIService/DataContract/" minOccurs="0" name="GetDeactivationDataLibraryResult" nillable="true" type="q13:WSDeactLibraryResponse" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="anyType" nillable="true" type="xs:anyType" />
+      <xs:element name="anyURI" nillable="true" type="xs:anyURI" />
+      <xs:element name="base64Binary" nillable="true" type="xs:base64Binary" />
+      <xs:element name="boolean" nillable="true" type="xs:boolean" />
+      <xs:element name="byte" nillable="true" type="xs:byte" />
+      <xs:element name="dateTime" nillable="true" type="xs:dateTime" />
+      <xs:element name="decimal" nillable="true" type="xs:decimal" />
+      <xs:element name="double" nillable="true" type="xs:double" />
+      <xs:element name="float" nillable="true" type="xs:float" />
+      <xs:element name="int" nillable="true" type="xs:int" />
+      <xs:element name="long" nillable="true" type="xs:long" />
+      <xs:element name="QName" nillable="true" type="xs:QName" />
+      <xs:element name="short" nillable="true" type="xs:short" />
+      <xs:element name="string" nillable="true" type="xs:string" />
+      <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte" />
+      <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt" />
+      <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong" />
+      <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort" />
+      <xs:element name="char" nillable="true" type="tns:char" />
+      <xs:simpleType name="char">
+        <xs:restriction base="xs:int" />
+      </xs:simpleType>
+      <xs:element name="duration" nillable="true" type="tns:duration" />
+      <xs:simpleType name="duration">
+        <xs:restriction base="xs:duration">
+          <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?" />
+          <xs:minInclusive value="-P10675199DT2H48M5.4775808S" />
+          <xs:maxInclusive value="P10675199DT2H48M5.4775807S" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="guid" nillable="true" type="tns:guid" />
+      <xs:simpleType name="guid">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}" />
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:attribute name="FactoryType" type="xs:QName" />
+      <xs:attribute name="Id" type="xs:ID" />
+      <xs:attribute name="Ref" type="xs:IDREF" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://SBTAPIService/DataContract/" elementFormDefault="qualified" targetNamespace="http://SBTAPIService/DataContract/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xs:complexType name="WSReportInboundMessagesResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Result" type="xs:boolean">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="ErrorCode" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Response" nillable="true" type="tns:ArrayOfWSReportInboundMessageRow">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="WSReportInboundMessagesResponse" nillable="true" type="tns:WSReportInboundMessagesResponse" />
+      <xs:complexType name="ArrayOfWSReportInboundMessageRow">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="WSReportInboundMessageRow" nillable="true" type="tns:WSReportInboundMessageRow" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfWSReportInboundMessageRow" nillable="true" type="tns:ArrayOfWSReportInboundMessageRow" />
+      <xs:complexType name="WSReportInboundMessageRow">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Group" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Phone" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="ModeOfCommunication" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="MessageCategory" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="MessageSubCategory" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="TimeStamp" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="UniqueID" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="TransactionTicket" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Note" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="WSReportInboundMessageRow" nillable="true" type="tns:WSReportInboundMessageRow" />
+      <xs:complexType name="WSReportArchiveInboundMessageResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Result" type="xs:boolean">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="ErrorCode" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Response" nillable="true" type="tns:ArrayOfWSReportArchiveInboundMessageRow">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="WSReportArchiveInboundMessageResponse" nillable="true" type="tns:WSReportArchiveInboundMessageResponse" />
+      <xs:complexType name="ArrayOfWSReportArchiveInboundMessageRow">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="WSReportArchiveInboundMessageRow" nillable="true" type="tns:WSReportArchiveInboundMessageRow" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfWSReportArchiveInboundMessageRow" nillable="true" type="tns:ArrayOfWSReportArchiveInboundMessageRow" />
+      <xs:complexType name="WSReportArchiveInboundMessageRow">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Group" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Phone" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="ModeOfCommunication" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="MessageCategory" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="MessageSubCategory" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="TimeStamp" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="UniqueID" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="WSReportArchiveInboundMessageRow" nillable="true" type="tns:WSReportArchiveInboundMessageRow" />
+      <xs:complexType name="WSReportSentMessagesResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Result" type="xs:boolean">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="ErrorCode" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Response" nillable="true" type="tns:ArrayOfWSReportSentMessageRow">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="WSReportSentMessagesResponse" nillable="true" type="tns:WSReportSentMessagesResponse" />
+      <xs:complexType name="ArrayOfWSReportSentMessageRow">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="WSReportSentMessageRow" nillable="true" type="tns:WSReportSentMessageRow" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfWSReportSentMessageRow" nillable="true" type="tns:ArrayOfWSReportSentMessageRow" />
+      <xs:complexType name="WSReportSentMessageRow">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Group" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Phone" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="ModeOfCommunication" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="MessageCategory" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="MessageSubCategory" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="TimeStamp" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Note" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="DeliveryStatus" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="DeliveryStatusID" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="UniqueID" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="TransactionTicket" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="TemplateID" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="OrgCode" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Remarks" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="WSReportSentMessageRow" nillable="true" type="tns:WSReportSentMessageRow" />
+      <xs:complexType name="WSReportArchiveSentMessagesResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Result" type="xs:boolean">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="ErrorCode" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Response" nillable="true" type="tns:ArrayOfWSReportArchiveSentMessageRow">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="WSReportArchiveSentMessagesResponse" nillable="true" type="tns:WSReportArchiveSentMessagesResponse" />
+      <xs:complexType name="ArrayOfWSReportArchiveSentMessageRow">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="WSReportArchiveSentMessageRow" nillable="true" type="tns:WSReportArchiveSentMessageRow" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfWSReportArchiveSentMessageRow" nillable="true" type="tns:ArrayOfWSReportArchiveSentMessageRow" />
+      <xs:complexType name="WSReportArchiveSentMessageRow">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Group" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Phone" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="ModeOfCommunication" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="MessageCategory" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="MessageSubCategory" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="TimeStamp" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Note" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="DeliveryStatus" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="DeliveryStatusID" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="UniqueID" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="WSReportArchiveSentMessageRow" nillable="true" type="tns:WSReportArchiveSentMessageRow" />
+      <xs:complexType name="WSReportSubscribersResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Result" type="xs:boolean">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="ErrorCode" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Response" nillable="true" type="tns:ArrayOfWSReportSubscriberRow">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="WSReportSubscribersResponse" nillable="true" type="tns:WSReportSubscribersResponse" />
+      <xs:complexType name="ArrayOfWSReportSubscriberRow">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="WSReportSubscriberRow" nillable="true" type="tns:WSReportSubscriberRow" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfWSReportSubscriberRow" nillable="true" type="tns:ArrayOfWSReportSubscriberRow" />
+      <xs:complexType name="WSReportSubscriberRow">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Carrier" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CarrierID" type="xs:int" />
+          <xs:element minOccurs="0" name="Email_x0020_" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="FirstName_x0020_" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Group" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Landline" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OptinDate" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OptinMethod" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="OptOutDate" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Phone" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CustomField1" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CustomField2" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="CustomField3" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="PrivateCode" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="UniqueID" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="WSReportSubscriberRow" nillable="true" type="tns:WSReportSubscriberRow" />
+      <xs:complexType name="WSReportKeywordsResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Result" type="xs:boolean">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="ErrorCode" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Response" nillable="true" type="tns:ArrayOfWSReportKeywordRow">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="WSReportKeywordsResponse" nillable="true" type="tns:WSReportKeywordsResponse" />
+      <xs:complexType name="ArrayOfWSReportKeywordRow">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="WSReportKeywordRow" nillable="true" type="tns:WSReportKeywordRow" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfWSReportKeywordRow" nillable="true" type="tns:ArrayOfWSReportKeywordRow" />
+      <xs:complexType name="WSReportKeywordRow">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="AutoSubscribe" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="CallbackUrl" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Group" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="KeywordType" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Notifications" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Response" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="SubscribedResponse" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Timestamp" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Word" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="TotalNoOfRequests" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="WSReportKeywordRow" nillable="true" type="tns:WSReportKeywordRow" />
+      <xs:complexType name="WSReportMessageHistoryDetails">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Result" type="xs:boolean">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="ErrorCode" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Response" nillable="true" type="tns:ArrayOfWSReportMessageHistoryRow">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="WSReportMessageHistoryDetails" nillable="true" type="tns:WSReportMessageHistoryDetails" />
+      <xs:complexType name="ArrayOfWSReportMessageHistoryRow">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="WSReportMessageHistoryRow" nillable="true" type="tns:WSReportMessageHistoryRow" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfWSReportMessageHistoryRow" nillable="true" type="tns:ArrayOfWSReportMessageHistoryRow" />
+      <xs:complexType name="WSReportMessageHistoryRow">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Group" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="CommCode" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="SenderReceiver" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Remarks" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="MessageCategory" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="MessageSubCategory" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="ProcessDateTime" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="WSReportMessageHistoryRow" nillable="true" type="tns:WSReportMessageHistoryRow" />
+      <xs:complexType name="WSReportInboundMsgTypeResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Result" type="xs:boolean">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="ErrorCode" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Response" nillable="true" type="tns:ArrayOfWSReportInboundMessageTypeRow">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="WSReportInboundMsgTypeResponse" nillable="true" type="tns:WSReportInboundMsgTypeResponse" />
+      <xs:complexType name="ArrayOfWSReportInboundMessageTypeRow">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="WSReportInboundMessageTypeRow" nillable="true" type="tns:WSReportInboundMessageTypeRow" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfWSReportInboundMessageTypeRow" nillable="true" type="tns:ArrayOfWSReportInboundMessageTypeRow" />
+      <xs:complexType name="WSReportInboundMessageTypeRow">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Code" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Group" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="GroupCode" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Phone" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="TimeStamp" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="ContentType" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Note" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="UniqueID" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="TransactionTicket" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="WSReportInboundMessageTypeRow" nillable="true" type="tns:WSReportInboundMessageTypeRow" />
+      <xs:complexType name="WSReportDeactResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Result" type="xs:boolean">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="ErrorCode" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Response" nillable="true" type="tns:ArrayOfWSReportDeactResponseRow">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="WSReportDeactResponse" nillable="true" type="tns:WSReportDeactResponse" />
+      <xs:complexType name="ArrayOfWSReportDeactResponseRow">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="WSReportDeactResponseRow" nillable="true" type="tns:WSReportDeactResponseRow" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfWSReportDeactResponseRow" nillable="true" type="tns:ArrayOfWSReportDeactResponseRow" />
+      <xs:complexType name="WSReportDeactResponseRow">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Group" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="GroupCode" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="MobilePhoneNo" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Carrier" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="NewCarrier" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="DeactivationDate" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="CreatedOn" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="UniqueID" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="WSReportDeactResponseRow" nillable="true" type="tns:WSReportDeactResponseRow" />
+      <xs:complexType name="WSReportReversePhoneLookUpResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Result" type="xs:boolean">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="ErrorCode" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Response" nillable="true" type="tns:ArrayOfWSReportReversePhoneLookUpRow">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="WSReportReversePhoneLookUpResponse" nillable="true" type="tns:WSReportReversePhoneLookUpResponse" />
+      <xs:complexType name="ArrayOfWSReportReversePhoneLookUpRow">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="WSReportReversePhoneLookUpRow" nillable="true" type="tns:WSReportReversePhoneLookUpRow" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfWSReportReversePhoneLookUpRow" nillable="true" type="tns:ArrayOfWSReportReversePhoneLookUpRow" />
+      <xs:complexType name="WSReportReversePhoneLookUpRow">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="OrgTreeStructure" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="OrgCode" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="OrgName" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Phone" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="PhoneOwner" nillable="true" type="tns:WSReversePhoneOwner">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="DateTime" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="WSReportReversePhoneLookUpRow" nillable="true" type="tns:WSReportReversePhoneLookUpRow" />
+      <xs:complexType name="WSReversePhoneOwner">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="id" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="phone_number" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="is_valid" nillable="true" type="xs:boolean">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="country_calling_code" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="line_type" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="carrier" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="is_prepaid" nillable="true" type="xs:boolean">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="is_commercial" nillable="true" type="xs:boolean">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="belongs_to" nillable="true" type="tns:ArrayOfWSResversePhoneOwnerName">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="current_addresses" nillable="true" type="tns:ArrayOfWSReversePhoneOwnerAddress">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="historical_addresses" nillable="true" type="tns:ArrayOfWSReversePhoneOwnerAddress">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="associated_people" nillable="true" type="tns:ArrayOfWSReversePhoneAssociatedPeople">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="alternate_phones" nillable="true" type="q1:ArrayOfstring">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="error" nillable="true" type="tns:ErrorDetails">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="warnings" nillable="true" type="q2:ArrayOfstring">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="WSReversePhoneOwner" nillable="true" type="tns:WSReversePhoneOwner" />
+      <xs:complexType name="ArrayOfWSResversePhoneOwnerName">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="WSResversePhoneOwnerName" nillable="true" type="tns:WSResversePhoneOwnerName" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfWSResversePhoneOwnerName" nillable="true" type="tns:ArrayOfWSResversePhoneOwnerName" />
+      <xs:complexType name="WSResversePhoneOwnerName">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="name" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="firstname" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="middlename" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="lastname" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="age_range" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="type" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="link_to_phone_start_date" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="WSResversePhoneOwnerName" nillable="true" type="tns:WSResversePhoneOwnerName" />
+      <xs:complexType name="ArrayOfWSReversePhoneOwnerAddress">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="WSReversePhoneOwnerAddress" nillable="true" type="tns:WSReversePhoneOwnerAddress" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfWSReversePhoneOwnerAddress" nillable="true" type="tns:ArrayOfWSReversePhoneOwnerAddress" />
+      <xs:complexType name="WSReversePhoneOwnerAddress">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="location_type" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="street_line_1" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="street_line_2" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="city" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="postal_code" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="zip4" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="state_code" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="country_code" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="lat_long" nillable="true" type="tns:WSReversePhoneLocation">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="is_active" nillable="true" type="xs:boolean">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="delivery_point" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="link_to_person_start_date" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="WSReversePhoneOwnerAddress" nillable="true" type="tns:WSReversePhoneOwnerAddress" />
+      <xs:complexType name="WSReversePhoneLocation">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="latitude" nillable="true" type="xs:decimal">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="longitude" nillable="true" type="xs:decimal">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="accuracy" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="WSReversePhoneLocation" nillable="true" type="tns:WSReversePhoneLocation" />
+      <xs:complexType name="ArrayOfWSReversePhoneAssociatedPeople">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="WSReversePhoneAssociatedPeople" nillable="true" type="tns:WSReversePhoneAssociatedPeople" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfWSReversePhoneAssociatedPeople" nillable="true" type="tns:ArrayOfWSReversePhoneAssociatedPeople" />
+      <xs:complexType name="WSReversePhoneAssociatedPeople">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="id" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="name" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="relation" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="WSReversePhoneAssociatedPeople" nillable="true" type="tns:WSReversePhoneAssociatedPeople" />
+      <xs:complexType name="ErrorDetails">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="name" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="message" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ErrorDetails" nillable="true" type="tns:ErrorDetails" />
+      <xs:complexType name="WSReportCarrierLookupResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Result" type="xs:boolean">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="ErrorCode" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Response" nillable="true" type="tns:ArrayOfWSReportCarrierLookupRow">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="WSReportCarrierLookupResponse" nillable="true" type="tns:WSReportCarrierLookupResponse" />
+      <xs:complexType name="ArrayOfWSReportCarrierLookupRow">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="WSReportCarrierLookupRow" nillable="true" type="tns:WSReportCarrierLookupRow" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfWSReportCarrierLookupRow" nillable="true" type="tns:ArrayOfWSReportCarrierLookupRow" />
+      <xs:complexType name="WSReportCarrierLookupRow">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Group" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="SubscriberNo" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Carrier" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Result" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Source" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="DateTime" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="WSReportCarrierLookupRow" nillable="true" type="tns:WSReportCarrierLookupRow" />
+      <xs:complexType name="WSDeactLibraryResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Result" type="xs:boolean">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="ErrorCode" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Response" nillable="true" type="tns:ArrayOfResponse">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="WSDeactLibraryResponse" nillable="true" type="tns:WSDeactLibraryResponse" />
+      <xs:complexType name="ArrayOfResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="Response" nillable="true" type="tns:Response" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfResponse" nillable="true" type="tns:ArrayOfResponse" />
+      <xs:complexType name="Response">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MobilePhoneNo" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Carrier" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="NewCarrier" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Status" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="DeactivationDate" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="CreatedOn" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Response" nillable="true" type="tns:Response" />
+    </xs:schema>
+    <xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/Arrays" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="ArrayOfstring">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfstring" nillable="true" type="tns:ArrayOfstring" />
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="IReport_InboundMessages_InputMessage">
+    <wsdl:part name="parameters" element="tns:InboundMessages" />
+  </wsdl:message>
+  <wsdl:message name="IReport_InboundMessages_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InboundMessagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReport_ArchiveInboundMessages_InputMessage">
+    <wsdl:part name="parameters" element="tns:ArchiveInboundMessages" />
+  </wsdl:message>
+  <wsdl:message name="IReport_ArchiveInboundMessages_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ArchiveInboundMessagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReport_MessagesSent_InputMessage">
+    <wsdl:part name="parameters" element="tns:MessagesSent" />
+  </wsdl:message>
+  <wsdl:message name="IReport_MessagesSent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MessagesSentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReport_MessagesSentbyType_InputMessage">
+    <wsdl:part name="parameters" element="tns:MessagesSentbyType" />
+  </wsdl:message>
+  <wsdl:message name="IReport_MessagesSentbyType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MessagesSentbyTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReport_ArchiveMessagesSent_InputMessage">
+    <wsdl:part name="parameters" element="tns:ArchiveMessagesSent" />
+  </wsdl:message>
+  <wsdl:message name="IReport_ArchiveMessagesSent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ArchiveMessagesSentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReport_Subscribers_InputMessage">
+    <wsdl:part name="parameters" element="tns:Subscribers" />
+  </wsdl:message>
+  <wsdl:message name="IReport_Subscribers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SubscribersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReport_Keywords_InputMessage">
+    <wsdl:part name="parameters" element="tns:Keywords" />
+  </wsdl:message>
+  <wsdl:message name="IReport_Keywords_OutputMessage">
+    <wsdl:part name="parameters" element="tns:KeywordsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReport_MessageHistoryDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:MessageHistoryDetails" />
+  </wsdl:message>
+  <wsdl:message name="IReport_MessageHistoryDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:MessageHistoryDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReport_InboundMessagesbyType_InputMessage">
+    <wsdl:part name="parameters" element="tns:InboundMessagesbyType" />
+  </wsdl:message>
+  <wsdl:message name="IReport_InboundMessagesbyType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InboundMessagesbyTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReport_GetDeactivationNumbers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeactivationNumbers" />
+  </wsdl:message>
+  <wsdl:message name="IReport_GetDeactivationNumbers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeactivationNumbersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReport_ReversePhoneLookUpDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReversePhoneLookUpDetails" />
+  </wsdl:message>
+  <wsdl:message name="IReport_ReversePhoneLookUpDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReversePhoneLookUpDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReport_GetCarrierLookUpDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCarrierLookUpDetails" />
+  </wsdl:message>
+  <wsdl:message name="IReport_GetCarrierLookUpDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCarrierLookUpDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IReport_GetDeactivationDataLibrary_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeactivationDataLibrary" />
+  </wsdl:message>
+  <wsdl:message name="IReport_GetDeactivationDataLibrary_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeactivationDataLibraryResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IReport">
+    <wsdl:operation name="InboundMessages">
+      <wsdl:input wsaw:Action="http://SBTService/ServiceContracts/IReport/InboundMessages" message="tns:IReport_InboundMessages_InputMessage" />
+      <wsdl:output wsaw:Action="http://SBTService/ServiceContracts/IReport/InboundMessagesResponse" message="tns:IReport_InboundMessages_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ArchiveInboundMessages">
+      <wsdl:input wsaw:Action="http://SBTService/ServiceContracts/IReport/ArchiveInboundMessages" message="tns:IReport_ArchiveInboundMessages_InputMessage" />
+      <wsdl:output wsaw:Action="http://SBTService/ServiceContracts/IReport/ArchiveInboundMessagesResponse" message="tns:IReport_ArchiveInboundMessages_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MessagesSent">
+      <wsdl:input wsaw:Action="http://SBTService/ServiceContracts/IReport/MessagesSent" message="tns:IReport_MessagesSent_InputMessage" />
+      <wsdl:output wsaw:Action="http://SBTService/ServiceContracts/IReport/MessagesSentResponse" message="tns:IReport_MessagesSent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MessagesSentbyType">
+      <wsdl:input wsaw:Action="http://SBTService/ServiceContracts/IReport/MessagesSentbyType" message="tns:IReport_MessagesSentbyType_InputMessage" />
+      <wsdl:output wsaw:Action="http://SBTService/ServiceContracts/IReport/MessagesSentbyTypeResponse" message="tns:IReport_MessagesSentbyType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ArchiveMessagesSent">
+      <wsdl:input wsaw:Action="http://SBTService/ServiceContracts/IReport/ArchiveMessagesSent" message="tns:IReport_ArchiveMessagesSent_InputMessage" />
+      <wsdl:output wsaw:Action="http://SBTService/ServiceContracts/IReport/ArchiveMessagesSentResponse" message="tns:IReport_ArchiveMessagesSent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Subscribers">
+      <wsdl:input wsaw:Action="http://SBTService/ServiceContracts/IReport/Subscribers" message="tns:IReport_Subscribers_InputMessage" />
+      <wsdl:output wsaw:Action="http://SBTService/ServiceContracts/IReport/SubscribersResponse" message="tns:IReport_Subscribers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Keywords">
+      <wsdl:input wsaw:Action="http://SBTService/ServiceContracts/IReport/Keywords" message="tns:IReport_Keywords_InputMessage" />
+      <wsdl:output wsaw:Action="http://SBTService/ServiceContracts/IReport/KeywordsResponse" message="tns:IReport_Keywords_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="MessageHistoryDetails">
+      <wsdl:input wsaw:Action="http://SBTService/ServiceContracts/IReport/MessageHistoryDetails" message="tns:IReport_MessageHistoryDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://SBTService/ServiceContracts/IReport/MessageHistoryDetailsResponse" message="tns:IReport_MessageHistoryDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InboundMessagesbyType">
+      <wsdl:input wsaw:Action="http://SBTService/ServiceContracts/IReport/InboundMessagesbyType" message="tns:IReport_InboundMessagesbyType_InputMessage" />
+      <wsdl:output wsaw:Action="http://SBTService/ServiceContracts/IReport/InboundMessagesbyTypeResponse" message="tns:IReport_InboundMessagesbyType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDeactivationNumbers">
+      <wsdl:input wsaw:Action="http://SBTService/ServiceContracts/IReport/GetDeactivationNumbers" message="tns:IReport_GetDeactivationNumbers_InputMessage" />
+      <wsdl:output wsaw:Action="http://SBTService/ServiceContracts/IReport/GetDeactivationNumbersResponse" message="tns:IReport_GetDeactivationNumbers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReversePhoneLookUpDetails">
+      <wsdl:input wsaw:Action="http://SBTService/ServiceContracts/IReport/ReversePhoneLookUpDetails" message="tns:IReport_ReversePhoneLookUpDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://SBTService/ServiceContracts/IReport/ReversePhoneLookUpDetailsResponse" message="tns:IReport_ReversePhoneLookUpDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCarrierLookUpDetails">
+      <wsdl:input wsaw:Action="http://SBTService/ServiceContracts/IReport/GetCarrierLookUpDetails" message="tns:IReport_GetCarrierLookUpDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://SBTService/ServiceContracts/IReport/GetCarrierLookUpDetailsResponse" message="tns:IReport_GetCarrierLookUpDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDeactivationDataLibrary">
+      <wsdl:input wsaw:Action="http://SBTService/ServiceContracts/IReport/GetDeactivationDataLibrary" message="tns:IReport_GetDeactivationDataLibrary_InputMessage" />
+      <wsdl:output wsaw:Action="http://SBTService/ServiceContracts/IReport/GetDeactivationDataLibraryResponse" message="tns:IReport_GetDeactivationDataLibrary_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ReportWSServiceHttpEndpoint" type="tns:IReport">
+    <wsp:PolicyReference URI="#ReportWSServiceHttpEndpoint_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="InboundMessages">
+      <soap:operation soapAction="http://SBTService/ServiceContracts/IReport/InboundMessages" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ArchiveInboundMessages">
+      <soap:operation soapAction="http://SBTService/ServiceContracts/IReport/ArchiveInboundMessages" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MessagesSent">
+      <soap:operation soapAction="http://SBTService/ServiceContracts/IReport/MessagesSent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MessagesSentbyType">
+      <soap:operation soapAction="http://SBTService/ServiceContracts/IReport/MessagesSentbyType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ArchiveMessagesSent">
+      <soap:operation soapAction="http://SBTService/ServiceContracts/IReport/ArchiveMessagesSent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Subscribers">
+      <soap:operation soapAction="http://SBTService/ServiceContracts/IReport/Subscribers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Keywords">
+      <soap:operation soapAction="http://SBTService/ServiceContracts/IReport/Keywords" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MessageHistoryDetails">
+      <soap:operation soapAction="http://SBTService/ServiceContracts/IReport/MessageHistoryDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InboundMessagesbyType">
+      <soap:operation soapAction="http://SBTService/ServiceContracts/IReport/InboundMessagesbyType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeactivationNumbers">
+      <soap:operation soapAction="http://SBTService/ServiceContracts/IReport/GetDeactivationNumbers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReversePhoneLookUpDetails">
+      <soap:operation soapAction="http://SBTService/ServiceContracts/IReport/ReversePhoneLookUpDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCarrierLookUpDetails">
+      <soap:operation soapAction="http://SBTService/ServiceContracts/IReport/GetCarrierLookUpDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeactivationDataLibrary">
+      <soap:operation soapAction="http://SBTService/ServiceContracts/IReport/GetDeactivationDataLibrary" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ReportWSServiceHttpEndpoint1" type="tns:IReport">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="InboundMessages">
+      <soap:operation soapAction="http://SBTService/ServiceContracts/IReport/InboundMessages" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ArchiveInboundMessages">
+      <soap:operation soapAction="http://SBTService/ServiceContracts/IReport/ArchiveInboundMessages" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MessagesSent">
+      <soap:operation soapAction="http://SBTService/ServiceContracts/IReport/MessagesSent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MessagesSentbyType">
+      <soap:operation soapAction="http://SBTService/ServiceContracts/IReport/MessagesSentbyType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ArchiveMessagesSent">
+      <soap:operation soapAction="http://SBTService/ServiceContracts/IReport/ArchiveMessagesSent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Subscribers">
+      <soap:operation soapAction="http://SBTService/ServiceContracts/IReport/Subscribers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Keywords">
+      <soap:operation soapAction="http://SBTService/ServiceContracts/IReport/Keywords" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MessageHistoryDetails">
+      <soap:operation soapAction="http://SBTService/ServiceContracts/IReport/MessageHistoryDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InboundMessagesbyType">
+      <soap:operation soapAction="http://SBTService/ServiceContracts/IReport/InboundMessagesbyType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeactivationNumbers">
+      <soap:operation soapAction="http://SBTService/ServiceContracts/IReport/GetDeactivationNumbers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReversePhoneLookUpDetails">
+      <soap:operation soapAction="http://SBTService/ServiceContracts/IReport/ReversePhoneLookUpDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCarrierLookUpDetails">
+      <soap:operation soapAction="http://SBTService/ServiceContracts/IReport/GetCarrierLookUpDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeactivationDataLibrary">
+      <soap:operation soapAction="http://SBTService/ServiceContracts/IReport/GetDeactivationDataLibrary" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ReportWSService">
+    <wsdl:port name="ReportWSServiceHttpEndpoint" binding="tns:ReportWSServiceHttpEndpoint">
+      <soap:address location="https://ui.solutionsbytext.com/SBT.App.SetUp/wsservices/ReportWSService.svc" />
+    </wsdl:port>
+    <wsdl:port name="ReportWSServiceHttpEndpoint1" binding="tns:ReportWSServiceHttpEndpoint1">
+      <soap:address location="http://ui.solutionsbytext.com/SBT.App.SetUp/wsservices/ReportWSService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
