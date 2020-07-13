@@ -749,6 +749,13 @@ namespace IAC2018SQL
             if (iACDataSet.CUSTOMER.Rows.Count > 0)
             {
                 gsVBTPin = "";
+                // Moses Newman 07/10/2020 Data Source for new TSB Payment Ratings Dropdown.
+                PaymentRatingsTableAdapter.Fill(PmtData.PaymentRatings);
+                PaymentRatingsbindingSource.DataSource = PmtData.PaymentRatings;
+                comboBoxTSBPaymentRating.DataSource = PaymentRatingsbindingSource;
+                comboBoxTSBPaymentRating.DisplayMember = "Description";
+                comboBoxTSBPaymentRating.ValueMember = "PaymentRating";
+
                 // Moses Newman 12/9/2013 preselect Credit Score Drop Down Choice and Repo Drop Down Choice if he coresponding customer record fields are valid.
                 Int32 CreditIndex = creditCodesBindingSource.Find("Code", iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_CREDIT_SCORE_A")),
                         RepoIndex = repoCodesBindingSource.Find("Code", iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_REPO_CDE")),
