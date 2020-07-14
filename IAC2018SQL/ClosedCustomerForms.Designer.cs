@@ -210,27 +210,27 @@
             System.Windows.Forms.Label label131;
             System.Windows.Forms.Label labelDealerEmail;
             System.Windows.Forms.Label labelFudingDate;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCustMaint));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle45 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle46 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle47 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle48 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle49 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle50 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle51 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle52 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle53 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle54 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle55 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle56 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle57 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle58 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle59 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle60 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cUSTOMERBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.iACDataSet = new IAC2018SQL.IACDataSet();
             this.tabComments = new System.Windows.Forms.TabPage();
@@ -419,6 +419,7 @@
             this.textBoxIACType = new System.Windows.Forms.TextBox();
             this.textBox14 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.comboBoxTSBPaymentRating = new System.Windows.Forms.ComboBox();
             this.textBoxDealerCashPrice = new System.Windows.Forms.TextBox();
             this.MaturityDate = new ProManApp.NullableDateTimePicker();
             this.checkBoxTSBOverride = new System.Windows.Forms.CheckBox();
@@ -667,7 +668,6 @@
             this.genCodesTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.GenCodesTableAdapter();
             this.customerFeesTableAdapter1 = new IAC2018SQL.IACDataSetTableAdapters.CustomerFeesTableAdapter();
             this.repoLogTableAdapter1 = new IAC2018SQL.RepoDataSetTableAdapters.RepoLogTableAdapter();
-            this.comboBoxTSBPaymentRating = new System.Windows.Forms.ComboBox();
             this.paymentDataSet = new IAC2018SQL.PaymentDataSet();
             this.paymentDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             label11 = new System.Windows.Forms.Label();
@@ -2867,10 +2867,10 @@
             // Date
             // 
             this.Date.DataPropertyName = "COMMENT_DATE";
-            dataGridViewCellStyle41.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle41.Format = "d";
-            dataGridViewCellStyle41.NullValue = null;
-            this.Date.DefaultCellStyle = dataGridViewCellStyle41;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle1.Format = "d";
+            dataGridViewCellStyle1.NullValue = null;
+            this.Date.DefaultCellStyle = dataGridViewCellStyle1;
             this.Date.HeaderText = "DATE";
             this.Date.Name = "Date";
             this.Date.ReadOnly = true;
@@ -2902,9 +2902,9 @@
             // 
             this.Type.DataPropertyName = "COMMENT_TYPE";
             this.Type.DataSource = this.commentTypesBindingSource;
-            dataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle42.Format = "N0";
-            this.Type.DefaultCellStyle = dataGridViewCellStyle42;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.Format = "N0";
+            this.Type.DefaultCellStyle = dataGridViewCellStyle2;
             this.Type.DisplayMember = "ListItems";
             this.Type.DropDownWidth = 200;
             this.Type.HeaderText = "TYPE";
@@ -2923,8 +2923,8 @@
             // USERID
             // 
             this.USERID.DataPropertyName = "COMMENT_USERID";
-            dataGridViewCellStyle43.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.USERID.DefaultCellStyle = dataGridViewCellStyle43;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.USERID.DefaultCellStyle = dataGridViewCellStyle3;
             this.USERID.HeaderText = "ID";
             this.USERID.MaxInputLength = 3;
             this.USERID.Name = "USERID";
@@ -2934,9 +2934,9 @@
             // Comment
             // 
             this.Comment.DataPropertyName = "COMMENT_WHOLE";
-            dataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle44.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Comment.DefaultCellStyle = dataGridViewCellStyle44;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Comment.DefaultCellStyle = dataGridViewCellStyle4;
             this.Comment.HeaderText = "COMMENT";
             this.Comment.MaxInputLength = 180;
             this.Comment.Name = "Comment";
@@ -3126,7 +3126,7 @@
             this.nullableDateTimePickerHistContractDate.Name = "nullableDateTimePickerHistContractDate";
             this.nullableDateTimePickerHistContractDate.Size = new System.Drawing.Size(107, 29);
             this.nullableDateTimePickerHistContractDate.TabIndex = 502;
-            this.nullableDateTimePickerHistContractDate.Value = new System.DateTime(2020, 7, 10, 0, 0, 0, 0);
+            this.nullableDateTimePickerHistContractDate.Value = new System.DateTime(2020, 7, 14, 0, 0, 0, 0);
             // 
             // textBoxBuyOutHist
             // 
@@ -3152,7 +3152,7 @@
             this.nullableDateTimePickerPayDate.Name = "nullableDateTimePickerPayDate";
             this.nullableDateTimePickerPayDate.Size = new System.Drawing.Size(107, 29);
             this.nullableDateTimePickerPayDate.TabIndex = 507;
-            this.nullableDateTimePickerPayDate.Value = new System.DateTime(2020, 7, 10, 0, 0, 0, 0);
+            this.nullableDateTimePickerPayDate.Value = new System.DateTime(2020, 7, 14, 0, 0, 0, 0);
             // 
             // textBox22
             // 
@@ -3177,7 +3177,7 @@
             this.nullableDateTimePickerFirstPayDate.Name = "nullableDateTimePickerFirstPayDate";
             this.nullableDateTimePickerFirstPayDate.Size = new System.Drawing.Size(107, 29);
             this.nullableDateTimePickerFirstPayDate.TabIndex = 510;
-            this.nullableDateTimePickerFirstPayDate.Value = new System.DateTime(2020, 7, 10, 0, 0, 0, 0);
+            this.nullableDateTimePickerFirstPayDate.Value = new System.DateTime(2020, 7, 14, 0, 0, 0, 0);
             // 
             // textBox1
             // 
@@ -3529,10 +3529,10 @@
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "CUSTHIST_PAY_DATE";
-            dataGridViewCellStyle45.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle45.Format = "d";
-            dataGridViewCellStyle45.NullValue = null;
-            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle45;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle5.Format = "d";
+            dataGridViewCellStyle5.NullValue = null;
+            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewTextBoxColumn4.HeaderText = "POST DATE";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
@@ -3550,10 +3550,10 @@
             // dataGridViewTextBoxColumn9
             // 
             this.dataGridViewTextBoxColumn9.DataPropertyName = "CUSTHIST_PAYMENT_RCV";
-            dataGridViewCellStyle46.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle46.Format = "C2";
-            dataGridViewCellStyle46.NullValue = null;
-            this.dataGridViewTextBoxColumn9.DefaultCellStyle = dataGridViewCellStyle46;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle6.Format = "C2";
+            dataGridViewCellStyle6.NullValue = null;
+            this.dataGridViewTextBoxColumn9.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridViewTextBoxColumn9.HeaderText = "PAYMENT AMOUNT";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             this.dataGridViewTextBoxColumn9.ReadOnly = true;
@@ -3561,10 +3561,10 @@
             // dataGridViewTextBoxColumn8
             // 
             this.dataGridViewTextBoxColumn8.DataPropertyName = "CUSTHIST_BALANCE";
-            dataGridViewCellStyle47.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle47.Format = "C2";
-            dataGridViewCellStyle47.NullValue = null;
-            this.dataGridViewTextBoxColumn8.DefaultCellStyle = dataGridViewCellStyle47;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle7.Format = "C2";
+            dataGridViewCellStyle7.NullValue = null;
+            this.dataGridViewTextBoxColumn8.DefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridViewTextBoxColumn8.HeaderText = "LOAN BALANCE";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             this.dataGridViewTextBoxColumn8.ReadOnly = true;
@@ -3572,10 +3572,10 @@
             // dataGridViewTextBoxColumn18
             // 
             this.dataGridViewTextBoxColumn18.DataPropertyName = "CUSTHIST_CONTRACT_STATUS";
-            dataGridViewCellStyle48.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle48.Format = "C2";
-            dataGridViewCellStyle48.NullValue = null;
-            this.dataGridViewTextBoxColumn18.DefaultCellStyle = dataGridViewCellStyle48;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle8.Format = "C2";
+            dataGridViewCellStyle8.NullValue = null;
+            this.dataGridViewTextBoxColumn18.DefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridViewTextBoxColumn18.HeaderText = "CONTRACT STATUS";
             this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
             this.dataGridViewTextBoxColumn18.ReadOnly = true;
@@ -3583,10 +3583,10 @@
             // dataGridViewTextBoxColumn13
             // 
             this.dataGridViewTextBoxColumn13.DataPropertyName = "CUSTHIST_LATE_CHARGE_BAL";
-            dataGridViewCellStyle49.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle49.Format = "C2";
-            dataGridViewCellStyle49.NullValue = null;
-            this.dataGridViewTextBoxColumn13.DefaultCellStyle = dataGridViewCellStyle49;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle9.Format = "C2";
+            dataGridViewCellStyle9.NullValue = null;
+            this.dataGridViewTextBoxColumn13.DefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridViewTextBoxColumn13.HeaderText = "LATE CHARGE BALANCE";
             this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
             this.dataGridViewTextBoxColumn13.ReadOnly = true;
@@ -3594,10 +3594,10 @@
             // PartialPayment
             // 
             this.PartialPayment.DataPropertyName = "PartialPayment";
-            dataGridViewCellStyle50.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle50.Format = "C2";
-            dataGridViewCellStyle50.NullValue = null;
-            this.PartialPayment.DefaultCellStyle = dataGridViewCellStyle50;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle10.Format = "C2";
+            dataGridViewCellStyle10.NullValue = null;
+            this.PartialPayment.DefaultCellStyle = dataGridViewCellStyle10;
             this.PartialPayment.HeaderText = "PARTIAL PAYMENT";
             this.PartialPayment.Name = "PartialPayment";
             this.PartialPayment.ReadOnly = true;
@@ -3605,9 +3605,9 @@
             // dataGridViewTextBoxColumn15
             // 
             this.dataGridViewTextBoxColumn15.DataPropertyName = "SHORT_PAID_THRU";
-            dataGridViewCellStyle51.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle51.NullValue = null;
-            this.dataGridViewTextBoxColumn15.DefaultCellStyle = dataGridViewCellStyle51;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.NullValue = null;
+            this.dataGridViewTextBoxColumn15.DefaultCellStyle = dataGridViewCellStyle11;
             this.dataGridViewTextBoxColumn15.HeaderText = "PAID THROUGH";
             this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
             this.dataGridViewTextBoxColumn15.ReadOnly = true;
@@ -4851,7 +4851,7 @@
             this.nullableDateTimePickerFundingDate.Name = "nullableDateTimePickerFundingDate";
             this.nullableDateTimePickerFundingDate.Size = new System.Drawing.Size(119, 29);
             this.nullableDateTimePickerFundingDate.TabIndex = 89;
-            this.nullableDateTimePickerFundingDate.Value = new System.DateTime(2020, 7, 10, 0, 0, 0, 0);
+            this.nullableDateTimePickerFundingDate.Value = new System.DateTime(2020, 7, 14, 0, 0, 0, 0);
             this.nullableDateTimePickerFundingDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // checkBoxOverrideLateCharge
@@ -4876,7 +4876,7 @@
             this.DateTimePickerContractDate.Name = "DateTimePickerContractDate";
             this.DateTimePickerContractDate.Size = new System.Drawing.Size(119, 29);
             this.DateTimePickerContractDate.TabIndex = 88;
-            this.DateTimePickerContractDate.Value = new System.DateTime(2020, 7, 10, 0, 0, 0, 0);
+            this.DateTimePickerContractDate.Value = new System.DateTime(2020, 7, 14, 0, 0, 0, 0);
             this.DateTimePickerContractDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             this.DateTimePickerContractDate.Validated += new System.EventHandler(this.DateTimePickerContractDate_Validated);
             // 
@@ -4902,7 +4902,7 @@
             this.txtFirstPayDate.Name = "txtFirstPayDate";
             this.txtFirstPayDate.Size = new System.Drawing.Size(119, 29);
             this.txtFirstPayDate.TabIndex = 76;
-            this.txtFirstPayDate.Value = new System.DateTime(2020, 7, 10, 0, 0, 0, 0);
+            this.txtFirstPayDate.Value = new System.DateTime(2020, 7, 14, 0, 0, 0, 0);
             this.txtFirstPayDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             this.txtFirstPayDate.Validated += new System.EventHandler(this.txtFirstPayDate_Validated);
             // 
@@ -4915,7 +4915,7 @@
             this.txtPaymentDate.NullText = "          ";
             this.txtPaymentDate.Size = new System.Drawing.Size(119, 29);
             this.txtPaymentDate.TabIndex = 91;
-            this.txtPaymentDate.Value = new System.DateTime(2020, 7, 10, 0, 0, 0, 0);
+            this.txtPaymentDate.Value = new System.DateTime(2020, 7, 14, 0, 0, 0, 0);
             this.txtPaymentDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // textBox18
@@ -5212,6 +5212,19 @@
             this.groupBox1.TabIndex = 95;
             this.groupBox1.TabStop = false;
             // 
+            // comboBoxTSBPaymentRating
+            // 
+            this.comboBoxTSBPaymentRating.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.cUSTOMERBindingSource, "TSBPaymentRating", true));
+            this.comboBoxTSBPaymentRating.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxTSBPaymentRating.FormattingEnabled = true;
+            this.comboBoxTSBPaymentRating.Location = new System.Drawing.Point(791, 178);
+            this.comboBoxTSBPaymentRating.Name = "comboBoxTSBPaymentRating";
+            this.comboBoxTSBPaymentRating.Size = new System.Drawing.Size(290, 25);
+            this.comboBoxTSBPaymentRating.TabIndex = 117;
+            this.comboBoxTSBPaymentRating.SelectedIndexChanged += new System.EventHandler(this.comboBoxTSBPaymentRating_SelectedIndexChanged);
+            this.comboBoxTSBPaymentRating.SelectedValueChanged += new System.EventHandler(this.comboBoxTSBPaymentRating_SelectedValueChanged);
+            this.comboBoxTSBPaymentRating.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            // 
             // textBoxDealerCashPrice
             // 
             this.textBoxDealerCashPrice.AllowDrop = true;
@@ -5233,7 +5246,7 @@
             this.MaturityDate.Name = "MaturityDate";
             this.MaturityDate.Size = new System.Drawing.Size(119, 29);
             this.MaturityDate.TabIndex = 113;
-            this.MaturityDate.Value = new System.DateTime(2020, 7, 10, 0, 0, 0, 0);
+            this.MaturityDate.Value = new System.DateTime(2020, 7, 14, 0, 0, 0, 0);
             // 
             // checkBoxTSBOverride
             // 
@@ -5805,7 +5818,7 @@
             this.nullableDateTimePickerDateTitleReleased.Name = "nullableDateTimePickerDateTitleReleased";
             this.nullableDateTimePickerDateTitleReleased.Size = new System.Drawing.Size(109, 29);
             this.nullableDateTimePickerDateTitleReleased.TabIndex = 237;
-            this.nullableDateTimePickerDateTitleReleased.Value = new System.DateTime(2020, 7, 10, 0, 0, 0, 0);
+            this.nullableDateTimePickerDateTitleReleased.Value = new System.DateTime(2020, 7, 14, 0, 0, 0, 0);
             this.nullableDateTimePickerDateTitleReleased.ValueChanged += new System.EventHandler(this.NullableDateTimePickerDateTitleReleased_ValueChanged);
             this.nullableDateTimePickerDateTitleReleased.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
@@ -5866,7 +5879,7 @@
             this.nullableDateTimePickerAucDate.Name = "nullableDateTimePickerAucDate";
             this.nullableDateTimePickerAucDate.Size = new System.Drawing.Size(109, 29);
             this.nullableDateTimePickerAucDate.TabIndex = 232;
-            this.nullableDateTimePickerAucDate.Value = new System.DateTime(2020, 7, 10, 0, 0, 0, 0);
+            this.nullableDateTimePickerAucDate.Value = new System.DateTime(2020, 7, 14, 0, 0, 0, 0);
             this.nullableDateTimePickerAucDate.ValueChanged += new System.EventHandler(this.nullableDateTimePickerAucDate_ValueChanged);
             this.nullableDateTimePickerAucDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
@@ -5879,7 +5892,7 @@
             this.nullableDateTimePickerLocDate.Name = "nullableDateTimePickerLocDate";
             this.nullableDateTimePickerLocDate.Size = new System.Drawing.Size(109, 29);
             this.nullableDateTimePickerLocDate.TabIndex = 230;
-            this.nullableDateTimePickerLocDate.Value = new System.DateTime(2020, 7, 10, 0, 0, 0, 0);
+            this.nullableDateTimePickerLocDate.Value = new System.DateTime(2020, 7, 14, 0, 0, 0, 0);
             this.nullableDateTimePickerLocDate.ValueChanged += new System.EventHandler(this.nullableDateTimePickerLocDate_ValueChanged);
             this.nullableDateTimePickerLocDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
@@ -5955,7 +5968,7 @@
             this.nullableDateTimePickerTitleDateReceived.Name = "nullableDateTimePickerTitleDateReceived";
             this.nullableDateTimePickerTitleDateReceived.Size = new System.Drawing.Size(109, 29);
             this.nullableDateTimePickerTitleDateReceived.TabIndex = 234;
-            this.nullableDateTimePickerTitleDateReceived.Value = new System.DateTime(2020, 7, 10, 0, 0, 0, 0);
+            this.nullableDateTimePickerTitleDateReceived.Value = new System.DateTime(2020, 7, 14, 0, 0, 0, 0);
             this.nullableDateTimePickerTitleDateReceived.ValueChanged += new System.EventHandler(this.nullableDateTimePickerTitleDateReceived_ValueChanged);
             this.nullableDateTimePickerTitleDateReceived.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
@@ -6004,7 +6017,7 @@
             this.nullableDateTimePickerRepoDate.Name = "nullableDateTimePickerRepoDate";
             this.nullableDateTimePickerRepoDate.Size = new System.Drawing.Size(109, 29);
             this.nullableDateTimePickerRepoDate.TabIndex = 227;
-            this.nullableDateTimePickerRepoDate.Value = new System.DateTime(2020, 7, 10, 0, 0, 0, 0);
+            this.nullableDateTimePickerRepoDate.Value = new System.DateTime(2020, 7, 14, 0, 0, 0, 0);
             this.nullableDateTimePickerRepoDate.ValueChanged += new System.EventHandler(this.nullableDateTimePickerRepoDate_ValueChanged);
             this.nullableDateTimePickerRepoDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
@@ -6016,7 +6029,7 @@
             this.txtExpirationDate.Name = "txtExpirationDate";
             this.txtExpirationDate.Size = new System.Drawing.Size(109, 29);
             this.txtExpirationDate.TabIndex = 219;
-            this.txtExpirationDate.Value = new System.DateTime(2020, 7, 10, 0, 0, 0, 0);
+            this.txtExpirationDate.Value = new System.DateTime(2020, 7, 14, 0, 0, 0, 0);
             // 
             // txtEffectiveDate
             // 
@@ -6026,7 +6039,7 @@
             this.txtEffectiveDate.Name = "txtEffectiveDate";
             this.txtEffectiveDate.Size = new System.Drawing.Size(109, 29);
             this.txtEffectiveDate.TabIndex = 218;
-            this.txtEffectiveDate.Value = new System.DateTime(2020, 7, 10, 0, 0, 0, 0);
+            this.txtEffectiveDate.Value = new System.DateTime(2020, 7, 14, 0, 0, 0, 0);
             // 
             // txtAgentPhone
             // 
@@ -6429,12 +6442,13 @@
             // 
             // textBoxCosignerTierPoints
             // 
-            this.textBoxCosignerTierPoints.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CosignerTierPoints", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "0", "N0"));
+            this.textBoxCosignerTierPoints.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CosignerTierPoints", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N0"));
             this.textBoxCosignerTierPoints.Location = new System.Drawing.Point(387, 165);
-            this.textBoxCosignerTierPoints.MaxLength = 99;
+            this.textBoxCosignerTierPoints.MaxLength = 3;
             this.textBoxCosignerTierPoints.Name = "textBoxCosignerTierPoints";
             this.textBoxCosignerTierPoints.Size = new System.Drawing.Size(40, 29);
             this.textBoxCosignerTierPoints.TabIndex = 326;
+            this.textBoxCosignerTierPoints.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.textBoxCosignerTierPoints.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // buttonCosLetter
@@ -6505,6 +6519,7 @@
             this.textBoxTier.Name = "textBoxTier";
             this.textBoxTier.Size = new System.Drawing.Size(25, 29);
             this.textBoxTier.TabIndex = 325;
+            this.textBoxTier.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.textBoxTier.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // textBoxCosignerEmail
@@ -6550,7 +6565,7 @@
             this.txtCOSDOB.Name = "txtCOSDOB";
             this.txtCOSDOB.Size = new System.Drawing.Size(109, 29);
             this.txtCOSDOB.TabIndex = 323;
-            this.txtCOSDOB.Value = new System.DateTime(2020, 7, 10, 0, 0, 0, 0);
+            this.txtCOSDOB.Value = new System.DateTime(2020, 7, 14, 0, 0, 0, 0);
             // 
             // txtCOSWorkExt
             // 
@@ -7535,9 +7550,9 @@
             // dateOfChangeDataGridViewTextBoxColumn
             // 
             this.dateOfChangeDataGridViewTextBoxColumn.DataPropertyName = "DateOfChange";
-            dataGridViewCellStyle52.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle52.Format = "d";
-            this.dateOfChangeDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle52;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle12.Format = "d";
+            this.dateOfChangeDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle12;
             this.dateOfChangeDataGridViewTextBoxColumn.HeaderText = "Date";
             this.dateOfChangeDataGridViewTextBoxColumn.Name = "dateOfChangeDataGridViewTextBoxColumn";
             this.dateOfChangeDataGridViewTextBoxColumn.ReadOnly = true;
@@ -7553,10 +7568,10 @@
             // orgRepoDateDataGridViewTextBoxColumn
             // 
             this.orgRepoDateDataGridViewTextBoxColumn.DataPropertyName = "OrgRepoDate";
-            dataGridViewCellStyle53.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle53.Format = "d";
-            dataGridViewCellStyle53.NullValue = null;
-            this.orgRepoDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle53;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle13.Format = "d";
+            dataGridViewCellStyle13.NullValue = null;
+            this.orgRepoDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle13;
             this.orgRepoDateDataGridViewTextBoxColumn.HeaderText = "Old Repo Date";
             this.orgRepoDateDataGridViewTextBoxColumn.Name = "orgRepoDateDataGridViewTextBoxColumn";
             this.orgRepoDateDataGridViewTextBoxColumn.ReadOnly = true;
@@ -7564,9 +7579,9 @@
             // newRepoDateDataGridViewTextBoxColumn
             // 
             this.newRepoDateDataGridViewTextBoxColumn.DataPropertyName = "NewRepoDate";
-            dataGridViewCellStyle54.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle54.Format = "d";
-            this.newRepoDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle54;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle14.Format = "d";
+            this.newRepoDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle14;
             this.newRepoDateDataGridViewTextBoxColumn.HeaderText = "New Repo Date";
             this.newRepoDateDataGridViewTextBoxColumn.Name = "newRepoDateDataGridViewTextBoxColumn";
             this.newRepoDateDataGridViewTextBoxColumn.ReadOnly = true;
@@ -7632,9 +7647,9 @@
             // oldLocationDateDataGridViewTextBoxColumn
             // 
             this.oldLocationDateDataGridViewTextBoxColumn.DataPropertyName = "OldLocationDate";
-            dataGridViewCellStyle55.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle55.Format = "d";
-            this.oldLocationDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle55;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle15.Format = "d";
+            this.oldLocationDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle15;
             this.oldLocationDateDataGridViewTextBoxColumn.HeaderText = "Old Location Date";
             this.oldLocationDateDataGridViewTextBoxColumn.Name = "oldLocationDateDataGridViewTextBoxColumn";
             this.oldLocationDateDataGridViewTextBoxColumn.ReadOnly = true;
@@ -7642,9 +7657,9 @@
             // newLocationDateDataGridViewTextBoxColumn
             // 
             this.newLocationDateDataGridViewTextBoxColumn.DataPropertyName = "NewLocationDate";
-            dataGridViewCellStyle56.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle56.Format = "d";
-            this.newLocationDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle56;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle16.Format = "d";
+            this.newLocationDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle16;
             this.newLocationDateDataGridViewTextBoxColumn.HeaderText = "New Location Date";
             this.newLocationDateDataGridViewTextBoxColumn.Name = "newLocationDateDataGridViewTextBoxColumn";
             this.newLocationDateDataGridViewTextBoxColumn.ReadOnly = true;
@@ -7666,9 +7681,9 @@
             // orgAutionHouseDateDataGridViewTextBoxColumn
             // 
             this.orgAutionHouseDateDataGridViewTextBoxColumn.DataPropertyName = "OrgAutionHouseDate";
-            dataGridViewCellStyle57.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle57.Format = "d";
-            this.orgAutionHouseDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle57;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle17.Format = "d";
+            this.orgAutionHouseDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle17;
             this.orgAutionHouseDateDataGridViewTextBoxColumn.HeaderText = "Old Auction House Date";
             this.orgAutionHouseDateDataGridViewTextBoxColumn.Name = "orgAutionHouseDateDataGridViewTextBoxColumn";
             this.orgAutionHouseDateDataGridViewTextBoxColumn.ReadOnly = true;
@@ -7676,9 +7691,9 @@
             // newAuctionHouseDateDataGridViewTextBoxColumn
             // 
             this.newAuctionHouseDateDataGridViewTextBoxColumn.DataPropertyName = "NewAuctionHouseDate";
-            dataGridViewCellStyle58.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle58.Format = "d";
-            this.newAuctionHouseDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle58;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle18.Format = "d";
+            this.newAuctionHouseDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle18;
             this.newAuctionHouseDateDataGridViewTextBoxColumn.HeaderText = "New Auction House Date";
             this.newAuctionHouseDateDataGridViewTextBoxColumn.Name = "newAuctionHouseDateDataGridViewTextBoxColumn";
             this.newAuctionHouseDateDataGridViewTextBoxColumn.ReadOnly = true;
@@ -7700,9 +7715,9 @@
             // orgDateTitleReceivedDataGridViewTextBoxColumn
             // 
             this.orgDateTitleReceivedDataGridViewTextBoxColumn.DataPropertyName = "OrgDateTitleReceived";
-            dataGridViewCellStyle59.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle59.Format = "d";
-            this.orgDateTitleReceivedDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle59;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle19.Format = "d";
+            this.orgDateTitleReceivedDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle19;
             this.orgDateTitleReceivedDataGridViewTextBoxColumn.HeaderText = "Old Date Title Received";
             this.orgDateTitleReceivedDataGridViewTextBoxColumn.Name = "orgDateTitleReceivedDataGridViewTextBoxColumn";
             this.orgDateTitleReceivedDataGridViewTextBoxColumn.ReadOnly = true;
@@ -7710,9 +7725,9 @@
             // newDateTitleReceivedDataGridViewTextBoxColumn
             // 
             this.newDateTitleReceivedDataGridViewTextBoxColumn.DataPropertyName = "NewDateTitleReceived";
-            dataGridViewCellStyle60.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle60.Format = "d";
-            this.newDateTitleReceivedDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle60;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle20.Format = "d";
+            this.newDateTitleReceivedDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle20;
             this.newDateTitleReceivedDataGridViewTextBoxColumn.HeaderText = "New Date Title Recieved";
             this.newDateTitleReceivedDataGridViewTextBoxColumn.Name = "newDateTitleReceivedDataGridViewTextBoxColumn";
             this.newDateTitleReceivedDataGridViewTextBoxColumn.ReadOnly = true;
@@ -7973,19 +7988,6 @@
             // repoLogTableAdapter1
             // 
             this.repoLogTableAdapter1.ClearBeforeFill = true;
-            // 
-            // comboBoxTSBPaymentRating
-            // 
-            this.comboBoxTSBPaymentRating.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.cUSTOMERBindingSource, "TSBPaymentRating", true));
-            this.comboBoxTSBPaymentRating.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxTSBPaymentRating.FormattingEnabled = true;
-            this.comboBoxTSBPaymentRating.Location = new System.Drawing.Point(791, 178);
-            this.comboBoxTSBPaymentRating.Name = "comboBoxTSBPaymentRating";
-            this.comboBoxTSBPaymentRating.Size = new System.Drawing.Size(290, 25);
-            this.comboBoxTSBPaymentRating.TabIndex = 117;
-            this.comboBoxTSBPaymentRating.SelectedIndexChanged += new System.EventHandler(this.comboBoxTSBPaymentRating_SelectedIndexChanged);
-            this.comboBoxTSBPaymentRating.SelectedValueChanged += new System.EventHandler(this.comboBoxTSBPaymentRating_SelectedValueChanged);
-            this.comboBoxTSBPaymentRating.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // paymentDataSet
             // 

@@ -79,6 +79,9 @@ namespace IAC2018SQL
             row.DefaultCellStyle.BackColor = (row.Index % 2 == 0) ? Color.Bisque : Color.White;
             row.MinimumHeight = 20;
             PerformAutoScale();
+            // Moses Newman 07/14/2020 Set DataBindings NullValue to string.Empty to prevent getting stuck in blank field.
+            textBoxCosignerTierPoints.DataBindings["Text"].NullValue = string.Empty;
+            textBoxTier.DataBindings["Text"].NullValue = string.Empty;
         }
 
         private void StartupConfiguration()
@@ -1712,8 +1715,23 @@ namespace IAC2018SQL
             // Moses Newman 08/02/2013 if we were in EDIT mode as opposed to ADD mode we must restore original CUSTOMER_BALANCE as only posting routines and new business can alter the balance.
             if (lbEdit)
             {
+                // Moses Newman 07/13/2020 Get last CUSTOMER_BALANCE AND BUYOUT inc case gn variables not properly set.  NEVER CHANGE THOSE FIELDS durig maintenance update.
+                IACDataSet OldData = new IACDataSet();
+                cUSTOMERTableAdapter.Fill(OldData.CUSTOMER, iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<String>("CUSTOMER_NO"));
+                if (OldData.CUSTOMER.Rows.Count != 0)
+                {
+                    if (gnCustomerBalance != OldData.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_BALANCE"))
+                        gnCustomerBalance = OldData.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_BALANCE");
+                    if (gnCustomerBuyout != OldData.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_BUYOUT"))
+                        gnCustomerBuyout = OldData.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_BUYOUT");
+                }
+                OldData.Dispose();
+                // 07/13/2020 End old buyout and balance check. 
                 if (gnCustomerBalance != 0)
+                {
                     iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Decimal>("CUSTOMER_BALANCE", gnCustomerBalance);
+                }
+
                 if (gnCustomerBuyout != 0)
                     iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Decimal>("CUSTOMER_BUYOUT", gnCustomerBuyout);
 
