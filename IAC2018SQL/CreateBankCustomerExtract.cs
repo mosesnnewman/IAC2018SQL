@@ -1151,20 +1151,24 @@ namespace IAC2018SQL
             }
             if (checkBoxMatchNBFields.Checked)
             {
+                Excel.Range CopyRange = excelWorkSheet.get_Range("F:F");
+                Excel.Range InsertRange = excelWorkSheet.get_Range("J:J");
+                InsertRange.Insert(Excel.XlInsertShiftDirection.xlShiftToRight, CopyRange.Cut());
+
                 int ClosedCusts = Extensions.CustomerExtract.Select("CUSTOMER_IAC_TYPE = 'C'").Length;
                 int OpenCusts = Extensions.CustomerExtract.Select("CUSTOMER_IAC_TYPE = 'O'").Length;
                 Excel.Range last = excelWorkSheet.Cells.SpecialCells(Excel.XlCellType.xlCellTypeLastCell, System.Type.Missing);
                 for (int i = 2; i <= last.Row; i++)
                 {
                     excelWorkSheet.Cells[i, 2].Value = Convert.ToDecimal(excelWorkSheet.Cells[i, 2].Value);
-                    excelWorkSheet.Cells[i, 7].Value = Convert.ToInt32(excelWorkSheet.Cells[i, 7].Value);
+                    excelWorkSheet.Cells[i, 6].Value = Convert.ToInt32(excelWorkSheet.Cells[i, 6].Value);
                 }
 
 
-                Excel.Range ClosedTypeCountTotalRange = excelWorkSheet.get_Range("A1:M" + (ClosedCusts + OpenCusts + 2).ToString());
+                Excel.Range ClosedTypeCountTotalRange = excelWorkSheet.get_Range("A1:N" + (ClosedCusts + OpenCusts + 2).ToString());
                 ClosedTypeCountTotalRange.Subtotal(1, Excel.XlConsolidationFunction.xlCount, new int[] { 1 }, true, false, Excel.XlSummaryRow.xlSummaryBelow);
                 Excel.Range ClosedSubTotalRange = excelWorkSheet.get_Range("A1:N" + (ClosedCusts + OpenCusts + 2).ToString());
-                ClosedSubTotalRange.Subtotal(9, Excel.XlConsolidationFunction.xlSum, new int[] { 3 }, false, false, Excel.XlSummaryRow.xlSummaryBelow);
+                ClosedSubTotalRange.Subtotal(7, Excel.XlConsolidationFunction.xlSum, new int[] { 3 }, false, false, Excel.XlSummaryRow.xlSummaryBelow);
                 ClosedSubTotalRange.Subtotal(2, Excel.XlConsolidationFunction.xlCount, new int[] { 2 }, false, false, Excel.XlSummaryRow.xlSummaryBelow);
 
                 last = excelWorkSheet.Cells.SpecialCells(Excel.XlCellType.xlCellTypeLastCell, System.Type.Missing);
@@ -1229,14 +1233,14 @@ namespace IAC2018SQL
                 {
                     if (excelWorkSheet.Cells[i, 1].Value == "Units")
                     {
-                        excelWorkSheet.Cells[i, 1].Value = "Totals DLR# " + excelWorkSheet.Cells[i - 1, 8].Text;
+                        excelWorkSheet.Cells[i, 1].Value = "Totals DLR# " + excelWorkSheet.Cells[i - 1, 7].Text;
                         excelWorkSheet.Cells[i, 3].Value = Convert.ToDecimal(excelWorkSheet.Cells[i + 1, 3].Value);
                         if (excelWorkSheet.Cells[i - 1, 2].Value == "C")
                             TotalClosedLoans += excelWorkSheet.Cells[i + 1, 3].Value;
                         else
                             TotalOpenLoans += excelWorkSheet.Cells[i + 1, 3].Value;   
                         excelWorkSheet.Cells[i + 1, 3].Value = "";
-                        excelWorkSheet.Cells[i + 1, 9].Value = "";
+                        excelWorkSheet.Cells[i + 1, 7].Value = "";
                         excelWorkSheet.Cells[i, 3].Font.FontStyle = "Bold";
                     }
                     if (excelWorkSheet.Cells[i, 1].Value == "Total Units Closed")
@@ -1246,7 +1250,7 @@ namespace IAC2018SQL
                         excelWorkSheet.Cells[i, 3].Font.FontStyle = "Bold";
                         excelWorkSheet.Cells[i, 1].Value = "Totals Closed";
                     }
-                    if (excelWorkSheet.Cells[i, 9].Text == "Grand Total")
+                    if (excelWorkSheet.Cells[i, 7].Text == "Grand Total")
                     {
                         excelWorkSheet.Rows[i].Delete();
                         break;
