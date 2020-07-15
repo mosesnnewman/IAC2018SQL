@@ -32,7 +32,7 @@ namespace IAC2018SQL
             Close();
         }
 
-        private void ImportPDFs()
+        public void ImportPDFs()
         {
             //IAC objects
             CAcroPDDoc pdDocIn;

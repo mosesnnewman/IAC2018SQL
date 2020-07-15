@@ -32,6 +32,7 @@
             this.buttonTransfer = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonPrint = new System.Windows.Forms.Button();
+            this.checkBoxImages = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // buttonTransfer
@@ -72,9 +73,22 @@
             this.buttonPrint.UseVisualStyleBackColor = true;
             this.buttonPrint.Click += new System.EventHandler(this.buttonPrint_Click);
             // 
+            // checkBoxImages
+            // 
+            this.checkBoxImages.AutoSize = true;
+            this.checkBoxImages.Checked = true;
+            this.checkBoxImages.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxImages.Location = new System.Drawing.Point(149, 171);
+            this.checkBoxImages.Name = "checkBoxImages";
+            this.checkBoxImages.Size = new System.Drawing.Size(115, 17);
+            this.checkBoxImages.TabIndex = 16;
+            this.checkBoxImages.Text = "Import Images Also";
+            this.checkBoxImages.UseVisualStyleBackColor = true;
+            // 
             // frmImportDefi
             // 
             this.ClientSize = new System.Drawing.Size(412, 209);
+            this.Controls.Add(this.checkBoxImages);
             this.Controls.Add(this.buttonPrint);
             this.Controls.Add(this.buttonTransfer);
             this.Controls.Add(this.buttonCancel);
@@ -83,6 +97,7 @@
             this.Text = "Import Defi XML Applications";
             this.Load += new System.EventHandler(this.frmImportDefi_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -91,5 +106,6 @@
         public System.Windows.Forms.Button buttonTransfer;
         private System.Windows.Forms.Button buttonCancel;
         public System.Windows.Forms.Button buttonPrint;
+        private System.Windows.Forms.CheckBox checkBoxImages;
     }
 }
