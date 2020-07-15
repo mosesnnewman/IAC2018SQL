@@ -24,7 +24,14 @@ namespace IAC2018SQL
             PrintIt();
 
             MessageBox.Show("*** Finished importing Defi XML Applications! ***");
-
+            if(checkBoxImages.Checked)
+            {
+                frmImportDefiPDFs ImportPDFs = new frmImportDefiPDFs();
+                Visible = false;
+                ImportPDFs.ShowDialog();
+                ImportPDFs.ImportPDFs();
+                Visible = true; 
+            }
             Close();
         }
 
