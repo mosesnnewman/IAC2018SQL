@@ -28,7 +28,7 @@ namespace IAC2018SQL
             {
                 frmImportDefiPDFs ImportPDFs = new frmImportDefiPDFs();
                 Visible = false;
-                ImportPDFs.ShowDialog();
+                ImportPDFs.Show();
                 ImportPDFs.ImportPDFs();
                 Visible = true; 
             }
