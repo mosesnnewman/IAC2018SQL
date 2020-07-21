@@ -39,7 +39,7 @@
     <SuiteName>IAC2018SQL</SuiteName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>122</ApplicationRevision>
+    <ApplicationRevision>123</ApplicationRevision>
     <ApplicationVersion>6.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -234,6 +234,14 @@
     </Compile>
     <Compile Include="frmImportDefiPDFs.Designer.cs">
       <DependentUpon>frmImportDefiPDFs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IACDataSet.cs">
+      <DependentUpon>IACDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="IACDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IACDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Objects.cs" />
     <Compile Include="FormFixCreateDate.cs">
@@ -743,9 +751,6 @@
     </Compile>
     <Compile Include="CalcBuyout.Designer.cs">
       <DependentUpon>CalcBuyout.cs</DependentUpon>
-    </Compile>
-    <Compile Include="IACDataSet.cs">
-      <DependentUpon>IACDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="OpenDelinquencyReports.cs">
       <SubType>Form</SubType>
@@ -1676,6 +1681,17 @@
     </None>
     <None Include="IAC2018SQL_1_TemporaryKey.pfx" />
     <None Include="IAC2018SQL_TemporaryKey.pfx" />
+    <None Include="IACDataSet.xsc">
+      <DependentUpon>IACDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="IACDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>IACDataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="IACDataSet.xss">
+      <DependentUpon>IACDataSet.xsd</DependentUpon>
+    </None>
     <None Include="RepoDataSet.xsc">
       <DependentUpon>RepoDataSet.xsd</DependentUpon>
     </None>
@@ -1697,16 +1713,6 @@
     </None>
     <None Include="PaymentDataSet.xss">
       <DependentUpon>PaymentDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="IACDataSet.xsc">
-      <DependentUpon>IACDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="IACDataSet.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-    </None>
-    <None Include="IACDataSet.xss">
-      <DependentUpon>IACDataSet.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
