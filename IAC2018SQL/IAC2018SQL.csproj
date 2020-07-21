@@ -228,6 +228,7 @@
       <DependentUpon>AmortizationDistribution.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="ClosedOverpayment.cs" />
     <Compile Include="frmImportDefiPDFs.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -723,11 +724,6 @@
     </Compile>
     <Compile Include="OpenChargesAppliedtoDealerReport.Designer.cs">
       <DependentUpon>OpenChargesAppliedtoDealerReport.cs</DependentUpon>
-    </Compile>
-    <Compile Include="IACDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>IACDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="MonthlyUpdateListing.cs">
       <DependentUpon>MonthlyUpdateListing.rpt</DependentUpon>
@@ -1708,7 +1704,6 @@
     <None Include="IACDataSet.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>IACDataSet.Designer.cs</LastGenOutput>
     </None>
     <None Include="IACDataSet.xss">
       <DependentUpon>IACDataSet.xsd</DependentUpon>
