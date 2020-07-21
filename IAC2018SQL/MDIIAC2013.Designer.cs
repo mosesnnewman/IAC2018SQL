@@ -156,6 +156,7 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.overPaymentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -647,9 +648,10 @@
             this.paidInAdvanceReportToolStripMenuItem,
             this.repoReportToolStripMenuItem,
             this.vSIExtractToolStripMenuItem,
-            this.paidInFullPriorToMaturityToolStripMenuItem});
+            this.paidInFullPriorToMaturityToolStripMenuItem,
+            this.overPaymentsToolStripMenuItem});
             this.closedEndToolStripMenuItem.Name = "closedEndToolStripMenuItem";
-            this.closedEndToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.closedEndToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.closedEndToolStripMenuItem.Text = "&Closed End";
             // 
             // amortizationScheduleToolStripMenuItem
@@ -849,7 +851,7 @@
             this.openCustomerBuyBackReportBUYBACKToolStripMenuItem,
             this.firstPaymentDefaultReportToolStripMenuItem1});
             this.openEndToolStripMenuItem.Name = "openEndToolStripMenuItem";
-            this.openEndToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.openEndToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.openEndToolStripMenuItem.Text = "&Open End";
             // 
             // newCustomerEditListToolStripMenuItem1
@@ -1209,6 +1211,13 @@
             this.toolStripStatusLabel.Text = "Status";
             this.toolStripStatusLabel.Visible = false;
             // 
+            // overPaymentsToolStripMenuItem
+            // 
+            this.overPaymentsToolStripMenuItem.Name = "overPaymentsToolStripMenuItem";
+            this.overPaymentsToolStripMenuItem.Size = new System.Drawing.Size(317, 22);
+            this.overPaymentsToolStripMenuItem.Text = "&Over Payments";
+            this.overPaymentsToolStripMenuItem.Click += new System.EventHandler(this.overPaymentsToolStripMenuItem_Click);
+            // 
             // MDIIAC2013
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -1362,6 +1371,7 @@
         private System.Windows.Forms.ToolStripMenuItem globalSearchPDFUploaderToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fixPaidThroughsToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem importDefiPDFImagesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem overPaymentsToolStripMenuItem;
     }
 }
 
