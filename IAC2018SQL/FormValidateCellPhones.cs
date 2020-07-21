@@ -74,39 +74,43 @@ namespace IAC2018SQL
                 labelStatus.Text = "Working on customer " + IACData.CUSTOMER.Rows[i].Field<String>("CUSTOMER_NO") + " " + i.ToString().TrimStart() + " of " + (IACData.CUSTOMER.Rows.Count -1).ToString().TrimStart();
                 labelStatus.Refresh();
 
+                // Moses Newman 07/21/2020 Only Force Validate people who have not opted out
                 string[] phone = IACData.CUSTOMER.Rows[i].Field<String>("CUSTOMER_CELL_PHONE").Split(',');
+                if (GetSubscriberStatus(IACData.CUSTOMER.Rows[i].Field<String>("CUSTOMER_CELL_PHONE")) != "Inactive")
+                {
 
-                wSCarrierLookupResponse = generalService.GetCarrierLookup(securityToken, phone, orgCode);
+                    wSCarrierLookupResponse = generalService.GetCarrierLookup(securityToken, phone, orgCode);
 
-                if (lnSeq == 0)
-                {
-                    loQuery = COMMENTTableAdapter.SeqNoQuery(IACData.CUSTOMER.Rows[i].Field<String>("CUSTOMER_NO"), DateTime.Now.Date);
-                    if (loQuery != null)
-                        lnSeq = (int)loQuery + 1;
-                    else
-                        lnSeq = 1;
-                }
-                else
-                    lnSeq = lnSeq + 1;
-                if (!wSCarrierLookupResponse.Result)
-                {
-                    MakeComment("*** Failed to VALIDATE cell phone number! ***", wSCarrierLookupResponse.Message,i);
-                    IACData.CUSTOMER.Rows[i].SetField<Boolean>("CellValid", false);
-                }
-                else
-                {
-                    if (wSCarrierLookupResponse.Result && !wSCarrierLookupResponse.Response[0].Landline)
+                    if (lnSeq == 0)
                     {
-                        MakeComment("Cell Phone Number VALIDATED.",wSCarrierLookupResponse.Message,i);
-                        IACData.CUSTOMER.Rows[i].SetField<Boolean>("CellValid", true);
+                        loQuery = COMMENTTableAdapter.SeqNoQuery(IACData.CUSTOMER.Rows[i].Field<String>("CUSTOMER_NO"), DateTime.Now.Date);
+                        if (loQuery != null)
+                            lnSeq = (int)loQuery + 1;
+                        else
+                            lnSeq = 1;
                     }
                     else
+                        lnSeq = lnSeq + 1;
+                    if (!wSCarrierLookupResponse.Result)
                     {
-                        MakeComment("*** Cell Phone Number will not VALIDATE because it is a LANDLINE! ***", wSCarrierLookupResponse.Message,i);
+                        MakeComment("*** Failed to VALIDATE cell phone number! ***", wSCarrierLookupResponse.Message, i);
                         IACData.CUSTOMER.Rows[i].SetField<Boolean>("CellValid", false);
                     }
+                    else
+                    {
+                        if (wSCarrierLookupResponse.Result && !wSCarrierLookupResponse.Response[0].Landline)
+                        {
+                            MakeComment("Cell Phone Number VALIDATED.", wSCarrierLookupResponse.Message, i);
+                            IACData.CUSTOMER.Rows[i].SetField<Boolean>("CellValid", true);
+                        }
+                        else
+                        {
+                            MakeComment("*** Cell Phone Number will not VALIDATE because it is a LANDLINE! ***", wSCarrierLookupResponse.Message, i);
+                            IACData.CUSTOMER.Rows[i].SetField<Boolean>("CellValid", false);
+                        }
+                    }
+                    CUSTOMERTableAdapter.Update(IACData.CUSTOMER.Rows[i]);
                 }
-                CUSTOMERTableAdapter.Update(IACData.CUSTOMER.Rows[i]);
                 progressBar1.Value = i;
             }
             MessageBox.Show("*** Completed cell phone validation! ***", "Validate Cell Phones", MessageBoxButtons.OK);
@@ -146,5 +150,35 @@ namespace IAC2018SQL
                                         false, "", @"", 0, "", "", 0);
 
         }
+
+        private String GetSubscriberStatus(String mobileNumber)
+        {
+            SubscriberClient subscriberService = new SubscriberClient("SubscriberWSServiceHttpEndpoint");
+            string securityToken = sbtLogin();
+            string orgCode = "wt63419";
+            List<string> phone = new List<string>();
+
+            phone.Add(mobileNumber);
+            WSSubscribersStatusResponse wSSubscribersStatusResponse;
+
+            // Moses Newman 07/12/2019 catch EndpointNotFound errors.
+            try
+            {
+                wSSubscribersStatusResponse = subscriberService.GetSubscribersStatus(securityToken, orgCode, phone.ToArray());
+            }
+            catch (System.ServiceModel.EndpointNotFoundException e)
+            {
+                return e.Message;
+            }
+            if (!wSSubscribersStatusResponse.Result)
+            {
+                return wSSubscribersStatusResponse.Message;
+            }
+            else
+            {
+                return wSSubscribersStatusResponse.Response[0].Status;
+            }
+        }
+
     }
 }
