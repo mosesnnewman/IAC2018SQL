@@ -278,6 +278,10 @@ namespace IAC2018SQL
             checkBoxOverrideLateCharge.Enabled = false;
             // Moses Newman 12/22/2019
             nullableDateTimePickerFundingDate.Enabled = false;
+            // Moses Newman 07/21/2020 Add checkbox for overpayment check issue and check number.
+            checkBoxCheckIssued.Enabled = false;
+            textBoxCheckNo.Enabled = false;
+
 
             //Vehicle Info
             txtVehicleYear.Enabled = false;
@@ -570,6 +574,9 @@ namespace IAC2018SQL
             checkBoxOverrideLateCharge.Enabled = true;
             // Moses Newman 12/22/2019
             nullableDateTimePickerFundingDate.Enabled = true;
+            // Moses Newman 07/21/2020 Add checkbox for overpayment check issue and check number.
+            checkBoxCheckIssued.Enabled = true;
+            textBoxCheckNo.Enabled = true;
 
 
 
@@ -1324,6 +1331,9 @@ namespace IAC2018SQL
                     checkBoxOverrideLateCharge.Enabled = true;
                     // Moses Newman 12/22/2019
                     nullableDateTimePickerFundingDate.Enabled = true;
+                    // Moses Newman 07/21/2020 Add checkbox for overpayment check issue and check number.
+                    checkBoxCheckIssued.Enabled = true;
+                    textBoxCheckNo.Enabled = true;
 
 
                     txtCOSFirstName.Enabled = true;
@@ -3742,6 +3752,29 @@ namespace IAC2018SQL
         private void comboBoxTSBPaymentRating_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void checkBoxCheckIssued_CheckedChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+            if (checkBoxCheckIssued.Checked)
+            {
+                labelCheckNumber.Visible = true;
+                textBoxCheckNo.Visible = true;
+            }
+            else
+            {
+                labelCheckNumber.Visible = false;
+                textBoxCheckNo.Visible = false;
+            }
+        }
+
+        // Moses Newman 07/21/2020 Add comment on check number box validation if Check Number box is filled in.
+        private void textBoxCheckNo_Validated(object sender, EventArgs e)
+        {
+            if(cUSTOMER_ACT_STATTextBox.Text == "I" && textBoxCheckNo.Text != "")
+                MakeComment("*** Overpayment Check Issued Check Number: " + textBoxCheckNo.Text + " ***", "", 0, false);
         }
 
         private void textBoxRepairFee3_Validated(object sender, EventArgs e)
