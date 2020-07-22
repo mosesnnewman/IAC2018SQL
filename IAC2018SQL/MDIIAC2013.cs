@@ -1675,8 +1675,7 @@ namespace IAC2018SQL
 
         private void overPaymentsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ClosedOverpayment OP = new ClosedOverpayment();
-            OP.CreateIt();
+            CreateFormInstance("ClosedOverPaymentReport", false); 
         }
     }
 }
