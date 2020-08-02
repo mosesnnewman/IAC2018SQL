@@ -45,7 +45,7 @@ namespace IAC2018SQL
             sourcePath += @"comp1000\OverPAyment.xlsx";
             SQLBackupandRestore SQLBR = new SQLBackupandRestore();
             SQLBR.RunJob("CustomerOverpayment", "Create OverPayment Excel Ouput", false);
-            Thread.Sleep(5000);
+            Thread.Sleep(10000);
             SQLBR.Dispose();
         }
 
@@ -134,7 +134,7 @@ namespace IAC2018SQL
             LastPayment.Columns.ColumnWidth = 14;
             LastPayment.Columns.NumberFormat = "$#,##0.00_);[Red]($#,##0.00)";
             excelWorkSheet.get_Range("J1:J1").Font.FontStyle = "Bold";
-            excelWorkSheet.get_Range("J1:J1").Value = "Ext. Tot Payments";
+            excelWorkSheet.get_Range("J1:J1").Value = "Last Payment";
 
             Excel.Range Balance = excelWorkSheet.get_Range("K:K");
             Balance.Columns.EntireColumn.AutoFit();
@@ -143,6 +143,18 @@ namespace IAC2018SQL
             excelWorkSheet.get_Range("K1:K1").Font.FontStyle = "Bold";
             excelWorkSheet.get_Range("K1:K1").Value = "Balance";
 
+            Excel.Range CheckIssued = excelWorkSheet.get_Range("L:L");
+            CheckIssued.Columns.EntireColumn.AutoFit();
+            CheckIssued.Columns.ColumnWidth = 17;
+            excelWorkSheet.get_Range("L1:L1").Font.FontStyle = "Bold";
+            excelWorkSheet.get_Range("L1:L1").Value = "O/P Check Issued?";
+
+            Excel.Range CheckNumber = excelWorkSheet.get_Range("M:M");
+            CheckNumber.Columns.EntireColumn.AutoFit();
+            CheckNumber.Columns.ColumnWidth = 14;
+            excelWorkSheet.get_Range("M1:M1").Font.FontStyle = "Bold";
+            excelWorkSheet.get_Range("M1:M1").Value = "Check Number";
+
             Excel.Range last = excelWorkSheet.Cells.SpecialCells(Excel.XlCellType.xlCellTypeLastCell, System.Type.Missing);
             for (int i = 2; i < last.Row + 1; i++)
             {
@@ -150,15 +162,15 @@ namespace IAC2018SQL
                 excelWorkSheet.Cells[i, 11].Value = Convert.ToDecimal(excelWorkSheet.Cells[i, 11].Value);
             }
 
-            excelWorkSheet.get_Range("A:K").Font.Size = 11;
+            excelWorkSheet.get_Range("A:M").Font.Size = 11;
             // Moses Newman 08/01/2018 Freeze header row.
             Excel.Range firstRow = (Excel.Range)excelWorkSheet.Rows[1];
             excelWorkSheet.Activate();
             excelWorkSheet.Application.ActiveWindow.SplitRow = 1;
             firstRow.Application.ActiveWindow.FreezePanes = true;
 
-            Excel.Range U1 = excelWorkSheet.get_Range("A1:K1");
-            Excel.Range r = excelWorkSheet.get_Range("A2:K" + (excelWorkSheet.Rows.Count).ToString());
+            Excel.Range U1 = excelWorkSheet.get_Range("A1:M1");
+            Excel.Range r = excelWorkSheet.get_Range("A2:M" + (excelWorkSheet.Rows.Count).ToString());
 
             U1.Font.Bold = true;
             U1.Font.Color = Excel.XlRgbColor.rgbWhite;
