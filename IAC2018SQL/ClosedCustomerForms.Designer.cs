@@ -650,6 +650,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label152 = new System.Windows.Forms.Label();
             this.textBoxPaymentHistoryProfile = new System.Windows.Forms.TextBox();
+            this.closedCreditManagerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tsbDataSet = new IAC2018SQL.TSBDataSet();
             this.textBoxTermsDuration = new System.Windows.Forms.TextBox();
             this.label149 = new System.Windows.Forms.Label();
             this.comboBoxTermsFrequency = new System.Windows.Forms.ComboBox();
@@ -673,8 +675,6 @@
             this.comboBoxAccountStatus = new System.Windows.Forms.ComboBox();
             this.groupBoxDates = new System.Windows.Forms.GroupBox();
             this.nullableDateTimePickerFollowUpDate = new ProManApp.NullableDateTimePicker();
-            this.closedCreditManagerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tsbDataSet = new IAC2018SQL.TSBDataSet();
             this.nullableDateTimePickerDateClosed = new ProManApp.NullableDateTimePicker();
             this.nullableDateTimePickerDateOpened = new ProManApp.NullableDateTimePicker();
             this.nullableDateTimePickerDateofAccountInformation = new ProManApp.NullableDateTimePicker();
@@ -1001,10 +1001,10 @@
             this.groupBox13.SuspendLayout();
             this.tabPageTSB.SuspendLayout();
             this.groupBoxCodes.SuspendLayout();
-            this.groupBoxDates.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerFollowUpDate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.closedCreditManagerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tsbDataSet)).BeginInit();
+            this.groupBoxDates.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerFollowUpDate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateClosed)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateOpened)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateofAccountInformation)).BeginInit();
@@ -8069,6 +8069,16 @@
             this.textBoxPaymentHistoryProfile.Size = new System.Drawing.Size(276, 25);
             this.textBoxPaymentHistoryProfile.TabIndex = 122;
             // 
+            // closedCreditManagerBindingSource
+            // 
+            this.closedCreditManagerBindingSource.DataMember = "ClosedCreditManager";
+            this.closedCreditManagerBindingSource.DataSource = this.tsbDataSet;
+            // 
+            // tsbDataSet
+            // 
+            this.tsbDataSet.DataSetName = "TSBDataSet";
+            this.tsbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // textBoxTermsDuration
             // 
             this.textBoxTermsDuration.AllowDrop = true;
@@ -8291,16 +8301,6 @@
             this.nullableDateTimePickerFollowUpDate.Size = new System.Drawing.Size(119, 25);
             this.nullableDateTimePickerFollowUpDate.TabIndex = 132;
             this.nullableDateTimePickerFollowUpDate.Value = new System.DateTime(2020, 8, 2, 0, 0, 0, 0);
-            // 
-            // closedCreditManagerBindingSource
-            // 
-            this.closedCreditManagerBindingSource.DataMember = "ClosedCreditManager";
-            this.closedCreditManagerBindingSource.DataSource = this.tsbDataSet;
-            // 
-            // tsbDataSet
-            // 
-            this.tsbDataSet.DataSetName = "TSBDataSet";
-            this.tsbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // nullableDateTimePickerDateClosed
             // 
@@ -8564,6 +8564,7 @@
             // checkBoxPurge
             // 
             this.checkBoxPurge.AutoSize = true;
+            this.checkBoxPurge.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.closedCreditManagerBindingSource, "Purge", true));
             this.checkBoxPurge.Location = new System.Drawing.Point(7, 22);
             this.checkBoxPurge.Name = "checkBoxPurge";
             this.checkBoxPurge.Size = new System.Drawing.Size(61, 21);
@@ -8585,6 +8586,7 @@
             // checkBoxReportTSB
             // 
             this.checkBoxReportTSB.AutoSize = true;
+            this.checkBoxReportTSB.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.closedCreditManagerBindingSource, "Report", true));
             this.checkBoxReportTSB.Location = new System.Drawing.Point(27, 22);
             this.checkBoxReportTSB.Name = "checkBoxReportTSB";
             this.checkBoxReportTSB.Size = new System.Drawing.Size(67, 21);
@@ -8932,11 +8934,11 @@
             this.tabPageTSB.ResumeLayout(false);
             this.groupBoxCodes.ResumeLayout(false);
             this.groupBoxCodes.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.closedCreditManagerBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tsbDataSet)).EndInit();
             this.groupBoxDates.ResumeLayout(false);
             this.groupBoxDates.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerFollowUpDate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.closedCreditManagerBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tsbDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateClosed)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateOpened)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateofAccountInformation)).EndInit();
