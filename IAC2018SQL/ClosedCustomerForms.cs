@@ -278,6 +278,10 @@ namespace IAC2018SQL
             checkBoxOverrideLateCharge.Enabled = false;
             // Moses Newman 12/22/2019
             nullableDateTimePickerFundingDate.Enabled = false;
+            // Moses Newman 07/21/2020 Add checkbox for overpayment check issue and check number.
+            checkBoxCheckIssued.Enabled = false;
+            textBoxCheckNo.Enabled = false;
+
 
             //Vehicle Info
             txtVehicleYear.Enabled = false;
@@ -570,6 +574,9 @@ namespace IAC2018SQL
             checkBoxOverrideLateCharge.Enabled = true;
             // Moses Newman 12/22/2019
             nullableDateTimePickerFundingDate.Enabled = true;
+            // Moses Newman 07/21/2020 Add checkbox for overpayment check issue and check number.
+            checkBoxCheckIssued.Enabled = true;
+            textBoxCheckNo.Enabled = true;
 
 
 
@@ -801,6 +808,8 @@ namespace IAC2018SQL
                 vEHICLETableAdapter.FillByCustomerNo(iACDataSet.VEHICLE, cUSTOMER_NOTextBox.Text.ToString());
                 aLTNAMETableAdapter.Fill(iACDataSet.ALTNAME, cUSTOMER_NOTextBox.Text.ToString(), cUSTOMER_IAC_TypeTextBox.Text.ToString());
                 oPNBANKTableAdapter.Fill(iACDataSet.OPNBANK, cUSTOMER_NOTextBox.Text.ToString(), "C");
+                // Moses Newman 08/02/2020 Add ClosedCreditManager 
+                closedCreditManagerTableAdapter.Fill(tsbDataSet.ClosedCreditManager, cUSTOMER_NOTextBox.Text.ToString(), "00");
                 // Moses Newman 12/23/2013 Add Email Address Record
                 emailTableAdapter.Fill(iACDataSet.Email, cUSTOMER_NOTextBox.Text);
                 // Moses Newman 04/18/2019 Add Repo Log Tab
@@ -1324,6 +1333,9 @@ namespace IAC2018SQL
                     checkBoxOverrideLateCharge.Enabled = true;
                     // Moses Newman 12/22/2019
                     nullableDateTimePickerFundingDate.Enabled = true;
+                    // Moses Newman 07/21/2020 Add checkbox for overpayment check issue and check number.
+                    checkBoxCheckIssued.Enabled = true;
+                    textBoxCheckNo.Enabled = true;
 
 
                     txtCOSFirstName.Enabled = true;
@@ -3742,6 +3754,29 @@ namespace IAC2018SQL
         private void comboBoxTSBPaymentRating_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void checkBoxCheckIssued_CheckedChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+            if (checkBoxCheckIssued.Checked)
+            {
+                labelCheckNumber.Visible = true;
+                textBoxCheckNo.Visible = true;
+            }
+            else
+            {
+                labelCheckNumber.Visible = false;
+                textBoxCheckNo.Visible = false;
+            }
+        }
+
+        // Moses Newman 07/21/2020 Add comment on check number box validation if Check Number box is filled in.
+        private void textBoxCheckNo_Validated(object sender, EventArgs e)
+        {
+            if(cUSTOMER_ACT_STATTextBox.Text == "I" && textBoxCheckNo.Text != "")
+                MakeComment("*** Overpayment Check Issued Check Number: " + textBoxCheckNo.Text + " ***", "", 0, false);
         }
 
         private void textBoxRepairFee3_Validated(object sender, EventArgs e)

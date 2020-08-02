@@ -375,6 +375,14 @@
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="TSBDataSet.cs">
+      <DependentUpon>TSBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TSBDataSet.Designer.cs">
+      <DependentUpon>TSBDataSet.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="VSIExtract.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1816,6 +1824,17 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\TemplateWSProxy\TemplateWSService1.wsdl" />
+    <None Include="TSBDataSet.xsc">
+      <DependentUpon>TSBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="TSBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TSBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TSBDataSet.xss">
+      <DependentUpon>TSBDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6">
