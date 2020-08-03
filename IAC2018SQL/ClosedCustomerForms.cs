@@ -424,6 +424,32 @@ namespace IAC2018SQL
             textBoxRepairFee3.Enabled = false;
             textBoxRepairFee4.Enabled = false;
             textBoxRepairFee5.Enabled = false;
+            // Moses Newman 08/03/2020
+            //TSB
+            textBoxCurrentBalance.Enabled = false;
+            textBoxAmountPastDue.Enabled = false;
+            textBoxActualPaymentAmount.Enabled = false;
+            textBoxHighestCredit.Enabled = false;
+            textBoxOrgChargeOffAmount.Enabled = false;
+            textBoxSchMonthlyPaymentAmount.Enabled = false;
+            textBoxCreditLimit.Enabled = false;
+            nullableDateTimePickerDateofLastPayment.Enabled = false;
+            nullableDateTimePickerDateofFirstDelinquency.Enabled = false;
+            nullableDateTimePickerDateofAccountInformation.Enabled = false;
+            nullableDateTimePickerDateOpened.Enabled = false;
+            nullableDateTimePickerDateClosed.Enabled = false;
+            nullableDateTimePickerFollowUpDate.Enabled = false;
+            comboBoxAccountStatus.Enabled = false;
+            comboBoxPaymentRating.Enabled = false;
+            comboBoxSpecialComment.Enabled = false;
+            comboBoxAccountType.Enabled = false;
+            comboBoxConsumerIndicator.Enabled = false;
+            comboBoxComplianceConditionCode.Enabled = false;
+            comboBoxECOACode.Enabled = true;
+            comboBoxInterestType.Enabled = false;
+            comboBoxPortfolioType.Enabled = false;
+            comboBoxTermsFrequency.Enabled = false;
+            textBoxTermsDuration.Enabled = false;
         }
 
         private void SetEditMode()
@@ -725,6 +751,32 @@ namespace IAC2018SQL
             textBoxRepairFee3.Enabled = true;
             textBoxRepairFee4.Enabled = true;
             textBoxRepairFee5.Enabled = true;
+            // Moses Newman 08/03/2020
+            //TSB
+            textBoxCurrentBalance.Enabled = true;
+            textBoxAmountPastDue.Enabled = true;
+            textBoxActualPaymentAmount.Enabled = true;
+            textBoxHighestCredit.Enabled = true;
+            textBoxOrgChargeOffAmount.Enabled = true;
+            textBoxSchMonthlyPaymentAmount.Enabled = true;
+            textBoxCreditLimit.Enabled = true;
+            nullableDateTimePickerDateofLastPayment.Enabled = true;
+            nullableDateTimePickerDateofFirstDelinquency.Enabled = true;
+            nullableDateTimePickerDateofAccountInformation.Enabled = true;
+            nullableDateTimePickerDateOpened.Enabled = true;
+            nullableDateTimePickerDateClosed.Enabled = true;
+            nullableDateTimePickerFollowUpDate.Enabled = true;
+            comboBoxAccountStatus.Enabled = true;
+            comboBoxPaymentRating.Enabled = true;
+            comboBoxSpecialComment.Enabled = true;
+            comboBoxAccountType.Enabled = true;
+            comboBoxConsumerIndicator.Enabled = true;
+            comboBoxComplianceConditionCode.Enabled = true;
+            comboBoxECOACode.Enabled = true;
+            comboBoxInterestType.Enabled = true;
+            comboBoxPortfolioType.Enabled = true;
+            comboBoxTermsFrequency.Enabled = true;
+            textBoxTermsDuration.Enabled = true;
 
             toolStripButtonEdit.Enabled = false;
             toolStripButtonSave.Enabled = false;
@@ -1477,6 +1529,34 @@ namespace IAC2018SQL
                     textBoxRepairFee3.Enabled = true;
                     textBoxRepairFee4.Enabled = true;
                     textBoxRepairFee5.Enabled = true;
+
+                    // Moses Newman 08/03/2020
+                    //TSB
+                    textBoxCurrentBalance.Enabled = true;
+                    textBoxAmountPastDue.Enabled = true;
+                    textBoxActualPaymentAmount.Enabled = true;
+                    textBoxHighestCredit.Enabled = true;
+                    textBoxOrgChargeOffAmount.Enabled = true;
+                    textBoxSchMonthlyPaymentAmount.Enabled = true;
+                    textBoxCreditLimit.Enabled = true;
+                    nullableDateTimePickerDateofLastPayment.Enabled = true;
+                    nullableDateTimePickerDateofFirstDelinquency.Enabled = true;
+                    nullableDateTimePickerDateofAccountInformation.Enabled = true;
+                    nullableDateTimePickerDateOpened.Enabled = true;
+                    nullableDateTimePickerDateClosed.Enabled = true;
+                    nullableDateTimePickerFollowUpDate.Enabled = true;
+                    comboBoxAccountStatus.Enabled = true;
+                    comboBoxPaymentRating.Enabled = true;
+                    comboBoxSpecialComment.Enabled = true;
+                    comboBoxAccountType.Enabled = true;
+                    comboBoxConsumerIndicator.Enabled = true;
+                    comboBoxComplianceConditionCode.Enabled = true;
+                    comboBoxECOACode.Enabled = true;
+                    comboBoxInterestType.Enabled = true;
+                    comboBoxPortfolioType.Enabled = true;
+                    comboBoxTermsFrequency.Enabled = true;
+                    textBoxTermsDuration.Enabled = true;
+
 
                     ActiveControl = cUSTOMER_PURCHASE_ORDERTextBox;
                     cUSTOMER_PURCHASE_ORDERTextBox.Select();
