@@ -445,7 +445,7 @@ namespace IAC2018SQL
             comboBoxAccountType.Enabled = false;
             comboBoxConsumerIndicator.Enabled = false;
             comboBoxComplianceConditionCode.Enabled = false;
-            comboBoxECOACode.Enabled = true;
+            comboBoxECOACode.Enabled = false;
             comboBoxInterestType.Enabled = false;
             comboBoxPortfolioType.Enabled = false;
             comboBoxTermsFrequency.Enabled = false;
