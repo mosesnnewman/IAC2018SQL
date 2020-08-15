@@ -22,7 +22,6 @@ using Excel = Microsoft.Office.Interop.Excel;
 using Microsoft.Office.Tools.Excel;
 using System.IO;
 using IAC2018SQL.TSBDataSetTableAdapters;
-using Microsoft.Office.Interop.Word;
 
 namespace IAC2018SQL
 {
