@@ -138,7 +138,7 @@ namespace IAC2018SQL
             // Get all history for this customer where Payment Date is > Last Closing Date and <= Closing Date
             OPNHCUSTTableAdapter.FillByCustDateRange(StatementDataSet.OPNHCUST, StatementDataSet.OPNCUST.Rows[CustomerPos].Field<String>("CUSTOMER_NO"),
                             (DateTime)LastClosingDatenullableDateTimePicker.Value, (DateTime)ClosingDatenullableDateTimePicker.Value);
-
+            string lsCustTemp = StatementDataSet.OPNCUST.Rows[CustomerPos].Field<String>("CUSTOMER_NO");
             if (StatementDataSet.OPNCUST.Rows[CustomerPos].Field<DateTime>("CUSTOMER_INIT_DATE").Date >= ((DateTime)StatementDatenullableDateTimePicker.Value).Date)
             {
                 lnMonthlyInterest = 0;
@@ -532,12 +532,12 @@ namespace IAC2018SQL
                     lnHoldRate2 = StatementDataSet.OPNCUST.Rows[CustomerPos].Field<Decimal>("CUSTOMER_BALANCE") - (StatementDataSet.OPNRATE.Rows[0].Field<Decimal>("OPFRANG1_Y") + lnHoldRate3);
                     lnHoldInterest2 = (Decimal)Math.Round(((Double)lnHoldRate2 * (((Double)StatementDataSet.OPNRATE.Rows[0].Field<Decimal>("OPFRATE2_Y") / (Double)365.00) * (Double)30.42) / (Double)100.00), 2);
                 }
-
+            String lsCustNo = StatementDataSet.OPNCUST.Rows[CustomerPos].Field<String>("CUSTOMER_NO");
             if (StatementDataSet.OPNRATE.Rows[0].Field<Decimal>("OPFRATE1_Y") != 0)
                 if (StatementDataSet.OPNCUST.Rows[CustomerPos].Field<Decimal>("CUSTOMER_BALANCE") > StatementDataSet.OPNRATE.Rows[0].Field<Decimal>("OPFRANG1_Y"))
                 {
                     lnHoldRate1 = StatementDataSet.OPNCUST.Rows[CustomerPos].Field<Decimal>("CUSTOMER_BALANCE") - (lnHoldRate3 + lnHoldRate2);
-                    lnHoldInterest1 = (Decimal)Math.Round(((Double)lnHoldRate1 * (((Double)StatementDataSet.OPNRATE.Rows[0].Field<Decimal>("OPFRATE2_Y") / (Double)365.00) * (Double)30.42) / (Double)100.00), 2);
+                    lnHoldInterest1 = (Decimal)Math.Round(((Double)lnHoldRate1 * (((Double)StatementDataSet.OPNRATE.Rows[0].Field<Decimal>("OPFRATE1_Y") / (Double)365.00) * (Double)30.42) / (Double)100.00), 2);
                 }
             // End of Finance charge calculation
 

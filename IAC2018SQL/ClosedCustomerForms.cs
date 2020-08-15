@@ -21,6 +21,8 @@ using Word = Microsoft.Office.Interop.Word;
 using Excel = Microsoft.Office.Interop.Excel;
 using Microsoft.Office.Tools.Excel;
 using System.IO;
+using IAC2018SQL.TSBDataSetTableAdapters;
+using Microsoft.Office.Interop.Word;
 
 namespace IAC2018SQL
 {
@@ -55,9 +57,9 @@ namespace IAC2018SQL
         private RepoDataSet RepoData = new RepoDataSet();
         private RepoDataSetTableAdapters.RepoLogTableAdapter RepoLogTableAdapter = new RepoDataSetTableAdapters.RepoLogTableAdapter();
         // Moses Newman 07/10/2020 ADD TSB Payment Rating Dropdown
-        private PaymentDataSet PmtData = new PaymentDataSet();
-        private PaymentDataSetTableAdapters.PaymentRatingsTableAdapter PaymentRatingsTableAdapter = new PaymentDataSetTableAdapters.PaymentRatingsTableAdapter();
-        private BindingSource PaymentRatingsbindingSource = new BindingSource();
+        private TSBDataSetTableAdapters.PaymentRatingsTableAdapter PaymentRatingsTableAdapter = new TSBDataSetTableAdapters.PaymentRatingsTableAdapter();
+        // Moses Newman 08/14/2020 
+        private TSBDataSetTableAdapters.AccountTypesTableAdapter AccountTypesTableAdapter = new TSBDataSetTableAdapters.AccountTypesTableAdapter();
 
         private struct WholeComment
         {
@@ -73,6 +75,16 @@ namespace IAC2018SQL
 
         private void frmCustMaint_Load(object sender, EventArgs e)
         {
+            this.termsFrequencyTableAdapter.Fill(this.tsbDataSet.TermsFrequency);
+            this.portfolioTypesTableAdapter.Fill(this.tsbDataSet.PortfolioTypes);
+            this.interestTypesTableAdapter.Fill(this.tsbDataSet.InterestTypes);
+            this.eCOACodesTableAdapter.Fill(this.tsbDataSet.ECOACodes);
+            complianceConditionCodesTableAdapter.Fill(tsbDataSet.ComplianceConditionCodes);
+            // Moses Newman 08/14/2020 add AccountTypes
+            AccountTypesTableAdapter.Fill(tsbDataSet.AccountTypes);
+            PaymentRatingsTableAdapter.Fill(tsbDataSet.PaymentRatings);
+            consumerIndicatorsTableAdapter.Fill(tsbDataSet.ConsumerIndicators);
+            accountStatusesTableAdapter.Fill(tsbDataSet.AccountStatuses);
             StartupConfiguration();
             DataGridViewRow row = cOMMENTDataGridView.RowTemplate;
             row.Height = 45;
@@ -138,12 +150,6 @@ namespace IAC2018SQL
                 SetViewMode();
             }
 
-            // Moses Newman 07/10/2020 Data Source for new TSB Payment Ratings Dropdown.
-            PaymentRatingsTableAdapter.Fill(PmtData.PaymentRatings);
-            PaymentRatingsbindingSource.DataSource = PmtData.PaymentRatings;
-            comboBoxTSBPaymentRating.DataSource = PaymentRatingsbindingSource;
-            comboBoxTSBPaymentRating.DisplayMember = "Description";
-            comboBoxTSBPaymentRating.ValueMember = "PaymentRating";
             
             ActiveControl = cUSTOMER_NOTextBox;
             cUSTOMER_NOTextBox.SelectAll();
@@ -811,19 +817,11 @@ namespace IAC2018SQL
             if (iACDataSet.CUSTOMER.Rows.Count > 0)
             {
                 gsVBTPin = "";
-                // Moses Newman 07/10/2020 Data Source for new TSB Payment Ratings Dropdown.
-                PaymentRatingsTableAdapter.Fill(PmtData.PaymentRatings);
-                PaymentRatingsbindingSource.DataSource = PmtData.PaymentRatings;
-                comboBoxTSBPaymentRating.DataSource = PaymentRatingsbindingSource;
-                comboBoxTSBPaymentRating.DisplayMember = "Description";
-                comboBoxTSBPaymentRating.ValueMember = "PaymentRating";
 
                 // Moses Newman 12/9/2013 preselect Credit Score Drop Down Choice and Repo Drop Down Choice if he coresponding customer record fields are valid.
                 Int32 CreditIndex = creditCodesBindingSource.Find("Code", iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_CREDIT_SCORE_A")),
                         RepoIndex = repoCodesBindingSource.Find("Code", iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_REPO_CDE")),
-                        RepoIndIndex = RepoIndicatorsBindingSource.Find("Code", iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_REPO_IND")),  // Moses Newman 05/31/2018
-                        // Moses Newman 07/10/2020 add Payment Ratings drop down
-                        PaymentRatingsIndex = PaymentRatingsbindingSource.Find("PaymentRating", iACDataSet.CUSTOMER.Rows[0].Field<String>("TSBPaymentRating"));
+                        RepoIndIndex = RepoIndicatorsBindingSource.Find("Code", iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_REPO_IND"));  // Moses Newman 05/31/2018
                 // Moses Newman 1/8/2014 Set in lbAlreadyIntOveride field so that interest overide record is NOT created if alreadty overided to zero.
                 if (iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_INT_OVERRIDE") == "Y")
                     lbAlreadyIntOverride = true;
@@ -842,11 +840,6 @@ namespace IAC2018SQL
                     comboBoxRepoInd.SelectedIndex = RepoIndIndex;
                 else
                     comboBoxRepoInd.SelectedIndex = 1;
-                // Moses Newman 07/10/2020 add Payment Ratings dropdown.
-                if (PaymentRatingsIndex > -1)
-                    comboBoxTSBPaymentRating.SelectedIndex = PaymentRatingsIndex;
-                else
-                    comboBoxTSBPaymentRating.SelectedIndex = 0;
                 // Moses Newman 10/24/2013 Add Binding sources to DEALER NAME fields on History and Comment Tabs so it does not disply dealer 112 if no customer
                 textBox1.DataBindings.Clear();
                 textBox8.DataBindings.Clear();
@@ -1103,13 +1096,13 @@ namespace IAC2018SQL
             if (checkBoxMilitary.Checked)
             {
                 checkBoxMilitary.Enabled = true;
-                checkBoxMilitary.Font = new Font(checkBoxMilitary.Font, FontStyle.Bold);
+                checkBoxMilitary.Font = new System.Drawing.Font(checkBoxMilitary.Font, FontStyle.Bold);
                 checkBoxMilitary.ForeColor = Color.Red;
             }
             else
             {
                 checkBoxMilitary.Enabled = false;
-                checkBoxMilitary.Font = new Font(checkBoxMilitary.Font, FontStyle.Regular);
+                checkBoxMilitary.Font = new System.Drawing.Font(checkBoxMilitary.Font, FontStyle.Regular);
                 checkBoxMilitary.ForeColor = SystemColors.ControlText;
             }
         }
@@ -1937,6 +1930,8 @@ namespace IAC2018SQL
             EmailbindingSource.EndEdit();
             // Moses Newman 06/12/2018 Added CustomerFees record!
             CustomerFeesBindingSource.EndEdit();
+            // Moses Newman 08/13/2020 Add save of TSB data
+            closedCreditManagerBindingSource.EndEdit();
 
             try
             {
@@ -2103,6 +2098,14 @@ namespace IAC2018SQL
                 CustomerFeesTableAdapter.Transaction = tableAdapTran;
                 CustomerFeesTableAdapter.Update(iACDataSet.CustomerFees.Rows[CustomerFeesBindingSource.Position]);
 
+                // Moses Newman 08/13/2020 Add save of TSB data
+                if (tsbDataSet.ClosedCreditManager.Rows.Count != 0)
+                {
+                    closedCreditManagerTableAdapter.Connection = tableAdapConn;
+                    closedCreditManagerTableAdapter.Transaction = tableAdapTran;
+                    closedCreditManagerTableAdapter.Update(tsbDataSet.ClosedCreditManager.Rows[closedCreditManagerBindingSource.Position]);
+                }
+
                 tableAdapTran.Commit();
             }
             catch (System.Data.SqlClient.SqlException ex)
@@ -2175,6 +2178,7 @@ namespace IAC2018SQL
             // Moses Newman 03/27/2013 Add delete from Email SQL server Table!!!
             emailTableAdapter.Connection = tableAdapConn;
             emailTableAdapter.Transaction = tableAdapTran;
+
             try
             {
                 cUSTOMERTableAdapter.DeleteQuery(lsCustomerNo);
@@ -3828,12 +3832,9 @@ namespace IAC2018SQL
         private void comboBoxTSBPaymentRating_SelectedValueChanged(object sender, EventArgs e)
         {
             if (lbAddFlag || lbEdit)
+            {
                 toolStripButtonSave.Enabled = true;
-        }
-
-        private void comboBoxTSBPaymentRating_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
+            }
         }
 
         private void checkBoxCheckIssued_CheckedChanged(object sender, EventArgs e)
@@ -3857,6 +3858,90 @@ namespace IAC2018SQL
         {
             if(cUSTOMER_ACT_STATTextBox.Text == "I" && textBoxCheckNo.Text != "")
                 MakeComment("*** Overpayment Check Issued Check Number: " + textBoxCheckNo.Text + " ***", "", 0, false);
+        }
+
+        private void comboBoxConsumerIndicator_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void comboBoxAccountStatus_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+            {
+                toolStripButtonSave.Enabled = true;
+                // Moses Newman 08/15/2020 enable Payment Rating if Account Status is changed to 13,65,89,94, or 95.
+                switch (comboBoxAccountStatus.SelectedValue)
+                {
+                    case "13":
+                    case "65":
+                    case "89":
+                    case "94":
+                    case "95":
+                        comboBoxPaymentRating.Enabled = true;
+                        break;
+                    default:
+                        comboBoxPaymentRating.Enabled = false;
+                        break;
+                }
+            }
+        }
+
+        private void comboBoxPaymentRating_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void comboBoxComplianceConditionCode_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void comboBoxECOACode_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void comboBoxInterestType_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void comboBoxPortfolioType_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void comboBoxTermsFrequency_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        // Moses Newman 08/15/2020 ONLY enable Payment Rating field if Account Status is 15,65,89,94, or 95!
+        private void comboBoxPaymentRating_EnabledChanged(object sender, EventArgs e)
+        {
+            if(comboBoxPaymentRating.Enabled)
+            {
+                switch (comboBoxAccountStatus.SelectedValue)
+                {
+                    case "13":
+                    case "65":
+                    case "89":
+                    case "94":
+                    case "95":
+                        break;
+                    default:
+                        comboBoxPaymentRating.Enabled = false;
+                        break;
+                }
+            }
         }
 
         private void textBoxRepairFee3_Validated(object sender, EventArgs e)
@@ -3922,7 +4007,7 @@ namespace IAC2018SQL
                 //handle error
                 // txtToken.Text = wSLoginResponse.Message;
 
-                return "BadKey";
+                return "BadKey" + wSLoginResponse.Message;
             }
             else
             {
@@ -4126,7 +4211,7 @@ namespace IAC2018SQL
 
             FormSMSMessage newmessage = new FormSMSMessage();
             newmessage.CellPhone = cUSTOMER_CELL_PHONETextBox.Text.TrimEnd();
-            newmessage.securityToken = sbtLogin();
+            //newmessage.securityToken = sbtLogin(); login now from Message Form! 08/12/2020 Moses Newman
             newmessage.CustomerNo = iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO");
             newmessage.ShowDialog();
             lsMessage = newmessage.MessageSent;
@@ -4756,12 +4841,12 @@ namespace IAC2018SQL
                 toolStripButtonSave.Enabled = true;
             if(checkBoxMilitary.Checked)
             {
-                checkBoxMilitary.Font = new Font(checkBoxMilitary.Font, FontStyle.Bold);
+                checkBoxMilitary.Font = new System.Drawing.Font(checkBoxMilitary.Font, FontStyle.Bold);
                 checkBoxMilitary.ForeColor = Color.Red;
             }
             else
             {
-                checkBoxMilitary.Font = new Font(checkBoxMilitary.Font, FontStyle.Regular);
+                checkBoxMilitary.Font = new System.Drawing.Font(checkBoxMilitary.Font, FontStyle.Regular);
                 checkBoxMilitary.ForeColor = SystemColors.ControlText;
             }
         }

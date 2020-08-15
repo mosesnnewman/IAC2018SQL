@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using IAC2018SQL.MessageWSProxy;
+using IAC2018SQL.LoginWSProxy;
 
 namespace IAC2018SQL
 {
@@ -104,7 +105,8 @@ namespace IAC2018SQL
             string statusUrl = "";
 
             WSMessageResponse wSMessageResponse;
-            if(tempID < 0)
+            securityToken = sbtLogin(); // 08/12/2020 Moses Newman grab new login instead of passed login;
+            if (tempID < 0)
                 wSMessageResponse = messageResult.SendMessage(securityToken, "IAC Inc: "+message, recipients.ToArray(), orgCode, note, statusUrl);
             else
                 wSMessageResponse = messageResult.SendTemplateMessage(securityToken, tempID, recipients.ToArray(), orgCode, note, statusUrl);
@@ -150,5 +152,30 @@ namespace IAC2018SQL
             ldNewPaidThru = ldNewPaidThru.AddMonths(1);     // Add 1 to get next Due Date.
             return ldNewPaidThru;
         }
+
+        private String sbtLogin()
+        {
+            LoginAPIClient login = new LoginAPIClient("LoginAPIServiceHttpEndpoint");
+
+            // Create loginRequestDetails
+            LoginRequestDetails loginRequestDetails = new LoginRequestDetails();
+            loginRequestDetails.APIKey = "5sak6Ed9XvXUT7CqfsEwUBNttwOto81jRPsdqewa8UYKk3mJA8GfAyALmXhHJ81f";
+
+            WSLoginResponse wSLoginResponse = login.AuthenticateAPIKey(loginRequestDetails);
+
+            //process response
+            if (!wSLoginResponse.Result)
+            {
+                //handle error
+                // txtToken.Text = wSLoginResponse.Message;
+
+                return "BadKey" + wSLoginResponse.Message;
+            }
+            else
+            {
+                return wSLoginResponse.SecurityToken;
+            }
+        }
+
     }
 }
