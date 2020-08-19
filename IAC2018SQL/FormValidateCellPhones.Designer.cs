@@ -36,7 +36,7 @@
             // progressBar1
             // 
             this.progressBar1.Location = new System.Drawing.Point(16, 254);
-            this.progressBar1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.progressBar1.Margin = new System.Windows.Forms.Padding(4);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(357, 47);
             this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
@@ -45,7 +45,7 @@
             // buttonValidate
             // 
             this.buttonValidate.Location = new System.Drawing.Point(145, 193);
-            this.buttonValidate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonValidate.Margin = new System.Windows.Forms.Padding(4);
             this.buttonValidate.Name = "buttonValidate";
             this.buttonValidate.Size = new System.Drawing.Size(100, 28);
             this.buttonValidate.TabIndex = 1;
@@ -61,9 +61,8 @@
             this.labelStatus.Location = new System.Drawing.Point(39, 50);
             this.labelStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelStatus.Name = "labelStatus";
-            this.labelStatus.Size = new System.Drawing.Size(59, 16);
+            this.labelStatus.Size = new System.Drawing.Size(0, 16);
             this.labelStatus.TabIndex = 2;
-            this.labelStatus.Text = "test data";
             // 
             // FormValidateCellPhones
             // 
@@ -74,7 +73,7 @@
             this.Controls.Add(this.buttonValidate);
             this.Controls.Add(this.progressBar1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormValidateCellPhones";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Validate Cell Phones";

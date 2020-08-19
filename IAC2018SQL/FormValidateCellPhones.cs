@@ -8,9 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using IAC2018SQL.GeneralWSProxy;
-using IAC2018SQL.LoginWSProxy;
+using IAC2018SQL.LoginWSProxy;using IAC2018SQL.SubscriberWSProxy;
+
 using IAC2018SQL.MessageWSProxy;
-using IAC2018SQL.SubscriberWSProxy;
 
 namespace IAC2018SQL
 {
@@ -19,6 +19,7 @@ namespace IAC2018SQL
         IACDataSet IACData = new IACDataSet();
         IACDataSetTableAdapters.CUSTOMERTableAdapter CUSTOMERTableAdapter = new IACDataSetTableAdapters.CUSTOMERTableAdapter();
         IACDataSetTableAdapters.COMMENTTableAdapter COMMENTTableAdapter = new IACDataSetTableAdapters.COMMENTTableAdapter();
+        IACDataSetTableAdapters.EmailTableAdapter EmailTableAdapter = new IACDataSetTableAdapters.EmailTableAdapter();
         public FormValidateCellPhones()
         {
             InitializeComponent();
@@ -46,17 +47,15 @@ namespace IAC2018SQL
             {
                 return wSLoginResponse.SecurityToken;
             }
-        } 
+        }
 
         private void buttonValidate_Click(object sender, EventArgs e)
         {
-            Int32 lnSeq = 0;
-            object loQuery = null;
             GroupClient generalService = new GroupClient("ReportWSServiceHttpEndpoint2");
             WSCarrierLookupResponse wSCarrierLookupResponse;
-            string securityToken = sbtLogin();
+            string securityToken;
             string orgCode = "wt63419";
-            
+
 
 
 
@@ -69,28 +68,16 @@ namespace IAC2018SQL
 
             for (Int32 i = 0; i < IACData.CUSTOMER.Rows.Count; i++)
             {
-                lnSeq = 0;
-                loQuery = null;
-                labelStatus.Text = "Working on customer " + IACData.CUSTOMER.Rows[i].Field<String>("CUSTOMER_NO") + " " + i.ToString().TrimStart() + " of " + (IACData.CUSTOMER.Rows.Count -1).ToString().TrimStart();
+                labelStatus.Text = "Working on customer " + IACData.CUSTOMER.Rows[i].Field<String>("CUSTOMER_NO") + " " + i.ToString().TrimStart() + " of " + (IACData.CUSTOMER.Rows.Count - 1).ToString().TrimStart();
                 labelStatus.Refresh();
-
                 // Moses Newman 07/21/2020 Only Force Validate people who have not opted out
                 string[] phone = IACData.CUSTOMER.Rows[i].Field<String>("CUSTOMER_CELL_PHONE").Split(',');
-                if (GetSubscriberStatus(IACData.CUSTOMER.Rows[i].Field<String>("CUSTOMER_CELL_PHONE")) != "Inactive")
+                if (GetSubscriberStatus(phone[0]) != "Inactive" && phone[0] != "")
                 {
+                    securityToken = sbtLogin();
 
                     wSCarrierLookupResponse = generalService.GetCarrierLookup(securityToken, phone, orgCode);
 
-                    if (lnSeq == 0)
-                    {
-                        loQuery = COMMENTTableAdapter.SeqNoQuery(IACData.CUSTOMER.Rows[i].Field<String>("CUSTOMER_NO"), DateTime.Now.Date);
-                        if (loQuery != null)
-                            lnSeq = (int)loQuery + 1;
-                        else
-                            lnSeq = 1;
-                    }
-                    else
-                        lnSeq = lnSeq + 1;
                     if (!wSCarrierLookupResponse.Result)
                     {
                         MakeComment("*** Failed to VALIDATE cell phone number! ***", wSCarrierLookupResponse.Message, i);
@@ -100,8 +87,78 @@ namespace IAC2018SQL
                     {
                         if (wSCarrierLookupResponse.Result && !wSCarrierLookupResponse.Response[0].Landline)
                         {
-                            MakeComment("Cell Phone Number VALIDATED.", wSCarrierLookupResponse.Message, i);
-                            IACData.CUSTOMER.Rows[i].SetField<Boolean>("CellValid", true);
+                            string VBTError = "",gsVBTPin = "";
+                            MessageClient messageResult = new MessageClient("MessageWSServiceHttpEndpoint");
+                            securityToken = sbtLogin();
+                            string phoneNo = phone[0];
+
+                            WSVerificationResponse wSVerificationResponse = messageResult.RequestVBT(securityToken, orgCode, phoneNo);
+                            if (!wSVerificationResponse.Result)
+                            {
+                                gsVBTPin = "";
+
+                                VBTError = wSVerificationResponse.Message;
+                                if (VBTError.TrimEnd() != "Subscriber information already exists")
+                                {
+                                    IACData.CUSTOMER.Rows[i].SetField<Boolean>("TAcct", false);
+                                    MakeComment("*** VBT PIN NOT CREATED! ***", VBTError, i);
+                                    MessageBox.Show(VBTError);
+                                }
+                            }
+                            else
+                            {
+                                gsVBTPin = "AUTO";
+                                IACData.CUSTOMER.Rows[i].SetField<Boolean>("DNTAcct", false);
+                                IACData.CUSTOMER.Rows[i].SetField<Boolean>("TAcct", true);
+                                MakeComment("VBT AUTO CREATED.", wSVerificationResponse.Message, i);
+                            }
+
+                            if (gsVBTPin == "AUTO")
+                            {
+                                SubscriberClient subscriberService = new SubscriberClient("SubscriberWSServiceHttpEndpoint");
+
+
+
+                                SubscriberInfo subscriber = new SubscriberInfo();
+                                SubscriberDetails subdetails = new SubscriberDetails();
+
+                                subscriber.MobilePhone = IACData.CUSTOMER.Rows[i].Field<String>("CUSTOMER_CELL_PHONE");
+
+                                subscriber.FName = IACData.CUSTOMER.Rows[i].Field<String>("CUSTOMER_FIRST_NAME");
+                                subscriber.LName = IACData.CUSTOMER.Rows[i].Field<String>("CUSTOMER_LAST_NAME");
+                                EmailTableAdapter.Fill(IACData.Email, IACData.CUSTOMER.Rows[i].Field<String>("CUSTOMER_NO"));
+                                subscriber.Email = IACData.Email.Rows[0].Field<String>("EmailAddress");
+                                subscriber.City = IACData.CUSTOMER.Rows[i].Field<String>("CUSTOMER_CITY");
+                                subscriber.Street = IACData.CUSTOMER.Rows[i].Field<String>("CUSTOMER_STREET_1");
+                                subscriber.Street2 = IACData.CUSTOMER.Rows[i].Field<String>("CUSTOMER_STREET_2");
+                                subscriber.ZipCode = IACData.CUSTOMER.Rows[i].Field<String>("CUSTOMER_ZIP_1") + IACData.CUSTOMER.Rows[i].Field<String>("CUSTOMER_ZIP_2");
+                                subscriber.CustomField1 = "";
+                                subscriber.CustomField2 = "";
+                                subscriber.CustomField3 = "";
+                                subscriber.PrivateCode = IACData.CUSTOMER.Rows[i].Field<String>("CUSTOMER_PURCHASE_ORDER");
+                                subscriber.UniqueID = IACData.CUSTOMER.Rows[i].Field<String>("CUSTOMER_NO");
+
+
+                                securityToken = sbtLogin();
+                                WSSubscriberResponse wSSubscriberResponse = subscriberService.UpdateSubscriber(securityToken, subscriber);
+
+                                if (!wSSubscriberResponse.Result)
+                                {
+                                    MakeComment("*** SBT SUBSCRIBER FIELDS UPDATE FAILED! ***", wSSubscriberResponse.Message, i);
+                                    MessageBox.Show(wSSubscriberResponse.Message);
+                                }
+                                else
+                                {
+                                    MakeComment("SBT SUBSCRIBER FIELDS UPDATED.", wSSubscriberResponse.Message, i);
+                                }
+
+                                MakeComment("Cell Phone Number VALIDATED. AUTO VBT", wSCarrierLookupResponse.Message, i);
+                                IACData.CUSTOMER.Rows[i].SetField<Boolean>("CellValid", true);
+                                IACData.CUSTOMER.Rows[i].SetField<Boolean>("DNTAcct", false);
+                                IACData.CUSTOMER.Rows[i].SetField<Boolean>("TAcct", true);
+                                IACData.CUSTOMER.Rows[i].SetField<Boolean>("TConfirmed", true);
+                                IACData.CUSTOMER.Rows[i].SetField<String>("TPin", "AUTO");
+                            }
                         }
                         else
                         {
@@ -179,6 +236,5 @@ namespace IAC2018SQL
                 return wSSubscribersStatusResponse.Response[0].Status;
             }
         }
-
     }
 }
