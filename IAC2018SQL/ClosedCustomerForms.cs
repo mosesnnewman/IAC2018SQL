@@ -3943,6 +3943,7 @@ namespace IAC2018SQL
             }
         }
 
+
         private void textBoxRepairFee3_Validated(object sender, EventArgs e)
         {
             if (!Decimal.TryParse(textBoxRepairFee3.Text, NumberStyles.Currency,
@@ -4053,13 +4054,18 @@ namespace IAC2018SQL
 
         private void buttonConfirm_Click(object sender, EventArgs e)
         {
-            if (textBoxAuthNo.Text.TrimEnd() == "" || (!lbAddFlag && !lbEdit) || buttonConfirm.ForeColor == Color.Green)
+            if ((textBoxAuthNo.Text.TrimEnd() == "" && gsVBTPin != "AUTO") || (!lbAddFlag && !lbEdit) || buttonConfirm.ForeColor == Color.Green)
                 return;
             MessageClient messageResult = new MessageClient("MessageWSServiceHttpEndpoint");
             string securityToken = sbtLogin();
-            string orgCode = "wt63419";
+            //string orgCode = "wt63419";
             string phoneNo = cUSTOMER_CELL_PHONETextBox.Text;
 
+            // Moses Newman 08/19/2020 No longer need confirmVBT because PIN is no longer generated!
+            if (gsVBTPin == "AUTO")
+            {
+                textBoxAuthNo.Text = gsVBTPin;
+            }
             if (textBoxAuthNo.Text.TrimEnd() != gsVBTPin)
             {
                 radioButtonAcct.Checked = false;
@@ -4067,7 +4073,15 @@ namespace IAC2018SQL
                 return;
             }
 
-            WSVerificationResponse wSVerificationResponse = messageResult.ConfirmVBT(securityToken, orgCode, phoneNo, gsVBTPin);
+            // Moses Newman 08/19/2020 No longer need confirmVBT because PIN is no longer generated!
+            radioButtonAcct.Checked = true;
+            radioButtonMktg.Checked = false;
+            UpdateSubscriber(securityToken);
+            iACDataSet.CUSTOMER.Rows[0].SetField<Boolean>("TConfirmed", true);
+            buttonConfirm.ForeColor = Color.Green;
+            MakeComment("AUTO CONFIRMED (NO PIN)!", "AUTO", 0, false);
+
+            /*WSVerificationResponse wSVerificationResponse = messageResult.ConfirmVBT(securityToken, orgCode, phoneNo, gsVBTPin);
             if (!wSVerificationResponse.Result)
             {
                 radioButtonAcct.Checked = false;
@@ -4084,7 +4098,7 @@ namespace IAC2018SQL
                 iACDataSet.CUSTOMER.Rows[0].SetField<Boolean>("TConfirmed", true);
                 buttonConfirm.ForeColor = Color.Green;
                 MakeComment("VBT PIN NUMBER: " + gsVBTPin + " CONFIRMED!", wSVerificationResponse.Message, 0, false);
-            }
+            }*/
             if (lbAddFlag || lbEdit)
                 toolStripButtonSave.Enabled = true;
         }
@@ -4125,7 +4139,7 @@ namespace IAC2018SQL
                 }
                 else
                 {
-                    gsVBTPin = wSVerificationResponse.Pin;
+                    gsVBTPin = "AUTO";
                     iACDataSet.CUSTOMER.Rows[0].SetField<Boolean>("DNTAcct", false);
                     iACDataSet.CUSTOMER.Rows[0].SetField<Boolean>("TAcct", true);
                     MakeComment("VBT PIN#: " + gsVBTPin + " CREATED.", wSVerificationResponse.Message, 0, false);
