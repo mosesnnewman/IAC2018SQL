@@ -33,7 +33,7 @@ namespace IAC2018SQL
                         gnRepairFee1 = 0, gnRepairFee2 = 0, gnRepairFee3 = 0, gnRepairFee4 = 0, gnRepairFee5 = 0;
         private string lControl_Month, lControl_Year, lControlDate,
                         lcExpYear1, lcExpYear2, lcExpYear3, lcExpYear4, lcExpYear5, lcExpYear6, lcExpYear7, lcExpYear8,
-                        lcExpYear9, lcExpYear10, gsVBTPin = "", lsUNCROOT = "", lsDataPath = "";
+                        lcExpYear9, lcExpYear10, lsUNCROOT = "", lsDataPath = "";
         private double lPaidInterest;
         private System.Data.SqlClient.SqlTransaction tableAdapTran = null;
         private System.Data.SqlClient.SqlConnection tableAdapConn = null;
@@ -815,8 +815,6 @@ namespace IAC2018SQL
 
             if (iACDataSet.CUSTOMER.Rows.Count > 0)
             {
-                gsVBTPin = "";
-
                 // Moses Newman 12/9/2013 preselect Credit Score Drop Down Choice and Repo Drop Down Choice if he coresponding customer record fields are valid.
                 Int32 CreditIndex = creditCodesBindingSource.Find("Code", iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_CREDIT_SCORE_A")),
                         RepoIndex = repoCodesBindingSource.Find("Code", iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_REPO_CDE")),
@@ -3943,6 +3941,10 @@ namespace IAC2018SQL
             }
         }
 
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
 
         private void textBoxRepairFee3_Validated(object sender, EventArgs e)
         {
@@ -4054,53 +4056,7 @@ namespace IAC2018SQL
 
         private void buttonConfirm_Click(object sender, EventArgs e)
         {
-            if ((textBoxAuthNo.Text.TrimEnd() == "" && gsVBTPin != "AUTO") || (!lbAddFlag && !lbEdit) || buttonConfirm.ForeColor == Color.Green)
-                return;
-            MessageClient messageResult = new MessageClient("MessageWSServiceHttpEndpoint");
-            string securityToken = sbtLogin();
-            //string orgCode = "wt63419";
-            string phoneNo = cUSTOMER_CELL_PHONETextBox.Text;
-
-            // Moses Newman 08/19/2020 No longer need confirmVBT because PIN is no longer generated!
-            if (gsVBTPin == "AUTO")
-            {
-                textBoxAuthNo.Text = gsVBTPin;
-            }
-            if (textBoxAuthNo.Text.TrimEnd() != gsVBTPin)
-            {
-                radioButtonAcct.Checked = false;
-                MessageBox.Show("Entered PIN does NOT match customer PIN!");
-                return;
-            }
-
-            // Moses Newman 08/19/2020 No longer need confirmVBT because PIN is no longer generated!
-            radioButtonAcct.Checked = true;
-            radioButtonMktg.Checked = false;
-            UpdateSubscriber(securityToken);
-            iACDataSet.CUSTOMER.Rows[0].SetField<Boolean>("TConfirmed", true);
-            buttonConfirm.ForeColor = Color.Green;
-            MakeComment("AUTO CONFIRMED (NO PIN)!", "AUTO", 0, false);
-
-            /*WSVerificationResponse wSVerificationResponse = messageResult.ConfirmVBT(securityToken, orgCode, phoneNo, gsVBTPin);
-            if (!wSVerificationResponse.Result)
-            {
-                radioButtonAcct.Checked = false;
-                buttonConfirm.ForeColor = Color.Crimson;
-                iACDataSet.CUSTOMER.Rows[0].SetField<Boolean>("TConfirmed", false);
-                MakeComment("*** VBT PIN NOT CONFIRMED! ***", wSVerificationResponse.Message, 0, false);
-                MessageBox.Show(wSVerificationResponse.Message);
-            }
-            else
-            {
-                radioButtonAcct.Checked = true;
-                radioButtonMktg.Checked = false;
-                UpdateSubscriber(securityToken);
-                iACDataSet.CUSTOMER.Rows[0].SetField<Boolean>("TConfirmed", true);
-                buttonConfirm.ForeColor = Color.Green;
-                MakeComment("VBT PIN NUMBER: " + gsVBTPin + " CONFIRMED!", wSVerificationResponse.Message, 0, false);
-            }*/
-            if (lbAddFlag || lbEdit)
-                toolStripButtonSave.Enabled = true;
+            return;
         }
 
         private void radioButtonAcct_Click(object sender, EventArgs e)
@@ -4127,7 +4083,8 @@ namespace IAC2018SQL
                 WSVerificationResponse wSVerificationResponse = messageResult.RequestVBT(securityToken, orgCode, phoneNo);
                 if (!wSVerificationResponse.Result)
                 {
-                    gsVBTPin = "";
+                    iACDataSet.CUSTOMER.Rows[0].SetField<String>("TPin", "");
+                    textBoxAuthNo.Refresh();
 
                     VBTError = wSVerificationResponse.Message;
                     if (VBTError.TrimEnd() != "Subscriber information already exists")
@@ -4139,10 +4096,16 @@ namespace IAC2018SQL
                 }
                 else
                 {
-                    gsVBTPin = "AUTO";
                     iACDataSet.CUSTOMER.Rows[0].SetField<Boolean>("DNTAcct", false);
                     iACDataSet.CUSTOMER.Rows[0].SetField<Boolean>("TAcct", true);
-                    MakeComment("VBT PIN#: " + gsVBTPin + " CREATED.", wSVerificationResponse.Message, 0, false);
+                    iACDataSet.CUSTOMER.Rows[0].SetField<String>("TPin", "AUTO");
+                    textBoxAuthNo.Refresh();
+                    radioButtonAcct.Checked = true;
+                    radioButtonMktg.Checked = false;
+                    UpdateSubscriber(securityToken);
+                    iACDataSet.CUSTOMER.Rows[0].SetField<Boolean>("TConfirmed", true);
+                    buttonConfirm.ForeColor = Color.Green;
+                    MakeComment("AUTO CONFIRMED (NO PIN)!", "AUTO", 0, false);
                 }
             }
         }
