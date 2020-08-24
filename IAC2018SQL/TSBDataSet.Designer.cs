@@ -710,6 +710,24 @@ namespace IAC2018SQL {
             
             private global::System.Data.DataColumn columnInterestType;
             
+            private global::System.Data.DataColumn columnAccountStatusOverride;
+            
+            private global::System.Data.DataColumn columnPaymentRatingOverride;
+            
+            private global::System.Data.DataColumn columnSpecialCommentOverride;
+            
+            private global::System.Data.DataColumn columnAccountTypeOverride;
+            
+            private global::System.Data.DataColumn columnConsumerIndicatorOverride;
+            
+            private global::System.Data.DataColumn columnComplianceConditionCodeOverride;
+            
+            private global::System.Data.DataColumn columnECOACodeOverride;
+            
+            private global::System.Data.DataColumn columnPaymentHistoryOverride;
+            
+            private global::System.Data.DataColumn columnFollowUpDateOverride;
+            
             private static System.DateTime columnCRDMGR_DATE_OF_BIRTH_MMDDYYYY_defaultValue = global::System.DateTime.Parse("1900-01-01T00:00:00");
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1211,6 +1229,78 @@ namespace IAC2018SQL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn AccountStatusOverrideColumn {
+                get {
+                    return this.columnAccountStatusOverride;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn PaymentRatingOverrideColumn {
+                get {
+                    return this.columnPaymentRatingOverride;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn SpecialCommentOverrideColumn {
+                get {
+                    return this.columnSpecialCommentOverride;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn AccountTypeOverrideColumn {
+                get {
+                    return this.columnAccountTypeOverride;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ConsumerIndicatorOverrideColumn {
+                get {
+                    return this.columnConsumerIndicatorOverride;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ComplianceConditionCodeOverrideColumn {
+                get {
+                    return this.columnComplianceConditionCodeOverride;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ECOACodeOverrideColumn {
+                get {
+                    return this.columnECOACodeOverride;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn PaymentHistoryOverrideColumn {
+                get {
+                    return this.columnPaymentHistoryOverride;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn FollowUpDateOverrideColumn {
+                get {
+                    return this.columnFollowUpDateOverride;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1304,7 +1394,16 @@ namespace IAC2018SQL {
                         System.DateTime DateOfAccountInformation, 
                         System.DateTime FollowUpDate, 
                         string ComplianceConditionCode, 
-                        string InterestType) {
+                        string InterestType, 
+                        bool AccountStatusOverride, 
+                        bool PaymentRatingOverride, 
+                        bool SpecialCommentOverride, 
+                        bool AccountTypeOverride, 
+                        bool ConsumerIndicatorOverride, 
+                        bool ComplianceConditionCodeOverride, 
+                        bool ECOACodeOverride, 
+                        bool PaymentHistoryOverride, 
+                        bool FollowUpDateOverride) {
                 ClosedCreditManagerRow rowClosedCreditManagerRow = ((ClosedCreditManagerRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         CRDMGR_CUST_LAST_NAME,
@@ -1364,7 +1463,16 @@ namespace IAC2018SQL {
                         DateOfAccountInformation,
                         FollowUpDate,
                         ComplianceConditionCode,
-                        InterestType};
+                        InterestType,
+                        AccountStatusOverride,
+                        PaymentRatingOverride,
+                        SpecialCommentOverride,
+                        AccountTypeOverride,
+                        ConsumerIndicatorOverride,
+                        ComplianceConditionCodeOverride,
+                        ECOACodeOverride,
+                        PaymentHistoryOverride,
+                        FollowUpDateOverride};
                 rowClosedCreditManagerRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowClosedCreditManagerRow);
                 return rowClosedCreditManagerRow;
@@ -1453,6 +1561,15 @@ namespace IAC2018SQL {
                 this.columnFollowUpDate = base.Columns["FollowUpDate"];
                 this.columnComplianceConditionCode = base.Columns["ComplianceConditionCode"];
                 this.columnInterestType = base.Columns["InterestType"];
+                this.columnAccountStatusOverride = base.Columns["AccountStatusOverride"];
+                this.columnPaymentRatingOverride = base.Columns["PaymentRatingOverride"];
+                this.columnSpecialCommentOverride = base.Columns["SpecialCommentOverride"];
+                this.columnAccountTypeOverride = base.Columns["AccountTypeOverride"];
+                this.columnConsumerIndicatorOverride = base.Columns["ConsumerIndicatorOverride"];
+                this.columnComplianceConditionCodeOverride = base.Columns["ComplianceConditionCodeOverride"];
+                this.columnECOACodeOverride = base.Columns["ECOACodeOverride"];
+                this.columnPaymentHistoryOverride = base.Columns["PaymentHistoryOverride"];
+                this.columnFollowUpDateOverride = base.Columns["FollowUpDateOverride"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1574,6 +1691,24 @@ namespace IAC2018SQL {
                 base.Columns.Add(this.columnComplianceConditionCode);
                 this.columnInterestType = new global::System.Data.DataColumn("InterestType", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnInterestType);
+                this.columnAccountStatusOverride = new global::System.Data.DataColumn("AccountStatusOverride", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAccountStatusOverride);
+                this.columnPaymentRatingOverride = new global::System.Data.DataColumn("PaymentRatingOverride", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPaymentRatingOverride);
+                this.columnSpecialCommentOverride = new global::System.Data.DataColumn("SpecialCommentOverride", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSpecialCommentOverride);
+                this.columnAccountTypeOverride = new global::System.Data.DataColumn("AccountTypeOverride", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAccountTypeOverride);
+                this.columnConsumerIndicatorOverride = new global::System.Data.DataColumn("ConsumerIndicatorOverride", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnConsumerIndicatorOverride);
+                this.columnComplianceConditionCodeOverride = new global::System.Data.DataColumn("ComplianceConditionCodeOverride", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnComplianceConditionCodeOverride);
+                this.columnECOACodeOverride = new global::System.Data.DataColumn("ECOACodeOverride", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnECOACodeOverride);
+                this.columnPaymentHistoryOverride = new global::System.Data.DataColumn("PaymentHistoryOverride", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPaymentHistoryOverride);
+                this.columnFollowUpDateOverride = new global::System.Data.DataColumn("FollowUpDateOverride", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFollowUpDateOverride);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnCRDMGR_ACCOUNT_NUMBER,
                                 this.columnCRDMGR_ACCT_TYPE_CODE}, true));
@@ -1667,6 +1802,15 @@ namespace IAC2018SQL {
                 this.columnComplianceConditionCode.MaxLength = 2;
                 this.columnInterestType.DefaultValue = ((string)(""));
                 this.columnInterestType.MaxLength = 1;
+                this.columnAccountStatusOverride.DefaultValue = ((bool)(false));
+                this.columnPaymentRatingOverride.DefaultValue = ((bool)(false));
+                this.columnSpecialCommentOverride.DefaultValue = ((bool)(false));
+                this.columnAccountTypeOverride.DefaultValue = ((bool)(false));
+                this.columnConsumerIndicatorOverride.DefaultValue = ((bool)(false));
+                this.columnComplianceConditionCodeOverride.DefaultValue = ((bool)(false));
+                this.columnECOACodeOverride.DefaultValue = ((bool)(false));
+                this.columnPaymentHistoryOverride.DefaultValue = ((bool)(false));
+                this.columnFollowUpDateOverride.DefaultValue = ((bool)(false));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5402,6 +5546,159 @@ namespace IAC2018SQL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool AccountStatusOverride {
+                get {
+                    try {
+                        return ((bool)(this[this.tableClosedCreditManager.AccountStatusOverrideColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'AccountStatusOverride\' in table \'ClosedCreditManager\' is DB" +
+                                "Null.", e);
+                    }
+                }
+                set {
+                    this[this.tableClosedCreditManager.AccountStatusOverrideColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool PaymentRatingOverride {
+                get {
+                    try {
+                        return ((bool)(this[this.tableClosedCreditManager.PaymentRatingOverrideColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PaymentRatingOverride\' in table \'ClosedCreditManager\' is DB" +
+                                "Null.", e);
+                    }
+                }
+                set {
+                    this[this.tableClosedCreditManager.PaymentRatingOverrideColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool SpecialCommentOverride {
+                get {
+                    try {
+                        return ((bool)(this[this.tableClosedCreditManager.SpecialCommentOverrideColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SpecialCommentOverride\' in table \'ClosedCreditManager\' is D" +
+                                "BNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableClosedCreditManager.SpecialCommentOverrideColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool AccountTypeOverride {
+                get {
+                    try {
+                        return ((bool)(this[this.tableClosedCreditManager.AccountTypeOverrideColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'AccountTypeOverride\' in table \'ClosedCreditManager\' is DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tableClosedCreditManager.AccountTypeOverrideColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool ConsumerIndicatorOverride {
+                get {
+                    try {
+                        return ((bool)(this[this.tableClosedCreditManager.ConsumerIndicatorOverrideColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ConsumerIndicatorOverride\' in table \'ClosedCreditManager\' i" +
+                                "s DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableClosedCreditManager.ConsumerIndicatorOverrideColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool ComplianceConditionCodeOverride {
+                get {
+                    try {
+                        return ((bool)(this[this.tableClosedCreditManager.ComplianceConditionCodeOverrideColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ComplianceConditionCodeOverride\' in table \'ClosedCreditMana" +
+                                "ger\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableClosedCreditManager.ComplianceConditionCodeOverrideColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool ECOACodeOverride {
+                get {
+                    try {
+                        return ((bool)(this[this.tableClosedCreditManager.ECOACodeOverrideColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ECOACodeOverride\' in table \'ClosedCreditManager\' is DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tableClosedCreditManager.ECOACodeOverrideColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool PaymentHistoryOverride {
+                get {
+                    try {
+                        return ((bool)(this[this.tableClosedCreditManager.PaymentHistoryOverrideColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PaymentHistoryOverride\' in table \'ClosedCreditManager\' is D" +
+                                "BNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableClosedCreditManager.PaymentHistoryOverrideColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool FollowUpDateOverride {
+                get {
+                    try {
+                        return ((bool)(this[this.tableClosedCreditManager.FollowUpDateOverrideColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'FollowUpDateOverride\' in table \'ClosedCreditManager\' is DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tableClosedCreditManager.FollowUpDateOverrideColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsCRDMGR_CUST_LAST_NAMENull() {
                 return this.IsNull(this.tableClosedCreditManager.CRDMGR_CUST_LAST_NAMEColumn);
             }
@@ -6070,6 +6367,114 @@ namespace IAC2018SQL {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetInterestTypeNull() {
                 this[this.tableClosedCreditManager.InterestTypeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsAccountStatusOverrideNull() {
+                return this.IsNull(this.tableClosedCreditManager.AccountStatusOverrideColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetAccountStatusOverrideNull() {
+                this[this.tableClosedCreditManager.AccountStatusOverrideColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsPaymentRatingOverrideNull() {
+                return this.IsNull(this.tableClosedCreditManager.PaymentRatingOverrideColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetPaymentRatingOverrideNull() {
+                this[this.tableClosedCreditManager.PaymentRatingOverrideColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsSpecialCommentOverrideNull() {
+                return this.IsNull(this.tableClosedCreditManager.SpecialCommentOverrideColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetSpecialCommentOverrideNull() {
+                this[this.tableClosedCreditManager.SpecialCommentOverrideColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsAccountTypeOverrideNull() {
+                return this.IsNull(this.tableClosedCreditManager.AccountTypeOverrideColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetAccountTypeOverrideNull() {
+                this[this.tableClosedCreditManager.AccountTypeOverrideColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsConsumerIndicatorOverrideNull() {
+                return this.IsNull(this.tableClosedCreditManager.ConsumerIndicatorOverrideColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetConsumerIndicatorOverrideNull() {
+                this[this.tableClosedCreditManager.ConsumerIndicatorOverrideColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsComplianceConditionCodeOverrideNull() {
+                return this.IsNull(this.tableClosedCreditManager.ComplianceConditionCodeOverrideColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetComplianceConditionCodeOverrideNull() {
+                this[this.tableClosedCreditManager.ComplianceConditionCodeOverrideColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsECOACodeOverrideNull() {
+                return this.IsNull(this.tableClosedCreditManager.ECOACodeOverrideColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetECOACodeOverrideNull() {
+                this[this.tableClosedCreditManager.ECOACodeOverrideColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsPaymentHistoryOverrideNull() {
+                return this.IsNull(this.tableClosedCreditManager.PaymentHistoryOverrideColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetPaymentHistoryOverrideNull() {
+                this[this.tableClosedCreditManager.PaymentHistoryOverrideColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsFollowUpDateOverrideNull() {
+                return this.IsNull(this.tableClosedCreditManager.FollowUpDateOverrideColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetFollowUpDateOverrideNull() {
+                this[this.tableClosedCreditManager.FollowUpDateOverrideColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -7335,6 +7740,15 @@ namespace IAC2018SQL.TSBDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("FollowUpDate", "FollowUpDate");
             tableMapping.ColumnMappings.Add("ComplianceConditionCode", "ComplianceConditionCode");
             tableMapping.ColumnMappings.Add("InterestType", "InterestType");
+            tableMapping.ColumnMappings.Add("AccountStatusOverride", "AccountStatusOverride");
+            tableMapping.ColumnMappings.Add("PaymentRatingOverride", "PaymentRatingOverride");
+            tableMapping.ColumnMappings.Add("SpecialCommentOverride", "SpecialCommentOverride");
+            tableMapping.ColumnMappings.Add("AccountTypeOverride", "AccountTypeOverride");
+            tableMapping.ColumnMappings.Add("ConsumerIndicatorOverride", "ConsumerIndicatorOverride");
+            tableMapping.ColumnMappings.Add("ComplianceConditionCodeOverride", "ComplianceConditionCodeOverride");
+            tableMapping.ColumnMappings.Add("ECOACodeOverride", "ECOACodeOverride");
+            tableMapping.ColumnMappings.Add("PaymentHistoryOverride", "PaymentHistoryOverride");
+            tableMapping.ColumnMappings.Add("FollowUpDateOverride", "FollowUpDateOverride");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -7406,6 +7820,15 @@ namespace IAC2018SQL.TSBDataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FollowUpDate", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, "FollowUpDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ComplianceConditionCode", global::System.Data.SqlDbType.Char, 2, global::System.Data.ParameterDirection.Input, 0, 0, "ComplianceConditionCode", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@InterestType", global::System.Data.SqlDbType.Char, 1, global::System.Data.ParameterDirection.Input, 0, 0, "InterestType", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AccountStatusOverride", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 1, 0, "AccountStatusOverride", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PaymentRatingOverride", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 1, 0, "PaymentRatingOverride", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SpecialCommentOverride", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 1, 0, "SpecialCommentOverride", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AccountTypeOverride", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 1, 0, "AccountTypeOverride", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ConsumerIndicatorOverride", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 1, 0, "ConsumerIndicatorOverride", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ComplianceConditionCodeOverride", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 1, 0, "ComplianceConditionCodeOverride", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ECOACodeOverride", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 1, 0, "ECOACodeOverride", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PaymentHistoryOverride", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 1, 0, "PaymentHistoryOverride", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FollowUpDateOverride", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 1, 0, "FollowUpDateOverride", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = "dbo.CreditManagerUpdate";
@@ -7469,6 +7892,15 @@ namespace IAC2018SQL.TSBDataSetTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FollowUpDate", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, "FollowUpDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ComplianceConditionCode", global::System.Data.SqlDbType.Char, 2, global::System.Data.ParameterDirection.Input, 0, 0, "ComplianceConditionCode", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@InterestType", global::System.Data.SqlDbType.Char, 1, global::System.Data.ParameterDirection.Input, 0, 0, "InterestType", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AccountStatusOverride", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 1, 0, "AccountStatusOverride", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PaymentRatingOverride", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 1, 0, "PaymentRatingOverride", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SpecialCommentOverride", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 1, 0, "SpecialCommentOverride", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AccountTypeOverride", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 1, 0, "AccountTypeOverride", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ConsumerIndicatorOverride", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 1, 0, "ConsumerIndicatorOverride", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ComplianceConditionCodeOverride", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 1, 0, "ComplianceConditionCodeOverride", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ECOACodeOverride", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 1, 0, "ECOACodeOverride", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PaymentHistoryOverride", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 1, 0, "PaymentHistoryOverride", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FollowUpDateOverride", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 1, 0, "FollowUpDateOverride", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7742,7 +8174,16 @@ namespace IAC2018SQL.TSBDataSetTableAdapters {
                     global::System.Nullable<global::System.DateTime> DateOfAccountInformation, 
                     global::System.Nullable<global::System.DateTime> FollowUpDate, 
                     string ComplianceConditionCode, 
-                    string InterestType) {
+                    string InterestType, 
+                    global::System.Nullable<bool> AccountStatusOverride, 
+                    global::System.Nullable<bool> PaymentRatingOverride, 
+                    global::System.Nullable<bool> SpecialCommentOverride, 
+                    global::System.Nullable<bool> AccountTypeOverride, 
+                    global::System.Nullable<bool> ConsumerIndicatorOverride, 
+                    global::System.Nullable<bool> ComplianceConditionCodeOverride, 
+                    global::System.Nullable<bool> ECOACodeOverride, 
+                    global::System.Nullable<bool> PaymentHistoryOverride, 
+                    global::System.Nullable<bool> FollowUpDateOverride) {
             if ((CRDMGR_CUST_LAST_NAME == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
@@ -8091,6 +8532,60 @@ namespace IAC2018SQL.TSBDataSetTableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[58].Value = ((string)(InterestType));
             }
+            if ((AccountStatusOverride.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[59].Value = ((bool)(AccountStatusOverride.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[59].Value = global::System.DBNull.Value;
+            }
+            if ((PaymentRatingOverride.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[60].Value = ((bool)(PaymentRatingOverride.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[60].Value = global::System.DBNull.Value;
+            }
+            if ((SpecialCommentOverride.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[61].Value = ((bool)(SpecialCommentOverride.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[61].Value = global::System.DBNull.Value;
+            }
+            if ((AccountTypeOverride.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[62].Value = ((bool)(AccountTypeOverride.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[62].Value = global::System.DBNull.Value;
+            }
+            if ((ConsumerIndicatorOverride.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[63].Value = ((bool)(ConsumerIndicatorOverride.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[63].Value = global::System.DBNull.Value;
+            }
+            if ((ComplianceConditionCodeOverride.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[64].Value = ((bool)(ComplianceConditionCodeOverride.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[64].Value = global::System.DBNull.Value;
+            }
+            if ((ECOACodeOverride.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[65].Value = ((bool)(ECOACodeOverride.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[65].Value = global::System.DBNull.Value;
+            }
+            if ((PaymentHistoryOverride.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[66].Value = ((bool)(PaymentHistoryOverride.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[66].Value = global::System.DBNull.Value;
+            }
+            if ((FollowUpDateOverride.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[67].Value = ((bool)(FollowUpDateOverride.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[67].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -8169,7 +8664,16 @@ namespace IAC2018SQL.TSBDataSetTableAdapters {
                     global::System.Nullable<global::System.DateTime> DateOfAccountInformation, 
                     global::System.Nullable<global::System.DateTime> FollowUpDate, 
                     string ComplianceConditionCode, 
-                    string InterestType) {
+                    string InterestType, 
+                    global::System.Nullable<bool> AccountStatusOverride, 
+                    global::System.Nullable<bool> PaymentRatingOverride, 
+                    global::System.Nullable<bool> SpecialCommentOverride, 
+                    global::System.Nullable<bool> AccountTypeOverride, 
+                    global::System.Nullable<bool> ConsumerIndicatorOverride, 
+                    global::System.Nullable<bool> ComplianceConditionCodeOverride, 
+                    global::System.Nullable<bool> ECOACodeOverride, 
+                    global::System.Nullable<bool> PaymentHistoryOverride, 
+                    global::System.Nullable<bool> FollowUpDateOverride) {
             if ((CRDMGR_CUST_LAST_NAME == null)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
@@ -8517,6 +9021,60 @@ namespace IAC2018SQL.TSBDataSetTableAdapters {
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[58].Value = ((string)(InterestType));
+            }
+            if ((AccountStatusOverride.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[59].Value = ((bool)(AccountStatusOverride.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[59].Value = global::System.DBNull.Value;
+            }
+            if ((PaymentRatingOverride.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[60].Value = ((bool)(PaymentRatingOverride.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[60].Value = global::System.DBNull.Value;
+            }
+            if ((SpecialCommentOverride.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[61].Value = ((bool)(SpecialCommentOverride.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[61].Value = global::System.DBNull.Value;
+            }
+            if ((AccountTypeOverride.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[62].Value = ((bool)(AccountTypeOverride.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[62].Value = global::System.DBNull.Value;
+            }
+            if ((ConsumerIndicatorOverride.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[63].Value = ((bool)(ConsumerIndicatorOverride.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[63].Value = global::System.DBNull.Value;
+            }
+            if ((ComplianceConditionCodeOverride.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[64].Value = ((bool)(ComplianceConditionCodeOverride.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[64].Value = global::System.DBNull.Value;
+            }
+            if ((ECOACodeOverride.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[65].Value = ((bool)(ECOACodeOverride.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[65].Value = global::System.DBNull.Value;
+            }
+            if ((PaymentHistoryOverride.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[66].Value = ((bool)(PaymentHistoryOverride.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[66].Value = global::System.DBNull.Value;
+            }
+            if ((FollowUpDateOverride.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[67].Value = ((bool)(FollowUpDateOverride.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[67].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
