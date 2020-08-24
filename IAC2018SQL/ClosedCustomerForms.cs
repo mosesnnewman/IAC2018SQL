@@ -455,6 +455,18 @@ namespace IAC2018SQL
             comboBoxPortfolioType.Enabled = false;
             comboBoxTermsFrequency.Enabled = false;
             textBoxTermsDuration.Enabled = false;
+            // Moses Newman 08/24/2020 disable new override TSB checkboxes
+            checkBoxReportTSB.Enabled = false;
+            checkBoxPurge.Enabled = false;
+            checkBoxFollowUpDate.Enabled = false;
+            checkBoxAccountStatus.Enabled = false;
+            checkBoxPaymentRating.Enabled = false;
+            checkBoxSpecialComment.Enabled = false;
+            checkBoxAccountType.Enabled = false;
+            checkBoxConsumerIndicator.Enabled = false;
+            checkBoxComplianceCode.Enabled = false;
+            checkBoxECOACode.Enabled = false;
+            checkBoxPaymentProfile.Enabled = false;
         }
 
         private void SetEditMode()
@@ -782,6 +794,18 @@ namespace IAC2018SQL
             comboBoxPortfolioType.Enabled = true;
             comboBoxTermsFrequency.Enabled = true;
             textBoxTermsDuration.Enabled = true;
+            // Moses Newman 08/24/2020 enable new override TSB checkboxes
+            checkBoxReportTSB.Enabled = true;
+            checkBoxPurge.Enabled = true;
+            checkBoxFollowUpDate.Enabled = true;
+            checkBoxAccountStatus.Enabled = true;
+            checkBoxPaymentRating.Enabled = true;
+            checkBoxSpecialComment.Enabled = true;
+            checkBoxAccountType.Enabled = true;
+            checkBoxConsumerIndicator.Enabled = true;
+            checkBoxComplianceCode.Enabled = true;
+            checkBoxECOACode.Enabled = true;
+            checkBoxPaymentProfile.Enabled = true;
 
             toolStripButtonEdit.Enabled = false;
             toolStripButtonSave.Enabled = false;
@@ -1546,7 +1570,18 @@ namespace IAC2018SQL
                     comboBoxPortfolioType.Enabled = true;
                     comboBoxTermsFrequency.Enabled = true;
                     textBoxTermsDuration.Enabled = true;
-
+                    // Moses Newman 08/24/2020 enable new override TSB checkboxes
+                    checkBoxReportTSB.Enabled = true;
+                    checkBoxPurge.Enabled = true;
+                    checkBoxFollowUpDate.Enabled = true;
+                    checkBoxAccountStatus.Enabled = true;
+                    checkBoxPaymentRating.Enabled = true;
+                    checkBoxSpecialComment.Enabled = true;
+                    checkBoxAccountType.Enabled = true;
+                    checkBoxConsumerIndicator.Enabled = true;
+                    checkBoxComplianceCode.Enabled = true;
+                    checkBoxECOACode.Enabled = true;
+                    checkBoxPaymentProfile.Enabled = true;
 
                     ActiveControl = cUSTOMER_PURCHASE_ORDERTextBox;
                     cUSTOMER_PURCHASE_ORDERTextBox.Select();
@@ -3943,7 +3978,8 @@ namespace IAC2018SQL
 
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
         }
 
         private void textBoxRepairFee3_Validated(object sender, EventArgs e)
@@ -3953,6 +3989,66 @@ namespace IAC2018SQL
                 return;
             textBoxRepairFee3.Text = gnRepairFee3.ToString("C", CultureInfo.CreateSpecificCulture("en-US"));
             CalcTotalFees();
+        }
+
+        private void checkBoxFollowUpDate_CheckedChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void checkBoxReportTSB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void checkBoxPurge_CheckedChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void checkBoxAccountStatus_CheckedChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void checkBoxPaymentRating_CheckedChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void checkBoxSpecialComment_CheckedChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void checkBoxConsumerIndicator_CheckedChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void checkBoxComplianceCode_CheckedChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void checkBoxECOACode_CheckedChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void checkBoxPaymentProfile_CheckedChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
         }
 
         private void textBoxRepairFee4_Validated(object sender, EventArgs e)

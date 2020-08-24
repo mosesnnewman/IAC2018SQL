@@ -649,7 +649,20 @@
             this.textBox46 = new System.Windows.Forms.TextBox();
             this.textBox52 = new System.Windows.Forms.TextBox();
             this.tabPageTSB = new System.Windows.Forms.TabPage();
+            this.groupBoxDates = new System.Windows.Forms.GroupBox();
+            this.checkBoxFollowUpDate = new System.Windows.Forms.CheckBox();
+            this.nullableDateTimePickerFollowUpDate = new ProManApp.NullableDateTimePicker();
+            this.nullableDateTimePickerDateClosed = new ProManApp.NullableDateTimePicker();
+            this.nullableDateTimePickerDateOpened = new ProManApp.NullableDateTimePicker();
+            this.nullableDateTimePickerDateofAccountInformation = new ProManApp.NullableDateTimePicker();
+            this.nullableDateTimePickerDateofFirstDelinquency = new ProManApp.NullableDateTimePicker();
+            this.nullableDateTimePickerDateofLastPayment = new ProManApp.NullableDateTimePicker();
+            this.label135 = new System.Windows.Forms.Label();
+            this.label136 = new System.Windows.Forms.Label();
+            this.label138 = new System.Windows.Forms.Label();
+            this.label139 = new System.Windows.Forms.Label();
             this.groupBoxCodes = new System.Windows.Forms.GroupBox();
+            this.checkBoxECOACode = new System.Windows.Forms.CheckBox();
             this.checkBoxPaymentProfile = new System.Windows.Forms.CheckBox();
             this.checkBoxComplianceCode = new System.Windows.Forms.CheckBox();
             this.checkBoxConsumerIndicator = new System.Windows.Forms.CheckBox();
@@ -689,17 +702,6 @@
             this.label141 = new System.Windows.Forms.Label();
             this.comboBoxAccountStatus = new System.Windows.Forms.ComboBox();
             this.AccountStatusesbindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.groupBoxDates = new System.Windows.Forms.GroupBox();
-            this.nullableDateTimePickerFollowUpDate = new ProManApp.NullableDateTimePicker();
-            this.nullableDateTimePickerDateClosed = new ProManApp.NullableDateTimePicker();
-            this.nullableDateTimePickerDateOpened = new ProManApp.NullableDateTimePicker();
-            this.nullableDateTimePickerDateofAccountInformation = new ProManApp.NullableDateTimePicker();
-            this.nullableDateTimePickerDateofFirstDelinquency = new ProManApp.NullableDateTimePicker();
-            this.nullableDateTimePickerDateofLastPayment = new ProManApp.NullableDateTimePicker();
-            this.label135 = new System.Windows.Forms.Label();
-            this.label136 = new System.Windows.Forms.Label();
-            this.label138 = new System.Windows.Forms.Label();
-            this.label139 = new System.Windows.Forms.Label();
             this.groupBoxDollars = new System.Windows.Forms.GroupBox();
             this.label137 = new System.Windows.Forms.Label();
             this.textBoxCreditLimit = new System.Windows.Forms.TextBox();
@@ -1028,6 +1030,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.repoDataSet)).BeginInit();
             this.groupBox13.SuspendLayout();
             this.tabPageTSB.SuspendLayout();
+            this.groupBoxDates.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerFollowUpDate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateClosed)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateOpened)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateofAccountInformation)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateofFirstDelinquency)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateofLastPayment)).BeginInit();
             this.groupBoxCodes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TermsFrequencybindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PortfolioTypesbindingSource)).BeginInit();
@@ -1037,13 +1046,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.ConsumerIndicatorsbindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AccountTypesbindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AccountStatusesbindingSource)).BeginInit();
-            this.groupBoxDates.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerFollowUpDate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateClosed)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateOpened)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateofAccountInformation)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateofFirstDelinquency)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateofLastPayment)).BeginInit();
             this.groupBoxDollars.SuspendLayout();
             this.groupBoxPurge.SuspendLayout();
             this.groupBoxReportStatus.SuspendLayout();
@@ -2839,7 +2841,7 @@
             // label132
             // 
             label132.AutoSize = true;
-            label132.Location = new System.Drawing.Point(191, 25);
+            label132.Location = new System.Drawing.Point(171, 25);
             label132.Name = "label132";
             label132.Size = new System.Drawing.Size(131, 17);
             label132.TabIndex = 125;
@@ -2849,7 +2851,7 @@
             // label140
             // 
             label140.AutoSize = true;
-            label140.Location = new System.Drawing.Point(169, 52);
+            label140.Location = new System.Drawing.Point(149, 52);
             label140.Name = "label140";
             label140.Size = new System.Drawing.Size(153, 17);
             label140.TabIndex = 128;
@@ -3277,7 +3279,7 @@
             this.nullableDateTimePickerHistContractDate.Name = "nullableDateTimePickerHistContractDate";
             this.nullableDateTimePickerHistContractDate.Size = new System.Drawing.Size(107, 29);
             this.nullableDateTimePickerHistContractDate.TabIndex = 502;
-            this.nullableDateTimePickerHistContractDate.Value = new System.DateTime(2020, 8, 21, 0, 0, 0, 0);
+            this.nullableDateTimePickerHistContractDate.Value = new System.DateTime(2020, 8, 24, 0, 0, 0, 0);
             // 
             // textBoxBuyOutHist
             // 
@@ -3303,7 +3305,7 @@
             this.nullableDateTimePickerPayDate.Name = "nullableDateTimePickerPayDate";
             this.nullableDateTimePickerPayDate.Size = new System.Drawing.Size(107, 29);
             this.nullableDateTimePickerPayDate.TabIndex = 507;
-            this.nullableDateTimePickerPayDate.Value = new System.DateTime(2020, 8, 21, 0, 0, 0, 0);
+            this.nullableDateTimePickerPayDate.Value = new System.DateTime(2020, 8, 24, 0, 0, 0, 0);
             // 
             // textBox22
             // 
@@ -3328,7 +3330,7 @@
             this.nullableDateTimePickerFirstPayDate.Name = "nullableDateTimePickerFirstPayDate";
             this.nullableDateTimePickerFirstPayDate.Size = new System.Drawing.Size(107, 29);
             this.nullableDateTimePickerFirstPayDate.TabIndex = 510;
-            this.nullableDateTimePickerFirstPayDate.Value = new System.DateTime(2020, 8, 21, 0, 0, 0, 0);
+            this.nullableDateTimePickerFirstPayDate.Value = new System.DateTime(2020, 8, 24, 0, 0, 0, 0);
             // 
             // textBox1
             // 
@@ -5003,7 +5005,7 @@
             this.nullableDateTimePickerFundingDate.Name = "nullableDateTimePickerFundingDate";
             this.nullableDateTimePickerFundingDate.Size = new System.Drawing.Size(119, 29);
             this.nullableDateTimePickerFundingDate.TabIndex = 89;
-            this.nullableDateTimePickerFundingDate.Value = new System.DateTime(2020, 8, 21, 0, 0, 0, 0);
+            this.nullableDateTimePickerFundingDate.Value = new System.DateTime(2020, 8, 24, 0, 0, 0, 0);
             this.nullableDateTimePickerFundingDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // checkBoxOverrideLateCharge
@@ -5028,7 +5030,7 @@
             this.DateTimePickerContractDate.Name = "DateTimePickerContractDate";
             this.DateTimePickerContractDate.Size = new System.Drawing.Size(119, 29);
             this.DateTimePickerContractDate.TabIndex = 88;
-            this.DateTimePickerContractDate.Value = new System.DateTime(2020, 8, 21, 0, 0, 0, 0);
+            this.DateTimePickerContractDate.Value = new System.DateTime(2020, 8, 24, 0, 0, 0, 0);
             this.DateTimePickerContractDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             this.DateTimePickerContractDate.Validated += new System.EventHandler(this.DateTimePickerContractDate_Validated);
             // 
@@ -5054,7 +5056,7 @@
             this.txtFirstPayDate.Name = "txtFirstPayDate";
             this.txtFirstPayDate.Size = new System.Drawing.Size(119, 29);
             this.txtFirstPayDate.TabIndex = 76;
-            this.txtFirstPayDate.Value = new System.DateTime(2020, 8, 21, 0, 0, 0, 0);
+            this.txtFirstPayDate.Value = new System.DateTime(2020, 8, 24, 0, 0, 0, 0);
             this.txtFirstPayDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             this.txtFirstPayDate.Validated += new System.EventHandler(this.txtFirstPayDate_Validated);
             // 
@@ -5067,7 +5069,7 @@
             this.txtPaymentDate.NullText = "          ";
             this.txtPaymentDate.Size = new System.Drawing.Size(119, 29);
             this.txtPaymentDate.TabIndex = 91;
-            this.txtPaymentDate.Value = new System.DateTime(2020, 8, 21, 0, 0, 0, 0);
+            this.txtPaymentDate.Value = new System.DateTime(2020, 8, 24, 0, 0, 0, 0);
             this.txtPaymentDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // textBox18
@@ -5452,7 +5454,7 @@
             this.MaturityDate.Name = "MaturityDate";
             this.MaturityDate.Size = new System.Drawing.Size(119, 29);
             this.MaturityDate.TabIndex = 115;
-            this.MaturityDate.Value = new System.DateTime(2020, 8, 21, 0, 0, 0, 0);
+            this.MaturityDate.Value = new System.DateTime(2020, 8, 24, 0, 0, 0, 0);
             // 
             // checkBoxTSBOverride
             // 
@@ -6024,7 +6026,7 @@
             this.nullableDateTimePickerDateTitleReleased.Name = "nullableDateTimePickerDateTitleReleased";
             this.nullableDateTimePickerDateTitleReleased.Size = new System.Drawing.Size(109, 29);
             this.nullableDateTimePickerDateTitleReleased.TabIndex = 237;
-            this.nullableDateTimePickerDateTitleReleased.Value = new System.DateTime(2020, 8, 21, 0, 0, 0, 0);
+            this.nullableDateTimePickerDateTitleReleased.Value = new System.DateTime(2020, 8, 24, 0, 0, 0, 0);
             this.nullableDateTimePickerDateTitleReleased.ValueChanged += new System.EventHandler(this.NullableDateTimePickerDateTitleReleased_ValueChanged);
             this.nullableDateTimePickerDateTitleReleased.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
@@ -6085,7 +6087,7 @@
             this.nullableDateTimePickerAucDate.Name = "nullableDateTimePickerAucDate";
             this.nullableDateTimePickerAucDate.Size = new System.Drawing.Size(109, 29);
             this.nullableDateTimePickerAucDate.TabIndex = 232;
-            this.nullableDateTimePickerAucDate.Value = new System.DateTime(2020, 8, 21, 0, 0, 0, 0);
+            this.nullableDateTimePickerAucDate.Value = new System.DateTime(2020, 8, 24, 0, 0, 0, 0);
             this.nullableDateTimePickerAucDate.ValueChanged += new System.EventHandler(this.nullableDateTimePickerAucDate_ValueChanged);
             this.nullableDateTimePickerAucDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
@@ -6098,7 +6100,7 @@
             this.nullableDateTimePickerLocDate.Name = "nullableDateTimePickerLocDate";
             this.nullableDateTimePickerLocDate.Size = new System.Drawing.Size(109, 29);
             this.nullableDateTimePickerLocDate.TabIndex = 230;
-            this.nullableDateTimePickerLocDate.Value = new System.DateTime(2020, 8, 21, 0, 0, 0, 0);
+            this.nullableDateTimePickerLocDate.Value = new System.DateTime(2020, 8, 24, 0, 0, 0, 0);
             this.nullableDateTimePickerLocDate.ValueChanged += new System.EventHandler(this.nullableDateTimePickerLocDate_ValueChanged);
             this.nullableDateTimePickerLocDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
@@ -6174,7 +6176,7 @@
             this.nullableDateTimePickerTitleDateReceived.Name = "nullableDateTimePickerTitleDateReceived";
             this.nullableDateTimePickerTitleDateReceived.Size = new System.Drawing.Size(109, 29);
             this.nullableDateTimePickerTitleDateReceived.TabIndex = 234;
-            this.nullableDateTimePickerTitleDateReceived.Value = new System.DateTime(2020, 8, 21, 0, 0, 0, 0);
+            this.nullableDateTimePickerTitleDateReceived.Value = new System.DateTime(2020, 8, 24, 0, 0, 0, 0);
             this.nullableDateTimePickerTitleDateReceived.ValueChanged += new System.EventHandler(this.nullableDateTimePickerTitleDateReceived_ValueChanged);
             this.nullableDateTimePickerTitleDateReceived.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
@@ -6223,7 +6225,7 @@
             this.nullableDateTimePickerRepoDate.Name = "nullableDateTimePickerRepoDate";
             this.nullableDateTimePickerRepoDate.Size = new System.Drawing.Size(109, 29);
             this.nullableDateTimePickerRepoDate.TabIndex = 227;
-            this.nullableDateTimePickerRepoDate.Value = new System.DateTime(2020, 8, 21, 0, 0, 0, 0);
+            this.nullableDateTimePickerRepoDate.Value = new System.DateTime(2020, 8, 24, 0, 0, 0, 0);
             this.nullableDateTimePickerRepoDate.ValueChanged += new System.EventHandler(this.nullableDateTimePickerRepoDate_ValueChanged);
             this.nullableDateTimePickerRepoDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
@@ -6235,7 +6237,7 @@
             this.txtExpirationDate.Name = "txtExpirationDate";
             this.txtExpirationDate.Size = new System.Drawing.Size(109, 29);
             this.txtExpirationDate.TabIndex = 219;
-            this.txtExpirationDate.Value = new System.DateTime(2020, 8, 21, 0, 0, 0, 0);
+            this.txtExpirationDate.Value = new System.DateTime(2020, 8, 24, 0, 0, 0, 0);
             // 
             // txtEffectiveDate
             // 
@@ -6245,7 +6247,7 @@
             this.txtEffectiveDate.Name = "txtEffectiveDate";
             this.txtEffectiveDate.Size = new System.Drawing.Size(109, 29);
             this.txtEffectiveDate.TabIndex = 218;
-            this.txtEffectiveDate.Value = new System.DateTime(2020, 8, 21, 0, 0, 0, 0);
+            this.txtEffectiveDate.Value = new System.DateTime(2020, 8, 24, 0, 0, 0, 0);
             // 
             // txtAgentPhone
             // 
@@ -6771,7 +6773,7 @@
             this.txtCOSDOB.Name = "txtCOSDOB";
             this.txtCOSDOB.Size = new System.Drawing.Size(109, 29);
             this.txtCOSDOB.TabIndex = 323;
-            this.txtCOSDOB.Value = new System.DateTime(2020, 8, 21, 0, 0, 0, 0);
+            this.txtCOSDOB.Value = new System.DateTime(2020, 8, 24, 0, 0, 0, 0);
             // 
             // txtCOSWorkExt
             // 
@@ -8046,8 +8048,8 @@
             // tabPageTSB
             // 
             this.tabPageTSB.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.tabPageTSB.Controls.Add(this.groupBoxCodes);
             this.tabPageTSB.Controls.Add(this.groupBoxDates);
+            this.tabPageTSB.Controls.Add(this.groupBoxCodes);
             this.tabPageTSB.Controls.Add(this.groupBoxDollars);
             this.tabPageTSB.Controls.Add(this.groupBoxPurge);
             this.tabPageTSB.Controls.Add(this.groupBoxReportStatus);
@@ -8059,8 +8061,153 @@
             this.tabPageTSB.TabIndex = 9;
             this.tabPageTSB.Text = "TSB";
             // 
+            // groupBoxDates
+            // 
+            this.groupBoxDates.Controls.Add(this.checkBoxFollowUpDate);
+            this.groupBoxDates.Controls.Add(this.nullableDateTimePickerFollowUpDate);
+            this.groupBoxDates.Controls.Add(this.nullableDateTimePickerDateClosed);
+            this.groupBoxDates.Controls.Add(this.nullableDateTimePickerDateOpened);
+            this.groupBoxDates.Controls.Add(this.nullableDateTimePickerDateofAccountInformation);
+            this.groupBoxDates.Controls.Add(label140);
+            this.groupBoxDates.Controls.Add(this.nullableDateTimePickerDateofFirstDelinquency);
+            this.groupBoxDates.Controls.Add(this.nullableDateTimePickerDateofLastPayment);
+            this.groupBoxDates.Controls.Add(label132);
+            this.groupBoxDates.Controls.Add(this.label135);
+            this.groupBoxDates.Controls.Add(this.label136);
+            this.groupBoxDates.Controls.Add(this.label138);
+            this.groupBoxDates.Controls.Add(this.label139);
+            this.groupBoxDates.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBoxDates.Location = new System.Drawing.Point(576, 65);
+            this.groupBoxDates.Name = "groupBoxDates";
+            this.groupBoxDates.Size = new System.Drawing.Size(529, 220);
+            this.groupBoxDates.TabIndex = 18;
+            this.groupBoxDates.TabStop = false;
+            this.groupBoxDates.Text = "Dates";
+            // 
+            // checkBoxFollowUpDate
+            // 
+            this.checkBoxFollowUpDate.AutoSize = true;
+            this.checkBoxFollowUpDate.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.closedCreditManagerBindingSource, "FollowUpDateOverride", true));
+            this.checkBoxFollowUpDate.Location = new System.Drawing.Point(433, 156);
+            this.checkBoxFollowUpDate.Name = "checkBoxFollowUpDate";
+            this.checkBoxFollowUpDate.Size = new System.Drawing.Size(84, 21);
+            this.checkBoxFollowUpDate.TabIndex = 25;
+            this.checkBoxFollowUpDate.Text = "Override?";
+            this.checkBoxFollowUpDate.UseVisualStyleBackColor = true;
+            this.checkBoxFollowUpDate.CheckedChanged += new System.EventHandler(this.checkBoxFollowUpDate_CheckedChanged);
+            this.checkBoxFollowUpDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            // 
+            // nullableDateTimePickerFollowUpDate
+            // 
+            this.nullableDateTimePickerFollowUpDate.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.closedCreditManagerBindingSource, "FollowUpDate", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "d"));
+            this.nullableDateTimePickerFollowUpDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.nullableDateTimePickerFollowUpDate.Location = new System.Drawing.Point(306, 152);
+            this.nullableDateTimePickerFollowUpDate.Name = "nullableDateTimePickerFollowUpDate";
+            this.nullableDateTimePickerFollowUpDate.NullText = "          ";
+            this.nullableDateTimePickerFollowUpDate.Size = new System.Drawing.Size(119, 25);
+            this.nullableDateTimePickerFollowUpDate.TabIndex = 24;
+            this.nullableDateTimePickerFollowUpDate.Value = new System.DateTime(2020, 8, 24, 0, 0, 0, 0);
+            this.nullableDateTimePickerFollowUpDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            // 
+            // nullableDateTimePickerDateClosed
+            // 
+            this.nullableDateTimePickerDateClosed.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.closedCreditManagerBindingSource, "CRDMGR_ACCT_DATE_CLOSED", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "d"));
+            this.nullableDateTimePickerDateClosed.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.nullableDateTimePickerDateClosed.Location = new System.Drawing.Point(306, 125);
+            this.nullableDateTimePickerDateClosed.Name = "nullableDateTimePickerDateClosed";
+            this.nullableDateTimePickerDateClosed.NullText = "          ";
+            this.nullableDateTimePickerDateClosed.Size = new System.Drawing.Size(119, 25);
+            this.nullableDateTimePickerDateClosed.TabIndex = 23;
+            this.nullableDateTimePickerDateClosed.Value = new System.DateTime(2020, 8, 24, 0, 0, 0, 0);
+            this.nullableDateTimePickerDateClosed.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            // 
+            // nullableDateTimePickerDateOpened
+            // 
+            this.nullableDateTimePickerDateOpened.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.closedCreditManagerBindingSource, "CRDMGR_ACCT_DATE_OPENED", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "d"));
+            this.nullableDateTimePickerDateOpened.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.nullableDateTimePickerDateOpened.Location = new System.Drawing.Point(306, 98);
+            this.nullableDateTimePickerDateOpened.Name = "nullableDateTimePickerDateOpened";
+            this.nullableDateTimePickerDateOpened.NullText = "          ";
+            this.nullableDateTimePickerDateOpened.Size = new System.Drawing.Size(119, 25);
+            this.nullableDateTimePickerDateOpened.TabIndex = 22;
+            this.nullableDateTimePickerDateOpened.Value = new System.DateTime(2020, 8, 24, 0, 0, 0, 0);
+            this.nullableDateTimePickerDateOpened.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            // 
+            // nullableDateTimePickerDateofAccountInformation
+            // 
+            this.nullableDateTimePickerDateofAccountInformation.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.closedCreditManagerBindingSource, "DateOfAccountInformation", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "d"));
+            this.nullableDateTimePickerDateofAccountInformation.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.nullableDateTimePickerDateofAccountInformation.Location = new System.Drawing.Point(306, 71);
+            this.nullableDateTimePickerDateofAccountInformation.Name = "nullableDateTimePickerDateofAccountInformation";
+            this.nullableDateTimePickerDateofAccountInformation.NullText = "          ";
+            this.nullableDateTimePickerDateofAccountInformation.Size = new System.Drawing.Size(119, 25);
+            this.nullableDateTimePickerDateofAccountInformation.TabIndex = 21;
+            this.nullableDateTimePickerDateofAccountInformation.Value = new System.DateTime(2020, 8, 24, 0, 0, 0, 0);
+            this.nullableDateTimePickerDateofAccountInformation.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            // 
+            // nullableDateTimePickerDateofFirstDelinquency
+            // 
+            this.nullableDateTimePickerDateofFirstDelinquency.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.closedCreditManagerBindingSource, "CRDMGR_DATE_FIRST_DELINQUENT", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "d"));
+            this.nullableDateTimePickerDateofFirstDelinquency.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.nullableDateTimePickerDateofFirstDelinquency.Location = new System.Drawing.Point(306, 44);
+            this.nullableDateTimePickerDateofFirstDelinquency.Name = "nullableDateTimePickerDateofFirstDelinquency";
+            this.nullableDateTimePickerDateofFirstDelinquency.NullText = "          ";
+            this.nullableDateTimePickerDateofFirstDelinquency.Size = new System.Drawing.Size(119, 25);
+            this.nullableDateTimePickerDateofFirstDelinquency.TabIndex = 20;
+            this.nullableDateTimePickerDateofFirstDelinquency.Value = new System.DateTime(2020, 8, 24, 0, 0, 0, 0);
+            this.nullableDateTimePickerDateofFirstDelinquency.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            // 
+            // nullableDateTimePickerDateofLastPayment
+            // 
+            this.nullableDateTimePickerDateofLastPayment.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.closedCreditManagerBindingSource, "CRDMGR_DATE_LAST_PAYMENT", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "d"));
+            this.nullableDateTimePickerDateofLastPayment.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.nullableDateTimePickerDateofLastPayment.Location = new System.Drawing.Point(306, 17);
+            this.nullableDateTimePickerDateofLastPayment.Name = "nullableDateTimePickerDateofLastPayment";
+            this.nullableDateTimePickerDateofLastPayment.NullText = "          ";
+            this.nullableDateTimePickerDateofLastPayment.Size = new System.Drawing.Size(119, 25);
+            this.nullableDateTimePickerDateofLastPayment.TabIndex = 19;
+            this.nullableDateTimePickerDateofLastPayment.Value = new System.DateTime(2020, 8, 24, 0, 0, 0, 0);
+            this.nullableDateTimePickerDateofLastPayment.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            // 
+            // label135
+            // 
+            this.label135.AutoSize = true;
+            this.label135.Location = new System.Drawing.Point(206, 160);
+            this.label135.Name = "label135";
+            this.label135.Size = new System.Drawing.Size(96, 17);
+            this.label135.TabIndex = 124;
+            this.label135.Text = "Follow-up Date";
+            // 
+            // label136
+            // 
+            this.label136.AutoSize = true;
+            this.label136.Location = new System.Drawing.Point(223, 133);
+            this.label136.Name = "label136";
+            this.label136.Size = new System.Drawing.Size(79, 17);
+            this.label136.TabIndex = 122;
+            this.label136.Text = "Date Closed";
+            // 
+            // label138
+            // 
+            this.label138.AutoSize = true;
+            this.label138.Location = new System.Drawing.Point(216, 106);
+            this.label138.Name = "label138";
+            this.label138.Size = new System.Drawing.Size(86, 17);
+            this.label138.TabIndex = 120;
+            this.label138.Text = "Date Opened";
+            // 
+            // label139
+            // 
+            this.label139.AutoSize = true;
+            this.label139.Location = new System.Drawing.Point(130, 79);
+            this.label139.Name = "label139";
+            this.label139.Size = new System.Drawing.Size(172, 17);
+            this.label139.TabIndex = 118;
+            this.label139.Text = "Date of Account Information";
+            // 
             // groupBoxCodes
             // 
+            this.groupBoxCodes.Controls.Add(this.checkBoxECOACode);
             this.groupBoxCodes.Controls.Add(this.checkBoxPaymentProfile);
             this.groupBoxCodes.Controls.Add(this.checkBoxComplianceCode);
             this.groupBoxCodes.Controls.Add(this.checkBoxConsumerIndicator);
@@ -8097,87 +8244,120 @@
             this.groupBoxCodes.Location = new System.Drawing.Point(29, 289);
             this.groupBoxCodes.Name = "groupBoxCodes";
             this.groupBoxCodes.Size = new System.Drawing.Size(1076, 284);
-            this.groupBoxCodes.TabIndex = 25;
+            this.groupBoxCodes.TabIndex = 26;
             this.groupBoxCodes.TabStop = false;
             this.groupBoxCodes.Text = "Codes";
+            // 
+            // checkBoxECOACode
+            // 
+            this.checkBoxECOACode.AutoSize = true;
+            this.checkBoxECOACode.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.closedCreditManagerBindingSource, "ECOACodeOverride", true));
+            this.checkBoxECOACode.Location = new System.Drawing.Point(464, 180);
+            this.checkBoxECOACode.Name = "checkBoxECOACode";
+            this.checkBoxECOACode.Size = new System.Drawing.Size(84, 21);
+            this.checkBoxECOACode.TabIndex = 38;
+            this.checkBoxECOACode.Text = "Override?";
+            this.checkBoxECOACode.UseVisualStyleBackColor = true;
+            this.checkBoxECOACode.CheckedChanged += new System.EventHandler(this.checkBoxECOACode_CheckedChanged);
+            this.checkBoxECOACode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // checkBoxPaymentProfile
             // 
             this.checkBoxPaymentProfile.AutoSize = true;
+            this.checkBoxPaymentProfile.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.closedCreditManagerBindingSource, "PaymentHistoryOverride", true));
             this.checkBoxPaymentProfile.Location = new System.Drawing.Point(661, 232);
             this.checkBoxPaymentProfile.Name = "checkBoxPaymentProfile";
             this.checkBoxPaymentProfile.Size = new System.Drawing.Size(84, 21);
-            this.checkBoxPaymentProfile.TabIndex = 130;
+            this.checkBoxPaymentProfile.TabIndex = 45;
             this.checkBoxPaymentProfile.Text = "Override?";
             this.checkBoxPaymentProfile.UseVisualStyleBackColor = true;
+            this.checkBoxPaymentProfile.CheckedChanged += new System.EventHandler(this.checkBoxPaymentProfile_CheckedChanged);
+            this.checkBoxPaymentProfile.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // checkBoxComplianceCode
             // 
             this.checkBoxComplianceCode.AutoSize = true;
+            this.checkBoxComplianceCode.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.closedCreditManagerBindingSource, "ComplianceConditionCodeOverride", true));
             this.checkBoxComplianceCode.Location = new System.Drawing.Point(980, 154);
             this.checkBoxComplianceCode.Name = "checkBoxComplianceCode";
             this.checkBoxComplianceCode.Size = new System.Drawing.Size(84, 21);
-            this.checkBoxComplianceCode.TabIndex = 129;
+            this.checkBoxComplianceCode.TabIndex = 36;
             this.checkBoxComplianceCode.Text = "Override?";
             this.checkBoxComplianceCode.UseVisualStyleBackColor = true;
+            this.checkBoxComplianceCode.CheckedChanged += new System.EventHandler(this.checkBoxComplianceCode_CheckedChanged);
+            this.checkBoxComplianceCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // checkBoxConsumerIndicator
             // 
             this.checkBoxConsumerIndicator.AutoSize = true;
+            this.checkBoxConsumerIndicator.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.closedCreditManagerBindingSource, "ConsumerIndicatorOverride", true));
             this.checkBoxConsumerIndicator.Location = new System.Drawing.Point(980, 126);
             this.checkBoxConsumerIndicator.Name = "checkBoxConsumerIndicator";
             this.checkBoxConsumerIndicator.Size = new System.Drawing.Size(84, 21);
-            this.checkBoxConsumerIndicator.TabIndex = 128;
+            this.checkBoxConsumerIndicator.TabIndex = 34;
             this.checkBoxConsumerIndicator.Text = "Override?";
             this.checkBoxConsumerIndicator.UseVisualStyleBackColor = true;
+            this.checkBoxConsumerIndicator.CheckedChanged += new System.EventHandler(this.checkBoxConsumerIndicator_CheckedChanged);
+            this.checkBoxConsumerIndicator.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // checkBoxAccountType
             // 
             this.checkBoxAccountType.AutoSize = true;
+            this.checkBoxAccountType.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.closedCreditManagerBindingSource, "AccountTypeOverride", true));
             this.checkBoxAccountType.Location = new System.Drawing.Point(980, 102);
             this.checkBoxAccountType.Name = "checkBoxAccountType";
             this.checkBoxAccountType.Size = new System.Drawing.Size(84, 21);
-            this.checkBoxAccountType.TabIndex = 127;
+            this.checkBoxAccountType.TabIndex = 32;
             this.checkBoxAccountType.Text = "Override?";
             this.checkBoxAccountType.UseVisualStyleBackColor = true;
             this.checkBoxAccountType.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
+            this.checkBoxAccountType.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // checkBoxSpecialComment
             // 
             this.checkBoxSpecialComment.AutoSize = true;
+            this.checkBoxSpecialComment.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.closedCreditManagerBindingSource, "SpecialCommentOverride", true));
             this.checkBoxSpecialComment.Location = new System.Drawing.Point(980, 76);
             this.checkBoxSpecialComment.Name = "checkBoxSpecialComment";
             this.checkBoxSpecialComment.Size = new System.Drawing.Size(84, 21);
-            this.checkBoxSpecialComment.TabIndex = 126;
+            this.checkBoxSpecialComment.TabIndex = 30;
             this.checkBoxSpecialComment.Text = "Override?";
             this.checkBoxSpecialComment.UseVisualStyleBackColor = true;
+            this.checkBoxSpecialComment.CheckedChanged += new System.EventHandler(this.checkBoxSpecialComment_CheckedChanged);
+            this.checkBoxSpecialComment.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // checkBoxPaymentRating
             // 
             this.checkBoxPaymentRating.AutoSize = true;
+            this.checkBoxPaymentRating.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.closedCreditManagerBindingSource, "PaymentRatingOverride", true));
             this.checkBoxPaymentRating.Location = new System.Drawing.Point(980, 50);
             this.checkBoxPaymentRating.Name = "checkBoxPaymentRating";
             this.checkBoxPaymentRating.Size = new System.Drawing.Size(84, 21);
             this.checkBoxPaymentRating.TabIndex = 125;
             this.checkBoxPaymentRating.Text = "Override?";
             this.checkBoxPaymentRating.UseVisualStyleBackColor = true;
+            this.checkBoxPaymentRating.CheckedChanged += new System.EventHandler(this.checkBoxPaymentRating_CheckedChanged);
+            this.checkBoxPaymentRating.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // checkBoxAccountStatus
             // 
             this.checkBoxAccountStatus.AutoSize = true;
+            this.checkBoxAccountStatus.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.closedCreditManagerBindingSource, "AccountStatusOverride", true));
             this.checkBoxAccountStatus.Location = new System.Drawing.Point(980, 24);
             this.checkBoxAccountStatus.Name = "checkBoxAccountStatus";
             this.checkBoxAccountStatus.Size = new System.Drawing.Size(84, 21);
-            this.checkBoxAccountStatus.TabIndex = 124;
+            this.checkBoxAccountStatus.TabIndex = 28;
             this.checkBoxAccountStatus.Text = "Override?";
             this.checkBoxAccountStatus.UseVisualStyleBackColor = true;
+            this.checkBoxAccountStatus.CheckedChanged += new System.EventHandler(this.checkBoxAccountStatus_CheckedChanged);
+            this.checkBoxAccountStatus.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(473, 228);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(182, 25);
-            this.button1.TabIndex = 38;
+            this.button1.TabIndex = 44;
             this.button1.Text = "Edit Payment History Profile";
             this.button1.UseVisualStyleBackColor = true;
             // 
@@ -8197,7 +8377,7 @@
             this.textBoxPaymentHistoryProfile.Location = new System.Drawing.Point(194, 228);
             this.textBoxPaymentHistoryProfile.Name = "textBoxPaymentHistoryProfile";
             this.textBoxPaymentHistoryProfile.Size = new System.Drawing.Size(276, 25);
-            this.textBoxPaymentHistoryProfile.TabIndex = 37;
+            this.textBoxPaymentHistoryProfile.TabIndex = 43;
             this.textBoxPaymentHistoryProfile.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // textBoxTermsDuration
@@ -8208,7 +8388,7 @@
             this.textBoxTermsDuration.Location = new System.Drawing.Point(768, 202);
             this.textBoxTermsDuration.Name = "textBoxTermsDuration";
             this.textBoxTermsDuration.Size = new System.Drawing.Size(25, 25);
-            this.textBoxTermsDuration.TabIndex = 36;
+            this.textBoxTermsDuration.TabIndex = 42;
             this.textBoxTermsDuration.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.textBoxTermsDuration.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
@@ -8230,7 +8410,7 @@
             this.comboBoxTermsFrequency.Location = new System.Drawing.Point(473, 202);
             this.comboBoxTermsFrequency.Name = "comboBoxTermsFrequency";
             this.comboBoxTermsFrequency.Size = new System.Drawing.Size(182, 25);
-            this.comboBoxTermsFrequency.TabIndex = 35;
+            this.comboBoxTermsFrequency.TabIndex = 41;
             this.comboBoxTermsFrequency.ValueMember = "Code";
             this.comboBoxTermsFrequency.SelectedValueChanged += new System.EventHandler(this.comboBoxTermsFrequency_SelectedValueChanged);
             this.comboBoxTermsFrequency.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
@@ -8258,7 +8438,7 @@
             this.comboBoxPortfolioType.Location = new System.Drawing.Point(194, 202);
             this.comboBoxPortfolioType.Name = "comboBoxPortfolioType";
             this.comboBoxPortfolioType.Size = new System.Drawing.Size(141, 25);
-            this.comboBoxPortfolioType.TabIndex = 34;
+            this.comboBoxPortfolioType.TabIndex = 40;
             this.comboBoxPortfolioType.ValueMember = "Code";
             this.comboBoxPortfolioType.SelectedValueChanged += new System.EventHandler(this.comboBoxPortfolioType_SelectedValueChanged);
             this.comboBoxPortfolioType.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
@@ -8286,7 +8466,7 @@
             this.comboBoxInterestType.Location = new System.Drawing.Point(768, 176);
             this.comboBoxInterestType.Name = "comboBoxInterestType";
             this.comboBoxInterestType.Size = new System.Drawing.Size(199, 25);
-            this.comboBoxInterestType.TabIndex = 33;
+            this.comboBoxInterestType.TabIndex = 39;
             this.comboBoxInterestType.ValueMember = "Code";
             this.comboBoxInterestType.SelectedValueChanged += new System.EventHandler(this.comboBoxInterestType_SelectedValueChanged);
             this.comboBoxInterestType.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
@@ -8314,7 +8494,7 @@
             this.comboBoxECOACode.Location = new System.Drawing.Point(194, 176);
             this.comboBoxECOACode.Name = "comboBoxECOACode";
             this.comboBoxECOACode.Size = new System.Drawing.Size(264, 25);
-            this.comboBoxECOACode.TabIndex = 32;
+            this.comboBoxECOACode.TabIndex = 37;
             this.comboBoxECOACode.ValueMember = "Code";
             this.comboBoxECOACode.SelectedValueChanged += new System.EventHandler(this.comboBoxECOACode_SelectedValueChanged);
             this.comboBoxECOACode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
@@ -8342,7 +8522,7 @@
             this.comboBoxComplianceConditionCode.Location = new System.Drawing.Point(194, 150);
             this.comboBoxComplianceConditionCode.Name = "comboBoxComplianceConditionCode";
             this.comboBoxComplianceConditionCode.Size = new System.Drawing.Size(773, 25);
-            this.comboBoxComplianceConditionCode.TabIndex = 31;
+            this.comboBoxComplianceConditionCode.TabIndex = 35;
             this.comboBoxComplianceConditionCode.ValueMember = "Code";
             this.comboBoxComplianceConditionCode.SelectedValueChanged += new System.EventHandler(this.comboBoxComplianceConditionCode_SelectedValueChanged);
             this.comboBoxComplianceConditionCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
@@ -8370,7 +8550,7 @@
             this.comboBoxConsumerIndicator.Location = new System.Drawing.Point(194, 124);
             this.comboBoxConsumerIndicator.Name = "comboBoxConsumerIndicator";
             this.comboBoxConsumerIndicator.Size = new System.Drawing.Size(773, 25);
-            this.comboBoxConsumerIndicator.TabIndex = 30;
+            this.comboBoxConsumerIndicator.TabIndex = 33;
             this.comboBoxConsumerIndicator.ValueMember = "Code";
             this.comboBoxConsumerIndicator.SelectedValueChanged += new System.EventHandler(this.comboBoxConsumerIndicator_SelectedValueChanged);
             this.comboBoxConsumerIndicator.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
@@ -8398,7 +8578,7 @@
             this.comboBoxAccountType.Location = new System.Drawing.Point(194, 98);
             this.comboBoxAccountType.Name = "comboBoxAccountType";
             this.comboBoxAccountType.Size = new System.Drawing.Size(773, 25);
-            this.comboBoxAccountType.TabIndex = 29;
+            this.comboBoxAccountType.TabIndex = 31;
             this.comboBoxAccountType.ValueMember = "Code";
             this.comboBoxAccountType.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
@@ -8425,7 +8605,7 @@
             this.comboBoxSpecialComment.Location = new System.Drawing.Point(194, 72);
             this.comboBoxSpecialComment.Name = "comboBoxSpecialComment";
             this.comboBoxSpecialComment.Size = new System.Drawing.Size(773, 25);
-            this.comboBoxSpecialComment.TabIndex = 28;
+            this.comboBoxSpecialComment.TabIndex = 29;
             this.comboBoxSpecialComment.ValueMember = "Code";
             this.comboBoxSpecialComment.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
@@ -8471,7 +8651,7 @@
             this.comboBoxAccountStatus.Location = new System.Drawing.Point(194, 20);
             this.comboBoxAccountStatus.Name = "comboBoxAccountStatus";
             this.comboBoxAccountStatus.Size = new System.Drawing.Size(773, 25);
-            this.comboBoxAccountStatus.TabIndex = 26;
+            this.comboBoxAccountStatus.TabIndex = 27;
             this.comboBoxAccountStatus.ValueMember = "Code";
             this.comboBoxAccountStatus.SelectedValueChanged += new System.EventHandler(this.comboBoxAccountStatus_SelectedValueChanged);
             this.comboBoxAccountStatus.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
@@ -8480,136 +8660,6 @@
             // 
             this.AccountStatusesbindingSource.DataMember = "AccountStatuses";
             this.AccountStatusesbindingSource.DataSource = this.tsbDataSet;
-            // 
-            // groupBoxDates
-            // 
-            this.groupBoxDates.Controls.Add(this.nullableDateTimePickerFollowUpDate);
-            this.groupBoxDates.Controls.Add(this.nullableDateTimePickerDateClosed);
-            this.groupBoxDates.Controls.Add(this.nullableDateTimePickerDateOpened);
-            this.groupBoxDates.Controls.Add(this.nullableDateTimePickerDateofAccountInformation);
-            this.groupBoxDates.Controls.Add(label140);
-            this.groupBoxDates.Controls.Add(this.nullableDateTimePickerDateofFirstDelinquency);
-            this.groupBoxDates.Controls.Add(this.nullableDateTimePickerDateofLastPayment);
-            this.groupBoxDates.Controls.Add(label132);
-            this.groupBoxDates.Controls.Add(this.label135);
-            this.groupBoxDates.Controls.Add(this.label136);
-            this.groupBoxDates.Controls.Add(this.label138);
-            this.groupBoxDates.Controls.Add(this.label139);
-            this.groupBoxDates.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxDates.Location = new System.Drawing.Point(576, 65);
-            this.groupBoxDates.Name = "groupBoxDates";
-            this.groupBoxDates.Size = new System.Drawing.Size(529, 220);
-            this.groupBoxDates.TabIndex = 18;
-            this.groupBoxDates.TabStop = false;
-            this.groupBoxDates.Text = "Dates";
-            // 
-            // nullableDateTimePickerFollowUpDate
-            // 
-            this.nullableDateTimePickerFollowUpDate.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.closedCreditManagerBindingSource, "FollowUpDate", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "d"));
-            this.nullableDateTimePickerFollowUpDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.nullableDateTimePickerFollowUpDate.Location = new System.Drawing.Point(326, 152);
-            this.nullableDateTimePickerFollowUpDate.Name = "nullableDateTimePickerFollowUpDate";
-            this.nullableDateTimePickerFollowUpDate.NullText = "          ";
-            this.nullableDateTimePickerFollowUpDate.Size = new System.Drawing.Size(119, 25);
-            this.nullableDateTimePickerFollowUpDate.TabIndex = 24;
-            this.nullableDateTimePickerFollowUpDate.Value = new System.DateTime(2020, 8, 21, 0, 0, 0, 0);
-            this.nullableDateTimePickerFollowUpDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
-            // 
-            // nullableDateTimePickerDateClosed
-            // 
-            this.nullableDateTimePickerDateClosed.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.closedCreditManagerBindingSource, "CRDMGR_ACCT_DATE_CLOSED", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "d"));
-            this.nullableDateTimePickerDateClosed.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.nullableDateTimePickerDateClosed.Location = new System.Drawing.Point(326, 125);
-            this.nullableDateTimePickerDateClosed.Name = "nullableDateTimePickerDateClosed";
-            this.nullableDateTimePickerDateClosed.NullText = "          ";
-            this.nullableDateTimePickerDateClosed.Size = new System.Drawing.Size(119, 25);
-            this.nullableDateTimePickerDateClosed.TabIndex = 23;
-            this.nullableDateTimePickerDateClosed.Value = new System.DateTime(2020, 8, 21, 0, 0, 0, 0);
-            this.nullableDateTimePickerDateClosed.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
-            // 
-            // nullableDateTimePickerDateOpened
-            // 
-            this.nullableDateTimePickerDateOpened.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.closedCreditManagerBindingSource, "CRDMGR_ACCT_DATE_OPENED", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "d"));
-            this.nullableDateTimePickerDateOpened.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.nullableDateTimePickerDateOpened.Location = new System.Drawing.Point(326, 98);
-            this.nullableDateTimePickerDateOpened.Name = "nullableDateTimePickerDateOpened";
-            this.nullableDateTimePickerDateOpened.NullText = "          ";
-            this.nullableDateTimePickerDateOpened.Size = new System.Drawing.Size(119, 25);
-            this.nullableDateTimePickerDateOpened.TabIndex = 22;
-            this.nullableDateTimePickerDateOpened.Value = new System.DateTime(2020, 8, 21, 0, 0, 0, 0);
-            this.nullableDateTimePickerDateOpened.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
-            // 
-            // nullableDateTimePickerDateofAccountInformation
-            // 
-            this.nullableDateTimePickerDateofAccountInformation.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.closedCreditManagerBindingSource, "DateOfAccountInformation", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "d"));
-            this.nullableDateTimePickerDateofAccountInformation.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.nullableDateTimePickerDateofAccountInformation.Location = new System.Drawing.Point(326, 71);
-            this.nullableDateTimePickerDateofAccountInformation.Name = "nullableDateTimePickerDateofAccountInformation";
-            this.nullableDateTimePickerDateofAccountInformation.NullText = "          ";
-            this.nullableDateTimePickerDateofAccountInformation.Size = new System.Drawing.Size(119, 25);
-            this.nullableDateTimePickerDateofAccountInformation.TabIndex = 21;
-            this.nullableDateTimePickerDateofAccountInformation.Value = new System.DateTime(2020, 8, 21, 0, 0, 0, 0);
-            this.nullableDateTimePickerDateofAccountInformation.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
-            // 
-            // nullableDateTimePickerDateofFirstDelinquency
-            // 
-            this.nullableDateTimePickerDateofFirstDelinquency.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.closedCreditManagerBindingSource, "CRDMGR_DATE_FIRST_DELINQUENT", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "d"));
-            this.nullableDateTimePickerDateofFirstDelinquency.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.nullableDateTimePickerDateofFirstDelinquency.Location = new System.Drawing.Point(326, 44);
-            this.nullableDateTimePickerDateofFirstDelinquency.Name = "nullableDateTimePickerDateofFirstDelinquency";
-            this.nullableDateTimePickerDateofFirstDelinquency.NullText = "          ";
-            this.nullableDateTimePickerDateofFirstDelinquency.Size = new System.Drawing.Size(119, 25);
-            this.nullableDateTimePickerDateofFirstDelinquency.TabIndex = 20;
-            this.nullableDateTimePickerDateofFirstDelinquency.Value = new System.DateTime(2020, 8, 21, 0, 0, 0, 0);
-            this.nullableDateTimePickerDateofFirstDelinquency.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
-            // 
-            // nullableDateTimePickerDateofLastPayment
-            // 
-            this.nullableDateTimePickerDateofLastPayment.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.closedCreditManagerBindingSource, "CRDMGR_DATE_LAST_PAYMENT", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "d"));
-            this.nullableDateTimePickerDateofLastPayment.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.nullableDateTimePickerDateofLastPayment.Location = new System.Drawing.Point(326, 17);
-            this.nullableDateTimePickerDateofLastPayment.Name = "nullableDateTimePickerDateofLastPayment";
-            this.nullableDateTimePickerDateofLastPayment.NullText = "          ";
-            this.nullableDateTimePickerDateofLastPayment.Size = new System.Drawing.Size(119, 25);
-            this.nullableDateTimePickerDateofLastPayment.TabIndex = 19;
-            this.nullableDateTimePickerDateofLastPayment.Value = new System.DateTime(2020, 8, 21, 0, 0, 0, 0);
-            this.nullableDateTimePickerDateofLastPayment.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
-            // 
-            // label135
-            // 
-            this.label135.AutoSize = true;
-            this.label135.Location = new System.Drawing.Point(226, 160);
-            this.label135.Name = "label135";
-            this.label135.Size = new System.Drawing.Size(96, 17);
-            this.label135.TabIndex = 124;
-            this.label135.Text = "Follow-up Date";
-            // 
-            // label136
-            // 
-            this.label136.AutoSize = true;
-            this.label136.Location = new System.Drawing.Point(243, 133);
-            this.label136.Name = "label136";
-            this.label136.Size = new System.Drawing.Size(79, 17);
-            this.label136.TabIndex = 122;
-            this.label136.Text = "Date Closed";
-            // 
-            // label138
-            // 
-            this.label138.AutoSize = true;
-            this.label138.Location = new System.Drawing.Point(236, 106);
-            this.label138.Name = "label138";
-            this.label138.Size = new System.Drawing.Size(86, 17);
-            this.label138.TabIndex = 120;
-            this.label138.Text = "Date Opened";
-            // 
-            // label139
-            // 
-            this.label139.AutoSize = true;
-            this.label139.Location = new System.Drawing.Point(150, 79);
-            this.label139.Name = "label139";
-            this.label139.Size = new System.Drawing.Size(172, 17);
-            this.label139.TabIndex = 118;
-            this.label139.Text = "Date of Account Information";
             // 
             // groupBoxDollars
             // 
@@ -8796,6 +8846,7 @@
             this.checkBoxPurge.TabIndex = 9;
             this.checkBoxPurge.Text = "Purge";
             this.checkBoxPurge.UseVisualStyleBackColor = true;
+            this.checkBoxPurge.CheckedChanged += new System.EventHandler(this.checkBoxPurge_CheckedChanged);
             this.checkBoxPurge.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // groupBoxReportStatus
@@ -8819,6 +8870,7 @@
             this.checkBoxReportTSB.TabIndex = 7;
             this.checkBoxReportTSB.Text = "Report";
             this.checkBoxReportTSB.UseVisualStyleBackColor = true;
+            this.checkBoxReportTSB.CheckedChanged += new System.EventHandler(this.checkBoxReportTSB_CheckedChanged);
             this.checkBoxReportTSB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // groupBoxAccountNumber
@@ -9198,6 +9250,14 @@
             this.groupBox13.ResumeLayout(false);
             this.groupBox13.PerformLayout();
             this.tabPageTSB.ResumeLayout(false);
+            this.groupBoxDates.ResumeLayout(false);
+            this.groupBoxDates.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerFollowUpDate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateClosed)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateOpened)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateofAccountInformation)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateofFirstDelinquency)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateofLastPayment)).EndInit();
             this.groupBoxCodes.ResumeLayout(false);
             this.groupBoxCodes.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TermsFrequencybindingSource)).EndInit();
@@ -9208,14 +9268,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.ConsumerIndicatorsbindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AccountTypesbindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AccountStatusesbindingSource)).EndInit();
-            this.groupBoxDates.ResumeLayout(false);
-            this.groupBoxDates.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerFollowUpDate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateClosed)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateOpened)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateofAccountInformation)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateofFirstDelinquency)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateofLastPayment)).EndInit();
             this.groupBoxDollars.ResumeLayout(false);
             this.groupBoxDollars.PerformLayout();
             this.groupBoxPurge.ResumeLayout(false);
@@ -9767,6 +9819,8 @@
         private System.Windows.Forms.CheckBox checkBoxPaymentProfile;
         private System.Windows.Forms.CheckBox checkBoxComplianceCode;
         private System.Windows.Forms.CheckBox checkBoxConsumerIndicator;
+        private System.Windows.Forms.CheckBox checkBoxFollowUpDate;
+        private System.Windows.Forms.CheckBox checkBoxECOACode;
     }
 }
 
