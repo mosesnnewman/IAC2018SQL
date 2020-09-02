@@ -269,14 +269,16 @@ namespace IAC2018SQL
             txtCreditAvailable.Enabled = false;
             txtControlDate.Enabled = false;
             txtNumberofMonths.Enabled = false;
-            txtCreditBureau.Enabled = false;
-            listBoxTSBCommentCode.Enabled = false;
+            // Moses Newman 08/26/2020 retired these objects
+            //txtCreditBureau.Enabled = false;
+            //listBoxTSBCommentCode.Enabled = false;
             toolStripButtonEdit.Enabled = false;
             // Moses Newman 01/20/2015 Add ContractDate
             DateTimePickerContractDate.Enabled = false;
             // Moses Newman 06/19/2015 add TSB Payment Rating Override
-            checkBoxTSBOverride.Enabled = false;
-            comboBoxTSBPaymentRating.Enabled = false;
+            // Moses Newman 08/26/2020 retired these items
+            //checkBoxTSBOverride.Enabled = false;
+            //comboBoxTSBPaymentRating.Enabled = false;
             // Moses Newman 01/29/2017 Added Maturity Date
             MaturityDate.Enabled = false;
             // Moses Newman 12/09/2018 Add OverrideLateCharge
@@ -603,14 +605,16 @@ namespace IAC2018SQL
             txtCreditAvailable.Enabled = true;
             txtControlDate.Enabled = true;
             txtNumberofMonths.Enabled = true;
-            txtCreditBureau.Enabled = true;
-            listBoxTSBCommentCode.Enabled = true;
+            // Moses Newman 08/26/2020 retired these objects
+            //txtCreditBureau.Enabled = true;
+            //listBoxTSBCommentCode.Enabled = true;
             toolStripButtonEdit.Enabled = true;
             // Moses Newman 01/20/2015 Add Contract Date
             DateTimePickerContractDate.Enabled = true;
             // Moses Newman 06/19/2015 add TSB Payment Rating Override
-            checkBoxTSBOverride.Enabled = true;
-            comboBoxTSBPaymentRating.Enabled = true;
+            // Moses Newman 08/26/2020 retired these items
+            //checkBoxTSBOverride.Enabled = true;
+            //comboBoxTSBPaymentRating.Enabled = true;
             // Moses Newman 01/29/2017 Added Maturity Date
             MaturityDate.Enabled = true;
             // Moses Newman 12/09/2018 Add OverrideLateCharge
@@ -770,18 +774,18 @@ namespace IAC2018SQL
             textBoxRepairFee5.Enabled = true;
             // Moses Newman 08/03/2020
             //TSB
-            textBoxCurrentBalance.Enabled = true;
-            textBoxAmountPastDue.Enabled = true;
-            textBoxActualPaymentAmount.Enabled = true;
-            textBoxHighestCredit.Enabled = true;
-            textBoxOrgChargeOffAmount.Enabled = true;
-            textBoxSchMonthlyPaymentAmount.Enabled = true;
-            textBoxCreditLimit.Enabled = true;
-            nullableDateTimePickerDateofLastPayment.Enabled = true;
-            nullableDateTimePickerDateofFirstDelinquency.Enabled = true;
-            nullableDateTimePickerDateofAccountInformation.Enabled = true;
-            nullableDateTimePickerDateOpened.Enabled = true;
-            nullableDateTimePickerDateClosed.Enabled = true;
+            //textBoxCurrentBalance.Enabled = true;
+            //textBoxAmountPastDue.Enabled = true;
+            //textBoxActualPaymentAmount.Enabled = true;
+            //textBoxHighestCredit.Enabled = true;
+            //textBoxOrgChargeOffAmount.Enabled = true;
+            //textBoxSchMonthlyPaymentAmount.Enabled = true;
+            //textBoxCreditLimit.Enabled = true;
+            //nullableDateTimePickerDateofLastPayment.Enabled = true;
+            //nullableDateTimePickerDateofFirstDelinquency.Enabled = true;
+            //nullableDateTimePickerDateofAccountInformation.Enabled = true;
+            //nullableDateTimePickerDateOpened.Enabled = true;
+            //nullableDateTimePickerDateClosed.Enabled = true;
             nullableDateTimePickerFollowUpDate.Enabled = true;
             comboBoxAccountStatus.Enabled = true;
             comboBoxPaymentRating.Enabled = true;
@@ -790,10 +794,10 @@ namespace IAC2018SQL
             comboBoxConsumerIndicator.Enabled = true;
             comboBoxComplianceConditionCode.Enabled = true;
             comboBoxECOACode.Enabled = true;
-            comboBoxInterestType.Enabled = true;
-            comboBoxPortfolioType.Enabled = true;
-            comboBoxTermsFrequency.Enabled = true;
-            textBoxTermsDuration.Enabled = true;
+            //comboBoxInterestType.Enabled = true;
+            //comboBoxPortfolioType.Enabled = true;
+            //comboBoxTermsFrequency.Enabled = true;
+            //textBoxTermsDuration.Enabled = true;
             // Moses Newman 08/24/2020 enable new override TSB checkboxes
             checkBoxReportTSB.Enabled = true;
             checkBoxPurge.Enabled = true;
@@ -876,6 +880,9 @@ namespace IAC2018SQL
                 oPNBANKTableAdapter.Fill(iACDataSet.OPNBANK, cUSTOMER_NOTextBox.Text.ToString(), "C");
                 // Moses Newman 08/02/2020 Add ClosedCreditManager 
                 closedCreditManagerTableAdapter.Fill(tsbDataSet.ClosedCreditManager, cUSTOMER_NOTextBox.Text.ToString(), "00");
+                // Moses Newman 08/24/2020 possibly unsecured NON-AUTO loan!
+                if(tsbDataSet.ClosedCreditManager.Rows.Count == 0)
+                    closedCreditManagerTableAdapter.Fill(tsbDataSet.ClosedCreditManager, cUSTOMER_NOTextBox.Text.ToString(), "01");
                 // Moses Newman 12/23/2013 Add Email Address Record
                 emailTableAdapter.Fill(iACDataSet.Email, cUSTOMER_NOTextBox.Text);
                 // Moses Newman 04/18/2019 Add Repo Log Tab
@@ -1388,13 +1395,15 @@ namespace IAC2018SQL
                     txtCreditAvailable.Enabled = true;
                     txtControlDate.Enabled = true;
                     txtNumberofMonths.Enabled = true;
-                    txtCreditBureau.Enabled = true;
-                    listBoxTSBCommentCode.Enabled = true;
+                    // Moses Newman 08/26/2020 retired these objects
+                    //txtCreditBureau.Enabled = true;
+                    //listBoxTSBCommentCode.Enabled = true;
                     // Moses Newman 01/20/2015 Add Contract Date
                     DateTimePickerContractDate.Enabled = true;
                     // Moses Newman 06/19/2015 add TSB Payment Rating Override
-                    checkBoxTSBOverride.Enabled = true;
-                    comboBoxTSBPaymentRating.Enabled = true;
+                    // Moses Newman 08/26/2020 retired these items
+                    //checkBoxTSBOverride.Enabled = true;
+                    //comboBoxTSBPaymentRating.Enabled = true;
                     // Moses Newman 12/09/2018 Add OverrideLateCharge
                     checkBoxOverrideLateCharge.Enabled = true;
                     // Moses Newman 12/22/2019
@@ -1546,18 +1555,18 @@ namespace IAC2018SQL
 
                     // Moses Newman 08/03/2020
                     //TSB
-                    textBoxCurrentBalance.Enabled = true;
-                    textBoxAmountPastDue.Enabled = true;
-                    textBoxActualPaymentAmount.Enabled = true;
-                    textBoxHighestCredit.Enabled = true;
-                    textBoxOrgChargeOffAmount.Enabled = true;
-                    textBoxSchMonthlyPaymentAmount.Enabled = true;
-                    textBoxCreditLimit.Enabled = true;
-                    nullableDateTimePickerDateofLastPayment.Enabled = true;
-                    nullableDateTimePickerDateofFirstDelinquency.Enabled = true;
-                    nullableDateTimePickerDateofAccountInformation.Enabled = true;
-                    nullableDateTimePickerDateOpened.Enabled = true;
-                    nullableDateTimePickerDateClosed.Enabled = true;
+                    //textBoxCurrentBalance.Enabled = true;
+                    //textBoxAmountPastDue.Enabled = true;
+                    //textBoxActualPaymentAmount.Enabled = true;
+                    //textBoxHighestCredit.Enabled = true;
+                    //textBoxOrgChargeOffAmount.Enabled = true;
+                    //textBoxSchMonthlyPaymentAmount.Enabled = true;
+                    //textBoxCreditLimit.Enabled = true;
+                    //nullableDateTimePickerDateofLastPayment.Enabled = true;
+                    //nullableDateTimePickerDateofFirstDelinquency.Enabled = true;
+                    //nullableDateTimePickerDateofAccountInformation.Enabled = true;
+                    //nullableDateTimePickerDateOpened.Enabled = true;
+                    //nullableDateTimePickerDateClosed.Enabled = true;
                     nullableDateTimePickerFollowUpDate.Enabled = true;
                     comboBoxAccountStatus.Enabled = true;
                     comboBoxPaymentRating.Enabled = true;
@@ -1566,10 +1575,10 @@ namespace IAC2018SQL
                     comboBoxConsumerIndicator.Enabled = true;
                     comboBoxComplianceConditionCode.Enabled = true;
                     comboBoxECOACode.Enabled = true;
-                    comboBoxInterestType.Enabled = true;
-                    comboBoxPortfolioType.Enabled = true;
-                    comboBoxTermsFrequency.Enabled = true;
-                    textBoxTermsDuration.Enabled = true;
+                    //comboBoxInterestType.Enabled = true;
+                    //comboBoxPortfolioType.Enabled = true;
+                    //comboBoxTermsFrequency.Enabled = true;
+                    //textBoxTermsDuration.Enabled = true;
                     // Moses Newman 08/24/2020 enable new override TSB checkboxes
                     checkBoxReportTSB.Enabled = true;
                     checkBoxPurge.Enabled = true;
@@ -3426,6 +3435,7 @@ namespace IAC2018SQL
             }
         }
 
+        /* Moses Newman 08/26/2020 Retired this ListBox
         // Moses Newman 06/15/2015 User Draw TSB listbox so that it can be 3 lines wide PER ITEM!
         private void txtTSBCommentCode_DrawItem(object sender, DrawItemEventArgs e)
         {
@@ -3447,15 +3457,9 @@ namespace IAC2018SQL
                 e.Graphics.DrawString(TSBDataRow["Description"].ToString(), e.Font, new SolidBrush(Color.Black), e.Bounds);
             else
                 e.Graphics.DrawString(TSBDataRow["Description"].ToString(), e.Font, SystemBrushes.InfoText, e.Bounds);
-        }
+        }*/
 
         private void txtTSBCommentCode_SelectedValueChanged(object sender, EventArgs e)
-        {
-            if (lbAddFlag || lbEdit)
-                toolStripButtonSave.Enabled = true;
-        }
-
-        private void checkBoxTSBOverride_CheckedChanged(object sender, EventArgs e)
         {
             if (lbAddFlag || lbEdit)
                 toolStripButtonSave.Enabled = true;
@@ -4000,7 +4004,14 @@ namespace IAC2018SQL
         private void checkBoxReportTSB_CheckedChanged(object sender, EventArgs e)
         {
             if (lbAddFlag || lbEdit)
+            {
                 toolStripButtonSave.Enabled = true;
+                // Moses Newman 08/26/2020 Toggle CUSTOMER_CREDIT_BUREAU if this is checked!
+                if(checkBoxReportTSB.Checked)
+                    iACDataSet.CUSTOMER.Rows[0].SetField<String>("CUSTOMER_CREDIT_BUREAU", "Y");
+                else
+                    iACDataSet.CUSTOMER.Rows[0].SetField<String>("CUSTOMER_CREDIT_BUREAU", "N");
+            }
         }
 
         private void checkBoxPurge_CheckedChanged(object sender, EventArgs e)
