@@ -39,7 +39,7 @@
     <SuiteName>IAC2018SQL</SuiteName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>147</ApplicationRevision>
+    <ApplicationRevision>149</ApplicationRevision>
     <ApplicationVersion>6.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -229,6 +229,12 @@
     </Compile>
     <Compile Include="ClosedOverPaymentReport.Designer.cs">
       <DependentUpon>ClosedOverPaymentReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDelinquencyPeriods.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDelinquencyPeriods.Designer.cs">
+      <DependentUpon>FormDelinquencyPeriods.cs</DependentUpon>
     </Compile>
     <Compile Include="frmImportDefiPDFs.cs">
       <SubType>Form</SubType>
@@ -1206,6 +1212,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ClosedOverPaymentReport.resx">
       <DependentUpon>ClosedOverPaymentReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDelinquencyPeriods.resx">
+      <DependentUpon>FormDelinquencyPeriods.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormFixCreateDate.resx">
       <DependentUpon>FormFixCreateDate.cs</DependentUpon>

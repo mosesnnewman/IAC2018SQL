@@ -43,7 +43,7 @@
             this.buttonCancel.Margin = new System.Windows.Forms.Padding(4);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(110, 103);
-            this.buttonCancel.TabIndex = 6;
+            this.buttonCancel.TabIndex = 2;
             this.buttonCancel.Text = "&Cancel";
             this.buttonCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.buttonCancel.UseVisualStyleBackColor = true;
@@ -55,7 +55,7 @@
             this.buttonTransfer.Location = new System.Drawing.Point(130, 53);
             this.buttonTransfer.Name = "buttonTransfer";
             this.buttonTransfer.Size = new System.Drawing.Size(110, 103);
-            this.buttonTransfer.TabIndex = 12;
+            this.buttonTransfer.TabIndex = 1;
             this.buttonTransfer.Text = "&Import PNS Payments";
             this.buttonTransfer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.buttonTransfer.UseVisualStyleBackColor = true;
@@ -66,7 +66,7 @@
             this.progressBarDownload.Location = new System.Drawing.Point(12, 241);
             this.progressBarDownload.Name = "progressBarDownload";
             this.progressBarDownload.Size = new System.Drawing.Size(543, 53);
-            this.progressBarDownload.TabIndex = 13;
+            this.progressBarDownload.TabIndex = 3;
             // 
             // labelDownload
             // 
