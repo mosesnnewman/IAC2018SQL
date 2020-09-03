@@ -4062,6 +4062,17 @@ namespace IAC2018SQL
                 toolStripButtonSave.Enabled = true;
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FormDelinquencyPeriods newdelinquencyperiods = new FormDelinquencyPeriods();
+            newdelinquencyperiods.CustomerID = iACDataSet.CUSTOMER.Rows[0].Field<Int32>("CustomerID");
+            newdelinquencyperiods.PeriodEnd = tsbDataSet.ClosedCreditManager.Rows[0].Field<DateTime>("DateOfAccountInformation");
+            newdelinquencyperiods.Profile = tsbDataSet.ClosedCreditManager.Rows[0].Field<String>("PaymentProfile");
+            newdelinquencyperiods.ShowDialog();
+            newdelinquencyperiods.Hide();
+            newdelinquencyperiods.Dispose();
+        }
+
         private void textBoxRepairFee4_Validated(object sender, EventArgs e)
         {
             if (!Decimal.TryParse(textBoxRepairFee4.Text, NumberStyles.Currency,

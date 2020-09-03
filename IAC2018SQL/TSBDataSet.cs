@@ -2,6 +2,14 @@
 {
     partial class TSBDataSet
     {
+        partial class TSBCustomerDelinquenciesDataTable
+        {
+        }
+
+        partial class DelinquencyPeriodsDataTable
+        {
+        }
+
         partial class TermsFrequencyDataTable
         {
         }
@@ -46,6 +54,14 @@
 
 namespace IAC2018SQL.TSBDataSetTableAdapters
 {
+    partial class TSBCustomerDelinquenciesTableAdapter
+    {
+    }
+
+    partial class DelinquencyPeriodsTableAdapter
+    {
+    }
+
     partial class TermsFrequencyTableAdapter
     {
     }
