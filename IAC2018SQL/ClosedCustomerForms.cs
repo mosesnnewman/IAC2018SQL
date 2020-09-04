@@ -469,6 +469,8 @@ namespace IAC2018SQL
             checkBoxComplianceCode.Enabled = false;
             checkBoxECOACode.Enabled = false;
             checkBoxPaymentProfile.Enabled = false;
+            // Moses Newman 09/04/2020 Turn off Edit Payment History Button
+            buttonEditPaymentHistory.Enabled = false;
         }
 
         private void SetEditMode()
@@ -811,7 +813,11 @@ namespace IAC2018SQL
             checkBoxECOACode.Enabled = true;
             checkBoxPaymentProfile.Enabled = true;
 
-            toolStripButtonEdit.Enabled = false;
+            // Moses Newman 09/04/2020 toggle Edit Payment History only enable if there is a Credit Manager Record
+            if (tsbDataSet.ClosedCreditManager.Rows.Count != 0)
+                this.buttonEditPaymentHistory.Enabled = true;
+            else
+                this.toolStripButtonEdit.Enabled = false;
             toolStripButtonSave.Enabled = false;
         }
 
@@ -1591,6 +1597,11 @@ namespace IAC2018SQL
                     checkBoxComplianceCode.Enabled = true;
                     checkBoxECOACode.Enabled = true;
                     checkBoxPaymentProfile.Enabled = true;
+                    // Moses Newman 09/04/2020 toggle Edit Payment History only enable if there is a Credit Manager Record
+                    if (tsbDataSet.ClosedCreditManager.Rows.Count != 0)
+                        this.buttonEditPaymentHistory.Enabled = true;
+                    else
+                        this.toolStripButtonEdit.Enabled = false;
 
                     ActiveControl = cUSTOMER_PURCHASE_ORDERTextBox;
                     cUSTOMER_PURCHASE_ORDERTextBox.Select();
@@ -4062,14 +4073,21 @@ namespace IAC2018SQL
                 toolStripButtonSave.Enabled = true;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonEditPaymentHistory_Click(object sender, EventArgs e)
         {
+            String OldProfile = tsbDataSet.ClosedCreditManager.Rows[0].Field<String>("PaymentProfile"); 
+
             FormDelinquencyPeriods newdelinquencyperiods = new FormDelinquencyPeriods();
             newdelinquencyperiods.CustomerID = iACDataSet.CUSTOMER.Rows[0].Field<Int32>("CustomerID");
             newdelinquencyperiods.PeriodEnd = tsbDataSet.ClosedCreditManager.Rows[0].Field<DateTime>("DateOfAccountInformation");
-            newdelinquencyperiods.Profile = tsbDataSet.ClosedCreditManager.Rows[0].Field<String>("PaymentProfile");
+            newdelinquencyperiods.Profile = OldProfile;
             newdelinquencyperiods.ShowDialog();
+            tsbDataSet.ClosedCreditManager.Rows[closedCreditManagerBindingSource.Position].SetField<String>("PaymentProfile", newdelinquencyperiods.Profile);
+            closedCreditManagerBindingSource.EndEdit();
             newdelinquencyperiods.Hide();
+            this.textBoxPaymentHistoryProfile.Refresh();
+            if (newdelinquencyperiods.Profile != OldProfile)
+                toolStripButtonSave.Enabled = true;
             newdelinquencyperiods.Dispose();
         }
 
