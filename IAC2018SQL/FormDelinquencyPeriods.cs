@@ -105,7 +105,39 @@ namespace IAC2018SQL
 
         private void buttonOk_Click(object sender, EventArgs e)
         {
+            
+            String DatePart, History;
+            DatePart = this.Profile.Substring(0, 7);
+
+            History =
+                this.tsbDataSet.TSBCustomerDelinquencies.Rows[TSBCustomerDelinquenciesbindingSource.Position].Field<String>("p1") +
+                this.tsbDataSet.TSBCustomerDelinquencies.Rows[TSBCustomerDelinquenciesbindingSource.Position].Field<String>("p2") +
+                this.tsbDataSet.TSBCustomerDelinquencies.Rows[TSBCustomerDelinquenciesbindingSource.Position].Field<String>("p3") +
+                this.tsbDataSet.TSBCustomerDelinquencies.Rows[TSBCustomerDelinquenciesbindingSource.Position].Field<String>("p4") +
+                this.tsbDataSet.TSBCustomerDelinquencies.Rows[TSBCustomerDelinquenciesbindingSource.Position].Field<String>("p5") +
+                this.tsbDataSet.TSBCustomerDelinquencies.Rows[TSBCustomerDelinquenciesbindingSource.Position].Field<String>("p6") +
+                this.tsbDataSet.TSBCustomerDelinquencies.Rows[TSBCustomerDelinquenciesbindingSource.Position].Field<String>("p7") +
+                this.tsbDataSet.TSBCustomerDelinquencies.Rows[TSBCustomerDelinquenciesbindingSource.Position].Field<String>("p8") +
+                this.tsbDataSet.TSBCustomerDelinquencies.Rows[TSBCustomerDelinquenciesbindingSource.Position].Field<String>("p9") +
+                this.tsbDataSet.TSBCustomerDelinquencies.Rows[TSBCustomerDelinquenciesbindingSource.Position].Field<String>("p10") +
+                this.tsbDataSet.TSBCustomerDelinquencies.Rows[TSBCustomerDelinquenciesbindingSource.Position].Field<String>("p11") +
+                this.tsbDataSet.TSBCustomerDelinquencies.Rows[TSBCustomerDelinquenciesbindingSource.Position].Field<String>("p12") +
+
+                this.tsbDataSet.TSBCustomerDelinquencies.Rows[TSBCustomerDelinquenciesbindingSource.Position].Field<String>("p13") +
+                this.tsbDataSet.TSBCustomerDelinquencies.Rows[TSBCustomerDelinquenciesbindingSource.Position].Field<String>("p14") +
+                this.tsbDataSet.TSBCustomerDelinquencies.Rows[TSBCustomerDelinquenciesbindingSource.Position].Field<String>("p15") +
+                this.tsbDataSet.TSBCustomerDelinquencies.Rows[TSBCustomerDelinquenciesbindingSource.Position].Field<String>("p16") +
+                this.tsbDataSet.TSBCustomerDelinquencies.Rows[TSBCustomerDelinquenciesbindingSource.Position].Field<String>("p17") +
+                this.tsbDataSet.TSBCustomerDelinquencies.Rows[TSBCustomerDelinquenciesbindingSource.Position].Field<String>("p18") +
+                this.tsbDataSet.TSBCustomerDelinquencies.Rows[TSBCustomerDelinquenciesbindingSource.Position].Field<String>("p19") +
+                this.tsbDataSet.TSBCustomerDelinquencies.Rows[TSBCustomerDelinquenciesbindingSource.Position].Field<String>("p20") +
+                this.tsbDataSet.TSBCustomerDelinquencies.Rows[TSBCustomerDelinquenciesbindingSource.Position].Field<String>("p21") +
+                this.tsbDataSet.TSBCustomerDelinquencies.Rows[TSBCustomerDelinquenciesbindingSource.Position].Field<String>("p22") +
+                this.tsbDataSet.TSBCustomerDelinquencies.Rows[TSBCustomerDelinquenciesbindingSource.Position].Field<String>("p23") +
+                this.tsbDataSet.TSBCustomerDelinquencies.Rows[TSBCustomerDelinquenciesbindingSource.Position].Field<String>("p24");
+                
             this.tSBCustomerDelinquenciesTableAdapter.Update(this.tsbDataSet.TSBCustomerDelinquencies.Rows[0]);
+            this.Profile = DatePart + History;
             this.Close();
         }
     }
