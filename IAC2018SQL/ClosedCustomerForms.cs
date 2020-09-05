@@ -817,8 +817,9 @@ namespace IAC2018SQL
             if (tsbDataSet.ClosedCreditManager.Rows.Count != 0)
                 this.buttonEditPaymentHistory.Enabled = true;
             else
-                this.toolStripButtonEdit.Enabled = false;
+                this.buttonEditPaymentHistory.Enabled = false;
             toolStripButtonSave.Enabled = false;
+            toolStripButtonEdit.Enabled = false;
         }
 
         private void setRelatedData()
@@ -1601,8 +1602,9 @@ namespace IAC2018SQL
                     if (tsbDataSet.ClosedCreditManager.Rows.Count != 0)
                         this.buttonEditPaymentHistory.Enabled = true;
                     else
-                        this.toolStripButtonEdit.Enabled = false;
+                        this.buttonEditPaymentHistory.Enabled = false;
 
+                    this.toolStripButtonEdit.Enabled = false;
                     ActiveControl = cUSTOMER_PURCHASE_ORDERTextBox;
                     cUSTOMER_PURCHASE_ORDERTextBox.Select();
                 }

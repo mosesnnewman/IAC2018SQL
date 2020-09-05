@@ -291,7 +291,7 @@
             this.txtLastPaymentMade = new System.Windows.Forms.TextBox();
             this.txtCreditBureau = new System.Windows.Forms.TextBox();
             this.txtCreditLimit = new System.Windows.Forms.TextBox();
-            this.txtContractStatus = new System.Windows.Forms.TextBox();
+            this.txtContractStatus = new ColorTextBox();
             this.txtCustomerBalance = new System.Windows.Forms.TextBox();
             this.textBoxInterestRate = new System.Windows.Forms.TextBox();
             this.tabCosigner = new System.Windows.Forms.TabPage();
