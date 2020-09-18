@@ -288,6 +288,7 @@ namespace IAC2018SQL
 
         private void buttonTransfer_Click(object sender, EventArgs e)
         {
+            buttonTransfer.Enabled = false;  // Moses Newman 09/14/2020 disable button so that Transfer SSIS Package can only get called once.
             PaymentDataSetTableAdapters.PayNSecondsTableAdapter PayNSecondsTableAdapter = new PaymentDataSetTableAdapters.PayNSecondsTableAdapter();
             PaymentDataSet PNS = new PaymentDataSet();
             if (ReadPNSFile(PNS))
