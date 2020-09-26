@@ -130,7 +130,7 @@ namespace IAC2018SQL
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             FormTemplates newtemplateform = new FormTemplates();
-            newtemplateform.securityToken = securityToken;
+            newtemplateform.securityToken = sbtLogin();
             newtemplateform.ShowDialog();
             this.textBoxMessage.Text = newtemplateform.TemplateText;
             this.tempID = newtemplateform.TempID;

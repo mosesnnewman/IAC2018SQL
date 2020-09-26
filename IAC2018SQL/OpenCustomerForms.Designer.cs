@@ -124,17 +124,20 @@
             System.Windows.Forms.Label label50;
             System.Windows.Forms.Label label21;
             System.Windows.Forms.Label labelTSBPaymentRating;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.Label label140;
+            System.Windows.Forms.Label label132;
+            System.Windows.Forms.Label label151;
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOpenCustMaint));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cUSTOMERBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.iACDataSet = new IAC2018SQL.IACDataSet();
             this.tabComments = new System.Windows.Forms.TabPage();
@@ -237,7 +240,7 @@
             this.cUSTOMER_CELL_PHONETextBox = new System.Windows.Forms.MaskedTextBox();
             this.cUSTOMER_WORK_PHONETextBox = new System.Windows.Forms.MaskedTextBox();
             this.cUSTOMER_PHONE_NOTextBox = new System.Windows.Forms.MaskedTextBox();
-            this.tabCustomerMaint = new System.Windows.Forms.TabControl();
+            this.tabOpenCustomerMaintenance = new System.Windows.Forms.TabControl();
             this.tabCustInfo2 = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.textBoxTotalFinance = new System.Windows.Forms.TextBox();
@@ -291,7 +294,7 @@
             this.txtLastPaymentMade = new System.Windows.Forms.TextBox();
             this.txtCreditBureau = new System.Windows.Forms.TextBox();
             this.txtCreditLimit = new System.Windows.Forms.TextBox();
-            this.txtContractStatus = new ColorTextBox();
+            this.txtContractStatus = new IAC2018SQL.ColorTextBox();
             this.txtCustomerBalance = new System.Windows.Forms.TextBox();
             this.textBoxInterestRate = new System.Windows.Forms.TextBox();
             this.tabCosigner = new System.Windows.Forms.TabPage();
@@ -364,6 +367,87 @@
             this.textBox86 = new System.Windows.Forms.TextBox();
             this.textBox87 = new System.Windows.Forms.TextBox();
             this.textBox88 = new System.Windows.Forms.TextBox();
+            this.tabTSB = new System.Windows.Forms.TabPage();
+            this.groupBoxDates = new System.Windows.Forms.GroupBox();
+            this.checkBoxFollowUpDate = new System.Windows.Forms.CheckBox();
+            this.closedCreditManagerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tsbDataSet = new IAC2018SQL.TSBDataSet();
+            this.nullableDateTimePickerFollowUpDate = new ProManApp.NullableDateTimePicker();
+            this.nullableDateTimePickerDateClosed = new ProManApp.NullableDateTimePicker();
+            this.nullableDateTimePickerDateOpened = new ProManApp.NullableDateTimePicker();
+            this.nullableDateTimePickerDateofAccountInformation = new ProManApp.NullableDateTimePicker();
+            this.nullableDateTimePickerDateofFirstDelinquency = new ProManApp.NullableDateTimePicker();
+            this.nullableDateTimePickerDateofLastPayment = new ProManApp.NullableDateTimePicker();
+            this.label135 = new System.Windows.Forms.Label();
+            this.label136 = new System.Windows.Forms.Label();
+            this.label138 = new System.Windows.Forms.Label();
+            this.label139 = new System.Windows.Forms.Label();
+            this.groupBoxCodes = new System.Windows.Forms.GroupBox();
+            this.checkBoxECOACode = new System.Windows.Forms.CheckBox();
+            this.checkBoxPaymentProfile = new System.Windows.Forms.CheckBox();
+            this.checkBoxComplianceCode = new System.Windows.Forms.CheckBox();
+            this.checkBoxConsumerIndicator = new System.Windows.Forms.CheckBox();
+            this.checkBoxAccountType = new System.Windows.Forms.CheckBox();
+            this.checkBoxSpecialComment = new System.Windows.Forms.CheckBox();
+            this.checkBoxPaymentRating = new System.Windows.Forms.CheckBox();
+            this.checkBoxAccountStatus = new System.Windows.Forms.CheckBox();
+            this.buttonEditPaymentHistory = new System.Windows.Forms.Button();
+            this.label152 = new System.Windows.Forms.Label();
+            this.textBoxPaymentHistoryProfile = new System.Windows.Forms.TextBox();
+            this.textBoxTermsDuration = new System.Windows.Forms.TextBox();
+            this.label149 = new System.Windows.Forms.Label();
+            this.comboBoxTermsFrequency = new System.Windows.Forms.ComboBox();
+            this.TermFrequenciesbindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label150 = new System.Windows.Forms.Label();
+            this.comboBoxPortfolioType = new System.Windows.Forms.ComboBox();
+            this.PortfolioTypesbindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label148 = new System.Windows.Forms.Label();
+            this.comboBoxInterestType = new System.Windows.Forms.ComboBox();
+            this.InterestTypesbindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label147 = new System.Windows.Forms.Label();
+            this.comboBoxECOACode = new System.Windows.Forms.ComboBox();
+            this.ECOACodesbindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.labelComplianceConditionCode = new System.Windows.Forms.Label();
+            this.comboBoxComplianceConditionCode = new System.Windows.Forms.ComboBox();
+            this.ComplianceConditionsbindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label145 = new System.Windows.Forms.Label();
+            this.comboBoxConsumerIndicator = new System.Windows.Forms.ComboBox();
+            this.ConsumerIndicatorsbindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label144 = new System.Windows.Forms.Label();
+            this.comboBoxAccountType = new System.Windows.Forms.ComboBox();
+            this.AccountTypesbindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label143 = new System.Windows.Forms.Label();
+            this.comboBoxSpecialComment = new System.Windows.Forms.ComboBox();
+            this.label142 = new System.Windows.Forms.Label();
+            this.comboBoxPaymentRating = new System.Windows.Forms.ComboBox();
+            this.PaymentRatingsbindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label141 = new System.Windows.Forms.Label();
+            this.comboBoxAccountStatus = new System.Windows.Forms.ComboBox();
+            this.AccountStatusesbindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.groupBoxDollars = new System.Windows.Forms.GroupBox();
+            this.label137 = new System.Windows.Forms.Label();
+            this.textBoxCreditLimit = new System.Windows.Forms.TextBox();
+            this.labelSchMonthlyPayment = new System.Windows.Forms.Label();
+            this.textBoxSchMonthlyPaymentAmount = new System.Windows.Forms.TextBox();
+            this.labelChargeOffAmount = new System.Windows.Forms.Label();
+            this.textBoxOrgChargeOffAmount = new System.Windows.Forms.TextBox();
+            this.label134 = new System.Windows.Forms.Label();
+            this.textBoxHighestCredit = new System.Windows.Forms.TextBox();
+            this.label133 = new System.Windows.Forms.Label();
+            this.textBoxActualPaymentAmount = new System.Windows.Forms.TextBox();
+            this.labelAmountPastDue = new System.Windows.Forms.Label();
+            this.textBoxAmountPastDue = new System.Windows.Forms.TextBox();
+            this.labelCurrentBalance = new System.Windows.Forms.Label();
+            this.textBoxCurrentBalance = new System.Windows.Forms.TextBox();
+            this.groupBoxPurge = new System.Windows.Forms.GroupBox();
+            this.checkBoxPurge = new System.Windows.Forms.CheckBox();
+            this.groupBoxReportStatus = new System.Windows.Forms.GroupBox();
+            this.checkBoxReportTSB = new System.Windows.Forms.CheckBox();
+            this.groupBoxAccountNumber = new System.Windows.Forms.GroupBox();
+            this.textBox68 = new System.Windows.Forms.TextBox();
+            this.textBox69 = new System.Windows.Forms.TextBox();
+            this.textBox70 = new System.Windows.Forms.TextBox();
+            this.textBox53 = new System.Windows.Forms.TextBox();
             this.aLTNAMETableAdapter = new IAC2018SQL.IACDataSetTableAdapters.ALTNAMETableAdapter();
             this.oPNBANKTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.OPNBANKTableAdapter();
             this.oPNCUSTTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.OPNCUSTTableAdapter();
@@ -385,6 +469,16 @@
             this.StateRatesTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.StateRatesTableAdapter();
             this.errorProviderCustomerForm = new System.Windows.Forms.ErrorProvider(this.components);
             this.specialCommentCodesTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.SpecialCommentCodesTableAdapter();
+            this.closedCreditManagerTableAdapter = new IAC2018SQL.TSBDataSetTableAdapters.ClosedCreditManagerTableAdapter();
+            this.accountStatusesTableAdapter = new IAC2018SQL.TSBDataSetTableAdapters.AccountStatusesTableAdapter();
+            this.paymentRatingsTableAdapter = new IAC2018SQL.TSBDataSetTableAdapters.PaymentRatingsTableAdapter();
+            this.accountTypesTableAdapter = new IAC2018SQL.TSBDataSetTableAdapters.AccountTypesTableAdapter();
+            this.consumerIndicatorsTableAdapter = new IAC2018SQL.TSBDataSetTableAdapters.ConsumerIndicatorsTableAdapter();
+            this.complianceConditionCodesTableAdapter = new IAC2018SQL.TSBDataSetTableAdapters.ComplianceConditionCodesTableAdapter();
+            this.eCOACodesTableAdapter = new IAC2018SQL.TSBDataSetTableAdapters.ECOACodesTableAdapter();
+            this.interestTypesTableAdapter = new IAC2018SQL.TSBDataSetTableAdapters.InterestTypesTableAdapter();
+            this.portfolioTypesTableAdapter = new IAC2018SQL.TSBDataSetTableAdapters.PortfolioTypesTableAdapter();
+            this.termsFrequencyTableAdapter = new IAC2018SQL.TSBDataSetTableAdapters.TermsFrequencyTableAdapter();
             label11 = new System.Windows.Forms.Label();
             label10 = new System.Windows.Forms.Label();
             label9 = new System.Windows.Forms.Label();
@@ -479,6 +573,9 @@
             label50 = new System.Windows.Forms.Label();
             label21 = new System.Windows.Forms.Label();
             labelTSBPaymentRating = new System.Windows.Forms.Label();
+            label140 = new System.Windows.Forms.Label();
+            label132 = new System.Windows.Forms.Label();
+            label151 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.cUSTOMERBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iACDataSet)).BeginInit();
             this.tabComments.SuspendLayout();
@@ -499,7 +596,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.letterTypeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.letterNumberBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OPNDLRLISTBYNUMbindingSource)).BeginInit();
-            this.tabCustomerMaint.SuspendLayout();
+            this.tabOpenCustomerMaintenance.SuspendLayout();
             this.tabCustInfo2.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -516,6 +613,30 @@
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceMonthNames)).BeginInit();
             this.groupBox6.SuspendLayout();
+            this.tabTSB.SuspendLayout();
+            this.groupBoxDates.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.closedCreditManagerBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tsbDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerFollowUpDate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateClosed)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateOpened)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateofAccountInformation)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateofFirstDelinquency)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateofLastPayment)).BeginInit();
+            this.groupBoxCodes.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TermFrequenciesbindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PortfolioTypesbindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.InterestTypesbindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ECOACodesbindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ComplianceConditionsbindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ConsumerIndicatorsbindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AccountTypesbindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PaymentRatingsbindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AccountStatusesbindingSource)).BeginInit();
+            this.groupBoxDollars.SuspendLayout();
+            this.groupBoxPurge.SuspendLayout();
+            this.groupBoxReportStatus.SuspendLayout();
+            this.groupBoxAccountNumber.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dEALERBindingSource)).BeginInit();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderCustomerForm)).BeginInit();
@@ -1415,6 +1536,35 @@
             labelTSBPaymentRating.Text = "TSB Payment Rating:";
             labelTSBPaymentRating.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
+            // label140
+            // 
+            label140.AutoSize = true;
+            label140.Location = new System.Drawing.Point(149, 52);
+            label140.Name = "label140";
+            label140.Size = new System.Drawing.Size(153, 17);
+            label140.TabIndex = 128;
+            label140.Text = "Date of First Delinquency";
+            label140.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // label132
+            // 
+            label132.AutoSize = true;
+            label132.Location = new System.Drawing.Point(171, 25);
+            label132.Name = "label132";
+            label132.Size = new System.Drawing.Size(131, 17);
+            label132.TabIndex = 125;
+            label132.Text = "Date of Last Payment";
+            label132.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // label151
+            // 
+            label151.AutoSize = true;
+            label151.Location = new System.Drawing.Point(669, 210);
+            label151.Name = "label151";
+            label151.Size = new System.Drawing.Size(97, 17);
+            label151.TabIndex = 120;
+            label151.Text = "Terms Duration";
+            // 
             // cUSTOMERBindingSource
             // 
             this.cUSTOMERBindingSource.DataMember = "OPNCUST";
@@ -1475,10 +1625,10 @@
             // Date
             // 
             this.Date.DataPropertyName = "COMMENT_DATE";
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle11.Format = "d";
-            dataGridViewCellStyle11.NullValue = null;
-            this.Date.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle1.Format = "d";
+            dataGridViewCellStyle1.NullValue = null;
+            this.Date.DefaultCellStyle = dataGridViewCellStyle1;
             this.Date.HeaderText = "DATE";
             this.Date.Name = "Date";
             this.Date.ReadOnly = true;
@@ -1487,9 +1637,9 @@
             // 
             this.Type.DataPropertyName = "COMMENT_TYPE";
             this.Type.DataSource = this.commentTypesBindingSource;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.Format = "N0";
-            this.Type.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.Format = "N0";
+            this.Type.DefaultCellStyle = dataGridViewCellStyle2;
             this.Type.DisplayMember = "ListItems";
             this.Type.DropDownWidth = 200;
             this.Type.HeaderText = "TYPE";
@@ -1508,8 +1658,8 @@
             // ID
             // 
             this.ID.DataPropertyName = "COMMENT_USERID";
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ID.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ID.DefaultCellStyle = dataGridViewCellStyle3;
             this.ID.HeaderText = "ID";
             this.ID.MaxInputLength = 3;
             this.ID.Name = "ID";
@@ -1519,9 +1669,9 @@
             // Comment
             // 
             this.Comment.DataPropertyName = "COMMENT_WHOLE";
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Comment.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Comment.DefaultCellStyle = dataGridViewCellStyle4;
             this.Comment.HeaderText = "COMMENT";
             this.Comment.MaxInputLength = 180;
             this.Comment.Name = "Comment";
@@ -1890,10 +2040,10 @@
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "CUSTHIST_PAY_DATE";
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle15.Format = "d";
-            dataGridViewCellStyle15.NullValue = null;
-            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle5.Format = "d";
+            dataGridViewCellStyle5.NullValue = null;
+            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewTextBoxColumn4.HeaderText = "POST DATE";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
@@ -1909,49 +2059,49 @@
             // dataGridViewTextBoxColumn9
             // 
             this.dataGridViewTextBoxColumn9.DataPropertyName = "CUSTHIST_PAYMENT_RCV";
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle16.Format = "C2";
-            dataGridViewCellStyle16.NullValue = null;
-            this.dataGridViewTextBoxColumn9.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle6.Format = "C2";
+            dataGridViewCellStyle6.NullValue = null;
+            this.dataGridViewTextBoxColumn9.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridViewTextBoxColumn9.HeaderText = "PAYMENT AMOUNT";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             // 
             // dataGridViewTextBoxColumn8
             // 
             this.dataGridViewTextBoxColumn8.DataPropertyName = "CUSTHIST_BALANCE";
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle17.Format = "C2";
-            dataGridViewCellStyle17.NullValue = null;
-            this.dataGridViewTextBoxColumn8.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle7.Format = "C2";
+            dataGridViewCellStyle7.NullValue = null;
+            this.dataGridViewTextBoxColumn8.DefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridViewTextBoxColumn8.HeaderText = "LOAN BALANCE";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             // 
             // dataGridViewTextBoxColumn18
             // 
             this.dataGridViewTextBoxColumn18.DataPropertyName = "CUSTHIST_CONTRACT_STATUS";
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle18.Format = "C2";
-            dataGridViewCellStyle18.NullValue = null;
-            this.dataGridViewTextBoxColumn18.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle8.Format = "C2";
+            dataGridViewCellStyle8.NullValue = null;
+            this.dataGridViewTextBoxColumn18.DefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridViewTextBoxColumn18.HeaderText = "CONTRACT STATUS";
             this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
             // 
             // dataGridViewTextBoxColumn13
             // 
             this.dataGridViewTextBoxColumn13.DataPropertyName = "CUSTHIST_LATE_CHARGE_BAL";
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle19.Format = "C2";
-            dataGridViewCellStyle19.NullValue = null;
-            this.dataGridViewTextBoxColumn13.DefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle9.Format = "C2";
+            dataGridViewCellStyle9.NullValue = null;
+            this.dataGridViewTextBoxColumn13.DefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridViewTextBoxColumn13.HeaderText = "LATE CHARGE BALANCE";
             this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
             // 
             // dataGridViewTextBoxColumn15
             // 
             this.dataGridViewTextBoxColumn15.DataPropertyName = "SHORT_PAID_THRU";
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle20.NullValue = null;
-            this.dataGridViewTextBoxColumn15.DefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.NullValue = null;
+            this.dataGridViewTextBoxColumn15.DefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridViewTextBoxColumn15.HeaderText = "PAID THROUGH";
             this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
             this.dataGridViewTextBoxColumn15.ReadOnly = true;
@@ -2077,7 +2227,7 @@
             this.txtDOB.Name = "txtDOB";
             this.txtDOB.Size = new System.Drawing.Size(100, 23);
             this.txtDOB.TabIndex = 94;
-            this.txtDOB.Value = new System.DateTime(2020, 6, 12, 0, 0, 0, 0);
+            this.txtDOB.Value = new System.DateTime(2020, 9, 26, 0, 0, 0, 0);
             this.txtDOB.ValueChanged += new System.EventHandler(this.txtDOB_ValueChanged);
             this.txtDOB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
@@ -2624,19 +2774,20 @@
             this.cUSTOMER_PHONE_NOTextBox.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             this.cUSTOMER_PHONE_NOTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
-            // tabCustomerMaint
+            // tabOpenCustomerMaintenance
             // 
-            this.tabCustomerMaint.Controls.Add(this.tabCustInfo1);
-            this.tabCustomerMaint.Controls.Add(this.tabCustInfo2);
-            this.tabCustomerMaint.Controls.Add(this.tabCosigner);
-            this.tabCustomerMaint.Controls.Add(this.tabBank);
-            this.tabCustomerMaint.Controls.Add(this.tabHistory);
-            this.tabCustomerMaint.Controls.Add(this.tabComments);
-            this.tabCustomerMaint.Location = new System.Drawing.Point(0, 5);
-            this.tabCustomerMaint.Name = "tabCustomerMaint";
-            this.tabCustomerMaint.SelectedIndex = 0;
-            this.tabCustomerMaint.Size = new System.Drawing.Size(1124, 615);
-            this.tabCustomerMaint.TabIndex = 36;
+            this.tabOpenCustomerMaintenance.Controls.Add(this.tabCustInfo1);
+            this.tabOpenCustomerMaintenance.Controls.Add(this.tabCustInfo2);
+            this.tabOpenCustomerMaintenance.Controls.Add(this.tabCosigner);
+            this.tabOpenCustomerMaintenance.Controls.Add(this.tabBank);
+            this.tabOpenCustomerMaintenance.Controls.Add(this.tabHistory);
+            this.tabOpenCustomerMaintenance.Controls.Add(this.tabComments);
+            this.tabOpenCustomerMaintenance.Controls.Add(this.tabTSB);
+            this.tabOpenCustomerMaintenance.Location = new System.Drawing.Point(0, 5);
+            this.tabOpenCustomerMaintenance.Name = "tabOpenCustomerMaintenance";
+            this.tabOpenCustomerMaintenance.SelectedIndex = 0;
+            this.tabOpenCustomerMaintenance.Size = new System.Drawing.Size(1124, 615);
+            this.tabOpenCustomerMaintenance.TabIndex = 36;
             // 
             // tabCustInfo2
             // 
@@ -4159,6 +4310,897 @@
             this.textBox88.TabIndex = 161;
             this.textBox88.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
+            // tabTSB
+            // 
+            this.tabTSB.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.tabTSB.Controls.Add(this.groupBoxDates);
+            this.tabTSB.Controls.Add(this.groupBoxCodes);
+            this.tabTSB.Controls.Add(this.groupBoxDollars);
+            this.tabTSB.Controls.Add(this.groupBoxPurge);
+            this.tabTSB.Controls.Add(this.groupBoxReportStatus);
+            this.tabTSB.Controls.Add(this.groupBoxAccountNumber);
+            this.tabTSB.Location = new System.Drawing.Point(4, 24);
+            this.tabTSB.Name = "tabTSB";
+            this.tabTSB.Padding = new System.Windows.Forms.Padding(3);
+            this.tabTSB.Size = new System.Drawing.Size(1116, 587);
+            this.tabTSB.TabIndex = 7;
+            this.tabTSB.Text = "TSB";
+            // 
+            // groupBoxDates
+            // 
+            this.groupBoxDates.Controls.Add(this.checkBoxFollowUpDate);
+            this.groupBoxDates.Controls.Add(this.nullableDateTimePickerFollowUpDate);
+            this.groupBoxDates.Controls.Add(this.nullableDateTimePickerDateClosed);
+            this.groupBoxDates.Controls.Add(this.nullableDateTimePickerDateOpened);
+            this.groupBoxDates.Controls.Add(this.nullableDateTimePickerDateofAccountInformation);
+            this.groupBoxDates.Controls.Add(label140);
+            this.groupBoxDates.Controls.Add(this.nullableDateTimePickerDateofFirstDelinquency);
+            this.groupBoxDates.Controls.Add(this.nullableDateTimePickerDateofLastPayment);
+            this.groupBoxDates.Controls.Add(label132);
+            this.groupBoxDates.Controls.Add(this.label135);
+            this.groupBoxDates.Controls.Add(this.label136);
+            this.groupBoxDates.Controls.Add(this.label138);
+            this.groupBoxDates.Controls.Add(this.label139);
+            this.groupBoxDates.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBoxDates.Location = new System.Drawing.Point(567, 69);
+            this.groupBoxDates.Name = "groupBoxDates";
+            this.groupBoxDates.Size = new System.Drawing.Size(529, 220);
+            this.groupBoxDates.TabIndex = 31;
+            this.groupBoxDates.TabStop = false;
+            this.groupBoxDates.Text = "Dates";
+            // 
+            // checkBoxFollowUpDate
+            // 
+            this.checkBoxFollowUpDate.AutoSize = true;
+            this.checkBoxFollowUpDate.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.closedCreditManagerBindingSource, "FollowUpDateOverride", true));
+            this.checkBoxFollowUpDate.Location = new System.Drawing.Point(433, 156);
+            this.checkBoxFollowUpDate.Name = "checkBoxFollowUpDate";
+            this.checkBoxFollowUpDate.Size = new System.Drawing.Size(84, 21);
+            this.checkBoxFollowUpDate.TabIndex = 25;
+            this.checkBoxFollowUpDate.Text = "Override?";
+            this.checkBoxFollowUpDate.UseVisualStyleBackColor = true;
+            this.checkBoxFollowUpDate.CheckedChanged += new System.EventHandler(this.checkBoxFollowUpDate_CheckedChanged);
+            this.checkBoxFollowUpDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            // 
+            // closedCreditManagerBindingSource
+            // 
+            this.closedCreditManagerBindingSource.DataMember = "ClosedCreditManager";
+            this.closedCreditManagerBindingSource.DataSource = this.tsbDataSet;
+            // 
+            // tsbDataSet
+            // 
+            this.tsbDataSet.DataSetName = "TSBDataSet";
+            this.tsbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // nullableDateTimePickerFollowUpDate
+            // 
+            this.nullableDateTimePickerFollowUpDate.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.closedCreditManagerBindingSource, "FollowUpDate", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "d"));
+            this.nullableDateTimePickerFollowUpDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.nullableDateTimePickerFollowUpDate.Location = new System.Drawing.Point(306, 152);
+            this.nullableDateTimePickerFollowUpDate.Name = "nullableDateTimePickerFollowUpDate";
+            this.nullableDateTimePickerFollowUpDate.NullText = "          ";
+            this.nullableDateTimePickerFollowUpDate.Size = new System.Drawing.Size(119, 25);
+            this.nullableDateTimePickerFollowUpDate.TabIndex = 24;
+            this.nullableDateTimePickerFollowUpDate.Value = new System.DateTime(2020, 9, 26, 0, 0, 0, 0);
+            this.nullableDateTimePickerFollowUpDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            // 
+            // nullableDateTimePickerDateClosed
+            // 
+            this.nullableDateTimePickerDateClosed.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.closedCreditManagerBindingSource, "CRDMGR_ACCT_DATE_CLOSED", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "d"));
+            this.nullableDateTimePickerDateClosed.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.nullableDateTimePickerDateClosed.Location = new System.Drawing.Point(306, 125);
+            this.nullableDateTimePickerDateClosed.Name = "nullableDateTimePickerDateClosed";
+            this.nullableDateTimePickerDateClosed.NullText = "          ";
+            this.nullableDateTimePickerDateClosed.Size = new System.Drawing.Size(119, 25);
+            this.nullableDateTimePickerDateClosed.TabIndex = 23;
+            this.nullableDateTimePickerDateClosed.Value = new System.DateTime(2020, 9, 26, 0, 0, 0, 0);
+            // 
+            // nullableDateTimePickerDateOpened
+            // 
+            this.nullableDateTimePickerDateOpened.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.closedCreditManagerBindingSource, "CRDMGR_ACCT_DATE_OPENED", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "d"));
+            this.nullableDateTimePickerDateOpened.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.nullableDateTimePickerDateOpened.Location = new System.Drawing.Point(306, 98);
+            this.nullableDateTimePickerDateOpened.Name = "nullableDateTimePickerDateOpened";
+            this.nullableDateTimePickerDateOpened.NullText = "          ";
+            this.nullableDateTimePickerDateOpened.Size = new System.Drawing.Size(119, 25);
+            this.nullableDateTimePickerDateOpened.TabIndex = 22;
+            this.nullableDateTimePickerDateOpened.Value = new System.DateTime(2020, 9, 26, 0, 0, 0, 0);
+            // 
+            // nullableDateTimePickerDateofAccountInformation
+            // 
+            this.nullableDateTimePickerDateofAccountInformation.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.closedCreditManagerBindingSource, "DateOfAccountInformation", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "d"));
+            this.nullableDateTimePickerDateofAccountInformation.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.nullableDateTimePickerDateofAccountInformation.Location = new System.Drawing.Point(306, 71);
+            this.nullableDateTimePickerDateofAccountInformation.Name = "nullableDateTimePickerDateofAccountInformation";
+            this.nullableDateTimePickerDateofAccountInformation.NullText = "          ";
+            this.nullableDateTimePickerDateofAccountInformation.Size = new System.Drawing.Size(119, 25);
+            this.nullableDateTimePickerDateofAccountInformation.TabIndex = 21;
+            this.nullableDateTimePickerDateofAccountInformation.Value = new System.DateTime(2020, 9, 26, 0, 0, 0, 0);
+            // 
+            // nullableDateTimePickerDateofFirstDelinquency
+            // 
+            this.nullableDateTimePickerDateofFirstDelinquency.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.closedCreditManagerBindingSource, "CRDMGR_DATE_FIRST_DELINQUENT", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "d"));
+            this.nullableDateTimePickerDateofFirstDelinquency.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.nullableDateTimePickerDateofFirstDelinquency.Location = new System.Drawing.Point(306, 44);
+            this.nullableDateTimePickerDateofFirstDelinquency.Name = "nullableDateTimePickerDateofFirstDelinquency";
+            this.nullableDateTimePickerDateofFirstDelinquency.NullText = "          ";
+            this.nullableDateTimePickerDateofFirstDelinquency.Size = new System.Drawing.Size(119, 25);
+            this.nullableDateTimePickerDateofFirstDelinquency.TabIndex = 20;
+            this.nullableDateTimePickerDateofFirstDelinquency.Value = new System.DateTime(2020, 9, 26, 0, 0, 0, 0);
+            // 
+            // nullableDateTimePickerDateofLastPayment
+            // 
+            this.nullableDateTimePickerDateofLastPayment.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.closedCreditManagerBindingSource, "CRDMGR_DATE_LAST_PAYMENT", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "d"));
+            this.nullableDateTimePickerDateofLastPayment.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.nullableDateTimePickerDateofLastPayment.Location = new System.Drawing.Point(306, 17);
+            this.nullableDateTimePickerDateofLastPayment.Name = "nullableDateTimePickerDateofLastPayment";
+            this.nullableDateTimePickerDateofLastPayment.NullText = "          ";
+            this.nullableDateTimePickerDateofLastPayment.Size = new System.Drawing.Size(119, 25);
+            this.nullableDateTimePickerDateofLastPayment.TabIndex = 19;
+            this.nullableDateTimePickerDateofLastPayment.Value = new System.DateTime(2020, 9, 26, 0, 0, 0, 0);
+            // 
+            // label135
+            // 
+            this.label135.AutoSize = true;
+            this.label135.Location = new System.Drawing.Point(206, 160);
+            this.label135.Name = "label135";
+            this.label135.Size = new System.Drawing.Size(96, 17);
+            this.label135.TabIndex = 124;
+            this.label135.Text = "Follow-up Date";
+            // 
+            // label136
+            // 
+            this.label136.AutoSize = true;
+            this.label136.Location = new System.Drawing.Point(223, 133);
+            this.label136.Name = "label136";
+            this.label136.Size = new System.Drawing.Size(79, 17);
+            this.label136.TabIndex = 122;
+            this.label136.Text = "Date Closed";
+            // 
+            // label138
+            // 
+            this.label138.AutoSize = true;
+            this.label138.Location = new System.Drawing.Point(216, 106);
+            this.label138.Name = "label138";
+            this.label138.Size = new System.Drawing.Size(86, 17);
+            this.label138.TabIndex = 120;
+            this.label138.Text = "Date Opened";
+            // 
+            // label139
+            // 
+            this.label139.AutoSize = true;
+            this.label139.Location = new System.Drawing.Point(130, 79);
+            this.label139.Name = "label139";
+            this.label139.Size = new System.Drawing.Size(172, 17);
+            this.label139.TabIndex = 118;
+            this.label139.Text = "Date of Account Information";
+            // 
+            // groupBoxCodes
+            // 
+            this.groupBoxCodes.Controls.Add(this.checkBoxECOACode);
+            this.groupBoxCodes.Controls.Add(this.checkBoxPaymentProfile);
+            this.groupBoxCodes.Controls.Add(this.checkBoxComplianceCode);
+            this.groupBoxCodes.Controls.Add(this.checkBoxConsumerIndicator);
+            this.groupBoxCodes.Controls.Add(this.checkBoxAccountType);
+            this.groupBoxCodes.Controls.Add(this.checkBoxSpecialComment);
+            this.groupBoxCodes.Controls.Add(this.checkBoxPaymentRating);
+            this.groupBoxCodes.Controls.Add(this.checkBoxAccountStatus);
+            this.groupBoxCodes.Controls.Add(this.buttonEditPaymentHistory);
+            this.groupBoxCodes.Controls.Add(this.label152);
+            this.groupBoxCodes.Controls.Add(this.textBoxPaymentHistoryProfile);
+            this.groupBoxCodes.Controls.Add(this.textBoxTermsDuration);
+            this.groupBoxCodes.Controls.Add(label151);
+            this.groupBoxCodes.Controls.Add(this.label149);
+            this.groupBoxCodes.Controls.Add(this.comboBoxTermsFrequency);
+            this.groupBoxCodes.Controls.Add(this.label150);
+            this.groupBoxCodes.Controls.Add(this.comboBoxPortfolioType);
+            this.groupBoxCodes.Controls.Add(this.label148);
+            this.groupBoxCodes.Controls.Add(this.comboBoxInterestType);
+            this.groupBoxCodes.Controls.Add(this.label147);
+            this.groupBoxCodes.Controls.Add(this.comboBoxECOACode);
+            this.groupBoxCodes.Controls.Add(this.labelComplianceConditionCode);
+            this.groupBoxCodes.Controls.Add(this.comboBoxComplianceConditionCode);
+            this.groupBoxCodes.Controls.Add(this.label145);
+            this.groupBoxCodes.Controls.Add(this.comboBoxConsumerIndicator);
+            this.groupBoxCodes.Controls.Add(this.label144);
+            this.groupBoxCodes.Controls.Add(this.comboBoxAccountType);
+            this.groupBoxCodes.Controls.Add(this.label143);
+            this.groupBoxCodes.Controls.Add(this.comboBoxSpecialComment);
+            this.groupBoxCodes.Controls.Add(this.label142);
+            this.groupBoxCodes.Controls.Add(this.comboBoxPaymentRating);
+            this.groupBoxCodes.Controls.Add(this.label141);
+            this.groupBoxCodes.Controls.Add(this.comboBoxAccountStatus);
+            this.groupBoxCodes.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBoxCodes.Location = new System.Drawing.Point(20, 293);
+            this.groupBoxCodes.Name = "groupBoxCodes";
+            this.groupBoxCodes.Size = new System.Drawing.Size(1076, 284);
+            this.groupBoxCodes.TabIndex = 32;
+            this.groupBoxCodes.TabStop = false;
+            this.groupBoxCodes.Text = "Codes";
+            // 
+            // checkBoxECOACode
+            // 
+            this.checkBoxECOACode.AutoSize = true;
+            this.checkBoxECOACode.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.closedCreditManagerBindingSource, "ECOACodeOverride", true));
+            this.checkBoxECOACode.Location = new System.Drawing.Point(464, 180);
+            this.checkBoxECOACode.Name = "checkBoxECOACode";
+            this.checkBoxECOACode.Size = new System.Drawing.Size(84, 21);
+            this.checkBoxECOACode.TabIndex = 38;
+            this.checkBoxECOACode.Text = "Override?";
+            this.checkBoxECOACode.UseVisualStyleBackColor = true;
+            this.checkBoxECOACode.CheckedChanged += new System.EventHandler(this.checkBoxECOACode_CheckedChanged);
+            this.checkBoxECOACode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            // 
+            // checkBoxPaymentProfile
+            // 
+            this.checkBoxPaymentProfile.AutoSize = true;
+            this.checkBoxPaymentProfile.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.closedCreditManagerBindingSource, "PaymentHistoryOverride", true));
+            this.checkBoxPaymentProfile.Location = new System.Drawing.Point(661, 232);
+            this.checkBoxPaymentProfile.Name = "checkBoxPaymentProfile";
+            this.checkBoxPaymentProfile.Size = new System.Drawing.Size(84, 21);
+            this.checkBoxPaymentProfile.TabIndex = 45;
+            this.checkBoxPaymentProfile.Text = "Override?";
+            this.checkBoxPaymentProfile.UseVisualStyleBackColor = true;
+            this.checkBoxPaymentProfile.CheckedChanged += new System.EventHandler(this.checkBoxPaymentProfile_CheckedChanged);
+            this.checkBoxPaymentProfile.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            // 
+            // checkBoxComplianceCode
+            // 
+            this.checkBoxComplianceCode.AutoSize = true;
+            this.checkBoxComplianceCode.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.closedCreditManagerBindingSource, "ComplianceConditionCodeOverride", true));
+            this.checkBoxComplianceCode.Location = new System.Drawing.Point(980, 154);
+            this.checkBoxComplianceCode.Name = "checkBoxComplianceCode";
+            this.checkBoxComplianceCode.Size = new System.Drawing.Size(84, 21);
+            this.checkBoxComplianceCode.TabIndex = 36;
+            this.checkBoxComplianceCode.Text = "Override?";
+            this.checkBoxComplianceCode.UseVisualStyleBackColor = true;
+            this.checkBoxComplianceCode.CheckedChanged += new System.EventHandler(this.checkBoxComplianceCode_CheckedChanged);
+            this.checkBoxComplianceCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            // 
+            // checkBoxConsumerIndicator
+            // 
+            this.checkBoxConsumerIndicator.AutoSize = true;
+            this.checkBoxConsumerIndicator.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.closedCreditManagerBindingSource, "ConsumerIndicatorOverride", true));
+            this.checkBoxConsumerIndicator.Location = new System.Drawing.Point(980, 126);
+            this.checkBoxConsumerIndicator.Name = "checkBoxConsumerIndicator";
+            this.checkBoxConsumerIndicator.Size = new System.Drawing.Size(84, 21);
+            this.checkBoxConsumerIndicator.TabIndex = 34;
+            this.checkBoxConsumerIndicator.Text = "Override?";
+            this.checkBoxConsumerIndicator.UseVisualStyleBackColor = true;
+            this.checkBoxConsumerIndicator.CheckedChanged += new System.EventHandler(this.checkBoxConsumerIndicator_CheckedChanged);
+            this.checkBoxConsumerIndicator.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            // 
+            // checkBoxAccountType
+            // 
+            this.checkBoxAccountType.AutoSize = true;
+            this.checkBoxAccountType.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.closedCreditManagerBindingSource, "AccountTypeOverride", true));
+            this.checkBoxAccountType.Location = new System.Drawing.Point(980, 102);
+            this.checkBoxAccountType.Name = "checkBoxAccountType";
+            this.checkBoxAccountType.Size = new System.Drawing.Size(84, 21);
+            this.checkBoxAccountType.TabIndex = 32;
+            this.checkBoxAccountType.Text = "Override?";
+            this.checkBoxAccountType.UseVisualStyleBackColor = true;
+            this.checkBoxAccountType.CheckedChanged += new System.EventHandler(this.checkBoxAccountType_CheckedChanged);
+            this.checkBoxAccountType.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            // 
+            // checkBoxSpecialComment
+            // 
+            this.checkBoxSpecialComment.AutoSize = true;
+            this.checkBoxSpecialComment.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.closedCreditManagerBindingSource, "SpecialCommentOverride", true));
+            this.checkBoxSpecialComment.Location = new System.Drawing.Point(980, 76);
+            this.checkBoxSpecialComment.Name = "checkBoxSpecialComment";
+            this.checkBoxSpecialComment.Size = new System.Drawing.Size(84, 21);
+            this.checkBoxSpecialComment.TabIndex = 30;
+            this.checkBoxSpecialComment.Text = "Override?";
+            this.checkBoxSpecialComment.UseVisualStyleBackColor = true;
+            this.checkBoxSpecialComment.CheckedChanged += new System.EventHandler(this.checkBoxSpecialComment_CheckedChanged);
+            this.checkBoxSpecialComment.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            // 
+            // checkBoxPaymentRating
+            // 
+            this.checkBoxPaymentRating.AutoSize = true;
+            this.checkBoxPaymentRating.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.closedCreditManagerBindingSource, "PaymentRatingOverride", true));
+            this.checkBoxPaymentRating.Location = new System.Drawing.Point(980, 50);
+            this.checkBoxPaymentRating.Name = "checkBoxPaymentRating";
+            this.checkBoxPaymentRating.Size = new System.Drawing.Size(84, 21);
+            this.checkBoxPaymentRating.TabIndex = 125;
+            this.checkBoxPaymentRating.Text = "Override?";
+            this.checkBoxPaymentRating.UseVisualStyleBackColor = true;
+            this.checkBoxPaymentRating.CheckedChanged += new System.EventHandler(this.checkBoxPaymentRating_CheckedChanged);
+            this.checkBoxPaymentRating.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            // 
+            // checkBoxAccountStatus
+            // 
+            this.checkBoxAccountStatus.AutoSize = true;
+            this.checkBoxAccountStatus.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.closedCreditManagerBindingSource, "AccountStatusOverride", true));
+            this.checkBoxAccountStatus.Location = new System.Drawing.Point(980, 24);
+            this.checkBoxAccountStatus.Name = "checkBoxAccountStatus";
+            this.checkBoxAccountStatus.Size = new System.Drawing.Size(84, 21);
+            this.checkBoxAccountStatus.TabIndex = 28;
+            this.checkBoxAccountStatus.Text = "Override?";
+            this.checkBoxAccountStatus.UseVisualStyleBackColor = true;
+            this.checkBoxAccountStatus.CheckedChanged += new System.EventHandler(this.checkBoxAccountStatus_CheckedChanged);
+            this.checkBoxAccountStatus.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            // 
+            // buttonEditPaymentHistory
+            // 
+            this.buttonEditPaymentHistory.Location = new System.Drawing.Point(473, 228);
+            this.buttonEditPaymentHistory.Name = "buttonEditPaymentHistory";
+            this.buttonEditPaymentHistory.Size = new System.Drawing.Size(182, 25);
+            this.buttonEditPaymentHistory.TabIndex = 44;
+            this.buttonEditPaymentHistory.Text = "Edit Payment History Profile";
+            this.buttonEditPaymentHistory.UseVisualStyleBackColor = true;
+            this.buttonEditPaymentHistory.Click += new System.EventHandler(this.buttonEditPaymentHistory_Click);
+            // 
+            // label152
+            // 
+            this.label152.AutoSize = true;
+            this.label152.Location = new System.Drawing.Point(47, 236);
+            this.label152.Name = "label152";
+            this.label152.Size = new System.Drawing.Size(143, 17);
+            this.label152.TabIndex = 123;
+            this.label152.Text = "Payment History Profile";
+            // 
+            // textBoxPaymentHistoryProfile
+            // 
+            this.textBoxPaymentHistoryProfile.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.closedCreditManagerBindingSource, "PaymentProfile", true));
+            this.textBoxPaymentHistoryProfile.Enabled = false;
+            this.textBoxPaymentHistoryProfile.Location = new System.Drawing.Point(194, 228);
+            this.textBoxPaymentHistoryProfile.Name = "textBoxPaymentHistoryProfile";
+            this.textBoxPaymentHistoryProfile.Size = new System.Drawing.Size(276, 25);
+            this.textBoxPaymentHistoryProfile.TabIndex = 43;
+            this.textBoxPaymentHistoryProfile.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            // 
+            // textBoxTermsDuration
+            // 
+            this.textBoxTermsDuration.AllowDrop = true;
+            this.textBoxTermsDuration.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.closedCreditManagerBindingSource, "CRDMGR_ACCT_TERMS_DURATION", true));
+            this.textBoxTermsDuration.Enabled = false;
+            this.textBoxTermsDuration.Location = new System.Drawing.Point(768, 202);
+            this.textBoxTermsDuration.MaxLength = 3;
+            this.textBoxTermsDuration.Name = "textBoxTermsDuration";
+            this.textBoxTermsDuration.Size = new System.Drawing.Size(30, 25);
+            this.textBoxTermsDuration.TabIndex = 42;
+            this.textBoxTermsDuration.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxTermsDuration.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            // 
+            // label149
+            // 
+            this.label149.AutoSize = true;
+            this.label149.Location = new System.Drawing.Point(366, 210);
+            this.label149.Name = "label149";
+            this.label149.Size = new System.Drawing.Size(106, 17);
+            this.label149.TabIndex = 119;
+            this.label149.Text = "Terms Frequency";
+            // 
+            // comboBoxTermsFrequency
+            // 
+            this.comboBoxTermsFrequency.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.closedCreditManagerBindingSource, "CRDMGR_ACCT_TERMS_FREQUENCY", true));
+            this.comboBoxTermsFrequency.DataSource = this.TermFrequenciesbindingSource;
+            this.comboBoxTermsFrequency.DisplayMember = "Description";
+            this.comboBoxTermsFrequency.FormattingEnabled = true;
+            this.comboBoxTermsFrequency.Location = new System.Drawing.Point(473, 202);
+            this.comboBoxTermsFrequency.Name = "comboBoxTermsFrequency";
+            this.comboBoxTermsFrequency.Size = new System.Drawing.Size(182, 25);
+            this.comboBoxTermsFrequency.TabIndex = 41;
+            this.comboBoxTermsFrequency.ValueMember = "Code";
+            this.comboBoxTermsFrequency.SelectedValueChanged += new System.EventHandler(this.comboBoxTermsFrequency_SelectedValueChanged);
+            this.comboBoxTermsFrequency.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            // 
+            // TermFrequenciesbindingSource
+            // 
+            this.TermFrequenciesbindingSource.DataMember = "TermsFrequency";
+            this.TermFrequenciesbindingSource.DataSource = this.tsbDataSet;
+            // 
+            // label150
+            // 
+            this.label150.AutoSize = true;
+            this.label150.Location = new System.Drawing.Point(98, 210);
+            this.label150.Name = "label150";
+            this.label150.Size = new System.Drawing.Size(89, 17);
+            this.label150.TabIndex = 117;
+            this.label150.Text = "Portfolio Type";
+            // 
+            // comboBoxPortfolioType
+            // 
+            this.comboBoxPortfolioType.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.closedCreditManagerBindingSource, "CRDMGR_ACCT_PORTFOLIO_TYPE", true));
+            this.comboBoxPortfolioType.DataSource = this.PortfolioTypesbindingSource;
+            this.comboBoxPortfolioType.DisplayMember = "Description";
+            this.comboBoxPortfolioType.FormattingEnabled = true;
+            this.comboBoxPortfolioType.Location = new System.Drawing.Point(194, 202);
+            this.comboBoxPortfolioType.Name = "comboBoxPortfolioType";
+            this.comboBoxPortfolioType.Size = new System.Drawing.Size(141, 25);
+            this.comboBoxPortfolioType.TabIndex = 40;
+            this.comboBoxPortfolioType.ValueMember = "Code";
+            this.comboBoxPortfolioType.SelectedValueChanged += new System.EventHandler(this.comboBoxPortfolioType_SelectedValueChanged);
+            this.comboBoxPortfolioType.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            // 
+            // PortfolioTypesbindingSource
+            // 
+            this.PortfolioTypesbindingSource.DataMember = "PortfolioTypes";
+            this.PortfolioTypesbindingSource.DataSource = this.tsbDataSet;
+            // 
+            // label148
+            // 
+            this.label148.AutoSize = true;
+            this.label148.Location = new System.Drawing.Point(684, 184);
+            this.label148.Name = "label148";
+            this.label148.Size = new System.Drawing.Size(82, 17);
+            this.label148.TabIndex = 115;
+            this.label148.Text = "Interest Type";
+            // 
+            // comboBoxInterestType
+            // 
+            this.comboBoxInterestType.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.closedCreditManagerBindingSource, "InterestType", true));
+            this.comboBoxInterestType.DataSource = this.InterestTypesbindingSource;
+            this.comboBoxInterestType.DisplayMember = "Description";
+            this.comboBoxInterestType.FormattingEnabled = true;
+            this.comboBoxInterestType.Location = new System.Drawing.Point(768, 176);
+            this.comboBoxInterestType.Name = "comboBoxInterestType";
+            this.comboBoxInterestType.Size = new System.Drawing.Size(199, 25);
+            this.comboBoxInterestType.TabIndex = 39;
+            this.comboBoxInterestType.ValueMember = "Code";
+            this.comboBoxInterestType.SelectedValueChanged += new System.EventHandler(this.comboBoxInterestType_SelectedValueChanged);
+            this.comboBoxInterestType.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            // 
+            // InterestTypesbindingSource
+            // 
+            this.InterestTypesbindingSource.DataMember = "InterestTypes";
+            this.InterestTypesbindingSource.DataSource = this.tsbDataSet;
+            // 
+            // label147
+            // 
+            this.label147.AutoSize = true;
+            this.label147.Location = new System.Drawing.Point(114, 184);
+            this.label147.Name = "label147";
+            this.label147.Size = new System.Drawing.Size(76, 17);
+            this.label147.TabIndex = 113;
+            this.label147.Text = "ECOA Code";
+            // 
+            // comboBoxECOACode
+            // 
+            this.comboBoxECOACode.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.closedCreditManagerBindingSource, "CRDMGR_ACCT_ECOA_CODE", true));
+            this.comboBoxECOACode.DataSource = this.ECOACodesbindingSource;
+            this.comboBoxECOACode.DisplayMember = "Description";
+            this.comboBoxECOACode.FormattingEnabled = true;
+            this.comboBoxECOACode.Location = new System.Drawing.Point(194, 176);
+            this.comboBoxECOACode.Name = "comboBoxECOACode";
+            this.comboBoxECOACode.Size = new System.Drawing.Size(264, 25);
+            this.comboBoxECOACode.TabIndex = 37;
+            this.comboBoxECOACode.ValueMember = "Code";
+            this.comboBoxECOACode.SelectedValueChanged += new System.EventHandler(this.comboBoxECOACode_SelectedValueChanged);
+            this.comboBoxECOACode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            // 
+            // ECOACodesbindingSource
+            // 
+            this.ECOACodesbindingSource.DataMember = "ECOACodes";
+            this.ECOACodesbindingSource.DataSource = this.tsbDataSet;
+            // 
+            // labelComplianceConditionCode
+            // 
+            this.labelComplianceConditionCode.AutoSize = true;
+            this.labelComplianceConditionCode.Location = new System.Drawing.Point(19, 158);
+            this.labelComplianceConditionCode.Name = "labelComplianceConditionCode";
+            this.labelComplianceConditionCode.Size = new System.Drawing.Size(171, 17);
+            this.labelComplianceConditionCode.TabIndex = 111;
+            this.labelComplianceConditionCode.Text = "Compliance Condition Code";
+            // 
+            // comboBoxComplianceConditionCode
+            // 
+            this.comboBoxComplianceConditionCode.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.closedCreditManagerBindingSource, "ComplianceConditionCode", true));
+            this.comboBoxComplianceConditionCode.DataSource = this.ComplianceConditionsbindingSource;
+            this.comboBoxComplianceConditionCode.DisplayMember = "Description";
+            this.comboBoxComplianceConditionCode.FormattingEnabled = true;
+            this.comboBoxComplianceConditionCode.Location = new System.Drawing.Point(194, 150);
+            this.comboBoxComplianceConditionCode.Name = "comboBoxComplianceConditionCode";
+            this.comboBoxComplianceConditionCode.Size = new System.Drawing.Size(773, 25);
+            this.comboBoxComplianceConditionCode.TabIndex = 35;
+            this.comboBoxComplianceConditionCode.ValueMember = "Code";
+            this.comboBoxComplianceConditionCode.SelectedValueChanged += new System.EventHandler(this.comboBoxComplianceConditionCode_SelectedValueChanged);
+            this.comboBoxComplianceConditionCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            // 
+            // ComplianceConditionsbindingSource
+            // 
+            this.ComplianceConditionsbindingSource.DataMember = "ComplianceConditionCodes";
+            this.ComplianceConditionsbindingSource.DataSource = this.tsbDataSet;
+            // 
+            // label145
+            // 
+            this.label145.AutoSize = true;
+            this.label145.Location = new System.Drawing.Point(68, 132);
+            this.label145.Name = "label145";
+            this.label145.Size = new System.Drawing.Size(122, 17);
+            this.label145.TabIndex = 109;
+            this.label145.Text = "Consumer Indicator";
+            // 
+            // comboBoxConsumerIndicator
+            // 
+            this.comboBoxConsumerIndicator.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.closedCreditManagerBindingSource, "CRDMGR_CONSUMER_INDICATOR", true));
+            this.comboBoxConsumerIndicator.DataSource = this.ConsumerIndicatorsbindingSource;
+            this.comboBoxConsumerIndicator.DisplayMember = "Description";
+            this.comboBoxConsumerIndicator.FormattingEnabled = true;
+            this.comboBoxConsumerIndicator.Location = new System.Drawing.Point(194, 124);
+            this.comboBoxConsumerIndicator.Name = "comboBoxConsumerIndicator";
+            this.comboBoxConsumerIndicator.Size = new System.Drawing.Size(773, 25);
+            this.comboBoxConsumerIndicator.TabIndex = 33;
+            this.comboBoxConsumerIndicator.ValueMember = "Code";
+            this.comboBoxConsumerIndicator.SelectedIndexChanged += new System.EventHandler(this.comboBoxConsumerIndicator_SelectedIndexChanged);
+            this.comboBoxConsumerIndicator.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            // 
+            // ConsumerIndicatorsbindingSource
+            // 
+            this.ConsumerIndicatorsbindingSource.DataMember = "ConsumerIndicators";
+            this.ConsumerIndicatorsbindingSource.DataSource = this.tsbDataSet;
+            // 
+            // label144
+            // 
+            this.label144.AutoSize = true;
+            this.label144.Location = new System.Drawing.Point(105, 106);
+            this.label144.Name = "label144";
+            this.label144.Size = new System.Drawing.Size(85, 17);
+            this.label144.TabIndex = 107;
+            this.label144.Text = "Account Type";
+            // 
+            // comboBoxAccountType
+            // 
+            this.comboBoxAccountType.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.closedCreditManagerBindingSource, "CRDMGR_ACCT_TYPE_CODE", true));
+            this.comboBoxAccountType.DataSource = this.AccountTypesbindingSource;
+            this.comboBoxAccountType.DisplayMember = "Description";
+            this.comboBoxAccountType.FormattingEnabled = true;
+            this.comboBoxAccountType.Location = new System.Drawing.Point(194, 98);
+            this.comboBoxAccountType.Name = "comboBoxAccountType";
+            this.comboBoxAccountType.Size = new System.Drawing.Size(773, 25);
+            this.comboBoxAccountType.TabIndex = 31;
+            this.comboBoxAccountType.ValueMember = "Code";
+            this.comboBoxAccountType.SelectedValueChanged += new System.EventHandler(this.comboBoxAccountType_SelectedValueChanged);
+            this.comboBoxAccountType.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            // 
+            // AccountTypesbindingSource
+            // 
+            this.AccountTypesbindingSource.DataMember = "AccountTypes";
+            this.AccountTypesbindingSource.DataSource = this.tsbDataSet;
+            // 
+            // label143
+            // 
+            this.label143.AutoSize = true;
+            this.label143.Location = new System.Drawing.Point(81, 80);
+            this.label143.Name = "label143";
+            this.label143.Size = new System.Drawing.Size(109, 17);
+            this.label143.TabIndex = 105;
+            this.label143.Text = "Special Comment";
+            // 
+            // comboBoxSpecialComment
+            // 
+            this.comboBoxSpecialComment.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.closedCreditManagerBindingSource, "CRDMGR_SPECIAL_COMMENT_CODE", true));
+            this.comboBoxSpecialComment.DataSource = this.specialCommentCodesBindingSource;
+            this.comboBoxSpecialComment.DisplayMember = "Description";
+            this.comboBoxSpecialComment.FormattingEnabled = true;
+            this.comboBoxSpecialComment.Location = new System.Drawing.Point(194, 72);
+            this.comboBoxSpecialComment.Name = "comboBoxSpecialComment";
+            this.comboBoxSpecialComment.Size = new System.Drawing.Size(773, 25);
+            this.comboBoxSpecialComment.TabIndex = 29;
+            this.comboBoxSpecialComment.ValueMember = "Code";
+            this.comboBoxSpecialComment.SelectedValueChanged += new System.EventHandler(this.comboBoxSpecialComment_SelectedValueChanged);
+            this.comboBoxSpecialComment.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            // 
+            // label142
+            // 
+            this.label142.AutoSize = true;
+            this.label142.Location = new System.Drawing.Point(92, 54);
+            this.label142.Name = "label142";
+            this.label142.Size = new System.Drawing.Size(98, 17);
+            this.label142.TabIndex = 103;
+            this.label142.Text = "Payment Rating";
+            // 
+            // comboBoxPaymentRating
+            // 
+            this.comboBoxPaymentRating.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.closedCreditManagerBindingSource, "CRDMGR_ACCT_PAYMENT_RATING", true));
+            this.comboBoxPaymentRating.DataSource = this.PaymentRatingsbindingSource;
+            this.comboBoxPaymentRating.DisplayMember = "Description";
+            this.comboBoxPaymentRating.FormattingEnabled = true;
+            this.comboBoxPaymentRating.Location = new System.Drawing.Point(194, 46);
+            this.comboBoxPaymentRating.Name = "comboBoxPaymentRating";
+            this.comboBoxPaymentRating.Size = new System.Drawing.Size(773, 25);
+            this.comboBoxPaymentRating.TabIndex = 27;
+            this.comboBoxPaymentRating.ValueMember = "PaymentRating";
+            this.comboBoxPaymentRating.SelectedValueChanged += new System.EventHandler(this.comboBoxPaymentRating_SelectedValueChanged);
+            this.comboBoxPaymentRating.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            // 
+            // PaymentRatingsbindingSource
+            // 
+            this.PaymentRatingsbindingSource.DataMember = "PaymentRatings";
+            this.PaymentRatingsbindingSource.DataSource = this.tsbDataSet;
+            // 
+            // label141
+            // 
+            this.label141.AutoSize = true;
+            this.label141.Location = new System.Drawing.Point(97, 28);
+            this.label141.Name = "label141";
+            this.label141.Size = new System.Drawing.Size(93, 17);
+            this.label141.TabIndex = 101;
+            this.label141.Text = "Account Status";
+            // 
+            // comboBoxAccountStatus
+            // 
+            this.comboBoxAccountStatus.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.closedCreditManagerBindingSource, "CRDMGR_ACCT_STATUS_CODE", true));
+            this.comboBoxAccountStatus.DataSource = this.AccountStatusesbindingSource;
+            this.comboBoxAccountStatus.DisplayMember = "Description";
+            this.comboBoxAccountStatus.FormattingEnabled = true;
+            this.comboBoxAccountStatus.Location = new System.Drawing.Point(194, 20);
+            this.comboBoxAccountStatus.Name = "comboBoxAccountStatus";
+            this.comboBoxAccountStatus.Size = new System.Drawing.Size(773, 25);
+            this.comboBoxAccountStatus.TabIndex = 27;
+            this.comboBoxAccountStatus.ValueMember = "Code";
+            this.comboBoxAccountStatus.SelectedValueChanged += new System.EventHandler(this.comboBoxAccountStatus_SelectedValueChanged);
+            this.comboBoxAccountStatus.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            // 
+            // AccountStatusesbindingSource
+            // 
+            this.AccountStatusesbindingSource.DataMember = "AccountStatuses";
+            this.AccountStatusesbindingSource.DataSource = this.tsbDataSet;
+            // 
+            // groupBoxDollars
+            // 
+            this.groupBoxDollars.Controls.Add(this.label137);
+            this.groupBoxDollars.Controls.Add(this.textBoxCreditLimit);
+            this.groupBoxDollars.Controls.Add(this.labelSchMonthlyPayment);
+            this.groupBoxDollars.Controls.Add(this.textBoxSchMonthlyPaymentAmount);
+            this.groupBoxDollars.Controls.Add(this.labelChargeOffAmount);
+            this.groupBoxDollars.Controls.Add(this.textBoxOrgChargeOffAmount);
+            this.groupBoxDollars.Controls.Add(this.label134);
+            this.groupBoxDollars.Controls.Add(this.textBoxHighestCredit);
+            this.groupBoxDollars.Controls.Add(this.label133);
+            this.groupBoxDollars.Controls.Add(this.textBoxActualPaymentAmount);
+            this.groupBoxDollars.Controls.Add(this.labelAmountPastDue);
+            this.groupBoxDollars.Controls.Add(this.textBoxAmountPastDue);
+            this.groupBoxDollars.Controls.Add(this.labelCurrentBalance);
+            this.groupBoxDollars.Controls.Add(this.textBoxCurrentBalance);
+            this.groupBoxDollars.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBoxDollars.Location = new System.Drawing.Point(20, 69);
+            this.groupBoxDollars.Name = "groupBoxDollars";
+            this.groupBoxDollars.Size = new System.Drawing.Size(529, 220);
+            this.groupBoxDollars.TabIndex = 30;
+            this.groupBoxDollars.TabStop = false;
+            this.groupBoxDollars.Text = "Dollars";
+            // 
+            // label137
+            // 
+            this.label137.AutoSize = true;
+            this.label137.Location = new System.Drawing.Point(248, 187);
+            this.label137.Name = "label137";
+            this.label137.Size = new System.Drawing.Size(74, 17);
+            this.label137.TabIndex = 112;
+            this.label137.Text = "Credit Limit";
+            // 
+            // textBoxCreditLimit
+            // 
+            this.textBoxCreditLimit.AllowDrop = true;
+            this.textBoxCreditLimit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.closedCreditManagerBindingSource, "CRDMGR_ACCT_CREDIT_LIMIT", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "C2"));
+            this.textBoxCreditLimit.Location = new System.Drawing.Point(326, 179);
+            this.textBoxCreditLimit.Name = "textBoxCreditLimit";
+            this.textBoxCreditLimit.Size = new System.Drawing.Size(102, 25);
+            this.textBoxCreditLimit.TabIndex = 17;
+            this.textBoxCreditLimit.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // labelSchMonthlyPayment
+            // 
+            this.labelSchMonthlyPayment.AutoSize = true;
+            this.labelSchMonthlyPayment.Location = new System.Drawing.Point(101, 160);
+            this.labelSchMonthlyPayment.Name = "labelSchMonthlyPayment";
+            this.labelSchMonthlyPayment.Size = new System.Drawing.Size(221, 17);
+            this.labelSchMonthlyPayment.TabIndex = 110;
+            this.labelSchMonthlyPayment.Text = "Scheduled Monthly Payment Amount";
+            // 
+            // textBoxSchMonthlyPaymentAmount
+            // 
+            this.textBoxSchMonthlyPaymentAmount.AllowDrop = true;
+            this.textBoxSchMonthlyPaymentAmount.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.closedCreditManagerBindingSource, "CRDMGR_SCHED_MONTHLY_PAYMENT", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "C2"));
+            this.textBoxSchMonthlyPaymentAmount.Location = new System.Drawing.Point(326, 152);
+            this.textBoxSchMonthlyPaymentAmount.Name = "textBoxSchMonthlyPaymentAmount";
+            this.textBoxSchMonthlyPaymentAmount.Size = new System.Drawing.Size(102, 25);
+            this.textBoxSchMonthlyPaymentAmount.TabIndex = 16;
+            this.textBoxSchMonthlyPaymentAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // labelChargeOffAmount
+            // 
+            this.labelChargeOffAmount.AutoSize = true;
+            this.labelChargeOffAmount.Location = new System.Drawing.Point(152, 133);
+            this.labelChargeOffAmount.Name = "labelChargeOffAmount";
+            this.labelChargeOffAmount.Size = new System.Drawing.Size(170, 17);
+            this.labelChargeOffAmount.TabIndex = 108;
+            this.labelChargeOffAmount.Text = "Original Charge-off Amount";
+            // 
+            // textBoxOrgChargeOffAmount
+            // 
+            this.textBoxOrgChargeOffAmount.AllowDrop = true;
+            this.textBoxOrgChargeOffAmount.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.closedCreditManagerBindingSource, "CRDMGR_ORIGINAL_CHARGE_OFF_AMT", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "C2"));
+            this.textBoxOrgChargeOffAmount.Location = new System.Drawing.Point(326, 125);
+            this.textBoxOrgChargeOffAmount.Name = "textBoxOrgChargeOffAmount";
+            this.textBoxOrgChargeOffAmount.Size = new System.Drawing.Size(102, 25);
+            this.textBoxOrgChargeOffAmount.TabIndex = 15;
+            this.textBoxOrgChargeOffAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label134
+            // 
+            this.label134.AutoSize = true;
+            this.label134.Location = new System.Drawing.Point(231, 106);
+            this.label134.Name = "label134";
+            this.label134.Size = new System.Drawing.Size(91, 17);
+            this.label134.TabIndex = 106;
+            this.label134.Text = "Highest Credit";
+            // 
+            // textBoxHighestCredit
+            // 
+            this.textBoxHighestCredit.AllowDrop = true;
+            this.textBoxHighestCredit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.closedCreditManagerBindingSource, "CRDMGR_ACCT_HIGHEST_CREDIT", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "C2"));
+            this.textBoxHighestCredit.Location = new System.Drawing.Point(326, 98);
+            this.textBoxHighestCredit.Name = "textBoxHighestCredit";
+            this.textBoxHighestCredit.Size = new System.Drawing.Size(102, 25);
+            this.textBoxHighestCredit.TabIndex = 14;
+            this.textBoxHighestCredit.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label133
+            // 
+            this.label133.AutoSize = true;
+            this.label133.Location = new System.Drawing.Point(177, 79);
+            this.label133.Name = "label133";
+            this.label133.Size = new System.Drawing.Size(145, 17);
+            this.label133.TabIndex = 104;
+            this.label133.Text = "Actual Payment Amount";
+            // 
+            // textBoxActualPaymentAmount
+            // 
+            this.textBoxActualPaymentAmount.AllowDrop = true;
+            this.textBoxActualPaymentAmount.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.closedCreditManagerBindingSource, "CRDMGR_ACTUAL_PAYMENT_AMOUNT", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "C2"));
+            this.textBoxActualPaymentAmount.Location = new System.Drawing.Point(326, 71);
+            this.textBoxActualPaymentAmount.Name = "textBoxActualPaymentAmount";
+            this.textBoxActualPaymentAmount.Size = new System.Drawing.Size(102, 25);
+            this.textBoxActualPaymentAmount.TabIndex = 13;
+            this.textBoxActualPaymentAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // labelAmountPastDue
+            // 
+            this.labelAmountPastDue.AutoSize = true;
+            this.labelAmountPastDue.Location = new System.Drawing.Point(214, 52);
+            this.labelAmountPastDue.Name = "labelAmountPastDue";
+            this.labelAmountPastDue.Size = new System.Drawing.Size(108, 17);
+            this.labelAmountPastDue.TabIndex = 102;
+            this.labelAmountPastDue.Text = "Amount Past Due";
+            // 
+            // textBoxAmountPastDue
+            // 
+            this.textBoxAmountPastDue.AllowDrop = true;
+            this.textBoxAmountPastDue.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.closedCreditManagerBindingSource, "CRDMGR_AMOUNT_PAST_DUE", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "C2"));
+            this.textBoxAmountPastDue.Location = new System.Drawing.Point(326, 44);
+            this.textBoxAmountPastDue.Name = "textBoxAmountPastDue";
+            this.textBoxAmountPastDue.Size = new System.Drawing.Size(102, 25);
+            this.textBoxAmountPastDue.TabIndex = 12;
+            this.textBoxAmountPastDue.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // labelCurrentBalance
+            // 
+            this.labelCurrentBalance.AutoSize = true;
+            this.labelCurrentBalance.Location = new System.Drawing.Point(223, 25);
+            this.labelCurrentBalance.Name = "labelCurrentBalance";
+            this.labelCurrentBalance.Size = new System.Drawing.Size(99, 17);
+            this.labelCurrentBalance.TabIndex = 100;
+            this.labelCurrentBalance.Text = "Current Balance";
+            // 
+            // textBoxCurrentBalance
+            // 
+            this.textBoxCurrentBalance.AllowDrop = true;
+            this.textBoxCurrentBalance.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.closedCreditManagerBindingSource, "CRDMGR_ACCT_CURRENT_BAL", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "C2"));
+            this.textBoxCurrentBalance.Location = new System.Drawing.Point(326, 17);
+            this.textBoxCurrentBalance.Name = "textBoxCurrentBalance";
+            this.textBoxCurrentBalance.Size = new System.Drawing.Size(102, 25);
+            this.textBoxCurrentBalance.TabIndex = 11;
+            this.textBoxCurrentBalance.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // groupBoxPurge
+            // 
+            this.groupBoxPurge.Controls.Add(this.checkBoxPurge);
+            this.groupBoxPurge.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBoxPurge.Location = new System.Drawing.Point(707, 10);
+            this.groupBoxPurge.Name = "groupBoxPurge";
+            this.groupBoxPurge.Size = new System.Drawing.Size(84, 55);
+            this.groupBoxPurge.TabIndex = 29;
+            this.groupBoxPurge.TabStop = false;
+            this.groupBoxPurge.Text = "Purge";
+            // 
+            // checkBoxPurge
+            // 
+            this.checkBoxPurge.AutoSize = true;
+            this.checkBoxPurge.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.closedCreditManagerBindingSource, "Purge", true));
+            this.checkBoxPurge.Location = new System.Drawing.Point(7, 22);
+            this.checkBoxPurge.Name = "checkBoxPurge";
+            this.checkBoxPurge.Size = new System.Drawing.Size(61, 21);
+            this.checkBoxPurge.TabIndex = 9;
+            this.checkBoxPurge.Text = "Purge";
+            this.checkBoxPurge.UseVisualStyleBackColor = true;
+            this.checkBoxPurge.CheckedChanged += new System.EventHandler(this.checkBoxPurge_CheckedChanged);
+            this.checkBoxPurge.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            // 
+            // groupBoxReportStatus
+            // 
+            this.groupBoxReportStatus.Controls.Add(this.checkBoxReportTSB);
+            this.groupBoxReportStatus.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBoxReportStatus.Location = new System.Drawing.Point(567, 10);
+            this.groupBoxReportStatus.Name = "groupBoxReportStatus";
+            this.groupBoxReportStatus.Size = new System.Drawing.Size(133, 55);
+            this.groupBoxReportStatus.TabIndex = 28;
+            this.groupBoxReportStatus.TabStop = false;
+            this.groupBoxReportStatus.Text = "Report Status";
+            // 
+            // checkBoxReportTSB
+            // 
+            this.checkBoxReportTSB.AutoSize = true;
+            this.checkBoxReportTSB.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.closedCreditManagerBindingSource, "Report", true));
+            this.checkBoxReportTSB.Location = new System.Drawing.Point(27, 22);
+            this.checkBoxReportTSB.Name = "checkBoxReportTSB";
+            this.checkBoxReportTSB.Size = new System.Drawing.Size(67, 21);
+            this.checkBoxReportTSB.TabIndex = 7;
+            this.checkBoxReportTSB.Text = "Report";
+            this.checkBoxReportTSB.UseVisualStyleBackColor = true;
+            this.checkBoxReportTSB.CheckedChanged += new System.EventHandler(this.checkBoxReportTSB_CheckedChanged);
+            this.checkBoxReportTSB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            // 
+            // groupBoxAccountNumber
+            // 
+            this.groupBoxAccountNumber.Controls.Add(this.textBox68);
+            this.groupBoxAccountNumber.Controls.Add(this.textBox69);
+            this.groupBoxAccountNumber.Controls.Add(this.textBox70);
+            this.groupBoxAccountNumber.Controls.Add(this.textBox53);
+            this.groupBoxAccountNumber.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBoxAccountNumber.Location = new System.Drawing.Point(20, 10);
+            this.groupBoxAccountNumber.Name = "groupBoxAccountNumber";
+            this.groupBoxAccountNumber.Size = new System.Drawing.Size(529, 55);
+            this.groupBoxAccountNumber.TabIndex = 27;
+            this.groupBoxAccountNumber.TabStop = false;
+            this.groupBoxAccountNumber.Text = "Account Number";
+            // 
+            // textBox68
+            // 
+            this.textBox68.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.textBox68.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_SUFFIX", true));
+            this.textBox68.Enabled = false;
+            this.textBox68.Location = new System.Drawing.Point(471, 18);
+            this.textBox68.MaxLength = 3;
+            this.textBox68.Name = "textBox68";
+            this.textBox68.ReadOnly = true;
+            this.textBox68.Size = new System.Drawing.Size(41, 25);
+            this.textBox68.TabIndex = 5;
+            // 
+            // textBox69
+            // 
+            this.textBox69.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_LAST_NAME", true));
+            this.textBox69.Enabled = false;
+            this.textBox69.Location = new System.Drawing.Point(258, 18);
+            this.textBox69.Name = "textBox69";
+            this.textBox69.ReadOnly = true;
+            this.textBox69.Size = new System.Drawing.Size(212, 25);
+            this.textBox69.TabIndex = 4;
+            // 
+            // textBox70
+            // 
+            this.textBox70.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_FIRST_NAME", true));
+            this.textBox70.Enabled = false;
+            this.textBox70.Location = new System.Drawing.Point(121, 18);
+            this.textBox70.Name = "textBox70";
+            this.textBox70.ReadOnly = true;
+            this.textBox70.Size = new System.Drawing.Size(136, 25);
+            this.textBox70.TabIndex = 3;
+            // 
+            // textBox53
+            // 
+            this.textBox53.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_NO", true));
+            this.textBox53.Enabled = false;
+            this.textBox53.Location = new System.Drawing.Point(40, 18);
+            this.textBox53.Name = "textBox53";
+            this.textBox53.ReadOnly = true;
+            this.textBox53.Size = new System.Drawing.Size(67, 25);
+            this.textBox53.TabIndex = 2;
+            this.textBox53.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // aLTNAMETableAdapter
             // 
             this.aLTNAMETableAdapter.ClearBeforeFill = true;
@@ -4280,6 +5322,46 @@
             // 
             this.specialCommentCodesTableAdapter.ClearBeforeFill = true;
             // 
+            // closedCreditManagerTableAdapter
+            // 
+            this.closedCreditManagerTableAdapter.ClearBeforeFill = true;
+            // 
+            // accountStatusesTableAdapter
+            // 
+            this.accountStatusesTableAdapter.ClearBeforeFill = true;
+            // 
+            // paymentRatingsTableAdapter
+            // 
+            this.paymentRatingsTableAdapter.ClearBeforeFill = true;
+            // 
+            // accountTypesTableAdapter
+            // 
+            this.accountTypesTableAdapter.ClearBeforeFill = true;
+            // 
+            // consumerIndicatorsTableAdapter
+            // 
+            this.consumerIndicatorsTableAdapter.ClearBeforeFill = true;
+            // 
+            // complianceConditionCodesTableAdapter
+            // 
+            this.complianceConditionCodesTableAdapter.ClearBeforeFill = true;
+            // 
+            // eCOACodesTableAdapter
+            // 
+            this.eCOACodesTableAdapter.ClearBeforeFill = true;
+            // 
+            // interestTypesTableAdapter
+            // 
+            this.interestTypesTableAdapter.ClearBeforeFill = true;
+            // 
+            // portfolioTypesTableAdapter
+            // 
+            this.portfolioTypesTableAdapter.ClearBeforeFill = true;
+            // 
+            // termsFrequencyTableAdapter
+            // 
+            this.termsFrequencyTableAdapter.ClearBeforeFill = true;
+            // 
             // frmOpenCustMaint
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -4287,7 +5369,7 @@
             this.BackColor = System.Drawing.Color.CornflowerBlue;
             this.ClientSize = new System.Drawing.Size(1124, 642);
             this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.tabCustomerMaint);
+            this.Controls.Add(this.tabOpenCustomerMaintenance);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "frmOpenCustMaint";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
@@ -4319,7 +5401,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.letterTypeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.letterNumberBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.OPNDLRLISTBYNUMbindingSource)).EndInit();
-            this.tabCustomerMaint.ResumeLayout(false);
+            this.tabOpenCustomerMaintenance.ResumeLayout(false);
             this.tabCustInfo2.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -4344,6 +5426,36 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceMonthNames)).EndInit();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
+            this.tabTSB.ResumeLayout(false);
+            this.groupBoxDates.ResumeLayout(false);
+            this.groupBoxDates.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.closedCreditManagerBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tsbDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerFollowUpDate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateClosed)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateOpened)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateofAccountInformation)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateofFirstDelinquency)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateofLastPayment)).EndInit();
+            this.groupBoxCodes.ResumeLayout(false);
+            this.groupBoxCodes.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TermFrequenciesbindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PortfolioTypesbindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.InterestTypesbindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ECOACodesbindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ComplianceConditionsbindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ConsumerIndicatorsbindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AccountTypesbindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PaymentRatingsbindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.AccountStatusesbindingSource)).EndInit();
+            this.groupBoxDollars.ResumeLayout(false);
+            this.groupBoxDollars.PerformLayout();
+            this.groupBoxPurge.ResumeLayout(false);
+            this.groupBoxPurge.PerformLayout();
+            this.groupBoxReportStatus.ResumeLayout(false);
+            this.groupBoxReportStatus.PerformLayout();
+            this.groupBoxAccountNumber.ResumeLayout(false);
+            this.groupBoxAccountNumber.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dEALERBindingSource)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
@@ -4368,7 +5480,7 @@
         private System.Windows.Forms.MaskedTextBox cUSTOMER_CELL_PHONETextBox;
         private System.Windows.Forms.MaskedTextBox cUSTOMER_WORK_PHONETextBox;
         private System.Windows.Forms.MaskedTextBox cUSTOMER_PHONE_NOTextBox;
-        private System.Windows.Forms.TabControl tabCustomerMaint;
+        private System.Windows.Forms.TabControl tabOpenCustomerMaintenance;
         private System.Windows.Forms.TabPage tabCustInfo2;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.TextBox textBox9;
@@ -4474,7 +5586,6 @@
         private System.Windows.Forms.TextBox txtLastPaymentMade;
         private System.Windows.Forms.TextBox txtCreditBureau;
         private System.Windows.Forms.TextBox txtCreditLimit;
-        private System.Windows.Forms.TextBox txtContractStatus;
         private System.Windows.Forms.TextBox txtCustomerBalance;
         private System.Windows.Forms.BindingSource OPNDLRLISTBYNUMbindingSource;
         private IACDataSetTableAdapters.OPNDLRLISTBYNUMTableAdapter oPNDLRLISTBYNUMTableAdapter;
@@ -4605,6 +5716,98 @@
         private System.Windows.Forms.TextBox textBoxTSBPaymentRating;
         private System.Windows.Forms.CheckBox checkBoxTSBOverride;
         private ProManApp.NullableDateTimePicker txtDOB;
+        private System.Windows.Forms.TabPage tabTSB;
+        private ColorTextBox txtContractStatus;
+        private System.Windows.Forms.GroupBox groupBoxDates;
+        private System.Windows.Forms.CheckBox checkBoxFollowUpDate;
+        private ProManApp.NullableDateTimePicker nullableDateTimePickerFollowUpDate;
+        private ProManApp.NullableDateTimePicker nullableDateTimePickerDateClosed;
+        private ProManApp.NullableDateTimePicker nullableDateTimePickerDateOpened;
+        private ProManApp.NullableDateTimePicker nullableDateTimePickerDateofAccountInformation;
+        private ProManApp.NullableDateTimePicker nullableDateTimePickerDateofFirstDelinquency;
+        private ProManApp.NullableDateTimePicker nullableDateTimePickerDateofLastPayment;
+        private System.Windows.Forms.Label label135;
+        private System.Windows.Forms.Label label136;
+        private System.Windows.Forms.Label label138;
+        private System.Windows.Forms.Label label139;
+        private System.Windows.Forms.GroupBox groupBoxCodes;
+        private System.Windows.Forms.CheckBox checkBoxECOACode;
+        private System.Windows.Forms.CheckBox checkBoxPaymentProfile;
+        private System.Windows.Forms.CheckBox checkBoxComplianceCode;
+        private System.Windows.Forms.CheckBox checkBoxConsumerIndicator;
+        private System.Windows.Forms.CheckBox checkBoxAccountType;
+        private System.Windows.Forms.CheckBox checkBoxSpecialComment;
+        private System.Windows.Forms.CheckBox checkBoxPaymentRating;
+        private System.Windows.Forms.CheckBox checkBoxAccountStatus;
+        private System.Windows.Forms.Button buttonEditPaymentHistory;
+        private System.Windows.Forms.Label label152;
+        private System.Windows.Forms.TextBox textBoxPaymentHistoryProfile;
+        private System.Windows.Forms.TextBox textBoxTermsDuration;
+        private System.Windows.Forms.Label label149;
+        private System.Windows.Forms.ComboBox comboBoxTermsFrequency;
+        private System.Windows.Forms.Label label150;
+        private System.Windows.Forms.ComboBox comboBoxPortfolioType;
+        private System.Windows.Forms.Label label148;
+        private System.Windows.Forms.ComboBox comboBoxInterestType;
+        private System.Windows.Forms.Label label147;
+        private System.Windows.Forms.ComboBox comboBoxECOACode;
+        private System.Windows.Forms.Label labelComplianceConditionCode;
+        private System.Windows.Forms.ComboBox comboBoxComplianceConditionCode;
+        private System.Windows.Forms.Label label145;
+        private System.Windows.Forms.ComboBox comboBoxConsumerIndicator;
+        private System.Windows.Forms.Label label144;
+        private System.Windows.Forms.ComboBox comboBoxAccountType;
+        private System.Windows.Forms.Label label143;
+        private System.Windows.Forms.ComboBox comboBoxSpecialComment;
+        private System.Windows.Forms.Label label142;
+        private System.Windows.Forms.ComboBox comboBoxPaymentRating;
+        private System.Windows.Forms.Label label141;
+        private System.Windows.Forms.ComboBox comboBoxAccountStatus;
+        private System.Windows.Forms.GroupBox groupBoxDollars;
+        private System.Windows.Forms.Label label137;
+        private System.Windows.Forms.TextBox textBoxCreditLimit;
+        private System.Windows.Forms.Label labelSchMonthlyPayment;
+        private System.Windows.Forms.TextBox textBoxSchMonthlyPaymentAmount;
+        private System.Windows.Forms.Label labelChargeOffAmount;
+        private System.Windows.Forms.TextBox textBoxOrgChargeOffAmount;
+        private System.Windows.Forms.Label label134;
+        private System.Windows.Forms.TextBox textBoxHighestCredit;
+        private System.Windows.Forms.Label label133;
+        private System.Windows.Forms.TextBox textBoxActualPaymentAmount;
+        private System.Windows.Forms.Label labelAmountPastDue;
+        private System.Windows.Forms.TextBox textBoxAmountPastDue;
+        private System.Windows.Forms.Label labelCurrentBalance;
+        private System.Windows.Forms.TextBox textBoxCurrentBalance;
+        private System.Windows.Forms.GroupBox groupBoxPurge;
+        private System.Windows.Forms.CheckBox checkBoxPurge;
+        private System.Windows.Forms.GroupBox groupBoxReportStatus;
+        private System.Windows.Forms.CheckBox checkBoxReportTSB;
+        private System.Windows.Forms.GroupBox groupBoxAccountNumber;
+        private System.Windows.Forms.TextBox textBox68;
+        private System.Windows.Forms.TextBox textBox69;
+        private System.Windows.Forms.TextBox textBox70;
+        private System.Windows.Forms.TextBox textBox53;
+        private TSBDataSet tsbDataSet;
+        private System.Windows.Forms.BindingSource closedCreditManagerBindingSource;
+        private TSBDataSetTableAdapters.ClosedCreditManagerTableAdapter closedCreditManagerTableAdapter;
+        private System.Windows.Forms.BindingSource AccountStatusesbindingSource;
+        private TSBDataSetTableAdapters.AccountStatusesTableAdapter accountStatusesTableAdapter;
+        private System.Windows.Forms.BindingSource PaymentRatingsbindingSource;
+        private TSBDataSetTableAdapters.PaymentRatingsTableAdapter paymentRatingsTableAdapter;
+        private System.Windows.Forms.BindingSource AccountTypesbindingSource;
+        private TSBDataSetTableAdapters.AccountTypesTableAdapter accountTypesTableAdapter;
+        private System.Windows.Forms.BindingSource ConsumerIndicatorsbindingSource;
+        private TSBDataSetTableAdapters.ConsumerIndicatorsTableAdapter consumerIndicatorsTableAdapter;
+        private System.Windows.Forms.BindingSource ComplianceConditionsbindingSource;
+        private TSBDataSetTableAdapters.ComplianceConditionCodesTableAdapter complianceConditionCodesTableAdapter;
+        private System.Windows.Forms.BindingSource ECOACodesbindingSource;
+        private TSBDataSetTableAdapters.ECOACodesTableAdapter eCOACodesTableAdapter;
+        private System.Windows.Forms.BindingSource InterestTypesbindingSource;
+        private TSBDataSetTableAdapters.InterestTypesTableAdapter interestTypesTableAdapter;
+        private System.Windows.Forms.BindingSource PortfolioTypesbindingSource;
+        private TSBDataSetTableAdapters.PortfolioTypesTableAdapter portfolioTypesTableAdapter;
+        private System.Windows.Forms.BindingSource TermFrequenciesbindingSource;
+        private TSBDataSetTableAdapters.TermsFrequencyTableAdapter termsFrequencyTableAdapter;
     }
 }
 

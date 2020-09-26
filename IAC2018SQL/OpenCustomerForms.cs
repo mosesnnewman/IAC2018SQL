@@ -132,7 +132,15 @@ namespace IAC2018SQL
 
         private void frmOpenCustMaint_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'iACDataSet.SpecialCommentCodes' table. You can move, or remove it, as needed.
+            this.termsFrequencyTableAdapter.Fill(this.tsbDataSet.TermsFrequency);
+            this.portfolioTypesTableAdapter.Fill(this.tsbDataSet.PortfolioTypes);
+            this.interestTypesTableAdapter.Fill(this.tsbDataSet.InterestTypes);
+            this.eCOACodesTableAdapter.Fill(this.tsbDataSet.ECOACodes);
+            this.complianceConditionCodesTableAdapter.Fill(this.tsbDataSet.ComplianceConditionCodes);
+            this.consumerIndicatorsTableAdapter.Fill(this.tsbDataSet.ConsumerIndicators);
+            this.accountTypesTableAdapter.Fill(this.tsbDataSet.AccountTypes);
+            this.paymentRatingsTableAdapter.Fill(this.tsbDataSet.PaymentRatings);
+            this.accountStatusesTableAdapter.Fill(this.tsbDataSet.AccountStatuses);
             this.specialCommentCodesTableAdapter.Fill(this.iACDataSet.SpecialCommentCodes);
             StartupConfiguration();
             DataGridViewRow row = cOMMENTDataGridView.RowTemplate;
@@ -189,7 +197,7 @@ namespace IAC2018SQL
             cUSTOMER_NOTextBox.SelectAll();
             // Moses Newman 03/23/2012 return to same tab before edit mode!
             if (lbEdit)
-                tabCustomerMaint.SelectedIndex = Program.gnOpenCustomerTab;
+                tabOpenCustomerMaintenance.SelectedIndex = Program.gnOpenCustomerTab;
         }
 
         private void SetViewMode()
@@ -337,6 +345,46 @@ namespace IAC2018SQL
             cOMMENTDataGridView.AllowUserToDeleteRows = false;
             toolStripButtonSave.Enabled = false;
             toolStripButtonEdit.Enabled = true;
+            // Moses Newman 08/03/2020
+            //TSB
+            textBoxCurrentBalance.Enabled = false;
+            textBoxAmountPastDue.Enabled = false;
+            textBoxActualPaymentAmount.Enabled = false;
+            textBoxHighestCredit.Enabled = false;
+            textBoxOrgChargeOffAmount.Enabled = false;
+            textBoxSchMonthlyPaymentAmount.Enabled = false;
+            textBoxCreditLimit.Enabled = false;
+            nullableDateTimePickerDateofLastPayment.Enabled = false;
+            nullableDateTimePickerDateofFirstDelinquency.Enabled = false;
+            nullableDateTimePickerDateofAccountInformation.Enabled = false;
+            nullableDateTimePickerDateOpened.Enabled = false;
+            nullableDateTimePickerDateClosed.Enabled = false;
+            nullableDateTimePickerFollowUpDate.Enabled = false;
+            comboBoxAccountStatus.Enabled = false;
+            comboBoxPaymentRating.Enabled = false;
+            comboBoxSpecialComment.Enabled = false;
+            comboBoxAccountType.Enabled = false;
+            comboBoxConsumerIndicator.Enabled = false;
+            comboBoxComplianceConditionCode.Enabled = false;
+            comboBoxECOACode.Enabled = false;
+            comboBoxInterestType.Enabled = false;
+            comboBoxPortfolioType.Enabled = false;
+            comboBoxTermsFrequency.Enabled = false;
+            textBoxTermsDuration.Enabled = false;
+            // Moses Newman 08/24/2020 disable new override TSB checkboxes
+            checkBoxReportTSB.Enabled = false;
+            checkBoxPurge.Enabled = false;
+            checkBoxFollowUpDate.Enabled = false;
+            checkBoxAccountStatus.Enabled = false;
+            checkBoxPaymentRating.Enabled = false;
+            checkBoxSpecialComment.Enabled = false;
+            checkBoxAccountType.Enabled = false;
+            checkBoxConsumerIndicator.Enabled = false;
+            checkBoxComplianceCode.Enabled = false;
+            checkBoxECOACode.Enabled = false;
+            checkBoxPaymentProfile.Enabled = false;
+            // Moses Newman 09/04/2020 Turn off Edit Payment History Button
+            buttonEditPaymentHistory.Enabled = false;
         }
         private void SetEditMode()
         {
@@ -483,6 +531,50 @@ namespace IAC2018SQL
             cOMMENTDataGridView.Enabled = true;
             cOMMENTDataGridView.AllowUserToAddRows = true;
             cOMMENTDataGridView.AllowUserToDeleteRows = true;
+            // Moses Newman 08/03/2020
+            //TSB
+            //textBoxCurrentBalance.Enabled = true;
+            //textBoxAmountPastDue.Enabled = true;
+            //textBoxActualPaymentAmount.Enabled = true;
+            //textBoxHighestCredit.Enabled = true;
+            //textBoxOrgChargeOffAmount.Enabled = true;
+            //textBoxSchMonthlyPaymentAmount.Enabled = true;
+            //textBoxCreditLimit.Enabled = true;
+            //nullableDateTimePickerDateofLastPayment.Enabled = true;
+            //nullableDateTimePickerDateofFirstDelinquency.Enabled = true;
+            //nullableDateTimePickerDateofAccountInformation.Enabled = true;
+            //nullableDateTimePickerDateOpened.Enabled = true;
+            //nullableDateTimePickerDateClosed.Enabled = true;
+            nullableDateTimePickerFollowUpDate.Enabled = true;
+            comboBoxAccountStatus.Enabled = true;
+            comboBoxPaymentRating.Enabled = true;
+            comboBoxSpecialComment.Enabled = true;
+            comboBoxAccountType.Enabled = true;
+            comboBoxConsumerIndicator.Enabled = true;
+            comboBoxComplianceConditionCode.Enabled = true;
+            comboBoxECOACode.Enabled = true;
+            //comboBoxInterestType.Enabled = true;
+            //comboBoxPortfolioType.Enabled = true;
+            //comboBoxTermsFrequency.Enabled = true;
+            //textBoxTermsDuration.Enabled = true;
+            // Moses Newman 08/24/2020 enable new override TSB checkboxes
+            checkBoxReportTSB.Enabled = true;
+            checkBoxPurge.Enabled = true;
+            checkBoxFollowUpDate.Enabled = true;
+            checkBoxAccountStatus.Enabled = true;
+            checkBoxPaymentRating.Enabled = true;
+            checkBoxSpecialComment.Enabled = true;
+            checkBoxAccountType.Enabled = true;
+            checkBoxConsumerIndicator.Enabled = true;
+            checkBoxComplianceCode.Enabled = true;
+            checkBoxECOACode.Enabled = true;
+            checkBoxPaymentProfile.Enabled = true;
+
+            // Moses Newman 09/04/2020 toggle Edit Payment History only enable if there is a Credit Manager Record
+            if (tsbDataSet.ClosedCreditManager.Rows.Count != 0)
+                this.buttonEditPaymentHistory.Enabled = true;
+            else
+                this.buttonEditPaymentHistory.Enabled = false;
 
             toolStripButtonEdit.Enabled = false;
             toolStripButtonSave.Enabled = false;
@@ -513,6 +605,8 @@ namespace IAC2018SQL
                 oPNCOMMTableAdapter.FillByCustNo(iACDataSet.OPNCOMM, cUSTOMER_NOTextBox.Text.ToString());
                 aLTNAMETableAdapter.Fill(iACDataSet.ALTNAME, cUSTOMER_NOTextBox.Text.ToString(), cUSTOMER_IAC_TypeTextBox.Text.ToString());
                 oPNBANKTableAdapter.Fill(iACDataSet.OPNBANK, cUSTOMER_NOTextBox.Text.ToString(), "O");
+                // Moses Newman 09/26/2020 Add ClosedCreditManager code 15 for Credit Line Loans (Open End)
+                closedCreditManagerTableAdapter.Fill(tsbDataSet.ClosedCreditManager, cUSTOMER_NOTextBox.Text.ToString(), "15");
                 if (iACDataSet.ALTNAME.Rows.Count == 0)
                     Create_New_ALTNAMERecord(cUSTOMER_NOTextBox.Text.ToString());
                 StateRatesTableAdapter.Fill(iACDataSet.StateRates, iACDataSet.OPNCUST.Rows[0].Field<String>("CUSTOMER_STATE"));
@@ -893,6 +987,52 @@ namespace IAC2018SQL
                     cOMMENTDataGridView.AllowUserToAddRows = true;
                     cOMMENTDataGridView.AllowUserToDeleteRows = true;
 
+                    // Moses Newman 08/03/2020
+                    //TSB
+                    //textBoxCurrentBalance.Enabled = true;
+                    //textBoxAmountPastDue.Enabled = true;
+                    //textBoxActualPaymentAmount.Enabled = true;
+                    //textBoxHighestCredit.Enabled = true;
+                    //textBoxOrgChargeOffAmount.Enabled = true;
+                    //textBoxSchMonthlyPaymentAmount.Enabled = true;
+                    //textBoxCreditLimit.Enabled = true;
+                    //nullableDateTimePickerDateofLastPayment.Enabled = true;
+                    //nullableDateTimePickerDateofFirstDelinquency.Enabled = true;
+                    //nullableDateTimePickerDateofAccountInformation.Enabled = true;
+                    //nullableDateTimePickerDateOpened.Enabled = true;
+                    //nullableDateTimePickerDateClosed.Enabled = true;
+                    nullableDateTimePickerFollowUpDate.Enabled = true;
+                    comboBoxAccountStatus.Enabled = true;
+                    comboBoxPaymentRating.Enabled = true;
+                    comboBoxSpecialComment.Enabled = true;
+                    comboBoxAccountType.Enabled = true;
+                    comboBoxConsumerIndicator.Enabled = true;
+                    comboBoxComplianceConditionCode.Enabled = true;
+                    comboBoxECOACode.Enabled = true;
+                    //comboBoxInterestType.Enabled = true;
+                    //comboBoxPortfolioType.Enabled = true;
+                    //comboBoxTermsFrequency.Enabled = true;
+                    //textBoxTermsDuration.Enabled = true;
+                    // Moses Newman 08/24/2020 enable new override TSB checkboxes
+                    checkBoxReportTSB.Enabled = true;
+                    checkBoxPurge.Enabled = true;
+                    checkBoxFollowUpDate.Enabled = true;
+                    checkBoxAccountStatus.Enabled = true;
+                    checkBoxPaymentRating.Enabled = true;
+                    checkBoxSpecialComment.Enabled = true;
+                    checkBoxAccountType.Enabled = true;
+                    checkBoxConsumerIndicator.Enabled = true;
+                    checkBoxComplianceCode.Enabled = true;
+                    checkBoxECOACode.Enabled = true;
+                    checkBoxPaymentProfile.Enabled = true;
+                    // Moses Newman 09/04/2020 toggle Edit Payment History only enable if there is a Credit Manager Record
+                    if (tsbDataSet.ClosedCreditManager.Rows.Count != 0)
+                        this.buttonEditPaymentHistory.Enabled = true;
+                    else
+                        this.buttonEditPaymentHistory.Enabled = false;
+
+                    this.toolStripButtonEdit.Enabled = false;
+
                     ActiveControl = cUSTOMER_DEALERcomboBox;
                     ActiveControl = cUSTOMER_PURCHASE_ORDERTextBox;
                     cUSTOMER_PURCHASE_ORDERTextBox.SelectAll();
@@ -972,14 +1112,14 @@ namespace IAC2018SQL
         //Move to FirstPayDate
         private void textBox46_Validated(object sender, EventArgs e)
         {
-            tabCustomerMaint.SelectedIndex = 1;
+            tabOpenCustomerMaintenance.SelectedIndex = 1;
             ActiveControl = txtFirstPayDate;
             txtFirstPayDate.Select();
         }
 
         private void txtJointOwner_Validated(object sender, EventArgs e)
         {
-            tabCustomerMaint.SelectedIndex = 3;
+            tabOpenCustomerMaintenance.SelectedIndex = 3;
             ActiveControl = cUSTOMER_COS_NAMETextBox;
             cUSTOMER_COS_NAMETextBox.Select();
         }
@@ -1120,7 +1260,7 @@ namespace IAC2018SQL
             {
                 if (txtCASH.Text.Length == 0 || Convert.ToDecimal(txtCASH.Text.Substring(1)) == 0)
                 {
-                    tabCustomerMaint.SelectedIndex = 1;
+                    tabOpenCustomerMaintenance.SelectedIndex = 1;
                     GeneralValidationError(@"*** You must enter the customer's loan amount (CASH)! ***", txtCASH);
                     ActiveControl = txtCASH;
                     txtCASH.SelectAll();
@@ -1128,7 +1268,7 @@ namespace IAC2018SQL
                 }
                 if (txtRegularPay.Text.Length == 0 || Convert.ToDecimal(txtRegularPay.Text.Substring(1)) == 0)
                 {
-                    tabCustomerMaint.SelectedIndex = 1;
+                    tabOpenCustomerMaintenance.SelectedIndex = 1;
                     GeneralValidationError(@"*** You must enter either the customer's Monthly Payment (REGULAR PAYMENT)! ***", txtRegularPay);
                     ActiveControl = txtRegularPay;
                     txtRegularPay.SelectAll();
@@ -1140,7 +1280,7 @@ namespace IAC2018SQL
                 }
                 if (comboBoxDayDue.SelectedIndex < 0 && comboBoxDayDue.Text.Length == 0)
                 {
-                    tabCustomerMaint.SelectedIndex = 1;
+                    tabOpenCustomerMaintenance.SelectedIndex = 1;
                     GeneralValidationError(@"*** You must enter the customer's DAY DUE ***", comboBoxDayDue);
                     ActiveControl = comboBoxDayDue;
                     comboBoxDayDue.SelectAll();
@@ -1153,6 +1293,8 @@ namespace IAC2018SQL
             cOMMENTBindingSource.EndEdit();
             ALTNAMEbindingSource.EndEdit();
             OPNBANKbindingSource.EndEdit();
+            // Moses Newman 09/26/2020 Add save of TSB data
+            closedCreditManagerBindingSource.EndEdit();
             tableAdapConn = new System.Data.SqlClient.SqlConnection();
             tableAdapConn.ConnectionString = IAC2018SQL.Properties.Settings.Default.IAC2010SQLConnectionString;
 
@@ -1182,6 +1324,13 @@ namespace IAC2018SQL
                 Program.UpdateComments(ref iACDataSet, ref cOMMENTBindingSource, true);
                 oPNCOMMTableAdapter.Update(iACDataSet.OPNCOMM);  // Delete, Update, and Insert all the customers comment records!
                 oPNCUSTTableAdapter.UnlockRecord(iACDataSet.OPNCUST.Rows[cUSTOMERBindingSource.Position].Field<String>("CUSTOMER_NO"));
+                // Moses Newman 09/26/2020 Add save of TSB data
+                if (tsbDataSet.ClosedCreditManager.Rows.Count != 0)
+                {
+                    closedCreditManagerTableAdapter.Connection = tableAdapConn;
+                    closedCreditManagerTableAdapter.Transaction = tableAdapTran;
+                    closedCreditManagerTableAdapter.Update(tsbDataSet.ClosedCreditManager.Rows[closedCreditManagerBindingSource.Position]);
+                }
                 tableAdapTran.Commit();
             }
             catch (System.Data.SqlClient.SqlException ex)
@@ -1624,6 +1773,173 @@ namespace IAC2018SQL
         private void txtDOB_ValueChanged(object sender, EventArgs e)
         {
             if (lbEdit && toolStripButtonSave.Enabled == false)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void buttonEditPaymentHistory_Click(object sender, EventArgs e)
+        {
+            String OldProfile = tsbDataSet.ClosedCreditManager.Rows[0].Field<String>("PaymentProfile");
+
+            FormDelinquencyPeriods newdelinquencyperiods = new FormDelinquencyPeriods();
+            newdelinquencyperiods.CustomerID = iACDataSet.OPNCUST.Rows[0].Field<Int32>("CustomerID");
+            newdelinquencyperiods.PeriodEnd = tsbDataSet.ClosedCreditManager.Rows[0].Field<DateTime>("DateOfAccountInformation");
+            newdelinquencyperiods.Profile = OldProfile;
+            newdelinquencyperiods.ShowDialog();
+            tsbDataSet.ClosedCreditManager.Rows[closedCreditManagerBindingSource.Position].SetField<String>("PaymentProfile", newdelinquencyperiods.Profile);
+            closedCreditManagerBindingSource.EndEdit();
+            newdelinquencyperiods.Hide();
+            this.textBoxPaymentHistoryProfile.Refresh();
+            if (newdelinquencyperiods.Profile != OldProfile)
+                toolStripButtonSave.Enabled = true;
+            newdelinquencyperiods.Dispose();
+        }
+
+        private void checkBoxReportTSB_CheckedChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+            {
+                toolStripButtonSave.Enabled = true;
+                // Moses Newman 09/26/2020 Toggle CUSTOMER_CREDIT_BUREAU if this is checked!
+                if (checkBoxReportTSB.Checked)
+                    iACDataSet.OPNCUST.Rows[0].SetField<String>("CUSTOMER_CREDIT_BUREAU", "Y");
+                else
+                    iACDataSet.OPNCUST.Rows[0].SetField<String>("CUSTOMER_CREDIT_BUREAU", "N");
+            }
+        }
+
+        private void checkBoxPurge_CheckedChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void checkBoxFollowUpDate_CheckedChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void comboBoxAccountStatus_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+            {
+                toolStripButtonSave.Enabled = true;
+                // Moses Newman 09/26/2020 enable Payment Rating if Account Status is changed to 13,65,89,94, or 95.
+                switch (comboBoxAccountStatus.SelectedValue)
+                {
+                    case "13":
+                    case "65":
+                    case "89":
+                    case "94":
+                    case "95":
+                        comboBoxPaymentRating.Enabled = true;
+                        break;
+                    default:
+                        comboBoxPaymentRating.Enabled = false;
+                        break;
+                }
+            }
+        }
+
+        private void checkBoxAccountStatus_CheckedChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void checkBoxPaymentRating_CheckedChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void checkBoxSpecialComment_CheckedChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void checkBoxAccountType_CheckedChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void checkBoxConsumerIndicator_CheckedChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void checkBoxComplianceCode_CheckedChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void checkBoxECOACode_CheckedChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void checkBoxPaymentProfile_CheckedChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void comboBoxPaymentRating_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void comboBoxSpecialComment_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void comboBoxAccountType_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void comboBoxConsumerIndicator_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void comboBoxComplianceConditionCode_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void comboBoxECOACode_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void comboBoxInterestType_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void comboBoxPortfolioType_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void comboBoxTermsFrequency_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
                 toolStripButtonSave.Enabled = true;
         }
 
