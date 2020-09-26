@@ -113,8 +113,10 @@ namespace IAC2018SQL
             Decimal lnProg = 0;
             ClosedCreditManagerTableAdapter.FillByAll(tsbSet.ClosedCreditManager);
             String AccountNumber;
+            Boolean NewAccount = false;
             for (Int32 i = 0; i < TSBDATA.CUSTOMER.Rows.Count; i++)
             {
+                NewAccount = false;
                 lnProg = ((Decimal)(i + 1) / (Decimal)TSBDATA.CUSTOMER.Rows.Count) * (Decimal)100;
                 lsProgMessage = "Inserting Closed Customer Records Into ClosedCustomerCreditManager" + "\n" + "Record: " + (i + 1).ToString().TrimStart() + " of " + TSBDATA.CUSTOMER.Rows.Count.ToString() + ".";
                 worker.ReportProgress((Int32)lnProg);
@@ -130,6 +132,7 @@ namespace IAC2018SQL
                 {
                     ClosedCreditManagerBindingSource.AddNew();
                     ClosedCreditManagerBindingSource.EndEdit();
+                    NewAccount = true;
                 }
                 // Strip apostrophes from first and last name if they exist
                 tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<String>("CRDMGR_CUST_FIRST_NAME", TSBDATA.CUSTOMER.Rows[i].Field<String>("CUSTOMER_FIRST_NAME").Replace(@"'", ""));
@@ -357,9 +360,16 @@ namespace IAC2018SQL
                 else
                     tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<String>("CRDMGR_CONSUMER_INDICATOR", " ");*/
                 // Moses Newman 08/26/2020
-                if (!tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].Field<Boolean>("PaymentHistoryOverride"))
+                // Moses Newman 09/23/2020 Only update the newsest month in the history profile if NOT a new account!
+                //if (!tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].Field<Boolean>("PaymentHistoryOverride"))
+                if(NewAccount)
                     tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<String>("PaymentProfile",
                      (String)CUSTHISTTableAdapter.PaymentProfile(TSBDATA.CUSTOMER.Rows[i].Field<String>("CUSTOMER_NO"), (DateTime)nullableDateTimePickerTo.Value));
+                else
+                    tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<String>("PaymentProfile",
+                        UpdateCurrentMonthOnly(tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].Field<String>("PaymentProfile"),
+                        (String)CUSTHISTTableAdapter.PaymentProfile(TSBDATA.CUSTOMER.Rows[i].Field<String>("CUSTOMER_NO"), (DateTime)nullableDateTimePickerTo.Value)));
+
                 // Moses Newman 06/11/2020 added Report 
                 tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<Boolean>("Report", (TSBDATA.CUSTOMER.Rows[i].Field<String>("CUSTOMER_CREDIT_BUREAU") == "Y") ? true : false);
                 // Moses Newman 08/31/2020 Add DateOfAccountInformation
@@ -389,13 +399,15 @@ namespace IAC2018SQL
             Decimal lnOpenPastDue = 0;
             for (Int32 i = 0; i < TSBDATA.OPNCUST.Rows.Count; i++)
             {
+                NewAccount = false;
                 lnProg = ((Decimal)(i + 1) / (Decimal)TSBDATA.OPNCUST.Rows.Count) * (Decimal)100;
                 lsProgMessage = "Inserting Open Customer Records Into ClosedCustomerCreditManager" + "\n" + "Record: " + (i + 1).ToString().TrimStart() + " of " + TSBDATA.OPNCUST.Rows.Count.ToString() + ".";
                 worker.ReportProgress((Int32)lnProg);
 
                 ProcessCustomer(TSBDATA, i, true);
                 AccountNumber = TSBDATA.OPNCUST.Rows[i].Field<String>("CUSTOMER_NO");
-                ClosedCreditManagerTableAdapter.FillByPortfolioType(tsbSet.ClosedCreditManager, AccountNumber, "R");
+                // Moses Newman 09/25/2020 No more R revolving for Open End, must be C for Credit Line!
+                ClosedCreditManagerTableAdapter.FillByPortfolioType(tsbSet.ClosedCreditManager, AccountNumber, "C");
                 ClosedCreditManagerBindingSource.DataSource = tsbSet.ClosedCreditManager;
                 ClosedCreditManagerBindingSource.MoveFirst();
 
@@ -404,6 +416,7 @@ namespace IAC2018SQL
                 {
                     ClosedCreditManagerBindingSource.AddNew();
                     ClosedCreditManagerBindingSource.EndEdit();
+                    NewAccount = true;
                 }
                 // Strip apostrophes from first and last name if they exist
                 tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<String>("CRDMGR_CUST_FIRST_NAME", TSBDATA.OPNCUST.Rows[i].Field<String>("CUSTOMER_FIRST_NAME").Replace(@"'", ""));
@@ -436,8 +449,9 @@ namespace IAC2018SQL
                 tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<String>("CRDMGR_ACCOUNT_NUMBER", TSBDATA.OPNCUST.Rows[i].Field<String>("CUSTOMER_NO").PadRight(30, ' '));
                 tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<String>("CRDMGR_CUST_RESIDENCE_CODE", " ");
                 // Moses Newman 06/04/2015 Account_type must be 07 for Revolving portfolio type (Open End)
+                // Moses Newman 09/25/2020 No more account type 07, must be 15
                 if (!tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].Field<Boolean>("AccountTypeOverride"))
-                    tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<String>("CRDMGR_ACCT_TYPE_CODE", "07");
+                    tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<String>("CRDMGR_ACCT_TYPE_CODE", "15");
                 // Moses Newman 08/26/2020
                 if (!tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].Field<Boolean>("AccountStatusOverride"))
                     tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<String>("CRDMGR_ACCT_STATUS_CODE", lsAcctStatusCode);
@@ -539,7 +553,8 @@ namespace IAC2018SQL
                 //if (TSBDATA.OPNCUST.Rows[i].Field<String>("CUSTOMER_ALT_FLAG") == "Y")
                 //    tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<String>("CRDMGR_ACCT_ECOA_CODE", "2");
                 // Portfolio type for Open End is "R" (Revolving)
-                tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<String>("CRDMGR_ACCT_PORTFOLIO_TYPE", "R");
+                // Moses Newman 09/25/2020 No more R for revolving, must be C for Credit Line!
+                tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<String>("CRDMGR_ACCT_PORTFOLIO_TYPE", "C");
 
                 if (TSBDATA.OpenWSHIST.Rows.Count > 0)
                 {
@@ -560,7 +575,8 @@ namespace IAC2018SQL
                 else
                     tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<Decimal>("CRDMGR_ORIGINAL_CHARGE_OFF_AMT", 0);
                 tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<String>("CRDMGR_ACCT_TERMS_FREQUENCY", "M");
-                tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<String>("CRDMGR_ACCT_TERMS_DURATION", "REV");
+                // Moses Newman 09/25/2020 No More REV for banks, must be LOC
+                tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<String>("CRDMGR_ACCT_TERMS_DURATION", "LOC");
                 // Moses Newman 08/26/2020
                 if (!tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].Field<Boolean>("SpecialCommentOverride"))
                     tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<String>("CRDMGR_SPECIAL_COMMENT_CODE", lsTSBCommentCode.PadRight(2, ' '));
@@ -571,9 +587,15 @@ namespace IAC2018SQL
                     tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<String>("CRDMGR_CONSUMER_INDICATOR", " ");*/
                 // Moses Newman 06/12/2020 Add Open Payment Profile
                 // Moses Newman 08/26/2020
-                if (!tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].Field<Boolean>("PaymentHistoryOverride"))
+                // Moses Newman 09/23/2020 Only update the newsest month in the history profile if NOT a new account!
+                //if (!tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].Field<Boolean>("PaymentHistoryOverride"))
+                if (NewAccount)
                     tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<String>("PaymentProfile",
-                    (String)OPNHCUSTTableAdapter.PaymentProfile(TSBDATA.OPNCUST.Rows[i].Field<String>("CUSTOMER_NO"), (DateTime)nullableDateTimePickerTo.Value));
+                     (String)CUSTHISTTableAdapter.PaymentProfile(TSBDATA.OPNCUST.Rows[i].Field<String>("CUSTOMER_NO"), (DateTime)nullableDateTimePickerTo.Value));
+                else
+                    tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<String>("PaymentProfile",
+                        UpdateCurrentMonthOnly(tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].Field<String>("PaymentProfile"),
+                        (String)OPNHCUSTTableAdapter.PaymentProfile(TSBDATA.OPNCUST.Rows[i].Field<String>("CUSTOMER_NO"), (DateTime)nullableDateTimePickerTo.Value)));
                 // Moses Newman 06/11/2020 added Report
                 tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<Boolean>("Report", (TSBDATA.OPNCUST.Rows[i].Field<String>("CUSTOMER_CREDIT_BUREAU") == "Y") ? true : false);
                 // Moses Newman 08/31/2020 Add DateOfAccountInformation
@@ -922,6 +944,18 @@ namespace IAC2018SQL
                     return "??";
                 }
             }
+        }
+
+        // Moses Newman 09/23/2020 Create a new HistoryProfile with only the current month changed.
+        private String UpdateCurrentMonthOnly(String OldHistString,String NewHistString)
+        {
+            String DatePart, OldDatePart, HistPart;
+
+            DatePart = NewHistString.Substring(0, 7);
+            OldDatePart = OldHistString.Substring(0, 7);
+            HistPart = NewHistString.Substring(7,1) + OldHistString.Substring(7, 23);
+
+            return (DatePart == OldDatePart) ? OldHistString:DatePart + HistPart;
         }
     }
 }
