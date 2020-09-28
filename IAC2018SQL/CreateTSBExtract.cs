@@ -374,6 +374,8 @@ namespace IAC2018SQL
                 tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<Boolean>("Report", (TSBDATA.CUSTOMER.Rows[i].Field<String>("CUSTOMER_CREDIT_BUREAU") == "Y") ? true : false);
                 // Moses Newman 08/31/2020 Add DateOfAccountInformation
                 tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<DateTime>("DateOfAccountInformation", DateTime.Now.Date.AddDays(1));
+                // Moses Newman 09/26/2020 Set Interest Type
+                tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<String>("InterestType", "F");
                 ClosedCreditManagerBindingSource.EndEdit();
                 try
                 {
@@ -591,7 +593,7 @@ namespace IAC2018SQL
                 //if (!tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].Field<Boolean>("PaymentHistoryOverride"))
                 if (NewAccount)
                     tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<String>("PaymentProfile",
-                     (String)CUSTHISTTableAdapter.PaymentProfile(TSBDATA.OPNCUST.Rows[i].Field<String>("CUSTOMER_NO"), (DateTime)nullableDateTimePickerTo.Value));
+                     (String)OPNHCUSTTableAdapter.PaymentProfile(TSBDATA.OPNCUST.Rows[i].Field<String>("CUSTOMER_NO"), (DateTime)nullableDateTimePickerTo.Value));
                 else
                     tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<String>("PaymentProfile",
                         UpdateCurrentMonthOnly(tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].Field<String>("PaymentProfile"),
@@ -600,6 +602,8 @@ namespace IAC2018SQL
                 tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<Boolean>("Report", (TSBDATA.OPNCUST.Rows[i].Field<String>("CUSTOMER_CREDIT_BUREAU") == "Y") ? true : false);
                 // Moses Newman 08/31/2020 Add DateOfAccountInformation
                 tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<DateTime>("DateOfAccountInformation", DateTime.Now.Date.AddDays(1));
+                // Moses Newman 09/26/2020 Set Interest Type
+                tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<String>("InterestType", "F");
                 ClosedCreditManagerBindingSource.EndEdit();
                 try
                 {

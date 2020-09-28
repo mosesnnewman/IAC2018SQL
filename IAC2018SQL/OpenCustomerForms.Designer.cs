@@ -117,13 +117,11 @@
             System.Windows.Forms.Label label40;
             System.Windows.Forms.Label label41;
             System.Windows.Forms.Label label44;
-            System.Windows.Forms.Label label48;
             System.Windows.Forms.Label label46;
             System.Windows.Forms.Label label47;
             System.Windows.Forms.Label label49;
             System.Windows.Forms.Label label50;
             System.Windows.Forms.Label label21;
-            System.Windows.Forms.Label labelTSBPaymentRating;
             System.Windows.Forms.Label label140;
             System.Windows.Forms.Label label132;
             System.Windows.Forms.Label label151;
@@ -264,9 +262,6 @@
             this.textBox13 = new System.Windows.Forms.TextBox();
             this.textBox14 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBoxTSBPaymentRating = new System.Windows.Forms.TextBox();
-            this.checkBoxTSBOverride = new System.Windows.Forms.CheckBox();
-            this.txtTSBCommentCode = new System.Windows.Forms.ListBox();
             this.specialCommentCodesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.txtPaidThrough = new System.Windows.Forms.MaskedTextBox();
             this.textBoxPaidInterest = new System.Windows.Forms.TextBox();
@@ -566,13 +561,11 @@
             label40 = new System.Windows.Forms.Label();
             label41 = new System.Windows.Forms.Label();
             label44 = new System.Windows.Forms.Label();
-            label48 = new System.Windows.Forms.Label();
             label46 = new System.Windows.Forms.Label();
             label47 = new System.Windows.Forms.Label();
             label49 = new System.Windows.Forms.Label();
             label50 = new System.Windows.Forms.Label();
             label21 = new System.Windows.Forms.Label();
-            labelTSBPaymentRating = new System.Windows.Forms.Label();
             label140 = new System.Windows.Forms.Label();
             label132 = new System.Windows.Forms.Label();
             label151 = new System.Windows.Forms.Label();
@@ -1467,16 +1460,6 @@
             label44.Text = "CREDIT AVAILABLE:";
             label44.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // label48
-            // 
-            label48.AutoSize = true;
-            label48.Location = new System.Drawing.Point(134, 262);
-            label48.Name = "label48";
-            label48.Size = new System.Drawing.Size(59, 15);
-            label48.TabIndex = 164;
-            label48.Text = "CB CODE:";
-            label48.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
             // label46
             // 
             label46.AutoSize = true;
@@ -1525,16 +1508,6 @@
             label21.Size = new System.Drawing.Size(32, 15);
             label21.TabIndex = 93;
             label21.Text = "APR:";
-            // 
-            // labelTSBPaymentRating
-            // 
-            labelTSBPaymentRating.AutoSize = true;
-            labelTSBPaymentRating.Location = new System.Drawing.Point(849, 234);
-            labelTSBPaymentRating.Name = "labelTSBPaymentRating";
-            labelTSBPaymentRating.Size = new System.Drawing.Size(117, 15);
-            labelTSBPaymentRating.TabIndex = 101;
-            labelTSBPaymentRating.Text = "TSB Payment Rating:";
-            labelTSBPaymentRating.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label140
             // 
@@ -2227,7 +2200,7 @@
             this.txtDOB.Name = "txtDOB";
             this.txtDOB.Size = new System.Drawing.Size(100, 23);
             this.txtDOB.TabIndex = 94;
-            this.txtDOB.Value = new System.DateTime(2020, 9, 26, 0, 0, 0, 0);
+            this.txtDOB.Value = new System.DateTime(2020, 9, 28, 0, 0, 0, 0);
             this.txtDOB.ValueChanged += new System.EventHandler(this.txtDOB_ValueChanged);
             this.txtDOB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
@@ -3086,14 +3059,9 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBoxTSBPaymentRating);
-            this.groupBox1.Controls.Add(labelTSBPaymentRating);
-            this.groupBox1.Controls.Add(this.checkBoxTSBOverride);
-            this.groupBox1.Controls.Add(this.txtTSBCommentCode);
             this.groupBox1.Controls.Add(this.txtPaidThrough);
             this.groupBox1.Controls.Add(this.textBoxPaidInterest);
             this.groupBox1.Controls.Add(label50);
-            this.groupBox1.Controls.Add(label48);
             this.groupBox1.Controls.Add(this.textBoxCreditAvailable);
             this.groupBox1.Controls.Add(label44);
             this.groupBox1.Controls.Add(this.textBoxControlDateYY);
@@ -3145,48 +3113,6 @@
             this.groupBox1.Size = new System.Drawing.Size(1084, 352);
             this.groupBox1.TabIndex = 128;
             this.groupBox1.TabStop = false;
-            // 
-            // textBoxTSBPaymentRating
-            // 
-            this.textBoxTSBPaymentRating.AllowDrop = true;
-            this.textBoxTSBPaymentRating.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBoxTSBPaymentRating.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "TSBPaymentRating", true));
-            this.textBoxTSBPaymentRating.Location = new System.Drawing.Point(972, 229);
-            this.textBoxTSBPaymentRating.MaxLength = 1;
-            this.textBoxTSBPaymentRating.Name = "textBoxTSBPaymentRating";
-            this.textBoxTSBPaymentRating.Size = new System.Drawing.Size(31, 23);
-            this.textBoxTSBPaymentRating.TabIndex = 101;
-            this.textBoxTSBPaymentRating.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBoxTSBPaymentRating.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
-            // 
-            // checkBoxTSBOverride
-            // 
-            this.checkBoxTSBOverride.AutoSize = true;
-            this.checkBoxTSBOverride.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.cUSTOMERBindingSource, "TSBCodeOverride", true));
-            this.checkBoxTSBOverride.Location = new System.Drawing.Point(657, 233);
-            this.checkBoxTSBOverride.Name = "checkBoxTSBOverride";
-            this.checkBoxTSBOverride.Size = new System.Drawing.Size(186, 19);
-            this.checkBoxTSBOverride.TabIndex = 100;
-            this.checkBoxTSBOverride.Text = "Override TSB Payment Rating?";
-            this.checkBoxTSBOverride.UseVisualStyleBackColor = true;
-            this.checkBoxTSBOverride.CheckedChanged += new System.EventHandler(this.checkBoxTSBOverride_CheckedChanged);
-            // 
-            // txtTSBCommentCode
-            // 
-            this.txtTSBCommentCode.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.cUSTOMERBindingSource, "CUSTOMER_TSB_COMMENT_CODE", true));
-            this.txtTSBCommentCode.DataSource = this.specialCommentCodesBindingSource;
-            this.txtTSBCommentCode.DisplayMember = "Description";
-            this.txtTSBCommentCode.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.txtTSBCommentCode.FormattingEnabled = true;
-            this.txtTSBCommentCode.ItemHeight = 63;
-            this.txtTSBCommentCode.Location = new System.Drawing.Point(213, 256);
-            this.txtTSBCommentCode.Name = "txtTSBCommentCode";
-            this.txtTSBCommentCode.Size = new System.Drawing.Size(863, 88);
-            this.txtTSBCommentCode.TabIndex = 102;
-            this.txtTSBCommentCode.ValueMember = "Code";
-            this.txtTSBCommentCode.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.txtTSBCommentCode_DrawItem);
-            this.txtTSBCommentCode.SelectedValueChanged += new System.EventHandler(this.txtTSBCommentCode_SelectedValueChanged);
-            this.txtTSBCommentCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // specialCommentCodesBindingSource
             // 
@@ -4381,7 +4307,7 @@
             this.nullableDateTimePickerFollowUpDate.NullText = "          ";
             this.nullableDateTimePickerFollowUpDate.Size = new System.Drawing.Size(119, 25);
             this.nullableDateTimePickerFollowUpDate.TabIndex = 24;
-            this.nullableDateTimePickerFollowUpDate.Value = new System.DateTime(2020, 9, 26, 0, 0, 0, 0);
+            this.nullableDateTimePickerFollowUpDate.Value = new System.DateTime(2020, 9, 28, 0, 0, 0, 0);
             this.nullableDateTimePickerFollowUpDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // nullableDateTimePickerDateClosed
@@ -4393,7 +4319,7 @@
             this.nullableDateTimePickerDateClosed.NullText = "          ";
             this.nullableDateTimePickerDateClosed.Size = new System.Drawing.Size(119, 25);
             this.nullableDateTimePickerDateClosed.TabIndex = 23;
-            this.nullableDateTimePickerDateClosed.Value = new System.DateTime(2020, 9, 26, 0, 0, 0, 0);
+            this.nullableDateTimePickerDateClosed.Value = new System.DateTime(2020, 9, 28, 0, 0, 0, 0);
             // 
             // nullableDateTimePickerDateOpened
             // 
@@ -4404,7 +4330,7 @@
             this.nullableDateTimePickerDateOpened.NullText = "          ";
             this.nullableDateTimePickerDateOpened.Size = new System.Drawing.Size(119, 25);
             this.nullableDateTimePickerDateOpened.TabIndex = 22;
-            this.nullableDateTimePickerDateOpened.Value = new System.DateTime(2020, 9, 26, 0, 0, 0, 0);
+            this.nullableDateTimePickerDateOpened.Value = new System.DateTime(2020, 9, 28, 0, 0, 0, 0);
             // 
             // nullableDateTimePickerDateofAccountInformation
             // 
@@ -4415,7 +4341,7 @@
             this.nullableDateTimePickerDateofAccountInformation.NullText = "          ";
             this.nullableDateTimePickerDateofAccountInformation.Size = new System.Drawing.Size(119, 25);
             this.nullableDateTimePickerDateofAccountInformation.TabIndex = 21;
-            this.nullableDateTimePickerDateofAccountInformation.Value = new System.DateTime(2020, 9, 26, 0, 0, 0, 0);
+            this.nullableDateTimePickerDateofAccountInformation.Value = new System.DateTime(2020, 9, 28, 0, 0, 0, 0);
             // 
             // nullableDateTimePickerDateofFirstDelinquency
             // 
@@ -4426,7 +4352,7 @@
             this.nullableDateTimePickerDateofFirstDelinquency.NullText = "          ";
             this.nullableDateTimePickerDateofFirstDelinquency.Size = new System.Drawing.Size(119, 25);
             this.nullableDateTimePickerDateofFirstDelinquency.TabIndex = 20;
-            this.nullableDateTimePickerDateofFirstDelinquency.Value = new System.DateTime(2020, 9, 26, 0, 0, 0, 0);
+            this.nullableDateTimePickerDateofFirstDelinquency.Value = new System.DateTime(2020, 9, 28, 0, 0, 0, 0);
             // 
             // nullableDateTimePickerDateofLastPayment
             // 
@@ -4437,7 +4363,7 @@
             this.nullableDateTimePickerDateofLastPayment.NullText = "          ";
             this.nullableDateTimePickerDateofLastPayment.Size = new System.Drawing.Size(119, 25);
             this.nullableDateTimePickerDateofLastPayment.TabIndex = 19;
-            this.nullableDateTimePickerDateofLastPayment.Value = new System.DateTime(2020, 9, 26, 0, 0, 0, 0);
+            this.nullableDateTimePickerDateofLastPayment.Value = new System.DateTime(2020, 9, 28, 0, 0, 0, 0);
             // 
             // label135
             // 
@@ -5710,11 +5636,8 @@
         private System.Windows.Forms.MaskedTextBox txtPaidThrough;
         private System.Windows.Forms.Label label103;
         private System.Windows.Forms.TextBox textBoxMonthlyPayment;
-        private System.Windows.Forms.ListBox txtTSBCommentCode;
         private System.Windows.Forms.BindingSource specialCommentCodesBindingSource;
         private IACDataSetTableAdapters.SpecialCommentCodesTableAdapter specialCommentCodesTableAdapter;
-        private System.Windows.Forms.TextBox textBoxTSBPaymentRating;
-        private System.Windows.Forms.CheckBox checkBoxTSBOverride;
         private ProManApp.NullableDateTimePicker txtDOB;
         private System.Windows.Forms.TabPage tabTSB;
         private ColorTextBox txtContractStatus;
