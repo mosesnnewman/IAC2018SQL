@@ -94,7 +94,6 @@
             System.Windows.Forms.Label label32;
             System.Windows.Forms.Label label42;
             System.Windows.Forms.Label label43;
-            System.Windows.Forms.Label label45;
             System.Windows.Forms.Label label34;
             System.Windows.Forms.Label label71;
             System.Windows.Forms.Label label24;
@@ -262,7 +261,6 @@
             this.textBox13 = new System.Windows.Forms.TextBox();
             this.textBox14 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.specialCommentCodesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.txtPaidThrough = new System.Windows.Forms.MaskedTextBox();
             this.textBoxPaidInterest = new System.Windows.Forms.TextBox();
             this.textBoxCreditAvailable = new System.Windows.Forms.TextBox();
@@ -287,7 +285,6 @@
             this.textBoxFinanceBucket2 = new System.Windows.Forms.TextBox();
             this.textBoxFinanceBucket1 = new System.Windows.Forms.TextBox();
             this.txtLastPaymentMade = new System.Windows.Forms.TextBox();
-            this.txtCreditBureau = new System.Windows.Forms.TextBox();
             this.txtCreditLimit = new System.Windows.Forms.TextBox();
             this.txtContractStatus = new IAC2018SQL.ColorTextBox();
             this.txtCustomerBalance = new System.Windows.Forms.TextBox();
@@ -413,6 +410,7 @@
             this.AccountTypesbindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label143 = new System.Windows.Forms.Label();
             this.comboBoxSpecialComment = new System.Windows.Forms.ComboBox();
+            this.specialCommentCodesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label142 = new System.Windows.Forms.Label();
             this.comboBoxPaymentRating = new System.Windows.Forms.ComboBox();
             this.PaymentRatingsbindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -538,7 +536,6 @@
             label32 = new System.Windows.Forms.Label();
             label42 = new System.Windows.Forms.Label();
             label43 = new System.Windows.Forms.Label();
-            label45 = new System.Windows.Forms.Label();
             label34 = new System.Windows.Forms.Label();
             label71 = new System.Windows.Forms.Label();
             label24 = new System.Windows.Forms.Label();
@@ -593,7 +590,6 @@
             this.tabCustInfo2.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.specialCommentCodesBindingSource)).BeginInit();
             this.tabCosigner.SuspendLayout();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ALTNAMEbindingSource)).BeginInit();
@@ -624,6 +620,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ComplianceConditionsbindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ConsumerIndicatorsbindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AccountTypesbindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.specialCommentCodesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PaymentRatingsbindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AccountStatusesbindingSource)).BeginInit();
             this.groupBoxDollars.SuspendLayout();
@@ -1234,16 +1231,6 @@
             label43.TabIndex = 116;
             label43.Text = "CREDIT LIMIT:";
             label43.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // label45
-            // 
-            label45.AutoSize = true;
-            label45.Location = new System.Drawing.Point(97, 94);
-            label45.Name = "label45";
-            label45.Size = new System.Drawing.Size(96, 15);
-            label45.TabIndex = 120;
-            label45.Text = "CREDIT BUREAU:";
-            label45.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label34
             // 
@@ -3098,8 +3085,6 @@
             this.groupBox1.Controls.Add(label30);
             this.groupBox1.Controls.Add(label34);
             this.groupBox1.Controls.Add(this.txtLastPaymentMade);
-            this.groupBox1.Controls.Add(this.txtCreditBureau);
-            this.groupBox1.Controls.Add(label45);
             this.groupBox1.Controls.Add(this.txtCreditLimit);
             this.groupBox1.Controls.Add(label43);
             this.groupBox1.Controls.Add(this.txtContractStatus);
@@ -3113,11 +3098,6 @@
             this.groupBox1.Size = new System.Drawing.Size(1084, 352);
             this.groupBox1.TabIndex = 128;
             this.groupBox1.TabStop = false;
-            // 
-            // specialCommentCodesBindingSource
-            // 
-            this.specialCommentCodesBindingSource.DataMember = "SpecialCommentCodes";
-            this.specialCommentCodesBindingSource.DataSource = this.iACDataSet;
             // 
             // txtPaidThrough
             // 
@@ -3388,17 +3368,6 @@
             this.txtLastPaymentMade.TabIndex = 70;
             this.txtLastPaymentMade.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtLastPaymentMade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
-            // 
-            // txtCreditBureau
-            // 
-            this.txtCreditBureau.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_CREDIT_BUREAU", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "C2"));
-            this.txtCreditBureau.Enabled = false;
-            this.txtCreditBureau.Location = new System.Drawing.Point(213, 86);
-            this.txtCreditBureau.Name = "txtCreditBureau";
-            this.txtCreditBureau.Size = new System.Drawing.Size(25, 23);
-            this.txtCreditBureau.TabIndex = 76;
-            this.txtCreditBureau.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtCreditBureau.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // txtCreditLimit
             // 
@@ -4809,6 +4778,11 @@
             this.comboBoxSpecialComment.SelectedValueChanged += new System.EventHandler(this.comboBoxSpecialComment_SelectedValueChanged);
             this.comboBoxSpecialComment.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
+            // specialCommentCodesBindingSource
+            // 
+            this.specialCommentCodesBindingSource.DataMember = "SpecialCommentCodes";
+            this.specialCommentCodesBindingSource.DataSource = this.iACDataSet;
+            // 
             // label142
             // 
             this.label142.AutoSize = true;
@@ -5333,7 +5307,6 @@
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.specialCommentCodesBindingSource)).EndInit();
             this.tabCosigner.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
@@ -5372,6 +5345,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ComplianceConditionsbindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ConsumerIndicatorsbindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AccountTypesbindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.specialCommentCodesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PaymentRatingsbindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AccountStatusesbindingSource)).EndInit();
             this.groupBoxDollars.ResumeLayout(false);
@@ -5510,7 +5484,6 @@
         private IACDataSetTableAdapters.OPNDEALRTableAdapter oPNDEALRTableAdapter;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtLastPaymentMade;
-        private System.Windows.Forms.TextBox txtCreditBureau;
         private System.Windows.Forms.TextBox txtCreditLimit;
         private System.Windows.Forms.TextBox txtCustomerBalance;
         private System.Windows.Forms.BindingSource OPNDLRLISTBYNUMbindingSource;

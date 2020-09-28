@@ -268,8 +268,8 @@ namespace IAC2018SQL
             textBoxPaidInterest.Enabled = false;
             txtContractStatus.Enabled = false;
             textBoxInterestRate.Enabled = false;
-            txtCreditBureau.Enabled = false;
-            // Moses Newman 09/28/2020 Remove old TSB Comment Code ListBox
+            // Moses Newman 09/28/2020 Remove old TSB Crap
+            //txtCreditBureau.Enabled = false;
             //txtTSBCommentCode.Enabled = false;
             txtCreditLimit.Enabled = false;
             textBoxControlDateMM.Enabled = false;
@@ -459,8 +459,8 @@ namespace IAC2018SQL
             txtPaidThrough.Enabled = true;
             txtContractStatus.Enabled = true;
             textBoxInterestRate.Enabled = true;
-            txtCreditBureau.Enabled = true;
-            // Moses Newman 09/28/2020 Remove old TSB Comment Code ListBox
+            // Moses Newman 09/28/2020 Remove old TSB Crap
+            //txtCreditBureau.Enabled = true;
             //txtTSBCommentCode.Enabled = true;
             txtCreditLimit.Enabled = true;
             textBoxControlDateMM.Enabled = true;
@@ -951,9 +951,9 @@ namespace IAC2018SQL
                     txtRegularPay.Enabled = true;
                     txtCASH.Enabled = true;
                     txtPaidThrough.Enabled = true;
-                    txtCreditBureau.Enabled = true;
                     txtCreditLimit.Enabled = true;
                     // Moses Newman 09/28/2020 remove old TSB Crap
+                    //txtCreditBureau.Enabled = true;
                     //checkBoxTSBOverride.Enabled = true;
                     //textBoxTSBPaymentRating.Enabled = true;
 
