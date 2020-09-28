@@ -269,7 +269,8 @@ namespace IAC2018SQL
             txtContractStatus.Enabled = false;
             textBoxInterestRate.Enabled = false;
             txtCreditBureau.Enabled = false;
-            txtTSBCommentCode.Enabled = false;
+            // Moses Newman 09/28/2020 Remove old TSB Comment Code ListBox
+            //txtTSBCommentCode.Enabled = false;
             txtCreditLimit.Enabled = false;
             textBoxControlDateMM.Enabled = false;
             textBoxControlDateYY.Enabled = false;
@@ -295,8 +296,9 @@ namespace IAC2018SQL
             toolStripButtonEdit.Enabled = false;
             txtNoOfPaymentsMade.Enabled = false;
             txtCASH.Enabled = false;
-            checkBoxTSBOverride.Enabled = false;
-            textBoxTSBPaymentRating.Enabled = false;
+            // Moses Newman 09/28/2020 remove old TSB Crap
+            //checkBoxTSBOverride.Enabled = false;
+            //textBoxTSBPaymentRating.Enabled = false;
           
 
 
@@ -458,7 +460,8 @@ namespace IAC2018SQL
             txtContractStatus.Enabled = true;
             textBoxInterestRate.Enabled = true;
             txtCreditBureau.Enabled = true;
-            txtTSBCommentCode.Enabled = true;
+            // Moses Newman 09/28/2020 Remove old TSB Comment Code ListBox
+            //txtTSBCommentCode.Enabled = true;
             txtCreditLimit.Enabled = true;
             textBoxControlDateMM.Enabled = true;
             textBoxControlDateYY.Enabled = true;
@@ -482,8 +485,9 @@ namespace IAC2018SQL
             textBoxStatus2.Enabled = true;
             textBoxRegAmt2.Enabled = true;
             toolStripButtonEdit.Enabled = false;
-            checkBoxTSBOverride.Enabled = true;
-            textBoxTSBPaymentRating.Enabled = true;
+            // Moses Newman 09/28/2020 remove old TSB Crap
+            //checkBoxTSBOverride.Enabled = true;
+            //textBoxTSBPaymentRating.Enabled = true;
 
 
             //Cosigner Info
@@ -949,8 +953,9 @@ namespace IAC2018SQL
                     txtPaidThrough.Enabled = true;
                     txtCreditBureau.Enabled = true;
                     txtCreditLimit.Enabled = true;
-                    checkBoxTSBOverride.Enabled = true;
-                    textBoxTSBPaymentRating.Enabled = true;
+                    // Moses Newman 09/28/2020 remove old TSB Crap
+                    //checkBoxTSBOverride.Enabled = true;
+                    //textBoxTSBPaymentRating.Enabled = true;
 
                     // Alternate Address / Cosigner Info
                     cUSTOMER_COS_NAMETextBox.Enabled = true;
@@ -2077,7 +2082,9 @@ namespace IAC2018SQL
             if (lbAddFlag || lbEdit)
                 toolStripButtonSave.Enabled = true;
         }
-        
+
+        // Moses Newman 09/28/2020 Remove old TSB Comment Code ListBox
+        /*
         // Moses Newman 06/15/2015 User Draw TSB listbox so that it can be 3 lines wide PER ITEM!
         private void txtTSBCommentCode_DrawItem(object sender, DrawItemEventArgs e)
         {
@@ -2089,7 +2096,7 @@ namespace IAC2018SQL
                 e.Graphics.DrawString(TSBDataRow["Description"].ToString(), e.Font, new SolidBrush(e.ForeColor), e.Bounds);
             else
                 e.Graphics.DrawString(TSBDataRow["Description"].ToString(), e.Font, SystemBrushes.GrayText, e.Bounds);
-        }
+        }*/
 
         private void checkBoxTSBOverride_CheckedChanged(object sender, EventArgs e)
         {
