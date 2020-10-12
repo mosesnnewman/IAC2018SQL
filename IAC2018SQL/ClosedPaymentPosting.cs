@@ -689,6 +689,8 @@ namespace IAC2018SQL
             PAYMENTDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].SetField<Nullable<Int32>>("ISFSeqNo", PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<Nullable<Int32>>("ISFSeqNo"));
             PAYMENTDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].SetField<String>("ISFPaymentType", PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<String>("ISFPaymentType"));
             PAYMENTDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].SetField<String>("ISFPaymentCode", PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<String>("ISFPaymentCode"));
+            // Moses Newman 10/10/2020
+            PAYMENTDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].SetField<Nullable<Int32>>("ISFID", PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<Nullable<Int32>>("ISFID"));
             PAYMENTDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].SetField<Int32>("CUSTHIST_DATE_SEQ", lnSeq);
             // Moses Newman 03/15/2018 Added TransactionDate, Fee, FromIVR
             if (PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<Nullable<DateTime>>("TransactionDate") == null)
@@ -1575,6 +1577,9 @@ namespace IAC2018SQL
                     {
                         CUSTHISTTableAdapter.UnflagLastPaidRecord(CUSTOMERDataSet.CUSTHIST.Rows[i].Field<String>("CUSTHIST_NO"));
                     }
+                    // Moses Newman 10/10/2020 set bounced check IsINSUF flag
+                    if (CUSTOMERDataSet.CUSTHIST.Rows[i].Field<String>("CUSTHIST_PAYMENT_TYPE") == "I")
+                        CUSTHISTTableAdapter.ClosedCustomerHistorySetISINSUF(CUSTOMERDataSet.CUSTHIST.Rows[i].Field<Int32>("ISFID"));
                 }
                 CUSTHISTTableAdapter.Update(CUSTOMERDataSet.CUSTHIST);
             }
