@@ -1102,6 +1102,8 @@ namespace IAC2018SQL
                 ClosedPaymentiacDataSet.PAYMENT.Rows[PaymentbindingSource.Position].SetField<Int32>("ISFSeqNo", frmSelectCheckInst.ISFSeqNo);
                 ClosedPaymentiacDataSet.PAYMENT.Rows[PaymentbindingSource.Position].SetField<String>("ISFPaymentType", frmSelectCheckInst.ISFPaymentType);
                 ClosedPaymentiacDataSet.PAYMENT.Rows[PaymentbindingSource.Position].SetField<String>("ISFPaymentCode", frmSelectCheckInst.ISFPaymentCode);
+                // Moses Newman 10/10/2020
+                ClosedPaymentiacDataSet.PAYMENT.Rows[PaymentbindingSource.Position].SetField<Int32>("ISFID", frmSelectCheckInst.ISFID);
                 PaymentbindingSource.EndEdit();
             }
             else

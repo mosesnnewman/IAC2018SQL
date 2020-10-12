@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IAC2018SQL.IACDataSetTableAdapters;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,7 +16,7 @@ namespace IAC2018SQL
         private DateTime _ISFDate;
         private Boolean _IsClosed,_IsSimple,_IsNotCheck = false,_DoNotShow = false;
         private Decimal _PaidInt, _LateCharge;
-        private Int32 _ISFSeqNo;
+        private Int32 _ISFSeqNo,_ISFID;
 
         public String lsCustomer
         {
@@ -52,6 +53,13 @@ namespace IAC2018SQL
         {
             get { return _IsNotCheck; }
             set { _IsNotCheck = IsNotCheck; }
+        }
+
+        // Moses Newman 10/09/2020 Add IsINSUF
+        public Int32 ISFID
+        {
+            get { return _ISFID; }
+            set { _ISFID = ISFID; }
         }
 
         public Boolean DoNotShow
@@ -162,6 +170,8 @@ namespace IAC2018SQL
                     _ISFSeqNo = iACDataSet.CUSTHIST.Rows[cUSTHISTDataGridView.SelectedRows[0].Index].Field<Int32>("CUSTHIST_DATE_SEQ");
                     _ISFPaymentType = iACDataSet.CUSTHIST.Rows[cUSTHISTDataGridView.SelectedRows[0].Index].Field<String>("CUSTHIST_PAYMENT_TYPE");
                     _ISFPaymentCode = iACDataSet.CUSTHIST.Rows[cUSTHISTDataGridView.SelectedRows[0].Index].Field<String>("CUSTHIST_PAYMENT_CODE");
+                    // Moses Newman 10/09/2020 
+                    _ISFID = iACDataSet.CUSTHIST.Rows[cUSTHISTDataGridView.SelectedRows[0].Index].Field<Int32>("ID");                    
                     Close();
                 }
         }

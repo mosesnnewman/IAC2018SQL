@@ -159,12 +159,23 @@ namespace IAC2018SQL
                 // Moses Newman 03/20/2018 check against passed PAYMENT record in todays payments for that account and determine what order
                 // it is in the payments for today (if more than one).  Only add up to and including that payment!
                 DataRow[] result = PAYMENTDT.Select("SeqNo = " + tdsAmortDT.PAYMENT.Rows[tnPaymentPos].Field<Int32>("SeqNo").ToString().Trim());
-                int lnLastRec = 0;
+                int lnLastRec = 0,FindRow;
                 if(result.Length > 0)
                     lnLastRec = PAYMENTDT.Rows.IndexOf(result[0]);
                 lnLastRec += 1;
                 for (int pcnt = 0; pcnt < lnLastRec; pcnt++)
                 {
+					// Moses Newman 10/11/2020 if it is an INSUF don't put it in the PayStream and remove the corresponding payment from the paystream!
+					if(PAYMENTDT.Rows[pcnt].Field<String>("PAYMENT_TYPE") == "I")
+                    {
+						FindRow = CUSTHISTBindingSource.Find("ID", PAYMENTDT.Rows[pcnt].Field<Int32>("ISFID"));
+						if (FindRow > -1)
+						{
+							CUSTHISTBindingSource.RemoveAt(FindRow);
+							CUSTHISTBindingSource.EndEdit();
+						}
+						continue;
+					}
                     CUSTHISTBindingSource.AddNew();
                     CUSTHISTBindingSource.EndEdit();
                     DTPayStream.Rows[CUSTHISTBindingSource.Position].SetField<String>("CUSTHIST_NO", tcCustomer);
@@ -323,8 +334,9 @@ namespace IAC2018SQL
 				tdPayoffDate = tdPayoffDate.AddDays(-1);
 			}
             // Moses Newman 07/13/2018
-            if (tdPayoffDate < DTPayStream.Rows[DTPayStream.Rows.Count - 1].Field<DateTime>("CUSTHIST_PAY_DATE"))
-                tdPayoffDate = DTPayStream.Rows[DTPayStream.Rows.Count - 1].Field<DateTime>("CUSTHIST_PAY_DATE");
+			if(DTPayStream.Rows.Count > 0) // Moses Newman 10/11/2020
+				if (tdPayoffDate < DTPayStream.Rows[DTPayStream.Rows.Count - 1].Field<DateTime>("CUSTHIST_PAY_DATE"))
+					tdPayoffDate = DTPayStream.Rows[DTPayStream.Rows.Count - 1].Field<DateTime>("CUSTHIST_PAY_DATE");
             cfmEvent.EventDate = tdPayoffDate;
 			cfmEvent.EventAmount = TValueDefines.TV_UNKNOWN_AMOUNT;
 			cfmEvent.EventNumber = 1;
