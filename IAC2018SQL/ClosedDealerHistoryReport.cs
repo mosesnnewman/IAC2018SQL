@@ -53,7 +53,7 @@ namespace IAC2018SQL
             String lsDealerNum = comboBoxDealer.Text.TrimEnd().TrimStart() + "%";
             dealhistTableAdapter.FillByDealerDateRange(iACDataSet.DEALHIST, lsDealerNum, (DateTime)nullableDateTimePickerStartDate.Value, (DateTime)nullableDateTimePickerEndDate.Value);
             // Moses Newman 05/3/2014 get rid of SQL Pass Through!
-            dealerTableAdapter.FillByDateRange(iACDataSet.DEALER, lsDealerNum, (DateTime)nullableDateTimePickerStartDate.Value, (DateTime)nullableDateTimePickerEndDate.Value);
+            dealerTableAdapter.FillByDateRange(iACDataSet.DEALER, lsDealerNum, ((DateTime)nullableDateTimePickerStartDate.Value).Date, ((DateTime)nullableDateTimePickerEndDate.Value).Date);
             if (iACDataSet.DEALHIST.Rows.Count == 0)
                 MessageBox.Show("*** Sorry there are no DEALHIST records for the DATES and /or DEALER you selected!!! ***");
             else

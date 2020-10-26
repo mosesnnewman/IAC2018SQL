@@ -4566,6 +4566,14 @@ namespace IAC2018SQL {
             
             private global::System.Data.DataColumn columnStatus;
             
+            private global::System.Data.DataColumn columnCosignerCreditScore1;
+            
+            private global::System.Data.DataColumn columnMileage1;
+            
+            private global::System.Data.DataColumn columnTitleReceived;
+            
+            private global::System.Data.DataColumn columnTitleDateReceived;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public CustomerExtractDataTable() {
@@ -5937,6 +5945,38 @@ namespace IAC2018SQL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn CosignerCreditScore1Column {
+                get {
+                    return this.columnCosignerCreditScore1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Mileage1Column {
+                get {
+                    return this.columnMileage1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn TitleReceivedColumn {
+                get {
+                    return this.columnTitleReceived;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn TitleDateReceivedColumn {
+                get {
+                    return this.columnTitleDateReceived;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -6138,7 +6178,11 @@ namespace IAC2018SQL {
                         string VEHICLE_INS_AGENT, 
                         string VEHICLE_AGENT_PHONE, 
                         decimal TotalPayments, 
-                        decimal Status) {
+                        decimal Status, 
+                        int CosignerCreditScore1, 
+                        int Mileage1, 
+                        bool TitleReceived, 
+                        System.DateTime TitleDateReceived) {
                 CustomerExtractRow rowCustomerExtractRow = ((CustomerExtractRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -6307,7 +6351,11 @@ namespace IAC2018SQL {
                         VEHICLE_INS_AGENT,
                         VEHICLE_AGENT_PHONE,
                         TotalPayments,
-                        Status};
+                        Status,
+                        CosignerCreditScore1,
+                        Mileage1,
+                        TitleReceived,
+                        TitleDateReceived};
                 rowCustomerExtractRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowCustomerExtractRow);
                 return rowCustomerExtractRow;
@@ -6504,6 +6552,10 @@ namespace IAC2018SQL {
                 this.columnVEHICLE_AGENT_PHONE = base.Columns["VEHICLE_AGENT_PHONE"];
                 this.columnTotalPayments = base.Columns["TotalPayments"];
                 this.columnStatus = base.Columns["Status"];
+                this.columnCosignerCreditScore1 = base.Columns["CosignerCreditScore1"];
+                this.columnMileage1 = base.Columns["Mileage1"];
+                this.columnTitleReceived = base.Columns["TitleReceived"];
+                this.columnTitleDateReceived = base.Columns["TitleDateReceived"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6843,6 +6895,14 @@ namespace IAC2018SQL {
                 base.Columns.Add(this.columnTotalPayments);
                 this.columnStatus = new global::System.Data.DataColumn("Status", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnStatus);
+                this.columnCosignerCreditScore1 = new global::System.Data.DataColumn("CosignerCreditScore1", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCosignerCreditScore1);
+                this.columnMileage1 = new global::System.Data.DataColumn("Mileage1", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMileage1);
+                this.columnTitleReceived = new global::System.Data.DataColumn("TitleReceived", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTitleReceived);
+                this.columnTitleDateReceived = new global::System.Data.DataColumn("TitleDateReceived", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTitleDateReceived);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AutoIncrement = true;
@@ -6940,6 +7000,9 @@ namespace IAC2018SQL {
                 this.columnVEHICLE_INS_AGENT.MaxLength = 15;
                 this.columnVEHICLE_AGENT_PHONE.MaxLength = 10;
                 this.columnTotalPayments.DefaultValue = ((decimal)(0m));
+                this.columnCosignerCreditScore1.Caption = "CosignerCreditScore";
+                this.columnMileage1.Caption = "Mileage";
+                this.columnTitleReceived.DefaultValue = ((bool)(false));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -12207,6 +12270,71 @@ namespace IAC2018SQL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int CosignerCreditScore1 {
+                get {
+                    try {
+                        return ((int)(this[this.tableCustomerExtract.CosignerCreditScore1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CosignerCreditScore1\' in table \'CustomerExtract\' is DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tableCustomerExtract.CosignerCreditScore1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int Mileage1 {
+                get {
+                    try {
+                        return ((int)(this[this.tableCustomerExtract.Mileage1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Mileage1\' in table \'CustomerExtract\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCustomerExtract.Mileage1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool TitleReceived {
+                get {
+                    try {
+                        return ((bool)(this[this.tableCustomerExtract.TitleReceivedColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TitleReceived\' in table \'CustomerExtract\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCustomerExtract.TitleReceivedColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime TitleDateReceived {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableCustomerExtract.TitleDateReceivedColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TitleDateReceived\' in table \'CustomerExtract\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCustomerExtract.TitleDateReceivedColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsCUSTOMER_FIRST_NAMENull() {
                 return this.IsNull(this.tableCustomerExtract.CUSTOMER_FIRST_NAMEColumn);
             }
@@ -14171,6 +14299,54 @@ namespace IAC2018SQL {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetStatusNull() {
                 this[this.tableCustomerExtract.StatusColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsCosignerCreditScore1Null() {
+                return this.IsNull(this.tableCustomerExtract.CosignerCreditScore1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetCosignerCreditScore1Null() {
+                this[this.tableCustomerExtract.CosignerCreditScore1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsMileage1Null() {
+                return this.IsNull(this.tableCustomerExtract.Mileage1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetMileage1Null() {
+                this[this.tableCustomerExtract.Mileage1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsTitleReceivedNull() {
+                return this.IsNull(this.tableCustomerExtract.TitleReceivedColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetTitleReceivedNull() {
+                this[this.tableCustomerExtract.TitleReceivedColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsTitleDateReceivedNull() {
+                return this.IsNull(this.tableCustomerExtract.TitleDateReceivedColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetTitleDateReceivedNull() {
+                this[this.tableCustomerExtract.TitleDateReceivedColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -18614,6 +18790,11 @@ namespace IAC2018SQL.PaymentDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("VEHICLE_AGENT_PHONE", "VEHICLE_AGENT_PHONE");
             tableMapping.ColumnMappings.Add("TotalPayments", "TotalPayments");
             tableMapping.ColumnMappings.Add("Status", "Status");
+            tableMapping.ColumnMappings.Add("Tier", "Tier");
+            tableMapping.ColumnMappings.Add("CosignerCreditScore", "CosignerCreditScore1");
+            tableMapping.ColumnMappings.Add("Mileage", "Mileage1");
+            tableMapping.ColumnMappings.Add("TitleReceived", "TitleReceived");
+            tableMapping.ColumnMappings.Add("TitleDateReceived", "TitleDateReceived");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -18792,6 +18973,8 @@ namespace IAC2018SQL.PaymentDataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PaymentDate", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, "PaymentDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TotalPayments", global::System.Data.SqlDbType.Money, 8, global::System.Data.ParameterDirection.Input, 19, 4, "TotalPayments", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Status", global::System.Data.SqlDbType.Money, 8, global::System.Data.ParameterDirection.Input, 19, 4, "Status", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TitleReceived", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 1, 0, "TitleReceived", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TitleDateReceived", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, "TitleDateReceived", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = "dbo.CustomerExtractUpdate";
@@ -18964,6 +19147,8 @@ namespace IAC2018SQL.PaymentDataSetTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PaymentDate", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, "PaymentDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TotalPayments", global::System.Data.SqlDbType.Money, 8, global::System.Data.ParameterDirection.Input, 19, 4, "TotalPayments", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Status", global::System.Data.SqlDbType.Money, 8, global::System.Data.ParameterDirection.Input, 19, 4, "Status", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TitleReceived", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 1, 0, "TitleReceived", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TitleDateReceived", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, "TitleDateReceived", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -19362,7 +19547,9 @@ namespace IAC2018SQL.PaymentDataSetTableAdapters {
                     string PREVIOUS_PAID_THRU, 
                     global::System.Nullable<global::System.DateTime> PaymentDate, 
                     global::System.Nullable<decimal> TotalPayments, 
-                    global::System.Nullable<decimal> Status) {
+                    global::System.Nullable<decimal> Status, 
+                    global::System.Nullable<bool> TitleReceived, 
+                    global::System.Nullable<global::System.DateTime> TitleDateReceived) {
             if ((CUSTOMER_NO == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
@@ -20359,6 +20546,18 @@ namespace IAC2018SQL.PaymentDataSetTableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[166].Value = global::System.DBNull.Value;
             }
+            if ((TitleReceived.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[167].Value = ((bool)(TitleReceived.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[167].Value = global::System.DBNull.Value;
+            }
+            if ((TitleDateReceived.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[168].Value = ((System.DateTime)(TitleDateReceived.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[168].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -20546,7 +20745,9 @@ namespace IAC2018SQL.PaymentDataSetTableAdapters {
                     string PREVIOUS_PAID_THRU, 
                     global::System.Nullable<global::System.DateTime> PaymentDate, 
                     global::System.Nullable<decimal> TotalPayments, 
-                    global::System.Nullable<decimal> Status) {
+                    global::System.Nullable<decimal> Status, 
+                    global::System.Nullable<bool> TitleReceived, 
+                    global::System.Nullable<global::System.DateTime> TitleDateReceived) {
             if ((ID.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(ID.Value));
             }
@@ -21548,6 +21749,18 @@ namespace IAC2018SQL.PaymentDataSetTableAdapters {
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[167].Value = global::System.DBNull.Value;
+            }
+            if ((TitleReceived.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[168].Value = ((bool)(TitleReceived.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[168].Value = global::System.DBNull.Value;
+            }
+            if ((TitleDateReceived.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[169].Value = ((System.DateTime)(TitleDateReceived.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[169].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
