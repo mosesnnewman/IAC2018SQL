@@ -51,7 +51,7 @@
             // 
             // buttonPost
             // 
-            this.buttonPost.Location = new System.Drawing.Point(96, 117);
+            this.buttonPost.Location = new System.Drawing.Point(106, 107);
             this.buttonPost.Name = "buttonPost";
             this.buttonPost.Size = new System.Drawing.Size(75, 23);
             this.buttonPost.TabIndex = 5;
@@ -61,7 +61,7 @@
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Location = new System.Drawing.Point(177, 117);
+            this.buttonCancel.Location = new System.Drawing.Point(187, 107);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(75, 23);
             this.buttonCancel.TabIndex = 6;
@@ -72,9 +72,9 @@
             // labelStartDate
             // 
             this.labelStartDate.AutoSize = true;
-            this.labelStartDate.Location = new System.Drawing.Point(23, 40);
+            this.labelStartDate.Location = new System.Drawing.Point(33, 30);
             this.labelStartDate.Name = "labelStartDate";
-            this.labelStartDate.Size = new System.Drawing.Size(58, 13);
+            this.labelStartDate.Size = new System.Drawing.Size(64, 15);
             this.labelStartDate.TabIndex = 5;
             this.labelStartDate.Text = "Start Date:";
             this.labelStartDate.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -87,9 +87,9 @@
             // labelEndDate
             // 
             this.labelEndDate.AutoSize = true;
-            this.labelEndDate.Location = new System.Drawing.Point(26, 65);
+            this.labelEndDate.Location = new System.Drawing.Point(36, 55);
             this.labelEndDate.Name = "labelEndDate";
-            this.labelEndDate.Size = new System.Drawing.Size(55, 13);
+            this.labelEndDate.Size = new System.Drawing.Size(61, 15);
             this.labelEndDate.TabIndex = 8;
             this.labelEndDate.Text = "End Date:";
             this.labelEndDate.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -97,28 +97,28 @@
             // nullableDateTimePickerStartDate
             // 
             this.nullableDateTimePickerStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.nullableDateTimePickerStartDate.Location = new System.Drawing.Point(92, 33);
+            this.nullableDateTimePickerStartDate.Location = new System.Drawing.Point(102, 23);
             this.nullableDateTimePickerStartDate.Name = "nullableDateTimePickerStartDate";
-            this.nullableDateTimePickerStartDate.Size = new System.Drawing.Size(95, 20);
+            this.nullableDateTimePickerStartDate.Size = new System.Drawing.Size(95, 21);
             this.nullableDateTimePickerStartDate.TabIndex = 9;
-            this.nullableDateTimePickerStartDate.Value = new System.DateTime(2013, 6, 12, 0, 0, 0, 0);
+            this.nullableDateTimePickerStartDate.Value = new System.DateTime(2020, 10, 13, 0, 0, 0, 0);
             // 
             // nullableDateTimePickerEndDate
             // 
             this.nullableDateTimePickerEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.nullableDateTimePickerEndDate.Location = new System.Drawing.Point(92, 58);
+            this.nullableDateTimePickerEndDate.Location = new System.Drawing.Point(102, 48);
             this.nullableDateTimePickerEndDate.Name = "nullableDateTimePickerEndDate";
-            this.nullableDateTimePickerEndDate.Size = new System.Drawing.Size(95, 20);
+            this.nullableDateTimePickerEndDate.Size = new System.Drawing.Size(95, 21);
             this.nullableDateTimePickerEndDate.TabIndex = 10;
-            this.nullableDateTimePickerEndDate.Value = new System.DateTime(2013, 6, 12, 0, 0, 0, 0);
+            this.nullableDateTimePickerEndDate.Value = new System.DateTime(2020, 10, 13, 0, 0, 0, 0);
             // 
             // textBoxDealerName
             // 
             this.textBoxDealerName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceMasterList, "MASTER_NAME", true));
-            this.textBoxDealerName.Location = new System.Drawing.Point(158, 84);
+            this.textBoxDealerName.Location = new System.Drawing.Point(168, 74);
             this.textBoxDealerName.Name = "textBoxDealerName";
             this.textBoxDealerName.ReadOnly = true;
-            this.textBoxDealerName.Size = new System.Drawing.Size(220, 20);
+            this.textBoxDealerName.Size = new System.Drawing.Size(220, 21);
             this.textBoxDealerName.TabIndex = 15;
             // 
             // bindingSourceMasterList
@@ -131,18 +131,18 @@
             this.comboBoxAccount.DataSource = this.bindingSourceMasterList;
             this.comboBoxAccount.DisplayMember = "MASTER_ACC_NO";
             this.comboBoxAccount.FormattingEnabled = true;
-            this.comboBoxAccount.Location = new System.Drawing.Point(92, 83);
+            this.comboBoxAccount.Location = new System.Drawing.Point(102, 73);
             this.comboBoxAccount.Name = "comboBoxAccount";
-            this.comboBoxAccount.Size = new System.Drawing.Size(59, 21);
+            this.comboBoxAccount.Size = new System.Drawing.Size(59, 23);
             this.comboBoxAccount.TabIndex = 14;
             this.comboBoxAccount.ValueMember = "MASTER_ACC_NO";
             // 
             // labelAccountNum
             // 
             this.labelAccountNum.AutoSize = true;
-            this.labelAccountNum.Location = new System.Drawing.Point(21, 91);
+            this.labelAccountNum.Location = new System.Drawing.Point(31, 81);
             this.labelAccountNum.Name = "labelAccountNum";
-            this.labelAccountNum.Size = new System.Drawing.Size(60, 13);
+            this.labelAccountNum.Size = new System.Drawing.Size(63, 15);
             this.labelAccountNum.TabIndex = 13;
             this.labelAccountNum.Text = "Account #:";
             this.labelAccountNum.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -174,6 +174,7 @@
             this.Controls.Add(this.labelStartDate);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonPost);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "frmMasterHistoryReport";
             this.Text = "Print Master History Report (43)";
             this.Load += new System.EventHandler(this.frmMasterHistoryReport_Load);

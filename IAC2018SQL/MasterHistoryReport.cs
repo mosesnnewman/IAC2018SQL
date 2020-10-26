@@ -52,14 +52,8 @@ namespace IAC2018SQL
             String lsAccountNum = comboBoxAccount.Text.TrimEnd().TrimStart() + "%";
 
             masthistTableAdapter.FillByMasterDateRange(iACDataSet.MASTHIST, lsAccountNum, (DateTime)nullableDateTimePickerStartDate.Value, (DateTime)nullableDateTimePickerEndDate.Value);
-            masterTableAdapter.CustomizeFill(@"SELECT * FROM MASTER WHERE MASTER_ACC_NO IN (SELECT MASTHIST_ACC_NO FROM MASTHIST WHERE MASTHIST_POST_DATE >= '" +
-                                                ((DateTime)nullableDateTimePickerStartDate.Value).Year.ToString() + "-" +
-                                                ((DateTime)nullableDateTimePickerStartDate.Value).Month.ToString() + "-" +
-                                                ((DateTime)nullableDateTimePickerStartDate.Value).Day.ToString() + @"' AND MASTHIST_POST_DATE <= '" +
-                                                ((DateTime)nullableDateTimePickerEndDate.Value).Year.ToString() + "-" +
-                                                ((DateTime)nullableDateTimePickerEndDate.Value).Month.ToString() + "-" +
-                                                ((DateTime)nullableDateTimePickerEndDate.Value).Day.ToString() + @"' AND MASTHIST_ACC_NO LIKE '" + lsAccountNum + @"')");
-            masterTableAdapter.CustomFillBy(iACDataSet.MASTER);
+            // Moses Newman 10/13/2020 Replace Custom Query with Stored Procedure
+            masterTableAdapter.FillByDateRange(iACDataSet.MASTER, lsAccountNum, (DateTime)nullableDateTimePickerStartDate.Value, (DateTime)nullableDateTimePickerEndDate.Value);
             if (iACDataSet.MASTHIST.Rows.Count == 0)
                 MessageBox.Show("*** Sorry there are no MASTHIST records for the DATES and /or ACCOUNT you selected!!! ***");
             else

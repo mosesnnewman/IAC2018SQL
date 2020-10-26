@@ -902,15 +902,30 @@ namespace IAC2018SQL
             excelWorkSheet.get_Range("BQ1:BQ1").Font.FontStyle = "Bold";
             excelWorkSheet.get_Range("BQ1:BQ1").Value = "Ext. Contract Status";
 
-            excelWorkSheet.get_Range("A:BQ").Font.Size = 11;
+            // Moses Newman 10/26/2020 Add Title Received
+            Excel.Range TitleReceived = excelWorkSheet.get_Range("BR:BR");
+            TitleReceived.Columns.EntireColumn.AutoFit();
+            TitleReceived.Columns.ColumnWidth = 14;
+            excelWorkSheet.get_Range("BR1:BR1").Font.FontStyle = "Bold";
+            excelWorkSheet.get_Range("BR1:BR1").Value = "Title Received";
+
+            // Moses Newman 10/26/2020 Add Date Title Received
+            Excel.Range DateTitleReceived = excelWorkSheet.get_Range("BS:BS");
+            DateTitleReceived.Columns.EntireColumn.AutoFit();
+            DateTitleReceived.Columns.NumberFormat = "mm/dd/yyyy";
+            DateTitleReceived.Columns.ColumnWidth = 19;
+            excelWorkSheet.get_Range("BS1:BS1").Font.FontStyle = "Bold";
+            excelWorkSheet.get_Range("BS1:BS1").Value = "Date Title Received";
+
+            excelWorkSheet.get_Range("A:BS").Font.Size = 11;
             // Moses Newman 08/01/2018 Freeze header row.
             Excel.Range firstRow = (Excel.Range)excelWorkSheet.Rows[1];
             excelWorkSheet.Activate();
             excelWorkSheet.Application.ActiveWindow.SplitRow = 1;
             firstRow.Application.ActiveWindow.FreezePanes = true;
 
-            Excel.Range U1 = excelWorkSheet.get_Range("A1:BQ1");
-            Excel.Range r = excelWorkSheet.get_Range("A2:BQ" + (excelWorkSheet.Rows.Count).ToString());
+            Excel.Range U1 = excelWorkSheet.get_Range("A1:BS1");
+            Excel.Range r = excelWorkSheet.get_Range("A2:BS" + (excelWorkSheet.Rows.Count).ToString());
 
             U1.Font.Bold = true;
             U1.Font.Color = Excel.XlRgbColor.rgbWhite;
@@ -1136,6 +1151,11 @@ namespace IAC2018SQL
                         case 69:
                             Status.Delete();
                             break;
+                        // Moses Newman 10/26/2020 Add TitleReceived and DateTitleReceived
+                        case 70:
+                            TitleReceived.Delete();
+                            DateTitleReceived.Delete();
+                            break;
                     }
                 }
             }
@@ -1331,6 +1351,7 @@ namespace IAC2018SQL
                     }
                 }
             }
+            excelWorkSheet.get_Range("A2:A2").Select();  // Moses Newman 10/26/2020 Move to first Data Cell so we are not all the way to the right of the page when done!
             excelWorkBook.Save();
             excelWorkBook.Close();
             excelApp.Quit();
@@ -1795,6 +1816,12 @@ namespace IAC2018SQL
                         else
                             Extensions.CustomerExtract.Rows[RowCount].SetField<Nullable<DateTime>>("VEHICLE_EXP_DATE", Convert.ToDateTime("01/01/1980"));
                     }
+                    // Moses Newman 10/26/2020 Title received Title Date Received
+                    Extensions.CustomerExtract.Rows[RowCount].SetField<Boolean>("TitleReceived", Bank.VEHICLE.Rows[0].Field<Boolean>("TitleReceived"));
+                    if (Bank.VEHICLE.Rows[0].Field<Nullable<DateTime>>("TitleDateReceived") != null) 
+                        Extensions.CustomerExtract.Rows[RowCount].SetField<Nullable<DateTime>>("TitleDateReceived", Bank.VEHICLE.Rows[0].Field<Nullable<DateTime>>("TitleDateReceived"));
+                    else
+                        Extensions.CustomerExtract.Rows[RowCount].SetField<Nullable<DateTime>>("TitleDateReceived", Convert.ToDateTime("01/01/1980"));
                 }
                 Extensions.CustomerExtract.Rows[RowCount].SetField<String>("CUSTOMER_REPO_IND", Bank.CUSTOMER.Rows[i].Field<String>("CUSTOMER_REPO_IND"));
                 Extensions.CustomerExtract.Rows[RowCount].SetField<String>("CUSTOMER_ACT_STAT", Bank.CUSTOMER.Rows[i].Field<String>("CUSTOMER_ACT_STAT"));
@@ -2065,6 +2092,9 @@ namespace IAC2018SQL
                                 (Extensions.OpenExtensions.Rows[hcount].Field<Decimal?>("TotalPayments") != null ? Extensions.OpenExtensions.Rows[hcount].Field<Decimal>("TotalPayments") : 0));
                             Extensions.CustomerExtract.Rows[RowCount].SetField<Decimal>("Status",
                                 (Extensions.OpenExtensions.Rows[hcount].Field<Decimal?>("ContractStatus") != null ? Extensions.OpenExtensions.Rows[hcount].Field<Decimal>("ContractStatus") : 0));
+                            // Moses Newman 10/26/2020 Title received Title Date Received
+                            Extensions.CustomerExtract.Rows[RowCount].SetField<Boolean>("TitleReceived", false);
+                            Extensions.CustomerExtract.Rows[RowCount].SetField<Nullable<DateTime>>("TitleDateReceived", Convert.ToDateTime("01/01/1980"));
 
                             CustomerExtractTableAdapter.Update(Extensions.CustomerExtract.Rows[RowCount]);
                         }
