@@ -917,15 +917,22 @@ namespace IAC2018SQL
             excelWorkSheet.get_Range("BS1:BS1").Font.FontStyle = "Bold";
             excelWorkSheet.get_Range("BS1:BS1").Value = "Date Title Received";
 
-            excelWorkSheet.get_Range("A:BS").Font.Size = 11;
+            // Moses Newman 10/27/2020 Add Electronic Lien
+            Excel.Range ElectronicLien = excelWorkSheet.get_Range("BT:BT");
+            ElectronicLien.Columns.EntireColumn.AutoFit();
+            ElectronicLien.Columns.ColumnWidth = 15;
+            excelWorkSheet.get_Range("BT1:BT1").Font.FontStyle = "Bold";
+            excelWorkSheet.get_Range("BT1:BT1").Value = "Electronic Lien";
+
+            excelWorkSheet.get_Range("A:BT").Font.Size = 11;
             // Moses Newman 08/01/2018 Freeze header row.
             Excel.Range firstRow = (Excel.Range)excelWorkSheet.Rows[1];
             excelWorkSheet.Activate();
             excelWorkSheet.Application.ActiveWindow.SplitRow = 1;
             firstRow.Application.ActiveWindow.FreezePanes = true;
 
-            Excel.Range U1 = excelWorkSheet.get_Range("A1:BS1");
-            Excel.Range r = excelWorkSheet.get_Range("A2:BS" + (excelWorkSheet.Rows.Count).ToString());
+            Excel.Range U1 = excelWorkSheet.get_Range("A1:BT1");
+            Excel.Range r = excelWorkSheet.get_Range("A2:BT" + (excelWorkSheet.Rows.Count).ToString());
 
             U1.Font.Bold = true;
             U1.Font.Color = Excel.XlRgbColor.rgbWhite;
@@ -1155,6 +1162,10 @@ namespace IAC2018SQL
                         case 70:
                             TitleReceived.Delete();
                             DateTitleReceived.Delete();
+                            break;
+                        case 71:
+                            // Moses Newman 10/27/2020 Add Electronic Lien
+                            ElectronicLien.Delete();
                             break;
                     }
                 }
@@ -1841,6 +1852,8 @@ namespace IAC2018SQL
                         Extensions.CustomerExtract.Rows[RowCount].SetField<Nullable<DateTime>>("TitleDateReceived", Bank.VEHICLE.Rows[0].Field<Nullable<DateTime>>("TitleDateReceived"));
                     else
                         Extensions.CustomerExtract.Rows[RowCount].SetField<Nullable<DateTime>>("TitleDateReceived", Convert.ToDateTime("01/01/1980"));
+                    // Moses Newman 10/27/2020 Add Electronic Lien
+                    Extensions.CustomerExtract.Rows[RowCount].SetField<Boolean>("ElectronicLien", Bank.VEHICLE.Rows[0].Field<Boolean>("ElectronicLien"));
                 }
                 Extensions.CustomerExtract.Rows[RowCount].SetField<String>("CUSTOMER_REPO_IND", Bank.CUSTOMER.Rows[i].Field<String>("CUSTOMER_REPO_IND"));
                 Extensions.CustomerExtract.Rows[RowCount].SetField<String>("CUSTOMER_ACT_STAT", Bank.CUSTOMER.Rows[i].Field<String>("CUSTOMER_ACT_STAT"));
@@ -2114,6 +2127,8 @@ namespace IAC2018SQL
                             // Moses Newman 10/26/2020 Title received Title Date Received
                             Extensions.CustomerExtract.Rows[RowCount].SetField<Boolean>("TitleReceived", false);
                             Extensions.CustomerExtract.Rows[RowCount].SetField<Nullable<DateTime>>("TitleDateReceived", Convert.ToDateTime("01/01/1980"));
+                            // Moses Newman 10/27/2020 ElectronicLien
+                            Extensions.CustomerExtract.Rows[RowCount].SetField<Boolean>("ElectronicLien", false);
 
                             CustomerExtractTableAdapter.Update(Extensions.CustomerExtract.Rows[RowCount]);
                         }
