@@ -1161,13 +1161,32 @@ namespace IAC2018SQL
             }
             if(checkBoxExtensions.Checked)
             {
+                // Moses Newman 10/27/2020 Handle Column data conversion even if not the same order because additonal fields where selected.
+                Int32 ExtColumn = 0, TotPaymentsColumn = 0, ContractStatusColumn = 0;
                 Excel.Range last = excelWorkSheet.Cells.SpecialCells(Excel.XlCellType.xlCellTypeLastCell, System.Type.Missing);
+                
+                for (int col = 1; col < last.Column + 1; col++)
+                {
+                    switch (excelWorkSheet.Cells[1, col].Value)
+                    {
+                        case "Ext":
+                            ExtColumn = col;
+                            break;
+                        case "Ext. Tot Payments":
+                            TotPaymentsColumn = col;
+                            break;
+                        case "Ext. Contract Status":
+                            ContractStatusColumn = col;
+                            break;
+                    }
+                }
                 for (int i = 2; i < last.Row + 1; i++)
                 {
-                    excelWorkSheet.Cells[i, 5].Value = Convert.ToInt32(excelWorkSheet.Cells[i, 5].Value);
-                    excelWorkSheet.Cells[i, 13].Value = Convert.ToDecimal(excelWorkSheet.Cells[i, 13].Value);
-                    excelWorkSheet.Cells[i, 14].Value = Convert.ToDecimal(excelWorkSheet.Cells[i, 14].Value);
+                    excelWorkSheet.Cells[i, ExtColumn].Value = Convert.ToInt32(excelWorkSheet.Cells[i, ExtColumn].Value);
+                    excelWorkSheet.Cells[i, TotPaymentsColumn].Value = Convert.ToDecimal(excelWorkSheet.Cells[i, TotPaymentsColumn].Value);
+                    excelWorkSheet.Cells[i, ContractStatusColumn].Value = Convert.ToDecimal(excelWorkSheet.Cells[i, ContractStatusColumn].Value);
                 }
+                // Moses Newman 10/27/2020 end mod
             }
             if (checkBoxMatchNBFields.Checked)
             {
