@@ -4109,7 +4109,7 @@ WHERE   (RTRIM(NAME) = @Param1)</CommandText>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="CUSTHISTTableAdapter" GeneratorDataComponentClassName="CUSTHISTTableAdapter" Name="CUSTHIST" UserDataComponentName="CUSTHISTTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLTEST.dbo.ClosedCustomerHistorySelect" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLPRODUCTION.dbo.ClosedCustomerHistorySelect" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.ClosedCustomerHistoryDelete</CommandText>
@@ -4350,10 +4350,10 @@ WHERE   (RTRIM(NAME) = @Param1)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IAC2012TEST.dbo.CUSTHIST" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="CustomFillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="CustomGetDataBy" GeneratorSourceName="CustomFillBy" GetMethodModifier="Public" GetMethodName="CustomGetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="CustomGetDataBy" UserSourceName="CustomFillBy">
+              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLPRODUCTION.dbo.CUSTHIST" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="CustomFillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="CustomGetDataBy" GeneratorSourceName="CustomFillBy" GetMethodModifier="Public" GetMethodName="CustomGetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="CustomGetDataBy" UserSourceName="CustomFillBy">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT * FROM CUSTHIST</CommandText>
+                    <CommandText>SELECT ID, CUSTHIST_NO, CUSTHIST_ADD_ON, CUSTHIST_IAC_TYPE, CUSTHIST_PAY_DATE, CUSTHIST_DATE_SEQ, TransactionDate, FromIVR, Fee, IsArchive, CUSTHIST_ISF_DATE, CUSTHIST_ACT_STAT, CUSTHIST_BUY_OUT, CUSTHIST_BALANCE, CUSTHIST_PAYMENT_RCV, CUSTHIST_PAID_DISCOUNT, CUSTHIST_PAID_INTEREST, CUSTHIST_LATE_CHARGE, CUSTHIST_LATE_CHARGE_BAL, CUSTHIST_BUYOUT, CUSTHIST_PAID_THRU, CUSTHIST_PAY_REM_1, CUSTHIST_PAY_REM_2, CUSTHIST_CONTRACT_STATUS, CUSTHIST_THRU_UD, CUSTHIST_ANNUAL_INTEREST, CUSTHIST_PREV_BALANCE, CUSTHIST_FINANCE_CHARGE, CUSTHIST_PAID, CUSTHIST_YTD_LATE_CHARGE, CUSTHIST_TD_FINANCE_CHARGE, CUSTHIST_YTD_FINANCE_CHARGE, CUSTHIST_PAYMENT_TYPE, CUSTHIST_PAYMENT_CODE, CUSTHIST_AUTO_PAY, CUSTHIST_CURR_INT, CUSTHIST_LATE_CHARGE_PAID, IsSimple, TVRateChange, PartialPayment, ISFSeqNo, ISFPaymentType, ISFPaymentCode, PaymentSeq, TVDate, ISFID, IsINSUF FROM CUSTHIST</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -4663,7 +4663,7 @@ FROM   PAYMENT
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PaymentDistributionTableAdapter" GeneratorDataComponentClassName="PaymentDistributionTableAdapter" Name="PaymentDistribution" UserDataComponentName="PaymentDistributionTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLTEST.dbo.PaymentDistributionSelect" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLTEST2.dbo.PaymentDistributionSelect" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.PaymentDistributionDelete</CommandText>
@@ -4687,6 +4687,7 @@ FROM   PAYMENT
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="money" DbType="Currency" Direction="Input" ParameterName="@LateChargePaid" Precision="19" ProviderType="Money" Scale="4" Size="8" SourceColumn="LateChargePaid" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="money" DbType="Currency" Direction="Input" ParameterName="@PrincipalPaid" Precision="19" ProviderType="Money" Scale="4" Size="8" SourceColumn="PrincipalPaid" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="money" DbType="Currency" Direction="Input" ParameterName="@InterestPaid" Precision="19" ProviderType="Money" Scale="4" Size="8" SourceColumn="InterestPaid" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="money" DbType="Currency" Direction="Input" ParameterName="@InterestAccrued" Precision="19" ProviderType="Money" Scale="4" Size="8" SourceColumn="InterestAccrued" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="money" DbType="Currency" Direction="Input" ParameterName="@OverPayment" Precision="19" ProviderType="Money" Scale="4" Size="8" SourceColumn="OverPayment" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="money" DbType="Currency" Direction="Input" ParameterName="@Extension" Precision="19" ProviderType="Money" Scale="4" Size="8" SourceColumn="Extension" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="money" DbType="Currency" Direction="Input" ParameterName="@PaidDiscount" Precision="19" ProviderType="Money" Scale="4" Size="8" SourceColumn="PaidDiscount" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -4741,6 +4742,7 @@ FROM   PAYMENT
               <Mapping SourceColumn="Amount" DataSetColumn="Amount" />
               <Mapping SourceColumn="LateChargePaid" DataSetColumn="LateChargePaid" />
               <Mapping SourceColumn="SeqNo" DataSetColumn="SeqNo" />
+              <Mapping SourceColumn="InterestAccrued" DataSetColumn="InterestAccrued" />
             </Mappings>
             <Sources>
               <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLTEST.dbo.PaymentDistributionDeleteAll" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="DeleteAll" Modifier="Public" Name="DeleteAll" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteAll">
@@ -11270,7 +11272,7 @@ VALUES        (@CUSTHIST_NO)</CommandText>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TVAmortTableAdapter" GeneratorDataComponentClassName="TVAmortTableAdapter" Name="TVAmort" UserDataComponentName="TVAmortTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLTEST.dbo.TVAmortSelect" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLPRODUCTION.dbo.TVAmortSelect" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.TVAmortDelete</CommandText>
@@ -11409,8 +11411,22 @@ VALUES        (@CUSTHIST_NO)</CommandText>
               <Mapping SourceColumn="DeltaPTMonths" DataSetColumn="DeltaPTMonths" />
               <Mapping SourceColumn="PaymentSeq" DataSetColumn="PaymentSeq" />
               <Mapping SourceColumn="HistoryDate" DataSetColumn="HistoryDate" />
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
             </Mappings>
             <Sources>
+              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLTEST.dbo.TVAmortCreditToNote" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="CreditToNote" Modifier="Public" Name="CreditToNote" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy17" UserSourceName="CreditToNote">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.TVAmortCreditToNote</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="char" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@CustomerNo" Precision="0" ProviderType="Char" Scale="0" Size="6" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@Date" Precision="23" ProviderType="DateTime" Scale="3" Size="8" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@SeqNo" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
               <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IAC2012TEST.dbo.TVAmortDeleteAll" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="DeleteAll" Modifier="Public" Name="DeleteAll" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteAll">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
@@ -11616,7 +11632,19 @@ VALUES        (@CUSTHIST_NO)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLPRODUCTION.dbo.TVAmortStartingBalance" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="StartingBalance" Modifier="Public" Name="StartingBalance" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy14" UserSourceName="StartingBalance">
+              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLTEST.dbo.TVAmortRevisedBalance" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="RevisedBalance" Modifier="Public" Name="RevisedBalance" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy14" UserSourceName="RevisedBalance">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.TVAmortRevisedBalance</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="char" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@CustomerNo" Precision="0" ProviderType="Char" Scale="0" Size="6" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@LastUpdateDate" Precision="23" ProviderType="DateTime" Scale="3" Size="8" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLPRODUCTION.dbo.TVAmortStartingBalance" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="StartingBalance" Modifier="Public" Name="StartingBalance" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy15" UserSourceName="StartingBalance">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.TVAmortStartingBalance</CommandText>
@@ -11628,7 +11656,7 @@ VALUES        (@CUSTHIST_NO)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLPRODUCTION.dbo.TVAmortExtensions" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="TVAmortExtensions" Modifier="Public" Name="TVAmortExtensions" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy15" UserSourceName="TVAmortExtensions">
+              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLPRODUCTION.dbo.TVAmortExtensions" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="TVAmortExtensions" Modifier="Public" Name="TVAmortExtensions" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy16" UserSourceName="TVAmortExtensions">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.TVAmortExtensions</CommandText>
@@ -11773,6 +11801,7 @@ VALUES        (@CUSTHIST_NO)</CommandText>
               <Mapping SourceColumn="AGED120COUNT" DataSetColumn="AGED120COUNT" />
               <Mapping SourceColumn="AGED150COUNT" DataSetColumn="AGED150COUNT" />
               <Mapping SourceColumn="AGED180PLUSCOUNT" DataSetColumn="AGED180PLUSCOUNT" />
+              <Mapping SourceColumn="OPNDEALR_ST" DataSetColumn="OPNDEALR_ST" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -17242,6 +17271,7 @@ FROM         CUSTOMER INNER JOIN
               <xs:element name="Amount" msprop:Generator_ColumnVarNameInTable="columnAmount" msprop:Generator_ColumnPropNameInRow="Amount" msprop:Generator_ColumnPropNameInTable="AmountColumn" msprop:Generator_UserColumnName="Amount" type="xs:decimal" minOccurs="0" />
               <xs:element name="LateChargePaid" msprop:Generator_ColumnVarNameInTable="columnLateChargePaid" msprop:Generator_ColumnPropNameInRow="LateChargePaid" msprop:Generator_ColumnPropNameInTable="LateChargePaidColumn" msprop:Generator_UserColumnName="LateChargePaid" type="xs:decimal" minOccurs="0" />
               <xs:element name="SeqNo" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnSeqNo" msprop:Generator_ColumnPropNameInRow="SeqNo" msprop:Generator_ColumnPropNameInTable="SeqNoColumn" msprop:Generator_UserColumnName="SeqNo" type="xs:int" />
+              <xs:element name="InterestAccrued" msprop:Generator_ColumnVarNameInTable="columnInterestAccrued" msprop:Generator_ColumnPropNameInRow="InterestAccrued" msprop:Generator_ColumnPropNameInTable="InterestAccruedColumn" msprop:Generator_UserColumnName="InterestAccrued" type="xs:decimal" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -21634,6 +21664,7 @@ FROM         CUSTOMER INNER JOIN
               <xs:element name="DeltaPTMonths" msprop:Generator_ColumnVarNameInTable="columnDeltaPTMonths" msprop:Generator_ColumnPropNameInRow="DeltaPTMonths" msprop:Generator_ColumnPropNameInTable="DeltaPTMonthsColumn" msprop:Generator_UserColumnName="DeltaPTMonths" type="xs:decimal" minOccurs="0" />
               <xs:element name="PaymentSeq" msprop:Generator_ColumnVarNameInTable="columnPaymentSeq" msprop:Generator_ColumnPropNameInRow="PaymentSeq" msprop:Generator_ColumnPropNameInTable="PaymentSeqColumn" msprop:Generator_UserColumnName="PaymentSeq" type="xs:int" default="0" minOccurs="0" />
               <xs:element name="HistoryDate" msprop:Generator_ColumnVarNameInTable="columnHistoryDate" msprop:Generator_ColumnPropNameInRow="HistoryDate" msprop:Generator_ColumnPropNameInTable="HistoryDateColumn" msprop:Generator_UserColumnName="HistoryDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -21759,6 +21790,13 @@ FROM         CUSTOMER INNER JOIN
               <xs:element name="AGED120COUNT" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnAGED120COUNT" msprop:Generator_ColumnPropNameInRow="AGED120COUNT" msprop:Generator_ColumnPropNameInTable="AGED120COUNTColumn" msprop:Generator_UserColumnName="AGED120COUNT" type="xs:int" minOccurs="0" />
               <xs:element name="AGED150COUNT" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnAGED150COUNT" msprop:Generator_ColumnPropNameInRow="AGED150COUNT" msprop:Generator_ColumnPropNameInTable="AGED150COUNTColumn" msprop:Generator_UserColumnName="AGED150COUNT" type="xs:int" minOccurs="0" />
               <xs:element name="AGED180PLUSCOUNT" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnAGED180PLUSCOUNT" msprop:Generator_ColumnPropNameInRow="AGED180PLUSCOUNT" msprop:Generator_ColumnPropNameInTable="AGED180PLUSCOUNTColumn" msprop:Generator_UserColumnName="AGED180PLUSCOUNT" type="xs:int" minOccurs="0" />
+              <xs:element name="OPNDEALR_ST" msprop:Generator_ColumnVarNameInTable="columnOPNDEALR_ST" msprop:Generator_ColumnPropNameInRow="OPNDEALR_ST" msprop:Generator_ColumnPropNameInTable="OPNDEALR_STColumn" msprop:Generator_UserColumnName="OPNDEALR_ST" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -25107,7 +25145,7 @@ FROM         CUSTOMER INNER JOIN
       <xs:field xpath="mstns:PAYMENT_CUSTOMER" />
       <xs:field xpath="mstns:PAYMENT_DATE" />
     </xs:unique>
-    <xs:unique name="CUSTHIST_Constraint2" msdata:ConstraintName="Constraint2" msdata:PrimaryKey="true">
+    <xs:unique name="CUSTHIST_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:CUSTHIST" />
       <xs:field xpath="mstns:ID" />
     </xs:unique>
@@ -25302,10 +25340,9 @@ FROM         CUSTOMER INNER JOIN
       <xs:field xpath="mstns:CUSTHIST_PAY_DATE" />
       <xs:field xpath="mstns:CUSTHIST_DATE_SEQ" />
     </xs:unique>
-    <xs:unique name="TVAmort_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+    <xs:unique name="TVAmort_Constraint2" msdata:ConstraintName="Constraint2" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:TVAmort" />
-      <xs:field xpath="mstns:CustomerNo" />
-      <xs:field xpath="mstns:RowNumber" />
+      <xs:field xpath="mstns:ID" />
     </xs:unique>
     <xs:unique name="ClosedChargesAppliedToDealer_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:ClosedChargesAppliedToDealer" />

@@ -1811,7 +1811,7 @@ namespace IAC2018SQL
                 // Moses Newman 01/09/2018 Added CUSTOMER_NO_OF_PAYMENTS_MADE and CUSTOMER_CREDIT_SCORE_N, CUSTOMER_PAID_THRU
                 Extensions.CustomerExtract.Rows[RowCount].SetField<String>("CUSTOMER_PAID_THRU", Bank.CUSTOMER.Rows[i].Field<String>("CUSTOMER_PAID_THRU").Substring(0,2) + "/" + Bank.CUSTOMER.Rows[i].Field<String>("CUSTOMER_PAID_THRU").Substring(2, 2));
                 Extensions.CustomerExtract.Rows[RowCount].SetField<Int32>("CUSTOMER_NO_OF_PAYMENTS_MADE", Bank.CUSTOMER.Rows[i].Field<Int32>("CUSTOMER_NO_OF_PAYMENTS_MADE"));
-                Extensions.CustomerExtract.Rows[RowCount].SetField<Int32>("CUSTOMER_CREDIT_SCORE_N", Bank.CUSTOMER.Rows[i].Field<Int32>("CUSTOMER_CREDIT_SCORE_N"));
+                Extensions.CustomerExtract.Rows[RowCount].SetField<Int32>("CUSTOMER_CREDIT_SCORE_N", Bank.CUSTOMER.Rows[i].Field<Int32?>("CUSTOMER_CREDIT_SCORE_N") != null ? Bank.CUSTOMER.Rows[i].Field<Int32>("CUSTOMER_CREDIT_SCORE_N"):0);
                 Extensions.CustomerExtract.Rows[RowCount].SetField<String>("CUSTOMER_CREDIT_SCORE_A", Bank.CUSTOMER.Rows[i].Field<String>("CUSTOMER_CREDIT_SCORE_A"));
 
                 // Collateral Information

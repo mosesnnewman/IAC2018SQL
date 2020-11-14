@@ -1207,7 +1207,7 @@ namespace IAC2018SQL
             ClosedPaymentPosting CPaymentPosting = new ClosedPaymentPosting();
             AMORTIZETableAdapter.CustomizeFill("SELECT * FROM AMORTIZE");
             AMORTIZETableAdapter.CustomFillBy(ReportData.AMORTIZE,"");
-            CPaymentPosting.CopyAmortizetoAmortTemp(ReportData, ref worker);
+            //CPaymentPosting.CopyAmortizetoAmortTemp(ReportData, ref worker);
             // Prevent unreachable code error
             if(Unreach==1)
                 return;

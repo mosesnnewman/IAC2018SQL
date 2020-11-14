@@ -2324,7 +2324,7 @@ namespace IAC2018SQL
                          tsCustomerNo,
                          // 04/30/2017 Handle BOTH Simple Interest and Normal Daily Compounding
                          // Moses Newman 04/02/2018 fixed Payment and PaymentPos parameters so TVSimpleGetBuyout knows to add payments!
-                         FixData.CUSTOMER.Rows[0].Field<String>("CUSTOMER_AMORTIZE_IND") == "S" ? true : false, true, false, tbPayment, FixData.PAYMENT.Rows.Count - 1, true);
+                         FixData.CUSTOMER.Rows[0].Field<String>("CUSTOMER_AMORTIZE_IND") == "S" ? true : false, false, false, tbPayment, FixData.PAYMENT.Rows.Count - 1, true);
                         TVAmortTableAdapter.Update(FixData.TVAmort);
                         TVAmortTableAdapter.FillByCustomerNo(FixData.TVAmort, tsCustomerNo);
                     }

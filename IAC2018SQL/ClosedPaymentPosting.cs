@@ -6,6 +6,8 @@ using System.Data;
 using System.Linq;
 using System.Windows.Forms;
 using System.IO;
+using IAC2018SQL.IACDataSetTableAdapters;
+using Newtonsoft.Json;
 
 namespace IAC2018SQL
 {
@@ -20,7 +22,7 @@ namespace IAC2018SQL
                         SavedInterestApplied = 0, SavedPaidInterest = 0, lnPrinciplePaid = 0,
                         lnSimpleDiff = 0, lnNonCashFeesandCharges = 0, lnBalance = 0, lnCustOP = 0, lnMasterSundry = 0, lnMasterOP = 0, lnCustExt = 0,
                         lnMasterExt = 0, lnMasterNP = 0, lnMasterNPNP = 0, lnMasterAmortNP = 0, lnMasterSimpleNP = 0, lnMasterOloan = 0, lnMasterAmortOloan = 0, lnLateChargePaid = 0,
-                        lnCustUEI = 0, lnPaidInt = 0, lnPaidDis = 0, lnDisPay = 0, lnPayDue = 0,
+                        lnCustUEI = 0, lnAccruedInt = 0, lnPaidDis = 0, lnDisPay = 0, lnPayDue = 0,
                         lnMasterUEI = 0, lnMasterInterest = 0, lnMasterDiscount = 0, lnMasterAmortInterest = 0, lnMasterAmortDiscount = 0,
                         lnMasterSimpleInterest = 0, lnMasterSimpleDiscount = 0, lnPaidSimpleInt = 0, lnPaidSimpleDisc = 0, lnMasterSimpleOloan = 0, lnIntPay = 0,
                         lnSimpleBalance = 0, lnIntAdj = 0, lnOldBalance = 0, lnISFTotal = 0;
@@ -114,7 +116,7 @@ namespace IAC2018SQL
 
 
             Int32 CustomerPos = 0, AmortPos = 0;
-            lnCustUEI = 0; lnPaidInt = 0; lnPaidDis = 0; lnIntPay = 0; lnDisPay = 0; lnPayDue = 0; lnBalance = 0;
+            lnCustUEI = 0; lnAccruedInt = 0; lnPaidDis = 0; lnIntPay = 0; lnDisPay = 0; lnPayDue = 0; lnBalance = 0;
             lnCustOP = 0; lnCustExt = 0; lnMasterExt = 0; lnMasterSundry = 0;
             lnMasterNP = 0; lnMasterNPNP = 0; lnMasterAmortNP = 0; lnMasterOloan = 0; lnMasterAmortOloan = 0; lnLateChargePaid = 0; lnMasterOP = 0;
             lnMasterUEI = 0; lnMasterInterest = 0; lnMasterDiscount = 0; lnMasterAmortInterest = 0; lnMasterAmortDiscount = 0;
@@ -175,12 +177,53 @@ namespace IAC2018SQL
 
         void ClosedPaymentWriteAllData(IACDataSet PAYMENTPostDataSet, ref BackgroundWorker worker)
         {
+            IACDataSetTableAdapters.DEALERTableAdapter DEALERTableAdapter = new DEALERTableAdapter();
+            IACDataSetTableAdapters.PAYMENTTableAdapter PAYMENTTableAdapter = new PAYMENTTableAdapter();  
+            Object loTotalIVR = null, loTotalIVRAmex = null, loTotalIVRFees = null;
+            Decimal lnTotalIVR = 0, lnTotalIVRAmex = 0, lnTotalIVRFees = 0;
+            loTotalIVR = PAYMENTTableAdapter.IVRSUM();
+            loTotalIVRAmex = PAYMENTTableAdapter.AMEXTOT();
+            loTotalIVRFees = PAYMENTTableAdapter.IVRFEETOT();
+            lnTotalIVR = loTotalIVR != null ? (Decimal)loTotalIVR : lnTotalIVR;
+            lnTotalIVRAmex = loTotalIVRAmex != null ? (Decimal)loTotalIVRAmex : lnTotalIVRAmex;
+            lnTotalIVRFees = loTotalIVRFees != null ? (Decimal)loTotalIVRFees : lnTotalIVRFees;
+
             ClosedPaymentWriteCustomerChanges(ref PAYMENTPostDataSet, ref worker);
             ClosedPaymentWriteCustHistChanges(ref PAYMENTPostDataSet, ref worker);
             ClosedPaymentWriteDealerChanges(ref PAYMENTPostDataSet, ref worker);
             ClosedPaymentWriteDealHistChanges(ref PAYMENTPostDataSet, ref worker);
             ClosedPaymentWriteMASTerChanges(ref PAYMENTPostDataSet, ref worker);
             ClosedPaymentWriteMASTHistChanges(ref PAYMENTPostDataSet, ref worker);
+            DailyDataSetTableAdapters.DailyBalanceTotalsTableAdapter DailyBalanceTotalsTableAdapter = new DailyDataSetTableAdapters.DailyBalanceTotalsTableAdapter();
+            DailyDataSetTableAdapters.DailyDealerSummaryTableAdapter DailyDealerSummaryTableAdapter = new DailyDataSetTableAdapters.DailyDealerSummaryTableAdapter();
+            DailyDataSetTableAdapters.DailyInterestTableAdapter DailyInterestTableAdapter = new DailyDataSetTableAdapters.DailyInterestTableAdapter();
+            DailyDataSetTableAdapters.DailyPaymentTypeTotalsTableAdapter DailyPaymentTypeTotalsTableAdapter = new DailyDataSetTableAdapters.DailyPaymentTypeTotalsTableAdapter();
+            DailyDataSet DailySet = new DailyDataSet();
+            DailyBalanceTotalsTableAdapter.Insert(PAYMENTPostDataSet.PAYMENT.Rows[0].Field<DateTime>("PAYMENT_DATE").Date,
+                    lnMasterNP, lnMasterUEI, lnISFTotal, lnMasterNPNP, lnMasterNP + lnMasterUEI + lnMasterNPNP, lnMasterSimpleInterest, lnMasterAmortInterest, 0, (Decimal)lnDlrDiscount,
+                    lnMasterSimpleInterest + lnMasterAmortInterest + (Decimal)lnDlrDiscount, lnMasterOloan, lnMasterNP + lnMasterUEI + lnMasterNPNP - lnMasterOloan, lnMasterSundry, lnMasterExt,
+                    lnMasterNP + lnMasterUEI + lnMasterNPNP, lnTotalIVR, lnTotalIVRFees, lnTotalIVRAmex, lnMasterNP + (lnMasterUEI + lnMasterNPNP - lnMasterOloan) - (lnMasterSimpleInterest + lnMasterAmortInterest + (Decimal)lnDlrDiscount));
+            for (int i = 0; i < PAYMENTPostDataSet.DEALER.Rows.Count; i++)
+            {
+                DailyDealerSummaryTableAdapter.Insert(PAYMENTPostDataSet.PAYMENT.Rows[0].Field<DateTime>("PAYMENT_DATE").Date,
+                                                      PAYMENTPostDataSet.DEALER.Rows[i].Field<String>("DEALER_ACC_NO"),
+                                                      PAYMENTPostDataSet.DEALER.Rows[i].Field<Decimal>("DEALER_CUR_OLOAN"),
+                                                      PAYMENTPostDataSet.DEALER.Rows[i].Field<Decimal>("DEALER_CUR_SIMPLE_INT"),
+                                                      PAYMENTPostDataSet.DEALER.Rows[i].Field<Decimal>("DEALER_CUR_AMORT_INT"),
+                                                      PAYMENTPostDataSet.DEALER.Rows[i].Field<Decimal>("DEALER_CUR_OLD_INT"));
+            }
+            DailyInterestTableAdapter.Insert(PAYMENTPostDataSet.PAYMENT.Rows[0].Field<DateTime>("PAYMENT_DATE").Date, "P", lnMasterNP + lnMasterUEI + lnMasterNPNP - lnMasterOloan, 0, (lnMasterNP + lnMasterUEI + lnMasterNPNP - lnMasterOloan)- (lnMasterSimpleInterest + lnMasterAmortInterest + (Decimal)lnDlrDiscount),
+                                             DateTime.Parse("01/01/1980").Date);
+            for(int i = 0;i<PAYMENTPostDataSet.PaymentTypeCodeSummarySelect.Rows.Count;i++)
+            {
+                DailyPaymentTypeTotalsTableAdapter.Insert(PAYMENTPostDataSet.PAYMENT.Rows[0].Field<DateTime>("PAYMENT_DATE").Date,
+                        PAYMENTPostDataSet.PaymentTypeCodeSummarySelect.Rows[i].Field<String>("PAYMENT_TYPE"),
+                        PAYMENTPostDataSet.PaymentTypeCodeSummarySelect.Rows[i].Field<String>("PAYMENT_CODE_2"),
+                        PAYMENTPostDataSet.PaymentTypeCodeSummarySelect.Rows[i].Field<String>("CreditCardType"),
+                        PAYMENTPostDataSet.PaymentTypeCodeSummarySelect.Rows[i].Field<Int32>("TypeCount"),
+                        PAYMENTPostDataSet.PaymentTypeCodeSummarySelect.Rows[i].Field<Decimal>("FeeTot"),
+                        PAYMENTPostDataSet.PaymentTypeCodeSummarySelect.Rows[i].Field<Decimal>("TOTAL"));
+            }
         }
 
 
@@ -197,7 +240,7 @@ namespace IAC2018SQL
             IACDataSetTableAdapters.PaymentDistributionTableAdapter PaymentDistributionTableAdapter = new IACDataSetTableAdapters.PaymentDistributionTableAdapter();
 
             lnCustUEI = 0;
-            lnPaidInt = 0;
+            lnAccruedInt = 0;
             lnPaidDis = 0;
             lnBalance = 0;
             lnTermRem = 0;
@@ -209,7 +252,7 @@ namespace IAC2018SQL
             lnPaidSimpleInt = 0;
             lnPaidSimpleDisc = 0;
 
-            if (PAYMENTPostDataSet.PAYMENT.Rows[PaymentPos].Field<String>("PAYMENT_TYPE") == "E")
+            if (PAYMENTPostDataSet.PAYMENT.Rows[PaymentPos].Field<String>("PAYMENT_TYPE") == "9")
             {
                 //Updates Sundry Income Only
                 lnBalance = 0;
@@ -233,7 +276,7 @@ namespace IAC2018SQL
                 }
                 lnNoPay = PAYMENTPostDataSet.PAYMENT.Rows[PaymentPos].Field<Int32>("PAYMENT_THRU_UD");
                 PaymentDistributionTableAdapter.DeleteQuery(PAYMENTPostDataSet.PAYMENT.Rows[PaymentPos].Field<String>("PAYMENT_CUSTOMER"), PAYMENTPostDataSet.PAYMENT.Rows[PaymentPos].Field<DateTime>("PAYMENT_DATE"), PAYMENTPostDataSet.PAYMENT.Rows[PaymentPos].Field<Int32>("SeqNo"));
-                PaymentDistributionTableAdapter.Insert(PAYMENTPostDataSet.PAYMENT.Rows[PaymentPos].Field<String>("PAYMENT_CUSTOMER"), PAYMENTPostDataSet.PAYMENT.Rows[PaymentPos].Field<DateTime>("PAYMENT_DATE"), "", PAYMENTPostDataSet.PAYMENT.Rows[PaymentPos].Field<Decimal>("PAYMENT_AMOUNT_RCV"), 0, 0, 0, 0, 0, 0, 0, PAYMENTPostDataSet.PAYMENT.Rows[PaymentPos].Field<Int32>("SeqNo"));
+                PaymentDistributionTableAdapter.Insert(PAYMENTPostDataSet.PAYMENT.Rows[PaymentPos].Field<String>("PAYMENT_CUSTOMER"), PAYMENTPostDataSet.PAYMENT.Rows[PaymentPos].Field<DateTime>("PAYMENT_DATE"), "", PAYMENTPostDataSet.PAYMENT.Rows[PaymentPos].Field<Decimal>("PAYMENT_AMOUNT_RCV"), 0, 0,0, 0, 0, 0, 0, 0, PAYMENTPostDataSet.PAYMENT.Rows[PaymentPos].Field<Int32>("SeqNo"));
                 // Moses Newman 12/8/2014 need to set Paid Through on Extensions because paid throughs are only calculated in GetPartialPaymentandLateFeeBalance,
                 // and that is called in ClosedPaymentProcessPayment which is NOT run for extensions!
                 IACDataSetTableAdapters.TVAmortTableAdapter TVAmortTableAdapter = new IACDataSetTableAdapters.TVAmortTableAdapter();
@@ -295,7 +338,6 @@ namespace IAC2018SQL
                     lnLCBPay = PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_LATE_CHARGE_BAL");
             }
             // Moses Newman 08/2/2013 Store pre-processing balance
-            lnOldBalance = PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_BALANCE");
             lnTodaysBalance = Program.TVSimpleGetBuyout(PAYMENTDataSet,
                                                PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<DateTime>("PAYMENT_DATE"),
                                                (Double)PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<Int32>("CUSTOMER_TERM"),
@@ -304,7 +346,11 @@ namespace IAC2018SQL
                                                PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_NO"),
                 // Moses Newman 04/30/2017 Add support for Simple Interest and Normal Daily Compounding
                                                PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_AMORTIZE_IND") == "S" ? true : false, true, false, false, -1, true);
-           
+            lnOldBalance = PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_BALANCE");
+            if (PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_ACT_STAT") == "A" &&
+                PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_BUY_OUT") == "N")
+                PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].SetField<String>("CUSTOMER_BUY_OUT", "N");
+
             //lnOldBalance = 0;
             // Moses Newman 05/01/2018 ALWAYS use last history balance rather than CUSTOMER_BALANCE because
             // CUSTOMER_BALANCE is changed at the first run of this routine!
@@ -363,7 +409,7 @@ namespace IAC2018SQL
                 ClosedPaymentCalculatebuyout(PaymentPos, CustomerPos, ref PAYMENTDataSet, ref worker);
             }
             lnLateChargePaid = 0;
-            // Moses Newman 112/01/2014 no longer call ClosedPaymentHandleLateCharge or do any CUSTOMER_LATE_CHARGE_BAL handling
+            // Moses Newman 12/01/2014 no longer call ClosedPaymentHandleLateCharge or do any CUSTOMER_LATE_CHARGE_BAL handling
             // because its all now done in GetPartialPaymentandLateFeeBalance
             if (PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal?>("CUSTOMER_LATE_CHARGE") == null)
                 PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].SetField<Decimal>("CUSTOMER_LATE_CHARGE", 0);
@@ -385,33 +431,22 @@ namespace IAC2018SQL
                     lnBalance = PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<Decimal>("PAYMENT_AMOUNT_RCV");
                     PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].SetField<String>("CUSTOMER_BUY_OUT", "N");
                 }
-
-            lnSimpleDiff = 0;
-            // Moses Newman 08/26/2013 Handle zero balance in CUSTOMER file
-            // Moses Newman 05/01/2018 retire this routine as now we do this above instead of defauting to CUSTOMER_BALANCE!
-            /*if (lnOldBalance == 0)
+            // Moses Newman 11/12/2020 Get real credit to note (Payment - Accrued Interest) so that is is for only one of the payments if the same account had
+            // multiple payments today.
+            String CustTemp = PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<String>("PAYMENT_CUSTOMER");
+            Object loCreditToNote = TVAmortTableAdapter.CreditToNote(CustTemp,
+                                                                     PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<DateTime>("PAYMENT_Date"),
+                                                                     PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<Int32>("SeqNo"));
+            Decimal lnCreditToNote = (loCreditToNote != null) ? (Decimal)loCreditToNote : (lnSimpleBalance -lnOldBalance) * -1;
+            //lnSimpleDiff = 0;
+            lnSimpleDiff = lnCreditToNote * -1; // Moses Newman 11/12/2020 lnSimpleDiff = lnCreditToNote now!
+                                                // Moses Newman 11/12/2020 lnSimpleDiff = lnCreditToNote now!
+            if (lnIntPay == 0)
             {
-                IACDataSetTableAdapters.CUSTHISTTableAdapter CUSTHISTTableAdapter = new IACDataSetTableAdapters.CUSTHISTTableAdapter();
-                Object loLastBalance = null;
-
-                loLastBalance = CUSTHISTTableAdapter.LastBalance(PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_NO"));
-                if (loLastBalance != null)
-                    lnOldBalance = (Decimal)loLastBalance;
-            }*/
-            if (PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_ACT_STAT") == "A")
-            {
-                PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].SetField<Decimal>("CUSTOMER_PREV_BALANCE", lnOldBalance);
-                lnSimpleDiff = lnSimpleBalance - lnOldBalance;
+                lnIntPay = lnSimpleDiff + PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<Decimal>("PAYMENT_AMOUNT_RCV");
+                lnAccruedInt = lnIntPay;
             }
-            else
-            // Moses Newman 09/11/2013 Handle status change due to INSUF
-            {
-                lnOldBalance = 0;
-                PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].SetField<Decimal>("CUSTOMER_PREV_BALANCE", lnOldBalance);
-                lnSimpleDiff = lnSimpleBalance;
-                PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].SetField<String>("CUSTOMER_ACT_STAT", "A");
-                PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].SetField<String>("CUSTOMER_BUY_OUT", "N");
-            }
+            PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].SetField<Decimal>("CUSTOMER_PREV_BALANCE", lnOldBalance);
             lnNonCashFeesandCharges = lnSimpleDiff - lnBalance - lnIntPay;
             if (PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_CONTRACT_STATUS") > PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_BALANCE"))
                 PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].SetField<Decimal>("CUSTOMER_CONTRACT_STATUS", PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_BALANCE"));
@@ -435,7 +470,7 @@ namespace IAC2018SQL
             // Moses Newman 04/30/2017 Handle S simple interest or N Normal Daily Compounding
             if (PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_AMORTIZE_IND") == "Y" || PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_AMORTIZE_IND") == "S" || PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_AMORTIZE_IND") == "N")
             {
-                lnPaidInt = lnIntPay;
+                lnAccruedInt = lnIntPay;
                 // Moses Newman 04/30/2017 Handle S simple interest or N Normal Daily Compounding
                 if (PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_AMORTIZE_IND") == "S" || PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_AMORTIZE_IND") == "N")
                 {
@@ -444,12 +479,12 @@ namespace IAC2018SQL
                 }
             }
             else
-                lnPaidInt = Math.Round(lnIntPay * lnNoPay, 2);
+                lnAccruedInt = Math.Round(lnIntPay * lnNoPay, 2);
             lnPaidDis = Math.Round(lnDisPay * lnNoPay, 2);
             lnPaidDiscount = Math.Round(lnDlrDiscount * lnNoPay, 2);
             PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].SetField<Decimal>("CUSTOMER_DEALER_DISC_BAL", PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_DEALER_DISC_BAL") - Convert.ToDecimal(lnPaidDiscount));
             // Moses Newman 07/10/2019 Fix CUSTOMER_PAID_INTERESTTO be TVAmortTableAdapter.InterestSoFar(CUSTOMER_NO), INSTEAD OF ACCUMULATING
-            //PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].SetField<Decimal>("CUSTOMER_PAID_INTEREST", Math.Round(PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_PAID_INTEREST") + Convert.ToDecimal(lnPaidInt), 2));
+            //PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].SetField<Decimal>("CUSTOMER_PAID_INTEREST", Math.Round(PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_PAID_INTEREST") + Convert.ToDecimal(lnAccruedInt), 2));
             // Moses Newman 07/12/2019 Change to use CLosedPaidInterest stored procedure so date range.
             loInterestSoFar = TVAmortTableAdapter.InterestSoFar(PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_NO"));
             if(loInterestSoFar != null)
@@ -463,7 +498,7 @@ namespace IAC2018SQL
                 {
                     lnIOP = PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_PAID_INTEREST") - PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_LOAN_INTEREST");
                     PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].SetField<Decimal>("CUSTOMER_PAID_INTEREST", PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_LOAN_INTEREST"));
-                    lnPaidInt = Math.Round(lnPaidInt - lnIOP, 2);
+                    lnAccruedInt = Math.Round(lnAccruedInt - lnIOP, 2);
                 }
             }
             PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].SetField<Double>("CUSTOMER_PAID_DISCOUNT", Math.Round(PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<Double>("CUSTOMER_PAID_DISCOUNT") - lnDlrDiscount, 2));
@@ -1381,29 +1416,29 @@ namespace IAC2018SQL
                     lnIntAdj = lnCustUEI;
                 else
                     lnIntAdj = 0;
-                PAYMENTDataSet.WS_DEALER_PAY.Rows[WSDealerPos].SetField<Decimal>("INT", PAYMENTDataSet.WS_DEALER_PAY.Rows[WSDealerPos].Field<Decimal>("INT") + Convert.ToDecimal(lnPaidInt - lnIntAdj));
+                PAYMENTDataSet.WS_DEALER_PAY.Rows[WSDealerPos].SetField<Decimal>("INT", PAYMENTDataSet.WS_DEALER_PAY.Rows[WSDealerPos].Field<Decimal>("INT") + Convert.ToDecimal(lnAccruedInt - lnIntAdj));
 
                 switch (PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_AMORTIZE_IND"))
                 {
                     case "Y":
-                        PAYMENTDataSet.WS_DEALER_PAY.Rows[WSDealerPos].SetField<Decimal>("AMORT_INT", PAYMENTDataSet.WS_DEALER_PAY.Rows[WSDealerPos].Field<Decimal>("AMORT_INT") + Convert.ToDecimal(lnPaidInt - lnIntAdj));
+                        PAYMENTDataSet.WS_DEALER_PAY.Rows[WSDealerPos].SetField<Decimal>("AMORT_INT", PAYMENTDataSet.WS_DEALER_PAY.Rows[WSDealerPos].Field<Decimal>("AMORT_INT") + Convert.ToDecimal(lnAccruedInt - lnIntAdj));
                         PAYMENTDataSet.WS_DEALER_PAY.Rows[WSDealerPos].SetField<Decimal>("AMORT_ADJ", PAYMENTDataSet.WS_DEALER_PAY.Rows[WSDealerPos].Field<Decimal>("AMORT_ADJ") + Convert.ToDecimal(lnIntAdj));
                         break;
                     case "S":
                     case "N":  // Moses Newman 04/30/2017 Handle S for Simple and N for Normal Interest!
                         if (PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<Boolean>("IsSimple"))
                         {
-                            PAYMENTDataSet.WS_DEALER_PAY.Rows[WSDealerPos].SetField<Decimal>("SIMPLE_INT", PAYMENTDataSet.WS_DEALER_PAY.Rows[WSDealerPos].Field<Decimal>("SIMPLE_INT") + Convert.ToDecimal(lnPaidInt - lnIntAdj));
+                            PAYMENTDataSet.WS_DEALER_PAY.Rows[WSDealerPos].SetField<Decimal>("SIMPLE_INT", PAYMENTDataSet.WS_DEALER_PAY.Rows[WSDealerPos].Field<Decimal>("SIMPLE_INT") + Convert.ToDecimal(lnAccruedInt - lnIntAdj));
                             PAYMENTDataSet.WS_DEALER_PAY.Rows[WSDealerPos].SetField<Decimal>("SIMPLE_ADJ", PAYMENTDataSet.WS_DEALER_PAY.Rows[WSDealerPos].Field<Decimal>("SIMPLE_ADJ") + Convert.ToDecimal(lnIntAdj));
                         }
                         else
                         {
-                            PAYMENTDataSet.WS_DEALER_PAY.Rows[WSDealerPos].SetField<Decimal>("AMORT_INT", PAYMENTDataSet.WS_DEALER_PAY.Rows[WSDealerPos].Field<Decimal>("AMORT_INT") + Convert.ToDecimal(lnPaidInt - lnIntAdj));
+                            PAYMENTDataSet.WS_DEALER_PAY.Rows[WSDealerPos].SetField<Decimal>("AMORT_INT", PAYMENTDataSet.WS_DEALER_PAY.Rows[WSDealerPos].Field<Decimal>("AMORT_INT") + Convert.ToDecimal(lnAccruedInt - lnIntAdj));
                             PAYMENTDataSet.WS_DEALER_PAY.Rows[WSDealerPos].SetField<Decimal>("AMORT_ADJ", PAYMENTDataSet.WS_DEALER_PAY.Rows[WSDealerPos].Field<Decimal>("AMORT_ADJ") + Convert.ToDecimal(lnIntAdj));
                         }
                         break;
                     default:
-                        PAYMENTDataSet.WS_DEALER_PAY.Rows[WSDealerPos].SetField<Decimal>("OLD_INT", PAYMENTDataSet.WS_DEALER_PAY.Rows[WSDealerPos].Field<Decimal>("OLD_INT") + Convert.ToDecimal(lnPaidInt - lnIntAdj));
+                        PAYMENTDataSet.WS_DEALER_PAY.Rows[WSDealerPos].SetField<Decimal>("OLD_INT", PAYMENTDataSet.WS_DEALER_PAY.Rows[WSDealerPos].Field<Decimal>("OLD_INT") + Convert.ToDecimal(lnAccruedInt - lnIntAdj));
                         PAYMENTDataSet.WS_DEALER_PAY.Rows[WSDealerPos].SetField<Decimal>("OLD_ADJ", PAYMENTDataSet.WS_DEALER_PAY.Rows[WSDealerPos].Field<Decimal>("OLD_ADJ") + Convert.ToDecimal(lnIntAdj));
                         break;
 
@@ -1416,8 +1451,10 @@ namespace IAC2018SQL
                 PAYMENTDataSet.PaymentDistribution.Rows[PaymentDistributionBindingsource.Position].SetField<DateTime>("PaymentDate", PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<DateTime>("PAYMENT_DATE"));
                 PAYMENTDataSet.PaymentDistribution.Rows[PaymentDistributionBindingsource.Position].SetField<Decimal>("Amount", PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<Decimal>("PAYMENT_AMOUNT_RCV"));
                 PAYMENTDataSet.PaymentDistribution.Rows[PaymentDistributionBindingsource.Position].SetField<Decimal>("LateChargePaid", (Decimal)lnLateChargePaid);
-                PAYMENTDataSet.PaymentDistribution.Rows[PaymentDistributionBindingsource.Position].SetField<Decimal>("InterestPaid", (Decimal)lnPaidInt);
-                PAYMENTDataSet.PaymentDistribution.Rows[PaymentDistributionBindingsource.Position].SetField<Decimal>("PrincipalPaid", PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<Decimal>("PAYMENT_AMOUNT_RCV") - Convert.ToDecimal(lnPaidInt) - (Decimal)lnLateChargePaid);
+                PAYMENTDataSet.PaymentDistribution.Rows[PaymentDistributionBindingsource.Position].SetField<Decimal>("InterestPaid", (Decimal)lnAccruedInt);
+                PAYMENTDataSet.PaymentDistribution.Rows[PaymentDistributionBindingsource.Position].SetField<Decimal>("InterestAccrued", (Decimal)lnAccruedInt);
+                // Moses Newman Principal Paid is really Credit To Notes Receivable NOT Principle paid, lnSimpleDiff is in the reverse sign.
+                PAYMENTDataSet.PaymentDistribution.Rows[PaymentDistributionBindingsource.Position].SetField<Decimal>("PrincipalPaid", lnSimpleDiff * -1);
                 PAYMENTDataSet.PaymentDistribution.Rows[PaymentDistributionBindingsource.Position].SetField<Decimal>("OverPayment", (Decimal)lnCustOP);
                 PAYMENTDataSet.PaymentDistribution.Rows[PaymentDistributionBindingsource.Position].SetField<Decimal>("Extension", (Decimal)lnCustExt);
                 PAYMENTDataSet.PaymentDistribution.Rows[PaymentDistributionBindingsource.Position].SetField<Decimal>("PaidDiscount", (Decimal)lnPaidDiscount);
@@ -1443,7 +1480,7 @@ namespace IAC2018SQL
 
         void ClosedPaymentAccumIOL(int PaymentPos, ref IACDataSet PAYMENTDataSet, ref BackgroundWorker worker)
         {
-            lnMasterInterest += lnPaidInt;
+            lnMasterInterest += lnAccruedInt;
 
             lnMasterDiscount += (Decimal)lnPaidDiscount;
 
@@ -1478,7 +1515,7 @@ namespace IAC2018SQL
             if (PAYMENTDataSet.CUSTOMER.FindByCustomerID(Convert.ToInt32(PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<String>("PAYMENT_CUSTOMER"))).CUSTOMER_AMORTIZE_IND == "S" &&
                 PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<Boolean>("IsSimple"))
             {
-                lnMasterSimpleInterest += lnPaidInt;
+                lnMasterSimpleInterest += lnAccruedInt;
 
                 lnMasterSimpleDiscount += (Decimal)lnPaidDiscount;
                 // Moses Newman 03/05/2013 Simple Interest change lnBalance to lnSimpleDiff
@@ -1486,7 +1523,7 @@ namespace IAC2018SQL
             }
             else
             {
-                lnMasterAmortInterest += lnPaidInt;
+                lnMasterAmortInterest += lnAccruedInt;
 
                 lnMasterAmortDiscount += (Decimal)lnPaidDiscount;
 
@@ -1748,211 +1785,6 @@ namespace IAC2018SQL
                 MASTHISTBindingSource.Dispose();
                 MASTHISTTableAdapter.Dispose();
                 worker.ReportProgress(92);
-            }
-        }
-
-        public void CopyAmortizetoAmortTemp(IACDataSet AmortDataSet, ref BackgroundWorker worker, Int32 CustomerPos = -1)
-        {
-            String lsPrincipleAmount = "", lsInterestAmount = "", lsBalance = "", lsInterestPaid = "", lsPrinciplePaid = "", lsPaymentFlag = "";
-
-            IACDataSetTableAdapters.AMORTIZETableAdapter AMORTIZETableAdapter = new IACDataSetTableAdapters.AMORTIZETableAdapter();
-            IACDataSetTableAdapters.AmortTempTableAdapter AmortTempTableAdapter = new IACDataSetTableAdapters.AmortTempTableAdapter();
-            IACDataSetTableAdapters.CUSTOMERTableAdapter CUSTOMERTableAdapter = new IACDataSetTableAdapters.CUSTOMERTableAdapter();
-
-            if (CustomerPos == -1)
-            {
-                CUSTOMERTableAdapter.FillByUnPostedPayments(AmortDataSet.CUSTOMER);
-                for (Int32 i = 0; i < AmortDataSet.CUSTOMER.Rows.Count; i++)
-                {
-                    if (AmortDataSet.CUSTOMER.Rows[i].Field<String>("CUSTOMER_AMORTIZE_IND") == "Y")
-                    {
-                        AMORTIZETableAdapter.Fill(AmortDataSet.AMORTIZE, AmortDataSet.CUSTOMER.Rows[i].Field<String>("CUSTOMER_NO"));
-                        if (AmortDataSet.AMORTIZE.Rows.Count == 0)
-                            continue;
-                        try
-                        {
-                            AmortTempTableAdapter.DeleteByCustomer(AmortDataSet.CUSTOMER.Rows[i].Field<String>("CUSTOMER_NO"));
-                            for (Int32 x = 0; x < AmortDataSet.CUSTOMER.Rows[i].Field<Int32>("CUSTOMER_TERM"); x++)
-                            {
-                                lsInterestAmount = "AMORTIZE_INTEREST_AMOUNT_" + (x + 1).ToString().TrimStart().PadLeft(5, '0');
-                                lsPrincipleAmount = "AMORTIZE_PRINCIPLE_AMOUNT_" + (x + 1).ToString().TrimStart().PadLeft(5, '0');
-                                lsInterestPaid = "AMORTIZE_INTEREST_PAID_" + (x + 1).ToString().TrimStart().PadLeft(5, '0');
-                                lsPrinciplePaid = "AMORTIZE_PRINCIPLE_PAID_" + (x + 1).ToString().TrimStart().PadLeft(5, '0');
-                                lsBalance = "AMORTIZE_BALANCE_" + (x + 1).ToString().TrimStart().PadLeft(5, '0');
-                                lsPaymentFlag = "AMORTIZE_PAYMENT_FLAG_" + (x + 1).ToString().TrimStart().PadLeft(5, '0');
-                                AmortTempTableAdapter.Insert(AmortDataSet.CUSTOMER.Rows[i].Field<String>("CUSTOMER_NO"),
-                                    x + 1,
-                                    AmortDataSet.AMORTIZE.Rows[0].Field<Decimal>(lsInterestAmount),
-                                    AmortDataSet.AMORTIZE.Rows[0].Field<Decimal>(lsPrincipleAmount),
-                                    AmortDataSet.AMORTIZE.Rows[0].Field<Decimal>(lsBalance),
-                                    AmortDataSet.AMORTIZE.Rows[0].Field<Decimal>(lsInterestPaid),
-                                    AmortDataSet.AMORTIZE.Rows[0].Field<Decimal>(lsPrinciplePaid),
-                                    AmortDataSet.AMORTIZE.Rows[0].Field<String>(lsPaymentFlag));
-                            }
-                        }
-                        catch (System.Data.SqlClient.SqlException ex)
-                        {
-                            MessageBox.Show("This is a Microsoft SQL Server database error: " + ex.Message.ToString());
-                        }
-                        catch (System.InvalidOperationException ex)
-                        {
-                            MessageBox.Show("Invalid Operation Error: " + ex.Message.ToString());
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show("General Exception Error: " + ex.Message.ToString());
-                        }
-                    }
-                }
-            }
-            else
-            {
-                AMORTIZETableAdapter.Fill(AmortDataSet.AMORTIZE, AmortDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_NO"));
-                try
-                {
-                    AmortTempTableAdapter.DeleteByCustomer(AmortDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_NO"));
-                    for (Int32 x = 0; x < AmortDataSet.CUSTOMER.Rows[CustomerPos].Field<Int32>("CUSTOMER_TERM"); x++)
-                    {
-                        lsInterestAmount = "AMORTIZE_INTEREST_AMOUNT_" + (x + 1).ToString().TrimStart().PadLeft(5, '0');
-                        lsPrincipleAmount = "AMORTIZE_PRINCIPLE_AMOUNT_" + (x + 1).ToString().TrimStart().PadLeft(5, '0');
-                        lsInterestPaid = "AMORTIZE_INTEREST_PAID_" + (x + 1).ToString().TrimStart().PadLeft(5, '0');
-                        lsPrinciplePaid = "AMORTIZE_PRINCIPLE_PAID_" + (x + 1).ToString().TrimStart().PadLeft(5, '0');
-                        lsBalance = "AMORTIZE_BALANCE_" + (x + 1).ToString().TrimStart().PadLeft(5, '0');
-                        lsPaymentFlag = "AMORTIZE_PAYMENT_FLAG_" + (x + 1).ToString().TrimStart().PadLeft(5, '0');
-                        AmortTempTableAdapter.Insert(AmortDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_NO"),
-                            x + 1,
-                            AmortDataSet.AMORTIZE.Rows[0].Field<Decimal>(lsInterestAmount),
-                            AmortDataSet.AMORTIZE.Rows[0].Field<Decimal>(lsPrincipleAmount),
-                            AmortDataSet.AMORTIZE.Rows[0].Field<Decimal>(lsBalance),
-                            AmortDataSet.AMORTIZE.Rows[0].Field<Decimal>(lsInterestPaid),
-                            AmortDataSet.AMORTIZE.Rows[0].Field<Decimal>(lsPrinciplePaid),
-                            AmortDataSet.AMORTIZE.Rows[0].Field<String>(lsPaymentFlag));
-                    }
-                }
-                catch (System.Data.SqlClient.SqlException ex)
-                {
-                    MessageBox.Show("This is a Microsoft SQL Server database error: " + ex.Message.ToString());
-                }
-                catch (System.InvalidOperationException ex)
-                {
-                    MessageBox.Show("Invalid Operation Error: " + ex.Message.ToString());
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("General Exception Error: " + ex.Message.ToString());
-                }
-            }
-        }
-
-        public void CopyAmortTemptoAmortize(ref IACDataSet AmortDataSet, ref BackgroundWorker worker, Int32 CustomerPos = -1)
-        {
-            Int32 AmortPos = 0;
-            String lsPrincipleAmount = "", lsInterestAmount = "", lsBalance = "", lsInterestPaid = "", lsPrinciplePaid = "", lsPaymentFlag = "";
-
-            IACDataSetTableAdapters.AMORTIZETableAdapter AMORTIZETableAdapter = new IACDataSetTableAdapters.AMORTIZETableAdapter();
-            IACDataSetTableAdapters.AmortTempTableAdapter AmortTempTableAdapter = new IACDataSetTableAdapters.AmortTempTableAdapter();
-
-            BindingSource AMORTIZEBindingSource = new BindingSource();
-
-            AMORTIZEBindingSource.DataSource = AmortDataSet.AMORTIZE;
-
-            if (CustomerPos == -1)
-            {
-                for (Int32 i = 0; i < AmortDataSet.CUSTOMER.Rows.Count; i++)
-                {
-                    AmortTempTableAdapter.FillByCustomer(AmortDataSet.AmortTemp, AmortDataSet.CUSTOMER.Rows[i].Field<String>("CUSTOMER_NO"));
-                    AmortPos = AMORTIZEBindingSource.Find("AMORTIZE_CUST_NO", AmortDataSet.CUSTOMER.Rows[i].Field<String>("CUSTOMER_NO"));
-                    if (AmortPos == -1)
-                    {
-                        AMORTIZEBindingSource.AddNew();
-                        AMORTIZEBindingSource.EndEdit();
-                        AmortDataSet.AMORTIZE.Rows[AMORTIZEBindingSource.Position].SetField<String>("AMORTIZE_CUST_NO", AmortDataSet.CUSTOMER.Rows[i].Field<String>("CUSTOMER_NO"));
-                        AmortDataSet.AMORTIZE.Rows[AMORTIZEBindingSource.Position].SetField<String>("AMORTIZE_ADD_ON", " ");
-                        AmortDataSet.AMORTIZE.Rows[AMORTIZEBindingSource.Position].SetField<String>("AMORTIZE_TYPE", "C");
-                        AmortDataSet.AMORTIZE.Rows[AMORTIZEBindingSource.Position].SetField<Int32>("AMORTIZE_LOAN_TERM", AmortDataSet.CUSTOMER.Rows[i].Field<Int32>("CUSTOMER_TERM"));
-                        AmortDataSet.AMORTIZE.Rows[AMORTIZEBindingSource.Position].SetField<Decimal>("AMORTIZE_LOAN_CASH", AmortDataSet.CUSTOMER.Rows[i].Field<Decimal>("CUSTOMER_LOAN_CASH"));
-                        AmortDataSet.AMORTIZE.Rows[AMORTIZEBindingSource.Position].SetField<Decimal>("AMORTIZE_LOAN_ANNUAL_RATE", AmortDataSet.CUSTOMER.Rows[i].Field<Decimal>("CUSTOMER_ANNUAL_PERCENTAGE_RATE"));
-                        AmortDataSet.AMORTIZE.Rows[AMORTIZEBindingSource.Position].SetField<Decimal>("AMORTIZE_MONTHLY_AMOUNT_OWED", AmortDataSet.CUSTOMER.Rows[i].Field<Decimal>("CUSTOMER_REGULAR_AMOUNT"));
-                        AmortPos = AMORTIZEBindingSource.Position;
-                    }
-                    if (AmortDataSet.CUSTOMER.Rows[i].Field<String>("CUSTOMER_AMORTIZE_IND") == "Y" && AmortPos > -1)
-                    {
-                        for (Int32 x = 0; x < AmortDataSet.CUSTOMER.Rows[i].Field<Int32>("CUSTOMER_TERM"); x++)
-                        {
-                            lsInterestAmount = "AMORTIZE_INTEREST_AMOUNT_" + (x + 1).ToString().TrimStart().PadLeft(5, '0');
-                            lsPrincipleAmount = "AMORTIZE_PRINCIPLE_AMOUNT_" + (x + 1).ToString().TrimStart().PadLeft(5, '0');
-                            lsInterestPaid = "AMORTIZE_INTEREST_PAID_" + (x + 1).ToString().TrimStart().PadLeft(5, '0');
-                            lsPrinciplePaid = "AMORTIZE_PRINCIPLE_PAID_" + (x + 1).ToString().TrimStart().PadLeft(5, '0');
-                            lsBalance = "AMORTIZE_BALANCE_" + (x + 1).ToString().TrimStart().PadLeft(5, '0');
-                            lsPaymentFlag = "AMORTIZE_PAYMENT_FLAG_" + (x + 1).ToString().TrimStart().PadLeft(5, '0');
-
-                            AmortDataSet.AMORTIZE.Rows[AmortPos].SetField<Decimal>(lsInterestAmount, AmortDataSet.AmortTemp.Rows[x].Field<Decimal>("Interest"));
-                            AmortDataSet.AMORTIZE.Rows[AmortPos].SetField<Decimal>(lsPrincipleAmount, AmortDataSet.AmortTemp.Rows[x].Field<Decimal>("Principal"));
-                            AmortDataSet.AMORTIZE.Rows[AmortPos].SetField<Decimal>(lsInterestPaid, AmortDataSet.AmortTemp.Rows[x].Field<Decimal>("InterestPaid"));
-                            AmortDataSet.AMORTIZE.Rows[AmortPos].SetField<Decimal>(lsPrinciplePaid, AmortDataSet.AmortTemp.Rows[x].Field<Decimal>("PrincipalPaid"));
-                            AmortDataSet.AMORTIZE.Rows[AmortPos].SetField<Decimal>(lsBalance, AmortDataSet.AmortTemp.Rows[x].Field<Decimal>("Balance"));
-                            AmortDataSet.AMORTIZE.Rows[AmortPos].SetField<String>(lsPaymentFlag, AmortDataSet.AmortTemp.Rows[x].Field<String>("Paid"));
-                        }
-                    }
-                }
-            }
-            else
-            {
-                AmortTempTableAdapter.FillByCustomer(AmortDataSet.AmortTemp, AmortDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_NO"));
-                AmortPos = AMORTIZEBindingSource.Find("AMORTIZE_CUST_NO", AmortDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_NO"));
-                if (AmortPos == -1)
-                {
-                    AMORTIZEBindingSource.AddNew();
-                    AMORTIZEBindingSource.EndEdit();
-                    AmortDataSet.AMORTIZE.Rows[AMORTIZEBindingSource.Position].SetField<String>("AMORTIZE_CUST_NO", AmortDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_NO"));
-                    AmortDataSet.AMORTIZE.Rows[AMORTIZEBindingSource.Position].SetField<String>("AMORTIZE_ADD_ON", " ");
-                    AmortDataSet.AMORTIZE.Rows[AMORTIZEBindingSource.Position].SetField<String>("AMORTIZE_TYPE", "C");
-                    AmortDataSet.AMORTIZE.Rows[AMORTIZEBindingSource.Position].SetField<Int32>("AMORTIZE_LOAN_TERM", AmortDataSet.CUSTOMER.Rows[CustomerPos].Field<Int32>("CUSTOMER_TERM"));
-                    AmortDataSet.AMORTIZE.Rows[AMORTIZEBindingSource.Position].SetField<Decimal>("AMORTIZE_LOAN_CASH", AmortDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_LOAN_CASH"));
-                    AmortDataSet.AMORTIZE.Rows[AMORTIZEBindingSource.Position].SetField<Decimal>("AMORTIZE_LOAN_ANNUAL_RATE", AmortDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_ANNUAL_PERCENTAGE_RATE"));
-                    AmortDataSet.AMORTIZE.Rows[AMORTIZEBindingSource.Position].SetField<Decimal>("AMORTIZE_MONTHLY_AMOUNT_OWED", AmortDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_REGULAR_AMOUNT"));
-                    AmortPos = AMORTIZEBindingSource.Position;
-                }
-                if (AmortDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_AMORTIZE_IND") == "Y" && AmortPos > -1)
-                {
-                    for (Int32 x = 0; x < AmortDataSet.CUSTOMER.Rows[CustomerPos].Field<Int32>("CUSTOMER_TERM"); x++)
-                    {
-                        lsInterestAmount = "AMORTIZE_INTEREST_AMOUNT_" + (x + 1).ToString().TrimStart().PadLeft(5, '0');
-                        lsPrincipleAmount = "AMORTIZE_PRINCIPLE_AMOUNT_" + (x + 1).ToString().TrimStart().PadLeft(5, '0');
-                        lsInterestPaid = "AMORTIZE_INTEREST_PAID_" + (x + 1).ToString().TrimStart().PadLeft(5, '0');
-                        lsPrinciplePaid = "AMORTIZE_PRINCIPLE_PAID_" + (x + 1).ToString().TrimStart().PadLeft(5, '0');
-                        lsBalance = "AMORTIZE_BALANCE_" + (x + 1).ToString().TrimStart().PadLeft(5, '0');
-                        lsPaymentFlag = "AMORTIZE_PAYMENT_FLAG_" + (x + 1).ToString().TrimStart().PadLeft(5, '0');
-
-                        AmortDataSet.AMORTIZE.Rows[AmortPos].SetField<Decimal>(lsInterestAmount, AmortDataSet.AmortTemp.Rows[x].Field<Decimal>("Interest"));
-                        AmortDataSet.AMORTIZE.Rows[AmortPos].SetField<Decimal>(lsPrincipleAmount, AmortDataSet.AmortTemp.Rows[x].Field<Decimal>("Principal"));
-                        AmortDataSet.AMORTIZE.Rows[AmortPos].SetField<Decimal>(lsInterestPaid, AmortDataSet.AmortTemp.Rows[x].Field<Decimal>("InterestPaid"));
-                        AmortDataSet.AMORTIZE.Rows[AmortPos].SetField<Decimal>(lsPrinciplePaid, AmortDataSet.AmortTemp.Rows[x].Field<Decimal>("PrincipalPaid"));
-                        AmortDataSet.AMORTIZE.Rows[AmortPos].SetField<Decimal>(lsBalance, AmortDataSet.AmortTemp.Rows[x].Field<Decimal>("Balance"));
-                        AmortDataSet.AMORTIZE.Rows[AmortPos].SetField<String>(lsPaymentFlag, AmortDataSet.AmortTemp.Rows[x].Field<String>("Paid"));
-                    }
-                }
-            }
-            try
-            {
-                AMORTIZEBindingSource.EndEdit();
-                AMORTIZETableAdapter.Update(AmortDataSet.AMORTIZE);
-            }
-            catch (System.Data.SqlClient.SqlException ex)
-            {
-                MessageBox.Show("This is a Microsoft SQL Server database error: " + ex.Message.ToString());
-            }
-            catch (System.InvalidOperationException ex)
-            {
-                MessageBox.Show("Invalid Operation Error: " + ex.Message.ToString());
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("General Exception Error: " + ex.Message.ToString());
-            }
-            finally
-            {
-                worker.ReportProgress(98);
             }
         }
 
