@@ -39,7 +39,7 @@
     <SuiteName>IAC2018SQL</SuiteName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>175</ApplicationRevision>
+    <ApplicationRevision>184</ApplicationRevision>
     <ApplicationVersion>6.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -241,6 +241,14 @@
     </Compile>
     <Compile Include="ColorTextBox.Designer.cs">
       <DependentUpon>ColorTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DailyDataSet.cs">
+      <DependentUpon>DailyDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DailyDataSet.Designer.cs">
+      <DependentUpon>DailyDataSet.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="FormDelinquencyPeriods.cs">
       <SubType>Form</SubType>
@@ -1705,6 +1713,17 @@
     </EmbeddedResource>
     <None Include="app.config">
       <SubType>Designer</SubType>
+    </None>
+    <None Include="DailyDataSet.xsc">
+      <DependentUpon>DailyDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DailyDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DailyDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DailyDataSet.xss">
+      <DependentUpon>DailyDataSet.xsd</DependentUpon>
     </None>
     <None Include="IAC2018SQL_1_TemporaryKey.pfx" />
     <None Include="IAC2018SQL_TemporaryKey.pfx" />

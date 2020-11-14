@@ -179,9 +179,11 @@ namespace IAC2018SQL
             BindingSource CUSTHISTBindingSource = new BindingSource();
 
             Int32 lnSeq = 0;
-            Object loCustHistSeq = null, loIntPaid = null, loPrincipalChange = null, loStartingBalance = null, loNewBusiness = null, loPayments = null, loISFFees = null, loLateFees = null, 
-                       loNonCashFees = null;
-            Decimal lnPrincipalChange = 0, lnPayments = 0, lnNewBusiness= 0, lnLateFees = 0, lnISFFees = 0, lnNonCashFees = 0;
+            Object loCustHistSeq = null, loIntPaid = null, loPrincipalChange = null, loStartingBalance = null, loNewBusiness = null, loPayments = null, loISFFees = null, loLateFees = null,
+                   loNonCashFees = null,
+                   // Moses Newman 11/08/2020 Added Revised Balance to be used to calculate change in starting balance due to bounced check(S)
+                   loRevisedBalance = null;
+            Decimal lnPrincipalChange = 0, lnPayments = 0, lnNewBusiness= 0, lnLateFees = 0, lnISFFees = 0, lnNonCashFees = 0,lnRevisedBalance = 0,lnChangeDueToInsuf = 0;
             DateTime ldSeqDate;
 
             CUSTHISTBindingSource.DataSource = UpdateiacDataSet.CUSTHIST;
@@ -231,7 +233,6 @@ namespace IAC2018SQL
                 UpdateiacDataSet.CUSTOMER.Rows[CustomerPos].SetField<Int32>("CUSTOMER_NO_OF_PAYMENTS_MADE", 0);
             WriteCustomer(CustomerPos);
             UpdateiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].SetField<String>("CUSTHIST_PAID_THRU", UpdateiacDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_PAID_THRU").TrimStart().TrimEnd().PadLeft(4,'0'));
-            UpdateiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].SetField<Decimal>("CUSTHIST_PAID_DISCOUNT", Convert.ToDecimal(UpdateiacDataSet.CUSTOMER.Rows[CustomerPos].Field<Double>("CUSTOMER_PAID_DISCOUNT")));
             UpdateiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].SetField<Decimal>("CUSTHIST_PAID_INTEREST", UpdateiacDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_PAID_INTEREST"));
             UpdateiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].SetField<Decimal>("CUSTHIST_LATE_CHARGE_BAL", UpdateiacDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_LATE_CHARGE_BAL"));
             UpdateiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].SetField<String>("CUSTHIST_BUY_OUT", UpdateiacDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_BUY_OUT"));
@@ -260,10 +261,12 @@ namespace IAC2018SQL
             loNonCashFees = TVAmortTableAdapter.NonCashFees(UpdateiacDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_NO"),
                                              ldLastRun, ldNewRun);
 
-            if (loStartingBalance != null)
-                lnLastBalance = (Decimal)loStartingBalance;
-            else
-                lnLastBalance = 0;
+            lnLastBalance = (loStartingBalance != null) ? (Decimal)loStartingBalance:0;
+
+            // Moses Newman 11/08/2020 Add revised balance to be used to calculate change in starting balance due to bounced check(s).
+            loRevisedBalance = TVAmortTableAdapter.RevisedBalance(UpdateiacDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_NO"), ldLastRun);
+            lnRevisedBalance = (loRevisedBalance != null) ? (Decimal)loRevisedBalance : lnLastBalance;
+
             if (loIntPaid != null)
                 lnMonthToDateInterest = (Decimal)loIntPaid;
             if (loNewBusiness != null)
@@ -288,12 +291,18 @@ namespace IAC2018SQL
             else
                 lnNonCashFees = 0;
 
+            // Moses Newman 11/08/2020 Add Change Due To INSUF
+            lnChangeDueToInsuf = (lnRevisedBalance - lnLastBalance != 0) ? lnRevisedBalance - lnLastBalance : 0;
+
             // Moses Newman 07/12/2013 Created new StartingBalance stored procedure so that would not have issues with New business current period.
             //if (loPrincipalChange != null)
             //    lnPrincipalChange = (Decimal)loPrincipalChange;
 
             lnPrincipalChange = lnLastBalance - UpdateiacDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_BALANCE");
             //lnLastBalance = UpdateiacDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_BALANCE") + lnPrincipalChange;
+            // Moses Newman 11/08/2020 Hijack CUSTHIST_PAID_DISCOUNT for storing Change Due To INSUF because this field has never been used!
+            //UpdateiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].SetField<Decimal>("CUSTHIST_PAID_DISCOUNT", Convert.ToDecimal(UpdateiacDataSet.CUSTOMER.Rows[CustomerPos].Field<Double>("CUSTOMER_PAID_DISCOUNT")));
+            UpdateiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].SetField<Decimal>("CUSTHIST_PAID_DISCOUNT", lnChangeDueToInsuf);
             UpdateiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].SetField<Decimal>("CUSTHIST_FINANCE_CHARGE", lnMonthToDateInterest);
             UpdateiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].SetField<Decimal>("CUSTHIST_PREV_BALANCE", lnLastBalance);
             UpdateiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].SetField<Decimal>("CUSTHIST_TD_FINANCE_CHARGE", -1 * lnPrincipalChange);
