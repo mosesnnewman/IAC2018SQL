@@ -165,16 +165,23 @@ namespace IAC2018SQL
                 lnLastRec += 1;
                 for (int pcnt = 0; pcnt < lnLastRec; pcnt++)
                 {
-					// Moses Newman 10/11/2020 if it is an INSUF don't put it in the PayStream and remove the corresponding payment from the paystream!
-					if(PAYMENTDT.Rows[pcnt].Field<String>("PAYMENT_TYPE") == "I")
-                    {
-						FindRow = CUSTHISTBindingSource.Find("ID", PAYMENTDT.Rows[pcnt].Field<Int32>("ISFID"));
-						if (FindRow > -1)
+					// Moses Newman 11/18/2020 Now remove all payments that are being treated like ISF's including reveresed
+					// credit cards!
+					if (PAYMENTDT.Rows[pcnt].Field<Int32?>("ISFID") != null)
+					{
+						// Moses Newman 10/11/2020 if it is an INSUF don't put it in the PayStream and remove the corresponding payment from the paystream!
+						if (PAYMENTDT.Rows[pcnt].Field<Int32>("ISFID") != 0)
 						{
-							CUSTHISTBindingSource.RemoveAt(FindRow);
-							CUSTHISTBindingSource.EndEdit();
+							FindRow = CUSTHISTBindingSource.Find("ID", PAYMENTDT.Rows[pcnt].Field<Int32>("ISFID"));
+							if (FindRow > -1)
+							{
+								CUSTHISTBindingSource.RemoveAt(FindRow);
+								CUSTHISTBindingSource.EndEdit();
+								DTPayStream.AcceptChanges();
+								CUSTHISTBindingSource.DataSource = DTPayStream;
+							}
+							continue;
 						}
-						continue;
 					}
                     CUSTHISTBindingSource.AddNew();
                     CUSTHISTBindingSource.EndEdit();
@@ -312,7 +319,7 @@ namespace IAC2018SQL
 				
                 //cfmEvent.EventDate = DTPayStream.Rows[i].Field<DateTime>("CUSTHIST_PAY_DATE");
                 // Moses Newman 07/13/2019 use new TVDate field for EventDate so that ISNSUF's or negative adjustments apply retroactively
-                cfmEvent.EventDate = DTPayStream.Rows[i].Field<DateTime>("TVDate");
+                cfmEvent.EventDate = (DTPayStream.Rows[i].Field<DateTime?>("TVDate") != null) ? DTPayStream.Rows[i].Field<DateTime>("TVDate"): DTPayStream.Rows[i].Field<DateTime>("CUSTHIST_PAY_DATE");
 
                 // Moses Newman 02/10/2013 Set Payoff Date =  final payment if a paid loan
                 // Moses Newman 02/26/2018 If PAID regardless of BUY_OUT flag used last transaction date for payoff date!

@@ -36,10 +36,10 @@ namespace IAC2018SQL.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=SQL-IAC;Initial Catalog=IACSQLPRODUCTION;Integrated Security=True;Asy" +
-            "nchronous Processing=True;MultipleActiveResultSets=True;Connect Timeout=600")]
-        public string IAC2010SQLConnectionString {
+            "nchronous Processing=True;MultipleActiveResultSets=True;Connect Timeout=30")]
+        public string SSISParamsConnectionString {
             get {
-                return ((string)(this["IAC2010SQLConnectionString"]));
+                return ((string)(this["SSISParamsConnectionString"]));
             }
         }
         
@@ -48,9 +48,9 @@ namespace IAC2018SQL.Properties {
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=SQL-IAC;Initial Catalog=IACSQLPRODUCTION;Integrated Security=True;Asy" +
             "nchronous Processing=True;MultipleActiveResultSets=True;Connect Timeout=30")]
-        public string SSISParamsConnectionString {
+        public string IAC2010SQLConnectionString {
             get {
-                return ((string)(this["SSISParamsConnectionString"]));
+                return ((string)(this["IAC2010SQLConnectionString"]));
             }
         }
     }
