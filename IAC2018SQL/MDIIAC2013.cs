@@ -1427,10 +1427,14 @@ namespace IAC2018SQL
         private void monthlyInterestReportToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ReportData = new IACDataSet();
+            // Moses Newman 11/29/2020 add new Daily Interest Variance Sub Report
+            DailyDataSet DailyData = new DailyDataSet();
             IACDataSetTableAdapters.CUSTOMERTableAdapter CUSTOMERTableAdapter = new IACDataSetTableAdapters.CUSTOMERTableAdapter();
             IACDataSetTableAdapters.CUSTHISTTableAdapter CUSTHISTTableAdapter = new IACDataSetTableAdapters.CUSTHISTTableAdapter();
             IACDataSetTableAdapters.DEALERTableAdapter DEALERTableAdapter = new IACDataSetTableAdapters.DEALERTableAdapter();
             IACDataSetTableAdapters.SystemTableAdapter SystemTableAdapter = new IACDataSetTableAdapters.SystemTableAdapter();
+
+            DailyDataSetTableAdapters.DailyInterestVarianceTableAdapter DailyInterestVarianceTableAdapter = new DailyDataSetTableAdapters.DailyInterestVarianceTableAdapter();
 
             SystemTableAdapter.Fill(ReportData.System,1);
 
@@ -1445,9 +1449,10 @@ namespace IAC2018SQL
                 return;
             }
 
-
+            DailyInterestVarianceTableAdapter.Fill(DailyData.DailyInterestVariance, ldLastRun);
             MonthlyUpdateListing myReportObject = new MonthlyUpdateListing();
             myReportObject.SetDataSource(ReportData);
+            myReportObject.Subreports["DailyInterestVariance.rpt"].SetDataSource(DailyData);   // Moses Newman 11/29/2020 add new data source
             myReportObject.SetParameterValue("gsUserID", Program.gsUserID);
             myReportObject.SetParameterValue("gsUserName", Program.gsUserName);
             myReportObject.SetParameterValue("gsFormTitle", "Monthly Interest Update Report");
