@@ -245,7 +245,7 @@ namespace IAC2018SQL
                                                       PAYMENTPostDataSet.DEALER.Rows[i].Field<Decimal>("DEALER_CUR_OLD_INT"));
             }
             DailyInterestTableAdapter.Insert(PAYMENTPostDataSet.PAYMENT.Rows[0].Field<DateTime>("PAYMENT_DATE").Date, "P", lnMasterNP + lnMasterUEI + lnMasterNPNP - lnMasterOloan, 0, (lnMasterNP + lnMasterUEI + lnMasterNPNP - lnMasterOloan) - (lnMasterSimpleInterest + lnMasterAmortInterest + (Decimal)lnDlrDiscount),
-                                             DateTime.Parse("01/01/1980").Date);
+                                             new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month)));
             for (int i = 0; i < PAYMENTPostDataSet.PaymentTypeCodeSummarySelect.Rows.Count; i++)
             {
                 DailyPaymentTypeTotalsTableAdapter.Insert(PAYMENTPostDataSet.PAYMENT.Rows[0].Field<DateTime>("PAYMENT_DATE").Date,

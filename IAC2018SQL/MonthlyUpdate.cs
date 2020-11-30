@@ -88,7 +88,13 @@ namespace IAC2018SQL
             lnTotalSteps = UpdateiacDataSet.CUSTOMER.Rows.Count + 2;
             for (int i = 0; i < UpdateiacDataSet.CUSTOMER.Rows.Count; i++)
             {
-                TopOfJob(i);
+                // Moses Newman 11/29/2020 Removed top of job function and put contents here.
+                // Moses Newman removed init date filter that was blocking new buisness.
+                UpdateiacDataSet.CUSTOMER.Rows[i].SetField<Int32>("CUSTOMER_UPD_COUNT", UpdateiacDataSet.CUSTOMER.Rows[i].Field<Int32>("CUSTOMER_UPD_COUNT") + 1);
+                // Moses Newman 2020/11/29 Make sure to store previous CUSTOMER_BALANCE!
+                UpdateiacDataSet.CUSTOMER.Rows[i].SetField<Decimal>("CUSTOMER_PREV_BALANCE", UpdateiacDataSet.CUSTOMER.Rows[i].Field<Decimal>("CUSTOMER_BALANCE"));
+                CustomerHistory(i);
+
                 TVAmortTableAdapter.FillByCustomerNo(UpdateiacDataSet.TVAmort, UpdateiacDataSet.CUSTOMER.Rows[i].Field<String>("CUSTOMER_NO"));
                 for (Int32 j = 0; j < UpdateiacDataSet.TVAmort.Rows.Count; j++)
                 {
@@ -143,13 +149,6 @@ namespace IAC2018SQL
             SystemTableAdapter.Update(UpdateiacDataSet.System.Rows[0]);
             CP.Dispose();
             CP = null;
-        }
-
-        private void TopOfJob(Int32 CustomerPos)
-        {
-            // Moses Newman removed init date filter that was blocking new buisness.
-            UpdateiacDataSet.CUSTOMER.Rows[CustomerPos].SetField<Int32>("CUSTOMER_UPD_COUNT", UpdateiacDataSet.CUSTOMER.Rows[CustomerPos].Field<Int32>("CUSTOMER_UPD_COUNT") + 1);
-            CustomerHistory(CustomerPos);
         }
 
         private void WriteCustomer(Int32 CustomerPos)
@@ -438,7 +437,7 @@ namespace IAC2018SQL
         void MonthlyUpdateMasterPost()
         {
             int MASTERPos = 0;
-            Object loMasterKey;
+            Object loMasterKey,loTotalMonthEndInterest;
             String lsMasterKey = "";
             Decimal DeltaOSLoans = 0,DeltaInterest = 0;
 
@@ -455,7 +454,10 @@ namespace IAC2018SQL
                 DeltaOSLoans = UpdateiacDataSet.MonthlyUpdateTotals.Rows[0].Field<Decimal>("Balance") ;
                 if (UpdateiacDataSet.MastHistTotals.Rows.Count > 0)
                     DeltaOSLoans += UpdateiacDataSet.MastHistTotals.Rows[0].Field<Decimal>("TotalOLoan");
-                DeltaInterest = lnMonthToDateInterest;
+                loTotalMonthEndInterest = TVAmortTableAdapter.TotalMonthEndInterest(ldNewRun);
+                // Moses Newman let's get today's interest into the 213 card!
+                DeltaInterest = loTotalMonthEndInterest != null ? (Decimal)loTotalMonthEndInterest *-1: 0;
+                //DeltaInterest = lnMonthToDateInterest;
             }
             else
             {
@@ -556,9 +558,18 @@ namespace IAC2018SQL
                 UpdateiacDataSet.MASTER.Rows[MASTERPos].SetField<DateTime>("MASTER_POST_DATE", ldNewRun);
                 MASTERBindingSource.EndEdit();
                 MASTERTableAdapter.Update(UpdateiacDataSet.MASTER.Rows[MASTERPos]);
+                MonthlyUpdateDailyInterest(DeltaInterest * -1); // Moses Newman 11/25/2020 Add record to DailyInterest Table
             }
 
             worker.ReportProgress(24);
+        }
+
+        // Moses Newman 11/25/2020 Add interest post to DailyInterest Table
+        private void MonthlyUpdateDailyInterest(Decimal tnMonthInterest)
+        {
+            DailyDataSetTableAdapters.DailyInterestTableAdapter DailyInterestTableAdapter = new DailyDataSetTableAdapters.DailyInterestTableAdapter();
+            DailyDataSet DailySet = new DailyDataSet();
+            DailyInterestTableAdapter.Insert(ldNewRun, "M", tnMonthInterest, tnMonthInterest, 0,ldNewRun);
         }
 
         void MonthlyUpdateMASTHISTPost()

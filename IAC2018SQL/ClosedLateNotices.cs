@@ -73,10 +73,11 @@ namespace IAC2018SQL
                 worker.ReportProgress(lnProgress);
             }
             ActDealerPost();
-            worker.ReportProgress(88);
+            worker.ReportProgress(88); 
             UpdateMaster();
             worker.ReportProgress(98);
             CreateMastHist();
+            UpdateDailyInterest(); // Moses Newman 11/25/2020 Add interest post
             worker.ReportProgress(100);
             // Moses Newman 06/26/2015 CreateNoticeLetters
             MailMergeComponents CreateNoticeLetters = new MailMergeComponents();
@@ -679,6 +680,16 @@ namespace IAC2018SQL
                 UpdateSW = false;
                 update_customer(CustomerPos);
             }
+        }
+
+        // Moses Newman 11/25/2020 Add interest post to DailyInterest Table
+        private void UpdateDailyInterest()
+        {
+            DailyDataSetTableAdapters.DailyInterestTableAdapter DailyInterestTableAdapter = new DailyDataSetTableAdapters.DailyInterestTableAdapter();
+            DailyDataSet DailySet = new DailyDataSet();
+            DailyInterestTableAdapter.Insert(DateTime.Now.Date, "L", gnTotalInt, gnTotalInt, 0,
+                new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month)));
+
         }
 
         private void UpdateMaster()

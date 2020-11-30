@@ -2402,9 +2402,9 @@ namespace IAC2018SQL
                             }
                             // Moses Newman 03/29/2018 Make sure we have last late fee in buyout row!
                             if (FixData.TVAmort.Rows[i].Field<String>("Event").Trim() == "BUYOUT" || FixData.TVAmort.Rows[i].Field<String>("Event").Trim() == "UNEARNED")
-                                if (FixData.TVAmort.Rows[i].Field<Decimal>("LateFeeBalance") > 0)
+                                /*if (FixData.TVAmort.Rows[i].Field<Decimal>("LateFeeBalance") > 0)
                                     FixData.TVAmort.Rows[i].SetField<Decimal>("LateFee", lnLastLateFee);
-                                else
+                                else*/
                                     FixData.TVAmort.Rows[i].SetField<Decimal>("LateFee", 0);
                             lnPayments = 0;
                             break;

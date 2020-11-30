@@ -39,7 +39,7 @@
     <SuiteName>IAC2018SQL</SuiteName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>193</ApplicationRevision>
+    <ApplicationRevision>197</ApplicationRevision>
     <ApplicationVersion>6.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -241,6 +241,12 @@
     </Compile>
     <Compile Include="ColorTextBox.Designer.cs">
       <DependentUpon>ColorTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DailyInterestVariance.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DailyInterestVariance.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="DailyDataSet.cs">
       <DependentUpon>DailyDataSet.xsd</DependentUpon>
@@ -1226,6 +1232,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ClosedOverPaymentReport.resx">
       <DependentUpon>ClosedOverPaymentReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DailyInterestVariance.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>DailyInterestVariance.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="FormDelinquencyPeriods.resx">
       <DependentUpon>FormDelinquencyPeriods.cs</DependentUpon>
