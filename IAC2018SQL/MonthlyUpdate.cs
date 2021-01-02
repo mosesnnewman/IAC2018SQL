@@ -12,6 +12,7 @@ namespace IAC2018SQL
     {
         String lsProgress = "";
         Decimal lnMonthToDateInterest = 0,lnLastBalance = 0;
+        Decimal gnDeltaOSLoans = 0, gnDeltaInterest = 0;
         DateTime ldLastRun,ldNewRun;
 
         QueryProgress lfrm;
@@ -299,11 +300,16 @@ namespace IAC2018SQL
 
             lnPrincipalChange = lnLastBalance - UpdateiacDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_BALANCE");
             //lnLastBalance = UpdateiacDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_BALANCE") + lnPrincipalChange;
-            // Moses Newman 11/08/2020 Hijack CUSTHIST_PAID_DISCOUNT for storing Change Due To INSUF because this field has never been used!
-            //UpdateiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].SetField<Decimal>("CUSTHIST_PAID_DISCOUNT", Convert.ToDecimal(UpdateiacDataSet.CUSTOMER.Rows[CustomerPos].Field<Double>("CUSTOMER_PAID_DISCOUNT")));
-            UpdateiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].SetField<Decimal>("CUSTHIST_PAID_DISCOUNT", lnChangeDueToInsuf);
             UpdateiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].SetField<Decimal>("CUSTHIST_FINANCE_CHARGE", lnMonthToDateInterest);
-            UpdateiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].SetField<Decimal>("CUSTHIST_PREV_BALANCE", lnLastBalance);
+            // Moses Newman 12/15/2020 Store REAL CUSTOMER_PREV_BALANCE into CUSTHIST_PREV_BALANCE!
+            UpdateiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].SetField<Decimal>("CUSTHIST_PREV_BALANCE", UpdateiacDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_PREV_BALANCE"));
+            // Moses Newman 12/15/2020 Add LastMonthEndBalance
+            UpdateiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].SetField<Decimal>("LastMonthEndBalance", lnLastBalance);
+            // Moses Newman 12/15/2020 Add ChangeDueToISF No longer use CUSTHIST_PAID_DISCOUNT!
+            UpdateiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].SetField<Decimal>("ChangeDueToISF", lnChangeDueToInsuf);
+            // Moses Newman 12/15/2020 Store 211 card update amount in new MonthEndBalanceChange field!
+            UpdateiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].SetField<Decimal>("MonthEndBalanceChange", UpdateiacDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_BALANCE") - UpdateiacDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_PREV_BALANCE"));
+
             UpdateiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].SetField<Decimal>("CUSTHIST_TD_FINANCE_CHARGE", -1 * lnPrincipalChange);
             UpdateiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].SetField<Decimal>("CUSTHIST_BALANCE", UpdateiacDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_BALANCE"));
             UpdateiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].SetField<Decimal>("CUSTHIST_BUYOUT", UpdateiacDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_BUYOUT"));
@@ -451,7 +457,7 @@ namespace IAC2018SQL
             MonthlyUpdateTotalsTableAdapter.Fill(UpdateiacDataSet.MonthlyUpdateTotals);
             if (UpdateiacDataSet.MonthlyUpdateTotals.Rows.Count > 0)
             {
-                DeltaOSLoans = UpdateiacDataSet.MonthlyUpdateTotals.Rows[0].Field<Decimal>("Balance") ;
+                DeltaOSLoans = UpdateiacDataSet.MonthlyUpdateTotals.Rows[0].Field<Decimal>("Balance");
                 if (UpdateiacDataSet.MastHistTotals.Rows.Count > 0)
                     DeltaOSLoans += UpdateiacDataSet.MastHistTotals.Rows[0].Field<Decimal>("TotalOLoan");
                 loTotalMonthEndInterest = TVAmortTableAdapter.TotalMonthEndInterest(ldNewRun);
@@ -464,6 +470,7 @@ namespace IAC2018SQL
                 DeltaOSLoans = 0;
                 DeltaInterest = 0;
             }
+            gnDeltaInterest = DeltaInterest;
             MASTERTableAdapter.FillAllRecords(UpdateiacDataSet.MASTER);
 
             MASTERBindingSource.DataSource = UpdateiacDataSet.MASTER;
@@ -474,6 +481,7 @@ namespace IAC2018SQL
             if (MASTERPos > -1)
             {
                 DeltaOSLoans -= UpdateiacDataSet.MASTER.Rows[MASTERPos].Field<Decimal>("MASTER_YTD_OLOAN");
+                gnDeltaOSLoans = DeltaOSLoans;
                 UpdateiacDataSet.MASTER.Rows[MASTERPos].SetField<Decimal>("MASTER_CUR_RSV", 0);
                 UpdateiacDataSet.MASTER.Rows[MASTERPos].SetField<Decimal>("MASTER_CUR_CONT", 0);
                 UpdateiacDataSet.MASTER.Rows[MASTERPos].SetField<Decimal>("MASTER_CUR_OLOAN", 0);
@@ -489,11 +497,11 @@ namespace IAC2018SQL
                 UpdateiacDataSet.MASTER.Rows[MASTERPos].SetField<Decimal>("MASTER_SIMPLE_CUR_NOTES", 0);
                 UpdateiacDataSet.MASTER.Rows[MASTERPos].SetField<Decimal>("MASTER_SIMPLE_CUR_INT", 0);
 
-                UpdateiacDataSet.MASTER.Rows[MASTERPos].SetField<Decimal>("MASTER_CUR_OLOAN", DeltaOSLoans);
-                UpdateiacDataSet.MASTER.Rows[MASTERPos].SetField<Decimal>("MASTER_YTD_OLOAN", UpdateiacDataSet.MASTER.Rows[MASTERPos].Field<Decimal>("MASTER_YTD_OLOAN") + DeltaOSLoans);
+                UpdateiacDataSet.MASTER.Rows[MASTERPos].SetField<Decimal>("MASTER_CUR_OLOAN", DeltaInterest *-1);
+                UpdateiacDataSet.MASTER.Rows[MASTERPos].SetField<Decimal>("MASTER_YTD_OLOAN", UpdateiacDataSet.MASTER.Rows[MASTERPos].Field<Decimal>("MASTER_YTD_OLOAN") + (DeltaInterest * -1));
 
-                UpdateiacDataSet.MASTER.Rows[MASTERPos].SetField<Decimal>("MASTER_SIMPLE_CUR_OLOAN", DeltaOSLoans);
-                UpdateiacDataSet.MASTER.Rows[MASTERPos].SetField<Nullable<Decimal>>("MASTER_SIMPLE_YTD_OLOAN", UpdateiacDataSet.MASTER.Rows[MASTERPos].Field<Nullable<Decimal>>("MASTER_SIMPLE_YTD_OLOAN") + DeltaOSLoans);
+                UpdateiacDataSet.MASTER.Rows[MASTERPos].SetField<Decimal>("MASTER_SIMPLE_CUR_OLOAN", DeltaInterest * -1);
+                UpdateiacDataSet.MASTER.Rows[MASTERPos].SetField<Nullable<Decimal>>("MASTER_SIMPLE_YTD_OLOAN", UpdateiacDataSet.MASTER.Rows[MASTERPos].Field<Nullable<Decimal>>("MASTER_SIMPLE_YTD_OLOAN") + DeltaInterest * -1);
                 UpdateiacDataSet.MASTER.Rows[MASTERPos].SetField<DateTime>("MASTER_POST_DATE", ldNewRun);
                 MASTERBindingSource.EndEdit();
                 MASTERTableAdapter.Update(UpdateiacDataSet.MASTER.Rows[MASTERPos]);
@@ -615,6 +623,74 @@ namespace IAC2018SQL
                 UpdateiacDataSet.MASTHIST.Rows[MASTHISTPos].SetField<Decimal>("MASTHIST_YTD_NOTES", UpdateiacDataSet.MASTER.Rows[MASTERPos].Field<Decimal>("MASTER_YTD_NOTES"));
                 MASTHISTBindingSource.EndEdit();
                 MASTHISTTableAdapter.Update(UpdateiacDataSet.MASTHIST.Rows[MASTHISTPos]);
+
+                // Moses Newman 12/31/2020 Post actual interest to 211 + new change due to ISF 
+                MASTHISTBindingSource.AddNew();
+                MASTHISTBindingSource.EndEdit();
+
+                MASTHISTPos = MASTHISTBindingSource.Position;
+                loMasterKey = ACCOUNTTableAdapter.AccountNumber("OS_LOANS");
+                lsMasterKey = (String)loMasterKey;
+                MASTERPos = MASTERBindingSource.Find("MASTER_ACC_NO", lsMasterKey);
+
+                if (MASTHISTPos > -1)
+                {
+                    MASTHISTPos = MASTHISTBindingSource.Position;
+                    loMASTHISTSeq = MASTHISTTableAdapter.SeqNoQuery(lsMasterKey, ldNewRun);
+                    if (loMASTHISTSeq != null)
+                        lnSeq = (int)loMASTHISTSeq + 1;
+                    else
+                        lnSeq = 1;
+                    // Set up the new history record key
+                    UpdateiacDataSet.MASTHIST.Rows[MASTHISTPos].SetField<String>("MASTHIST_ACC_NO", UpdateiacDataSet.MASTER.Rows[MASTERPos].Field<String>("MASTER_ACC_NO"));
+                    UpdateiacDataSet.MASTHIST.Rows[MASTHISTPos].SetField<Int32>("MASTHIST_SEQ_NO", lnSeq);
+                    UpdateiacDataSet.MASTHIST.Rows[MASTHISTPos].SetField<DateTime>("MASTHIST_POST_DATE", ldNewRun);
+                    UpdateiacDataSet.MASTHIST.Rows[MASTHISTPos].SetField<String>("MASTHIST_NAME", UpdateiacDataSet.MASTER.Rows[MASTERPos].Field<String>("MASTER_NAME"));
+                    UpdateiacDataSet.MASTHIST.Rows[MASTHISTPos].SetField<String>("MASTHIST_IAC_TYPE", "C");
+
+                    //  End of MASTHIST KEY
+
+                    UpdateiacDataSet.MASTHIST.Rows[MASTHISTPos].SetField<Decimal>("MASTHIST_CUR_OLOAN", (gnDeltaOSLoans + gnDeltaInterest));
+                    UpdateiacDataSet.MASTHIST.Rows[MASTHISTPos].SetField<Decimal>("MASTHIST_YTD_OLOAN", UpdateiacDataSet.MASTER.Rows[MASTERPos].Field<Decimal>("MASTER_YTD_OLOAN") + gnDeltaOSLoans + gnDeltaInterest);
+                    UpdateiacDataSet.MASTHIST.Rows[MASTHISTPos].SetField<Decimal>("MASTHIST_CUR_NOTES", UpdateiacDataSet.MASTER.Rows[MASTERPos].Field<Decimal>("MASTER_CUR_NOTES"));
+                    UpdateiacDataSet.MASTHIST.Rows[MASTHISTPos].SetField<Decimal>("MASTHIST_YTD_NOTES", UpdateiacDataSet.MASTER.Rows[MASTERPos].Field<Decimal>("MASTER_YTD_NOTES"));
+                    MASTHISTBindingSource.EndEdit();
+                    MASTHISTTableAdapter.Update(UpdateiacDataSet.MASTHIST.Rows[MASTHISTPos]);
+                }
+                // Moses Newman 12/31/2020 Modify last MASTER so that it reflects the new Change due to ISF
+                MASTERTableAdapter.FillAllRecords(UpdateiacDataSet.MASTER);
+
+                MASTERBindingSource.DataSource = UpdateiacDataSet.MASTER;
+
+                loMasterKey = ACCOUNTTableAdapter.AccountNumber("OS_LOANS");
+                lsMasterKey = (String)loMasterKey;
+                MASTERPos = MASTERBindingSource.Find("MASTER_ACC_NO", lsMasterKey);
+                if (MASTERPos > -1)
+                {
+                    UpdateiacDataSet.MASTER.Rows[MASTERPos].SetField<Decimal>("MASTER_CUR_RSV", 0);
+                    UpdateiacDataSet.MASTER.Rows[MASTERPos].SetField<Decimal>("MASTER_CUR_CONT", 0);
+                    UpdateiacDataSet.MASTER.Rows[MASTERPos].SetField<Decimal>("MASTER_CUR_OLOAN", 0);
+                    UpdateiacDataSet.MASTER.Rows[MASTERPos].SetField<Decimal>("MASTER_CUR_ADJ", 0);
+                    UpdateiacDataSet.MASTER.Rows[MASTERPos].SetField<Decimal>("MASTER_CUR_BAD", 0);
+                    UpdateiacDataSet.MASTER.Rows[MASTERPos].SetField<Decimal>("MASTER_CUR_LOSS", 0);
+                    UpdateiacDataSet.MASTER.Rows[MASTERPos].SetField<Decimal>("MASTER_CUR_INT", 0);
+                    UpdateiacDataSet.MASTER.Rows[MASTERPos].SetField<Decimal>("MASTER_CUR_NOTES", 0);
+                    UpdateiacDataSet.MASTER.Rows[MASTERPos].SetField<Decimal>("MASTER_AMORT_CUR_OLOAN", 0);
+                    UpdateiacDataSet.MASTER.Rows[MASTERPos].SetField<Decimal>("MASTER_AMORT_CUR_NOTES", 0);
+                    UpdateiacDataSet.MASTER.Rows[MASTERPos].SetField<Decimal>("MASTER_AMORT_CUR_INT", 0);
+                    UpdateiacDataSet.MASTER.Rows[MASTERPos].SetField<Decimal>("MASTER_SIMPLE_CUR_OLOAN", 0);
+                    UpdateiacDataSet.MASTER.Rows[MASTERPos].SetField<Decimal>("MASTER_SIMPLE_CUR_NOTES", 0);
+                    UpdateiacDataSet.MASTER.Rows[MASTERPos].SetField<Decimal>("MASTER_SIMPLE_CUR_INT", 0);
+
+                    UpdateiacDataSet.MASTER.Rows[MASTERPos].SetField<Decimal>("MASTER_CUR_OLOAN", gnDeltaOSLoans + gnDeltaInterest);
+                    UpdateiacDataSet.MASTER.Rows[MASTERPos].SetField<Decimal>("MASTER_YTD_OLOAN", UpdateiacDataSet.MASTER.Rows[MASTERPos].Field<Decimal>("MASTER_YTD_OLOAN") + gnDeltaOSLoans + gnDeltaInterest);
+
+                    UpdateiacDataSet.MASTER.Rows[MASTERPos].SetField<Decimal>("MASTER_SIMPLE_CUR_OLOAN", gnDeltaOSLoans + gnDeltaInterest);
+                    UpdateiacDataSet.MASTER.Rows[MASTERPos].SetField<Nullable<Decimal>>("MASTER_SIMPLE_YTD_OLOAN", UpdateiacDataSet.MASTER.Rows[MASTERPos].Field<Nullable<Decimal>>("MASTER_SIMPLE_YTD_OLOAN") + gnDeltaOSLoans + gnDeltaInterest);
+                    UpdateiacDataSet.MASTER.Rows[MASTERPos].SetField<DateTime>("MASTER_POST_DATE", ldNewRun);
+                    MASTERBindingSource.EndEdit();
+                    MASTERTableAdapter.Update(UpdateiacDataSet.MASTER.Rows[MASTERPos]);
+                }
             }
 
             MASTHISTBindingSource.AddNew();

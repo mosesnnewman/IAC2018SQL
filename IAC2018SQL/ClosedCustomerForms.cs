@@ -27,6 +27,10 @@ namespace IAC2018SQL
 {
     public partial class frmCustMaint : Form
     {
+        // Moses Newman 12/16/2020
+        BindingSource PaymentBindingSource = new BindingSource();
+        IACDataSetTableAdapters.PAYMENTTableAdapter PAYMENTTableAdapter = new IACDataSetTableAdapters.PAYMENTTableAdapter();
+
         // Moses Newman 08/2/2013 need to save orginal BALANCE so that maintenance DOES NOT ALTER IT!
         private Object loLastBalance = null;
         private Decimal gnCustomerBalance = 0, gnCustomerBuyout = 0,gnTotalFees = 0,gnRepoFees = 0,gnStorageFees = 0,gnImpoundFees = 0, gnResaleFees = 0,
@@ -2000,11 +2004,11 @@ namespace IAC2018SQL
                 // Moses Newman 10/23/2013 Add Code to create rate change event to turn on or off interest depending on interest overide setting
                 if (lbEdit)
                 {
-                    String lsCustKey = iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<String>("CUSTOMER_NO"), lsExpression = "", lsSort = "";
+                    String lsCustKey = iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<String>("CUSTOMER_NO");//, lsExpression = "", lsSort = "";
                     Boolean lbInterestOveride = false;
-                    Object loLastIntOverideZero = null, loCustHistSeq = null;
+                    Object loLastIntOverideZero = null;// loCustHistSeq = null;
                     DateTime ldCustDate = DateTime.Now.Date;
-                    DataRow[] FoundItems = null;
+                    //DataRow[] FoundItems = null;
                     // Moses Newman 01/08/2014 DO NOT CREATE AN INTEREST OVERIDE RECORD IF THE CUSTOMER IS ALREADY IN INTEREST OVERRIDE STATUS!
                     if (iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<String>("CUSTOMER_INT_OVERRIDE") == "Y" && !lbAlreadyIntOverride)
                     {
@@ -2012,7 +2016,28 @@ namespace IAC2018SQL
                         if (loLastIntOverideZero != null)
                             lbInterestOveride = ((Int32)loLastIntOverideZero == 1) ? true : false;
                         if (!lbInterestOveride)
-                        {            //This code gets the next available sequence number for todays date if another history record for today exists
+                        {
+                            PaymentBindingSource.DataSource = iACDataSet.PAYMENT;
+                            PaymentBindingSource.AddNew();
+                            PaymentBindingSource.EndEdit();
+
+                            iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position].SetField<String>("PAYMENT_CUSTOMER", lsCustKey);
+                            iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position].SetField<String>("PAYMENT_ADD_ON", " ");
+                            iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position].SetField<String>("PAYMENT_IAC_TYPE", "C");
+                            iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position].SetField<DateTime>("PAYMENT_DATE", DateTime.Now.Date);
+                            iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position].SetField<String>("PAYMENT_POST_INDICATOR", " ");
+                            iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position].SetField<String>("PAYMENT_DEALER", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<String>("CUSTOMER_DEALER"));
+                            iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position].SetField<String>("PAYMENT_TYPE", "F");
+                            iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position].SetField<String>("PAYMENT_CODE_2", " ");
+                            iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position].SetField<String>("PAYMENT_AUTO_PAY", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<String>("CUSTOMER_AUTOPAY"));
+                            iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position].SetField<String>("PAYMENT_TSB_COMMENT_CODE", "");
+                            iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position].SetField<Decimal>("PAYMENT_AMOUNT_RCV", 0);
+
+                            PaymentBindingSource.EndEdit();
+                            PAYMENTTableAdapter.Connection = tableAdapConn;
+                            PAYMENTTableAdapter.Transaction = tableAdapTran;
+                            PAYMENTTableAdapter.Update(iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position]);
+                            /*//This code gets the next available sequence number for todays date if another history record for today exists
                             loCustHistSeq = cUSTHISTTableAdapter.SeqNoQuery(lsCustKey, DateTime.Now.Date);
                             if (loCustHistSeq != null)
                                 lnSeq = (int)loCustHistSeq + 1;
@@ -2059,67 +2084,93 @@ namespace IAC2018SQL
 
                             cUSTHISTTableAdapter.Connection = tableAdapConn;
                             cUSTHISTTableAdapter.Transaction = tableAdapTran;
-                            cUSTHISTTableAdapter.Update(iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position]);
+                            cUSTHISTTableAdapter.Update(iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position]);*/
                         }
                     }
                     else
-                        if (iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<String>("CUSTOMER_INT_OVERRIDE") == "N")
                     {
-                        loLastIntOverideZero = cUSTHISTTableAdapter.IsLastRateChangeZero(lsCustKey);
-                        if (loLastIntOverideZero != null)
-                            lbInterestOveride = ((Int32)loLastIntOverideZero == 1) ? true : false;
-                        // Last interest overide record exists and was zero
-                        if (lbInterestOveride)
-                        {            //This code gets the next available sequence number for todays date if another history record for today exists
-                            loCustHistSeq = cUSTHISTTableAdapter.SeqNoQuery(lsCustKey, DateTime.Now.Date);
-                            if (loCustHistSeq != null)
-                                lnSeq = (int)loCustHistSeq + 1;
-                            else
-                                lnSeq = 1;
-                            ldCustDate = DateTime.Now.Date;
-                            // If any history records with the same customer no already exist in the DataTable, we must check IT for the last sequence number.
-                            lsExpression = "CUSTHIST_NO = \'" + lsCustKey + "\' and CUSTHIST_PAY_DATE = \'" + ldCustDate.ToShortDateString() + "\' and max(custhist_date_seq) > 0";
-                            lsSort = "custhist_date_seq desc";
-                            FoundItems = iACDataSet.CUSTHIST.Select(lsExpression, lsSort);
-
-                            if (FoundItems.Length != 0)
+                        if (iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<String>("CUSTOMER_INT_OVERRIDE") == "N")
+                        {
+                            loLastIntOverideZero = cUSTHISTTableAdapter.IsLastRateChangeZero(lsCustKey);
+                            if (loLastIntOverideZero != null)
+                                lbInterestOveride = ((Int32)loLastIntOverideZero == 1) ? true : false;
+                            // Last interest overide record exists and was zero
+                            if (lbInterestOveride)
                             {
-                                lnSeq = FoundItems[0].Field<Int32>("CUSTHIST_DATE_SEQ") + 1;
+                                PaymentBindingSource.DataSource = iACDataSet.PAYMENT;
+                                PaymentBindingSource.AddNew();
+                                PaymentBindingSource.EndEdit();
+
+                                iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position].SetField<String>("PAYMENT_CUSTOMER", lsCustKey);
+                                iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position].SetField<String>("PAYMENT_ADD_ON", " ");
+                                iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position].SetField<String>("PAYMENT_IAC_TYPE", "C");
+                                iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position].SetField<DateTime>("PAYMENT_DATE", DateTime.Now.Date);
+                                iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position].SetField<String>("PAYMENT_POST_INDICATOR", " ");
+                                iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position].SetField<String>("PAYMENT_DEALER", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<String>("CUSTOMER_DEALER"));
+                                iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position].SetField<String>("PAYMENT_TYPE", "F");
+                                iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position].SetField<String>("PAYMENT_CODE_2", " ");
+                                iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position].SetField<String>("PAYMENT_AUTO_PAY", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<String>("CUSTOMER_AUTOPAY"));
+                                iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position].SetField<String>("PAYMENT_TSB_COMMENT_CODE", "");
+                                iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position].SetField<Decimal>("PAYMENT_AMOUNT_RCV", 0);
+
+                                PaymentBindingSource.EndEdit();
+                                PAYMENTTableAdapter.Connection = tableAdapConn;
+                                PAYMENTTableAdapter.Transaction = tableAdapTran;
+                                PAYMENTTableAdapter.Update(iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position]);
+
+                                /*
+                                //This code gets the next available sequence number for todays date if another history record for today exists
+                                loCustHistSeq = cUSTHISTTableAdapter.SeqNoQuery(lsCustKey, DateTime.Now.Date);
+                                if (loCustHistSeq != null)
+                                    lnSeq = (int)loCustHistSeq + 1;
+                                else
+                                    lnSeq = 1;
+                                ldCustDate = DateTime.Now.Date;
+                                // If any history records with the same customer no already exist in the DataTable, we must check IT for the last sequence number.
+                                lsExpression = "CUSTHIST_NO = \'" + lsCustKey + "\' and CUSTHIST_PAY_DATE = \'" + ldCustDate.ToShortDateString() + "\' and max(custhist_date_seq) > 0";
+                                lsSort = "custhist_date_seq desc";
+                                FoundItems = iACDataSet.CUSTHIST.Select(lsExpression, lsSort);
+
+                                if (FoundItems.Length != 0)
+                                {
+                                    lnSeq = FoundItems[0].Field<Int32>("CUSTHIST_DATE_SEQ") + 1;
+                                }
+
+                                cUSTHISTBindingSource.AddNew();
+                                cUSTHISTBindingSource.EndEdit();
+
+                                iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<String>("CUSTHIST_NO", lsCustKey);
+                                iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<DateTime>("CUSTHIST_PAY_DATE", DateTime.Now.Date);
+                                iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Int32>("CUSTHIST_DATE_SEQ", lnSeq);
+                                // Moses Newman 03/15/2018 Added TransactionDate, Fee, FromIVR
+                                iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<DateTime>("TransactionDate", DateTime.Now.Date);
+                                iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Decimal>("Fee", 0);
+                                iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Boolean>("FromIVR", false);
+                                iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<String>("CUSTHIST_ACT_STAT", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<String>("CUSTOMER_ACT_STAT"));
+                                iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Decimal>("CUSTHIST_BALANCE", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<Decimal>("CUSTOMER_BALANCE"));
+                                iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Decimal>("CUSTHIST_PAID_DISCOUNT", Convert.ToDecimal(iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<Double>("CUSTOMER_PAID_DISCOUNT")));
+                                iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Decimal>("CUSTHIST_PAID_INTEREST", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<Decimal>("CUSTOMER_PAID_INTEREST"));
+                                iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Decimal>("CUSTHIST_PAYMENT_RCV", 0);
+                                iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Decimal>("CUSTHIST_LATE_CHARGE", 0);
+                                iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Decimal>("CUSTHIST_LATE_CHARGE_BAL", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<Decimal>("CUSTOMER_LATE_CHARGE_BAL"));
+                                iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Decimal>("CUSTHIST_LATE_CHARGE_PAID", 0);
+                                iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Decimal>("CUSTHIST_BUYOUT", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<Decimal>("CUSTOMER_BUYOUT"));
+                                iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<String>("CUSTHIST_AUTO_PAY", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<String>("CUSTOMER_AUTOPAY"));
+                                iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<String>("CUSTHIST_PAY_REM_1", "RTCHG");
+                                iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Int32>("CUSTHIST_PAY_REM_2", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<Int32>("CUSTOMER_PAY_REM_2"));
+                                iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<String>("CUSTHIST_PAYMENT_TYPE", "F");
+                                iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<String>("CUSTHIST_PAYMENT_CODE", "");
+                                iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Decimal>("CUSTHIST_CONTRACT_STATUS", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<Decimal>("CUSTOMER_CONTRACT_STATUS"));
+                                iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<String>("CUSTHIST_PAID_THRU", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<String>("CUSTOMER_PAID_THRU"));
+                                // TURN INTEREST BACK ON!
+                                iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Decimal>("TVRateChange", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<Decimal>("CUSTOMER_ANNUAL_PERCENTAGE_RATE"));
+                                cUSTHISTBindingSource.EndEdit();
+
+                                cUSTHISTTableAdapter.Connection = tableAdapConn;
+                                cUSTHISTTableAdapter.Transaction = tableAdapTran;
+                                cUSTHISTTableAdapter.Update(iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position]);
+                                */
                             }
-
-                            cUSTHISTBindingSource.AddNew();
-                            cUSTHISTBindingSource.EndEdit();
-
-                            iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<String>("CUSTHIST_NO", lsCustKey);
-                            iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<DateTime>("CUSTHIST_PAY_DATE", DateTime.Now.Date);
-                            iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Int32>("CUSTHIST_DATE_SEQ", lnSeq);
-                            // Moses Newman 03/15/2018 Added TransactionDate, Fee, FromIVR
-                            iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<DateTime>("TransactionDate", DateTime.Now.Date);
-                            iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Decimal>("Fee", 0);
-                            iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Boolean>("FromIVR", false);
-                            iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<String>("CUSTHIST_ACT_STAT", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<String>("CUSTOMER_ACT_STAT"));
-                            iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Decimal>("CUSTHIST_BALANCE", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<Decimal>("CUSTOMER_BALANCE"));
-                            iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Decimal>("CUSTHIST_PAID_DISCOUNT", Convert.ToDecimal(iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<Double>("CUSTOMER_PAID_DISCOUNT")));
-                            iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Decimal>("CUSTHIST_PAID_INTEREST", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<Decimal>("CUSTOMER_PAID_INTEREST"));
-                            iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Decimal>("CUSTHIST_PAYMENT_RCV", 0);
-                            iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Decimal>("CUSTHIST_LATE_CHARGE", 0);
-                            iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Decimal>("CUSTHIST_LATE_CHARGE_BAL", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<Decimal>("CUSTOMER_LATE_CHARGE_BAL"));
-                            iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Decimal>("CUSTHIST_LATE_CHARGE_PAID", 0);
-                            iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Decimal>("CUSTHIST_BUYOUT", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<Decimal>("CUSTOMER_BUYOUT"));
-                            iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<String>("CUSTHIST_AUTO_PAY", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<String>("CUSTOMER_AUTOPAY"));
-                            iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<String>("CUSTHIST_PAY_REM_1", "RTCHG");
-                            iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Int32>("CUSTHIST_PAY_REM_2", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<Int32>("CUSTOMER_PAY_REM_2"));
-                            iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<String>("CUSTHIST_PAYMENT_TYPE", "F");
-                            iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<String>("CUSTHIST_PAYMENT_CODE", "");
-                            iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Decimal>("CUSTHIST_CONTRACT_STATUS", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<Decimal>("CUSTOMER_CONTRACT_STATUS"));
-                            iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<String>("CUSTHIST_PAID_THRU", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<String>("CUSTOMER_PAID_THRU"));
-                            // TURN INTEREST BACK ON!
-                            iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Decimal>("TVRateChange", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<Decimal>("CUSTOMER_ANNUAL_PERCENTAGE_RATE"));
-                            cUSTHISTBindingSource.EndEdit();
-
-                            cUSTHISTTableAdapter.Connection = tableAdapConn;
-                            cUSTHISTTableAdapter.Transaction = tableAdapTran;
-                            cUSTHISTTableAdapter.Update(iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position]);
                         }
                     }
                 }

@@ -165,7 +165,7 @@ namespace IAC2018SQL
                 lnLastRec += 1;
                 for (int pcnt = 0; pcnt < lnLastRec; pcnt++)
                 {
-					// Moses Newman 11/18/2020 Now remove all payments that are being treated like ISF's including reveresed
+					// Moses Newman 11/18/2020 Now remove all payments that are being treated like ISF's including reversed
 					// credit cards!
 					if (PAYMENTDT.Rows[pcnt].Field<Int32?>("ISFID") != null)
 					{
@@ -175,7 +175,9 @@ namespace IAC2018SQL
 							FindRow = CUSTHISTBindingSource.Find("ID", PAYMENTDT.Rows[pcnt].Field<Int32>("ISFID"));
 							if (FindRow > -1)
 							{
-								CUSTHISTBindingSource.RemoveAt(FindRow);
+								// Moses Newman 01/01/2021 Now make bounced check 0 amount in time value instead of deleting it!
+								DTPayStream.Rows[FindRow].SetField<Decimal>("CUSTHIST_PAYMENT_RCV", 0);
+								//CUSTHISTBindingSource.RemoveAt(FindRow);
 								CUSTHISTBindingSource.EndEdit();
 								DTPayStream.AcceptChanges();
 								CUSTHISTBindingSource.DataSource = DTPayStream;
@@ -233,7 +235,16 @@ namespace IAC2018SQL
                     DTPayStream.Rows[CUSTHISTBindingSource.Position].SetField<String>("CUSTHIST_PAY_REM_1", Program.MarkPay(CUSTOMERDT.Rows[0].Field<String>("CUSTOMER_ACT_STAT"), PAYMENTDT.Rows[pcnt].Field<String>("PAYMENT_TYPE"), PAYMENTDT.Rows[pcnt].Field<String>("PAYMENT_CODE_2")));
                     // Moses Newman 10/17/2018 Add PaymentSeq to CUSTHIST record.
                     DTPayStream.Rows[CUSTHISTBindingSource.Position].SetField<Nullable<Int32>>("PaymentSeq", PAYMENTDT.Rows[pcnt].Field<Nullable<Int32>>("SeqNo"));
-                    CUSTHISTBindingSource.EndEdit();
+					// Moses Newman 12/16/2020 add handling of RTCHG payment types.
+					if (PAYMENTDT.Rows[pcnt].Field<String>("PAYMENT_TYPE") == "F")
+					{
+						DTPayStream.Rows[CUSTHISTBindingSource.Position].SetField<String>("CUSTHIST_PAY_REM_1", "RTCHG");
+						DTPayStream.Rows[CUSTHISTBindingSource.Position].SetField<Decimal>("TVRateChange",
+							(CUSTOMERDT.Rows[0].Field<String>("CUSTOMER_INT_OVERRIDE") == "Y") ?
+								0 : CUSTOMERDT.Rows[0].Field<Decimal>("CUSTOMER_ANNUAL_PERCENTAGE_RATE"));
+					}
+
+					CUSTHISTBindingSource.EndEdit();
                 }
                 // Moses Newman 03/13/2018 if more than one payment for the same customer tdPayoffDate needs to be the most recent payment or TValue will crash!
                 tdPayoffDate = PAYMENTDT.Rows[PAYMENTDT.Rows.Count-1].Field<DateTime>("PAYMENT_DATE");
@@ -654,9 +665,9 @@ namespace IAC2018SQL
                         lnRowNumber += 1;
                         dr["RowNumber"] = lnRowNumber;
 						if (AmortIndex >= tdtCUSTHIST.Rows.Count)
-							if(!tbAmort)
-								if(CustomerDT.Rows[0].Field<String>("CUSTOMER_BUY_OUT") != "Y")
-									dr["Event"] = "BUYOUT"; 
+							if (!tbAmort)
+								if (CustomerDT.Rows[0].Field<String>("CUSTOMER_BUY_OUT") != "Y")
+									dr["Event"] = "BUYOUT";
 								else
 									dr["Event"] = "UNEARNED";
 							else
@@ -668,17 +679,17 @@ namespace IAC2018SQL
 						}
 							
 						dr["Date"] = eventDate;
-                        // Moses Newman 03/20/2018 Add History Sequence Number to amort
-                        dr["HistorySeq"] = tdtCUSTHIST.Rows[AmortIndex-1]["CUSTHIST_DATE_SEQ"];
-                        // Moses Newman 07/25/2019 Add History Date to Amort for proper sequencing in FixLateFeesandPartialPayments
-                        dr["HistoryDate"] = tdtCUSTHIST.Rows[AmortIndex - 1]["CUSTHIST_PAY_DATE"];
-                        // Moses Newman 10/17/2018 add PaymentSeq for lookup in posting.
-                        dr["PaymentSeq"] = tdtCUSTHIST.Rows[AmortIndex-1].Field<Int32?>("PaymentSeq") != null ? tdtCUSTHIST.Rows[AmortIndex-1].Field<Int32>("PaymentSeq") : 0;
-
-                        dr["PartialPayment"] = tdtCUSTHIST.Rows[AmortIndex - 1]["PartialPayment"];
+						// Moses Newman 03/20/2018 Add History Sequence Number to amort
+						// Moses Newman 10/17/2018 add PaymentSeq for lookup in posting.
+						dr["PaymentSeq"] = tdtCUSTHIST.Rows[AmortIndex - 1].Field<Int32?>("PaymentSeq") != null ? tdtCUSTHIST.Rows[AmortIndex - 1].Field<Int32>("PaymentSeq") : 0;
+						// Moses Newman 04/03/2018 Add Payment Code to TVAmort so we know what the wave type is!
+						dr["PaymentCode"] = (String)tdtCUSTHIST.Rows[AmortIndex - 1]["CUSTHIST_PAYMENT_TYPE"] + (String)tdtCUSTHIST.Rows[AmortIndex - 1]["CUSTHIST_PAYMENT_CODE"];
+						// Moses Newman 03/20/2018 Add History Sequence Number to amort
+						dr["HistorySeq"] = tdtCUSTHIST.Rows[AmortIndex - 1]["CUSTHIST_DATE_SEQ"];
+						// Moses Newman 07/25/2019 Add History Date to Amort for proper sequencing in FixLateFeesandPartialPayments
+						dr["HistoryDate"] = tdtCUSTHIST.Rows[AmortIndex - 1]["CUSTHIST_PAY_DATE"];
+						dr["PartialPayment"] = tdtCUSTHIST.Rows[AmortIndex - 1]["PartialPayment"];
                         dr["LateFeeBalance"] = tdtCUSTHIST.Rows[AmortIndex - 1]["CUSTHIST_LATE_CHARGE_BAL"];
-                        // Moses Newman 04/03/2018 Add Payment Code to TVAmort so we know what the wave type is!
-                        dr["PaymentCode"] = (String)tdtCUSTHIST.Rows[AmortIndex - 1]["CUSTHIST_PAYMENT_TYPE"] + (String)tdtCUSTHIST.Rows[AmortIndex - 1]["CUSTHIST_PAYMENT_CODE"];
                         if (tdtCUSTHIST.Rows[AmortIndex - 1]["CUSTHIST_PAID_THRU"].ToString().Trim() != "")
                         {
                             if (CustomerDT.Rows[0].Field<Int32>("CUSTOMER_DAY_DUE") == 30 && tdtCUSTHIST.Rows[AmortIndex - 1]["CUSTHIST_PAID_THRU"].ToString().Substring(0, 2) == "02")
@@ -753,8 +764,10 @@ namespace IAC2018SQL
                             dr["HistorySeq"] = tdtCUSTHIST.Rows[AmortIndex]["CUSTHIST_DATE_SEQ"];
                             // Moses Newman 07/25/2019 Add History Date to Amort for proper sequencing in FixLateFeesandPartialPayments
                             dr["HistoryDate"] = tdtCUSTHIST.Rows[AmortIndex]["CUSTHIST_PAY_DATE"];
-
-                            AmortIndex += 1;
+							dr["PaymentCode"] = "F";
+							// Moses Newman 12/16/2020 Add Payment Code!
+							dr["PaymentSeq"] = tdtCUSTHIST.Rows[AmortIndex].Field<Int32?>("PaymentSeq") != null ? tdtCUSTHIST.Rows[AmortIndex].Field<Int32>("PaymentSeq") : 0;
+							AmortIndex += 1;
                             TVAmortDT.Rows.Add(dr);
                             break;
 
@@ -972,6 +985,7 @@ namespace IAC2018SQL
 										   ref IACDataSetTableAdapters.CUSTHISTTableAdapter CUSTHISTTableAdapter, ref Decimal lnTotalCustomerDealerDisc,
 										   ref Decimal lnMasterInterest,ref BackgroundWorker worker)
 		{
+			DateTime NowDate = DateTime.Now;  // Moses Newman 12/03/2020 So I can change posting date if testing!
 			IACDataSetTableAdapters.ACCOUNTTableAdapter ACCOUNTTableAdapter = new IACDataSetTableAdapters.ACCOUNTTableAdapter();
 			IACDataSetTableAdapters.AMORTIZETableAdapter AMORTIZETableAdapter = new IACDataSetTableAdapters.AMORTIZETableAdapter();
 			IACDataSetTableAdapters.WSDEALERTableAdapter WS_DEALERTableAdapter = new IACDataSetTableAdapters.WSDEALERTableAdapter();
@@ -1064,8 +1078,8 @@ namespace IAC2018SQL
 				CustomerPostDataSet.CUSTOMER.Rows[i].SetField<Decimal>("CUSTOMER_PREV_BALANCE", CustomerPostDataSet.CUSTOMER.Rows[i].Field<Decimal>("CUSTOMER_LOAN_CASH"));
 				CustomerPostDataSet.CUSTOMER.Rows[i].SetField<Int32>("CUSTOMER_PAY_REM_2", CustomerPostDataSet.CUSTOMER.Rows[i].Field<Int32>("CUSTOMER_TERM"));
 				CustomerPostDataSet.CUSTOMER.Rows[i].SetField<Int32>("CUSTOMER_UPD_COUNT", 0);
-				CustomerPostDataSet.CUSTOMER.Rows[i].SetField<String>("CUSTOMER_CONTROL_MONTH", DateTime.Now.Date.Month.ToString().PadLeft(2, '0'));
-				CustomerPostDataSet.CUSTOMER.Rows[i].SetField<String>("CUSTOMER_CONTROL_YEAR", DateTime.Now.Date.Year.ToString().Substring(2, 2));
+				CustomerPostDataSet.CUSTOMER.Rows[i].SetField<String>("CUSTOMER_CONTROL_MONTH", NowDate.Date.Month.ToString().PadLeft(2, '0'));
+				CustomerPostDataSet.CUSTOMER.Rows[i].SetField<String>("CUSTOMER_CONTROL_YEAR", NowDate.Date.Year.ToString().Substring(2, 2));
 				if (CustomerPostDataSet.CUSTOMER.Rows[i].Field<Int32>("CUSTOMER_CREDIT_LIMIT") <= 0)
 					CustomerPostDataSet.CUSTOMER.Rows[i].SetField<Int32>("CUSTOMER_CREDIT_LIMIT", (Int32)(CustomerPostDataSet.CUSTOMER.Rows[i].Field<Decimal>("CUSTOMER_LOAN_AMOUNT")));
 				CustomerPostDataSet.CUSTOMER.Rows[i].SetField<String>("CUSTOMER_POST_IND", "D");
@@ -1073,7 +1087,7 @@ namespace IAC2018SQL
 				CustomerPostDataSet.CUSTOMER.Rows[i].SetField<Decimal>("CUSTOMER_BUYOUT", lnBuyout);
 				CustomerBindingSource.EndEdit();
 				CUSTHISTTableAdapter.Transaction = tableAdapTran;
-				loCustHistSeq = CUSTHISTTableAdapter.SeqNoQuery(CustomerPostDataSet.CUSTOMER.Rows[i].Field<String>("CUSTOMER_NO"), DateTime.Now.Date);
+				loCustHistSeq = CUSTHISTTableAdapter.SeqNoQuery(CustomerPostDataSet.CUSTOMER.Rows[i].Field<String>("CUSTOMER_NO"), NowDate.Date);
 				if (loCustHistSeq != null)
 					lnSeq = (int)loCustHistSeq + 1;
 				else
@@ -1085,11 +1099,11 @@ namespace IAC2018SQL
 				CustomerPostDataSet.CUSTHIST.Rows[CusthistBindingSource.Position].SetField<String>("CUSTHIST_IAC_TYPE", CustomerPostDataSet.CUSTOMER.Rows[i].Field<String>("CUSTOMER_IAC_TYPE"));
                 // Moses Newman 01/20/2015 Set the date of the NEW hostory record = to the new Contract Date field!
                 if (CustomerPostDataSet.CUSTOMER.Rows[i].Field<Nullable<DateTime>>("ContractDate") == null)
-                    CustomerPostDataSet.CUSTOMER.Rows[i].SetField<DateTime>("ContractDate", DateTime.Now.Date);
+                    CustomerPostDataSet.CUSTOMER.Rows[i].SetField<DateTime>("ContractDate", NowDate.Date);
                 CustomerPostDataSet.CUSTHIST.Rows[CusthistBindingSource.Position].SetField<DateTime>("CUSTHIST_PAY_DATE", CustomerPostDataSet.CUSTOMER.Rows[i].Field<DateTime>("ContractDate"));
                 CustomerPostDataSet.CUSTHIST.Rows[CusthistBindingSource.Position].SetField<Int32>("CUSTHIST_DATE_SEQ", lnSeq);
                 // Moses Newman 03/15/2018 added TransactionDate, Fee, FromIVR
-                CustomerPostDataSet.CUSTHIST.Rows[CusthistBindingSource.Position].SetField<DateTime>("TransactionDate", DateTime.Now.Date);  // Moses Newman 03/14/2019 todays date instead of contract date!
+                CustomerPostDataSet.CUSTHIST.Rows[CusthistBindingSource.Position].SetField<DateTime>("TransactionDate", NowDate.Date);  // Moses Newman 03/14/2019 todays date instead of contract date!
                 CustomerPostDataSet.CUSTHIST.Rows[CusthistBindingSource.Position].SetField<Decimal>("Fee", 0);
                 CustomerPostDataSet.CUSTHIST.Rows[CusthistBindingSource.Position].SetField<Boolean>("FromIVR", false);
 				CustomerPostDataSet.CUSTHIST.Rows[CusthistBindingSource.Position].SetField<Decimal>("CUSTHIST_BALANCE", CustomerPostDataSet.CUSTOMER.Rows[i].Field<Decimal>("CUSTOMER_BALANCE"));
@@ -1185,7 +1199,7 @@ namespace IAC2018SQL
 				DEALER.Rows[0].SetField<Decimal>("DEALER_CUR_LOSS", 0);
 				DEALER.Rows[0].SetField<Decimal>("DEALER_CUR_OLOAN", WS_DEALER.Rows[dlrCount].Field<Decimal>("OS_L"));
                 DEALER.Rows[0].SetField<Decimal>("DEALER_YTD_OLOAN", DEALER.Rows[0].Field<Nullable<Decimal>>("DEALER_YTD_OLOAN") != null ? DEALER.Rows[0].Field<Decimal>("DEALER_YTD_OLOAN") + WS_DEALER.Rows[dlrCount].Field<Decimal>("OS_L") : WS_DEALER.Rows[dlrCount].Field<Decimal>("OS_L"));
-				DEALER.Rows[0].SetField<DateTime>("DEALER_POST_DATE", DateTime.Now.Date);
+				DEALER.Rows[0].SetField<DateTime>("DEALER_POST_DATE", NowDate.Date);
 				DEALER.Rows[0].SetField<Decimal>("DEALER_CUR_AMORT_INT", WS_DEALER.Rows[dlrCount].Field<Decimal>("AMORT_INT"));
                 DEALER.Rows[0].SetField<Decimal>("DEALER_YTD_AMORT_INT", DEALER.Rows[0].Field<Nullable<Decimal>>("DEALER_YTD_AMORT_INT") != null ? DEALER.Rows[0].Field<Decimal>("DEALER_YTD_AMORT_INT") + WS_DEALER.Rows[dlrCount].Field<Decimal>("AMORT_INT") : WS_DEALER.Rows[dlrCount].Field<Decimal>("AMORT_INT"));
 				DEALER.Rows[0].SetField<Decimal>("DEALER_CUR_SIMPLE_INT", WS_DEALER.Rows[dlrCount].Field<Decimal>("SIMPLE_INT"));
@@ -1201,7 +1215,7 @@ namespace IAC2018SQL
 				DEALER.Rows[0].SetField<Decimal>("DEALER_CUR_SIMPLE_PDI", 0);
 				DEALER.Rows[0].SetField<Decimal>("DEALER_CUR_OLD_PDI", 0);
 				lnMasterOLoan += WS_DEALER.Rows[dlrCount].Field<Decimal>("OS_L");
-				loDealhistSeq = DEALHISTTableAdapter.SeqNoQuery(WS_DEALER.Rows[dlrCount].Field<String>("KEY").ToString(), DateTime.Now.Date, DateTime.Now.Date);
+				loDealhistSeq = DEALHISTTableAdapter.SeqNoQuery(WS_DEALER.Rows[dlrCount].Field<String>("KEY").ToString(), NowDate.Date, NowDate.Date);
 				if (loDealhistSeq != null)
 					lnSeq = (int)loDealhistSeq + 1;
 				else
@@ -1224,8 +1238,8 @@ namespace IAC2018SQL
 				DEALHIST.Rows[DealhistBindingSource.Position].SetField<Decimal>("DEALHIST_YTD_ADJ", DEALER.Rows[0].Field<Decimal>("DEALER_YTD_ADJ"));
 				DEALHIST.Rows[DealhistBindingSource.Position].SetField<Decimal>("DEALHIST_YTD_BAD", DEALER.Rows[0].Field<Decimal>("DEALER_YTD_BAD"));
 				DEALHIST.Rows[DealhistBindingSource.Position].SetField<Decimal>("DEALHIST_YTD_LOSS", DEALER.Rows[0].Field<Decimal>("DEALER_YTD_LOSS"));
-				DEALHIST.Rows[DealhistBindingSource.Position].SetField<DateTime>("DEALHIST_POST_DATE", DateTime.Now.Date);
-				DEALHIST.Rows[DealhistBindingSource.Position].SetField<DateTime>("DEALHIST_LAST_POST_DATE", DateTime.Now.Date);
+				DEALHIST.Rows[DealhistBindingSource.Position].SetField<DateTime>("DEALHIST_POST_DATE", NowDate.Date);
+				DEALHIST.Rows[DealhistBindingSource.Position].SetField<DateTime>("DEALHIST_LAST_POST_DATE", NowDate.Date);
 				DEALHIST.Rows[DealhistBindingSource.Position].SetField<Int32>("DEALHIST_SEQ_NO", lnSeq);
 				DEALHIST.Rows[DealhistBindingSource.Position].SetField<String>("DEALHIST_POST_CODE", "N");
 				DEALHIST.Rows[DealhistBindingSource.Position].SetField<Decimal>("DEALHIST_CUR_AMORT_INT", DEALER.Rows[0].Field<Decimal>("DEALER_CUR_AMORT_INT"));
@@ -1276,7 +1290,7 @@ namespace IAC2018SQL
 			MASTER.Rows[0].SetField<Decimal>("MASTER_CUR_NOTES", 0);
 			MASTER.Rows[0].SetField<Decimal>("MASTER_CUR_OLOAN", lnMasterOLoan);
 			MASTER.Rows[0].SetField<Decimal>("MASTER_YTD_OLOAN", MASTER.Rows[0].Field<Decimal>("MASTER_YTD_OLOAN") + lnMasterOLoan);
-			MASTER.Rows[0].SetField<DateTime>("MASTER_POST_DATE", DateTime.Now.Date);
+			MASTER.Rows[0].SetField<DateTime>("MASTER_POST_DATE", NowDate.Date);
 			MASTER.Rows[0].SetField<Decimal>("MASTER_AMORT_CUR_OLOAN", 0);
 			MASTER.Rows[0].SetField<Decimal>("MASTER_SIMPLE_CUR_OLOAN", lnMasterOLoan);
             if(MASTER.Rows[0].Field<Nullable<Decimal>>("MASTER_SIMPLE_YTD_OLOAN") != null)
@@ -1286,13 +1300,13 @@ namespace IAC2018SQL
 			MasterBindingSource.EndEdit();
 			MasthistBindingSource.AddNew();
 			MasthistBindingSource.EndEdit();
-			loMastHistSeq = MASTHISTTableAdapter.SeqNoQuery(lsMasterKey.TrimEnd(), DateTime.Now.Date);
+			loMastHistSeq = MASTHISTTableAdapter.SeqNoQuery(lsMasterKey.TrimEnd(), NowDate.Date);
 			if (loMastHistSeq != null)
 				lnSeq = (int)loMastHistSeq + 1;
 			else
 				lnSeq = 1;
             MASTHIST.Rows[MasthistBindingSource.Position].SetField<String>("MASTHIST_ACC_NO", MASTER.Rows[0].Field<String>("MASTER_ACC_NO"));
-			MASTHIST.Rows[MasthistBindingSource.Position].SetField<DateTime>("MASTHIST_POST_DATE", DateTime.Now.Date);
+			MASTHIST.Rows[MasthistBindingSource.Position].SetField<DateTime>("MASTHIST_POST_DATE", NowDate.Date);
 			MASTHIST.Rows[MasthistBindingSource.Position].SetField<Int32>("MASTHIST_SEQ_NO", lnSeq);
             MASTHIST.Rows[MasthistBindingSource.Position].SetField<String>("MASTHIST_NAME", MASTER.Rows[0].Field<String>("MASTER_NAME"));
 			MASTHIST.Rows[MasthistBindingSource.Position].SetField<Decimal>("MASTHIST_CUR_OLOAN", MASTER.Rows[0].Field<Decimal>("MASTER_CUR_OLOAN"));
