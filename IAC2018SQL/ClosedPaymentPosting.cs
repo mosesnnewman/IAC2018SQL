@@ -169,7 +169,7 @@ namespace IAC2018SQL
                     // Moses Newman if on a multi payment customer one already closes the account, ignore the subsequent payments.
                     if (PAYMENTPostDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_ACT_STAT") == "A")
                     {
-                        NewBalance = ClosedPaymentProcessPayment(PaymentPos + pcount, CustomerPos, AmortPos + pcount, ref AMORTIZEBindingSource, ref PAYMENTPostDataSet, ref worker, Post, CurrentBalance);
+                        NewBalance = ClosedPaymentProcessPayment(PaymentPos + pcount, CustomerPos, AmortPos + pcount, ref AMORTIZEBindingSource, ref PAYMENTPostDataSet, ref worker, Post, CurrentBalance, (lnCustomerPayCount > 1 && pcount < lnCustomerPayCount -1 ) ? true:false);
                         CurrentBalance = NewBalance;
                     }
                 }
@@ -258,7 +258,7 @@ namespace IAC2018SQL
             }
         }
 
-        Decimal ClosedPaymentProcessPayment(Int32 PaymentPos, Int32 CustomerPos, Int32 AmortPos, ref BindingSource AmortizeBindingSource, ref IACDataSet PAYMENTDataSet, ref BackgroundWorker worker, Boolean post,Decimal CurBal)
+        Decimal ClosedPaymentProcessPayment(Int32 PaymentPos, Int32 CustomerPos, Int32 AmortPos, ref BindingSource AmortizeBindingSource, ref IACDataSet PAYMENTDataSet, ref BackgroundWorker worker, Boolean post,Decimal CurBal, Boolean IsMulti)
         {
             Decimal lnTodaysBalance = 0;
             IACDataSetTableAdapters.AMORTIZETableAdapter AMORTIZETableAdapter = new IACDataSetTableAdapters.AMORTIZETableAdapter();
@@ -286,8 +286,9 @@ namespace IAC2018SQL
                 if (lnLCBPay > PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_LATE_CHARGE_BAL"))
                     lnLCBPay = PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_LATE_CHARGE_BAL");
             }
+            lnTodaysBalance = CurBal;
             // Moses Newman 08/2/2013 Store pre-processing balance
-            lnTodaysBalance = Program.TVSimpleGetBuyout(PAYMENTDataSet,
+            /*lnTodaysBalance = Program.TVSimpleGetBuyout(PAYMENTDataSet,
                                                PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<DateTime>("PAYMENT_DATE"),
                                                (Double)PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<Int32>("CUSTOMER_TERM"),
                                                (Double)(PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_ANNUAL_PERCENTAGE_RATE") / 100),
@@ -295,6 +296,7 @@ namespace IAC2018SQL
                                                PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_NO"),
                 // Moses Newman 04/30/2017 Add support for Simple Interest and Normal Daily Compounding
                                                PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_AMORTIZE_IND") == "S" ? true : false, true, false, false, -1, true);
+            */
             lnOldBalance = CurBal; // Moses Newman 11/18/2020 change to parameter so the case of more than one payment from the same customer can be dealt with.  
             if (PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_ACT_STAT") == "A" &&
                 PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_BUY_OUT") == "N")
@@ -380,8 +382,14 @@ namespace IAC2018SQL
             // Moses Newman 11/12/2020 Get real credit to note (Payment - Accrued Interest) so that is is for only one of the payments if the same account had
             // multiple payments today.
             String CustTemp = PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<String>("PAYMENT_CUSTOMER");
-            lnSimpleDiff = lnSimpleBalance -lnOldBalance;
-            lnIntPay = PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<Decimal>("PAYMENT_AMOUNT_RCV")+lnSimpleDiff;
+            //lnSimpleDiff = lnSimpleBalance -lnOldBalance;
+            //lnSimpleDiff = (lnBalance - lnIntPay) *-1;
+            //if(Math.Abs(lnSimpleDiff - (lnSimpleBalance - lnOldBalance)) > (Decimal).01)
+            lnSimpleDiff = lnSimpleBalance - lnOldBalance;
+            //if(lnIntPay == 0)
+            //lnIntPay = PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<Decimal>("PAYMENT_AMOUNT_RCV")+lnSimpleDiff;
+            // Moses Newman 11/30/2020 INSUF will not show in amort, so the interest it causes must be 0 IF more than one payment today; 
+
             lnAccruedInt = lnIntPay;
 
             PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].SetField<Decimal>("CUSTOMER_PREV_BALANCE", lnOldBalance);
@@ -498,7 +506,7 @@ namespace IAC2018SQL
             lnMoneyRemaining = PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<Decimal>("PAYMENT_AMOUNT_RCV");
             lnMoneyRemaining -= lnLCBPay;
             // Buyout as of today is balance
-            lnSimpleBalance = Program.TVSimpleGetBuyout(PAYMENTDataSet,
+            /*lnSimpleBalance = Program.TVSimpleGetBuyout(PAYMENTDataSet,
                                                 PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<DateTime>("PAYMENT_DATE"),
                                                 (Double)PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<Int32>("CUSTOMER_TERM"),
                                                 (Double)(PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_ANNUAL_PERCENTAGE_RATE") / 100),
@@ -506,15 +514,18 @@ namespace IAC2018SQL
                                                 PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_NO"),
                                                 // Moses Newman 04/30/2017 Handle Simple interest or Daily Compunding
                                                 PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_AMORTIZE_IND") == "S" ? true:false, true, false, true, PaymentPos, true);
-
+            */
             // Moses Newman 10/17/2018 Make sure we have latest amort for both payments if multiple payments for same customer!
             GetPartialPaymentandLateFeeBalance(ref worker, PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_NO"), ref PAYMENTDataSet, CustomerPos, true, PaymentPos, false);
             TVAmortTableAdapter.FillByCustomerNoandPaymentSeq(PAYMENTDataSet.TVAmort, PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_NO"), PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<Int32>("SeqNo"));
             lnPrinciplePaid = 0;
+            String TempCust = PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_NO");
             if (PAYMENTDataSet.TVAmort.Rows.Count > 0)
             {
                 lnPaidSimpleInt = PAYMENTDataSet.TVAmort.Rows[0].Field<Decimal>("Interest");
                 lnPrinciplePaid = PAYMENTDataSet.TVAmort.Rows[0].Field<Decimal>("Principal");
+                if (lnPrinciplePaid == 0)
+                    lnPrinciplePaid = 0 - lnPaidSimpleInt;
             }
             else
             {
@@ -693,6 +704,14 @@ namespace IAC2018SQL
                     PAYMENTDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].SetField<Decimal>("CUSTHIST_CURR_INT", PAYMENTDataSet.AMORTIZE.Rows[AmortPos].Field<Decimal>("AMORTIZE_LAST_INTEREST_APPLIED"));
                 else
                     PAYMENTDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].SetField<Decimal>("CUSTHIST_CURR_INT", 0);
+            // Moses Newman 12/16/2020 Handle RateChanges
+            if (PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<String>("PAYMENT_TYPE") == "F")
+            {
+                PAYMENTDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].SetField<String>("CUSTHIST_PAY_REM_1", "RTCHG");
+                PAYMENTDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].SetField<Decimal>("TVRateChange", 
+                    (PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_INT_OVERRIDE") == "Y") ? 
+                        0:PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_ANNUAL_PERCENTAGE_RATE"));
+            }
             MovePaymenttoCustomer(PaymentPos, CustomerPos, ref PAYMENTDataSet, ref worker); //Calls ClosePaymentNewcontractStatus so this must happen before next line!
             PAYMENTDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].SetField<Decimal>("CUSTHIST_CONTRACT_STATUS", PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_CONTRACT_STATUS"));
             PAYMENTDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].SetField<String>("CUSTHIST_PAID_THRU", PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_PAID_THRU"));
@@ -1753,6 +1772,7 @@ namespace IAC2018SQL
                                  // Moses Newman 04/02/2018 fixed Payment and PaymentPos parameters so TVSimpleGetBuyout knows to add payments!
                                  DT.CUSTOMER.Rows[CustPos].Field<String>("CUSTOMER_AMORTIZE_IND") == "S" ? true : false, true, false, tbPayment, tnPaymentPos, true);
             }
+            lnSimpleBalance = lnSimpBal;
             TVAmortTableAdapter.FillByCustomerNo(DT.TVAmort, tsCustomerNo);
             Program.FixLateandPartialBuckets(tsCustomerNo,tbPayment); // Moses Newman 09/19/2018 Tell FixLateandPartialBuckets to use ALL of todays payments for this customer!
             TVAmortTableAdapter.FillByCustomerNo(DT.TVAmort, tsCustomerNo);

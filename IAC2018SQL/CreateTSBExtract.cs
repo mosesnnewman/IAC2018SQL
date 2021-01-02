@@ -373,7 +373,8 @@ namespace IAC2018SQL
                 // Moses Newman 06/11/2020 added Report 
                 tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<Boolean>("Report", (TSBDATA.CUSTOMER.Rows[i].Field<String>("CUSTOMER_CREDIT_BUREAU") == "Y") ? true : false);
                 // Moses Newman 08/31/2020 Add DateOfAccountInformation
-                tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<DateTime>("DateOfAccountInformation", DateTime.Now.Date.AddDays(1));
+                // Moses Newman 12/03/2020 Make Date of Account Inforamtion 1'st of following month to include all of this month in history!
+                tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<DateTime>("DateOfAccountInformation", ((DateTime)nullableDateTimePickerTo.Value).Date.AddDays(1));
                 // Moses Newman 09/26/2020 Set Interest Type
                 tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<String>("InterestType", "F");
                 ClosedCreditManagerBindingSource.EndEdit();
