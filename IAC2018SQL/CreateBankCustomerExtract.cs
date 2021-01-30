@@ -1199,6 +1199,31 @@ namespace IAC2018SQL
                 }
                 // Moses Newman 10/27/2020 end mod
             }
+            if (checkBoxTrialBalance.Checked)  // Moses Newman 01/28/2020 handle numeric format Balance and Buyout
+            {
+                // Moses Newman 10/27/2020 Handle Column data conversion even if not the same order because additonal fields where selected.
+                Int32 BalanceColumn = 0, BuyoutColumn = 0;
+                Excel.Range last = excelWorkSheet.Cells.SpecialCells(Excel.XlCellType.xlCellTypeLastCell, System.Type.Missing);
+
+                for (int col = 1; col < last.Column + 1; col++)
+                {
+                    switch (excelWorkSheet.Cells[1, col].Value)
+                    {
+                        case "Balance":
+                            BalanceColumn = col;
+                            break;
+                        case "Buyout":
+                            BuyoutColumn = col;
+                            break;
+                    }
+                }
+                for (int i = 2; i < last.Row + 1; i++)
+                {
+                    excelWorkSheet.Cells[i, BalanceColumn].Value    = Convert.ToDecimal(excelWorkSheet.Cells[i, BalanceColumn].Value);
+                    excelWorkSheet.Cells[i, BuyoutColumn].Value     = Convert.ToDecimal(excelWorkSheet.Cells[i, BuyoutColumn].Value);
+                }
+                // Moses Newman 10/27/2020 end mod
+            }
             if (checkBoxMatchNBFields.Checked)
             {
                 Excel.Range CopyRange = excelWorkSheet.get_Range("F:F");
@@ -1781,14 +1806,16 @@ namespace IAC2018SQL
                 Extensions.CustomerExtract.Rows[RowCount].SetField<Decimal>("CUSTOMER_TD_FINANCE_CHARGE", 0);
                 Extensions.CustomerExtract.Rows[RowCount].SetField<Decimal>("CUSTOMER_LOAN_INTEREST", Bank.CUSTOMER.Rows[i].Field<Decimal>("CUSTOMER_LOAN_INTEREST"));
                 // 03/25/2016 Moses Newman Get buyout as of buyout date entered
-                Extensions.CustomerExtract.Rows[RowCount].SetField<Decimal>("CUSTOMER_BALANCE", Program.TVSimpleGetBuyout(Bank,
+                // 01/28/2021 Moses Newman if match trial balance selected DO NOT AMORT!
+                Extensions.CustomerExtract.Rows[RowCount].SetField<Decimal>("CUSTOMER_BALANCE", !checkBoxTrialBalance.Checked ? Program.TVSimpleGetBuyout(Bank,
                     (DateTime)nullableDateTimePickerBuyoutDate.Value,
                     (Double)Bank.CUSTOMER.Rows[i].Field<Int32>("CUSTOMER_TERM"),
                     (Double)(Bank.CUSTOMER.Rows[i].Field<Decimal>("CUSTOMER_ANNUAL_PERCENTAGE_RATE") / 100),
                     (Double)Bank.CUSTOMER.Rows[i].Field<Decimal>("CUSTOMER_REGULAR_AMOUNT"),
                     Bank.CUSTOMER.Rows[i].Field<String>("CUSTOMER_NO"),
                 // Moses Newman 04/30/2017 Handle S for simple interest, or N for Normal Daily Compounding
-                Bank.CUSTOMER.Rows[i].Field<String>("CUSTOMER_AMORTIZE_IND") == "S" ? true : false, false, false, false, -1, true));
+                Bank.CUSTOMER.Rows[i].Field<String>("CUSTOMER_AMORTIZE_IND") == "S" ? true : false, false, false, false, -1, true):
+                Bank.CUSTOMER.Rows[i].Field<Decimal>("CUSTOMER_BALANCE"));
                 // 03/25/2016 Moses Newman add Paid Interest field summed for date range passed.
                 loPaidInterest = CUSTOMERTableAdapter.GetPaidInterest(Bank.CUSTOMER.Rows[i].Field<String>("CUSTOMER_NO"), ldPIStart, ldPIEnd);
                 if (loPaidInterest != null)

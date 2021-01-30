@@ -169,7 +169,8 @@ namespace IAC2018SQL
                     // Moses Newman if on a multi payment customer one already closes the account, ignore the subsequent payments.
                     if (PAYMENTPostDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_ACT_STAT") == "A")
                     {
-                        NewBalance = ClosedPaymentProcessPayment(PaymentPos + pcount, CustomerPos, AmortPos + pcount, ref AMORTIZEBindingSource, ref PAYMENTPostDataSet, ref worker, Post, CurrentBalance, (lnCustomerPayCount > 1 && pcount < lnCustomerPayCount -1 ) ? true:false);
+                        // Moses Newman 01/20/2021 AmortizeBindingSource only has one record per customer! so AmortPos should always be 0 if found
+                        NewBalance = ClosedPaymentProcessPayment(PaymentPos + pcount, CustomerPos, AmortPos, ref AMORTIZEBindingSource, ref PAYMENTPostDataSet, ref worker, Post, CurrentBalance, (lnCustomerPayCount > 1 && pcount < lnCustomerPayCount -1 ) ? true:false);
                         CurrentBalance = NewBalance;
                     }
                 }
@@ -561,9 +562,9 @@ namespace IAC2018SQL
                     lnPrinciplePaid = PAYMENTDataSet.TVAmort.Rows[PAYMENTDataSet.TVAmort.Rows.Count - 2].Field<Decimal>("Principal");
 
             lnMoneyRemaining = 0;
-
             PAYMENTDataSet.AMORTIZE.Rows[AmortPos].SetField<Decimal>("AMORTIZE_INTEREST_PAID_TOT", PAYMENTDataSet.AMORTIZE.Rows[AmortPos].Field<Decimal>("AMORTIZE_INTEREST_PAID_TOT") + (Decimal)lnIntPay);
             PAYMENTDataSet.AMORTIZE.Rows[AmortPos].SetField<Decimal>("AMORTIZE_PRINCIPLE_PAID_TOT", PAYMENTDataSet.AMORTIZE.Rows[AmortPos].Field<Decimal>("AMORTIZE_PRINCIPLE_PAID_TOT") + lnPrinciplePaid);
+            
             // Moses Newman 04/30/2018 why touch CUSTOMER_BALANCE until post!?!
             PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].SetField<Decimal>("CUSTOMER_BALANCE", lnSimpleBalance);
             return (Decimal)lnPaidSimpleInt;

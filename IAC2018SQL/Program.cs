@@ -2433,16 +2433,16 @@ namespace IAC2018SQL
                         case "CANCL":
                         case "ADJ":
                         case "INSUF":
-                            lnPrePaymentPartialPayment = lnLastPartialPaymentBalance - lnLastPPDueToLC;
+							lnPrePaymentPartialPayment = lnLastPartialPaymentBalance - lnLastPPDueToLC;
                             lnPrePaymentLateFeeBalance = lnLastLateFeeBalance;
                             lnLastPaymentContractStatus = lnContractStatus;
                             if (lsEvent != "WAVE")
                                 lnPayAmount = FixData.TVAmort.Rows[i].Field<Decimal>("Payment");
                             else
                                 lnPayAmount = FixData.TVAmort.Rows[i].Field<Decimal>("NonCash");
-                            if (lnPayAmount > 0)
+                            if (lnPayAmount >= 0)  // Moses Newman 01/04/2021 make sure payments for 0 (Bounced Checks) set lnPayments to 0!
                                 // Moses Newman 08/23/2018 properly handle WAVE Late Fees
-                                if (FixData.TVAmort.Rows[i].Field<String>("PaymentCode") != "WL")
+                                if (FixData.TVAmort.Rows[i].Field<String>("PaymentCode") != "WL" && lnPayAmount != 0)
                                     lnPayments = (Int32)((lnPayAmount + lnPrePaymentPartialPayment) / lnRegular);
                                 else
                                     lnPayments = 0;
@@ -2521,13 +2521,26 @@ namespace IAC2018SQL
                                     }
                                     else
                                     {
-                                        lnPartialPayment = 0;
+										lnPartialPayment = 0;
                                         // Moses Newman 04/24/2018 If no match dont include partial payment balance in lnPayment calculations!
                                         lnPayments = (Int32)((lnPayAmount) / lnRegular);
-                                        FixData.TVAmort.Rows[i].SetField<Int32>("DeltaPTMonths", lnPayments);
-                                        lnPartialPayment = FixData.TVAmort.Rows[i].Field<Decimal>("Payment") - (lnPayments * lnRegular);
+										// Moses Newman 01/19/2021
+										if (FixData.TVAmort.Rows[i].Field<String>("PaymentCode").Substring(0,1) != "W")
+                                        {
+											lnPartialPayment = FixData.TVAmort.Rows[i].Field<Decimal>("Payment") - (lnPayments * lnRegular);
+											if (lnPartialPayment < 0)
+											{
+												lnPartialPayment += lnRegular;
+												lnPartialPayment += lnLastPartialPaymentBalance;
+												if (lnPartialPayment < lnRegular)
+													lnPayments -= 1;
+												else
+													lnPartialPayment -= lnRegular;
+											}
+										}  // End of 01/19/2021 Partial payment fix
+										FixData.TVAmort.Rows[i].SetField<Int32>("DeltaPTMonths", lnPayments);
                                         // Moses Newman 04/24/2018 dont let the Partial Payment balance go negative on a negative payment!
-                                        if (lnLastPartialPaymentBalance == 0)
+                                        /*if (lnLastPartialPaymentBalance == 0)
                                             lnPartialPayment = 0;
                                         else
                                         {
@@ -2536,7 +2549,8 @@ namespace IAC2018SQL
                                             // Moses Newman 11/15/2018 if negative adjustment calculated partial payment carry over last partial payment balance.
                                             if (lnPartialPayment < 0 && (lnLastPartialPaymentBalance + lnPartialPayment) >= 0)
                                                 lnPartialPayment = lnLastPartialPaymentBalance + lnPartialPayment;
-                                        }
+
+										}*/
                                         if (lsEvent == "PAID")
                                         {
                                             FixData.TVAmort.Rows[i].SetField<Decimal>("PartialPayment", 0);
@@ -2597,17 +2611,23 @@ namespace IAC2018SQL
                                 }
                                 else
                                 {
-                                    if (lnPayAmount > 0)
+                                    if (lnPayAmount >= 0)
                                         FixData.TVAmort.Rows[i].SetField<Decimal>("LateFeeBalance", lnLastLateFeeBalance);
-                                    if (lnPayAmount > 0)
-                                        FixData.TVAmort.Rows[i].SetField<Decimal>("PartialPayment", lnPartialPayment + lnLastPartialPaymentBalance > 0 ?
-                                            lnPartialPayment + lnLastPartialPaymentBalance : 0);
-                                    else // Moses Newman 11/15/2018 Handle partial for negative adjustment
-                                    {
-                                        if (lnPartialPayment > 0 && lsEvent != "INSUF" && !lbADJFound)  // Moses Newman 11/20/2018 ignore INSUF's!
-                                            FixData.TVAmort.Rows[i].SetField<Decimal>("PartialPayment", lnPartialPayment);
-                                        lbADJFound = false;
-                                    }
+									if (lnPayAmount >= 0)  // Moses Newman 01/04/20201 Handle bounced checks.
+										if (lnPayAmount > 0)
+											FixData.TVAmort.Rows[i].SetField<Decimal>("PartialPayment", lnPartialPayment + lnLastPartialPaymentBalance > 0 ?
+												lnPartialPayment + lnLastPartialPaymentBalance : 0);
+										else
+											FixData.TVAmort.Rows[i].SetField<Decimal>("PartialPayment", lnLastPartialPaymentBalance);
+									else // Moses Newman 11/15/2018 Handle partial for negative adjustment
+									{
+										if (lnPartialPayment > 0 && lsEvent != "INSUF" && !lbADJFound)  // Moses Newman 11/20/2018 ignore INSUF's!
+											FixData.TVAmort.Rows[i].SetField<Decimal>("PartialPayment", lnPartialPayment);
+										else
+											if (lnPartialPayment == 0 && lnLastPartialPaymentBalance != 0) // Moses Newman 01/04/2021 don't zero out partial payment on negative adj!
+											FixData.TVAmort.Rows[i].SetField<Decimal>("PartialPayment", lnLastPartialPaymentBalance);
+									lbADJFound = false;
+									}
                                 }
                                 FixData.TVAmort.Rows[i].SetField<DateTime>("PaidThrough", ldLastPaidThrough.AddMonths(lnPayments));
                             }

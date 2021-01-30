@@ -4188,8 +4188,8 @@ namespace IAC2018SQL
 
             // Create loginRequestDetails
             LoginRequestDetails loginRequestDetails = new LoginRequestDetails();
-            loginRequestDetails.APIKey = "5sak6Ed9XvXUT7CqfsEwUBNttwOto81jRPsdqewa8UYKk3mJA8GfAyALmXhHJ81f";
 
+            loginRequestDetails.APIKey = "Arm7TJLjZmsxS3NZm3cxkltVhUFnjjyJImm4sG62P9KhUj0p0r6p9rYHXBwxoU1E";
             WSLoginResponse wSLoginResponse = login.AuthenticateAPIKey(loginRequestDetails);
 
             //process response
