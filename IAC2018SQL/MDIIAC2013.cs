@@ -1682,5 +1682,10 @@ namespace IAC2018SQL
         {
             CreateFormInstance("ClosedOverPaymentReport", false); 
         }
+
+        private void fixPartialPaymentsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CreateFormInstance("FixPaidThroughs", false);
+        }
     }
 }
