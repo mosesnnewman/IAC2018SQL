@@ -137,7 +137,8 @@ namespace IAC2018SQL
 
 			cfm.UserPaymentName1 = "PAY/ADJ";
 			cfm.UserPaymentName2 = "UPD";
-			if(CUSTOMERDT.Rows[0].Field<String>("CUSTOMER_BUY_OUT") != "Y")
+			// Moses Newman 02/26/2021 UNEARNED only if closing balance > 0!
+			if(CUSTOMERDT.Rows[0].Field<String>("CUSTOMER_BUY_OUT") != "Y" | CUSTOMERDT.Rows[0].Field<Decimal>("CUSTOMER_BALANCE") <= 0)
 				cfm.UserPaymentName3 = "BUYOUT";
 			else
 				cfm.UserPaymentName3 = "UNEARNED";
@@ -666,7 +667,8 @@ namespace IAC2018SQL
                         dr["RowNumber"] = lnRowNumber;
 						if (AmortIndex >= tdtCUSTHIST.Rows.Count)
 							if (!tbAmort)
-								if (CustomerDT.Rows[0].Field<String>("CUSTOMER_BUY_OUT") != "Y")
+								// Moses Newman 02/26/2021 UNEARNED only if closing balance > 0!
+								if (CustomerDT.Rows[0].Field<String>("CUSTOMER_BUY_OUT") != "Y" || dataArray[TValueDefines.AmortTotalBalanceIndex] <= 0)
 									dr["Event"] = "BUYOUT";
 								else
 									dr["Event"] = "UNEARNED";
@@ -2528,14 +2530,15 @@ namespace IAC2018SQL
 										if (FixData.TVAmort.Rows[i].Field<String>("PaymentCode").Substring(0,1) != "W")
                                         {
 											lnPartialPayment = FixData.TVAmort.Rows[i].Field<Decimal>("Payment") - (lnPayments * lnRegular);
+											// Moses Newman 02/10/2021 
 											if (lnPartialPayment < 0)
 											{
-												lnPartialPayment += lnRegular;
 												lnPartialPayment += lnLastPartialPaymentBalance;
-												if (lnPartialPayment < lnRegular)
+												if (lnPartialPayment < 0)
+												{
 													lnPayments -= 1;
-												else
-													lnPartialPayment -= lnRegular;
+													lnPartialPayment += lnRegular;
+												}
 											}
 										}  // End of 01/19/2021 Partial payment fix
 										FixData.TVAmort.Rows[i].SetField<Int32>("DeltaPTMonths", lnPayments);

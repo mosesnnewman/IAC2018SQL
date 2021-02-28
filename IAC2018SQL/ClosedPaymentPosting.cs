@@ -300,8 +300,8 @@ namespace IAC2018SQL
             */
             lnOldBalance = CurBal; // Moses Newman 11/18/2020 change to parameter so the case of more than one payment from the same customer can be dealt with.  
             if (PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_ACT_STAT") == "A" &&
-                PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_BUY_OUT") == "N")
-                PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].SetField<String>("CUSTOMER_BUY_OUT", "N");
+                PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_BUY_OUT") != "N") // Moses Newman 02/17/2021  make N if Active and Y
+                PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].SetField<String>("CUSTOMER_BUY_OUT", "N");  
 
             //lnOldBalance = 0;
             // Moses Newman 05/01/2018 ALWAYS use last history balance rather than CUSTOMER_BALANCE because
@@ -372,7 +372,7 @@ namespace IAC2018SQL
                 if (PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<Decimal>("PAYMENT_AMOUNT_RCV") > lnTodaysBalance)
                 {
                     lnBalance = PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<Decimal>("PAYMENT_AMOUNT_RCV");
-                    PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].SetField<String>("CUSTOMER_BUY_OUT", "N");
+                    // Moses Newman 02/17/2021 Don't set CUSTOMER_BUY_OUT = "N" even on overpayments!
                     ClosedPaymentOverPayment(CustomerPos, ref PAYMENTDataSet, ref worker);
                 }
                 else
@@ -776,6 +776,8 @@ namespace IAC2018SQL
         {
             if (PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_BALANCE") >= 0)
                 return;
+            // Moses Newman 02/17/2021 Set to Y if closed no matter what!!!
+            PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].SetField<String>("CUSTOMER_BUY_OUT", "Y");
             // With TimeValue OverPayment is simply customer balance * -1.
             lnCustOP = PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_BALANCE") * -1;
             lnMasterSundry += lnCustOP;
@@ -784,14 +786,19 @@ namespace IAC2018SQL
 
         void ClosedPaymentEqualBalance(int PaymentPos, int CustomerPos, ref IACDataSet PAYMENTDataSet, ref BackgroundWorker worker)
         {
-            lnCustOP = PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<Decimal>("PAYMENT_AMOUNT_RCV") - PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_BALANCE");
-            // With TValue bsalance is the new buyout!
+            lnCustOP = 0;  //  Moses Newman 02/04/2021 
+            // With TValue balance is the new buyout!
             PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].SetField<String>("CUSTOMER_BUY_OUT", "Y");
             lnBalance = PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<Decimal>("PAYMENT_AMOUNT_RCV");
+            // Moses Newman 02/04/2021
+            lnMasterUEI = 0;
+            lnCustUEI = 0;
         }
 
         void ClosedPaymentOverBuyout(int PaymentPos, int CustomerPos, ref IACDataSet PAYMENTDataSet, ref BackgroundWorker worker)
         {
+            // Moses Newman 02/17/2021 Set to Y if closed no matter what!!!
+            PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].SetField<String>("CUSTOMER_BUY_OUT", "Y");
             // With TValue Balance is the new Buyout!
             lnCustOP = PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<Decimal>("PAYMENT_AMOUNT_RCV") - PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_BALANCE");
             lnMasterSundry += lnCustOP;
@@ -810,7 +817,7 @@ namespace IAC2018SQL
             else
             // No Unearned Interest on a Simple Interest Loan
             {
-                // Ooutstanding Loans ONLY reduced by payment itself if NOT a Pre-Calculated Loand. (No Unearned Interest in this case)
+                // Outstanding Loans ONLY reduced by payment itself if NOT a Pre-Calculated Loan. (No Unearned Interest in this case)
                 lnBalance = PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<Decimal>("PAYMENT_AMOUNT_RCV");
                 lnMasterUEI = 0;
                 lnCustUEI = 0;
@@ -819,6 +826,8 @@ namespace IAC2018SQL
 
         void ClosedPaymentCloseOut(int CustomerPos, ref IACDataSet PAYMENTDataSet, ref BackgroundWorker worker)
         {
+            // Moses Newman 02/17/2021 Set to Y if closed no matter what!!!
+            PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].SetField<String>("CUSTOMER_BUY_OUT", "Y");
             // Moses Newman 08/2/2013 never update customer balance except with TimeValue Data!!!
             // PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].SetField<Decimal>("CUSTOMER_BALANCE", 0);
             PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].SetField<Decimal>("CUSTOMER_LATE_CHARGE_BAL", 0);

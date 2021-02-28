@@ -4576,6 +4576,10 @@ namespace IAC2018SQL {
             
             private global::System.Data.DataColumn columnElectronicLien;
             
+            private global::System.Data.DataColumn columnReceivedContract;
+            
+            private global::System.Data.DataColumn columnDateContractReceived;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public CustomerExtractDataTable() {
@@ -5987,6 +5991,22 @@ namespace IAC2018SQL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ReceivedContractColumn {
+                get {
+                    return this.columnReceivedContract;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DateContractReceivedColumn {
+                get {
+                    return this.columnDateContractReceived;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -6193,7 +6213,9 @@ namespace IAC2018SQL {
                         int Mileage1, 
                         bool TitleReceived, 
                         System.DateTime TitleDateReceived, 
-                        bool ElectronicLien) {
+                        bool ElectronicLien, 
+                        bool ReceivedContract, 
+                        System.DateTime DateContractReceived) {
                 CustomerExtractRow rowCustomerExtractRow = ((CustomerExtractRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -6367,7 +6389,9 @@ namespace IAC2018SQL {
                         Mileage1,
                         TitleReceived,
                         TitleDateReceived,
-                        ElectronicLien};
+                        ElectronicLien,
+                        ReceivedContract,
+                        DateContractReceived};
                 rowCustomerExtractRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowCustomerExtractRow);
                 return rowCustomerExtractRow;
@@ -6569,6 +6593,8 @@ namespace IAC2018SQL {
                 this.columnTitleReceived = base.Columns["TitleReceived"];
                 this.columnTitleDateReceived = base.Columns["TitleDateReceived"];
                 this.columnElectronicLien = base.Columns["ElectronicLien"];
+                this.columnReceivedContract = base.Columns["ReceivedContract"];
+                this.columnDateContractReceived = base.Columns["DateContractReceived"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6918,6 +6944,10 @@ namespace IAC2018SQL {
                 base.Columns.Add(this.columnTitleDateReceived);
                 this.columnElectronicLien = new global::System.Data.DataColumn("ElectronicLien", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnElectronicLien);
+                this.columnReceivedContract = new global::System.Data.DataColumn("ReceivedContract", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnReceivedContract);
+                this.columnDateContractReceived = new global::System.Data.DataColumn("DateContractReceived", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDateContractReceived);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID}, true));
                 this.columnID.AutoIncrement = true;
@@ -7019,6 +7049,7 @@ namespace IAC2018SQL {
                 this.columnMileage1.Caption = "Mileage";
                 this.columnTitleReceived.DefaultValue = ((bool)(false));
                 this.columnElectronicLien.DefaultValue = ((bool)(false));
+                this.columnReceivedContract.DefaultValue = ((bool)(false));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -12367,6 +12398,39 @@ namespace IAC2018SQL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool ReceivedContract {
+                get {
+                    try {
+                        return ((bool)(this[this.tableCustomerExtract.ReceivedContractColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ReceivedContract\' in table \'CustomerExtract\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCustomerExtract.ReceivedContractColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime DateContractReceived {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableCustomerExtract.DateContractReceivedColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DateContractReceived\' in table \'CustomerExtract\' is DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tableCustomerExtract.DateContractReceivedColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsCUSTOMER_FIRST_NAMENull() {
                 return this.IsNull(this.tableCustomerExtract.CUSTOMER_FIRST_NAMEColumn);
             }
@@ -14391,6 +14455,30 @@ namespace IAC2018SQL {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetElectronicLienNull() {
                 this[this.tableCustomerExtract.ElectronicLienColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsReceivedContractNull() {
+                return this.IsNull(this.tableCustomerExtract.ReceivedContractColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetReceivedContractNull() {
+                this[this.tableCustomerExtract.ReceivedContractColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsDateContractReceivedNull() {
+                return this.IsNull(this.tableCustomerExtract.DateContractReceivedColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetDateContractReceivedNull() {
+                this[this.tableCustomerExtract.DateContractReceivedColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -18840,6 +18928,8 @@ namespace IAC2018SQL.PaymentDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("TitleReceived", "TitleReceived");
             tableMapping.ColumnMappings.Add("TitleDateReceived", "TitleDateReceived");
             tableMapping.ColumnMappings.Add("ElectronicLien", "ElectronicLien");
+            tableMapping.ColumnMappings.Add("ReceivedContract", "ReceivedContract");
+            tableMapping.ColumnMappings.Add("DateContractReceived", "DateContractReceived");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -19021,6 +19111,8 @@ namespace IAC2018SQL.PaymentDataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TitleReceived", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 1, 0, "TitleReceived", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TitleDateReceived", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, "TitleDateReceived", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ElectronicLien", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 1, 0, "ElectronicLien", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ReceivedContract", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 1, 0, "ReceivedContract", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateContractReceived", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, "DateContractReceived", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = "dbo.CustomerExtractUpdate";
@@ -19196,6 +19288,8 @@ namespace IAC2018SQL.PaymentDataSetTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TitleReceived", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 1, 0, "TitleReceived", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TitleDateReceived", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, "TitleDateReceived", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ElectronicLien", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 1, 0, "ElectronicLien", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ReceivedContract", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 1, 0, "ReceivedContract", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateContractReceived", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, "DateContractReceived", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -19216,17 +19310,17 @@ namespace IAC2018SQL.PaymentDataSetTableAdapters {
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].Connection = new global::System.Data.SqlClient.SqlConnection(global::IAC2018SQL.Properties.Settings.Default.IAC2010SQLConnectionString);
             this._commandCollection[1].CommandText = "dbo.CustomerExtractDeleteAll";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].Connection = new global::System.Data.SqlClient.SqlConnection(global::IAC2018SQL.Properties.Settings.Default.IAC2010SQLConnectionString);
             this._commandCollection[2].CommandText = "dbo.CustomerExtractFillByAll";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].Connection = new global::System.Data.SqlClient.SqlConnection(global::IAC2018SQL.Properties.Settings.Default.IAC2010SQLConnectionString);
             this._commandCollection[3].CommandText = "dbo.CustomerExtractFillBySelection";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -19597,7 +19691,9 @@ namespace IAC2018SQL.PaymentDataSetTableAdapters {
                     global::System.Nullable<decimal> Status, 
                     global::System.Nullable<bool> TitleReceived, 
                     global::System.Nullable<global::System.DateTime> TitleDateReceived, 
-                    global::System.Nullable<bool> ElectronicLien) {
+                    global::System.Nullable<bool> ElectronicLien, 
+                    global::System.Nullable<bool> ReceivedContract, 
+                    global::System.Nullable<global::System.DateTime> DateContractReceived) {
             if ((CUSTOMER_NO == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
@@ -20612,6 +20708,18 @@ namespace IAC2018SQL.PaymentDataSetTableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[169].Value = global::System.DBNull.Value;
             }
+            if ((ReceivedContract.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[170].Value = ((bool)(ReceivedContract.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[170].Value = global::System.DBNull.Value;
+            }
+            if ((DateContractReceived.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[171].Value = ((System.DateTime)(DateContractReceived.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[171].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -20802,7 +20910,9 @@ namespace IAC2018SQL.PaymentDataSetTableAdapters {
                     global::System.Nullable<decimal> Status, 
                     global::System.Nullable<bool> TitleReceived, 
                     global::System.Nullable<global::System.DateTime> TitleDateReceived, 
-                    global::System.Nullable<bool> ElectronicLien) {
+                    global::System.Nullable<bool> ElectronicLien, 
+                    global::System.Nullable<bool> ReceivedContract, 
+                    global::System.Nullable<global::System.DateTime> DateContractReceived) {
             if ((ID.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(ID.Value));
             }
@@ -21822,6 +21932,18 @@ namespace IAC2018SQL.PaymentDataSetTableAdapters {
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[170].Value = global::System.DBNull.Value;
+            }
+            if ((ReceivedContract.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[171].Value = ((bool)(ReceivedContract.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[171].Value = global::System.DBNull.Value;
+            }
+            if ((DateContractReceived.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[172].Value = ((System.DateTime)(DateContractReceived.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[172].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
