@@ -33,13 +33,14 @@
             this.buttonTransfer = new System.Windows.Forms.Button();
             this.progressBarDownload = new System.Windows.Forms.ProgressBar();
             this.labelDownload = new System.Windows.Forms.Label();
+            this.buttonReImport = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonCancel
             // 
             this.buttonCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCancel.Image = ((System.Drawing.Image)(resources.GetObject("buttonCancel.Image")));
-            this.buttonCancel.Location = new System.Drawing.Point(326, 53);
+            this.buttonCancel.Location = new System.Drawing.Point(326, 34);
             this.buttonCancel.Margin = new System.Windows.Forms.Padding(4);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(110, 103);
@@ -52,7 +53,7 @@
             // buttonTransfer
             // 
             this.buttonTransfer.Image = ((System.Drawing.Image)(resources.GetObject("buttonTransfer.Image")));
-            this.buttonTransfer.Location = new System.Drawing.Point(130, 53);
+            this.buttonTransfer.Location = new System.Drawing.Point(130, 34);
             this.buttonTransfer.Name = "buttonTransfer";
             this.buttonTransfer.Size = new System.Drawing.Size(110, 103);
             this.buttonTransfer.TabIndex = 1;
@@ -78,12 +79,22 @@
             this.labelDownload.Text = "label1";
             this.labelDownload.Visible = false;
             // 
+            // buttonReImport
+            // 
+            this.buttonReImport.Location = new System.Drawing.Point(130, 153);
+            this.buttonReImport.Name = "buttonReImport";
+            this.buttonReImport.Size = new System.Drawing.Size(306, 23);
+            this.buttonReImport.TabIndex = 15;
+            this.buttonReImport.Text = "&Reimport Without SFTP";
+            this.buttonReImport.UseVisualStyleBackColor = true;
+            // 
             // frmPNSImport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(567, 306);
+            this.Controls.Add(this.buttonReImport);
             this.Controls.Add(this.labelDownload);
             this.Controls.Add(this.progressBarDownload);
             this.Controls.Add(this.buttonTransfer);
@@ -103,5 +114,6 @@
         private System.Windows.Forms.Button buttonTransfer;
         private System.Windows.Forms.ProgressBar progressBarDownload;
         private System.Windows.Forms.Label labelDownload;
+        private System.Windows.Forms.Button buttonReImport;
     }
 }

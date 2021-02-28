@@ -97,6 +97,11 @@ namespace IAC2018SQL
             // Moses Newman 07/14/2020 Set DataBindings NullValue to string.Empty to prevent getting stuck in blank field.
             textBoxCosignerTierPoints.DataBindings["Text"].NullValue = string.Empty;
             textBoxTier.DataBindings["Text"].NullValue = string.Empty;
+            /*DataGridViewRow row2 = cUSTHISTDataGridView.RowTemplate;
+            ColorTextBox cTB = new ColorTextBox();
+            cUSTHISTDataGridView.Controls.Add(cTB);
+            cTB.Location = this.cUSTHISTDataGridView.GetCellDisplayRectangle(4, row2.Index, true).Location;
+            cTB.Size = this.cUSTHISTDataGridView.GetCellDisplayRectangle(4, row2.Index, true).Size;*/
         }
 
         private void StartupConfiguration()
