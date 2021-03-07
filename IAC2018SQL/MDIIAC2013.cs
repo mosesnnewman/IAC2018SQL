@@ -1687,5 +1687,10 @@ namespace IAC2018SQL
         {
             CreateFormInstance("FixPaidThroughs", false);
         }
+
+        private void receivedContractReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CreateFormInstance("ClosedCustomerReceivedContractReport", false);
+        }
     }
 }

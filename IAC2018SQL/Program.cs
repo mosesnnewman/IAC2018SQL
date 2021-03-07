@@ -737,11 +737,15 @@ namespace IAC2018SQL
                         if ((Decimal)dr["Payment"] < 0 && (AmortIndex - 1) < tdtCUSTHIST.Rows.Count && AmortIndex > 0 &&
                             tdtCUSTHIST.Rows[AmortIndex - 1].Field<String>("CUSTHIST_PAYMENT_TYPE") != "W")
                         {
-                            // Moses Newman 04/13/2018 Add ISFDate, ISFSeqNo, ISFPaymentType, and ISFPaymentCode so that exact returned check can be found.
-                            dr.SetField<DateTime?>("ISFDate", tdtCUSTHIST.Rows[AmortIndex-1].Field<DateTime?>("CUSTHIST_ISF_DATE"));
-                            dr.SetField<Int32?>("ISFSeqNo", tdtCUSTHIST.Rows[AmortIndex-1].Field<Int32?>("ISFSeqNo"));
-                            dr["ISFPaymentType"] = tdtCUSTHIST.Rows[AmortIndex-1].Field<String>("ISFPaymentType");
-                            dr["ISFPaymentCode"] = tdtCUSTHIST.Rows[AmortIndex-1].Field<String>("ISFPaymentCode");
+							// Moses Newman 03/04/20201 Don't fill in ISF stuff if BUYOUT or UNEARNED row!
+							if ((String)dr["Event"] != "BUYOUT" && (String)dr["Event"] != "UNEARNED")
+							{
+								// Moses Newman 04/13/2018 Add ISFDate, ISFSeqNo, ISFPaymentType, and ISFPaymentCode so that exact returned check can be found.
+								dr.SetField<DateTime?>("ISFDate", tdtCUSTHIST.Rows[AmortIndex - 1].Field<DateTime?>("CUSTHIST_ISF_DATE"));
+								dr.SetField<Int32?>("ISFSeqNo", tdtCUSTHIST.Rows[AmortIndex - 1].Field<Int32?>("ISFSeqNo"));
+								dr["ISFPaymentType"] = tdtCUSTHIST.Rows[AmortIndex - 1].Field<String>("ISFPaymentType");
+								dr["ISFPaymentCode"] = tdtCUSTHIST.Rows[AmortIndex - 1].Field<String>("ISFPaymentCode");
+							}
                         }
 						dr["Interest"] = dataArray[TValueDefines.AmortInterestAccruedIndex];
 						dr["Principal"] = dataArray[TValueDefines.AmortPrincipalPaidIndex];
