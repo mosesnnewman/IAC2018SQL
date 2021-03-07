@@ -231,6 +231,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cUSTOMERBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.iACDataSet = new IAC2018SQL.IACDataSet();
             this.tabComments = new System.Windows.Forms.TabPage();
@@ -309,9 +310,12 @@
             this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CUSTHIST_PAYMENT_CODE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CUSTHIST_THRU_UD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cUSTHISTBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabCustInfo1 = new System.Windows.Forms.TabPage();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.nullableDateTimePickerDateContractReceived = new ProManApp.NullableDateTimePicker();
+            this.colorCheckBoxReceivedContract = new IAC2018SQL.ColorCheckBox();
             this.buttonDealerEmail = new System.Windows.Forms.Button();
             this.checkBoxSendToDealer = new System.Windows.Forms.CheckBox();
             this.EmailbindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -760,6 +764,7 @@
             this.interestTypesTableAdapter = new IAC2018SQL.TSBDataSetTableAdapters.InterestTypesTableAdapter();
             this.portfolioTypesTableAdapter = new IAC2018SQL.TSBDataSetTableAdapters.PortfolioTypesTableAdapter();
             this.termsFrequencyTableAdapter = new IAC2018SQL.TSBDataSetTableAdapters.TermsFrequencyTableAdapter();
+            this.mASTERTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.MASTERTableAdapter();
             label11 = new System.Windows.Forms.Label();
             label10 = new System.Windows.Forms.Label();
             label9 = new System.Windows.Forms.Label();
@@ -959,6 +964,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.cUSTHISTBindingSource)).BeginInit();
             this.tabCustInfo1.SuspendLayout();
             this.groupBox10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateContractReceived)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EmailbindingSource)).BeginInit();
             this.groupBoxSBT.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceGenCodes)).BeginInit();
@@ -1467,7 +1473,7 @@
             // 
             lblVIN.AutoSize = true;
             lblVIN.BackColor = System.Drawing.Color.Transparent;
-            lblVIN.Location = new System.Drawing.Point(77, 132);
+            lblVIN.Location = new System.Drawing.Point(55, 132);
             lblVIN.Name = "lblVIN";
             lblVIN.Size = new System.Drawing.Size(101, 21);
             lblVIN.TabIndex = 93;
@@ -1476,7 +1482,7 @@
             // lblMake
             // 
             lblMake.AutoSize = true;
-            lblMake.Location = new System.Drawing.Point(127, 67);
+            lblMake.Location = new System.Drawing.Point(105, 67);
             lblMake.Name = "lblMake";
             lblMake.Size = new System.Drawing.Size(51, 21);
             lblMake.TabIndex = 91;
@@ -1485,7 +1491,7 @@
             // lblInsCo
             // 
             lblInsCo.AutoSize = true;
-            lblInsCo.Location = new System.Drawing.Point(27, 163);
+            lblInsCo.Location = new System.Drawing.Point(5, 163);
             lblInsCo.Name = "lblInsCo";
             lblInsCo.Size = new System.Drawing.Size(151, 21);
             lblInsCo.TabIndex = 83;
@@ -1495,7 +1501,7 @@
             // 
             lblModel.AutoSize = true;
             lblModel.BackColor = System.Drawing.Color.Transparent;
-            lblModel.Location = new System.Drawing.Point(121, 99);
+            lblModel.Location = new System.Drawing.Point(99, 99);
             lblModel.Name = "lblModel";
             lblModel.Size = new System.Drawing.Size(57, 21);
             lblModel.TabIndex = 78;
@@ -1505,7 +1511,7 @@
             // 
             lblVehicleYear.AutoSize = true;
             lblVehicleYear.BackColor = System.Drawing.Color.Transparent;
-            lblVehicleYear.Location = new System.Drawing.Point(80, 34);
+            lblVehicleYear.Location = new System.Drawing.Point(58, 34);
             lblVehicleYear.Name = "lblVehicleYear";
             lblVehicleYear.Size = new System.Drawing.Size(96, 21);
             lblVehicleYear.TabIndex = 77;
@@ -1543,7 +1549,7 @@
             // 
             label54.AutoSize = true;
             label54.BackColor = System.Drawing.Color.Transparent;
-            label54.Location = new System.Drawing.Point(62, 196);
+            label54.Location = new System.Drawing.Point(40, 196);
             label54.Name = "label54";
             label54.Size = new System.Drawing.Size(115, 21);
             label54.TabIndex = 95;
@@ -1553,7 +1559,7 @@
             // 
             label55.AutoSize = true;
             label55.BackColor = System.Drawing.Color.Transparent;
-            label55.Location = new System.Drawing.Point(53, 262);
+            label55.Location = new System.Drawing.Point(31, 262);
             label55.Name = "label55";
             label55.Size = new System.Drawing.Size(125, 21);
             label55.TabIndex = 97;
@@ -1563,7 +1569,7 @@
             // 
             label56.AutoSize = true;
             label56.BackColor = System.Drawing.Color.Transparent;
-            label56.Location = new System.Drawing.Point(71, 294);
+            label56.Location = new System.Drawing.Point(49, 294);
             label56.Name = "label56";
             label56.Size = new System.Drawing.Size(107, 21);
             label56.TabIndex = 99;
@@ -1573,7 +1579,7 @@
             // 
             label57.AutoSize = true;
             label57.BackColor = System.Drawing.Color.Transparent;
-            label57.Location = new System.Drawing.Point(60, 327);
+            label57.Location = new System.Drawing.Point(38, 327);
             label57.Name = "label57";
             label57.Size = new System.Drawing.Size(118, 21);
             label57.TabIndex = 101;
@@ -1582,7 +1588,7 @@
             // label58
             // 
             label58.AutoSize = true;
-            label58.Location = new System.Drawing.Point(52, 359);
+            label58.Location = new System.Drawing.Point(30, 359);
             label58.Name = "label58";
             label58.Size = new System.Drawing.Size(126, 21);
             label58.TabIndex = 103;
@@ -1591,7 +1597,7 @@
             // label59
             // 
             label59.AutoSize = true;
-            label59.Location = new System.Drawing.Point(81, 391);
+            label59.Location = new System.Drawing.Point(59, 391);
             label59.Name = "label59";
             label59.Size = new System.Drawing.Size(97, 21);
             label59.TabIndex = 105;
@@ -1600,7 +1606,7 @@
             // label60
             // 
             label60.AutoSize = true;
-            label60.Location = new System.Drawing.Point(334, 265);
+            label60.Location = new System.Drawing.Point(312, 265);
             label60.Name = "label60";
             label60.Size = new System.Drawing.Size(82, 21);
             label60.TabIndex = 106;
@@ -2020,7 +2026,7 @@
             // 
             cUSTOMER_AUTOPAYLabel.AutoSize = true;
             cUSTOMER_AUTOPAYLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            cUSTOMER_AUTOPAYLabel.Location = new System.Drawing.Point(509, 196);
+            cUSTOMER_AUTOPAYLabel.Location = new System.Drawing.Point(624, 196);
             cUSTOMER_AUTOPAYLabel.Name = "cUSTOMER_AUTOPAYLabel";
             cUSTOMER_AUTOPAYLabel.Size = new System.Drawing.Size(129, 20);
             cUSTOMER_AUTOPAYLabel.TabIndex = 52;
@@ -2041,7 +2047,7 @@
             // 
             cUSTOMER_ACT_STATLabel.AutoSize = true;
             cUSTOMER_ACT_STATLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            cUSTOMER_ACT_STATLabel.Location = new System.Drawing.Point(562, 27);
+            cUSTOMER_ACT_STATLabel.Location = new System.Drawing.Point(677, 27);
             cUSTOMER_ACT_STATLabel.Name = "cUSTOMER_ACT_STATLabel";
             cUSTOMER_ACT_STATLabel.Size = new System.Drawing.Size(76, 20);
             cUSTOMER_ACT_STATLabel.TabIndex = 3;
@@ -2082,7 +2088,7 @@
             // 
             cUSTOMER_WRONG_ADDRESSLabel.AutoSize = true;
             cUSTOMER_WRONG_ADDRESSLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            cUSTOMER_WRONG_ADDRESSLabel.Location = new System.Drawing.Point(438, 366);
+            cUSTOMER_WRONG_ADDRESSLabel.Location = new System.Drawing.Point(553, 366);
             cUSTOMER_WRONG_ADDRESSLabel.Name = "cUSTOMER_WRONG_ADDRESSLabel";
             cUSTOMER_WRONG_ADDRESSLabel.Size = new System.Drawing.Size(200, 20);
             cUSTOMER_WRONG_ADDRESSLabel.TabIndex = 13;
@@ -2093,7 +2099,7 @@
             // 
             cUSTOMER_NO_CONTACTLabel.AutoSize = true;
             cUSTOMER_NO_CONTACTLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            cUSTOMER_NO_CONTACTLabel.Location = new System.Drawing.Point(484, 399);
+            cUSTOMER_NO_CONTACTLabel.Location = new System.Drawing.Point(599, 399);
             cUSTOMER_NO_CONTACTLabel.Name = "cUSTOMER_NO_CONTACTLabel";
             cUSTOMER_NO_CONTACTLabel.Size = new System.Drawing.Size(154, 20);
             cUSTOMER_NO_CONTACTLabel.TabIndex = 15;
@@ -2177,7 +2183,7 @@
             // 
             cUSTOMER_COMMENT_2Label.AutoSize = true;
             cUSTOMER_COMMENT_2Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            cUSTOMER_COMMENT_2Label.Location = new System.Drawing.Point(534, 94);
+            cUSTOMER_COMMENT_2Label.Location = new System.Drawing.Point(649, 94);
             cUSTOMER_COMMENT_2Label.Name = "cUSTOMER_COMMENT_2Label";
             cUSTOMER_COMMENT_2Label.Size = new System.Drawing.Size(104, 20);
             cUSTOMER_COMMENT_2Label.TabIndex = 44;
@@ -2208,7 +2214,7 @@
             // 
             cUSTOMER_INSURANCELabel.AutoSize = true;
             cUSTOMER_INSURANCELabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            cUSTOMER_INSURANCELabel.Location = new System.Drawing.Point(486, 162);
+            cUSTOMER_INSURANCELabel.Location = new System.Drawing.Point(601, 162);
             cUSTOMER_INSURANCELabel.Name = "cUSTOMER_INSURANCELabel";
             cUSTOMER_INSURANCELabel.Size = new System.Drawing.Size(152, 20);
             cUSTOMER_INSURANCELabel.TabIndex = 50;
@@ -2219,7 +2225,7 @@
             // 
             cUSTOMER_ALLOTMENTLabel.AutoSize = true;
             cUSTOMER_ALLOTMENTLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            cUSTOMER_ALLOTMENTLabel.Location = new System.Drawing.Point(480, 264);
+            cUSTOMER_ALLOTMENTLabel.Location = new System.Drawing.Point(595, 264);
             cUSTOMER_ALLOTMENTLabel.Name = "cUSTOMER_ALLOTMENTLabel";
             cUSTOMER_ALLOTMENTLabel.Size = new System.Drawing.Size(158, 20);
             cUSTOMER_ALLOTMENTLabel.TabIndex = 57;
@@ -2230,7 +2236,7 @@
             // 
             cUSTOMER_DISTRIBUTOR_NOLabel.AutoSize = true;
             cUSTOMER_DISTRIBUTOR_NOLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            cUSTOMER_DISTRIBUTOR_NOLabel.Location = new System.Drawing.Point(488, 298);
+            cUSTOMER_DISTRIBUTOR_NOLabel.Location = new System.Drawing.Point(603, 298);
             cUSTOMER_DISTRIBUTOR_NOLabel.Name = "cUSTOMER_DISTRIBUTOR_NOLabel";
             cUSTOMER_DISTRIBUTOR_NOLabel.Size = new System.Drawing.Size(150, 20);
             cUSTOMER_DISTRIBUTOR_NOLabel.TabIndex = 59;
@@ -2241,7 +2247,7 @@
             // 
             cUSTOMER_BRANCH_NUMBERLabel.AutoSize = true;
             cUSTOMER_BRANCH_NUMBERLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            cUSTOMER_BRANCH_NUMBERLabel.Location = new System.Drawing.Point(483, 332);
+            cUSTOMER_BRANCH_NUMBERLabel.Location = new System.Drawing.Point(598, 332);
             cUSTOMER_BRANCH_NUMBERLabel.Name = "cUSTOMER_BRANCH_NUMBERLabel";
             cUSTOMER_BRANCH_NUMBERLabel.Size = new System.Drawing.Size(155, 20);
             cUSTOMER_BRANCH_NUMBERLabel.TabIndex = 61;
@@ -2335,7 +2341,7 @@
             // 
             labelEmailAddress.AutoSize = true;
             labelEmailAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            labelEmailAddress.Location = new System.Drawing.Point(492, 230);
+            labelEmailAddress.Location = new System.Drawing.Point(607, 230);
             labelEmailAddress.Name = "labelEmailAddress";
             labelEmailAddress.Size = new System.Drawing.Size(146, 20);
             labelEmailAddress.TabIndex = 81;
@@ -2377,7 +2383,7 @@
             // 
             labelMileage.AutoSize = true;
             labelMileage.BackColor = System.Drawing.Color.Transparent;
-            labelMileage.Location = new System.Drawing.Point(279, 34);
+            labelMileage.Location = new System.Drawing.Point(257, 34);
             labelMileage.Name = "labelMileage";
             labelMileage.Size = new System.Drawing.Size(68, 21);
             labelMileage.TabIndex = 127;
@@ -2417,7 +2423,7 @@
             // 
             labelDealerState.AutoSize = true;
             labelDealerState.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            labelDealerState.Location = new System.Drawing.Point(562, 472);
+            labelDealerState.Location = new System.Drawing.Point(543, 472);
             labelDealerState.Name = "labelDealerState";
             labelDealerState.Size = new System.Drawing.Size(134, 20);
             labelDealerState.TabIndex = 89;
@@ -2531,7 +2537,7 @@
             labelLast.AutoSize = true;
             labelLast.BackColor = System.Drawing.Color.Transparent;
             labelLast.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            labelLast.Location = new System.Drawing.Point(529, 60);
+            labelLast.Location = new System.Drawing.Point(532, 60);
             labelLast.Name = "labelLast";
             labelLast.Size = new System.Drawing.Size(53, 20);
             labelLast.TabIndex = 99;
@@ -2542,7 +2548,7 @@
             labelGen.AutoSize = true;
             labelGen.BackColor = System.Drawing.Color.Transparent;
             labelGen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            labelGen.Location = new System.Drawing.Point(743, 26);
+            labelGen.Location = new System.Drawing.Point(846, 60);
             labelGen.Name = "labelGen";
             labelGen.Size = new System.Drawing.Size(37, 20);
             labelGen.TabIndex = 100;
@@ -2845,7 +2851,7 @@
             this.tabComments.Location = new System.Drawing.Point(4, 30);
             this.tabComments.Name = "tabComments";
             this.tabComments.Padding = new System.Windows.Forms.Padding(3);
-            this.tabComments.Size = new System.Drawing.Size(1134, 581);
+            this.tabComments.Size = new System.Drawing.Size(1261, 581);
             this.tabComments.TabIndex = 2;
             this.tabComments.Text = "Customer Comments";
             // 
@@ -2860,7 +2866,7 @@
             this.groupBox7.Controls.Add(this.textBox11);
             this.groupBox7.Controls.Add(this.txtCommentNo);
             this.groupBox7.Controls.Add(label10);
-            this.groupBox7.Location = new System.Drawing.Point(128, 7);
+            this.groupBox7.Location = new System.Drawing.Point(185, 7);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(860, 91);
             this.groupBox7.TabIndex = 600;
@@ -2960,7 +2966,7 @@
             this.COMMENT_HHMMSS,
             this.ImgSort});
             this.cOMMENTDataGridView.DataSource = this.cOMMENTBindingSource;
-            this.cOMMENTDataGridView.Location = new System.Drawing.Point(49, 104);
+            this.cOMMENTDataGridView.Location = new System.Drawing.Point(106, 104);
             this.cOMMENTDataGridView.Name = "cOMMENTDataGridView";
             this.cOMMENTDataGridView.RowTemplate.Height = 24;
             this.cOMMENTDataGridView.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -3146,7 +3152,7 @@
             this.tabHistory.Location = new System.Drawing.Point(4, 30);
             this.tabHistory.Name = "tabHistory";
             this.tabHistory.Padding = new System.Windows.Forms.Padding(3);
-            this.tabHistory.Size = new System.Drawing.Size(1134, 581);
+            this.tabHistory.Size = new System.Drawing.Size(1261, 581);
             this.tabHistory.TabIndex = 1;
             this.tabHistory.Text = "Customer History";
             // 
@@ -3202,7 +3208,7 @@
             this.groupBox11.Controls.Add(label113);
             this.groupBox11.Controls.Add(label114);
             this.groupBox11.Controls.Add(this.textBox31);
-            this.groupBox11.Location = new System.Drawing.Point(5, 4);
+            this.groupBox11.Location = new System.Drawing.Point(64, 4);
             this.groupBox11.Name = "groupBox11";
             this.groupBox11.Size = new System.Drawing.Size(1103, 220);
             this.groupBox11.TabIndex = 500;
@@ -3239,7 +3245,7 @@
             this.nullableDateTimePickerHistContractDate.Name = "nullableDateTimePickerHistContractDate";
             this.nullableDateTimePickerHistContractDate.Size = new System.Drawing.Size(107, 29);
             this.nullableDateTimePickerHistContractDate.TabIndex = 502;
-            this.nullableDateTimePickerHistContractDate.Value = new System.DateTime(2020, 9, 26, 0, 0, 0, 0);
+            this.nullableDateTimePickerHistContractDate.Value = new System.DateTime(2021, 3, 1, 0, 0, 0, 0);
             // 
             // textBoxBuyOutHist
             // 
@@ -3265,7 +3271,7 @@
             this.nullableDateTimePickerPayDate.Name = "nullableDateTimePickerPayDate";
             this.nullableDateTimePickerPayDate.Size = new System.Drawing.Size(107, 29);
             this.nullableDateTimePickerPayDate.TabIndex = 507;
-            this.nullableDateTimePickerPayDate.Value = new System.DateTime(2020, 9, 26, 0, 0, 0, 0);
+            this.nullableDateTimePickerPayDate.Value = new System.DateTime(2021, 3, 1, 0, 0, 0, 0);
             // 
             // textBox22
             // 
@@ -3290,7 +3296,7 @@
             this.nullableDateTimePickerFirstPayDate.Name = "nullableDateTimePickerFirstPayDate";
             this.nullableDateTimePickerFirstPayDate.Size = new System.Drawing.Size(107, 29);
             this.nullableDateTimePickerFirstPayDate.TabIndex = 510;
-            this.nullableDateTimePickerFirstPayDate.Value = new System.DateTime(2020, 9, 26, 0, 0, 0, 0);
+            this.nullableDateTimePickerFirstPayDate.Value = new System.DateTime(2021, 3, 1, 0, 0, 0, 0);
             // 
             // textBox1
             // 
@@ -3553,7 +3559,7 @@
             this.toolStripButtonCalcBuyout});
             this.toolStrip2.Location = new System.Drawing.Point(3, 553);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(1128, 25);
+            this.toolStrip2.Size = new System.Drawing.Size(1255, 25);
             this.toolStrip2.TabIndex = 98;
             this.toolStrip2.Text = "toolStrip2";
             // 
@@ -3627,15 +3633,16 @@
             this.dataGridViewTextBoxColumn15,
             this.dataGridViewTextBoxColumn16,
             this.dataGridViewTextBoxColumn27,
-            this.CUSTHIST_PAYMENT_CODE});
+            this.CUSTHIST_PAYMENT_CODE,
+            this.CUSTHIST_THRU_UD});
             this.cUSTHISTDataGridView.DataSource = this.cUSTHISTBindingSource;
-            this.cUSTHISTDataGridView.Location = new System.Drawing.Point(68, 230);
+            this.cUSTHISTDataGridView.Location = new System.Drawing.Point(113, 230);
             this.cUSTHISTDataGridView.Name = "cUSTHISTDataGridView";
             this.cUSTHISTDataGridView.ReadOnly = true;
             this.cUSTHISTDataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.cUSTHISTDataGridView.RowTemplate.Height = 24;
             this.cUSTHISTDataGridView.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.cUSTHISTDataGridView.Size = new System.Drawing.Size(980, 319);
+            this.cUSTHISTDataGridView.Size = new System.Drawing.Size(1005, 319);
             this.cUSTHISTDataGridView.TabIndex = 530;
             this.cUSTHISTDataGridView.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.cUSTHISTDataGridView_DataBindingComplete);
             // 
@@ -3745,11 +3752,24 @@
             // 
             // CUSTHIST_PAYMENT_CODE
             // 
+            this.CUSTHIST_PAYMENT_CODE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
             this.CUSTHIST_PAYMENT_CODE.DataPropertyName = "CUSTHIST_PAYMENT_CODE";
             this.CUSTHIST_PAYMENT_CODE.HeaderText = "";
             this.CUSTHIST_PAYMENT_CODE.Name = "CUSTHIST_PAYMENT_CODE";
             this.CUSTHIST_PAYMENT_CODE.ReadOnly = true;
-            this.CUSTHIST_PAYMENT_CODE.Width = 18;
+            this.CUSTHIST_PAYMENT_CODE.Width = 5;
+            // 
+            // CUSTHIST_THRU_UD
+            // 
+            this.CUSTHIST_THRU_UD.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
+            this.CUSTHIST_THRU_UD.DataPropertyName = "CUSTHIST_THRU_UD";
+            dataGridViewCellStyle12.Format = "#";
+            dataGridViewCellStyle12.NullValue = "0";
+            this.CUSTHIST_THRU_UD.DefaultCellStyle = dataGridViewCellStyle12;
+            this.CUSTHIST_THRU_UD.HeaderText = "";
+            this.CUSTHIST_THRU_UD.Name = "CUSTHIST_THRU_UD";
+            this.CUSTHIST_THRU_UD.ReadOnly = true;
+            this.CUSTHIST_THRU_UD.Width = 5;
             // 
             // cUSTHISTBindingSource
             // 
@@ -3765,12 +3785,14 @@
             this.tabCustInfo1.Location = new System.Drawing.Point(4, 30);
             this.tabCustInfo1.Name = "tabCustInfo1";
             this.tabCustInfo1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabCustInfo1.Size = new System.Drawing.Size(1134, 581);
+            this.tabCustInfo1.Size = new System.Drawing.Size(1261, 581);
             this.tabCustInfo1.TabIndex = 0;
             this.tabCustInfo1.Text = "Customer Info";
             // 
             // groupBox10
             // 
+            this.groupBox10.Controls.Add(this.nullableDateTimePickerDateContractReceived);
+            this.groupBox10.Controls.Add(this.colorCheckBoxReceivedContract);
             this.groupBox10.Controls.Add(this.buttonDealerEmail);
             this.groupBox10.Controls.Add(this.checkBoxSendToDealer);
             this.groupBox10.Controls.Add(labelDealerEmail);
@@ -3864,11 +3886,41 @@
             this.groupBox10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox10.Location = new System.Drawing.Point(3, 3);
             this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(1128, 575);
+            this.groupBox10.Size = new System.Drawing.Size(1255, 575);
             this.groupBox10.TabIndex = 33;
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "               ";
             this.groupBox10.Enter += new System.EventHandler(this.groupBox10_Enter);
+            // 
+            // nullableDateTimePickerDateContractReceived
+            // 
+            this.nullableDateTimePickerDateContractReceived.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.cUSTOMERBindingSource, "DateContractReceived", true));
+            this.nullableDateTimePickerDateContractReceived.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.nullableDateTimePickerDateContractReceived.Location = new System.Drawing.Point(1068, 460);
+            this.nullableDateTimePickerDateContractReceived.Name = "nullableDateTimePickerDateContractReceived";
+            this.nullableDateTimePickerDateContractReceived.Size = new System.Drawing.Size(119, 29);
+            this.nullableDateTimePickerDateContractReceived.TabIndex = 108;
+            this.nullableDateTimePickerDateContractReceived.Value = new System.DateTime(2021, 3, 1, 0, 0, 0, 0);
+            this.nullableDateTimePickerDateContractReceived.Visible = false;
+            this.nullableDateTimePickerDateContractReceived.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            // 
+            // colorCheckBoxReceivedContract
+            // 
+            this.colorCheckBoxReceivedContract.Appearance = System.Windows.Forms.Appearance.Button;
+            this.colorCheckBoxReceivedContract.AutoSize = true;
+            this.colorCheckBoxReceivedContract.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.cUSTOMERBindingSource, "ReceivedContract", true));
+            this.colorCheckBoxReceivedContract.FlatAppearance.BorderSize = 0;
+            this.colorCheckBoxReceivedContract.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.colorCheckBoxReceivedContract.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.colorCheckBoxReceivedContract.Location = new System.Drawing.Point(897, 461);
+            this.colorCheckBoxReceivedContract.Name = "colorCheckBoxReceivedContract";
+            this.colorCheckBoxReceivedContract.Size = new System.Drawing.Size(164, 31);
+            this.colorCheckBoxReceivedContract.TabIndex = 107;
+            this.colorCheckBoxReceivedContract.Text = "Received Contract?   ";
+            this.colorCheckBoxReceivedContract.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.colorCheckBoxReceivedContract.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.colorCheckBoxReceivedContract.UseVisualStyleBackColor = true;
+            this.colorCheckBoxReceivedContract.CheckedChanged += new System.EventHandler(this.colorCheckBoxReceivedContract_CheckedChanged);
             // 
             // buttonDealerEmail
             // 
@@ -3923,7 +3975,7 @@
             this.checkBoxFullRecourseTab1.FlatAppearance.BorderSize = 0;
             this.checkBoxFullRecourseTab1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.checkBoxFullRecourseTab1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.checkBoxFullRecourseTab1.Location = new System.Drawing.Point(760, 461);
+            this.checkBoxFullRecourseTab1.Location = new System.Drawing.Point(754, 461);
             this.checkBoxFullRecourseTab1.Name = "checkBoxFullRecourseTab1";
             this.checkBoxFullRecourseTab1.Size = new System.Drawing.Size(132, 31);
             this.checkBoxFullRecourseTab1.TabIndex = 58;
@@ -3940,7 +3992,7 @@
             this.checkBoxMilitary.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.cUSTOMERBindingSource, "Military", true));
             this.checkBoxMilitary.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBoxMilitary.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.checkBoxMilitary.Location = new System.Drawing.Point(544, 423);
+            this.checkBoxMilitary.Location = new System.Drawing.Point(658, 423);
             this.checkBoxMilitary.Name = "checkBoxMilitary";
             this.checkBoxMilitary.Size = new System.Drawing.Size(111, 24);
             this.checkBoxMilitary.TabIndex = 45;
@@ -3958,7 +4010,7 @@
             this.groupBoxSBT.Controls.Add(this.radioButtonAcct);
             this.groupBoxSBT.Controls.Add(this.checkBoxDNTMktg);
             this.groupBoxSBT.Controls.Add(this.checkBoxDNTAcct);
-            this.groupBoxSBT.Location = new System.Drawing.Point(717, 264);
+            this.groupBoxSBT.Location = new System.Drawing.Point(832, 264);
             this.groupBoxSBT.Name = "groupBoxSBT";
             this.groupBoxSBT.Size = new System.Drawing.Size(311, 173);
             this.groupBoxSBT.TabIndex = 46;
@@ -4069,7 +4121,7 @@
             this.comboBoxGN.DataSource = this.bindingSourceGenCodes;
             this.comboBoxGN.DisplayMember = "Description";
             this.comboBoxGN.FormattingEnabled = true;
-            this.comboBoxGN.Location = new System.Drawing.Point(786, 17);
+            this.comboBoxGN.Location = new System.Drawing.Point(887, 51);
             this.comboBoxGN.Name = "comboBoxGN";
             this.comboBoxGN.Size = new System.Drawing.Size(99, 29);
             this.comboBoxGN.TabIndex = 9;
@@ -4109,7 +4161,7 @@
             this.groupBoxGapWarranty.Controls.Add(labelGAP);
             this.groupBoxGapWarranty.Controls.Add(this.checkBoxWarranty);
             this.groupBoxGapWarranty.Controls.Add(this.comboBoxGAP);
-            this.groupBoxGapWarranty.Location = new System.Drawing.Point(888, 98);
+            this.groupBoxGapWarranty.Location = new System.Drawing.Point(1003, 98);
             this.groupBoxGapWarranty.Name = "groupBoxGapWarranty";
             this.groupBoxGapWarranty.Size = new System.Drawing.Size(196, 118);
             this.groupBoxGapWarranty.TabIndex = 95;
@@ -4194,7 +4246,7 @@
             this.labelInsuranceExpired.AutoSize = true;
             this.labelInsuranceExpired.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelInsuranceExpired.ForeColor = System.Drawing.Color.Crimson;
-            this.labelInsuranceExpired.Location = new System.Drawing.Point(891, 67);
+            this.labelInsuranceExpired.Location = new System.Drawing.Point(1006, 67);
             this.labelInsuranceExpired.Name = "labelInsuranceExpired";
             this.labelInsuranceExpired.Size = new System.Drawing.Size(191, 20);
             this.labelInsuranceExpired.TabIndex = 90;
@@ -4208,7 +4260,7 @@
             this.textBoxDealerState.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dEALERBindingSource, "DEALER_ST", true));
             this.textBoxDealerState.Enabled = false;
             this.textBoxDealerState.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxDealerState.Location = new System.Drawing.Point(702, 466);
+            this.textBoxDealerState.Location = new System.Drawing.Point(680, 466);
             this.textBoxDealerState.MaxLength = 2;
             this.textBoxDealerState.Name = "textBoxDealerState";
             this.textBoxDealerState.Size = new System.Drawing.Size(36, 26);
@@ -4220,7 +4272,7 @@
             this.richTextBoxEmailAddress.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.richTextBoxEmailAddress.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.EmailbindingSource, "EmailAddress", true));
             this.richTextBoxEmailAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBoxEmailAddress.Location = new System.Drawing.Point(641, 224);
+            this.richTextBoxEmailAddress.Location = new System.Drawing.Point(756, 224);
             this.richTextBoxEmailAddress.MaxLength = 50;
             this.richTextBoxEmailAddress.Name = "richTextBoxEmailAddress";
             this.richTextBoxEmailAddress.Size = new System.Drawing.Size(464, 26);
@@ -4233,7 +4285,7 @@
             // 
             this.buttonSendMail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSendMail.Image = ((System.Drawing.Image)(resources.GetObject("buttonSendMail.Image")));
-            this.buttonSendMail.Location = new System.Drawing.Point(1037, 254);
+            this.buttonSendMail.Location = new System.Drawing.Point(1152, 256);
             this.buttonSendMail.Name = "buttonSendMail";
             this.buttonSendMail.Size = new System.Drawing.Size(68, 40);
             this.buttonSendMail.TabIndex = 54;
@@ -4245,7 +4297,7 @@
             this.labelCustinRepo.AutoSize = true;
             this.labelCustinRepo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCustinRepo.ForeColor = System.Drawing.Color.Purple;
-            this.labelCustinRepo.Location = new System.Drawing.Point(891, 42);
+            this.labelCustinRepo.Location = new System.Drawing.Point(1006, 42);
             this.labelCustinRepo.Name = "labelCustinRepo";
             this.labelCustinRepo.Size = new System.Drawing.Size(166, 20);
             this.labelCustinRepo.TabIndex = 86;
@@ -4392,7 +4444,7 @@
             this.DealerNamecomboBox.Enabled = false;
             this.DealerNamecomboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DealerNamecomboBox.FormattingEnabled = true;
-            this.DealerNamecomboBox.Location = new System.Drawing.Point(238, 464);
+            this.DealerNamecomboBox.Location = new System.Drawing.Point(230, 464);
             this.DealerNamecomboBox.MaxLength = 25;
             this.DealerNamecomboBox.Name = "DealerNamecomboBox";
             this.DealerNamecomboBox.Size = new System.Drawing.Size(308, 28);
@@ -4407,7 +4459,7 @@
             this.cUSTOMER_COMMENT_2TextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.cUSTOMER_COMMENT_2TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_COMMENT_2", true));
             this.cUSTOMER_COMMENT_2TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cUSTOMER_COMMENT_2TextBox.Location = new System.Drawing.Point(641, 122);
+            this.cUSTOMER_COMMENT_2TextBox.Location = new System.Drawing.Point(756, 122);
             this.cUSTOMER_COMMENT_2TextBox.MaxLength = 25;
             this.cUSTOMER_COMMENT_2TextBox.Name = "cUSTOMER_COMMENT_2TextBox";
             this.cUSTOMER_COMMENT_2TextBox.Size = new System.Drawing.Size(199, 26);
@@ -4431,7 +4483,7 @@
             this.labelCustHasComments.AutoSize = true;
             this.labelCustHasComments.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelCustHasComments.ForeColor = System.Drawing.Color.Firebrick;
-            this.labelCustHasComments.Location = new System.Drawing.Point(891, 16);
+            this.labelCustHasComments.Location = new System.Drawing.Point(1006, 16);
             this.labelCustHasComments.Name = "labelCustHasComments";
             this.labelCustHasComments.Size = new System.Drawing.Size(213, 20);
             this.labelCustHasComments.TabIndex = 65;
@@ -4456,7 +4508,7 @@
             this.cUSTOMER_BRANCH_NUMBERTextBox.AllowDrop = true;
             this.cUSTOMER_BRANCH_NUMBERTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_BRANCH_NUMBER", true));
             this.cUSTOMER_BRANCH_NUMBERTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cUSTOMER_BRANCH_NUMBERTextBox.Location = new System.Drawing.Point(641, 326);
+            this.cUSTOMER_BRANCH_NUMBERTextBox.Location = new System.Drawing.Point(756, 326);
             this.cUSTOMER_BRANCH_NUMBERTextBox.MaxLength = 2;
             this.cUSTOMER_BRANCH_NUMBERTextBox.Name = "cUSTOMER_BRANCH_NUMBERTextBox";
             this.cUSTOMER_BRANCH_NUMBERTextBox.Size = new System.Drawing.Size(52, 26);
@@ -4469,7 +4521,7 @@
             this.cUSTOMER_DISTRIBUTOR_NOTextBox.AllowDrop = true;
             this.cUSTOMER_DISTRIBUTOR_NOTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_DISTRIBUTOR_NO", true));
             this.cUSTOMER_DISTRIBUTOR_NOTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cUSTOMER_DISTRIBUTOR_NOTextBox.Location = new System.Drawing.Point(641, 292);
+            this.cUSTOMER_DISTRIBUTOR_NOTextBox.Location = new System.Drawing.Point(756, 292);
             this.cUSTOMER_DISTRIBUTOR_NOTextBox.MaxLength = 3;
             this.cUSTOMER_DISTRIBUTOR_NOTextBox.Name = "cUSTOMER_DISTRIBUTOR_NOTextBox";
             this.cUSTOMER_DISTRIBUTOR_NOTextBox.Size = new System.Drawing.Size(52, 26);
@@ -4483,7 +4535,7 @@
             this.cUSTOMER_ALLOTMENTTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.cUSTOMER_ALLOTMENTTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_ALLOTMENT", true));
             this.cUSTOMER_ALLOTMENTTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cUSTOMER_ALLOTMENTTextBox.Location = new System.Drawing.Point(641, 258);
+            this.cUSTOMER_ALLOTMENTTextBox.Location = new System.Drawing.Point(756, 258);
             this.cUSTOMER_ALLOTMENTTextBox.MaxLength = 1;
             this.cUSTOMER_ALLOTMENTTextBox.Name = "cUSTOMER_ALLOTMENTTextBox";
             this.cUSTOMER_ALLOTMENTTextBox.Size = new System.Drawing.Size(20, 26);
@@ -4497,7 +4549,7 @@
             this.cUSTOMER_AUTOPAYTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.cUSTOMER_AUTOPAYTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_AUTOPAY", true));
             this.cUSTOMER_AUTOPAYTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cUSTOMER_AUTOPAYTextBox.Location = new System.Drawing.Point(641, 190);
+            this.cUSTOMER_AUTOPAYTextBox.Location = new System.Drawing.Point(756, 190);
             this.cUSTOMER_AUTOPAYTextBox.MaxLength = 1;
             this.cUSTOMER_AUTOPAYTextBox.Name = "cUSTOMER_AUTOPAYTextBox";
             this.cUSTOMER_AUTOPAYTextBox.Size = new System.Drawing.Size(20, 26);
@@ -4510,7 +4562,7 @@
             this.cUSTOMER_INSURANCETextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.cUSTOMER_INSURANCETextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_INSURANCE", true));
             this.cUSTOMER_INSURANCETextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cUSTOMER_INSURANCETextBox.Location = new System.Drawing.Point(641, 156);
+            this.cUSTOMER_INSURANCETextBox.Location = new System.Drawing.Point(756, 156);
             this.cUSTOMER_INSURANCETextBox.MaxLength = 1;
             this.cUSTOMER_INSURANCETextBox.Name = "cUSTOMER_INSURANCETextBox";
             this.cUSTOMER_INSURANCETextBox.Size = new System.Drawing.Size(20, 26);
@@ -4565,7 +4617,7 @@
             this.cUSTOMER_COMMENT_1TextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.cUSTOMER_COMMENT_1TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_COMMENT_1", true));
             this.cUSTOMER_COMMENT_1TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cUSTOMER_COMMENT_1TextBox.Location = new System.Drawing.Point(641, 88);
+            this.cUSTOMER_COMMENT_1TextBox.Location = new System.Drawing.Point(756, 88);
             this.cUSTOMER_COMMENT_1TextBox.MaxLength = 30;
             this.cUSTOMER_COMMENT_1TextBox.Name = "cUSTOMER_COMMENT_1TextBox";
             this.cUSTOMER_COMMENT_1TextBox.Size = new System.Drawing.Size(230, 26);
@@ -4661,7 +4713,7 @@
             this.cUSTOMER_LAST_NAMETextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.cUSTOMER_LAST_NAMETextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_LAST_NAME", true));
             this.cUSTOMER_LAST_NAMETextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cUSTOMER_LAST_NAMETextBox.Location = new System.Drawing.Point(585, 54);
+            this.cUSTOMER_LAST_NAMETextBox.Location = new System.Drawing.Point(588, 54);
             this.cUSTOMER_LAST_NAMETextBox.MaxLength = 18;
             this.cUSTOMER_LAST_NAMETextBox.Name = "cUSTOMER_LAST_NAMETextBox";
             this.cUSTOMER_LAST_NAMETextBox.Size = new System.Drawing.Size(212, 26);
@@ -4690,7 +4742,7 @@
             this.cUSTOMER_NO_CONTACTTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.cUSTOMER_NO_CONTACTTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_NO_CONTACT", true));
             this.cUSTOMER_NO_CONTACTTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cUSTOMER_NO_CONTACTTextBox.Location = new System.Drawing.Point(641, 393);
+            this.cUSTOMER_NO_CONTACTTextBox.Location = new System.Drawing.Point(756, 393);
             this.cUSTOMER_NO_CONTACTTextBox.MaxLength = 1;
             this.cUSTOMER_NO_CONTACTTextBox.Name = "cUSTOMER_NO_CONTACTTextBox";
             this.cUSTOMER_NO_CONTACTTextBox.Size = new System.Drawing.Size(20, 26);
@@ -4703,7 +4755,7 @@
             this.cUSTOMER_WRONG_ADDRESSTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.cUSTOMER_WRONG_ADDRESSTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_WRONG_ADDRESS", true));
             this.cUSTOMER_WRONG_ADDRESSTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cUSTOMER_WRONG_ADDRESSTextBox.Location = new System.Drawing.Point(641, 360);
+            this.cUSTOMER_WRONG_ADDRESSTextBox.Location = new System.Drawing.Point(756, 360);
             this.cUSTOMER_WRONG_ADDRESSTextBox.MaxLength = 1;
             this.cUSTOMER_WRONG_ADDRESSTextBox.Name = "cUSTOMER_WRONG_ADDRESSTextBox";
             this.cUSTOMER_WRONG_ADDRESSTextBox.Size = new System.Drawing.Size(20, 26);
@@ -4733,7 +4785,7 @@
             this.cUSTOMER_ACT_STATTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.cUSTOMER_ACT_STATTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_ACT_STAT", true));
             this.cUSTOMER_ACT_STATTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cUSTOMER_ACT_STATTextBox.Location = new System.Drawing.Point(641, 20);
+            this.cUSTOMER_ACT_STATTextBox.Location = new System.Drawing.Point(756, 20);
             this.cUSTOMER_ACT_STATTextBox.MaxLength = 1;
             this.cUSTOMER_ACT_STATTextBox.Name = "cUSTOMER_ACT_STATTextBox";
             this.cUSTOMER_ACT_STATTextBox.Size = new System.Drawing.Size(19, 26);
@@ -4787,7 +4839,7 @@
             this.groupBoxRefi.Controls.Add(label115);
             this.groupBoxRefi.Controls.Add(this.textBoxAccount);
             this.groupBoxRefi.Controls.Add(this.checkBoxRefi);
-            this.groupBoxRefi.Location = new System.Drawing.Point(731, 484);
+            this.groupBoxRefi.Location = new System.Drawing.Point(813, 484);
             this.groupBoxRefi.Name = "groupBoxRefi";
             this.groupBoxRefi.Size = new System.Drawing.Size(374, 88);
             this.groupBoxRefi.TabIndex = 55;
@@ -4884,7 +4936,7 @@
             this.tabCustomerMaint.Name = "tabCustomerMaint";
             this.tabCustomerMaint.SelectedIndex = 0;
             this.tabCustomerMaint.ShowToolTips = true;
-            this.tabCustomerMaint.Size = new System.Drawing.Size(1142, 615);
+            this.tabCustomerMaint.Size = new System.Drawing.Size(1269, 615);
             this.tabCustomerMaint.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.tabCustomerMaint.TabIndex = 218;
             this.tabCustomerMaint.SelectedIndexChanged += new System.EventHandler(this.tabCustomerMaint_SelectedIndexChanged);
@@ -4898,7 +4950,7 @@
             this.tabCustInfo2.Location = new System.Drawing.Point(4, 30);
             this.tabCustInfo2.Name = "tabCustInfo2";
             this.tabCustInfo2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabCustInfo2.Size = new System.Drawing.Size(1134, 581);
+            this.tabCustInfo2.Size = new System.Drawing.Size(1261, 581);
             this.tabCustInfo2.TabIndex = 3;
             this.tabCustInfo2.Text = "Customer Info 2";
             // 
@@ -4951,7 +5003,7 @@
             this.groupBox9.Controls.Add(this.textBoxIACType);
             this.groupBox9.Controls.Add(this.textBox14);
             this.groupBox9.Controls.Add(label12);
-            this.groupBox9.Location = new System.Drawing.Point(48, 22);
+            this.groupBox9.Location = new System.Drawing.Point(99, 22);
             this.groupBox9.Name = "groupBox9";
             this.groupBox9.Size = new System.Drawing.Size(1020, 233);
             this.groupBox9.TabIndex = 70;
@@ -4965,7 +5017,7 @@
             this.nullableDateTimePickerFundingDate.Name = "nullableDateTimePickerFundingDate";
             this.nullableDateTimePickerFundingDate.Size = new System.Drawing.Size(119, 29);
             this.nullableDateTimePickerFundingDate.TabIndex = 89;
-            this.nullableDateTimePickerFundingDate.Value = new System.DateTime(2020, 9, 26, 0, 0, 0, 0);
+            this.nullableDateTimePickerFundingDate.Value = new System.DateTime(2021, 3, 1, 0, 0, 0, 0);
             this.nullableDateTimePickerFundingDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // checkBoxOverrideLateCharge
@@ -4990,7 +5042,7 @@
             this.DateTimePickerContractDate.Name = "DateTimePickerContractDate";
             this.DateTimePickerContractDate.Size = new System.Drawing.Size(119, 29);
             this.DateTimePickerContractDate.TabIndex = 88;
-            this.DateTimePickerContractDate.Value = new System.DateTime(2020, 9, 26, 0, 0, 0, 0);
+            this.DateTimePickerContractDate.Value = new System.DateTime(2021, 3, 1, 0, 0, 0, 0);
             this.DateTimePickerContractDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             this.DateTimePickerContractDate.Validated += new System.EventHandler(this.DateTimePickerContractDate_Validated);
             // 
@@ -5016,7 +5068,7 @@
             this.txtFirstPayDate.Name = "txtFirstPayDate";
             this.txtFirstPayDate.Size = new System.Drawing.Size(119, 29);
             this.txtFirstPayDate.TabIndex = 76;
-            this.txtFirstPayDate.Value = new System.DateTime(2020, 9, 26, 0, 0, 0, 0);
+            this.txtFirstPayDate.Value = new System.DateTime(2021, 3, 1, 0, 0, 0, 0);
             this.txtFirstPayDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             this.txtFirstPayDate.Validated += new System.EventHandler(this.txtFirstPayDate_Validated);
             // 
@@ -5029,7 +5081,7 @@
             this.txtPaymentDate.NullText = "          ";
             this.txtPaymentDate.Size = new System.Drawing.Size(119, 29);
             this.txtPaymentDate.TabIndex = 91;
-            this.txtPaymentDate.Value = new System.DateTime(2020, 9, 26, 0, 0, 0, 0);
+            this.txtPaymentDate.Value = new System.DateTime(2021, 3, 1, 0, 0, 0, 0);
             this.txtPaymentDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // textBox18
@@ -5316,7 +5368,7 @@
             this.groupBox1.Controls.Add(this.txtCustomerBalance);
             this.groupBox1.Controls.Add(label31);
             this.groupBox1.Controls.Add(this.txtPaidInterest);
-            this.groupBox1.Location = new System.Drawing.Point(21, 256);
+            this.groupBox1.Location = new System.Drawing.Point(72, 256);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1087, 304);
             this.groupBox1.TabIndex = 95;
@@ -5377,7 +5429,7 @@
             this.MaturityDate.Name = "MaturityDate";
             this.MaturityDate.Size = new System.Drawing.Size(119, 29);
             this.MaturityDate.TabIndex = 115;
-            this.MaturityDate.Value = new System.DateTime(2020, 9, 26, 0, 0, 0, 0);
+            this.MaturityDate.Value = new System.DateTime(2021, 3, 1, 0, 0, 0, 0);
             // 
             // txtPaidThrough
             // 
@@ -5563,7 +5615,7 @@
             this.tabVehicle.Controls.Add(this.VehicleGroupBox);
             this.tabVehicle.Location = new System.Drawing.Point(4, 30);
             this.tabVehicle.Name = "tabVehicle";
-            this.tabVehicle.Size = new System.Drawing.Size(1134, 581);
+            this.tabVehicle.Size = new System.Drawing.Size(1261, 581);
             this.tabVehicle.TabIndex = 5;
             this.tabVehicle.Text = "Vehicle Info";
             // 
@@ -5580,7 +5632,7 @@
             this.groupBox2.Controls.Add(this.textBox48);
             this.groupBox2.Controls.Add(label52);
             this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(207, 3);
+            this.groupBox2.Location = new System.Drawing.Point(264, 3);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(703, 82);
             this.groupBox2.TabIndex = 200;
@@ -5693,16 +5745,16 @@
             this.VehicleGroupBox.Controls.Add(lblModel);
             this.VehicleGroupBox.Controls.Add(lblVehicleYear);
             this.VehicleGroupBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VehicleGroupBox.Location = new System.Drawing.Point(6, 86);
+            this.VehicleGroupBox.Location = new System.Drawing.Point(15, 86);
             this.VehicleGroupBox.Name = "VehicleGroupBox";
-            this.VehicleGroupBox.Size = new System.Drawing.Size(1105, 437);
+            this.VehicleGroupBox.Size = new System.Drawing.Size(1201, 437);
             this.VehicleGroupBox.TabIndex = 208;
             this.VehicleGroupBox.TabStop = false;
             // 
             // textBoxMileage
             // 
             this.textBoxMileage.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.VehiclebindingSource, "Mileage", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "0", "N0"));
-            this.textBoxMileage.Location = new System.Drawing.Point(356, 26);
+            this.textBoxMileage.Location = new System.Drawing.Point(334, 26);
             this.textBoxMileage.Name = "textBoxMileage";
             this.textBoxMileage.Size = new System.Drawing.Size(63, 29);
             this.textBoxMileage.TabIndex = 210;
@@ -5724,7 +5776,7 @@
             this.groupBox8.Controls.Add(cUSTOMER_CREDIT_SCORE_NLabel);
             this.groupBox8.Controls.Add(cUSTOMER_COS_PHONELabel);
             this.groupBox8.Controls.Add(cUSTOMER_COS_NAMELabel);
-            this.groupBox8.Location = new System.Drawing.Point(535, 247);
+            this.groupBox8.Location = new System.Drawing.Point(621, 247);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.Size = new System.Drawing.Size(561, 154);
             this.groupBox8.TabIndex = 236;
@@ -5866,7 +5918,7 @@
             this.groupBoxRepo.Controls.Add(label117);
             this.groupBoxRepo.Controls.Add(this.nullableDateTimePickerRepoDate);
             this.groupBoxRepo.Controls.Add(label116);
-            this.groupBoxRepo.Location = new System.Drawing.Point(425, 12);
+            this.groupBoxRepo.Location = new System.Drawing.Point(511, 12);
             this.groupBoxRepo.Name = "groupBoxRepo";
             this.groupBoxRepo.Size = new System.Drawing.Size(671, 226);
             this.groupBoxRepo.TabIndex = 222;
@@ -5899,7 +5951,7 @@
             this.nullableDateTimePickerDateTitleReleased.Name = "nullableDateTimePickerDateTitleReleased";
             this.nullableDateTimePickerDateTitleReleased.Size = new System.Drawing.Size(109, 29);
             this.nullableDateTimePickerDateTitleReleased.TabIndex = 237;
-            this.nullableDateTimePickerDateTitleReleased.Value = new System.DateTime(2020, 9, 26, 0, 0, 0, 0);
+            this.nullableDateTimePickerDateTitleReleased.Value = new System.DateTime(2021, 3, 1, 0, 0, 0, 0);
             this.nullableDateTimePickerDateTitleReleased.ValueChanged += new System.EventHandler(this.NullableDateTimePickerDateTitleReleased_ValueChanged);
             this.nullableDateTimePickerDateTitleReleased.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
@@ -5960,7 +6012,7 @@
             this.nullableDateTimePickerAucDate.Name = "nullableDateTimePickerAucDate";
             this.nullableDateTimePickerAucDate.Size = new System.Drawing.Size(109, 29);
             this.nullableDateTimePickerAucDate.TabIndex = 232;
-            this.nullableDateTimePickerAucDate.Value = new System.DateTime(2020, 9, 26, 0, 0, 0, 0);
+            this.nullableDateTimePickerAucDate.Value = new System.DateTime(2021, 3, 1, 0, 0, 0, 0);
             this.nullableDateTimePickerAucDate.ValueChanged += new System.EventHandler(this.nullableDateTimePickerAucDate_ValueChanged);
             this.nullableDateTimePickerAucDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
@@ -5973,7 +6025,7 @@
             this.nullableDateTimePickerLocDate.Name = "nullableDateTimePickerLocDate";
             this.nullableDateTimePickerLocDate.Size = new System.Drawing.Size(109, 29);
             this.nullableDateTimePickerLocDate.TabIndex = 230;
-            this.nullableDateTimePickerLocDate.Value = new System.DateTime(2020, 9, 26, 0, 0, 0, 0);
+            this.nullableDateTimePickerLocDate.Value = new System.DateTime(2021, 3, 1, 0, 0, 0, 0);
             this.nullableDateTimePickerLocDate.ValueChanged += new System.EventHandler(this.nullableDateTimePickerLocDate_ValueChanged);
             this.nullableDateTimePickerLocDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
@@ -6049,7 +6101,7 @@
             this.nullableDateTimePickerTitleDateReceived.Name = "nullableDateTimePickerTitleDateReceived";
             this.nullableDateTimePickerTitleDateReceived.Size = new System.Drawing.Size(109, 29);
             this.nullableDateTimePickerTitleDateReceived.TabIndex = 234;
-            this.nullableDateTimePickerTitleDateReceived.Value = new System.DateTime(2020, 9, 26, 0, 0, 0, 0);
+            this.nullableDateTimePickerTitleDateReceived.Value = new System.DateTime(2021, 3, 1, 0, 0, 0, 0);
             this.nullableDateTimePickerTitleDateReceived.ValueChanged += new System.EventHandler(this.nullableDateTimePickerTitleDateReceived_ValueChanged);
             this.nullableDateTimePickerTitleDateReceived.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
@@ -6098,7 +6150,7 @@
             this.nullableDateTimePickerRepoDate.Name = "nullableDateTimePickerRepoDate";
             this.nullableDateTimePickerRepoDate.Size = new System.Drawing.Size(109, 29);
             this.nullableDateTimePickerRepoDate.TabIndex = 227;
-            this.nullableDateTimePickerRepoDate.Value = new System.DateTime(2020, 9, 26, 0, 0, 0, 0);
+            this.nullableDateTimePickerRepoDate.Value = new System.DateTime(2021, 3, 1, 0, 0, 0, 0);
             this.nullableDateTimePickerRepoDate.ValueChanged += new System.EventHandler(this.nullableDateTimePickerRepoDate_ValueChanged);
             this.nullableDateTimePickerRepoDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
@@ -6106,27 +6158,27 @@
             // 
             this.txtExpirationDate.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.VehiclebindingSource, "VEHICLE_EXP_DATE", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "d"));
             this.txtExpirationDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.txtExpirationDate.Location = new System.Drawing.Point(192, 319);
+            this.txtExpirationDate.Location = new System.Drawing.Point(170, 319);
             this.txtExpirationDate.Name = "txtExpirationDate";
             this.txtExpirationDate.Size = new System.Drawing.Size(109, 29);
             this.txtExpirationDate.TabIndex = 219;
-            this.txtExpirationDate.Value = new System.DateTime(2020, 9, 26, 0, 0, 0, 0);
+            this.txtExpirationDate.Value = new System.DateTime(2021, 3, 1, 0, 0, 0, 0);
             // 
             // txtEffectiveDate
             // 
             this.txtEffectiveDate.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.VehiclebindingSource, "VEHICLE_EFF_DATE", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "d"));
             this.txtEffectiveDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.txtEffectiveDate.Location = new System.Drawing.Point(192, 286);
+            this.txtEffectiveDate.Location = new System.Drawing.Point(170, 286);
             this.txtEffectiveDate.Name = "txtEffectiveDate";
             this.txtEffectiveDate.Size = new System.Drawing.Size(109, 29);
             this.txtEffectiveDate.TabIndex = 218;
-            this.txtEffectiveDate.Value = new System.DateTime(2020, 9, 26, 0, 0, 0, 0);
+            this.txtEffectiveDate.Value = new System.DateTime(2021, 3, 1, 0, 0, 0, 0);
             // 
             // txtAgentPhone
             // 
             this.txtAgentPhone.AllowDrop = true;
             this.txtAgentPhone.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.VehiclebindingSource, "VEHICLE_AGENT_PHONE", true));
-            this.txtAgentPhone.Location = new System.Drawing.Point(420, 257);
+            this.txtAgentPhone.Location = new System.Drawing.Point(398, 257);
             this.txtAgentPhone.Mask = "(999) 000-0000";
             this.txtAgentPhone.Name = "txtAgentPhone";
             this.txtAgentPhone.Size = new System.Drawing.Size(113, 29);
@@ -6139,7 +6191,7 @@
             // 
             this.txtJointOwner.AllowDrop = true;
             this.txtJointOwner.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.VehiclebindingSource, "VEHICLE_JOINT_NAME", true));
-            this.txtJointOwner.Location = new System.Drawing.Point(192, 383);
+            this.txtJointOwner.Location = new System.Drawing.Point(170, 383);
             this.txtJointOwner.MaxLength = 25;
             this.txtJointOwner.Name = "txtJointOwner";
             this.txtJointOwner.Size = new System.Drawing.Size(337, 29);
@@ -6151,7 +6203,7 @@
             this.txtJointOwnership.AllowDrop = true;
             this.txtJointOwnership.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtJointOwnership.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.VehiclebindingSource, "VEHICLE_JOINT_OWNER", true));
-            this.txtJointOwnership.Location = new System.Drawing.Point(192, 351);
+            this.txtJointOwnership.Location = new System.Drawing.Point(170, 351);
             this.txtJointOwnership.MaxLength = 1;
             this.txtJointOwnership.Name = "txtJointOwnership";
             this.txtJointOwnership.Size = new System.Drawing.Size(25, 29);
@@ -6162,7 +6214,7 @@
             // 
             this.txtInsuranceAgent.AllowDrop = true;
             this.txtInsuranceAgent.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.VehiclebindingSource, "VEHICLE_INSUR_AGENT", true));
-            this.txtInsuranceAgent.Location = new System.Drawing.Point(192, 254);
+            this.txtInsuranceAgent.Location = new System.Drawing.Point(170, 254);
             this.txtInsuranceAgent.MaxLength = 15;
             this.txtInsuranceAgent.Name = "txtInsuranceAgent";
             this.txtInsuranceAgent.Size = new System.Drawing.Size(139, 29);
@@ -6173,7 +6225,7 @@
             // 
             this.txtPolicyNumber.AllowDrop = true;
             this.txtPolicyNumber.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.VehiclebindingSource, "VEHICLE_POLICY_NO", true));
-            this.txtPolicyNumber.Location = new System.Drawing.Point(192, 188);
+            this.txtPolicyNumber.Location = new System.Drawing.Point(170, 188);
             this.txtPolicyNumber.MaxLength = 15;
             this.txtPolicyNumber.Name = "txtPolicyNumber";
             this.txtPolicyNumber.Size = new System.Drawing.Size(221, 29);
@@ -6184,7 +6236,7 @@
             // 
             this.txtVIN.AllowDrop = true;
             this.txtVIN.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.VehiclebindingSource, "VEHICLE_VIN", true));
-            this.txtVIN.Location = new System.Drawing.Point(192, 123);
+            this.txtVIN.Location = new System.Drawing.Point(170, 123);
             this.txtVIN.MaxLength = 25;
             this.txtVIN.Name = "txtVIN";
             this.txtVIN.Size = new System.Drawing.Size(221, 29);
@@ -6195,7 +6247,7 @@
             // 
             this.txtMake.AllowDrop = true;
             this.txtMake.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.VehiclebindingSource, "VEHICLE_MAKE", true));
-            this.txtMake.Location = new System.Drawing.Point(192, 59);
+            this.txtMake.Location = new System.Drawing.Point(170, 59);
             this.txtMake.MaxLength = 15;
             this.txtMake.Name = "txtMake";
             this.txtMake.Size = new System.Drawing.Size(167, 29);
@@ -6206,7 +6258,7 @@
             // 
             this.txtInsuranceCompany.AllowDrop = true;
             this.txtInsuranceCompany.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.VehiclebindingSource, "VEHICLE_INS_COMPANY", true));
-            this.txtInsuranceCompany.Location = new System.Drawing.Point(192, 155);
+            this.txtInsuranceCompany.Location = new System.Drawing.Point(170, 155);
             this.txtInsuranceCompany.MaxLength = 25;
             this.txtInsuranceCompany.Name = "txtInsuranceCompany";
             this.txtInsuranceCompany.Size = new System.Drawing.Size(221, 29);
@@ -6217,7 +6269,7 @@
             // 
             this.txtModel.AllowDrop = true;
             this.txtModel.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.VehiclebindingSource, "VEHICLE_MODEL", true));
-            this.txtModel.Location = new System.Drawing.Point(192, 91);
+            this.txtModel.Location = new System.Drawing.Point(170, 91);
             this.txtModel.MaxLength = 15;
             this.txtModel.Name = "txtModel";
             this.txtModel.Size = new System.Drawing.Size(167, 29);
@@ -6228,7 +6280,7 @@
             // 
             this.txtVehicleYear.AllowDrop = true;
             this.txtVehicleYear.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.VehiclebindingSource, "VEHICLE_YEAR", true));
-            this.txtVehicleYear.Location = new System.Drawing.Point(192, 26);
+            this.txtVehicleYear.Location = new System.Drawing.Point(170, 26);
             this.txtVehicleYear.MaxLength = 4;
             this.txtVehicleYear.Name = "txtVehicleYear";
             this.txtVehicleYear.Size = new System.Drawing.Size(54, 29);
@@ -6243,7 +6295,7 @@
             this.tabCosigner.Controls.Add(this.groupBox3);
             this.tabCosigner.Location = new System.Drawing.Point(4, 30);
             this.tabCosigner.Name = "tabCosigner";
-            this.tabCosigner.Size = new System.Drawing.Size(1134, 581);
+            this.tabCosigner.Size = new System.Drawing.Size(1261, 581);
             this.tabCosigner.TabIndex = 4;
             this.tabCosigner.Text = "Cosigner Info";
             // 
@@ -6272,7 +6324,7 @@
             this.groupBox5.Controls.Add(this.txtALTContact3);
             this.groupBox5.Controls.Add(this.txtALTContact2);
             this.groupBox5.Controls.Add(this.txtALTContact1);
-            this.groupBox5.Location = new System.Drawing.Point(211, 378);
+            this.groupBox5.Location = new System.Drawing.Point(268, 378);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(695, 186);
             this.groupBox5.TabIndex = 332;
@@ -6514,7 +6566,7 @@
             this.groupBox4.Controls.Add(label71);
             this.groupBox4.Controls.Add(label72);
             this.groupBox4.Controls.Add(label73);
-            this.groupBox4.Location = new System.Drawing.Point(177, 91);
+            this.groupBox4.Location = new System.Drawing.Point(234, 91);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(763, 269);
             this.groupBox4.TabIndex = 135;
@@ -6646,7 +6698,7 @@
             this.txtCOSDOB.Name = "txtCOSDOB";
             this.txtCOSDOB.Size = new System.Drawing.Size(109, 29);
             this.txtCOSDOB.TabIndex = 323;
-            this.txtCOSDOB.Value = new System.DateTime(2020, 9, 26, 0, 0, 0, 0);
+            this.txtCOSDOB.Value = new System.DateTime(2021, 3, 1, 0, 0, 0, 0);
             // 
             // txtCOSWorkExt
             // 
@@ -6827,7 +6879,7 @@
             this.groupBox3.Controls.Add(label62);
             this.groupBox3.Controls.Add(this.textBox61);
             this.groupBox3.Controls.Add(label63);
-            this.groupBox3.Location = new System.Drawing.Point(177, 3);
+            this.groupBox3.Location = new System.Drawing.Point(234, 3);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(763, 82);
             this.groupBox3.TabIndex = 300;
@@ -6916,7 +6968,7 @@
             this.tabBank.Controls.Add(this.tabControl1);
             this.tabBank.Location = new System.Drawing.Point(4, 30);
             this.tabBank.Name = "tabBank";
-            this.tabBank.Size = new System.Drawing.Size(1134, 581);
+            this.tabBank.Size = new System.Drawing.Size(1261, 581);
             this.tabBank.TabIndex = 6;
             this.tabBank.Text = "Bank Info";
             // 
@@ -6932,7 +6984,7 @@
             this.groupBox6.Controls.Add(label84);
             this.groupBox6.Controls.Add(this.textBox88);
             this.groupBox6.Controls.Add(label85);
-            this.groupBox6.Location = new System.Drawing.Point(209, 3);
+            this.groupBox6.Location = new System.Drawing.Point(266, 3);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(699, 82);
             this.groupBox6.TabIndex = 400;
@@ -7018,7 +7070,7 @@
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(328, 156);
+            this.tabControl1.Location = new System.Drawing.Point(385, 156);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(463, 267);
@@ -7329,7 +7381,7 @@
             this.tabCustomerFees.Location = new System.Drawing.Point(4, 30);
             this.tabCustomerFees.Name = "tabCustomerFees";
             this.tabCustomerFees.Padding = new System.Windows.Forms.Padding(3);
-            this.tabCustomerFees.Size = new System.Drawing.Size(1134, 581);
+            this.tabCustomerFees.Size = new System.Drawing.Size(1261, 581);
             this.tabCustomerFees.TabIndex = 7;
             this.tabCustomerFees.Text = "Fees";
             // 
@@ -7351,7 +7403,7 @@
             this.groupBoxFees.Controls.Add(this.textBoxStorageFees);
             this.groupBoxFees.Controls.Add(labelRepoFees);
             this.groupBoxFees.Controls.Add(this.textBoxRepoFees);
-            this.groupBoxFees.Location = new System.Drawing.Point(272, 138);
+            this.groupBoxFees.Location = new System.Drawing.Point(329, 138);
             this.groupBoxFees.Name = "groupBoxFees";
             this.groupBoxFees.Size = new System.Drawing.Size(573, 304);
             this.groupBoxFees.TabIndex = 710;
@@ -7493,7 +7545,7 @@
             this.groupBox12.Controls.Add(label124);
             this.groupBox12.Controls.Add(this.textBox40);
             this.groupBox12.Controls.Add(label125);
-            this.groupBox12.Location = new System.Drawing.Point(177, 6);
+            this.groupBox12.Location = new System.Drawing.Point(234, 6);
             this.groupBox12.Name = "groupBox12";
             this.groupBox12.Size = new System.Drawing.Size(763, 82);
             this.groupBox12.TabIndex = 700;
@@ -7583,7 +7635,7 @@
             this.tabRepoHistory.Location = new System.Drawing.Point(4, 30);
             this.tabRepoHistory.Name = "tabRepoHistory";
             this.tabRepoHistory.Padding = new System.Windows.Forms.Padding(3);
-            this.tabRepoHistory.Size = new System.Drawing.Size(1134, 581);
+            this.tabRepoHistory.Size = new System.Drawing.Size(1261, 581);
             this.tabRepoHistory.TabIndex = 8;
             this.tabRepoHistory.Text = "Repo History";
             this.tabRepoHistory.Click += new System.EventHandler(this.tabRepoHistory_Click);
@@ -7622,18 +7674,18 @@
             this.orgDateTitleReceivedDataGridViewTextBoxColumn,
             this.newDateTitleReceivedDataGridViewTextBoxColumn});
             this.dataGridViewRepoLog.DataSource = this.repoLogBindingSource;
-            this.dataGridViewRepoLog.Location = new System.Drawing.Point(-4, 96);
+            this.dataGridViewRepoLog.Location = new System.Drawing.Point(0, 96);
             this.dataGridViewRepoLog.Name = "dataGridViewRepoLog";
             this.dataGridViewRepoLog.ReadOnly = true;
-            this.dataGridViewRepoLog.Size = new System.Drawing.Size(1124, 489);
+            this.dataGridViewRepoLog.Size = new System.Drawing.Size(1220, 489);
             this.dataGridViewRepoLog.TabIndex = 202;
             // 
             // dateOfChangeDataGridViewTextBoxColumn
             // 
             this.dateOfChangeDataGridViewTextBoxColumn.DataPropertyName = "DateOfChange";
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle12.Format = "d";
-            this.dateOfChangeDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle13.Format = "d";
+            this.dateOfChangeDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle13;
             this.dateOfChangeDataGridViewTextBoxColumn.HeaderText = "Date";
             this.dateOfChangeDataGridViewTextBoxColumn.Name = "dateOfChangeDataGridViewTextBoxColumn";
             this.dateOfChangeDataGridViewTextBoxColumn.ReadOnly = true;
@@ -7649,10 +7701,10 @@
             // orgRepoDateDataGridViewTextBoxColumn
             // 
             this.orgRepoDateDataGridViewTextBoxColumn.DataPropertyName = "OrgRepoDate";
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle13.Format = "d";
-            dataGridViewCellStyle13.NullValue = null;
-            this.orgRepoDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle14.Format = "d";
+            dataGridViewCellStyle14.NullValue = null;
+            this.orgRepoDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle14;
             this.orgRepoDateDataGridViewTextBoxColumn.HeaderText = "Old Repo Date";
             this.orgRepoDateDataGridViewTextBoxColumn.Name = "orgRepoDateDataGridViewTextBoxColumn";
             this.orgRepoDateDataGridViewTextBoxColumn.ReadOnly = true;
@@ -7660,9 +7712,9 @@
             // newRepoDateDataGridViewTextBoxColumn
             // 
             this.newRepoDateDataGridViewTextBoxColumn.DataPropertyName = "NewRepoDate";
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle14.Format = "d";
-            this.newRepoDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle15.Format = "d";
+            this.newRepoDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle15;
             this.newRepoDateDataGridViewTextBoxColumn.HeaderText = "New Repo Date";
             this.newRepoDateDataGridViewTextBoxColumn.Name = "newRepoDateDataGridViewTextBoxColumn";
             this.newRepoDateDataGridViewTextBoxColumn.ReadOnly = true;
@@ -7728,9 +7780,9 @@
             // oldLocationDateDataGridViewTextBoxColumn
             // 
             this.oldLocationDateDataGridViewTextBoxColumn.DataPropertyName = "OldLocationDate";
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle15.Format = "d";
-            this.oldLocationDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle16.Format = "d";
+            this.oldLocationDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle16;
             this.oldLocationDateDataGridViewTextBoxColumn.HeaderText = "Old Location Date";
             this.oldLocationDateDataGridViewTextBoxColumn.Name = "oldLocationDateDataGridViewTextBoxColumn";
             this.oldLocationDateDataGridViewTextBoxColumn.ReadOnly = true;
@@ -7738,9 +7790,9 @@
             // newLocationDateDataGridViewTextBoxColumn
             // 
             this.newLocationDateDataGridViewTextBoxColumn.DataPropertyName = "NewLocationDate";
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle16.Format = "d";
-            this.newLocationDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle17.Format = "d";
+            this.newLocationDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle17;
             this.newLocationDateDataGridViewTextBoxColumn.HeaderText = "New Location Date";
             this.newLocationDateDataGridViewTextBoxColumn.Name = "newLocationDateDataGridViewTextBoxColumn";
             this.newLocationDateDataGridViewTextBoxColumn.ReadOnly = true;
@@ -7762,9 +7814,9 @@
             // orgAutionHouseDateDataGridViewTextBoxColumn
             // 
             this.orgAutionHouseDateDataGridViewTextBoxColumn.DataPropertyName = "OrgAutionHouseDate";
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle17.Format = "d";
-            this.orgAutionHouseDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle18.Format = "d";
+            this.orgAutionHouseDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle18;
             this.orgAutionHouseDateDataGridViewTextBoxColumn.HeaderText = "Old Auction House Date";
             this.orgAutionHouseDateDataGridViewTextBoxColumn.Name = "orgAutionHouseDateDataGridViewTextBoxColumn";
             this.orgAutionHouseDateDataGridViewTextBoxColumn.ReadOnly = true;
@@ -7772,9 +7824,9 @@
             // newAuctionHouseDateDataGridViewTextBoxColumn
             // 
             this.newAuctionHouseDateDataGridViewTextBoxColumn.DataPropertyName = "NewAuctionHouseDate";
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle18.Format = "d";
-            this.newAuctionHouseDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle19.Format = "d";
+            this.newAuctionHouseDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle19;
             this.newAuctionHouseDateDataGridViewTextBoxColumn.HeaderText = "New Auction House Date";
             this.newAuctionHouseDateDataGridViewTextBoxColumn.Name = "newAuctionHouseDateDataGridViewTextBoxColumn";
             this.newAuctionHouseDateDataGridViewTextBoxColumn.ReadOnly = true;
@@ -7796,9 +7848,9 @@
             // orgDateTitleReceivedDataGridViewTextBoxColumn
             // 
             this.orgDateTitleReceivedDataGridViewTextBoxColumn.DataPropertyName = "OrgDateTitleReceived";
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle19.Format = "d";
-            this.orgDateTitleReceivedDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle20.Format = "d";
+            this.orgDateTitleReceivedDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle20;
             this.orgDateTitleReceivedDataGridViewTextBoxColumn.HeaderText = "Old Date Title Received";
             this.orgDateTitleReceivedDataGridViewTextBoxColumn.Name = "orgDateTitleReceivedDataGridViewTextBoxColumn";
             this.orgDateTitleReceivedDataGridViewTextBoxColumn.ReadOnly = true;
@@ -7806,9 +7858,9 @@
             // newDateTitleReceivedDataGridViewTextBoxColumn
             // 
             this.newDateTitleReceivedDataGridViewTextBoxColumn.DataPropertyName = "NewDateTitleReceived";
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle20.Format = "d";
-            this.newDateTitleReceivedDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle21.Format = "d";
+            this.newDateTitleReceivedDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle21;
             this.newDateTitleReceivedDataGridViewTextBoxColumn.HeaderText = "New Date Title Recieved";
             this.newDateTitleReceivedDataGridViewTextBoxColumn.Name = "newDateTitleReceivedDataGridViewTextBoxColumn";
             this.newDateTitleReceivedDataGridViewTextBoxColumn.ReadOnly = true;
@@ -7930,7 +7982,7 @@
             this.tabPageTSB.Location = new System.Drawing.Point(4, 30);
             this.tabPageTSB.Name = "tabPageTSB";
             this.tabPageTSB.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageTSB.Size = new System.Drawing.Size(1134, 581);
+            this.tabPageTSB.Size = new System.Drawing.Size(1261, 581);
             this.tabPageTSB.TabIndex = 9;
             this.tabPageTSB.Text = "TSB";
             // 
@@ -7950,7 +8002,7 @@
             this.groupBoxDates.Controls.Add(this.label138);
             this.groupBoxDates.Controls.Add(this.label139);
             this.groupBoxDates.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxDates.Location = new System.Drawing.Point(576, 65);
+            this.groupBoxDates.Location = new System.Drawing.Point(624, 65);
             this.groupBoxDates.Name = "groupBoxDates";
             this.groupBoxDates.Size = new System.Drawing.Size(529, 220);
             this.groupBoxDates.TabIndex = 18;
@@ -7989,7 +8041,7 @@
             this.nullableDateTimePickerFollowUpDate.NullText = "          ";
             this.nullableDateTimePickerFollowUpDate.Size = new System.Drawing.Size(119, 25);
             this.nullableDateTimePickerFollowUpDate.TabIndex = 24;
-            this.nullableDateTimePickerFollowUpDate.Value = new System.DateTime(2020, 9, 26, 0, 0, 0, 0);
+            this.nullableDateTimePickerFollowUpDate.Value = new System.DateTime(2021, 3, 1, 0, 0, 0, 0);
             this.nullableDateTimePickerFollowUpDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // nullableDateTimePickerDateClosed
@@ -8001,7 +8053,7 @@
             this.nullableDateTimePickerDateClosed.NullText = "          ";
             this.nullableDateTimePickerDateClosed.Size = new System.Drawing.Size(119, 25);
             this.nullableDateTimePickerDateClosed.TabIndex = 23;
-            this.nullableDateTimePickerDateClosed.Value = new System.DateTime(2020, 9, 26, 0, 0, 0, 0);
+            this.nullableDateTimePickerDateClosed.Value = new System.DateTime(2021, 3, 1, 0, 0, 0, 0);
             this.nullableDateTimePickerDateClosed.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // nullableDateTimePickerDateOpened
@@ -8013,7 +8065,7 @@
             this.nullableDateTimePickerDateOpened.NullText = "          ";
             this.nullableDateTimePickerDateOpened.Size = new System.Drawing.Size(119, 25);
             this.nullableDateTimePickerDateOpened.TabIndex = 22;
-            this.nullableDateTimePickerDateOpened.Value = new System.DateTime(2020, 9, 26, 0, 0, 0, 0);
+            this.nullableDateTimePickerDateOpened.Value = new System.DateTime(2021, 3, 1, 0, 0, 0, 0);
             this.nullableDateTimePickerDateOpened.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // nullableDateTimePickerDateofAccountInformation
@@ -8025,7 +8077,7 @@
             this.nullableDateTimePickerDateofAccountInformation.NullText = "          ";
             this.nullableDateTimePickerDateofAccountInformation.Size = new System.Drawing.Size(119, 25);
             this.nullableDateTimePickerDateofAccountInformation.TabIndex = 21;
-            this.nullableDateTimePickerDateofAccountInformation.Value = new System.DateTime(2020, 9, 26, 0, 0, 0, 0);
+            this.nullableDateTimePickerDateofAccountInformation.Value = new System.DateTime(2021, 3, 1, 0, 0, 0, 0);
             this.nullableDateTimePickerDateofAccountInformation.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // nullableDateTimePickerDateofFirstDelinquency
@@ -8037,7 +8089,7 @@
             this.nullableDateTimePickerDateofFirstDelinquency.NullText = "          ";
             this.nullableDateTimePickerDateofFirstDelinquency.Size = new System.Drawing.Size(119, 25);
             this.nullableDateTimePickerDateofFirstDelinquency.TabIndex = 20;
-            this.nullableDateTimePickerDateofFirstDelinquency.Value = new System.DateTime(2020, 9, 26, 0, 0, 0, 0);
+            this.nullableDateTimePickerDateofFirstDelinquency.Value = new System.DateTime(2021, 3, 1, 0, 0, 0, 0);
             this.nullableDateTimePickerDateofFirstDelinquency.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // nullableDateTimePickerDateofLastPayment
@@ -8049,7 +8101,7 @@
             this.nullableDateTimePickerDateofLastPayment.NullText = "          ";
             this.nullableDateTimePickerDateofLastPayment.Size = new System.Drawing.Size(119, 25);
             this.nullableDateTimePickerDateofLastPayment.TabIndex = 19;
-            this.nullableDateTimePickerDateofLastPayment.Value = new System.DateTime(2020, 9, 26, 0, 0, 0, 0);
+            this.nullableDateTimePickerDateofLastPayment.Value = new System.DateTime(2021, 3, 1, 0, 0, 0, 0);
             this.nullableDateTimePickerDateofLastPayment.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // label135
@@ -8124,7 +8176,7 @@
             this.groupBoxCodes.Controls.Add(this.label141);
             this.groupBoxCodes.Controls.Add(this.comboBoxAccountStatus);
             this.groupBoxCodes.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxCodes.Location = new System.Drawing.Point(29, 289);
+            this.groupBoxCodes.Location = new System.Drawing.Point(77, 289);
             this.groupBoxCodes.Name = "groupBoxCodes";
             this.groupBoxCodes.Size = new System.Drawing.Size(1076, 284);
             this.groupBoxCodes.TabIndex = 26;
@@ -8572,7 +8624,7 @@
             this.groupBoxDollars.Controls.Add(this.labelCurrentBalance);
             this.groupBoxDollars.Controls.Add(this.textBoxCurrentBalance);
             this.groupBoxDollars.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxDollars.Location = new System.Drawing.Point(29, 65);
+            this.groupBoxDollars.Location = new System.Drawing.Point(77, 65);
             this.groupBoxDollars.Name = "groupBoxDollars";
             this.groupBoxDollars.Size = new System.Drawing.Size(529, 220);
             this.groupBoxDollars.TabIndex = 10;
@@ -8723,7 +8775,7 @@
             // 
             this.groupBoxPurge.Controls.Add(this.checkBoxPurge);
             this.groupBoxPurge.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxPurge.Location = new System.Drawing.Point(716, 6);
+            this.groupBoxPurge.Location = new System.Drawing.Point(764, 6);
             this.groupBoxPurge.Name = "groupBoxPurge";
             this.groupBoxPurge.Size = new System.Drawing.Size(84, 55);
             this.groupBoxPurge.TabIndex = 8;
@@ -8747,7 +8799,7 @@
             // 
             this.groupBoxReportStatus.Controls.Add(this.checkBoxReportTSB);
             this.groupBoxReportStatus.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxReportStatus.Location = new System.Drawing.Point(576, 6);
+            this.groupBoxReportStatus.Location = new System.Drawing.Point(624, 6);
             this.groupBoxReportStatus.Name = "groupBoxReportStatus";
             this.groupBoxReportStatus.Size = new System.Drawing.Size(133, 55);
             this.groupBoxReportStatus.TabIndex = 6;
@@ -8774,7 +8826,7 @@
             this.groupBoxAccountNumber.Controls.Add(this.textBox70);
             this.groupBoxAccountNumber.Controls.Add(this.textBox53);
             this.groupBoxAccountNumber.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxAccountNumber.Location = new System.Drawing.Point(29, 6);
+            this.groupBoxAccountNumber.Location = new System.Drawing.Point(77, 6);
             this.groupBoxAccountNumber.Name = "groupBoxAccountNumber";
             this.groupBoxAccountNumber.Size = new System.Drawing.Size(529, 55);
             this.groupBoxAccountNumber.TabIndex = 1;
@@ -8932,7 +8984,7 @@
             this.toolStripButtonSave});
             this.toolStrip1.Location = new System.Drawing.Point(0, 617);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1142, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(1238, 25);
             this.toolStrip1.TabIndex = 74;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -9026,13 +9078,17 @@
             // 
             this.termsFrequencyTableAdapter.ClearBeforeFill = true;
             // 
+            // mASTERTableAdapter
+            // 
+            this.mASTERTableAdapter.ClearBeforeFill = true;
+            // 
             // frmCustMaint
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.ClientSize = new System.Drawing.Size(1142, 642);
+            this.ClientSize = new System.Drawing.Size(1238, 642);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.tabCustomerMaint);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -9065,6 +9121,7 @@
             this.tabCustInfo1.ResumeLayout(false);
             this.groupBox10.ResumeLayout(false);
             this.groupBox10.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateContractReceived)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.EmailbindingSource)).EndInit();
             this.groupBoxSBT.ResumeLayout(false);
             this.groupBoxSBT.PerformLayout();
@@ -9478,17 +9535,6 @@
         private ProManApp.NullableDateTimePicker nullableDateTimePickerHistContractDate;
         private System.Windows.Forms.BindingSource specialCommentCodesBindingSource;
         private IACDataSetTableAdapters.SpecialCommentCodesTableAdapter specialCommentCodesTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PartialPayment;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn27;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CUSTHIST_PAYMENT_CODE;
         private ProManApp.NullableDateTimePicker MaturityDate;
         private System.Windows.Forms.TextBox textBoxCosignerAnnualIncome;
         private System.Windows.Forms.TextBox textBoxCosignerCreditScore;
@@ -9711,6 +9757,21 @@
         private System.Windows.Forms.CheckBox checkBoxFollowUpDate;
         private System.Windows.Forms.CheckBox checkBoxECOACode;
         private ColorTextBox txtContractStatus;
+        private ColorCheckBox colorCheckBoxReceivedContract;
+        private IACDataSetTableAdapters.MASTERTableAdapter mASTERTableAdapter;
+        private ProManApp.NullableDateTimePicker nullableDateTimePickerDateContractReceived;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PartialPayment;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn27;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CUSTHIST_PAYMENT_CODE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CUSTHIST_THRU_UD;
     }
 }
 

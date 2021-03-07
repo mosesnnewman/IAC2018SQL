@@ -97,6 +97,8 @@ namespace IAC2018SQL
             // Moses Newman 07/14/2020 Set DataBindings NullValue to string.Empty to prevent getting stuck in blank field.
             textBoxCosignerTierPoints.DataBindings["Text"].NullValue = string.Empty;
             textBoxTier.DataBindings["Text"].NullValue = string.Empty;
+            // Moses Newman 02/28/2021
+            nullableDateTimePickerDateContractReceived.Visible = false;
             /*DataGridViewRow row2 = cUSTHISTDataGridView.RowTemplate;
             ColorTextBox cTB = new ColorTextBox();
             cUSTHISTDataGridView.Controls.Add(cTB);
@@ -297,10 +299,21 @@ namespace IAC2018SQL
             // Moses Newman 07/21/2020 Add checkbox for overpayment check issue and check number.
             checkBoxCheckIssued.Enabled = false;
             textBoxCheckNo.Enabled = false;
+            // Moses Newman 02/28/2021 Add CheckBox for Received Contrat? and Date Contract Received fields
+            colorCheckBoxReceivedContract.Enabled = false;
+            if (colorCheckBoxReceivedContract.Checked)
+            {
+                nullableDateTimePickerDateContractReceived.Visible = true;
+                nullableDateTimePickerDateContractReceived.Enabled = false;
+            }
+            else
+            {
+                nullableDateTimePickerDateContractReceived.Visible = false;
+                nullableDateTimePickerDateContractReceived.Enabled = false;
+            }
 
-
-            //Vehicle Info
-            txtVehicleYear.Enabled = false;
+                //Vehicle Info
+                txtVehicleYear.Enabled = false;
             txtMake.Enabled = false;
             txtModel.Enabled = false;
             txtVIN.Enabled = false;
@@ -635,6 +648,18 @@ namespace IAC2018SQL
             // Moses Newman 07/21/2020 Add checkbox for overpayment check issue and check number.
             checkBoxCheckIssued.Enabled = true;
             textBoxCheckNo.Enabled = true;
+            // Moses Newman 02/28/2021 Add CheckBox for Received Contrat? and Date Contract Received fields
+            colorCheckBoxReceivedContract.Enabled = true;
+            if (colorCheckBoxReceivedContract.Checked)
+            {
+                nullableDateTimePickerDateContractReceived.Enabled = true;
+                nullableDateTimePickerDateContractReceived.Visible = true;
+            }
+            else
+            {
+                nullableDateTimePickerDateContractReceived.Enabled = false;
+                nullableDateTimePickerDateContractReceived.Visible = false;
+            }
 
 
 
@@ -1427,7 +1452,18 @@ namespace IAC2018SQL
                     // Moses Newman 07/21/2020 Add checkbox for overpayment check issue and check number.
                     checkBoxCheckIssued.Enabled = true;
                     textBoxCheckNo.Enabled = true;
-
+                    // Moses Newman 02/28/2021 Add CheckBox for Received Contrat? and Date Contract Received fields
+                    colorCheckBoxReceivedContract.Enabled = true;
+                    if (colorCheckBoxReceivedContract.Checked)
+                    {
+                        nullableDateTimePickerDateContractReceived.Enabled = true;
+                        nullableDateTimePickerDateContractReceived.Visible = true;
+                    }
+                    else
+                    {
+                        nullableDateTimePickerDateContractReceived.Enabled = false;
+                        nullableDateTimePickerDateContractReceived.Visible = false;
+                    }
 
                     txtCOSFirstName.Enabled = true;
                     txtCOSLastName.Enabled = true;
@@ -4148,6 +4184,28 @@ namespace IAC2018SQL
                 toolStripButtonSave.Enabled = true;
             newdelinquencyperiods.Dispose();
         }
+
+        private void colorCheckBoxReceivedContract_CheckedChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+            // Moses Newman 02/28/2021
+            if (colorCheckBoxReceivedContract.Checked)
+            {
+                colorCheckBoxReceivedContract.ForeColor = Color.Green;
+                nullableDateTimePickerDateContractReceived.Enabled = true;
+                nullableDateTimePickerDateContractReceived.Visible = true;
+                nullableDateTimePickerDateContractReceived.Value = DateTime.Now.Date;
+            }
+            else
+            {
+                colorCheckBoxReceivedContract.ForeColor = SystemColors.ControlText;
+                nullableDateTimePickerDateContractReceived.Enabled = false;
+                nullableDateTimePickerDateContractReceived.Visible = false;
+                nullableDateTimePickerDateContractReceived.Value = null;
+            }
+        }
+
 
         private void textBoxRepairFee4_Validated(object sender, EventArgs e)
         {

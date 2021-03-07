@@ -924,15 +924,30 @@ namespace IAC2018SQL
             excelWorkSheet.get_Range("BT1:BT1").Font.FontStyle = "Bold";
             excelWorkSheet.get_Range("BT1:BT1").Value = "Electronic Lien";
 
-            excelWorkSheet.get_Range("A:BT").Font.Size = 11;
+            // Moses Newman 02/28/2021 Add Received Contract
+            Excel.Range ReceivedContract = excelWorkSheet.get_Range("BU:BU");
+            ReceivedContract.Columns.EntireColumn.AutoFit();
+            ReceivedContract.Columns.ColumnWidth = 15;
+            excelWorkSheet.get_Range("BU1:BU1").Font.FontStyle = "Bold";
+            excelWorkSheet.get_Range("BU1:BU1").Value = "Received Contract";
+
+            // Moses Newman 10/27/2020 Add Date Contract Received
+            Excel.Range DateContractReceived = excelWorkSheet.get_Range("BV:BV");
+            PaymentDate.Columns.EntireColumn.AutoFit();
+            PaymentDate.Columns.NumberFormat = "mm/dd/yyyy";
+            PaymentDate.Columns.ColumnWidth = 10.57;
+            excelWorkSheet.get_Range("BV1:BV1").Font.FontStyle = "Bold";
+            excelWorkSheet.get_Range("BV1:BV1").Value = "Date Contract Received";
+
+            excelWorkSheet.get_Range("A:BV").Font.Size = 11;
             // Moses Newman 08/01/2018 Freeze header row.
             Excel.Range firstRow = (Excel.Range)excelWorkSheet.Rows[1];
             excelWorkSheet.Activate();
             excelWorkSheet.Application.ActiveWindow.SplitRow = 1;
             firstRow.Application.ActiveWindow.FreezePanes = true;
 
-            Excel.Range U1 = excelWorkSheet.get_Range("A1:BT1");
-            Excel.Range r = excelWorkSheet.get_Range("A2:BT" + (excelWorkSheet.Rows.Count).ToString());
+            Excel.Range U1 = excelWorkSheet.get_Range("A1:BV1");
+            Excel.Range r = excelWorkSheet.get_Range("A2:BV" + (excelWorkSheet.Rows.Count).ToString());
 
             U1.Font.Bold = true;
             U1.Font.Color = Excel.XlRgbColor.rgbWhite;
@@ -1166,6 +1181,14 @@ namespace IAC2018SQL
                         case 71:
                             // Moses Newman 10/27/2020 Add Electronic Lien
                             ElectronicLien.Delete();
+                            break;
+                        case 72:
+                            // Moses Newman 02/28/2021 Add Received Contract
+                            ReceivedContract.Delete();
+                            break;
+                        case 73:
+                            // Moses Newman 02/28/2021 Add Date Contract Received
+                            DateContractReceived.Delete();
                             break;
                     }
                 }
