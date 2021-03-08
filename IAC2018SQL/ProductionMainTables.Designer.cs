@@ -36191,30 +36191,30 @@ namespace IAC2018SQL.ProductionMainTablesTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ACCOUNT_NO", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ACCOUNT_NO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [ACCOUNT] ([NAME], [ACCOUNT_NO]) VALUES (@NAME, @ACCOUNT_NO);\r\nSELECT" +
-                " RECNO, NAME, ACCOUNT_NO FROM ACCOUNT WHERE (RECNO = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [ACCOUNT] ([RECNO], [NAME], [ACCOUNT_NO]) VALUES (@RECNO, @NAME, @ACC" +
+                "OUNT_NO);\r\nSELECT RECNO, NAME, ACCOUNT_NO FROM ACCOUNT WHERE (RECNO = @RECNO)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RECNO", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RECNO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NAME", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NAME", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ACCOUNT_NO", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ACCOUNT_NO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE [ACCOUNT] SET [NAME] = @NAME, [ACCOUNT_NO] = @ACCOUNT_NO WHERE (([RECNO] =" +
-                " @Original_RECNO) AND ([NAME] = @Original_NAME) AND ([ACCOUNT_NO] = @Original_AC" +
-                "COUNT_NO));\r\nSELECT RECNO, NAME, ACCOUNT_NO FROM ACCOUNT WHERE (RECNO = @RECNO)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [ACCOUNT] SET [RECNO] = @RECNO, [NAME] = @NAME, [ACCOUNT_NO] = @ACCOUNT_NO WHERE (([RECNO] = @Original_RECNO) AND ([NAME] = @Original_NAME) AND ([ACCOUNT_NO] = @Original_ACCOUNT_NO));
+SELECT RECNO, NAME, ACCOUNT_NO FROM ACCOUNT WHERE (RECNO = @RECNO)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RECNO", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RECNO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NAME", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NAME", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ACCOUNT_NO", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ACCOUNT_NO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_RECNO", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RECNO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NAME", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NAME", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ACCOUNT_NO", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ACCOUNT_NO", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RECNO", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "RECNO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::IAC2018SQL.Properties.Settings.Default.SSISParamsConnectionString;
+            this._connection.ConnectionString = global::IAC2018SQL.Properties.Settings.Default.IAC2010SQLConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -36323,18 +36323,19 @@ namespace IAC2018SQL.ProductionMainTablesTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string NAME, string ACCOUNT_NO) {
+        public virtual int Insert(int RECNO, string NAME, string ACCOUNT_NO) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(RECNO));
             if ((NAME == null)) {
                 throw new global::System.ArgumentNullException("NAME");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(NAME));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(NAME));
             }
             if ((ACCOUNT_NO == null)) {
                 throw new global::System.ArgumentNullException("ACCOUNT_NO");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(ACCOUNT_NO));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(ACCOUNT_NO));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -36356,33 +36357,33 @@ namespace IAC2018SQL.ProductionMainTablesTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string NAME, string ACCOUNT_NO, int Original_RECNO, string Original_NAME, string Original_ACCOUNT_NO, int RECNO) {
+        public virtual int Update(int RECNO, string NAME, string ACCOUNT_NO, int Original_RECNO, string Original_NAME, string Original_ACCOUNT_NO) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(RECNO));
             if ((NAME == null)) {
                 throw new global::System.ArgumentNullException("NAME");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(NAME));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(NAME));
             }
             if ((ACCOUNT_NO == null)) {
                 throw new global::System.ArgumentNullException("ACCOUNT_NO");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(ACCOUNT_NO));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(ACCOUNT_NO));
             }
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_RECNO));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_RECNO));
             if ((Original_NAME == null)) {
                 throw new global::System.ArgumentNullException("Original_NAME");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Original_NAME));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Original_NAME));
             }
             if ((Original_ACCOUNT_NO == null)) {
                 throw new global::System.ArgumentNullException("Original_ACCOUNT_NO");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Original_ACCOUNT_NO));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_ACCOUNT_NO));
             }
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(RECNO));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -36404,7 +36405,7 @@ namespace IAC2018SQL.ProductionMainTablesTableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(string NAME, string ACCOUNT_NO, int Original_RECNO, string Original_NAME, string Original_ACCOUNT_NO) {
-            return this.Update(NAME, ACCOUNT_NO, Original_RECNO, Original_NAME, Original_ACCOUNT_NO, Original_RECNO);
+            return this.Update(Original_RECNO, NAME, ACCOUNT_NO, Original_RECNO, Original_NAME, Original_ACCOUNT_NO);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -36644,7 +36645,7 @@ namespace IAC2018SQL.ProductionMainTablesTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::IAC2018SQL.Properties.Settings.Default.SSISParamsConnectionString;
+            this._connection.ConnectionString = global::IAC2018SQL.Properties.Settings.Default.IAC2010SQLConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -37429,7 +37430,7 @@ FROM            ALTNAME";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::IAC2018SQL.Properties.Settings.Default.SSISParamsConnectionString;
+            this._connection.ConnectionString = global::IAC2018SQL.Properties.Settings.Default.IAC2010SQLConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -38242,7 +38243,7 @@ WHERE        (AMORTIZE_CUST_NO = @AMORTIZE_CUST_NO)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::IAC2018SQL.Properties.Settings.Default.SSISParamsConnectionString;
+            this._connection.ConnectionString = global::IAC2018SQL.Properties.Settings.Default.IAC2010SQLConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -38807,7 +38808,7 @@ WHERE        (AMORTIZE_CUST_NO = @AMORTIZE_CUST_NO)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::IAC2018SQL.Properties.Settings.Default.SSISParamsConnectionString;
+            this._connection.ConnectionString = global::IAC2018SQL.Properties.Settings.Default.IAC2010SQLConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -39547,7 +39548,7 @@ WHERE        (AMORTIZE_CUST_NO = @AMORTIZE_CUST_NO)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::IAC2018SQL.Properties.Settings.Default.SSISParamsConnectionString;
+            this._connection.ConnectionString = global::IAC2018SQL.Properties.Settings.Default.IAC2010SQLConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -41208,7 +41209,7 @@ VALUES        (@Param1,@Param2,@Param3,@Param4,@Param5,@Param6,@Param7,@Param8,@
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::IAC2018SQL.Properties.Settings.Default.SSISParamsConnectionString;
+            this._connection.ConnectionString = global::IAC2018SQL.Properties.Settings.Default.IAC2010SQLConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -41679,7 +41680,7 @@ VALUES        (@Param1,@Param2,@Param3,@Param4,@Param5,@Param6,@Param7,@Param8,@
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::IAC2018SQL.Properties.Settings.Default.SSISParamsConnectionString;
+            this._connection.ConnectionString = global::IAC2018SQL.Properties.Settings.Default.IAC2010SQLConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -44498,7 +44499,7 @@ VALUES        (@Param1,@Param2,@Param3,@Param4,@Param5,@Param6,@Param7,@Param8,@
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::IAC2018SQL.Properties.Settings.Default.SSISParamsConnectionString;
+            this._connection.ConnectionString = global::IAC2018SQL.Properties.Settings.Default.IAC2010SQLConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -50085,7 +50086,7 @@ VALUES        (@Param1,@Param2,@Param3,@Param4,@Param5,@Param6,@Param7,@Param8,@
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::IAC2018SQL.Properties.Settings.Default.SSISParamsConnectionString;
+            this._connection.ConnectionString = global::IAC2018SQL.Properties.Settings.Default.IAC2010SQLConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -52170,7 +52171,7 @@ FROM            DEALER";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::IAC2018SQL.Properties.Settings.Default.SSISParamsConnectionString;
+            this._connection.ConnectionString = global::IAC2018SQL.Properties.Settings.Default.IAC2010SQLConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -53295,7 +53296,7 @@ FROM            DEALER";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::IAC2018SQL.Properties.Settings.Default.SSISParamsConnectionString;
+            this._connection.ConnectionString = global::IAC2018SQL.Properties.Settings.Default.IAC2010SQLConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -53775,7 +53776,7 @@ FROM            DEALER";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::IAC2018SQL.Properties.Settings.Default.SSISParamsConnectionString;
+            this._connection.ConnectionString = global::IAC2018SQL.Properties.Settings.Default.IAC2010SQLConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -54722,7 +54723,7 @@ FROM            MACONT";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::IAC2018SQL.Properties.Settings.Default.SSISParamsConnectionString;
+            this._connection.ConnectionString = global::IAC2018SQL.Properties.Settings.Default.IAC2010SQLConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -56010,7 +56011,7 @@ FROM            MACONT";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::IAC2018SQL.Properties.Settings.Default.SSISParamsConnectionString;
+            this._connection.ConnectionString = global::IAC2018SQL.Properties.Settings.Default.IAC2010SQLConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -57291,7 +57292,7 @@ FROM            MASTHIST";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::IAC2018SQL.Properties.Settings.Default.SSISParamsConnectionString;
+            this._connection.ConnectionString = global::IAC2018SQL.Properties.Settings.Default.IAC2010SQLConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
