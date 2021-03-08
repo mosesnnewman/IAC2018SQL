@@ -4,6 +4,10 @@
 
     partial class ProductionMainTables
     {
+        partial class OPNDEALRDataTable
+        {
+        }
+
         partial class CUSTOMERDataTable
         {
         }
