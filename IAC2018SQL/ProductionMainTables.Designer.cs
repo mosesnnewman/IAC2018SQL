@@ -54,6 +54,8 @@ namespace IAC2018SQL {
         
         private MASTHISTDataTable tableMASTHIST;
         
+        private NOTICEDataTable tableNOTICE;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -126,6 +128,9 @@ namespace IAC2018SQL {
                 }
                 if ((ds.Tables["MASTHIST"] != null)) {
                     base.Tables.Add(new MASTHISTDataTable(ds.Tables["MASTHIST"]));
+                }
+                if ((ds.Tables["NOTICE"] != null)) {
+                    base.Tables.Add(new NOTICEDataTable(ds.Tables["NOTICE"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -297,6 +302,16 @@ namespace IAC2018SQL {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public NOTICEDataTable NOTICE {
+            get {
+                return this.tableNOTICE;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -406,6 +421,9 @@ namespace IAC2018SQL {
                 }
                 if ((ds.Tables["MASTHIST"] != null)) {
                     base.Tables.Add(new MASTHISTDataTable(ds.Tables["MASTHIST"]));
+                }
+                if ((ds.Tables["NOTICE"] != null)) {
+                    base.Tables.Add(new NOTICEDataTable(ds.Tables["NOTICE"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -530,6 +548,12 @@ namespace IAC2018SQL {
                     this.tableMASTHIST.InitVars();
                 }
             }
+            this.tableNOTICE = ((NOTICEDataTable)(base.Tables["NOTICE"]));
+            if ((initTable == true)) {
+                if ((this.tableNOTICE != null)) {
+                    this.tableNOTICE.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -570,6 +594,8 @@ namespace IAC2018SQL {
             base.Tables.Add(this.tableMASTER);
             this.tableMASTHIST = new MASTHISTDataTable();
             base.Tables.Add(this.tableMASTHIST);
+            this.tableNOTICE = new NOTICEDataTable();
+            base.Tables.Add(this.tableNOTICE);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -659,6 +685,12 @@ namespace IAC2018SQL {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private bool ShouldSerializeMASTHIST() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private bool ShouldSerializeNOTICE() {
             return false;
         }
         
@@ -761,6 +793,9 @@ namespace IAC2018SQL {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void MASTHISTRowChangeEventHandler(object sender, MASTHISTRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public delegate void NOTICERowChangeEventHandler(object sender, NOTICERowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -15285,6 +15320,755 @@ namespace IAC2018SQL {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "MASTHISTDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class NOTICEDataTable : global::System.Data.TypedTableBase<NOTICERow> {
+            
+            private global::System.Data.DataColumn columnNOTICE_NO;
+            
+            private global::System.Data.DataColumn columnNOTICE_ADD_ON;
+            
+            private global::System.Data.DataColumn columnNOTICE_IAC_TYPE;
+            
+            private global::System.Data.DataColumn columnNOTICE_NAME;
+            
+            private global::System.Data.DataColumn columnNOTICE_FORM_NO;
+            
+            private global::System.Data.DataColumn columnNOTICE_DEALER;
+            
+            private global::System.Data.DataColumn columnNOTICE_DAY_DUE;
+            
+            private global::System.Data.DataColumn columnNOTICE_STREET_1;
+            
+            private global::System.Data.DataColumn columnNOTICE_CITY;
+            
+            private global::System.Data.DataColumn columnNOTICE_STATE;
+            
+            private global::System.Data.DataColumn columnNOTICE_ZIP_CODE;
+            
+            private global::System.Data.DataColumn columnNOTICE_COUNTRY;
+            
+            private global::System.Data.DataColumn columnNOTICE_PHONE_NO;
+            
+            private global::System.Data.DataColumn columnNOTICE_WORK_PHONE;
+            
+            private global::System.Data.DataColumn columnNOTICE_WORK_EXT;
+            
+            private global::System.Data.DataColumn columnNOTICE_REGULAR_AMOUNT;
+            
+            private global::System.Data.DataColumn columnNOTICE_LATE_CHARGE;
+            
+            private global::System.Data.DataColumn columnNOTICE_LATE_CHARGE_BAL;
+            
+            private global::System.Data.DataColumn columnNOTICE_CONTRACT_STATUS;
+            
+            private global::System.Data.DataColumn columnNOTICE_LATE_DATE;
+            
+            private global::System.Data.DataColumn columnNOTICE_WRONG_ADDRESS;
+            
+            private global::System.Data.DataColumn columnNOTICE_CO_NAME;
+            
+            private global::System.Data.DataColumn columnNOTICE_BALANCE;
+            
+            private global::System.Data.DataColumn columnNOTICE_DISTRIBUTOR_NO;
+            
+            private global::System.Data.DataColumn columnNOTICE_PAID_THRU;
+            
+            private global::System.Data.DataColumn columnNOTICE_ALLOTMENT;
+            
+            private global::System.Data.DataColumn columnNOTICE_AUTOPAY;
+            
+            private global::System.Data.DataColumn columnNOTICE_PO_NUMBER;
+            
+            private global::System.Data.DataColumn columnNOTICE_INT_TODATE;
+            
+            private global::System.Data.DataColumn columnPostDate;
+            
+            private global::System.Data.DataColumn columnAmountPastDue;
+            
+            private global::System.Data.DataColumn columnPartialPayment;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public NOTICEDataTable() {
+                this.TableName = "NOTICE";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal NOTICEDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected NOTICEDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn NOTICE_NOColumn {
+                get {
+                    return this.columnNOTICE_NO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn NOTICE_ADD_ONColumn {
+                get {
+                    return this.columnNOTICE_ADD_ON;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn NOTICE_IAC_TYPEColumn {
+                get {
+                    return this.columnNOTICE_IAC_TYPE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn NOTICE_NAMEColumn {
+                get {
+                    return this.columnNOTICE_NAME;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn NOTICE_FORM_NOColumn {
+                get {
+                    return this.columnNOTICE_FORM_NO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn NOTICE_DEALERColumn {
+                get {
+                    return this.columnNOTICE_DEALER;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn NOTICE_DAY_DUEColumn {
+                get {
+                    return this.columnNOTICE_DAY_DUE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn NOTICE_STREET_1Column {
+                get {
+                    return this.columnNOTICE_STREET_1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn NOTICE_CITYColumn {
+                get {
+                    return this.columnNOTICE_CITY;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn NOTICE_STATEColumn {
+                get {
+                    return this.columnNOTICE_STATE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn NOTICE_ZIP_CODEColumn {
+                get {
+                    return this.columnNOTICE_ZIP_CODE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn NOTICE_COUNTRYColumn {
+                get {
+                    return this.columnNOTICE_COUNTRY;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn NOTICE_PHONE_NOColumn {
+                get {
+                    return this.columnNOTICE_PHONE_NO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn NOTICE_WORK_PHONEColumn {
+                get {
+                    return this.columnNOTICE_WORK_PHONE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn NOTICE_WORK_EXTColumn {
+                get {
+                    return this.columnNOTICE_WORK_EXT;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn NOTICE_REGULAR_AMOUNTColumn {
+                get {
+                    return this.columnNOTICE_REGULAR_AMOUNT;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn NOTICE_LATE_CHARGEColumn {
+                get {
+                    return this.columnNOTICE_LATE_CHARGE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn NOTICE_LATE_CHARGE_BALColumn {
+                get {
+                    return this.columnNOTICE_LATE_CHARGE_BAL;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn NOTICE_CONTRACT_STATUSColumn {
+                get {
+                    return this.columnNOTICE_CONTRACT_STATUS;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn NOTICE_LATE_DATEColumn {
+                get {
+                    return this.columnNOTICE_LATE_DATE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn NOTICE_WRONG_ADDRESSColumn {
+                get {
+                    return this.columnNOTICE_WRONG_ADDRESS;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn NOTICE_CO_NAMEColumn {
+                get {
+                    return this.columnNOTICE_CO_NAME;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn NOTICE_BALANCEColumn {
+                get {
+                    return this.columnNOTICE_BALANCE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn NOTICE_DISTRIBUTOR_NOColumn {
+                get {
+                    return this.columnNOTICE_DISTRIBUTOR_NO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn NOTICE_PAID_THRUColumn {
+                get {
+                    return this.columnNOTICE_PAID_THRU;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn NOTICE_ALLOTMENTColumn {
+                get {
+                    return this.columnNOTICE_ALLOTMENT;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn NOTICE_AUTOPAYColumn {
+                get {
+                    return this.columnNOTICE_AUTOPAY;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn NOTICE_PO_NUMBERColumn {
+                get {
+                    return this.columnNOTICE_PO_NUMBER;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn NOTICE_INT_TODATEColumn {
+                get {
+                    return this.columnNOTICE_INT_TODATE;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn PostDateColumn {
+                get {
+                    return this.columnPostDate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn AmountPastDueColumn {
+                get {
+                    return this.columnAmountPastDue;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn PartialPaymentColumn {
+                get {
+                    return this.columnPartialPayment;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public NOTICERow this[int index] {
+                get {
+                    return ((NOTICERow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event NOTICERowChangeEventHandler NOTICERowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event NOTICERowChangeEventHandler NOTICERowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event NOTICERowChangeEventHandler NOTICERowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event NOTICERowChangeEventHandler NOTICERowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void AddNOTICERow(NOTICERow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public NOTICERow AddNOTICERow(
+                        string NOTICE_NO, 
+                        string NOTICE_ADD_ON, 
+                        string NOTICE_IAC_TYPE, 
+                        string NOTICE_NAME, 
+                        int NOTICE_FORM_NO, 
+                        string NOTICE_DEALER, 
+                        int NOTICE_DAY_DUE, 
+                        string NOTICE_STREET_1, 
+                        string NOTICE_CITY, 
+                        string NOTICE_STATE, 
+                        string NOTICE_ZIP_CODE, 
+                        string NOTICE_COUNTRY, 
+                        string NOTICE_PHONE_NO, 
+                        string NOTICE_WORK_PHONE, 
+                        string NOTICE_WORK_EXT, 
+                        decimal NOTICE_REGULAR_AMOUNT, 
+                        decimal NOTICE_LATE_CHARGE, 
+                        decimal NOTICE_LATE_CHARGE_BAL, 
+                        decimal NOTICE_CONTRACT_STATUS, 
+                        System.DateTime NOTICE_LATE_DATE, 
+                        string NOTICE_WRONG_ADDRESS, 
+                        string NOTICE_CO_NAME, 
+                        decimal NOTICE_BALANCE, 
+                        int NOTICE_DISTRIBUTOR_NO, 
+                        string NOTICE_PAID_THRU, 
+                        string NOTICE_ALLOTMENT, 
+                        string NOTICE_AUTOPAY, 
+                        string NOTICE_PO_NUMBER, 
+                        decimal NOTICE_INT_TODATE, 
+                        System.DateTime PostDate, 
+                        decimal AmountPastDue, 
+                        decimal PartialPayment) {
+                NOTICERow rowNOTICERow = ((NOTICERow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        NOTICE_NO,
+                        NOTICE_ADD_ON,
+                        NOTICE_IAC_TYPE,
+                        NOTICE_NAME,
+                        NOTICE_FORM_NO,
+                        NOTICE_DEALER,
+                        NOTICE_DAY_DUE,
+                        NOTICE_STREET_1,
+                        NOTICE_CITY,
+                        NOTICE_STATE,
+                        NOTICE_ZIP_CODE,
+                        NOTICE_COUNTRY,
+                        NOTICE_PHONE_NO,
+                        NOTICE_WORK_PHONE,
+                        NOTICE_WORK_EXT,
+                        NOTICE_REGULAR_AMOUNT,
+                        NOTICE_LATE_CHARGE,
+                        NOTICE_LATE_CHARGE_BAL,
+                        NOTICE_CONTRACT_STATUS,
+                        NOTICE_LATE_DATE,
+                        NOTICE_WRONG_ADDRESS,
+                        NOTICE_CO_NAME,
+                        NOTICE_BALANCE,
+                        NOTICE_DISTRIBUTOR_NO,
+                        NOTICE_PAID_THRU,
+                        NOTICE_ALLOTMENT,
+                        NOTICE_AUTOPAY,
+                        NOTICE_PO_NUMBER,
+                        NOTICE_INT_TODATE,
+                        PostDate,
+                        AmountPastDue,
+                        PartialPayment};
+                rowNOTICERow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowNOTICERow);
+                return rowNOTICERow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public NOTICERow FindByNOTICE_NO(string NOTICE_NO) {
+                return ((NOTICERow)(this.Rows.Find(new object[] {
+                            NOTICE_NO})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                NOTICEDataTable cln = ((NOTICEDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new NOTICEDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal void InitVars() {
+                this.columnNOTICE_NO = base.Columns["NOTICE_NO"];
+                this.columnNOTICE_ADD_ON = base.Columns["NOTICE_ADD_ON"];
+                this.columnNOTICE_IAC_TYPE = base.Columns["NOTICE_IAC_TYPE"];
+                this.columnNOTICE_NAME = base.Columns["NOTICE_NAME"];
+                this.columnNOTICE_FORM_NO = base.Columns["NOTICE_FORM_NO"];
+                this.columnNOTICE_DEALER = base.Columns["NOTICE_DEALER"];
+                this.columnNOTICE_DAY_DUE = base.Columns["NOTICE_DAY_DUE"];
+                this.columnNOTICE_STREET_1 = base.Columns["NOTICE_STREET_1"];
+                this.columnNOTICE_CITY = base.Columns["NOTICE_CITY"];
+                this.columnNOTICE_STATE = base.Columns["NOTICE_STATE"];
+                this.columnNOTICE_ZIP_CODE = base.Columns["NOTICE_ZIP_CODE"];
+                this.columnNOTICE_COUNTRY = base.Columns["NOTICE_COUNTRY"];
+                this.columnNOTICE_PHONE_NO = base.Columns["NOTICE_PHONE_NO"];
+                this.columnNOTICE_WORK_PHONE = base.Columns["NOTICE_WORK_PHONE"];
+                this.columnNOTICE_WORK_EXT = base.Columns["NOTICE_WORK_EXT"];
+                this.columnNOTICE_REGULAR_AMOUNT = base.Columns["NOTICE_REGULAR_AMOUNT"];
+                this.columnNOTICE_LATE_CHARGE = base.Columns["NOTICE_LATE_CHARGE"];
+                this.columnNOTICE_LATE_CHARGE_BAL = base.Columns["NOTICE_LATE_CHARGE_BAL"];
+                this.columnNOTICE_CONTRACT_STATUS = base.Columns["NOTICE_CONTRACT_STATUS"];
+                this.columnNOTICE_LATE_DATE = base.Columns["NOTICE_LATE_DATE"];
+                this.columnNOTICE_WRONG_ADDRESS = base.Columns["NOTICE_WRONG_ADDRESS"];
+                this.columnNOTICE_CO_NAME = base.Columns["NOTICE_CO_NAME"];
+                this.columnNOTICE_BALANCE = base.Columns["NOTICE_BALANCE"];
+                this.columnNOTICE_DISTRIBUTOR_NO = base.Columns["NOTICE_DISTRIBUTOR_NO"];
+                this.columnNOTICE_PAID_THRU = base.Columns["NOTICE_PAID_THRU"];
+                this.columnNOTICE_ALLOTMENT = base.Columns["NOTICE_ALLOTMENT"];
+                this.columnNOTICE_AUTOPAY = base.Columns["NOTICE_AUTOPAY"];
+                this.columnNOTICE_PO_NUMBER = base.Columns["NOTICE_PO_NUMBER"];
+                this.columnNOTICE_INT_TODATE = base.Columns["NOTICE_INT_TODATE"];
+                this.columnPostDate = base.Columns["PostDate"];
+                this.columnAmountPastDue = base.Columns["AmountPastDue"];
+                this.columnPartialPayment = base.Columns["PartialPayment"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            private void InitClass() {
+                this.columnNOTICE_NO = new global::System.Data.DataColumn("NOTICE_NO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNOTICE_NO);
+                this.columnNOTICE_ADD_ON = new global::System.Data.DataColumn("NOTICE_ADD_ON", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNOTICE_ADD_ON);
+                this.columnNOTICE_IAC_TYPE = new global::System.Data.DataColumn("NOTICE_IAC_TYPE", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNOTICE_IAC_TYPE);
+                this.columnNOTICE_NAME = new global::System.Data.DataColumn("NOTICE_NAME", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNOTICE_NAME);
+                this.columnNOTICE_FORM_NO = new global::System.Data.DataColumn("NOTICE_FORM_NO", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNOTICE_FORM_NO);
+                this.columnNOTICE_DEALER = new global::System.Data.DataColumn("NOTICE_DEALER", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNOTICE_DEALER);
+                this.columnNOTICE_DAY_DUE = new global::System.Data.DataColumn("NOTICE_DAY_DUE", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNOTICE_DAY_DUE);
+                this.columnNOTICE_STREET_1 = new global::System.Data.DataColumn("NOTICE_STREET_1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNOTICE_STREET_1);
+                this.columnNOTICE_CITY = new global::System.Data.DataColumn("NOTICE_CITY", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNOTICE_CITY);
+                this.columnNOTICE_STATE = new global::System.Data.DataColumn("NOTICE_STATE", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNOTICE_STATE);
+                this.columnNOTICE_ZIP_CODE = new global::System.Data.DataColumn("NOTICE_ZIP_CODE", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNOTICE_ZIP_CODE);
+                this.columnNOTICE_COUNTRY = new global::System.Data.DataColumn("NOTICE_COUNTRY", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNOTICE_COUNTRY);
+                this.columnNOTICE_PHONE_NO = new global::System.Data.DataColumn("NOTICE_PHONE_NO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNOTICE_PHONE_NO);
+                this.columnNOTICE_WORK_PHONE = new global::System.Data.DataColumn("NOTICE_WORK_PHONE", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNOTICE_WORK_PHONE);
+                this.columnNOTICE_WORK_EXT = new global::System.Data.DataColumn("NOTICE_WORK_EXT", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNOTICE_WORK_EXT);
+                this.columnNOTICE_REGULAR_AMOUNT = new global::System.Data.DataColumn("NOTICE_REGULAR_AMOUNT", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNOTICE_REGULAR_AMOUNT);
+                this.columnNOTICE_LATE_CHARGE = new global::System.Data.DataColumn("NOTICE_LATE_CHARGE", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNOTICE_LATE_CHARGE);
+                this.columnNOTICE_LATE_CHARGE_BAL = new global::System.Data.DataColumn("NOTICE_LATE_CHARGE_BAL", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNOTICE_LATE_CHARGE_BAL);
+                this.columnNOTICE_CONTRACT_STATUS = new global::System.Data.DataColumn("NOTICE_CONTRACT_STATUS", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNOTICE_CONTRACT_STATUS);
+                this.columnNOTICE_LATE_DATE = new global::System.Data.DataColumn("NOTICE_LATE_DATE", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNOTICE_LATE_DATE);
+                this.columnNOTICE_WRONG_ADDRESS = new global::System.Data.DataColumn("NOTICE_WRONG_ADDRESS", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNOTICE_WRONG_ADDRESS);
+                this.columnNOTICE_CO_NAME = new global::System.Data.DataColumn("NOTICE_CO_NAME", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNOTICE_CO_NAME);
+                this.columnNOTICE_BALANCE = new global::System.Data.DataColumn("NOTICE_BALANCE", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNOTICE_BALANCE);
+                this.columnNOTICE_DISTRIBUTOR_NO = new global::System.Data.DataColumn("NOTICE_DISTRIBUTOR_NO", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNOTICE_DISTRIBUTOR_NO);
+                this.columnNOTICE_PAID_THRU = new global::System.Data.DataColumn("NOTICE_PAID_THRU", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNOTICE_PAID_THRU);
+                this.columnNOTICE_ALLOTMENT = new global::System.Data.DataColumn("NOTICE_ALLOTMENT", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNOTICE_ALLOTMENT);
+                this.columnNOTICE_AUTOPAY = new global::System.Data.DataColumn("NOTICE_AUTOPAY", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNOTICE_AUTOPAY);
+                this.columnNOTICE_PO_NUMBER = new global::System.Data.DataColumn("NOTICE_PO_NUMBER", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNOTICE_PO_NUMBER);
+                this.columnNOTICE_INT_TODATE = new global::System.Data.DataColumn("NOTICE_INT_TODATE", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNOTICE_INT_TODATE);
+                this.columnPostDate = new global::System.Data.DataColumn("PostDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPostDate);
+                this.columnAmountPastDue = new global::System.Data.DataColumn("AmountPastDue", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAmountPastDue);
+                this.columnPartialPayment = new global::System.Data.DataColumn("PartialPayment", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPartialPayment);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnNOTICE_NO}, true));
+                this.columnNOTICE_NO.AllowDBNull = false;
+                this.columnNOTICE_NO.Unique = true;
+                this.columnNOTICE_NO.DefaultValue = ((string)("******"));
+                this.columnNOTICE_NO.MaxLength = 6;
+                this.columnNOTICE_ADD_ON.AllowDBNull = false;
+                this.columnNOTICE_ADD_ON.DefaultValue = ((string)(" "));
+                this.columnNOTICE_ADD_ON.MaxLength = 1;
+                this.columnNOTICE_IAC_TYPE.AllowDBNull = false;
+                this.columnNOTICE_IAC_TYPE.DefaultValue = ((string)("C"));
+                this.columnNOTICE_IAC_TYPE.MaxLength = 1;
+                this.columnNOTICE_NAME.MaxLength = 31;
+                this.columnNOTICE_DEALER.MaxLength = 3;
+                this.columnNOTICE_STREET_1.MaxLength = 50;
+                this.columnNOTICE_CITY.MaxLength = 50;
+                this.columnNOTICE_STATE.MaxLength = 2;
+                this.columnNOTICE_ZIP_CODE.MaxLength = 10;
+                this.columnNOTICE_COUNTRY.MaxLength = 10;
+                this.columnNOTICE_PHONE_NO.MaxLength = 12;
+                this.columnNOTICE_WORK_PHONE.MaxLength = 12;
+                this.columnNOTICE_WORK_EXT.MaxLength = 4;
+                this.columnNOTICE_WRONG_ADDRESS.MaxLength = 8;
+                this.columnNOTICE_CO_NAME.MaxLength = 25;
+                this.columnNOTICE_PAID_THRU.MaxLength = 4;
+                this.columnNOTICE_ALLOTMENT.MaxLength = 1;
+                this.columnNOTICE_AUTOPAY.MaxLength = 1;
+                this.columnNOTICE_PO_NUMBER.MaxLength = 8;
+                this.columnNOTICE_INT_TODATE.DefaultValue = ((decimal)(0m));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public NOTICERow NewNOTICERow() {
+                return ((NOTICERow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new NOTICERow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(NOTICERow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.NOTICERowChanged != null)) {
+                    this.NOTICERowChanged(this, new NOTICERowChangeEvent(((NOTICERow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.NOTICERowChanging != null)) {
+                    this.NOTICERowChanging(this, new NOTICERowChangeEvent(((NOTICERow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.NOTICERowDeleted != null)) {
+                    this.NOTICERowDeleted(this, new NOTICERowChangeEvent(((NOTICERow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.NOTICERowDeleting != null)) {
+                    this.NOTICERowDeleting(this, new NOTICERowChangeEvent(((NOTICERow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void RemoveNOTICERow(NOTICERow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                ProductionMainTables ds = new ProductionMainTables();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "NOTICEDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -33865,6 +34649,866 @@ namespace IAC2018SQL {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class NOTICERow : global::System.Data.DataRow {
+            
+            private NOTICEDataTable tableNOTICE;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal NOTICERow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableNOTICE = ((NOTICEDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string NOTICE_NO {
+                get {
+                    return ((string)(this[this.tableNOTICE.NOTICE_NOColumn]));
+                }
+                set {
+                    this[this.tableNOTICE.NOTICE_NOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string NOTICE_ADD_ON {
+                get {
+                    return ((string)(this[this.tableNOTICE.NOTICE_ADD_ONColumn]));
+                }
+                set {
+                    this[this.tableNOTICE.NOTICE_ADD_ONColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string NOTICE_IAC_TYPE {
+                get {
+                    return ((string)(this[this.tableNOTICE.NOTICE_IAC_TYPEColumn]));
+                }
+                set {
+                    this[this.tableNOTICE.NOTICE_IAC_TYPEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string NOTICE_NAME {
+                get {
+                    try {
+                        return ((string)(this[this.tableNOTICE.NOTICE_NAMEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NOTICE_NAME\' in table \'NOTICE\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNOTICE.NOTICE_NAMEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int NOTICE_FORM_NO {
+                get {
+                    try {
+                        return ((int)(this[this.tableNOTICE.NOTICE_FORM_NOColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NOTICE_FORM_NO\' in table \'NOTICE\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNOTICE.NOTICE_FORM_NOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string NOTICE_DEALER {
+                get {
+                    try {
+                        return ((string)(this[this.tableNOTICE.NOTICE_DEALERColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NOTICE_DEALER\' in table \'NOTICE\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNOTICE.NOTICE_DEALERColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int NOTICE_DAY_DUE {
+                get {
+                    try {
+                        return ((int)(this[this.tableNOTICE.NOTICE_DAY_DUEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NOTICE_DAY_DUE\' in table \'NOTICE\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNOTICE.NOTICE_DAY_DUEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string NOTICE_STREET_1 {
+                get {
+                    try {
+                        return ((string)(this[this.tableNOTICE.NOTICE_STREET_1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NOTICE_STREET_1\' in table \'NOTICE\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNOTICE.NOTICE_STREET_1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string NOTICE_CITY {
+                get {
+                    try {
+                        return ((string)(this[this.tableNOTICE.NOTICE_CITYColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NOTICE_CITY\' in table \'NOTICE\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNOTICE.NOTICE_CITYColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string NOTICE_STATE {
+                get {
+                    try {
+                        return ((string)(this[this.tableNOTICE.NOTICE_STATEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NOTICE_STATE\' in table \'NOTICE\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNOTICE.NOTICE_STATEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string NOTICE_ZIP_CODE {
+                get {
+                    try {
+                        return ((string)(this[this.tableNOTICE.NOTICE_ZIP_CODEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NOTICE_ZIP_CODE\' in table \'NOTICE\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNOTICE.NOTICE_ZIP_CODEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string NOTICE_COUNTRY {
+                get {
+                    try {
+                        return ((string)(this[this.tableNOTICE.NOTICE_COUNTRYColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NOTICE_COUNTRY\' in table \'NOTICE\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNOTICE.NOTICE_COUNTRYColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string NOTICE_PHONE_NO {
+                get {
+                    try {
+                        return ((string)(this[this.tableNOTICE.NOTICE_PHONE_NOColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NOTICE_PHONE_NO\' in table \'NOTICE\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNOTICE.NOTICE_PHONE_NOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string NOTICE_WORK_PHONE {
+                get {
+                    try {
+                        return ((string)(this[this.tableNOTICE.NOTICE_WORK_PHONEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NOTICE_WORK_PHONE\' in table \'NOTICE\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNOTICE.NOTICE_WORK_PHONEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string NOTICE_WORK_EXT {
+                get {
+                    try {
+                        return ((string)(this[this.tableNOTICE.NOTICE_WORK_EXTColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NOTICE_WORK_EXT\' in table \'NOTICE\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNOTICE.NOTICE_WORK_EXTColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal NOTICE_REGULAR_AMOUNT {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableNOTICE.NOTICE_REGULAR_AMOUNTColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NOTICE_REGULAR_AMOUNT\' in table \'NOTICE\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNOTICE.NOTICE_REGULAR_AMOUNTColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal NOTICE_LATE_CHARGE {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableNOTICE.NOTICE_LATE_CHARGEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NOTICE_LATE_CHARGE\' in table \'NOTICE\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNOTICE.NOTICE_LATE_CHARGEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal NOTICE_LATE_CHARGE_BAL {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableNOTICE.NOTICE_LATE_CHARGE_BALColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NOTICE_LATE_CHARGE_BAL\' in table \'NOTICE\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNOTICE.NOTICE_LATE_CHARGE_BALColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal NOTICE_CONTRACT_STATUS {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableNOTICE.NOTICE_CONTRACT_STATUSColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NOTICE_CONTRACT_STATUS\' in table \'NOTICE\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNOTICE.NOTICE_CONTRACT_STATUSColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime NOTICE_LATE_DATE {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableNOTICE.NOTICE_LATE_DATEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NOTICE_LATE_DATE\' in table \'NOTICE\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNOTICE.NOTICE_LATE_DATEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string NOTICE_WRONG_ADDRESS {
+                get {
+                    try {
+                        return ((string)(this[this.tableNOTICE.NOTICE_WRONG_ADDRESSColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NOTICE_WRONG_ADDRESS\' in table \'NOTICE\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNOTICE.NOTICE_WRONG_ADDRESSColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string NOTICE_CO_NAME {
+                get {
+                    try {
+                        return ((string)(this[this.tableNOTICE.NOTICE_CO_NAMEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NOTICE_CO_NAME\' in table \'NOTICE\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNOTICE.NOTICE_CO_NAMEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal NOTICE_BALANCE {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableNOTICE.NOTICE_BALANCEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NOTICE_BALANCE\' in table \'NOTICE\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNOTICE.NOTICE_BALANCEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int NOTICE_DISTRIBUTOR_NO {
+                get {
+                    try {
+                        return ((int)(this[this.tableNOTICE.NOTICE_DISTRIBUTOR_NOColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NOTICE_DISTRIBUTOR_NO\' in table \'NOTICE\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNOTICE.NOTICE_DISTRIBUTOR_NOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string NOTICE_PAID_THRU {
+                get {
+                    try {
+                        return ((string)(this[this.tableNOTICE.NOTICE_PAID_THRUColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NOTICE_PAID_THRU\' in table \'NOTICE\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNOTICE.NOTICE_PAID_THRUColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string NOTICE_ALLOTMENT {
+                get {
+                    try {
+                        return ((string)(this[this.tableNOTICE.NOTICE_ALLOTMENTColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NOTICE_ALLOTMENT\' in table \'NOTICE\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNOTICE.NOTICE_ALLOTMENTColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string NOTICE_AUTOPAY {
+                get {
+                    try {
+                        return ((string)(this[this.tableNOTICE.NOTICE_AUTOPAYColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NOTICE_AUTOPAY\' in table \'NOTICE\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNOTICE.NOTICE_AUTOPAYColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string NOTICE_PO_NUMBER {
+                get {
+                    try {
+                        return ((string)(this[this.tableNOTICE.NOTICE_PO_NUMBERColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NOTICE_PO_NUMBER\' in table \'NOTICE\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNOTICE.NOTICE_PO_NUMBERColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal NOTICE_INT_TODATE {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableNOTICE.NOTICE_INT_TODATEColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'NOTICE_INT_TODATE\' in table \'NOTICE\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNOTICE.NOTICE_INT_TODATEColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime PostDate {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableNOTICE.PostDateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PostDate\' in table \'NOTICE\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNOTICE.PostDateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal AmountPastDue {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableNOTICE.AmountPastDueColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'AmountPastDue\' in table \'NOTICE\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNOTICE.AmountPastDueColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal PartialPayment {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableNOTICE.PartialPaymentColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PartialPayment\' in table \'NOTICE\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableNOTICE.PartialPaymentColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsNOTICE_NAMENull() {
+                return this.IsNull(this.tableNOTICE.NOTICE_NAMEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetNOTICE_NAMENull() {
+                this[this.tableNOTICE.NOTICE_NAMEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsNOTICE_FORM_NONull() {
+                return this.IsNull(this.tableNOTICE.NOTICE_FORM_NOColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetNOTICE_FORM_NONull() {
+                this[this.tableNOTICE.NOTICE_FORM_NOColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsNOTICE_DEALERNull() {
+                return this.IsNull(this.tableNOTICE.NOTICE_DEALERColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetNOTICE_DEALERNull() {
+                this[this.tableNOTICE.NOTICE_DEALERColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsNOTICE_DAY_DUENull() {
+                return this.IsNull(this.tableNOTICE.NOTICE_DAY_DUEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetNOTICE_DAY_DUENull() {
+                this[this.tableNOTICE.NOTICE_DAY_DUEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsNOTICE_STREET_1Null() {
+                return this.IsNull(this.tableNOTICE.NOTICE_STREET_1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetNOTICE_STREET_1Null() {
+                this[this.tableNOTICE.NOTICE_STREET_1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsNOTICE_CITYNull() {
+                return this.IsNull(this.tableNOTICE.NOTICE_CITYColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetNOTICE_CITYNull() {
+                this[this.tableNOTICE.NOTICE_CITYColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsNOTICE_STATENull() {
+                return this.IsNull(this.tableNOTICE.NOTICE_STATEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetNOTICE_STATENull() {
+                this[this.tableNOTICE.NOTICE_STATEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsNOTICE_ZIP_CODENull() {
+                return this.IsNull(this.tableNOTICE.NOTICE_ZIP_CODEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetNOTICE_ZIP_CODENull() {
+                this[this.tableNOTICE.NOTICE_ZIP_CODEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsNOTICE_COUNTRYNull() {
+                return this.IsNull(this.tableNOTICE.NOTICE_COUNTRYColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetNOTICE_COUNTRYNull() {
+                this[this.tableNOTICE.NOTICE_COUNTRYColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsNOTICE_PHONE_NONull() {
+                return this.IsNull(this.tableNOTICE.NOTICE_PHONE_NOColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetNOTICE_PHONE_NONull() {
+                this[this.tableNOTICE.NOTICE_PHONE_NOColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsNOTICE_WORK_PHONENull() {
+                return this.IsNull(this.tableNOTICE.NOTICE_WORK_PHONEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetNOTICE_WORK_PHONENull() {
+                this[this.tableNOTICE.NOTICE_WORK_PHONEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsNOTICE_WORK_EXTNull() {
+                return this.IsNull(this.tableNOTICE.NOTICE_WORK_EXTColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetNOTICE_WORK_EXTNull() {
+                this[this.tableNOTICE.NOTICE_WORK_EXTColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsNOTICE_REGULAR_AMOUNTNull() {
+                return this.IsNull(this.tableNOTICE.NOTICE_REGULAR_AMOUNTColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetNOTICE_REGULAR_AMOUNTNull() {
+                this[this.tableNOTICE.NOTICE_REGULAR_AMOUNTColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsNOTICE_LATE_CHARGENull() {
+                return this.IsNull(this.tableNOTICE.NOTICE_LATE_CHARGEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetNOTICE_LATE_CHARGENull() {
+                this[this.tableNOTICE.NOTICE_LATE_CHARGEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsNOTICE_LATE_CHARGE_BALNull() {
+                return this.IsNull(this.tableNOTICE.NOTICE_LATE_CHARGE_BALColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetNOTICE_LATE_CHARGE_BALNull() {
+                this[this.tableNOTICE.NOTICE_LATE_CHARGE_BALColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsNOTICE_CONTRACT_STATUSNull() {
+                return this.IsNull(this.tableNOTICE.NOTICE_CONTRACT_STATUSColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetNOTICE_CONTRACT_STATUSNull() {
+                this[this.tableNOTICE.NOTICE_CONTRACT_STATUSColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsNOTICE_LATE_DATENull() {
+                return this.IsNull(this.tableNOTICE.NOTICE_LATE_DATEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetNOTICE_LATE_DATENull() {
+                this[this.tableNOTICE.NOTICE_LATE_DATEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsNOTICE_WRONG_ADDRESSNull() {
+                return this.IsNull(this.tableNOTICE.NOTICE_WRONG_ADDRESSColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetNOTICE_WRONG_ADDRESSNull() {
+                this[this.tableNOTICE.NOTICE_WRONG_ADDRESSColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsNOTICE_CO_NAMENull() {
+                return this.IsNull(this.tableNOTICE.NOTICE_CO_NAMEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetNOTICE_CO_NAMENull() {
+                this[this.tableNOTICE.NOTICE_CO_NAMEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsNOTICE_BALANCENull() {
+                return this.IsNull(this.tableNOTICE.NOTICE_BALANCEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetNOTICE_BALANCENull() {
+                this[this.tableNOTICE.NOTICE_BALANCEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsNOTICE_DISTRIBUTOR_NONull() {
+                return this.IsNull(this.tableNOTICE.NOTICE_DISTRIBUTOR_NOColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetNOTICE_DISTRIBUTOR_NONull() {
+                this[this.tableNOTICE.NOTICE_DISTRIBUTOR_NOColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsNOTICE_PAID_THRUNull() {
+                return this.IsNull(this.tableNOTICE.NOTICE_PAID_THRUColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetNOTICE_PAID_THRUNull() {
+                this[this.tableNOTICE.NOTICE_PAID_THRUColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsNOTICE_ALLOTMENTNull() {
+                return this.IsNull(this.tableNOTICE.NOTICE_ALLOTMENTColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetNOTICE_ALLOTMENTNull() {
+                this[this.tableNOTICE.NOTICE_ALLOTMENTColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsNOTICE_AUTOPAYNull() {
+                return this.IsNull(this.tableNOTICE.NOTICE_AUTOPAYColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetNOTICE_AUTOPAYNull() {
+                this[this.tableNOTICE.NOTICE_AUTOPAYColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsNOTICE_PO_NUMBERNull() {
+                return this.IsNull(this.tableNOTICE.NOTICE_PO_NUMBERColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetNOTICE_PO_NUMBERNull() {
+                this[this.tableNOTICE.NOTICE_PO_NUMBERColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsNOTICE_INT_TODATENull() {
+                return this.IsNull(this.tableNOTICE.NOTICE_INT_TODATEColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetNOTICE_INT_TODATENull() {
+                this[this.tableNOTICE.NOTICE_INT_TODATEColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsPostDateNull() {
+                return this.IsNull(this.tableNOTICE.PostDateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetPostDateNull() {
+                this[this.tableNOTICE.PostDateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsAmountPastDueNull() {
+                return this.IsNull(this.tableNOTICE.AmountPastDueColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetAmountPastDueNull() {
+                this[this.tableNOTICE.AmountPastDueColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsPartialPaymentNull() {
+                return this.IsNull(this.tableNOTICE.PartialPaymentColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetPartialPaymentNull() {
+                this[this.tableNOTICE.PartialPaymentColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -34360,6 +36004,40 @@ namespace IAC2018SQL {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public MASTHISTRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public class NOTICERowChangeEvent : global::System.EventArgs {
+            
+            private NOTICERow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public NOTICERowChangeEvent(NOTICERow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public NOTICERow Row {
                 get {
                     return this.eventRow;
                 }
@@ -55374,6 +57052,957 @@ FROM            MASTHIST";
     }
     
     /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class NOTICETableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public NOTICETableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "NOTICE";
+            tableMapping.ColumnMappings.Add("NOTICE_NO", "NOTICE_NO");
+            tableMapping.ColumnMappings.Add("NOTICE_ADD_ON", "NOTICE_ADD_ON");
+            tableMapping.ColumnMappings.Add("NOTICE_IAC_TYPE", "NOTICE_IAC_TYPE");
+            tableMapping.ColumnMappings.Add("NOTICE_NAME", "NOTICE_NAME");
+            tableMapping.ColumnMappings.Add("NOTICE_FORM_NO", "NOTICE_FORM_NO");
+            tableMapping.ColumnMappings.Add("NOTICE_DEALER", "NOTICE_DEALER");
+            tableMapping.ColumnMappings.Add("NOTICE_DAY_DUE", "NOTICE_DAY_DUE");
+            tableMapping.ColumnMappings.Add("NOTICE_STREET_1", "NOTICE_STREET_1");
+            tableMapping.ColumnMappings.Add("NOTICE_CITY", "NOTICE_CITY");
+            tableMapping.ColumnMappings.Add("NOTICE_STATE", "NOTICE_STATE");
+            tableMapping.ColumnMappings.Add("NOTICE_ZIP_CODE", "NOTICE_ZIP_CODE");
+            tableMapping.ColumnMappings.Add("NOTICE_COUNTRY", "NOTICE_COUNTRY");
+            tableMapping.ColumnMappings.Add("NOTICE_PHONE_NO", "NOTICE_PHONE_NO");
+            tableMapping.ColumnMappings.Add("NOTICE_WORK_PHONE", "NOTICE_WORK_PHONE");
+            tableMapping.ColumnMappings.Add("NOTICE_WORK_EXT", "NOTICE_WORK_EXT");
+            tableMapping.ColumnMappings.Add("NOTICE_REGULAR_AMOUNT", "NOTICE_REGULAR_AMOUNT");
+            tableMapping.ColumnMappings.Add("NOTICE_LATE_CHARGE", "NOTICE_LATE_CHARGE");
+            tableMapping.ColumnMappings.Add("NOTICE_LATE_CHARGE_BAL", "NOTICE_LATE_CHARGE_BAL");
+            tableMapping.ColumnMappings.Add("NOTICE_CONTRACT_STATUS", "NOTICE_CONTRACT_STATUS");
+            tableMapping.ColumnMappings.Add("NOTICE_LATE_DATE", "NOTICE_LATE_DATE");
+            tableMapping.ColumnMappings.Add("NOTICE_WRONG_ADDRESS", "NOTICE_WRONG_ADDRESS");
+            tableMapping.ColumnMappings.Add("NOTICE_CO_NAME", "NOTICE_CO_NAME");
+            tableMapping.ColumnMappings.Add("NOTICE_BALANCE", "NOTICE_BALANCE");
+            tableMapping.ColumnMappings.Add("NOTICE_DISTRIBUTOR_NO", "NOTICE_DISTRIBUTOR_NO");
+            tableMapping.ColumnMappings.Add("NOTICE_PAID_THRU", "NOTICE_PAID_THRU");
+            tableMapping.ColumnMappings.Add("NOTICE_ALLOTMENT", "NOTICE_ALLOTMENT");
+            tableMapping.ColumnMappings.Add("NOTICE_AUTOPAY", "NOTICE_AUTOPAY");
+            tableMapping.ColumnMappings.Add("NOTICE_PO_NUMBER", "NOTICE_PO_NUMBER");
+            tableMapping.ColumnMappings.Add("NOTICE_INT_TODATE", "NOTICE_INT_TODATE");
+            tableMapping.ColumnMappings.Add("PostDate", "PostDate");
+            tableMapping.ColumnMappings.Add("AmountPastDue", "AmountPastDue");
+            tableMapping.ColumnMappings.Add("PartialPayment", "PartialPayment");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = "dbo.ClosedNoticeDelete";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOTICE_NO", global::System.Data.SqlDbType.VarChar, 6, global::System.Data.ParameterDirection.Input, 0, 0, "NOTICE_NO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = "dbo.ClosedNoticeInsert";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOTICE_NO", global::System.Data.SqlDbType.Char, 6, global::System.Data.ParameterDirection.Input, 0, 0, "NOTICE_NO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOTICE_ADD_ON", global::System.Data.SqlDbType.Char, 1, global::System.Data.ParameterDirection.Input, 0, 0, "NOTICE_ADD_ON", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOTICE_IAC_TYPE", global::System.Data.SqlDbType.Char, 1, global::System.Data.ParameterDirection.Input, 0, 0, "NOTICE_IAC_TYPE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOTICE_NAME", global::System.Data.SqlDbType.VarChar, 31, global::System.Data.ParameterDirection.Input, 0, 0, "NOTICE_NAME", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOTICE_FORM_NO", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, "NOTICE_FORM_NO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOTICE_DEALER", global::System.Data.SqlDbType.Char, 3, global::System.Data.ParameterDirection.Input, 0, 0, "NOTICE_DEALER", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOTICE_DAY_DUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, "NOTICE_DAY_DUE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOTICE_STREET_1", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "NOTICE_STREET_1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOTICE_CITY", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "NOTICE_CITY", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOTICE_STATE", global::System.Data.SqlDbType.Char, 2, global::System.Data.ParameterDirection.Input, 0, 0, "NOTICE_STATE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOTICE_ZIP_CODE", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "NOTICE_ZIP_CODE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOTICE_COUNTRY", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "NOTICE_COUNTRY", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOTICE_PHONE_NO", global::System.Data.SqlDbType.VarChar, 12, global::System.Data.ParameterDirection.Input, 0, 0, "NOTICE_PHONE_NO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOTICE_WORK_PHONE", global::System.Data.SqlDbType.VarChar, 12, global::System.Data.ParameterDirection.Input, 0, 0, "NOTICE_WORK_PHONE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOTICE_WORK_EXT", global::System.Data.SqlDbType.VarChar, 4, global::System.Data.ParameterDirection.Input, 0, 0, "NOTICE_WORK_EXT", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOTICE_REGULAR_AMOUNT", global::System.Data.SqlDbType.Money, 8, global::System.Data.ParameterDirection.Input, 19, 4, "NOTICE_REGULAR_AMOUNT", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOTICE_LATE_CHARGE", global::System.Data.SqlDbType.Money, 8, global::System.Data.ParameterDirection.Input, 19, 4, "NOTICE_LATE_CHARGE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOTICE_LATE_CHARGE_BAL", global::System.Data.SqlDbType.Money, 8, global::System.Data.ParameterDirection.Input, 19, 4, "NOTICE_LATE_CHARGE_BAL", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOTICE_CONTRACT_STATUS", global::System.Data.SqlDbType.Money, 8, global::System.Data.ParameterDirection.Input, 19, 4, "NOTICE_CONTRACT_STATUS", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOTICE_LATE_DATE", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, "NOTICE_LATE_DATE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOTICE_WRONG_ADDRESS", global::System.Data.SqlDbType.VarChar, 1, global::System.Data.ParameterDirection.Input, 0, 0, "NOTICE_WRONG_ADDRESS", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOTICE_CO_NAME", global::System.Data.SqlDbType.VarChar, 25, global::System.Data.ParameterDirection.Input, 0, 0, "NOTICE_CO_NAME", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOTICE_BALANCE", global::System.Data.SqlDbType.Money, 8, global::System.Data.ParameterDirection.Input, 19, 4, "NOTICE_BALANCE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOTICE_DISTRIBUTOR_NO", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, "NOTICE_DISTRIBUTOR_NO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOTICE_PAID_THRU", global::System.Data.SqlDbType.Char, 4, global::System.Data.ParameterDirection.Input, 0, 0, "NOTICE_PAID_THRU", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOTICE_ALLOTMENT", global::System.Data.SqlDbType.Char, 1, global::System.Data.ParameterDirection.Input, 0, 0, "NOTICE_ALLOTMENT", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOTICE_AUTOPAY", global::System.Data.SqlDbType.Char, 1, global::System.Data.ParameterDirection.Input, 0, 0, "NOTICE_AUTOPAY", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOTICE_PO_NUMBER", global::System.Data.SqlDbType.VarChar, 8, global::System.Data.ParameterDirection.Input, 0, 0, "NOTICE_PO_NUMBER", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOTICE_INT_TODATE", global::System.Data.SqlDbType.Money, 8, global::System.Data.ParameterDirection.Input, 19, 4, "NOTICE_INT_TODATE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PostDate", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, "PostDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AmountPastDue", global::System.Data.SqlDbType.Money, 8, global::System.Data.ParameterDirection.Input, 19, 4, "AmountPastDue", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PartialPayment", global::System.Data.SqlDbType.Money, 8, global::System.Data.ParameterDirection.Input, 19, 4, "PartialPayment", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = "dbo.ClosedNoticeUpdate";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOTICE_NO", global::System.Data.SqlDbType.VarChar, 6, global::System.Data.ParameterDirection.Input, 0, 0, "NOTICE_NO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOTICE_ADD_ON", global::System.Data.SqlDbType.VarChar, 1, global::System.Data.ParameterDirection.Input, 0, 0, "NOTICE_ADD_ON", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOTICE_IAC_TYPE", global::System.Data.SqlDbType.VarChar, 1, global::System.Data.ParameterDirection.Input, 0, 0, "NOTICE_IAC_TYPE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOTICE_NAME", global::System.Data.SqlDbType.VarChar, 31, global::System.Data.ParameterDirection.Input, 0, 0, "NOTICE_NAME", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOTICE_FORM_NO", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, "NOTICE_FORM_NO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOTICE_DEALER", global::System.Data.SqlDbType.VarChar, 3, global::System.Data.ParameterDirection.Input, 0, 0, "NOTICE_DEALER", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOTICE_DAY_DUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, "NOTICE_DAY_DUE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOTICE_STREET_1", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "NOTICE_STREET_1", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOTICE_CITY", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "NOTICE_CITY", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOTICE_STATE", global::System.Data.SqlDbType.VarChar, 2, global::System.Data.ParameterDirection.Input, 0, 0, "NOTICE_STATE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOTICE_ZIP_CODE", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "NOTICE_ZIP_CODE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOTICE_COUNTRY", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "NOTICE_COUNTRY", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOTICE_PHONE_NO", global::System.Data.SqlDbType.VarChar, 12, global::System.Data.ParameterDirection.Input, 0, 0, "NOTICE_PHONE_NO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOTICE_WORK_PHONE", global::System.Data.SqlDbType.VarChar, 12, global::System.Data.ParameterDirection.Input, 0, 0, "NOTICE_WORK_PHONE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOTICE_WORK_EXT", global::System.Data.SqlDbType.VarChar, 4, global::System.Data.ParameterDirection.Input, 0, 0, "NOTICE_WORK_EXT", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOTICE_REGULAR_AMOUNT", global::System.Data.SqlDbType.Money, 8, global::System.Data.ParameterDirection.Input, 19, 4, "NOTICE_REGULAR_AMOUNT", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOTICE_LATE_CHARGE", global::System.Data.SqlDbType.Money, 8, global::System.Data.ParameterDirection.Input, 19, 4, "NOTICE_LATE_CHARGE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOTICE_LATE_CHARGE_BAL", global::System.Data.SqlDbType.Money, 8, global::System.Data.ParameterDirection.Input, 19, 4, "NOTICE_LATE_CHARGE_BAL", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOTICE_CONTRACT_STATUS", global::System.Data.SqlDbType.Money, 8, global::System.Data.ParameterDirection.Input, 19, 4, "NOTICE_CONTRACT_STATUS", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOTICE_LATE_DATE", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 10, 0, "NOTICE_LATE_DATE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOTICE_WRONG_ADDRESS", global::System.Data.SqlDbType.VarChar, 1, global::System.Data.ParameterDirection.Input, 0, 0, "NOTICE_WRONG_ADDRESS", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOTICE_CO_NAME", global::System.Data.SqlDbType.VarChar, 25, global::System.Data.ParameterDirection.Input, 0, 0, "NOTICE_CO_NAME", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOTICE_BALANCE", global::System.Data.SqlDbType.Money, 8, global::System.Data.ParameterDirection.Input, 19, 4, "NOTICE_BALANCE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOTICE_DISTRIBUTOR_NO", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, "NOTICE_DISTRIBUTOR_NO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOTICE_PAID_THRU", global::System.Data.SqlDbType.VarChar, 4, global::System.Data.ParameterDirection.Input, 0, 0, "NOTICE_PAID_THRU", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOTICE_ALLOTMENT", global::System.Data.SqlDbType.VarChar, 1, global::System.Data.ParameterDirection.Input, 0, 0, "NOTICE_ALLOTMENT", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOTICE_AUTOPAY", global::System.Data.SqlDbType.VarChar, 1, global::System.Data.ParameterDirection.Input, 0, 0, "NOTICE_AUTOPAY", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOTICE_PO_NUMBER", global::System.Data.SqlDbType.VarChar, 8, global::System.Data.ParameterDirection.Input, 0, 0, "NOTICE_PO_NUMBER", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOTICE_INT_TODATE", global::System.Data.SqlDbType.Money, 8, global::System.Data.ParameterDirection.Input, 19, 4, "NOTICE_INT_TODATE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PostDate", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, "PostDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AmountPastDue", global::System.Data.SqlDbType.Money, 8, global::System.Data.ParameterDirection.Input, 19, 4, "AmountPastDue", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PartialPayment", global::System.Data.SqlDbType.Money, 8, global::System.Data.ParameterDirection.Input, 19, 4, "PartialPayment", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::IAC2018SQL.Properties.Settings.Default.SSISParamsConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[5];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "dbo.ClosedNoticeSelect";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOTICE_NO", global::System.Data.SqlDbType.VarChar, 6, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "dbo.ClosedNoticeDeleteAll";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "dbo.ClosedNoticeDeleteNonArrears";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "dbo.ClosedNoticeFillAll";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[4].Connection = this.Connection;
+            this._commandCollection[4].CommandText = "dbo.ClosedNoticeFixNoticeStatus";
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(ProductionMainTables.NOTICEDataTable dataTable, string NOTICE_NO) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((NOTICE_NO == null)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(NOTICE_NO));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual ProductionMainTables.NOTICEDataTable GetData(string NOTICE_NO) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((NOTICE_NO == null)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(NOTICE_NO));
+            }
+            ProductionMainTables.NOTICEDataTable dataTable = new ProductionMainTables.NOTICEDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillAll(ProductionMainTables.NOTICEDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual ProductionMainTables.NOTICEDataTable GetDataAll() {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            ProductionMainTables.NOTICEDataTable dataTable = new ProductionMainTables.NOTICEDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(ProductionMainTables.NOTICEDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(ProductionMainTables dataSet) {
+            return this.Adapter.Update(dataSet, "NOTICE");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(string NOTICE_NO) {
+            if ((NOTICE_NO == null)) {
+                this.Adapter.DeleteCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(NOTICE_NO));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(
+                    string NOTICE_NO, 
+                    string NOTICE_ADD_ON, 
+                    string NOTICE_IAC_TYPE, 
+                    string NOTICE_NAME, 
+                    global::System.Nullable<int> NOTICE_FORM_NO, 
+                    string NOTICE_DEALER, 
+                    global::System.Nullable<int> NOTICE_DAY_DUE, 
+                    string NOTICE_STREET_1, 
+                    string NOTICE_CITY, 
+                    string NOTICE_STATE, 
+                    string NOTICE_ZIP_CODE, 
+                    string NOTICE_COUNTRY, 
+                    string NOTICE_PHONE_NO, 
+                    string NOTICE_WORK_PHONE, 
+                    string NOTICE_WORK_EXT, 
+                    global::System.Nullable<decimal> NOTICE_REGULAR_AMOUNT, 
+                    global::System.Nullable<decimal> NOTICE_LATE_CHARGE, 
+                    global::System.Nullable<decimal> NOTICE_LATE_CHARGE_BAL, 
+                    global::System.Nullable<decimal> NOTICE_CONTRACT_STATUS, 
+                    global::System.Nullable<global::System.DateTime> NOTICE_LATE_DATE, 
+                    string NOTICE_WRONG_ADDRESS, 
+                    string NOTICE_CO_NAME, 
+                    global::System.Nullable<decimal> NOTICE_BALANCE, 
+                    global::System.Nullable<int> NOTICE_DISTRIBUTOR_NO, 
+                    string NOTICE_PAID_THRU, 
+                    string NOTICE_ALLOTMENT, 
+                    string NOTICE_AUTOPAY, 
+                    string NOTICE_PO_NUMBER, 
+                    global::System.Nullable<decimal> NOTICE_INT_TODATE, 
+                    global::System.Nullable<global::System.DateTime> PostDate, 
+                    global::System.Nullable<decimal> AmountPastDue, 
+                    global::System.Nullable<decimal> PartialPayment) {
+            if ((NOTICE_NO == null)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(NOTICE_NO));
+            }
+            if ((NOTICE_ADD_ON == null)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(NOTICE_ADD_ON));
+            }
+            if ((NOTICE_IAC_TYPE == null)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(NOTICE_IAC_TYPE));
+            }
+            if ((NOTICE_NAME == null)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(NOTICE_NAME));
+            }
+            if ((NOTICE_FORM_NO.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((int)(NOTICE_FORM_NO.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            if ((NOTICE_DEALER == null)) {
+                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(NOTICE_DEALER));
+            }
+            if ((NOTICE_DAY_DUE.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((int)(NOTICE_DAY_DUE.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            if ((NOTICE_STREET_1 == null)) {
+                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(NOTICE_STREET_1));
+            }
+            if ((NOTICE_CITY == null)) {
+                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(NOTICE_CITY));
+            }
+            if ((NOTICE_STATE == null)) {
+                this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(NOTICE_STATE));
+            }
+            if ((NOTICE_ZIP_CODE == null)) {
+                this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(NOTICE_ZIP_CODE));
+            }
+            if ((NOTICE_COUNTRY == null)) {
+                this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[12].Value = ((string)(NOTICE_COUNTRY));
+            }
+            if ((NOTICE_PHONE_NO == null)) {
+                this.Adapter.InsertCommand.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[13].Value = ((string)(NOTICE_PHONE_NO));
+            }
+            if ((NOTICE_WORK_PHONE == null)) {
+                this.Adapter.InsertCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[14].Value = ((string)(NOTICE_WORK_PHONE));
+            }
+            if ((NOTICE_WORK_EXT == null)) {
+                this.Adapter.InsertCommand.Parameters[15].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[15].Value = ((string)(NOTICE_WORK_EXT));
+            }
+            if ((NOTICE_REGULAR_AMOUNT.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[16].Value = ((decimal)(NOTICE_REGULAR_AMOUNT.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            if ((NOTICE_LATE_CHARGE.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[17].Value = ((decimal)(NOTICE_LATE_CHARGE.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[17].Value = global::System.DBNull.Value;
+            }
+            if ((NOTICE_LATE_CHARGE_BAL.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[18].Value = ((decimal)(NOTICE_LATE_CHARGE_BAL.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            if ((NOTICE_CONTRACT_STATUS.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[19].Value = ((decimal)(NOTICE_CONTRACT_STATUS.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[19].Value = global::System.DBNull.Value;
+            }
+            if ((NOTICE_LATE_DATE.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[20].Value = ((System.DateTime)(NOTICE_LATE_DATE.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[20].Value = global::System.DBNull.Value;
+            }
+            if ((NOTICE_WRONG_ADDRESS == null)) {
+                this.Adapter.InsertCommand.Parameters[21].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[21].Value = ((string)(NOTICE_WRONG_ADDRESS));
+            }
+            if ((NOTICE_CO_NAME == null)) {
+                this.Adapter.InsertCommand.Parameters[22].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[22].Value = ((string)(NOTICE_CO_NAME));
+            }
+            if ((NOTICE_BALANCE.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[23].Value = ((decimal)(NOTICE_BALANCE.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[23].Value = global::System.DBNull.Value;
+            }
+            if ((NOTICE_DISTRIBUTOR_NO.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[24].Value = ((int)(NOTICE_DISTRIBUTOR_NO.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[24].Value = global::System.DBNull.Value;
+            }
+            if ((NOTICE_PAID_THRU == null)) {
+                this.Adapter.InsertCommand.Parameters[25].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[25].Value = ((string)(NOTICE_PAID_THRU));
+            }
+            if ((NOTICE_ALLOTMENT == null)) {
+                this.Adapter.InsertCommand.Parameters[26].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[26].Value = ((string)(NOTICE_ALLOTMENT));
+            }
+            if ((NOTICE_AUTOPAY == null)) {
+                this.Adapter.InsertCommand.Parameters[27].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[27].Value = ((string)(NOTICE_AUTOPAY));
+            }
+            if ((NOTICE_PO_NUMBER == null)) {
+                this.Adapter.InsertCommand.Parameters[28].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[28].Value = ((string)(NOTICE_PO_NUMBER));
+            }
+            if ((NOTICE_INT_TODATE.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[29].Value = ((decimal)(NOTICE_INT_TODATE.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[29].Value = global::System.DBNull.Value;
+            }
+            if ((PostDate.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[30].Value = ((System.DateTime)(PostDate.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[30].Value = global::System.DBNull.Value;
+            }
+            if ((AmountPastDue.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[31].Value = ((decimal)(AmountPastDue.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[31].Value = global::System.DBNull.Value;
+            }
+            if ((PartialPayment.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[32].Value = ((decimal)(PartialPayment.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[32].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(
+                    string NOTICE_NO, 
+                    string NOTICE_ADD_ON, 
+                    string NOTICE_IAC_TYPE, 
+                    string NOTICE_NAME, 
+                    global::System.Nullable<int> NOTICE_FORM_NO, 
+                    string NOTICE_DEALER, 
+                    global::System.Nullable<int> NOTICE_DAY_DUE, 
+                    string NOTICE_STREET_1, 
+                    string NOTICE_CITY, 
+                    string NOTICE_STATE, 
+                    string NOTICE_ZIP_CODE, 
+                    string NOTICE_COUNTRY, 
+                    string NOTICE_PHONE_NO, 
+                    string NOTICE_WORK_PHONE, 
+                    string NOTICE_WORK_EXT, 
+                    global::System.Nullable<decimal> NOTICE_REGULAR_AMOUNT, 
+                    global::System.Nullable<decimal> NOTICE_LATE_CHARGE, 
+                    global::System.Nullable<decimal> NOTICE_LATE_CHARGE_BAL, 
+                    global::System.Nullable<decimal> NOTICE_CONTRACT_STATUS, 
+                    global::System.Nullable<global::System.DateTime> NOTICE_LATE_DATE, 
+                    string NOTICE_WRONG_ADDRESS, 
+                    string NOTICE_CO_NAME, 
+                    global::System.Nullable<decimal> NOTICE_BALANCE, 
+                    global::System.Nullable<int> NOTICE_DISTRIBUTOR_NO, 
+                    string NOTICE_PAID_THRU, 
+                    string NOTICE_ALLOTMENT, 
+                    string NOTICE_AUTOPAY, 
+                    string NOTICE_PO_NUMBER, 
+                    global::System.Nullable<decimal> NOTICE_INT_TODATE, 
+                    global::System.Nullable<global::System.DateTime> PostDate, 
+                    global::System.Nullable<decimal> AmountPastDue, 
+                    global::System.Nullable<decimal> PartialPayment) {
+            if ((NOTICE_NO == null)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(NOTICE_NO));
+            }
+            if ((NOTICE_ADD_ON == null)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(NOTICE_ADD_ON));
+            }
+            if ((NOTICE_IAC_TYPE == null)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(NOTICE_IAC_TYPE));
+            }
+            if ((NOTICE_NAME == null)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(NOTICE_NAME));
+            }
+            if ((NOTICE_FORM_NO.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(NOTICE_FORM_NO.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            if ((NOTICE_DEALER == null)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(NOTICE_DEALER));
+            }
+            if ((NOTICE_DAY_DUE.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(NOTICE_DAY_DUE.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            if ((NOTICE_STREET_1 == null)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(NOTICE_STREET_1));
+            }
+            if ((NOTICE_CITY == null)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(NOTICE_CITY));
+            }
+            if ((NOTICE_STATE == null)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(NOTICE_STATE));
+            }
+            if ((NOTICE_ZIP_CODE == null)) {
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(NOTICE_ZIP_CODE));
+            }
+            if ((NOTICE_COUNTRY == null)) {
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(NOTICE_COUNTRY));
+            }
+            if ((NOTICE_PHONE_NO == null)) {
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(NOTICE_PHONE_NO));
+            }
+            if ((NOTICE_WORK_PHONE == null)) {
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(NOTICE_WORK_PHONE));
+            }
+            if ((NOTICE_WORK_EXT == null)) {
+                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(NOTICE_WORK_EXT));
+            }
+            if ((NOTICE_REGULAR_AMOUNT.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((decimal)(NOTICE_REGULAR_AMOUNT.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+            }
+            if ((NOTICE_LATE_CHARGE.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((decimal)(NOTICE_LATE_CHARGE.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
+            }
+            if ((NOTICE_LATE_CHARGE_BAL.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((decimal)(NOTICE_LATE_CHARGE_BAL.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
+            }
+            if ((NOTICE_CONTRACT_STATUS.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((decimal)(NOTICE_CONTRACT_STATUS.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
+            }
+            if ((NOTICE_LATE_DATE.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((System.DateTime)(NOTICE_LATE_DATE.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
+            }
+            if ((NOTICE_WRONG_ADDRESS == null)) {
+                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(NOTICE_WRONG_ADDRESS));
+            }
+            if ((NOTICE_CO_NAME == null)) {
+                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(NOTICE_CO_NAME));
+            }
+            if ((NOTICE_BALANCE.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((decimal)(NOTICE_BALANCE.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
+            }
+            if ((NOTICE_DISTRIBUTOR_NO.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((int)(NOTICE_DISTRIBUTOR_NO.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
+            }
+            if ((NOTICE_PAID_THRU == null)) {
+                this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((string)(NOTICE_PAID_THRU));
+            }
+            if ((NOTICE_ALLOTMENT == null)) {
+                this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(NOTICE_ALLOTMENT));
+            }
+            if ((NOTICE_AUTOPAY == null)) {
+                this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((string)(NOTICE_AUTOPAY));
+            }
+            if ((NOTICE_PO_NUMBER == null)) {
+                this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((string)(NOTICE_PO_NUMBER));
+            }
+            if ((NOTICE_INT_TODATE.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((decimal)(NOTICE_INT_TODATE.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[29].Value = global::System.DBNull.Value;
+            }
+            if ((PostDate.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((System.DateTime)(PostDate.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[30].Value = global::System.DBNull.Value;
+            }
+            if ((AmountPastDue.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((decimal)(AmountPastDue.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[31].Value = global::System.DBNull.Value;
+            }
+            if ((PartialPayment.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[32].Value = ((decimal)(PartialPayment.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[32].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
+        public virtual int DeleteAll() {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
+        public virtual int DeleteNonArrears() {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int FixNoticeStatus() {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[4];
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+    }
+    
+    /// <summary>
     ///TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
     ///</summary>
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -55412,6 +58041,8 @@ FROM            MASTHIST";
         private MASTERTableAdapter _mASTERTableAdapter;
         
         private MASTHISTTableAdapter _mASTHISTTableAdapter;
+        
+        private NOTICETableAdapter _nOTICETableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -55626,6 +58257,20 @@ FROM            MASTHIST";
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public NOTICETableAdapter NOTICETableAdapter {
+            get {
+                return this._nOTICETableAdapter;
+            }
+            set {
+                this._nOTICETableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public bool BackupDataSetBeforeUpdate {
             get {
                 return this._backupDataSetBeforeUpdate;
@@ -55699,6 +58344,10 @@ FROM            MASTHIST";
                             && (this._mASTHISTTableAdapter.Connection != null))) {
                     return this._mASTHISTTableAdapter.Connection;
                 }
+                if (((this._nOTICETableAdapter != null) 
+                            && (this._nOTICETableAdapter.Connection != null))) {
+                    return this._nOTICETableAdapter.Connection;
+                }
                 return null;
             }
             set {
@@ -55752,6 +58401,9 @@ FROM            MASTHIST";
                     count = (count + 1);
                 }
                 if ((this._mASTHISTTableAdapter != null)) {
+                    count = (count + 1);
+                }
+                if ((this._nOTICETableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -55891,6 +58543,15 @@ FROM            MASTHIST";
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._nOTICETableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.NOTICE.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._nOTICETableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             return result;
         }
         
@@ -56013,6 +58674,14 @@ FROM            MASTHIST";
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._nOTICETableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.NOTICE.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._nOTICETableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             return result;
         }
         
@@ -56023,6 +58692,14 @@ FROM            MASTHIST";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateDeletedRows(ProductionMainTables dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
+            if ((this._nOTICETableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.NOTICE.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._nOTICETableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._mASTHISTTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.MASTHIST.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -56244,6 +58921,11 @@ FROM            MASTHIST";
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
+            if (((this._nOTICETableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._nOTICETableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
+                        "tring.");
+            }
             global::System.Data.IDbConnection workConnection = this.Connection;
             if ((workConnection == null)) {
                 throw new global::System.ApplicationException("TableAdapterManager contains no connection information. Set each TableAdapterMana" +
@@ -56402,6 +59084,15 @@ FROM            MASTHIST";
                         adaptersWithAcceptChangesDuringUpdate.Add(this._mASTHISTTableAdapter.Adapter);
                     }
                 }
+                if ((this._nOTICETableAdapter != null)) {
+                    revertConnections.Add(this._nOTICETableAdapter, this._nOTICETableAdapter.Connection);
+                    this._nOTICETableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._nOTICETableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._nOTICETableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._nOTICETableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._nOTICETableAdapter.Adapter);
+                    }
+                }
                 // 
                 //---- Perform updates -----------
                 //
@@ -56515,6 +59206,10 @@ FROM            MASTHIST";
                 if ((this._mASTHISTTableAdapter != null)) {
                     this._mASTHISTTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._mASTHISTTableAdapter]));
                     this._mASTHISTTableAdapter.Transaction = null;
+                }
+                if ((this._nOTICETableAdapter != null)) {
+                    this._nOTICETableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._nOTICETableAdapter]));
+                    this._nOTICETableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];
