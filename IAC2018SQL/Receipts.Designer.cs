@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormReciept));
-            this.iacDataSetReceipts = new IAC2018SQL.ProductionMainTables();
-            this.opnclscustomerTableAdapter = new IAC2018SQL.ListDataTableAdapters.OPNCLSCUSTOMERTableAdapter();
-            this.opndealrTableAdapter = new IAC2018SQL.ProductionMainTablesTableAdapters.OPNDEALRTableAdapter();
-            this.dealerTableAdapter = new IAC2018SQL.ProductionMainTablesTableAdapters.DEALERTableAdapter();
+            this.iacDataSetReceipts = new IAC2018SQL.IACDataSet();
+            this.opnclscustomerTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.OPNCLSCUSTOMERTableAdapter();
+            this.opndealrTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.OPNDEALRTableAdapter();
+            this.dealerTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.DEALERTableAdapter();
             this.textBoxCustomerNo = new System.Windows.Forms.TextBox();
             this.bindingSourceCustomer = new System.Windows.Forms.BindingSource(this.components);
             this.cUSTOMER_SUFFIXTextBox = new System.Windows.Forms.TextBox();
@@ -60,7 +60,7 @@
             this.textBoxDealerName = new System.Windows.Forms.TextBox();
             this.textBoxDealerAccNo = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.ulistTableAdapter = new IAC2018SQL.ProductionMainTablesTableAdapters.ULISTTableAdapter();
+            this.ulistTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.ULISTTableAdapter();
             this.textBoxUserName = new System.Windows.Forms.TextBox();
             this.textBoxUserID = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -72,7 +72,7 @@
             this.toolStripButtonDelete = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonSave = new System.Windows.Forms.ToolStripButton();
             this.bindingSourceORECEIPT = new System.Windows.Forms.BindingSource(this.components);
-            this.oRECEIPTTableAdapter = new IAC2018SQL.ProductionMainTablesTableAdapters.ORECEIPTTableAdapter();
+            this.oRECEIPTTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.ORECEIPTTableAdapter();
             this.textBoxAmountPaid = new System.Windows.Forms.TextBox();
             this.labelAmountPaid = new System.Windows.Forms.Label();
             this.textBoxCashTendered = new System.Windows.Forms.TextBox();
@@ -1575,10 +1575,10 @@
 
         #endregion
 
-        private ProductionMainTables iacDataSetReceipts;
-        private ListDataTableAdapters.OPNCLSCUSTOMERTableAdapter opnclscustomerTableAdapter;
-        private ProductionMainTablesTableAdapters.OPNDEALRTableAdapter opndealrTableAdapter;
-        private ProductionMainTablesTableAdapters.DEALERTableAdapter dealerTableAdapter;
+        private IACDataSet iacDataSetReceipts;
+        private IACDataSetTableAdapters.OPNCLSCUSTOMERTableAdapter opnclscustomerTableAdapter;
+        private IACDataSetTableAdapters.OPNDEALRTableAdapter opndealrTableAdapter;
+        private IACDataSetTableAdapters.DEALERTableAdapter dealerTableAdapter;
         private System.Windows.Forms.TextBox textBoxCustomerNo;
         private System.Windows.Forms.BindingSource bindingSourceCustomer;
         private System.Windows.Forms.TextBox cUSTOMER_SUFFIXTextBox;
@@ -1605,7 +1605,7 @@
         private System.Windows.Forms.TextBox textBoxDealerName;
         private System.Windows.Forms.TextBox textBoxDealerAccNo;
         private System.Windows.Forms.Label label8;
-        private ProductionMainTablesTableAdapters.ULISTTableAdapter ulistTableAdapter;
+        private IACDataSetTableAdapters.ULISTTableAdapter ulistTableAdapter;
         private System.Windows.Forms.TextBox textBoxUserName;
         private System.Windows.Forms.TextBox textBoxUserID;
         private System.Windows.Forms.Label label9;
@@ -1616,7 +1616,7 @@
         private System.Windows.Forms.ToolStripButton toolStripButtonDelete;
         private System.Windows.Forms.ToolStripButton toolStripButtonSave;
         private System.Windows.Forms.BindingSource bindingSourceORECEIPT;
-        private ProductionMainTablesTableAdapters.ORECEIPTTableAdapter oRECEIPTTableAdapter;
+        private IACDataSetTableAdapters.ORECEIPTTableAdapter oRECEIPTTableAdapter;
         private System.Windows.Forms.TextBox textBoxAmountPaid;
         private System.Windows.Forms.Label labelAmountPaid;
         private System.Windows.Forms.TextBox textBoxCashTendered;

@@ -11,7 +11,6 @@ namespace IAC2018SQL
 {
     public partial class FormReciept : Form
     {
-        private ListData ListDataSet = new ListData();
         private String _CustomerNo;
         private String _OpenClose;
 
@@ -85,13 +84,13 @@ namespace IAC2018SQL
             switch (_OpenClose)
             {
                 case "C":
-                    opnclscustomerTableAdapter.FillByClosed(ListDataSet.OPNCLSCUSTOMER, _CustomerNo);
-                    dealerTableAdapter.Fill(iacDataSetReceipts.DEALER, ListDataSet.OPNCLSCUSTOMER.Rows[0].Field<String>("CUSTOMER_DEALER"));
+                    opnclscustomerTableAdapter.FillByClosed(iacDataSetReceipts.OPNCLSCUSTOMER, _CustomerNo);
+                    dealerTableAdapter.Fill(iacDataSetReceipts.DEALER, iacDataSetReceipts.OPNCLSCUSTOMER.Rows[0].Field<String>("CUSTOMER_DEALER"));
                     textBoxDealerName.Text = iacDataSetReceipts.DEALER.Rows[0].Field<String>("DEALER_NAME");
                     break;
                 case "O":
-                    opnclscustomerTableAdapter.FillByOpen(ListDataSet.OPNCLSCUSTOMER, _CustomerNo);
-                    opndealrTableAdapter.Fill(iacDataSetReceipts.OPNDEALR, ListDataSet.OPNCLSCUSTOMER.Rows[0].Field<String>("CUSTOMER_DEALER"));
+                    opnclscustomerTableAdapter.FillByOpen(iacDataSetReceipts.OPNCLSCUSTOMER, _CustomerNo);
+                    opndealrTableAdapter.Fill(iacDataSetReceipts.OPNDEALR, iacDataSetReceipts.OPNCLSCUSTOMER.Rows[0].Field<String>("CUSTOMER_DEALER"));
                     textBoxDealerName.Text = iacDataSetReceipts.OPNDEALR.Rows[0].Field<String>("OPNDEALR_NAME");
                     break;
             }
@@ -99,7 +98,7 @@ namespace IAC2018SQL
             bindingSourceReceipt.EndEdit();
             bindingSourceORECEIPT.AddNew();
             bindingSourceORECEIPT.EndEdit();
-            iacDataSetReceipts.Receipt.Rows[bindingSourceReceipt.Position].SetField<Decimal>("PaidAmount", ListDataSet.OPNCLSCUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_REGULAR_AMOUNT"));
+            iacDataSetReceipts.Receipt.Rows[bindingSourceReceipt.Position].SetField<Decimal>("PaidAmount", iacDataSetReceipts.OPNCLSCUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_REGULAR_AMOUNT"));
             iacDataSetReceipts.Receipt.Rows[bindingSourceReceipt.Position].SetField<Nullable<Int32>>("Cash100", 0);
             iacDataSetReceipts.Receipt.Rows[bindingSourceReceipt.Position].SetField<Nullable<Int32>>("Cash50", 0);
             iacDataSetReceipts.Receipt.Rows[bindingSourceReceipt.Position].SetField<Nullable<Int32>>("Cash20", 0);
