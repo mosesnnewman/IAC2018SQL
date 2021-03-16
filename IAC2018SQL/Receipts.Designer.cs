@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormReciept));
-            this.iacDataSetReceipts = new IAC2018SQL.IACDataSet();
-            this.opnclscustomerTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.OPNCLSCUSTOMERTableAdapter();
+            this.iacDataSetReceipts = new IAC2018SQL.ProductionMainTables();
+            this.opnclscustomerTableAdapter = new IAC2018SQL.ListDataTableAdapters.OPNCLSCUSTOMERTableAdapter();
             this.opndealrTableAdapter = new IAC2018SQL.ProductionMainTablesTableAdapters.OPNDEALRTableAdapter();
             this.dealerTableAdapter = new IAC2018SQL.ProductionMainTablesTableAdapters.DEALERTableAdapter();
             this.textBoxCustomerNo = new System.Windows.Forms.TextBox();
@@ -1575,8 +1575,8 @@
 
         #endregion
 
-        private IACDataSet iacDataSetReceipts;
-        private IACDataSetTableAdapters.OPNCLSCUSTOMERTableAdapter opnclscustomerTableAdapter;
+        private ProductionMainTables iacDataSetReceipts;
+        private ListDataTableAdapters.OPNCLSCUSTOMERTableAdapter opnclscustomerTableAdapter;
         private ProductionMainTablesTableAdapters.OPNDEALRTableAdapter opndealrTableAdapter;
         private ProductionMainTablesTableAdapters.DEALERTableAdapter dealerTableAdapter;
         private System.Windows.Forms.TextBox textBoxCustomerNo;
