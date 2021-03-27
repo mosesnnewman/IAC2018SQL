@@ -1001,6 +1001,21 @@ namespace IAC2018SQL
                             iACDataSet.CUSTOMER.Rows[0].SetField<Decimal>("CUSTOMER_BUYOUT", 0);
                             iACDataSet.CUSTOMER.Rows[0].SetField<Decimal>("CUSTOMER_BALANCE", 0);
                         }
+                    // Moses Newman 03/25/2021 Use CUSTOMER_BUYOUT for TotalDue if Total Due is greater than balance.
+                    if (!lbAddFlag && iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_POST_IND") != lcHighValue)
+                    {
+                        if (iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("TotalDue") >= gnCustomerBalance)
+                            iACDataSet.CUSTOMER.Rows[0].SetField<Decimal>("TotalDue", iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_BUYOUT"));
+                        // Moses Newman 03/26/2021 if total due is negative
+                        if (iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("TotalDue") < 0)
+                            iACDataSet.CUSTOMER.Rows[0].SetField<Decimal>("TotalDue",
+                                iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_REGULAR_AMOUNT") +
+                                iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_LATE_CHARGE") +
+                                (iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_CONTRACT_STATUS") < 0 ? 
+                                Math.Abs(iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_CONTRACT_STATUS")) -
+                                iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_LATE_CHARGE"):0) -
+                                iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("PartialPayment"));
+                    }
                 }
                 else
                 {

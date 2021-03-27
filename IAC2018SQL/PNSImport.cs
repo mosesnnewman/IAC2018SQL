@@ -136,7 +136,7 @@ namespace IAC2018SQL
             return FilesOnly.Count();
         }
 
-        private Boolean ReadPNSFile(PaymentDataSet PNS)
+        private Boolean ReadPNSFile(PaymentDataSet PNS, Boolean withDownload = true)
         {
             IACDataSet PNSIAC = new IACDataSet();
             Boolean ReturnCode = false;
@@ -146,7 +146,7 @@ namespace IAC2018SQL
             IACDataSetTableAdapters.OPNPAYTableAdapter OPNPAYTableAdapter = new IACDataSetTableAdapters.OPNPAYTableAdapter();
             PaymentDataSetTableAdapters.PNSRejectsTableAdapter PNSRejectsTableAdapter = new PaymentDataSetTableAdapters.PNSRejectsTableAdapter();
             PaymentDataSetTableAdapters.PNSIMPORTParamsTableAdapter PNSIMPORTParamsTableAdapter = new PaymentDataSetTableAdapters.PNSIMPORTParamsTableAdapter();
-            Int32 FileNumber = 0, TotalFiles = 0, Progress = 0;
+            Int32 FileNumber = 0, TotalFiles = 0, Progress = 0,TotalDownloads = 0;
             String FilePath = @"\\dc-iac\Public\PayNSeconds\",FullFileName,
                    ConnStringStart = @"Data Source=SQL-IAC;",
                    lsConnect = lsConnect = IAC2018SQL.Properties.Settings.Default.IAC2010SQLConnectionString.ToUpper(),
@@ -165,7 +165,10 @@ namespace IAC2018SQL
             //app = new Microsoft.SqlServer.Dts.Runtime.Application();
             //pkg = app.LoadPackage(pkgLocation, null);
             //pkg.Variables["ConnString"].Value = ConnString;
-            if (DownloadPNSPayments() > 0)
+            // Moses Newman 03/26/2021
+            if (withDownload)
+                TotalDownloads = DownloadPNSPayments();
+            if (TotalDownloads > 0 || !withDownload)
             {
                 PayNSecondsTableAdapter.DeleteAll();
                 var filenames = Directory
@@ -291,7 +294,42 @@ namespace IAC2018SQL
             buttonTransfer.Enabled = false;  // Moses Newman 09/14/2020 disable button so that Transfer SSIS Package can only get called once.
             PaymentDataSetTableAdapters.PayNSecondsTableAdapter PayNSecondsTableAdapter = new PaymentDataSetTableAdapters.PayNSecondsTableAdapter();
             PaymentDataSet PNS = new PaymentDataSet();
-            if (ReadPNSFile(PNS))
+            if (ReadPNSFile(PNS,true))
+            {
+                PayNSecondsTableAdapter.Fill(PNS.PayNSeconds);
+                String lsUNCROOT = Program.GsDataPath, lsOldFile, lsNewFile, FilePath = @"\\dc-iac\Public\PayNSeconds\";
+
+                var filenames = Directory
+                .EnumerateFiles(FilePath, "*.xlsx", SearchOption.TopDirectoryOnly)
+                .Select(Path.GetFileName); // <-- note you can shorten the lambda
+
+                if (PNS.PayNSeconds.Rows.Count != 0)
+                {
+                    foreach (String FileName in filenames)
+                    {
+                        if (FileName.IndexOf("Template.xlsx") == -1)
+                        {
+                            lsOldFile = lsUNCROOT + @"PayNSeconds\" + FileName;
+                            lsNewFile = lsUNCROOT + @"PayNSeconds\Archive\" + FileName;
+                            RenameFile(lsOldFile, lsNewFile);
+                        }
+                    }
+                    MessageBox.Show("*** Import of " + PNS.PayNSeconds.Rows.Count.ToString().Trim() + " PayNSeconds RECORDS complete. ***", "PNS Payments Import");
+                }
+                else
+                    MessageBox.Show("*** NO IVR RECORDS FOUND! ***", "IVR Payments Import");
+            }
+            PayNSecondsTableAdapter.Dispose();
+            PNS.Dispose();
+            this.Close();
+        }
+
+        private void buttonReImport_Click(object sender, EventArgs e)
+        {
+            buttonReImport.Enabled = false;  // Moses Newman 09/14/2020 disable button so that Transfer SSIS Package can only get called once.
+            PaymentDataSetTableAdapters.PayNSecondsTableAdapter PayNSecondsTableAdapter = new PaymentDataSetTableAdapters.PayNSecondsTableAdapter();
+            PaymentDataSet PNS = new PaymentDataSet();
+            if (ReadPNSFile(PNS, false))
             {
                 PayNSecondsTableAdapter.Fill(PNS.PayNSeconds);
                 String lsUNCROOT = Program.GsDataPath, lsOldFile, lsNewFile, FilePath = @"\\dc-iac\Public\PayNSeconds\";

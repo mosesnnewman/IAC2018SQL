@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.Collections.Generic;
 using System.Data;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -2777,6 +2778,7 @@ namespace IAC2018SQL
             return ldNewPaidThru;
         }
 
+		/* Moses Newman 03/12/2021 Use Regex to validate mutliple email addresses 
 		// Moses Newman 12/18/2019 set exception if email address passed is NOT the correct format.
 		public static bool IsValidEmail(string email, ref String errmsg)
 		{
@@ -2789,6 +2791,62 @@ namespace IAC2018SQL
 			catch (System.FormatException e)
 			{
 				errmsg = e.Message;
+				return false;
+			}
+		}*/
+
+		public static bool IsValidEmail(string email, ref String errmsg)
+		{
+			if (string.IsNullOrWhiteSpace(email))
+			{
+				errmsg = "The email address can not be null or all white space!";
+				return false;
+			}
+
+			try
+			{
+				errmsg = "";
+				// Normalize the domain
+				email = Regex.Replace(email, @"(@)(.+)$", DomainMapper,
+									  RegexOptions.None, TimeSpan.FromMilliseconds(200));
+
+				// Examines the domain part of the email and normalizes it.
+				string DomainMapper(Match match)
+				{
+					// Use IdnMapping class to convert Unicode domain names.
+					var idn = new IdnMapping();
+
+					// Pull out and process domain name (throws ArgumentException on invalid)
+					string domainName = idn.GetAscii(match.Groups[2].Value);
+
+					return match.Groups[1].Value + domainName;
+				}
+			}
+			catch (RegexMatchTimeoutException e)
+			{
+				errmsg = e.Message;
+				return false;
+			}
+			catch (ArgumentException e)
+			{
+				errmsg = e.Message;
+				return false;
+			}
+
+			try
+			{
+				errmsg = "";
+				
+				var temp = Regex.IsMatch(email, 
+					@"^(([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)(\s*;\s*|\s*$))*$",
+					RegexOptions.IgnoreCase, TimeSpan.FromMilliseconds(250));
+				if (!temp)
+					errmsg = "Email address(s) not in the correct format!";
+				return temp;
+			}
+			catch (RegexMatchTimeoutException)
+			{
+				errmsg = "Regex Match Timeout!";
 				return false;
 			}
 		}
