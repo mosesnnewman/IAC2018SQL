@@ -232,24 +232,25 @@ namespace IAC2018SQL
             DailyDataSetTableAdapters.DailyInterestTableAdapter DailyInterestTableAdapter = new DailyDataSetTableAdapters.DailyInterestTableAdapter();
             DailyDataSetTableAdapters.DailyPaymentTypeTotalsTableAdapter DailyPaymentTypeTotalsTableAdapter = new DailyDataSetTableAdapters.DailyPaymentTypeTotalsTableAdapter();
             DailyDataSet DailySet = new DailyDataSet();
-            DailyBalanceTotalsTableAdapter.Insert(PAYMENTPostDataSet.PAYMENT.Rows[0].Field<DateTime>("PAYMENT_DATE").Date,
+            // Moses Newman 03/19/2021 Use todays date instead of the first record date PAYMENTPostDataSet.PAYMENT.Rows[0].Field<DateTime>("PAYMENT_DATE").Date
+            DailyBalanceTotalsTableAdapter.Insert(DateTime.Now.Date,
                     lnMasterNP, lnMasterUEI, lnISFTotal, lnMasterNPNP, lnMasterNP + lnMasterUEI + lnMasterNPNP, lnMasterSimpleInterest, lnMasterAmortInterest, 0, (Decimal)lnDlrDiscount,
                     lnMasterSimpleInterest + lnMasterAmortInterest + (Decimal)lnDlrDiscount, lnMasterOloan, lnMasterNP + lnMasterUEI + lnMasterNPNP - lnMasterOloan, lnMasterSundry, lnMasterExt,
                     lnMasterNP + lnMasterUEI + lnMasterNPNP, lnTotalIVR, lnTotalIVRFees, lnTotalIVRAmex, lnMasterNP + (lnMasterUEI + lnMasterNPNP - lnMasterOloan) - (lnMasterSimpleInterest + lnMasterAmortInterest + (Decimal)lnDlrDiscount));
             for (int i = 0; i < PAYMENTPostDataSet.DEALER.Rows.Count; i++)
             {
-                DailyDealerSummaryTableAdapter.Insert(PAYMENTPostDataSet.PAYMENT.Rows[0].Field<DateTime>("PAYMENT_DATE").Date,
+                DailyDealerSummaryTableAdapter.Insert(DateTime.Now.Date.Date,
                                                       PAYMENTPostDataSet.DEALER.Rows[i].Field<String>("DEALER_ACC_NO"),
                                                       PAYMENTPostDataSet.DEALER.Rows[i].Field<Decimal>("DEALER_CUR_OLOAN"),
                                                       PAYMENTPostDataSet.DEALER.Rows[i].Field<Decimal>("DEALER_CUR_SIMPLE_INT"),
                                                       PAYMENTPostDataSet.DEALER.Rows[i].Field<Decimal>("DEALER_CUR_AMORT_INT"),
                                                       PAYMENTPostDataSet.DEALER.Rows[i].Field<Decimal>("DEALER_CUR_OLD_INT"));
             }
-            DailyInterestTableAdapter.Insert(PAYMENTPostDataSet.PAYMENT.Rows[0].Field<DateTime>("PAYMENT_DATE").Date, "P", lnMasterNP + lnMasterUEI + lnMasterNPNP - lnMasterOloan, 0, (lnMasterNP + lnMasterUEI + lnMasterNPNP - lnMasterOloan) - (lnMasterSimpleInterest + lnMasterAmortInterest + (Decimal)lnDlrDiscount),
+            DailyInterestTableAdapter.Insert(DateTime.Now.Date, "P", lnMasterNP + lnMasterUEI + lnMasterNPNP - lnMasterOloan, 0, (lnMasterNP + lnMasterUEI + lnMasterNPNP - lnMasterOloan) - (lnMasterSimpleInterest + lnMasterAmortInterest + (Decimal)lnDlrDiscount),
                                              new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month)));
             for (int i = 0; i < PAYMENTPostDataSet.PaymentTypeCodeSummarySelect.Rows.Count; i++)
             {
-                DailyPaymentTypeTotalsTableAdapter.Insert(PAYMENTPostDataSet.PAYMENT.Rows[0].Field<DateTime>("PAYMENT_DATE").Date,
+                DailyPaymentTypeTotalsTableAdapter.Insert(DateTime.Now.Date,
                         PAYMENTPostDataSet.PaymentTypeCodeSummarySelect.Rows[i].Field<String>("PAYMENT_TYPE"),
                         PAYMENTPostDataSet.PaymentTypeCodeSummarySelect.Rows[i].Field<String>("PAYMENT_CODE_2"),
                         PAYMENTPostDataSet.PaymentTypeCodeSummarySelect.Rows[i].Field<String>("CreditCardType"),

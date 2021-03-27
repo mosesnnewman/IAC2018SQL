@@ -87,6 +87,7 @@
             this.buttonReImport.TabIndex = 15;
             this.buttonReImport.Text = "&Reimport Without SFTP";
             this.buttonReImport.UseVisualStyleBackColor = true;
+            this.buttonReImport.Click += new System.EventHandler(this.buttonReImport_Click);
             // 
             // frmPNSImport
             // 
