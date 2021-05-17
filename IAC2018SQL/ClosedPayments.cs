@@ -455,7 +455,7 @@ namespace IAC2018SQL
 
         private void PaymentTypecomboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (PaymentTypetextBox.Text == "I")
+            if (PaymentTypetextBox.Text == "I" || PaymentbindingSource.Position < 0)
                 return;
             if (PaymentTypecomboBox.SelectedIndex > -1)
             {
@@ -465,6 +465,34 @@ namespace IAC2018SQL
                     toolStripButtonSave.Enabled = true;
             }
             if (PaymentTypetextBox.Text.ToString().ToUpper().TrimEnd() == "W")
+                pAYCODETableAdapter.FillByCodeW(ClosedPaymentiacDataSet.PAYCODE);
+            else
+            {
+                // Moses Newman 04/13/2021 Fill Paycodes
+                pAYCODETableAdapter.FillByType(ClosedPaymentiacDataSet.PAYCODE, PaymentTypetextBox.Text.ToString().ToUpper().TrimEnd());
+                // Moses Newman 04/28/2021 don't default code if one exists in payment already!
+                if (ClosedPaymentiacDataSet.PAYMENT.Rows[PaymentbindingSource.Position].Field<String>("PAYMENT_CODE_2") == null || ClosedPaymentiacDataSet.PAYMENT.Rows[PaymentbindingSource.Position].Field<String>("PAYMENT_CODE_2") == "")
+                {
+                    switch (PaymentTypetextBox.Text.ToString().ToUpper().TrimEnd())
+                    {
+                        // Moses Newman 04/13/2021 Default to first record in list
+                        case "B":
+                            CodeTypetextBox.Text = "G";
+                            break;
+                        case "W":
+                            CodeTypetextBox.Text = "H";
+                            break;
+                        default:
+                            CodeTypetextBox.Text = " ";
+                            break;
+                    }
+                }
+                CodeTypetextBox.Refresh();
+                PAYCODEbindingSource.DataSource = ClosedPaymentiacDataSet.PAYCODE;
+                PAYCODEcomboBox.Refresh();
+            }
+            /* Moses Newman 04/13/2021
+            if (PaymentTypetextBox.Text.ToString().ToUpper().TrimEnd() == "W")
             {
                 if (ClosedPaymentiacDataSet.PAYCODE.Rows.Count != 2)
                     pAYCODETableAdapter.FillByCodeW(ClosedPaymentiacDataSet.PAYCODE);
@@ -473,7 +501,7 @@ namespace IAC2018SQL
             {
                 if (ClosedPaymentiacDataSet.PAYCODE.Rows.Count == 2)
                     pAYCODETableAdapter.Fill(ClosedPaymentiacDataSet.PAYCODE);
-            }
+            }*/
             toolStripButtonSave.Enabled = true;
             //HandleISF();
             if (ActiveControl == PaymentTypecomboBox)
@@ -521,10 +549,29 @@ namespace IAC2018SQL
                     lblPaidThrough.Visible = false;
                     PaidThroughUDtextBox.Enabled = false;
                     PaidThroughUDtextBox.Visible = false;
-                    if (PaymentTypetextBox.Text.ToString().ToUpper().TrimEnd() == "W")
-                        pAYCODETableAdapter.FillByCodeW(ClosedPaymentiacDataSet.PAYCODE);
-                    else
-                        pAYCODETableAdapter.Fill(ClosedPaymentiacDataSet.PAYCODE);
+                    // Moses Newman 04/13/2021 Fill Paycodes
+                    pAYCODETableAdapter.FillByType(ClosedPaymentiacDataSet.PAYCODE, PaymentTypetextBox.Text.ToString().ToUpper().TrimEnd());
+                    // Moses Newman 04/28/2021 don't default code if one exists in payment already!
+                    if (ClosedPaymentiacDataSet.PAYMENT.Rows[PaymentbindingSource.Position].Field<String>("PAYMENT_CODE_2") == null || ClosedPaymentiacDataSet.PAYMENT.Rows[PaymentbindingSource.Position].Field<String>("PAYMENT_CODE_2") == "")
+                    {
+                        switch (PaymentTypetextBox.Text.ToString().ToUpper().TrimEnd())
+                        {
+                            // Moses Newman 04/13/2021 Default to first record in list
+                            case "B":
+                                CodeTypetextBox.Text = "G";
+                                break;
+                            case "W":
+                                CodeTypetextBox.Text = "H";
+                                break;
+                            default:
+                                CodeTypetextBox.Text = " ";
+                                break;
+                        }
+                    }
+                    CodeTypetextBox.Refresh();
+                    PAYCODEbindingSource.DataSource = ClosedPaymentiacDataSet.PAYCODE;
+                    PAYCODEcomboBox.Refresh();
+                    //pAYCODETableAdapter.Fill(ClosedPaymentiacDataSet.PAYCODE);
                     if (lbEdit || lbAddFlag)
                     {
                         ActiveControl = CodeTypetextBox;
@@ -620,7 +667,7 @@ namespace IAC2018SQL
                     else
                         if (CodeTypetextBox.Text.TrimEnd() != "L" || CodeTypetextBox.Text.TrimEnd() != "H")
                             CodeTypetextBox.Text = "H";
-                CodeTypetextBox_Validated();
+                //CodeTypetextBox_Validated(); // Moses Newman 04/28/2021 commented this out
             }
             if (lbEdit || lbAddFlag)
             {
@@ -653,16 +700,20 @@ namespace IAC2018SQL
                         break;
                 }
             }
-
+            String tmpcode = PaymentTypetextBox.Text;
             if (PaymentTypetextBox.Text == "W" && ClosedPaymentiacDataSet.PAYCODE.Rows.Count != 2)
+            {
+                ClosedPaymentiacDataSet.PAYCODE.Clear();
                 pAYCODETableAdapter.FillByCodeW(ClosedPaymentiacDataSet.PAYCODE);
+            }
             FoundRow = ClosedPaymentiacDataSet.PAYCODE.Rows.Find(CodeTypetextBox.Text.ToString().TrimEnd());
 
             if (FoundRow == null)
             {
                 if (CodeTypetextBox.Text.ToString().Trim().Length != 0)
                 {
-                    MessageBox.Show("Sorry no payment code found that matches your selected payment code!");
+                    // Moses Newman 04/28/2021
+                    //MessageBox.Show("Sorry no payment code found that matches your selected payment code!");
                     CodeTypetextBox.Text = "";
                     ActiveControl = PAYCODEcomboBox;
                     CodeTypetextBox.SelectAll();
@@ -1011,6 +1062,16 @@ namespace IAC2018SQL
         private void PaymentbindingSource_AddingNew(object sender, AddingNewEventArgs e)
         {
             lbNewPayment = true;
+        }
+
+        private void CodeTypetextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCheckValue_TextChanged(object sender, EventArgs e)
+        {
+
         }
 
         private void toolStripButtonDelete_Click(object sender, EventArgs e)

@@ -54,13 +54,14 @@ namespace IAC2018SQL
         private void PrintStatements(ReportViewer rptViewer)
         {
             IACDataSet ReportData = new IACDataSet();
+            DailyDataSet Daily = new DailyDataSet();  // Moses Newman 04/12/2021
             IACDataSetTableAdapters.OPNCUSTTableAdapter OPNCUSTTableAdapter = new IACDataSetTableAdapters.OPNCUSTTableAdapter();
             IACDataSetTableAdapters.OPNHCUSTTableAdapter OPNHCUSTTableAdapter = new IACDataSetTableAdapters.OPNHCUSTTableAdapter();
             IACDataSetTableAdapters.OPNDEALRTableAdapter OPNDEALRTableAdapter = new IACDataSetTableAdapters.OPNDEALRTableAdapter();
             IACDataSetTableAdapters.OPNRATETableAdapter OPNRATETableAdapter = new IACDataSetTableAdapters.OPNRATETableAdapter();
             IACDataSetTableAdapters.PAYMENTTYPETableAdapter PAYMENTTYPETableAdapter = new IACDataSetTableAdapters.PAYMENTTYPETableAdapter();
             IACDataSetTableAdapters.StatementCustomerHeaderTableAdapter StatementCustomerHeaderTableAdapter = new IACDataSetTableAdapters.StatementCustomerHeaderTableAdapter();
-
+            DailyDataSetTableAdapters.OpenCustomerHistoryLateChargeTableAdapter LateCharge = new DailyDataSetTableAdapters.OpenCustomerHistoryLateChargeTableAdapter();
             BindingSource PAYMENTTypeBindingSource = new BindingSource();
             BindingSource OPNHCUSTBindingSource = new BindingSource();
 
@@ -108,6 +109,12 @@ namespace IAC2018SQL
                 ReportData.OPNHCUST.AcceptChanges();
                 Statement myReportObject = new Statement();
                 myReportObject.SetDataSource(ReportData);
+                LateCharge.Fill(Daily.OpenCustomerHistoryLateCharge, ldLastClosingDate, ldClosingDate);
+                // Moses Newman 04/12/2021
+                myReportObject.Database.Tables[6].SetDataSource(Daily);
+                // Moses Newman 04/07/2021 Fill new start and end command prameters
+                //myReportObject.SetParameterValue("Start", ldLastClosingDate);
+                //myReportObject.SetParameterValue("End", ldClosingDate);
                 myReportObject.SetParameterValue("gsMessage", textBoxMessage.Text.Trim());
                 myReportObject.SetParameterValue("gdEntryDate", (DateTime)StatementDatenullableDateTimePicker.Value);
                 myReportObject.SetParameterValue("gdClosingDate", ldClosingDate);
@@ -118,6 +125,16 @@ namespace IAC2018SQL
             }
             PAYMENTTypeBindingSource.Dispose();
             OPNHCUSTBindingSource.Dispose();
+        }
+
+        private void StatementDatenullableDateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxMessage_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

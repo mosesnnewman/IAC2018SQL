@@ -234,8 +234,9 @@ namespace IAC2018SQL
                 if(!tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].Field<Boolean>("AccountStatusOverride"))
                     tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<String>("CRDMGR_ACCT_STATUS_CODE", lsAcctStatusCode);
                 // Moses Newman 06/05/2015 Handle blank payment rating
+                // Moses Newwman 05/02/2021 Handle Status Code 96
                 if (lsAcctStatusCode == "11" || lsAcctStatusCode == "64" || lsAcctStatusCode == "71" || lsAcctStatusCode == "78" || lsAcctStatusCode == "80" ||
-                    lsAcctStatusCode == "82" || lsAcctStatusCode == "83" || lsAcctStatusCode == "84" || lsAcctStatusCode == "93" || lsAcctStatusCode == "97")
+                    lsAcctStatusCode == "82" || lsAcctStatusCode == "83" || lsAcctStatusCode == "84" || lsAcctStatusCode == "93" || lsAcctStatusCode == "97" || lsAcctStatusCode == "96")
                     lsAcctPaymentRating = " ";
                 if (!tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].Field<Boolean>("PaymentRatingOverride") || lsAcctPaymentRating == " ")
                     tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<String>("CRDMGR_ACCT_PAYMENT_RATING", lsAcctPaymentRating);
@@ -246,7 +247,9 @@ namespace IAC2018SQL
                      TSBDATA.CUSTOMER.Rows[i].Field<Nullable<Decimal>>("CUSTOMER_PREV_BALANCE") != null)
                     tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<Decimal>("CRDMGR_ACCT_CURRENT_BAL", TSBDATA.CUSTOMER.Rows[i].Field<Decimal>("CUSTOMER_PREV_BALANCE"));
                 else
-                    tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<Decimal>("CRDMGR_ACCT_CURRENT_BAL", TSBDATA.CUSTOMER.Rows[i].Field<Decimal>("CUSTOMER_BALANCE"));
+                    // Moses Newman 05/02/2021 Maked balance 0 if balance is negative!
+                    tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<Decimal>("CRDMGR_ACCT_CURRENT_BAL", (TSBDATA.CUSTOMER.Rows[i].Field<Decimal>("CUSTOMER_BALANCE") >= 0 || lsAcctStatusCode == "11") && TSBDATA.CUSTOMER.Rows[i].Field<String>("CUSTOMER_ACT_STAT") != "I"  ? TSBDATA.CUSTOMER.Rows[i].Field<Decimal>("CUSTOMER_BALANCE"):0);
+                
                 // Moses Newman 12/11/2018 set Amount Past Due to 0 IF account balance is 0 even if the Status is NOT 0!
                 if (TSBDATA.CUSTOMER.Rows[i].Field<Decimal>("CUSTOMER_CONTRACT_STATUS") < 0 && lsAcctStatusCode != "11" && TSBDATA.CUSTOMER.Rows[i].Field<Decimal>("CUSTOMER_BALANCE") > 0)
                     tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<Decimal>("CRDMGR_AMOUNT_PAST_DUE", TSBDATA.CUSTOMER.Rows[i].Field<Decimal>("CUSTOMER_CONTRACT_STATUS") * -1);
@@ -280,9 +283,10 @@ namespace IAC2018SQL
                             TSBDATA.ClosedWSHIST.Rows[0].Field<Decimal>("HIST_HIGHEST_CREDIT"));
                     // Moses Newman 06/09/2015 Set Date of first Delinquent = null if status is 11 (paid 0-29 days past due);
                     // Moses Newman 12/13/2018 Only put a date in if the charge off is due to delinquency!
+                    // Moses Newman 05/02/2021 Date of First delinquent <=
                     if (TSBDATA.ClosedWSHIST.Rows[0].Field<DateTime?>("HIST_DATE_OF_FIRST_DELINQUENT") != null && lsAcctStatusCode != "11" && lsAcctStatusCode != "13")
                         tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<DateTime?>("CRDMGR_DATE_FIRST_DELINQUENT",
-                            TSBDATA.ClosedWSHIST.Rows[0].Field<DateTime?>("HIST_DATE_OF_FIRST_DELINQUENT") < (DateTime?)nullableDateTimePickerTo.Value ? TSBDATA.ClosedWSHIST.Rows[0].Field<DateTime?>("HIST_DATE_OF_FIRST_DELINQUENT") : null);
+                            TSBDATA.ClosedWSHIST.Rows[0].Field<DateTime?>("HIST_DATE_OF_FIRST_DELINQUENT") <= (DateTime?)nullableDateTimePickerTo.Value ? TSBDATA.ClosedWSHIST.Rows[0].Field<DateTime?>("HIST_DATE_OF_FIRST_DELINQUENT") : null);
                     else
                         // 03/20/2016 Moses Newman if Hist_Date_First_delinqueny is NULL then leave it null!
                         //if(lsAcctStatusCode == "97")
@@ -337,10 +341,15 @@ namespace IAC2018SQL
                     {
                         tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<Decimal>("CRDMGR_ORIGINAL_CHARGE_OFF_AMT",
                             TSBDATA.ClosedWSHIST.Rows[0].Field<Decimal>("HIST_CHARGE_OFF_AMOUNT"));
-                        tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<Decimal>("CRDMGR_AMOUNT_PAST_DUE",
-                            TSBDATA.ClosedWSHIST.Rows[0].Field<Decimal>("HIST_CHARGE_OFF_AMOUNT"));
-                        tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<Decimal>("CRDMGR_ACCT_CURRENT_BAL",
-                            TSBDATA.ClosedWSHIST.Rows[0].Field<Decimal>("HIST_CHARGE_OFF_AMOUNT"));
+                        // Moses Newman 05/01/2021 lsAcctStatusCode "64" must always have an account balance of 0!
+                        if (lsAcctStatusCode != "64")
+                        {
+                            tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<Decimal>("CRDMGR_AMOUNT_PAST_DUE",
+                                TSBDATA.ClosedWSHIST.Rows[0].Field<Decimal>("HIST_CHARGE_OFF_AMOUNT"));
+                            // Moses Newman 05/02/2021 never allow current balance to be negative
+                            tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<Decimal>("CRDMGR_ACCT_CURRENT_BAL",
+                                TSBDATA.ClosedWSHIST.Rows[0].Field<Decimal>("HIST_CHARGE_OFF_AMOUNT") >= 0 ? TSBDATA.ClosedWSHIST.Rows[0].Field<Decimal>("HIST_CHARGE_OFF_AMOUNT"):0);
+                        }
                     }
                     else
                         tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<Decimal>("CRDMGR_ORIGINAL_CHARGE_OFF_AMT", 0);
@@ -459,14 +468,16 @@ namespace IAC2018SQL
                 if (!tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].Field<Boolean>("AccountStatusOverride"))
                     tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<String>("CRDMGR_ACCT_STATUS_CODE", lsAcctStatusCode);
                 // Moses Newman 06/05/2015 Handle blank payment rating
+                // Moses Newwman 05/02/2021 Handle Status Code 96
                 if (lsAcctStatusCode == "11" || lsAcctStatusCode == "64" || lsAcctStatusCode == "71" || lsAcctStatusCode == "78" || lsAcctStatusCode == "80" ||
-                    lsAcctStatusCode == "82" || lsAcctStatusCode == "83" || lsAcctStatusCode == "84" || lsAcctStatusCode == "93" || lsAcctStatusCode == "97")
+                    lsAcctStatusCode == "82" || lsAcctStatusCode == "83" || lsAcctStatusCode == "84" || lsAcctStatusCode == "93" || lsAcctStatusCode == "97" || lsAcctStatusCode == "96")
                     lsAcctPaymentRating = " ";
                 tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<String>("CRDMGR_ACCT_PAYMENT_RATING", lsAcctPaymentRating);
                 if (lsAcctStatusCode == "93" && TSBDATA.OPNCUST.Rows[i].Field<String>("CUSTOMER_ACT_STAT") == "I" && TSBDATA.OPNCUST.Rows[i].Field<Decimal>("CUSTOMER_BALANCE") == 0)
                     tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<Decimal>("CRDMGR_ACCT_CURRENT_BAL", TSBDATA.OPNCUST.Rows[i].Field<Decimal>("CUSTOMER_PREV_BALANCE"));
                 else
-                    tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<Decimal>("CRDMGR_ACCT_CURRENT_BAL", TSBDATA.OPNCUST.Rows[i].Field<Decimal>("CUSTOMER_BALANCE"));
+                    // Moses Newman 05/02/2021 Maked balance 0 if balance is negative!
+                    tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<Decimal>("CRDMGR_ACCT_CURRENT_BAL", (TSBDATA.OPNCUST.Rows[i].Field<Decimal>("CUSTOMER_BALANCE") >= 0 || lsAcctStatusCode == "11") && TSBDATA.OPNCUST.Rows[i].Field<String> ("CUSTOMER_ACT_STAT") != "I" ? TSBDATA.OPNCUST.Rows[i].Field<Decimal>("CUSTOMER_BALANCE"):0);
                 // Moses Newman 07/07/2015 Customer Status is flaky on Open Side so calcualte REAL past due.
                 lnOpenPastDue = 0;
                 loPastDue = ClosedCreditManagerTableAdapter.OpenPastDue(TSBDATA.OPNCUST.Rows[i].Field<String>("CUSTOMER_NO"), DateTime.Now.Date, TSBDATA.OPNCUST.Rows[i].Field<String>("CUSTOMER_PAID_THRU"));
@@ -508,10 +519,10 @@ namespace IAC2018SQL
                     // Moses Newman 06/09/2015 Set Date of first Delinquent = null if status is 11 (paid 0-29 days past due);
                     // Moses Newman 12/13/2018 Only put a date in if the charge off is due to delinquency!
                     // Moses Newman 12/13/2018 Only put a date in if the charge off is due to delinquency!
-
+                    // Moses Newman 05/02/2021 Date of First delinquent <=
                     if (TSBDATA.OpenWSHIST.Rows[0].Field<Nullable<DateTime>>("HIST_DATE_OF_FIRST_DELINQUENT") != null && lsAcctStatusCode != "11" && lsAcctStatusCode != "13")
                         tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<DateTime?>("CRDMGR_DATE_FIRST_DELINQUENT",
-                            TSBDATA.OpenWSHIST.Rows[0].Field<DateTime?>("HIST_DATE_OF_FIRST_DELINQUENT") < (DateTime?)nullableDateTimePickerTo.Value ? TSBDATA.OpenWSHIST.Rows[0].Field<DateTime?>("HIST_DATE_OF_FIRST_DELINQUENT") : null);
+                            TSBDATA.OpenWSHIST.Rows[0].Field<DateTime?>("HIST_DATE_OF_FIRST_DELINQUENT") <= (DateTime?)nullableDateTimePickerTo.Value ? TSBDATA.OpenWSHIST.Rows[0].Field<DateTime?>("HIST_DATE_OF_FIRST_DELINQUENT") : null);
                     else
                         tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<Nullable<DateTime>>("CRDMGR_DATE_FIRST_DELINQUENT", null);
                 }
@@ -567,10 +578,15 @@ namespace IAC2018SQL
                     {
                         tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<Decimal>("CRDMGR_ORIGINAL_CHARGE_OFF_AMT",
                             TSBDATA.OpenWSHIST.Rows[0].Field<Decimal>("HIST_CHARGE_OFF_AMOUNT"));
-                        tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<Decimal>("CRDMGR_AMOUNT_PAST_DUE",
+                        // Moses Newman 05/01/2021 lsAcctStatusCode "64" must always have an account balance of 0!
+                        if (lsAcctStatusCode != "64")
+                        {
+                            tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<Decimal>("CRDMGR_AMOUNT_PAST_DUE",
                             TSBDATA.OpenWSHIST.Rows[0].Field<Decimal>("HIST_CHARGE_OFF_AMOUNT"));
-                        tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<Decimal>("CRDMGR_ACCT_CURRENT_BAL",
-                            TSBDATA.OpenWSHIST.Rows[0].Field<Decimal>("HIST_CHARGE_OFF_AMOUNT"));
+                            tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<Decimal>("CRDMGR_ACCT_CURRENT_BAL",
+                                // Moses Newman 05/02/2021 never allow current balance to be negative!
+                                TSBDATA.OpenWSHIST.Rows[0].Field<Decimal>("HIST_CHARGE_OFF_AMOUNT") >= 0 ? TSBDATA.OpenWSHIST.Rows[0].Field<Decimal>("HIST_CHARGE_OFF_AMOUNT"):0);
+                        }
                     }
                     else
                         tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<Decimal>("CRDMGR_ORIGINAL_CHARGE_OFF_AMT", 0);
@@ -602,7 +618,8 @@ namespace IAC2018SQL
                 // Moses Newman 06/11/2020 added Report
                 tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<Boolean>("Report", (TSBDATA.OPNCUST.Rows[i].Field<String>("CUSTOMER_CREDIT_BUREAU") == "Y") ? true : false);
                 // Moses Newman 08/31/2020 Add DateOfAccountInformation
-                tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<DateTime>("DateOfAccountInformation", DateTime.Now.Date.AddDays(1));
+                // Moses Newman 05/01/2021 Always set to To Date + 1 day
+                tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<DateTime>("DateOfAccountInformation", ((DateTime)nullableDateTimePickerTo.Value).Date.AddDays(1));
                 // Moses Newman 09/26/2020 Set Interest Type
                 tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<String>("InterestType", "F");
                 ClosedCreditManagerBindingSource.EndEdit();
@@ -657,13 +674,54 @@ namespace IAC2018SQL
                         lsAcctStatusCode = "93";
                     }
                     else
+                        // Moses Newman 04/14/2021
                         switch (TSBDATA.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_PAYMENT_TYPE"))
                         {
                             case "B":
-                                if (TSBDATA.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_TSB_COMMENT_CODE") == "BN")
-                                    lsAcctStatusCode = "64";
-                                else
-                                    lsAcctStatusCode = "97";
+                                switch(TSBDATA.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_PAYMENT_CODE"))
+                                {
+                                    case "G": // Paid by Co-maker or Guranator 
+                                        TSBDATA.CUSTOMER.Rows[CustomerPos].SetField<String>("CUSTOMER_TSB_COMMENT_CODE", " C");
+                                        break;
+                                    case "J": //Voluntary surrender
+                                        TSBDATA.CUSTOMER.Rows[CustomerPos].SetField<String>("CUSTOMER_TSB_COMMENT_CODE", "");
+                                        lsAcctStatusCode = "95";
+                                        break;
+                                    case "L": // Repo
+                                        TSBDATA.CUSTOMER.Rows[CustomerPos].SetField<String>("CUSTOMER_TSB_COMMENT_CODE", "");
+                                        lsAcctStatusCode = "96";
+                                        break;
+                                    case "M": // Partial payment agreement
+                                        TSBDATA.CUSTOMER.Rows[CustomerPos].SetField<String>("CUSTOMER_TSB_COMMENT_CODE", "AC");
+                                        lsAcctStatusCode = "64";
+                                        break;
+                                    case "N": // Paid off by dealer
+                                        TSBDATA.CUSTOMER.Rows[CustomerPos].SetField<String>("CUSTOMER_TSB_COMMENT_CODE", "BN");
+                                        lsAcctStatusCode = "64";
+                                        break;
+                                    case "O": // Charge-off
+                                        TSBDATA.CUSTOMER.Rows[CustomerPos].SetField<String>("CUSTOMER_TSB_COMMENT_CODE", "");
+                                        lsAcctStatusCode = "97";
+                                        break;
+                                    case "P": // Paid through insurance
+                                        TSBDATA.CUSTOMER.Rows[CustomerPos].SetField<String>("CUSTOMER_TSB_COMMENT_CODE", "BP");
+                                        lsAcctStatusCode = "64";
+                                        break;
+                                    case "S": // Refinance
+                                        TSBDATA.CUSTOMER.Rows[CustomerPos].SetField<String>("CUSTOMER_TSB_COMMENT_CODE", "AS");
+                                        break;
+                                    case "U": // Paid in full for less than full balance
+                                        TSBDATA.CUSTOMER.Rows[CustomerPos].SetField<String>("CUSTOMER_TSB_COMMENT_CODE", "AU");
+                                        lsAcctStatusCode = "64";
+                                        break;
+                                    case "V": // First payment default
+                                        TSBDATA.CUSTOMER.Rows[CustomerPos].SetField<String>("CUSTOMER_TSB_COMMENT_CODE", "AV");
+                                        break;
+                                    default: // Unhandled code is always treated as Charge-off!
+                                        TSBDATA.CUSTOMER.Rows[CustomerPos].SetField<String>("CUSTOMER_TSB_COMMENT_CODE", "");
+                                        lsAcctStatusCode = "97";
+                                        break;
+                                }
                                 break;
                             case "C":
                                 lsAcctStatusCode = "DA";

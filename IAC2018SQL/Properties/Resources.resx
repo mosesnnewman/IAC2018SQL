@@ -121,20 +121,23 @@
   <data name="EditorZone_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\EditorZone_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="FileDialogReport_16x_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\FileDialogReport_16x_32.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="ExpandChevronRight_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ExpandChevronRight_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="PaperClip" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\base_paperclip_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Account_16x_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Account_16x_24.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Message_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Message_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Export_16x_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Export_16x_24.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="XMLFile_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\XMLFile_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ExportToExcel_48x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ExportToExcel_48x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -145,11 +148,11 @@
   <data name="Cancel_64x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Cancel_64x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="_007" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\007.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Unlock_16x_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Unlock_16x_24.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="FileDestination_16x_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\FileDestination_16x_24.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ExpandChevronRight_lg_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ExpandChevronRight_lg_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -163,9 +166,6 @@
   <data name="Search_16x_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Search_16x_32.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="MoneyEditor_16x_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\MoneyEditor_16x_24.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Ferrari_Laferrari" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Ferrari-Laferrari.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -175,14 +175,11 @@
   <data name="ExcelWorksheetView_16x_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ExcelWorksheetView_16x_24.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ExpandChevronRight_lg_16x1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ExpandChevronRight_lg_16x1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Image_16x_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Image_16x_24.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Bugatti" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Bugatti.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Search_16x_321" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Search_16x_321.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="CalculatorMethod_16x_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\CalculatorMethod_16x_24.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -205,8 +202,14 @@
   <data name="RestoreMTR_16x_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\RestoreMTR_16x_24.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Summary_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Summary_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Unlock_16x_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Unlock_16x_32.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="InputChevron_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\InputChevron_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ExpandChevronRightGroup_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ExpandChevronRightGroup_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="CreditCardLogos" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\visa-mastercard-discover-american-express-cards-logos-animation.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -216,9 +219,6 @@
   </data>
   <data name="Calculator_16x_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Calculator_16x_24.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ExportToExcel_64x" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ExportToExcel_64x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ExcelWorksheetView_16x_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ExcelWorksheetView_16x_32.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -238,8 +238,8 @@
   <data name="SaveAll_16x_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SaveAll_16x_24.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="WordDoc" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\WordDoc.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Search_16x_321" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Search_16x_321.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="CollapseChevronLeftGroup_16x1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\CollapseChevronLeftGroup_16x1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -247,17 +247,20 @@
   <data name="AddFile_16x_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\AddFile_16x_24.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Process_16x_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Process_16x_24.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Import_16x1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Import_16x1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Unlock_16x_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Unlock_16x_32.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="FileDialogReport_16x_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FileDialogReport_16x_32.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Account_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Account_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Account_16x_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Account_16x_24.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Summary_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Summary_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="AddParentNode_16x_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\AddParentNode_16x_24.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -268,8 +271,8 @@
   <data name="Import_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Import_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="InputChevron_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\InputChevron_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="WordDoc" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\WordDoc.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="FileSystemDriverTemplate_16x_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FileSystemDriverTemplate_16x_24.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -283,20 +286,20 @@
   <data name="AutoComplete_16x_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\AutoComplete_16x_24.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ExpandChevronRightGroup_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ExpandChevronRightGroup_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ExportToExcel_64x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ExportToExcel_64x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Process_16x_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Process_16x_24.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="FileDestination_16x_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FileDestination_16x_24.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="_007" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\007.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ExpandChevronRight_lg_16x1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ExpandChevronRight_lg_16x1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Printer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Printer.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="XMLFile_16x" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\XMLFile_16x.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="MoneyEditor_16x_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\MoneyEditor_16x_24.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Phone_16x_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Phone_16x_24.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -307,7 +310,7 @@
   <data name="Import_grey_16x_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Import_grey_16x_24.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Image_16x_24" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Image_16x_24.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="alfa-romeo-giulia-gta-2021-02-900-510" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\alfa-romeo-giulia-gta-2021-02-900-510.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -684,70 +684,73 @@ namespace IAC2018SQL
 						dr["Date"] = eventDate;
 						// Moses Newman 03/20/2018 Add History Sequence Number to amort
 						// Moses Newman 10/17/2018 add PaymentSeq for lookup in posting.
-						dr["PaymentSeq"] = tdtCUSTHIST.Rows[AmortIndex - 1].Field<Int32?>("PaymentSeq") != null ? tdtCUSTHIST.Rows[AmortIndex - 1].Field<Int32>("PaymentSeq") : 0;
-						// Moses Newman 04/03/2018 Add Payment Code to TVAmort so we know what the wave type is!
-						dr["PaymentCode"] = (String)tdtCUSTHIST.Rows[AmortIndex - 1]["CUSTHIST_PAYMENT_TYPE"] + (String)tdtCUSTHIST.Rows[AmortIndex - 1]["CUSTHIST_PAYMENT_CODE"];
-						// Moses Newman 03/20/2018 Add History Sequence Number to amort
-						dr["HistorySeq"] = tdtCUSTHIST.Rows[AmortIndex - 1]["CUSTHIST_DATE_SEQ"];
-						// Moses Newman 07/25/2019 Add History Date to Amort for proper sequencing in FixLateFeesandPartialPayments
-						dr["HistoryDate"] = tdtCUSTHIST.Rows[AmortIndex - 1]["CUSTHIST_PAY_DATE"];
-						dr["PartialPayment"] = tdtCUSTHIST.Rows[AmortIndex - 1]["PartialPayment"];
-                        dr["LateFeeBalance"] = tdtCUSTHIST.Rows[AmortIndex - 1]["CUSTHIST_LATE_CHARGE_BAL"];
-                        if (tdtCUSTHIST.Rows[AmortIndex - 1]["CUSTHIST_PAID_THRU"].ToString().Trim() != "")
-                        {
-                            if (CustomerDT.Rows[0].Field<Int32>("CUSTOMER_DAY_DUE") == 30 && tdtCUSTHIST.Rows[AmortIndex - 1]["CUSTHIST_PAID_THRU"].ToString().Substring(0, 2) == "02")
-                            {
-                                LeapDate = DateTime.Parse("03/01/" + DateTime.Now.Year.ToString().Substring(0, 2) +
-                                           tdtCUSTHIST.Rows[AmortIndex - 1]["CUSTHIST_PAID_THRU"].ToString().Substring(2, 2)).AddDays(-1);
-                                lsDayDue = LeapDate.Day.ToString().Trim().PadLeft(2, '0');
-                            }
-                            else
-                                lsDayDue = CustomerDT.Rows[0].Field<Int32>("CUSTOMER_DAY_DUE").ToString().Trim().PadLeft(2, '0');
-                            dr["PaidThrough"] = DateTime.Parse(tdtCUSTHIST.Rows[AmortIndex - 1]["CUSTHIST_PAID_THRU"].ToString().Substring(0, 2) + '/' + lsDayDue + '/' +
-                                                DateTime.Now.Year.ToString().Substring(0, 2) + tdtCUSTHIST.Rows[AmortIndex - 1]["CUSTHIST_PAID_THRU"].ToString().Substring(2, 2));
-                        }
-                        // Moses Newman 03/22/2018 Add Extension Months to Amort 
-                        if(dr["Event"].ToString().Trim() == "EXT")
-                            dr["ExtensionMonths"] = tdtCUSTHIST.Rows[AmortIndex - 1]["CUSTHIST_THRU_UD"];
-						switch(lineType)
+						if (AmortIndex > 0)
 						{
-							case TValueEngineLib.TVAmortizationLineType.TVPaymentLine:
-							case TValueEngineLib.TVAmortizationLineType.TVUserPayment1Line:
-                                // Moses Newman 07/31/2013 Added switch to handle positng of W or C payments to Non Cash Column of TVAmort table
-                                if ((AmortIndex - 1) < tdtCUSTHIST.Rows.Count && AmortIndex > 0)
-                                    switch (tdtCUSTHIST.Rows[AmortIndex-1].Field<String>("CUSTHIST_PAYMENT_TYPE"))
-                                    {
-                                        case "W":
-                                        case "C":
-                                            dr["NonCash"] = dataArray[TValueDefines.AmortPayment1Index];
-                                            break;
-                                        default:
-                                            dr["Payment"] = dataArray[TValueDefines.AmortPayment1Index];
-                                            break;
-                                    }
-                                else
-                                    dr["Payment"] = dataArray[TValueDefines.AmortPayment1Index];
-								    break;
-							case TValueEngineLib.TVAmortizationLineType.TVUserPayment2Line:
-								dr["Payment"] = dataArray[TValueDefines.AmortPayment2Index];
-								break;
-							case TValueEngineLib.TVAmortizationLineType.TVUserPayment3Line:
-								dr["Payment"] = dataArray[TValueDefines.AmortPayment3Index];
-								break;                
-						}
-                        if ((Decimal)dr["Payment"] < 0 && (AmortIndex - 1) < tdtCUSTHIST.Rows.Count && AmortIndex > 0 &&
-                            tdtCUSTHIST.Rows[AmortIndex - 1].Field<String>("CUSTHIST_PAYMENT_TYPE") != "W")
-                        {
-							// Moses Newman 03/04/20201 Don't fill in ISF stuff if BUYOUT or UNEARNED row!
-							if ((String)dr["Event"] != "BUYOUT" && (String)dr["Event"] != "UNEARNED")
+							dr["PaymentSeq"] = tdtCUSTHIST.Rows[AmortIndex - 1].Field<Int32?>("PaymentSeq") != null ? tdtCUSTHIST.Rows[AmortIndex - 1].Field<Int32>("PaymentSeq") : 0;
+							// Moses Newman 04/03/2018 Add Payment Code to TVAmort so we know what the wave type is!
+							dr["PaymentCode"] = (String)tdtCUSTHIST.Rows[AmortIndex - 1]["CUSTHIST_PAYMENT_TYPE"] + (String)tdtCUSTHIST.Rows[AmortIndex - 1]["CUSTHIST_PAYMENT_CODE"];
+							// Moses Newman 03/20/2018 Add History Sequence Number to amort
+							dr["HistorySeq"] = tdtCUSTHIST.Rows[AmortIndex - 1]["CUSTHIST_DATE_SEQ"];
+							// Moses Newman 07/25/2019 Add History Date to Amort for proper sequencing in FixLateFeesandPartialPayments
+							dr["HistoryDate"] = tdtCUSTHIST.Rows[AmortIndex - 1]["CUSTHIST_PAY_DATE"];
+							dr["PartialPayment"] = tdtCUSTHIST.Rows[AmortIndex - 1]["PartialPayment"];
+							dr["LateFeeBalance"] = tdtCUSTHIST.Rows[AmortIndex - 1]["CUSTHIST_LATE_CHARGE_BAL"];
+							if (tdtCUSTHIST.Rows[AmortIndex - 1]["CUSTHIST_PAID_THRU"].ToString().Trim() != "")
 							{
-								// Moses Newman 04/13/2018 Add ISFDate, ISFSeqNo, ISFPaymentType, and ISFPaymentCode so that exact returned check can be found.
-								dr.SetField<DateTime?>("ISFDate", tdtCUSTHIST.Rows[AmortIndex - 1].Field<DateTime?>("CUSTHIST_ISF_DATE"));
-								dr.SetField<Int32?>("ISFSeqNo", tdtCUSTHIST.Rows[AmortIndex - 1].Field<Int32?>("ISFSeqNo"));
-								dr["ISFPaymentType"] = tdtCUSTHIST.Rows[AmortIndex - 1].Field<String>("ISFPaymentType");
-								dr["ISFPaymentCode"] = tdtCUSTHIST.Rows[AmortIndex - 1].Field<String>("ISFPaymentCode");
+								if (CustomerDT.Rows[0].Field<Int32>("CUSTOMER_DAY_DUE") == 30 && tdtCUSTHIST.Rows[AmortIndex - 1]["CUSTHIST_PAID_THRU"].ToString().Substring(0, 2) == "02")
+								{
+									LeapDate = DateTime.Parse("03/01/" + DateTime.Now.Year.ToString().Substring(0, 2) +
+											   tdtCUSTHIST.Rows[AmortIndex - 1]["CUSTHIST_PAID_THRU"].ToString().Substring(2, 2)).AddDays(-1);
+									lsDayDue = LeapDate.Day.ToString().Trim().PadLeft(2, '0');
+								}
+								else
+									lsDayDue = CustomerDT.Rows[0].Field<Int32>("CUSTOMER_DAY_DUE").ToString().Trim().PadLeft(2, '0');
+								dr["PaidThrough"] = DateTime.Parse(tdtCUSTHIST.Rows[AmortIndex - 1]["CUSTHIST_PAID_THRU"].ToString().Substring(0, 2) + '/' + lsDayDue + '/' +
+													DateTime.Now.Year.ToString().Substring(0, 2) + tdtCUSTHIST.Rows[AmortIndex - 1]["CUSTHIST_PAID_THRU"].ToString().Substring(2, 2));
 							}
-                        }
+							// Moses Newman 03/22/2018 Add Extension Months to Amort 
+							if (dr["Event"].ToString().Trim() == "EXT")
+								dr["ExtensionMonths"] = tdtCUSTHIST.Rows[AmortIndex - 1]["CUSTHIST_THRU_UD"];
+							switch (lineType)
+							{
+								case TValueEngineLib.TVAmortizationLineType.TVPaymentLine:
+								case TValueEngineLib.TVAmortizationLineType.TVUserPayment1Line:
+									// Moses Newman 07/31/2013 Added switch to handle positng of W or C payments to Non Cash Column of TVAmort table
+									if ((AmortIndex - 1) < tdtCUSTHIST.Rows.Count && AmortIndex > 0)
+										switch (tdtCUSTHIST.Rows[AmortIndex - 1].Field<String>("CUSTHIST_PAYMENT_TYPE"))
+										{
+											case "W":
+											case "C":
+												dr["NonCash"] = dataArray[TValueDefines.AmortPayment1Index];
+												break;
+											default:
+												dr["Payment"] = dataArray[TValueDefines.AmortPayment1Index];
+												break;
+										}
+									else
+										dr["Payment"] = dataArray[TValueDefines.AmortPayment1Index];
+									break;
+								case TValueEngineLib.TVAmortizationLineType.TVUserPayment2Line:
+									dr["Payment"] = dataArray[TValueDefines.AmortPayment2Index];
+									break;
+								case TValueEngineLib.TVAmortizationLineType.TVUserPayment3Line:
+									dr["Payment"] = dataArray[TValueDefines.AmortPayment3Index];
+									break;
+							}
+							if ((Decimal)dr["Payment"] < 0 && (AmortIndex - 1) < tdtCUSTHIST.Rows.Count && AmortIndex > 0 &&
+								tdtCUSTHIST.Rows[AmortIndex - 1].Field<String>("CUSTHIST_PAYMENT_TYPE") != "W")
+							{
+								// Moses Newman 03/04/20201 Don't fill in ISF stuff if BUYOUT or UNEARNED row!
+								if ((String)dr["Event"] != "BUYOUT" && (String)dr["Event"] != "UNEARNED")
+								{
+									// Moses Newman 04/13/2018 Add ISFDate, ISFSeqNo, ISFPaymentType, and ISFPaymentCode so that exact returned check can be found.
+									dr.SetField<DateTime?>("ISFDate", tdtCUSTHIST.Rows[AmortIndex - 1].Field<DateTime?>("CUSTHIST_ISF_DATE"));
+									dr.SetField<Int32?>("ISFSeqNo", tdtCUSTHIST.Rows[AmortIndex - 1].Field<Int32?>("ISFSeqNo"));
+									dr["ISFPaymentType"] = tdtCUSTHIST.Rows[AmortIndex - 1].Field<String>("ISFPaymentType");
+									dr["ISFPaymentCode"] = tdtCUSTHIST.Rows[AmortIndex - 1].Field<String>("ISFPaymentCode");
+								}
+							}
+						} // Moses Newman 05/10/2021
 						dr["Interest"] = dataArray[TValueDefines.AmortInterestAccruedIndex];
 						dr["Principal"] = dataArray[TValueDefines.AmortPrincipalPaidIndex];
 						dr["Balance"] = dataArray[TValueDefines.AmortTotalBalanceIndex];

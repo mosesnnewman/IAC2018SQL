@@ -751,6 +751,7 @@
             // 
             // PAYCODEcomboBox
             // 
+            this.PAYCODEcomboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.PaymentbindingSource, "PAYMENT_CODE_2", true));
             this.PAYCODEcomboBox.DataSource = this.PAYCODEbindingSource;
             this.PAYCODEcomboBox.DisplayMember = "DESCRIPTION";
             this.PAYCODEcomboBox.FormattingEnabled = true;
@@ -825,6 +826,7 @@
             this.CodeTypetextBox.Name = "CodeTypetextBox";
             this.CodeTypetextBox.Size = new System.Drawing.Size(17, 20);
             this.CodeTypetextBox.TabIndex = 15;
+            this.CodeTypetextBox.TextChanged += new System.EventHandler(this.CodeTypetextBox_TextChanged);
             this.CodeTypetextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             this.CodeTypetextBox.Validated += new System.EventHandler(this.CodeTypetextBox_Validated);
             // 
@@ -836,6 +838,7 @@
             this.txtCheckValue.Size = new System.Drawing.Size(88, 20);
             this.txtCheckValue.TabIndex = 12;
             this.txtCheckValue.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtCheckValue.TextChanged += new System.EventHandler(this.txtCheckValue_TextChanged);
             this.txtCheckValue.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             this.txtCheckValue.Validated += new System.EventHandler(this.txtCheckValue_Validated);
             // 
