@@ -778,7 +778,8 @@ namespace IAC2018SQL
             if (PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_BALANCE") >= 0)
                 return;
             // Moses Newman 02/17/2021 Set to Y if closed no matter what!!!
-            PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].SetField<String>("CUSTOMER_BUY_OUT", "Y");
+            // Moses Newman 04/10/2021 Loan never closes now without 0 balance so NEVER set CUSTOMER_BUY_OUT = Y!
+            PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].SetField<String>("CUSTOMER_BUY_OUT", "N");
             // With TimeValue OverPayment is simply customer balance * -1.
             lnCustOP = PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_BALANCE") * -1;
             lnMasterSundry += lnCustOP;

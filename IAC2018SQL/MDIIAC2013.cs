@@ -147,7 +147,7 @@ namespace IAC2018SQL
             SplashForm frmSplash = new SplashForm();
             frmSplash.Show();
             frmSplash.Update();
-            Thread.Sleep(4000);
+            Thread.Sleep(5000);
             frmSplash.Close();
             LoginForm frmLogin = new LoginForm();
             frmLogin.ShowDialog();
@@ -156,7 +156,7 @@ namespace IAC2018SQL
                 DataBase = lsConnect.Substring(lsConnect.IndexOf("INITIAL CATALOG=") + 16,
                         (lsConnect.IndexOf(";", lsConnect.IndexOf("INITIAL CATALOG=") + 16) - (lsConnect.IndexOf("INITIAL CATALOG=") + 16)));
                 frmLogin.Dispose();
-                Text = "IAC 2018 SQL " + "(Hello: " + Program.gsUserName.ToString().ToUpper() + ") [DataBase: " + DataBase + "]";
+                Text = "IAC 2021 SQL " + "(Hello: " + Program.gsUserName.ToString().ToUpper() + ") [DataBase: " + DataBase + "]";
                 if (Program.gsUserID == "MNN")
                     mosesFixesToolStripMenuItem.Visible = true;
                 else

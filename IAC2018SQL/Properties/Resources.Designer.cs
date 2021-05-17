@@ -133,6 +133,16 @@ namespace IAC2018SQL.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap alfa_romeo_giulia_gta_2021_02_900_510 {
+            get {
+                object obj = ResourceManager.GetObject("alfa-romeo-giulia-gta-2021-02-900-510", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ASX_TransferUpload_blue_16x {
             get {
                 object obj = ResourceManager.GetObject("ASX_TransferUpload_blue_16x", resourceCulture);

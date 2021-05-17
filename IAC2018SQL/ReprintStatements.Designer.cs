@@ -75,6 +75,7 @@
             this.StatementDatenullableDateTimePicker.Size = new System.Drawing.Size(83, 20);
             this.StatementDatenullableDateTimePicker.TabIndex = 3;
             this.StatementDatenullableDateTimePicker.Value = new System.DateTime(2013, 8, 5, 0, 0, 0, 0);
+            this.StatementDatenullableDateTimePicker.ValueChanged += new System.EventHandler(this.StatementDatenullableDateTimePicker_ValueChanged);
             // 
             // textBoxMessage
             // 
@@ -84,6 +85,7 @@
             this.textBoxMessage.Name = "textBoxMessage";
             this.textBoxMessage.Size = new System.Drawing.Size(287, 20);
             this.textBoxMessage.TabIndex = 4;
+            this.textBoxMessage.TextChanged += new System.EventHandler(this.textBoxMessage_TextChanged);
             // 
             // label3
             // 
