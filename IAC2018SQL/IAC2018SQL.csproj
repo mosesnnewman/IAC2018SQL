@@ -39,7 +39,7 @@
     <SuiteName>IAC2018SQL</SuiteName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>252</ApplicationRevision>
+    <ApplicationRevision>255</ApplicationRevision>
     <ApplicationVersion>6.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -256,6 +256,18 @@
     <Compile Include="ColorCheckBox.Designer.cs">
       <DependentUpon>ColorCheckBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ticket.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Ticket.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FormTickets.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTickets.Designer.cs">
+      <DependentUpon>FormTickets.cs</DependentUpon>
+    </Compile>
     <Compile Include="IACDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -335,6 +347,14 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ReportQueries.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Tickets.cs">
+      <DependentUpon>Tickets.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Tickets.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Tickets.xsd</DependentUpon>
     </Compile>
     <Compile Include="TrialBalancePretty.cs" />
     <Compile Include="ClosedCustomerEditListDefi.cs">
@@ -1282,6 +1302,13 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ClosedReceivedContractReport.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Ticket.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Ticket.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTickets.resx">
+      <DependentUpon>FormTickets.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReceivedContractReport.resx">
       <DependentUpon>ReceivedContractReport.cs</DependentUpon>
     </EmbeddedResource>
@@ -1806,6 +1833,7 @@
     <None Include="ListData.xss">
       <DependentUpon>ListData.xsd</DependentUpon>
     </None>
+    <None Include="ObjectListView2012.csproj" />
     <None Include="ProductionMainTables.xsc">
       <DependentUpon>ProductionMainTables.xsd</DependentUpon>
     </None>
@@ -1952,6 +1980,17 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\TemplateWSProxy\TemplateWSService1.wsdl" />
+    <None Include="Tickets.xsc">
+      <DependentUpon>Tickets.xsd</DependentUpon>
+    </None>
+    <None Include="Tickets.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Tickets.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Tickets.xss">
+      <DependentUpon>Tickets.xsd</DependentUpon>
+    </None>
     <None Include="TSBDataSet.xsc">
       <DependentUpon>TSBDataSet.xsd</DependentUpon>
     </None>
@@ -2303,6 +2342,11 @@
     <Content Include="1382_cogs.ico" />
     <Content Include="1683_Lightbulb.ico" />
     <Content Include="Icon1.ico" />
+    <None Include="Resources\TicketImage.png" />
+    <EmbeddedResource Include="Resources\TicketImage.bmp" />
+    <None Include="Resources\Next_16x_24.bmp" />
+    <None Include="Resources\Previous_16x_24.bmp" />
+    <None Include="Resources\Action_12x.png" />
     <None Include="Resources\alfa-romeo-giulia-gta-2021-02-900-510.jpg" />
     <None Include="Resources\Image_16x_24.bmp" />
     <None Include="Resources\MoneyEditor_16x_24.bmp" />
@@ -2457,7 +2501,12 @@
     <WCFMetadataStorage Include="Service References\SubscriberWSProxy\" />
     <WCFMetadataStorage Include="Service References\TemplateWSProxy\" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\ObjectListViewDemo\ObjectListView\ObjectListView2012.csproj">
+      <Project>{18feda0c-d147-4286-b39a-01204808106a}</Project>
+      <Name>ObjectListView2012</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

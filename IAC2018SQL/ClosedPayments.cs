@@ -1074,6 +1074,11 @@ namespace IAC2018SQL
 
         }
 
+        private void cUSTOMER_NOTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void toolStripButtonDelete_Click(object sender, EventArgs e)
         {
             tableAdapConn = new System.Data.SqlClient.SqlConnection();

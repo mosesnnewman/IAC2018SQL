@@ -50,14 +50,14 @@
             System.Windows.Forms.Label label17;
             System.Windows.Forms.Label label18;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formClosedPayment));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.CustomerbindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ClosedPaymentiacDataSet = new IAC2018SQL.IACDataSet();
             this.cUSTOMERTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.CUSTOMERTableAdapter();
@@ -80,6 +80,7 @@
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonAdd = new System.Windows.Forms.ToolStripButton();
@@ -478,7 +479,8 @@
             this.bindingNavigatorSeparator1,
             this.bindingNavigatorMoveNextItem,
             this.bindingNavigatorMoveLastItem,
-            this.bindingNavigatorSeparator2});
+            this.bindingNavigatorSeparator2,
+            this.toolStripButton2});
             this.bindingNavigator.Location = new System.Drawing.Point(291, 548);
             this.bindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.bindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -486,7 +488,7 @@
             this.bindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bindingNavigator.Name = "bindingNavigator";
             this.bindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingNavigator.Size = new System.Drawing.Size(209, 25);
+            this.bindingNavigator.Size = new System.Drawing.Size(232, 25);
             this.bindingNavigator.TabIndex = 161;
             this.bindingNavigator.Text = "bindingNavigator";
             // 
@@ -563,6 +565,15 @@
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton2.Text = "toolStripButton2";
             // 
             // toolStrip1
             // 
@@ -962,6 +973,7 @@
             this.cUSTOMER_NOTextBox.Size = new System.Drawing.Size(58, 20);
             this.cUSTOMER_NOTextBox.TabIndex = 1;
             this.cUSTOMER_NOTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.cUSTOMER_NOTextBox.TextChanged += new System.EventHandler(this.cUSTOMER_NOTextBox_TextChanged);
             this.cUSTOMER_NOTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             this.cUSTOMER_NOTextBox.Validated += new System.EventHandler(this.cUSTOMER_NOTextBox_Validated);
             // 
@@ -1130,8 +1142,8 @@
             // CUSTHIST_PAYMENT_CODE
             // 
             this.CUSTHIST_PAYMENT_CODE.DataPropertyName = "CUSTHIST_PAY_DATE";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.CUSTHIST_PAYMENT_CODE.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.CUSTHIST_PAYMENT_CODE.DefaultCellStyle = dataGridViewCellStyle9;
             this.CUSTHIST_PAYMENT_CODE.HeaderText = "POST DATE";
             this.CUSTHIST_PAYMENT_CODE.Name = "CUSTHIST_PAYMENT_CODE";
             this.CUSTHIST_PAYMENT_CODE.ReadOnly = true;
@@ -1148,10 +1160,10 @@
             // PAYMENT_RCV
             // 
             this.PAYMENT_RCV.DataPropertyName = "CUSTHIST_PAYMENT_RCV";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle2.Format = "C2";
-            dataGridViewCellStyle2.NullValue = null;
-            this.PAYMENT_RCV.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle10.Format = "C2";
+            dataGridViewCellStyle10.NullValue = null;
+            this.PAYMENT_RCV.DefaultCellStyle = dataGridViewCellStyle10;
             this.PAYMENT_RCV.HeaderText = "PAYMENT AMOUNT";
             this.PAYMENT_RCV.Name = "PAYMENT_RCV";
             this.PAYMENT_RCV.ReadOnly = true;
@@ -1159,10 +1171,10 @@
             // BALANCE
             // 
             this.BALANCE.DataPropertyName = "CUSTHIST_BALANCE";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle3.Format = "C2";
-            dataGridViewCellStyle3.NullValue = null;
-            this.BALANCE.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle11.Format = "C2";
+            dataGridViewCellStyle11.NullValue = null;
+            this.BALANCE.DefaultCellStyle = dataGridViewCellStyle11;
             this.BALANCE.HeaderText = "LOAN BALANCE";
             this.BALANCE.Name = "BALANCE";
             this.BALANCE.ReadOnly = true;
@@ -1170,10 +1182,10 @@
             // CONTRACT_STATUS
             // 
             this.CONTRACT_STATUS.DataPropertyName = "CUSTHIST_CONTRACT_STATUS";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle4.Format = "C2";
-            dataGridViewCellStyle4.NullValue = null;
-            this.CONTRACT_STATUS.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle12.Format = "C2";
+            dataGridViewCellStyle12.NullValue = null;
+            this.CONTRACT_STATUS.DefaultCellStyle = dataGridViewCellStyle12;
             this.CONTRACT_STATUS.HeaderText = "CONTRACT STATUS";
             this.CONTRACT_STATUS.Name = "CONTRACT_STATUS";
             this.CONTRACT_STATUS.ReadOnly = true;
@@ -1181,10 +1193,10 @@
             // LATE_CHARGE_BAL
             // 
             this.LATE_CHARGE_BAL.DataPropertyName = "CUSTHIST_LATE_CHARGE_BAL";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle5.Format = "C2";
-            dataGridViewCellStyle5.NullValue = null;
-            this.LATE_CHARGE_BAL.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle13.Format = "C2";
+            dataGridViewCellStyle13.NullValue = null;
+            this.LATE_CHARGE_BAL.DefaultCellStyle = dataGridViewCellStyle13;
             this.LATE_CHARGE_BAL.HeaderText = "LATE CHARGE BALANCE";
             this.LATE_CHARGE_BAL.Name = "LATE_CHARGE_BAL";
             this.LATE_CHARGE_BAL.ReadOnly = true;
@@ -1192,9 +1204,9 @@
             // PAID_THROUGH
             // 
             this.PAID_THROUGH.DataPropertyName = "SHORT_PAID_THRU";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.NullValue = null;
-            this.PAID_THROUGH.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.NullValue = null;
+            this.PAID_THROUGH.DefaultCellStyle = dataGridViewCellStyle14;
             this.PAID_THROUGH.HeaderText = "PAID THROUGH";
             this.PAID_THROUGH.Name = "PAID_THROUGH";
             this.PAID_THROUGH.ReadOnly = true;
@@ -1354,11 +1366,11 @@
             // Date
             // 
             this.Date.DataPropertyName = "COMMENT_DATE";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle7.Format = "d";
-            dataGridViewCellStyle7.NullValue = null;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Date.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle15.Format = "d";
+            dataGridViewCellStyle15.NullValue = null;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Date.DefaultCellStyle = dataGridViewCellStyle15;
             this.Date.HeaderText = "DATE";
             this.Date.MaxInputLength = 180;
             this.Date.Name = "Date";
@@ -1392,9 +1404,9 @@
             // COMMENT
             // 
             this.COMMENT.DataPropertyName = "COMMENT_WHOLE";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.COMMENT.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.COMMENT.DefaultCellStyle = dataGridViewCellStyle16;
             this.COMMENT.HeaderText = "COMMENT";
             this.COMMENT.MaxInputLength = 180;
             this.COMMENT.Name = "COMMENT";
@@ -1643,5 +1655,6 @@
         private System.Windows.Forms.BindingSource specialCommentCodesBindingSource;
         private IACDataSetTableAdapters.SpecialCommentCodesTableAdapter specialCommentCodesTableAdapter;
         private System.Windows.Forms.CheckBox checkBoxNoAdjLookBack;
+        private System.Windows.Forms.ToolStripButton toolStripButton2;
     }
 }
