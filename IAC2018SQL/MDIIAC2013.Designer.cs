@@ -39,6 +39,7 @@
             this.dealerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.masterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.paymentsToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.ticketsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.OpenEndFucntionsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CustomersMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dealersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -110,6 +111,8 @@
             this.vSIExtractToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.paidInFullPriorToMaturityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.overPaymentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.receivedContractReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.testToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openEndToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newCustomerEditListToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.paymentReceiptsBalanceJournalToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -158,7 +161,6 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.receivedContractReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -187,7 +189,8 @@
             this.dealerMaintenanceToolStripMenuItem,
             this.toolStripMenuItem4,
             this.contingentToolStripMenuItem1,
-            this.paymentsToolStripMenuItem2});
+            this.paymentsToolStripMenuItem2,
+            this.ticketsToolStripMenuItem});
             this.ClosedEndFunctionsMenuItem.Name = "ClosedEndFunctionsMenuItem";
             this.ClosedEndFunctionsMenuItem.Size = new System.Drawing.Size(133, 20);
             this.ClosedEndFunctionsMenuItem.Text = "&Closed End Functions";
@@ -247,6 +250,13 @@
             this.paymentsToolStripMenuItem2.Size = new System.Drawing.Size(198, 22);
             this.paymentsToolStripMenuItem2.Text = "P&ayments";
             this.paymentsToolStripMenuItem2.Click += new System.EventHandler(this.paymentsToolStripMenuItem2_Click);
+            // 
+            // ticketsToolStripMenuItem
+            // 
+            this.ticketsToolStripMenuItem.Name = "ticketsToolStripMenuItem";
+            this.ticketsToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.ticketsToolStripMenuItem.Text = "&Tickets";
+            this.ticketsToolStripMenuItem.Click += new System.EventHandler(this.ticketsToolStripMenuItem_Click);
             // 
             // OpenEndFucntionsMenuItem
             // 
@@ -652,9 +662,10 @@
             this.vSIExtractToolStripMenuItem,
             this.paidInFullPriorToMaturityToolStripMenuItem,
             this.overPaymentsToolStripMenuItem,
-            this.receivedContractReportToolStripMenuItem});
+            this.receivedContractReportToolStripMenuItem,
+            this.testToolStripMenuItem});
             this.closedEndToolStripMenuItem.Name = "closedEndToolStripMenuItem";
-            this.closedEndToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.closedEndToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.closedEndToolStripMenuItem.Text = "&Closed End";
             // 
             // amortizationScheduleToolStripMenuItem
@@ -839,6 +850,20 @@
             this.overPaymentsToolStripMenuItem.Text = "&Over Payments";
             this.overPaymentsToolStripMenuItem.Click += new System.EventHandler(this.overPaymentsToolStripMenuItem_Click);
             // 
+            // receivedContractReportToolStripMenuItem
+            // 
+            this.receivedContractReportToolStripMenuItem.Name = "receivedContractReportToolStripMenuItem";
+            this.receivedContractReportToolStripMenuItem.Size = new System.Drawing.Size(317, 22);
+            this.receivedContractReportToolStripMenuItem.Text = "Received Contract Report";
+            this.receivedContractReportToolStripMenuItem.Click += new System.EventHandler(this.receivedContractReportToolStripMenuItem_Click);
+            // 
+            // testToolStripMenuItem
+            // 
+            this.testToolStripMenuItem.Name = "testToolStripMenuItem";
+            this.testToolStripMenuItem.Size = new System.Drawing.Size(317, 22);
+            this.testToolStripMenuItem.Text = "Test";
+            this.testToolStripMenuItem.Click += new System.EventHandler(this.testToolStripMenuItem_Click);
+            // 
             // openEndToolStripMenuItem
             // 
             this.openEndToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -861,7 +886,7 @@
             this.openCustomerBuyBackReportBUYBACKToolStripMenuItem,
             this.firstPaymentDefaultReportToolStripMenuItem1});
             this.openEndToolStripMenuItem.Name = "openEndToolStripMenuItem";
-            this.openEndToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.openEndToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.openEndToolStripMenuItem.Text = "&Open End";
             // 
             // newCustomerEditListToolStripMenuItem1
@@ -1229,13 +1254,6 @@
             this.toolStripStatusLabel.Text = "Status";
             this.toolStripStatusLabel.Visible = false;
             // 
-            // receivedContractReportToolStripMenuItem
-            // 
-            this.receivedContractReportToolStripMenuItem.Name = "receivedContractReportToolStripMenuItem";
-            this.receivedContractReportToolStripMenuItem.Size = new System.Drawing.Size(317, 22);
-            this.receivedContractReportToolStripMenuItem.Text = "Received Contract Report";
-            this.receivedContractReportToolStripMenuItem.Click += new System.EventHandler(this.receivedContractReportToolStripMenuItem_Click);
-            // 
             // MDIIAC2013
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -1392,6 +1410,8 @@
         private System.Windows.Forms.ToolStripMenuItem overPaymentsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fixPartialPaymentsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem receivedContractReportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ticketsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem testToolStripMenuItem;
     }
 }
 

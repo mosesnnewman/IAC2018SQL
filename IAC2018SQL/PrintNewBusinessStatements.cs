@@ -68,11 +68,11 @@ namespace IAC2018SQL
                 OPNDEALRTableAdapter.CustomFillBy(ReportData.OPNDEALR);
                 OPNRATETableAdapter.FillAll(ReportData.OPNRATE);
                 PAYMENTTYPETableAdapter.Fill(ReportData.PAYMENTTYPE);
-                PAYMENTTypeBindingSource.AddNew();
+                /*PAYMENTTypeBindingSource.AddNew(); // Moses Newman 05/26/2021 Already have a blank row now!
                 PAYMENTTypeBindingSource.EndEdit();
                 ReportData.PAYMENTTYPE.Rows[PAYMENTTypeBindingSource.Position].SetField<String>("Type", " ");
                 PAYMENTTypeBindingSource.EndEdit();
-                ReportData.PAYMENTTYPE.AcceptChanges();
+                ReportData.PAYMENTTYPE.AcceptChanges();*/
 
                 DataRow  CustFound = null;
                 Object[] Key = null;
@@ -96,6 +96,13 @@ namespace IAC2018SQL
                 }
                 Statement myReportObject = new Statement();
                 myReportObject.SetDataSource(ReportData);
+                DailyDataSet Daily = new DailyDataSet();  // Moses Newman 05/25/2021
+                DailyDataSetTableAdapters.OpenCustomerHistoryLateChargeTableAdapter LateCharge = new DailyDataSetTableAdapters.OpenCustomerHistoryLateChargeTableAdapter();
+                
+                //LateCharge.Fill(Daily.OpenCustomerHistoryLateCharge, DateTime.Now.Date.AddMonths(-1), DateTime.Now.Date);
+                // Moses Newman 05/25/2021
+                myReportObject.Database.Tables[6].SetDataSource(Daily);
+
                 myReportObject.SetParameterValue("gsMessage", "**** T H I S  I S  N O T  A  B I L L ****");
                 myReportObject.SetParameterValue("gdEntryDate", DateTime.Now.Date);
                 myReportObject.SetParameterValue("gdClosingDate", DateTime.Now.Date);

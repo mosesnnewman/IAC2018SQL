@@ -85,12 +85,12 @@ namespace IAC2018SQL
                 OPNDEALRTableAdapter.CustomFillBy(ReportData.OPNDEALR);
                 OPNRATETableAdapter.FillAll(ReportData.OPNRATE);
                 PAYMENTTYPETableAdapter.Fill(ReportData.PAYMENTTYPE);
-                PAYMENTTypeBindingSource.AddNew();
+                /*PAYMENTTypeBindingSource.AddNew(); // Moses Newman 05/26/2021 Already have a blank row now!
                 PAYMENTTypeBindingSource.EndEdit();
                 ReportData.PAYMENTTYPE.Rows[PAYMENTTypeBindingSource.Position].SetField<String>("Type", " ");
                 ReportData.PAYMENTTYPE.Rows[PAYMENTTypeBindingSource.Position].SetField<String>("DESCRIPTION", "                     ");
                 PAYMENTTypeBindingSource.EndEdit();
-                ReportData.PAYMENTTYPE.AcceptChanges();
+                ReportData.PAYMENTTYPE.AcceptChanges();*/
 
                 // Statement report requires detail or no print, so create dummy history for customers with NO activity in this statement period.
                 for (Int32 i = 0; i < ReportData.OPNCUST.Rows.Count; i++)

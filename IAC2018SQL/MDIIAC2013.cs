@@ -1692,5 +1692,50 @@ namespace IAC2018SQL
         {
             CreateFormInstance("ClosedCustomerReceivedContractReport", false);
         }
+
+        private void ticketsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CreateFormInstance("FormTickets", false);
+        }
+
+        private void testToolStripMenuItem_Click(object sender, EventArgs e)
+        { 
+
+            CreateFormInstance("ReportViewer", false);
+            ReportViewer rptViewer = (ReportViewer)this.ActiveMdiChild;
+
+            Tickets ticketsdataset = new Tickets();
+            ProductionMainTables ticketiac = new ProductionMainTables();
+            ProductionMainTablesTableAdapters.CUSTOMERTableAdapter cUSTOMERTableAdapter = new ProductionMainTablesTableAdapters.CUSTOMERTableAdapter();
+            ProductionMainTablesTableAdapters.DEALERTableAdapter dEALERTableAdapter = new ProductionMainTablesTableAdapters.DEALERTableAdapter();
+
+            TicketsTableAdapters.TicketHeaderTableAdapter TicketHeaderTableAdapter = new TicketsTableAdapters.TicketHeaderTableAdapter();
+            TicketsTableAdapters.TicketDetailTableAdapter TicketDetailTableAdapter = new TicketsTableAdapters.TicketDetailTableAdapter();
+            TicketsTableAdapters.TicketAccountsTableAdapter TicketAccountsTableAdapter = new TicketsTableAdapters.TicketAccountsTableAdapter();
+
+            TicketAccountsTableAdapter.FillByAll(ticketsdataset.TicketAccounts);
+            cUSTOMERTableAdapter.Fill(ticketiac.CUSTOMER, "191034");
+            dEALERTableAdapter.Fill(ticketiac.DEALER, ticketiac.CUSTOMER.Rows[0].Field<String>("CUSTOMER_DEALER"));
+
+            TicketHeaderTableAdapter.Fill(ticketsdataset.TicketHeader, 1);
+            TicketDetailTableAdapter.FillByTicketID(ticketsdataset.TicketDetail, 1);
+
+            Ticket myReportObject = new Ticket();
+
+            myReportObject.SetDataSource(ticketsdataset);
+
+            myReportObject.Database.Tables[0].SetDataSource(ticketiac);
+            myReportObject.Database.Tables[1].SetDataSource(ticketiac);
+            myReportObject.Database.Tables[2].SetDataSource(ticketsdataset);
+            myReportObject.Database.Tables[3].SetDataSource(ticketsdataset);
+
+            myReportObject.SetParameterValue("gsUserID", Program.gsUserID);
+            myReportObject.SetParameterValue("gsUserName", Program.gsUserName);
+            rptViewer.crystalReportViewer.ReportSource = myReportObject;
+            rptViewer.crystalReportViewer.Refresh();
+            rptViewer.Show();
+
+
+        }
     }
 }

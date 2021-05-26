@@ -103,6 +103,16 @@ namespace IAC2018SQL.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Action_12x {
+            get {
+                object obj = ResourceManager.GetObject("Action_12x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap AddFile_16x_24 {
             get {
                 object obj = ResourceManager.GetObject("AddFile_16x_24", resourceCulture);
@@ -553,6 +563,16 @@ namespace IAC2018SQL.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Next_16x_24 {
+            get {
+                object obj = ResourceManager.GetObject("Next_16x_24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap PaperClip {
             get {
                 object obj = ResourceManager.GetObject("PaperClip", resourceCulture);
@@ -576,6 +596,16 @@ namespace IAC2018SQL.Properties {
         internal static System.Drawing.Bitmap PhoneTool_16x {
             get {
                 object obj = ResourceManager.GetObject("PhoneTool_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Previous_16x_24 {
+            get {
+                object obj = ResourceManager.GetObject("Previous_16x_24", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -646,6 +676,16 @@ namespace IAC2018SQL.Properties {
         internal static System.Drawing.Bitmap Summary_16x {
             get {
                 object obj = ResourceManager.GetObject("Summary_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TicketImage {
+            get {
+                object obj = ResourceManager.GetObject("TicketImage", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
