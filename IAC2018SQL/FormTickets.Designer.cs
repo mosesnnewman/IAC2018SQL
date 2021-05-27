@@ -44,6 +44,8 @@ namespace IAC2018SQL
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxDealerName = new System.Windows.Forms.TextBox();
             this.groupBoxHeader = new System.Windows.Forms.GroupBox();
+            this.labelTicketID = new System.Windows.Forms.Label();
+            this.textBoxTicketID = new System.Windows.Forms.TextBox();
             this.buttonNext = new System.Windows.Forms.Button();
             this.buttonPrevious = new System.Windows.Forms.Button();
             this.buttonAdd = new System.Windows.Forms.Button();
@@ -75,11 +77,12 @@ namespace IAC2018SQL
             this.ticketHeaderTableAdapter = new IAC2018SQL.TicketsTableAdapters.TicketHeaderTableAdapter();
             this.ticketDetailTableAdapter = new IAC2018SQL.TicketsTableAdapters.TicketDetailTableAdapter();
             this.buttonReprint = new System.Windows.Forms.Button();
+            this.checkBoxCloseOut = new System.Windows.Forms.CheckBox();
+            this.buttonCancelTicket = new System.Windows.Forms.Button();
             this.colorTextBoxOutofBalance = new IAC2018SQL.ColorTextBox();
             this.colorTextBoxCredits = new IAC2018SQL.ColorTextBox();
             this.colorTextBoxDebits = new IAC2018SQL.ColorTextBox();
-            this.txtFirstPayDate = new ProManApp.NullableDateTimePicker();
-            this.checkBoxCloseOut = new System.Windows.Forms.CheckBox();
+            this.NullableDateTimePickerDate = new ProManApp.NullableDateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.cUSTOMERBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productionMainTables)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceDealer)).BeginInit();
@@ -88,14 +91,14 @@ namespace IAC2018SQL
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceTicketDetail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ticketsdataset)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceTicketHeader)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtFirstPayDate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NullableDateTimePickerDate)).BeginInit();
             this.SuspendLayout();
             // 
             // textBoxName
             // 
             this.textBoxName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_FIRST_NAME", true));
             this.textBoxName.Enabled = false;
-            this.textBoxName.Location = new System.Drawing.Point(187, 13);
+            this.textBoxName.Location = new System.Drawing.Point(187, 15);
             this.textBoxName.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.ReadOnly = true;
@@ -116,7 +119,7 @@ namespace IAC2018SQL
             // 
             this.textBoxMiddleInitial.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "MiddleName", true));
             this.textBoxMiddleInitial.Enabled = false;
-            this.textBoxMiddleInitial.Location = new System.Drawing.Point(542, 13);
+            this.textBoxMiddleInitial.Location = new System.Drawing.Point(542, 15);
             this.textBoxMiddleInitial.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxMiddleInitial.Name = "textBoxMiddleInitial";
             this.textBoxMiddleInitial.ReadOnly = true;
@@ -127,7 +130,7 @@ namespace IAC2018SQL
             // 
             this.textBoxLastName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_LAST_NAME", true));
             this.textBoxLastName.Enabled = false;
-            this.textBoxLastName.Location = new System.Drawing.Point(576, 13);
+            this.textBoxLastName.Location = new System.Drawing.Point(576, 15);
             this.textBoxLastName.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxLastName.Name = "textBoxLastName";
             this.textBoxLastName.ReadOnly = true;
@@ -137,20 +140,22 @@ namespace IAC2018SQL
             // labelName
             // 
             this.labelName.AutoSize = true;
-            this.labelName.Location = new System.Drawing.Point(131, 21);
+            this.labelName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelName.Location = new System.Drawing.Point(129, 21);
             this.labelName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelName.Name = "labelName";
-            this.labelName.Size = new System.Drawing.Size(48, 16);
+            this.labelName.Size = new System.Drawing.Size(53, 16);
             this.labelName.TabIndex = 4;
             this.labelName.Text = "Name:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(126, 51);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(123, 51);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 16);
+            this.label1.Size = new System.Drawing.Size(59, 16);
             this.label1.TabIndex = 5;
             this.label1.Text = "Dealer:";
             // 
@@ -158,7 +163,7 @@ namespace IAC2018SQL
             // 
             this.textBoxDealerNumber.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceDealer, "DEALER_ACC_NO", true));
             this.textBoxDealerNumber.Enabled = false;
-            this.textBoxDealerNumber.Location = new System.Drawing.Point(187, 51);
+            this.textBoxDealerNumber.Location = new System.Drawing.Point(187, 45);
             this.textBoxDealerNumber.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxDealerNumber.Name = "textBoxDealerNumber";
             this.textBoxDealerNumber.ReadOnly = true;
@@ -174,7 +179,7 @@ namespace IAC2018SQL
             // 
             this.textBoxAccount.BackColor = System.Drawing.Color.Gold;
             this.textBoxAccount.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_NO", true));
-            this.textBoxAccount.Location = new System.Drawing.Point(187, 85);
+            this.textBoxAccount.Location = new System.Drawing.Point(187, 79);
             this.textBoxAccount.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxAccount.Name = "textBoxAccount";
             this.textBoxAccount.Size = new System.Drawing.Size(65, 22);
@@ -185,10 +190,11 @@ namespace IAC2018SQL
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(115, 85);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 16);
+            this.label2.Size = new System.Drawing.Size(67, 16);
             this.label2.TabIndex = 7;
             this.label2.Text = "Account:";
             // 
@@ -196,7 +202,7 @@ namespace IAC2018SQL
             // 
             this.textBoxDealerName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceDealer, "DEALER_NAME", true));
             this.textBoxDealerName.Enabled = false;
-            this.textBoxDealerName.Location = new System.Drawing.Point(240, 51);
+            this.textBoxDealerName.Location = new System.Drawing.Point(240, 45);
             this.textBoxDealerName.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxDealerName.Name = "textBoxDealerName";
             this.textBoxDealerName.ReadOnly = true;
@@ -205,6 +211,8 @@ namespace IAC2018SQL
             // 
             // groupBoxHeader
             // 
+            this.groupBoxHeader.Controls.Add(this.labelTicketID);
+            this.groupBoxHeader.Controls.Add(this.textBoxTicketID);
             this.groupBoxHeader.Controls.Add(this.buttonNext);
             this.groupBoxHeader.Controls.Add(this.buttonPrevious);
             this.groupBoxHeader.Controls.Add(this.textBoxAccount);
@@ -223,6 +231,27 @@ namespace IAC2018SQL
             this.groupBoxHeader.Size = new System.Drawing.Size(1038, 121);
             this.groupBoxHeader.TabIndex = 10;
             this.groupBoxHeader.TabStop = false;
+            // 
+            // labelTicketID
+            // 
+            this.labelTicketID.AutoSize = true;
+            this.labelTicketID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTicketID.Location = new System.Drawing.Point(266, 85);
+            this.labelTicketID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelTicketID.Name = "labelTicketID";
+            this.labelTicketID.Size = new System.Drawing.Size(70, 16);
+            this.labelTicketID.TabIndex = 13;
+            this.labelTicketID.Text = "TicketID:";
+            // 
+            // textBoxTicketID
+            // 
+            this.textBoxTicketID.BackColor = System.Drawing.SystemColors.Control;
+            this.textBoxTicketID.Enabled = false;
+            this.textBoxTicketID.Location = new System.Drawing.Point(339, 79);
+            this.textBoxTicketID.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxTicketID.Name = "textBoxTicketID";
+            this.textBoxTicketID.Size = new System.Drawing.Size(88, 22);
+            this.textBoxTicketID.TabIndex = 12;
             // 
             // buttonNext
             // 
@@ -296,7 +325,6 @@ namespace IAC2018SQL
             this.dataListView1.UseCompatibleStateImageBehavior = false;
             this.dataListView1.View = System.Windows.Forms.View.Details;
             this.dataListView1.CellEditFinished += new BrightIdeasSoftware.CellEditEventHandler(this.dataListView1_CellEditFinished);
-            this.dataListView1.CellEditFinishing += new BrightIdeasSoftware.CellEditEventHandler(this.dataListView1_CellEditFinishing);
             this.dataListView1.CellEditStarting += new BrightIdeasSoftware.CellEditEventHandler(this.dataListView1_CellEditStarting);
             this.dataListView1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.GeneralKeypress);
             this.dataListView1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataListView1_MouseClick);
@@ -481,13 +509,13 @@ namespace IAC2018SQL
             this.buttonClearDetail.Name = "buttonClearDetail";
             this.buttonClearDetail.Size = new System.Drawing.Size(100, 28);
             this.buttonClearDetail.TabIndex = 88;
-            this.buttonClearDetail.Text = "Clear Detail";
+            this.buttonClearDetail.Text = "Clear &Detail";
             this.buttonClearDetail.UseVisualStyleBackColor = true;
             this.buttonClearDetail.Click += new System.EventHandler(this.buttonClearDetail_Click);
             // 
             // buttonSaveTicket
             // 
-            this.buttonSaveTicket.Location = new System.Drawing.Point(230, 603);
+            this.buttonSaveTicket.Location = new System.Drawing.Point(338, 603);
             this.buttonSaveTicket.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSaveTicket.Name = "buttonSaveTicket";
             this.buttonSaveTicket.Size = new System.Drawing.Size(100, 28);
@@ -518,6 +546,30 @@ namespace IAC2018SQL
             this.buttonReprint.UseVisualStyleBackColor = true;
             this.buttonReprint.Click += new System.EventHandler(this.buttonReprint_Click);
             // 
+            // checkBoxCloseOut
+            // 
+            this.checkBoxCloseOut.AutoSize = true;
+            this.checkBoxCloseOut.Checked = true;
+            this.checkBoxCloseOut.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxCloseOut.Enabled = false;
+            this.checkBoxCloseOut.Location = new System.Drawing.Point(14, 507);
+            this.checkBoxCloseOut.Name = "checkBoxCloseOut";
+            this.checkBoxCloseOut.Size = new System.Drawing.Size(132, 20);
+            this.checkBoxCloseOut.TabIndex = 91;
+            this.checkBoxCloseOut.Text = "Close Out Ticket?";
+            this.checkBoxCloseOut.UseVisualStyleBackColor = true;
+            // 
+            // buttonCancelTicket
+            // 
+            this.buttonCancelTicket.Location = new System.Drawing.Point(230, 603);
+            this.buttonCancelTicket.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonCancelTicket.Name = "buttonCancelTicket";
+            this.buttonCancelTicket.Size = new System.Drawing.Size(100, 28);
+            this.buttonCancelTicket.TabIndex = 92;
+            this.buttonCancelTicket.Text = "&Cancel Ticket";
+            this.buttonCancelTicket.UseVisualStyleBackColor = true;
+            this.buttonCancelTicket.Click += new System.EventHandler(this.buttonCancelTicket_Click);
+            // 
             // colorTextBoxOutofBalance
             // 
             this.colorTextBoxOutofBalance.Location = new System.Drawing.Point(329, 563);
@@ -545,30 +597,17 @@ namespace IAC2018SQL
             this.colorTextBoxDebits.TabIndex = 85;
             this.colorTextBoxDebits.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // txtFirstPayDate
+            // NullableDateTimePickerDate
             // 
-            this.txtFirstPayDate.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.bindingSourceTicketHeader, "Date", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "1/1/1980", "d"));
-            this.txtFirstPayDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFirstPayDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.txtFirstPayDate.Location = new System.Drawing.Point(432, 502);
-            this.txtFirstPayDate.Name = "txtFirstPayDate";
-            this.txtFirstPayDate.ReadOnly = true;
-            this.txtFirstPayDate.Size = new System.Drawing.Size(97, 26);
-            this.txtFirstPayDate.TabIndex = 77;
-            this.txtFirstPayDate.Value = new System.DateTime(2021, 5, 26, 0, 0, 0, 0);
-            // 
-            // checkBoxCloseOut
-            // 
-            this.checkBoxCloseOut.AutoSize = true;
-            this.checkBoxCloseOut.Checked = true;
-            this.checkBoxCloseOut.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxCloseOut.Enabled = false;
-            this.checkBoxCloseOut.Location = new System.Drawing.Point(14, 507);
-            this.checkBoxCloseOut.Name = "checkBoxCloseOut";
-            this.checkBoxCloseOut.Size = new System.Drawing.Size(132, 20);
-            this.checkBoxCloseOut.TabIndex = 91;
-            this.checkBoxCloseOut.Text = "Close Out Ticket?";
-            this.checkBoxCloseOut.UseVisualStyleBackColor = true;
+            this.NullableDateTimePickerDate.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.bindingSourceTicketHeader, "Date", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "1/1/1980", "d"));
+            this.NullableDateTimePickerDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NullableDateTimePickerDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.NullableDateTimePickerDate.Location = new System.Drawing.Point(432, 502);
+            this.NullableDateTimePickerDate.Name = "NullableDateTimePickerDate";
+            this.NullableDateTimePickerDate.ReadOnly = true;
+            this.NullableDateTimePickerDate.Size = new System.Drawing.Size(97, 26);
+            this.NullableDateTimePickerDate.TabIndex = 77;
+            this.NullableDateTimePickerDate.Value = new System.DateTime(2021, 5, 27, 0, 0, 0, 0);
             // 
             // FormTickets
             // 
@@ -576,6 +615,7 @@ namespace IAC2018SQL
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(1067, 644);
+            this.Controls.Add(this.buttonCancelTicket);
             this.Controls.Add(this.checkBoxCloseOut);
             this.Controls.Add(this.buttonReprint);
             this.Controls.Add(this.buttonSaveTicket);
@@ -590,7 +630,7 @@ namespace IAC2018SQL
             this.Controls.Add(this.textBoxMadeBy);
             this.Controls.Add(this.labelMadeBy);
             this.Controls.Add(this.labelDate);
-            this.Controls.Add(this.txtFirstPayDate);
+            this.Controls.Add(this.NullableDateTimePickerDate);
             this.Controls.Add(this.labelExplanation);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.buttonAdd);
@@ -610,7 +650,7 @@ namespace IAC2018SQL
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceTicketDetail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ticketsdataset)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceTicketHeader)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtFirstPayDate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NullableDateTimePickerDate)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -648,7 +688,7 @@ namespace IAC2018SQL
         private BrightIdeasSoftware.OLVColumn Credit;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Label labelExplanation;
-        private ProManApp.NullableDateTimePicker txtFirstPayDate;
+        private ProManApp.NullableDateTimePicker NullableDateTimePickerDate;
         private System.Windows.Forms.Label labelDate;
         private System.Windows.Forms.Label labelMadeBy;
         private System.Windows.Forms.TextBox textBoxMadeBy;
@@ -667,5 +707,8 @@ namespace IAC2018SQL
         private System.Windows.Forms.Button buttonNext;
         public System.Windows.Forms.Button buttonReprint;
         private System.Windows.Forms.CheckBox checkBoxCloseOut;
+        private System.Windows.Forms.Button buttonCancelTicket;
+        private System.Windows.Forms.Label labelTicketID;
+        private System.Windows.Forms.TextBox textBoxTicketID;
     }
 }
