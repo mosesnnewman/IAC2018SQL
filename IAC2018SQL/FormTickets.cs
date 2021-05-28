@@ -75,6 +75,12 @@ namespace IAC2018SQL
                 else
                     return "";
             };
+            this.Dealer.AspectToStringConverter = delegate (object x)
+            {
+                String lsDealer;
+                lsDealer = (x == System.DBNull.Value) ? "" : (x.ToString() != "" ? x.ToString().PadLeft(3,'0'):"");
+                return lsDealer;
+            };
             ActiveControl = textBoxAccount;
             textBoxAccount.Select();
         }
@@ -100,7 +106,7 @@ namespace IAC2018SQL
         private void dataListView1_CellEditStarting(object sender, BrightIdeasSoftware.CellEditEventArgs e)
         {
             Int32 cindex = e.Column.Index,AccountID;
-            var AcccountColumn = dataListView1.GetColumn(1);
+            var AccountColumn = dataListView1.GetColumn(1);
 
             switch (cindex)
             {
@@ -118,14 +124,11 @@ namespace IAC2018SQL
                     //cbAccount.SelectedValueChanged += CbAccount_SelectedValueChanged;
                     e.Control = cbAccount;
                     break;
-                /*case 2:
                 case 3:
                 case 4:
-                    //e.Control.KeyPress += GeneralKeypress;
-                    //e.Control.TextChanged += Control_TextChanged;
-                    break;*/
+                    break;
                 case 5:
-                    AccountID = (Int32)AcccountColumn.GetValue(e.RowObject);
+                    AccountID = (Int32)AccountColumn.GetValue(e.RowObject);
                     if (AccountID == 2)
                     {
                         e.Control.Enabled = false;
@@ -149,7 +152,7 @@ namespace IAC2018SQL
                     e.Control = cbPaymentType;
                     break;
                 case 6:
-                    AccountID = (Int32)AcccountColumn.GetValue(e.RowObject);
+                    AccountID = (Int32)AccountColumn.GetValue(e.RowObject);
                     if (AccountID == 2)
                     {
                         e.Control.Enabled = false;
@@ -204,6 +207,14 @@ namespace IAC2018SQL
             {
                 Debits += ticketsdataset.TicketDetail.Rows[i].Field<Decimal>("Debit");
                 Credits += ticketsdataset.TicketDetail.Rows[i].Field<Decimal>("Credit");
+            }
+            for (int i = 0; i < ticketsdataset.TicketDetail.Rows.Count; i++)
+            {
+                if (ticketsdataset.TicketDetail.Rows[i].Field<Int32>("GLAccount") == 2)
+                {
+                    ticketsdataset.TicketDetail.Rows[i].SetField<Decimal>("Credit", Debits);
+                    Credits = Debits;
+                }
             }
             if (Debits != Credits)
             {
