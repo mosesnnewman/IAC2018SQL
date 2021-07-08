@@ -479,6 +479,10 @@ namespace IAC2018SQL
                         case "B":
                             CodeTypetextBox.Text = "G";
                             break;
+                        // Moses Newman 07/07/2021 
+                        case "R":
+                            CodeTypetextBox.Text = "C";
+                            break;
                         case "W":
                             CodeTypetextBox.Text = "H";
                             break;

@@ -48,6 +48,8 @@ namespace IAC2018SQL {
         
         private ClosedOverPaymentsDataTable tableClosedOverPayments;
         
+        private CashPaymentSummaryDataTable tableCashPaymentSummary;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -111,6 +113,9 @@ namespace IAC2018SQL {
                 }
                 if ((ds.Tables["ClosedOverPayments"] != null)) {
                     base.Tables.Add(new ClosedOverPaymentsDataTable(ds.Tables["ClosedOverPayments"]));
+                }
+                if ((ds.Tables["CashPaymentSummary"] != null)) {
+                    base.Tables.Add(new CashPaymentSummaryDataTable(ds.Tables["CashPaymentSummary"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -252,6 +257,16 @@ namespace IAC2018SQL {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public CashPaymentSummaryDataTable CashPaymentSummary {
+            get {
+                return this.tableCashPaymentSummary;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -352,6 +367,9 @@ namespace IAC2018SQL {
                 }
                 if ((ds.Tables["ClosedOverPayments"] != null)) {
                     base.Tables.Add(new ClosedOverPaymentsDataTable(ds.Tables["ClosedOverPayments"]));
+                }
+                if ((ds.Tables["CashPaymentSummary"] != null)) {
+                    base.Tables.Add(new CashPaymentSummaryDataTable(ds.Tables["CashPaymentSummary"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -458,6 +476,12 @@ namespace IAC2018SQL {
                     this.tableClosedOverPayments.InitVars();
                 }
             }
+            this.tableCashPaymentSummary = ((CashPaymentSummaryDataTable)(base.Tables["CashPaymentSummary"]));
+            if ((initTable == true)) {
+                if ((this.tableCashPaymentSummary != null)) {
+                    this.tableCashPaymentSummary.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -492,6 +516,8 @@ namespace IAC2018SQL {
             base.Tables.Add(this.tableCustomerExtract);
             this.tableClosedOverPayments = new ClosedOverPaymentsDataTable();
             base.Tables.Add(this.tableClosedOverPayments);
+            this.tableCashPaymentSummary = new CashPaymentSummaryDataTable();
+            base.Tables.Add(this.tableCashPaymentSummary);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -563,6 +589,12 @@ namespace IAC2018SQL {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private bool ShouldSerializeClosedOverPayments() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private bool ShouldSerializeCashPaymentSummary() {
             return false;
         }
         
@@ -656,6 +688,9 @@ namespace IAC2018SQL {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void ClosedOverPaymentsRowChangeEventHandler(object sender, ClosedOverPaymentsRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public delegate void CashPaymentSummaryRowChangeEventHandler(object sender, CashPaymentSummaryRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -7369,6 +7404,700 @@ namespace IAC2018SQL {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "ClosedOverPaymentsDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class CashPaymentSummaryDataTable : global::System.Data.TypedTableBase<CashPaymentSummaryRow> {
+            
+            private global::System.Data.DataColumn columnDate;
+            
+            private global::System.Data.DataColumn columnWeek;
+            
+            private global::System.Data.DataColumn columnClosedCheckCount;
+            
+            private global::System.Data.DataColumn columnClosedCheckTotal;
+            
+            private global::System.Data.DataColumn columnOpenCheckCount;
+            
+            private global::System.Data.DataColumn columnOpenCheckTotal;
+            
+            private global::System.Data.DataColumn columnClosedCashCount;
+            
+            private global::System.Data.DataColumn columnClosedCashTotal;
+            
+            private global::System.Data.DataColumn columnOpenCashCount;
+            
+            private global::System.Data.DataColumn columnOpenCashTotal;
+            
+            private global::System.Data.DataColumn columnClosedWesternUnionCount;
+            
+            private global::System.Data.DataColumn columnClosedWesternUnionTotal;
+            
+            private global::System.Data.DataColumn columnOpenWesternUnionCount;
+            
+            private global::System.Data.DataColumn columnOpenWesternUnionTotal;
+            
+            private global::System.Data.DataColumn columnClosedPayNearMeCount;
+            
+            private global::System.Data.DataColumn columnClosedPayNearMeTotal;
+            
+            private global::System.Data.DataColumn columnOpenPayNearMeCount;
+            
+            private global::System.Data.DataColumn columnOpenPayNearMeTotal;
+            
+            private global::System.Data.DataColumn columnClosedACHCount;
+            
+            private global::System.Data.DataColumn columnClosedACHTotal;
+            
+            private global::System.Data.DataColumn columnOpenACHCount;
+            
+            private global::System.Data.DataColumn columnOpenACHTotal;
+            
+            private global::System.Data.DataColumn columnClosedCreditCardCount;
+            
+            private global::System.Data.DataColumn columnClosedCreditCardTotal;
+            
+            private global::System.Data.DataColumn columnOpenCreditCardCount;
+            
+            private global::System.Data.DataColumn columnOpenCreditCardTotal;
+            
+            private global::System.Data.DataColumn columnClosedEFTCount;
+            
+            private global::System.Data.DataColumn columnClosedEFTTotal;
+            
+            private global::System.Data.DataColumn columnOpenEFTCount;
+            
+            private global::System.Data.DataColumn columnOpenEFTTotal;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public CashPaymentSummaryDataTable() {
+                this.TableName = "CashPaymentSummary";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal CashPaymentSummaryDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected CashPaymentSummaryDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn DateColumn {
+                get {
+                    return this.columnDate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn WeekColumn {
+                get {
+                    return this.columnWeek;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ClosedCheckCountColumn {
+                get {
+                    return this.columnClosedCheckCount;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ClosedCheckTotalColumn {
+                get {
+                    return this.columnClosedCheckTotal;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn OpenCheckCountColumn {
+                get {
+                    return this.columnOpenCheckCount;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn OpenCheckTotalColumn {
+                get {
+                    return this.columnOpenCheckTotal;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ClosedCashCountColumn {
+                get {
+                    return this.columnClosedCashCount;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ClosedCashTotalColumn {
+                get {
+                    return this.columnClosedCashTotal;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn OpenCashCountColumn {
+                get {
+                    return this.columnOpenCashCount;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn OpenCashTotalColumn {
+                get {
+                    return this.columnOpenCashTotal;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ClosedWesternUnionCountColumn {
+                get {
+                    return this.columnClosedWesternUnionCount;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ClosedWesternUnionTotalColumn {
+                get {
+                    return this.columnClosedWesternUnionTotal;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn OpenWesternUnionCountColumn {
+                get {
+                    return this.columnOpenWesternUnionCount;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn OpenWesternUnionTotalColumn {
+                get {
+                    return this.columnOpenWesternUnionTotal;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ClosedPayNearMeCountColumn {
+                get {
+                    return this.columnClosedPayNearMeCount;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ClosedPayNearMeTotalColumn {
+                get {
+                    return this.columnClosedPayNearMeTotal;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn OpenPayNearMeCountColumn {
+                get {
+                    return this.columnOpenPayNearMeCount;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn OpenPayNearMeTotalColumn {
+                get {
+                    return this.columnOpenPayNearMeTotal;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ClosedACHCountColumn {
+                get {
+                    return this.columnClosedACHCount;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ClosedACHTotalColumn {
+                get {
+                    return this.columnClosedACHTotal;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn OpenACHCountColumn {
+                get {
+                    return this.columnOpenACHCount;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn OpenACHTotalColumn {
+                get {
+                    return this.columnOpenACHTotal;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ClosedCreditCardCountColumn {
+                get {
+                    return this.columnClosedCreditCardCount;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ClosedCreditCardTotalColumn {
+                get {
+                    return this.columnClosedCreditCardTotal;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn OpenCreditCardCountColumn {
+                get {
+                    return this.columnOpenCreditCardCount;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn OpenCreditCardTotalColumn {
+                get {
+                    return this.columnOpenCreditCardTotal;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ClosedEFTCountColumn {
+                get {
+                    return this.columnClosedEFTCount;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ClosedEFTTotalColumn {
+                get {
+                    return this.columnClosedEFTTotal;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn OpenEFTCountColumn {
+                get {
+                    return this.columnOpenEFTCount;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn OpenEFTTotalColumn {
+                get {
+                    return this.columnOpenEFTTotal;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public CashPaymentSummaryRow this[int index] {
+                get {
+                    return ((CashPaymentSummaryRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event CashPaymentSummaryRowChangeEventHandler CashPaymentSummaryRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event CashPaymentSummaryRowChangeEventHandler CashPaymentSummaryRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event CashPaymentSummaryRowChangeEventHandler CashPaymentSummaryRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event CashPaymentSummaryRowChangeEventHandler CashPaymentSummaryRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void AddCashPaymentSummaryRow(CashPaymentSummaryRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public CashPaymentSummaryRow AddCashPaymentSummaryRow(
+                        System.DateTime Date, 
+                        System.DateTime Week, 
+                        int ClosedCheckCount, 
+                        decimal ClosedCheckTotal, 
+                        int OpenCheckCount, 
+                        decimal OpenCheckTotal, 
+                        int ClosedCashCount, 
+                        decimal ClosedCashTotal, 
+                        int OpenCashCount, 
+                        decimal OpenCashTotal, 
+                        int ClosedWesternUnionCount, 
+                        decimal ClosedWesternUnionTotal, 
+                        int OpenWesternUnionCount, 
+                        decimal OpenWesternUnionTotal, 
+                        int ClosedPayNearMeCount, 
+                        decimal ClosedPayNearMeTotal, 
+                        int OpenPayNearMeCount, 
+                        decimal OpenPayNearMeTotal, 
+                        int ClosedACHCount, 
+                        decimal ClosedACHTotal, 
+                        int OpenACHCount, 
+                        decimal OpenACHTotal, 
+                        int ClosedCreditCardCount, 
+                        decimal ClosedCreditCardTotal, 
+                        int OpenCreditCardCount, 
+                        decimal OpenCreditCardTotal, 
+                        int ClosedEFTCount, 
+                        decimal ClosedEFTTotal, 
+                        int OpenEFTCount, 
+                        decimal OpenEFTTotal) {
+                CashPaymentSummaryRow rowCashPaymentSummaryRow = ((CashPaymentSummaryRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        Date,
+                        Week,
+                        ClosedCheckCount,
+                        ClosedCheckTotal,
+                        OpenCheckCount,
+                        OpenCheckTotal,
+                        ClosedCashCount,
+                        ClosedCashTotal,
+                        OpenCashCount,
+                        OpenCashTotal,
+                        ClosedWesternUnionCount,
+                        ClosedWesternUnionTotal,
+                        OpenWesternUnionCount,
+                        OpenWesternUnionTotal,
+                        ClosedPayNearMeCount,
+                        ClosedPayNearMeTotal,
+                        OpenPayNearMeCount,
+                        OpenPayNearMeTotal,
+                        ClosedACHCount,
+                        ClosedACHTotal,
+                        OpenACHCount,
+                        OpenACHTotal,
+                        ClosedCreditCardCount,
+                        ClosedCreditCardTotal,
+                        OpenCreditCardCount,
+                        OpenCreditCardTotal,
+                        ClosedEFTCount,
+                        ClosedEFTTotal,
+                        OpenEFTCount,
+                        OpenEFTTotal};
+                rowCashPaymentSummaryRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowCashPaymentSummaryRow);
+                return rowCashPaymentSummaryRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public CashPaymentSummaryRow FindByDate(System.DateTime Date) {
+                return ((CashPaymentSummaryRow)(this.Rows.Find(new object[] {
+                            Date})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                CashPaymentSummaryDataTable cln = ((CashPaymentSummaryDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new CashPaymentSummaryDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal void InitVars() {
+                this.columnDate = base.Columns["Date"];
+                this.columnWeek = base.Columns["Week"];
+                this.columnClosedCheckCount = base.Columns["ClosedCheckCount"];
+                this.columnClosedCheckTotal = base.Columns["ClosedCheckTotal"];
+                this.columnOpenCheckCount = base.Columns["OpenCheckCount"];
+                this.columnOpenCheckTotal = base.Columns["OpenCheckTotal"];
+                this.columnClosedCashCount = base.Columns["ClosedCashCount"];
+                this.columnClosedCashTotal = base.Columns["ClosedCashTotal"];
+                this.columnOpenCashCount = base.Columns["OpenCashCount"];
+                this.columnOpenCashTotal = base.Columns["OpenCashTotal"];
+                this.columnClosedWesternUnionCount = base.Columns["ClosedWesternUnionCount"];
+                this.columnClosedWesternUnionTotal = base.Columns["ClosedWesternUnionTotal"];
+                this.columnOpenWesternUnionCount = base.Columns["OpenWesternUnionCount"];
+                this.columnOpenWesternUnionTotal = base.Columns["OpenWesternUnionTotal"];
+                this.columnClosedPayNearMeCount = base.Columns["ClosedPayNearMeCount"];
+                this.columnClosedPayNearMeTotal = base.Columns["ClosedPayNearMeTotal"];
+                this.columnOpenPayNearMeCount = base.Columns["OpenPayNearMeCount"];
+                this.columnOpenPayNearMeTotal = base.Columns["OpenPayNearMeTotal"];
+                this.columnClosedACHCount = base.Columns["ClosedACHCount"];
+                this.columnClosedACHTotal = base.Columns["ClosedACHTotal"];
+                this.columnOpenACHCount = base.Columns["OpenACHCount"];
+                this.columnOpenACHTotal = base.Columns["OpenACHTotal"];
+                this.columnClosedCreditCardCount = base.Columns["ClosedCreditCardCount"];
+                this.columnClosedCreditCardTotal = base.Columns["ClosedCreditCardTotal"];
+                this.columnOpenCreditCardCount = base.Columns["OpenCreditCardCount"];
+                this.columnOpenCreditCardTotal = base.Columns["OpenCreditCardTotal"];
+                this.columnClosedEFTCount = base.Columns["ClosedEFTCount"];
+                this.columnClosedEFTTotal = base.Columns["ClosedEFTTotal"];
+                this.columnOpenEFTCount = base.Columns["OpenEFTCount"];
+                this.columnOpenEFTTotal = base.Columns["OpenEFTTotal"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            private void InitClass() {
+                this.columnDate = new global::System.Data.DataColumn("Date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDate);
+                this.columnWeek = new global::System.Data.DataColumn("Week", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnWeek);
+                this.columnClosedCheckCount = new global::System.Data.DataColumn("ClosedCheckCount", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnClosedCheckCount);
+                this.columnClosedCheckTotal = new global::System.Data.DataColumn("ClosedCheckTotal", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnClosedCheckTotal);
+                this.columnOpenCheckCount = new global::System.Data.DataColumn("OpenCheckCount", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOpenCheckCount);
+                this.columnOpenCheckTotal = new global::System.Data.DataColumn("OpenCheckTotal", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOpenCheckTotal);
+                this.columnClosedCashCount = new global::System.Data.DataColumn("ClosedCashCount", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnClosedCashCount);
+                this.columnClosedCashTotal = new global::System.Data.DataColumn("ClosedCashTotal", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnClosedCashTotal);
+                this.columnOpenCashCount = new global::System.Data.DataColumn("OpenCashCount", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOpenCashCount);
+                this.columnOpenCashTotal = new global::System.Data.DataColumn("OpenCashTotal", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOpenCashTotal);
+                this.columnClosedWesternUnionCount = new global::System.Data.DataColumn("ClosedWesternUnionCount", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnClosedWesternUnionCount);
+                this.columnClosedWesternUnionTotal = new global::System.Data.DataColumn("ClosedWesternUnionTotal", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnClosedWesternUnionTotal);
+                this.columnOpenWesternUnionCount = new global::System.Data.DataColumn("OpenWesternUnionCount", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOpenWesternUnionCount);
+                this.columnOpenWesternUnionTotal = new global::System.Data.DataColumn("OpenWesternUnionTotal", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOpenWesternUnionTotal);
+                this.columnClosedPayNearMeCount = new global::System.Data.DataColumn("ClosedPayNearMeCount", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnClosedPayNearMeCount);
+                this.columnClosedPayNearMeTotal = new global::System.Data.DataColumn("ClosedPayNearMeTotal", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnClosedPayNearMeTotal);
+                this.columnOpenPayNearMeCount = new global::System.Data.DataColumn("OpenPayNearMeCount", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOpenPayNearMeCount);
+                this.columnOpenPayNearMeTotal = new global::System.Data.DataColumn("OpenPayNearMeTotal", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOpenPayNearMeTotal);
+                this.columnClosedACHCount = new global::System.Data.DataColumn("ClosedACHCount", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnClosedACHCount);
+                this.columnClosedACHTotal = new global::System.Data.DataColumn("ClosedACHTotal", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnClosedACHTotal);
+                this.columnOpenACHCount = new global::System.Data.DataColumn("OpenACHCount", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOpenACHCount);
+                this.columnOpenACHTotal = new global::System.Data.DataColumn("OpenACHTotal", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOpenACHTotal);
+                this.columnClosedCreditCardCount = new global::System.Data.DataColumn("ClosedCreditCardCount", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnClosedCreditCardCount);
+                this.columnClosedCreditCardTotal = new global::System.Data.DataColumn("ClosedCreditCardTotal", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnClosedCreditCardTotal);
+                this.columnOpenCreditCardCount = new global::System.Data.DataColumn("OpenCreditCardCount", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOpenCreditCardCount);
+                this.columnOpenCreditCardTotal = new global::System.Data.DataColumn("OpenCreditCardTotal", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOpenCreditCardTotal);
+                this.columnClosedEFTCount = new global::System.Data.DataColumn("ClosedEFTCount", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnClosedEFTCount);
+                this.columnClosedEFTTotal = new global::System.Data.DataColumn("ClosedEFTTotal", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnClosedEFTTotal);
+                this.columnOpenEFTCount = new global::System.Data.DataColumn("OpenEFTCount", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOpenEFTCount);
+                this.columnOpenEFTTotal = new global::System.Data.DataColumn("OpenEFTTotal", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOpenEFTTotal);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnDate}, true));
+                this.columnDate.AllowDBNull = false;
+                this.columnDate.Unique = true;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public CashPaymentSummaryRow NewCashPaymentSummaryRow() {
+                return ((CashPaymentSummaryRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new CashPaymentSummaryRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(CashPaymentSummaryRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.CashPaymentSummaryRowChanged != null)) {
+                    this.CashPaymentSummaryRowChanged(this, new CashPaymentSummaryRowChangeEvent(((CashPaymentSummaryRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.CashPaymentSummaryRowChanging != null)) {
+                    this.CashPaymentSummaryRowChanging(this, new CashPaymentSummaryRowChangeEvent(((CashPaymentSummaryRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.CashPaymentSummaryRowDeleted != null)) {
+                    this.CashPaymentSummaryRowDeleted(this, new CashPaymentSummaryRowChangeEvent(((CashPaymentSummaryRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.CashPaymentSummaryRowDeleting != null)) {
+                    this.CashPaymentSummaryRowDeleting(this, new CashPaymentSummaryRowChangeEvent(((CashPaymentSummaryRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void RemoveCashPaymentSummaryRow(CashPaymentSummaryRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                PaymentDataSet ds = new PaymentDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "CashPaymentSummaryDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -14498,6 +15227,856 @@ namespace IAC2018SQL {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class CashPaymentSummaryRow : global::System.Data.DataRow {
+            
+            private CashPaymentSummaryDataTable tableCashPaymentSummary;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal CashPaymentSummaryRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableCashPaymentSummary = ((CashPaymentSummaryDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime Date {
+                get {
+                    return ((global::System.DateTime)(this[this.tableCashPaymentSummary.DateColumn]));
+                }
+                set {
+                    this[this.tableCashPaymentSummary.DateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime Week {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableCashPaymentSummary.WeekColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Week\' in table \'CashPaymentSummary\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCashPaymentSummary.WeekColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int ClosedCheckCount {
+                get {
+                    try {
+                        return ((int)(this[this.tableCashPaymentSummary.ClosedCheckCountColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ClosedCheckCount\' in table \'CashPaymentSummary\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCashPaymentSummary.ClosedCheckCountColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal ClosedCheckTotal {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableCashPaymentSummary.ClosedCheckTotalColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ClosedCheckTotal\' in table \'CashPaymentSummary\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCashPaymentSummary.ClosedCheckTotalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int OpenCheckCount {
+                get {
+                    try {
+                        return ((int)(this[this.tableCashPaymentSummary.OpenCheckCountColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'OpenCheckCount\' in table \'CashPaymentSummary\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCashPaymentSummary.OpenCheckCountColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal OpenCheckTotal {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableCashPaymentSummary.OpenCheckTotalColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'OpenCheckTotal\' in table \'CashPaymentSummary\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCashPaymentSummary.OpenCheckTotalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int ClosedCashCount {
+                get {
+                    try {
+                        return ((int)(this[this.tableCashPaymentSummary.ClosedCashCountColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ClosedCashCount\' in table \'CashPaymentSummary\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCashPaymentSummary.ClosedCashCountColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal ClosedCashTotal {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableCashPaymentSummary.ClosedCashTotalColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ClosedCashTotal\' in table \'CashPaymentSummary\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCashPaymentSummary.ClosedCashTotalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int OpenCashCount {
+                get {
+                    try {
+                        return ((int)(this[this.tableCashPaymentSummary.OpenCashCountColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'OpenCashCount\' in table \'CashPaymentSummary\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCashPaymentSummary.OpenCashCountColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal OpenCashTotal {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableCashPaymentSummary.OpenCashTotalColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'OpenCashTotal\' in table \'CashPaymentSummary\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCashPaymentSummary.OpenCashTotalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int ClosedWesternUnionCount {
+                get {
+                    try {
+                        return ((int)(this[this.tableCashPaymentSummary.ClosedWesternUnionCountColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ClosedWesternUnionCount\' in table \'CashPaymentSummary\' is D" +
+                                "BNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCashPaymentSummary.ClosedWesternUnionCountColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal ClosedWesternUnionTotal {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableCashPaymentSummary.ClosedWesternUnionTotalColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ClosedWesternUnionTotal\' in table \'CashPaymentSummary\' is D" +
+                                "BNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCashPaymentSummary.ClosedWesternUnionTotalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int OpenWesternUnionCount {
+                get {
+                    try {
+                        return ((int)(this[this.tableCashPaymentSummary.OpenWesternUnionCountColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'OpenWesternUnionCount\' in table \'CashPaymentSummary\' is DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCashPaymentSummary.OpenWesternUnionCountColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal OpenWesternUnionTotal {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableCashPaymentSummary.OpenWesternUnionTotalColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'OpenWesternUnionTotal\' in table \'CashPaymentSummary\' is DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCashPaymentSummary.OpenWesternUnionTotalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int ClosedPayNearMeCount {
+                get {
+                    try {
+                        return ((int)(this[this.tableCashPaymentSummary.ClosedPayNearMeCountColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ClosedPayNearMeCount\' in table \'CashPaymentSummary\' is DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tableCashPaymentSummary.ClosedPayNearMeCountColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal ClosedPayNearMeTotal {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableCashPaymentSummary.ClosedPayNearMeTotalColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ClosedPayNearMeTotal\' in table \'CashPaymentSummary\' is DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tableCashPaymentSummary.ClosedPayNearMeTotalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int OpenPayNearMeCount {
+                get {
+                    try {
+                        return ((int)(this[this.tableCashPaymentSummary.OpenPayNearMeCountColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'OpenPayNearMeCount\' in table \'CashPaymentSummary\' is DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tableCashPaymentSummary.OpenPayNearMeCountColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal OpenPayNearMeTotal {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableCashPaymentSummary.OpenPayNearMeTotalColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'OpenPayNearMeTotal\' in table \'CashPaymentSummary\' is DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tableCashPaymentSummary.OpenPayNearMeTotalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int ClosedACHCount {
+                get {
+                    try {
+                        return ((int)(this[this.tableCashPaymentSummary.ClosedACHCountColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ClosedACHCount\' in table \'CashPaymentSummary\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCashPaymentSummary.ClosedACHCountColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal ClosedACHTotal {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableCashPaymentSummary.ClosedACHTotalColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ClosedACHTotal\' in table \'CashPaymentSummary\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCashPaymentSummary.ClosedACHTotalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int OpenACHCount {
+                get {
+                    try {
+                        return ((int)(this[this.tableCashPaymentSummary.OpenACHCountColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'OpenACHCount\' in table \'CashPaymentSummary\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCashPaymentSummary.OpenACHCountColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal OpenACHTotal {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableCashPaymentSummary.OpenACHTotalColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'OpenACHTotal\' in table \'CashPaymentSummary\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCashPaymentSummary.OpenACHTotalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int ClosedCreditCardCount {
+                get {
+                    try {
+                        return ((int)(this[this.tableCashPaymentSummary.ClosedCreditCardCountColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ClosedCreditCardCount\' in table \'CashPaymentSummary\' is DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCashPaymentSummary.ClosedCreditCardCountColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal ClosedCreditCardTotal {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableCashPaymentSummary.ClosedCreditCardTotalColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ClosedCreditCardTotal\' in table \'CashPaymentSummary\' is DBN" +
+                                "ull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCashPaymentSummary.ClosedCreditCardTotalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int OpenCreditCardCount {
+                get {
+                    try {
+                        return ((int)(this[this.tableCashPaymentSummary.OpenCreditCardCountColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'OpenCreditCardCount\' in table \'CashPaymentSummary\' is DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableCashPaymentSummary.OpenCreditCardCountColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal OpenCreditCardTotal {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableCashPaymentSummary.OpenCreditCardTotalColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'OpenCreditCardTotal\' in table \'CashPaymentSummary\' is DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableCashPaymentSummary.OpenCreditCardTotalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int ClosedEFTCount {
+                get {
+                    try {
+                        return ((int)(this[this.tableCashPaymentSummary.ClosedEFTCountColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ClosedEFTCount\' in table \'CashPaymentSummary\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCashPaymentSummary.ClosedEFTCountColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal ClosedEFTTotal {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableCashPaymentSummary.ClosedEFTTotalColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ClosedEFTTotal\' in table \'CashPaymentSummary\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCashPaymentSummary.ClosedEFTTotalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int OpenEFTCount {
+                get {
+                    try {
+                        return ((int)(this[this.tableCashPaymentSummary.OpenEFTCountColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'OpenEFTCount\' in table \'CashPaymentSummary\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCashPaymentSummary.OpenEFTCountColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public decimal OpenEFTTotal {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableCashPaymentSummary.OpenEFTTotalColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'OpenEFTTotal\' in table \'CashPaymentSummary\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCashPaymentSummary.OpenEFTTotalColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsWeekNull() {
+                return this.IsNull(this.tableCashPaymentSummary.WeekColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetWeekNull() {
+                this[this.tableCashPaymentSummary.WeekColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsClosedCheckCountNull() {
+                return this.IsNull(this.tableCashPaymentSummary.ClosedCheckCountColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetClosedCheckCountNull() {
+                this[this.tableCashPaymentSummary.ClosedCheckCountColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsClosedCheckTotalNull() {
+                return this.IsNull(this.tableCashPaymentSummary.ClosedCheckTotalColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetClosedCheckTotalNull() {
+                this[this.tableCashPaymentSummary.ClosedCheckTotalColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsOpenCheckCountNull() {
+                return this.IsNull(this.tableCashPaymentSummary.OpenCheckCountColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetOpenCheckCountNull() {
+                this[this.tableCashPaymentSummary.OpenCheckCountColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsOpenCheckTotalNull() {
+                return this.IsNull(this.tableCashPaymentSummary.OpenCheckTotalColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetOpenCheckTotalNull() {
+                this[this.tableCashPaymentSummary.OpenCheckTotalColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsClosedCashCountNull() {
+                return this.IsNull(this.tableCashPaymentSummary.ClosedCashCountColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetClosedCashCountNull() {
+                this[this.tableCashPaymentSummary.ClosedCashCountColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsClosedCashTotalNull() {
+                return this.IsNull(this.tableCashPaymentSummary.ClosedCashTotalColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetClosedCashTotalNull() {
+                this[this.tableCashPaymentSummary.ClosedCashTotalColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsOpenCashCountNull() {
+                return this.IsNull(this.tableCashPaymentSummary.OpenCashCountColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetOpenCashCountNull() {
+                this[this.tableCashPaymentSummary.OpenCashCountColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsOpenCashTotalNull() {
+                return this.IsNull(this.tableCashPaymentSummary.OpenCashTotalColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetOpenCashTotalNull() {
+                this[this.tableCashPaymentSummary.OpenCashTotalColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsClosedWesternUnionCountNull() {
+                return this.IsNull(this.tableCashPaymentSummary.ClosedWesternUnionCountColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetClosedWesternUnionCountNull() {
+                this[this.tableCashPaymentSummary.ClosedWesternUnionCountColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsClosedWesternUnionTotalNull() {
+                return this.IsNull(this.tableCashPaymentSummary.ClosedWesternUnionTotalColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetClosedWesternUnionTotalNull() {
+                this[this.tableCashPaymentSummary.ClosedWesternUnionTotalColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsOpenWesternUnionCountNull() {
+                return this.IsNull(this.tableCashPaymentSummary.OpenWesternUnionCountColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetOpenWesternUnionCountNull() {
+                this[this.tableCashPaymentSummary.OpenWesternUnionCountColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsOpenWesternUnionTotalNull() {
+                return this.IsNull(this.tableCashPaymentSummary.OpenWesternUnionTotalColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetOpenWesternUnionTotalNull() {
+                this[this.tableCashPaymentSummary.OpenWesternUnionTotalColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsClosedPayNearMeCountNull() {
+                return this.IsNull(this.tableCashPaymentSummary.ClosedPayNearMeCountColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetClosedPayNearMeCountNull() {
+                this[this.tableCashPaymentSummary.ClosedPayNearMeCountColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsClosedPayNearMeTotalNull() {
+                return this.IsNull(this.tableCashPaymentSummary.ClosedPayNearMeTotalColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetClosedPayNearMeTotalNull() {
+                this[this.tableCashPaymentSummary.ClosedPayNearMeTotalColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsOpenPayNearMeCountNull() {
+                return this.IsNull(this.tableCashPaymentSummary.OpenPayNearMeCountColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetOpenPayNearMeCountNull() {
+                this[this.tableCashPaymentSummary.OpenPayNearMeCountColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsOpenPayNearMeTotalNull() {
+                return this.IsNull(this.tableCashPaymentSummary.OpenPayNearMeTotalColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetOpenPayNearMeTotalNull() {
+                this[this.tableCashPaymentSummary.OpenPayNearMeTotalColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsClosedACHCountNull() {
+                return this.IsNull(this.tableCashPaymentSummary.ClosedACHCountColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetClosedACHCountNull() {
+                this[this.tableCashPaymentSummary.ClosedACHCountColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsClosedACHTotalNull() {
+                return this.IsNull(this.tableCashPaymentSummary.ClosedACHTotalColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetClosedACHTotalNull() {
+                this[this.tableCashPaymentSummary.ClosedACHTotalColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsOpenACHCountNull() {
+                return this.IsNull(this.tableCashPaymentSummary.OpenACHCountColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetOpenACHCountNull() {
+                this[this.tableCashPaymentSummary.OpenACHCountColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsOpenACHTotalNull() {
+                return this.IsNull(this.tableCashPaymentSummary.OpenACHTotalColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetOpenACHTotalNull() {
+                this[this.tableCashPaymentSummary.OpenACHTotalColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsClosedCreditCardCountNull() {
+                return this.IsNull(this.tableCashPaymentSummary.ClosedCreditCardCountColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetClosedCreditCardCountNull() {
+                this[this.tableCashPaymentSummary.ClosedCreditCardCountColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsClosedCreditCardTotalNull() {
+                return this.IsNull(this.tableCashPaymentSummary.ClosedCreditCardTotalColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetClosedCreditCardTotalNull() {
+                this[this.tableCashPaymentSummary.ClosedCreditCardTotalColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsOpenCreditCardCountNull() {
+                return this.IsNull(this.tableCashPaymentSummary.OpenCreditCardCountColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetOpenCreditCardCountNull() {
+                this[this.tableCashPaymentSummary.OpenCreditCardCountColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsOpenCreditCardTotalNull() {
+                return this.IsNull(this.tableCashPaymentSummary.OpenCreditCardTotalColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetOpenCreditCardTotalNull() {
+                this[this.tableCashPaymentSummary.OpenCreditCardTotalColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsClosedEFTCountNull() {
+                return this.IsNull(this.tableCashPaymentSummary.ClosedEFTCountColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetClosedEFTCountNull() {
+                this[this.tableCashPaymentSummary.ClosedEFTCountColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsClosedEFTTotalNull() {
+                return this.IsNull(this.tableCashPaymentSummary.ClosedEFTTotalColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetClosedEFTTotalNull() {
+                this[this.tableCashPaymentSummary.ClosedEFTTotalColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsOpenEFTCountNull() {
+                return this.IsNull(this.tableCashPaymentSummary.OpenEFTCountColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetOpenEFTCountNull() {
+                this[this.tableCashPaymentSummary.OpenEFTCountColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsOpenEFTTotalNull() {
+                return this.IsNull(this.tableCashPaymentSummary.OpenEFTTotalColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetOpenEFTTotalNull() {
+                this[this.tableCashPaymentSummary.OpenEFTTotalColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -14891,6 +16470,40 @@ namespace IAC2018SQL {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public ClosedOverPaymentsRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public class CashPaymentSummaryRowChangeEvent : global::System.EventArgs {
+            
+            private CashPaymentSummaryRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public CashPaymentSummaryRowChangeEvent(CashPaymentSummaryRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public CashPaymentSummaryRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -22211,6 +23824,229 @@ namespace IAC2018SQL.PaymentDataSetTableAdapters {
                 }
             }
             return returnValue;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class CashPaymentSummaryTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public CashPaymentSummaryTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "CashPaymentSummary";
+            tableMapping.ColumnMappings.Add("Date", "Date");
+            tableMapping.ColumnMappings.Add("Week", "Week");
+            tableMapping.ColumnMappings.Add("ClosedCheckCount", "ClosedCheckCount");
+            tableMapping.ColumnMappings.Add("ClosedCheckTotal", "ClosedCheckTotal");
+            tableMapping.ColumnMappings.Add("OpenCheckCount", "OpenCheckCount");
+            tableMapping.ColumnMappings.Add("OpenCheckTotal", "OpenCheckTotal");
+            tableMapping.ColumnMappings.Add("ClosedCashCount", "ClosedCashCount");
+            tableMapping.ColumnMappings.Add("ClosedCashTotal", "ClosedCashTotal");
+            tableMapping.ColumnMappings.Add("OpenCashCount", "OpenCashCount");
+            tableMapping.ColumnMappings.Add("OpenCashTotal", "OpenCashTotal");
+            tableMapping.ColumnMappings.Add("ClosedWesternUnionCount", "ClosedWesternUnionCount");
+            tableMapping.ColumnMappings.Add("ClosedWesternUnionTotal", "ClosedWesternUnionTotal");
+            tableMapping.ColumnMappings.Add("OpenWesternUnionCount", "OpenWesternUnionCount");
+            tableMapping.ColumnMappings.Add("OpenWesternUnionTotal", "OpenWesternUnionTotal");
+            tableMapping.ColumnMappings.Add("ClosedPayNearMeCount", "ClosedPayNearMeCount");
+            tableMapping.ColumnMappings.Add("ClosedPayNearMeTotal", "ClosedPayNearMeTotal");
+            tableMapping.ColumnMappings.Add("OpenPayNearMeCount", "OpenPayNearMeCount");
+            tableMapping.ColumnMappings.Add("OpenPayNearMeTotal", "OpenPayNearMeTotal");
+            tableMapping.ColumnMappings.Add("ClosedACHCount", "ClosedACHCount");
+            tableMapping.ColumnMappings.Add("ClosedACHTotal", "ClosedACHTotal");
+            tableMapping.ColumnMappings.Add("OpenACHCount", "OpenACHCount");
+            tableMapping.ColumnMappings.Add("OpenACHTotal", "OpenACHTotal");
+            tableMapping.ColumnMappings.Add("ClosedCreditCardCount", "ClosedCreditCardCount");
+            tableMapping.ColumnMappings.Add("ClosedCreditCardTotal", "ClosedCreditCardTotal");
+            tableMapping.ColumnMappings.Add("OpenCreditCardCount", "OpenCreditCardCount");
+            tableMapping.ColumnMappings.Add("OpenCreditCardTotal", "OpenCreditCardTotal");
+            tableMapping.ColumnMappings.Add("ClosedEFTCount", "ClosedEFTCount");
+            tableMapping.ColumnMappings.Add("ClosedEFTTotal", "ClosedEFTTotal");
+            tableMapping.ColumnMappings.Add("OpenEFTCount", "OpenEFTCount");
+            tableMapping.ColumnMappings.Add("OpenEFTTotal", "OpenEFTTotal");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::IAC2018SQL.Properties.Settings.Default.IAC2010SQLConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "dbo.CashPaymentSummarySELECT";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Start", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@End", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(PaymentDataSet.CashPaymentSummaryDataTable dataTable, global::System.Nullable<global::System.DateTime> Start, global::System.Nullable<global::System.DateTime> End) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((Start.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(Start.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((End.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((System.DateTime)(End.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual PaymentDataSet.CashPaymentSummaryDataTable GetData(global::System.Nullable<global::System.DateTime> Start, global::System.Nullable<global::System.DateTime> End) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((Start.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(Start.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((End.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((System.DateTime)(End.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            PaymentDataSet.CashPaymentSummaryDataTable dataTable = new PaymentDataSet.CashPaymentSummaryDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
         }
     }
     
