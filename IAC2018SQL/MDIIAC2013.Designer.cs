@@ -665,7 +665,7 @@
             this.receivedContractReportToolStripMenuItem,
             this.testToolStripMenuItem});
             this.closedEndToolStripMenuItem.Name = "closedEndToolStripMenuItem";
-            this.closedEndToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.closedEndToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.closedEndToolStripMenuItem.Text = "&Closed End";
             // 
             // amortizationScheduleToolStripMenuItem
@@ -861,7 +861,7 @@
             // 
             this.testToolStripMenuItem.Name = "testToolStripMenuItem";
             this.testToolStripMenuItem.Size = new System.Drawing.Size(317, 22);
-            this.testToolStripMenuItem.Text = "Test";
+            this.testToolStripMenuItem.Text = "Cash Payment Summary";
             this.testToolStripMenuItem.Click += new System.EventHandler(this.testToolStripMenuItem_Click);
             // 
             // openEndToolStripMenuItem
@@ -886,7 +886,7 @@
             this.openCustomerBuyBackReportBUYBACKToolStripMenuItem,
             this.firstPaymentDefaultReportToolStripMenuItem1});
             this.openEndToolStripMenuItem.Name = "openEndToolStripMenuItem";
-            this.openEndToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.openEndToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.openEndToolStripMenuItem.Text = "&Open End";
             // 
             // newCustomerEditListToolStripMenuItem1

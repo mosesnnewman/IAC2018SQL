@@ -140,8 +140,10 @@ namespace IAC2018SQL
 
             for (int i = 0; i < msgData.CUSTOMER.Rows.Count; i++)
             {
+               
 
-                string statusUrl = "";
+                string statusUrl = "",lsTmpCust = "";
+                lsTmpCust = msgData.CUSTOMER.Rows[i].Field<String>("CUSTOMER_NO");
                 //WSMessageResponse wSMessageResponse;
                 List<WSRecipient> recipients = new List<WSRecipient>();
                 List<CustomField> customFields = new List<CustomField>();

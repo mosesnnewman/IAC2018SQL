@@ -51,7 +51,7 @@ namespace IAC2018SQL
             DataTable CustTemp = MergeDataSet.CustTemp;
             CustTempTableAdapter.DeleteAll();
             CustBankTableAdapter.DeleteAll();
-            
+
             MergeDataSet.CUSTOMER.CUSTOMER_NOColumn.MaxLength = 9; // Temporary add 3 Characters in length to store UserID
             // Moses Newman 07/14/2016 Need to add DEALER_NAME so custtemp update does not fail!
             if (!MergeDataSet.CUSTOMER.Columns.Contains("DEALER_NAME"))
@@ -174,9 +174,9 @@ namespace IAC2018SQL
                     // Moses Newman 03/12/2020 #9 uses CusteTemp Now
                     // Moses Newman 09/09/2019 change letter 10 to use CustTemp INSTEAD of CustBank
                     if (Int32.Parse(lsLetterName.Substring(11)) > 8 && !lsLetterName.Contains("#10") && !lsLetterName.Contains("#9"))
-                        lsCatalog += " custbank.odc";
-                    else
-                        lsCatalog += " CustTemp.odc";
+                    lsCatalog += " custbank.odc";
+                else
+                    lsCatalog += " CustTemp.odc";
             else
                 lsCatalog += " CustTemp.odc";
             lsDataPath += " " + lsCatalog;
@@ -307,7 +307,7 @@ namespace IAC2018SQL
             BookLetter.Dispose();
         }
 
-        public void CreateNotices(Int32 tnLetterNo,Boolean tbMakeComments, ref BackgroundWorker worker, ref String tsProgMessage)
+        public void CreateNotices(Int32 tnLetterNo, Boolean tbMakeComments, ref BackgroundWorker worker, ref String tsProgMessage)
         {
             String lsCommentText = "";
             IACDataSet MergeDataSet = new IACDataSet();
@@ -350,12 +350,12 @@ namespace IAC2018SQL
 
                     // Moses Newman 11/25/2018 add extra record for cosigner address if the cosigner address is different than the primary address.
                     CUSTOMERTableAdapter.CosignerDifferentAddress(MergeDataSet.CUSTOMER, MergeDataSet.NOTICE.Rows[i].Field<String>("NOTICE_NO"));
-                    if(MergeDataSet.CUSTOMER.Count > 0)
+                    if (MergeDataSet.CUSTOMER.Count > 0)
                     {
-                        MergeDataSet.NOTICE.Rows[i].SetField<String>("NOTICE_NAME", 
-                            MergeDataSet.CUSTOMER.Rows[0].Field<String>("COSIGNER_FIRST_NAME").TrimEnd() + 
+                        MergeDataSet.NOTICE.Rows[i].SetField<String>("NOTICE_NAME",
+                            MergeDataSet.CUSTOMER.Rows[0].Field<String>("COSIGNER_FIRST_NAME").TrimEnd() +
                             ' ' + MergeDataSet.CUSTOMER.Rows[0].Field<String>("COSIGNER_LAST_NAME").TrimEnd());
-                        MergeDataSet.NOTICE.Rows[i].SetField<String>("NOTICE_STREET_1",MergeDataSet.CUSTOMER.Rows[0].Field<String>("COSIGNER_ADDRESS1").TrimEnd());
+                        MergeDataSet.NOTICE.Rows[i].SetField<String>("NOTICE_STREET_1", MergeDataSet.CUSTOMER.Rows[0].Field<String>("COSIGNER_ADDRESS1").TrimEnd());
                         MergeDataSet.NOTICE.Rows[i].SetField<String>("NOTICE_CITY", MergeDataSet.CUSTOMER.Rows[0].Field<String>("COSIGNER_CITY").TrimEnd());
                         MergeDataSet.NOTICE.Rows[i].SetField<String>("NOTICE_STATE", MergeDataSet.CUSTOMER.Rows[0].Field<String>("COSIGNER_STATE").TrimEnd());
                         MergeDataSet.NOTICE.Rows[i].SetField<String>("NOTICE_ZIP_CODE", MergeDataSet.CUSTOMER.Rows[0].Field<String>("COSIGNER_ZIP_CODE").TrimEnd());
@@ -375,7 +375,7 @@ namespace IAC2018SQL
                 oWord.Visible = true;
 
                 oWordDoc = oWord.Documents.Add(ref oTemplatePath, ref oMissing, ref oMissing, ref oTrue);
-                Word.MailMerge wrdMailMerge,NewMailMerge;
+                Word.MailMerge wrdMailMerge, NewMailMerge;
 
                 String lsConnect = IAC2018SQL.Properties.Settings.Default.IAC2010SQLConnectionString.ToUpper(), lsDataPath = Program.GsDataPath + @"\MailMerge\DataSources\",
                        lsCatalog = "", lsServerName = "";
@@ -390,7 +390,7 @@ namespace IAC2018SQL
                 wrdMailMerge = oWordDoc.MailMerge;
                 wrdMailMerge.OpenDataSource(lsDataPath, ref oMissing, ref oMissing, ref oMissing, ref oMissing, ref oMissing, ref oMissing, ref oMissing, ref oMissing,
                                             ref oMissing, ref oMissing, ref oMissing, ref oMissing, ref oMissing, ref oMissing, ref oMissing);
-                
+
                 wrdMailMerge.Destination = Word.WdMailMergeDestination.wdSendToNewDocument;
                 wrdMailMerge.Execute(ref oFalse);
                 oWordDoc.Saved = true;
@@ -441,7 +441,7 @@ namespace IAC2018SQL
                                 lsCommentText = lbCosigner ? "(Cosigner) Created Collection Letter 03 – All States (5) Days" : "Created Collection Letter 03 – All States (5) Days";
                                 break;
                             // Moses Newman 02/26/2019 add notice 4 (Mass 50 day) and notice 5 (All State 55 day)
-                            case 4: 
+                            case 4:
                                 lsCommentText = lbCosigner ? "(Cosigner) Created Collection Letter 04  - Mass (50) Days" : "Created Collection Letter 04  - Mass (50) Days";
                                 break;
                             case 5:
@@ -456,10 +456,10 @@ namespace IAC2018SQL
                         }
 
                         FileName = MakeNoticeComment(lsCustNo, lsDealer, lsCommentText);
-                        tsProgMessage = "*** Creating attachement for Notice Number: " + tnLetterNo + " for Customer: " + lsCustNo + " "+ (CustomerCount+1).ToString() + " of "+ NewMailMerge.DataSource.RecordCount.ToString();
+                        tsProgMessage = "*** Creating attachement for Notice Number: " + tnLetterNo + " for Customer: " + lsCustNo + " " + (CustomerCount + 1).ToString() + " of " + NewMailMerge.DataSource.RecordCount.ToString();
                         lnProgress = (Int32)(Math.Round(((Double)(CustomerCount + 1) / (Double)NewMailMerge.DataSource.RecordCount), 2) * 100);
                         worker.ReportProgress(lnProgress);
-                        
+
                         NewMailMerge.Destination = Word.WdMailMergeDestination.wdSendToNewDocument;
                         NewMailMerge.Execute(ref oFalse);
                         oWordDoc.Application.ActiveDocument.SaveAs2(FileName,
@@ -494,14 +494,14 @@ namespace IAC2018SQL
             MergeDataSet.Dispose();
         }
 
-        private String MakeNoticeComment(String CustomerNo,String Dealer,String CommentMessage)
+        private String MakeNoticeComment(String CustomerNo, String Dealer, String CommentMessage)
         {
             IACDataSetTableAdapters.COMMENTTableAdapter cOMMENTTableAdapter = new IACDataSetTableAdapters.COMMENTTableAdapter();
 
             Object loQuery = null;
 
             Int32 lnSeq = 0;
-            String FileName = "",lsCommentKey = "",lsFullComment = "";
+            String FileName = "", lsCommentKey = "", lsFullComment = "";
 
             if (lnSeq == 0)
             {
@@ -580,7 +580,7 @@ namespace IAC2018SQL
 
 
             fileName = Program.GsDataPath + @"\MailMerge\TEMPSCRN.docx";
-            oWordDoc = oWord.Documents.Open(ref fileName, ref oMissing,ref readOnly, ref oMissing, ref oMissing, ref oMissing, ref oMissing, ref oMissing, ref oMissing, ref oMissing, ref oMissing, ref isVisible);
+            oWordDoc = oWord.Documents.Open(ref fileName, ref oMissing, ref readOnly, ref oMissing, ref oMissing, ref oMissing, ref oMissing, ref oMissing, ref oMissing, ref oMissing, ref oMissing, ref isVisible);
 
             oWordDoc.Activate();
             oWordDoc.InlineShapes.AddPicture(tsFileName);
@@ -589,7 +589,7 @@ namespace IAC2018SQL
             Thread.Sleep(5000);
             oWordDoc.Close(ref readOnly);
             oWordDoc = null;
-            oWord.Quit(ref readOnly,ref oMissing,ref oMissing);
+            oWord.Quit(ref readOnly, ref oMissing, ref oMissing);
             oWord = null;
         }
 
@@ -622,17 +622,18 @@ namespace IAC2018SQL
             return null;
         }
 
-        public void CreateECHNotice(IACDataSet PassedDataSet, Int32 tnDayDue, DateTime tdDateDue, String tsMailToText, ref BackgroundWorker worker, ref String tsProgMessage,Boolean tbSendAsEmail = true, Boolean tbAutoPay = true, Boolean tbTestMode = false, String tsMergeFileName = "")
+        public void CreateECHNotice(IACDataSet PassedDataSet, Int32 tnDayDue, DateTime tdDateDue, String tsMailToText, ref BackgroundWorker worker, ref String tsProgMessage, Boolean tbSendAsEmail = true, Boolean tbAutoPay = true, Boolean tbTestMode = false, String tsMergeFileName = "")
         {
-            String[] EmailAddresses = {};
-            int lnProgress = 0, lnTotalSteps = 0,NoServerCount = 0;
+            String[] EmailAddresses = { };
+            String SqlQuery = "";
+            int lnProgress = 0, lnTotalSteps = 0, NoServerCount = 0;
             Object oFalse = false;
             IACDataSetTableAdapters.CUSTOMERTableAdapter CUSTOMERTableAdapter = new IACDataSetTableAdapters.CUSTOMERTableAdapter();
             IACDataSetTableAdapters.CustBankTableAdapter CustBankTableAdapter = new IACDataSetTableAdapters.CustBankTableAdapter();
             IACDataSetTableAdapters.EmailTableAdapter EmailTableAdapter = new IACDataSetTableAdapters.EmailTableAdapter();
             CUSTOMERTableAdapter.FillByActiveDayDue(PassedDataSet.CUSTOMER, tnDayDue, tbAutoPay, !tbSendAsEmail);
 
-            Object oTemplatePath = "";
+            Object oTemplatePath = "",loConnect = null;
 
             if (tsMergeFileName == "")
                 oTemplatePath = Program.GsDataPath + @"\MailMerge\ElectronicClearingHousePayment.docx";
@@ -641,18 +642,24 @@ namespace IAC2018SQL
             Word.MailMerge wrdMailMerge;
 
             String lsConnect = IAC2018SQL.Properties.Settings.Default.IAC2010SQLConnectionString.ToUpper(), lsDataPath = Program.GsDataPath + @"\MailMerge\DataSources\",
-                   lsCatalog = "", lsServerName = "", lsSMSMessage = "", lsCellPhone = "";
+                   lsCatalog = "", lsServerName = "", lsSMSMessage = "", lsCellPhone = "",lsNewFileName = "";
 
             lsServerName = lsConnect.Substring(lsConnect.IndexOf("DATA SOURCE=") + 12, lsConnect.IndexOf(";") - (lsConnect.IndexOf("DATA SOURCE=") + 12));
             lsServerName = lsServerName.Replace('\\', '_');
             lsDataPath += lsServerName;
             lsCatalog = lsConnect.Substring(lsConnect.IndexOf("INITIAL CATALOG=") + 16, lsConnect.IndexOf(";INTEGRATED") - (lsConnect.IndexOf("INITIAL CATALOG=") + 16));
-            lsCatalog += " CustBank.odc";
+            lsCatalog += " TEMPCUSTBANK.odc";
             lsDataPath += " " + lsCatalog;
             lnTotalSteps = PassedDataSet.CUSTOMER.Rows.Count + 2;
+            loConnect = lsConnect;
+            SqlQuery = "IACSQLPRODUCTION.dbo." + "EMPTY" + Program.gsUserID; //Moses Newman 06/08/2021 Create User Specific ODC
+            lsNewFileName = Program.GsDataPath + @"\MailMerge\DataSources\EMPTY" + Program.gsUserID + ".ODC";
+            CreateODC(lsNewFileName, SqlQuery); //Moses Newman 06/08/2021 Create User Specific ODC
+            object lsSQL = "SELECT * FROM IACSQLPRODUCTION.dbo.EMPTYMNN";
+          
             for (Int32 CustomerIndex = 0; CustomerIndex < PassedDataSet.CUSTOMER.Rows.Count; CustomerIndex++)
             {
-                CustBankTableAdapter.CustBankLoadAll(PassedDataSet.CUSTOMER.Rows[CustomerIndex].Field<String>("CUSTOMER_NO"), tnDayDue, tdDateDue, tbAutoPay, !tbSendAsEmail,(String)null);
+                CustBankTableAdapter.TempLoadAll(PassedDataSet.CUSTOMER.Rows[CustomerIndex].Field<String>("CUSTOMER_NO"), tnDayDue, tdDateDue, tbAutoPay, !tbSendAsEmail, "EMPTY" + Program.gsUserID,(String)null);
                 if (tbSendAsEmail)
                 {
                     // Moses Newman 09/22/2014 make sure customer has an email address if not in test mode!
@@ -665,25 +672,27 @@ namespace IAC2018SQL
                     // Moses Newman 11/19/2014 handle multiple email addresses seperated by ;s
                     // Moses Newman 11/19/2014 add comma as a email address sepeartor also!
                     if (tbTestMode)
-                        EmailAddresses = PassedDataSet.Email.Rows[0].Field<String>("TestEmail").Split(new char[] {';',','});
+                        EmailAddresses = PassedDataSet.Email.Rows[0].Field<String>("TestEmail").Split(new char[] { ';', ',' });
                     else
-                        EmailAddresses = PassedDataSet.Email.Rows[0].Field<String>("EmailAddress").Split(new char[] {';',','});
+                        EmailAddresses = PassedDataSet.Email.Rows[0].Field<String>("EmailAddress").Split(new char[] { ';', ',' });
                     if (EmailAddresses.Length != 0)
                     {
                         foreach (string addr in EmailAddresses)
                         {
                             EmailTableAdapter.UpdateTestEmailbyAccount(PassedDataSet.CUSTOMER.Rows[CustomerIndex].Field<String>("CUSTOMER_NO"), addr);
-                            CustBankTableAdapter.CustBankLoadAll(PassedDataSet.CUSTOMER.Rows[CustomerIndex].Field<String>("CUSTOMER_NO"), tnDayDue, tdDateDue, tbAutoPay, !tbSendAsEmail,(String)null);
+
+                            //CustBankTableAdapter.CustBankLoadAll(PassedDataSet.CUSTOMER.Rows[CustomerIndex].Field<String>("CUSTOMER_NO"), tnDayDue, tdDateDue, tbAutoPay, !tbSendAsEmail,(String)null);
                             Word._Application oWord = new Word.Application();
                             Word._Document oWordDoc = new Word.Document();
 
-                            //oWord.Visible = true;
+                            oWord.Visible = false;
 
                             oWordDoc = oWord.Documents.Add(ref oTemplatePath, ref oMissing, ref oMissing, ref oTrue);
 
                             wrdMailMerge = oWordDoc.MailMerge;
-                            wrdMailMerge.OpenDataSource(lsDataPath, ref oMissing, ref oMissing, ref oMissing, ref oMissing, ref oMissing, ref oMissing, ref oMissing, ref oMissing,
+                            wrdMailMerge.OpenDataSource(lsNewFileName, ref oMissing, ref oMissing, ref oMissing, ref oMissing, ref oMissing, ref oMissing, ref oMissing, ref oMissing,
                                                         ref oMissing, ref oMissing, ref oMissing, ref oMissing, ref oMissing, ref oMissing, ref oMissing);
+
                             // Moses Newman 11/09/2014 change Destination to Email instead of new word document,
                             // so now HTML formatted email can be sent instead of text based MailItem and seperate Outlook load.
                             wrdMailMerge.Destination = Word.WdMailMergeDestination.wdSendToEmail;
@@ -692,7 +701,7 @@ namespace IAC2018SQL
                             wrdMailMerge.MailSubject = "*** " + PassedDataSet.CUSTOMER.Rows[CustomerIndex].Field<String>("CUSTOMER_NO") + " ATTENTION: MESSAGE FROM INDUSTRIAL ACCEPTANCE CORPORATION. ***";
                             wrdMailMerge.MailFormat = Word.WdMailMergeMailFormat.wdMailFormatHTML;
                             wrdMailMerge.Execute(ref oFalse);
-                            
+
                             tsProgMessage = "";
                             oWordDoc.Saved = true;
                             oWordDoc.Close(ref oFalse, ref oMissing, ref oMissing);
@@ -700,12 +709,11 @@ namespace IAC2018SQL
                             oWord.Quit(ref oFalse, ref oMissing, ref oMissing);
                             oWord = null;
                             wrdMailMerge = null;
-
                         }
                     }
                     else
                     {
-                        CustBankTableAdapter.CustBankLoadAll(PassedDataSet.CUSTOMER.Rows[CustomerIndex].Field<String>("CUSTOMER_NO"), tnDayDue, tdDateDue, tbAutoPay, !tbSendAsEmail,(String)null);
+                        // Moses Newman 06/09/2021 Why load customer twice?
                         Word._Application oWord = new Word.Application();
                         Word._Document oWordDoc = new Word.Document();
 
@@ -715,7 +723,8 @@ namespace IAC2018SQL
                         oWordDoc = oWord.Documents.Add(ref oTemplatePath, ref oMissing, ref oMissing, ref oTrue);
 
                         wrdMailMerge = oWordDoc.MailMerge;
-                        wrdMailMerge.OpenDataSource(lsDataPath, ref oMissing, ref oMissing, ref oMissing, ref oMissing, ref oMissing, ref oMissing, ref oMissing, ref oMissing,
+                        // Moses Newman 06/09/2021 ONLY USE NEW USER SPECIFIC ODC!
+                        wrdMailMerge.OpenDataSource(lsNewFileName, ref oMissing, ref oMissing, ref oMissing, ref oMissing, ref oMissing, ref oMissing, ref oMissing, ref oMissing,
                                                     ref oMissing, ref oMissing, ref oMissing, ref oMissing, ref oMissing, ref oMissing, ref oMissing);
                         // Moses Newman 11/09/2014 change Destination to Email instead of new word document,
                         // so now HTML formatted email can be sent instead of text based MailItem and seperate Outlook load.
@@ -741,7 +750,7 @@ namespace IAC2018SQL
                 }
                 else
                 {
-                    CustBankTableAdapter.Fill(PassedDataSet.CustBank,PassedDataSet.CUSTOMER.Rows[CustomerIndex].Field<String>("CUSTOMER_NO"));
+                    CustBankTableAdapter.Fill(PassedDataSet.CustBank, PassedDataSet.CUSTOMER.Rows[CustomerIndex].Field<String>("CUSTOMER_NO"));
                     // Moses Newman if no Customer Bank Record goto next customer!
                     if (PassedDataSet.CustBank.Rows.Count < 1)
                         continue;
@@ -753,7 +762,7 @@ namespace IAC2018SQL
                         " your Monthly EFT Payment of: " + PassedDataSet.CustBank.Rows[0].Field<Decimal>("OPNBANK_MONTHLY_PAYMENT").ToString("C", new System.Globalization.CultureInfo("en-US")) + "\n" +
                         " from IAC will be debited from your checking account ending in: " +
                         PassedDataSet.CustBank.Rows[0].Field<String>("OPNBANK_ACCOUNT_NO").TrimEnd().Substring(PassedDataSet.CustBank.Rows[0].Field<String>("OPNBANK_ACCOUNT_NO").TrimEnd().Length - 4, 4);
-                        
+
                     // Create a request for the URL. 	
                     if (tbTestMode)
                         lsCellPhone = "+1(203) 804-9935";
@@ -769,11 +778,11 @@ namespace IAC2018SQL
                         lsSMSMessage = lsSMSMessage.Substring(0, 159);
                     try
                     {
-                         NoServerCount = 0;
-                         var sms = client.SendSmsMessage(
-                                "+1(203) 680-3840",
-                                lsCellPhone,
-                                lsSMSMessage);
+                        NoServerCount = 0;
+                        var sms = client.SendSmsMessage(
+                               "+1(203) 680-3840",
+                               lsCellPhone,
+                               lsSMSMessage);
                         if (sms != null)
                         {
                             // Moses Newman 06/13/2019 Retry if SID is null due to internet 503 error.
@@ -795,7 +804,7 @@ namespace IAC2018SQL
                     }
                 }
                 lnProgress = (Int32)(Math.Round(((Double)CustomerIndex / (Double)lnTotalSteps), 2) * 100);
-                tsProgMessage += CustomerIndex.ToString().TrimStart() + " of " + PassedDataSet.CUSTOMER.Rows.Count.ToString() + ".\n" + 
+                tsProgMessage += CustomerIndex.ToString().TrimStart() + " of " + PassedDataSet.CUSTOMER.Rows.Count.ToString() + ".\n" +
                                  PassedDataSet.CUSTOMER.Rows[CustomerIndex].Field<String>("CUSTOMER_NO") + " " +
                                  PassedDataSet.CUSTOMER.Rows[CustomerIndex].Field<String>("CUSTOMER_FIRST_NAME").TrimEnd() + " " +
                                  PassedDataSet.CUSTOMER.Rows[CustomerIndex].Field<String>("CUSTOMER_LAST_NAME").TrimEnd();
@@ -835,9 +844,14 @@ namespace IAC2018SQL
             lsCatalog += " CustBank.odc";
             lsDataPath += " " + lsCatalog;
             lnTotalSteps = PassedDataSet.CUSTOMER.Rows.Count + 2;
+            String SqlQuery = "IACSQLPRODUCTION.dbo." + "EMPTY" + Program.gsUserID; //Moses Newman 06/08/2021 Create User Specific ODC
+            String lsNewFileName = Program.GsDataPath + @"\MailMerge\DataSources\EMPTY" + Program.gsUserID + ".ODC";
+            CreateODC(lsNewFileName, SqlQuery); //Moses Newman 06/08/2021 Create User Specific ODC
             for (Int32 CustomerIndex = 0; CustomerIndex < PassedDataSet.CUSTOMER.Rows.Count; CustomerIndex++)
             {
-                CustBankTableAdapter.CustBankLoadAll(PassedDataSet.CUSTOMER.Rows[CustomerIndex].Field<String>("CUSTOMER_NO"), tnDayDue, tdDateDue, tbAutoPay, !tbSendAsEmail, (String)null);
+                // Moses Newman 06/10/2021
+                //CustBankTableAdapter.CustBankLoadAll(PassedDataSet.CUSTOMER.Rows[CustomerIndex].Field<String>("CUSTOMER_NO"), tnDayDue, tdDateDue, tbAutoPay, !tbSendAsEmail, (String)null);
+                CustBankTableAdapter.TempLoadAll(PassedDataSet.CUSTOMER.Rows[CustomerIndex].Field<String>("CUSTOMER_NO"), tnDayDue, tdDateDue, tbAutoPay, !tbSendAsEmail, "EMPTY" + Program.gsUserID, (String)null);
                 if (tbSendAsEmail)
                 {
                     // Moses Newman 09/22/2014 make sure customer has an email address if not in test mode!
@@ -858,7 +872,8 @@ namespace IAC2018SQL
                         foreach (string addr in EmailAddresses)
                         {
                             EmailTableAdapter.UpdateTestEmailbyAccount(PassedDataSet.CUSTOMER.Rows[CustomerIndex].Field<String>("CUSTOMER_NO"), addr);
-                            CustBankTableAdapter.CustBankLoadAll(PassedDataSet.CUSTOMER.Rows[CustomerIndex].Field<String>("CUSTOMER_NO"), tnDayDue, tdDateDue, tbAutoPay, !tbSendAsEmail, (String)null);
+                            // Moses Newman this is already loaded no need to do it again!
+                            //CustBankTableAdapter.CustBankLoadAll(PassedDataSet.CUSTOMER.Rows[CustomerIndex].Field<String>("CUSTOMER_NO"), tnDayDue, tdDateDue, tbAutoPay, !tbSendAsEmail, (String)null);
                             Word._Application oWord = new Word.Application();
                             Word._Document oWordDoc = new Word.Document();
 
@@ -867,7 +882,8 @@ namespace IAC2018SQL
                             oWordDoc = oWord.Documents.Add(ref oTemplatePath, ref oMissing, ref oMissing, ref oTrue);
 
                             wrdMailMerge = oWordDoc.MailMerge;
-                            wrdMailMerge.OpenDataSource(lsDataPath, ref oMissing, ref oMissing, ref oMissing, ref oMissing, ref oMissing, ref oMissing, ref oMissing, ref oMissing,
+                            // Moses Newman 06/10/2021 Use new user specific ODC
+                            wrdMailMerge.OpenDataSource(lsNewFileName, ref oMissing, ref oMissing, ref oMissing, ref oMissing, ref oMissing, ref oMissing, ref oMissing, ref oMissing,
                                                         ref oMissing, ref oMissing, ref oMissing, ref oMissing, ref oMissing, ref oMissing, ref oMissing);
                             // Moses Newman 11/09/2014 change Destination to Email instead of new word document,
                             // so now HTML formatted email can be sent instead of text based MailItem and seperate Outlook load.
@@ -890,7 +906,8 @@ namespace IAC2018SQL
                     }
                     else
                     {
-                        CustBankTableAdapter.CustBankLoadAll(PassedDataSet.CUSTOMER.Rows[CustomerIndex].Field<String>("CUSTOMER_NO"), tnDayDue, tdDateDue, tbAutoPay, !tbSendAsEmail, (String)null);
+                        // Moses Newman 06/10/2021 been there done that!
+                        //CustBankTableAdapter.CustBankLoadAll(PassedDataSet.CUSTOMER.Rows[CustomerIndex].Field<String>("CUSTOMER_NO"), tnDayDue, tdDateDue, tbAutoPay, !tbSendAsEmail, (String)null);
                         Word._Application oWord = new Word.Application();
                         Word._Document oWordDoc = new Word.Document();
 
@@ -900,7 +917,8 @@ namespace IAC2018SQL
                         oWordDoc = oWord.Documents.Add(ref oTemplatePath, ref oMissing, ref oMissing, ref oTrue);
 
                         wrdMailMerge = oWordDoc.MailMerge;
-                        wrdMailMerge.OpenDataSource(lsDataPath, ref oMissing, ref oMissing, ref oMissing, ref oMissing, ref oMissing, ref oMissing, ref oMissing, ref oMissing,
+                        // Moses Newman 06/10/2021 Use new user specific ODC
+                        wrdMailMerge.OpenDataSource(lsNewFileName, ref oMissing, ref oMissing, ref oMissing, ref oMissing, ref oMissing, ref oMissing, ref oMissing, ref oMissing,
                                                     ref oMissing, ref oMissing, ref oMissing, ref oMissing, ref oMissing, ref oMissing, ref oMissing);
                         // Moses Newman 11/09/2014 change Destination to Email instead of new word document,
                         // so now HTML formatted email can be sent instead of text based MailItem and seperate Outlook load.
@@ -978,5 +996,125 @@ namespace IAC2018SQL
             CUSTOMERTableAdapter.Dispose();
             CustBankTableAdapter.Dispose();
         }
+
+        void CreateODC(String tsFileName, String tsCommand)
+        {
+            if (File.Exists(tsFileName))
+                File.Delete(tsFileName);
+            String RealFileName = tsFileName.Substring(tsFileName.LastIndexOf(@"\")+1);
+            RealFileName = RealFileName.Substring(0, RealFileName.Length - 4);
+
+            StreamWriter strm = new StreamWriter(tsFileName, false);
+
+            strm.WriteLine("<html xmlns:o=\"urn:schemas-microsoft-com:office:office\"");
+            strm.WriteLine("xmlns=\"http://www.w3.org/TR/REC-html40\">");
+            strm.WriteLine("");
+            strm.WriteLine("<head>");
+            strm.WriteLine("<meta http-equiv=Content-Type content=\"text/x-ms-odc; charset=utf-8\">");
+            strm.WriteLine("<meta name=ProgId content=ODC.Table>");
+            strm.WriteLine("<meta name=SourceType content=OLEDB>");
+            strm.WriteLine("<meta name=Catalog content=IACSQLPRODUCTION>");
+            strm.WriteLine("<meta name=Schema content=dbo>");
+            strm.WriteLine("<meta name=Table content="+RealFileName+">");
+            strm.WriteLine("<title>" + RealFileName + "</title>");
+            strm.WriteLine("<xml id=docprops><o:DocumentProperties");
+            strm.WriteLine("xmlns:o=\"urn:schemas-microsoft-com:office:office\"");
+            strm.WriteLine("xmlns=\"http://www.w3.org/TR/REC-html40\">");
+            strm.WriteLine("<o:Name>" + tsFileName + "</o:Name>");
+            strm.WriteLine("</o:DocumentProperties>");
+            strm.WriteLine("</xml><xml id=msodc><odc:OfficeDataConnection");
+            strm.WriteLine("xmlns:odc=\"urn:schemas-microsoft-com:office:odc\"");
+            strm.WriteLine("xmlns=\"http://www.w3.org/TR/REC-html40\">");
+            strm.WriteLine("<odc:Connection odc:Type=\"OLEDB\">");
+            strm.WriteLine("   <odc:ConnectionString>Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=True;Data Source=SQL-IAC;Use Procedure for Prepare=1;Auto Translate=True;Packet ");
+            strm.WriteLine("    Size=4096;Workstation ID=SQL;Use Encryption for Data=False;Tag with column collation when possible=False;Initial Catalog=IACSQLPRODUCTION</odc:ConnectionString>");
+            strm.WriteLine("<odc:CommandType>Table</odc:CommandType>");
+            strm.WriteLine("<odc:CommandText>&quot;IACSQLPRODUCTION&quot;.&quot;dbo&quot;.&quot;" + RealFileName + "&quot;</odc:CommandText>");
+            strm.WriteLine("<odc:AlwaysUseConnectionFile/>");
+            strm.WriteLine("</odc:Connection>");
+            strm.WriteLine("</odc:OfficeDataConnection>");
+            strm.WriteLine("</xml>");
+            strm.WriteLine("<style>");
+            strm.WriteLine("<!--");
+            strm.WriteLine(".ODCDataSource");
+            strm.WriteLine("{");
+            strm.WriteLine("behavior: url(dataconn.htc);");
+            strm.WriteLine("}");
+            strm.WriteLine("-->");
+            strm.WriteLine("</style>");
+            strm.WriteLine("</head>");
+            strm.WriteLine("<body onload = 'init()' scroll = no leftmargin = 0 topmargin = 0 rightmargin = 0 style = 'border: 0px'>");
+            strm.WriteLine("<table style = 'border: solid 1px threedface; height: 100%; width: 100%' cellpadding = 0 cellspacing = 0 width = '100%'>");
+            strm.WriteLine("<tr>");
+            strm.WriteLine("<td id = tdName style = 'font-family:arial; font-size:medium; padding: 3px; background-color: threedface'>");
+            strm.WriteLine("&nbsp;");
+            strm.WriteLine("</td>");
+            strm.WriteLine("<td id = tdTableDropdown style = 'padding: 3px; background-color: threedface; vertical-align: top; padding-bottom: 3px'>");
+            strm.WriteLine("");
+            strm.WriteLine("&nbsp;");
+            strm.WriteLine("</td>");
+            strm.WriteLine("</tr>");
+            strm.WriteLine("<tr>");
+            strm.WriteLine("<td id = tdDesc colspan = '2' style = 'border-bottom: 1px threedshadow solid; font-family: Arial; font-size: 1pt; padding: 2px; background-color: threedface'>");
+            strm.WriteLine("");
+            strm.WriteLine("&nbsp;");
+            strm.WriteLine("</td>");
+            strm.WriteLine("</tr>");
+            strm.WriteLine("<tr>");
+            strm.WriteLine("<td colspan = '2' style = 'height: 100%; padding-bottom: 4px; border-top: 1px threedhighlight solid;'>");
+            strm.WriteLine("<div id = 'pt' style = 'height: 100%' class='ODCDataSource'></div>");
+            strm.WriteLine("</td> ");
+            strm.WriteLine("</tr> ");
+            strm.WriteLine("</table> ");
+            strm.WriteLine("");
+            strm.WriteLine("");
+            strm.WriteLine("<script language = 'javascript'>");
+            strm.WriteLine("");
+            strm.WriteLine("function init() {");
+            strm.WriteLine("  var sName, sDescription;");
+            strm.WriteLine("  var i, j;");
+            strm.WriteLine("");
+            strm.WriteLine("try {");
+            strm.WriteLine("  sName = unescape(location.href)");
+            strm.WriteLine("");
+            strm.WriteLine("  i = sName.lastIndexOf(\".\")");
+            strm.WriteLine("  if (i>=0) { sName = sName.substring(1, i); }");
+            strm.WriteLine("");
+            strm.WriteLine("  i = sName.lastIndexOf(\"/\")");
+            strm.WriteLine("  if (i>=0) { sName = sName.substring(i+1, sName.length); }");
+            strm.WriteLine("");
+            strm.WriteLine("  document.title = sName;");
+            strm.WriteLine("  document.getElementById(\"tdName\").innerText = sName;");
+            strm.WriteLine("");
+            strm.WriteLine("  sDescription = document.getElementById(\"docprops\").innerHTML;");
+            strm.WriteLine("");
+            strm.WriteLine("  i = sDescription.indexOf(\"escription>\")");
+            strm.WriteLine("  if (i>=0) { j = sDescription.indexOf(\"escription>\", i + 11); }");
+            strm.WriteLine("");
+            strm.WriteLine("  if (i>=0 && j >= 0) {");
+            strm.WriteLine("    j = sDescription.lastIndexOf(\"</\", j);");
+            strm.WriteLine("");
+            strm.WriteLine("    if (j>=0) {");
+            strm.WriteLine("        sDescription = sDescription.substring(i + 11, j)");
+            strm.WriteLine("      if (sDescription != \"\") {");
+            strm.WriteLine("          document.getElementById(\"tdDesc\").style.fontSize = \"x-small\";");
+            strm.WriteLine("        document.getElementById(\"tdDesc\").innerHTML = sDescription;");
+            strm.WriteLine("      }");
+            strm.WriteLine("    }");
+            strm.WriteLine("  }");
+            strm.WriteLine(" }");
+            strm.WriteLine("catch(e) {");
+            strm.WriteLine("");
+            strm.WriteLine("  }");
+            strm.WriteLine("}");
+            strm.WriteLine("</script>");
+            strm.WriteLine("");
+            strm.WriteLine("</body>");
+            strm.WriteLine("");
+            strm.WriteLine("</html>");
+            strm.Flush();
+            strm.Close();
+        }
+
     }
 }

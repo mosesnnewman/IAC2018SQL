@@ -79,9 +79,9 @@ namespace IAC2018SQL
             this.buttonReprint = new System.Windows.Forms.Button();
             this.checkBoxCloseOut = new System.Windows.Forms.CheckBox();
             this.buttonCancelTicket = new System.Windows.Forms.Button();
-            this.colorTextBoxOutofBalance = new IAC2018SQL.ColorTextBox();
-            this.colorTextBoxCredits = new IAC2018SQL.ColorTextBox();
-            this.colorTextBoxDebits = new IAC2018SQL.ColorTextBox();
+            this.colorTextBoxOutofBalance = new IAC2018SQL.TicketColorTextBox();
+            this.colorTextBoxCredits = new IAC2018SQL.TicketColorTextBox();
+            this.colorTextBoxDebits = new IAC2018SQL.TicketColorTextBox();
             this.NullableDateTimePickerDate = new ProManApp.NullableDateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.cUSTOMERBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productionMainTables)).BeginInit();
@@ -314,18 +314,20 @@ namespace IAC2018SQL
             this.dataListView1.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.dataListView1.HeaderWordWrap = true;
             this.dataListView1.HideSelection = false;
-            this.dataListView1.Location = new System.Drawing.Point(14, 131);
+            this.dataListView1.Location = new System.Drawing.Point(1, 131);
             this.dataListView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataListView1.Name = "dataListView1";
             this.dataListView1.OverlayImage.Transparency = 64;
             this.dataListView1.ShowGroups = false;
-            this.dataListView1.Size = new System.Drawing.Size(615, 365);
+            this.dataListView1.Size = new System.Drawing.Size(613, 365);
             this.dataListView1.TabIndex = 0;
             this.dataListView1.UseAlternatingBackColors = true;
+            this.dataListView1.UseCellFormatEvents = true;
             this.dataListView1.UseCompatibleStateImageBehavior = false;
             this.dataListView1.View = System.Windows.Forms.View.Details;
             this.dataListView1.CellEditFinished += new BrightIdeasSoftware.CellEditEventHandler(this.dataListView1_CellEditFinished);
             this.dataListView1.CellEditStarting += new BrightIdeasSoftware.CellEditEventHandler(this.dataListView1_CellEditStarting);
+            this.dataListView1.FormatCell += new System.EventHandler<BrightIdeasSoftware.FormatCellEventArgs>(this.dataListView1_FormatCell);
             this.dataListView1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.GeneralKeypress);
             this.dataListView1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataListView1_MouseClick);
             // 
@@ -413,7 +415,7 @@ namespace IAC2018SQL
             // richTextBox1
             // 
             this.richTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceTicketHeader, "Explanation", true));
-            this.richTextBox1.Location = new System.Drawing.Point(652, 155);
+            this.richTextBox1.Location = new System.Drawing.Point(651, 155);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(397, 341);
             this.richTextBox1.TabIndex = 12;
@@ -428,7 +430,7 @@ namespace IAC2018SQL
             // 
             this.labelExplanation.AutoSize = true;
             this.labelExplanation.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelExplanation.Location = new System.Drawing.Point(652, 131);
+            this.labelExplanation.Location = new System.Drawing.Point(651, 131);
             this.labelExplanation.Name = "labelExplanation";
             this.labelExplanation.Size = new System.Drawing.Size(93, 16);
             this.labelExplanation.TabIndex = 13;
@@ -581,6 +583,7 @@ namespace IAC2018SQL
             // 
             // colorTextBoxCredits
             // 
+            this.colorTextBoxCredits.Enabled = false;
             this.colorTextBoxCredits.Location = new System.Drawing.Point(430, 538);
             this.colorTextBoxCredits.Name = "colorTextBoxCredits";
             this.colorTextBoxCredits.ReadOnly = true;
@@ -590,6 +593,7 @@ namespace IAC2018SQL
             // 
             // colorTextBoxDebits
             // 
+            this.colorTextBoxDebits.Enabled = false;
             this.colorTextBoxDebits.Location = new System.Drawing.Point(329, 538);
             this.colorTextBoxDebits.Name = "colorTextBoxDebits";
             this.colorTextBoxDebits.ReadOnly = true;
@@ -607,7 +611,7 @@ namespace IAC2018SQL
             this.NullableDateTimePickerDate.ReadOnly = true;
             this.NullableDateTimePickerDate.Size = new System.Drawing.Size(97, 26);
             this.NullableDateTimePickerDate.TabIndex = 77;
-            this.NullableDateTimePickerDate.Value = new System.DateTime(2021, 5, 27, 0, 0, 0, 0);
+            this.NullableDateTimePickerDate.Value = new System.DateTime(2021, 6, 7, 0, 0, 0, 0);
             // 
             // FormTickets
             // 
@@ -696,9 +700,9 @@ namespace IAC2018SQL
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private ColorTextBox colorTextBoxDebits;
-        private ColorTextBox colorTextBoxCredits;
-        private ColorTextBox colorTextBoxOutofBalance;
+        private TicketColorTextBox colorTextBoxDebits;
+        private TicketColorTextBox colorTextBoxCredits;
+        private TicketColorTextBox colorTextBoxOutofBalance;
         private System.Windows.Forms.Button buttonClearDetail;
         private System.Windows.Forms.Button buttonSaveTicket;
         private BrightIdeasSoftware.OLVColumn PaymentType;

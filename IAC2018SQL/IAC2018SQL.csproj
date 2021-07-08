@@ -39,7 +39,7 @@
     <SuiteName>IAC2018SQL</SuiteName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>256</ApplicationRevision>
+    <ApplicationRevision>271</ApplicationRevision>
     <ApplicationVersion>6.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -256,6 +256,18 @@
     <Compile Include="ColorCheckBox.Designer.cs">
       <DependentUpon>ColorCheckBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="ColorTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ColorTextBox.Designer.cs">
+      <DependentUpon>ColorTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCashPaymentSummary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCashPaymentSummary.Designer.cs">
+      <DependentUpon>FormCashPaymentSummary.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ticket.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -278,12 +290,6 @@
     </Compile>
     <Compile Include="NewColorTextBox.Designer.cs">
       <DependentUpon>NewColorTextBox.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ColorTextBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ColorTextBox.Designer.cs">
-      <DependentUpon>ColorTextBox.cs</DependentUpon>
     </Compile>
     <Compile Include="ListData.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -347,6 +353,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ReportQueries.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="TicketColorTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TicketColorTextBox.Designer.cs">
+      <DependentUpon>TicketColorTextBox.cs</DependentUpon>
     </Compile>
     <Compile Include="Tickets.cs">
       <DependentUpon>Tickets.xsd</DependentUpon>
@@ -1301,6 +1313,9 @@
     <EmbeddedResource Include="ClosedReceivedContractReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ClosedReceivedContractReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCashPaymentSummary.resx">
+      <DependentUpon>FormCashPaymentSummary.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ticket.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

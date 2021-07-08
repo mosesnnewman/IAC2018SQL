@@ -600,7 +600,7 @@ namespace IAC2018SQL
             txtCASH.Enabled = true;
             txtNoOfPaymentsMade.Enabled = true;
             // Moses Newman 01/08/2014 if CUSTOMER is NOT already set to INTEREST OVERRIDE, DO NOT Activate field unless Annual Interest Rate is NOT set to ZERO!
-            if (iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<Decimal>("CUSTOMER_ANNUAL_PERCENTAGE_RATE") != 0 && !lbAlreadyIntOverride)
+            if (iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<Decimal>("CUSTOMER_ANNUAL_PERCENTAGE_RATE") != 0 ) //&& !lbAlreadyIntOverride) Moses Newman 06/07/2021
                 txtOverideInterest.Enabled = true;
             else
                 txtOverideInterest.Enabled = false;

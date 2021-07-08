@@ -64,6 +64,7 @@ namespace IAC2018SQL
             ticketAccountsTableAdapter.FillByAll(ticketsdataset.TicketAccounts);
             bindingSourceTicketAccounts.DataSource = ticketsdataset;
             bindingSourceTicketAccounts.DataMember = "TicketAccounts";
+
             this.Account.AspectToStringConverter = delegate (object x)
             {
                 Int32 AcctNumber;
@@ -81,6 +82,8 @@ namespace IAC2018SQL
                 lsDealer = (x == System.DBNull.Value) ? "" : (x.ToString() != "" ? x.ToString().PadLeft(3,'0'):"");
                 return lsDealer;
             };
+            colorTextBoxDebits.Debit = true;
+            colorTextBoxCredits.Debit = false;
             ActiveControl = textBoxAccount;
             textBoxAccount.Select();
         }
@@ -111,7 +114,7 @@ namespace IAC2018SQL
             switch (cindex)
             {
                 case 1:
-                    bindingSourceTicketAccounts.MoveFirst();
+                    //bindingSourceTicketAccounts.MoveFirst();
                     ComboBox cbAccount = new ComboBox();
                     cbAccount.Bounds = e.CellBounds;
                     cbAccount.Font = ((BrightIdeasSoftware.DataListView)sender).Font;
@@ -140,7 +143,7 @@ namespace IAC2018SQL
                     bindingSourceTicketAccounts.MoveFirst();
                     ComboBox cbPaymentType = new ComboBox();
                     cbPaymentType.Bounds = e.CellBounds;
-                    cbPaymentType.Width = 200;
+                    cbPaymentType.Width = 250;
                     cbPaymentType.Font = ((BrightIdeasSoftware.DataListView)sender).Font;
                     cbPaymentType.DropDownStyle = ComboBoxStyle.DropDownList;
                     cbPaymentType.DataSource = bindingSourcePaymentTypes;
@@ -165,7 +168,7 @@ namespace IAC2018SQL
                         bindingSourceTicketAccounts.MoveFirst();
                         ComboBox cbPaymentCode = new ComboBox();
                         cbPaymentCode.Bounds = e.CellBounds;
-                        cbPaymentCode.Width = 200;
+                        cbPaymentCode.Width = 250;
                         cbPaymentCode.Font = ((BrightIdeasSoftware.DataListView)sender).Font;
                         cbPaymentCode.DropDownStyle = ComboBoxStyle.DropDownList;
                         cbPaymentCode.DataSource = bindingSourcePaymentCodes;
@@ -202,6 +205,7 @@ namespace IAC2018SQL
 
         private void GetTrialBalance()
         {
+            Int32? GLTest = null;
             Decimal Debits = 0, Credits = 0, OutofBalance = 0;
             for (int i = 0; i < ticketsdataset.TicketDetail.Rows.Count; i++)
             {
@@ -210,11 +214,13 @@ namespace IAC2018SQL
             }
             for (int i = 0; i < ticketsdataset.TicketDetail.Rows.Count; i++)
             {
-                if (ticketsdataset.TicketDetail.Rows[i].Field<Int32>("GLAccount") == 2)
-                {
-                    ticketsdataset.TicketDetail.Rows[i].SetField<Decimal>("Credit", Debits);
-                    Credits = Debits;
-                }
+                GLTest = ticketsdataset.TicketDetail.Rows[i].Field<Int32?>("GLAccount");
+                if (GLTest != null)
+                    if (ticketsdataset.TicketDetail.Rows[i].Field<Int32>("GLAccount") == 2)
+                    {
+                        ticketsdataset.TicketDetail.Rows[i].SetField<Decimal>("Credit", Debits);
+                        Credits = Debits;
+                    }
             }
             if (Debits != Credits)
             {
@@ -223,6 +229,8 @@ namespace IAC2018SQL
 
             else
                 OutofBalance = 0;
+            colorTextBoxDebits.Debit = true;
+            colorTextBoxCredits.Debit = false;
             colorTextBoxDebits.Text = String.Format("{0:C}", Debits);
             colorTextBoxCredits.Text = String.Format("{0:C}", Credits);
             colorTextBoxOutofBalance.Text = String.Format("{0:C}", OutofBalance);
@@ -315,6 +323,7 @@ namespace IAC2018SQL
             Object loContingentSeq = null;
             Char NotPosted = '\u00FF';
 
+            System.Windows.Forms.SendKeys.Send("{TAB}"); // Moses Newman 06/13/2021 send tab to make sure if still in a field, field validation fires.
             if (checkBoxCloseOut.Checked)
             {
                 for (int i = 0; i < ticketsdataset.TicketDetail.Rows.Count; i++)
@@ -398,6 +407,8 @@ namespace IAC2018SQL
                         NewConting.CONTING_DEALER = ticketsdataset.TicketDetail.Rows[i].Field<String>("SubDealer") != "" &&
                                                         ticketsdataset.TicketDetail.Rows[i].Field<String>("SubDealer") != null ?
                                                             ticketsdataset.TicketDetail.Rows[i].Field<String>("SubDealer") : NewPayment.PAYMENT_DEALER;
+                        if (NewConting.CONTING_DEALER.Trim().Length < 3)
+                            NewConting.CONTING_DEALER = NewConting.CONTING_DEALER.Trim().PadLeft(3, '0'); // 06/13/2021 Just in case, make sure 0 padded to 3 chars!
                         NewConting.CONTING_POST_DATE = NewPayment.PAYMENT_DATE;
                         loContingentSeq = CONTINGTableAdapter.MaxSeqQuery(NewConting.CONTING_DEALER, NewPayment.PAYMENT_DATE);
                         if (loContingentSeq != null)
@@ -435,19 +446,19 @@ namespace IAC2018SQL
                         switch (ticketsdataset.TicketDetail.Rows[i].Field<Int32>("GLAccount"))
                         {
                             case 3: // CONTINGENT RESERVE
-                                NewConting.CONTING_CONTRACT = ticketsdataset.TicketDetail.Rows[i].Field<Decimal>("Debit") != 0 ? ticketsdataset.TicketDetail.Rows[i].Field<Decimal>("Debit") : ticketsdataset.TicketDetail.Rows[i].Field<Decimal>("Credit");
+                                NewConting.CONTING_CONTRACT = ticketsdataset.TicketDetail.Rows[i].Field<Decimal>("Debit") != 0 ? ticketsdataset.TicketDetail.Rows[i].Field<Decimal>("Debit") * -1: ticketsdataset.TicketDetail.Rows[i].Field<Decimal>("Credit");
                                 NewConting.CONTING_CONTRACT_COMMENT = NewPayment.PAYMENT_CUSTOMER;
                                 break;
                             case 4: // ADJUST ACCOUNT A/A
-                                NewConting.CONTING_ADJUST = ticketsdataset.TicketDetail.Rows[i].Field<Decimal>("Debit") != 0 ? ticketsdataset.TicketDetail.Rows[i].Field<Decimal>("Debit") : ticketsdataset.TicketDetail.Rows[i].Field<Decimal>("Credit");
+                                NewConting.CONTING_ADJUST = ticketsdataset.TicketDetail.Rows[i].Field<Decimal>("Debit") != 0 ? ticketsdataset.TicketDetail.Rows[i].Field<Decimal>("Debit") * -1: ticketsdataset.TicketDetail.Rows[i].Field<Decimal>("Credit");
                                 NewConting.CONTING_ADJUST_COMMENT = NewPayment.PAYMENT_CUSTOMER;
                                 break;
                             case 5: // DEALER ADJUST A/A REMOVE!
-                                NewConting.CONTING_ADJUST = ticketsdataset.TicketDetail.Rows[i].Field<Decimal>("Debit") != 0 ? ticketsdataset.TicketDetail.Rows[i].Field<Decimal>("Debit") : ticketsdataset.TicketDetail.Rows[i].Field<Decimal>("Credit");
+                                NewConting.CONTING_ADJUST = ticketsdataset.TicketDetail.Rows[i].Field<Decimal>("Debit") != 0 ? ticketsdataset.TicketDetail.Rows[i].Field<Decimal>("Debit") * -1: ticketsdataset.TicketDetail.Rows[i].Field<Decimal>("Credit");
                                 NewConting.CONTING_ADJUST_COMMENT = NewPayment.PAYMENT_CUSTOMER;
                                 break;
                             case 6: // DEALER LOSS RESERVE
-                                NewConting.CONTING_LOSS_RES = ticketsdataset.TicketDetail.Rows[i].Field<Decimal>("Debit") != 0 ? ticketsdataset.TicketDetail.Rows[i].Field<Decimal>("Debit") : ticketsdataset.TicketDetail.Rows[i].Field<Decimal>("Credit");
+                                NewConting.CONTING_LOSS_RES = ticketsdataset.TicketDetail.Rows[i].Field<Decimal>("Debit") != 0 ? ticketsdataset.TicketDetail.Rows[i].Field<Decimal>("Debit") * -1: ticketsdataset.TicketDetail.Rows[i].Field<Decimal>("Credit");
                                 NewConting.CONTING_LOSS_RES_COMMENT = NewPayment.PAYMENT_CUSTOMER;
                                 break;
                             /*case 7: // SUNDRY INCOME
@@ -455,11 +466,11 @@ namespace IAC2018SQL
                                 NewConting.CONTING_LOSS_RES_COMMENT = NewPayment.PAYMENT_CUSTOMER;
                                 break;*/
                             case 8: // RESERVE FOR LOSSES
-                                NewConting.CONTING_RES_LOSS = ticketsdataset.TicketDetail.Rows[i].Field<Decimal>("Debit") != 0 ? ticketsdataset.TicketDetail.Rows[i].Field<Decimal>("Debit") : ticketsdataset.TicketDetail.Rows[i].Field<Decimal>("Credit");
+                                NewConting.CONTING_RES_LOSS = ticketsdataset.TicketDetail.Rows[i].Field<Decimal>("Debit") != 0 ? ticketsdataset.TicketDetail.Rows[i].Field<Decimal>("Debit") * -1: ticketsdataset.TicketDetail.Rows[i].Field<Decimal>("Credit");
                                 NewConting.CONTING_RES_LOSS_COMMENT = NewPayment.PAYMENT_CUSTOMER;
                                 break;
                             case 9: // RECOVERY OF BAD DEBT
-                                NewConting.CONTING_RECOV_BAD = ticketsdataset.TicketDetail.Rows[i].Field<Decimal>("Debit") != 0 ? ticketsdataset.TicketDetail.Rows[i].Field<Decimal>("Debit") : ticketsdataset.TicketDetail.Rows[i].Field<Decimal>("Credit");
+                                NewConting.CONTING_RECOV_BAD = ticketsdataset.TicketDetail.Rows[i].Field<Decimal>("Debit") != 0 ? ticketsdataset.TicketDetail.Rows[i].Field<Decimal>("Debit") * -1: ticketsdataset.TicketDetail.Rows[i].Field<Decimal>("Credit");
                                 NewConting.CONTING_RECOV_BAD_COMMENT = NewPayment.PAYMENT_CUSTOMER;
                                 break;
                         }
@@ -629,6 +640,21 @@ namespace IAC2018SQL
             textBoxTicketID.Refresh();
             ActiveControl = textBoxAccount;
             textBoxAccount.Select();
+        }
+
+        private void dataListView1_FormatCell(object sender, BrightIdeasSoftware.FormatCellEventArgs e)
+        {
+            int cindex = e.ColumnIndex;
+
+            switch(cindex)
+            {
+                case 3:
+                    e.SubItem.ForeColor = Color.Red;
+                    break;
+                case 4:
+                    e.SubItem.ForeColor = Color.Green;
+                    break;
+            }
         }
     }
 }
