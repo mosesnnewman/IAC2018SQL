@@ -26,6 +26,9 @@ namespace IAC2018SQL
         private string password = @"***REMOVED***";
         private string remoteDirectory = @"/00000000-0000-2d07-e9ea-08d6fe68bbde/Download";
         private string remoteArchive = @"/00000000-0000-2d07-e9ea-08d6fe68bbde/Download/Archive";
+        // Moses Newman 07/09/2021 Add new remote folders!
+        private string newRemoteDirectory1 = @"/00000000-0000-2d07-e9ea-08d6fe68bbde/1/Download";
+        private string newRemoteDirectory2 = @"/00000000-0000-2d07-e9ea-08d6fe68bbde/2/Download";
 
 
         public frmPNSImport()
@@ -95,13 +98,13 @@ namespace IAC2018SQL
                 {
                     sftp.Connect();
 
+                    SftpFile orgFile;
                     var files = sftp.ListDirectory(remoteDirectory);
                     // Moses Newman 01/01/2020 Add Archive folder files
                     var archivefiles = sftp.ListDirectory(remoteArchive);
-
+                    // Moses Newman 07/09/2021 end mod. 
                     files = files.Union(archivefiles);
-
-                    SftpFile orgFile;
+                    
                     foreach (var file in files)
                     {
                         if(!file.IsDirectory)
@@ -109,13 +112,14 @@ namespace IAC2018SQL
                             FilesOnly.Add(file);
                         }
                     }
+
                     foreach (var file in FilesOnly)
                     {
                         FileNumber += 1;
                         success = downloadFile(file.Name, @"\\dc-iac\Public\PayNSeconds", FilesOnly.Count(), FileNumber);
                         if (!success)
                         {
-                            MessageBox.Show("*** Error downloading: " + file.Name + " Import not completed! ***","PNS Download Failure",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                            MessageBox.Show("*** Error downloading: " + file.Name + " Import not completed! ***", "PNS Download Failure", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             return 0;
                         }
                         orgFile = (SftpFile)file;
@@ -147,7 +151,7 @@ namespace IAC2018SQL
             PaymentDataSetTableAdapters.PNSRejectsTableAdapter PNSRejectsTableAdapter = new PaymentDataSetTableAdapters.PNSRejectsTableAdapter();
             PaymentDataSetTableAdapters.PNSIMPORTParamsTableAdapter PNSIMPORTParamsTableAdapter = new PaymentDataSetTableAdapters.PNSIMPORTParamsTableAdapter();
             Int32 FileNumber = 0, TotalFiles = 0, Progress = 0,TotalDownloads = 0;
-            String FilePath = @"\\dc-iac\Public\PayNSeconds\",FullFileName,
+            String FilePath = @"\\dc-iac\Public\PayNSeconds\",
                    ConnStringStart = @"Data Source=SQL-IAC;",
                    lsConnect = lsConnect = IAC2018SQL.Properties.Settings.Default.IAC2010SQLConnectionString.ToUpper(),
                    DataBase = lsConnect.Substring(lsConnect.IndexOf("INITIAL CATALOG=") + 16,
@@ -155,16 +159,6 @@ namespace IAC2018SQL
                    ConnStringEnd = @";Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;",
                    ConnString = ConnStringStart + "INITIAL CATALOG=" + DataBase + ConnStringEnd;
 
-            //Package pkg;
-            //Microsoft.SqlServer.Dts.Runtime.Application app;
-            //DTSExecResult pkgResults;
-
-            /*pkgLocation =
-              @"\\sql-iac\e\SSISPackages\LeeMasonToVehicle\LeeMasonToVehicle" +
-              @"\PNSIMPORT.dtsx";*/
-            //app = new Microsoft.SqlServer.Dts.Runtime.Application();
-            //pkg = app.LoadPackage(pkgLocation, null);
-            //pkg.Variables["ConnString"].Value = ConnString;
             // Moses Newman 03/26/2021
             if (withDownload)
                 TotalDownloads = DownloadPNSPayments();
@@ -175,22 +169,16 @@ namespace IAC2018SQL
                             .EnumerateFiles(FilePath, "*.xlsx", SearchOption.TopDirectoryOnly)
                             .Select(Path.GetFileName); // <-- note you can shorten the lambda
                 TotalFiles = filenames.Count()-1;
-                Excel.Application excelApp = new Excel.Application();
-                excelApp.Visible = false;
 
-
+                FormatExcel(FilePath, filenames);  // Moses Newman 07/10/2021
                 foreach (String FileName in filenames)
                 {
                     if (FileName.IndexOf("Template.xlsx") == -1)
                     {
                         FileNumber += 1;
                         Progress = (Int32)(Math.Round(((Double)FileNumber / (Double)TotalFiles), 2) * 100);
-                        // Moses Newman 11/06/2019 open, save, and close xlsx files to make certain EXCEL 2016 format!
-                        FullFileName = FilePath + FileName;
-                        excelApp.Workbooks.Open(FullFileName);
-                        excelApp.Workbooks[1].Save();
-                        excelApp.Workbooks.Close();
-
+                        // Moses Newman 07/10/2021 No longer open and save xlsx files to insure Excel 2016 as new FormatExcel routine 
+                        // handles that after proper formating of new Pay -N- Seconds format.
                         PNSIMPORTParamsTableAdapter.DeleteAll();
                         PNSIMPORTParamsTableAdapter.Insert(ConnString, FileName, @"\\DC-IAC\Public\PayNSeconds\");
 
@@ -214,7 +202,6 @@ namespace IAC2018SQL
                         progressBarDownload.Value = Progress;
                     }
                 }
-                excelApp.Quit();
                 PayNSecondsTableAdapter.Fill(PNS.PayNSeconds);
 
                 // Moses Newman 11/06/2019 Create Rejects Report if any customers are Inactive.
@@ -254,16 +241,9 @@ namespace IAC2018SQL
                     }
                 }
 
-                /*pkgLocation =
-                  @"\\sql-iac\e\SSISPackages\LeeMasonToVehicle\LeeMasonToVehicle" +
-                  @"\PNSToPayment.dtsx";*/
-                //pkg = app.LoadPackage(pkgLocation, null);
-                //pkg.Variables["ConnString"].Value = ConnString;
                 labelDownload.Text = "Executing PNSToPayments.dtsx";
                 labelDownload.Refresh();
-                //pkgResults = pkg.Execute();
                 progressBarDownload.Value = (Int32)100;
-                //Thread.Sleep(5000);
 
                 labelDownload.Text = "";
                 labelDownload.Refresh();
@@ -357,6 +337,89 @@ namespace IAC2018SQL
             PayNSecondsTableAdapter.Dispose();
             PNS.Dispose();
             this.Close();
+        }
+
+
+        // Moses Newman 07/10/2021 Format new XLSX files from Pay -N- Seconds to proper format!
+        private void FormatExcel(String FilePath, IEnumerable<String> filenames)
+        {
+            Int32 FileNumber = 0, lastUsedRow = 0;
+            String FullFileName, tmpString, FirstName, LastName;
+
+            Excel.Application excelApp = new Excel.Application();
+            excelApp.Visible = false;
+            Excel.Worksheet excelWorkSheet;
+            Excel.Workbook excelWorkBook;
+            Excel.Range NewRow;
+            Excel.Range NewColumn;
+            Excel.Range rng;
+            foreach (String FileName in filenames)
+            {
+                if (FileName.IndexOf("Template.xlsx") == -1)
+                {
+                    FileNumber += 1;
+                    // Moses Newman 11/06/2019 open, save, and close xlsx files to make certain EXCEL 2016 format!
+                    FullFileName = FilePath + FileName;
+                    excelApp.Workbooks.Open(FullFileName);
+                    excelWorkBook = excelApp.Workbooks[1];
+                    excelWorkSheet = excelApp.Workbooks[1].Worksheets[1];
+
+                    NewRow = excelWorkSheet.Rows[1];
+                    NewRow.Insert();
+
+                    NewColumn = excelWorkSheet.Range["F1"];
+                    NewColumn.EntireColumn.Insert(Excel.XlInsertShiftDirection.xlShiftToRight,
+                                                  Excel.XlInsertFormatOrigin.xlFormatFromRightOrBelow);
+                    // Find the last real row
+                    lastUsedRow = excelWorkSheet.Cells.Find("*", System.Reflection.Missing.Value,
+                                                   System.Reflection.Missing.Value, System.Reflection.Missing.Value,
+                                                   Excel.XlSearchOrder.xlByRows, Excel.XlSearchDirection.xlPrevious,
+                                                   false, System.Reflection.Missing.Value, System.Reflection.Missing.Value).Row;
+                    excelWorkSheet.get_Range("A1:A1").Value = "ReferenceNumber";
+                    excelWorkSheet.get_Range("A1:A1").Font.FontStyle = "Bold";
+                    excelWorkSheet.get_Range("B1:B1").Value = "Timestamp";
+                    excelWorkSheet.get_Range("B1:B1").Font.FontStyle = "Bold";
+                    excelWorkSheet.get_Range("C1:C1").Value = "PaymentMethod";
+                    excelWorkSheet.get_Range("C1:C1").Font.FontStyle = "Bold";
+                    excelWorkSheet.get_Range("D1:D1").Value = "Service";
+                    excelWorkSheet.get_Range("D1:D1").Font.FontStyle = "Bold";
+                    excelWorkSheet.get_Range("E1:E1").Value = "FirstName";
+                    excelWorkSheet.get_Range("E1:E1").Font.FontStyle = "Bold";
+                    excelWorkSheet.get_Range("F1:F1").Value = "LastName";
+                    excelWorkSheet.get_Range("F1:F1").Font.FontStyle = "Bold";
+                    excelWorkSheet.get_Range("G1:G1").Value = "AccountNumber";
+                    excelWorkSheet.get_Range("G1:G1").Font.FontStyle = "Bold";
+                    excelWorkSheet.get_Range("H1:H1").Value = "Principal";
+                    excelWorkSheet.get_Range("H1:H1").Font.FontStyle = "Bold";
+
+                    //Convert Principal column to number
+                    rng = excelWorkSheet.get_Range("H2", "H" + lastUsedRow);
+                    foreach (Excel.Range range in rng)
+                    {
+                        if (range.Value != null)
+                        {
+                            tmpString = range.Value.Trim();
+                            range.Value = tmpString;
+                        }
+                    }
+                    rng = excelWorkSheet.get_Range("E2", "E" + lastUsedRow);
+                    foreach (Excel.Range range in rng)
+                    {
+                        if (range.Value != null)
+                        {
+                            FirstName = range.Value.Remove(range.Value.LastIndexOf(' ')).TrimEnd();
+                            LastName = range.Value.Trim();
+                            LastName = LastName.Substring(LastName.LastIndexOf(' ') + 1);
+                            range.Value = FirstName;
+                            range.Offset[0, 1].Value = LastName;
+                        }
+                    }
+
+                    excelApp.Workbooks[1].Save();
+                    excelApp.Workbooks.Close();
+                }
+            }
+            excelApp.Quit();
         }
     }
 }
