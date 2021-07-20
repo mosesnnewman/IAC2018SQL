@@ -84,7 +84,7 @@ namespace IAC2018SQL
         {
             IACDataSetTableAdapters.ClosedCustomerBuybackSummaryTableAdapter ClosedCustomerBuybackSummaryTableAdapter = 
                                 new IACDataSetTableAdapters.ClosedCustomerBuybackSummaryTableAdapter();
-            String  lsType      = PaymentTypetextBox.Text.TrimEnd() + "%", lsCode = PAYCODEcomboBox.Text.TrimEnd() + "%",
+            String  lsType      = PaymentTypetextBox.Text.TrimEnd() + "%", lsCode = CodeTypetextBox.Text + "%", // Moses Newman 07/16/2021 do not use code desc
                     lsDealer    = comboBoxDealer.Text.TrimEnd() + "%",
                     lsDealerState = comboBoxDealerState.SelectedValue.ToString().TrimEnd() + "%", 
                     lsCustomerState = comboBoxCustomerState.SelectedValue.ToString().TrimEnd() + "%";
