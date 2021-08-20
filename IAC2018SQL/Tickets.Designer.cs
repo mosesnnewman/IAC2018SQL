@@ -363,6 +363,8 @@ namespace IAC2018SQL {
             
             private global::System.Data.DataColumn columnExplanation;
             
+            private global::System.Data.DataColumn columnIsPosted;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public TicketHeaderDataTable() {
@@ -454,6 +456,14 @@ namespace IAC2018SQL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn IsPostedColumn {
+                get {
+                    return this.columnIsPosted;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -489,7 +499,7 @@ namespace IAC2018SQL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public TicketHeaderRow AddTicketHeaderRow(int AccountNumber, string DealerNumber, System.DateTime Date, string MadeBy, string ApprovedBy, string Explanation) {
+            public TicketHeaderRow AddTicketHeaderRow(int AccountNumber, string DealerNumber, System.DateTime Date, string MadeBy, string ApprovedBy, string Explanation, bool IsPosted) {
                 TicketHeaderRow rowTicketHeaderRow = ((TicketHeaderRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -498,7 +508,8 @@ namespace IAC2018SQL {
                         Date,
                         MadeBy,
                         ApprovedBy,
-                        Explanation};
+                        Explanation,
+                        IsPosted};
                 rowTicketHeaderRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowTicketHeaderRow);
                 return rowTicketHeaderRow;
@@ -535,6 +546,7 @@ namespace IAC2018SQL {
                 this.columnMadeBy = base.Columns["MadeBy"];
                 this.columnApprovedBy = base.Columns["ApprovedBy"];
                 this.columnExplanation = base.Columns["Explanation"];
+                this.columnIsPosted = base.Columns["IsPosted"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -554,6 +566,8 @@ namespace IAC2018SQL {
                 base.Columns.Add(this.columnApprovedBy);
                 this.columnExplanation = new global::System.Data.DataColumn("Explanation", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnExplanation);
+                this.columnIsPosted = new global::System.Data.DataColumn("IsPosted", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIsPosted);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnTicketID}, true));
                 this.columnTicketID.AutoIncrement = true;
@@ -723,6 +737,8 @@ namespace IAC2018SQL {
             
             private global::System.Data.DataColumn columnGLAccount;
             
+            private global::System.Data.DataColumn columnIsPosted;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public TicketDetailDataTable() {
@@ -822,6 +838,14 @@ namespace IAC2018SQL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn IsPostedColumn {
+                get {
+                    return this.columnIsPosted;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -857,7 +881,7 @@ namespace IAC2018SQL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public TicketDetailRow AddTicketDetailRow(int TicketID, string SubDealer, decimal Debit, decimal Credit, int DetailID, string PaymentType, string PaymentCode, int GLAccount) {
+            public TicketDetailRow AddTicketDetailRow(int TicketID, string SubDealer, decimal Debit, decimal Credit, int DetailID, string PaymentType, string PaymentCode, int GLAccount, bool IsPosted) {
                 TicketDetailRow rowTicketDetailRow = ((TicketDetailRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         TicketID,
@@ -867,7 +891,8 @@ namespace IAC2018SQL {
                         DetailID,
                         PaymentType,
                         PaymentCode,
-                        GLAccount};
+                        GLAccount,
+                        IsPosted};
                 rowTicketDetailRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowTicketDetailRow);
                 return rowTicketDetailRow;
@@ -906,6 +931,7 @@ namespace IAC2018SQL {
                 this.columnPaymentType = base.Columns["PaymentType"];
                 this.columnPaymentCode = base.Columns["PaymentCode"];
                 this.columnGLAccount = base.Columns["GLAccount"];
+                this.columnIsPosted = base.Columns["IsPosted"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -927,6 +953,8 @@ namespace IAC2018SQL {
                 base.Columns.Add(this.columnPaymentCode);
                 this.columnGLAccount = new global::System.Data.DataColumn("GLAccount", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnGLAccount);
+                this.columnIsPosted = new global::System.Data.DataColumn("IsPosted", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIsPosted);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnTicketID,
                                 this.columnDetailID}, true));
@@ -1496,6 +1524,22 @@ namespace IAC2018SQL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsPosted {
+                get {
+                    try {
+                        return ((bool)(this[this.tableTicketHeader.IsPostedColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'IsPosted\' in table \'TicketHeader\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTicketHeader.IsPostedColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsMadeByNull() {
                 return this.IsNull(this.tableTicketHeader.MadeByColumn);
             }
@@ -1528,6 +1572,18 @@ namespace IAC2018SQL {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetExplanationNull() {
                 this[this.tableTicketHeader.ExplanationColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsIsPostedNull() {
+                return this.IsNull(this.tableTicketHeader.IsPostedColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetIsPostedNull() {
+                this[this.tableTicketHeader.IsPostedColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1665,6 +1721,22 @@ namespace IAC2018SQL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsPosted {
+                get {
+                    try {
+                        return ((bool)(this[this.tableTicketDetail.IsPostedColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'IsPosted\' in table \'TicketDetail\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableTicketDetail.IsPostedColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsSubDealerNull() {
                 return this.IsNull(this.tableTicketDetail.SubDealerColumn);
             }
@@ -1733,6 +1805,18 @@ namespace IAC2018SQL {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetGLAccountNull() {
                 this[this.tableTicketDetail.GLAccountColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsIsPostedNull() {
+                return this.IsNull(this.tableTicketDetail.IsPostedColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetIsPostedNull() {
+                this[this.tableTicketDetail.IsPostedColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -2074,6 +2158,7 @@ namespace IAC2018SQL.TicketsTableAdapters {
             tableMapping.ColumnMappings.Add("MadeBy", "MadeBy");
             tableMapping.ColumnMappings.Add("ApprovedBy", "ApprovedBy");
             tableMapping.ColumnMappings.Add("Explanation", "Explanation");
+            tableMapping.ColumnMappings.Add("IsPosted", "IsPosted");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -2093,6 +2178,7 @@ namespace IAC2018SQL.TicketsTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ApprovedBy", global::System.Data.SqlDbType.Char, 3, global::System.Data.ParameterDirection.Input, 0, 0, "ApprovedBy", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Explanation", global::System.Data.SqlDbType.VarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "Explanation", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@InsertID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.InputOutput, 10, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsPosted", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 1, 0, "Isposted", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = "dbo.ClosedUpdateTicketHeader";
@@ -2105,6 +2191,7 @@ namespace IAC2018SQL.TicketsTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MadeBy", global::System.Data.SqlDbType.Char, 3, global::System.Data.ParameterDirection.Input, 0, 0, "MadeBy", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ApprovedBy", global::System.Data.SqlDbType.Char, 3, global::System.Data.ParameterDirection.Input, 0, 0, "ApprovedBy", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Explanation", global::System.Data.SqlDbType.VarChar, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "Explanation", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsPosted", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 1, 0, "Isposted", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2117,7 +2204,7 @@ namespace IAC2018SQL.TicketsTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "dbo.ClosedSelectTicketHeader";
@@ -2129,6 +2216,12 @@ namespace IAC2018SQL.TicketsTableAdapters {
             this._commandCollection[1].CommandText = "dbo.ClosedSelectTicketHeadersAll";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "dbo.TicketHeaderMarkPosted";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TicketID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2251,7 +2344,7 @@ namespace IAC2018SQL.TicketsTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(global::System.Nullable<int> AccountNumber, string DealerNumber, global::System.Nullable<global::System.DateTime> Date, string MadeBy, string ApprovedBy, string Explanation, ref global::System.Nullable<int> InsertID) {
+        public virtual int Insert(global::System.Nullable<int> AccountNumber, string DealerNumber, global::System.Nullable<global::System.DateTime> Date, string MadeBy, string ApprovedBy, string Explanation, ref global::System.Nullable<int> InsertID, global::System.Nullable<bool> IsPosted) {
             if ((AccountNumber.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((int)(AccountNumber.Value));
             }
@@ -2294,6 +2387,12 @@ namespace IAC2018SQL.TicketsTableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
+            if ((IsPosted.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[8].Value = ((bool)(IsPosted.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -2321,7 +2420,7 @@ namespace IAC2018SQL.TicketsTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<int> TicketID, global::System.Nullable<int> AccountNumber, string DealerNumber, global::System.Nullable<global::System.DateTime> Date, string MadeBy, string ApprovedBy, string Explanation) {
+        public virtual int Update(global::System.Nullable<int> TicketID, global::System.Nullable<int> AccountNumber, string DealerNumber, global::System.Nullable<global::System.DateTime> Date, string MadeBy, string ApprovedBy, string Explanation, global::System.Nullable<bool> IsPosted) {
             if ((TicketID.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(TicketID.Value));
             }
@@ -2364,6 +2463,12 @@ namespace IAC2018SQL.TicketsTableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Explanation));
             }
+            if ((IsPosted.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((bool)(IsPosted.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -2378,6 +2483,34 @@ namespace IAC2018SQL.TicketsTableAdapters {
                     this.Adapter.UpdateCommand.Connection.Close();
                 }
             }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int MarkPosted(global::System.Nullable<int> TicketID) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            if ((TicketID.HasValue == true)) {
+                command.Parameters[1].Value = ((int)(TicketID.Value));
+            }
+            else {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
         }
     }
     
@@ -2510,6 +2643,7 @@ namespace IAC2018SQL.TicketsTableAdapters {
             tableMapping.ColumnMappings.Add("PaymentType", "PaymentType");
             tableMapping.ColumnMappings.Add("PaymentCode", "PaymentCode");
             tableMapping.ColumnMappings.Add("GLAccount", "GLAccount");
+            tableMapping.ColumnMappings.Add("IsPosted", "IsPosted");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -2531,6 +2665,7 @@ namespace IAC2018SQL.TicketsTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Credit", global::System.Data.SqlDbType.Money, 8, global::System.Data.ParameterDirection.Input, 19, 4, "Credit", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PaymentType", global::System.Data.SqlDbType.Char, 1, global::System.Data.ParameterDirection.Input, 0, 0, "PaymentType", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PaymentCode", global::System.Data.SqlDbType.Char, 1, global::System.Data.ParameterDirection.Input, 0, 0, "PaymentCode", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsPosted", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 1, 0, "IsPosted", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = "dbo.ClosedUpdateTicketDetail";
@@ -2544,6 +2679,7 @@ namespace IAC2018SQL.TicketsTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Credit", global::System.Data.SqlDbType.Money, 8, global::System.Data.ParameterDirection.Input, 19, 4, "Credit", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PaymentType", global::System.Data.SqlDbType.Char, 1, global::System.Data.ParameterDirection.Input, 0, 0, "PaymentType", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PaymentCode", global::System.Data.SqlDbType.Char, 1, global::System.Data.ParameterDirection.Input, 0, 0, "PaymentCode", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsPosted", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 1, 0, "IsPosted", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2556,7 +2692,7 @@ namespace IAC2018SQL.TicketsTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "dbo.ClosedSelectTicketDetail";
@@ -2566,10 +2702,23 @@ namespace IAC2018SQL.TicketsTableAdapters {
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DetailID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "dbo.ClosedSelectTicketDetailByTicketID";
+            this._commandCollection[1].CommandText = "dbo.ClosedDeleteTicketDetailALL";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TicketID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "dbo.ClosedSelectTicketDetailByTicketID";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TicketID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "dbo.TicketDetailMarkPosted";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TicketID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DetailID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2625,7 +2774,7 @@ namespace IAC2018SQL.TicketsTableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int FillByTicketID(Tickets.TicketDetailDataTable dataTable, global::System.Nullable<int> TicketID) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand = this.CommandCollection[2];
             if ((TicketID.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(TicketID.Value));
             }
@@ -2644,7 +2793,7 @@ namespace IAC2018SQL.TicketsTableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual Tickets.TicketDetailDataTable GetDataByTicketID(global::System.Nullable<int> TicketID) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand = this.CommandCollection[2];
             if ((TicketID.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(TicketID.Value));
             }
@@ -2722,7 +2871,7 @@ namespace IAC2018SQL.TicketsTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(global::System.Nullable<int> TicketID, global::System.Nullable<int> DetailID, global::System.Nullable<int> GLAccount, string SubDealer, global::System.Nullable<decimal> Debit, global::System.Nullable<decimal> Credit, string PaymentType, string PaymentCode) {
+        public virtual int Insert(global::System.Nullable<int> TicketID, global::System.Nullable<int> DetailID, global::System.Nullable<int> GLAccount, string SubDealer, global::System.Nullable<decimal> Debit, global::System.Nullable<decimal> Credit, string PaymentType, string PaymentCode, global::System.Nullable<bool> IsPosted) {
             if ((TicketID.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((int)(TicketID.Value));
             }
@@ -2771,6 +2920,12 @@ namespace IAC2018SQL.TicketsTableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[8].Value = ((string)(PaymentCode));
             }
+            if ((IsPosted.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[9].Value = ((bool)(IsPosted.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -2791,7 +2946,7 @@ namespace IAC2018SQL.TicketsTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<int> TicketID, global::System.Nullable<int> DetailID, global::System.Nullable<int> GLAccount, string SubDealer, global::System.Nullable<decimal> Debit, global::System.Nullable<decimal> Credit, string PaymentType, string PaymentCode) {
+        public virtual int Update(global::System.Nullable<int> TicketID, global::System.Nullable<int> DetailID, global::System.Nullable<int> GLAccount, string SubDealer, global::System.Nullable<decimal> Debit, global::System.Nullable<decimal> Credit, string PaymentType, string PaymentCode, global::System.Nullable<bool> IsPosted) {
             if ((TicketID.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(TicketID.Value));
             }
@@ -2840,6 +2995,12 @@ namespace IAC2018SQL.TicketsTableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(PaymentCode));
             }
+            if ((IsPosted.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((bool)(IsPosted.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -2854,6 +3015,68 @@ namespace IAC2018SQL.TicketsTableAdapters {
                     this.Adapter.UpdateCommand.Connection.Close();
                 }
             }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int DeleteALL(global::System.Nullable<int> TicketID) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            if ((TicketID.HasValue == true)) {
+                command.Parameters[1].Value = ((int)(TicketID.Value));
+            }
+            else {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int MarkPosted(global::System.Nullable<int> TicketID, global::System.Nullable<int> DetailID) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
+            if ((TicketID.HasValue == true)) {
+                command.Parameters[1].Value = ((int)(TicketID.Value));
+            }
+            else {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((DetailID.HasValue == true)) {
+                command.Parameters[2].Value = ((int)(DetailID.Value));
+            }
+            else {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
         }
     }
     

@@ -153,6 +153,16 @@ namespace IAC2018SQL.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap arrow_Next_16xMD {
+            get {
+                object obj = ResourceManager.GetObject("arrow_Next_16xMD", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ASX_TransferUpload_blue_16x {
             get {
                 object obj = ResourceManager.GetObject("ASX_TransferUpload_blue_16x", resourceCulture);
@@ -283,6 +293,116 @@ namespace IAC2018SQL.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap delete_icon_16x16_3 {
+            get {
+                object obj = ResourceManager.GetObject("delete-icon-16x16-3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DeleteKPI_16x {
+            get {
+                object obj = ResourceManager.GetObject("DeleteKPI_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DeleteTable_16x {
+            get {
+                object obj = ResourceManager.GetObject("DeleteTable_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DeleteTable_16x_32 {
+            get {
+                object obj = ResourceManager.GetObject("DeleteTable_16x_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DeleteTable_16x_321 {
+            get {
+                object obj = ResourceManager.GetObject("DeleteTable_16x_321", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Edit_16x {
+            get {
+                object obj = ResourceManager.GetObject("Edit_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Edit_16x_24 {
+            get {
+                object obj = ResourceManager.GetObject("Edit_16x_24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Edit_16xMD {
+            get {
+                object obj = ResourceManager.GetObject("Edit_16xMD", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Edit_32xMD {
+            get {
+                object obj = ResourceManager.GetObject("Edit_32xMD", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Edit_straight_grey_16xLG {
+            get {
+                object obj = ResourceManager.GetObject("Edit_straight_grey_16xLG", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Edit_yellow_16x {
+            get {
+                object obj = ResourceManager.GetObject("Edit_yellow_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap EditorZone_16x {
             get {
                 object obj = ResourceManager.GetObject("EditorZone_16x", resourceCulture);
@@ -306,6 +426,16 @@ namespace IAC2018SQL.Properties {
         internal static System.Drawing.Bitmap EditorZone_16x_32 {
             get {
                 object obj = ResourceManager.GetObject("EditorZone_16x_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap EditorZone_6025 {
+            get {
+                object obj = ResourceManager.GetObject("EditorZone_6025", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -416,6 +546,16 @@ namespace IAC2018SQL.Properties {
         internal static System.Drawing.Bitmap ExportToExcel_64x {
             get {
                 object obj = ResourceManager.GetObject("ExportToExcel_64x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap fastforward_22x {
+            get {
+                object obj = ResourceManager.GetObject("fastforward_22x", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -636,6 +776,16 @@ namespace IAC2018SQL.Properties {
         internal static System.Drawing.Bitmap RestoreMTR_16x_24 {
             get {
                 object obj = ResourceManager.GetObject("RestoreMTR_16x_24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap rewind_22x {
+            get {
+                object obj = ResourceManager.GetObject("rewind_22x", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -4231,6 +4231,7 @@ namespace IAC2018SQL
             }
         }
 
+
         private void textBoxRepairFee4_Validated(object sender, EventArgs e)
         {
             if (!Decimal.TryParse(textBoxRepairFee4.Text, NumberStyles.Currency,

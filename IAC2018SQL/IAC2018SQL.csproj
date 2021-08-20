@@ -10,11 +10,11 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>IAC2018SQL</RootNamespace>
     <AssemblyName>IAC2018SQL</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <ManifestCertificateThumbprint>5B5FB87ACA6628095862C459CE9F300DA0F190E0</ManifestCertificateThumbprint>
-    <ManifestKeyFile>IAC2018SQL_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestCertificateThumbprint>30C15F17322E7EFBBF94E27C019526B5B631028F</ManifestCertificateThumbprint>
+    <ManifestKeyFile>IAC2018SQL_2_TemporaryKey.pfx</ManifestKeyFile>
     <GenerateManifests>true</GenerateManifests>
     <SignManifests>true</SignManifests>
     <FileUpgradeFlags>
@@ -23,6 +23,8 @@
     <UpgradeBackupLocation />
     <TargetFrameworkProfile />
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
     <PublishUrl>\\DC-IAC\PUBLIC\moses\IAC2018SQLInstall\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Unc</InstallFrom>
@@ -39,7 +41,7 @@
     <SuiteName>IAC2018SQL</SuiteName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>279</ApplicationRevision>
+    <ApplicationRevision>285</ApplicationRevision>
     <ApplicationVersion>6.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -110,6 +112,9 @@
       <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Data.ConnectionUI, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.ConnectionUI.16.10.31320.204\lib\net45\Microsoft.Data.ConnectionUI.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
@@ -153,6 +158,21 @@
       <HintPath>C:\Program Files\Microsoft SQL Server\100\SDK\Assemblies\Microsoft.SqlServer.SqlEnum.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualStudio.Data, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.VisualStudio.Data.16.10.31320.204\lib\net472\Microsoft.VisualStudio.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Data.Core, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.Data.Framework, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.Data.Services, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.OLE.Interop, Version=7.1.40304.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\Microsoft.VisualStudio.OLE.Interop.16.10.31320.204\lib\net45\Microsoft.VisualStudio.OLE.Interop.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Shell.Interop, Version=7.1.40304.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\Microsoft.VisualStudio.Shell.Interop.16.10.31320.204\lib\net45\Microsoft.VisualStudio.Shell.Interop.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.TextManager.Interop, Version=7.1.40304.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>..\packages\Microsoft.VisualStudio.TextManager.Interop.16.10.31320.204\lib\net45\Microsoft.VisualStudio.TextManager.Interop.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualStudio.Tools.Office.Runtime.v10.0, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Program Files\Reference Assemblies\Microsoft\VSTO40\v10.0\Microsoft.VisualStudio.Tools.Office.Runtime.v10.0.dll</HintPath>
@@ -188,6 +208,13 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Data.Services" />
+    <Reference Include="System.Data.Services.Client" />
+    <Reference Include="System.Data.Services.Design" />
+    <Reference Include="System.Data.SqlClient, Version=4.6.1.2, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SqlClient.4.8.2\lib\net461\System.Data.SqlClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SqlXml" />
     <Reference Include="System.DirectoryServices.AccountManagement" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
@@ -1825,6 +1852,8 @@
     <None Include="DailyDataSet.xss">
       <DependentUpon>DailyDataSet.xsd</DependentUpon>
     </None>
+    <None Include="IAC2018SQL_1_TemporaryKey.pfx" />
+    <None Include="IAC2018SQL_2_TemporaryKey.pfx" />
     <None Include="IAC2018SQL_TemporaryKey.pfx" />
     <None Include="IACDataSet.xsc">
       <DependentUpon>IACDataSet.xsd</DependentUpon>
@@ -1998,11 +2027,11 @@
     <None Include="Tickets.xsc">
       <DependentUpon>Tickets.xsd</DependentUpon>
     </None>
-    <None Include="Tickets.xsd">
+    <EmbeddedResource Include="Tickets.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>Tickets.Designer.cs</LastGenOutput>
-    </None>
+    </EmbeddedResource>
     <None Include="Tickets.xss">
       <DependentUpon>Tickets.xsd</DependentUpon>
     </None>
@@ -2357,6 +2386,21 @@
     <Content Include="1382_cogs.ico" />
     <Content Include="1683_Lightbulb.ico" />
     <Content Include="Icon1.ico" />
+    <None Include="Resources\fastforward_22x.png" />
+    <None Include="Resources\rewind_22x.png" />
+    <None Include="Resources\arrow_Next_16xMD.png" />
+    <None Include="Resources\Edit_16x.png" />
+    <None Include="Resources\delete-icon-16x16-3.jpg" />
+    <None Include="Resources\DeleteTable_16x_321.bmp" />
+    <None Include="Resources\DeleteTable_16x.png" />
+    <None Include="Resources\DeleteTable_16x_32.bmp" />
+    <None Include="Resources\DeleteKPI_16x.png" />
+    <EmbeddedResource Include="Resources\Edit_32xMD.png" />
+    <None Include="Resources\EditorZone_6025.png" />
+    <None Include="Resources\Edit_straight_grey_16xLG.png" />
+    <None Include="Resources\Edit_yellow_16x.png" />
+    <None Include="Resources\Edit_16xMD.png" />
+    <None Include="Resources\Edit_16x_24.bmp" />
     <None Include="Resources\TicketImage.png" />
     <EmbeddedResource Include="Resources\TicketImage.bmp" />
     <None Include="Resources\Next_16x_24.bmp" />
@@ -2412,7 +2456,7 @@
     <None Include="Resources\ExpandChevronRight_lg_16x.png" />
     <None Include="Resources\ExpandChevronRight_16x.png" />
     <None Include="Resources\InputChevron_16x.png" />
-    <None Include="Resources\Cancel_64x.png" />
+    <EmbeddedResource Include="Resources\Cancel_64x.png" />
     <None Include="Resources\ExportToExcel_64x.png" />
     <None Include="Resources\ExportToExcel_48x.png" />
     <None Include="Resources\ExportToExcel_32x_24.bmp" />
@@ -2523,6 +2567,13 @@
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Microsoft.VisualStudio.SDK.EmbedInteropTypes.15.0.36\build\Microsoft.VisualStudio.SDK.EmbedInteropTypes.targets" Condition="Exists('..\packages\Microsoft.VisualStudio.SDK.EmbedInteropTypes.15.0.36\build\Microsoft.VisualStudio.SDK.EmbedInteropTypes.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.VisualStudio.SDK.EmbedInteropTypes.15.0.36\build\Microsoft.VisualStudio.SDK.EmbedInteropTypes.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.VisualStudio.SDK.EmbedInteropTypes.15.0.36\build\Microsoft.VisualStudio.SDK.EmbedInteropTypes.targets'))" />
+  </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
