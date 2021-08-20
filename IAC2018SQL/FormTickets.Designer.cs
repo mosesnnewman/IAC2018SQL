@@ -44,6 +44,10 @@ namespace IAC2018SQL
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxDealerName = new System.Windows.Forms.TextBox();
             this.groupBoxHeader = new System.Windows.Forms.GroupBox();
+            this.buttonLast = new System.Windows.Forms.Button();
+            this.buttonFirst = new System.Windows.Forms.Button();
+            this.buttonDeleteTicket = new System.Windows.Forms.Button();
+            this.buttonEdit = new System.Windows.Forms.Button();
             this.labelTicketID = new System.Windows.Forms.Label();
             this.textBoxTicketID = new System.Windows.Forms.TextBox();
             this.buttonNext = new System.Windows.Forms.Button();
@@ -76,13 +80,14 @@ namespace IAC2018SQL
             this.buttonSaveTicket = new System.Windows.Forms.Button();
             this.ticketHeaderTableAdapter = new IAC2018SQL.TicketsTableAdapters.TicketHeaderTableAdapter();
             this.ticketDetailTableAdapter = new IAC2018SQL.TicketsTableAdapters.TicketDetailTableAdapter();
-            this.buttonReprint = new System.Windows.Forms.Button();
             this.checkBoxCloseOut = new System.Windows.Forms.CheckBox();
             this.buttonCancelTicket = new System.Windows.Forms.Button();
             this.colorTextBoxOutofBalance = new IAC2018SQL.TicketColorTextBox();
             this.colorTextBoxCredits = new IAC2018SQL.TicketColorTextBox();
             this.colorTextBoxDebits = new IAC2018SQL.TicketColorTextBox();
             this.NullableDateTimePickerDate = new ProManApp.NullableDateTimePicker();
+            this.buttonDeleteEntry = new System.Windows.Forms.Button();
+            this.buttonReprint = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.cUSTOMERBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productionMainTables)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceDealer)).BeginInit();
@@ -211,6 +216,10 @@ namespace IAC2018SQL
             // 
             // groupBoxHeader
             // 
+            this.groupBoxHeader.Controls.Add(this.buttonLast);
+            this.groupBoxHeader.Controls.Add(this.buttonFirst);
+            this.groupBoxHeader.Controls.Add(this.buttonDeleteTicket);
+            this.groupBoxHeader.Controls.Add(this.buttonEdit);
             this.groupBoxHeader.Controls.Add(this.labelTicketID);
             this.groupBoxHeader.Controls.Add(this.textBoxTicketID);
             this.groupBoxHeader.Controls.Add(this.buttonNext);
@@ -231,6 +240,50 @@ namespace IAC2018SQL
             this.groupBoxHeader.Size = new System.Drawing.Size(1038, 121);
             this.groupBoxHeader.TabIndex = 10;
             this.groupBoxHeader.TabStop = false;
+            // 
+            // buttonLast
+            // 
+            this.buttonLast.BackgroundImage = global::IAC2018SQL.Properties.Resources.fastforward_22x;
+            this.buttonLast.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonLast.Location = new System.Drawing.Point(971, 70);
+            this.buttonLast.Name = "buttonLast";
+            this.buttonLast.Size = new System.Drawing.Size(35, 33);
+            this.buttonLast.TabIndex = 17;
+            this.buttonLast.UseVisualStyleBackColor = true;
+            this.buttonLast.Click += new System.EventHandler(this.buttonLast_Click);
+            // 
+            // buttonFirst
+            // 
+            this.buttonFirst.BackgroundImage = global::IAC2018SQL.Properties.Resources.rewind_22x;
+            this.buttonFirst.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonFirst.Location = new System.Drawing.Point(837, 70);
+            this.buttonFirst.Name = "buttonFirst";
+            this.buttonFirst.Size = new System.Drawing.Size(35, 33);
+            this.buttonFirst.TabIndex = 16;
+            this.buttonFirst.UseVisualStyleBackColor = true;
+            this.buttonFirst.Click += new System.EventHandler(this.buttonFirst_Click);
+            // 
+            // buttonDeleteTicket
+            // 
+            this.buttonDeleteTicket.Image = global::IAC2018SQL.Properties.Resources.Cancel_64x;
+            this.buttonDeleteTicket.Location = new System.Drawing.Point(728, 44);
+            this.buttonDeleteTicket.Name = "buttonDeleteTicket";
+            this.buttonDeleteTicket.Size = new System.Drawing.Size(86, 59);
+            this.buttonDeleteTicket.TabIndex = 15;
+            this.buttonDeleteTicket.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.buttonDeleteTicket.UseVisualStyleBackColor = true;
+            this.buttonDeleteTicket.Click += new System.EventHandler(this.buttonDeleteTicket_Click);
+            // 
+            // buttonEdit
+            // 
+            this.buttonEdit.Image = global::IAC2018SQL.Properties.Resources.Edit_32xMD;
+            this.buttonEdit.Location = new System.Drawing.Point(617, 44);
+            this.buttonEdit.Name = "buttonEdit";
+            this.buttonEdit.Size = new System.Drawing.Size(86, 59);
+            this.buttonEdit.TabIndex = 14;
+            this.buttonEdit.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.buttonEdit.UseVisualStyleBackColor = true;
+            this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
             // 
             // labelTicketID
             // 
@@ -257,7 +310,7 @@ namespace IAC2018SQL
             // 
             this.buttonNext.BackgroundImage = global::IAC2018SQL.Properties.Resources.Next_16x_24;
             this.buttonNext.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonNext.Location = new System.Drawing.Point(961, 70);
+            this.buttonNext.Location = new System.Drawing.Point(926, 70);
             this.buttonNext.Name = "buttonNext";
             this.buttonNext.Size = new System.Drawing.Size(35, 33);
             this.buttonNext.TabIndex = 11;
@@ -268,7 +321,7 @@ namespace IAC2018SQL
             // 
             this.buttonPrevious.BackgroundImage = global::IAC2018SQL.Properties.Resources.Previous_16x_24;
             this.buttonPrevious.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonPrevious.Location = new System.Drawing.Point(917, 70);
+            this.buttonPrevious.Location = new System.Drawing.Point(882, 70);
             this.buttonPrevious.Name = "buttonPrevious";
             this.buttonPrevious.Size = new System.Drawing.Size(35, 33);
             this.buttonPrevious.TabIndex = 10;
@@ -328,6 +381,7 @@ namespace IAC2018SQL
             this.dataListView1.CellEditFinished += new BrightIdeasSoftware.CellEditEventHandler(this.dataListView1_CellEditFinished);
             this.dataListView1.CellEditStarting += new BrightIdeasSoftware.CellEditEventHandler(this.dataListView1_CellEditStarting);
             this.dataListView1.FormatCell += new System.EventHandler<BrightIdeasSoftware.FormatCellEventArgs>(this.dataListView1_FormatCell);
+            this.dataListView1.SelectedIndexChanged += new System.EventHandler(this.dataListView1_SelectedIndexChanged);
             this.dataListView1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.GeneralKeypress);
             this.dataListView1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataListView1_MouseClick);
             // 
@@ -506,7 +560,7 @@ namespace IAC2018SQL
             // 
             // buttonClearDetail
             // 
-            this.buttonClearDetail.Location = new System.Drawing.Point(122, 603);
+            this.buttonClearDetail.Location = new System.Drawing.Point(230, 603);
             this.buttonClearDetail.Margin = new System.Windows.Forms.Padding(4);
             this.buttonClearDetail.Name = "buttonClearDetail";
             this.buttonClearDetail.Size = new System.Drawing.Size(100, 28);
@@ -517,7 +571,7 @@ namespace IAC2018SQL
             // 
             // buttonSaveTicket
             // 
-            this.buttonSaveTicket.Location = new System.Drawing.Point(338, 603);
+            this.buttonSaveTicket.Location = new System.Drawing.Point(446, 603);
             this.buttonSaveTicket.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSaveTicket.Name = "buttonSaveTicket";
             this.buttonSaveTicket.Size = new System.Drawing.Size(100, 28);
@@ -534,20 +588,6 @@ namespace IAC2018SQL
             // 
             this.ticketDetailTableAdapter.ClearBeforeFill = true;
             // 
-            // buttonReprint
-            // 
-            this.buttonReprint.Enabled = false;
-            this.buttonReprint.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonReprint.Image = ((System.Drawing.Image)(resources.GetObject("buttonReprint.Image")));
-            this.buttonReprint.Location = new System.Drawing.Point(972, 567);
-            this.buttonReprint.Name = "buttonReprint";
-            this.buttonReprint.Size = new System.Drawing.Size(74, 65);
-            this.buttonReprint.TabIndex = 90;
-            this.buttonReprint.Text = "&Reprint";
-            this.buttonReprint.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.buttonReprint.UseVisualStyleBackColor = true;
-            this.buttonReprint.Click += new System.EventHandler(this.buttonReprint_Click);
-            // 
             // checkBoxCloseOut
             // 
             this.checkBoxCloseOut.AutoSize = true;
@@ -563,7 +603,7 @@ namespace IAC2018SQL
             // 
             // buttonCancelTicket
             // 
-            this.buttonCancelTicket.Location = new System.Drawing.Point(230, 603);
+            this.buttonCancelTicket.Location = new System.Drawing.Point(338, 603);
             this.buttonCancelTicket.Margin = new System.Windows.Forms.Padding(4);
             this.buttonCancelTicket.Name = "buttonCancelTicket";
             this.buttonCancelTicket.Size = new System.Drawing.Size(100, 28);
@@ -611,7 +651,32 @@ namespace IAC2018SQL
             this.NullableDateTimePickerDate.ReadOnly = true;
             this.NullableDateTimePickerDate.Size = new System.Drawing.Size(97, 26);
             this.NullableDateTimePickerDate.TabIndex = 77;
-            this.NullableDateTimePickerDate.Value = new System.DateTime(2021, 6, 7, 0, 0, 0, 0);
+            this.NullableDateTimePickerDate.Value = new System.DateTime(2021, 8, 19, 0, 0, 0, 0);
+            // 
+            // buttonDeleteEntry
+            // 
+            this.buttonDeleteEntry.Location = new System.Drawing.Point(122, 603);
+            this.buttonDeleteEntry.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonDeleteEntry.Name = "buttonDeleteEntry";
+            this.buttonDeleteEntry.Size = new System.Drawing.Size(100, 28);
+            this.buttonDeleteEntry.TabIndex = 93;
+            this.buttonDeleteEntry.Text = "D&elete Entry";
+            this.buttonDeleteEntry.UseVisualStyleBackColor = true;
+            this.buttonDeleteEntry.Click += new System.EventHandler(this.buttonDeleteEntry_Click);
+            // 
+            // buttonReprint
+            // 
+            this.buttonReprint.Enabled = false;
+            this.buttonReprint.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonReprint.Image = ((System.Drawing.Image)(resources.GetObject("buttonReprint.Image")));
+            this.buttonReprint.Location = new System.Drawing.Point(972, 567);
+            this.buttonReprint.Name = "buttonReprint";
+            this.buttonReprint.Size = new System.Drawing.Size(74, 65);
+            this.buttonReprint.TabIndex = 90;
+            this.buttonReprint.Text = "&Reprint";
+            this.buttonReprint.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.buttonReprint.UseVisualStyleBackColor = true;
+            this.buttonReprint.Click += new System.EventHandler(this.buttonReprint_Click);
             // 
             // FormTickets
             // 
@@ -619,6 +684,7 @@ namespace IAC2018SQL
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(1067, 644);
+            this.Controls.Add(this.buttonDeleteEntry);
             this.Controls.Add(this.buttonCancelTicket);
             this.Controls.Add(this.checkBoxCloseOut);
             this.Controls.Add(this.buttonReprint);
@@ -714,5 +780,10 @@ namespace IAC2018SQL
         private System.Windows.Forms.Button buttonCancelTicket;
         private System.Windows.Forms.Label labelTicketID;
         private System.Windows.Forms.TextBox textBoxTicketID;
+        private System.Windows.Forms.Button buttonDeleteEntry;
+        private System.Windows.Forms.Button buttonEdit;
+        private System.Windows.Forms.Button buttonDeleteTicket;
+        private System.Windows.Forms.Button buttonLast;
+        private System.Windows.Forms.Button buttonFirst;
     }
 }

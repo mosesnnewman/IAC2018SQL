@@ -484,7 +484,7 @@ namespace IAC2018SQL
                     PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_AMORTIZE_IND") == "N")
                     ClosedPaymentAmortAccumIOL(PaymentPos, ref PAYMENTDataSet, ref worker);
             }
-            MovePaymenttoCustHist(PaymentPos, CustomerPos, AmortPos, ref PAYMENTDataSet, ref worker);
+            MovePaymenttoCustHist(PaymentPos, CustomerPos, AmortPos, ref PAYMENTDataSet, ref worker, post);
 
             if (PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<Decimal>("PAYMENT_AMOUNT_RCV") < 0 && PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<String>("PAYMENT_TYPE") != "I")
             {
@@ -627,8 +627,8 @@ namespace IAC2018SQL
             PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].SetField<String>("CUSTOMER_PAID_THRU", ldNewPaidThru.Month.ToString().TrimStart().PadLeft(2, '0') + ldNewPaidThru.Year.ToString().TrimStart().Substring(2, 2).PadLeft(2, '0'));
         }
 
-        void MovePaymenttoCustHist(int PaymentPos, int CustomerPos, int AmortPos, ref IACDataSet PAYMENTDataSet, ref BackgroundWorker worker)
-        {
+        void MovePaymenttoCustHist(int PaymentPos, int CustomerPos, int AmortPos, ref IACDataSet PAYMENTDataSet, ref BackgroundWorker worker, Boolean Post = false)
+        { 
             int lnSeq = 0;
             Object loCustHistSeq;
             DataRow[] FoundItems = null;
@@ -641,6 +641,9 @@ namespace IAC2018SQL
             IACDataSetTableAdapters.CUSTHISTTableAdapter CUSTHISTTableAdapter = new IACDataSetTableAdapters.CUSTHISTTableAdapter();
             BindingSource CUSTHISTBindingSource = new BindingSource();
             CUSTHISTBindingSource.DataSource = PAYMENTDataSet.CUSTHIST;
+
+            TicketsTableAdapters.TicketHeaderTableAdapter TicketHeaderTableAdapter = new TicketsTableAdapters.TicketHeaderTableAdapter();
+            TicketsTableAdapters.TicketDetailTableAdapter TicketDetailTableAdapter = new TicketsTableAdapters.TicketDetailTableAdapter();
 
             //This code gets the next available sequence number for todays date if another history record for today exists
             loCustHistSeq = CUSTHISTTableAdapter.SeqNoQuery(PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<String>("PAYMENT_CUSTOMER"), PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<DateTime>("PAYMENT_DATE"));
@@ -699,6 +702,21 @@ namespace IAC2018SQL
             PAYMENTDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].SetField<String>("CUSTHIST_PAYMENT_TYPE", PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<String>("PAYMENT_TYPE"));
             PAYMENTDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].SetField<String>("CUSTHIST_PAYMENT_CODE", PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<String>("PAYMENT_CODE_2"));
             PAYMENTDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].SetField<Int32>("CUSTHIST_THRU_UD", PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<Int32>("PAYMENT_THRU_UD"));
+            // Moses Newman 08/18/2021 Begin Mod
+            if (PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<Int32?>("TicketID") != null)
+            {
+                PAYMENTDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].SetField<Int32>("TicketID", PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<Int32>("TicketID"));
+                if (Post) // Only mark posted if this is really the posting and not the 07 report!
+                {
+                    TicketHeaderTableAdapter.MarkPosted(PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<Int32>("TicketID"));
+                    if (PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<Int32?>("TicketDetailID") != null)
+                        TicketDetailTableAdapter.MarkPosted(PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<Int32>("TicketID"), PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<Int32>("TicketDetailID"));
+                }
+            }
+            if (PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<Int32?>("TicketDetailID") != null)
+                PAYMENTDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].SetField<Int32>("TicketDetailID", PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<Int32>("TicketDetailID"));
+            // Moses Newman 08/18/2021 End Mod
+
             if (PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_AMORTIZE_IND") == "Y" && PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_BUY_OUT") == "Y" && PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_PAY_REM_1") == "PAID")
                 PAYMENTDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].SetField<Decimal>("CUSTHIST_CURR_INT", PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_PAID_INT") - SavedPaidInterest);
             else

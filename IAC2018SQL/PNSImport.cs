@@ -26,9 +26,6 @@ namespace IAC2018SQL
         private string password = @"LAK2zWqNqF2LQm42";
         private string remoteDirectory = @"/00000000-0000-2d07-e9ea-08d6fe68bbde/Download";
         private string remoteArchive = @"/00000000-0000-2d07-e9ea-08d6fe68bbde/Download/Archive";
-        // Moses Newman 07/09/2021 Add new remote folders!
-        private string newRemoteDirectory1 = @"/00000000-0000-2d07-e9ea-08d6fe68bbde/1/Download";
-        private string newRemoteDirectory2 = @"/00000000-0000-2d07-e9ea-08d6fe68bbde/2/Download";
 
 
         public frmPNSImport()
