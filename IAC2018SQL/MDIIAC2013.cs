@@ -1451,6 +1451,8 @@ namespace IAC2018SQL
 
             DailyInterestVarianceTableAdapter.Fill(DailyData.DailyInterestVariance, ldLastRun);
             MonthlyUpdateListing myReportObject = new MonthlyUpdateListing();
+
+            //MonthlyUpdateDevience myReportObject = new MonthlyUpdateDevience();
             myReportObject.SetDataSource(ReportData);
             myReportObject.Subreports["DailyInterestVariance.rpt"].SetDataSource(DailyData);   // Moses Newman 11/29/2020 add new data source
             myReportObject.SetParameterValue("gsUserID", Program.gsUserID);
@@ -1701,6 +1703,11 @@ namespace IAC2018SQL
         private void testToolStripMenuItem_Click(object sender, EventArgs e)
         { 
             CreateFormInstance("FormCashPaymentSummary", false);
+        }
+
+        private void closedEndToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

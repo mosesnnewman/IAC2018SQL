@@ -2585,6 +2585,7 @@ namespace IAC2018SQL
                 return;
             }
 
+            // Moses Newman 08/23/2021
             Program.TVAmortize(ldStartDate, ldFirstPaymentDate, ref lnCash, ref lnTerm, ref lnAPR, ref lnRegularPay, ref lsErrorMessage, ref AmortTable, false, cUSTOMER_NOTextBox.Text, true);
             if (lnRegularPay != 0 && lnTerm != 0)
             {
@@ -2824,6 +2825,7 @@ namespace IAC2018SQL
                     if (iACDataSet.AmortTemp.Rows.Count == 0 && !checkBoxSimple.Checked)
                     {
                         // Moses Newman 01/21/2015 Add Contract Date Handling!
+                        // Moses Newman 08/23/2021
                         Program.TVAmortize(ldStartDate, ldFirstPaymentDate, ref lnCash, ref lnTerm, ref lnApr, ref lnRegularAmount, ref lsMessage, ref loAmortRec, false, iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO"), true);
                         AmortTempTableAdapter.FillByCustomer(iACDataSet.AmortTemp, iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO"));
                     }
