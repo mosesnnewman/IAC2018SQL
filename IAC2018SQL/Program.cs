@@ -14,12 +14,21 @@ using S9API.Models;
 using Newtonsoft.Json;
 using System.Net;
 
+using TValue6SDK;
+using TValue6Engine2;
+
 
 namespace IAC2018SQL
 {
 	static class Program
 	{
+		// Moses Newman 08/20/2021
+		private const long CUSTOMER_ID = 5856172571257250771;  // Change this to your unique Customer ID number.
+		const double CENTS_PER_DOLLAR = 100.0;
+
 		static public RestClient ApiClient = new RestClient("http://sql-iac/Square9API"); //path to the website where the api is hosted
+
+		public static TVWorkspace tvWorkspace;
 
 		public struct AmortRec
 		{
@@ -60,7 +69,387 @@ namespace IAC2018SQL
 			lnDenominator = 0; lnAPR = 0;
 		}
 
-		static public decimal TVSimpleGetBuyout(IACDataSet tdsAmortDT,DateTime tdPayoffDate,double tnTerm,double tnAPR,double tnMonthlyAmountOwed, String tcCustomer = "99-", Boolean tbSimple = false,Boolean tbSave = false,Boolean tbEOM = true,Boolean tbPayment = false, Int32 tnPaymentPos = -1,Boolean tbCutoff = false)
+		static public decimal TVSimpleGetBuyout(IACDataSet tdsAmortDT, DateTime tdPayoffDate, double tnTerm, double tnAPR, double tnMonthlyAmountOwed, String tcCustomer = "99-", Boolean tbSimple = false, Boolean tbSave = false, Boolean tbEOM = true, Boolean tbPayment = false, Int32 tnPaymentPos = -1, Boolean tbCutoff = false)
+        {
+			//return TVSimpleGetBuyoutDLL(tdsAmortDT, tdPayoffDate, tnTerm, tnAPR, tnMonthlyAmountOwed, tcCustomer, tbSimple, tbSave, tbEOM, tbPayment, tnPaymentPos, tbCutoff);
+			return TVSimpleGetBuyoutAPI(tvWorkspace,tdsAmortDT, tdPayoffDate, tnTerm, tnAPR, tnMonthlyAmountOwed, tcCustomer, tbSimple, tbSave, tbEOM, tbPayment, tnPaymentPos, tbCutoff);
+        }
+
+		
+		static public decimal TVSimpleGetBuyoutAPI(TVWorkspace tvWorkspace,IACDataSet tdsAmortDT, DateTime tdPayoffDate, double tnTerm, double tnAPR, double tnMonthlyAmountOwed, String tcCustomer = "99-", Boolean tbSimple = false, Boolean tbSave = false, Boolean tbEOM = true, Boolean tbPayment = false, Int32 tnPaymentPos = -1, Boolean tbCutoff = false)
+		{
+			// tnLoanAmount         = Original Loan Amount
+			// tnTerm                = Loan term in months
+			// tnAPR                = Annual percentage rate as a decimal
+			// tnMonthlyAmountOwed  = Total monthly payment P&I
+			// 			
+
+			string szGroupName;
+
+			string[] arLoanNames = { "NEW", "LATE/ISF", "INSUF"};
+			string[] arPaymentNames = { "PAY/ADJ", "UPD", "BUYOUT/UNEARNED"};
+
+			int[] arLoanEvents;
+			int[] arPaymentEvents;
+			int NewGroupID = 5;
+
+			TVDocument tvDocument;
+
+			tvDocument = new TVDocument(tvWorkspace);
+			szGroupName = "IAC Group";
+			TVConstants.TVCustomGroupType groupType = TVConstants.TVCustomGroupType.LoanPayment;
+			bool includeInListOfCustomEvents = true;
+
+			arLoanEvents = new int[arLoanNames.Length];
+			arPaymentEvents = new int[arPaymentNames.Length];
+
+			try
+			{
+				tvDocument.CustomGroups.Add(out NewGroupID, szGroupName, groupType, includeInListOfCustomEvents);
+
+
+				//  Add each of the events associated with this group
+				for (int i = 0; i < arLoanNames.Length; i++)
+				{
+					tvDocument.CustomEvents.Add(arLoanNames[i], TVConstants.TVCustomEventBaseType.Loan, true, NewGroupID, out arLoanEvents[i]);
+				}
+
+				for (int i = 0; i < arPaymentNames.Length; i++)
+				{
+					tvDocument.CustomEvents.Add(arPaymentNames[i], TVConstants.TVCustomEventBaseType.Payment, true, NewGroupID, out arPaymentEvents[i]);
+				}
+			}
+			catch
+			{
+				tvDocument.CustomGroups.Get(NewGroupID, out szGroupName, out groupType, out includeInListOfCustomEvents);
+				tvDocument.CustomEvents.List(NewGroupID, ref arLoanEvents, ref arPaymentEvents);
+			}
+			IACDataSet.CUSTHISTDataTable DTPayStream = new IACDataSet.CUSTHISTDataTable();
+			IACDataSet.CUSTOMERDataTable CUSTOMERDT = new IACDataSet.CUSTOMERDataTable();
+			// Moses Newman 03/13/2018 add new PAYMENT DataTable and TableAdapter for multiple payment support.
+			IACDataSet.PAYMENTDataTable PAYMENTDT = new IACDataSet.PAYMENTDataTable();
+			IACDataSetTableAdapters.PAYMENTTableAdapter PAYMENTTableAdapter = new IACDataSetTableAdapters.PAYMENTTableAdapter();
+
+			IACDataSetTableAdapters.CUSTOMERTableAdapter CUSTOMERTableAdapter = new IACDataSetTableAdapters.CUSTOMERTableAdapter();
+			IACDataSetTableAdapters.CUSTHISTTableAdapter CUSTHISTTableAdapter = new IACDataSetTableAdapters.CUSTHISTTableAdapter();
+			BindingSource CUSTHISTBindingSource = new BindingSource();
+		    
+			if (tcCustomer == "99-")
+				tcCustomer += gsUserID;
+
+			// Moses Newman 8/4/2013 add sequence number for customer history!
+			int lnSeqNo = 0;
+			object loSeqNo = null;
+			CUSTOMERTableAdapter.Fill(CUSTOMERDT, tcCustomer);
+			//
+			// Create the Cash flow matrix.
+			//
+			// Initial Document settings
+
+			// Set the compounding to Monthly.
+			if (tbSimple)
+			{
+				tvDocument.SetComputeMethod(TVConstants.TVComputeMethod.USRule);
+				// Moses Newman 04/30/2017 For tbSimple flaf now do exact days for US Rule Simple Interest
+				tvDocument.CashFlowMatrix.SetPeriodAndRate(TVConstants.TVPeriod.ExactDays, tnAPR);
+			}
+			else
+			{
+				tvDocument.SetComputeMethod(TVConstants.TVComputeMethod.Normal);
+				tvDocument.CashFlowMatrix.SetPeriodAndRate(TVConstants.TVPeriod.Daily, tnAPR);
+			}
+			tvDocument.SetYearLength(TVConstants.TVYearLength.Y365);
+			string szLabel = CUSTOMERDT.Rows[0].Field<String>("CUSTOMER_NO").TrimEnd() + " " +
+							 CUSTOMERDT.Rows[0].Field<String>("CUSTOMER_FIRST_NAME").TrimEnd() + " " + CUSTOMERDT.Rows[0].Field<String>("CUSTOMER_LAST_NAME").TrimEnd();
+			tvDocument.SetLabel(szLabel);
+
+			int currentLine = 1;
+
+			if (!tbCutoff)
+				CUSTHISTTableAdapter.FillByPaymentsSoFar(DTPayStream, tcCustomer);
+			else
+				CUSTHISTTableAdapter.FillByPaymentsSoFarWithCutoff(DTPayStream, tcCustomer, tdPayoffDate);
+			// If Posting Payments we must add today's payment to payment stream!
+			if (tbPayment)
+			{
+				// Moses Newman 03/13/2018 add new temp payment datatable to take all payments (in case more than one, from customer) and loop through them.
+				PAYMENTDT.Clear();
+				PAYMENTTableAdapter.Fill(PAYMENTDT, tcCustomer);
+				CUSTHISTBindingSource.DataSource = DTPayStream;
+				// Moses Newman 03/20/2018 check against passed PAYMENT record in todays payments for that account and determine what order
+				// it is in the payments for today (if more than one).  Only add up to and including that payment!
+				DataRow[] res = PAYMENTDT.Select("SeqNo = " + tdsAmortDT.PAYMENT.Rows[tnPaymentPos].Field<Int32>("SeqNo").ToString().Trim());
+				int lnLastRec = 0, FindRow;
+				if (res.Length > 0)
+					lnLastRec = PAYMENTDT.Rows.IndexOf(res[0]);
+				lnLastRec += 1;
+				for (int pcnt = 0; pcnt < lnLastRec; pcnt++)
+				{
+					// Moses Newman 11/18/2020 Now remove all payments that are being treated like ISF's including reversed
+					// credit cards!
+					if (PAYMENTDT.Rows[pcnt].Field<Int32?>("ISFID") != null)
+					{
+						// Moses Newman 10/11/2020 if it is an INSUF don't put it in the PayStream and remove the corresponding payment from the paystream!
+						if (PAYMENTDT.Rows[pcnt].Field<Int32>("ISFID") != 0)
+						{
+							FindRow = CUSTHISTBindingSource.Find("ID", PAYMENTDT.Rows[pcnt].Field<Int32>("ISFID"));
+							if (FindRow > -1)
+							{
+								// Moses Newman 01/01/2021 Now make bounced check 0 amount in time value instead of deleting it!
+								DTPayStream.Rows[FindRow].SetField<Decimal>("CUSTHIST_PAYMENT_RCV", 0);
+								//CUSTHISTBindingSource.RemoveAt(FindRow);
+								CUSTHISTBindingSource.EndEdit();
+								DTPayStream.AcceptChanges();
+								CUSTHISTBindingSource.DataSource = DTPayStream;
+							}
+							continue;
+						}
+					}
+					CUSTHISTBindingSource.AddNew();
+					CUSTHISTBindingSource.EndEdit();
+					DTPayStream.Rows[CUSTHISTBindingSource.Position].SetField<String>("CUSTHIST_NO", tcCustomer);
+					DTPayStream.Rows[CUSTHISTBindingSource.Position].SetField<Decimal>("CUSTHIST_PAYMENT_RCV", PAYMENTDT.Rows[pcnt].Field<Decimal>("PAYMENT_AMOUNT_RCV"));
+					DTPayStream.Rows[CUSTHISTBindingSource.Position].SetField<String>("CUSTHIST_PAYMENT_TYPE", PAYMENTDT.Rows[pcnt].Field<String>("PAYMENT_TYPE"));
+					DTPayStream.Rows[CUSTHISTBindingSource.Position].SetField<String>("CUSTHIST_PAYMENT_CODE", PAYMENTDT.Rows[pcnt].Field<String>("PAYMENT_CODE_2"));
+					// Moses Newman 03/22/2013 Add sequence number at Max Value so no chance of newly added payment interfereing with any other history transactions 
+					// for the same date.
+					// Moses Newman 8/4/2013 No longer use 999 as sequence number, we simply  add 1 to existing!
+					// Moses Newman 12/2/2013 Fixed overly complex after the fact payment date change on ISFs
+					loSeqNo = PAYMENTDT.Rows[pcnt].Field<Int32>("SeqNo");
+					// Moses Newman 07/13/2019 Use TVDate for reording ISNSUF's now.
+					DTPayStream.Rows[CUSTHISTBindingSource.Position].SetField<DateTime>("CUSTHIST_PAY_DATE", PAYMENTDT.Rows[pcnt].Field<DateTime>("PAYMENT_DATE"));
+					if (PAYMENTDT.Rows[pcnt].Field<Decimal>("PAYMENT_AMOUNT_RCV") >= 0 || PAYMENTDT.Rows[pcnt].Field<DateTime?>("PAYMENT_ISF_DATE") == null)
+					{
+						//loSeqNo = CUSTHISTTableAdapter.SeqNoQuery(tcCustomer, PAYMENTDT.Rows[pcnt].Field<DateTime>("PAYMENT_DATE"));
+						DTPayStream.Rows[CUSTHISTBindingSource.Position].SetField<DateTime>("TVDate", PAYMENTDT.Rows[pcnt].Field<DateTime>("PAYMENT_DATE"));
+					}
+					else
+					{
+						//loSeqNo = CUSTHISTTableAdapter.SeqNoQuery(tcCustomer, PAYMENTDT.Rows[pcnt].Field<DateTime>("PAYMENT_ISF_DATE"));
+						// Moses Newman 07/13/2019 Use TVDate for reording ISNSUF's now.
+						//DTPayStream.Rows[CUSTHISTBindingSource.Position].SetField<DateTime>("CUSTHIST_PAY_DATE", PAYMENTDT.Rows[pcnt].Field<DateTime>("PAYMENT_ISF_DATE"));
+						DTPayStream.Rows[CUSTHISTBindingSource.Position].SetField<DateTime>("TVDate", PAYMENTDT.Rows[pcnt].Field<DateTime>("PAYMENT_ISF_DATE"));
+					}
+					if (loSeqNo != null)
+						lnSeqNo = (Int32)loSeqNo + 1 + pcnt;
+					else
+						lnSeqNo = 1 + pcnt;
+					DTPayStream.Rows[CUSTHISTBindingSource.Position].SetField<Int32>("CUSTHIST_DATE_SEQ", lnSeqNo);
+					DTPayStream.Rows[CUSTHISTBindingSource.Position].SetField<Nullable<DateTime>>("CUSTHIST_ISF_DATE", PAYMENTDT.Rows[pcnt].Field<Nullable<DateTime>>("PAYMENT_ISF_DATE"));
+					// Moses Newman 04/13/2018 Add ISFSeqNo, ISFPaymentType, and ISFPaymentCode.
+					DTPayStream.Rows[CUSTHISTBindingSource.Position].SetField<Nullable<Int32>>("ISFSeqNo", PAYMENTDT.Rows[pcnt].Field<Nullable<Int32>>("ISFSeqNo"));
+					DTPayStream.Rows[CUSTHISTBindingSource.Position].SetField<String>("ISFPaymentType", PAYMENTDT.Rows[pcnt].Field<String>("ISFPaymentType"));
+					DTPayStream.Rows[CUSTHISTBindingSource.Position].SetField<String>("ISFPaymentCode", PAYMENTDT.Rows[pcnt].Field<String>("ISFPaymentCode"));
+					DTPayStream.Rows[CUSTHISTBindingSource.Position].SetField<Nullable<Decimal>>("CUSTHIST_CURR_INT", PAYMENTDT.Rows[pcnt].Field<Nullable<Decimal>>("PAYMENT_CURR_INT"));
+					DTPayStream.Rows[CUSTHISTBindingSource.Position].SetField<Nullable<Decimal>>("CUSTHIST_LATE_CHARGE_PAID", PAYMENTDT.Rows[pcnt].Field<Nullable<Decimal>>("PAYMENT_LATE_CHARGE_PAID"));
+					DTPayStream.Rows[CUSTHISTBindingSource.Position].SetField<Nullable<Boolean>>("IsSimple", PAYMENTDT.Rows[pcnt].Field<Nullable<Boolean>>("IsSimple"));
+					// Moses Newman 04/04/2018 Add Extension Months!
+					DTPayStream.Rows[CUSTHISTBindingSource.Position].SetField<Int32>("CUSTHIST_THRU_UD", PAYMENTDT.Rows[pcnt].Field<Int32>("PAYMENT_THRU_UD"));
+					// Moses Newman 03/15/2018 Add TransactionDate, Fee, FromIVR
+					if (PAYMENTDT.Rows[pcnt].Field<Nullable<DateTime>>("TransactionDate") == null)
+						PAYMENTDT.Rows[pcnt].SetField<DateTime>("TransactionDate", PAYMENTDT.Rows[pcnt].Field<DateTime>("PAYMENT_DATE"));
+					DTPayStream.Rows[CUSTHISTBindingSource.Position].SetField<DateTime>("TransactionDate", PAYMENTDT.Rows[pcnt].Field<DateTime>("TransactionDate"));
+					DTPayStream.Rows[CUSTHISTBindingSource.Position].SetField<Decimal>("Fee", PAYMENTDT.Rows[pcnt].Field<Decimal>("Fee"));
+					DTPayStream.Rows[CUSTHISTBindingSource.Position].SetField<Boolean>("FromIVR", PAYMENTDT.Rows[pcnt].Field<Boolean>("FromIVR"));
+					//  Moses Newman 06/28/2016 add paycode to markpay call so IVR will show if IVR!
+					DTPayStream.Rows[CUSTHISTBindingSource.Position].SetField<String>("CUSTHIST_PAY_REM_1", Program.MarkPay(CUSTOMERDT.Rows[0].Field<String>("CUSTOMER_ACT_STAT"), PAYMENTDT.Rows[pcnt].Field<String>("PAYMENT_TYPE"), PAYMENTDT.Rows[pcnt].Field<String>("PAYMENT_CODE_2")));
+					// Moses Newman 10/17/2018 Add PaymentSeq to CUSTHIST record.
+					DTPayStream.Rows[CUSTHISTBindingSource.Position].SetField<Nullable<Int32>>("PaymentSeq", PAYMENTDT.Rows[pcnt].Field<Nullable<Int32>>("SeqNo"));
+					// Moses Newman 12/16/2020 add handling of RTCHG payment types.
+					if (PAYMENTDT.Rows[pcnt].Field<String>("PAYMENT_TYPE") == "F")
+					{
+						DTPayStream.Rows[CUSTHISTBindingSource.Position].SetField<String>("CUSTHIST_PAY_REM_1", "RTCHG");
+						DTPayStream.Rows[CUSTHISTBindingSource.Position].SetField<Decimal>("TVRateChange",
+							(CUSTOMERDT.Rows[0].Field<String>("CUSTOMER_INT_OVERRIDE") == "Y") ?
+								0 : CUSTOMERDT.Rows[0].Field<Decimal>("CUSTOMER_ANNUAL_PERCENTAGE_RATE"));
+					}
+
+					CUSTHISTBindingSource.EndEdit();
+				}
+				// Moses Newman 03/13/2018 if more than one payment for the same customer tdPayoffDate needs to be the most recent payment or TValue will crash!
+				tdPayoffDate = PAYMENTDT.Rows[PAYMENTDT.Rows.Count - 1].Field<DateTime>("PAYMENT_DATE");
+			}
+			// Moses Newman 12/2/2013 Removed after the fact payment date change on ISFs
+			// Now create sorted DataView of CUSTHIST DataTable (Memory Only)
+			DataView SortedPayStream = new DataView(DTPayStream, "", "TVDate,CUSTHIST_PAY_DATE,CUSTHIST_DATE_SEQ", DataViewRowState.CurrentRows);
+			SortedPayStream.AllowNew = true;
+			IACDataSet.CUSTHISTDataTable NewPSTR = new IACDataSet.CUSTHISTDataTable();
+			CUSTHISTBindingSource.DataSource = NewPSTR;
+			// Insert DataView's records into a blank temp CUSTHIST DataTable (Because code was previously source to DTPayStream (CUSTHIST DataTable Instance) and not a DataView
+			// Easier than resourcing all previous code, and must be a DataTable for call to TVGetTable (write and rename Events in TVAmort SQL Server Table)
+			foreach (DataRowView drv in SortedPayStream)
+			{
+				NewPSTR.ImportRow(drv.Row);
+				CUSTHISTBindingSource.EndEdit();
+			}
+			SortedPayStream.Dispose(); // Don't need DataView anymore.
+			DTPayStream.Clear();
+			DTPayStream = (IACDataSet.CUSTHISTDataTable)NewPSTR.Copy();  // Now put sorted records into DTPayStream
+			NewPSTR.Dispose(); // No longer need temp DataTable
+			CUSTHISTBindingSource.DataSource = DTPayStream;
+			// Moses Newman 03/22/2013 End of ISF Date Sort Mods
+			Double tmpamount = 0;
+			//string[] arLoanNames = { "NEW", "LATE/ISF", "INSUF"};
+			//string[] arPaymentNames = { "PAY/ADJ", "UPD", "BUYOUT/UNEARNED"};
+			for (Int32 i = 0; i < DTPayStream.Rows.Count; i++)
+			{
+				currentLine = i + 1;
+				if (i == 0)
+				{
+					//Create the first cash flow line (the loan).
+					//Set the loan date and amount.
+					tvDocument.CashFlowMatrix.AddLine();
+					tvDocument.CashFlowMatrix.SetEvent(currentLine, TVConstants.TVEventType.Loan, arLoanEvents[0]);
+					tvDocument.CashFlowMatrix.SetStartDate(currentLine, TVDate.Create(DTPayStream.Rows[i].Field<DateTime>("CUSTHIST_PAY_DATE")));
+					tmpamount = Convert.ToDouble(CUSTOMERDT.Rows[0].Field<Decimal>("CUSTOMER_LOAN_CASH"));
+					tvDocument.CashFlowMatrix.SetAmount(currentLine, tmpamount * CENTS_PER_DOLLAR);
+					tvDocument.CashFlowMatrix.SetNumber(currentLine, 1);
+				}
+				else
+				{
+					// Create a cash flow line for ALL Payents
+					tvDocument.CashFlowMatrix.AddLine();
+					switch (DTPayStream.Rows[i].Field<String>("CUSTHIST_PAYMENT_TYPE"))
+					{
+						case "R":
+						case "P":
+						case "V":
+						case "A":
+						case "B":
+						// Moses Newman 07/31/2013 Added Cancelations and Waive Fees
+						case "C":
+						case "W":
+						case "E": // Moses Newman 01/29/2015 Extensions must now be able to call Amort!
+							tvDocument.CashFlowMatrix.SetEvent(currentLine, TVConstants.TVEventType.Payment, arPaymentEvents[0]);
+							tvDocument.CashFlowMatrix.SetAmount(currentLine, (double)DTPayStream.Rows[i].Field<Decimal>("CUSTHIST_PAYMENT_RCV") * CENTS_PER_DOLLAR);
+							tvDocument.CashFlowMatrix.SetNumber(currentLine, 1);
+							break;
+						case "I":
+						case "N":
+							if(DTPayStream.Rows[i].Field<String>("CUSTHIST_PAYMENT_TYPE") == "N")
+								tvDocument.CashFlowMatrix.SetEvent(currentLine, TVConstants.TVEventType.Loan, arLoanEvents[1]);
+							else
+								tvDocument.CashFlowMatrix.SetEvent(currentLine, TVConstants.TVEventType.Loan, arLoanEvents[2]);
+							tvDocument.CashFlowMatrix.SetAmount(currentLine, (double)(DTPayStream.Rows[i].Field<Decimal>("CUSTHIST_PAYMENT_RCV") * -1) * CENTS_PER_DOLLAR);
+							tvDocument.CashFlowMatrix.SetNumber(currentLine, 1); 
+							break;
+						// Moses Newman 10/23/2013 Add support for Rate Change Events
+						case "F":
+							tvDocument.CashFlowMatrix.SetEvent(currentLine, TVConstants.TVEventType.RateChange,0);
+							if(tbSimple)
+								tvDocument.CashFlowMatrix.SetPeriodAndRate(currentLine, TVConstants.TVPeriod.ExactDays, (Double)DTPayStream.Rows[i].Field<Decimal>("TVRateChange") /100);
+							else
+								tvDocument.CashFlowMatrix.SetPeriodAndRate(currentLine, TVConstants.TVPeriod.Daily, (Double)DTPayStream.Rows[i].Field<Decimal>("TVRateChange") / 100);
+							break;
+						default:
+							// Late Fee
+							if (DTPayStream.Rows[i].Field<String>("CUSTHIST_PAY_REM_1").TrimEnd() == "LATE")
+							{
+								tvDocument.CashFlowMatrix.SetEvent(currentLine, TVConstants.TVEventType.Loan, arLoanEvents[1]);
+								// Moses Newman 07/12/2013 Fix from fixed $10 late fee to customer's actual late fee!
+								tvDocument.CashFlowMatrix.SetAmount(currentLine, (double)DTPayStream.Rows[i].Field<Decimal>("CUSTHIST_LATE_CHARGE") * CENTS_PER_DOLLAR);
+								tvDocument.CashFlowMatrix.SetNumber(currentLine, 1);
+							}
+							else
+							{
+								// UPDATE
+								tvDocument.CashFlowMatrix.SetEvent(currentLine, TVConstants.TVEventType.Payment, arPaymentEvents[1]);
+								tvDocument.CashFlowMatrix.SetAmount(currentLine, (double)DTPayStream.Rows[i].Field<Decimal>("CUSTHIST_PAYMENT_RCV") * CENTS_PER_DOLLAR);
+								tvDocument.CashFlowMatrix.SetNumber(currentLine, 1);
+							}
+							break;
+					}
+				}
+
+				//cfmEvent.EventDate = DTPayStream.Rows[i].Field<DateTime>("CUSTHIST_PAY_DATE");
+				// Moses Newman 07/13/2019 use new TVDate field for EventDate so that ISNSUF's or negative adjustments apply retroactively
+				tvDocument.CashFlowMatrix.SetStartDate(currentLine, TVDate.Create((DTPayStream.Rows[i].Field<DateTime?>("TVDate") != null) ? DTPayStream.Rows[i].Field<DateTime>("TVDate") : DTPayStream.Rows[i].Field<DateTime>("CUSTHIST_PAY_DATE")));
+
+				// Moses Newman 02/10/2013 Set Payoff Date =  final payment if a paid loan
+				// Moses Newman 02/26/2018 If PAID regardless of BUY_OUT flag used last transaction date for payoff date!
+				if (DTPayStream.Rows[i].Field<String>("CUSTHIST_PAY_REM_1").TrimEnd() == "PAID")//&& CUSTOMERDT.Rows[0].Field<String>("CUSTOMER_BUY_OUT") == "Y")
+					tdPayoffDate = DTPayStream.Rows[i].Field<DateTime>("CUSTHIST_PAY_DATE");
+				if (DTPayStream.Rows[i].Field<String>("CUSTHIST_PAYMENT_TYPE") != "F")
+					tvDocument.CashFlowMatrix.SetNumber(currentLine, 1);
+			}
+			currentLine += 1;
+			// Create a cash flow line for the payoff date and unknown payment amount
+			tvDocument.CashFlowMatrix.AddLine();
+			if (CUSTOMERDT.Rows[0].Field<String>("CUSTOMER_BUY_OUT") != "Y" || CUSTOMERDT.Rows[0].Field<Decimal>("CUSTOMER_BALANCE") <= 0)
+				tvDocument.CashFlowMatrix.SetEvent(currentLine, TVConstants.TVEventType.Payment, arPaymentEvents[2]);
+			else
+				tvDocument.CashFlowMatrix.SetEvent(currentLine, TVConstants.TVEventType.Payment, arPaymentEvents[2]);
+			// Always use month end date for buyout amount!
+			// Moses Newman 02/26/2018 If PAID regardless of BUY_OUT flag used last transaction date for payoff date!
+			// Moses Newman 06/29/2018 Change PAID to PAID2 to prevent date out of sequence issues for PAIDS pn monthly update.
+			if (tbEOM && CUSTOMERDT.Rows[0].Field<String>("CUSTOMER_PAY_REM_1") != "PAID2") //CUSTOMERDT.Rows[0].Field<String>("CUSTOMER_BUY_OUT") != "Y")
+			{
+				tdPayoffDate = Convert.ToDateTime(tdPayoffDate.Month.ToString() + "/01/" + tdPayoffDate.Year.ToString()).AddMonths(1);
+				tdPayoffDate = tdPayoffDate.AddDays(-1);
+			}
+			// Moses Newman 07/13/2018
+			if (DTPayStream.Rows.Count > 0) // Moses Newman 10/11/2020
+				if (tdPayoffDate < DTPayStream.Rows[DTPayStream.Rows.Count - 1].Field<DateTime>("CUSTHIST_PAY_DATE"))
+					tdPayoffDate = DTPayStream.Rows[DTPayStream.Rows.Count - 1].Field<DateTime>("CUSTHIST_PAY_DATE");
+			tvDocument.CashFlowMatrix.SetStartDate(currentLine, TVDate.Create(tdPayoffDate));
+			tvDocument.CashFlowMatrix.SetAmountUnknown(currentLine);
+			tvDocument.CashFlowMatrix.SetNumber(currentLine, 1);
+
+
+			//cfm.SuspendDateSequenceChecking = 0;
+			// Moses Newman 03/22/2013 Changed due to new handling of INSUF transactions
+			// Do NOT sort event anymore because they are already sorted the way we need, a call to the TValue engine's sort will put INSUF in the wrong order with the original payment!
+			//cfm.Sort();   
+
+			
+			//?cfm.RateMode = TValueEngineLib.TVRateMode.TVRateModeExtended;
+
+			// Solve the problem. Returns the unknownValue
+			// Also creates the amortization schedule.
+
+			if (tbSave)
+			{
+				String lsPath = Program.GsDataPath + @"\TV6\" + CUSTOMERDT.Rows[0].Field<String>("CUSTOMER_NO").TrimEnd() +
+								CUSTOMERDT.Rows[0].Field<String>("CUSTOMER_FIRST_NAME").TrimEnd() +
+								CUSTOMERDT.Rows[0].Field<String>("CUSTOMER_LAST_NAME").TrimEnd() + ".tv6";
+				tvDocument.FileSave(lsPath, 6);
+			}
+			//tvDocument.SortMergeAllLines();
+			tvDocument.Solve();
+
+			tnMonthlyAmountOwed = tvDocument.CashFlowMatrix.GetAmount(tvDocument.CashFlowMatrix.NumberOfLines) / CENTS_PER_DOLLAR;
+
+			// Moses Newman 8/14/2013 Add APR Info 
+			Double lnAPR = 0;
+			Double lnFinanceCharge = 0, lnAmountFinanced = 0, lnTotalofPayments = 0;
+			IACDataSetTableAdapters.TVAPRInfoTableAdapter TVAPRInfoTableAdapter = new IACDataSetTableAdapters.TVAPRInfoTableAdapter();
+
+			Boolean lbIsAPRUndefined = true;
+			tvDocument.ComputeAPR(out lnAPR, out lnAmountFinanced, out lnTotalofPayments, out lnFinanceCharge, out lbIsAPRUndefined);
+			lnAmountFinanced /= CENTS_PER_DOLLAR;
+			lnFinanceCharge /= CENTS_PER_DOLLAR;
+			lnTotalofPayments /= CENTS_PER_DOLLAR;
+			// Moses Newman 11/15/2016 make sure apr info is there so we don't post large negative error code!
+			if (lnAPR >= 0 && lnFinanceCharge >= 0 && lnAmountFinanced >= 0 && lnTotalofPayments >= 0)
+			{
+				// Delete old APR Info for customer if it exists
+				TVAPRInfoTableAdapter.Delete(CUSTOMERDT.Rows[0].Field<String>("CUSTOMER_NO"));
+				TVAPRInfoTableAdapter.Insert(CUSTOMERDT.Rows[0].Field<String>("CUSTOMER_NO"), (Decimal)lnAPR, (Decimal)lnFinanceCharge, (Decimal)lnAmountFinanced, (Decimal)lnTotalofPayments);
+			}
+			TVAPRInfoTableAdapter.Dispose();
+			// End of new APRInfo
+			
+			tvDocument.AmortizationSchedule.GenerateSchedule();
+			TVGetAmortTableAPI(tvDocument, DTPayStream, tcCustomer, false, false);
+			//tvDocument.Delete();
+			DTPayStream.Dispose();
+			CUSTOMERDT.Dispose();
+			tvDocument.Delete();
+			return (Decimal)tnMonthlyAmountOwed;
+		}
+		
+
+		static public decimal TVSimpleGetBuyoutDLL(IACDataSet tdsAmortDT,DateTime tdPayoffDate,double tnTerm,double tnAPR,double tnMonthlyAmountOwed, String tcCustomer = "99-", Boolean tbSimple = false,Boolean tbSave = false,Boolean tbEOM = true,Boolean tbPayment = false, Int32 tnPaymentPos = -1,Boolean tbCutoff = false)
 		{
 			// tnLoanAmount         = Original Loan Amount
 			// tnTerm                = Loan term in months
@@ -139,7 +528,7 @@ namespace IAC2018SQL
 			cfm.UserPaymentName1 = "PAY/ADJ";
 			cfm.UserPaymentName2 = "UPD";
 			// Moses Newman 02/26/2021 UNEARNED only if closing balance > 0!
-			if(CUSTOMERDT.Rows[0].Field<String>("CUSTOMER_BUY_OUT") != "Y" | CUSTOMERDT.Rows[0].Field<Decimal>("CUSTOMER_BALANCE") <= 0)
+			if(CUSTOMERDT.Rows[0].Field<String>("CUSTOMER_BUY_OUT") != "Y" || CUSTOMERDT.Rows[0].Field<Decimal>("CUSTOMER_BALANCE") <= 0)
 				cfm.UserPaymentName3 = "BUYOUT";
 			else
 				cfm.UserPaymentName3 = "UNEARNED";
@@ -403,6 +792,127 @@ namespace IAC2018SQL
 		}
 
 		static public void TVAmortize(DateTime tdStartDate, DateTime tdFirstPaymentDate, ref double tnLoanAmount, ref double tnTerm, ref double tnAPR, ref double tnMonthlyAmountOwed, ref string tsReturnCodeMessage, ref AmortRec[] tAmortRec, Boolean MemOnly = false, String tcCustomer = "99-", Boolean tbSimple = false)
+		{
+			TVAmortizeAPI(tvWorkspace,tdStartDate, tdFirstPaymentDate, ref tnLoanAmount, ref tnTerm, ref tnAPR, ref tnMonthlyAmountOwed, ref tsReturnCodeMessage, ref tAmortRec, MemOnly, tcCustomer, tbSimple);
+			//TVAmortizeDLL(tdStartDate, tdFirstPaymentDate, ref tnLoanAmount, ref tnTerm, ref tnAPR, ref tnMonthlyAmountOwed, ref tsReturnCodeMessage, ref tAmortRec, MemOnly, tcCustomer, tbSimple);
+		}
+
+		// Moses Newman 08/23/2021
+		static public void TVAmortizeAPI(TVWorkspace tvWorkspace,DateTime tdStartDate, DateTime tdFirstPaymentDate, ref double tnLoanAmount, ref double tnTerm, ref double tnAPR, ref double tnMonthlyAmountOwed, ref string tsReturnCodeMessage, ref AmortRec[] tAmortRec, Boolean MemOnly = false, String tcCustomer = "99-", Boolean tbSimple = false)
+		{
+			// tnLoanAmount         = Original Loan Amount
+			// tnTerm                = Loan term in months
+			// tnAPR                = Annual percentage rate as a decimal
+			// tnMonthlyAmountOwed  = Total monthly payment P&I
+			// 
+
+			if (tcCustomer == "99-")
+				tcCustomer += gsUserID;
+
+			//Define all needed variables.            
+			IACDataSetTableAdapters.AmortTempTableAdapter AmortTempTableAdapter = new IACDataSetTableAdapters.AmortTempTableAdapter();
+			int index;
+
+			TVDocument tvDocument;
+
+			tvDocument = new TVDocument(tvWorkspace);
+			// Create the user.
+
+			// Set the compounding to Monthly.
+			if (tbSimple)
+			{
+				tvDocument.SetComputeMethod(TVConstants.TVComputeMethod.USRule);
+				// Moses Newman 04/30/2017 For tbSimple flaf now do exact days for US Rule Simple Interest
+				if (tnAPR > 0)
+					tvDocument.CashFlowMatrix.SetPeriodAndRate(TVConstants.TVPeriod.ExactDays, tnAPR);
+				else
+					tvDocument.CashFlowMatrix.SetRateUnknown();
+			}
+			else
+			{
+				tvDocument.SetComputeMethod(TVConstants.TVComputeMethod.Normal);
+				if (tnAPR > 0)
+					tvDocument.CashFlowMatrix.SetPeriodAndRate(TVConstants.TVPeriod.Daily, tnAPR);
+				else
+					tvDocument.CashFlowMatrix.SetRateUnknown();
+			}
+			tvDocument.SetYearLength(TVConstants.TVYearLength.Y365);
+
+			//Create the first cash flow line (the loan).
+			//Set the loan date and amount.
+			tvDocument.CashFlowMatrix.AddLine();
+			tvDocument.CashFlowMatrix.SetEvent(1, TVConstants.TVEventType.Loan, 0);
+			tvDocument.CashFlowMatrix.SetStartDate(1, TVDate.Create(tdStartDate));
+			if (tnLoanAmount > 0)
+				tvDocument.CashFlowMatrix.SetAmount(1, tnLoanAmount * CENTS_PER_DOLLAR);
+			else
+				tvDocument.CashFlowMatrix.SetAmountUnknown(1);
+		    tvDocument.CashFlowMatrix.SetNumber(1, 1);
+
+			// Create the second cash flow line
+			tvDocument.CashFlowMatrix.AddLine();
+			tvDocument.CashFlowMatrix.SetEvent(2, TVConstants.TVEventType.Payment, 0);
+			tvDocument.CashFlowMatrix.SetStartDate(2, TVDate.Create(tdFirstPaymentDate));
+			tvDocument.CashFlowMatrix.SetEventPeriod(2, TVConstants.TVEventPeriod.Monthly);
+			if (tnMonthlyAmountOwed > 0)
+				tvDocument.CashFlowMatrix.SetAmount(2, tnMonthlyAmountOwed * CENTS_PER_DOLLAR);
+			else
+				tvDocument.CashFlowMatrix.SetAmountUnknown(2);
+			tvDocument.CashFlowMatrix.SetNumber(2,(int)tnTerm);
+
+			String lsPath = Program.GsDataPath + @"\TV6\" + tcCustomer + ".tv6";
+			tvDocument.FileSave(lsPath, 6);
+
+			// Solve the problem. Returns the unknownValue
+			// Also creates the amortization schedule.
+			tvDocument.SortMergeAllLines();
+			tvDocument.Solve();
+			tvDocument.AmortizationSchedule.GenerateSchedule();
+			if (tnMonthlyAmountOwed == 0)
+				tnMonthlyAmountOwed = tvDocument.CashFlowMatrix.GetAmount(2) / CENTS_PER_DOLLAR;
+			if (tnLoanAmount == 0)
+				tnLoanAmount = tvDocument.CashFlowMatrix.GetAmount(1) / CENTS_PER_DOLLAR;
+			if (tnAPR == 0)
+				tvDocument.CashFlowMatrix.GetEffectiveAnnualRate(out tnAPR);
+
+
+			// Moses Newman 8/14/2013 Add APR Info 
+			Double lnAPR = 0,lnFinanceCharge = 0, lnAmountFinanced = 0, lnTotalofPayments = 0;
+			Boolean lbIsAPRUndefined;
+			IACDataSetTableAdapters.TVAPRInfoTableAdapter TVAPRInfoTableAdapter = new IACDataSetTableAdapters.TVAPRInfoTableAdapter();
+
+			tvDocument.ComputeAPR(out lnAPR, out lnAmountFinanced, out lnTotalofPayments, out lnFinanceCharge, out lbIsAPRUndefined);
+			lnAmountFinanced /= CENTS_PER_DOLLAR;
+			lnFinanceCharge /= CENTS_PER_DOLLAR;
+			lnTotalofPayments /= CENTS_PER_DOLLAR;
+			// Delete old APR Info for customer if it exists
+			TVAPRInfoTableAdapter.Delete(tcCustomer);
+			TVAPRInfoTableAdapter.Insert(tcCustomer, (Decimal)lnAPR, (Decimal)lnFinanceCharge, (Decimal)lnAmountFinanced, (Decimal)lnTotalofPayments);
+			TVAPRInfoTableAdapter.Dispose();
+			// End of new APRInfo
+			// load the amortization schedule.
+			AmortTempTableAdapter.DeleteByCustomer(tcCustomer);
+			AmortizationLine line;
+			Int32 currentline = 0;
+			for (index = 0; index < tvDocument.AmortizationSchedule.AmortizationLines.Count; index++)
+			{
+				// Get the next amortization line
+				line = tvDocument.AmortizationSchedule.AmortizationLines[index];
+
+				// Get the currency values
+				if (line.CustomEventBaseType == (int) TVConstants.TVCustomEventBaseType.Payment)
+				{
+					tAmortRec[currentline].InterestAmount = line.InterestAccrued / CENTS_PER_DOLLAR; 
+					tAmortRec[currentline].PrincipleAmount = line.Principal / CENTS_PER_DOLLAR;
+					tAmortRec[currentline].Balance = line.Balance / CENTS_PER_DOLLAR;
+					if (!MemOnly)
+						AmortTempTableAdapter.Insert(tcCustomer, currentline+1, Convert.ToDecimal(tAmortRec[currentline].InterestAmount), Convert.ToDecimal(tAmortRec[currentline].PrincipleAmount), Convert.ToDecimal(tAmortRec[currentline].Balance), (Decimal)(line.InterestPaid / CENTS_PER_DOLLAR), (Decimal)((line.NegativeCashFlowSum -line.InterestPaid) / CENTS_PER_DOLLAR), "");
+					currentline++;
+				}
+			}
+
+		}
+		static public void TVAmortizeDLL(DateTime tdStartDate, DateTime tdFirstPaymentDate, ref double tnLoanAmount, ref double tnTerm, ref double tnAPR, ref double tnMonthlyAmountOwed, ref string tsReturnCodeMessage, ref AmortRec[] tAmortRec, Boolean MemOnly = false, String tcCustomer = "99-", Boolean tbSimple = false)
 		{ 
 			// tnLoanAmount         = Original Loan Amount
 			// tnTerm                = Loan term in months
@@ -558,6 +1068,254 @@ namespace IAC2018SQL
             
             String lsPath = Program.GsDataPath + @"\TV5\" + tcCustomer + ".tv5";
             cfm.WriteToFile(lsPath, 0);
+		}
+
+		
+		static private void TVGetAmortTableAPI(TVDocument tvDocument, IACDataSet.CUSTHISTDataTable tdtCUSTHIST, String tcCustomer = "99", Boolean tbIncludeTotals = false, Boolean tbAmort = false)
+		{
+			IACDataSet.TVAmortDataTable TVAmortDT = new IACDataSet.TVAmortDataTable();
+			IACDataSet.CUSTOMERDataTable CustomerDT = new IACDataSet.CUSTOMERDataTable();
+			if (tcCustomer == "99-")
+				tcCustomer += gsUserID;
+
+			AmortizationLine line;
+			int sequenceNumber = 0;
+			DateTime eventDate, LeapDate;
+			double rateChangeRate;
+			String lsDayDue;
+
+			IACDataSetTableAdapters.CUSTOMERTableAdapter CUSTOMERTableAdapter = new IACDataSetTableAdapters.CUSTOMERTableAdapter();
+			IACDataSetTableAdapters.TVAmortTableAdapter TVAmortTableAdapter = new IACDataSetTableAdapters.TVAmortTableAdapter();
+			TVAmortTableAdapter.DeleteByCustomerNo(tcCustomer);
+			Int32 AmortIndex = 0;
+			TVAmortDT.Clear();
+			CUSTOMERTableAdapter.Fill(CustomerDT, tcCustomer);
+			for (Int32 index = 0; index < tvDocument.AmortizationSchedule.AmortizationLines.Count; index++)
+			{
+				// Get the next amortization line
+				line = tvDocument.AmortizationSchedule.AmortizationLines[index];
+				eventDate = tvDocument.AmortizationSchedule.AmortizationLines[index].Date;
+				rateChangeRate = tvDocument.AmortizationSchedule.AmortizationLines[index].Rate;
+
+				// Put data into the dataset based on the line type
+				DataRow dr;
+				switch (line.CustomEventBaseType)
+				{
+					case (int) TVConstants.TVCustomEventBaseType.Loan:
+						// Create new DataRow objects and add to DataTable.
+						dr = TVAmortDT.NewRow();
+						dr["CustomerNo"] = tcCustomer;
+						sequenceNumber ++;
+						dr["RowNumber"] = sequenceNumber;
+						if (AmortIndex < tdtCUSTHIST.Rows.Count)
+						{
+							dr["Event"] = tdtCUSTHIST.Rows[AmortIndex].Field<String>("CUSTHIST_PAY_REM_1");
+							if (tdtCUSTHIST.Rows[AmortIndex]["CUSTHIST_PAID_THRU"].ToString().Trim() != "")
+							{
+								if (CustomerDT.Rows[0].Field<Int32>("CUSTOMER_DAY_DUE") == 30 && tdtCUSTHIST.Rows[AmortIndex]["CUSTHIST_PAID_THRU"].ToString().Substring(0, 2) == "02")
+								{
+									LeapDate = DateTime.Parse("03/01/" + DateTime.Now.Year.ToString().Substring(0, 2) +
+											   tdtCUSTHIST.Rows[AmortIndex]["CUSTHIST_PAID_THRU"].ToString().Substring(2, 2)).AddDays(-1);
+									lsDayDue = LeapDate.Day.ToString().Trim().PadLeft(2, '0');
+								}
+								else
+									lsDayDue = CustomerDT.Rows[0].Field<Int32>("CUSTOMER_DAY_DUE").ToString().Trim().PadLeft(2, '0');
+								dr["PaidThrough"] = DateTime.Parse(tdtCUSTHIST.Rows[AmortIndex]["CUSTHIST_PAID_THRU"].ToString().Substring(0, 2) + '/' + lsDayDue + '/' +
+													DateTime.Now.Year.ToString().Substring(0, 2) + tdtCUSTHIST.Rows[AmortIndex]["CUSTHIST_PAID_THRU"].ToString().Substring(2, 2));
+							}
+							switch (tdtCUSTHIST.Rows[AmortIndex].Field<String>("CUSTHIST_PAY_REM_1").TrimEnd())
+							{
+								case "NEW":
+									dr["New"] = line.PositiveCashFlowSum / CENTS_PER_DOLLAR;
+									break;
+								case "LATE":
+									dr["LateFee"] = tdtCUSTHIST.Rows[AmortIndex].Field<Decimal>("CUSTHIST_LATE_CHARGE");
+									break;
+								case "ISFC":
+									dr["ISF"] = tdtCUSTHIST.Rows[AmortIndex].Field<Decimal>("CUSTHIST_PAYMENT_RCV") * -1;
+									break;
+								case "INSUF":
+									dr["Payment"] = line.PositiveCashFlowSum / CENTS_PER_DOLLAR * -1;
+									// Moses Newman 04/13/2018 Add ISFDate, ISFSeqNo, ISFPaymentType, and ISFPaymentCode so that exact returned check can be found.
+									dr.SetField<DateTime?>("ISFDate", tdtCUSTHIST.Rows[AmortIndex].Field<DateTime?>("CUSTHIST_ISF_DATE"));
+									dr.SetField<Int32?>("ISFSeqNo", tdtCUSTHIST.Rows[AmortIndex].Field<Int32?>("ISFSeqNo"));
+									dr["ISFPaymentType"] = tdtCUSTHIST.Rows[AmortIndex].Field<String>("ISFPaymentType");
+									dr["ISFPaymentCode"] = tdtCUSTHIST.Rows[AmortIndex].Field<String>("ISFPaymentCode");
+									break;
+							}
+							dr["HistorySeq"] = tdtCUSTHIST.Rows[AmortIndex]["CUSTHIST_DATE_SEQ"];
+							// Moses Newman 07/25/2019 Add History Date to Amort for proper sequencing in FixLateFeesandPartialPayments
+							dr["HistoryDate"] = tdtCUSTHIST.Rows[AmortIndex]["CUSTHIST_PAY_DATE"];
+
+							// Moses Newman 10/17/2018 add PaymentSeq for lookup in posting.
+							dr["PaymentSeq"] = tdtCUSTHIST.Rows[AmortIndex].Field<Int32?>("PaymentSeq") != null ? tdtCUSTHIST.Rows[AmortIndex].Field<Int32>("PaymentSeq") : 0;
+							dr["PartialPayment"] = tdtCUSTHIST.Rows[AmortIndex]["PartialPayment"];
+							dr["LateFeeBalance"] = tdtCUSTHIST.Rows[AmortIndex]["CUSTHIST_LATE_CHARGE_BAL"];
+						}
+						AmortIndex ++;
+						dr["Date"] = eventDate;
+						dr["Interest"] = line.InterestAccrued / CENTS_PER_DOLLAR;
+						dr["Principal"] = line.Principal / CENTS_PER_DOLLAR;
+						dr["Balance"] = line.BalanceDueTotal / CENTS_PER_DOLLAR;
+						dr["PaymentCode"] = "";
+						TVAmortDT.Rows.Add(dr);
+						break;
+
+					case (int) TVConstants.TVCustomEventBaseType.Payment:
+						// Create new DataRow objects and add to DataTable.
+						dr = TVAmortDT.NewRow();
+						dr["CustomerNo"] = tcCustomer;
+						sequenceNumber++;
+						dr["RowNumber"] = sequenceNumber;
+						if (sequenceNumber >  tdtCUSTHIST.Rows.Count)
+							if (!tbAmort)
+								// Moses Newman 02/26/2021 UNEARNED only if closing balance > 0!
+								if (CustomerDT.Rows[0].Field<String>("CUSTOMER_BUY_OUT") != "Y" || (line.BalanceDueTotal / CENTS_PER_DOLLAR) <= 0)
+									dr["Event"] = "BUYOUT";
+								else
+									dr["Event"] = "UNEARNED";
+							else
+								dr["Event"] = "PAY";
+						else
+						{
+							dr["Event"] = tdtCUSTHIST.Rows[AmortIndex].Field<String>("CUSTHIST_PAY_REM_1");
+							AmortIndex += 1;
+						}
+
+						dr["Date"] = eventDate;
+						// Moses Newman 03/20/2018 Add History Sequence Number to amort
+						// Moses Newman 10/17/2018 add PaymentSeq for lookup in posting.
+						if (AmortIndex > 0)
+						{
+							dr["PaymentSeq"] = tdtCUSTHIST.Rows[AmortIndex - 1].Field<Int32?>("PaymentSeq") != null ? tdtCUSTHIST.Rows[AmortIndex - 1].Field<Int32>("PaymentSeq") : 0;
+							// Moses Newman 04/03/2018 Add Payment Code to TVAmort so we know what the wave type is!
+							dr["PaymentCode"] = (String)tdtCUSTHIST.Rows[AmortIndex - 1]["CUSTHIST_PAYMENT_TYPE"] + (String)tdtCUSTHIST.Rows[AmortIndex - 1]["CUSTHIST_PAYMENT_CODE"];
+							// Moses Newman 03/20/2018 Add History Sequence Number to amort
+							dr["HistorySeq"] = tdtCUSTHIST.Rows[AmortIndex - 1]["CUSTHIST_DATE_SEQ"];
+							// Moses Newman 07/25/2019 Add History Date to Amort for proper sequencing in FixLateFeesandPartialPayments
+							dr["HistoryDate"] = tdtCUSTHIST.Rows[AmortIndex - 1]["CUSTHIST_PAY_DATE"];
+							dr["PartialPayment"] = tdtCUSTHIST.Rows[AmortIndex - 1]["PartialPayment"];
+							dr["LateFeeBalance"] = tdtCUSTHIST.Rows[AmortIndex - 1]["CUSTHIST_LATE_CHARGE_BAL"];
+							if (tdtCUSTHIST.Rows[AmortIndex - 1]["CUSTHIST_PAID_THRU"].ToString().Trim() != "")
+							{
+								if (CustomerDT.Rows[0].Field<Int32>("CUSTOMER_DAY_DUE") == 30 && tdtCUSTHIST.Rows[AmortIndex - 1]["CUSTHIST_PAID_THRU"].ToString().Substring(0, 2) == "02")
+								{
+									LeapDate = DateTime.Parse("03/01/" + DateTime.Now.Year.ToString().Substring(0, 2) +
+											   tdtCUSTHIST.Rows[AmortIndex - 1]["CUSTHIST_PAID_THRU"].ToString().Substring(2, 2)).AddDays(-1);
+									lsDayDue = LeapDate.Day.ToString().Trim().PadLeft(2, '0');
+								}
+								else
+									lsDayDue = CustomerDT.Rows[0].Field<Int32>("CUSTOMER_DAY_DUE").ToString().Trim().PadLeft(2, '0');
+								dr["PaidThrough"] = DateTime.Parse(tdtCUSTHIST.Rows[AmortIndex - 1]["CUSTHIST_PAID_THRU"].ToString().Substring(0, 2) + '/' + lsDayDue + '/' +
+													DateTime.Now.Year.ToString().Substring(0, 2) + tdtCUSTHIST.Rows[AmortIndex - 1]["CUSTHIST_PAID_THRU"].ToString().Substring(2, 2));
+							}
+							// Moses Newman 03/22/2018 Add Extension Months to Amort 
+							if (dr["Event"].ToString().Trim() == "EXT")
+								dr["ExtensionMonths"] = tdtCUSTHIST.Rows[AmortIndex - 1]["CUSTHIST_THRU_UD"];
+							switch (line.CustomEventBaseType)
+							{
+								case (int) TVConstants.TVCustomEventBaseType.Payment:
+									// Moses Newman 07/31/2013 Added switch to handle positng of W or C payments to Non Cash Column of TVAmort table
+									if ((AmortIndex - 1) < tdtCUSTHIST.Rows.Count && AmortIndex > 0)
+										switch (tdtCUSTHIST.Rows[AmortIndex - 1].Field<String>("CUSTHIST_PAYMENT_TYPE"))
+										{
+											case "W":
+											case "C":
+												dr["NonCash"] = line.NegativeCashFlowSum / CENTS_PER_DOLLAR;
+												break;
+											default:
+												dr["Payment"] = line.NegativeCashFlowSum / CENTS_PER_DOLLAR;
+												break;
+										}
+									else
+										dr["Payment"] = line.NegativeCashFlowSum /CENTS_PER_DOLLAR;
+									break;
+							}
+							if ((Decimal)dr["Payment"] < 0 && (AmortIndex - 1) < tdtCUSTHIST.Rows.Count && AmortIndex > 0 &&
+								tdtCUSTHIST.Rows[AmortIndex - 1].Field<String>("CUSTHIST_PAYMENT_TYPE") != "W")
+							{
+								// Moses Newman 03/04/20201 Don't fill in ISF stuff if BUYOUT or UNEARNED row!
+								if ((String)dr["Event"] != "BUYOUT" && (String)dr["Event"] != "UNEARNED")
+								{
+									// Moses Newman 04/13/2018 Add ISFDate, ISFSeqNo, ISFPaymentType, and ISFPaymentCode so that exact returned check can be found.
+									dr.SetField<DateTime?>("ISFDate", tdtCUSTHIST.Rows[AmortIndex - 1].Field<DateTime?>("CUSTHIST_ISF_DATE"));
+									dr.SetField<Int32?>("ISFSeqNo", tdtCUSTHIST.Rows[AmortIndex - 1].Field<Int32?>("ISFSeqNo"));
+									dr["ISFPaymentType"] = tdtCUSTHIST.Rows[AmortIndex - 1].Field<String>("ISFPaymentType");
+									dr["ISFPaymentCode"] = tdtCUSTHIST.Rows[AmortIndex - 1].Field<String>("ISFPaymentCode");
+								}
+							}
+						} // Moses Newman 05/10/2021
+						dr["Interest"] = line.InterestAccrued / CENTS_PER_DOLLAR;
+						dr["Principal"] = line.Principal / CENTS_PER_DOLLAR;
+						dr["Balance"] = line.BalanceDueTotal / CENTS_PER_DOLLAR;
+						TVAmortDT.Rows.Add(dr);
+						break;
+
+					// Moses Newman 10/23/2013 Add support for Rate Change Events
+					case (int) TVConstants.TVCustomEventBaseType.RateChange:
+						// Create new DataRow objects and add to DataTable.
+						dr = TVAmortDT.NewRow();
+						dr["CustomerNo"] = tcCustomer;
+						sequenceNumber += 1;
+						dr["RowNumber"] = sequenceNumber;
+						dr["Event"] = tdtCUSTHIST.Rows[AmortIndex].Field<String>("CUSTHIST_PAY_REM_1");
+						dr["Date"] = eventDate;
+						dr["Payment"] = 0;
+						dr["Interest"] = line.InterestAccrued / CENTS_PER_DOLLAR;
+						dr["Principal"] = line.Principal / CENTS_PER_DOLLAR;
+						dr["RateChange"] = (Decimal)(rateChangeRate);
+						dr["Balance"] = line.BalanceDueTotal / CENTS_PER_DOLLAR;
+						dr["HistorySeq"] = tdtCUSTHIST.Rows[AmortIndex]["CUSTHIST_DATE_SEQ"];
+						// Moses Newman 07/25/2019 Add History Date to Amort for proper sequencing in FixLateFeesandPartialPayments
+						dr["HistoryDate"] = tdtCUSTHIST.Rows[AmortIndex]["CUSTHIST_PAY_DATE"];
+						dr["PaymentCode"] = "F";
+						// Moses Newman 12/16/2020 Add Payment Code!
+						dr["PaymentSeq"] = tdtCUSTHIST.Rows[AmortIndex].Field<Int32?>("PaymentSeq") != null ? tdtCUSTHIST.Rows[AmortIndex].Field<Int32>("PaymentSeq") : 0;
+						AmortIndex += 1;
+						TVAmortDT.Rows.Add(dr);
+						break;
+
+					case (int) TVConstants.TVEventType.AnnualTotal:
+						if (tbIncludeTotals)
+						{
+							// Create new DataRow objects and add to DataTable.
+							dr = TVAmortDT.NewRow();
+							dr["CustomerNo"] = tcCustomer;
+							sequenceNumber += 1;
+							dr["RowNumber"] = sequenceNumber;
+							dr["Event"] = sequenceNumber.ToString() + " Totals";
+							dr["Date"] = eventDate;
+							dr["Payment"] = line.NegativeCashFlowSum / CENTS_PER_DOLLAR;
+							dr["Interest"] = line.InterestPaid / CENTS_PER_DOLLAR;
+							dr["Principal"] = line.Principal / CENTS_PER_DOLLAR;
+							dr["Balance"] = 0;
+							TVAmortDT.Rows.Add(dr);
+						}
+						break;
+
+					case (int) TVConstants.TVEventType.GrandTotal:
+						if (tbIncludeTotals)
+						{
+							// Create new DataRow objects and add to DataTable.
+							dr = TVAmortDT.NewRow();
+							dr["CustomerNo"] = tcCustomer;
+							sequenceNumber += 1;
+							dr["RowNumber"] = sequenceNumber;
+							dr["Date"] = eventDate;
+							dr["Event"] = "Grand Totals";
+							dr["Payment"] = line.NegativeCashFlowSum / CENTS_PER_DOLLAR;
+							dr["Interest"] = line.InterestAccrued / CENTS_PER_DOLLAR;
+							dr["Principal"] = line.Principal / CENTS_PER_DOLLAR;
+							dr["Balance"] = 0;
+							TVAmortDT.Rows.Add(dr);
+						}
+						break;
+				}
+			}
+			TVAmortTableAdapter.Update(TVAmortDT);
+			TVAmortTableAdapter.Dispose();
+			TVAmortDT.Dispose();
+			//tvDocument.Delete();
 		}
 
 		static private void TVGetAmortTable(ref TValueEngineLib.TValueCashFlowMatrix cfm,IACDataSet.CUSTHISTDataTable tdtCUSTHIST,String tcCustomer = "99",Boolean tbIncludeTotals = false,Boolean tbAmort = false)
@@ -1082,7 +1840,7 @@ namespace IAC2018SQL
                 /*
                 if (CustomerPostDataSet.CUSTOMER.Rows[i].Field<String>("CUSTOMER_AMORTIZE_IND").ToUpper() == "S")
                     CustomerPostDataSet.CUSTOMER.Rows[i].SetField<Decimal>("CUSTOMER_LOAN_INTEREST", (Decimal)0.00);*/
-				CustomerPostDataSet.CUSTOMER.Rows[i].SetField<Decimal>("CUSTOMER_UE_INTEREST", 0);
+						CustomerPostDataSet.CUSTOMER.Rows[i].SetField<Decimal>("CUSTOMER_UE_INTEREST", 0);
 				// Moses Newman 01/17/2013 Simple Interest No More Precalculated Interest!!!
 				CustomerPostDataSet.CUSTOMER.Rows[i].SetField<Decimal>("CUSTOMER_BALANCE", CustomerPostDataSet.CUSTOMER.Rows[i].Field<Decimal>("CUSTOMER_LOAN_CASH"));
 				CustomerPostDataSet.CUSTOMER.Rows[i].SetField<Decimal>("CUSTOMER_PREV_BALANCE", CustomerPostDataSet.CUSTOMER.Rows[i].Field<Decimal>("CUSTOMER_LOAN_CASH"));
@@ -1149,6 +1907,7 @@ namespace IAC2018SQL
                         lnRegularAmount = (Double)CustomerPostDataSet.CUSTOMER.Rows[i].Field<Decimal>("CUSTOMER_REGULAR_AMOUNT");
 					AmortTable = new AmortRec[CustomerPostDataSet.CUSTOMER.Rows[i].Field<Int32>("CUSTOMER_TERM")];
                     // Moses Newman 01/21/2015 Add Contract Date handling!
+					// Moses Newman 08/23/2021 Call New TVAmortizeAPI
                     TVAmortize(CustomerPostDataSet.CUSTOMER.Rows[i].Field<DateTime>("ContractDate").Date,CustomerPostDataSet.CUSTOMER.Rows[i].Field<DateTime>("CUSTOMER_INIT_DATE").Date, ref lnLoanAmount, ref lnTerm, ref lnAPR, ref lnRegularAmount, ref lsAmortMessage, ref AmortTable, true);
 					lnAPR = lnAPR * 100;
 					AMORTIZETableAdapter.Transaction = tableAdapTran;
@@ -2982,9 +3741,14 @@ namespace IAC2018SQL
 		[STAThread]
 		static void Main()
 		{
+			long customerId;
+			customerId = CUSTOMER_ID;
+			tvWorkspace = new TVWorkspace(customerId);
+
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
 			Application.Run(new MDIIAC2013());
+			//tvWorkspace.Delete();
 		}
 	}
 }

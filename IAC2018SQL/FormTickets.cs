@@ -921,6 +921,11 @@ namespace IAC2018SQL
 
         private void ResetAll()
         {
+            ticketsdataset.TicketHeader.Clear();
+            ticketsdataset.TicketDetail.Clear();
+            productionMainTables.CONTING.Clear();
+            productionMainTables.PAYMENT.Clear();
+
             buttonEdit.Enabled = false; // Moses Newman 08/16/2021
             buttonDeleteTicket.Enabled = false; // Moses Newman 08/16/2021
             _EditMode = false;
@@ -946,11 +951,6 @@ namespace IAC2018SQL
             ticketAccountsTableAdapter.FillByAll(ticketsdataset.TicketAccounts);
             bindingSourceTicketAccounts.DataSource = ticketsdataset;
             bindingSourceTicketAccounts.DataMember = "TicketAccounts";
-
-            ticketsdataset.TicketHeader.Clear();
-            ticketsdataset.TicketDetail.Clear();
-            productionMainTables.CONTING.Clear();
-            productionMainTables.PAYMENT.Clear();
 
             colorTextBoxDebits.Debit = true;
             colorTextBoxCredits.Debit = false;
