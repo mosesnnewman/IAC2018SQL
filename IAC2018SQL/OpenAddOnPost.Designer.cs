@@ -1,4 +1,4 @@
-﻿namespace IAC2018SQL
+﻿namespace IAC2021SQL
 {
     partial class frmOpenAddOnPost
     {
@@ -30,7 +30,7 @@
         {
             this.buttonPost = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
-            this.AddOniacDataSet = new IAC2018SQL.IACDataSet();
+            this.AddOniacDataSet = new IAC2021SQL.IACDataSet();
             ((System.ComponentModel.ISupportInitialize)(this.AddOniacDataSet)).BeginInit();
             this.SuspendLayout();
             // 

@@ -9,7 +9,7 @@ using Acrobat;
 using RestSharp.Extensions;
 using System.Threading;
 
-namespace IAC2018SQL
+namespace IAC2021SQL
 {
     public partial class frmImportDefiPDFs : System.Windows.Forms.Form
     {
@@ -152,7 +152,7 @@ namespace IAC2018SQL
                             System.IO.File.Move(FullPath + Filename, ProcessedPath + Filename);
                     }
                     //basic authentication
-                    Program.ApiClient.Authenticator = new HttpBasicAuthenticator(@"IAC\Administrator", "IACadmin99");
+                    Program.ApiClient.Authenticator = new RestSharp.Authenticators.HttpBasicAuthenticator(@"IAC\Administrator", "IACadmin99");
 
                     var databaseID = 2;  //Database ID
                     var archiveID = 9;  //Archive ID

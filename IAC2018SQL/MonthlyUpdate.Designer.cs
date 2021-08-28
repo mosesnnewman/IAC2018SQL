@@ -1,4 +1,4 @@
-﻿namespace IAC2018SQL
+﻿namespace IAC2021SQL
 {
     partial class frmMonthlyupdate
     {
@@ -32,8 +32,8 @@
         {
             this.buttonPost = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
-            this.UpdateiacDataSet = new IAC2018SQL.IACDataSet();
-            this.customerTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.CUSTOMERTableAdapter();
+            this.UpdateiacDataSet = new IAC2021SQL.IACDataSet();
+            this.customerTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.CUSTOMERTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.UpdateiacDataSet)).BeginInit();
             this.SuspendLayout();
             // 

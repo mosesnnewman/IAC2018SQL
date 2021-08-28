@@ -7,7 +7,7 @@ using System.Reflection;
 
 using System.Text;
 
-namespace IAC2018SQL
+namespace IAC2021SQL
 {
     public class TableAdapterHelper
     {

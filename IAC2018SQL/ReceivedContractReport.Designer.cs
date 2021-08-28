@@ -1,4 +1,4 @@
-﻿namespace IAC2018SQL
+﻿namespace IAC2021SQL
 {
     partial class ClosedCustomerReceivedContractReport
     {
@@ -32,7 +32,7 @@
             this.buttonPost = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.labelStartDate = new System.Windows.Forms.Label();
-            this.iACDataSet = new IAC2018SQL.IACDataSet();
+            this.iACDataSet = new IAC2021SQL.IACDataSet();
             this.labelEndDate = new System.Windows.Forms.Label();
             this.nullableDateTimePickerStartDate = new ProManApp.NullableDateTimePicker();
             this.nullableDateTimePickerEndDate = new ProManApp.NullableDateTimePicker();
@@ -40,8 +40,8 @@
             this.bindingSourceDLRLISTBYNUM = new System.Windows.Forms.BindingSource(this.components);
             this.comboBoxDealer = new System.Windows.Forms.ComboBox();
             this.labelDealerNum = new System.Windows.Forms.Label();
-            this.dlrlistbynumTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.DLRLISTBYNUMTableAdapter();
-            this.closedCustomerBuybackTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.ClosedCustomerBuybackTableAdapter();
+            this.dlrlistbynumTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.DLRLISTBYNUMTableAdapter();
+            this.closedCustomerBuybackTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.ClosedCustomerBuybackTableAdapter();
             this.radioButtonActive = new System.Windows.Forms.RadioButton();
             this.radioButtonInactive = new System.Windows.Forms.RadioButton();
             this.radioButtonBoth = new System.Windows.Forms.RadioButton();

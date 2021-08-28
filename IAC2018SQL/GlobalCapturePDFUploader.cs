@@ -11,7 +11,7 @@ using S9API.Models;
 
 
 // Moses Newman 04/29/2020 Create Global Search PDF file uploader
-namespace IAC2018SQL
+namespace IAC2021SQL
 {
     public partial class GlobalCapturePDFUploader : Form
     {
@@ -197,7 +197,7 @@ namespace IAC2018SQL
                 if (MessageResult == DialogResult.Yes || MissingFields == "")
                 {
                     //basic authentication
-                    Program.ApiClient.Authenticator = new HttpBasicAuthenticator(@"IAC\Administrator", "IACadmin99");
+                    Program.ApiClient.Authenticator = new RestSharp.Authenticators.HttpBasicAuthenticator(@"IAC\Administrator", "IACadmin99");
 
                     var databaseID = 2;  //Database ID
                     var archiveID = 9;  //Archive ID

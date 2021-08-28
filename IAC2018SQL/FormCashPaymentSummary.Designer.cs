@@ -1,5 +1,5 @@
 ﻿
-namespace IAC2018SQL
+namespace IAC2021SQL
 {
     partial class FormCashPaymentSummary
     {
@@ -56,7 +56,7 @@ namespace IAC2018SQL
             // buttonCancel
             // 
             this.buttonCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCancel.Image = global::IAC2018SQL.Properties.Resources.Cancel_64x;
+            this.buttonCancel.Image = global::IAC2021SQL.Properties.Resources.Cancel_64x;
             this.buttonCancel.Location = new System.Drawing.Point(276, 15);
             this.buttonCancel.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.buttonCancel.Name = "buttonCancel";
@@ -68,7 +68,7 @@ namespace IAC2018SQL
             // buttonPost
             // 
             this.buttonPost.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonPost.Image = global::IAC2018SQL.Properties.Resources.ExportToExcel_64x;
+            this.buttonPost.Image = global::IAC2021SQL.Properties.Resources.ExportToExcel_64x;
             this.buttonPost.Location = new System.Drawing.Point(46, 15);
             this.buttonPost.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.buttonPost.Name = "buttonPost";

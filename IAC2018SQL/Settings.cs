@@ -1,4 +1,4 @@
-﻿namespace IAC2018SQL.Properties {
+﻿namespace IAC2021SQL.Properties {
     
     
     // This class allows you to handle specific events on the settings class:

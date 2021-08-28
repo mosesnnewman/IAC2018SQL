@@ -1,4 +1,4 @@
-﻿namespace IAC2018SQL
+﻿namespace IAC2021SQL
 {
     partial class frmCustMaint
     {
@@ -234,7 +234,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cUSTOMERBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.iACDataSet = new IAC2018SQL.IACDataSet();
+            this.iACDataSet = new IAC2021SQL.IACDataSet();
             this.tabComments = new System.Windows.Forms.TabPage();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.textBox23 = new System.Windows.Forms.TextBox();
@@ -266,7 +266,7 @@
             this.dEALERBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabHistory = new System.Windows.Forms.TabPage();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
-            this.checkBoxFullRecourseHist = new IAC2018SQL.ColorCheckBox();
+            this.checkBoxFullRecourseHist = new IAC2021SQL.ColorCheckBox();
             this.nullableDateTimePickerHistContractDate = new ProManApp.NullableDateTimePicker();
             this.textBoxBuyOutHist = new System.Windows.Forms.TextBox();
             this.nullableDateTimePickerPayDate = new ProManApp.NullableDateTimePicker();
@@ -316,12 +316,12 @@
             this.tabCustInfo1 = new System.Windows.Forms.TabPage();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.nullableDateTimePickerDateContractReceived = new ProManApp.NullableDateTimePicker();
-            this.colorCheckBoxReceivedContract = new IAC2018SQL.ColorCheckBox();
+            this.colorCheckBoxReceivedContract = new IAC2021SQL.ColorCheckBox();
             this.buttonDealerEmail = new System.Windows.Forms.Button();
             this.checkBoxSendToDealer = new System.Windows.Forms.CheckBox();
             this.EmailbindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.textBoxDealerEmail = new System.Windows.Forms.TextBox();
-            this.checkBoxFullRecourseTab1 = new IAC2018SQL.ColorCheckBox();
+            this.checkBoxFullRecourseTab1 = new IAC2021SQL.ColorCheckBox();
             this.checkBoxMilitary = new System.Windows.Forms.CheckBox();
             this.groupBoxSBT = new System.Windows.Forms.GroupBox();
             this.buttonMessage = new System.Windows.Forms.Button();
@@ -388,7 +388,7 @@
             this.cUSTOMER_WORK_PHONETextBox = new System.Windows.Forms.MaskedTextBox();
             this.cUSTOMER_PHONE_NOTextBox = new System.Windows.Forms.MaskedTextBox();
             this.groupBoxRefi = new System.Windows.Forms.GroupBox();
-            this.checkBoxVehicleWarranty = new IAC2018SQL.ColorCheckBox();
+            this.checkBoxVehicleWarranty = new IAC2021SQL.ColorCheckBox();
             this.VehiclebindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.textBoxOpenAccount = new System.Windows.Forms.TextBox();
             this.textBoxAccount = new System.Windows.Forms.TextBox();
@@ -424,7 +424,7 @@
             this.textBoxIACType = new System.Windows.Forms.TextBox();
             this.textBox14 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.colorTextBoxTotalDue = new IAC2018SQL.NewColorTextBox();
+            this.colorTextBoxTotalDue = new IAC2021SQL.NewColorTextBox();
             this.textBoxCheckNo = new System.Windows.Forms.TextBox();
             this.labelCheckNumber = new System.Windows.Forms.Label();
             this.checkBoxCheckIssued = new System.Windows.Forms.CheckBox();
@@ -436,7 +436,7 @@
             this.txtPaidDiscount = new System.Windows.Forms.TextBox();
             this.txtCreditAvailable = new System.Windows.Forms.TextBox();
             this.txtCreditLimit = new System.Windows.Forms.TextBox();
-            this.txtContractStatus = new IAC2018SQL.ColorTextBox();
+            this.txtContractStatus = new IAC2021SQL.ColorTextBox();
             this.txtNumberofMonths = new System.Windows.Forms.TextBox();
             this.txtRebateCode = new System.Windows.Forms.TextBox();
             this.txtDealerDiscBal = new System.Windows.Forms.TextBox();
@@ -459,7 +459,7 @@
             this.textBoxMileage = new System.Windows.Forms.TextBox();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.textBoxTierPoints = new System.Windows.Forms.TextBox();
-            this.checkBoxFullRecourse = new IAC2018SQL.ColorCheckBox();
+            this.checkBoxFullRecourse = new IAC2021SQL.ColorCheckBox();
             this.textBoxBuyersAnnualIncome = new System.Windows.Forms.TextBox();
             this.comboBoxCreditCode = new System.Windows.Forms.ComboBox();
             this.creditCodesBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -634,7 +634,7 @@
             this.orgDateTitleReceivedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.newDateTitleReceivedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.repoLogBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.repoDataSet = new IAC2018SQL.RepoDataSet();
+            this.repoDataSet = new IAC2021SQL.RepoDataSet();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
             this.textBox41 = new System.Windows.Forms.TextBox();
             this.textBox42 = new System.Windows.Forms.TextBox();
@@ -647,7 +647,7 @@
             this.groupBoxDates = new System.Windows.Forms.GroupBox();
             this.checkBoxFollowUpDate = new System.Windows.Forms.CheckBox();
             this.closedCreditManagerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tsbDataSet = new IAC2018SQL.TSBDataSet();
+            this.tsbDataSet = new IAC2021SQL.TSBDataSet();
             this.nullableDateTimePickerFollowUpDate = new ProManApp.NullableDateTimePicker();
             this.nullableDateTimePickerDateClosed = new ProManApp.NullableDateTimePicker();
             this.nullableDateTimePickerDateOpened = new ProManApp.NullableDateTimePicker();
@@ -725,48 +725,48 @@
             this.textBox69 = new System.Windows.Forms.TextBox();
             this.textBox70 = new System.Windows.Forms.TextBox();
             this.textBox53 = new System.Windows.Forms.TextBox();
-            this.cUSTOMERTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.CUSTOMERTableAdapter();
-            this.dEALERTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.DEALERTableAdapter();
-            this.cOMMENTTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.COMMENTTableAdapter();
-            this.cUSTHISTTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.CUSTHISTTableAdapter();
-            this.vEHICLETableAdapter = new IAC2018SQL.IACDataSetTableAdapters.VEHICLETableAdapter();
-            this.aLTNAMETableAdapter = new IAC2018SQL.IACDataSetTableAdapters.ALTNAMETableAdapter();
-            this.oPNBANKTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.OPNBANKTableAdapter();
-            this.dealerlistTableAdapterCust = new IAC2018SQL.IACDataSetTableAdapters.DEALERLISTTableAdapter();
-            this.dLRLISTBYNUMTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.DLRLISTBYNUMTableAdapter();
-            this.comment_TypesTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.Comment_TypesTableAdapter();
-            this.nOTICETableAdapter = new IAC2018SQL.IACDataSetTableAdapters.NOTICETableAdapter();
-            this.letterNumberTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.LetterNumberTableAdapter();
-            this.letterTypeTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.LetterTypeTableAdapter();
-            this.monthNamesTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.MonthNamesTableAdapter();
+            this.cUSTOMERTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.CUSTOMERTableAdapter();
+            this.dEALERTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.DEALERTableAdapter();
+            this.cOMMENTTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.COMMENTTableAdapter();
+            this.cUSTHISTTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.CUSTHISTTableAdapter();
+            this.vEHICLETableAdapter = new IAC2021SQL.IACDataSetTableAdapters.VEHICLETableAdapter();
+            this.aLTNAMETableAdapter = new IAC2021SQL.IACDataSetTableAdapters.ALTNAMETableAdapter();
+            this.oPNBANKTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.OPNBANKTableAdapter();
+            this.dealerlistTableAdapterCust = new IAC2021SQL.IACDataSetTableAdapters.DEALERLISTTableAdapter();
+            this.dLRLISTBYNUMTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.DLRLISTBYNUMTableAdapter();
+            this.comment_TypesTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.Comment_TypesTableAdapter();
+            this.nOTICETableAdapter = new IAC2021SQL.IACDataSetTableAdapters.NOTICETableAdapter();
+            this.letterNumberTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.LetterNumberTableAdapter();
+            this.letterTypeTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.LetterTypeTableAdapter();
+            this.monthNamesTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.MonthNamesTableAdapter();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonEdit = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonDelete = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonSave = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.errorProviderCustomerForm = new System.Windows.Forms.ErrorProvider(this.components);
-            this.repoCodesTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.RepoCodesTableAdapter();
-            this.creditCodesTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.CreditCodesTableAdapter();
-            this.wS_NOTICE_DEALERTableAdapter1 = new IAC2018SQL.IACDataSetTableAdapters.WS_NOTICE_DEALERTableAdapter();
-            this.emailTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.EmailTableAdapter();
-            this.specialCommentCodesTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.SpecialCommentCodesTableAdapter();
-            this.gapSelectionsTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.GapSelectionsTableAdapter();
-            this.genCodesTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.GenCodesTableAdapter();
-            this.customerFeesTableAdapter1 = new IAC2018SQL.IACDataSetTableAdapters.CustomerFeesTableAdapter();
-            this.repoLogTableAdapter1 = new IAC2018SQL.RepoDataSetTableAdapters.RepoLogTableAdapter();
-            this.paymentDataSet = new IAC2018SQL.PaymentDataSet();
+            this.repoCodesTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.RepoCodesTableAdapter();
+            this.creditCodesTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.CreditCodesTableAdapter();
+            this.wS_NOTICE_DEALERTableAdapter1 = new IAC2021SQL.IACDataSetTableAdapters.WS_NOTICE_DEALERTableAdapter();
+            this.emailTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.EmailTableAdapter();
+            this.specialCommentCodesTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.SpecialCommentCodesTableAdapter();
+            this.gapSelectionsTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.GapSelectionsTableAdapter();
+            this.genCodesTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.GenCodesTableAdapter();
+            this.customerFeesTableAdapter1 = new IAC2021SQL.IACDataSetTableAdapters.CustomerFeesTableAdapter();
+            this.repoLogTableAdapter1 = new IAC2021SQL.RepoDataSetTableAdapters.RepoLogTableAdapter();
+            this.paymentDataSet = new IAC2021SQL.PaymentDataSet();
             this.paymentDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.closedCreditManagerTableAdapter = new IAC2018SQL.TSBDataSetTableAdapters.ClosedCreditManagerTableAdapter();
-            this.consumerIndicatorsTableAdapter = new IAC2018SQL.TSBDataSetTableAdapters.ConsumerIndicatorsTableAdapter();
-            this.accountStatusesTableAdapter = new IAC2018SQL.TSBDataSetTableAdapters.AccountStatusesTableAdapter();
-            this.paymentRatingsTableAdapter1 = new IAC2018SQL.TSBDataSetTableAdapters.PaymentRatingsTableAdapter();
-            this.accountTypesTableAdapter1 = new IAC2018SQL.TSBDataSetTableAdapters.AccountTypesTableAdapter();
-            this.complianceConditionCodesTableAdapter = new IAC2018SQL.TSBDataSetTableAdapters.ComplianceConditionCodesTableAdapter();
-            this.eCOACodesTableAdapter = new IAC2018SQL.TSBDataSetTableAdapters.ECOACodesTableAdapter();
-            this.interestTypesTableAdapter = new IAC2018SQL.TSBDataSetTableAdapters.InterestTypesTableAdapter();
-            this.portfolioTypesTableAdapter = new IAC2018SQL.TSBDataSetTableAdapters.PortfolioTypesTableAdapter();
-            this.termsFrequencyTableAdapter = new IAC2018SQL.TSBDataSetTableAdapters.TermsFrequencyTableAdapter();
-            this.mASTERTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.MASTERTableAdapter();
+            this.closedCreditManagerTableAdapter = new IAC2021SQL.TSBDataSetTableAdapters.ClosedCreditManagerTableAdapter();
+            this.consumerIndicatorsTableAdapter = new IAC2021SQL.TSBDataSetTableAdapters.ConsumerIndicatorsTableAdapter();
+            this.accountStatusesTableAdapter = new IAC2021SQL.TSBDataSetTableAdapters.AccountStatusesTableAdapter();
+            this.paymentRatingsTableAdapter1 = new IAC2021SQL.TSBDataSetTableAdapters.PaymentRatingsTableAdapter();
+            this.accountTypesTableAdapter1 = new IAC2021SQL.TSBDataSetTableAdapters.AccountTypesTableAdapter();
+            this.complianceConditionCodesTableAdapter = new IAC2021SQL.TSBDataSetTableAdapters.ComplianceConditionCodesTableAdapter();
+            this.eCOACodesTableAdapter = new IAC2021SQL.TSBDataSetTableAdapters.ECOACodesTableAdapter();
+            this.interestTypesTableAdapter = new IAC2021SQL.TSBDataSetTableAdapters.InterestTypesTableAdapter();
+            this.portfolioTypesTableAdapter = new IAC2021SQL.TSBDataSetTableAdapters.PortfolioTypesTableAdapter();
+            this.termsFrequencyTableAdapter = new IAC2021SQL.TSBDataSetTableAdapters.TermsFrequencyTableAdapter();
+            this.mASTERTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.MASTERTableAdapter();
             label11 = new System.Windows.Forms.Label();
             label10 = new System.Windows.Forms.Label();
             label9 = new System.Windows.Forms.Label();
@@ -3609,7 +3609,7 @@
             // toolStripButtonTVExcel
             // 
             this.toolStripButtonTVExcel.BackColor = System.Drawing.Color.DarkTurquoise;
-            this.toolStripButtonTVExcel.Image = global::IAC2018SQL.Properties.Resources.ExcelWorksheetView_16x_32;
+            this.toolStripButtonTVExcel.Image = global::IAC2021SQL.Properties.Resources.ExcelWorksheetView_16x_32;
             this.toolStripButtonTVExcel.ImageTransparentColor = System.Drawing.Color.DarkTurquoise;
             this.toolStripButtonTVExcel.Name = "toolStripButtonTVExcel";
             this.toolStripButtonTVExcel.Size = new System.Drawing.Size(119, 22);
@@ -9267,13 +9267,13 @@
 
         private IACDataSet iACDataSet;
         private System.Windows.Forms.BindingSource cUSTOMERBindingSource;
-        private IAC2018SQL.IACDataSetTableAdapters.CUSTOMERTableAdapter cUSTOMERTableAdapter;
+        private IAC2021SQL.IACDataSetTableAdapters.CUSTOMERTableAdapter cUSTOMERTableAdapter;
         private System.Windows.Forms.BindingSource dEALERBindingSource;
-        private IAC2018SQL.IACDataSetTableAdapters.DEALERTableAdapter dEALERTableAdapter;
+        private IAC2021SQL.IACDataSetTableAdapters.DEALERTableAdapter dEALERTableAdapter;
         private System.Windows.Forms.BindingSource cOMMENTBindingSource;
-        private IAC2018SQL.IACDataSetTableAdapters.COMMENTTableAdapter cOMMENTTableAdapter;
+        private IAC2021SQL.IACDataSetTableAdapters.COMMENTTableAdapter cOMMENTTableAdapter;
         private System.Windows.Forms.BindingSource cUSTHISTBindingSource;
-        private IAC2018SQL.IACDataSetTableAdapters.CUSTHISTTableAdapter cUSTHISTTableAdapter;
+        private IAC2021SQL.IACDataSetTableAdapters.CUSTHISTTableAdapter cUSTHISTTableAdapter;
         private System.Windows.Forms.TabPage tabComments;
         private System.Windows.Forms.DataGridView cOMMENTDataGridView;
         private System.Windows.Forms.TabPage tabHistory;

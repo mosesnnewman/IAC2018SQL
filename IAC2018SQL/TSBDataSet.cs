@@ -1,4 +1,4 @@
-﻿namespace IAC2018SQL
+﻿namespace IAC2021SQL
 {
     partial class TSBDataSet
     {
@@ -52,7 +52,7 @@
     }
 }
 
-namespace IAC2018SQL.TSBDataSetTableAdapters
+namespace IAC2021SQL.TSBDataSetTableAdapters
 {
     partial class TSBCustomerDelinquenciesTableAdapter
     {
@@ -98,6 +98,7 @@ namespace IAC2018SQL.TSBDataSetTableAdapters
     {
     }
 
-    public partial class ClosedCreditManagerTableAdapter {
+    public partial class ClosedCreditManagerTableAdapter
+    {
     }
 }

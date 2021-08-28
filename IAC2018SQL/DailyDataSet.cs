@@ -1,4 +1,4 @@
-﻿namespace IAC2018SQL
+﻿namespace IAC2021SQL
 {
 
 
@@ -22,7 +22,7 @@
     }
 }
 
-namespace IAC2018SQL.DailyDataSetTableAdapters
+namespace IAC2021SQL.DailyDataSetTableAdapters
 {
     partial class DailyPaymentTypeTotalsTableAdapter
     {
@@ -36,6 +36,7 @@ namespace IAC2018SQL.DailyDataSetTableAdapters
     {
     }
 
-    public partial class DailyBalanceTotalsTableAdapter {
+    public partial class DailyBalanceTotalsTableAdapter
+    {
     }
 }

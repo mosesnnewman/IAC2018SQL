@@ -1,4 +1,4 @@
-﻿namespace IAC2018SQL
+﻿namespace IAC2021SQL
 {
     partial class FormVSIExtract
     {
@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.textBoxDealerName = new System.Windows.Forms.TextBox();
             this.bindingSourceDLRLISTBYNUM = new System.Windows.Forms.BindingSource(this.components);
-            this.iACDataSet = new IAC2018SQL.IACDataSet();
+            this.iACDataSet = new IAC2021SQL.IACDataSet();
             this.comboBoxDealer = new System.Windows.Forms.ComboBox();
             this.labelDealerNum = new System.Windows.Forms.Label();
             this.labelEndDate = new System.Windows.Forms.Label();
@@ -40,7 +40,7 @@
             this.buttonPost = new System.Windows.Forms.Button();
             this.textBoxState = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.dLRLISTBYNUMTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.DLRLISTBYNUMTableAdapter();
+            this.dLRLISTBYNUMTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.DLRLISTBYNUMTableAdapter();
             this.nullableDateTimePickerEndDate = new ProManApp.NullableDateTimePicker();
             this.nullableDateTimePickerStartDate = new ProManApp.NullableDateTimePicker();
             this.groupBoxSelection = new System.Windows.Forms.GroupBox();
@@ -126,7 +126,7 @@
             // buttonCancel
             // 
             this.buttonCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCancel.Image = global::IAC2018SQL.Properties.Resources.Cancel_64x;
+            this.buttonCancel.Image = global::IAC2021SQL.Properties.Resources.Cancel_64x;
             this.buttonCancel.Location = new System.Drawing.Point(276, 15);
             this.buttonCancel.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.buttonCancel.Name = "buttonCancel";
@@ -138,7 +138,7 @@
             // buttonPost
             // 
             this.buttonPost.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonPost.Image = global::IAC2018SQL.Properties.Resources.ExportToExcel_64x;
+            this.buttonPost.Image = global::IAC2021SQL.Properties.Resources.ExportToExcel_64x;
             this.buttonPost.Location = new System.Drawing.Point(46, 15);
             this.buttonPost.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.buttonPost.Name = "buttonPost";

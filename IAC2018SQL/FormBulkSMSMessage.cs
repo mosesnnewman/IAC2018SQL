@@ -8,17 +8,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using IAC2018SQL.GeneralWSProxy;
-using IAC2018SQL.LoginWSProxy;
-using IAC2018SQL.MessageWSProxy;
-using IAC2018SQL.SubscriberWSProxy;
+using IAC2021SQL.GeneralWSProxy;
+using IAC2021SQL.LoginWSProxy;
+using IAC2021SQL.MessageWSProxy;
+using IAC2021SQL.SubscriberWSProxy;
 using Microsoft.Office;
 using Microsoft.Office.Core;
 using Microsoft.Office.Interop;
 using Outlook = Microsoft.Office.Interop.Outlook;
 using Word = Microsoft.Office.Interop.Word;
 
-namespace IAC2018SQL
+namespace IAC2021SQL
 {
     public partial class FormBULKSMSMessage : Form
     {

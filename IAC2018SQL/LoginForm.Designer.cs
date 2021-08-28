@@ -1,4 +1,4 @@
-﻿namespace IAC2018SQL
+﻿namespace IAC2021SQL
 {
     partial class LoginForm
     {
@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.iACDataSet = new IAC2018SQL.IACDataSet();
-            this.uLISTTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.ULISTTableAdapter();
+            this.iACDataSet = new IAC2021SQL.IACDataSet();
+            this.uLISTTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.ULISTTableAdapter();
             this.txtUserID = new System.Windows.Forms.TextBox();
             this.lblUserName = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();

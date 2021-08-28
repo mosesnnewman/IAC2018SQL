@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace IAC2018SQL.SubscriberWSProxy {
+namespace IAC2021SQL.SubscriberWSProxy {
     using System.Runtime.Serialization;
     using System;
     
@@ -298,7 +298,7 @@ namespace IAC2018SQL.SubscriberWSProxy {
         private string MessageField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private IAC2018SQL.SubscriberWSProxy.SubscriberDetails ResponseField;
+        private IAC2021SQL.SubscriberWSProxy.SubscriberDetails ResponseField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private bool ResultField;
@@ -340,7 +340,7 @@ namespace IAC2018SQL.SubscriberWSProxy {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public IAC2018SQL.SubscriberWSProxy.SubscriberDetails Response {
+        public IAC2021SQL.SubscriberWSProxy.SubscriberDetails Response {
             get {
                 return this.ResponseField;
             }
@@ -471,7 +471,7 @@ namespace IAC2018SQL.SubscriberWSProxy {
         private string MessageField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private IAC2018SQL.SubscriberWSProxy.SubscriberStatus[] ResponseField;
+        private IAC2021SQL.SubscriberWSProxy.SubscriberStatus[] ResponseField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -523,7 +523,7 @@ namespace IAC2018SQL.SubscriberWSProxy {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
-        public IAC2018SQL.SubscriberWSProxy.SubscriberStatus[] Response {
+        public IAC2021SQL.SubscriberWSProxy.SubscriberStatus[] Response {
             get {
                 return this.ResponseField;
             }
@@ -992,43 +992,43 @@ namespace IAC2018SQL.SubscriberWSProxy {
     public interface ISubscriber {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://SBTService/ServiceContracts/ISubscriber/Subscribe", ReplyAction="http://SBTService/ServiceContracts/ISubscriber/SubscribeResponse")]
-        IAC2018SQL.SubscriberWSProxy.WSSubscriberResponse Subscribe(string securityToken, IAC2018SQL.SubscriberWSProxy.SubscriberDetails subscriber);
+        IAC2021SQL.SubscriberWSProxy.WSSubscriberResponse Subscribe(string securityToken, IAC2021SQL.SubscriberWSProxy.SubscriberDetails subscriber);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://SBTService/ServiceContracts/ISubscriber/Subscribe", ReplyAction="http://SBTService/ServiceContracts/ISubscriber/SubscribeResponse")]
-        System.Threading.Tasks.Task<IAC2018SQL.SubscriberWSProxy.WSSubscriberResponse> SubscribeAsync(string securityToken, IAC2018SQL.SubscriberWSProxy.SubscriberDetails subscriber);
+        System.Threading.Tasks.Task<IAC2021SQL.SubscriberWSProxy.WSSubscriberResponse> SubscribeAsync(string securityToken, IAC2021SQL.SubscriberWSProxy.SubscriberDetails subscriber);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://SBTService/ServiceContracts/ISubscriber/UnSubscribe", ReplyAction="http://SBTService/ServiceContracts/ISubscriber/UnSubscribeResponse")]
-        IAC2018SQL.SubscriberWSProxy.WSUnsubscriberResponse UnSubscribe(string securityToken, IAC2018SQL.SubscriberWSProxy.SubscriberDetails subscriber);
+        IAC2021SQL.SubscriberWSProxy.WSUnsubscriberResponse UnSubscribe(string securityToken, IAC2021SQL.SubscriberWSProxy.SubscriberDetails subscriber);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://SBTService/ServiceContracts/ISubscriber/UnSubscribe", ReplyAction="http://SBTService/ServiceContracts/ISubscriber/UnSubscribeResponse")]
-        System.Threading.Tasks.Task<IAC2018SQL.SubscriberWSProxy.WSUnsubscriberResponse> UnSubscribeAsync(string securityToken, IAC2018SQL.SubscriberWSProxy.SubscriberDetails subscriber);
+        System.Threading.Tasks.Task<IAC2021SQL.SubscriberWSProxy.WSUnsubscriberResponse> UnSubscribeAsync(string securityToken, IAC2021SQL.SubscriberWSProxy.SubscriberDetails subscriber);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://SBTService/ServiceContracts/ISubscriber/GetSubscribersStatus", ReplyAction="http://SBTService/ServiceContracts/ISubscriber/GetSubscribersStatusResponse")]
-        IAC2018SQL.SubscriberWSProxy.WSSubscribersStatusResponse GetSubscribersStatus(string securityToken, string orgCode, string[] phone);
+        IAC2021SQL.SubscriberWSProxy.WSSubscribersStatusResponse GetSubscribersStatus(string securityToken, string orgCode, string[] phone);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://SBTService/ServiceContracts/ISubscriber/GetSubscribersStatus", ReplyAction="http://SBTService/ServiceContracts/ISubscriber/GetSubscribersStatusResponse")]
-        System.Threading.Tasks.Task<IAC2018SQL.SubscriberWSProxy.WSSubscribersStatusResponse> GetSubscribersStatusAsync(string securityToken, string orgCode, string[] phone);
+        System.Threading.Tasks.Task<IAC2021SQL.SubscriberWSProxy.WSSubscribersStatusResponse> GetSubscribersStatusAsync(string securityToken, string orgCode, string[] phone);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://SBTService/ServiceContracts/ISubscriber/UpdateSubscriber", ReplyAction="http://SBTService/ServiceContracts/ISubscriber/UpdateSubscriberResponse")]
-        IAC2018SQL.SubscriberWSProxy.WSSubscriberResponse UpdateSubscriber(string securityToken, IAC2018SQL.SubscriberWSProxy.SubscriberInfo subscriber);
+        IAC2021SQL.SubscriberWSProxy.WSSubscriberResponse UpdateSubscriber(string securityToken, IAC2021SQL.SubscriberWSProxy.SubscriberInfo subscriber);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://SBTService/ServiceContracts/ISubscriber/UpdateSubscriber", ReplyAction="http://SBTService/ServiceContracts/ISubscriber/UpdateSubscriberResponse")]
-        System.Threading.Tasks.Task<IAC2018SQL.SubscriberWSProxy.WSSubscriberResponse> UpdateSubscriberAsync(string securityToken, IAC2018SQL.SubscriberWSProxy.SubscriberInfo subscriber);
+        System.Threading.Tasks.Task<IAC2021SQL.SubscriberWSProxy.WSSubscriberResponse> UpdateSubscriberAsync(string securityToken, IAC2021SQL.SubscriberWSProxy.SubscriberInfo subscriber);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://SBTService/ServiceContracts/ISubscriber/UpdateSubscriberByOrg", ReplyAction="http://SBTService/ServiceContracts/ISubscriber/UpdateSubscriberByOrgResponse")]
-        IAC2018SQL.SubscriberWSProxy.WSSubscriberResponse UpdateSubscriberByOrg(string securityToken, string orgCode, IAC2018SQL.SubscriberWSProxy.SubscriberInfo subscriber);
+        IAC2021SQL.SubscriberWSProxy.WSSubscriberResponse UpdateSubscriberByOrg(string securityToken, string orgCode, IAC2021SQL.SubscriberWSProxy.SubscriberInfo subscriber);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://SBTService/ServiceContracts/ISubscriber/UpdateSubscriberByOrg", ReplyAction="http://SBTService/ServiceContracts/ISubscriber/UpdateSubscriberByOrgResponse")]
-        System.Threading.Tasks.Task<IAC2018SQL.SubscriberWSProxy.WSSubscriberResponse> UpdateSubscriberByOrgAsync(string securityToken, string orgCode, IAC2018SQL.SubscriberWSProxy.SubscriberInfo subscriber);
+        System.Threading.Tasks.Task<IAC2021SQL.SubscriberWSProxy.WSSubscriberResponse> UpdateSubscriberByOrgAsync(string securityToken, string orgCode, IAC2021SQL.SubscriberWSProxy.SubscriberInfo subscriber);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface ISubscriberChannel : IAC2018SQL.SubscriberWSProxy.ISubscriber, System.ServiceModel.IClientChannel {
+    public interface ISubscriberChannel : IAC2021SQL.SubscriberWSProxy.ISubscriber, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class SubscriberClient : System.ServiceModel.ClientBase<IAC2018SQL.SubscriberWSProxy.ISubscriber>, IAC2018SQL.SubscriberWSProxy.ISubscriber {
+    public partial class SubscriberClient : System.ServiceModel.ClientBase<IAC2021SQL.SubscriberWSProxy.ISubscriber>, IAC2021SQL.SubscriberWSProxy.ISubscriber {
         
         public SubscriberClient() {
         }
@@ -1049,43 +1049,43 @@ namespace IAC2018SQL.SubscriberWSProxy {
                 base(binding, remoteAddress) {
         }
         
-        public IAC2018SQL.SubscriberWSProxy.WSSubscriberResponse Subscribe(string securityToken, IAC2018SQL.SubscriberWSProxy.SubscriberDetails subscriber) {
+        public IAC2021SQL.SubscriberWSProxy.WSSubscriberResponse Subscribe(string securityToken, IAC2021SQL.SubscriberWSProxy.SubscriberDetails subscriber) {
             return base.Channel.Subscribe(securityToken, subscriber);
         }
         
-        public System.Threading.Tasks.Task<IAC2018SQL.SubscriberWSProxy.WSSubscriberResponse> SubscribeAsync(string securityToken, IAC2018SQL.SubscriberWSProxy.SubscriberDetails subscriber) {
+        public System.Threading.Tasks.Task<IAC2021SQL.SubscriberWSProxy.WSSubscriberResponse> SubscribeAsync(string securityToken, IAC2021SQL.SubscriberWSProxy.SubscriberDetails subscriber) {
             return base.Channel.SubscribeAsync(securityToken, subscriber);
         }
         
-        public IAC2018SQL.SubscriberWSProxy.WSUnsubscriberResponse UnSubscribe(string securityToken, IAC2018SQL.SubscriberWSProxy.SubscriberDetails subscriber) {
+        public IAC2021SQL.SubscriberWSProxy.WSUnsubscriberResponse UnSubscribe(string securityToken, IAC2021SQL.SubscriberWSProxy.SubscriberDetails subscriber) {
             return base.Channel.UnSubscribe(securityToken, subscriber);
         }
         
-        public System.Threading.Tasks.Task<IAC2018SQL.SubscriberWSProxy.WSUnsubscriberResponse> UnSubscribeAsync(string securityToken, IAC2018SQL.SubscriberWSProxy.SubscriberDetails subscriber) {
+        public System.Threading.Tasks.Task<IAC2021SQL.SubscriberWSProxy.WSUnsubscriberResponse> UnSubscribeAsync(string securityToken, IAC2021SQL.SubscriberWSProxy.SubscriberDetails subscriber) {
             return base.Channel.UnSubscribeAsync(securityToken, subscriber);
         }
         
-        public IAC2018SQL.SubscriberWSProxy.WSSubscribersStatusResponse GetSubscribersStatus(string securityToken, string orgCode, string[] phone) {
+        public IAC2021SQL.SubscriberWSProxy.WSSubscribersStatusResponse GetSubscribersStatus(string securityToken, string orgCode, string[] phone) {
             return base.Channel.GetSubscribersStatus(securityToken, orgCode, phone);
         }
         
-        public System.Threading.Tasks.Task<IAC2018SQL.SubscriberWSProxy.WSSubscribersStatusResponse> GetSubscribersStatusAsync(string securityToken, string orgCode, string[] phone) {
+        public System.Threading.Tasks.Task<IAC2021SQL.SubscriberWSProxy.WSSubscribersStatusResponse> GetSubscribersStatusAsync(string securityToken, string orgCode, string[] phone) {
             return base.Channel.GetSubscribersStatusAsync(securityToken, orgCode, phone);
         }
         
-        public IAC2018SQL.SubscriberWSProxy.WSSubscriberResponse UpdateSubscriber(string securityToken, IAC2018SQL.SubscriberWSProxy.SubscriberInfo subscriber) {
+        public IAC2021SQL.SubscriberWSProxy.WSSubscriberResponse UpdateSubscriber(string securityToken, IAC2021SQL.SubscriberWSProxy.SubscriberInfo subscriber) {
             return base.Channel.UpdateSubscriber(securityToken, subscriber);
         }
         
-        public System.Threading.Tasks.Task<IAC2018SQL.SubscriberWSProxy.WSSubscriberResponse> UpdateSubscriberAsync(string securityToken, IAC2018SQL.SubscriberWSProxy.SubscriberInfo subscriber) {
+        public System.Threading.Tasks.Task<IAC2021SQL.SubscriberWSProxy.WSSubscriberResponse> UpdateSubscriberAsync(string securityToken, IAC2021SQL.SubscriberWSProxy.SubscriberInfo subscriber) {
             return base.Channel.UpdateSubscriberAsync(securityToken, subscriber);
         }
         
-        public IAC2018SQL.SubscriberWSProxy.WSSubscriberResponse UpdateSubscriberByOrg(string securityToken, string orgCode, IAC2018SQL.SubscriberWSProxy.SubscriberInfo subscriber) {
+        public IAC2021SQL.SubscriberWSProxy.WSSubscriberResponse UpdateSubscriberByOrg(string securityToken, string orgCode, IAC2021SQL.SubscriberWSProxy.SubscriberInfo subscriber) {
             return base.Channel.UpdateSubscriberByOrg(securityToken, orgCode, subscriber);
         }
         
-        public System.Threading.Tasks.Task<IAC2018SQL.SubscriberWSProxy.WSSubscriberResponse> UpdateSubscriberByOrgAsync(string securityToken, string orgCode, IAC2018SQL.SubscriberWSProxy.SubscriberInfo subscriber) {
+        public System.Threading.Tasks.Task<IAC2021SQL.SubscriberWSProxy.WSSubscriberResponse> UpdateSubscriberByOrgAsync(string securityToken, string orgCode, IAC2021SQL.SubscriberWSProxy.SubscriberInfo subscriber) {
             return base.Channel.UpdateSubscriberByOrgAsync(securityToken, orgCode, subscriber);
         }
     }

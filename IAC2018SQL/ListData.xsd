@@ -4,7 +4,7 @@
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="IAC2010SQLConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="IAC2010SQLConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.IAC2018SQL.Properties.Settings.GlobalReference.Default.SSISParamsConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="IAC2010SQLConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="IAC2010SQLConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.IAC2021SQL.Properties.Settings.GlobalReference.Default.SSISParamsConnectionString" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DEALERLISTTableAdapter" GeneratorDataComponentClassName="DEALERLISTTableAdapter" Name="DEALERLIST" UserDataComponentName="DEALERLISTTableAdapter">
@@ -870,7 +870,7 @@ ORDER BY MonthNumber</CommandText>
   <xs:element name="ListData" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="ListData" msprop:Generator_UserDSName="ListData">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="DEALERLIST" msprop:Generator_TableClassName="DEALERLISTDataTable" msprop:Generator_TableVarName="tableDEALERLIST" msprop:Generator_RowChangedName="DEALERLISTRowChanged" msprop:Generator_TablePropName="DEALERLIST" msprop:Generator_RowDeletingName="DEALERLISTRowDeleting" msprop:Generator_RowChangingName="DEALERLISTRowChanging" msprop:Generator_RowEvHandlerName="DEALERLISTRowChangeEventHandler" msprop:Generator_RowDeletedName="DEALERLISTRowDeleted" msprop:Generator_RowClassName="DEALERLISTRow" msprop:Generator_UserTableName="DEALERLIST" msprop:Generator_RowEvArgName="DEALERLISTRowChangeEvent">
+        <xs:element name="DEALERLIST" msprop:Generator_TableClassName="DEALERLISTDataTable" msprop:Generator_TableVarName="tableDEALERLIST" msprop:Generator_TablePropName="DEALERLIST" msprop:Generator_RowDeletingName="DEALERLISTRowDeleting" msprop:Generator_RowChangingName="DEALERLISTRowChanging" msprop:Generator_RowEvHandlerName="DEALERLISTRowChangeEventHandler" msprop:Generator_RowDeletedName="DEALERLISTRowDeleted" msprop:Generator_UserTableName="DEALERLIST" msprop:Generator_RowChangedName="DEALERLISTRowChanged" msprop:Generator_RowEvArgName="DEALERLISTRowChangeEvent" msprop:Generator_RowClassName="DEALERLISTRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="DEALER_ACC_NO" msprop:Generator_ColumnVarNameInTable="columnDEALER_ACC_NO" msprop:Generator_ColumnPropNameInRow="DEALER_ACC_NO" msprop:Generator_ColumnPropNameInTable="DEALER_ACC_NOColumn" msprop:Generator_UserColumnName="DEALER_ACC_NO">
@@ -890,7 +890,7 @@ ORDER BY MonthNumber</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="PAYMENTTYPE" msprop:Generator_TableClassName="PAYMENTTYPEDataTable" msprop:Generator_TableVarName="tablePAYMENTTYPE" msprop:Generator_RowChangedName="PAYMENTTYPERowChanged" msprop:Generator_TablePropName="PAYMENTTYPE" msprop:Generator_RowDeletingName="PAYMENTTYPERowDeleting" msprop:Generator_RowChangingName="PAYMENTTYPERowChanging" msprop:Generator_RowEvHandlerName="PAYMENTTYPERowChangeEventHandler" msprop:Generator_RowDeletedName="PAYMENTTYPERowDeleted" msprop:Generator_RowClassName="PAYMENTTYPERow" msprop:Generator_UserTableName="PAYMENTTYPE" msprop:Generator_RowEvArgName="PAYMENTTYPERowChangeEvent">
+        <xs:element name="PAYMENTTYPE" msprop:Generator_TableClassName="PAYMENTTYPEDataTable" msprop:Generator_TableVarName="tablePAYMENTTYPE" msprop:Generator_TablePropName="PAYMENTTYPE" msprop:Generator_RowDeletingName="PAYMENTTYPERowDeleting" msprop:Generator_RowChangingName="PAYMENTTYPERowChanging" msprop:Generator_RowEvHandlerName="PAYMENTTYPERowChangeEventHandler" msprop:Generator_RowDeletedName="PAYMENTTYPERowDeleted" msprop:Generator_UserTableName="PAYMENTTYPE" msprop:Generator_RowChangedName="PAYMENTTYPERowChanged" msprop:Generator_RowEvArgName="PAYMENTTYPERowChangeEvent" msprop:Generator_RowClassName="PAYMENTTYPERow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="TYPE" msprop:Generator_ColumnVarNameInTable="columnTYPE" msprop:Generator_ColumnPropNameInRow="TYPE" msprop:Generator_ColumnPropNameInTable="TYPEColumn" msprop:Generator_UserColumnName="TYPE" default=" ">
@@ -910,7 +910,7 @@ ORDER BY MonthNumber</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="OPNDEALRLIST" msprop:Generator_TableClassName="OPNDEALRLISTDataTable" msprop:Generator_TableVarName="tableOPNDEALRLIST" msprop:Generator_RowChangedName="OPNDEALRLISTRowChanged" msprop:Generator_TablePropName="OPNDEALRLIST" msprop:Generator_RowDeletingName="OPNDEALRLISTRowDeleting" msprop:Generator_RowChangingName="OPNDEALRLISTRowChanging" msprop:Generator_RowEvHandlerName="OPNDEALRLISTRowChangeEventHandler" msprop:Generator_RowDeletedName="OPNDEALRLISTRowDeleted" msprop:Generator_RowClassName="OPNDEALRLISTRow" msprop:Generator_UserTableName="OPNDEALRLIST" msprop:Generator_RowEvArgName="OPNDEALRLISTRowChangeEvent">
+        <xs:element name="OPNDEALRLIST" msprop:Generator_TableClassName="OPNDEALRLISTDataTable" msprop:Generator_TableVarName="tableOPNDEALRLIST" msprop:Generator_TablePropName="OPNDEALRLIST" msprop:Generator_RowDeletingName="OPNDEALRLISTRowDeleting" msprop:Generator_RowChangingName="OPNDEALRLISTRowChanging" msprop:Generator_RowEvHandlerName="OPNDEALRLISTRowChangeEventHandler" msprop:Generator_RowDeletedName="OPNDEALRLISTRowDeleted" msprop:Generator_UserTableName="OPNDEALRLIST" msprop:Generator_RowChangedName="OPNDEALRLISTRowChanged" msprop:Generator_RowEvArgName="OPNDEALRLISTRowChangeEvent" msprop:Generator_RowClassName="OPNDEALRLISTRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="OPNDEALR_ACC_NO" msprop:Generator_ColumnVarNameInTable="columnOPNDEALR_ACC_NO" msprop:Generator_ColumnPropNameInRow="OPNDEALR_ACC_NO" msprop:Generator_ColumnPropNameInTable="OPNDEALR_ACC_NOColumn" msprop:Generator_UserColumnName="OPNDEALR_ACC_NO">
@@ -930,7 +930,7 @@ ORDER BY MonthNumber</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="PAYCODE" msprop:Generator_TableClassName="PAYCODEDataTable" msprop:Generator_TableVarName="tablePAYCODE" msprop:Generator_RowChangedName="PAYCODERowChanged" msprop:Generator_TablePropName="PAYCODE" msprop:Generator_RowDeletingName="PAYCODERowDeleting" msprop:Generator_RowChangingName="PAYCODERowChanging" msprop:Generator_RowEvHandlerName="PAYCODERowChangeEventHandler" msprop:Generator_RowDeletedName="PAYCODERowDeleted" msprop:Generator_RowClassName="PAYCODERow" msprop:Generator_UserTableName="PAYCODE" msprop:Generator_RowEvArgName="PAYCODERowChangeEvent">
+        <xs:element name="PAYCODE" msprop:Generator_TableClassName="PAYCODEDataTable" msprop:Generator_TableVarName="tablePAYCODE" msprop:Generator_TablePropName="PAYCODE" msprop:Generator_RowDeletingName="PAYCODERowDeleting" msprop:Generator_RowChangingName="PAYCODERowChanging" msprop:Generator_RowEvHandlerName="PAYCODERowChangeEventHandler" msprop:Generator_RowDeletedName="PAYCODERowDeleted" msprop:Generator_UserTableName="PAYCODE" msprop:Generator_RowChangedName="PAYCODERowChanged" msprop:Generator_RowEvArgName="PAYCODERowChangeEvent" msprop:Generator_RowClassName="PAYCODERow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CODE" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="CODE" msprop:Generator_ColumnVarNameInTable="columnCODE" msprop:Generator_ColumnPropNameInTable="CODEColumn" msprop:Generator_UserColumnName="CODE" default="#">
@@ -950,7 +950,7 @@ ORDER BY MonthNumber</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="MASTERLIST" msprop:Generator_TableClassName="MASTERLISTDataTable" msprop:Generator_TableVarName="tableMASTERLIST" msprop:Generator_RowChangedName="MASTERLISTRowChanged" msprop:Generator_TablePropName="MASTERLIST" msprop:Generator_RowDeletingName="MASTERLISTRowDeleting" msprop:Generator_RowChangingName="MASTERLISTRowChanging" msprop:Generator_RowEvHandlerName="MASTERLISTRowChangeEventHandler" msprop:Generator_RowDeletedName="MASTERLISTRowDeleted" msprop:Generator_RowClassName="MASTERLISTRow" msprop:Generator_UserTableName="MASTERLIST" msprop:Generator_RowEvArgName="MASTERLISTRowChangeEvent">
+        <xs:element name="MASTERLIST" msprop:Generator_TableClassName="MASTERLISTDataTable" msprop:Generator_TableVarName="tableMASTERLIST" msprop:Generator_TablePropName="MASTERLIST" msprop:Generator_RowDeletingName="MASTERLISTRowDeleting" msprop:Generator_RowChangingName="MASTERLISTRowChanging" msprop:Generator_RowEvHandlerName="MASTERLISTRowChangeEventHandler" msprop:Generator_RowDeletedName="MASTERLISTRowDeleted" msprop:Generator_UserTableName="MASTERLIST" msprop:Generator_RowChangedName="MASTERLISTRowChanged" msprop:Generator_RowEvArgName="MASTERLISTRowChangeEvent" msprop:Generator_RowClassName="MASTERLISTRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="MASTER_ACC_NO" msprop:Generator_ColumnVarNameInTable="columnMASTER_ACC_NO" msprop:Generator_ColumnPropNameInRow="MASTER_ACC_NO" msprop:Generator_ColumnPropNameInTable="MASTER_ACC_NOColumn" msprop:Generator_UserColumnName="MASTER_ACC_NO" default="   ">
@@ -970,7 +970,7 @@ ORDER BY MonthNumber</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="OPNCLSCUSTOMER" msprop:Generator_TableClassName="OPNCLSCUSTOMERDataTable" msprop:Generator_TableVarName="tableOPNCLSCUSTOMER" msprop:Generator_RowChangedName="OPNCLSCUSTOMERRowChanged" msprop:Generator_TablePropName="OPNCLSCUSTOMER" msprop:Generator_RowDeletingName="OPNCLSCUSTOMERRowDeleting" msprop:Generator_RowChangingName="OPNCLSCUSTOMERRowChanging" msprop:Generator_RowEvHandlerName="OPNCLSCUSTOMERRowChangeEventHandler" msprop:Generator_RowDeletedName="OPNCLSCUSTOMERRowDeleted" msprop:Generator_RowClassName="OPNCLSCUSTOMERRow" msprop:Generator_UserTableName="OPNCLSCUSTOMER" msprop:Generator_RowEvArgName="OPNCLSCUSTOMERRowChangeEvent">
+        <xs:element name="OPNCLSCUSTOMER" msprop:Generator_TableClassName="OPNCLSCUSTOMERDataTable" msprop:Generator_TableVarName="tableOPNCLSCUSTOMER" msprop:Generator_TablePropName="OPNCLSCUSTOMER" msprop:Generator_RowDeletingName="OPNCLSCUSTOMERRowDeleting" msprop:Generator_RowChangingName="OPNCLSCUSTOMERRowChanging" msprop:Generator_RowEvHandlerName="OPNCLSCUSTOMERRowChangeEventHandler" msprop:Generator_RowDeletedName="OPNCLSCUSTOMERRowDeleted" msprop:Generator_UserTableName="OPNCLSCUSTOMER" msprop:Generator_RowChangedName="OPNCLSCUSTOMERRowChanged" msprop:Generator_RowEvArgName="OPNCLSCUSTOMERRowChangeEvent" msprop:Generator_RowClassName="OPNCLSCUSTOMERRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="CUSTOMER_NO" msprop:Generator_ColumnVarNameInTable="columnCUSTOMER_NO" msprop:Generator_ColumnPropNameInRow="CUSTOMER_NO" msprop:Generator_ColumnPropNameInTable="CUSTOMER_NOColumn" msprop:Generator_UserColumnName="CUSTOMER_NO" default="" minOccurs="0">
@@ -1096,7 +1096,7 @@ ORDER BY MonthNumber</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="DLRLISTBYNUM" msprop:Generator_TableClassName="DLRLISTBYNUMDataTable" msprop:Generator_TableVarName="tableDLRLISTBYNUM" msprop:Generator_RowChangedName="DLRLISTBYNUMRowChanged" msprop:Generator_TablePropName="DLRLISTBYNUM" msprop:Generator_RowDeletingName="DLRLISTBYNUMRowDeleting" msprop:Generator_RowChangingName="DLRLISTBYNUMRowChanging" msprop:Generator_RowEvHandlerName="DLRLISTBYNUMRowChangeEventHandler" msprop:Generator_RowDeletedName="DLRLISTBYNUMRowDeleted" msprop:Generator_RowClassName="DLRLISTBYNUMRow" msprop:Generator_UserTableName="DLRLISTBYNUM" msprop:Generator_RowEvArgName="DLRLISTBYNUMRowChangeEvent">
+        <xs:element name="DLRLISTBYNUM" msprop:Generator_TableClassName="DLRLISTBYNUMDataTable" msprop:Generator_TableVarName="tableDLRLISTBYNUM" msprop:Generator_TablePropName="DLRLISTBYNUM" msprop:Generator_RowDeletingName="DLRLISTBYNUMRowDeleting" msprop:Generator_RowChangingName="DLRLISTBYNUMRowChanging" msprop:Generator_RowEvHandlerName="DLRLISTBYNUMRowChangeEventHandler" msprop:Generator_RowDeletedName="DLRLISTBYNUMRowDeleted" msprop:Generator_UserTableName="DLRLISTBYNUM" msprop:Generator_RowChangedName="DLRLISTBYNUMRowChanged" msprop:Generator_RowEvArgName="DLRLISTBYNUMRowChangeEvent" msprop:Generator_RowClassName="DLRLISTBYNUMRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="DEALER_ACC_NO" msprop:Generator_ColumnVarNameInTable="columnDEALER_ACC_NO" msprop:Generator_ColumnPropNameInRow="DEALER_ACC_NO" msprop:Generator_ColumnPropNameInTable="DEALER_ACC_NOColumn" msprop:Generator_UserColumnName="DEALER_ACC_NO" default="   ">
@@ -1116,7 +1116,7 @@ ORDER BY MonthNumber</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="OPNDLRLISTBYNUM" msprop:Generator_TableClassName="OPNDLRLISTBYNUMDataTable" msprop:Generator_TableVarName="tableOPNDLRLISTBYNUM" msprop:Generator_RowChangedName="OPNDLRLISTBYNUMRowChanged" msprop:Generator_TablePropName="OPNDLRLISTBYNUM" msprop:Generator_RowDeletingName="OPNDLRLISTBYNUMRowDeleting" msprop:Generator_RowChangingName="OPNDLRLISTBYNUMRowChanging" msprop:Generator_RowEvHandlerName="OPNDLRLISTBYNUMRowChangeEventHandler" msprop:Generator_RowDeletedName="OPNDLRLISTBYNUMRowDeleted" msprop:Generator_RowClassName="OPNDLRLISTBYNUMRow" msprop:Generator_UserTableName="OPNDLRLISTBYNUM" msprop:Generator_RowEvArgName="OPNDLRLISTBYNUMRowChangeEvent">
+        <xs:element name="OPNDLRLISTBYNUM" msprop:Generator_TableClassName="OPNDLRLISTBYNUMDataTable" msprop:Generator_TableVarName="tableOPNDLRLISTBYNUM" msprop:Generator_TablePropName="OPNDLRLISTBYNUM" msprop:Generator_RowDeletingName="OPNDLRLISTBYNUMRowDeleting" msprop:Generator_RowChangingName="OPNDLRLISTBYNUMRowChanging" msprop:Generator_RowEvHandlerName="OPNDLRLISTBYNUMRowChangeEventHandler" msprop:Generator_RowDeletedName="OPNDLRLISTBYNUMRowDeleted" msprop:Generator_UserTableName="OPNDLRLISTBYNUM" msprop:Generator_RowChangedName="OPNDLRLISTBYNUMRowChanged" msprop:Generator_RowEvArgName="OPNDLRLISTBYNUMRowChangeEvent" msprop:Generator_RowClassName="OPNDLRLISTBYNUMRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="OPNDEALR_ACC_NO" msprop:Generator_ColumnVarNameInTable="columnOPNDEALR_ACC_NO" msprop:Generator_ColumnPropNameInRow="OPNDEALR_ACC_NO" msprop:Generator_ColumnPropNameInTable="OPNDEALR_ACC_NOColumn" msprop:Generator_UserColumnName="OPNDEALR_ACC_NO" default="   ">
@@ -1136,7 +1136,7 @@ ORDER BY MonthNumber</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Comment_Types" msprop:Generator_TableClassName="Comment_TypesDataTable" msprop:Generator_TableVarName="tableComment_Types" msprop:Generator_RowChangedName="Comment_TypesRowChanged" msprop:Generator_TablePropName="Comment_Types" msprop:Generator_RowDeletingName="Comment_TypesRowDeleting" msprop:Generator_RowChangingName="Comment_TypesRowChanging" msprop:Generator_RowEvHandlerName="Comment_TypesRowChangeEventHandler" msprop:Generator_RowDeletedName="Comment_TypesRowDeleted" msprop:Generator_RowClassName="Comment_TypesRow" msprop:Generator_UserTableName="Comment_Types" msprop:Generator_RowEvArgName="Comment_TypesRowChangeEvent">
+        <xs:element name="Comment_Types" msprop:Generator_TableClassName="Comment_TypesDataTable" msprop:Generator_TableVarName="tableComment_Types" msprop:Generator_TablePropName="Comment_Types" msprop:Generator_RowDeletingName="Comment_TypesRowDeleting" msprop:Generator_RowChangingName="Comment_TypesRowChanging" msprop:Generator_RowEvHandlerName="Comment_TypesRowChangeEventHandler" msprop:Generator_RowDeletedName="Comment_TypesRowDeleted" msprop:Generator_UserTableName="Comment_Types" msprop:Generator_RowChangedName="Comment_TypesRowChanged" msprop:Generator_RowEvArgName="Comment_TypesRowChangeEvent" msprop:Generator_RowClassName="Comment_TypesRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Type" msprop:Generator_ColumnVarNameInTable="columnType" msprop:Generator_ColumnPropNameInRow="Type" msprop:Generator_ColumnPropNameInTable="TypeColumn" msprop:Generator_UserColumnName="Type" minOccurs="0">
@@ -1164,7 +1164,7 @@ ORDER BY MonthNumber</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="STATEREB" msprop:Generator_TableClassName="STATEREBDataTable" msprop:Generator_TableVarName="tableSTATEREB" msprop:Generator_RowChangedName="STATEREBRowChanged" msprop:Generator_TablePropName="STATEREB" msprop:Generator_RowDeletingName="STATEREBRowDeleting" msprop:Generator_RowChangingName="STATEREBRowChanging" msprop:Generator_RowEvHandlerName="STATEREBRowChangeEventHandler" msprop:Generator_RowDeletedName="STATEREBRowDeleted" msprop:Generator_RowClassName="STATEREBRow" msprop:Generator_UserTableName="STATEREB" msprop:Generator_RowEvArgName="STATEREBRowChangeEvent">
+        <xs:element name="STATEREB" msprop:Generator_TableClassName="STATEREBDataTable" msprop:Generator_TableVarName="tableSTATEREB" msprop:Generator_TablePropName="STATEREB" msprop:Generator_RowDeletingName="STATEREBRowDeleting" msprop:Generator_RowChangingName="STATEREBRowChanging" msprop:Generator_RowEvHandlerName="STATEREBRowChangeEventHandler" msprop:Generator_RowDeletedName="STATEREBRowDeleted" msprop:Generator_UserTableName="STATEREB" msprop:Generator_RowChangedName="STATEREBRowChanged" msprop:Generator_RowEvArgName="STATEREBRowChangeEvent" msprop:Generator_RowClassName="STATEREBRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="REBATE_STATE" msprop:Generator_ColumnVarNameInTable="columnREBATE_STATE" msprop:Generator_ColumnPropNameInRow="REBATE_STATE" msprop:Generator_ColumnPropNameInTable="REBATE_STATEColumn" msprop:Generator_UserColumnName="REBATE_STATE" minOccurs="0">
@@ -1191,7 +1191,7 @@ ORDER BY MonthNumber</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="AddOnType" msprop:Generator_TableClassName="AddOnTypeDataTable" msprop:Generator_TableVarName="tableAddOnType" msprop:Generator_RowChangedName="AddOnTypeRowChanged" msprop:Generator_TablePropName="AddOnType" msprop:Generator_RowDeletingName="AddOnTypeRowDeleting" msprop:Generator_RowChangingName="AddOnTypeRowChanging" msprop:Generator_RowEvHandlerName="AddOnTypeRowChangeEventHandler" msprop:Generator_RowDeletedName="AddOnTypeRowDeleted" msprop:Generator_RowClassName="AddOnTypeRow" msprop:Generator_UserTableName="AddOnType" msprop:Generator_RowEvArgName="AddOnTypeRowChangeEvent">
+        <xs:element name="AddOnType" msprop:Generator_TableClassName="AddOnTypeDataTable" msprop:Generator_TableVarName="tableAddOnType" msprop:Generator_TablePropName="AddOnType" msprop:Generator_RowDeletingName="AddOnTypeRowDeleting" msprop:Generator_RowChangingName="AddOnTypeRowChanging" msprop:Generator_RowEvHandlerName="AddOnTypeRowChangeEventHandler" msprop:Generator_RowDeletedName="AddOnTypeRowDeleted" msprop:Generator_UserTableName="AddOnType" msprop:Generator_RowChangedName="AddOnTypeRowChanged" msprop:Generator_RowEvArgName="AddOnTypeRowChangeEvent" msprop:Generator_RowClassName="AddOnTypeRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -1212,7 +1212,7 @@ ORDER BY MonthNumber</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SpecialCommentCodes" msprop:Generator_TableClassName="SpecialCommentCodesDataTable" msprop:Generator_TableVarName="tableSpecialCommentCodes" msprop:Generator_TablePropName="SpecialCommentCodes" msprop:Generator_RowDeletingName="SpecialCommentCodesRowDeleting" msprop:Generator_RowChangingName="SpecialCommentCodesRowChanging" msprop:Generator_RowEvHandlerName="SpecialCommentCodesRowChangeEventHandler" msprop:Generator_RowDeletedName="SpecialCommentCodesRowDeleted" msprop:Generator_UserTableName="SpecialCommentCodes" msprop:Generator_RowChangedName="SpecialCommentCodesRowChanged" msprop:Generator_RowEvArgName="SpecialCommentCodesRowChangeEvent" msprop:Generator_RowClassName="SpecialCommentCodesRow">
+        <xs:element name="SpecialCommentCodes" msprop:Generator_TableClassName="SpecialCommentCodesDataTable" msprop:Generator_TableVarName="tableSpecialCommentCodes" msprop:Generator_RowChangedName="SpecialCommentCodesRowChanged" msprop:Generator_TablePropName="SpecialCommentCodes" msprop:Generator_RowDeletingName="SpecialCommentCodesRowDeleting" msprop:Generator_RowChangingName="SpecialCommentCodesRowChanging" msprop:Generator_RowEvHandlerName="SpecialCommentCodesRowChangeEventHandler" msprop:Generator_RowDeletedName="SpecialCommentCodesRowDeleted" msprop:Generator_RowClassName="SpecialCommentCodesRow" msprop:Generator_UserTableName="SpecialCommentCodes" msprop:Generator_RowEvArgName="SpecialCommentCodesRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Code" msprop:Generator_ColumnVarNameInTable="columnCode" msprop:Generator_ColumnPropNameInRow="Code" msprop:Generator_ColumnPropNameInTable="CodeColumn" msprop:Generator_UserColumnName="Code">
@@ -1232,14 +1232,14 @@ ORDER BY MonthNumber</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="LetterNumber" msprop:Generator_TableClassName="LetterNumberDataTable" msprop:Generator_TableVarName="tableLetterNumber" msprop:Generator_TablePropName="LetterNumber" msprop:Generator_RowDeletingName="LetterNumberRowDeleting" msprop:Generator_RowChangingName="LetterNumberRowChanging" msprop:Generator_RowEvHandlerName="LetterNumberRowChangeEventHandler" msprop:Generator_RowDeletedName="LetterNumberRowDeleted" msprop:Generator_UserTableName="LetterNumber" msprop:Generator_RowChangedName="LetterNumberRowChanged" msprop:Generator_RowEvArgName="LetterNumberRowChangeEvent" msprop:Generator_RowClassName="LetterNumberRow">
+        <xs:element name="LetterNumber" msprop:Generator_TableClassName="LetterNumberDataTable" msprop:Generator_TableVarName="tableLetterNumber" msprop:Generator_RowChangedName="LetterNumberRowChanged" msprop:Generator_TablePropName="LetterNumber" msprop:Generator_RowDeletingName="LetterNumberRowDeleting" msprop:Generator_RowChangingName="LetterNumberRowChanging" msprop:Generator_RowEvHandlerName="LetterNumberRowChangeEventHandler" msprop:Generator_RowDeletedName="LetterNumberRowDeleted" msprop:Generator_RowClassName="LetterNumberRow" msprop:Generator_UserTableName="LetterNumber" msprop:Generator_RowEvArgName="LetterNumberRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="LetterNo" msprop:Generator_ColumnVarNameInTable="columnLetterNo" msprop:Generator_ColumnPropNameInRow="LetterNo" msprop:Generator_ColumnPropNameInTable="LetterNoColumn" msprop:Generator_UserColumnName="LetterNo" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="LetterType" msprop:Generator_TableClassName="LetterTypeDataTable" msprop:Generator_TableVarName="tableLetterType" msprop:Generator_TablePropName="LetterType" msprop:Generator_RowDeletingName="LetterTypeRowDeleting" msprop:Generator_RowChangingName="LetterTypeRowChanging" msprop:Generator_RowEvHandlerName="LetterTypeRowChangeEventHandler" msprop:Generator_RowDeletedName="LetterTypeRowDeleted" msprop:Generator_UserTableName="LetterType" msprop:Generator_RowChangedName="LetterTypeRowChanged" msprop:Generator_RowEvArgName="LetterTypeRowChangeEvent" msprop:Generator_RowClassName="LetterTypeRow">
+        <xs:element name="LetterType" msprop:Generator_TableClassName="LetterTypeDataTable" msprop:Generator_TableVarName="tableLetterType" msprop:Generator_RowChangedName="LetterTypeRowChanged" msprop:Generator_TablePropName="LetterType" msprop:Generator_RowDeletingName="LetterTypeRowDeleting" msprop:Generator_RowChangingName="LetterTypeRowChanging" msprop:Generator_RowEvHandlerName="LetterTypeRowChangeEventHandler" msprop:Generator_RowDeletedName="LetterTypeRowDeleted" msprop:Generator_RowClassName="LetterTypeRow" msprop:Generator_UserTableName="LetterType" msprop:Generator_RowEvArgName="LetterTypeRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="LetterType" msprop:Generator_ColumnVarNameInTable="columnLetterType" msprop:Generator_ColumnPropNameInRow="LetterType" msprop:Generator_ColumnPropNameInTable="LetterTypeColumn" msprop:Generator_UserColumnName="LetterType" minOccurs="0">
@@ -1252,7 +1252,7 @@ ORDER BY MonthNumber</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="MonthNames" msprop:Generator_TableClassName="MonthNamesDataTable" msprop:Generator_TableVarName="tableMonthNames" msprop:Generator_TablePropName="MonthNames" msprop:Generator_RowDeletingName="MonthNamesRowDeleting" msprop:Generator_RowChangingName="MonthNamesRowChanging" msprop:Generator_RowEvHandlerName="MonthNamesRowChangeEventHandler" msprop:Generator_RowDeletedName="MonthNamesRowDeleted" msprop:Generator_UserTableName="MonthNames" msprop:Generator_RowChangedName="MonthNamesRowChanged" msprop:Generator_RowEvArgName="MonthNamesRowChangeEvent" msprop:Generator_RowClassName="MonthNamesRow">
+        <xs:element name="MonthNames" msprop:Generator_TableClassName="MonthNamesDataTable" msprop:Generator_TableVarName="tableMonthNames" msprop:Generator_RowChangedName="MonthNamesRowChanged" msprop:Generator_TablePropName="MonthNames" msprop:Generator_RowDeletingName="MonthNamesRowDeleting" msprop:Generator_RowChangingName="MonthNamesRowChanging" msprop:Generator_RowEvHandlerName="MonthNamesRowChangeEventHandler" msprop:Generator_RowDeletedName="MonthNamesRowDeleted" msprop:Generator_RowClassName="MonthNamesRow" msprop:Generator_UserTableName="MonthNames" msprop:Generator_RowEvArgName="MonthNamesRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="MonthNumber" msprop:Generator_ColumnVarNameInTable="columnMonthNumber" msprop:Generator_ColumnPropNameInRow="MonthNumber" msprop:Generator_ColumnPropNameInTable="MonthNumberColumn" msprop:Generator_UserColumnName="MonthNumber" type="xs:int" />
@@ -1266,7 +1266,7 @@ ORDER BY MonthNumber</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="RepoCodes" msprop:Generator_TableClassName="RepoCodesDataTable" msprop:Generator_TableVarName="tableRepoCodes" msprop:Generator_TablePropName="RepoCodes" msprop:Generator_RowDeletingName="RepoCodesRowDeleting" msprop:Generator_RowChangingName="RepoCodesRowChanging" msprop:Generator_RowEvHandlerName="RepoCodesRowChangeEventHandler" msprop:Generator_RowDeletedName="RepoCodesRowDeleted" msprop:Generator_UserTableName="RepoCodes" msprop:Generator_RowChangedName="RepoCodesRowChanged" msprop:Generator_RowEvArgName="RepoCodesRowChangeEvent" msprop:Generator_RowClassName="RepoCodesRow">
+        <xs:element name="RepoCodes" msprop:Generator_TableClassName="RepoCodesDataTable" msprop:Generator_TableVarName="tableRepoCodes" msprop:Generator_RowChangedName="RepoCodesRowChanged" msprop:Generator_TablePropName="RepoCodes" msprop:Generator_RowDeletingName="RepoCodesRowDeleting" msprop:Generator_RowChangingName="RepoCodesRowChanging" msprop:Generator_RowEvHandlerName="RepoCodesRowChangeEventHandler" msprop:Generator_RowDeletedName="RepoCodesRowDeleted" msprop:Generator_RowClassName="RepoCodesRow" msprop:Generator_UserTableName="RepoCodes" msprop:Generator_RowEvArgName="RepoCodesRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -1287,7 +1287,7 @@ ORDER BY MonthNumber</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="RepoIndicators" msprop:Generator_TableClassName="RepoIndicatorsDataTable" msprop:Generator_TableVarName="tableRepoIndicators" msprop:Generator_TablePropName="RepoIndicators" msprop:Generator_RowDeletingName="RepoIndicatorsRowDeleting" msprop:Generator_RowChangingName="RepoIndicatorsRowChanging" msprop:Generator_RowEvHandlerName="RepoIndicatorsRowChangeEventHandler" msprop:Generator_RowDeletedName="RepoIndicatorsRowDeleted" msprop:Generator_UserTableName="RepoIndicators" msprop:Generator_RowChangedName="RepoIndicatorsRowChanged" msprop:Generator_RowEvArgName="RepoIndicatorsRowChangeEvent" msprop:Generator_RowClassName="RepoIndicatorsRow">
+        <xs:element name="RepoIndicators" msprop:Generator_TableClassName="RepoIndicatorsDataTable" msprop:Generator_TableVarName="tableRepoIndicators" msprop:Generator_RowChangedName="RepoIndicatorsRowChanged" msprop:Generator_TablePropName="RepoIndicators" msprop:Generator_RowDeletingName="RepoIndicatorsRowDeleting" msprop:Generator_RowChangingName="RepoIndicatorsRowChanging" msprop:Generator_RowEvHandlerName="RepoIndicatorsRowChangeEventHandler" msprop:Generator_RowDeletedName="RepoIndicatorsRowDeleted" msprop:Generator_RowClassName="RepoIndicatorsRow" msprop:Generator_UserTableName="RepoIndicators" msprop:Generator_RowEvArgName="RepoIndicatorsRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -1308,7 +1308,7 @@ ORDER BY MonthNumber</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="GenCodes" msprop:Generator_TableClassName="GenCodesDataTable" msprop:Generator_TableVarName="tableGenCodes" msprop:Generator_TablePropName="GenCodes" msprop:Generator_RowDeletingName="GenCodesRowDeleting" msprop:Generator_RowChangingName="GenCodesRowChanging" msprop:Generator_RowEvHandlerName="GenCodesRowChangeEventHandler" msprop:Generator_RowDeletedName="GenCodesRowDeleted" msprop:Generator_UserTableName="GenCodes" msprop:Generator_RowChangedName="GenCodesRowChanged" msprop:Generator_RowEvArgName="GenCodesRowChangeEvent" msprop:Generator_RowClassName="GenCodesRow">
+        <xs:element name="GenCodes" msprop:Generator_TableClassName="GenCodesDataTable" msprop:Generator_TableVarName="tableGenCodes" msprop:Generator_RowChangedName="GenCodesRowChanged" msprop:Generator_TablePropName="GenCodes" msprop:Generator_RowDeletingName="GenCodesRowDeleting" msprop:Generator_RowChangingName="GenCodesRowChanging" msprop:Generator_RowEvHandlerName="GenCodesRowChangeEventHandler" msprop:Generator_RowDeletedName="GenCodesRowDeleted" msprop:Generator_RowClassName="GenCodesRow" msprop:Generator_UserTableName="GenCodes" msprop:Generator_RowEvArgName="GenCodesRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_UserColumnName="Description" minOccurs="0">
@@ -1328,7 +1328,7 @@ ORDER BY MonthNumber</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="GapSelections" msprop:Generator_TableClassName="GapSelectionsDataTable" msprop:Generator_TableVarName="tableGapSelections" msprop:Generator_TablePropName="GapSelections" msprop:Generator_RowDeletingName="GapSelectionsRowDeleting" msprop:Generator_RowChangingName="GapSelectionsRowChanging" msprop:Generator_RowEvHandlerName="GapSelectionsRowChangeEventHandler" msprop:Generator_RowDeletedName="GapSelectionsRowDeleted" msprop:Generator_UserTableName="GapSelections" msprop:Generator_RowChangedName="GapSelectionsRowChanged" msprop:Generator_RowEvArgName="GapSelectionsRowChangeEvent" msprop:Generator_RowClassName="GapSelectionsRow">
+        <xs:element name="GapSelections" msprop:Generator_TableClassName="GapSelectionsDataTable" msprop:Generator_TableVarName="tableGapSelections" msprop:Generator_RowChangedName="GapSelectionsRowChanged" msprop:Generator_TablePropName="GapSelections" msprop:Generator_RowDeletingName="GapSelectionsRowDeleting" msprop:Generator_RowChangingName="GapSelectionsRowChanging" msprop:Generator_RowEvHandlerName="GapSelectionsRowChangeEventHandler" msprop:Generator_RowDeletedName="GapSelectionsRowDeleted" msprop:Generator_RowClassName="GapSelectionsRow" msprop:Generator_UserTableName="GapSelections" msprop:Generator_RowEvArgName="GapSelectionsRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -1342,7 +1342,7 @@ ORDER BY MonthNumber</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="CreditCodes" msprop:Generator_TableClassName="CreditCodesDataTable" msprop:Generator_TableVarName="tableCreditCodes" msprop:Generator_TablePropName="CreditCodes" msprop:Generator_RowDeletingName="CreditCodesRowDeleting" msprop:Generator_RowChangingName="CreditCodesRowChanging" msprop:Generator_RowEvHandlerName="CreditCodesRowChangeEventHandler" msprop:Generator_RowDeletedName="CreditCodesRowDeleted" msprop:Generator_UserTableName="CreditCodes" msprop:Generator_RowChangedName="CreditCodesRowChanged" msprop:Generator_RowEvArgName="CreditCodesRowChangeEvent" msprop:Generator_RowClassName="CreditCodesRow">
+        <xs:element name="CreditCodes" msprop:Generator_TableClassName="CreditCodesDataTable" msprop:Generator_TableVarName="tableCreditCodes" msprop:Generator_RowChangedName="CreditCodesRowChanged" msprop:Generator_TablePropName="CreditCodes" msprop:Generator_RowDeletingName="CreditCodesRowDeleting" msprop:Generator_RowChangingName="CreditCodesRowChanging" msprop:Generator_RowEvHandlerName="CreditCodesRowChangeEventHandler" msprop:Generator_RowDeletedName="CreditCodesRowDeleted" msprop:Generator_RowClassName="CreditCodesRow" msprop:Generator_UserTableName="CreditCodes" msprop:Generator_RowEvArgName="CreditCodesRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Code" msprop:Generator_ColumnVarNameInTable="columnCode" msprop:Generator_ColumnPropNameInRow="Code" msprop:Generator_ColumnPropNameInTable="CodeColumn" msprop:Generator_UserColumnName="Code">
@@ -1362,7 +1362,7 @@ ORDER BY MonthNumber</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="LateRatesSelect" msprop:Generator_TableClassName="LateRatesSelectDataTable" msprop:Generator_TableVarName="tableLateRatesSelect" msprop:Generator_RowChangedName="LateRatesSelectRowChanged" msprop:Generator_TablePropName="LateRatesSelect" msprop:Generator_RowDeletingName="LateRatesSelectRowDeleting" msprop:Generator_RowChangingName="LateRatesSelectRowChanging" msprop:Generator_RowEvHandlerName="LateRatesSelectRowChangeEventHandler" msprop:Generator_RowDeletedName="LateRatesSelectRowDeleted" msprop:Generator_RowClassName="LateRatesSelectRow" msprop:Generator_UserTableName="LateRatesSelect" msprop:Generator_RowEvArgName="LateRatesSelectRowChangeEvent">
+        <xs:element name="LateRatesSelect" msprop:Generator_TableClassName="LateRatesSelectDataTable" msprop:Generator_TableVarName="tableLateRatesSelect" msprop:Generator_TablePropName="LateRatesSelect" msprop:Generator_RowDeletingName="LateRatesSelectRowDeleting" msprop:Generator_RowChangingName="LateRatesSelectRowChanging" msprop:Generator_RowEvHandlerName="LateRatesSelectRowChangeEventHandler" msprop:Generator_RowDeletedName="LateRatesSelectRowDeleted" msprop:Generator_UserTableName="LateRatesSelect" msprop:Generator_RowChangedName="LateRatesSelectRowChanged" msprop:Generator_RowEvArgName="LateRatesSelectRowChangeEvent" msprop:Generator_RowClassName="LateRatesSelectRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="StateCode" msprop:Generator_ColumnVarNameInTable="columnStateCode" msprop:Generator_ColumnPropNameInRow="StateCode" msprop:Generator_ColumnPropNameInTable="StateCodeColumn" msprop:Generator_UserColumnName="StateCode" minOccurs="0">
@@ -1377,7 +1377,7 @@ ORDER BY MonthNumber</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Customer_Vehicle" msprop:Generator_TableClassName="Customer_VehicleDataTable" msprop:Generator_TableVarName="tableCustomer_Vehicle" msprop:Generator_TablePropName="Customer_Vehicle" msprop:Generator_RowDeletingName="Customer_VehicleRowDeleting" msprop:Generator_RowChangingName="Customer_VehicleRowChanging" msprop:Generator_RowEvHandlerName="Customer_VehicleRowChangeEventHandler" msprop:Generator_RowDeletedName="Customer_VehicleRowDeleted" msprop:Generator_UserTableName="Customer_Vehicle" msprop:Generator_RowChangedName="Customer_VehicleRowChanged" msprop:Generator_RowEvArgName="Customer_VehicleRowChangeEvent" msprop:Generator_RowClassName="Customer_VehicleRow">
+        <xs:element name="Customer_Vehicle" msprop:Generator_TableClassName="Customer_VehicleDataTable" msprop:Generator_TableVarName="tableCustomer_Vehicle" msprop:Generator_RowChangedName="Customer_VehicleRowChanged" msprop:Generator_TablePropName="Customer_Vehicle" msprop:Generator_RowDeletingName="Customer_VehicleRowDeleting" msprop:Generator_RowChangingName="Customer_VehicleRowChanging" msprop:Generator_RowEvHandlerName="Customer_VehicleRowChangeEventHandler" msprop:Generator_RowDeletedName="Customer_VehicleRowDeleted" msprop:Generator_RowClassName="Customer_VehicleRow" msprop:Generator_UserTableName="Customer_Vehicle" msprop:Generator_RowEvArgName="Customer_VehicleRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="VEHICLE_CUST_NO" msprop:Generator_ColumnVarNameInTable="columnVEHICLE_CUST_NO" msprop:Generator_ColumnPropNameInRow="VEHICLE_CUST_NO" msprop:Generator_ColumnPropNameInTable="VEHICLE_CUST_NOColumn" msprop:Generator_UserColumnName="VEHICLE_CUST_NO">

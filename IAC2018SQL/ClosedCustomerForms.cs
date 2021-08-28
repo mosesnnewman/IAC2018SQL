@@ -13,17 +13,17 @@ using Microsoft.Office;
 using Microsoft.Office.Core;
 using Microsoft.Office.Interop;
 using Outlook = Microsoft.Office.Interop.Outlook;
-using IAC2018SQL.GeneralWSProxy;
-using IAC2018SQL.LoginWSProxy;
-using IAC2018SQL.MessageWSProxy;
-using IAC2018SQL.SubscriberWSProxy;
+using IAC2021SQL.GeneralWSProxy;
+using IAC2021SQL.LoginWSProxy;
+using IAC2021SQL.MessageWSProxy;
+using IAC2021SQL.SubscriberWSProxy;
 using Word = Microsoft.Office.Interop.Word;
 using Excel = Microsoft.Office.Interop.Excel;
 using Microsoft.Office.Tools.Excel;
 using System.IO;
-using IAC2018SQL.TSBDataSetTableAdapters;
+using IAC2021SQL.TSBDataSetTableAdapters;
 
-namespace IAC2018SQL
+namespace IAC2021SQL
 {
     public partial class frmCustMaint : Form
     {
@@ -1789,7 +1789,7 @@ namespace IAC2018SQL
                 if (!String.IsNullOrEmpty((String)r.Cells["LetterPath"].Value) || !String.IsNullOrEmpty((String)r.Cells["SMSPath"].Value))
                 {
                     Bitmap img;
-                    img = new Bitmap(IAC2018SQL.Properties.Resources.WordDoc);
+                    img = new Bitmap(IAC2021SQL.Properties.Resources.WordDoc);
                     r.Cells["Thumb"].Value = img;
                 }
                 else
@@ -1801,7 +1801,7 @@ namespace IAC2018SQL
             cOMMENTDataGridView.Columns["Thumb"].DefaultHeaderCellType = typeof(DataGridViewImageColumnHeaderCell);
             cOMMENTDataGridView.Columns["Thumb"].HeaderCell = new DataGridViewImageColumnHeaderCell();
             ((DataGridViewImageColumnHeaderCell)cOMMENTDataGridView.Columns["Thumb"].HeaderCell).ImagePadding = new Padding(0, 0, 0, 0);
-            Bitmap directoryImage = new Bitmap(IAC2018SQL.Properties.Resources.PaperClip);
+            Bitmap directoryImage = new Bitmap(IAC2021SQL.Properties.Resources.PaperClip);
             ((DataGridViewImageColumnHeaderCell)cOMMENTDataGridView.Columns["Thumb"].HeaderCell).Image = directoryImage;
 
         }
@@ -2052,7 +2052,7 @@ namespace IAC2018SQL
             try
             {
                 tableAdapConn = new System.Data.SqlClient.SqlConnection();
-                tableAdapConn.ConnectionString = IAC2018SQL.Properties.Settings.Default.IAC2010SQLConnectionString;
+                tableAdapConn.ConnectionString = IAC2021SQL.Properties.Settings.Default.IAC2010SQLConnectionString;
                 tableAdapConn.Open();
                 cUSTOMERTableAdapter.Connection = tableAdapConn;
                 tableAdapTran = cUSTOMERTableAdapter.BeginTransaction();
@@ -2326,7 +2326,7 @@ namespace IAC2018SQL
             lsCustomerNo = cUSTOMER_NOTextBox.Text.ToString().TrimEnd();
 
             tableAdapConn = new System.Data.SqlClient.SqlConnection();
-            tableAdapConn.ConnectionString = IAC2018SQL.Properties.Settings.Default.IAC2010SQLConnectionString;
+            tableAdapConn.ConnectionString = IAC2021SQL.Properties.Settings.Default.IAC2010SQLConnectionString;
             tableAdapConn.Open();
             cUSTOMERTableAdapter.Connection = tableAdapConn;
             tableAdapTran = cUSTOMERTableAdapter.BeginTransaction();
@@ -4792,7 +4792,7 @@ namespace IAC2018SQL
             int j = 0;
 
             String lsUNCROOT = Program.GsDataPath, lsExcelFileOut = lsUNCROOT + @"\moses\TVEXCEL\" + cUSTOMER_NOTextBox.Text.Trim() + "TVAmort.xlsx";
-            connectionstring = IAC2018SQL.Properties.Settings.Default.IAC2010SQLConnectionString.ToUpper();
+            connectionstring = IAC2021SQL.Properties.Settings.Default.IAC2010SQLConnectionString.ToUpper();
             cnn = new SqlConnection(connectionstring);
             cnn.Open();
             //sql = "SELECT * FROM TVAmort WHERE CustomerNo = '" + cUSTOMER_NOTextBox.Text.Trim() + "'";

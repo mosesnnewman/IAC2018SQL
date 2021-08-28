@@ -6,7 +6,7 @@ using System.Runtime.Serialization;
 using System.Data.SqlClient;
 using System.Security.Permissions;
 
-namespace IAC2018SQL
+namespace IAC2021SQL
 {
     public partial class IACDataSet
     {
@@ -1267,7 +1267,7 @@ namespace IAC2018SQL
 }
 
 
-namespace IAC2018SQL.IACDataSetTableAdapters
+namespace IAC2021SQL.IACDataSetTableAdapters
 {
     partial class CustomerFeesTableAdapter
     {
@@ -1340,7 +1340,7 @@ namespace IAC2018SQL.IACDataSetTableAdapters
     {
         public void SetCommandTimeout(Int32 timeOut)
         {
-            foreach(SqlCommand command in CommandCollection)
+            foreach (SqlCommand command in CommandCollection)
             {
                 command.CommandTimeout = timeOut;
             }
@@ -3012,7 +3012,7 @@ namespace IAC2018SQL.IACDataSetTableAdapters
             return tran;
         }
     }
-    
+
     partial class Customer_VehicleTableAdapter
     {
         public void CustomizeFill(string strCommand)
@@ -3064,7 +3064,7 @@ namespace IAC2018SQL.IACDataSetTableAdapters
             return tran;
         }
     }
-    
+
     partial class COMMENTTableAdapter
     {
         public void CustomizeFill(string strCommand)
@@ -3090,7 +3090,7 @@ namespace IAC2018SQL.IACDataSetTableAdapters
                 }
             }
         }
-        
+
         public SqlConnection OpenConnection()
         {
             if (_connection.State != ConnectionState.Open)
@@ -3325,7 +3325,7 @@ namespace IAC2018SQL.IACDataSetTableAdapters
             }
 
             return tran;
-        }       
+        }
     }
 
     partial class WSDEALERTableAdapter

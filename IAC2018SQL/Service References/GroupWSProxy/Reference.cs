@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace IAC2018SQL.GroupWSProxy {
+namespace IAC2021SQL.GroupWSProxy {
     using System.Runtime.Serialization;
     using System;
     
@@ -32,7 +32,7 @@ namespace IAC2018SQL.GroupWSProxy {
         private string MessageField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private IAC2018SQL.GroupWSProxy.GroupDetail ResponseField;
+        private IAC2021SQL.GroupWSProxy.GroupDetail ResponseField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -84,7 +84,7 @@ namespace IAC2018SQL.GroupWSProxy {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
-        public IAC2018SQL.GroupWSProxy.GroupDetail Response {
+        public IAC2021SQL.GroupWSProxy.GroupDetail Response {
             get {
                 return this.ResponseField;
             }
@@ -128,7 +128,7 @@ namespace IAC2018SQL.GroupWSProxy {
         private string DefaultCodeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private IAC2018SQL.GroupWSProxy.Keyword[] KeywordField;
+        private IAC2021SQL.GroupWSProxy.Keyword[] KeywordField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -193,7 +193,7 @@ namespace IAC2018SQL.GroupWSProxy {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
-        public IAC2018SQL.GroupWSProxy.Keyword[] Keyword {
+        public IAC2021SQL.GroupWSProxy.Keyword[] Keyword {
             get {
                 return this.KeywordField;
             }
@@ -237,7 +237,7 @@ namespace IAC2018SQL.GroupWSProxy {
         private string callback_urlField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private IAC2018SQL.GroupWSProxy.CustomField[] fieldsField;
+        private IAC2021SQL.GroupWSProxy.CustomField[] fieldsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int keyword_typeField;
@@ -374,7 +374,7 @@ namespace IAC2018SQL.GroupWSProxy {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public IAC2018SQL.GroupWSProxy.CustomField[] fields {
+        public IAC2021SQL.GroupWSProxy.CustomField[] fields {
             get {
                 return this.fieldsField;
             }
@@ -774,19 +774,19 @@ namespace IAC2018SQL.GroupWSProxy {
     public interface IGroup {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://SBTService/ServiceContracts/IGroup/ReadGroup", ReplyAction="http://SBTService/ServiceContracts/IGroup/ReadGroupResponse")]
-        IAC2018SQL.GroupWSProxy.WSGroupResponse ReadGroup(string securityToken, string orgCode);
+        IAC2021SQL.GroupWSProxy.WSGroupResponse ReadGroup(string securityToken, string orgCode);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://SBTService/ServiceContracts/IGroup/ReadGroup", ReplyAction="http://SBTService/ServiceContracts/IGroup/ReadGroupResponse")]
-        System.Threading.Tasks.Task<IAC2018SQL.GroupWSProxy.WSGroupResponse> ReadGroupAsync(string securityToken, string orgCode);
+        System.Threading.Tasks.Task<IAC2021SQL.GroupWSProxy.WSGroupResponse> ReadGroupAsync(string securityToken, string orgCode);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IGroupChannel : IAC2018SQL.GroupWSProxy.IGroup, System.ServiceModel.IClientChannel {
+    public interface IGroupChannel : IAC2021SQL.GroupWSProxy.IGroup, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class GroupClient : System.ServiceModel.ClientBase<IAC2018SQL.GroupWSProxy.IGroup>, IAC2018SQL.GroupWSProxy.IGroup {
+    public partial class GroupClient : System.ServiceModel.ClientBase<IAC2021SQL.GroupWSProxy.IGroup>, IAC2021SQL.GroupWSProxy.IGroup {
         
         public GroupClient() {
         }
@@ -807,11 +807,11 @@ namespace IAC2018SQL.GroupWSProxy {
                 base(binding, remoteAddress) {
         }
         
-        public IAC2018SQL.GroupWSProxy.WSGroupResponse ReadGroup(string securityToken, string orgCode) {
+        public IAC2021SQL.GroupWSProxy.WSGroupResponse ReadGroup(string securityToken, string orgCode) {
             return base.Channel.ReadGroup(securityToken, orgCode);
         }
         
-        public System.Threading.Tasks.Task<IAC2018SQL.GroupWSProxy.WSGroupResponse> ReadGroupAsync(string securityToken, string orgCode) {
+        public System.Threading.Tasks.Task<IAC2021SQL.GroupWSProxy.WSGroupResponse> ReadGroupAsync(string securityToken, string orgCode) {
             return base.Channel.ReadGroupAsync(securityToken, orgCode);
         }
     }

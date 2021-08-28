@@ -1,4 +1,4 @@
-﻿namespace IAC2018SQL
+﻿namespace IAC2021SQL
 {
     partial class frmGeneralCustomerLookup
     {
@@ -57,7 +57,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGeneralCustomerLookup));
             this.CustomerbindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.iacDataSet1 = new IAC2018SQL.IACDataSet();
+            this.iacDataSet1 = new IAC2021SQL.IACDataSet();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridViewCustLookup = new System.Windows.Forms.DataGridView();
@@ -117,8 +117,8 @@
             this.txtInsuranceCompany = new System.Windows.Forms.TextBox();
             this.txtModel = new System.Windows.Forms.TextBox();
             this.txtVehicleYear = new System.Windows.Forms.TextBox();
-            this.customer_VehicleTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.Customer_VehicleTableAdapter();
-            this.oPNCLSCUSTOMERTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.OPNCLSCUSTOMERTableAdapter();
+            this.customer_VehicleTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.Customer_VehicleTableAdapter();
+            this.oPNCLSCUSTOMERTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.OPNCLSCUSTOMERTableAdapter();
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();

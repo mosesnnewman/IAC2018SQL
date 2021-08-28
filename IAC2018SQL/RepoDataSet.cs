@@ -1,4 +1,4 @@
-﻿namespace IAC2018SQL
+﻿namespace IAC2021SQL
 {
 
 
@@ -6,14 +6,14 @@
     {
     }
 }
-namespace IAC2018SQL {
+namespace IAC2021SQL {
     
     
     public partial class RepoDataSet {
     }
 }
 
-namespace IAC2018SQL
+namespace IAC2021SQL
 {
 
 
@@ -25,7 +25,7 @@ namespace IAC2018SQL
     }
 }
 
-namespace IAC2018SQL.RepoDataSetTableAdapters
+namespace IAC2021SQL.RepoDataSetTableAdapters
 {
 
 

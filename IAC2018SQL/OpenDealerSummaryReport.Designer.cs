@@ -1,4 +1,4 @@
-﻿namespace IAC2018SQL
+﻿namespace IAC2021SQL
 {
     partial class frmOpenDealerSummaryReport
     {
@@ -33,8 +33,8 @@
             this.buttonCancel = new System.Windows.Forms.Button();
             this.labelRunMonth = new System.Windows.Forms.Label();
             this.monthNamesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.iACDataSet = new IAC2018SQL.IACDataSet();
-            this.monthNamesTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.MonthNamesTableAdapter();
+            this.iACDataSet = new IAC2021SQL.IACDataSet();
+            this.monthNamesTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.MonthNamesTableAdapter();
             this.labelRunYear = new System.Windows.Forms.Label();
             this.textBoxRunYear = new System.Windows.Forms.TextBox();
             this.comboBoxRunMonth = new System.Windows.Forms.ComboBox();

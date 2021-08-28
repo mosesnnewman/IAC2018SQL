@@ -8,10 +8,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using IAC2018SQL.MessageWSProxy;
-using IAC2018SQL.LoginWSProxy;
+using IAC2021SQL.MessageWSProxy;
+using IAC2021SQL.LoginWSProxy;
 
-namespace IAC2018SQL
+namespace IAC2021SQL
 {
     public partial class FormSMSMessage : Form
     {

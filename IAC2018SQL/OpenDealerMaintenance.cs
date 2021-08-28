@@ -10,7 +10,7 @@ using System.Data.SqlClient;
 using System.Reflection;
 
 
-namespace IAC2018SQL
+namespace IAC2021SQL
 {
     public partial class frmOpenDealerMaintenance : Form
     {
@@ -159,7 +159,7 @@ namespace IAC2018SQL
             lsDealerNo = DEALERcomboBox.Text.ToString().Trim();
 
             tableAdapConn = new System.Data.SqlClient.SqlConnection();
-            tableAdapConn.ConnectionString = IAC2018SQL.Properties.Settings.Default.IAC2010SQLConnectionString;
+            tableAdapConn.ConnectionString = IAC2021SQL.Properties.Settings.Default.IAC2010SQLConnectionString;
 
             tableAdapConn.Open();
             oPNDEALRTableAdapter.Connection = tableAdapConn;
@@ -397,7 +397,7 @@ namespace IAC2018SQL
             lsDealerNo = DEALERcomboBox.Text.ToString().Trim();
 
             tableAdapConn = new System.Data.SqlClient.SqlConnection();
-            tableAdapConn.ConnectionString = IAC2018SQL.Properties.Settings.Default.IAC2010SQLConnectionString;
+            tableAdapConn.ConnectionString = IAC2021SQL.Properties.Settings.Default.IAC2010SQLConnectionString;
             tableAdapConn.Open();
             oPNDEALRTableAdapter.Connection = tableAdapConn;
             tableAdapTran = oPNDEALRTableAdapter.BeginTransaction();

@@ -1,4 +1,4 @@
-﻿namespace IAC2018SQL
+﻿namespace IAC2021SQL
 {
     partial class FormRepoReport
     {
@@ -41,9 +41,9 @@
             this.buttonCancel = new System.Windows.Forms.Button();
             this.comboBoxRepoCodes = new System.Windows.Forms.ComboBox();
             this.bindingSourceRepoCodes = new System.Windows.Forms.BindingSource(this.components);
-            this.DelinquencyData = new IAC2018SQL.IACDataSet();
+            this.DelinquencyData = new IAC2021SQL.IACDataSet();
             this.cUSTOMER_REPO_CDEtextBox = new System.Windows.Forms.TextBox();
-            this.repoCodesTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.RepoCodesTableAdapter();
+            this.repoCodesTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.RepoCodesTableAdapter();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.radioButtonStatusBoth = new System.Windows.Forms.RadioButton();
             this.radioButtonInactive = new System.Windows.Forms.RadioButton();
@@ -160,7 +160,7 @@
             // 
             // buttonPrint
             // 
-            this.buttonPrint.Image = global::IAC2018SQL.Properties.Resources.Printer;
+            this.buttonPrint.Image = global::IAC2021SQL.Properties.Resources.Printer;
             this.buttonPrint.Location = new System.Drawing.Point(62, 27);
             this.buttonPrint.Margin = new System.Windows.Forms.Padding(6);
             this.buttonPrint.Name = "buttonPrint";

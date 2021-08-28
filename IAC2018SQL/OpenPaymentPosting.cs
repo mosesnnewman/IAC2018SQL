@@ -5,7 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace IAC2018SQL
+namespace IAC2021SQL
 {
     class OpenPaymentPosting:IDisposable
     {

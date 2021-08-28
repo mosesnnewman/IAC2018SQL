@@ -1,4 +1,4 @@
-﻿namespace IAC2018SQL
+﻿namespace IAC2021SQL
 {
     partial class frmMasterHistoryReport
     {
@@ -32,7 +32,7 @@
             this.buttonPost = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.labelStartDate = new System.Windows.Forms.Label();
-            this.iACDataSet = new IAC2018SQL.IACDataSet();
+            this.iACDataSet = new IAC2021SQL.IACDataSet();
             this.labelEndDate = new System.Windows.Forms.Label();
             this.nullableDateTimePickerStartDate = new ProManApp.NullableDateTimePicker();
             this.nullableDateTimePickerEndDate = new ProManApp.NullableDateTimePicker();
@@ -40,9 +40,9 @@
             this.bindingSourceMasterList = new System.Windows.Forms.BindingSource(this.components);
             this.comboBoxAccount = new System.Windows.Forms.ComboBox();
             this.labelAccountNum = new System.Windows.Forms.Label();
-            this.masterTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.MASTERTableAdapter();
-            this.masthistTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.MASTHISTTableAdapter();
-            this.masterlistTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.MASTERLISTTableAdapter();
+            this.masterTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.MASTERTableAdapter();
+            this.masthistTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.MASTHISTTableAdapter();
+            this.masterlistTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.MASTERLISTTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.iACDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerStartDate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerEndDate)).BeginInit();

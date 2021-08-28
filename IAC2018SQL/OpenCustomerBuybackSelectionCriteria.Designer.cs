@@ -1,4 +1,4 @@
-﻿namespace IAC2018SQL
+﻿namespace IAC2021SQL
 {
     partial class frmOpenCustomerBuybackReport
     {
@@ -32,7 +32,7 @@
             this.buttonPost = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.labelStartDate = new System.Windows.Forms.Label();
-            this.iACDataSet = new IAC2018SQL.IACDataSet();
+            this.iACDataSet = new IAC2021SQL.IACDataSet();
             this.labelEndDate = new System.Windows.Forms.Label();
             this.nullableDateTimePickerStartDate = new ProManApp.NullableDateTimePicker();
             this.nullableDateTimePickerEndDate = new ProManApp.NullableDateTimePicker();
@@ -48,9 +48,9 @@
             this.CodeTypetextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.pAYMENTTYPETableAdapter = new IAC2018SQL.IACDataSetTableAdapters.PAYMENTTYPETableAdapter();
-            this.pAYCODETableAdapter = new IAC2018SQL.IACDataSetTableAdapters.PAYCODETableAdapter();
-            this.opndlrlistbynumTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.OPNDLRLISTBYNUMTableAdapter();
+            this.pAYMENTTYPETableAdapter = new IAC2021SQL.IACDataSetTableAdapters.PAYMENTTYPETableAdapter();
+            this.pAYCODETableAdapter = new IAC2021SQL.IACDataSetTableAdapters.PAYCODETableAdapter();
+            this.opndlrlistbynumTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.OPNDLRLISTBYNUMTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.iACDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerStartDate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerEndDate)).BeginInit();

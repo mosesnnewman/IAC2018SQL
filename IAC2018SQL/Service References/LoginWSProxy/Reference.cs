@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace IAC2018SQL.LoginWSProxy {
+namespace IAC2021SQL.LoginWSProxy {
     using System.Runtime.Serialization;
     using System;
     
@@ -188,19 +188,19 @@ namespace IAC2018SQL.LoginWSProxy {
     public interface ILoginAPI {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://SBTService/ServiceContracts/ILoginAPI/AuthenticateAPIKey", ReplyAction="http://SBTService/ServiceContracts/ILoginAPI/AuthenticateAPIKeyResponse")]
-        IAC2018SQL.LoginWSProxy.WSLoginResponse AuthenticateAPIKey(IAC2018SQL.LoginWSProxy.LoginRequestDetails loginRequest);
+        IAC2021SQL.LoginWSProxy.WSLoginResponse AuthenticateAPIKey(IAC2021SQL.LoginWSProxy.LoginRequestDetails loginRequest);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://SBTService/ServiceContracts/ILoginAPI/AuthenticateAPIKey", ReplyAction="http://SBTService/ServiceContracts/ILoginAPI/AuthenticateAPIKeyResponse")]
-        System.Threading.Tasks.Task<IAC2018SQL.LoginWSProxy.WSLoginResponse> AuthenticateAPIKeyAsync(IAC2018SQL.LoginWSProxy.LoginRequestDetails loginRequest);
+        System.Threading.Tasks.Task<IAC2021SQL.LoginWSProxy.WSLoginResponse> AuthenticateAPIKeyAsync(IAC2021SQL.LoginWSProxy.LoginRequestDetails loginRequest);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface ILoginAPIChannel : IAC2018SQL.LoginWSProxy.ILoginAPI, System.ServiceModel.IClientChannel {
+    public interface ILoginAPIChannel : IAC2021SQL.LoginWSProxy.ILoginAPI, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class LoginAPIClient : System.ServiceModel.ClientBase<IAC2018SQL.LoginWSProxy.ILoginAPI>, IAC2018SQL.LoginWSProxy.ILoginAPI {
+    public partial class LoginAPIClient : System.ServiceModel.ClientBase<IAC2021SQL.LoginWSProxy.ILoginAPI>, IAC2021SQL.LoginWSProxy.ILoginAPI {
         
         public LoginAPIClient() {
         }
@@ -221,11 +221,11 @@ namespace IAC2018SQL.LoginWSProxy {
                 base(binding, remoteAddress) {
         }
         
-        public IAC2018SQL.LoginWSProxy.WSLoginResponse AuthenticateAPIKey(IAC2018SQL.LoginWSProxy.LoginRequestDetails loginRequest) {
+        public IAC2021SQL.LoginWSProxy.WSLoginResponse AuthenticateAPIKey(IAC2021SQL.LoginWSProxy.LoginRequestDetails loginRequest) {
             return base.Channel.AuthenticateAPIKey(loginRequest);
         }
         
-        public System.Threading.Tasks.Task<IAC2018SQL.LoginWSProxy.WSLoginResponse> AuthenticateAPIKeyAsync(IAC2018SQL.LoginWSProxy.LoginRequestDetails loginRequest) {
+        public System.Threading.Tasks.Task<IAC2021SQL.LoginWSProxy.WSLoginResponse> AuthenticateAPIKeyAsync(IAC2021SQL.LoginWSProxy.LoginRequestDetails loginRequest) {
             return base.Channel.AuthenticateAPIKeyAsync(loginRequest);
         }
     }

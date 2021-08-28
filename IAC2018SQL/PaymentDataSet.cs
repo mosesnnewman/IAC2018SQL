@@ -1,4 +1,4 @@
-﻿namespace IAC2018SQL
+﻿namespace IAC2021SQL
 {
 
 
@@ -34,7 +34,7 @@
     }
 }
 
-namespace IAC2018SQL.PaymentDataSetTableAdapters
+namespace IAC2021SQL.PaymentDataSetTableAdapters
 {
     partial class PNSRejectsTableAdapter
     {
@@ -52,6 +52,7 @@ namespace IAC2018SQL.PaymentDataSetTableAdapters
     {
     }
 
-    public partial class PNSIMPORTParamsTableAdapter {
+    public partial class PNSIMPORTParamsTableAdapter
+    {
     }
 }

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace IAC2018SQL
+namespace IAC2021SQL
 {
     public partial class frmOpenCustMaint : Form
     {
@@ -1301,7 +1301,7 @@ namespace IAC2018SQL
             // Moses Newman 09/26/2020 Add save of TSB data
             closedCreditManagerBindingSource.EndEdit();
             tableAdapConn = new System.Data.SqlClient.SqlConnection();
-            tableAdapConn.ConnectionString = IAC2018SQL.Properties.Settings.Default.IAC2010SQLConnectionString;
+            tableAdapConn.ConnectionString = IAC2021SQL.Properties.Settings.Default.IAC2010SQLConnectionString;
 
             tableAdapConn.Open();
             oPNCUSTTableAdapter.Connection = tableAdapConn;
@@ -1392,7 +1392,7 @@ namespace IAC2018SQL
             lsCustomerNo = cUSTOMER_NOTextBox.Text.ToString().TrimEnd();
 
             tableAdapConn = new System.Data.SqlClient.SqlConnection();
-            tableAdapConn.ConnectionString = IAC2018SQL.Properties.Settings.Default.IAC2010SQLConnectionString;
+            tableAdapConn.ConnectionString = IAC2021SQL.Properties.Settings.Default.IAC2010SQLConnectionString;
             tableAdapConn.Open();
             oPNCUSTTableAdapter.Connection = tableAdapConn;
             tableAdapTran = oPNCUSTTableAdapter.BeginTransaction();

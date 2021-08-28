@@ -1,4 +1,4 @@
-﻿namespace IAC2018SQL
+﻿namespace IAC2021SQL
 {
     partial class FormSelectCheck
     {
@@ -42,10 +42,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.opncustTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.OPNCUSTTableAdapter();
-            this.opnhcustTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.OPNHCUSTTableAdapter();
+            this.opncustTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.OPNCUSTTableAdapter();
+            this.opnhcustTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.OPNHCUSTTableAdapter();
             this.cUSTHISTBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.iACDataSet = new IAC2018SQL.IACDataSet();
+            this.iACDataSet = new IAC2021SQL.IACDataSet();
             this.cUSTHISTDataGridView = new System.Windows.Forms.DataGridView();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.textBoxSuffix = new System.Windows.Forms.TextBox();
@@ -60,7 +60,7 @@
             this.textBoxAddOn = new System.Windows.Forms.TextBox();
             this.textBoxCustomerNo = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.opndealrTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.OPNDEALRTableAdapter();
+            this.opndealrTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.OPNDEALRTableAdapter();
             this.dataGridViewTextBoxColumnPostDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();

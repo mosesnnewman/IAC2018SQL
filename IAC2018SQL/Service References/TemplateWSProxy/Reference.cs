@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace IAC2018SQL.TemplateWSProxy {
+namespace IAC2021SQL.TemplateWSProxy {
     using System.Runtime.Serialization;
     using System;
     
@@ -157,7 +157,7 @@ namespace IAC2018SQL.TemplateWSProxy {
         private string MessageField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private IAC2018SQL.TemplateWSProxy.TemplateDetail ResponseField;
+        private IAC2021SQL.TemplateWSProxy.TemplateDetail ResponseField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -209,7 +209,7 @@ namespace IAC2018SQL.TemplateWSProxy {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
-        public IAC2018SQL.TemplateWSProxy.TemplateDetail Response {
+        public IAC2021SQL.TemplateWSProxy.TemplateDetail Response {
             get {
                 return this.ResponseField;
             }
@@ -250,7 +250,7 @@ namespace IAC2018SQL.TemplateWSProxy {
         private string MessageField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private IAC2018SQL.TemplateWSProxy.TemplateDetail[] ResponseField;
+        private IAC2021SQL.TemplateWSProxy.TemplateDetail[] ResponseField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -302,7 +302,7 @@ namespace IAC2018SQL.TemplateWSProxy {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
-        public IAC2018SQL.TemplateWSProxy.TemplateDetail[] Response {
+        public IAC2021SQL.TemplateWSProxy.TemplateDetail[] Response {
             get {
                 return this.ResponseField;
             }
@@ -329,43 +329,43 @@ namespace IAC2018SQL.TemplateWSProxy {
     public interface ITemplate {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://SBTService/ServiceContracts/ITemplate/CreateTemplate", ReplyAction="http://SBTService/ServiceContracts/ITemplate/CreateTemplateResponse")]
-        IAC2018SQL.TemplateWSProxy.WSTemplateResponse CreateTemplate(string securityToken, IAC2018SQL.TemplateWSProxy.TemplateDetail template);
+        IAC2021SQL.TemplateWSProxy.WSTemplateResponse CreateTemplate(string securityToken, IAC2021SQL.TemplateWSProxy.TemplateDetail template);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://SBTService/ServiceContracts/ITemplate/CreateTemplate", ReplyAction="http://SBTService/ServiceContracts/ITemplate/CreateTemplateResponse")]
-        System.Threading.Tasks.Task<IAC2018SQL.TemplateWSProxy.WSTemplateResponse> CreateTemplateAsync(string securityToken, IAC2018SQL.TemplateWSProxy.TemplateDetail template);
+        System.Threading.Tasks.Task<IAC2021SQL.TemplateWSProxy.WSTemplateResponse> CreateTemplateAsync(string securityToken, IAC2021SQL.TemplateWSProxy.TemplateDetail template);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://SBTService/ServiceContracts/ITemplate/UpdateTemplate", ReplyAction="http://SBTService/ServiceContracts/ITemplate/UpdateTemplateResponse")]
-        IAC2018SQL.TemplateWSProxy.WSTemplateResponse UpdateTemplate(string securityToken, IAC2018SQL.TemplateWSProxy.TemplateDetail template);
+        IAC2021SQL.TemplateWSProxy.WSTemplateResponse UpdateTemplate(string securityToken, IAC2021SQL.TemplateWSProxy.TemplateDetail template);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://SBTService/ServiceContracts/ITemplate/UpdateTemplate", ReplyAction="http://SBTService/ServiceContracts/ITemplate/UpdateTemplateResponse")]
-        System.Threading.Tasks.Task<IAC2018SQL.TemplateWSProxy.WSTemplateResponse> UpdateTemplateAsync(string securityToken, IAC2018SQL.TemplateWSProxy.TemplateDetail template);
+        System.Threading.Tasks.Task<IAC2021SQL.TemplateWSProxy.WSTemplateResponse> UpdateTemplateAsync(string securityToken, IAC2021SQL.TemplateWSProxy.TemplateDetail template);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://SBTService/ServiceContracts/ITemplate/GetTemplates", ReplyAction="http://SBTService/ServiceContracts/ITemplate/GetTemplatesResponse")]
-        IAC2018SQL.TemplateWSProxy.WSTemplateListResponse GetTemplates(string securityToken, string orgCode);
+        IAC2021SQL.TemplateWSProxy.WSTemplateListResponse GetTemplates(string securityToken, string orgCode);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://SBTService/ServiceContracts/ITemplate/GetTemplates", ReplyAction="http://SBTService/ServiceContracts/ITemplate/GetTemplatesResponse")]
-        System.Threading.Tasks.Task<IAC2018SQL.TemplateWSProxy.WSTemplateListResponse> GetTemplatesAsync(string securityToken, string orgCode);
+        System.Threading.Tasks.Task<IAC2021SQL.TemplateWSProxy.WSTemplateListResponse> GetTemplatesAsync(string securityToken, string orgCode);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://SBTService/ServiceContracts/ITemplate/ReadTemplate", ReplyAction="http://SBTService/ServiceContracts/ITemplate/ReadTemplateResponse")]
-        IAC2018SQL.TemplateWSProxy.WSTemplateResponse ReadTemplate(string securityToken, string orgCode, int templateID);
+        IAC2021SQL.TemplateWSProxy.WSTemplateResponse ReadTemplate(string securityToken, string orgCode, int templateID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://SBTService/ServiceContracts/ITemplate/ReadTemplate", ReplyAction="http://SBTService/ServiceContracts/ITemplate/ReadTemplateResponse")]
-        System.Threading.Tasks.Task<IAC2018SQL.TemplateWSProxy.WSTemplateResponse> ReadTemplateAsync(string securityToken, string orgCode, int templateID);
+        System.Threading.Tasks.Task<IAC2021SQL.TemplateWSProxy.WSTemplateResponse> ReadTemplateAsync(string securityToken, string orgCode, int templateID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://SBTService/ServiceContracts/ITemplate/DeleteTemplate", ReplyAction="http://SBTService/ServiceContracts/ITemplate/DeleteTemplateResponse")]
-        IAC2018SQL.TemplateWSProxy.WSTemplateResponse DeleteTemplate(string securityToken, string orgCode, int templateID);
+        IAC2021SQL.TemplateWSProxy.WSTemplateResponse DeleteTemplate(string securityToken, string orgCode, int templateID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://SBTService/ServiceContracts/ITemplate/DeleteTemplate", ReplyAction="http://SBTService/ServiceContracts/ITemplate/DeleteTemplateResponse")]
-        System.Threading.Tasks.Task<IAC2018SQL.TemplateWSProxy.WSTemplateResponse> DeleteTemplateAsync(string securityToken, string orgCode, int templateID);
+        System.Threading.Tasks.Task<IAC2021SQL.TemplateWSProxy.WSTemplateResponse> DeleteTemplateAsync(string securityToken, string orgCode, int templateID);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface ITemplateChannel : IAC2018SQL.TemplateWSProxy.ITemplate, System.ServiceModel.IClientChannel {
+    public interface ITemplateChannel : IAC2021SQL.TemplateWSProxy.ITemplate, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class TemplateClient : System.ServiceModel.ClientBase<IAC2018SQL.TemplateWSProxy.ITemplate>, IAC2018SQL.TemplateWSProxy.ITemplate {
+    public partial class TemplateClient : System.ServiceModel.ClientBase<IAC2021SQL.TemplateWSProxy.ITemplate>, IAC2021SQL.TemplateWSProxy.ITemplate {
         
         public TemplateClient() {
         }
@@ -386,43 +386,43 @@ namespace IAC2018SQL.TemplateWSProxy {
                 base(binding, remoteAddress) {
         }
         
-        public IAC2018SQL.TemplateWSProxy.WSTemplateResponse CreateTemplate(string securityToken, IAC2018SQL.TemplateWSProxy.TemplateDetail template) {
+        public IAC2021SQL.TemplateWSProxy.WSTemplateResponse CreateTemplate(string securityToken, IAC2021SQL.TemplateWSProxy.TemplateDetail template) {
             return base.Channel.CreateTemplate(securityToken, template);
         }
         
-        public System.Threading.Tasks.Task<IAC2018SQL.TemplateWSProxy.WSTemplateResponse> CreateTemplateAsync(string securityToken, IAC2018SQL.TemplateWSProxy.TemplateDetail template) {
+        public System.Threading.Tasks.Task<IAC2021SQL.TemplateWSProxy.WSTemplateResponse> CreateTemplateAsync(string securityToken, IAC2021SQL.TemplateWSProxy.TemplateDetail template) {
             return base.Channel.CreateTemplateAsync(securityToken, template);
         }
         
-        public IAC2018SQL.TemplateWSProxy.WSTemplateResponse UpdateTemplate(string securityToken, IAC2018SQL.TemplateWSProxy.TemplateDetail template) {
+        public IAC2021SQL.TemplateWSProxy.WSTemplateResponse UpdateTemplate(string securityToken, IAC2021SQL.TemplateWSProxy.TemplateDetail template) {
             return base.Channel.UpdateTemplate(securityToken, template);
         }
         
-        public System.Threading.Tasks.Task<IAC2018SQL.TemplateWSProxy.WSTemplateResponse> UpdateTemplateAsync(string securityToken, IAC2018SQL.TemplateWSProxy.TemplateDetail template) {
+        public System.Threading.Tasks.Task<IAC2021SQL.TemplateWSProxy.WSTemplateResponse> UpdateTemplateAsync(string securityToken, IAC2021SQL.TemplateWSProxy.TemplateDetail template) {
             return base.Channel.UpdateTemplateAsync(securityToken, template);
         }
         
-        public IAC2018SQL.TemplateWSProxy.WSTemplateListResponse GetTemplates(string securityToken, string orgCode) {
+        public IAC2021SQL.TemplateWSProxy.WSTemplateListResponse GetTemplates(string securityToken, string orgCode) {
             return base.Channel.GetTemplates(securityToken, orgCode);
         }
         
-        public System.Threading.Tasks.Task<IAC2018SQL.TemplateWSProxy.WSTemplateListResponse> GetTemplatesAsync(string securityToken, string orgCode) {
+        public System.Threading.Tasks.Task<IAC2021SQL.TemplateWSProxy.WSTemplateListResponse> GetTemplatesAsync(string securityToken, string orgCode) {
             return base.Channel.GetTemplatesAsync(securityToken, orgCode);
         }
         
-        public IAC2018SQL.TemplateWSProxy.WSTemplateResponse ReadTemplate(string securityToken, string orgCode, int templateID) {
+        public IAC2021SQL.TemplateWSProxy.WSTemplateResponse ReadTemplate(string securityToken, string orgCode, int templateID) {
             return base.Channel.ReadTemplate(securityToken, orgCode, templateID);
         }
         
-        public System.Threading.Tasks.Task<IAC2018SQL.TemplateWSProxy.WSTemplateResponse> ReadTemplateAsync(string securityToken, string orgCode, int templateID) {
+        public System.Threading.Tasks.Task<IAC2021SQL.TemplateWSProxy.WSTemplateResponse> ReadTemplateAsync(string securityToken, string orgCode, int templateID) {
             return base.Channel.ReadTemplateAsync(securityToken, orgCode, templateID);
         }
         
-        public IAC2018SQL.TemplateWSProxy.WSTemplateResponse DeleteTemplate(string securityToken, string orgCode, int templateID) {
+        public IAC2021SQL.TemplateWSProxy.WSTemplateResponse DeleteTemplate(string securityToken, string orgCode, int templateID) {
             return base.Channel.DeleteTemplate(securityToken, orgCode, templateID);
         }
         
-        public System.Threading.Tasks.Task<IAC2018SQL.TemplateWSProxy.WSTemplateResponse> DeleteTemplateAsync(string securityToken, string orgCode, int templateID) {
+        public System.Threading.Tasks.Task<IAC2021SQL.TemplateWSProxy.WSTemplateResponse> DeleteTemplateAsync(string securityToken, string orgCode, int templateID) {
             return base.Channel.DeleteTemplateAsync(securityToken, orgCode, templateID);
         }
     }

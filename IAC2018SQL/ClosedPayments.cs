@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace IAC2018SQL
+namespace IAC2021SQL
 {
     public partial class formClosedPayment : Form
     {
@@ -773,7 +773,7 @@ namespace IAC2018SQL
             if (ClosedPaymentiacDataSet.CUSTOMER.Rows.Count == 0)
                 return;
             tableAdapConn = new System.Data.SqlClient.SqlConnection();
-            tableAdapConn.ConnectionString = IAC2018SQL.Properties.Settings.Default.IAC2010SQLConnectionString;
+            tableAdapConn.ConnectionString = IAC2021SQL.Properties.Settings.Default.IAC2010SQLConnectionString;
             tableAdapConn.Open();
             paymentTableAdapter.Connection = tableAdapConn;
             tableAdapTran = paymentTableAdapter.BeginTransaction();
@@ -1086,7 +1086,7 @@ namespace IAC2018SQL
         private void toolStripButtonDelete_Click(object sender, EventArgs e)
         {
             tableAdapConn = new System.Data.SqlClient.SqlConnection();
-            tableAdapConn.ConnectionString = IAC2018SQL.Properties.Settings.Default.IAC2010SQLConnectionString;
+            tableAdapConn.ConnectionString = IAC2021SQL.Properties.Settings.Default.IAC2010SQLConnectionString;
             tableAdapConn.Open();
             paymentTableAdapter.Connection = tableAdapConn;
             tableAdapTran = paymentTableAdapter.BeginTransaction();

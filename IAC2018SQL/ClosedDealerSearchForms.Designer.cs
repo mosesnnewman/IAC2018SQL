@@ -1,4 +1,4 @@
-﻿namespace IAC2018SQL
+﻿namespace IAC2021SQL
 {
     partial class frmDealerLookup
     {
@@ -41,7 +41,7 @@
             System.Windows.Forms.Label label2;
             System.Windows.Forms.Label cUSTOMER_DEALERLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDealerLookup));
-            this.iacDataSet1 = new IAC2018SQL.IACDataSet();
+            this.iacDataSet1 = new IAC2021SQL.IACDataSet();
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -84,7 +84,7 @@
             this.DEALER_STREETTextBox = new System.Windows.Forms.TextBox();
             this.dEALER_NAMETextBox = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.dEALERTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.DEALERTableAdapter();
+            this.dEALERTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.DEALERTableAdapter();
             labelEmail = new System.Windows.Forms.Label();
             labelCellPhone = new System.Windows.Forms.Label();
             labelDealerStartDate = new System.Windows.Forms.Label();

@@ -1,4 +1,4 @@
-﻿namespace IAC2018SQL
+﻿namespace IAC2021SQL
 {
     partial class frmClosedCustomerBuybackReport
     {
@@ -32,7 +32,7 @@
             this.buttonPost = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.labelStartDate = new System.Windows.Forms.Label();
-            this.iACDataSet = new IAC2018SQL.IACDataSet();
+            this.iACDataSet = new IAC2021SQL.IACDataSet();
             this.labelEndDate = new System.Windows.Forms.Label();
             this.nullableDateTimePickerStartDate = new ProManApp.NullableDateTimePicker();
             this.nullableDateTimePickerEndDate = new ProManApp.NullableDateTimePicker();
@@ -40,7 +40,7 @@
             this.bindingSourceDLRLISTBYNUM = new System.Windows.Forms.BindingSource(this.components);
             this.comboBoxDealer = new System.Windows.Forms.ComboBox();
             this.labelDealerNum = new System.Windows.Forms.Label();
-            this.dlrlistbynumTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.DLRLISTBYNUMTableAdapter();
+            this.dlrlistbynumTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.DLRLISTBYNUMTableAdapter();
             this.PAYCODEcomboBox = new System.Windows.Forms.ComboBox();
             this.PaymentCodebindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.PaymentTypetextBox = new System.Windows.Forms.TextBox();
@@ -49,9 +49,9 @@
             this.CodeTypetextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.pAYMENTTYPETableAdapter = new IAC2018SQL.IACDataSetTableAdapters.PAYMENTTYPETableAdapter();
-            this.pAYCODETableAdapter = new IAC2018SQL.IACDataSetTableAdapters.PAYCODETableAdapter();
-            this.closedCustomerBuybackTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.ClosedCustomerBuybackTableAdapter();
+            this.pAYMENTTYPETableAdapter = new IAC2021SQL.IACDataSetTableAdapters.PAYMENTTYPETableAdapter();
+            this.pAYCODETableAdapter = new IAC2021SQL.IACDataSetTableAdapters.PAYCODETableAdapter();
+            this.closedCustomerBuybackTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.ClosedCustomerBuybackTableAdapter();
             this.comboBoxDealerState = new System.Windows.Forms.ComboBox();
             this.labelDealerState = new System.Windows.Forms.Label();
             this.labelCustomerState = new System.Windows.Forms.Label();
