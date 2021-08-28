@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace IAC2018SQL
+namespace IAC2021SQL
 {
     public partial class ClosedMasterContingentMaintenance : Form
     {
@@ -466,7 +466,7 @@ namespace IAC2018SQL
                 MACONTbindingSource.EndEdit();
             }
             tableAdapConn = new System.Data.SqlClient.SqlConnection();
-            tableAdapConn.ConnectionString = IAC2018SQL.Properties.Settings.Default.IAC2010SQLConnectionString;
+            tableAdapConn.ConnectionString = IAC2021SQL.Properties.Settings.Default.IAC2010SQLConnectionString;
             tableAdapConn.Open();
             macontTableAdapter.Connection = tableAdapConn;
             tableAdapTran = macontTableAdapter.BeginTransaction();
@@ -515,7 +515,7 @@ namespace IAC2018SQL
                 return;
             MACONTbindingSource.EndEdit();
             tableAdapConn = new System.Data.SqlClient.SqlConnection();
-            tableAdapConn.ConnectionString = IAC2018SQL.Properties.Settings.Default.IAC2010SQLConnectionString;
+            tableAdapConn.ConnectionString = IAC2021SQL.Properties.Settings.Default.IAC2010SQLConnectionString;
             tableAdapConn.Open();
             macontTableAdapter.Connection = tableAdapConn;
             tableAdapTran = macontTableAdapter.BeginTransaction();

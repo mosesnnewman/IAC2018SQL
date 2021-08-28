@@ -1,4 +1,4 @@
-﻿namespace IAC2018SQL
+﻿namespace IAC2021SQL
 {
 
 
@@ -14,12 +14,13 @@
     }
 }
 
-namespace IAC2018SQL.TicketsTableAdapters
+namespace IAC2021SQL.TicketsTableAdapters
 {
     partial class TicketDetailTableAdapter
     {
     }
 
-    public partial class TicketHeaderTableAdapter {
+    public partial class TicketHeaderTableAdapter
+    {
     }
 }

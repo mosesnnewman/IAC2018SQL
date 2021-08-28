@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace IAC2018SQL.MessageWSProxy {
+namespace IAC2021SQL.MessageWSProxy {
     using System.Runtime.Serialization;
     using System;
     
@@ -29,7 +29,7 @@ namespace IAC2018SQL.MessageWSProxy {
         private string MessageField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private IAC2018SQL.MessageWSProxy.TransactionDetail[] ResponseField;
+        private IAC2021SQL.MessageWSProxy.TransactionDetail[] ResponseField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private bool ResultField;
@@ -71,7 +71,7 @@ namespace IAC2018SQL.MessageWSProxy {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public IAC2018SQL.MessageWSProxy.TransactionDetail[] Response {
+        public IAC2021SQL.MessageWSProxy.TransactionDetail[] Response {
             get {
                 return this.ResponseField;
             }
@@ -430,7 +430,7 @@ namespace IAC2018SQL.MessageWSProxy {
         private string SendToField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private IAC2018SQL.MessageWSProxy.CustomField[] CustomFieldsField;
+        private IAC2021SQL.MessageWSProxy.CustomField[] CustomFieldsField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -456,7 +456,7 @@ namespace IAC2018SQL.MessageWSProxy {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public IAC2018SQL.MessageWSProxy.CustomField[] CustomFields {
+        public IAC2021SQL.MessageWSProxy.CustomField[] CustomFields {
             get {
                 return this.CustomFieldsField;
             }
@@ -661,7 +661,7 @@ namespace IAC2018SQL.MessageWSProxy {
         private string OrgCodeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private IAC2018SQL.MessageWSProxy.CustomField[] CustomFieldsField;
+        private IAC2021SQL.MessageWSProxy.CustomField[] CustomFieldsField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -687,7 +687,7 @@ namespace IAC2018SQL.MessageWSProxy {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public IAC2018SQL.MessageWSProxy.CustomField[] CustomFields {
+        public IAC2021SQL.MessageWSProxy.CustomField[] CustomFields {
             get {
                 return this.CustomFieldsField;
             }
@@ -714,117 +714,117 @@ namespace IAC2018SQL.MessageWSProxy {
     public interface IMessage {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://SBTService/ServiceContracts/IMessage/GetMessageStatusByNote", ReplyAction="http://SBTService/ServiceContracts/IMessage/GetMessageStatusByNoteResponse")]
-        IAC2018SQL.MessageWSProxy.WSTransactionResponse GetMessageStatusByNote(string securityToken, string note, string orgCode, string sentTo);
+        IAC2021SQL.MessageWSProxy.WSTransactionResponse GetMessageStatusByNote(string securityToken, string note, string orgCode, string sentTo);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://SBTService/ServiceContracts/IMessage/GetMessageStatusByNote", ReplyAction="http://SBTService/ServiceContracts/IMessage/GetMessageStatusByNoteResponse")]
-        System.Threading.Tasks.Task<IAC2018SQL.MessageWSProxy.WSTransactionResponse> GetMessageStatusByNoteAsync(string securityToken, string note, string orgCode, string sentTo);
+        System.Threading.Tasks.Task<IAC2021SQL.MessageWSProxy.WSTransactionResponse> GetMessageStatusByNoteAsync(string securityToken, string note, string orgCode, string sentTo);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://SBTService/ServiceContracts/IMessage/GetMessageStatus", ReplyAction="http://SBTService/ServiceContracts/IMessage/GetMessageStatusResponse")]
-        IAC2018SQL.MessageWSProxy.WSTransactionResponse GetMessageStatus(string securityToken, string transactionTicketId, string orgCode, string sentTo);
+        IAC2021SQL.MessageWSProxy.WSTransactionResponse GetMessageStatus(string securityToken, string transactionTicketId, string orgCode, string sentTo);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://SBTService/ServiceContracts/IMessage/GetMessageStatus", ReplyAction="http://SBTService/ServiceContracts/IMessage/GetMessageStatusResponse")]
-        System.Threading.Tasks.Task<IAC2018SQL.MessageWSProxy.WSTransactionResponse> GetMessageStatusAsync(string securityToken, string transactionTicketId, string orgCode, string sentTo);
+        System.Threading.Tasks.Task<IAC2021SQL.MessageWSProxy.WSTransactionResponse> GetMessageStatusAsync(string securityToken, string transactionTicketId, string orgCode, string sentTo);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://SBTService/ServiceContracts/IMessage/ConfirmVBT", ReplyAction="http://SBTService/ServiceContracts/IMessage/ConfirmVBTResponse")]
-        IAC2018SQL.MessageWSProxy.WSVerificationResponse ConfirmVBT(string securityToken, string orgCode, string phone, string pin);
+        IAC2021SQL.MessageWSProxy.WSVerificationResponse ConfirmVBT(string securityToken, string orgCode, string phone, string pin);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://SBTService/ServiceContracts/IMessage/ConfirmVBT", ReplyAction="http://SBTService/ServiceContracts/IMessage/ConfirmVBTResponse")]
-        System.Threading.Tasks.Task<IAC2018SQL.MessageWSProxy.WSVerificationResponse> ConfirmVBTAsync(string securityToken, string orgCode, string phone, string pin);
+        System.Threading.Tasks.Task<IAC2021SQL.MessageWSProxy.WSVerificationResponse> ConfirmVBTAsync(string securityToken, string orgCode, string phone, string pin);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://SBTService/ServiceContracts/IMessage/RequestVBT", ReplyAction="http://SBTService/ServiceContracts/IMessage/RequestVBTResponse")]
-        IAC2018SQL.MessageWSProxy.WSVerificationResponse RequestVBT(string securityToken, string orgCode, string phone);
+        IAC2021SQL.MessageWSProxy.WSVerificationResponse RequestVBT(string securityToken, string orgCode, string phone);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://SBTService/ServiceContracts/IMessage/RequestVBT", ReplyAction="http://SBTService/ServiceContracts/IMessage/RequestVBTResponse")]
-        System.Threading.Tasks.Task<IAC2018SQL.MessageWSProxy.WSVerificationResponse> RequestVBTAsync(string securityToken, string orgCode, string phone);
+        System.Threading.Tasks.Task<IAC2021SQL.MessageWSProxy.WSVerificationResponse> RequestVBTAsync(string securityToken, string orgCode, string phone);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://SBTService/ServiceContracts/IMessage/RequireVBT", ReplyAction="http://SBTService/ServiceContracts/IMessage/RequireVBTResponse")]
-        IAC2018SQL.MessageWSProxy.WSVerificationResponse RequireVBT(string securityToken, string orgCode, string phone, string note, string statusUrl);
+        IAC2021SQL.MessageWSProxy.WSVerificationResponse RequireVBT(string securityToken, string orgCode, string phone, string note, string statusUrl);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://SBTService/ServiceContracts/IMessage/RequireVBT", ReplyAction="http://SBTService/ServiceContracts/IMessage/RequireVBTResponse")]
-        System.Threading.Tasks.Task<IAC2018SQL.MessageWSProxy.WSVerificationResponse> RequireVBTAsync(string securityToken, string orgCode, string phone, string note, string statusUrl);
+        System.Threading.Tasks.Task<IAC2021SQL.MessageWSProxy.WSVerificationResponse> RequireVBTAsync(string securityToken, string orgCode, string phone, string note, string statusUrl);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://SBTService/ServiceContracts/IMessage/ConfirmVBTWithTransactionTicket", ReplyAction="http://SBTService/ServiceContracts/IMessage/ConfirmVBTWithTransactionTicketRespon" +
             "se")]
-        IAC2018SQL.MessageWSProxy.WSVBTResponse ConfirmVBTWithTransactionTicket(string securityToken, string orgCode, string phone, string pin);
+        IAC2021SQL.MessageWSProxy.WSVBTResponse ConfirmVBTWithTransactionTicket(string securityToken, string orgCode, string phone, string pin);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://SBTService/ServiceContracts/IMessage/ConfirmVBTWithTransactionTicket", ReplyAction="http://SBTService/ServiceContracts/IMessage/ConfirmVBTWithTransactionTicketRespon" +
             "se")]
-        System.Threading.Tasks.Task<IAC2018SQL.MessageWSProxy.WSVBTResponse> ConfirmVBTWithTransactionTicketAsync(string securityToken, string orgCode, string phone, string pin);
+        System.Threading.Tasks.Task<IAC2021SQL.MessageWSProxy.WSVBTResponse> ConfirmVBTWithTransactionTicketAsync(string securityToken, string orgCode, string phone, string pin);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://SBTService/ServiceContracts/IMessage/RequestVBTWithTransactionTicket", ReplyAction="http://SBTService/ServiceContracts/IMessage/RequestVBTWithTransactionTicketRespon" +
             "se")]
-        IAC2018SQL.MessageWSProxy.WSVBTResponse RequestVBTWithTransactionTicket(string securityToken, string orgCode, string phone);
+        IAC2021SQL.MessageWSProxy.WSVBTResponse RequestVBTWithTransactionTicket(string securityToken, string orgCode, string phone);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://SBTService/ServiceContracts/IMessage/RequestVBTWithTransactionTicket", ReplyAction="http://SBTService/ServiceContracts/IMessage/RequestVBTWithTransactionTicketRespon" +
             "se")]
-        System.Threading.Tasks.Task<IAC2018SQL.MessageWSProxy.WSVBTResponse> RequestVBTWithTransactionTicketAsync(string securityToken, string orgCode, string phone);
+        System.Threading.Tasks.Task<IAC2021SQL.MessageWSProxy.WSVBTResponse> RequestVBTWithTransactionTicketAsync(string securityToken, string orgCode, string phone);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://SBTService/ServiceContracts/IMessage/RequireVBTWithTransactionTicket", ReplyAction="http://SBTService/ServiceContracts/IMessage/RequireVBTWithTransactionTicketRespon" +
             "se")]
-        IAC2018SQL.MessageWSProxy.WSVBTResponse RequireVBTWithTransactionTicket(string securityToken, string orgCode, string phone, string note, string statusUrl);
+        IAC2021SQL.MessageWSProxy.WSVBTResponse RequireVBTWithTransactionTicket(string securityToken, string orgCode, string phone, string note, string statusUrl);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://SBTService/ServiceContracts/IMessage/RequireVBTWithTransactionTicket", ReplyAction="http://SBTService/ServiceContracts/IMessage/RequireVBTWithTransactionTicketRespon" +
             "se")]
-        System.Threading.Tasks.Task<IAC2018SQL.MessageWSProxy.WSVBTResponse> RequireVBTWithTransactionTicketAsync(string securityToken, string orgCode, string phone, string note, string statusUrl);
+        System.Threading.Tasks.Task<IAC2021SQL.MessageWSProxy.WSVBTResponse> RequireVBTWithTransactionTicketAsync(string securityToken, string orgCode, string phone, string note, string statusUrl);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://SBTService/ServiceContracts/IMessage/SendMessage", ReplyAction="http://SBTService/ServiceContracts/IMessage/SendMessageResponse")]
-        IAC2018SQL.MessageWSProxy.WSMessageResponse SendMessage(string securityToken, string message, IAC2018SQL.MessageWSProxy.WSRecipient[] sendTo, string orgCode, string note, string statusUrl);
+        IAC2021SQL.MessageWSProxy.WSMessageResponse SendMessage(string securityToken, string message, IAC2021SQL.MessageWSProxy.WSRecipient[] sendTo, string orgCode, string note, string statusUrl);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://SBTService/ServiceContracts/IMessage/SendMessage", ReplyAction="http://SBTService/ServiceContracts/IMessage/SendMessageResponse")]
-        System.Threading.Tasks.Task<IAC2018SQL.MessageWSProxy.WSMessageResponse> SendMessageAsync(string securityToken, string message, IAC2018SQL.MessageWSProxy.WSRecipient[] sendTo, string orgCode, string note, string statusUrl);
+        System.Threading.Tasks.Task<IAC2021SQL.MessageWSProxy.WSMessageResponse> SendMessageAsync(string securityToken, string message, IAC2021SQL.MessageWSProxy.WSRecipient[] sendTo, string orgCode, string note, string statusUrl);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://SBTService/ServiceContracts/IMessage/SendMessageToOrg", ReplyAction="http://SBTService/ServiceContracts/IMessage/SendMessageToOrgResponse")]
-        IAC2018SQL.MessageWSProxy.WSMessageResponse SendMessageToOrg(string securityToken, string message, IAC2018SQL.MessageWSProxy.WSOrgRecipient[] orgCode, string note, string statusUrl);
+        IAC2021SQL.MessageWSProxy.WSMessageResponse SendMessageToOrg(string securityToken, string message, IAC2021SQL.MessageWSProxy.WSOrgRecipient[] orgCode, string note, string statusUrl);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://SBTService/ServiceContracts/IMessage/SendMessageToOrg", ReplyAction="http://SBTService/ServiceContracts/IMessage/SendMessageToOrgResponse")]
-        System.Threading.Tasks.Task<IAC2018SQL.MessageWSProxy.WSMessageResponse> SendMessageToOrgAsync(string securityToken, string message, IAC2018SQL.MessageWSProxy.WSOrgRecipient[] orgCode, string note, string statusUrl);
+        System.Threading.Tasks.Task<IAC2021SQL.MessageWSProxy.WSMessageResponse> SendMessageToOrgAsync(string securityToken, string message, IAC2021SQL.MessageWSProxy.WSOrgRecipient[] orgCode, string note, string statusUrl);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://SBTService/ServiceContracts/IMessage/SendTemplateMessage", ReplyAction="http://SBTService/ServiceContracts/IMessage/SendTemplateMessageResponse")]
-        IAC2018SQL.MessageWSProxy.WSMessageResponse SendTemplateMessage(string securityToken, int templateID, IAC2018SQL.MessageWSProxy.WSRecipient[] sendTo, string orgCode, string note, string statusUrl);
+        IAC2021SQL.MessageWSProxy.WSMessageResponse SendTemplateMessage(string securityToken, int templateID, IAC2021SQL.MessageWSProxy.WSRecipient[] sendTo, string orgCode, string note, string statusUrl);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://SBTService/ServiceContracts/IMessage/SendTemplateMessage", ReplyAction="http://SBTService/ServiceContracts/IMessage/SendTemplateMessageResponse")]
-        System.Threading.Tasks.Task<IAC2018SQL.MessageWSProxy.WSMessageResponse> SendTemplateMessageAsync(string securityToken, int templateID, IAC2018SQL.MessageWSProxy.WSRecipient[] sendTo, string orgCode, string note, string statusUrl);
+        System.Threading.Tasks.Task<IAC2021SQL.MessageWSProxy.WSMessageResponse> SendTemplateMessageAsync(string securityToken, int templateID, IAC2021SQL.MessageWSProxy.WSRecipient[] sendTo, string orgCode, string note, string statusUrl);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://SBTService/ServiceContracts/IMessage/ScheduleSendMessage", ReplyAction="http://SBTService/ServiceContracts/IMessage/ScheduleSendMessageResponse")]
-        IAC2018SQL.MessageWSProxy.WSMessageResponse ScheduleSendMessage(string securityToken, string message, IAC2018SQL.MessageWSProxy.WSRecipient[] sendTo, string orgCode, System.DateTime scheduleDateTime, string timeZone, string note, string statusUrl);
+        IAC2021SQL.MessageWSProxy.WSMessageResponse ScheduleSendMessage(string securityToken, string message, IAC2021SQL.MessageWSProxy.WSRecipient[] sendTo, string orgCode, System.DateTime scheduleDateTime, string timeZone, string note, string statusUrl);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://SBTService/ServiceContracts/IMessage/ScheduleSendMessage", ReplyAction="http://SBTService/ServiceContracts/IMessage/ScheduleSendMessageResponse")]
-        System.Threading.Tasks.Task<IAC2018SQL.MessageWSProxy.WSMessageResponse> ScheduleSendMessageAsync(string securityToken, string message, IAC2018SQL.MessageWSProxy.WSRecipient[] sendTo, string orgCode, System.DateTime scheduleDateTime, string timeZone, string note, string statusUrl);
+        System.Threading.Tasks.Task<IAC2021SQL.MessageWSProxy.WSMessageResponse> ScheduleSendMessageAsync(string securityToken, string message, IAC2021SQL.MessageWSProxy.WSRecipient[] sendTo, string orgCode, System.DateTime scheduleDateTime, string timeZone, string note, string statusUrl);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://SBTService/ServiceContracts/IMessage/ScheduleSendTemplateMessage", ReplyAction="http://SBTService/ServiceContracts/IMessage/ScheduleSendTemplateMessageResponse")]
-        IAC2018SQL.MessageWSProxy.WSMessageResponse ScheduleSendTemplateMessage(string securityToken, int templateID, IAC2018SQL.MessageWSProxy.WSRecipient[] sendTo, string orgCode, System.DateTime scheduleDateTime, string timeZone, string note, string statusUrl);
+        IAC2021SQL.MessageWSProxy.WSMessageResponse ScheduleSendTemplateMessage(string securityToken, int templateID, IAC2021SQL.MessageWSProxy.WSRecipient[] sendTo, string orgCode, System.DateTime scheduleDateTime, string timeZone, string note, string statusUrl);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://SBTService/ServiceContracts/IMessage/ScheduleSendTemplateMessage", ReplyAction="http://SBTService/ServiceContracts/IMessage/ScheduleSendTemplateMessageResponse")]
-        System.Threading.Tasks.Task<IAC2018SQL.MessageWSProxy.WSMessageResponse> ScheduleSendTemplateMessageAsync(string securityToken, int templateID, IAC2018SQL.MessageWSProxy.WSRecipient[] sendTo, string orgCode, System.DateTime scheduleDateTime, string timeZone, string note, string statusUrl);
+        System.Threading.Tasks.Task<IAC2021SQL.MessageWSProxy.WSMessageResponse> ScheduleSendTemplateMessageAsync(string securityToken, int templateID, IAC2021SQL.MessageWSProxy.WSRecipient[] sendTo, string orgCode, System.DateTime scheduleDateTime, string timeZone, string note, string statusUrl);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://SBTService/ServiceContracts/IMessage/ScheduleSendMessageToOrg", ReplyAction="http://SBTService/ServiceContracts/IMessage/ScheduleSendMessageToOrgResponse")]
-        IAC2018SQL.MessageWSProxy.WSMessageResponse ScheduleSendMessageToOrg(string securityToken, string message, IAC2018SQL.MessageWSProxy.WSOrgRecipient[] orgCode, System.DateTime scheduleDateTime, string timeZone, string note, string statusUrl);
+        IAC2021SQL.MessageWSProxy.WSMessageResponse ScheduleSendMessageToOrg(string securityToken, string message, IAC2021SQL.MessageWSProxy.WSOrgRecipient[] orgCode, System.DateTime scheduleDateTime, string timeZone, string note, string statusUrl);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://SBTService/ServiceContracts/IMessage/ScheduleSendMessageToOrg", ReplyAction="http://SBTService/ServiceContracts/IMessage/ScheduleSendMessageToOrgResponse")]
-        System.Threading.Tasks.Task<IAC2018SQL.MessageWSProxy.WSMessageResponse> ScheduleSendMessageToOrgAsync(string securityToken, string message, IAC2018SQL.MessageWSProxy.WSOrgRecipient[] orgCode, System.DateTime scheduleDateTime, string timeZone, string note, string statusUrl);
+        System.Threading.Tasks.Task<IAC2021SQL.MessageWSProxy.WSMessageResponse> ScheduleSendMessageToOrgAsync(string securityToken, string message, IAC2021SQL.MessageWSProxy.WSOrgRecipient[] orgCode, System.DateTime scheduleDateTime, string timeZone, string note, string statusUrl);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://SBTService/ServiceContracts/IMessage/ScheduleSendTemplateMessageToOrg", ReplyAction="http://SBTService/ServiceContracts/IMessage/ScheduleSendTemplateMessageToOrgRespo" +
             "nse")]
-        IAC2018SQL.MessageWSProxy.WSMessageResponse ScheduleSendTemplateMessageToOrg(string securityToken, int templateID, IAC2018SQL.MessageWSProxy.WSOrgRecipient[] orgCode, System.DateTime scheduleDateTime, string timeZone, string note, string statusUrl);
+        IAC2021SQL.MessageWSProxy.WSMessageResponse ScheduleSendTemplateMessageToOrg(string securityToken, int templateID, IAC2021SQL.MessageWSProxy.WSOrgRecipient[] orgCode, System.DateTime scheduleDateTime, string timeZone, string note, string statusUrl);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://SBTService/ServiceContracts/IMessage/ScheduleSendTemplateMessageToOrg", ReplyAction="http://SBTService/ServiceContracts/IMessage/ScheduleSendTemplateMessageToOrgRespo" +
             "nse")]
-        System.Threading.Tasks.Task<IAC2018SQL.MessageWSProxy.WSMessageResponse> ScheduleSendTemplateMessageToOrgAsync(string securityToken, int templateID, IAC2018SQL.MessageWSProxy.WSOrgRecipient[] orgCode, System.DateTime scheduleDateTime, string timeZone, string note, string statusUrl);
+        System.Threading.Tasks.Task<IAC2021SQL.MessageWSProxy.WSMessageResponse> ScheduleSendTemplateMessageToOrgAsync(string securityToken, int templateID, IAC2021SQL.MessageWSProxy.WSOrgRecipient[] orgCode, System.DateTime scheduleDateTime, string timeZone, string note, string statusUrl);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://SBTService/ServiceContracts/IMessage/SendTemplateMessageToOrg", ReplyAction="http://SBTService/ServiceContracts/IMessage/SendTemplateMessageToOrgResponse")]
-        IAC2018SQL.MessageWSProxy.WSMessageResponse SendTemplateMessageToOrg(string securityToken, int templateID, IAC2018SQL.MessageWSProxy.WSOrgRecipient[] orgCode, string note, string statusUrl);
+        IAC2021SQL.MessageWSProxy.WSMessageResponse SendTemplateMessageToOrg(string securityToken, int templateID, IAC2021SQL.MessageWSProxy.WSOrgRecipient[] orgCode, string note, string statusUrl);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://SBTService/ServiceContracts/IMessage/SendTemplateMessageToOrg", ReplyAction="http://SBTService/ServiceContracts/IMessage/SendTemplateMessageToOrgResponse")]
-        System.Threading.Tasks.Task<IAC2018SQL.MessageWSProxy.WSMessageResponse> SendTemplateMessageToOrgAsync(string securityToken, int templateID, IAC2018SQL.MessageWSProxy.WSOrgRecipient[] orgCode, string note, string statusUrl);
+        System.Threading.Tasks.Task<IAC2021SQL.MessageWSProxy.WSMessageResponse> SendTemplateMessageToOrgAsync(string securityToken, int templateID, IAC2021SQL.MessageWSProxy.WSOrgRecipient[] orgCode, string note, string statusUrl);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IMessageChannel : IAC2018SQL.MessageWSProxy.IMessage, System.ServiceModel.IClientChannel {
+    public interface IMessageChannel : IAC2021SQL.MessageWSProxy.IMessage, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class MessageClient : System.ServiceModel.ClientBase<IAC2018SQL.MessageWSProxy.IMessage>, IAC2018SQL.MessageWSProxy.IMessage {
+    public partial class MessageClient : System.ServiceModel.ClientBase<IAC2021SQL.MessageWSProxy.IMessage>, IAC2021SQL.MessageWSProxy.IMessage {
         
         public MessageClient() {
         }
@@ -845,131 +845,131 @@ namespace IAC2018SQL.MessageWSProxy {
                 base(binding, remoteAddress) {
         }
         
-        public IAC2018SQL.MessageWSProxy.WSTransactionResponse GetMessageStatusByNote(string securityToken, string note, string orgCode, string sentTo) {
+        public IAC2021SQL.MessageWSProxy.WSTransactionResponse GetMessageStatusByNote(string securityToken, string note, string orgCode, string sentTo) {
             return base.Channel.GetMessageStatusByNote(securityToken, note, orgCode, sentTo);
         }
         
-        public System.Threading.Tasks.Task<IAC2018SQL.MessageWSProxy.WSTransactionResponse> GetMessageStatusByNoteAsync(string securityToken, string note, string orgCode, string sentTo) {
+        public System.Threading.Tasks.Task<IAC2021SQL.MessageWSProxy.WSTransactionResponse> GetMessageStatusByNoteAsync(string securityToken, string note, string orgCode, string sentTo) {
             return base.Channel.GetMessageStatusByNoteAsync(securityToken, note, orgCode, sentTo);
         }
         
-        public IAC2018SQL.MessageWSProxy.WSTransactionResponse GetMessageStatus(string securityToken, string transactionTicketId, string orgCode, string sentTo) {
+        public IAC2021SQL.MessageWSProxy.WSTransactionResponse GetMessageStatus(string securityToken, string transactionTicketId, string orgCode, string sentTo) {
             return base.Channel.GetMessageStatus(securityToken, transactionTicketId, orgCode, sentTo);
         }
         
-        public System.Threading.Tasks.Task<IAC2018SQL.MessageWSProxy.WSTransactionResponse> GetMessageStatusAsync(string securityToken, string transactionTicketId, string orgCode, string sentTo) {
+        public System.Threading.Tasks.Task<IAC2021SQL.MessageWSProxy.WSTransactionResponse> GetMessageStatusAsync(string securityToken, string transactionTicketId, string orgCode, string sentTo) {
             return base.Channel.GetMessageStatusAsync(securityToken, transactionTicketId, orgCode, sentTo);
         }
         
-        public IAC2018SQL.MessageWSProxy.WSVerificationResponse ConfirmVBT(string securityToken, string orgCode, string phone, string pin) {
+        public IAC2021SQL.MessageWSProxy.WSVerificationResponse ConfirmVBT(string securityToken, string orgCode, string phone, string pin) {
             return base.Channel.ConfirmVBT(securityToken, orgCode, phone, pin);
         }
         
-        public System.Threading.Tasks.Task<IAC2018SQL.MessageWSProxy.WSVerificationResponse> ConfirmVBTAsync(string securityToken, string orgCode, string phone, string pin) {
+        public System.Threading.Tasks.Task<IAC2021SQL.MessageWSProxy.WSVerificationResponse> ConfirmVBTAsync(string securityToken, string orgCode, string phone, string pin) {
             return base.Channel.ConfirmVBTAsync(securityToken, orgCode, phone, pin);
         }
         
-        public IAC2018SQL.MessageWSProxy.WSVerificationResponse RequestVBT(string securityToken, string orgCode, string phone) {
+        public IAC2021SQL.MessageWSProxy.WSVerificationResponse RequestVBT(string securityToken, string orgCode, string phone) {
             return base.Channel.RequestVBT(securityToken, orgCode, phone);
         }
         
-        public System.Threading.Tasks.Task<IAC2018SQL.MessageWSProxy.WSVerificationResponse> RequestVBTAsync(string securityToken, string orgCode, string phone) {
+        public System.Threading.Tasks.Task<IAC2021SQL.MessageWSProxy.WSVerificationResponse> RequestVBTAsync(string securityToken, string orgCode, string phone) {
             return base.Channel.RequestVBTAsync(securityToken, orgCode, phone);
         }
         
-        public IAC2018SQL.MessageWSProxy.WSVerificationResponse RequireVBT(string securityToken, string orgCode, string phone, string note, string statusUrl) {
+        public IAC2021SQL.MessageWSProxy.WSVerificationResponse RequireVBT(string securityToken, string orgCode, string phone, string note, string statusUrl) {
             return base.Channel.RequireVBT(securityToken, orgCode, phone, note, statusUrl);
         }
         
-        public System.Threading.Tasks.Task<IAC2018SQL.MessageWSProxy.WSVerificationResponse> RequireVBTAsync(string securityToken, string orgCode, string phone, string note, string statusUrl) {
+        public System.Threading.Tasks.Task<IAC2021SQL.MessageWSProxy.WSVerificationResponse> RequireVBTAsync(string securityToken, string orgCode, string phone, string note, string statusUrl) {
             return base.Channel.RequireVBTAsync(securityToken, orgCode, phone, note, statusUrl);
         }
         
-        public IAC2018SQL.MessageWSProxy.WSVBTResponse ConfirmVBTWithTransactionTicket(string securityToken, string orgCode, string phone, string pin) {
+        public IAC2021SQL.MessageWSProxy.WSVBTResponse ConfirmVBTWithTransactionTicket(string securityToken, string orgCode, string phone, string pin) {
             return base.Channel.ConfirmVBTWithTransactionTicket(securityToken, orgCode, phone, pin);
         }
         
-        public System.Threading.Tasks.Task<IAC2018SQL.MessageWSProxy.WSVBTResponse> ConfirmVBTWithTransactionTicketAsync(string securityToken, string orgCode, string phone, string pin) {
+        public System.Threading.Tasks.Task<IAC2021SQL.MessageWSProxy.WSVBTResponse> ConfirmVBTWithTransactionTicketAsync(string securityToken, string orgCode, string phone, string pin) {
             return base.Channel.ConfirmVBTWithTransactionTicketAsync(securityToken, orgCode, phone, pin);
         }
         
-        public IAC2018SQL.MessageWSProxy.WSVBTResponse RequestVBTWithTransactionTicket(string securityToken, string orgCode, string phone) {
+        public IAC2021SQL.MessageWSProxy.WSVBTResponse RequestVBTWithTransactionTicket(string securityToken, string orgCode, string phone) {
             return base.Channel.RequestVBTWithTransactionTicket(securityToken, orgCode, phone);
         }
         
-        public System.Threading.Tasks.Task<IAC2018SQL.MessageWSProxy.WSVBTResponse> RequestVBTWithTransactionTicketAsync(string securityToken, string orgCode, string phone) {
+        public System.Threading.Tasks.Task<IAC2021SQL.MessageWSProxy.WSVBTResponse> RequestVBTWithTransactionTicketAsync(string securityToken, string orgCode, string phone) {
             return base.Channel.RequestVBTWithTransactionTicketAsync(securityToken, orgCode, phone);
         }
         
-        public IAC2018SQL.MessageWSProxy.WSVBTResponse RequireVBTWithTransactionTicket(string securityToken, string orgCode, string phone, string note, string statusUrl) {
+        public IAC2021SQL.MessageWSProxy.WSVBTResponse RequireVBTWithTransactionTicket(string securityToken, string orgCode, string phone, string note, string statusUrl) {
             return base.Channel.RequireVBTWithTransactionTicket(securityToken, orgCode, phone, note, statusUrl);
         }
         
-        public System.Threading.Tasks.Task<IAC2018SQL.MessageWSProxy.WSVBTResponse> RequireVBTWithTransactionTicketAsync(string securityToken, string orgCode, string phone, string note, string statusUrl) {
+        public System.Threading.Tasks.Task<IAC2021SQL.MessageWSProxy.WSVBTResponse> RequireVBTWithTransactionTicketAsync(string securityToken, string orgCode, string phone, string note, string statusUrl) {
             return base.Channel.RequireVBTWithTransactionTicketAsync(securityToken, orgCode, phone, note, statusUrl);
         }
         
-        public IAC2018SQL.MessageWSProxy.WSMessageResponse SendMessage(string securityToken, string message, IAC2018SQL.MessageWSProxy.WSRecipient[] sendTo, string orgCode, string note, string statusUrl) {
+        public IAC2021SQL.MessageWSProxy.WSMessageResponse SendMessage(string securityToken, string message, IAC2021SQL.MessageWSProxy.WSRecipient[] sendTo, string orgCode, string note, string statusUrl) {
             return base.Channel.SendMessage(securityToken, message, sendTo, orgCode, note, statusUrl);
         }
         
-        public System.Threading.Tasks.Task<IAC2018SQL.MessageWSProxy.WSMessageResponse> SendMessageAsync(string securityToken, string message, IAC2018SQL.MessageWSProxy.WSRecipient[] sendTo, string orgCode, string note, string statusUrl) {
+        public System.Threading.Tasks.Task<IAC2021SQL.MessageWSProxy.WSMessageResponse> SendMessageAsync(string securityToken, string message, IAC2021SQL.MessageWSProxy.WSRecipient[] sendTo, string orgCode, string note, string statusUrl) {
             return base.Channel.SendMessageAsync(securityToken, message, sendTo, orgCode, note, statusUrl);
         }
         
-        public IAC2018SQL.MessageWSProxy.WSMessageResponse SendMessageToOrg(string securityToken, string message, IAC2018SQL.MessageWSProxy.WSOrgRecipient[] orgCode, string note, string statusUrl) {
+        public IAC2021SQL.MessageWSProxy.WSMessageResponse SendMessageToOrg(string securityToken, string message, IAC2021SQL.MessageWSProxy.WSOrgRecipient[] orgCode, string note, string statusUrl) {
             return base.Channel.SendMessageToOrg(securityToken, message, orgCode, note, statusUrl);
         }
         
-        public System.Threading.Tasks.Task<IAC2018SQL.MessageWSProxy.WSMessageResponse> SendMessageToOrgAsync(string securityToken, string message, IAC2018SQL.MessageWSProxy.WSOrgRecipient[] orgCode, string note, string statusUrl) {
+        public System.Threading.Tasks.Task<IAC2021SQL.MessageWSProxy.WSMessageResponse> SendMessageToOrgAsync(string securityToken, string message, IAC2021SQL.MessageWSProxy.WSOrgRecipient[] orgCode, string note, string statusUrl) {
             return base.Channel.SendMessageToOrgAsync(securityToken, message, orgCode, note, statusUrl);
         }
         
-        public IAC2018SQL.MessageWSProxy.WSMessageResponse SendTemplateMessage(string securityToken, int templateID, IAC2018SQL.MessageWSProxy.WSRecipient[] sendTo, string orgCode, string note, string statusUrl) {
+        public IAC2021SQL.MessageWSProxy.WSMessageResponse SendTemplateMessage(string securityToken, int templateID, IAC2021SQL.MessageWSProxy.WSRecipient[] sendTo, string orgCode, string note, string statusUrl) {
             return base.Channel.SendTemplateMessage(securityToken, templateID, sendTo, orgCode, note, statusUrl);
         }
         
-        public System.Threading.Tasks.Task<IAC2018SQL.MessageWSProxy.WSMessageResponse> SendTemplateMessageAsync(string securityToken, int templateID, IAC2018SQL.MessageWSProxy.WSRecipient[] sendTo, string orgCode, string note, string statusUrl) {
+        public System.Threading.Tasks.Task<IAC2021SQL.MessageWSProxy.WSMessageResponse> SendTemplateMessageAsync(string securityToken, int templateID, IAC2021SQL.MessageWSProxy.WSRecipient[] sendTo, string orgCode, string note, string statusUrl) {
             return base.Channel.SendTemplateMessageAsync(securityToken, templateID, sendTo, orgCode, note, statusUrl);
         }
         
-        public IAC2018SQL.MessageWSProxy.WSMessageResponse ScheduleSendMessage(string securityToken, string message, IAC2018SQL.MessageWSProxy.WSRecipient[] sendTo, string orgCode, System.DateTime scheduleDateTime, string timeZone, string note, string statusUrl) {
+        public IAC2021SQL.MessageWSProxy.WSMessageResponse ScheduleSendMessage(string securityToken, string message, IAC2021SQL.MessageWSProxy.WSRecipient[] sendTo, string orgCode, System.DateTime scheduleDateTime, string timeZone, string note, string statusUrl) {
             return base.Channel.ScheduleSendMessage(securityToken, message, sendTo, orgCode, scheduleDateTime, timeZone, note, statusUrl);
         }
         
-        public System.Threading.Tasks.Task<IAC2018SQL.MessageWSProxy.WSMessageResponse> ScheduleSendMessageAsync(string securityToken, string message, IAC2018SQL.MessageWSProxy.WSRecipient[] sendTo, string orgCode, System.DateTime scheduleDateTime, string timeZone, string note, string statusUrl) {
+        public System.Threading.Tasks.Task<IAC2021SQL.MessageWSProxy.WSMessageResponse> ScheduleSendMessageAsync(string securityToken, string message, IAC2021SQL.MessageWSProxy.WSRecipient[] sendTo, string orgCode, System.DateTime scheduleDateTime, string timeZone, string note, string statusUrl) {
             return base.Channel.ScheduleSendMessageAsync(securityToken, message, sendTo, orgCode, scheduleDateTime, timeZone, note, statusUrl);
         }
         
-        public IAC2018SQL.MessageWSProxy.WSMessageResponse ScheduleSendTemplateMessage(string securityToken, int templateID, IAC2018SQL.MessageWSProxy.WSRecipient[] sendTo, string orgCode, System.DateTime scheduleDateTime, string timeZone, string note, string statusUrl) {
+        public IAC2021SQL.MessageWSProxy.WSMessageResponse ScheduleSendTemplateMessage(string securityToken, int templateID, IAC2021SQL.MessageWSProxy.WSRecipient[] sendTo, string orgCode, System.DateTime scheduleDateTime, string timeZone, string note, string statusUrl) {
             return base.Channel.ScheduleSendTemplateMessage(securityToken, templateID, sendTo, orgCode, scheduleDateTime, timeZone, note, statusUrl);
         }
         
-        public System.Threading.Tasks.Task<IAC2018SQL.MessageWSProxy.WSMessageResponse> ScheduleSendTemplateMessageAsync(string securityToken, int templateID, IAC2018SQL.MessageWSProxy.WSRecipient[] sendTo, string orgCode, System.DateTime scheduleDateTime, string timeZone, string note, string statusUrl) {
+        public System.Threading.Tasks.Task<IAC2021SQL.MessageWSProxy.WSMessageResponse> ScheduleSendTemplateMessageAsync(string securityToken, int templateID, IAC2021SQL.MessageWSProxy.WSRecipient[] sendTo, string orgCode, System.DateTime scheduleDateTime, string timeZone, string note, string statusUrl) {
             return base.Channel.ScheduleSendTemplateMessageAsync(securityToken, templateID, sendTo, orgCode, scheduleDateTime, timeZone, note, statusUrl);
         }
         
-        public IAC2018SQL.MessageWSProxy.WSMessageResponse ScheduleSendMessageToOrg(string securityToken, string message, IAC2018SQL.MessageWSProxy.WSOrgRecipient[] orgCode, System.DateTime scheduleDateTime, string timeZone, string note, string statusUrl) {
+        public IAC2021SQL.MessageWSProxy.WSMessageResponse ScheduleSendMessageToOrg(string securityToken, string message, IAC2021SQL.MessageWSProxy.WSOrgRecipient[] orgCode, System.DateTime scheduleDateTime, string timeZone, string note, string statusUrl) {
             return base.Channel.ScheduleSendMessageToOrg(securityToken, message, orgCode, scheduleDateTime, timeZone, note, statusUrl);
         }
         
-        public System.Threading.Tasks.Task<IAC2018SQL.MessageWSProxy.WSMessageResponse> ScheduleSendMessageToOrgAsync(string securityToken, string message, IAC2018SQL.MessageWSProxy.WSOrgRecipient[] orgCode, System.DateTime scheduleDateTime, string timeZone, string note, string statusUrl) {
+        public System.Threading.Tasks.Task<IAC2021SQL.MessageWSProxy.WSMessageResponse> ScheduleSendMessageToOrgAsync(string securityToken, string message, IAC2021SQL.MessageWSProxy.WSOrgRecipient[] orgCode, System.DateTime scheduleDateTime, string timeZone, string note, string statusUrl) {
             return base.Channel.ScheduleSendMessageToOrgAsync(securityToken, message, orgCode, scheduleDateTime, timeZone, note, statusUrl);
         }
         
-        public IAC2018SQL.MessageWSProxy.WSMessageResponse ScheduleSendTemplateMessageToOrg(string securityToken, int templateID, IAC2018SQL.MessageWSProxy.WSOrgRecipient[] orgCode, System.DateTime scheduleDateTime, string timeZone, string note, string statusUrl) {
+        public IAC2021SQL.MessageWSProxy.WSMessageResponse ScheduleSendTemplateMessageToOrg(string securityToken, int templateID, IAC2021SQL.MessageWSProxy.WSOrgRecipient[] orgCode, System.DateTime scheduleDateTime, string timeZone, string note, string statusUrl) {
             return base.Channel.ScheduleSendTemplateMessageToOrg(securityToken, templateID, orgCode, scheduleDateTime, timeZone, note, statusUrl);
         }
         
-        public System.Threading.Tasks.Task<IAC2018SQL.MessageWSProxy.WSMessageResponse> ScheduleSendTemplateMessageToOrgAsync(string securityToken, int templateID, IAC2018SQL.MessageWSProxy.WSOrgRecipient[] orgCode, System.DateTime scheduleDateTime, string timeZone, string note, string statusUrl) {
+        public System.Threading.Tasks.Task<IAC2021SQL.MessageWSProxy.WSMessageResponse> ScheduleSendTemplateMessageToOrgAsync(string securityToken, int templateID, IAC2021SQL.MessageWSProxy.WSOrgRecipient[] orgCode, System.DateTime scheduleDateTime, string timeZone, string note, string statusUrl) {
             return base.Channel.ScheduleSendTemplateMessageToOrgAsync(securityToken, templateID, orgCode, scheduleDateTime, timeZone, note, statusUrl);
         }
         
-        public IAC2018SQL.MessageWSProxy.WSMessageResponse SendTemplateMessageToOrg(string securityToken, int templateID, IAC2018SQL.MessageWSProxy.WSOrgRecipient[] orgCode, string note, string statusUrl) {
+        public IAC2021SQL.MessageWSProxy.WSMessageResponse SendTemplateMessageToOrg(string securityToken, int templateID, IAC2021SQL.MessageWSProxy.WSOrgRecipient[] orgCode, string note, string statusUrl) {
             return base.Channel.SendTemplateMessageToOrg(securityToken, templateID, orgCode, note, statusUrl);
         }
         
-        public System.Threading.Tasks.Task<IAC2018SQL.MessageWSProxy.WSMessageResponse> SendTemplateMessageToOrgAsync(string securityToken, int templateID, IAC2018SQL.MessageWSProxy.WSOrgRecipient[] orgCode, string note, string statusUrl) {
+        public System.Threading.Tasks.Task<IAC2021SQL.MessageWSProxy.WSMessageResponse> SendTemplateMessageToOrgAsync(string securityToken, int templateID, IAC2021SQL.MessageWSProxy.WSOrgRecipient[] orgCode, string note, string statusUrl) {
             return base.Channel.SendTemplateMessageToOrgAsync(securityToken, templateID, orgCode, note, statusUrl);
         }
     }

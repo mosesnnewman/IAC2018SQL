@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace IAC2018SQL {
+namespace IAC2021SQL {
     
     
     /// <summary>
@@ -8916,7 +8916,7 @@ namespace IAC2018SQL {
         }
     }
 }
-namespace IAC2018SQL.RepoDataSetTableAdapters {
+namespace IAC2021SQL.RepoDataSetTableAdapters {
     
     
     /// <summary>
@@ -9136,7 +9136,7 @@ namespace IAC2018SQL.RepoDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::IAC2018SQL.Properties.Settings.Default.IAC2010SQLConnectionString;
+            this._connection.ConnectionString = global::IAC2021SQL.Properties.Settings.Default.IAC2010SQLConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10315,7 +10315,7 @@ namespace IAC2018SQL.RepoDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::IAC2018SQL.Properties.Settings.Default.IAC2010SQLConnectionString;
+            this._connection.ConnectionString = global::IAC2021SQL.Properties.Settings.Default.IAC2010SQLConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

@@ -1,4 +1,4 @@
-﻿namespace IAC2018SQL
+﻿namespace IAC2021SQL
 {
     partial class ClosedOverPaymentReport
     {
@@ -101,7 +101,7 @@
             // 
             // buttonExcel
             // 
-            this.buttonExcel.Image = global::IAC2018SQL.Properties.Resources.ExportToExcel_64x;
+            this.buttonExcel.Image = global::IAC2021SQL.Properties.Resources.ExportToExcel_64x;
             this.buttonExcel.Location = new System.Drawing.Point(37, 27);
             this.buttonExcel.Name = "buttonExcel";
             this.buttonExcel.Size = new System.Drawing.Size(138, 135);

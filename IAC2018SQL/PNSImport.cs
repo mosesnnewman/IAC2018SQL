@@ -16,7 +16,7 @@ using Microsoft.SqlServer.Management.Common;
 using Excel = Microsoft.Office.Interop.Excel;
 
 
-namespace IAC2018SQL
+namespace IAC2021SQL
 {
     // Moses Newman 11/06/2019 Create PayNSeconds SFTP download and import int PAYMENTS routines.
     public partial class frmPNSImport : Form
@@ -150,7 +150,7 @@ namespace IAC2018SQL
             Int32 FileNumber = 0, TotalFiles = 0, Progress = 0,TotalDownloads = 0;
             String FilePath = @"\\dc-iac\Public\PayNSeconds\",
                    ConnStringStart = @"Data Source=SQL-IAC;",
-                   lsConnect = lsConnect = IAC2018SQL.Properties.Settings.Default.IAC2010SQLConnectionString.ToUpper(),
+                   lsConnect = lsConnect = IAC2021SQL.Properties.Settings.Default.IAC2010SQLConnectionString.ToUpper(),
                    DataBase = lsConnect.Substring(lsConnect.IndexOf("INITIAL CATALOG=") + 16,
                         (lsConnect.IndexOf(";", lsConnect.IndexOf("INITIAL CATALOG=") + 16) - (lsConnect.IndexOf("INITIAL CATALOG=") + 16))),
                    ConnStringEnd = @";Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;",

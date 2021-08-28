@@ -1,5 +1,5 @@
 ﻿
-namespace IAC2018SQL
+namespace IAC2021SQL
 {
     partial class FormTickets
     {
@@ -33,7 +33,7 @@ namespace IAC2018SQL
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTickets));
             this.textBoxName = new System.Windows.Forms.TextBox();
             this.cUSTOMERBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.productionMainTables = new IAC2018SQL.ProductionMainTables();
+            this.productionMainTables = new IAC2021SQL.ProductionMainTables();
             this.textBoxMiddleInitial = new System.Windows.Forms.TextBox();
             this.textBoxLastName = new System.Windows.Forms.TextBox();
             this.labelName = new System.Windows.Forms.Label();
@@ -63,9 +63,9 @@ namespace IAC2018SQL
             this.PaymentType = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.PaymentCode = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.bindingSourceTicketDetail = new System.Windows.Forms.BindingSource(this.components);
-            this.ticketsdataset = new IAC2018SQL.Tickets();
-            this.cUSTOMERTableAdapter = new IAC2018SQL.ProductionMainTablesTableAdapters.CUSTOMERTableAdapter();
-            this.dEALERTableAdapter = new IAC2018SQL.ProductionMainTablesTableAdapters.DEALERTableAdapter();
+            this.ticketsdataset = new IAC2021SQL.Tickets();
+            this.cUSTOMERTableAdapter = new IAC2021SQL.ProductionMainTablesTableAdapters.CUSTOMERTableAdapter();
+            this.dEALERTableAdapter = new IAC2021SQL.ProductionMainTablesTableAdapters.DEALERTableAdapter();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.bindingSourceTicketHeader = new System.Windows.Forms.BindingSource(this.components);
             this.labelExplanation = new System.Windows.Forms.Label();
@@ -78,13 +78,13 @@ namespace IAC2018SQL
             this.label5 = new System.Windows.Forms.Label();
             this.buttonClearDetail = new System.Windows.Forms.Button();
             this.buttonSaveTicket = new System.Windows.Forms.Button();
-            this.ticketHeaderTableAdapter = new IAC2018SQL.TicketsTableAdapters.TicketHeaderTableAdapter();
-            this.ticketDetailTableAdapter = new IAC2018SQL.TicketsTableAdapters.TicketDetailTableAdapter();
+            this.ticketHeaderTableAdapter = new IAC2021SQL.TicketsTableAdapters.TicketHeaderTableAdapter();
+            this.ticketDetailTableAdapter = new IAC2021SQL.TicketsTableAdapters.TicketDetailTableAdapter();
             this.checkBoxCloseOut = new System.Windows.Forms.CheckBox();
             this.buttonCancelTicket = new System.Windows.Forms.Button();
-            this.colorTextBoxOutofBalance = new IAC2018SQL.TicketColorTextBox();
-            this.colorTextBoxCredits = new IAC2018SQL.TicketColorTextBox();
-            this.colorTextBoxDebits = new IAC2018SQL.TicketColorTextBox();
+            this.colorTextBoxOutofBalance = new IAC2021SQL.TicketColorTextBox();
+            this.colorTextBoxCredits = new IAC2021SQL.TicketColorTextBox();
+            this.colorTextBoxDebits = new IAC2021SQL.TicketColorTextBox();
             this.NullableDateTimePickerDate = new ProManApp.NullableDateTimePicker();
             this.buttonDeleteEntry = new System.Windows.Forms.Button();
             this.buttonReprint = new System.Windows.Forms.Button();
@@ -243,7 +243,7 @@ namespace IAC2018SQL
             // 
             // buttonLast
             // 
-            this.buttonLast.BackgroundImage = global::IAC2018SQL.Properties.Resources.fastforward_22x;
+            this.buttonLast.BackgroundImage = global::IAC2021SQL.Properties.Resources.fastforward_22x;
             this.buttonLast.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonLast.Location = new System.Drawing.Point(971, 70);
             this.buttonLast.Name = "buttonLast";
@@ -254,7 +254,7 @@ namespace IAC2018SQL
             // 
             // buttonFirst
             // 
-            this.buttonFirst.BackgroundImage = global::IAC2018SQL.Properties.Resources.rewind_22x;
+            this.buttonFirst.BackgroundImage = global::IAC2021SQL.Properties.Resources.rewind_22x;
             this.buttonFirst.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonFirst.Location = new System.Drawing.Point(837, 70);
             this.buttonFirst.Name = "buttonFirst";
@@ -265,7 +265,7 @@ namespace IAC2018SQL
             // 
             // buttonDeleteTicket
             // 
-            this.buttonDeleteTicket.Image = global::IAC2018SQL.Properties.Resources.Cancel_64x;
+            this.buttonDeleteTicket.Image = global::IAC2021SQL.Properties.Resources.Cancel_64x;
             this.buttonDeleteTicket.Location = new System.Drawing.Point(728, 44);
             this.buttonDeleteTicket.Name = "buttonDeleteTicket";
             this.buttonDeleteTicket.Size = new System.Drawing.Size(86, 59);
@@ -276,7 +276,7 @@ namespace IAC2018SQL
             // 
             // buttonEdit
             // 
-            this.buttonEdit.Image = global::IAC2018SQL.Properties.Resources.Edit_32xMD;
+            this.buttonEdit.Image = global::IAC2021SQL.Properties.Resources.Edit_32xMD;
             this.buttonEdit.Location = new System.Drawing.Point(617, 44);
             this.buttonEdit.Name = "buttonEdit";
             this.buttonEdit.Size = new System.Drawing.Size(86, 59);
@@ -308,7 +308,7 @@ namespace IAC2018SQL
             // 
             // buttonNext
             // 
-            this.buttonNext.BackgroundImage = global::IAC2018SQL.Properties.Resources.Next_16x_24;
+            this.buttonNext.BackgroundImage = global::IAC2021SQL.Properties.Resources.Next_16x_24;
             this.buttonNext.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonNext.Location = new System.Drawing.Point(926, 70);
             this.buttonNext.Name = "buttonNext";
@@ -319,7 +319,7 @@ namespace IAC2018SQL
             // 
             // buttonPrevious
             // 
-            this.buttonPrevious.BackgroundImage = global::IAC2018SQL.Properties.Resources.Previous_16x_24;
+            this.buttonPrevious.BackgroundImage = global::IAC2021SQL.Properties.Resources.Previous_16x_24;
             this.buttonPrevious.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.buttonPrevious.Location = new System.Drawing.Point(882, 70);
             this.buttonPrevious.Name = "buttonPrevious";

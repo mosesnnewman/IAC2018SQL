@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.ComponentModel;
 using System.Drawing;
 
-namespace IAC2018SQL
+namespace IAC2021SQL
 {
     public class CustomObject : INotifyPropertyChanged
     {

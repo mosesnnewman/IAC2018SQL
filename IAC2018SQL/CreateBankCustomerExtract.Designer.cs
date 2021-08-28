@@ -1,4 +1,4 @@
-﻿namespace IAC2018SQL
+﻿namespace IAC2021SQL
 {
     partial class frmCreateBankCustomerExtract
     {
@@ -474,7 +474,7 @@
             // 
             // buttonMoveAllFieldsLeft
             // 
-            this.buttonMoveAllFieldsLeft.Image = global::IAC2018SQL.Properties.Resources.CollapseChevronLeftGroup_16x1;
+            this.buttonMoveAllFieldsLeft.Image = global::IAC2021SQL.Properties.Resources.CollapseChevronLeftGroup_16x1;
             this.buttonMoveAllFieldsLeft.Location = new System.Drawing.Point(290, 304);
             this.buttonMoveAllFieldsLeft.Name = "buttonMoveAllFieldsLeft";
             this.buttonMoveAllFieldsLeft.Size = new System.Drawing.Size(101, 48);
@@ -484,7 +484,7 @@
             // 
             // buttonMoveSelectedFieldsLeft
             // 
-            this.buttonMoveSelectedFieldsLeft.Image = global::IAC2018SQL.Properties.Resources.CollapseChevronLeft_16x;
+            this.buttonMoveSelectedFieldsLeft.Image = global::IAC2021SQL.Properties.Resources.CollapseChevronLeft_16x;
             this.buttonMoveSelectedFieldsLeft.Location = new System.Drawing.Point(291, 230);
             this.buttonMoveSelectedFieldsLeft.Name = "buttonMoveSelectedFieldsLeft";
             this.buttonMoveSelectedFieldsLeft.Size = new System.Drawing.Size(101, 48);
@@ -494,7 +494,7 @@
             // 
             // buttonMoveAllFieldsRight
             // 
-            this.buttonMoveAllFieldsRight.Image = global::IAC2018SQL.Properties.Resources.ExpandChevronRightGroup_16x;
+            this.buttonMoveAllFieldsRight.Image = global::IAC2021SQL.Properties.Resources.ExpandChevronRightGroup_16x;
             this.buttonMoveAllFieldsRight.Location = new System.Drawing.Point(291, 156);
             this.buttonMoveAllFieldsRight.Name = "buttonMoveAllFieldsRight";
             this.buttonMoveAllFieldsRight.Size = new System.Drawing.Size(101, 48);
@@ -504,7 +504,7 @@
             // 
             // buttonMoveSelectedFieldsRight
             // 
-            this.buttonMoveSelectedFieldsRight.Image = global::IAC2018SQL.Properties.Resources.ExpandChevronRight_16x;
+            this.buttonMoveSelectedFieldsRight.Image = global::IAC2021SQL.Properties.Resources.ExpandChevronRight_16x;
             this.buttonMoveSelectedFieldsRight.Location = new System.Drawing.Point(290, 82);
             this.buttonMoveSelectedFieldsRight.Name = "buttonMoveSelectedFieldsRight";
             this.buttonMoveSelectedFieldsRight.Size = new System.Drawing.Size(101, 48);

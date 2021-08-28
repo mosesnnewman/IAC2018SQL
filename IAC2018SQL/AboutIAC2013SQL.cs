@@ -6,11 +6,11 @@ using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
 
-namespace IAC2018SQL
+namespace IAC2021SQL
 {
-    partial class AboutIAC2018SQL : Form
+    partial class AboutIAC2021SQL : Form
     {
-        public AboutIAC2018SQL()
+        public AboutIAC2021SQL()
         {
             InitializeComponent();
             Text = String.Format("About {0}", AssemblyTitle);

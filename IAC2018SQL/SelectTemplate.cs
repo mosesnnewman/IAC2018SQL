@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using IAC2018SQL.TemplateWSProxy;
+using IAC2021SQL.TemplateWSProxy;
 
-namespace IAC2018SQL
+namespace IAC2021SQL
 {
     public partial class FormTemplates : Form
     {

@@ -1,4 +1,4 @@
-﻿namespace IAC2018SQL
+﻿namespace IAC2021SQL
 {
     partial class ClosedDealerMaintenance
     {
@@ -169,17 +169,17 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
             this.DealerbindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.iacDataSet = new IAC2018SQL.IACDataSet();
+            this.iacDataSet = new IAC2021SQL.IACDataSet();
             this.DealerListbindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonEdit = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonDelete = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonSave = new System.Windows.Forms.ToolStripButton();
-            this.dEALERTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.DEALERTableAdapter();
+            this.dEALERTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.DEALERTableAdapter();
             this.DealerHistorybindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dEALHISTTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.DEALHISTTableAdapter();
-            this.dEALERLISTTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.DEALERLISTTableAdapter();
+            this.dEALHISTTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.DEALHISTTableAdapter();
+            this.dEALERLISTTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.DEALERLISTTableAdapter();
             this.DealerHistorytabControl = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.DealerAccountsGroupBox = new System.Windows.Forms.GroupBox();
@@ -341,7 +341,7 @@
             this.textBox54 = new System.Windows.Forms.TextBox();
             this.textBox57 = new System.Windows.Forms.TextBox();
             this.maskedTextBox4 = new System.Windows.Forms.MaskedTextBox();
-            this.dLRLISTBYNUMTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.DLRLISTBYNUMTableAdapter();
+            this.dLRLISTBYNUMTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.DLRLISTBYNUMTableAdapter();
             label19 = new System.Windows.Forms.Label();
             label18 = new System.Windows.Forms.Label();
             label16 = new System.Windows.Forms.Label();

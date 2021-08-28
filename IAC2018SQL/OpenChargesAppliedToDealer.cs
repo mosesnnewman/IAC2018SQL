@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace IAC2018SQL {
+namespace IAC2021SQL {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -41,7 +41,7 @@ namespace IAC2018SQL {
         
         public override string FullResourceName {
             get {
-                return "IAC2018SQL.OpenChargesAppliedToDealer.rpt";
+                return "IAC2021SQL.OpenChargesAppliedToDealer.rpt";
             }
             set {
                 // Do nothing

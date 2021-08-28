@@ -1,4 +1,4 @@
-﻿namespace IAC2018SQL
+﻿namespace IAC2021SQL
 {
     partial class frmOpnNotices
     {
@@ -33,10 +33,10 @@
             this.labelLateNotices = new System.Windows.Forms.Label();
             this.buttonPost = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
-            this.NoticeiacDataSet = new IAC2018SQL.IACDataSet();
+            this.NoticeiacDataSet = new IAC2021SQL.IACDataSet();
             this.NoticebindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.opncustTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.OPNCUSTTableAdapter();
-            this.opnnotTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.OPNNOTTableAdapter();
+            this.opncustTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.OPNCUSTTableAdapter();
+            this.opnnotTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.OPNNOTTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.NoticeDatenullableDateTimePicker)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NoticeiacDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NoticebindingSource)).BeginInit();

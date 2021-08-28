@@ -1,4 +1,4 @@
-﻿namespace IAC2018SQL
+﻿namespace IAC2021SQL
 {
     partial class formClosedPayment
     {
@@ -59,14 +59,14 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.CustomerbindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ClosedPaymentiacDataSet = new IAC2018SQL.IACDataSet();
-            this.cUSTOMERTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.CUSTOMERTableAdapter();
+            this.ClosedPaymentiacDataSet = new IAC2021SQL.IACDataSet();
+            this.cUSTOMERTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.CUSTOMERTableAdapter();
             this.PaymentTypebindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pAYMENTTYPETableAdapter = new IAC2018SQL.IACDataSetTableAdapters.PAYMENTTYPETableAdapter();
+            this.pAYMENTTYPETableAdapter = new IAC2021SQL.IACDataSetTableAdapters.PAYMENTTYPETableAdapter();
             this.DealerbindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dEALERTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.DEALERTableAdapter();
+            this.dEALERTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.DEALERTableAdapter();
             this.PAYCODEbindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pAYCODETableAdapter = new IAC2018SQL.IACDataSetTableAdapters.PAYCODETableAdapter();
+            this.pAYCODETableAdapter = new IAC2021SQL.IACDataSetTableAdapters.PAYCODETableAdapter();
             this.tabClosedPayments = new System.Windows.Forms.TabControl();
             this.tabPayment = new System.Windows.Forms.TabPage();
             this.bindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
@@ -162,11 +162,11 @@
             this.COMMENT_DEALER = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.COMMENT_HHMMSS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cOMMENTBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.cOMMENTTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.COMMENTTableAdapter();
-            this.cUSTHISTTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.CUSTHISTTableAdapter();
-            this.comment_TypesTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.Comment_TypesTableAdapter();
-            this.paymentTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.PAYMENTTableAdapter();
-            this.specialCommentCodesTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.SpecialCommentCodesTableAdapter();
+            this.cOMMENTTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.COMMENTTableAdapter();
+            this.cUSTHISTTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.CUSTHISTTableAdapter();
+            this.comment_TypesTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.Comment_TypesTableAdapter();
+            this.paymentTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.PAYMENTTableAdapter();
+            this.specialCommentCodesTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.SpecialCommentCodesTableAdapter();
             label7 = new System.Windows.Forms.Label();
             label6 = new System.Windows.Forms.Label();
             label5 = new System.Windows.Forms.Label();

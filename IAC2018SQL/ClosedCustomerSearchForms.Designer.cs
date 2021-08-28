@@ -1,4 +1,4 @@
-﻿namespace IAC2018SQL
+﻿namespace IAC2021SQL
 {
     partial class frmCustomerLookup
     {
@@ -68,8 +68,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.CustomerbindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.iacDataSet1 = new IAC2018SQL.IACDataSet();
-            this.customerTableAdapter1 = new IAC2018SQL.IACDataSetTableAdapters.CUSTOMERTableAdapter();
+            this.iacDataSet1 = new IAC2021SQL.IACDataSet();
+            this.customerTableAdapter1 = new IAC2021SQL.IACDataSetTableAdapters.CUSTOMERTableAdapter();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridViewCustLookup = new System.Windows.Forms.DataGridView();
@@ -128,7 +128,7 @@
             this.txtInsuranceCompany = new System.Windows.Forms.TextBox();
             this.txtModel = new System.Windows.Forms.TextBox();
             this.txtVehicleYear = new System.Windows.Forms.TextBox();
-            this.customer_VehicleTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.Customer_VehicleTableAdapter();
+            this.customer_VehicleTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.Customer_VehicleTableAdapter();
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -139,7 +139,7 @@
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.customerMailTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.CustomerMailTableAdapter();
+            this.customerMailTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.CustomerMailTableAdapter();
             this.cUSTOMERNODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CustomerActType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CustomerActStat = new System.Windows.Forms.DataGridViewTextBoxColumn();

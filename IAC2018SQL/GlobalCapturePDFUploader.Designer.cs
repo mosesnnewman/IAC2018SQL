@@ -1,4 +1,4 @@
-﻿namespace IAC2018SQL
+﻿namespace IAC2021SQL
 {
     partial class GlobalCapturePDFUploader
     {
@@ -299,7 +299,7 @@
             // buttonImportToGlobalSearch
             // 
             this.buttonImportToGlobalSearch.Enabled = false;
-            this.buttonImportToGlobalSearch.Image = global::IAC2018SQL.Properties.Resources.Import_16x;
+            this.buttonImportToGlobalSearch.Image = global::IAC2021SQL.Properties.Resources.Import_16x;
             this.buttonImportToGlobalSearch.Location = new System.Drawing.Point(296, 478);
             this.buttonImportToGlobalSearch.Name = "buttonImportToGlobalSearch";
             this.buttonImportToGlobalSearch.Size = new System.Drawing.Size(133, 89);
@@ -311,7 +311,7 @@
             // 
             // buttonSelectPDF
             // 
-            this.buttonSelectPDF.Image = global::IAC2018SQL.Properties.Resources.AddFile_16x_24;
+            this.buttonSelectPDF.Image = global::IAC2021SQL.Properties.Resources.AddFile_16x_24;
             this.buttonSelectPDF.Location = new System.Drawing.Point(634, 25);
             this.buttonSelectPDF.Name = "buttonSelectPDF";
             this.buttonSelectPDF.Size = new System.Drawing.Size(56, 34);

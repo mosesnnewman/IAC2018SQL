@@ -1,4 +1,4 @@
-﻿namespace IAC2018SQL
+﻿namespace IAC2021SQL
 {
     partial class frmOpenStatements
     {
@@ -33,9 +33,9 @@
             this.labelLateNotices = new System.Windows.Forms.Label();
             this.buttonPost = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
-            this.StatementDataSet = new IAC2018SQL.IACDataSet();
+            this.StatementDataSet = new IAC2021SQL.IACDataSet();
             this.StatementbindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.opncustTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.OPNCUSTTableAdapter();
+            this.opncustTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.OPNCUSTTableAdapter();
             this.label1 = new System.Windows.Forms.Label();
             this.StatementDatenullableDateTimePicker = new ProManApp.NullableDateTimePicker();
             this.label2 = new System.Windows.Forms.Label();

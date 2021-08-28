@@ -1,4 +1,4 @@
-﻿namespace IAC2018SQL
+﻿namespace IAC2021SQL
 {
     partial class frmOpenDealerHistoryReport
     {
@@ -32,7 +32,7 @@
             this.buttonPost = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.labelStartDate = new System.Windows.Forms.Label();
-            this.iACDataSet = new IAC2018SQL.IACDataSet();
+            this.iACDataSet = new IAC2021SQL.IACDataSet();
             this.labelEndDate = new System.Windows.Forms.Label();
             this.nullableDateTimePickerStartDate = new ProManApp.NullableDateTimePicker();
             this.nullableDateTimePickerEndDate = new ProManApp.NullableDateTimePicker();
@@ -40,9 +40,9 @@
             this.bindingSourceDLRLISTBYNUM = new System.Windows.Forms.BindingSource(this.components);
             this.comboBoxDealer = new System.Windows.Forms.ComboBox();
             this.labelDealerNum = new System.Windows.Forms.Label();
-            this.opndlrlistbynumTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.OPNDLRLISTBYNUMTableAdapter();
-            this.opnhdealTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.OPNHDEALTableAdapter();
-            this.opndealrTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.OPNDEALRTableAdapter();
+            this.opndlrlistbynumTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.OPNDLRLISTBYNUMTableAdapter();
+            this.opnhdealTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.OPNHDEALTableAdapter();
+            this.opndealrTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.OPNDEALRTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.iACDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerStartDate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerEndDate)).BeginInit();

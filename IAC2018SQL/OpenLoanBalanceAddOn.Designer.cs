@@ -1,4 +1,4 @@
-﻿namespace IAC2018SQL
+﻿namespace IAC2021SQL
 {
     partial class formOpenLoanBalanceAddOn
     {
@@ -49,7 +49,7 @@
             this.toolStripButtonCancel = new System.Windows.Forms.ToolStripButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.DealerNametextBox = new System.Windows.Forms.TextBox();
-            this.AddOnDataSet = new IAC2018SQL.IACDataSet();
+            this.AddOnDataSet = new IAC2021SQL.IACDataSet();
             this.DealertextBox = new System.Windows.Forms.TextBox();
             this.OPNCUSTbindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.textBox15 = new System.Windows.Forms.TextBox();
@@ -73,9 +73,9 @@
             this.txtCheckValue = new System.Windows.Forms.TextBox();
             this.txtPaidThrough = new System.Windows.Forms.TextBox();
             this.txtLoanBalance = new System.Windows.Forms.TextBox();
-            this.oPNUPDATTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.OPNUPDATTableAdapter();
-            this.addOnTypeTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.AddOnTypeTableAdapter();
-            this.opnrateTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.OPNRATETableAdapter();
+            this.oPNUPDATTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.OPNUPDATTableAdapter();
+            this.addOnTypeTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.AddOnTypeTableAdapter();
+            this.opnrateTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.OPNRATETableAdapter();
             this.OPNRATEbindingSource = new System.Windows.Forms.BindingSource(this.components);
             label8 = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();

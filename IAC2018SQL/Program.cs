@@ -14,11 +14,11 @@ using S9API.Models;
 using Newtonsoft.Json;
 using System.Net;
 
-using TValue6SDK;
+//using TValue6SDK;
 using TValue6Engine2;
 
 
-namespace IAC2018SQL
+namespace IAC2021SQL
 {
 	static class Program
 	{
@@ -1796,7 +1796,7 @@ namespace IAC2018SQL
 			AmortRec[] AmortTable;
 
 			tableAdapConn = new System.Data.SqlClient.SqlConnection();
-			tableAdapConn.ConnectionString = IAC2018SQL.Properties.Settings.Default.IAC2010SQLConnectionString;
+			tableAdapConn.ConnectionString = IAC2021SQL.Properties.Settings.Default.IAC2010SQLConnectionString;
 			tableAdapConn.Open();
 
 			CUSTOMERTableAdapter.Connection = tableAdapConn;
@@ -2473,7 +2473,7 @@ namespace IAC2018SQL
 			{
 				IACDataSet BackupDataSet = new IACDataSet();
 				IACDataSetTableAdapters.DataPathTableAdapter DataPathTableAdapter = new IACDataSetTableAdapters.DataPathTableAdapter();
-				String lsConnect = IAC2018SQL.Properties.Settings.Default.IAC2010SQLConnectionString.ToUpper(), lsFilePath = "";
+				String lsConnect = IAC2021SQL.Properties.Settings.Default.IAC2010SQLConnectionString.ToUpper(), lsFilePath = "";
                 Boolean lbResult = true;
 
 				//lsFilePath = lsConnect.Substring(lsConnect.IndexOf("DATA SOURCE=") + 12, (lsConnect.IndexOf(@"\MFDATA\") + 8) - (lsConnect.IndexOf("DATA SOURCE=") + 12));
@@ -2517,7 +2517,7 @@ namespace IAC2018SQL
 			IACDataSetTableAdapters.DataPathTableAdapter DataPathTableAdapter = new IACDataSetTableAdapters.DataPathTableAdapter();
             Boolean lbResult = true;
 
-			String lsConnect = IAC2018SQL.Properties.Settings.Default.IAC2010SQLConnectionString.ToUpper(), lsFilePath = "";
+			String lsConnect = IAC2021SQL.Properties.Settings.Default.IAC2010SQLConnectionString.ToUpper(), lsFilePath = "";
 
 			DataPathTableAdapter.Fill(BackupDataSet.DataPath);
 			lsFilePath = BackupDataSet.DataPath.Rows[0].Field<String>("Path").TrimEnd();
@@ -3748,7 +3748,7 @@ namespace IAC2018SQL
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
 			Application.Run(new MDIIAC2013());
-			//tvWorkspace.Delete();
+			tvWorkspace.Delete();
 		}
 	}
 }

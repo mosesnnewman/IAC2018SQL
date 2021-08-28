@@ -1,4 +1,4 @@
-﻿namespace IAC2018SQL
+﻿namespace IAC2021SQL
 {
     partial class frmOpenDealerMaintenance
     {
@@ -105,7 +105,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
             this.DealerbindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.iacDataSet = new IAC2018SQL.IACDataSet();
+            this.iacDataSet = new IAC2021SQL.IACDataSet();
             this.DealerListbindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButtonEdit = new System.Windows.Forms.ToolStripButton();
@@ -194,10 +194,10 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.textBox28 = new System.Windows.Forms.TextBox();
             this.textBox29 = new System.Windows.Forms.TextBox();
-            this.oPNDEALRTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.OPNDEALRTableAdapter();
-            this.oPNHDEALTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.OPNHDEALTableAdapter();
-            this.oPNDEALRLISTTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.OPNDEALRLISTTableAdapter();
-            this.oPNDLRLISTBYNUMTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.OPNDLRLISTBYNUMTableAdapter();
+            this.oPNDEALRTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.OPNDEALRTableAdapter();
+            this.oPNHDEALTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.OPNHDEALTableAdapter();
+            this.oPNDEALRLISTTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.OPNDEALRLISTTableAdapter();
+            this.oPNDLRLISTBYNUMTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.OPNDLRLISTBYNUMTableAdapter();
             label19 = new System.Windows.Forms.Label();
             label18 = new System.Windows.Forms.Label();
             label16 = new System.Windows.Forms.Label();

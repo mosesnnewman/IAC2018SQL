@@ -1,4 +1,4 @@
-﻿namespace IAC2018SQL
+﻿namespace IAC2021SQL
 {
     partial class FormDelinquencyPeriods
     {
@@ -32,7 +32,7 @@
             this.groupBoxPaymentHistory = new System.Windows.Forms.GroupBox();
             this.comboBoxp24 = new System.Windows.Forms.ComboBox();
             this.TSBCustomerDelinquenciesbindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tsbDataSet = new IAC2018SQL.TSBDataSet();
+            this.tsbDataSet = new IAC2021SQL.TSBDataSet();
             this.p24 = new System.Windows.Forms.BindingSource(this.components);
             this.labelp24Date = new System.Windows.Forms.Label();
             this.comboBoxp23 = new System.Windows.Forms.ComboBox();
@@ -106,8 +106,8 @@
             this.labelp1Date = new System.Windows.Forms.Label();
             this.buttonOk = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
-            this.tSBCustomerDelinquenciesTableAdapter = new IAC2018SQL.TSBDataSetTableAdapters.TSBCustomerDelinquenciesTableAdapter();
-            this.delinquencyPeriodsTableAdapter = new IAC2018SQL.TSBDataSetTableAdapters.DelinquencyPeriodsTableAdapter();
+            this.tSBCustomerDelinquenciesTableAdapter = new IAC2021SQL.TSBDataSetTableAdapters.TSBCustomerDelinquenciesTableAdapter();
+            this.delinquencyPeriodsTableAdapter = new IAC2021SQL.TSBDataSetTableAdapters.DelinquencyPeriodsTableAdapter();
             this.groupBoxPaymentHistory.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TSBCustomerDelinquenciesbindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tsbDataSet)).BeginInit();

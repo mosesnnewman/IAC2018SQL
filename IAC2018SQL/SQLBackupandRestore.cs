@@ -14,7 +14,7 @@ using Microsoft.VisualBasic.FileIO;
 
 // Moses Newman 10/19/2018 Changed SQL to SQL-IAC server.
 // Moses Newman 10/21/2018 Changed location of SSIS to SQL-IAC.
-namespace IAC2018SQL
+namespace IAC2021SQL
 {
     class SQLBackupandRestore:IDisposable
     {
@@ -175,7 +175,7 @@ namespace IAC2018SQL
             IACDataSet BackupDataSet = new IACDataSet();
             IACDataSetTableAdapters.DataPathTableAdapter DataPathTableAdapter = new IACDataSetTableAdapters.DataPathTableAdapter();
 
-            String lsConnect = IAC2018SQL.Properties.Settings.Default.IAC2010SQLConnectionString.ToUpper(), DataBase = "", sourcePath = "",targetPath = "", deletePath = "";
+            String lsConnect = IAC2021SQL.Properties.Settings.Default.IAC2010SQLConnectionString.ToUpper(), DataBase = "", sourcePath = "",targetPath = "", deletePath = "";
 
             DataPathTableAdapter.Fill(BackupDataSet.DataPath);
             DataBase = lsConnect.Substring(lsConnect.IndexOf("INITIAL CATALOG=") + 16,
@@ -231,7 +231,7 @@ namespace IAC2018SQL
             IACDataSet BackupDataSet = new IACDataSet();
             IACDataSetTableAdapters.DataPathTableAdapter DataPathTableAdapter = new IACDataSetTableAdapters.DataPathTableAdapter();
 
-            String lsConnect = IAC2018SQL.Properties.Settings.Default.IAC2010SQLConnectionString.ToUpper(), DataBase = "", sourcePath = "", targetPath = "", deletePath = "";
+            String lsConnect = IAC2021SQL.Properties.Settings.Default.IAC2010SQLConnectionString.ToUpper(), DataBase = "", sourcePath = "", targetPath = "", deletePath = "";
 
             DataPathTableAdapter.Fill(BackupDataSet.DataPath);
             DataBase = lsConnect.Substring(lsConnect.IndexOf("INITIAL CATALOG=") + 16,
@@ -309,7 +309,7 @@ namespace IAC2018SQL
             SqlConnection DataConn;
 
             DataConn = new SqlConnection();
-            DataConn.ConnectionString = IAC2018SQL.Properties.Settings.Default.IAC2010SQLConnectionString;
+            DataConn.ConnectionString = IAC2021SQL.Properties.Settings.Default.IAC2010SQLConnectionString;
             DataConn.Open();
 
             Server srv;
@@ -466,7 +466,7 @@ namespace IAC2018SQL
             IACDataSet BackupDataSet = new IACDataSet();
             IACDataSetTableAdapters.DataPathTableAdapter DataPathTableAdapter = new IACDataSetTableAdapters.DataPathTableAdapter();
 
-            String lsConnect = IAC2018SQL.Properties.Settings.Default.IAC2010SQLConnectionString.ToUpper(), DataBase = "", sourcePath = "",lsServer = "";
+            String lsConnect = IAC2021SQL.Properties.Settings.Default.IAC2010SQLConnectionString.ToUpper(), DataBase = "", sourcePath = "",lsServer = "";
 
             DataPathTableAdapter.Fill(BackupDataSet.DataPath);
             DataBase = lsConnect.Substring(lsConnect.IndexOf("INITIAL CATALOG=") + 16,

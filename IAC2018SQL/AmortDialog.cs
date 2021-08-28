@@ -13,7 +13,7 @@ using System.Windows.Forms;
 using CrystalDecisions.CrystalReports.Engine;
 using CrystalDecisions.Shared;
 
-namespace IAC2018SQL
+namespace IAC2021SQL
 {
     public partial class AmortDialog : Form
     {

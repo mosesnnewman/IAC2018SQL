@@ -18,7 +18,7 @@ using System.IO;
 using System.Threading;
 using TelAPI;
 
-namespace IAC2018SQL
+namespace IAC2021SQL
 {
     class MailMergeComponents
     {
@@ -153,7 +153,7 @@ namespace IAC2018SQL
             oWordDoc = oWord.Documents.Add(ref oTemplatePath, ref oMissing, ref oMissing, ref oTrue);
             Word.MailMerge wrdMailMerge;
 
-            String lsConnect = IAC2018SQL.Properties.Settings.Default.IAC2010SQLConnectionString.ToUpper(), lsDataPath = Program.GsDataPath + @"\MailMerge\DataSources\",
+            String lsConnect = IAC2021SQL.Properties.Settings.Default.IAC2010SQLConnectionString.ToUpper(), lsDataPath = Program.GsDataPath + @"\MailMerge\DataSources\",
                    lsCatalog = "", lsServerName = "";
 
             lsServerName = lsConnect.Substring(lsConnect.IndexOf("DATA SOURCE=") + 12, lsConnect.IndexOf(";") - (lsConnect.IndexOf("DATA SOURCE=") + 12));
@@ -281,7 +281,7 @@ namespace IAC2018SQL
             oWordDoc = oWord.Documents.Add(ref oTemplatePath, ref oMissing, ref oMissing, ref oTrue);
             Word.MailMerge wrdMailMerge;
 
-            String lsConnect = IAC2018SQL.Properties.Settings.Default.IAC2010SQLConnectionString.ToUpper(), lsDataPath = Program.GsDataPath + @"MailMerge\DataSources\",
+            String lsConnect = IAC2021SQL.Properties.Settings.Default.IAC2010SQLConnectionString.ToUpper(), lsDataPath = Program.GsDataPath + @"MailMerge\DataSources\",
                    lsCatalog = "", lsServerName = "";
 
             lsServerName = lsConnect.Substring(lsConnect.IndexOf("DATA SOURCE=") + 12, lsConnect.IndexOf(";") - (lsConnect.IndexOf("DATA SOURCE=") + 12));
@@ -377,7 +377,7 @@ namespace IAC2018SQL
                 oWordDoc = oWord.Documents.Add(ref oTemplatePath, ref oMissing, ref oMissing, ref oTrue);
                 Word.MailMerge wrdMailMerge, NewMailMerge;
 
-                String lsConnect = IAC2018SQL.Properties.Settings.Default.IAC2010SQLConnectionString.ToUpper(), lsDataPath = Program.GsDataPath + @"\MailMerge\DataSources\",
+                String lsConnect = IAC2021SQL.Properties.Settings.Default.IAC2010SQLConnectionString.ToUpper(), lsDataPath = Program.GsDataPath + @"\MailMerge\DataSources\",
                        lsCatalog = "", lsServerName = "";
 
                 lsServerName = lsConnect.Substring(lsConnect.IndexOf("DATA SOURCE=") + 12, lsConnect.IndexOf(";") - (lsConnect.IndexOf("DATA SOURCE=") + 12));
@@ -641,7 +641,7 @@ namespace IAC2018SQL
                 oTemplatePath = Program.GsDataPath + @"\MailMerge\" + tsMergeFileName.TrimStart().TrimEnd();
             Word.MailMerge wrdMailMerge;
 
-            String lsConnect = IAC2018SQL.Properties.Settings.Default.IAC2010SQLConnectionString.ToUpper(), lsDataPath = Program.GsDataPath + @"\MailMerge\DataSources\",
+            String lsConnect = IAC2021SQL.Properties.Settings.Default.IAC2010SQLConnectionString.ToUpper(), lsDataPath = Program.GsDataPath + @"\MailMerge\DataSources\",
                    lsCatalog = "", lsServerName = "", lsSMSMessage = "", lsCellPhone = "",lsNewFileName = "";
 
             lsServerName = lsConnect.Substring(lsConnect.IndexOf("DATA SOURCE=") + 12, lsConnect.IndexOf(";") - (lsConnect.IndexOf("DATA SOURCE=") + 12));
@@ -834,7 +834,7 @@ namespace IAC2018SQL
                 oTemplatePath = Program.GsDataPath + @"\MailMerge\" + tsMergeFileName.TrimStart().TrimEnd();
             Word.MailMerge wrdMailMerge;
 
-            String lsConnect = IAC2018SQL.Properties.Settings.Default.IAC2010SQLConnectionString.ToUpper(), lsDataPath = Program.GsDataPath + @"\MailMerge\DataSources\",
+            String lsConnect = IAC2021SQL.Properties.Settings.Default.IAC2010SQLConnectionString.ToUpper(), lsDataPath = Program.GsDataPath + @"\MailMerge\DataSources\",
                    lsCatalog = "", lsServerName = "", lsSMSMessage = "", lsCellPhone = "";
 
             lsServerName = lsConnect.Substring(lsConnect.IndexOf("DATA SOURCE=") + 12, lsConnect.IndexOf(";") - (lsConnect.IndexOf("DATA SOURCE=") + 12));

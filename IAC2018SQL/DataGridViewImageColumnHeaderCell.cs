@@ -8,7 +8,7 @@ using System.Globalization;
 using System.Windows.Forms;
 using System.ComponentModel;
 
-namespace IAC2018SQL
+namespace IAC2021SQL
 {
     /// <summary>
     /// Custom column header cell that can display an Image or Icon in addition to the typical Value.

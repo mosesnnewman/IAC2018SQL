@@ -1,4 +1,4 @@
-﻿namespace IAC2018SQL
+﻿namespace IAC2021SQL
 {
     partial class FormOpenDealerContingentMaintenance
     {
@@ -46,7 +46,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormOpenDealerContingentMaintenance));
             this.dEALER_NAMETextBox = new System.Windows.Forms.TextBox();
             this.DealerbindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.CONTINGiacDataSet = new IAC2018SQL.IACDataSet();
+            this.CONTINGiacDataSet = new IAC2021SQL.IACDataSet();
             this.DEALER_STREETTextBox = new System.Windows.Forms.TextBox();
             this.DealerCityTextBox = new System.Windows.Forms.TextBox();
             this.DealerStateTextBox = new System.Windows.Forms.TextBox();
@@ -73,10 +73,10 @@
             this.textBoxAdjust = new System.Windows.Forms.TextBox();
             this.textBoxContingentReserve = new System.Windows.Forms.TextBox();
             this.textBoxDealerLossReserve = new System.Windows.Forms.TextBox();
-            this.oPNDEALRTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.OPNDEALRTableAdapter();
-            this.oPNDEALRLISTTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.OPNDEALRLISTTableAdapter();
-            this.oPNCONTTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.OPNCONTTableAdapter();
-            this.oPNDLRLISTBYNUMTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.OPNDLRLISTBYNUMTableAdapter();
+            this.oPNDEALRTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.OPNDEALRTableAdapter();
+            this.oPNDEALRLISTTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.OPNDEALRLISTTableAdapter();
+            this.oPNCONTTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.OPNCONTTableAdapter();
+            this.oPNDLRLISTBYNUMTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.OPNDLRLISTBYNUMTableAdapter();
             this.bindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();

@@ -1,4 +1,4 @@
-﻿namespace IAC2018SQL
+﻿namespace IAC2021SQL
 {
     partial class frmOpenCustMaint
     {
@@ -136,7 +136,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cUSTOMERBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.iACDataSet = new IAC2018SQL.IACDataSet();
+            this.iACDataSet = new IAC2021SQL.IACDataSet();
             this.tabComments = new System.Windows.Forms.TabPage();
             this.cOMMENTDataGridView = new System.Windows.Forms.DataGridView();
             this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -286,7 +286,7 @@
             this.textBoxFinanceBucket1 = new System.Windows.Forms.TextBox();
             this.txtLastPaymentMade = new System.Windows.Forms.TextBox();
             this.txtCreditLimit = new System.Windows.Forms.TextBox();
-            this.txtContractStatus = new IAC2018SQL.ColorTextBox();
+            this.txtContractStatus = new IAC2021SQL.ColorTextBox();
             this.txtCustomerBalance = new System.Windows.Forms.TextBox();
             this.textBoxInterestRate = new System.Windows.Forms.TextBox();
             this.tabCosigner = new System.Windows.Forms.TabPage();
@@ -363,7 +363,7 @@
             this.groupBoxDates = new System.Windows.Forms.GroupBox();
             this.checkBoxFollowUpDate = new System.Windows.Forms.CheckBox();
             this.closedCreditManagerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tsbDataSet = new IAC2018SQL.TSBDataSet();
+            this.tsbDataSet = new IAC2021SQL.TSBDataSet();
             this.nullableDateTimePickerFollowUpDate = new ProManApp.NullableDateTimePicker();
             this.nullableDateTimePickerDateClosed = new ProManApp.NullableDateTimePicker();
             this.nullableDateTimePickerDateOpened = new ProManApp.NullableDateTimePicker();
@@ -441,37 +441,37 @@
             this.textBox69 = new System.Windows.Forms.TextBox();
             this.textBox70 = new System.Windows.Forms.TextBox();
             this.textBox53 = new System.Windows.Forms.TextBox();
-            this.aLTNAMETableAdapter = new IAC2018SQL.IACDataSetTableAdapters.ALTNAMETableAdapter();
-            this.oPNBANKTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.OPNBANKTableAdapter();
-            this.oPNCUSTTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.OPNCUSTTableAdapter();
-            this.oPNHCUSTTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.OPNHCUSTTableAdapter();
-            this.oPNCOMMTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.OPNCOMMTableAdapter();
-            this.oPNDEALRLISTTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.OPNDEALRLISTTableAdapter();
-            this.oPNDEALRTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.OPNDEALRTableAdapter();
-            this.oPNDLRLISTBYNUMTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.OPNDLRLISTBYNUMTableAdapter();
-            this.comment_TypesTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.Comment_TypesTableAdapter();
-            this.letterNumberTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.LetterNumberTableAdapter();
-            this.letterTypeTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.LetterTypeTableAdapter();
-            this.monthNamesTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.MonthNamesTableAdapter();
+            this.aLTNAMETableAdapter = new IAC2021SQL.IACDataSetTableAdapters.ALTNAMETableAdapter();
+            this.oPNBANKTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.OPNBANKTableAdapter();
+            this.oPNCUSTTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.OPNCUSTTableAdapter();
+            this.oPNHCUSTTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.OPNHCUSTTableAdapter();
+            this.oPNCOMMTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.OPNCOMMTableAdapter();
+            this.oPNDEALRLISTTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.OPNDEALRLISTTableAdapter();
+            this.oPNDEALRTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.OPNDEALRTableAdapter();
+            this.oPNDLRLISTBYNUMTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.OPNDLRLISTBYNUMTableAdapter();
+            this.comment_TypesTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.Comment_TypesTableAdapter();
+            this.letterNumberTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.LetterNumberTableAdapter();
+            this.letterTypeTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.LetterTypeTableAdapter();
+            this.monthNamesTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.MonthNamesTableAdapter();
             this.dEALERBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonEdit = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonDelete = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonSave = new System.Windows.Forms.ToolStripButton();
-            this.StateRatesTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.StateRatesTableAdapter();
+            this.StateRatesTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.StateRatesTableAdapter();
             this.errorProviderCustomerForm = new System.Windows.Forms.ErrorProvider(this.components);
-            this.specialCommentCodesTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.SpecialCommentCodesTableAdapter();
-            this.closedCreditManagerTableAdapter = new IAC2018SQL.TSBDataSetTableAdapters.ClosedCreditManagerTableAdapter();
-            this.accountStatusesTableAdapter = new IAC2018SQL.TSBDataSetTableAdapters.AccountStatusesTableAdapter();
-            this.paymentRatingsTableAdapter = new IAC2018SQL.TSBDataSetTableAdapters.PaymentRatingsTableAdapter();
-            this.accountTypesTableAdapter = new IAC2018SQL.TSBDataSetTableAdapters.AccountTypesTableAdapter();
-            this.consumerIndicatorsTableAdapter = new IAC2018SQL.TSBDataSetTableAdapters.ConsumerIndicatorsTableAdapter();
-            this.complianceConditionCodesTableAdapter = new IAC2018SQL.TSBDataSetTableAdapters.ComplianceConditionCodesTableAdapter();
-            this.eCOACodesTableAdapter = new IAC2018SQL.TSBDataSetTableAdapters.ECOACodesTableAdapter();
-            this.interestTypesTableAdapter = new IAC2018SQL.TSBDataSetTableAdapters.InterestTypesTableAdapter();
-            this.portfolioTypesTableAdapter = new IAC2018SQL.TSBDataSetTableAdapters.PortfolioTypesTableAdapter();
-            this.termsFrequencyTableAdapter = new IAC2018SQL.TSBDataSetTableAdapters.TermsFrequencyTableAdapter();
+            this.specialCommentCodesTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.SpecialCommentCodesTableAdapter();
+            this.closedCreditManagerTableAdapter = new IAC2021SQL.TSBDataSetTableAdapters.ClosedCreditManagerTableAdapter();
+            this.accountStatusesTableAdapter = new IAC2021SQL.TSBDataSetTableAdapters.AccountStatusesTableAdapter();
+            this.paymentRatingsTableAdapter = new IAC2021SQL.TSBDataSetTableAdapters.PaymentRatingsTableAdapter();
+            this.accountTypesTableAdapter = new IAC2021SQL.TSBDataSetTableAdapters.AccountTypesTableAdapter();
+            this.consumerIndicatorsTableAdapter = new IAC2021SQL.TSBDataSetTableAdapters.ConsumerIndicatorsTableAdapter();
+            this.complianceConditionCodesTableAdapter = new IAC2021SQL.TSBDataSetTableAdapters.ComplianceConditionCodesTableAdapter();
+            this.eCOACodesTableAdapter = new IAC2021SQL.TSBDataSetTableAdapters.ECOACodesTableAdapter();
+            this.interestTypesTableAdapter = new IAC2021SQL.TSBDataSetTableAdapters.InterestTypesTableAdapter();
+            this.portfolioTypesTableAdapter = new IAC2021SQL.TSBDataSetTableAdapters.PortfolioTypesTableAdapter();
+            this.termsFrequencyTableAdapter = new IAC2021SQL.TSBDataSetTableAdapters.TermsFrequencyTableAdapter();
             label11 = new System.Windows.Forms.Label();
             label10 = new System.Windows.Forms.Label();
             label9 = new System.Windows.Forms.Label();

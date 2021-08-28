@@ -1,4 +1,4 @@
-﻿namespace IAC2018SQL
+﻿namespace IAC2021SQL
 {
     partial class MDIIAC2013
     {
@@ -197,7 +197,7 @@
             // 
             // customerMaintenanceToolStripMenuItem
             // 
-            this.customerMaintenanceToolStripMenuItem.Image = global::IAC2018SQL.Properties.Resources.EditorZone_16x_24;
+            this.customerMaintenanceToolStripMenuItem.Image = global::IAC2021SQL.Properties.Resources.EditorZone_16x_24;
             this.customerMaintenanceToolStripMenuItem.Name = "customerMaintenanceToolStripMenuItem";
             this.customerMaintenanceToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
             this.customerMaintenanceToolStripMenuItem.Text = "&Customer Maintenance";
@@ -205,7 +205,7 @@
             // 
             // dealerMaintenanceToolStripMenuItem
             // 
-            this.dealerMaintenanceToolStripMenuItem.Image = global::IAC2018SQL.Properties.Resources.EditorZone_16x_32;
+            this.dealerMaintenanceToolStripMenuItem.Image = global::IAC2021SQL.Properties.Resources.EditorZone_16x_32;
             this.dealerMaintenanceToolStripMenuItem.Name = "dealerMaintenanceToolStripMenuItem";
             this.dealerMaintenanceToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
             this.dealerMaintenanceToolStripMenuItem.Text = "&Dealer Maintenance";
@@ -213,7 +213,7 @@
             // 
             // toolStripMenuItem4
             // 
-            this.toolStripMenuItem4.Image = global::IAC2018SQL.Properties.Resources.Search_16x_321;
+            this.toolStripMenuItem4.Image = global::IAC2021SQL.Properties.Resources.Search_16x_321;
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
             this.toolStripMenuItem4.Size = new System.Drawing.Size(198, 22);
             this.toolStripMenuItem4.Text = "Dealer &Search";
@@ -224,7 +224,7 @@
             this.contingentToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dealerToolStripMenuItem,
             this.masterToolStripMenuItem});
-            this.contingentToolStripMenuItem1.Image = global::IAC2018SQL.Properties.Resources.Account_16x_24;
+            this.contingentToolStripMenuItem1.Image = global::IAC2021SQL.Properties.Resources.Account_16x_24;
             this.contingentToolStripMenuItem1.Name = "contingentToolStripMenuItem1";
             this.contingentToolStripMenuItem1.Size = new System.Drawing.Size(198, 22);
             this.contingentToolStripMenuItem1.Text = "C&ontingent";
@@ -245,7 +245,7 @@
             // 
             // paymentsToolStripMenuItem2
             // 
-            this.paymentsToolStripMenuItem2.Image = global::IAC2018SQL.Properties.Resources.MoneyEditor_16x_32;
+            this.paymentsToolStripMenuItem2.Image = global::IAC2021SQL.Properties.Resources.MoneyEditor_16x_32;
             this.paymentsToolStripMenuItem2.Name = "paymentsToolStripMenuItem2";
             this.paymentsToolStripMenuItem2.Size = new System.Drawing.Size(198, 22);
             this.paymentsToolStripMenuItem2.Text = "P&ayments";
@@ -272,7 +272,7 @@
             // 
             // CustomersMenuItem
             // 
-            this.CustomersMenuItem.Image = global::IAC2018SQL.Properties.Resources.EditorZone_16x_24;
+            this.CustomersMenuItem.Image = global::IAC2021SQL.Properties.Resources.EditorZone_16x_24;
             this.CustomersMenuItem.Name = "CustomersMenuItem";
             this.CustomersMenuItem.Size = new System.Drawing.Size(198, 22);
             this.CustomersMenuItem.Text = "&Customer Maintenance";
@@ -280,7 +280,7 @@
             // 
             // dealersToolStripMenuItem
             // 
-            this.dealersToolStripMenuItem.Image = global::IAC2018SQL.Properties.Resources.EditorZone_16x_32;
+            this.dealersToolStripMenuItem.Image = global::IAC2021SQL.Properties.Resources.EditorZone_16x_32;
             this.dealersToolStripMenuItem.Name = "dealersToolStripMenuItem";
             this.dealersToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
             this.dealersToolStripMenuItem.Text = "&Dealer Maintenance";
@@ -291,7 +291,7 @@
             this.contingentToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dealerContingentToolStripMenuItem,
             this.masterContingentToolStripMenuItem});
-            this.contingentToolStripMenuItem.Image = global::IAC2018SQL.Properties.Resources.Account_16x_24;
+            this.contingentToolStripMenuItem.Image = global::IAC2021SQL.Properties.Resources.Account_16x_24;
             this.contingentToolStripMenuItem.Name = "contingentToolStripMenuItem";
             this.contingentToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
             this.contingentToolStripMenuItem.Text = "C&ontingent";
@@ -312,7 +312,7 @@
             // 
             // paymentsToolStripMenuItem
             // 
-            this.paymentsToolStripMenuItem.Image = global::IAC2018SQL.Properties.Resources.MoneyEditor_16x_32;
+            this.paymentsToolStripMenuItem.Image = global::IAC2021SQL.Properties.Resources.MoneyEditor_16x_32;
             this.paymentsToolStripMenuItem.Name = "paymentsToolStripMenuItem";
             this.paymentsToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
             this.paymentsToolStripMenuItem.Text = "P&ayments";
@@ -320,7 +320,7 @@
             // 
             // addOnMaintenanceToolStripMenuItem
             // 
-            this.addOnMaintenanceToolStripMenuItem.Image = global::IAC2018SQL.Properties.Resources.AddParentNode_16x_24;
+            this.addOnMaintenanceToolStripMenuItem.Image = global::IAC2021SQL.Properties.Resources.AddParentNode_16x_24;
             this.addOnMaintenanceToolStripMenuItem.Name = "addOnMaintenanceToolStripMenuItem";
             this.addOnMaintenanceToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
             this.addOnMaintenanceToolStripMenuItem.Text = "&Add on Maintenance";
@@ -341,7 +341,7 @@
             this.postingToolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.closedEndToolStripMenuItem1,
             this.openEndToolStripMenuItem1});
-            this.postingToolStripMenuItem2.Image = global::IAC2018SQL.Properties.Resources.Process_16x_24;
+            this.postingToolStripMenuItem2.Image = global::IAC2021SQL.Properties.Resources.Process_16x_24;
             this.postingToolStripMenuItem2.Name = "postingToolStripMenuItem2";
             this.postingToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
             this.postingToolStripMenuItem2.Text = "&Posting";
@@ -484,14 +484,14 @@
             this.leeMasonImportAndExportToolStripMenuItem,
             this.recalcPartialPaymentsToolStripMenuItem,
             this.fixPaidThroughsToolStripMenuItem1});
-            this.adminToolsToolStripMenuItem.Image = global::IAC2018SQL.Properties.Resources.Toolbox_16x_24;
+            this.adminToolsToolStripMenuItem.Image = global::IAC2021SQL.Properties.Resources.Toolbox_16x_24;
             this.adminToolsToolStripMenuItem.Name = "adminToolsToolStripMenuItem";
             this.adminToolsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.adminToolsToolStripMenuItem.Text = "&Admin Tools";
             // 
             // backupToolStripMenuItem
             // 
-            this.backupToolStripMenuItem.Image = global::IAC2018SQL.Properties.Resources.SaveAll_16x_24;
+            this.backupToolStripMenuItem.Image = global::IAC2021SQL.Properties.Resources.SaveAll_16x_24;
             this.backupToolStripMenuItem.Name = "backupToolStripMenuItem";
             this.backupToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
             this.backupToolStripMenuItem.Text = "&Backup";
@@ -499,7 +499,7 @@
             // 
             // restoreToolStripMenuItem
             // 
-            this.restoreToolStripMenuItem.Image = global::IAC2018SQL.Properties.Resources.RestoreMTR_16x_24;
+            this.restoreToolStripMenuItem.Image = global::IAC2021SQL.Properties.Resources.RestoreMTR_16x_24;
             this.restoreToolStripMenuItem.Name = "restoreToolStripMenuItem";
             this.restoreToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
             this.restoreToolStripMenuItem.Text = "&Restore";
@@ -513,7 +513,7 @@
             this.importPCPAYFileToolStripMenuItem,
             this.tSBExtractToolStripMenuItem,
             this.closedImportPCPAYFileToolStripMenuItem});
-            this.createWellsFargoExtractToolStripMenuItem.Image = global::IAC2018SQL.Properties.Resources.ASX_TransferUpload_blue_16x;
+            this.createWellsFargoExtractToolStripMenuItem.Image = global::IAC2021SQL.Properties.Resources.ASX_TransferUpload_blue_16x;
             this.createWellsFargoExtractToolStripMenuItem.Name = "createWellsFargoExtractToolStripMenuItem";
             this.createWellsFargoExtractToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
             this.createWellsFargoExtractToolStripMenuItem.Text = "B&ank Transfers";
@@ -521,7 +521,7 @@
             // 
             // createWellsFargoExtractToolStripMenuItem1
             // 
-            this.createWellsFargoExtractToolStripMenuItem1.Image = global::IAC2018SQL.Properties.Resources.ExcelWorksheetView_16x_24;
+            this.createWellsFargoExtractToolStripMenuItem1.Image = global::IAC2021SQL.Properties.Resources.ExcelWorksheetView_16x_24;
             this.createWellsFargoExtractToolStripMenuItem1.Name = "createWellsFargoExtractToolStripMenuItem1";
             this.createWellsFargoExtractToolStripMenuItem1.Size = new System.Drawing.Size(247, 22);
             this.createWellsFargoExtractToolStripMenuItem1.Text = "Create Bank &Extract";
@@ -529,7 +529,7 @@
             // 
             // aUTOBANKTransferAndReportsToolStripMenuItem
             // 
-            this.aUTOBANKTransferAndReportsToolStripMenuItem.Image = global::IAC2018SQL.Properties.Resources.AutoComplete_16x_24;
+            this.aUTOBANKTransferAndReportsToolStripMenuItem.Image = global::IAC2021SQL.Properties.Resources.AutoComplete_16x_24;
             this.aUTOBANKTransferAndReportsToolStripMenuItem.Name = "aUTOBANKTransferAndReportsToolStripMenuItem";
             this.aUTOBANKTransferAndReportsToolStripMenuItem.Size = new System.Drawing.Size(247, 22);
             this.aUTOBANKTransferAndReportsToolStripMenuItem.Text = "&AUTOBANK Transfer and Reports";
@@ -537,7 +537,7 @@
             // 
             // importPCPAYFileToolStripMenuItem
             // 
-            this.importPCPAYFileToolStripMenuItem.Image = global::IAC2018SQL.Properties.Resources.Import_grey_16x_24;
+            this.importPCPAYFileToolStripMenuItem.Image = global::IAC2021SQL.Properties.Resources.Import_grey_16x_24;
             this.importPCPAYFileToolStripMenuItem.Name = "importPCPAYFileToolStripMenuItem";
             this.importPCPAYFileToolStripMenuItem.Size = new System.Drawing.Size(247, 22);
             this.importPCPAYFileToolStripMenuItem.Text = "&ImportPCPAY File";
@@ -545,7 +545,7 @@
             // 
             // tSBExtractToolStripMenuItem
             // 
-            this.tSBExtractToolStripMenuItem.Image = global::IAC2018SQL.Properties.Resources.Export_16x_24;
+            this.tSBExtractToolStripMenuItem.Image = global::IAC2021SQL.Properties.Resources.Export_16x_24;
             this.tSBExtractToolStripMenuItem.Name = "tSBExtractToolStripMenuItem";
             this.tSBExtractToolStripMenuItem.Size = new System.Drawing.Size(247, 22);
             this.tSBExtractToolStripMenuItem.Text = "&TSB Extract";
@@ -557,7 +557,7 @@
             this.importIVRPaymentsToolStripMenuItem,
             this.closedImportPCPAYFileToolStripMenuItem1,
             this.importPNSToolStripMenuItem});
-            this.closedImportPCPAYFileToolStripMenuItem.Image = global::IAC2018SQL.Properties.Resources.MoneyEditor_16x_24;
+            this.closedImportPCPAYFileToolStripMenuItem.Image = global::IAC2021SQL.Properties.Resources.MoneyEditor_16x_24;
             this.closedImportPCPAYFileToolStripMenuItem.Name = "closedImportPCPAYFileToolStripMenuItem";
             this.closedImportPCPAYFileToolStripMenuItem.Size = new System.Drawing.Size(247, 22);
             this.closedImportPCPAYFileToolStripMenuItem.Text = "&Payment Imports";
@@ -585,7 +585,7 @@
             // 
             // closedMonthlyUpdateToolStripMenuItem
             // 
-            this.closedMonthlyUpdateToolStripMenuItem.Image = global::IAC2018SQL.Properties.Resources.Calculator_16x_24;
+            this.closedMonthlyUpdateToolStripMenuItem.Image = global::IAC2021SQL.Properties.Resources.Calculator_16x_24;
             this.closedMonthlyUpdateToolStripMenuItem.Name = "closedMonthlyUpdateToolStripMenuItem";
             this.closedMonthlyUpdateToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
             this.closedMonthlyUpdateToolStripMenuItem.Text = "Closed &Monthly Interest Posting";
@@ -593,7 +593,7 @@
             // 
             // unlockCustomerToolStripMenuItem
             // 
-            this.unlockCustomerToolStripMenuItem.Image = global::IAC2018SQL.Properties.Resources.Unlock_16x_24;
+            this.unlockCustomerToolStripMenuItem.Image = global::IAC2021SQL.Properties.Resources.Unlock_16x_24;
             this.unlockCustomerToolStripMenuItem.Name = "unlockCustomerToolStripMenuItem";
             this.unlockCustomerToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
             this.unlockCustomerToolStripMenuItem.Text = "&Unlock Customer";
@@ -601,7 +601,7 @@
             // 
             // leeMasonImportAndExportToolStripMenuItem
             // 
-            this.leeMasonImportAndExportToolStripMenuItem.Image = global::IAC2018SQL.Properties.Resources.FileDestination_16x_24;
+            this.leeMasonImportAndExportToolStripMenuItem.Image = global::IAC2021SQL.Properties.Resources.FileDestination_16x_24;
             this.leeMasonImportAndExportToolStripMenuItem.Name = "leeMasonImportAndExportToolStripMenuItem";
             this.leeMasonImportAndExportToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
             this.leeMasonImportAndExportToolStripMenuItem.Text = "&Lee Mason Import and Export";
@@ -609,7 +609,7 @@
             // 
             // recalcPartialPaymentsToolStripMenuItem
             // 
-            this.recalcPartialPaymentsToolStripMenuItem.Image = global::IAC2018SQL.Properties.Resources.CalculatorMethod_16x_24;
+            this.recalcPartialPaymentsToolStripMenuItem.Image = global::IAC2021SQL.Properties.Resources.CalculatorMethod_16x_24;
             this.recalcPartialPaymentsToolStripMenuItem.Name = "recalcPartialPaymentsToolStripMenuItem";
             this.recalcPartialPaymentsToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
             this.recalcPartialPaymentsToolStripMenuItem.Text = "Re&calc Partial Payments";
@@ -617,7 +617,7 @@
             // 
             // fixPaidThroughsToolStripMenuItem1
             // 
-            this.fixPaidThroughsToolStripMenuItem1.Image = global::IAC2018SQL.Properties.Resources.MoneyEditor_16x_24;
+            this.fixPaidThroughsToolStripMenuItem1.Image = global::IAC2021SQL.Properties.Resources.MoneyEditor_16x_24;
             this.fixPaidThroughsToolStripMenuItem1.Name = "fixPaidThroughsToolStripMenuItem1";
             this.fixPaidThroughsToolStripMenuItem1.Size = new System.Drawing.Size(243, 22);
             this.fixPaidThroughsToolStripMenuItem1.Text = "&Fix Paid Throughs";
@@ -1044,7 +1044,7 @@
             // 
             // createSumRecsToolStripMenuItem
             // 
-            this.createSumRecsToolStripMenuItem.Image = global::IAC2018SQL.Properties.Resources.Summary_16x;
+            this.createSumRecsToolStripMenuItem.Image = global::IAC2021SQL.Properties.Resources.Summary_16x;
             this.createSumRecsToolStripMenuItem.Name = "createSumRecsToolStripMenuItem";
             this.createSumRecsToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
             this.createSumRecsToolStripMenuItem.Text = "CreateSumRecs";
@@ -1053,7 +1053,7 @@
             // 
             // printScreenToolStripMenuItem
             // 
-            this.printScreenToolStripMenuItem.Image = global::IAC2018SQL.Properties.Resources.Printer;
+            this.printScreenToolStripMenuItem.Image = global::IAC2021SQL.Properties.Resources.Printer;
             this.printScreenToolStripMenuItem.Name = "printScreenToolStripMenuItem";
             this.printScreenToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
             this.printScreenToolStripMenuItem.Text = "&Print Screen";
@@ -1061,7 +1061,7 @@
             // 
             // fix211DataToolStripMenuItem
             // 
-            this.fix211DataToolStripMenuItem.Image = global::IAC2018SQL.Properties.Resources.Phone_16x_24;
+            this.fix211DataToolStripMenuItem.Image = global::IAC2021SQL.Properties.Resources.Phone_16x_24;
             this.fix211DataToolStripMenuItem.Name = "fix211DataToolStripMenuItem";
             this.fix211DataToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
             this.fix211DataToolStripMenuItem.Text = "&ValidateCellPhones";
@@ -1070,7 +1070,7 @@
             // importTCIAppsToolStripMenuItem
             // 
             this.importTCIAppsToolStripMenuItem.Enabled = false;
-            this.importTCIAppsToolStripMenuItem.Image = global::IAC2018SQL.Properties.Resources.ImportFile_16x;
+            this.importTCIAppsToolStripMenuItem.Image = global::IAC2021SQL.Properties.Resources.ImportFile_16x;
             this.importTCIAppsToolStripMenuItem.Name = "importTCIAppsToolStripMenuItem";
             this.importTCIAppsToolStripMenuItem.ShowShortcutKeys = false;
             this.importTCIAppsToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
@@ -1080,7 +1080,7 @@
             // 
             // toolStripMenuItem5
             // 
-            this.toolStripMenuItem5.Image = global::IAC2018SQL.Properties.Resources.XMLFile_16x;
+            this.toolStripMenuItem5.Image = global::IAC2021SQL.Properties.Resources.XMLFile_16x;
             this.toolStripMenuItem5.Name = "toolStripMenuItem5";
             this.toolStripMenuItem5.Size = new System.Drawing.Size(221, 22);
             this.toolStripMenuItem5.Text = "Import &Defi Apps";
@@ -1088,7 +1088,7 @@
             // 
             // importDefiPDFImagesToolStripMenuItem
             // 
-            this.importDefiPDFImagesToolStripMenuItem.Image = global::IAC2018SQL.Properties.Resources.Image_16x_24;
+            this.importDefiPDFImagesToolStripMenuItem.Image = global::IAC2021SQL.Properties.Resources.Image_16x_24;
             this.importDefiPDFImagesToolStripMenuItem.Name = "importDefiPDFImagesToolStripMenuItem";
             this.importDefiPDFImagesToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
             this.importDefiPDFImagesToolStripMenuItem.Text = "Import Defi P&DF Images";
@@ -1096,7 +1096,7 @@
             // 
             // toolStripMenuItem6
             // 
-            this.toolStripMenuItem6.Image = global::IAC2018SQL.Properties.Resources.Message_16x;
+            this.toolStripMenuItem6.Image = global::IAC2021SQL.Properties.Resources.Message_16x;
             this.toolStripMenuItem6.Name = "toolStripMenuItem6";
             this.toolStripMenuItem6.Size = new System.Drawing.Size(221, 22);
             this.toolStripMenuItem6.Text = "&Bulk SMS Messages";
@@ -1122,7 +1122,7 @@
             // 
             // globalSearchPDFUploaderToolStripMenuItem
             // 
-            this.globalSearchPDFUploaderToolStripMenuItem.Image = global::IAC2018SQL.Properties.Resources.Import_16x1;
+            this.globalSearchPDFUploaderToolStripMenuItem.Image = global::IAC2021SQL.Properties.Resources.Import_16x1;
             this.globalSearchPDFUploaderToolStripMenuItem.Name = "globalSearchPDFUploaderToolStripMenuItem";
             this.globalSearchPDFUploaderToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
             this.globalSearchPDFUploaderToolStripMenuItem.Text = "&Global Search PDF Uploader";

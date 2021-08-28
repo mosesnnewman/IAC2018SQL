@@ -1,4 +1,4 @@
-﻿namespace IAC2018SQL
+﻿namespace IAC2021SQL
 {
     partial class frmOpenCustomerLookup
     {
@@ -50,8 +50,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOpenCustomerLookup));
             this.CustomerbindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.iacDataSet1 = new IAC2018SQL.IACDataSet();
-            this.customerTableAdapter1 = new IAC2018SQL.IACDataSetTableAdapters.CUSTOMERTableAdapter();
+            this.iacDataSet1 = new IAC2021SQL.IACDataSet();
+            this.customerTableAdapter1 = new IAC2021SQL.IACDataSetTableAdapters.CUSTOMERTableAdapter();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridViewCustLookup = new System.Windows.Forms.DataGridView();
@@ -88,8 +88,8 @@
             this.cUSTOMER_WORK_PHONESrchTextBox = new System.Windows.Forms.MaskedTextBox();
             this.cUSTOMER__PHONE_NOSrchTextBox = new System.Windows.Forms.MaskedTextBox();
             this.Vehicle_CustomerbindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.customer_VehicleTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.Customer_VehicleTableAdapter();
-            this.oPNCUSTTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.OPNCUSTTableAdapter();
+            this.customer_VehicleTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.Customer_VehicleTableAdapter();
+            this.oPNCUSTTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.OPNCUSTTableAdapter();
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();

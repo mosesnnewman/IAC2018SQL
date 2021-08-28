@@ -1,4 +1,4 @@
-﻿namespace IAC2018SQL
+﻿namespace IAC2021SQL
 {
     partial class FormReciept
     {
@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormReciept));
-            this.iacDataSetReceipts = new IAC2018SQL.IACDataSet();
-            this.opnclscustomerTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.OPNCLSCUSTOMERTableAdapter();
-            this.opndealrTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.OPNDEALRTableAdapter();
-            this.dealerTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.DEALERTableAdapter();
+            this.iacDataSetReceipts = new IAC2021SQL.IACDataSet();
+            this.opnclscustomerTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.OPNCLSCUSTOMERTableAdapter();
+            this.opndealrTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.OPNDEALRTableAdapter();
+            this.dealerTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.DEALERTableAdapter();
             this.textBoxCustomerNo = new System.Windows.Forms.TextBox();
             this.bindingSourceCustomer = new System.Windows.Forms.BindingSource(this.components);
             this.cUSTOMER_SUFFIXTextBox = new System.Windows.Forms.TextBox();
@@ -60,7 +60,7 @@
             this.textBoxDealerName = new System.Windows.Forms.TextBox();
             this.textBoxDealerAccNo = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.ulistTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.ULISTTableAdapter();
+            this.ulistTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.ULISTTableAdapter();
             this.textBoxUserName = new System.Windows.Forms.TextBox();
             this.textBoxUserID = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -72,7 +72,7 @@
             this.toolStripButtonDelete = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonSave = new System.Windows.Forms.ToolStripButton();
             this.bindingSourceORECEIPT = new System.Windows.Forms.BindingSource(this.components);
-            this.oRECEIPTTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.ORECEIPTTableAdapter();
+            this.oRECEIPTTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.ORECEIPTTableAdapter();
             this.textBoxAmountPaid = new System.Windows.Forms.TextBox();
             this.labelAmountPaid = new System.Windows.Forms.Label();
             this.textBoxCashTendered = new System.Windows.Forms.TextBox();
@@ -154,7 +154,7 @@
             this.textBoxCashChange = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
             this.textBoxComment = new System.Windows.Forms.TextBox();
-            this.receiptTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.ReceiptTableAdapter();
+            this.receiptTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.ReceiptTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.iacDataSetReceipts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceCustomer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceReceipt)).BeginInit();
@@ -906,7 +906,7 @@
             // buttonCreditCard
             // 
             this.buttonCreditCard.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.buttonCreditCard.Image = global::IAC2018SQL.Properties.Resources.CreditCardLogos;
+            this.buttonCreditCard.Image = global::IAC2021SQL.Properties.Resources.CreditCardLogos;
             this.buttonCreditCard.Location = new System.Drawing.Point(11, 216);
             this.buttonCreditCard.Name = "buttonCreditCard";
             this.buttonCreditCard.Size = new System.Drawing.Size(133, 95);
@@ -1470,7 +1470,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = global::IAC2018SQL.Properties.Resources.Printer;
+            this.button1.Image = global::IAC2021SQL.Properties.Resources.Printer;
             this.button1.Location = new System.Drawing.Point(331, 664);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(128, 59);

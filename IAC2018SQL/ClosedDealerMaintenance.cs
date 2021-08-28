@@ -11,7 +11,7 @@ using System.Reflection;
 using System.Transactions;
 
 
-namespace IAC2018SQL
+namespace IAC2021SQL
 {
     public partial class ClosedDealerMaintenance : Form
     {
@@ -171,7 +171,7 @@ namespace IAC2018SQL
             lsDealerNo = DEALERcomboBox.Text.ToString().Trim();
 
             tableAdapConn = new System.Data.SqlClient.SqlConnection();
-            tableAdapConn.ConnectionString = IAC2018SQL.Properties.Settings.Default.IAC2010SQLConnectionString;
+            tableAdapConn.ConnectionString = IAC2021SQL.Properties.Settings.Default.IAC2010SQLConnectionString;
 
             tableAdapConn.Open();                                                                                        
             dEALERTableAdapter.Connection = tableAdapConn;
@@ -416,7 +416,7 @@ namespace IAC2018SQL
             lsDealerNo = DEALERcomboBox.Text.ToString().Trim();
 
             tableAdapConn = new System.Data.SqlClient.SqlConnection();
-            tableAdapConn.ConnectionString = IAC2018SQL.Properties.Settings.Default.IAC2010SQLConnectionString;
+            tableAdapConn.ConnectionString = IAC2021SQL.Properties.Settings.Default.IAC2010SQLConnectionString;
             tableAdapConn.Open();
             dEALERTableAdapter.Connection = tableAdapConn;
             tableAdapTran = dEALERTableAdapter.BeginTransaction();

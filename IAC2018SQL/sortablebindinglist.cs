@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel;
 
-namespace IAC2018SQL
+namespace IAC2021SQL
 {
       /// <summary>
     /// Provides a generic collection that supports data binding and additionally supports sorting.

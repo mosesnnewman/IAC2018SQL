@@ -1,4 +1,4 @@
-﻿namespace IAC2018SQL
+﻿namespace IAC2021SQL
 {
     partial class formOpenPayment
     {
@@ -56,14 +56,14 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.OpenPaymentiacDataSet = new IAC2018SQL.IACDataSet();
+            this.OpenPaymentiacDataSet = new IAC2021SQL.IACDataSet();
             this.PaymentTypebindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pAYMENTTYPETableAdapter = new IAC2018SQL.IACDataSetTableAdapters.PAYMENTTYPETableAdapter();
+            this.pAYMENTTYPETableAdapter = new IAC2021SQL.IACDataSetTableAdapters.PAYMENTTYPETableAdapter();
             this.DealerbindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.PAYCODEbindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pAYCODETableAdapter = new IAC2018SQL.IACDataSetTableAdapters.PAYCODETableAdapter();
-            this.oPNCUSTTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.OPNCUSTTableAdapter();
-            this.oPNDEALRTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.OPNDEALRTableAdapter();
+            this.pAYCODETableAdapter = new IAC2021SQL.IACDataSetTableAdapters.PAYCODETableAdapter();
+            this.oPNCUSTTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.OPNCUSTTableAdapter();
+            this.oPNDEALRTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.OPNDEALRTableAdapter();
             this.PaymentbindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cUSTOMER_NOTextBox = new System.Windows.Forms.TextBox();
             this.cUSTOMER_IAC_TypeTextBox = new System.Windows.Forms.TextBox();
@@ -217,11 +217,11 @@
             this.textBox33 = new System.Windows.Forms.TextBox();
             this.textBox34 = new System.Windows.Forms.TextBox();
             this.txtCommentNo = new System.Windows.Forms.TextBox();
-            this.oPNCOMMTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.OPNCOMMTableAdapter();
-            this.oPNHCUSTTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.OPNHCUSTTableAdapter();
-            this.comment_TypesTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.Comment_TypesTableAdapter();
-            this.opnpayTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.OPNPAYTableAdapter();
-            this.specialCommentCodesTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.SpecialCommentCodesTableAdapter();
+            this.oPNCOMMTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.OPNCOMMTableAdapter();
+            this.oPNHCUSTTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.OPNHCUSTTableAdapter();
+            this.comment_TypesTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.Comment_TypesTableAdapter();
+            this.opnpayTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.OPNPAYTableAdapter();
+            this.specialCommentCodesTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.SpecialCommentCodesTableAdapter();
             label1 = new System.Windows.Forms.Label();
             label8 = new System.Windows.Forms.Label();
             label31 = new System.Windows.Forms.Label();

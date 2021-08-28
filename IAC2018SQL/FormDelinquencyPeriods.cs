@@ -1,4 +1,4 @@
-﻿using IAC2018SQL.IACDataSetTableAdapters;
+﻿using IAC2021SQL.IACDataSetTableAdapters;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace IAC2018SQL
+namespace IAC2021SQL
 {
     public partial class FormDelinquencyPeriods : Form
     {

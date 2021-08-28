@@ -1,4 +1,4 @@
-﻿namespace IAC2018SQL
+﻿namespace IAC2021SQL
 {
     partial class FormClosedDealerContingentMaintenance
     {
@@ -49,7 +49,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormClosedDealerContingentMaintenance));
             this.dEALER_NAMETextBox = new System.Windows.Forms.TextBox();
             this.DealerbindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.CONTINGiacDataSet = new IAC2018SQL.IACDataSet();
+            this.CONTINGiacDataSet = new IAC2021SQL.IACDataSet();
             this.DEALER_STREETTextBox = new System.Windows.Forms.TextBox();
             this.DealerCityTextBox = new System.Windows.Forms.TextBox();
             this.DealerStateTextBox = new System.Windows.Forms.TextBox();
@@ -60,10 +60,10 @@
             this.DealerListbindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DealerZipTextBox = new System.Windows.Forms.TextBox();
             this.CONTINGbindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dEALERTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.DEALERTableAdapter();
-            this.cONTINGTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.CONTINGTableAdapter();
-            this.dEALERLISTTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.DEALERLISTTableAdapter();
-            this.dLRLISTBYNUMTableAdapter = new IAC2018SQL.IACDataSetTableAdapters.DLRLISTBYNUMTableAdapter();
+            this.dEALERTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.DEALERTableAdapter();
+            this.cONTINGTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.CONTINGTableAdapter();
+            this.dEALERLISTTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.DEALERLISTTableAdapter();
+            this.dLRLISTBYNUMTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.DLRLISTBYNUMTableAdapter();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButtonAdd = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonEdit = new System.Windows.Forms.ToolStripButton();

@@ -16,7 +16,7 @@ using Microsoft.SqlServer.Management.Smo;
 using Microsoft.SqlServer.Management.Common;
 
 
-namespace IAC2018SQL
+namespace IAC2021SQL
 {
     public partial class MDIIAC2013 : Form
     {
@@ -43,7 +43,7 @@ namespace IAC2018SQL
             // Get current assembly
             Assembly frmMain = Assembly.GetEntryAssembly();
             // Get Type of your form
-            Type formType = frmMain.GetType("IAC2018SQL." + tsFormName.TrimEnd());
+            Type formType = frmMain.GetType("IAC2021SQL." + tsFormName.TrimEnd());
             // Create instance of form
             object pc = Activator.CreateInstance(formType);
             // Cast to Form class
@@ -131,7 +131,7 @@ namespace IAC2018SQL
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AboutIAC2018SQL newMDIChild = new AboutIAC2018SQL();
+            AboutIAC2021SQL newMDIChild = new AboutIAC2021SQL();
             newMDIChild.ShowDialog();
         }
 
@@ -142,7 +142,7 @@ namespace IAC2018SQL
 
         private void MDIIAC2013_Load(object sender, EventArgs e)
         {
-            String lsConnect = IAC2018SQL.Properties.Settings.Default.IAC2010SQLConnectionString.ToUpper(), DataBase = "";
+            String lsConnect = IAC2021SQL.Properties.Settings.Default.IAC2010SQLConnectionString.ToUpper(), DataBase = "";
             Hide();
             SplashForm frmSplash = new SplashForm();
             frmSplash.Show();
