@@ -57,7 +57,7 @@
             this.DealerListbindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DealerZipTextBox = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dateTimePickerPostDate = new ProManApp.NullableDateTimePicker();
+            this.dateTimePickerPostDate = new UIComponent.DateTimePicker();
             this.CONTINGbindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.textBoxNPComment = new System.Windows.Forms.TextBox();
             this.textBoxNotesPayable = new System.Windows.Forms.TextBox();
@@ -113,7 +113,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.OPNDLRLISTBYNUMbindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DealerListbindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dateTimePickerPostDate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CONTINGbindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator)).BeginInit();
             this.bindingNavigator.SuspendLayout();
@@ -610,14 +609,14 @@
             this.bindingNavigator.MovePreviousItem = this.toolStripButton2;
             this.bindingNavigator.Name = "bindingNavigator";
             this.bindingNavigator.PositionItem = this.toolStripTextBox1;
-            this.bindingNavigator.Size = new System.Drawing.Size(208, 25);
+            this.bindingNavigator.Size = new System.Drawing.Size(209, 25);
             this.bindingNavigator.TabIndex = 181;
             this.bindingNavigator.Text = "bindingNavigator";
             // 
             // toolStripLabel1
             // 
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(36, 22);
+            this.toolStripLabel1.Size = new System.Drawing.Size(35, 22);
             this.toolStripLabel1.Text = "of {0}";
             this.toolStripLabel1.ToolTipText = "Total number of items";
             // 
@@ -703,7 +702,7 @@
             this.toolStripButtonAdd.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonAdd.Image")));
             this.toolStripButtonAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonAdd.Name = "toolStripButtonAdd";
-            this.toolStripButtonAdd.Size = new System.Drawing.Size(46, 22);
+            this.toolStripButtonAdd.Size = new System.Drawing.Size(49, 22);
             this.toolStripButtonAdd.Text = "&Add";
             this.toolStripButtonAdd.Click += new System.EventHandler(this.toolStripButtonAdd_Click);
             // 
@@ -714,7 +713,7 @@
             this.toolStripButtonEdit.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonEdit.Image")));
             this.toolStripButtonEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonEdit.Name = "toolStripButtonEdit";
-            this.toolStripButtonEdit.Size = new System.Drawing.Size(45, 22);
+            this.toolStripButtonEdit.Size = new System.Drawing.Size(47, 22);
             this.toolStripButtonEdit.Text = "&Edit";
             this.toolStripButtonEdit.Click += new System.EventHandler(this.toolStripButtonEdit_Click);
             // 
@@ -725,7 +724,7 @@
             this.toolStripButtonDelete.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonDelete.Image")));
             this.toolStripButtonDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonDelete.Name = "toolStripButtonDelete";
-            this.toolStripButtonDelete.Size = new System.Drawing.Size(58, 22);
+            this.toolStripButtonDelete.Size = new System.Drawing.Size(60, 22);
             this.toolStripButtonDelete.Text = "&Delete";
             this.toolStripButtonDelete.Click += new System.EventHandler(this.toolStripButtonDelete_Click);
             // 
@@ -747,7 +746,7 @@
             this.toolStripButtonCancel.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonCancel.Image")));
             this.toolStripButtonCancel.ImageTransparentColor = System.Drawing.Color.Crimson;
             this.toolStripButtonCancel.Name = "toolStripButtonCancel";
-            this.toolStripButtonCancel.Size = new System.Drawing.Size(78, 22);
+            this.toolStripButtonCancel.Size = new System.Drawing.Size(85, 22);
             this.toolStripButtonCancel.Text = "&CancelAdd";
             this.toolStripButtonCancel.Click += new System.EventHandler(this.toolStripButtonCancel_Click);
             // 
@@ -776,7 +775,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.DealerListbindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dateTimePickerPostDate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CONTINGbindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator)).EndInit();
             this.bindingNavigator.ResumeLayout(false);
@@ -838,6 +836,6 @@
         private System.Windows.Forms.ToolStripButton toolStripButtonDelete;
         private System.Windows.Forms.ToolStripButton toolStripButtonSave;
         private System.Windows.Forms.ToolStripButton toolStripButtonCancel;
-        private ProManApp.NullableDateTimePicker dateTimePickerPostDate;
+        private UIComponent.DateTimePicker dateTimePickerPostDate;
     }
 }

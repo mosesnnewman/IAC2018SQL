@@ -28,11 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.nullableDateTimePickerDueDate = new ProManApp.NullableDateTimePicker();
+            this.nullableDateTimePickerDueDate = new UIComponent.DateTimePicker();
             this.labelLateNotices = new System.Windows.Forms.Label();
             this.buttonPost = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDueDate)).BeginInit();
             this.SuspendLayout();
             // 
             // nullableDateTimePickerDueDate
@@ -78,7 +77,7 @@
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
-            // frmClosedFirstPaymentDefaultReport
+            // frmClosedPayedInAdvanceReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
@@ -93,7 +92,6 @@
             this.Name = "frmClosedPayedInAdvanceReport";
             this.Text = "Closed Payed In Advance Report";
             this.Load += new System.EventHandler(this.frmClosedPayedInAdvanceReport_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDueDate)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -101,7 +99,7 @@
 
         #endregion
 
-        private ProManApp.NullableDateTimePicker nullableDateTimePickerDueDate;
+        private UIComponent.DateTimePicker nullableDateTimePickerDueDate;
         private System.Windows.Forms.Label labelLateNotices;
         private System.Windows.Forms.Button buttonPost;
         private System.Windows.Forms.Button buttonCancel;

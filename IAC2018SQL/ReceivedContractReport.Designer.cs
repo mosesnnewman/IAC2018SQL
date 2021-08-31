@@ -34,8 +34,8 @@
             this.labelStartDate = new System.Windows.Forms.Label();
             this.iACDataSet = new IAC2021SQL.IACDataSet();
             this.labelEndDate = new System.Windows.Forms.Label();
-            this.nullableDateTimePickerStartDate = new ProManApp.NullableDateTimePicker();
-            this.nullableDateTimePickerEndDate = new ProManApp.NullableDateTimePicker();
+            this.nullableDateTimePickerStartDate = new UIComponent.DateTimePicker();
+            this.nullableDateTimePickerEndDate = new UIComponent.DateTimePicker();
             this.textBoxDealerName = new System.Windows.Forms.TextBox();
             this.bindingSourceDLRLISTBYNUM = new System.Windows.Forms.BindingSource(this.components);
             this.comboBoxDealer = new System.Windows.Forms.ComboBox();
@@ -47,8 +47,6 @@
             this.radioButtonBoth = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.iACDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerStartDate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerEndDate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceDLRLISTBYNUM)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -241,8 +239,6 @@
             this.Text = "Print Received Contract Report";
             this.Load += new System.EventHandler(this.ClosedCustomerReceivedContractReport_Load);
             ((System.ComponentModel.ISupportInitialize)(this.iACDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerStartDate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerEndDate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceDLRLISTBYNUM)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -258,8 +254,8 @@
         private System.Windows.Forms.Label labelStartDate;
         private IACDataSet iACDataSet;
         private System.Windows.Forms.Label labelEndDate;
-        private ProManApp.NullableDateTimePicker nullableDateTimePickerStartDate;
-        private ProManApp.NullableDateTimePicker nullableDateTimePickerEndDate;
+        private UIComponent.DateTimePicker nullableDateTimePickerStartDate;
+        private UIComponent.DateTimePicker nullableDateTimePickerEndDate;
         private System.Windows.Forms.TextBox textBoxDealerName;
         private System.Windows.Forms.ComboBox comboBoxDealer;
         private System.Windows.Forms.Label labelDealerNum;

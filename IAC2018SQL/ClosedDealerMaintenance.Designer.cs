@@ -205,7 +205,7 @@
             this.DealerInfogroupBox = new System.Windows.Forms.GroupBox();
             this.textBoxDealerEmail = new System.Windows.Forms.TextBox();
             this.maskedTextBoxCellPhone = new System.Windows.Forms.MaskedTextBox();
-            this.nullableDateTimePickerDealerStartDate = new ProManApp.NullableDateTimePicker();
+            this.nullableDateTimePickerDealerStartDate = new UIComponent.DateTimePicker();
             this.DealerZipTextBox = new System.Windows.Forms.TextBox();
             this.DEALERcomboBox = new System.Windows.Forms.ComboBox();
             this.DLRLISTBYNUMbindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -457,7 +457,6 @@
             this.tabPage1.SuspendLayout();
             this.DealerAccountsGroupBox.SuspendLayout();
             this.DealerInfogroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDealerStartDate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DLRLISTBYNUMbindingSource)).BeginInit();
             this.DealerHistoryTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DealerHistorydataGridView)).BeginInit();
@@ -3447,7 +3446,6 @@
             this.DealerAccountsGroupBox.PerformLayout();
             this.DealerInfogroupBox.ResumeLayout(false);
             this.DealerInfogroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDealerStartDate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DLRLISTBYNUMbindingSource)).EndInit();
             this.DealerHistoryTab.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DealerHistorydataGridView)).EndInit();
@@ -3654,7 +3652,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn21;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn22;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn23;
-        private ProManApp.NullableDateTimePicker nullableDateTimePickerDealerStartDate;
+        private UIComponent.DateTimePicker nullableDateTimePickerDealerStartDate;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxCellPhone;
         private System.Windows.Forms.TextBox textBoxDealerEmail;
         private System.Windows.Forms.ToolStripButton toolStripButton1;

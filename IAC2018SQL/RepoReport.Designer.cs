@@ -35,6 +35,7 @@
             this.radioButtonR = new System.Windows.Forms.RadioButton();
             this.radioButtonIndBoth = new System.Windows.Forms.RadioButton();
             this.groupBoxRepoInd = new System.Windows.Forms.GroupBox();
+            this.radioButtonZ = new System.Windows.Forms.RadioButton();
             this.radioButtonI = new System.Windows.Forms.RadioButton();
             this.radioButtonP = new System.Windows.Forms.RadioButton();
             this.buttonPrint = new System.Windows.Forms.Button();
@@ -48,22 +49,19 @@
             this.radioButtonStatusBoth = new System.Windows.Forms.RadioButton();
             this.radioButtonInactive = new System.Windows.Forms.RadioButton();
             this.radioButtonActive = new System.Windows.Forms.RadioButton();
-            this.nullableDateTimePickerStartDate = new ProManApp.NullableDateTimePicker();
-            this.nullableDateTimePickerEndDate = new ProManApp.NullableDateTimePicker();
+            this.nullableDateTimePickerStartDate = new UIComponent.DateTimePicker();
+            this.nullableDateTimePickerEndDate = new UIComponent.DateTimePicker();
             this.labelStart = new System.Windows.Forms.Label();
             this.labelEnd = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.radioButtonZ = new System.Windows.Forms.RadioButton();
             label50 = new System.Windows.Forms.Label();
             this.groupBoxRepoInd.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceRepoCodes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DelinquencyData)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerStartDate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerEndDate)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -133,6 +131,18 @@
             this.groupBoxRepoInd.Size = new System.Drawing.Size(126, 221);
             this.groupBoxRepoInd.TabIndex = 3;
             this.groupBoxRepoInd.TabStop = false;
+            // 
+            // radioButtonZ
+            // 
+            this.radioButtonZ.AutoSize = true;
+            this.radioButtonZ.Location = new System.Drawing.Point(21, 147);
+            this.radioButtonZ.Margin = new System.Windows.Forms.Padding(6);
+            this.radioButtonZ.Name = "radioButtonZ";
+            this.radioButtonZ.Size = new System.Drawing.Size(84, 28);
+            this.radioButtonZ.TabIndex = 5;
+            this.radioButtonZ.TabStop = true;
+            this.radioButtonZ.Text = "&Z Only";
+            this.radioButtonZ.UseVisualStyleBackColor = true;
             // 
             // radioButtonI
             // 
@@ -348,18 +358,6 @@
             this.panel1.Size = new System.Drawing.Size(739, 519);
             this.panel1.TabIndex = 130;
             // 
-            // radioButtonZ
-            // 
-            this.radioButtonZ.AutoSize = true;
-            this.radioButtonZ.Location = new System.Drawing.Point(21, 147);
-            this.radioButtonZ.Margin = new System.Windows.Forms.Padding(6);
-            this.radioButtonZ.Name = "radioButtonZ";
-            this.radioButtonZ.Size = new System.Drawing.Size(84, 28);
-            this.radioButtonZ.TabIndex = 5;
-            this.radioButtonZ.TabStop = true;
-            this.radioButtonZ.Text = "&Z Only";
-            this.radioButtonZ.UseVisualStyleBackColor = true;
-            // 
             // FormRepoReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
@@ -379,8 +377,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.DelinquencyData)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerStartDate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerEndDate)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -408,8 +404,8 @@
         private System.Windows.Forms.RadioButton radioButtonStatusBoth;
         private System.Windows.Forms.RadioButton radioButtonInactive;
         private System.Windows.Forms.RadioButton radioButtonActive;
-        private ProManApp.NullableDateTimePicker nullableDateTimePickerStartDate;
-        private ProManApp.NullableDateTimePicker nullableDateTimePickerEndDate;
+        private UIComponent.DateTimePicker nullableDateTimePickerStartDate;
+        private UIComponent.DateTimePicker nullableDateTimePickerEndDate;
         private System.Windows.Forms.Label labelStart;
         private System.Windows.Forms.Label labelEnd;
         private System.Windows.Forms.GroupBox groupBox2;

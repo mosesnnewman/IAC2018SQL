@@ -112,7 +112,7 @@
             this.label10s = new System.Windows.Forms.Label();
             this.textBox10s = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
-            this.nullableDateTimePickerHoldDate = new ProManApp.NullableDateTimePicker();
+            this.nullableDateTimePickerHoldDate = new UIComponent.DateTimePicker();
             this.checkBoxHold = new System.Windows.Forms.CheckBox();
             this.label35 = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
@@ -163,7 +163,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceORECEIPT)).BeginInit();
             this.groupBoxAmounts.SuspendLayout();
             this.groupBoxCounts.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerHoldDate)).BeginInit();
             this.groupBoxTenderButtons.SuspendLayout();
             this.groupBoxComment.SuspendLayout();
             this.SuspendLayout();
@@ -439,7 +438,7 @@
             this.label5.ForeColor = System.Drawing.Color.Black;
             this.label5.Location = new System.Drawing.Point(231, 146);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(45, 15);
+            this.label5.Size = new System.Drawing.Size(43, 15);
             this.label5.TabIndex = 33;
             this.label5.Text = "STATE:";
             // 
@@ -608,7 +607,7 @@
             this.toolStripButtonEdit.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonEdit.Image")));
             this.toolStripButtonEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonEdit.Name = "toolStripButtonEdit";
-            this.toolStripButtonEdit.Size = new System.Drawing.Size(45, 22);
+            this.toolStripButtonEdit.Size = new System.Drawing.Size(47, 22);
             this.toolStripButtonEdit.Text = "&Edit";
             // 
             // toolStripButtonDelete
@@ -618,7 +617,7 @@
             this.toolStripButtonDelete.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonDelete.Image")));
             this.toolStripButtonDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonDelete.Name = "toolStripButtonDelete";
-            this.toolStripButtonDelete.Size = new System.Drawing.Size(58, 22);
+            this.toolStripButtonDelete.Size = new System.Drawing.Size(60, 22);
             this.toolStripButtonDelete.Text = "&Delete";
             // 
             // toolStripButtonSave
@@ -674,7 +673,7 @@
             this.label10.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(9, 60);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(89, 15);
+            this.label10.Size = new System.Drawing.Size(88, 15);
             this.label10.TabIndex = 112;
             this.label10.Text = "Cash Tendered";
             // 
@@ -789,7 +788,7 @@
             this.label16.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.Location = new System.Drawing.Point(354, 60);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(62, 15);
+            this.label16.Size = new System.Drawing.Size(61, 15);
             this.label16.TabIndex = 124;
             this.label16.Text = "Coin Total";
             // 
@@ -1141,7 +1140,7 @@
             this.label36.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label36.Location = new System.Drawing.Point(266, 300);
             this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(34, 15);
+            this.label36.Size = new System.Drawing.Size(33, 15);
             this.label36.TabIndex = 168;
             this.label36.Text = "Type";
             // 
@@ -1251,7 +1250,7 @@
             this.label31.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label31.Location = new System.Drawing.Point(266, 252);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(34, 15);
+            this.label31.Size = new System.Drawing.Size(33, 15);
             this.label31.TabIndex = 157;
             this.label31.Text = "Type";
             // 
@@ -1361,7 +1360,7 @@
             this.label28.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label28.Location = new System.Drawing.Point(266, 204);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(34, 15);
+            this.label28.Size = new System.Drawing.Size(33, 15);
             this.label28.TabIndex = 146;
             this.label28.Text = "Type";
             // 
@@ -1564,7 +1563,6 @@
             this.groupBoxAmounts.PerformLayout();
             this.groupBoxCounts.ResumeLayout(false);
             this.groupBoxCounts.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerHoldDate)).EndInit();
             this.groupBoxTenderButtons.ResumeLayout(false);
             this.groupBoxComment.ResumeLayout(false);
             this.groupBoxComment.PerformLayout();
@@ -1695,7 +1693,7 @@
         private IACDataSetTableAdapters.ReceiptTableAdapter receiptTableAdapter;
         private System.Windows.Forms.CheckBox checkBoxHold;
         private System.Windows.Forms.Label label23;
-        private ProManApp.NullableDateTimePicker nullableDateTimePickerHoldDate;
+        private UIComponent.DateTimePicker nullableDateTimePickerHoldDate;
         private System.Windows.Forms.Label labelCashChange;
         private System.Windows.Forms.TextBox textBoxCashChange;
         private System.Windows.Forms.Label label10s;

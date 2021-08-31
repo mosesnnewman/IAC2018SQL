@@ -30,18 +30,15 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCreateTSBExtract));
             this.label1 = new System.Windows.Forms.Label();
-            this.nullableDateTimePickerControlDate = new ProManApp.NullableDateTimePicker();
+            this.nullableDateTimePickerControlDate = new UIComponent.DateTimePicker();
             this.checkBoxCreateBoth = new System.Windows.Forms.CheckBox();
             this.buttonTransfer = new System.Windows.Forms.Button();
-            this.nullableDateTimePickerFrom = new ProManApp.NullableDateTimePicker();
-            this.nullableDateTimePickerTo = new ProManApp.NullableDateTimePicker();
+            this.nullableDateTimePickerFrom = new UIComponent.DateTimePicker();
+            this.nullableDateTimePickerTo = new UIComponent.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.checkBoxIgnoreBureauSwitch = new System.Windows.Forms.CheckBox();
             this.buttonCancel = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerControlDate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerFrom)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerTo)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -51,7 +48,7 @@
             this.label1.Location = new System.Drawing.Point(109, 30);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 16);
+            this.label1.Size = new System.Drawing.Size(84, 16);
             this.label1.TabIndex = 5;
             this.label1.Text = "Control Date:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -76,7 +73,7 @@
             this.checkBoxCreateBoth.Location = new System.Drawing.Point(67, 121);
             this.checkBoxCreateBoth.Margin = new System.Windows.Forms.Padding(4);
             this.checkBoxCreateBoth.Name = "checkBoxCreateBoth";
-            this.checkBoxCreateBoth.Size = new System.Drawing.Size(290, 20);
+            this.checkBoxCreateBoth.Size = new System.Drawing.Size(289, 20);
             this.checkBoxCreateBoth.TabIndex = 11;
             this.checkBoxCreateBoth.Text = "Create Extract, Report, and new Control Date";
             this.checkBoxCreateBoth.UseVisualStyleBackColor = true;
@@ -122,7 +119,7 @@
             this.label2.Location = new System.Drawing.Point(152, 60);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 16);
+            this.label2.Size = new System.Drawing.Size(41, 16);
             this.label2.TabIndex = 15;
             this.label2.Text = "From:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -134,7 +131,7 @@
             this.label3.Location = new System.Drawing.Point(166, 90);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(28, 16);
+            this.label3.Size = new System.Drawing.Size(27, 16);
             this.label3.TabIndex = 16;
             this.label3.Text = "To:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -146,7 +143,7 @@
             this.checkBoxIgnoreBureauSwitch.Location = new System.Drawing.Point(67, 143);
             this.checkBoxIgnoreBureauSwitch.Margin = new System.Windows.Forms.Padding(4);
             this.checkBoxIgnoreBureauSwitch.Name = "checkBoxIgnoreBureauSwitch";
-            this.checkBoxIgnoreBureauSwitch.Size = new System.Drawing.Size(198, 20);
+            this.checkBoxIgnoreBureauSwitch.Size = new System.Drawing.Size(197, 20);
             this.checkBoxIgnoreBureauSwitch.TabIndex = 17;
             this.checkBoxIgnoreBureauSwitch.Text = "Ignore \"Credit Bureau\" switch";
             this.checkBoxIgnoreBureauSwitch.UseVisualStyleBackColor = true;
@@ -185,9 +182,6 @@
             this.Name = "frmCreateTSBExtract";
             this.Text = "Create TSB Extract / Reports";
             this.Load += new System.EventHandler(this.frmCreateTSBExtract_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerControlDate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerFrom)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerTo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -196,11 +190,11 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private ProManApp.NullableDateTimePicker nullableDateTimePickerControlDate;
+        private UIComponent.DateTimePicker nullableDateTimePickerControlDate;
         private System.Windows.Forms.CheckBox checkBoxCreateBoth;
         private System.Windows.Forms.Button buttonTransfer;
-        private ProManApp.NullableDateTimePicker nullableDateTimePickerFrom;
-        private ProManApp.NullableDateTimePicker nullableDateTimePickerTo;
+        private UIComponent.DateTimePicker nullableDateTimePickerFrom;
+        private UIComponent.DateTimePicker nullableDateTimePickerTo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.CheckBox checkBoxIgnoreBureauSwitch;

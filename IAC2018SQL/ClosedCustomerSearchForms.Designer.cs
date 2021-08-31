@@ -61,24 +61,40 @@
             System.Windows.Forms.Label labelEXT;
             System.Windows.Forms.Label cUSTOMER_PURCHASE_ORDERLabel;
             System.Windows.Forms.Label label14;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCustomerLookup));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCustomerLookup));
             this.CustomerbindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.iacDataSet1 = new IAC2021SQL.IACDataSet();
             this.customerTableAdapter1 = new IAC2021SQL.IACDataSetTableAdapters.CUSTOMERTableAdapter();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.dataGridViewCustLookup = new System.Windows.Forms.DataGridView();
+            this.cUSTOMERNODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CustomerActType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CustomerActStat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cUSTOMERSS1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SOCDASH1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cUSTOMERSS2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SOCDASH2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cUSTOMERSS3DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cUSTOMERFIRSTNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cUSTOMERLASTNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cUSTOMERSTREET1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cUSTOMERCITYDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cUSTOMERSTATEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cUSTOMERDEALERDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EmailAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CosignerEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CustomerGroupBox = new System.Windows.Forms.GroupBox();
-            this.NullableDateTimePickerSrchDOB = new ProManApp.NullableDateTimePicker();
+            this.NullableDateTimePickerSrchDOB = new UIComponent.DateTimePicker();
             this.richTextBoxEmailAddress = new System.Windows.Forms.TextBox();
             this.cUSTOMER_PURCHASE_ORDERTextBox = new System.Windows.Forms.TextBox();
             this.groupBoxCosigner = new System.Windows.Forms.GroupBox();
-            this.nullableDateTimePickerCOSDOB = new ProManApp.NullableDateTimePicker();
+            this.nullableDateTimePickerCOSDOB = new UIComponent.DateTimePicker();
             this.textBoxCOSWORKEXT = new System.Windows.Forms.TextBox();
             this.COSIGNER_STATESrchTextBox = new System.Windows.Forms.TextBox();
             this.COSIGNER_ZIPSrchTextBox = new System.Windows.Forms.TextBox();
@@ -140,22 +156,6 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.customerMailTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.CustomerMailTableAdapter();
-            this.cUSTOMERNODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CustomerActType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CustomerActStat = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cUSTOMERSS1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SOCDASH1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cUSTOMERSS2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SOCDASH2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cUSTOMERSS3DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cUSTOMERFIRSTNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cUSTOMERLASTNAMEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cUSTOMERSTREET1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cUSTOMERCITYDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cUSTOMERSTATEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cUSTOMERDEALERDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EmailAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CosignerEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             cUSTOMER_CONTACTLabel = new System.Windows.Forms.Label();
             cUSTOMER_SS_1Label = new System.Windows.Forms.Label();
             cUSTOMER_DOBLabel = new System.Windows.Forms.Label();
@@ -194,9 +194,7 @@
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCustLookup)).BeginInit();
             this.CustomerGroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.NullableDateTimePickerSrchDOB)).BeginInit();
             this.groupBoxCosigner.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerCOSDOB)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewVehicleLookup)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Vehicle_CustomerbindingSource)).BeginInit();
@@ -230,7 +228,7 @@
             cUSTOMER_DOBLabel.AutoSize = true;
             cUSTOMER_DOBLabel.Location = new System.Drawing.Point(183, 174);
             cUSTOMER_DOBLabel.Name = "cUSTOMER_DOBLabel";
-            cUSTOMER_DOBLabel.Size = new System.Drawing.Size(90, 13);
+            cUSTOMER_DOBLabel.Size = new System.Drawing.Size(89, 13);
             cUSTOMER_DOBLabel.TabIndex = 89;
             cUSTOMER_DOBLabel.Text = "DATE  OF BIRTH:";
             cUSTOMER_DOBLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -342,7 +340,7 @@
             lblVehicleYear.BackColor = System.Drawing.Color.Transparent;
             lblVehicleYear.Location = new System.Drawing.Point(59, 60);
             lblVehicleYear.Name = "lblVehicleYear";
-            lblVehicleYear.Size = new System.Drawing.Size(71, 13);
+            lblVehicleYear.Size = new System.Drawing.Size(69, 13);
             lblVehicleYear.TabIndex = 77;
             lblVehicleYear.Text = "Vehicle Year:";
             // 
@@ -351,7 +349,7 @@
             cUSTOMER_STATELabel.AutoSize = true;
             cUSTOMER_STATELabel.Location = new System.Drawing.Point(63, 174);
             cUSTOMER_STATELabel.Name = "cUSTOMER_STATELabel";
-            cUSTOMER_STATELabel.Size = new System.Drawing.Size(39, 13);
+            cUSTOMER_STATELabel.Size = new System.Drawing.Size(37, 13);
             cUSTOMER_STATELabel.TabIndex = 85;
             cUSTOMER_STATELabel.Text = "STATE:";
             cUSTOMER_STATELabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -485,7 +483,7 @@
             label12.AutoSize = true;
             label12.Location = new System.Drawing.Point(51, 141);
             label12.Name = "label12";
-            label12.Size = new System.Drawing.Size(39, 13);
+            label12.Size = new System.Drawing.Size(37, 13);
             label12.TabIndex = 115;
             label12.Text = "STATE:";
             label12.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -495,7 +493,7 @@
             label13.AutoSize = true;
             label13.Location = new System.Drawing.Point(171, 141);
             label13.Name = "label13";
-            label13.Size = new System.Drawing.Size(90, 13);
+            label13.Size = new System.Drawing.Size(89, 13);
             label13.TabIndex = 117;
             label13.Text = "DATE  OF BIRTH:";
             label13.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -600,6 +598,140 @@
             this.dataGridViewCustLookup.TabIndex = 31;
             this.dataGridViewCustLookup.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             this.dataGridViewCustLookup.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridViewCustLookup_DataBindingComplete);
+            // 
+            // cUSTOMERNODataGridViewTextBoxColumn
+            // 
+            this.cUSTOMERNODataGridViewTextBoxColumn.DataPropertyName = "CUSTOMER_NO";
+            this.cUSTOMERNODataGridViewTextBoxColumn.HeaderText = "CUST NO.";
+            this.cUSTOMERNODataGridViewTextBoxColumn.Name = "cUSTOMERNODataGridViewTextBoxColumn";
+            this.cUSTOMERNODataGridViewTextBoxColumn.ReadOnly = true;
+            this.cUSTOMERNODataGridViewTextBoxColumn.Width = 50;
+            // 
+            // CustomerActType
+            // 
+            this.CustomerActType.DataPropertyName = "CUSTOMER_IAC_TYPE";
+            this.CustomerActType.HeaderText = "ACT TYPE";
+            this.CustomerActType.Name = "CustomerActType";
+            this.CustomerActType.ReadOnly = true;
+            this.CustomerActType.Width = 40;
+            // 
+            // CustomerActStat
+            // 
+            this.CustomerActStat.DataPropertyName = "CUSTOMER_ACT_STAT";
+            this.CustomerActStat.HeaderText = "ACT STAT";
+            this.CustomerActStat.Name = "CustomerActStat";
+            this.CustomerActStat.ReadOnly = true;
+            this.CustomerActStat.Width = 40;
+            // 
+            // cUSTOMERSS1DataGridViewTextBoxColumn
+            // 
+            this.cUSTOMERSS1DataGridViewTextBoxColumn.DataPropertyName = "CUSTOMER_SS_1";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.cUSTOMERSS1DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            this.cUSTOMERSS1DataGridViewTextBoxColumn.HeaderText = "SOCIAL SEC#";
+            this.cUSTOMERSS1DataGridViewTextBoxColumn.Name = "cUSTOMERSS1DataGridViewTextBoxColumn";
+            this.cUSTOMERSS1DataGridViewTextBoxColumn.ReadOnly = true;
+            this.cUSTOMERSS1DataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.cUSTOMERSS1DataGridViewTextBoxColumn.Width = 50;
+            // 
+            // SOCDASH1
+            // 
+            dataGridViewCellStyle2.NullValue = "-";
+            this.SOCDASH1.DefaultCellStyle = dataGridViewCellStyle2;
+            this.SOCDASH1.HeaderText = "";
+            this.SOCDASH1.Name = "SOCDASH1";
+            this.SOCDASH1.ReadOnly = true;
+            this.SOCDASH1.Width = 10;
+            // 
+            // cUSTOMERSS2DataGridViewTextBoxColumn
+            // 
+            this.cUSTOMERSS2DataGridViewTextBoxColumn.DataPropertyName = "CUSTOMER_SS_2";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.cUSTOMERSS2DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            this.cUSTOMERSS2DataGridViewTextBoxColumn.HeaderText = "";
+            this.cUSTOMERSS2DataGridViewTextBoxColumn.Name = "cUSTOMERSS2DataGridViewTextBoxColumn";
+            this.cUSTOMERSS2DataGridViewTextBoxColumn.ReadOnly = true;
+            this.cUSTOMERSS2DataGridViewTextBoxColumn.Width = 20;
+            // 
+            // SOCDASH2
+            // 
+            dataGridViewCellStyle4.NullValue = "-";
+            this.SOCDASH2.DefaultCellStyle = dataGridViewCellStyle4;
+            this.SOCDASH2.HeaderText = "";
+            this.SOCDASH2.Name = "SOCDASH2";
+            this.SOCDASH2.ReadOnly = true;
+            this.SOCDASH2.Width = 10;
+            // 
+            // cUSTOMERSS3DataGridViewTextBoxColumn
+            // 
+            this.cUSTOMERSS3DataGridViewTextBoxColumn.DataPropertyName = "CUSTOMER_SS_3";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.cUSTOMERSS3DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
+            this.cUSTOMERSS3DataGridViewTextBoxColumn.HeaderText = "";
+            this.cUSTOMERSS3DataGridViewTextBoxColumn.Name = "cUSTOMERSS3DataGridViewTextBoxColumn";
+            this.cUSTOMERSS3DataGridViewTextBoxColumn.ReadOnly = true;
+            this.cUSTOMERSS3DataGridViewTextBoxColumn.Width = 35;
+            // 
+            // cUSTOMERFIRSTNAMEDataGridViewTextBoxColumn
+            // 
+            this.cUSTOMERFIRSTNAMEDataGridViewTextBoxColumn.DataPropertyName = "CUSTOMER_FIRST_NAME";
+            this.cUSTOMERFIRSTNAMEDataGridViewTextBoxColumn.HeaderText = "FIRST_NAME";
+            this.cUSTOMERFIRSTNAMEDataGridViewTextBoxColumn.Name = "cUSTOMERFIRSTNAMEDataGridViewTextBoxColumn";
+            this.cUSTOMERFIRSTNAMEDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cUSTOMERFIRSTNAMEDataGridViewTextBoxColumn.Width = 135;
+            // 
+            // cUSTOMERLASTNAMEDataGridViewTextBoxColumn
+            // 
+            this.cUSTOMERLASTNAMEDataGridViewTextBoxColumn.DataPropertyName = "CUSTOMER_LAST_NAME";
+            this.cUSTOMERLASTNAMEDataGridViewTextBoxColumn.HeaderText = "LAST_NAME";
+            this.cUSTOMERLASTNAMEDataGridViewTextBoxColumn.Name = "cUSTOMERLASTNAMEDataGridViewTextBoxColumn";
+            this.cUSTOMERLASTNAMEDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cUSTOMERLASTNAMEDataGridViewTextBoxColumn.Width = 135;
+            // 
+            // cUSTOMERSTREET1DataGridViewTextBoxColumn
+            // 
+            this.cUSTOMERSTREET1DataGridViewTextBoxColumn.DataPropertyName = "CUSTOMER_STREET_1";
+            this.cUSTOMERSTREET1DataGridViewTextBoxColumn.HeaderText = "ADDRESS";
+            this.cUSTOMERSTREET1DataGridViewTextBoxColumn.Name = "cUSTOMERSTREET1DataGridViewTextBoxColumn";
+            this.cUSTOMERSTREET1DataGridViewTextBoxColumn.ReadOnly = true;
+            this.cUSTOMERSTREET1DataGridViewTextBoxColumn.Width = 150;
+            // 
+            // cUSTOMERCITYDataGridViewTextBoxColumn
+            // 
+            this.cUSTOMERCITYDataGridViewTextBoxColumn.DataPropertyName = "CUSTOMER_CITY";
+            this.cUSTOMERCITYDataGridViewTextBoxColumn.HeaderText = "CITY";
+            this.cUSTOMERCITYDataGridViewTextBoxColumn.Name = "cUSTOMERCITYDataGridViewTextBoxColumn";
+            this.cUSTOMERCITYDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cUSTOMERSTATEDataGridViewTextBoxColumn
+            // 
+            this.cUSTOMERSTATEDataGridViewTextBoxColumn.DataPropertyName = "CUSTOMER_STATE";
+            this.cUSTOMERSTATEDataGridViewTextBoxColumn.HeaderText = "ST";
+            this.cUSTOMERSTATEDataGridViewTextBoxColumn.Name = "cUSTOMERSTATEDataGridViewTextBoxColumn";
+            this.cUSTOMERSTATEDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cUSTOMERSTATEDataGridViewTextBoxColumn.Width = 30;
+            // 
+            // cUSTOMERDEALERDataGridViewTextBoxColumn
+            // 
+            this.cUSTOMERDEALERDataGridViewTextBoxColumn.DataPropertyName = "CUSTOMER_DEALER";
+            this.cUSTOMERDEALERDataGridViewTextBoxColumn.HeaderText = "DLR";
+            this.cUSTOMERDEALERDataGridViewTextBoxColumn.Name = "cUSTOMERDEALERDataGridViewTextBoxColumn";
+            this.cUSTOMERDEALERDataGridViewTextBoxColumn.ReadOnly = true;
+            this.cUSTOMERDEALERDataGridViewTextBoxColumn.Width = 40;
+            // 
+            // EmailAddress
+            // 
+            this.EmailAddress.DataPropertyName = "EmailAddress";
+            this.EmailAddress.HeaderText = "EMAIL";
+            this.EmailAddress.Name = "EmailAddress";
+            this.EmailAddress.ReadOnly = true;
+            // 
+            // CosignerEmail
+            // 
+            this.CosignerEmail.DataPropertyName = "CosignerEmail";
+            this.CosignerEmail.HeaderText = "COS EMAIL";
+            this.CosignerEmail.Name = "CosignerEmail";
+            this.CosignerEmail.ReadOnly = true;
             // 
             // CustomerGroupBox
             // 
@@ -1204,7 +1336,7 @@
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(36, 22);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
@@ -1272,140 +1404,6 @@
             // 
             this.customerMailTableAdapter.ClearBeforeFill = true;
             // 
-            // cUSTOMERNODataGridViewTextBoxColumn
-            // 
-            this.cUSTOMERNODataGridViewTextBoxColumn.DataPropertyName = "CUSTOMER_NO";
-            this.cUSTOMERNODataGridViewTextBoxColumn.HeaderText = "CUST NO.";
-            this.cUSTOMERNODataGridViewTextBoxColumn.Name = "cUSTOMERNODataGridViewTextBoxColumn";
-            this.cUSTOMERNODataGridViewTextBoxColumn.ReadOnly = true;
-            this.cUSTOMERNODataGridViewTextBoxColumn.Width = 50;
-            // 
-            // CustomerActType
-            // 
-            this.CustomerActType.DataPropertyName = "CUSTOMER_IAC_TYPE";
-            this.CustomerActType.HeaderText = "ACT TYPE";
-            this.CustomerActType.Name = "CustomerActType";
-            this.CustomerActType.ReadOnly = true;
-            this.CustomerActType.Width = 40;
-            // 
-            // CustomerActStat
-            // 
-            this.CustomerActStat.DataPropertyName = "CUSTOMER_ACT_STAT";
-            this.CustomerActStat.HeaderText = "ACT STAT";
-            this.CustomerActStat.Name = "CustomerActStat";
-            this.CustomerActStat.ReadOnly = true;
-            this.CustomerActStat.Width = 40;
-            // 
-            // cUSTOMERSS1DataGridViewTextBoxColumn
-            // 
-            this.cUSTOMERSS1DataGridViewTextBoxColumn.DataPropertyName = "CUSTOMER_SS_1";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.cUSTOMERSS1DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
-            this.cUSTOMERSS1DataGridViewTextBoxColumn.HeaderText = "SOCIAL SEC#";
-            this.cUSTOMERSS1DataGridViewTextBoxColumn.Name = "cUSTOMERSS1DataGridViewTextBoxColumn";
-            this.cUSTOMERSS1DataGridViewTextBoxColumn.ReadOnly = true;
-            this.cUSTOMERSS1DataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.cUSTOMERSS1DataGridViewTextBoxColumn.Width = 50;
-            // 
-            // SOCDASH1
-            // 
-            dataGridViewCellStyle2.NullValue = "-";
-            this.SOCDASH1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.SOCDASH1.HeaderText = "";
-            this.SOCDASH1.Name = "SOCDASH1";
-            this.SOCDASH1.ReadOnly = true;
-            this.SOCDASH1.Width = 10;
-            // 
-            // cUSTOMERSS2DataGridViewTextBoxColumn
-            // 
-            this.cUSTOMERSS2DataGridViewTextBoxColumn.DataPropertyName = "CUSTOMER_SS_2";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.cUSTOMERSS2DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
-            this.cUSTOMERSS2DataGridViewTextBoxColumn.HeaderText = "";
-            this.cUSTOMERSS2DataGridViewTextBoxColumn.Name = "cUSTOMERSS2DataGridViewTextBoxColumn";
-            this.cUSTOMERSS2DataGridViewTextBoxColumn.ReadOnly = true;
-            this.cUSTOMERSS2DataGridViewTextBoxColumn.Width = 20;
-            // 
-            // SOCDASH2
-            // 
-            dataGridViewCellStyle4.NullValue = "-";
-            this.SOCDASH2.DefaultCellStyle = dataGridViewCellStyle4;
-            this.SOCDASH2.HeaderText = "";
-            this.SOCDASH2.Name = "SOCDASH2";
-            this.SOCDASH2.ReadOnly = true;
-            this.SOCDASH2.Width = 10;
-            // 
-            // cUSTOMERSS3DataGridViewTextBoxColumn
-            // 
-            this.cUSTOMERSS3DataGridViewTextBoxColumn.DataPropertyName = "CUSTOMER_SS_3";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.cUSTOMERSS3DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
-            this.cUSTOMERSS3DataGridViewTextBoxColumn.HeaderText = "";
-            this.cUSTOMERSS3DataGridViewTextBoxColumn.Name = "cUSTOMERSS3DataGridViewTextBoxColumn";
-            this.cUSTOMERSS3DataGridViewTextBoxColumn.ReadOnly = true;
-            this.cUSTOMERSS3DataGridViewTextBoxColumn.Width = 35;
-            // 
-            // cUSTOMERFIRSTNAMEDataGridViewTextBoxColumn
-            // 
-            this.cUSTOMERFIRSTNAMEDataGridViewTextBoxColumn.DataPropertyName = "CUSTOMER_FIRST_NAME";
-            this.cUSTOMERFIRSTNAMEDataGridViewTextBoxColumn.HeaderText = "FIRST_NAME";
-            this.cUSTOMERFIRSTNAMEDataGridViewTextBoxColumn.Name = "cUSTOMERFIRSTNAMEDataGridViewTextBoxColumn";
-            this.cUSTOMERFIRSTNAMEDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cUSTOMERFIRSTNAMEDataGridViewTextBoxColumn.Width = 135;
-            // 
-            // cUSTOMERLASTNAMEDataGridViewTextBoxColumn
-            // 
-            this.cUSTOMERLASTNAMEDataGridViewTextBoxColumn.DataPropertyName = "CUSTOMER_LAST_NAME";
-            this.cUSTOMERLASTNAMEDataGridViewTextBoxColumn.HeaderText = "LAST_NAME";
-            this.cUSTOMERLASTNAMEDataGridViewTextBoxColumn.Name = "cUSTOMERLASTNAMEDataGridViewTextBoxColumn";
-            this.cUSTOMERLASTNAMEDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cUSTOMERLASTNAMEDataGridViewTextBoxColumn.Width = 135;
-            // 
-            // cUSTOMERSTREET1DataGridViewTextBoxColumn
-            // 
-            this.cUSTOMERSTREET1DataGridViewTextBoxColumn.DataPropertyName = "CUSTOMER_STREET_1";
-            this.cUSTOMERSTREET1DataGridViewTextBoxColumn.HeaderText = "ADDRESS";
-            this.cUSTOMERSTREET1DataGridViewTextBoxColumn.Name = "cUSTOMERSTREET1DataGridViewTextBoxColumn";
-            this.cUSTOMERSTREET1DataGridViewTextBoxColumn.ReadOnly = true;
-            this.cUSTOMERSTREET1DataGridViewTextBoxColumn.Width = 150;
-            // 
-            // cUSTOMERCITYDataGridViewTextBoxColumn
-            // 
-            this.cUSTOMERCITYDataGridViewTextBoxColumn.DataPropertyName = "CUSTOMER_CITY";
-            this.cUSTOMERCITYDataGridViewTextBoxColumn.HeaderText = "CITY";
-            this.cUSTOMERCITYDataGridViewTextBoxColumn.Name = "cUSTOMERCITYDataGridViewTextBoxColumn";
-            this.cUSTOMERCITYDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // cUSTOMERSTATEDataGridViewTextBoxColumn
-            // 
-            this.cUSTOMERSTATEDataGridViewTextBoxColumn.DataPropertyName = "CUSTOMER_STATE";
-            this.cUSTOMERSTATEDataGridViewTextBoxColumn.HeaderText = "ST";
-            this.cUSTOMERSTATEDataGridViewTextBoxColumn.Name = "cUSTOMERSTATEDataGridViewTextBoxColumn";
-            this.cUSTOMERSTATEDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cUSTOMERSTATEDataGridViewTextBoxColumn.Width = 30;
-            // 
-            // cUSTOMERDEALERDataGridViewTextBoxColumn
-            // 
-            this.cUSTOMERDEALERDataGridViewTextBoxColumn.DataPropertyName = "CUSTOMER_DEALER";
-            this.cUSTOMERDEALERDataGridViewTextBoxColumn.HeaderText = "DLR";
-            this.cUSTOMERDEALERDataGridViewTextBoxColumn.Name = "cUSTOMERDEALERDataGridViewTextBoxColumn";
-            this.cUSTOMERDEALERDataGridViewTextBoxColumn.ReadOnly = true;
-            this.cUSTOMERDEALERDataGridViewTextBoxColumn.Width = 40;
-            // 
-            // EmailAddress
-            // 
-            this.EmailAddress.DataPropertyName = "EmailAddress";
-            this.EmailAddress.HeaderText = "EMAIL";
-            this.EmailAddress.Name = "EmailAddress";
-            this.EmailAddress.ReadOnly = true;
-            // 
-            // CosignerEmail
-            // 
-            this.CosignerEmail.DataPropertyName = "CosignerEmail";
-            this.CosignerEmail.HeaderText = "COS EMAIL";
-            this.CosignerEmail.Name = "CosignerEmail";
-            this.CosignerEmail.ReadOnly = true;
-            // 
             // frmCustomerLookup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -1425,10 +1423,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCustLookup)).EndInit();
             this.CustomerGroupBox.ResumeLayout(false);
             this.CustomerGroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.NullableDateTimePickerSrchDOB)).EndInit();
             this.groupBoxCosigner.ResumeLayout(false);
             this.groupBoxCosigner.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerCOSDOB)).EndInit();
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewVehicleLookup)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Vehicle_CustomerbindingSource)).EndInit();
@@ -1515,8 +1511,8 @@
         private System.Windows.Forms.TextBox cUSTOMER_PURCHASE_ORDERTextBox;
         private System.Windows.Forms.TextBox richTextBoxEmailAddress;
         private IACDataSetTableAdapters.CustomerMailTableAdapter customerMailTableAdapter;
-        private ProManApp.NullableDateTimePicker NullableDateTimePickerSrchDOB;
-        private ProManApp.NullableDateTimePicker nullableDateTimePickerCOSDOB;
+        private UIComponent.DateTimePicker NullableDateTimePickerSrchDOB;
+        private UIComponent.DateTimePicker nullableDateTimePickerCOSDOB;
         private System.Windows.Forms.DataGridViewTextBoxColumn cUSTOMERNODataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn CustomerActType;
         private System.Windows.Forms.DataGridViewTextBoxColumn CustomerActStat;

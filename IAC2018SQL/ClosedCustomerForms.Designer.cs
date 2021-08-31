@@ -267,11 +267,11 @@
             this.tabHistory = new System.Windows.Forms.TabPage();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
             this.checkBoxFullRecourseHist = new IAC2021SQL.ColorCheckBox();
-            this.nullableDateTimePickerHistContractDate = new ProManApp.NullableDateTimePicker();
+            this.nullableDateTimePickerHistContractDate = new UIComponent.DateTimePicker();
             this.textBoxBuyOutHist = new System.Windows.Forms.TextBox();
-            this.nullableDateTimePickerPayDate = new ProManApp.NullableDateTimePicker();
+            this.nullableDateTimePickerPayDate = new UIComponent.DateTimePicker();
             this.textBox22 = new System.Windows.Forms.TextBox();
-            this.nullableDateTimePickerFirstPayDate = new ProManApp.NullableDateTimePicker();
+            this.nullableDateTimePickerFirstPayDate = new UIComponent.DateTimePicker();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -315,7 +315,7 @@
             this.cUSTHISTBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabCustInfo1 = new System.Windows.Forms.TabPage();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.nullableDateTimePickerDateContractReceived = new ProManApp.NullableDateTimePicker();
+            this.nullableDateTimePickerDateContractReceived = new UIComponent.DateTimePicker();
             this.colorCheckBoxReceivedContract = new IAC2021SQL.ColorCheckBox();
             this.buttonDealerEmail = new System.Windows.Forms.Button();
             this.checkBoxSendToDealer = new System.Windows.Forms.CheckBox();
@@ -397,12 +397,12 @@
             this.tabCustomerMaint = new System.Windows.Forms.TabControl();
             this.tabCustInfo2 = new System.Windows.Forms.TabPage();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.nullableDateTimePickerFundingDate = new ProManApp.NullableDateTimePicker();
+            this.nullableDateTimePickerFundingDate = new UIComponent.DateTimePicker();
             this.checkBoxOverrideLateCharge = new System.Windows.Forms.CheckBox();
-            this.DateTimePickerContractDate = new ProManApp.NullableDateTimePicker();
+            this.DateTimePickerContractDate = new UIComponent.DateTimePicker();
             this.checkBoxSimple = new System.Windows.Forms.CheckBox();
-            this.txtFirstPayDate = new ProManApp.NullableDateTimePicker();
-            this.txtPaymentDate = new ProManApp.NullableDateTimePicker();
+            this.txtFirstPayDate = new UIComponent.DateTimePicker();
+            this.txtPaymentDate = new UIComponent.DateTimePicker();
             this.textBox18 = new System.Windows.Forms.TextBox();
             this.comboBoxDayDue = new System.Windows.Forms.ComboBox();
             this.txtAPR = new System.Windows.Forms.TextBox();
@@ -429,7 +429,7 @@
             this.labelCheckNumber = new System.Windows.Forms.Label();
             this.checkBoxCheckIssued = new System.Windows.Forms.CheckBox();
             this.textBoxDealerCashPrice = new System.Windows.Forms.TextBox();
-            this.MaturityDate = new ProManApp.NullableDateTimePicker();
+            this.MaturityDate = new UIComponent.DateTimePicker();
             this.txtPaidThrough = new System.Windows.Forms.MaskedTextBox();
             this.txtLastPaymentMade = new System.Windows.Forms.TextBox();
             this.txtControlDate = new System.Windows.Forms.TextBox();
@@ -469,25 +469,25 @@
             this.cUSTOMER_COS_NAMETextBox = new System.Windows.Forms.TextBox();
             this.groupBoxRepo = new System.Windows.Forms.GroupBox();
             this.checkBoxElectronicLien = new System.Windows.Forms.CheckBox();
-            this.nullableDateTimePickerDateTitleReleased = new ProManApp.NullableDateTimePicker();
+            this.nullableDateTimePickerDateTitleReleased = new UIComponent.DateTimePicker();
             this.checkBoxTitleReleased = new System.Windows.Forms.CheckBox();
             this.textBoxLTV = new System.Windows.Forms.TextBox();
             this.comboBoxRepoInd = new System.Windows.Forms.ComboBox();
             this.RepoIndicatorsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.nullableDateTimePickerAucDate = new ProManApp.NullableDateTimePicker();
-            this.nullableDateTimePickerLocDate = new ProManApp.NullableDateTimePicker();
+            this.nullableDateTimePickerAucDate = new UIComponent.DateTimePicker();
+            this.nullableDateTimePickerLocDate = new UIComponent.DateTimePicker();
             this.checkBoxTitleReceived = new System.Windows.Forms.CheckBox();
             this.comboBoxRepoCodes = new System.Windows.Forms.ComboBox();
             this.repoCodesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cUSTOMER_REPO_CDEtextBox = new System.Windows.Forms.TextBox();
             this.cUSTOMER_REPO_INDtextBox = new System.Windows.Forms.TextBox();
-            this.nullableDateTimePickerTitleDateReceived = new ProManApp.NullableDateTimePicker();
+            this.nullableDateTimePickerTitleDateReceived = new UIComponent.DateTimePicker();
             this.textBoxAuctionHouse = new System.Windows.Forms.TextBox();
             this.textBoxCurrentLocation = new System.Windows.Forms.TextBox();
             this.textBoxRepoAgent = new System.Windows.Forms.TextBox();
-            this.nullableDateTimePickerRepoDate = new ProManApp.NullableDateTimePicker();
-            this.txtExpirationDate = new ProManApp.NullableDateTimePicker();
-            this.txtEffectiveDate = new ProManApp.NullableDateTimePicker();
+            this.nullableDateTimePickerRepoDate = new UIComponent.DateTimePicker();
+            this.txtExpirationDate = new UIComponent.DateTimePicker();
+            this.txtEffectiveDate = new UIComponent.DateTimePicker();
             this.txtAgentPhone = new System.Windows.Forms.MaskedTextBox();
             this.txtJointOwner = new System.Windows.Forms.TextBox();
             this.txtJointOwnership = new System.Windows.Forms.TextBox();
@@ -528,7 +528,7 @@
             this.textBoxCosignerEmail = new System.Windows.Forms.TextBox();
             this.textBoxCosignerAnnualIncome = new System.Windows.Forms.TextBox();
             this.textBoxCosignerCreditScore = new System.Windows.Forms.TextBox();
-            this.txtCOSDOB = new ProManApp.NullableDateTimePicker();
+            this.txtCOSDOB = new UIComponent.DateTimePicker();
             this.txtCOSWorkExt = new System.Windows.Forms.TextBox();
             this.txtUsePrimaryAddress = new System.Windows.Forms.TextBox();
             this.txtCOSSS_3 = new System.Windows.Forms.TextBox();
@@ -648,12 +648,12 @@
             this.checkBoxFollowUpDate = new System.Windows.Forms.CheckBox();
             this.closedCreditManagerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tsbDataSet = new IAC2021SQL.TSBDataSet();
-            this.nullableDateTimePickerFollowUpDate = new ProManApp.NullableDateTimePicker();
-            this.nullableDateTimePickerDateClosed = new ProManApp.NullableDateTimePicker();
-            this.nullableDateTimePickerDateOpened = new ProManApp.NullableDateTimePicker();
-            this.nullableDateTimePickerDateofAccountInformation = new ProManApp.NullableDateTimePicker();
-            this.nullableDateTimePickerDateofFirstDelinquency = new ProManApp.NullableDateTimePicker();
-            this.nullableDateTimePickerDateofLastPayment = new ProManApp.NullableDateTimePicker();
+            this.nullableDateTimePickerFollowUpDate = new UIComponent.DateTimePicker();
+            this.nullableDateTimePickerDateClosed = new UIComponent.DateTimePicker();
+            this.nullableDateTimePickerDateOpened = new UIComponent.DateTimePicker();
+            this.nullableDateTimePickerDateofAccountInformation = new UIComponent.DateTimePicker();
+            this.nullableDateTimePickerDateofFirstDelinquency = new UIComponent.DateTimePicker();
+            this.nullableDateTimePickerDateofLastPayment = new UIComponent.DateTimePicker();
             this.label135 = new System.Windows.Forms.Label();
             this.label136 = new System.Windows.Forms.Label();
             this.label138 = new System.Windows.Forms.Label();
@@ -959,15 +959,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dEALERBindingSource)).BeginInit();
             this.tabHistory.SuspendLayout();
             this.groupBox11.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerHistContractDate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerPayDate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerFirstPayDate)).BeginInit();
             this.toolStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cUSTHISTDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cUSTHISTBindingSource)).BeginInit();
             this.tabCustInfo1.SuspendLayout();
             this.groupBox10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateContractReceived)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EmailbindingSource)).BeginInit();
             this.groupBoxSBT.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceGenCodes)).BeginInit();
@@ -982,32 +978,19 @@
             this.tabCustomerMaint.SuspendLayout();
             this.tabCustInfo2.SuspendLayout();
             this.groupBox9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerFundingDate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DateTimePickerContractDate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtFirstPayDate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPaymentDate)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.MaturityDate)).BeginInit();
             this.tabVehicle.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.VehicleGroupBox.SuspendLayout();
             this.groupBox8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.creditCodesBindingSource)).BeginInit();
             this.groupBoxRepo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateTitleReleased)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RepoIndicatorsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerAucDate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerLocDate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repoCodesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerTitleDateReceived)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerRepoDate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtExpirationDate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtEffectiveDate)).BeginInit();
             this.tabCosigner.SuspendLayout();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ALTNAMEbindingSource)).BeginInit();
             this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCOSDOB)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.tabBank.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -1028,12 +1011,6 @@
             this.groupBoxDates.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.closedCreditManagerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tsbDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerFollowUpDate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateClosed)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateOpened)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateofAccountInformation)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateofFirstDelinquency)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateofLastPayment)).BeginInit();
             this.groupBoxCodes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TermsFrequencybindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PortfolioTypesbindingSource)).BeginInit();
@@ -3258,7 +3235,7 @@
             this.nullableDateTimePickerHistContractDate.Name = "nullableDateTimePickerHistContractDate";
             this.nullableDateTimePickerHistContractDate.Size = new System.Drawing.Size(107, 29);
             this.nullableDateTimePickerHistContractDate.TabIndex = 502;
-            this.nullableDateTimePickerHistContractDate.Value = new System.DateTime(2021, 8, 17, 0, 0, 0, 0);
+            this.nullableDateTimePickerHistContractDate.Value = new System.DateTime(2021, 8, 30, 0, 0, 0, 0);
             // 
             // textBoxBuyOutHist
             // 
@@ -3284,7 +3261,7 @@
             this.nullableDateTimePickerPayDate.Name = "nullableDateTimePickerPayDate";
             this.nullableDateTimePickerPayDate.Size = new System.Drawing.Size(107, 29);
             this.nullableDateTimePickerPayDate.TabIndex = 507;
-            this.nullableDateTimePickerPayDate.Value = new System.DateTime(2021, 8, 17, 0, 0, 0, 0);
+            this.nullableDateTimePickerPayDate.Value = new System.DateTime(2021, 8, 30, 0, 0, 0, 0);
             // 
             // textBox22
             // 
@@ -3309,7 +3286,7 @@
             this.nullableDateTimePickerFirstPayDate.Name = "nullableDateTimePickerFirstPayDate";
             this.nullableDateTimePickerFirstPayDate.Size = new System.Drawing.Size(107, 29);
             this.nullableDateTimePickerFirstPayDate.TabIndex = 510;
-            this.nullableDateTimePickerFirstPayDate.Value = new System.DateTime(2021, 8, 17, 0, 0, 0, 0);
+            this.nullableDateTimePickerFirstPayDate.Value = new System.DateTime(2021, 8, 30, 0, 0, 0, 0);
             // 
             // textBox1
             // 
@@ -3913,7 +3890,7 @@
             this.nullableDateTimePickerDateContractReceived.Name = "nullableDateTimePickerDateContractReceived";
             this.nullableDateTimePickerDateContractReceived.Size = new System.Drawing.Size(119, 29);
             this.nullableDateTimePickerDateContractReceived.TabIndex = 108;
-            this.nullableDateTimePickerDateContractReceived.Value = new System.DateTime(2021, 8, 17, 0, 0, 0, 0);
+            this.nullableDateTimePickerDateContractReceived.Value = new System.DateTime(2021, 8, 30, 0, 0, 0, 0);
             this.nullableDateTimePickerDateContractReceived.Visible = false;
             this.nullableDateTimePickerDateContractReceived.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
@@ -5030,7 +5007,7 @@
             this.nullableDateTimePickerFundingDate.Name = "nullableDateTimePickerFundingDate";
             this.nullableDateTimePickerFundingDate.Size = new System.Drawing.Size(119, 29);
             this.nullableDateTimePickerFundingDate.TabIndex = 89;
-            this.nullableDateTimePickerFundingDate.Value = new System.DateTime(2021, 8, 17, 0, 0, 0, 0);
+            this.nullableDateTimePickerFundingDate.Value = new System.DateTime(2021, 8, 30, 0, 0, 0, 0);
             this.nullableDateTimePickerFundingDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // checkBoxOverrideLateCharge
@@ -5055,7 +5032,7 @@
             this.DateTimePickerContractDate.Name = "DateTimePickerContractDate";
             this.DateTimePickerContractDate.Size = new System.Drawing.Size(119, 29);
             this.DateTimePickerContractDate.TabIndex = 88;
-            this.DateTimePickerContractDate.Value = new System.DateTime(2021, 8, 17, 0, 0, 0, 0);
+            this.DateTimePickerContractDate.Value = new System.DateTime(2021, 8, 30, 0, 0, 0, 0);
             this.DateTimePickerContractDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             this.DateTimePickerContractDate.Validated += new System.EventHandler(this.DateTimePickerContractDate_Validated);
             // 
@@ -5081,7 +5058,7 @@
             this.txtFirstPayDate.Name = "txtFirstPayDate";
             this.txtFirstPayDate.Size = new System.Drawing.Size(119, 29);
             this.txtFirstPayDate.TabIndex = 76;
-            this.txtFirstPayDate.Value = new System.DateTime(2021, 8, 17, 0, 0, 0, 0);
+            this.txtFirstPayDate.Value = new System.DateTime(2021, 8, 30, 0, 0, 0, 0);
             this.txtFirstPayDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             this.txtFirstPayDate.Validated += new System.EventHandler(this.txtFirstPayDate_Validated);
             // 
@@ -5091,10 +5068,9 @@
             this.txtPaymentDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.txtPaymentDate.Location = new System.Drawing.Point(148, 197);
             this.txtPaymentDate.Name = "txtPaymentDate";
-            this.txtPaymentDate.NullText = "          ";
             this.txtPaymentDate.Size = new System.Drawing.Size(119, 29);
             this.txtPaymentDate.TabIndex = 91;
-            this.txtPaymentDate.Value = new System.DateTime(2021, 8, 17, 0, 0, 0, 0);
+            this.txtPaymentDate.Value = new System.DateTime(2021, 8, 30, 0, 0, 0, 0);
             this.txtPaymentDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // textBox18
@@ -5455,7 +5431,7 @@
             this.MaturityDate.Name = "MaturityDate";
             this.MaturityDate.Size = new System.Drawing.Size(119, 29);
             this.MaturityDate.TabIndex = 115;
-            this.MaturityDate.Value = new System.DateTime(2021, 8, 17, 0, 0, 0, 0);
+            this.MaturityDate.Value = new System.DateTime(2021, 8, 30, 0, 0, 0, 0);
             // 
             // txtPaidThrough
             // 
@@ -5977,7 +5953,7 @@
             this.nullableDateTimePickerDateTitleReleased.Name = "nullableDateTimePickerDateTitleReleased";
             this.nullableDateTimePickerDateTitleReleased.Size = new System.Drawing.Size(109, 29);
             this.nullableDateTimePickerDateTitleReleased.TabIndex = 237;
-            this.nullableDateTimePickerDateTitleReleased.Value = new System.DateTime(2021, 8, 17, 0, 0, 0, 0);
+            this.nullableDateTimePickerDateTitleReleased.Value = new System.DateTime(2021, 8, 30, 0, 0, 0, 0);
             this.nullableDateTimePickerDateTitleReleased.ValueChanged += new System.EventHandler(this.NullableDateTimePickerDateTitleReleased_ValueChanged);
             this.nullableDateTimePickerDateTitleReleased.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
@@ -6038,7 +6014,7 @@
             this.nullableDateTimePickerAucDate.Name = "nullableDateTimePickerAucDate";
             this.nullableDateTimePickerAucDate.Size = new System.Drawing.Size(109, 29);
             this.nullableDateTimePickerAucDate.TabIndex = 232;
-            this.nullableDateTimePickerAucDate.Value = new System.DateTime(2021, 8, 17, 0, 0, 0, 0);
+            this.nullableDateTimePickerAucDate.Value = new System.DateTime(2021, 8, 30, 0, 0, 0, 0);
             this.nullableDateTimePickerAucDate.ValueChanged += new System.EventHandler(this.nullableDateTimePickerAucDate_ValueChanged);
             this.nullableDateTimePickerAucDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
@@ -6051,7 +6027,7 @@
             this.nullableDateTimePickerLocDate.Name = "nullableDateTimePickerLocDate";
             this.nullableDateTimePickerLocDate.Size = new System.Drawing.Size(109, 29);
             this.nullableDateTimePickerLocDate.TabIndex = 230;
-            this.nullableDateTimePickerLocDate.Value = new System.DateTime(2021, 8, 17, 0, 0, 0, 0);
+            this.nullableDateTimePickerLocDate.Value = new System.DateTime(2021, 8, 30, 0, 0, 0, 0);
             this.nullableDateTimePickerLocDate.ValueChanged += new System.EventHandler(this.nullableDateTimePickerLocDate_ValueChanged);
             this.nullableDateTimePickerLocDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
@@ -6127,7 +6103,7 @@
             this.nullableDateTimePickerTitleDateReceived.Name = "nullableDateTimePickerTitleDateReceived";
             this.nullableDateTimePickerTitleDateReceived.Size = new System.Drawing.Size(109, 29);
             this.nullableDateTimePickerTitleDateReceived.TabIndex = 234;
-            this.nullableDateTimePickerTitleDateReceived.Value = new System.DateTime(2021, 8, 17, 0, 0, 0, 0);
+            this.nullableDateTimePickerTitleDateReceived.Value = new System.DateTime(2021, 8, 30, 0, 0, 0, 0);
             this.nullableDateTimePickerTitleDateReceived.ValueChanged += new System.EventHandler(this.nullableDateTimePickerTitleDateReceived_ValueChanged);
             this.nullableDateTimePickerTitleDateReceived.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
@@ -6169,6 +6145,7 @@
             // 
             // nullableDateTimePickerRepoDate
             // 
+            this.nullableDateTimePickerRepoDate.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nullableDateTimePickerRepoDate.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.VehiclebindingSource, "RepoDate", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "d"));
             this.nullableDateTimePickerRepoDate.Enabled = false;
             this.nullableDateTimePickerRepoDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
@@ -6176,7 +6153,7 @@
             this.nullableDateTimePickerRepoDate.Name = "nullableDateTimePickerRepoDate";
             this.nullableDateTimePickerRepoDate.Size = new System.Drawing.Size(109, 29);
             this.nullableDateTimePickerRepoDate.TabIndex = 227;
-            this.nullableDateTimePickerRepoDate.Value = new System.DateTime(2021, 8, 17, 0, 0, 0, 0);
+            this.nullableDateTimePickerRepoDate.Value = new System.DateTime(2021, 8, 30, 0, 0, 0, 0);
             this.nullableDateTimePickerRepoDate.ValueChanged += new System.EventHandler(this.nullableDateTimePickerRepoDate_ValueChanged);
             this.nullableDateTimePickerRepoDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
@@ -6188,7 +6165,7 @@
             this.txtExpirationDate.Name = "txtExpirationDate";
             this.txtExpirationDate.Size = new System.Drawing.Size(109, 29);
             this.txtExpirationDate.TabIndex = 219;
-            this.txtExpirationDate.Value = new System.DateTime(2021, 8, 17, 0, 0, 0, 0);
+            this.txtExpirationDate.Value = new System.DateTime(2021, 8, 30, 0, 0, 0, 0);
             // 
             // txtEffectiveDate
             // 
@@ -6198,7 +6175,7 @@
             this.txtEffectiveDate.Name = "txtEffectiveDate";
             this.txtEffectiveDate.Size = new System.Drawing.Size(109, 29);
             this.txtEffectiveDate.TabIndex = 218;
-            this.txtEffectiveDate.Value = new System.DateTime(2021, 8, 17, 0, 0, 0, 0);
+            this.txtEffectiveDate.Value = new System.DateTime(2021, 8, 30, 0, 0, 0, 0);
             // 
             // txtAgentPhone
             // 
@@ -6724,7 +6701,7 @@
             this.txtCOSDOB.Name = "txtCOSDOB";
             this.txtCOSDOB.Size = new System.Drawing.Size(109, 29);
             this.txtCOSDOB.TabIndex = 323;
-            this.txtCOSDOB.Value = new System.DateTime(2021, 8, 17, 0, 0, 0, 0);
+            this.txtCOSDOB.Value = new System.DateTime(2021, 8, 30, 0, 0, 0, 0);
             // 
             // txtCOSWorkExt
             // 
@@ -8064,10 +8041,9 @@
             this.nullableDateTimePickerFollowUpDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.nullableDateTimePickerFollowUpDate.Location = new System.Drawing.Point(306, 152);
             this.nullableDateTimePickerFollowUpDate.Name = "nullableDateTimePickerFollowUpDate";
-            this.nullableDateTimePickerFollowUpDate.NullText = "          ";
             this.nullableDateTimePickerFollowUpDate.Size = new System.Drawing.Size(119, 25);
             this.nullableDateTimePickerFollowUpDate.TabIndex = 24;
-            this.nullableDateTimePickerFollowUpDate.Value = new System.DateTime(2021, 8, 17, 0, 0, 0, 0);
+            this.nullableDateTimePickerFollowUpDate.Value = new System.DateTime(2021, 8, 30, 0, 0, 0, 0);
             this.nullableDateTimePickerFollowUpDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // nullableDateTimePickerDateClosed
@@ -8076,10 +8052,9 @@
             this.nullableDateTimePickerDateClosed.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.nullableDateTimePickerDateClosed.Location = new System.Drawing.Point(306, 125);
             this.nullableDateTimePickerDateClosed.Name = "nullableDateTimePickerDateClosed";
-            this.nullableDateTimePickerDateClosed.NullText = "          ";
             this.nullableDateTimePickerDateClosed.Size = new System.Drawing.Size(119, 25);
             this.nullableDateTimePickerDateClosed.TabIndex = 23;
-            this.nullableDateTimePickerDateClosed.Value = new System.DateTime(2021, 8, 17, 0, 0, 0, 0);
+            this.nullableDateTimePickerDateClosed.Value = new System.DateTime(2021, 8, 30, 0, 0, 0, 0);
             this.nullableDateTimePickerDateClosed.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // nullableDateTimePickerDateOpened
@@ -8088,10 +8063,9 @@
             this.nullableDateTimePickerDateOpened.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.nullableDateTimePickerDateOpened.Location = new System.Drawing.Point(306, 98);
             this.nullableDateTimePickerDateOpened.Name = "nullableDateTimePickerDateOpened";
-            this.nullableDateTimePickerDateOpened.NullText = "          ";
             this.nullableDateTimePickerDateOpened.Size = new System.Drawing.Size(119, 25);
             this.nullableDateTimePickerDateOpened.TabIndex = 22;
-            this.nullableDateTimePickerDateOpened.Value = new System.DateTime(2021, 8, 17, 0, 0, 0, 0);
+            this.nullableDateTimePickerDateOpened.Value = new System.DateTime(2021, 8, 30, 0, 0, 0, 0);
             this.nullableDateTimePickerDateOpened.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // nullableDateTimePickerDateofAccountInformation
@@ -8100,10 +8074,9 @@
             this.nullableDateTimePickerDateofAccountInformation.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.nullableDateTimePickerDateofAccountInformation.Location = new System.Drawing.Point(306, 71);
             this.nullableDateTimePickerDateofAccountInformation.Name = "nullableDateTimePickerDateofAccountInformation";
-            this.nullableDateTimePickerDateofAccountInformation.NullText = "          ";
             this.nullableDateTimePickerDateofAccountInformation.Size = new System.Drawing.Size(119, 25);
             this.nullableDateTimePickerDateofAccountInformation.TabIndex = 21;
-            this.nullableDateTimePickerDateofAccountInformation.Value = new System.DateTime(2021, 8, 17, 0, 0, 0, 0);
+            this.nullableDateTimePickerDateofAccountInformation.Value = new System.DateTime(2021, 8, 30, 0, 0, 0, 0);
             this.nullableDateTimePickerDateofAccountInformation.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // nullableDateTimePickerDateofFirstDelinquency
@@ -8112,10 +8085,9 @@
             this.nullableDateTimePickerDateofFirstDelinquency.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.nullableDateTimePickerDateofFirstDelinquency.Location = new System.Drawing.Point(306, 44);
             this.nullableDateTimePickerDateofFirstDelinquency.Name = "nullableDateTimePickerDateofFirstDelinquency";
-            this.nullableDateTimePickerDateofFirstDelinquency.NullText = "          ";
             this.nullableDateTimePickerDateofFirstDelinquency.Size = new System.Drawing.Size(119, 25);
             this.nullableDateTimePickerDateofFirstDelinquency.TabIndex = 20;
-            this.nullableDateTimePickerDateofFirstDelinquency.Value = new System.DateTime(2021, 8, 17, 0, 0, 0, 0);
+            this.nullableDateTimePickerDateofFirstDelinquency.Value = new System.DateTime(2021, 8, 30, 0, 0, 0, 0);
             this.nullableDateTimePickerDateofFirstDelinquency.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // nullableDateTimePickerDateofLastPayment
@@ -8124,10 +8096,9 @@
             this.nullableDateTimePickerDateofLastPayment.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.nullableDateTimePickerDateofLastPayment.Location = new System.Drawing.Point(306, 17);
             this.nullableDateTimePickerDateofLastPayment.Name = "nullableDateTimePickerDateofLastPayment";
-            this.nullableDateTimePickerDateofLastPayment.NullText = "          ";
             this.nullableDateTimePickerDateofLastPayment.Size = new System.Drawing.Size(119, 25);
             this.nullableDateTimePickerDateofLastPayment.TabIndex = 19;
-            this.nullableDateTimePickerDateofLastPayment.Value = new System.DateTime(2021, 8, 17, 0, 0, 0, 0);
+            this.nullableDateTimePickerDateofLastPayment.Value = new System.DateTime(2021, 8, 30, 0, 0, 0, 0);
             this.nullableDateTimePickerDateofLastPayment.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // label135
@@ -9137,9 +9108,6 @@
             this.tabHistory.PerformLayout();
             this.groupBox11.ResumeLayout(false);
             this.groupBox11.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerHistContractDate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerPayDate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerFirstPayDate)).EndInit();
             this.toolStrip2.ResumeLayout(false);
             this.toolStrip2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cUSTHISTDataGridView)).EndInit();
@@ -9147,7 +9115,6 @@
             this.tabCustInfo1.ResumeLayout(false);
             this.groupBox10.ResumeLayout(false);
             this.groupBox10.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateContractReceived)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.EmailbindingSource)).EndInit();
             this.groupBoxSBT.ResumeLayout(false);
             this.groupBoxSBT.PerformLayout();
@@ -9166,13 +9133,8 @@
             this.tabCustInfo2.ResumeLayout(false);
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerFundingDate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DateTimePickerContractDate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtFirstPayDate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPaymentDate)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.MaturityDate)).EndInit();
             this.tabVehicle.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -9183,22 +9145,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.creditCodesBindingSource)).EndInit();
             this.groupBoxRepo.ResumeLayout(false);
             this.groupBoxRepo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateTitleReleased)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RepoIndicatorsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerAucDate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerLocDate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repoCodesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerTitleDateReceived)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerRepoDate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtExpirationDate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtEffectiveDate)).EndInit();
             this.tabCosigner.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ALTNAMEbindingSource)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCOSDOB)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.tabBank.ResumeLayout(false);
@@ -9227,12 +9181,6 @@
             this.groupBoxDates.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.closedCreditManagerBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tsbDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerFollowUpDate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateClosed)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateOpened)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateofAccountInformation)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateofFirstDelinquency)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateofLastPayment)).EndInit();
             this.groupBoxCodes.ResumeLayout(false);
             this.groupBoxCodes.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TermsFrequencybindingSource)).EndInit();
@@ -9440,11 +9388,11 @@
         private IACDataSetTableAdapters.NOTICETableAdapter nOTICETableAdapter;
         private System.Windows.Forms.MaskedTextBox txtPaidThrough;
         private System.Windows.Forms.GroupBox groupBox9;
-        private ProManApp.NullableDateTimePicker txtPaymentDate;
-        private ProManApp.NullableDateTimePicker txtCOSDOB;
-        private ProManApp.NullableDateTimePicker txtExpirationDate;
-        private ProManApp.NullableDateTimePicker txtEffectiveDate;
-        private ProManApp.NullableDateTimePicker txtFirstPayDate;
+        private UIComponent.DateTimePicker txtPaymentDate;
+        private UIComponent.DateTimePicker txtCOSDOB;
+        private UIComponent.DateTimePicker txtExpirationDate;
+        private UIComponent.DateTimePicker txtEffectiveDate;
+        private UIComponent.DateTimePicker txtFirstPayDate;
         private System.Windows.Forms.ToolStrip toolStrip2;
         private System.Windows.Forms.ToolStripButton toolStripButton3;
         private System.Windows.Forms.BindingSource letterNumberBindingSource;
@@ -9456,7 +9404,7 @@
         private IACDataSetTableAdapters.MonthNamesTableAdapter monthNamesTableAdapter;
         private System.Windows.Forms.ToolStripButton toolStripButtonAmort;
         private System.Windows.Forms.GroupBox groupBox11;
-        private ProManApp.NullableDateTimePicker nullableDateTimePickerFirstPayDate;
+        private UIComponent.DateTimePicker nullableDateTimePickerFirstPayDate;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TextBox textBox24;
         private System.Windows.Forms.TextBox textBox25;
@@ -9472,7 +9420,7 @@
         private System.Windows.Forms.TextBox textBox35;
         private System.Windows.Forms.TextBox textBox36;
         private System.Windows.Forms.TextBox textBox37;
-        private ProManApp.NullableDateTimePicker nullableDateTimePickerPayDate;
+        private UIComponent.DateTimePicker nullableDateTimePickerPayDate;
         private System.Windows.Forms.TextBox textBoxBuyOutHist;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripButton toolStripButtonEdit;
@@ -9540,8 +9488,8 @@
         private System.Windows.Forms.TextBox textBoxAccount;
         private System.Windows.Forms.CheckBox checkBoxRefi;
         private System.Windows.Forms.TextBox textBoxRepoAgent;
-        private ProManApp.NullableDateTimePicker nullableDateTimePickerRepoDate;
-        private ProManApp.NullableDateTimePicker nullableDateTimePickerTitleDateReceived;
+        private UIComponent.DateTimePicker nullableDateTimePickerRepoDate;
+        private UIComponent.DateTimePicker nullableDateTimePickerTitleDateReceived;
         private System.Windows.Forms.TextBox textBoxAuctionHouse;
         private System.Windows.Forms.TextBox textBoxCurrentLocation;
         private System.Windows.Forms.GroupBox groupBoxRepo;
@@ -9552,16 +9500,16 @@
         private System.Windows.Forms.Label labelCustinRepo;
         private System.Windows.Forms.TextBox textBoxMileage;
         private System.Windows.Forms.Button buttonSendMail;
-        private ProManApp.NullableDateTimePicker nullableDateTimePickerAucDate;
-        private ProManApp.NullableDateTimePicker nullableDateTimePickerLocDate;
+        private UIComponent.DateTimePicker nullableDateTimePickerAucDate;
+        private UIComponent.DateTimePicker nullableDateTimePickerLocDate;
         private System.Windows.Forms.TextBox richTextBoxEmailAddress;
         private System.Windows.Forms.TextBox textBoxDealerState;
         private System.Windows.Forms.Label labelInsuranceExpired;
-        private ProManApp.NullableDateTimePicker DateTimePickerContractDate;
-        private ProManApp.NullableDateTimePicker nullableDateTimePickerHistContractDate;
+        private UIComponent.DateTimePicker DateTimePickerContractDate;
+        private UIComponent.DateTimePicker nullableDateTimePickerHistContractDate;
         private System.Windows.Forms.BindingSource specialCommentCodesBindingSource;
         private IACDataSetTableAdapters.SpecialCommentCodesTableAdapter specialCommentCodesTableAdapter;
-        private ProManApp.NullableDateTimePicker MaturityDate;
+        private UIComponent.DateTimePicker MaturityDate;
         private System.Windows.Forms.TextBox textBoxCosignerAnnualIncome;
         private System.Windows.Forms.TextBox textBoxCosignerCreditScore;
         private System.Windows.Forms.TextBox textBoxCosignerEmail;
@@ -9680,12 +9628,12 @@
         private System.Windows.Forms.TextBox textBoxLTV;
         private System.Windows.Forms.TextBox textBoxDealerCashPrice;
         private System.Windows.Forms.CheckBox checkBoxElectronicLien;
-        private ProManApp.NullableDateTimePicker nullableDateTimePickerDateTitleReleased;
+        private UIComponent.DateTimePicker nullableDateTimePickerDateTitleReleased;
         private System.Windows.Forms.CheckBox checkBoxTitleReleased;
         private System.Windows.Forms.TextBox textBoxDealerEmail;
         private System.Windows.Forms.CheckBox checkBoxSendToDealer;
         private System.Windows.Forms.Button buttonDealerEmail;
-        private ProManApp.NullableDateTimePicker nullableDateTimePickerFundingDate;
+        private UIComponent.DateTimePicker nullableDateTimePickerFundingDate;
         private PaymentDataSet paymentDataSet;
         private System.Windows.Forms.BindingSource paymentDataSetBindingSource;
         private System.Windows.Forms.CheckBox checkBoxCheckIssued;
@@ -9715,16 +9663,16 @@
         private System.Windows.Forms.TextBox textBoxAmountPastDue;
         private System.Windows.Forms.Label labelCurrentBalance;
         private System.Windows.Forms.TextBox textBoxCurrentBalance;
-        private ProManApp.NullableDateTimePicker nullableDateTimePickerDateofFirstDelinquency;
-        private ProManApp.NullableDateTimePicker nullableDateTimePickerDateofLastPayment;
+        private UIComponent.DateTimePicker nullableDateTimePickerDateofFirstDelinquency;
+        private UIComponent.DateTimePicker nullableDateTimePickerDateofLastPayment;
         private System.Windows.Forms.Label label135;
         private System.Windows.Forms.Label label136;
         private System.Windows.Forms.Label label138;
         private System.Windows.Forms.Label label139;
-        private ProManApp.NullableDateTimePicker nullableDateTimePickerFollowUpDate;
-        private ProManApp.NullableDateTimePicker nullableDateTimePickerDateClosed;
-        private ProManApp.NullableDateTimePicker nullableDateTimePickerDateOpened;
-        private ProManApp.NullableDateTimePicker nullableDateTimePickerDateofAccountInformation;
+        private UIComponent.DateTimePicker nullableDateTimePickerFollowUpDate;
+        private UIComponent.DateTimePicker nullableDateTimePickerDateClosed;
+        private UIComponent.DateTimePicker nullableDateTimePickerDateOpened;
+        private UIComponent.DateTimePicker nullableDateTimePickerDateofAccountInformation;
         private System.Windows.Forms.Label label143;
         private System.Windows.Forms.ComboBox comboBoxSpecialComment;
         private System.Windows.Forms.Label label142;
@@ -9785,7 +9733,7 @@
         private ColorTextBox txtContractStatus;
         private ColorCheckBox colorCheckBoxReceivedContract;
         private IACDataSetTableAdapters.MASTERTableAdapter mASTERTableAdapter;
-        private ProManApp.NullableDateTimePicker nullableDateTimePickerDateContractReceived;
+        private UIComponent.DateTimePicker nullableDateTimePickerDateContractReceived;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;

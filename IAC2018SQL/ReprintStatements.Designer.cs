@@ -31,10 +31,9 @@
             this.buttonPost = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.StatementDatenullableDateTimePicker = new ProManApp.NullableDateTimePicker();
+            this.StatementDatenullableDateTimePicker = new UIComponent.DateTimePicker();
             this.textBoxMessage = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.StatementDatenullableDateTimePicker)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonPost
@@ -113,7 +112,6 @@
             this.Name = "frmReprintStatements";
             this.Text = "Reprint Statements";
             this.Load += new System.EventHandler(this.frmReprintStatements_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.StatementDatenullableDateTimePicker)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -124,7 +122,7 @@
         private System.Windows.Forms.Button buttonPost;
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Label label1;
-        private ProManApp.NullableDateTimePicker StatementDatenullableDateTimePicker;
+        private UIComponent.DateTimePicker StatementDatenullableDateTimePicker;
         private System.Windows.Forms.TextBox textBoxMessage;
         private System.Windows.Forms.Label label3;
     }

@@ -41,14 +41,12 @@
             this.textBoxState = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dLRLISTBYNUMTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.DLRLISTBYNUMTableAdapter();
-            this.nullableDateTimePickerEndDate = new ProManApp.NullableDateTimePicker();
-            this.nullableDateTimePickerStartDate = new ProManApp.NullableDateTimePicker();
+            this.nullableDateTimePickerEndDate = new UIComponent.DateTimePicker();
+            this.nullableDateTimePickerStartDate = new UIComponent.DateTimePicker();
             this.groupBoxSelection = new System.Windows.Forms.GroupBox();
             this.groupBoxButtons = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceDLRLISTBYNUM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iACDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerEndDate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerStartDate)).BeginInit();
             this.groupBoxSelection.SuspendLayout();
             this.groupBoxButtons.SuspendLayout();
             this.SuspendLayout();
@@ -239,8 +237,6 @@
             this.Load += new System.EventHandler(this.FormVSIExtract_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceDLRLISTBYNUM)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iACDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerEndDate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerStartDate)).EndInit();
             this.groupBoxSelection.ResumeLayout(false);
             this.groupBoxSelection.PerformLayout();
             this.groupBoxButtons.ResumeLayout(false);
@@ -253,8 +249,8 @@
         private System.Windows.Forms.TextBox textBoxDealerName;
         private System.Windows.Forms.ComboBox comboBoxDealer;
         private System.Windows.Forms.Label labelDealerNum;
-        private ProManApp.NullableDateTimePicker nullableDateTimePickerEndDate;
-        private ProManApp.NullableDateTimePicker nullableDateTimePickerStartDate;
+        private UIComponent.DateTimePicker nullableDateTimePickerEndDate;
+        private UIComponent.DateTimePicker nullableDateTimePickerStartDate;
         private System.Windows.Forms.Label labelEndDate;
         private System.Windows.Forms.Label labelStartDate;
         private System.Windows.Forms.Button buttonCancel;

@@ -40,8 +40,8 @@
             this.DLRLISTBYNUMbindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.comboBoxDealer = new System.Windows.Forms.ComboBox();
             this.textBoxDealerName = new System.Windows.Forms.TextBox();
-            this.nullableDateTimePickerTo = new ProManApp.NullableDateTimePicker();
-            this.nullableDateTimePickerFrom = new ProManApp.NullableDateTimePicker();
+            this.nullableDateTimePickerTo = new UIComponent.DateTimePicker();
+            this.nullableDateTimePickerFrom = new UIComponent.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -67,8 +67,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.iACDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.StatebindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DLRLISTBYNUMbindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerTo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerFrom)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PaymentCodebindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PaymentTypebindingSource)).BeginInit();
@@ -414,8 +412,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.iACDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.StatebindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DLRLISTBYNUMbindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerTo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerFrom)).EndInit();
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PaymentCodebindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PaymentTypebindingSource)).EndInit();
@@ -445,8 +441,8 @@
         private System.Windows.Forms.BindingSource DLRLISTBYNUMbindingSource;
         private System.Windows.Forms.ComboBox comboBoxDealer;
         private System.Windows.Forms.TextBox textBoxDealerName;
-        private ProManApp.NullableDateTimePicker nullableDateTimePickerTo;
-        private ProManApp.NullableDateTimePicker nullableDateTimePickerFrom;
+        private UIComponent.DateTimePicker nullableDateTimePickerTo;
+        private UIComponent.DateTimePicker nullableDateTimePickerFrom;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox3;

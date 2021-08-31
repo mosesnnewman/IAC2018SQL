@@ -47,7 +47,7 @@
             this.toolStripButtonDelete = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonSave = new System.Windows.Forms.ToolStripButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.TextBoxPostDate = new ProManApp.NullableDateTimePicker();
+            this.TextBoxPostDate = new UIComponent.DateTimePicker();
             this.MACONTbindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.MasterName2textBox = new System.Windows.Forms.TextBox();
             this.Comment2textBox = new System.Windows.Forms.TextBox();
@@ -96,7 +96,6 @@
             this.tabPage1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TextBoxPostDate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MACONTbindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MasterListbindingSource)).BeginInit();
@@ -201,7 +200,7 @@
             this.toolStripButtonDelete.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonDelete.Image")));
             this.toolStripButtonDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonDelete.Name = "toolStripButtonDelete";
-            this.toolStripButtonDelete.Size = new System.Drawing.Size(58, 22);
+            this.toolStripButtonDelete.Size = new System.Drawing.Size(60, 22);
             this.toolStripButtonDelete.Text = "&Delete";
             this.toolStripButtonDelete.Click += new System.EventHandler(this.toolStripButtonDelete_Click);
             // 
@@ -640,7 +639,6 @@
             this.toolStrip1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TextBoxPostDate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MACONTbindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -696,7 +694,7 @@
         private System.Windows.Forms.Label lblCurValue2;
         private System.Windows.Forms.TextBox txtYTDValue2;
         private System.Windows.Forms.TextBox txtCurValue2;
-        private ProManApp.NullableDateTimePicker TextBoxPostDate;
+        private UIComponent.DateTimePicker TextBoxPostDate;
         private System.Windows.Forms.TextBox MasterName2textBox;
         private System.Windows.Forms.TextBox Comment2textBox;
         private System.Windows.Forms.TextBox Amount2textBox;

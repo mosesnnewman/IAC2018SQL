@@ -26,7 +26,7 @@ namespace IAC2021SQL
 		private const long CUSTOMER_ID = 5856172571257250771;  // Change this to your unique Customer ID number.
 		const double CENTS_PER_DOLLAR = 100.0;
 
-		static public RestClient ApiClient = new RestClient("http://sql-iac/Square9API"); //path to the website where the api is hosted
+		public static RestClient ApiClient = new RestClient("http://sql-iac/Square9API"); //path to the website where the api is hosted
 
 		public static TVWorkspace tvWorkspace;
 
@@ -3666,7 +3666,7 @@ namespace IAC2021SQL
 			return uploadedFileName;
 		}
 
-		static public void IndexDocument(Int32 DatabaseID, Int32 ArchiveID, List<FieldItem> FieldData, String UploadedFileName, String Token)
+		static public void IndexDocument(Int32 DatabaseID, Int32 ArchiveID, List<FieldItem> FieldData, String UploadedFileName, String Tk)
 		{
 			//load up our data
 			var indexData = new Indexer();
@@ -3681,8 +3681,9 @@ namespace IAC2021SQL
 				}
 			}
 
+			var token = Program.GetLicense();
 			var request = new RestRequest("api/dbs/{db}/archives/{arch}?token={token}", Method.POST);
-			request.AddParameter("token", Token, ParameterType.UrlSegment); //have to specifiy type on POST
+			request.AddParameter("token",token, ParameterType.UrlSegment); //have to specifiy type on POST
 			request.AddParameter("db", DatabaseID, ParameterType.UrlSegment);
 			request.AddParameter("arch", ArchiveID, ParameterType.UrlSegment);
 			request.RequestFormat = DataFormat.Json;
@@ -3694,7 +3695,6 @@ namespace IAC2021SQL
 				throw new Exception("Unable to index document: " + response.Content);
 			}
 		}
-
 
 
 		static public String GetLicense()

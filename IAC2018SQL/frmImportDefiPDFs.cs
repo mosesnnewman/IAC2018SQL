@@ -152,7 +152,7 @@ namespace IAC2021SQL
                             System.IO.File.Move(FullPath + Filename, ProcessedPath + Filename);
                     }
                     //basic authentication
-                    Program.ApiClient.Authenticator = new RestSharp.Authenticators.HttpBasicAuthenticator(@"IAC\***REMOVED***", "***REMOVED***");
+                    Program.ApiClient.Authenticator = new HttpBasicAuthenticator(@"IAC\***REMOVED***", "***REMOVED***");
 
                     var databaseID = 2;  //Database ID
                     var archiveID = 9;  //Archive ID
@@ -165,7 +165,7 @@ namespace IAC2021SQL
                         //upload file
                         string uploadedFileName = Program.PostFile(localFileName); //api returns the name of the file on the server for indexing
 
-                        token = Program.GetLicense(); //valid SS license
+                        //token = Program.GetLicense(); //valid SS license
                                                       // Set index field data
                         List<FieldItem> fieldData = new List<FieldItem>()
                             { new FieldItem(1, ImportData.CUSTOMER.Rows[i].Field<String>("CUSTOMER_NO"))

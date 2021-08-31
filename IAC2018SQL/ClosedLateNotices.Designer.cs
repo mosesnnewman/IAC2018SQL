@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.NoticeDatenullableDateTimePicker = new ProManApp.NullableDateTimePicker();
+            this.NoticeDatenullableDateTimePicker = new UIComponent.DateTimePicker();
             this.labelLateNotices = new System.Windows.Forms.Label();
             this.buttonPost = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
@@ -37,7 +37,6 @@
             this.NoticebindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nOTICETableAdapter = new IAC2021SQL.IACDataSetTableAdapters.NOTICETableAdapter();
             this.customerTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.CUSTOMERTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.NoticeDatenullableDateTimePicker)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NoticeiacDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NoticebindingSource)).BeginInit();
             this.SuspendLayout();
@@ -114,7 +113,6 @@
             this.Name = "frmNotices";
             this.Text = "Closed End Notices";
             this.Load += new System.EventHandler(this.frmNotices_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.NoticeDatenullableDateTimePicker)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NoticeiacDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NoticebindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -124,7 +122,7 @@
 
         #endregion
 
-        private ProManApp.NullableDateTimePicker NoticeDatenullableDateTimePicker;
+        private UIComponent.DateTimePicker NoticeDatenullableDateTimePicker;
         private System.Windows.Forms.Label labelLateNotices;
         private System.Windows.Forms.Button buttonPost;
         private System.Windows.Forms.Button buttonCancel;

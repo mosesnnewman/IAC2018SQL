@@ -34,8 +34,8 @@
             this.groupBoxPI = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.nullableDateTimePickerPIEndDate = new ProManApp.NullableDateTimePicker();
-            this.nullableDateTimePickerPIStartDate = new ProManApp.NullableDateTimePicker();
+            this.nullableDateTimePickerPIEndDate = new UIComponent.DateTimePicker();
+            this.nullableDateTimePickerPIStartDate = new UIComponent.DateTimePicker();
             this.groupBoxMainSelection = new System.Windows.Forms.GroupBox();
             this.checkBoxExtensions = new System.Windows.Forms.CheckBox();
             this.checkBoxMatchNBFields = new System.Windows.Forms.CheckBox();
@@ -46,15 +46,15 @@
             this.checkBoxFundingDate = new System.Windows.Forms.CheckBox();
             this.checkBoxTrialBalance = new System.Windows.Forms.CheckBox();
             this.labelBuyoutDate = new System.Windows.Forms.Label();
-            this.nullableDateTimePickerBuyoutDate = new ProManApp.NullableDateTimePicker();
+            this.nullableDateTimePickerBuyoutDate = new UIComponent.DateTimePicker();
             this.checkBoxRepos = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBoxState = new System.Windows.Forms.ComboBox();
             this.textBoxDealerName = new System.Windows.Forms.TextBox();
             this.comboBoxDealer = new System.Windows.Forms.ComboBox();
             this.labelDealerNum = new System.Windows.Forms.Label();
-            this.nullableDateTimePickerEndDate = new ProManApp.NullableDateTimePicker();
-            this.nullableDateTimePickerStartDate = new ProManApp.NullableDateTimePicker();
+            this.nullableDateTimePickerEndDate = new UIComponent.DateTimePicker();
+            this.nullableDateTimePickerStartDate = new UIComponent.DateTimePicker();
             this.labelEndDate = new System.Windows.Forms.Label();
             this.labelStartDate = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -73,12 +73,7 @@
             this.tabControl1.SuspendLayout();
             this.tabSelections.SuspendLayout();
             this.groupBoxPI.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerPIEndDate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerPIStartDate)).BeginInit();
             this.groupBoxMainSelection.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerBuyoutDate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerEndDate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerStartDate)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.tabFieldList.SuspendLayout();
             this.SuspendLayout();
@@ -126,7 +121,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(11, 58);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 16);
+            this.label2.Size = new System.Drawing.Size(66, 16);
             this.label2.TabIndex = 37;
             this.label2.Text = "End Date:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -136,7 +131,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(8, 33);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(70, 16);
+            this.label3.Size = new System.Drawing.Size(69, 16);
             this.label3.TabIndex = 36;
             this.label3.Text = "Start Date:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -193,7 +188,7 @@
             this.checkBoxExtensions.AutoSize = true;
             this.checkBoxExtensions.Location = new System.Drawing.Point(279, 182);
             this.checkBoxExtensions.Name = "checkBoxExtensions";
-            this.checkBoxExtensions.Size = new System.Drawing.Size(125, 20);
+            this.checkBoxExtensions.Size = new System.Drawing.Size(124, 20);
             this.checkBoxExtensions.TabIndex = 117;
             this.checkBoxExtensions.Text = "ExtensionExtract";
             this.checkBoxExtensions.UseVisualStyleBackColor = true;
@@ -204,7 +199,7 @@
             this.checkBoxMatchNBFields.AutoSize = true;
             this.checkBoxMatchNBFields.Location = new System.Drawing.Point(279, 130);
             this.checkBoxMatchNBFields.Name = "checkBoxMatchNBFields";
-            this.checkBoxMatchNBFields.Size = new System.Drawing.Size(131, 20);
+            this.checkBoxMatchNBFields.Size = new System.Drawing.Size(130, 20);
             this.checkBoxMatchNBFields.TabIndex = 17;
             this.checkBoxMatchNBFields.Text = "Match N.B. Fields";
             this.checkBoxMatchNBFields.UseVisualStyleBackColor = true;
@@ -236,7 +231,7 @@
             this.labelControlDateEnd.AutoSize = true;
             this.labelControlDateEnd.Location = new System.Drawing.Point(212, 72);
             this.labelControlDateEnd.Name = "labelControlDateEnd";
-            this.labelControlDateEnd.Size = new System.Drawing.Size(112, 16);
+            this.labelControlDateEnd.Size = new System.Drawing.Size(111, 16);
             this.labelControlDateEnd.TabIndex = 116;
             this.labelControlDateEnd.Text = "End Control Date:";
             this.labelControlDateEnd.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -246,7 +241,7 @@
             this.labelControlDateStart.AutoSize = true;
             this.labelControlDateStart.Location = new System.Drawing.Point(212, 47);
             this.labelControlDateStart.Name = "labelControlDateStart";
-            this.labelControlDateStart.Size = new System.Drawing.Size(115, 16);
+            this.labelControlDateStart.Size = new System.Drawing.Size(114, 16);
             this.labelControlDateStart.TabIndex = 114;
             this.labelControlDateStart.Text = "Start Control Date:";
             this.labelControlDateStart.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -256,7 +251,7 @@
             this.checkBoxFundingDate.AutoSize = true;
             this.checkBoxFundingDate.Location = new System.Drawing.Point(9, 156);
             this.checkBoxFundingDate.Name = "checkBoxFundingDate";
-            this.checkBoxFundingDate.Size = new System.Drawing.Size(153, 20);
+            this.checkBoxFundingDate.Size = new System.Drawing.Size(152, 20);
             this.checkBoxFundingDate.TabIndex = 14;
             this.checkBoxFundingDate.Text = "Funding Date Search";
             this.checkBoxFundingDate.UseVisualStyleBackColor = true;
@@ -266,7 +261,7 @@
             this.checkBoxTrialBalance.AutoSize = true;
             this.checkBoxTrialBalance.Location = new System.Drawing.Point(279, 156);
             this.checkBoxTrialBalance.Name = "checkBoxTrialBalance";
-            this.checkBoxTrialBalance.Size = new System.Drawing.Size(146, 20);
+            this.checkBoxTrialBalance.Size = new System.Drawing.Size(145, 20);
             this.checkBoxTrialBalance.TabIndex = 16;
             this.checkBoxTrialBalance.Text = "Match Trial Balance";
             this.checkBoxTrialBalance.UseVisualStyleBackColor = true;
@@ -277,7 +272,7 @@
             this.labelBuyoutDate.AutoSize = true;
             this.labelBuyoutDate.Location = new System.Drawing.Point(213, 22);
             this.labelBuyoutDate.Name = "labelBuyoutDate";
-            this.labelBuyoutDate.Size = new System.Drawing.Size(84, 16);
+            this.labelBuyoutDate.Size = new System.Drawing.Size(83, 16);
             this.labelBuyoutDate.TabIndex = 33;
             this.labelBuyoutDate.Text = "Buyout Date:";
             this.labelBuyoutDate.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -296,7 +291,7 @@
             this.checkBoxRepos.AutoSize = true;
             this.checkBoxRepos.Location = new System.Drawing.Point(166, 156);
             this.checkBoxRepos.Name = "checkBoxRepos";
-            this.checkBoxRepos.Size = new System.Drawing.Size(98, 20);
+            this.checkBoxRepos.Size = new System.Drawing.Size(97, 20);
             this.checkBoxRepos.TabIndex = 15;
             this.checkBoxRepos.Text = "Repos Only";
             this.checkBoxRepos.UseVisualStyleBackColor = true;
@@ -306,7 +301,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(16, 130);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 16);
+            this.label1.Size = new System.Drawing.Size(85, 16);
             this.label1.TabIndex = 30;
             this.label1.Text = "Dealer State:";
             // 
@@ -343,7 +338,7 @@
             this.labelDealerNum.AutoSize = true;
             this.labelDealerNum.Location = new System.Drawing.Point(51, 104);
             this.labelDealerNum.Name = "labelDealerNum";
-            this.labelDealerNum.Size = new System.Drawing.Size(52, 16);
+            this.labelDealerNum.Size = new System.Drawing.Size(51, 16);
             this.labelDealerNum.TabIndex = 22;
             this.labelDealerNum.Text = "Dealer:";
             this.labelDealerNum.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -371,7 +366,7 @@
             this.labelEndDate.AutoSize = true;
             this.labelEndDate.Location = new System.Drawing.Point(37, 47);
             this.labelEndDate.Name = "labelEndDate";
-            this.labelEndDate.Size = new System.Drawing.Size(67, 16);
+            this.labelEndDate.Size = new System.Drawing.Size(66, 16);
             this.labelEndDate.TabIndex = 19;
             this.labelEndDate.Text = "End Date:";
             this.labelEndDate.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -381,7 +376,7 @@
             this.labelStartDate.AutoSize = true;
             this.labelStartDate.Location = new System.Drawing.Point(34, 22);
             this.labelStartDate.Name = "labelStartDate";
-            this.labelStartDate.Size = new System.Drawing.Size(70, 16);
+            this.labelStartDate.Size = new System.Drawing.Size(69, 16);
             this.labelStartDate.TabIndex = 16;
             this.labelStartDate.Text = "Start Date:";
             this.labelStartDate.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -403,7 +398,7 @@
             this.radioButtonBoth.AutoSize = true;
             this.radioButtonBoth.Location = new System.Drawing.Point(21, 55);
             this.radioButtonBoth.Name = "radioButtonBoth";
-            this.radioButtonBoth.Size = new System.Drawing.Size(53, 20);
+            this.radioButtonBoth.Size = new System.Drawing.Size(52, 20);
             this.radioButtonBoth.TabIndex = 4;
             this.radioButtonBoth.TabStop = true;
             this.radioButtonBoth.Text = "&Both";
@@ -414,7 +409,7 @@
             this.radioButtonInactive.AutoSize = true;
             this.radioButtonInactive.Location = new System.Drawing.Point(21, 35);
             this.radioButtonInactive.Name = "radioButtonInactive";
-            this.radioButtonInactive.Size = new System.Drawing.Size(72, 20);
+            this.radioButtonInactive.Size = new System.Drawing.Size(71, 20);
             this.radioButtonInactive.TabIndex = 3;
             this.radioButtonInactive.TabStop = true;
             this.radioButtonInactive.Text = "&Inactive";
@@ -425,7 +420,7 @@
             this.radioButtonActive.AutoSize = true;
             this.radioButtonActive.Location = new System.Drawing.Point(21, 15);
             this.radioButtonActive.Name = "radioButtonActive";
-            this.radioButtonActive.Size = new System.Drawing.Size(63, 20);
+            this.radioButtonActive.Size = new System.Drawing.Size(62, 20);
             this.radioButtonActive.TabIndex = 2;
             this.radioButtonActive.TabStop = true;
             this.radioButtonActive.Text = "&Active";
@@ -549,13 +544,8 @@
             this.tabSelections.ResumeLayout(false);
             this.groupBoxPI.ResumeLayout(false);
             this.groupBoxPI.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerPIEndDate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerPIStartDate)).EndInit();
             this.groupBoxMainSelection.ResumeLayout(false);
             this.groupBoxMainSelection.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerBuyoutDate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerEndDate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerStartDate)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tabFieldList.ResumeLayout(false);
@@ -570,20 +560,20 @@
         private System.Windows.Forms.GroupBox groupBoxPI;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private ProManApp.NullableDateTimePicker nullableDateTimePickerPIEndDate;
-        private ProManApp.NullableDateTimePicker nullableDateTimePickerPIStartDate;
+        private UIComponent.DateTimePicker nullableDateTimePickerPIEndDate;
+        private UIComponent.DateTimePicker nullableDateTimePickerPIStartDate;
         private System.Windows.Forms.GroupBox groupBoxMainSelection;
         private System.Windows.Forms.CheckBox checkBoxTrialBalance;
         private System.Windows.Forms.Label labelBuyoutDate;
-        private ProManApp.NullableDateTimePicker nullableDateTimePickerBuyoutDate;
+        private UIComponent.DateTimePicker nullableDateTimePickerBuyoutDate;
         private System.Windows.Forms.CheckBox checkBoxRepos;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBoxState;
         private System.Windows.Forms.TextBox textBoxDealerName;
         private System.Windows.Forms.ComboBox comboBoxDealer;
         private System.Windows.Forms.Label labelDealerNum;
-        private ProManApp.NullableDateTimePicker nullableDateTimePickerEndDate;
-        private ProManApp.NullableDateTimePicker nullableDateTimePickerStartDate;
+        private UIComponent.DateTimePicker nullableDateTimePickerEndDate;
+        private UIComponent.DateTimePicker nullableDateTimePickerStartDate;
         private System.Windows.Forms.Label labelEndDate;
         private System.Windows.Forms.Label labelStartDate;
         private System.Windows.Forms.GroupBox groupBox1;

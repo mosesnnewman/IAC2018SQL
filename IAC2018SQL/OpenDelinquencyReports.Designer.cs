@@ -28,13 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.nullableDateTimePickerDueDate = new ProManApp.NullableDateTimePicker();
+            this.nullableDateTimePickerDueDate = new UIComponent.DateTimePicker();
             this.labelLateNotices = new System.Windows.Forms.Label();
             this.buttonPost = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.comboBoxAgedPeriod = new System.Windows.Forms.ComboBox();
             this.labelAgedPeriod = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDueDate)).BeginInit();
             this.SuspendLayout();
             // 
             // nullableDateTimePickerDueDate
@@ -125,7 +124,6 @@
             this.Name = "frmOpenDelinquencyReports";
             this.Text = "Open Delinquency Reports";
             this.Load += new System.EventHandler(this.frmOpenDelinquencyReports_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDueDate)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -133,7 +131,7 @@
 
         #endregion
 
-        private ProManApp.NullableDateTimePicker nullableDateTimePickerDueDate;
+        private UIComponent.DateTimePicker nullableDateTimePickerDueDate;
         private System.Windows.Forms.Label labelLateNotices;
         private System.Windows.Forms.Button buttonPost;
         private System.Windows.Forms.Button buttonCancel;

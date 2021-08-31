@@ -34,8 +34,8 @@
             this.labelStartDate = new System.Windows.Forms.Label();
             this.iACDataSet = new IAC2021SQL.IACDataSet();
             this.labelEndDate = new System.Windows.Forms.Label();
-            this.nullableDateTimePickerStartDate = new ProManApp.NullableDateTimePicker();
-            this.nullableDateTimePickerEndDate = new ProManApp.NullableDateTimePicker();
+            this.nullableDateTimePickerStartDate = new UIComponent.DateTimePicker();
+            this.nullableDateTimePickerEndDate = new UIComponent.DateTimePicker();
             this.dealerTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.DEALERTableAdapter();
             this.textBoxDealerName = new System.Windows.Forms.TextBox();
             this.bindingSourceDLRLISTBYNUM = new System.Windows.Forms.BindingSource(this.components);
@@ -43,8 +43,6 @@
             this.labelDealerNum = new System.Windows.Forms.Label();
             this.dlrlistbynumTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.DLRLISTBYNUMTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.iACDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerStartDate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerEndDate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceDLRLISTBYNUM)).BeginInit();
             this.SuspendLayout();
             // 
@@ -184,8 +182,6 @@
             this.Text = "Print Closed Charges Applied to Dealer Report (15)";
             this.Load += new System.EventHandler(this.frmClosedChargesAppliedtoDealerReport_Load);
             ((System.ComponentModel.ISupportInitialize)(this.iACDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerStartDate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerEndDate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceDLRLISTBYNUM)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -199,8 +195,8 @@
         private System.Windows.Forms.Label labelStartDate;
         private IACDataSet iACDataSet;
         private System.Windows.Forms.Label labelEndDate;
-        private ProManApp.NullableDateTimePicker nullableDateTimePickerStartDate;
-        private ProManApp.NullableDateTimePicker nullableDateTimePickerEndDate;
+        private UIComponent.DateTimePicker nullableDateTimePickerStartDate;
+        private UIComponent.DateTimePicker nullableDateTimePickerEndDate;
         private IACDataSetTableAdapters.DEALERTableAdapter dealerTableAdapter;
         private System.Windows.Forms.TextBox textBoxDealerName;
         private System.Windows.Forms.ComboBox comboBoxDealer;
