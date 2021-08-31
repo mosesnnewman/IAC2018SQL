@@ -34,8 +34,8 @@
             this.labelStartDate = new System.Windows.Forms.Label();
             this.iACDataSet = new IAC2021SQL.IACDataSet();
             this.labelEndDate = new System.Windows.Forms.Label();
-            this.nullableDateTimePickerStartDate = new ProManApp.NullableDateTimePicker();
-            this.nullableDateTimePickerEndDate = new ProManApp.NullableDateTimePicker();
+            this.nullableDateTimePickerStartDate = new UIComponent.DateTimePicker();
+            this.nullableDateTimePickerEndDate = new UIComponent.DateTimePicker();
             this.textBoxDealerName = new System.Windows.Forms.TextBox();
             this.bindingSourceMasterList = new System.Windows.Forms.BindingSource(this.components);
             this.comboBoxAccount = new System.Windows.Forms.ComboBox();
@@ -44,8 +44,6 @@
             this.masthistTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.MASTHISTTableAdapter();
             this.masterlistTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.MASTERLISTTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.iACDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerStartDate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerEndDate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceMasterList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -179,8 +177,6 @@
             this.Text = "Print Master History Report (43)";
             this.Load += new System.EventHandler(this.frmMasterHistoryReport_Load);
             ((System.ComponentModel.ISupportInitialize)(this.iACDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerStartDate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerEndDate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceMasterList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -194,8 +190,8 @@
         private System.Windows.Forms.Label labelStartDate;
         private IACDataSet iACDataSet;
         private System.Windows.Forms.Label labelEndDate;
-        private ProManApp.NullableDateTimePicker nullableDateTimePickerStartDate;
-        private ProManApp.NullableDateTimePicker nullableDateTimePickerEndDate;
+        private UIComponent.DateTimePicker nullableDateTimePickerStartDate;
+        private UIComponent.DateTimePicker nullableDateTimePickerEndDate;
         private System.Windows.Forms.TextBox textBoxDealerName;
         private System.Windows.Forms.ComboBox comboBoxAccount;
         private System.Windows.Forms.Label labelAccountNum;

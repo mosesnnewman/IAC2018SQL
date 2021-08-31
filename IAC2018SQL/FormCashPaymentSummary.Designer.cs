@@ -33,14 +33,12 @@ namespace IAC2021SQL
             this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonPost = new System.Windows.Forms.Button();
             this.groupBoxSelection = new System.Windows.Forms.GroupBox();
+            this.nullableDateTimePickerEndDate = new UIComponent.DateTimePicker();
+            this.nullableDateTimePickerStartDate = new UIComponent.DateTimePicker();
             this.labelEndDate = new System.Windows.Forms.Label();
             this.labelStartDate = new System.Windows.Forms.Label();
-            this.nullableDateTimePickerEndDate = new ProManApp.NullableDateTimePicker();
-            this.nullableDateTimePickerStartDate = new ProManApp.NullableDateTimePicker();
             this.groupBoxButtons.SuspendLayout();
             this.groupBoxSelection.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerEndDate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerStartDate)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBoxButtons
@@ -90,6 +88,28 @@ namespace IAC2021SQL
             this.groupBoxSelection.TabIndex = 37;
             this.groupBoxSelection.TabStop = false;
             // 
+            // nullableDateTimePickerEndDate
+            // 
+            this.nullableDateTimePickerEndDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nullableDateTimePickerEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.nullableDateTimePickerEndDate.Location = new System.Drawing.Point(141, 50);
+            this.nullableDateTimePickerEndDate.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.nullableDateTimePickerEndDate.Name = "nullableDateTimePickerEndDate";
+            this.nullableDateTimePickerEndDate.Size = new System.Drawing.Size(107, 26);
+            this.nullableDateTimePickerEndDate.TabIndex = 28;
+            this.nullableDateTimePickerEndDate.Value = new System.DateTime(2021, 7, 7, 0, 0, 0, 0);
+            // 
+            // nullableDateTimePickerStartDate
+            // 
+            this.nullableDateTimePickerStartDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nullableDateTimePickerStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.nullableDateTimePickerStartDate.Location = new System.Drawing.Point(141, 18);
+            this.nullableDateTimePickerStartDate.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.nullableDateTimePickerStartDate.Name = "nullableDateTimePickerStartDate";
+            this.nullableDateTimePickerStartDate.Size = new System.Drawing.Size(107, 26);
+            this.nullableDateTimePickerStartDate.TabIndex = 27;
+            this.nullableDateTimePickerStartDate.Value = new System.DateTime(2021, 7, 7, 0, 0, 0, 0);
+            // 
             // labelEndDate
             // 
             this.labelEndDate.AutoSize = true;
@@ -114,28 +134,6 @@ namespace IAC2021SQL
             this.labelStartDate.Text = "Start Date:";
             this.labelStartDate.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // nullableDateTimePickerEndDate
-            // 
-            this.nullableDateTimePickerEndDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nullableDateTimePickerEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.nullableDateTimePickerEndDate.Location = new System.Drawing.Point(141, 50);
-            this.nullableDateTimePickerEndDate.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
-            this.nullableDateTimePickerEndDate.Name = "nullableDateTimePickerEndDate";
-            this.nullableDateTimePickerEndDate.Size = new System.Drawing.Size(107, 26);
-            this.nullableDateTimePickerEndDate.TabIndex = 28;
-            this.nullableDateTimePickerEndDate.Value = new System.DateTime(2021, 7, 7, 0, 0, 0, 0);
-            // 
-            // nullableDateTimePickerStartDate
-            // 
-            this.nullableDateTimePickerStartDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nullableDateTimePickerStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.nullableDateTimePickerStartDate.Location = new System.Drawing.Point(141, 18);
-            this.nullableDateTimePickerStartDate.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
-            this.nullableDateTimePickerStartDate.Name = "nullableDateTimePickerStartDate";
-            this.nullableDateTimePickerStartDate.Size = new System.Drawing.Size(107, 26);
-            this.nullableDateTimePickerStartDate.TabIndex = 27;
-            this.nullableDateTimePickerStartDate.Value = new System.DateTime(2021, 7, 7, 0, 0, 0, 0);
-            // 
             // FormCashPaymentSummary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -151,8 +149,6 @@ namespace IAC2021SQL
             this.groupBoxButtons.ResumeLayout(false);
             this.groupBoxSelection.ResumeLayout(false);
             this.groupBoxSelection.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerEndDate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerStartDate)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -163,8 +159,8 @@ namespace IAC2021SQL
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Button buttonPost;
         private System.Windows.Forms.GroupBox groupBoxSelection;
-        private ProManApp.NullableDateTimePicker nullableDateTimePickerEndDate;
-        private ProManApp.NullableDateTimePicker nullableDateTimePickerStartDate;
+        private UIComponent.DateTimePicker nullableDateTimePickerEndDate;
+        private UIComponent.DateTimePicker nullableDateTimePickerStartDate;
         private System.Windows.Forms.Label labelEndDate;
         private System.Windows.Forms.Label labelStartDate;
     }

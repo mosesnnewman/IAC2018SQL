@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.NoticeDatenullableDateTimePicker = new ProManApp.NullableDateTimePicker();
+            this.NoticeDatenullableDateTimePicker = new UIComponent.DateTimePicker();
             this.labelLateNotices = new System.Windows.Forms.Label();
             this.buttonPost = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
@@ -37,7 +37,6 @@
             this.NoticebindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.opncustTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.OPNCUSTTableAdapter();
             this.opnnotTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.OPNNOTTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.NoticeDatenullableDateTimePicker)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NoticeiacDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NoticebindingSource)).BeginInit();
             this.SuspendLayout();
@@ -113,7 +112,6 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "frmOpnNotices";
             this.Text = "Open End Notices";
-            ((System.ComponentModel.ISupportInitialize)(this.NoticeDatenullableDateTimePicker)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NoticeiacDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NoticebindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -123,7 +121,7 @@
 
         #endregion
 
-        private ProManApp.NullableDateTimePicker NoticeDatenullableDateTimePicker;
+        private UIComponent.DateTimePicker NoticeDatenullableDateTimePicker;
         private System.Windows.Forms.Label labelLateNotices;
         private System.Windows.Forms.Button buttonPost;
         private System.Windows.Forms.Button buttonCancel;

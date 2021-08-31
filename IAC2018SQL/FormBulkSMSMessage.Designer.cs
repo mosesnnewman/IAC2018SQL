@@ -36,9 +36,16 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.buttonSend = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.nullableDateTimePickerFundingTo = new UIComponent.DateTimePicker();
+            this.nullableDateTimePickerFundingFrom = new UIComponent.DateTimePicker();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.nullableDateTimePickerContractTo = new UIComponent.DateTimePicker();
+            this.nullableDateTimePickerContractFrom = new UIComponent.DateTimePicker();
             this.txtPaidThrough = new System.Windows.Forms.MaskedTextBox();
             this.labelPaidThrough = new System.Windows.Forms.Label();
             this.checkBoxNoEFT = new System.Windows.Forms.CheckBox();
@@ -46,25 +53,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.nullableDateTimePickerDebitDate = new UIComponent.DateTimePicker();
             this.comboBoxDayDue = new System.Windows.Forms.ComboBox();
             this.labelStatus = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.nullableDateTimePickerFundingTo = new ProManApp.NullableDateTimePicker();
-            this.nullableDateTimePickerFundingFrom = new ProManApp.NullableDateTimePicker();
-            this.nullableDateTimePickerContractTo = new ProManApp.NullableDateTimePicker();
-            this.nullableDateTimePickerContractFrom = new ProManApp.NullableDateTimePicker();
-            this.nullableDateTimePickerDebitDate = new ProManApp.NullableDateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerFundingTo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerFundingFrom)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerContractTo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerContractFrom)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDebitDate)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBoxMessage
@@ -85,7 +80,7 @@
             this.label1.Location = new System.Drawing.Point(18, 288);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 16);
+            this.label1.Size = new System.Drawing.Size(75, 16);
             this.label1.TabIndex = 1;
             this.label1.Text = "Message:";
             // 
@@ -105,7 +100,7 @@
             this.labelNote.Location = new System.Drawing.Point(18, 435);
             this.labelNote.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelNote.Name = "labelNote";
-            this.labelNote.Size = new System.Drawing.Size(45, 16);
+            this.labelNote.Size = new System.Drawing.Size(44, 16);
             this.labelNote.TabIndex = 3;
             this.labelNote.Text = "Note:";
             // 
@@ -153,6 +148,62 @@
             this.groupBox1.TabIndex = 52;
             this.groupBox1.TabStop = false;
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.label8);
+            this.groupBox3.Controls.Add(this.label5);
+            this.groupBox3.Controls.Add(this.nullableDateTimePickerFundingTo);
+            this.groupBox3.Controls.Add(this.nullableDateTimePickerFundingFrom);
+            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Location = new System.Drawing.Point(30, 196);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(349, 58);
+            this.groupBox3.TabIndex = 85;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Funding Date";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(190, 26);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(30, 16);
+            this.label8.TabIndex = 83;
+            this.label8.Text = "To:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(24, 26);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(46, 16);
+            this.label5.TabIndex = 82;
+            this.label5.Text = "From:";
+            // 
+            // nullableDateTimePickerFundingTo
+            // 
+            this.nullableDateTimePickerFundingTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nullableDateTimePickerFundingTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.nullableDateTimePickerFundingTo.Location = new System.Drawing.Point(222, 22);
+            this.nullableDateTimePickerFundingTo.Name = "nullableDateTimePickerFundingTo";
+            this.nullableDateTimePickerFundingTo.Size = new System.Drawing.Size(103, 26);
+            this.nullableDateTimePickerFundingTo.TabIndex = 9;
+            this.nullableDateTimePickerFundingTo.Value = new System.DateTime(2019, 12, 30, 0, 0, 0, 0);
+            this.nullableDateTimePickerFundingTo.ValueChanged += new System.EventHandler(this.nullableDateTimePickerFundingTo_ValueChanged);
+            // 
+            // nullableDateTimePickerFundingFrom
+            // 
+            this.nullableDateTimePickerFundingFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nullableDateTimePickerFundingFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.nullableDateTimePickerFundingFrom.Location = new System.Drawing.Point(78, 22);
+            this.nullableDateTimePickerFundingFrom.Name = "nullableDateTimePickerFundingFrom";
+            this.nullableDateTimePickerFundingFrom.Size = new System.Drawing.Size(103, 26);
+            this.nullableDateTimePickerFundingFrom.TabIndex = 8;
+            this.nullableDateTimePickerFundingFrom.Value = new System.DateTime(2019, 12, 30, 0, 0, 0, 0);
+            this.nullableDateTimePickerFundingFrom.ValueChanged += new System.EventHandler(this.nullableDateTimePickerFundingFrom_ValueChanged);
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.label7);
@@ -173,7 +224,7 @@
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(190, 26);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(31, 16);
+            this.label7.Size = new System.Drawing.Size(30, 16);
             this.label7.TabIndex = 83;
             this.label7.Text = "To:";
             // 
@@ -183,9 +234,31 @@
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(24, 26);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(47, 16);
+            this.label6.Size = new System.Drawing.Size(46, 16);
             this.label6.TabIndex = 82;
             this.label6.Text = "From:";
+            // 
+            // nullableDateTimePickerContractTo
+            // 
+            this.nullableDateTimePickerContractTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nullableDateTimePickerContractTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.nullableDateTimePickerContractTo.Location = new System.Drawing.Point(222, 22);
+            this.nullableDateTimePickerContractTo.Name = "nullableDateTimePickerContractTo";
+            this.nullableDateTimePickerContractTo.Size = new System.Drawing.Size(103, 26);
+            this.nullableDateTimePickerContractTo.TabIndex = 7;
+            this.nullableDateTimePickerContractTo.Value = new System.DateTime(2019, 12, 30, 0, 0, 0, 0);
+            this.nullableDateTimePickerContractTo.ValueChanged += new System.EventHandler(this.nullableDateTimePickerContractTo_ValueChanged);
+            // 
+            // nullableDateTimePickerContractFrom
+            // 
+            this.nullableDateTimePickerContractFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nullableDateTimePickerContractFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.nullableDateTimePickerContractFrom.Location = new System.Drawing.Point(78, 22);
+            this.nullableDateTimePickerContractFrom.Name = "nullableDateTimePickerContractFrom";
+            this.nullableDateTimePickerContractFrom.Size = new System.Drawing.Size(103, 26);
+            this.nullableDateTimePickerContractFrom.TabIndex = 6;
+            this.nullableDateTimePickerContractFrom.Value = new System.DateTime(2019, 12, 30, 0, 0, 0, 0);
+            this.nullableDateTimePickerContractFrom.ValueChanged += new System.EventHandler(this.nullableDateTimePickerContractFrom_ValueChanged);
             // 
             // txtPaidThrough
             // 
@@ -202,7 +275,7 @@
             this.labelPaidThrough.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPaidThrough.Location = new System.Drawing.Point(20, 108);
             this.labelPaidThrough.Name = "labelPaidThrough";
-            this.labelPaidThrough.Size = new System.Drawing.Size(79, 16);
+            this.labelPaidThrough.Size = new System.Drawing.Size(78, 16);
             this.labelPaidThrough.TabIndex = 56;
             this.labelPaidThrough.Text = "Paid Thru:";
             // 
@@ -214,7 +287,7 @@
             this.checkBoxNoEFT.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBoxNoEFT.Location = new System.Drawing.Point(234, 50);
             this.checkBoxNoEFT.Name = "checkBoxNoEFT";
-            this.checkBoxNoEFT.Size = new System.Drawing.Size(123, 20);
+            this.checkBoxNoEFT.Size = new System.Drawing.Size(122, 20);
             this.checkBoxNoEFT.TabIndex = 4;
             this.checkBoxNoEFT.Text = "Exclude EFT?";
             this.checkBoxNoEFT.UseVisualStyleBackColor = true;
@@ -227,7 +300,7 @@
             this.checkBoxGracePeriod.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBoxGracePeriod.Location = new System.Drawing.Point(234, 24);
             this.checkBoxGracePeriod.Name = "checkBoxGracePeriod";
-            this.checkBoxGracePeriod.Size = new System.Drawing.Size(162, 20);
+            this.checkBoxGracePeriod.Size = new System.Drawing.Size(161, 20);
             this.checkBoxGracePeriod.TabIndex = 2;
             this.checkBoxGracePeriod.Text = "Past Grace Period?";
             this.checkBoxGracePeriod.UseVisualStyleBackColor = true;
@@ -238,7 +311,7 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(105, 78);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(280, 16);
+            this.label3.Size = new System.Drawing.Size(279, 16);
             this.label3.TabIndex = 53;
             this.label3.Text = "* A blank due date selects ALL records!";
             // 
@@ -248,7 +321,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(13, 58);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 16);
+            this.label2.Size = new System.Drawing.Size(85, 16);
             this.label2.TabIndex = 52;
             this.label2.Text = "Debit Date:";
             // 
@@ -258,9 +331,18 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(27, 27);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(72, 16);
+            this.label4.Size = new System.Drawing.Size(71, 16);
             this.label4.TabIndex = 51;
             this.label4.Text = "Day Due:";
+            // 
+            // nullableDateTimePickerDebitDate
+            // 
+            this.nullableDateTimePickerDebitDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.nullableDateTimePickerDebitDate.Location = new System.Drawing.Point(102, 51);
+            this.nullableDateTimePickerDebitDate.Name = "nullableDateTimePickerDebitDate";
+            this.nullableDateTimePickerDebitDate.Size = new System.Drawing.Size(103, 26);
+            this.nullableDateTimePickerDebitDate.TabIndex = 3;
+            this.nullableDateTimePickerDebitDate.Value = new System.DateTime(2019, 12, 30, 0, 0, 0, 0);
             // 
             // comboBoxDayDue
             // 
@@ -289,93 +371,6 @@
             this.labelStatus.Size = new System.Drawing.Size(0, 16);
             this.labelStatus.TabIndex = 53;
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(24, 26);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(47, 16);
-            this.label5.TabIndex = 82;
-            this.label5.Text = "From:";
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.label8);
-            this.groupBox3.Controls.Add(this.label5);
-            this.groupBox3.Controls.Add(this.nullableDateTimePickerFundingTo);
-            this.groupBox3.Controls.Add(this.nullableDateTimePickerFundingFrom);
-            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(30, 196);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(349, 58);
-            this.groupBox3.TabIndex = 85;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Funding Date";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(190, 26);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(31, 16);
-            this.label8.TabIndex = 83;
-            this.label8.Text = "To:";
-            // 
-            // nullableDateTimePickerFundingTo
-            // 
-            this.nullableDateTimePickerFundingTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nullableDateTimePickerFundingTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.nullableDateTimePickerFundingTo.Location = new System.Drawing.Point(222, 22);
-            this.nullableDateTimePickerFundingTo.Name = "nullableDateTimePickerFundingTo";
-            this.nullableDateTimePickerFundingTo.Size = new System.Drawing.Size(103, 26);
-            this.nullableDateTimePickerFundingTo.TabIndex = 9;
-            this.nullableDateTimePickerFundingTo.Value = new System.DateTime(2019, 12, 30, 0, 0, 0, 0);
-            this.nullableDateTimePickerFundingTo.ValueChanged += new System.EventHandler(this.nullableDateTimePickerFundingTo_ValueChanged);
-            // 
-            // nullableDateTimePickerFundingFrom
-            // 
-            this.nullableDateTimePickerFundingFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nullableDateTimePickerFundingFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.nullableDateTimePickerFundingFrom.Location = new System.Drawing.Point(78, 22);
-            this.nullableDateTimePickerFundingFrom.Name = "nullableDateTimePickerFundingFrom";
-            this.nullableDateTimePickerFundingFrom.Size = new System.Drawing.Size(103, 26);
-            this.nullableDateTimePickerFundingFrom.TabIndex = 8;
-            this.nullableDateTimePickerFundingFrom.Value = new System.DateTime(2019, 12, 30, 0, 0, 0, 0);
-            this.nullableDateTimePickerFundingFrom.ValueChanged += new System.EventHandler(this.nullableDateTimePickerFundingFrom_ValueChanged);
-            // 
-            // nullableDateTimePickerContractTo
-            // 
-            this.nullableDateTimePickerContractTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nullableDateTimePickerContractTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.nullableDateTimePickerContractTo.Location = new System.Drawing.Point(222, 22);
-            this.nullableDateTimePickerContractTo.Name = "nullableDateTimePickerContractTo";
-            this.nullableDateTimePickerContractTo.Size = new System.Drawing.Size(103, 26);
-            this.nullableDateTimePickerContractTo.TabIndex = 7;
-            this.nullableDateTimePickerContractTo.Value = new System.DateTime(2019, 12, 30, 0, 0, 0, 0);
-            this.nullableDateTimePickerContractTo.ValueChanged += new System.EventHandler(this.nullableDateTimePickerContractTo_ValueChanged);
-            // 
-            // nullableDateTimePickerContractFrom
-            // 
-            this.nullableDateTimePickerContractFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nullableDateTimePickerContractFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.nullableDateTimePickerContractFrom.Location = new System.Drawing.Point(78, 22);
-            this.nullableDateTimePickerContractFrom.Name = "nullableDateTimePickerContractFrom";
-            this.nullableDateTimePickerContractFrom.Size = new System.Drawing.Size(103, 26);
-            this.nullableDateTimePickerContractFrom.TabIndex = 6;
-            this.nullableDateTimePickerContractFrom.Value = new System.DateTime(2019, 12, 30, 0, 0, 0, 0);
-            this.nullableDateTimePickerContractFrom.ValueChanged += new System.EventHandler(this.nullableDateTimePickerContractFrom_ValueChanged);
-            // 
-            // nullableDateTimePickerDebitDate
-            // 
-            this.nullableDateTimePickerDebitDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.nullableDateTimePickerDebitDate.Location = new System.Drawing.Point(102, 51);
-            this.nullableDateTimePickerDebitDate.Name = "nullableDateTimePickerDebitDate";
-            this.nullableDateTimePickerDebitDate.Size = new System.Drawing.Size(103, 26);
-            this.nullableDateTimePickerDebitDate.TabIndex = 3;
-            this.nullableDateTimePickerDebitDate.Value = new System.DateTime(2019, 12, 30, 0, 0, 0, 0);
-            // 
             // FormBULKSMSMessage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -398,15 +393,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerFundingTo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerFundingFrom)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerContractTo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerContractFrom)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDebitDate)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -425,7 +415,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
-        private ProManApp.NullableDateTimePicker nullableDateTimePickerDebitDate;
+        private UIComponent.DateTimePicker nullableDateTimePickerDebitDate;
         private System.Windows.Forms.ComboBox comboBoxDayDue;
         private System.Windows.Forms.Label labelStatus;
         private System.Windows.Forms.CheckBox checkBoxNoEFT;
@@ -434,12 +424,12 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private ProManApp.NullableDateTimePicker nullableDateTimePickerContractTo;
-        private ProManApp.NullableDateTimePicker nullableDateTimePickerContractFrom;
+        private UIComponent.DateTimePicker nullableDateTimePickerContractTo;
+        private UIComponent.DateTimePicker nullableDateTimePickerContractFrom;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label5;
-        private ProManApp.NullableDateTimePicker nullableDateTimePickerFundingTo;
-        private ProManApp.NullableDateTimePicker nullableDateTimePickerFundingFrom;
+        private UIComponent.DateTimePicker nullableDateTimePickerFundingTo;
+        private UIComponent.DateTimePicker nullableDateTimePickerFundingFrom;
     }
 }

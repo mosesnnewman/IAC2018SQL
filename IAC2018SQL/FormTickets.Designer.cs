@@ -85,7 +85,7 @@ namespace IAC2021SQL
             this.colorTextBoxOutofBalance = new IAC2021SQL.TicketColorTextBox();
             this.colorTextBoxCredits = new IAC2021SQL.TicketColorTextBox();
             this.colorTextBoxDebits = new IAC2021SQL.TicketColorTextBox();
-            this.NullableDateTimePickerDate = new ProManApp.NullableDateTimePicker();
+            this.NullableDateTimePickerDate = new UIComponent.DateTimePicker();
             this.buttonDeleteEntry = new System.Windows.Forms.Button();
             this.buttonReprint = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.cUSTOMERBindingSource)).BeginInit();
@@ -96,7 +96,6 @@ namespace IAC2021SQL
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceTicketDetail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ticketsdataset)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceTicketHeader)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NullableDateTimePickerDate)).BeginInit();
             this.SuspendLayout();
             // 
             // textBoxName
@@ -149,7 +148,7 @@ namespace IAC2021SQL
             this.labelName.Location = new System.Drawing.Point(129, 21);
             this.labelName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelName.Name = "labelName";
-            this.labelName.Size = new System.Drawing.Size(53, 16);
+            this.labelName.Size = new System.Drawing.Size(52, 16);
             this.labelName.TabIndex = 4;
             this.labelName.Text = "Name:";
             // 
@@ -160,7 +159,7 @@ namespace IAC2021SQL
             this.label1.Location = new System.Drawing.Point(123, 51);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 16);
+            this.label1.Size = new System.Drawing.Size(58, 16);
             this.label1.TabIndex = 5;
             this.label1.Text = "Dealer:";
             // 
@@ -199,7 +198,7 @@ namespace IAC2021SQL
             this.label2.Location = new System.Drawing.Point(115, 85);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 16);
+            this.label2.Size = new System.Drawing.Size(66, 16);
             this.label2.TabIndex = 7;
             this.label2.Text = "Account:";
             // 
@@ -292,7 +291,7 @@ namespace IAC2021SQL
             this.labelTicketID.Location = new System.Drawing.Point(266, 85);
             this.labelTicketID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelTicketID.Name = "labelTicketID";
-            this.labelTicketID.Size = new System.Drawing.Size(70, 16);
+            this.labelTicketID.Size = new System.Drawing.Size(69, 16);
             this.labelTicketID.TabIndex = 13;
             this.labelTicketID.Text = "TicketID:";
             // 
@@ -486,7 +485,7 @@ namespace IAC2021SQL
             this.labelExplanation.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelExplanation.Location = new System.Drawing.Point(651, 131);
             this.labelExplanation.Name = "labelExplanation";
-            this.labelExplanation.Size = new System.Drawing.Size(93, 16);
+            this.labelExplanation.Size = new System.Drawing.Size(92, 16);
             this.labelExplanation.TabIndex = 13;
             this.labelExplanation.Text = "Explanation:";
             // 
@@ -494,7 +493,7 @@ namespace IAC2021SQL
             // 
             this.labelDate.AutoSize = true;
             this.labelDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDate.Location = new System.Drawing.Point(373, 508);
+            this.labelDate.Location = new System.Drawing.Point(271, 508);
             this.labelDate.Name = "labelDate";
             this.labelDate.Size = new System.Drawing.Size(53, 20);
             this.labelDate.TabIndex = 78;
@@ -596,7 +595,7 @@ namespace IAC2021SQL
             this.checkBoxCloseOut.Enabled = false;
             this.checkBoxCloseOut.Location = new System.Drawing.Point(14, 507);
             this.checkBoxCloseOut.Name = "checkBoxCloseOut";
-            this.checkBoxCloseOut.Size = new System.Drawing.Size(132, 20);
+            this.checkBoxCloseOut.Size = new System.Drawing.Size(131, 20);
             this.checkBoxCloseOut.TabIndex = 91;
             this.checkBoxCloseOut.Text = "Close Out Ticket?";
             this.checkBoxCloseOut.UseVisualStyleBackColor = true;
@@ -637,7 +636,7 @@ namespace IAC2021SQL
             this.colorTextBoxDebits.Location = new System.Drawing.Point(329, 538);
             this.colorTextBoxDebits.Name = "colorTextBoxDebits";
             this.colorTextBoxDebits.ReadOnly = true;
-            this.colorTextBoxDebits.Size = new System.Drawing.Size(100, 22);
+            this.colorTextBoxDebits.Size = new System.Drawing.Size(201, 22);
             this.colorTextBoxDebits.TabIndex = 85;
             this.colorTextBoxDebits.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -646,10 +645,9 @@ namespace IAC2021SQL
             this.NullableDateTimePickerDate.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.bindingSourceTicketHeader, "Date", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "1/1/1980", "d"));
             this.NullableDateTimePickerDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NullableDateTimePickerDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.NullableDateTimePickerDate.Location = new System.Drawing.Point(432, 502);
+            this.NullableDateTimePickerDate.Location = new System.Drawing.Point(329, 502);
             this.NullableDateTimePickerDate.Name = "NullableDateTimePickerDate";
-            this.NullableDateTimePickerDate.ReadOnly = true;
-            this.NullableDateTimePickerDate.Size = new System.Drawing.Size(97, 26);
+            this.NullableDateTimePickerDate.Size = new System.Drawing.Size(109, 26);
             this.NullableDateTimePickerDate.TabIndex = 77;
             this.NullableDateTimePickerDate.Value = new System.DateTime(2021, 8, 19, 0, 0, 0, 0);
             // 
@@ -720,7 +718,6 @@ namespace IAC2021SQL
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceTicketDetail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ticketsdataset)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceTicketHeader)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NullableDateTimePickerDate)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -758,7 +755,7 @@ namespace IAC2021SQL
         private BrightIdeasSoftware.OLVColumn Credit;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Label labelExplanation;
-        private ProManApp.NullableDateTimePicker NullableDateTimePickerDate;
+        private UIComponent.DateTimePicker NullableDateTimePickerDate;
         private System.Windows.Forms.Label labelDate;
         private System.Windows.Forms.Label labelMadeBy;
         private System.Windows.Forms.TextBox textBoxMadeBy;

@@ -31,8 +31,7 @@
             this.buttonPost = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.StatementDatenullableDateTimePicker = new ProManApp.NullableDateTimePicker();
-            ((System.ComponentModel.ISupportInitialize)(this.StatementDatenullableDateTimePicker)).BeginInit();
+            this.StatementDatenullableDateTimePicker = new UIComponent.DateTimePicker();
             this.SuspendLayout();
             // 
             // buttonPost
@@ -87,7 +86,6 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "frmOpenCustomerFinanceChargeReport";
             this.Text = "Open Customer Finance Charge Report";
-            ((System.ComponentModel.ISupportInitialize)(this.StatementDatenullableDateTimePicker)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -98,6 +96,6 @@
         private System.Windows.Forms.Button buttonPost;
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Label label1;
-        private ProManApp.NullableDateTimePicker StatementDatenullableDateTimePicker;
+        private UIComponent.DateTimePicker StatementDatenullableDateTimePicker;
     }
 }

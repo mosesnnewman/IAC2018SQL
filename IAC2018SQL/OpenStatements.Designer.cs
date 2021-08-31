@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.ClosingDatenullableDateTimePicker = new ProManApp.NullableDateTimePicker();
+            this.ClosingDatenullableDateTimePicker = new UIComponent.DateTimePicker();
             this.labelLateNotices = new System.Windows.Forms.Label();
             this.buttonPost = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
@@ -37,14 +37,11 @@
             this.StatementbindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.opncustTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.OPNCUSTTableAdapter();
             this.label1 = new System.Windows.Forms.Label();
-            this.StatementDatenullableDateTimePicker = new ProManApp.NullableDateTimePicker();
+            this.StatementDatenullableDateTimePicker = new UIComponent.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
-            this.LastClosingDatenullableDateTimePicker = new ProManApp.NullableDateTimePicker();
-            ((System.ComponentModel.ISupportInitialize)(this.ClosingDatenullableDateTimePicker)).BeginInit();
+            this.LastClosingDatenullableDateTimePicker = new UIComponent.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.StatementDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.StatementbindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.StatementDatenullableDateTimePicker)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LastClosingDatenullableDateTimePicker)).BeginInit();
             this.SuspendLayout();
             // 
             // ClosingDatenullableDateTimePicker
@@ -156,11 +153,8 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "frmOpenStatements";
             this.Text = "Open End Statements";
-            ((System.ComponentModel.ISupportInitialize)(this.ClosingDatenullableDateTimePicker)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.StatementDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.StatementbindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.StatementDatenullableDateTimePicker)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.LastClosingDatenullableDateTimePicker)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -168,7 +162,7 @@
 
         #endregion
 
-        private ProManApp.NullableDateTimePicker ClosingDatenullableDateTimePicker;
+        private UIComponent.DateTimePicker ClosingDatenullableDateTimePicker;
         private System.Windows.Forms.Label labelLateNotices;
         private System.Windows.Forms.Button buttonPost;
         private System.Windows.Forms.Button buttonCancel;
@@ -176,8 +170,8 @@
         private System.Windows.Forms.BindingSource StatementbindingSource;
         private IACDataSetTableAdapters.OPNCUSTTableAdapter opncustTableAdapter;
         private System.Windows.Forms.Label label1;
-        private ProManApp.NullableDateTimePicker StatementDatenullableDateTimePicker;
+        private UIComponent.DateTimePicker StatementDatenullableDateTimePicker;
         private System.Windows.Forms.Label label2;
-        private ProManApp.NullableDateTimePicker LastClosingDatenullableDateTimePicker;
+        private UIComponent.DateTimePicker LastClosingDatenullableDateTimePicker;
     }
 }

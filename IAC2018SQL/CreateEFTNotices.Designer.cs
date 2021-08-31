@@ -34,7 +34,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.nullableDateTimePicker1 = new ProManApp.NullableDateTimePicker();
+            this.nullableDateTimePicker1 = new UIComponent.DateTimePicker();
             this.buttonCreateECHNotices = new System.Windows.Forms.Button();
             this.buttonSendSMS = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -48,7 +48,6 @@
             this.labelFileName = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePicker1)).BeginInit();
             this.groupBoxButtons.SuspendLayout();
             this.groupBoxTestAndAuto.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -281,7 +280,6 @@
             this.Load += new System.EventHandler(this.CreateECHNotices_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePicker1)).EndInit();
             this.groupBoxButtons.ResumeLayout(false);
             this.groupBoxTestAndAuto.ResumeLayout(false);
             this.groupBoxTestAndAuto.PerformLayout();
@@ -294,7 +292,7 @@
         #endregion
 
         private System.Windows.Forms.ComboBox comboBoxDayDue;
-        private ProManApp.NullableDateTimePicker nullableDateTimePicker1;
+        private UIComponent.DateTimePicker nullableDateTimePicker1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button buttonCreateECHNotices;
         private System.Windows.Forms.Button buttonSendSMS;

@@ -32,15 +32,13 @@
             this.buttonPost = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.nullableDateTimePickerCutOffDate = new ProManApp.NullableDateTimePicker();
+            this.nullableDateTimePickerCutOffDate = new UIComponent.DateTimePicker();
             this.labelBankTranDate = new System.Windows.Forms.Label();
-            this.nullableDateTimePickerBsnkTranDate = new ProManApp.NullableDateTimePicker();
+            this.nullableDateTimePickerBsnkTranDate = new UIComponent.DateTimePicker();
             this.textBoxDayDue = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.checkBoxAutobank = new System.Windows.Forms.CheckBox();
             this.buttonTransfer = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerCutOffDate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerBsnkTranDate)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonPost
@@ -74,7 +72,7 @@
             this.label1.Location = new System.Drawing.Point(117, 42);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 16);
+            this.label1.Size = new System.Drawing.Size(79, 16);
             this.label1.TabIndex = 5;
             this.label1.Text = "Cutt off date:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -97,7 +95,7 @@
             this.labelBankTranDate.Location = new System.Drawing.Point(49, 101);
             this.labelBankTranDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelBankTranDate.Name = "labelBankTranDate";
-            this.labelBankTranDate.Size = new System.Drawing.Size(148, 16);
+            this.labelBankTranDate.Size = new System.Drawing.Size(147, 16);
             this.labelBankTranDate.TabIndex = 8;
             this.labelBankTranDate.Text = "Bank Transaction Date:";
             this.labelBankTranDate.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -130,7 +128,7 @@
             this.label3.Location = new System.Drawing.Point(132, 70);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 16);
+            this.label3.Size = new System.Drawing.Size(63, 16);
             this.label3.TabIndex = 10;
             this.label3.Text = "Due Day:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -142,7 +140,7 @@
             this.checkBoxAutobank.Location = new System.Drawing.Point(274, 66);
             this.checkBoxAutobank.Margin = new System.Windows.Forms.Padding(4);
             this.checkBoxAutobank.Name = "checkBoxAutobank";
-            this.checkBoxAutobank.Size = new System.Drawing.Size(169, 20);
+            this.checkBoxAutobank.Size = new System.Drawing.Size(168, 20);
             this.checkBoxAutobank.TabIndex = 11;
             this.checkBoxAutobank.Text = "Create AUTOBANK File";
             this.checkBoxAutobank.UseVisualStyleBackColor = true;
@@ -181,8 +179,6 @@
             this.Name = "frmCreateAutoBankFiles";
             this.Text = "Create EFT Files / Reports";
             this.Load += new System.EventHandler(this.frmCreateAutoBankFiles_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerCutOffDate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerBsnkTranDate)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -193,9 +189,9 @@
         private System.Windows.Forms.Button buttonPost;
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Label label1;
-        private ProManApp.NullableDateTimePicker nullableDateTimePickerCutOffDate;
+        private UIComponent.DateTimePicker nullableDateTimePickerCutOffDate;
         private System.Windows.Forms.Label labelBankTranDate;
-        private ProManApp.NullableDateTimePicker nullableDateTimePickerBsnkTranDate;
+        private UIComponent.DateTimePicker nullableDateTimePickerBsnkTranDate;
         private System.Windows.Forms.TextBox textBoxDayDue;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.CheckBox checkBoxAutobank;

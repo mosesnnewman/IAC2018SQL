@@ -929,7 +929,22 @@ namespace IAC2021SQL
                 // Moses Newman 04/18/2019 Add Repo Log Tab
                 RepoLogTableAdapter.FillByCustomerNo(RepoData.RepoLog, cUSTOMER_NOTextBox.Text);
                 dataGridViewRepoLog.DataSource = RepoData.RepoLog;
-                
+
+                /*
+                // Moses Newman 08/30/2021 Fix issues with nuldates in 64 bit version
+                if (iACDataSet.VEHICLE.Rows[0].Field<DateTime?>("RepoDate") == null)
+                    iACDataSet.VEHICLE.Rows[0].SetField<DateTime>("RepoDate", DateTime.Parse("01/01/1900"));
+                if (iACDataSet.VEHICLE.Rows[0].Field<DateTime?>("LocationDate") == null)
+                    iACDataSet.VEHICLE.Rows[0].SetField<DateTime>("LocationDate", DateTime.Parse("01/01/1900"));
+                if (iACDataSet.VEHICLE.Rows[0].Field<DateTime?>("AuctionHouseDate") == null)
+                    iACDataSet.VEHICLE.Rows[0].SetField<DateTime>("AuctionHouseDate", DateTime.Parse("01/01/1900"));
+                if (iACDataSet.VEHICLE.Rows[0].Field<DateTime?>("TitleDateReceived") == null)
+                    iACDataSet.VEHICLE.Rows[0].SetField<DateTime>("TitleDateReceived", DateTime.Parse("01/01/1900"));
+                if (iACDataSet.VEHICLE.Rows[0].Field<DateTime?>("DateTitleReleased") == null)
+                    iACDataSet.VEHICLE.Rows[0].SetField<DateTime>("DateTitleReleased", DateTime.Parse("01/01/1900"));
+                VehiclebindingSource.EndEdit();
+                // Moses Newman End Mod 08/30/2021
+                */
                 // Moses Newman 08/02/2013 Save CUSTOMER_BALANCE so maintenance can NOT ALTER IT even though we display the current balance only posting routines may recalculate it and write the data.
                 if (iACDataSet.CUSTOMER.Rows[0].Field<Nullable<Decimal>>("CUSTOMER_BALANCE") != null && iACDataSet.CUSTOMER.Rows[0].Field<Nullable<Decimal>>("CUSTOMER_BALANCE") != 0)
                 {

@@ -59,7 +59,7 @@
             this.cUSTOMER_NOTextBox = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.StatetextBox = new System.Windows.Forms.TextBox();
-            this.TextAddOnDate = new ProManApp.NullableDateTimePicker();
+            this.TextAddOnDate = new UIComponent.DateTimePicker();
             this.txtAPR3 = new System.Windows.Forms.TextBox();
             this.OPNUPDATbindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.txtAPR2 = new System.Windows.Forms.TextBox();
@@ -94,7 +94,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.AddOnDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OPNCUSTbindingSource)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TextAddOnDate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OPNUPDATbindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddOnTypebindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OPNRATEbindingSource)).BeginInit();
@@ -245,7 +244,7 @@
             this.toolStripButtonDelete.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonDelete.Image")));
             this.toolStripButtonDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonDelete.Name = "toolStripButtonDelete";
-            this.toolStripButtonDelete.Size = new System.Drawing.Size(58, 22);
+            this.toolStripButtonDelete.Size = new System.Drawing.Size(60, 22);
             this.toolStripButtonDelete.Text = "&Delete";
             this.toolStripButtonDelete.Click += new System.EventHandler(this.toolStripButtonDelete_Click);
             // 
@@ -266,7 +265,7 @@
             this.toolStripButtonCancel.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonCancel.Image")));
             this.toolStripButtonCancel.ImageTransparentColor = System.Drawing.Color.Crimson;
             this.toolStripButtonCancel.Name = "toolStripButtonCancel";
-            this.toolStripButtonCancel.Size = new System.Drawing.Size(78, 22);
+            this.toolStripButtonCancel.Size = new System.Drawing.Size(85, 22);
             this.toolStripButtonCancel.Text = "&CancelAdd";
             // 
             // groupBox1
@@ -585,7 +584,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.OPNCUSTbindingSource)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.TextAddOnDate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.OPNUPDATbindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AddOnTypebindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.OPNRATEbindingSource)).EndInit();
@@ -627,7 +625,7 @@
         private System.Windows.Forms.TextBox txtAPR3;
         private System.Windows.Forms.TextBox txtAPR2;
         private System.Windows.Forms.TextBox txtAPR1;
-        private ProManApp.NullableDateTimePicker TextAddOnDate;
+        private UIComponent.DateTimePicker TextAddOnDate;
         private System.Windows.Forms.TextBox StatetextBox;
         private IACDataSetTableAdapters.OPNRATETableAdapter opnrateTableAdapter;
         private System.Windows.Forms.BindingSource OPNRATEbindingSource;
