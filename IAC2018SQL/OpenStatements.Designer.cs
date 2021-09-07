@@ -51,7 +51,7 @@
             this.ClosingDatenullableDateTimePicker.Name = "ClosingDatenullableDateTimePicker";
             this.ClosingDatenullableDateTimePicker.Size = new System.Drawing.Size(83, 20);
             this.ClosingDatenullableDateTimePicker.TabIndex = 2;
-            this.ClosingDatenullableDateTimePicker.Value = new System.DateTime(2013, 8, 5, 0, 0, 0, 0);
+            this.ClosingDatenullableDateTimePicker.Value = new System.DateTime(2021, 9, 7, 0, 0, 0, 0);
             this.ClosingDatenullableDateTimePicker.Validated += new System.EventHandler(this.NoticeDatenullableDateTimePicker_Validated);
             // 
             // labelLateNotices
@@ -115,7 +115,7 @@
             this.StatementDatenullableDateTimePicker.Name = "StatementDatenullableDateTimePicker";
             this.StatementDatenullableDateTimePicker.Size = new System.Drawing.Size(83, 20);
             this.StatementDatenullableDateTimePicker.TabIndex = 3;
-            this.StatementDatenullableDateTimePicker.Value = new System.DateTime(2013, 8, 5, 0, 0, 0, 0);
+            this.StatementDatenullableDateTimePicker.Value = new System.DateTime(2021, 9, 7, 0, 0, 0, 0);
             // 
             // label2
             // 
@@ -134,7 +134,7 @@
             this.LastClosingDatenullableDateTimePicker.Name = "LastClosingDatenullableDateTimePicker";
             this.LastClosingDatenullableDateTimePicker.Size = new System.Drawing.Size(83, 20);
             this.LastClosingDatenullableDateTimePicker.TabIndex = 1;
-            this.LastClosingDatenullableDateTimePicker.Value = new System.DateTime(2013, 8, 5, 0, 0, 0, 0);
+            this.LastClosingDatenullableDateTimePicker.Value = new System.DateTime(2021, 9, 7, 0, 0, 0, 0);
             // 
             // frmOpenStatements
             // 
