@@ -57,7 +57,7 @@
             this.DealerListbindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DealerZipTextBox = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dateTimePickerPostDate = new UIComponent.DateTimePicker();
+            this.dateTimePickerPostDate = new ProManApp.NullableDateTimePicker();
             this.CONTINGbindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.textBoxNPComment = new System.Windows.Forms.TextBox();
             this.textBoxNotesPayable = new System.Windows.Forms.TextBox();
@@ -836,6 +836,6 @@
         private System.Windows.Forms.ToolStripButton toolStripButtonDelete;
         private System.Windows.Forms.ToolStripButton toolStripButtonSave;
         private System.Windows.Forms.ToolStripButton toolStripButtonCancel;
-        private UIComponent.DateTimePicker dateTimePickerPostDate;
+        private ProManApp.NullableDateTimePicker dateTimePickerPostDate;
     }
 }

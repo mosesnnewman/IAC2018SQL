@@ -47,7 +47,7 @@
             this.toolStripButtonDelete = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonSave = new System.Windows.Forms.ToolStripButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.TextBoxPostDate = new UIComponent.DateTimePicker();
+            this.TextBoxPostDate = new ProManApp.NullableDateTimePicker();
             this.MACONTbindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.MasterName2textBox = new System.Windows.Forms.TextBox();
             this.Comment2textBox = new System.Windows.Forms.TextBox();
@@ -694,7 +694,7 @@
         private System.Windows.Forms.Label lblCurValue2;
         private System.Windows.Forms.TextBox txtYTDValue2;
         private System.Windows.Forms.TextBox txtCurValue2;
-        private UIComponent.DateTimePicker TextBoxPostDate;
+        private ProManApp.NullableDateTimePicker TextBoxPostDate;
         private System.Windows.Forms.TextBox MasterName2textBox;
         private System.Windows.Forms.TextBox Comment2textBox;
         private System.Windows.Forms.TextBox Amount2textBox;

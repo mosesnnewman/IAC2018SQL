@@ -59,7 +59,7 @@
             this.cUSTOMER_NOTextBox = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.StatetextBox = new System.Windows.Forms.TextBox();
-            this.TextAddOnDate = new UIComponent.DateTimePicker();
+            this.TextAddOnDate = new ProManApp.NullableDateTimePicker();
             this.txtAPR3 = new System.Windows.Forms.TextBox();
             this.OPNUPDATbindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.txtAPR2 = new System.Windows.Forms.TextBox();
@@ -625,7 +625,7 @@
         private System.Windows.Forms.TextBox txtAPR3;
         private System.Windows.Forms.TextBox txtAPR2;
         private System.Windows.Forms.TextBox txtAPR1;
-        private UIComponent.DateTimePicker TextAddOnDate;
+        private ProManApp.NullableDateTimePicker TextAddOnDate;
         private System.Windows.Forms.TextBox StatetextBox;
         private IACDataSetTableAdapters.OPNRATETableAdapter opnrateTableAdapter;
         private System.Windows.Forms.BindingSource OPNRATEbindingSource;

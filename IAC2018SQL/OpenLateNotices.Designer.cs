@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.NoticeDatenullableDateTimePicker = new UIComponent.DateTimePicker();
+            this.NoticeDatenullableDateTimePicker = new ProManApp.NullableDateTimePicker();
             this.labelLateNotices = new System.Windows.Forms.Label();
             this.buttonPost = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
@@ -121,7 +121,7 @@
 
         #endregion
 
-        private UIComponent.DateTimePicker NoticeDatenullableDateTimePicker;
+        private ProManApp.NullableDateTimePicker NoticeDatenullableDateTimePicker;
         private System.Windows.Forms.Label labelLateNotices;
         private System.Windows.Forms.Button buttonPost;
         private System.Windows.Forms.Button buttonCancel;

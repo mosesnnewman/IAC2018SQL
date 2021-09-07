@@ -41,7 +41,7 @@
             this.comboBoxSide = new System.Windows.Forms.ComboBox();
             this.textBoxPageCount = new System.Windows.Forms.TextBox();
             this.textBoxFileType = new System.Windows.Forms.TextBox();
-            this.nullableDateTimePickerArchivedDate = new UIComponent.DateTimePicker();
+            this.nullableDateTimePickerArchivedDate = new ProManApp.NullableDateTimePicker();
             this.textBoxSSNLast4 = new System.Windows.Forms.TextBox();
             this.textBoxDealerName = new System.Windows.Forms.TextBox();
             this.textBoxDealerNo = new System.Windows.Forms.TextBox();
@@ -364,7 +364,7 @@
         private System.Windows.Forms.TextBox textBoxDealerName;
         private System.Windows.Forms.TextBox textBoxDealerNo;
         private System.Windows.Forms.TextBox textBoxSSNLast4;
-        private UIComponent.DateTimePicker nullableDateTimePickerArchivedDate;
+        private ProManApp.NullableDateTimePicker nullableDateTimePickerArchivedDate;
         private System.Windows.Forms.TextBox textBoxFileType;
         private System.Windows.Forms.TextBox textBoxPageCount;
         private System.Windows.Forms.Button buttonSelectPDF;

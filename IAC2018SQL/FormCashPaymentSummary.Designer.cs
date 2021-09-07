@@ -33,8 +33,8 @@ namespace IAC2021SQL
             this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonPost = new System.Windows.Forms.Button();
             this.groupBoxSelection = new System.Windows.Forms.GroupBox();
-            this.nullableDateTimePickerEndDate = new UIComponent.DateTimePicker();
-            this.nullableDateTimePickerStartDate = new UIComponent.DateTimePicker();
+            this.nullableDateTimePickerEndDate = new ProManApp.NullableDateTimePicker();
+            this.nullableDateTimePickerStartDate = new ProManApp.NullableDateTimePicker();
             this.labelEndDate = new System.Windows.Forms.Label();
             this.labelStartDate = new System.Windows.Forms.Label();
             this.groupBoxButtons.SuspendLayout();
@@ -159,8 +159,8 @@ namespace IAC2021SQL
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Button buttonPost;
         private System.Windows.Forms.GroupBox groupBoxSelection;
-        private UIComponent.DateTimePicker nullableDateTimePickerEndDate;
-        private UIComponent.DateTimePicker nullableDateTimePickerStartDate;
+        private ProManApp.NullableDateTimePicker nullableDateTimePickerEndDate;
+        private ProManApp.NullableDateTimePicker nullableDateTimePickerStartDate;
         private System.Windows.Forms.Label labelEndDate;
         private System.Windows.Forms.Label labelStartDate;
     }

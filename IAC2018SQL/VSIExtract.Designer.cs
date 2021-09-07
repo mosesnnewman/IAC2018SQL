@@ -41,8 +41,8 @@
             this.textBoxState = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dLRLISTBYNUMTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.DLRLISTBYNUMTableAdapter();
-            this.nullableDateTimePickerEndDate = new UIComponent.DateTimePicker();
-            this.nullableDateTimePickerStartDate = new UIComponent.DateTimePicker();
+            this.nullableDateTimePickerEndDate = new ProManApp.NullableDateTimePicker();
+            this.nullableDateTimePickerStartDate = new ProManApp.NullableDateTimePicker();
             this.groupBoxSelection = new System.Windows.Forms.GroupBox();
             this.groupBoxButtons = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceDLRLISTBYNUM)).BeginInit();
@@ -249,8 +249,8 @@
         private System.Windows.Forms.TextBox textBoxDealerName;
         private System.Windows.Forms.ComboBox comboBoxDealer;
         private System.Windows.Forms.Label labelDealerNum;
-        private UIComponent.DateTimePicker nullableDateTimePickerEndDate;
-        private UIComponent.DateTimePicker nullableDateTimePickerStartDate;
+        private ProManApp.NullableDateTimePicker nullableDateTimePickerEndDate;
+        private ProManApp.NullableDateTimePicker nullableDateTimePickerStartDate;
         private System.Windows.Forms.Label labelEndDate;
         private System.Windows.Forms.Label labelStartDate;
         private System.Windows.Forms.Button buttonCancel;

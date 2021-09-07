@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.ClosingDatenullableDateTimePicker = new UIComponent.DateTimePicker();
+            this.ClosingDatenullableDateTimePicker = new ProManApp.NullableDateTimePicker();
             this.labelLateNotices = new System.Windows.Forms.Label();
             this.buttonPost = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
@@ -37,9 +37,9 @@
             this.StatementbindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.opncustTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.OPNCUSTTableAdapter();
             this.label1 = new System.Windows.Forms.Label();
-            this.StatementDatenullableDateTimePicker = new UIComponent.DateTimePicker();
+            this.StatementDatenullableDateTimePicker = new ProManApp.NullableDateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
-            this.LastClosingDatenullableDateTimePicker = new UIComponent.DateTimePicker();
+            this.LastClosingDatenullableDateTimePicker = new ProManApp.NullableDateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.StatementDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.StatementbindingSource)).BeginInit();
             this.SuspendLayout();
@@ -162,7 +162,7 @@
 
         #endregion
 
-        private UIComponent.DateTimePicker ClosingDatenullableDateTimePicker;
+        private ProManApp.NullableDateTimePicker ClosingDatenullableDateTimePicker;
         private System.Windows.Forms.Label labelLateNotices;
         private System.Windows.Forms.Button buttonPost;
         private System.Windows.Forms.Button buttonCancel;
@@ -170,8 +170,8 @@
         private System.Windows.Forms.BindingSource StatementbindingSource;
         private IACDataSetTableAdapters.OPNCUSTTableAdapter opncustTableAdapter;
         private System.Windows.Forms.Label label1;
-        private UIComponent.DateTimePicker StatementDatenullableDateTimePicker;
+        private ProManApp.NullableDateTimePicker StatementDatenullableDateTimePicker;
         private System.Windows.Forms.Label label2;
-        private UIComponent.DateTimePicker LastClosingDatenullableDateTimePicker;
+        private ProManApp.NullableDateTimePicker LastClosingDatenullableDateTimePicker;
     }
 }

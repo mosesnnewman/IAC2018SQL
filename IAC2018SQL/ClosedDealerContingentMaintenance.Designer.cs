@@ -104,7 +104,7 @@
             this.textBoxInterestSimple = new System.Windows.Forms.TextBox();
             this.textBoxOLD_SW = new System.Windows.Forms.TextBox();
             this.textBoxAMORT_SW = new System.Windows.Forms.TextBox();
-            this.dateTimePickerPostDate = new UIComponent.DateTimePicker();
+            this.dateTimePickerPostDate = new ProManApp.NullableDateTimePicker();
             cUSTOMER_DEALERLabel = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
             cUSTOMER_STREET_1Label = new System.Windows.Forms.Label();
@@ -1040,7 +1040,7 @@
         private System.Windows.Forms.TextBox textBoxNotesPayable;
         private System.Windows.Forms.TextBox textBoxNPComment;
         private System.Windows.Forms.GroupBox groupBox2;
-        private UIComponent.DateTimePicker dateTimePickerPostDate;
+        private ProManApp.NullableDateTimePicker dateTimePickerPostDate;
         private System.Windows.Forms.TextBox textBoxOLD_SW;
         private System.Windows.Forms.TextBox textBoxAMORT_SW;
         private System.Windows.Forms.TextBox textBoxSIMPLE_SW;

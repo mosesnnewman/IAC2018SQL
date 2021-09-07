@@ -34,8 +34,8 @@
             this.labelStartDate = new System.Windows.Forms.Label();
             this.iACDataSet = new IAC2021SQL.IACDataSet();
             this.labelEndDate = new System.Windows.Forms.Label();
-            this.nullableDateTimePickerStartDate = new UIComponent.DateTimePicker();
-            this.nullableDateTimePickerEndDate = new UIComponent.DateTimePicker();
+            this.nullableDateTimePickerStartDate = new ProManApp.NullableDateTimePicker();
+            this.nullableDateTimePickerEndDate = new ProManApp.NullableDateTimePicker();
             this.textBoxDealerName = new System.Windows.Forms.TextBox();
             this.bindingSourceDLRLISTBYNUM = new System.Windows.Forms.BindingSource(this.components);
             this.comboBoxDealer = new System.Windows.Forms.ComboBox();
@@ -185,8 +185,8 @@
         private System.Windows.Forms.Label labelStartDate;
         private IACDataSet iACDataSet;
         private System.Windows.Forms.Label labelEndDate;
-        private UIComponent.DateTimePicker nullableDateTimePickerStartDate;
-        private UIComponent.DateTimePicker nullableDateTimePickerEndDate;
+        private ProManApp.NullableDateTimePicker nullableDateTimePickerStartDate;
+        private ProManApp.NullableDateTimePicker nullableDateTimePickerEndDate;
         private System.Windows.Forms.TextBox textBoxDealerName;
         private System.Windows.Forms.ComboBox comboBoxDealer;
         private System.Windows.Forms.Label labelDealerNum;

@@ -34,7 +34,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.nullableDateTimePicker1 = new UIComponent.DateTimePicker();
+            this.nullableDateTimePicker1 = new ProManApp.NullableDateTimePicker();
             this.buttonCreateECHNotices = new System.Windows.Forms.Button();
             this.buttonSendSMS = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -292,7 +292,7 @@
         #endregion
 
         private System.Windows.Forms.ComboBox comboBoxDayDue;
-        private UIComponent.DateTimePicker nullableDateTimePicker1;
+        private ProManApp.NullableDateTimePicker nullableDateTimePicker1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button buttonCreateECHNotices;
         private System.Windows.Forms.Button buttonSendSMS;

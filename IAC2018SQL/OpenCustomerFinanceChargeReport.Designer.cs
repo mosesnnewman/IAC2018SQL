@@ -31,7 +31,7 @@
             this.buttonPost = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.StatementDatenullableDateTimePicker = new UIComponent.DateTimePicker();
+            this.StatementDatenullableDateTimePicker = new ProManApp.NullableDateTimePicker();
             this.SuspendLayout();
             // 
             // buttonPost
@@ -96,6 +96,6 @@
         private System.Windows.Forms.Button buttonPost;
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Label label1;
-        private UIComponent.DateTimePicker StatementDatenullableDateTimePicker;
+        private ProManApp.NullableDateTimePicker StatementDatenullableDateTimePicker;
     }
 }
