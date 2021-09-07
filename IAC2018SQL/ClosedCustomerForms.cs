@@ -3152,6 +3152,8 @@ namespace IAC2021SQL
                 if ((String)loLockedBy == Program.gsUserID && lbILockedIt)
                     cUSTOMERTableAdapter.UnlockRecord(iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO"));
             }
+            iACDataSet.Clear();     // Moses Newman 09/04/2021  
+            iACDataSet.Dispose();   // Moses Newman 09/04/2021 
         }
 
         private void toolStripButtonCalcBuyout_Click(object sender, EventArgs e)

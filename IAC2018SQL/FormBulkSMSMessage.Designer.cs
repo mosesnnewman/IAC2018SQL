@@ -39,13 +39,13 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.nullableDateTimePickerFundingTo = new UIComponent.DateTimePicker();
-            this.nullableDateTimePickerFundingFrom = new UIComponent.DateTimePicker();
+            this.nullableDateTimePickerFundingTo = new ProManApp.NullableDateTimePicker();
+            this.nullableDateTimePickerFundingFrom = new ProManApp.NullableDateTimePicker();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.nullableDateTimePickerContractTo = new UIComponent.DateTimePicker();
-            this.nullableDateTimePickerContractFrom = new UIComponent.DateTimePicker();
+            this.nullableDateTimePickerContractTo = new ProManApp.NullableDateTimePicker();
+            this.nullableDateTimePickerContractFrom = new ProManApp.NullableDateTimePicker();
             this.txtPaidThrough = new System.Windows.Forms.MaskedTextBox();
             this.labelPaidThrough = new System.Windows.Forms.Label();
             this.checkBoxNoEFT = new System.Windows.Forms.CheckBox();
@@ -53,7 +53,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.nullableDateTimePickerDebitDate = new UIComponent.DateTimePicker();
+            this.nullableDateTimePickerDebitDate = new ProManApp.NullableDateTimePicker();
             this.comboBoxDayDue = new System.Windows.Forms.ComboBox();
             this.labelStatus = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -415,7 +415,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
-        private UIComponent.DateTimePicker nullableDateTimePickerDebitDate;
+        private ProManApp.NullableDateTimePicker nullableDateTimePickerDebitDate;
         private System.Windows.Forms.ComboBox comboBoxDayDue;
         private System.Windows.Forms.Label labelStatus;
         private System.Windows.Forms.CheckBox checkBoxNoEFT;
@@ -424,12 +424,12 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private UIComponent.DateTimePicker nullableDateTimePickerContractTo;
-        private UIComponent.DateTimePicker nullableDateTimePickerContractFrom;
+        private ProManApp.NullableDateTimePicker nullableDateTimePickerContractTo;
+        private ProManApp.NullableDateTimePicker nullableDateTimePickerContractFrom;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label5;
-        private UIComponent.DateTimePicker nullableDateTimePickerFundingTo;
-        private UIComponent.DateTimePicker nullableDateTimePickerFundingFrom;
+        private ProManApp.NullableDateTimePicker nullableDateTimePickerFundingTo;
+        private ProManApp.NullableDateTimePicker nullableDateTimePickerFundingFrom;
     }
 }

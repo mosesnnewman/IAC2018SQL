@@ -30,11 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCreateTSBExtract));
             this.label1 = new System.Windows.Forms.Label();
-            this.nullableDateTimePickerControlDate = new UIComponent.DateTimePicker();
+            this.nullableDateTimePickerControlDate = new ProManApp.NullableDateTimePicker();
             this.checkBoxCreateBoth = new System.Windows.Forms.CheckBox();
             this.buttonTransfer = new System.Windows.Forms.Button();
-            this.nullableDateTimePickerFrom = new UIComponent.DateTimePicker();
-            this.nullableDateTimePickerTo = new UIComponent.DateTimePicker();
+            this.nullableDateTimePickerFrom = new ProManApp.NullableDateTimePicker();
+            this.nullableDateTimePickerTo = new ProManApp.NullableDateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.checkBoxIgnoreBureauSwitch = new System.Windows.Forms.CheckBox();
@@ -190,11 +190,11 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private UIComponent.DateTimePicker nullableDateTimePickerControlDate;
+        private ProManApp.NullableDateTimePicker nullableDateTimePickerControlDate;
         private System.Windows.Forms.CheckBox checkBoxCreateBoth;
         private System.Windows.Forms.Button buttonTransfer;
-        private UIComponent.DateTimePicker nullableDateTimePickerFrom;
-        private UIComponent.DateTimePicker nullableDateTimePickerTo;
+        private ProManApp.NullableDateTimePicker nullableDateTimePickerFrom;
+        private ProManApp.NullableDateTimePicker nullableDateTimePickerTo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.CheckBox checkBoxIgnoreBureauSwitch;

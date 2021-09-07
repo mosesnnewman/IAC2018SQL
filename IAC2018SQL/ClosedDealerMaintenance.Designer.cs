@@ -205,7 +205,7 @@
             this.DealerInfogroupBox = new System.Windows.Forms.GroupBox();
             this.textBoxDealerEmail = new System.Windows.Forms.TextBox();
             this.maskedTextBoxCellPhone = new System.Windows.Forms.MaskedTextBox();
-            this.nullableDateTimePickerDealerStartDate = new UIComponent.DateTimePicker();
+            this.nullableDateTimePickerDealerStartDate = new ProManApp.NullableDateTimePicker();
             this.DealerZipTextBox = new System.Windows.Forms.TextBox();
             this.DEALERcomboBox = new System.Windows.Forms.ComboBox();
             this.DLRLISTBYNUMbindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -3652,7 +3652,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn21;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn22;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn23;
-        private UIComponent.DateTimePicker nullableDateTimePickerDealerStartDate;
+        private ProManApp.NullableDateTimePicker nullableDateTimePickerDealerStartDate;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxCellPhone;
         private System.Windows.Forms.TextBox textBoxDealerEmail;
         private System.Windows.Forms.ToolStripButton toolStripButton1;

@@ -40,8 +40,8 @@
             this.DLRLISTBYNUMbindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.comboBoxDealer = new System.Windows.Forms.ComboBox();
             this.textBoxDealerName = new System.Windows.Forms.TextBox();
-            this.nullableDateTimePickerTo = new UIComponent.DateTimePicker();
-            this.nullableDateTimePickerFrom = new UIComponent.DateTimePicker();
+            this.nullableDateTimePickerTo = new ProManApp.NullableDateTimePicker();
+            this.nullableDateTimePickerFrom = new ProManApp.NullableDateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -441,8 +441,8 @@
         private System.Windows.Forms.BindingSource DLRLISTBYNUMbindingSource;
         private System.Windows.Forms.ComboBox comboBoxDealer;
         private System.Windows.Forms.TextBox textBoxDealerName;
-        private UIComponent.DateTimePicker nullableDateTimePickerTo;
-        private UIComponent.DateTimePicker nullableDateTimePickerFrom;
+        private ProManApp.NullableDateTimePicker nullableDateTimePickerTo;
+        private ProManApp.NullableDateTimePicker nullableDateTimePickerFrom;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox3;

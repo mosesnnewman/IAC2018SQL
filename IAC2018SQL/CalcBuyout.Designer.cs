@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.nullableDateTimePicker1 = new UIComponent.DateTimePicker();
+            this.nullableDateTimePicker1 = new ProManApp.NullableDateTimePicker();
             this.textBoxBuyout = new System.Windows.Forms.TextBox();
             this.labelBuyout = new System.Windows.Forms.Label();
             this.buttonCalcBuyout = new System.Windows.Forms.Button();
@@ -92,7 +92,7 @@
 
         #endregion
 
-        private UIComponent.DateTimePicker nullableDateTimePicker1;
+        private ProManApp.NullableDateTimePicker nullableDateTimePicker1;
         private System.Windows.Forms.TextBox textBoxBuyout;
         private System.Windows.Forms.Label labelBuyout;
         private System.Windows.Forms.Button buttonCalcBuyout;

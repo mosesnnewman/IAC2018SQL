@@ -112,7 +112,7 @@
             this.label10s = new System.Windows.Forms.Label();
             this.textBox10s = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
-            this.nullableDateTimePickerHoldDate = new UIComponent.DateTimePicker();
+            this.nullableDateTimePickerHoldDate = new ProManApp.NullableDateTimePicker();
             this.checkBoxHold = new System.Windows.Forms.CheckBox();
             this.label35 = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
@@ -1693,7 +1693,7 @@
         private IACDataSetTableAdapters.ReceiptTableAdapter receiptTableAdapter;
         private System.Windows.Forms.CheckBox checkBoxHold;
         private System.Windows.Forms.Label label23;
-        private UIComponent.DateTimePicker nullableDateTimePickerHoldDate;
+        private ProManApp.NullableDateTimePicker nullableDateTimePickerHoldDate;
         private System.Windows.Forms.Label labelCashChange;
         private System.Windows.Forms.TextBox textBoxCashChange;
         private System.Windows.Forms.Label label10s;

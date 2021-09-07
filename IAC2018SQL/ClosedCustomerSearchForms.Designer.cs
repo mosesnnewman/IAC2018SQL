@@ -90,11 +90,11 @@
             this.EmailAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CosignerEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CustomerGroupBox = new System.Windows.Forms.GroupBox();
-            this.NullableDateTimePickerSrchDOB = new UIComponent.DateTimePicker();
+            this.NullableDateTimePickerSrchDOB = new ProManApp.NullableDateTimePicker();
             this.richTextBoxEmailAddress = new System.Windows.Forms.TextBox();
             this.cUSTOMER_PURCHASE_ORDERTextBox = new System.Windows.Forms.TextBox();
             this.groupBoxCosigner = new System.Windows.Forms.GroupBox();
-            this.nullableDateTimePickerCOSDOB = new UIComponent.DateTimePicker();
+            this.nullableDateTimePickerCOSDOB = new ProManApp.NullableDateTimePicker();
             this.textBoxCOSWORKEXT = new System.Windows.Forms.TextBox();
             this.COSIGNER_STATESrchTextBox = new System.Windows.Forms.TextBox();
             this.COSIGNER_ZIPSrchTextBox = new System.Windows.Forms.TextBox();
@@ -1511,8 +1511,8 @@
         private System.Windows.Forms.TextBox cUSTOMER_PURCHASE_ORDERTextBox;
         private System.Windows.Forms.TextBox richTextBoxEmailAddress;
         private IACDataSetTableAdapters.CustomerMailTableAdapter customerMailTableAdapter;
-        private UIComponent.DateTimePicker NullableDateTimePickerSrchDOB;
-        private UIComponent.DateTimePicker nullableDateTimePickerCOSDOB;
+        private ProManApp.NullableDateTimePicker NullableDateTimePickerSrchDOB;
+        private ProManApp.NullableDateTimePicker nullableDateTimePickerCOSDOB;
         private System.Windows.Forms.DataGridViewTextBoxColumn cUSTOMERNODataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn CustomerActType;
         private System.Windows.Forms.DataGridViewTextBoxColumn CustomerActStat;

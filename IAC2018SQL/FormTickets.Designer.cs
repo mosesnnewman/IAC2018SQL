@@ -85,7 +85,7 @@ namespace IAC2021SQL
             this.colorTextBoxOutofBalance = new IAC2021SQL.TicketColorTextBox();
             this.colorTextBoxCredits = new IAC2021SQL.TicketColorTextBox();
             this.colorTextBoxDebits = new IAC2021SQL.TicketColorTextBox();
-            this.NullableDateTimePickerDate = new UIComponent.DateTimePicker();
+            this.NullableDateTimePickerDate = new ProManApp.NullableDateTimePicker();
             this.buttonDeleteEntry = new System.Windows.Forms.Button();
             this.buttonReprint = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.cUSTOMERBindingSource)).BeginInit();
@@ -755,7 +755,7 @@ namespace IAC2021SQL
         private BrightIdeasSoftware.OLVColumn Credit;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Label labelExplanation;
-        private UIComponent.DateTimePicker NullableDateTimePickerDate;
+        private ProManApp.NullableDateTimePicker NullableDateTimePickerDate;
         private System.Windows.Forms.Label labelDate;
         private System.Windows.Forms.Label labelMadeBy;
         private System.Windows.Forms.TextBox textBoxMadeBy;

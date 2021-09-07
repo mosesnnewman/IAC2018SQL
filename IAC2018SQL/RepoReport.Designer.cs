@@ -49,8 +49,8 @@
             this.radioButtonStatusBoth = new System.Windows.Forms.RadioButton();
             this.radioButtonInactive = new System.Windows.Forms.RadioButton();
             this.radioButtonActive = new System.Windows.Forms.RadioButton();
-            this.nullableDateTimePickerStartDate = new UIComponent.DateTimePicker();
-            this.nullableDateTimePickerEndDate = new UIComponent.DateTimePicker();
+            this.nullableDateTimePickerStartDate = new ProManApp.NullableDateTimePicker();
+            this.nullableDateTimePickerEndDate = new ProManApp.NullableDateTimePicker();
             this.labelStart = new System.Windows.Forms.Label();
             this.labelEnd = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -404,8 +404,8 @@
         private System.Windows.Forms.RadioButton radioButtonStatusBoth;
         private System.Windows.Forms.RadioButton radioButtonInactive;
         private System.Windows.Forms.RadioButton radioButtonActive;
-        private UIComponent.DateTimePicker nullableDateTimePickerStartDate;
-        private UIComponent.DateTimePicker nullableDateTimePickerEndDate;
+        private ProManApp.NullableDateTimePicker nullableDateTimePickerStartDate;
+        private ProManApp.NullableDateTimePicker nullableDateTimePickerEndDate;
         private System.Windows.Forms.Label labelStart;
         private System.Windows.Forms.Label labelEnd;
         private System.Windows.Forms.GroupBox groupBox2;

@@ -32,8 +32,8 @@
             this.groupBoxDateSelection = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.nullableDateTimePickerFrom = new UIComponent.DateTimePicker();
-            this.nullableDateTimePickerTo = new UIComponent.DateTimePicker();
+            this.nullableDateTimePickerFrom = new ProManApp.NullableDateTimePicker();
+            this.nullableDateTimePickerTo = new ProManApp.NullableDateTimePicker();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.buttonExcel = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
@@ -153,8 +153,8 @@
         private System.Windows.Forms.GroupBox groupBoxDateSelection;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private UIComponent.DateTimePicker nullableDateTimePickerFrom;
-        private UIComponent.DateTimePicker nullableDateTimePickerTo;
+        private ProManApp.NullableDateTimePicker nullableDateTimePickerFrom;
+        private ProManApp.NullableDateTimePicker nullableDateTimePickerTo;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button buttonCancel;
         public System.Windows.Forms.Button buttonExcel;

@@ -14,7 +14,6 @@ using S9API.Models;
 using Newtonsoft.Json;
 using System.Net;
 
-//using TValue6SDK;
 using TValue6Engine2;
 
 
@@ -75,8 +74,8 @@ namespace IAC2021SQL
 			return TVSimpleGetBuyoutAPI(tvWorkspace,tdsAmortDT, tdPayoffDate, tnTerm, tnAPR, tnMonthlyAmountOwed, tcCustomer, tbSimple, tbSave, tbEOM, tbPayment, tnPaymentPos, tbCutoff);
         }
 
-		
-		static public decimal TVSimpleGetBuyoutAPI(TVWorkspace tvWorkspace,IACDataSet tdsAmortDT, DateTime tdPayoffDate, double tnTerm, double tnAPR, double tnMonthlyAmountOwed, String tcCustomer = "99-", Boolean tbSimple = false, Boolean tbSave = false, Boolean tbEOM = true, Boolean tbPayment = false, Int32 tnPaymentPos = -1, Boolean tbCutoff = false)
+
+		static public decimal TVSimpleGetBuyoutAPI(TVWorkspace tvWorkspace, IACDataSet tdsAmortDT, DateTime tdPayoffDate, double tnTerm, double tnAPR, double tnMonthlyAmountOwed, String tcCustomer = "99-", Boolean tbSimple = false, Boolean tbSave = false, Boolean tbEOM = true, Boolean tbPayment = false, Int32 tnPaymentPos = -1, Boolean tbCutoff = false)
 		{
 			// tnLoanAmount         = Original Loan Amount
 			// tnTerm                = Loan term in months
@@ -86,8 +85,8 @@ namespace IAC2021SQL
 
 			string szGroupName;
 
-			string[] arLoanNames = { "NEW", "LATE/ISF", "INSUF"};
-			string[] arPaymentNames = { "PAY/ADJ", "UPD", "BUYOUT/UNEARNED"};
+			string[] arLoanNames = { "NEW", "LATE/ISF", "INSUF" };
+			string[] arPaymentNames = { "PAY/ADJ", "UPD", "BUYOUT/UNEARNED" };
 
 			int[] arLoanEvents;
 			int[] arPaymentEvents;
@@ -133,7 +132,7 @@ namespace IAC2021SQL
 			IACDataSetTableAdapters.CUSTOMERTableAdapter CUSTOMERTableAdapter = new IACDataSetTableAdapters.CUSTOMERTableAdapter();
 			IACDataSetTableAdapters.CUSTHISTTableAdapter CUSTHISTTableAdapter = new IACDataSetTableAdapters.CUSTHISTTableAdapter();
 			BindingSource CUSTHISTBindingSource = new BindingSource();
-		    
+
 			if (tcCustomer == "99-")
 				tcCustomer += gsUserID;
 
@@ -326,18 +325,18 @@ namespace IAC2021SQL
 							break;
 						case "I":
 						case "N":
-							if(DTPayStream.Rows[i].Field<String>("CUSTHIST_PAYMENT_TYPE") == "N")
+							if (DTPayStream.Rows[i].Field<String>("CUSTHIST_PAYMENT_TYPE") == "N")
 								tvDocument.CashFlowMatrix.SetEvent(currentLine, TVConstants.TVEventType.Loan, arLoanEvents[1]);
 							else
 								tvDocument.CashFlowMatrix.SetEvent(currentLine, TVConstants.TVEventType.Loan, arLoanEvents[2]);
 							tvDocument.CashFlowMatrix.SetAmount(currentLine, (double)(DTPayStream.Rows[i].Field<Decimal>("CUSTHIST_PAYMENT_RCV") * -1) * CENTS_PER_DOLLAR);
-							tvDocument.CashFlowMatrix.SetNumber(currentLine, 1); 
+							tvDocument.CashFlowMatrix.SetNumber(currentLine, 1);
 							break;
 						// Moses Newman 10/23/2013 Add support for Rate Change Events
 						case "F":
-							tvDocument.CashFlowMatrix.SetEvent(currentLine, TVConstants.TVEventType.RateChange,0);
-							if(tbSimple)
-								tvDocument.CashFlowMatrix.SetPeriodAndRate(currentLine, TVConstants.TVPeriod.ExactDays, (Double)DTPayStream.Rows[i].Field<Decimal>("TVRateChange") /100);
+							tvDocument.CashFlowMatrix.SetEvent(currentLine, TVConstants.TVEventType.RateChange, 0);
+							if (tbSimple)
+								tvDocument.CashFlowMatrix.SetPeriodAndRate(currentLine, TVConstants.TVPeriod.ExactDays, (Double)DTPayStream.Rows[i].Field<Decimal>("TVRateChange") / 100);
 							else
 								tvDocument.CashFlowMatrix.SetPeriodAndRate(currentLine, TVConstants.TVPeriod.Daily, (Double)DTPayStream.Rows[i].Field<Decimal>("TVRateChange") / 100);
 							break;
@@ -401,7 +400,7 @@ namespace IAC2021SQL
 			// Do NOT sort event anymore because they are already sorted the way we need, a call to the TValue engine's sort will put INSUF in the wrong order with the original payment!
 			//cfm.Sort();   
 
-			
+
 			//?cfm.RateMode = TValueEngineLib.TVRateMode.TVRateModeExtended;
 
 			// Solve the problem. Returns the unknownValue
@@ -438,7 +437,7 @@ namespace IAC2021SQL
 			}
 			TVAPRInfoTableAdapter.Dispose();
 			// End of new APRInfo
-			
+
 			tvDocument.AmortizationSchedule.GenerateSchedule();
 			TVGetAmortTableAPI(tvDocument, DTPayStream, tcCustomer, false, false);
 			//tvDocument.Delete();
@@ -447,7 +446,6 @@ namespace IAC2021SQL
 			tvDocument.Delete();
 			return (Decimal)tnMonthlyAmountOwed;
 		}
-		
 
 		static public decimal TVSimpleGetBuyoutDLL(IACDataSet tdsAmortDT,DateTime tdPayoffDate,double tnTerm,double tnAPR,double tnMonthlyAmountOwed, String tcCustomer = "99-", Boolean tbSimple = false,Boolean tbSave = false,Boolean tbEOM = true,Boolean tbPayment = false, Int32 tnPaymentPos = -1,Boolean tbCutoff = false)
 		{
@@ -797,6 +795,7 @@ namespace IAC2021SQL
 			//TVAmortizeDLL(tdStartDate, tdFirstPaymentDate, ref tnLoanAmount, ref tnTerm, ref tnAPR, ref tnMonthlyAmountOwed, ref tsReturnCodeMessage, ref tAmortRec, MemOnly, tcCustomer, tbSimple);
 		}
 
+		
 		// Moses Newman 08/23/2021
 		static public void TVAmortizeAPI(TVWorkspace tvWorkspace,DateTime tdStartDate, DateTime tdFirstPaymentDate, ref double tnLoanAmount, ref double tnTerm, ref double tnAPR, ref double tnMonthlyAmountOwed, ref string tsReturnCodeMessage, ref AmortRec[] tAmortRec, Boolean MemOnly = false, String tcCustomer = "99-", Boolean tbSimple = false)
 		{
@@ -826,7 +825,10 @@ namespace IAC2021SQL
 				if (tnAPR > 0)
 					tvDocument.CashFlowMatrix.SetPeriodAndRate(TVConstants.TVPeriod.ExactDays, tnAPR);
 				else
+				{
+					tvDocument.CashFlowMatrix.SetPeriodAndRate(TVConstants.TVPeriod.ExactDays, 0);
 					tvDocument.CashFlowMatrix.SetRateUnknown();
+				}
 			}
 			else
 			{
@@ -834,7 +836,10 @@ namespace IAC2021SQL
 				if (tnAPR > 0)
 					tvDocument.CashFlowMatrix.SetPeriodAndRate(TVConstants.TVPeriod.Daily, tnAPR);
 				else
+				{
+					tvDocument.CashFlowMatrix.SetPeriodAndRate(TVConstants.TVPeriod.Daily, 0);
 					tvDocument.CashFlowMatrix.SetRateUnknown();
+				}
 			}
 			tvDocument.SetYearLength(TVConstants.TVYearLength.Y365);
 
@@ -873,7 +878,11 @@ namespace IAC2021SQL
 			if (tnLoanAmount == 0)
 				tnLoanAmount = tvDocument.CashFlowMatrix.GetAmount(1) / CENTS_PER_DOLLAR;
 			if (tnAPR == 0)
-				tvDocument.CashFlowMatrix.GetEffectiveAnnualRate(out tnAPR);
+			{
+				tvDocument.CashFlowMatrix.GetDailyRate(out tnAPR);
+				tnAPR *= 365;
+			}
+
 
 
 			// Moses Newman 8/14/2013 Add APR Info 
@@ -912,6 +921,7 @@ namespace IAC2021SQL
 			}
 
 		}
+
 		static public void TVAmortizeDLL(DateTime tdStartDate, DateTime tdFirstPaymentDate, ref double tnLoanAmount, ref double tnTerm, ref double tnAPR, ref double tnMonthlyAmountOwed, ref string tsReturnCodeMessage, ref AmortRec[] tAmortRec, Boolean MemOnly = false, String tcCustomer = "99-", Boolean tbSimple = false)
 		{ 
 			// tnLoanAmount         = Original Loan Amount
@@ -1317,7 +1327,7 @@ namespace IAC2021SQL
 			TVAmortDT.Dispose();
 			//tvDocument.Delete();
 		}
-
+		
 		static private void TVGetAmortTable(ref TValueEngineLib.TValueCashFlowMatrix cfm,IACDataSet.CUSTHISTDataTable tdtCUSTHIST,String tcCustomer = "99",Boolean tbIncludeTotals = false,Boolean tbAmort = false)
 		{
 			IACDataSet.TVAmortDataTable TVAmortDT = new IACDataSet.TVAmortDataTable();

@@ -32,9 +32,9 @@
             this.buttonPost = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.nullableDateTimePickerCutOffDate = new UIComponent.DateTimePicker();
+            this.nullableDateTimePickerCutOffDate = new ProManApp.NullableDateTimePicker();
             this.labelBankTranDate = new System.Windows.Forms.Label();
-            this.nullableDateTimePickerBsnkTranDate = new UIComponent.DateTimePicker();
+            this.nullableDateTimePickerBsnkTranDate = new ProManApp.NullableDateTimePicker();
             this.textBoxDayDue = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.checkBoxAutobank = new System.Windows.Forms.CheckBox();
@@ -189,9 +189,9 @@
         private System.Windows.Forms.Button buttonPost;
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Label label1;
-        private UIComponent.DateTimePicker nullableDateTimePickerCutOffDate;
+        private ProManApp.NullableDateTimePicker nullableDateTimePickerCutOffDate;
         private System.Windows.Forms.Label labelBankTranDate;
-        private UIComponent.DateTimePicker nullableDateTimePickerBsnkTranDate;
+        private ProManApp.NullableDateTimePicker nullableDateTimePickerBsnkTranDate;
         private System.Windows.Forms.TextBox textBoxDayDue;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.CheckBox checkBoxAutobank;
