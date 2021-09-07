@@ -73,7 +73,7 @@
             this.StatementDatenullableDateTimePicker.Name = "StatementDatenullableDateTimePicker";
             this.StatementDatenullableDateTimePicker.Size = new System.Drawing.Size(83, 20);
             this.StatementDatenullableDateTimePicker.TabIndex = 3;
-            this.StatementDatenullableDateTimePicker.Value = new System.DateTime(2013, 8, 5, 0, 0, 0, 0);
+            this.StatementDatenullableDateTimePicker.Value = new System.DateTime(2021, 9, 7, 0, 0, 0, 0);
             this.StatementDatenullableDateTimePicker.ValueChanged += new System.EventHandler(this.StatementDatenullableDateTimePicker_ValueChanged);
             // 
             // textBoxMessage

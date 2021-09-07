@@ -48,7 +48,7 @@
             this.NoticeDatenullableDateTimePicker.Name = "NoticeDatenullableDateTimePicker";
             this.NoticeDatenullableDateTimePicker.Size = new System.Drawing.Size(83, 20);
             this.NoticeDatenullableDateTimePicker.TabIndex = 0;
-            this.NoticeDatenullableDateTimePicker.Value = new System.DateTime(2013, 8, 5, 0, 0, 0, 0);
+            this.NoticeDatenullableDateTimePicker.Value = new System.DateTime(2021, 9, 7, 0, 0, 0, 0);
             this.NoticeDatenullableDateTimePicker.Validated += new System.EventHandler(this.NoticeDatenullableDateTimePicker_Validated);
             // 
             // labelLateNotices
