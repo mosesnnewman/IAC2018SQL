@@ -42,7 +42,7 @@
     <SuiteName>IAC2021SQL</SuiteName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>28</ApplicationRevision>
+    <ApplicationRevision>29</ApplicationRevision>
     <ApplicationVersion>10.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -3015,6 +3015,7 @@
     <Content Include="1683_Lightbulb.ico" />
     <Content Include="CarLoan.ico" />
     <Content Include="Icon1.ico" />
+    <None Include="Resources\create-ticket-icon.png" />
     <Content Include="Strike.ico" />
     <Content Include="TValue6.dll" />
     <None Include="Resources\fastforward_22x.png" />

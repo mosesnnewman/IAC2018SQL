@@ -253,6 +253,7 @@
             // 
             // ticketsToolStripMenuItem
             // 
+            this.ticketsToolStripMenuItem.Image = global::IAC2021SQL.Properties.Resources.create_ticket_icon;
             this.ticketsToolStripMenuItem.Name = "ticketsToolStripMenuItem";
             this.ticketsToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
             this.ticketsToolStripMenuItem.Text = "&Tickets";
@@ -343,7 +344,7 @@
             this.openEndToolStripMenuItem1});
             this.postingToolStripMenuItem2.Image = global::IAC2021SQL.Properties.Resources.Process_16x_24;
             this.postingToolStripMenuItem2.Name = "postingToolStripMenuItem2";
-            this.postingToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.postingToolStripMenuItem2.Size = new System.Drawing.Size(141, 22);
             this.postingToolStripMenuItem2.Text = "&Posting";
             // 
             // closedEndToolStripMenuItem1
@@ -486,7 +487,7 @@
             this.fixPaidThroughsToolStripMenuItem1});
             this.adminToolsToolStripMenuItem.Image = global::IAC2021SQL.Properties.Resources.Toolbox_16x_24;
             this.adminToolsToolStripMenuItem.Name = "adminToolsToolStripMenuItem";
-            this.adminToolsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.adminToolsToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.adminToolsToolStripMenuItem.Text = "&Admin Tools";
             // 
             // backupToolStripMenuItem
@@ -665,7 +666,7 @@
             this.receivedContractReportToolStripMenuItem,
             this.testToolStripMenuItem});
             this.closedEndToolStripMenuItem.Name = "closedEndToolStripMenuItem";
-            this.closedEndToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.closedEndToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.closedEndToolStripMenuItem.Text = "&Closed End";
             this.closedEndToolStripMenuItem.Click += new System.EventHandler(this.closedEndToolStripMenuItem_Click);
             // 
@@ -887,7 +888,7 @@
             this.openCustomerBuyBackReportBUYBACKToolStripMenuItem,
             this.firstPaymentDefaultReportToolStripMenuItem1});
             this.openEndToolStripMenuItem.Name = "openEndToolStripMenuItem";
-            this.openEndToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.openEndToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.openEndToolStripMenuItem.Text = "&Open End";
             // 
             // newCustomerEditListToolStripMenuItem1
