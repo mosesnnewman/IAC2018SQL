@@ -283,6 +283,16 @@ namespace IAC2021SQL.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap create_ticket_icon {
+            get {
+                object obj = ResourceManager.GetObject("create-ticket-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap CreditCardLogos {
             get {
                 object obj = ResourceManager.GetObject("CreditCardLogos", resourceCulture);
