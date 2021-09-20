@@ -59,7 +59,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerFundingTo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerFundingFrom)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerContractTo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerContractFrom)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDebitDate)).BeginInit();
             this.SuspendLayout();
             // 
             // textBoxMessage
@@ -304,6 +309,7 @@
             this.checkBoxGracePeriod.TabIndex = 2;
             this.checkBoxGracePeriod.Text = "Past Grace Period?";
             this.checkBoxGracePeriod.UseVisualStyleBackColor = true;
+            this.checkBoxGracePeriod.CheckedChanged += new System.EventHandler(this.checkBoxGracePeriod_CheckedChanged);
             // 
             // label3
             // 
@@ -395,8 +401,13 @@
             this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerFundingTo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerFundingFrom)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerContractTo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerContractFrom)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDebitDate)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

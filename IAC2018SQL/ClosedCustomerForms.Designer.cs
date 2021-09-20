@@ -211,6 +211,7 @@
             System.Windows.Forms.Label label140;
             System.Windows.Forms.Label label151;
             System.Windows.Forms.Label labelTotalDue;
+            System.Windows.Forms.Label labelCOSAuthNo;
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -499,6 +500,14 @@
             this.txtModel = new System.Windows.Forms.TextBox();
             this.txtVehicleYear = new System.Windows.Forms.TextBox();
             this.tabCosigner = new System.Windows.Forms.TabPage();
+            this.groupBoxCOSSBT = new System.Windows.Forms.GroupBox();
+            this.buttonCOSMessage = new System.Windows.Forms.Button();
+            this.buttonCOSConfirm = new System.Windows.Forms.Button();
+            this.textBoxCOSAuthNo = new System.Windows.Forms.TextBox();
+            this.radioButtonCOSMktg = new System.Windows.Forms.RadioButton();
+            this.radioButtonCOSAcct = new System.Windows.Forms.RadioButton();
+            this.checkBoxCOSDNTMktg = new System.Windows.Forms.CheckBox();
+            this.checkBoxCOSDNTAcct = new System.Windows.Forms.CheckBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.txtALTExt4 = new System.Windows.Forms.TextBox();
             this.ALTNAMEbindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -518,6 +527,7 @@
             this.txtALTContact2 = new System.Windows.Forms.TextBox();
             this.txtALTContact1 = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.buttonCOSValidate = new System.Windows.Forms.Button();
             this.textBoxCosignerTierPoints = new System.Windows.Forms.TextBox();
             this.buttonCosLetter = new System.Windows.Forms.Button();
             this.comboBoxCosLetterType = new System.Windows.Forms.ComboBox();
@@ -948,6 +958,7 @@
             label140 = new System.Windows.Forms.Label();
             label151 = new System.Windows.Forms.Label();
             labelTotalDue = new System.Windows.Forms.Label();
+            labelCOSAuthNo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.cUSTOMERBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iACDataSet)).BeginInit();
             this.tabComments.SuspendLayout();
@@ -959,11 +970,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.dEALERBindingSource)).BeginInit();
             this.tabHistory.SuspendLayout();
             this.groupBox11.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerHistContractDate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerPayDate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerFirstPayDate)).BeginInit();
             this.toolStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cUSTHISTDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cUSTHISTBindingSource)).BeginInit();
             this.tabCustInfo1.SuspendLayout();
             this.groupBox10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateContractReceived)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EmailbindingSource)).BeginInit();
             this.groupBoxSBT.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceGenCodes)).BeginInit();
@@ -978,19 +993,33 @@
             this.tabCustomerMaint.SuspendLayout();
             this.tabCustInfo2.SuspendLayout();
             this.groupBox9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerFundingDate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DateTimePickerContractDate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtFirstPayDate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPaymentDate)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MaturityDate)).BeginInit();
             this.tabVehicle.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.VehicleGroupBox.SuspendLayout();
             this.groupBox8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.creditCodesBindingSource)).BeginInit();
             this.groupBoxRepo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateTitleReleased)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RepoIndicatorsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerAucDate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerLocDate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repoCodesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerTitleDateReceived)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerRepoDate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtExpirationDate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEffectiveDate)).BeginInit();
             this.tabCosigner.SuspendLayout();
+            this.groupBoxCOSSBT.SuspendLayout();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ALTNAMEbindingSource)).BeginInit();
             this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCOSDOB)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.tabBank.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -1011,6 +1040,12 @@
             this.groupBoxDates.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.closedCreditManagerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tsbDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerFollowUpDate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateClosed)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateOpened)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateofAccountInformation)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateofFirstDelinquency)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateofLastPayment)).BeginInit();
             this.groupBoxCodes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TermsFrequencybindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PortfolioTypesbindingSource)).BeginInit();
@@ -2823,6 +2858,17 @@
             labelTotalDue.Text = "TOTAL DUE:";
             labelTotalDue.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
+            // labelCOSAuthNo
+            // 
+            labelCOSAuthNo.AutoSize = true;
+            labelCOSAuthNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            labelCOSAuthNo.Location = new System.Drawing.Point(39, 84);
+            labelCOSAuthNo.Name = "labelCOSAuthNo";
+            labelCOSAuthNo.Size = new System.Drawing.Size(84, 20);
+            labelCOSAuthNo.TabIndex = 61;
+            labelCOSAuthNo.Text = "Auth No.:";
+            labelCOSAuthNo.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
             // cUSTOMERBindingSource
             // 
             this.cUSTOMERBindingSource.DataMember = "CUSTOMER";
@@ -3235,7 +3281,7 @@
             this.nullableDateTimePickerHistContractDate.Name = "nullableDateTimePickerHistContractDate";
             this.nullableDateTimePickerHistContractDate.Size = new System.Drawing.Size(107, 29);
             this.nullableDateTimePickerHistContractDate.TabIndex = 502;
-            this.nullableDateTimePickerHistContractDate.Value = new System.DateTime(2021, 8, 30, 0, 0, 0, 0);
+            this.nullableDateTimePickerHistContractDate.Value = new System.DateTime(2021, 9, 20, 0, 0, 0, 0);
             // 
             // textBoxBuyOutHist
             // 
@@ -3261,7 +3307,7 @@
             this.nullableDateTimePickerPayDate.Name = "nullableDateTimePickerPayDate";
             this.nullableDateTimePickerPayDate.Size = new System.Drawing.Size(107, 29);
             this.nullableDateTimePickerPayDate.TabIndex = 507;
-            this.nullableDateTimePickerPayDate.Value = new System.DateTime(2021, 8, 30, 0, 0, 0, 0);
+            this.nullableDateTimePickerPayDate.Value = new System.DateTime(2021, 9, 20, 0, 0, 0, 0);
             // 
             // textBox22
             // 
@@ -3286,7 +3332,7 @@
             this.nullableDateTimePickerFirstPayDate.Name = "nullableDateTimePickerFirstPayDate";
             this.nullableDateTimePickerFirstPayDate.Size = new System.Drawing.Size(107, 29);
             this.nullableDateTimePickerFirstPayDate.TabIndex = 510;
-            this.nullableDateTimePickerFirstPayDate.Value = new System.DateTime(2021, 8, 30, 0, 0, 0, 0);
+            this.nullableDateTimePickerFirstPayDate.Value = new System.DateTime(2021, 9, 20, 0, 0, 0, 0);
             // 
             // textBox1
             // 
@@ -3890,7 +3936,7 @@
             this.nullableDateTimePickerDateContractReceived.Name = "nullableDateTimePickerDateContractReceived";
             this.nullableDateTimePickerDateContractReceived.Size = new System.Drawing.Size(119, 29);
             this.nullableDateTimePickerDateContractReceived.TabIndex = 108;
-            this.nullableDateTimePickerDateContractReceived.Value = new System.DateTime(2021, 8, 30, 0, 0, 0, 0);
+            this.nullableDateTimePickerDateContractReceived.Value = new System.DateTime(2021, 9, 20, 0, 0, 0, 0);
             this.nullableDateTimePickerDateContractReceived.Visible = false;
             this.nullableDateTimePickerDateContractReceived.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
@@ -5007,7 +5053,7 @@
             this.nullableDateTimePickerFundingDate.Name = "nullableDateTimePickerFundingDate";
             this.nullableDateTimePickerFundingDate.Size = new System.Drawing.Size(119, 29);
             this.nullableDateTimePickerFundingDate.TabIndex = 89;
-            this.nullableDateTimePickerFundingDate.Value = new System.DateTime(2021, 8, 30, 0, 0, 0, 0);
+            this.nullableDateTimePickerFundingDate.Value = new System.DateTime(2021, 9, 20, 0, 0, 0, 0);
             this.nullableDateTimePickerFundingDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // checkBoxOverrideLateCharge
@@ -5032,7 +5078,7 @@
             this.DateTimePickerContractDate.Name = "DateTimePickerContractDate";
             this.DateTimePickerContractDate.Size = new System.Drawing.Size(119, 29);
             this.DateTimePickerContractDate.TabIndex = 88;
-            this.DateTimePickerContractDate.Value = new System.DateTime(2021, 8, 30, 0, 0, 0, 0);
+            this.DateTimePickerContractDate.Value = new System.DateTime(2021, 9, 20, 0, 0, 0, 0);
             this.DateTimePickerContractDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             this.DateTimePickerContractDate.Validated += new System.EventHandler(this.DateTimePickerContractDate_Validated);
             // 
@@ -5058,7 +5104,7 @@
             this.txtFirstPayDate.Name = "txtFirstPayDate";
             this.txtFirstPayDate.Size = new System.Drawing.Size(119, 29);
             this.txtFirstPayDate.TabIndex = 76;
-            this.txtFirstPayDate.Value = new System.DateTime(2021, 8, 30, 0, 0, 0, 0);
+            this.txtFirstPayDate.Value = new System.DateTime(2021, 9, 20, 0, 0, 0, 0);
             this.txtFirstPayDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             this.txtFirstPayDate.Validated += new System.EventHandler(this.txtFirstPayDate_Validated);
             // 
@@ -5070,7 +5116,7 @@
             this.txtPaymentDate.Name = "txtPaymentDate";
             this.txtPaymentDate.Size = new System.Drawing.Size(119, 29);
             this.txtPaymentDate.TabIndex = 91;
-            this.txtPaymentDate.Value = new System.DateTime(2021, 8, 30, 0, 0, 0, 0);
+            this.txtPaymentDate.Value = new System.DateTime(2021, 9, 20, 0, 0, 0, 0);
             this.txtPaymentDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // textBox18
@@ -5431,7 +5477,7 @@
             this.MaturityDate.Name = "MaturityDate";
             this.MaturityDate.Size = new System.Drawing.Size(119, 29);
             this.MaturityDate.TabIndex = 115;
-            this.MaturityDate.Value = new System.DateTime(2021, 8, 30, 0, 0, 0, 0);
+            this.MaturityDate.Value = new System.DateTime(2021, 9, 20, 0, 0, 0, 0);
             // 
             // txtPaidThrough
             // 
@@ -5953,7 +5999,7 @@
             this.nullableDateTimePickerDateTitleReleased.Name = "nullableDateTimePickerDateTitleReleased";
             this.nullableDateTimePickerDateTitleReleased.Size = new System.Drawing.Size(109, 29);
             this.nullableDateTimePickerDateTitleReleased.TabIndex = 237;
-            this.nullableDateTimePickerDateTitleReleased.Value = new System.DateTime(2021, 8, 30, 0, 0, 0, 0);
+            this.nullableDateTimePickerDateTitleReleased.Value = new System.DateTime(2021, 9, 20, 0, 0, 0, 0);
             this.nullableDateTimePickerDateTitleReleased.ValueChanged += new System.EventHandler(this.NullableDateTimePickerDateTitleReleased_ValueChanged);
             this.nullableDateTimePickerDateTitleReleased.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
@@ -6014,7 +6060,7 @@
             this.nullableDateTimePickerAucDate.Name = "nullableDateTimePickerAucDate";
             this.nullableDateTimePickerAucDate.Size = new System.Drawing.Size(109, 29);
             this.nullableDateTimePickerAucDate.TabIndex = 232;
-            this.nullableDateTimePickerAucDate.Value = new System.DateTime(2021, 8, 30, 0, 0, 0, 0);
+            this.nullableDateTimePickerAucDate.Value = new System.DateTime(2021, 9, 20, 0, 0, 0, 0);
             this.nullableDateTimePickerAucDate.ValueChanged += new System.EventHandler(this.nullableDateTimePickerAucDate_ValueChanged);
             this.nullableDateTimePickerAucDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
@@ -6027,7 +6073,7 @@
             this.nullableDateTimePickerLocDate.Name = "nullableDateTimePickerLocDate";
             this.nullableDateTimePickerLocDate.Size = new System.Drawing.Size(109, 29);
             this.nullableDateTimePickerLocDate.TabIndex = 230;
-            this.nullableDateTimePickerLocDate.Value = new System.DateTime(2021, 8, 30, 0, 0, 0, 0);
+            this.nullableDateTimePickerLocDate.Value = new System.DateTime(2021, 9, 20, 0, 0, 0, 0);
             this.nullableDateTimePickerLocDate.ValueChanged += new System.EventHandler(this.nullableDateTimePickerLocDate_ValueChanged);
             this.nullableDateTimePickerLocDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
@@ -6103,7 +6149,7 @@
             this.nullableDateTimePickerTitleDateReceived.Name = "nullableDateTimePickerTitleDateReceived";
             this.nullableDateTimePickerTitleDateReceived.Size = new System.Drawing.Size(109, 29);
             this.nullableDateTimePickerTitleDateReceived.TabIndex = 234;
-            this.nullableDateTimePickerTitleDateReceived.Value = new System.DateTime(2021, 8, 30, 0, 0, 0, 0);
+            this.nullableDateTimePickerTitleDateReceived.Value = new System.DateTime(2021, 9, 20, 0, 0, 0, 0);
             this.nullableDateTimePickerTitleDateReceived.ValueChanged += new System.EventHandler(this.nullableDateTimePickerTitleDateReceived_ValueChanged);
             this.nullableDateTimePickerTitleDateReceived.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
@@ -6153,7 +6199,7 @@
             this.nullableDateTimePickerRepoDate.Name = "nullableDateTimePickerRepoDate";
             this.nullableDateTimePickerRepoDate.Size = new System.Drawing.Size(109, 29);
             this.nullableDateTimePickerRepoDate.TabIndex = 227;
-            this.nullableDateTimePickerRepoDate.Value = new System.DateTime(2021, 8, 30, 0, 0, 0, 0);
+            this.nullableDateTimePickerRepoDate.Value = new System.DateTime(2021, 9, 20, 0, 0, 0, 0);
             this.nullableDateTimePickerRepoDate.ValueChanged += new System.EventHandler(this.nullableDateTimePickerRepoDate_ValueChanged);
             this.nullableDateTimePickerRepoDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
@@ -6165,7 +6211,7 @@
             this.txtExpirationDate.Name = "txtExpirationDate";
             this.txtExpirationDate.Size = new System.Drawing.Size(109, 29);
             this.txtExpirationDate.TabIndex = 219;
-            this.txtExpirationDate.Value = new System.DateTime(2021, 8, 30, 0, 0, 0, 0);
+            this.txtExpirationDate.Value = new System.DateTime(2021, 9, 20, 0, 0, 0, 0);
             // 
             // txtEffectiveDate
             // 
@@ -6175,7 +6221,7 @@
             this.txtEffectiveDate.Name = "txtEffectiveDate";
             this.txtEffectiveDate.Size = new System.Drawing.Size(109, 29);
             this.txtEffectiveDate.TabIndex = 218;
-            this.txtEffectiveDate.Value = new System.DateTime(2021, 8, 30, 0, 0, 0, 0);
+            this.txtEffectiveDate.Value = new System.DateTime(2021, 9, 20, 0, 0, 0, 0);
             // 
             // txtAgentPhone
             // 
@@ -6293,6 +6339,7 @@
             // tabCosigner
             // 
             this.tabCosigner.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.tabCosigner.Controls.Add(this.groupBoxCOSSBT);
             this.tabCosigner.Controls.Add(this.groupBox5);
             this.tabCosigner.Controls.Add(this.groupBox4);
             this.tabCosigner.Controls.Add(this.groupBox3);
@@ -6301,6 +6348,121 @@
             this.tabCosigner.Size = new System.Drawing.Size(1261, 581);
             this.tabCosigner.TabIndex = 4;
             this.tabCosigner.Text = "Cosigner Info";
+            // 
+            // groupBoxCOSSBT
+            // 
+            this.groupBoxCOSSBT.Controls.Add(this.buttonCOSMessage);
+            this.groupBoxCOSSBT.Controls.Add(this.buttonCOSConfirm);
+            this.groupBoxCOSSBT.Controls.Add(this.textBoxCOSAuthNo);
+            this.groupBoxCOSSBT.Controls.Add(labelCOSAuthNo);
+            this.groupBoxCOSSBT.Controls.Add(this.radioButtonCOSMktg);
+            this.groupBoxCOSSBT.Controls.Add(this.radioButtonCOSAcct);
+            this.groupBoxCOSSBT.Controls.Add(this.checkBoxCOSDNTMktg);
+            this.groupBoxCOSSBT.Controls.Add(this.checkBoxCOSDNTAcct);
+            this.groupBoxCOSSBT.Location = new System.Drawing.Point(865, 199);
+            this.groupBoxCOSSBT.Name = "groupBoxCOSSBT";
+            this.groupBoxCOSSBT.Size = new System.Drawing.Size(311, 173);
+            this.groupBoxCOSSBT.TabIndex = 333;
+            this.groupBoxCOSSBT.TabStop = false;
+            this.groupBoxCOSSBT.Text = "SBT";
+            // 
+            // buttonCOSMessage
+            // 
+            this.buttonCOSMessage.Enabled = false;
+            this.buttonCOSMessage.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCOSMessage.Location = new System.Drawing.Point(88, 121);
+            this.buttonCOSMessage.Name = "buttonCOSMessage";
+            this.buttonCOSMessage.Size = new System.Drawing.Size(134, 36);
+            this.buttonCOSMessage.TabIndex = 53;
+            this.buttonCOSMessage.Text = "SendMessage";
+            this.buttonCOSMessage.UseVisualStyleBackColor = true;
+            this.buttonCOSMessage.Click += new System.EventHandler(this.buttonCOSMessage_Click);
+            // 
+            // buttonCOSConfirm
+            // 
+            this.buttonCOSConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCOSConfirm.ForeColor = System.Drawing.Color.Crimson;
+            this.buttonCOSConfirm.Location = new System.Drawing.Point(197, 78);
+            this.buttonCOSConfirm.Name = "buttonCOSConfirm";
+            this.buttonCOSConfirm.Size = new System.Drawing.Size(92, 25);
+            this.buttonCOSConfirm.TabIndex = 52;
+            this.buttonCOSConfirm.Text = "Confirm";
+            this.buttonCOSConfirm.UseVisualStyleBackColor = true;
+            this.buttonCOSConfirm.Click += new System.EventHandler(this.buttonCOSConfirm_Click);
+            // 
+            // textBoxCOSAuthNo
+            // 
+            this.textBoxCOSAuthNo.AllowDrop = true;
+            this.textBoxCOSAuthNo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "COSTPin", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N0"));
+            this.textBoxCOSAuthNo.Enabled = false;
+            this.textBoxCOSAuthNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxCOSAuthNo.Location = new System.Drawing.Point(122, 78);
+            this.textBoxCOSAuthNo.MaxLength = 6;
+            this.textBoxCOSAuthNo.Name = "textBoxCOSAuthNo";
+            this.textBoxCOSAuthNo.Size = new System.Drawing.Size(69, 26);
+            this.textBoxCOSAuthNo.TabIndex = 51;
+            this.textBoxCOSAuthNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxCOSAuthNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            // 
+            // radioButtonCOSMktg
+            // 
+            this.radioButtonCOSMktg.AutoSize = true;
+            this.radioButtonCOSMktg.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.cUSTOMERBindingSource, "COSTBoth", true));
+            this.radioButtonCOSMktg.Enabled = false;
+            this.radioButtonCOSMktg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButtonCOSMktg.Location = new System.Drawing.Point(176, 51);
+            this.radioButtonCOSMktg.Name = "radioButtonCOSMktg";
+            this.radioButtonCOSMktg.Size = new System.Drawing.Size(65, 24);
+            this.radioButtonCOSMktg.TabIndex = 50;
+            this.radioButtonCOSMktg.TabStop = true;
+            this.radioButtonCOSMktg.Text = "Both";
+            this.radioButtonCOSMktg.UseVisualStyleBackColor = true;
+            this.radioButtonCOSMktg.CheckedChanged += new System.EventHandler(this.radioButtonCOSMktg_CheckedChanged);
+            // 
+            // radioButtonCOSAcct
+            // 
+            this.radioButtonCOSAcct.AutoSize = true;
+            this.radioButtonCOSAcct.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.cUSTOMERBindingSource, "COSTAcct", true));
+            this.radioButtonCOSAcct.Enabled = false;
+            this.radioButtonCOSAcct.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButtonCOSAcct.Location = new System.Drawing.Point(176, 27);
+            this.radioButtonCOSAcct.Name = "radioButtonCOSAcct";
+            this.radioButtonCOSAcct.Size = new System.Drawing.Size(93, 24);
+            this.radioButtonCOSAcct.TabIndex = 48;
+            this.radioButtonCOSAcct.TabStop = true;
+            this.radioButtonCOSAcct.Text = "Account";
+            this.radioButtonCOSAcct.UseVisualStyleBackColor = true;
+            this.radioButtonCOSAcct.CheckedChanged += new System.EventHandler(this.radioButtonCOSAcct_CheckedChanged);
+            this.radioButtonCOSAcct.Click += new System.EventHandler(this.radioButtonCOSAcct_Click);
+            // 
+            // checkBoxCOSDNTMktg
+            // 
+            this.checkBoxCOSDNTMktg.AutoSize = true;
+            this.checkBoxCOSDNTMktg.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.cUSTOMERBindingSource, "DNTMktg", true));
+            this.checkBoxCOSDNTMktg.Enabled = false;
+            this.checkBoxCOSDNTMktg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxCOSDNTMktg.Location = new System.Drawing.Point(43, 51);
+            this.checkBoxCOSDNTMktg.Name = "checkBoxCOSDNTMktg";
+            this.checkBoxCOSDNTMktg.Size = new System.Drawing.Size(107, 24);
+            this.checkBoxCOSDNTMktg.TabIndex = 49;
+            this.checkBoxCOSDNTMktg.Text = "DNT Mktg";
+            this.checkBoxCOSDNTMktg.UseVisualStyleBackColor = true;
+            this.checkBoxCOSDNTMktg.CheckedChanged += new System.EventHandler(this.checkBoxCOSDNTMktg_CheckedChanged);
+            // 
+            // checkBoxCOSDNTAcct
+            // 
+            this.checkBoxCOSDNTAcct.AutoSize = true;
+            this.checkBoxCOSDNTAcct.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.cUSTOMERBindingSource, "COSDNTAcct", true));
+            this.checkBoxCOSDNTAcct.Enabled = false;
+            this.checkBoxCOSDNTAcct.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxCOSDNTAcct.Location = new System.Drawing.Point(43, 27);
+            this.checkBoxCOSDNTAcct.Name = "checkBoxCOSDNTAcct";
+            this.checkBoxCOSDNTAcct.Size = new System.Drawing.Size(104, 24);
+            this.checkBoxCOSDNTAcct.TabIndex = 47;
+            this.checkBoxCOSDNTAcct.Text = "DNT Acct";
+            this.checkBoxCOSDNTAcct.UseVisualStyleBackColor = true;
+            this.checkBoxCOSDNTAcct.CheckedChanged += new System.EventHandler(this.checkBoxCOSDNTAcct_CheckedChanged);
+            this.checkBoxCOSDNTAcct.Click += new System.EventHandler(this.checkBoxCOSDNTAcct_Click);
             // 
             // groupBox5
             // 
@@ -6525,6 +6687,7 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.buttonCOSValidate);
             this.groupBox4.Controls.Add(label66);
             this.groupBox4.Controls.Add(labelCosignerTierPoints);
             this.groupBox4.Controls.Add(this.textBoxCosignerTierPoints);
@@ -6569,12 +6732,24 @@
             this.groupBox4.Controls.Add(label71);
             this.groupBox4.Controls.Add(label72);
             this.groupBox4.Controls.Add(label73);
-            this.groupBox4.Location = new System.Drawing.Point(234, 91);
+            this.groupBox4.Location = new System.Drawing.Point(85, 103);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(763, 269);
+            this.groupBox4.Size = new System.Drawing.Size(774, 269);
             this.groupBox4.TabIndex = 135;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Co-Signer Info";
+            // 
+            // buttonCOSValidate
+            // 
+            this.buttonCOSValidate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCOSValidate.ForeColor = System.Drawing.Color.Crimson;
+            this.buttonCOSValidate.Location = new System.Drawing.Point(675, 82);
+            this.buttonCOSValidate.Name = "buttonCOSValidate";
+            this.buttonCOSValidate.Size = new System.Drawing.Size(92, 25);
+            this.buttonCOSValidate.TabIndex = 334;
+            this.buttonCOSValidate.Text = "Validate";
+            this.buttonCOSValidate.UseVisualStyleBackColor = true;
+            this.buttonCOSValidate.Click += new System.EventHandler(this.buttonCOSValidate_Click);
             // 
             // textBoxCosignerTierPoints
             // 
@@ -6701,7 +6876,7 @@
             this.txtCOSDOB.Name = "txtCOSDOB";
             this.txtCOSDOB.Size = new System.Drawing.Size(109, 29);
             this.txtCOSDOB.TabIndex = 323;
-            this.txtCOSDOB.Value = new System.DateTime(2021, 8, 30, 0, 0, 0, 0);
+            this.txtCOSDOB.Value = new System.DateTime(2021, 9, 20, 0, 0, 0, 0);
             // 
             // txtCOSWorkExt
             // 
@@ -8043,7 +8218,7 @@
             this.nullableDateTimePickerFollowUpDate.Name = "nullableDateTimePickerFollowUpDate";
             this.nullableDateTimePickerFollowUpDate.Size = new System.Drawing.Size(119, 25);
             this.nullableDateTimePickerFollowUpDate.TabIndex = 24;
-            this.nullableDateTimePickerFollowUpDate.Value = new System.DateTime(2021, 8, 30, 0, 0, 0, 0);
+            this.nullableDateTimePickerFollowUpDate.Value = new System.DateTime(2021, 9, 20, 0, 0, 0, 0);
             this.nullableDateTimePickerFollowUpDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // nullableDateTimePickerDateClosed
@@ -8054,7 +8229,7 @@
             this.nullableDateTimePickerDateClosed.Name = "nullableDateTimePickerDateClosed";
             this.nullableDateTimePickerDateClosed.Size = new System.Drawing.Size(119, 25);
             this.nullableDateTimePickerDateClosed.TabIndex = 23;
-            this.nullableDateTimePickerDateClosed.Value = new System.DateTime(2021, 8, 30, 0, 0, 0, 0);
+            this.nullableDateTimePickerDateClosed.Value = new System.DateTime(2021, 9, 20, 0, 0, 0, 0);
             this.nullableDateTimePickerDateClosed.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // nullableDateTimePickerDateOpened
@@ -8065,7 +8240,7 @@
             this.nullableDateTimePickerDateOpened.Name = "nullableDateTimePickerDateOpened";
             this.nullableDateTimePickerDateOpened.Size = new System.Drawing.Size(119, 25);
             this.nullableDateTimePickerDateOpened.TabIndex = 22;
-            this.nullableDateTimePickerDateOpened.Value = new System.DateTime(2021, 8, 30, 0, 0, 0, 0);
+            this.nullableDateTimePickerDateOpened.Value = new System.DateTime(2021, 9, 20, 0, 0, 0, 0);
             this.nullableDateTimePickerDateOpened.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // nullableDateTimePickerDateofAccountInformation
@@ -8076,7 +8251,7 @@
             this.nullableDateTimePickerDateofAccountInformation.Name = "nullableDateTimePickerDateofAccountInformation";
             this.nullableDateTimePickerDateofAccountInformation.Size = new System.Drawing.Size(119, 25);
             this.nullableDateTimePickerDateofAccountInformation.TabIndex = 21;
-            this.nullableDateTimePickerDateofAccountInformation.Value = new System.DateTime(2021, 8, 30, 0, 0, 0, 0);
+            this.nullableDateTimePickerDateofAccountInformation.Value = new System.DateTime(2021, 9, 20, 0, 0, 0, 0);
             this.nullableDateTimePickerDateofAccountInformation.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // nullableDateTimePickerDateofFirstDelinquency
@@ -8087,7 +8262,7 @@
             this.nullableDateTimePickerDateofFirstDelinquency.Name = "nullableDateTimePickerDateofFirstDelinquency";
             this.nullableDateTimePickerDateofFirstDelinquency.Size = new System.Drawing.Size(119, 25);
             this.nullableDateTimePickerDateofFirstDelinquency.TabIndex = 20;
-            this.nullableDateTimePickerDateofFirstDelinquency.Value = new System.DateTime(2021, 8, 30, 0, 0, 0, 0);
+            this.nullableDateTimePickerDateofFirstDelinquency.Value = new System.DateTime(2021, 9, 20, 0, 0, 0, 0);
             this.nullableDateTimePickerDateofFirstDelinquency.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // nullableDateTimePickerDateofLastPayment
@@ -8098,7 +8273,7 @@
             this.nullableDateTimePickerDateofLastPayment.Name = "nullableDateTimePickerDateofLastPayment";
             this.nullableDateTimePickerDateofLastPayment.Size = new System.Drawing.Size(119, 25);
             this.nullableDateTimePickerDateofLastPayment.TabIndex = 19;
-            this.nullableDateTimePickerDateofLastPayment.Value = new System.DateTime(2021, 8, 30, 0, 0, 0, 0);
+            this.nullableDateTimePickerDateofLastPayment.Value = new System.DateTime(2021, 9, 20, 0, 0, 0, 0);
             this.nullableDateTimePickerDateofLastPayment.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // label135
@@ -9108,6 +9283,9 @@
             this.tabHistory.PerformLayout();
             this.groupBox11.ResumeLayout(false);
             this.groupBox11.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerHistContractDate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerPayDate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerFirstPayDate)).EndInit();
             this.toolStrip2.ResumeLayout(false);
             this.toolStrip2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cUSTHISTDataGridView)).EndInit();
@@ -9115,6 +9293,7 @@
             this.tabCustInfo1.ResumeLayout(false);
             this.groupBox10.ResumeLayout(false);
             this.groupBox10.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateContractReceived)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.EmailbindingSource)).EndInit();
             this.groupBoxSBT.ResumeLayout(false);
             this.groupBoxSBT.PerformLayout();
@@ -9133,8 +9312,13 @@
             this.tabCustInfo2.ResumeLayout(false);
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerFundingDate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DateTimePickerContractDate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtFirstPayDate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPaymentDate)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MaturityDate)).EndInit();
             this.tabVehicle.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -9145,14 +9329,24 @@
             ((System.ComponentModel.ISupportInitialize)(this.creditCodesBindingSource)).EndInit();
             this.groupBoxRepo.ResumeLayout(false);
             this.groupBoxRepo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateTitleReleased)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RepoIndicatorsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerAucDate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerLocDate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repoCodesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerTitleDateReceived)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerRepoDate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtExpirationDate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEffectiveDate)).EndInit();
             this.tabCosigner.ResumeLayout(false);
+            this.groupBoxCOSSBT.ResumeLayout(false);
+            this.groupBoxCOSSBT.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ALTNAMEbindingSource)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCOSDOB)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.tabBank.ResumeLayout(false);
@@ -9181,6 +9375,12 @@
             this.groupBoxDates.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.closedCreditManagerBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tsbDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerFollowUpDate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateClosed)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateOpened)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateofAccountInformation)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateofFirstDelinquency)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateofLastPayment)).EndInit();
             this.groupBoxCodes.ResumeLayout(false);
             this.groupBoxCodes.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TermsFrequencybindingSource)).EndInit();
@@ -9747,6 +9947,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CUSTHIST_PAYMENT_CODE;
         private System.Windows.Forms.DataGridViewTextBoxColumn CUSTHIST_THRU_UD;
         private NewColorTextBox colorTextBoxTotalDue;
+        private System.Windows.Forms.GroupBox groupBoxCOSSBT;
+        private System.Windows.Forms.Button buttonCOSMessage;
+        private System.Windows.Forms.Button buttonCOSConfirm;
+        private System.Windows.Forms.TextBox textBoxCOSAuthNo;
+        private System.Windows.Forms.RadioButton radioButtonCOSMktg;
+        private System.Windows.Forms.RadioButton radioButtonCOSAcct;
+        private System.Windows.Forms.CheckBox checkBoxCOSDNTMktg;
+        private System.Windows.Forms.CheckBox checkBoxCOSDNTAcct;
+        private System.Windows.Forms.Button buttonCOSValidate;
     }
 }
 

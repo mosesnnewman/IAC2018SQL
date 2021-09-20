@@ -237,6 +237,11 @@ namespace IAC2021SQL
             buttonConfirm.Enabled = true;
             textBoxAuthNo.Enabled = false;
             checkBoxDNTAcct.Enabled = false;
+            // Moses Newman 09/20/2021
+            radioButtonCOSAcct.Enabled = false;
+            buttonCOSConfirm.Enabled = true;
+            textBoxCOSAuthNo.Enabled = false;
+            checkBoxCOSDNTAcct.Enabled = false;
             // Moses Newman 05/24/2018 
             checkBoxMilitary.Enabled = false;
             // Moses Newman 05/24/2018 added CosLetterNo and CosLetterType
@@ -570,6 +575,11 @@ namespace IAC2021SQL
             buttonConfirm.Enabled = true;
             textBoxAuthNo.Enabled = true;
             checkBoxDNTAcct.Enabled = true;
+            // Moses Newman 09/20/2021
+            radioButtonCOSAcct.Enabled = true;
+            buttonCOSConfirm.Enabled = true;
+            textBoxCOSAuthNo.Enabled = true;
+            checkBoxCOSDNTAcct.Enabled = true;
             // Moses Newman 05/24/2018 
             checkBoxMilitary.Enabled = true;
             // Moses Newman 05/24/2018 added CosLetterNo and CosLetterType
@@ -1177,7 +1187,7 @@ namespace IAC2021SQL
                     if (GetSubscriberStatus(iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_CELL_PHONE")) == "Inactive")
                     {
                         if (!lbEdit && !lbAddFlag)
-                            cUSTOMERTableAdapter.ResetSBT(iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO"));
+                            cUSTOMERTableAdapter.ResetSBT(iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO"),false);
                         iACDataSet.CUSTOMER.Rows[0].SetField<Boolean>("TAcct", false);
                         radioButtonAcct.Checked = false;
                         iACDataSet.CUSTOMER.Rows[0].SetField<String>("TPin", "");
@@ -1193,6 +1203,29 @@ namespace IAC2021SQL
                 buttonMessage.Enabled = iACDataSet.CUSTOMER.Rows[0].Field<Boolean>("TConfirmed");
                 // Moses Newman 09/13/2017 Store the orginal value of the phone number to test for changes!
                 cUSTOMER_CELL_PHONETextBox.Tag = cUSTOMER_CELL_PHONETextBox.Text;
+
+                // Moses Newman 09/18/2021 Handle a cosinger who texted STOP!
+                if (iACDataSet.CUSTOMER.Rows[0].Field<Boolean>("COSTConfirmed"))
+                {
+                    if (GetSubscriberStatus(iACDataSet.CUSTOMER.Rows[0].Field<String>("COSIGNER_CELL_PHONE")) == "Inactive")
+                    {
+                        if (!lbEdit && !lbAddFlag)
+                            cUSTOMERTableAdapter.ResetSBT(iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO"), true);
+                        iACDataSet.CUSTOMER.Rows[0].SetField<Boolean>("COSTAcct", false);
+                        radioButtonCOSAcct.Checked = false;
+                        iACDataSet.CUSTOMER.Rows[0].SetField<String>("COSTPin", "");
+                        buttonCOSConfirm.ForeColor = Color.Crimson;
+                        iACDataSet.CUSTOMER.Rows[0].SetField<Boolean>("COSTConfirmed", false);
+                        iACDataSet.CUSTOMER.Rows[0].SetField<Boolean>("COSDNTAcct", true);
+                        iACDataSet.CUSTOMER.Rows[0].EndEdit();
+                        MakeComment("COSIGNER UNSUBSCRIBED SBT BY TEXTING STOP.", "", 0, false);
+                    }
+                }
+                buttonCOSValidate.ForeColor = iACDataSet.CUSTOMER.Rows[0].Field<Boolean>("COSCellValid") ? Color.Green : Color.Crimson;
+                buttonCOSConfirm.ForeColor = iACDataSet.CUSTOMER.Rows[0].Field<Boolean>("COSTConfirmed") ? Color.Green : Color.Crimson;
+                buttonCOSMessage.Enabled = iACDataSet.CUSTOMER.Rows[0].Field<Boolean>("COSTConfirmed");
+                // Moses Newman 09/18/2021 Store the orginal value of the phone number to test for changes!
+                txtCOSCell.Tag = txtCOSCell.Text;
             }
             if (checkBoxMilitary.Checked)
             {
@@ -1414,6 +1447,11 @@ namespace IAC2021SQL
                     buttonConfirm.Enabled = true;
                     textBoxAuthNo.Enabled = true;
                     checkBoxDNTAcct.Enabled = true;
+                    // Moses Newman 09/20/2021
+                    radioButtonCOSAcct.Enabled = true;
+                    buttonCOSConfirm.Enabled = true;
+                    textBoxCOSAuthNo.Enabled = true;
+                    checkBoxCOSDNTAcct.Enabled = true;
                     // Moses Newman 05/24/2018 
                     checkBoxMilitary.Enabled = true;
                     // Moses Newman 12/19/2019 Send to Dealer Checkbox added.
@@ -4250,6 +4288,180 @@ namespace IAC2021SQL
             }
         }
 
+        private void buttonCOSValidate_Click(object sender, EventArgs e)
+        {
+            if (!lbAddFlag && !lbEdit)
+                return;
+
+            GroupClient generalService = new GroupClient("ReportWSServiceHttpEndpoint2");
+            string securityToken = sbtLogin();
+            string orgCode = "wt63419";
+            string[] phone = txtCOSCell.Text.Trim().Split(',');
+
+            WSCarrierLookupResponse wSCarrierLookupResponse = generalService.GetCarrierLookup(securityToken, phone, orgCode);
+
+            if (!wSCarrierLookupResponse.Result)
+            {
+                MakeComment("*** Failed to VALIDATE cosigner cell phone number! ***", wSCarrierLookupResponse.Message, 0, false);
+                //handle error
+                buttonCOSValidate.ForeColor = Color.Crimson;
+                iACDataSet.CUSTOMER.Rows[0].SetField<Boolean>("COSCellValid", false);
+            }
+            else
+            {
+                if (wSCarrierLookupResponse.Result && !wSCarrierLookupResponse.Response[0].Landline)
+                {
+                    MakeComment("Cosinger Cell Phone Number VALIDATED.", wSCarrierLookupResponse.Message, 0, false);
+                    buttonCOSValidate.ForeColor = Color.Green;
+                    iACDataSet.CUSTOMER.Rows[0].SetField<Boolean>("COSCellValid", true);
+                }
+                else
+                {
+                    MakeComment("*** Cosigner Cell Number not VALIDATED because it is a LANDLINE! ***", wSCarrierLookupResponse.Message, 0, false);
+                    buttonCOSValidate.ForeColor = Color.Crimson;
+                    iACDataSet.CUSTOMER.Rows[0].SetField<Boolean>("COSCellValid", false);
+                }
+            }
+            toolStripButtonSave.Enabled = true;
+        }
+
+        private void checkBoxCOSDNTAcct_CheckedChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void checkBoxCOSDNTAcct_Click(object sender, EventArgs e)
+        {
+            var ldlgResult = MessageBox.Show("Are you absolutely sure you want to unsubcribe this subscriber?  If you do so you will have to verify by text and reconfirm the subscriber again if at a later date you wish to reinstate this subscriber!", "Change Statuts to DO NOT TEXT", MessageBoxButtons.YesNo);
+            if (ldlgResult == DialogResult.No)
+                return;
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+            SubscriberClient subscriberResult = new SubscriberClient("SubscriberWSServiceHttpEndpoint");
+
+            string securityToken = sbtLogin();
+
+            SubscriberDetails subscriber = new SubscriberDetails();
+            subscriber.MobilePhone = txtCOSCell.Text;
+            subscriber.OrgCode = "wt63419";
+            WSUnsubscriberResponse wsUnSubscribeResponse = subscriberResult.UnSubscribe(securityToken, subscriber);
+
+            if (!wsUnSubscribeResponse.Result && (wsUnSubscribeResponse.Message != "Subscriber already unsubscribed"))
+            {
+                iACDataSet.CUSTOMER.Rows[0].SetField<Boolean>("COSDNTAcct", false);
+                MessageBox.Show(wsUnSubscribeResponse.Message);
+                MakeComment("*** UNSUBSCRIBE COSIGNER SBT FAILED! ***", wsUnSubscribeResponse.Message, 0, false);
+            }
+            else
+            {
+                iACDataSet.CUSTOMER.Rows[0].SetField<Boolean>("COSTAcct", false);
+                radioButtonCOSAcct.Checked = false;
+                iACDataSet.CUSTOMER.Rows[0].SetField<String>("COSTPin", "");
+                buttonCOSConfirm.ForeColor = Color.Crimson;
+                iACDataSet.CUSTOMER.Rows[0].SetField<Boolean>("COSTConfirmed", false);
+                iACDataSet.CUSTOMER.Rows[0].SetField<Boolean>("COSDNTAcct", true);
+                MakeComment("COSIGNER CELL PHONE UNSUBSCRIBED FROM SBT.", wsUnSubscribeResponse.Message, 0, false);
+                MessageBox.Show(wsUnSubscribeResponse.Message, "Unsubscribed");
+            }
+        }
+
+        private void radioButtonCOSAcct_CheckedChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void radioButtonCOSAcct_Click(object sender, EventArgs e)
+        {
+            if (textBoxCOSAuthNo.Text.TrimEnd() != "" || txtCOSCell.Text.TrimEnd() == "" || buttonCOSValidate.ForeColor != Color.Green)
+            {
+                if (radioButtonCOSAcct.Checked)
+                {
+                    radioButtonCOSAcct.Checked = false;
+                    checkBoxCOSDNTAcct.Checked = true;
+                }
+                return;
+            }
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+            if (radioButtonCOSAcct.Checked)
+            {
+                string VBTError = "";
+                MessageClient messageResult = new MessageClient("MessageWSServiceHttpEndpoint");
+                string securityToken = sbtLogin();
+                string orgCode = "wt63419";
+                string phoneNo = txtCOSCell.Text;
+
+                WSVerificationResponse wSVerificationResponse = messageResult.RequestVBT(securityToken, orgCode, phoneNo);
+                if (!wSVerificationResponse.Result)
+                {
+                    iACDataSet.CUSTOMER.Rows[0].SetField<String>("COSTPin", "");
+                    textBoxCOSAuthNo.Refresh();
+
+                    VBTError = wSVerificationResponse.Message;
+                    if (VBTError.TrimEnd() != "Subscriber information already exists")
+                    {
+                        iACDataSet.CUSTOMER.Rows[0].SetField<Boolean>("COSTAcct", false);
+                        MakeComment("*** COSIGNER VBT PIN NOT CREATED! ***", VBTError, 0, false);
+                        MessageBox.Show(VBTError);
+                    }
+                }
+                else
+                {
+                    iACDataSet.CUSTOMER.Rows[0].SetField<Boolean>("COSDNTAcct", false);
+                    iACDataSet.CUSTOMER.Rows[0].SetField<Boolean>("COSTAcct", true);
+                    iACDataSet.CUSTOMER.Rows[0].SetField<String>("COSTPin", "AUTO");
+                    textBoxCOSAuthNo.Refresh();
+                    radioButtonCOSAcct.Checked = true;
+                    radioButtonCOSMktg.Checked = false;
+                    UpdateSubscriber(securityToken);
+                    iACDataSet.CUSTOMER.Rows[0].SetField<Boolean>("COSTConfirmed", true);
+                    buttonCOSConfirm.ForeColor = Color.Green;
+                    MakeComment("COSIGNER AUTO CONFIRMED (NO PIN)!", "AUTO", 0, false);
+                }
+            }
+        }
+
+        private void checkBoxCOSDNTMktg_CheckedChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void radioButtonCOSMktg_CheckedChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void buttonCOSConfirm_Click(object sender, EventArgs e)
+        {
+            return;
+        }
+
+        private void buttonCOSMessage_Click(object sender, EventArgs e)
+        {
+            String lsMessage = "", lsAPIMessage = "";
+            Int32 lnTemplateID = 0;
+
+            FormSMSMessage newmessage = new FormSMSMessage();
+            newmessage.CellPhone = txtCOSCell.Text.TrimEnd();
+            //newmessage.securityToken = sbtLogin(); login now from Message Form! 08/12/2020 Moses Newman
+            newmessage.CustomerNo = iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO");
+            newmessage.ShowDialog();
+            lsMessage = newmessage.MessageSent;
+            lnTemplateID = newmessage.TempID;
+            lsAPIMessage = newmessage.APIMessage;
+            newmessage.Hide();
+            newmessage.Dispose();
+
+            if (lsMessage != "NONE")
+                if (lsMessage != "")
+                    MakeComment(lsMessage, lsAPIMessage, lnTemplateID);
+                else
+                    MakeComment("Cosigner Message SEND failed!", lsAPIMessage, lnTemplateID, false);
+        }
 
         private void textBoxRepairFee4_Validated(object sender, EventArgs e)
         {

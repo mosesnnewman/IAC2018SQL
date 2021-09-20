@@ -138,56 +138,61 @@ namespace IAC2021SQL
             
             string note = textBoxNote.Text;
 
-            for (int i = 0; i < msgData.CUSTOMER.Rows.Count; i++)
+            if (msgData.CUSTOMER.Rows.Count > 0)
             {
-               
-
-                string statusUrl = "",lsTmpCust = "";
-                lsTmpCust = msgData.CUSTOMER.Rows[i].Field<String>("CUSTOMER_NO");
-                //WSMessageResponse wSMessageResponse;
-                List<WSRecipient> recipients = new List<WSRecipient>();
-                List<CustomField> customFields = new List<CustomField>();
-                //Create custom fields             
-
-                CustomField customField = new CustomField();
-                customField.Key = "MISC$";
-                customField.Value = msgData.CUSTOMER.Rows[i].Field<Decimal>("CUSTOMER_REGULAR_AMOUNT").ToString("C", new CultureInfo("en-US"));
-                customFields.Add(customField);
-
-                customField = new CustomField();
-                customField.Key = "MISC1";
-                customField.Value = Program.NextDueDate(i, msgData).ToString("d", new CultureInfo("en-US"));
-                customFields.Add(customField);
-
-                //Create recipients   
-                WSRecipient recipient = new WSRecipient();
-                recipient.SendTo = msgData.CUSTOMER.Rows[i].Field<String>("CUSTOMER_CELL_PHONE");
-                recipient.CustomFields = customFields.ToArray();
-                recipients.Add(recipient);
-                labelStatus.Text = "Creating comment for Account Number: " + msgData.CUSTOMER.Rows[i].Field<String>("CUSTOMER_NO") + "\nRecord# " + (i + 1).ToString().Trim() + " of " + msgData.CUSTOMER.Rows.Count.ToString().Trim();
-                labelStatus.Refresh();
-                MakeComment(msgData, i, message, "", tempID, true);
-
-                securityToken = sbtLogin();
-                if (tempID < 0)
-                    wSMessageResponse = messageResult.SendMessage(securityToken, "IAC Inc: " + message, recipients.ToArray(), orgCode, note, statusUrl);
-                else
-                    wSMessageResponse = messageResult.SendTemplateMessage(securityToken, tempID, recipients.ToArray(), orgCode, note, statusUrl);
-                //process response  
-                if (!wSMessageResponse.Result)
+                for (int i = 0; i < msgData.CUSTOMER.Rows.Count; i++)
                 {
-                    //handle error      
-                    //MessageBox.Show(wSMessageResponse.Message);
+
+
+                    string statusUrl = "", lsTmpCust = "";
+                    lsTmpCust = msgData.CUSTOMER.Rows[i].Field<String>("CUSTOMER_NO");
+                    //WSMessageResponse wSMessageResponse;
+                    List<WSRecipient> recipients = new List<WSRecipient>();
+                    List<CustomField> customFields = new List<CustomField>();
+                    //Create custom fields             
+
+                    CustomField customField = new CustomField();
+                    customField.Key = "MISC$";
+                    customField.Value = msgData.CUSTOMER.Rows[i].Field<Decimal>("CUSTOMER_REGULAR_AMOUNT").ToString("C", new CultureInfo("en-US"));
+                    customFields.Add(customField);
+
+                    customField = new CustomField();
+                    customField.Key = "MISC1";
+                    customField.Value = Program.NextDueDate(i, msgData).ToString("d", new CultureInfo("en-US"));
+                    customFields.Add(customField);
+
+                    //Create recipients   
+                    WSRecipient recipient = new WSRecipient();
+                    recipient.SendTo = msgData.CUSTOMER.Rows[i].Field<String>("CUSTOMER_CELL_PHONE");
+                    recipient.CustomFields = customFields.ToArray();
+                    recipients.Add(recipient);
+                    labelStatus.Text = "Creating comment for Account Number: " + msgData.CUSTOMER.Rows[i].Field<String>("CUSTOMER_NO") + "\nRecord# " + (i + 1).ToString().Trim() + " of " + msgData.CUSTOMER.Rows.Count.ToString().Trim();
+                    labelStatus.Refresh();
+                    MakeComment(msgData, i, message, "", tempID, true);
+
+                    securityToken = sbtLogin();
+                    if (tempID < 0)
+                        wSMessageResponse = messageResult.SendMessage(securityToken, "IAC Inc: " + message, recipients.ToArray(), orgCode, note, statusUrl);
+                    else
+                        wSMessageResponse = messageResult.SendTemplateMessage(securityToken, tempID, recipients.ToArray(), orgCode, note, statusUrl);
+                    //process response  
+                    if (!wSMessageResponse.Result)
+                    {
+                        //handle error      
+                        //MessageBox.Show(wSMessageResponse.Message);
+                    }
+                    else
+                    {
+                        _Message_Sent = message;
+                        //MessageBox.Show("Message to CUSTOMERS where sent successfully!");
+                        //this.Close();
+                    }
+                    _APIMessage = wSMessageResponse.Message;
                 }
-                else
-                {
-                    _Message_Sent = message;
-                    //MessageBox.Show("Message to CUSTOMERS where sent successfully!");
-                    //this.Close();
-                }
-                _APIMessage = wSMessageResponse.Message;
+                MessageBox.Show("Messages to CUSTOMERS where sent successfully!");
             }
-            MessageBox.Show("Messages to CUSTOMERS where sent successfully!");
+            else
+                MessageBox.Show("No CUSTOMER found that match your selection criteria.  NO MESSAGES WILL BE SENT!");
             this.Close();
         }
 
@@ -389,12 +394,18 @@ namespace IAC2021SQL
                 }
         }
 
+        private void checkBoxGracePeriod_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void FormBULKSMSMessage_Load(object sender, EventArgs e)
         {
             nullableDateTimePickerContractFrom.Value = null;
             nullableDateTimePickerContractTo.Value = null;
             nullableDateTimePickerFundingFrom.Value = null;
             nullableDateTimePickerFundingTo.Value = null;
+            nullableDateTimePickerDebitDate.Value = DateTime.Now.Date; // Moses Newman 09/10/2021
         }
     }
 }
