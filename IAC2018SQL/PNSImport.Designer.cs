@@ -34,13 +34,14 @@
             this.progressBarDownload = new System.Windows.Forms.ProgressBar();
             this.labelDownload = new System.Windows.Forms.Label();
             this.buttonReImport = new System.Windows.Forms.Button();
+            this.buttonReprint = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonCancel
             // 
             this.buttonCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCancel.Image = ((System.Drawing.Image)(resources.GetObject("buttonCancel.Image")));
-            this.buttonCancel.Location = new System.Drawing.Point(326, 34);
+            this.buttonCancel.Location = new System.Drawing.Point(342, 34);
             this.buttonCancel.Margin = new System.Windows.Forms.Padding(4);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(110, 103);
@@ -53,7 +54,7 @@
             // buttonTransfer
             // 
             this.buttonTransfer.Image = ((System.Drawing.Image)(resources.GetObject("buttonTransfer.Image")));
-            this.buttonTransfer.Location = new System.Drawing.Point(130, 34);
+            this.buttonTransfer.Location = new System.Drawing.Point(114, 34);
             this.buttonTransfer.Name = "buttonTransfer";
             this.buttonTransfer.Size = new System.Drawing.Size(110, 103);
             this.buttonTransfer.TabIndex = 1;
@@ -74,7 +75,7 @@
             this.labelDownload.AutoSize = true;
             this.labelDownload.Location = new System.Drawing.Point(12, 196);
             this.labelDownload.Name = "labelDownload";
-            this.labelDownload.Size = new System.Drawing.Size(45, 16);
+            this.labelDownload.Size = new System.Drawing.Size(44, 16);
             this.labelDownload.TabIndex = 14;
             this.labelDownload.Text = "label1";
             this.labelDownload.Visible = false;
@@ -89,12 +90,26 @@
             this.buttonReImport.UseVisualStyleBackColor = true;
             this.buttonReImport.Click += new System.EventHandler(this.buttonReImport_Click);
             // 
+            // buttonReprint
+            // 
+            this.buttonReprint.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonReprint.Image = ((System.Drawing.Image)(resources.GetObject("buttonReprint.Image")));
+            this.buttonReprint.Location = new System.Drawing.Point(228, 34);
+            this.buttonReprint.Name = "buttonReprint";
+            this.buttonReprint.Size = new System.Drawing.Size(110, 103);
+            this.buttonReprint.TabIndex = 91;
+            this.buttonReprint.Text = "&Reprint Rejects";
+            this.buttonReprint.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.buttonReprint.UseVisualStyleBackColor = true;
+            this.buttonReprint.Click += new System.EventHandler(this.buttonReprint_Click);
+            // 
             // frmPNSImport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(567, 306);
+            this.Controls.Add(this.buttonReprint);
             this.Controls.Add(this.buttonReImport);
             this.Controls.Add(this.labelDownload);
             this.Controls.Add(this.progressBarDownload);
@@ -116,5 +131,6 @@
         private System.Windows.Forms.ProgressBar progressBarDownload;
         private System.Windows.Forms.Label labelDownload;
         private System.Windows.Forms.Button buttonReImport;
+        public System.Windows.Forms.Button buttonReprint;
     }
 }

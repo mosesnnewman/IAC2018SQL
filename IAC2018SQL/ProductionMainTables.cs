@@ -5,7 +5,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.Runtime.Serialization;
 using System.Data.SqlClient;
 using System.Security.Permissions;
-namespace IAC2018SQL
+namespace IAC2021SQL
 {
 
 
@@ -422,7 +422,7 @@ namespace IAC2018SQL
     }
 }
 
-namespace IAC2018SQL.ProductionMainTablesTableAdapters
+namespace IAC2021SQL.ProductionMainTablesTableAdapters
 {
     partial class CustBankTableAdapter
     {

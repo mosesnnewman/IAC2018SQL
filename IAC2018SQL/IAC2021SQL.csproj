@@ -42,7 +42,7 @@
     <SuiteName>IAC2021SQL</SuiteName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>29</ApplicationRevision>
+    <ApplicationRevision>34</ApplicationRevision>
     <ApplicationVersion>10.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -551,6 +551,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>PaymentDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ProductionMainTables.cs">
+      <DependentUpon>ProductionMainTables.xsd</DependentUpon>
     </Compile>
     <Compile Include="Ticket.cs">
       <AutoGen>True</AutoGen>

@@ -418,5 +418,30 @@ namespace IAC2021SQL
             }
             excelApp.Quit();
         }
+
+        // Moses Newman 09/20/2021 Reprint PNS Rejects Report
+        private void buttonReprint_Click(object sender, EventArgs e)
+        {
+            PaymentDataSet PNS = new PaymentDataSet();
+            PaymentDataSetTableAdapters.PNSRejectsTableAdapter PNSRejectsTableAdapter = new PaymentDataSetTableAdapters.PNSRejectsTableAdapter();
+            
+            PNSRejectsTableAdapter.FillByAll(PNS.PNSRejects);
+            if (PNS.PNSRejects.Rows.Count > 0)
+            {
+                MDIIAC2013 MDImain = (MDIIAC2013)MdiParent;
+                Hide();
+                MDImain.CreateFormInstance("ReportViewer", false);
+                ReportViewer rptViewer = (ReportViewer)MDImain.ActiveMdiChild;
+
+                PNSRejects myReportObject = new PNSRejects();
+                myReportObject.SetDataSource(PNS);
+                myReportObject.SetParameterValue("gsUserID", Program.gsUserID);
+                myReportObject.SetParameterValue("gsUserName", Program.gsUserName);
+                myReportObject.SetParameterValue("gsTitle", "PNS PAYMENT REJECTS REPORT");
+                rptViewer.crystalReportViewer.ReportSource = myReportObject;
+                rptViewer.crystalReportViewer.Refresh();
+                rptViewer.Show();
+            }
+        }
     }
 }
