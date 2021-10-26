@@ -1204,7 +1204,7 @@ namespace IAC2021SQL
                 // Moses Newman 09/13/2017 Store the orginal value of the phone number to test for changes!
                 cUSTOMER_CELL_PHONETextBox.Tag = cUSTOMER_CELL_PHONETextBox.Text;
 
-                // Moses Newman 09/18/2021 Handle a cosinger who texted STOP!
+                // Moses Newman 09/18/2021 Handle a cosigner who texted STOP!
                 if (iACDataSet.CUSTOMER.Rows[0].Field<Boolean>("COSTConfirmed"))
                 {
                     if (GetSubscriberStatus(iACDataSet.CUSTOMER.Rows[0].Field<String>("COSIGNER_CELL_PHONE")) == "Inactive")
@@ -1553,7 +1553,7 @@ namespace IAC2021SQL
                     txtCOSZip.Enabled = true;
                     txtCOSDOB.Enabled = true;
                     txtCOSDOB.Value = null;
-                    // Moses Newman 04/30/2019 Added CosingerTierPoints
+                    // Moses Newman 04/30/2019 Added CosignerTierPoints
                     textBoxCosignerTierPoints.Enabled = true;
 
 
@@ -4311,7 +4311,7 @@ namespace IAC2021SQL
             {
                 if (wSCarrierLookupResponse.Result && !wSCarrierLookupResponse.Response[0].Landline)
                 {
-                    MakeComment("Cosinger Cell Phone Number VALIDATED.", wSCarrierLookupResponse.Message, 0, false);
+                    MakeComment("Cosigner Cell Phone Number VALIDATED.", wSCarrierLookupResponse.Message, 0, false);
                     buttonCOSValidate.ForeColor = Color.Green;
                     iACDataSet.CUSTOMER.Rows[0].SetField<Boolean>("COSCellValid", true);
                 }
@@ -4415,7 +4415,7 @@ namespace IAC2021SQL
                     textBoxCOSAuthNo.Refresh();
                     radioButtonCOSAcct.Checked = true;
                     radioButtonCOSMktg.Checked = false;
-                    UpdateSubscriber(securityToken);
+                    UpdateSubscriberCOS(securityToken);  // Moses Newman 09/22/2021
                     iACDataSet.CUSTOMER.Rows[0].SetField<Boolean>("COSTConfirmed", true);
                     buttonCOSConfirm.ForeColor = Color.Green;
                     MakeComment("COSIGNER AUTO CONFIRMED (NO PIN)!", "AUTO", 0, false);
@@ -4458,7 +4458,7 @@ namespace IAC2021SQL
 
             if (lsMessage != "NONE")
                 if (lsMessage != "")
-                    MakeComment(lsMessage, lsAPIMessage, lnTemplateID);
+                    MakeComment(lsMessage, lsAPIMessage, lnTemplateID,true,true); // Moses Newman 09/22/2021 add cosigner text sent
                 else
                     MakeComment("Cosigner Message SEND failed!", lsAPIMessage, lnTemplateID, false);
         }
@@ -4688,6 +4688,41 @@ namespace IAC2021SQL
             }
         }
 
+        private void UpdateSubscriberCOS(string securityToken)
+        {
+            SubscriberClient subscriberService = new SubscriberClient("SubscriberWSServiceHttpEndpoint");
+
+
+            SubscriberInfo subscriber = new SubscriberInfo();
+
+            subscriber.MobilePhone = txtCOSCell.Text;
+
+            subscriber.FName = txtCOSFirstName.Text;
+            subscriber.LName = txtCOSLastName.Text;
+            subscriber.Email = textBoxCosignerEmail.Text;
+            subscriber.City = txtCOSCity.Text;
+            subscriber.Street = txtCOSAddress.Text;
+            subscriber.Street2 = "";
+            subscriber.ZipCode = txtCOSZip.Text;
+            subscriber.CustomField1 = "";
+            subscriber.CustomField2 = "";
+            subscriber.CustomField3 = "";
+            subscriber.PrivateCode = cUSTOMER_PURCHASE_ORDERTextBox.Text.Trim() + "COS";
+            subscriber.UniqueID = cUSTOMER_NOTextBox.Text.Trim() + "COS";
+
+            WSSubscriberResponse wSSubscriberResponse = subscriberService.UpdateSubscriber(securityToken, subscriber);
+
+            if (!wSSubscriberResponse.Result)
+            {
+                MakeComment("*** SBT COSIGNER SUBSCRIBER FIELDS UPDATE FAILED! ***", wSSubscriberResponse.Message, 0, false);
+                MessageBox.Show(wSSubscriberResponse.Message);
+            }
+            else
+            {
+                MakeComment("SBT COSIGNER SUBSCRIBER FIELDS UPDATED.", wSSubscriberResponse.Message, 0, false);
+            }
+        }
+
         private void buttonMessage_Click(object sender, EventArgs e)
         {
             String lsMessage = "", lsAPIMessage = "";
@@ -4780,7 +4815,7 @@ namespace IAC2021SQL
                 }
         }
 
-        private void MakeComment(String CommentMessage, String APIMessage, Int32 tnTemplateNo = 0, Boolean tbAddTextSent = true)
+        private void MakeComment(String CommentMessage, String APIMessage, Int32 tnTemplateNo = 0, Boolean tbAddTextSent = true,Boolean tbCosginerTextSent = false)
         {
 
             CommentMessage = CommentMessage.Replace("{MISC$}", iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_REGULAR_AMOUNT").ToString("C", new CultureInfo("en-US")));
@@ -4844,7 +4879,7 @@ namespace IAC2021SQL
             oWord = null;
             WholeComment loTempComment;
 
-            CommentMessage = (tbAddTextSent) ? "TEXT SENT: " + CommentMessage : CommentMessage;
+            CommentMessage = (tbAddTextSent) ? (!tbCosginerTextSent ? "TEXT SENT: " : "COSIGNER TEXT SENT: ") + CommentMessage : CommentMessage;
             loTempComment = SplitComments(CommentMessage + " API MSG: " + APIMessage);
             // Moses Newman 02/22/2019 Add Full Comment
             lsFullComment = loTempComment.Field1 + loTempComment.Field2 + loTempComment.Field3;

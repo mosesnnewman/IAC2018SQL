@@ -33,6 +33,7 @@ namespace IAC2021SQL
             IACDataSetTableAdapters.ClosedDealerAgedSummarySelectCOLTableAdapter ClosedDealerAgedSummarySelectCOLTableAdapter = new IACDataSetTableAdapters.ClosedDealerAgedSummarySelectCOLTableAdapter();
             IACDataSetTableAdapters.CUSTOMERTableAdapter CUSTOMERTableAdapter = new IACDataSetTableAdapters.CUSTOMERTableAdapter();
             IACDataSetTableAdapters.DEALERTableAdapter DEALERTableAdapter = new IACDataSetTableAdapters.DEALERTableAdapter();
+            IACDataSetTableAdapters.EmailTableAdapter EmailTableAdapter = new IACDataSetTableAdapters.EmailTableAdapter();
             Int32   lnAgedTest = comboBoxAgedPeriod.SelectedIndex + 1;
 
             // Moses Newman 11/20/2018 add sort order.
@@ -56,6 +57,8 @@ namespace IAC2021SQL
                         CUSTOMERTableAdapter.FillByDelinquencies(DelinquencyData.CUSTOMER, lnAgedTest, ldCurrDate,lsSortType);
                         // Moses Newman 11/19/2013 Moses Newman added ldCurrDate as new parameter to DealerFillByDelinQuencies Query
                         DEALERTableAdapter.FillByDelinquencies(DelinquencyData.DEALER, lnAgedTest, ldCurrDate);
+                        // Moses Newman 09/27/2021 
+                        EmailTableAdapter.FillByDelinquencies(DelinquencyData.Email, lnAgedTest, ldCurrDate);
 
                         if (DelinquencyData.CUSTOMER.Rows.Count != 0 && DelinquencyData.DEALER.Rows.Count != 0)
                         {
@@ -79,6 +82,9 @@ namespace IAC2021SQL
                         CUSTOMERTableAdapter.FillByDelinquenciesCOL(DelinquencyData.CUSTOMER, lnAgedTest, ldCurrDate,lsSortType);
                         // Moses Newman 11/19/2013 Moses Newman added ldCurrDate as new parameter to DealerFillByDelinQuencies Query
                         DEALERTableAdapter.FillByDelinquenciesCOL(DelinquencyData.DEALER, lnAgedTest, ldCurrDate);
+                        // Moses Newman 09/27/2021 
+                        EmailTableAdapter.FillByDelinquencies(DelinquencyData.Email, lnAgedTest, ldCurrDate);
+
                         if (DelinquencyData.CUSTOMER.Rows.Count != 0 && DelinquencyData.DEALER.Rows.Count != 0)
                         {
                             Hide();

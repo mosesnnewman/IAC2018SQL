@@ -464,7 +464,7 @@ namespace IAC2021SQL
                 {
                     if (_AddMode || ticketsdataset.TicketDetail.Rows[i].Field<Int32?>("TicketID") == null || ticketsdataset.TicketDetail.Rows[i].Field<Int32?>("TicketID") <= 0)
                         ticketsdataset.TicketDetail.Rows[i].SetField<Int32>("TicketID", (Int32)insertID);
-                    if (ticketsdataset.TicketDetail.Rows[i].Field<Int32>("GLAccount") != 2 && ticketsdataset.TicketDetail.Rows[i].Field<Int32>("GLAccount") != 7)
+                    if (ticketsdataset.TicketDetail.Rows[i].Field<Int32>("GLAccount") != 2) // Moses Newman 09/21/2021  && ticketsdataset.TicketDetail.Rows[i].Field<Int32>("GLAccount") != 7)
                     {
                         NewPayment = productionMainTables.PAYMENT.NewPAYMENTRow();
                         NewPayment.PAYMENT_CUSTOMER = ticketsdataset.TicketHeader.Rows[bindingSourceTicketHeader.Position].Field<Int32>("AccountNumber").ToString().PadLeft(6, '0');
@@ -503,7 +503,9 @@ namespace IAC2021SQL
                         productionMainTables.PAYMENT.AddPAYMENTRow(NewPayment);
                         NewPayment = null; 
                         PAYMENTTableAdapter.Update(productionMainTables.PAYMENT.Rows[productionMainTables.PAYMENT.Rows.Count - 1]);
-                        if (ticketsdataset.TicketDetail.Rows[i].Field<Int32>("GLAccount") != 1)
+                        if (ticketsdataset.TicketDetail.Rows[i].Field<Int32>("GLAccount") != 1 &&
+                            ticketsdataset.TicketDetail.Rows[i].Field<Int32>("GLAccount") != 7 &&
+                            ticketsdataset.TicketDetail.Rows[i].Field<Int32>("GLAccount") != 12)
                         {
                             NewConting = productionMainTables.CONTING.NewCONTINGRow();
 
@@ -807,16 +809,30 @@ namespace IAC2021SQL
             buttonSaveTicket.Enabled = true;
             buttonClearDetail.Enabled = true;
             buttonDeleteEntry.Enabled = true;
+            buttonDeleteTicket.Enabled = true; // Moses Newman 09/22/2021
         }
 
         private void buttonDeleteTicket_Click(object sender, EventArgs e)
         {
             if (productionMainTables.CUSTOMER.Rows.Count == 0 || ticketsdataset.TicketHeader.Rows.Count == 0)
                 return;
+            // Moses Newman 09/22/2021 Added full delete ticket functionality
+            Int32 ThisTicket = ticketsdataset.TicketHeader.Rows[bindingSourceTicketHeader.Position].Field<Int32>("TicketID");
+
 
             // Moses Newman stored procedures will only delete headers or details if not yet posted!
-            ticketHeaderTableAdapter.Delete(ticketsdataset.TicketHeader.Rows[bindingSourceTicketHeader.Position].Field<Int32>("TicketID"));
-            ticketDetailTableAdapter.DeleteALL(ticketsdataset.TicketHeader.Rows[bindingSourceTicketHeader.Position].Field<Int32>("TicketID"));
+            ticketHeaderTableAdapter.Delete(ThisTicket);
+            ticketDetailTableAdapter.DeleteALL(ThisTicket);
+            PAYMENTTableAdapter.DeleteByTicketID(ThisTicket);
+            CONTINGTableAdapter.DeleteByTicketID(ThisTicket);
+
+            ticketHeaderTableAdapter.FillByAll(ticketsdataset.TicketHeader);
+            ticketsdataset.TicketDetail.Clear();
+            productionMainTables.CUSTOMER.Clear();
+            buttonCancelTicket.Enabled = false;
+            buttonDeleteTicket.Enabled = false;
+            buttonFirst.PerformClick();
+            buttonLast.PerformClick();
         }
 
         private void buttonFirst_Click(object sender, EventArgs e)

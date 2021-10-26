@@ -170,6 +170,18 @@ namespace IAC2021SQL
                     labelStatus.Refresh();
                     MakeComment(msgData, i, message, "", tempID, true);
 
+                    if (msgData.CUSTOMER.Rows[i].Field<Boolean>("COSTConfirmed"))
+                    {
+                        //Add Cosigner   
+                        recipient = new WSRecipient();
+                        recipient.SendTo = msgData.CUSTOMER.Rows[i].Field<String>("COSIGNER_CELL_PHONE");
+                        recipient.CustomFields = customFields.ToArray();
+                        recipients.Add(recipient);
+                        labelStatus.Text = "Creating comment for Account Number Cosigner: " + msgData.CUSTOMER.Rows[i].Field<String>("CUSTOMER_NO") + "\nRecord# " + (i + 1).ToString().Trim() + " of " + msgData.CUSTOMER.Rows.Count.ToString().Trim();
+                        labelStatus.Refresh();
+                        MakeComment(msgData, i, message, "", tempID, true, true);
+                    }
+
                     securityToken = sbtLogin();
                     if (tempID < 0)
                         wSMessageResponse = messageResult.SendMessage(securityToken, "IAC Inc: " + message, recipients.ToArray(), orgCode, note, statusUrl);
@@ -189,7 +201,7 @@ namespace IAC2021SQL
                     }
                     _APIMessage = wSMessageResponse.Message;
                 }
-                MessageBox.Show("Messages to CUSTOMERS where sent successfully!");
+                MessageBox.Show("Messages to CUSTOMERS and COSIGNERS where sent successfully!");
             }
             else
                 MessageBox.Show("No CUSTOMER found that match your selection criteria.  NO MESSAGES WILL BE SENT!");
@@ -207,7 +219,7 @@ namespace IAC2021SQL
             this.Show();
         }
 
-        private void MakeComment(IACDataSet iACDataSet,Int32 custrow,String CommentMessage, String APIMessage, Int32 tnTemplateNo = 0, Boolean tbAddTextSent = true)
+        private void MakeComment(IACDataSet iACDataSet,Int32 custrow,String CommentMessage, String APIMessage, Int32 tnTemplateNo = 0, Boolean tbAddTextSent = true, Boolean tbCosginerTextSent = false)
         {
             IACDataSetTableAdapters.COMMENTTableAdapter cOMMENTTableAdapter = new IACDataSetTableAdapters.COMMENTTableAdapter();
 
@@ -272,7 +284,7 @@ namespace IAC2021SQL
             oWord = null;
             WholeComment loTempComment;
 
-            CommentMessage = (tbAddTextSent) ? "TEXT SENT: " + CommentMessage : CommentMessage;
+            CommentMessage = (tbAddTextSent) ? (!tbCosginerTextSent ? "TEXT SENT: " : "COSIGNER TEXT SENT: ") + CommentMessage : CommentMessage;
             loTempComment = SplitComments(CommentMessage + " API MSG: " + APIMessage);
             // Moses Newman 02/22/2019 Add Full Comment
             lsFullComment = loTempComment.Field1 + loTempComment.Field2 + loTempComment.Field3;

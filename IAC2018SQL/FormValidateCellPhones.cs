@@ -87,7 +87,7 @@ namespace IAC2021SQL
                     {
                         if (wSCarrierLookupResponse.Result && !wSCarrierLookupResponse.Response[0].Landline)
                         {
-                            string VBTError = "",gsVBTPin = "";
+                            string VBTError = "", gsVBTPin = "";
                             MessageClient messageResult = new MessageClient("MessageWSServiceHttpEndpoint");
                             securityToken = sbtLogin();
                             string phoneNo = phone[0];
@@ -166,9 +166,104 @@ namespace IAC2021SQL
                             IACData.CUSTOMER.Rows[i].SetField<Boolean>("CellValid", false);
                         }
                     }
+                    phone = IACData.CUSTOMER.Rows[i].Field<String>("COSIGNER_CELL_PHONE").Split(',');
+                    if (GetSubscriberStatus(phone[0]) != "Inactive" && phone[0] != "")
+                    {
+                        securityToken = sbtLogin();
+
+                        wSCarrierLookupResponse = generalService.GetCarrierLookup(securityToken, phone, orgCode);
+
+                        if (!wSCarrierLookupResponse.Result)
+                        {
+                            MakeComment("*** Failed to VALIDATE COSINGER cell phone number! ***", wSCarrierLookupResponse.Message, i);
+                            IACData.CUSTOMER.Rows[i].SetField<Boolean>("COSCellValid", false);
+                        }
+                        else
+                        {
+                            if (wSCarrierLookupResponse.Result && !wSCarrierLookupResponse.Response[0].Landline)
+                            {
+                                string VBTError = "", gsVBTPin = "";
+                                MessageClient messageResult = new MessageClient("MessageWSServiceHttpEndpoint");
+                                securityToken = sbtLogin();
+                                string phoneNo = phone[0];
+
+                                WSVerificationResponse wSVerificationResponse = messageResult.RequestVBT(securityToken, orgCode, phoneNo);
+                                if (!wSVerificationResponse.Result)
+                                {
+                                    gsVBTPin = "";
+
+                                    VBTError = wSVerificationResponse.Message;
+                                    if (VBTError.TrimEnd() != "Cosigner Subscriber information already exists")
+                                    {
+                                        IACData.CUSTOMER.Rows[i].SetField<Boolean>("COSTAcct", false);
+                                        MakeComment("*** COSIGNER VBT PIN NOT CREATED! ***", VBTError, i);
+                                        MessageBox.Show(VBTError);
+                                    }
+                                }
+                                else
+                                {
+                                    gsVBTPin = "AUTO";
+                                    IACData.CUSTOMER.Rows[i].SetField<Boolean>("COSDNTAcct", false);
+                                    IACData.CUSTOMER.Rows[i].SetField<Boolean>("COSTAcct", true);
+                                    MakeComment("COSIGNER VBT AUTO CREATED.", wSVerificationResponse.Message, i);
+                                }
+
+                                if (gsVBTPin == "AUTO")
+                                {
+                                    SubscriberClient subscriberService = new SubscriberClient("SubscriberWSServiceHttpEndpoint");
+
+
+
+                                    SubscriberInfo subscriber = new SubscriberInfo();
+                                    SubscriberDetails subdetails = new SubscriberDetails();
+
+                                    subscriber.MobilePhone = IACData.CUSTOMER.Rows[i].Field<String>("COSIGNER_CELL_PHONE");
+
+                                    subscriber.FName = IACData.CUSTOMER.Rows[i].Field<String>("COSIGNER_FIRST_NAME");
+                                    subscriber.LName = IACData.CUSTOMER.Rows[i].Field<String>("COSIGNER_LAST_NAME");
+                                    subscriber.Email = IACData.CUSTOMER.Rows[i].Field<String>("CosignerEmail");
+                                    subscriber.City = IACData.CUSTOMER.Rows[i].Field<String>("COSIGNER_CITY");
+                                    subscriber.Street = IACData.CUSTOMER.Rows[i].Field<String>("COSIGNER_ADDRESS1");
+                                    subscriber.Street2 = "";
+                                    subscriber.ZipCode = IACData.CUSTOMER.Rows[i].Field<String>("COSIGNER_ZIP_CODE");
+                                    subscriber.CustomField1 = "";
+                                    subscriber.CustomField2 = "";
+                                    subscriber.CustomField3 = "";
+                                    subscriber.PrivateCode = IACData.CUSTOMER.Rows[i].Field<String>("CUSTOMER_PURCHASE_ORDER") + "COS";
+                                    subscriber.UniqueID = IACData.CUSTOMER.Rows[i].Field<String>("CUSTOMER_NO") + "COS";
+
+
+                                    securityToken = sbtLogin();
+                                    WSSubscriberResponse wSSubscriberResponse = subscriberService.UpdateSubscriber(securityToken, subscriber);
+
+                                    if (!wSSubscriberResponse.Result)
+                                    {
+                                        MakeComment("*** SBT COSIGNER SUBSCRIBER FIELDS UPDATE FAILED! ***", wSSubscriberResponse.Message, i);
+                                        MessageBox.Show(wSSubscriberResponse.Message);
+                                    }
+                                    else
+                                    {
+                                        MakeComment("SBT COSIGNER SUBSCRIBER FIELDS UPDATED.", wSSubscriberResponse.Message, i);
+                                    }
+
+                                    MakeComment("Cosigner Cell Phone Number VALIDATED. AUTO VBT", wSCarrierLookupResponse.Message, i);
+                                    IACData.CUSTOMER.Rows[i].SetField<Boolean>("COSCellValid", true);
+                                    IACData.CUSTOMER.Rows[i].SetField<Boolean>("COSDNTAcct", false);
+                                    IACData.CUSTOMER.Rows[i].SetField<Boolean>("COSTAcct", true);
+                                    IACData.CUSTOMER.Rows[i].SetField<Boolean>("COSTConfirmed", true);
+                                    IACData.CUSTOMER.Rows[i].SetField<String>("COSTPin", "AUTO");
+                                }
+                            }
+                            else
+                            {
+                                MakeComment("*** Cosinger Cell Phone Number will not VALIDATE because it is a LANDLINE! ***", wSCarrierLookupResponse.Message, i);
+                                IACData.CUSTOMER.Rows[i].SetField<Boolean>("COSCellValid", false);
+                            }
+                        }
+                    }
                     CUSTOMERTableAdapter.Update(IACData.CUSTOMER.Rows[i]);
+                    progressBar1.Value = i;
                 }
-                progressBar1.Value = i;
             }
             MessageBox.Show("*** Completed cell phone validation! ***", "Validate Cell Phones", MessageBoxButtons.OK);
         }

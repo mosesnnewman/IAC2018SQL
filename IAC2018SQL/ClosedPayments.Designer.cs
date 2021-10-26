@@ -837,7 +837,6 @@
             this.CodeTypetextBox.Name = "CodeTypetextBox";
             this.CodeTypetextBox.Size = new System.Drawing.Size(17, 20);
             this.CodeTypetextBox.TabIndex = 15;
-            this.CodeTypetextBox.TextChanged += new System.EventHandler(this.CodeTypetextBox_TextChanged);
             this.CodeTypetextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             this.CodeTypetextBox.Validated += new System.EventHandler(this.CodeTypetextBox_Validated);
             // 
@@ -849,7 +848,6 @@
             this.txtCheckValue.Size = new System.Drawing.Size(88, 20);
             this.txtCheckValue.TabIndex = 12;
             this.txtCheckValue.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtCheckValue.TextChanged += new System.EventHandler(this.txtCheckValue_TextChanged);
             this.txtCheckValue.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             this.txtCheckValue.Validated += new System.EventHandler(this.txtCheckValue_Validated);
             // 
@@ -973,7 +971,6 @@
             this.cUSTOMER_NOTextBox.Size = new System.Drawing.Size(58, 20);
             this.cUSTOMER_NOTextBox.TabIndex = 1;
             this.cUSTOMER_NOTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.cUSTOMER_NOTextBox.TextChanged += new System.EventHandler(this.cUSTOMER_NOTextBox_TextChanged);
             this.cUSTOMER_NOTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             this.cUSTOMER_NOTextBox.Validated += new System.EventHandler(this.cUSTOMER_NOTextBox_Validated);
             // 

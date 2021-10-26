@@ -96,6 +96,7 @@ namespace IAC2021SQL
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceTicketDetail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ticketsdataset)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceTicketHeader)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NullableDateTimePickerDate)).BeginInit();
             this.SuspendLayout();
             // 
             // textBoxName
@@ -636,7 +637,7 @@ namespace IAC2021SQL
             this.colorTextBoxDebits.Location = new System.Drawing.Point(329, 538);
             this.colorTextBoxDebits.Name = "colorTextBoxDebits";
             this.colorTextBoxDebits.ReadOnly = true;
-            this.colorTextBoxDebits.Size = new System.Drawing.Size(201, 22);
+            this.colorTextBoxDebits.Size = new System.Drawing.Size(100, 22);
             this.colorTextBoxDebits.TabIndex = 85;
             this.colorTextBoxDebits.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -718,6 +719,7 @@ namespace IAC2021SQL
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceTicketDetail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ticketsdataset)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceTicketHeader)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NullableDateTimePickerDate)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

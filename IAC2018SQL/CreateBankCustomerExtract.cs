@@ -2112,7 +2112,7 @@ namespace IAC2021SQL
                 Extensions.CustomerExtract.Rows[RowCount].SetField<Int32>("CUSTOMER_NO_OF_PAYMENTS_MADE", 0);
                 Extensions.CustomerExtract.Rows[RowCount].SetField<Int32>("CUSTOMER_CREDIT_SCORE_N", Bank.OPNCUST.Rows[i].Field<Int32>("CUSTOMER_CREDIT_SCORE_N"));
                 Extensions.CustomerExtract.Rows[RowCount].SetField<String>("CUSTOMER_CREDIT_SCORE_A", Bank.OPNCUST.Rows[i].Field<String>("CUSTOMER_CREDIT_SCORE_A"));
-                // Moses Newman 01/09/2018 Init AnnualIncome, Tier, CosingerCreditScore, CosignerAnnualIncome,Mileage to 0 because not on Open loans
+                // Moses Newman 01/09/2018 Init AnnualIncome, Tier, CosignerCreditScore, CosignerAnnualIncome,Mileage to 0 because not on Open loans
                 Extensions.CustomerExtract.Rows[RowCount].SetField<Decimal>("AnnualIncome", 0);
                 Extensions.CustomerExtract.Rows[RowCount].SetField<Decimal>("Tier", 0);
                 Extensions.CustomerExtract.Rows[RowCount].SetField<Decimal>("CosignerCreditScore", 0);

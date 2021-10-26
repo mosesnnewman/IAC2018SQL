@@ -260,7 +260,7 @@ namespace IAC2021SQL
                     TSBDATA.CUSTOMER.Rows[i].Field<Int32>("CUSTOMER_DAY_DUE"));
                 // Moses Newman 06/8/2015 Start history from contract date!
                 ClosedWSHISTTableAdapter.Fill(TSBDATA.ClosedWSHIST, TSBDATA.CUSTOMER.Rows[i].Field<String>("CUSTOMER_NO"),
-                    TSBDATA.CUSTOMER.Rows[i].Field<DateTime>("ContractDate"), (DateTime)nullableDateTimePickerTo.Value);
+                    TSBDATA.CUSTOMER.Rows[i].Field<DateTime>("ContractDate"), (DateTime)nullableDateTimePickerTo.Value, (DateTime)nullableDateTimePickerFrom.Value);
                 //ClosedWSHISTTableAdapter.Fill(TSBDATA.ClosedWSHIST, TSBDATA.CUSTOMER.Rows[i].Field<String>("CUSTOMER_NO"),
                 // (DateTime)nullableDateTimePickerFrom.Value, (DateTime)nullableDateTimePickerTo.Value);
                 if (TSBDATA.ClosedWSHIST.Rows.Count > 0)
@@ -325,7 +325,7 @@ namespace IAC2021SQL
                 // Moses Newman 08/26/2020
                 if (tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].Field<String>("CRDMGR_ACCT_ECOA_CODE").Trim() == "")
                     tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<String>("CRDMGR_ACCT_ECOA_CODE", "1");
-                // Must have ECOA code of 2 if there is a cosinger period!
+                // Must have ECOA code of 2 if there is a cosigner period!
                 if (TSBDATA.CUSTOMER.Rows[i].Field<String>("COSIGNER_FIRST_NAME").TrimEnd() != "" || TSBDATA.CUSTOMER.Rows[i].Field<String>("COSIGNER_LAST_NAME").TrimEnd() != "")
                 {
                     tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<String>("CRDMGR_ACCT_ECOA_CODE", "2");
@@ -494,7 +494,7 @@ namespace IAC2021SQL
                     TSBDATA.OPNCUST.Rows[i].Field<Int32>("CUSTOMER_DAY_DUE"));
                 // Moses Newman 06/08/2015 Start History from Contract Date!
                 OpenWSHISTTableAdapter.Fill(TSBDATA.OpenWSHIST, TSBDATA.OPNCUST.Rows[i].Field<String>("CUSTOMER_NO"),
-                    TSBDATA.OPNCUST.Rows[i].Field<DateTime>("CUSTOMER_CONTRACT_DATE"), (DateTime)nullableDateTimePickerTo.Value);
+                    TSBDATA.OPNCUST.Rows[i].Field<DateTime>("CUSTOMER_CONTRACT_DATE"), (DateTime)nullableDateTimePickerTo.Value, (DateTime)nullableDateTimePickerFrom.Value);
                 //OpenWSHISTTableAdapter.Fill(TSBDATA.OpenWSHIST, TSBDATA.OPNCUST.Rows[i].Field<String>("CUSTOMER_NO"),
                 //  (DateTime)nullableDateTimePickerFrom.Value, (DateTime)nullableDateTimePickerTo.Value);
                 String tempCust = TSBDATA.OPNCUST.Rows[i].Field<String>("CUSTOMER_NO");
