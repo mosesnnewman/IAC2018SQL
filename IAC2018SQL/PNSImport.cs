@@ -167,7 +167,9 @@ namespace IAC2021SQL
                             .Select(Path.GetFileName); // <-- note you can shorten the lambda
                 TotalFiles = filenames.Count()-1;
 
-                FormatExcel(FilePath, filenames);  // Moses Newman 07/10/2021
+                // Moses Newman 10/14/2021 do not reformat if previous attempt to process failed
+                if(withDownload)
+                    FormatExcel(FilePath, filenames);  // Moses Newman 07/10/2021
                 foreach (String FileName in filenames)
                 {
                     if (FileName.IndexOf("Template.xlsx") == -1)

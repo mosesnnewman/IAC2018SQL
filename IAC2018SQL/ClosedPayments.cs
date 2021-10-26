@@ -390,7 +390,20 @@ namespace IAC2021SQL
             {
                 setRelatedData();
                 if (lbAddFlag && ClosedPaymentiacDataSet.CUSTOMER.Rows.Count == 0 && cUSTOMER_NOTextBox.Text.ToString().Trim().Length != 0)
+                {
                     cUSTOMERTableAdapter.Fill(ClosedPaymentiacDataSet.CUSTOMER, cUSTOMER_NOTextBox.Text.ToString().Trim());
+                }
+                if(ClosedPaymentiacDataSet.CUSTOMER.Rows.Count > 0 && lbAddFlag) // Moses Newman 10/26/2021 no more payments to Inactive accounts!
+                    if(ClosedPaymentiacDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_ACT_STAT") == "I")
+                    {
+                        MessageBox.Show("*** SORRY ACCOUNT: " + cUSTOMER_NOTextBox.Text.ToString().Trim() + " " +ClosedPaymentiacDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_FIRST_NAME").Trim() + " " + ClosedPaymentiacDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_LAST_NAME").Trim() + " IS INACTIVE! ***");
+                        ClosedPaymentiacDataSet.CUSTOMER.Clear();
+                        cUSTOMER_NOTextBox.Text = "";
+                        setRelatedData();
+                        ActiveControl = cUSTOMER_NOTextBox;
+                        cUSTOMER_NOTextBox.Select();
+                        return;
+                    }
             }
             if (ClosedPaymentiacDataSet.CUSTOMER.Rows.Count == 0 && cUSTOMER_NOTextBox.Text.ToString().Trim().Length != 0)
             {
@@ -1066,21 +1079,6 @@ namespace IAC2021SQL
         private void PaymentbindingSource_AddingNew(object sender, AddingNewEventArgs e)
         {
             lbNewPayment = true;
-        }
-
-        private void CodeTypetextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtCheckValue_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cUSTOMER_NOTextBox_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void toolStripButtonDelete_Click(object sender, EventArgs e)
