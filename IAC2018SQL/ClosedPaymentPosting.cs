@@ -702,6 +702,9 @@ namespace IAC2021SQL
             PAYMENTDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].SetField<String>("CUSTHIST_PAYMENT_TYPE", PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<String>("PAYMENT_TYPE"));
             PAYMENTDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].SetField<String>("CUSTHIST_PAYMENT_CODE", PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<String>("PAYMENT_CODE_2"));
             PAYMENTDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].SetField<Int32>("CUSTHIST_THRU_UD", PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<Int32>("PAYMENT_THRU_UD"));
+            // Moses Newman 11/04/2021 Keep track of total extensions
+            if (PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<Int32>("PAYMENT_THRU_UD") > 0)
+                PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].SetField<Int32>("CUSTOMER_TOTAL_EXT", PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<Int32>("CUSTOMER_TOTAL_EXT") + PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<Int32>("PAYMENT_THRU_UD"));
             // Moses Newman 08/18/2021 Begin Mod
             if (PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<Int32?>("TicketID") != null)
             {

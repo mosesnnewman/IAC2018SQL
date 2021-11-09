@@ -56,6 +56,10 @@ namespace IAC2021SQL
 
         private void CreateTSBDATAFile(IACDataSet TSBDATA)
         {
+            TSBDataSetTableAdapters.ClosedCreditManagerTableAdapter ClosedCreditManagerTableAdapter = new TSBDataSetTableAdapters.ClosedCreditManagerTableAdapter();
+            // Moses Newman 11/9/2021 Update Date Of Account Information
+            ClosedCreditManagerTableAdapter.UpdateDateOfAccountInformation(((DateTime)nullableDateTimePickerTo.Value).Date.AddDays(1));
+
             SQLBackupandRestore SQLBR = new SQLBackupandRestore();
             SQLBR.RunJob("TSBXMLImport", "Create TSB Import XML", false);
             Thread.Sleep(5000);
@@ -387,14 +391,23 @@ namespace IAC2021SQL
                 // Moses Newman 09/26/2020 Set Interest Type
                 tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<String>("InterestType", "F");
                 ClosedCreditManagerBindingSource.EndEdit();
-                try
+                /*try
                 {
                     ClosedCreditManagerTableAdapter.Update(tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position]);
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("There was a genereal error: " + ex.Message);
-                }
+                }*/
+            }
+            // Moses Newman 11/9/2021 Update all records.
+            try
+            {
+                ClosedCreditManagerTableAdapter.Update(tsbSet.ClosedCreditManager);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("There was a genereal error: " + ex.Message);
             }
             CUSTOMERTableAdapter.Dispose();
             CUSTHISTTableAdapter.Dispose();
