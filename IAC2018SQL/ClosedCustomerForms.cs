@@ -4472,6 +4472,11 @@ namespace IAC2021SQL
             CalcTotalFees();
         }
 
+        private void label45_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void textBoxRepairFee5_Validated(object sender, EventArgs e)
         {
             if (!Decimal.TryParse(textBoxRepairFee5.Text, NumberStyles.Currency,

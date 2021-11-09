@@ -212,19 +212,12 @@
             System.Windows.Forms.Label label151;
             System.Windows.Forms.Label labelTotalDue;
             System.Windows.Forms.Label labelCOSAuthNo;
+            System.Windows.Forms.Label labelTotalExtensions;
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCustMaint));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -234,6 +227,14 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cUSTOMERBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.iACDataSet = new IAC2021SQL.IACDataSet();
             this.tabComments = new System.Windows.Forms.TabPage();
@@ -267,6 +268,7 @@
             this.dEALERBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabHistory = new System.Windows.Forms.TabPage();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.textBoxTotalExtensions = new System.Windows.Forms.TextBox();
             this.checkBoxFullRecourseHist = new IAC2021SQL.ColorCheckBox();
             this.nullableDateTimePickerHistContractDate = new ProManApp.NullableDateTimePicker();
             this.textBoxBuyOutHist = new System.Windows.Forms.TextBox();
@@ -301,18 +303,6 @@
             this.toolStripButtonTVExcel = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonCalcBuyout = new System.Windows.Forms.ToolStripButton();
             this.cUSTHISTDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PartialPayment = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CUSTHIST_PAYMENT_CODE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CUSTHIST_THRU_UD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cUSTHISTBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabCustInfo1 = new System.Windows.Forms.TabPage();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
@@ -777,6 +767,18 @@
             this.portfolioTypesTableAdapter = new IAC2021SQL.TSBDataSetTableAdapters.PortfolioTypesTableAdapter();
             this.termsFrequencyTableAdapter = new IAC2021SQL.TSBDataSetTableAdapters.TermsFrequencyTableAdapter();
             this.mASTERTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.MASTERTableAdapter();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PartialPayment = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CUSTHIST_PAYMENT_CODE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CUSTHIST_THRU_UD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             label11 = new System.Windows.Forms.Label();
             label10 = new System.Windows.Forms.Label();
             label9 = new System.Windows.Forms.Label();
@@ -959,6 +961,7 @@
             label151 = new System.Windows.Forms.Label();
             labelTotalDue = new System.Windows.Forms.Label();
             labelCOSAuthNo = new System.Windows.Forms.Label();
+            labelTotalExtensions = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.cUSTOMERBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iACDataSet)).BeginInit();
             this.tabComments.SuspendLayout();
@@ -2869,6 +2872,17 @@
             labelCOSAuthNo.Text = "Auth No.:";
             labelCOSAuthNo.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
+            // labelTotalExtensions
+            // 
+            labelTotalExtensions.AutoSize = true;
+            labelTotalExtensions.Location = new System.Drawing.Point(837, 85);
+            labelTotalExtensions.Name = "labelTotalExtensions";
+            labelTotalExtensions.Size = new System.Drawing.Size(151, 21);
+            labelTotalExtensions.TabIndex = 529;
+            labelTotalExtensions.Text = "TOTAL EXTENSIONS:";
+            labelTotalExtensions.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            labelTotalExtensions.Click += new System.EventHandler(this.label45_Click);
+            // 
             // cUSTOMERBindingSource
             // 
             this.cUSTOMERBindingSource.DataMember = "CUSTOMER";
@@ -3194,6 +3208,8 @@
             // 
             // groupBox11
             // 
+            this.groupBox11.Controls.Add(labelTotalExtensions);
+            this.groupBox11.Controls.Add(this.textBoxTotalExtensions);
             this.groupBox11.Controls.Add(this.checkBoxFullRecourseHist);
             this.groupBox11.Controls.Add(labelHistContractDate);
             this.groupBox11.Controls.Add(this.nullableDateTimePickerHistContractDate);
@@ -3250,6 +3266,18 @@
             this.groupBox11.TabIndex = 500;
             this.groupBox11.TabStop = false;
             // 
+            // textBoxTotalExtensions
+            // 
+            this.textBoxTotalExtensions.AllowDrop = true;
+            this.textBoxTotalExtensions.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_TOTAL_EXT", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "0", "N0"));
+            this.textBoxTotalExtensions.Enabled = false;
+            this.textBoxTotalExtensions.Location = new System.Drawing.Point(995, 77);
+            this.textBoxTotalExtensions.Name = "textBoxTotalExtensions";
+            this.textBoxTotalExtensions.ReadOnly = true;
+            this.textBoxTotalExtensions.Size = new System.Drawing.Size(25, 29);
+            this.textBoxTotalExtensions.TabIndex = 514;
+            this.textBoxTotalExtensions.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // checkBoxFullRecourseHist
             // 
             this.checkBoxFullRecourseHist.Appearance = System.Windows.Forms.Appearance.Button;
@@ -3281,7 +3309,7 @@
             this.nullableDateTimePickerHistContractDate.Name = "nullableDateTimePickerHistContractDate";
             this.nullableDateTimePickerHistContractDate.Size = new System.Drawing.Size(107, 29);
             this.nullableDateTimePickerHistContractDate.TabIndex = 502;
-            this.nullableDateTimePickerHistContractDate.Value = new System.DateTime(2021, 9, 20, 0, 0, 0, 0);
+            this.nullableDateTimePickerHistContractDate.Value = new System.DateTime(2021, 11, 4, 0, 0, 0, 0);
             // 
             // textBoxBuyOutHist
             // 
@@ -3292,7 +3320,7 @@
             this.textBoxBuyOutHist.Name = "textBoxBuyOutHist";
             this.textBoxBuyOutHist.ReadOnly = true;
             this.textBoxBuyOutHist.Size = new System.Drawing.Size(102, 29);
-            this.textBoxBuyOutHist.TabIndex = 526;
+            this.textBoxBuyOutHist.TabIndex = 528;
             this.textBoxBuyOutHist.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // nullableDateTimePickerPayDate
@@ -3307,7 +3335,7 @@
             this.nullableDateTimePickerPayDate.Name = "nullableDateTimePickerPayDate";
             this.nullableDateTimePickerPayDate.Size = new System.Drawing.Size(107, 29);
             this.nullableDateTimePickerPayDate.TabIndex = 507;
-            this.nullableDateTimePickerPayDate.Value = new System.DateTime(2021, 9, 20, 0, 0, 0, 0);
+            this.nullableDateTimePickerPayDate.Value = new System.DateTime(2021, 11, 4, 0, 0, 0, 0);
             // 
             // textBox22
             // 
@@ -3332,7 +3360,7 @@
             this.nullableDateTimePickerFirstPayDate.Name = "nullableDateTimePickerFirstPayDate";
             this.nullableDateTimePickerFirstPayDate.Size = new System.Drawing.Size(107, 29);
             this.nullableDateTimePickerFirstPayDate.TabIndex = 510;
-            this.nullableDateTimePickerFirstPayDate.Value = new System.DateTime(2021, 9, 20, 0, 0, 0, 0);
+            this.nullableDateTimePickerFirstPayDate.Value = new System.DateTime(2021, 11, 4, 0, 0, 0, 0);
             // 
             // textBox1
             // 
@@ -3383,7 +3411,7 @@
             this.textBox24.Name = "textBox24";
             this.textBox24.ReadOnly = true;
             this.textBox24.Size = new System.Drawing.Size(73, 29);
-            this.textBox24.TabIndex = 517;
+            this.textBox24.TabIndex = 518;
             this.textBox24.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox3
@@ -3415,7 +3443,7 @@
             this.textBox25.Name = "textBox25";
             this.textBox25.ReadOnly = true;
             this.textBox25.Size = new System.Drawing.Size(102, 29);
-            this.textBox25.TabIndex = 523;
+            this.textBox25.TabIndex = 524;
             this.textBox25.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox5
@@ -3438,7 +3466,7 @@
             this.textBoxPartialPayHist.Name = "textBoxPartialPayHist";
             this.textBoxPartialPayHist.ReadOnly = true;
             this.textBoxPartialPayHist.Size = new System.Drawing.Size(73, 29);
-            this.textBoxPartialPayHist.TabIndex = 521;
+            this.textBoxPartialPayHist.TabIndex = 522;
             this.textBoxPartialPayHist.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox7
@@ -3461,7 +3489,7 @@
             this.textBox27.Name = "textBox27";
             this.textBox27.ReadOnly = true;
             this.textBox27.Size = new System.Drawing.Size(102, 29);
-            this.textBox27.TabIndex = 522;
+            this.textBox27.TabIndex = 523;
             this.textBox27.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox28
@@ -3473,7 +3501,7 @@
             this.textBox28.Name = "textBox28";
             this.textBox28.ReadOnly = true;
             this.textBox28.Size = new System.Drawing.Size(25, 29);
-            this.textBox28.TabIndex = 525;
+            this.textBox28.TabIndex = 526;
             this.textBox28.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox29
@@ -3485,7 +3513,7 @@
             this.textBox29.Name = "textBox29";
             this.textBox29.ReadOnly = true;
             this.textBox29.Size = new System.Drawing.Size(25, 29);
-            this.textBox29.TabIndex = 524;
+            this.textBox29.TabIndex = 525;
             this.textBox29.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox30
@@ -3509,7 +3537,7 @@
             this.textBox32.Name = "textBox32";
             this.textBox32.ReadOnly = true;
             this.textBox32.Size = new System.Drawing.Size(102, 29);
-            this.textBox32.TabIndex = 518;
+            this.textBox32.TabIndex = 519;
             this.textBox32.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox33
@@ -3521,7 +3549,7 @@
             this.textBox33.Name = "textBox33";
             this.textBox33.ReadOnly = true;
             this.textBox33.Size = new System.Drawing.Size(102, 29);
-            this.textBox33.TabIndex = 516;
+            this.textBox33.TabIndex = 517;
             this.textBox33.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox34
@@ -3533,7 +3561,7 @@
             this.textBox34.Name = "textBox34";
             this.textBox34.ReadOnly = true;
             this.textBox34.Size = new System.Drawing.Size(102, 29);
-            this.textBox34.TabIndex = 515;
+            this.textBox34.TabIndex = 516;
             this.textBox34.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox35
@@ -3545,7 +3573,7 @@
             this.textBox35.Name = "textBox35";
             this.textBox35.ReadOnly = true;
             this.textBox35.Size = new System.Drawing.Size(102, 29);
-            this.textBox35.TabIndex = 514;
+            this.textBox35.TabIndex = 515;
             this.textBox35.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox36
@@ -3558,7 +3586,7 @@
             this.textBox36.Name = "textBox36";
             this.textBox36.ReadOnly = true;
             this.textBox36.Size = new System.Drawing.Size(19, 29);
-            this.textBox36.TabIndex = 520;
+            this.textBox36.TabIndex = 521;
             // 
             // textBox37
             // 
@@ -3581,7 +3609,7 @@
             this.textBox31.Name = "textBox31";
             this.textBox31.ReadOnly = true;
             this.textBox31.Size = new System.Drawing.Size(25, 29);
-            this.textBox31.TabIndex = 519;
+            this.textBox31.TabIndex = 520;
             this.textBox31.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // toolStrip2
@@ -3672,140 +3700,15 @@
             this.CUSTHIST_PAYMENT_CODE,
             this.CUSTHIST_THRU_UD});
             this.cUSTHISTDataGridView.DataSource = this.cUSTHISTBindingSource;
-            this.cUSTHISTDataGridView.Location = new System.Drawing.Point(113, 230);
+            this.cUSTHISTDataGridView.Location = new System.Drawing.Point(104, 230);
             this.cUSTHISTDataGridView.Name = "cUSTHISTDataGridView";
             this.cUSTHISTDataGridView.ReadOnly = true;
             this.cUSTHISTDataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.cUSTHISTDataGridView.RowTemplate.Height = 24;
             this.cUSTHISTDataGridView.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.cUSTHISTDataGridView.Size = new System.Drawing.Size(1005, 319);
+            this.cUSTHISTDataGridView.Size = new System.Drawing.Size(1052, 319);
             this.cUSTHISTDataGridView.TabIndex = 530;
             this.cUSTHISTDataGridView.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.cUSTHISTDataGridView_DataBindingComplete);
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "CUSTHIST_PAY_DATE";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle5.Format = "d";
-            dataGridViewCellStyle5.NullValue = null;
-            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle5;
-            this.dataGridViewTextBoxColumn4.HeaderText = "POST DATE";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn4.Width = 95;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "CUSTHIST_ACT_STAT";
-            this.dataGridViewTextBoxColumn6.HeaderText = "ACCOUNT STATUS";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            this.dataGridViewTextBoxColumn6.Width = 95;
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "CUSTHIST_PAYMENT_RCV";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle6.Format = "C2";
-            dataGridViewCellStyle6.NullValue = null;
-            this.dataGridViewTextBoxColumn9.DefaultCellStyle = dataGridViewCellStyle6;
-            this.dataGridViewTextBoxColumn9.HeaderText = "PAYMENT AMOUNT";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "CUSTHIST_BALANCE";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle7.Format = "C2";
-            dataGridViewCellStyle7.NullValue = null;
-            this.dataGridViewTextBoxColumn8.DefaultCellStyle = dataGridViewCellStyle7;
-            this.dataGridViewTextBoxColumn8.HeaderText = "LOAN BALANCE";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn18
-            // 
-            this.dataGridViewTextBoxColumn18.DataPropertyName = "CUSTHIST_CONTRACT_STATUS";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle8.Format = "C2";
-            dataGridViewCellStyle8.NullValue = null;
-            this.dataGridViewTextBoxColumn18.DefaultCellStyle = dataGridViewCellStyle8;
-            this.dataGridViewTextBoxColumn18.HeaderText = "CONTRACT STATUS";
-            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
-            this.dataGridViewTextBoxColumn18.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn13
-            // 
-            this.dataGridViewTextBoxColumn13.DataPropertyName = "CUSTHIST_LATE_CHARGE_BAL";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle9.Format = "C2";
-            dataGridViewCellStyle9.NullValue = null;
-            this.dataGridViewTextBoxColumn13.DefaultCellStyle = dataGridViewCellStyle9;
-            this.dataGridViewTextBoxColumn13.HeaderText = "LATE CHARGE BALANCE";
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            this.dataGridViewTextBoxColumn13.ReadOnly = true;
-            // 
-            // PartialPayment
-            // 
-            this.PartialPayment.DataPropertyName = "PartialPayment";
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle10.Format = "C2";
-            dataGridViewCellStyle10.NullValue = null;
-            this.PartialPayment.DefaultCellStyle = dataGridViewCellStyle10;
-            this.PartialPayment.HeaderText = "PARTIAL PAYMENT";
-            this.PartialPayment.Name = "PartialPayment";
-            this.PartialPayment.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn15
-            // 
-            this.dataGridViewTextBoxColumn15.DataPropertyName = "SHORT_PAID_THRU";
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.NullValue = null;
-            this.dataGridViewTextBoxColumn15.DefaultCellStyle = dataGridViewCellStyle11;
-            this.dataGridViewTextBoxColumn15.HeaderText = "PAID THROUGH";
-            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
-            this.dataGridViewTextBoxColumn15.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn16
-            // 
-            this.dataGridViewTextBoxColumn16.DataPropertyName = "CUSTHIST_PAY_REM_1";
-            this.dataGridViewTextBoxColumn16.HeaderText = "PAYMENT TYPE";
-            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
-            this.dataGridViewTextBoxColumn16.ReadOnly = true;
-            this.dataGridViewTextBoxColumn16.Width = 89;
-            // 
-            // dataGridViewTextBoxColumn27
-            // 
-            this.dataGridViewTextBoxColumn27.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            this.dataGridViewTextBoxColumn27.DataPropertyName = "CUSTHIST_PAYMENT_TYPE";
-            this.dataGridViewTextBoxColumn27.HeaderText = "";
-            this.dataGridViewTextBoxColumn27.Name = "dataGridViewTextBoxColumn27";
-            this.dataGridViewTextBoxColumn27.ReadOnly = true;
-            this.dataGridViewTextBoxColumn27.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn27.Width = 5;
-            // 
-            // CUSTHIST_PAYMENT_CODE
-            // 
-            this.CUSTHIST_PAYMENT_CODE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            this.CUSTHIST_PAYMENT_CODE.DataPropertyName = "CUSTHIST_PAYMENT_CODE";
-            this.CUSTHIST_PAYMENT_CODE.HeaderText = "";
-            this.CUSTHIST_PAYMENT_CODE.Name = "CUSTHIST_PAYMENT_CODE";
-            this.CUSTHIST_PAYMENT_CODE.ReadOnly = true;
-            this.CUSTHIST_PAYMENT_CODE.Width = 5;
-            // 
-            // CUSTHIST_THRU_UD
-            // 
-            this.CUSTHIST_THRU_UD.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            this.CUSTHIST_THRU_UD.DataPropertyName = "CUSTHIST_THRU_UD";
-            dataGridViewCellStyle12.Format = "#";
-            dataGridViewCellStyle12.NullValue = "0";
-            this.CUSTHIST_THRU_UD.DefaultCellStyle = dataGridViewCellStyle12;
-            this.CUSTHIST_THRU_UD.HeaderText = "";
-            this.CUSTHIST_THRU_UD.Name = "CUSTHIST_THRU_UD";
-            this.CUSTHIST_THRU_UD.ReadOnly = true;
-            this.CUSTHIST_THRU_UD.Width = 5;
             // 
             // cUSTHISTBindingSource
             // 
@@ -3936,7 +3839,7 @@
             this.nullableDateTimePickerDateContractReceived.Name = "nullableDateTimePickerDateContractReceived";
             this.nullableDateTimePickerDateContractReceived.Size = new System.Drawing.Size(119, 29);
             this.nullableDateTimePickerDateContractReceived.TabIndex = 108;
-            this.nullableDateTimePickerDateContractReceived.Value = new System.DateTime(2021, 9, 20, 0, 0, 0, 0);
+            this.nullableDateTimePickerDateContractReceived.Value = new System.DateTime(2021, 11, 4, 0, 0, 0, 0);
             this.nullableDateTimePickerDateContractReceived.Visible = false;
             this.nullableDateTimePickerDateContractReceived.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
@@ -5053,7 +4956,7 @@
             this.nullableDateTimePickerFundingDate.Name = "nullableDateTimePickerFundingDate";
             this.nullableDateTimePickerFundingDate.Size = new System.Drawing.Size(119, 29);
             this.nullableDateTimePickerFundingDate.TabIndex = 89;
-            this.nullableDateTimePickerFundingDate.Value = new System.DateTime(2021, 9, 20, 0, 0, 0, 0);
+            this.nullableDateTimePickerFundingDate.Value = new System.DateTime(2021, 11, 4, 0, 0, 0, 0);
             this.nullableDateTimePickerFundingDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // checkBoxOverrideLateCharge
@@ -5078,7 +4981,7 @@
             this.DateTimePickerContractDate.Name = "DateTimePickerContractDate";
             this.DateTimePickerContractDate.Size = new System.Drawing.Size(119, 29);
             this.DateTimePickerContractDate.TabIndex = 88;
-            this.DateTimePickerContractDate.Value = new System.DateTime(2021, 9, 20, 0, 0, 0, 0);
+            this.DateTimePickerContractDate.Value = new System.DateTime(2021, 11, 4, 0, 0, 0, 0);
             this.DateTimePickerContractDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             this.DateTimePickerContractDate.Validated += new System.EventHandler(this.DateTimePickerContractDate_Validated);
             // 
@@ -5104,7 +5007,7 @@
             this.txtFirstPayDate.Name = "txtFirstPayDate";
             this.txtFirstPayDate.Size = new System.Drawing.Size(119, 29);
             this.txtFirstPayDate.TabIndex = 76;
-            this.txtFirstPayDate.Value = new System.DateTime(2021, 9, 20, 0, 0, 0, 0);
+            this.txtFirstPayDate.Value = new System.DateTime(2021, 11, 4, 0, 0, 0, 0);
             this.txtFirstPayDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             this.txtFirstPayDate.Validated += new System.EventHandler(this.txtFirstPayDate_Validated);
             // 
@@ -5116,7 +5019,7 @@
             this.txtPaymentDate.Name = "txtPaymentDate";
             this.txtPaymentDate.Size = new System.Drawing.Size(119, 29);
             this.txtPaymentDate.TabIndex = 91;
-            this.txtPaymentDate.Value = new System.DateTime(2021, 9, 20, 0, 0, 0, 0);
+            this.txtPaymentDate.Value = new System.DateTime(2021, 11, 4, 0, 0, 0, 0);
             this.txtPaymentDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // textBox18
@@ -5477,7 +5380,7 @@
             this.MaturityDate.Name = "MaturityDate";
             this.MaturityDate.Size = new System.Drawing.Size(119, 29);
             this.MaturityDate.TabIndex = 115;
-            this.MaturityDate.Value = new System.DateTime(2021, 9, 20, 0, 0, 0, 0);
+            this.MaturityDate.Value = new System.DateTime(2021, 11, 4, 0, 0, 0, 0);
             // 
             // txtPaidThrough
             // 
@@ -5999,7 +5902,7 @@
             this.nullableDateTimePickerDateTitleReleased.Name = "nullableDateTimePickerDateTitleReleased";
             this.nullableDateTimePickerDateTitleReleased.Size = new System.Drawing.Size(109, 29);
             this.nullableDateTimePickerDateTitleReleased.TabIndex = 237;
-            this.nullableDateTimePickerDateTitleReleased.Value = new System.DateTime(2021, 9, 20, 0, 0, 0, 0);
+            this.nullableDateTimePickerDateTitleReleased.Value = new System.DateTime(2021, 11, 4, 0, 0, 0, 0);
             this.nullableDateTimePickerDateTitleReleased.ValueChanged += new System.EventHandler(this.NullableDateTimePickerDateTitleReleased_ValueChanged);
             this.nullableDateTimePickerDateTitleReleased.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
@@ -6060,7 +5963,7 @@
             this.nullableDateTimePickerAucDate.Name = "nullableDateTimePickerAucDate";
             this.nullableDateTimePickerAucDate.Size = new System.Drawing.Size(109, 29);
             this.nullableDateTimePickerAucDate.TabIndex = 232;
-            this.nullableDateTimePickerAucDate.Value = new System.DateTime(2021, 9, 20, 0, 0, 0, 0);
+            this.nullableDateTimePickerAucDate.Value = new System.DateTime(2021, 11, 4, 0, 0, 0, 0);
             this.nullableDateTimePickerAucDate.ValueChanged += new System.EventHandler(this.nullableDateTimePickerAucDate_ValueChanged);
             this.nullableDateTimePickerAucDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
@@ -6073,7 +5976,7 @@
             this.nullableDateTimePickerLocDate.Name = "nullableDateTimePickerLocDate";
             this.nullableDateTimePickerLocDate.Size = new System.Drawing.Size(109, 29);
             this.nullableDateTimePickerLocDate.TabIndex = 230;
-            this.nullableDateTimePickerLocDate.Value = new System.DateTime(2021, 9, 20, 0, 0, 0, 0);
+            this.nullableDateTimePickerLocDate.Value = new System.DateTime(2021, 11, 4, 0, 0, 0, 0);
             this.nullableDateTimePickerLocDate.ValueChanged += new System.EventHandler(this.nullableDateTimePickerLocDate_ValueChanged);
             this.nullableDateTimePickerLocDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
@@ -6149,7 +6052,7 @@
             this.nullableDateTimePickerTitleDateReceived.Name = "nullableDateTimePickerTitleDateReceived";
             this.nullableDateTimePickerTitleDateReceived.Size = new System.Drawing.Size(109, 29);
             this.nullableDateTimePickerTitleDateReceived.TabIndex = 234;
-            this.nullableDateTimePickerTitleDateReceived.Value = new System.DateTime(2021, 9, 20, 0, 0, 0, 0);
+            this.nullableDateTimePickerTitleDateReceived.Value = new System.DateTime(2021, 11, 4, 0, 0, 0, 0);
             this.nullableDateTimePickerTitleDateReceived.ValueChanged += new System.EventHandler(this.nullableDateTimePickerTitleDateReceived_ValueChanged);
             this.nullableDateTimePickerTitleDateReceived.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
@@ -6199,7 +6102,7 @@
             this.nullableDateTimePickerRepoDate.Name = "nullableDateTimePickerRepoDate";
             this.nullableDateTimePickerRepoDate.Size = new System.Drawing.Size(109, 29);
             this.nullableDateTimePickerRepoDate.TabIndex = 227;
-            this.nullableDateTimePickerRepoDate.Value = new System.DateTime(2021, 9, 20, 0, 0, 0, 0);
+            this.nullableDateTimePickerRepoDate.Value = new System.DateTime(2021, 11, 4, 0, 0, 0, 0);
             this.nullableDateTimePickerRepoDate.ValueChanged += new System.EventHandler(this.nullableDateTimePickerRepoDate_ValueChanged);
             this.nullableDateTimePickerRepoDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
@@ -6211,7 +6114,7 @@
             this.txtExpirationDate.Name = "txtExpirationDate";
             this.txtExpirationDate.Size = new System.Drawing.Size(109, 29);
             this.txtExpirationDate.TabIndex = 219;
-            this.txtExpirationDate.Value = new System.DateTime(2021, 9, 20, 0, 0, 0, 0);
+            this.txtExpirationDate.Value = new System.DateTime(2021, 11, 4, 0, 0, 0, 0);
             // 
             // txtEffectiveDate
             // 
@@ -6221,7 +6124,7 @@
             this.txtEffectiveDate.Name = "txtEffectiveDate";
             this.txtEffectiveDate.Size = new System.Drawing.Size(109, 29);
             this.txtEffectiveDate.TabIndex = 218;
-            this.txtEffectiveDate.Value = new System.DateTime(2021, 9, 20, 0, 0, 0, 0);
+            this.txtEffectiveDate.Value = new System.DateTime(2021, 11, 4, 0, 0, 0, 0);
             // 
             // txtAgentPhone
             // 
@@ -6876,7 +6779,7 @@
             this.txtCOSDOB.Name = "txtCOSDOB";
             this.txtCOSDOB.Size = new System.Drawing.Size(109, 29);
             this.txtCOSDOB.TabIndex = 323;
-            this.txtCOSDOB.Value = new System.DateTime(2021, 9, 20, 0, 0, 0, 0);
+            this.txtCOSDOB.Value = new System.DateTime(2021, 11, 4, 0, 0, 0, 0);
             // 
             // txtCOSWorkExt
             // 
@@ -8218,7 +8121,7 @@
             this.nullableDateTimePickerFollowUpDate.Name = "nullableDateTimePickerFollowUpDate";
             this.nullableDateTimePickerFollowUpDate.Size = new System.Drawing.Size(119, 25);
             this.nullableDateTimePickerFollowUpDate.TabIndex = 24;
-            this.nullableDateTimePickerFollowUpDate.Value = new System.DateTime(2021, 9, 20, 0, 0, 0, 0);
+            this.nullableDateTimePickerFollowUpDate.Value = new System.DateTime(2021, 11, 4, 0, 0, 0, 0);
             this.nullableDateTimePickerFollowUpDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // nullableDateTimePickerDateClosed
@@ -8229,7 +8132,7 @@
             this.nullableDateTimePickerDateClosed.Name = "nullableDateTimePickerDateClosed";
             this.nullableDateTimePickerDateClosed.Size = new System.Drawing.Size(119, 25);
             this.nullableDateTimePickerDateClosed.TabIndex = 23;
-            this.nullableDateTimePickerDateClosed.Value = new System.DateTime(2021, 9, 20, 0, 0, 0, 0);
+            this.nullableDateTimePickerDateClosed.Value = new System.DateTime(2021, 11, 4, 0, 0, 0, 0);
             this.nullableDateTimePickerDateClosed.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // nullableDateTimePickerDateOpened
@@ -8240,7 +8143,7 @@
             this.nullableDateTimePickerDateOpened.Name = "nullableDateTimePickerDateOpened";
             this.nullableDateTimePickerDateOpened.Size = new System.Drawing.Size(119, 25);
             this.nullableDateTimePickerDateOpened.TabIndex = 22;
-            this.nullableDateTimePickerDateOpened.Value = new System.DateTime(2021, 9, 20, 0, 0, 0, 0);
+            this.nullableDateTimePickerDateOpened.Value = new System.DateTime(2021, 11, 4, 0, 0, 0, 0);
             this.nullableDateTimePickerDateOpened.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // nullableDateTimePickerDateofAccountInformation
@@ -8251,7 +8154,7 @@
             this.nullableDateTimePickerDateofAccountInformation.Name = "nullableDateTimePickerDateofAccountInformation";
             this.nullableDateTimePickerDateofAccountInformation.Size = new System.Drawing.Size(119, 25);
             this.nullableDateTimePickerDateofAccountInformation.TabIndex = 21;
-            this.nullableDateTimePickerDateofAccountInformation.Value = new System.DateTime(2021, 9, 20, 0, 0, 0, 0);
+            this.nullableDateTimePickerDateofAccountInformation.Value = new System.DateTime(2021, 11, 4, 0, 0, 0, 0);
             this.nullableDateTimePickerDateofAccountInformation.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // nullableDateTimePickerDateofFirstDelinquency
@@ -8262,7 +8165,7 @@
             this.nullableDateTimePickerDateofFirstDelinquency.Name = "nullableDateTimePickerDateofFirstDelinquency";
             this.nullableDateTimePickerDateofFirstDelinquency.Size = new System.Drawing.Size(119, 25);
             this.nullableDateTimePickerDateofFirstDelinquency.TabIndex = 20;
-            this.nullableDateTimePickerDateofFirstDelinquency.Value = new System.DateTime(2021, 9, 20, 0, 0, 0, 0);
+            this.nullableDateTimePickerDateofFirstDelinquency.Value = new System.DateTime(2021, 11, 4, 0, 0, 0, 0);
             this.nullableDateTimePickerDateofFirstDelinquency.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // nullableDateTimePickerDateofLastPayment
@@ -8273,7 +8176,7 @@
             this.nullableDateTimePickerDateofLastPayment.Name = "nullableDateTimePickerDateofLastPayment";
             this.nullableDateTimePickerDateofLastPayment.Size = new System.Drawing.Size(119, 25);
             this.nullableDateTimePickerDateofLastPayment.TabIndex = 19;
-            this.nullableDateTimePickerDateofLastPayment.Value = new System.DateTime(2021, 9, 20, 0, 0, 0, 0);
+            this.nullableDateTimePickerDateofLastPayment.Value = new System.DateTime(2021, 11, 4, 0, 0, 0, 0);
             this.nullableDateTimePickerDateofLastPayment.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // label135
@@ -9254,6 +9157,128 @@
             // 
             this.mASTERTableAdapter.ClearBeforeFill = true;
             // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "CUSTHIST_PAY_DATE";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle5.Format = "d";
+            dataGridViewCellStyle5.NullValue = null;
+            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dataGridViewTextBoxColumn4.HeaderText = "POST DATE";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn4.Width = 95;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "CUSTHIST_ACT_STAT";
+            this.dataGridViewTextBoxColumn6.HeaderText = "ACT STAT";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.Width = 50;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "CUSTHIST_PAYMENT_RCV";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle6.Format = "C2";
+            dataGridViewCellStyle6.NullValue = null;
+            this.dataGridViewTextBoxColumn9.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dataGridViewTextBoxColumn9.HeaderText = "PAYMENT AMOUNT";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "CUSTHIST_BALANCE";
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle7.Format = "C2";
+            dataGridViewCellStyle7.NullValue = null;
+            this.dataGridViewTextBoxColumn8.DefaultCellStyle = dataGridViewCellStyle7;
+            this.dataGridViewTextBoxColumn8.HeaderText = "LOAN BALANCE";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn18
+            // 
+            this.dataGridViewTextBoxColumn18.DataPropertyName = "CUSTHIST_CONTRACT_STATUS";
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle8.Format = "C2";
+            dataGridViewCellStyle8.NullValue = null;
+            this.dataGridViewTextBoxColumn18.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dataGridViewTextBoxColumn18.HeaderText = "CONTRACT STATUS";
+            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
+            this.dataGridViewTextBoxColumn18.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.DataPropertyName = "CUSTHIST_LATE_CHARGE_BAL";
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle9.Format = "C2";
+            dataGridViewCellStyle9.NullValue = null;
+            this.dataGridViewTextBoxColumn13.DefaultCellStyle = dataGridViewCellStyle9;
+            this.dataGridViewTextBoxColumn13.HeaderText = "LATE CHARGE BALANCE";
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.dataGridViewTextBoxColumn13.ReadOnly = true;
+            // 
+            // PartialPayment
+            // 
+            this.PartialPayment.DataPropertyName = "PartialPayment";
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle10.Format = "C2";
+            dataGridViewCellStyle10.NullValue = null;
+            this.PartialPayment.DefaultCellStyle = dataGridViewCellStyle10;
+            this.PartialPayment.HeaderText = "PARTIAL PAYMENT";
+            this.PartialPayment.Name = "PartialPayment";
+            this.PartialPayment.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn15
+            // 
+            this.dataGridViewTextBoxColumn15.DataPropertyName = "SHORT_PAID_THRU";
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.NullValue = null;
+            this.dataGridViewTextBoxColumn15.DefaultCellStyle = dataGridViewCellStyle11;
+            this.dataGridViewTextBoxColumn15.HeaderText = "PAID THROUGH";
+            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+            this.dataGridViewTextBoxColumn15.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn16
+            // 
+            this.dataGridViewTextBoxColumn16.DataPropertyName = "CUSTHIST_PAY_REM_1";
+            this.dataGridViewTextBoxColumn16.HeaderText = "PMT DESC";
+            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            this.dataGridViewTextBoxColumn16.ReadOnly = true;
+            this.dataGridViewTextBoxColumn16.Width = 70;
+            // 
+            // dataGridViewTextBoxColumn27
+            // 
+            this.dataGridViewTextBoxColumn27.DataPropertyName = "CUSTHIST_PAYMENT_TYPE";
+            this.dataGridViewTextBoxColumn27.HeaderText = "PMT TYPE";
+            this.dataGridViewTextBoxColumn27.Name = "dataGridViewTextBoxColumn27";
+            this.dataGridViewTextBoxColumn27.ReadOnly = true;
+            this.dataGridViewTextBoxColumn27.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn27.Width = 50;
+            // 
+            // CUSTHIST_PAYMENT_CODE
+            // 
+            this.CUSTHIST_PAYMENT_CODE.DataPropertyName = "CUSTHIST_PAYMENT_CODE";
+            this.CUSTHIST_PAYMENT_CODE.HeaderText = "PMT CODE";
+            this.CUSTHIST_PAYMENT_CODE.Name = "CUSTHIST_PAYMENT_CODE";
+            this.CUSTHIST_PAYMENT_CODE.ReadOnly = true;
+            this.CUSTHIST_PAYMENT_CODE.Width = 50;
+            // 
+            // CUSTHIST_THRU_UD
+            // 
+            this.CUSTHIST_THRU_UD.DataPropertyName = "CUSTHIST_THRU_UD";
+            dataGridViewCellStyle12.Format = "#";
+            dataGridViewCellStyle12.NullValue = "0";
+            this.CUSTHIST_THRU_UD.DefaultCellStyle = dataGridViewCellStyle12;
+            this.CUSTHIST_THRU_UD.HeaderText = "EXT MONTHS";
+            this.CUSTHIST_THRU_UD.Name = "CUSTHIST_THRU_UD";
+            this.CUSTHIST_THRU_UD.ReadOnly = true;
+            this.CUSTHIST_THRU_UD.Width = 75;
+            // 
             // frmCustMaint
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -9934,6 +9959,17 @@
         private ColorCheckBox colorCheckBoxReceivedContract;
         private IACDataSetTableAdapters.MASTERTableAdapter mASTERTableAdapter;
         private ProManApp.NullableDateTimePicker nullableDateTimePickerDateContractReceived;
+        private NewColorTextBox colorTextBoxTotalDue;
+        private System.Windows.Forms.GroupBox groupBoxCOSSBT;
+        private System.Windows.Forms.Button buttonCOSMessage;
+        private System.Windows.Forms.Button buttonCOSConfirm;
+        private System.Windows.Forms.TextBox textBoxCOSAuthNo;
+        private System.Windows.Forms.RadioButton radioButtonCOSMktg;
+        private System.Windows.Forms.RadioButton radioButtonCOSAcct;
+        private System.Windows.Forms.CheckBox checkBoxCOSDNTMktg;
+        private System.Windows.Forms.CheckBox checkBoxCOSDNTAcct;
+        private System.Windows.Forms.Button buttonCOSValidate;
+        private System.Windows.Forms.TextBox textBoxTotalExtensions;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
@@ -9946,16 +9982,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn27;
         private System.Windows.Forms.DataGridViewTextBoxColumn CUSTHIST_PAYMENT_CODE;
         private System.Windows.Forms.DataGridViewTextBoxColumn CUSTHIST_THRU_UD;
-        private NewColorTextBox colorTextBoxTotalDue;
-        private System.Windows.Forms.GroupBox groupBoxCOSSBT;
-        private System.Windows.Forms.Button buttonCOSMessage;
-        private System.Windows.Forms.Button buttonCOSConfirm;
-        private System.Windows.Forms.TextBox textBoxCOSAuthNo;
-        private System.Windows.Forms.RadioButton radioButtonCOSMktg;
-        private System.Windows.Forms.RadioButton radioButtonCOSAcct;
-        private System.Windows.Forms.CheckBox checkBoxCOSDNTMktg;
-        private System.Windows.Forms.CheckBox checkBoxCOSDNTAcct;
-        private System.Windows.Forms.Button buttonCOSValidate;
     }
 }
 
