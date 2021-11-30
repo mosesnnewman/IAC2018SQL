@@ -22,10 +22,18 @@ using Excel = Microsoft.Office.Interop.Excel;
 using Microsoft.Office.Tools.Excel;
 using System.IO;
 using IAC2021SQL.TSBDataSetTableAdapters;
+//Moses Newman 11/23/2021 Use DevExpress GridView instead of DataGridView for comments tab now
+using DevExpress.XtraGrid.Views.Base;
+using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraGrid.Columns;
+using DevExpress.XtraGrid.Repository;
+using DevExpress.XtraEditors;
+using DevExpress.Data;
+using DevExpress.XtraBars;
 
 namespace IAC2021SQL
 {
-    public partial class frmCustMaint : Form
+    public partial class frmCustMaint : System.Windows.Forms.Form
     {
         // Moses Newman 12/16/2020
         BindingSource PaymentBindingSource = new BindingSource();
@@ -42,9 +50,7 @@ namespace IAC2021SQL
         private System.Data.SqlClient.SqlTransaction tableAdapTran = null;
         private System.Data.SqlClient.SqlConnection tableAdapConn = null;
         private bool lbAddFlag = false, lbEdit = false, lbILockedIt = false, lbAlreadyIntOverride = false, lbInFullRecourseCheck = false, gbInSave = false;
-        private DataGridViewComboBoxEditingControl editingControl;
         private int lnSeq = 0;
-        private bool SortingFlipFlop = false;
 
         private Program.AmortRec[] AmortTable;
 
@@ -89,10 +95,6 @@ namespace IAC2021SQL
             consumerIndicatorsTableAdapter.Fill(tsbDataSet.ConsumerIndicators);
             accountStatusesTableAdapter.Fill(tsbDataSet.AccountStatuses);
             StartupConfiguration();
-            DataGridViewRow row = cOMMENTDataGridView.RowTemplate;
-            row.Height = 45;
-            row.DefaultCellStyle.BackColor = (row.Index % 2 == 0) ? Color.Bisque : Color.White;
-            row.MinimumHeight = 20;
             PerformAutoScale();
             // Moses Newman 07/14/2020 Set DataBindings NullValue to string.Empty to prevent getting stuck in blank field.
             textBoxCosignerTierPoints.DataBindings["Text"].NullValue = string.Empty;
@@ -432,10 +434,10 @@ namespace IAC2021SQL
             txtCreditCardCVV.Enabled = false;
             ExpMonthcomboBox.Enabled = false;
             ExpYearcomboBox.Enabled = false;
-            //cOMMENTDataGridView.Enabled = false;
-            cOMMENTDataGridView.ReadOnly = true;
-            cOMMENTDataGridView.AllowUserToAddRows = false;
-            cOMMENTDataGridView.AllowUserToDeleteRows = false;
+            //Moses Newman 11/23/2021 Use DevExpress GridView instead of DataGridView for comments tab now
+            cOMMENTGridControl.Enabled = true;
+            cOMMENTgridView.OptionsBehavior.Editable = false;
+            cOMMENTgridView.OptionsView.NewItemRowPosition = NewItemRowPosition.None;
             //Moses Newman 04/18/2019 Add Repo Log
             dataGridViewRepoLog.ReadOnly = true;
             dataGridViewRepoLog.AllowUserToAddRows = false;
@@ -798,15 +800,10 @@ namespace IAC2021SQL
             txtCreditCardCVV.Enabled = true;
             ExpMonthcomboBox.Enabled = true;
             ExpYearcomboBox.Enabled = true;
-
-            //cOMMENTDataGridView.Enabled = true;
-            cOMMENTDataGridView.ReadOnly = false;
-            cOMMENTDataGridView.AllowUserToAddRows = true;
-            cOMMENTDataGridView.AllowUserToDeleteRows = true;
-            // Moses Newman 08/07/2013 DO NOT ALLOW USER TO TYPE INTO DATE COLUMN OR USER ID COLUMN!
-            cOMMENTDataGridView.Columns[0].ReadOnly = true;
-            cOMMENTDataGridView.Columns[2].ReadOnly = true;
-
+            //Moses Newman 11/23/2021 Use DevExpress GridView instead of DataGridView for comments tab now
+            cOMMENTGridControl.Enabled = true;
+            cOMMENTgridView.OptionsBehavior.Editable = true;
+            cOMMENTgridView.OptionsView.NewItemRowPosition = NewItemRowPosition.Top;
             // Moses Newman 06/12/2018
             // Fees
             textBoxRepoFees.Enabled = true;
@@ -1656,9 +1653,10 @@ namespace IAC2021SQL
 
 
                     // Comment Tab
-                    cOMMENTDataGridView.Enabled = true;
-                    cOMMENTDataGridView.AllowUserToAddRows = true;
-                    cOMMENTDataGridView.AllowUserToDeleteRows = true;
+                    //Moses Newman 11/23/2021 Use DevExpress GridView instead of DataGridView for comments tab now
+                    cOMMENTGridControl.Enabled = true;
+                    cOMMENTgridView.OptionsBehavior.Editable = true;
+                    cOMMENTgridView.OptionsView.NewItemRowPosition = NewItemRowPosition.Top;
 
                     checkBoxSimple.Checked = true;
                     checkBoxSimple.Visible = true;
@@ -1825,38 +1823,6 @@ namespace IAC2021SQL
         {
             foreach (DataGridViewRow r in cUSTHISTDataGridView.Rows)
                 r.DefaultCellStyle.BackColor = (r.Index % 2 == 0) ? Color.White : Color.LightYellow;
-        }
-
-        private void cOMMENTDataGridView_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
-        {
-            // Turn off X image and leave blank for no attachments
-            foreach (var column in cOMMENTDataGridView.Columns)
-            {
-                if (column is DataGridViewImageColumn)
-                    (column as DataGridViewImageColumn).DefaultCellStyle.NullValue = null;
-            }
-            // Set Thumb column to Word icon image if there is a LetterPath stored.
-            foreach (DataGridViewRow r in cOMMENTDataGridView.Rows)
-            {
-                r.DefaultCellStyle.BackColor = (r.Index % 2 == 0) ? Color.White : Color.LightYellow;
-                if (!String.IsNullOrEmpty((String)r.Cells["LetterPath"].Value) || !String.IsNullOrEmpty((String)r.Cells["SMSPath"].Value))
-                {
-                    Bitmap img;
-                    img = new Bitmap(IAC2021SQL.Properties.Resources.WordDoc);
-                    r.Cells["Thumb"].Value = img;
-                }
-                else
-                {
-                    r.Cells["Thumb"].Value = null;
-                }
-            }
-
-            cOMMENTDataGridView.Columns["Thumb"].DefaultHeaderCellType = typeof(DataGridViewImageColumnHeaderCell);
-            cOMMENTDataGridView.Columns["Thumb"].HeaderCell = new DataGridViewImageColumnHeaderCell();
-            ((DataGridViewImageColumnHeaderCell)cOMMENTDataGridView.Columns["Thumb"].HeaderCell).ImagePadding = new Padding(0, 0, 0, 0);
-            Bitmap directoryImage = new Bitmap(IAC2021SQL.Properties.Resources.PaperClip);
-            ((DataGridViewImageColumnHeaderCell)cOMMENTDataGridView.Columns["Thumb"].HeaderCell).Image = directoryImage;
-
         }
 
         private void cUSTOMER_DEALERcomboBox_Validated(object sender, EventArgs e)
@@ -2440,85 +2406,6 @@ namespace IAC2021SQL
                 Program.gsKey = null;
                 frmCustMaint_Load(sender, e);
             }
-        }
-
-        private void cOMMENTDataGridView_DefaultValuesNeeded(object sender, DataGridViewRowEventArgs e)
-        {
-            object loQuery = null;
-            e.Row.Cells["USERID"].Value = Program.gsUserID.TrimEnd();
-            e.Row.Cells["Date"].Value = DateTime.Now;
-            e.Row.Cells["COMMENT_NO"].Value = txtCommentNo.Text.ToString().TrimEnd();
-            e.Row.Cells["COMMENT_HHMMSS"].Value = DateTime.Now.Hour.ToString().PadLeft(2, '0') + DateTime.Now.Minute.ToString().PadLeft(2, '0') + DateTime.Now.Second.ToString().PadLeft(2, '0');
-            if (lnSeq == 0)
-            {
-                loQuery = cOMMENTTableAdapter.SeqNoQuery(txtCommentNo.Text.ToString().TrimEnd(), DateTime.Now.Date);
-                if (loQuery != null)
-                    lnSeq = (int)loQuery + 1;
-                else
-                    lnSeq = 1;
-            }
-            else
-                lnSeq = lnSeq + 1;
-            e.Row.Cells["COMMENT_SEQ_NO"].Value = lnSeq;
-            e.Row.Cells["COMMENT_DEALER"].Value = cUSTOMER_DEALERcomboBox.Text.ToString().TrimEnd();
-        }
-
-        private void cOMMENTDataGridView_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
-        {
-            if (e.Control.GetType().Name != "DataGridViewComboBoxEditingControl")
-            {
-                editingControl = null;
-                return;
-            }
-            editingControl = (DataGridViewComboBoxEditingControl)e.Control;
-            if (lbEdit)
-                editingControl.Enabled = false;
-            editingControl.SelectedIndexChanged += new EventHandler(editingControl_SelectedIndexChanged);
-        }
-
-        private void editingControl_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (editingControl == null)
-                return;
-            if (editingControl.SelectedIndex >= 0)
-            {
-                toolStripButtonSave.Enabled = true;
-                cOMMENTDataGridView.Rows[cOMMENTDataGridView.CurrentRow.Index].Cells["Comment"].Value = iACDataSet.Comment_Types.Rows[editingControl.SelectedIndex].Field<String>("Description").ToString().TrimEnd().ToUpper();
-                cOMMENTDataGridView.Rows[cOMMENTDataGridView.CurrentRow.Index].Cells["COMMENT_SEQ_NO"].Value = lnSeq;
-                cOMMENTDataGridView.Rows[cOMMENTDataGridView.CurrentRow.Index].Cells["COMMENT_DEALER"].Value = cUSTOMER_DEALERcomboBox.Text.ToString().TrimEnd();
-                cOMMENTDataGridView.Rows[cOMMENTDataGridView.CurrentRow.Index].Cells["COMMENT_ID_TYPE"].Value = cOMMENTDataGridView.Rows[cOMMENTDataGridView.CurrentRow.Index].Cells["USERID"].Value.ToString().TrimEnd() + iACDataSet.Comment_Types.Rows[editingControl.SelectedIndex].Field<String>("Type").ToString().TrimEnd();
-            }
-        }
-
-        private void cOMMENTDataGridView_CellEndEdit(object sender, DataGridViewCellEventArgs e)
-        {
-            if (editingControl == null)
-                return;
-            editingControl.SelectedIndexChanged -= new EventHandler(editingControl_SelectedIndexChanged);
-            editingControl = null;
-        }
-
-        private void cOMMENTDataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
-        {
-            MessageBox.Show("The error is: " + e.Exception.ToString() + " The bad value is:" + cOMMENTDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() + '\n' + e.Context.ToString());
-        }
-
-        private void cOMMENTDataGridView_UserDeletedRow(object sender, DataGridViewRowEventArgs e)
-        {
-            if (lbEdit || lbAddFlag)
-                toolStripButtonSave.Enabled = true;
-        }
-
-        private void cOMMENTDataGridView_UserAddedRow(object sender, DataGridViewRowEventArgs e)
-        {
-            if (lbEdit || lbAddFlag)
-                toolStripButtonSave.Enabled = true;
-        }
-
-        private void cOMMENTDataGridView_CellValueChanged(object sender, DataGridViewCellEventArgs e)
-        {
-            if (lbEdit || lbAddFlag)
-                toolStripButtonSave.Enabled = true;
         }
 
         // Moses Newman 12/23/2013 Add Email Address Record
@@ -4477,6 +4364,127 @@ namespace IAC2021SQL
 
         }
 
+        private void cOMMENTGridView_DataSourceChanged(object sender, EventArgs e)
+        {
+        }
+
+        // Return the WordImage for a specific row.
+        private Bitmap getWordImage(GridView view, int listSourceRowIndex)
+        {
+            Bitmap img;
+            img = new Bitmap(IAC2021SQL.Properties.Resources.WordDoc);
+            if (!String.IsNullOrEmpty(Convert.ToString(view.GetListSourceRowCellValue(listSourceRowIndex, "LetterPath"))) || !String.IsNullOrEmpty(Convert.ToString(view.GetListSourceRowCellValue(listSourceRowIndex, "SMSPath"))))
+                return img;
+            else
+                return null;
+        }
+
+        // Return the Path for a specific row.
+        private String getPath(GridView view, int listSourceRowIndex)
+        {
+            return !String.IsNullOrEmpty(Convert.ToString(view.GetListSourceRowCellValue(listSourceRowIndex, "LetterPath"))) ?
+                    Convert.ToString(view.GetListSourceRowCellValue(listSourceRowIndex, "LetterPath")) :
+                    Convert.ToString(view.GetListSourceRowCellValue(listSourceRowIndex, "SMSPath"));
+        }
+
+        private void gridView1_CustomUnboundColumnData(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDataEventArgs e)
+        {
+            
+            GridView view = sender as GridView;
+            if (e.Column.FieldName == "colThumb" && e.IsGetData)
+                e.Value = getWordImage(view, e.ListSourceRowIndex);
+        }
+
+        private void gridView1_RowCellClick(object sender, RowCellClickEventArgs e)
+        {
+            GridView view = sender as GridView;
+            if (e.Column.FieldName == "colThumb")
+            {
+                String lsPath = getPath(view, view.GetDataSourceRowIndex(e.RowHandle));
+                // If the LetterPath field is not empty open the word document.
+                if (!String.IsNullOrEmpty(lsPath))
+                {
+
+                    if (System.IO.File.Exists(lsPath))
+                    {
+                        Word._Application application = new Word.Application();
+                        Word._Document document = application.Documents.Open(lsPath);
+                        // Old method to open using windows default editor for filetype.
+                        //System.Diagnostics.Process.Start(lsPath);
+                        document.Activate();
+                        application.Visible = true;
+                    }
+                    else
+                        MessageBox.Show("The document: " + lsPath + " seems to be missing!",
+                                        "Specified Document Missing");
+                }
+            }
+        }
+
+        //Moses Newman 11/23/2021 Use DevExpress GridView instead of DataGridView for comments tab now
+        private void cOMMENTgridView_CellValueChanging(object sender, CellValueChangedEventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        //Moses Newman 11/23/2021 Use DevExpress GridView instead of DataGridView for comments tab now
+        private void tabComments_Enter(object sender, EventArgs e)
+        {
+            GridColumn colDate = cOMMENTgridView.Columns["COMMENT_DATE"];
+            GridColumn colSeqNo = cOMMENTgridView.Columns["COMMENT_SEQ_NO"];
+            cOMMENTgridView.BeginSort();
+            try
+            {
+                cOMMENTgridView.ClearSorting();
+                colDate.SortOrder = ColumnSortOrder.Descending;
+                colSeqNo.SortOrder = ColumnSortOrder.Descending;
+            }
+            finally
+            {
+                cOMMENTgridView.EndSort();
+            }
+        }
+
+        //Moses Newman 11/23/2021 Use DevExpress GridView instead of DataGridView for comments tab now
+        private void cOMMENTgridView_InitNewRow(object sender, InitNewRowEventArgs e)
+        {
+            GridView view = sender as GridView;
+
+            object loQuery = null;
+            view.SetRowCellValue(e.RowHandle, "COMMENT_USERID", Program.gsUserID.TrimEnd());
+            view.SetRowCellValue(e.RowHandle, "COMMENT_DATE", DateTime.Now.Date);
+            view.SetRowCellValue(e.RowHandle, "COMMENT_NO", txtCommentNo.Text.ToString().TrimEnd());
+            view.SetRowCellValue(e.RowHandle, "COMMENT_HHMMSS", 
+                DateTime.Now.Hour.ToString().PadLeft(2, '0') + DateTime.Now.Minute.ToString().PadLeft(2, '0') + DateTime.Now.Second.ToString().PadLeft(2, '0'));
+            if (lnSeq == 0)
+            {
+                loQuery = cOMMENTTableAdapter.SeqNoQuery(txtCommentNo.Text.ToString().TrimEnd(), DateTime.Now.Date);
+                if (loQuery != null)
+                    lnSeq = (int)loQuery + 1;
+                else
+                    lnSeq = 1;
+            }
+            else
+                lnSeq = lnSeq + 1;
+            view.SetRowCellValue(e.RowHandle, "COMMENT_SEQ_NO", lnSeq);
+            view.SetRowCellValue(e.RowHandle, "COMMENT_DEALER", cUSTOMER_DEALERcomboBox.Text.ToString().TrimEnd());
+        }
+
+        //Moses Newman 11/23/2021 Use DevExpress GridView instead of DataGridView for comments tab now
+        private void cOMMENTgridView_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Delete && e.Modifiers == Keys.Control && (lbEdit || lbAddFlag))
+            {
+                if (MessageBox.Show("Delete row?", "Confirmation", MessageBoxButtons.YesNo) !=
+                  DialogResult.Yes)
+                    return;
+                GridView view = sender as GridView;
+                view.DeleteRow(view.FocusedRowHandle);
+                toolStripButtonSave.Enabled = true;
+            }
+        }
+
         private void textBoxRepairFee5_Validated(object sender, EventArgs e)
         {
             if (!Decimal.TryParse(textBoxRepairFee5.Text, NumberStyles.Currency,
@@ -4931,37 +4939,6 @@ namespace IAC2021SQL
                 toolStripButtonSave.Enabled = true;
         }
 
-        private void cOMMENTDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex < 0)
-                return;
-            String lsPath = String.IsNullOrEmpty(cOMMENTDataGridView.Rows[e.RowIndex].Cells["LetterPath"].Value.ToString()) ?
-                cOMMENTDataGridView.Rows[e.RowIndex].Cells["SMSPath"].Value.ToString() :
-                cOMMENTDataGridView.Rows[e.RowIndex].Cells["LetterPath"].Value.ToString();
-
-            // Moses Newman 10/17/2017 Column 1 is Thumbnail Image column
-            if (e.ColumnIndex == 1)
-            {
-                // If the LetterPath field is not empty open the word document.
-                if (!String.IsNullOrEmpty(lsPath))
-                {
-
-                    if (System.IO.File.Exists(lsPath))
-                    {
-                        Word._Application application = new Word.Application();
-                        Word._Document document = application.Documents.Open(lsPath);
-                        // Old method to open using windows default editor for filetype.
-                        //System.Diagnostics.Process.Start(lsPath);
-                        document.Activate();
-                        application.Visible = true;
-                    }
-                    else
-                        MessageBox.Show("The document: " + lsPath + " seems to be missing!",
-                                        "Specified Document Missing");
-                }
-            }
-        }
-
         private WholeComment SplitComments(String tsComment)
         {
             WholeComment loReturn;
@@ -4992,37 +4969,6 @@ namespace IAC2021SQL
             loReturn.Field3 = lsComment3;
 
             return loReturn;
-        }
-
-        private void cOMMENTDataGridView_ColumnHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            if (cOMMENTDataGridView.Columns[e.ColumnIndex].Name == "Thumb")
-            {
-                // Change the sort direction each time the column header for image is clicked
-                ListSortDirection Direction;
-
-                if (SortingFlipFlop)
-                {
-                    Direction = ListSortDirection.Ascending;
-                    SortingFlipFlop = false;
-                }
-                else
-                {
-                    Direction = ListSortDirection.Descending;
-                    SortingFlipFlop = true;
-                }
-
-                // Perform the sort on the number / 'key' column
-                cOMMENTDataGridView.Sort(cOMMENTDataGridView.Columns["ImgSort"], Direction);
-                // Show the sorting glyph in the image column
-                if (Direction == ListSortDirection.Ascending)
-                    cOMMENTDataGridView.Columns["Thumb"].HeaderCell.SortGlyphDirection = System.Windows.Forms.SortOrder.Descending;
-                else
-                    if (Direction == ListSortDirection.Descending)
-                        cOMMENTDataGridView.Columns["Thumb"].HeaderCell.SortGlyphDirection = System.Windows.Forms.SortOrder.Ascending;
-                    else
-                        cOMMENTDataGridView.Columns["Thumb"].HeaderCell.SortGlyphDirection = System.Windows.Forms.SortOrder.None;
-            }
         }
 
         // Moses Newman 11/09/2017 Add Mail Button to Cosinger Info screen.

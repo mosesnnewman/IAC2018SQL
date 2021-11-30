@@ -34,6 +34,8 @@ namespace IAC2021SQL
             IACDataSetTableAdapters.CUSTOMERTableAdapter CUSTOMERTableAdapter = new IACDataSetTableAdapters.CUSTOMERTableAdapter();
             IACDataSetTableAdapters.DEALERTableAdapter DEALERTableAdapter = new IACDataSetTableAdapters.DEALERTableAdapter();
             IACDataSetTableAdapters.EmailTableAdapter EmailTableAdapter = new IACDataSetTableAdapters.EmailTableAdapter();
+            // Moses Newman 11/9/2021 Add handling of Extension and Rate Changes for Last Payment Amount Field
+            IACDataSetTableAdapters.ClosedExtensionCountsTableAdapter ClosedExtensionCountsTableAdapter = new IACDataSetTableAdapters.ClosedExtensionCountsTableAdapter();
             Int32   lnAgedTest = comboBoxAgedPeriod.SelectedIndex + 1;
 
             // Moses Newman 11/20/2018 add sort order.
@@ -59,6 +61,8 @@ namespace IAC2021SQL
                         DEALERTableAdapter.FillByDelinquencies(DelinquencyData.DEALER, lnAgedTest, ldCurrDate);
                         // Moses Newman 09/27/2021 
                         EmailTableAdapter.FillByDelinquencies(DelinquencyData.Email, lnAgedTest, ldCurrDate);
+                        // Moses Newman 11/9/2021 Handle Extensions and Rate Changes for Last Payment
+                        ClosedExtensionCountsTableAdapter.Fill(DelinquencyData.ClosedExtensionCounts, lnAgedTest, ldCurrDate);
 
                         if (DelinquencyData.CUSTOMER.Rows.Count != 0 && DelinquencyData.DEALER.Rows.Count != 0)
                         {

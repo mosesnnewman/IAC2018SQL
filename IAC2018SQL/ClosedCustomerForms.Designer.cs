@@ -213,20 +213,11 @@
             System.Windows.Forms.Label labelTotalDue;
             System.Windows.Forms.Label labelCOSAuthNo;
             System.Windows.Forms.Label labelTotalExtensions;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCustMaint));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCustMaint));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -235,9 +226,36 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cUSTOMERBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.iACDataSet = new IAC2021SQL.IACDataSet();
             this.tabComments = new System.Windows.Forms.TabPage();
+            this.cOMMENTGridControl = new DevExpress.XtraGrid.GridControl();
+            this.cOMMENTBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cOMMENTgridView = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colDATE = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemDateEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
+            this.colThumb = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemPictureEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit();
+            this.colLetterPath = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSMSPath = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTYPE = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemLookUpEditType = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.commentTypesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.colCOMMENT_USERID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCOMMENT = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemMemoEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit();
+            this.colCOMMENT_NO = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCOMMENT_SEQ_NO = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCOMMENT_ID_TYPE = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCOMMENT_DEALER = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCOMMENT_HHMMSS = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colImgSort = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.textBox23 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
@@ -246,25 +264,6 @@
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.txtCommentNo = new System.Windows.Forms.TextBox();
-            this.cOMMENTDataGridView = new System.Windows.Forms.DataGridView();
-            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Thumb = new System.Windows.Forms.DataGridViewImageColumn();
-            this.LetterPath = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SMSPath = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Type = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.commentTypesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.USERID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Comment = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.COMMENT_NO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.COMMENT_SEQ_NO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.COMMENT_ID_TYPE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.COMMENT_1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.COMMENT_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.COMMENT_3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.COMMENT_DEALER = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.COMMENT_HHMMSS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ImgSort = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cOMMENTBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dEALERBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabHistory = new System.Windows.Forms.TabPage();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
@@ -303,6 +302,18 @@
             this.toolStripButtonTVExcel = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonCalcBuyout = new System.Windows.Forms.ToolStripButton();
             this.cUSTHISTDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PartialPayment = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CUSTHIST_PAYMENT_CODE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CUSTHIST_THRU_UD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cUSTHISTBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabCustInfo1 = new System.Windows.Forms.TabPage();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
@@ -767,18 +778,37 @@
             this.portfolioTypesTableAdapter = new IAC2021SQL.TSBDataSetTableAdapters.PortfolioTypesTableAdapter();
             this.termsFrequencyTableAdapter = new IAC2021SQL.TSBDataSetTableAdapters.TermsFrequencyTableAdapter();
             this.mASTERTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.MASTERTableAdapter();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PartialPayment = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CUSTHIST_PAYMENT_CODE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CUSTHIST_THRU_UD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCOMMENT_NO1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCOMMENT_DATE = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCOMMENT_SEQ_NO1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCOMMENT_USERID1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCOMMENT_WHOLE = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCOMMENT_TYPE = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCOMMENT_DEALER1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCOMMENT_ID_TYPE1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCOMMENT_HHMMSS1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colIsArchive = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colLetterImage = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colLetterPath1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colLetterNum = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSMSImage = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSMSPath1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSMSTemplate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colImgSort1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
+            this.formAssistant1 = new DevExpress.XtraBars.FormAssistant();
+            this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
+            this.toolbarFormManager1 = new DevExpress.XtraBars.ToolbarForm.ToolbarFormManager(this.components);
+            this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.toolbarFormManager2 = new DevExpress.XtraBars.ToolbarForm.ToolbarFormManager(this.components);
+            this.barDockControl1 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl2 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl3 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl4 = new DevExpress.XtraBars.BarDockControl();
             label11 = new System.Windows.Forms.Label();
             label10 = new System.Windows.Forms.Label();
             label9 = new System.Windows.Forms.Label();
@@ -965,11 +995,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.cUSTOMERBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iACDataSet)).BeginInit();
             this.tabComments.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cOMMENTGridControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cOMMENTBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cOMMENTgridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPictureEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditType)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.commentTypesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DealerListCustbindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cOMMENTDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.commentTypesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cOMMENTBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dEALERBindingSource)).BeginInit();
             this.tabHistory.SuspendLayout();
             this.groupBox11.SuspendLayout();
@@ -1068,6 +1105,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderCustomerForm)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.paymentDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.paymentDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toolbarFormManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toolbarFormManager2)).BeginInit();
             this.SuspendLayout();
             // 
             // label11
@@ -2896,14 +2937,260 @@
             // tabComments
             // 
             this.tabComments.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.tabComments.Controls.Add(this.cOMMENTGridControl);
             this.tabComments.Controls.Add(this.groupBox7);
-            this.tabComments.Controls.Add(this.cOMMENTDataGridView);
             this.tabComments.Location = new System.Drawing.Point(4, 30);
             this.tabComments.Name = "tabComments";
             this.tabComments.Padding = new System.Windows.Forms.Padding(3);
-            this.tabComments.Size = new System.Drawing.Size(1261, 581);
+            this.tabComments.Size = new System.Drawing.Size(1230, 578);
             this.tabComments.TabIndex = 2;
             this.tabComments.Text = "Customer Comments";
+            this.tabComments.Enter += new System.EventHandler(this.tabComments_Enter);
+            // 
+            // cOMMENTGridControl
+            // 
+            this.cOMMENTGridControl.DataSource = this.cOMMENTBindingSource;
+            this.cOMMENTGridControl.Location = new System.Drawing.Point(8, 104);
+            this.cOMMENTGridControl.MainView = this.cOMMENTgridView;
+            this.cOMMENTGridControl.Name = "cOMMENTGridControl";
+            this.cOMMENTGridControl.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemDateEdit1,
+            this.repositoryItemPictureEdit1,
+            this.repositoryItemTextEdit1,
+            this.repositoryItemLookUpEditType,
+            this.repositoryItemMemoEdit1});
+            this.cOMMENTGridControl.Size = new System.Drawing.Size(1214, 471);
+            this.cOMMENTGridControl.TabIndex = 610;
+            this.cOMMENTGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.cOMMENTgridView});
+            this.cOMMENTGridControl.DataSourceChanged += new System.EventHandler(this.cOMMENTGridView_DataSourceChanged);
+            // 
+            // cOMMENTBindingSource
+            // 
+            this.cOMMENTBindingSource.DataMember = "COMMENT";
+            this.cOMMENTBindingSource.DataSource = this.iACDataSet;
+            // 
+            // cOMMENTgridView
+            // 
+            this.cOMMENTgridView.Appearance.EvenRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.cOMMENTgridView.Appearance.EvenRow.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cOMMENTgridView.Appearance.EvenRow.Options.UseBackColor = true;
+            this.cOMMENTgridView.Appearance.EvenRow.Options.UseFont = true;
+            this.cOMMENTgridView.Appearance.EvenRow.Options.UseForeColor = true;
+            this.cOMMENTgridView.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cOMMENTgridView.Appearance.Row.Options.UseFont = true;
+            this.cOMMENTgridView.Appearance.SelectedRow.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cOMMENTgridView.Appearance.SelectedRow.Options.UseFont = true;
+            this.cOMMENTgridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colDATE,
+            this.colThumb,
+            this.colLetterPath,
+            this.colSMSPath,
+            this.colTYPE,
+            this.colCOMMENT_USERID,
+            this.colCOMMENT,
+            this.colCOMMENT_NO,
+            this.colCOMMENT_SEQ_NO,
+            this.colCOMMENT_ID_TYPE,
+            this.colCOMMENT_DEALER,
+            this.colCOMMENT_HHMMSS,
+            this.colImgSort});
+            this.cOMMENTgridView.GridControl = this.cOMMENTGridControl;
+            this.cOMMENTgridView.Name = "cOMMENTgridView";
+            this.cOMMENTgridView.OptionsView.EnableAppearanceEvenRow = true;
+            this.cOMMENTgridView.OptionsView.EnableAppearanceOddRow = true;
+            this.cOMMENTgridView.OptionsView.RowAutoHeight = true;
+            this.cOMMENTgridView.OptionsView.ShowGroupPanel = false;
+            this.cOMMENTgridView.RowCellClick += new DevExpress.XtraGrid.Views.Grid.RowCellClickEventHandler(this.gridView1_RowCellClick);
+            this.cOMMENTgridView.InitNewRow += new DevExpress.XtraGrid.Views.Grid.InitNewRowEventHandler(this.cOMMENTgridView_InitNewRow);
+            this.cOMMENTgridView.CellValueChanging += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.cOMMENTgridView_CellValueChanging);
+            this.cOMMENTgridView.CustomUnboundColumnData += new DevExpress.XtraGrid.Views.Base.CustomColumnDataEventHandler(this.gridView1_CustomUnboundColumnData);
+            this.cOMMENTgridView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cOMMENTgridView_KeyDown);
+            // 
+            // colDATE
+            // 
+            this.colDATE.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colDATE.AppearanceCell.Options.UseFont = true;
+            this.colDATE.AppearanceCell.Options.UseTextOptions = true;
+            this.colDATE.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.colDATE.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colDATE.AppearanceHeader.Options.UseFont = true;
+            this.colDATE.Caption = "DATE";
+            this.colDATE.ColumnEdit = this.repositoryItemDateEdit1;
+            this.colDATE.FieldName = "COMMENT_DATE";
+            this.colDATE.MinWidth = 10;
+            this.colDATE.Name = "colDATE";
+            this.colDATE.OptionsColumn.AllowEdit = false;
+            this.colDATE.Visible = true;
+            this.colDATE.VisibleIndex = 0;
+            this.colDATE.Width = 96;
+            // 
+            // repositoryItemDateEdit1
+            // 
+            this.repositoryItemDateEdit1.AutoHeight = false;
+            this.repositoryItemDateEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEdit1.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemDateEdit1.Name = "repositoryItemDateEdit1";
+            // 
+            // colThumb
+            // 
+            this.colThumb.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colThumb.AppearanceCell.Options.UseFont = true;
+            this.colThumb.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colThumb.AppearanceHeader.Options.UseFont = true;
+            this.colThumb.AppearanceHeader.Options.UseImage = true;
+            this.colThumb.ColumnEdit = this.repositoryItemPictureEdit1;
+            this.colThumb.FieldName = "colThumb";
+            this.colThumb.ImageOptions.Alignment = System.Drawing.StringAlignment.Center;
+            this.colThumb.ImageOptions.Image = global::IAC2021SQL.Properties.Resources.PaperClip;
+            this.colThumb.ImageOptions.ImageIndex = 1;
+            this.colThumb.MinWidth = 10;
+            this.colThumb.Name = "colThumb";
+            this.colThumb.OptionsColumn.AllowEdit = false;
+            this.colThumb.OptionsColumn.ReadOnly = true;
+            this.colThumb.OptionsColumn.ShowCaption = false;
+            this.colThumb.ShowUnboundExpressionMenu = true;
+            this.colThumb.UnboundDataType = typeof(object);
+            this.colThumb.Visible = true;
+            this.colThumb.VisibleIndex = 1;
+            this.colThumb.Width = 49;
+            // 
+            // repositoryItemPictureEdit1
+            // 
+            this.repositoryItemPictureEdit1.Name = "repositoryItemPictureEdit1";
+            this.repositoryItemPictureEdit1.NullText = " ";
+            // 
+            // colLetterPath
+            // 
+            this.colLetterPath.FieldName = "LetterPath";
+            this.colLetterPath.Name = "colLetterPath";
+            this.colLetterPath.OptionsColumn.AllowEdit = false;
+            this.colLetterPath.Width = 20;
+            // 
+            // colSMSPath
+            // 
+            this.colSMSPath.FieldName = "SMSPath";
+            this.colSMSPath.Name = "colSMSPath";
+            this.colSMSPath.OptionsColumn.AllowEdit = false;
+            this.colSMSPath.Width = 20;
+            // 
+            // colTYPE
+            // 
+            this.colTYPE.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colTYPE.AppearanceCell.Options.UseFont = true;
+            this.colTYPE.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colTYPE.AppearanceHeader.Options.UseFont = true;
+            this.colTYPE.Caption = "TYPE";
+            this.colTYPE.ColumnEdit = this.repositoryItemLookUpEditType;
+            this.colTYPE.FieldName = "COMMENT_TYPE";
+            this.colTYPE.MinWidth = 10;
+            this.colTYPE.Name = "colTYPE";
+            this.colTYPE.Visible = true;
+            this.colTYPE.VisibleIndex = 2;
+            this.colTYPE.Width = 71;
+            // 
+            // repositoryItemLookUpEditType
+            // 
+            this.repositoryItemLookUpEditType.AutoHeight = false;
+            this.repositoryItemLookUpEditType.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemLookUpEditType.DataSource = this.commentTypesBindingSource;
+            this.repositoryItemLookUpEditType.DisplayMember = "ListItems";
+            this.repositoryItemLookUpEditType.KeyMember = "ID";
+            this.repositoryItemLookUpEditType.Name = "repositoryItemLookUpEditType";
+            this.repositoryItemLookUpEditType.NullText = " ";
+            this.repositoryItemLookUpEditType.ValueMember = "Type";
+            // 
+            // commentTypesBindingSource
+            // 
+            this.commentTypesBindingSource.DataMember = "Comment_Types";
+            this.commentTypesBindingSource.DataSource = this.iACDataSet;
+            // 
+            // colCOMMENT_USERID
+            // 
+            this.colCOMMENT_USERID.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colCOMMENT_USERID.AppearanceCell.Options.UseFont = true;
+            this.colCOMMENT_USERID.AppearanceCell.Options.UseTextOptions = true;
+            this.colCOMMENT_USERID.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colCOMMENT_USERID.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colCOMMENT_USERID.AppearanceHeader.Options.UseFont = true;
+            this.colCOMMENT_USERID.Caption = "ID";
+            this.colCOMMENT_USERID.FieldName = "COMMENT_USERID";
+            this.colCOMMENT_USERID.MinWidth = 10;
+            this.colCOMMENT_USERID.Name = "colCOMMENT_USERID";
+            this.colCOMMENT_USERID.OptionsColumn.AllowEdit = false;
+            this.colCOMMENT_USERID.Visible = true;
+            this.colCOMMENT_USERID.VisibleIndex = 3;
+            this.colCOMMENT_USERID.Width = 42;
+            // 
+            // colCOMMENT
+            // 
+            this.colCOMMENT.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colCOMMENT.AppearanceCell.Options.UseFont = true;
+            this.colCOMMENT.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colCOMMENT.AppearanceHeader.Options.UseFont = true;
+            this.colCOMMENT.Caption = "COMMENT";
+            this.colCOMMENT.ColumnEdit = this.repositoryItemMemoEdit1;
+            this.colCOMMENT.FieldName = "COMMENT_WHOLE";
+            this.colCOMMENT.FilterMode = DevExpress.XtraGrid.ColumnFilterMode.DisplayText;
+            this.colCOMMENT.MinWidth = 100;
+            this.colCOMMENT.Name = "colCOMMENT";
+            this.colCOMMENT.Visible = true;
+            this.colCOMMENT.VisibleIndex = 4;
+            this.colCOMMENT.Width = 931;
+            // 
+            // repositoryItemMemoEdit1
+            // 
+            this.repositoryItemMemoEdit1.Name = "repositoryItemMemoEdit1";
+            // 
+            // colCOMMENT_NO
+            // 
+            this.colCOMMENT_NO.FieldName = "COMMENT_NO";
+            this.colCOMMENT_NO.Name = "colCOMMENT_NO";
+            this.colCOMMENT_NO.OptionsColumn.AllowEdit = false;
+            this.colCOMMENT_NO.Width = 20;
+            // 
+            // colCOMMENT_SEQ_NO
+            // 
+            this.colCOMMENT_SEQ_NO.FieldName = "COMMENT_SEQ_NO";
+            this.colCOMMENT_SEQ_NO.Name = "colCOMMENT_SEQ_NO";
+            this.colCOMMENT_SEQ_NO.OptionsColumn.AllowEdit = false;
+            this.colCOMMENT_SEQ_NO.Width = 20;
+            // 
+            // colCOMMENT_ID_TYPE
+            // 
+            this.colCOMMENT_ID_TYPE.FieldName = "COMMENT_ID_TYPE";
+            this.colCOMMENT_ID_TYPE.Name = "colCOMMENT_ID_TYPE";
+            this.colCOMMENT_ID_TYPE.OptionsColumn.AllowEdit = false;
+            this.colCOMMENT_ID_TYPE.Width = 21;
+            // 
+            // colCOMMENT_DEALER
+            // 
+            this.colCOMMENT_DEALER.FieldName = "COMMENT_DEALER";
+            this.colCOMMENT_DEALER.Name = "colCOMMENT_DEALER";
+            this.colCOMMENT_DEALER.OptionsColumn.AllowEdit = false;
+            this.colCOMMENT_DEALER.Width = 21;
+            // 
+            // colCOMMENT_HHMMSS
+            // 
+            this.colCOMMENT_HHMMSS.FieldName = "COMMENT_HHMMSS";
+            this.colCOMMENT_HHMMSS.Name = "colCOMMENT_HHMMSS";
+            this.colCOMMENT_HHMMSS.OptionsColumn.AllowEdit = false;
+            this.colCOMMENT_HHMMSS.Width = 21;
+            // 
+            // colImgSort
+            // 
+            this.colImgSort.FieldName = "ImgSort";
+            this.colImgSort.Name = "colImgSort";
+            this.colImgSort.OptionsColumn.AllowEdit = false;
+            this.colImgSort.Width = 25;
+            // 
+            // repositoryItemTextEdit1
+            // 
+            this.repositoryItemTextEdit1.AutoHeight = false;
+            this.repositoryItemTextEdit1.Name = "repositoryItemTextEdit1";
             // 
             // groupBox7
             // 
@@ -2991,201 +3278,6 @@
             this.txtCommentNo.TabIndex = 601;
             this.txtCommentNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // cOMMENTDataGridView
-            // 
-            this.cOMMENTDataGridView.AllowDrop = true;
-            this.cOMMENTDataGridView.AllowUserToOrderColumns = true;
-            this.cOMMENTDataGridView.AutoGenerateColumns = false;
-            this.cOMMENTDataGridView.ColumnHeadersHeight = 35;
-            this.cOMMENTDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.cOMMENTDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Date,
-            this.Thumb,
-            this.LetterPath,
-            this.SMSPath,
-            this.Type,
-            this.USERID,
-            this.Comment,
-            this.COMMENT_NO,
-            this.COMMENT_SEQ_NO,
-            this.COMMENT_ID_TYPE,
-            this.COMMENT_1,
-            this.COMMENT_2,
-            this.COMMENT_3,
-            this.COMMENT_DEALER,
-            this.COMMENT_HHMMSS,
-            this.ImgSort});
-            this.cOMMENTDataGridView.DataSource = this.cOMMENTBindingSource;
-            this.cOMMENTDataGridView.Location = new System.Drawing.Point(106, 104);
-            this.cOMMENTDataGridView.Name = "cOMMENTDataGridView";
-            this.cOMMENTDataGridView.RowTemplate.Height = 24;
-            this.cOMMENTDataGridView.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.cOMMENTDataGridView.Size = new System.Drawing.Size(1019, 426);
-            this.cOMMENTDataGridView.TabIndex = 610;
-            this.cOMMENTDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.cOMMENTDataGridView_CellClick);
-            this.cOMMENTDataGridView.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.cOMMENTDataGridView_CellEndEdit);
-            this.cOMMENTDataGridView.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.cOMMENTDataGridView_CellValueChanged);
-            this.cOMMENTDataGridView.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.cOMMENTDataGridView_ColumnHeaderMouseClick);
-            this.cOMMENTDataGridView.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.cOMMENTDataGridView_DataBindingComplete);
-            this.cOMMENTDataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.cOMMENTDataGridView_DataError);
-            this.cOMMENTDataGridView.DefaultValuesNeeded += new System.Windows.Forms.DataGridViewRowEventHandler(this.cOMMENTDataGridView_DefaultValuesNeeded);
-            this.cOMMENTDataGridView.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.cOMMENTDataGridView_EditingControlShowing);
-            this.cOMMENTDataGridView.UserAddedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.cOMMENTDataGridView_UserAddedRow);
-            this.cOMMENTDataGridView.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.cOMMENTDataGridView_UserDeletedRow);
-            // 
-            // Date
-            // 
-            this.Date.DataPropertyName = "COMMENT_DATE";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle1.Format = "d";
-            dataGridViewCellStyle1.NullValue = null;
-            this.Date.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Date.HeaderText = "DATE";
-            this.Date.Name = "Date";
-            this.Date.ReadOnly = true;
-            // 
-            // Thumb
-            // 
-            this.Thumb.HeaderText = "";
-            this.Thumb.Name = "Thumb";
-            this.Thumb.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Thumb.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Thumb.Width = 30;
-            // 
-            // LetterPath
-            // 
-            this.LetterPath.DataPropertyName = "LetterPath";
-            this.LetterPath.HeaderText = "LetterPath";
-            this.LetterPath.Name = "LetterPath";
-            this.LetterPath.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.LetterPath.Visible = false;
-            // 
-            // SMSPath
-            // 
-            this.SMSPath.DataPropertyName = "SMSPath";
-            this.SMSPath.HeaderText = "SMSPath";
-            this.SMSPath.Name = "SMSPath";
-            this.SMSPath.Visible = false;
-            // 
-            // Type
-            // 
-            this.Type.DataPropertyName = "COMMENT_TYPE";
-            this.Type.DataSource = this.commentTypesBindingSource;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.Format = "N0";
-            this.Type.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Type.DisplayMember = "ListItems";
-            this.Type.DropDownWidth = 200;
-            this.Type.HeaderText = "TYPE";
-            this.Type.MaxDropDownItems = 20;
-            this.Type.Name = "Type";
-            this.Type.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Type.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Type.ValueMember = "Type";
-            this.Type.Width = 60;
-            // 
-            // commentTypesBindingSource
-            // 
-            this.commentTypesBindingSource.DataMember = "Comment_Types";
-            this.commentTypesBindingSource.DataSource = this.iACDataSet;
-            // 
-            // USERID
-            // 
-            this.USERID.DataPropertyName = "COMMENT_USERID";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.USERID.DefaultCellStyle = dataGridViewCellStyle3;
-            this.USERID.HeaderText = "ID";
-            this.USERID.MaxInputLength = 3;
-            this.USERID.Name = "USERID";
-            this.USERID.ReadOnly = true;
-            this.USERID.Width = 70;
-            // 
-            // Comment
-            // 
-            this.Comment.DataPropertyName = "COMMENT_WHOLE";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Comment.DefaultCellStyle = dataGridViewCellStyle4;
-            this.Comment.HeaderText = "COMMENT";
-            this.Comment.MaxInputLength = 180;
-            this.Comment.Name = "Comment";
-            this.Comment.ReadOnly = true;
-            this.Comment.Width = 720;
-            // 
-            // COMMENT_NO
-            // 
-            this.COMMENT_NO.DataPropertyName = "COMMENT_NO";
-            this.COMMENT_NO.HeaderText = "";
-            this.COMMENT_NO.MaxInputLength = 6;
-            this.COMMENT_NO.Name = "COMMENT_NO";
-            this.COMMENT_NO.Visible = false;
-            // 
-            // COMMENT_SEQ_NO
-            // 
-            this.COMMENT_SEQ_NO.DataPropertyName = "COMMENT_SEQ_NO";
-            this.COMMENT_SEQ_NO.HeaderText = "";
-            this.COMMENT_SEQ_NO.MaxInputLength = 3;
-            this.COMMENT_SEQ_NO.Name = "COMMENT_SEQ_NO";
-            this.COMMENT_SEQ_NO.Visible = false;
-            // 
-            // COMMENT_ID_TYPE
-            // 
-            this.COMMENT_ID_TYPE.DataPropertyName = "COMMENT_ID_TYPE";
-            this.COMMENT_ID_TYPE.HeaderText = "";
-            this.COMMENT_ID_TYPE.Name = "COMMENT_ID_TYPE";
-            this.COMMENT_ID_TYPE.Visible = false;
-            // 
-            // COMMENT_1
-            // 
-            this.COMMENT_1.DataPropertyName = "COMMENT_1";
-            this.COMMENT_1.HeaderText = "";
-            this.COMMENT_1.MaxInputLength = 60;
-            this.COMMENT_1.Name = "COMMENT_1";
-            this.COMMENT_1.Visible = false;
-            // 
-            // COMMENT_2
-            // 
-            this.COMMENT_2.DataPropertyName = "COMMENT_2";
-            this.COMMENT_2.HeaderText = "";
-            this.COMMENT_2.MaxInputLength = 60;
-            this.COMMENT_2.Name = "COMMENT_2";
-            this.COMMENT_2.Visible = false;
-            // 
-            // COMMENT_3
-            // 
-            this.COMMENT_3.DataPropertyName = "COMMENT_3";
-            this.COMMENT_3.HeaderText = "";
-            this.COMMENT_3.MaxInputLength = 60;
-            this.COMMENT_3.Name = "COMMENT_3";
-            this.COMMENT_3.Visible = false;
-            // 
-            // COMMENT_DEALER
-            // 
-            this.COMMENT_DEALER.DataPropertyName = "COMMENT_DEALER";
-            this.COMMENT_DEALER.HeaderText = "";
-            this.COMMENT_DEALER.Name = "COMMENT_DEALER";
-            this.COMMENT_DEALER.Visible = false;
-            // 
-            // COMMENT_HHMMSS
-            // 
-            this.COMMENT_HHMMSS.DataPropertyName = "COMMENT_HHMMSS";
-            this.COMMENT_HHMMSS.HeaderText = "COMMENT_HHMMSS";
-            this.COMMENT_HHMMSS.Name = "COMMENT_HHMMSS";
-            this.COMMENT_HHMMSS.Visible = false;
-            // 
-            // ImgSort
-            // 
-            this.ImgSort.DataPropertyName = "ImgSort";
-            this.ImgSort.HeaderText = "ImgSort";
-            this.ImgSort.Name = "ImgSort";
-            this.ImgSort.ReadOnly = true;
-            this.ImgSort.Visible = false;
-            // 
-            // cOMMENTBindingSource
-            // 
-            this.cOMMENTBindingSource.DataMember = "COMMENT";
-            this.cOMMENTBindingSource.DataSource = this.iACDataSet;
-            // 
             // dEALERBindingSource
             // 
             this.dEALERBindingSource.DataMember = "DEALER";
@@ -3202,7 +3294,7 @@
             this.tabHistory.Location = new System.Drawing.Point(4, 30);
             this.tabHistory.Name = "tabHistory";
             this.tabHistory.Padding = new System.Windows.Forms.Padding(3);
-            this.tabHistory.Size = new System.Drawing.Size(1261, 581);
+            this.tabHistory.Size = new System.Drawing.Size(1230, 581);
             this.tabHistory.TabIndex = 1;
             this.tabHistory.Text = "Customer History";
             // 
@@ -3309,7 +3401,7 @@
             this.nullableDateTimePickerHistContractDate.Name = "nullableDateTimePickerHistContractDate";
             this.nullableDateTimePickerHistContractDate.Size = new System.Drawing.Size(107, 29);
             this.nullableDateTimePickerHistContractDate.TabIndex = 502;
-            this.nullableDateTimePickerHistContractDate.Value = new System.DateTime(2021, 11, 4, 0, 0, 0, 0);
+            this.nullableDateTimePickerHistContractDate.Value = new System.DateTime(2021, 11, 29, 0, 0, 0, 0);
             // 
             // textBoxBuyOutHist
             // 
@@ -3335,7 +3427,7 @@
             this.nullableDateTimePickerPayDate.Name = "nullableDateTimePickerPayDate";
             this.nullableDateTimePickerPayDate.Size = new System.Drawing.Size(107, 29);
             this.nullableDateTimePickerPayDate.TabIndex = 507;
-            this.nullableDateTimePickerPayDate.Value = new System.DateTime(2021, 11, 4, 0, 0, 0, 0);
+            this.nullableDateTimePickerPayDate.Value = new System.DateTime(2021, 11, 29, 0, 0, 0, 0);
             // 
             // textBox22
             // 
@@ -3360,7 +3452,7 @@
             this.nullableDateTimePickerFirstPayDate.Name = "nullableDateTimePickerFirstPayDate";
             this.nullableDateTimePickerFirstPayDate.Size = new System.Drawing.Size(107, 29);
             this.nullableDateTimePickerFirstPayDate.TabIndex = 510;
-            this.nullableDateTimePickerFirstPayDate.Value = new System.DateTime(2021, 11, 4, 0, 0, 0, 0);
+            this.nullableDateTimePickerFirstPayDate.Value = new System.DateTime(2021, 11, 29, 0, 0, 0, 0);
             // 
             // textBox1
             // 
@@ -3623,7 +3715,7 @@
             this.toolStripButtonCalcBuyout});
             this.toolStrip2.Location = new System.Drawing.Point(3, 553);
             this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(1255, 25);
+            this.toolStrip2.Size = new System.Drawing.Size(1224, 25);
             this.toolStrip2.TabIndex = 98;
             this.toolStrip2.Text = "toolStrip2";
             // 
@@ -3710,6 +3802,128 @@
             this.cUSTHISTDataGridView.TabIndex = 530;
             this.cUSTHISTDataGridView.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.cUSTHISTDataGridView_DataBindingComplete);
             // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "CUSTHIST_PAY_DATE";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle1.Format = "d";
+            dataGridViewCellStyle1.NullValue = null;
+            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridViewTextBoxColumn4.HeaderText = "POST DATE";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn4.Width = 95;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "CUSTHIST_ACT_STAT";
+            this.dataGridViewTextBoxColumn6.HeaderText = "ACT STAT";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.Width = 50;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "CUSTHIST_PAYMENT_RCV";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle2.Format = "C2";
+            dataGridViewCellStyle2.NullValue = null;
+            this.dataGridViewTextBoxColumn9.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridViewTextBoxColumn9.HeaderText = "PAYMENT AMOUNT";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "CUSTHIST_BALANCE";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle3.Format = "C2";
+            dataGridViewCellStyle3.NullValue = null;
+            this.dataGridViewTextBoxColumn8.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridViewTextBoxColumn8.HeaderText = "LOAN BALANCE";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn18
+            // 
+            this.dataGridViewTextBoxColumn18.DataPropertyName = "CUSTHIST_CONTRACT_STATUS";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle4.Format = "C2";
+            dataGridViewCellStyle4.NullValue = null;
+            this.dataGridViewTextBoxColumn18.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridViewTextBoxColumn18.HeaderText = "CONTRACT STATUS";
+            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
+            this.dataGridViewTextBoxColumn18.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.DataPropertyName = "CUSTHIST_LATE_CHARGE_BAL";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle5.Format = "C2";
+            dataGridViewCellStyle5.NullValue = null;
+            this.dataGridViewTextBoxColumn13.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dataGridViewTextBoxColumn13.HeaderText = "LATE CHARGE BALANCE";
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.dataGridViewTextBoxColumn13.ReadOnly = true;
+            // 
+            // PartialPayment
+            // 
+            this.PartialPayment.DataPropertyName = "PartialPayment";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle6.Format = "C2";
+            dataGridViewCellStyle6.NullValue = null;
+            this.PartialPayment.DefaultCellStyle = dataGridViewCellStyle6;
+            this.PartialPayment.HeaderText = "PARTIAL PAYMENT";
+            this.PartialPayment.Name = "PartialPayment";
+            this.PartialPayment.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn15
+            // 
+            this.dataGridViewTextBoxColumn15.DataPropertyName = "SHORT_PAID_THRU";
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.NullValue = null;
+            this.dataGridViewTextBoxColumn15.DefaultCellStyle = dataGridViewCellStyle7;
+            this.dataGridViewTextBoxColumn15.HeaderText = "PAID THROUGH";
+            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+            this.dataGridViewTextBoxColumn15.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn16
+            // 
+            this.dataGridViewTextBoxColumn16.DataPropertyName = "CUSTHIST_PAY_REM_1";
+            this.dataGridViewTextBoxColumn16.HeaderText = "PMT DESC";
+            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            this.dataGridViewTextBoxColumn16.ReadOnly = true;
+            this.dataGridViewTextBoxColumn16.Width = 70;
+            // 
+            // dataGridViewTextBoxColumn27
+            // 
+            this.dataGridViewTextBoxColumn27.DataPropertyName = "CUSTHIST_PAYMENT_TYPE";
+            this.dataGridViewTextBoxColumn27.HeaderText = "PMT TYPE";
+            this.dataGridViewTextBoxColumn27.Name = "dataGridViewTextBoxColumn27";
+            this.dataGridViewTextBoxColumn27.ReadOnly = true;
+            this.dataGridViewTextBoxColumn27.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn27.Width = 50;
+            // 
+            // CUSTHIST_PAYMENT_CODE
+            // 
+            this.CUSTHIST_PAYMENT_CODE.DataPropertyName = "CUSTHIST_PAYMENT_CODE";
+            this.CUSTHIST_PAYMENT_CODE.HeaderText = "PMT CODE";
+            this.CUSTHIST_PAYMENT_CODE.Name = "CUSTHIST_PAYMENT_CODE";
+            this.CUSTHIST_PAYMENT_CODE.ReadOnly = true;
+            this.CUSTHIST_PAYMENT_CODE.Width = 50;
+            // 
+            // CUSTHIST_THRU_UD
+            // 
+            this.CUSTHIST_THRU_UD.DataPropertyName = "CUSTHIST_THRU_UD";
+            dataGridViewCellStyle8.Format = "#";
+            dataGridViewCellStyle8.NullValue = "0";
+            this.CUSTHIST_THRU_UD.DefaultCellStyle = dataGridViewCellStyle8;
+            this.CUSTHIST_THRU_UD.HeaderText = "EXT MONTHS";
+            this.CUSTHIST_THRU_UD.Name = "CUSTHIST_THRU_UD";
+            this.CUSTHIST_THRU_UD.ReadOnly = true;
+            this.CUSTHIST_THRU_UD.Width = 75;
+            // 
             // cUSTHISTBindingSource
             // 
             this.cUSTHISTBindingSource.DataMember = "CUSTHIST";
@@ -3724,7 +3938,7 @@
             this.tabCustInfo1.Location = new System.Drawing.Point(4, 30);
             this.tabCustInfo1.Name = "tabCustInfo1";
             this.tabCustInfo1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabCustInfo1.Size = new System.Drawing.Size(1261, 581);
+            this.tabCustInfo1.Size = new System.Drawing.Size(1230, 581);
             this.tabCustInfo1.TabIndex = 0;
             this.tabCustInfo1.Text = "Customer Info";
             // 
@@ -3825,7 +4039,7 @@
             this.groupBox10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox10.Location = new System.Drawing.Point(3, 3);
             this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(1255, 575);
+            this.groupBox10.Size = new System.Drawing.Size(1224, 575);
             this.groupBox10.TabIndex = 33;
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "               ";
@@ -3839,7 +4053,7 @@
             this.nullableDateTimePickerDateContractReceived.Name = "nullableDateTimePickerDateContractReceived";
             this.nullableDateTimePickerDateContractReceived.Size = new System.Drawing.Size(119, 29);
             this.nullableDateTimePickerDateContractReceived.TabIndex = 108;
-            this.nullableDateTimePickerDateContractReceived.Value = new System.DateTime(2021, 11, 4, 0, 0, 0, 0);
+            this.nullableDateTimePickerDateContractReceived.Value = new System.DateTime(2021, 11, 29, 0, 0, 0, 0);
             this.nullableDateTimePickerDateContractReceived.Visible = false;
             this.nullableDateTimePickerDateContractReceived.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
@@ -4870,12 +5084,12 @@
             this.tabCustomerMaint.Controls.Add(this.tabCustomerFees);
             this.tabCustomerMaint.Controls.Add(this.tabRepoHistory);
             this.tabCustomerMaint.Controls.Add(this.tabPageTSB);
-            this.tabCustomerMaint.Location = new System.Drawing.Point(0, 0);
+            this.tabCustomerMaint.Location = new System.Drawing.Point(0, 1);
             this.tabCustomerMaint.Multiline = true;
             this.tabCustomerMaint.Name = "tabCustomerMaint";
             this.tabCustomerMaint.SelectedIndex = 0;
             this.tabCustomerMaint.ShowToolTips = true;
-            this.tabCustomerMaint.Size = new System.Drawing.Size(1269, 615);
+            this.tabCustomerMaint.Size = new System.Drawing.Size(1238, 615);
             this.tabCustomerMaint.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.tabCustomerMaint.TabIndex = 218;
             this.tabCustomerMaint.SelectedIndexChanged += new System.EventHandler(this.tabCustomerMaint_SelectedIndexChanged);
@@ -4889,7 +5103,7 @@
             this.tabCustInfo2.Location = new System.Drawing.Point(4, 30);
             this.tabCustInfo2.Name = "tabCustInfo2";
             this.tabCustInfo2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabCustInfo2.Size = new System.Drawing.Size(1261, 581);
+            this.tabCustInfo2.Size = new System.Drawing.Size(1230, 578);
             this.tabCustInfo2.TabIndex = 3;
             this.tabCustInfo2.Text = "Customer Info 2";
             // 
@@ -4956,7 +5170,7 @@
             this.nullableDateTimePickerFundingDate.Name = "nullableDateTimePickerFundingDate";
             this.nullableDateTimePickerFundingDate.Size = new System.Drawing.Size(119, 29);
             this.nullableDateTimePickerFundingDate.TabIndex = 89;
-            this.nullableDateTimePickerFundingDate.Value = new System.DateTime(2021, 11, 4, 0, 0, 0, 0);
+            this.nullableDateTimePickerFundingDate.Value = new System.DateTime(2021, 11, 29, 0, 0, 0, 0);
             this.nullableDateTimePickerFundingDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // checkBoxOverrideLateCharge
@@ -4981,7 +5195,7 @@
             this.DateTimePickerContractDate.Name = "DateTimePickerContractDate";
             this.DateTimePickerContractDate.Size = new System.Drawing.Size(119, 29);
             this.DateTimePickerContractDate.TabIndex = 88;
-            this.DateTimePickerContractDate.Value = new System.DateTime(2021, 11, 4, 0, 0, 0, 0);
+            this.DateTimePickerContractDate.Value = new System.DateTime(2021, 11, 29, 0, 0, 0, 0);
             this.DateTimePickerContractDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             this.DateTimePickerContractDate.Validated += new System.EventHandler(this.DateTimePickerContractDate_Validated);
             // 
@@ -5007,7 +5221,7 @@
             this.txtFirstPayDate.Name = "txtFirstPayDate";
             this.txtFirstPayDate.Size = new System.Drawing.Size(119, 29);
             this.txtFirstPayDate.TabIndex = 76;
-            this.txtFirstPayDate.Value = new System.DateTime(2021, 11, 4, 0, 0, 0, 0);
+            this.txtFirstPayDate.Value = new System.DateTime(2021, 11, 29, 0, 0, 0, 0);
             this.txtFirstPayDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             this.txtFirstPayDate.Validated += new System.EventHandler(this.txtFirstPayDate_Validated);
             // 
@@ -5019,7 +5233,7 @@
             this.txtPaymentDate.Name = "txtPaymentDate";
             this.txtPaymentDate.Size = new System.Drawing.Size(119, 29);
             this.txtPaymentDate.TabIndex = 91;
-            this.txtPaymentDate.Value = new System.DateTime(2021, 11, 4, 0, 0, 0, 0);
+            this.txtPaymentDate.Value = new System.DateTime(2021, 11, 29, 0, 0, 0, 0);
             this.txtPaymentDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // textBox18
@@ -5380,7 +5594,7 @@
             this.MaturityDate.Name = "MaturityDate";
             this.MaturityDate.Size = new System.Drawing.Size(119, 29);
             this.MaturityDate.TabIndex = 115;
-            this.MaturityDate.Value = new System.DateTime(2021, 11, 4, 0, 0, 0, 0);
+            this.MaturityDate.Value = new System.DateTime(2021, 11, 29, 0, 0, 0, 0);
             // 
             // txtPaidThrough
             // 
@@ -5566,7 +5780,7 @@
             this.tabVehicle.Controls.Add(this.VehicleGroupBox);
             this.tabVehicle.Location = new System.Drawing.Point(4, 30);
             this.tabVehicle.Name = "tabVehicle";
-            this.tabVehicle.Size = new System.Drawing.Size(1261, 581);
+            this.tabVehicle.Size = new System.Drawing.Size(1230, 578);
             this.tabVehicle.TabIndex = 5;
             this.tabVehicle.Text = "Vehicle Info";
             // 
@@ -5902,7 +6116,7 @@
             this.nullableDateTimePickerDateTitleReleased.Name = "nullableDateTimePickerDateTitleReleased";
             this.nullableDateTimePickerDateTitleReleased.Size = new System.Drawing.Size(109, 29);
             this.nullableDateTimePickerDateTitleReleased.TabIndex = 237;
-            this.nullableDateTimePickerDateTitleReleased.Value = new System.DateTime(2021, 11, 4, 0, 0, 0, 0);
+            this.nullableDateTimePickerDateTitleReleased.Value = new System.DateTime(2021, 11, 29, 0, 0, 0, 0);
             this.nullableDateTimePickerDateTitleReleased.ValueChanged += new System.EventHandler(this.NullableDateTimePickerDateTitleReleased_ValueChanged);
             this.nullableDateTimePickerDateTitleReleased.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
@@ -5963,7 +6177,7 @@
             this.nullableDateTimePickerAucDate.Name = "nullableDateTimePickerAucDate";
             this.nullableDateTimePickerAucDate.Size = new System.Drawing.Size(109, 29);
             this.nullableDateTimePickerAucDate.TabIndex = 232;
-            this.nullableDateTimePickerAucDate.Value = new System.DateTime(2021, 11, 4, 0, 0, 0, 0);
+            this.nullableDateTimePickerAucDate.Value = new System.DateTime(2021, 11, 29, 0, 0, 0, 0);
             this.nullableDateTimePickerAucDate.ValueChanged += new System.EventHandler(this.nullableDateTimePickerAucDate_ValueChanged);
             this.nullableDateTimePickerAucDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
@@ -5976,7 +6190,7 @@
             this.nullableDateTimePickerLocDate.Name = "nullableDateTimePickerLocDate";
             this.nullableDateTimePickerLocDate.Size = new System.Drawing.Size(109, 29);
             this.nullableDateTimePickerLocDate.TabIndex = 230;
-            this.nullableDateTimePickerLocDate.Value = new System.DateTime(2021, 11, 4, 0, 0, 0, 0);
+            this.nullableDateTimePickerLocDate.Value = new System.DateTime(2021, 11, 29, 0, 0, 0, 0);
             this.nullableDateTimePickerLocDate.ValueChanged += new System.EventHandler(this.nullableDateTimePickerLocDate_ValueChanged);
             this.nullableDateTimePickerLocDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
@@ -6052,7 +6266,7 @@
             this.nullableDateTimePickerTitleDateReceived.Name = "nullableDateTimePickerTitleDateReceived";
             this.nullableDateTimePickerTitleDateReceived.Size = new System.Drawing.Size(109, 29);
             this.nullableDateTimePickerTitleDateReceived.TabIndex = 234;
-            this.nullableDateTimePickerTitleDateReceived.Value = new System.DateTime(2021, 11, 4, 0, 0, 0, 0);
+            this.nullableDateTimePickerTitleDateReceived.Value = new System.DateTime(2021, 11, 29, 0, 0, 0, 0);
             this.nullableDateTimePickerTitleDateReceived.ValueChanged += new System.EventHandler(this.nullableDateTimePickerTitleDateReceived_ValueChanged);
             this.nullableDateTimePickerTitleDateReceived.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
@@ -6102,7 +6316,7 @@
             this.nullableDateTimePickerRepoDate.Name = "nullableDateTimePickerRepoDate";
             this.nullableDateTimePickerRepoDate.Size = new System.Drawing.Size(109, 29);
             this.nullableDateTimePickerRepoDate.TabIndex = 227;
-            this.nullableDateTimePickerRepoDate.Value = new System.DateTime(2021, 11, 4, 0, 0, 0, 0);
+            this.nullableDateTimePickerRepoDate.Value = new System.DateTime(2021, 11, 29, 0, 0, 0, 0);
             this.nullableDateTimePickerRepoDate.ValueChanged += new System.EventHandler(this.nullableDateTimePickerRepoDate_ValueChanged);
             this.nullableDateTimePickerRepoDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
@@ -6114,7 +6328,7 @@
             this.txtExpirationDate.Name = "txtExpirationDate";
             this.txtExpirationDate.Size = new System.Drawing.Size(109, 29);
             this.txtExpirationDate.TabIndex = 219;
-            this.txtExpirationDate.Value = new System.DateTime(2021, 11, 4, 0, 0, 0, 0);
+            this.txtExpirationDate.Value = new System.DateTime(2021, 11, 29, 0, 0, 0, 0);
             // 
             // txtEffectiveDate
             // 
@@ -6124,7 +6338,7 @@
             this.txtEffectiveDate.Name = "txtEffectiveDate";
             this.txtEffectiveDate.Size = new System.Drawing.Size(109, 29);
             this.txtEffectiveDate.TabIndex = 218;
-            this.txtEffectiveDate.Value = new System.DateTime(2021, 11, 4, 0, 0, 0, 0);
+            this.txtEffectiveDate.Value = new System.DateTime(2021, 11, 29, 0, 0, 0, 0);
             // 
             // txtAgentPhone
             // 
@@ -6248,7 +6462,7 @@
             this.tabCosigner.Controls.Add(this.groupBox3);
             this.tabCosigner.Location = new System.Drawing.Point(4, 30);
             this.tabCosigner.Name = "tabCosigner";
-            this.tabCosigner.Size = new System.Drawing.Size(1261, 581);
+            this.tabCosigner.Size = new System.Drawing.Size(1230, 578);
             this.tabCosigner.TabIndex = 4;
             this.tabCosigner.Text = "Cosigner Info";
             // 
@@ -6779,7 +6993,7 @@
             this.txtCOSDOB.Name = "txtCOSDOB";
             this.txtCOSDOB.Size = new System.Drawing.Size(109, 29);
             this.txtCOSDOB.TabIndex = 323;
-            this.txtCOSDOB.Value = new System.DateTime(2021, 11, 4, 0, 0, 0, 0);
+            this.txtCOSDOB.Value = new System.DateTime(2021, 11, 29, 0, 0, 0, 0);
             // 
             // txtCOSWorkExt
             // 
@@ -7049,7 +7263,7 @@
             this.tabBank.Controls.Add(this.tabControl1);
             this.tabBank.Location = new System.Drawing.Point(4, 30);
             this.tabBank.Name = "tabBank";
-            this.tabBank.Size = new System.Drawing.Size(1261, 581);
+            this.tabBank.Size = new System.Drawing.Size(1230, 578);
             this.tabBank.TabIndex = 6;
             this.tabBank.Text = "Bank Info";
             // 
@@ -7462,7 +7676,7 @@
             this.tabCustomerFees.Location = new System.Drawing.Point(4, 30);
             this.tabCustomerFees.Name = "tabCustomerFees";
             this.tabCustomerFees.Padding = new System.Windows.Forms.Padding(3);
-            this.tabCustomerFees.Size = new System.Drawing.Size(1261, 581);
+            this.tabCustomerFees.Size = new System.Drawing.Size(1230, 578);
             this.tabCustomerFees.TabIndex = 7;
             this.tabCustomerFees.Text = "Fees";
             // 
@@ -7716,7 +7930,7 @@
             this.tabRepoHistory.Location = new System.Drawing.Point(4, 30);
             this.tabRepoHistory.Name = "tabRepoHistory";
             this.tabRepoHistory.Padding = new System.Windows.Forms.Padding(3);
-            this.tabRepoHistory.Size = new System.Drawing.Size(1261, 581);
+            this.tabRepoHistory.Size = new System.Drawing.Size(1230, 578);
             this.tabRepoHistory.TabIndex = 8;
             this.tabRepoHistory.Text = "Repo History";
             this.tabRepoHistory.Click += new System.EventHandler(this.tabRepoHistory_Click);
@@ -7758,15 +7972,15 @@
             this.dataGridViewRepoLog.Location = new System.Drawing.Point(0, 96);
             this.dataGridViewRepoLog.Name = "dataGridViewRepoLog";
             this.dataGridViewRepoLog.ReadOnly = true;
-            this.dataGridViewRepoLog.Size = new System.Drawing.Size(1220, 489);
+            this.dataGridViewRepoLog.Size = new System.Drawing.Size(1149, 489);
             this.dataGridViewRepoLog.TabIndex = 202;
             // 
             // dateOfChangeDataGridViewTextBoxColumn
             // 
             this.dateOfChangeDataGridViewTextBoxColumn.DataPropertyName = "DateOfChange";
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle13.Format = "d";
-            this.dateOfChangeDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle9.Format = "d";
+            this.dateOfChangeDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle9;
             this.dateOfChangeDataGridViewTextBoxColumn.HeaderText = "Date";
             this.dateOfChangeDataGridViewTextBoxColumn.Name = "dateOfChangeDataGridViewTextBoxColumn";
             this.dateOfChangeDataGridViewTextBoxColumn.ReadOnly = true;
@@ -7782,10 +7996,10 @@
             // orgRepoDateDataGridViewTextBoxColumn
             // 
             this.orgRepoDateDataGridViewTextBoxColumn.DataPropertyName = "OrgRepoDate";
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle14.Format = "d";
-            dataGridViewCellStyle14.NullValue = null;
-            this.orgRepoDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle10.Format = "d";
+            dataGridViewCellStyle10.NullValue = null;
+            this.orgRepoDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle10;
             this.orgRepoDateDataGridViewTextBoxColumn.HeaderText = "Old Repo Date";
             this.orgRepoDateDataGridViewTextBoxColumn.Name = "orgRepoDateDataGridViewTextBoxColumn";
             this.orgRepoDateDataGridViewTextBoxColumn.ReadOnly = true;
@@ -7793,9 +8007,9 @@
             // newRepoDateDataGridViewTextBoxColumn
             // 
             this.newRepoDateDataGridViewTextBoxColumn.DataPropertyName = "NewRepoDate";
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle15.Format = "d";
-            this.newRepoDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle11.Format = "d";
+            this.newRepoDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle11;
             this.newRepoDateDataGridViewTextBoxColumn.HeaderText = "New Repo Date";
             this.newRepoDateDataGridViewTextBoxColumn.Name = "newRepoDateDataGridViewTextBoxColumn";
             this.newRepoDateDataGridViewTextBoxColumn.ReadOnly = true;
@@ -7861,9 +8075,9 @@
             // oldLocationDateDataGridViewTextBoxColumn
             // 
             this.oldLocationDateDataGridViewTextBoxColumn.DataPropertyName = "OldLocationDate";
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle16.Format = "d";
-            this.oldLocationDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle12.Format = "d";
+            this.oldLocationDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle12;
             this.oldLocationDateDataGridViewTextBoxColumn.HeaderText = "Old Location Date";
             this.oldLocationDateDataGridViewTextBoxColumn.Name = "oldLocationDateDataGridViewTextBoxColumn";
             this.oldLocationDateDataGridViewTextBoxColumn.ReadOnly = true;
@@ -7871,9 +8085,9 @@
             // newLocationDateDataGridViewTextBoxColumn
             // 
             this.newLocationDateDataGridViewTextBoxColumn.DataPropertyName = "NewLocationDate";
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle17.Format = "d";
-            this.newLocationDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle13.Format = "d";
+            this.newLocationDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle13;
             this.newLocationDateDataGridViewTextBoxColumn.HeaderText = "New Location Date";
             this.newLocationDateDataGridViewTextBoxColumn.Name = "newLocationDateDataGridViewTextBoxColumn";
             this.newLocationDateDataGridViewTextBoxColumn.ReadOnly = true;
@@ -7895,9 +8109,9 @@
             // orgAutionHouseDateDataGridViewTextBoxColumn
             // 
             this.orgAutionHouseDateDataGridViewTextBoxColumn.DataPropertyName = "OrgAutionHouseDate";
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle18.Format = "d";
-            this.orgAutionHouseDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle14.Format = "d";
+            this.orgAutionHouseDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle14;
             this.orgAutionHouseDateDataGridViewTextBoxColumn.HeaderText = "Old Auction House Date";
             this.orgAutionHouseDateDataGridViewTextBoxColumn.Name = "orgAutionHouseDateDataGridViewTextBoxColumn";
             this.orgAutionHouseDateDataGridViewTextBoxColumn.ReadOnly = true;
@@ -7905,9 +8119,9 @@
             // newAuctionHouseDateDataGridViewTextBoxColumn
             // 
             this.newAuctionHouseDateDataGridViewTextBoxColumn.DataPropertyName = "NewAuctionHouseDate";
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle19.Format = "d";
-            this.newAuctionHouseDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle15.Format = "d";
+            this.newAuctionHouseDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle15;
             this.newAuctionHouseDateDataGridViewTextBoxColumn.HeaderText = "New Auction House Date";
             this.newAuctionHouseDateDataGridViewTextBoxColumn.Name = "newAuctionHouseDateDataGridViewTextBoxColumn";
             this.newAuctionHouseDateDataGridViewTextBoxColumn.ReadOnly = true;
@@ -7929,9 +8143,9 @@
             // orgDateTitleReceivedDataGridViewTextBoxColumn
             // 
             this.orgDateTitleReceivedDataGridViewTextBoxColumn.DataPropertyName = "OrgDateTitleReceived";
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle20.Format = "d";
-            this.orgDateTitleReceivedDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle16.Format = "d";
+            this.orgDateTitleReceivedDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle16;
             this.orgDateTitleReceivedDataGridViewTextBoxColumn.HeaderText = "Old Date Title Received";
             this.orgDateTitleReceivedDataGridViewTextBoxColumn.Name = "orgDateTitleReceivedDataGridViewTextBoxColumn";
             this.orgDateTitleReceivedDataGridViewTextBoxColumn.ReadOnly = true;
@@ -7939,9 +8153,9 @@
             // newDateTitleReceivedDataGridViewTextBoxColumn
             // 
             this.newDateTitleReceivedDataGridViewTextBoxColumn.DataPropertyName = "NewDateTitleReceived";
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle21.Format = "d";
-            this.newDateTitleReceivedDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle17.Format = "d";
+            this.newDateTitleReceivedDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle17;
             this.newDateTitleReceivedDataGridViewTextBoxColumn.HeaderText = "New Date Title Recieved";
             this.newDateTitleReceivedDataGridViewTextBoxColumn.Name = "newDateTitleReceivedDataGridViewTextBoxColumn";
             this.newDateTitleReceivedDataGridViewTextBoxColumn.ReadOnly = true;
@@ -8063,7 +8277,7 @@
             this.tabPageTSB.Location = new System.Drawing.Point(4, 30);
             this.tabPageTSB.Name = "tabPageTSB";
             this.tabPageTSB.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageTSB.Size = new System.Drawing.Size(1261, 581);
+            this.tabPageTSB.Size = new System.Drawing.Size(1230, 578);
             this.tabPageTSB.TabIndex = 9;
             this.tabPageTSB.Text = "TSB";
             // 
@@ -8121,7 +8335,7 @@
             this.nullableDateTimePickerFollowUpDate.Name = "nullableDateTimePickerFollowUpDate";
             this.nullableDateTimePickerFollowUpDate.Size = new System.Drawing.Size(119, 25);
             this.nullableDateTimePickerFollowUpDate.TabIndex = 24;
-            this.nullableDateTimePickerFollowUpDate.Value = new System.DateTime(2021, 11, 4, 0, 0, 0, 0);
+            this.nullableDateTimePickerFollowUpDate.Value = new System.DateTime(2021, 11, 29, 0, 0, 0, 0);
             this.nullableDateTimePickerFollowUpDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // nullableDateTimePickerDateClosed
@@ -8132,7 +8346,7 @@
             this.nullableDateTimePickerDateClosed.Name = "nullableDateTimePickerDateClosed";
             this.nullableDateTimePickerDateClosed.Size = new System.Drawing.Size(119, 25);
             this.nullableDateTimePickerDateClosed.TabIndex = 23;
-            this.nullableDateTimePickerDateClosed.Value = new System.DateTime(2021, 11, 4, 0, 0, 0, 0);
+            this.nullableDateTimePickerDateClosed.Value = new System.DateTime(2021, 11, 29, 0, 0, 0, 0);
             this.nullableDateTimePickerDateClosed.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // nullableDateTimePickerDateOpened
@@ -8143,7 +8357,7 @@
             this.nullableDateTimePickerDateOpened.Name = "nullableDateTimePickerDateOpened";
             this.nullableDateTimePickerDateOpened.Size = new System.Drawing.Size(119, 25);
             this.nullableDateTimePickerDateOpened.TabIndex = 22;
-            this.nullableDateTimePickerDateOpened.Value = new System.DateTime(2021, 11, 4, 0, 0, 0, 0);
+            this.nullableDateTimePickerDateOpened.Value = new System.DateTime(2021, 11, 29, 0, 0, 0, 0);
             this.nullableDateTimePickerDateOpened.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // nullableDateTimePickerDateofAccountInformation
@@ -8154,7 +8368,7 @@
             this.nullableDateTimePickerDateofAccountInformation.Name = "nullableDateTimePickerDateofAccountInformation";
             this.nullableDateTimePickerDateofAccountInformation.Size = new System.Drawing.Size(119, 25);
             this.nullableDateTimePickerDateofAccountInformation.TabIndex = 21;
-            this.nullableDateTimePickerDateofAccountInformation.Value = new System.DateTime(2021, 11, 4, 0, 0, 0, 0);
+            this.nullableDateTimePickerDateofAccountInformation.Value = new System.DateTime(2021, 11, 29, 0, 0, 0, 0);
             this.nullableDateTimePickerDateofAccountInformation.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // nullableDateTimePickerDateofFirstDelinquency
@@ -8165,7 +8379,7 @@
             this.nullableDateTimePickerDateofFirstDelinquency.Name = "nullableDateTimePickerDateofFirstDelinquency";
             this.nullableDateTimePickerDateofFirstDelinquency.Size = new System.Drawing.Size(119, 25);
             this.nullableDateTimePickerDateofFirstDelinquency.TabIndex = 20;
-            this.nullableDateTimePickerDateofFirstDelinquency.Value = new System.DateTime(2021, 11, 4, 0, 0, 0, 0);
+            this.nullableDateTimePickerDateofFirstDelinquency.Value = new System.DateTime(2021, 11, 29, 0, 0, 0, 0);
             this.nullableDateTimePickerDateofFirstDelinquency.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // nullableDateTimePickerDateofLastPayment
@@ -8176,7 +8390,7 @@
             this.nullableDateTimePickerDateofLastPayment.Name = "nullableDateTimePickerDateofLastPayment";
             this.nullableDateTimePickerDateofLastPayment.Size = new System.Drawing.Size(119, 25);
             this.nullableDateTimePickerDateofLastPayment.TabIndex = 19;
-            this.nullableDateTimePickerDateofLastPayment.Value = new System.DateTime(2021, 11, 4, 0, 0, 0, 0);
+            this.nullableDateTimePickerDateofLastPayment.Value = new System.DateTime(2021, 11, 29, 0, 0, 0, 0);
             this.nullableDateTimePickerDateofLastPayment.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // label135
@@ -9157,152 +9371,224 @@
             // 
             this.mASTERTableAdapter.ClearBeforeFill = true;
             // 
-            // dataGridViewTextBoxColumn4
+            // colid
             // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "CUSTHIST_PAY_DATE";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle5.Format = "d";
-            dataGridViewCellStyle5.NullValue = null;
-            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle5;
-            this.dataGridViewTextBoxColumn4.HeaderText = "POST DATE";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn4.Width = 95;
+            this.colid.FieldName = "id";
+            this.colid.Name = "colid";
             // 
-            // dataGridViewTextBoxColumn6
+            // colCOMMENT_NO1
             // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "CUSTHIST_ACT_STAT";
-            this.dataGridViewTextBoxColumn6.HeaderText = "ACT STAT";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            this.dataGridViewTextBoxColumn6.Width = 50;
+            this.colCOMMENT_NO1.FieldName = "COMMENT_NO";
+            this.colCOMMENT_NO1.Name = "colCOMMENT_NO1";
             // 
-            // dataGridViewTextBoxColumn9
+            // colCOMMENT_DATE
             // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "CUSTHIST_PAYMENT_RCV";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle6.Format = "C2";
-            dataGridViewCellStyle6.NullValue = null;
-            this.dataGridViewTextBoxColumn9.DefaultCellStyle = dataGridViewCellStyle6;
-            this.dataGridViewTextBoxColumn9.HeaderText = "PAYMENT AMOUNT";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            this.colCOMMENT_DATE.FieldName = "COMMENT_DATE";
+            this.colCOMMENT_DATE.Name = "colCOMMENT_DATE";
             // 
-            // dataGridViewTextBoxColumn8
+            // colCOMMENT_SEQ_NO1
             // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "CUSTHIST_BALANCE";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle7.Format = "C2";
-            dataGridViewCellStyle7.NullValue = null;
-            this.dataGridViewTextBoxColumn8.DefaultCellStyle = dataGridViewCellStyle7;
-            this.dataGridViewTextBoxColumn8.HeaderText = "LOAN BALANCE";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            this.colCOMMENT_SEQ_NO1.FieldName = "COMMENT_SEQ_NO";
+            this.colCOMMENT_SEQ_NO1.Name = "colCOMMENT_SEQ_NO1";
             // 
-            // dataGridViewTextBoxColumn18
+            // colCOMMENT_USERID1
             // 
-            this.dataGridViewTextBoxColumn18.DataPropertyName = "CUSTHIST_CONTRACT_STATUS";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle8.Format = "C2";
-            dataGridViewCellStyle8.NullValue = null;
-            this.dataGridViewTextBoxColumn18.DefaultCellStyle = dataGridViewCellStyle8;
-            this.dataGridViewTextBoxColumn18.HeaderText = "CONTRACT STATUS";
-            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
-            this.dataGridViewTextBoxColumn18.ReadOnly = true;
+            this.colCOMMENT_USERID1.FieldName = "COMMENT_USERID";
+            this.colCOMMENT_USERID1.Name = "colCOMMENT_USERID1";
             // 
-            // dataGridViewTextBoxColumn13
+            // colCOMMENT_WHOLE
             // 
-            this.dataGridViewTextBoxColumn13.DataPropertyName = "CUSTHIST_LATE_CHARGE_BAL";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle9.Format = "C2";
-            dataGridViewCellStyle9.NullValue = null;
-            this.dataGridViewTextBoxColumn13.DefaultCellStyle = dataGridViewCellStyle9;
-            this.dataGridViewTextBoxColumn13.HeaderText = "LATE CHARGE BALANCE";
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            this.dataGridViewTextBoxColumn13.ReadOnly = true;
+            this.colCOMMENT_WHOLE.FieldName = "COMMENT_WHOLE";
+            this.colCOMMENT_WHOLE.Name = "colCOMMENT_WHOLE";
             // 
-            // PartialPayment
+            // colCOMMENT_TYPE
             // 
-            this.PartialPayment.DataPropertyName = "PartialPayment";
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle10.Format = "C2";
-            dataGridViewCellStyle10.NullValue = null;
-            this.PartialPayment.DefaultCellStyle = dataGridViewCellStyle10;
-            this.PartialPayment.HeaderText = "PARTIAL PAYMENT";
-            this.PartialPayment.Name = "PartialPayment";
-            this.PartialPayment.ReadOnly = true;
+            this.colCOMMENT_TYPE.FieldName = "COMMENT_TYPE";
+            this.colCOMMENT_TYPE.Name = "colCOMMENT_TYPE";
             // 
-            // dataGridViewTextBoxColumn15
+            // colCOMMENT_DEALER1
             // 
-            this.dataGridViewTextBoxColumn15.DataPropertyName = "SHORT_PAID_THRU";
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.NullValue = null;
-            this.dataGridViewTextBoxColumn15.DefaultCellStyle = dataGridViewCellStyle11;
-            this.dataGridViewTextBoxColumn15.HeaderText = "PAID THROUGH";
-            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
-            this.dataGridViewTextBoxColumn15.ReadOnly = true;
+            this.colCOMMENT_DEALER1.FieldName = "COMMENT_DEALER";
+            this.colCOMMENT_DEALER1.Name = "colCOMMENT_DEALER1";
             // 
-            // dataGridViewTextBoxColumn16
+            // colCOMMENT_ID_TYPE1
             // 
-            this.dataGridViewTextBoxColumn16.DataPropertyName = "CUSTHIST_PAY_REM_1";
-            this.dataGridViewTextBoxColumn16.HeaderText = "PMT DESC";
-            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
-            this.dataGridViewTextBoxColumn16.ReadOnly = true;
-            this.dataGridViewTextBoxColumn16.Width = 70;
+            this.colCOMMENT_ID_TYPE1.FieldName = "COMMENT_ID_TYPE";
+            this.colCOMMENT_ID_TYPE1.Name = "colCOMMENT_ID_TYPE1";
             // 
-            // dataGridViewTextBoxColumn27
+            // colCOMMENT_HHMMSS1
             // 
-            this.dataGridViewTextBoxColumn27.DataPropertyName = "CUSTHIST_PAYMENT_TYPE";
-            this.dataGridViewTextBoxColumn27.HeaderText = "PMT TYPE";
-            this.dataGridViewTextBoxColumn27.Name = "dataGridViewTextBoxColumn27";
-            this.dataGridViewTextBoxColumn27.ReadOnly = true;
-            this.dataGridViewTextBoxColumn27.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn27.Width = 50;
+            this.colCOMMENT_HHMMSS1.FieldName = "COMMENT_HHMMSS";
+            this.colCOMMENT_HHMMSS1.Name = "colCOMMENT_HHMMSS1";
             // 
-            // CUSTHIST_PAYMENT_CODE
+            // colIsArchive
             // 
-            this.CUSTHIST_PAYMENT_CODE.DataPropertyName = "CUSTHIST_PAYMENT_CODE";
-            this.CUSTHIST_PAYMENT_CODE.HeaderText = "PMT CODE";
-            this.CUSTHIST_PAYMENT_CODE.Name = "CUSTHIST_PAYMENT_CODE";
-            this.CUSTHIST_PAYMENT_CODE.ReadOnly = true;
-            this.CUSTHIST_PAYMENT_CODE.Width = 50;
+            this.colIsArchive.FieldName = "IsArchive";
+            this.colIsArchive.Name = "colIsArchive";
             // 
-            // CUSTHIST_THRU_UD
+            // colLetterImage
             // 
-            this.CUSTHIST_THRU_UD.DataPropertyName = "CUSTHIST_THRU_UD";
-            dataGridViewCellStyle12.Format = "#";
-            dataGridViewCellStyle12.NullValue = "0";
-            this.CUSTHIST_THRU_UD.DefaultCellStyle = dataGridViewCellStyle12;
-            this.CUSTHIST_THRU_UD.HeaderText = "EXT MONTHS";
-            this.CUSTHIST_THRU_UD.Name = "CUSTHIST_THRU_UD";
-            this.CUSTHIST_THRU_UD.ReadOnly = true;
-            this.CUSTHIST_THRU_UD.Width = 75;
+            this.colLetterImage.FieldName = "LetterImage";
+            this.colLetterImage.Name = "colLetterImage";
+            // 
+            // colLetterPath1
+            // 
+            this.colLetterPath1.FieldName = "LetterPath";
+            this.colLetterPath1.Name = "colLetterPath1";
+            // 
+            // colLetterNum
+            // 
+            this.colLetterNum.FieldName = "LetterNum";
+            this.colLetterNum.Name = "colLetterNum";
+            // 
+            // colSMSImage
+            // 
+            this.colSMSImage.FieldName = "SMSImage";
+            this.colSMSImage.Name = "colSMSImage";
+            // 
+            // colSMSPath1
+            // 
+            this.colSMSPath1.FieldName = "SMSPath";
+            this.colSMSPath1.Name = "colSMSPath1";
+            // 
+            // colSMSTemplate
+            // 
+            this.colSMSTemplate.FieldName = "SMSTemplate";
+            this.colSMSTemplate.Name = "colSMSTemplate";
+            // 
+            // colImgSort1
+            // 
+            this.colImgSort1.FieldName = "ImgSort";
+            this.colImgSort1.Name = "colImgSort1";
+            // 
+            // xtraTabControl1
+            // 
+            this.xtraTabControl1.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InTabControlHeader;
+            this.xtraTabControl1.Location = new System.Drawing.Point(0, 0);
+            this.xtraTabControl1.MultiLine = DevExpress.Utils.DefaultBoolean.True;
+            this.xtraTabControl1.Name = "xtraTabControl1";
+            this.xtraTabControl1.ShowTabHeader = DevExpress.Utils.DefaultBoolean.True;
+            this.xtraTabControl1.Size = new System.Drawing.Size(1234, 614);
+            this.xtraTabControl1.TabIndex = 220;
+            // 
+            // toolbarFormManager1
+            // 
+            this.toolbarFormManager1.DockControls.Add(this.barDockControlTop);
+            this.toolbarFormManager1.DockControls.Add(this.barDockControlBottom);
+            this.toolbarFormManager1.DockControls.Add(this.barDockControlLeft);
+            this.toolbarFormManager1.DockControls.Add(this.barDockControlRight);
+            this.toolbarFormManager1.Form = this;
+            // 
+            // barDockControlTop
+            // 
+            this.barDockControlTop.CausesValidation = false;
+            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlTop.Manager = this.toolbarFormManager1;
+            this.barDockControlTop.Size = new System.Drawing.Size(1238, 0);
+            // 
+            // barDockControlBottom
+            // 
+            this.barDockControlBottom.CausesValidation = false;
+            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 642);
+            this.barDockControlBottom.Manager = this.toolbarFormManager1;
+            this.barDockControlBottom.Size = new System.Drawing.Size(1238, 0);
+            // 
+            // barDockControlLeft
+            // 
+            this.barDockControlLeft.CausesValidation = false;
+            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlLeft.Manager = this.toolbarFormManager1;
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 642);
+            // 
+            // barDockControlRight
+            // 
+            this.barDockControlRight.CausesValidation = false;
+            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControlRight.Location = new System.Drawing.Point(1238, 0);
+            this.barDockControlRight.Manager = this.toolbarFormManager1;
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 642);
+            // 
+            // toolbarFormManager2
+            // 
+            this.toolbarFormManager2.DockControls.Add(this.barDockControl1);
+            this.toolbarFormManager2.DockControls.Add(this.barDockControl2);
+            this.toolbarFormManager2.DockControls.Add(this.barDockControl3);
+            this.toolbarFormManager2.DockControls.Add(this.barDockControl4);
+            this.toolbarFormManager2.Form = this;
+            // 
+            // barDockControl1
+            // 
+            this.barDockControl1.CausesValidation = false;
+            this.barDockControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControl1.Location = new System.Drawing.Point(0, 0);
+            this.barDockControl1.Manager = this.toolbarFormManager2;
+            this.barDockControl1.Size = new System.Drawing.Size(1238, 0);
+            // 
+            // barDockControl2
+            // 
+            this.barDockControl2.CausesValidation = false;
+            this.barDockControl2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControl2.Location = new System.Drawing.Point(0, 642);
+            this.barDockControl2.Manager = this.toolbarFormManager2;
+            this.barDockControl2.Size = new System.Drawing.Size(1238, 0);
+            // 
+            // barDockControl3
+            // 
+            this.barDockControl3.CausesValidation = false;
+            this.barDockControl3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControl3.Location = new System.Drawing.Point(0, 0);
+            this.barDockControl3.Manager = this.toolbarFormManager2;
+            this.barDockControl3.Size = new System.Drawing.Size(0, 642);
+            // 
+            // barDockControl4
+            // 
+            this.barDockControl4.CausesValidation = false;
+            this.barDockControl4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControl4.Location = new System.Drawing.Point(1238, 0);
+            this.barDockControl4.Manager = this.toolbarFormManager2;
+            this.barDockControl4.Size = new System.Drawing.Size(0, 642);
             // 
             // frmCustMaint
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
-            this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(1238, 642);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.tabCustomerMaint);
+            this.Controls.Add(this.xtraTabControl1);
+            this.Controls.Add(this.barDockControlLeft);
+            this.Controls.Add(this.barDockControlRight);
+            this.Controls.Add(this.barDockControlBottom);
+            this.Controls.Add(this.barDockControlTop);
+            this.Controls.Add(this.barDockControl3);
+            this.Controls.Add(this.barDockControl4);
+            this.Controls.Add(this.barDockControl2);
+            this.Controls.Add(this.barDockControl1);
             this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "frmCustMaint";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-            this.Text = "7";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmCustMaint_FormClosing);
             this.Load += new System.EventHandler(this.frmCustMaint_Load);
             ((System.ComponentModel.ISupportInitialize)(this.cUSTOMERBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iACDataSet)).EndInit();
             this.tabComments.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.cOMMENTGridControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cOMMENTBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cOMMENTgridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemPictureEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditType)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.commentTypesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DealerListCustbindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cOMMENTDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.commentTypesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cOMMENTBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dEALERBindingSource)).EndInit();
             this.tabHistory.ResumeLayout(false);
             this.tabHistory.PerformLayout();
@@ -9431,6 +9717,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderCustomerForm)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.paymentDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.paymentDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toolbarFormManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toolbarFormManager2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -9448,7 +9738,6 @@
         private System.Windows.Forms.BindingSource cUSTHISTBindingSource;
         private IAC2021SQL.IACDataSetTableAdapters.CUSTHISTTableAdapter cUSTHISTTableAdapter;
         private System.Windows.Forms.TabPage tabComments;
-        private System.Windows.Forms.DataGridView cOMMENTDataGridView;
         private System.Windows.Forms.TabPage tabHistory;
         private System.Windows.Forms.DataGridView cUSTHISTDataGridView;
         private System.Windows.Forms.TabPage tabCustInfo1;
@@ -9797,22 +10086,6 @@
         private System.Windows.Forms.CheckBox checkBoxOverrideLateCharge;
         private System.Windows.Forms.TextBox textBoxOpenAccount;
         private ColorCheckBox checkBoxVehicleWarranty;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Date;
-        private System.Windows.Forms.DataGridViewImageColumn Thumb;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LetterPath;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SMSPath;
-        private System.Windows.Forms.DataGridViewComboBoxColumn Type;
-        private System.Windows.Forms.DataGridViewTextBoxColumn USERID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Comment;
-        private System.Windows.Forms.DataGridViewTextBoxColumn COMMENT_NO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn COMMENT_SEQ_NO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn COMMENT_ID_TYPE;
-        private System.Windows.Forms.DataGridViewTextBoxColumn COMMENT_1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn COMMENT_2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn COMMENT_3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn COMMENT_DEALER;
-        private System.Windows.Forms.DataGridViewTextBoxColumn COMMENT_HHMMSS;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ImgSort;
         private System.Windows.Forms.TabPage tabRepoHistory;
         private System.Windows.Forms.GroupBox groupBox13;
         private System.Windows.Forms.TextBox textBox41;
@@ -9982,6 +10255,57 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn27;
         private System.Windows.Forms.DataGridViewTextBoxColumn CUSTHIST_PAYMENT_CODE;
         private System.Windows.Forms.DataGridViewTextBoxColumn CUSTHIST_THRU_UD;
+        private DevExpress.XtraGrid.GridControl cOMMENTGridControl;
+        private DevExpress.XtraGrid.Views.Grid.GridView cOMMENTgridView;
+        private DevExpress.XtraGrid.Columns.GridColumn colCOMMENT_NO;
+        private DevExpress.XtraGrid.Columns.GridColumn colDATE;
+        private DevExpress.XtraGrid.Columns.GridColumn colCOMMENT_SEQ_NO;
+        private DevExpress.XtraGrid.Columns.GridColumn colCOMMENT_USERID;
+        private DevExpress.XtraGrid.Columns.GridColumn colCOMMENT;
+        private DevExpress.XtraGrid.Columns.GridColumn colTYPE;
+        private DevExpress.XtraGrid.Columns.GridColumn colCOMMENT_DEALER;
+        private DevExpress.XtraGrid.Columns.GridColumn colCOMMENT_ID_TYPE;
+        private DevExpress.XtraGrid.Columns.GridColumn colCOMMENT_HHMMSS;
+        private DevExpress.XtraGrid.Columns.GridColumn colLetterPath;
+        private DevExpress.XtraGrid.Columns.GridColumn colSMSPath;
+        private DevExpress.XtraGrid.Columns.GridColumn colImgSort;
+        private DevExpress.XtraGrid.Columns.GridColumn colThumb;
+        private DevExpress.XtraEditors.Repository.RepositoryItemDateEdit repositoryItemDateEdit1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit repositoryItemPictureEdit1;
+        private DevExpress.XtraGrid.Columns.GridColumn colid;
+        private DevExpress.XtraGrid.Columns.GridColumn colCOMMENT_NO1;
+        private DevExpress.XtraGrid.Columns.GridColumn colCOMMENT_DATE;
+        private DevExpress.XtraGrid.Columns.GridColumn colCOMMENT_SEQ_NO1;
+        private DevExpress.XtraGrid.Columns.GridColumn colCOMMENT_USERID1;
+        private DevExpress.XtraGrid.Columns.GridColumn colCOMMENT_WHOLE;
+        private DevExpress.XtraGrid.Columns.GridColumn colCOMMENT_TYPE;
+        private DevExpress.XtraGrid.Columns.GridColumn colCOMMENT_DEALER1;
+        private DevExpress.XtraGrid.Columns.GridColumn colCOMMENT_ID_TYPE1;
+        private DevExpress.XtraGrid.Columns.GridColumn colCOMMENT_HHMMSS1;
+        private DevExpress.XtraGrid.Columns.GridColumn colIsArchive;
+        private DevExpress.XtraGrid.Columns.GridColumn colLetterImage;
+        private DevExpress.XtraGrid.Columns.GridColumn colLetterPath1;
+        private DevExpress.XtraGrid.Columns.GridColumn colLetterNum;
+        private DevExpress.XtraGrid.Columns.GridColumn colSMSImage;
+        private DevExpress.XtraGrid.Columns.GridColumn colSMSPath1;
+        private DevExpress.XtraGrid.Columns.GridColumn colSMSTemplate;
+        private DevExpress.XtraGrid.Columns.GridColumn colImgSort1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit1;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEditType;
+        private DevExpress.XtraEditors.Repository.RepositoryItemMemoEdit repositoryItemMemoEdit1;
+        private DevExpress.XtraTab.XtraTabControl xtraTabControl1;
+        private DevExpress.XtraBars.FormAssistant formAssistant1;
+        private DevExpress.Utils.Behaviors.BehaviorManager behaviorManager1;
+        private DevExpress.XtraBars.ToolbarForm.ToolbarFormManager toolbarFormManager1;
+        private DevExpress.XtraBars.BarDockControl barDockControlTop;
+        private DevExpress.XtraBars.BarDockControl barDockControlBottom;
+        private DevExpress.XtraBars.BarDockControl barDockControlLeft;
+        private DevExpress.XtraBars.BarDockControl barDockControlRight;
+        private DevExpress.XtraBars.ToolbarForm.ToolbarFormManager toolbarFormManager2;
+        private DevExpress.XtraBars.BarDockControl barDockControl1;
+        private DevExpress.XtraBars.BarDockControl barDockControl2;
+        private DevExpress.XtraBars.BarDockControl barDockControl3;
+        private DevExpress.XtraBars.BarDockControl barDockControl4;
     }
 }
 
