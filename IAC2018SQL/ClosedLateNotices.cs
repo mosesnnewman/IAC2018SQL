@@ -34,6 +34,7 @@ namespace IAC2021SQL
 
         private void frmNotices_Load(object sender, EventArgs e)
         {
+            NoticeDatenullableDateTimePicker.Value = DateTime.Now.Date.AddDays(-15);  // Moses Newman 11/30/2021 Subtract 15 for run date default!
             PerformAutoScale();
         }
 
@@ -98,7 +99,7 @@ namespace IAC2021SQL
         {
             IACDataSetTableAdapters.LateRatesSelectTableAdapter LateRatesSelectTableAdapter = new IACDataSetTableAdapters.LateRatesSelectTableAdapter();
             Decimal lnAmountDifference = 0;
-            Int32 lnActDateDiff = 0,lnFormDay = 0;
+            Int32 lnActDateDiff = 0,lnFormDay = 0,lnMassDateDiff = 0, lnMassFormNo = 0; // Moses Newman 11/14/2021 Add Mass Date Diff
 
             // Initialize for each record
             lnFormNo = 0;
@@ -131,10 +132,13 @@ namespace IAC2021SQL
                 lnFormDay = 30;
             }
 
-            TimeSpan ltActDateDiff;
+            TimeSpan ltActDateDiff,ltMassDateDiff; // Moses Newman 11/14/2021 Create Mass Date Diff
             ldFormDate = (DateTime)NoticeDatenullableDateTimePicker.Value;
             ltActDateDiff = ldFormDate - ldNewPaidThru;
             lnActDateDiff = (Int32)(ltActDateDiff.TotalDays);
+            ltMassDateDiff = ldFormDate.AddDays(10) - ldNewPaidThru;   // Moses Newman 11/14/2021 Create Mass Date Diff 
+            lnMassDateDiff = (Int32)(ltMassDateDiff.TotalDays); // Moses Newman 11/14/2021 Create Mass Date Diff 
+
             // Moses Newman 04/04/2018 if February and NOT 1/30/YYYY due date and date difference is not zero must add the difference between 30 and 28 or 29 in a leap year!
             // Moses Newman 03/21/2019 Modified to add extra 2 days (or 1 if leap year) when the due date is is February of this year but the Month of the run date is >2.
             if ((ldFormDate.Day > 25 && ldFormDate.Day != 30 && lnActDateDiff != 0) || (ldNewPaidThru.Month <= 2 && ldFormDate.Month > 2 && ldFormDate.Year == ldNewPaidThru.Year))
@@ -158,6 +162,14 @@ namespace IAC2021SQL
                     return;*/
 
             TestLCDate(lnActDateDiff);
+            // Moses Newman 11/14/2021 Handle Mass Form 2 generating 10 days earlier
+            // Moses Newman 11/17/2021 For two cycles we use old 2 calculation as well!
+            // Moses Newman 11/30/2021 Only new calc from now on for Mass!
+            if (NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_STATE") == "MA")
+                lnMassFormNo = (lnMassDateDiff / 5) + 1;
+            if (lnMassFormNo == 2)
+                lnFormNo = 2;
+
             // Moses Newman 06/25/2014 make sure no of payments made, and remaining payments are not null!
             if (NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<Nullable<Int32>>("CUSTOMER_PAY_REM_2") == null)
                 NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].SetField<Int32>("CUSTOMER_PAY_REM_2", 0);
@@ -174,25 +186,36 @@ namespace IAC2021SQL
                     return;
                 // Moses Newman 02/26/2019 Handle new Notice 04 and 05
                 // Moses Newman 03/25/2019 Fix issue with notices becoming 7 or 8 and getting late charges!
+                // Moses Newman 11/17/2021 For two cycles generate form 4 using old and new logic
+                // Moses Newman 11/30/2021 Only new calc from now on for Mass!
+                /*if (NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_STATE") == "MA")
+                    if (lnMassDateDiff < 35 || lnMassDateDiff > 39)
+                        lnMassDateDiff = lnActDateDiff; */
                 if (lnFormDay != NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<Int32>("CUSTOMER_DAY_DUE") &&
-                                ((lnActDateDiff >= 35 && lnActDateDiff < 40 && NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_STATE") == "MA") || (lnActDateDiff >= 40 && lnActDateDiff < 45 && NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_STATE") != "MA")))
-                    switch (lnActDateDiff)
-                    {
-                        case 35:
-                        case 36:
-                        case 37:
-                        case 38:
-                        case 39:
-                            lnFormNo = 4;
-                            break;
-                        case 40:
-                        case 41:
-                        case 42:
-                        case 43:
-                        case 44:
-                            lnFormNo = 5;
-                            break;
-                    }
+                                ((lnMassDateDiff >= 35 && lnMassDateDiff < 40 && NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_STATE") == "MA") || (lnActDateDiff >= 40 && lnActDateDiff < 45 && NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_STATE") != "MA")))
+                    // Moses Newman 11/14/2021 Handle Mass Form 4 generating 10 days earlier
+                    if (NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_STATE") == "MA")
+                        switch (lnMassDateDiff)
+                        {
+                            case 35:
+                            case 36:
+                            case 37:
+                            case 38:
+                            case 39:
+                                lnFormNo = 4;
+                                break;
+                        }
+                    else
+                        switch (lnActDateDiff)
+                        {
+                            case 40:
+                            case 41:
+                            case 42:
+                            case 43:
+                            case 44:
+                                lnFormNo = 5;
+                                break;
+                        }
                 if (lnFormNo > 12)
                     lnFormNo = 9;
                 else
@@ -572,6 +595,8 @@ namespace IAC2021SQL
                 if (lnActDiff < 1)
                     return;
             lnFormNo = (lnActDiff / 5) + 1;
+            if (lnFormNo == 2)  // Moses Newman 11/14/2021 Only form 2 for mass, and uses different calculation later.
+                lnFormNo = 0;
         }
 
         private Int32 CheckFirstPayment(Int32 CustomerPos,DateTime ldACTDate)
@@ -619,6 +644,7 @@ namespace IAC2021SQL
 
         private void CreateForm(Int32 CustomerPos,DateTime ldNewDueDate)
         {
+            String TestCust = NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_NO");
             // Moses Newman 08/19/2018 Don't create Form02 if NOT Mass!
             if (lnFormNo == 2 && NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_STATE") != "MA")
                 return;
@@ -669,6 +695,22 @@ namespace IAC2021SQL
                 (NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_CONTRACT_STATUS") *-1) - 
                 NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_REGULAR_AMOUNT")-
                 lnLateCharge + NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("PartialPayment"));
+            // Moses Newman 11/17/2021 Handle proper Amount Past Due if 2 or 4 new calculation
+            if (NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_STATE") == "MA" &&
+               (NoticeiacDataSet.NOTICE.Rows[NoticebindingSource.Position].Field<Decimal>("AmountPastDue") < 0 ||
+               (NoticeiacDataSet.NOTICE.Rows[NoticebindingSource.Position].Field<Decimal>("AmountPastDue") <
+                NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_REGULAR_AMOUNT") && NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_BALANCE") >= NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_REGULAR_AMOUNT"))))
+                if (lnFormNo == 2 || lnFormNo == 4)
+                {
+                    NoticeiacDataSet.NOTICE.Rows[NoticebindingSource.Position].SetField<Decimal>("AmountPastDue",
+                        (NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_CONTRACT_STATUS") * -1) -
+                        lnLateCharge + NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("PartialPayment"));
+                    NoticeiacDataSet.NOTICE.Rows[NoticebindingSource.Position].SetField<Decimal>("NOTICE_CONTRACT_STATUS",
+                        (NoticeiacDataSet.NOTICE.Rows[NoticebindingSource.Position].Field<Decimal>("NOTICE_REGULAR_AMOUNT") +
+                        NoticeiacDataSet.NOTICE.Rows[NoticebindingSource.Position].Field<Decimal>("NOTICE_LATE_CHARGE") +
+                        NoticeiacDataSet.NOTICE.Rows[NoticebindingSource.Position].Field<Decimal>("AmountPastDue") -
+                        NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("PartialPayment")) * -1);
+                }
             // Moses Newman 06/21/2018 Add PartialPayment
             NoticeiacDataSet.NOTICE.Rows[NoticebindingSource.Position].SetField<Decimal>("PartialPayment", 
                 NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("PartialPayment"));

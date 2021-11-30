@@ -39,7 +39,7 @@ namespace IAC2021SQL
             set;
         }
 
-        private Boolean _EditMode,_AddMode,_ViewMode; // Moses Newman 08/16/2021
+        private Boolean _AddMode; // Moses Newman 08/16/2021
 
         public FormTickets()
         {
@@ -401,7 +401,7 @@ namespace IAC2021SQL
         private void buttonSaveTicket_Click(object sender, EventArgs e)
         {
             int? insertID = 0,lnSeq;
-            Boolean MissingPayType = false, MissingPayCode = false, isFound = false;
+            Boolean MissingPayType = false, MissingPayCode = false;
             Object loContingentSeq = null;
             Char NotPosted = '\u00FF';
 
@@ -459,7 +459,6 @@ namespace IAC2021SQL
             }
             for (int i = 0;i < ticketsdataset.TicketDetail.Rows.Count; i++)
             {
-                isFound = false;
                 if (ticketsdataset.TicketDetail.Rows[i].RowState != DataRowState.Deleted)
                 {
                     if (_AddMode || ticketsdataset.TicketDetail.Rows[i].Field<Int32?>("TicketID") == null || ticketsdataset.TicketDetail.Rows[i].Field<Int32?>("TicketID") <= 0)
@@ -677,7 +676,7 @@ namespace IAC2021SQL
             buttonReprint.Enabled = true;
             textBoxTicketID.Text = ticketsdataset.TicketHeader.Rows[bindingSourceTicketHeader.Position].Field<Int32>("TicketID").ToString().Trim();
             textBoxTicketID.Refresh();
-            _ViewMode = true;
+            //_ViewMode = true;
             buttonEdit.Enabled = true;
         }
 
@@ -709,7 +708,7 @@ namespace IAC2021SQL
             buttonReprint.Enabled = true;
             textBoxTicketID.Text = ticketsdataset.TicketHeader.Rows[bindingSourceTicketHeader.Position].Field<Int32>("TicketID").ToString().Trim();
             textBoxTicketID.Refresh();
-            _ViewMode = true;
+            //_ViewMode = true;
             buttonEdit.Enabled = true;
         }
 
@@ -768,9 +767,9 @@ namespace IAC2021SQL
             ActiveControl = textBoxAccount;
             textBoxAccount.Select();
             // Moses Newman 08/16/2021 Mod starts
-            _EditMode = false;
+            //_EditMode = false;
             _AddMode = false;
-            _ViewMode = true;
+            //_ViewMode = true;
             // End Mod 08/16/2021
         }
 
@@ -797,8 +796,8 @@ namespace IAC2021SQL
             if (productionMainTables.CUSTOMER.Rows.Count == 0 || ticketsdataset.TicketHeader.Rows[bindingSourceTicketHeader.Position].Field<Boolean>("IsPosted")) 
                 return;
 
-            _EditMode = true;
-            _ViewMode = false;
+            //_EditMode = true;
+            //_ViewMode = false;
             _AddMode = false;
             richTextBox1.Enabled = true;
             dataListView1.Enabled = true;
@@ -875,7 +874,7 @@ namespace IAC2021SQL
             buttonReprint.Enabled = true;
             textBoxTicketID.Text = ticketsdataset.TicketHeader.Rows[bindingSourceTicketHeader.Position].Field<Int32>("TicketID").ToString().Trim();
             textBoxTicketID.Refresh();
-            _ViewMode = true;
+            //_ViewMode = true;
             buttonEdit.Enabled = true;
 
         }
@@ -908,7 +907,7 @@ namespace IAC2021SQL
             buttonReprint.Enabled = true;
             textBoxTicketID.Text = ticketsdataset.TicketHeader.Rows[bindingSourceTicketHeader.Position].Field<Int32>("TicketID").ToString().Trim();
             textBoxTicketID.Refresh();
-            _ViewMode = true;
+            //_ViewMode = true;
             buttonEdit.Enabled = true;
         }
 
@@ -944,9 +943,9 @@ namespace IAC2021SQL
 
             buttonEdit.Enabled = false; // Moses Newman 08/16/2021
             buttonDeleteTicket.Enabled = false; // Moses Newman 08/16/2021
-            _EditMode = false;
+            //_EditMode = false;
             _AddMode = false;
-            _ViewMode = true;
+            //_ViewMode = true;
 
             NullableDateTimePickerDate.Value = null;
             NullableDateTimePickerDate.Refresh();
