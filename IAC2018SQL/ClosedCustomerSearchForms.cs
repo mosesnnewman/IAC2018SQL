@@ -168,7 +168,7 @@ namespace IAC2021SQL
                         if (lsCustomer_Type == "O")
                             MDImain.CreateFormInstance("frmOpenCustMaint", false);
                         else
-                            MDImain.CreateFormInstance("frmCustMaint", false);
+                            MDImain.CreateFormInstance("frmNewCustMaint", false);
                         iacDataSet1.Clear();
                         ClearAllFields();
                         Refresh();
@@ -227,7 +227,7 @@ namespace IAC2021SQL
                         iacDataSet1.Clear();
                         ClearAllFields();
                         Refresh();
-                        frmCustMaint newMDIChild2 = new frmCustMaint();
+                        frmNewCustMaint newMDIChild2 = new frmNewCustMaint();
                         newMDIChild2.MdiParent = ParentForm;
                         newMDIChild2.Show();
                         Show();

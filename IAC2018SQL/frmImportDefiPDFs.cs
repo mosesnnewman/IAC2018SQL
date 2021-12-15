@@ -7,6 +7,7 @@ using RestSharp;
 using S9API.Models;
 using Acrobat;
 using RestSharp.Extensions;
+using RestSharp.Authenticators;
 using System.Threading;
 
 namespace IAC2021SQL
