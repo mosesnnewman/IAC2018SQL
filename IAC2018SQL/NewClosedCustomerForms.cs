@@ -438,11 +438,6 @@ namespace IAC2021SQL
             cOMMENTGridControl.Enabled = true;
             cOMMENTgridView.OptionsBehavior.Editable = false;
             cOMMENTgridView.OptionsView.NewItemRowPosition = NewItemRowPosition.None;
-            //Moses Newman 04/18/2019 Add Repo Log
-            dataGridViewRepoLog.ReadOnly = true;
-            dataGridViewRepoLog.AllowUserToAddRows = false;
-            dataGridViewRepoLog.AllowUserToDeleteRows = false;
-
 
             toolStripButtonSave.Enabled = false;
             toolStripButtonEdit.Enabled = true;
@@ -935,8 +930,7 @@ namespace IAC2021SQL
                 emailTableAdapter.Fill(iACDataSet.Email, cUSTOMER_NOTextBox.Text);
                 // Moses Newman 04/18/2019 Add Repo Log Tab
                 RepoLogTableAdapter.FillByCustomerNo(RepoData.RepoLog, cUSTOMER_NOTextBox.Text);
-                dataGridViewRepoLog.DataSource = RepoData.RepoLog;
-
+                gridControlRepoLog.DataSource = RepoData.RepoLog;
                 /*
                 // Moses Newman 08/30/2021 Fix issues with nuldates in 64 bit version
                 if (iACDataSet.VEHICLE.Rows[0].Field<DateTime?>("RepoDate") == null)
@@ -4133,7 +4127,6 @@ namespace IAC2021SQL
 
         private void gridView1_CustomUnboundColumnData(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDataEventArgs e)
         {
-            
             GridView view = sender as GridView;
             if (e.Column.FieldName == "colThumb" && e.IsGetData)
                 e.Value = getWordImage(view, e.ListSourceRowIndex);
@@ -4197,6 +4190,48 @@ namespace IAC2021SQL
         private void xtraTabControlCustomerMaint_CloseButtonClick(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void txtContractStatus_EditValueChanged(object sender, EventArgs e)
+        {
+            TextEdit edit = sender as TextEdit;
+
+            var value = edit.EditValue as Decimal?;
+
+            if (value == null)
+                return;
+
+            if (value > 0)
+                edit.ForeColor = Color.Green;
+            else
+                if (value < 0)
+                    edit.ForeColor = Color.Red;
+                else
+                    if (!Enabled)
+                        edit.ForeColor = System.Drawing.SystemColors.GrayText;
+                    else
+                        edit.ForeColor = System.Drawing.SystemColors.ControlText;
+        }
+
+        private void colorTextBoxTotalDue_EditValueChanged(object sender, EventArgs e)
+        {
+            TextEdit edit = sender as TextEdit;
+
+            var value = edit.EditValue as Decimal?;
+
+            if (value == null)
+                return;
+
+            if (value > 0)
+                edit.ForeColor = Color.Purple;
+            else
+                if (value < 0)
+                edit.ForeColor = Color.DarkSeaGreen;
+            else
+                if (!Enabled)
+                    edit.ForeColor = System.Drawing.SystemColors.GrayText;
+                else
+                    edit.ForeColor = System.Drawing.SystemColors.ControlText;
         }
 
         //Moses Newman 11/23/2021 Use DevExpress GridView instead of DataGridView for comments tab now

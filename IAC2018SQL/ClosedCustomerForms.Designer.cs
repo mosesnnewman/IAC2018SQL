@@ -809,6 +809,7 @@
             this.barDockControl2 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl3 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl4 = new DevExpress.XtraBars.BarDockControl();
+            this.colid1 = new DevExpress.XtraGrid.Columns.GridColumn();
             label11 = new System.Windows.Forms.Label();
             label10 = new System.Windows.Forms.Label();
             label9 = new System.Windows.Forms.Label();
@@ -2942,7 +2943,7 @@
             this.tabComments.Location = new System.Drawing.Point(4, 30);
             this.tabComments.Name = "tabComments";
             this.tabComments.Padding = new System.Windows.Forms.Padding(3);
-            this.tabComments.Size = new System.Drawing.Size(1230, 578);
+            this.tabComments.Size = new System.Drawing.Size(1230, 581);
             this.tabComments.TabIndex = 2;
             this.tabComments.Text = "Customer Comments";
             this.tabComments.Enter += new System.EventHandler(this.tabComments_Enter);
@@ -2994,6 +2995,7 @@
             this.colCOMMENT_ID_TYPE,
             this.colCOMMENT_DEALER,
             this.colCOMMENT_HHMMSS,
+            this.colid1,
             this.colImgSort});
             this.cOMMENTgridView.GridControl = this.cOMMENTGridControl;
             this.cOMMENTgridView.Name = "cOMMENTgridView";
@@ -3401,7 +3403,7 @@
             this.nullableDateTimePickerHistContractDate.Name = "nullableDateTimePickerHistContractDate";
             this.nullableDateTimePickerHistContractDate.Size = new System.Drawing.Size(107, 29);
             this.nullableDateTimePickerHistContractDate.TabIndex = 502;
-            this.nullableDateTimePickerHistContractDate.Value = new System.DateTime(2021, 11, 29, 0, 0, 0, 0);
+            this.nullableDateTimePickerHistContractDate.Value = new System.DateTime(2021, 12, 15, 0, 0, 0, 0);
             // 
             // textBoxBuyOutHist
             // 
@@ -3427,7 +3429,7 @@
             this.nullableDateTimePickerPayDate.Name = "nullableDateTimePickerPayDate";
             this.nullableDateTimePickerPayDate.Size = new System.Drawing.Size(107, 29);
             this.nullableDateTimePickerPayDate.TabIndex = 507;
-            this.nullableDateTimePickerPayDate.Value = new System.DateTime(2021, 11, 29, 0, 0, 0, 0);
+            this.nullableDateTimePickerPayDate.Value = new System.DateTime(2021, 12, 15, 0, 0, 0, 0);
             // 
             // textBox22
             // 
@@ -3452,7 +3454,7 @@
             this.nullableDateTimePickerFirstPayDate.Name = "nullableDateTimePickerFirstPayDate";
             this.nullableDateTimePickerFirstPayDate.Size = new System.Drawing.Size(107, 29);
             this.nullableDateTimePickerFirstPayDate.TabIndex = 510;
-            this.nullableDateTimePickerFirstPayDate.Value = new System.DateTime(2021, 11, 29, 0, 0, 0, 0);
+            this.nullableDateTimePickerFirstPayDate.Value = new System.DateTime(2021, 12, 15, 0, 0, 0, 0);
             // 
             // textBox1
             // 
@@ -4053,7 +4055,7 @@
             this.nullableDateTimePickerDateContractReceived.Name = "nullableDateTimePickerDateContractReceived";
             this.nullableDateTimePickerDateContractReceived.Size = new System.Drawing.Size(119, 29);
             this.nullableDateTimePickerDateContractReceived.TabIndex = 108;
-            this.nullableDateTimePickerDateContractReceived.Value = new System.DateTime(2021, 11, 29, 0, 0, 0, 0);
+            this.nullableDateTimePickerDateContractReceived.Value = new System.DateTime(2021, 12, 15, 0, 0, 0, 0);
             this.nullableDateTimePickerDateContractReceived.Visible = false;
             this.nullableDateTimePickerDateContractReceived.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
@@ -5103,7 +5105,7 @@
             this.tabCustInfo2.Location = new System.Drawing.Point(4, 30);
             this.tabCustInfo2.Name = "tabCustInfo2";
             this.tabCustInfo2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabCustInfo2.Size = new System.Drawing.Size(1230, 578);
+            this.tabCustInfo2.Size = new System.Drawing.Size(1230, 581);
             this.tabCustInfo2.TabIndex = 3;
             this.tabCustInfo2.Text = "Customer Info 2";
             // 
@@ -5170,7 +5172,7 @@
             this.nullableDateTimePickerFundingDate.Name = "nullableDateTimePickerFundingDate";
             this.nullableDateTimePickerFundingDate.Size = new System.Drawing.Size(119, 29);
             this.nullableDateTimePickerFundingDate.TabIndex = 89;
-            this.nullableDateTimePickerFundingDate.Value = new System.DateTime(2021, 11, 29, 0, 0, 0, 0);
+            this.nullableDateTimePickerFundingDate.Value = new System.DateTime(2021, 12, 15, 0, 0, 0, 0);
             this.nullableDateTimePickerFundingDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // checkBoxOverrideLateCharge
@@ -5195,7 +5197,7 @@
             this.DateTimePickerContractDate.Name = "DateTimePickerContractDate";
             this.DateTimePickerContractDate.Size = new System.Drawing.Size(119, 29);
             this.DateTimePickerContractDate.TabIndex = 88;
-            this.DateTimePickerContractDate.Value = new System.DateTime(2021, 11, 29, 0, 0, 0, 0);
+            this.DateTimePickerContractDate.Value = new System.DateTime(2021, 12, 15, 0, 0, 0, 0);
             this.DateTimePickerContractDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             this.DateTimePickerContractDate.Validated += new System.EventHandler(this.DateTimePickerContractDate_Validated);
             // 
@@ -5221,7 +5223,7 @@
             this.txtFirstPayDate.Name = "txtFirstPayDate";
             this.txtFirstPayDate.Size = new System.Drawing.Size(119, 29);
             this.txtFirstPayDate.TabIndex = 76;
-            this.txtFirstPayDate.Value = new System.DateTime(2021, 11, 29, 0, 0, 0, 0);
+            this.txtFirstPayDate.Value = new System.DateTime(2021, 12, 15, 0, 0, 0, 0);
             this.txtFirstPayDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             this.txtFirstPayDate.Validated += new System.EventHandler(this.txtFirstPayDate_Validated);
             // 
@@ -5233,7 +5235,7 @@
             this.txtPaymentDate.Name = "txtPaymentDate";
             this.txtPaymentDate.Size = new System.Drawing.Size(119, 29);
             this.txtPaymentDate.TabIndex = 91;
-            this.txtPaymentDate.Value = new System.DateTime(2021, 11, 29, 0, 0, 0, 0);
+            this.txtPaymentDate.Value = new System.DateTime(2021, 12, 15, 0, 0, 0, 0);
             this.txtPaymentDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // textBox18
@@ -5594,7 +5596,7 @@
             this.MaturityDate.Name = "MaturityDate";
             this.MaturityDate.Size = new System.Drawing.Size(119, 29);
             this.MaturityDate.TabIndex = 115;
-            this.MaturityDate.Value = new System.DateTime(2021, 11, 29, 0, 0, 0, 0);
+            this.MaturityDate.Value = new System.DateTime(2021, 12, 15, 0, 0, 0, 0);
             // 
             // txtPaidThrough
             // 
@@ -5780,7 +5782,7 @@
             this.tabVehicle.Controls.Add(this.VehicleGroupBox);
             this.tabVehicle.Location = new System.Drawing.Point(4, 30);
             this.tabVehicle.Name = "tabVehicle";
-            this.tabVehicle.Size = new System.Drawing.Size(1230, 578);
+            this.tabVehicle.Size = new System.Drawing.Size(1230, 581);
             this.tabVehicle.TabIndex = 5;
             this.tabVehicle.Text = "Vehicle Info";
             // 
@@ -6116,7 +6118,7 @@
             this.nullableDateTimePickerDateTitleReleased.Name = "nullableDateTimePickerDateTitleReleased";
             this.nullableDateTimePickerDateTitleReleased.Size = new System.Drawing.Size(109, 29);
             this.nullableDateTimePickerDateTitleReleased.TabIndex = 237;
-            this.nullableDateTimePickerDateTitleReleased.Value = new System.DateTime(2021, 11, 29, 0, 0, 0, 0);
+            this.nullableDateTimePickerDateTitleReleased.Value = new System.DateTime(2021, 12, 15, 0, 0, 0, 0);
             this.nullableDateTimePickerDateTitleReleased.ValueChanged += new System.EventHandler(this.NullableDateTimePickerDateTitleReleased_ValueChanged);
             this.nullableDateTimePickerDateTitleReleased.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
@@ -6177,7 +6179,7 @@
             this.nullableDateTimePickerAucDate.Name = "nullableDateTimePickerAucDate";
             this.nullableDateTimePickerAucDate.Size = new System.Drawing.Size(109, 29);
             this.nullableDateTimePickerAucDate.TabIndex = 232;
-            this.nullableDateTimePickerAucDate.Value = new System.DateTime(2021, 11, 29, 0, 0, 0, 0);
+            this.nullableDateTimePickerAucDate.Value = new System.DateTime(2021, 12, 15, 0, 0, 0, 0);
             this.nullableDateTimePickerAucDate.ValueChanged += new System.EventHandler(this.nullableDateTimePickerAucDate_ValueChanged);
             this.nullableDateTimePickerAucDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
@@ -6190,7 +6192,7 @@
             this.nullableDateTimePickerLocDate.Name = "nullableDateTimePickerLocDate";
             this.nullableDateTimePickerLocDate.Size = new System.Drawing.Size(109, 29);
             this.nullableDateTimePickerLocDate.TabIndex = 230;
-            this.nullableDateTimePickerLocDate.Value = new System.DateTime(2021, 11, 29, 0, 0, 0, 0);
+            this.nullableDateTimePickerLocDate.Value = new System.DateTime(2021, 12, 15, 0, 0, 0, 0);
             this.nullableDateTimePickerLocDate.ValueChanged += new System.EventHandler(this.nullableDateTimePickerLocDate_ValueChanged);
             this.nullableDateTimePickerLocDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
@@ -6266,7 +6268,7 @@
             this.nullableDateTimePickerTitleDateReceived.Name = "nullableDateTimePickerTitleDateReceived";
             this.nullableDateTimePickerTitleDateReceived.Size = new System.Drawing.Size(109, 29);
             this.nullableDateTimePickerTitleDateReceived.TabIndex = 234;
-            this.nullableDateTimePickerTitleDateReceived.Value = new System.DateTime(2021, 11, 29, 0, 0, 0, 0);
+            this.nullableDateTimePickerTitleDateReceived.Value = new System.DateTime(2021, 12, 15, 0, 0, 0, 0);
             this.nullableDateTimePickerTitleDateReceived.ValueChanged += new System.EventHandler(this.nullableDateTimePickerTitleDateReceived_ValueChanged);
             this.nullableDateTimePickerTitleDateReceived.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
@@ -6316,7 +6318,7 @@
             this.nullableDateTimePickerRepoDate.Name = "nullableDateTimePickerRepoDate";
             this.nullableDateTimePickerRepoDate.Size = new System.Drawing.Size(109, 29);
             this.nullableDateTimePickerRepoDate.TabIndex = 227;
-            this.nullableDateTimePickerRepoDate.Value = new System.DateTime(2021, 11, 29, 0, 0, 0, 0);
+            this.nullableDateTimePickerRepoDate.Value = new System.DateTime(2021, 12, 15, 0, 0, 0, 0);
             this.nullableDateTimePickerRepoDate.ValueChanged += new System.EventHandler(this.nullableDateTimePickerRepoDate_ValueChanged);
             this.nullableDateTimePickerRepoDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
@@ -6328,7 +6330,7 @@
             this.txtExpirationDate.Name = "txtExpirationDate";
             this.txtExpirationDate.Size = new System.Drawing.Size(109, 29);
             this.txtExpirationDate.TabIndex = 219;
-            this.txtExpirationDate.Value = new System.DateTime(2021, 11, 29, 0, 0, 0, 0);
+            this.txtExpirationDate.Value = new System.DateTime(2021, 12, 15, 0, 0, 0, 0);
             // 
             // txtEffectiveDate
             // 
@@ -6338,7 +6340,7 @@
             this.txtEffectiveDate.Name = "txtEffectiveDate";
             this.txtEffectiveDate.Size = new System.Drawing.Size(109, 29);
             this.txtEffectiveDate.TabIndex = 218;
-            this.txtEffectiveDate.Value = new System.DateTime(2021, 11, 29, 0, 0, 0, 0);
+            this.txtEffectiveDate.Value = new System.DateTime(2021, 12, 15, 0, 0, 0, 0);
             // 
             // txtAgentPhone
             // 
@@ -6462,7 +6464,7 @@
             this.tabCosigner.Controls.Add(this.groupBox3);
             this.tabCosigner.Location = new System.Drawing.Point(4, 30);
             this.tabCosigner.Name = "tabCosigner";
-            this.tabCosigner.Size = new System.Drawing.Size(1230, 578);
+            this.tabCosigner.Size = new System.Drawing.Size(1230, 581);
             this.tabCosigner.TabIndex = 4;
             this.tabCosigner.Text = "Cosigner Info";
             // 
@@ -6993,7 +6995,7 @@
             this.txtCOSDOB.Name = "txtCOSDOB";
             this.txtCOSDOB.Size = new System.Drawing.Size(109, 29);
             this.txtCOSDOB.TabIndex = 323;
-            this.txtCOSDOB.Value = new System.DateTime(2021, 11, 29, 0, 0, 0, 0);
+            this.txtCOSDOB.Value = new System.DateTime(2021, 12, 15, 0, 0, 0, 0);
             // 
             // txtCOSWorkExt
             // 
@@ -7263,7 +7265,7 @@
             this.tabBank.Controls.Add(this.tabControl1);
             this.tabBank.Location = new System.Drawing.Point(4, 30);
             this.tabBank.Name = "tabBank";
-            this.tabBank.Size = new System.Drawing.Size(1230, 578);
+            this.tabBank.Size = new System.Drawing.Size(1230, 581);
             this.tabBank.TabIndex = 6;
             this.tabBank.Text = "Bank Info";
             // 
@@ -7676,7 +7678,7 @@
             this.tabCustomerFees.Location = new System.Drawing.Point(4, 30);
             this.tabCustomerFees.Name = "tabCustomerFees";
             this.tabCustomerFees.Padding = new System.Windows.Forms.Padding(3);
-            this.tabCustomerFees.Size = new System.Drawing.Size(1230, 578);
+            this.tabCustomerFees.Size = new System.Drawing.Size(1230, 581);
             this.tabCustomerFees.TabIndex = 7;
             this.tabCustomerFees.Text = "Fees";
             // 
@@ -7930,7 +7932,7 @@
             this.tabRepoHistory.Location = new System.Drawing.Point(4, 30);
             this.tabRepoHistory.Name = "tabRepoHistory";
             this.tabRepoHistory.Padding = new System.Windows.Forms.Padding(3);
-            this.tabRepoHistory.Size = new System.Drawing.Size(1230, 578);
+            this.tabRepoHistory.Size = new System.Drawing.Size(1230, 581);
             this.tabRepoHistory.TabIndex = 8;
             this.tabRepoHistory.Text = "Repo History";
             this.tabRepoHistory.Click += new System.EventHandler(this.tabRepoHistory_Click);
@@ -8277,7 +8279,7 @@
             this.tabPageTSB.Location = new System.Drawing.Point(4, 30);
             this.tabPageTSB.Name = "tabPageTSB";
             this.tabPageTSB.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageTSB.Size = new System.Drawing.Size(1230, 578);
+            this.tabPageTSB.Size = new System.Drawing.Size(1230, 581);
             this.tabPageTSB.TabIndex = 9;
             this.tabPageTSB.Text = "TSB";
             // 
@@ -8335,7 +8337,7 @@
             this.nullableDateTimePickerFollowUpDate.Name = "nullableDateTimePickerFollowUpDate";
             this.nullableDateTimePickerFollowUpDate.Size = new System.Drawing.Size(119, 25);
             this.nullableDateTimePickerFollowUpDate.TabIndex = 24;
-            this.nullableDateTimePickerFollowUpDate.Value = new System.DateTime(2021, 11, 29, 0, 0, 0, 0);
+            this.nullableDateTimePickerFollowUpDate.Value = new System.DateTime(2021, 12, 15, 0, 0, 0, 0);
             this.nullableDateTimePickerFollowUpDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // nullableDateTimePickerDateClosed
@@ -8346,7 +8348,7 @@
             this.nullableDateTimePickerDateClosed.Name = "nullableDateTimePickerDateClosed";
             this.nullableDateTimePickerDateClosed.Size = new System.Drawing.Size(119, 25);
             this.nullableDateTimePickerDateClosed.TabIndex = 23;
-            this.nullableDateTimePickerDateClosed.Value = new System.DateTime(2021, 11, 29, 0, 0, 0, 0);
+            this.nullableDateTimePickerDateClosed.Value = new System.DateTime(2021, 12, 15, 0, 0, 0, 0);
             this.nullableDateTimePickerDateClosed.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // nullableDateTimePickerDateOpened
@@ -8357,7 +8359,7 @@
             this.nullableDateTimePickerDateOpened.Name = "nullableDateTimePickerDateOpened";
             this.nullableDateTimePickerDateOpened.Size = new System.Drawing.Size(119, 25);
             this.nullableDateTimePickerDateOpened.TabIndex = 22;
-            this.nullableDateTimePickerDateOpened.Value = new System.DateTime(2021, 11, 29, 0, 0, 0, 0);
+            this.nullableDateTimePickerDateOpened.Value = new System.DateTime(2021, 12, 15, 0, 0, 0, 0);
             this.nullableDateTimePickerDateOpened.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // nullableDateTimePickerDateofAccountInformation
@@ -8368,7 +8370,7 @@
             this.nullableDateTimePickerDateofAccountInformation.Name = "nullableDateTimePickerDateofAccountInformation";
             this.nullableDateTimePickerDateofAccountInformation.Size = new System.Drawing.Size(119, 25);
             this.nullableDateTimePickerDateofAccountInformation.TabIndex = 21;
-            this.nullableDateTimePickerDateofAccountInformation.Value = new System.DateTime(2021, 11, 29, 0, 0, 0, 0);
+            this.nullableDateTimePickerDateofAccountInformation.Value = new System.DateTime(2021, 12, 15, 0, 0, 0, 0);
             this.nullableDateTimePickerDateofAccountInformation.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // nullableDateTimePickerDateofFirstDelinquency
@@ -8379,7 +8381,7 @@
             this.nullableDateTimePickerDateofFirstDelinquency.Name = "nullableDateTimePickerDateofFirstDelinquency";
             this.nullableDateTimePickerDateofFirstDelinquency.Size = new System.Drawing.Size(119, 25);
             this.nullableDateTimePickerDateofFirstDelinquency.TabIndex = 20;
-            this.nullableDateTimePickerDateofFirstDelinquency.Value = new System.DateTime(2021, 11, 29, 0, 0, 0, 0);
+            this.nullableDateTimePickerDateofFirstDelinquency.Value = new System.DateTime(2021, 12, 15, 0, 0, 0, 0);
             this.nullableDateTimePickerDateofFirstDelinquency.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // nullableDateTimePickerDateofLastPayment
@@ -8390,7 +8392,7 @@
             this.nullableDateTimePickerDateofLastPayment.Name = "nullableDateTimePickerDateofLastPayment";
             this.nullableDateTimePickerDateofLastPayment.Size = new System.Drawing.Size(119, 25);
             this.nullableDateTimePickerDateofLastPayment.TabIndex = 19;
-            this.nullableDateTimePickerDateofLastPayment.Value = new System.DateTime(2021, 11, 29, 0, 0, 0, 0);
+            this.nullableDateTimePickerDateofLastPayment.Value = new System.DateTime(2021, 12, 15, 0, 0, 0, 0);
             this.nullableDateTimePickerDateofLastPayment.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // label135
@@ -9551,6 +9553,11 @@
             this.barDockControl4.Manager = this.toolbarFormManager2;
             this.barDockControl4.Size = new System.Drawing.Size(0, 642);
             // 
+            // colid1
+            // 
+            this.colid1.FieldName = "id";
+            this.colid1.Name = "colid1";
+            // 
             // frmCustMaint
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -10306,6 +10313,7 @@
         private DevExpress.XtraBars.BarDockControl barDockControl2;
         private DevExpress.XtraBars.BarDockControl barDockControl3;
         private DevExpress.XtraBars.BarDockControl barDockControl4;
+        private DevExpress.XtraGrid.Columns.GridColumn colid1;
     }
 }
 
