@@ -259,15 +259,6 @@
             System.Windows.Forms.Label label224;
             System.Windows.Forms.Label label225;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNewCustMaint));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cUSTOMERBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.iACDataSet = new IAC2021SQL.IACDataSet();
             this.cOMMENTBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -739,29 +730,30 @@
             this.textBox39 = new System.Windows.Forms.TextBox();
             this.textBox40 = new System.Windows.Forms.TextBox();
             this.xtraTabPageRepoHistory = new DevExpress.XtraTab.XtraTabPage();
-            this.dataGridViewRepoLog = new System.Windows.Forms.DataGridView();
-            this.dateOfChangeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.userIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.orgRepoDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.newRepoDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.orgRepoAgentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.newRepoAgentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.orgRepoIndDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.newRepoIndDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.orgRepoCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.newRepoCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.orgCurrentLocationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.newCurrentLocationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.oldLocationDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.newLocationDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.orgAuctionHouseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.newAuctionHouseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.orgAutionHouseDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.newAuctionHouseDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.orgTitleReceivedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.newTitleReceivedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.orgDateTitleReceivedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.newDateTitleReceivedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gridControlRepoLog = new DevExpress.XtraGrid.GridControl();
+            this.gridViewRepoLog = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colDateOfChange = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colUserID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colOrgRepoDate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNewRepoDate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colOrgRepoAgent = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNewRepoAgent = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colOrgRepoInd = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNewRepoInd = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colOrgRepoCode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNewRepoCode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colOrgCurrentLocation = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNewCurrentLocation = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colOldLocationDate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNewLocationDate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colOrgAuctionHouse = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNewAuctionHouse = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colOrgAutionHouseDate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNewAuctionHouseDate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colOrgTitleReceived = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNewTitleReceived = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colOrgDateTitleReceived = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNewDateTitleReceived = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
             this.textBox41 = new System.Windows.Forms.TextBox();
             this.textBox42 = new System.Windows.Forms.TextBox();
@@ -1210,7 +1202,8 @@
             this.groupBoxFees.SuspendLayout();
             this.groupBox12.SuspendLayout();
             this.xtraTabPageRepoHistory.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRepoLog)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlRepoLog)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewRepoLog)).BeginInit();
             this.groupBox13.SuspendLayout();
             this.xtraTabPageTSB.SuspendLayout();
             this.groupBoxDates.SuspendLayout();
@@ -4018,7 +4011,7 @@
             this.xtraTabPageCustInfo1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.xtraTabPageCustInfo1.Controls.Add(this.groupBox10);
             this.xtraTabPageCustInfo1.Name = "xtraTabPageCustInfo1";
-            this.xtraTabPageCustInfo1.Size = new System.Drawing.Size(1230, 604);
+            this.xtraTabPageCustInfo1.Size = new System.Drawing.Size(1230, 612);
             this.xtraTabPageCustInfo1.Text = "Customer Info";
             // 
             // groupBox10
@@ -4118,7 +4111,7 @@
             this.groupBox10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox10.Location = new System.Drawing.Point(0, 0);
             this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(1230, 604);
+            this.groupBox10.Size = new System.Drawing.Size(1230, 612);
             this.groupBox10.TabIndex = 34;
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "               ";
@@ -5182,7 +5175,7 @@
             this.xtraTabPageCustInfo2.Controls.Add(this.groupBox1);
             this.xtraTabPageCustInfo2.Controls.Add(this.groupBox9);
             this.xtraTabPageCustInfo2.Name = "xtraTabPageCustInfo2";
-            this.xtraTabPageCustInfo2.Size = new System.Drawing.Size(1230, 604);
+            this.xtraTabPageCustInfo2.Size = new System.Drawing.Size(1230, 612);
             this.xtraTabPageCustInfo2.Text = "Customer Info 2";
             // 
             // groupBox1
@@ -5254,6 +5247,7 @@
             this.colorTextBoxTotalDue.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.colorTextBoxTotalDue.Size = new System.Drawing.Size(102, 28);
             this.colorTextBoxTotalDue.TabIndex = 208;
+            this.colorTextBoxTotalDue.EditValueChanged += new System.EventHandler(this.colorTextBoxTotalDue_EditValueChanged);
             // 
             // txtContractStatus
             // 
@@ -5274,6 +5268,7 @@
             this.txtContractStatus.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.txtContractStatus.Size = new System.Drawing.Size(102, 28);
             this.txtContractStatus.TabIndex = 207;
+            this.txtContractStatus.EditValueChanged += new System.EventHandler(this.txtContractStatus_EditValueChanged);
             // 
             // MaturityDate
             // 
@@ -5878,7 +5873,7 @@
             this.xtraTabPageVehicle.Controls.Add(this.groupBox2);
             this.xtraTabPageVehicle.Controls.Add(this.VehicleGroupBox);
             this.xtraTabPageVehicle.Name = "xtraTabPageVehicle";
-            this.xtraTabPageVehicle.Size = new System.Drawing.Size(1230, 604);
+            this.xtraTabPageVehicle.Size = new System.Drawing.Size(1230, 612);
             this.xtraTabPageVehicle.Text = "Vehicle Info";
             // 
             // groupBox2
@@ -6563,7 +6558,7 @@
             this.xtraTabPageCosigner.Controls.Add(this.groupBox4);
             this.xtraTabPageCosigner.Controls.Add(this.groupBox3);
             this.xtraTabPageCosigner.Name = "xtraTabPageCosigner";
-            this.xtraTabPageCosigner.Size = new System.Drawing.Size(1230, 604);
+            this.xtraTabPageCosigner.Size = new System.Drawing.Size(1230, 612);
             this.xtraTabPageCosigner.Text = "Cosigner Info";
             // 
             // groupBoxCOSSBT
@@ -7346,7 +7341,7 @@
             this.xtraTabPageBank.Controls.Add(this.groupBox6);
             this.xtraTabPageBank.Controls.Add(this.tabControl1);
             this.xtraTabPageBank.Name = "xtraTabPageBank";
-            this.xtraTabPageBank.Size = new System.Drawing.Size(1230, 604);
+            this.xtraTabPageBank.Size = new System.Drawing.Size(1230, 612);
             this.xtraTabPageBank.Text = "Bank Info";
             // 
             // groupBox6
@@ -7740,7 +7735,7 @@
             this.xtraTabPageHistory.Controls.Add(this.groupBox11);
             this.xtraTabPageHistory.Controls.Add(this.toolStrip2);
             this.xtraTabPageHistory.Name = "xtraTabPageHistory";
-            this.xtraTabPageHistory.Size = new System.Drawing.Size(1230, 604);
+            this.xtraTabPageHistory.Size = new System.Drawing.Size(1230, 612);
             this.xtraTabPageHistory.Text = "Customer History";
             // 
             // gridControlCustomerHist
@@ -8504,7 +8499,7 @@
             this.xtraTabPageComments.Controls.Add(this.cOMMENTGridControl);
             this.xtraTabPageComments.Controls.Add(this.groupBox7);
             this.xtraTabPageComments.Name = "xtraTabPageComments";
-            this.xtraTabPageComments.Size = new System.Drawing.Size(1230, 604);
+            this.xtraTabPageComments.Size = new System.Drawing.Size(1230, 612);
             this.xtraTabPageComments.Text = "Customer Comments";
             // 
             // cOMMENTGridControl
@@ -8523,6 +8518,7 @@
             this.cOMMENTGridControl.TabIndex = 612;
             this.cOMMENTGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.cOMMENTgridView});
+            this.cOMMENTGridControl.DataSourceChanged += new System.EventHandler(this.cOMMENTGridView_DataSourceChanged);
             // 
             // cOMMENTgridView
             // 
@@ -8556,6 +8552,11 @@
             this.cOMMENTgridView.OptionsView.EnableAppearanceOddRow = true;
             this.cOMMENTgridView.OptionsView.RowAutoHeight = true;
             this.cOMMENTgridView.OptionsView.ShowGroupPanel = false;
+            this.cOMMENTgridView.RowCellClick += new DevExpress.XtraGrid.Views.Grid.RowCellClickEventHandler(this.gridView1_RowCellClick);
+            this.cOMMENTgridView.InitNewRow += new DevExpress.XtraGrid.Views.Grid.InitNewRowEventHandler(this.cOMMENTgridView_InitNewRow);
+            this.cOMMENTgridView.CellValueChanging += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.cOMMENTgridView_CellValueChanging);
+            this.cOMMENTgridView.CustomUnboundColumnData += new DevExpress.XtraGrid.Views.Base.CustomColumnDataEventHandler(this.gridView1_CustomUnboundColumnData);
+            this.cOMMENTgridView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cOMMENTgridView_KeyDown);
             // 
             // colDATE
             // 
@@ -8829,7 +8830,7 @@
             this.xtraTabPageCustomerFees.Controls.Add(this.groupBoxFees);
             this.xtraTabPageCustomerFees.Controls.Add(this.groupBox12);
             this.xtraTabPageCustomerFees.Name = "xtraTabPageCustomerFees";
-            this.xtraTabPageCustomerFees.Size = new System.Drawing.Size(1230, 604);
+            this.xtraTabPageCustomerFees.Size = new System.Drawing.Size(1230, 612);
             this.xtraTabPageCustomerFees.Text = "Fees";
             // 
             // groupBoxFees
@@ -9055,236 +9056,271 @@
             // 
             // xtraTabPageRepoHistory
             // 
-            this.xtraTabPageRepoHistory.Controls.Add(this.dataGridViewRepoLog);
+            this.xtraTabPageRepoHistory.Controls.Add(this.gridControlRepoLog);
             this.xtraTabPageRepoHistory.Controls.Add(this.groupBox13);
             this.xtraTabPageRepoHistory.Name = "xtraTabPageRepoHistory";
-            this.xtraTabPageRepoHistory.Size = new System.Drawing.Size(1230, 604);
+            this.xtraTabPageRepoHistory.Size = new System.Drawing.Size(1230, 612);
             this.xtraTabPageRepoHistory.Text = "Repo History";
             // 
-            // dataGridViewRepoLog
+            // gridControlRepoLog
             // 
-            this.dataGridViewRepoLog.AllowUserToAddRows = false;
-            this.dataGridViewRepoLog.AllowUserToDeleteRows = false;
-            this.dataGridViewRepoLog.AllowUserToOrderColumns = true;
-            this.dataGridViewRepoLog.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridViewRepoLog.AutoGenerateColumns = false;
-            this.dataGridViewRepoLog.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewRepoLog.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dateOfChangeDataGridViewTextBoxColumn,
-            this.userIDDataGridViewTextBoxColumn,
-            this.orgRepoDateDataGridViewTextBoxColumn,
-            this.newRepoDateDataGridViewTextBoxColumn,
-            this.orgRepoAgentDataGridViewTextBoxColumn,
-            this.newRepoAgentDataGridViewTextBoxColumn,
-            this.orgRepoIndDataGridViewTextBoxColumn,
-            this.newRepoIndDataGridViewTextBoxColumn,
-            this.orgRepoCodeDataGridViewTextBoxColumn,
-            this.newRepoCodeDataGridViewTextBoxColumn,
-            this.orgCurrentLocationDataGridViewTextBoxColumn,
-            this.newCurrentLocationDataGridViewTextBoxColumn,
-            this.oldLocationDateDataGridViewTextBoxColumn,
-            this.newLocationDateDataGridViewTextBoxColumn,
-            this.orgAuctionHouseDataGridViewTextBoxColumn,
-            this.newAuctionHouseDataGridViewTextBoxColumn,
-            this.orgAutionHouseDateDataGridViewTextBoxColumn,
-            this.newAuctionHouseDateDataGridViewTextBoxColumn,
-            this.orgTitleReceivedDataGridViewCheckBoxColumn,
-            this.newTitleReceivedDataGridViewCheckBoxColumn,
-            this.orgDateTitleReceivedDataGridViewTextBoxColumn,
-            this.newDateTitleReceivedDataGridViewTextBoxColumn});
-            this.dataGridViewRepoLog.DataSource = this.repoLogBindingSource;
-            this.dataGridViewRepoLog.Location = new System.Drawing.Point(5, 91);
-            this.dataGridViewRepoLog.Name = "dataGridViewRepoLog";
-            this.dataGridViewRepoLog.ReadOnly = true;
-            this.dataGridViewRepoLog.Size = new System.Drawing.Size(1222, 489);
-            this.dataGridViewRepoLog.TabIndex = 204;
+            this.gridControlRepoLog.DataSource = this.repoLogBindingSource;
+            this.gridControlRepoLog.Location = new System.Drawing.Point(5, 91);
+            this.gridControlRepoLog.MainView = this.gridViewRepoLog;
+            this.gridControlRepoLog.MenuManager = this.toolbarFormManager1;
+            this.gridControlRepoLog.Name = "gridControlRepoLog";
+            this.gridControlRepoLog.Size = new System.Drawing.Size(1222, 489);
+            this.gridControlRepoLog.TabIndex = 204;
+            this.gridControlRepoLog.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridViewRepoLog});
             // 
-            // dateOfChangeDataGridViewTextBoxColumn
+            // gridViewRepoLog
             // 
-            this.dateOfChangeDataGridViewTextBoxColumn.DataPropertyName = "DateOfChange";
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle10.Format = "d";
-            this.dateOfChangeDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle10;
-            this.dateOfChangeDataGridViewTextBoxColumn.HeaderText = "Date";
-            this.dateOfChangeDataGridViewTextBoxColumn.Name = "dateOfChangeDataGridViewTextBoxColumn";
-            this.dateOfChangeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.gridViewRepoLog.Appearance.EvenRow.BackColor = System.Drawing.Color.PaleGreen;
+            this.gridViewRepoLog.Appearance.EvenRow.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridViewRepoLog.Appearance.EvenRow.Options.UseBackColor = true;
+            this.gridViewRepoLog.Appearance.EvenRow.Options.UseFont = true;
+            this.gridViewRepoLog.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridViewRepoLog.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gridViewRepoLog.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.gridViewRepoLog.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.gridViewRepoLog.Appearance.HeaderPanel.TextOptions.Trimming = DevExpress.Utils.Trimming.None;
+            this.gridViewRepoLog.Appearance.HeaderPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gridViewRepoLog.Appearance.HeaderPanel.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.gridViewRepoLog.Appearance.OddRow.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridViewRepoLog.Appearance.OddRow.Options.UseFont = true;
+            this.gridViewRepoLog.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colDateOfChange,
+            this.colUserID,
+            this.colOrgRepoDate,
+            this.colNewRepoDate,
+            this.colOrgRepoAgent,
+            this.colNewRepoAgent,
+            this.colOrgRepoInd,
+            this.colNewRepoInd,
+            this.colOrgRepoCode,
+            this.colNewRepoCode,
+            this.colOrgCurrentLocation,
+            this.colNewCurrentLocation,
+            this.colOldLocationDate,
+            this.colNewLocationDate,
+            this.colOrgAuctionHouse,
+            this.colNewAuctionHouse,
+            this.colOrgAutionHouseDate,
+            this.colNewAuctionHouseDate,
+            this.colOrgTitleReceived,
+            this.colNewTitleReceived,
+            this.colOrgDateTitleReceived,
+            this.colNewDateTitleReceived});
+            this.gridViewRepoLog.GridControl = this.gridControlRepoLog;
+            this.gridViewRepoLog.Name = "gridViewRepoLog";
+            this.gridViewRepoLog.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
+            this.gridViewRepoLog.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.False;
+            this.gridViewRepoLog.OptionsBehavior.Editable = false;
+            this.gridViewRepoLog.OptionsBehavior.ReadOnly = true;
+            this.gridViewRepoLog.OptionsView.ColumnAutoWidth = false;
+            this.gridViewRepoLog.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
+            this.gridViewRepoLog.OptionsView.EnableAppearanceEvenRow = true;
+            this.gridViewRepoLog.OptionsView.EnableAppearanceOddRow = true;
+            this.gridViewRepoLog.OptionsView.ShowGroupPanel = false;
             // 
-            // userIDDataGridViewTextBoxColumn
+            // colDateOfChange
             // 
-            this.userIDDataGridViewTextBoxColumn.DataPropertyName = "UserID";
-            this.userIDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.userIDDataGridViewTextBoxColumn.Name = "userIDDataGridViewTextBoxColumn";
-            this.userIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.userIDDataGridViewTextBoxColumn.Width = 70;
+            this.colDateOfChange.Caption = "Date";
+            this.colDateOfChange.FieldName = "DateOfChange";
+            this.colDateOfChange.Name = "colDateOfChange";
+            this.colDateOfChange.Visible = true;
+            this.colDateOfChange.VisibleIndex = 0;
+            this.colDateOfChange.Width = 100;
             // 
-            // orgRepoDateDataGridViewTextBoxColumn
+            // colUserID
             // 
-            this.orgRepoDateDataGridViewTextBoxColumn.DataPropertyName = "OrgRepoDate";
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle11.Format = "d";
-            dataGridViewCellStyle11.NullValue = null;
-            this.orgRepoDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle11;
-            this.orgRepoDateDataGridViewTextBoxColumn.HeaderText = "Old Repo Date";
-            this.orgRepoDateDataGridViewTextBoxColumn.Name = "orgRepoDateDataGridViewTextBoxColumn";
-            this.orgRepoDateDataGridViewTextBoxColumn.ReadOnly = true;
+            this.colUserID.Caption = "ID";
+            this.colUserID.FieldName = "UserID";
+            this.colUserID.Name = "colUserID";
+            this.colUserID.Visible = true;
+            this.colUserID.VisibleIndex = 1;
+            this.colUserID.Width = 70;
             // 
-            // newRepoDateDataGridViewTextBoxColumn
+            // colOrgRepoDate
             // 
-            this.newRepoDateDataGridViewTextBoxColumn.DataPropertyName = "NewRepoDate";
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle12.Format = "d";
-            this.newRepoDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle12;
-            this.newRepoDateDataGridViewTextBoxColumn.HeaderText = "New Repo Date";
-            this.newRepoDateDataGridViewTextBoxColumn.Name = "newRepoDateDataGridViewTextBoxColumn";
-            this.newRepoDateDataGridViewTextBoxColumn.ReadOnly = true;
+            this.colOrgRepoDate.Caption = "Old Repo Date";
+            this.colOrgRepoDate.FieldName = "OrgRepoDate";
+            this.colOrgRepoDate.Name = "colOrgRepoDate";
+            this.colOrgRepoDate.Visible = true;
+            this.colOrgRepoDate.VisibleIndex = 2;
+            this.colOrgRepoDate.Width = 100;
             // 
-            // orgRepoAgentDataGridViewTextBoxColumn
+            // colNewRepoDate
             // 
-            this.orgRepoAgentDataGridViewTextBoxColumn.DataPropertyName = "OrgRepoAgent";
-            this.orgRepoAgentDataGridViewTextBoxColumn.HeaderText = "Old Repo Agent";
-            this.orgRepoAgentDataGridViewTextBoxColumn.Name = "orgRepoAgentDataGridViewTextBoxColumn";
-            this.orgRepoAgentDataGridViewTextBoxColumn.ReadOnly = true;
+            this.colNewRepoDate.Caption = "New Repo Date";
+            this.colNewRepoDate.FieldName = "NewRepoDate";
+            this.colNewRepoDate.Name = "colNewRepoDate";
+            this.colNewRepoDate.Visible = true;
+            this.colNewRepoDate.VisibleIndex = 3;
+            this.colNewRepoDate.Width = 100;
             // 
-            // newRepoAgentDataGridViewTextBoxColumn
+            // colOrgRepoAgent
             // 
-            this.newRepoAgentDataGridViewTextBoxColumn.DataPropertyName = "NewRepoAgent";
-            this.newRepoAgentDataGridViewTextBoxColumn.HeaderText = "New Repo Agent";
-            this.newRepoAgentDataGridViewTextBoxColumn.Name = "newRepoAgentDataGridViewTextBoxColumn";
-            this.newRepoAgentDataGridViewTextBoxColumn.ReadOnly = true;
+            this.colOrgRepoAgent.Caption = "Old Repo Agent";
+            this.colOrgRepoAgent.FieldName = "OrgRepoAgent";
+            this.colOrgRepoAgent.Name = "colOrgRepoAgent";
+            this.colOrgRepoAgent.Visible = true;
+            this.colOrgRepoAgent.VisibleIndex = 4;
+            this.colOrgRepoAgent.Width = 100;
             // 
-            // orgRepoIndDataGridViewTextBoxColumn
+            // colNewRepoAgent
             // 
-            this.orgRepoIndDataGridViewTextBoxColumn.DataPropertyName = "OrgRepoInd";
-            this.orgRepoIndDataGridViewTextBoxColumn.HeaderText = "Old Repo Ind";
-            this.orgRepoIndDataGridViewTextBoxColumn.Name = "orgRepoIndDataGridViewTextBoxColumn";
-            this.orgRepoIndDataGridViewTextBoxColumn.ReadOnly = true;
-            this.orgRepoIndDataGridViewTextBoxColumn.Width = 60;
+            this.colNewRepoAgent.Caption = "New Repo Agent";
+            this.colNewRepoAgent.FieldName = "NewRepoAgent";
+            this.colNewRepoAgent.Name = "colNewRepoAgent";
+            this.colNewRepoAgent.Visible = true;
+            this.colNewRepoAgent.VisibleIndex = 5;
+            this.colNewRepoAgent.Width = 100;
             // 
-            // newRepoIndDataGridViewTextBoxColumn
+            // colOrgRepoInd
             // 
-            this.newRepoIndDataGridViewTextBoxColumn.DataPropertyName = "NewRepoInd";
-            this.newRepoIndDataGridViewTextBoxColumn.HeaderText = "New Rep Ind";
-            this.newRepoIndDataGridViewTextBoxColumn.Name = "newRepoIndDataGridViewTextBoxColumn";
-            this.newRepoIndDataGridViewTextBoxColumn.ReadOnly = true;
-            this.newRepoIndDataGridViewTextBoxColumn.Width = 60;
+            this.colOrgRepoInd.Caption = "Old Repo Ind";
+            this.colOrgRepoInd.FieldName = "OrgRepoInd";
+            this.colOrgRepoInd.Name = "colOrgRepoInd";
+            this.colOrgRepoInd.Visible = true;
+            this.colOrgRepoInd.VisibleIndex = 6;
+            this.colOrgRepoInd.Width = 60;
             // 
-            // orgRepoCodeDataGridViewTextBoxColumn
+            // colNewRepoInd
             // 
-            this.orgRepoCodeDataGridViewTextBoxColumn.DataPropertyName = "OrgRepoCode";
-            this.orgRepoCodeDataGridViewTextBoxColumn.HeaderText = "Old Repo Code";
-            this.orgRepoCodeDataGridViewTextBoxColumn.Name = "orgRepoCodeDataGridViewTextBoxColumn";
-            this.orgRepoCodeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.colNewRepoInd.Caption = "New Repo Ind";
+            this.colNewRepoInd.FieldName = "NewRepoInd";
+            this.colNewRepoInd.Name = "colNewRepoInd";
+            this.colNewRepoInd.Visible = true;
+            this.colNewRepoInd.VisibleIndex = 7;
+            this.colNewRepoInd.Width = 60;
             // 
-            // newRepoCodeDataGridViewTextBoxColumn
+            // colOrgRepoCode
             // 
-            this.newRepoCodeDataGridViewTextBoxColumn.DataPropertyName = "NewRepoCode";
-            this.newRepoCodeDataGridViewTextBoxColumn.HeaderText = "New Repo Code";
-            this.newRepoCodeDataGridViewTextBoxColumn.Name = "newRepoCodeDataGridViewTextBoxColumn";
-            this.newRepoCodeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.colOrgRepoCode.CustomizationCaption = "Old Repo Code";
+            this.colOrgRepoCode.FieldName = "OrgRepoCode";
+            this.colOrgRepoCode.Name = "colOrgRepoCode";
+            this.colOrgRepoCode.Visible = true;
+            this.colOrgRepoCode.VisibleIndex = 8;
+            this.colOrgRepoCode.Width = 100;
             // 
-            // orgCurrentLocationDataGridViewTextBoxColumn
+            // colNewRepoCode
             // 
-            this.orgCurrentLocationDataGridViewTextBoxColumn.DataPropertyName = "OrgCurrentLocation";
-            this.orgCurrentLocationDataGridViewTextBoxColumn.HeaderText = "Old Location";
-            this.orgCurrentLocationDataGridViewTextBoxColumn.Name = "orgCurrentLocationDataGridViewTextBoxColumn";
-            this.orgCurrentLocationDataGridViewTextBoxColumn.ReadOnly = true;
+            this.colNewRepoCode.Caption = "New Repo code";
+            this.colNewRepoCode.FieldName = "NewRepoCode";
+            this.colNewRepoCode.Name = "colNewRepoCode";
+            this.colNewRepoCode.Visible = true;
+            this.colNewRepoCode.VisibleIndex = 9;
+            this.colNewRepoCode.Width = 100;
             // 
-            // newCurrentLocationDataGridViewTextBoxColumn
+            // colOrgCurrentLocation
             // 
-            this.newCurrentLocationDataGridViewTextBoxColumn.DataPropertyName = "NewCurrentLocation";
-            this.newCurrentLocationDataGridViewTextBoxColumn.HeaderText = "New Location";
-            this.newCurrentLocationDataGridViewTextBoxColumn.Name = "newCurrentLocationDataGridViewTextBoxColumn";
-            this.newCurrentLocationDataGridViewTextBoxColumn.ReadOnly = true;
+            this.colOrgCurrentLocation.CustomizationCaption = "Old Location";
+            this.colOrgCurrentLocation.FieldName = "OrgCurrentLocation";
+            this.colOrgCurrentLocation.Name = "colOrgCurrentLocation";
+            this.colOrgCurrentLocation.Visible = true;
+            this.colOrgCurrentLocation.VisibleIndex = 10;
+            this.colOrgCurrentLocation.Width = 100;
             // 
-            // oldLocationDateDataGridViewTextBoxColumn
+            // colNewCurrentLocation
             // 
-            this.oldLocationDateDataGridViewTextBoxColumn.DataPropertyName = "OldLocationDate";
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle13.Format = "d";
-            this.oldLocationDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle13;
-            this.oldLocationDateDataGridViewTextBoxColumn.HeaderText = "Old Location Date";
-            this.oldLocationDateDataGridViewTextBoxColumn.Name = "oldLocationDateDataGridViewTextBoxColumn";
-            this.oldLocationDateDataGridViewTextBoxColumn.ReadOnly = true;
+            this.colNewCurrentLocation.CustomizationCaption = "New Location";
+            this.colNewCurrentLocation.FieldName = "NewCurrentLocation";
+            this.colNewCurrentLocation.Name = "colNewCurrentLocation";
+            this.colNewCurrentLocation.Visible = true;
+            this.colNewCurrentLocation.VisibleIndex = 11;
+            this.colNewCurrentLocation.Width = 100;
             // 
-            // newLocationDateDataGridViewTextBoxColumn
+            // colOldLocationDate
             // 
-            this.newLocationDateDataGridViewTextBoxColumn.DataPropertyName = "NewLocationDate";
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle14.Format = "d";
-            this.newLocationDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle14;
-            this.newLocationDateDataGridViewTextBoxColumn.HeaderText = "New Location Date";
-            this.newLocationDateDataGridViewTextBoxColumn.Name = "newLocationDateDataGridViewTextBoxColumn";
-            this.newLocationDateDataGridViewTextBoxColumn.ReadOnly = true;
+            this.colOldLocationDate.Caption = "Old Location Date";
+            this.colOldLocationDate.FieldName = "OldLocationDate";
+            this.colOldLocationDate.Name = "colOldLocationDate";
+            this.colOldLocationDate.Visible = true;
+            this.colOldLocationDate.VisibleIndex = 12;
+            this.colOldLocationDate.Width = 100;
             // 
-            // orgAuctionHouseDataGridViewTextBoxColumn
+            // colNewLocationDate
             // 
-            this.orgAuctionHouseDataGridViewTextBoxColumn.DataPropertyName = "OrgAuctionHouse";
-            this.orgAuctionHouseDataGridViewTextBoxColumn.HeaderText = "Old Auction House";
-            this.orgAuctionHouseDataGridViewTextBoxColumn.Name = "orgAuctionHouseDataGridViewTextBoxColumn";
-            this.orgAuctionHouseDataGridViewTextBoxColumn.ReadOnly = true;
+            this.colNewLocationDate.Caption = "New Location Date";
+            this.colNewLocationDate.FieldName = "NewLocationDate";
+            this.colNewLocationDate.Name = "colNewLocationDate";
+            this.colNewLocationDate.Visible = true;
+            this.colNewLocationDate.VisibleIndex = 13;
+            this.colNewLocationDate.Width = 100;
             // 
-            // newAuctionHouseDataGridViewTextBoxColumn
+            // colOrgAuctionHouse
             // 
-            this.newAuctionHouseDataGridViewTextBoxColumn.DataPropertyName = "NewAuctionHouse";
-            this.newAuctionHouseDataGridViewTextBoxColumn.HeaderText = "New Auction House";
-            this.newAuctionHouseDataGridViewTextBoxColumn.Name = "newAuctionHouseDataGridViewTextBoxColumn";
-            this.newAuctionHouseDataGridViewTextBoxColumn.ReadOnly = true;
+            this.colOrgAuctionHouse.Caption = "Old Auction House";
+            this.colOrgAuctionHouse.FieldName = "OrgAuctionHouse";
+            this.colOrgAuctionHouse.Name = "colOrgAuctionHouse";
+            this.colOrgAuctionHouse.Visible = true;
+            this.colOrgAuctionHouse.VisibleIndex = 14;
+            this.colOrgAuctionHouse.Width = 100;
             // 
-            // orgAutionHouseDateDataGridViewTextBoxColumn
+            // colNewAuctionHouse
             // 
-            this.orgAutionHouseDateDataGridViewTextBoxColumn.DataPropertyName = "OrgAutionHouseDate";
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle15.Format = "d";
-            this.orgAutionHouseDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle15;
-            this.orgAutionHouseDateDataGridViewTextBoxColumn.HeaderText = "Old Auction House Date";
-            this.orgAutionHouseDateDataGridViewTextBoxColumn.Name = "orgAutionHouseDateDataGridViewTextBoxColumn";
-            this.orgAutionHouseDateDataGridViewTextBoxColumn.ReadOnly = true;
+            this.colNewAuctionHouse.Caption = "New Auction House";
+            this.colNewAuctionHouse.FieldName = "NewAuctionHouse";
+            this.colNewAuctionHouse.Name = "colNewAuctionHouse";
+            this.colNewAuctionHouse.Visible = true;
+            this.colNewAuctionHouse.VisibleIndex = 15;
+            this.colNewAuctionHouse.Width = 100;
             // 
-            // newAuctionHouseDateDataGridViewTextBoxColumn
+            // colOrgAutionHouseDate
             // 
-            this.newAuctionHouseDateDataGridViewTextBoxColumn.DataPropertyName = "NewAuctionHouseDate";
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle16.Format = "d";
-            this.newAuctionHouseDateDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle16;
-            this.newAuctionHouseDateDataGridViewTextBoxColumn.HeaderText = "New Auction House Date";
-            this.newAuctionHouseDateDataGridViewTextBoxColumn.Name = "newAuctionHouseDateDataGridViewTextBoxColumn";
-            this.newAuctionHouseDateDataGridViewTextBoxColumn.ReadOnly = true;
+            this.colOrgAutionHouseDate.Caption = "Old Auction House Date";
+            this.colOrgAutionHouseDate.FieldName = "OrgAutionHouseDate";
+            this.colOrgAutionHouseDate.Name = "colOrgAutionHouseDate";
+            this.colOrgAutionHouseDate.Visible = true;
+            this.colOrgAutionHouseDate.VisibleIndex = 16;
+            this.colOrgAutionHouseDate.Width = 100;
             // 
-            // orgTitleReceivedDataGridViewCheckBoxColumn
+            // colNewAuctionHouseDate
             // 
-            this.orgTitleReceivedDataGridViewCheckBoxColumn.DataPropertyName = "OrgTitleReceived";
-            this.orgTitleReceivedDataGridViewCheckBoxColumn.HeaderText = "Old Title Recieved";
-            this.orgTitleReceivedDataGridViewCheckBoxColumn.Name = "orgTitleReceivedDataGridViewCheckBoxColumn";
-            this.orgTitleReceivedDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.colNewAuctionHouseDate.Caption = "New Auction House Date";
+            this.colNewAuctionHouseDate.FieldName = "NewAuctionHouseDate";
+            this.colNewAuctionHouseDate.Name = "colNewAuctionHouseDate";
+            this.colNewAuctionHouseDate.Visible = true;
+            this.colNewAuctionHouseDate.VisibleIndex = 17;
+            this.colNewAuctionHouseDate.Width = 100;
             // 
-            // newTitleReceivedDataGridViewCheckBoxColumn
+            // colOrgTitleReceived
             // 
-            this.newTitleReceivedDataGridViewCheckBoxColumn.DataPropertyName = "NewTitleReceived";
-            this.newTitleReceivedDataGridViewCheckBoxColumn.HeaderText = "New Title Recieved";
-            this.newTitleReceivedDataGridViewCheckBoxColumn.Name = "newTitleReceivedDataGridViewCheckBoxColumn";
-            this.newTitleReceivedDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.colOrgTitleReceived.Caption = "Old Title Received ";
+            this.colOrgTitleReceived.FieldName = "OrgTitleReceived";
+            this.colOrgTitleReceived.Name = "colOrgTitleReceived";
+            this.colOrgTitleReceived.Visible = true;
+            this.colOrgTitleReceived.VisibleIndex = 18;
+            this.colOrgTitleReceived.Width = 100;
             // 
-            // orgDateTitleReceivedDataGridViewTextBoxColumn
+            // colNewTitleReceived
             // 
-            this.orgDateTitleReceivedDataGridViewTextBoxColumn.DataPropertyName = "OrgDateTitleReceived";
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle17.Format = "d";
-            this.orgDateTitleReceivedDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle17;
-            this.orgDateTitleReceivedDataGridViewTextBoxColumn.HeaderText = "Old Date Title Received";
-            this.orgDateTitleReceivedDataGridViewTextBoxColumn.Name = "orgDateTitleReceivedDataGridViewTextBoxColumn";
-            this.orgDateTitleReceivedDataGridViewTextBoxColumn.ReadOnly = true;
+            this.colNewTitleReceived.Caption = "New Title Received";
+            this.colNewTitleReceived.FieldName = "NewTitleReceived";
+            this.colNewTitleReceived.Name = "colNewTitleReceived";
+            this.colNewTitleReceived.Visible = true;
+            this.colNewTitleReceived.VisibleIndex = 19;
+            this.colNewTitleReceived.Width = 100;
             // 
-            // newDateTitleReceivedDataGridViewTextBoxColumn
+            // colOrgDateTitleReceived
             // 
-            this.newDateTitleReceivedDataGridViewTextBoxColumn.DataPropertyName = "NewDateTitleReceived";
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle18.Format = "d";
-            this.newDateTitleReceivedDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle18;
-            this.newDateTitleReceivedDataGridViewTextBoxColumn.HeaderText = "New Date Title Recieved";
-            this.newDateTitleReceivedDataGridViewTextBoxColumn.Name = "newDateTitleReceivedDataGridViewTextBoxColumn";
-            this.newDateTitleReceivedDataGridViewTextBoxColumn.ReadOnly = true;
+            this.colOrgDateTitleReceived.Caption = "Old Date Title Received";
+            this.colOrgDateTitleReceived.FieldName = "OrgDateTitleReceived";
+            this.colOrgDateTitleReceived.Name = "colOrgDateTitleReceived";
+            this.colOrgDateTitleReceived.Visible = true;
+            this.colOrgDateTitleReceived.VisibleIndex = 20;
+            this.colOrgDateTitleReceived.Width = 100;
+            // 
+            // colNewDateTitleReceived
+            // 
+            this.colNewDateTitleReceived.Caption = "New Date Title Received";
+            this.colNewDateTitleReceived.FieldName = "NewDateTitleReceived";
+            this.colNewDateTitleReceived.Name = "colNewDateTitleReceived";
+            this.colNewDateTitleReceived.Visible = true;
+            this.colNewDateTitleReceived.VisibleIndex = 21;
+            this.colNewDateTitleReceived.Width = 100;
             // 
             // groupBox13
             // 
@@ -9390,7 +9426,7 @@
             this.xtraTabPageTSB.Controls.Add(this.groupBoxReportStatus);
             this.xtraTabPageTSB.Controls.Add(this.groupBoxAccountNumber);
             this.xtraTabPageTSB.Name = "xtraTabPageTSB";
-            this.xtraTabPageTSB.Size = new System.Drawing.Size(1230, 604);
+            this.xtraTabPageTSB.Size = new System.Drawing.Size(1230, 612);
             this.xtraTabPageTSB.Text = "TSB";
             // 
             // groupBoxDates
@@ -9431,24 +9467,26 @@
             // 
             this.nullableDateTimePickerFollowUpDate.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.closedCreditManagerBindingSource, "FollowUpDate", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "d"));
             this.nullableDateTimePickerFollowUpDate.EditValue = null;
-            this.nullableDateTimePickerFollowUpDate.Location = new System.Drawing.Point(306, 152);
+            this.nullableDateTimePickerFollowUpDate.Location = new System.Drawing.Point(306, 157);
             this.nullableDateTimePickerFollowUpDate.Name = "nullableDateTimePickerFollowUpDate";
             this.nullableDateTimePickerFollowUpDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.nullableDateTimePickerFollowUpDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.nullableDateTimePickerFollowUpDate.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.Fluent;
             this.nullableDateTimePickerFollowUpDate.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.PaleTurquoise;
             this.nullableDateTimePickerFollowUpDate.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
             this.nullableDateTimePickerFollowUpDate.Properties.LookAndFeel.SkinName = "McSkin";
             this.nullableDateTimePickerFollowUpDate.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.nullableDateTimePickerFollowUpDate.Size = new System.Drawing.Size(119, 28);
+            this.nullableDateTimePickerFollowUpDate.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
+            this.nullableDateTimePickerFollowUpDate.Size = new System.Drawing.Size(119, 20);
             this.nullableDateTimePickerFollowUpDate.TabIndex = 24;
             // 
             // nullableDateTimePickerDateClosed
             // 
             this.nullableDateTimePickerDateClosed.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.closedCreditManagerBindingSource, "CRDMGR_ACCT_DATE_CLOSED", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "d"));
             this.nullableDateTimePickerDateClosed.EditValue = null;
-            this.nullableDateTimePickerDateClosed.Location = new System.Drawing.Point(306, 125);
+            this.nullableDateTimePickerDateClosed.Location = new System.Drawing.Point(306, 130);
             this.nullableDateTimePickerDateClosed.Name = "nullableDateTimePickerDateClosed";
             this.nullableDateTimePickerDateClosed.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -9458,14 +9496,14 @@
             this.nullableDateTimePickerDateClosed.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
             this.nullableDateTimePickerDateClosed.Properties.LookAndFeel.SkinName = "McSkin";
             this.nullableDateTimePickerDateClosed.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.nullableDateTimePickerDateClosed.Size = new System.Drawing.Size(119, 28);
+            this.nullableDateTimePickerDateClosed.Size = new System.Drawing.Size(119, 20);
             this.nullableDateTimePickerDateClosed.TabIndex = 23;
             // 
             // nullableDateTimePickerDateOpened
             // 
             this.nullableDateTimePickerDateOpened.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.closedCreditManagerBindingSource, "CRDMGR_ACCT_DATE_OPENED", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "d"));
             this.nullableDateTimePickerDateOpened.EditValue = null;
-            this.nullableDateTimePickerDateOpened.Location = new System.Drawing.Point(306, 98);
+            this.nullableDateTimePickerDateOpened.Location = new System.Drawing.Point(306, 103);
             this.nullableDateTimePickerDateOpened.Name = "nullableDateTimePickerDateOpened";
             this.nullableDateTimePickerDateOpened.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -9475,13 +9513,13 @@
             this.nullableDateTimePickerDateOpened.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
             this.nullableDateTimePickerDateOpened.Properties.LookAndFeel.SkinName = "McSkin";
             this.nullableDateTimePickerDateOpened.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.nullableDateTimePickerDateOpened.Size = new System.Drawing.Size(119, 28);
+            this.nullableDateTimePickerDateOpened.Size = new System.Drawing.Size(119, 20);
             this.nullableDateTimePickerDateOpened.TabIndex = 22;
             // 
             // nullableDateTimePickerDateofAccountInformation
             // 
             this.nullableDateTimePickerDateofAccountInformation.EditValue = null;
-            this.nullableDateTimePickerDateofAccountInformation.Location = new System.Drawing.Point(306, 71);
+            this.nullableDateTimePickerDateofAccountInformation.Location = new System.Drawing.Point(306, 76);
             this.nullableDateTimePickerDateofAccountInformation.Name = "nullableDateTimePickerDateofAccountInformation";
             this.nullableDateTimePickerDateofAccountInformation.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -9491,14 +9529,14 @@
             this.nullableDateTimePickerDateofAccountInformation.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
             this.nullableDateTimePickerDateofAccountInformation.Properties.LookAndFeel.SkinName = "McSkin";
             this.nullableDateTimePickerDateofAccountInformation.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.nullableDateTimePickerDateofAccountInformation.Size = new System.Drawing.Size(119, 28);
+            this.nullableDateTimePickerDateofAccountInformation.Size = new System.Drawing.Size(119, 20);
             this.nullableDateTimePickerDateofAccountInformation.TabIndex = 21;
             // 
             // nullableDateTimePickerDateofFirstDelinquency
             // 
             this.nullableDateTimePickerDateofFirstDelinquency.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.closedCreditManagerBindingSource, "CRDMGR_DATE_FIRST_DELINQUENT", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "d"));
             this.nullableDateTimePickerDateofFirstDelinquency.EditValue = null;
-            this.nullableDateTimePickerDateofFirstDelinquency.Location = new System.Drawing.Point(306, 44);
+            this.nullableDateTimePickerDateofFirstDelinquency.Location = new System.Drawing.Point(306, 49);
             this.nullableDateTimePickerDateofFirstDelinquency.Name = "nullableDateTimePickerDateofFirstDelinquency";
             this.nullableDateTimePickerDateofFirstDelinquency.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -9508,14 +9546,14 @@
             this.nullableDateTimePickerDateofFirstDelinquency.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
             this.nullableDateTimePickerDateofFirstDelinquency.Properties.LookAndFeel.SkinName = "McSkin";
             this.nullableDateTimePickerDateofFirstDelinquency.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.nullableDateTimePickerDateofFirstDelinquency.Size = new System.Drawing.Size(119, 28);
+            this.nullableDateTimePickerDateofFirstDelinquency.Size = new System.Drawing.Size(119, 20);
             this.nullableDateTimePickerDateofFirstDelinquency.TabIndex = 20;
             // 
             // nullableDateTimePickerDateofLastPayment
             // 
             this.nullableDateTimePickerDateofLastPayment.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.closedCreditManagerBindingSource, "CRDMGR_DATE_LAST_PAYMENT", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "d"));
             this.nullableDateTimePickerDateofLastPayment.EditValue = null;
-            this.nullableDateTimePickerDateofLastPayment.Location = new System.Drawing.Point(306, 17);
+            this.nullableDateTimePickerDateofLastPayment.Location = new System.Drawing.Point(306, 22);
             this.nullableDateTimePickerDateofLastPayment.Name = "nullableDateTimePickerDateofLastPayment";
             this.nullableDateTimePickerDateofLastPayment.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -9527,7 +9565,7 @@
             this.nullableDateTimePickerDateofLastPayment.Properties.LookAndFeel.SkinName = "McSkin";
             this.nullableDateTimePickerDateofLastPayment.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.nullableDateTimePickerDateofLastPayment.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
-            this.nullableDateTimePickerDateofLastPayment.Size = new System.Drawing.Size(119, 28);
+            this.nullableDateTimePickerDateofLastPayment.Size = new System.Drawing.Size(119, 20);
             this.nullableDateTimePickerDateofLastPayment.TabIndex = 19;
             // 
             // label135
@@ -10286,7 +10324,7 @@
             this.tabFormControl1.Name = "tabFormControl1";
             this.tabFormControl1.Pages.Add(this.tabFormPage1);
             this.tabFormControl1.SelectedPage = this.tabFormPage1;
-            this.tabFormControl1.Size = new System.Drawing.Size(1238, 62);
+            this.tabFormControl1.Size = new System.Drawing.Size(1238, 71);
             this.tabFormControl1.TabForm = this;
             this.tabFormControl1.TabIndex = 229;
             this.tabFormControl1.TabStop = false;
@@ -10300,9 +10338,9 @@
             // tabFormContentContainer1
             // 
             this.tabFormContentContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabFormContentContainer1.Location = new System.Drawing.Point(0, 62);
+            this.tabFormContentContainer1.Location = new System.Drawing.Point(0, 71);
             this.tabFormContentContainer1.Name = "tabFormContentContainer1";
-            this.tabFormContentContainer1.Size = new System.Drawing.Size(1238, 580);
+            this.tabFormContentContainer1.Size = new System.Drawing.Size(1238, 571);
             this.tabFormContentContainer1.TabIndex = 230;
             // 
             // frmNewCustMaint
@@ -10482,7 +10520,8 @@
             this.groupBox12.ResumeLayout(false);
             this.groupBox12.PerformLayout();
             this.xtraTabPageRepoHistory.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRepoLog)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlRepoLog)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewRepoLog)).EndInit();
             this.groupBox13.ResumeLayout(false);
             this.groupBox13.PerformLayout();
             this.xtraTabPageTSB.ResumeLayout(false);
@@ -10892,29 +10931,6 @@
         private System.Windows.Forms.TextBox textBox38;
         private System.Windows.Forms.TextBox textBox39;
         private System.Windows.Forms.TextBox textBox40;
-        private System.Windows.Forms.DataGridView dataGridViewRepoLog;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateOfChangeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn userIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn orgRepoDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn newRepoDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn orgRepoAgentDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn newRepoAgentDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn orgRepoIndDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn newRepoIndDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn orgRepoCodeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn newRepoCodeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn orgCurrentLocationDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn newCurrentLocationDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn oldLocationDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn newLocationDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn orgAuctionHouseDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn newAuctionHouseDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn orgAutionHouseDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn newAuctionHouseDateDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn orgTitleReceivedDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn newTitleReceivedDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn orgDateTitleReceivedDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn newDateTitleReceivedDataGridViewTextBoxColumn;
         private System.Windows.Forms.GroupBox groupBox13;
         private System.Windows.Forms.TextBox textBox41;
         private System.Windows.Forms.TextBox textBox42;
@@ -11106,6 +11122,30 @@
         private DevExpress.XtraGrid.Columns.GridColumn colCUSTHIST_THRU_UD;
         private DevExpress.XtraEditors.TextEdit colorTextBoxTotalDue;
         private DevExpress.XtraEditors.TextEdit txtContractStatus;
+        private DevExpress.XtraGrid.GridControl gridControlRepoLog;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridViewRepoLog;
+        private DevExpress.XtraGrid.Columns.GridColumn colDateOfChange;
+        private DevExpress.XtraGrid.Columns.GridColumn colUserID;
+        private DevExpress.XtraGrid.Columns.GridColumn colOrgRepoDate;
+        private DevExpress.XtraGrid.Columns.GridColumn colNewRepoDate;
+        private DevExpress.XtraGrid.Columns.GridColumn colOrgRepoAgent;
+        private DevExpress.XtraGrid.Columns.GridColumn colNewRepoAgent;
+        private DevExpress.XtraGrid.Columns.GridColumn colOrgRepoInd;
+        private DevExpress.XtraGrid.Columns.GridColumn colNewRepoInd;
+        private DevExpress.XtraGrid.Columns.GridColumn colOrgRepoCode;
+        private DevExpress.XtraGrid.Columns.GridColumn colNewRepoCode;
+        private DevExpress.XtraGrid.Columns.GridColumn colOrgCurrentLocation;
+        private DevExpress.XtraGrid.Columns.GridColumn colNewCurrentLocation;
+        private DevExpress.XtraGrid.Columns.GridColumn colOldLocationDate;
+        private DevExpress.XtraGrid.Columns.GridColumn colNewLocationDate;
+        private DevExpress.XtraGrid.Columns.GridColumn colOrgAuctionHouse;
+        private DevExpress.XtraGrid.Columns.GridColumn colNewAuctionHouse;
+        private DevExpress.XtraGrid.Columns.GridColumn colOrgAutionHouseDate;
+        private DevExpress.XtraGrid.Columns.GridColumn colNewAuctionHouseDate;
+        private DevExpress.XtraGrid.Columns.GridColumn colOrgTitleReceived;
+        private DevExpress.XtraGrid.Columns.GridColumn colNewTitleReceived;
+        private DevExpress.XtraGrid.Columns.GridColumn colOrgDateTitleReceived;
+        private DevExpress.XtraGrid.Columns.GridColumn colNewDateTitleReceived;
     }
 }
 
