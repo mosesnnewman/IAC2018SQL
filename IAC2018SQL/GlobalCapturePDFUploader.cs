@@ -8,6 +8,7 @@ using System.IO;
 using System.Text.RegularExpressions;
 using RestSharp;
 using S9API.Models;
+using RestSharp.Authenticators;
 
 
 // Moses Newman 04/29/2020 Create Global Search PDF file uploader

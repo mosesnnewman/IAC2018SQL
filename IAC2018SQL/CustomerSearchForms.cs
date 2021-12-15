@@ -181,7 +181,7 @@ namespace IAC2021SQL
                 iacDataSet1.Clear();
                 ClearAllFields();
                 Refresh();
-                frmCustMaint newMDIChild2 = new frmCustMaint();
+                frmNewCustMaint newMDIChild2 = new frmNewCustMaint();
                 newMDIChild2.MdiParent = ParentForm;
                 newMDIChild2.Show();
                 Show();
@@ -272,7 +272,7 @@ namespace IAC2021SQL
                 if (lsCustomer_Type == "O")
                     MDImain.CreateFormInstance("frmOpenCustMaint", false);
                 else
-                    MDImain.CreateFormInstance("frmCustMaint", false);
+                    MDImain.CreateFormInstance("frmNewCustMaint", false);
             }
             // Moses Newman 11/27/2012 Why not keep deep search open until user wants to exit it!
             //Close();

@@ -33,7 +33,7 @@ using DevExpress.XtraBars;
 
 namespace IAC2021SQL
 {
-    public partial class frmCustMaint : System.Windows.Forms.Form
+    public partial class frmNewCustMaint : DevExpress.XtraBars.TabForm
     {
         // Moses Newman 12/16/2020
         BindingSource PaymentBindingSource = new BindingSource();
@@ -77,12 +77,12 @@ namespace IAC2021SQL
                           Field3;
         }
 
-        public frmCustMaint()
+        public frmNewCustMaint()
         {
             InitializeComponent();
         }
 
-        private void frmCustMaint_Load(object sender, EventArgs e)
+        private void frmNewCustMaint_Load(object sender, EventArgs e)
         {
             this.termsFrequencyTableAdapter.Fill(this.tsbDataSet.TermsFrequency);
             this.portfolioTypesTableAdapter.Fill(this.tsbDataSet.PortfolioTypes);
@@ -114,7 +114,7 @@ namespace IAC2021SQL
             lsUNCROOT = Program.GsDataPath;
             lsDataPath = "";
 
-            tabCustomerMaint.SelectedIndex = 0;
+            xtraTabControlCustomerMaint.SelectedTabPageIndex = 0;
             genCodesTableAdapter.Fill(iACDataSet.GenCodes);
             gapSelectionsTableAdapter.Fill(iACDataSet.GapSelections);
             specialCommentCodesTableAdapter.Fill(iACDataSet.SpecialCommentCodes);
@@ -124,7 +124,7 @@ namespace IAC2021SQL
             letterTypeTableAdapter.Fill(iACDataSet.LetterType);
             letterNumberTableAdapter.Fill(iACDataSet.LetterNumber);
             txtFirstPayDate.DataBindings.Clear();
-            txtFirstPayDate.DataBindings.Add(new System.Windows.Forms.Binding("Value", cUSTOMERBindingSource, "CUSTOMER_INIT_DATE", true));
+            txtFirstPayDate.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", cUSTOMERBindingSource, "CUSTOMER_INIT_DATE", true));
             comment_TypesTableAdapter.Fill(iACDataSet.Comment_Types);
             dLRLISTBYNUMTableAdapter.Fill(iACDataSet.DLRLISTBYNUM);
             dealerlistTableAdapterCust.FillAll(iACDataSet.DEALERLIST);
@@ -214,7 +214,7 @@ namespace IAC2021SQL
             textBoxAccount.Enabled = false;
             // Moses Newman 01/13/2019 Added Warranty CheckBox and OpenAccount
             checkBoxVehicleWarranty.Enabled = false;
-            textBoxOpenAccount.Enabled = false;
+           textBoxOpenAccount.Enabled = false;
             if (checkBoxVehicleWarranty.Checked)
             {
                 checkBoxVehicleWarranty.ForeColor = Color.Red;
@@ -279,7 +279,7 @@ namespace IAC2021SQL
             txtCustomerBuyout.Enabled = false;
             txtCustomerPayRem2.Enabled = false;
             txtDealerDisc.Enabled = false;
-            txtContractStatus.Enabled = false;
+            //txtContractStatus.Enabled = false;
             txtPaidDiscount.Enabled = false;
             txtDealerDiscBal.Enabled = false;
             txtCreditLimit.Enabled = false;
@@ -446,7 +446,7 @@ namespace IAC2021SQL
 
             toolStripButtonSave.Enabled = false;
             toolStripButtonEdit.Enabled = true;
-            tabCustomerMaint.SelectedIndex = 0;
+            xtraTabControlCustomerMaint.SelectedTabPageIndex = 0;
             ActiveControl = cUSTOMER_NOTextBox;
             cUSTOMER_NOTextBox.SelectAll();
             // Moses Newman 06/12/2018
@@ -617,7 +617,7 @@ namespace IAC2021SQL
             else
                 txtOverideInterest.Enabled = false;
             if (lbAddFlag)
-                txtPaymentDate.Value = null;
+                txtPaymentDate.EditValue = null;
             //nullableDateTimePickerPayDate.Value = txtPaymentDate.Value;
             //nullableDateTimePickerPayDate.Text = txtPaymentDate.Text;
             txtPaymentDate.Enabled = false;
@@ -1363,7 +1363,7 @@ namespace IAC2021SQL
                     iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("COSIGNER_JUNIOR", "");
                     iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Nullable<DateTime>>("COSIGNER_DOB_DATE", null);
                     iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<DateTime>("MaturityDate", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<DateTime>("CUSTOMER_INIT_DATE").AddMonths(iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<Int32>("CUSTOMER_TERM") - 1));
-                    this.MaturityDate.Value = iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<DateTime>("CUSTOMER_INIT_DATE").AddMonths(iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<Int32>("CUSTOMER_TERM") - 1);
+                    this.MaturityDate.EditValue = iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<DateTime>("CUSTOMER_INIT_DATE").AddMonths(iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<Int32>("CUSTOMER_TERM") - 1);
                     this.MaturityDate.Refresh();
                     Create_New_ALTNAMERecord(lsCustomerNo);
                     Create_New_OPNBANKRecord(lsCustomerNo);
@@ -1480,8 +1480,8 @@ namespace IAC2021SQL
                     else
                         txtOverideInterest.Enabled = false;
                     txtPaymentDate.Enabled = false;
-                    txtPaymentDate.Value = null;
-                    nullableDateTimePickerPayDate.Value = txtPaymentDate.Value;
+                    txtPaymentDate.EditValue = null;
+                    nullableDateTimePickerPayDate.EditValue = txtPaymentDate.EditValue;
                     nullableDateTimePickerPayDate.Text = txtPaymentDate.Text;
                     txtPaymentType.Enabled = true;
                     txtPaymentCode.Enabled = true;
@@ -1549,7 +1549,7 @@ namespace IAC2021SQL
                     txtCOSState.Enabled = true;
                     txtCOSZip.Enabled = true;
                     txtCOSDOB.Enabled = true;
-                    txtCOSDOB.Value = null;
+                    txtCOSDOB.EditValue = null;
                     // Moses Newman 04/30/2019 Added CosignerTierPoints
                     textBoxCosignerTierPoints.Enabled = true;
 
@@ -1598,10 +1598,10 @@ namespace IAC2021SQL
                     txtInsuranceAgent.Enabled = true;
                     txtAgentPhone.Enabled = true;
                     txtEffectiveDate.Enabled = true;
-                    txtEffectiveDate.Value = null;
+                    txtEffectiveDate.EditValue = null;
 
                     txtExpirationDate.Enabled = true;
-                    txtExpirationDate.Value = null;
+                    txtExpirationDate.EditValue = null;
 
                     txtJointOwner.Enabled = true;
                     txtJointOwnership.Enabled = true;
@@ -1801,7 +1801,7 @@ namespace IAC2021SQL
         //Move to FirstPayDate
         private void textBox46_Validated(object sender, EventArgs e)
         {
-            tabCustomerMaint.SelectedIndex = 1;
+            xtraTabControlCustomerMaint.SelectedTabPageIndex = 1;
             ActiveControl = txtFirstPayDate;
             txtFirstPayDate.Select();
         }
@@ -1809,20 +1809,9 @@ namespace IAC2021SQL
         //Move to Vevhicle Year
         private void textBox45_Validated(object sender, EventArgs e)
         {
-            tabCustomerMaint.SelectedIndex = 2;
+            xtraTabControlCustomerMaint.SelectedTabPageIndex = 2;
             ActiveControl = txtVehicleYear;
             txtVehicleYear.Select();
-        }
-
-        private void DealerNamecomboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cUSTHISTDataGridView_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
-        {
-            foreach (DataGridViewRow r in cUSTHISTDataGridView.Rows)
-                r.DefaultCellStyle.BackColor = (r.Index % 2 == 0) ? Color.White : Color.LightYellow;
         }
 
         private void cUSTOMER_DEALERcomboBox_Validated(object sender, EventArgs e)
@@ -2011,7 +2000,7 @@ namespace IAC2021SQL
             {
                 if (txtCASH.Text.Length == 0 || Convert.ToDecimal(txtCASH.Text.Substring(1)) == 0)
                 {
-                    tabCustomerMaint.SelectedIndex = 1;
+                    xtraTabControlCustomerMaint.SelectedTabPageIndex = 1;
                     GeneralValidationError(@"*** You must enter the customer's loan amount (CASH)! ***", txtCASH);
                     ActiveControl = txtCASH;
                     txtCASH.SelectAll();
@@ -2019,7 +2008,7 @@ namespace IAC2021SQL
                 }
                 if (txtTerm.Text.Length == 0 || Convert.ToInt32(txtTerm.Text) == 0)
                 {
-                    tabCustomerMaint.SelectedIndex = 1;
+                    xtraTabControlCustomerMaint.SelectedTabPageIndex = 1;
                     GeneralValidationError(@"*** You must enter the customer's loan TERM! ***", txtTerm);
                     ActiveControl = txtTerm;
                     txtTerm.SelectAll();
@@ -2028,7 +2017,7 @@ namespace IAC2021SQL
                 if ((txtRegularPay.Text.Length == 0 || Convert.ToDecimal(txtRegularPay.Text.Substring(1)) == 0) &&
                     (txtAPR.Text.Length == 0 || Convert.ToDecimal(txtAPR.Text) == 0))
                 {
-                    tabCustomerMaint.SelectedIndex = 1;
+                    xtraTabControlCustomerMaint.SelectedTabPageIndex = 1;
                     GeneralValidationError(@"*** You must enter either the customer's Monthly Payment (REGULAR PAYMENT), APR, OR BOTH! ***", txtRegularPay);
                     GeneralValidationError(@"*** You must enter either the customer's Monthly Payment (REGULAR PAYMENT), APR, OR BOTH! ***", txtAPR);
                     ActiveControl = txtRegularPay;
@@ -2037,7 +2026,7 @@ namespace IAC2021SQL
                 }
                 if (comboBoxDayDue.SelectedIndex < 0 && comboBoxDayDue.Text.Length == 0)
                 {
-                    tabCustomerMaint.SelectedIndex = 1;
+                    xtraTabControlCustomerMaint.SelectedTabPageIndex = 1;
                     GeneralValidationError(@"*** You must enter the customer's DAY DUE ***", comboBoxDayDue);
                     ActiveControl = comboBoxDayDue;
                     comboBoxDayDue.SelectAll();
@@ -2047,7 +2036,7 @@ namespace IAC2021SQL
             // Moses Newman 11/12/2013 Add check for Valid Vehicle Year if the field is NOT left blank!
             if (txtVehicleYear.Text.Length > 0 && Convert.ToInt32(txtVehicleYear.Text) < 1000 && txtVehicleYear.Text.TrimEnd() != "0")
             {
-                tabCustomerMaint.SelectedIndex = 2;
+                xtraTabControlCustomerMaint.SelectedTabPageIndex = 2;
                 GeneralValidationError(@"*** You must enter a valid VEHICLE Year if the field is NOT left blank! ***", txtVehicleYear);
                 ActiveControl = txtVehicleYear;
                 txtVehicleYear.SelectAll();
@@ -2404,7 +2393,7 @@ namespace IAC2021SQL
                 cUSTOMER_DEALERcomboBox.Text = "";
                 DealerNamecomboBox.Text = "";
                 Program.gsKey = null;
-                frmCustMaint_Load(sender, e);
+                frmNewCustMaint_Load(sender, e);
             }
         }
 
@@ -2586,41 +2575,6 @@ namespace IAC2021SQL
             }
             if (cUSTOMER_STATETextBox.Text.Length != 0)
                 errorProviderCustomerForm.Clear();
-        }
-
-        private void txtFirstPayDate_Validated(object sender, EventArgs e)
-        {
-            if (!lbAddFlag)
-                return;
-            // Moses Newman 12/12/2014 Call TVAmortTableAdapter.PaidThrough to get correctrect new Paid Through 
-            IACDataSetTableAdapters.TVAmortTableAdapter TVAmortTableAdapter = new IACDataSetTableAdapters.TVAmortTableAdapter();
-            Object loPTDate = null;
-            DateTime ldTempDate;
-
-            loPTDate = TVAmortTableAdapter.PaidThrough(cUSTOMER_NOTextBox.Text);
-            if (loPTDate != null)
-                txtPaidThrough.Text = (String)loPTDate;
-            else
-            {
-                ldTempDate = iACDataSet.CUSTOMER.Rows[0].Field<DateTime>("CUSTOMER_INIT_DATE");
-                ldTempDate = iACDataSet.CUSTOMER.Rows[0].Field<DateTime>("CUSTOMER_INIT_DATE").AddMonths(-1);
-                txtPaidThrough.Text = ldTempDate.Month.ToString().PadLeft(2, '0') + ldTempDate.Year.ToString().Substring(2, 2);
-            }
-            nullableDateTimePickerFirstPayDate.Value = txtFirstPayDate.Value;
-            // Moses Newman 01/20/2015 Added Contract Date
-            if (DateTimePickerContractDate.Value == null)
-                DateTimePickerContractDate.Value = DateTime.Now.Date;
-            nullableDateTimePickerHistContractDate.Value = DateTimePickerContractDate.Value;
-            loPTDate = null;
-            TVAmortTableAdapter.Dispose();
-            TVAmortTableAdapter = null;
-        }
-
-        private void txtPaidThrough_Validated(object sender, EventArgs e)
-        {
-            if (txtPaidThrough.Text.TrimStart().TrimEnd().Length == 3)
-                txtPaidThrough.Text = "0" + txtPaidThrough.Text;
-            // Moses Newman 12/19/2013 No need to update PAID_THRU_MM or PAID_THRU_YY since they are now computed fields!
         }
 
         private void toolStripButton3_Click(object sender, EventArgs e)
@@ -2987,63 +2941,6 @@ namespace IAC2021SQL
                 errorProviderCustomerForm.Clear();
         }
 
-        private void txtAPR_Validated(object sender, EventArgs e)
-        {
-            if (txtAPR.Text.Length != 0)
-            {
-                if (Convert.ToDecimal(txtAPR.Text) != 0)
-                {
-                    errorProviderCustomerForm.Clear();
-                    // Moses Newman 01/04/2014 enable Interest Override if Annual Percentage Rate is not equal to 0!
-                    if (lbEdit || lbAddFlag)
-                        txtOverideInterest.Enabled = true;
-                    //if (txtRegularPay.Text.Length == 0 || Convert.ToDecimal(txtRegularPay.Text.Substring(1)) == 0)
-                    Reamortize(); // Moses Newman 01/29/2019 call new Reamortize instead of regular payment valid call!
-                }
-                return;
-            }
-            else
-                if (txtRegularPay.Text.Length != 0)
-                {
-                    if (Convert.ToDecimal(txtRegularPay.Text.Substring(1)) != 0)
-                        errorProviderCustomerForm.Clear();
-                    // Moses Newman 01/04/2014 enable Interest Override if Annual Percentage Rate is not equal to 0!
-                    if (lbEdit || lbAddFlag)
-                        txtOverideInterest.Enabled = true;
-                }
-        }
-
-        private void txtTerm_Validated(object sender, EventArgs e)
-        {
-            if (txtTerm.Text.Length != 0)
-                if (Convert.ToInt32(txtTerm.Text) != 0)
-                {
-                    errorProviderCustomerForm.Clear();
-                    //Reamortize(); // Moses Newman 01/29/2019 call new Reamortize instead of regular payment valid call!
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<DateTime>("MaturityDate", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<DateTime>("CUSTOMER_INIT_DATE").AddMonths(iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<Int32>("CUSTOMER_TERM") - 1));
-                    this.MaturityDate.Value = iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<DateTime>("CUSTOMER_INIT_DATE").AddMonths(iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<Int32>("CUSTOMER_TERM") - 1);
-                }
-            return;
-        }
-
-        private void txtCASH_Validated(object sender, EventArgs e)
-        {
-            if (txtCASH.Text.Length != 0)
-                if (Convert.ToDecimal(txtCASH.Text.Substring(1)) != 0)
-                    errorProviderCustomerForm.Clear();
-            if (txtRegularPay.Text.Length != 0 || Convert.ToDecimal(txtRegularPay.Text.Substring(1)) != 0)
-                Reamortize(); // Moses Newman 01/29/2019 call new Reamortize instead of regular payment valid call!
-        }
-
-        private void comboBoxDayDue_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (comboBoxDayDue.SelectedIndex >= 0)
-            {
-                errorProviderCustomerForm.Clear();
-                Reamortize(); // Moses Newman 01/29/2019 call new Reamortize instead of regular payment valid call!
-            }
-        }
-
         private void cUSTOMER_ACT_STATTextBox_TextChanged(object sender, EventArgs e)
         {
             if (lbEdit)
@@ -3089,23 +2986,6 @@ namespace IAC2021SQL
 
             BuyOut.gdsDataSet = iACDataSet;
             BuyOut.Show();
-        }
-
-        private void checkBoxSimple_Validated(object sender, EventArgs e)
-        {
-            if (checkBoxSimple.Checked)
-            {
-                toolStripButtonCalcBuyout.Visible = true;
-                if (lbEdit)
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_AMORTIZE_IND", "S");
-            }
-            else
-            {
-                toolStripButtonCalcBuyout.Visible = false;
-                // Moses Newman 04/30/2017 No more fixed interes loans only simple interest and Normal Daily Compounding Interest.
-                if (lbEdit)
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_AMORTIZE_IND", "N");
-            }
         }
 
 
@@ -3212,14 +3092,7 @@ namespace IAC2021SQL
 
         private void comboBoxCreditCode_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Moses Newman 09/21/2018 Only go here if index is not -1, added parenthesis.
-            if ((lbAddFlag || lbEdit) && comboBoxCreditCode.SelectedIndex > -1)
-            {
-                cUSTOMER_CREDIT_SCORE_ATextBox.Text = iACDataSet.CreditCodes.Rows[comboBoxCreditCode.SelectedIndex].Field<String>("Code");
-                iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_CREDIT_SCORE_A", iACDataSet.CreditCodes.Rows[comboBoxCreditCode.SelectedIndex].Field<String>("Code"));
-                toolStripButtonSave.Enabled = true;
-                creditCodesBindingSource.EndEdit();
-            }
+
         }
 
         private void comboBoxRepoCodes_SelectedIndexChanged(object sender, EventArgs e)
@@ -3329,16 +3202,7 @@ namespace IAC2021SQL
 
         private void checkBoxRefi_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBoxRefi.Checked && (lbAddFlag || lbEdit))
-            {
-                textBoxAccount.Enabled = true;
-                ActiveControl = textBoxAccount;
-                textBoxAccount.SelectAll();
-            }
-            else
-                textBoxAccount.Enabled = false;
-            if (lbAddFlag || lbEdit)
-                toolStripButtonSave.Enabled = true;
+
         }
 
         private void CreateOutlookEmail(String mailToText)
@@ -3422,7 +3286,7 @@ namespace IAC2021SQL
 
         private void comboBoxCreditCode_Validated(object sender, EventArgs e)
         {
-            tabCustomerMaint.SelectedIndex = 3;
+            xtraTabControlCustomerMaint.SelectedTabPageIndex = 3;
             ActiveControl = txtCOSFirstName;
             txtCOSFirstName.Select();
         }
@@ -3430,13 +3294,14 @@ namespace IAC2021SQL
         private void checkBoxFullRecourse_CheckedChanged(object sender, EventArgs e)
         {
             Object SendTest = sender;
+            CheckEdit edit = sender as CheckEdit;
 
             if (lbInFullRecourseCheck || gbInSave)
                 return;
             if (lbAddFlag || lbEdit)
                 toolStripButtonSave.Enabled = true;
             
-            if(((ColorCheckBox)sender).Checked)
+            if(edit.Checked)
             {
                 checkBoxFullRecourse.ForeColor = Color.Red;
                 checkBoxFullRecourse.Refresh();
@@ -3469,36 +3334,9 @@ namespace IAC2021SQL
             cUSTOMERBindingSource.EndEdit();
         }
 
-        private void comboBoxDayDue_Validated(object sender, EventArgs e)
-        {
-            if (comboBoxDayDue.Text.TrimStart().TrimEnd() == "5" && comboBoxDayDue.Text == "10" && comboBoxDayDue.Text == "15" && comboBoxDayDue.Text == "20" && comboBoxDayDue.Text == "25" && comboBoxDayDue.Text == "30")
-            {
-                errorProviderCustomerForm.Clear();
-                Reamortize();
-            }
-        }
-
-        private void comboBoxDayDue_Validating(object sender, CancelEventArgs e)
-        {
-            if (comboBoxDayDue.Text.TrimStart().TrimEnd() != "5" && comboBoxDayDue.Text != "10" && comboBoxDayDue.Text != "15" && comboBoxDayDue.Text != "20" && comboBoxDayDue.Text != "25" && comboBoxDayDue.Text != "30")
-            {
-                // Cancel the event and select the text to be corrected by the user.
-                e.Cancel = true;
-                comboBoxDayDue.Select(0, comboBoxDayDue.Text.Length);
-
-                // Set the ErrorProvider error with the text to display.  
-                this.errorProviderCustomerForm.SetError(comboBoxDayDue, "You must enter a either 5,10,15,20,25 or 30 in the day due field!");
-            }
-        }
-
         private void DateTimePickerContractDate_Validated(object sender, EventArgs e)
         {
-            // Moses Newman 01/20/2015 Make sure that history screen field is visually updated on Contract Date edit!
-            if (lbAddFlag || lbEdit)
-            {
-                nullableDateTimePickerHistContractDate.Value = DateTimePickerContractDate.Value;
-                toolStripButtonSave.Enabled = true;
-            }
+
         }
 
         /* Moses Newman 08/26/2020 Retired this ListBox
@@ -3526,18 +3364,6 @@ namespace IAC2021SQL
         }*/
 
         private void txtTSBCommentCode_SelectedValueChanged(object sender, EventArgs e)
-        {
-            if (lbAddFlag || lbEdit)
-                toolStripButtonSave.Enabled = true;
-        }
-
-        private void checkBoxOverrideLateCharge_CheckedChanged(object sender, EventArgs e)
-        {
-            if (lbAddFlag || lbEdit)
-                toolStripButtonSave.Enabled = true;
-        }
-
-        private void checkBoxSimple_CheckedChanged(object sender, EventArgs e)
         {
             if (lbAddFlag || lbEdit)
                 toolStripButtonSave.Enabled = true;
@@ -3597,32 +3423,6 @@ namespace IAC2021SQL
             CalcTotalFees();
         }
 
-        private void checkBoxVehicleWarranty_CheckedChanged(object sender, EventArgs e)
-        {
-            if (((ColorCheckBox)sender).Checked)
-                checkBoxVehicleWarranty.ForeColor = Color.Red;
-            else
-                checkBoxVehicleWarranty.ForeColor = SystemColors.ControlText;
-            if (checkBoxVehicleWarranty.Checked && (lbAddFlag || lbEdit))
-            {
-                textBoxOpenAccount.Enabled = true;
-                ActiveControl = textBoxOpenAccount;
-                textBoxOpenAccount.SelectAll();
-            }
-            else
-                if (!checkBoxVehicleWarranty.Checked)
-                    textBoxOpenAccount.Enabled = false;
-                else
-                textBoxOpenAccount.Enabled = true;
-            if (lbAddFlag || lbEdit)
-                toolStripButtonSave.Enabled = true;
-        }
-
-        private void groupBox10_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void textBoxOpenAccount_DoubleClick(object sender, EventArgs e)
         {
             ActiveControl = textBoxOpenAccount;
@@ -3654,7 +3454,7 @@ namespace IAC2021SQL
 
                     OpenCustForm.WrongAddress = cUSTOMER_WRONG_ADDRESSTextBox.Text;
 
-                    OpenCustForm.DOB = txtDOB.Value;
+                    OpenCustForm.DOB = (DateTime)txtDOB.EditValue;
 
                     // End of 01/28/2019 Changes
 
@@ -3721,26 +3521,10 @@ namespace IAC2021SQL
 
         }
 
-        private void groupBox8_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void textBoxLTV_Validating(object sender, CancelEventArgs e)
         {
             if (textBoxLTV.Text == "")
                 textBoxLTV.Text = "0.00";
-        }
-
-        private void textBox53_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxDealerCashPrice_Validating(object sender, CancelEventArgs e)
-        {
-            if (textBoxDealerCashPrice.Text == "")
-                textBoxDealerCashPrice.Text = "0.00";
         }
 
         private void textBoxTSBPaymentRating_TextChanged(object sender, EventArgs e)
@@ -3846,11 +3630,6 @@ namespace IAC2021SQL
 
         }
 
-        private void txtDealerDiscBal_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void textBoxDealerEmail_TextChanged(object sender, EventArgs e)
         {
             if (lbEdit || lbAddFlag)
@@ -3936,37 +3715,6 @@ namespace IAC2021SQL
             if (lbAddFlag || lbEdit)
             {
                 toolStripButtonSave.Enabled = true;
-            }
-        }
-
-        private void checkBoxCheckIssued_CheckedChanged(object sender, EventArgs e)
-        {
-            if (lbAddFlag || lbEdit)
-                toolStripButtonSave.Enabled = true;
-            if (checkBoxCheckIssued.Checked)
-            {
-                labelCheckNumber.Visible = true;
-                textBoxCheckNo.Visible = true;
-            }
-            else
-            {
-                labelCheckNumber.Visible = false;
-                textBoxCheckNo.Visible = false;
-            }
-        }
-
-        // Moses Newman 07/16/2020 Add comment on check number box validation if Check Number box is filled in.
-        private void textBoxCheckNo_Validated(object sender, EventArgs e)
-        {
-            // Moses Newman 07/16/2021 Make sure the Overpayment comment does not already exist!
-            Int32 lnCount = 0;
-            if (cUSTOMER_ACT_STATTextBox.Text == "I" && textBoxCheckNo.Text != "")
-            {
-                var loCount = cOMMENTTableAdapter.OverpayCount(iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO"));
-
-                lnCount = loCount != null ? (Int32)loCount : 0;
-                if (lnCount == 0)
-                    MakeComment("*** Overpayment Check Issued Check Number: " + textBoxCheckNo.Text + " ***", "", 0, false);
             }
         }
 
@@ -4156,22 +3904,23 @@ namespace IAC2021SQL
 
         private void colorCheckBoxReceivedContract_CheckedChanged(object sender, EventArgs e)
         {
+            CheckEdit edit = sender as CheckEdit;
             if (lbAddFlag || lbEdit)
                 toolStripButtonSave.Enabled = true;
             // Moses Newman 02/28/2021
-            if (colorCheckBoxReceivedContract.Checked)
+            if (edit.Checked)
             {
                 colorCheckBoxReceivedContract.ForeColor = Color.Green;
                 nullableDateTimePickerDateContractReceived.Enabled = true;
                 nullableDateTimePickerDateContractReceived.Visible = true;
-                nullableDateTimePickerDateContractReceived.Value = DateTime.Now.Date;
+                nullableDateTimePickerDateContractReceived.EditValue = DateTime.Now.Date;
             }
             else
             {
                 colorCheckBoxReceivedContract.ForeColor = SystemColors.ControlText;
                 nullableDateTimePickerDateContractReceived.Enabled = false;
                 nullableDateTimePickerDateContractReceived.Visible = false;
-                nullableDateTimePickerDateContractReceived.Value = null;
+                nullableDateTimePickerDateContractReceived.EditValue = null;
             }
         }
 
@@ -4359,11 +4108,6 @@ namespace IAC2021SQL
             CalcTotalFees();
         }
 
-        private void label45_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void cOMMENTGridView_DataSourceChanged(object sender, EventArgs e)
         {
         }
@@ -4450,6 +4194,11 @@ namespace IAC2021SQL
             }
         }
 
+        private void xtraTabControlCustomerMaint_CloseButtonClick(object sender, EventArgs e)
+        {
+            Close();
+        }
+
         //Moses Newman 11/23/2021 Use DevExpress GridView instead of DataGridView for comments tab now
         private void cOMMENTgridView_InitNewRow(object sender, InitNewRowEventArgs e)
         {
@@ -4491,11 +4240,7 @@ namespace IAC2021SQL
 
         private void textBoxRepairFee5_Validated(object sender, EventArgs e)
         {
-            if (!Decimal.TryParse(textBoxRepairFee5.Text, NumberStyles.Currency,
-                    CultureInfo.CreateSpecificCulture("en-US"), out gnRepairFee5))
-                return;
-            textBoxRepairFee5.Text = gnRepairFee5.ToString("C", CultureInfo.CreateSpecificCulture("en-US"));
-            CalcTotalFees();
+
         }
 
         private void CalcTotalFees()
@@ -4581,6 +4326,7 @@ namespace IAC2021SQL
 
         private void buttonConfirm_Click(object sender, EventArgs e)
         {
+            return;
         }
 
         private void radioButtonAcct_Click(object sender, EventArgs e)
@@ -5060,8 +4806,8 @@ namespace IAC2021SQL
                     }
                 }
 
-                
-                
+
+
                 excelWorkSheet.PageSetup.CenterHeader = "&\"Arial\"&B&12&KFF0000" + cUSTOMER_NOTextBox.Text.Trim() + "TVAmort";
                 excelWorkSheet.Visible = Excel.XlSheetVisibility.xlSheetVisible;
 
@@ -5197,9 +4943,9 @@ namespace IAC2021SQL
 
                 Excel.Range LastPPBUsedLC = excelWorkSheet.get_Range("S:S");
                 LastPPBUsedLC.Columns.EntireColumn.Delete();
-               
+
                 Excel.Range r1 = excelWorkSheet.get_Range("A1:AC1");
-                Excel.Range r = excelWorkSheet.get_Range("A2:AC" + (ds.Tables[0].Rows.Count+1).ToString());
+                Excel.Range r = excelWorkSheet.get_Range("A2:AC" + (ds.Tables[0].Rows.Count + 1).ToString());
 
                 Excel.Range PrevPPBUsed = excelWorkSheet.get_Range("S:S");
                 PrevPPBUsed.Columns.EntireColumn.AutoFit();
@@ -5287,7 +5033,7 @@ namespace IAC2021SQL
                 excelWorkSheet.PageSetup.BottomMargin = .25;
                 excelWorkSheet.PageSetup.FitToPagesWide = 1;
                 excelWorkSheet.PageSetup.Zoom = false;
-                
+
                 excelApp.ActiveWindow.View = Excel.XlWindowView.xlNormalView;
 
                 excelWorkSheet.get_Range("A:R").Font.Size = 11;

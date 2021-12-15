@@ -279,7 +279,7 @@ namespace IAC2021SQL
 
         private void customerMaintenanceToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CreateFormInstance("frmCustMaint", false);
+            CreateFormInstance("frmNewCustMaint", false);
         }
 
         private void dealerMaintenanceToolStripMenuItem_Click(object sender, EventArgs e)
