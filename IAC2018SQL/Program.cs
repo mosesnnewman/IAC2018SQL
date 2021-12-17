@@ -2927,13 +2927,16 @@ namespace IAC2021SQL
 				}
 			}
 
+			ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
 			var token = Program.GetLicense();
-			var request = new RestRequest("api/dbs/{db}/archives/{arch}?token={token}", Method.POST);
-			request.AddParameter("token",token, ParameterType.UrlSegment); //have to specifiy type on POST
+			// Moses Newman 12/16/2021 Replaced RestRequest("api/dbs/{db}/archives/{arch}?token={token}" 
+			// with RestRequest("api/dbs/{db}/archives/{arch}?token=" + (String)token because suddenly {token} was not being substituted.
+			var request = new RestRequest("api/dbs/{db}/archives/{arch}?token=" + (String)token, Method.POST);
+			//request.AddParameter("token",token, ParameterType.UrlSegment); //have to specifiy type on POST
 			request.AddParameter("db", DatabaseID, ParameterType.UrlSegment);
 			request.AddParameter("arch", ArchiveID, ParameterType.UrlSegment);
 			request.RequestFormat = DataFormat.Json;
-			request.AddBody(indexData);
+			request.AddJsonBody(indexData);
 
 			var response = ApiClient.Execute(request);
 			if (response.StatusCode != HttpStatusCode.OK)

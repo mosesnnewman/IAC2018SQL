@@ -149,7 +149,8 @@ namespace IAC2021SQL
             }
 
             oWord.Visible = true;
-
+            oWord.Activate();
+            oWord.WindowState = Word.WdWindowState.wdWindowStateMaximize;
             oWordDoc = oWord.Documents.Add(ref oTemplatePath, ref oMissing, ref oMissing, ref oTrue);
             Word.MailMerge wrdMailMerge;
 

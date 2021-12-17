@@ -33,7 +33,7 @@ using DevExpress.XtraBars;
 
 namespace IAC2021SQL
 {
-    public partial class frmNewCustMaint : DevExpress.XtraBars.TabForm
+    public partial class frmNewCustMaint : DevExpress.XtraEditors.XtraForm
     {
         // Moses Newman 12/16/2020
         BindingSource PaymentBindingSource = new BindingSource();
@@ -990,7 +990,8 @@ namespace IAC2021SQL
                         checkBoxSimple.Checked = false;
                         checkBoxSimple.Visible = false;
                     }
-                    toolStripButtonCalcBuyout.Visible = true;
+                    barButtonItemCaculateBuyout.Enabled = true;
+                    barButtonItemCaculateBuyout.Visibility = BarItemVisibility.Always;
                     String lcHighValue = "";
                     lcHighValue += (char)255;
                     // Moses Newman 04/30/2017 Handle US rule simple interest now and Normal Daily Compounding Set flag to checkbox valuye not forced true!
@@ -1040,7 +1041,7 @@ namespace IAC2021SQL
                     checkBoxSimple.Checked = false;
                     // Moses Newman 04/30/2017 hide simple interest checkbox for old customers.
                     checkBoxSimple.Visible = false;
-                    toolStripButtonCalcBuyout.Visible = false;
+                    barButtonItemCaculateBuyout.Visibility = BarItemVisibility.Always;
                 }
                 txtPaidInterest.Text = iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_BUY_OUT") == "Y" ?
                     (iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_PAID_INTEREST") -
@@ -1772,26 +1773,6 @@ namespace IAC2021SQL
             }
         }
 
-        public void toolStripButton1_Click(object sender, EventArgs e)
-        {
-            Visible = false;
-            form2inst = new frmCustomerLookup();
-            // Moses Newman 02/21/2018 set new property of lookup form so it knows its Closed ONLY!
-            form2inst.LookupFormType = "C";
-
-            form2inst.ShowDialog();
-            form2inst.Dispose();
-            Visible = true;
-            if (Program.gsKey != null)
-            {
-                cUSTOMER_NOTextBox.Text = Program.gsKey;
-                setRelatedData();
-                ActiveControl = cUSTOMER_FIRST_NAMETextBox;
-                cUSTOMER_FIRST_NAMETextBox.Select();
-            }
-            Program.gsKey = null;
-        }
-
         //Move to FirstPayDate
         private void textBox46_Validated(object sender, EventArgs e)
         {
@@ -1901,493 +1882,6 @@ namespace IAC2021SQL
                     Create_New_OPNBANKRecord(cUSTOMER_NOTextBox.Text.ToString().TrimEnd());
                 if (iACDataSet.VEHICLE.Rows.Count == 0)
                     Create_New_VEHICLERecord(cUSTOMER_NOTextBox.Text.ToString().TrimEnd());
-            }
-        }
-
-        private void toolStripButtonSave_Click(object sender, EventArgs e)
-        {
-            if (!lbAddFlag && !lbEdit)
-            {
-                toolStripButtonSave.Enabled = false;
-                return;
-            }
-            gbInSave = true;
-            string lsCustomerNo;
-            // Moses Newman 01/09/2014 Added Form.Validate() call so that current field gets validated prior to the BindingSource.EndEdit() call!
-            Validate();
-            // Moses Newman 08/02/2013 if we were in EDIT mode as opposed to ADD mode we must restore original CUSTOMER_BALANCE as only posting routines and new business can alter the balance.
-            if (lbEdit)
-            {
-                // Moses Newman 07/13/2020 Get last CUSTOMER_BALANCE AND BUYOUT inc case gn variables not properly set.  NEVER CHANGE THOSE FIELDS durig maintenance update.
-                IACDataSet OldData = new IACDataSet();
-                cUSTOMERTableAdapter.Fill(OldData.CUSTOMER, iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<String>("CUSTOMER_NO"));
-                if (OldData.CUSTOMER.Rows.Count != 0)
-                {
-                    if (gnCustomerBalance != OldData.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_BALANCE"))
-                        gnCustomerBalance = OldData.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_BALANCE");
-                    if (gnCustomerBuyout != OldData.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_BUYOUT"))
-                        gnCustomerBuyout = OldData.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_BUYOUT");
-                }
-                OldData.Dispose();
-                // 07/13/2020 End old buyout and balance check. 
-                if (gnCustomerBalance != 0)
-                {
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Decimal>("CUSTOMER_BALANCE", gnCustomerBalance);
-                }
-
-                if (gnCustomerBuyout != 0)
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Decimal>("CUSTOMER_BUYOUT", gnCustomerBuyout);
-
-                if (iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<Decimal>("CUSTOMER_BALANCE") == 0)
-                {
-                    loLastBalance = cUSTHISTTableAdapter.LastBalance(cUSTOMER_NOTextBox.Text);
-                    if (loLastBalance != null)
-                        gnCustomerBalance = (Decimal)loLastBalance;
-                    if (gnCustomerBalance != 0)
-                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Decimal>("CUSTOMER_BALANCE", gnCustomerBalance);
-                }
-            }
-            gnCustomerBalance = 0;
-            gnCustomerBuyout = 0;
-            Validate();  //Validate form so all data sets are updated with field values
-            cUSTOMERBindingSource.EndEdit();
-
-            if (cUSTOMER_FIRST_NAMETextBox.Text.Length == 0)
-            {
-                GeneralValidationError("*** You must enter a FIRST NAME! ***", cUSTOMER_FIRST_NAMETextBox);
-                return;
-            }
-
-            if (cUSTOMER_LAST_NAMETextBox.Text.Length == 0)
-            {
-                GeneralValidationError("*** You must enter a LAST NAME! ***", cUSTOMER_LAST_NAMETextBox);
-                return;
-            }
-
-            if (cUSTOMER_STREET_1TextBox.Text.Length == 0)
-            {
-                GeneralValidationError("*** You must enter at least ONE ADDRESS line! ***", cUSTOMER_STREET_1TextBox);
-                return;
-            }
-            if (cUSTOMER_CITYTextBox.Text.Length == 0)
-            {
-                GeneralValidationError(@"*** You must enter the customer's CITY! ***", cUSTOMER_CITYTextBox);
-                return;
-            }
-            if (cUSTOMER_STATETextBox.Text.Length == 0)
-            {
-                GeneralValidationError(@"*** You must enter the customer's STATE! ***", cUSTOMER_STATETextBox);
-                return;
-            }
-            if (cUSTOMER_ZIP_1TextBox.Text.Length == 0)
-            {
-                GeneralValidationError(@"*** You must enter the customer's ZIP CODE! ***", cUSTOMER_ZIP_1TextBox);
-                return;
-            }
-
-            if (cUSTOMER_DEALERcomboBox.Text.Length == 0)
-            {
-                GeneralValidationError("*** You must enter a DEALER NUMBER! ***", cUSTOMER_DEALERcomboBox);
-                return;
-            }
-            if (lbAddFlag)
-            {
-                if (txtCASH.Text.Length == 0 || Convert.ToDecimal(txtCASH.Text.Substring(1)) == 0)
-                {
-                    xtraTabControlCustomerMaint.SelectedTabPageIndex = 1;
-                    GeneralValidationError(@"*** You must enter the customer's loan amount (CASH)! ***", txtCASH);
-                    ActiveControl = txtCASH;
-                    txtCASH.SelectAll();
-                    return;
-                }
-                if (txtTerm.Text.Length == 0 || Convert.ToInt32(txtTerm.Text) == 0)
-                {
-                    xtraTabControlCustomerMaint.SelectedTabPageIndex = 1;
-                    GeneralValidationError(@"*** You must enter the customer's loan TERM! ***", txtTerm);
-                    ActiveControl = txtTerm;
-                    txtTerm.SelectAll();
-                    return;
-                }
-                if ((txtRegularPay.Text.Length == 0 || Convert.ToDecimal(txtRegularPay.Text.Substring(1)) == 0) &&
-                    (txtAPR.Text.Length == 0 || Convert.ToDecimal(txtAPR.Text) == 0))
-                {
-                    xtraTabControlCustomerMaint.SelectedTabPageIndex = 1;
-                    GeneralValidationError(@"*** You must enter either the customer's Monthly Payment (REGULAR PAYMENT), APR, OR BOTH! ***", txtRegularPay);
-                    GeneralValidationError(@"*** You must enter either the customer's Monthly Payment (REGULAR PAYMENT), APR, OR BOTH! ***", txtAPR);
-                    ActiveControl = txtRegularPay;
-                    txtRegularPay.SelectAll();
-                    return;
-                }
-                if (comboBoxDayDue.SelectedIndex < 0 && comboBoxDayDue.Text.Length == 0)
-                {
-                    xtraTabControlCustomerMaint.SelectedTabPageIndex = 1;
-                    GeneralValidationError(@"*** You must enter the customer's DAY DUE ***", comboBoxDayDue);
-                    ActiveControl = comboBoxDayDue;
-                    comboBoxDayDue.SelectAll();
-                    return;
-                }
-            }
-            // Moses Newman 11/12/2013 Add check for Valid Vehicle Year if the field is NOT left blank!
-            if (txtVehicleYear.Text.Length > 0 && Convert.ToInt32(txtVehicleYear.Text) < 1000 && txtVehicleYear.Text.TrimEnd() != "0")
-            {
-                xtraTabControlCustomerMaint.SelectedTabPageIndex = 2;
-                GeneralValidationError(@"*** You must enter a valid VEHICLE Year if the field is NOT left blank! ***", txtVehicleYear);
-                ActiveControl = txtVehicleYear;
-                txtVehicleYear.SelectAll();
-                return;
-            }
-            lsCustomerNo = cUSTOMER_NOTextBox.Text.ToString().Trim();
-            cUSTOMER_PURCHASE_ORDERTextBox.Text = cUSTOMER_PURCHASE_ORDERTextBox.Text.TrimEnd();
-            cUSTOMERBindingSource.EndEdit();
-            cUSTHISTBindingSource.EndEdit();
-            cOMMENTBindingSource.EndEdit();
-            ALTNAMEbindingSource.EndEdit();
-            VehiclebindingSource.EndEdit();
-            OPNBANKbindingSource.EndEdit();
-            // Moses Newman 12/23/2013 Added email address record!
-            EmailbindingSource.EndEdit();
-            // Moses Newman 06/12/2018 Added CustomerFees record!
-            CustomerFeesBindingSource.EndEdit();
-            // Moses Newman 08/13/2020 Add save of TSB data
-            closedCreditManagerBindingSource.EndEdit();
-
-            try
-            {
-                tableAdapConn = new System.Data.SqlClient.SqlConnection();
-                tableAdapConn.ConnectionString = IAC2021SQL.Properties.Settings.Default.IAC2010SQLConnectionString;
-                tableAdapConn.Open();
-                cUSTOMERTableAdapter.Connection = tableAdapConn;
-                tableAdapTran = cUSTOMERTableAdapter.BeginTransaction();
-                cUSTOMERTableAdapter.Transaction = tableAdapTran;
-
-                cUSTOMERTableAdapter.Update(iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position]);
-                // Moses Newman 10/23/2013 Add Code to create rate change event to turn on or off interest depending on interest overide setting
-                if (lbEdit)
-                {
-                    String lsCustKey = iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<String>("CUSTOMER_NO");//, lsExpression = "", lsSort = "";
-                    Boolean lbInterestOveride = false;
-                    Object loLastIntOverideZero = null;// loCustHistSeq = null;
-                    DateTime ldCustDate = DateTime.Now.Date;
-                    //DataRow[] FoundItems = null;
-                    // Moses Newman 01/08/2014 DO NOT CREATE AN INTEREST OVERIDE RECORD IF THE CUSTOMER IS ALREADY IN INTEREST OVERRIDE STATUS!
-                    if (iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<String>("CUSTOMER_INT_OVERRIDE") == "Y" && !lbAlreadyIntOverride)
-                    {
-                        loLastIntOverideZero = cUSTHISTTableAdapter.IsLastRateChangeZero(lsCustKey);
-                        if (loLastIntOverideZero != null)
-                            lbInterestOveride = ((Int32)loLastIntOverideZero == 1) ? true : false;
-                        if (!lbInterestOveride)
-                        {
-                            PaymentBindingSource.DataSource = iACDataSet.PAYMENT;
-                            PaymentBindingSource.AddNew();
-                            PaymentBindingSource.EndEdit();
-
-                            iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position].SetField<String>("PAYMENT_CUSTOMER", lsCustKey);
-                            iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position].SetField<String>("PAYMENT_ADD_ON", " ");
-                            iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position].SetField<String>("PAYMENT_IAC_TYPE", "C");
-                            iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position].SetField<DateTime>("PAYMENT_DATE", DateTime.Now.Date);
-                            iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position].SetField<String>("PAYMENT_POST_INDICATOR", " ");
-                            iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position].SetField<String>("PAYMENT_DEALER", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<String>("CUSTOMER_DEALER"));
-                            iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position].SetField<String>("PAYMENT_TYPE", "F");
-                            iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position].SetField<String>("PAYMENT_CODE_2", " ");
-                            iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position].SetField<String>("PAYMENT_AUTO_PAY", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<String>("CUSTOMER_AUTOPAY"));
-                            iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position].SetField<String>("PAYMENT_TSB_COMMENT_CODE", "");
-                            iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position].SetField<Decimal>("PAYMENT_AMOUNT_RCV", 0);
-
-                            PaymentBindingSource.EndEdit();
-                            PAYMENTTableAdapter.Connection = tableAdapConn;
-                            PAYMENTTableAdapter.Transaction = tableAdapTran;
-                            PAYMENTTableAdapter.Update(iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position]);
-                            /*//This code gets the next available sequence number for todays date if another history record for today exists
-                            loCustHistSeq = cUSTHISTTableAdapter.SeqNoQuery(lsCustKey, DateTime.Now.Date);
-                            if (loCustHistSeq != null)
-                                lnSeq = (int)loCustHistSeq + 1;
-                            else
-                                lnSeq = 1;
-                            ldCustDate = DateTime.Now.Date;
-                            // If any history records with the same customer no already exist in the DataTable, we must check IT for the last sequence number.
-                            lsExpression = "CUSTHIST_NO = \'" + lsCustKey + "\' and CUSTHIST_PAY_DATE = \'" + ldCustDate.ToShortDateString() + "\' and max(custhist_date_seq) > 0";
-                            lsSort = "custhist_date_seq desc";
-                            FoundItems = iACDataSet.CUSTHIST.Select(lsExpression, lsSort);
-
-                            if (FoundItems.Length != 0)
-                            {
-                                lnSeq = FoundItems[0].Field<Int32>("CUSTHIST_DATE_SEQ") + 1;
-                            }
-                            cUSTHISTBindingSource.AddNew();
-                            cUSTHISTBindingSource.EndEdit();
-
-                            iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<String>("CUSTHIST_NO", lsCustKey);
-                            iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<DateTime>("CUSTHIST_PAY_DATE", DateTime.Now.Date);
-                            iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Int32>("CUSTHIST_DATE_SEQ", lnSeq);
-                            // Moses Newman 03/15/2018 Added TransactionDate, Fee, FromIVR
-                            iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<DateTime>("TransactionDate", DateTime.Now.Date);
-                            iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Decimal>("Fee", 0);
-                            iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Boolean>("FromIVR", false);
-                            iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<String>("CUSTHIST_ACT_STAT", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<String>("CUSTOMER_ACT_STAT"));
-                            iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Decimal>("CUSTHIST_BALANCE", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<Decimal>("CUSTOMER_BALANCE"));
-                            iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Decimal>("CUSTHIST_PAID_DISCOUNT", Convert.ToDecimal(iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<Double>("CUSTOMER_PAID_DISCOUNT")));
-                            iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Decimal>("CUSTHIST_PAID_INTEREST", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<Decimal>("CUSTOMER_PAID_INTEREST"));
-                            iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Decimal>("CUSTHIST_PAYMENT_RCV", 0);
-                            iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Decimal>("CUSTHIST_LATE_CHARGE", 0);
-                            iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Decimal>("CUSTHIST_LATE_CHARGE_BAL", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<Decimal>("CUSTOMER_LATE_CHARGE_BAL"));
-                            iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Decimal>("CUSTHIST_LATE_CHARGE_PAID", 0);
-                            iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Decimal>("CUSTHIST_BUYOUT", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<Decimal>("CUSTOMER_BUYOUT"));
-                            iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<String>("CUSTHIST_AUTO_PAY", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<String>("CUSTOMER_AUTOPAY"));
-                            iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<String>("CUSTHIST_PAY_REM_1", "RTCHG");
-                            iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Int32>("CUSTHIST_PAY_REM_2", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<Int32>("CUSTOMER_PAY_REM_2"));
-                            iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<String>("CUSTHIST_PAYMENT_TYPE", "F");
-                            iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<String>("CUSTHIST_PAYMENT_CODE", "");
-                            iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Decimal>("CUSTHIST_CONTRACT_STATUS", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<Decimal>("CUSTOMER_CONTRACT_STATUS"));
-                            iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<String>("CUSTHIST_PAID_THRU", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<String>("CUSTOMER_PAID_THRU"));
-                            iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Decimal>("TVRateChange", 0);
-                            cUSTHISTBindingSource.EndEdit();
-
-                            cUSTHISTTableAdapter.Connection = tableAdapConn;
-                            cUSTHISTTableAdapter.Transaction = tableAdapTran;
-                            cUSTHISTTableAdapter.Update(iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position]);*/
-                        }
-                    }
-                    else
-                    {
-                        if (iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<String>("CUSTOMER_INT_OVERRIDE") == "N")
-                        {
-                            loLastIntOverideZero = cUSTHISTTableAdapter.IsLastRateChangeZero(lsCustKey);
-                            if (loLastIntOverideZero != null)
-                                lbInterestOveride = ((Int32)loLastIntOverideZero == 1) ? true : false;
-                            // Last interest overide record exists and was zero
-                            if (lbInterestOveride)
-                            {
-                                PaymentBindingSource.DataSource = iACDataSet.PAYMENT;
-                                PaymentBindingSource.AddNew();
-                                PaymentBindingSource.EndEdit();
-
-                                iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position].SetField<String>("PAYMENT_CUSTOMER", lsCustKey);
-                                iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position].SetField<String>("PAYMENT_ADD_ON", " ");
-                                iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position].SetField<String>("PAYMENT_IAC_TYPE", "C");
-                                iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position].SetField<DateTime>("PAYMENT_DATE", DateTime.Now.Date);
-                                iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position].SetField<String>("PAYMENT_POST_INDICATOR", " ");
-                                iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position].SetField<String>("PAYMENT_DEALER", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<String>("CUSTOMER_DEALER"));
-                                iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position].SetField<String>("PAYMENT_TYPE", "F");
-                                iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position].SetField<String>("PAYMENT_CODE_2", " ");
-                                iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position].SetField<String>("PAYMENT_AUTO_PAY", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<String>("CUSTOMER_AUTOPAY"));
-                                iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position].SetField<String>("PAYMENT_TSB_COMMENT_CODE", "");
-                                iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position].SetField<Decimal>("PAYMENT_AMOUNT_RCV", 0);
-
-                                PaymentBindingSource.EndEdit();
-                                PAYMENTTableAdapter.Connection = tableAdapConn;
-                                PAYMENTTableAdapter.Transaction = tableAdapTran;
-                                PAYMENTTableAdapter.Update(iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position]);
-
-                                /*
-                                //This code gets the next available sequence number for todays date if another history record for today exists
-                                loCustHistSeq = cUSTHISTTableAdapter.SeqNoQuery(lsCustKey, DateTime.Now.Date);
-                                if (loCustHistSeq != null)
-                                    lnSeq = (int)loCustHistSeq + 1;
-                                else
-                                    lnSeq = 1;
-                                ldCustDate = DateTime.Now.Date;
-                                // If any history records with the same customer no already exist in the DataTable, we must check IT for the last sequence number.
-                                lsExpression = "CUSTHIST_NO = \'" + lsCustKey + "\' and CUSTHIST_PAY_DATE = \'" + ldCustDate.ToShortDateString() + "\' and max(custhist_date_seq) > 0";
-                                lsSort = "custhist_date_seq desc";
-                                FoundItems = iACDataSet.CUSTHIST.Select(lsExpression, lsSort);
-
-                                if (FoundItems.Length != 0)
-                                {
-                                    lnSeq = FoundItems[0].Field<Int32>("CUSTHIST_DATE_SEQ") + 1;
-                                }
-
-                                cUSTHISTBindingSource.AddNew();
-                                cUSTHISTBindingSource.EndEdit();
-
-                                iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<String>("CUSTHIST_NO", lsCustKey);
-                                iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<DateTime>("CUSTHIST_PAY_DATE", DateTime.Now.Date);
-                                iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Int32>("CUSTHIST_DATE_SEQ", lnSeq);
-                                // Moses Newman 03/15/2018 Added TransactionDate, Fee, FromIVR
-                                iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<DateTime>("TransactionDate", DateTime.Now.Date);
-                                iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Decimal>("Fee", 0);
-                                iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Boolean>("FromIVR", false);
-                                iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<String>("CUSTHIST_ACT_STAT", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<String>("CUSTOMER_ACT_STAT"));
-                                iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Decimal>("CUSTHIST_BALANCE", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<Decimal>("CUSTOMER_BALANCE"));
-                                iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Decimal>("CUSTHIST_PAID_DISCOUNT", Convert.ToDecimal(iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<Double>("CUSTOMER_PAID_DISCOUNT")));
-                                iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Decimal>("CUSTHIST_PAID_INTEREST", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<Decimal>("CUSTOMER_PAID_INTEREST"));
-                                iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Decimal>("CUSTHIST_PAYMENT_RCV", 0);
-                                iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Decimal>("CUSTHIST_LATE_CHARGE", 0);
-                                iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Decimal>("CUSTHIST_LATE_CHARGE_BAL", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<Decimal>("CUSTOMER_LATE_CHARGE_BAL"));
-                                iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Decimal>("CUSTHIST_LATE_CHARGE_PAID", 0);
-                                iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Decimal>("CUSTHIST_BUYOUT", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<Decimal>("CUSTOMER_BUYOUT"));
-                                iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<String>("CUSTHIST_AUTO_PAY", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<String>("CUSTOMER_AUTOPAY"));
-                                iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<String>("CUSTHIST_PAY_REM_1", "RTCHG");
-                                iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Int32>("CUSTHIST_PAY_REM_2", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<Int32>("CUSTOMER_PAY_REM_2"));
-                                iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<String>("CUSTHIST_PAYMENT_TYPE", "F");
-                                iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<String>("CUSTHIST_PAYMENT_CODE", "");
-                                iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Decimal>("CUSTHIST_CONTRACT_STATUS", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<Decimal>("CUSTOMER_CONTRACT_STATUS"));
-                                iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<String>("CUSTHIST_PAID_THRU", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<String>("CUSTOMER_PAID_THRU"));
-                                // TURN INTEREST BACK ON!
-                                iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Decimal>("TVRateChange", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<Decimal>("CUSTOMER_ANNUAL_PERCENTAGE_RATE"));
-                                cUSTHISTBindingSource.EndEdit();
-
-                                cUSTHISTTableAdapter.Connection = tableAdapConn;
-                                cUSTHISTTableAdapter.Transaction = tableAdapTran;
-                                cUSTHISTTableAdapter.Update(iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position]);
-                                */
-                            }
-                        }
-                    }
-                }
-                aLTNAMETableAdapter.Connection = tableAdapConn;
-                aLTNAMETableAdapter.Transaction = tableAdapTran;
-                aLTNAMETableAdapter.Update(iACDataSet.ALTNAME.Rows[ALTNAMEbindingSource.Position]);
-
-                oPNBANKTableAdapter.Connection = tableAdapConn;
-                oPNBANKTableAdapter.Transaction = tableAdapTran;
-                oPNBANKTableAdapter.Update(iACDataSet.OPNBANK.Rows[OPNBANKbindingSource.Position]);
-
-                vEHICLETableAdapter.Connection = tableAdapConn;
-                vEHICLETableAdapter.Transaction = tableAdapTran;
-                vEHICLETableAdapter.Update(iACDataSet.VEHICLE.Rows[VehiclebindingSource.Position]);
-
-                //Program.UpdateComments(ref iACDataSet, ref cOMMENTBindingSource);
-
-                cOMMENTTableAdapter.Connection = tableAdapConn;
-                cOMMENTTableAdapter.Transaction = tableAdapTran;
-                cOMMENTTableAdapter.Update(iACDataSet.COMMENT);  // Delete, Update, and Insert all the customers comment records!
-
-
-                // Moses Newman 12/23/2013 Add Email address             
-                emailTableAdapter.Connection = tableAdapConn;
-                emailTableAdapter.Transaction = tableAdapTran;
-                emailTableAdapter.Update(iACDataSet.Email.Rows[EmailbindingSource.Position]);
-
-                // Moses Newman 06/12/2018 Add CustomerFees
-                CustomerFeesTableAdapter.Connection = tableAdapConn;
-                CustomerFeesTableAdapter.Transaction = tableAdapTran;
-                CustomerFeesTableAdapter.Update(iACDataSet.CustomerFees.Rows[CustomerFeesBindingSource.Position]);
-
-                // Moses Newman 08/13/2020 Add save of TSB data
-                if (tsbDataSet.ClosedCreditManager.Rows.Count != 0)
-                {
-                    closedCreditManagerTableAdapter.Connection = tableAdapConn;
-                    closedCreditManagerTableAdapter.Transaction = tableAdapTran;
-                    closedCreditManagerTableAdapter.Update(tsbDataSet.ClosedCreditManager.Rows[closedCreditManagerBindingSource.Position]);
-                }
-
-                tableAdapTran.Commit();
-            }
-            catch (System.Data.SqlClient.SqlException ex)
-            {
-                tableAdapTran.Rollback();
-                cUSTOMERTableAdapter.UnlockRecord(iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<String>("CUSTOMER_NO"));
-                MessageBox.Show("There is a Micriosft SQL Server database error " + ex.Message.ToString());
-            }
-            catch (System.InvalidOperationException ex)
-            {
-                tableAdapTran.Rollback();
-                cUSTOMERTableAdapter.UnlockRecord(iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<String>("CUSTOMER_NO"));
-                MessageBox.Show("Error: " + ex.Message.ToString());
-            }
-            catch (System.Data.DBConcurrencyException ex)
-            {
-                tableAdapTran.Rollback();
-                cUSTOMERTableAdapter.UnlockRecord(iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<String>("CUSTOMER_NO"));
-                MessageBox.Show("Error: " + ex.Message.ToString());
-            }
-            finally
-            {
-                cUSTOMERTableAdapter.UnlockRecord(iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<String>("CUSTOMER_NO"));
-                tableAdapConn.Close();
-                tableAdapConn = null;
-                tableAdapTran = null;
-                toolStripButtonSave.Enabled = false;
-                Program.gsKey = null;
-                lbAddFlag = false;
-                lbEdit = false;
-            }
-            SetViewMode();
-            gbInSave = false;
-        }
-
-        private void toolStripButtonEdit_Click(object sender, EventArgs e)
-        {
-            lbEdit = true;
-            LockCustomerRecord();
-            if (lbEdit)
-                SetEditMode();
-            else
-                Refresh();
-        }
-
-        private void toolStripButtonDelete_Click(object sender, EventArgs e)
-        {
-            String lcHighValue = "" + (char)255;
-            // Moses Newman 06/12/2020 Second test to make sure that only NON-POSTED NEW business can be deleted!
-            if (iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<String>("CUSTOMER_POST_IND") != lcHighValue)
-                return;
-            string lsCustomerNo = "";
-
-            Validate();  //Validate form so all data sets are updated with field values
-            lsCustomerNo = cUSTOMER_NOTextBox.Text.ToString().TrimEnd();
-
-            tableAdapConn = new System.Data.SqlClient.SqlConnection();
-            tableAdapConn.ConnectionString = IAC2021SQL.Properties.Settings.Default.IAC2010SQLConnectionString;
-            tableAdapConn.Open();
-            cUSTOMERTableAdapter.Connection = tableAdapConn;
-            tableAdapTran = cUSTOMERTableAdapter.BeginTransaction();
-            aLTNAMETableAdapter.Connection = tableAdapConn;
-            aLTNAMETableAdapter.Transaction = tableAdapTran;
-            oPNBANKTableAdapter.Connection = tableAdapConn;
-            oPNBANKTableAdapter.Transaction = tableAdapTran;
-            vEHICLETableAdapter.Connection = tableAdapConn;
-            vEHICLETableAdapter.Transaction = tableAdapTran;
-            cOMMENTTableAdapter.Connection = tableAdapConn;
-            cOMMENTTableAdapter.Transaction = tableAdapTran;
-            // Moses Newman 03/27/2013 Add delete from Email SQL server Table!!!
-            emailTableAdapter.Connection = tableAdapConn;
-            emailTableAdapter.Transaction = tableAdapTran;
-
-            try
-            {
-                cUSTOMERTableAdapter.DeleteQuery(lsCustomerNo);
-                aLTNAMETableAdapter.DeleteQuery(lsCustomerNo, "C");
-                oPNBANKTableAdapter.DeleteQuery(lsCustomerNo, "C");
-                vEHICLETableAdapter.DeleteQuery(lsCustomerNo);
-                cOMMENTTableAdapter.DeleteQuery(lsCustomerNo);
-                // Moses Newman 03/27/2013 Add delete from Email SQL server Table!!!
-                emailTableAdapter.Delete(lsCustomerNo);
-                tableAdapTran.Commit();
-            }
-            catch (System.Data.SqlClient.SqlException ex)
-            {
-                tableAdapTran.Rollback();
-                MessageBox.Show("This is a Microsoft SQL Server database error: " + ex.Message.ToString());
-            }
-            catch (System.InvalidOperationException ex)
-            {
-                tableAdapTran.Rollback();
-                MessageBox.Show("Invalid Operation Error: " + ex.Message.ToString());
-            }
-            catch (Exception ex)
-            {
-                tableAdapTran.Rollback();
-                MessageBox.Show("General Exception Error: " + ex.Message.ToString());
-            }
-            finally
-            {
-                tableAdapConn.Close();
-                tableAdapConn = null;
-                tableAdapTran = null;
-                toolStripButtonDelete.Enabled = false;
-                toolStripButtonEdit.Enabled = false;
-                iACDataSet.CUSTOMER.Clear();
-                iACDataSet.ALTNAME.Clear();
-                iACDataSet.OPNBANK.Clear();
-                iACDataSet.VEHICLE.Clear();
-                iACDataSet.COMMENT.Clear();
-                // Moses Newman 03/27/2013 Add SQL Serrver Email Table to DELETE
-                iACDataSet.Email.Clear();
-                cUSTOMER_DEALERcomboBox.Text = "";
-                DealerNamecomboBox.Text = "";
-                Program.gsKey = null;
-                frmNewCustMaint_Load(sender, e);
             }
         }
 
@@ -2643,7 +2137,7 @@ namespace IAC2021SQL
 
         private void txtBankRoutingNumber_TextChanged(object sender, EventArgs e)
         {
-            if (lbEdit && toolStripButtonSave.Enabled == false)
+           if (lbEdit && toolStripButtonSave.Enabled == false)
                 toolStripButtonSave.Enabled = true;
             if (txtBankRoutingNumber.Text.TrimEnd().Length == 9)
             {
@@ -2675,126 +2169,6 @@ namespace IAC2021SQL
                     ExpMonthcomboBox.SelectedValue.ToString().PadLeft(2, '0') + ExpYearcomboBox.Text.Substring(2, 2));
                 OPNBANKbindingSource.EndEdit();
                 toolStripButtonSave.Enabled = true;
-            }
-        }
-
-        private void toolStripButtonAmort_Click(object sender, EventArgs e)
-        {
-            Double lnAnnualPercentageRate = 0, lnLoanInterest = 0, lnTotal = 0;
-            MDIIAC2013 MDImain = (MDIIAC2013)MdiParent;
-            MDImain.CreateFormInstance("ReportViewer", false);
-            ReportViewer rptViewr = (ReportViewer)MDImain.ActiveMdiChild;
-            switch (iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_AMORTIZE_IND"))
-            {
-                case " ":
-                    MessageBox.Show("Older account, amortization does not apply.");
-                    break;
-                case "A":
-                    Double lnApr = (Double)(iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_ANNUAL_PERCENTAGE_RATE") / 100),
-                            lnCash = (Double)iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_LOAN_CASH"),
-                            lnRegularAmount = (Double)iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_REGULAR_AMOUNT"),
-                            lnTerm = (Double)iACDataSet.CUSTOMER.Rows[0].Field<Int32>("CUSTOMER_TERM");
-                    // Moses Newman 01/21/2015 Add Contract Date Handling!
-                    DateTime ldStartDate = iACDataSet.CUSTOMER.Rows[0].Field<DateTime>("ContractDate"),
-                             ldFirstPaymentDate = iACDataSet.CUSTOMER.Rows[0].Field<DateTime>("CUSTOMER_INIT_DATE");
-                    ClosedPaymentPosting CP = new ClosedPaymentPosting();
-                    BackgroundWorker worker = new BackgroundWorker();
-
-                    AmortizationDistribution myReportObject = new AmortizationDistribution();
-
-                    IACDataSetTableAdapters.AmortTempTableAdapter AmortTempTableAdapter = new IACDataSetTableAdapters.AmortTempTableAdapter();
-
-                    AmortTempTableAdapter.FillByCustomer(iACDataSet.AmortTemp, iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO"));
-
-                    Program.AmortRec[] loAmortRec;
-                    String lsMessage = "";
-                    loAmortRec = new Program.AmortRec[Convert.ToInt32(lnTerm)];
-
-                    if (iACDataSet.AmortTemp.Rows.Count == 0 && !checkBoxSimple.Checked)
-                    {
-                        // Moses Newman 01/21/2015 Add Contract Date Handling!
-                        // Moses Newman 08/23/2021
-                        Program.TVAmortize(ldStartDate, ldFirstPaymentDate, ref lnCash, ref lnTerm, ref lnApr, ref lnRegularAmount, ref lsMessage, ref loAmortRec, false, iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO"), true);
-                        AmortTempTableAdapter.FillByCustomer(iACDataSet.AmortTemp, iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO"));
-                    }
-                    worker.Dispose();
-                    CP.Dispose();
-                    CP = null;
-                    myReportObject.SetDataSource(iACDataSet);
-                    // 09/27/2012 Moses Newman Handle Simple Interest Amort Scedule printing
-                    if (!checkBoxSimple.Checked)
-                        myReportObject.SetParameterValue("CompoundPeriod", "Compound Daily");
-                    else
-                        myReportObject.SetParameterValue("CompoundPeriod", "Daily Exact");
-                    myReportObject.SetParameterValue("APR", (iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_ANNUAL_PERCENTAGE_RATE") / 100));
-                    myReportObject.SetParameterValue("EffectiveAnnualRate", Math.Round(Math.Pow((1 + ((Double)(iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_ANNUAL_PERCENTAGE_RATE") / 100) / 12)), 12), 8) - 1);
-                    myReportObject.SetParameterValue("Term", iACDataSet.CUSTOMER.Rows[0].Field<Int32>("CUSTOMER_TERM"));
-                    myReportObject.SetParameterValue("AmountBorrowed", iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_LOAN_CASH"));
-                    myReportObject.SetParameterValue("TotalInterest", iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_LOAN_INTEREST"));
-                    myReportObject.SetParameterValue("FirstPaymentDate", iACDataSet.CUSTOMER.Rows[0].Field<DateTime>("CUSTOMER_INIT_DATE"));
-                    myReportObject.SetParameterValue("gsUserID", Program.gsUserID);
-                    myReportObject.SetParameterValue("gsUserName", Program.gsUserName);
-                    myReportObject.SetParameterValue("CustomerPrint", true);
-                    myReportObject.SetParameterValue("gsCustomer", iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO"));
-
-                    rptViewr.crystalReportViewer.ReportSource = myReportObject;
-                    rptViewr.crystalReportViewer.Refresh();
-                    rptViewr.Show();
-                    break;
-                case "S":
-                case "N":
-                    TVAmortizationDistribution TVAmortReport = new TVAmortizationDistribution();
-                    // Moses Newman 08/28/2013 Make sure Amortization Date is always >= the last transaction date or TimeValue will crash.
-                    Object loLastDate = cUSTHISTTableAdapter.LastTransactionDate(iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO"));
-                    IACDataSetTableAdapters.TVAmortTableAdapter TVAmortTableAdapter = new IACDataSetTableAdapters.TVAmortTableAdapter();
-                    // Moses Newman 08/23/2013 Variables added to handle Amort date always >= last tran date
-                    DateTime ldAmortDate = DateTime.Now.Date, ldLastDate = ldAmortDate;
-                    if (loLastDate != null)
-                        ldLastDate = (DateTime)loLastDate;
-                    if (ldLastDate > DateTime.Now.Date)
-                        ldAmortDate = ldLastDate;
-                    // Moses Newman 06/24/2014 Changed tbSave to true so that TV5 file is created matching Amort History
-                    // Moses Newman 04/30/2017 change true for simple interest to checkbox value!
-                    Program.TVSimpleGetBuyout(iACDataSet,
-                            ldAmortDate,
-                            (Double)iACDataSet.CUSTOMER.Rows[0].Field<Int32>("CUSTOMER_TERM"),
-                            (Double)(iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_ANNUAL_PERCENTAGE_RATE") / 100),
-                            (Double)iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_REGULAR_AMOUNT"),
-                            iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO"),
-                            checkBoxSimple.Checked, true, false, false);
-
-                    TVAmortTableAdapter.FillByCustomerNo(iACDataSet.TVAmort, iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO"));
-                    TVAPRInfoTableAdapter.Fill(iACDataSet.TVAPRInfo, "99-" + Program.gsUserID);
-                    if (iACDataSet.TVAPRInfo.Rows.Count > 0)
-                    {
-                        lnAnnualPercentageRate = (Double)iACDataSet.TVAPRInfo.Rows[0].Field<Decimal>("APR");
-                        lnCash = (Double)iACDataSet.TVAPRInfo.Rows[0].Field<Decimal>("AmountFinanced");
-                        lnLoanInterest = (Double)iACDataSet.TVAPRInfo.Rows[0].Field<Decimal>("FinanceCharge");
-                        lnTotal = (Double)iACDataSet.TVAPRInfo.Rows[0].Field<Decimal>("TotalofPayments");
-                    }
-
-                    TVAmortReport.SetDataSource(iACDataSet);
-                    if (!checkBoxSimple.Checked)
-                        TVAmortReport.SetParameterValue("CompoundPeriod", "Daily Exact");
-                    else
-                        TVAmortReport.SetParameterValue("CompoundPeriod", "Exact Days");
-                    TVAmortReport.SetParameterValue("APR", (iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_ANNUAL_PERCENTAGE_RATE") / 100));
-                    TVAmortReport.SetParameterValue("EffectiveAnnualRate", Math.Round(Math.Pow((1 + ((Double)(iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_ANNUAL_PERCENTAGE_RATE") / 100) / 12)), 12), 8) - 1);
-                    TVAmortReport.SetParameterValue("Term", iACDataSet.CUSTOMER.Rows[0].Field<Int32>("CUSTOMER_TERM"));
-                    TVAmortReport.SetParameterValue("AmountBorrowed", iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_LOAN_CASH"));
-                    TVAmortReport.SetParameterValue("TotalInterest", iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_LOAN_INTEREST"));
-                    // Moses Newman 01/21/2015 Handle Contract Date!
-                    TVAmortReport.SetParameterValue("FirstPaymentDate", iACDataSet.CUSTOMER.Rows[0].Field<DateTime>("ContractDate"));
-                    TVAmortReport.SetParameterValue("gsUserID", Program.gsUserID);
-                    TVAmortReport.SetParameterValue("gsUserName", Program.gsUserName);
-                    TVAmortReport.SetParameterValue("CustomerPrint", true);
-                    TVAmortReport.SetParameterValue("gsCustomer", iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO"));
-                    TVAmortReport.SetParameterValue("IsSimple", checkBoxSimple.Checked);
-
-                    rptViewr.crystalReportViewer.ReportSource = TVAmortReport;
-                    rptViewr.crystalReportViewer.Refresh();
-                    rptViewr.Show();
-                    break;
             }
         }
 
@@ -2971,17 +2345,6 @@ namespace IAC2021SQL
             iACDataSet.Clear();     // Moses Newman 09/04/2021  
             iACDataSet.Dispose();   // Moses Newman 09/04/2021 
         }
-
-        private void toolStripButtonCalcBuyout_Click(object sender, EventArgs e)
-        {
-            MDIIAC2013 MDImain = (MDIIAC2013)MdiParent;
-            MDImain.CreateFormInstance("CalcBuyout", false, false, true);
-            CalcBuyout BuyOut = (CalcBuyout)MDImain.frm;
-
-            BuyOut.gdsDataSet = iACDataSet;
-            BuyOut.Show();
-        }
-
 
         private void cUSTOMER_SS_1TextBox_TextChanged(object sender, EventArgs e)
         {
@@ -3284,6 +2647,7 @@ namespace IAC2021SQL
             ActiveControl = txtCOSFirstName;
             txtCOSFirstName.Select();
         }
+
 
         private void checkBoxFullRecourse_CheckedChanged(object sender, EventArgs e)
         {
@@ -4102,10 +3466,6 @@ namespace IAC2021SQL
             CalcTotalFees();
         }
 
-        private void cOMMENTGridView_DataSourceChanged(object sender, EventArgs e)
-        {
-        }
-
         // Return the WordImage for a specific row.
         private Bitmap getWordImage(GridView view, int listSourceRowIndex)
         {
@@ -4166,26 +3526,6 @@ namespace IAC2021SQL
         }
 
         //Moses Newman 11/23/2021 Use DevExpress GridView instead of DataGridView for comments tab now
-        private void tabComments_Enter(object sender, EventArgs e)
-        {
-            // Moses Newman 12/1/2021 order by id descending
-            GridColumn colID = cOMMENTgridView.Columns["id"];
-            //GridColumn colDate = cOMMENTgridView.Columns["COMMENT_DATE"];
-            //GridColumn colSeqNo = cOMMENTgridView.Columns["COMMENT_SEQ_NO"];
-            cOMMENTgridView.BeginSort();
-            try
-            {
-                cOMMENTgridView.ClearSorting();
-                // Moses Newman 12/1/2021 order by id descending
-                colID.SortOrder = ColumnSortOrder.Descending;
-                //colDate.SortOrder = ColumnSortOrder.Descending;
-                //colSeqNo.SortOrder = ColumnSortOrder.Descending;
-            }
-            finally
-            {
-                cOMMENTgridView.EndSort();
-            }
-        }
 
         private void xtraTabControlCustomerMaint_CloseButtonClick(object sender, EventArgs e)
         {
@@ -4232,6 +3572,1024 @@ namespace IAC2021SQL
                     edit.ForeColor = System.Drawing.SystemColors.GrayText;
                 else
                     edit.ForeColor = System.Drawing.SystemColors.ControlText;
+        }
+
+        private void tabFormControl1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripButton1_Click(object sender, ItemClickEventArgs e)
+        {
+            Visible = false;
+            form2inst = new frmCustomerLookup();
+            // Moses Newman 02/21/2018 set new property of lookup form so it knows its Closed ONLY!
+            form2inst.LookupFormType = "C";
+
+            form2inst.ShowDialog();
+            form2inst.Dispose();
+            Visible = true;
+            if (Program.gsKey != null)
+            {
+                cUSTOMER_NOTextBox.Text = Program.gsKey;
+                setRelatedData();
+                ActiveControl = cUSTOMER_FIRST_NAMETextBox;
+                cUSTOMER_FIRST_NAMETextBox.Select();
+            }
+            Program.gsKey = null;
+        }
+
+        private void toolStripButtonDelete_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            String lcHighValue = "" + (char)255;
+            // Moses Newman 06/12/2020 Second test to make sure that only NON-POSTED NEW business can be deleted!
+            if (iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<String>("CUSTOMER_POST_IND") != lcHighValue)
+                return;
+            string lsCustomerNo = "";
+
+            Validate();  //Validate form so all data sets are updated with field values
+            lsCustomerNo = cUSTOMER_NOTextBox.Text.ToString().TrimEnd();
+
+            tableAdapConn = new System.Data.SqlClient.SqlConnection();
+            tableAdapConn.ConnectionString = IAC2021SQL.Properties.Settings.Default.IAC2010SQLConnectionString;
+            tableAdapConn.Open();
+            cUSTOMERTableAdapter.Connection = tableAdapConn;
+            tableAdapTran = cUSTOMERTableAdapter.BeginTransaction();
+            aLTNAMETableAdapter.Connection = tableAdapConn;
+            aLTNAMETableAdapter.Transaction = tableAdapTran;
+            oPNBANKTableAdapter.Connection = tableAdapConn;
+            oPNBANKTableAdapter.Transaction = tableAdapTran;
+            vEHICLETableAdapter.Connection = tableAdapConn;
+            vEHICLETableAdapter.Transaction = tableAdapTran;
+            cOMMENTTableAdapter.Connection = tableAdapConn;
+            cOMMENTTableAdapter.Transaction = tableAdapTran;
+            // Moses Newman 03/27/2013 Add delete from Email SQL server Table!!!
+            emailTableAdapter.Connection = tableAdapConn;
+            emailTableAdapter.Transaction = tableAdapTran;
+
+            try
+            {
+                cUSTOMERTableAdapter.DeleteQuery(lsCustomerNo);
+                aLTNAMETableAdapter.DeleteQuery(lsCustomerNo, "C");
+                oPNBANKTableAdapter.DeleteQuery(lsCustomerNo, "C");
+                vEHICLETableAdapter.DeleteQuery(lsCustomerNo);
+                cOMMENTTableAdapter.DeleteQuery(lsCustomerNo);
+                // Moses Newman 03/27/2013 Add delete from Email SQL server Table!!!
+                emailTableAdapter.Delete(lsCustomerNo);
+                tableAdapTran.Commit();
+            }
+            catch (System.Data.SqlClient.SqlException ex)
+            {
+                tableAdapTran.Rollback();
+                MessageBox.Show("This is a Microsoft SQL Server database error: " + ex.Message.ToString());
+            }
+            catch (System.InvalidOperationException ex)
+            {
+                tableAdapTran.Rollback();
+                MessageBox.Show("Invalid Operation Error: " + ex.Message.ToString());
+            }
+            catch (Exception ex)
+            {
+                tableAdapTran.Rollback();
+                MessageBox.Show("General Exception Error: " + ex.Message.ToString());
+            }
+            finally
+            {
+                tableAdapConn.Close();
+                tableAdapConn = null;
+                tableAdapTran = null;
+                toolStripButtonDelete.Enabled = false;
+                toolStripButtonEdit.Enabled = false;
+                iACDataSet.CUSTOMER.Clear();
+                iACDataSet.ALTNAME.Clear();
+                iACDataSet.OPNBANK.Clear();
+                iACDataSet.VEHICLE.Clear();
+                iACDataSet.COMMENT.Clear();
+                // Moses Newman 03/27/2013 Add SQL Serrver Email Table to DELETE
+                iACDataSet.Email.Clear();
+                cUSTOMER_DEALERcomboBox.Text = "";
+                DealerNamecomboBox.Text = "";
+                Program.gsKey = null;
+                frmNewCustMaint_Load(sender, e);
+            }
+        }
+
+        private void toolStripButtonSave_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (!lbAddFlag && !lbEdit)
+            {
+                toolStripButtonSave.Enabled = false;
+                return;
+            }
+            gbInSave = true;
+            string lsCustomerNo;
+            // Moses Newman 01/09/2014 Added Form.Validate() call so that current field gets validated prior to the BindingSource.EndEdit() call!
+            Validate();
+            // Moses Newman 08/02/2013 if we were in EDIT mode as opposed to ADD mode we must restore original CUSTOMER_BALANCE as only posting routines and new business can alter the balance.
+            if (lbEdit)
+            {
+                // Moses Newman 07/13/2020 Get last CUSTOMER_BALANCE AND BUYOUT inc case gn variables not properly set.  NEVER CHANGE THOSE FIELDS durig maintenance update.
+                IACDataSet OldData = new IACDataSet();
+                cUSTOMERTableAdapter.Fill(OldData.CUSTOMER, iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<String>("CUSTOMER_NO"));
+                if (OldData.CUSTOMER.Rows.Count != 0)
+                {
+                    if (gnCustomerBalance != OldData.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_BALANCE"))
+                        gnCustomerBalance = OldData.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_BALANCE");
+                    if (gnCustomerBuyout != OldData.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_BUYOUT"))
+                        gnCustomerBuyout = OldData.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_BUYOUT");
+                }
+                OldData.Dispose();
+                // 07/13/2020 End old buyout and balance check. 
+                if (gnCustomerBalance != 0)
+                {
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Decimal>("CUSTOMER_BALANCE", gnCustomerBalance);
+                }
+
+                if (gnCustomerBuyout != 0)
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Decimal>("CUSTOMER_BUYOUT", gnCustomerBuyout);
+
+                if (iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<Decimal>("CUSTOMER_BALANCE") == 0)
+                {
+                    loLastBalance = cUSTHISTTableAdapter.LastBalance(cUSTOMER_NOTextBox.Text);
+                    if (loLastBalance != null)
+                        gnCustomerBalance = (Decimal)loLastBalance;
+                    if (gnCustomerBalance != 0)
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Decimal>("CUSTOMER_BALANCE", gnCustomerBalance);
+                }
+            }
+            gnCustomerBalance = 0;
+            gnCustomerBuyout = 0;
+            Validate();  //Validate form so all data sets are updated with field values
+            cUSTOMERBindingSource.EndEdit();
+
+            if (cUSTOMER_FIRST_NAMETextBox.Text.Length == 0)
+            {
+                GeneralValidationError("*** You must enter a FIRST NAME! ***", cUSTOMER_FIRST_NAMETextBox);
+                return;
+            }
+
+            if (cUSTOMER_LAST_NAMETextBox.Text.Length == 0)
+            {
+                GeneralValidationError("*** You must enter a LAST NAME! ***", cUSTOMER_LAST_NAMETextBox);
+                return;
+            }
+
+            if (cUSTOMER_STREET_1TextBox.Text.Length == 0)
+            {
+                GeneralValidationError("*** You must enter at least ONE ADDRESS line! ***", cUSTOMER_STREET_1TextBox);
+                return;
+            }
+            if (cUSTOMER_CITYTextBox.Text.Length == 0)
+            {
+                GeneralValidationError(@"*** You must enter the customer's CITY! ***", cUSTOMER_CITYTextBox);
+                return;
+            }
+            if (cUSTOMER_STATETextBox.Text.Length == 0)
+            {
+                GeneralValidationError(@"*** You must enter the customer's STATE! ***", cUSTOMER_STATETextBox);
+                return;
+            }
+            if (cUSTOMER_ZIP_1TextBox.Text.Length == 0)
+            {
+                GeneralValidationError(@"*** You must enter the customer's ZIP CODE! ***", cUSTOMER_ZIP_1TextBox);
+                return;
+            }
+
+            if (cUSTOMER_DEALERcomboBox.Text.Length == 0)
+            {
+                GeneralValidationError("*** You must enter a DEALER NUMBER! ***", cUSTOMER_DEALERcomboBox);
+                return;
+            }
+            if (lbAddFlag)
+            {
+                if (txtCASH.Text.Length == 0 || Convert.ToDecimal(txtCASH.Text.Substring(1)) == 0)
+                {
+                    xtraTabControlCustomerMaint.SelectedTabPageIndex = 1;
+                    GeneralValidationError(@"*** You must enter the customer's loan amount (CASH)! ***", txtCASH);
+                    ActiveControl = txtCASH;
+                    txtCASH.SelectAll();
+                    return;
+                }
+                if (txtTerm.Text.Length == 0 || Convert.ToInt32(txtTerm.Text) == 0)
+                {
+                    xtraTabControlCustomerMaint.SelectedTabPageIndex = 1;
+                    GeneralValidationError(@"*** You must enter the customer's loan TERM! ***", txtTerm);
+                    ActiveControl = txtTerm;
+                    txtTerm.SelectAll();
+                    return;
+                }
+                if ((txtRegularPay.Text.Length == 0 || Convert.ToDecimal(txtRegularPay.Text.Substring(1)) == 0) &&
+                    (txtAPR.Text.Length == 0 || Convert.ToDecimal(txtAPR.Text) == 0))
+                {
+                    xtraTabControlCustomerMaint.SelectedTabPageIndex = 1;
+                    GeneralValidationError(@"*** You must enter either the customer's Monthly Payment (REGULAR PAYMENT), APR, OR BOTH! ***", txtRegularPay);
+                    GeneralValidationError(@"*** You must enter either the customer's Monthly Payment (REGULAR PAYMENT), APR, OR BOTH! ***", txtAPR);
+                    ActiveControl = txtRegularPay;
+                    txtRegularPay.SelectAll();
+                    return;
+                }
+                if (comboBoxDayDue.SelectedIndex < 0 && comboBoxDayDue.Text.Length == 0)
+                {
+                    xtraTabControlCustomerMaint.SelectedTabPageIndex = 1;
+                    GeneralValidationError(@"*** You must enter the customer's DAY DUE ***", comboBoxDayDue);
+                    ActiveControl = comboBoxDayDue;
+                    comboBoxDayDue.SelectAll();
+                    return;
+                }
+            }
+            // Moses Newman 11/12/2013 Add check for Valid Vehicle Year if the field is NOT left blank!
+            if (txtVehicleYear.Text.Length > 0 && Convert.ToInt32(txtVehicleYear.Text) < 1000 && txtVehicleYear.Text.TrimEnd() != "0")
+            {
+                xtraTabControlCustomerMaint.SelectedTabPageIndex = 2;
+                GeneralValidationError(@"*** You must enter a valid VEHICLE Year if the field is NOT left blank! ***", txtVehicleYear);
+                ActiveControl = txtVehicleYear;
+                txtVehicleYear.SelectAll();
+                return;
+            }
+            lsCustomerNo = cUSTOMER_NOTextBox.Text.ToString().Trim();
+            cUSTOMER_PURCHASE_ORDERTextBox.Text = cUSTOMER_PURCHASE_ORDERTextBox.Text.TrimEnd();
+            cUSTOMERBindingSource.EndEdit();
+            cUSTHISTBindingSource.EndEdit();
+            cOMMENTBindingSource.EndEdit();
+            ALTNAMEbindingSource.EndEdit();
+            VehiclebindingSource.EndEdit();
+            OPNBANKbindingSource.EndEdit();
+            // Moses Newman 12/23/2013 Added email address record!
+            EmailbindingSource.EndEdit();
+            // Moses Newman 06/12/2018 Added CustomerFees record!
+            CustomerFeesBindingSource.EndEdit();
+            // Moses Newman 08/13/2020 Add save of TSB data
+            closedCreditManagerBindingSource.EndEdit();
+
+            try
+            {
+                tableAdapConn = new System.Data.SqlClient.SqlConnection();
+                tableAdapConn.ConnectionString = IAC2021SQL.Properties.Settings.Default.IAC2010SQLConnectionString;
+                tableAdapConn.Open();
+                cUSTOMERTableAdapter.Connection = tableAdapConn;
+                tableAdapTran = cUSTOMERTableAdapter.BeginTransaction();
+                cUSTOMERTableAdapter.Transaction = tableAdapTran;
+
+                cUSTOMERTableAdapter.Update(iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position]);
+                // Moses Newman 10/23/2013 Add Code to create rate change event to turn on or off interest depending on interest overide setting
+                if (lbEdit)
+                {
+                    String lsCustKey = iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<String>("CUSTOMER_NO");//, lsExpression = "", lsSort = "";
+                    Boolean lbInterestOveride = false;
+                    Object loLastIntOverideZero = null;// loCustHistSeq = null;
+                    DateTime ldCustDate = DateTime.Now.Date;
+                    //DataRow[] FoundItems = null;
+                    // Moses Newman 01/08/2014 DO NOT CREATE AN INTEREST OVERIDE RECORD IF THE CUSTOMER IS ALREADY IN INTEREST OVERRIDE STATUS!
+                    if (iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<String>("CUSTOMER_INT_OVERRIDE") == "Y" && !lbAlreadyIntOverride)
+                    {
+                        loLastIntOverideZero = cUSTHISTTableAdapter.IsLastRateChangeZero(lsCustKey);
+                        if (loLastIntOverideZero != null)
+                            lbInterestOveride = ((Int32)loLastIntOverideZero == 1) ? true : false;
+                        if (!lbInterestOveride)
+                        {
+                            PaymentBindingSource.DataSource = iACDataSet.PAYMENT;
+                            PaymentBindingSource.AddNew();
+                            PaymentBindingSource.EndEdit();
+
+                            iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position].SetField<String>("PAYMENT_CUSTOMER", lsCustKey);
+                            iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position].SetField<String>("PAYMENT_ADD_ON", " ");
+                            iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position].SetField<String>("PAYMENT_IAC_TYPE", "C");
+                            iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position].SetField<DateTime>("PAYMENT_DATE", DateTime.Now.Date);
+                            iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position].SetField<String>("PAYMENT_POST_INDICATOR", " ");
+                            iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position].SetField<String>("PAYMENT_DEALER", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<String>("CUSTOMER_DEALER"));
+                            iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position].SetField<String>("PAYMENT_TYPE", "F");
+                            iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position].SetField<String>("PAYMENT_CODE_2", " ");
+                            iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position].SetField<String>("PAYMENT_AUTO_PAY", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<String>("CUSTOMER_AUTOPAY"));
+                            iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position].SetField<String>("PAYMENT_TSB_COMMENT_CODE", "");
+                            iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position].SetField<Decimal>("PAYMENT_AMOUNT_RCV", 0);
+
+                            PaymentBindingSource.EndEdit();
+                            PAYMENTTableAdapter.Connection = tableAdapConn;
+                            PAYMENTTableAdapter.Transaction = tableAdapTran;
+                            PAYMENTTableAdapter.Update(iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position]);
+                            /*//This code gets the next available sequence number for todays date if another history record for today exists
+                            loCustHistSeq = cUSTHISTTableAdapter.SeqNoQuery(lsCustKey, DateTime.Now.Date);
+                            if (loCustHistSeq != null)
+                                lnSeq = (int)loCustHistSeq + 1;
+                            else
+                                lnSeq = 1;
+                            ldCustDate = DateTime.Now.Date;
+                            // If any history records with the same customer no already exist in the DataTable, we must check IT for the last sequence number.
+                            lsExpression = "CUSTHIST_NO = \'" + lsCustKey + "\' and CUSTHIST_PAY_DATE = \'" + ldCustDate.ToShortDateString() + "\' and max(custhist_date_seq) > 0";
+                            lsSort = "custhist_date_seq desc";
+                            FoundItems = iACDataSet.CUSTHIST.Select(lsExpression, lsSort);
+
+                            if (FoundItems.Length != 0)
+                            {
+                                lnSeq = FoundItems[0].Field<Int32>("CUSTHIST_DATE_SEQ") + 1;
+                            }
+                            cUSTHISTBindingSource.AddNew();
+                            cUSTHISTBindingSource.EndEdit();
+
+                            iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<String>("CUSTHIST_NO", lsCustKey);
+                            iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<DateTime>("CUSTHIST_PAY_DATE", DateTime.Now.Date);
+                            iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Int32>("CUSTHIST_DATE_SEQ", lnSeq);
+                            // Moses Newman 03/15/2018 Added TransactionDate, Fee, FromIVR
+                            iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<DateTime>("TransactionDate", DateTime.Now.Date);
+                            iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Decimal>("Fee", 0);
+                            iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Boolean>("FromIVR", false);
+                            iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<String>("CUSTHIST_ACT_STAT", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<String>("CUSTOMER_ACT_STAT"));
+                            iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Decimal>("CUSTHIST_BALANCE", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<Decimal>("CUSTOMER_BALANCE"));
+                            iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Decimal>("CUSTHIST_PAID_DISCOUNT", Convert.ToDecimal(iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<Double>("CUSTOMER_PAID_DISCOUNT")));
+                            iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Decimal>("CUSTHIST_PAID_INTEREST", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<Decimal>("CUSTOMER_PAID_INTEREST"));
+                            iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Decimal>("CUSTHIST_PAYMENT_RCV", 0);
+                            iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Decimal>("CUSTHIST_LATE_CHARGE", 0);
+                            iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Decimal>("CUSTHIST_LATE_CHARGE_BAL", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<Decimal>("CUSTOMER_LATE_CHARGE_BAL"));
+                            iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Decimal>("CUSTHIST_LATE_CHARGE_PAID", 0);
+                            iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Decimal>("CUSTHIST_BUYOUT", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<Decimal>("CUSTOMER_BUYOUT"));
+                            iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<String>("CUSTHIST_AUTO_PAY", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<String>("CUSTOMER_AUTOPAY"));
+                            iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<String>("CUSTHIST_PAY_REM_1", "RTCHG");
+                            iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Int32>("CUSTHIST_PAY_REM_2", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<Int32>("CUSTOMER_PAY_REM_2"));
+                            iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<String>("CUSTHIST_PAYMENT_TYPE", "F");
+                            iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<String>("CUSTHIST_PAYMENT_CODE", "");
+                            iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Decimal>("CUSTHIST_CONTRACT_STATUS", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<Decimal>("CUSTOMER_CONTRACT_STATUS"));
+                            iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<String>("CUSTHIST_PAID_THRU", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<String>("CUSTOMER_PAID_THRU"));
+                            iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Decimal>("TVRateChange", 0);
+                            cUSTHISTBindingSource.EndEdit();
+
+                            cUSTHISTTableAdapter.Connection = tableAdapConn;
+                            cUSTHISTTableAdapter.Transaction = tableAdapTran;
+                            cUSTHISTTableAdapter.Update(iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position]);*/
+                        }
+                    }
+                    else
+                    {
+                        if (iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<String>("CUSTOMER_INT_OVERRIDE") == "N")
+                        {
+                            loLastIntOverideZero = cUSTHISTTableAdapter.IsLastRateChangeZero(lsCustKey);
+                            if (loLastIntOverideZero != null)
+                                lbInterestOveride = ((Int32)loLastIntOverideZero == 1) ? true : false;
+                            // Last interest overide record exists and was zero
+                            if (lbInterestOveride)
+                            {
+                                PaymentBindingSource.DataSource = iACDataSet.PAYMENT;
+                                PaymentBindingSource.AddNew();
+                                PaymentBindingSource.EndEdit();
+
+                                iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position].SetField<String>("PAYMENT_CUSTOMER", lsCustKey);
+                                iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position].SetField<String>("PAYMENT_ADD_ON", " ");
+                                iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position].SetField<String>("PAYMENT_IAC_TYPE", "C");
+                                iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position].SetField<DateTime>("PAYMENT_DATE", DateTime.Now.Date);
+                                iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position].SetField<String>("PAYMENT_POST_INDICATOR", " ");
+                                iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position].SetField<String>("PAYMENT_DEALER", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<String>("CUSTOMER_DEALER"));
+                                iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position].SetField<String>("PAYMENT_TYPE", "F");
+                                iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position].SetField<String>("PAYMENT_CODE_2", " ");
+                                iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position].SetField<String>("PAYMENT_AUTO_PAY", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<String>("CUSTOMER_AUTOPAY"));
+                                iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position].SetField<String>("PAYMENT_TSB_COMMENT_CODE", "");
+                                iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position].SetField<Decimal>("PAYMENT_AMOUNT_RCV", 0);
+
+                                PaymentBindingSource.EndEdit();
+                                PAYMENTTableAdapter.Connection = tableAdapConn;
+                                PAYMENTTableAdapter.Transaction = tableAdapTran;
+                                PAYMENTTableAdapter.Update(iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position]);
+
+                                /*
+                                //This code gets the next available sequence number for todays date if another history record for today exists
+                                loCustHistSeq = cUSTHISTTableAdapter.SeqNoQuery(lsCustKey, DateTime.Now.Date);
+                                if (loCustHistSeq != null)
+                                    lnSeq = (int)loCustHistSeq + 1;
+                                else
+                                    lnSeq = 1;
+                                ldCustDate = DateTime.Now.Date;
+                                // If any history records with the same customer no already exist in the DataTable, we must check IT for the last sequence number.
+                                lsExpression = "CUSTHIST_NO = \'" + lsCustKey + "\' and CUSTHIST_PAY_DATE = \'" + ldCustDate.ToShortDateString() + "\' and max(custhist_date_seq) > 0";
+                                lsSort = "custhist_date_seq desc";
+                                FoundItems = iACDataSet.CUSTHIST.Select(lsExpression, lsSort);
+
+                                if (FoundItems.Length != 0)
+                                {
+                                    lnSeq = FoundItems[0].Field<Int32>("CUSTHIST_DATE_SEQ") + 1;
+                                }
+
+                                cUSTHISTBindingSource.AddNew();
+                                cUSTHISTBindingSource.EndEdit();
+
+                                iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<String>("CUSTHIST_NO", lsCustKey);
+                                iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<DateTime>("CUSTHIST_PAY_DATE", DateTime.Now.Date);
+                                iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Int32>("CUSTHIST_DATE_SEQ", lnSeq);
+                                // Moses Newman 03/15/2018 Added TransactionDate, Fee, FromIVR
+                                iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<DateTime>("TransactionDate", DateTime.Now.Date);
+                                iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Decimal>("Fee", 0);
+                                iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Boolean>("FromIVR", false);
+                                iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<String>("CUSTHIST_ACT_STAT", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<String>("CUSTOMER_ACT_STAT"));
+                                iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Decimal>("CUSTHIST_BALANCE", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<Decimal>("CUSTOMER_BALANCE"));
+                                iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Decimal>("CUSTHIST_PAID_DISCOUNT", Convert.ToDecimal(iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<Double>("CUSTOMER_PAID_DISCOUNT")));
+                                iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Decimal>("CUSTHIST_PAID_INTEREST", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<Decimal>("CUSTOMER_PAID_INTEREST"));
+                                iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Decimal>("CUSTHIST_PAYMENT_RCV", 0);
+                                iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Decimal>("CUSTHIST_LATE_CHARGE", 0);
+                                iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Decimal>("CUSTHIST_LATE_CHARGE_BAL", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<Decimal>("CUSTOMER_LATE_CHARGE_BAL"));
+                                iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Decimal>("CUSTHIST_LATE_CHARGE_PAID", 0);
+                                iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Decimal>("CUSTHIST_BUYOUT", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<Decimal>("CUSTOMER_BUYOUT"));
+                                iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<String>("CUSTHIST_AUTO_PAY", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<String>("CUSTOMER_AUTOPAY"));
+                                iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<String>("CUSTHIST_PAY_REM_1", "RTCHG");
+                                iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Int32>("CUSTHIST_PAY_REM_2", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<Int32>("CUSTOMER_PAY_REM_2"));
+                                iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<String>("CUSTHIST_PAYMENT_TYPE", "F");
+                                iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<String>("CUSTHIST_PAYMENT_CODE", "");
+                                iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Decimal>("CUSTHIST_CONTRACT_STATUS", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<Decimal>("CUSTOMER_CONTRACT_STATUS"));
+                                iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<String>("CUSTHIST_PAID_THRU", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<String>("CUSTOMER_PAID_THRU"));
+                                // TURN INTEREST BACK ON!
+                                iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position].SetField<Decimal>("TVRateChange", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<Decimal>("CUSTOMER_ANNUAL_PERCENTAGE_RATE"));
+                                cUSTHISTBindingSource.EndEdit();
+
+                                cUSTHISTTableAdapter.Connection = tableAdapConn;
+                                cUSTHISTTableAdapter.Transaction = tableAdapTran;
+                                cUSTHISTTableAdapter.Update(iACDataSet.CUSTHIST.Rows[cUSTHISTBindingSource.Position]);
+                                */
+                            }
+                        }
+                    }
+                }
+                aLTNAMETableAdapter.Connection = tableAdapConn;
+                aLTNAMETableAdapter.Transaction = tableAdapTran;
+                aLTNAMETableAdapter.Update(iACDataSet.ALTNAME.Rows[ALTNAMEbindingSource.Position]);
+
+                oPNBANKTableAdapter.Connection = tableAdapConn;
+                oPNBANKTableAdapter.Transaction = tableAdapTran;
+                oPNBANKTableAdapter.Update(iACDataSet.OPNBANK.Rows[OPNBANKbindingSource.Position]);
+
+                vEHICLETableAdapter.Connection = tableAdapConn;
+                vEHICLETableAdapter.Transaction = tableAdapTran;
+                vEHICLETableAdapter.Update(iACDataSet.VEHICLE.Rows[VehiclebindingSource.Position]);
+
+                //Program.UpdateComments(ref iACDataSet, ref cOMMENTBindingSource);
+
+                cOMMENTTableAdapter.Connection = tableAdapConn;
+                cOMMENTTableAdapter.Transaction = tableAdapTran;
+                cOMMENTTableAdapter.Update(iACDataSet.COMMENT);  // Delete, Update, and Insert all the customers comment records!
+
+
+                // Moses Newman 12/23/2013 Add Email address             
+                emailTableAdapter.Connection = tableAdapConn;
+                emailTableAdapter.Transaction = tableAdapTran;
+                emailTableAdapter.Update(iACDataSet.Email.Rows[EmailbindingSource.Position]);
+
+                // Moses Newman 06/12/2018 Add CustomerFees
+                CustomerFeesTableAdapter.Connection = tableAdapConn;
+                CustomerFeesTableAdapter.Transaction = tableAdapTran;
+                CustomerFeesTableAdapter.Update(iACDataSet.CustomerFees.Rows[CustomerFeesBindingSource.Position]);
+
+                // Moses Newman 08/13/2020 Add save of TSB data
+                if (tsbDataSet.ClosedCreditManager.Rows.Count != 0)
+                {
+                    closedCreditManagerTableAdapter.Connection = tableAdapConn;
+                    closedCreditManagerTableAdapter.Transaction = tableAdapTran;
+                    closedCreditManagerTableAdapter.Update(tsbDataSet.ClosedCreditManager.Rows[closedCreditManagerBindingSource.Position]);
+                }
+
+                tableAdapTran.Commit();
+            }
+            catch (System.Data.SqlClient.SqlException ex)
+            {
+                tableAdapTran.Rollback();
+                cUSTOMERTableAdapter.UnlockRecord(iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<String>("CUSTOMER_NO"));
+                MessageBox.Show("There is a Micriosft SQL Server database error " + ex.Message.ToString());
+            }
+            catch (System.InvalidOperationException ex)
+            {
+                tableAdapTran.Rollback();
+                cUSTOMERTableAdapter.UnlockRecord(iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<String>("CUSTOMER_NO"));
+                MessageBox.Show("Error: " + ex.Message.ToString());
+            }
+            catch (System.Data.DBConcurrencyException ex)
+            {
+                tableAdapTran.Rollback();
+                cUSTOMERTableAdapter.UnlockRecord(iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<String>("CUSTOMER_NO"));
+                MessageBox.Show("Error: " + ex.Message.ToString());
+            }
+            finally
+            {
+                cUSTOMERTableAdapter.UnlockRecord(iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<String>("CUSTOMER_NO"));
+                tableAdapConn.Close();
+                tableAdapConn = null;
+                tableAdapTran = null;
+                toolStripButtonSave.Enabled = false;
+                Program.gsKey = null;
+                lbAddFlag = false;
+                lbEdit = false;
+            }
+            SetViewMode();
+            gbInSave = false;
+        }
+
+        private void barButtonItem1_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Double lnAnnualPercentageRate = 0, lnLoanInterest = 0, lnTotal = 0;
+            MDIIAC2013 MDImain = (MDIIAC2013)MdiParent;
+            MDImain.CreateFormInstance("ReportViewer", false);
+            ReportViewer rptViewr = (ReportViewer)MDImain.ActiveMdiChild;
+            switch (iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_AMORTIZE_IND"))
+            {
+                case " ":
+                    MessageBox.Show("Older account, amortization does not apply.");
+                    break;
+                case "A":
+                    Double lnApr = (Double)(iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_ANNUAL_PERCENTAGE_RATE") / 100),
+                            lnCash = (Double)iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_LOAN_CASH"),
+                            lnRegularAmount = (Double)iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_REGULAR_AMOUNT"),
+                            lnTerm = (Double)iACDataSet.CUSTOMER.Rows[0].Field<Int32>("CUSTOMER_TERM");
+                    // Moses Newman 01/21/2015 Add Contract Date Handling!
+                    DateTime ldStartDate = iACDataSet.CUSTOMER.Rows[0].Field<DateTime>("ContractDate"),
+                             ldFirstPaymentDate = iACDataSet.CUSTOMER.Rows[0].Field<DateTime>("CUSTOMER_INIT_DATE");
+                    ClosedPaymentPosting CP = new ClosedPaymentPosting();
+                    BackgroundWorker worker = new BackgroundWorker();
+
+                    AmortizationDistribution myReportObject = new AmortizationDistribution();
+
+                    IACDataSetTableAdapters.AmortTempTableAdapter AmortTempTableAdapter = new IACDataSetTableAdapters.AmortTempTableAdapter();
+
+                    AmortTempTableAdapter.FillByCustomer(iACDataSet.AmortTemp, iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO"));
+
+                    Program.AmortRec[] loAmortRec;
+                    String lsMessage = "";
+                    loAmortRec = new Program.AmortRec[Convert.ToInt32(lnTerm)];
+
+                    if (iACDataSet.AmortTemp.Rows.Count == 0 && !checkBoxSimple.Checked)
+                    {
+                        // Moses Newman 01/21/2015 Add Contract Date Handling!
+                        // Moses Newman 08/23/2021
+                        Program.TVAmortize(ldStartDate, ldFirstPaymentDate, ref lnCash, ref lnTerm, ref lnApr, ref lnRegularAmount, ref lsMessage, ref loAmortRec, false, iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO"), true);
+                        AmortTempTableAdapter.FillByCustomer(iACDataSet.AmortTemp, iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO"));
+                    }
+                    worker.Dispose();
+                    CP.Dispose();
+                    CP = null;
+                    myReportObject.SetDataSource(iACDataSet);
+                    // 09/27/2012 Moses Newman Handle Simple Interest Amort Scedule printing
+                    if (!checkBoxSimple.Checked)
+                        myReportObject.SetParameterValue("CompoundPeriod", "Compound Daily");
+                    else
+                        myReportObject.SetParameterValue("CompoundPeriod", "Daily Exact");
+                    myReportObject.SetParameterValue("APR", (iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_ANNUAL_PERCENTAGE_RATE") / 100));
+                    myReportObject.SetParameterValue("EffectiveAnnualRate", Math.Round(Math.Pow((1 + ((Double)(iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_ANNUAL_PERCENTAGE_RATE") / 100) / 12)), 12), 8) - 1);
+                    myReportObject.SetParameterValue("Term", iACDataSet.CUSTOMER.Rows[0].Field<Int32>("CUSTOMER_TERM"));
+                    myReportObject.SetParameterValue("AmountBorrowed", iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_LOAN_CASH"));
+                    myReportObject.SetParameterValue("TotalInterest", iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_LOAN_INTEREST"));
+                    myReportObject.SetParameterValue("FirstPaymentDate", iACDataSet.CUSTOMER.Rows[0].Field<DateTime>("CUSTOMER_INIT_DATE"));
+                    myReportObject.SetParameterValue("gsUserID", Program.gsUserID);
+                    myReportObject.SetParameterValue("gsUserName", Program.gsUserName);
+                    myReportObject.SetParameterValue("CustomerPrint", true);
+                    myReportObject.SetParameterValue("gsCustomer", iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO"));
+
+                    rptViewr.crystalReportViewer.ReportSource = myReportObject;
+                    rptViewr.crystalReportViewer.Refresh();
+                    rptViewr.Show();
+                    break;
+                case "S":
+                case "N":
+                    TVAmortizationDistribution TVAmortReport = new TVAmortizationDistribution();
+                    // Moses Newman 08/28/2013 Make sure Amortization Date is always >= the last transaction date or TimeValue will crash.
+                    Object loLastDate = cUSTHISTTableAdapter.LastTransactionDate(iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO"));
+                    IACDataSetTableAdapters.TVAmortTableAdapter TVAmortTableAdapter = new IACDataSetTableAdapters.TVAmortTableAdapter();
+                    // Moses Newman 08/23/2013 Variables added to handle Amort date always >= last tran date
+                    DateTime ldAmortDate = DateTime.Now.Date, ldLastDate = ldAmortDate;
+                    if (loLastDate != null)
+                        ldLastDate = (DateTime)loLastDate;
+                    if (ldLastDate > DateTime.Now.Date)
+                        ldAmortDate = ldLastDate;
+                    // Moses Newman 06/24/2014 Changed tbSave to true so that TV5 file is created matching Amort History
+                    // Moses Newman 04/30/2017 change true for simple interest to checkbox value!
+                    Program.TVSimpleGetBuyout(iACDataSet,
+                            ldAmortDate,
+                            (Double)iACDataSet.CUSTOMER.Rows[0].Field<Int32>("CUSTOMER_TERM"),
+                            (Double)(iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_ANNUAL_PERCENTAGE_RATE") / 100),
+                            (Double)iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_REGULAR_AMOUNT"),
+                            iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO"),
+                            checkBoxSimple.Checked, true, false, false);
+
+                    TVAmortTableAdapter.FillByCustomerNo(iACDataSet.TVAmort, iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO"));
+                    TVAPRInfoTableAdapter.Fill(iACDataSet.TVAPRInfo, "99-" + Program.gsUserID);
+                    if (iACDataSet.TVAPRInfo.Rows.Count > 0)
+                    {
+                        lnAnnualPercentageRate = (Double)iACDataSet.TVAPRInfo.Rows[0].Field<Decimal>("APR");
+                        lnCash = (Double)iACDataSet.TVAPRInfo.Rows[0].Field<Decimal>("AmountFinanced");
+                        lnLoanInterest = (Double)iACDataSet.TVAPRInfo.Rows[0].Field<Decimal>("FinanceCharge");
+                        lnTotal = (Double)iACDataSet.TVAPRInfo.Rows[0].Field<Decimal>("TotalofPayments");
+                    }
+
+                    TVAmortReport.SetDataSource(iACDataSet);
+                    if (!checkBoxSimple.Checked)
+                        TVAmortReport.SetParameterValue("CompoundPeriod", "Daily Exact");
+                    else
+                        TVAmortReport.SetParameterValue("CompoundPeriod", "Exact Days");
+                    TVAmortReport.SetParameterValue("APR", (iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_ANNUAL_PERCENTAGE_RATE") / 100));
+                    TVAmortReport.SetParameterValue("EffectiveAnnualRate", Math.Round(Math.Pow((1 + ((Double)(iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_ANNUAL_PERCENTAGE_RATE") / 100) / 12)), 12), 8) - 1);
+                    TVAmortReport.SetParameterValue("Term", iACDataSet.CUSTOMER.Rows[0].Field<Int32>("CUSTOMER_TERM"));
+                    TVAmortReport.SetParameterValue("AmountBorrowed", iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_LOAN_CASH"));
+                    TVAmortReport.SetParameterValue("TotalInterest", iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_LOAN_INTEREST"));
+                    // Moses Newman 01/21/2015 Handle Contract Date!
+                    TVAmortReport.SetParameterValue("FirstPaymentDate", iACDataSet.CUSTOMER.Rows[0].Field<DateTime>("ContractDate"));
+                    TVAmortReport.SetParameterValue("gsUserID", Program.gsUserID);
+                    TVAmortReport.SetParameterValue("gsUserName", Program.gsUserName);
+                    TVAmortReport.SetParameterValue("CustomerPrint", true);
+                    TVAmortReport.SetParameterValue("gsCustomer", iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO"));
+                    TVAmortReport.SetParameterValue("IsSimple", checkBoxSimple.Checked);
+
+                    rptViewr.crystalReportViewer.ReportSource = TVAmortReport;
+                    rptViewr.crystalReportViewer.Refresh();
+                    rptViewr.Show();
+                    break;
+            }
+
+        }
+
+        private void xtraTabPageHistory_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void barButtonItemPrintCustomerReceipt_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            MDIIAC2013 MDImain = (MDIIAC2013)MdiParent;
+            MDImain.CreateFormInstance("FormReciept", false, false, true);
+            FormReciept receipt = (FormReciept)MDImain.frm;
+
+            receipt.gsCustomerNo = cUSTOMER_NOTextBox.Text;
+            receipt.gsOpenClose = "C";
+            receipt.Show();
+        }
+
+        private void barButtonItemTimeValueToExcel_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            // Moses Newman 04/02/2018 Create EXCEL output dump of TVAmort file showing GetPartialPaymentandLateFeeBalance extra fields.
+            IACDataSet PT = new IACDataSet();
+            IACDataSetTableAdapters.TVAmortTableAdapter TVAmortTableAdapter = new IACDataSetTableAdapters.TVAmortTableAdapter();
+            TVAmortTableAdapter.FillByCustomerNo(iACDataSet.TVAmort, cUSTOMER_NOTextBox.Text.Trim());
+
+            BackgroundWorker BW = new BackgroundWorker();
+            ClosedPaymentPosting CP = new ClosedPaymentPosting();
+
+            CP.GetPartialPaymentandLateFeeBalance(ref BW, cUSTOMER_NOTextBox.Text.Trim(), ref PT, 0, false, -1, false, false);
+
+            SqlConnection cnn;
+            string connectionstring = null;
+            string sql = null;
+            string data = null;
+            int i = 0;
+            int j = 0;
+
+            String lsUNCROOT = Program.GsDataPath, lsExcelFileOut = lsUNCROOT + @"\moses\TVEXCEL\" + cUSTOMER_NOTextBox.Text.Trim() + "TVAmort.xlsx";
+            connectionstring = IAC2021SQL.Properties.Settings.Default.IAC2010SQLConnectionString.ToUpper();
+            cnn = new SqlConnection(connectionstring);
+            cnn.Open();
+            //sql = "SELECT * FROM TVAmort WHERE CustomerNo = '" + cUSTOMER_NOTextBox.Text.Trim() + "'";
+            // Moses Newman 07/25/2019 Order By CUSTHIST order.
+            sql = "SELECT [CustomerNo],ROW_NUMBER() OVER(ORDER BY CustomerNo, HistoryDate, HistorySeq)[RowNumber], " +
+                        " [Event],[HistoryDate] [Date],[New],[LateFee],[ISF],[NonCash],[Payment],[Interest],[Principal],[Balance],[RateChange],[ContractStatus]," +
+                        " [PartialPayment], [LateFeeBalance],[PaidThrough],[ExtensionMonths],[LastPPBBalance],[LastLFBalance],[LastPPBUsed],[LastPPBUsedLC],[PrevPPBUsed],[PrevPPBUsedLC]," +
+                        " [DeltaPTMonths],[ISFDate],[ISFSeqNo],[ISFPaymentType],[ISFPaymentCode],[HistorySeq],[PaymentSeq],[PaymentCode],[HistoryDate] " +
+                        " FROM [TVAmort] " +
+                        " WHERE CustomerNo = '" + cUSTOMER_NOTextBox.Text.Trim() + "' ORDER BY CustomerNo,HistoryDate, HistorySeq";
+            SqlDataAdapter dscmd = new SqlDataAdapter(sql, cnn);
+            DataSet ds = new DataSet();
+            dscmd.Fill(ds);
+
+            if (File.Exists(lsExcelFileOut))
+                File.Delete(lsExcelFileOut);
+
+            if (!File.Exists(lsExcelFileOut))
+            {
+                // Moses Newman 01/30/2017 Add Excel Automation column and page formatting
+                //Create an Excel application instance
+                Excel.Application excelApp = new Excel.Application();
+
+                //Create an Excel workbook open excel workbook
+                Excel.Workbook excelWorkBook = excelApp.Workbooks.Add();
+
+                //Add a new worksheet to workbook with the Datatable name
+
+                excelApp.Visible = true;
+                excelApp.WindowState = Excel.XlWindowState.xlMinimized;
+                excelApp.WindowState = Excel.XlWindowState.xlMaximized;
+
+                Excel.Worksheet excelWorkSheet;
+                excelWorkSheet = excelWorkBook.Worksheets.Add();
+                excelWorkSheet.Name = cUSTOMER_NOTextBox.Text.Trim() + "TVAmort";
+                foreach (Excel.Worksheet sheet in excelWorkBook.Worksheets)
+                    if (sheet.Name != excelWorkSheet.Name)
+                        sheet.Delete();
+                excelWorkSheet.Select(System.Type.Missing);
+
+                for (i = 0; i < ds.Tables[0].Rows.Count; i++)
+                {
+                    for (j = 0; j < ds.Tables[0].Columns.Count; j++)
+                    {
+                        data = ds.Tables[0].Rows[i].ItemArray[j].ToString();
+                        excelWorkSheet.Cells[i + 2, j + 1] = data;
+                    }
+                }
+
+
+
+                excelWorkSheet.PageSetup.CenterHeader = "&\"Arial\"&B&12&KFF0000" + cUSTOMER_NOTextBox.Text.Trim() + "TVAmort";
+                excelWorkSheet.Visible = Excel.XlSheetVisibility.xlSheetVisible;
+
+                Excel.Range CustomerNo = excelWorkSheet.get_Range("A:A");
+                CustomerNo.Columns.EntireColumn.AutoFit();
+                CustomerNo.Columns.ColumnWidth = 6.14;
+                excelWorkSheet.get_Range("A1:A1").Font.FontStyle = "Bold";
+                excelWorkSheet.get_Range("A1:A1").Value = "Account#";
+
+                Excel.Range RowNumber = excelWorkSheet.get_Range("B:B");
+                RowNumber.Columns.EntireColumn.AutoFit();
+                RowNumber.Columns.ColumnWidth = 3;
+                excelWorkSheet.get_Range("B1:B1").Font.FontStyle = "Bold";
+                excelWorkSheet.get_Range("B1:B1").Value = "Row#";
+
+                Excel.Range Event = excelWorkSheet.get_Range("C:C");
+                Event.Columns.EntireColumn.AutoFit();
+                Event.Columns.ColumnWidth = 7.57;
+                excelWorkSheet.get_Range("C1:C1").Font.FontStyle = "Bold";
+                excelWorkSheet.get_Range("C1:C1").Value = "Event";
+
+                Excel.Range Date = excelWorkSheet.get_Range("D:D");
+                Date.Columns.EntireColumn.AutoFit();
+                Date.Columns.ColumnWidth = 11.43;
+                Date.Columns.NumberFormat = "mm/dd/yyyy";
+                excelWorkSheet.get_Range("D1:D1").Font.FontStyle = "Bold";
+                excelWorkSheet.get_Range("D1:D1").Value = "Date";
+
+                Excel.Range New = excelWorkSheet.get_Range("E:E");
+                New.Columns.EntireColumn.AutoFit();
+                New.Columns.ColumnWidth = 10.29;
+                New.Columns.NumberFormat = "$#,##0.00_);[Red]($#,##0.00)";
+                excelWorkSheet.get_Range("E1:E1").Font.FontStyle = "Bold";
+                excelWorkSheet.get_Range("E1:E1").Value = "New";
+
+                Excel.Range LateFee = excelWorkSheet.get_Range("F:F");
+                LateFee.Columns.EntireColumn.AutoFit();
+                LateFee.Columns.ColumnWidth = 11.43;
+                LateFee.Columns.NumberFormat = "$#,##0.00_);[Red]($#,##0.00)";
+                excelWorkSheet.get_Range("F1:F1").Font.FontStyle = "Bold";
+                excelWorkSheet.get_Range("F1:F1").Value = "LateFee";
+
+                Excel.Range ISF = excelWorkSheet.get_Range("G:G");
+                ISF.Columns.EntireColumn.AutoFit();
+                ISF.Columns.ColumnWidth = 7;
+                ISF.Columns.NumberFormat = "$#,##0.00_);[Red]($#,##0.00)";
+                excelWorkSheet.get_Range("G1:G1").Font.FontStyle = "Bold";
+                excelWorkSheet.get_Range("G1:G1").Value = "ISF";
+
+                Excel.Range NonCash = excelWorkSheet.get_Range("H:H");
+                NonCash.Columns.EntireColumn.AutoFit();
+                NonCash.Columns.ColumnWidth = 12.29;
+                NonCash.Columns.NumberFormat = "$#,##0.00_);[Red]($#,##0.00)";
+                excelWorkSheet.get_Range("H1:H1").Font.FontStyle = "Bold";
+                excelWorkSheet.get_Range("H1:H1").Value = "NonCash";
+
+                Excel.Range Payment = excelWorkSheet.get_Range("I:I");
+                Payment.Columns.EntireColumn.AutoFit();
+                Payment.Columns.ColumnWidth = 12.29;
+                Payment.Columns.Columns.NumberFormat = "$#,##0.00_);[Red]($#,##0.00)";
+                excelWorkSheet.get_Range("I1:I1").Font.FontStyle = "Bold";
+                excelWorkSheet.get_Range("I1:I1").Value = "Payment";
+
+                Excel.Range Interest = excelWorkSheet.get_Range("J:J");
+                Interest.Columns.EntireColumn.AutoFit();
+                Interest.Columns.ColumnWidth = 11.43;
+                Interest.Columns.NumberFormat = "$#,##0.00_);[Red]($#,##0.00)";
+                excelWorkSheet.get_Range("J1:J1").Font.FontStyle = "Bold";
+                excelWorkSheet.get_Range("J1:J1").Value = "Interest";
+
+                Excel.Range Principle = excelWorkSheet.get_Range("K:K");
+                Principle.Columns.EntireColumn.AutoFit();
+                Principle.Columns.ColumnWidth = 12.14;
+                Principle.Columns.NumberFormat = "$#,##0.00_);[Red]($#,##0.00)";
+                excelWorkSheet.get_Range("K1:K1").Font.FontStyle = "Bold";
+                excelWorkSheet.get_Range("K1:K1").Value = "Principal";
+
+                Excel.Range Balance = excelWorkSheet.get_Range("L:L");
+                Balance.Columns.EntireColumn.AutoFit();
+                Balance.Columns.ColumnWidth = 11.29;
+                Balance.Columns.NumberFormat = "$#,##0.00_);[Red]($#,##0.00)";
+                excelWorkSheet.get_Range("L1:L1").Font.FontStyle = "Bold";
+                excelWorkSheet.get_Range("L1:L1").Value = "Balance";
+
+                Excel.Range RateChange = excelWorkSheet.get_Range("M:M");
+                RateChange.Columns.EntireColumn.AutoFit();
+                RateChange.Columns.ColumnWidth = 3;
+                excelWorkSheet.get_Range("M1:M1").Font.FontStyle = "Bold";
+                excelWorkSheet.get_Range("M1:M1").Value = "RateChange";
+
+                Excel.Range ContractStatus = excelWorkSheet.get_Range("N:N");
+                ContractStatus.Columns.EntireColumn.AutoFit();
+                ContractStatus.Columns.ColumnWidth = 12.14;
+                ContractStatus.Columns.NumberFormat = "$#,##0.00_);[Red]($#,##0.00)";
+                excelWorkSheet.get_Range("N1:N1").Font.FontStyle = "Bold";
+                excelWorkSheet.get_Range("N1:N1").Value = "ContractStatus";
+
+                Excel.Range PartialPayment = excelWorkSheet.get_Range("O:O");
+                PartialPayment.Columns.EntireColumn.AutoFit();
+                PartialPayment.Columns.ColumnWidth = 12.14;
+                PartialPayment.Columns.NumberFormat = "$#,##0.00_);[Red]($#,##0.00)";
+                excelWorkSheet.get_Range("O1:O1").Font.FontStyle = "Bold";
+                excelWorkSheet.get_Range("O1:O1").Value = "PartialPayment";
+
+                Excel.Range LateFeeBalance = excelWorkSheet.get_Range("P:P");
+                LateFeeBalance.Columns.EntireColumn.AutoFit();
+                LateFeeBalance.Columns.ColumnWidth = 12.14;
+                LateFeeBalance.Columns.NumberFormat = "$#,##0.00_);[Red]($#,##0.00)";
+                excelWorkSheet.get_Range("P1:P1").Font.FontStyle = "Bold";
+                excelWorkSheet.get_Range("P1:P1").Value = "LateFeeBalance";
+
+                Excel.Range PaidThrough = excelWorkSheet.get_Range("Q:Q");
+                PaidThrough.Columns.EntireColumn.AutoFit();
+                PaidThrough.Columns.NumberFormat = "mm/yy";
+                PaidThrough.Columns.ColumnWidth = 8;
+                excelWorkSheet.get_Range("Q1:Q1").Font.FontStyle = "Bold";
+                excelWorkSheet.get_Range("Q1:Q1").Value = "PaidThrough";
+
+                Excel.Range Extension = excelWorkSheet.get_Range("R:R");
+                Extension.Columns.EntireColumn.AutoFit();
+                Extension.Columns.ColumnWidth = 6;
+                excelWorkSheet.get_Range("R1:R1").Font.FontStyle = "Bold";
+                excelWorkSheet.get_Range("R1:R1").Value = "Ext";
+
+                Excel.Range LastPPBBalance = excelWorkSheet.get_Range("S:S");
+                LastPPBBalance.Columns.EntireColumn.Delete();
+
+                Excel.Range LastLFBalance = excelWorkSheet.get_Range("S:S");
+                LastLFBalance.Columns.EntireColumn.Delete();
+
+                Excel.Range LastPPBUsed = excelWorkSheet.get_Range("S:S");
+                LastPPBUsed.Columns.EntireColumn.Delete();
+
+                Excel.Range LastPPBUsedLC = excelWorkSheet.get_Range("S:S");
+                LastPPBUsedLC.Columns.EntireColumn.Delete();
+
+                Excel.Range r1 = excelWorkSheet.get_Range("A1:AC1");
+                Excel.Range r = excelWorkSheet.get_Range("A2:AC" + (ds.Tables[0].Rows.Count + 1).ToString());
+
+                Excel.Range PrevPPBUsed = excelWorkSheet.get_Range("S:S");
+                PrevPPBUsed.Columns.EntireColumn.AutoFit();
+                PrevPPBUsed.Columns.ColumnWidth = 6;
+                PrevPPBUsed.Columns.NumberFormat = "$#,##0.00_);[Red]($#,##0.00)";
+                excelWorkSheet.get_Range("S1:S1").Font.FontStyle = "Bold";
+                excelWorkSheet.get_Range("S1:S1").Value = "PrevPPBUsed";
+
+                Excel.Range PrevPPBUsedLC = excelWorkSheet.get_Range("T:T");
+                PrevPPBUsedLC.Columns.EntireColumn.AutoFit();
+                PrevPPBUsedLC.Columns.ColumnWidth = 6;
+                PrevPPBUsedLC.Columns.NumberFormat = "$#,##0.00_);[Red]($#,##0.00)";
+                excelWorkSheet.get_Range("T1:T1").Font.FontStyle = "Bold";
+                excelWorkSheet.get_Range("T1:T1").Value = "PrevPPBUsedLC";
+
+                Excel.Range DeltaPTMonths = excelWorkSheet.get_Range("U:U");
+                DeltaPTMonths.Columns.EntireColumn.AutoFit();
+                DeltaPTMonths.Columns.ColumnWidth = 6;
+                excelWorkSheet.get_Range("U1:U1").Font.FontStyle = "Bold";
+                excelWorkSheet.get_Range("U1:U1").Value = "DeltaPTMonths";
+
+                Excel.Range ISFDate = excelWorkSheet.get_Range("V:V");
+                ISFDate.Columns.EntireColumn.AutoFit();
+                ISFDate.Columns.ColumnWidth = 11.43;
+                ISFDate.Columns.NumberFormat = "mm/dd/yyyy";
+                excelWorkSheet.get_Range("V1:V1").Font.FontStyle = "Bold";
+                excelWorkSheet.get_Range("V1:V1").Value = "ISFDate";
+
+                Excel.Range ISFSeqNo = excelWorkSheet.get_Range("W:W");
+                ISFSeqNo.Columns.EntireColumn.AutoFit();
+                ISFSeqNo.Columns.ColumnWidth = 6;
+                excelWorkSheet.get_Range("W1:W1").Font.FontStyle = "Bold";
+                excelWorkSheet.get_Range("W1:W1").Value = "ISFSeqNo";
+
+                Excel.Range ISFPaymentType = excelWorkSheet.get_Range("X:X");
+                ISFPaymentType.Columns.EntireColumn.AutoFit();
+                ISFPaymentType.Columns.ColumnWidth = 6;
+                excelWorkSheet.get_Range("X1:X1").Font.FontStyle = "Bold";
+                excelWorkSheet.get_Range("X1:X1").Value = "ISFPaymentType";
+
+                Excel.Range ISFPaymentCode = excelWorkSheet.get_Range("Y:Y");
+                ISFPaymentCode.Columns.EntireColumn.AutoFit();
+                ISFPaymentCode.Columns.ColumnWidth = 6;
+                excelWorkSheet.get_Range("Y1:Y1").Font.FontStyle = "Bold";
+                excelWorkSheet.get_Range("Y1:Y1").Value = "ISFPaymentType";
+
+                Excel.Range HistorySeq = excelWorkSheet.get_Range("Z:Z");
+                HistorySeq.Columns.EntireColumn.AutoFit();
+                HistorySeq.Columns.ColumnWidth = 6;
+                excelWorkSheet.get_Range("Z1:Z1").Font.FontStyle = "Bold";
+                excelWorkSheet.get_Range("Z1:Z1").Value = "Hist Seq";
+
+                Excel.Range PaymentSeq = excelWorkSheet.get_Range("AA:AA");
+                PaymentSeq.Columns.EntireColumn.AutoFit();
+                PaymentSeq.Columns.ColumnWidth = 6;
+                excelWorkSheet.get_Range("AA1:AA1").Font.FontStyle = "Bold";
+                excelWorkSheet.get_Range("AA1:AA1").Value = "PMT Seq";
+
+                Excel.Range PaymentCode = excelWorkSheet.get_Range("AB:AB");
+                PaymentCode.Columns.EntireColumn.AutoFit();
+                PaymentCode.Columns.ColumnWidth = 6;
+                excelWorkSheet.get_Range("AB1:AB1").Font.FontStyle = "Bold";
+                excelWorkSheet.get_Range("AB1:AB1").Value = "PMT Seq";
+
+                Excel.Range HistoryDate = excelWorkSheet.get_Range("AC:AC");
+                HistoryDate.Columns.EntireColumn.AutoFit();
+                HistoryDate.Columns.ColumnWidth = 11.43;
+                HistoryDate.Columns.NumberFormat = "mm/dd/yyyy";
+                excelWorkSheet.get_Range("AC1:AC1").Font.FontStyle = "Bold";
+                excelWorkSheet.get_Range("AC1:AC1").Value = "HistoryDate";
+
+                r1.Font.Bold = true;
+                r1.Interior.Color = Excel.XlRgbColor.rgbLightSalmon;
+
+                Excel.FormatCondition format = r.Rows.FormatConditions.Add(Excel.XlFormatConditionType.xlExpression, Excel.XlFormatConditionOperator.xlEqual, "=MOD(ROW(),2) = 0");
+                format.Interior.Color = Excel.XlRgbColor.rgbBisque;
+                r.Borders.LineStyle = Excel.XlLineStyle.xlContinuous;
+                r1.Borders.LineStyle = Excel.XlLineStyle.xlContinuous;
+
+                excelWorkSheet.PageSetup.PaperSize = Excel.XlPaperSize.xlPaperLetter;
+                excelWorkSheet.PageSetup.Orientation = Excel.XlPageOrientation.xlPortrait;
+                //excelWorkSheet.PageSetup.TopMargin = .25;
+                excelWorkSheet.PageSetup.LeftMargin = .25;
+                excelWorkSheet.PageSetup.RightMargin = .25;
+                excelWorkSheet.PageSetup.BottomMargin = .25;
+                excelWorkSheet.PageSetup.FitToPagesWide = 1;
+                excelWorkSheet.PageSetup.Zoom = false;
+
+                excelApp.ActiveWindow.View = Excel.XlWindowView.xlNormalView;
+
+                excelWorkSheet.get_Range("A:R").Font.Size = 11;
+                // Moses Newman 08/01/2018 Freeze header row.
+                Excel.Range firstRow = (Excel.Range)excelWorkSheet.Rows[1];
+                excelWorkSheet.Activate();
+                excelWorkSheet.Application.ActiveWindow.SplitRow = 1;
+                firstRow.Application.ActiveWindow.FreezePanes = true;
+
+                excelWorkBook.SaveAs(lsExcelFileOut, Excel.XlFileFormat.xlWorkbookDefault);
+                //excelWorkBook.Close();
+                //excelApp.Quit();
+                // Moses Newman 01/30/2018 End Excel Formatting
+                PT.Dispose();
+                BW.Dispose();
+                CP.Dispose();
+            }
+
+        }
+
+        private void toolStripButtonEdit_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            lbEdit = true;
+            LockCustomerRecord();
+            if (lbEdit)
+                SetEditMode();
+            else
+                Refresh();
+        }
+
+        private void checkBoxVehicleWarranty_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckEdit edit = sender as CheckEdit;
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+            if (edit.Checked)
+                edit.ForeColor = Color.Red;
+            else
+            {
+                edit.ForeColor = SystemColors.ControlText;
+            }
+        }
+        private void xtraTabControlCustomerMaint_SelectedPageChanged(object sender, DevExpress.XtraTab.TabPageChangedEventArgs e)
+        {
+            if (xtraTabControlCustomerMaint.SelectedTabPage == xtraTabPageComments)
+            {
+                // Moses Newman 12/1/2021 order by id descending
+                GridColumn colID = cOMMENTgridView.Columns["id"];
+                //GridColumn colDate = cOMMENTgridView.Columns["COMMENT_DATE"];
+                //GridColumn colSeqNo = cOMMENTgridView.Columns["COMMENT_SEQ_NO"];
+                cOMMENTgridView.BeginSort();
+                try
+                {
+                    cOMMENTgridView.ClearSorting();
+                    // Moses Newman 12/1/2021 order by id descending
+                    colID.SortOrder = ColumnSortOrder.Descending;
+                    //colDate.SortOrder = ColumnSortOrder.Descending;
+                    //colSeqNo.SortOrder = ColumnSortOrder.Descending;
+                }
+                finally
+                {
+                    cOMMENTgridView.EndSort();
+                }
+            }
+        }
+
+        private void txtCOSWorkExt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void barButtonItemCaculateBuyout_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            MDIIAC2013 MDImain = (MDIIAC2013)MdiParent;
+            MDImain.CreateFormInstance("CalcBuyout", false, false, true);
+            CalcBuyout BuyOut = (CalcBuyout)MDImain.frm;
+
+            BuyOut.gdsDataSet = iACDataSet;
+            BuyOut.Show();
         }
 
         //Moses Newman 11/23/2021 Use DevExpress GridView instead of DataGridView for comments tab now
@@ -4769,323 +5127,6 @@ namespace IAC2021SQL
         {
             if (lbAddFlag || lbEdit)
                 toolStripButtonSave.Enabled = true;
-        }
-
-        private void toolStripButtonTVExcel_Click(object sender, EventArgs e)
-        {
-            // Moses Newman 04/02/2018 Create EXCEL output dump of TVAmort file showing GetPartialPaymentandLateFeeBalance extra fields.
-            IACDataSet PT = new IACDataSet();
-            IACDataSetTableAdapters.TVAmortTableAdapter TVAmortTableAdapter = new IACDataSetTableAdapters.TVAmortTableAdapter();
-            TVAmortTableAdapter.FillByCustomerNo(iACDataSet.TVAmort, cUSTOMER_NOTextBox.Text.Trim());
-
-            BackgroundWorker BW = new BackgroundWorker();
-            ClosedPaymentPosting CP = new ClosedPaymentPosting();
-
-            CP.GetPartialPaymentandLateFeeBalance(ref BW, cUSTOMER_NOTextBox.Text.Trim(), ref PT, 0, false, -1, false, false);
-
-            SqlConnection cnn;
-            string connectionstring = null;
-            string sql = null;
-            string data = null;
-            int i = 0;
-            int j = 0;
-
-            String lsUNCROOT = Program.GsDataPath, lsExcelFileOut = lsUNCROOT + @"\moses\TVEXCEL\" + cUSTOMER_NOTextBox.Text.Trim() + "TVAmort.xlsx";
-            connectionstring = IAC2021SQL.Properties.Settings.Default.IAC2010SQLConnectionString.ToUpper();
-            cnn = new SqlConnection(connectionstring);
-            cnn.Open();
-            //sql = "SELECT * FROM TVAmort WHERE CustomerNo = '" + cUSTOMER_NOTextBox.Text.Trim() + "'";
-            // Moses Newman 07/25/2019 Order By CUSTHIST order.
-            sql = "SELECT [CustomerNo],ROW_NUMBER() OVER(ORDER BY CustomerNo, HistoryDate, HistorySeq)[RowNumber], " +
-                        " [Event],[HistoryDate] [Date],[New],[LateFee],[ISF],[NonCash],[Payment],[Interest],[Principal],[Balance],[RateChange],[ContractStatus]," +
-                        " [PartialPayment], [LateFeeBalance],[PaidThrough],[ExtensionMonths],[LastPPBBalance],[LastLFBalance],[LastPPBUsed],[LastPPBUsedLC],[PrevPPBUsed],[PrevPPBUsedLC]," +
-                        " [DeltaPTMonths],[ISFDate],[ISFSeqNo],[ISFPaymentType],[ISFPaymentCode],[HistorySeq],[PaymentSeq],[PaymentCode],[HistoryDate] " +
-                        " FROM [TVAmort] " +
-                        " WHERE CustomerNo = '" + cUSTOMER_NOTextBox.Text.Trim() + "' ORDER BY CustomerNo,HistoryDate, HistorySeq";
-            SqlDataAdapter dscmd = new SqlDataAdapter(sql, cnn);
-            DataSet ds = new DataSet();
-            dscmd.Fill(ds);
-
-            if (File.Exists(lsExcelFileOut))
-                File.Delete(lsExcelFileOut);
-
-            if (!File.Exists(lsExcelFileOut))
-            {
-                // Moses Newman 01/30/2017 Add Excel Automation column and page formatting
-                //Create an Excel application instance
-                Excel.Application excelApp = new Excel.Application();
-
-                //Create an Excel workbook open excel workbook
-                Excel.Workbook excelWorkBook = excelApp.Workbooks.Add();
-
-                //Add a new worksheet to workbook with the Datatable name
-
-                excelApp.Visible = true;
-                excelApp.WindowState = Excel.XlWindowState.xlMinimized;
-                excelApp.WindowState = Excel.XlWindowState.xlMaximized;
-
-                Excel.Worksheet excelWorkSheet;
-                excelWorkSheet = excelWorkBook.Worksheets.Add();
-                excelWorkSheet.Name = cUSTOMER_NOTextBox.Text.Trim() + "TVAmort";
-                foreach (Excel.Worksheet sheet in excelWorkBook.Worksheets)
-                    if (sheet.Name != excelWorkSheet.Name)
-                        sheet.Delete();
-                excelWorkSheet.Select(System.Type.Missing);
-
-                for (i = 0; i < ds.Tables[0].Rows.Count; i++)
-                {
-                    for (j = 0; j < ds.Tables[0].Columns.Count; j++)
-                    {
-                        data = ds.Tables[0].Rows[i].ItemArray[j].ToString();
-                        excelWorkSheet.Cells[i + 2, j + 1] = data;
-                    }
-                }
-
-
-
-                excelWorkSheet.PageSetup.CenterHeader = "&\"Arial\"&B&12&KFF0000" + cUSTOMER_NOTextBox.Text.Trim() + "TVAmort";
-                excelWorkSheet.Visible = Excel.XlSheetVisibility.xlSheetVisible;
-
-                Excel.Range CustomerNo = excelWorkSheet.get_Range("A:A");
-                CustomerNo.Columns.EntireColumn.AutoFit();
-                CustomerNo.Columns.ColumnWidth = 6.14;
-                excelWorkSheet.get_Range("A1:A1").Font.FontStyle = "Bold";
-                excelWorkSheet.get_Range("A1:A1").Value = "Account#";
-
-                Excel.Range RowNumber = excelWorkSheet.get_Range("B:B");
-                RowNumber.Columns.EntireColumn.AutoFit();
-                RowNumber.Columns.ColumnWidth = 3;
-                excelWorkSheet.get_Range("B1:B1").Font.FontStyle = "Bold";
-                excelWorkSheet.get_Range("B1:B1").Value = "Row#";
-
-                Excel.Range Event = excelWorkSheet.get_Range("C:C");
-                Event.Columns.EntireColumn.AutoFit();
-                Event.Columns.ColumnWidth = 7.57;
-                excelWorkSheet.get_Range("C1:C1").Font.FontStyle = "Bold";
-                excelWorkSheet.get_Range("C1:C1").Value = "Event";
-
-                Excel.Range Date = excelWorkSheet.get_Range("D:D");
-                Date.Columns.EntireColumn.AutoFit();
-                Date.Columns.ColumnWidth = 11.43;
-                Date.Columns.NumberFormat = "mm/dd/yyyy";
-                excelWorkSheet.get_Range("D1:D1").Font.FontStyle = "Bold";
-                excelWorkSheet.get_Range("D1:D1").Value = "Date";
-
-                Excel.Range New = excelWorkSheet.get_Range("E:E");
-                New.Columns.EntireColumn.AutoFit();
-                New.Columns.ColumnWidth = 10.29;
-                New.Columns.NumberFormat = "$#,##0.00_);[Red]($#,##0.00)";
-                excelWorkSheet.get_Range("E1:E1").Font.FontStyle = "Bold";
-                excelWorkSheet.get_Range("E1:E1").Value = "New";
-
-                Excel.Range LateFee = excelWorkSheet.get_Range("F:F");
-                LateFee.Columns.EntireColumn.AutoFit();
-                LateFee.Columns.ColumnWidth = 11.43;
-                LateFee.Columns.NumberFormat = "$#,##0.00_);[Red]($#,##0.00)";
-                excelWorkSheet.get_Range("F1:F1").Font.FontStyle = "Bold";
-                excelWorkSheet.get_Range("F1:F1").Value = "LateFee";
-
-                Excel.Range ISF = excelWorkSheet.get_Range("G:G");
-                ISF.Columns.EntireColumn.AutoFit();
-                ISF.Columns.ColumnWidth = 7;
-                ISF.Columns.NumberFormat = "$#,##0.00_);[Red]($#,##0.00)";
-                excelWorkSheet.get_Range("G1:G1").Font.FontStyle = "Bold";
-                excelWorkSheet.get_Range("G1:G1").Value = "ISF";
-
-                Excel.Range NonCash = excelWorkSheet.get_Range("H:H");
-                NonCash.Columns.EntireColumn.AutoFit();
-                NonCash.Columns.ColumnWidth = 12.29;
-                NonCash.Columns.NumberFormat = "$#,##0.00_);[Red]($#,##0.00)";
-                excelWorkSheet.get_Range("H1:H1").Font.FontStyle = "Bold";
-                excelWorkSheet.get_Range("H1:H1").Value = "NonCash";
-
-                Excel.Range Payment = excelWorkSheet.get_Range("I:I");
-                Payment.Columns.EntireColumn.AutoFit();
-                Payment.Columns.ColumnWidth = 12.29;
-                Payment.Columns.Columns.NumberFormat = "$#,##0.00_);[Red]($#,##0.00)";
-                excelWorkSheet.get_Range("I1:I1").Font.FontStyle = "Bold";
-                excelWorkSheet.get_Range("I1:I1").Value = "Payment";
-
-                Excel.Range Interest = excelWorkSheet.get_Range("J:J");
-                Interest.Columns.EntireColumn.AutoFit();
-                Interest.Columns.ColumnWidth = 11.43;
-                Interest.Columns.NumberFormat = "$#,##0.00_);[Red]($#,##0.00)";
-                excelWorkSheet.get_Range("J1:J1").Font.FontStyle = "Bold";
-                excelWorkSheet.get_Range("J1:J1").Value = "Interest";
-
-                Excel.Range Principle = excelWorkSheet.get_Range("K:K");
-                Principle.Columns.EntireColumn.AutoFit();
-                Principle.Columns.ColumnWidth = 12.14;
-                Principle.Columns.NumberFormat = "$#,##0.00_);[Red]($#,##0.00)";
-                excelWorkSheet.get_Range("K1:K1").Font.FontStyle = "Bold";
-                excelWorkSheet.get_Range("K1:K1").Value = "Principal";
-
-                Excel.Range Balance = excelWorkSheet.get_Range("L:L");
-                Balance.Columns.EntireColumn.AutoFit();
-                Balance.Columns.ColumnWidth = 11.29;
-                Balance.Columns.NumberFormat = "$#,##0.00_);[Red]($#,##0.00)";
-                excelWorkSheet.get_Range("L1:L1").Font.FontStyle = "Bold";
-                excelWorkSheet.get_Range("L1:L1").Value = "Balance";
-
-                Excel.Range RateChange = excelWorkSheet.get_Range("M:M");
-                RateChange.Columns.EntireColumn.AutoFit();
-                RateChange.Columns.ColumnWidth = 3;
-                excelWorkSheet.get_Range("M1:M1").Font.FontStyle = "Bold";
-                excelWorkSheet.get_Range("M1:M1").Value = "RateChange";
-
-                Excel.Range ContractStatus = excelWorkSheet.get_Range("N:N");
-                ContractStatus.Columns.EntireColumn.AutoFit();
-                ContractStatus.Columns.ColumnWidth = 12.14;
-                ContractStatus.Columns.NumberFormat = "$#,##0.00_);[Red]($#,##0.00)";
-                excelWorkSheet.get_Range("N1:N1").Font.FontStyle = "Bold";
-                excelWorkSheet.get_Range("N1:N1").Value = "ContractStatus";
-
-                Excel.Range PartialPayment = excelWorkSheet.get_Range("O:O");
-                PartialPayment.Columns.EntireColumn.AutoFit();
-                PartialPayment.Columns.ColumnWidth = 12.14;
-                PartialPayment.Columns.NumberFormat = "$#,##0.00_);[Red]($#,##0.00)";
-                excelWorkSheet.get_Range("O1:O1").Font.FontStyle = "Bold";
-                excelWorkSheet.get_Range("O1:O1").Value = "PartialPayment";
-
-                Excel.Range LateFeeBalance = excelWorkSheet.get_Range("P:P");
-                LateFeeBalance.Columns.EntireColumn.AutoFit();
-                LateFeeBalance.Columns.ColumnWidth = 12.14;
-                LateFeeBalance.Columns.NumberFormat = "$#,##0.00_);[Red]($#,##0.00)";
-                excelWorkSheet.get_Range("P1:P1").Font.FontStyle = "Bold";
-                excelWorkSheet.get_Range("P1:P1").Value = "LateFeeBalance";
-
-                Excel.Range PaidThrough = excelWorkSheet.get_Range("Q:Q");
-                PaidThrough.Columns.EntireColumn.AutoFit();
-                PaidThrough.Columns.NumberFormat = "mm/yy";
-                PaidThrough.Columns.ColumnWidth = 8;
-                excelWorkSheet.get_Range("Q1:Q1").Font.FontStyle = "Bold";
-                excelWorkSheet.get_Range("Q1:Q1").Value = "PaidThrough";
-
-                Excel.Range Extension = excelWorkSheet.get_Range("R:R");
-                Extension.Columns.EntireColumn.AutoFit();
-                Extension.Columns.ColumnWidth = 6;
-                excelWorkSheet.get_Range("R1:R1").Font.FontStyle = "Bold";
-                excelWorkSheet.get_Range("R1:R1").Value = "Ext";
-
-                Excel.Range LastPPBBalance = excelWorkSheet.get_Range("S:S");
-                LastPPBBalance.Columns.EntireColumn.Delete();
-
-                Excel.Range LastLFBalance = excelWorkSheet.get_Range("S:S");
-                LastLFBalance.Columns.EntireColumn.Delete();
-
-                Excel.Range LastPPBUsed = excelWorkSheet.get_Range("S:S");
-                LastPPBUsed.Columns.EntireColumn.Delete();
-
-                Excel.Range LastPPBUsedLC = excelWorkSheet.get_Range("S:S");
-                LastPPBUsedLC.Columns.EntireColumn.Delete();
-
-                Excel.Range r1 = excelWorkSheet.get_Range("A1:AC1");
-                Excel.Range r = excelWorkSheet.get_Range("A2:AC" + (ds.Tables[0].Rows.Count + 1).ToString());
-
-                Excel.Range PrevPPBUsed = excelWorkSheet.get_Range("S:S");
-                PrevPPBUsed.Columns.EntireColumn.AutoFit();
-                PrevPPBUsed.Columns.ColumnWidth = 6;
-                PrevPPBUsed.Columns.NumberFormat = "$#,##0.00_);[Red]($#,##0.00)";
-                excelWorkSheet.get_Range("S1:S1").Font.FontStyle = "Bold";
-                excelWorkSheet.get_Range("S1:S1").Value = "PrevPPBUsed";
-
-                Excel.Range PrevPPBUsedLC = excelWorkSheet.get_Range("T:T");
-                PrevPPBUsedLC.Columns.EntireColumn.AutoFit();
-                PrevPPBUsedLC.Columns.ColumnWidth = 6;
-                PrevPPBUsedLC.Columns.NumberFormat = "$#,##0.00_);[Red]($#,##0.00)";
-                excelWorkSheet.get_Range("T1:T1").Font.FontStyle = "Bold";
-                excelWorkSheet.get_Range("T1:T1").Value = "PrevPPBUsedLC";
-
-                Excel.Range DeltaPTMonths = excelWorkSheet.get_Range("U:U");
-                DeltaPTMonths.Columns.EntireColumn.AutoFit();
-                DeltaPTMonths.Columns.ColumnWidth = 6;
-                excelWorkSheet.get_Range("U1:U1").Font.FontStyle = "Bold";
-                excelWorkSheet.get_Range("U1:U1").Value = "DeltaPTMonths";
-
-                Excel.Range ISFDate = excelWorkSheet.get_Range("V:V");
-                ISFDate.Columns.EntireColumn.AutoFit();
-                ISFDate.Columns.ColumnWidth = 11.43;
-                ISFDate.Columns.NumberFormat = "mm/dd/yyyy";
-                excelWorkSheet.get_Range("V1:V1").Font.FontStyle = "Bold";
-                excelWorkSheet.get_Range("V1:V1").Value = "ISFDate";
-
-                Excel.Range ISFSeqNo = excelWorkSheet.get_Range("W:W");
-                ISFSeqNo.Columns.EntireColumn.AutoFit();
-                ISFSeqNo.Columns.ColumnWidth = 6;
-                excelWorkSheet.get_Range("W1:W1").Font.FontStyle = "Bold";
-                excelWorkSheet.get_Range("W1:W1").Value = "ISFSeqNo";
-
-                Excel.Range ISFPaymentType = excelWorkSheet.get_Range("X:X");
-                ISFPaymentType.Columns.EntireColumn.AutoFit();
-                ISFPaymentType.Columns.ColumnWidth = 6;
-                excelWorkSheet.get_Range("X1:X1").Font.FontStyle = "Bold";
-                excelWorkSheet.get_Range("X1:X1").Value = "ISFPaymentType";
-
-                Excel.Range ISFPaymentCode = excelWorkSheet.get_Range("Y:Y");
-                ISFPaymentCode.Columns.EntireColumn.AutoFit();
-                ISFPaymentCode.Columns.ColumnWidth = 6;
-                excelWorkSheet.get_Range("Y1:Y1").Font.FontStyle = "Bold";
-                excelWorkSheet.get_Range("Y1:Y1").Value = "ISFPaymentType";
-
-                Excel.Range HistorySeq = excelWorkSheet.get_Range("Z:Z");
-                HistorySeq.Columns.EntireColumn.AutoFit();
-                HistorySeq.Columns.ColumnWidth = 6;
-                excelWorkSheet.get_Range("Z1:Z1").Font.FontStyle = "Bold";
-                excelWorkSheet.get_Range("Z1:Z1").Value = "Hist Seq";
-
-                Excel.Range PaymentSeq = excelWorkSheet.get_Range("AA:AA");
-                PaymentSeq.Columns.EntireColumn.AutoFit();
-                PaymentSeq.Columns.ColumnWidth = 6;
-                excelWorkSheet.get_Range("AA1:AA1").Font.FontStyle = "Bold";
-                excelWorkSheet.get_Range("AA1:AA1").Value = "PMT Seq";
-
-                Excel.Range PaymentCode = excelWorkSheet.get_Range("AB:AB");
-                PaymentCode.Columns.EntireColumn.AutoFit();
-                PaymentCode.Columns.ColumnWidth = 6;
-                excelWorkSheet.get_Range("AB1:AB1").Font.FontStyle = "Bold";
-                excelWorkSheet.get_Range("AB1:AB1").Value = "PMT Seq";
-
-                Excel.Range HistoryDate = excelWorkSheet.get_Range("AC:AC");
-                HistoryDate.Columns.EntireColumn.AutoFit();
-                HistoryDate.Columns.ColumnWidth = 11.43;
-                HistoryDate.Columns.NumberFormat = "mm/dd/yyyy";
-                excelWorkSheet.get_Range("AC1:AC1").Font.FontStyle = "Bold";
-                excelWorkSheet.get_Range("AC1:AC1").Value = "HistoryDate";
-
-                r1.Font.Bold = true;
-                r1.Interior.Color = Excel.XlRgbColor.rgbLightSalmon;
-
-                Excel.FormatCondition format = r.Rows.FormatConditions.Add(Excel.XlFormatConditionType.xlExpression, Excel.XlFormatConditionOperator.xlEqual, "=MOD(ROW(),2) = 0");
-                format.Interior.Color = Excel.XlRgbColor.rgbBisque;
-                r.Borders.LineStyle = Excel.XlLineStyle.xlContinuous;
-                r1.Borders.LineStyle = Excel.XlLineStyle.xlContinuous;
-
-                excelWorkSheet.PageSetup.PaperSize = Excel.XlPaperSize.xlPaperLetter;
-                excelWorkSheet.PageSetup.Orientation = Excel.XlPageOrientation.xlPortrait;
-                //excelWorkSheet.PageSetup.TopMargin = .25;
-                excelWorkSheet.PageSetup.LeftMargin = .25;
-                excelWorkSheet.PageSetup.RightMargin = .25;
-                excelWorkSheet.PageSetup.BottomMargin = .25;
-                excelWorkSheet.PageSetup.FitToPagesWide = 1;
-                excelWorkSheet.PageSetup.Zoom = false;
-
-                excelApp.ActiveWindow.View = Excel.XlWindowView.xlNormalView;
-
-                excelWorkSheet.get_Range("A:R").Font.Size = 11;
-                // Moses Newman 08/01/2018 Freeze header row.
-                Excel.Range firstRow = (Excel.Range)excelWorkSheet.Rows[1];
-                excelWorkSheet.Activate();
-                excelWorkSheet.Application.ActiveWindow.SplitRow = 1;
-                firstRow.Application.ActiveWindow.FreezePanes = true;
-
-                excelWorkBook.SaveAs(lsExcelFileOut, Excel.XlFileFormat.xlWorkbookDefault);
-                //excelWorkBook.Close();
-                //excelApp.Quit();
-                // Moses Newman 01/30/2018 End Excel Formatting
-                PT.Dispose();
-                BW.Dispose();
-                CP.Dispose();
-            }
         }
 
         // Moses Newman 05/24/2018 added Militarty checkbox

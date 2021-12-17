@@ -31,6 +31,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label label45;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNewCustMaint));
             System.Windows.Forms.Label label48;
             System.Windows.Forms.Label labelAuthNo;
             System.Windows.Forms.Label label153;
@@ -258,7 +259,6 @@
             System.Windows.Forms.Label label223;
             System.Windows.Forms.Label label224;
             System.Windows.Forms.Label label225;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNewCustMaint));
             this.cUSTOMERBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.iACDataSet = new IAC2021SQL.IACDataSet();
             this.cOMMENTBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -308,11 +308,6 @@
             this.letterNumberTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.LetterNumberTableAdapter();
             this.letterTypeTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.LetterTypeTableAdapter();
             this.monthNamesTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.MonthNamesTableAdapter();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonEdit = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonDelete = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonSave = new System.Windows.Forms.ToolStripButton();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.errorProviderCustomerForm = new System.Windows.Forms.ErrorProvider(this.components);
             this.repoCodesTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.RepoCodesTableAdapter();
             this.creditCodesTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.CreditCodesTableAdapter();
@@ -357,17 +352,18 @@
             this.xtraTabControlCustomerMaint = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPageCustInfo1 = new DevExpress.XtraTab.XtraTabPage();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.colorCheckBoxReceivedContract = new DevExpress.XtraEditors.CheckEdit();
+            this.checkBoxSendToDealer = new DevExpress.XtraEditors.CheckEdit();
             this.toolbarFormManager1 = new DevExpress.XtraBars.ToolbarForm.ToolbarFormManager(this.components);
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.standaloneBarDockControl1 = new DevExpress.XtraBars.StandaloneBarDockControl();
+            this.colorCheckBoxReceivedContract = new DevExpress.XtraEditors.CheckEdit();
             this.checkBoxFullRecourseTab1 = new DevExpress.XtraEditors.CheckEdit();
             this.txtDOB = new DevExpress.XtraEditors.DateEdit();
             this.nullableDateTimePickerDateContractReceived = new DevExpress.XtraEditors.DateEdit();
             this.buttonDealerEmail = new DevExpress.XtraEditors.SimpleButton();
-            this.checkBoxSendToDealer = new System.Windows.Forms.CheckBox();
             this.textBoxDealerEmail = new System.Windows.Forms.TextBox();
             this.checkBoxMilitary = new System.Windows.Forms.CheckBox();
             this.groupBoxSBT = new System.Windows.Forms.GroupBox();
@@ -434,6 +430,7 @@
             this.textBoxOpenAccount = new System.Windows.Forms.TextBox();
             this.textBoxAccount = new System.Windows.Forms.TextBox();
             this.xtraTabPageCustInfo2 = new DevExpress.XtraTab.XtraTabPage();
+            this.groupBox14 = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.colorTextBoxTotalDue = new DevExpress.XtraEditors.TextEdit();
             this.txtContractStatus = new DevExpress.XtraEditors.TextEdit();
@@ -485,6 +482,7 @@
             this.textBoxIACType = new System.Windows.Forms.TextBox();
             this.textBox14 = new System.Windows.Forms.TextBox();
             this.xtraTabPageVehicle = new DevExpress.XtraTab.XtraTabPage();
+            this.groupBox15 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.textBox19 = new System.Windows.Forms.TextBox();
             this.textBox49 = new System.Windows.Forms.TextBox();
@@ -534,6 +532,7 @@
             this.txtModel = new System.Windows.Forms.TextBox();
             this.txtVehicleYear = new System.Windows.Forms.TextBox();
             this.xtraTabPageCosigner = new DevExpress.XtraTab.XtraTabPage();
+            this.groupBox16 = new System.Windows.Forms.GroupBox();
             this.groupBoxCOSSBT = new System.Windows.Forms.GroupBox();
             this.buttonCOSMessage = new DevExpress.XtraEditors.SimpleButton();
             this.buttonCOSConfirm = new DevExpress.XtraEditors.SimpleButton();
@@ -595,6 +594,7 @@
             this.textBox60 = new System.Windows.Forms.TextBox();
             this.textBox61 = new System.Windows.Forms.TextBox();
             this.xtraTabPageBank = new DevExpress.XtraTab.XtraTabPage();
+            this.groupBox17 = new System.Windows.Forms.GroupBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.textBox21 = new System.Windows.Forms.TextBox();
             this.textBox57 = new System.Windows.Forms.TextBox();
@@ -631,20 +631,7 @@
             this.txtCreditCardNumber = new System.Windows.Forms.TextBox();
             this.label91 = new System.Windows.Forms.Label();
             this.xtraTabPageHistory = new DevExpress.XtraTab.XtraTabPage();
-            this.gridControlCustomerHist = new DevExpress.XtraGrid.GridControl();
-            this.gridViewCustomerHistory = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colCUSTHIST_PAY_DATE = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCUSTHIST_ACT_STAT = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCUSTHIST_PAYMENT_RCV = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCUSTHIST_BALANCE = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCUSTHIST_CONTRACT_STATUS = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCUSTHIST_LATE_CHARGE_BAL = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colPartialPayment = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCUSTHIST_PAID_THRU = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCUSTHIST_PAY_REM_1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCUSTHIST_PAYMENT_TYPE = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCUSTHIST_PAYMENT_CODE = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCUSTHIST_THRU_UD = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.groupBox18 = new System.Windows.Forms.GroupBox();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
             this.checkBoxFullRecourseHist = new DevExpress.XtraEditors.CheckEdit();
             this.nullableDateTimePickerFirstPayDate = new DevExpress.XtraEditors.DateEdit();
@@ -674,13 +661,22 @@
             this.textBox36 = new System.Windows.Forms.TextBox();
             this.textBox37 = new System.Windows.Forms.TextBox();
             this.textBox31 = new System.Windows.Forms.TextBox();
-            this.toolStrip2 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonAmort = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonTVExcel = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButtonCalcBuyout = new System.Windows.Forms.ToolStripButton();
+            this.gridControlCustomerHist = new DevExpress.XtraGrid.GridControl();
+            this.gridViewCustomerHistory = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colCUSTHIST_PAY_DATE = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCUSTHIST_ACT_STAT = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCUSTHIST_PAYMENT_RCV = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCUSTHIST_BALANCE = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCUSTHIST_CONTRACT_STATUS = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCUSTHIST_LATE_CHARGE_BAL = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPartialPayment = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCUSTHIST_PAID_THRU = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCUSTHIST_PAY_REM_1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCUSTHIST_PAYMENT_TYPE = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCUSTHIST_PAYMENT_CODE = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCUSTHIST_THRU_UD = new DevExpress.XtraGrid.Columns.GridColumn();
             this.xtraTabPageComments = new DevExpress.XtraTab.XtraTabPage();
+            this.groupBox19 = new System.Windows.Forms.GroupBox();
             this.cOMMENTGridControl = new DevExpress.XtraGrid.GridControl();
             this.cOMMENTgridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colDATE = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -710,6 +706,7 @@
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.txtCommentNo = new System.Windows.Forms.TextBox();
             this.xtraTabPageCustomerFees = new DevExpress.XtraTab.XtraTabPage();
+            this.groupBox20 = new System.Windows.Forms.GroupBox();
             this.groupBoxFees = new System.Windows.Forms.GroupBox();
             this.textBoxTotalFees = new System.Windows.Forms.TextBox();
             this.textBoxRepairFee5 = new System.Windows.Forms.TextBox();
@@ -730,6 +727,7 @@
             this.textBox39 = new System.Windows.Forms.TextBox();
             this.textBox40 = new System.Windows.Forms.TextBox();
             this.xtraTabPageRepoHistory = new DevExpress.XtraTab.XtraTabPage();
+            this.groupBox21 = new System.Windows.Forms.GroupBox();
             this.gridControlRepoLog = new DevExpress.XtraGrid.GridControl();
             this.gridViewRepoLog = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colDateOfChange = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -763,6 +761,7 @@
             this.textBox46 = new System.Windows.Forms.TextBox();
             this.textBox52 = new System.Windows.Forms.TextBox();
             this.xtraTabPageTSB = new DevExpress.XtraTab.XtraTabPage();
+            this.groupBox22 = new System.Windows.Forms.GroupBox();
             this.groupBoxDates = new System.Windows.Forms.GroupBox();
             this.checkBoxFollowUpDate = new System.Windows.Forms.CheckBox();
             this.nullableDateTimePickerFollowUpDate = new DevExpress.XtraEditors.DateEdit();
@@ -843,9 +842,21 @@
             this.barDockControl2 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl3 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl4 = new DevExpress.XtraBars.BarDockControl();
-            this.tabFormControl1 = new DevExpress.XtraBars.TabFormControl();
-            this.tabFormPage1 = new DevExpress.XtraBars.TabFormPage();
-            this.tabFormContentContainer1 = new DevExpress.XtraBars.TabFormContentContainer();
+            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.toolStrip1 = new DevExpress.XtraBars.Bar();
+            this.toolStripButton1 = new DevExpress.XtraBars.BarButtonItem();
+            this.toolStripButtonEdit = new DevExpress.XtraBars.BarButtonItem();
+            this.toolStripButtonDelete = new DevExpress.XtraBars.BarButtonItem();
+            this.toolStripButtonSave = new DevExpress.XtraBars.BarButtonItem();
+            this.HistroyBar = new DevExpress.XtraBars.Bar();
+            this.barButtonItemPrintCustomerReceipt = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItemPrintAmortizationSchedule = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItemTimeValueToExcel = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItemCaculateBuyout = new DevExpress.XtraBars.BarButtonItem();
+            this.barDockControl5 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl6 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl7 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl8 = new DevExpress.XtraBars.BarDockControl();
             label45 = new System.Windows.Forms.Label();
             label48 = new System.Windows.Forms.Label();
             labelAuthNo = new System.Windows.Forms.Label();
@@ -1109,7 +1120,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.specialCommentCodesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PaymentRatingsbindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AccountStatusesbindingSource)).BeginInit();
-            this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderCustomerForm)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.paymentDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.paymentDataSetBindingSource)).BeginInit();
@@ -1117,8 +1127,9 @@
             this.xtraTabControlCustomerMaint.SuspendLayout();
             this.xtraTabPageCustInfo1.SuspendLayout();
             this.groupBox10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.colorCheckBoxReceivedContract.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkBoxSendToDealer.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolbarFormManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.colorCheckBoxReceivedContract.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkBoxFullRecourseTab1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDOB.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDOB.Properties)).BeginInit();
@@ -1130,6 +1141,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.checkBoxVehicleWarranty.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkBoxRefi.Properties)).BeginInit();
             this.xtraTabPageCustInfo2.SuspendLayout();
+            this.groupBox14.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.colorTextBoxTotalDue.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtContractStatus.Properties)).BeginInit();
@@ -1145,6 +1157,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtPaymentDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPaymentDate.Properties)).BeginInit();
             this.xtraTabPageVehicle.SuspendLayout();
+            this.groupBox15.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.VehicleGroupBox.SuspendLayout();
             this.groupBox8.SuspendLayout();
@@ -1165,6 +1178,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtEffectiveDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEffectiveDate.Properties)).BeginInit();
             this.xtraTabPageCosigner.SuspendLayout();
+            this.groupBox16.SuspendLayout();
             this.groupBoxCOSSBT.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -1172,13 +1186,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtCOSDOB.Properties)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.xtraTabPageBank.SuspendLayout();
+            this.groupBox17.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.xtraTabPageHistory.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControlCustomerHist)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridViewCustomerHistory)).BeginInit();
+            this.groupBox18.SuspendLayout();
             this.groupBox11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.checkBoxFullRecourseHist.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerFirstPayDate.Properties.CalendarTimeProperties)).BeginInit();
@@ -1187,8 +1201,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerPayDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerHistContractDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerHistContractDate.Properties)).BeginInit();
-            this.toolStrip2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlCustomerHist)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewCustomerHistory)).BeginInit();
             this.xtraTabPageComments.SuspendLayout();
+            this.groupBox19.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cOMMENTGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cOMMENTgridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
@@ -1199,13 +1215,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             this.groupBox7.SuspendLayout();
             this.xtraTabPageCustomerFees.SuspendLayout();
+            this.groupBox20.SuspendLayout();
             this.groupBoxFees.SuspendLayout();
             this.groupBox12.SuspendLayout();
             this.xtraTabPageRepoHistory.SuspendLayout();
+            this.groupBox21.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlRepoLog)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewRepoLog)).BeginInit();
             this.groupBox13.SuspendLayout();
             this.xtraTabPageTSB.SuspendLayout();
+            this.groupBox22.SuspendLayout();
             this.groupBoxDates.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerFollowUpDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerFollowUpDate.Properties)).BeginInit();
@@ -1226,2281 +1245,1186 @@
             this.groupBoxAccountNumber.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolbarFormManager2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tabFormControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             this.SuspendLayout();
             // 
             // label45
             // 
-            label45.AutoSize = true;
-            label45.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label45.Location = new System.Drawing.Point(152, 498);
+            resources.ApplyResources(label45, "label45");
             label45.Name = "label45";
-            label45.Size = new System.Drawing.Size(99, 20);
-            label45.TabIndex = 104;
-            label45.Text = "DLR EMAIL:";
             // 
             // label48
             // 
-            label48.AutoSize = true;
-            label48.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label48.Location = new System.Drawing.Point(108, 362);
+            resources.ApplyResources(label48, "label48");
             label48.Name = "label48";
-            label48.Size = new System.Drawing.Size(53, 20);
-            label48.TabIndex = 102;
-            label48.Text = "CELL:";
             // 
             // labelAuthNo
             // 
-            labelAuthNo.AutoSize = true;
-            labelAuthNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            labelAuthNo.Location = new System.Drawing.Point(39, 84);
+            resources.ApplyResources(labelAuthNo, "labelAuthNo");
             labelAuthNo.Name = "labelAuthNo";
-            labelAuthNo.Size = new System.Drawing.Size(84, 20);
-            labelAuthNo.TabIndex = 61;
-            labelAuthNo.Text = "Auth No.:";
-            labelAuthNo.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label153
             // 
-            label153.AutoSize = true;
+            resources.ApplyResources(label153, "label153");
             label153.BackColor = System.Drawing.Color.Transparent;
-            label153.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label153.Location = new System.Drawing.Point(846, 60);
             label153.Name = "label153";
-            label153.Size = new System.Drawing.Size(37, 20);
-            label153.TabIndex = 100;
-            label153.Text = "GN:";
             // 
             // label154
             // 
-            label154.AutoSize = true;
+            resources.ApplyResources(label154, "label154");
             label154.BackColor = System.Drawing.Color.Transparent;
-            label154.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label154.Location = new System.Drawing.Point(532, 60);
             label154.Name = "label154";
-            label154.Size = new System.Drawing.Size(53, 20);
-            label154.TabIndex = 99;
-            label154.Text = "LAST:";
             // 
             // label155
             // 
-            label155.AutoSize = true;
+            resources.ApplyResources(label155, "label155");
             label155.BackColor = System.Drawing.Color.Transparent;
-            label155.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label155.Location = new System.Drawing.Point(310, 60);
             label155.Name = "label155";
-            label155.Size = new System.Drawing.Size(75, 20);
-            label155.TabIndex = 98;
-            label155.Text = "MIDDLE:";
             // 
             // label156
             // 
-            label156.AutoSize = true;
-            label156.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label156.Location = new System.Drawing.Point(278, 437);
+            resources.ApplyResources(label156, "label156");
             label156.Name = "label156";
-            label156.Size = new System.Drawing.Size(83, 20);
-            label156.TabIndex = 97;
-            label156.Text = "ITIN NUM:";
             // 
             // labelGAP
             // 
-            labelGAP.AutoSize = true;
+            resources.ApplyResources(labelGAP, "labelGAP");
             labelGAP.BackColor = System.Drawing.Color.Transparent;
-            labelGAP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            labelGAP.Location = new System.Drawing.Point(11, 32);
             labelGAP.Name = "labelGAP";
-            labelGAP.Size = new System.Drawing.Size(47, 20);
-            labelGAP.TabIndex = 94;
-            labelGAP.Text = "GAP:";
             // 
             // label159
             // 
-            label159.AutoSize = true;
-            label159.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label159.Location = new System.Drawing.Point(543, 472);
+            resources.ApplyResources(label159, "label159");
             label159.Name = "label159";
-            label159.Size = new System.Drawing.Size(134, 20);
-            label159.TabIndex = 89;
-            label159.Text = "DEALER STATE:";
             // 
             // label161
             // 
-            label161.AutoSize = true;
-            label161.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label161.Location = new System.Drawing.Point(607, 230);
+            resources.ApplyResources(label161, "label161");
             label161.Name = "label161";
-            label161.Size = new System.Drawing.Size(146, 20);
-            label161.TabIndex = 81;
-            label161.Text = "EMAIL ADDRESS:";
-            label161.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label162
             // 
-            label162.AutoSize = true;
-            label162.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label162.Location = new System.Drawing.Point(218, 534);
+            resources.ApplyResources(label162, "label162");
             label162.Name = "label162";
-            label162.Size = new System.Drawing.Size(119, 20);
-            label162.TabIndex = 78;
-            label162.Text = "LETTER TYPE:";
             // 
             // label163
             // 
-            label163.AutoSize = true;
-            label163.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label163.Location = new System.Drawing.Point(60, 534);
+            resources.ApplyResources(label163, "label163");
             label163.Name = "label163";
-            label163.Size = new System.Drawing.Size(101, 20);
-            label163.TabIndex = 76;
-            label163.Text = "LETTER NO:";
             // 
             // label165
             // 
-            label165.AutoSize = true;
-            label165.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label165.Location = new System.Drawing.Point(121, 94);
+            resources.ApplyResources(label165, "label165");
             label165.Name = "label165";
-            label165.Size = new System.Drawing.Size(40, 20);
-            label165.TabIndex = 63;
-            label165.Text = "C/O:";
             // 
             // label166
             // 
-            label166.AutoSize = true;
-            label166.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label166.Location = new System.Drawing.Point(598, 332);
+            resources.ApplyResources(label166, "label166");
             label166.Name = "label166";
-            label166.Size = new System.Drawing.Size(155, 20);
-            label166.TabIndex = 61;
-            label166.Text = "DEALER  BRANCH:";
-            label166.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label167
             // 
-            label167.AutoSize = true;
-            label167.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label167.Location = new System.Drawing.Point(603, 298);
+            resources.ApplyResources(label167, "label167");
             label167.Name = "label167";
-            label167.Size = new System.Drawing.Size(150, 20);
-            label167.TabIndex = 59;
-            label167.Text = "DISTRIBUTOR NO:";
-            label167.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label168
             // 
-            label168.AutoSize = true;
-            label168.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label168.Location = new System.Drawing.Point(595, 264);
+            resources.ApplyResources(label168, "label168");
             label168.Name = "label168";
-            label168.Size = new System.Drawing.Size(158, 20);
-            label168.TabIndex = 57;
-            label168.Text = "ALLOTMENT PROG:";
-            label168.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label169
             // 
-            label169.AutoSize = true;
-            label169.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label169.Location = new System.Drawing.Point(601, 162);
+            resources.ApplyResources(label169, "label169");
             label169.Name = "label169";
-            label169.Size = new System.Drawing.Size(152, 20);
-            label169.TabIndex = 50;
-            label169.Text = "INSURANCE (Y/N): ";
-            label169.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label170
             // 
-            label170.AutoSize = true;
-            label170.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label170.Location = new System.Drawing.Point(286, 399);
+            resources.ApplyResources(label170, "label170");
             label170.Name = "label170";
-            label170.Size = new System.Drawing.Size(75, 20);
-            label170.TabIndex = 46;
-            label170.Text = "SS NUM:";
             // 
             // label171
             // 
-            label171.AutoSize = true;
-            label171.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label171.Location = new System.Drawing.Point(113, 399);
+            resources.ApplyResources(label171, "label171");
             label171.Name = "label171";
-            label171.Size = new System.Drawing.Size(48, 20);
-            label171.TabIndex = 45;
-            label171.Text = "DOB:";
             // 
             // label172
             // 
-            label172.AutoSize = true;
-            label172.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label172.Location = new System.Drawing.Point(649, 94);
+            resources.ApplyResources(label172, "label172");
             label172.Name = "label172";
-            label172.Size = new System.Drawing.Size(104, 20);
-            label172.TabIndex = 44;
-            label172.Text = "COMMENTS:";
-            label172.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label173
             // 
-            label173.AutoSize = true;
-            label173.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label173.Location = new System.Drawing.Point(55, 472);
+            resources.ApplyResources(label173, "label173");
             label173.Name = "label173";
-            label173.Size = new System.Drawing.Size(106, 20);
-            label173.TabIndex = 37;
-            label173.Text = "DEALER NO:";
             // 
             // label174
             // 
-            label174.AutoSize = true;
-            label174.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label174.Location = new System.Drawing.Point(73, 264);
+            resources.ApplyResources(label174, "label174");
             label174.Name = "label174";
-            label174.Size = new System.Drawing.Size(88, 20);
-            label174.TabIndex = 32;
-            label174.Text = "ZIP CODE:";
             // 
             // label175
             // 
-            label175.AutoSize = true;
-            label175.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label175.Location = new System.Drawing.Point(97, 230);
+            resources.ApplyResources(label175, "label175");
             label175.Name = "label175";
-            label175.Size = new System.Drawing.Size(64, 20);
-            label175.TabIndex = 30;
-            label175.Text = "STATE:";
             // 
             // label176
             // 
-            label176.AutoSize = true;
-            label176.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label176.Location = new System.Drawing.Point(112, 196);
+            resources.ApplyResources(label176, "label176");
             label176.Name = "label176";
-            label176.Size = new System.Drawing.Size(49, 20);
-            label176.TabIndex = 28;
-            label176.Text = "CITY:";
             // 
             // label177
             // 
-            label177.AutoSize = true;
+            resources.ApplyResources(label177, "label177");
             label177.BackColor = System.Drawing.Color.Transparent;
-            label177.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label177.Location = new System.Drawing.Point(54, 162);
             label177.Name = "label177";
-            label177.Size = new System.Drawing.Size(107, 20);
-            label177.TabIndex = 22;
-            label177.Text = "ADDRESS-2:";
             // 
             // label178
             // 
-            label178.AutoSize = true;
+            resources.ApplyResources(label178, "label178");
             label178.BackColor = System.Drawing.Color.Transparent;
-            label178.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label178.Location = new System.Drawing.Point(54, 128);
             label178.Name = "label178";
-            label178.Size = new System.Drawing.Size(107, 20);
-            label178.TabIndex = 20;
-            label178.Text = "ADDRESS-1:";
             // 
             // label179
             // 
-            label179.AutoSize = true;
+            resources.ApplyResources(label179, "label179");
             label179.BackColor = System.Drawing.Color.Transparent;
-            label179.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label179.Location = new System.Drawing.Point(51, 60);
             label179.Name = "label179";
-            label179.Size = new System.Drawing.Size(110, 20);
-            label179.TabIndex = 17;
-            label179.Text = "FIRST NAME:";
             // 
             // label180
             // 
-            label180.AutoSize = true;
-            label180.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label180.Location = new System.Drawing.Point(599, 399);
+            resources.ApplyResources(label180, "label180");
             label180.Name = "label180";
-            label180.Size = new System.Drawing.Size(154, 20);
-            label180.TabIndex = 15;
-            label180.Text = "NO CONTACT (Y/N):";
-            label180.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label181
             // 
-            label181.AutoSize = true;
-            label181.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label181.Location = new System.Drawing.Point(553, 366);
+            resources.ApplyResources(label181, "label181");
             label181.Name = "label181";
-            label181.Size = new System.Drawing.Size(200, 20);
-            label181.TabIndex = 13;
-            label181.Text = "WRONG ADDRESS (Y/N):";
-            label181.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label182
             // 
-            label182.AutoSize = true;
-            label182.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label182.Location = new System.Drawing.Point(99, 332);
+            resources.ApplyResources(label182, "label182");
             label182.Name = "label182";
-            label182.Size = new System.Drawing.Size(62, 20);
-            label182.TabIndex = 9;
-            label182.Text = "WORK:";
             // 
             // label183
             // 
-            label183.AutoSize = true;
-            label183.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label183.Location = new System.Drawing.Point(100, 298);
+            resources.ApplyResources(label183, "label183");
             label183.Name = "label183";
-            label183.Size = new System.Drawing.Size(61, 20);
-            label183.TabIndex = 7;
-            label183.Text = "HOME:";
             // 
             // label184
             // 
-            label184.AutoSize = true;
-            label184.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label184.Location = new System.Drawing.Point(298, 27);
+            resources.ApplyResources(label184, "label184");
             label184.Name = "label184";
-            label184.Size = new System.Drawing.Size(166, 20);
-            label184.TabIndex = 5;
-            label184.Text = "PURCHASE ORDER:";
             // 
             // label185
             // 
-            label185.AutoSize = true;
-            label185.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label185.Location = new System.Drawing.Point(677, 27);
+            resources.ApplyResources(label185, "label185");
             label185.Name = "label185";
-            label185.Size = new System.Drawing.Size(76, 20);
-            label185.TabIndex = 3;
-            label185.Text = "STATUS:";
-            label185.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label186
             // 
-            label186.AutoSize = true;
-            label186.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label186.Location = new System.Drawing.Point(57, 27);
+            resources.ApplyResources(label186, "label186");
             label186.Name = "label186";
-            label186.Size = new System.Drawing.Size(104, 20);
-            label186.TabIndex = 0;
-            label186.Text = "CUSTOMER:";
             // 
             // label187
             // 
-            label187.AutoSize = true;
-            label187.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label187.Location = new System.Drawing.Point(624, 196);
+            resources.ApplyResources(label187, "label187");
             label187.Name = "label187";
-            label187.Size = new System.Drawing.Size(129, 20);
-            label187.TabIndex = 52;
-            label187.Text = "AUTOPAY (Y/N):";
-            label187.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label188
             // 
-            label188.AutoSize = true;
-            label188.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label188.Location = new System.Drawing.Point(162, 54);
+            resources.ApplyResources(label188, "label188");
             label188.Name = "label188";
-            label188.Size = new System.Drawing.Size(116, 20);
-            label188.TabIndex = 87;
-            label188.Text = "OPEN ACCT #:";
-            label188.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label189
             // 
-            label189.AutoSize = true;
-            label189.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label189.Location = new System.Drawing.Point(162, 23);
+            resources.ApplyResources(label189, "label189");
             label189.Name = "label189";
-            label189.Size = new System.Drawing.Size(115, 20);
-            label189.TabIndex = 84;
-            label189.Text = "CLSD ACCT #:";
-            label189.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // labelTotalDue
             // 
-            labelTotalDue.AutoSize = true;
-            labelTotalDue.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            labelTotalDue.Location = new System.Drawing.Point(269, 182);
+            resources.ApplyResources(labelTotalDue, "labelTotalDue");
             labelTotalDue.Name = "labelTotalDue";
-            labelTotalDue.Size = new System.Drawing.Size(90, 21);
-            labelTotalDue.TabIndex = 202;
-            labelTotalDue.Text = "TOTAL DUE:";
-            labelTotalDue.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // labelDealerCashPrice
             // 
-            labelDealerCashPrice.AutoSize = true;
-            labelDealerCashPrice.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            labelDealerCashPrice.Location = new System.Drawing.Point(756, 90);
+            resources.ApplyResources(labelDealerCashPrice, "labelDealerCashPrice");
             labelDealerCashPrice.Name = "labelDealerCashPrice";
-            labelDealerCashPrice.Size = new System.Drawing.Size(131, 21);
-            labelDealerCashPrice.TabIndex = 140;
-            labelDealerCashPrice.Text = "DLR CASH PRICE:";
-            labelDealerCashPrice.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label30
             // 
-            label30.AutoSize = true;
-            label30.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label30.Location = new System.Drawing.Point(61, 27);
+            resources.ApplyResources(label30, "label30");
             label30.Name = "label30";
-            label30.Size = new System.Drawing.Size(81, 21);
-            label30.TabIndex = 128;
-            label30.Text = "PAYMENT:";
             // 
             // label41
             // 
-            label41.AutoSize = true;
-            label41.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label41.Location = new System.Drawing.Point(28, 182);
+            resources.ApplyResources(label41, "label41");
             label41.Name = "label41";
-            label41.Size = new System.Drawing.Size(116, 21);
-            label41.TabIndex = 133;
-            label41.Text = "# OF MONTHS:";
             // 
             // label40
             // 
-            label40.AutoSize = true;
-            label40.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label40.Location = new System.Drawing.Point(26, 151);
+            resources.ApplyResources(label40, "label40");
             label40.Name = "label40";
-            label40.Size = new System.Drawing.Size(117, 21);
-            label40.TabIndex = 132;
-            label40.Text = "BUYOUT CODE:";
             // 
             // label39
             // 
-            label39.AutoSize = true;
-            label39.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label39.Location = new System.Drawing.Point(33, 120);
+            resources.ApplyResources(label39, "label39");
             label39.Name = "label39";
-            label39.Size = new System.Drawing.Size(111, 21);
-            label39.TabIndex = 131;
-            label39.Text = "DLR DISC BAL:";
             // 
             // label38
             // 
-            label38.AutoSize = true;
-            label38.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label38.Location = new System.Drawing.Point(38, 90);
+            resources.ApplyResources(label38, "label38");
             label38.Name = "label38";
-            label38.Size = new System.Drawing.Size(106, 21);
-            label38.TabIndex = 130;
-            label38.Text = "DEALER DISC:";
             // 
             // label34
             // 
-            label34.AutoSize = true;
-            label34.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label34.Location = new System.Drawing.Point(53, 57);
+            resources.ApplyResources(label34, "label34");
             label34.Name = "label34";
-            label34.Size = new System.Drawing.Size(90, 21);
-            label34.TabIndex = 129;
-            label34.Text = "PAID THRU:";
             // 
             // label47
             // 
-            label47.AutoSize = true;
-            label47.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label47.Location = new System.Drawing.Point(509, 151);
+            resources.ApplyResources(label47, "label47");
             label47.Name = "label47";
-            label47.Size = new System.Drawing.Size(125, 21);
-            label47.TabIndex = 124;
-            label47.Text = "CONTROL DATE:";
-            label47.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label46
             // 
-            label46.AutoSize = true;
-            label46.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label46.Location = new System.Drawing.Point(550, 90);
+            resources.ApplyResources(label46, "label46");
             label46.Name = "label46";
-            label46.Size = new System.Drawing.Size(84, 21);
-            label46.TabIndex = 122;
-            label46.Text = "PAID DISC:";
-            label46.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label44
             // 
-            label44.AutoSize = true;
-            label44.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label44.Location = new System.Drawing.Point(251, 151);
+            resources.ApplyResources(label44, "label44");
             label44.Name = "label44";
-            label44.Size = new System.Drawing.Size(108, 21);
-            label44.TabIndex = 118;
-            label44.Text = "CREDIT AVAIL:";
-            label44.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label43
             // 
-            label43.AutoSize = true;
-            label43.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label43.Location = new System.Drawing.Point(253, 120);
+            resources.ApplyResources(label43, "label43");
             label43.Name = "label43";
-            label43.Size = new System.Drawing.Size(106, 21);
-            label43.TabIndex = 116;
-            label43.Text = "CREDIT LIMIT:";
-            label43.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label42
             // 
-            label42.AutoSize = true;
-            label42.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label42.Location = new System.Drawing.Point(293, 90);
+            resources.ApplyResources(label42, "label42");
             label42.Name = "label42";
-            label42.Size = new System.Drawing.Size(66, 21);
-            label42.TabIndex = 114;
-            label42.Text = "STATUS:";
-            label42.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label37
             // 
-            label37.AutoSize = true;
-            label37.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label37.Location = new System.Drawing.Point(493, 57);
+            resources.ApplyResources(label37, "label37");
             label37.Name = "label37";
-            label37.Size = new System.Drawing.Size(142, 21);
-            label37.TabIndex = 104;
-            label37.Text = "PMTS REMAINING:";
-            label37.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label36
             // 
-            label36.AutoSize = true;
-            label36.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label36.Location = new System.Drawing.Point(287, 57);
+            resources.ApplyResources(label36, "label36");
             label36.Name = "label36";
-            label36.Size = new System.Drawing.Size(72, 21);
-            label36.TabIndex = 102;
-            label36.Text = "BUYOUT:";
-            label36.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label33
             // 
-            label33.AutoSize = true;
-            label33.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label33.Location = new System.Drawing.Point(778, 27);
+            resources.ApplyResources(label33, "label33");
             label33.Name = "label33";
-            label33.Size = new System.Drawing.Size(109, 21);
-            label33.TabIndex = 94;
-            label33.Text = "U/E INTEREST:";
-            label33.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label32
             // 
-            label32.AutoSize = true;
-            label32.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label32.Location = new System.Drawing.Point(560, 27);
+            resources.ApplyResources(label32, "label32");
             label32.Name = "label32";
-            label32.Size = new System.Drawing.Size(74, 21);
-            label32.TabIndex = 92;
-            label32.Text = "PAID INT:";
-            label32.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label31
             // 
-            label31.AutoSize = true;
-            label31.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label31.Location = new System.Drawing.Point(274, 27);
+            resources.ApplyResources(label31, "label31");
             label31.Name = "label31";
-            label31.Size = new System.Drawing.Size(85, 21);
-            label31.TabIndex = 90;
-            label31.Text = "LOAN BAL:";
-            label31.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label53
             // 
-            label53.AutoSize = true;
-            label53.Location = new System.Drawing.Point(72, 55);
+            resources.ApplyResources(label53, "label53");
             label53.Name = "label53";
-            label53.Size = new System.Drawing.Size(72, 21);
-            label53.TabIndex = 106;
-            label53.Text = "SS NUM:";
             // 
             // label51
             // 
-            label51.AutoSize = true;
+            resources.ApplyResources(label51, "label51");
             label51.BackColor = System.Drawing.Color.Transparent;
-            label51.Location = new System.Drawing.Point(246, 25);
             label51.Name = "label51";
-            label51.Size = new System.Drawing.Size(57, 21);
-            label51.TabIndex = 102;
-            label51.Text = "NAME:";
             // 
             // label52
             // 
-            label52.AutoSize = true;
-            label52.Location = new System.Drawing.Point(21, 25);
+            resources.ApplyResources(label52, "label52");
             label52.Name = "label52";
-            label52.Size = new System.Drawing.Size(122, 21);
-            label52.TabIndex = 98;
-            label52.Text = "CUSTOMER NO:";
             // 
             // labelTierPoints
             // 
-            labelTierPoints.AutoSize = true;
-            labelTierPoints.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            labelTierPoints.Location = new System.Drawing.Point(305, 128);
+            resources.ApplyResources(labelTierPoints, "labelTierPoints");
             labelTierPoints.Name = "labelTierPoints";
-            labelTierPoints.Size = new System.Drawing.Size(87, 20);
-            labelTierPoints.TabIndex = 244;
-            labelTierPoints.Text = "Tier Points:";
-            labelTierPoints.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // labelBuyerIncome
             // 
-            labelBuyerIncome.AutoSize = true;
-            labelBuyerIncome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            labelBuyerIncome.Location = new System.Drawing.Point(12, 128);
+            resources.ApplyResources(labelBuyerIncome, "labelBuyerIncome");
             labelBuyerIncome.Name = "labelBuyerIncome";
-            labelBuyerIncome.Size = new System.Drawing.Size(176, 20);
-            labelBuyerIncome.TabIndex = 124;
-            labelBuyerIncome.Text = "Buyer\'s Annual Income:";
-            labelBuyerIncome.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // cUSTOMER_CREDIT_SCORE_NLabel
             // 
-            cUSTOMER_CREDIT_SCORE_NLabel.AutoSize = true;
-            cUSTOMER_CREDIT_SCORE_NLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            cUSTOMER_CREDIT_SCORE_NLabel.Location = new System.Drawing.Point(255, 93);
+            resources.ApplyResources(cUSTOMER_CREDIT_SCORE_NLabel, "cUSTOMER_CREDIT_SCORE_NLabel");
             cUSTOMER_CREDIT_SCORE_NLabel.Name = "cUSTOMER_CREDIT_SCORE_NLabel";
-            cUSTOMER_CREDIT_SCORE_NLabel.Size = new System.Drawing.Size(101, 20);
-            cUSTOMER_CREDIT_SCORE_NLabel.TabIndex = 115;
-            cUSTOMER_CREDIT_SCORE_NLabel.Text = "Credit Score:";
-            cUSTOMER_CREDIT_SCORE_NLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label131
             // 
-            label131.AutoSize = true;
+            resources.ApplyResources(label131, "label131");
             label131.BackColor = System.Drawing.Color.Transparent;
-            label131.Location = new System.Drawing.Point(199, 188);
             label131.Name = "label131";
-            label131.Size = new System.Drawing.Size(144, 21);
-            label131.TabIndex = 247;
-            label131.Text = "Date Title Released:";
             // 
             // labelLTV
             // 
-            labelLTV.AutoSize = true;
-            labelLTV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            labelLTV.Location = new System.Drawing.Point(493, 159);
+            resources.ApplyResources(labelLTV, "labelLTV");
             labelLTV.Name = "labelLTV";
-            labelLTV.Size = new System.Drawing.Size(42, 20);
-            labelLTV.TabIndex = 245;
-            labelLTV.Text = "LTV:";
-            labelLTV.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label120
             // 
-            label120.AutoSize = true;
+            resources.ApplyResources(label120, "label120");
             label120.BackColor = System.Drawing.Color.Transparent;
-            label120.Location = new System.Drawing.Point(32, 123);
             label120.Name = "label120";
-            label120.Size = new System.Drawing.Size(114, 21);
-            label120.TabIndex = 130;
-            label120.Text = "Auction House:";
             // 
             // label50
             // 
-            label50.AutoSize = true;
-            label50.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label50.Location = new System.Drawing.Point(206, 27);
+            resources.ApplyResources(label50, "label50");
             label50.Name = "label50";
-            label50.Size = new System.Drawing.Size(33, 20);
-            label50.TabIndex = 117;
-            label50.Text = "Cd:";
             // 
             // label119
             // 
-            label119.AutoSize = true;
+            resources.ApplyResources(label119, "label119");
             label119.BackColor = System.Drawing.Color.Transparent;
-            label119.Location = new System.Drawing.Point(17, 91);
             label119.Name = "label119";
-            label119.Size = new System.Drawing.Size(129, 21);
-            label119.TabIndex = 129;
-            label119.Text = "Current Location:";
             // 
             // label118
             // 
-            label118.AutoSize = true;
+            resources.ApplyResources(label118, "label118");
             label118.BackColor = System.Drawing.Color.Transparent;
-            label118.Location = new System.Drawing.Point(199, 158);
             label118.Name = "label118";
-            label118.Size = new System.Drawing.Size(144, 21);
-            label118.TabIndex = 128;
-            label118.Text = "Date Title Received:";
             // 
             // label49
             // 
-            label49.AutoSize = true;
-            label49.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label49.Location = new System.Drawing.Point(4, 27);
+            resources.ApplyResources(label49, "label49");
             label49.Name = "label49";
-            label49.Size = new System.Drawing.Size(52, 20);
-            label49.TabIndex = 116;
-            label49.Text = "Repo:";
             // 
             // label117
             // 
-            label117.AutoSize = true;
+            resources.ApplyResources(label117, "label117");
             label117.BackColor = System.Drawing.Color.Transparent;
-            label117.Location = new System.Drawing.Point(52, 59);
             label117.Name = "label117";
-            label117.Size = new System.Drawing.Size(94, 21);
-            label117.TabIndex = 120;
-            label117.Text = "Repo Agent:";
             // 
             // label116
             // 
-            label116.AutoSize = true;
+            resources.ApplyResources(label116, "label116");
             label116.BackColor = System.Drawing.Color.Transparent;
-            label116.Location = new System.Drawing.Point(473, 26);
             label116.Name = "label116";
-            label116.Size = new System.Drawing.Size(76, 21);
-            label116.TabIndex = 118;
-            label116.Text = "Rep Date:";
             // 
             // labelMileage
             // 
-            labelMileage.AutoSize = true;
+            resources.ApplyResources(labelMileage, "labelMileage");
             labelMileage.BackColor = System.Drawing.Color.Transparent;
-            labelMileage.Location = new System.Drawing.Point(257, 34);
             labelMileage.Name = "labelMileage";
-            labelMileage.Size = new System.Drawing.Size(68, 21);
-            labelMileage.TabIndex = 127;
-            labelMileage.Text = "Mileage:";
             // 
             // lblInsCo
             // 
-            lblInsCo.AutoSize = true;
-            lblInsCo.Location = new System.Drawing.Point(5, 163);
+            resources.ApplyResources(lblInsCo, "lblInsCo");
             lblInsCo.Name = "lblInsCo";
-            lblInsCo.Size = new System.Drawing.Size(151, 21);
-            lblInsCo.TabIndex = 83;
-            lblInsCo.Text = "Insurance Company:";
             // 
             // label60
             // 
-            label60.AutoSize = true;
-            label60.Location = new System.Drawing.Point(312, 265);
+            resources.ApplyResources(label60, "label60");
             label60.Name = "label60";
-            label60.Size = new System.Drawing.Size(82, 21);
-            label60.TabIndex = 106;
-            label60.Text = "Phone No:";
             // 
             // label59
             // 
-            label59.AutoSize = true;
-            label59.Location = new System.Drawing.Point(59, 391);
+            resources.ApplyResources(label59, "label59");
             label59.Name = "label59";
-            label59.Size = new System.Drawing.Size(97, 21);
-            label59.TabIndex = 105;
-            label59.Text = "Joint Owner:";
             // 
             // label58
             // 
-            label58.AutoSize = true;
-            label58.Location = new System.Drawing.Point(30, 359);
+            resources.ApplyResources(label58, "label58");
             label58.Name = "label58";
-            label58.Size = new System.Drawing.Size(126, 21);
-            label58.TabIndex = 103;
-            label58.Text = "Joint Ownership:";
             // 
             // label57
             // 
-            label57.AutoSize = true;
+            resources.ApplyResources(label57, "label57");
             label57.BackColor = System.Drawing.Color.Transparent;
-            label57.Location = new System.Drawing.Point(38, 327);
             label57.Name = "label57";
-            label57.Size = new System.Drawing.Size(118, 21);
-            label57.TabIndex = 101;
-            label57.Text = "Expiration Date:";
             // 
             // label56
             // 
-            label56.AutoSize = true;
+            resources.ApplyResources(label56, "label56");
             label56.BackColor = System.Drawing.Color.Transparent;
-            label56.Location = new System.Drawing.Point(49, 294);
             label56.Name = "label56";
-            label56.Size = new System.Drawing.Size(107, 21);
-            label56.TabIndex = 99;
-            label56.Text = "Effective Date:";
             // 
             // label55
             // 
-            label55.AutoSize = true;
+            resources.ApplyResources(label55, "label55");
             label55.BackColor = System.Drawing.Color.Transparent;
-            label55.Location = new System.Drawing.Point(31, 262);
             label55.Name = "label55";
-            label55.Size = new System.Drawing.Size(125, 21);
-            label55.TabIndex = 97;
-            label55.Text = "Insurance Agent:";
             // 
             // label54
             // 
-            label54.AutoSize = true;
+            resources.ApplyResources(label54, "label54");
             label54.BackColor = System.Drawing.Color.Transparent;
-            label54.Location = new System.Drawing.Point(40, 196);
             label54.Name = "label54";
-            label54.Size = new System.Drawing.Size(115, 21);
-            label54.TabIndex = 95;
-            label54.Text = "Policy Number:";
             // 
             // lblVIN
             // 
-            lblVIN.AutoSize = true;
+            resources.ApplyResources(lblVIN, "lblVIN");
             lblVIN.BackColor = System.Drawing.Color.Transparent;
-            lblVIN.Location = new System.Drawing.Point(55, 132);
             lblVIN.Name = "lblVIN";
-            lblVIN.Size = new System.Drawing.Size(101, 21);
-            lblVIN.TabIndex = 93;
-            lblVIN.Text = "VIN Number:";
             // 
             // lblMake
             // 
-            lblMake.AutoSize = true;
-            lblMake.Location = new System.Drawing.Point(105, 67);
+            resources.ApplyResources(lblMake, "lblMake");
             lblMake.Name = "lblMake";
-            lblMake.Size = new System.Drawing.Size(51, 21);
-            lblMake.TabIndex = 91;
-            lblMake.Text = "Make:";
             // 
             // lblModel
             // 
-            lblModel.AutoSize = true;
+            resources.ApplyResources(lblModel, "lblModel");
             lblModel.BackColor = System.Drawing.Color.Transparent;
-            lblModel.Location = new System.Drawing.Point(99, 99);
             lblModel.Name = "lblModel";
-            lblModel.Size = new System.Drawing.Size(57, 21);
-            lblModel.TabIndex = 78;
-            lblModel.Text = "Model:";
             // 
             // lblVehicleYear
             // 
-            lblVehicleYear.AutoSize = true;
+            resources.ApplyResources(lblVehicleYear, "lblVehicleYear");
             lblVehicleYear.BackColor = System.Drawing.Color.Transparent;
-            lblVehicleYear.Location = new System.Drawing.Point(58, 34);
             lblVehicleYear.Name = "lblVehicleYear";
-            lblVehicleYear.Size = new System.Drawing.Size(96, 21);
-            lblVehicleYear.TabIndex = 77;
-            lblVehicleYear.Text = "Vehicle Year:";
             // 
             // labelCOSAuthNo
             // 
-            labelCOSAuthNo.AutoSize = true;
-            labelCOSAuthNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            labelCOSAuthNo.Location = new System.Drawing.Point(39, 84);
+            resources.ApplyResources(labelCOSAuthNo, "labelCOSAuthNo");
             labelCOSAuthNo.Name = "labelCOSAuthNo";
-            labelCOSAuthNo.Size = new System.Drawing.Size(84, 20);
-            labelCOSAuthNo.TabIndex = 61;
-            labelCOSAuthNo.Text = "Auth No.:";
-            labelCOSAuthNo.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label82
             // 
-            label82.AutoSize = true;
+            resources.ApplyResources(label82, "label82");
             label82.BackColor = System.Drawing.Color.Transparent;
-            label82.Location = new System.Drawing.Point(481, 21);
             label82.Name = "label82";
-            label82.Size = new System.Drawing.Size(54, 21);
-            label82.TabIndex = 158;
-            label82.Text = "Phone";
             // 
             // label81
             // 
-            label81.AutoSize = true;
+            resources.ApplyResources(label81, "label81");
             label81.BackColor = System.Drawing.Color.Transparent;
-            label81.Location = new System.Drawing.Point(12, 21);
             label81.Name = "label81";
-            label81.Size = new System.Drawing.Size(63, 21);
-            label81.TabIndex = 157;
-            label81.Text = "Contact";
             // 
             // label80
             // 
-            label80.AutoSize = true;
+            resources.ApplyResources(label80, "label80");
             label80.BackColor = System.Drawing.Color.Transparent;
-            label80.Location = new System.Drawing.Point(254, 21);
             label80.Name = "label80";
-            label80.Size = new System.Drawing.Size(67, 21);
-            label80.TabIndex = 156;
-            label80.Text = "Relation";
             // 
             // label79
             // 
-            label79.AutoSize = true;
-            label79.Location = new System.Drawing.Point(594, 140);
+            resources.ApplyResources(label79, "label79");
             label79.Name = "label79";
-            label79.Size = new System.Drawing.Size(38, 21);
-            label79.TabIndex = 155;
-            label79.Text = "EXT:";
             // 
             // label78
             // 
-            label78.AutoSize = true;
-            label78.Location = new System.Drawing.Point(594, 110);
+            resources.ApplyResources(label78, "label78");
             label78.Name = "label78";
-            label78.Size = new System.Drawing.Size(38, 21);
-            label78.TabIndex = 153;
-            label78.Text = "EXT:";
             // 
             // label77
             // 
-            label77.AutoSize = true;
-            label77.Location = new System.Drawing.Point(594, 80);
+            resources.ApplyResources(label77, "label77");
             label77.Name = "label77";
-            label77.Size = new System.Drawing.Size(38, 21);
-            label77.TabIndex = 151;
-            label77.Text = "EXT:";
             // 
             // label76
             // 
-            label76.AutoSize = true;
-            label76.Location = new System.Drawing.Point(594, 51);
+            resources.ApplyResources(label76, "label76");
             label76.Name = "label76";
-            label76.Size = new System.Drawing.Size(38, 21);
-            label76.TabIndex = 149;
-            label76.Text = "EXT:";
             // 
             // label66
             // 
-            label66.AutoSize = true;
-            label66.Location = new System.Drawing.Point(266, 144);
+            resources.ApplyResources(label66, "label66");
             label66.Name = "label66";
-            label66.Size = new System.Drawing.Size(80, 21);
-            label66.TabIndex = 130;
-            label66.Text = "ZIP CODE:";
             // 
             // labelCosignerTierPoints
             // 
-            labelCosignerTierPoints.AutoSize = true;
-            labelCosignerTierPoints.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            labelCosignerTierPoints.Location = new System.Drawing.Point(283, 174);
+            resources.ApplyResources(labelCosignerTierPoints, "labelCosignerTierPoints");
             labelCosignerTierPoints.Name = "labelCosignerTierPoints";
-            labelCosignerTierPoints.Size = new System.Drawing.Size(101, 21);
-            labelCosignerTierPoints.TabIndex = 333;
-            labelCosignerTierPoints.Text = "TIER POINTS:";
-            labelCosignerTierPoints.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label121
             // 
-            label121.AutoSize = true;
-            label121.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label121.Location = new System.Drawing.Point(227, 230);
+            resources.ApplyResources(label121, "label121");
             label121.Name = "label121";
-            label121.Size = new System.Drawing.Size(119, 20);
-            label121.TabIndex = 171;
-            label121.Text = "LETTER TYPE:";
             // 
             // label122
             // 
-            label122.AutoSize = true;
-            label122.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label122.Location = new System.Drawing.Point(65, 230);
+            resources.ApplyResources(label122, "label122");
             label122.Name = "label122";
-            label122.Size = new System.Drawing.Size(101, 20);
-            label122.TabIndex = 170;
-            label122.Text = "LETTER NO:";
             // 
             // labelTier
             // 
-            labelTier.AutoSize = true;
-            labelTier.Location = new System.Drawing.Point(208, 173);
+            resources.ApplyResources(labelTier, "labelTier");
             labelTier.Name = "labelTier";
-            labelTier.Size = new System.Drawing.Size(43, 21);
-            labelTier.TabIndex = 165;
-            labelTier.Text = "TIER:";
             // 
             // labelCosignerEmail
             // 
-            labelCosignerEmail.AutoSize = true;
-            labelCosignerEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            labelCosignerEmail.Location = new System.Drawing.Point(20, 199);
+            resources.ApplyResources(labelCosignerEmail, "labelCosignerEmail");
             labelCosignerEmail.Name = "labelCosignerEmail";
-            labelCosignerEmail.Size = new System.Drawing.Size(146, 20);
-            labelCosignerEmail.TabIndex = 163;
-            labelCosignerEmail.Text = "EMAIL ADDRESS:";
-            labelCosignerEmail.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // labelAnnualIncome
             // 
-            labelAnnualIncome.AutoSize = true;
+            resources.ApplyResources(labelAnnualIncome, "labelAnnualIncome");
             labelAnnualIncome.BackColor = System.Drawing.Color.Transparent;
-            labelAnnualIncome.Location = new System.Drawing.Point(432, 173);
             labelAnnualIncome.Name = "labelAnnualIncome";
-            labelAnnualIncome.Size = new System.Drawing.Size(140, 21);
-            labelAnnualIncome.TabIndex = 161;
-            labelAnnualIncome.Text = "ANNUAL INCOME:";
             // 
             // labelCosignerCreditScore
             // 
-            labelCosignerCreditScore.AutoSize = true;
+            resources.ApplyResources(labelCosignerCreditScore, "labelCosignerCreditScore");
             labelCosignerCreditScore.BackColor = System.Drawing.Color.Transparent;
-            labelCosignerCreditScore.Location = new System.Drawing.Point(44, 173);
             labelCosignerCreditScore.Name = "labelCosignerCreditScore";
-            labelCosignerCreditScore.Size = new System.Drawing.Size(117, 21);
-            labelCosignerCreditScore.TabIndex = 159;
-            labelCosignerCreditScore.Text = "CREDIT SCORE:";
             // 
             // label75
             // 
-            label75.AutoSize = true;
-            label75.Location = new System.Drawing.Point(675, 57);
+            resources.ApplyResources(label75, "label75");
             label75.Name = "label75";
-            label75.Size = new System.Drawing.Size(38, 21);
-            label75.TabIndex = 136;
-            label75.Text = "EXT:";
             // 
             // label74
             // 
-            label74.AutoSize = true;
+            resources.ApplyResources(label74, "label74");
             label74.BackColor = System.Drawing.Color.Transparent;
-            label74.Location = new System.Drawing.Point(41, 57);
             label74.Name = "label74";
-            label74.Size = new System.Drawing.Size(285, 21);
-            label74.TabIndex = 133;
-            label74.Text = "USE PRIMARY PAYER\'S ADDRESS (Y/N):";
             // 
             // label64
             // 
-            label64.AutoSize = true;
-            label64.Location = new System.Drawing.Point(477, 115);
+            resources.ApplyResources(label64, "label64");
             label64.Name = "label64";
-            label64.Size = new System.Drawing.Size(72, 21);
-            label64.TabIndex = 132;
-            label64.Text = "SS NUM:";
             // 
             // label65
             // 
-            label65.AutoSize = true;
-            label65.Location = new System.Drawing.Point(429, 144);
+            resources.ApplyResources(label65, "label65");
             label65.Name = "label65";
-            label65.Size = new System.Drawing.Size(118, 21);
-            label65.TabIndex = 131;
-            label65.Text = "DATE OF BIRTH:";
             // 
             // label67
             // 
-            label67.AutoSize = true;
-            label67.Location = new System.Drawing.Point(105, 144);
+            resources.ApplyResources(label67, "label67");
             label67.Name = "label67";
-            label67.Size = new System.Drawing.Size(54, 21);
-            label67.TabIndex = 129;
-            label67.Text = "STATE:";
             // 
             // label68
             // 
-            label68.AutoSize = true;
-            label68.Location = new System.Drawing.Point(117, 115);
+            resources.ApplyResources(label68, "label68");
             label68.Name = "label68";
-            label68.Size = new System.Drawing.Size(44, 21);
-            label68.TabIndex = 128;
-            label68.Text = "CITY:";
             // 
             // label69
             // 
-            label69.AutoSize = true;
+            resources.ApplyResources(label69, "label69");
             label69.BackColor = System.Drawing.Color.Transparent;
-            label69.Location = new System.Drawing.Point(65, 86);
             label69.Name = "label69";
-            label69.Size = new System.Drawing.Size(96, 21);
-            label69.TabIndex = 125;
-            label69.Text = "ADDRESS-1:";
             // 
             // label70
             // 
-            label70.AutoSize = true;
+            resources.ApplyResources(label70, "label70");
             label70.BackColor = System.Drawing.Color.Transparent;
-            label70.Location = new System.Drawing.Point(15, 29);
             label70.Name = "label70";
-            label70.Size = new System.Drawing.Size(125, 21);
-            label70.TabIndex = 122;
-            label70.Text = "CO-SIGN NAME:";
             // 
             // label71
             // 
-            label71.AutoSize = true;
-            label71.Location = new System.Drawing.Point(502, 86);
+            resources.ApplyResources(label71, "label71");
             label71.Name = "label71";
-            label71.Size = new System.Drawing.Size(47, 21);
-            label71.TabIndex = 115;
-            label71.Text = "CELL:";
             // 
             // label72
             // 
-            label72.AutoSize = true;
-            label72.Location = new System.Drawing.Point(490, 57);
+            resources.ApplyResources(label72, "label72");
             label72.Name = "label72";
-            label72.Size = new System.Drawing.Size(59, 21);
-            label72.TabIndex = 113;
-            label72.Text = "WORK:";
             // 
             // label73
             // 
-            label73.AutoSize = true;
-            label73.Location = new System.Drawing.Point(530, 29);
+            resources.ApplyResources(label73, "label73");
             label73.Name = "label73";
-            label73.Size = new System.Drawing.Size(58, 21);
-            label73.TabIndex = 110;
-            label73.Text = "HOME:";
             // 
             // label61
             // 
-            label61.AutoSize = true;
-            label61.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label61.Location = new System.Drawing.Point(89, 55);
+            resources.ApplyResources(label61, "label61");
             label61.Name = "label61";
-            label61.Size = new System.Drawing.Size(72, 21);
-            label61.TabIndex = 106;
-            label61.Text = "SS NUM:";
             // 
             // label62
             // 
-            label62.AutoSize = true;
+            resources.ApplyResources(label62, "label62");
             label62.BackColor = System.Drawing.Color.Transparent;
-            label62.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label62.Location = new System.Drawing.Point(311, 25);
             label62.Name = "label62";
-            label62.Size = new System.Drawing.Size(57, 21);
-            label62.TabIndex = 102;
-            label62.Text = "NAME:";
             // 
             // label63
             // 
-            label63.AutoSize = true;
-            label63.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label63.Location = new System.Drawing.Point(38, 25);
+            resources.ApplyResources(label63, "label63");
             label63.Name = "label63";
-            label63.Size = new System.Drawing.Size(122, 21);
-            label63.TabIndex = 98;
-            label63.Text = "CUSTOMER NO:";
             // 
             // label83
             // 
-            label83.AutoSize = true;
-            label83.Location = new System.Drawing.Point(73, 55);
+            resources.ApplyResources(label83, "label83");
             label83.Name = "label83";
-            label83.Size = new System.Drawing.Size(72, 21);
-            label83.TabIndex = 106;
-            label83.Text = "SS NUM:";
             // 
             // label84
             // 
-            label84.AutoSize = true;
+            resources.ApplyResources(label84, "label84");
             label84.BackColor = System.Drawing.Color.Transparent;
-            label84.Location = new System.Drawing.Point(315, 25);
             label84.Name = "label84";
-            label84.Size = new System.Drawing.Size(57, 21);
-            label84.TabIndex = 102;
-            label84.Text = "NAME:";
             // 
             // label85
             // 
-            label85.AutoSize = true;
-            label85.Location = new System.Drawing.Point(22, 25);
+            resources.ApplyResources(label85, "label85");
             label85.Name = "label85";
-            label85.Size = new System.Drawing.Size(122, 21);
-            label85.TabIndex = 98;
-            label85.Text = "CUSTOMER NO:";
             // 
             // label95
             // 
-            label95.AutoSize = true;
-            label95.Location = new System.Drawing.Point(281, 177);
+            resources.ApplyResources(label95, "label95");
             label95.Name = "label95";
-            label95.Size = new System.Drawing.Size(112, 21);
-            label95.TabIndex = 174;
-            label95.Text = "Autopay (Y/N):";
             // 
             // labelTotalExtensions
             // 
-            labelTotalExtensions.AutoSize = true;
-            labelTotalExtensions.Location = new System.Drawing.Point(837, 85);
+            resources.ApplyResources(labelTotalExtensions, "labelTotalExtensions");
             labelTotalExtensions.Name = "labelTotalExtensions";
-            labelTotalExtensions.Size = new System.Drawing.Size(151, 21);
-            labelTotalExtensions.TabIndex = 529;
-            labelTotalExtensions.Text = "TOTAL EXTENSIONS:";
-            labelTotalExtensions.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // labelHistContractDate
             // 
-            labelHistContractDate.AutoSize = true;
-            labelHistContractDate.Location = new System.Drawing.Point(294, 21);
+            resources.ApplyResources(labelHistContractDate, "labelHistContractDate");
             labelHistContractDate.Name = "labelHistContractDate";
-            labelHistContractDate.Size = new System.Drawing.Size(133, 21);
-            labelHistContractDate.TabIndex = 106;
-            labelHistContractDate.Text = "CONTRACT DATE:";
             // 
             // label6
             // 
-            label6.AutoSize = true;
-            label6.Location = new System.Drawing.Point(915, 192);
+            resources.ApplyResources(label6, "label6");
             label6.Name = "label6";
-            label6.Size = new System.Drawing.Size(72, 21);
-            label6.TabIndex = 104;
-            label6.Text = "BUYOUT:";
-            label6.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label4
             // 
-            label4.AutoSize = true;
-            label4.Location = new System.Drawing.Point(4, 53);
+            resources.ApplyResources(label4, "label4");
             label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(146, 21);
-            label4.TabIndex = 44;
-            label4.Text = "PURCHASE ORDER:";
             // 
             // label98
             // 
-            label98.AutoSize = true;
-            label98.Location = new System.Drawing.Point(946, 120);
+            resources.ApplyResources(label98, "label98");
             label98.Name = "label98";
-            label98.Size = new System.Drawing.Size(42, 21);
-            label98.TabIndex = 101;
-            label98.Text = "APR:";
-            label98.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label5
             // 
-            label5.AutoSize = true;
-            label5.Location = new System.Drawing.Point(27, 21);
+            resources.ApplyResources(label5, "label5");
             label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(122, 21);
-            label5.TabIndex = 41;
-            label5.Text = "CUSTOMER NO:";
             // 
             // label99
             // 
-            label99.AutoSize = true;
-            label99.Location = new System.Drawing.Point(269, 192);
+            resources.ApplyResources(label99, "label99");
             label99.Name = "label99";
-            label99.Size = new System.Drawing.Size(108, 21);
-            label99.TabIndex = 87;
-            label99.Text = "L/C BALANCE:";
-            label99.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label100
             // 
-            label100.AutoSize = true;
-            label100.Location = new System.Drawing.Point(842, 155);
+            resources.ApplyResources(label100, "label100");
             label100.Name = "label100";
-            label100.Size = new System.Drawing.Size(142, 21);
-            label100.TabIndex = 82;
-            label100.Text = "PARTIAL PAYMENT:";
-            label100.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label101
             // 
-            label101.AutoSize = true;
-            label101.Location = new System.Drawing.Point(39, 192);
+            resources.ApplyResources(label101, "label101");
             label101.Name = "label101";
-            label101.Size = new System.Drawing.Size(110, 21);
-            label101.TabIndex = 80;
-            label101.Text = "LATE CHARGE:";
-            label101.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label8
             // 
-            label8.AutoSize = true;
-            label8.Location = new System.Drawing.Point(346, 53);
+            resources.ApplyResources(label8, "label8");
             label8.Name = "label8";
-            label8.Size = new System.Drawing.Size(79, 21);
-            label8.TabIndex = 53;
-            label8.Text = "PAY DATE:";
             // 
             // label7
             // 
-            label7.AutoSize = true;
-            label7.Location = new System.Drawing.Point(562, 53);
+            resources.ApplyResources(label7, "label7");
             label7.Name = "label7";
-            label7.Size = new System.Drawing.Size(68, 21);
-            label7.TabIndex = 52;
-            label7.Text = "DEALER:";
             // 
             // label3
             // 
-            label3.AutoSize = true;
+            resources.ApplyResources(label3, "label3");
             label3.BackColor = System.Drawing.Color.Transparent;
-            label3.Location = new System.Drawing.Point(573, 21);
             label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(57, 21);
-            label3.TabIndex = 46;
-            label3.Text = "NAME:";
             // 
             // label102
             // 
-            label102.AutoSize = true;
-            label102.Location = new System.Drawing.Point(500, 192);
+            resources.ApplyResources(label102, "label102");
             label102.Name = "label102";
-            label102.Size = new System.Drawing.Size(77, 21);
-            label102.TabIndex = 76;
-            label102.Text = "PAY TYPE:";
-            label102.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label104
             // 
-            label104.AutoSize = true;
-            label104.Location = new System.Drawing.Point(625, 85);
+            resources.ApplyResources(label104, "label104");
             label104.Name = "label104";
-            label104.Size = new System.Drawing.Size(147, 21);
-            label104.TabIndex = 73;
-            label104.Text = "OVERIDE INTEREST:";
-            label104.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label105
             // 
-            label105.AutoSize = true;
-            label105.Location = new System.Drawing.Point(274, 155);
+            resources.ApplyResources(label105, "label105");
             label105.Name = "label105";
-            label105.Size = new System.Drawing.Size(103, 21);
-            label105.TabIndex = 70;
-            label105.Text = "PMTS. MADE:";
-            label105.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label106
             // 
-            label106.AutoSize = true;
-            label106.Location = new System.Drawing.Point(97, 155);
+            resources.ApplyResources(label106, "label106");
             label106.Name = "label106";
-            label106.Size = new System.Drawing.Size(53, 21);
-            label106.TabIndex = 68;
-            label106.Text = "CASH:";
-            label106.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label107
             // 
-            label107.AutoSize = true;
-            label107.Location = new System.Drawing.Point(646, 120);
+            resources.ApplyResources(label107, "label107");
             label107.Name = "label107";
-            label107.Size = new System.Drawing.Size(125, 21);
-            label107.TabIndex = 66;
-            label107.Text = "LOAN INTEREST:";
-            label107.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label108
             // 
-            label108.AutoSize = true;
-            label108.Location = new System.Drawing.Point(322, 120);
+            resources.ApplyResources(label108, "label108");
             label108.Name = "label108";
-            label108.Size = new System.Drawing.Size(54, 21);
-            label108.TabIndex = 64;
-            label108.Text = "LOAN:";
-            label108.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label109
             // 
-            label109.AutoSize = true;
-            label109.Location = new System.Drawing.Point(69, 120);
+            resources.ApplyResources(label109, "label109");
             label109.Name = "label109";
-            label109.Size = new System.Drawing.Size(81, 21);
-            label109.TabIndex = 62;
-            label109.Text = "REGULAR:";
-            label109.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label110
             // 
-            label110.AutoSize = true;
-            label110.Location = new System.Drawing.Point(798, 155);
+            resources.ApplyResources(label110, "label110");
             label110.Name = "label110";
-            label110.Size = new System.Drawing.Size(47, 21);
-            label110.TabIndex = 60;
-            label110.Text = "(Y/N)";
             // 
             // label111
             // 
-            label111.AutoSize = true;
-            label111.Location = new System.Drawing.Point(614, 155);
+            resources.ApplyResources(label111, "label111");
             label111.Name = "label111";
-            label111.Size = new System.Drawing.Size(158, 21);
-            label111.TabIndex = 59;
-            label111.Text = "COLLECTION AGENT:";
-            label111.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label112
             // 
-            label112.AutoSize = true;
-            label112.Location = new System.Drawing.Point(526, 85);
+            resources.ApplyResources(label112, "label112");
             label112.Name = "label112";
-            label112.Size = new System.Drawing.Size(53, 21);
-            label112.TabIndex = 56;
-            label112.Text = "TERM:";
             // 
             // label113
             // 
-            label113.AutoSize = true;
-            label113.Location = new System.Drawing.Point(300, 85);
+            resources.ApplyResources(label113, "label113");
             label113.Name = "label113";
-            label113.Size = new System.Drawing.Size(76, 21);
-            label113.TabIndex = 55;
-            label113.Text = "DAY DUE:";
-            label113.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label114
             // 
-            label114.AutoSize = true;
-            label114.Location = new System.Drawing.Point(25, 85);
+            resources.ApplyResources(label114, "label114");
             label114.Name = "label114";
-            label114.Size = new System.Drawing.Size(122, 21);
-            label114.TabIndex = 53;
-            label114.Text = "FIRST PAY DATE:";
-            label114.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label9
             // 
-            label9.AutoSize = true;
-            label9.Location = new System.Drawing.Point(414, 66);
+            resources.ApplyResources(label9, "label9");
             label9.Name = "label9";
-            label9.Size = new System.Drawing.Size(68, 21);
-            label9.TabIndex = 60;
-            label9.Text = "DEALER:";
             // 
             // label11
             // 
-            label11.AutoSize = true;
-            label11.Location = new System.Drawing.Point(30, 33);
+            resources.ApplyResources(label11, "label11");
             label11.Name = "label11";
-            label11.Size = new System.Drawing.Size(122, 21);
-            label11.TabIndex = 53;
-            label11.Text = "CUSTOMER NO:";
             // 
             // label10
             // 
-            label10.AutoSize = true;
+            resources.ApplyResources(label10, "label10");
             label10.BackColor = System.Drawing.Color.Transparent;
-            label10.Location = new System.Drawing.Point(425, 33);
             label10.Name = "label10";
-            label10.Size = new System.Drawing.Size(57, 21);
-            label10.TabIndex = 55;
-            label10.Text = "NAME:";
             // 
             // labelTotalFees
             // 
-            labelTotalFees.AutoSize = true;
-            labelTotalFees.Location = new System.Drawing.Point(297, 242);
+            resources.ApplyResources(labelTotalFees, "labelTotalFees");
             labelTotalFees.Name = "labelTotalFees";
-            labelTotalFees.Size = new System.Drawing.Size(80, 21);
-            labelTotalFees.TabIndex = 128;
-            labelTotalFees.Text = "Total Fees:";
-            labelTotalFees.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label129
             // 
-            label129.AutoSize = true;
-            label129.Location = new System.Drawing.Point(314, 49);
+            resources.ApplyResources(label129, "label129");
             label129.Name = "label129";
-            label129.Size = new System.Drawing.Size(65, 21);
-            label129.TabIndex = 119;
-            label129.Text = "Repairs:";
-            label129.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // labelResaleFees
             // 
-            labelResaleFees.AutoSize = true;
-            labelResaleFees.Location = new System.Drawing.Point(86, 154);
+            resources.ApplyResources(labelResaleFees, "labelResaleFees");
             labelResaleFees.Name = "labelResaleFees";
-            labelResaleFees.Size = new System.Drawing.Size(58, 21);
-            labelResaleFees.TabIndex = 117;
-            labelResaleFees.Text = "Resale:";
-            labelResaleFees.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // labelImpoundFees
             // 
-            labelImpoundFees.AutoSize = true;
-            labelImpoundFees.Location = new System.Drawing.Point(68, 119);
+            resources.ApplyResources(labelImpoundFees, "labelImpoundFees");
             labelImpoundFees.Name = "labelImpoundFees";
-            labelImpoundFees.Size = new System.Drawing.Size(76, 21);
-            labelImpoundFees.TabIndex = 115;
-            labelImpoundFees.Text = "Impound:";
-            labelImpoundFees.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // labelStorageFees
             // 
-            labelStorageFees.AutoSize = true;
-            labelStorageFees.Location = new System.Drawing.Point(77, 84);
+            resources.ApplyResources(labelStorageFees, "labelStorageFees");
             labelStorageFees.Name = "labelStorageFees";
-            labelStorageFees.Size = new System.Drawing.Size(66, 21);
-            labelStorageFees.TabIndex = 113;
-            labelStorageFees.Text = "Storage:";
-            labelStorageFees.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // labelRepoFees
             // 
-            labelRepoFees.AutoSize = true;
-            labelRepoFees.Location = new System.Drawing.Point(95, 49);
+            resources.ApplyResources(labelRepoFees, "labelRepoFees");
             labelRepoFees.Name = "labelRepoFees";
-            labelRepoFees.Size = new System.Drawing.Size(49, 21);
-            labelRepoFees.TabIndex = 111;
-            labelRepoFees.Text = "Repo:";
-            labelRepoFees.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label123
             // 
-            label123.AutoSize = true;
-            label123.Location = new System.Drawing.Point(89, 55);
+            resources.ApplyResources(label123, "label123");
             label123.Name = "label123";
-            label123.Size = new System.Drawing.Size(72, 21);
-            label123.TabIndex = 106;
-            label123.Text = "SS NUM:";
             // 
             // label124
             // 
-            label124.AutoSize = true;
+            resources.ApplyResources(label124, "label124");
             label124.BackColor = System.Drawing.Color.Transparent;
-            label124.Location = new System.Drawing.Point(311, 25);
             label124.Name = "label124";
-            label124.Size = new System.Drawing.Size(57, 21);
-            label124.TabIndex = 102;
-            label124.Text = "NAME:";
             // 
             // label125
             // 
-            label125.AutoSize = true;
-            label125.Location = new System.Drawing.Point(38, 25);
+            resources.ApplyResources(label125, "label125");
             label125.Name = "label125";
-            label125.Size = new System.Drawing.Size(122, 21);
-            label125.TabIndex = 98;
-            label125.Text = "CUSTOMER NO:";
             // 
             // label127
             // 
-            label127.AutoSize = true;
-            label127.Location = new System.Drawing.Point(72, 55);
+            resources.ApplyResources(label127, "label127");
             label127.Name = "label127";
-            label127.Size = new System.Drawing.Size(72, 21);
-            label127.TabIndex = 106;
-            label127.Text = "SS NUM:";
             // 
             // label128
             // 
-            label128.AutoSize = true;
+            resources.ApplyResources(label128, "label128");
             label128.BackColor = System.Drawing.Color.Transparent;
-            label128.Location = new System.Drawing.Point(246, 25);
             label128.Name = "label128";
-            label128.Size = new System.Drawing.Size(57, 21);
-            label128.TabIndex = 102;
-            label128.Text = "NAME:";
             // 
             // label130
             // 
-            label130.AutoSize = true;
-            label130.Location = new System.Drawing.Point(21, 25);
+            resources.ApplyResources(label130, "label130");
             label130.Name = "label130";
-            label130.Size = new System.Drawing.Size(122, 21);
-            label130.TabIndex = 98;
-            label130.Text = "CUSTOMER NO:";
             // 
             // label140
             // 
-            label140.AutoSize = true;
-            label140.Location = new System.Drawing.Point(149, 52);
+            resources.ApplyResources(label140, "label140");
             label140.Name = "label140";
-            label140.Size = new System.Drawing.Size(153, 17);
-            label140.TabIndex = 128;
-            label140.Text = "Date of First Delinquency";
-            label140.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label132
             // 
-            label132.AutoSize = true;
-            label132.Location = new System.Drawing.Point(171, 25);
+            resources.ApplyResources(label132, "label132");
             label132.Name = "label132";
-            label132.Size = new System.Drawing.Size(131, 17);
-            label132.TabIndex = 125;
-            label132.Text = "Date of Last Payment";
-            label132.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label151
             // 
-            label151.AutoSize = true;
-            label151.Location = new System.Drawing.Point(669, 210);
+            resources.ApplyResources(label151, "label151");
             label151.Name = "label151";
-            label151.Size = new System.Drawing.Size(97, 17);
-            label151.TabIndex = 120;
-            label151.Text = "Terms Duration";
             // 
             // labelFudingDate
             // 
-            labelFudingDate.AutoSize = true;
-            labelFudingDate.Location = new System.Drawing.Point(270, 169);
+            resources.ApplyResources(labelFudingDate, "labelFudingDate");
             labelFudingDate.Name = "labelFudingDate";
-            labelFudingDate.Size = new System.Drawing.Size(122, 21);
-            labelFudingDate.TabIndex = 107;
-            labelFudingDate.Text = "FUNDING DATE:";
-            labelFudingDate.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // labelContractDate
             // 
-            labelContractDate.AutoSize = true;
-            labelContractDate.Location = new System.Drawing.Point(10, 169);
+            resources.ApplyResources(labelContractDate, "labelContractDate");
             labelContractDate.Name = "labelContractDate";
-            labelContractDate.Size = new System.Drawing.Size(133, 21);
-            labelContractDate.TabIndex = 104;
-            labelContractDate.Text = "CONTRACT DATE:";
-            labelContractDate.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label35
             // 
-            label35.AutoSize = true;
-            label35.Location = new System.Drawing.Point(845, 97);
+            resources.ApplyResources(label35, "label35");
             label35.Name = "label35";
-            label35.Size = new System.Drawing.Size(42, 21);
-            label35.TabIndex = 101;
-            label35.Text = "APR:";
-            label35.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label29
             // 
-            label29.AutoSize = true;
-            label29.Location = new System.Drawing.Point(779, 204);
+            resources.ApplyResources(label29, "label29");
             label29.Name = "label29";
-            label29.Size = new System.Drawing.Size(108, 21);
-            label29.TabIndex = 87;
-            label29.Text = "L/C BALANCE:";
-            label29.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label28
             // 
-            label28.AutoSize = true;
-            label28.Location = new System.Drawing.Point(518, 169);
+            resources.ApplyResources(label28, "label28");
             label28.Name = "label28";
-            label28.Size = new System.Drawing.Size(142, 21);
-            label28.TabIndex = 82;
-            label28.Text = "PARTIAL PAYMENT:";
-            label28.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label27
             // 
-            label27.AutoSize = true;
-            label27.Location = new System.Drawing.Point(553, 204);
+            resources.ApplyResources(label27, "label27");
             label27.Name = "label27";
-            label27.Size = new System.Drawing.Size(110, 21);
-            label27.TabIndex = 80;
-            label27.Text = "LATE CHARGE:";
-            label27.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label26
             // 
-            label26.AutoSize = true;
-            label26.Location = new System.Drawing.Point(281, 204);
+            resources.ApplyResources(label26, "label26");
             label26.Name = "label26";
-            label26.Size = new System.Drawing.Size(77, 21);
-            label26.TabIndex = 76;
-            label26.Text = "PAY TYPE:";
-            label26.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label25
             // 
-            label25.AutoSize = true;
-            label25.Location = new System.Drawing.Point(62, 204);
+            resources.ApplyResources(label25, "label25");
             label25.Name = "label25";
-            label25.Size = new System.Drawing.Size(79, 21);
-            label25.TabIndex = 75;
-            label25.Text = "PAY DATE:";
-            label25.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label24
             // 
-            label24.AutoSize = true;
-            label24.Location = new System.Drawing.Point(517, 61);
+            resources.ApplyResources(label24, "label24");
             label24.Name = "label24";
-            label24.Size = new System.Drawing.Size(147, 21);
-            label24.TabIndex = 73;
-            label24.Text = "OVERIDE INTEREST:";
-            label24.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label23
             // 
-            label23.AutoSize = true;
-            label23.Location = new System.Drawing.Point(277, 133);
+            resources.ApplyResources(label23, "label23");
             label23.Name = "label23";
-            label23.Size = new System.Drawing.Size(189, 21);
-            label23.TabIndex = 70;
-            label23.Text = "NO OF PAYMENTS MADE:";
-            label23.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label22
             // 
-            label22.AutoSize = true;
-            label22.Location = new System.Drawing.Point(91, 133);
+            resources.ApplyResources(label22, "label22");
             label22.Name = "label22";
-            label22.Size = new System.Drawing.Size(53, 21);
-            label22.TabIndex = 68;
-            label22.Text = "CASH:";
-            label22.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label21
             // 
-            label21.AutoSize = true;
-            label21.Location = new System.Drawing.Point(538, 97);
+            resources.ApplyResources(label21, "label21");
             label21.Name = "label21";
-            label21.Size = new System.Drawing.Size(125, 21);
-            label21.TabIndex = 66;
-            label21.Text = "LOAN INTEREST:";
-            label21.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label20
             // 
-            label20.AutoSize = true;
-            label20.Location = new System.Drawing.Point(305, 97);
+            resources.ApplyResources(label20, "label20");
             label20.Name = "label20";
-            label20.Size = new System.Drawing.Size(54, 21);
-            label20.TabIndex = 64;
-            label20.Text = "LOAN:";
-            label20.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label19
             // 
-            label19.AutoSize = true;
-            label19.Location = new System.Drawing.Point(63, 97);
+            resources.ApplyResources(label19, "label19");
             label19.Name = "label19";
-            label19.Size = new System.Drawing.Size(81, 21);
-            label19.TabIndex = 62;
-            label19.Text = "REGULAR:";
-            label19.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label18
             // 
-            label18.AutoSize = true;
-            label18.Location = new System.Drawing.Point(696, 133);
+            resources.ApplyResources(label18, "label18");
             label18.Name = "label18";
-            label18.Size = new System.Drawing.Size(47, 21);
-            label18.TabIndex = 60;
-            label18.Text = "(Y/N)";
             // 
             // label17
             // 
-            label17.AutoSize = true;
-            label17.Location = new System.Drawing.Point(506, 133);
+            resources.ApplyResources(label17, "label17");
             label17.Name = "label17";
-            label17.Size = new System.Drawing.Size(158, 21);
-            label17.TabIndex = 59;
-            label17.Text = "COLLECTION AGENT:";
-            label17.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label16
             // 
-            label16.AutoSize = true;
-            label16.Location = new System.Drawing.Point(415, 61);
+            resources.ApplyResources(label16, "label16");
             label16.Name = "label16";
-            label16.Size = new System.Drawing.Size(53, 21);
-            label16.TabIndex = 56;
-            label16.Text = "TERM:";
             // 
             // label15
             // 
-            label15.AutoSize = true;
-            label15.Location = new System.Drawing.Point(283, 61);
+            resources.ApplyResources(label15, "label15");
             label15.Name = "label15";
-            label15.Size = new System.Drawing.Size(76, 21);
-            label15.TabIndex = 55;
-            label15.Text = "DAY DUE:";
-            label15.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label14
             // 
-            label14.AutoSize = true;
-            label14.Location = new System.Drawing.Point(19, 61);
+            resources.ApplyResources(label14, "label14");
             label14.Name = "label14";
-            label14.Size = new System.Drawing.Size(122, 21);
-            label14.TabIndex = 53;
-            label14.Text = "FIRST PAY DATE:";
-            label14.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label13
             // 
-            label13.AutoSize = true;
+            resources.ApplyResources(label13, "label13");
             label13.BackColor = System.Drawing.Color.Transparent;
-            label13.Location = new System.Drawing.Point(303, 25);
             label13.Name = "label13";
-            label13.Size = new System.Drawing.Size(57, 21);
-            label13.TabIndex = 49;
-            label13.Text = "NAME:";
-            label13.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label12
             // 
-            label12.AutoSize = true;
-            label12.Location = new System.Drawing.Point(21, 25);
+            resources.ApplyResources(label12, "label12");
             label12.Name = "label12";
-            label12.Size = new System.Drawing.Size(122, 21);
-            label12.TabIndex = 4;
-            label12.Text = "CUSTOMER NO:";
-            label12.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(269, 182);
+            resources.ApplyResources(label1, "label1");
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(90, 21);
-            label1.TabIndex = 202;
-            label1.Text = "TOTAL DUE:";
-            label1.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label96
             // 
-            label96.AutoSize = true;
-            label96.Location = new System.Drawing.Point(756, 90);
+            resources.ApplyResources(label96, "label96");
             label96.Name = "label96";
-            label96.Size = new System.Drawing.Size(131, 21);
-            label96.TabIndex = 140;
-            label96.Text = "DLR CASH PRICE:";
-            label96.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label97
             // 
-            label97.AutoSize = true;
-            label97.Location = new System.Drawing.Point(759, 151);
+            resources.ApplyResources(label97, "label97");
             label97.Name = "label97";
-            label97.Size = new System.Drawing.Size(126, 21);
-            label97.TabIndex = 138;
-            label97.Text = "MATURITY DATE:";
-            label97.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label115
             // 
-            label115.AutoSize = true;
-            label115.Location = new System.Drawing.Point(61, 27);
+            resources.ApplyResources(label115, "label115");
             label115.Name = "label115";
-            label115.Size = new System.Drawing.Size(81, 21);
-            label115.TabIndex = 128;
-            label115.Text = "PAYMENT:";
             // 
             // label126
             // 
-            label126.AutoSize = true;
-            label126.Location = new System.Drawing.Point(28, 182);
+            resources.ApplyResources(label126, "label126");
             label126.Name = "label126";
-            label126.Size = new System.Drawing.Size(116, 21);
-            label126.TabIndex = 133;
-            label126.Text = "# OF MONTHS:";
             // 
             // label146
             // 
-            label146.AutoSize = true;
-            label146.Location = new System.Drawing.Point(26, 151);
+            resources.ApplyResources(label146, "label146");
             label146.Name = "label146";
-            label146.Size = new System.Drawing.Size(117, 21);
-            label146.TabIndex = 132;
-            label146.Text = "BUYOUT CODE:";
             // 
             // label157
             // 
-            label157.AutoSize = true;
-            label157.Location = new System.Drawing.Point(33, 120);
+            resources.ApplyResources(label157, "label157");
             label157.Name = "label157";
-            label157.Size = new System.Drawing.Size(111, 21);
-            label157.TabIndex = 131;
-            label157.Text = "DLR DISC BAL:";
             // 
             // label158
             // 
-            label158.AutoSize = true;
-            label158.Location = new System.Drawing.Point(38, 90);
+            resources.ApplyResources(label158, "label158");
             label158.Name = "label158";
-            label158.Size = new System.Drawing.Size(106, 21);
-            label158.TabIndex = 130;
-            label158.Text = "DEALER DISC:";
             // 
             // label160
             // 
-            label160.AutoSize = true;
-            label160.Location = new System.Drawing.Point(53, 57);
+            resources.ApplyResources(label160, "label160");
             label160.Name = "label160";
-            label160.Size = new System.Drawing.Size(90, 21);
-            label160.TabIndex = 129;
-            label160.Text = "PAID THRU:";
             // 
             // label164
             // 
-            label164.AutoSize = true;
-            label164.Location = new System.Drawing.Point(509, 151);
+            resources.ApplyResources(label164, "label164");
             label164.Name = "label164";
-            label164.Size = new System.Drawing.Size(125, 21);
-            label164.TabIndex = 124;
-            label164.Text = "CONTROL DATE:";
-            label164.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label190
             // 
-            label190.AutoSize = true;
-            label190.Location = new System.Drawing.Point(550, 90);
+            resources.ApplyResources(label190, "label190");
             label190.Name = "label190";
-            label190.Size = new System.Drawing.Size(84, 21);
-            label190.TabIndex = 122;
-            label190.Text = "PAID DISC:";
-            label190.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label191
             // 
-            label191.AutoSize = true;
-            label191.Location = new System.Drawing.Point(251, 151);
+            resources.ApplyResources(label191, "label191");
             label191.Name = "label191";
-            label191.Size = new System.Drawing.Size(108, 21);
-            label191.TabIndex = 118;
-            label191.Text = "CREDIT AVAIL:";
-            label191.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label192
             // 
-            label192.AutoSize = true;
-            label192.Location = new System.Drawing.Point(253, 120);
+            resources.ApplyResources(label192, "label192");
             label192.Name = "label192";
-            label192.Size = new System.Drawing.Size(106, 21);
-            label192.TabIndex = 116;
-            label192.Text = "CREDIT LIMIT:";
-            label192.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label193
             // 
-            label193.AutoSize = true;
-            label193.Location = new System.Drawing.Point(293, 90);
+            resources.ApplyResources(label193, "label193");
             label193.Name = "label193";
-            label193.Size = new System.Drawing.Size(66, 21);
-            label193.TabIndex = 114;
-            label193.Text = "STATUS:";
-            label193.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label194
             // 
-            label194.AutoSize = true;
-            label194.Location = new System.Drawing.Point(493, 57);
+            resources.ApplyResources(label194, "label194");
             label194.Name = "label194";
-            label194.Size = new System.Drawing.Size(142, 21);
-            label194.TabIndex = 104;
-            label194.Text = "PMTS REMAINING:";
-            label194.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label195
             // 
-            label195.AutoSize = true;
-            label195.Location = new System.Drawing.Point(287, 57);
+            resources.ApplyResources(label195, "label195");
             label195.Name = "label195";
-            label195.Size = new System.Drawing.Size(72, 21);
-            label195.TabIndex = 102;
-            label195.Text = "BUYOUT:";
-            label195.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label196
             // 
-            label196.AutoSize = true;
-            label196.Location = new System.Drawing.Point(778, 27);
+            resources.ApplyResources(label196, "label196");
             label196.Name = "label196";
-            label196.Size = new System.Drawing.Size(109, 21);
-            label196.TabIndex = 94;
-            label196.Text = "U/E INTEREST:";
-            label196.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label197
             // 
-            label197.AutoSize = true;
-            label197.Location = new System.Drawing.Point(560, 27);
+            resources.ApplyResources(label197, "label197");
             label197.Name = "label197";
-            label197.Size = new System.Drawing.Size(74, 21);
-            label197.TabIndex = 92;
-            label197.Text = "PAID INT:";
-            label197.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label198
             // 
-            label198.AutoSize = true;
-            label198.Location = new System.Drawing.Point(274, 27);
+            resources.ApplyResources(label198, "label198");
             label198.Name = "label198";
-            label198.Size = new System.Drawing.Size(85, 21);
-            label198.TabIndex = 90;
-            label198.Text = "LOAN BAL:";
-            label198.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label199
             // 
-            label199.AutoSize = true;
-            label199.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label199.Location = new System.Drawing.Point(305, 128);
+            resources.ApplyResources(label199, "label199");
             label199.Name = "label199";
-            label199.Size = new System.Drawing.Size(87, 20);
-            label199.TabIndex = 244;
-            label199.Text = "Tier Points:";
-            label199.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label200
             // 
-            label200.AutoSize = true;
-            label200.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label200.Location = new System.Drawing.Point(12, 128);
+            resources.ApplyResources(label200, "label200");
             label200.Name = "label200";
-            label200.Size = new System.Drawing.Size(176, 20);
-            label200.TabIndex = 124;
-            label200.Text = "Buyer\'s Annual Income:";
-            label200.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label201
             // 
-            label201.AutoSize = true;
-            label201.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label201.Location = new System.Drawing.Point(255, 93);
+            resources.ApplyResources(label201, "label201");
             label201.Name = "label201";
-            label201.Size = new System.Drawing.Size(101, 20);
-            label201.TabIndex = 115;
-            label201.Text = "Credit Score:";
-            label201.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // cUSTOMER_COS_PHONELabel
             // 
-            cUSTOMER_COS_PHONELabel.AutoSize = true;
-            cUSTOMER_COS_PHONELabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            cUSTOMER_COS_PHONELabel.Location = new System.Drawing.Point(12, 61);
+            resources.ApplyResources(cUSTOMER_COS_PHONELabel, "cUSTOMER_COS_PHONELabel");
             cUSTOMER_COS_PHONELabel.Name = "cUSTOMER_COS_PHONELabel";
-            cUSTOMER_COS_PHONELabel.Size = new System.Drawing.Size(67, 20);
-            cUSTOMER_COS_PHONELabel.TabIndex = 110;
-            cUSTOMER_COS_PHONELabel.Text = "Misc #2:";
-            cUSTOMER_COS_PHONELabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // cUSTOMER_COS_NAMELabel
             // 
-            cUSTOMER_COS_NAMELabel.AutoSize = true;
-            cUSTOMER_COS_NAMELabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            cUSTOMER_COS_NAMELabel.Location = new System.Drawing.Point(12, 29);
+            resources.ApplyResources(cUSTOMER_COS_NAMELabel, "cUSTOMER_COS_NAMELabel");
             cUSTOMER_COS_NAMELabel.Name = "cUSTOMER_COS_NAMELabel";
-            cUSTOMER_COS_NAMELabel.Size = new System.Drawing.Size(67, 20);
-            cUSTOMER_COS_NAMELabel.TabIndex = 109;
-            cUSTOMER_COS_NAMELabel.Text = "Misc #1:";
-            cUSTOMER_COS_NAMELabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label202
             // 
-            label202.AutoSize = true;
-            label202.Location = new System.Drawing.Point(837, 85);
+            resources.ApplyResources(label202, "label202");
             label202.Name = "label202";
-            label202.Size = new System.Drawing.Size(151, 21);
-            label202.TabIndex = 529;
-            label202.Text = "TOTAL EXTENSIONS:";
-            label202.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label203
             // 
-            label203.AutoSize = true;
-            label203.Location = new System.Drawing.Point(294, 21);
+            resources.ApplyResources(label203, "label203");
             label203.Name = "label203";
-            label203.Size = new System.Drawing.Size(133, 21);
-            label203.TabIndex = 106;
-            label203.Text = "CONTRACT DATE:";
             // 
             // label204
             // 
-            label204.AutoSize = true;
-            label204.Location = new System.Drawing.Point(915, 192);
+            resources.ApplyResources(label204, "label204");
             label204.Name = "label204";
-            label204.Size = new System.Drawing.Size(72, 21);
-            label204.TabIndex = 104;
-            label204.Text = "BUYOUT:";
-            label204.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label205
             // 
-            label205.AutoSize = true;
-            label205.Location = new System.Drawing.Point(4, 53);
+            resources.ApplyResources(label205, "label205");
             label205.Name = "label205";
-            label205.Size = new System.Drawing.Size(146, 21);
-            label205.TabIndex = 44;
-            label205.Text = "PURCHASE ORDER:";
             // 
             // label206
             // 
-            label206.AutoSize = true;
-            label206.Location = new System.Drawing.Point(946, 120);
+            resources.ApplyResources(label206, "label206");
             label206.Name = "label206";
-            label206.Size = new System.Drawing.Size(42, 21);
-            label206.TabIndex = 101;
-            label206.Text = "APR:";
-            label206.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label207
             // 
-            label207.AutoSize = true;
-            label207.Location = new System.Drawing.Point(27, 21);
+            resources.ApplyResources(label207, "label207");
             label207.Name = "label207";
-            label207.Size = new System.Drawing.Size(122, 21);
-            label207.TabIndex = 41;
-            label207.Text = "CUSTOMER NO:";
             // 
             // label208
             // 
-            label208.AutoSize = true;
-            label208.Location = new System.Drawing.Point(269, 192);
+            resources.ApplyResources(label208, "label208");
             label208.Name = "label208";
-            label208.Size = new System.Drawing.Size(108, 21);
-            label208.TabIndex = 87;
-            label208.Text = "L/C BALANCE:";
-            label208.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label209
             // 
-            label209.AutoSize = true;
-            label209.Location = new System.Drawing.Point(842, 155);
+            resources.ApplyResources(label209, "label209");
             label209.Name = "label209";
-            label209.Size = new System.Drawing.Size(142, 21);
-            label209.TabIndex = 82;
-            label209.Text = "PARTIAL PAYMENT:";
-            label209.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label210
             // 
-            label210.AutoSize = true;
-            label210.Location = new System.Drawing.Point(39, 192);
+            resources.ApplyResources(label210, "label210");
             label210.Name = "label210";
-            label210.Size = new System.Drawing.Size(110, 21);
-            label210.TabIndex = 80;
-            label210.Text = "LATE CHARGE:";
-            label210.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label211
             // 
-            label211.AutoSize = true;
-            label211.Location = new System.Drawing.Point(346, 53);
+            resources.ApplyResources(label211, "label211");
             label211.Name = "label211";
-            label211.Size = new System.Drawing.Size(79, 21);
-            label211.TabIndex = 53;
-            label211.Text = "PAY DATE:";
             // 
             // label212
             // 
-            label212.AutoSize = true;
-            label212.Location = new System.Drawing.Point(562, 53);
+            resources.ApplyResources(label212, "label212");
             label212.Name = "label212";
-            label212.Size = new System.Drawing.Size(68, 21);
-            label212.TabIndex = 52;
-            label212.Text = "DEALER:";
             // 
             // label213
             // 
-            label213.AutoSize = true;
+            resources.ApplyResources(label213, "label213");
             label213.BackColor = System.Drawing.Color.Transparent;
-            label213.Location = new System.Drawing.Point(573, 21);
             label213.Name = "label213";
-            label213.Size = new System.Drawing.Size(57, 21);
-            label213.TabIndex = 46;
-            label213.Text = "NAME:";
             // 
             // label214
             // 
-            label214.AutoSize = true;
-            label214.Location = new System.Drawing.Point(500, 192);
+            resources.ApplyResources(label214, "label214");
             label214.Name = "label214";
-            label214.Size = new System.Drawing.Size(77, 21);
-            label214.TabIndex = 76;
-            label214.Text = "PAY TYPE:";
-            label214.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label215
             // 
-            label215.AutoSize = true;
-            label215.Location = new System.Drawing.Point(625, 85);
+            resources.ApplyResources(label215, "label215");
             label215.Name = "label215";
-            label215.Size = new System.Drawing.Size(147, 21);
-            label215.TabIndex = 73;
-            label215.Text = "OVERIDE INTEREST:";
-            label215.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label216
             // 
-            label216.AutoSize = true;
-            label216.Location = new System.Drawing.Point(274, 155);
+            resources.ApplyResources(label216, "label216");
             label216.Name = "label216";
-            label216.Size = new System.Drawing.Size(103, 21);
-            label216.TabIndex = 70;
-            label216.Text = "PMTS. MADE:";
-            label216.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label217
             // 
-            label217.AutoSize = true;
-            label217.Location = new System.Drawing.Point(97, 155);
+            resources.ApplyResources(label217, "label217");
             label217.Name = "label217";
-            label217.Size = new System.Drawing.Size(53, 21);
-            label217.TabIndex = 68;
-            label217.Text = "CASH:";
-            label217.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label218
             // 
-            label218.AutoSize = true;
-            label218.Location = new System.Drawing.Point(646, 120);
+            resources.ApplyResources(label218, "label218");
             label218.Name = "label218";
-            label218.Size = new System.Drawing.Size(125, 21);
-            label218.TabIndex = 66;
-            label218.Text = "LOAN INTEREST:";
-            label218.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label219
             // 
-            label219.AutoSize = true;
-            label219.Location = new System.Drawing.Point(322, 120);
+            resources.ApplyResources(label219, "label219");
             label219.Name = "label219";
-            label219.Size = new System.Drawing.Size(54, 21);
-            label219.TabIndex = 64;
-            label219.Text = "LOAN:";
-            label219.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label220
             // 
-            label220.AutoSize = true;
-            label220.Location = new System.Drawing.Point(69, 120);
+            resources.ApplyResources(label220, "label220");
             label220.Name = "label220";
-            label220.Size = new System.Drawing.Size(81, 21);
-            label220.TabIndex = 62;
-            label220.Text = "REGULAR:";
-            label220.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label221
             // 
-            label221.AutoSize = true;
-            label221.Location = new System.Drawing.Point(798, 155);
+            resources.ApplyResources(label221, "label221");
             label221.Name = "label221";
-            label221.Size = new System.Drawing.Size(47, 21);
-            label221.TabIndex = 60;
-            label221.Text = "(Y/N)";
             // 
             // label222
             // 
-            label222.AutoSize = true;
-            label222.Location = new System.Drawing.Point(614, 155);
+            resources.ApplyResources(label222, "label222");
             label222.Name = "label222";
-            label222.Size = new System.Drawing.Size(158, 21);
-            label222.TabIndex = 59;
-            label222.Text = "COLLECTION AGENT:";
-            label222.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label223
             // 
-            label223.AutoSize = true;
-            label223.Location = new System.Drawing.Point(526, 85);
+            resources.ApplyResources(label223, "label223");
             label223.Name = "label223";
-            label223.Size = new System.Drawing.Size(53, 21);
-            label223.TabIndex = 56;
-            label223.Text = "TERM:";
             // 
             // label224
             // 
-            label224.AutoSize = true;
-            label224.Location = new System.Drawing.Point(300, 85);
+            resources.ApplyResources(label224, "label224");
             label224.Name = "label224";
-            label224.Size = new System.Drawing.Size(76, 21);
-            label224.TabIndex = 55;
-            label224.Text = "DAY DUE:";
-            label224.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label225
             // 
-            label225.AutoSize = true;
-            label225.Location = new System.Drawing.Point(25, 85);
+            resources.ApplyResources(label225, "label225");
             label225.Name = "label225";
-            label225.Size = new System.Drawing.Size(122, 21);
-            label225.TabIndex = 53;
-            label225.Text = "FIRST PAY DATE:";
-            label225.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // cUSTOMERBindingSource
             // 
@@ -3733,62 +2657,6 @@
             // 
             this.monthNamesTableAdapter.ClearBeforeFill = true;
             // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton1.Text = "Search";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
-            // 
-            // toolStripButtonEdit
-            // 
-            this.toolStripButtonEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.toolStripButtonEdit.Enabled = false;
-            this.toolStripButtonEdit.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonEdit.Image")));
-            this.toolStripButtonEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonEdit.Name = "toolStripButtonEdit";
-            this.toolStripButtonEdit.Size = new System.Drawing.Size(47, 22);
-            this.toolStripButtonEdit.Text = "&Edit";
-            this.toolStripButtonEdit.Click += new System.EventHandler(this.toolStripButtonEdit_Click);
-            // 
-            // toolStripButtonDelete
-            // 
-            this.toolStripButtonDelete.BackColor = System.Drawing.Color.MistyRose;
-            this.toolStripButtonDelete.Enabled = false;
-            this.toolStripButtonDelete.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonDelete.Image")));
-            this.toolStripButtonDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonDelete.Name = "toolStripButtonDelete";
-            this.toolStripButtonDelete.Size = new System.Drawing.Size(60, 22);
-            this.toolStripButtonDelete.Text = "&Delete";
-            this.toolStripButtonDelete.Click += new System.EventHandler(this.toolStripButtonDelete_Click);
-            // 
-            // toolStripButtonSave
-            // 
-            this.toolStripButtonSave.BackColor = System.Drawing.Color.LightYellow;
-            this.toolStripButtonSave.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonSave.Image")));
-            this.toolStripButtonSave.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonSave.Name = "toolStripButtonSave";
-            this.toolStripButtonSave.Size = new System.Drawing.Size(51, 22);
-            this.toolStripButtonSave.Text = "&Save";
-            this.toolStripButtonSave.Click += new System.EventHandler(this.toolStripButtonSave_Click);
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1,
-            this.toolStripButtonEdit,
-            this.toolStripButtonDelete,
-            this.toolStripButtonSave});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 617);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1238, 25);
-            this.toolStrip1.TabIndex = 74;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
             // errorProviderCustomerForm
             // 
             this.errorProviderCustomerForm.ContainerControl = this;
@@ -3975,22 +2843,19 @@
             // 
             // xtraTabControlCustomerMaint
             // 
-            this.xtraTabControlCustomerMaint.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            resources.ApplyResources(this.xtraTabControlCustomerMaint, "xtraTabControlCustomerMaint");
             this.xtraTabControlCustomerMaint.AllowHtmlDraw = true;
             this.xtraTabControlCustomerMaint.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.xtraTabControlCustomerMaint.Appearance.Options.UseBackColor = true;
-            this.xtraTabControlCustomerMaint.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InTabControlHeader;
-            this.xtraTabControlCustomerMaint.Location = new System.Drawing.Point(0, 0);
-            this.xtraTabControlCustomerMaint.LookAndFeel.SkinMaskColor = System.Drawing.Color.PaleTurquoise;
-            this.xtraTabControlCustomerMaint.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
+            this.xtraTabControlCustomerMaint.AppearancePage.PageClient.BackColor = System.Drawing.Color.Transparent;
+            this.xtraTabControlCustomerMaint.AppearancePage.PageClient.BackColor2 = ((System.Drawing.Color)(resources.GetObject("xtraTabControlCustomerMaint.AppearancePage.PageClient.BackColor2")));
+            this.xtraTabControlCustomerMaint.AppearancePage.PageClient.Options.UseBackColor = true;
+            this.xtraTabControlCustomerMaint.LookAndFeel.SkinMaskColor = System.Drawing.Color.SteelBlue;
+            this.xtraTabControlCustomerMaint.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.SteelBlue;
             this.xtraTabControlCustomerMaint.LookAndFeel.SkinName = "McSkin";
             this.xtraTabControlCustomerMaint.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.xtraTabControlCustomerMaint.MultiLine = DevExpress.Utils.DefaultBoolean.True;
             this.xtraTabControlCustomerMaint.Name = "xtraTabControlCustomerMaint";
             this.xtraTabControlCustomerMaint.SelectedTabPage = this.xtraTabPageCustInfo1;
-            this.xtraTabControlCustomerMaint.ShowTabHeader = DevExpress.Utils.DefaultBoolean.True;
-            this.xtraTabControlCustomerMaint.Size = new System.Drawing.Size(1238, 642);
-            this.xtraTabControlCustomerMaint.TabIndex = 220;
             this.xtraTabControlCustomerMaint.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPageCustInfo1,
             this.xtraTabPageCustInfo2,
@@ -4002,26 +2867,28 @@
             this.xtraTabPageCustomerFees,
             this.xtraTabPageRepoHistory,
             this.xtraTabPageTSB});
+            this.xtraTabControlCustomerMaint.SelectedPageChanged += new DevExpress.XtraTab.TabPageChangedEventHandler(this.xtraTabControlCustomerMaint_SelectedPageChanged);
             this.xtraTabControlCustomerMaint.CloseButtonClick += new System.EventHandler(this.xtraTabControlCustomerMaint_CloseButtonClick);
             // 
             // xtraTabPageCustInfo1
             // 
             this.xtraTabPageCustInfo1.Appearance.PageClient.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.xtraTabPageCustInfo1.Appearance.PageClient.BackColor2 = ((System.Drawing.Color)(resources.GetObject("xtraTabPageCustInfo1.Appearance.PageClient.BackColor2")));
             this.xtraTabPageCustInfo1.Appearance.PageClient.Options.UseBackColor = true;
-            this.xtraTabPageCustInfo1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            resources.ApplyResources(this.xtraTabPageCustInfo1, "xtraTabPageCustInfo1");
             this.xtraTabPageCustInfo1.Controls.Add(this.groupBox10);
+            this.xtraTabPageCustInfo1.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
             this.xtraTabPageCustInfo1.Name = "xtraTabPageCustInfo1";
-            this.xtraTabPageCustInfo1.Size = new System.Drawing.Size(1230, 612);
-            this.xtraTabPageCustInfo1.Text = "Customer Info";
             // 
             // groupBox10
             // 
+            this.groupBox10.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.groupBox10.Controls.Add(this.checkBoxSendToDealer);
             this.groupBox10.Controls.Add(this.colorCheckBoxReceivedContract);
             this.groupBox10.Controls.Add(this.checkBoxFullRecourseTab1);
             this.groupBox10.Controls.Add(this.txtDOB);
             this.groupBox10.Controls.Add(this.nullableDateTimePickerDateContractReceived);
             this.groupBox10.Controls.Add(this.buttonDealerEmail);
-            this.groupBox10.Controls.Add(this.checkBoxSendToDealer);
             this.groupBox10.Controls.Add(label45);
             this.groupBox10.Controls.Add(this.textBoxDealerEmail);
             this.groupBox10.Controls.Add(this.checkBoxMilitary);
@@ -4106,34 +2973,25 @@
             this.groupBox10.Controls.Add(label186);
             this.groupBox10.Controls.Add(label187);
             this.groupBox10.Controls.Add(this.groupBoxRefi);
-            this.groupBox10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox10.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.groupBox10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox10.Location = new System.Drawing.Point(0, 0);
+            resources.ApplyResources(this.groupBox10, "groupBox10");
             this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(1230, 612);
-            this.groupBox10.TabIndex = 34;
             this.groupBox10.TabStop = false;
-            this.groupBox10.Text = "               ";
             // 
-            // colorCheckBoxReceivedContract
+            // checkBoxSendToDealer
             // 
-            this.colorCheckBoxReceivedContract.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "ReceivedContract", true));
-            this.colorCheckBoxReceivedContract.Location = new System.Drawing.Point(897, 467);
-            this.colorCheckBoxReceivedContract.MenuManager = this.toolbarFormManager1;
-            this.colorCheckBoxReceivedContract.Name = "colorCheckBoxReceivedContract";
-            this.colorCheckBoxReceivedContract.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.colorCheckBoxReceivedContract.Properties.Appearance.Options.UseFont = true;
-            this.colorCheckBoxReceivedContract.Properties.Caption = "Received Contract?";
-            this.colorCheckBoxReceivedContract.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
-            this.colorCheckBoxReceivedContract.Properties.CheckBoxOptions.SvgColorChecked = System.Drawing.Color.Green;
-            this.colorCheckBoxReceivedContract.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.PaleTurquoise;
-            this.colorCheckBoxReceivedContract.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
-            this.colorCheckBoxReceivedContract.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.colorCheckBoxReceivedContract.Size = new System.Drawing.Size(157, 25);
-            this.colorCheckBoxReceivedContract.TabIndex = 107;
-            this.colorCheckBoxReceivedContract.CheckedChanged += new System.EventHandler(this.colorCheckBoxReceivedContract_CheckedChanged);
-            this.colorCheckBoxReceivedContract.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            this.checkBoxSendToDealer.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.EmailbindingSource, "SendToDealer", true));
+            resources.ApplyResources(this.checkBoxSendToDealer, "checkBoxSendToDealer");
+            this.checkBoxSendToDealer.MenuManager = this.toolbarFormManager1;
+            this.checkBoxSendToDealer.Name = "checkBoxSendToDealer";
+            this.checkBoxSendToDealer.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("checkBoxSendToDealer.Properties.Appearance.Font")));
+            this.checkBoxSendToDealer.Properties.Appearance.Options.UseFont = true;
+            this.checkBoxSendToDealer.Properties.Caption = resources.GetString("checkBoxSendToDealer.Properties.Caption");
+            this.checkBoxSendToDealer.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
+            this.checkBoxSendToDealer.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
+            this.checkBoxSendToDealer.Properties.LookAndFeel.SkinName = "McSkin";
+            this.checkBoxSendToDealer.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.checkBoxSendToDealer.CheckedChanged += new System.EventHandler(this.checkBoxSendToDealer_CheckedChanged);
+            this.checkBoxSendToDealer.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // toolbarFormManager1
             // 
@@ -4141,60 +2999,78 @@
             this.toolbarFormManager1.DockControls.Add(this.barDockControlBottom);
             this.toolbarFormManager1.DockControls.Add(this.barDockControlLeft);
             this.toolbarFormManager1.DockControls.Add(this.barDockControlRight);
+            this.toolbarFormManager1.DockControls.Add(this.standaloneBarDockControl1);
             this.toolbarFormManager1.Form = this;
             // 
             // barDockControlTop
             // 
             this.barDockControlTop.CausesValidation = false;
-            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
+            resources.ApplyResources(this.barDockControlTop, "barDockControlTop");
             this.barDockControlTop.Manager = this.toolbarFormManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1238, 0);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
-            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 642);
+            resources.ApplyResources(this.barDockControlBottom, "barDockControlBottom");
             this.barDockControlBottom.Manager = this.toolbarFormManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1238, 0);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
-            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
+            resources.ApplyResources(this.barDockControlLeft, "barDockControlLeft");
             this.barDockControlLeft.Manager = this.toolbarFormManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 642);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
-            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1238, 0);
+            resources.ApplyResources(this.barDockControlRight, "barDockControlRight");
             this.barDockControlRight.Manager = this.toolbarFormManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 642);
+            // 
+            // standaloneBarDockControl1
+            // 
+            resources.ApplyResources(this.standaloneBarDockControl1, "standaloneBarDockControl1");
+            this.standaloneBarDockControl1.CausesValidation = false;
+            this.standaloneBarDockControl1.Manager = this.toolbarFormManager1;
+            this.standaloneBarDockControl1.Name = "standaloneBarDockControl1";
+            // 
+            // colorCheckBoxReceivedContract
+            // 
+            this.colorCheckBoxReceivedContract.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "ReceivedContract", true));
+            resources.ApplyResources(this.colorCheckBoxReceivedContract, "colorCheckBoxReceivedContract");
+            this.colorCheckBoxReceivedContract.MenuManager = this.toolbarFormManager1;
+            this.colorCheckBoxReceivedContract.Name = "colorCheckBoxReceivedContract";
+            this.colorCheckBoxReceivedContract.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("colorCheckBoxReceivedContract.Properties.Appearance.Font")));
+            this.colorCheckBoxReceivedContract.Properties.Appearance.Options.UseFont = true;
+            this.colorCheckBoxReceivedContract.Properties.Caption = resources.GetString("colorCheckBoxReceivedContract.Properties.Caption");
+            this.colorCheckBoxReceivedContract.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
+            this.colorCheckBoxReceivedContract.Properties.CheckBoxOptions.SvgColorChecked = System.Drawing.Color.Green;
+            this.colorCheckBoxReceivedContract.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
+            this.colorCheckBoxReceivedContract.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
+            this.colorCheckBoxReceivedContract.Properties.LookAndFeel.SkinName = "McSkin";
+            this.colorCheckBoxReceivedContract.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.colorCheckBoxReceivedContract.Properties.NullStyle = DevExpress.XtraEditors.Controls.StyleIndeterminate.Unchecked;
+            this.colorCheckBoxReceivedContract.CheckedChanged += new System.EventHandler(this.colorCheckBoxReceivedContract_CheckedChanged);
+            this.colorCheckBoxReceivedContract.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // checkBoxFullRecourseTab1
             // 
             this.checkBoxFullRecourseTab1.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "IsFullRecourse", true));
-            this.checkBoxFullRecourseTab1.Location = new System.Drawing.Point(754, 467);
+            resources.ApplyResources(this.checkBoxFullRecourseTab1, "checkBoxFullRecourseTab1");
             this.checkBoxFullRecourseTab1.MenuManager = this.toolbarFormManager1;
             this.checkBoxFullRecourseTab1.Name = "checkBoxFullRecourseTab1";
-            this.checkBoxFullRecourseTab1.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxFullRecourseTab1.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("checkBoxFullRecourseTab1.Properties.Appearance.Font")));
             this.checkBoxFullRecourseTab1.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(70)))), ((int)(((byte)(68)))));
             this.checkBoxFullRecourseTab1.Properties.Appearance.Options.UseFont = true;
             this.checkBoxFullRecourseTab1.Properties.Appearance.Options.UseForeColor = true;
-            this.checkBoxFullRecourseTab1.Properties.Caption = "Full Recourse?";
+            this.checkBoxFullRecourseTab1.Properties.Caption = resources.GetString("checkBoxFullRecourseTab1.Properties.Caption");
             this.checkBoxFullRecourseTab1.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
             this.checkBoxFullRecourseTab1.Properties.CheckBoxOptions.SvgColorChecked = System.Drawing.Color.Red;
-            this.checkBoxFullRecourseTab1.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.PaleTurquoise;
+            this.checkBoxFullRecourseTab1.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
+            this.checkBoxFullRecourseTab1.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.LightSteelBlue;
             this.checkBoxFullRecourseTab1.Properties.LookAndFeel.SkinName = "McSkin";
             this.checkBoxFullRecourseTab1.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.checkBoxFullRecourseTab1.Properties.Name = "checkBoxFullRecourseTab1";
             this.checkBoxFullRecourseTab1.Properties.NullStyle = DevExpress.XtraEditors.Controls.StyleIndeterminate.Unchecked;
-            this.checkBoxFullRecourseTab1.Size = new System.Drawing.Size(132, 25);
-            this.checkBoxFullRecourseTab1.TabIndex = 58;
             this.checkBoxFullRecourseTab1.CheckedChanged += new System.EventHandler(this.checkBoxFullRecourse_CheckedChanged);
             this.checkBoxFullRecourseTab1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
@@ -4202,109 +3078,76 @@
             // 
             this.txtDOB.AllowDrop = true;
             this.txtDOB.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_DOB", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "d"));
-            this.txtDOB.EditValue = null;
-            this.txtDOB.Location = new System.Drawing.Point(171, 393);
+            resources.ApplyResources(this.txtDOB, "txtDOB");
             this.txtDOB.MenuManager = this.toolbarFormManager1;
             this.txtDOB.Name = "txtDOB";
-            this.txtDOB.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDOB.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("txtDOB.Properties.Appearance.Font")));
             this.txtDOB.Properties.Appearance.Options.UseFont = true;
             this.txtDOB.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("txtDOB.Properties.Buttons"))))});
             this.txtDOB.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("txtDOB.Properties.CalendarTimeProperties.Buttons"))))});
             this.txtDOB.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.Fluent;
-            this.txtDOB.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.PaleTurquoise;
+            this.txtDOB.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
             this.txtDOB.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
             this.txtDOB.Properties.LookAndFeel.SkinName = "McSkin";
             this.txtDOB.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.txtDOB.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
-            this.txtDOB.Size = new System.Drawing.Size(107, 26);
-            this.txtDOB.TabIndex = 109;
             this.txtDOB.EditValueChanged += new System.EventHandler(this.txtDOB_ValueChanged);
             this.txtDOB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // nullableDateTimePickerDateContractReceived
             // 
-            this.nullableDateTimePickerDateContractReceived.EditValue = null;
-            this.nullableDateTimePickerDateContractReceived.Enabled = false;
-            this.nullableDateTimePickerDateContractReceived.Location = new System.Drawing.Point(1068, 460);
+            resources.ApplyResources(this.nullableDateTimePickerDateContractReceived, "nullableDateTimePickerDateContractReceived");
             this.nullableDateTimePickerDateContractReceived.Name = "nullableDateTimePickerDateContractReceived";
-            this.nullableDateTimePickerDateContractReceived.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nullableDateTimePickerDateContractReceived.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("nullableDateTimePickerDateContractReceived.Properties.Appearance.Font")));
             this.nullableDateTimePickerDateContractReceived.Properties.Appearance.Options.UseFont = true;
             this.nullableDateTimePickerDateContractReceived.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("nullableDateTimePickerDateContractReceived.Properties.Buttons"))))});
             this.nullableDateTimePickerDateContractReceived.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo),
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("nullableDateTimePickerDateContractReceived.Properties.CalendarTimeProperties.Butt" +
+                        "ons")))),
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("nullableDateTimePickerDateContractReceived.Properties.CalendarTimeProperties.Butt" +
+                        "ons1"))))});
             this.nullableDateTimePickerDateContractReceived.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.Fluent;
-            this.nullableDateTimePickerDateContractReceived.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.PaleTurquoise;
+            this.nullableDateTimePickerDateContractReceived.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
             this.nullableDateTimePickerDateContractReceived.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
             this.nullableDateTimePickerDateContractReceived.Properties.LookAndFeel.SkinName = "McSkin";
             this.nullableDateTimePickerDateContractReceived.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.nullableDateTimePickerDateContractReceived.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
-            this.nullableDateTimePickerDateContractReceived.Size = new System.Drawing.Size(119, 28);
-            this.nullableDateTimePickerDateContractReceived.TabIndex = 108;
-            this.nullableDateTimePickerDateContractReceived.Visible = false;
             this.nullableDateTimePickerDateContractReceived.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // buttonDealerEmail
             // 
-            this.buttonDealerEmail.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDealerEmail.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("buttonDealerEmail.Appearance.Font")));
             this.buttonDealerEmail.Appearance.Options.UseFont = true;
             this.buttonDealerEmail.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonDealerEmail.ImageOptions.Image")));
             this.buttonDealerEmail.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.buttonDealerEmail.Location = new System.Drawing.Point(59, 494);
-            this.buttonDealerEmail.LookAndFeel.SkinMaskColor = System.Drawing.Color.PaleTurquoise;
+            resources.ApplyResources(this.buttonDealerEmail, "buttonDealerEmail");
+            this.buttonDealerEmail.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
             this.buttonDealerEmail.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
             this.buttonDealerEmail.LookAndFeel.SkinName = "McSkin";
             this.buttonDealerEmail.LookAndFeel.UseDefaultLookAndFeel = false;
             this.buttonDealerEmail.Name = "buttonDealerEmail";
-            this.buttonDealerEmail.Size = new System.Drawing.Size(68, 40);
-            this.buttonDealerEmail.TabIndex = 106;
             this.buttonDealerEmail.Click += new System.EventHandler(this.buttonDealerEmail_Click);
             this.buttonDealerEmail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
-            // 
-            // checkBoxSendToDealer
-            // 
-            this.checkBoxSendToDealer.AutoSize = true;
-            this.checkBoxSendToDealer.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.EmailbindingSource, "SendToDealer", true));
-            this.checkBoxSendToDealer.Enabled = false;
-            this.checkBoxSendToDealer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxSendToDealer.Location = new System.Drawing.Point(588, 534);
-            this.checkBoxSendToDealer.Name = "checkBoxSendToDealer";
-            this.checkBoxSendToDealer.Size = new System.Drawing.Size(130, 24);
-            this.checkBoxSendToDealer.TabIndex = 105;
-            this.checkBoxSendToDealer.Text = "Copy to DLR";
-            this.checkBoxSendToDealer.UseVisualStyleBackColor = true;
-            this.checkBoxSendToDealer.CheckedChanged += new System.EventHandler(this.checkBoxSendToDealer_CheckedChanged);
             // 
             // textBoxDealerEmail
             // 
             this.textBoxDealerEmail.AllowDrop = true;
             this.textBoxDealerEmail.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.textBoxDealerEmail.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dEALERBindingSource, "Email", true));
-            this.textBoxDealerEmail.Enabled = false;
-            this.textBoxDealerEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxDealerEmail.Location = new System.Drawing.Point(254, 495);
-            this.textBoxDealerEmail.MaxLength = 50;
+            resources.ApplyResources(this.textBoxDealerEmail, "textBoxDealerEmail");
             this.textBoxDealerEmail.Name = "textBoxDealerEmail";
-            this.textBoxDealerEmail.Size = new System.Drawing.Size(464, 26);
-            this.textBoxDealerEmail.TabIndex = 103;
             this.textBoxDealerEmail.TextChanged += new System.EventHandler(this.textBoxDealerEmail_TextChanged);
             this.textBoxDealerEmail.Validated += new System.EventHandler(this.textBoxDealerEmail_Validated);
             // 
             // checkBoxMilitary
             // 
-            this.checkBoxMilitary.AutoSize = true;
-            this.checkBoxMilitary.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            resources.ApplyResources(this.checkBoxMilitary, "checkBoxMilitary");
             this.checkBoxMilitary.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.cUSTOMERBindingSource, "Military", true));
-            this.checkBoxMilitary.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBoxMilitary.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.checkBoxMilitary.Location = new System.Drawing.Point(658, 423);
             this.checkBoxMilitary.Name = "checkBoxMilitary";
-            this.checkBoxMilitary.Size = new System.Drawing.Size(111, 24);
-            this.checkBoxMilitary.TabIndex = 45;
-            this.checkBoxMilitary.Text = "MILITARY: ";
             this.checkBoxMilitary.UseVisualStyleBackColor = true;
             this.checkBoxMilitary.CheckedChanged += new System.EventHandler(this.checkBoxMilitary_CheckedChanged);
             // 
@@ -4318,118 +3161,78 @@
             this.groupBoxSBT.Controls.Add(this.radioButtonAcct);
             this.groupBoxSBT.Controls.Add(this.checkBoxDNTMktg);
             this.groupBoxSBT.Controls.Add(this.checkBoxDNTAcct);
-            this.groupBoxSBT.Location = new System.Drawing.Point(832, 264);
+            resources.ApplyResources(this.groupBoxSBT, "groupBoxSBT");
             this.groupBoxSBT.Name = "groupBoxSBT";
-            this.groupBoxSBT.Size = new System.Drawing.Size(311, 173);
-            this.groupBoxSBT.TabIndex = 46;
             this.groupBoxSBT.TabStop = false;
-            this.groupBoxSBT.Text = "SBT";
             // 
             // buttonMessage
             // 
-            this.buttonMessage.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonMessage.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("buttonMessage.Appearance.Font")));
             this.buttonMessage.Appearance.Options.UseFont = true;
-            this.buttonMessage.Enabled = false;
-            this.buttonMessage.Location = new System.Drawing.Point(88, 121);
-            this.buttonMessage.LookAndFeel.SkinMaskColor = System.Drawing.Color.PaleTurquoise;
+            resources.ApplyResources(this.buttonMessage, "buttonMessage");
+            this.buttonMessage.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
             this.buttonMessage.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
             this.buttonMessage.LookAndFeel.SkinName = "McSkin";
             this.buttonMessage.LookAndFeel.UseDefaultLookAndFeel = false;
             this.buttonMessage.Name = "buttonMessage";
-            this.buttonMessage.Size = new System.Drawing.Size(134, 36);
-            this.buttonMessage.TabIndex = 53;
-            this.buttonMessage.Text = "SendMessage";
             this.buttonMessage.Click += new System.EventHandler(this.buttonMessage_Click);
             // 
             // buttonConfirm
             // 
-            this.buttonConfirm.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonConfirm.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("buttonConfirm.Appearance.Font")));
             this.buttonConfirm.Appearance.ForeColor = DevExpress.LookAndFeel.DXSkinColors.ForeColors.Critical;
             this.buttonConfirm.Appearance.Options.UseBackColor = true;
             this.buttonConfirm.Appearance.Options.UseFont = true;
             this.buttonConfirm.Appearance.Options.UseForeColor = true;
             this.buttonConfirm.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.buttonConfirm.Location = new System.Drawing.Point(197, 78);
-            this.buttonConfirm.LookAndFeel.SkinMaskColor = System.Drawing.Color.PaleTurquoise;
+            resources.ApplyResources(this.buttonConfirm, "buttonConfirm");
+            this.buttonConfirm.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
             this.buttonConfirm.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
             this.buttonConfirm.LookAndFeel.SkinName = "McSkin";
             this.buttonConfirm.LookAndFeel.UseDefaultLookAndFeel = false;
             this.buttonConfirm.Name = "buttonConfirm";
-            this.buttonConfirm.Size = new System.Drawing.Size(92, 25);
-            this.buttonConfirm.TabIndex = 52;
-            this.buttonConfirm.Text = "Confirm";
             this.buttonConfirm.Click += new System.EventHandler(this.buttonConfirm_Click);
             // 
             // textBoxAuthNo
             // 
             this.textBoxAuthNo.AllowDrop = true;
             this.textBoxAuthNo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "TPin", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N0"));
-            this.textBoxAuthNo.Enabled = false;
-            this.textBoxAuthNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxAuthNo.Location = new System.Drawing.Point(122, 78);
-            this.textBoxAuthNo.MaxLength = 6;
+            resources.ApplyResources(this.textBoxAuthNo, "textBoxAuthNo");
             this.textBoxAuthNo.Name = "textBoxAuthNo";
-            this.textBoxAuthNo.Size = new System.Drawing.Size(69, 26);
-            this.textBoxAuthNo.TabIndex = 51;
-            this.textBoxAuthNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.textBoxAuthNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // radioButtonMktg
             // 
-            this.radioButtonMktg.AutoSize = true;
+            resources.ApplyResources(this.radioButtonMktg, "radioButtonMktg");
             this.radioButtonMktg.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.cUSTOMERBindingSource, "TBoth", true));
-            this.radioButtonMktg.Enabled = false;
-            this.radioButtonMktg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButtonMktg.Location = new System.Drawing.Point(176, 51);
             this.radioButtonMktg.Name = "radioButtonMktg";
-            this.radioButtonMktg.Size = new System.Drawing.Size(65, 24);
-            this.radioButtonMktg.TabIndex = 50;
             this.radioButtonMktg.TabStop = true;
-            this.radioButtonMktg.Text = "Both";
             this.radioButtonMktg.UseVisualStyleBackColor = true;
             this.radioButtonMktg.CheckedChanged += new System.EventHandler(this.radioButtonMktg_CheckedChanged);
             // 
             // radioButtonAcct
             // 
-            this.radioButtonAcct.AutoSize = true;
+            resources.ApplyResources(this.radioButtonAcct, "radioButtonAcct");
             this.radioButtonAcct.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.cUSTOMERBindingSource, "TAcct", true));
-            this.radioButtonAcct.Enabled = false;
-            this.radioButtonAcct.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButtonAcct.Location = new System.Drawing.Point(176, 27);
             this.radioButtonAcct.Name = "radioButtonAcct";
-            this.radioButtonAcct.Size = new System.Drawing.Size(93, 24);
-            this.radioButtonAcct.TabIndex = 48;
             this.radioButtonAcct.TabStop = true;
-            this.radioButtonAcct.Text = "Account";
             this.radioButtonAcct.UseVisualStyleBackColor = true;
             this.radioButtonAcct.CheckedChanged += new System.EventHandler(this.radioButtonAcct_CheckedChanged);
             this.radioButtonAcct.Click += new System.EventHandler(this.radioButtonAcct_Click);
             // 
             // checkBoxDNTMktg
             // 
-            this.checkBoxDNTMktg.AutoSize = true;
+            resources.ApplyResources(this.checkBoxDNTMktg, "checkBoxDNTMktg");
             this.checkBoxDNTMktg.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.cUSTOMERBindingSource, "DNTMktg", true));
-            this.checkBoxDNTMktg.Enabled = false;
-            this.checkBoxDNTMktg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxDNTMktg.Location = new System.Drawing.Point(43, 51);
             this.checkBoxDNTMktg.Name = "checkBoxDNTMktg";
-            this.checkBoxDNTMktg.Size = new System.Drawing.Size(107, 24);
-            this.checkBoxDNTMktg.TabIndex = 49;
-            this.checkBoxDNTMktg.Text = "DNT Mktg";
             this.checkBoxDNTMktg.UseVisualStyleBackColor = true;
             this.checkBoxDNTMktg.CheckedChanged += new System.EventHandler(this.checkBoxDNTMktg_CheckedChanged);
             // 
             // checkBoxDNTAcct
             // 
-            this.checkBoxDNTAcct.AutoSize = true;
+            resources.ApplyResources(this.checkBoxDNTAcct, "checkBoxDNTAcct");
             this.checkBoxDNTAcct.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.cUSTOMERBindingSource, "DNTAcct", true));
-            this.checkBoxDNTAcct.Enabled = false;
-            this.checkBoxDNTAcct.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxDNTAcct.Location = new System.Drawing.Point(43, 27);
             this.checkBoxDNTAcct.Name = "checkBoxDNTAcct";
-            this.checkBoxDNTAcct.Size = new System.Drawing.Size(104, 24);
-            this.checkBoxDNTAcct.TabIndex = 47;
-            this.checkBoxDNTAcct.Text = "DNT Acct";
             this.checkBoxDNTAcct.UseVisualStyleBackColor = true;
             this.checkBoxDNTAcct.CheckedChanged += new System.EventHandler(this.checkBoxDNTAcct_CheckedChanged);
             this.checkBoxDNTAcct.Click += new System.EventHandler(this.checkBoxDNTAcct_Click);
@@ -4440,10 +3243,8 @@
             this.comboBoxGN.DataSource = this.bindingSourceGenCodes;
             this.comboBoxGN.DisplayMember = "Description";
             this.comboBoxGN.FormattingEnabled = true;
-            this.comboBoxGN.Location = new System.Drawing.Point(887, 51);
+            resources.ApplyResources(this.comboBoxGN, "comboBoxGN");
             this.comboBoxGN.Name = "comboBoxGN";
-            this.comboBoxGN.Size = new System.Drawing.Size(99, 29);
-            this.comboBoxGN.TabIndex = 9;
             this.comboBoxGN.ValueMember = "gcode";
             this.comboBoxGN.SelectedIndexChanged += new System.EventHandler(this.comboBoxGN_SelectedIndexChanged);
             this.comboBoxGN.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
@@ -4451,29 +3252,23 @@
             // textBoxTIN
             // 
             this.textBoxTIN.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "TaxpayerID", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "999999999"));
-            this.textBoxTIN.Location = new System.Drawing.Point(364, 428);
-            this.textBoxTIN.MaxLength = 9;
+            resources.ApplyResources(this.textBoxTIN, "textBoxTIN");
             this.textBoxTIN.Name = "textBoxTIN";
-            this.textBoxTIN.Size = new System.Drawing.Size(116, 29);
-            this.textBoxTIN.TabIndex = 27;
             this.textBoxTIN.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // buttonValidate
             // 
-            this.buttonValidate.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonValidate.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("buttonValidate.Appearance.Font")));
             this.buttonValidate.Appearance.ForeColor = DevExpress.LookAndFeel.DXSkinColors.ForeColors.Critical;
             this.buttonValidate.Appearance.Options.UseFont = true;
             this.buttonValidate.Appearance.Options.UseForeColor = true;
             this.buttonValidate.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.buttonValidate.Location = new System.Drawing.Point(298, 362);
-            this.buttonValidate.LookAndFeel.SkinMaskColor = System.Drawing.Color.PaleTurquoise;
+            resources.ApplyResources(this.buttonValidate, "buttonValidate");
+            this.buttonValidate.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
             this.buttonValidate.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
             this.buttonValidate.LookAndFeel.SkinName = "McSkin";
             this.buttonValidate.LookAndFeel.UseDefaultLookAndFeel = false;
             this.buttonValidate.Name = "buttonValidate";
-            this.buttonValidate.Size = new System.Drawing.Size(92, 25);
-            this.buttonValidate.TabIndex = 22;
-            this.buttonValidate.Text = "Validate";
             this.buttonValidate.Click += new System.EventHandler(this.buttonValidate_Click);
             // 
             // groupBoxGapWarranty
@@ -4482,34 +3277,22 @@
             this.groupBoxGapWarranty.Controls.Add(labelGAP);
             this.groupBoxGapWarranty.Controls.Add(this.checkBoxWarranty);
             this.groupBoxGapWarranty.Controls.Add(this.comboBoxGAP);
-            this.groupBoxGapWarranty.Location = new System.Drawing.Point(1003, 98);
+            resources.ApplyResources(this.groupBoxGapWarranty, "groupBoxGapWarranty");
             this.groupBoxGapWarranty.Name = "groupBoxGapWarranty";
-            this.groupBoxGapWarranty.Size = new System.Drawing.Size(196, 118);
-            this.groupBoxGapWarranty.TabIndex = 95;
             this.groupBoxGapWarranty.TabStop = false;
-            this.groupBoxGapWarranty.Text = "Gap / Warranty";
             // 
             // checkBoxExcludeVSI
             // 
-            this.checkBoxExcludeVSI.AutoSize = true;
+            resources.ApplyResources(this.checkBoxExcludeVSI, "checkBoxExcludeVSI");
             this.checkBoxExcludeVSI.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.cUSTOMERBindingSource, "ExcludeVSI", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "0"));
-            this.checkBoxExcludeVSI.Enabled = false;
-            this.checkBoxExcludeVSI.Location = new System.Drawing.Point(64, 81);
             this.checkBoxExcludeVSI.Name = "checkBoxExcludeVSI";
-            this.checkBoxExcludeVSI.Size = new System.Drawing.Size(108, 25);
-            this.checkBoxExcludeVSI.TabIndex = 36;
-            this.checkBoxExcludeVSI.Text = "Exclude VSI";
             this.checkBoxExcludeVSI.UseVisualStyleBackColor = true;
             // 
             // checkBoxWarranty
             // 
-            this.checkBoxWarranty.AutoSize = true;
+            resources.ApplyResources(this.checkBoxWarranty, "checkBoxWarranty");
             this.checkBoxWarranty.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.cUSTOMERBindingSource, "Warranty", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "0"));
-            this.checkBoxWarranty.Location = new System.Drawing.Point(64, 59);
             this.checkBoxWarranty.Name = "checkBoxWarranty";
-            this.checkBoxWarranty.Size = new System.Drawing.Size(93, 25);
-            this.checkBoxWarranty.TabIndex = 35;
-            this.checkBoxWarranty.Text = "Warranty";
             this.checkBoxWarranty.UseVisualStyleBackColor = true;
             this.checkBoxWarranty.CheckedChanged += new System.EventHandler(this.checkBoxWarranty_CheckedChanged);
             // 
@@ -4520,10 +3303,8 @@
             this.comboBoxGAP.DataSource = this.bindingSourceGap;
             this.comboBoxGAP.DisplayMember = "Descrition";
             this.comboBoxGAP.FormattingEnabled = true;
-            this.comboBoxGAP.Location = new System.Drawing.Point(64, 23);
+            resources.ApplyResources(this.comboBoxGAP, "comboBoxGAP");
             this.comboBoxGAP.Name = "comboBoxGAP";
-            this.comboBoxGAP.Size = new System.Drawing.Size(121, 29);
-            this.comboBoxGAP.TabIndex = 34;
             this.comboBoxGAP.ValueMember = "Descrition";
             this.comboBoxGAP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
@@ -4531,12 +3312,8 @@
             // 
             this.cUSTOMER_CELL_PHONETextBox.AllowDrop = true;
             this.cUSTOMER_CELL_PHONETextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_CELL_PHONE", true));
-            this.cUSTOMER_CELL_PHONETextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cUSTOMER_CELL_PHONETextBox.Location = new System.Drawing.Point(171, 361);
-            this.cUSTOMER_CELL_PHONETextBox.Mask = "(999) 000-0000";
+            resources.ApplyResources(this.cUSTOMER_CELL_PHONETextBox, "cUSTOMER_CELL_PHONETextBox");
             this.cUSTOMER_CELL_PHONETextBox.Name = "cUSTOMER_CELL_PHONETextBox";
-            this.cUSTOMER_CELL_PHONETextBox.Size = new System.Drawing.Size(115, 26);
-            this.cUSTOMER_CELL_PHONETextBox.TabIndex = 21;
             this.cUSTOMER_CELL_PHONETextBox.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // textBoxMiddleName
@@ -4544,38 +3321,23 @@
             this.textBoxMiddleName.AllowDrop = true;
             this.textBoxMiddleName.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxMiddleName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "MiddleName", true));
-            this.textBoxMiddleName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxMiddleName.Location = new System.Drawing.Point(389, 54);
-            this.textBoxMiddleName.MaxLength = 18;
+            resources.ApplyResources(this.textBoxMiddleName, "textBoxMiddleName");
             this.textBoxMiddleName.Name = "textBoxMiddleName";
-            this.textBoxMiddleName.Size = new System.Drawing.Size(136, 26);
-            this.textBoxMiddleName.TabIndex = 7;
             this.textBoxMiddleName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // labelInsuranceExpired
             // 
-            this.labelInsuranceExpired.AutoSize = true;
-            this.labelInsuranceExpired.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.labelInsuranceExpired, "labelInsuranceExpired");
             this.labelInsuranceExpired.ForeColor = System.Drawing.Color.Crimson;
-            this.labelInsuranceExpired.Location = new System.Drawing.Point(1006, 67);
             this.labelInsuranceExpired.Name = "labelInsuranceExpired";
-            this.labelInsuranceExpired.Size = new System.Drawing.Size(191, 20);
-            this.labelInsuranceExpired.TabIndex = 90;
-            this.labelInsuranceExpired.Text = "Insurance Has Expired";
-            this.labelInsuranceExpired.Visible = false;
             // 
             // textBoxDealerState
             // 
             this.textBoxDealerState.AllowDrop = true;
             this.textBoxDealerState.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBoxDealerState.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dEALERBindingSource, "DEALER_ST", true));
-            this.textBoxDealerState.Enabled = false;
-            this.textBoxDealerState.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxDealerState.Location = new System.Drawing.Point(680, 466);
-            this.textBoxDealerState.MaxLength = 2;
+            resources.ApplyResources(this.textBoxDealerState, "textBoxDealerState");
             this.textBoxDealerState.Name = "textBoxDealerState";
-            this.textBoxDealerState.Size = new System.Drawing.Size(36, 26);
-            this.textBoxDealerState.TabIndex = 30;
             this.textBoxDealerState.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // richTextBoxEmailAddress
@@ -4583,97 +3345,70 @@
             this.richTextBoxEmailAddress.AllowDrop = true;
             this.richTextBoxEmailAddress.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.richTextBoxEmailAddress.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.EmailbindingSource, "EmailAddress", true));
-            this.richTextBoxEmailAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBoxEmailAddress.Location = new System.Drawing.Point(756, 224);
-            this.richTextBoxEmailAddress.MaxLength = 50;
+            resources.ApplyResources(this.richTextBoxEmailAddress, "richTextBoxEmailAddress");
             this.richTextBoxEmailAddress.Name = "richTextBoxEmailAddress";
-            this.richTextBoxEmailAddress.Size = new System.Drawing.Size(464, 26);
-            this.richTextBoxEmailAddress.TabIndex = 39;
+            this.richTextBoxEmailAddress.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // buttonSendMail
             // 
-            this.buttonSendMail.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSendMail.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("buttonSendMail.Appearance.Font")));
             this.buttonSendMail.Appearance.Options.UseFont = true;
             this.buttonSendMail.Appearance.Options.UseTextOptions = true;
             this.buttonSendMail.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.buttonSendMail.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonSendMail.ImageOptions.Image")));
             this.buttonSendMail.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.buttonSendMail.Location = new System.Drawing.Point(1152, 256);
-            this.buttonSendMail.LookAndFeel.SkinMaskColor = System.Drawing.Color.PaleTurquoise;
+            resources.ApplyResources(this.buttonSendMail, "buttonSendMail");
+            this.buttonSendMail.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
             this.buttonSendMail.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
             this.buttonSendMail.LookAndFeel.SkinName = "McSkin";
             this.buttonSendMail.LookAndFeel.UseDefaultLookAndFeel = false;
             this.buttonSendMail.Name = "buttonSendMail";
-            this.buttonSendMail.Size = new System.Drawing.Size(68, 40);
-            this.buttonSendMail.TabIndex = 54;
             this.buttonSendMail.Click += new System.EventHandler(this.buttonSendMail_Click);
             // 
             // labelCustinRepo
             // 
-            this.labelCustinRepo.AutoSize = true;
-            this.labelCustinRepo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.labelCustinRepo, "labelCustinRepo");
             this.labelCustinRepo.ForeColor = System.Drawing.Color.Purple;
-            this.labelCustinRepo.Location = new System.Drawing.Point(1006, 42);
             this.labelCustinRepo.Name = "labelCustinRepo";
-            this.labelCustinRepo.Size = new System.Drawing.Size(166, 20);
-            this.labelCustinRepo.TabIndex = 86;
-            this.labelCustinRepo.Text = "Repo Info Available";
-            this.labelCustinRepo.Visible = false;
             // 
             // buttonLetter
             // 
-            this.buttonLetter.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonLetter.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("buttonLetter.Appearance.Font")));
             this.buttonLetter.Appearance.Options.UseFont = true;
             this.buttonLetter.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonLetter.ImageOptions.Image")));
             this.buttonLetter.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.buttonLetter.Location = new System.Drawing.Point(409, 526);
-            this.buttonLetter.LookAndFeel.SkinMaskColor = System.Drawing.Color.PaleTurquoise;
+            resources.ApplyResources(this.buttonLetter, "buttonLetter");
+            this.buttonLetter.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
             this.buttonLetter.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
             this.buttonLetter.LookAndFeel.SkinName = "McSkin";
             this.buttonLetter.LookAndFeel.UseDefaultLookAndFeel = false;
             this.buttonLetter.Name = "buttonLetter";
-            this.buttonLetter.Size = new System.Drawing.Size(68, 40);
-            this.buttonLetter.TabIndex = 48;
             this.buttonLetter.Click += new System.EventHandler(this.buttonLetter_Click);
             // 
             // comboBoxLetterType
             // 
             this.comboBoxLetterType.DataSource = this.letterTypeBindingSource;
             this.comboBoxLetterType.DisplayMember = "LetterType";
-            this.comboBoxLetterType.Enabled = false;
-            this.comboBoxLetterType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.comboBoxLetterType, "comboBoxLetterType");
             this.comboBoxLetterType.FormattingEnabled = true;
-            this.comboBoxLetterType.Location = new System.Drawing.Point(351, 526);
             this.comboBoxLetterType.Name = "comboBoxLetterType";
-            this.comboBoxLetterType.Size = new System.Drawing.Size(36, 28);
-            this.comboBoxLetterType.TabIndex = 47;
             this.comboBoxLetterType.SelectedIndexChanged += new System.EventHandler(this.comboBoxLetterType_SelectedIndexChanged);
             // 
             // comboBoxLetterNo
             // 
             this.comboBoxLetterNo.DataSource = this.letterNumberBindingSource;
             this.comboBoxLetterNo.DisplayMember = "LetterNo";
-            this.comboBoxLetterNo.Enabled = false;
-            this.comboBoxLetterNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.comboBoxLetterNo, "comboBoxLetterNo");
             this.comboBoxLetterNo.FormattingEnabled = true;
-            this.comboBoxLetterNo.Location = new System.Drawing.Point(171, 526);
             this.comboBoxLetterNo.Name = "comboBoxLetterNo";
-            this.comboBoxLetterNo.Size = new System.Drawing.Size(36, 28);
-            this.comboBoxLetterNo.TabIndex = 46;
             this.comboBoxLetterNo.SelectedIndexChanged += new System.EventHandler(this.comboBoxLetterType_SelectedIndexChanged);
             // 
             // cUSTOMER_NOTextBox
             // 
             this.cUSTOMER_NOTextBox.AllowDrop = true;
             this.cUSTOMER_NOTextBox.BackColor = System.Drawing.Color.Gold;
-            this.cUSTOMER_NOTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cUSTOMER_NOTextBox.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.cUSTOMER_NOTextBox.Location = new System.Drawing.Point(171, 20);
-            this.cUSTOMER_NOTextBox.MaxLength = 6;
+            resources.ApplyResources(this.cUSTOMER_NOTextBox, "cUSTOMER_NOTextBox");
             this.cUSTOMER_NOTextBox.Name = "cUSTOMER_NOTextBox";
-            this.cUSTOMER_NOTextBox.Size = new System.Drawing.Size(67, 26);
-            this.cUSTOMER_NOTextBox.TabIndex = 1;
-            this.cUSTOMER_NOTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.cUSTOMER_NOTextBox.TextChanged += new System.EventHandler(this.cUSTOMER_NOTextBox_TextChanged);
             this.cUSTOMER_NOTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             this.cUSTOMER_NOTextBox.Validated += new System.EventHandler(this.cUSTOMER_NOTextBox_Validated);
@@ -4682,25 +3417,15 @@
             // 
             this.cUSTOMER_WORK_EXTtextBox.AllowDrop = true;
             this.cUSTOMER_WORK_EXTtextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_WORK_EXT", true));
-            this.cUSTOMER_WORK_EXTtextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cUSTOMER_WORK_EXTtextBox.Location = new System.Drawing.Point(329, 326);
-            this.cUSTOMER_WORK_EXTtextBox.MaxLength = 4;
+            resources.ApplyResources(this.cUSTOMER_WORK_EXTtextBox, "cUSTOMER_WORK_EXTtextBox");
             this.cUSTOMER_WORK_EXTtextBox.Name = "cUSTOMER_WORK_EXTtextBox";
-            this.cUSTOMER_WORK_EXTtextBox.Size = new System.Drawing.Size(42, 26);
-            this.cUSTOMER_WORK_EXTtextBox.TabIndex = 20;
-            this.cUSTOMER_WORK_EXTtextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // cUSTOMER_PHONE_EXTtextBox
             // 
             this.cUSTOMER_PHONE_EXTtextBox.AllowDrop = true;
             this.cUSTOMER_PHONE_EXTtextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_PHONE_EXT", true));
-            this.cUSTOMER_PHONE_EXTtextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cUSTOMER_PHONE_EXTtextBox.Location = new System.Drawing.Point(329, 292);
-            this.cUSTOMER_PHONE_EXTtextBox.MaxLength = 4;
+            resources.ApplyResources(this.cUSTOMER_PHONE_EXTtextBox, "cUSTOMER_PHONE_EXTtextBox");
             this.cUSTOMER_PHONE_EXTtextBox.Name = "cUSTOMER_PHONE_EXTtextBox";
-            this.cUSTOMER_PHONE_EXTtextBox.Size = new System.Drawing.Size(42, 26);
-            this.cUSTOMER_PHONE_EXTtextBox.TabIndex = 18;
-            this.cUSTOMER_PHONE_EXTtextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // cUSTOMER_DEALERcomboBox
             // 
@@ -4709,14 +3434,9 @@
             this.cUSTOMER_DEALERcomboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_DEALER", true));
             this.cUSTOMER_DEALERcomboBox.DataSource = this.DLRLISTBYNUMbindingSource;
             this.cUSTOMER_DEALERcomboBox.DisplayMember = "DEALER_ACC_NO";
-            this.cUSTOMER_DEALERcomboBox.Enabled = false;
-            this.cUSTOMER_DEALERcomboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.cUSTOMER_DEALERcomboBox, "cUSTOMER_DEALERcomboBox");
             this.cUSTOMER_DEALERcomboBox.FormattingEnabled = true;
-            this.cUSTOMER_DEALERcomboBox.Location = new System.Drawing.Point(171, 464);
-            this.cUSTOMER_DEALERcomboBox.MaxLength = 3;
             this.cUSTOMER_DEALERcomboBox.Name = "cUSTOMER_DEALERcomboBox";
-            this.cUSTOMER_DEALERcomboBox.Size = new System.Drawing.Size(52, 28);
-            this.cUSTOMER_DEALERcomboBox.TabIndex = 28;
             this.cUSTOMER_DEALERcomboBox.ValueMember = "DEALER_ACC_NO";
             this.cUSTOMER_DEALERcomboBox.SelectedIndexChanged += new System.EventHandler(this.cUSTOMER_DEALERcomboBox_SelectedIndexChanged);
             this.cUSTOMER_DEALERcomboBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
@@ -4727,14 +3447,9 @@
             this.DealerNamecomboBox.AllowDrop = true;
             this.DealerNamecomboBox.DataSource = this.DealerListCustbindingSource;
             this.DealerNamecomboBox.DisplayMember = "dealer_name";
-            this.DealerNamecomboBox.Enabled = false;
-            this.DealerNamecomboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.DealerNamecomboBox, "DealerNamecomboBox");
             this.DealerNamecomboBox.FormattingEnabled = true;
-            this.DealerNamecomboBox.Location = new System.Drawing.Point(230, 464);
-            this.DealerNamecomboBox.MaxLength = 25;
             this.DealerNamecomboBox.Name = "DealerNamecomboBox";
-            this.DealerNamecomboBox.Size = new System.Drawing.Size(308, 28);
-            this.DealerNamecomboBox.TabIndex = 29;
             this.DealerNamecomboBox.ValueMember = "dealer_name";
             this.DealerNamecomboBox.SelectedIndexChanged += new System.EventHandler(this.DealerNamecomboBox_SelectedIndexChanged_1);
             this.DealerNamecomboBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
@@ -4744,124 +3459,78 @@
             this.cUSTOMER_COMMENT_2TextBox.AllowDrop = true;
             this.cUSTOMER_COMMENT_2TextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.cUSTOMER_COMMENT_2TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_COMMENT_2", true));
-            this.cUSTOMER_COMMENT_2TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cUSTOMER_COMMENT_2TextBox.Location = new System.Drawing.Point(756, 122);
-            this.cUSTOMER_COMMENT_2TextBox.MaxLength = 25;
+            resources.ApplyResources(this.cUSTOMER_COMMENT_2TextBox, "cUSTOMER_COMMENT_2TextBox");
             this.cUSTOMER_COMMENT_2TextBox.Name = "cUSTOMER_COMMENT_2TextBox";
-            this.cUSTOMER_COMMENT_2TextBox.Size = new System.Drawing.Size(199, 26);
-            this.cUSTOMER_COMMENT_2TextBox.TabIndex = 32;
             this.cUSTOMER_COMMENT_2TextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // cUSTOMER_Add_OnTextBox
             // 
             this.cUSTOMER_Add_OnTextBox.AllowDrop = true;
             this.cUSTOMER_Add_OnTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_ADD_ON", true));
-            this.cUSTOMER_Add_OnTextBox.Enabled = false;
-            this.cUSTOMER_Add_OnTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cUSTOMER_Add_OnTextBox.Location = new System.Drawing.Point(242, 20);
+            resources.ApplyResources(this.cUSTOMER_Add_OnTextBox, "cUSTOMER_Add_OnTextBox");
             this.cUSTOMER_Add_OnTextBox.Name = "cUSTOMER_Add_OnTextBox";
             this.cUSTOMER_Add_OnTextBox.ReadOnly = true;
-            this.cUSTOMER_Add_OnTextBox.Size = new System.Drawing.Size(19, 26);
-            this.cUSTOMER_Add_OnTextBox.TabIndex = 2;
             // 
             // labelCustHasComments
             // 
-            this.labelCustHasComments.AutoSize = true;
-            this.labelCustHasComments.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.labelCustHasComments, "labelCustHasComments");
             this.labelCustHasComments.ForeColor = System.Drawing.Color.Firebrick;
-            this.labelCustHasComments.Location = new System.Drawing.Point(1006, 16);
             this.labelCustHasComments.Name = "labelCustHasComments";
-            this.labelCustHasComments.Size = new System.Drawing.Size(213, 20);
-            this.labelCustHasComments.TabIndex = 65;
-            this.labelCustHasComments.Text = "Customer Has Comments";
-            this.labelCustHasComments.Visible = false;
             // 
             // cUSTOMER_CONTACTTextBox
             // 
             this.cUSTOMER_CONTACTTextBox.AllowDrop = true;
             this.cUSTOMER_CONTACTTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.cUSTOMER_CONTACTTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_CONTACT", true));
-            this.cUSTOMER_CONTACTTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cUSTOMER_CONTACTTextBox.Location = new System.Drawing.Point(171, 88);
-            this.cUSTOMER_CONTACTTextBox.MaxLength = 20;
+            resources.ApplyResources(this.cUSTOMER_CONTACTTextBox, "cUSTOMER_CONTACTTextBox");
             this.cUSTOMER_CONTACTTextBox.Name = "cUSTOMER_CONTACTTextBox";
-            this.cUSTOMER_CONTACTTextBox.Size = new System.Drawing.Size(154, 26);
-            this.cUSTOMER_CONTACTTextBox.TabIndex = 10;
             this.cUSTOMER_CONTACTTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // cUSTOMER_BRANCH_NUMBERTextBox
             // 
             this.cUSTOMER_BRANCH_NUMBERTextBox.AllowDrop = true;
             this.cUSTOMER_BRANCH_NUMBERTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_BRANCH_NUMBER", true));
-            this.cUSTOMER_BRANCH_NUMBERTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cUSTOMER_BRANCH_NUMBERTextBox.Location = new System.Drawing.Point(756, 326);
-            this.cUSTOMER_BRANCH_NUMBERTextBox.MaxLength = 2;
+            resources.ApplyResources(this.cUSTOMER_BRANCH_NUMBERTextBox, "cUSTOMER_BRANCH_NUMBERTextBox");
             this.cUSTOMER_BRANCH_NUMBERTextBox.Name = "cUSTOMER_BRANCH_NUMBERTextBox";
-            this.cUSTOMER_BRANCH_NUMBERTextBox.Size = new System.Drawing.Size(52, 26);
-            this.cUSTOMER_BRANCH_NUMBERTextBox.TabIndex = 42;
-            this.cUSTOMER_BRANCH_NUMBERTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // cUSTOMER_DISTRIBUTOR_NOTextBox
             // 
             this.cUSTOMER_DISTRIBUTOR_NOTextBox.AllowDrop = true;
             this.cUSTOMER_DISTRIBUTOR_NOTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_DISTRIBUTOR_NO", true));
-            this.cUSTOMER_DISTRIBUTOR_NOTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cUSTOMER_DISTRIBUTOR_NOTextBox.Location = new System.Drawing.Point(756, 292);
-            this.cUSTOMER_DISTRIBUTOR_NOTextBox.MaxLength = 3;
+            resources.ApplyResources(this.cUSTOMER_DISTRIBUTOR_NOTextBox, "cUSTOMER_DISTRIBUTOR_NOTextBox");
             this.cUSTOMER_DISTRIBUTOR_NOTextBox.Name = "cUSTOMER_DISTRIBUTOR_NOTextBox";
-            this.cUSTOMER_DISTRIBUTOR_NOTextBox.Size = new System.Drawing.Size(52, 26);
-            this.cUSTOMER_DISTRIBUTOR_NOTextBox.TabIndex = 41;
-            this.cUSTOMER_DISTRIBUTOR_NOTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // cUSTOMER_ALLOTMENTTextBox
             // 
             this.cUSTOMER_ALLOTMENTTextBox.AllowDrop = true;
             this.cUSTOMER_ALLOTMENTTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.cUSTOMER_ALLOTMENTTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_ALLOTMENT", true));
-            this.cUSTOMER_ALLOTMENTTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cUSTOMER_ALLOTMENTTextBox.Location = new System.Drawing.Point(756, 258);
-            this.cUSTOMER_ALLOTMENTTextBox.MaxLength = 1;
+            resources.ApplyResources(this.cUSTOMER_ALLOTMENTTextBox, "cUSTOMER_ALLOTMENTTextBox");
             this.cUSTOMER_ALLOTMENTTextBox.Name = "cUSTOMER_ALLOTMENTTextBox";
-            this.cUSTOMER_ALLOTMENTTextBox.Size = new System.Drawing.Size(20, 26);
-            this.cUSTOMER_ALLOTMENTTextBox.TabIndex = 40;
-            this.cUSTOMER_ALLOTMENTTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // cUSTOMER_AUTOPAYTextBox
             // 
             this.cUSTOMER_AUTOPAYTextBox.AllowDrop = true;
             this.cUSTOMER_AUTOPAYTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.cUSTOMER_AUTOPAYTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_AUTOPAY", true));
-            this.cUSTOMER_AUTOPAYTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cUSTOMER_AUTOPAYTextBox.Location = new System.Drawing.Point(756, 190);
-            this.cUSTOMER_AUTOPAYTextBox.MaxLength = 1;
+            resources.ApplyResources(this.cUSTOMER_AUTOPAYTextBox, "cUSTOMER_AUTOPAYTextBox");
             this.cUSTOMER_AUTOPAYTextBox.Name = "cUSTOMER_AUTOPAYTextBox";
-            this.cUSTOMER_AUTOPAYTextBox.Size = new System.Drawing.Size(20, 26);
-            this.cUSTOMER_AUTOPAYTextBox.TabIndex = 38;
             // 
             // cUSTOMER_INSURANCETextBox
             // 
             this.cUSTOMER_INSURANCETextBox.AllowDrop = true;
             this.cUSTOMER_INSURANCETextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.cUSTOMER_INSURANCETextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_INSURANCE", true));
-            this.cUSTOMER_INSURANCETextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cUSTOMER_INSURANCETextBox.Location = new System.Drawing.Point(756, 156);
-            this.cUSTOMER_INSURANCETextBox.MaxLength = 1;
+            resources.ApplyResources(this.cUSTOMER_INSURANCETextBox, "cUSTOMER_INSURANCETextBox");
             this.cUSTOMER_INSURANCETextBox.Name = "cUSTOMER_INSURANCETextBox";
-            this.cUSTOMER_INSURANCETextBox.Size = new System.Drawing.Size(20, 26);
-            this.cUSTOMER_INSURANCETextBox.TabIndex = 37;
             this.cUSTOMER_INSURANCETextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // cUSTOMER_SS_3TextBox
             // 
             this.cUSTOMER_SS_3TextBox.AllowDrop = true;
             this.cUSTOMER_SS_3TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_SS_3", true));
-            this.cUSTOMER_SS_3TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cUSTOMER_SS_3TextBox.Location = new System.Drawing.Point(434, 393);
-            this.cUSTOMER_SS_3TextBox.MaxLength = 4;
+            resources.ApplyResources(this.cUSTOMER_SS_3TextBox, "cUSTOMER_SS_3TextBox");
             this.cUSTOMER_SS_3TextBox.Name = "cUSTOMER_SS_3TextBox";
-            this.cUSTOMER_SS_3TextBox.Size = new System.Drawing.Size(46, 26);
-            this.cUSTOMER_SS_3TextBox.TabIndex = 26;
-            this.cUSTOMER_SS_3TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.cUSTOMER_SS_3TextBox.TextChanged += new System.EventHandler(this.cUSTOMER_SS_3TextBox_TextChanged);
             this.cUSTOMER_SS_3TextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
@@ -4869,13 +3538,8 @@
             // 
             this.cUSTOMER_SS_2TextBox.AllowDrop = true;
             this.cUSTOMER_SS_2TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_SS_2", true));
-            this.cUSTOMER_SS_2TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cUSTOMER_SS_2TextBox.Location = new System.Drawing.Point(405, 393);
-            this.cUSTOMER_SS_2TextBox.MaxLength = 2;
+            resources.ApplyResources(this.cUSTOMER_SS_2TextBox, "cUSTOMER_SS_2TextBox");
             this.cUSTOMER_SS_2TextBox.Name = "cUSTOMER_SS_2TextBox";
-            this.cUSTOMER_SS_2TextBox.Size = new System.Drawing.Size(29, 26);
-            this.cUSTOMER_SS_2TextBox.TabIndex = 25;
-            this.cUSTOMER_SS_2TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.cUSTOMER_SS_2TextBox.TextChanged += new System.EventHandler(this.cUSTOMER_SS_2TextBox_TextChanged);
             this.cUSTOMER_SS_2TextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
@@ -4883,13 +3547,8 @@
             // 
             this.cUSTOMER_SS_1TextBox.AllowDrop = true;
             this.cUSTOMER_SS_1TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_SS_1", true));
-            this.cUSTOMER_SS_1TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cUSTOMER_SS_1TextBox.Location = new System.Drawing.Point(364, 393);
-            this.cUSTOMER_SS_1TextBox.MaxLength = 3;
+            resources.ApplyResources(this.cUSTOMER_SS_1TextBox, "cUSTOMER_SS_1TextBox");
             this.cUSTOMER_SS_1TextBox.Name = "cUSTOMER_SS_1TextBox";
-            this.cUSTOMER_SS_1TextBox.Size = new System.Drawing.Size(41, 26);
-            this.cUSTOMER_SS_1TextBox.TabIndex = 24;
-            this.cUSTOMER_SS_1TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.cUSTOMER_SS_1TextBox.TextChanged += new System.EventHandler(this.cUSTOMER_SS_1TextBox_TextChanged);
             this.cUSTOMER_SS_1TextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
@@ -4898,61 +3557,39 @@
             this.cUSTOMER_COMMENT_1TextBox.AllowDrop = true;
             this.cUSTOMER_COMMENT_1TextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.cUSTOMER_COMMENT_1TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_COMMENT_1", true));
-            this.cUSTOMER_COMMENT_1TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cUSTOMER_COMMENT_1TextBox.Location = new System.Drawing.Point(756, 88);
-            this.cUSTOMER_COMMENT_1TextBox.MaxLength = 30;
+            resources.ApplyResources(this.cUSTOMER_COMMENT_1TextBox, "cUSTOMER_COMMENT_1TextBox");
             this.cUSTOMER_COMMENT_1TextBox.Name = "cUSTOMER_COMMENT_1TextBox";
-            this.cUSTOMER_COMMENT_1TextBox.Size = new System.Drawing.Size(230, 26);
-            this.cUSTOMER_COMMENT_1TextBox.TabIndex = 31;
             this.cUSTOMER_COMMENT_1TextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // cUSTOMER_ZIP_2TextBox
             // 
             this.cUSTOMER_ZIP_2TextBox.AllowDrop = true;
             this.cUSTOMER_ZIP_2TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_ZIP_2", true));
-            this.cUSTOMER_ZIP_2TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cUSTOMER_ZIP_2TextBox.Location = new System.Drawing.Point(226, 258);
-            this.cUSTOMER_ZIP_2TextBox.MaxLength = 4;
+            resources.ApplyResources(this.cUSTOMER_ZIP_2TextBox, "cUSTOMER_ZIP_2TextBox");
             this.cUSTOMER_ZIP_2TextBox.Name = "cUSTOMER_ZIP_2TextBox";
-            this.cUSTOMER_ZIP_2TextBox.Size = new System.Drawing.Size(52, 26);
-            this.cUSTOMER_ZIP_2TextBox.TabIndex = 16;
-            this.cUSTOMER_ZIP_2TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // cUSTOMER_ZIP_1TextBox
             // 
             this.cUSTOMER_ZIP_1TextBox.AllowDrop = true;
             this.cUSTOMER_ZIP_1TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_ZIP_1", true));
-            this.cUSTOMER_ZIP_1TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cUSTOMER_ZIP_1TextBox.Location = new System.Drawing.Point(171, 258);
-            this.cUSTOMER_ZIP_1TextBox.MaxLength = 5;
+            resources.ApplyResources(this.cUSTOMER_ZIP_1TextBox, "cUSTOMER_ZIP_1TextBox");
             this.cUSTOMER_ZIP_1TextBox.Name = "cUSTOMER_ZIP_1TextBox";
-            this.cUSTOMER_ZIP_1TextBox.Size = new System.Drawing.Size(52, 26);
-            this.cUSTOMER_ZIP_1TextBox.TabIndex = 15;
-            this.cUSTOMER_ZIP_1TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // cUSTOMER_STATETextBox
             // 
             this.cUSTOMER_STATETextBox.AllowDrop = true;
             this.cUSTOMER_STATETextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.cUSTOMER_STATETextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_STATE", true));
-            this.cUSTOMER_STATETextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cUSTOMER_STATETextBox.Location = new System.Drawing.Point(171, 224);
-            this.cUSTOMER_STATETextBox.MaxLength = 2;
+            resources.ApplyResources(this.cUSTOMER_STATETextBox, "cUSTOMER_STATETextBox");
             this.cUSTOMER_STATETextBox.Name = "cUSTOMER_STATETextBox";
-            this.cUSTOMER_STATETextBox.Size = new System.Drawing.Size(36, 26);
-            this.cUSTOMER_STATETextBox.TabIndex = 14;
             // 
             // cUSTOMER_CITYTextBox
             // 
             this.cUSTOMER_CITYTextBox.AllowDrop = true;
             this.cUSTOMER_CITYTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.cUSTOMER_CITYTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_CITY", true));
-            this.cUSTOMER_CITYTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cUSTOMER_CITYTextBox.Location = new System.Drawing.Point(171, 190);
-            this.cUSTOMER_CITYTextBox.MaxLength = 15;
+            resources.ApplyResources(this.cUSTOMER_CITYTextBox, "cUSTOMER_CITYTextBox");
             this.cUSTOMER_CITYTextBox.Name = "cUSTOMER_CITYTextBox";
-            this.cUSTOMER_CITYTextBox.Size = new System.Drawing.Size(238, 26);
-            this.cUSTOMER_CITYTextBox.TabIndex = 13;
             this.cUSTOMER_CITYTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             this.cUSTOMER_CITYTextBox.Validated += new System.EventHandler(this.cUSTOMER_CITYTextBox_Validated);
             // 
@@ -4961,12 +3598,8 @@
             this.cUSTOMER_STREET_2TextBox.AllowDrop = true;
             this.cUSTOMER_STREET_2TextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.cUSTOMER_STREET_2TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_STREET_2", true));
-            this.cUSTOMER_STREET_2TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cUSTOMER_STREET_2TextBox.Location = new System.Drawing.Point(171, 156);
-            this.cUSTOMER_STREET_2TextBox.MaxLength = 30;
+            resources.ApplyResources(this.cUSTOMER_STREET_2TextBox, "cUSTOMER_STREET_2TextBox");
             this.cUSTOMER_STREET_2TextBox.Name = "cUSTOMER_STREET_2TextBox";
-            this.cUSTOMER_STREET_2TextBox.Size = new System.Drawing.Size(309, 26);
-            this.cUSTOMER_STREET_2TextBox.TabIndex = 12;
             this.cUSTOMER_STREET_2TextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // cUSTOMER_STREET_1TextBox
@@ -4974,12 +3607,8 @@
             this.cUSTOMER_STREET_1TextBox.AllowDrop = true;
             this.cUSTOMER_STREET_1TextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.cUSTOMER_STREET_1TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_STREET_1", true));
-            this.cUSTOMER_STREET_1TextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cUSTOMER_STREET_1TextBox.Location = new System.Drawing.Point(171, 122);
-            this.cUSTOMER_STREET_1TextBox.MaxLength = 30;
+            resources.ApplyResources(this.cUSTOMER_STREET_1TextBox, "cUSTOMER_STREET_1TextBox");
             this.cUSTOMER_STREET_1TextBox.Name = "cUSTOMER_STREET_1TextBox";
-            this.cUSTOMER_STREET_1TextBox.Size = new System.Drawing.Size(309, 26);
-            this.cUSTOMER_STREET_1TextBox.TabIndex = 11;
             this.cUSTOMER_STREET_1TextBox.TextChanged += new System.EventHandler(this.cUSTOMER_STREET_1TextBox_TextChanged);
             this.cUSTOMER_STREET_1TextBox.Validated += new System.EventHandler(this.cUSTOMER_STREET_1TextBox_Validated);
             // 
@@ -4988,12 +3617,8 @@
             this.cUSTOMER_LAST_NAMETextBox.AllowDrop = true;
             this.cUSTOMER_LAST_NAMETextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.cUSTOMER_LAST_NAMETextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_LAST_NAME", true));
-            this.cUSTOMER_LAST_NAMETextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cUSTOMER_LAST_NAMETextBox.Location = new System.Drawing.Point(588, 54);
-            this.cUSTOMER_LAST_NAMETextBox.MaxLength = 18;
+            resources.ApplyResources(this.cUSTOMER_LAST_NAMETextBox, "cUSTOMER_LAST_NAMETextBox");
             this.cUSTOMER_LAST_NAMETextBox.Name = "cUSTOMER_LAST_NAMETextBox";
-            this.cUSTOMER_LAST_NAMETextBox.Size = new System.Drawing.Size(212, 26);
-            this.cUSTOMER_LAST_NAMETextBox.TabIndex = 8;
             this.cUSTOMER_LAST_NAMETextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             this.cUSTOMER_LAST_NAMETextBox.Validated += new System.EventHandler(this.cUSTOMER_LAST_NAMETextBox_Validated);
             // 
@@ -5002,13 +3627,9 @@
             this.cUSTOMER_FIRST_NAMETextBox.AllowDrop = true;
             this.cUSTOMER_FIRST_NAMETextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.cUSTOMER_FIRST_NAMETextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_FIRST_NAME", true));
-            this.cUSTOMER_FIRST_NAMETextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.cUSTOMER_FIRST_NAMETextBox, "cUSTOMER_FIRST_NAMETextBox");
             this.cUSTOMER_FIRST_NAMETextBox.ForeColor = System.Drawing.Color.Black;
-            this.cUSTOMER_FIRST_NAMETextBox.Location = new System.Drawing.Point(171, 54);
-            this.cUSTOMER_FIRST_NAMETextBox.MaxLength = 12;
             this.cUSTOMER_FIRST_NAMETextBox.Name = "cUSTOMER_FIRST_NAMETextBox";
-            this.cUSTOMER_FIRST_NAMETextBox.Size = new System.Drawing.Size(136, 26);
-            this.cUSTOMER_FIRST_NAMETextBox.TabIndex = 6;
             this.cUSTOMER_FIRST_NAMETextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             this.cUSTOMER_FIRST_NAMETextBox.Validated += new System.EventHandler(this.cUSTOMER_FIRST_NAMETextBox_Validated);
             // 
@@ -5017,12 +3638,8 @@
             this.cUSTOMER_NO_CONTACTTextBox.AllowDrop = true;
             this.cUSTOMER_NO_CONTACTTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.cUSTOMER_NO_CONTACTTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_NO_CONTACT", true));
-            this.cUSTOMER_NO_CONTACTTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cUSTOMER_NO_CONTACTTextBox.Location = new System.Drawing.Point(756, 393);
-            this.cUSTOMER_NO_CONTACTTextBox.MaxLength = 1;
+            resources.ApplyResources(this.cUSTOMER_NO_CONTACTTextBox, "cUSTOMER_NO_CONTACTTextBox");
             this.cUSTOMER_NO_CONTACTTextBox.Name = "cUSTOMER_NO_CONTACTTextBox";
-            this.cUSTOMER_NO_CONTACTTextBox.Size = new System.Drawing.Size(20, 26);
-            this.cUSTOMER_NO_CONTACTTextBox.TabIndex = 44;
             this.cUSTOMER_NO_CONTACTTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // cUSTOMER_WRONG_ADDRESSTextBox
@@ -5030,12 +3647,8 @@
             this.cUSTOMER_WRONG_ADDRESSTextBox.AllowDrop = true;
             this.cUSTOMER_WRONG_ADDRESSTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.cUSTOMER_WRONG_ADDRESSTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_WRONG_ADDRESS", true));
-            this.cUSTOMER_WRONG_ADDRESSTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cUSTOMER_WRONG_ADDRESSTextBox.Location = new System.Drawing.Point(756, 360);
-            this.cUSTOMER_WRONG_ADDRESSTextBox.MaxLength = 1;
+            resources.ApplyResources(this.cUSTOMER_WRONG_ADDRESSTextBox, "cUSTOMER_WRONG_ADDRESSTextBox");
             this.cUSTOMER_WRONG_ADDRESSTextBox.Name = "cUSTOMER_WRONG_ADDRESSTextBox";
-            this.cUSTOMER_WRONG_ADDRESSTextBox.Size = new System.Drawing.Size(20, 26);
-            this.cUSTOMER_WRONG_ADDRESSTextBox.TabIndex = 43;
             this.cUSTOMER_WRONG_ADDRESSTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // cUSTOMER_PURCHASE_ORDERTextBox
@@ -5044,12 +3657,8 @@
             this.cUSTOMER_PURCHASE_ORDERTextBox.BackColor = System.Drawing.Color.Gold;
             this.cUSTOMER_PURCHASE_ORDERTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.cUSTOMER_PURCHASE_ORDERTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_PURCHASE_ORDER", true));
-            this.cUSTOMER_PURCHASE_ORDERTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cUSTOMER_PURCHASE_ORDERTextBox.Location = new System.Drawing.Point(479, 20);
+            resources.ApplyResources(this.cUSTOMER_PURCHASE_ORDERTextBox, "cUSTOMER_PURCHASE_ORDERTextBox");
             this.cUSTOMER_PURCHASE_ORDERTextBox.Name = "cUSTOMER_PURCHASE_ORDERTextBox";
-            this.cUSTOMER_PURCHASE_ORDERTextBox.Size = new System.Drawing.Size(67, 26);
-            this.cUSTOMER_PURCHASE_ORDERTextBox.TabIndex = 4;
-            this.cUSTOMER_PURCHASE_ORDERTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.cUSTOMER_PURCHASE_ORDERTextBox.TextChanged += new System.EventHandler(this.cUSTOMER_PURCHASE_ORDERTextBox_TextChanged);
             this.cUSTOMER_PURCHASE_ORDERTextBox.Enter += new System.EventHandler(this.cUSTOMER_PURCHASE_ORDERTextBox_Enter);
             this.cUSTOMER_PURCHASE_ORDERTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
@@ -5060,47 +3669,31 @@
             this.cUSTOMER_ACT_STATTextBox.AllowDrop = true;
             this.cUSTOMER_ACT_STATTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.cUSTOMER_ACT_STATTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_ACT_STAT", true));
-            this.cUSTOMER_ACT_STATTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cUSTOMER_ACT_STATTextBox.Location = new System.Drawing.Point(756, 20);
-            this.cUSTOMER_ACT_STATTextBox.MaxLength = 1;
+            resources.ApplyResources(this.cUSTOMER_ACT_STATTextBox, "cUSTOMER_ACT_STATTextBox");
             this.cUSTOMER_ACT_STATTextBox.Name = "cUSTOMER_ACT_STATTextBox";
-            this.cUSTOMER_ACT_STATTextBox.Size = new System.Drawing.Size(19, 26);
-            this.cUSTOMER_ACT_STATTextBox.TabIndex = 5;
             this.cUSTOMER_ACT_STATTextBox.TextChanged += new System.EventHandler(this.cUSTOMER_ACT_STATTextBox_TextChanged);
             // 
             // cUSTOMER_IAC_TypeTextBox
             // 
             this.cUSTOMER_IAC_TypeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_IAC_TYPE", true));
-            this.cUSTOMER_IAC_TypeTextBox.Enabled = false;
-            this.cUSTOMER_IAC_TypeTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cUSTOMER_IAC_TypeTextBox.Location = new System.Drawing.Point(266, 20);
+            resources.ApplyResources(this.cUSTOMER_IAC_TypeTextBox, "cUSTOMER_IAC_TypeTextBox");
             this.cUSTOMER_IAC_TypeTextBox.Name = "cUSTOMER_IAC_TypeTextBox";
             this.cUSTOMER_IAC_TypeTextBox.ReadOnly = true;
-            this.cUSTOMER_IAC_TypeTextBox.Size = new System.Drawing.Size(19, 26);
-            this.cUSTOMER_IAC_TypeTextBox.TabIndex = 3;
             // 
             // cUSTOMER_WORK_PHONETextBox
             // 
             this.cUSTOMER_WORK_PHONETextBox.AllowDrop = true;
             this.cUSTOMER_WORK_PHONETextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_WORK_PHONE", true));
-            this.cUSTOMER_WORK_PHONETextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cUSTOMER_WORK_PHONETextBox.Location = new System.Drawing.Point(171, 326);
-            this.cUSTOMER_WORK_PHONETextBox.Mask = "(999) 000-0000";
+            resources.ApplyResources(this.cUSTOMER_WORK_PHONETextBox, "cUSTOMER_WORK_PHONETextBox");
             this.cUSTOMER_WORK_PHONETextBox.Name = "cUSTOMER_WORK_PHONETextBox";
-            this.cUSTOMER_WORK_PHONETextBox.Size = new System.Drawing.Size(115, 26);
-            this.cUSTOMER_WORK_PHONETextBox.TabIndex = 19;
             this.cUSTOMER_WORK_PHONETextBox.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // cUSTOMER_PHONE_NOTextBox
             // 
             this.cUSTOMER_PHONE_NOTextBox.AllowDrop = true;
             this.cUSTOMER_PHONE_NOTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_PHONE_NO", true));
-            this.cUSTOMER_PHONE_NOTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cUSTOMER_PHONE_NOTextBox.Location = new System.Drawing.Point(171, 292);
-            this.cUSTOMER_PHONE_NOTextBox.Mask = "(999) 000-0000";
+            resources.ApplyResources(this.cUSTOMER_PHONE_NOTextBox, "cUSTOMER_PHONE_NOTextBox");
             this.cUSTOMER_PHONE_NOTextBox.Name = "cUSTOMER_PHONE_NOTextBox";
-            this.cUSTOMER_PHONE_NOTextBox.Size = new System.Drawing.Size(115, 26);
-            this.cUSTOMER_PHONE_NOTextBox.TabIndex = 17;
             this.cUSTOMER_PHONE_NOTextBox.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // groupBoxRefi
@@ -5111,72 +3704,84 @@
             this.groupBoxRefi.Controls.Add(this.textBoxOpenAccount);
             this.groupBoxRefi.Controls.Add(label189);
             this.groupBoxRefi.Controls.Add(this.textBoxAccount);
-            this.groupBoxRefi.Location = new System.Drawing.Point(813, 484);
+            resources.ApplyResources(this.groupBoxRefi, "groupBoxRefi");
             this.groupBoxRefi.Name = "groupBoxRefi";
-            this.groupBoxRefi.Size = new System.Drawing.Size(374, 88);
-            this.groupBoxRefi.TabIndex = 55;
             this.groupBoxRefi.TabStop = false;
             // 
             // checkBoxVehicleWarranty
             // 
-            this.checkBoxVehicleWarranty.Location = new System.Drawing.Point(24, 49);
+            this.checkBoxVehicleWarranty.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.VehiclebindingSource, "Warranty", true));
+            resources.ApplyResources(this.checkBoxVehicleWarranty, "checkBoxVehicleWarranty");
             this.checkBoxVehicleWarranty.MenuManager = this.toolbarFormManager1;
             this.checkBoxVehicleWarranty.Name = "checkBoxVehicleWarranty";
-            this.checkBoxVehicleWarranty.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxVehicleWarranty.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("checkBoxVehicleWarranty.Properties.Appearance.Font")));
             this.checkBoxVehicleWarranty.Properties.Appearance.Options.UseFont = true;
-            this.checkBoxVehicleWarranty.Properties.Caption = "WARRANTY?";
-            this.checkBoxVehicleWarranty.Properties.ImageOptions.ImageChecked = ((System.Drawing.Image)(resources.GetObject("checkBoxVehicleWarranty.Properties.ImageOptions.ImageChecked")));
-            this.checkBoxVehicleWarranty.Size = new System.Drawing.Size(122, 25);
-            this.checkBoxVehicleWarranty.TabIndex = 112;
+            this.checkBoxVehicleWarranty.Properties.Caption = resources.GetString("checkBoxVehicleWarranty.Properties.Caption");
+            this.checkBoxVehicleWarranty.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
+            this.checkBoxVehicleWarranty.Properties.CheckBoxOptions.SvgColorChecked = System.Drawing.Color.Red;
+            this.checkBoxVehicleWarranty.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
+            this.checkBoxVehicleWarranty.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
+            this.checkBoxVehicleWarranty.Properties.LookAndFeel.SkinName = "McSkin";
+            this.checkBoxVehicleWarranty.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.checkBoxVehicleWarranty.Properties.NullStyle = DevExpress.XtraEditors.Controls.StyleIndeterminate.Unchecked;
+            this.checkBoxVehicleWarranty.CheckedChanged += new System.EventHandler(this.checkBoxVehicleWarranty_CheckedChanged);
             this.checkBoxVehicleWarranty.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // checkBoxRefi
             // 
-            this.checkBoxRefi.Location = new System.Drawing.Point(24, 23);
+            this.checkBoxRefi.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "IsRefi", true));
+            resources.ApplyResources(this.checkBoxRefi, "checkBoxRefi");
             this.checkBoxRefi.MenuManager = this.toolbarFormManager1;
             this.checkBoxRefi.Name = "checkBoxRefi";
-            this.checkBoxRefi.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxRefi.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("checkBoxRefi.Properties.Appearance.Font")));
             this.checkBoxRefi.Properties.Appearance.Options.UseFont = true;
-            this.checkBoxRefi.Properties.Caption = "REFINANCE?";
-            this.checkBoxRefi.Properties.ContentAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.checkBoxRefi.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.checkBoxRefi.Size = new System.Drawing.Size(118, 25);
-            this.checkBoxRefi.TabIndex = 110;
+            this.checkBoxRefi.Properties.Caption = resources.GetString("checkBoxRefi.Properties.Caption");
+            this.checkBoxRefi.Properties.ContentAlignment = ((DevExpress.Utils.HorzAlignment)(resources.GetObject("checkBoxRefi.Properties.ContentAlignment")));
+            this.checkBoxRefi.Properties.GlyphAlignment = ((DevExpress.Utils.HorzAlignment)(resources.GetObject("checkBoxRefi.Properties.GlyphAlignment")));
+            this.checkBoxRefi.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
+            this.checkBoxRefi.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
+            this.checkBoxRefi.Properties.LookAndFeel.SkinName = "McSkin";
+            this.checkBoxRefi.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.checkBoxRefi.CheckedChanged += new System.EventHandler(this.checkBoxRefi_CheckedChanged);
             this.checkBoxRefi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // textBoxOpenAccount
             // 
             this.textBoxOpenAccount.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.VehiclebindingSource, "OpenAcct", true));
-            this.textBoxOpenAccount.Enabled = false;
-            this.textBoxOpenAccount.Location = new System.Drawing.Point(280, 45);
-            this.textBoxOpenAccount.MaxLength = 6;
+            resources.ApplyResources(this.textBoxOpenAccount, "textBoxOpenAccount");
             this.textBoxOpenAccount.Name = "textBoxOpenAccount";
-            this.textBoxOpenAccount.Size = new System.Drawing.Size(67, 29);
-            this.textBoxOpenAccount.TabIndex = 86;
-            this.textBoxOpenAccount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.textBoxOpenAccount.DoubleClick += new System.EventHandler(this.textBoxOpenAccount_DoubleClick);
             this.textBoxOpenAccount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // textBoxAccount
             // 
             this.textBoxAccount.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "RefiAccount", true));
-            this.textBoxAccount.Enabled = false;
-            this.textBoxAccount.Location = new System.Drawing.Point(280, 14);
-            this.textBoxAccount.MaxLength = 6;
+            resources.ApplyResources(this.textBoxAccount, "textBoxAccount");
             this.textBoxAccount.Name = "textBoxAccount";
-            this.textBoxAccount.Size = new System.Drawing.Size(67, 29);
-            this.textBoxAccount.TabIndex = 57;
-            this.textBoxAccount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.textBoxAccount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // xtraTabPageCustInfo2
             // 
-            this.xtraTabPageCustInfo2.Controls.Add(this.groupBox1);
-            this.xtraTabPageCustInfo2.Controls.Add(this.groupBox9);
+            this.xtraTabPageCustInfo2.Appearance.Header.BackColor = System.Drawing.Color.Transparent;
+            this.xtraTabPageCustInfo2.Appearance.Header.BackColor2 = ((System.Drawing.Color)(resources.GetObject("xtraTabPageCustInfo2.Appearance.Header.BackColor2")));
+            this.xtraTabPageCustInfo2.Appearance.Header.Options.UseBackColor = true;
+            this.xtraTabPageCustInfo2.Appearance.PageClient.BackColor = System.Drawing.Color.Transparent;
+            this.xtraTabPageCustInfo2.Appearance.PageClient.BackColor2 = ((System.Drawing.Color)(resources.GetObject("xtraTabPageCustInfo2.Appearance.PageClient.BackColor2")));
+            this.xtraTabPageCustInfo2.Appearance.PageClient.BorderColor = System.Drawing.Color.Transparent;
+            this.xtraTabPageCustInfo2.Appearance.PageClient.Options.UseBackColor = true;
+            this.xtraTabPageCustInfo2.Appearance.PageClient.Options.UseBorderColor = true;
+            this.xtraTabPageCustInfo2.Controls.Add(this.groupBox14);
             this.xtraTabPageCustInfo2.Name = "xtraTabPageCustInfo2";
-            this.xtraTabPageCustInfo2.Size = new System.Drawing.Size(1230, 612);
-            this.xtraTabPageCustInfo2.Text = "Customer Info 2";
+            resources.ApplyResources(this.xtraTabPageCustInfo2, "xtraTabPageCustInfo2");
+            // 
+            // groupBox14
+            // 
+            this.groupBox14.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.groupBox14.Controls.Add(this.groupBox1);
+            this.groupBox14.Controls.Add(this.groupBox9);
+            resources.ApplyResources(this.groupBox14, "groupBox14");
+            this.groupBox14.Name = "groupBox14";
+            this.groupBox14.TabStop = false;
             // 
             // groupBox1
             // 
@@ -5221,265 +3826,194 @@
             this.groupBox1.Controls.Add(this.txtCustomerBalance);
             this.groupBox1.Controls.Add(label198);
             this.groupBox1.Controls.Add(this.txtPaidInterest);
-            this.groupBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(72, 256);
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1087, 304);
-            this.groupBox1.TabIndex = 96;
             this.groupBox1.TabStop = false;
             // 
             // colorTextBoxTotalDue
             // 
             this.colorTextBoxTotalDue.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "TotalDue", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "C2"));
-            this.colorTextBoxTotalDue.Location = new System.Drawing.Point(365, 175);
+            resources.ApplyResources(this.colorTextBoxTotalDue, "colorTextBoxTotalDue");
             this.colorTextBoxTotalDue.MenuManager = this.toolbarFormManager1;
             this.colorTextBoxTotalDue.Name = "colorTextBoxTotalDue";
-            this.colorTextBoxTotalDue.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colorTextBoxTotalDue.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("colorTextBoxTotalDue.Properties.Appearance.Font")));
             this.colorTextBoxTotalDue.Properties.Appearance.Options.UseFont = true;
             this.colorTextBoxTotalDue.Properties.Appearance.Options.UseTextOptions = true;
             this.colorTextBoxTotalDue.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.colorTextBoxTotalDue.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.colorTextBoxTotalDue.Properties.DisplayFormat.FormatString = "c2";
             this.colorTextBoxTotalDue.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colorTextBoxTotalDue.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.PaleTurquoise;
+            this.colorTextBoxTotalDue.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
             this.colorTextBoxTotalDue.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
             this.colorTextBoxTotalDue.Properties.LookAndFeel.SkinName = "McSkin";
             this.colorTextBoxTotalDue.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.colorTextBoxTotalDue.Size = new System.Drawing.Size(102, 28);
-            this.colorTextBoxTotalDue.TabIndex = 208;
             this.colorTextBoxTotalDue.EditValueChanged += new System.EventHandler(this.colorTextBoxTotalDue_EditValueChanged);
             // 
             // txtContractStatus
             // 
             this.txtContractStatus.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_CONTRACT_STATUS", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "C2"));
-            this.txtContractStatus.Location = new System.Drawing.Point(365, 82);
+            resources.ApplyResources(this.txtContractStatus, "txtContractStatus");
             this.txtContractStatus.MenuManager = this.toolbarFormManager1;
             this.txtContractStatus.Name = "txtContractStatus";
-            this.txtContractStatus.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtContractStatus.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("txtContractStatus.Properties.Appearance.Font")));
             this.txtContractStatus.Properties.Appearance.Options.UseFont = true;
             this.txtContractStatus.Properties.Appearance.Options.UseTextOptions = true;
             this.txtContractStatus.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.txtContractStatus.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.txtContractStatus.Properties.DisplayFormat.FormatString = "c2";
             this.txtContractStatus.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.txtContractStatus.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.PaleTurquoise;
+            this.txtContractStatus.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
             this.txtContractStatus.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
             this.txtContractStatus.Properties.LookAndFeel.SkinName = "McSkin";
             this.txtContractStatus.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.txtContractStatus.Size = new System.Drawing.Size(102, 28);
-            this.txtContractStatus.TabIndex = 207;
             this.txtContractStatus.EditValueChanged += new System.EventHandler(this.txtContractStatus_EditValueChanged);
             // 
             // MaturityDate
             // 
             this.MaturityDate.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "MaturityDate", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "d"));
-            this.MaturityDate.EditValue = null;
-            this.MaturityDate.Location = new System.Drawing.Point(891, 144);
+            resources.ApplyResources(this.MaturityDate, "MaturityDate");
             this.MaturityDate.MenuManager = this.toolbarFormManager1;
             this.MaturityDate.Name = "MaturityDate";
-            this.MaturityDate.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MaturityDate.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("MaturityDate.Properties.Appearance.Font")));
             this.MaturityDate.Properties.Appearance.Options.UseFont = true;
             this.MaturityDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("MaturityDate.Properties.Buttons"))))});
             this.MaturityDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("MaturityDate.Properties.CalendarTimeProperties.Buttons"))))});
             this.MaturityDate.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.Fluent;
-            this.MaturityDate.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.PaleTurquoise;
+            this.MaturityDate.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
             this.MaturityDate.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
             this.MaturityDate.Properties.LookAndFeel.SkinName = "McSkin";
             this.MaturityDate.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.MaturityDate.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
-            this.MaturityDate.Size = new System.Drawing.Size(119, 28);
-            this.MaturityDate.TabIndex = 206;
             // 
             // txtLastPaymentMade
             // 
             this.txtLastPaymentMade.AllowDrop = true;
             this.txtLastPaymentMade.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_LAST_PAYMENT_MADE", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "C2"));
-            this.txtLastPaymentMade.Location = new System.Drawing.Point(148, 19);
+            resources.ApplyResources(this.txtLastPaymentMade, "txtLastPaymentMade");
             this.txtLastPaymentMade.Name = "txtLastPaymentMade";
-            this.txtLastPaymentMade.Size = new System.Drawing.Size(102, 29);
-            this.txtLastPaymentMade.TabIndex = 203;
-            this.txtLastPaymentMade.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBoxCheckNo
             // 
             this.textBoxCheckNo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CheckNumber", true));
-            this.textBoxCheckNo.Location = new System.Drawing.Point(891, 112);
+            resources.ApplyResources(this.textBoxCheckNo, "textBoxCheckNo");
             this.textBoxCheckNo.Name = "textBoxCheckNo";
-            this.textBoxCheckNo.Size = new System.Drawing.Size(119, 29);
-            this.textBoxCheckNo.TabIndex = 200;
-            this.textBoxCheckNo.Visible = false;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(798, 120);
+            resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 21);
-            this.label2.TabIndex = 142;
-            this.label2.Text = "CHECK NO:";
-            this.label2.Visible = false;
             // 
             // checkBoxCheckIssued
             // 
-            this.checkBoxCheckIssued.AutoSize = true;
+            resources.ApplyResources(this.checkBoxCheckIssued, "checkBoxCheckIssued");
             this.checkBoxCheckIssued.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.cUSTOMERBindingSource, "IsCheckPrinted", true));
-            this.checkBoxCheckIssued.Location = new System.Drawing.Point(640, 116);
             this.checkBoxCheckIssued.Name = "checkBoxCheckIssued";
-            this.checkBoxCheckIssued.Size = new System.Drawing.Size(157, 25);
-            this.checkBoxCheckIssued.TabIndex = 110;
-            this.checkBoxCheckIssued.Text = "O/P Check Issued?";
             this.checkBoxCheckIssued.UseVisualStyleBackColor = true;
             // 
             // textBoxDealerCashPrice
             // 
             this.textBoxDealerCashPrice.AllowDrop = true;
             this.textBoxDealerCashPrice.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.VehiclebindingSource, "DealerCashPrice", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "C2"));
-            this.textBoxDealerCashPrice.Location = new System.Drawing.Point(891, 81);
+            resources.ApplyResources(this.textBoxDealerCashPrice, "textBoxDealerCashPrice");
             this.textBoxDealerCashPrice.Name = "textBoxDealerCashPrice";
-            this.textBoxDealerCashPrice.Size = new System.Drawing.Size(119, 29);
-            this.textBoxDealerCashPrice.TabIndex = 107;
-            this.textBoxDealerCashPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtPaidThrough
             // 
             this.txtPaidThrough.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_PAID_THRU", true));
-            this.txtPaidThrough.Location = new System.Drawing.Point(148, 50);
-            this.txtPaidThrough.Mask = "00/00";
+            resources.ApplyResources(this.txtPaidThrough, "txtPaidThrough");
             this.txtPaidThrough.Name = "txtPaidThrough";
-            this.txtPaidThrough.Size = new System.Drawing.Size(47, 29);
-            this.txtPaidThrough.TabIndex = 101;
             this.txtPaidThrough.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // txtControlDate
             // 
             this.txtControlDate.AllowDrop = true;
-            this.txtControlDate.Location = new System.Drawing.Point(640, 143);
+            resources.ApplyResources(this.txtControlDate, "txtControlDate");
             this.txtControlDate.Name = "txtControlDate";
-            this.txtControlDate.Size = new System.Drawing.Size(49, 29);
-            this.txtControlDate.TabIndex = 114;
-            this.txtControlDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtPaidDiscount
             // 
             this.txtPaidDiscount.AllowDrop = true;
             this.txtPaidDiscount.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_PAID_DISCOUNT", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "C2"));
-            this.txtPaidDiscount.Location = new System.Drawing.Point(640, 81);
+            resources.ApplyResources(this.txtPaidDiscount, "txtPaidDiscount");
             this.txtPaidDiscount.Name = "txtPaidDiscount";
-            this.txtPaidDiscount.Size = new System.Drawing.Size(102, 29);
-            this.txtPaidDiscount.TabIndex = 106;
-            this.txtPaidDiscount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtCreditAvailable
             // 
             this.txtCreditAvailable.AllowDrop = true;
             this.txtCreditAvailable.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_CREDIT_AVAILABLE", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "C2"));
-            this.txtCreditAvailable.Location = new System.Drawing.Point(365, 143);
+            resources.ApplyResources(this.txtCreditAvailable, "txtCreditAvailable");
             this.txtCreditAvailable.Name = "txtCreditAvailable";
-            this.txtCreditAvailable.Size = new System.Drawing.Size(102, 29);
-            this.txtCreditAvailable.TabIndex = 113;
-            this.txtCreditAvailable.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox66
             // 
             this.textBox66.AllowDrop = true;
             this.textBox66.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_CREDIT_LIMIT", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "C2"));
-            this.textBox66.Location = new System.Drawing.Point(365, 112);
+            resources.ApplyResources(this.textBox66, "textBox66");
             this.textBox66.Name = "textBox66";
-            this.textBox66.Size = new System.Drawing.Size(102, 29);
-            this.textBox66.TabIndex = 109;
-            this.textBox66.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox67
             // 
             this.textBox67.AllowDrop = true;
             this.textBox67.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_NUMBER_OF_MONTHS", true));
-            this.textBox67.Location = new System.Drawing.Point(148, 174);
+            resources.ApplyResources(this.textBox67, "textBox67");
             this.textBox67.Name = "textBox67";
-            this.textBox67.Size = new System.Drawing.Size(25, 29);
-            this.textBox67.TabIndex = 116;
-            this.textBox67.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtRebateCode
             // 
             this.txtRebateCode.AllowDrop = true;
             this.txtRebateCode.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_REBATE_CODE", true));
-            this.txtRebateCode.Location = new System.Drawing.Point(148, 143);
-            this.txtRebateCode.MaxLength = 2;
+            resources.ApplyResources(this.txtRebateCode, "txtRebateCode");
             this.txtRebateCode.Name = "txtRebateCode";
-            this.txtRebateCode.Size = new System.Drawing.Size(25, 29);
-            this.txtRebateCode.TabIndex = 112;
-            this.txtRebateCode.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox73
             // 
             this.textBox73.AllowDrop = true;
             this.textBox73.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_DEALER_DISC_BAL", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "C2"));
-            this.textBox73.Location = new System.Drawing.Point(148, 112);
+            resources.ApplyResources(this.textBox73, "textBox73");
             this.textBox73.Name = "textBox73";
-            this.textBox73.Size = new System.Drawing.Size(102, 29);
-            this.textBox73.TabIndex = 108;
-            this.textBox73.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtDealerDisc
             // 
             this.txtDealerDisc.AllowDrop = true;
             this.txtDealerDisc.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_DEALER_DISC", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "C2"));
-            this.txtDealerDisc.Location = new System.Drawing.Point(148, 81);
+            resources.ApplyResources(this.txtDealerDisc, "txtDealerDisc");
             this.txtDealerDisc.Name = "txtDealerDisc";
-            this.txtDealerDisc.Size = new System.Drawing.Size(102, 29);
-            this.txtDealerDisc.TabIndex = 104;
-            this.txtDealerDisc.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtCustomerPayRem2
             // 
             this.txtCustomerPayRem2.AllowDrop = true;
             this.txtCustomerPayRem2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_PAY_REM_2", true));
-            this.txtCustomerPayRem2.Location = new System.Drawing.Point(640, 50);
+            resources.ApplyResources(this.txtCustomerPayRem2, "txtCustomerPayRem2");
             this.txtCustomerPayRem2.Name = "txtCustomerPayRem2";
-            this.txtCustomerPayRem2.Size = new System.Drawing.Size(25, 29);
-            this.txtCustomerPayRem2.TabIndex = 103;
-            this.txtCustomerPayRem2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtCustomerBuyout
             // 
             this.txtCustomerBuyout.AllowDrop = true;
             this.txtCustomerBuyout.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_BUYOUT", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "C2"));
-            this.txtCustomerBuyout.Location = new System.Drawing.Point(365, 50);
+            resources.ApplyResources(this.txtCustomerBuyout, "txtCustomerBuyout");
             this.txtCustomerBuyout.Name = "txtCustomerBuyout";
-            this.txtCustomerBuyout.Size = new System.Drawing.Size(102, 29);
-            this.txtCustomerBuyout.TabIndex = 102;
-            this.txtCustomerBuyout.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtUEInterest
             // 
             this.txtUEInterest.AllowDrop = true;
             this.txtUEInterest.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_UE_INTEREST", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "0", "C2"));
-            this.txtUEInterest.Location = new System.Drawing.Point(891, 19);
+            resources.ApplyResources(this.txtUEInterest, "txtUEInterest");
             this.txtUEInterest.Name = "txtUEInterest";
-            this.txtUEInterest.Size = new System.Drawing.Size(102, 29);
-            this.txtUEInterest.TabIndex = 100;
-            this.txtUEInterest.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtCustomerBalance
             // 
             this.txtCustomerBalance.AllowDrop = true;
             this.txtCustomerBalance.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_BALANCE", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "C2"));
-            this.txtCustomerBalance.Location = new System.Drawing.Point(365, 19);
+            resources.ApplyResources(this.txtCustomerBalance, "txtCustomerBalance");
             this.txtCustomerBalance.Name = "txtCustomerBalance";
-            this.txtCustomerBalance.Size = new System.Drawing.Size(102, 29);
-            this.txtCustomerBalance.TabIndex = 98;
-            this.txtCustomerBalance.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtPaidInterest
             // 
             this.txtPaidInterest.AllowDrop = true;
-            this.txtPaidInterest.Location = new System.Drawing.Point(640, 19);
+            resources.ApplyResources(this.txtPaidInterest, "txtPaidInterest");
             this.txtPaidInterest.Name = "txtPaidInterest";
-            this.txtPaidInterest.Size = new System.Drawing.Size(102, 29);
-            this.txtPaidInterest.TabIndex = 99;
-            this.txtPaidInterest.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // groupBox9
             // 
@@ -5530,351 +4064,266 @@
             this.groupBox9.Controls.Add(this.textBoxIACType);
             this.groupBox9.Controls.Add(this.textBox14);
             this.groupBox9.Controls.Add(label12);
-            this.groupBox9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox9.Location = new System.Drawing.Point(99, 22);
+            resources.ApplyResources(this.groupBox9, "groupBox9");
             this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(1020, 233);
-            this.groupBox9.TabIndex = 71;
             this.groupBox9.TabStop = false;
             // 
             // nullableDateTimePickerFundingDate
             // 
             this.nullableDateTimePickerFundingDate.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "FundingDate", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "d"));
-            this.nullableDateTimePickerFundingDate.EditValue = null;
-            this.nullableDateTimePickerFundingDate.Location = new System.Drawing.Point(394, 161);
+            resources.ApplyResources(this.nullableDateTimePickerFundingDate, "nullableDateTimePickerFundingDate");
             this.nullableDateTimePickerFundingDate.Name = "nullableDateTimePickerFundingDate";
-            this.nullableDateTimePickerFundingDate.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nullableDateTimePickerFundingDate.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("nullableDateTimePickerFundingDate.Properties.Appearance.Font")));
             this.nullableDateTimePickerFundingDate.Properties.Appearance.Options.UseFont = true;
             this.nullableDateTimePickerFundingDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("nullableDateTimePickerFundingDate.Properties.Buttons"))))});
             this.nullableDateTimePickerFundingDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("nullableDateTimePickerFundingDate.Properties.CalendarTimeProperties.Buttons"))))});
             this.nullableDateTimePickerFundingDate.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.Fluent;
-            this.nullableDateTimePickerFundingDate.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.PaleTurquoise;
+            this.nullableDateTimePickerFundingDate.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
             this.nullableDateTimePickerFundingDate.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
             this.nullableDateTimePickerFundingDate.Properties.LookAndFeel.SkinName = "McSkin";
             this.nullableDateTimePickerFundingDate.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.nullableDateTimePickerFundingDate.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
-            this.nullableDateTimePickerFundingDate.Size = new System.Drawing.Size(119, 28);
-            this.nullableDateTimePickerFundingDate.TabIndex = 89;
             // 
             // checkBoxOverrideLateCharge
             // 
-            this.checkBoxOverrideLateCharge.AutoSize = true;
+            resources.ApplyResources(this.checkBoxOverrideLateCharge, "checkBoxOverrideLateCharge");
             this.checkBoxOverrideLateCharge.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.cUSTOMERBindingSource, "OverrideLateCharge", true));
-            this.checkBoxOverrideLateCharge.Enabled = false;
-            this.checkBoxOverrideLateCharge.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxOverrideLateCharge.Location = new System.Drawing.Point(742, 61);
             this.checkBoxOverrideLateCharge.Name = "checkBoxOverrideLateCharge";
-            this.checkBoxOverrideLateCharge.Size = new System.Drawing.Size(145, 19);
-            this.checkBoxOverrideLateCharge.TabIndex = 119;
-            this.checkBoxOverrideLateCharge.Text = "Override Late Charge";
             this.checkBoxOverrideLateCharge.UseVisualStyleBackColor = true;
             // 
             // DateTimePickerContractDate
             // 
             this.DateTimePickerContractDate.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "ContractDate", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "d"));
-            this.DateTimePickerContractDate.EditValue = null;
-            this.DateTimePickerContractDate.Location = new System.Drawing.Point(148, 161);
+            resources.ApplyResources(this.DateTimePickerContractDate, "DateTimePickerContractDate");
             this.DateTimePickerContractDate.Name = "DateTimePickerContractDate";
-            this.DateTimePickerContractDate.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DateTimePickerContractDate.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("DateTimePickerContractDate.Properties.Appearance.Font")));
             this.DateTimePickerContractDate.Properties.Appearance.Options.UseFont = true;
             this.DateTimePickerContractDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("DateTimePickerContractDate.Properties.Buttons"))))});
             this.DateTimePickerContractDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("DateTimePickerContractDate.Properties.CalendarTimeProperties.Buttons"))))});
             this.DateTimePickerContractDate.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.Fluent;
-            this.DateTimePickerContractDate.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.PaleTurquoise;
+            this.DateTimePickerContractDate.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
             this.DateTimePickerContractDate.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
             this.DateTimePickerContractDate.Properties.LookAndFeel.SkinName = "McSkin";
             this.DateTimePickerContractDate.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.DateTimePickerContractDate.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
-            this.DateTimePickerContractDate.Size = new System.Drawing.Size(119, 28);
-            this.DateTimePickerContractDate.TabIndex = 88;
             // 
             // checkBoxSimple
             // 
-            this.checkBoxSimple.AutoSize = true;
-            this.checkBoxSimple.Enabled = false;
-            this.checkBoxSimple.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxSimple.Location = new System.Drawing.Point(908, 61);
+            resources.ApplyResources(this.checkBoxSimple, "checkBoxSimple");
             this.checkBoxSimple.Name = "checkBoxSimple";
-            this.checkBoxSimple.Size = new System.Drawing.Size(70, 19);
-            this.checkBoxSimple.TabIndex = 80;
-            this.checkBoxSimple.Text = "US Rule";
             this.checkBoxSimple.UseVisualStyleBackColor = true;
             // 
             // txtFirstPayDate
             // 
             this.txtFirstPayDate.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "FundingDate", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "d"));
-            this.txtFirstPayDate.EditValue = null;
-            this.txtFirstPayDate.Location = new System.Drawing.Point(148, 53);
+            resources.ApplyResources(this.txtFirstPayDate, "txtFirstPayDate");
             this.txtFirstPayDate.Name = "txtFirstPayDate";
-            this.txtFirstPayDate.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFirstPayDate.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("txtFirstPayDate.Properties.Appearance.Font")));
             this.txtFirstPayDate.Properties.Appearance.Options.UseFont = true;
             this.txtFirstPayDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("txtFirstPayDate.Properties.Buttons"))))});
             this.txtFirstPayDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("txtFirstPayDate.Properties.CalendarTimeProperties.Buttons"))))});
             this.txtFirstPayDate.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.Fluent;
-            this.txtFirstPayDate.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.PaleTurquoise;
+            this.txtFirstPayDate.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
             this.txtFirstPayDate.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
             this.txtFirstPayDate.Properties.LookAndFeel.SkinName = "McSkin";
             this.txtFirstPayDate.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.txtFirstPayDate.Properties.UseAdvancedMode = DevExpress.Utils.DefaultBoolean.True;
             this.txtFirstPayDate.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
-            this.txtFirstPayDate.Size = new System.Drawing.Size(119, 28);
-            this.txtFirstPayDate.TabIndex = 76;
             // 
             // txtPaymentDate
             // 
             this.txtPaymentDate.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_LAST_PAYMENT_DATE", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "d"));
-            this.txtPaymentDate.EditValue = null;
-            this.txtPaymentDate.Location = new System.Drawing.Point(148, 197);
+            resources.ApplyResources(this.txtPaymentDate, "txtPaymentDate");
             this.txtPaymentDate.Name = "txtPaymentDate";
-            this.txtPaymentDate.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPaymentDate.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("txtPaymentDate.Properties.Appearance.Font")));
             this.txtPaymentDate.Properties.Appearance.Options.UseFont = true;
             this.txtPaymentDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("txtPaymentDate.Properties.Buttons"))))});
             this.txtPaymentDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("txtPaymentDate.Properties.CalendarTimeProperties.Buttons"))))});
             this.txtPaymentDate.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.Fluent;
-            this.txtPaymentDate.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.PaleTurquoise;
+            this.txtPaymentDate.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
             this.txtPaymentDate.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
             this.txtPaymentDate.Properties.LookAndFeel.SkinName = "McSkin";
             this.txtPaymentDate.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.txtPaymentDate.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
-            this.txtPaymentDate.Size = new System.Drawing.Size(119, 28);
-            this.txtPaymentDate.TabIndex = 91;
             // 
             // textBox18
             // 
             this.textBox18.AllowDrop = true;
             this.textBox18.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBox18.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_SUFFIX", true));
-            this.textBox18.Enabled = false;
-            this.textBox18.Location = new System.Drawing.Point(715, 17);
-            this.textBox18.MaxLength = 3;
+            resources.ApplyResources(this.textBox18, "textBox18");
             this.textBox18.Name = "textBox18";
             this.textBox18.ReadOnly = true;
-            this.textBox18.Size = new System.Drawing.Size(41, 29);
-            this.textBox18.TabIndex = 75;
             // 
             // comboBoxDayDue
             // 
             this.comboBoxDayDue.AllowDrop = true;
             this.comboBoxDayDue.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_DAY_DUE", true));
+            resources.ApplyResources(this.comboBoxDayDue, "comboBoxDayDue");
             this.comboBoxDayDue.FormattingEnabled = true;
             this.comboBoxDayDue.Items.AddRange(new object[] {
-            "5",
-            "10",
-            "15",
-            "20",
-            "25",
-            "30"});
-            this.comboBoxDayDue.Location = new System.Drawing.Point(365, 53);
-            this.comboBoxDayDue.MaxLength = 2;
+            resources.GetString("comboBoxDayDue.Items"),
+            resources.GetString("comboBoxDayDue.Items1"),
+            resources.GetString("comboBoxDayDue.Items2"),
+            resources.GetString("comboBoxDayDue.Items3"),
+            resources.GetString("comboBoxDayDue.Items4"),
+            resources.GetString("comboBoxDayDue.Items5")});
             this.comboBoxDayDue.Name = "comboBoxDayDue";
-            this.comboBoxDayDue.Size = new System.Drawing.Size(45, 29);
-            this.comboBoxDayDue.TabIndex = 77;
             // 
             // txtAPR
             // 
             this.txtAPR.AllowDrop = true;
             this.txtAPR.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_ANNUAL_PERCENTAGE_RATE", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N4"));
-            this.txtAPR.Location = new System.Drawing.Point(908, 90);
-            this.txtAPR.MaxLength = 8;
+            resources.ApplyResources(this.txtAPR, "txtAPR");
             this.txtAPR.Name = "txtAPR";
-            this.txtAPR.Size = new System.Drawing.Size(73, 29);
-            this.txtAPR.TabIndex = 84;
-            this.txtAPR.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtLateChargeBal
             // 
             this.txtLateChargeBal.AllowDrop = true;
             this.txtLateChargeBal.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_LATE_CHARGE_BAL", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "0", "C2"));
-            this.txtLateChargeBal.Location = new System.Drawing.Point(908, 197);
+            resources.ApplyResources(this.txtLateChargeBal, "txtLateChargeBal");
             this.txtLateChargeBal.Name = "txtLateChargeBal";
-            this.txtLateChargeBal.Size = new System.Drawing.Size(102, 29);
-            this.txtLateChargeBal.TabIndex = 95;
-            this.txtLateChargeBal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtPartialPayment
             // 
             this.txtPartialPayment.AllowDrop = true;
             this.txtPartialPayment.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "PartialPayment", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "C2"));
-            this.txtPartialPayment.Enabled = false;
-            this.txtPartialPayment.Location = new System.Drawing.Point(669, 161);
+            resources.ApplyResources(this.txtPartialPayment, "txtPartialPayment");
             this.txtPartialPayment.Name = "txtPartialPayment";
-            this.txtPartialPayment.Size = new System.Drawing.Size(102, 29);
-            this.txtPartialPayment.TabIndex = 90;
-            this.txtPartialPayment.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtLateCharge
             // 
             this.txtLateCharge.AllowDrop = true;
             this.txtLateCharge.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_LATE_CHARGE", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "C2"));
-            this.txtLateCharge.Location = new System.Drawing.Point(669, 197);
+            resources.ApplyResources(this.txtLateCharge, "txtLateCharge");
             this.txtLateCharge.Name = "txtLateCharge";
-            this.txtLateCharge.Size = new System.Drawing.Size(102, 29);
-            this.txtLateCharge.TabIndex = 94;
-            this.txtLateCharge.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtPaymentCode
             // 
             this.txtPaymentCode.AllowDrop = true;
             this.txtPaymentCode.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_PAYMENT_CODE", true));
-            this.txtPaymentCode.Location = new System.Drawing.Point(419, 197);
+            resources.ApplyResources(this.txtPaymentCode, "txtPaymentCode");
             this.txtPaymentCode.Name = "txtPaymentCode";
-            this.txtPaymentCode.Size = new System.Drawing.Size(25, 29);
-            this.txtPaymentCode.TabIndex = 93;
-            this.txtPaymentCode.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtPaymentType
             // 
             this.txtPaymentType.AllowDrop = true;
             this.txtPaymentType.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_PAYMENT_TYPE", true));
-            this.txtPaymentType.Location = new System.Drawing.Point(365, 197);
+            resources.ApplyResources(this.txtPaymentType, "txtPaymentType");
             this.txtPaymentType.Name = "txtPaymentType";
-            this.txtPaymentType.Size = new System.Drawing.Size(25, 29);
-            this.txtPaymentType.TabIndex = 92;
-            this.txtPaymentType.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtOverideInterest
             // 
             this.txtOverideInterest.AllowDrop = true;
             this.txtOverideInterest.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtOverideInterest.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_INT_OVERRIDE", true));
-            this.txtOverideInterest.Location = new System.Drawing.Point(669, 53);
-            this.txtOverideInterest.MaxLength = 1;
+            resources.ApplyResources(this.txtOverideInterest, "txtOverideInterest");
             this.txtOverideInterest.Name = "txtOverideInterest";
-            this.txtOverideInterest.Size = new System.Drawing.Size(19, 29);
-            this.txtOverideInterest.TabIndex = 79;
             // 
             // txtNoOfPaymentsMade
             // 
             this.txtNoOfPaymentsMade.AllowDrop = true;
             this.txtNoOfPaymentsMade.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_NO_OF_PAYMENTS_MADE", true));
-            this.txtNoOfPaymentsMade.Location = new System.Drawing.Point(476, 125);
+            resources.ApplyResources(this.txtNoOfPaymentsMade, "txtNoOfPaymentsMade");
             this.txtNoOfPaymentsMade.Name = "txtNoOfPaymentsMade";
-            this.txtNoOfPaymentsMade.Size = new System.Drawing.Size(25, 29);
-            this.txtNoOfPaymentsMade.TabIndex = 86;
-            this.txtNoOfPaymentsMade.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtCASH
             // 
             this.txtCASH.AllowDrop = true;
             this.txtCASH.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_LOAN_CASH", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "C2"));
-            this.txtCASH.Location = new System.Drawing.Point(148, 125);
+            resources.ApplyResources(this.txtCASH, "txtCASH");
             this.txtCASH.Name = "txtCASH";
-            this.txtCASH.Size = new System.Drawing.Size(119, 29);
-            this.txtCASH.TabIndex = 85;
-            this.txtCASH.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtLoanInterest
             // 
             this.txtLoanInterest.AllowDrop = true;
             this.txtLoanInterest.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_LOAN_INTEREST", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "C2"));
-            this.txtLoanInterest.Location = new System.Drawing.Point(669, 90);
+            resources.ApplyResources(this.txtLoanInterest, "txtLoanInterest");
             this.txtLoanInterest.Name = "txtLoanInterest";
-            this.txtLoanInterest.Size = new System.Drawing.Size(102, 29);
-            this.txtLoanInterest.TabIndex = 83;
-            this.txtLoanInterest.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtLoan
             // 
             this.txtLoan.AllowDrop = true;
             this.txtLoan.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_LOAN_AMOUNT", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "C2"));
-            this.txtLoan.Location = new System.Drawing.Point(365, 90);
+            resources.ApplyResources(this.txtLoan, "txtLoan");
             this.txtLoan.Name = "txtLoan";
-            this.txtLoan.Size = new System.Drawing.Size(102, 29);
-            this.txtLoan.TabIndex = 82;
-            this.txtLoan.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtRegularPay
             // 
             this.txtRegularPay.AllowDrop = true;
             this.txtRegularPay.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_REGULAR_AMOUNT", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "C2"));
-            this.txtRegularPay.Location = new System.Drawing.Point(148, 90);
+            resources.ApplyResources(this.txtRegularPay, "txtRegularPay");
             this.txtRegularPay.Name = "txtRegularPay";
-            this.txtRegularPay.Size = new System.Drawing.Size(119, 29);
-            this.txtRegularPay.TabIndex = 81;
-            this.txtRegularPay.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtCollectionAgent
             // 
             this.txtCollectionAgent.AllowDrop = true;
             this.txtCollectionAgent.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtCollectionAgent.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_CREDIT_STATUS", true));
-            this.txtCollectionAgent.Location = new System.Drawing.Point(669, 125);
-            this.txtCollectionAgent.MaxLength = 1;
+            resources.ApplyResources(this.txtCollectionAgent, "txtCollectionAgent");
             this.txtCollectionAgent.Name = "txtCollectionAgent";
-            this.txtCollectionAgent.Size = new System.Drawing.Size(19, 29);
-            this.txtCollectionAgent.TabIndex = 87;
             // 
             // txtTerm
             // 
             this.txtTerm.AllowDrop = true;
             this.txtTerm.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_TERM", true));
-            this.txtTerm.Location = new System.Drawing.Point(476, 53);
+            resources.ApplyResources(this.txtTerm, "txtTerm");
             this.txtTerm.Name = "txtTerm";
-            this.txtTerm.Size = new System.Drawing.Size(25, 29);
-            this.txtTerm.TabIndex = 78;
-            this.txtTerm.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox15
             // 
             this.textBox15.AllowDrop = true;
             this.textBox15.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_LAST_NAME", true));
-            this.textBox15.Enabled = false;
-            this.textBox15.Location = new System.Drawing.Point(502, 17);
+            resources.ApplyResources(this.textBox15, "textBox15");
             this.textBox15.Name = "textBox15";
             this.textBox15.ReadOnly = true;
-            this.textBox15.Size = new System.Drawing.Size(212, 29);
-            this.textBox15.TabIndex = 74;
             // 
             // textBox16
             // 
             this.textBox16.AllowDrop = true;
             this.textBox16.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_FIRST_NAME", true));
-            this.textBox16.Enabled = false;
-            this.textBox16.Location = new System.Drawing.Point(365, 17);
+            resources.ApplyResources(this.textBox16, "textBox16");
             this.textBox16.Name = "textBox16";
             this.textBox16.ReadOnly = true;
-            this.textBox16.Size = new System.Drawing.Size(136, 29);
-            this.textBox16.TabIndex = 73;
             // 
             // textBoxIACType
             // 
             this.textBoxIACType.AllowDrop = true;
             this.textBoxIACType.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_IAC_TYPE", true));
-            this.textBoxIACType.Enabled = false;
-            this.textBoxIACType.Location = new System.Drawing.Point(219, 17);
+            resources.ApplyResources(this.textBoxIACType, "textBoxIACType");
             this.textBoxIACType.Name = "textBoxIACType";
             this.textBoxIACType.ReadOnly = true;
-            this.textBoxIACType.Size = new System.Drawing.Size(19, 29);
-            this.textBoxIACType.TabIndex = 72;
             // 
             // textBox14
             // 
             this.textBox14.AllowDrop = true;
             this.textBox14.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_NO", true));
-            this.textBox14.Enabled = false;
-            this.textBox14.Location = new System.Drawing.Point(148, 17);
-            this.textBox14.MaxLength = 6;
+            resources.ApplyResources(this.textBox14, "textBox14");
             this.textBox14.Name = "textBox14";
             this.textBox14.ReadOnly = true;
-            this.textBox14.Size = new System.Drawing.Size(67, 29);
-            this.textBox14.TabIndex = 71;
-            this.textBox14.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // xtraTabPageVehicle
             // 
-            this.xtraTabPageVehicle.Controls.Add(this.groupBox2);
-            this.xtraTabPageVehicle.Controls.Add(this.VehicleGroupBox);
+            this.xtraTabPageVehicle.Controls.Add(this.groupBox15);
             this.xtraTabPageVehicle.Name = "xtraTabPageVehicle";
-            this.xtraTabPageVehicle.Size = new System.Drawing.Size(1230, 612);
-            this.xtraTabPageVehicle.Text = "Vehicle Info";
+            resources.ApplyResources(this.xtraTabPageVehicle, "xtraTabPageVehicle");
+            // 
+            // groupBox15
+            // 
+            this.groupBox15.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.groupBox15.Controls.Add(this.groupBox2);
+            this.groupBox15.Controls.Add(this.VehicleGroupBox);
+            resources.ApplyResources(this.groupBox15, "groupBox15");
+            this.groupBox15.Name = "groupBox15";
+            this.groupBox15.TabStop = false;
             // 
             // groupBox2
             // 
@@ -5888,91 +4337,63 @@
             this.groupBox2.Controls.Add(label51);
             this.groupBox2.Controls.Add(this.textBox48);
             this.groupBox2.Controls.Add(label52);
-            this.groupBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(265, 34);
+            resources.ApplyResources(this.groupBox2, "groupBox2");
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(703, 82);
-            this.groupBox2.TabIndex = 209;
             this.groupBox2.TabStop = false;
             // 
             // textBox19
             // 
             this.textBox19.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBox19.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_SUFFIX", true));
-            this.textBox19.Enabled = false;
-            this.textBox19.Location = new System.Drawing.Point(657, 17);
-            this.textBox19.MaxLength = 3;
+            resources.ApplyResources(this.textBox19, "textBox19");
             this.textBox19.Name = "textBox19";
             this.textBox19.ReadOnly = true;
-            this.textBox19.Size = new System.Drawing.Size(41, 29);
-            this.textBox19.TabIndex = 204;
             // 
             // textBox49
             // 
             this.textBox49.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_SS_3", true));
-            this.textBox49.Enabled = false;
-            this.textBox49.Location = new System.Drawing.Point(219, 48);
+            resources.ApplyResources(this.textBox49, "textBox49");
             this.textBox49.Name = "textBox49";
             this.textBox49.ReadOnly = true;
-            this.textBox49.Size = new System.Drawing.Size(51, 29);
-            this.textBox49.TabIndex = 207;
-            this.textBox49.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox50
             // 
             this.textBox50.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_SS_2", true));
-            this.textBox50.Enabled = false;
-            this.textBox50.Location = new System.Drawing.Point(189, 48);
+            resources.ApplyResources(this.textBox50, "textBox50");
             this.textBox50.Name = "textBox50";
             this.textBox50.ReadOnly = true;
-            this.textBox50.Size = new System.Drawing.Size(29, 29);
-            this.textBox50.TabIndex = 206;
-            this.textBox50.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox51
             // 
             this.textBox51.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_SS_1", true));
-            this.textBox51.Enabled = false;
-            this.textBox51.Location = new System.Drawing.Point(155, 48);
+            resources.ApplyResources(this.textBox51, "textBox51");
             this.textBox51.Name = "textBox51";
             this.textBox51.ReadOnly = true;
-            this.textBox51.Size = new System.Drawing.Size(33, 29);
-            this.textBox51.TabIndex = 205;
-            this.textBox51.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox17
             // 
             this.textBox17.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_LAST_NAME", true));
-            this.textBox17.Enabled = false;
-            this.textBox17.Location = new System.Drawing.Point(444, 17);
+            resources.ApplyResources(this.textBox17, "textBox17");
             this.textBox17.Name = "textBox17";
             this.textBox17.ReadOnly = true;
-            this.textBox17.Size = new System.Drawing.Size(212, 29);
-            this.textBox17.TabIndex = 203;
             // 
             // textBox47
             // 
             this.textBox47.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_FIRST_NAME", true));
-            this.textBox47.Enabled = false;
-            this.textBox47.Location = new System.Drawing.Point(307, 17);
+            resources.ApplyResources(this.textBox47, "textBox47");
             this.textBox47.Name = "textBox47";
             this.textBox47.ReadOnly = true;
-            this.textBox47.Size = new System.Drawing.Size(136, 29);
-            this.textBox47.TabIndex = 202;
             // 
             // textBox48
             // 
             this.textBox48.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_NO", true));
-            this.textBox48.Enabled = false;
-            this.textBox48.Location = new System.Drawing.Point(155, 17);
+            resources.ApplyResources(this.textBox48, "textBox48");
             this.textBox48.Name = "textBox48";
             this.textBox48.ReadOnly = true;
-            this.textBox48.Size = new System.Drawing.Size(67, 29);
-            this.textBox48.TabIndex = 201;
-            this.textBox48.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // VehicleGroupBox
             // 
+            this.VehicleGroupBox.BackColor = System.Drawing.Color.Transparent;
             this.VehicleGroupBox.Controls.Add(this.groupBox8);
             this.VehicleGroupBox.Controls.Add(this.textBoxMileage);
             this.VehicleGroupBox.Controls.Add(this.groupBoxRepo);
@@ -6001,15 +4422,13 @@
             this.VehicleGroupBox.Controls.Add(this.txtVehicleYear);
             this.VehicleGroupBox.Controls.Add(lblModel);
             this.VehicleGroupBox.Controls.Add(lblVehicleYear);
-            this.VehicleGroupBox.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VehicleGroupBox.Location = new System.Drawing.Point(16, 117);
+            resources.ApplyResources(this.VehicleGroupBox, "VehicleGroupBox");
             this.VehicleGroupBox.Name = "VehicleGroupBox";
-            this.VehicleGroupBox.Size = new System.Drawing.Size(1201, 437);
-            this.VehicleGroupBox.TabIndex = 210;
             this.VehicleGroupBox.TabStop = false;
             // 
             // groupBox8
             // 
+            this.groupBox8.BackColor = System.Drawing.Color.Transparent;
             this.groupBox8.Controls.Add(this.checkBoxFullRecourse);
             this.groupBox8.Controls.Add(label199);
             this.groupBox8.Controls.Add(this.textBoxTierPoints);
@@ -6023,112 +4442,79 @@
             this.groupBox8.Controls.Add(label201);
             this.groupBox8.Controls.Add(cUSTOMER_COS_PHONELabel);
             this.groupBox8.Controls.Add(cUSTOMER_COS_NAMELabel);
-            this.groupBox8.Location = new System.Drawing.Point(621, 247);
+            resources.ApplyResources(this.groupBox8, "groupBox8");
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(561, 154);
-            this.groupBox8.TabIndex = 237;
             this.groupBox8.TabStop = false;
             // 
             // checkBoxFullRecourse
             // 
             this.checkBoxFullRecourse.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "IsFullRecourse", true));
-            this.checkBoxFullRecourse.Location = new System.Drawing.Point(16, 91);
+            resources.ApplyResources(this.checkBoxFullRecourse, "checkBoxFullRecourse");
             this.checkBoxFullRecourse.MenuManager = this.toolbarFormManager1;
             this.checkBoxFullRecourse.Name = "checkBoxFullRecourse";
-            this.checkBoxFullRecourse.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxFullRecourse.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("checkBoxFullRecourse.Properties.Appearance.Font")));
             this.checkBoxFullRecourse.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(70)))), ((int)(((byte)(68)))));
             this.checkBoxFullRecourse.Properties.Appearance.Options.UseFont = true;
             this.checkBoxFullRecourse.Properties.Appearance.Options.UseForeColor = true;
-            this.checkBoxFullRecourse.Properties.Caption = "Full Recourse?";
+            this.checkBoxFullRecourse.Properties.Caption = resources.GetString("checkBoxFullRecourse.Properties.Caption");
             this.checkBoxFullRecourse.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
             this.checkBoxFullRecourse.Properties.CheckBoxOptions.SvgColorChecked = System.Drawing.Color.Red;
-            this.checkBoxFullRecourse.Size = new System.Drawing.Size(132, 25);
-            this.checkBoxFullRecourse.TabIndex = 241;
             // 
             // textBoxTierPoints
             // 
             this.textBoxTierPoints.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "TierPoints", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "0", "N0"));
-            this.textBoxTierPoints.Location = new System.Drawing.Point(403, 119);
-            this.textBoxTierPoints.MaxLength = 99;
+            resources.ApplyResources(this.textBoxTierPoints, "textBoxTierPoints");
             this.textBoxTierPoints.Name = "textBoxTierPoints";
-            this.textBoxTierPoints.Size = new System.Drawing.Size(40, 29);
-            this.textBoxTierPoints.TabIndex = 246;
             // 
             // textBoxBuyersAnnualIncome
             // 
             this.textBoxBuyersAnnualIncome.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "AnnualIncome", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "C2"));
-            this.textBoxBuyersAnnualIncome.Location = new System.Drawing.Point(189, 119);
+            resources.ApplyResources(this.textBoxBuyersAnnualIncome, "textBoxBuyersAnnualIncome");
             this.textBoxBuyersAnnualIncome.Name = "textBoxBuyersAnnualIncome";
-            this.textBoxBuyersAnnualIncome.Size = new System.Drawing.Size(100, 29);
-            this.textBoxBuyersAnnualIncome.TabIndex = 245;
             // 
             // comboBoxCreditCode
             // 
             this.comboBoxCreditCode.DataSource = this.creditCodesBindingSource;
             this.comboBoxCreditCode.DisplayMember = "Description";
-            this.comboBoxCreditCode.Enabled = false;
+            resources.ApplyResources(this.comboBoxCreditCode, "comboBoxCreditCode");
             this.comboBoxCreditCode.FormattingEnabled = true;
-            this.comboBoxCreditCode.Location = new System.Drawing.Point(428, 87);
             this.comboBoxCreditCode.Name = "comboBoxCreditCode";
-            this.comboBoxCreditCode.Size = new System.Drawing.Size(121, 29);
-            this.comboBoxCreditCode.TabIndex = 244;
             // 
             // cUSTOMER_COS_PHONETextBox
             // 
             this.cUSTOMER_COS_PHONETextBox.AllowDrop = true;
             this.cUSTOMER_COS_PHONETextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.cUSTOMER_COS_PHONETextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_COS_PHONE", true));
-            this.cUSTOMER_COS_PHONETextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cUSTOMER_COS_PHONETextBox.Location = new System.Drawing.Point(85, 55);
-            this.cUSTOMER_COS_PHONETextBox.MaxLength = 50;
+            resources.ApplyResources(this.cUSTOMER_COS_PHONETextBox, "cUSTOMER_COS_PHONETextBox");
             this.cUSTOMER_COS_PHONETextBox.Name = "cUSTOMER_COS_PHONETextBox";
-            this.cUSTOMER_COS_PHONETextBox.Size = new System.Drawing.Size(464, 26);
-            this.cUSTOMER_COS_PHONETextBox.TabIndex = 240;
             // 
             // cUSTOMER_CREDIT_SCORE_ATextBox
             // 
             this.cUSTOMER_CREDIT_SCORE_ATextBox.AllowDrop = true;
             this.cUSTOMER_CREDIT_SCORE_ATextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.cUSTOMER_CREDIT_SCORE_ATextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_CREDIT_SCORE_A", true));
-            this.cUSTOMER_CREDIT_SCORE_ATextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cUSTOMER_CREDIT_SCORE_ATextBox.Location = new System.Drawing.Point(403, 90);
-            this.cUSTOMER_CREDIT_SCORE_ATextBox.MaxLength = 1;
+            resources.ApplyResources(this.cUSTOMER_CREDIT_SCORE_ATextBox, "cUSTOMER_CREDIT_SCORE_ATextBox");
             this.cUSTOMER_CREDIT_SCORE_ATextBox.Name = "cUSTOMER_CREDIT_SCORE_ATextBox";
-            this.cUSTOMER_CREDIT_SCORE_ATextBox.Size = new System.Drawing.Size(20, 26);
-            this.cUSTOMER_CREDIT_SCORE_ATextBox.TabIndex = 243;
-            this.cUSTOMER_CREDIT_SCORE_ATextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // cUSTOMER_CREDIT_SCORE_NTextBox
             // 
             this.cUSTOMER_CREDIT_SCORE_NTextBox.AllowDrop = true;
             this.cUSTOMER_CREDIT_SCORE_NTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_CREDIT_SCORE_N", true));
-            this.cUSTOMER_CREDIT_SCORE_NTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cUSTOMER_CREDIT_SCORE_NTextBox.Location = new System.Drawing.Point(357, 90);
-            this.cUSTOMER_CREDIT_SCORE_NTextBox.MaxLength = 3;
+            resources.ApplyResources(this.cUSTOMER_CREDIT_SCORE_NTextBox, "cUSTOMER_CREDIT_SCORE_NTextBox");
             this.cUSTOMER_CREDIT_SCORE_NTextBox.Name = "cUSTOMER_CREDIT_SCORE_NTextBox";
-            this.cUSTOMER_CREDIT_SCORE_NTextBox.Size = new System.Drawing.Size(41, 26);
-            this.cUSTOMER_CREDIT_SCORE_NTextBox.TabIndex = 242;
-            this.cUSTOMER_CREDIT_SCORE_NTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // cUSTOMER_COS_NAMETextBox
             // 
             this.cUSTOMER_COS_NAMETextBox.AllowDrop = true;
             this.cUSTOMER_COS_NAMETextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_COS_NAME", true));
-            this.cUSTOMER_COS_NAMETextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cUSTOMER_COS_NAMETextBox.Location = new System.Drawing.Point(85, 23);
-            this.cUSTOMER_COS_NAMETextBox.MaxLength = 50;
+            resources.ApplyResources(this.cUSTOMER_COS_NAMETextBox, "cUSTOMER_COS_NAMETextBox");
             this.cUSTOMER_COS_NAMETextBox.Name = "cUSTOMER_COS_NAMETextBox";
-            this.cUSTOMER_COS_NAMETextBox.Size = new System.Drawing.Size(464, 26);
-            this.cUSTOMER_COS_NAMETextBox.TabIndex = 239;
             // 
             // textBoxMileage
             // 
             this.textBoxMileage.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.VehiclebindingSource, "Mileage", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "0", "N0"));
-            this.textBoxMileage.Location = new System.Drawing.Point(334, 26);
+            resources.ApplyResources(this.textBoxMileage, "textBoxMileage");
             this.textBoxMileage.Name = "textBoxMileage";
-            this.textBoxMileage.Size = new System.Drawing.Size(63, 29);
-            this.textBoxMileage.TabIndex = 210;
-            this.textBoxMileage.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // groupBoxRepo
             // 
@@ -6157,409 +4543,305 @@
             this.groupBoxRepo.Controls.Add(label117);
             this.groupBoxRepo.Controls.Add(this.nullableDateTimePickerRepoDate);
             this.groupBoxRepo.Controls.Add(label116);
-            this.groupBoxRepo.Location = new System.Drawing.Point(511, 12);
+            resources.ApplyResources(this.groupBoxRepo, "groupBoxRepo");
             this.groupBoxRepo.Name = "groupBoxRepo";
-            this.groupBoxRepo.Size = new System.Drawing.Size(671, 226);
-            this.groupBoxRepo.TabIndex = 222;
             this.groupBoxRepo.TabStop = false;
             // 
             // checkBoxElectronicLien
             // 
-            this.checkBoxElectronicLien.AutoSize = true;
-            this.checkBoxElectronicLien.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            resources.ApplyResources(this.checkBoxElectronicLien, "checkBoxElectronicLien");
             this.checkBoxElectronicLien.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.VehiclebindingSource, "ElectronicLien", true));
-            this.checkBoxElectronicLien.Enabled = false;
-            this.checkBoxElectronicLien.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBoxElectronicLien.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.checkBoxElectronicLien.Location = new System.Drawing.Point(480, 185);
             this.checkBoxElectronicLien.Name = "checkBoxElectronicLien";
-            this.checkBoxElectronicLien.Size = new System.Drawing.Size(136, 25);
-            this.checkBoxElectronicLien.TabIndex = 238;
-            this.checkBoxElectronicLien.Text = "Electronic Lien?";
-            this.checkBoxElectronicLien.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.checkBoxElectronicLien.UseVisualStyleBackColor = true;
             // 
             // nullableDateTimePickerDateTitleReleased
             // 
             this.nullableDateTimePickerDateTitleReleased.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.VehiclebindingSource, "DateTitleReleased", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "d"));
-            this.nullableDateTimePickerDateTitleReleased.EditValue = null;
-            this.nullableDateTimePickerDateTitleReleased.Enabled = false;
-            this.nullableDateTimePickerDateTitleReleased.Location = new System.Drawing.Point(349, 180);
+            resources.ApplyResources(this.nullableDateTimePickerDateTitleReleased, "nullableDateTimePickerDateTitleReleased");
             this.nullableDateTimePickerDateTitleReleased.Name = "nullableDateTimePickerDateTitleReleased";
-            this.nullableDateTimePickerDateTitleReleased.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nullableDateTimePickerDateTitleReleased.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("nullableDateTimePickerDateTitleReleased.Properties.Appearance.Font")));
             this.nullableDateTimePickerDateTitleReleased.Properties.Appearance.Options.UseFont = true;
             this.nullableDateTimePickerDateTitleReleased.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("nullableDateTimePickerDateTitleReleased.Properties.Buttons"))))});
             this.nullableDateTimePickerDateTitleReleased.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("nullableDateTimePickerDateTitleReleased.Properties.CalendarTimeProperties.Buttons" +
+                        ""))))});
             this.nullableDateTimePickerDateTitleReleased.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.Fluent;
-            this.nullableDateTimePickerDateTitleReleased.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.PaleTurquoise;
+            this.nullableDateTimePickerDateTitleReleased.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
             this.nullableDateTimePickerDateTitleReleased.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
             this.nullableDateTimePickerDateTitleReleased.Properties.LookAndFeel.SkinName = "McSkin";
             this.nullableDateTimePickerDateTitleReleased.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.nullableDateTimePickerDateTitleReleased.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
-            this.nullableDateTimePickerDateTitleReleased.Size = new System.Drawing.Size(109, 28);
-            this.nullableDateTimePickerDateTitleReleased.TabIndex = 237;
             // 
             // checkBoxTitleReleased
             // 
-            this.checkBoxTitleReleased.AutoSize = true;
-            this.checkBoxTitleReleased.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            resources.ApplyResources(this.checkBoxTitleReleased, "checkBoxTitleReleased");
             this.checkBoxTitleReleased.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.VehiclebindingSource, "TitleReleased", true));
-            this.checkBoxTitleReleased.Enabled = false;
-            this.checkBoxTitleReleased.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBoxTitleReleased.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.checkBoxTitleReleased.Location = new System.Drawing.Point(36, 184);
             this.checkBoxTitleReleased.Name = "checkBoxTitleReleased";
-            this.checkBoxTitleReleased.Size = new System.Drawing.Size(131, 25);
-            this.checkBoxTitleReleased.TabIndex = 236;
-            this.checkBoxTitleReleased.Text = "Title Released?";
-            this.checkBoxTitleReleased.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.checkBoxTitleReleased.UseVisualStyleBackColor = true;
             // 
             // textBoxLTV
             // 
             this.textBoxLTV.AllowDrop = true;
             this.textBoxLTV.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.VehiclebindingSource, "Ltv", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N2"));
-            this.textBoxLTV.Location = new System.Drawing.Point(543, 150);
-            this.textBoxLTV.MaxLength = 6;
+            resources.ApplyResources(this.textBoxLTV, "textBoxLTV");
             this.textBoxLTV.Name = "textBoxLTV";
-            this.textBoxLTV.Size = new System.Drawing.Size(73, 29);
-            this.textBoxLTV.TabIndex = 235;
-            this.textBoxLTV.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // comboBoxRepoInd
             // 
             this.comboBoxRepoInd.DataSource = this.RepoIndicatorsBindingSource;
             this.comboBoxRepoInd.DisplayMember = "Description";
-            this.comboBoxRepoInd.Enabled = false;
+            resources.ApplyResources(this.comboBoxRepoInd, "comboBoxRepoInd");
             this.comboBoxRepoInd.FormattingEnabled = true;
-            this.comboBoxRepoInd.Location = new System.Drawing.Point(56, 20);
             this.comboBoxRepoInd.Name = "comboBoxRepoInd";
-            this.comboBoxRepoInd.Size = new System.Drawing.Size(124, 29);
-            this.comboBoxRepoInd.TabIndex = 223;
             // 
             // nullableDateTimePickerAucDate
             // 
             this.nullableDateTimePickerAucDate.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.VehiclebindingSource, "AuctionHouse", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "d"));
-            this.nullableDateTimePickerAucDate.EditValue = null;
-            this.nullableDateTimePickerAucDate.Enabled = false;
-            this.nullableDateTimePickerAucDate.Location = new System.Drawing.Point(507, 116);
+            resources.ApplyResources(this.nullableDateTimePickerAucDate, "nullableDateTimePickerAucDate");
             this.nullableDateTimePickerAucDate.Name = "nullableDateTimePickerAucDate";
-            this.nullableDateTimePickerAucDate.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nullableDateTimePickerAucDate.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("nullableDateTimePickerAucDate.Properties.Appearance.Font")));
             this.nullableDateTimePickerAucDate.Properties.Appearance.Options.UseFont = true;
             this.nullableDateTimePickerAucDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("nullableDateTimePickerAucDate.Properties.Buttons"))))});
             this.nullableDateTimePickerAucDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.nullableDateTimePickerAucDate.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.PaleTurquoise;
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("nullableDateTimePickerAucDate.Properties.CalendarTimeProperties.Buttons"))))});
+            this.nullableDateTimePickerAucDate.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
             this.nullableDateTimePickerAucDate.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
             this.nullableDateTimePickerAucDate.Properties.LookAndFeel.SkinName = "McSkin";
             this.nullableDateTimePickerAucDate.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.nullableDateTimePickerAucDate.Size = new System.Drawing.Size(109, 28);
-            this.nullableDateTimePickerAucDate.TabIndex = 232;
             // 
             // nullableDateTimePickerLocDate
             // 
             this.nullableDateTimePickerLocDate.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.VehiclebindingSource, "LocationDate", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "d"));
-            this.nullableDateTimePickerLocDate.EditValue = null;
-            this.nullableDateTimePickerLocDate.Enabled = false;
-            this.nullableDateTimePickerLocDate.Location = new System.Drawing.Point(507, 84);
+            resources.ApplyResources(this.nullableDateTimePickerLocDate, "nullableDateTimePickerLocDate");
             this.nullableDateTimePickerLocDate.Name = "nullableDateTimePickerLocDate";
-            this.nullableDateTimePickerLocDate.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nullableDateTimePickerLocDate.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("nullableDateTimePickerLocDate.Properties.Appearance.Font")));
             this.nullableDateTimePickerLocDate.Properties.Appearance.Options.UseFont = true;
             this.nullableDateTimePickerLocDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("nullableDateTimePickerLocDate.Properties.Buttons"))))});
             this.nullableDateTimePickerLocDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.nullableDateTimePickerLocDate.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.PaleTurquoise;
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("nullableDateTimePickerLocDate.Properties.CalendarTimeProperties.Buttons"))))});
+            this.nullableDateTimePickerLocDate.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
             this.nullableDateTimePickerLocDate.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
             this.nullableDateTimePickerLocDate.Properties.LookAndFeel.SkinName = "McSkin";
             this.nullableDateTimePickerLocDate.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.nullableDateTimePickerLocDate.Size = new System.Drawing.Size(109, 28);
-            this.nullableDateTimePickerLocDate.TabIndex = 230;
             // 
             // checkBoxTitleReceived
             // 
-            this.checkBoxTitleReceived.AutoSize = true;
-            this.checkBoxTitleReceived.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            resources.ApplyResources(this.checkBoxTitleReceived, "checkBoxTitleReceived");
             this.checkBoxTitleReceived.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.VehiclebindingSource, "TitleReceived", true));
-            this.checkBoxTitleReceived.Enabled = false;
-            this.checkBoxTitleReceived.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBoxTitleReceived.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.checkBoxTitleReceived.Location = new System.Drawing.Point(36, 154);
             this.checkBoxTitleReceived.Name = "checkBoxTitleReceived";
-            this.checkBoxTitleReceived.Size = new System.Drawing.Size(131, 25);
-            this.checkBoxTitleReceived.TabIndex = 233;
-            this.checkBoxTitleReceived.Text = "Title Received?";
-            this.checkBoxTitleReceived.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.checkBoxTitleReceived.UseVisualStyleBackColor = true;
             // 
             // comboBoxRepoCodes
             // 
             this.comboBoxRepoCodes.DataSource = this.repoCodesBindingSource;
             this.comboBoxRepoCodes.DisplayMember = "Description";
-            this.comboBoxRepoCodes.Enabled = false;
+            resources.ApplyResources(this.comboBoxRepoCodes, "comboBoxRepoCodes");
             this.comboBoxRepoCodes.FormattingEnabled = true;
-            this.comboBoxRepoCodes.Location = new System.Drawing.Point(300, 18);
             this.comboBoxRepoCodes.Name = "comboBoxRepoCodes";
-            this.comboBoxRepoCodes.Size = new System.Drawing.Size(170, 29);
-            this.comboBoxRepoCodes.TabIndex = 226;
             // 
             // cUSTOMER_REPO_CDEtextBox
             // 
             this.cUSTOMER_REPO_CDEtextBox.AllowDrop = true;
             this.cUSTOMER_REPO_CDEtextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_REPO_CDE", true));
-            this.cUSTOMER_REPO_CDEtextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cUSTOMER_REPO_CDEtextBox.Location = new System.Drawing.Point(239, 18);
-            this.cUSTOMER_REPO_CDEtextBox.MaxLength = 4;
+            resources.ApplyResources(this.cUSTOMER_REPO_CDEtextBox, "cUSTOMER_REPO_CDEtextBox");
             this.cUSTOMER_REPO_CDEtextBox.Name = "cUSTOMER_REPO_CDEtextBox";
-            this.cUSTOMER_REPO_CDEtextBox.Size = new System.Drawing.Size(55, 26);
-            this.cUSTOMER_REPO_CDEtextBox.TabIndex = 225;
-            this.cUSTOMER_REPO_CDEtextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // cUSTOMER_REPO_INDtextBox
             // 
             this.cUSTOMER_REPO_INDtextBox.AllowDrop = true;
             this.cUSTOMER_REPO_INDtextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.cUSTOMER_REPO_INDtextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_REPO_IND", true));
-            this.cUSTOMER_REPO_INDtextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cUSTOMER_REPO_INDtextBox.Location = new System.Drawing.Point(186, 21);
-            this.cUSTOMER_REPO_INDtextBox.MaxLength = 1;
+            resources.ApplyResources(this.cUSTOMER_REPO_INDtextBox, "cUSTOMER_REPO_INDtextBox");
             this.cUSTOMER_REPO_INDtextBox.Name = "cUSTOMER_REPO_INDtextBox";
-            this.cUSTOMER_REPO_INDtextBox.Size = new System.Drawing.Size(20, 26);
-            this.cUSTOMER_REPO_INDtextBox.TabIndex = 224;
             // 
             // nullableDateTimePickerTitleDateReceived
             // 
             this.nullableDateTimePickerTitleDateReceived.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.VehiclebindingSource, "TitleDateReceived", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "d"));
-            this.nullableDateTimePickerTitleDateReceived.EditValue = null;
-            this.nullableDateTimePickerTitleDateReceived.Enabled = false;
-            this.nullableDateTimePickerTitleDateReceived.Location = new System.Drawing.Point(349, 150);
+            resources.ApplyResources(this.nullableDateTimePickerTitleDateReceived, "nullableDateTimePickerTitleDateReceived");
             this.nullableDateTimePickerTitleDateReceived.Name = "nullableDateTimePickerTitleDateReceived";
-            this.nullableDateTimePickerTitleDateReceived.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nullableDateTimePickerTitleDateReceived.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("nullableDateTimePickerTitleDateReceived.Properties.Appearance.Font")));
             this.nullableDateTimePickerTitleDateReceived.Properties.Appearance.Options.UseFont = true;
             this.nullableDateTimePickerTitleDateReceived.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("nullableDateTimePickerTitleDateReceived.Properties.Buttons"))))});
             this.nullableDateTimePickerTitleDateReceived.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("nullableDateTimePickerTitleDateReceived.Properties.CalendarTimeProperties.Buttons" +
+                        ""))))});
             this.nullableDateTimePickerTitleDateReceived.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.Fluent;
-            this.nullableDateTimePickerTitleDateReceived.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.PaleTurquoise;
+            this.nullableDateTimePickerTitleDateReceived.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
             this.nullableDateTimePickerTitleDateReceived.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
             this.nullableDateTimePickerTitleDateReceived.Properties.LookAndFeel.SkinName = "McSkin";
             this.nullableDateTimePickerTitleDateReceived.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.nullableDateTimePickerTitleDateReceived.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
-            this.nullableDateTimePickerTitleDateReceived.Size = new System.Drawing.Size(109, 28);
-            this.nullableDateTimePickerTitleDateReceived.TabIndex = 234;
             // 
             // textBoxAuctionHouse
             // 
             this.textBoxAuctionHouse.AllowDrop = true;
             this.textBoxAuctionHouse.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.VehiclebindingSource, "AuctionHouse", true));
-            this.textBoxAuctionHouse.Enabled = false;
-            this.textBoxAuctionHouse.Location = new System.Drawing.Point(152, 115);
-            this.textBoxAuctionHouse.MaxLength = 40;
+            resources.ApplyResources(this.textBoxAuctionHouse, "textBoxAuctionHouse");
             this.textBoxAuctionHouse.Name = "textBoxAuctionHouse";
-            this.textBoxAuctionHouse.Size = new System.Drawing.Size(355, 29);
-            this.textBoxAuctionHouse.TabIndex = 231;
             // 
             // textBoxCurrentLocation
             // 
             this.textBoxCurrentLocation.AllowDrop = true;
             this.textBoxCurrentLocation.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.VehiclebindingSource, "CurrentLocation", true));
-            this.textBoxCurrentLocation.Enabled = false;
-            this.textBoxCurrentLocation.Location = new System.Drawing.Point(152, 83);
-            this.textBoxCurrentLocation.MaxLength = 40;
+            resources.ApplyResources(this.textBoxCurrentLocation, "textBoxCurrentLocation");
             this.textBoxCurrentLocation.Name = "textBoxCurrentLocation";
-            this.textBoxCurrentLocation.Size = new System.Drawing.Size(355, 29);
-            this.textBoxCurrentLocation.TabIndex = 229;
             // 
             // textBoxRepoAgent
             // 
             this.textBoxRepoAgent.AllowDrop = true;
             this.textBoxRepoAgent.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.VehiclebindingSource, "RepoAgent", true));
-            this.textBoxRepoAgent.Enabled = false;
-            this.textBoxRepoAgent.Location = new System.Drawing.Point(152, 51);
-            this.textBoxRepoAgent.MaxLength = 50;
+            resources.ApplyResources(this.textBoxRepoAgent, "textBoxRepoAgent");
             this.textBoxRepoAgent.Name = "textBoxRepoAgent";
-            this.textBoxRepoAgent.Size = new System.Drawing.Size(464, 29);
-            this.textBoxRepoAgent.TabIndex = 228;
             // 
             // nullableDateTimePickerRepoDate
             // 
             this.nullableDateTimePickerRepoDate.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.VehiclebindingSource, "RepoDate", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "d"));
-            this.nullableDateTimePickerRepoDate.EditValue = null;
-            this.nullableDateTimePickerRepoDate.Enabled = false;
-            this.nullableDateTimePickerRepoDate.Location = new System.Drawing.Point(553, 18);
+            resources.ApplyResources(this.nullableDateTimePickerRepoDate, "nullableDateTimePickerRepoDate");
             this.nullableDateTimePickerRepoDate.Name = "nullableDateTimePickerRepoDate";
-            this.nullableDateTimePickerRepoDate.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nullableDateTimePickerRepoDate.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("nullableDateTimePickerRepoDate.Properties.Appearance.Font")));
             this.nullableDateTimePickerRepoDate.Properties.Appearance.Options.UseFont = true;
             this.nullableDateTimePickerRepoDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("nullableDateTimePickerRepoDate.Properties.Buttons"))))});
             this.nullableDateTimePickerRepoDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("nullableDateTimePickerRepoDate.Properties.CalendarTimeProperties.Buttons"))))});
             this.nullableDateTimePickerRepoDate.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.Fluent;
-            this.nullableDateTimePickerRepoDate.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.PaleTurquoise;
+            this.nullableDateTimePickerRepoDate.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
             this.nullableDateTimePickerRepoDate.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
             this.nullableDateTimePickerRepoDate.Properties.LookAndFeel.SkinName = "McSkin";
             this.nullableDateTimePickerRepoDate.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.nullableDateTimePickerRepoDate.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
-            this.nullableDateTimePickerRepoDate.Size = new System.Drawing.Size(109, 28);
-            this.nullableDateTimePickerRepoDate.TabIndex = 227;
             // 
             // txtExpirationDate
             // 
             this.txtExpirationDate.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.VehiclebindingSource, "VEHICLE_EXP_DATE", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "d"));
-            this.txtExpirationDate.EditValue = null;
-            this.txtExpirationDate.Location = new System.Drawing.Point(170, 319);
+            resources.ApplyResources(this.txtExpirationDate, "txtExpirationDate");
             this.txtExpirationDate.Name = "txtExpirationDate";
-            this.txtExpirationDate.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtExpirationDate.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("txtExpirationDate.Properties.Appearance.Font")));
             this.txtExpirationDate.Properties.Appearance.Options.UseFont = true;
             this.txtExpirationDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("txtExpirationDate.Properties.Buttons"))))});
             this.txtExpirationDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("txtExpirationDate.Properties.CalendarTimeProperties.Buttons"))))});
             this.txtExpirationDate.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.Fluent;
-            this.txtExpirationDate.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.PaleTurquoise;
+            this.txtExpirationDate.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
             this.txtExpirationDate.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
             this.txtExpirationDate.Properties.LookAndFeel.SkinName = "McSkin";
             this.txtExpirationDate.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.txtExpirationDate.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
-            this.txtExpirationDate.Size = new System.Drawing.Size(109, 28);
-            this.txtExpirationDate.TabIndex = 219;
             // 
             // txtEffectiveDate
             // 
             this.txtEffectiveDate.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.VehiclebindingSource, "VEHICLE_EFF_DATE", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "d"));
-            this.txtEffectiveDate.EditValue = null;
-            this.txtEffectiveDate.Location = new System.Drawing.Point(170, 286);
+            resources.ApplyResources(this.txtEffectiveDate, "txtEffectiveDate");
             this.txtEffectiveDate.Name = "txtEffectiveDate";
-            this.txtEffectiveDate.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEffectiveDate.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("txtEffectiveDate.Properties.Appearance.Font")));
             this.txtEffectiveDate.Properties.Appearance.Options.UseFont = true;
             this.txtEffectiveDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("txtEffectiveDate.Properties.Buttons"))))});
             this.txtEffectiveDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("txtEffectiveDate.Properties.CalendarTimeProperties.Buttons"))))});
             this.txtEffectiveDate.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.Fluent;
-            this.txtEffectiveDate.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.PaleTurquoise;
+            this.txtEffectiveDate.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
             this.txtEffectiveDate.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
             this.txtEffectiveDate.Properties.LookAndFeel.SkinName = "McSkin";
             this.txtEffectiveDate.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.txtEffectiveDate.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
-            this.txtEffectiveDate.Size = new System.Drawing.Size(109, 28);
-            this.txtEffectiveDate.TabIndex = 218;
             // 
             // txtAgentPhone
             // 
             this.txtAgentPhone.AllowDrop = true;
             this.txtAgentPhone.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.VehiclebindingSource, "VEHICLE_AGENT_PHONE", true));
-            this.txtAgentPhone.Location = new System.Drawing.Point(398, 257);
-            this.txtAgentPhone.Mask = "(999) 000-0000";
+            resources.ApplyResources(this.txtAgentPhone, "txtAgentPhone");
             this.txtAgentPhone.Name = "txtAgentPhone";
-            this.txtAgentPhone.Size = new System.Drawing.Size(113, 29);
-            this.txtAgentPhone.TabIndex = 217;
             this.txtAgentPhone.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // txtJointOwner
             // 
             this.txtJointOwner.AllowDrop = true;
             this.txtJointOwner.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.VehiclebindingSource, "VEHICLE_JOINT_NAME", true));
-            this.txtJointOwner.Location = new System.Drawing.Point(170, 383);
-            this.txtJointOwner.MaxLength = 25;
+            resources.ApplyResources(this.txtJointOwner, "txtJointOwner");
             this.txtJointOwner.Name = "txtJointOwner";
-            this.txtJointOwner.Size = new System.Drawing.Size(337, 29);
-            this.txtJointOwner.TabIndex = 221;
             // 
             // txtJointOwnership
             // 
             this.txtJointOwnership.AllowDrop = true;
             this.txtJointOwnership.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtJointOwnership.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.VehiclebindingSource, "VEHICLE_JOINT_OWNER", true));
-            this.txtJointOwnership.Location = new System.Drawing.Point(170, 351);
-            this.txtJointOwnership.MaxLength = 1;
+            resources.ApplyResources(this.txtJointOwnership, "txtJointOwnership");
             this.txtJointOwnership.Name = "txtJointOwnership";
-            this.txtJointOwnership.Size = new System.Drawing.Size(25, 29);
-            this.txtJointOwnership.TabIndex = 220;
             // 
             // txtInsuranceAgent
             // 
             this.txtInsuranceAgent.AllowDrop = true;
             this.txtInsuranceAgent.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.VehiclebindingSource, "VEHICLE_INSUR_AGENT", true));
-            this.txtInsuranceAgent.Location = new System.Drawing.Point(170, 254);
-            this.txtInsuranceAgent.MaxLength = 15;
+            resources.ApplyResources(this.txtInsuranceAgent, "txtInsuranceAgent");
             this.txtInsuranceAgent.Name = "txtInsuranceAgent";
-            this.txtInsuranceAgent.Size = new System.Drawing.Size(139, 29);
-            this.txtInsuranceAgent.TabIndex = 216;
             // 
             // txtPolicyNumber
             // 
             this.txtPolicyNumber.AllowDrop = true;
             this.txtPolicyNumber.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.VehiclebindingSource, "VEHICLE_POLICY_NO", true));
-            this.txtPolicyNumber.Location = new System.Drawing.Point(170, 188);
-            this.txtPolicyNumber.MaxLength = 15;
+            resources.ApplyResources(this.txtPolicyNumber, "txtPolicyNumber");
             this.txtPolicyNumber.Name = "txtPolicyNumber";
-            this.txtPolicyNumber.Size = new System.Drawing.Size(221, 29);
-            this.txtPolicyNumber.TabIndex = 215;
             // 
             // txtVIN
             // 
             this.txtVIN.AllowDrop = true;
             this.txtVIN.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.VehiclebindingSource, "VEHICLE_VIN", true));
-            this.txtVIN.Location = new System.Drawing.Point(170, 123);
-            this.txtVIN.MaxLength = 25;
+            resources.ApplyResources(this.txtVIN, "txtVIN");
             this.txtVIN.Name = "txtVIN";
-            this.txtVIN.Size = new System.Drawing.Size(221, 29);
-            this.txtVIN.TabIndex = 213;
             // 
             // txtMake
             // 
             this.txtMake.AllowDrop = true;
             this.txtMake.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.VehiclebindingSource, "VEHICLE_MAKE", true));
-            this.txtMake.Location = new System.Drawing.Point(170, 59);
-            this.txtMake.MaxLength = 15;
+            resources.ApplyResources(this.txtMake, "txtMake");
             this.txtMake.Name = "txtMake";
-            this.txtMake.Size = new System.Drawing.Size(167, 29);
-            this.txtMake.TabIndex = 211;
             // 
             // txtInsuranceCompany
             // 
             this.txtInsuranceCompany.AllowDrop = true;
             this.txtInsuranceCompany.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.VehiclebindingSource, "VEHICLE_INS_COMPANY", true));
-            this.txtInsuranceCompany.Location = new System.Drawing.Point(170, 155);
-            this.txtInsuranceCompany.MaxLength = 25;
+            resources.ApplyResources(this.txtInsuranceCompany, "txtInsuranceCompany");
             this.txtInsuranceCompany.Name = "txtInsuranceCompany";
-            this.txtInsuranceCompany.Size = new System.Drawing.Size(221, 29);
-            this.txtInsuranceCompany.TabIndex = 214;
             // 
             // txtModel
             // 
             this.txtModel.AllowDrop = true;
             this.txtModel.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.VehiclebindingSource, "VEHICLE_MODEL", true));
-            this.txtModel.Location = new System.Drawing.Point(170, 91);
-            this.txtModel.MaxLength = 15;
+            resources.ApplyResources(this.txtModel, "txtModel");
             this.txtModel.Name = "txtModel";
-            this.txtModel.Size = new System.Drawing.Size(167, 29);
-            this.txtModel.TabIndex = 212;
             // 
             // txtVehicleYear
             // 
             this.txtVehicleYear.AllowDrop = true;
             this.txtVehicleYear.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.VehiclebindingSource, "VEHICLE_YEAR", true));
-            this.txtVehicleYear.Location = new System.Drawing.Point(170, 26);
-            this.txtVehicleYear.MaxLength = 4;
+            resources.ApplyResources(this.txtVehicleYear, "txtVehicleYear");
             this.txtVehicleYear.Name = "txtVehicleYear";
-            this.txtVehicleYear.Size = new System.Drawing.Size(54, 29);
-            this.txtVehicleYear.TabIndex = 209;
             // 
             // xtraTabPageCosigner
             // 
-            this.xtraTabPageCosigner.Controls.Add(this.groupBoxCOSSBT);
-            this.xtraTabPageCosigner.Controls.Add(this.groupBox5);
-            this.xtraTabPageCosigner.Controls.Add(this.groupBox4);
-            this.xtraTabPageCosigner.Controls.Add(this.groupBox3);
+            this.xtraTabPageCosigner.Controls.Add(this.groupBox16);
             this.xtraTabPageCosigner.Name = "xtraTabPageCosigner";
-            this.xtraTabPageCosigner.Size = new System.Drawing.Size(1230, 612);
-            this.xtraTabPageCosigner.Text = "Cosigner Info";
+            resources.ApplyResources(this.xtraTabPageCosigner, "xtraTabPageCosigner");
+            // 
+            // groupBox16
+            // 
+            this.groupBox16.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.groupBox16.Controls.Add(this.groupBoxCOSSBT);
+            this.groupBox16.Controls.Add(this.groupBox5);
+            this.groupBox16.Controls.Add(this.groupBox4);
+            this.groupBox16.Controls.Add(this.groupBox3);
+            resources.ApplyResources(this.groupBox16, "groupBox16");
+            this.groupBox16.Name = "groupBox16";
+            this.groupBox16.TabStop = false;
             // 
             // groupBoxCOSSBT
             // 
@@ -6571,109 +4853,72 @@
             this.groupBoxCOSSBT.Controls.Add(this.radioButtonCOSAcct);
             this.groupBoxCOSSBT.Controls.Add(this.checkBoxCOSDNTMktg);
             this.groupBoxCOSSBT.Controls.Add(this.checkBoxCOSDNTAcct);
-            this.groupBoxCOSSBT.Location = new System.Drawing.Point(851, 210);
+            resources.ApplyResources(this.groupBoxCOSSBT, "groupBoxCOSSBT");
             this.groupBoxCOSSBT.Name = "groupBoxCOSSBT";
-            this.groupBoxCOSSBT.Size = new System.Drawing.Size(311, 173);
-            this.groupBoxCOSSBT.TabIndex = 337;
             this.groupBoxCOSSBT.TabStop = false;
-            this.groupBoxCOSSBT.Text = "SBT";
             // 
             // buttonCOSMessage
             // 
-            this.buttonCOSMessage.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCOSMessage.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("buttonCOSMessage.Appearance.Font")));
             this.buttonCOSMessage.Appearance.Options.UseFont = true;
-            this.buttonCOSMessage.Enabled = false;
-            this.buttonCOSMessage.Location = new System.Drawing.Point(88, 121);
-            this.buttonCOSMessage.LookAndFeel.SkinMaskColor = System.Drawing.Color.PaleTurquoise;
+            resources.ApplyResources(this.buttonCOSMessage, "buttonCOSMessage");
+            this.buttonCOSMessage.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
             this.buttonCOSMessage.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
             this.buttonCOSMessage.LookAndFeel.SkinName = "McSkin";
             this.buttonCOSMessage.LookAndFeel.UseDefaultLookAndFeel = false;
             this.buttonCOSMessage.Name = "buttonCOSMessage";
-            this.buttonCOSMessage.Size = new System.Drawing.Size(134, 36);
-            this.buttonCOSMessage.TabIndex = 53;
-            this.buttonCOSMessage.Text = "SendMessage";
+            this.buttonCOSMessage.Click += new System.EventHandler(this.buttonCOSMessage_Click);
             // 
             // buttonCOSConfirm
             // 
-            this.buttonCOSConfirm.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCOSConfirm.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("buttonCOSConfirm.Appearance.Font")));
             this.buttonCOSConfirm.Appearance.ForeColor = System.Drawing.Color.Crimson;
             this.buttonCOSConfirm.Appearance.Options.UseFont = true;
             this.buttonCOSConfirm.Appearance.Options.UseForeColor = true;
-            this.buttonCOSConfirm.Location = new System.Drawing.Point(197, 78);
-            this.buttonCOSConfirm.LookAndFeel.SkinMaskColor = System.Drawing.Color.PaleTurquoise;
+            resources.ApplyResources(this.buttonCOSConfirm, "buttonCOSConfirm");
+            this.buttonCOSConfirm.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
             this.buttonCOSConfirm.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
             this.buttonCOSConfirm.LookAndFeel.SkinName = "McSkin";
             this.buttonCOSConfirm.LookAndFeel.UseDefaultLookAndFeel = false;
             this.buttonCOSConfirm.Name = "buttonCOSConfirm";
-            this.buttonCOSConfirm.Size = new System.Drawing.Size(92, 25);
-            this.buttonCOSConfirm.TabIndex = 52;
-            this.buttonCOSConfirm.Text = "Confirm";
+            this.buttonCOSConfirm.Click += new System.EventHandler(this.buttonCOSConfirm_Click);
             // 
             // textBoxCOSAuthNo
             // 
             this.textBoxCOSAuthNo.AllowDrop = true;
             this.textBoxCOSAuthNo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "COSTPin", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N0"));
-            this.textBoxCOSAuthNo.Enabled = false;
-            this.textBoxCOSAuthNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxCOSAuthNo.Location = new System.Drawing.Point(122, 78);
-            this.textBoxCOSAuthNo.MaxLength = 6;
+            resources.ApplyResources(this.textBoxCOSAuthNo, "textBoxCOSAuthNo");
             this.textBoxCOSAuthNo.Name = "textBoxCOSAuthNo";
-            this.textBoxCOSAuthNo.Size = new System.Drawing.Size(69, 26);
-            this.textBoxCOSAuthNo.TabIndex = 51;
-            this.textBoxCOSAuthNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxCOSAuthNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // radioButtonCOSMktg
             // 
-            this.radioButtonCOSMktg.AutoSize = true;
+            resources.ApplyResources(this.radioButtonCOSMktg, "radioButtonCOSMktg");
             this.radioButtonCOSMktg.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.cUSTOMERBindingSource, "COSTBoth", true));
-            this.radioButtonCOSMktg.Enabled = false;
-            this.radioButtonCOSMktg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButtonCOSMktg.Location = new System.Drawing.Point(176, 51);
             this.radioButtonCOSMktg.Name = "radioButtonCOSMktg";
-            this.radioButtonCOSMktg.Size = new System.Drawing.Size(65, 24);
-            this.radioButtonCOSMktg.TabIndex = 50;
             this.radioButtonCOSMktg.TabStop = true;
-            this.radioButtonCOSMktg.Text = "Both";
             this.radioButtonCOSMktg.UseVisualStyleBackColor = true;
             // 
             // radioButtonCOSAcct
             // 
-            this.radioButtonCOSAcct.AutoSize = true;
+            resources.ApplyResources(this.radioButtonCOSAcct, "radioButtonCOSAcct");
             this.radioButtonCOSAcct.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.cUSTOMERBindingSource, "COSTAcct", true));
-            this.radioButtonCOSAcct.Enabled = false;
-            this.radioButtonCOSAcct.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButtonCOSAcct.Location = new System.Drawing.Point(176, 27);
             this.radioButtonCOSAcct.Name = "radioButtonCOSAcct";
-            this.radioButtonCOSAcct.Size = new System.Drawing.Size(93, 24);
-            this.radioButtonCOSAcct.TabIndex = 48;
             this.radioButtonCOSAcct.TabStop = true;
-            this.radioButtonCOSAcct.Text = "Account";
             this.radioButtonCOSAcct.UseVisualStyleBackColor = true;
             // 
             // checkBoxCOSDNTMktg
             // 
-            this.checkBoxCOSDNTMktg.AutoSize = true;
+            resources.ApplyResources(this.checkBoxCOSDNTMktg, "checkBoxCOSDNTMktg");
             this.checkBoxCOSDNTMktg.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.cUSTOMERBindingSource, "DNTMktg", true));
-            this.checkBoxCOSDNTMktg.Enabled = false;
-            this.checkBoxCOSDNTMktg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxCOSDNTMktg.Location = new System.Drawing.Point(43, 51);
             this.checkBoxCOSDNTMktg.Name = "checkBoxCOSDNTMktg";
-            this.checkBoxCOSDNTMktg.Size = new System.Drawing.Size(107, 24);
-            this.checkBoxCOSDNTMktg.TabIndex = 49;
-            this.checkBoxCOSDNTMktg.Text = "DNT Mktg";
             this.checkBoxCOSDNTMktg.UseVisualStyleBackColor = true;
             // 
             // checkBoxCOSDNTAcct
             // 
-            this.checkBoxCOSDNTAcct.AutoSize = true;
+            resources.ApplyResources(this.checkBoxCOSDNTAcct, "checkBoxCOSDNTAcct");
             this.checkBoxCOSDNTAcct.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.cUSTOMERBindingSource, "COSDNTAcct", true));
-            this.checkBoxCOSDNTAcct.Enabled = false;
-            this.checkBoxCOSDNTAcct.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxCOSDNTAcct.Location = new System.Drawing.Point(43, 27);
             this.checkBoxCOSDNTAcct.Name = "checkBoxCOSDNTAcct";
-            this.checkBoxCOSDNTAcct.Size = new System.Drawing.Size(104, 24);
-            this.checkBoxCOSDNTAcct.TabIndex = 47;
-            this.checkBoxCOSDNTAcct.Text = "DNT Acct";
             this.checkBoxCOSDNTAcct.UseVisualStyleBackColor = true;
             // 
             // groupBox5
@@ -6701,181 +4946,141 @@
             this.groupBox5.Controls.Add(this.txtALTContact3);
             this.groupBox5.Controls.Add(this.txtALTContact2);
             this.groupBox5.Controls.Add(this.txtALTContact1);
-            this.groupBox5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox5.Location = new System.Drawing.Point(254, 389);
+            resources.ApplyResources(this.groupBox5, "groupBox5");
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(695, 186);
-            this.groupBox5.TabIndex = 336;
             this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "Alternate Contacts";
             // 
             // txtALTExt4
             // 
             this.txtALTExt4.AllowDrop = true;
             this.txtALTExt4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ALTNAMEbindingSource, "ALTNAME_PHONE_EXT_4", true));
-            this.txtALTExt4.Location = new System.Drawing.Point(639, 132);
-            this.txtALTExt4.MaxLength = 4;
+            resources.ApplyResources(this.txtALTExt4, "txtALTExt4");
             this.txtALTExt4.Name = "txtALTExt4";
-            this.txtALTExt4.Size = new System.Drawing.Size(42, 29);
-            this.txtALTExt4.TabIndex = 348;
-            this.txtALTExt4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtALTExt4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // txtALTExt3
             // 
             this.txtALTExt3.AllowDrop = true;
             this.txtALTExt3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ALTNAMEbindingSource, "ALTNAME_PHONE_EXT_3", true));
-            this.txtALTExt3.Location = new System.Drawing.Point(639, 102);
-            this.txtALTExt3.MaxLength = 4;
+            resources.ApplyResources(this.txtALTExt3, "txtALTExt3");
             this.txtALTExt3.Name = "txtALTExt3";
-            this.txtALTExt3.Size = new System.Drawing.Size(42, 29);
-            this.txtALTExt3.TabIndex = 344;
-            this.txtALTExt3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtALTExt3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // txtALTExt2
             // 
             this.txtALTExt2.AllowDrop = true;
             this.txtALTExt2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ALTNAMEbindingSource, "ALTNAME_PHONE_EXT_2", true));
-            this.txtALTExt2.Location = new System.Drawing.Point(639, 72);
-            this.txtALTExt2.MaxLength = 4;
+            resources.ApplyResources(this.txtALTExt2, "txtALTExt2");
             this.txtALTExt2.Name = "txtALTExt2";
-            this.txtALTExt2.Size = new System.Drawing.Size(42, 29);
-            this.txtALTExt2.TabIndex = 340;
-            this.txtALTExt2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtALTExt2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // txtALTExt1
             // 
             this.txtALTExt1.AllowDrop = true;
             this.txtALTExt1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ALTNAMEbindingSource, "ALTNAME_PHONE_EXT_1", true));
-            this.txtALTExt1.Location = new System.Drawing.Point(639, 42);
-            this.txtALTExt1.MaxLength = 4;
+            resources.ApplyResources(this.txtALTExt1, "txtALTExt1");
             this.txtALTExt1.Name = "txtALTExt1";
-            this.txtALTExt1.Size = new System.Drawing.Size(42, 29);
-            this.txtALTExt1.TabIndex = 336;
-            this.txtALTExt1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtALTExt1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // txtALTPhone4
             // 
             this.txtALTPhone4.AllowDrop = true;
             this.txtALTPhone4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ALTNAMEbindingSource, "ALTNAME_PHONE_NO_4", true));
-            this.txtALTPhone4.Location = new System.Drawing.Point(477, 132);
-            this.txtALTPhone4.Mask = "(999) 000-0000";
+            resources.ApplyResources(this.txtALTPhone4, "txtALTPhone4");
             this.txtALTPhone4.Name = "txtALTPhone4";
-            this.txtALTPhone4.Size = new System.Drawing.Size(115, 29);
-            this.txtALTPhone4.TabIndex = 347;
             this.txtALTPhone4.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.txtALTPhone4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // txtALTPhone3
             // 
             this.txtALTPhone3.AllowDrop = true;
             this.txtALTPhone3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ALTNAMEbindingSource, "ALTNAME_PHONE_NO_3", true));
-            this.txtALTPhone3.Location = new System.Drawing.Point(477, 102);
-            this.txtALTPhone3.Mask = "(999) 000-0000";
+            resources.ApplyResources(this.txtALTPhone3, "txtALTPhone3");
             this.txtALTPhone3.Name = "txtALTPhone3";
-            this.txtALTPhone3.Size = new System.Drawing.Size(115, 29);
-            this.txtALTPhone3.TabIndex = 343;
             this.txtALTPhone3.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.txtALTPhone3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // txtALTPhone2
             // 
             this.txtALTPhone2.AllowDrop = true;
             this.txtALTPhone2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ALTNAMEbindingSource, "ALTNAME_PHONE_NO_2", true));
-            this.txtALTPhone2.Location = new System.Drawing.Point(477, 72);
-            this.txtALTPhone2.Mask = "(999) 000-0000";
+            resources.ApplyResources(this.txtALTPhone2, "txtALTPhone2");
             this.txtALTPhone2.Name = "txtALTPhone2";
-            this.txtALTPhone2.Size = new System.Drawing.Size(115, 29);
-            this.txtALTPhone2.TabIndex = 339;
             this.txtALTPhone2.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.txtALTPhone2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // txtALTPhone1
             // 
             this.txtALTPhone1.AllowDrop = true;
             this.txtALTPhone1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ALTNAMEbindingSource, "ALTNAME_PHONE_NO_1", true));
-            this.txtALTPhone1.Location = new System.Drawing.Point(477, 42);
-            this.txtALTPhone1.Mask = "(999) 000-0000";
+            resources.ApplyResources(this.txtALTPhone1, "txtALTPhone1");
             this.txtALTPhone1.Name = "txtALTPhone1";
-            this.txtALTPhone1.Size = new System.Drawing.Size(115, 29);
-            this.txtALTPhone1.TabIndex = 335;
             this.txtALTPhone1.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.txtALTPhone1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // txtALTRelation4
             // 
             this.txtALTRelation4.AllowDrop = true;
             this.txtALTRelation4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ALTNAMEbindingSource, "ALTNAME_RELATION_4", true));
-            this.txtALTRelation4.Location = new System.Drawing.Point(254, 132);
-            this.txtALTRelation4.MaxLength = 10;
+            resources.ApplyResources(this.txtALTRelation4, "txtALTRelation4");
             this.txtALTRelation4.Name = "txtALTRelation4";
-            this.txtALTRelation4.Size = new System.Drawing.Size(152, 29);
-            this.txtALTRelation4.TabIndex = 346;
+            this.txtALTRelation4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // txtALTRelation3
             // 
             this.txtALTRelation3.AllowDrop = true;
             this.txtALTRelation3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ALTNAMEbindingSource, "ALTNAME_RELATION_3", true));
-            this.txtALTRelation3.Location = new System.Drawing.Point(254, 102);
-            this.txtALTRelation3.MaxLength = 10;
+            resources.ApplyResources(this.txtALTRelation3, "txtALTRelation3");
             this.txtALTRelation3.Name = "txtALTRelation3";
-            this.txtALTRelation3.Size = new System.Drawing.Size(152, 29);
-            this.txtALTRelation3.TabIndex = 342;
+            this.txtALTRelation3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // txtALTRelation2
             // 
             this.txtALTRelation2.AllowDrop = true;
             this.txtALTRelation2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ALTNAMEbindingSource, "ALTNAME_RELATION_2", true));
-            this.txtALTRelation2.Location = new System.Drawing.Point(254, 72);
-            this.txtALTRelation2.MaxLength = 10;
+            resources.ApplyResources(this.txtALTRelation2, "txtALTRelation2");
             this.txtALTRelation2.Name = "txtALTRelation2";
-            this.txtALTRelation2.Size = new System.Drawing.Size(152, 29);
-            this.txtALTRelation2.TabIndex = 338;
+            this.txtALTRelation2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // txtALTRelation1
             // 
             this.txtALTRelation1.AllowDrop = true;
             this.txtALTRelation1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ALTNAMEbindingSource, "ALTNAME_RELATION_1", true));
-            this.txtALTRelation1.Location = new System.Drawing.Point(254, 42);
-            this.txtALTRelation1.MaxLength = 10;
+            resources.ApplyResources(this.txtALTRelation1, "txtALTRelation1");
             this.txtALTRelation1.Name = "txtALTRelation1";
-            this.txtALTRelation1.Size = new System.Drawing.Size(152, 29);
-            this.txtALTRelation1.TabIndex = 334;
+            this.txtALTRelation1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // txtALTContact4
             // 
             this.txtALTContact4.AllowDrop = true;
             this.txtALTContact4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ALTNAMEbindingSource, "ALTNAME_NAME_4", true));
-            this.txtALTContact4.Location = new System.Drawing.Point(12, 132);
-            this.txtALTContact4.MaxLength = 25;
+            resources.ApplyResources(this.txtALTContact4, "txtALTContact4");
             this.txtALTContact4.Name = "txtALTContact4";
-            this.txtALTContact4.Size = new System.Drawing.Size(233, 29);
-            this.txtALTContact4.TabIndex = 345;
+            this.txtALTContact4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // txtALTContact3
             // 
             this.txtALTContact3.AllowDrop = true;
             this.txtALTContact3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ALTNAMEbindingSource, "ALTNAME_NAME_3", true));
-            this.txtALTContact3.Location = new System.Drawing.Point(12, 102);
-            this.txtALTContact3.MaxLength = 25;
+            resources.ApplyResources(this.txtALTContact3, "txtALTContact3");
             this.txtALTContact3.Name = "txtALTContact3";
-            this.txtALTContact3.Size = new System.Drawing.Size(233, 29);
-            this.txtALTContact3.TabIndex = 341;
+            this.txtALTContact3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // txtALTContact2
             // 
             this.txtALTContact2.AllowDrop = true;
             this.txtALTContact2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ALTNAMEbindingSource, "ALTNAME_NAME_2", true));
-            this.txtALTContact2.Location = new System.Drawing.Point(12, 72);
-            this.txtALTContact2.MaxLength = 25;
+            resources.ApplyResources(this.txtALTContact2, "txtALTContact2");
             this.txtALTContact2.Name = "txtALTContact2";
-            this.txtALTContact2.Size = new System.Drawing.Size(233, 29);
-            this.txtALTContact2.TabIndex = 337;
+            this.txtALTContact2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // txtALTContact1
             // 
             this.txtALTContact1.AllowDrop = true;
             this.txtALTContact1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.ALTNAMEbindingSource, "ALTNAME_NAME_1", true));
-            this.txtALTContact1.Location = new System.Drawing.Point(12, 42);
-            this.txtALTContact1.MaxLength = 25;
+            resources.ApplyResources(this.txtALTContact1, "txtALTContact1");
             this.txtALTContact1.Name = "txtALTContact1";
-            this.txtALTContact1.Size = new System.Drawing.Size(233, 29);
-            this.txtALTContact1.TabIndex = 333;
+            this.txtALTContact1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // groupBox4
             // 
@@ -6924,316 +5129,251 @@
             this.groupBox4.Controls.Add(label71);
             this.groupBox4.Controls.Add(label72);
             this.groupBox4.Controls.Add(label73);
-            this.groupBox4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(71, 114);
+            resources.ApplyResources(this.groupBox4, "groupBox4");
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(774, 269);
-            this.groupBox4.TabIndex = 334;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Co-Signer Info";
             // 
             // buttonCOSValidate
             // 
-            this.buttonCOSValidate.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCOSValidate.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("buttonCOSValidate.Appearance.Font")));
             this.buttonCOSValidate.Appearance.ForeColor = System.Drawing.Color.Crimson;
             this.buttonCOSValidate.Appearance.Options.UseFont = true;
             this.buttonCOSValidate.Appearance.Options.UseForeColor = true;
-            this.buttonCOSValidate.Location = new System.Drawing.Point(675, 82);
-            this.buttonCOSValidate.LookAndFeel.SkinMaskColor = System.Drawing.Color.PaleTurquoise;
+            resources.ApplyResources(this.buttonCOSValidate, "buttonCOSValidate");
+            this.buttonCOSValidate.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
             this.buttonCOSValidate.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
             this.buttonCOSValidate.LookAndFeel.SkinName = "McSkin";
             this.buttonCOSValidate.LookAndFeel.UseDefaultLookAndFeel = false;
             this.buttonCOSValidate.Name = "buttonCOSValidate";
-            this.buttonCOSValidate.Size = new System.Drawing.Size(92, 25);
-            this.buttonCOSValidate.TabIndex = 334;
-            this.buttonCOSValidate.Text = "Validate";
+            this.buttonCOSValidate.Click += new System.EventHandler(this.buttonCOSValidate_Click);
             // 
             // textBoxCosignerTierPoints
             // 
             this.textBoxCosignerTierPoints.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CosignerTierPoints", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N0"));
-            this.textBoxCosignerTierPoints.Location = new System.Drawing.Point(387, 165);
-            this.textBoxCosignerTierPoints.MaxLength = 3;
+            resources.ApplyResources(this.textBoxCosignerTierPoints, "textBoxCosignerTierPoints");
             this.textBoxCosignerTierPoints.Name = "textBoxCosignerTierPoints";
-            this.textBoxCosignerTierPoints.Size = new System.Drawing.Size(40, 29);
-            this.textBoxCosignerTierPoints.TabIndex = 326;
-            this.textBoxCosignerTierPoints.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxCosignerTierPoints.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // buttonCosLetter
             // 
-            this.buttonCosLetter.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCosLetter.Appearance.Options.UseFont = true;
             this.buttonCosLetter.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonCosLetter.ImageOptions.Image")));
             this.buttonCosLetter.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.buttonCosLetter.Location = new System.Drawing.Point(408, 222);
-            this.buttonCosLetter.LookAndFeel.SkinMaskColor = System.Drawing.Color.PaleTurquoise;
+            resources.ApplyResources(this.buttonCosLetter, "buttonCosLetter");
+            this.buttonCosLetter.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
             this.buttonCosLetter.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
             this.buttonCosLetter.LookAndFeel.SkinName = "McSkin";
             this.buttonCosLetter.LookAndFeel.UseDefaultLookAndFeel = false;
             this.buttonCosLetter.Name = "buttonCosLetter";
-            this.buttonCosLetter.Size = new System.Drawing.Size(68, 40);
-            this.buttonCosLetter.TabIndex = 331;
+            this.buttonCosLetter.Click += new System.EventHandler(this.buttonCosLetter_Click);
             // 
             // comboBoxCosLetterType
             // 
             this.comboBoxCosLetterType.DataSource = this.letterTypeBindingSource;
             this.comboBoxCosLetterType.DisplayMember = "LetterType";
-            this.comboBoxCosLetterType.Enabled = false;
-            this.comboBoxCosLetterType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.comboBoxCosLetterType, "comboBoxCosLetterType");
             this.comboBoxCosLetterType.FormattingEnabled = true;
-            this.comboBoxCosLetterType.Location = new System.Drawing.Point(352, 222);
             this.comboBoxCosLetterType.Name = "comboBoxCosLetterType";
-            this.comboBoxCosLetterType.Size = new System.Drawing.Size(36, 28);
-            this.comboBoxCosLetterType.TabIndex = 330;
+            this.comboBoxCosLetterType.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // comboBoxCosLetterNo
             // 
             this.comboBoxCosLetterNo.DataSource = this.letterNumberBindingSource;
             this.comboBoxCosLetterNo.DisplayMember = "LetterNo";
-            this.comboBoxCosLetterNo.Enabled = false;
-            this.comboBoxCosLetterNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.comboBoxCosLetterNo, "comboBoxCosLetterNo");
             this.comboBoxCosLetterNo.FormattingEnabled = true;
-            this.comboBoxCosLetterNo.Location = new System.Drawing.Point(169, 222);
             this.comboBoxCosLetterNo.Name = "comboBoxCosLetterNo";
-            this.comboBoxCosLetterNo.Size = new System.Drawing.Size(36, 28);
-            this.comboBoxCosLetterNo.TabIndex = 329;
+            this.comboBoxCosLetterNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // buttonSendMailCosigner
             // 
-            this.buttonSendMailCosigner.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSendMailCosigner.Appearance.Options.UseFont = true;
             this.buttonSendMailCosigner.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonSendMailCosigner.ImageOptions.Image")));
             this.buttonSendMailCosigner.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.buttonSendMailCosigner.Location = new System.Drawing.Point(679, 195);
-            this.buttonSendMailCosigner.LookAndFeel.SkinMaskColor = System.Drawing.Color.PaleTurquoise;
+            resources.ApplyResources(this.buttonSendMailCosigner, "buttonSendMailCosigner");
+            this.buttonSendMailCosigner.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
             this.buttonSendMailCosigner.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
             this.buttonSendMailCosigner.LookAndFeel.SkinName = "McSkin";
             this.buttonSendMailCosigner.LookAndFeel.UseDefaultLookAndFeel = false;
             this.buttonSendMailCosigner.Name = "buttonSendMailCosigner";
-            this.buttonSendMailCosigner.Size = new System.Drawing.Size(68, 40);
-            this.buttonSendMailCosigner.TabIndex = 328;
+            this.buttonSendMailCosigner.Click += new System.EventHandler(this.buttonSendMailCosigner_Click);
             // 
             // comboBoxCOSJunior
             // 
             this.comboBoxCOSJunior.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.cUSTOMERBindingSource, "COSIGNER_JUNIOR", true));
             this.comboBoxCOSJunior.DataSource = this.bindingSourceGenCodes;
             this.comboBoxCOSJunior.DisplayMember = "Description";
+            resources.ApplyResources(this.comboBoxCOSJunior, "comboBoxCOSJunior");
             this.comboBoxCOSJunior.FormattingEnabled = true;
-            this.comboBoxCOSJunior.Location = new System.Drawing.Point(411, 21);
             this.comboBoxCOSJunior.Name = "comboBoxCOSJunior";
-            this.comboBoxCOSJunior.Size = new System.Drawing.Size(99, 29);
-            this.comboBoxCOSJunior.TabIndex = 310;
             this.comboBoxCOSJunior.ValueMember = "gcode";
+            this.comboBoxCOSJunior.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // textBoxTier
             // 
             this.textBoxTier.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "Tier", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N0"));
-            this.textBoxTier.Location = new System.Drawing.Point(255, 165);
-            this.textBoxTier.MaxLength = 1;
+            resources.ApplyResources(this.textBoxTier, "textBoxTier");
             this.textBoxTier.Name = "textBoxTier";
-            this.textBoxTier.Size = new System.Drawing.Size(25, 29);
-            this.textBoxTier.TabIndex = 325;
-            this.textBoxTier.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxTier.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // textBoxCosignerEmail
             // 
             this.textBoxCosignerEmail.AllowDrop = true;
             this.textBoxCosignerEmail.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.textBoxCosignerEmail.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CosignerEmail", true));
-            this.textBoxCosignerEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxCosignerEmail.Location = new System.Drawing.Point(169, 195);
-            this.textBoxCosignerEmail.MaxLength = 50;
+            resources.ApplyResources(this.textBoxCosignerEmail, "textBoxCosignerEmail");
             this.textBoxCosignerEmail.Name = "textBoxCosignerEmail";
-            this.textBoxCosignerEmail.Size = new System.Drawing.Size(464, 26);
-            this.textBoxCosignerEmail.TabIndex = 328;
+            this.textBoxCosignerEmail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // textBoxCosignerAnnualIncome
             // 
             this.textBoxCosignerAnnualIncome.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CosignerAnnualIncome", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "", "C2"));
-            this.textBoxCosignerAnnualIncome.Location = new System.Drawing.Point(582, 165);
+            resources.ApplyResources(this.textBoxCosignerAnnualIncome, "textBoxCosignerAnnualIncome");
             this.textBoxCosignerAnnualIncome.Name = "textBoxCosignerAnnualIncome";
-            this.textBoxCosignerAnnualIncome.Size = new System.Drawing.Size(100, 29);
-            this.textBoxCosignerAnnualIncome.TabIndex = 327;
-            this.textBoxCosignerAnnualIncome.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxCosignerAnnualIncome.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // textBoxCosignerCreditScore
             // 
             this.textBoxCosignerCreditScore.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CosignerCreditScore", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "", "N0"));
-            this.textBoxCosignerCreditScore.Location = new System.Drawing.Point(169, 165);
-            this.textBoxCosignerCreditScore.MaxLength = 3;
+            resources.ApplyResources(this.textBoxCosignerCreditScore, "textBoxCosignerCreditScore");
             this.textBoxCosignerCreditScore.Name = "textBoxCosignerCreditScore";
-            this.textBoxCosignerCreditScore.Size = new System.Drawing.Size(33, 29);
-            this.textBoxCosignerCreditScore.TabIndex = 324;
-            this.textBoxCosignerCreditScore.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxCosignerCreditScore.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // txtCOSDOB
             // 
             this.txtCOSDOB.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "COSIGNER_DOB_DATE", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "d"));
-            this.txtCOSDOB.EditValue = null;
-            this.txtCOSDOB.Location = new System.Drawing.Point(557, 136);
+            resources.ApplyResources(this.txtCOSDOB, "txtCOSDOB");
             this.txtCOSDOB.Name = "txtCOSDOB";
-            this.txtCOSDOB.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCOSDOB.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("txtCOSDOB.Properties.Appearance.Font")));
             this.txtCOSDOB.Properties.Appearance.Options.UseFont = true;
             this.txtCOSDOB.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("txtCOSDOB.Properties.Buttons"))))});
             this.txtCOSDOB.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("txtCOSDOB.Properties.CalendarTimeProperties.Buttons"))))});
             this.txtCOSDOB.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.Fluent;
-            this.txtCOSDOB.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.PaleTurquoise;
+            this.txtCOSDOB.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
             this.txtCOSDOB.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
             this.txtCOSDOB.Properties.LookAndFeel.SkinName = "McSkin";
             this.txtCOSDOB.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.txtCOSDOB.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
-            this.txtCOSDOB.Size = new System.Drawing.Size(109, 28);
-            this.txtCOSDOB.TabIndex = 323;
+            this.txtCOSDOB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // txtCOSWorkExt
             // 
             this.txtCOSWorkExt.AllowDrop = true;
             this.txtCOSWorkExt.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "COSIGNER_WORK_EXT", true));
-            this.txtCOSWorkExt.Location = new System.Drawing.Point(713, 50);
-            this.txtCOSWorkExt.MaxLength = 4;
+            resources.ApplyResources(this.txtCOSWorkExt, "txtCOSWorkExt");
             this.txtCOSWorkExt.Name = "txtCOSWorkExt";
-            this.txtCOSWorkExt.Size = new System.Drawing.Size(42, 29);
-            this.txtCOSWorkExt.TabIndex = 314;
-            this.txtCOSWorkExt.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtCOSWorkExt.TextChanged += new System.EventHandler(this.txtCOSWorkExt_TextChanged);
+            this.txtCOSWorkExt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // txtUsePrimaryAddress
             // 
             this.txtUsePrimaryAddress.AllowDrop = true;
             this.txtUsePrimaryAddress.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtUsePrimaryAddress.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "COSIGNER_SAME_ADDRESS", true));
-            this.txtUsePrimaryAddress.Location = new System.Drawing.Point(333, 50);
-            this.txtUsePrimaryAddress.MaxLength = 1;
+            resources.ApplyResources(this.txtUsePrimaryAddress, "txtUsePrimaryAddress");
             this.txtUsePrimaryAddress.Name = "txtUsePrimaryAddress";
-            this.txtUsePrimaryAddress.Size = new System.Drawing.Size(20, 29);
-            this.txtUsePrimaryAddress.TabIndex = 312;
+            this.txtUsePrimaryAddress.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // txtCOSSS_3
             // 
             this.txtCOSSS_3.AllowDrop = true;
             this.txtCOSSS_3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "COSIGNER_SS3", true));
-            this.txtCOSSS_3.Location = new System.Drawing.Point(621, 107);
-            this.txtCOSSS_3.MaxLength = 4;
+            resources.ApplyResources(this.txtCOSSS_3, "txtCOSSS_3");
             this.txtCOSSS_3.Name = "txtCOSSS_3";
-            this.txtCOSSS_3.Size = new System.Drawing.Size(51, 29);
-            this.txtCOSSS_3.TabIndex = 320;
-            this.txtCOSSS_3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtCOSSS_3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // txtCOSSS_2
             // 
             this.txtCOSSS_2.AllowDrop = true;
             this.txtCOSSS_2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "COSIGNER_SS2", true));
-            this.txtCOSSS_2.Location = new System.Drawing.Point(591, 107);
-            this.txtCOSSS_2.MaxLength = 2;
+            resources.ApplyResources(this.txtCOSSS_2, "txtCOSSS_2");
             this.txtCOSSS_2.Name = "txtCOSSS_2";
-            this.txtCOSSS_2.Size = new System.Drawing.Size(29, 29);
-            this.txtCOSSS_2.TabIndex = 319;
-            this.txtCOSSS_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtCOSSS_2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // txtCOSSS_1
             // 
             this.txtCOSSS_1.AllowDrop = true;
             this.txtCOSSS_1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "COSIGNER_SS1", true));
-            this.txtCOSSS_1.Location = new System.Drawing.Point(557, 107);
-            this.txtCOSSS_1.MaxLength = 3;
+            resources.ApplyResources(this.txtCOSSS_1, "txtCOSSS_1");
             this.txtCOSSS_1.Name = "txtCOSSS_1";
-            this.txtCOSSS_1.Size = new System.Drawing.Size(33, 29);
-            this.txtCOSSS_1.TabIndex = 318;
-            this.txtCOSSS_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtCOSSS_1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // txtCOSZip
             // 
             this.txtCOSZip.AllowDrop = true;
             this.txtCOSZip.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "COSIGNER_ZIP_CODE", true));
-            this.txtCOSZip.Location = new System.Drawing.Point(352, 136);
-            this.txtCOSZip.MaxLength = 5;
+            resources.ApplyResources(this.txtCOSZip, "txtCOSZip");
             this.txtCOSZip.Name = "txtCOSZip";
-            this.txtCOSZip.Size = new System.Drawing.Size(52, 29);
-            this.txtCOSZip.TabIndex = 322;
-            this.txtCOSZip.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtCOSZip.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // txtCOSState
             // 
             this.txtCOSState.AllowDrop = true;
             this.txtCOSState.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "COSIGNER_STATE", true));
-            this.txtCOSState.Location = new System.Drawing.Point(169, 136);
-            this.txtCOSState.MaxLength = 2;
+            resources.ApplyResources(this.txtCOSState, "txtCOSState");
             this.txtCOSState.Name = "txtCOSState";
-            this.txtCOSState.Size = new System.Drawing.Size(33, 29);
-            this.txtCOSState.TabIndex = 321;
+            this.txtCOSState.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // txtCOSCity
             // 
             this.txtCOSCity.AllowDrop = true;
             this.txtCOSCity.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "COSIGNER_CITY", true));
-            this.txtCOSCity.Location = new System.Drawing.Point(169, 107);
-            this.txtCOSCity.MaxLength = 14;
+            resources.ApplyResources(this.txtCOSCity, "txtCOSCity");
             this.txtCOSCity.Name = "txtCOSCity";
-            this.txtCOSCity.Size = new System.Drawing.Size(133, 29);
-            this.txtCOSCity.TabIndex = 317;
+            this.txtCOSCity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // txtCOSAddress
             // 
             this.txtCOSAddress.AllowDrop = true;
             this.txtCOSAddress.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "COSIGNER_ADDRESS1", true));
-            this.txtCOSAddress.Location = new System.Drawing.Point(169, 78);
-            this.txtCOSAddress.MaxLength = 30;
+            resources.ApplyResources(this.txtCOSAddress, "txtCOSAddress");
             this.txtCOSAddress.Name = "txtCOSAddress";
-            this.txtCOSAddress.Size = new System.Drawing.Size(268, 29);
-            this.txtCOSAddress.TabIndex = 315;
+            this.txtCOSAddress.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // txtCOSLastName
             // 
             this.txtCOSLastName.AllowDrop = true;
             this.txtCOSLastName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "COSIGNER_LAST_NAME", true));
-            this.txtCOSLastName.Location = new System.Drawing.Point(257, 21);
-            this.txtCOSLastName.MaxLength = 18;
+            resources.ApplyResources(this.txtCOSLastName, "txtCOSLastName");
             this.txtCOSLastName.Name = "txtCOSLastName";
-            this.txtCOSLastName.Size = new System.Drawing.Size(152, 29);
-            this.txtCOSLastName.TabIndex = 309;
+            this.txtCOSLastName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // txtCOSFirstName
             // 
             this.txtCOSFirstName.AllowDrop = true;
             this.txtCOSFirstName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "COSIGNER_FIRST_NAME", true));
-            this.txtCOSFirstName.Location = new System.Drawing.Point(148, 21);
-            this.txtCOSFirstName.MaxLength = 12;
+            resources.ApplyResources(this.txtCOSFirstName, "txtCOSFirstName");
             this.txtCOSFirstName.Name = "txtCOSFirstName";
-            this.txtCOSFirstName.Size = new System.Drawing.Size(107, 29);
-            this.txtCOSFirstName.TabIndex = 308;
+            this.txtCOSFirstName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // txtCOSCell
             // 
             this.txtCOSCell.AllowDrop = true;
             this.txtCOSCell.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "COSIGNER_CELL_PHONE", true));
-            this.txtCOSCell.Location = new System.Drawing.Point(557, 78);
-            this.txtCOSCell.Mask = "(999) 000-0000";
+            resources.ApplyResources(this.txtCOSCell, "txtCOSCell");
             this.txtCOSCell.Name = "txtCOSCell";
-            this.txtCOSCell.Size = new System.Drawing.Size(115, 29);
-            this.txtCOSCell.TabIndex = 316;
             this.txtCOSCell.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.txtCOSCell.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // txtCOSWorkPhone
             // 
             this.txtCOSWorkPhone.AllowDrop = true;
             this.txtCOSWorkPhone.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "COSIGNER_WORK_PHONE", true));
-            this.txtCOSWorkPhone.Location = new System.Drawing.Point(557, 50);
-            this.txtCOSWorkPhone.Mask = "(999) 000-0000";
+            resources.ApplyResources(this.txtCOSWorkPhone, "txtCOSWorkPhone");
             this.txtCOSWorkPhone.Name = "txtCOSWorkPhone";
-            this.txtCOSWorkPhone.Size = new System.Drawing.Size(115, 29);
-            this.txtCOSWorkPhone.TabIndex = 313;
             this.txtCOSWorkPhone.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.txtCOSWorkPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // txtCOSPhone
             // 
             this.txtCOSPhone.AllowDrop = true;
             this.txtCOSPhone.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "COSIGNER_HOME_PHONE", true));
-            this.txtCOSPhone.Location = new System.Drawing.Point(596, 21);
-            this.txtCOSPhone.Mask = "(999) 000-0000";
+            resources.ApplyResources(this.txtCOSPhone, "txtCOSPhone");
             this.txtCOSPhone.Name = "txtCOSPhone";
-            this.txtCOSPhone.Size = new System.Drawing.Size(115, 29);
-            this.txtCOSPhone.TabIndex = 311;
             this.txtCOSPhone.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.txtCOSPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // groupBox3
             // 
@@ -7247,102 +5387,74 @@
             this.groupBox3.Controls.Add(label62);
             this.groupBox3.Controls.Add(this.textBox61);
             this.groupBox3.Controls.Add(label63);
-            this.groupBox3.Location = new System.Drawing.Point(220, 14);
+            resources.ApplyResources(this.groupBox3, "groupBox3");
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(763, 82);
-            this.groupBox3.TabIndex = 335;
             this.groupBox3.TabStop = false;
             // 
             // textBox20
             // 
             this.textBox20.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBox20.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_SUFFIX", true));
-            this.textBox20.Enabled = false;
-            this.textBox20.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox20.Location = new System.Drawing.Point(642, 17);
-            this.textBox20.MaxLength = 3;
+            resources.ApplyResources(this.textBox20, "textBox20");
             this.textBox20.Name = "textBox20";
             this.textBox20.ReadOnly = true;
-            this.textBox20.Size = new System.Drawing.Size(41, 29);
-            this.textBox20.TabIndex = 304;
             // 
             // textBox54
             // 
             this.textBox54.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_SS_3", true));
-            this.textBox54.Enabled = false;
-            this.textBox54.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox54.Location = new System.Drawing.Point(233, 48);
+            resources.ApplyResources(this.textBox54, "textBox54");
             this.textBox54.Name = "textBox54";
             this.textBox54.ReadOnly = true;
-            this.textBox54.Size = new System.Drawing.Size(51, 29);
-            this.textBox54.TabIndex = 307;
-            this.textBox54.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox55
             // 
             this.textBox55.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_SS_2", true));
-            this.textBox55.Enabled = false;
-            this.textBox55.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox55.Location = new System.Drawing.Point(203, 48);
+            resources.ApplyResources(this.textBox55, "textBox55");
             this.textBox55.Name = "textBox55";
             this.textBox55.ReadOnly = true;
-            this.textBox55.Size = new System.Drawing.Size(29, 29);
-            this.textBox55.TabIndex = 306;
-            this.textBox55.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox58
             // 
             this.textBox58.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_SS_1", true));
-            this.textBox58.Enabled = false;
-            this.textBox58.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox58.Location = new System.Drawing.Point(169, 48);
+            resources.ApplyResources(this.textBox58, "textBox58");
             this.textBox58.Name = "textBox58";
             this.textBox58.ReadOnly = true;
-            this.textBox58.Size = new System.Drawing.Size(33, 29);
-            this.textBox58.TabIndex = 305;
-            this.textBox58.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox59
             // 
             this.textBox59.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_LAST_NAME", true));
-            this.textBox59.Enabled = false;
-            this.textBox59.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox59.Location = new System.Drawing.Point(486, 17);
+            resources.ApplyResources(this.textBox59, "textBox59");
             this.textBox59.Name = "textBox59";
             this.textBox59.ReadOnly = true;
-            this.textBox59.Size = new System.Drawing.Size(152, 29);
-            this.textBox59.TabIndex = 303;
             // 
             // textBox60
             // 
             this.textBox60.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_FIRST_NAME", true));
-            this.textBox60.Enabled = false;
-            this.textBox60.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox60.Location = new System.Drawing.Point(377, 17);
+            resources.ApplyResources(this.textBox60, "textBox60");
             this.textBox60.Name = "textBox60";
             this.textBox60.ReadOnly = true;
-            this.textBox60.Size = new System.Drawing.Size(107, 29);
-            this.textBox60.TabIndex = 302;
             // 
             // textBox61
             // 
             this.textBox61.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_NO", true));
-            this.textBox61.Enabled = false;
-            this.textBox61.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox61.Location = new System.Drawing.Point(169, 17);
+            resources.ApplyResources(this.textBox61, "textBox61");
             this.textBox61.Name = "textBox61";
             this.textBox61.ReadOnly = true;
-            this.textBox61.Size = new System.Drawing.Size(67, 29);
-            this.textBox61.TabIndex = 301;
-            this.textBox61.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // xtraTabPageBank
             // 
-            this.xtraTabPageBank.Controls.Add(this.groupBox6);
-            this.xtraTabPageBank.Controls.Add(this.tabControl1);
+            this.xtraTabPageBank.Controls.Add(this.groupBox17);
             this.xtraTabPageBank.Name = "xtraTabPageBank";
-            this.xtraTabPageBank.Size = new System.Drawing.Size(1230, 612);
-            this.xtraTabPageBank.Text = "Bank Info";
+            resources.ApplyResources(this.xtraTabPageBank, "xtraTabPageBank");
+            // 
+            // groupBox17
+            // 
+            this.groupBox17.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.groupBox17.Controls.Add(this.groupBox6);
+            this.groupBox17.Controls.Add(this.tabControl1);
+            resources.ApplyResources(this.groupBox17, "groupBox17");
+            this.groupBox17.Name = "groupBox17";
+            this.groupBox17.TabStop = false;
             // 
             // groupBox6
             // 
@@ -7356,99 +5468,67 @@
             this.groupBox6.Controls.Add(label84);
             this.groupBox6.Controls.Add(this.textBox88);
             this.groupBox6.Controls.Add(label85);
-            this.groupBox6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox6.Location = new System.Drawing.Point(267, 84);
+            resources.ApplyResources(this.groupBox6, "groupBox6");
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(699, 82);
-            this.groupBox6.TabIndex = 402;
             this.groupBox6.TabStop = false;
             // 
             // textBox21
             // 
             this.textBox21.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBox21.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_SUFFIX", true));
-            this.textBox21.Enabled = false;
-            this.textBox21.Location = new System.Drawing.Point(644, 17);
-            this.textBox21.MaxLength = 3;
+            resources.ApplyResources(this.textBox21, "textBox21");
             this.textBox21.Name = "textBox21";
             this.textBox21.ReadOnly = true;
-            this.textBox21.Size = new System.Drawing.Size(41, 29);
-            this.textBox21.TabIndex = 404;
             // 
             // textBox57
             // 
             this.textBox57.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_SS_3", true));
-            this.textBox57.Enabled = false;
-            this.textBox57.Location = new System.Drawing.Point(219, 48);
+            resources.ApplyResources(this.textBox57, "textBox57");
             this.textBox57.Name = "textBox57";
             this.textBox57.ReadOnly = true;
-            this.textBox57.Size = new System.Drawing.Size(51, 29);
-            this.textBox57.TabIndex = 407;
-            this.textBox57.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox71
             // 
             this.textBox71.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_SS_2", true));
-            this.textBox71.Enabled = false;
-            this.textBox71.Location = new System.Drawing.Point(185, 48);
+            resources.ApplyResources(this.textBox71, "textBox71");
             this.textBox71.Name = "textBox71";
             this.textBox71.ReadOnly = true;
-            this.textBox71.Size = new System.Drawing.Size(33, 29);
-            this.textBox71.TabIndex = 406;
-            this.textBox71.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox85
             // 
             this.textBox85.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_SS_1", true));
-            this.textBox85.Enabled = false;
-            this.textBox85.Location = new System.Drawing.Point(151, 48);
+            resources.ApplyResources(this.textBox85, "textBox85");
             this.textBox85.Name = "textBox85";
             this.textBox85.ReadOnly = true;
-            this.textBox85.Size = new System.Drawing.Size(33, 29);
-            this.textBox85.TabIndex = 405;
-            this.textBox85.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox86
             // 
             this.textBox86.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_LAST_NAME", true));
-            this.textBox86.Enabled = false;
-            this.textBox86.Location = new System.Drawing.Point(488, 17);
+            resources.ApplyResources(this.textBox86, "textBox86");
             this.textBox86.Name = "textBox86";
             this.textBox86.ReadOnly = true;
-            this.textBox86.Size = new System.Drawing.Size(152, 29);
-            this.textBox86.TabIndex = 403;
             // 
             // textBox87
             // 
             this.textBox87.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_FIRST_NAME", true));
-            this.textBox87.Enabled = false;
-            this.textBox87.Location = new System.Drawing.Point(377, 17);
+            resources.ApplyResources(this.textBox87, "textBox87");
             this.textBox87.Name = "textBox87";
             this.textBox87.ReadOnly = true;
-            this.textBox87.Size = new System.Drawing.Size(107, 29);
-            this.textBox87.TabIndex = 402;
             // 
             // textBox88
             // 
             this.textBox88.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_NO", true));
-            this.textBox88.Enabled = false;
-            this.textBox88.Location = new System.Drawing.Point(151, 17);
+            resources.ApplyResources(this.textBox88, "textBox88");
             this.textBox88.Name = "textBox88";
             this.textBox88.ReadOnly = true;
-            this.textBox88.Size = new System.Drawing.Size(67, 29);
-            this.textBox88.TabIndex = 401;
-            this.textBox88.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(386, 237);
+            resources.ApplyResources(this.tabControl1, "tabControl1");
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(463, 267);
-            this.tabControl1.TabIndex = 401;
             // 
             // tabPage1
             // 
@@ -7469,158 +5549,109 @@
             this.tabPage1.Controls.Add(this.label86);
             this.tabPage1.Controls.Add(this.txtBankName);
             this.tabPage1.Controls.Add(this.lblBankName);
-            this.tabPage1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPage1.Location = new System.Drawing.Point(4, 30);
+            resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(455, 233);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "EFT / eCheck";
             // 
             // label103
             // 
-            this.label103.AutoSize = true;
-            this.label103.Location = new System.Drawing.Point(16, 177);
+            resources.ApplyResources(this.label103, "label103");
             this.label103.Name = "label103";
-            this.label103.Size = new System.Drawing.Size(133, 21);
-            this.label103.TabIndex = 175;
-            this.label103.Text = "Payment Amount:";
             // 
             // textBoxMonthlyPayment
             // 
             this.textBoxMonthlyPayment.AllowDrop = true;
             this.textBoxMonthlyPayment.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OPNBANKbindingSource, "OPNBANK_MONTHLY_PAYMENT", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "C2"));
-            this.textBoxMonthlyPayment.Location = new System.Drawing.Point(156, 169);
+            resources.ApplyResources(this.textBoxMonthlyPayment, "textBoxMonthlyPayment");
             this.textBoxMonthlyPayment.Name = "textBoxMonthlyPayment";
-            this.textBoxMonthlyPayment.Size = new System.Drawing.Size(119, 29);
-            this.textBoxMonthlyPayment.TabIndex = 414;
-            this.textBoxMonthlyPayment.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxMonthlyPayment.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // txtBankAutoPay
             // 
             this.txtBankAutoPay.AllowDrop = true;
             this.txtBankAutoPay.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtBankAutoPay.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_AUTOPAY", true));
-            this.txtBankAutoPay.Location = new System.Drawing.Point(398, 169);
-            this.txtBankAutoPay.MaxLength = 1;
+            resources.ApplyResources(this.txtBankAutoPay, "txtBankAutoPay");
             this.txtBankAutoPay.Name = "txtBankAutoPay";
-            this.txtBankAutoPay.Size = new System.Drawing.Size(20, 29);
-            this.txtBankAutoPay.TabIndex = 415;
+            this.txtBankAutoPay.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // txtBankAccountNumber
             // 
             this.txtBankAccountNumber.AllowDrop = true;
             this.txtBankAccountNumber.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OPNBANKbindingSource, "OPNBANK_ACCOUNT_NO", true));
-            this.txtBankAccountNumber.Location = new System.Drawing.Point(156, 140);
-            this.txtBankAccountNumber.MaxLength = 17;
+            resources.ApplyResources(this.txtBankAccountNumber, "txtBankAccountNumber");
             this.txtBankAccountNumber.Name = "txtBankAccountNumber";
-            this.txtBankAccountNumber.Size = new System.Drawing.Size(173, 29);
-            this.txtBankAccountNumber.TabIndex = 413;
+            this.txtBankAccountNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // label90
             // 
-            this.label90.AutoSize = true;
-            this.label90.Location = new System.Drawing.Point(19, 148);
+            resources.ApplyResources(this.label90, "label90");
             this.label90.Name = "label90";
-            this.label90.Size = new System.Drawing.Size(131, 21);
-            this.label90.TabIndex = 10;
-            this.label90.Text = "Account Number:";
             // 
             // txtBankCheckDigit
             // 
             this.txtBankCheckDigit.AllowDrop = true;
             this.txtBankCheckDigit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OPNBANKbindingSource, "OPNBANK_CHECK_DIGIT", true));
-            this.txtBankCheckDigit.Location = new System.Drawing.Point(156, 111);
-            this.txtBankCheckDigit.MaxLength = 1;
+            resources.ApplyResources(this.txtBankCheckDigit, "txtBankCheckDigit");
             this.txtBankCheckDigit.Name = "txtBankCheckDigit";
-            this.txtBankCheckDigit.Size = new System.Drawing.Size(18, 29);
-            this.txtBankCheckDigit.TabIndex = 412;
+            this.txtBankCheckDigit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // label89
             // 
-            this.label89.AutoSize = true;
-            this.label89.Location = new System.Drawing.Point(58, 118);
+            resources.ApplyResources(this.label89, "label89");
             this.label89.Name = "label89";
-            this.label89.Size = new System.Drawing.Size(92, 21);
-            this.label89.TabIndex = 8;
-            this.label89.Text = "Check Digit:";
             // 
             // txtBankRoutingNumber
             // 
             this.txtBankRoutingNumber.AllowDrop = true;
             this.txtBankRoutingNumber.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OPNBANKbindingSource, "OPNBANK_TRAN_CODE", true));
-            this.txtBankRoutingNumber.Location = new System.Drawing.Point(156, 80);
-            this.txtBankRoutingNumber.MaxLength = 9;
+            resources.ApplyResources(this.txtBankRoutingNumber, "txtBankRoutingNumber");
             this.txtBankRoutingNumber.Name = "txtBankRoutingNumber";
-            this.txtBankRoutingNumber.Size = new System.Drawing.Size(133, 29);
-            this.txtBankRoutingNumber.TabIndex = 411;
-            this.txtBankRoutingNumber.Text = " ";
+            this.txtBankRoutingNumber.TextChanged += new System.EventHandler(this.txtBankRoutingNumber_TextChanged);
+            this.txtBankRoutingNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // label88
             // 
-            this.label88.AutoSize = true;
-            this.label88.Location = new System.Drawing.Point(20, 88);
+            resources.ApplyResources(this.label88, "label88");
             this.label88.Name = "label88";
-            this.label88.Size = new System.Drawing.Size(130, 21);
-            this.label88.TabIndex = 6;
-            this.label88.Text = "Routing Number:";
             // 
             // txtBankState
             // 
             this.txtBankState.AllowDrop = true;
             this.txtBankState.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OPNBANKbindingSource, "OPNBANK_STATE", true));
-            this.txtBankState.Location = new System.Drawing.Point(399, 50);
-            this.txtBankState.MaxLength = 2;
+            resources.ApplyResources(this.txtBankState, "txtBankState");
             this.txtBankState.Name = "txtBankState";
-            this.txtBankState.Size = new System.Drawing.Size(25, 29);
-            this.txtBankState.TabIndex = 410;
+            this.txtBankState.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // label87
             // 
-            this.label87.AutoSize = true;
-            this.label87.Location = new System.Drawing.Point(335, 57);
+            resources.ApplyResources(this.label87, "label87");
             this.label87.Name = "label87";
-            this.label87.Size = new System.Drawing.Size(47, 21);
-            this.label87.TabIndex = 4;
-            this.label87.Text = "State:";
             // 
             // txtBankCity
             // 
             this.txtBankCity.AllowDrop = true;
             this.txtBankCity.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OPNBANKbindingSource, "OPNBANK_CITY", true));
-            this.txtBankCity.Location = new System.Drawing.Point(156, 50);
-            this.txtBankCity.MaxLength = 16;
+            resources.ApplyResources(this.txtBankCity, "txtBankCity");
             this.txtBankCity.Name = "txtBankCity";
-            this.txtBankCity.Size = new System.Drawing.Size(133, 29);
-            this.txtBankCity.TabIndex = 409;
+            this.txtBankCity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // label86
             // 
-            this.label86.AutoSize = true;
-            this.label86.Location = new System.Drawing.Point(110, 57);
+            resources.ApplyResources(this.label86, "label86");
             this.label86.Name = "label86";
-            this.label86.Size = new System.Drawing.Size(40, 21);
-            this.label86.TabIndex = 2;
-            this.label86.Text = "City:";
             // 
             // txtBankName
             // 
             this.txtBankName.AllowDrop = true;
             this.txtBankName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OPNBANKbindingSource, "OPNBANK_NAME", true));
-            this.txtBankName.Location = new System.Drawing.Point(156, 20);
-            this.txtBankName.MaxLength = 30;
+            resources.ApplyResources(this.txtBankName, "txtBankName");
             this.txtBankName.Name = "txtBankName";
-            this.txtBankName.Size = new System.Drawing.Size(268, 29);
-            this.txtBankName.TabIndex = 408;
+            this.txtBankName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // lblBankName
             // 
-            this.lblBankName.AutoSize = true;
-            this.lblBankName.Location = new System.Drawing.Point(57, 28);
+            resources.ApplyResources(this.lblBankName, "lblBankName");
             this.lblBankName.Name = "lblBankName";
-            this.lblBankName.Size = new System.Drawing.Size(93, 21);
-            this.lblBankName.TabIndex = 0;
-            this.lblBankName.Text = "Bank Name:";
             // 
             // tabPage2
             // 
@@ -7634,31 +5665,21 @@
             this.tabPage2.Controls.Add(this.txtCreditCardName);
             this.tabPage2.Controls.Add(this.txtCreditCardNumber);
             this.tabPage2.Controls.Add(this.label91);
-            this.tabPage2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPage2.Location = new System.Drawing.Point(4, 30);
+            resources.ApplyResources(this.tabPage2, "tabPage2");
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(455, 233);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Credit Card";
             // 
             // ExpYearcomboBox
             // 
             this.ExpYearcomboBox.AllowDrop = true;
             this.ExpYearcomboBox.FormattingEnabled = true;
-            this.ExpYearcomboBox.Location = new System.Drawing.Point(267, 123);
+            resources.ApplyResources(this.ExpYearcomboBox, "ExpYearcomboBox");
             this.ExpYearcomboBox.Name = "ExpYearcomboBox";
-            this.ExpYearcomboBox.Size = new System.Drawing.Size(66, 29);
-            this.ExpYearcomboBox.TabIndex = 420;
+            this.ExpYearcomboBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // label94
             // 
-            this.label94.AutoSize = true;
-            this.label94.Location = new System.Drawing.Point(45, 132);
+            resources.ApplyResources(this.label94, "label94");
             this.label94.Name = "label94";
-            this.label94.Size = new System.Drawing.Size(118, 21);
-            this.label94.TabIndex = 178;
-            this.label94.Text = "Expiration Date:";
             // 
             // ExpMonthcomboBox
             // 
@@ -7666,339 +5687,66 @@
             this.ExpMonthcomboBox.DataSource = this.bindingSourceMonthNames;
             this.ExpMonthcomboBox.DisplayMember = "MonthName";
             this.ExpMonthcomboBox.FormattingEnabled = true;
-            this.ExpMonthcomboBox.Location = new System.Drawing.Point(169, 123);
+            resources.ApplyResources(this.ExpMonthcomboBox, "ExpMonthcomboBox");
             this.ExpMonthcomboBox.Name = "ExpMonthcomboBox";
-            this.ExpMonthcomboBox.Size = new System.Drawing.Size(86, 29);
-            this.ExpMonthcomboBox.TabIndex = 419;
             this.ExpMonthcomboBox.ValueMember = "MonthNumber";
+            this.ExpMonthcomboBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // txtCreditCardCVV
             // 
             this.txtCreditCardCVV.AllowDrop = true;
             this.txtCreditCardCVV.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OPNBANKbindingSource, "OPNBANK_CW_CODE", true));
-            this.txtCreditCardCVV.Location = new System.Drawing.Point(169, 94);
-            this.txtCreditCardCVV.MaxLength = 4;
+            resources.ApplyResources(this.txtCreditCardCVV, "txtCreditCardCVV");
             this.txtCreditCardCVV.Name = "txtCreditCardCVV";
-            this.txtCreditCardCVV.Size = new System.Drawing.Size(35, 29);
-            this.txtCreditCardCVV.TabIndex = 418;
+            this.txtCreditCardCVV.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // label93
             // 
-            this.label93.AutoSize = true;
-            this.label93.Location = new System.Drawing.Point(80, 102);
+            resources.ApplyResources(this.label93, "label93");
             this.label93.Name = "label93";
-            this.label93.Size = new System.Drawing.Size(83, 21);
-            this.label93.TabIndex = 175;
-            this.label93.Text = "CVV Code:";
             // 
             // label92
             // 
-            this.label92.AutoSize = true;
-            this.label92.Location = new System.Drawing.Point(108, 73);
+            resources.ApplyResources(this.label92, "label92");
             this.label92.Name = "label92";
-            this.label92.Size = new System.Drawing.Size(55, 21);
-            this.label92.TabIndex = 174;
-            this.label92.Text = "Name:";
             // 
             // txtCreditCardName
             // 
             this.txtCreditCardName.AllowDrop = true;
             this.txtCreditCardName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OPNBANKbindingSource, "OPNBANK_CUST_NAME", true));
-            this.txtCreditCardName.Location = new System.Drawing.Point(169, 65);
-            this.txtCreditCardName.MaxLength = 30;
+            resources.ApplyResources(this.txtCreditCardName, "txtCreditCardName");
             this.txtCreditCardName.Name = "txtCreditCardName";
-            this.txtCreditCardName.Size = new System.Drawing.Size(263, 29);
-            this.txtCreditCardName.TabIndex = 417;
+            this.txtCreditCardName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // txtCreditCardNumber
             // 
             this.txtCreditCardNumber.AllowDrop = true;
             this.txtCreditCardNumber.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OPNBANKbindingSource, "OPNBANK_CARD_NO", true));
-            this.txtCreditCardNumber.Location = new System.Drawing.Point(169, 36);
-            this.txtCreditCardNumber.MaxLength = 16;
+            resources.ApplyResources(this.txtCreditCardNumber, "txtCreditCardNumber");
             this.txtCreditCardNumber.Name = "txtCreditCardNumber";
-            this.txtCreditCardNumber.Size = new System.Drawing.Size(219, 29);
-            this.txtCreditCardNumber.TabIndex = 416;
+            this.txtCreditCardNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // label91
             // 
-            this.label91.AutoSize = true;
-            this.label91.Location = new System.Drawing.Point(55, 44);
+            resources.ApplyResources(this.label91, "label91");
             this.label91.Name = "label91";
-            this.label91.Size = new System.Drawing.Size(108, 21);
-            this.label91.TabIndex = 171;
-            this.label91.Text = "Card Number:";
             // 
             // xtraTabPageHistory
             // 
-            this.xtraTabPageHistory.Controls.Add(this.gridControlCustomerHist);
-            this.xtraTabPageHistory.Controls.Add(this.groupBox11);
-            this.xtraTabPageHistory.Controls.Add(this.toolStrip2);
+            this.xtraTabPageHistory.Controls.Add(this.groupBox18);
+            this.xtraTabPageHistory.Controls.Add(this.standaloneBarDockControl1);
             this.xtraTabPageHistory.Name = "xtraTabPageHistory";
-            this.xtraTabPageHistory.Size = new System.Drawing.Size(1230, 612);
-            this.xtraTabPageHistory.Text = "Customer History";
+            resources.ApplyResources(this.xtraTabPageHistory, "xtraTabPageHistory");
+            this.xtraTabPageHistory.Paint += new System.Windows.Forms.PaintEventHandler(this.xtraTabPageHistory_Paint);
             // 
-            // gridControlCustomerHist
+            // groupBox18
             // 
-            this.gridControlCustomerHist.DataSource = this.cUSTHISTBindingSource;
-            this.gridControlCustomerHist.Location = new System.Drawing.Point(89, 234);
-            this.gridControlCustomerHist.MainView = this.gridViewCustomerHistory;
-            this.gridControlCustomerHist.MenuManager = this.toolbarFormManager1;
-            this.gridControlCustomerHist.Name = "gridControlCustomerHist";
-            this.gridControlCustomerHist.Size = new System.Drawing.Size(1052, 319);
-            this.gridControlCustomerHist.TabIndex = 535;
-            this.gridControlCustomerHist.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridViewCustomerHistory});
-            // 
-            // gridViewCustomerHistory
-            // 
-            this.gridViewCustomerHistory.Appearance.EvenRow.BackColor = System.Drawing.Color.Bisque;
-            this.gridViewCustomerHistory.Appearance.EvenRow.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridViewCustomerHistory.Appearance.EvenRow.Options.UseBackColor = true;
-            this.gridViewCustomerHistory.Appearance.EvenRow.Options.UseFont = true;
-            this.gridViewCustomerHistory.Appearance.EvenRow.Options.UseForeColor = true;
-            this.gridViewCustomerHistory.Appearance.HeaderPanel.Options.UseTextOptions = true;
-            this.gridViewCustomerHistory.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.gridViewCustomerHistory.Appearance.HeaderPanel.TextOptions.Trimming = DevExpress.Utils.Trimming.None;
-            this.gridViewCustomerHistory.Appearance.HeaderPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Top;
-            this.gridViewCustomerHistory.Appearance.HeaderPanel.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.gridViewCustomerHistory.Appearance.OddRow.BackColor = System.Drawing.Color.Transparent;
-            this.gridViewCustomerHistory.Appearance.OddRow.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridViewCustomerHistory.Appearance.OddRow.Options.UseBackColor = true;
-            this.gridViewCustomerHistory.Appearance.OddRow.Options.UseFont = true;
-            this.gridViewCustomerHistory.Appearance.OddRow.Options.UseForeColor = true;
-            this.gridViewCustomerHistory.AppearancePrint.HeaderPanel.Options.UseTextOptions = true;
-            this.gridViewCustomerHistory.AppearancePrint.HeaderPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Top;
-            this.gridViewCustomerHistory.AppearancePrint.HeaderPanel.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.gridViewCustomerHistory.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colCUSTHIST_PAY_DATE,
-            this.colCUSTHIST_ACT_STAT,
-            this.colCUSTHIST_PAYMENT_RCV,
-            this.colCUSTHIST_BALANCE,
-            this.colCUSTHIST_CONTRACT_STATUS,
-            this.colCUSTHIST_LATE_CHARGE_BAL,
-            this.colPartialPayment,
-            this.colCUSTHIST_PAID_THRU,
-            this.colCUSTHIST_PAY_REM_1,
-            this.colCUSTHIST_PAYMENT_TYPE,
-            this.colCUSTHIST_PAYMENT_CODE,
-            this.colCUSTHIST_THRU_UD});
-            this.gridViewCustomerHistory.GridControl = this.gridControlCustomerHist;
-            this.gridViewCustomerHistory.HorzScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Never;
-            this.gridViewCustomerHistory.Name = "gridViewCustomerHistory";
-            this.gridViewCustomerHistory.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
-            this.gridViewCustomerHistory.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.False;
-            this.gridViewCustomerHistory.OptionsBehavior.Editable = false;
-            this.gridViewCustomerHistory.OptionsBehavior.ReadOnly = true;
-            this.gridViewCustomerHistory.OptionsBehavior.SummariesIgnoreNullValues = true;
-            this.gridViewCustomerHistory.OptionsView.ColumnAutoWidth = false;
-            this.gridViewCustomerHistory.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
-            this.gridViewCustomerHistory.OptionsView.EnableAppearanceEvenRow = true;
-            this.gridViewCustomerHistory.OptionsView.EnableAppearanceOddRow = true;
-            this.gridViewCustomerHistory.OptionsView.ShowGroupPanel = false;
-            // 
-            // colCUSTHIST_PAY_DATE
-            // 
-            this.colCUSTHIST_PAY_DATE.AppearanceCell.Options.UseTextOptions = true;
-            this.colCUSTHIST_PAY_DATE.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.colCUSTHIST_PAY_DATE.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.colCUSTHIST_PAY_DATE.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.colCUSTHIST_PAY_DATE.AppearanceHeader.Options.UseFont = true;
-            this.colCUSTHIST_PAY_DATE.AppearanceHeader.Options.UseTextOptions = true;
-            this.colCUSTHIST_PAY_DATE.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.colCUSTHIST_PAY_DATE.AppearanceHeader.TextOptions.Trimming = DevExpress.Utils.Trimming.None;
-            this.colCUSTHIST_PAY_DATE.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.colCUSTHIST_PAY_DATE.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.colCUSTHIST_PAY_DATE.Caption = "POST DATE";
-            this.colCUSTHIST_PAY_DATE.FieldName = "CUSTHIST_PAY_DATE";
-            this.colCUSTHIST_PAY_DATE.Name = "colCUSTHIST_PAY_DATE";
-            this.colCUSTHIST_PAY_DATE.OptionsColumn.AllowEdit = false;
-            this.colCUSTHIST_PAY_DATE.Visible = true;
-            this.colCUSTHIST_PAY_DATE.VisibleIndex = 0;
-            this.colCUSTHIST_PAY_DATE.Width = 95;
-            // 
-            // colCUSTHIST_ACT_STAT
-            // 
-            this.colCUSTHIST_ACT_STAT.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.colCUSTHIST_ACT_STAT.AppearanceHeader.Options.UseFont = true;
-            this.colCUSTHIST_ACT_STAT.AppearanceHeader.Options.UseTextOptions = true;
-            this.colCUSTHIST_ACT_STAT.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.colCUSTHIST_ACT_STAT.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.colCUSTHIST_ACT_STAT.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.colCUSTHIST_ACT_STAT.Caption = "ACT STAT";
-            this.colCUSTHIST_ACT_STAT.FieldName = "CUSTHIST_ACT_STAT";
-            this.colCUSTHIST_ACT_STAT.Name = "colCUSTHIST_ACT_STAT";
-            this.colCUSTHIST_ACT_STAT.Visible = true;
-            this.colCUSTHIST_ACT_STAT.VisibleIndex = 1;
-            this.colCUSTHIST_ACT_STAT.Width = 60;
-            // 
-            // colCUSTHIST_PAYMENT_RCV
-            // 
-            this.colCUSTHIST_PAYMENT_RCV.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.colCUSTHIST_PAYMENT_RCV.AppearanceHeader.Options.UseFont = true;
-            this.colCUSTHIST_PAYMENT_RCV.AppearanceHeader.Options.UseTextOptions = true;
-            this.colCUSTHIST_PAYMENT_RCV.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.colCUSTHIST_PAYMENT_RCV.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.colCUSTHIST_PAYMENT_RCV.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.colCUSTHIST_PAYMENT_RCV.Caption = "PAYMENT AMOUNT";
-            this.colCUSTHIST_PAYMENT_RCV.DisplayFormat.FormatString = "$#.00;($#.00); ";
-            this.colCUSTHIST_PAYMENT_RCV.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colCUSTHIST_PAYMENT_RCV.FieldName = "CUSTHIST_PAYMENT_RCV";
-            this.colCUSTHIST_PAYMENT_RCV.Name = "colCUSTHIST_PAYMENT_RCV";
-            this.colCUSTHIST_PAYMENT_RCV.Visible = true;
-            this.colCUSTHIST_PAYMENT_RCV.VisibleIndex = 2;
-            this.colCUSTHIST_PAYMENT_RCV.Width = 100;
-            // 
-            // colCUSTHIST_BALANCE
-            // 
-            this.colCUSTHIST_BALANCE.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.colCUSTHIST_BALANCE.AppearanceHeader.Options.UseFont = true;
-            this.colCUSTHIST_BALANCE.AppearanceHeader.Options.UseTextOptions = true;
-            this.colCUSTHIST_BALANCE.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.colCUSTHIST_BALANCE.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.colCUSTHIST_BALANCE.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.colCUSTHIST_BALANCE.Caption = "LOAN BALANCE";
-            this.colCUSTHIST_BALANCE.DisplayFormat.FormatString = "$#.00;($#.00); ";
-            this.colCUSTHIST_BALANCE.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colCUSTHIST_BALANCE.FieldName = "CUSTHIST_BALANCE";
-            this.colCUSTHIST_BALANCE.Name = "colCUSTHIST_BALANCE";
-            this.colCUSTHIST_BALANCE.Visible = true;
-            this.colCUSTHIST_BALANCE.VisibleIndex = 3;
-            this.colCUSTHIST_BALANCE.Width = 100;
-            // 
-            // colCUSTHIST_CONTRACT_STATUS
-            // 
-            this.colCUSTHIST_CONTRACT_STATUS.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.colCUSTHIST_CONTRACT_STATUS.AppearanceHeader.Options.UseFont = true;
-            this.colCUSTHIST_CONTRACT_STATUS.AppearanceHeader.Options.UseTextOptions = true;
-            this.colCUSTHIST_CONTRACT_STATUS.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.colCUSTHIST_CONTRACT_STATUS.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.colCUSTHIST_CONTRACT_STATUS.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.colCUSTHIST_CONTRACT_STATUS.Caption = "CONTRACT STATUS";
-            this.colCUSTHIST_CONTRACT_STATUS.DisplayFormat.FormatString = "$#.00;($#.00); ";
-            this.colCUSTHIST_CONTRACT_STATUS.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colCUSTHIST_CONTRACT_STATUS.FieldName = "CUSTHIST_CONTRACT_STATUS";
-            this.colCUSTHIST_CONTRACT_STATUS.Name = "colCUSTHIST_CONTRACT_STATUS";
-            this.colCUSTHIST_CONTRACT_STATUS.Visible = true;
-            this.colCUSTHIST_CONTRACT_STATUS.VisibleIndex = 4;
-            this.colCUSTHIST_CONTRACT_STATUS.Width = 105;
-            // 
-            // colCUSTHIST_LATE_CHARGE_BAL
-            // 
-            this.colCUSTHIST_LATE_CHARGE_BAL.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.colCUSTHIST_LATE_CHARGE_BAL.AppearanceHeader.Options.UseFont = true;
-            this.colCUSTHIST_LATE_CHARGE_BAL.AppearanceHeader.Options.UseTextOptions = true;
-            this.colCUSTHIST_LATE_CHARGE_BAL.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.colCUSTHIST_LATE_CHARGE_BAL.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.colCUSTHIST_LATE_CHARGE_BAL.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.colCUSTHIST_LATE_CHARGE_BAL.Caption = "LATE CHARGE BALANCE";
-            this.colCUSTHIST_LATE_CHARGE_BAL.DisplayFormat.FormatString = "$#.00;($#.00); ";
-            this.colCUSTHIST_LATE_CHARGE_BAL.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colCUSTHIST_LATE_CHARGE_BAL.FieldName = "CUSTHIST_LATE_CHARGE_BAL";
-            this.colCUSTHIST_LATE_CHARGE_BAL.Name = "colCUSTHIST_LATE_CHARGE_BAL";
-            this.colCUSTHIST_LATE_CHARGE_BAL.Visible = true;
-            this.colCUSTHIST_LATE_CHARGE_BAL.VisibleIndex = 5;
-            this.colCUSTHIST_LATE_CHARGE_BAL.Width = 100;
-            // 
-            // colPartialPayment
-            // 
-            this.colPartialPayment.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.colPartialPayment.AppearanceHeader.Options.UseFont = true;
-            this.colPartialPayment.AppearanceHeader.Options.UseTextOptions = true;
-            this.colPartialPayment.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.colPartialPayment.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.colPartialPayment.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.colPartialPayment.Caption = "PARTIAL PAYMENT";
-            this.colPartialPayment.DisplayFormat.FormatString = "$#.00;($#.00); ";
-            this.colPartialPayment.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colPartialPayment.FieldName = "PartialPayment";
-            this.colPartialPayment.Name = "colPartialPayment";
-            this.colPartialPayment.Visible = true;
-            this.colPartialPayment.VisibleIndex = 6;
-            this.colPartialPayment.Width = 100;
-            // 
-            // colCUSTHIST_PAID_THRU
-            // 
-            this.colCUSTHIST_PAID_THRU.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.colCUSTHIST_PAID_THRU.AppearanceHeader.Options.UseFont = true;
-            this.colCUSTHIST_PAID_THRU.AppearanceHeader.Options.UseTextOptions = true;
-            this.colCUSTHIST_PAID_THRU.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.colCUSTHIST_PAID_THRU.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.colCUSTHIST_PAID_THRU.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.colCUSTHIST_PAID_THRU.Caption = "PAID THROUGH";
-            this.colCUSTHIST_PAID_THRU.DisplayFormat.FormatString = "00/00";
-            this.colCUSTHIST_PAID_THRU.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.colCUSTHIST_PAID_THRU.FieldName = "CUSTHIST_PAID_THRU";
-            this.colCUSTHIST_PAID_THRU.Name = "colCUSTHIST_PAID_THRU";
-            this.colCUSTHIST_PAID_THRU.Visible = true;
-            this.colCUSTHIST_PAID_THRU.VisibleIndex = 7;
-            this.colCUSTHIST_PAID_THRU.Width = 100;
-            // 
-            // colCUSTHIST_PAY_REM_1
-            // 
-            this.colCUSTHIST_PAY_REM_1.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.colCUSTHIST_PAY_REM_1.AppearanceHeader.Options.UseFont = true;
-            this.colCUSTHIST_PAY_REM_1.AppearanceHeader.Options.UseTextOptions = true;
-            this.colCUSTHIST_PAY_REM_1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.colCUSTHIST_PAY_REM_1.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.colCUSTHIST_PAY_REM_1.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.colCUSTHIST_PAY_REM_1.Caption = "PMT DESC";
-            this.colCUSTHIST_PAY_REM_1.FieldName = "CUSTHIST_PAY_REM_1";
-            this.colCUSTHIST_PAY_REM_1.Name = "colCUSTHIST_PAY_REM_1";
-            this.colCUSTHIST_PAY_REM_1.Visible = true;
-            this.colCUSTHIST_PAY_REM_1.VisibleIndex = 8;
-            this.colCUSTHIST_PAY_REM_1.Width = 70;
-            // 
-            // colCUSTHIST_PAYMENT_TYPE
-            // 
-            this.colCUSTHIST_PAYMENT_TYPE.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.colCUSTHIST_PAYMENT_TYPE.AppearanceHeader.Options.UseFont = true;
-            this.colCUSTHIST_PAYMENT_TYPE.AppearanceHeader.Options.UseTextOptions = true;
-            this.colCUSTHIST_PAYMENT_TYPE.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.colCUSTHIST_PAYMENT_TYPE.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.colCUSTHIST_PAYMENT_TYPE.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.colCUSTHIST_PAYMENT_TYPE.Caption = "PMT TYPE";
-            this.colCUSTHIST_PAYMENT_TYPE.FieldName = "CUSTHIST_PAYMENT_TYPE";
-            this.colCUSTHIST_PAYMENT_TYPE.Name = "colCUSTHIST_PAYMENT_TYPE";
-            this.colCUSTHIST_PAYMENT_TYPE.Visible = true;
-            this.colCUSTHIST_PAYMENT_TYPE.VisibleIndex = 9;
-            this.colCUSTHIST_PAYMENT_TYPE.Width = 62;
-            // 
-            // colCUSTHIST_PAYMENT_CODE
-            // 
-            this.colCUSTHIST_PAYMENT_CODE.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.colCUSTHIST_PAYMENT_CODE.AppearanceHeader.Options.UseFont = true;
-            this.colCUSTHIST_PAYMENT_CODE.AppearanceHeader.Options.UseTextOptions = true;
-            this.colCUSTHIST_PAYMENT_CODE.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.colCUSTHIST_PAYMENT_CODE.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.colCUSTHIST_PAYMENT_CODE.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.colCUSTHIST_PAYMENT_CODE.Caption = "PMT CODE";
-            this.colCUSTHIST_PAYMENT_CODE.FieldName = "CUSTHIST_PAYMENT_CODE";
-            this.colCUSTHIST_PAYMENT_CODE.Name = "colCUSTHIST_PAYMENT_CODE";
-            this.colCUSTHIST_PAYMENT_CODE.Visible = true;
-            this.colCUSTHIST_PAYMENT_CODE.VisibleIndex = 10;
-            this.colCUSTHIST_PAYMENT_CODE.Width = 64;
-            // 
-            // colCUSTHIST_THRU_UD
-            // 
-            this.colCUSTHIST_THRU_UD.AppearanceCell.Options.UseTextOptions = true;
-            this.colCUSTHIST_THRU_UD.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.colCUSTHIST_THRU_UD.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.colCUSTHIST_THRU_UD.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.colCUSTHIST_THRU_UD.AppearanceHeader.Options.UseFont = true;
-            this.colCUSTHIST_THRU_UD.AppearanceHeader.Options.UseTextOptions = true;
-            this.colCUSTHIST_THRU_UD.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.colCUSTHIST_THRU_UD.AppearanceHeader.TextOptions.Trimming = DevExpress.Utils.Trimming.None;
-            this.colCUSTHIST_THRU_UD.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            this.colCUSTHIST_THRU_UD.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.colCUSTHIST_THRU_UD.Caption = "EXT MONTHS";
-            this.colCUSTHIST_THRU_UD.DisplayFormat.FormatString = "#;#; ";
-            this.colCUSTHIST_THRU_UD.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colCUSTHIST_THRU_UD.FieldName = "CUSTHIST_THRU_UD";
-            this.colCUSTHIST_THRU_UD.Name = "colCUSTHIST_THRU_UD";
-            this.colCUSTHIST_THRU_UD.Visible = true;
-            this.colCUSTHIST_THRU_UD.VisibleIndex = 11;
-            this.colCUSTHIST_THRU_UD.Width = 92;
+            this.groupBox18.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.groupBox18.Controls.Add(this.groupBox11);
+            this.groupBox18.Controls.Add(this.gridControlCustomerHist);
+            resources.ApplyResources(this.groupBox18, "groupBox18");
+            this.groupBox18.Name = "groupBox18";
+            this.groupBox18.TabStop = false;
             // 
             // groupBox11
             // 
@@ -8054,458 +5802,538 @@
             this.groupBox11.Controls.Add(label224);
             this.groupBox11.Controls.Add(label225);
             this.groupBox11.Controls.Add(this.textBox31);
-            this.groupBox11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox11.Location = new System.Drawing.Point(64, 4);
+            resources.ApplyResources(this.groupBox11, "groupBox11");
             this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(1103, 220);
-            this.groupBox11.TabIndex = 534;
             this.groupBox11.TabStop = false;
             // 
             // checkBoxFullRecourseHist
             // 
             this.checkBoxFullRecourseHist.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "IsFullRecourse", true));
-            this.checkBoxFullRecourseHist.Location = new System.Drawing.Point(776, 187);
+            resources.ApplyResources(this.checkBoxFullRecourseHist, "checkBoxFullRecourseHist");
             this.checkBoxFullRecourseHist.MenuManager = this.toolbarFormManager1;
             this.checkBoxFullRecourseHist.Name = "checkBoxFullRecourseHist";
-            this.checkBoxFullRecourseHist.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxFullRecourseHist.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("checkBoxFullRecourseHist.Properties.Appearance.Font")));
             this.checkBoxFullRecourseHist.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(70)))), ((int)(((byte)(68)))));
             this.checkBoxFullRecourseHist.Properties.Appearance.Options.UseFont = true;
             this.checkBoxFullRecourseHist.Properties.Appearance.Options.UseForeColor = true;
-            this.checkBoxFullRecourseHist.Properties.Caption = "Full Recourse?";
+            this.checkBoxFullRecourseHist.Properties.Caption = resources.GetString("checkBoxFullRecourseHist.Properties.Caption");
             this.checkBoxFullRecourseHist.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
             this.checkBoxFullRecourseHist.Properties.CheckBoxOptions.SvgColorChecked = System.Drawing.Color.Red;
-            this.checkBoxFullRecourseHist.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.PaleTurquoise;
+            this.checkBoxFullRecourseHist.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
             this.checkBoxFullRecourseHist.Properties.LookAndFeel.SkinName = "McSkin";
             this.checkBoxFullRecourseHist.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.checkBoxFullRecourseHist.Size = new System.Drawing.Size(132, 25);
-            this.checkBoxFullRecourseHist.TabIndex = 530;
             // 
             // nullableDateTimePickerFirstPayDate
             // 
             this.nullableDateTimePickerFirstPayDate.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_INIT_DATE", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "d"));
-            this.nullableDateTimePickerFirstPayDate.EditValue = null;
-            this.nullableDateTimePickerFirstPayDate.Enabled = false;
-            this.nullableDateTimePickerFirstPayDate.Location = new System.Drawing.Point(158, 78);
+            resources.ApplyResources(this.nullableDateTimePickerFirstPayDate, "nullableDateTimePickerFirstPayDate");
             this.nullableDateTimePickerFirstPayDate.MenuManager = this.toolbarFormManager1;
             this.nullableDateTimePickerFirstPayDate.Name = "nullableDateTimePickerFirstPayDate";
-            this.nullableDateTimePickerFirstPayDate.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nullableDateTimePickerFirstPayDate.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("nullableDateTimePickerFirstPayDate.Properties.Appearance.Font")));
             this.nullableDateTimePickerFirstPayDate.Properties.Appearance.Options.UseFont = true;
             this.nullableDateTimePickerFirstPayDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("nullableDateTimePickerFirstPayDate.Properties.Buttons"))))});
             this.nullableDateTimePickerFirstPayDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.nullableDateTimePickerFirstPayDate.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.PaleTurquoise;
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("nullableDateTimePickerFirstPayDate.Properties.CalendarTimeProperties.Buttons"))))});
+            this.nullableDateTimePickerFirstPayDate.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
             this.nullableDateTimePickerFirstPayDate.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
             this.nullableDateTimePickerFirstPayDate.Properties.LookAndFeel.SkinName = "McSkin";
             this.nullableDateTimePickerFirstPayDate.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.nullableDateTimePickerFirstPayDate.Size = new System.Drawing.Size(119, 28);
-            this.nullableDateTimePickerFirstPayDate.TabIndex = 510;
             // 
             // nullableDateTimePickerPayDate
             // 
             this.nullableDateTimePickerPayDate.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_LAST_PAYMENT_DATE", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "d"));
-            this.nullableDateTimePickerPayDate.EditValue = null;
-            this.nullableDateTimePickerPayDate.Enabled = false;
-            this.nullableDateTimePickerPayDate.Location = new System.Drawing.Point(437, 46);
+            resources.ApplyResources(this.nullableDateTimePickerPayDate, "nullableDateTimePickerPayDate");
             this.nullableDateTimePickerPayDate.MenuManager = this.toolbarFormManager1;
             this.nullableDateTimePickerPayDate.Name = "nullableDateTimePickerPayDate";
-            this.nullableDateTimePickerPayDate.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nullableDateTimePickerPayDate.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("nullableDateTimePickerPayDate.Properties.Appearance.Font")));
             this.nullableDateTimePickerPayDate.Properties.Appearance.Options.UseFont = true;
             this.nullableDateTimePickerPayDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("nullableDateTimePickerPayDate.Properties.Buttons"))))});
             this.nullableDateTimePickerPayDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.nullableDateTimePickerPayDate.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.PaleTurquoise;
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("nullableDateTimePickerPayDate.Properties.CalendarTimeProperties.Buttons"))))});
+            this.nullableDateTimePickerPayDate.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
             this.nullableDateTimePickerPayDate.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
             this.nullableDateTimePickerPayDate.Properties.LookAndFeel.SkinName = "McSkin";
             this.nullableDateTimePickerPayDate.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.nullableDateTimePickerPayDate.Size = new System.Drawing.Size(119, 28);
-            this.nullableDateTimePickerPayDate.TabIndex = 507;
             // 
             // nullableDateTimePickerHistContractDate
             // 
             this.nullableDateTimePickerHistContractDate.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "ContractDate", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "d"));
-            this.nullableDateTimePickerHistContractDate.EditValue = null;
-            this.nullableDateTimePickerHistContractDate.Enabled = false;
-            this.nullableDateTimePickerHistContractDate.Location = new System.Drawing.Point(437, 14);
+            resources.ApplyResources(this.nullableDateTimePickerHistContractDate, "nullableDateTimePickerHistContractDate");
             this.nullableDateTimePickerHistContractDate.MenuManager = this.toolbarFormManager1;
             this.nullableDateTimePickerHistContractDate.Name = "nullableDateTimePickerHistContractDate";
-            this.nullableDateTimePickerHistContractDate.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nullableDateTimePickerHistContractDate.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("nullableDateTimePickerHistContractDate.Properties.Appearance.Font")));
             this.nullableDateTimePickerHistContractDate.Properties.Appearance.Options.UseFont = true;
             this.nullableDateTimePickerHistContractDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("nullableDateTimePickerHistContractDate.Properties.Buttons"))))});
             this.nullableDateTimePickerHistContractDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.nullableDateTimePickerHistContractDate.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.PaleTurquoise;
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("nullableDateTimePickerHistContractDate.Properties.CalendarTimeProperties.Buttons"))))});
+            this.nullableDateTimePickerHistContractDate.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
             this.nullableDateTimePickerHistContractDate.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
             this.nullableDateTimePickerHistContractDate.Properties.LookAndFeel.SkinName = "McSkin";
             this.nullableDateTimePickerHistContractDate.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.nullableDateTimePickerHistContractDate.Size = new System.Drawing.Size(119, 28);
-            this.nullableDateTimePickerHistContractDate.TabIndex = 502;
             // 
             // textBoxTotalExtensions
             // 
             this.textBoxTotalExtensions.AllowDrop = true;
             this.textBoxTotalExtensions.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_TOTAL_EXT", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "0", "N0"));
-            this.textBoxTotalExtensions.Enabled = false;
-            this.textBoxTotalExtensions.Location = new System.Drawing.Point(995, 77);
+            resources.ApplyResources(this.textBoxTotalExtensions, "textBoxTotalExtensions");
             this.textBoxTotalExtensions.Name = "textBoxTotalExtensions";
             this.textBoxTotalExtensions.ReadOnly = true;
-            this.textBoxTotalExtensions.Size = new System.Drawing.Size(25, 29);
-            this.textBoxTotalExtensions.TabIndex = 514;
-            this.textBoxTotalExtensions.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBoxBuyOutHist
             // 
             this.textBoxBuyOutHist.AllowDrop = true;
             this.textBoxBuyOutHist.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_BUYOUT", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "C2"));
-            this.textBoxBuyOutHist.Enabled = false;
-            this.textBoxBuyOutHist.Location = new System.Drawing.Point(995, 183);
+            resources.ApplyResources(this.textBoxBuyOutHist, "textBoxBuyOutHist");
             this.textBoxBuyOutHist.Name = "textBoxBuyOutHist";
             this.textBoxBuyOutHist.ReadOnly = true;
-            this.textBoxBuyOutHist.Size = new System.Drawing.Size(102, 29);
-            this.textBoxBuyOutHist.TabIndex = 528;
-            this.textBoxBuyOutHist.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox22
             // 
             this.textBox22.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBox22.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_SUFFIX", true));
-            this.textBox22.Enabled = false;
-            this.textBox22.Location = new System.Drawing.Point(896, 13);
-            this.textBox22.MaxLength = 3;
+            resources.ApplyResources(this.textBox22, "textBox22");
             this.textBox22.Name = "textBox22";
             this.textBox22.ReadOnly = true;
-            this.textBox22.Size = new System.Drawing.Size(41, 29);
-            this.textBox22.TabIndex = 505;
             // 
             // textBox1
             // 
             this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.DealerListCustbindingSource, "dealer_name", true));
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(689, 45);
+            resources.ApplyResources(this.textBox1, "textBox1");
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(256, 29);
-            this.textBox1.TabIndex = 509;
             // 
             // comboBox1
             // 
             this.comboBox1.AllowDrop = true;
             this.comboBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_DAY_DUE", true));
-            this.comboBox1.Enabled = false;
+            resources.ApplyResources(this.comboBox1, "comboBox1");
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
-            "5",
-            "10",
-            "15",
-            "20",
-            "25",
-            "30"});
-            this.comboBox1.Location = new System.Drawing.Point(383, 77);
-            this.comboBox1.MaxLength = 2;
+            resources.GetString("comboBox1.Items"),
+            resources.GetString("comboBox1.Items1"),
+            resources.GetString("comboBox1.Items2"),
+            resources.GetString("comboBox1.Items3"),
+            resources.GetString("comboBox1.Items4"),
+            resources.GetString("comboBox1.Items5")});
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(45, 29);
-            this.comboBox1.TabIndex = 511;
             // 
             // textBox2
             // 
             this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_DEALER", true));
-            this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(636, 45);
+            resources.ApplyResources(this.textBox2, "textBox2");
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(52, 29);
-            this.textBox2.TabIndex = 508;
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox24
             // 
             this.textBox24.AllowDrop = true;
             this.textBox24.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_ANNUAL_PERCENTAGE_RATE", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N4"));
-            this.textBox24.Enabled = false;
-            this.textBox24.Location = new System.Drawing.Point(995, 112);
+            resources.ApplyResources(this.textBox24, "textBox24");
             this.textBox24.Name = "textBox24";
             this.textBox24.ReadOnly = true;
-            this.textBox24.Size = new System.Drawing.Size(73, 29);
-            this.textBox24.TabIndex = 518;
-            this.textBox24.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox3
             // 
             this.textBox3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_LAST_NAME", true));
-            this.textBox3.Enabled = false;
-            this.textBox3.Location = new System.Drawing.Point(744, 13);
+            resources.ApplyResources(this.textBox3, "textBox3");
             this.textBox3.Name = "textBox3";
             this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(152, 29);
-            this.textBox3.TabIndex = 504;
             // 
             // textBox75
             // 
             this.textBox75.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_FIRST_NAME", true));
-            this.textBox75.Enabled = false;
-            this.textBox75.Location = new System.Drawing.Point(636, 13);
+            resources.ApplyResources(this.textBox75, "textBox75");
             this.textBox75.Name = "textBox75";
             this.textBox75.ReadOnly = true;
-            this.textBox75.Size = new System.Drawing.Size(107, 29);
-            this.textBox75.TabIndex = 503;
             // 
             // textBox25
             // 
             this.textBox25.AllowDrop = true;
             this.textBox25.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_LATE_CHARGE_BAL", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "0", "C2"));
-            this.textBox25.Enabled = false;
-            this.textBox25.Location = new System.Drawing.Point(383, 183);
+            resources.ApplyResources(this.textBox25, "textBox25");
             this.textBox25.Name = "textBox25";
             this.textBox25.ReadOnly = true;
-            this.textBox25.Size = new System.Drawing.Size(102, 29);
-            this.textBox25.TabIndex = 524;
-            this.textBox25.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox5
             // 
             this.textBox5.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_PURCHASE_ORDER", true));
-            this.textBox5.Enabled = false;
-            this.textBox5.Location = new System.Drawing.Point(193, 45);
+            resources.ApplyResources(this.textBox5, "textBox5");
             this.textBox5.Name = "textBox5";
             this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(67, 29);
-            this.textBox5.TabIndex = 506;
-            this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBoxPartialPayHist
             // 
             this.textBoxPartialPayHist.AllowDrop = true;
             this.textBoxPartialPayHist.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "PartialPayment", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "C2"));
-            this.textBoxPartialPayHist.Enabled = false;
-            this.textBoxPartialPayHist.Location = new System.Drawing.Point(995, 147);
+            resources.ApplyResources(this.textBoxPartialPayHist, "textBoxPartialPayHist");
             this.textBoxPartialPayHist.Name = "textBoxPartialPayHist";
             this.textBoxPartialPayHist.ReadOnly = true;
-            this.textBoxPartialPayHist.Size = new System.Drawing.Size(73, 29);
-            this.textBoxPartialPayHist.TabIndex = 522;
-            this.textBoxPartialPayHist.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox7
             // 
             this.textBox7.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_NO", true));
-            this.textBox7.Enabled = false;
-            this.textBox7.Location = new System.Drawing.Point(193, 13);
+            resources.ApplyResources(this.textBox7, "textBox7");
             this.textBox7.Name = "textBox7";
             this.textBox7.ReadOnly = true;
-            this.textBox7.Size = new System.Drawing.Size(67, 29);
-            this.textBox7.TabIndex = 501;
-            this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox27
             // 
             this.textBox27.AllowDrop = true;
             this.textBox27.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_LATE_CHARGE", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "C2"));
-            this.textBox27.Enabled = false;
-            this.textBox27.Location = new System.Drawing.Point(158, 182);
+            resources.ApplyResources(this.textBox27, "textBox27");
             this.textBox27.Name = "textBox27";
             this.textBox27.ReadOnly = true;
-            this.textBox27.Size = new System.Drawing.Size(102, 29);
-            this.textBox27.TabIndex = 523;
-            this.textBox27.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox28
             // 
             this.textBox28.AllowDrop = true;
             this.textBox28.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_PAYMENT_CODE", true));
-            this.textBox28.Enabled = false;
-            this.textBox28.Location = new System.Drawing.Point(611, 183);
+            resources.ApplyResources(this.textBox28, "textBox28");
             this.textBox28.Name = "textBox28";
             this.textBox28.ReadOnly = true;
-            this.textBox28.Size = new System.Drawing.Size(25, 29);
-            this.textBox28.TabIndex = 526;
-            this.textBox28.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox29
             // 
             this.textBox29.AllowDrop = true;
             this.textBox29.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_PAYMENT_TYPE", true));
-            this.textBox29.Enabled = false;
-            this.textBox29.Location = new System.Drawing.Point(585, 183);
+            resources.ApplyResources(this.textBox29, "textBox29");
             this.textBox29.Name = "textBox29";
             this.textBox29.ReadOnly = true;
-            this.textBox29.Size = new System.Drawing.Size(25, 29);
-            this.textBox29.TabIndex = 525;
-            this.textBox29.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox30
             // 
             this.textBox30.AllowDrop = true;
             this.textBox30.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_INT_OVERRIDE", true));
-            this.textBox30.Enabled = false;
-            this.textBox30.Location = new System.Drawing.Point(776, 77);
-            this.textBox30.MaxLength = 1;
+            resources.ApplyResources(this.textBox30, "textBox30");
             this.textBox30.Name = "textBox30";
             this.textBox30.ReadOnly = true;
-            this.textBox30.Size = new System.Drawing.Size(19, 29);
-            this.textBox30.TabIndex = 513;
             // 
             // textBox32
             // 
             this.textBox32.AllowDrop = true;
             this.textBox32.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_LOAN_CASH", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "C2"));
-            this.textBox32.Enabled = false;
-            this.textBox32.Location = new System.Drawing.Point(158, 147);
+            resources.ApplyResources(this.textBox32, "textBox32");
             this.textBox32.Name = "textBox32";
             this.textBox32.ReadOnly = true;
-            this.textBox32.Size = new System.Drawing.Size(102, 29);
-            this.textBox32.TabIndex = 519;
-            this.textBox32.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox33
             // 
             this.textBox33.AllowDrop = true;
             this.textBox33.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_LOAN_INTEREST", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "C2"));
-            this.textBox33.Enabled = false;
-            this.textBox33.Location = new System.Drawing.Point(776, 112);
+            resources.ApplyResources(this.textBox33, "textBox33");
             this.textBox33.Name = "textBox33";
             this.textBox33.ReadOnly = true;
-            this.textBox33.Size = new System.Drawing.Size(102, 29);
-            this.textBox33.TabIndex = 517;
-            this.textBox33.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox34
             // 
             this.textBox34.AllowDrop = true;
             this.textBox34.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_LOAN_AMOUNT", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "C2"));
-            this.textBox34.Enabled = false;
-            this.textBox34.Location = new System.Drawing.Point(383, 112);
+            resources.ApplyResources(this.textBox34, "textBox34");
             this.textBox34.Name = "textBox34";
             this.textBox34.ReadOnly = true;
-            this.textBox34.Size = new System.Drawing.Size(102, 29);
-            this.textBox34.TabIndex = 516;
-            this.textBox34.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox35
             // 
             this.textBox35.AllowDrop = true;
             this.textBox35.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_REGULAR_AMOUNT", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "C2"));
-            this.textBox35.Enabled = false;
-            this.textBox35.Location = new System.Drawing.Point(158, 112);
+            resources.ApplyResources(this.textBox35, "textBox35");
             this.textBox35.Name = "textBox35";
             this.textBox35.ReadOnly = true;
-            this.textBox35.Size = new System.Drawing.Size(102, 29);
-            this.textBox35.TabIndex = 515;
-            this.textBox35.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox36
             // 
             this.textBox36.AllowDrop = true;
             this.textBox36.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_CREDIT_STATUS", true));
-            this.textBox36.Enabled = false;
-            this.textBox36.Location = new System.Drawing.Point(776, 147);
-            this.textBox36.MaxLength = 1;
+            resources.ApplyResources(this.textBox36, "textBox36");
             this.textBox36.Name = "textBox36";
             this.textBox36.ReadOnly = true;
-            this.textBox36.Size = new System.Drawing.Size(19, 29);
-            this.textBox36.TabIndex = 521;
             // 
             // textBox37
             // 
             this.textBox37.AllowDrop = true;
             this.textBox37.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_TERM", true));
-            this.textBox37.Enabled = false;
-            this.textBox37.Location = new System.Drawing.Point(585, 77);
+            resources.ApplyResources(this.textBox37, "textBox37");
             this.textBox37.Name = "textBox37";
             this.textBox37.ReadOnly = true;
-            this.textBox37.Size = new System.Drawing.Size(25, 29);
-            this.textBox37.TabIndex = 512;
-            this.textBox37.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox31
             // 
             this.textBox31.AllowDrop = true;
             this.textBox31.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_NO_OF_PAYMENTS_MADE", true));
-            this.textBox31.Enabled = false;
-            this.textBox31.Location = new System.Drawing.Point(383, 147);
+            resources.ApplyResources(this.textBox31, "textBox31");
             this.textBox31.Name = "textBox31";
             this.textBox31.ReadOnly = true;
-            this.textBox31.Size = new System.Drawing.Size(25, 29);
-            this.textBox31.TabIndex = 520;
-            this.textBox31.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // toolStrip2
+            // gridControlCustomerHist
             // 
-            this.toolStrip2.Dock = System.Windows.Forms.DockStyle.None;
-            this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton3,
-            this.toolStripButton2,
-            this.toolStripButtonAmort,
-            this.toolStripButtonTVExcel,
-            this.toolStripButtonCalcBuyout});
-            this.toolStrip2.Location = new System.Drawing.Point(-2, 559);
-            this.toolStrip2.Name = "toolStrip2";
-            this.toolStrip2.Size = new System.Drawing.Size(720, 25);
-            this.toolStrip2.TabIndex = 533;
-            this.toolStrip2.Text = "toolStrip2";
+            this.gridControlCustomerHist.DataSource = this.cUSTHISTBindingSource;
+            resources.ApplyResources(this.gridControlCustomerHist, "gridControlCustomerHist");
+            this.gridControlCustomerHist.MainView = this.gridViewCustomerHistory;
+            this.gridControlCustomerHist.MenuManager = this.toolbarFormManager1;
+            this.gridControlCustomerHist.Name = "gridControlCustomerHist";
+            this.gridControlCustomerHist.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridViewCustomerHistory});
             // 
-            // toolStripButton3
+            // gridViewCustomerHistory
             // 
-            this.toolStripButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(148, 22);
-            this.toolStripButton3.Text = "&Print Customer History";
-            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
+            this.gridViewCustomerHistory.Appearance.ColumnFilterButton.Options.UseFont = true;
+            this.gridViewCustomerHistory.Appearance.EvenRow.BackColor = System.Drawing.Color.Bisque;
+            this.gridViewCustomerHistory.Appearance.EvenRow.Options.UseBackColor = true;
+            this.gridViewCustomerHistory.Appearance.EvenRow.Options.UseFont = true;
+            this.gridViewCustomerHistory.Appearance.EvenRow.Options.UseForeColor = true;
+            this.gridViewCustomerHistory.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.gridViewCustomerHistory.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.gridViewCustomerHistory.Appearance.HeaderPanel.TextOptions.Trimming = DevExpress.Utils.Trimming.None;
+            this.gridViewCustomerHistory.Appearance.HeaderPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Top;
+            this.gridViewCustomerHistory.Appearance.HeaderPanel.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.gridViewCustomerHistory.Appearance.OddRow.BackColor = System.Drawing.Color.Transparent;
+            this.gridViewCustomerHistory.Appearance.OddRow.Options.UseBackColor = true;
+            this.gridViewCustomerHistory.Appearance.OddRow.Options.UseFont = true;
+            this.gridViewCustomerHistory.Appearance.OddRow.Options.UseForeColor = true;
+            this.gridViewCustomerHistory.AppearancePrint.HeaderPanel.Options.UseTextOptions = true;
+            this.gridViewCustomerHistory.AppearancePrint.HeaderPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Top;
+            this.gridViewCustomerHistory.AppearancePrint.HeaderPanel.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.gridViewCustomerHistory.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colCUSTHIST_PAY_DATE,
+            this.colCUSTHIST_ACT_STAT,
+            this.colCUSTHIST_PAYMENT_RCV,
+            this.colCUSTHIST_BALANCE,
+            this.colCUSTHIST_CONTRACT_STATUS,
+            this.colCUSTHIST_LATE_CHARGE_BAL,
+            this.colPartialPayment,
+            this.colCUSTHIST_PAID_THRU,
+            this.colCUSTHIST_PAY_REM_1,
+            this.colCUSTHIST_PAYMENT_TYPE,
+            this.colCUSTHIST_PAYMENT_CODE,
+            this.colCUSTHIST_THRU_UD});
+            this.gridViewCustomerHistory.GridControl = this.gridControlCustomerHist;
+            this.gridViewCustomerHistory.HorzScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Never;
+            this.gridViewCustomerHistory.Name = "gridViewCustomerHistory";
+            this.gridViewCustomerHistory.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
+            this.gridViewCustomerHistory.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.False;
+            this.gridViewCustomerHistory.OptionsBehavior.Editable = false;
+            this.gridViewCustomerHistory.OptionsBehavior.ReadOnly = true;
+            this.gridViewCustomerHistory.OptionsBehavior.SummariesIgnoreNullValues = true;
+            this.gridViewCustomerHistory.OptionsView.ColumnAutoWidth = false;
+            this.gridViewCustomerHistory.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
+            this.gridViewCustomerHistory.OptionsView.EnableAppearanceEvenRow = true;
+            this.gridViewCustomerHistory.OptionsView.EnableAppearanceOddRow = true;
+            this.gridViewCustomerHistory.OptionsView.ShowGroupPanel = false;
             // 
-            // toolStripButton2
+            // colCUSTHIST_PAY_DATE
             // 
-            this.toolStripButton2.BackColor = System.Drawing.Color.Pink;
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(149, 22);
-            this.toolStripButton2.Text = "Print Customer &Receipt";
-            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
+            this.colCUSTHIST_PAY_DATE.AppearanceCell.Font = ((System.Drawing.Font)(resources.GetObject("colCUSTHIST_PAY_DATE.AppearanceCell.Font")));
+            this.colCUSTHIST_PAY_DATE.AppearanceCell.Options.UseFont = true;
+            this.colCUSTHIST_PAY_DATE.AppearanceCell.Options.UseTextOptions = true;
+            this.colCUSTHIST_PAY_DATE.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.colCUSTHIST_PAY_DATE.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.colCUSTHIST_PAY_DATE.AppearanceHeader.Font = ((System.Drawing.Font)(resources.GetObject("colCUSTHIST_PAY_DATE.AppearanceHeader.Font")));
+            this.colCUSTHIST_PAY_DATE.AppearanceHeader.Options.UseFont = true;
+            this.colCUSTHIST_PAY_DATE.AppearanceHeader.Options.UseTextOptions = true;
+            this.colCUSTHIST_PAY_DATE.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.colCUSTHIST_PAY_DATE.AppearanceHeader.TextOptions.Trimming = DevExpress.Utils.Trimming.None;
+            this.colCUSTHIST_PAY_DATE.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.colCUSTHIST_PAY_DATE.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            resources.ApplyResources(this.colCUSTHIST_PAY_DATE, "colCUSTHIST_PAY_DATE");
+            this.colCUSTHIST_PAY_DATE.FieldName = "CUSTHIST_PAY_DATE";
+            this.colCUSTHIST_PAY_DATE.Name = "colCUSTHIST_PAY_DATE";
+            this.colCUSTHIST_PAY_DATE.OptionsColumn.AllowEdit = false;
             // 
-            // toolStripButtonAmort
+            // colCUSTHIST_ACT_STAT
             // 
-            this.toolStripButtonAmort.BackColor = System.Drawing.Color.MediumPurple;
-            this.toolStripButtonAmort.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonAmort.Image")));
-            this.toolStripButtonAmort.ImageTransparentColor = System.Drawing.Color.MediumPurple;
-            this.toolStripButtonAmort.Name = "toolStripButtonAmort";
-            this.toolStripButtonAmort.Size = new System.Drawing.Size(175, 22);
-            this.toolStripButtonAmort.Text = "Print &Amortization Schedule";
-            this.toolStripButtonAmort.Click += new System.EventHandler(this.toolStripButtonAmort_Click);
+            this.colCUSTHIST_ACT_STAT.AppearanceCell.Font = ((System.Drawing.Font)(resources.GetObject("colCUSTHIST_ACT_STAT.AppearanceCell.Font")));
+            this.colCUSTHIST_ACT_STAT.AppearanceCell.Options.UseFont = true;
+            this.colCUSTHIST_ACT_STAT.AppearanceHeader.Font = ((System.Drawing.Font)(resources.GetObject("colCUSTHIST_ACT_STAT.AppearanceHeader.Font")));
+            this.colCUSTHIST_ACT_STAT.AppearanceHeader.Options.UseFont = true;
+            this.colCUSTHIST_ACT_STAT.AppearanceHeader.Options.UseTextOptions = true;
+            this.colCUSTHIST_ACT_STAT.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.colCUSTHIST_ACT_STAT.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.colCUSTHIST_ACT_STAT.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            resources.ApplyResources(this.colCUSTHIST_ACT_STAT, "colCUSTHIST_ACT_STAT");
+            this.colCUSTHIST_ACT_STAT.FieldName = "CUSTHIST_ACT_STAT";
+            this.colCUSTHIST_ACT_STAT.Name = "colCUSTHIST_ACT_STAT";
             // 
-            // toolStripButtonTVExcel
+            // colCUSTHIST_PAYMENT_RCV
             // 
-            this.toolStripButtonTVExcel.BackColor = System.Drawing.Color.DarkTurquoise;
-            this.toolStripButtonTVExcel.Image = global::IAC2021SQL.Properties.Resources.ExcelWorksheetView_16x_32;
-            this.toolStripButtonTVExcel.ImageTransparentColor = System.Drawing.Color.DarkTurquoise;
-            this.toolStripButtonTVExcel.Name = "toolStripButtonTVExcel";
-            this.toolStripButtonTVExcel.Size = new System.Drawing.Size(119, 22);
-            this.toolStripButtonTVExcel.Text = "&TimeValuetoExcel";
-            this.toolStripButtonTVExcel.Click += new System.EventHandler(this.toolStripButtonTVExcel_Click);
+            this.colCUSTHIST_PAYMENT_RCV.AppearanceCell.Font = ((System.Drawing.Font)(resources.GetObject("colCUSTHIST_PAYMENT_RCV.AppearanceCell.Font")));
+            this.colCUSTHIST_PAYMENT_RCV.AppearanceCell.Options.UseFont = true;
+            this.colCUSTHIST_PAYMENT_RCV.AppearanceHeader.Font = ((System.Drawing.Font)(resources.GetObject("colCUSTHIST_PAYMENT_RCV.AppearanceHeader.Font")));
+            this.colCUSTHIST_PAYMENT_RCV.AppearanceHeader.Options.UseFont = true;
+            this.colCUSTHIST_PAYMENT_RCV.AppearanceHeader.Options.UseTextOptions = true;
+            this.colCUSTHIST_PAYMENT_RCV.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.colCUSTHIST_PAYMENT_RCV.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.colCUSTHIST_PAYMENT_RCV.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            resources.ApplyResources(this.colCUSTHIST_PAYMENT_RCV, "colCUSTHIST_PAYMENT_RCV");
+            this.colCUSTHIST_PAYMENT_RCV.DisplayFormat.FormatString = "$#.00;($#.00); ";
+            this.colCUSTHIST_PAYMENT_RCV.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colCUSTHIST_PAYMENT_RCV.FieldName = "CUSTHIST_PAYMENT_RCV";
+            this.colCUSTHIST_PAYMENT_RCV.Name = "colCUSTHIST_PAYMENT_RCV";
             // 
-            // toolStripButtonCalcBuyout
+            // colCUSTHIST_BALANCE
             // 
-            this.toolStripButtonCalcBuyout.BackColor = System.Drawing.Color.Yellow;
-            this.toolStripButtonCalcBuyout.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonCalcBuyout.Image")));
-            this.toolStripButtonCalcBuyout.ImageTransparentColor = System.Drawing.Color.MediumPurple;
-            this.toolStripButtonCalcBuyout.Name = "toolStripButtonCalcBuyout";
-            this.toolStripButtonCalcBuyout.Size = new System.Drawing.Size(117, 22);
-            this.toolStripButtonCalcBuyout.Text = "&Calculate Buyout";
-            this.toolStripButtonCalcBuyout.Click += new System.EventHandler(this.toolStripButtonCalcBuyout_Click);
+            this.colCUSTHIST_BALANCE.AppearanceCell.Font = ((System.Drawing.Font)(resources.GetObject("colCUSTHIST_BALANCE.AppearanceCell.Font")));
+            this.colCUSTHIST_BALANCE.AppearanceCell.Options.UseFont = true;
+            this.colCUSTHIST_BALANCE.AppearanceHeader.Font = ((System.Drawing.Font)(resources.GetObject("colCUSTHIST_BALANCE.AppearanceHeader.Font")));
+            this.colCUSTHIST_BALANCE.AppearanceHeader.Options.UseFont = true;
+            this.colCUSTHIST_BALANCE.AppearanceHeader.Options.UseTextOptions = true;
+            this.colCUSTHIST_BALANCE.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.colCUSTHIST_BALANCE.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.colCUSTHIST_BALANCE.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            resources.ApplyResources(this.colCUSTHIST_BALANCE, "colCUSTHIST_BALANCE");
+            this.colCUSTHIST_BALANCE.DisplayFormat.FormatString = "$#.00;($#.00); ";
+            this.colCUSTHIST_BALANCE.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colCUSTHIST_BALANCE.FieldName = "CUSTHIST_BALANCE";
+            this.colCUSTHIST_BALANCE.Name = "colCUSTHIST_BALANCE";
+            // 
+            // colCUSTHIST_CONTRACT_STATUS
+            // 
+            this.colCUSTHIST_CONTRACT_STATUS.AppearanceCell.Font = ((System.Drawing.Font)(resources.GetObject("colCUSTHIST_CONTRACT_STATUS.AppearanceCell.Font")));
+            this.colCUSTHIST_CONTRACT_STATUS.AppearanceCell.Options.UseFont = true;
+            this.colCUSTHIST_CONTRACT_STATUS.AppearanceHeader.Font = ((System.Drawing.Font)(resources.GetObject("colCUSTHIST_CONTRACT_STATUS.AppearanceHeader.Font")));
+            this.colCUSTHIST_CONTRACT_STATUS.AppearanceHeader.Options.UseFont = true;
+            this.colCUSTHIST_CONTRACT_STATUS.AppearanceHeader.Options.UseTextOptions = true;
+            this.colCUSTHIST_CONTRACT_STATUS.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.colCUSTHIST_CONTRACT_STATUS.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.colCUSTHIST_CONTRACT_STATUS.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            resources.ApplyResources(this.colCUSTHIST_CONTRACT_STATUS, "colCUSTHIST_CONTRACT_STATUS");
+            this.colCUSTHIST_CONTRACT_STATUS.DisplayFormat.FormatString = "$#.00;($#.00); ";
+            this.colCUSTHIST_CONTRACT_STATUS.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colCUSTHIST_CONTRACT_STATUS.FieldName = "CUSTHIST_CONTRACT_STATUS";
+            this.colCUSTHIST_CONTRACT_STATUS.Name = "colCUSTHIST_CONTRACT_STATUS";
+            // 
+            // colCUSTHIST_LATE_CHARGE_BAL
+            // 
+            this.colCUSTHIST_LATE_CHARGE_BAL.AppearanceCell.Font = ((System.Drawing.Font)(resources.GetObject("colCUSTHIST_LATE_CHARGE_BAL.AppearanceCell.Font")));
+            this.colCUSTHIST_LATE_CHARGE_BAL.AppearanceCell.Options.UseFont = true;
+            this.colCUSTHIST_LATE_CHARGE_BAL.AppearanceHeader.Font = ((System.Drawing.Font)(resources.GetObject("colCUSTHIST_LATE_CHARGE_BAL.AppearanceHeader.Font")));
+            this.colCUSTHIST_LATE_CHARGE_BAL.AppearanceHeader.Options.UseFont = true;
+            this.colCUSTHIST_LATE_CHARGE_BAL.AppearanceHeader.Options.UseTextOptions = true;
+            this.colCUSTHIST_LATE_CHARGE_BAL.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.colCUSTHIST_LATE_CHARGE_BAL.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.colCUSTHIST_LATE_CHARGE_BAL.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            resources.ApplyResources(this.colCUSTHIST_LATE_CHARGE_BAL, "colCUSTHIST_LATE_CHARGE_BAL");
+            this.colCUSTHIST_LATE_CHARGE_BAL.DisplayFormat.FormatString = "$#.00;($#.00); ";
+            this.colCUSTHIST_LATE_CHARGE_BAL.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colCUSTHIST_LATE_CHARGE_BAL.FieldName = "CUSTHIST_LATE_CHARGE_BAL";
+            this.colCUSTHIST_LATE_CHARGE_BAL.Name = "colCUSTHIST_LATE_CHARGE_BAL";
+            // 
+            // colPartialPayment
+            // 
+            this.colPartialPayment.AppearanceCell.Font = ((System.Drawing.Font)(resources.GetObject("colPartialPayment.AppearanceCell.Font")));
+            this.colPartialPayment.AppearanceCell.Options.UseFont = true;
+            this.colPartialPayment.AppearanceHeader.Font = ((System.Drawing.Font)(resources.GetObject("colPartialPayment.AppearanceHeader.Font")));
+            this.colPartialPayment.AppearanceHeader.Options.UseFont = true;
+            this.colPartialPayment.AppearanceHeader.Options.UseTextOptions = true;
+            this.colPartialPayment.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.colPartialPayment.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.colPartialPayment.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            resources.ApplyResources(this.colPartialPayment, "colPartialPayment");
+            this.colPartialPayment.DisplayFormat.FormatString = "$#.00;($#.00); ";
+            this.colPartialPayment.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colPartialPayment.FieldName = "PartialPayment";
+            this.colPartialPayment.Name = "colPartialPayment";
+            // 
+            // colCUSTHIST_PAID_THRU
+            // 
+            this.colCUSTHIST_PAID_THRU.AppearanceCell.Font = ((System.Drawing.Font)(resources.GetObject("colCUSTHIST_PAID_THRU.AppearanceCell.Font")));
+            this.colCUSTHIST_PAID_THRU.AppearanceCell.Options.UseFont = true;
+            this.colCUSTHIST_PAID_THRU.AppearanceHeader.Font = ((System.Drawing.Font)(resources.GetObject("colCUSTHIST_PAID_THRU.AppearanceHeader.Font")));
+            this.colCUSTHIST_PAID_THRU.AppearanceHeader.Options.UseFont = true;
+            this.colCUSTHIST_PAID_THRU.AppearanceHeader.Options.UseTextOptions = true;
+            this.colCUSTHIST_PAID_THRU.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.colCUSTHIST_PAID_THRU.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.colCUSTHIST_PAID_THRU.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            resources.ApplyResources(this.colCUSTHIST_PAID_THRU, "colCUSTHIST_PAID_THRU");
+            this.colCUSTHIST_PAID_THRU.DisplayFormat.FormatString = "00/00";
+            this.colCUSTHIST_PAID_THRU.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
+            this.colCUSTHIST_PAID_THRU.FieldName = "CUSTHIST_PAID_THRU";
+            this.colCUSTHIST_PAID_THRU.Name = "colCUSTHIST_PAID_THRU";
+            // 
+            // colCUSTHIST_PAY_REM_1
+            // 
+            this.colCUSTHIST_PAY_REM_1.AppearanceCell.Font = ((System.Drawing.Font)(resources.GetObject("colCUSTHIST_PAY_REM_1.AppearanceCell.Font")));
+            this.colCUSTHIST_PAY_REM_1.AppearanceCell.Options.UseFont = true;
+            this.colCUSTHIST_PAY_REM_1.AppearanceHeader.Font = ((System.Drawing.Font)(resources.GetObject("colCUSTHIST_PAY_REM_1.AppearanceHeader.Font")));
+            this.colCUSTHIST_PAY_REM_1.AppearanceHeader.Options.UseFont = true;
+            this.colCUSTHIST_PAY_REM_1.AppearanceHeader.Options.UseTextOptions = true;
+            this.colCUSTHIST_PAY_REM_1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.colCUSTHIST_PAY_REM_1.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.colCUSTHIST_PAY_REM_1.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            resources.ApplyResources(this.colCUSTHIST_PAY_REM_1, "colCUSTHIST_PAY_REM_1");
+            this.colCUSTHIST_PAY_REM_1.FieldName = "CUSTHIST_PAY_REM_1";
+            this.colCUSTHIST_PAY_REM_1.Name = "colCUSTHIST_PAY_REM_1";
+            // 
+            // colCUSTHIST_PAYMENT_TYPE
+            // 
+            this.colCUSTHIST_PAYMENT_TYPE.AppearanceCell.Font = ((System.Drawing.Font)(resources.GetObject("colCUSTHIST_PAYMENT_TYPE.AppearanceCell.Font")));
+            this.colCUSTHIST_PAYMENT_TYPE.AppearanceCell.Options.UseFont = true;
+            this.colCUSTHIST_PAYMENT_TYPE.AppearanceHeader.Font = ((System.Drawing.Font)(resources.GetObject("colCUSTHIST_PAYMENT_TYPE.AppearanceHeader.Font")));
+            this.colCUSTHIST_PAYMENT_TYPE.AppearanceHeader.Options.UseFont = true;
+            this.colCUSTHIST_PAYMENT_TYPE.AppearanceHeader.Options.UseTextOptions = true;
+            this.colCUSTHIST_PAYMENT_TYPE.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.colCUSTHIST_PAYMENT_TYPE.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.colCUSTHIST_PAYMENT_TYPE.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            resources.ApplyResources(this.colCUSTHIST_PAYMENT_TYPE, "colCUSTHIST_PAYMENT_TYPE");
+            this.colCUSTHIST_PAYMENT_TYPE.FieldName = "CUSTHIST_PAYMENT_TYPE";
+            this.colCUSTHIST_PAYMENT_TYPE.Name = "colCUSTHIST_PAYMENT_TYPE";
+            // 
+            // colCUSTHIST_PAYMENT_CODE
+            // 
+            this.colCUSTHIST_PAYMENT_CODE.AppearanceCell.Font = ((System.Drawing.Font)(resources.GetObject("colCUSTHIST_PAYMENT_CODE.AppearanceCell.Font")));
+            this.colCUSTHIST_PAYMENT_CODE.AppearanceCell.Options.UseFont = true;
+            this.colCUSTHIST_PAYMENT_CODE.AppearanceHeader.Font = ((System.Drawing.Font)(resources.GetObject("colCUSTHIST_PAYMENT_CODE.AppearanceHeader.Font")));
+            this.colCUSTHIST_PAYMENT_CODE.AppearanceHeader.Options.UseFont = true;
+            this.colCUSTHIST_PAYMENT_CODE.AppearanceHeader.Options.UseTextOptions = true;
+            this.colCUSTHIST_PAYMENT_CODE.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.colCUSTHIST_PAYMENT_CODE.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.colCUSTHIST_PAYMENT_CODE.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            resources.ApplyResources(this.colCUSTHIST_PAYMENT_CODE, "colCUSTHIST_PAYMENT_CODE");
+            this.colCUSTHIST_PAYMENT_CODE.FieldName = "CUSTHIST_PAYMENT_CODE";
+            this.colCUSTHIST_PAYMENT_CODE.Name = "colCUSTHIST_PAYMENT_CODE";
+            // 
+            // colCUSTHIST_THRU_UD
+            // 
+            this.colCUSTHIST_THRU_UD.AppearanceCell.Font = ((System.Drawing.Font)(resources.GetObject("colCUSTHIST_THRU_UD.AppearanceCell.Font")));
+            this.colCUSTHIST_THRU_UD.AppearanceCell.Options.UseFont = true;
+            this.colCUSTHIST_THRU_UD.AppearanceCell.Options.UseTextOptions = true;
+            this.colCUSTHIST_THRU_UD.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.colCUSTHIST_THRU_UD.AppearanceCell.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.colCUSTHIST_THRU_UD.AppearanceHeader.Font = ((System.Drawing.Font)(resources.GetObject("colCUSTHIST_THRU_UD.AppearanceHeader.Font")));
+            this.colCUSTHIST_THRU_UD.AppearanceHeader.Options.UseFont = true;
+            this.colCUSTHIST_THRU_UD.AppearanceHeader.Options.UseTextOptions = true;
+            this.colCUSTHIST_THRU_UD.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.colCUSTHIST_THRU_UD.AppearanceHeader.TextOptions.Trimming = DevExpress.Utils.Trimming.None;
+            this.colCUSTHIST_THRU_UD.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.colCUSTHIST_THRU_UD.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            resources.ApplyResources(this.colCUSTHIST_THRU_UD, "colCUSTHIST_THRU_UD");
+            this.colCUSTHIST_THRU_UD.DisplayFormat.FormatString = "#;#; ";
+            this.colCUSTHIST_THRU_UD.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colCUSTHIST_THRU_UD.FieldName = "CUSTHIST_THRU_UD";
+            this.colCUSTHIST_THRU_UD.Name = "colCUSTHIST_THRU_UD";
             // 
             // xtraTabPageComments
             // 
-            this.xtraTabPageComments.Controls.Add(this.cOMMENTGridControl);
-            this.xtraTabPageComments.Controls.Add(this.groupBox7);
+            this.xtraTabPageComments.Controls.Add(this.groupBox19);
             this.xtraTabPageComments.Name = "xtraTabPageComments";
-            this.xtraTabPageComments.Size = new System.Drawing.Size(1230, 612);
-            this.xtraTabPageComments.Text = "Customer Comments";
+            resources.ApplyResources(this.xtraTabPageComments, "xtraTabPageComments");
+            this.xtraTabPageComments.Click += new System.EventHandler(this.tabFormControl1_Click);
+            // 
+            // groupBox19
+            // 
+            this.groupBox19.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.groupBox19.Controls.Add(this.cOMMENTGridControl);
+            this.groupBox19.Controls.Add(this.groupBox7);
+            resources.ApplyResources(this.groupBox19, "groupBox19");
+            this.groupBox19.Name = "groupBox19";
+            this.groupBox19.TabStop = false;
             // 
             // cOMMENTGridControl
             // 
             this.cOMMENTGridControl.DataSource = this.cOMMENTBindingSource;
-            this.cOMMENTGridControl.Location = new System.Drawing.Point(9, 107);
+            resources.ApplyResources(this.cOMMENTGridControl, "cOMMENTGridControl");
             this.cOMMENTGridControl.MainView = this.cOMMENTgridView;
             this.cOMMENTGridControl.Name = "cOMMENTGridControl";
             this.cOMMENTGridControl.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
@@ -8514,23 +6342,21 @@
             this.repositoryItemTextEdit1,
             this.repositoryItemLookUpEditType,
             this.repositoryItemMemoEdit1});
-            this.cOMMENTGridControl.Size = new System.Drawing.Size(1214, 471);
-            this.cOMMENTGridControl.TabIndex = 612;
             this.cOMMENTGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.cOMMENTgridView});
-            this.cOMMENTGridControl.DataSourceChanged += new System.EventHandler(this.cOMMENTGridView_DataSourceChanged);
             // 
             // cOMMENTgridView
             // 
+            this.cOMMENTgridView.Appearance.Empty.Options.UseFont = true;
             this.cOMMENTgridView.Appearance.EvenRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.cOMMENTgridView.Appearance.EvenRow.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cOMMENTgridView.Appearance.EvenRow.Options.UseBackColor = true;
             this.cOMMENTgridView.Appearance.EvenRow.Options.UseFont = true;
             this.cOMMENTgridView.Appearance.EvenRow.Options.UseForeColor = true;
-            this.cOMMENTgridView.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cOMMENTgridView.Appearance.OddRow.Options.UseBackColor = true;
+            this.cOMMENTgridView.Appearance.OddRow.Options.UseFont = true;
             this.cOMMENTgridView.Appearance.Row.Options.UseFont = true;
-            this.cOMMENTgridView.Appearance.SelectedRow.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cOMMENTgridView.Appearance.SelectedRow.Options.UseFont = true;
+            this.cOMMENTgridView.Appearance.TopNewRow.Options.UseFont = true;
             this.cOMMENTgridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colDATE,
             this.colThumb,
@@ -8560,43 +6386,40 @@
             // 
             // colDATE
             // 
-            this.colDATE.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colDATE.AppearanceCell.Font = ((System.Drawing.Font)(resources.GetObject("colDATE.AppearanceCell.Font")));
             this.colDATE.AppearanceCell.Options.UseFont = true;
             this.colDATE.AppearanceCell.Options.UseTextOptions = true;
             this.colDATE.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.colDATE.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colDATE.AppearanceHeader.Font = ((System.Drawing.Font)(resources.GetObject("colDATE.AppearanceHeader.Font")));
             this.colDATE.AppearanceHeader.Options.UseFont = true;
-            this.colDATE.Caption = "DATE";
+            resources.ApplyResources(this.colDATE, "colDATE");
             this.colDATE.ColumnEdit = this.repositoryItemDateEdit1;
             this.colDATE.FieldName = "COMMENT_DATE";
             this.colDATE.MinWidth = 10;
             this.colDATE.Name = "colDATE";
             this.colDATE.OptionsColumn.AllowEdit = false;
-            this.colDATE.Visible = true;
-            this.colDATE.VisibleIndex = 0;
-            this.colDATE.Width = 96;
             // 
             // repositoryItemDateEdit1
             // 
-            this.repositoryItemDateEdit1.AutoHeight = false;
+            resources.ApplyResources(this.repositoryItemDateEdit1, "repositoryItemDateEdit1");
             this.repositoryItemDateEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("repositoryItemDateEdit1.Buttons"))))});
             this.repositoryItemDateEdit1.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("repositoryItemDateEdit1.CalendarTimeProperties.Buttons"))))});
             this.repositoryItemDateEdit1.Name = "repositoryItemDateEdit1";
             // 
             // colThumb
             // 
-            this.colThumb.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colThumb.AppearanceCell.Font = ((System.Drawing.Font)(resources.GetObject("colThumb.AppearanceCell.Font")));
             this.colThumb.AppearanceCell.Options.UseFont = true;
-            this.colThumb.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colThumb.AppearanceHeader.Font = ((System.Drawing.Font)(resources.GetObject("colThumb.AppearanceHeader.Font")));
             this.colThumb.AppearanceHeader.Options.UseFont = true;
             this.colThumb.AppearanceHeader.Options.UseImage = true;
             this.colThumb.ColumnEdit = this.repositoryItemPictureEdit1;
             this.colThumb.FieldName = "colThumb";
-            this.colThumb.ImageOptions.Alignment = System.Drawing.StringAlignment.Center;
+            this.colThumb.ImageOptions.Alignment = ((System.Drawing.StringAlignment)(resources.GetObject("colThumb.ImageOptions.Alignment")));
             this.colThumb.ImageOptions.Image = global::IAC2021SQL.Properties.Resources.PaperClip;
-            this.colThumb.ImageOptions.ImageIndex = 1;
+            this.colThumb.ImageOptions.ImageIndex = ((int)(resources.GetObject("colThumb.ImageOptions.ImageIndex")));
             this.colThumb.MinWidth = 10;
             this.colThumb.Name = "colThumb";
             this.colThumb.OptionsColumn.AllowEdit = false;
@@ -8604,88 +6427,80 @@
             this.colThumb.OptionsColumn.ShowCaption = false;
             this.colThumb.ShowUnboundExpressionMenu = true;
             this.colThumb.UnboundDataType = typeof(object);
-            this.colThumb.Visible = true;
-            this.colThumb.VisibleIndex = 1;
-            this.colThumb.Width = 49;
+            resources.ApplyResources(this.colThumb, "colThumb");
             // 
             // repositoryItemPictureEdit1
             // 
             this.repositoryItemPictureEdit1.Name = "repositoryItemPictureEdit1";
-            this.repositoryItemPictureEdit1.NullText = " ";
+            resources.ApplyResources(this.repositoryItemPictureEdit1, "repositoryItemPictureEdit1");
             // 
             // colLetterPath
             // 
+            this.colLetterPath.AppearanceCell.Font = ((System.Drawing.Font)(resources.GetObject("colLetterPath.AppearanceCell.Font")));
+            this.colLetterPath.AppearanceCell.Options.UseFont = true;
             this.colLetterPath.FieldName = "LetterPath";
             this.colLetterPath.Name = "colLetterPath";
             this.colLetterPath.OptionsColumn.AllowEdit = false;
-            this.colLetterPath.Width = 20;
+            resources.ApplyResources(this.colLetterPath, "colLetterPath");
             // 
             // colSMSPath
             // 
+            this.colSMSPath.AppearanceCell.Font = ((System.Drawing.Font)(resources.GetObject("colSMSPath.AppearanceCell.Font")));
+            this.colSMSPath.AppearanceCell.Options.UseFont = true;
             this.colSMSPath.FieldName = "SMSPath";
             this.colSMSPath.Name = "colSMSPath";
             this.colSMSPath.OptionsColumn.AllowEdit = false;
-            this.colSMSPath.Width = 20;
+            resources.ApplyResources(this.colSMSPath, "colSMSPath");
             // 
             // colTYPE
             // 
-            this.colTYPE.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colTYPE.AppearanceCell.Font = ((System.Drawing.Font)(resources.GetObject("colTYPE.AppearanceCell.Font")));
             this.colTYPE.AppearanceCell.Options.UseFont = true;
-            this.colTYPE.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colTYPE.AppearanceHeader.Font = ((System.Drawing.Font)(resources.GetObject("colTYPE.AppearanceHeader.Font")));
             this.colTYPE.AppearanceHeader.Options.UseFont = true;
-            this.colTYPE.Caption = "TYPE";
+            resources.ApplyResources(this.colTYPE, "colTYPE");
             this.colTYPE.ColumnEdit = this.repositoryItemLookUpEditType;
             this.colTYPE.FieldName = "COMMENT_TYPE";
             this.colTYPE.MinWidth = 10;
             this.colTYPE.Name = "colTYPE";
-            this.colTYPE.Visible = true;
-            this.colTYPE.VisibleIndex = 2;
-            this.colTYPE.Width = 71;
             // 
             // repositoryItemLookUpEditType
             // 
-            this.repositoryItemLookUpEditType.AutoHeight = false;
+            resources.ApplyResources(this.repositoryItemLookUpEditType, "repositoryItemLookUpEditType");
             this.repositoryItemLookUpEditType.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("repositoryItemLookUpEditType.Buttons"))))});
             this.repositoryItemLookUpEditType.DataSource = this.commentTypesBindingSource;
             this.repositoryItemLookUpEditType.DisplayMember = "ListItems";
             this.repositoryItemLookUpEditType.KeyMember = "ID";
             this.repositoryItemLookUpEditType.Name = "repositoryItemLookUpEditType";
-            this.repositoryItemLookUpEditType.NullText = " ";
             this.repositoryItemLookUpEditType.ValueMember = "Type";
             // 
             // colCOMMENT_USERID
             // 
-            this.colCOMMENT_USERID.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colCOMMENT_USERID.AppearanceCell.Font = ((System.Drawing.Font)(resources.GetObject("colCOMMENT_USERID.AppearanceCell.Font")));
             this.colCOMMENT_USERID.AppearanceCell.Options.UseFont = true;
             this.colCOMMENT_USERID.AppearanceCell.Options.UseTextOptions = true;
             this.colCOMMENT_USERID.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colCOMMENT_USERID.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colCOMMENT_USERID.AppearanceHeader.Font = ((System.Drawing.Font)(resources.GetObject("colCOMMENT_USERID.AppearanceHeader.Font")));
             this.colCOMMENT_USERID.AppearanceHeader.Options.UseFont = true;
-            this.colCOMMENT_USERID.Caption = "ID";
+            resources.ApplyResources(this.colCOMMENT_USERID, "colCOMMENT_USERID");
             this.colCOMMENT_USERID.FieldName = "COMMENT_USERID";
             this.colCOMMENT_USERID.MinWidth = 10;
             this.colCOMMENT_USERID.Name = "colCOMMENT_USERID";
             this.colCOMMENT_USERID.OptionsColumn.AllowEdit = false;
-            this.colCOMMENT_USERID.Visible = true;
-            this.colCOMMENT_USERID.VisibleIndex = 3;
-            this.colCOMMENT_USERID.Width = 42;
             // 
             // colCOMMENT
             // 
-            this.colCOMMENT.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colCOMMENT.AppearanceCell.Font = ((System.Drawing.Font)(resources.GetObject("colCOMMENT.AppearanceCell.Font")));
             this.colCOMMENT.AppearanceCell.Options.UseFont = true;
-            this.colCOMMENT.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colCOMMENT.AppearanceHeader.Font = ((System.Drawing.Font)(resources.GetObject("colCOMMENT.AppearanceHeader.Font")));
             this.colCOMMENT.AppearanceHeader.Options.UseFont = true;
-            this.colCOMMENT.Caption = "COMMENT";
+            resources.ApplyResources(this.colCOMMENT, "colCOMMENT");
             this.colCOMMENT.ColumnEdit = this.repositoryItemMemoEdit1;
             this.colCOMMENT.FieldName = "COMMENT_WHOLE";
             this.colCOMMENT.FilterMode = DevExpress.XtraGrid.ColumnFilterMode.DisplayText;
             this.colCOMMENT.MinWidth = 100;
             this.colCOMMENT.Name = "colCOMMENT";
-            this.colCOMMENT.Visible = true;
-            this.colCOMMENT.VisibleIndex = 4;
-            this.colCOMMENT.Width = 931;
             // 
             // repositoryItemMemoEdit1
             // 
@@ -8693,54 +6508,68 @@
             // 
             // colCOMMENT_NO
             // 
+            this.colCOMMENT_NO.AppearanceCell.Font = ((System.Drawing.Font)(resources.GetObject("colCOMMENT_NO.AppearanceCell.Font")));
+            this.colCOMMENT_NO.AppearanceCell.Options.UseFont = true;
             this.colCOMMENT_NO.FieldName = "COMMENT_NO";
             this.colCOMMENT_NO.Name = "colCOMMENT_NO";
             this.colCOMMENT_NO.OptionsColumn.AllowEdit = false;
-            this.colCOMMENT_NO.Width = 20;
+            resources.ApplyResources(this.colCOMMENT_NO, "colCOMMENT_NO");
             // 
             // colCOMMENT_SEQ_NO
             // 
+            this.colCOMMENT_SEQ_NO.AppearanceCell.Font = ((System.Drawing.Font)(resources.GetObject("colCOMMENT_SEQ_NO.AppearanceCell.Font")));
+            this.colCOMMENT_SEQ_NO.AppearanceCell.Options.UseFont = true;
             this.colCOMMENT_SEQ_NO.FieldName = "COMMENT_SEQ_NO";
             this.colCOMMENT_SEQ_NO.Name = "colCOMMENT_SEQ_NO";
             this.colCOMMENT_SEQ_NO.OptionsColumn.AllowEdit = false;
-            this.colCOMMENT_SEQ_NO.Width = 20;
+            resources.ApplyResources(this.colCOMMENT_SEQ_NO, "colCOMMENT_SEQ_NO");
             // 
             // colCOMMENT_ID_TYPE
             // 
+            this.colCOMMENT_ID_TYPE.AppearanceCell.Font = ((System.Drawing.Font)(resources.GetObject("colCOMMENT_ID_TYPE.AppearanceCell.Font")));
+            this.colCOMMENT_ID_TYPE.AppearanceCell.Options.UseFont = true;
             this.colCOMMENT_ID_TYPE.FieldName = "COMMENT_ID_TYPE";
             this.colCOMMENT_ID_TYPE.Name = "colCOMMENT_ID_TYPE";
             this.colCOMMENT_ID_TYPE.OptionsColumn.AllowEdit = false;
-            this.colCOMMENT_ID_TYPE.Width = 21;
+            resources.ApplyResources(this.colCOMMENT_ID_TYPE, "colCOMMENT_ID_TYPE");
             // 
             // colCOMMENT_DEALER
             // 
+            this.colCOMMENT_DEALER.AppearanceCell.Font = ((System.Drawing.Font)(resources.GetObject("colCOMMENT_DEALER.AppearanceCell.Font")));
+            this.colCOMMENT_DEALER.AppearanceCell.Options.UseFont = true;
             this.colCOMMENT_DEALER.FieldName = "COMMENT_DEALER";
             this.colCOMMENT_DEALER.Name = "colCOMMENT_DEALER";
             this.colCOMMENT_DEALER.OptionsColumn.AllowEdit = false;
-            this.colCOMMENT_DEALER.Width = 21;
+            resources.ApplyResources(this.colCOMMENT_DEALER, "colCOMMENT_DEALER");
             // 
             // colCOMMENT_HHMMSS
             // 
+            this.colCOMMENT_HHMMSS.AppearanceCell.Font = ((System.Drawing.Font)(resources.GetObject("colCOMMENT_HHMMSS.AppearanceCell.Font")));
+            this.colCOMMENT_HHMMSS.AppearanceCell.Options.UseFont = true;
             this.colCOMMENT_HHMMSS.FieldName = "COMMENT_HHMMSS";
             this.colCOMMENT_HHMMSS.Name = "colCOMMENT_HHMMSS";
             this.colCOMMENT_HHMMSS.OptionsColumn.AllowEdit = false;
-            this.colCOMMENT_HHMMSS.Width = 21;
+            resources.ApplyResources(this.colCOMMENT_HHMMSS, "colCOMMENT_HHMMSS");
             // 
             // colid1
             // 
+            this.colid1.AppearanceCell.Font = ((System.Drawing.Font)(resources.GetObject("colid1.AppearanceCell.Font")));
+            this.colid1.AppearanceCell.Options.UseFont = true;
             this.colid1.FieldName = "id";
             this.colid1.Name = "colid1";
             // 
             // colImgSort
             // 
+            this.colImgSort.AppearanceCell.Font = ((System.Drawing.Font)(resources.GetObject("colImgSort.AppearanceCell.Font")));
+            this.colImgSort.AppearanceCell.Options.UseFont = true;
             this.colImgSort.FieldName = "ImgSort";
             this.colImgSort.Name = "colImgSort";
             this.colImgSort.OptionsColumn.AllowEdit = false;
-            this.colImgSort.Width = 25;
+            resources.ApplyResources(this.colImgSort, "colImgSort");
             // 
             // repositoryItemTextEdit1
             // 
-            this.repositoryItemTextEdit1.AutoHeight = false;
+            resources.ApplyResources(this.repositoryItemTextEdit1, "repositoryItemTextEdit1");
             this.repositoryItemTextEdit1.Name = "repositoryItemTextEdit1";
             // 
             // groupBox7
@@ -8754,84 +6583,67 @@
             this.groupBox7.Controls.Add(this.textBox11);
             this.groupBox7.Controls.Add(this.txtCommentNo);
             this.groupBox7.Controls.Add(label10);
-            this.groupBox7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox7.Location = new System.Drawing.Point(186, 10);
+            resources.ApplyResources(this.groupBox7, "groupBox7");
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(860, 91);
-            this.groupBox7.TabIndex = 611;
             this.groupBox7.TabStop = false;
             // 
             // textBox23
             // 
             this.textBox23.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBox23.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_SUFFIX", true));
-            this.textBox23.Enabled = false;
-            this.textBox23.Location = new System.Drawing.Point(803, 25);
-            this.textBox23.MaxLength = 3;
+            resources.ApplyResources(this.textBox23, "textBox23");
             this.textBox23.Name = "textBox23";
             this.textBox23.ReadOnly = true;
-            this.textBox23.Size = new System.Drawing.Size(41, 29);
-            this.textBox23.TabIndex = 604;
             // 
             // textBox8
             // 
             this.textBox8.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.DealerListCustbindingSource, "dealer_name", true));
-            this.textBox8.Enabled = false;
-            this.textBox8.Location = new System.Drawing.Point(542, 57);
+            resources.ApplyResources(this.textBox8, "textBox8");
             this.textBox8.Name = "textBox8";
             this.textBox8.ReadOnly = true;
-            this.textBox8.Size = new System.Drawing.Size(302, 29);
-            this.textBox8.TabIndex = 606;
             // 
             // textBox9
             // 
             this.textBox9.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_DEALER", true));
-            this.textBox9.Enabled = false;
-            this.textBox9.Location = new System.Drawing.Point(488, 57);
+            resources.ApplyResources(this.textBox9, "textBox9");
             this.textBox9.Name = "textBox9";
             this.textBox9.ReadOnly = true;
-            this.textBox9.Size = new System.Drawing.Size(52, 29);
-            this.textBox9.TabIndex = 605;
-            this.textBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox10
             // 
             this.textBox10.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_LAST_NAME", true));
-            this.textBox10.Enabled = false;
-            this.textBox10.Location = new System.Drawing.Point(645, 25);
+            resources.ApplyResources(this.textBox10, "textBox10");
             this.textBox10.Name = "textBox10";
             this.textBox10.ReadOnly = true;
-            this.textBox10.Size = new System.Drawing.Size(153, 29);
-            this.textBox10.TabIndex = 603;
             // 
             // textBox11
             // 
             this.textBox11.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_FIRST_NAME", true));
-            this.textBox11.Enabled = false;
-            this.textBox11.Location = new System.Drawing.Point(488, 25);
+            resources.ApplyResources(this.textBox11, "textBox11");
             this.textBox11.Name = "textBox11";
             this.textBox11.ReadOnly = true;
-            this.textBox11.Size = new System.Drawing.Size(153, 29);
-            this.textBox11.TabIndex = 602;
             // 
             // txtCommentNo
             // 
             this.txtCommentNo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_NO", true));
-            this.txtCommentNo.Enabled = false;
-            this.txtCommentNo.Location = new System.Drawing.Point(159, 25);
+            resources.ApplyResources(this.txtCommentNo, "txtCommentNo");
             this.txtCommentNo.Name = "txtCommentNo";
             this.txtCommentNo.ReadOnly = true;
-            this.txtCommentNo.Size = new System.Drawing.Size(67, 29);
-            this.txtCommentNo.TabIndex = 601;
-            this.txtCommentNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // xtraTabPageCustomerFees
             // 
-            this.xtraTabPageCustomerFees.Controls.Add(this.groupBoxFees);
-            this.xtraTabPageCustomerFees.Controls.Add(this.groupBox12);
+            this.xtraTabPageCustomerFees.Controls.Add(this.groupBox20);
             this.xtraTabPageCustomerFees.Name = "xtraTabPageCustomerFees";
-            this.xtraTabPageCustomerFees.Size = new System.Drawing.Size(1230, 612);
-            this.xtraTabPageCustomerFees.Text = "Fees";
+            resources.ApplyResources(this.xtraTabPageCustomerFees, "xtraTabPageCustomerFees");
+            // 
+            // groupBox20
+            // 
+            this.groupBox20.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.groupBox20.Controls.Add(this.groupBoxFees);
+            this.groupBox20.Controls.Add(this.groupBox12);
+            resources.ApplyResources(this.groupBox20, "groupBox20");
+            this.groupBox20.Name = "groupBox20";
+            this.groupBox20.TabStop = false;
             // 
             // groupBoxFees
             // 
@@ -8851,113 +6663,78 @@
             this.groupBoxFees.Controls.Add(this.textBoxStorageFees);
             this.groupBoxFees.Controls.Add(labelRepoFees);
             this.groupBoxFees.Controls.Add(this.textBoxRepoFees);
-            this.groupBoxFees.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxFees.Location = new System.Drawing.Point(330, 208);
+            resources.ApplyResources(this.groupBoxFees, "groupBoxFees");
             this.groupBoxFees.Name = "groupBoxFees";
-            this.groupBoxFees.Size = new System.Drawing.Size(573, 304);
-            this.groupBoxFees.TabIndex = 712;
             this.groupBoxFees.TabStop = false;
             // 
             // textBoxTotalFees
             // 
             this.textBoxTotalFees.AllowDrop = true;
-            this.textBoxTotalFees.Enabled = false;
-            this.textBoxTotalFees.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxTotalFees.Location = new System.Drawing.Point(385, 234);
+            resources.ApplyResources(this.textBoxTotalFees, "textBoxTotalFees");
             this.textBoxTotalFees.Name = "textBoxTotalFees";
-            this.textBoxTotalFees.Size = new System.Drawing.Size(119, 29);
-            this.textBoxTotalFees.TabIndex = 720;
-            this.textBoxTotalFees.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBoxRepairFee5
             // 
             this.textBoxRepairFee5.AllowDrop = true;
             this.textBoxRepairFee5.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.CustomerFeesBindingSource, "Repair5", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "0", "C2"));
-            this.textBoxRepairFee5.Location = new System.Drawing.Point(385, 181);
+            resources.ApplyResources(this.textBoxRepairFee5, "textBoxRepairFee5");
             this.textBoxRepairFee5.Name = "textBoxRepairFee5";
-            this.textBoxRepairFee5.Size = new System.Drawing.Size(119, 29);
-            this.textBoxRepairFee5.TabIndex = 719;
-            this.textBoxRepairFee5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBoxRepairFee4
             // 
             this.textBoxRepairFee4.AllowDrop = true;
             this.textBoxRepairFee4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.CustomerFeesBindingSource, "Repair4", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "C2"));
-            this.textBoxRepairFee4.Location = new System.Drawing.Point(385, 146);
+            resources.ApplyResources(this.textBoxRepairFee4, "textBoxRepairFee4");
             this.textBoxRepairFee4.Name = "textBoxRepairFee4";
-            this.textBoxRepairFee4.Size = new System.Drawing.Size(119, 29);
-            this.textBoxRepairFee4.TabIndex = 718;
-            this.textBoxRepairFee4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBoxRepairFee3
             // 
             this.textBoxRepairFee3.AllowDrop = true;
             this.textBoxRepairFee3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.CustomerFeesBindingSource, "Repair3", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "0", "C2"));
-            this.textBoxRepairFee3.Location = new System.Drawing.Point(385, 111);
+            resources.ApplyResources(this.textBoxRepairFee3, "textBoxRepairFee3");
             this.textBoxRepairFee3.Name = "textBoxRepairFee3";
-            this.textBoxRepairFee3.Size = new System.Drawing.Size(119, 29);
-            this.textBoxRepairFee3.TabIndex = 717;
-            this.textBoxRepairFee3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBoxRepairFee2
             // 
             this.textBoxRepairFee2.AllowDrop = true;
             this.textBoxRepairFee2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.CustomerFeesBindingSource, "Repair2", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "0", "C2"));
-            this.textBoxRepairFee2.Location = new System.Drawing.Point(385, 76);
+            resources.ApplyResources(this.textBoxRepairFee2, "textBoxRepairFee2");
             this.textBoxRepairFee2.Name = "textBoxRepairFee2";
-            this.textBoxRepairFee2.Size = new System.Drawing.Size(119, 29);
-            this.textBoxRepairFee2.TabIndex = 716;
-            this.textBoxRepairFee2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBoxRepairFee1
             // 
             this.textBoxRepairFee1.AllowDrop = true;
             this.textBoxRepairFee1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.CustomerFeesBindingSource, "Repair1", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "0", "C2"));
-            this.textBoxRepairFee1.Location = new System.Drawing.Point(385, 41);
+            resources.ApplyResources(this.textBoxRepairFee1, "textBoxRepairFee1");
             this.textBoxRepairFee1.Name = "textBoxRepairFee1";
-            this.textBoxRepairFee1.Size = new System.Drawing.Size(119, 29);
-            this.textBoxRepairFee1.TabIndex = 715;
-            this.textBoxRepairFee1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBoxResaleFees
             // 
             this.textBoxResaleFees.AllowDrop = true;
             this.textBoxResaleFees.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.CustomerFeesBindingSource, "Resale", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "0", "C2"));
-            this.textBoxResaleFees.Location = new System.Drawing.Point(152, 146);
+            resources.ApplyResources(this.textBoxResaleFees, "textBoxResaleFees");
             this.textBoxResaleFees.Name = "textBoxResaleFees";
-            this.textBoxResaleFees.Size = new System.Drawing.Size(119, 29);
-            this.textBoxResaleFees.TabIndex = 714;
-            this.textBoxResaleFees.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBoxImpoundFees
             // 
             this.textBoxImpoundFees.AllowDrop = true;
             this.textBoxImpoundFees.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.CustomerFeesBindingSource, "Impound", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "0", "C2"));
-            this.textBoxImpoundFees.Location = new System.Drawing.Point(152, 111);
+            resources.ApplyResources(this.textBoxImpoundFees, "textBoxImpoundFees");
             this.textBoxImpoundFees.Name = "textBoxImpoundFees";
-            this.textBoxImpoundFees.Size = new System.Drawing.Size(119, 29);
-            this.textBoxImpoundFees.TabIndex = 713;
-            this.textBoxImpoundFees.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBoxStorageFees
             // 
             this.textBoxStorageFees.AllowDrop = true;
             this.textBoxStorageFees.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.CustomerFeesBindingSource, "Storage", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "0", "C2"));
-            this.textBoxStorageFees.Location = new System.Drawing.Point(152, 76);
+            resources.ApplyResources(this.textBoxStorageFees, "textBoxStorageFees");
             this.textBoxStorageFees.Name = "textBoxStorageFees";
-            this.textBoxStorageFees.Size = new System.Drawing.Size(119, 29);
-            this.textBoxStorageFees.TabIndex = 712;
-            this.textBoxStorageFees.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBoxRepoFees
             // 
             this.textBoxRepoFees.AllowDrop = true;
             this.textBoxRepoFees.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.CustomerFeesBindingSource, "Repo", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "0", "C2"));
-            this.textBoxRepoFees.Location = new System.Drawing.Point(152, 41);
+            resources.ApplyResources(this.textBoxRepoFees, "textBoxRepoFees");
             this.textBoxRepoFees.Name = "textBoxRepoFees";
-            this.textBoxRepoFees.Size = new System.Drawing.Size(119, 29);
-            this.textBoxRepoFees.TabIndex = 711;
-            this.textBoxRepoFees.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // groupBox12
             // 
@@ -8971,123 +6748,97 @@
             this.groupBox12.Controls.Add(label124);
             this.groupBox12.Controls.Add(this.textBox40);
             this.groupBox12.Controls.Add(label125);
-            this.groupBox12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox12.Location = new System.Drawing.Point(235, 76);
+            resources.ApplyResources(this.groupBox12, "groupBox12");
             this.groupBox12.Name = "groupBox12";
-            this.groupBox12.Size = new System.Drawing.Size(763, 82);
-            this.groupBox12.TabIndex = 711;
             this.groupBox12.TabStop = false;
             // 
             // textBox6
             // 
             this.textBox6.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBox6.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_SUFFIX", true));
-            this.textBox6.Enabled = false;
-            this.textBox6.Location = new System.Drawing.Point(642, 17);
-            this.textBox6.MaxLength = 3;
+            resources.ApplyResources(this.textBox6, "textBox6");
             this.textBox6.Name = "textBox6";
             this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(41, 29);
-            this.textBox6.TabIndex = 704;
             // 
             // textBox12
             // 
             this.textBox12.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_SS_3", true));
-            this.textBox12.Enabled = false;
-            this.textBox12.Location = new System.Drawing.Point(233, 48);
+            resources.ApplyResources(this.textBox12, "textBox12");
             this.textBox12.Name = "textBox12";
             this.textBox12.ReadOnly = true;
-            this.textBox12.Size = new System.Drawing.Size(51, 29);
-            this.textBox12.TabIndex = 460;
-            this.textBox12.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox13
             // 
             this.textBox13.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_SS_2", true));
-            this.textBox13.Enabled = false;
-            this.textBox13.Location = new System.Drawing.Point(203, 48);
+            resources.ApplyResources(this.textBox13, "textBox13");
             this.textBox13.Name = "textBox13";
             this.textBox13.ReadOnly = true;
-            this.textBox13.Size = new System.Drawing.Size(29, 29);
-            this.textBox13.TabIndex = 450;
-            this.textBox13.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox26
             // 
             this.textBox26.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_SS_1", true));
-            this.textBox26.Enabled = false;
-            this.textBox26.Location = new System.Drawing.Point(169, 48);
+            resources.ApplyResources(this.textBox26, "textBox26");
             this.textBox26.Name = "textBox26";
             this.textBox26.ReadOnly = true;
-            this.textBox26.Size = new System.Drawing.Size(33, 29);
-            this.textBox26.TabIndex = 440;
-            this.textBox26.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox38
             // 
             this.textBox38.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_LAST_NAME", true));
-            this.textBox38.Enabled = false;
-            this.textBox38.Location = new System.Drawing.Point(486, 17);
+            resources.ApplyResources(this.textBox38, "textBox38");
             this.textBox38.Name = "textBox38";
             this.textBox38.ReadOnly = true;
-            this.textBox38.Size = new System.Drawing.Size(152, 29);
-            this.textBox38.TabIndex = 703;
             // 
             // textBox39
             // 
             this.textBox39.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_FIRST_NAME", true));
-            this.textBox39.Enabled = false;
-            this.textBox39.Location = new System.Drawing.Point(377, 17);
+            resources.ApplyResources(this.textBox39, "textBox39");
             this.textBox39.Name = "textBox39";
             this.textBox39.ReadOnly = true;
-            this.textBox39.Size = new System.Drawing.Size(107, 29);
-            this.textBox39.TabIndex = 702;
             // 
             // textBox40
             // 
             this.textBox40.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_NO", true));
-            this.textBox40.Enabled = false;
-            this.textBox40.Location = new System.Drawing.Point(169, 17);
+            resources.ApplyResources(this.textBox40, "textBox40");
             this.textBox40.Name = "textBox40";
             this.textBox40.ReadOnly = true;
-            this.textBox40.Size = new System.Drawing.Size(67, 29);
-            this.textBox40.TabIndex = 701;
-            this.textBox40.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // xtraTabPageRepoHistory
             // 
-            this.xtraTabPageRepoHistory.Controls.Add(this.gridControlRepoLog);
-            this.xtraTabPageRepoHistory.Controls.Add(this.groupBox13);
+            this.xtraTabPageRepoHistory.Controls.Add(this.groupBox21);
             this.xtraTabPageRepoHistory.Name = "xtraTabPageRepoHistory";
-            this.xtraTabPageRepoHistory.Size = new System.Drawing.Size(1230, 612);
-            this.xtraTabPageRepoHistory.Text = "Repo History";
+            resources.ApplyResources(this.xtraTabPageRepoHistory, "xtraTabPageRepoHistory");
+            // 
+            // groupBox21
+            // 
+            this.groupBox21.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.groupBox21.Controls.Add(this.gridControlRepoLog);
+            this.groupBox21.Controls.Add(this.groupBox13);
+            resources.ApplyResources(this.groupBox21, "groupBox21");
+            this.groupBox21.Name = "groupBox21";
+            this.groupBox21.TabStop = false;
             // 
             // gridControlRepoLog
             // 
             this.gridControlRepoLog.DataSource = this.repoLogBindingSource;
-            this.gridControlRepoLog.Location = new System.Drawing.Point(5, 91);
+            resources.ApplyResources(this.gridControlRepoLog, "gridControlRepoLog");
             this.gridControlRepoLog.MainView = this.gridViewRepoLog;
             this.gridControlRepoLog.MenuManager = this.toolbarFormManager1;
             this.gridControlRepoLog.Name = "gridControlRepoLog";
-            this.gridControlRepoLog.Size = new System.Drawing.Size(1222, 489);
-            this.gridControlRepoLog.TabIndex = 204;
             this.gridControlRepoLog.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewRepoLog});
             // 
             // gridViewRepoLog
             // 
             this.gridViewRepoLog.Appearance.EvenRow.BackColor = System.Drawing.Color.PaleGreen;
-            this.gridViewRepoLog.Appearance.EvenRow.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gridViewRepoLog.Appearance.EvenRow.Options.UseBackColor = true;
             this.gridViewRepoLog.Appearance.EvenRow.Options.UseFont = true;
-            this.gridViewRepoLog.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridViewRepoLog.Appearance.HeaderPanel.Font = ((System.Drawing.Font)(resources.GetObject("gridViewRepoLog.Appearance.HeaderPanel.Font")));
             this.gridViewRepoLog.Appearance.HeaderPanel.Options.UseFont = true;
             this.gridViewRepoLog.Appearance.HeaderPanel.Options.UseTextOptions = true;
             this.gridViewRepoLog.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.gridViewRepoLog.Appearance.HeaderPanel.TextOptions.Trimming = DevExpress.Utils.Trimming.None;
             this.gridViewRepoLog.Appearance.HeaderPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.gridViewRepoLog.Appearance.HeaderPanel.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.gridViewRepoLog.Appearance.OddRow.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gridViewRepoLog.Appearance.OddRow.Options.UseFont = true;
             this.gridViewRepoLog.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colDateOfChange,
@@ -9126,201 +6877,135 @@
             // 
             // colDateOfChange
             // 
-            this.colDateOfChange.Caption = "Date";
+            resources.ApplyResources(this.colDateOfChange, "colDateOfChange");
             this.colDateOfChange.FieldName = "DateOfChange";
             this.colDateOfChange.Name = "colDateOfChange";
-            this.colDateOfChange.Visible = true;
-            this.colDateOfChange.VisibleIndex = 0;
-            this.colDateOfChange.Width = 100;
             // 
             // colUserID
             // 
-            this.colUserID.Caption = "ID";
+            resources.ApplyResources(this.colUserID, "colUserID");
             this.colUserID.FieldName = "UserID";
             this.colUserID.Name = "colUserID";
-            this.colUserID.Visible = true;
-            this.colUserID.VisibleIndex = 1;
-            this.colUserID.Width = 70;
             // 
             // colOrgRepoDate
             // 
-            this.colOrgRepoDate.Caption = "Old Repo Date";
+            resources.ApplyResources(this.colOrgRepoDate, "colOrgRepoDate");
             this.colOrgRepoDate.FieldName = "OrgRepoDate";
             this.colOrgRepoDate.Name = "colOrgRepoDate";
-            this.colOrgRepoDate.Visible = true;
-            this.colOrgRepoDate.VisibleIndex = 2;
-            this.colOrgRepoDate.Width = 100;
             // 
             // colNewRepoDate
             // 
-            this.colNewRepoDate.Caption = "New Repo Date";
+            resources.ApplyResources(this.colNewRepoDate, "colNewRepoDate");
             this.colNewRepoDate.FieldName = "NewRepoDate";
             this.colNewRepoDate.Name = "colNewRepoDate";
-            this.colNewRepoDate.Visible = true;
-            this.colNewRepoDate.VisibleIndex = 3;
-            this.colNewRepoDate.Width = 100;
             // 
             // colOrgRepoAgent
             // 
-            this.colOrgRepoAgent.Caption = "Old Repo Agent";
+            resources.ApplyResources(this.colOrgRepoAgent, "colOrgRepoAgent");
             this.colOrgRepoAgent.FieldName = "OrgRepoAgent";
             this.colOrgRepoAgent.Name = "colOrgRepoAgent";
-            this.colOrgRepoAgent.Visible = true;
-            this.colOrgRepoAgent.VisibleIndex = 4;
-            this.colOrgRepoAgent.Width = 100;
             // 
             // colNewRepoAgent
             // 
-            this.colNewRepoAgent.Caption = "New Repo Agent";
+            resources.ApplyResources(this.colNewRepoAgent, "colNewRepoAgent");
             this.colNewRepoAgent.FieldName = "NewRepoAgent";
             this.colNewRepoAgent.Name = "colNewRepoAgent";
-            this.colNewRepoAgent.Visible = true;
-            this.colNewRepoAgent.VisibleIndex = 5;
-            this.colNewRepoAgent.Width = 100;
             // 
             // colOrgRepoInd
             // 
-            this.colOrgRepoInd.Caption = "Old Repo Ind";
+            resources.ApplyResources(this.colOrgRepoInd, "colOrgRepoInd");
             this.colOrgRepoInd.FieldName = "OrgRepoInd";
             this.colOrgRepoInd.Name = "colOrgRepoInd";
-            this.colOrgRepoInd.Visible = true;
-            this.colOrgRepoInd.VisibleIndex = 6;
-            this.colOrgRepoInd.Width = 60;
             // 
             // colNewRepoInd
             // 
-            this.colNewRepoInd.Caption = "New Repo Ind";
+            resources.ApplyResources(this.colNewRepoInd, "colNewRepoInd");
             this.colNewRepoInd.FieldName = "NewRepoInd";
             this.colNewRepoInd.Name = "colNewRepoInd";
-            this.colNewRepoInd.Visible = true;
-            this.colNewRepoInd.VisibleIndex = 7;
-            this.colNewRepoInd.Width = 60;
             // 
             // colOrgRepoCode
             // 
-            this.colOrgRepoCode.CustomizationCaption = "Old Repo Code";
+            resources.ApplyResources(this.colOrgRepoCode, "colOrgRepoCode");
             this.colOrgRepoCode.FieldName = "OrgRepoCode";
             this.colOrgRepoCode.Name = "colOrgRepoCode";
-            this.colOrgRepoCode.Visible = true;
-            this.colOrgRepoCode.VisibleIndex = 8;
-            this.colOrgRepoCode.Width = 100;
             // 
             // colNewRepoCode
             // 
-            this.colNewRepoCode.Caption = "New Repo code";
+            resources.ApplyResources(this.colNewRepoCode, "colNewRepoCode");
             this.colNewRepoCode.FieldName = "NewRepoCode";
             this.colNewRepoCode.Name = "colNewRepoCode";
-            this.colNewRepoCode.Visible = true;
-            this.colNewRepoCode.VisibleIndex = 9;
-            this.colNewRepoCode.Width = 100;
             // 
             // colOrgCurrentLocation
             // 
-            this.colOrgCurrentLocation.CustomizationCaption = "Old Location";
+            resources.ApplyResources(this.colOrgCurrentLocation, "colOrgCurrentLocation");
             this.colOrgCurrentLocation.FieldName = "OrgCurrentLocation";
             this.colOrgCurrentLocation.Name = "colOrgCurrentLocation";
-            this.colOrgCurrentLocation.Visible = true;
-            this.colOrgCurrentLocation.VisibleIndex = 10;
-            this.colOrgCurrentLocation.Width = 100;
             // 
             // colNewCurrentLocation
             // 
-            this.colNewCurrentLocation.CustomizationCaption = "New Location";
+            resources.ApplyResources(this.colNewCurrentLocation, "colNewCurrentLocation");
             this.colNewCurrentLocation.FieldName = "NewCurrentLocation";
             this.colNewCurrentLocation.Name = "colNewCurrentLocation";
-            this.colNewCurrentLocation.Visible = true;
-            this.colNewCurrentLocation.VisibleIndex = 11;
-            this.colNewCurrentLocation.Width = 100;
             // 
             // colOldLocationDate
             // 
-            this.colOldLocationDate.Caption = "Old Location Date";
+            resources.ApplyResources(this.colOldLocationDate, "colOldLocationDate");
             this.colOldLocationDate.FieldName = "OldLocationDate";
             this.colOldLocationDate.Name = "colOldLocationDate";
-            this.colOldLocationDate.Visible = true;
-            this.colOldLocationDate.VisibleIndex = 12;
-            this.colOldLocationDate.Width = 100;
             // 
             // colNewLocationDate
             // 
-            this.colNewLocationDate.Caption = "New Location Date";
+            resources.ApplyResources(this.colNewLocationDate, "colNewLocationDate");
             this.colNewLocationDate.FieldName = "NewLocationDate";
             this.colNewLocationDate.Name = "colNewLocationDate";
-            this.colNewLocationDate.Visible = true;
-            this.colNewLocationDate.VisibleIndex = 13;
-            this.colNewLocationDate.Width = 100;
             // 
             // colOrgAuctionHouse
             // 
-            this.colOrgAuctionHouse.Caption = "Old Auction House";
+            resources.ApplyResources(this.colOrgAuctionHouse, "colOrgAuctionHouse");
             this.colOrgAuctionHouse.FieldName = "OrgAuctionHouse";
             this.colOrgAuctionHouse.Name = "colOrgAuctionHouse";
-            this.colOrgAuctionHouse.Visible = true;
-            this.colOrgAuctionHouse.VisibleIndex = 14;
-            this.colOrgAuctionHouse.Width = 100;
             // 
             // colNewAuctionHouse
             // 
-            this.colNewAuctionHouse.Caption = "New Auction House";
+            resources.ApplyResources(this.colNewAuctionHouse, "colNewAuctionHouse");
             this.colNewAuctionHouse.FieldName = "NewAuctionHouse";
             this.colNewAuctionHouse.Name = "colNewAuctionHouse";
-            this.colNewAuctionHouse.Visible = true;
-            this.colNewAuctionHouse.VisibleIndex = 15;
-            this.colNewAuctionHouse.Width = 100;
             // 
             // colOrgAutionHouseDate
             // 
-            this.colOrgAutionHouseDate.Caption = "Old Auction House Date";
+            resources.ApplyResources(this.colOrgAutionHouseDate, "colOrgAutionHouseDate");
             this.colOrgAutionHouseDate.FieldName = "OrgAutionHouseDate";
             this.colOrgAutionHouseDate.Name = "colOrgAutionHouseDate";
-            this.colOrgAutionHouseDate.Visible = true;
-            this.colOrgAutionHouseDate.VisibleIndex = 16;
-            this.colOrgAutionHouseDate.Width = 100;
             // 
             // colNewAuctionHouseDate
             // 
-            this.colNewAuctionHouseDate.Caption = "New Auction House Date";
+            resources.ApplyResources(this.colNewAuctionHouseDate, "colNewAuctionHouseDate");
             this.colNewAuctionHouseDate.FieldName = "NewAuctionHouseDate";
             this.colNewAuctionHouseDate.Name = "colNewAuctionHouseDate";
-            this.colNewAuctionHouseDate.Visible = true;
-            this.colNewAuctionHouseDate.VisibleIndex = 17;
-            this.colNewAuctionHouseDate.Width = 100;
             // 
             // colOrgTitleReceived
             // 
-            this.colOrgTitleReceived.Caption = "Old Title Received ";
+            resources.ApplyResources(this.colOrgTitleReceived, "colOrgTitleReceived");
             this.colOrgTitleReceived.FieldName = "OrgTitleReceived";
             this.colOrgTitleReceived.Name = "colOrgTitleReceived";
-            this.colOrgTitleReceived.Visible = true;
-            this.colOrgTitleReceived.VisibleIndex = 18;
-            this.colOrgTitleReceived.Width = 100;
             // 
             // colNewTitleReceived
             // 
-            this.colNewTitleReceived.Caption = "New Title Received";
+            resources.ApplyResources(this.colNewTitleReceived, "colNewTitleReceived");
             this.colNewTitleReceived.FieldName = "NewTitleReceived";
             this.colNewTitleReceived.Name = "colNewTitleReceived";
-            this.colNewTitleReceived.Visible = true;
-            this.colNewTitleReceived.VisibleIndex = 19;
-            this.colNewTitleReceived.Width = 100;
             // 
             // colOrgDateTitleReceived
             // 
-            this.colOrgDateTitleReceived.Caption = "Old Date Title Received";
+            resources.ApplyResources(this.colOrgDateTitleReceived, "colOrgDateTitleReceived");
             this.colOrgDateTitleReceived.FieldName = "OrgDateTitleReceived";
             this.colOrgDateTitleReceived.Name = "colOrgDateTitleReceived";
-            this.colOrgDateTitleReceived.Visible = true;
-            this.colOrgDateTitleReceived.VisibleIndex = 20;
-            this.colOrgDateTitleReceived.Width = 100;
             // 
             // colNewDateTitleReceived
             // 
-            this.colNewDateTitleReceived.Caption = "New Date Title Received";
+            resources.ApplyResources(this.colNewDateTitleReceived, "colNewDateTitleReceived");
             this.colNewDateTitleReceived.FieldName = "NewDateTitleReceived";
             this.colNewDateTitleReceived.Name = "colNewDateTitleReceived";
-            this.colNewDateTitleReceived.Visible = true;
-            this.colNewDateTitleReceived.VisibleIndex = 21;
-            this.colNewDateTitleReceived.Width = 100;
             // 
             // groupBox13
             // 
@@ -9334,100 +7019,78 @@
             this.groupBox13.Controls.Add(label128);
             this.groupBox13.Controls.Add(this.textBox52);
             this.groupBox13.Controls.Add(label130);
-            this.groupBox13.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox13.Location = new System.Drawing.Point(265, 4);
+            resources.ApplyResources(this.groupBox13, "groupBox13");
             this.groupBox13.Name = "groupBox13";
-            this.groupBox13.Size = new System.Drawing.Size(703, 82);
-            this.groupBox13.TabIndex = 203;
             this.groupBox13.TabStop = false;
             // 
             // textBox41
             // 
             this.textBox41.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBox41.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_SUFFIX", true));
-            this.textBox41.Enabled = false;
-            this.textBox41.Location = new System.Drawing.Point(657, 17);
-            this.textBox41.MaxLength = 3;
+            resources.ApplyResources(this.textBox41, "textBox41");
             this.textBox41.Name = "textBox41";
             this.textBox41.ReadOnly = true;
-            this.textBox41.Size = new System.Drawing.Size(41, 29);
-            this.textBox41.TabIndex = 204;
             // 
             // textBox42
             // 
             this.textBox42.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_SS_3", true));
-            this.textBox42.Enabled = false;
-            this.textBox42.Location = new System.Drawing.Point(219, 48);
+            resources.ApplyResources(this.textBox42, "textBox42");
             this.textBox42.Name = "textBox42";
             this.textBox42.ReadOnly = true;
-            this.textBox42.Size = new System.Drawing.Size(51, 29);
-            this.textBox42.TabIndex = 207;
-            this.textBox42.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox43
             // 
             this.textBox43.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_SS_2", true));
-            this.textBox43.Enabled = false;
-            this.textBox43.Location = new System.Drawing.Point(189, 48);
+            resources.ApplyResources(this.textBox43, "textBox43");
             this.textBox43.Name = "textBox43";
             this.textBox43.ReadOnly = true;
-            this.textBox43.Size = new System.Drawing.Size(29, 29);
-            this.textBox43.TabIndex = 206;
-            this.textBox43.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox44
             // 
             this.textBox44.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_SS_1", true));
-            this.textBox44.Enabled = false;
-            this.textBox44.Location = new System.Drawing.Point(155, 48);
+            resources.ApplyResources(this.textBox44, "textBox44");
             this.textBox44.Name = "textBox44";
             this.textBox44.ReadOnly = true;
-            this.textBox44.Size = new System.Drawing.Size(33, 29);
-            this.textBox44.TabIndex = 205;
-            this.textBox44.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBox45
             // 
             this.textBox45.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_LAST_NAME", true));
-            this.textBox45.Enabled = false;
-            this.textBox45.Location = new System.Drawing.Point(444, 17);
+            resources.ApplyResources(this.textBox45, "textBox45");
             this.textBox45.Name = "textBox45";
             this.textBox45.ReadOnly = true;
-            this.textBox45.Size = new System.Drawing.Size(212, 29);
-            this.textBox45.TabIndex = 203;
             // 
             // textBox46
             // 
             this.textBox46.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_FIRST_NAME", true));
-            this.textBox46.Enabled = false;
-            this.textBox46.Location = new System.Drawing.Point(307, 17);
+            resources.ApplyResources(this.textBox46, "textBox46");
             this.textBox46.Name = "textBox46";
             this.textBox46.ReadOnly = true;
-            this.textBox46.Size = new System.Drawing.Size(136, 29);
-            this.textBox46.TabIndex = 202;
             // 
             // textBox52
             // 
             this.textBox52.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_NO", true));
-            this.textBox52.Enabled = false;
-            this.textBox52.Location = new System.Drawing.Point(155, 17);
+            resources.ApplyResources(this.textBox52, "textBox52");
             this.textBox52.Name = "textBox52";
             this.textBox52.ReadOnly = true;
-            this.textBox52.Size = new System.Drawing.Size(67, 29);
-            this.textBox52.TabIndex = 201;
-            this.textBox52.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // xtraTabPageTSB
             // 
-            this.xtraTabPageTSB.Controls.Add(this.groupBoxDates);
-            this.xtraTabPageTSB.Controls.Add(this.groupBoxCodes);
-            this.xtraTabPageTSB.Controls.Add(this.groupBoxDollars);
-            this.xtraTabPageTSB.Controls.Add(this.groupBoxPurge);
-            this.xtraTabPageTSB.Controls.Add(this.groupBoxReportStatus);
-            this.xtraTabPageTSB.Controls.Add(this.groupBoxAccountNumber);
+            this.xtraTabPageTSB.Controls.Add(this.groupBox22);
             this.xtraTabPageTSB.Name = "xtraTabPageTSB";
-            this.xtraTabPageTSB.Size = new System.Drawing.Size(1230, 612);
-            this.xtraTabPageTSB.Text = "TSB";
+            resources.ApplyResources(this.xtraTabPageTSB, "xtraTabPageTSB");
+            // 
+            // groupBox22
+            // 
+            this.groupBox22.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.groupBox22.Controls.Add(this.groupBoxDates);
+            this.groupBox22.Controls.Add(this.groupBoxCodes);
+            this.groupBox22.Controls.Add(this.groupBoxDollars);
+            this.groupBox22.Controls.Add(this.groupBoxPurge);
+            this.groupBox22.Controls.Add(this.groupBoxReportStatus);
+            this.groupBox22.Controls.Add(this.groupBoxAccountNumber);
+            resources.ApplyResources(this.groupBox22, "groupBox22");
+            this.groupBox22.Name = "groupBox22";
+            this.groupBox22.TabStop = false;
             // 
             // groupBoxDates
             // 
@@ -9444,165 +7107,138 @@
             this.groupBoxDates.Controls.Add(this.label136);
             this.groupBoxDates.Controls.Add(this.label138);
             this.groupBoxDates.Controls.Add(this.label139);
-            this.groupBoxDates.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxDates.Location = new System.Drawing.Point(625, 70);
+            resources.ApplyResources(this.groupBoxDates, "groupBoxDates");
             this.groupBoxDates.Name = "groupBoxDates";
-            this.groupBoxDates.Size = new System.Drawing.Size(529, 220);
-            this.groupBoxDates.TabIndex = 31;
             this.groupBoxDates.TabStop = false;
-            this.groupBoxDates.Text = "Dates";
             // 
             // checkBoxFollowUpDate
             // 
-            this.checkBoxFollowUpDate.AutoSize = true;
+            resources.ApplyResources(this.checkBoxFollowUpDate, "checkBoxFollowUpDate");
             this.checkBoxFollowUpDate.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.closedCreditManagerBindingSource, "FollowUpDateOverride", true));
-            this.checkBoxFollowUpDate.Location = new System.Drawing.Point(433, 156);
             this.checkBoxFollowUpDate.Name = "checkBoxFollowUpDate";
-            this.checkBoxFollowUpDate.Size = new System.Drawing.Size(84, 21);
-            this.checkBoxFollowUpDate.TabIndex = 25;
-            this.checkBoxFollowUpDate.Text = "Override?";
             this.checkBoxFollowUpDate.UseVisualStyleBackColor = true;
             // 
             // nullableDateTimePickerFollowUpDate
             // 
             this.nullableDateTimePickerFollowUpDate.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.closedCreditManagerBindingSource, "FollowUpDate", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "d"));
-            this.nullableDateTimePickerFollowUpDate.EditValue = null;
-            this.nullableDateTimePickerFollowUpDate.Location = new System.Drawing.Point(306, 157);
+            resources.ApplyResources(this.nullableDateTimePickerFollowUpDate, "nullableDateTimePickerFollowUpDate");
             this.nullableDateTimePickerFollowUpDate.Name = "nullableDateTimePickerFollowUpDate";
+            this.nullableDateTimePickerFollowUpDate.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("nullableDateTimePickerFollowUpDate.Properties.Appearance.Font")));
+            this.nullableDateTimePickerFollowUpDate.Properties.Appearance.Options.UseFont = true;
             this.nullableDateTimePickerFollowUpDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("nullableDateTimePickerFollowUpDate.Properties.Buttons"))))});
             this.nullableDateTimePickerFollowUpDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("nullableDateTimePickerFollowUpDate.Properties.CalendarTimeProperties.Buttons"))))});
             this.nullableDateTimePickerFollowUpDate.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.Fluent;
-            this.nullableDateTimePickerFollowUpDate.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.PaleTurquoise;
+            this.nullableDateTimePickerFollowUpDate.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
             this.nullableDateTimePickerFollowUpDate.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
             this.nullableDateTimePickerFollowUpDate.Properties.LookAndFeel.SkinName = "McSkin";
             this.nullableDateTimePickerFollowUpDate.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.nullableDateTimePickerFollowUpDate.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
-            this.nullableDateTimePickerFollowUpDate.Size = new System.Drawing.Size(119, 20);
-            this.nullableDateTimePickerFollowUpDate.TabIndex = 24;
             // 
             // nullableDateTimePickerDateClosed
             // 
             this.nullableDateTimePickerDateClosed.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.closedCreditManagerBindingSource, "CRDMGR_ACCT_DATE_CLOSED", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "d"));
-            this.nullableDateTimePickerDateClosed.EditValue = null;
-            this.nullableDateTimePickerDateClosed.Location = new System.Drawing.Point(306, 130);
+            resources.ApplyResources(this.nullableDateTimePickerDateClosed, "nullableDateTimePickerDateClosed");
             this.nullableDateTimePickerDateClosed.Name = "nullableDateTimePickerDateClosed";
+            this.nullableDateTimePickerDateClosed.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("nullableDateTimePickerDateClosed.Properties.Appearance.Font")));
+            this.nullableDateTimePickerDateClosed.Properties.Appearance.Options.UseFont = true;
             this.nullableDateTimePickerDateClosed.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("nullableDateTimePickerDateClosed.Properties.Buttons"))))});
             this.nullableDateTimePickerDateClosed.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.nullableDateTimePickerDateClosed.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.PaleTurquoise;
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("nullableDateTimePickerDateClosed.Properties.CalendarTimeProperties.Buttons"))))});
+            this.nullableDateTimePickerDateClosed.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
             this.nullableDateTimePickerDateClosed.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
             this.nullableDateTimePickerDateClosed.Properties.LookAndFeel.SkinName = "McSkin";
             this.nullableDateTimePickerDateClosed.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.nullableDateTimePickerDateClosed.Size = new System.Drawing.Size(119, 20);
-            this.nullableDateTimePickerDateClosed.TabIndex = 23;
             // 
             // nullableDateTimePickerDateOpened
             // 
             this.nullableDateTimePickerDateOpened.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.closedCreditManagerBindingSource, "CRDMGR_ACCT_DATE_OPENED", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "d"));
-            this.nullableDateTimePickerDateOpened.EditValue = null;
-            this.nullableDateTimePickerDateOpened.Location = new System.Drawing.Point(306, 103);
+            resources.ApplyResources(this.nullableDateTimePickerDateOpened, "nullableDateTimePickerDateOpened");
             this.nullableDateTimePickerDateOpened.Name = "nullableDateTimePickerDateOpened";
+            this.nullableDateTimePickerDateOpened.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("nullableDateTimePickerDateOpened.Properties.Appearance.Font")));
+            this.nullableDateTimePickerDateOpened.Properties.Appearance.Options.UseFont = true;
             this.nullableDateTimePickerDateOpened.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("nullableDateTimePickerDateOpened.Properties.Buttons"))))});
             this.nullableDateTimePickerDateOpened.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.nullableDateTimePickerDateOpened.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.PaleTurquoise;
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("nullableDateTimePickerDateOpened.Properties.CalendarTimeProperties.Buttons"))))});
+            this.nullableDateTimePickerDateOpened.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
             this.nullableDateTimePickerDateOpened.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
             this.nullableDateTimePickerDateOpened.Properties.LookAndFeel.SkinName = "McSkin";
             this.nullableDateTimePickerDateOpened.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.nullableDateTimePickerDateOpened.Size = new System.Drawing.Size(119, 20);
-            this.nullableDateTimePickerDateOpened.TabIndex = 22;
             // 
             // nullableDateTimePickerDateofAccountInformation
             // 
-            this.nullableDateTimePickerDateofAccountInformation.EditValue = null;
-            this.nullableDateTimePickerDateofAccountInformation.Location = new System.Drawing.Point(306, 76);
+            resources.ApplyResources(this.nullableDateTimePickerDateofAccountInformation, "nullableDateTimePickerDateofAccountInformation");
             this.nullableDateTimePickerDateofAccountInformation.Name = "nullableDateTimePickerDateofAccountInformation";
+            this.nullableDateTimePickerDateofAccountInformation.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("nullableDateTimePickerDateofAccountInformation.Properties.Appearance.Font")));
+            this.nullableDateTimePickerDateofAccountInformation.Properties.Appearance.Options.UseFont = true;
             this.nullableDateTimePickerDateofAccountInformation.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("nullableDateTimePickerDateofAccountInformation.Properties.Buttons"))))});
             this.nullableDateTimePickerDateofAccountInformation.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.nullableDateTimePickerDateofAccountInformation.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.PaleTurquoise;
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("nullableDateTimePickerDateofAccountInformation.Properties.CalendarTimeProperties." +
+                        "Buttons"))))});
+            this.nullableDateTimePickerDateofAccountInformation.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
             this.nullableDateTimePickerDateofAccountInformation.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
             this.nullableDateTimePickerDateofAccountInformation.Properties.LookAndFeel.SkinName = "McSkin";
             this.nullableDateTimePickerDateofAccountInformation.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.nullableDateTimePickerDateofAccountInformation.Size = new System.Drawing.Size(119, 20);
-            this.nullableDateTimePickerDateofAccountInformation.TabIndex = 21;
             // 
             // nullableDateTimePickerDateofFirstDelinquency
             // 
             this.nullableDateTimePickerDateofFirstDelinquency.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.closedCreditManagerBindingSource, "CRDMGR_DATE_FIRST_DELINQUENT", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "d"));
-            this.nullableDateTimePickerDateofFirstDelinquency.EditValue = null;
-            this.nullableDateTimePickerDateofFirstDelinquency.Location = new System.Drawing.Point(306, 49);
+            resources.ApplyResources(this.nullableDateTimePickerDateofFirstDelinquency, "nullableDateTimePickerDateofFirstDelinquency");
             this.nullableDateTimePickerDateofFirstDelinquency.Name = "nullableDateTimePickerDateofFirstDelinquency";
+            this.nullableDateTimePickerDateofFirstDelinquency.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("nullableDateTimePickerDateofFirstDelinquency.Properties.Appearance.Font")));
+            this.nullableDateTimePickerDateofFirstDelinquency.Properties.Appearance.Options.UseFont = true;
             this.nullableDateTimePickerDateofFirstDelinquency.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("nullableDateTimePickerDateofFirstDelinquency.Properties.Buttons"))))});
             this.nullableDateTimePickerDateofFirstDelinquency.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.nullableDateTimePickerDateofFirstDelinquency.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.PaleTurquoise;
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("nullableDateTimePickerDateofFirstDelinquency.Properties.CalendarTimeProperties.Bu" +
+                        "ttons"))))});
+            this.nullableDateTimePickerDateofFirstDelinquency.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
             this.nullableDateTimePickerDateofFirstDelinquency.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
             this.nullableDateTimePickerDateofFirstDelinquency.Properties.LookAndFeel.SkinName = "McSkin";
             this.nullableDateTimePickerDateofFirstDelinquency.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.nullableDateTimePickerDateofFirstDelinquency.Size = new System.Drawing.Size(119, 20);
-            this.nullableDateTimePickerDateofFirstDelinquency.TabIndex = 20;
             // 
             // nullableDateTimePickerDateofLastPayment
             // 
             this.nullableDateTimePickerDateofLastPayment.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.closedCreditManagerBindingSource, "CRDMGR_DATE_LAST_PAYMENT", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "d"));
-            this.nullableDateTimePickerDateofLastPayment.EditValue = null;
-            this.nullableDateTimePickerDateofLastPayment.Location = new System.Drawing.Point(306, 22);
+            resources.ApplyResources(this.nullableDateTimePickerDateofLastPayment, "nullableDateTimePickerDateofLastPayment");
             this.nullableDateTimePickerDateofLastPayment.Name = "nullableDateTimePickerDateofLastPayment";
+            this.nullableDateTimePickerDateofLastPayment.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("nullableDateTimePickerDateofLastPayment.Properties.Appearance.Font")));
+            this.nullableDateTimePickerDateofLastPayment.Properties.Appearance.Options.UseFont = true;
             this.nullableDateTimePickerDateofLastPayment.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("nullableDateTimePickerDateofLastPayment.Properties.Buttons"))))});
             this.nullableDateTimePickerDateofLastPayment.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("nullableDateTimePickerDateofLastPayment.Properties.CalendarTimeProperties.Buttons" +
+                        ""))))});
             this.nullableDateTimePickerDateofLastPayment.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.Fluent;
-            this.nullableDateTimePickerDateofLastPayment.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.PaleTurquoise;
+            this.nullableDateTimePickerDateofLastPayment.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
             this.nullableDateTimePickerDateofLastPayment.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
             this.nullableDateTimePickerDateofLastPayment.Properties.LookAndFeel.SkinName = "McSkin";
             this.nullableDateTimePickerDateofLastPayment.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.nullableDateTimePickerDateofLastPayment.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
-            this.nullableDateTimePickerDateofLastPayment.Size = new System.Drawing.Size(119, 20);
-            this.nullableDateTimePickerDateofLastPayment.TabIndex = 19;
             // 
             // label135
             // 
-            this.label135.AutoSize = true;
-            this.label135.Location = new System.Drawing.Point(206, 160);
+            resources.ApplyResources(this.label135, "label135");
             this.label135.Name = "label135";
-            this.label135.Size = new System.Drawing.Size(96, 17);
-            this.label135.TabIndex = 124;
-            this.label135.Text = "Follow-up Date";
             // 
             // label136
             // 
-            this.label136.AutoSize = true;
-            this.label136.Location = new System.Drawing.Point(223, 133);
+            resources.ApplyResources(this.label136, "label136");
             this.label136.Name = "label136";
-            this.label136.Size = new System.Drawing.Size(79, 17);
-            this.label136.TabIndex = 122;
-            this.label136.Text = "Date Closed";
             // 
             // label138
             // 
-            this.label138.AutoSize = true;
-            this.label138.Location = new System.Drawing.Point(216, 106);
+            resources.ApplyResources(this.label138, "label138");
             this.label138.Name = "label138";
-            this.label138.Size = new System.Drawing.Size(86, 17);
-            this.label138.TabIndex = 120;
-            this.label138.Text = "Date Opened";
             // 
             // label139
             // 
-            this.label139.AutoSize = true;
-            this.label139.Location = new System.Drawing.Point(130, 79);
+            resources.ApplyResources(this.label139, "label139");
             this.label139.Name = "label139";
-            this.label139.Size = new System.Drawing.Size(172, 17);
-            this.label139.TabIndex = 118;
-            this.label139.Text = "Date of Account Information";
             // 
             // groupBoxCodes
             // 
@@ -9639,153 +7275,99 @@
             this.groupBoxCodes.Controls.Add(this.comboBoxPaymentRating);
             this.groupBoxCodes.Controls.Add(this.label141);
             this.groupBoxCodes.Controls.Add(this.comboBoxAccountStatus);
-            this.groupBoxCodes.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxCodes.Location = new System.Drawing.Point(78, 294);
+            resources.ApplyResources(this.groupBoxCodes, "groupBoxCodes");
             this.groupBoxCodes.Name = "groupBoxCodes";
-            this.groupBoxCodes.Size = new System.Drawing.Size(1076, 284);
-            this.groupBoxCodes.TabIndex = 32;
             this.groupBoxCodes.TabStop = false;
-            this.groupBoxCodes.Text = "Codes";
             // 
             // checkBoxECOACode
             // 
-            this.checkBoxECOACode.AutoSize = true;
+            resources.ApplyResources(this.checkBoxECOACode, "checkBoxECOACode");
             this.checkBoxECOACode.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.closedCreditManagerBindingSource, "ECOACodeOverride", true));
-            this.checkBoxECOACode.Location = new System.Drawing.Point(464, 180);
             this.checkBoxECOACode.Name = "checkBoxECOACode";
-            this.checkBoxECOACode.Size = new System.Drawing.Size(84, 21);
-            this.checkBoxECOACode.TabIndex = 38;
-            this.checkBoxECOACode.Text = "Override?";
             this.checkBoxECOACode.UseVisualStyleBackColor = true;
             // 
             // checkBoxPaymentProfile
             // 
-            this.checkBoxPaymentProfile.AutoSize = true;
+            resources.ApplyResources(this.checkBoxPaymentProfile, "checkBoxPaymentProfile");
             this.checkBoxPaymentProfile.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.closedCreditManagerBindingSource, "PaymentHistoryOverride", true));
-            this.checkBoxPaymentProfile.Location = new System.Drawing.Point(661, 232);
             this.checkBoxPaymentProfile.Name = "checkBoxPaymentProfile";
-            this.checkBoxPaymentProfile.Size = new System.Drawing.Size(84, 21);
-            this.checkBoxPaymentProfile.TabIndex = 45;
-            this.checkBoxPaymentProfile.Text = "Override?";
             this.checkBoxPaymentProfile.UseVisualStyleBackColor = true;
             // 
             // checkBoxComplianceCode
             // 
-            this.checkBoxComplianceCode.AutoSize = true;
+            resources.ApplyResources(this.checkBoxComplianceCode, "checkBoxComplianceCode");
             this.checkBoxComplianceCode.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.closedCreditManagerBindingSource, "ComplianceConditionCodeOverride", true));
-            this.checkBoxComplianceCode.Location = new System.Drawing.Point(980, 154);
             this.checkBoxComplianceCode.Name = "checkBoxComplianceCode";
-            this.checkBoxComplianceCode.Size = new System.Drawing.Size(84, 21);
-            this.checkBoxComplianceCode.TabIndex = 36;
-            this.checkBoxComplianceCode.Text = "Override?";
             this.checkBoxComplianceCode.UseVisualStyleBackColor = true;
             // 
             // checkBoxConsumerIndicator
             // 
-            this.checkBoxConsumerIndicator.AutoSize = true;
+            resources.ApplyResources(this.checkBoxConsumerIndicator, "checkBoxConsumerIndicator");
             this.checkBoxConsumerIndicator.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.closedCreditManagerBindingSource, "ConsumerIndicatorOverride", true));
-            this.checkBoxConsumerIndicator.Location = new System.Drawing.Point(980, 126);
             this.checkBoxConsumerIndicator.Name = "checkBoxConsumerIndicator";
-            this.checkBoxConsumerIndicator.Size = new System.Drawing.Size(84, 21);
-            this.checkBoxConsumerIndicator.TabIndex = 34;
-            this.checkBoxConsumerIndicator.Text = "Override?";
             this.checkBoxConsumerIndicator.UseVisualStyleBackColor = true;
             // 
             // checkBoxAccountType
             // 
-            this.checkBoxAccountType.AutoSize = true;
+            resources.ApplyResources(this.checkBoxAccountType, "checkBoxAccountType");
             this.checkBoxAccountType.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.closedCreditManagerBindingSource, "AccountTypeOverride", true));
-            this.checkBoxAccountType.Location = new System.Drawing.Point(980, 102);
             this.checkBoxAccountType.Name = "checkBoxAccountType";
-            this.checkBoxAccountType.Size = new System.Drawing.Size(84, 21);
-            this.checkBoxAccountType.TabIndex = 32;
-            this.checkBoxAccountType.Text = "Override?";
             this.checkBoxAccountType.UseVisualStyleBackColor = true;
             // 
             // checkBoxSpecialComment
             // 
-            this.checkBoxSpecialComment.AutoSize = true;
+            resources.ApplyResources(this.checkBoxSpecialComment, "checkBoxSpecialComment");
             this.checkBoxSpecialComment.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.closedCreditManagerBindingSource, "SpecialCommentOverride", true));
-            this.checkBoxSpecialComment.Location = new System.Drawing.Point(980, 76);
             this.checkBoxSpecialComment.Name = "checkBoxSpecialComment";
-            this.checkBoxSpecialComment.Size = new System.Drawing.Size(84, 21);
-            this.checkBoxSpecialComment.TabIndex = 30;
-            this.checkBoxSpecialComment.Text = "Override?";
             this.checkBoxSpecialComment.UseVisualStyleBackColor = true;
             // 
             // checkBoxPaymentRating
             // 
-            this.checkBoxPaymentRating.AutoSize = true;
+            resources.ApplyResources(this.checkBoxPaymentRating, "checkBoxPaymentRating");
             this.checkBoxPaymentRating.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.closedCreditManagerBindingSource, "PaymentRatingOverride", true));
-            this.checkBoxPaymentRating.Location = new System.Drawing.Point(980, 50);
             this.checkBoxPaymentRating.Name = "checkBoxPaymentRating";
-            this.checkBoxPaymentRating.Size = new System.Drawing.Size(84, 21);
-            this.checkBoxPaymentRating.TabIndex = 125;
-            this.checkBoxPaymentRating.Text = "Override?";
             this.checkBoxPaymentRating.UseVisualStyleBackColor = true;
             // 
             // checkBoxAccountStatus
             // 
-            this.checkBoxAccountStatus.AutoSize = true;
+            resources.ApplyResources(this.checkBoxAccountStatus, "checkBoxAccountStatus");
             this.checkBoxAccountStatus.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.closedCreditManagerBindingSource, "AccountStatusOverride", true));
-            this.checkBoxAccountStatus.Location = new System.Drawing.Point(980, 24);
             this.checkBoxAccountStatus.Name = "checkBoxAccountStatus";
-            this.checkBoxAccountStatus.Size = new System.Drawing.Size(84, 21);
-            this.checkBoxAccountStatus.TabIndex = 28;
-            this.checkBoxAccountStatus.Text = "Override?";
             this.checkBoxAccountStatus.UseVisualStyleBackColor = true;
             // 
             // buttonEditPaymentHistory
             // 
-            this.buttonEditPaymentHistory.Appearance.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonEditPaymentHistory.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("buttonEditPaymentHistory.Appearance.Font")));
             this.buttonEditPaymentHistory.Appearance.Options.UseFont = true;
-            this.buttonEditPaymentHistory.Location = new System.Drawing.Point(473, 228);
-            this.buttonEditPaymentHistory.LookAndFeel.SkinMaskColor = System.Drawing.Color.PaleTurquoise;
+            resources.ApplyResources(this.buttonEditPaymentHistory, "buttonEditPaymentHistory");
+            this.buttonEditPaymentHistory.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
             this.buttonEditPaymentHistory.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
             this.buttonEditPaymentHistory.LookAndFeel.SkinName = "McSkin";
             this.buttonEditPaymentHistory.LookAndFeel.UseDefaultLookAndFeel = false;
             this.buttonEditPaymentHistory.Name = "buttonEditPaymentHistory";
-            this.buttonEditPaymentHistory.Size = new System.Drawing.Size(182, 25);
-            this.buttonEditPaymentHistory.TabIndex = 44;
-            this.buttonEditPaymentHistory.Text = "Edit Payment History Profile";
             // 
             // label152
             // 
-            this.label152.AutoSize = true;
-            this.label152.Location = new System.Drawing.Point(47, 236);
+            resources.ApplyResources(this.label152, "label152");
             this.label152.Name = "label152";
-            this.label152.Size = new System.Drawing.Size(143, 17);
-            this.label152.TabIndex = 123;
-            this.label152.Text = "Payment History Profile";
             // 
             // textBoxPaymentHistoryProfile
             // 
             this.textBoxPaymentHistoryProfile.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.closedCreditManagerBindingSource, "PaymentProfile", true));
-            this.textBoxPaymentHistoryProfile.Enabled = false;
-            this.textBoxPaymentHistoryProfile.Location = new System.Drawing.Point(194, 228);
+            resources.ApplyResources(this.textBoxPaymentHistoryProfile, "textBoxPaymentHistoryProfile");
             this.textBoxPaymentHistoryProfile.Name = "textBoxPaymentHistoryProfile";
-            this.textBoxPaymentHistoryProfile.Size = new System.Drawing.Size(276, 25);
-            this.textBoxPaymentHistoryProfile.TabIndex = 43;
             // 
             // textBoxTermsDuration
             // 
             this.textBoxTermsDuration.AllowDrop = true;
             this.textBoxTermsDuration.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.closedCreditManagerBindingSource, "CRDMGR_ACCT_TERMS_DURATION", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N0"));
-            this.textBoxTermsDuration.Enabled = false;
-            this.textBoxTermsDuration.Location = new System.Drawing.Point(768, 202);
+            resources.ApplyResources(this.textBoxTermsDuration, "textBoxTermsDuration");
             this.textBoxTermsDuration.Name = "textBoxTermsDuration";
-            this.textBoxTermsDuration.Size = new System.Drawing.Size(25, 25);
-            this.textBoxTermsDuration.TabIndex = 42;
-            this.textBoxTermsDuration.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label149
             // 
-            this.label149.AutoSize = true;
-            this.label149.Location = new System.Drawing.Point(366, 210);
+            resources.ApplyResources(this.label149, "label149");
             this.label149.Name = "label149";
-            this.label149.Size = new System.Drawing.Size(106, 17);
-            this.label149.TabIndex = 119;
-            this.label149.Text = "Terms Frequency";
             // 
             // comboBoxTermsFrequency
             // 
@@ -9793,20 +7375,14 @@
             this.comboBoxTermsFrequency.DataSource = this.TermsFrequencybindingSource;
             this.comboBoxTermsFrequency.DisplayMember = "Description";
             this.comboBoxTermsFrequency.FormattingEnabled = true;
-            this.comboBoxTermsFrequency.Location = new System.Drawing.Point(473, 202);
+            resources.ApplyResources(this.comboBoxTermsFrequency, "comboBoxTermsFrequency");
             this.comboBoxTermsFrequency.Name = "comboBoxTermsFrequency";
-            this.comboBoxTermsFrequency.Size = new System.Drawing.Size(182, 25);
-            this.comboBoxTermsFrequency.TabIndex = 41;
             this.comboBoxTermsFrequency.ValueMember = "Code";
             // 
             // label150
             // 
-            this.label150.AutoSize = true;
-            this.label150.Location = new System.Drawing.Point(101, 210);
+            resources.ApplyResources(this.label150, "label150");
             this.label150.Name = "label150";
-            this.label150.Size = new System.Drawing.Size(89, 17);
-            this.label150.TabIndex = 117;
-            this.label150.Text = "Portfolio Type";
             // 
             // comboBoxPortfolioType
             // 
@@ -9814,20 +7390,14 @@
             this.comboBoxPortfolioType.DataSource = this.PortfolioTypesbindingSource;
             this.comboBoxPortfolioType.DisplayMember = "Description";
             this.comboBoxPortfolioType.FormattingEnabled = true;
-            this.comboBoxPortfolioType.Location = new System.Drawing.Point(194, 202);
+            resources.ApplyResources(this.comboBoxPortfolioType, "comboBoxPortfolioType");
             this.comboBoxPortfolioType.Name = "comboBoxPortfolioType";
-            this.comboBoxPortfolioType.Size = new System.Drawing.Size(141, 25);
-            this.comboBoxPortfolioType.TabIndex = 40;
             this.comboBoxPortfolioType.ValueMember = "Code";
             // 
             // label148
             // 
-            this.label148.AutoSize = true;
-            this.label148.Location = new System.Drawing.Point(684, 184);
+            resources.ApplyResources(this.label148, "label148");
             this.label148.Name = "label148";
-            this.label148.Size = new System.Drawing.Size(82, 17);
-            this.label148.TabIndex = 115;
-            this.label148.Text = "Interest Type";
             // 
             // comboBoxInterestType
             // 
@@ -9835,20 +7405,14 @@
             this.comboBoxInterestType.DataSource = this.InterestTypesbindingSource;
             this.comboBoxInterestType.DisplayMember = "Description";
             this.comboBoxInterestType.FormattingEnabled = true;
-            this.comboBoxInterestType.Location = new System.Drawing.Point(768, 176);
+            resources.ApplyResources(this.comboBoxInterestType, "comboBoxInterestType");
             this.comboBoxInterestType.Name = "comboBoxInterestType";
-            this.comboBoxInterestType.Size = new System.Drawing.Size(199, 25);
-            this.comboBoxInterestType.TabIndex = 39;
             this.comboBoxInterestType.ValueMember = "Code";
             // 
             // label147
             // 
-            this.label147.AutoSize = true;
-            this.label147.Location = new System.Drawing.Point(114, 184);
+            resources.ApplyResources(this.label147, "label147");
             this.label147.Name = "label147";
-            this.label147.Size = new System.Drawing.Size(76, 17);
-            this.label147.TabIndex = 113;
-            this.label147.Text = "ECOA Code";
             // 
             // comboBoxECOACode
             // 
@@ -9856,20 +7420,14 @@
             this.comboBoxECOACode.DataSource = this.ECOACodesbindingSource;
             this.comboBoxECOACode.DisplayMember = "Description";
             this.comboBoxECOACode.FormattingEnabled = true;
-            this.comboBoxECOACode.Location = new System.Drawing.Point(194, 176);
+            resources.ApplyResources(this.comboBoxECOACode, "comboBoxECOACode");
             this.comboBoxECOACode.Name = "comboBoxECOACode";
-            this.comboBoxECOACode.Size = new System.Drawing.Size(264, 25);
-            this.comboBoxECOACode.TabIndex = 37;
             this.comboBoxECOACode.ValueMember = "Code";
             // 
             // labelComplianceConditionCode
             // 
-            this.labelComplianceConditionCode.AutoSize = true;
-            this.labelComplianceConditionCode.Location = new System.Drawing.Point(19, 158);
+            resources.ApplyResources(this.labelComplianceConditionCode, "labelComplianceConditionCode");
             this.labelComplianceConditionCode.Name = "labelComplianceConditionCode";
-            this.labelComplianceConditionCode.Size = new System.Drawing.Size(171, 17);
-            this.labelComplianceConditionCode.TabIndex = 111;
-            this.labelComplianceConditionCode.Text = "Compliance Condition Code";
             // 
             // comboBoxComplianceConditionCode
             // 
@@ -9877,20 +7435,14 @@
             this.comboBoxComplianceConditionCode.DataSource = this.ComplianceConditionCodesbindingSource;
             this.comboBoxComplianceConditionCode.DisplayMember = "Description";
             this.comboBoxComplianceConditionCode.FormattingEnabled = true;
-            this.comboBoxComplianceConditionCode.Location = new System.Drawing.Point(194, 150);
+            resources.ApplyResources(this.comboBoxComplianceConditionCode, "comboBoxComplianceConditionCode");
             this.comboBoxComplianceConditionCode.Name = "comboBoxComplianceConditionCode";
-            this.comboBoxComplianceConditionCode.Size = new System.Drawing.Size(773, 25);
-            this.comboBoxComplianceConditionCode.TabIndex = 35;
             this.comboBoxComplianceConditionCode.ValueMember = "Code";
             // 
             // label145
             // 
-            this.label145.AutoSize = true;
-            this.label145.Location = new System.Drawing.Point(68, 132);
+            resources.ApplyResources(this.label145, "label145");
             this.label145.Name = "label145";
-            this.label145.Size = new System.Drawing.Size(122, 17);
-            this.label145.TabIndex = 109;
-            this.label145.Text = "Consumer Indicator";
             // 
             // comboBoxConsumerIndicator
             // 
@@ -9898,20 +7450,14 @@
             this.comboBoxConsumerIndicator.DataSource = this.ConsumerIndicatorsbindingSource;
             this.comboBoxConsumerIndicator.DisplayMember = "Description";
             this.comboBoxConsumerIndicator.FormattingEnabled = true;
-            this.comboBoxConsumerIndicator.Location = new System.Drawing.Point(194, 124);
+            resources.ApplyResources(this.comboBoxConsumerIndicator, "comboBoxConsumerIndicator");
             this.comboBoxConsumerIndicator.Name = "comboBoxConsumerIndicator";
-            this.comboBoxConsumerIndicator.Size = new System.Drawing.Size(773, 25);
-            this.comboBoxConsumerIndicator.TabIndex = 33;
             this.comboBoxConsumerIndicator.ValueMember = "Code";
             // 
             // label144
             // 
-            this.label144.AutoSize = true;
-            this.label144.Location = new System.Drawing.Point(105, 106);
+            resources.ApplyResources(this.label144, "label144");
             this.label144.Name = "label144";
-            this.label144.Size = new System.Drawing.Size(85, 17);
-            this.label144.TabIndex = 107;
-            this.label144.Text = "Account Type";
             // 
             // comboBoxAccountType
             // 
@@ -9919,20 +7465,14 @@
             this.comboBoxAccountType.DataSource = this.AccountTypesbindingSource;
             this.comboBoxAccountType.DisplayMember = "Description";
             this.comboBoxAccountType.FormattingEnabled = true;
-            this.comboBoxAccountType.Location = new System.Drawing.Point(194, 98);
+            resources.ApplyResources(this.comboBoxAccountType, "comboBoxAccountType");
             this.comboBoxAccountType.Name = "comboBoxAccountType";
-            this.comboBoxAccountType.Size = new System.Drawing.Size(773, 25);
-            this.comboBoxAccountType.TabIndex = 31;
             this.comboBoxAccountType.ValueMember = "Code";
             // 
             // label143
             // 
-            this.label143.AutoSize = true;
-            this.label143.Location = new System.Drawing.Point(81, 80);
+            resources.ApplyResources(this.label143, "label143");
             this.label143.Name = "label143";
-            this.label143.Size = new System.Drawing.Size(109, 17);
-            this.label143.TabIndex = 105;
-            this.label143.Text = "Special Comment";
             // 
             // comboBoxSpecialComment
             // 
@@ -9940,20 +7480,14 @@
             this.comboBoxSpecialComment.DataSource = this.specialCommentCodesBindingSource;
             this.comboBoxSpecialComment.DisplayMember = "Description";
             this.comboBoxSpecialComment.FormattingEnabled = true;
-            this.comboBoxSpecialComment.Location = new System.Drawing.Point(194, 72);
+            resources.ApplyResources(this.comboBoxSpecialComment, "comboBoxSpecialComment");
             this.comboBoxSpecialComment.Name = "comboBoxSpecialComment";
-            this.comboBoxSpecialComment.Size = new System.Drawing.Size(773, 25);
-            this.comboBoxSpecialComment.TabIndex = 29;
             this.comboBoxSpecialComment.ValueMember = "Code";
             // 
             // label142
             // 
-            this.label142.AutoSize = true;
-            this.label142.Location = new System.Drawing.Point(92, 54);
+            resources.ApplyResources(this.label142, "label142");
             this.label142.Name = "label142";
-            this.label142.Size = new System.Drawing.Size(98, 17);
-            this.label142.TabIndex = 103;
-            this.label142.Text = "Payment Rating";
             // 
             // comboBoxPaymentRating
             // 
@@ -9961,20 +7495,14 @@
             this.comboBoxPaymentRating.DataSource = this.PaymentRatingsbindingSource;
             this.comboBoxPaymentRating.DisplayMember = "Description";
             this.comboBoxPaymentRating.FormattingEnabled = true;
-            this.comboBoxPaymentRating.Location = new System.Drawing.Point(194, 46);
+            resources.ApplyResources(this.comboBoxPaymentRating, "comboBoxPaymentRating");
             this.comboBoxPaymentRating.Name = "comboBoxPaymentRating";
-            this.comboBoxPaymentRating.Size = new System.Drawing.Size(773, 25);
-            this.comboBoxPaymentRating.TabIndex = 27;
             this.comboBoxPaymentRating.ValueMember = "PaymentRating";
             // 
             // label141
             // 
-            this.label141.AutoSize = true;
-            this.label141.Location = new System.Drawing.Point(97, 28);
+            resources.ApplyResources(this.label141, "label141");
             this.label141.Name = "label141";
-            this.label141.Size = new System.Drawing.Size(93, 17);
-            this.label141.TabIndex = 101;
-            this.label141.Text = "Account Status";
             // 
             // comboBoxAccountStatus
             // 
@@ -9982,10 +7510,8 @@
             this.comboBoxAccountStatus.DataSource = this.AccountStatusesbindingSource;
             this.comboBoxAccountStatus.DisplayMember = "Description";
             this.comboBoxAccountStatus.FormattingEnabled = true;
-            this.comboBoxAccountStatus.Location = new System.Drawing.Point(194, 20);
+            resources.ApplyResources(this.comboBoxAccountStatus, "comboBoxAccountStatus");
             this.comboBoxAccountStatus.Name = "comboBoxAccountStatus";
-            this.comboBoxAccountStatus.Size = new System.Drawing.Size(773, 25);
-            this.comboBoxAccountStatus.TabIndex = 27;
             this.comboBoxAccountStatus.ValueMember = "Code";
             // 
             // groupBoxDollars
@@ -10004,189 +7530,120 @@
             this.groupBoxDollars.Controls.Add(this.textBoxAmountPastDue);
             this.groupBoxDollars.Controls.Add(this.labelCurrentBalance);
             this.groupBoxDollars.Controls.Add(this.textBoxCurrentBalance);
-            this.groupBoxDollars.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxDollars.Location = new System.Drawing.Point(78, 70);
+            resources.ApplyResources(this.groupBoxDollars, "groupBoxDollars");
             this.groupBoxDollars.Name = "groupBoxDollars";
-            this.groupBoxDollars.Size = new System.Drawing.Size(529, 220);
-            this.groupBoxDollars.TabIndex = 30;
             this.groupBoxDollars.TabStop = false;
-            this.groupBoxDollars.Text = "Dollars";
             // 
             // label137
             // 
-            this.label137.AutoSize = true;
-            this.label137.Location = new System.Drawing.Point(248, 187);
+            resources.ApplyResources(this.label137, "label137");
             this.label137.Name = "label137";
-            this.label137.Size = new System.Drawing.Size(74, 17);
-            this.label137.TabIndex = 112;
-            this.label137.Text = "Credit Limit";
             // 
             // textBoxCreditLimit
             // 
             this.textBoxCreditLimit.AllowDrop = true;
             this.textBoxCreditLimit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.closedCreditManagerBindingSource, "CRDMGR_ACCT_CREDIT_LIMIT", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "0", "C2"));
-            this.textBoxCreditLimit.Location = new System.Drawing.Point(326, 179);
+            resources.ApplyResources(this.textBoxCreditLimit, "textBoxCreditLimit");
             this.textBoxCreditLimit.Name = "textBoxCreditLimit";
-            this.textBoxCreditLimit.Size = new System.Drawing.Size(102, 25);
-            this.textBoxCreditLimit.TabIndex = 17;
-            this.textBoxCreditLimit.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // labelSchMonthlyPayment
             // 
-            this.labelSchMonthlyPayment.AutoSize = true;
-            this.labelSchMonthlyPayment.Location = new System.Drawing.Point(101, 160);
+            resources.ApplyResources(this.labelSchMonthlyPayment, "labelSchMonthlyPayment");
             this.labelSchMonthlyPayment.Name = "labelSchMonthlyPayment";
-            this.labelSchMonthlyPayment.Size = new System.Drawing.Size(221, 17);
-            this.labelSchMonthlyPayment.TabIndex = 110;
-            this.labelSchMonthlyPayment.Text = "Scheduled Monthly Payment Amount";
             // 
             // textBoxSchMonthlyPaymentAmount
             // 
             this.textBoxSchMonthlyPaymentAmount.AllowDrop = true;
             this.textBoxSchMonthlyPaymentAmount.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.closedCreditManagerBindingSource, "CRDMGR_SCHED_MONTHLY_PAYMENT", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "0", "C2"));
-            this.textBoxSchMonthlyPaymentAmount.Location = new System.Drawing.Point(326, 152);
+            resources.ApplyResources(this.textBoxSchMonthlyPaymentAmount, "textBoxSchMonthlyPaymentAmount");
             this.textBoxSchMonthlyPaymentAmount.Name = "textBoxSchMonthlyPaymentAmount";
-            this.textBoxSchMonthlyPaymentAmount.Size = new System.Drawing.Size(102, 25);
-            this.textBoxSchMonthlyPaymentAmount.TabIndex = 16;
-            this.textBoxSchMonthlyPaymentAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // labelChargeOffAmount
             // 
-            this.labelChargeOffAmount.AutoSize = true;
-            this.labelChargeOffAmount.Location = new System.Drawing.Point(152, 133);
+            resources.ApplyResources(this.labelChargeOffAmount, "labelChargeOffAmount");
             this.labelChargeOffAmount.Name = "labelChargeOffAmount";
-            this.labelChargeOffAmount.Size = new System.Drawing.Size(170, 17);
-            this.labelChargeOffAmount.TabIndex = 108;
-            this.labelChargeOffAmount.Text = "Original Charge-off Amount";
             // 
             // textBoxOrgChargeOffAmount
             // 
             this.textBoxOrgChargeOffAmount.AllowDrop = true;
             this.textBoxOrgChargeOffAmount.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.closedCreditManagerBindingSource, "CRDMGR_ORIGINAL_CHARGE_OFF_AMT", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "0", "C2"));
-            this.textBoxOrgChargeOffAmount.Location = new System.Drawing.Point(326, 125);
+            resources.ApplyResources(this.textBoxOrgChargeOffAmount, "textBoxOrgChargeOffAmount");
             this.textBoxOrgChargeOffAmount.Name = "textBoxOrgChargeOffAmount";
-            this.textBoxOrgChargeOffAmount.Size = new System.Drawing.Size(102, 25);
-            this.textBoxOrgChargeOffAmount.TabIndex = 15;
-            this.textBoxOrgChargeOffAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label134
             // 
-            this.label134.AutoSize = true;
-            this.label134.Location = new System.Drawing.Point(231, 106);
+            resources.ApplyResources(this.label134, "label134");
             this.label134.Name = "label134";
-            this.label134.Size = new System.Drawing.Size(91, 17);
-            this.label134.TabIndex = 106;
-            this.label134.Text = "Highest Credit";
             // 
             // textBoxHighestCredit
             // 
             this.textBoxHighestCredit.AllowDrop = true;
             this.textBoxHighestCredit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.closedCreditManagerBindingSource, "CRDMGR_ACCT_HIGHEST_CREDIT", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "0", "C2"));
-            this.textBoxHighestCredit.Location = new System.Drawing.Point(326, 98);
+            resources.ApplyResources(this.textBoxHighestCredit, "textBoxHighestCredit");
             this.textBoxHighestCredit.Name = "textBoxHighestCredit";
-            this.textBoxHighestCredit.Size = new System.Drawing.Size(102, 25);
-            this.textBoxHighestCredit.TabIndex = 14;
-            this.textBoxHighestCredit.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label133
             // 
-            this.label133.AutoSize = true;
-            this.label133.Location = new System.Drawing.Point(177, 79);
+            resources.ApplyResources(this.label133, "label133");
             this.label133.Name = "label133";
-            this.label133.Size = new System.Drawing.Size(145, 17);
-            this.label133.TabIndex = 104;
-            this.label133.Text = "Actual Payment Amount";
             // 
             // textBoxActualPaymentAmount
             // 
             this.textBoxActualPaymentAmount.AllowDrop = true;
             this.textBoxActualPaymentAmount.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.closedCreditManagerBindingSource, "CRDMGR_ACTUAL_PAYMENT_AMOUNT", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "0", "C2"));
-            this.textBoxActualPaymentAmount.Location = new System.Drawing.Point(326, 71);
+            resources.ApplyResources(this.textBoxActualPaymentAmount, "textBoxActualPaymentAmount");
             this.textBoxActualPaymentAmount.Name = "textBoxActualPaymentAmount";
-            this.textBoxActualPaymentAmount.Size = new System.Drawing.Size(102, 25);
-            this.textBoxActualPaymentAmount.TabIndex = 13;
-            this.textBoxActualPaymentAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // labelAmountPastDue
             // 
-            this.labelAmountPastDue.AutoSize = true;
-            this.labelAmountPastDue.Location = new System.Drawing.Point(214, 52);
+            resources.ApplyResources(this.labelAmountPastDue, "labelAmountPastDue");
             this.labelAmountPastDue.Name = "labelAmountPastDue";
-            this.labelAmountPastDue.Size = new System.Drawing.Size(108, 17);
-            this.labelAmountPastDue.TabIndex = 102;
-            this.labelAmountPastDue.Text = "Amount Past Due";
             // 
             // textBoxAmountPastDue
             // 
             this.textBoxAmountPastDue.AllowDrop = true;
             this.textBoxAmountPastDue.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.closedCreditManagerBindingSource, "CRDMGR_AMOUNT_PAST_DUE", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "0", "C2"));
-            this.textBoxAmountPastDue.Location = new System.Drawing.Point(326, 44);
+            resources.ApplyResources(this.textBoxAmountPastDue, "textBoxAmountPastDue");
             this.textBoxAmountPastDue.Name = "textBoxAmountPastDue";
-            this.textBoxAmountPastDue.Size = new System.Drawing.Size(102, 25);
-            this.textBoxAmountPastDue.TabIndex = 12;
-            this.textBoxAmountPastDue.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // labelCurrentBalance
             // 
-            this.labelCurrentBalance.AutoSize = true;
-            this.labelCurrentBalance.Location = new System.Drawing.Point(223, 25);
+            resources.ApplyResources(this.labelCurrentBalance, "labelCurrentBalance");
             this.labelCurrentBalance.Name = "labelCurrentBalance";
-            this.labelCurrentBalance.Size = new System.Drawing.Size(99, 17);
-            this.labelCurrentBalance.TabIndex = 100;
-            this.labelCurrentBalance.Text = "Current Balance";
             // 
             // textBoxCurrentBalance
             // 
             this.textBoxCurrentBalance.AllowDrop = true;
             this.textBoxCurrentBalance.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.closedCreditManagerBindingSource, "CRDMGR_ACCT_CURRENT_BAL", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "0", "C2"));
-            this.textBoxCurrentBalance.Location = new System.Drawing.Point(326, 17);
+            resources.ApplyResources(this.textBoxCurrentBalance, "textBoxCurrentBalance");
             this.textBoxCurrentBalance.Name = "textBoxCurrentBalance";
-            this.textBoxCurrentBalance.Size = new System.Drawing.Size(102, 25);
-            this.textBoxCurrentBalance.TabIndex = 11;
-            this.textBoxCurrentBalance.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // groupBoxPurge
             // 
             this.groupBoxPurge.Controls.Add(this.checkBoxPurge);
-            this.groupBoxPurge.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxPurge.Location = new System.Drawing.Point(765, 11);
+            resources.ApplyResources(this.groupBoxPurge, "groupBoxPurge");
             this.groupBoxPurge.Name = "groupBoxPurge";
-            this.groupBoxPurge.Size = new System.Drawing.Size(84, 55);
-            this.groupBoxPurge.TabIndex = 29;
             this.groupBoxPurge.TabStop = false;
-            this.groupBoxPurge.Text = "Purge";
             // 
             // checkBoxPurge
             // 
-            this.checkBoxPurge.AutoSize = true;
+            resources.ApplyResources(this.checkBoxPurge, "checkBoxPurge");
             this.checkBoxPurge.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.closedCreditManagerBindingSource, "Purge", true));
-            this.checkBoxPurge.Location = new System.Drawing.Point(7, 22);
             this.checkBoxPurge.Name = "checkBoxPurge";
-            this.checkBoxPurge.Size = new System.Drawing.Size(61, 21);
-            this.checkBoxPurge.TabIndex = 9;
-            this.checkBoxPurge.Text = "Purge";
             this.checkBoxPurge.UseVisualStyleBackColor = true;
             // 
             // groupBoxReportStatus
             // 
             this.groupBoxReportStatus.Controls.Add(this.checkBoxReportTSB);
-            this.groupBoxReportStatus.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxReportStatus.Location = new System.Drawing.Point(625, 11);
+            resources.ApplyResources(this.groupBoxReportStatus, "groupBoxReportStatus");
             this.groupBoxReportStatus.Name = "groupBoxReportStatus";
-            this.groupBoxReportStatus.Size = new System.Drawing.Size(133, 55);
-            this.groupBoxReportStatus.TabIndex = 28;
             this.groupBoxReportStatus.TabStop = false;
-            this.groupBoxReportStatus.Text = "Report Status";
             // 
             // checkBoxReportTSB
             // 
-            this.checkBoxReportTSB.AutoSize = true;
+            resources.ApplyResources(this.checkBoxReportTSB, "checkBoxReportTSB");
             this.checkBoxReportTSB.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.closedCreditManagerBindingSource, "Report", true));
-            this.checkBoxReportTSB.Location = new System.Drawing.Point(27, 22);
             this.checkBoxReportTSB.Name = "checkBoxReportTSB";
-            this.checkBoxReportTSB.Size = new System.Drawing.Size(67, 21);
-            this.checkBoxReportTSB.TabIndex = 7;
-            this.checkBoxReportTSB.Text = "Report";
             this.checkBoxReportTSB.UseVisualStyleBackColor = true;
             // 
             // groupBoxAccountNumber
@@ -10195,88 +7652,59 @@
             this.groupBoxAccountNumber.Controls.Add(this.textBox69);
             this.groupBoxAccountNumber.Controls.Add(this.textBox70);
             this.groupBoxAccountNumber.Controls.Add(this.textBox53);
-            this.groupBoxAccountNumber.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxAccountNumber.Location = new System.Drawing.Point(78, 11);
+            this.groupBoxAccountNumber.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            resources.ApplyResources(this.groupBoxAccountNumber, "groupBoxAccountNumber");
             this.groupBoxAccountNumber.Name = "groupBoxAccountNumber";
-            this.groupBoxAccountNumber.Size = new System.Drawing.Size(529, 55);
-            this.groupBoxAccountNumber.TabIndex = 27;
             this.groupBoxAccountNumber.TabStop = false;
-            this.groupBoxAccountNumber.Text = "Account Number";
             // 
             // textBox68
             // 
             this.textBox68.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBox68.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_SUFFIX", true));
-            this.textBox68.Enabled = false;
-            this.textBox68.Location = new System.Drawing.Point(471, 18);
-            this.textBox68.MaxLength = 3;
+            resources.ApplyResources(this.textBox68, "textBox68");
             this.textBox68.Name = "textBox68";
             this.textBox68.ReadOnly = true;
-            this.textBox68.Size = new System.Drawing.Size(41, 25);
-            this.textBox68.TabIndex = 5;
             // 
             // textBox69
             // 
             this.textBox69.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_LAST_NAME", true));
-            this.textBox69.Enabled = false;
-            this.textBox69.Location = new System.Drawing.Point(258, 18);
+            resources.ApplyResources(this.textBox69, "textBox69");
             this.textBox69.Name = "textBox69";
             this.textBox69.ReadOnly = true;
-            this.textBox69.Size = new System.Drawing.Size(212, 25);
-            this.textBox69.TabIndex = 4;
             // 
             // textBox70
             // 
             this.textBox70.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_FIRST_NAME", true));
-            this.textBox70.Enabled = false;
-            this.textBox70.Location = new System.Drawing.Point(121, 18);
+            resources.ApplyResources(this.textBox70, "textBox70");
             this.textBox70.Name = "textBox70";
             this.textBox70.ReadOnly = true;
-            this.textBox70.Size = new System.Drawing.Size(136, 25);
-            this.textBox70.TabIndex = 3;
             // 
             // textBox53
             // 
             this.textBox53.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_NO", true));
-            this.textBox53.Enabled = false;
-            this.textBox53.Location = new System.Drawing.Point(40, 18);
+            resources.ApplyResources(this.textBox53, "textBox53");
             this.textBox53.Name = "textBox53";
             this.textBox53.ReadOnly = true;
-            this.textBox53.Size = new System.Drawing.Size(67, 25);
-            this.textBox53.TabIndex = 2;
-            this.textBox53.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // labelCheckNumber
             // 
-            this.labelCheckNumber.AutoSize = true;
-            this.labelCheckNumber.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCheckNumber.Location = new System.Drawing.Point(798, 120);
+            resources.ApplyResources(this.labelCheckNumber, "labelCheckNumber");
             this.labelCheckNumber.Name = "labelCheckNumber";
-            this.labelCheckNumber.Size = new System.Drawing.Size(89, 21);
-            this.labelCheckNumber.TabIndex = 142;
-            this.labelCheckNumber.Text = "CHECK NO:";
-            this.labelCheckNumber.Visible = false;
             // 
             // txtCreditLimit
             // 
-            this.txtCreditLimit.Location = new System.Drawing.Point(0, 0);
+            resources.ApplyResources(this.txtCreditLimit, "txtCreditLimit");
             this.txtCreditLimit.Name = "txtCreditLimit";
-            this.txtCreditLimit.Size = new System.Drawing.Size(100, 20);
-            this.txtCreditLimit.TabIndex = 0;
             // 
             // txtNumberofMonths
             // 
-            this.txtNumberofMonths.Location = new System.Drawing.Point(0, 0);
+            resources.ApplyResources(this.txtNumberofMonths, "txtNumberofMonths");
             this.txtNumberofMonths.Name = "txtNumberofMonths";
-            this.txtNumberofMonths.Size = new System.Drawing.Size(100, 20);
-            this.txtNumberofMonths.TabIndex = 0;
             // 
             // txtDealerDiscBal
             // 
-            this.txtDealerDiscBal.Location = new System.Drawing.Point(0, 0);
+            resources.ApplyResources(this.txtDealerDiscBal, "txtDealerDiscBal");
             this.txtDealerDiscBal.Name = "txtDealerDiscBal";
-            this.txtDealerDiscBal.Size = new System.Drawing.Size(100, 20);
-            this.txtDealerDiscBal.TabIndex = 0;
             // 
             // toolbarFormManager2
             // 
@@ -10289,71 +7717,197 @@
             // barDockControl1
             // 
             this.barDockControl1.CausesValidation = false;
-            this.barDockControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.barDockControl1.Location = new System.Drawing.Point(0, 0);
+            resources.ApplyResources(this.barDockControl1, "barDockControl1");
             this.barDockControl1.Manager = this.toolbarFormManager2;
-            this.barDockControl1.Size = new System.Drawing.Size(1238, 0);
             // 
             // barDockControl2
             // 
             this.barDockControl2.CausesValidation = false;
-            this.barDockControl2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControl2.Location = new System.Drawing.Point(0, 642);
+            resources.ApplyResources(this.barDockControl2, "barDockControl2");
             this.barDockControl2.Manager = this.toolbarFormManager2;
-            this.barDockControl2.Size = new System.Drawing.Size(1238, 0);
             // 
             // barDockControl3
             // 
             this.barDockControl3.CausesValidation = false;
-            this.barDockControl3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControl3.Location = new System.Drawing.Point(0, 0);
+            resources.ApplyResources(this.barDockControl3, "barDockControl3");
             this.barDockControl3.Manager = this.toolbarFormManager2;
-            this.barDockControl3.Size = new System.Drawing.Size(0, 642);
             // 
             // barDockControl4
             // 
             this.barDockControl4.CausesValidation = false;
-            this.barDockControl4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControl4.Location = new System.Drawing.Point(1238, 0);
+            resources.ApplyResources(this.barDockControl4, "barDockControl4");
             this.barDockControl4.Manager = this.toolbarFormManager2;
-            this.barDockControl4.Size = new System.Drawing.Size(0, 642);
             // 
-            // tabFormControl1
+            // barManager1
             // 
-            this.tabFormControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabFormControl1.Name = "tabFormControl1";
-            this.tabFormControl1.Pages.Add(this.tabFormPage1);
-            this.tabFormControl1.SelectedPage = this.tabFormPage1;
-            this.tabFormControl1.Size = new System.Drawing.Size(1238, 71);
-            this.tabFormControl1.TabForm = this;
-            this.tabFormControl1.TabIndex = 229;
-            this.tabFormControl1.TabStop = false;
+            this.barManager1.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
+            this.toolStrip1,
+            this.HistroyBar});
+            this.barManager1.DockControls.Add(this.barDockControl5);
+            this.barManager1.DockControls.Add(this.barDockControl6);
+            this.barManager1.DockControls.Add(this.barDockControl7);
+            this.barManager1.DockControls.Add(this.barDockControl8);
+            this.barManager1.Form = this;
+            this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.toolStripButton1,
+            this.toolStripButtonEdit,
+            this.toolStripButtonDelete,
+            this.toolStripButtonSave,
+            this.barButtonItemPrintCustomerReceipt,
+            this.barButtonItemPrintAmortizationSchedule,
+            this.barButtonItemTimeValueToExcel,
+            this.barButtonItemCaculateBuyout});
+            this.barManager1.MaxItemId = 9;
             // 
-            // tabFormPage1
+            // toolStrip1
             // 
-            this.tabFormPage1.ContentContainer = this.tabFormContentContainer1;
-            this.tabFormPage1.Name = "tabFormPage1";
-            this.tabFormPage1.Text = "Page 0";
+            this.toolStrip1.BarName = "Tools";
+            this.toolStrip1.DockCol = 0;
+            this.toolStrip1.DockRow = 0;
+            this.toolStrip1.DockStyle = DevExpress.XtraBars.BarDockStyle.Bottom;
+            this.toolStrip1.FloatLocation = new System.Drawing.Point(323, 746);
+            this.toolStrip1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.toolStripButton1, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.toolStripButtonEdit, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.toolStripButtonDelete, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.toolStripButtonSave, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
+            resources.ApplyResources(this.toolStrip1, "toolStrip1");
             // 
-            // tabFormContentContainer1
+            // toolStripButton1
             // 
-            this.tabFormContentContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabFormContentContainer1.Location = new System.Drawing.Point(0, 71);
-            this.tabFormContentContainer1.Name = "tabFormContentContainer1";
-            this.tabFormContentContainer1.Size = new System.Drawing.Size(1238, 571);
-            this.tabFormContentContainer1.TabIndex = 230;
+            this.toolStripButton1.Id = 0;
+            this.toolStripButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.ImageOptions.Image")));
+            this.toolStripButton1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.ImageOptions.LargeImage")));
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.toolStripButton1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.toolStripButton1_Click);
+            // 
+            // toolStripButtonEdit
+            // 
+            resources.ApplyResources(this.toolStripButtonEdit, "toolStripButtonEdit");
+            this.toolStripButtonEdit.Id = 1;
+            this.toolStripButtonEdit.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonEdit.ImageOptions.Image")));
+            this.toolStripButtonEdit.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("toolStripButtonEdit.ImageOptions.LargeImage")));
+            this.toolStripButtonEdit.ItemAppearance.Normal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.toolStripButtonEdit.ItemAppearance.Normal.Options.UseBackColor = true;
+            this.toolStripButtonEdit.Name = "toolStripButtonEdit";
+            this.toolStripButtonEdit.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.toolStripButtonEdit_ItemClick);
+            // 
+            // toolStripButtonDelete
+            // 
+            resources.ApplyResources(this.toolStripButtonDelete, "toolStripButtonDelete");
+            this.toolStripButtonDelete.Id = 2;
+            this.toolStripButtonDelete.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonDelete.ImageOptions.Image")));
+            this.toolStripButtonDelete.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("toolStripButtonDelete.ImageOptions.LargeImage")));
+            this.toolStripButtonDelete.ItemAppearance.Normal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.toolStripButtonDelete.ItemAppearance.Normal.Options.UseBackColor = true;
+            this.toolStripButtonDelete.Name = "toolStripButtonDelete";
+            this.toolStripButtonDelete.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.toolStripButtonDelete_ItemClick);
+            // 
+            // toolStripButtonSave
+            // 
+            resources.ApplyResources(this.toolStripButtonSave, "toolStripButtonSave");
+            this.toolStripButtonSave.Id = 3;
+            this.toolStripButtonSave.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("toolStripButtonSave.ImageOptions.SvgImage")));
+            this.toolStripButtonSave.ItemAppearance.Normal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.toolStripButtonSave.ItemAppearance.Normal.Options.UseBackColor = true;
+            this.toolStripButtonSave.Name = "toolStripButtonSave";
+            this.toolStripButtonSave.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.toolStripButtonSave_ItemClick);
+            // 
+            // HistroyBar
+            // 
+            this.HistroyBar.BarName = "HistoryTools";
+            this.HistroyBar.DockCol = 0;
+            this.HistroyBar.DockRow = 0;
+            this.HistroyBar.DockStyle = DevExpress.XtraBars.BarDockStyle.Standalone;
+            this.HistroyBar.FloatLocation = new System.Drawing.Point(275, 706);
+            this.HistroyBar.FloatSize = new System.Drawing.Size(46, 24);
+            this.HistroyBar.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItemPrintCustomerReceipt, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItemPrintAmortizationSchedule, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemTimeValueToExcel),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemCaculateBuyout)});
+            this.HistroyBar.StandaloneBarDockControl = this.standaloneBarDockControl1;
+            resources.ApplyResources(this.HistroyBar, "HistroyBar");
+            // 
+            // barButtonItemPrintCustomerReceipt
+            // 
+            resources.ApplyResources(this.barButtonItemPrintCustomerReceipt, "barButtonItemPrintCustomerReceipt");
+            this.barButtonItemPrintCustomerReceipt.Id = 5;
+            this.barButtonItemPrintCustomerReceipt.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItemPrintCustomerReceipt.ImageOptions.Image")));
+            this.barButtonItemPrintCustomerReceipt.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItemPrintCustomerReceipt.ImageOptions.LargeImage")));
+            this.barButtonItemPrintCustomerReceipt.ItemAppearance.Normal.BackColor = System.Drawing.Color.MistyRose;
+            this.barButtonItemPrintCustomerReceipt.ItemAppearance.Normal.Options.UseBackColor = true;
+            this.barButtonItemPrintCustomerReceipt.Name = "barButtonItemPrintCustomerReceipt";
+            this.barButtonItemPrintCustomerReceipt.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemPrintCustomerReceipt_ItemClick);
+            // 
+            // barButtonItemPrintAmortizationSchedule
+            // 
+            resources.ApplyResources(this.barButtonItemPrintAmortizationSchedule, "barButtonItemPrintAmortizationSchedule");
+            this.barButtonItemPrintAmortizationSchedule.Id = 6;
+            this.barButtonItemPrintAmortizationSchedule.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItemPrintAmortizationSchedule.ImageOptions.Image")));
+            this.barButtonItemPrintAmortizationSchedule.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItemPrintAmortizationSchedule.ImageOptions.LargeImage")));
+            this.barButtonItemPrintAmortizationSchedule.ItemAppearance.Normal.BackColor = System.Drawing.Color.Violet;
+            this.barButtonItemPrintAmortizationSchedule.ItemAppearance.Normal.Options.UseBackColor = true;
+            this.barButtonItemPrintAmortizationSchedule.Name = "barButtonItemPrintAmortizationSchedule";
+            this.barButtonItemPrintAmortizationSchedule.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
+            // 
+            // barButtonItemTimeValueToExcel
+            // 
+            resources.ApplyResources(this.barButtonItemTimeValueToExcel, "barButtonItemTimeValueToExcel");
+            this.barButtonItemTimeValueToExcel.Id = 7;
+            this.barButtonItemTimeValueToExcel.ImageOptions.Image = global::IAC2021SQL.Properties.Resources.ExportToExcel_16x;
+            this.barButtonItemTimeValueToExcel.ItemAppearance.Normal.BackColor = System.Drawing.Color.LightBlue;
+            this.barButtonItemTimeValueToExcel.ItemAppearance.Normal.Options.UseBackColor = true;
+            this.barButtonItemTimeValueToExcel.Name = "barButtonItemTimeValueToExcel";
+            this.barButtonItemTimeValueToExcel.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.barButtonItemTimeValueToExcel.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.barButtonItemTimeValueToExcel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemTimeValueToExcel_ItemClick);
+            // 
+            // barButtonItemCaculateBuyout
+            // 
+            resources.ApplyResources(this.barButtonItemCaculateBuyout, "barButtonItemCaculateBuyout");
+            this.barButtonItemCaculateBuyout.Id = 8;
+            this.barButtonItemCaculateBuyout.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItemCaculateBuyout.ImageOptions.Image")));
+            this.barButtonItemCaculateBuyout.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItemCaculateBuyout.ImageOptions.LargeImage")));
+            this.barButtonItemCaculateBuyout.ItemAppearance.Normal.BackColor = System.Drawing.Color.LightYellow;
+            this.barButtonItemCaculateBuyout.ItemAppearance.Normal.Options.UseBackColor = true;
+            this.barButtonItemCaculateBuyout.Name = "barButtonItemCaculateBuyout";
+            this.barButtonItemCaculateBuyout.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
+            this.barButtonItemCaculateBuyout.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemCaculateBuyout_ItemClick);
+            // 
+            // barDockControl5
+            // 
+            this.barDockControl5.CausesValidation = false;
+            resources.ApplyResources(this.barDockControl5, "barDockControl5");
+            this.barDockControl5.Manager = this.barManager1;
+            // 
+            // barDockControl6
+            // 
+            this.barDockControl6.CausesValidation = false;
+            resources.ApplyResources(this.barDockControl6, "barDockControl6");
+            this.barDockControl6.Manager = this.barManager1;
+            // 
+            // barDockControl7
+            // 
+            this.barDockControl7.CausesValidation = false;
+            resources.ApplyResources(this.barDockControl7, "barDockControl7");
+            this.barDockControl7.Manager = this.barManager1;
+            // 
+            // barDockControl8
+            // 
+            this.barDockControl8.CausesValidation = false;
+            resources.ApplyResources(this.barDockControl8, "barDockControl8");
+            this.barDockControl8.Manager = this.barManager1;
             // 
             // frmNewCustMaint
             // 
-            this.Appearance.Options.UseFont = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.Appearance.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.Appearance.Options.UseBackColor = true;
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1238, 642);
-            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.xtraTabControlCustomerMaint);
-            this.Controls.Add(this.tabFormContentContainer1);
-            this.Controls.Add(this.tabFormControl1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
@@ -10362,10 +7916,20 @@
             this.Controls.Add(this.barDockControl4);
             this.Controls.Add(this.barDockControl2);
             this.Controls.Add(this.barDockControl1);
-            this.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Controls.Add(this.barDockControl7);
+            this.Controls.Add(this.barDockControl8);
+            this.Controls.Add(this.barDockControl6);
+            this.Controls.Add(this.barDockControl5);
+            this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.Shadow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.IconOptions.Image = ((System.Drawing.Image)(resources.GetObject("frmNewCustMaint.IconOptions.Image")));
+            this.LookAndFeel.SkinMaskColor = System.Drawing.Color.Black;
+            this.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
+            this.LookAndFeel.SkinName = "McSkin";
+            this.LookAndFeel.UseDefaultLookAndFeel = false;
             this.Name = "frmNewCustMaint";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-            this.TabFormControl = this.tabFormControl1;
+            this.TopMost = true;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmCustMaint_FormClosing);
             this.Load += new System.EventHandler(this.frmNewCustMaint_Load);
             ((System.ComponentModel.ISupportInitialize)(this.cUSTOMERBindingSource)).EndInit();
@@ -10403,8 +7967,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.specialCommentCodesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PaymentRatingsbindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.AccountStatusesbindingSource)).EndInit();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderCustomerForm)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.paymentDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.paymentDataSetBindingSource)).EndInit();
@@ -10413,8 +7975,9 @@
             this.xtraTabPageCustInfo1.ResumeLayout(false);
             this.groupBox10.ResumeLayout(false);
             this.groupBox10.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.colorCheckBoxReceivedContract.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkBoxSendToDealer.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolbarFormManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.colorCheckBoxReceivedContract.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkBoxFullRecourseTab1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDOB.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDOB.Properties)).EndInit();
@@ -10429,6 +7992,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.checkBoxVehicleWarranty.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkBoxRefi.Properties)).EndInit();
             this.xtraTabPageCustInfo2.ResumeLayout(false);
+            this.groupBox14.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.colorTextBoxTotalDue.Properties)).EndInit();
@@ -10446,6 +8010,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtPaymentDate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPaymentDate.Properties)).EndInit();
             this.xtraTabPageVehicle.ResumeLayout(false);
+            this.groupBox15.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.VehicleGroupBox.ResumeLayout(false);
@@ -10470,6 +8035,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtEffectiveDate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEffectiveDate.Properties)).EndInit();
             this.xtraTabPageCosigner.ResumeLayout(false);
+            this.groupBox16.ResumeLayout(false);
             this.groupBoxCOSSBT.ResumeLayout(false);
             this.groupBoxCOSSBT.PerformLayout();
             this.groupBox5.ResumeLayout(false);
@@ -10481,6 +8047,7 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.xtraTabPageBank.ResumeLayout(false);
+            this.groupBox17.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             this.tabControl1.ResumeLayout(false);
@@ -10490,8 +8057,7 @@
             this.tabPage2.PerformLayout();
             this.xtraTabPageHistory.ResumeLayout(false);
             this.xtraTabPageHistory.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControlCustomerHist)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridViewCustomerHistory)).EndInit();
+            this.groupBox18.ResumeLayout(false);
             this.groupBox11.ResumeLayout(false);
             this.groupBox11.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.checkBoxFullRecourseHist.Properties)).EndInit();
@@ -10501,9 +8067,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerPayDate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerHistContractDate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerHistContractDate.Properties)).EndInit();
-            this.toolStrip2.ResumeLayout(false);
-            this.toolStrip2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlCustomerHist)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewCustomerHistory)).EndInit();
             this.xtraTabPageComments.ResumeLayout(false);
+            this.groupBox19.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cOMMENTGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cOMMENTgridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).EndInit();
@@ -10515,16 +8082,19 @@
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
             this.xtraTabPageCustomerFees.ResumeLayout(false);
+            this.groupBox20.ResumeLayout(false);
             this.groupBoxFees.ResumeLayout(false);
             this.groupBoxFees.PerformLayout();
             this.groupBox12.ResumeLayout(false);
             this.groupBox12.PerformLayout();
             this.xtraTabPageRepoHistory.ResumeLayout(false);
+            this.groupBox21.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlRepoLog)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewRepoLog)).EndInit();
             this.groupBox13.ResumeLayout(false);
             this.groupBox13.PerformLayout();
             this.xtraTabPageTSB.ResumeLayout(false);
+            this.groupBox22.ResumeLayout(false);
             this.groupBoxDates.ResumeLayout(false);
             this.groupBoxDates.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerFollowUpDate.Properties.CalendarTimeProperties)).EndInit();
@@ -10551,7 +8121,7 @@
             this.groupBoxAccountNumber.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolbarFormManager2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tabFormControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -10587,11 +8157,6 @@
         private IACDataSetTableAdapters.LetterTypeTableAdapter letterTypeTableAdapter;
         private System.Windows.Forms.BindingSource bindingSourceMonthNames;
         private IACDataSetTableAdapters.MonthNamesTableAdapter monthNamesTableAdapter;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private System.Windows.Forms.ToolStripButton toolStripButtonEdit;
-        private System.Windows.Forms.ToolStripButton toolStripButtonDelete;
-        private System.Windows.Forms.ToolStripButton toolStripButtonSave;
-        private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ErrorProvider errorProviderCustomerForm;
         private System.Windows.Forms.BindingSource repoCodesBindingSource;
         private IACDataSetTableAdapters.RepoCodesTableAdapter repoCodesTableAdapter;
@@ -10667,14 +8232,10 @@
         private DevExpress.XtraBars.BarDockControl barDockControl2;
         private DevExpress.XtraBars.BarDockControl barDockControl3;
         private DevExpress.XtraBars.BarDockControl barDockControl4;
-        private DevExpress.XtraBars.TabFormContentContainer tabFormContentContainer1;
-        private DevExpress.XtraBars.TabFormControl tabFormControl1;
-        private DevExpress.XtraBars.TabFormPage tabFormPage1;
         private DevExpress.XtraTab.XtraTabPage xtraTabPageCustInfo1;
         private System.Windows.Forms.GroupBox groupBox10;
         private DevExpress.XtraEditors.DateEdit nullableDateTimePickerDateContractReceived;
         private DevExpress.XtraEditors.SimpleButton buttonDealerEmail;
-        private System.Windows.Forms.CheckBox checkBoxSendToDealer;
         private System.Windows.Forms.TextBox textBoxDealerEmail;
         private System.Windows.Forms.CheckBox checkBoxMilitary;
         private System.Windows.Forms.GroupBox groupBoxSBT;
@@ -11014,12 +8575,6 @@
         private DevExpress.XtraEditors.CheckEdit colorCheckBoxReceivedContract;
         private DevExpress.XtraEditors.CheckEdit checkBoxRefi;
         private DevExpress.XtraEditors.CheckEdit checkBoxVehicleWarranty;
-        private System.Windows.Forms.ToolStrip toolStrip2;
-        private System.Windows.Forms.ToolStripButton toolStripButton3;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
-        private System.Windows.Forms.ToolStripButton toolStripButtonAmort;
-        private System.Windows.Forms.ToolStripButton toolStripButtonTVExcel;
-        private System.Windows.Forms.ToolStripButton toolStripButtonCalcBuyout;
         private System.Windows.Forms.GroupBox groupBox9;
         private DevExpress.XtraEditors.DateEdit nullableDateTimePickerFundingDate;
         private System.Windows.Forms.CheckBox checkBoxOverrideLateCharge;
@@ -11146,6 +8701,32 @@
         private DevExpress.XtraGrid.Columns.GridColumn colNewTitleReceived;
         private DevExpress.XtraGrid.Columns.GridColumn colOrgDateTitleReceived;
         private DevExpress.XtraGrid.Columns.GridColumn colNewDateTitleReceived;
+        private DevExpress.XtraBars.BarDockControl barDockControl7;
+        private DevExpress.XtraBars.BarManager barManager1;
+        private DevExpress.XtraBars.Bar toolStrip1;
+        private DevExpress.XtraBars.BarButtonItem toolStripButton1;
+        private DevExpress.XtraBars.BarButtonItem toolStripButtonEdit;
+        private DevExpress.XtraBars.BarButtonItem toolStripButtonDelete;
+        private DevExpress.XtraBars.BarButtonItem toolStripButtonSave;
+        private DevExpress.XtraBars.BarDockControl barDockControl5;
+        private DevExpress.XtraBars.BarDockControl barDockControl6;
+        private DevExpress.XtraBars.BarDockControl barDockControl8;
+        private DevExpress.XtraBars.StandaloneBarDockControl standaloneBarDockControl1;
+        private DevExpress.XtraBars.Bar HistroyBar;
+        private DevExpress.XtraBars.BarButtonItem barButtonItemPrintCustomerReceipt;
+        private DevExpress.XtraBars.BarButtonItem barButtonItemPrintAmortizationSchedule;
+        private DevExpress.XtraBars.BarButtonItem barButtonItemTimeValueToExcel;
+        private DevExpress.XtraBars.BarButtonItem barButtonItemCaculateBuyout;
+        private DevExpress.XtraEditors.CheckEdit checkBoxSendToDealer;
+        private System.Windows.Forms.GroupBox groupBox14;
+        private System.Windows.Forms.GroupBox groupBox15;
+        private System.Windows.Forms.GroupBox groupBox16;
+        private System.Windows.Forms.GroupBox groupBox17;
+        private System.Windows.Forms.GroupBox groupBox18;
+        private System.Windows.Forms.GroupBox groupBox19;
+        private System.Windows.Forms.GroupBox groupBox20;
+        private System.Windows.Forms.GroupBox groupBox21;
+        private System.Windows.Forms.GroupBox groupBox22;
     }
 }
 
