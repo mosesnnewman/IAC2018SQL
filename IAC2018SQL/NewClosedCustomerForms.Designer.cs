@@ -46,8 +46,6 @@
             System.Windows.Forms.Label label165;
             System.Windows.Forms.Label label166;
             System.Windows.Forms.Label label167;
-            System.Windows.Forms.Label label168;
-            System.Windows.Forms.Label label169;
             System.Windows.Forms.Label label170;
             System.Windows.Forms.Label label171;
             System.Windows.Forms.Label label172;
@@ -58,14 +56,11 @@
             System.Windows.Forms.Label label177;
             System.Windows.Forms.Label label178;
             System.Windows.Forms.Label label179;
-            System.Windows.Forms.Label label180;
-            System.Windows.Forms.Label label181;
             System.Windows.Forms.Label label182;
             System.Windows.Forms.Label label183;
             System.Windows.Forms.Label label184;
             System.Windows.Forms.Label label185;
             System.Windows.Forms.Label label186;
-            System.Windows.Forms.Label label187;
             System.Windows.Forms.Label label188;
             System.Windows.Forms.Label label189;
             System.Windows.Forms.Label labelTotalDue;
@@ -147,7 +142,6 @@
             System.Windows.Forms.Label label83;
             System.Windows.Forms.Label label84;
             System.Windows.Forms.Label label85;
-            System.Windows.Forms.Label label95;
             System.Windows.Forms.Label labelTotalExtensions;
             System.Windows.Forms.Label labelHistContractDate;
             System.Windows.Forms.Label label6;
@@ -352,20 +346,24 @@
             this.xtraTabControlCustomerMaint = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPageCustInfo1 = new DevExpress.XtraTab.XtraTabPage();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.checkBoxSendToDealer = new DevExpress.XtraEditors.CheckEdit();
+            this.checkEditMilitary = new DevExpress.XtraEditors.CheckEdit();
             this.toolbarFormManager1 = new DevExpress.XtraBars.ToolbarForm.ToolbarFormManager(this.components);
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.standaloneBarDockControl1 = new DevExpress.XtraBars.StandaloneBarDockControl();
+            this.checkEditNoContact = new DevExpress.XtraEditors.CheckEdit();
+            this.checkEditWrongAddress = new DevExpress.XtraEditors.CheckEdit();
+            this.checkEditAutoPay = new DevExpress.XtraEditors.CheckEdit();
+            this.checkEditCustomerInsurance = new DevExpress.XtraEditors.CheckEdit();
+            this.checkBoxSendToDealer = new DevExpress.XtraEditors.CheckEdit();
             this.colorCheckBoxReceivedContract = new DevExpress.XtraEditors.CheckEdit();
             this.checkBoxFullRecourseTab1 = new DevExpress.XtraEditors.CheckEdit();
             this.txtDOB = new DevExpress.XtraEditors.DateEdit();
             this.nullableDateTimePickerDateContractReceived = new DevExpress.XtraEditors.DateEdit();
             this.buttonDealerEmail = new DevExpress.XtraEditors.SimpleButton();
             this.textBoxDealerEmail = new System.Windows.Forms.TextBox();
-            this.checkBoxMilitary = new System.Windows.Forms.CheckBox();
             this.groupBoxSBT = new System.Windows.Forms.GroupBox();
             this.buttonMessage = new DevExpress.XtraEditors.SimpleButton();
             this.buttonConfirm = new DevExpress.XtraEditors.SimpleButton();
@@ -402,9 +400,6 @@
             this.cUSTOMER_CONTACTTextBox = new System.Windows.Forms.TextBox();
             this.cUSTOMER_BRANCH_NUMBERTextBox = new System.Windows.Forms.TextBox();
             this.cUSTOMER_DISTRIBUTOR_NOTextBox = new System.Windows.Forms.TextBox();
-            this.cUSTOMER_ALLOTMENTTextBox = new System.Windows.Forms.TextBox();
-            this.cUSTOMER_AUTOPAYTextBox = new System.Windows.Forms.TextBox();
-            this.cUSTOMER_INSURANCETextBox = new System.Windows.Forms.TextBox();
             this.cUSTOMER_SS_3TextBox = new System.Windows.Forms.TextBox();
             this.cUSTOMER_SS_2TextBox = new System.Windows.Forms.TextBox();
             this.cUSTOMER_SS_1TextBox = new System.Windows.Forms.TextBox();
@@ -417,8 +412,6 @@
             this.cUSTOMER_STREET_1TextBox = new System.Windows.Forms.TextBox();
             this.cUSTOMER_LAST_NAMETextBox = new System.Windows.Forms.TextBox();
             this.cUSTOMER_FIRST_NAMETextBox = new System.Windows.Forms.TextBox();
-            this.cUSTOMER_NO_CONTACTTextBox = new System.Windows.Forms.TextBox();
-            this.cUSTOMER_WRONG_ADDRESSTextBox = new System.Windows.Forms.TextBox();
             this.cUSTOMER_PURCHASE_ORDERTextBox = new System.Windows.Forms.TextBox();
             this.cUSTOMER_ACT_STATTextBox = new System.Windows.Forms.TextBox();
             this.cUSTOMER_IAC_TypeTextBox = new System.Windows.Forms.TextBox();
@@ -595,6 +588,24 @@
             this.textBox61 = new System.Windows.Forms.TextBox();
             this.xtraTabPageBank = new DevExpress.XtraTab.XtraTabPage();
             this.groupBox17 = new System.Windows.Forms.GroupBox();
+            this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
+            this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
+            this.groupBox23 = new System.Windows.Forms.GroupBox();
+            this.checkEditBankAutoPay = new DevExpress.XtraEditors.CheckEdit();
+            this.textEditBankAccountNumber = new DevExpress.XtraEditors.TextEdit();
+            this.textEditBankCheckDigit = new DevExpress.XtraEditors.TextEdit();
+            this.textEditBankRoutingNumber = new DevExpress.XtraEditors.TextEdit();
+            this.textEditBankState = new DevExpress.XtraEditors.TextEdit();
+            this.textEditBankCity = new DevExpress.XtraEditors.TextEdit();
+            this.textEditBankName = new DevExpress.XtraEditors.TextEdit();
+            this.textEditBankMonthlyPayment = new DevExpress.XtraEditors.TextEdit();
+            this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
+            this.groupBox24 = new System.Windows.Forms.GroupBox();
+            this.comboBoxEditExpYear = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.lookUpEditExpMonth = new DevExpress.XtraEditors.LookUpEdit();
+            this.textEditCreditCardCVV = new DevExpress.XtraEditors.TextEdit();
+            this.textEditCreditCardNumber = new DevExpress.XtraEditors.TextEdit();
+            this.textEditCreditCardName = new DevExpress.XtraEditors.TextEdit();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.textBox21 = new System.Windows.Forms.TextBox();
             this.textBox57 = new System.Windows.Forms.TextBox();
@@ -603,33 +614,6 @@
             this.textBox86 = new System.Windows.Forms.TextBox();
             this.textBox87 = new System.Windows.Forms.TextBox();
             this.textBox88 = new System.Windows.Forms.TextBox();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.label103 = new System.Windows.Forms.Label();
-            this.textBoxMonthlyPayment = new System.Windows.Forms.TextBox();
-            this.txtBankAutoPay = new System.Windows.Forms.TextBox();
-            this.txtBankAccountNumber = new System.Windows.Forms.TextBox();
-            this.label90 = new System.Windows.Forms.Label();
-            this.txtBankCheckDigit = new System.Windows.Forms.TextBox();
-            this.label89 = new System.Windows.Forms.Label();
-            this.txtBankRoutingNumber = new System.Windows.Forms.TextBox();
-            this.label88 = new System.Windows.Forms.Label();
-            this.txtBankState = new System.Windows.Forms.TextBox();
-            this.label87 = new System.Windows.Forms.Label();
-            this.txtBankCity = new System.Windows.Forms.TextBox();
-            this.label86 = new System.Windows.Forms.Label();
-            this.txtBankName = new System.Windows.Forms.TextBox();
-            this.lblBankName = new System.Windows.Forms.Label();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.ExpYearcomboBox = new System.Windows.Forms.ComboBox();
-            this.label94 = new System.Windows.Forms.Label();
-            this.ExpMonthcomboBox = new System.Windows.Forms.ComboBox();
-            this.txtCreditCardCVV = new System.Windows.Forms.TextBox();
-            this.label93 = new System.Windows.Forms.Label();
-            this.label92 = new System.Windows.Forms.Label();
-            this.txtCreditCardName = new System.Windows.Forms.TextBox();
-            this.txtCreditCardNumber = new System.Windows.Forms.TextBox();
-            this.label91 = new System.Windows.Forms.Label();
             this.xtraTabPageHistory = new DevExpress.XtraTab.XtraTabPage();
             this.groupBox18 = new System.Windows.Forms.GroupBox();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
@@ -857,6 +841,7 @@
             this.barDockControl6 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl7 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl8 = new DevExpress.XtraBars.BarDockControl();
+            this.checkEditAllotment = new DevExpress.XtraEditors.CheckEdit();
             label45 = new System.Windows.Forms.Label();
             label48 = new System.Windows.Forms.Label();
             labelAuthNo = new System.Windows.Forms.Label();
@@ -872,8 +857,6 @@
             label165 = new System.Windows.Forms.Label();
             label166 = new System.Windows.Forms.Label();
             label167 = new System.Windows.Forms.Label();
-            label168 = new System.Windows.Forms.Label();
-            label169 = new System.Windows.Forms.Label();
             label170 = new System.Windows.Forms.Label();
             label171 = new System.Windows.Forms.Label();
             label172 = new System.Windows.Forms.Label();
@@ -884,14 +867,11 @@
             label177 = new System.Windows.Forms.Label();
             label178 = new System.Windows.Forms.Label();
             label179 = new System.Windows.Forms.Label();
-            label180 = new System.Windows.Forms.Label();
-            label181 = new System.Windows.Forms.Label();
             label182 = new System.Windows.Forms.Label();
             label183 = new System.Windows.Forms.Label();
             label184 = new System.Windows.Forms.Label();
             label185 = new System.Windows.Forms.Label();
             label186 = new System.Windows.Forms.Label();
-            label187 = new System.Windows.Forms.Label();
             label188 = new System.Windows.Forms.Label();
             label189 = new System.Windows.Forms.Label();
             labelTotalDue = new System.Windows.Forms.Label();
@@ -973,7 +953,6 @@
             label83 = new System.Windows.Forms.Label();
             label84 = new System.Windows.Forms.Label();
             label85 = new System.Windows.Forms.Label();
-            label95 = new System.Windows.Forms.Label();
             labelTotalExtensions = new System.Windows.Forms.Label();
             labelHistContractDate = new System.Windows.Forms.Label();
             label6 = new System.Windows.Forms.Label();
@@ -1127,8 +1106,13 @@
             this.xtraTabControlCustomerMaint.SuspendLayout();
             this.xtraTabPageCustInfo1.SuspendLayout();
             this.groupBox10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.checkBoxSendToDealer.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEditMilitary.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolbarFormManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEditNoContact.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEditWrongAddress.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEditAutoPay.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEditCustomerInsurance.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkBoxSendToDealer.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.colorCheckBoxReceivedContract.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkBoxFullRecourseTab1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDOB.Properties.CalendarTimeProperties)).BeginInit();
@@ -1187,10 +1171,26 @@
             this.groupBox3.SuspendLayout();
             this.xtraTabPageBank.SuspendLayout();
             this.groupBox17.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
+            this.xtraTabControl1.SuspendLayout();
+            this.xtraTabPage1.SuspendLayout();
+            this.groupBox23.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEditBankAutoPay.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditBankAccountNumber.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditBankCheckDigit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditBankRoutingNumber.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditBankState.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditBankCity.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditBankName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditBankMonthlyPayment.Properties)).BeginInit();
+            this.xtraTabPage2.SuspendLayout();
+            this.groupBox24.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEditExpYear.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEditExpMonth.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditCreditCardCVV.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditCreditCardNumber.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditCreditCardName.Properties)).BeginInit();
             this.groupBox6.SuspendLayout();
-            this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
             this.xtraTabPageHistory.SuspendLayout();
             this.groupBox18.SuspendLayout();
             this.groupBox11.SuspendLayout();
@@ -1246,6 +1246,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolbarFormManager2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEditAllotment.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // label45
@@ -1327,16 +1328,6 @@
             resources.ApplyResources(label167, "label167");
             label167.Name = "label167";
             // 
-            // label168
-            // 
-            resources.ApplyResources(label168, "label168");
-            label168.Name = "label168";
-            // 
-            // label169
-            // 
-            resources.ApplyResources(label169, "label169");
-            label169.Name = "label169";
-            // 
             // label170
             // 
             resources.ApplyResources(label170, "label170");
@@ -1390,16 +1381,6 @@
             label179.BackColor = System.Drawing.Color.Transparent;
             label179.Name = "label179";
             // 
-            // label180
-            // 
-            resources.ApplyResources(label180, "label180");
-            label180.Name = "label180";
-            // 
-            // label181
-            // 
-            resources.ApplyResources(label181, "label181");
-            label181.Name = "label181";
-            // 
             // label182
             // 
             resources.ApplyResources(label182, "label182");
@@ -1424,11 +1405,6 @@
             // 
             resources.ApplyResources(label186, "label186");
             label186.Name = "label186";
-            // 
-            // label187
-            // 
-            resources.ApplyResources(label187, "label187");
-            label187.Name = "label187";
             // 
             // label188
             // 
@@ -1859,11 +1835,6 @@
             // 
             resources.ApplyResources(label85, "label85");
             label85.Name = "label85";
-            // 
-            // label95
-            // 
-            resources.ApplyResources(label95, "label95");
-            label95.Name = "label95";
             // 
             // labelTotalExtensions
             // 
@@ -2883,6 +2854,12 @@
             // groupBox10
             // 
             this.groupBox10.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.groupBox10.Controls.Add(this.checkEditAllotment);
+            this.groupBox10.Controls.Add(this.checkEditMilitary);
+            this.groupBox10.Controls.Add(this.checkEditNoContact);
+            this.groupBox10.Controls.Add(this.checkEditWrongAddress);
+            this.groupBox10.Controls.Add(this.checkEditAutoPay);
+            this.groupBox10.Controls.Add(this.checkEditCustomerInsurance);
             this.groupBox10.Controls.Add(this.checkBoxSendToDealer);
             this.groupBox10.Controls.Add(this.colorCheckBoxReceivedContract);
             this.groupBox10.Controls.Add(this.checkBoxFullRecourseTab1);
@@ -2891,7 +2868,6 @@
             this.groupBox10.Controls.Add(this.buttonDealerEmail);
             this.groupBox10.Controls.Add(label45);
             this.groupBox10.Controls.Add(this.textBoxDealerEmail);
-            this.groupBox10.Controls.Add(this.checkBoxMilitary);
             this.groupBox10.Controls.Add(label48);
             this.groupBox10.Controls.Add(this.groupBoxSBT);
             this.groupBox10.Controls.Add(this.comboBoxGN);
@@ -2928,9 +2904,6 @@
             this.groupBox10.Controls.Add(this.cUSTOMER_CONTACTTextBox);
             this.groupBox10.Controls.Add(this.cUSTOMER_BRANCH_NUMBERTextBox);
             this.groupBox10.Controls.Add(this.cUSTOMER_DISTRIBUTOR_NOTextBox);
-            this.groupBox10.Controls.Add(this.cUSTOMER_ALLOTMENTTextBox);
-            this.groupBox10.Controls.Add(this.cUSTOMER_AUTOPAYTextBox);
-            this.groupBox10.Controls.Add(this.cUSTOMER_INSURANCETextBox);
             this.groupBox10.Controls.Add(this.cUSTOMER_SS_3TextBox);
             this.groupBox10.Controls.Add(this.cUSTOMER_SS_2TextBox);
             this.groupBox10.Controls.Add(this.cUSTOMER_SS_1TextBox);
@@ -2943,15 +2916,11 @@
             this.groupBox10.Controls.Add(this.cUSTOMER_STREET_1TextBox);
             this.groupBox10.Controls.Add(this.cUSTOMER_LAST_NAMETextBox);
             this.groupBox10.Controls.Add(this.cUSTOMER_FIRST_NAMETextBox);
-            this.groupBox10.Controls.Add(this.cUSTOMER_NO_CONTACTTextBox);
-            this.groupBox10.Controls.Add(this.cUSTOMER_WRONG_ADDRESSTextBox);
             this.groupBox10.Controls.Add(this.cUSTOMER_PURCHASE_ORDERTextBox);
             this.groupBox10.Controls.Add(this.cUSTOMER_ACT_STATTextBox);
             this.groupBox10.Controls.Add(this.cUSTOMER_IAC_TypeTextBox);
             this.groupBox10.Controls.Add(label166);
             this.groupBox10.Controls.Add(label167);
-            this.groupBox10.Controls.Add(label168);
-            this.groupBox10.Controls.Add(label169);
             this.groupBox10.Controls.Add(label170);
             this.groupBox10.Controls.Add(label171);
             this.groupBox10.Controls.Add(label172);
@@ -2964,34 +2933,39 @@
             this.groupBox10.Controls.Add(label177);
             this.groupBox10.Controls.Add(label178);
             this.groupBox10.Controls.Add(label179);
-            this.groupBox10.Controls.Add(label180);
-            this.groupBox10.Controls.Add(label181);
             this.groupBox10.Controls.Add(label182);
             this.groupBox10.Controls.Add(label183);
             this.groupBox10.Controls.Add(label184);
             this.groupBox10.Controls.Add(label185);
             this.groupBox10.Controls.Add(label186);
-            this.groupBox10.Controls.Add(label187);
             this.groupBox10.Controls.Add(this.groupBoxRefi);
             resources.ApplyResources(this.groupBox10, "groupBox10");
             this.groupBox10.Name = "groupBox10";
             this.groupBox10.TabStop = false;
             // 
-            // checkBoxSendToDealer
+            // checkEditMilitary
             // 
-            this.checkBoxSendToDealer.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.EmailbindingSource, "SendToDealer", true));
-            resources.ApplyResources(this.checkBoxSendToDealer, "checkBoxSendToDealer");
-            this.checkBoxSendToDealer.MenuManager = this.toolbarFormManager1;
-            this.checkBoxSendToDealer.Name = "checkBoxSendToDealer";
-            this.checkBoxSendToDealer.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("checkBoxSendToDealer.Properties.Appearance.Font")));
-            this.checkBoxSendToDealer.Properties.Appearance.Options.UseFont = true;
-            this.checkBoxSendToDealer.Properties.Caption = resources.GetString("checkBoxSendToDealer.Properties.Caption");
-            this.checkBoxSendToDealer.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
-            this.checkBoxSendToDealer.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
-            this.checkBoxSendToDealer.Properties.LookAndFeel.SkinName = "McSkin";
-            this.checkBoxSendToDealer.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.checkBoxSendToDealer.CheckedChanged += new System.EventHandler(this.checkBoxSendToDealer_CheckedChanged);
-            this.checkBoxSendToDealer.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            this.checkEditMilitary.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "Military", true));
+            resources.ApplyResources(this.checkEditMilitary, "checkEditMilitary");
+            this.checkEditMilitary.MenuManager = this.toolbarFormManager1;
+            this.checkEditMilitary.Name = "checkEditMilitary";
+            this.checkEditMilitary.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("checkEditMilitary.Properties.Appearance.Font")));
+            this.checkEditMilitary.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.checkEditMilitary.Properties.Appearance.Options.UseFont = true;
+            this.checkEditMilitary.Properties.Appearance.Options.UseForeColor = true;
+            this.checkEditMilitary.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.checkEditMilitary.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.checkEditMilitary.Properties.Caption = resources.GetString("checkEditMilitary.Properties.Caption");
+            this.checkEditMilitary.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
+            this.checkEditMilitary.Properties.CheckBoxOptions.SvgColorChecked = System.Drawing.Color.Red;
+            this.checkEditMilitary.Properties.GlyphAlignment = ((DevExpress.Utils.HorzAlignment)(resources.GetObject("checkEditMilitary.Properties.GlyphAlignment")));
+            this.checkEditMilitary.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
+            this.checkEditMilitary.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.LightSteelBlue;
+            this.checkEditMilitary.Properties.LookAndFeel.SkinName = "McSkin";
+            this.checkEditMilitary.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.checkEditMilitary.Properties.Name = "checkBoxFullRecourseTab1";
+            this.checkEditMilitary.Properties.NullStyle = DevExpress.XtraEditors.Controls.StyleIndeterminate.Unchecked;
+            this.checkEditMilitary.CheckedChanged += new System.EventHandler(this.checkEditMilitary_CheckedChanged);
             // 
             // toolbarFormManager1
             // 
@@ -3033,6 +3007,117 @@
             this.standaloneBarDockControl1.Manager = this.toolbarFormManager1;
             this.standaloneBarDockControl1.Name = "standaloneBarDockControl1";
             // 
+            // checkEditNoContact
+            // 
+            this.checkEditNoContact.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_NO_CONTACT", true));
+            resources.ApplyResources(this.checkEditNoContact, "checkEditNoContact");
+            this.checkEditNoContact.MenuManager = this.toolbarFormManager1;
+            this.checkEditNoContact.Name = "checkEditNoContact";
+            this.checkEditNoContact.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("checkEditNoContact.Properties.Appearance.Font")));
+            this.checkEditNoContact.Properties.Appearance.Options.UseFont = true;
+            this.checkEditNoContact.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.checkEditNoContact.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.checkEditNoContact.Properties.Caption = resources.GetString("checkEditNoContact.Properties.Caption");
+            this.checkEditNoContact.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
+            this.checkEditNoContact.Properties.CheckBoxOptions.SvgColorChecked = System.Drawing.Color.Black;
+            this.checkEditNoContact.Properties.ContentAlignment = ((DevExpress.Utils.HorzAlignment)(resources.GetObject("checkEditNoContact.Properties.ContentAlignment")));
+            this.checkEditNoContact.Properties.GlyphAlignment = ((DevExpress.Utils.HorzAlignment)(resources.GetObject("checkEditNoContact.Properties.GlyphAlignment")));
+            this.checkEditNoContact.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
+            this.checkEditNoContact.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.LightSteelBlue;
+            this.checkEditNoContact.Properties.LookAndFeel.SkinName = "McSkin";
+            this.checkEditNoContact.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.checkEditNoContact.Properties.NullStyle = DevExpress.XtraEditors.Controls.StyleIndeterminate.Unchecked;
+            this.checkEditNoContact.QueryCheckStateByValue += new DevExpress.XtraEditors.Controls.QueryCheckStateByValueEventHandler(this.checkEditNoContact_QueryCheckStateByValue);
+            this.checkEditNoContact.QueryValueByCheckState += new DevExpress.XtraEditors.Controls.QueryValueByCheckStateEventHandler(this.checkEditNoContact_QueryValueByCheckState);
+            this.checkEditNoContact.CheckedChanged += new System.EventHandler(this.checkEditNoContact_CheckedChanged);
+            // 
+            // checkEditWrongAddress
+            // 
+            this.checkEditWrongAddress.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_WRONG_ADDRESS", true));
+            resources.ApplyResources(this.checkEditWrongAddress, "checkEditWrongAddress");
+            this.checkEditWrongAddress.MenuManager = this.toolbarFormManager1;
+            this.checkEditWrongAddress.Name = "checkEditWrongAddress";
+            this.checkEditWrongAddress.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("checkEditWrongAddress.Properties.Appearance.Font")));
+            this.checkEditWrongAddress.Properties.Appearance.Options.UseFont = true;
+            this.checkEditWrongAddress.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.checkEditWrongAddress.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.checkEditWrongAddress.Properties.Caption = resources.GetString("checkEditWrongAddress.Properties.Caption");
+            this.checkEditWrongAddress.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
+            this.checkEditWrongAddress.Properties.CheckBoxOptions.SvgColorChecked = System.Drawing.Color.Black;
+            this.checkEditWrongAddress.Properties.ContentAlignment = ((DevExpress.Utils.HorzAlignment)(resources.GetObject("checkEditWrongAddress.Properties.ContentAlignment")));
+            this.checkEditWrongAddress.Properties.GlyphAlignment = ((DevExpress.Utils.HorzAlignment)(resources.GetObject("checkEditWrongAddress.Properties.GlyphAlignment")));
+            this.checkEditWrongAddress.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
+            this.checkEditWrongAddress.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.LightSteelBlue;
+            this.checkEditWrongAddress.Properties.LookAndFeel.SkinName = "McSkin";
+            this.checkEditWrongAddress.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.checkEditWrongAddress.Properties.NullStyle = DevExpress.XtraEditors.Controls.StyleIndeterminate.Unchecked;
+            this.checkEditWrongAddress.QueryCheckStateByValue += new DevExpress.XtraEditors.Controls.QueryCheckStateByValueEventHandler(this.checkEditWrongAddress_QueryCheckStateByValue);
+            this.checkEditWrongAddress.QueryValueByCheckState += new DevExpress.XtraEditors.Controls.QueryValueByCheckStateEventHandler(this.checkEditWrongAddress_QueryValueByCheckState);
+            this.checkEditWrongAddress.CheckedChanged += new System.EventHandler(this.checkEditWrongAddress_CheckedChanged);
+            // 
+            // checkEditAutoPay
+            // 
+            this.checkEditAutoPay.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_AUTOPAY", true));
+            resources.ApplyResources(this.checkEditAutoPay, "checkEditAutoPay");
+            this.checkEditAutoPay.MenuManager = this.toolbarFormManager1;
+            this.checkEditAutoPay.Name = "checkEditAutoPay";
+            this.checkEditAutoPay.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("checkEditAutoPay.Properties.Appearance.Font")));
+            this.checkEditAutoPay.Properties.Appearance.Options.UseFont = true;
+            this.checkEditAutoPay.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.checkEditAutoPay.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.checkEditAutoPay.Properties.Caption = resources.GetString("checkEditAutoPay.Properties.Caption");
+            this.checkEditAutoPay.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
+            this.checkEditAutoPay.Properties.CheckBoxOptions.SvgColorChecked = System.Drawing.Color.Black;
+            this.checkEditAutoPay.Properties.GlyphAlignment = ((DevExpress.Utils.HorzAlignment)(resources.GetObject("checkEditAutoPay.Properties.GlyphAlignment")));
+            this.checkEditAutoPay.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
+            this.checkEditAutoPay.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.LightSteelBlue;
+            this.checkEditAutoPay.Properties.LookAndFeel.SkinName = "McSkin";
+            this.checkEditAutoPay.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.checkEditAutoPay.Properties.NullStyle = DevExpress.XtraEditors.Controls.StyleIndeterminate.Unchecked;
+            this.checkEditAutoPay.QueryCheckStateByValue += new DevExpress.XtraEditors.Controls.QueryCheckStateByValueEventHandler(this.checkEditAutoPay_QueryCheckStateByValue_1);
+            this.checkEditAutoPay.QueryValueByCheckState += new DevExpress.XtraEditors.Controls.QueryValueByCheckStateEventHandler(this.checkEditAutoPay_QueryValueByCheckState_1);
+            this.checkEditAutoPay.CheckedChanged += new System.EventHandler(this.checkEditAutoPay_CheckedChanged);
+            // 
+            // checkEditCustomerInsurance
+            // 
+            this.checkEditCustomerInsurance.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_INSURANCE", true));
+            resources.ApplyResources(this.checkEditCustomerInsurance, "checkEditCustomerInsurance");
+            this.checkEditCustomerInsurance.MenuManager = this.toolbarFormManager1;
+            this.checkEditCustomerInsurance.Name = "checkEditCustomerInsurance";
+            this.checkEditCustomerInsurance.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("checkEditCustomerInsurance.Properties.Appearance.Font")));
+            this.checkEditCustomerInsurance.Properties.Appearance.Options.UseFont = true;
+            this.checkEditCustomerInsurance.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.checkEditCustomerInsurance.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.checkEditCustomerInsurance.Properties.Caption = resources.GetString("checkEditCustomerInsurance.Properties.Caption");
+            this.checkEditCustomerInsurance.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
+            this.checkEditCustomerInsurance.Properties.CheckBoxOptions.SvgColorChecked = System.Drawing.Color.Black;
+            this.checkEditCustomerInsurance.Properties.ContentAlignment = ((DevExpress.Utils.HorzAlignment)(resources.GetObject("checkEditCustomerInsurance.Properties.ContentAlignment")));
+            this.checkEditCustomerInsurance.Properties.GlyphAlignment = ((DevExpress.Utils.HorzAlignment)(resources.GetObject("checkEditCustomerInsurance.Properties.GlyphAlignment")));
+            this.checkEditCustomerInsurance.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
+            this.checkEditCustomerInsurance.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.LightSteelBlue;
+            this.checkEditCustomerInsurance.Properties.LookAndFeel.SkinName = "McSkin";
+            this.checkEditCustomerInsurance.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.checkEditCustomerInsurance.Properties.NullStyle = DevExpress.XtraEditors.Controls.StyleIndeterminate.Unchecked;
+            this.checkEditCustomerInsurance.QueryCheckStateByValue += new DevExpress.XtraEditors.Controls.QueryCheckStateByValueEventHandler(this.checkEditCustomerInsurance_QueryCheckStateByValue);
+            this.checkEditCustomerInsurance.QueryValueByCheckState += new DevExpress.XtraEditors.Controls.QueryValueByCheckStateEventHandler(this.checkEditCustomerInsurance_QueryValueByCheckState);
+            this.checkEditCustomerInsurance.CheckedChanged += new System.EventHandler(this.checkEditCustomerInsurance_CheckedChanged);
+            // 
+            // checkBoxSendToDealer
+            // 
+            this.checkBoxSendToDealer.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.EmailbindingSource, "SendToDealer", true));
+            resources.ApplyResources(this.checkBoxSendToDealer, "checkBoxSendToDealer");
+            this.checkBoxSendToDealer.MenuManager = this.toolbarFormManager1;
+            this.checkBoxSendToDealer.Name = "checkBoxSendToDealer";
+            this.checkBoxSendToDealer.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("checkBoxSendToDealer.Properties.Appearance.Font")));
+            this.checkBoxSendToDealer.Properties.Appearance.Options.UseFont = true;
+            this.checkBoxSendToDealer.Properties.Caption = resources.GetString("checkBoxSendToDealer.Properties.Caption");
+            this.checkBoxSendToDealer.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
+            this.checkBoxSendToDealer.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
+            this.checkBoxSendToDealer.Properties.LookAndFeel.SkinName = "McSkin";
+            this.checkBoxSendToDealer.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.checkBoxSendToDealer.CheckedChanged += new System.EventHandler(this.checkBoxSendToDealer_CheckedChanged);
+            this.checkBoxSendToDealer.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            // 
             // colorCheckBoxReceivedContract
             // 
             this.colorCheckBoxReceivedContract.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "ReceivedContract", true));
@@ -3059,7 +3144,7 @@
             this.checkBoxFullRecourseTab1.MenuManager = this.toolbarFormManager1;
             this.checkBoxFullRecourseTab1.Name = "checkBoxFullRecourseTab1";
             this.checkBoxFullRecourseTab1.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("checkBoxFullRecourseTab1.Properties.Appearance.Font")));
-            this.checkBoxFullRecourseTab1.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(70)))), ((int)(((byte)(68)))));
+            this.checkBoxFullRecourseTab1.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
             this.checkBoxFullRecourseTab1.Properties.Appearance.Options.UseFont = true;
             this.checkBoxFullRecourseTab1.Properties.Appearance.Options.UseForeColor = true;
             this.checkBoxFullRecourseTab1.Properties.Caption = resources.GetString("checkBoxFullRecourseTab1.Properties.Caption");
@@ -3141,15 +3226,6 @@
             this.textBoxDealerEmail.Name = "textBoxDealerEmail";
             this.textBoxDealerEmail.TextChanged += new System.EventHandler(this.textBoxDealerEmail_TextChanged);
             this.textBoxDealerEmail.Validated += new System.EventHandler(this.textBoxDealerEmail_Validated);
-            // 
-            // checkBoxMilitary
-            // 
-            resources.ApplyResources(this.checkBoxMilitary, "checkBoxMilitary");
-            this.checkBoxMilitary.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.cUSTOMERBindingSource, "Military", true));
-            this.checkBoxMilitary.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.checkBoxMilitary.Name = "checkBoxMilitary";
-            this.checkBoxMilitary.UseVisualStyleBackColor = true;
-            this.checkBoxMilitary.CheckedChanged += new System.EventHandler(this.checkBoxMilitary_CheckedChanged);
             // 
             // groupBoxSBT
             // 
@@ -3500,31 +3576,6 @@
             resources.ApplyResources(this.cUSTOMER_DISTRIBUTOR_NOTextBox, "cUSTOMER_DISTRIBUTOR_NOTextBox");
             this.cUSTOMER_DISTRIBUTOR_NOTextBox.Name = "cUSTOMER_DISTRIBUTOR_NOTextBox";
             // 
-            // cUSTOMER_ALLOTMENTTextBox
-            // 
-            this.cUSTOMER_ALLOTMENTTextBox.AllowDrop = true;
-            this.cUSTOMER_ALLOTMENTTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.cUSTOMER_ALLOTMENTTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_ALLOTMENT", true));
-            resources.ApplyResources(this.cUSTOMER_ALLOTMENTTextBox, "cUSTOMER_ALLOTMENTTextBox");
-            this.cUSTOMER_ALLOTMENTTextBox.Name = "cUSTOMER_ALLOTMENTTextBox";
-            // 
-            // cUSTOMER_AUTOPAYTextBox
-            // 
-            this.cUSTOMER_AUTOPAYTextBox.AllowDrop = true;
-            this.cUSTOMER_AUTOPAYTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.cUSTOMER_AUTOPAYTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_AUTOPAY", true));
-            resources.ApplyResources(this.cUSTOMER_AUTOPAYTextBox, "cUSTOMER_AUTOPAYTextBox");
-            this.cUSTOMER_AUTOPAYTextBox.Name = "cUSTOMER_AUTOPAYTextBox";
-            // 
-            // cUSTOMER_INSURANCETextBox
-            // 
-            this.cUSTOMER_INSURANCETextBox.AllowDrop = true;
-            this.cUSTOMER_INSURANCETextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.cUSTOMER_INSURANCETextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_INSURANCE", true));
-            resources.ApplyResources(this.cUSTOMER_INSURANCETextBox, "cUSTOMER_INSURANCETextBox");
-            this.cUSTOMER_INSURANCETextBox.Name = "cUSTOMER_INSURANCETextBox";
-            this.cUSTOMER_INSURANCETextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
-            // 
             // cUSTOMER_SS_3TextBox
             // 
             this.cUSTOMER_SS_3TextBox.AllowDrop = true;
@@ -3632,24 +3683,6 @@
             this.cUSTOMER_FIRST_NAMETextBox.Name = "cUSTOMER_FIRST_NAMETextBox";
             this.cUSTOMER_FIRST_NAMETextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             this.cUSTOMER_FIRST_NAMETextBox.Validated += new System.EventHandler(this.cUSTOMER_FIRST_NAMETextBox_Validated);
-            // 
-            // cUSTOMER_NO_CONTACTTextBox
-            // 
-            this.cUSTOMER_NO_CONTACTTextBox.AllowDrop = true;
-            this.cUSTOMER_NO_CONTACTTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.cUSTOMER_NO_CONTACTTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_NO_CONTACT", true));
-            resources.ApplyResources(this.cUSTOMER_NO_CONTACTTextBox, "cUSTOMER_NO_CONTACTTextBox");
-            this.cUSTOMER_NO_CONTACTTextBox.Name = "cUSTOMER_NO_CONTACTTextBox";
-            this.cUSTOMER_NO_CONTACTTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
-            // 
-            // cUSTOMER_WRONG_ADDRESSTextBox
-            // 
-            this.cUSTOMER_WRONG_ADDRESSTextBox.AllowDrop = true;
-            this.cUSTOMER_WRONG_ADDRESSTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.cUSTOMER_WRONG_ADDRESSTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_WRONG_ADDRESS", true));
-            resources.ApplyResources(this.cUSTOMER_WRONG_ADDRESSTextBox, "cUSTOMER_WRONG_ADDRESSTextBox");
-            this.cUSTOMER_WRONG_ADDRESSTextBox.Name = "cUSTOMER_WRONG_ADDRESSTextBox";
-            this.cUSTOMER_WRONG_ADDRESSTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // cUSTOMER_PURCHASE_ORDERTextBox
             // 
@@ -5264,7 +5297,6 @@
             this.txtCOSWorkExt.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "COSIGNER_WORK_EXT", true));
             resources.ApplyResources(this.txtCOSWorkExt, "txtCOSWorkExt");
             this.txtCOSWorkExt.Name = "txtCOSWorkExt";
-            this.txtCOSWorkExt.TextChanged += new System.EventHandler(this.txtCOSWorkExt_TextChanged);
             this.txtCOSWorkExt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // txtUsePrimaryAddress
@@ -5450,11 +5482,393 @@
             // groupBox17
             // 
             this.groupBox17.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.groupBox17.Controls.Add(this.xtraTabControl1);
             this.groupBox17.Controls.Add(this.groupBox6);
-            this.groupBox17.Controls.Add(this.tabControl1);
             resources.ApplyResources(this.groupBox17, "groupBox17");
             this.groupBox17.Name = "groupBox17";
             this.groupBox17.TabStop = false;
+            // 
+            // xtraTabControl1
+            // 
+            this.xtraTabControl1.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.xtraTabControl1.Appearance.Options.UseBackColor = true;
+            resources.ApplyResources(this.xtraTabControl1, "xtraTabControl1");
+            this.xtraTabControl1.LookAndFeel.SkinName = "McSkin";
+            this.xtraTabControl1.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.xtraTabControl1.Name = "xtraTabControl1";
+            this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
+            this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
+            this.xtraTabPage1,
+            this.xtraTabPage2});
+            // 
+            // xtraTabPage1
+            // 
+            this.xtraTabPage1.Appearance.PageClient.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.xtraTabPage1.Appearance.PageClient.BackColor2 = ((System.Drawing.Color)(resources.GetObject("xtraTabPage1.Appearance.PageClient.BackColor2")));
+            this.xtraTabPage1.Appearance.PageClient.Options.UseBackColor = true;
+            this.xtraTabPage1.Appearance.PageClient.Options.UseBorderColor = true;
+            this.xtraTabPage1.Appearance.PageClient.Options.UseFont = true;
+            this.xtraTabPage1.Appearance.PageClient.Options.UseForeColor = true;
+            this.xtraTabPage1.Appearance.PageClient.Options.UseTextOptions = true;
+            this.xtraTabPage1.Controls.Add(this.groupBox23);
+            this.xtraTabPage1.Controls.Add(this.textEditBankMonthlyPayment);
+            this.xtraTabPage1.Name = "xtraTabPage1";
+            resources.ApplyResources(this.xtraTabPage1, "xtraTabPage1");
+            this.xtraTabPage1.Enter += new System.EventHandler(this.xtraTabPage1_Enter);
+            // 
+            // groupBox23
+            // 
+            this.groupBox23.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.groupBox23.Controls.Add(this.checkEditBankAutoPay);
+            this.groupBox23.Controls.Add(this.textEditBankAccountNumber);
+            this.groupBox23.Controls.Add(this.textEditBankCheckDigit);
+            this.groupBox23.Controls.Add(this.textEditBankRoutingNumber);
+            this.groupBox23.Controls.Add(this.textEditBankState);
+            this.groupBox23.Controls.Add(this.textEditBankCity);
+            this.groupBox23.Controls.Add(this.textEditBankName);
+            resources.ApplyResources(this.groupBox23, "groupBox23");
+            this.groupBox23.Name = "groupBox23";
+            this.groupBox23.TabStop = false;
+            // 
+            // checkEditBankAutoPay
+            // 
+            this.checkEditBankAutoPay.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_AUTOPAY", true));
+            resources.ApplyResources(this.checkEditBankAutoPay, "checkEditBankAutoPay");
+            this.checkEditBankAutoPay.MenuManager = this.toolbarFormManager1;
+            this.checkEditBankAutoPay.Name = "checkEditBankAutoPay";
+            this.checkEditBankAutoPay.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("checkEditBankAutoPay.Properties.Appearance.Font")));
+            this.checkEditBankAutoPay.Properties.Appearance.Options.UseFont = true;
+            this.checkEditBankAutoPay.Properties.Caption = resources.GetString("checkEditBankAutoPay.Properties.Caption");
+            this.checkEditBankAutoPay.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
+            this.checkEditBankAutoPay.Properties.CheckBoxOptions.SvgColorChecked = System.Drawing.Color.Black;
+            this.checkEditBankAutoPay.QueryCheckStateByValue += new DevExpress.XtraEditors.Controls.QueryCheckStateByValueEventHandler(this.checkEditAutopay_QueryCheckStateByValue);
+            this.checkEditBankAutoPay.QueryValueByCheckState += new DevExpress.XtraEditors.Controls.QueryValueByCheckStateEventHandler(this.checkEditAutopay_QueryValueByCheckState);
+            this.checkEditBankAutoPay.CheckedChanged += new System.EventHandler(this.checkEditBankAutoPay_CheckedChanged);
+            this.checkEditBankAutoPay.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            // 
+            // textEditBankAccountNumber
+            // 
+            this.textEditBankAccountNumber.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.OPNBANKbindingSource, "OPNBANK_ACCOUNT_NO", true));
+            resources.ApplyResources(this.textEditBankAccountNumber, "textEditBankAccountNumber");
+            this.textEditBankAccountNumber.MenuManager = this.toolbarFormManager1;
+            this.textEditBankAccountNumber.Name = "textEditBankAccountNumber";
+            this.textEditBankAccountNumber.Properties.AdvancedModeOptions.AllowCaretAnimation = DevExpress.Utils.DefaultBoolean.True;
+            this.textEditBankAccountNumber.Properties.AdvancedModeOptions.AllowSelectionAnimation = DevExpress.Utils.DefaultBoolean.True;
+            this.textEditBankAccountNumber.Properties.AdvancedModeOptions.Label = resources.GetString("textEditBankAccountNumber.Properties.AdvancedModeOptions.Label");
+            this.textEditBankAccountNumber.Properties.AdvancedModeOptions.LabelAppearance.Options.UseTextOptions = true;
+            this.textEditBankAccountNumber.Properties.AdvancedModeOptions.LabelAppearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.textEditBankAccountNumber.Properties.AdvancedModeOptions.LabelAppearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Bottom;
+            this.textEditBankAccountNumber.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textEditBankAccountNumber.Properties.Appearance.Font")));
+            this.textEditBankAccountNumber.Properties.Appearance.Options.UseFont = true;
+            this.textEditBankAccountNumber.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
+            this.textEditBankAccountNumber.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
+            this.textEditBankAccountNumber.Properties.LookAndFeel.SkinName = "McSkin";
+            this.textEditBankAccountNumber.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.textEditBankAccountNumber.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.RegularMaskManager));
+            this.textEditBankAccountNumber.Properties.MaskSettings.Set("MaskManagerSignature", "ignoreMaskBlank=True");
+            this.textEditBankAccountNumber.Properties.MaskSettings.Set("mask", "[0-9 A-Z]{0, 17}");
+            this.textEditBankAccountNumber.Properties.MaskSettings.Set("placeholder", '\0');
+            this.textEditBankAccountNumber.Properties.UseAdvancedMode = DevExpress.Utils.DefaultBoolean.True;
+            this.textEditBankAccountNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            // 
+            // textEditBankCheckDigit
+            // 
+            this.textEditBankCheckDigit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.OPNBANKbindingSource, "OPNBANK_CHECK_DIGIT", true));
+            resources.ApplyResources(this.textEditBankCheckDigit, "textEditBankCheckDigit");
+            this.textEditBankCheckDigit.MenuManager = this.toolbarFormManager1;
+            this.textEditBankCheckDigit.Name = "textEditBankCheckDigit";
+            this.textEditBankCheckDigit.Properties.AdvancedModeOptions.AllowCaretAnimation = DevExpress.Utils.DefaultBoolean.True;
+            this.textEditBankCheckDigit.Properties.AdvancedModeOptions.AllowSelectionAnimation = DevExpress.Utils.DefaultBoolean.True;
+            this.textEditBankCheckDigit.Properties.AdvancedModeOptions.Label = resources.GetString("textEditBankCheckDigit.Properties.AdvancedModeOptions.Label");
+            this.textEditBankCheckDigit.Properties.AdvancedModeOptions.LabelAppearance.Options.UseTextOptions = true;
+            this.textEditBankCheckDigit.Properties.AdvancedModeOptions.LabelAppearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.textEditBankCheckDigit.Properties.AdvancedModeOptions.LabelAppearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Bottom;
+            this.textEditBankCheckDigit.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textEditBankCheckDigit.Properties.Appearance.Font")));
+            this.textEditBankCheckDigit.Properties.Appearance.Options.UseFont = true;
+            this.textEditBankCheckDigit.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
+            this.textEditBankCheckDigit.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
+            this.textEditBankCheckDigit.Properties.LookAndFeel.SkinName = "McSkin";
+            this.textEditBankCheckDigit.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.textEditBankCheckDigit.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.RegularMaskManager));
+            this.textEditBankCheckDigit.Properties.MaskSettings.Set("MaskManagerSignature", "ignoreMaskBlank=True");
+            this.textEditBankCheckDigit.Properties.MaskSettings.Set("mask", "[0-9 A-Z]{1}");
+            this.textEditBankCheckDigit.Properties.MaskSettings.Set("placeholder", '\0');
+            this.textEditBankCheckDigit.Properties.UseAdvancedMode = DevExpress.Utils.DefaultBoolean.True;
+            this.textEditBankCheckDigit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            // 
+            // textEditBankRoutingNumber
+            // 
+            this.textEditBankRoutingNumber.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.OPNBANKbindingSource, "OPNBANK_TRAN_CODE", true));
+            resources.ApplyResources(this.textEditBankRoutingNumber, "textEditBankRoutingNumber");
+            this.textEditBankRoutingNumber.MenuManager = this.toolbarFormManager1;
+            this.textEditBankRoutingNumber.Name = "textEditBankRoutingNumber";
+            this.textEditBankRoutingNumber.Properties.AdvancedModeOptions.AllowCaretAnimation = DevExpress.Utils.DefaultBoolean.True;
+            this.textEditBankRoutingNumber.Properties.AdvancedModeOptions.AllowSelectionAnimation = DevExpress.Utils.DefaultBoolean.True;
+            this.textEditBankRoutingNumber.Properties.AdvancedModeOptions.Label = resources.GetString("textEditBankRoutingNumber.Properties.AdvancedModeOptions.Label");
+            this.textEditBankRoutingNumber.Properties.AdvancedModeOptions.LabelAppearance.Options.UseTextOptions = true;
+            this.textEditBankRoutingNumber.Properties.AdvancedModeOptions.LabelAppearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.textEditBankRoutingNumber.Properties.AdvancedModeOptions.LabelAppearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Bottom;
+            this.textEditBankRoutingNumber.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textEditBankRoutingNumber.Properties.Appearance.Font")));
+            this.textEditBankRoutingNumber.Properties.Appearance.Options.UseFont = true;
+            this.textEditBankRoutingNumber.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
+            this.textEditBankRoutingNumber.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
+            this.textEditBankRoutingNumber.Properties.LookAndFeel.SkinName = "McSkin";
+            this.textEditBankRoutingNumber.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.textEditBankRoutingNumber.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.RegularMaskManager));
+            this.textEditBankRoutingNumber.Properties.MaskSettings.Set("MaskManagerSignature", "ignoreMaskBlank=True");
+            this.textEditBankRoutingNumber.Properties.MaskSettings.Set("mask", "[0-9]{0, 9}");
+            this.textEditBankRoutingNumber.Properties.MaskSettings.Set("placeholder", '\0');
+            this.textEditBankRoutingNumber.Properties.UseAdvancedMode = DevExpress.Utils.DefaultBoolean.True;
+            this.textEditBankRoutingNumber.TextChanged += new System.EventHandler(this.textEditBankRoutingNumber_TextChanged);
+            this.textEditBankRoutingNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            // 
+            // textEditBankState
+            // 
+            this.textEditBankState.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.OPNBANKbindingSource, "OPNBANK_STATE", true));
+            resources.ApplyResources(this.textEditBankState, "textEditBankState");
+            this.textEditBankState.MenuManager = this.toolbarFormManager1;
+            this.textEditBankState.Name = "textEditBankState";
+            this.textEditBankState.Properties.AdvancedModeOptions.AllowCaretAnimation = DevExpress.Utils.DefaultBoolean.True;
+            this.textEditBankState.Properties.AdvancedModeOptions.AllowSelectionAnimation = DevExpress.Utils.DefaultBoolean.True;
+            this.textEditBankState.Properties.AdvancedModeOptions.Label = resources.GetString("textEditBankState.Properties.AdvancedModeOptions.Label");
+            this.textEditBankState.Properties.AdvancedModeOptions.LabelAppearance.Options.UseTextOptions = true;
+            this.textEditBankState.Properties.AdvancedModeOptions.LabelAppearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.textEditBankState.Properties.AdvancedModeOptions.LabelAppearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Bottom;
+            this.textEditBankState.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textEditBankState.Properties.Appearance.Font")));
+            this.textEditBankState.Properties.Appearance.Options.UseFont = true;
+            this.textEditBankState.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
+            this.textEditBankState.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
+            this.textEditBankState.Properties.LookAndFeel.SkinName = "McSkin";
+            this.textEditBankState.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.textEditBankState.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.RegularMaskManager));
+            this.textEditBankState.Properties.MaskSettings.Set("MaskManagerSignature", "ignoreMaskBlank=True");
+            this.textEditBankState.Properties.MaskSettings.Set("mask", "[A-Z]{2}");
+            this.textEditBankState.Properties.MaskSettings.Set("placeholder", '\0');
+            this.textEditBankState.Properties.UseAdvancedMode = DevExpress.Utils.DefaultBoolean.True;
+            this.textEditBankState.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            // 
+            // textEditBankCity
+            // 
+            this.textEditBankCity.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.OPNBANKbindingSource, "OPNBANK_CITY", true));
+            resources.ApplyResources(this.textEditBankCity, "textEditBankCity");
+            this.textEditBankCity.MenuManager = this.toolbarFormManager1;
+            this.textEditBankCity.Name = "textEditBankCity";
+            this.textEditBankCity.Properties.AdvancedModeOptions.AllowCaretAnimation = DevExpress.Utils.DefaultBoolean.True;
+            this.textEditBankCity.Properties.AdvancedModeOptions.AllowSelectionAnimation = DevExpress.Utils.DefaultBoolean.True;
+            this.textEditBankCity.Properties.AdvancedModeOptions.Label = resources.GetString("textEditBankCity.Properties.AdvancedModeOptions.Label");
+            this.textEditBankCity.Properties.AdvancedModeOptions.LabelAppearance.Options.UseTextOptions = true;
+            this.textEditBankCity.Properties.AdvancedModeOptions.LabelAppearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.textEditBankCity.Properties.AdvancedModeOptions.LabelAppearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Bottom;
+            this.textEditBankCity.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textEditBankCity.Properties.Appearance.Font")));
+            this.textEditBankCity.Properties.Appearance.Options.UseFont = true;
+            this.textEditBankCity.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
+            this.textEditBankCity.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
+            this.textEditBankCity.Properties.LookAndFeel.SkinName = "McSkin";
+            this.textEditBankCity.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.textEditBankCity.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.RegularMaskManager));
+            this.textEditBankCity.Properties.MaskSettings.Set("MaskManagerSignature", "ignoreMaskBlank=True");
+            this.textEditBankCity.Properties.MaskSettings.Set("mask", "[0-9 A-Z a-z]{0, 16}");
+            this.textEditBankCity.Properties.MaskSettings.Set("placeholder", '\0');
+            this.textEditBankCity.Properties.UseAdvancedMode = DevExpress.Utils.DefaultBoolean.True;
+            this.textEditBankCity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            // 
+            // textEditBankName
+            // 
+            this.textEditBankName.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.OPNBANKbindingSource, "OPNBANK_NAME", true));
+            resources.ApplyResources(this.textEditBankName, "textEditBankName");
+            this.textEditBankName.MenuManager = this.toolbarFormManager1;
+            this.textEditBankName.Name = "textEditBankName";
+            this.textEditBankName.Properties.AdvancedModeOptions.AllowCaretAnimation = DevExpress.Utils.DefaultBoolean.True;
+            this.textEditBankName.Properties.AdvancedModeOptions.AllowSelectionAnimation = DevExpress.Utils.DefaultBoolean.True;
+            this.textEditBankName.Properties.AdvancedModeOptions.Label = resources.GetString("textEditBankName.Properties.AdvancedModeOptions.Label");
+            this.textEditBankName.Properties.AdvancedModeOptions.LabelAppearance.Options.UseTextOptions = true;
+            this.textEditBankName.Properties.AdvancedModeOptions.LabelAppearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.textEditBankName.Properties.AdvancedModeOptions.LabelAppearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Bottom;
+            this.textEditBankName.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textEditBankName.Properties.Appearance.Font")));
+            this.textEditBankName.Properties.Appearance.Options.UseFont = true;
+            this.textEditBankName.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
+            this.textEditBankName.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
+            this.textEditBankName.Properties.LookAndFeel.SkinName = "McSkin";
+            this.textEditBankName.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.textEditBankName.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.RegularMaskManager));
+            this.textEditBankName.Properties.MaskSettings.Set("MaskManagerSignature", "ignoreMaskBlank=True");
+            this.textEditBankName.Properties.MaskSettings.Set("mask", "[0-9 A-Z a-z]{0, 30}");
+            this.textEditBankName.Properties.MaskSettings.Set("placeholder", '\0');
+            this.textEditBankName.Properties.UseAdvancedMode = DevExpress.Utils.DefaultBoolean.True;
+            this.textEditBankName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            // 
+            // textEditBankMonthlyPayment
+            // 
+            this.textEditBankMonthlyPayment.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.OPNBANKbindingSource, "OPNBANK_MONTHLY_PAYMENT", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "C2"));
+            resources.ApplyResources(this.textEditBankMonthlyPayment, "textEditBankMonthlyPayment");
+            this.textEditBankMonthlyPayment.MenuManager = this.toolbarFormManager1;
+            this.textEditBankMonthlyPayment.Name = "textEditBankMonthlyPayment";
+            this.textEditBankMonthlyPayment.Properties.AdvancedModeOptions.AllowCaretAnimation = DevExpress.Utils.DefaultBoolean.True;
+            this.textEditBankMonthlyPayment.Properties.AdvancedModeOptions.AllowSelectionAnimation = DevExpress.Utils.DefaultBoolean.True;
+            this.textEditBankMonthlyPayment.Properties.AdvancedModeOptions.Label = resources.GetString("textEditBankMonthlyPayment.Properties.AdvancedModeOptions.Label");
+            this.textEditBankMonthlyPayment.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textEditBankMonthlyPayment.Properties.Appearance.Font")));
+            this.textEditBankMonthlyPayment.Properties.Appearance.Options.UseFont = true;
+            this.textEditBankMonthlyPayment.Properties.Appearance.Options.UseTextOptions = true;
+            this.textEditBankMonthlyPayment.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.textEditBankMonthlyPayment.Properties.DisplayFormat.FormatString = "c2";
+            this.textEditBankMonthlyPayment.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.textEditBankMonthlyPayment.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
+            this.textEditBankMonthlyPayment.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
+            this.textEditBankMonthlyPayment.Properties.LookAndFeel.SkinName = "McSkin";
+            this.textEditBankMonthlyPayment.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.textEditBankMonthlyPayment.Properties.UseAdvancedMode = DevExpress.Utils.DefaultBoolean.True;
+            this.textEditBankMonthlyPayment.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            // 
+            // xtraTabPage2
+            // 
+            this.xtraTabPage2.Appearance.PageClient.BackColor = System.Drawing.Color.Salmon;
+            this.xtraTabPage2.Appearance.PageClient.Font = ((System.Drawing.Font)(resources.GetObject("xtraTabPage2.Appearance.PageClient.Font")));
+            this.xtraTabPage2.Appearance.PageClient.Options.UseBackColor = true;
+            this.xtraTabPage2.Appearance.PageClient.Options.UseFont = true;
+            this.xtraTabPage2.Controls.Add(this.groupBox24);
+            this.xtraTabPage2.Name = "xtraTabPage2";
+            resources.ApplyResources(this.xtraTabPage2, "xtraTabPage2");
+            // 
+            // groupBox24
+            // 
+            this.groupBox24.BackColor = System.Drawing.Color.Salmon;
+            this.groupBox24.Controls.Add(this.comboBoxEditExpYear);
+            this.groupBox24.Controls.Add(this.lookUpEditExpMonth);
+            this.groupBox24.Controls.Add(this.textEditCreditCardCVV);
+            this.groupBox24.Controls.Add(this.textEditCreditCardNumber);
+            this.groupBox24.Controls.Add(this.textEditCreditCardName);
+            resources.ApplyResources(this.groupBox24, "groupBox24");
+            this.groupBox24.Name = "groupBox24";
+            this.groupBox24.TabStop = false;
+            // 
+            // comboBoxEditExpYear
+            // 
+            resources.ApplyResources(this.comboBoxEditExpYear, "comboBoxEditExpYear");
+            this.comboBoxEditExpYear.MenuManager = this.toolbarFormManager1;
+            this.comboBoxEditExpYear.Name = "comboBoxEditExpYear";
+            this.comboBoxEditExpYear.Properties.AdvancedModeOptions.AllowCaretAnimation = DevExpress.Utils.DefaultBoolean.True;
+            this.comboBoxEditExpYear.Properties.AdvancedModeOptions.AllowSelectionAnimation = DevExpress.Utils.DefaultBoolean.True;
+            this.comboBoxEditExpYear.Properties.AdvancedModeOptions.Label = resources.GetString("comboBoxEditExpYear.Properties.AdvancedModeOptions.Label");
+            this.comboBoxEditExpYear.Properties.AdvancedModeOptions.LabelAppearance.Options.UseTextOptions = true;
+            this.comboBoxEditExpYear.Properties.AdvancedModeOptions.LabelAppearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.comboBoxEditExpYear.Properties.AdvancedModeOptions.LabelAppearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Bottom;
+            this.comboBoxEditExpYear.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("comboBoxEditExpYear.Properties.Appearance.Font")));
+            this.comboBoxEditExpYear.Properties.Appearance.Options.UseFont = true;
+            this.comboBoxEditExpYear.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("comboBoxEditExpYear.Properties.Buttons"))))});
+            this.comboBoxEditExpYear.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.Salmon;
+            this.comboBoxEditExpYear.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
+            this.comboBoxEditExpYear.Properties.LookAndFeel.SkinName = "McSkin";
+            this.comboBoxEditExpYear.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.comboBoxEditExpYear.Properties.UseAdvancedMode = DevExpress.Utils.DefaultBoolean.True;
+            this.comboBoxEditExpYear.EditValueChanged += new System.EventHandler(this.comboBoxEditExpYear_EditValueChanged);
+            this.comboBoxEditExpYear.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            // 
+            // lookUpEditExpMonth
+            // 
+            resources.ApplyResources(this.lookUpEditExpMonth, "lookUpEditExpMonth");
+            this.lookUpEditExpMonth.MenuManager = this.toolbarFormManager1;
+            this.lookUpEditExpMonth.Name = "lookUpEditExpMonth";
+            this.lookUpEditExpMonth.Properties.AdvancedModeOptions.AllowCaretAnimation = DevExpress.Utils.DefaultBoolean.True;
+            this.lookUpEditExpMonth.Properties.AdvancedModeOptions.AllowSelectionAnimation = DevExpress.Utils.DefaultBoolean.True;
+            this.lookUpEditExpMonth.Properties.AdvancedModeOptions.Label = resources.GetString("lookUpEditExpMonth.Properties.AdvancedModeOptions.Label");
+            this.lookUpEditExpMonth.Properties.AdvancedModeOptions.LabelAppearance.Options.UseTextOptions = true;
+            this.lookUpEditExpMonth.Properties.AdvancedModeOptions.LabelAppearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.lookUpEditExpMonth.Properties.AdvancedModeOptions.LabelAppearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Bottom;
+            this.lookUpEditExpMonth.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("lookUpEditExpMonth.Properties.Appearance.Font")));
+            this.lookUpEditExpMonth.Properties.Appearance.Options.UseFont = true;
+            this.lookUpEditExpMonth.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("lookUpEditExpMonth.Properties.Buttons"))))});
+            this.lookUpEditExpMonth.Properties.DataSource = this.bindingSourceMonthNames;
+            this.lookUpEditExpMonth.Properties.DisplayMember = "MonthName";
+            this.lookUpEditExpMonth.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.Salmon;
+            this.lookUpEditExpMonth.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
+            this.lookUpEditExpMonth.Properties.LookAndFeel.SkinName = "McSkin";
+            this.lookUpEditExpMonth.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.lookUpEditExpMonth.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            this.lookUpEditExpMonth.Properties.UseAdvancedMode = DevExpress.Utils.DefaultBoolean.True;
+            this.lookUpEditExpMonth.Properties.ValueMember = "MonthNumber";
+            this.lookUpEditExpMonth.EditValueChanged += new System.EventHandler(this.lookUpEditExpMonth_EditValueChanged);
+            this.lookUpEditExpMonth.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            // 
+            // textEditCreditCardCVV
+            // 
+            this.textEditCreditCardCVV.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.OPNBANKbindingSource, "OPNBANK_CW_CODE", true));
+            resources.ApplyResources(this.textEditCreditCardCVV, "textEditCreditCardCVV");
+            this.textEditCreditCardCVV.MenuManager = this.toolbarFormManager1;
+            this.textEditCreditCardCVV.Name = "textEditCreditCardCVV";
+            this.textEditCreditCardCVV.Properties.AdvancedModeOptions.AllowCaretAnimation = DevExpress.Utils.DefaultBoolean.True;
+            this.textEditCreditCardCVV.Properties.AdvancedModeOptions.AllowSelectionAnimation = DevExpress.Utils.DefaultBoolean.True;
+            this.textEditCreditCardCVV.Properties.AdvancedModeOptions.Label = resources.GetString("textEditCreditCardCVV.Properties.AdvancedModeOptions.Label");
+            this.textEditCreditCardCVV.Properties.AdvancedModeOptions.LabelAppearance.Options.UseTextOptions = true;
+            this.textEditCreditCardCVV.Properties.AdvancedModeOptions.LabelAppearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.textEditCreditCardCVV.Properties.AdvancedModeOptions.LabelAppearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Bottom;
+            this.textEditCreditCardCVV.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textEditCreditCardCVV.Properties.Appearance.Font")));
+            this.textEditCreditCardCVV.Properties.Appearance.Options.UseFont = true;
+            this.textEditCreditCardCVV.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.Salmon;
+            this.textEditCreditCardCVV.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
+            this.textEditCreditCardCVV.Properties.LookAndFeel.SkinName = "McSkin";
+            this.textEditCreditCardCVV.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.textEditCreditCardCVV.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.SimpleMaskManager));
+            this.textEditCreditCardCVV.Properties.MaskSettings.Set("MaskManagerSignature", "ignoreMaskBlank=True");
+            this.textEditCreditCardCVV.Properties.MaskSettings.Set("mask", "0009");
+            this.textEditCreditCardCVV.Properties.MaskSettings.Set("placeholder", '\0');
+            this.textEditCreditCardCVV.Properties.MaskSettings.Set("saveLiterals", false);
+            this.textEditCreditCardCVV.Properties.UseAdvancedMode = DevExpress.Utils.DefaultBoolean.True;
+            this.textEditCreditCardCVV.Properties.UseMaskAsDisplayFormat = ((bool)(resources.GetObject("textEditCreditCardCVV.Properties.UseMaskAsDisplayFormat")));
+            this.textEditCreditCardCVV.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            // 
+            // textEditCreditCardNumber
+            // 
+            this.textEditCreditCardNumber.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.OPNBANKbindingSource, "OPNBANK_CARD_NO", true));
+            resources.ApplyResources(this.textEditCreditCardNumber, "textEditCreditCardNumber");
+            this.textEditCreditCardNumber.MenuManager = this.toolbarFormManager1;
+            this.textEditCreditCardNumber.Name = "textEditCreditCardNumber";
+            this.textEditCreditCardNumber.Properties.AdvancedModeOptions.AllowCaretAnimation = DevExpress.Utils.DefaultBoolean.True;
+            this.textEditCreditCardNumber.Properties.AdvancedModeOptions.AllowSelectionAnimation = DevExpress.Utils.DefaultBoolean.True;
+            this.textEditCreditCardNumber.Properties.AdvancedModeOptions.Label = resources.GetString("textEditCreditCardNumber.Properties.AdvancedModeOptions.Label");
+            this.textEditCreditCardNumber.Properties.AdvancedModeOptions.LabelAppearance.Options.UseTextOptions = true;
+            this.textEditCreditCardNumber.Properties.AdvancedModeOptions.LabelAppearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.textEditCreditCardNumber.Properties.AdvancedModeOptions.LabelAppearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Bottom;
+            this.textEditCreditCardNumber.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textEditCreditCardNumber.Properties.Appearance.Font")));
+            this.textEditCreditCardNumber.Properties.Appearance.Options.UseFont = true;
+            this.textEditCreditCardNumber.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.Salmon;
+            this.textEditCreditCardNumber.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Salmon;
+            this.textEditCreditCardNumber.Properties.LookAndFeel.SkinName = "McSkin";
+            this.textEditCreditCardNumber.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.textEditCreditCardNumber.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.SimpleMaskManager));
+            this.textEditCreditCardNumber.Properties.MaskSettings.Set("MaskManagerSignature", "ignoreMaskBlank=True");
+            this.textEditCreditCardNumber.Properties.MaskSettings.Set("mask", "0000 0000 0000 0000");
+            this.textEditCreditCardNumber.Properties.MaskSettings.Set("placeholder", '\0');
+            this.textEditCreditCardNumber.Properties.MaskSettings.Set("saveLiterals", false);
+            this.textEditCreditCardNumber.Properties.UseAdvancedMode = DevExpress.Utils.DefaultBoolean.True;
+            this.textEditCreditCardNumber.Properties.UseMaskAsDisplayFormat = ((bool)(resources.GetObject("textEditCreditCardNumber.Properties.UseMaskAsDisplayFormat")));
+            this.textEditCreditCardNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            // 
+            // textEditCreditCardName
+            // 
+            this.textEditCreditCardName.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.OPNBANKbindingSource, "OPNBANK_CUST_NAME", true));
+            resources.ApplyResources(this.textEditCreditCardName, "textEditCreditCardName");
+            this.textEditCreditCardName.MenuManager = this.toolbarFormManager1;
+            this.textEditCreditCardName.Name = "textEditCreditCardName";
+            this.textEditCreditCardName.Properties.AdvancedModeOptions.AllowCaretAnimation = DevExpress.Utils.DefaultBoolean.True;
+            this.textEditCreditCardName.Properties.AdvancedModeOptions.AllowSelectionAnimation = DevExpress.Utils.DefaultBoolean.True;
+            this.textEditCreditCardName.Properties.AdvancedModeOptions.Label = resources.GetString("textEditCreditCardName.Properties.AdvancedModeOptions.Label");
+            this.textEditCreditCardName.Properties.AdvancedModeOptions.LabelAppearance.Options.UseTextOptions = true;
+            this.textEditCreditCardName.Properties.AdvancedModeOptions.LabelAppearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.textEditCreditCardName.Properties.AdvancedModeOptions.LabelAppearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Bottom;
+            this.textEditCreditCardName.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textEditCreditCardName.Properties.Appearance.Font")));
+            this.textEditCreditCardName.Properties.Appearance.Options.UseFont = true;
+            this.textEditCreditCardName.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.Salmon;
+            this.textEditCreditCardName.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
+            this.textEditCreditCardName.Properties.LookAndFeel.SkinName = "McSkin";
+            this.textEditCreditCardName.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.textEditCreditCardName.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.RegularMaskManager));
+            this.textEditCreditCardName.Properties.MaskSettings.Set("MaskManagerSignature", "ignoreMaskBlank=True");
+            this.textEditCreditCardName.Properties.MaskSettings.Set("mask", "[A-Z a-z]{0, 40}");
+            this.textEditCreditCardName.Properties.MaskSettings.Set("placeholder", '\0');
+            this.textEditCreditCardName.Properties.UseAdvancedMode = DevExpress.Utils.DefaultBoolean.True;
+            this.textEditCreditCardName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // groupBox6
             // 
@@ -5521,215 +5935,6 @@
             resources.ApplyResources(this.textBox88, "textBox88");
             this.textBox88.Name = "textBox88";
             this.textBox88.ReadOnly = true;
-            // 
-            // tabControl1
-            // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            resources.ApplyResources(this.tabControl1, "tabControl1");
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.tabPage1.Controls.Add(this.label103);
-            this.tabPage1.Controls.Add(this.textBoxMonthlyPayment);
-            this.tabPage1.Controls.Add(this.txtBankAutoPay);
-            this.tabPage1.Controls.Add(label95);
-            this.tabPage1.Controls.Add(this.txtBankAccountNumber);
-            this.tabPage1.Controls.Add(this.label90);
-            this.tabPage1.Controls.Add(this.txtBankCheckDigit);
-            this.tabPage1.Controls.Add(this.label89);
-            this.tabPage1.Controls.Add(this.txtBankRoutingNumber);
-            this.tabPage1.Controls.Add(this.label88);
-            this.tabPage1.Controls.Add(this.txtBankState);
-            this.tabPage1.Controls.Add(this.label87);
-            this.tabPage1.Controls.Add(this.txtBankCity);
-            this.tabPage1.Controls.Add(this.label86);
-            this.tabPage1.Controls.Add(this.txtBankName);
-            this.tabPage1.Controls.Add(this.lblBankName);
-            resources.ApplyResources(this.tabPage1, "tabPage1");
-            this.tabPage1.Name = "tabPage1";
-            // 
-            // label103
-            // 
-            resources.ApplyResources(this.label103, "label103");
-            this.label103.Name = "label103";
-            // 
-            // textBoxMonthlyPayment
-            // 
-            this.textBoxMonthlyPayment.AllowDrop = true;
-            this.textBoxMonthlyPayment.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OPNBANKbindingSource, "OPNBANK_MONTHLY_PAYMENT", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "C2"));
-            resources.ApplyResources(this.textBoxMonthlyPayment, "textBoxMonthlyPayment");
-            this.textBoxMonthlyPayment.Name = "textBoxMonthlyPayment";
-            this.textBoxMonthlyPayment.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
-            // 
-            // txtBankAutoPay
-            // 
-            this.txtBankAutoPay.AllowDrop = true;
-            this.txtBankAutoPay.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtBankAutoPay.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_AUTOPAY", true));
-            resources.ApplyResources(this.txtBankAutoPay, "txtBankAutoPay");
-            this.txtBankAutoPay.Name = "txtBankAutoPay";
-            this.txtBankAutoPay.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
-            // 
-            // txtBankAccountNumber
-            // 
-            this.txtBankAccountNumber.AllowDrop = true;
-            this.txtBankAccountNumber.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OPNBANKbindingSource, "OPNBANK_ACCOUNT_NO", true));
-            resources.ApplyResources(this.txtBankAccountNumber, "txtBankAccountNumber");
-            this.txtBankAccountNumber.Name = "txtBankAccountNumber";
-            this.txtBankAccountNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
-            // 
-            // label90
-            // 
-            resources.ApplyResources(this.label90, "label90");
-            this.label90.Name = "label90";
-            // 
-            // txtBankCheckDigit
-            // 
-            this.txtBankCheckDigit.AllowDrop = true;
-            this.txtBankCheckDigit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OPNBANKbindingSource, "OPNBANK_CHECK_DIGIT", true));
-            resources.ApplyResources(this.txtBankCheckDigit, "txtBankCheckDigit");
-            this.txtBankCheckDigit.Name = "txtBankCheckDigit";
-            this.txtBankCheckDigit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
-            // 
-            // label89
-            // 
-            resources.ApplyResources(this.label89, "label89");
-            this.label89.Name = "label89";
-            // 
-            // txtBankRoutingNumber
-            // 
-            this.txtBankRoutingNumber.AllowDrop = true;
-            this.txtBankRoutingNumber.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OPNBANKbindingSource, "OPNBANK_TRAN_CODE", true));
-            resources.ApplyResources(this.txtBankRoutingNumber, "txtBankRoutingNumber");
-            this.txtBankRoutingNumber.Name = "txtBankRoutingNumber";
-            this.txtBankRoutingNumber.TextChanged += new System.EventHandler(this.txtBankRoutingNumber_TextChanged);
-            this.txtBankRoutingNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
-            // 
-            // label88
-            // 
-            resources.ApplyResources(this.label88, "label88");
-            this.label88.Name = "label88";
-            // 
-            // txtBankState
-            // 
-            this.txtBankState.AllowDrop = true;
-            this.txtBankState.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OPNBANKbindingSource, "OPNBANK_STATE", true));
-            resources.ApplyResources(this.txtBankState, "txtBankState");
-            this.txtBankState.Name = "txtBankState";
-            this.txtBankState.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
-            // 
-            // label87
-            // 
-            resources.ApplyResources(this.label87, "label87");
-            this.label87.Name = "label87";
-            // 
-            // txtBankCity
-            // 
-            this.txtBankCity.AllowDrop = true;
-            this.txtBankCity.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OPNBANKbindingSource, "OPNBANK_CITY", true));
-            resources.ApplyResources(this.txtBankCity, "txtBankCity");
-            this.txtBankCity.Name = "txtBankCity";
-            this.txtBankCity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
-            // 
-            // label86
-            // 
-            resources.ApplyResources(this.label86, "label86");
-            this.label86.Name = "label86";
-            // 
-            // txtBankName
-            // 
-            this.txtBankName.AllowDrop = true;
-            this.txtBankName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OPNBANKbindingSource, "OPNBANK_NAME", true));
-            resources.ApplyResources(this.txtBankName, "txtBankName");
-            this.txtBankName.Name = "txtBankName";
-            this.txtBankName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
-            // 
-            // lblBankName
-            // 
-            resources.ApplyResources(this.lblBankName, "lblBankName");
-            this.lblBankName.Name = "lblBankName";
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.BackColor = System.Drawing.Color.Salmon;
-            this.tabPage2.Controls.Add(this.ExpYearcomboBox);
-            this.tabPage2.Controls.Add(this.label94);
-            this.tabPage2.Controls.Add(this.ExpMonthcomboBox);
-            this.tabPage2.Controls.Add(this.txtCreditCardCVV);
-            this.tabPage2.Controls.Add(this.label93);
-            this.tabPage2.Controls.Add(this.label92);
-            this.tabPage2.Controls.Add(this.txtCreditCardName);
-            this.tabPage2.Controls.Add(this.txtCreditCardNumber);
-            this.tabPage2.Controls.Add(this.label91);
-            resources.ApplyResources(this.tabPage2, "tabPage2");
-            this.tabPage2.Name = "tabPage2";
-            // 
-            // ExpYearcomboBox
-            // 
-            this.ExpYearcomboBox.AllowDrop = true;
-            this.ExpYearcomboBox.FormattingEnabled = true;
-            resources.ApplyResources(this.ExpYearcomboBox, "ExpYearcomboBox");
-            this.ExpYearcomboBox.Name = "ExpYearcomboBox";
-            this.ExpYearcomboBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
-            // 
-            // label94
-            // 
-            resources.ApplyResources(this.label94, "label94");
-            this.label94.Name = "label94";
-            // 
-            // ExpMonthcomboBox
-            // 
-            this.ExpMonthcomboBox.AllowDrop = true;
-            this.ExpMonthcomboBox.DataSource = this.bindingSourceMonthNames;
-            this.ExpMonthcomboBox.DisplayMember = "MonthName";
-            this.ExpMonthcomboBox.FormattingEnabled = true;
-            resources.ApplyResources(this.ExpMonthcomboBox, "ExpMonthcomboBox");
-            this.ExpMonthcomboBox.Name = "ExpMonthcomboBox";
-            this.ExpMonthcomboBox.ValueMember = "MonthNumber";
-            this.ExpMonthcomboBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
-            // 
-            // txtCreditCardCVV
-            // 
-            this.txtCreditCardCVV.AllowDrop = true;
-            this.txtCreditCardCVV.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OPNBANKbindingSource, "OPNBANK_CW_CODE", true));
-            resources.ApplyResources(this.txtCreditCardCVV, "txtCreditCardCVV");
-            this.txtCreditCardCVV.Name = "txtCreditCardCVV";
-            this.txtCreditCardCVV.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
-            // 
-            // label93
-            // 
-            resources.ApplyResources(this.label93, "label93");
-            this.label93.Name = "label93";
-            // 
-            // label92
-            // 
-            resources.ApplyResources(this.label92, "label92");
-            this.label92.Name = "label92";
-            // 
-            // txtCreditCardName
-            // 
-            this.txtCreditCardName.AllowDrop = true;
-            this.txtCreditCardName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OPNBANKbindingSource, "OPNBANK_CUST_NAME", true));
-            resources.ApplyResources(this.txtCreditCardName, "txtCreditCardName");
-            this.txtCreditCardName.Name = "txtCreditCardName";
-            this.txtCreditCardName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
-            // 
-            // txtCreditCardNumber
-            // 
-            this.txtCreditCardNumber.AllowDrop = true;
-            this.txtCreditCardNumber.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OPNBANKbindingSource, "OPNBANK_CARD_NO", true));
-            resources.ApplyResources(this.txtCreditCardNumber, "txtCreditCardNumber");
-            this.txtCreditCardNumber.Name = "txtCreditCardNumber";
-            this.txtCreditCardNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
-            // 
-            // label91
-            // 
-            resources.ApplyResources(this.label91, "label91");
-            this.label91.Name = "label91";
             // 
             // xtraTabPageHistory
             // 
@@ -6418,7 +6623,7 @@
             this.colThumb.ColumnEdit = this.repositoryItemPictureEdit1;
             this.colThumb.FieldName = "colThumb";
             this.colThumb.ImageOptions.Alignment = ((System.Drawing.StringAlignment)(resources.GetObject("colThumb.ImageOptions.Alignment")));
-            this.colThumb.ImageOptions.Image = global::IAC2021SQL.Properties.Resources.PaperClip;
+            this.colThumb.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("colThumb.ImageOptions.Image")));
             this.colThumb.ImageOptions.ImageIndex = ((int)(resources.GetObject("colThumb.ImageOptions.ImageIndex")));
             this.colThumb.MinWidth = 10;
             this.colThumb.Name = "colThumb";
@@ -7345,6 +7550,7 @@
             this.buttonEditPaymentHistory.LookAndFeel.SkinName = "McSkin";
             this.buttonEditPaymentHistory.LookAndFeel.UseDefaultLookAndFeel = false;
             this.buttonEditPaymentHistory.Name = "buttonEditPaymentHistory";
+            this.buttonEditPaymentHistory.Click += new System.EventHandler(this.buttonEditPaymentHistory_Click);
             // 
             // label152
             // 
@@ -7856,7 +8062,7 @@
             // 
             resources.ApplyResources(this.barButtonItemTimeValueToExcel, "barButtonItemTimeValueToExcel");
             this.barButtonItemTimeValueToExcel.Id = 7;
-            this.barButtonItemTimeValueToExcel.ImageOptions.Image = global::IAC2021SQL.Properties.Resources.ExportToExcel_16x;
+            this.barButtonItemTimeValueToExcel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItemTimeValueToExcel.ImageOptions.Image")));
             this.barButtonItemTimeValueToExcel.ItemAppearance.Normal.BackColor = System.Drawing.Color.LightBlue;
             this.barButtonItemTimeValueToExcel.ItemAppearance.Normal.Options.UseBackColor = true;
             this.barButtonItemTimeValueToExcel.Name = "barButtonItemTimeValueToExcel";
@@ -7901,6 +8107,30 @@
             resources.ApplyResources(this.barDockControl8, "barDockControl8");
             this.barDockControl8.Manager = this.barManager1;
             // 
+            // checkEditAllotment
+            // 
+            this.checkEditAllotment.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_ALLOTMENT", true));
+            resources.ApplyResources(this.checkEditAllotment, "checkEditAllotment");
+            this.checkEditAllotment.MenuManager = this.toolbarFormManager1;
+            this.checkEditAllotment.Name = "checkEditAllotment";
+            this.checkEditAllotment.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("checkEdit1.Properties.Appearance.Font")));
+            this.checkEditAllotment.Properties.Appearance.Options.UseFont = true;
+            this.checkEditAllotment.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.checkEditAllotment.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.checkEditAllotment.Properties.Caption = resources.GetString("checkEdit1.Properties.Caption");
+            this.checkEditAllotment.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
+            this.checkEditAllotment.Properties.CheckBoxOptions.SvgColorChecked = System.Drawing.Color.Black;
+            this.checkEditAllotment.Properties.ContentAlignment = ((DevExpress.Utils.HorzAlignment)(resources.GetObject("checkEdit1.Properties.ContentAlignment")));
+            this.checkEditAllotment.Properties.GlyphAlignment = ((DevExpress.Utils.HorzAlignment)(resources.GetObject("checkEdit1.Properties.GlyphAlignment")));
+            this.checkEditAllotment.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
+            this.checkEditAllotment.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.LightSteelBlue;
+            this.checkEditAllotment.Properties.LookAndFeel.SkinName = "McSkin";
+            this.checkEditAllotment.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.checkEditAllotment.Properties.NullStyle = DevExpress.XtraEditors.Controls.StyleIndeterminate.Unchecked;
+            this.checkEditAllotment.QueryCheckStateByValue += new DevExpress.XtraEditors.Controls.QueryCheckStateByValueEventHandler(this.checkEditAllotment_QueryCheckStateByValue);
+            this.checkEditAllotment.QueryValueByCheckState += new DevExpress.XtraEditors.Controls.QueryValueByCheckStateEventHandler(this.checkEditAllotment_QueryValueByCheckState);
+            this.checkEditAllotment.CheckedChanged += new System.EventHandler(this.checkEditAllotment_CheckedChanged);
+            // 
             // frmNewCustMaint
             // 
             this.Appearance.BackColor = System.Drawing.Color.LightSteelBlue;
@@ -7923,8 +8153,6 @@
             this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.Shadow;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.IconOptions.Image = ((System.Drawing.Image)(resources.GetObject("frmNewCustMaint.IconOptions.Image")));
-            this.LookAndFeel.SkinMaskColor = System.Drawing.Color.Black;
-            this.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
             this.LookAndFeel.SkinName = "McSkin";
             this.LookAndFeel.UseDefaultLookAndFeel = false;
             this.Name = "frmNewCustMaint";
@@ -7975,8 +8203,13 @@
             this.xtraTabPageCustInfo1.ResumeLayout(false);
             this.groupBox10.ResumeLayout(false);
             this.groupBox10.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.checkBoxSendToDealer.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEditMilitary.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolbarFormManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEditNoContact.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEditWrongAddress.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEditAutoPay.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEditCustomerInsurance.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkBoxSendToDealer.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.colorCheckBoxReceivedContract.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkBoxFullRecourseTab1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDOB.Properties.CalendarTimeProperties)).EndInit();
@@ -8048,13 +8281,27 @@
             this.groupBox3.PerformLayout();
             this.xtraTabPageBank.ResumeLayout(false);
             this.groupBox17.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
+            this.xtraTabControl1.ResumeLayout(false);
+            this.xtraTabPage1.ResumeLayout(false);
+            this.groupBox23.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.checkEditBankAutoPay.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditBankAccountNumber.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditBankCheckDigit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditBankRoutingNumber.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditBankState.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditBankCity.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditBankName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditBankMonthlyPayment.Properties)).EndInit();
+            this.xtraTabPage2.ResumeLayout(false);
+            this.groupBox24.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEditExpYear.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEditExpMonth.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditCreditCardCVV.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditCreditCardNumber.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditCreditCardName.Properties)).EndInit();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
             this.xtraTabPageHistory.ResumeLayout(false);
             this.xtraTabPageHistory.PerformLayout();
             this.groupBox18.ResumeLayout(false);
@@ -8122,6 +8369,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolbarFormManager2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEditAllotment.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -8237,7 +8485,6 @@
         private DevExpress.XtraEditors.DateEdit nullableDateTimePickerDateContractReceived;
         private DevExpress.XtraEditors.SimpleButton buttonDealerEmail;
         private System.Windows.Forms.TextBox textBoxDealerEmail;
-        private System.Windows.Forms.CheckBox checkBoxMilitary;
         private System.Windows.Forms.GroupBox groupBoxSBT;
         private DevExpress.XtraEditors.SimpleButton buttonMessage;
         private DevExpress.XtraEditors.SimpleButton buttonConfirm;
@@ -8273,9 +8520,6 @@
         private System.Windows.Forms.TextBox cUSTOMER_CONTACTTextBox;
         private System.Windows.Forms.TextBox cUSTOMER_BRANCH_NUMBERTextBox;
         private System.Windows.Forms.TextBox cUSTOMER_DISTRIBUTOR_NOTextBox;
-        private System.Windows.Forms.TextBox cUSTOMER_ALLOTMENTTextBox;
-        private System.Windows.Forms.TextBox cUSTOMER_AUTOPAYTextBox;
-        private System.Windows.Forms.TextBox cUSTOMER_INSURANCETextBox;
         private System.Windows.Forms.TextBox cUSTOMER_SS_3TextBox;
         private System.Windows.Forms.TextBox cUSTOMER_SS_2TextBox;
         private System.Windows.Forms.TextBox cUSTOMER_SS_1TextBox;
@@ -8288,8 +8532,6 @@
         private System.Windows.Forms.TextBox cUSTOMER_STREET_1TextBox;
         private System.Windows.Forms.TextBox cUSTOMER_LAST_NAMETextBox;
         private System.Windows.Forms.TextBox cUSTOMER_FIRST_NAMETextBox;
-        private System.Windows.Forms.TextBox cUSTOMER_NO_CONTACTTextBox;
-        private System.Windows.Forms.TextBox cUSTOMER_WRONG_ADDRESSTextBox;
         private System.Windows.Forms.TextBox cUSTOMER_PURCHASE_ORDERTextBox;
         private System.Windows.Forms.TextBox cUSTOMER_ACT_STATTextBox;
         private System.Windows.Forms.TextBox cUSTOMER_IAC_TypeTextBox;
@@ -8418,33 +8660,6 @@
         private System.Windows.Forms.TextBox textBox86;
         private System.Windows.Forms.TextBox textBox87;
         private System.Windows.Forms.TextBox textBox88;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.Label label103;
-        private System.Windows.Forms.TextBox textBoxMonthlyPayment;
-        private System.Windows.Forms.TextBox txtBankAutoPay;
-        private System.Windows.Forms.TextBox txtBankAccountNumber;
-        private System.Windows.Forms.Label label90;
-        private System.Windows.Forms.TextBox txtBankCheckDigit;
-        private System.Windows.Forms.Label label89;
-        private System.Windows.Forms.TextBox txtBankRoutingNumber;
-        private System.Windows.Forms.Label label88;
-        private System.Windows.Forms.TextBox txtBankState;
-        private System.Windows.Forms.Label label87;
-        private System.Windows.Forms.TextBox txtBankCity;
-        private System.Windows.Forms.Label label86;
-        private System.Windows.Forms.TextBox txtBankName;
-        private System.Windows.Forms.Label lblBankName;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.ComboBox ExpYearcomboBox;
-        private System.Windows.Forms.Label label94;
-        private System.Windows.Forms.ComboBox ExpMonthcomboBox;
-        private System.Windows.Forms.TextBox txtCreditCardCVV;
-        private System.Windows.Forms.Label label93;
-        private System.Windows.Forms.Label label92;
-        private System.Windows.Forms.TextBox txtCreditCardName;
-        private System.Windows.Forms.TextBox txtCreditCardNumber;
-        private System.Windows.Forms.Label label91;
         private DevExpress.XtraGrid.GridControl cOMMENTGridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView cOMMENTgridView;
         private DevExpress.XtraGrid.Columns.GridColumn colDATE;
@@ -8727,6 +8942,30 @@
         private System.Windows.Forms.GroupBox groupBox20;
         private System.Windows.Forms.GroupBox groupBox21;
         private System.Windows.Forms.GroupBox groupBox22;
+        private DevExpress.XtraTab.XtraTabControl xtraTabControl1;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage1;
+        private DevExpress.XtraEditors.TextEdit textEditBankMonthlyPayment;
+        private DevExpress.XtraEditors.TextEdit textEditBankAccountNumber;
+        private DevExpress.XtraEditors.TextEdit textEditBankCheckDigit;
+        private DevExpress.XtraEditors.TextEdit textEditBankRoutingNumber;
+        private DevExpress.XtraEditors.TextEdit textEditBankState;
+        private DevExpress.XtraEditors.TextEdit textEditBankCity;
+        private DevExpress.XtraEditors.TextEdit textEditBankName;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage2;
+        private DevExpress.XtraEditors.CheckEdit checkEditBankAutoPay;
+        private DevExpress.XtraEditors.LookUpEdit lookUpEditExpMonth;
+        private DevExpress.XtraEditors.TextEdit textEditCreditCardCVV;
+        private DevExpress.XtraEditors.TextEdit textEditCreditCardNumber;
+        private DevExpress.XtraEditors.TextEdit textEditCreditCardName;
+        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEditExpYear;
+        private System.Windows.Forms.GroupBox groupBox23;
+        private System.Windows.Forms.GroupBox groupBox24;
+        private DevExpress.XtraEditors.CheckEdit checkEditCustomerInsurance;
+        private DevExpress.XtraEditors.CheckEdit checkEditAutoPay;
+        private DevExpress.XtraEditors.CheckEdit checkEditWrongAddress;
+        private DevExpress.XtraEditors.CheckEdit checkEditNoContact;
+        private DevExpress.XtraEditors.CheckEdit checkEditMilitary;
+        private DevExpress.XtraEditors.CheckEdit checkEditAllotment;
     }
 }
 

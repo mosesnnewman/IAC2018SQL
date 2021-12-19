@@ -198,15 +198,15 @@ namespace IAC2021SQL
             DealerNamecomboBox.Enabled = false;
             cUSTOMER_COMMENT_1TextBox.Enabled = false;
             cUSTOMER_COMMENT_2TextBox.Enabled = false;
-            cUSTOMER_INSURANCETextBox.Enabled = false;
-            cUSTOMER_AUTOPAYTextBox.Enabled = false;
+            checkEditCustomerInsurance.Enabled = false;
+            checkEditAutoPay.Enabled = false;
             cUSTOMER_CREDIT_SCORE_NTextBox.Enabled = false;
             cUSTOMER_CREDIT_SCORE_ATextBox.Enabled = false;
-            cUSTOMER_ALLOTMENTTextBox.Enabled = false;
+            checkEditAllotment.Enabled = false;
             cUSTOMER_DISTRIBUTOR_NOTextBox.Enabled = false;
             cUSTOMER_BRANCH_NUMBERTextBox.Enabled = false;
-            cUSTOMER_WRONG_ADDRESSTextBox.Enabled = false;
-            cUSTOMER_NO_CONTACTTextBox.Enabled = false;
+            checkEditWrongAddress.Enabled = false;
+            checkEditNoContact.Enabled = false;
             // Moses Newman 12/23/2013 Added Email Address
             richTextBoxEmailAddress.Enabled = false;
             // Moses Newman 12/23/2013 Added Refi CheckBox
@@ -245,7 +245,7 @@ namespace IAC2021SQL
             textBoxCOSAuthNo.Enabled = false;
             checkBoxCOSDNTAcct.Enabled = false;
             // Moses Newman 05/24/2018 
-            checkBoxMilitary.Enabled = false;
+            checkEditMilitary.Enabled = false;
             // Moses Newman 05/24/2018 added CosLetterNo and CosLetterType
             comboBoxCosLetterNo.Enabled = true;
             comboBoxCosLetterType.Enabled = true;
@@ -419,21 +419,21 @@ namespace IAC2021SQL
             //Bank Info
 
             //EFT/eCHeck
-            txtBankName.Enabled = false;
-            txtBankCity.Enabled = false;
-            txtBankState.Enabled = false;
-            txtBankRoutingNumber.Enabled = false;
-            txtBankCheckDigit.Enabled = false;
-            txtBankAccountNumber.Enabled = false;
-            txtBankAutoPay.Enabled = false;
-            textBoxMonthlyPayment.Enabled = false;
+            textEditBankName.Enabled = false;
+            textEditBankCity.Enabled = false;
+            textEditBankState.Enabled = false;
+            textEditBankRoutingNumber.Enabled = false;
+            textEditBankCheckDigit.Enabled = false;
+            textEditBankAccountNumber.Enabled = false;
+            checkEditBankAutoPay.Enabled = false;
+            textEditBankMonthlyPayment.Enabled = false;
 
             //Credit Card Info
-            txtCreditCardNumber.Enabled = false;
-            txtCreditCardName.Enabled = false;
-            txtCreditCardCVV.Enabled = false;
-            ExpMonthcomboBox.Enabled = false;
-            ExpYearcomboBox.Enabled = false;
+            textEditCreditCardNumber.Enabled = false;
+            textEditCreditCardName.Enabled = false;
+            textEditCreditCardCVV.Enabled = false;
+            lookUpEditExpMonth.Enabled = false;
+            comboBoxEditExpYear.Enabled = false;
             //Moses Newman 11/23/2021 Use DevExpress GridView instead of DataGridView for comments tab now
             cOMMENTGridControl.Enabled = true;
             cOMMENTgridView.OptionsBehavior.Editable = false;
@@ -532,15 +532,15 @@ namespace IAC2021SQL
             DealerNamecomboBox.Enabled = true;
             cUSTOMER_COMMENT_1TextBox.Enabled = true;
             cUSTOMER_COMMENT_2TextBox.Enabled = true;
-            cUSTOMER_INSURANCETextBox.Enabled = true;
-            cUSTOMER_AUTOPAYTextBox.Enabled = true;
+            checkEditCustomerInsurance.Enabled = true;
+            checkEditAutoPay.Enabled = true;
             cUSTOMER_CREDIT_SCORE_NTextBox.Enabled = true;
             cUSTOMER_CREDIT_SCORE_ATextBox.Enabled = true;
-            cUSTOMER_ALLOTMENTTextBox.Enabled = true;
+            checkEditAllotment.Enabled = true;
             cUSTOMER_DISTRIBUTOR_NOTextBox.Enabled = true;
             cUSTOMER_BRANCH_NUMBERTextBox.Enabled = true;
-            cUSTOMER_WRONG_ADDRESSTextBox.Enabled = true;
-            cUSTOMER_NO_CONTACTTextBox.Enabled = true;
+            checkEditWrongAddress.Enabled = true;
+            checkEditNoContact.Enabled = true;
             // Moses Newman 12/23/2013 Added Email Address
             richTextBoxEmailAddress.Enabled = true;
             // Moses Newman 12/23/2013 Added Refi CheckBox
@@ -578,7 +578,7 @@ namespace IAC2021SQL
             textBoxCOSAuthNo.Enabled = true;
             checkBoxCOSDNTAcct.Enabled = true;
             // Moses Newman 05/24/2018 
-            checkBoxMilitary.Enabled = true;
+            checkEditMilitary.Enabled = true;
             // Moses Newman 05/24/2018 added CosLetterNo and CosLetterType
             comboBoxCosLetterNo.Enabled = false;
             comboBoxCosLetterType.Enabled = false;
@@ -780,21 +780,21 @@ namespace IAC2021SQL
             //Bank Info
 
             //EFT/eCHeck
-            txtBankName.Enabled = true;
-            txtBankCity.Enabled = true;
-            txtBankState.Enabled = true;
-            txtBankRoutingNumber.Enabled = true;
-            txtBankCheckDigit.Enabled = true;
-            txtBankAccountNumber.Enabled = true;
-            txtBankAutoPay.Enabled = true;
-            textBoxMonthlyPayment.Enabled = true;
+            textEditBankName.Enabled = true;
+            textEditBankCity.Enabled = true;
+            textEditBankState.Enabled = true;
+            textEditBankRoutingNumber.Enabled = true;
+            textEditBankCheckDigit.Enabled = true;
+            textEditBankAccountNumber.Enabled = true;
+            checkEditBankAutoPay.Enabled = true;
+            textEditBankMonthlyPayment.Enabled = true;
 
             //Credit Card Info
-            txtCreditCardNumber.Enabled = true;
-            txtCreditCardName.Enabled = true;
-            txtCreditCardCVV.Enabled = true;
-            ExpMonthcomboBox.Enabled = true;
-            ExpYearcomboBox.Enabled = true;
+            textEditCreditCardNumber.Enabled = true;
+            textEditCreditCardName.Enabled = true;
+            textEditCreditCardCVV.Enabled = true;
+            lookUpEditExpMonth.Enabled = true;
+            comboBoxEditExpYear.Enabled = true;
             //Moses Newman 11/23/2021 Use DevExpress GridView instead of DataGridView for comments tab now
             cOMMENTGridControl.Enabled = true;
             cOMMENTgridView.OptionsBehavior.Editable = true;
@@ -1120,7 +1120,8 @@ namespace IAC2021SQL
             lcExpYear9 = (lnExpYear1 + 8).ToString();
             lcExpYear10 = (lnExpYear1 + 9).ToString();
 
-            ExpYearcomboBox.Items.AddRange(new object[] {
+            comboBoxEditExpYear.Properties.Items.AddRange(new object[] {
+                    "",
                     lcExpYear1,
                     lcExpYear2,
                     lcExpYear3,
@@ -1136,9 +1137,9 @@ namespace IAC2021SQL
             {
                 if (iACDataSet.OPNBANK.Rows[0].Field<String>("OPNBANK_EXP_MMYY").Substring(0, 2).Trim() != "")
                 {
-                    ExpMonthcomboBox.SelectedIndex = Convert.ToInt32(iACDataSet.OPNBANK.Rows[0].Field<String>("OPNBANK_EXP_MMYY").Substring(0, 2).Trim()) - 1;
+                    lookUpEditExpMonth.EditValue = iACDataSet.OPNBANK.Rows[0].Field<String>("OPNBANK_EXP_MMYY").Substring(0, 2).Trim();
                 }
-                ExpYearcomboBox.Text = lcExpYear6;
+                comboBoxEditExpYear.EditValue = lcExpYear6;
             }
 
             int lnRowCount = iACDataSet.COMMENT.Rows.Count;
@@ -1219,17 +1220,17 @@ namespace IAC2021SQL
                 // Moses Newman 09/18/2021 Store the orginal value of the phone number to test for changes!
                 txtCOSCell.Tag = txtCOSCell.Text;
             }
-            if (checkBoxMilitary.Checked)
+            if (checkEditMilitary.Checked)
             {
-                checkBoxMilitary.Enabled = true;
-                checkBoxMilitary.Font = new System.Drawing.Font(checkBoxMilitary.Font, FontStyle.Bold);
-                checkBoxMilitary.ForeColor = Color.Red;
+                checkEditMilitary.Enabled = true;
+                checkEditMilitary.Font = new System.Drawing.Font(checkEditMilitary.Font, FontStyle.Bold);
+                checkEditMilitary.ForeColor = Color.Red;
             }
             else
             {
-                checkBoxMilitary.Enabled = false;
-                checkBoxMilitary.Font = new System.Drawing.Font(checkBoxMilitary.Font, FontStyle.Regular);
-                checkBoxMilitary.ForeColor = SystemColors.ControlText;
+                checkEditMilitary.Enabled = false;
+                checkEditMilitary.Font = new System.Drawing.Font(checkEditMilitary.Font, FontStyle.Regular);
+                checkEditMilitary.ForeColor = SystemColors.ControlText;
             }
         }
 
@@ -1408,15 +1409,15 @@ namespace IAC2021SQL
                     DealerNamecomboBox.Enabled = true;
                     cUSTOMER_COMMENT_1TextBox.Enabled = true;
                     cUSTOMER_COMMENT_2TextBox.Enabled = true;
-                    cUSTOMER_INSURANCETextBox.Enabled = true;
-                    cUSTOMER_AUTOPAYTextBox.Enabled = true;
+                    checkEditCustomerInsurance.Enabled = true;
+                    checkEditAutoPay.Enabled = true;
                     cUSTOMER_CREDIT_SCORE_NTextBox.Enabled = true;
                     cUSTOMER_CREDIT_SCORE_ATextBox.Enabled = true;
-                    cUSTOMER_ALLOTMENTTextBox.Enabled = true;
+                    checkEditAllotment.Enabled = true;
                     cUSTOMER_DISTRIBUTOR_NOTextBox.Enabled = true;
                     cUSTOMER_BRANCH_NUMBERTextBox.Enabled = true;
-                    cUSTOMER_WRONG_ADDRESSTextBox.Enabled = true;
-                    cUSTOMER_NO_CONTACTTextBox.Enabled = true;
+                    checkEditWrongAddress.Enabled = true;
+                    checkEditNoContact.Enabled = true;
                     // Moses Newman 12/23/2013 Added Email Address
                     richTextBoxEmailAddress.Enabled = true;
                     // Moses Newman 12/23/2013 Added Refi CheckBox
@@ -1445,7 +1446,7 @@ namespace IAC2021SQL
                     textBoxCOSAuthNo.Enabled = true;
                     checkBoxCOSDNTAcct.Enabled = true;
                     // Moses Newman 05/24/2018 
-                    checkBoxMilitary.Enabled = true;
+                    checkEditMilitary.Enabled = true;
                     // Moses Newman 12/19/2019 Send to Dealer Checkbox added.
                     if (textBoxDealerEmail.Text.Trim() != "")
                     {
@@ -1572,14 +1573,14 @@ namespace IAC2021SQL
                     textBoxCosignerEmail.Enabled = true;
 
 
-                    txtBankName.Enabled = true;
-                    txtBankCity.Enabled = true;
-                    txtBankState.Enabled = true;
-                    txtBankRoutingNumber.Enabled = true;
-                    txtBankCheckDigit.Enabled = true;
-                    txtBankAccountNumber.Enabled = true;
-                    txtBankAutoPay.Enabled = true;
-                    textBoxMonthlyPayment.Enabled = true;
+                    textEditBankName.Enabled = true;
+                    textEditBankCity.Enabled = true;
+                    textEditBankState.Enabled = true;
+                    textEditBankRoutingNumber.Enabled = true;
+                    textEditBankCheckDigit.Enabled = true;
+                    textEditBankAccountNumber.Enabled = true;
+                    checkEditBankAutoPay.Enabled = true;
+                    textEditBankMonthlyPayment.Enabled = true;
                     // Moses Newman 01/29/2017 Added Maturity Date
                     MaturityDate.Enabled = true;
 
@@ -2133,43 +2134,6 @@ namespace IAC2021SQL
             receipt.gsCustomerNo = cUSTOMER_NOTextBox.Text;
             receipt.gsOpenClose = "C";
             receipt.Show();
-        }
-
-        private void txtBankRoutingNumber_TextChanged(object sender, EventArgs e)
-        {
-           if (lbEdit && toolStripButtonSave.Enabled == false)
-                toolStripButtonSave.Enabled = true;
-            if (txtBankRoutingNumber.Text.TrimEnd().Length == 9)
-            {
-                txtBankCheckDigit.Text = txtBankRoutingNumber.Text.Substring(8, 1);
-                txtBankRoutingNumber.Text = txtBankRoutingNumber.Text.Substring(0, 8);
-            }
-        }
-
-        private void ExpMonthcomboBox_SelectedValueChanged(object sender, EventArgs e)
-        {
-            if (cUSTOMER_NOTextBox.Text.Trim() == "")
-                return;
-            if ((lbEdit || lbAddFlag) && OPNBANKbindingSource.Position > -1 && ExpYearcomboBox.Text.Trim() != "" && ExpMonthcomboBox.SelectedValue != null)
-            {
-                iACDataSet.OPNBANK.Rows[OPNBANKbindingSource.Position].SetField<String>("OPNBANK_EXP_MMYY",
-                    ExpMonthcomboBox.SelectedValue.ToString().PadLeft(2, '0') + ExpYearcomboBox.Text.Substring(2, 2));
-                OPNBANKbindingSource.EndEdit();
-                toolStripButtonSave.Enabled = true;
-            }
-        }
-
-        private void ExpYearcomboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cUSTOMER_NOTextBox.Text.Trim() == "")
-                return;
-            if ((lbEdit || lbAddFlag) && OPNBANKbindingSource.Position > -1 && ExpMonthcomboBox.SelectedValue != null)
-            {
-                iACDataSet.OPNBANK.Rows[OPNBANKbindingSource.Position].SetField<String>("OPNBANK_EXP_MMYY",
-                    ExpMonthcomboBox.SelectedValue.ToString().PadLeft(2, '0') + ExpYearcomboBox.Text.Substring(2, 2));
-                OPNBANKbindingSource.EndEdit();
-                toolStripButtonSave.Enabled = true;
-            }
         }
 
         private void buttonLetter_Click(object sender, EventArgs e)
@@ -2810,7 +2774,7 @@ namespace IAC2021SQL
                     OpenCustForm.SS2 = cUSTOMER_SS_2TextBox.Text;
                     OpenCustForm.SS3 = cUSTOMER_SS_3TextBox.Text;
 
-                    OpenCustForm.WrongAddress = cUSTOMER_WRONG_ADDRESSTextBox.Text;
+                    OpenCustForm.WrongAddress = checkEditWrongAddress.Text;
 
                     OpenCustForm.DOB = (DateTime)txtDOB.EditValue;
 
@@ -2836,15 +2800,15 @@ namespace IAC2021SQL
                     OpenCustForm.Comment2 = cUSTOMER_COMMENT_2TextBox.Text;
                     OpenCustForm.CreditScoreN = cUSTOMER_CREDIT_SCORE_NTextBox.Text.TrimEnd() != "" ? Convert.ToInt32(cUSTOMER_CREDIT_SCORE_NTextBox.Text.TrimEnd()):0;
                     OpenCustForm.CreditScoreA = cUSTOMER_CREDIT_SCORE_ATextBox.Text;
-                    OpenCustForm.AllotmentProg = cUSTOMER_ALLOTMENTTextBox.Text;
+                    OpenCustForm.AllotmentProg = checkEditAllotment.Text;
                     OpenCustForm.DistributorNo = cUSTOMER_DISTRIBUTOR_NOTextBox.Text.TrimEnd() != "" ? Convert.ToInt32(cUSTOMER_DISTRIBUTOR_NOTextBox.Text.TrimEnd()):0;
-                    OpenCustForm.NoContact = cUSTOMER_NO_CONTACTTextBox.Text;
+                    OpenCustForm.NoContact = checkEditNoContact.Text;
                     OpenCustForm.CosignName = cUSTOMER_COS_NAMETextBox.Text;
                     OpenCustForm.CosHomePhone = cUSTOMER_COS_PHONETextBox.Text;
                     OpenCustForm.CosCellPhone = txtCOSCell.Text;
                     OpenCustForm.DayDue = iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<Int32>("CUSTOMER_DAY_DUE");
                     OpenCustForm.CreditStatus = txtCollectionAgent.Text;
-                    OpenCustForm.AutoPay = cUSTOMER_AUTOPAYTextBox.Text;
+                    OpenCustForm.AutoPay = checkEditAutoPay.Text;
 
                     OpenCustForm.AltName1 = txtALTContact1.Text;
                     OpenCustForm.AltRelation1 = txtALTRelation1.Text;
@@ -4577,12 +4541,347 @@ namespace IAC2021SQL
             }
         }
 
-        private void txtCOSWorkExt_TextChanged(object sender, EventArgs e)
+        private void checkEditAutopay_QueryCheckStateByValue(object sender, DevExpress.XtraEditors.Controls.QueryCheckStateByValueEventArgs e)
         {
-
+            string val = e.Value.ToString();
+            switch (val)
+            {
+                case "Y":
+                    e.CheckState = CheckState.Checked;
+                    break;
+                case "N":
+                    e.CheckState = CheckState.Unchecked;
+                    break;
+                default:
+                    e.CheckState = CheckState.Unchecked;
+                    break;
+            }
+            e.Handled = true;
         }
 
-        private void barButtonItemCaculateBuyout_ItemClick(object sender, ItemClickEventArgs e)
+        private void checkEditAutopay_QueryValueByCheckState(object sender, DevExpress.XtraEditors.Controls.QueryValueByCheckStateEventArgs e)
+        {
+            CheckEdit edit = sender as CheckEdit;
+            object val = edit.EditValue;
+            switch (e.CheckState)
+            {
+                case CheckState.Checked:
+                    e.Value = "Y";
+                    break;
+                case CheckState.Unchecked:
+                    e.Value = "N";
+                    break;
+                default:
+                    e.Value = "N";
+                    break;
+            }
+            e.Handled = true;
+        }
+
+        private void lookUpEditExpMonth_EditValueChanged(object sender, EventArgs e)
+        {
+            if (cUSTOMER_NOTextBox.Text.Trim() == "")
+                return;
+            if ((lbEdit || lbAddFlag) && OPNBANKbindingSource.Position > -1 && comboBoxEditExpYear.Text.Trim() != "" && lookUpEditExpMonth.EditValue != null)
+            {
+                iACDataSet.OPNBANK.Rows[OPNBANKbindingSource.Position].SetField<String>("OPNBANK_EXP_MMYY",
+                    lookUpEditExpMonth.EditValue.ToString().PadLeft(2, '0') + comboBoxEditExpYear.Text.Substring(2, 2));
+                OPNBANKbindingSource.EndEdit();
+                toolStripButtonSave.Enabled = true;
+            }
+        }
+
+        private void lookUpEditExpYear_EditValueChanged(object sender, EventArgs e)
+        {
+            if (cUSTOMER_NOTextBox.Text.Trim() == "")
+                return;
+            if ((lbEdit || lbAddFlag) && OPNBANKbindingSource.Position > -1 && comboBoxEditExpYear.EditValue != null)
+            {
+                if (comboBoxEditExpYear.Text.Length == 4)
+                {
+                    iACDataSet.OPNBANK.Rows[OPNBANKbindingSource.Position].SetField<String>("OPNBANK_EXP_MMYY",
+                        lookUpEditExpMonth.EditValue.ToString().PadLeft(2, '0') + comboBoxEditExpYear.Text.Substring(2, 2));
+                }
+                else
+                    iACDataSet.OPNBANK.Rows[OPNBANKbindingSource.Position].SetField<String>("OPNBANK_EXP_MMYY","");
+                OPNBANKbindingSource.EndEdit();
+                toolStripButtonSave.Enabled = true;
+            }
+        }
+
+        private void comboBoxEditExpYear_EditValueChanged(object sender, EventArgs e)
+        {
+            if (cUSTOMER_NOTextBox.Text.Trim() == "")
+                return;
+            if ((lbEdit || lbAddFlag) && OPNBANKbindingSource.Position > -1 && comboBoxEditExpYear.EditValue != null)
+            {
+                if (comboBoxEditExpYear.Text.Length == 4)
+                {
+                    iACDataSet.OPNBANK.Rows[OPNBANKbindingSource.Position].SetField<String>("OPNBANK_EXP_MMYY",
+                        lookUpEditExpMonth.EditValue.ToString().PadLeft(2, '0') + comboBoxEditExpYear.Text.Substring(2, 2));
+                }
+                else
+                    iACDataSet.OPNBANK.Rows[OPNBANKbindingSource.Position].SetField<String>("OPNBANK_EXP_MMYY", "");
+                OPNBANKbindingSource.EndEdit();
+                toolStripButtonSave.Enabled = true;
+            }
+        }
+
+        private void textEditBankRoutingNumber_TextChanged(object sender, EventArgs e)
+        {
+            if (lbEdit && toolStripButtonSave.Enabled == false)
+                toolStripButtonSave.Enabled = true;
+            if (textEditBankRoutingNumber.Text.Length == 9)
+            {
+                textEditBankCheckDigit.Text = textEditBankRoutingNumber.Text.Substring(8, 1);
+                textEditBankRoutingNumber.Text = textEditBankRoutingNumber.Text.Substring(0, 8);
+                System.Windows.Forms.SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void checkEditBankAutoPay_CheckedChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void xtraTabPage1_Enter(object sender, EventArgs e)
+        {
+        }
+
+        private void checkEditCustomerInsurance_CheckedChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void checkEditCustomerInsurance_QueryCheckStateByValue(object sender, DevExpress.XtraEditors.Controls.QueryCheckStateByValueEventArgs e)
+        {
+            string val = e.Value.ToString();
+            switch (val)
+            {
+                case "Y":
+                    e.CheckState = CheckState.Checked;
+                    break;
+                case "N":
+                    e.CheckState = CheckState.Unchecked;
+                    break;
+                default:
+                    e.CheckState = CheckState.Unchecked;
+                    break;
+            }
+            e.Handled = true;
+        }
+
+        private void checkEditCustomerInsurance_QueryValueByCheckState(object sender, DevExpress.XtraEditors.Controls.QueryValueByCheckStateEventArgs e)
+        {
+            CheckEdit edit = sender as CheckEdit;
+            object val = edit.EditValue;
+            switch (e.CheckState)
+            {
+                case CheckState.Checked:
+                    e.Value = "Y";
+                    break;
+                case CheckState.Unchecked:
+                    e.Value = "N";
+                    break;
+                default:
+                    e.Value = "N";
+                    break;
+            }
+            e.Handled = true;
+        }
+
+        private void checkEditAutoPay_CheckedChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void checkEditAutoPay_QueryCheckStateByValue_1(object sender, DevExpress.XtraEditors.Controls.QueryCheckStateByValueEventArgs e)
+        {
+            string val = e.Value.ToString();
+            switch (val)
+            {
+                case "Y":
+                    e.CheckState = CheckState.Checked;
+                    break;
+                case "N":
+                    e.CheckState = CheckState.Unchecked;
+                    break;
+                default:
+                    e.CheckState = CheckState.Unchecked;
+                    break;
+            }
+            e.Handled = true;
+        }
+
+        private void checkEditAutoPay_QueryValueByCheckState_1(object sender, DevExpress.XtraEditors.Controls.QueryValueByCheckStateEventArgs e)
+        {
+            CheckEdit edit = sender as CheckEdit;
+            object val = edit.EditValue;
+            switch (e.CheckState)
+            {
+                case CheckState.Checked:
+                    e.Value = "Y";
+                    break;
+                case CheckState.Unchecked:
+                    e.Value = "N";
+                    break;
+                default:
+                    e.Value = "N";
+                    break;
+            }
+            e.Handled = true;
+        }
+
+        private void checkEditWrongAddress_CheckedChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void checkEditWrongAddress_QueryCheckStateByValue(object sender, DevExpress.XtraEditors.Controls.QueryCheckStateByValueEventArgs e)
+        {
+            string val = e.Value.ToString();
+            switch (val)
+            {
+                case "Y":
+                    e.CheckState = CheckState.Checked;
+                    break;
+                case "N":
+                    e.CheckState = CheckState.Unchecked;
+                    break;
+                default:
+                    e.CheckState = CheckState.Unchecked;
+                    break;
+            }
+            e.Handled = true;
+        }
+
+        private void checkEditWrongAddress_QueryValueByCheckState(object sender, DevExpress.XtraEditors.Controls.QueryValueByCheckStateEventArgs e)
+        {
+            CheckEdit edit = sender as CheckEdit;
+            object val = edit.EditValue;
+            switch (e.CheckState)
+            {
+                case CheckState.Checked:
+                    e.Value = "Y";
+                    break;
+                case CheckState.Unchecked:
+                    e.Value = "N";
+                    break;
+                default:
+                    e.Value = "N";
+                    break;
+            }
+            e.Handled = true;
+        }
+
+        private void checkEditNoContact_CheckedChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void checkEditNoContact_QueryCheckStateByValue(object sender, DevExpress.XtraEditors.Controls.QueryCheckStateByValueEventArgs e)
+        {
+            string val = e.Value.ToString();
+            switch (val)
+            {
+                case "Y":
+                    e.CheckState = CheckState.Checked;
+                    break;
+                case "N":
+                    e.CheckState = CheckState.Unchecked;
+                    break;
+                default:
+                    e.CheckState = CheckState.Unchecked;
+                    break;
+            }
+            e.Handled = true;
+        }
+
+        private void checkEditNoContact_QueryValueByCheckState(object sender, DevExpress.XtraEditors.Controls.QueryValueByCheckStateEventArgs e)
+        {
+            CheckEdit edit = sender as CheckEdit;
+            object val = edit.EditValue;
+            switch (e.CheckState)
+            {
+                case CheckState.Checked:
+                    e.Value = "Y";
+                    break;
+                case CheckState.Unchecked:
+                    e.Value = "N";
+                    break;
+                default:
+                    e.Value = "N";
+                    break;
+            }
+            e.Handled = true;
+        }
+
+        private void checkEditAllotment_CheckedChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void checkEditAllotment_QueryCheckStateByValue(object sender, DevExpress.XtraEditors.Controls.QueryCheckStateByValueEventArgs e)
+        {
+            string val = e.Value.ToString();
+            switch (val)
+            {
+                case "Y":
+                    e.CheckState = CheckState.Checked;
+                    break;
+                case "N":
+                    e.CheckState = CheckState.Unchecked;
+                    break;
+                default:
+                    e.CheckState = CheckState.Unchecked;
+                    break;
+            }
+            e.Handled = true;
+        }
+
+        private void checkEditAllotment_QueryValueByCheckState(object sender, DevExpress.XtraEditors.Controls.QueryValueByCheckStateEventArgs e)
+        {
+            CheckEdit edit = sender as CheckEdit;
+            object val = edit.EditValue;
+            switch (e.CheckState)
+            {
+                case CheckState.Checked:
+                    e.Value = "Y";
+                    break;
+                case CheckState.Unchecked:
+                    e.Value = "N";
+                    break;
+                default:
+                    e.Value = "N";
+                    break;
+            }
+            e.Handled = true;
+        }
+
+        private void checkEditMilitary_CheckedChanged(object sender, EventArgs e)
+        {
+            Object SendTest = sender;
+            CheckEdit edit = sender as CheckEdit;
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+            if (edit.Checked)
+            {
+                edit.ForeColor = Color.Red;
+                edit.Refresh();
+            }
+            else
+            {
+                edit.ForeColor = SystemColors.ControlText;
+                edit.Refresh();
+            }
+        }
+            private void barButtonItemCaculateBuyout_ItemClick(object sender, ItemClickEventArgs e)
         {
             MDIIAC2013 MDImain = (MDIIAC2013)MdiParent;
             MDImain.CreateFormInstance("CalcBuyout", false, false, true);
@@ -5127,23 +5426,6 @@ namespace IAC2021SQL
         {
             if (lbAddFlag || lbEdit)
                 toolStripButtonSave.Enabled = true;
-        }
-
-        // Moses Newman 05/24/2018 added Militarty checkbox
-        private void checkBoxMilitary_CheckedChanged(object sender, EventArgs e)
-        {
-            if (lbAddFlag || lbEdit)
-                toolStripButtonSave.Enabled = true;
-            if(checkBoxMilitary.Checked)
-            {
-                checkBoxMilitary.Font = new System.Drawing.Font(checkBoxMilitary.Font, FontStyle.Bold);
-                checkBoxMilitary.ForeColor = Color.Red;
-            }
-            else
-            {
-                checkBoxMilitary.Font = new System.Drawing.Font(checkBoxMilitary.Font, FontStyle.Regular);
-                checkBoxMilitary.ForeColor = SystemColors.ControlText;
-            }
         }
 
         private void comboBoxCosLetterNo_SelectedIndexChanged(object sender, EventArgs e)
