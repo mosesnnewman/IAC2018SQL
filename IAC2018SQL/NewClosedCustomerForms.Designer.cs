@@ -346,13 +346,14 @@
             this.xtraTabControlCustomerMaint = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPageCustInfo1 = new DevExpress.XtraTab.XtraTabPage();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.checkEditMilitary = new DevExpress.XtraEditors.CheckEdit();
+            this.checkEditAllotment = new DevExpress.XtraEditors.CheckEdit();
             this.toolbarFormManager1 = new DevExpress.XtraBars.ToolbarForm.ToolbarFormManager(this.components);
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.standaloneBarDockControl1 = new DevExpress.XtraBars.StandaloneBarDockControl();
+            this.checkEditMilitary = new DevExpress.XtraEditors.CheckEdit();
             this.checkEditNoContact = new DevExpress.XtraEditors.CheckEdit();
             this.checkEditWrongAddress = new DevExpress.XtraEditors.CheckEdit();
             this.checkEditAutoPay = new DevExpress.XtraEditors.CheckEdit();
@@ -841,7 +842,6 @@
             this.barDockControl6 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl7 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl8 = new DevExpress.XtraBars.BarDockControl();
-            this.checkEditAllotment = new DevExpress.XtraEditors.CheckEdit();
             label45 = new System.Windows.Forms.Label();
             label48 = new System.Windows.Forms.Label();
             labelAuthNo = new System.Windows.Forms.Label();
@@ -1106,8 +1106,9 @@
             this.xtraTabControlCustomerMaint.SuspendLayout();
             this.xtraTabPageCustInfo1.SuspendLayout();
             this.groupBox10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEditMilitary.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEditAllotment.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolbarFormManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEditMilitary.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditNoContact.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditWrongAddress.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditAutoPay.Properties)).BeginInit();
@@ -1246,7 +1247,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolbarFormManager2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEditAllotment.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // label45
@@ -2943,29 +2943,29 @@
             this.groupBox10.Name = "groupBox10";
             this.groupBox10.TabStop = false;
             // 
-            // checkEditMilitary
+            // checkEditAllotment
             // 
-            this.checkEditMilitary.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "Military", true));
-            resources.ApplyResources(this.checkEditMilitary, "checkEditMilitary");
-            this.checkEditMilitary.MenuManager = this.toolbarFormManager1;
-            this.checkEditMilitary.Name = "checkEditMilitary";
-            this.checkEditMilitary.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("checkEditMilitary.Properties.Appearance.Font")));
-            this.checkEditMilitary.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
-            this.checkEditMilitary.Properties.Appearance.Options.UseFont = true;
-            this.checkEditMilitary.Properties.Appearance.Options.UseForeColor = true;
-            this.checkEditMilitary.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
-            this.checkEditMilitary.Properties.AppearanceDisabled.Options.UseForeColor = true;
-            this.checkEditMilitary.Properties.Caption = resources.GetString("checkEditMilitary.Properties.Caption");
-            this.checkEditMilitary.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
-            this.checkEditMilitary.Properties.CheckBoxOptions.SvgColorChecked = System.Drawing.Color.Red;
-            this.checkEditMilitary.Properties.GlyphAlignment = ((DevExpress.Utils.HorzAlignment)(resources.GetObject("checkEditMilitary.Properties.GlyphAlignment")));
-            this.checkEditMilitary.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
-            this.checkEditMilitary.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.LightSteelBlue;
-            this.checkEditMilitary.Properties.LookAndFeel.SkinName = "McSkin";
-            this.checkEditMilitary.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.checkEditMilitary.Properties.Name = "checkBoxFullRecourseTab1";
-            this.checkEditMilitary.Properties.NullStyle = DevExpress.XtraEditors.Controls.StyleIndeterminate.Unchecked;
-            this.checkEditMilitary.CheckedChanged += new System.EventHandler(this.checkEditMilitary_CheckedChanged);
+            this.checkEditAllotment.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_ALLOTMENT", true));
+            resources.ApplyResources(this.checkEditAllotment, "checkEditAllotment");
+            this.checkEditAllotment.MenuManager = this.toolbarFormManager1;
+            this.checkEditAllotment.Name = "checkEditAllotment";
+            this.checkEditAllotment.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("checkEditAllotment.Properties.Appearance.Font")));
+            this.checkEditAllotment.Properties.Appearance.Options.UseFont = true;
+            this.checkEditAllotment.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.checkEditAllotment.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.checkEditAllotment.Properties.Caption = resources.GetString("checkEditAllotment.Properties.Caption");
+            this.checkEditAllotment.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
+            this.checkEditAllotment.Properties.CheckBoxOptions.SvgColorChecked = System.Drawing.Color.Black;
+            this.checkEditAllotment.Properties.ContentAlignment = ((DevExpress.Utils.HorzAlignment)(resources.GetObject("checkEditAllotment.Properties.ContentAlignment")));
+            this.checkEditAllotment.Properties.GlyphAlignment = ((DevExpress.Utils.HorzAlignment)(resources.GetObject("checkEditAllotment.Properties.GlyphAlignment")));
+            this.checkEditAllotment.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
+            this.checkEditAllotment.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.LightSteelBlue;
+            this.checkEditAllotment.Properties.LookAndFeel.SkinName = "McSkin";
+            this.checkEditAllotment.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.checkEditAllotment.Properties.NullStyle = DevExpress.XtraEditors.Controls.StyleIndeterminate.Unchecked;
+            this.checkEditAllotment.QueryCheckStateByValue += new DevExpress.XtraEditors.Controls.QueryCheckStateByValueEventHandler(this.checkEditAllotment_QueryCheckStateByValue);
+            this.checkEditAllotment.QueryValueByCheckState += new DevExpress.XtraEditors.Controls.QueryValueByCheckStateEventHandler(this.checkEditAllotment_QueryValueByCheckState);
+            this.checkEditAllotment.CheckedChanged += new System.EventHandler(this.checkEditAllotment_CheckedChanged);
             // 
             // toolbarFormManager1
             // 
@@ -3006,6 +3006,30 @@
             this.standaloneBarDockControl1.CausesValidation = false;
             this.standaloneBarDockControl1.Manager = this.toolbarFormManager1;
             this.standaloneBarDockControl1.Name = "standaloneBarDockControl1";
+            // 
+            // checkEditMilitary
+            // 
+            this.checkEditMilitary.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "Military", true));
+            resources.ApplyResources(this.checkEditMilitary, "checkEditMilitary");
+            this.checkEditMilitary.MenuManager = this.toolbarFormManager1;
+            this.checkEditMilitary.Name = "checkEditMilitary";
+            this.checkEditMilitary.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("checkEditMilitary.Properties.Appearance.Font")));
+            this.checkEditMilitary.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.checkEditMilitary.Properties.Appearance.Options.UseFont = true;
+            this.checkEditMilitary.Properties.Appearance.Options.UseForeColor = true;
+            this.checkEditMilitary.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.checkEditMilitary.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.checkEditMilitary.Properties.Caption = resources.GetString("checkEditMilitary.Properties.Caption");
+            this.checkEditMilitary.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
+            this.checkEditMilitary.Properties.CheckBoxOptions.SvgColorChecked = System.Drawing.Color.Red;
+            this.checkEditMilitary.Properties.GlyphAlignment = ((DevExpress.Utils.HorzAlignment)(resources.GetObject("checkEditMilitary.Properties.GlyphAlignment")));
+            this.checkEditMilitary.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
+            this.checkEditMilitary.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.LightSteelBlue;
+            this.checkEditMilitary.Properties.LookAndFeel.SkinName = "McSkin";
+            this.checkEditMilitary.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.checkEditMilitary.Properties.Name = "checkBoxFullRecourseTab1";
+            this.checkEditMilitary.Properties.NullStyle = DevExpress.XtraEditors.Controls.StyleIndeterminate.Unchecked;
+            this.checkEditMilitary.CheckedChanged += new System.EventHandler(this.checkEditMilitary_CheckedChanged);
             // 
             // checkEditNoContact
             // 
@@ -8107,30 +8131,6 @@
             resources.ApplyResources(this.barDockControl8, "barDockControl8");
             this.barDockControl8.Manager = this.barManager1;
             // 
-            // checkEditAllotment
-            // 
-            this.checkEditAllotment.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_ALLOTMENT", true));
-            resources.ApplyResources(this.checkEditAllotment, "checkEditAllotment");
-            this.checkEditAllotment.MenuManager = this.toolbarFormManager1;
-            this.checkEditAllotment.Name = "checkEditAllotment";
-            this.checkEditAllotment.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("checkEdit1.Properties.Appearance.Font")));
-            this.checkEditAllotment.Properties.Appearance.Options.UseFont = true;
-            this.checkEditAllotment.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
-            this.checkEditAllotment.Properties.AppearanceDisabled.Options.UseForeColor = true;
-            this.checkEditAllotment.Properties.Caption = resources.GetString("checkEdit1.Properties.Caption");
-            this.checkEditAllotment.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
-            this.checkEditAllotment.Properties.CheckBoxOptions.SvgColorChecked = System.Drawing.Color.Black;
-            this.checkEditAllotment.Properties.ContentAlignment = ((DevExpress.Utils.HorzAlignment)(resources.GetObject("checkEdit1.Properties.ContentAlignment")));
-            this.checkEditAllotment.Properties.GlyphAlignment = ((DevExpress.Utils.HorzAlignment)(resources.GetObject("checkEdit1.Properties.GlyphAlignment")));
-            this.checkEditAllotment.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
-            this.checkEditAllotment.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.LightSteelBlue;
-            this.checkEditAllotment.Properties.LookAndFeel.SkinName = "McSkin";
-            this.checkEditAllotment.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.checkEditAllotment.Properties.NullStyle = DevExpress.XtraEditors.Controls.StyleIndeterminate.Unchecked;
-            this.checkEditAllotment.QueryCheckStateByValue += new DevExpress.XtraEditors.Controls.QueryCheckStateByValueEventHandler(this.checkEditAllotment_QueryCheckStateByValue);
-            this.checkEditAllotment.QueryValueByCheckState += new DevExpress.XtraEditors.Controls.QueryValueByCheckStateEventHandler(this.checkEditAllotment_QueryValueByCheckState);
-            this.checkEditAllotment.CheckedChanged += new System.EventHandler(this.checkEditAllotment_CheckedChanged);
-            // 
             // frmNewCustMaint
             // 
             this.Appearance.BackColor = System.Drawing.Color.LightSteelBlue;
@@ -8203,8 +8203,9 @@
             this.xtraTabPageCustInfo1.ResumeLayout(false);
             this.groupBox10.ResumeLayout(false);
             this.groupBox10.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEditMilitary.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEditAllotment.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolbarFormManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEditMilitary.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditNoContact.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditWrongAddress.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditAutoPay.Properties)).EndInit();
@@ -8369,7 +8370,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolbarFormManager2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEditAllotment.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
