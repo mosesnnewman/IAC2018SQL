@@ -592,6 +592,7 @@
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
             this.groupBox23 = new System.Windows.Forms.GroupBox();
+            this.textEditBankMonthlyPayment = new DevExpress.XtraEditors.TextEdit();
             this.checkEditBankAutoPay = new DevExpress.XtraEditors.CheckEdit();
             this.textEditBankAccountNumber = new DevExpress.XtraEditors.TextEdit();
             this.textEditBankCheckDigit = new DevExpress.XtraEditors.TextEdit();
@@ -599,7 +600,6 @@
             this.textEditBankState = new DevExpress.XtraEditors.TextEdit();
             this.textEditBankCity = new DevExpress.XtraEditors.TextEdit();
             this.textEditBankName = new DevExpress.XtraEditors.TextEdit();
-            this.textEditBankMonthlyPayment = new DevExpress.XtraEditors.TextEdit();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
             this.groupBox24 = new System.Windows.Forms.GroupBox();
             this.comboBoxEditExpYear = new DevExpress.XtraEditors.ComboBoxEdit();
@@ -737,6 +737,7 @@
             this.colNewTitleReceived = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colOrgDateTitleReceived = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNewDateTitleReceived = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colidRepo = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
             this.textBox41 = new System.Windows.Forms.TextBox();
             this.textBox42 = new System.Windows.Forms.TextBox();
@@ -833,7 +834,8 @@
             this.toolStripButtonEdit = new DevExpress.XtraBars.BarButtonItem();
             this.toolStripButtonDelete = new DevExpress.XtraBars.BarButtonItem();
             this.toolStripButtonSave = new DevExpress.XtraBars.BarButtonItem();
-            this.HistroyBar = new DevExpress.XtraBars.Bar();
+            this.HistoryBar = new DevExpress.XtraBars.Bar();
+            this.barButtonItemPrintCustomerHistory = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItemPrintCustomerReceipt = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItemPrintAmortizationSchedule = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItemTimeValueToExcel = new DevExpress.XtraBars.BarButtonItem();
@@ -842,6 +844,7 @@
             this.barDockControl6 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl7 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl8 = new DevExpress.XtraBars.BarDockControl();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             label45 = new System.Windows.Forms.Label();
             label48 = new System.Windows.Forms.Label();
             labelAuthNo = new System.Windows.Forms.Label();
@@ -1176,6 +1179,7 @@
             this.xtraTabControl1.SuspendLayout();
             this.xtraTabPage1.SuspendLayout();
             this.groupBox23.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditBankMonthlyPayment.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditBankAutoPay.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditBankAccountNumber.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditBankCheckDigit.Properties)).BeginInit();
@@ -1183,7 +1187,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.textEditBankState.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditBankCity.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditBankName.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditBankMonthlyPayment.Properties)).BeginInit();
             this.xtraTabPage2.SuspendLayout();
             this.groupBox24.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEditExpYear.Properties)).BeginInit();
@@ -3002,6 +3005,8 @@
             // 
             // standaloneBarDockControl1
             // 
+            this.standaloneBarDockControl1.Appearance.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.standaloneBarDockControl1.Appearance.Options.UseBackColor = true;
             resources.ApplyResources(this.standaloneBarDockControl1, "standaloneBarDockControl1");
             this.standaloneBarDockControl1.CausesValidation = false;
             this.standaloneBarDockControl1.Manager = this.toolbarFormManager1;
@@ -3224,6 +3229,8 @@
             this.nullableDateTimePickerDateContractReceived.Properties.LookAndFeel.SkinName = "McSkin";
             this.nullableDateTimePickerDateContractReceived.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.nullableDateTimePickerDateContractReceived.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
+            this.nullableDateTimePickerDateContractReceived.EditValueChanged += new System.EventHandler(this.nullableDateTimePickerDateContractReceived_EditValueChanged);
+            this.nullableDateTimePickerDateContractReceived.EnabledChanged += new System.EventHandler(this.nullableDateTimePickerDateContractReceived_EnabledChanged);
             this.nullableDateTimePickerDateContractReceived.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // buttonDealerEmail
@@ -3249,6 +3256,7 @@
             resources.ApplyResources(this.textBoxDealerEmail, "textBoxDealerEmail");
             this.textBoxDealerEmail.Name = "textBoxDealerEmail";
             this.textBoxDealerEmail.TextChanged += new System.EventHandler(this.textBoxDealerEmail_TextChanged);
+            this.textBoxDealerEmail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             this.textBoxDealerEmail.Validated += new System.EventHandler(this.textBoxDealerEmail_Validated);
             // 
             // groupBoxSBT
@@ -3415,6 +3423,7 @@
             resources.ApplyResources(this.cUSTOMER_CELL_PHONETextBox, "cUSTOMER_CELL_PHONETextBox");
             this.cUSTOMER_CELL_PHONETextBox.Name = "cUSTOMER_CELL_PHONETextBox";
             this.cUSTOMER_CELL_PHONETextBox.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.cUSTOMER_CELL_PHONETextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // textBoxMiddleName
             // 
@@ -3519,6 +3528,7 @@
             this.cUSTOMER_WORK_EXTtextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_WORK_EXT", true));
             resources.ApplyResources(this.cUSTOMER_WORK_EXTtextBox, "cUSTOMER_WORK_EXTtextBox");
             this.cUSTOMER_WORK_EXTtextBox.Name = "cUSTOMER_WORK_EXTtextBox";
+            this.cUSTOMER_WORK_EXTtextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // cUSTOMER_PHONE_EXTtextBox
             // 
@@ -3526,6 +3536,7 @@
             this.cUSTOMER_PHONE_EXTtextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_PHONE_EXT", true));
             resources.ApplyResources(this.cUSTOMER_PHONE_EXTtextBox, "cUSTOMER_PHONE_EXTtextBox");
             this.cUSTOMER_PHONE_EXTtextBox.Name = "cUSTOMER_PHONE_EXTtextBox";
+            this.cUSTOMER_PHONE_EXTtextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // cUSTOMER_DEALERcomboBox
             // 
@@ -3592,6 +3603,7 @@
             this.cUSTOMER_BRANCH_NUMBERTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_BRANCH_NUMBER", true));
             resources.ApplyResources(this.cUSTOMER_BRANCH_NUMBERTextBox, "cUSTOMER_BRANCH_NUMBERTextBox");
             this.cUSTOMER_BRANCH_NUMBERTextBox.Name = "cUSTOMER_BRANCH_NUMBERTextBox";
+            this.cUSTOMER_BRANCH_NUMBERTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // cUSTOMER_DISTRIBUTOR_NOTextBox
             // 
@@ -3599,6 +3611,7 @@
             this.cUSTOMER_DISTRIBUTOR_NOTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_DISTRIBUTOR_NO", true));
             resources.ApplyResources(this.cUSTOMER_DISTRIBUTOR_NOTextBox, "cUSTOMER_DISTRIBUTOR_NOTextBox");
             this.cUSTOMER_DISTRIBUTOR_NOTextBox.Name = "cUSTOMER_DISTRIBUTOR_NOTextBox";
+            this.cUSTOMER_DISTRIBUTOR_NOTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // cUSTOMER_SS_3TextBox
             // 
@@ -3642,6 +3655,7 @@
             this.cUSTOMER_ZIP_2TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_ZIP_2", true));
             resources.ApplyResources(this.cUSTOMER_ZIP_2TextBox, "cUSTOMER_ZIP_2TextBox");
             this.cUSTOMER_ZIP_2TextBox.Name = "cUSTOMER_ZIP_2TextBox";
+            this.cUSTOMER_ZIP_2TextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // cUSTOMER_ZIP_1TextBox
             // 
@@ -3649,6 +3663,7 @@
             this.cUSTOMER_ZIP_1TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_ZIP_1", true));
             resources.ApplyResources(this.cUSTOMER_ZIP_1TextBox, "cUSTOMER_ZIP_1TextBox");
             this.cUSTOMER_ZIP_1TextBox.Name = "cUSTOMER_ZIP_1TextBox";
+            this.cUSTOMER_ZIP_1TextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // cUSTOMER_STATETextBox
             // 
@@ -3657,6 +3672,7 @@
             this.cUSTOMER_STATETextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_STATE", true));
             resources.ApplyResources(this.cUSTOMER_STATETextBox, "cUSTOMER_STATETextBox");
             this.cUSTOMER_STATETextBox.Name = "cUSTOMER_STATETextBox";
+            this.cUSTOMER_STATETextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // cUSTOMER_CITYTextBox
             // 
@@ -3685,6 +3701,7 @@
             resources.ApplyResources(this.cUSTOMER_STREET_1TextBox, "cUSTOMER_STREET_1TextBox");
             this.cUSTOMER_STREET_1TextBox.Name = "cUSTOMER_STREET_1TextBox";
             this.cUSTOMER_STREET_1TextBox.TextChanged += new System.EventHandler(this.cUSTOMER_STREET_1TextBox_TextChanged);
+            this.cUSTOMER_STREET_1TextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             this.cUSTOMER_STREET_1TextBox.Validated += new System.EventHandler(this.cUSTOMER_STREET_1TextBox_Validated);
             // 
             // cUSTOMER_LAST_NAMETextBox
@@ -3729,6 +3746,7 @@
             resources.ApplyResources(this.cUSTOMER_ACT_STATTextBox, "cUSTOMER_ACT_STATTextBox");
             this.cUSTOMER_ACT_STATTextBox.Name = "cUSTOMER_ACT_STATTextBox";
             this.cUSTOMER_ACT_STATTextBox.TextChanged += new System.EventHandler(this.cUSTOMER_ACT_STATTextBox_TextChanged);
+            this.cUSTOMER_ACT_STATTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // cUSTOMER_IAC_TypeTextBox
             // 
@@ -3744,6 +3762,7 @@
             resources.ApplyResources(this.cUSTOMER_WORK_PHONETextBox, "cUSTOMER_WORK_PHONETextBox");
             this.cUSTOMER_WORK_PHONETextBox.Name = "cUSTOMER_WORK_PHONETextBox";
             this.cUSTOMER_WORK_PHONETextBox.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.cUSTOMER_WORK_PHONETextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // cUSTOMER_PHONE_NOTextBox
             // 
@@ -3752,6 +3771,7 @@
             resources.ApplyResources(this.cUSTOMER_PHONE_NOTextBox, "cUSTOMER_PHONE_NOTextBox");
             this.cUSTOMER_PHONE_NOTextBox.Name = "cUSTOMER_PHONE_NOTextBox";
             this.cUSTOMER_PHONE_NOTextBox.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.cUSTOMER_PHONE_NOTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // groupBoxRefi
             // 
@@ -3792,9 +3812,11 @@
             this.checkBoxRefi.Name = "checkBoxRefi";
             this.checkBoxRefi.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("checkBoxRefi.Properties.Appearance.Font")));
             this.checkBoxRefi.Properties.Appearance.Options.UseFont = true;
+            this.checkBoxRefi.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.checkBoxRefi.Properties.AppearanceDisabled.Options.UseForeColor = true;
             this.checkBoxRefi.Properties.Caption = resources.GetString("checkBoxRefi.Properties.Caption");
+            this.checkBoxRefi.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
             this.checkBoxRefi.Properties.ContentAlignment = ((DevExpress.Utils.HorzAlignment)(resources.GetObject("checkBoxRefi.Properties.ContentAlignment")));
-            this.checkBoxRefi.Properties.GlyphAlignment = ((DevExpress.Utils.HorzAlignment)(resources.GetObject("checkBoxRefi.Properties.GlyphAlignment")));
             this.checkBoxRefi.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
             this.checkBoxRefi.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
             this.checkBoxRefi.Properties.LookAndFeel.SkinName = "McSkin";
@@ -4522,12 +4544,14 @@
             this.textBoxTierPoints.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "TierPoints", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "0", "N0"));
             resources.ApplyResources(this.textBoxTierPoints, "textBoxTierPoints");
             this.textBoxTierPoints.Name = "textBoxTierPoints";
+            this.textBoxTierPoints.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // textBoxBuyersAnnualIncome
             // 
             this.textBoxBuyersAnnualIncome.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "AnnualIncome", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "C2"));
             resources.ApplyResources(this.textBoxBuyersAnnualIncome, "textBoxBuyersAnnualIncome");
             this.textBoxBuyersAnnualIncome.Name = "textBoxBuyersAnnualIncome";
+            this.textBoxBuyersAnnualIncome.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // comboBoxCreditCode
             // 
@@ -4536,6 +4560,8 @@
             resources.ApplyResources(this.comboBoxCreditCode, "comboBoxCreditCode");
             this.comboBoxCreditCode.FormattingEnabled = true;
             this.comboBoxCreditCode.Name = "comboBoxCreditCode";
+            this.comboBoxCreditCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            this.comboBoxCreditCode.Validated += new System.EventHandler(this.comboBoxCreditCode_Validated);
             // 
             // cUSTOMER_COS_PHONETextBox
             // 
@@ -4544,6 +4570,7 @@
             this.cUSTOMER_COS_PHONETextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_COS_PHONE", true));
             resources.ApplyResources(this.cUSTOMER_COS_PHONETextBox, "cUSTOMER_COS_PHONETextBox");
             this.cUSTOMER_COS_PHONETextBox.Name = "cUSTOMER_COS_PHONETextBox";
+            this.cUSTOMER_COS_PHONETextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // cUSTOMER_CREDIT_SCORE_ATextBox
             // 
@@ -4552,6 +4579,7 @@
             this.cUSTOMER_CREDIT_SCORE_ATextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_CREDIT_SCORE_A", true));
             resources.ApplyResources(this.cUSTOMER_CREDIT_SCORE_ATextBox, "cUSTOMER_CREDIT_SCORE_ATextBox");
             this.cUSTOMER_CREDIT_SCORE_ATextBox.Name = "cUSTOMER_CREDIT_SCORE_ATextBox";
+            this.cUSTOMER_CREDIT_SCORE_ATextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // cUSTOMER_CREDIT_SCORE_NTextBox
             // 
@@ -4559,6 +4587,7 @@
             this.cUSTOMER_CREDIT_SCORE_NTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_CREDIT_SCORE_N", true));
             resources.ApplyResources(this.cUSTOMER_CREDIT_SCORE_NTextBox, "cUSTOMER_CREDIT_SCORE_NTextBox");
             this.cUSTOMER_CREDIT_SCORE_NTextBox.Name = "cUSTOMER_CREDIT_SCORE_NTextBox";
+            this.cUSTOMER_CREDIT_SCORE_NTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // cUSTOMER_COS_NAMETextBox
             // 
@@ -4566,12 +4595,14 @@
             this.cUSTOMER_COS_NAMETextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_COS_NAME", true));
             resources.ApplyResources(this.cUSTOMER_COS_NAMETextBox, "cUSTOMER_COS_NAMETextBox");
             this.cUSTOMER_COS_NAMETextBox.Name = "cUSTOMER_COS_NAMETextBox";
+            this.cUSTOMER_COS_NAMETextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // textBoxMileage
             // 
             this.textBoxMileage.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.VehiclebindingSource, "Mileage", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "0", "N0"));
             resources.ApplyResources(this.textBoxMileage, "textBoxMileage");
             this.textBoxMileage.Name = "textBoxMileage";
+            this.textBoxMileage.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // groupBoxRepo
             // 
@@ -4630,6 +4661,8 @@
             this.nullableDateTimePickerDateTitleReleased.Properties.LookAndFeel.SkinName = "McSkin";
             this.nullableDateTimePickerDateTitleReleased.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.nullableDateTimePickerDateTitleReleased.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
+            this.nullableDateTimePickerDateTitleReleased.EditValueChanged += new System.EventHandler(this.nullableDateTimePickerDateTitleReleased_EditValueChanged);
+            this.nullableDateTimePickerDateTitleReleased.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // checkBoxTitleReleased
             // 
@@ -4645,6 +4678,7 @@
             this.textBoxLTV.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.VehiclebindingSource, "Ltv", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N2"));
             resources.ApplyResources(this.textBoxLTV, "textBoxLTV");
             this.textBoxLTV.Name = "textBoxLTV";
+            this.textBoxLTV.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // comboBoxRepoInd
             // 
@@ -4653,6 +4687,8 @@
             resources.ApplyResources(this.comboBoxRepoInd, "comboBoxRepoInd");
             this.comboBoxRepoInd.FormattingEnabled = true;
             this.comboBoxRepoInd.Name = "comboBoxRepoInd";
+            this.comboBoxRepoInd.SelectedIndexChanged += new System.EventHandler(this.comboBoxRepoInd_SelectedIndexChanged);
+            this.comboBoxRepoInd.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // nullableDateTimePickerAucDate
             // 
@@ -4669,6 +4705,7 @@
             this.nullableDateTimePickerAucDate.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
             this.nullableDateTimePickerAucDate.Properties.LookAndFeel.SkinName = "McSkin";
             this.nullableDateTimePickerAucDate.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.nullableDateTimePickerAucDate.EditValueChanged += new System.EventHandler(this.nullableDateTimePickerAucDate_EditValueChanged);
             // 
             // nullableDateTimePickerLocDate
             // 
@@ -4685,6 +4722,7 @@
             this.nullableDateTimePickerLocDate.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
             this.nullableDateTimePickerLocDate.Properties.LookAndFeel.SkinName = "McSkin";
             this.nullableDateTimePickerLocDate.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.nullableDateTimePickerLocDate.EditValueChanged += new System.EventHandler(this.nullableDateTimePickerLocDate_EditValueChanged);
             // 
             // checkBoxTitleReceived
             // 
@@ -4701,6 +4739,8 @@
             resources.ApplyResources(this.comboBoxRepoCodes, "comboBoxRepoCodes");
             this.comboBoxRepoCodes.FormattingEnabled = true;
             this.comboBoxRepoCodes.Name = "comboBoxRepoCodes";
+            this.comboBoxRepoCodes.SelectedIndexChanged += new System.EventHandler(this.comboBoxRepoCodes_SelectedIndexChanged);
+            this.comboBoxRepoCodes.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // cUSTOMER_REPO_CDEtextBox
             // 
@@ -4708,6 +4748,7 @@
             this.cUSTOMER_REPO_CDEtextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_REPO_CDE", true));
             resources.ApplyResources(this.cUSTOMER_REPO_CDEtextBox, "cUSTOMER_REPO_CDEtextBox");
             this.cUSTOMER_REPO_CDEtextBox.Name = "cUSTOMER_REPO_CDEtextBox";
+            this.cUSTOMER_REPO_CDEtextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // cUSTOMER_REPO_INDtextBox
             // 
@@ -4735,6 +4776,8 @@
             this.nullableDateTimePickerTitleDateReceived.Properties.LookAndFeel.SkinName = "McSkin";
             this.nullableDateTimePickerTitleDateReceived.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.nullableDateTimePickerTitleDateReceived.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
+            this.nullableDateTimePickerTitleDateReceived.EditValueChanged += new System.EventHandler(this.nullableDateTimePickerTitleDateReceived_EditValueChanged);
+            this.nullableDateTimePickerTitleDateReceived.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // textBoxAuctionHouse
             // 
@@ -4742,6 +4785,7 @@
             this.textBoxAuctionHouse.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.VehiclebindingSource, "AuctionHouse", true));
             resources.ApplyResources(this.textBoxAuctionHouse, "textBoxAuctionHouse");
             this.textBoxAuctionHouse.Name = "textBoxAuctionHouse";
+            this.textBoxAuctionHouse.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // textBoxCurrentLocation
             // 
@@ -4749,6 +4793,7 @@
             this.textBoxCurrentLocation.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.VehiclebindingSource, "CurrentLocation", true));
             resources.ApplyResources(this.textBoxCurrentLocation, "textBoxCurrentLocation");
             this.textBoxCurrentLocation.Name = "textBoxCurrentLocation";
+            this.textBoxCurrentLocation.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // textBoxRepoAgent
             // 
@@ -4756,6 +4801,7 @@
             this.textBoxRepoAgent.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.VehiclebindingSource, "RepoAgent", true));
             resources.ApplyResources(this.textBoxRepoAgent, "textBoxRepoAgent");
             this.textBoxRepoAgent.Name = "textBoxRepoAgent";
+            this.textBoxRepoAgent.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // nullableDateTimePickerRepoDate
             // 
@@ -4774,6 +4820,7 @@
             this.nullableDateTimePickerRepoDate.Properties.LookAndFeel.SkinName = "McSkin";
             this.nullableDateTimePickerRepoDate.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.nullableDateTimePickerRepoDate.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
+            this.nullableDateTimePickerRepoDate.EditValueChanged += new System.EventHandler(this.nullableDateTimePickerRepoDate_ValueChanged);
             // 
             // txtExpirationDate
             // 
@@ -4792,6 +4839,8 @@
             this.txtExpirationDate.Properties.LookAndFeel.SkinName = "McSkin";
             this.txtExpirationDate.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.txtExpirationDate.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
+            this.txtExpirationDate.EditValueChanged += new System.EventHandler(this.txtExpirationDate_EditValueChanged);
+            this.txtExpirationDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // txtEffectiveDate
             // 
@@ -4810,6 +4859,8 @@
             this.txtEffectiveDate.Properties.LookAndFeel.SkinName = "McSkin";
             this.txtEffectiveDate.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.txtEffectiveDate.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
+            this.txtEffectiveDate.EditValueChanged += new System.EventHandler(this.txtEffectiveDate_EditValueChanged);
+            this.txtEffectiveDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // txtAgentPhone
             // 
@@ -4818,6 +4869,7 @@
             resources.ApplyResources(this.txtAgentPhone, "txtAgentPhone");
             this.txtAgentPhone.Name = "txtAgentPhone";
             this.txtAgentPhone.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.txtAgentPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // txtJointOwner
             // 
@@ -4825,6 +4877,7 @@
             this.txtJointOwner.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.VehiclebindingSource, "VEHICLE_JOINT_NAME", true));
             resources.ApplyResources(this.txtJointOwner, "txtJointOwner");
             this.txtJointOwner.Name = "txtJointOwner";
+            this.txtJointOwner.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // txtJointOwnership
             // 
@@ -4833,6 +4886,7 @@
             this.txtJointOwnership.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.VehiclebindingSource, "VEHICLE_JOINT_OWNER", true));
             resources.ApplyResources(this.txtJointOwnership, "txtJointOwnership");
             this.txtJointOwnership.Name = "txtJointOwnership";
+            this.txtJointOwnership.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // txtInsuranceAgent
             // 
@@ -4840,6 +4894,7 @@
             this.txtInsuranceAgent.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.VehiclebindingSource, "VEHICLE_INSUR_AGENT", true));
             resources.ApplyResources(this.txtInsuranceAgent, "txtInsuranceAgent");
             this.txtInsuranceAgent.Name = "txtInsuranceAgent";
+            this.txtInsuranceAgent.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // txtPolicyNumber
             // 
@@ -4847,6 +4902,7 @@
             this.txtPolicyNumber.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.VehiclebindingSource, "VEHICLE_POLICY_NO", true));
             resources.ApplyResources(this.txtPolicyNumber, "txtPolicyNumber");
             this.txtPolicyNumber.Name = "txtPolicyNumber";
+            this.txtPolicyNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // txtVIN
             // 
@@ -4854,6 +4910,7 @@
             this.txtVIN.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.VehiclebindingSource, "VEHICLE_VIN", true));
             resources.ApplyResources(this.txtVIN, "txtVIN");
             this.txtVIN.Name = "txtVIN";
+            this.txtVIN.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // txtMake
             // 
@@ -4861,6 +4918,7 @@
             this.txtMake.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.VehiclebindingSource, "VEHICLE_MAKE", true));
             resources.ApplyResources(this.txtMake, "txtMake");
             this.txtMake.Name = "txtMake";
+            this.txtMake.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // txtInsuranceCompany
             // 
@@ -4868,6 +4926,7 @@
             this.txtInsuranceCompany.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.VehiclebindingSource, "VEHICLE_INS_COMPANY", true));
             resources.ApplyResources(this.txtInsuranceCompany, "txtInsuranceCompany");
             this.txtInsuranceCompany.Name = "txtInsuranceCompany";
+            this.txtInsuranceCompany.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // txtModel
             // 
@@ -4875,6 +4934,7 @@
             this.txtModel.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.VehiclebindingSource, "VEHICLE_MODEL", true));
             resources.ApplyResources(this.txtModel, "txtModel");
             this.txtModel.Name = "txtModel";
+            this.txtModel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // txtVehicleYear
             // 
@@ -4882,6 +4942,7 @@
             this.txtVehicleYear.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.VehiclebindingSource, "VEHICLE_YEAR", true));
             resources.ApplyResources(this.txtVehicleYear, "txtVehicleYear");
             this.txtVehicleYear.Name = "txtVehicleYear";
+            this.txtVehicleYear.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // xtraTabPageCosigner
             // 
@@ -5535,7 +5596,6 @@
             this.xtraTabPage1.Appearance.PageClient.Options.UseForeColor = true;
             this.xtraTabPage1.Appearance.PageClient.Options.UseTextOptions = true;
             this.xtraTabPage1.Controls.Add(this.groupBox23);
-            this.xtraTabPage1.Controls.Add(this.textEditBankMonthlyPayment);
             this.xtraTabPage1.Name = "xtraTabPage1";
             resources.ApplyResources(this.xtraTabPage1, "xtraTabPage1");
             this.xtraTabPage1.Enter += new System.EventHandler(this.xtraTabPage1_Enter);
@@ -5543,6 +5603,7 @@
             // groupBox23
             // 
             this.groupBox23.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.groupBox23.Controls.Add(this.textEditBankMonthlyPayment);
             this.groupBox23.Controls.Add(this.checkEditBankAutoPay);
             this.groupBox23.Controls.Add(this.textEditBankAccountNumber);
             this.groupBox23.Controls.Add(this.textEditBankCheckDigit);
@@ -5553,6 +5614,28 @@
             resources.ApplyResources(this.groupBox23, "groupBox23");
             this.groupBox23.Name = "groupBox23";
             this.groupBox23.TabStop = false;
+            // 
+            // textEditBankMonthlyPayment
+            // 
+            this.textEditBankMonthlyPayment.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.OPNBANKbindingSource, "OPNBANK_MONTHLY_PAYMENT", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "C2"));
+            resources.ApplyResources(this.textEditBankMonthlyPayment, "textEditBankMonthlyPayment");
+            this.textEditBankMonthlyPayment.MenuManager = this.toolbarFormManager1;
+            this.textEditBankMonthlyPayment.Name = "textEditBankMonthlyPayment";
+            this.textEditBankMonthlyPayment.Properties.AdvancedModeOptions.AllowCaretAnimation = DevExpress.Utils.DefaultBoolean.True;
+            this.textEditBankMonthlyPayment.Properties.AdvancedModeOptions.AllowSelectionAnimation = DevExpress.Utils.DefaultBoolean.True;
+            this.textEditBankMonthlyPayment.Properties.AdvancedModeOptions.Label = resources.GetString("textEditBankMonthlyPayment.Properties.AdvancedModeOptions.Label");
+            this.textEditBankMonthlyPayment.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textEditBankMonthlyPayment.Properties.Appearance.Font")));
+            this.textEditBankMonthlyPayment.Properties.Appearance.Options.UseFont = true;
+            this.textEditBankMonthlyPayment.Properties.Appearance.Options.UseTextOptions = true;
+            this.textEditBankMonthlyPayment.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.textEditBankMonthlyPayment.Properties.DisplayFormat.FormatString = "c2";
+            this.textEditBankMonthlyPayment.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.textEditBankMonthlyPayment.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
+            this.textEditBankMonthlyPayment.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
+            this.textEditBankMonthlyPayment.Properties.LookAndFeel.SkinName = "McSkin";
+            this.textEditBankMonthlyPayment.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.textEditBankMonthlyPayment.Properties.UseAdvancedMode = DevExpress.Utils.DefaultBoolean.True;
+            this.textEditBankMonthlyPayment.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // checkEditBankAutoPay
             // 
@@ -5720,28 +5803,6 @@
             this.textEditBankName.Properties.MaskSettings.Set("placeholder", '\0');
             this.textEditBankName.Properties.UseAdvancedMode = DevExpress.Utils.DefaultBoolean.True;
             this.textEditBankName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
-            // 
-            // textEditBankMonthlyPayment
-            // 
-            this.textEditBankMonthlyPayment.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.OPNBANKbindingSource, "OPNBANK_MONTHLY_PAYMENT", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "C2"));
-            resources.ApplyResources(this.textEditBankMonthlyPayment, "textEditBankMonthlyPayment");
-            this.textEditBankMonthlyPayment.MenuManager = this.toolbarFormManager1;
-            this.textEditBankMonthlyPayment.Name = "textEditBankMonthlyPayment";
-            this.textEditBankMonthlyPayment.Properties.AdvancedModeOptions.AllowCaretAnimation = DevExpress.Utils.DefaultBoolean.True;
-            this.textEditBankMonthlyPayment.Properties.AdvancedModeOptions.AllowSelectionAnimation = DevExpress.Utils.DefaultBoolean.True;
-            this.textEditBankMonthlyPayment.Properties.AdvancedModeOptions.Label = resources.GetString("textEditBankMonthlyPayment.Properties.AdvancedModeOptions.Label");
-            this.textEditBankMonthlyPayment.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textEditBankMonthlyPayment.Properties.Appearance.Font")));
-            this.textEditBankMonthlyPayment.Properties.Appearance.Options.UseFont = true;
-            this.textEditBankMonthlyPayment.Properties.Appearance.Options.UseTextOptions = true;
-            this.textEditBankMonthlyPayment.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.textEditBankMonthlyPayment.Properties.DisplayFormat.FormatString = "c2";
-            this.textEditBankMonthlyPayment.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.textEditBankMonthlyPayment.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
-            this.textEditBankMonthlyPayment.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
-            this.textEditBankMonthlyPayment.Properties.LookAndFeel.SkinName = "McSkin";
-            this.textEditBankMonthlyPayment.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.textEditBankMonthlyPayment.Properties.UseAdvancedMode = DevExpress.Utils.DefaultBoolean.True;
-            this.textEditBankMonthlyPayment.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // xtraTabPage2
             // 
@@ -5963,7 +6024,6 @@
             // xtraTabPageHistory
             // 
             this.xtraTabPageHistory.Controls.Add(this.groupBox18);
-            this.xtraTabPageHistory.Controls.Add(this.standaloneBarDockControl1);
             this.xtraTabPageHistory.Name = "xtraTabPageHistory";
             resources.ApplyResources(this.xtraTabPageHistory, "xtraTabPageHistory");
             this.xtraTabPageHistory.Paint += new System.Windows.Forms.PaintEventHandler(this.xtraTabPageHistory_Paint);
@@ -5972,6 +6032,7 @@
             // 
             this.groupBox18.BackColor = System.Drawing.Color.LightSteelBlue;
             this.groupBox18.Controls.Add(this.groupBox11);
+            this.groupBox18.Controls.Add(this.standaloneBarDockControl1);
             this.groupBox18.Controls.Add(this.gridControlCustomerHist);
             resources.ApplyResources(this.groupBox18, "groupBox18");
             this.groupBox18.Name = "groupBox18";
@@ -7091,7 +7152,8 @@
             this.colOrgTitleReceived,
             this.colNewTitleReceived,
             this.colOrgDateTitleReceived,
-            this.colNewDateTitleReceived});
+            this.colNewDateTitleReceived,
+            this.colidRepo});
             this.gridViewRepoLog.GridControl = this.gridControlRepoLog;
             this.gridViewRepoLog.Name = "gridViewRepoLog";
             this.gridViewRepoLog.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
@@ -7235,6 +7297,11 @@
             resources.ApplyResources(this.colNewDateTitleReceived, "colNewDateTitleReceived");
             this.colNewDateTitleReceived.FieldName = "NewDateTitleReceived";
             this.colNewDateTitleReceived.Name = "colNewDateTitleReceived";
+            // 
+            // colidRepo
+            // 
+            this.colidRepo.FieldName = "id";
+            this.colidRepo.Name = "colidRepo";
             // 
             // groupBox13
             // 
@@ -7972,7 +8039,7 @@
             // 
             this.barManager1.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
             this.toolStrip1,
-            this.HistroyBar});
+            this.HistoryBar});
             this.barManager1.DockControls.Add(this.barDockControl5);
             this.barManager1.DockControls.Add(this.barDockControl6);
             this.barManager1.DockControls.Add(this.barDockControl7);
@@ -7983,11 +8050,12 @@
             this.toolStripButtonEdit,
             this.toolStripButtonDelete,
             this.toolStripButtonSave,
+            this.barButtonItemPrintCustomerHistory,
             this.barButtonItemPrintCustomerReceipt,
             this.barButtonItemPrintAmortizationSchedule,
             this.barButtonItemTimeValueToExcel,
             this.barButtonItemCaculateBuyout});
-            this.barManager1.MaxItemId = 9;
+            this.barManager1.MaxItemId = 10;
             // 
             // toolStrip1
             // 
@@ -8044,21 +8112,32 @@
             this.toolStripButtonSave.Name = "toolStripButtonSave";
             this.toolStripButtonSave.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.toolStripButtonSave_ItemClick);
             // 
-            // HistroyBar
+            // HistoryBar
             // 
-            this.HistroyBar.BarName = "HistoryTools";
-            this.HistroyBar.DockCol = 0;
-            this.HistroyBar.DockRow = 0;
-            this.HistroyBar.DockStyle = DevExpress.XtraBars.BarDockStyle.Standalone;
-            this.HistroyBar.FloatLocation = new System.Drawing.Point(275, 706);
-            this.HistroyBar.FloatSize = new System.Drawing.Size(46, 24);
-            this.HistroyBar.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            this.HistoryBar.BarName = "HistoryTools";
+            this.HistoryBar.DockCol = 0;
+            this.HistoryBar.DockRow = 0;
+            this.HistoryBar.DockStyle = DevExpress.XtraBars.BarDockStyle.Standalone;
+            this.HistoryBar.FloatLocation = new System.Drawing.Point(275, 706);
+            this.HistoryBar.FloatSize = new System.Drawing.Size(46, 24);
+            this.HistoryBar.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItemPrintCustomerHistory, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItemPrintCustomerReceipt, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItemPrintAmortizationSchedule, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemTimeValueToExcel),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemCaculateBuyout)});
-            this.HistroyBar.StandaloneBarDockControl = this.standaloneBarDockControl1;
-            resources.ApplyResources(this.HistroyBar, "HistroyBar");
+            this.HistoryBar.StandaloneBarDockControl = this.standaloneBarDockControl1;
+            resources.ApplyResources(this.HistoryBar, "HistoryBar");
+            // 
+            // barButtonItemPrintCustomerHistory
+            // 
+            resources.ApplyResources(this.barButtonItemPrintCustomerHistory, "barButtonItemPrintCustomerHistory");
+            this.barButtonItemPrintCustomerHistory.Id = 5;
+            this.barButtonItemPrintCustomerHistory.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItemPrintCustomerHistory.ImageOptions.Image")));
+            this.barButtonItemPrintCustomerHistory.ItemAppearance.Normal.BackColor = System.Drawing.Color.PaleGreen;
+            this.barButtonItemPrintCustomerHistory.ItemAppearance.Normal.Options.UseBackColor = true;
+            this.barButtonItemPrintCustomerHistory.Name = "barButtonItemPrintCustomerHistory";
+            this.barButtonItemPrintCustomerHistory.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemPrintCustomerHistory_ItemClick);
             // 
             // barButtonItemPrintCustomerReceipt
             // 
@@ -8131,6 +8210,16 @@
             resources.ApplyResources(this.barDockControl8, "barDockControl8");
             this.barDockControl8.Manager = this.barManager1;
             // 
+            // barButtonItem1
+            // 
+            resources.ApplyResources(this.barButtonItem1, "barButtonItem1");
+            this.barButtonItem1.Id = 5;
+            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.barButtonItem1.ItemAppearance.Normal.BackColor = System.Drawing.Color.MistyRose;
+            this.barButtonItem1.ItemAppearance.Normal.Options.UseBackColor = true;
+            this.barButtonItem1.Name = "barButtonItem1";
+            // 
             // frmNewCustMaint
             // 
             this.Appearance.BackColor = System.Drawing.Color.LightSteelBlue;
@@ -8150,14 +8239,14 @@
             this.Controls.Add(this.barDockControl8);
             this.Controls.Add(this.barDockControl6);
             this.Controls.Add(this.barDockControl5);
-            this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.Shadow;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.IconOptions.Image = ((System.Drawing.Image)(resources.GetObject("frmNewCustMaint.IconOptions.Image")));
             this.LookAndFeel.SkinName = "McSkin";
             this.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmNewCustMaint";
             this.TopMost = true;
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmCustMaint_FormClosing);
             this.Load += new System.EventHandler(this.frmNewCustMaint_Load);
             ((System.ComponentModel.ISupportInitialize)(this.cUSTOMERBindingSource)).EndInit();
@@ -8286,6 +8375,7 @@
             this.xtraTabControl1.ResumeLayout(false);
             this.xtraTabPage1.ResumeLayout(false);
             this.groupBox23.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.textEditBankMonthlyPayment.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditBankAutoPay.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditBankAccountNumber.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditBankCheckDigit.Properties)).EndInit();
@@ -8293,7 +8383,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.textEditBankState.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditBankCity.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditBankName.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditBankMonthlyPayment.Properties)).EndInit();
             this.xtraTabPage2.ResumeLayout(false);
             this.groupBox24.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEditExpYear.Properties)).EndInit();
@@ -8304,8 +8393,8 @@
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             this.xtraTabPageHistory.ResumeLayout(false);
-            this.xtraTabPageHistory.PerformLayout();
             this.groupBox18.ResumeLayout(false);
+            this.groupBox18.PerformLayout();
             this.groupBox11.ResumeLayout(false);
             this.groupBox11.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.checkBoxFullRecourseHist.Properties)).EndInit();
@@ -8927,7 +9016,8 @@
         private DevExpress.XtraBars.BarDockControl barDockControl6;
         private DevExpress.XtraBars.BarDockControl barDockControl8;
         private DevExpress.XtraBars.StandaloneBarDockControl standaloneBarDockControl1;
-        private DevExpress.XtraBars.Bar HistroyBar;
+        private DevExpress.XtraBars.Bar HistoryBar;
+        private DevExpress.XtraBars.BarButtonItem barButtonItemPrintCustomerHistory;
         private DevExpress.XtraBars.BarButtonItem barButtonItemPrintCustomerReceipt;
         private DevExpress.XtraBars.BarButtonItem barButtonItemPrintAmortizationSchedule;
         private DevExpress.XtraBars.BarButtonItem barButtonItemTimeValueToExcel;
@@ -8944,7 +9034,6 @@
         private System.Windows.Forms.GroupBox groupBox22;
         private DevExpress.XtraTab.XtraTabControl xtraTabControl1;
         private DevExpress.XtraTab.XtraTabPage xtraTabPage1;
-        private DevExpress.XtraEditors.TextEdit textEditBankMonthlyPayment;
         private DevExpress.XtraEditors.TextEdit textEditBankAccountNumber;
         private DevExpress.XtraEditors.TextEdit textEditBankCheckDigit;
         private DevExpress.XtraEditors.TextEdit textEditBankRoutingNumber;
@@ -8966,6 +9055,9 @@
         private DevExpress.XtraEditors.CheckEdit checkEditNoContact;
         private DevExpress.XtraEditors.CheckEdit checkEditMilitary;
         private DevExpress.XtraEditors.CheckEdit checkEditAllotment;
+        private DevExpress.XtraGrid.Columns.GridColumn colidRepo;
+        private DevExpress.XtraEditors.TextEdit textEditBankMonthlyPayment;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
     }
 }
 

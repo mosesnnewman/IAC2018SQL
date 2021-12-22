@@ -705,7 +705,7 @@ namespace IAC2021SQL
             cUSTOMER_REPO_INDtextBox.Enabled = true;
             cUSTOMER_REPO_CDEtextBox.Enabled = true;
             // Moses Newman 11/22/2016 Add handling of New IND code R.
-            if (cUSTOMER_REPO_INDtextBox.Text == "Y" || cUSTOMER_REPO_INDtextBox.Text == "P" || cUSTOMER_REPO_INDtextBox.Text == "R" || cUSTOMER_REPO_INDtextBox.Text == "Z")
+            if (iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<String>("cUSTOMER_REPO_IND") != "N")
             {
                 comboBoxRepoCodes.Enabled = true;
             }
@@ -4042,6 +4042,8 @@ namespace IAC2021SQL
 
         private void barButtonItem1_ItemClick(object sender, ItemClickEventArgs e)
         {
+            if (iACDataSet.CUSTOMER.Rows.Count < 1)
+                return;
             Double lnAnnualPercentageRate = 0, lnLoanInterest = 0, lnTotal = 0;
             MDIIAC2013 MDImain = (MDIIAC2013)MdiParent;
             MDImain.CreateFormInstance("ReportViewer", false);
@@ -4519,25 +4521,40 @@ namespace IAC2021SQL
         }
         private void xtraTabControlCustomerMaint_SelectedPageChanged(object sender, DevExpress.XtraTab.TabPageChangedEventArgs e)
         {
-            if (xtraTabControlCustomerMaint.SelectedTabPage == xtraTabPageComments)
+            switch (xtraTabControlCustomerMaint.SelectedTabPageIndex)
             {
-                // Moses Newman 12/1/2021 order by id descending
-                GridColumn colID = cOMMENTgridView.Columns["id"];
-                //GridColumn colDate = cOMMENTgridView.Columns["COMMENT_DATE"];
-                //GridColumn colSeqNo = cOMMENTgridView.Columns["COMMENT_SEQ_NO"];
-                cOMMENTgridView.BeginSort();
-                try
-                {
-                    cOMMENTgridView.ClearSorting();
+                case 6:
                     // Moses Newman 12/1/2021 order by id descending
-                    colID.SortOrder = ColumnSortOrder.Descending;
-                    //colDate.SortOrder = ColumnSortOrder.Descending;
-                    //colSeqNo.SortOrder = ColumnSortOrder.Descending;
-                }
-                finally
-                {
-                    cOMMENTgridView.EndSort();
-                }
+                    GridColumn colID = cOMMENTgridView.Columns["id"];
+                    //GridColumn colDate = cOMMENTgridView.Columns["COMMENT_DATE"];
+                    //GridColumn colSeqNo = cOMMENTgridView.Columns["COMMENT_SEQ_NO"];
+                    cOMMENTgridView.BeginSort();
+                    try
+                    {
+                        cOMMENTgridView.ClearSorting();
+                        // Moses Newman 12/1/2021 order by id descending
+                        colID.SortOrder = ColumnSortOrder.Descending;
+                    }
+                    finally
+                    {
+                        cOMMENTgridView.EndSort();
+                    }
+                    break;
+                case 8:
+                    // Moses Newman 12/20/2021 order by id descending
+                    GridColumn colidRepo = gridViewRepoLog.Columns["id"];
+                    gridViewRepoLog.BeginSort();
+                    try
+                    {
+                        gridViewRepoLog.ClearSorting();
+                        // Moses Newman 12/20/2021 order by id decending.
+                        colidRepo.SortOrder = ColumnSortOrder.Descending;
+                    }
+                    finally
+                    {
+                        gridViewRepoLog.EndSort();
+                    }
+                    break;
             }
         }
 
@@ -4862,6 +4879,102 @@ namespace IAC2021SQL
                     break;
             }
             e.Handled = true;
+        }
+
+        private void txtEffectiveDate_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void txtExpirationDate_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void nullableDateTimePickerLocDate_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void nullableDateTimePickerAucDate_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void nullableDateTimePickerTitleDateReceived_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void nullableDateTimePickerDateTitleReleased_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void nullableDateTimePickerDateContractReceived_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit && toolStripButtonSave.Enabled == false)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void barButtonItemPrintCustomerHistory_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            IACDataSet ReportData = new IACDataSet();
+            IACDataSetTableAdapters.CUSTOMERTableAdapter CustomerTableAdapter = new IACDataSetTableAdapters.CUSTOMERTableAdapter();
+            IACDataSetTableAdapters.CUSTHISTTableAdapter CUSTHISTTableAdapter = new IACDataSetTableAdapters.CUSTHISTTableAdapter();
+            IACDataSetTableAdapters.COMMENTTableAdapter COMMENTTableAdapter = new IACDataSetTableAdapters.COMMENTTableAdapter();
+            IACDataSetTableAdapters.DEALERTableAdapter DEALERTableAdapter = new IACDataSetTableAdapters.DEALERTableAdapter();
+            RepoDataSetTableAdapters.CUSTOMERTableAdapter RepoCustomer = new RepoDataSetTableAdapters.CUSTOMERTableAdapter();
+
+            CustomerTableAdapter.Fill(ReportData.CUSTOMER, cUSTOMER_NOTextBox.Text);
+            if (ReportData.CUSTOMER.Rows.Count < 1)
+                return;
+            CUSTHISTTableAdapter.FillByCustomerNo(ReportData.CUSTHIST, ReportData.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO"));
+            COMMENTTableAdapter.FillByCustNo(ReportData.COMMENT, ReportData.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO"));
+            // Moses Newman 04/22/2019 Add Repo Log
+            RepoLogTableAdapter.FillByCustomerNo(repoDataSet.RepoLog, ReportData.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO"));
+            if (ReportData.CUSTOMER.Rows.Count < 1)
+                return;
+            MDIIAC2013 MDImain = (MDIIAC2013)MdiParent;
+            MDImain.CreateFormInstance("ReportViewer", false);
+            ReportViewer rptViewr = (ReportViewer)MDImain.frm;
+
+            if (repoDataSet.RepoLog.Count > 0)
+                RepoCustomer.Fill(repoDataSet.CUSTOMER, cUSTOMER_NOTextBox.Text);
+            DEALERTableAdapter.Fill(ReportData.DEALER, ReportData.CUSTOMER.Rows[0].Field<String>("CUSTOMER_DEALER"));
+            ClosedCustomerHistory myReportObject = new ClosedCustomerHistory();
+            myReportObject.SetDataSource(ReportData);
+            // Moses Newman 04/22/2019 Add Repo Log Set DataSource of second subreport (RepoLog) to new RepoDataSet
+            myReportObject.Subreports[1].SetDataSource(repoDataSet);
+            myReportObject.SetParameterValue("gsUserID", Program.gsUserID);
+            myReportObject.SetParameterValue("gsUserName", Program.gsUserName);
+            // Moses Newman 04/23/2019 Add Record Count of RepoLog table to supress footer on blank RepoLog
+            myReportObject.SetParameterValue("giCount", repoDataSet.RepoLog.Count);
+
+            rptViewr.crystalReportViewer.ReportSource = myReportObject;
+            rptViewr.crystalReportViewer.Refresh();
+            rptViewr.Show();
+        }
+
+        private void nullableDateTimePickerDateContractReceived_EnabledChanged(object sender, EventArgs e)
+        {
+            Control lastControl = ActiveControl;
+
+            DateEdit edit = sender as DateEdit;
+
+            if (edit.Enabled == true)
+            {
+                if (!lbAddFlag && !lbEdit)
+                    edit.Enabled = false;
+                ActiveControl = lastControl;
+                lastControl.Focus();
+            }
         }
 
         private void checkEditMilitary_CheckedChanged(object sender, EventArgs e)
@@ -5511,6 +5624,7 @@ namespace IAC2021SQL
                 iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_REPO_IND", iACDataSet.RepoIndicators.Rows[comboBoxRepoInd.SelectedIndex].Field<String>("Code"));
                 toolStripButtonSave.Enabled = true;
                 RepoIndicatorsBindingSource.EndEdit();
+                comboBoxRepoCodes.Enabled = true;
             }
         }
     }

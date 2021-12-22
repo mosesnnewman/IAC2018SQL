@@ -1793,6 +1793,8 @@ namespace IAC2021SQL
                 CUSTOMERTableAdapter.Fill(DT.CUSTOMER, tsCustomerNo);
                 CustPos = 0;
             }
+            if (DT.CUSTOMER.Rows.Count == 0)
+                return;
 
             if (tbPayment && tnPaymentPos != -1)
             {
