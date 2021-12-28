@@ -21,9 +21,10 @@ namespace IAC2021SQL
 
         private void frmCreateAutoBankFiles_Load(object sender, EventArgs e)
         {
-            nullableDateTimePickerBsnkTranDate.Value = null;
+            nullableDateTimePickerBsnkTranDate.EditValue = null;
             labelBankTranDate.Visible = false;
             nullableDateTimePickerBsnkTranDate.Visible = false;
+            nullableDateTimePickerCutOffDate.EditValue = DateTime.Now.Date;
         }
         
         private void buttonPost_Click(object sender, EventArgs e)
@@ -52,11 +53,11 @@ namespace IAC2021SQL
 
             Int32 lnDueDay = (textBoxDayDue.Text.TrimEnd() != "") ? Convert.ToInt32(textBoxDayDue.Text.TrimEnd()):0;
 
-            if (nullableDateTimePickerCutOffDate.Value != null)
+            if (nullableDateTimePickerCutOffDate.EditValue != null)
                 if (lnDueDay != 0)
-                    EFTListTableAdapter.FillByDayDuewithCutOff(ReportData.EFTList, lnDueDay, (DateTime)nullableDateTimePickerCutOffDate.Value);
+                    EFTListTableAdapter.FillByDayDuewithCutOff(ReportData.EFTList, lnDueDay, (DateTime)nullableDateTimePickerCutOffDate.EditValue);
                 else
-                     EFTListTableAdapter.FillByCutOff(ReportData.EFTList, (DateTime)nullableDateTimePickerCutOffDate.Value);
+                     EFTListTableAdapter.FillByCutOff(ReportData.EFTList, (DateTime)nullableDateTimePickerCutOffDate.EditValue);
             else
                 if (lnDueDay != 0)
                     EFTListTableAdapter.FillByDayDue(ReportData.EFTList, lnDueDay);
@@ -71,7 +72,7 @@ namespace IAC2021SQL
                 myReportObject.SetDataSource(ReportData);
                 myReportObject.SetParameterValue("gsUserID", Program.gsUserID);
                 myReportObject.SetParameterValue("gsUserName", Program.gsUserName);
-                myReportObject.SetParameterValue("gdCutOff", (Nullable<DateTime>)nullableDateTimePickerCutOffDate.Value);
+                myReportObject.SetParameterValue("gdCutOff", (Nullable<DateTime>)nullableDateTimePickerCutOffDate.EditValue);
                 myReportObject.SetParameterValue("gnDayDue", lnDueDay);
                 rptViewer.crystalReportViewer.ReportSource = myReportObject;
                 rptViewer.crystalReportViewer.Refresh();
@@ -87,7 +88,7 @@ namespace IAC2021SQL
             {
                 labelBankTranDate.Visible = true;
                 nullableDateTimePickerBsnkTranDate.Visible = true;
-                nullableDateTimePickerBsnkTranDate.Value = DateTime.Now.Date;
+                nullableDateTimePickerBsnkTranDate.EditValue = DateTime.Now.Date;
             }
             else
             {
@@ -108,7 +109,7 @@ namespace IAC2021SQL
             DataPathTableAdapter.Fill(AUTOBANK.DataPath);
             Int32 lnTotalDebit = 0,lnTotalCredit = 0,lnBlockingPercent = 0,lnBlockingFactor = 0;
             Int64 lnHashCount = 0;
-            DateTime    ldEffectiveDate = ((DateTime)nullableDateTimePickerBsnkTranDate.Value).Date,
+            DateTime    ldEffectiveDate = ((DateTime)nullableDateTimePickerBsnkTranDate.EditValue).Date,
                         ldDescriptiveDate = DateTime.Now.Date;
             String sourcePath = AUTOBANK.DataPath.Rows[0].Field<String>("Path").TrimEnd(),
               lsDescriptiveDate = ldDescriptiveDate.Year.ToString().Substring(2, 2) +

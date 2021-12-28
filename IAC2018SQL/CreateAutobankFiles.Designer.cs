@@ -32,13 +32,17 @@
             this.buttonPost = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.nullableDateTimePickerCutOffDate = new ProManApp.NullableDateTimePicker();
             this.labelBankTranDate = new System.Windows.Forms.Label();
-            this.nullableDateTimePickerBsnkTranDate = new ProManApp.NullableDateTimePicker();
             this.textBoxDayDue = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.checkBoxAutobank = new System.Windows.Forms.CheckBox();
             this.buttonTransfer = new System.Windows.Forms.Button();
+            this.nullableDateTimePickerCutOffDate = new DevExpress.XtraEditors.DateEdit();
+            this.nullableDateTimePickerBsnkTranDate = new DevExpress.XtraEditors.DateEdit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerCutOffDate.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerCutOffDate.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerBsnkTranDate.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerBsnkTranDate.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonPost
@@ -77,17 +81,6 @@
             this.label1.Text = "Cutt off date:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // nullableDateTimePickerCutOffDate
-            // 
-            this.nullableDateTimePickerCutOffDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nullableDateTimePickerCutOffDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.nullableDateTimePickerCutOffDate.Location = new System.Drawing.Point(215, 36);
-            this.nullableDateTimePickerCutOffDate.Margin = new System.Windows.Forms.Padding(4);
-            this.nullableDateTimePickerCutOffDate.Name = "nullableDateTimePickerCutOffDate";
-            this.nullableDateTimePickerCutOffDate.Size = new System.Drawing.Size(109, 22);
-            this.nullableDateTimePickerCutOffDate.TabIndex = 3;
-            this.nullableDateTimePickerCutOffDate.Value = new System.DateTime(2013, 6, 12, 0, 0, 0, 0);
-            // 
             // labelBankTranDate
             // 
             this.labelBankTranDate.AutoSize = true;
@@ -99,17 +92,6 @@
             this.labelBankTranDate.TabIndex = 8;
             this.labelBankTranDate.Text = "Bank Transaction Date:";
             this.labelBankTranDate.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // nullableDateTimePickerBsnkTranDate
-            // 
-            this.nullableDateTimePickerBsnkTranDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nullableDateTimePickerBsnkTranDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.nullableDateTimePickerBsnkTranDate.Location = new System.Drawing.Point(215, 94);
-            this.nullableDateTimePickerBsnkTranDate.Margin = new System.Windows.Forms.Padding(4);
-            this.nullableDateTimePickerBsnkTranDate.Name = "nullableDateTimePickerBsnkTranDate";
-            this.nullableDateTimePickerBsnkTranDate.Size = new System.Drawing.Size(109, 22);
-            this.nullableDateTimePickerBsnkTranDate.TabIndex = 7;
-            this.nullableDateTimePickerBsnkTranDate.Value = new System.DateTime(2013, 6, 12, 0, 0, 0, 0);
             // 
             // textBoxDayDue
             // 
@@ -158,20 +140,48 @@
             this.buttonTransfer.UseVisualStyleBackColor = true;
             this.buttonTransfer.Click += new System.EventHandler(this.buttonTransfer_Click);
             // 
+            // nullableDateTimePickerCutOffDate
+            // 
+            this.nullableDateTimePickerCutOffDate.EditValue = new System.DateTime(2021, 12, 27, 11, 0, 15, 272);
+            this.nullableDateTimePickerCutOffDate.Location = new System.Drawing.Point(215, 36);
+            this.nullableDateTimePickerCutOffDate.Name = "nullableDateTimePickerCutOffDate";
+            this.nullableDateTimePickerCutOffDate.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nullableDateTimePickerCutOffDate.Properties.Appearance.Options.UseFont = true;
+            this.nullableDateTimePickerCutOffDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.nullableDateTimePickerCutOffDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.nullableDateTimePickerCutOffDate.Size = new System.Drawing.Size(109, 22);
+            this.nullableDateTimePickerCutOffDate.TabIndex = 13;
+            // 
+            // nullableDateTimePickerBsnkTranDate
+            // 
+            this.nullableDateTimePickerBsnkTranDate.EditValue = new System.DateTime(2021, 12, 27, 11, 0, 15, 272);
+            this.nullableDateTimePickerBsnkTranDate.Location = new System.Drawing.Point(215, 95);
+            this.nullableDateTimePickerBsnkTranDate.Name = "nullableDateTimePickerBsnkTranDate";
+            this.nullableDateTimePickerBsnkTranDate.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nullableDateTimePickerBsnkTranDate.Properties.Appearance.Options.UseFont = true;
+            this.nullableDateTimePickerBsnkTranDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.nullableDateTimePickerBsnkTranDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.nullableDateTimePickerBsnkTranDate.Size = new System.Drawing.Size(109, 22);
+            this.nullableDateTimePickerBsnkTranDate.TabIndex = 14;
+            // 
             // frmCreateAutoBankFiles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(539, 209);
+            this.Controls.Add(this.nullableDateTimePickerBsnkTranDate);
+            this.Controls.Add(this.nullableDateTimePickerCutOffDate);
             this.Controls.Add(this.buttonTransfer);
             this.Controls.Add(this.checkBoxAutobank);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBoxDayDue);
             this.Controls.Add(this.labelBankTranDate);
-            this.Controls.Add(this.nullableDateTimePickerBsnkTranDate);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.nullableDateTimePickerCutOffDate);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonPost);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -179,6 +189,10 @@
             this.Name = "frmCreateAutoBankFiles";
             this.Text = "Create EFT Files / Reports";
             this.Load += new System.EventHandler(this.frmCreateAutoBankFiles_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerCutOffDate.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerCutOffDate.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerBsnkTranDate.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerBsnkTranDate.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -189,12 +203,12 @@
         private System.Windows.Forms.Button buttonPost;
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Label label1;
-        private ProManApp.NullableDateTimePicker nullableDateTimePickerCutOffDate;
         private System.Windows.Forms.Label labelBankTranDate;
-        private ProManApp.NullableDateTimePicker nullableDateTimePickerBsnkTranDate;
         private System.Windows.Forms.TextBox textBoxDayDue;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.CheckBox checkBoxAutobank;
         private System.Windows.Forms.Button buttonTransfer;
+        private DevExpress.XtraEditors.DateEdit nullableDateTimePickerCutOffDate;
+        private DevExpress.XtraEditors.DateEdit nullableDateTimePickerBsnkTranDate;
     }
 }

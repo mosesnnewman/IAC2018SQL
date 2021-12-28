@@ -257,14 +257,14 @@ namespace IAC2021SQL
             txtFirstPayDate.Enabled = false;
             comboBoxDayDue.Enabled = false;
             txtTerm.Enabled = false;
-            txtCollectionAgent.Enabled = false;
+            checkEditCollectionAgent.Enabled = false;
             txtRegularPay.Enabled = false;
             txtLoan.Enabled = false;
             txtLoanInterest.Enabled = false;
             txtAPR.Enabled = false;
             txtCASH.Enabled = false;
             txtNoOfPaymentsMade.Enabled = false;
-            txtOverideInterest.Enabled = false;
+            checkEditOverideInterest.Enabled = false;
             //txtPartialPayment.Enabled = false;
             txtPaymentDate.Enabled = false;
             txtPaymentType.Enabled = false;
@@ -599,7 +599,7 @@ namespace IAC2021SQL
             txtFirstPayDate.Enabled = true;
             comboBoxDayDue.Enabled = true;
             txtTerm.Enabled = true;
-            txtCollectionAgent.Enabled = true;
+            checkEditCollectionAgent.Enabled = true;
             txtRegularPay.Enabled = true;
             txtLoan.Enabled = false;
             txtLoanInterest.Enabled = false;
@@ -608,9 +608,9 @@ namespace IAC2021SQL
             txtNoOfPaymentsMade.Enabled = true;
             // Moses Newman 01/08/2014 if CUSTOMER is NOT already set to INTEREST OVERRIDE, DO NOT Activate field unless Annual Interest Rate is NOT set to ZERO!
             if (iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<Decimal>("CUSTOMER_ANNUAL_PERCENTAGE_RATE") != 0 ) //&& !lbAlreadyIntOverride) Moses Newman 06/07/2021
-                txtOverideInterest.Enabled = true;
+                checkEditOverideInterest.Enabled = true;
             else
-                txtOverideInterest.Enabled = false;
+                checkEditOverideInterest.Enabled = false;
             if (lbAddFlag)
                 txtPaymentDate.EditValue = null;
             //nullableDateTimePickerPayDate.Value = txtPaymentDate.Value;
@@ -1463,7 +1463,7 @@ namespace IAC2021SQL
                     txtFirstPayDate.Enabled = true;
                     comboBoxDayDue.Enabled = true;
                     txtTerm.Enabled = true;
-                    txtCollectionAgent.Enabled = true;
+                    checkEditCollectionAgent.Enabled = true;
                     txtRegularPay.Enabled = true;
                     txtLoan.Enabled = true;
                     txtLoanInterest.Enabled = true;
@@ -1472,9 +1472,9 @@ namespace IAC2021SQL
                     txtNoOfPaymentsMade.Enabled = true;
                     // Moses Newman 01/08/2014 Do not enable override interest field if Annual Interest is set to ZERO!!!
                     if (iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<Decimal>("CUSTOMER_ANNUAL_PERCENTAGE_RATE") != 0)
-                        txtOverideInterest.Enabled = true;
+                        checkEditOverideInterest.Enabled = true;
                     else
-                        txtOverideInterest.Enabled = false;
+                        checkEditOverideInterest.Enabled = false;
                     txtPaymentDate.Enabled = false;
                     txtPaymentDate.EditValue = null;
                     nullableDateTimePickerPayDate.EditValue = txtPaymentDate.EditValue;
@@ -1970,7 +1970,9 @@ namespace IAC2021SQL
         {
             Double lnRegularPay = 0, lnTotal = 0, lnTerm = 0, lnLoanInterest = 0, lnCash = 0;
             Double lnAPR = 0;
-            if (txtAPR.Text == "" && txtTerm.Text == "" && txtCASH.Text == "")
+            if (txtTerm.Text == "")
+                return;
+            if (txtAPR.Text == "" && txtCASH.Text == "")
                 return;
             if (txtAPR.Text != "")
                 lnAPR = Convert.ToDouble(txtAPR.Text.ToString()) / 100;
@@ -2523,7 +2525,16 @@ namespace IAC2021SQL
 
         private void checkBoxRefi_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (checkBoxRefi.Checked && (lbAddFlag || lbEdit))
+            {
+                textBoxAccount.Enabled = true;
+                ActiveControl = textBoxAccount;
+                textBoxAccount.SelectAll();
+            }
+            else
+                textBoxAccount.Enabled = false;
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
         }
 
         private void CreateOutlookEmail(String mailToText)
@@ -2807,7 +2818,7 @@ namespace IAC2021SQL
                     OpenCustForm.CosHomePhone = cUSTOMER_COS_PHONETextBox.Text;
                     OpenCustForm.CosCellPhone = txtCOSCell.Text;
                     OpenCustForm.DayDue = iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<Int32>("CUSTOMER_DAY_DUE");
-                    OpenCustForm.CreditStatus = txtCollectionAgent.Text;
+                    OpenCustForm.CreditStatus = checkEditCollectionAgent.Text;
                     OpenCustForm.AutoPay = checkEditAutoPay.Text;
 
                     OpenCustForm.AltName1 = txtALTContact1.Text;
@@ -4510,14 +4521,27 @@ namespace IAC2021SQL
         private void checkBoxVehicleWarranty_CheckedChanged(object sender, EventArgs e)
         {
             CheckEdit edit = sender as CheckEdit;
-            if (lbAddFlag || lbEdit)
-                toolStripButtonSave.Enabled = true;
             if (edit.Checked)
                 edit.ForeColor = Color.Red;
             else
             {
                 edit.ForeColor = SystemColors.ControlText;
             }
+            if (checkBoxVehicleWarranty.Checked && (lbAddFlag || lbEdit))
+            {
+                textBoxOpenAccount.Enabled = true;
+                ActiveControl = textBoxOpenAccount;
+                textBoxOpenAccount.SelectAll();
+            }
+            else
+            {
+                if (!checkBoxVehicleWarranty.Checked)
+                    textBoxOpenAccount.Enabled = false;
+                else
+                    textBoxOpenAccount.Enabled = true;
+            }
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
         }
         private void xtraTabControlCustomerMaint_SelectedPageChanged(object sender, DevExpress.XtraTab.TabPageChangedEventArgs e)
         {
@@ -4975,6 +4999,313 @@ namespace IAC2021SQL
                 ActiveControl = lastControl;
                 lastControl.Focus();
             }
+        }
+
+        private void txtFirstPayDate_Validated(object sender, EventArgs e)
+        {
+            if (!lbAddFlag)
+                return;
+            // Moses Newman 12/12/2014 Call TVAmortTableAdapter.PaidThrough to get correctrect new Paid Through 
+            IACDataSetTableAdapters.TVAmortTableAdapter TVAmortTableAdapter = new IACDataSetTableAdapters.TVAmortTableAdapter();
+            Object loPTDate = null;
+            DateTime ldTempDate;
+
+            loPTDate = TVAmortTableAdapter.PaidThrough(cUSTOMER_NOTextBox.Text);
+            if (loPTDate != null)
+                txtPaidThrough.Text = (String)loPTDate;
+            else
+            {
+                ldTempDate = iACDataSet.CUSTOMER.Rows[0].Field<DateTime>("CUSTOMER_INIT_DATE");
+                ldTempDate = iACDataSet.CUSTOMER.Rows[0].Field<DateTime>("CUSTOMER_INIT_DATE").AddMonths(-1);
+                txtPaidThrough.Text = ldTempDate.Month.ToString().PadLeft(2, '0') + ldTempDate.Year.ToString().Substring(2, 2);
+            }
+            nullableDateTimePickerFirstPayDate.EditValue = txtFirstPayDate.EditValue;
+            // Moses Newman 01/20/2015 Added Contract Date
+            if (DateTimePickerContractDate.EditValue == null)
+                DateTimePickerContractDate.EditValue = DateTime.Now.Date;
+            nullableDateTimePickerHistContractDate.EditValue = DateTimePickerContractDate.EditValue;
+            loPTDate = null;
+            TVAmortTableAdapter.Dispose();
+            TVAmortTableAdapter = null;
+        }
+
+        private void comboBoxDayDue_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxDayDue.SelectedIndex >= 0)
+            {
+                errorProviderCustomerForm.Clear();
+                Reamortize(); // Moses Newman 01/29/2019 call new Reamortize instead of regular payment valid call!
+            }
+        }
+
+        private void comboBoxDayDue_Validated(object sender, EventArgs e)
+        {
+            if (comboBoxDayDue.Text.TrimStart().TrimEnd() == "5" && comboBoxDayDue.Text == "10" && comboBoxDayDue.Text == "15" && comboBoxDayDue.Text == "20" && comboBoxDayDue.Text == "25" && comboBoxDayDue.Text == "30")
+            {
+                errorProviderCustomerForm.Clear();
+                Reamortize();
+            }
+        }
+
+        private void comboBoxDayDue_Validating(object sender, CancelEventArgs e)
+        {
+            if (comboBoxDayDue.Text.TrimStart().TrimEnd() != "5" && comboBoxDayDue.Text != "10" && comboBoxDayDue.Text != "15" && comboBoxDayDue.Text != "20" && comboBoxDayDue.Text != "25" && comboBoxDayDue.Text != "30")
+            {
+                // Cancel the event and select the text to be corrected by the user.
+                e.Cancel = true;
+                comboBoxDayDue.Select(0, comboBoxDayDue.Text.Length);
+
+                // Set the ErrorProvider error with the text to display.  
+                this.errorProviderCustomerForm.SetError(comboBoxDayDue, "You must enter a either 5,10,15,20,25 or 30 in the day due field!");
+            }
+        }
+
+        private void checkBoxOverrideLateCharge_CheckedChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void checkBoxSimple_CheckedChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void txtAPR_Validated(object sender, EventArgs e)
+        {
+            if (txtAPR.Text.Length != 0)
+            {
+                if (Convert.ToDecimal(txtAPR.Text) != 0)
+                {
+                    errorProviderCustomerForm.Clear();
+                    // Moses Newman 01/04/2014 enable Interest Override if Annual Percentage Rate is not equal to 0!
+                    if (lbEdit || lbAddFlag)
+                        checkEditOverideInterest.Enabled = true;
+                    //if (txtRegularPay.Text.Length == 0 || Convert.ToDecimal(txtRegularPay.Text.Substring(1)) == 0)
+                    Reamortize(); // Moses Newman 01/29/2019 call new Reamortize instead of regular payment valid call!
+                }
+                return;
+            }
+            else
+                if (txtRegularPay.Text.Length != 0)
+                {
+                    if (Convert.ToDecimal(txtRegularPay.Text.Substring(1)) != 0)
+                        errorProviderCustomerForm.Clear();
+                    // Moses Newman 01/04/2014 enable Interest Override if Annual Percentage Rate is not equal to 0!
+                    if (lbEdit || lbAddFlag)
+                        checkEditOverideInterest.Enabled = true;
+                }
+        }
+
+        private void txtCASH_Validated(object sender, EventArgs e)
+        {
+            if (txtCASH.Text.Length != 0)
+                if (Convert.ToDecimal(txtCASH.Text.Substring(1)) != 0)
+                    errorProviderCustomerForm.Clear();
+            if (txtRegularPay.Text.Length != 0 || Convert.ToDecimal(txtRegularPay.Text.Substring(1)) != 0)
+                Reamortize(); // Moses Newman 01/29/2019 call new Reamortize instead of regular payment valid call!
+        }
+
+        private void DateTimePickerContractDate_Validated_1(object sender, EventArgs e)
+        {
+            // Moses Newman 01/20/2015 Make sure that history screen field is visually updated on Contract Date edit!
+            if (lbAddFlag || lbEdit)
+            {
+                nullableDateTimePickerHistContractDate.EditValue = DateTimePickerContractDate.EditValue;
+                toolStripButtonSave.Enabled = true;
+            }
+        }
+
+        private void txtPaidThrough_Validated(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtTerm_Validated(object sender, EventArgs e)
+        {
+            if (txtTerm.Text.Length != 0)
+                if (Convert.ToInt32(txtTerm.Text) != 0)
+                {
+                    errorProviderCustomerForm.Clear();
+                    //Reamortize(); // Moses Newman 01/29/2019 call new Reamortize instead of regular payment valid call!
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<DateTime>("MaturityDate", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<DateTime>("CUSTOMER_INIT_DATE").AddMonths(iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<Int32>("CUSTOMER_TERM") - 1));
+                    this.MaturityDate.EditValue = iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<DateTime>("CUSTOMER_INIT_DATE").AddMonths(iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<Int32>("CUSTOMER_TERM") - 1);
+                }
+            return;
+        }
+
+        private void checkEditOverideInterest_CheckedChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void checkEditOverideInterest_QueryCheckStateByValue(object sender, DevExpress.XtraEditors.Controls.QueryCheckStateByValueEventArgs e)
+        {
+            string val = e.Value.ToString();
+            switch (val)
+            {
+                case "Y":
+                    e.CheckState = CheckState.Checked;
+                    break;
+                case "N":
+                    e.CheckState = CheckState.Unchecked;
+                    break;
+                default:
+                    e.CheckState = CheckState.Unchecked;
+                    break;
+            }
+            e.Handled = true;
+        }
+
+        private void checkEditOverideInterest_QueryValueByCheckState(object sender, DevExpress.XtraEditors.Controls.QueryValueByCheckStateEventArgs e)
+        {
+            CheckEdit edit = sender as CheckEdit;
+            object val = edit.EditValue;
+            switch (e.CheckState)
+            {
+                case CheckState.Checked:
+                    e.Value = "Y";
+                    break;
+                case CheckState.Unchecked:
+                    e.Value = "N";
+                    break;
+                default:
+                    e.Value = "N";
+                    break;
+            }
+            e.Handled = true;
+        }
+
+        private void checkEditCollectionAgent_CheckedChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void checkEditCollectionAgent_QueryCheckStateByValue(object sender, DevExpress.XtraEditors.Controls.QueryCheckStateByValueEventArgs e)
+        {
+            string val = e.Value.ToString();
+            switch (val)
+            {
+                case "Y":
+                    e.CheckState = CheckState.Checked;
+                    break;
+                case "N":
+                    e.CheckState = CheckState.Unchecked;
+                    break;
+                default:
+                    e.CheckState = CheckState.Unchecked;
+                    break;
+            }
+            e.Handled = true;
+        }
+
+        private void checkEditCollectionAgent_QueryValueByCheckState(object sender, DevExpress.XtraEditors.Controls.QueryValueByCheckStateEventArgs e)
+        {
+            CheckEdit edit = sender as CheckEdit;
+            object val = edit.EditValue;
+            switch (e.CheckState)
+            {
+                case CheckState.Checked:
+                    e.Value = "Y";
+                    break;
+                case CheckState.Unchecked:
+                    e.Value = "N";
+                    break;
+                default:
+                    e.Value = "N";
+                    break;
+            }
+            e.Handled = true;
+        }
+
+        private void checkEditOverideInterestHistory_CheckedChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void checkEditOverideInterestHistory_QueryCheckStateByValue(object sender, DevExpress.XtraEditors.Controls.QueryCheckStateByValueEventArgs e)
+        {
+            string val = e.Value.ToString();
+            switch (val)
+            {
+                case "Y":
+                    e.CheckState = CheckState.Checked;
+                    break;
+                case "N":
+                    e.CheckState = CheckState.Unchecked;
+                    break;
+                default:
+                    e.CheckState = CheckState.Unchecked;
+                    break;
+            }
+            e.Handled = true;
+        }
+
+        private void checkEditOverideInterestHistory_QueryValueByCheckState(object sender, DevExpress.XtraEditors.Controls.QueryValueByCheckStateEventArgs e)
+        {
+            CheckEdit edit = sender as CheckEdit;
+            object val = edit.EditValue;
+            switch (e.CheckState)
+            {
+                case CheckState.Checked:
+                    e.Value = "Y";
+                    break;
+                case CheckState.Unchecked:
+                    e.Value = "N";
+                    break;
+                default:
+                    e.Value = "N";
+                    break;
+            }
+            e.Handled = true;
+        }
+
+        private void checkEditCollectionAgentHistory_CheckedChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+        }
+
+
+        private void checkEditCollectionAgentHistory_QueryCheckStateByValue(object sender, DevExpress.XtraEditors.Controls.QueryCheckStateByValueEventArgs e)
+        {
+            string val = e.Value.ToString();
+            switch (val)
+            {
+                case "Y":
+                    e.CheckState = CheckState.Checked;
+                    break;
+                case "N":
+                    e.CheckState = CheckState.Unchecked;
+                    break;
+                default:
+                    e.CheckState = CheckState.Unchecked;
+                    break;
+            }
+            e.Handled = true;
+        }
+
+        private void checkEditCollectionAgentHistory_QueryValueByCheckState(object sender, DevExpress.XtraEditors.Controls.QueryValueByCheckStateEventArgs e)
+        {
+            CheckEdit edit = sender as CheckEdit;
+            object val = edit.EditValue;
+            switch (e.CheckState)
+            {
+                case CheckState.Checked:
+                    e.Value = "Y";
+                    break;
+                case CheckState.Unchecked:
+                    e.Value = "N";
+                    break;
+                default:
+                    e.Value = "N";
+                    break;
+            }
+            e.Handled = true;
         }
 
         private void checkEditMilitary_CheckedChanged(object sender, EventArgs e)
