@@ -42,7 +42,7 @@
     <SuiteName>IAC2021SQL</SuiteName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>77</ApplicationRevision>
+    <ApplicationRevision>87</ApplicationRevision>
     <ApplicationVersion>10.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>

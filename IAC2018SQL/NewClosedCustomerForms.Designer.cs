@@ -192,14 +192,11 @@
             System.Windows.Forms.Label label27;
             System.Windows.Forms.Label label26;
             System.Windows.Forms.Label label25;
-            System.Windows.Forms.Label label24;
             System.Windows.Forms.Label label23;
             System.Windows.Forms.Label label22;
             System.Windows.Forms.Label label21;
             System.Windows.Forms.Label label20;
             System.Windows.Forms.Label label19;
-            System.Windows.Forms.Label label18;
-            System.Windows.Forms.Label label17;
             System.Windows.Forms.Label label16;
             System.Windows.Forms.Label label15;
             System.Windows.Forms.Label label14;
@@ -242,14 +239,11 @@
             System.Windows.Forms.Label label212;
             System.Windows.Forms.Label label213;
             System.Windows.Forms.Label label214;
-            System.Windows.Forms.Label label215;
             System.Windows.Forms.Label label216;
             System.Windows.Forms.Label label217;
             System.Windows.Forms.Label label218;
             System.Windows.Forms.Label label219;
             System.Windows.Forms.Label label220;
-            System.Windows.Forms.Label label221;
-            System.Windows.Forms.Label label222;
             System.Windows.Forms.Label label223;
             System.Windows.Forms.Label label224;
             System.Windows.Forms.Label label225;
@@ -449,6 +443,8 @@
             this.txtCustomerBalance = new System.Windows.Forms.TextBox();
             this.txtPaidInterest = new System.Windows.Forms.TextBox();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.checkEditCollectionAgent = new DevExpress.XtraEditors.CheckEdit();
+            this.checkEditOverideInterest = new DevExpress.XtraEditors.CheckEdit();
             this.nullableDateTimePickerFundingDate = new DevExpress.XtraEditors.DateEdit();
             this.checkBoxOverrideLateCharge = new System.Windows.Forms.CheckBox();
             this.DateTimePickerContractDate = new DevExpress.XtraEditors.DateEdit();
@@ -463,13 +459,11 @@
             this.txtLateCharge = new System.Windows.Forms.TextBox();
             this.txtPaymentCode = new System.Windows.Forms.TextBox();
             this.txtPaymentType = new System.Windows.Forms.TextBox();
-            this.txtOverideInterest = new System.Windows.Forms.TextBox();
             this.txtNoOfPaymentsMade = new System.Windows.Forms.TextBox();
             this.txtCASH = new System.Windows.Forms.TextBox();
             this.txtLoanInterest = new System.Windows.Forms.TextBox();
             this.txtLoan = new System.Windows.Forms.TextBox();
             this.txtRegularPay = new System.Windows.Forms.TextBox();
-            this.txtCollectionAgent = new System.Windows.Forms.TextBox();
             this.txtTerm = new System.Windows.Forms.TextBox();
             this.textBox15 = new System.Windows.Forms.TextBox();
             this.textBox16 = new System.Windows.Forms.TextBox();
@@ -618,6 +612,8 @@
             this.xtraTabPageHistory = new DevExpress.XtraTab.XtraTabPage();
             this.groupBox18 = new System.Windows.Forms.GroupBox();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.checkEditCollectionAgentHistory = new DevExpress.XtraEditors.CheckEdit();
+            this.checkEditOverideInterestHistory = new DevExpress.XtraEditors.CheckEdit();
             this.checkBoxFullRecourseHist = new DevExpress.XtraEditors.CheckEdit();
             this.nullableDateTimePickerFirstPayDate = new DevExpress.XtraEditors.DateEdit();
             this.nullableDateTimePickerPayDate = new DevExpress.XtraEditors.DateEdit();
@@ -638,12 +634,10 @@
             this.textBox27 = new System.Windows.Forms.TextBox();
             this.textBox28 = new System.Windows.Forms.TextBox();
             this.textBox29 = new System.Windows.Forms.TextBox();
-            this.textBox30 = new System.Windows.Forms.TextBox();
             this.textBox32 = new System.Windows.Forms.TextBox();
             this.textBox33 = new System.Windows.Forms.TextBox();
             this.textBox34 = new System.Windows.Forms.TextBox();
             this.textBox35 = new System.Windows.Forms.TextBox();
-            this.textBox36 = new System.Windows.Forms.TextBox();
             this.textBox37 = new System.Windows.Forms.TextBox();
             this.textBox31 = new System.Windows.Forms.TextBox();
             this.gridControlCustomerHist = new DevExpress.XtraGrid.GridControl();
@@ -1006,14 +1000,11 @@
             label27 = new System.Windows.Forms.Label();
             label26 = new System.Windows.Forms.Label();
             label25 = new System.Windows.Forms.Label();
-            label24 = new System.Windows.Forms.Label();
             label23 = new System.Windows.Forms.Label();
             label22 = new System.Windows.Forms.Label();
             label21 = new System.Windows.Forms.Label();
             label20 = new System.Windows.Forms.Label();
             label19 = new System.Windows.Forms.Label();
-            label18 = new System.Windows.Forms.Label();
-            label17 = new System.Windows.Forms.Label();
             label16 = new System.Windows.Forms.Label();
             label15 = new System.Windows.Forms.Label();
             label14 = new System.Windows.Forms.Label();
@@ -1056,14 +1047,11 @@
             label212 = new System.Windows.Forms.Label();
             label213 = new System.Windows.Forms.Label();
             label214 = new System.Windows.Forms.Label();
-            label215 = new System.Windows.Forms.Label();
             label216 = new System.Windows.Forms.Label();
             label217 = new System.Windows.Forms.Label();
             label218 = new System.Windows.Forms.Label();
             label219 = new System.Windows.Forms.Label();
             label220 = new System.Windows.Forms.Label();
-            label221 = new System.Windows.Forms.Label();
-            label222 = new System.Windows.Forms.Label();
             label223 = new System.Windows.Forms.Label();
             label224 = new System.Windows.Forms.Label();
             label225 = new System.Windows.Forms.Label();
@@ -1136,6 +1124,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.MaturityDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MaturityDate.Properties)).BeginInit();
             this.groupBox9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEditCollectionAgent.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEditOverideInterest.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerFundingDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerFundingDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DateTimePickerContractDate.Properties.CalendarTimeProperties)).BeginInit();
@@ -1198,6 +1188,8 @@
             this.xtraTabPageHistory.SuspendLayout();
             this.groupBox18.SuspendLayout();
             this.groupBox11.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEditCollectionAgentHistory.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEditOverideInterestHistory.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkBoxFullRecourseHist.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerFirstPayDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerFirstPayDate.Properties)).BeginInit();
@@ -2093,11 +2085,6 @@
             resources.ApplyResources(label25, "label25");
             label25.Name = "label25";
             // 
-            // label24
-            // 
-            resources.ApplyResources(label24, "label24");
-            label24.Name = "label24";
-            // 
             // label23
             // 
             resources.ApplyResources(label23, "label23");
@@ -2122,16 +2109,6 @@
             // 
             resources.ApplyResources(label19, "label19");
             label19.Name = "label19";
-            // 
-            // label18
-            // 
-            resources.ApplyResources(label18, "label18");
-            label18.Name = "label18";
-            // 
-            // label17
-            // 
-            resources.ApplyResources(label17, "label17");
-            label17.Name = "label17";
             // 
             // label16
             // 
@@ -2345,11 +2322,6 @@
             resources.ApplyResources(label214, "label214");
             label214.Name = "label214";
             // 
-            // label215
-            // 
-            resources.ApplyResources(label215, "label215");
-            label215.Name = "label215";
-            // 
             // label216
             // 
             resources.ApplyResources(label216, "label216");
@@ -2374,16 +2346,6 @@
             // 
             resources.ApplyResources(label220, "label220");
             label220.Name = "label220";
-            // 
-            // label221
-            // 
-            resources.ApplyResources(label221, "label221");
-            label221.Name = "label221";
-            // 
-            // label222
-            // 
-            resources.ApplyResources(label222, "label222");
-            label222.Name = "label222";
             // 
             // label223
             // 
@@ -3927,6 +3889,7 @@
             this.colorTextBoxTotalDue.Properties.LookAndFeel.SkinName = "McSkin";
             this.colorTextBoxTotalDue.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.colorTextBoxTotalDue.EditValueChanged += new System.EventHandler(this.colorTextBoxTotalDue_EditValueChanged);
+            this.colorTextBoxTotalDue.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // txtContractStatus
             // 
@@ -3946,6 +3909,7 @@
             this.txtContractStatus.Properties.LookAndFeel.SkinName = "McSkin";
             this.txtContractStatus.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.txtContractStatus.EditValueChanged += new System.EventHandler(this.txtContractStatus_EditValueChanged);
+            this.txtContractStatus.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // MaturityDate
             // 
@@ -3965,6 +3929,7 @@
             this.MaturityDate.Properties.LookAndFeel.SkinName = "McSkin";
             this.MaturityDate.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.MaturityDate.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
+            this.MaturityDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // txtLastPaymentMade
             // 
@@ -3972,12 +3937,14 @@
             this.txtLastPaymentMade.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_LAST_PAYMENT_MADE", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "C2"));
             resources.ApplyResources(this.txtLastPaymentMade, "txtLastPaymentMade");
             this.txtLastPaymentMade.Name = "txtLastPaymentMade";
+            this.txtLastPaymentMade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // textBoxCheckNo
             // 
             this.textBoxCheckNo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CheckNumber", true));
             resources.ApplyResources(this.textBoxCheckNo, "textBoxCheckNo");
             this.textBoxCheckNo.Name = "textBoxCheckNo";
+            this.textBoxCheckNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // label2
             // 
@@ -3997,6 +3964,7 @@
             this.textBoxDealerCashPrice.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.VehiclebindingSource, "DealerCashPrice", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "C2"));
             resources.ApplyResources(this.textBoxDealerCashPrice, "textBoxDealerCashPrice");
             this.textBoxDealerCashPrice.Name = "textBoxDealerCashPrice";
+            this.textBoxDealerCashPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // txtPaidThrough
             // 
@@ -4004,12 +3972,15 @@
             resources.ApplyResources(this.txtPaidThrough, "txtPaidThrough");
             this.txtPaidThrough.Name = "txtPaidThrough";
             this.txtPaidThrough.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.txtPaidThrough.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            this.txtPaidThrough.Validated += new System.EventHandler(this.txtPaidThrough_Validated);
             // 
             // txtControlDate
             // 
             this.txtControlDate.AllowDrop = true;
             resources.ApplyResources(this.txtControlDate, "txtControlDate");
             this.txtControlDate.Name = "txtControlDate";
+            this.txtControlDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // txtPaidDiscount
             // 
@@ -4017,6 +3988,7 @@
             this.txtPaidDiscount.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_PAID_DISCOUNT", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "C2"));
             resources.ApplyResources(this.txtPaidDiscount, "txtPaidDiscount");
             this.txtPaidDiscount.Name = "txtPaidDiscount";
+            this.txtPaidDiscount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // txtCreditAvailable
             // 
@@ -4024,6 +3996,7 @@
             this.txtCreditAvailable.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_CREDIT_AVAILABLE", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "C2"));
             resources.ApplyResources(this.txtCreditAvailable, "txtCreditAvailable");
             this.txtCreditAvailable.Name = "txtCreditAvailable";
+            this.txtCreditAvailable.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // textBox66
             // 
@@ -4031,6 +4004,7 @@
             this.textBox66.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_CREDIT_LIMIT", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "C2"));
             resources.ApplyResources(this.textBox66, "textBox66");
             this.textBox66.Name = "textBox66";
+            this.textBox66.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // textBox67
             // 
@@ -4038,6 +4012,7 @@
             this.textBox67.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_NUMBER_OF_MONTHS", true));
             resources.ApplyResources(this.textBox67, "textBox67");
             this.textBox67.Name = "textBox67";
+            this.textBox67.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // txtRebateCode
             // 
@@ -4045,6 +4020,7 @@
             this.txtRebateCode.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_REBATE_CODE", true));
             resources.ApplyResources(this.txtRebateCode, "txtRebateCode");
             this.txtRebateCode.Name = "txtRebateCode";
+            this.txtRebateCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // textBox73
             // 
@@ -4052,6 +4028,7 @@
             this.textBox73.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_DEALER_DISC_BAL", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "C2"));
             resources.ApplyResources(this.textBox73, "textBox73");
             this.textBox73.Name = "textBox73";
+            this.textBox73.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // txtDealerDisc
             // 
@@ -4059,6 +4036,7 @@
             this.txtDealerDisc.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_DEALER_DISC", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "C2"));
             resources.ApplyResources(this.txtDealerDisc, "txtDealerDisc");
             this.txtDealerDisc.Name = "txtDealerDisc";
+            this.txtDealerDisc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // txtCustomerPayRem2
             // 
@@ -4066,6 +4044,7 @@
             this.txtCustomerPayRem2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_PAY_REM_2", true));
             resources.ApplyResources(this.txtCustomerPayRem2, "txtCustomerPayRem2");
             this.txtCustomerPayRem2.Name = "txtCustomerPayRem2";
+            this.txtCustomerPayRem2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // txtCustomerBuyout
             // 
@@ -4073,6 +4052,7 @@
             this.txtCustomerBuyout.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_BUYOUT", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "C2"));
             resources.ApplyResources(this.txtCustomerBuyout, "txtCustomerBuyout");
             this.txtCustomerBuyout.Name = "txtCustomerBuyout";
+            this.txtCustomerBuyout.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // txtUEInterest
             // 
@@ -4080,6 +4060,7 @@
             this.txtUEInterest.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_UE_INTEREST", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "0", "C2"));
             resources.ApplyResources(this.txtUEInterest, "txtUEInterest");
             this.txtUEInterest.Name = "txtUEInterest";
+            this.txtUEInterest.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // txtCustomerBalance
             // 
@@ -4087,15 +4068,19 @@
             this.txtCustomerBalance.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_BALANCE", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "C2"));
             resources.ApplyResources(this.txtCustomerBalance, "txtCustomerBalance");
             this.txtCustomerBalance.Name = "txtCustomerBalance";
+            this.txtCustomerBalance.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // txtPaidInterest
             // 
             this.txtPaidInterest.AllowDrop = true;
             resources.ApplyResources(this.txtPaidInterest, "txtPaidInterest");
             this.txtPaidInterest.Name = "txtPaidInterest";
+            this.txtPaidInterest.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // groupBox9
             // 
+            this.groupBox9.Controls.Add(this.checkEditCollectionAgent);
+            this.groupBox9.Controls.Add(this.checkEditOverideInterest);
             this.groupBox9.Controls.Add(labelFudingDate);
             this.groupBox9.Controls.Add(this.nullableDateTimePickerFundingDate);
             this.groupBox9.Controls.Add(this.checkBoxOverrideLateCharge);
@@ -4118,8 +4103,6 @@
             this.groupBox9.Controls.Add(this.txtPaymentType);
             this.groupBox9.Controls.Add(label26);
             this.groupBox9.Controls.Add(label25);
-            this.groupBox9.Controls.Add(label24);
-            this.groupBox9.Controls.Add(this.txtOverideInterest);
             this.groupBox9.Controls.Add(this.txtNoOfPaymentsMade);
             this.groupBox9.Controls.Add(label23);
             this.groupBox9.Controls.Add(label22);
@@ -4130,9 +4113,6 @@
             this.groupBox9.Controls.Add(this.txtLoan);
             this.groupBox9.Controls.Add(label19);
             this.groupBox9.Controls.Add(this.txtRegularPay);
-            this.groupBox9.Controls.Add(label18);
-            this.groupBox9.Controls.Add(label17);
-            this.groupBox9.Controls.Add(this.txtCollectionAgent);
             this.groupBox9.Controls.Add(this.txtTerm);
             this.groupBox9.Controls.Add(label16);
             this.groupBox9.Controls.Add(label15);
@@ -4146,6 +4126,54 @@
             resources.ApplyResources(this.groupBox9, "groupBox9");
             this.groupBox9.Name = "groupBox9";
             this.groupBox9.TabStop = false;
+            // 
+            // checkEditCollectionAgent
+            // 
+            this.checkEditCollectionAgent.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_CREDIT_STATUS", true));
+            resources.ApplyResources(this.checkEditCollectionAgent, "checkEditCollectionAgent");
+            this.checkEditCollectionAgent.MenuManager = this.toolbarFormManager1;
+            this.checkEditCollectionAgent.Name = "checkEditCollectionAgent";
+            this.checkEditCollectionAgent.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("checkEditCollectionAgent.Properties.Appearance.Font")));
+            this.checkEditCollectionAgent.Properties.Appearance.Options.UseFont = true;
+            this.checkEditCollectionAgent.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.checkEditCollectionAgent.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.checkEditCollectionAgent.Properties.Caption = resources.GetString("checkEditCollectionAgent.Properties.Caption");
+            this.checkEditCollectionAgent.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
+            this.checkEditCollectionAgent.Properties.CheckBoxOptions.SvgColorChecked = System.Drawing.Color.Black;
+            this.checkEditCollectionAgent.Properties.ContentAlignment = ((DevExpress.Utils.HorzAlignment)(resources.GetObject("checkEditCollectionAgent.Properties.ContentAlignment")));
+            this.checkEditCollectionAgent.Properties.GlyphAlignment = ((DevExpress.Utils.HorzAlignment)(resources.GetObject("checkEditCollectionAgent.Properties.GlyphAlignment")));
+            this.checkEditCollectionAgent.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
+            this.checkEditCollectionAgent.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.LightSteelBlue;
+            this.checkEditCollectionAgent.Properties.LookAndFeel.SkinName = "McSkin";
+            this.checkEditCollectionAgent.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.checkEditCollectionAgent.Properties.NullStyle = DevExpress.XtraEditors.Controls.StyleIndeterminate.Unchecked;
+            this.checkEditCollectionAgent.QueryCheckStateByValue += new DevExpress.XtraEditors.Controls.QueryCheckStateByValueEventHandler(this.checkEditCollectionAgent_QueryCheckStateByValue);
+            this.checkEditCollectionAgent.QueryValueByCheckState += new DevExpress.XtraEditors.Controls.QueryValueByCheckStateEventHandler(this.checkEditCollectionAgent_QueryValueByCheckState);
+            this.checkEditCollectionAgent.CheckedChanged += new System.EventHandler(this.checkEditCollectionAgent_CheckedChanged);
+            // 
+            // checkEditOverideInterest
+            // 
+            this.checkEditOverideInterest.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_INT_OVERRIDE", true));
+            resources.ApplyResources(this.checkEditOverideInterest, "checkEditOverideInterest");
+            this.checkEditOverideInterest.MenuManager = this.toolbarFormManager1;
+            this.checkEditOverideInterest.Name = "checkEditOverideInterest";
+            this.checkEditOverideInterest.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("checkEditOverideInterest.Properties.Appearance.Font")));
+            this.checkEditOverideInterest.Properties.Appearance.Options.UseFont = true;
+            this.checkEditOverideInterest.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.checkEditOverideInterest.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.checkEditOverideInterest.Properties.Caption = resources.GetString("checkEditOverideInterest.Properties.Caption");
+            this.checkEditOverideInterest.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
+            this.checkEditOverideInterest.Properties.CheckBoxOptions.SvgColorChecked = System.Drawing.Color.Black;
+            this.checkEditOverideInterest.Properties.ContentAlignment = ((DevExpress.Utils.HorzAlignment)(resources.GetObject("checkEditOverideInterest.Properties.ContentAlignment")));
+            this.checkEditOverideInterest.Properties.GlyphAlignment = ((DevExpress.Utils.HorzAlignment)(resources.GetObject("checkEditOverideInterest.Properties.GlyphAlignment")));
+            this.checkEditOverideInterest.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
+            this.checkEditOverideInterest.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.LightSteelBlue;
+            this.checkEditOverideInterest.Properties.LookAndFeel.SkinName = "McSkin";
+            this.checkEditOverideInterest.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.checkEditOverideInterest.Properties.NullStyle = DevExpress.XtraEditors.Controls.StyleIndeterminate.Unchecked;
+            this.checkEditOverideInterest.QueryCheckStateByValue += new DevExpress.XtraEditors.Controls.QueryCheckStateByValueEventHandler(this.checkEditOverideInterest_QueryCheckStateByValue);
+            this.checkEditOverideInterest.QueryValueByCheckState += new DevExpress.XtraEditors.Controls.QueryValueByCheckStateEventHandler(this.checkEditOverideInterest_QueryValueByCheckState);
+            this.checkEditOverideInterest.CheckedChanged += new System.EventHandler(this.checkEditOverideInterest_CheckedChanged);
             // 
             // nullableDateTimePickerFundingDate
             // 
@@ -4164,6 +4192,7 @@
             this.nullableDateTimePickerFundingDate.Properties.LookAndFeel.SkinName = "McSkin";
             this.nullableDateTimePickerFundingDate.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.nullableDateTimePickerFundingDate.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
+            this.nullableDateTimePickerFundingDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // checkBoxOverrideLateCharge
             // 
@@ -4171,6 +4200,7 @@
             this.checkBoxOverrideLateCharge.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.cUSTOMERBindingSource, "OverrideLateCharge", true));
             this.checkBoxOverrideLateCharge.Name = "checkBoxOverrideLateCharge";
             this.checkBoxOverrideLateCharge.UseVisualStyleBackColor = true;
+            this.checkBoxOverrideLateCharge.CheckedChanged += new System.EventHandler(this.checkBoxOverrideLateCharge_CheckedChanged);
             // 
             // DateTimePickerContractDate
             // 
@@ -4189,12 +4219,15 @@
             this.DateTimePickerContractDate.Properties.LookAndFeel.SkinName = "McSkin";
             this.DateTimePickerContractDate.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.DateTimePickerContractDate.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
+            this.DateTimePickerContractDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            this.DateTimePickerContractDate.Validated += new System.EventHandler(this.DateTimePickerContractDate_Validated_1);
             // 
             // checkBoxSimple
             // 
             resources.ApplyResources(this.checkBoxSimple, "checkBoxSimple");
             this.checkBoxSimple.Name = "checkBoxSimple";
             this.checkBoxSimple.UseVisualStyleBackColor = true;
+            this.checkBoxSimple.CheckedChanged += new System.EventHandler(this.checkBoxSimple_CheckedChanged);
             // 
             // txtFirstPayDate
             // 
@@ -4214,6 +4247,8 @@
             this.txtFirstPayDate.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.txtFirstPayDate.Properties.UseAdvancedMode = DevExpress.Utils.DefaultBoolean.True;
             this.txtFirstPayDate.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
+            this.txtFirstPayDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            this.txtFirstPayDate.Validated += new System.EventHandler(this.txtFirstPayDate_Validated);
             // 
             // txtPaymentDate
             // 
@@ -4232,6 +4267,7 @@
             this.txtPaymentDate.Properties.LookAndFeel.SkinName = "McSkin";
             this.txtPaymentDate.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.txtPaymentDate.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
+            this.txtPaymentDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // textBox18
             // 
@@ -4256,6 +4292,10 @@
             resources.GetString("comboBoxDayDue.Items4"),
             resources.GetString("comboBoxDayDue.Items5")});
             this.comboBoxDayDue.Name = "comboBoxDayDue";
+            this.comboBoxDayDue.SelectedIndexChanged += new System.EventHandler(this.comboBoxDayDue_SelectedIndexChanged);
+            this.comboBoxDayDue.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            this.comboBoxDayDue.Validating += new System.ComponentModel.CancelEventHandler(this.comboBoxDayDue_Validating);
+            this.comboBoxDayDue.Validated += new System.EventHandler(this.comboBoxDayDue_Validated);
             // 
             // txtAPR
             // 
@@ -4263,6 +4303,8 @@
             this.txtAPR.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_ANNUAL_PERCENTAGE_RATE", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N4"));
             resources.ApplyResources(this.txtAPR, "txtAPR");
             this.txtAPR.Name = "txtAPR";
+            this.txtAPR.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            this.txtAPR.Validated += new System.EventHandler(this.txtAPR_Validated);
             // 
             // txtLateChargeBal
             // 
@@ -4270,6 +4312,7 @@
             this.txtLateChargeBal.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_LATE_CHARGE_BAL", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "0", "C2"));
             resources.ApplyResources(this.txtLateChargeBal, "txtLateChargeBal");
             this.txtLateChargeBal.Name = "txtLateChargeBal";
+            this.txtLateChargeBal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // txtPartialPayment
             // 
@@ -4277,6 +4320,7 @@
             this.txtPartialPayment.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "PartialPayment", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "C2"));
             resources.ApplyResources(this.txtPartialPayment, "txtPartialPayment");
             this.txtPartialPayment.Name = "txtPartialPayment";
+            this.txtPartialPayment.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // txtLateCharge
             // 
@@ -4284,6 +4328,7 @@
             this.txtLateCharge.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_LATE_CHARGE", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "C2"));
             resources.ApplyResources(this.txtLateCharge, "txtLateCharge");
             this.txtLateCharge.Name = "txtLateCharge";
+            this.txtLateCharge.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // txtPaymentCode
             // 
@@ -4291,6 +4336,7 @@
             this.txtPaymentCode.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_PAYMENT_CODE", true));
             resources.ApplyResources(this.txtPaymentCode, "txtPaymentCode");
             this.txtPaymentCode.Name = "txtPaymentCode";
+            this.txtPaymentCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // txtPaymentType
             // 
@@ -4298,14 +4344,7 @@
             this.txtPaymentType.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_PAYMENT_TYPE", true));
             resources.ApplyResources(this.txtPaymentType, "txtPaymentType");
             this.txtPaymentType.Name = "txtPaymentType";
-            // 
-            // txtOverideInterest
-            // 
-            this.txtOverideInterest.AllowDrop = true;
-            this.txtOverideInterest.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtOverideInterest.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_INT_OVERRIDE", true));
-            resources.ApplyResources(this.txtOverideInterest, "txtOverideInterest");
-            this.txtOverideInterest.Name = "txtOverideInterest";
+            this.txtPaymentType.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // txtNoOfPaymentsMade
             // 
@@ -4313,6 +4352,7 @@
             this.txtNoOfPaymentsMade.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_NO_OF_PAYMENTS_MADE", true));
             resources.ApplyResources(this.txtNoOfPaymentsMade, "txtNoOfPaymentsMade");
             this.txtNoOfPaymentsMade.Name = "txtNoOfPaymentsMade";
+            this.txtNoOfPaymentsMade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // txtCASH
             // 
@@ -4320,6 +4360,8 @@
             this.txtCASH.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_LOAN_CASH", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "C2"));
             resources.ApplyResources(this.txtCASH, "txtCASH");
             this.txtCASH.Name = "txtCASH";
+            this.txtCASH.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            this.txtCASH.Validated += new System.EventHandler(this.txtCASH_Validated);
             // 
             // txtLoanInterest
             // 
@@ -4327,6 +4369,7 @@
             this.txtLoanInterest.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_LOAN_INTEREST", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "C2"));
             resources.ApplyResources(this.txtLoanInterest, "txtLoanInterest");
             this.txtLoanInterest.Name = "txtLoanInterest";
+            this.txtLoanInterest.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // txtLoan
             // 
@@ -4334,6 +4377,7 @@
             this.txtLoan.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_LOAN_AMOUNT", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "C2"));
             resources.ApplyResources(this.txtLoan, "txtLoan");
             this.txtLoan.Name = "txtLoan";
+            this.txtLoan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // txtRegularPay
             // 
@@ -4341,14 +4385,8 @@
             this.txtRegularPay.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_REGULAR_AMOUNT", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "C2"));
             resources.ApplyResources(this.txtRegularPay, "txtRegularPay");
             this.txtRegularPay.Name = "txtRegularPay";
-            // 
-            // txtCollectionAgent
-            // 
-            this.txtCollectionAgent.AllowDrop = true;
-            this.txtCollectionAgent.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtCollectionAgent.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_CREDIT_STATUS", true));
-            resources.ApplyResources(this.txtCollectionAgent, "txtCollectionAgent");
-            this.txtCollectionAgent.Name = "txtCollectionAgent";
+            this.txtRegularPay.TextChanged += new System.EventHandler(this.txtRegularPay_Validated);
+            this.txtRegularPay.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // txtTerm
             // 
@@ -4356,6 +4394,8 @@
             this.txtTerm.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_TERM", true));
             resources.ApplyResources(this.txtTerm, "txtTerm");
             this.txtTerm.Name = "txtTerm";
+            this.txtTerm.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            this.txtTerm.Validated += new System.EventHandler(this.txtTerm_Validated);
             // 
             // textBox15
             // 
@@ -4532,9 +4572,11 @@
             this.checkBoxFullRecourse.MenuManager = this.toolbarFormManager1;
             this.checkBoxFullRecourse.Name = "checkBoxFullRecourse";
             this.checkBoxFullRecourse.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("checkBoxFullRecourse.Properties.Appearance.Font")));
-            this.checkBoxFullRecourse.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(70)))), ((int)(((byte)(68)))));
+            this.checkBoxFullRecourse.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
             this.checkBoxFullRecourse.Properties.Appearance.Options.UseFont = true;
             this.checkBoxFullRecourse.Properties.Appearance.Options.UseForeColor = true;
+            this.checkBoxFullRecourse.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.checkBoxFullRecourse.Properties.AppearanceDisabled.Options.UseForeColor = true;
             this.checkBoxFullRecourse.Properties.Caption = resources.GetString("checkBoxFullRecourse.Properties.Caption");
             this.checkBoxFullRecourse.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
             this.checkBoxFullRecourse.Properties.CheckBoxOptions.SvgColorChecked = System.Drawing.Color.Red;
@@ -6040,6 +6082,8 @@
             // 
             // groupBox11
             // 
+            this.groupBox11.Controls.Add(this.checkEditCollectionAgentHistory);
+            this.groupBox11.Controls.Add(this.checkEditOverideInterestHistory);
             this.groupBox11.Controls.Add(this.checkBoxFullRecourseHist);
             this.groupBox11.Controls.Add(this.nullableDateTimePickerFirstPayDate);
             this.groupBox11.Controls.Add(this.nullableDateTimePickerPayDate);
@@ -6073,8 +6117,6 @@
             this.groupBox11.Controls.Add(this.textBox29);
             this.groupBox11.Controls.Add(label213);
             this.groupBox11.Controls.Add(label214);
-            this.groupBox11.Controls.Add(label215);
-            this.groupBox11.Controls.Add(this.textBox30);
             this.groupBox11.Controls.Add(label216);
             this.groupBox11.Controls.Add(label217);
             this.groupBox11.Controls.Add(this.textBox32);
@@ -6084,9 +6126,6 @@
             this.groupBox11.Controls.Add(this.textBox34);
             this.groupBox11.Controls.Add(label220);
             this.groupBox11.Controls.Add(this.textBox35);
-            this.groupBox11.Controls.Add(label221);
-            this.groupBox11.Controls.Add(label222);
-            this.groupBox11.Controls.Add(this.textBox36);
             this.groupBox11.Controls.Add(this.textBox37);
             this.groupBox11.Controls.Add(label223);
             this.groupBox11.Controls.Add(label224);
@@ -6096,6 +6135,54 @@
             this.groupBox11.Name = "groupBox11";
             this.groupBox11.TabStop = false;
             // 
+            // checkEditCollectionAgentHistory
+            // 
+            this.checkEditCollectionAgentHistory.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_CREDIT_STATUS", true));
+            resources.ApplyResources(this.checkEditCollectionAgentHistory, "checkEditCollectionAgentHistory");
+            this.checkEditCollectionAgentHistory.MenuManager = this.toolbarFormManager1;
+            this.checkEditCollectionAgentHistory.Name = "checkEditCollectionAgentHistory";
+            this.checkEditCollectionAgentHistory.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("checkEditCollectionAgentHistory.Properties.Appearance.Font")));
+            this.checkEditCollectionAgentHistory.Properties.Appearance.Options.UseFont = true;
+            this.checkEditCollectionAgentHistory.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.checkEditCollectionAgentHistory.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.checkEditCollectionAgentHistory.Properties.Caption = resources.GetString("checkEditCollectionAgentHistory.Properties.Caption");
+            this.checkEditCollectionAgentHistory.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
+            this.checkEditCollectionAgentHistory.Properties.CheckBoxOptions.SvgColorChecked = System.Drawing.Color.Black;
+            this.checkEditCollectionAgentHistory.Properties.ContentAlignment = ((DevExpress.Utils.HorzAlignment)(resources.GetObject("checkEditCollectionAgentHistory.Properties.ContentAlignment")));
+            this.checkEditCollectionAgentHistory.Properties.GlyphAlignment = ((DevExpress.Utils.HorzAlignment)(resources.GetObject("checkEditCollectionAgentHistory.Properties.GlyphAlignment")));
+            this.checkEditCollectionAgentHistory.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
+            this.checkEditCollectionAgentHistory.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.LightSteelBlue;
+            this.checkEditCollectionAgentHistory.Properties.LookAndFeel.SkinName = "McSkin";
+            this.checkEditCollectionAgentHistory.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.checkEditCollectionAgentHistory.Properties.NullStyle = DevExpress.XtraEditors.Controls.StyleIndeterminate.Unchecked;
+            this.checkEditCollectionAgentHistory.QueryCheckStateByValue += new DevExpress.XtraEditors.Controls.QueryCheckStateByValueEventHandler(this.checkEditCollectionAgentHistory_QueryCheckStateByValue);
+            this.checkEditCollectionAgentHistory.QueryValueByCheckState += new DevExpress.XtraEditors.Controls.QueryValueByCheckStateEventHandler(this.checkEditCollectionAgentHistory_QueryValueByCheckState);
+            this.checkEditCollectionAgentHistory.CheckedChanged += new System.EventHandler(this.checkEditCollectionAgentHistory_CheckedChanged);
+            // 
+            // checkEditOverideInterestHistory
+            // 
+            this.checkEditOverideInterestHistory.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_INT_OVERRIDE", true));
+            resources.ApplyResources(this.checkEditOverideInterestHistory, "checkEditOverideInterestHistory");
+            this.checkEditOverideInterestHistory.MenuManager = this.toolbarFormManager1;
+            this.checkEditOverideInterestHistory.Name = "checkEditOverideInterestHistory";
+            this.checkEditOverideInterestHistory.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("checkEditOverideInterestHistory.Properties.Appearance.Font")));
+            this.checkEditOverideInterestHistory.Properties.Appearance.Options.UseFont = true;
+            this.checkEditOverideInterestHistory.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.checkEditOverideInterestHistory.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.checkEditOverideInterestHistory.Properties.Caption = resources.GetString("checkEditOverideInterestHistory.Properties.Caption");
+            this.checkEditOverideInterestHistory.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
+            this.checkEditOverideInterestHistory.Properties.CheckBoxOptions.SvgColorChecked = System.Drawing.Color.Black;
+            this.checkEditOverideInterestHistory.Properties.ContentAlignment = ((DevExpress.Utils.HorzAlignment)(resources.GetObject("checkEditOverideInterestHistory.Properties.ContentAlignment")));
+            this.checkEditOverideInterestHistory.Properties.GlyphAlignment = ((DevExpress.Utils.HorzAlignment)(resources.GetObject("checkEditOverideInterestHistory.Properties.GlyphAlignment")));
+            this.checkEditOverideInterestHistory.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
+            this.checkEditOverideInterestHistory.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.LightSteelBlue;
+            this.checkEditOverideInterestHistory.Properties.LookAndFeel.SkinName = "McSkin";
+            this.checkEditOverideInterestHistory.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.checkEditOverideInterestHistory.Properties.NullStyle = DevExpress.XtraEditors.Controls.StyleIndeterminate.Unchecked;
+            this.checkEditOverideInterestHistory.QueryCheckStateByValue += new DevExpress.XtraEditors.Controls.QueryCheckStateByValueEventHandler(this.checkEditOverideInterestHistory_QueryCheckStateByValue);
+            this.checkEditOverideInterestHistory.QueryValueByCheckState += new DevExpress.XtraEditors.Controls.QueryValueByCheckStateEventHandler(this.checkEditOverideInterestHistory_QueryValueByCheckState);
+            this.checkEditOverideInterestHistory.CheckedChanged += new System.EventHandler(this.checkEditOverideInterestHistory_CheckedChanged);
+            // 
             // checkBoxFullRecourseHist
             // 
             this.checkBoxFullRecourseHist.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "IsFullRecourse", true));
@@ -6103,7 +6190,7 @@
             this.checkBoxFullRecourseHist.MenuManager = this.toolbarFormManager1;
             this.checkBoxFullRecourseHist.Name = "checkBoxFullRecourseHist";
             this.checkBoxFullRecourseHist.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("checkBoxFullRecourseHist.Properties.Appearance.Font")));
-            this.checkBoxFullRecourseHist.Properties.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(70)))), ((int)(((byte)(68)))));
+            this.checkBoxFullRecourseHist.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
             this.checkBoxFullRecourseHist.Properties.Appearance.Options.UseFont = true;
             this.checkBoxFullRecourseHist.Properties.Appearance.Options.UseForeColor = true;
             this.checkBoxFullRecourseHist.Properties.Caption = resources.GetString("checkBoxFullRecourseHist.Properties.Caption");
@@ -6293,14 +6380,6 @@
             this.textBox29.Name = "textBox29";
             this.textBox29.ReadOnly = true;
             // 
-            // textBox30
-            // 
-            this.textBox30.AllowDrop = true;
-            this.textBox30.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_INT_OVERRIDE", true));
-            resources.ApplyResources(this.textBox30, "textBox30");
-            this.textBox30.Name = "textBox30";
-            this.textBox30.ReadOnly = true;
-            // 
             // textBox32
             // 
             this.textBox32.AllowDrop = true;
@@ -6332,14 +6411,6 @@
             resources.ApplyResources(this.textBox35, "textBox35");
             this.textBox35.Name = "textBox35";
             this.textBox35.ReadOnly = true;
-            // 
-            // textBox36
-            // 
-            this.textBox36.AllowDrop = true;
-            this.textBox36.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_CREDIT_STATUS", true));
-            resources.ApplyResources(this.textBox36, "textBox36");
-            this.textBox36.Name = "textBox36";
-            this.textBox36.ReadOnly = true;
             // 
             // textBox37
             // 
@@ -6457,7 +6528,7 @@
             this.colCUSTHIST_PAYMENT_RCV.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.colCUSTHIST_PAYMENT_RCV.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             resources.ApplyResources(this.colCUSTHIST_PAYMENT_RCV, "colCUSTHIST_PAYMENT_RCV");
-            this.colCUSTHIST_PAYMENT_RCV.DisplayFormat.FormatString = "$#.00;($#.00); ";
+            this.colCUSTHIST_PAYMENT_RCV.DisplayFormat.FormatString = "c2";
             this.colCUSTHIST_PAYMENT_RCV.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colCUSTHIST_PAYMENT_RCV.FieldName = "CUSTHIST_PAYMENT_RCV";
             this.colCUSTHIST_PAYMENT_RCV.Name = "colCUSTHIST_PAYMENT_RCV";
@@ -6466,6 +6537,8 @@
             // 
             this.colCUSTHIST_BALANCE.AppearanceCell.Font = ((System.Drawing.Font)(resources.GetObject("colCUSTHIST_BALANCE.AppearanceCell.Font")));
             this.colCUSTHIST_BALANCE.AppearanceCell.Options.UseFont = true;
+            this.colCUSTHIST_BALANCE.AppearanceCell.Options.UseTextOptions = true;
+            this.colCUSTHIST_BALANCE.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.colCUSTHIST_BALANCE.AppearanceHeader.Font = ((System.Drawing.Font)(resources.GetObject("colCUSTHIST_BALANCE.AppearanceHeader.Font")));
             this.colCUSTHIST_BALANCE.AppearanceHeader.Options.UseFont = true;
             this.colCUSTHIST_BALANCE.AppearanceHeader.Options.UseTextOptions = true;
@@ -6473,7 +6546,7 @@
             this.colCUSTHIST_BALANCE.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.colCUSTHIST_BALANCE.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             resources.ApplyResources(this.colCUSTHIST_BALANCE, "colCUSTHIST_BALANCE");
-            this.colCUSTHIST_BALANCE.DisplayFormat.FormatString = "$#.00;($#.00); ";
+            this.colCUSTHIST_BALANCE.DisplayFormat.FormatString = "c2";
             this.colCUSTHIST_BALANCE.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colCUSTHIST_BALANCE.FieldName = "CUSTHIST_BALANCE";
             this.colCUSTHIST_BALANCE.Name = "colCUSTHIST_BALANCE";
@@ -6489,7 +6562,7 @@
             this.colCUSTHIST_CONTRACT_STATUS.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.colCUSTHIST_CONTRACT_STATUS.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             resources.ApplyResources(this.colCUSTHIST_CONTRACT_STATUS, "colCUSTHIST_CONTRACT_STATUS");
-            this.colCUSTHIST_CONTRACT_STATUS.DisplayFormat.FormatString = "$#.00;($#.00); ";
+            this.colCUSTHIST_CONTRACT_STATUS.DisplayFormat.FormatString = "c2";
             this.colCUSTHIST_CONTRACT_STATUS.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colCUSTHIST_CONTRACT_STATUS.FieldName = "CUSTHIST_CONTRACT_STATUS";
             this.colCUSTHIST_CONTRACT_STATUS.Name = "colCUSTHIST_CONTRACT_STATUS";
@@ -6505,7 +6578,7 @@
             this.colCUSTHIST_LATE_CHARGE_BAL.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.colCUSTHIST_LATE_CHARGE_BAL.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             resources.ApplyResources(this.colCUSTHIST_LATE_CHARGE_BAL, "colCUSTHIST_LATE_CHARGE_BAL");
-            this.colCUSTHIST_LATE_CHARGE_BAL.DisplayFormat.FormatString = "$#.00;($#.00); ";
+            this.colCUSTHIST_LATE_CHARGE_BAL.DisplayFormat.FormatString = "c2";
             this.colCUSTHIST_LATE_CHARGE_BAL.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colCUSTHIST_LATE_CHARGE_BAL.FieldName = "CUSTHIST_LATE_CHARGE_BAL";
             this.colCUSTHIST_LATE_CHARGE_BAL.Name = "colCUSTHIST_LATE_CHARGE_BAL";
@@ -6521,7 +6594,7 @@
             this.colPartialPayment.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.colPartialPayment.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             resources.ApplyResources(this.colPartialPayment, "colPartialPayment");
-            this.colPartialPayment.DisplayFormat.FormatString = "$#.00;($#.00); ";
+            this.colPartialPayment.DisplayFormat.FormatString = "c2";
             this.colPartialPayment.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colPartialPayment.FieldName = "PartialPayment";
             this.colPartialPayment.Name = "colPartialPayment";
@@ -6537,9 +6610,7 @@
             this.colCUSTHIST_PAID_THRU.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.colCUSTHIST_PAID_THRU.AppearanceHeader.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             resources.ApplyResources(this.colCUSTHIST_PAID_THRU, "colCUSTHIST_PAID_THRU");
-            this.colCUSTHIST_PAID_THRU.DisplayFormat.FormatString = "00/00";
-            this.colCUSTHIST_PAID_THRU.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
-            this.colCUSTHIST_PAID_THRU.FieldName = "CUSTHIST_PAID_THRU";
+            this.colCUSTHIST_PAID_THRU.FieldName = "SHORT_PAID_THRU";
             this.colCUSTHIST_PAID_THRU.Name = "colCUSTHIST_PAID_THRU";
             // 
             // colCUSTHIST_PAY_REM_1
@@ -6637,16 +6708,26 @@
             // 
             // cOMMENTgridView
             // 
+            this.cOMMENTgridView.Appearance.Empty.Font = ((System.Drawing.Font)(resources.GetObject("cOMMENTgridView.Appearance.Empty.Font")));
             this.cOMMENTgridView.Appearance.Empty.Options.UseFont = true;
             this.cOMMENTgridView.Appearance.EvenRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.cOMMENTgridView.Appearance.EvenRow.Font = ((System.Drawing.Font)(resources.GetObject("cOMMENTgridView.Appearance.EvenRow.Font")));
             this.cOMMENTgridView.Appearance.EvenRow.Options.UseBackColor = true;
             this.cOMMENTgridView.Appearance.EvenRow.Options.UseFont = true;
             this.cOMMENTgridView.Appearance.EvenRow.Options.UseForeColor = true;
+            this.cOMMENTgridView.Appearance.OddRow.Font = ((System.Drawing.Font)(resources.GetObject("cOMMENTgridView.Appearance.OddRow.Font")));
             this.cOMMENTgridView.Appearance.OddRow.Options.UseBackColor = true;
             this.cOMMENTgridView.Appearance.OddRow.Options.UseFont = true;
+            this.cOMMENTgridView.Appearance.Preview.Font = ((System.Drawing.Font)(resources.GetObject("cOMMENTgridView.Appearance.Preview.Font")));
+            this.cOMMENTgridView.Appearance.Preview.Options.UseFont = true;
+            this.cOMMENTgridView.Appearance.Row.Font = ((System.Drawing.Font)(resources.GetObject("cOMMENTgridView.Appearance.Row.Font")));
             this.cOMMENTgridView.Appearance.Row.Options.UseFont = true;
+            this.cOMMENTgridView.Appearance.SelectedRow.Font = ((System.Drawing.Font)(resources.GetObject("cOMMENTgridView.Appearance.SelectedRow.Font")));
             this.cOMMENTgridView.Appearance.SelectedRow.Options.UseFont = true;
+            this.cOMMENTgridView.Appearance.TopNewRow.Font = ((System.Drawing.Font)(resources.GetObject("cOMMENTgridView.Appearance.TopNewRow.Font")));
             this.cOMMENTgridView.Appearance.TopNewRow.Options.UseFont = true;
+            this.cOMMENTgridView.Appearance.TopNewRow.Options.UseTextOptions = true;
+            this.cOMMENTgridView.Appearance.TopNewRow.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.cOMMENTgridView.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colDATE,
             this.colThumb,
@@ -8244,7 +8325,6 @@
             this.LookAndFeel.SkinName = "McSkin";
             this.LookAndFeel.UseDefaultLookAndFeel = false;
             this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "frmNewCustMaint";
             this.TopMost = true;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmCustMaint_FormClosing);
@@ -8324,6 +8404,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.MaturityDate.Properties)).EndInit();
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEditCollectionAgent.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEditOverideInterest.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerFundingDate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerFundingDate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DateTimePickerContractDate.Properties.CalendarTimeProperties)).EndInit();
@@ -8397,6 +8479,8 @@
             this.groupBox18.PerformLayout();
             this.groupBox11.ResumeLayout(false);
             this.groupBox11.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEditCollectionAgentHistory.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEditOverideInterestHistory.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkBoxFullRecourseHist.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerFirstPayDate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerFirstPayDate.Properties)).EndInit();
@@ -8894,13 +8978,11 @@
         private System.Windows.Forms.TextBox txtLateCharge;
         private System.Windows.Forms.TextBox txtPaymentCode;
         private System.Windows.Forms.TextBox txtPaymentType;
-        private System.Windows.Forms.TextBox txtOverideInterest;
         private System.Windows.Forms.TextBox txtNoOfPaymentsMade;
         private System.Windows.Forms.TextBox txtCASH;
         private System.Windows.Forms.TextBox txtLoanInterest;
         private System.Windows.Forms.TextBox txtLoan;
         private System.Windows.Forms.TextBox txtRegularPay;
-        private System.Windows.Forms.TextBox txtCollectionAgent;
         private System.Windows.Forms.TextBox txtTerm;
         private System.Windows.Forms.TextBox textBox15;
         private System.Windows.Forms.TextBox textBox16;
@@ -8953,12 +9035,10 @@
         private System.Windows.Forms.TextBox textBox27;
         private System.Windows.Forms.TextBox textBox28;
         private System.Windows.Forms.TextBox textBox29;
-        private System.Windows.Forms.TextBox textBox30;
         private System.Windows.Forms.TextBox textBox32;
         private System.Windows.Forms.TextBox textBox33;
         private System.Windows.Forms.TextBox textBox34;
         private System.Windows.Forms.TextBox textBox35;
-        private System.Windows.Forms.TextBox textBox36;
         private System.Windows.Forms.TextBox textBox37;
         private System.Windows.Forms.TextBox textBox31;
         private DevExpress.XtraEditors.DateEdit nullableDateTimePickerHistContractDate;
@@ -9058,6 +9138,10 @@
         private DevExpress.XtraGrid.Columns.GridColumn colidRepo;
         private DevExpress.XtraEditors.TextEdit textEditBankMonthlyPayment;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraEditors.CheckEdit checkEditOverideInterest;
+        private DevExpress.XtraEditors.CheckEdit checkEditCollectionAgent;
+        private DevExpress.XtraEditors.CheckEdit checkEditCollectionAgentHistory;
+        private DevExpress.XtraEditors.CheckEdit checkEditOverideInterestHistory;
     }
 }
 
