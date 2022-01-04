@@ -12736,22 +12736,22 @@ FROM     PaymentDistribution</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="ReceivedContract" msprop:Generator_ColumnPropNameInRow="ReceivedContract" msprop:Generator_ColumnPropNameInTable="ReceivedContractColumn" msprop:Generator_ColumnVarNameInTable="columnReceivedContract" msprop:Generator_UserColumnName="ReceivedContract" type="xs:boolean" minOccurs="0" />
-              <xs:element name="DateContractReceived" msprop:Generator_ColumnPropNameInRow="DateContractReceived" msprop:Generator_ColumnPropNameInTable="DateContractReceivedColumn" msprop:Generator_ColumnVarNameInTable="columnDateContractReceived" msprop:Generator_UserColumnName="DateContractReceived" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="TotalDue" msprop:Generator_ColumnPropNameInRow="TotalDue" msprop:Generator_ColumnPropNameInTable="TotalDueColumn" msprop:Generator_ColumnVarNameInTable="columnTotalDue" msprop:Generator_UserColumnName="TotalDue" type="xs:decimal" minOccurs="0" />
-              <xs:element name="COSCellValid" msprop:Generator_ColumnPropNameInRow="COSCellValid" msprop:Generator_ColumnPropNameInTable="COSCellValidColumn" msprop:Generator_ColumnVarNameInTable="columnCOSCellValid" msprop:Generator_UserColumnName="COSCellValid" type="xs:boolean" minOccurs="0" />
-              <xs:element name="COSDNTAcct" msprop:Generator_ColumnPropNameInRow="COSDNTAcct" msprop:Generator_ColumnPropNameInTable="COSDNTAcctColumn" msprop:Generator_ColumnVarNameInTable="columnCOSDNTAcct" msprop:Generator_UserColumnName="COSDNTAcct" type="xs:boolean" minOccurs="0" />
-              <xs:element name="COSDNTMktg" msprop:Generator_ColumnPropNameInRow="COSDNTMktg" msprop:Generator_ColumnPropNameInTable="COSDNTMktgColumn" msprop:Generator_ColumnVarNameInTable="columnCOSDNTMktg" msprop:Generator_UserColumnName="COSDNTMktg" type="xs:boolean" minOccurs="0" />
-              <xs:element name="COSTAcct" msprop:Generator_ColumnPropNameInRow="COSTAcct" msprop:Generator_ColumnPropNameInTable="COSTAcctColumn" msprop:Generator_ColumnVarNameInTable="columnCOSTAcct" msprop:Generator_UserColumnName="COSTAcct" type="xs:boolean" minOccurs="0" />
-              <xs:element name="COSTBoth" msprop:Generator_ColumnPropNameInRow="COSTBoth" msprop:Generator_ColumnPropNameInTable="COSTBothColumn" msprop:Generator_ColumnVarNameInTable="columnCOSTBoth" msprop:Generator_UserColumnName="COSTBoth" type="xs:boolean" minOccurs="0" />
-              <xs:element name="COSTPin" msprop:Generator_ColumnPropNameInRow="COSTPin" msprop:Generator_ColumnPropNameInTable="COSTPinColumn" msprop:Generator_ColumnVarNameInTable="columnCOSTPin" msprop:Generator_UserColumnName="COSTPin" minOccurs="0">
+              <xs:element name="ReceivedContract" msprop:Generator_UserColumnName="ReceivedContract" msprop:Generator_ColumnPropNameInTable="ReceivedContractColumn" msprop:Generator_ColumnPropNameInRow="ReceivedContract" msprop:Generator_ColumnVarNameInTable="columnReceivedContract" type="xs:boolean" minOccurs="0" />
+              <xs:element name="DateContractReceived" msprop:Generator_UserColumnName="DateContractReceived" msprop:Generator_ColumnPropNameInTable="DateContractReceivedColumn" msprop:Generator_ColumnPropNameInRow="DateContractReceived" msprop:Generator_ColumnVarNameInTable="columnDateContractReceived" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="TotalDue" msprop:Generator_UserColumnName="TotalDue" msprop:Generator_ColumnPropNameInTable="TotalDueColumn" msprop:Generator_ColumnPropNameInRow="TotalDue" msprop:Generator_ColumnVarNameInTable="columnTotalDue" type="xs:decimal" minOccurs="0" />
+              <xs:element name="COSCellValid" msprop:Generator_UserColumnName="COSCellValid" msprop:Generator_ColumnPropNameInTable="COSCellValidColumn" msprop:Generator_ColumnPropNameInRow="COSCellValid" msprop:Generator_ColumnVarNameInTable="columnCOSCellValid" type="xs:boolean" minOccurs="0" />
+              <xs:element name="COSDNTAcct" msprop:Generator_UserColumnName="COSDNTAcct" msprop:Generator_ColumnPropNameInTable="COSDNTAcctColumn" msprop:Generator_ColumnPropNameInRow="COSDNTAcct" msprop:Generator_ColumnVarNameInTable="columnCOSDNTAcct" type="xs:boolean" minOccurs="0" />
+              <xs:element name="COSDNTMktg" msprop:Generator_UserColumnName="COSDNTMktg" msprop:Generator_ColumnPropNameInTable="COSDNTMktgColumn" msprop:Generator_ColumnPropNameInRow="COSDNTMktg" msprop:Generator_ColumnVarNameInTable="columnCOSDNTMktg" type="xs:boolean" minOccurs="0" />
+              <xs:element name="COSTAcct" msprop:Generator_UserColumnName="COSTAcct" msprop:Generator_ColumnPropNameInTable="COSTAcctColumn" msprop:Generator_ColumnPropNameInRow="COSTAcct" msprop:Generator_ColumnVarNameInTable="columnCOSTAcct" type="xs:boolean" minOccurs="0" />
+              <xs:element name="COSTBoth" msprop:Generator_UserColumnName="COSTBoth" msprop:Generator_ColumnPropNameInTable="COSTBothColumn" msprop:Generator_ColumnPropNameInRow="COSTBoth" msprop:Generator_ColumnVarNameInTable="columnCOSTBoth" type="xs:boolean" minOccurs="0" />
+              <xs:element name="COSTPin" msprop:Generator_UserColumnName="COSTPin" msprop:Generator_ColumnPropNameInTable="COSTPinColumn" msprop:Generator_ColumnPropNameInRow="COSTPin" msprop:Generator_ColumnVarNameInTable="columnCOSTPin" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="10" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="COSTConfirmed" msprop:Generator_ColumnPropNameInRow="COSTConfirmed" msprop:Generator_ColumnPropNameInTable="COSTConfirmedColumn" msprop:Generator_ColumnVarNameInTable="columnCOSTConfirmed" msprop:Generator_UserColumnName="COSTConfirmed" type="xs:boolean" minOccurs="0" />
+              <xs:element name="COSTConfirmed" msprop:Generator_UserColumnName="COSTConfirmed" msprop:Generator_ColumnPropNameInTable="COSTConfirmedColumn" msprop:Generator_ColumnPropNameInRow="COSTConfirmed" msprop:Generator_ColumnVarNameInTable="columnCOSTConfirmed" type="xs:boolean" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -13573,20 +13573,20 @@ FROM     PaymentDistribution</CommandText>
               </xs:element>
               <xs:element name="ReceivedContract" msprop:Generator_ColumnPropNameInTable="ReceivedContractColumn" msprop:Generator_ColumnPropNameInRow="ReceivedContract" msprop:Generator_UserColumnName="ReceivedContract" msprop:Generator_ColumnVarNameInTable="columnReceivedContract" type="xs:boolean" default="false" minOccurs="0" />
               <xs:element name="DateContractReceived" msprop:Generator_ColumnPropNameInTable="DateContractReceivedColumn" msprop:Generator_ColumnPropNameInRow="DateContractReceived" msprop:Generator_UserColumnName="DateContractReceived" msprop:Generator_ColumnVarNameInTable="columnDateContractReceived" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="TotalDue" msdata:ReadOnly="true" msprop:Generator_UserColumnName="TotalDue" msprop:Generator_ColumnPropNameInTable="TotalDueColumn" msprop:Generator_ColumnPropNameInRow="TotalDue" msprop:Generator_ColumnVarNameInTable="columnTotalDue" type="xs:decimal" minOccurs="0" />
-              <xs:element name="COSCellValid" msprop:Generator_UserColumnName="COSCellValid" msprop:Generator_ColumnPropNameInTable="COSCellValidColumn" msprop:Generator_ColumnPropNameInRow="COSCellValid" msprop:Generator_ColumnVarNameInTable="columnCOSCellValid" type="xs:boolean" default="false" minOccurs="0" />
-              <xs:element name="COSDNTAcct" msprop:Generator_UserColumnName="COSDNTAcct" msprop:Generator_ColumnPropNameInTable="COSDNTAcctColumn" msprop:Generator_ColumnPropNameInRow="COSDNTAcct" msprop:Generator_ColumnVarNameInTable="columnCOSDNTAcct" type="xs:boolean" default="false" minOccurs="0" />
-              <xs:element name="COSDNTMktg" msprop:Generator_UserColumnName="COSDNTMktg" msprop:Generator_ColumnPropNameInTable="COSDNTMktgColumn" msprop:Generator_ColumnPropNameInRow="COSDNTMktg" msprop:Generator_ColumnVarNameInTable="columnCOSDNTMktg" type="xs:boolean" default="false" minOccurs="0" />
-              <xs:element name="COSTAcct" msprop:Generator_UserColumnName="COSTAcct" msprop:Generator_ColumnPropNameInTable="COSTAcctColumn" msprop:Generator_ColumnPropNameInRow="COSTAcct" msprop:Generator_ColumnVarNameInTable="columnCOSTAcct" type="xs:boolean" default="false" minOccurs="0" />
-              <xs:element name="COSTBoth" msprop:Generator_UserColumnName="COSTBoth" msprop:Generator_ColumnPropNameInTable="COSTBothColumn" msprop:Generator_ColumnPropNameInRow="COSTBoth" msprop:Generator_ColumnVarNameInTable="columnCOSTBoth" type="xs:boolean" default="false" minOccurs="0" />
-              <xs:element name="COSTPin" msprop:Generator_UserColumnName="COSTPin" msprop:Generator_ColumnPropNameInTable="COSTPinColumn" msprop:Generator_ColumnPropNameInRow="COSTPin" msprop:Generator_ColumnVarNameInTable="columnCOSTPin" default="" minOccurs="0">
+              <xs:element name="TotalDue" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="TotalDueColumn" msprop:Generator_ColumnPropNameInRow="TotalDue" msprop:Generator_UserColumnName="TotalDue" msprop:Generator_ColumnVarNameInTable="columnTotalDue" type="xs:decimal" minOccurs="0" />
+              <xs:element name="COSCellValid" msprop:Generator_ColumnPropNameInTable="COSCellValidColumn" msprop:Generator_ColumnPropNameInRow="COSCellValid" msprop:Generator_UserColumnName="COSCellValid" msprop:Generator_ColumnVarNameInTable="columnCOSCellValid" type="xs:boolean" default="false" minOccurs="0" />
+              <xs:element name="COSDNTAcct" msprop:Generator_ColumnPropNameInTable="COSDNTAcctColumn" msprop:Generator_ColumnPropNameInRow="COSDNTAcct" msprop:Generator_UserColumnName="COSDNTAcct" msprop:Generator_ColumnVarNameInTable="columnCOSDNTAcct" type="xs:boolean" default="false" minOccurs="0" />
+              <xs:element name="COSDNTMktg" msprop:Generator_ColumnPropNameInTable="COSDNTMktgColumn" msprop:Generator_ColumnPropNameInRow="COSDNTMktg" msprop:Generator_UserColumnName="COSDNTMktg" msprop:Generator_ColumnVarNameInTable="columnCOSDNTMktg" type="xs:boolean" default="false" minOccurs="0" />
+              <xs:element name="COSTAcct" msprop:Generator_ColumnPropNameInTable="COSTAcctColumn" msprop:Generator_ColumnPropNameInRow="COSTAcct" msprop:Generator_UserColumnName="COSTAcct" msprop:Generator_ColumnVarNameInTable="columnCOSTAcct" type="xs:boolean" default="false" minOccurs="0" />
+              <xs:element name="COSTBoth" msprop:Generator_ColumnPropNameInTable="COSTBothColumn" msprop:Generator_ColumnPropNameInRow="COSTBoth" msprop:Generator_UserColumnName="COSTBoth" msprop:Generator_ColumnVarNameInTable="columnCOSTBoth" type="xs:boolean" default="false" minOccurs="0" />
+              <xs:element name="COSTPin" msprop:Generator_ColumnPropNameInTable="COSTPinColumn" msprop:Generator_ColumnPropNameInRow="COSTPin" msprop:Generator_UserColumnName="COSTPin" msprop:Generator_ColumnVarNameInTable="columnCOSTPin" default="" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="10" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="COSTConfirmed" msprop:Generator_UserColumnName="COSTConfirmed" msprop:Generator_ColumnPropNameInTable="COSTConfirmedColumn" msprop:Generator_ColumnPropNameInRow="COSTConfirmed" msprop:Generator_ColumnVarNameInTable="columnCOSTConfirmed" type="xs:boolean" default="false" minOccurs="0" />
+              <xs:element name="COSTConfirmed" msprop:Generator_ColumnPropNameInTable="COSTConfirmedColumn" msprop:Generator_ColumnPropNameInRow="COSTConfirmed" msprop:Generator_UserColumnName="COSTConfirmed" msprop:Generator_ColumnVarNameInTable="columnCOSTConfirmed" type="xs:boolean" default="false" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

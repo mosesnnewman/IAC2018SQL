@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace IAC2021SQL
 {
-    public partial class frmNotices : Form
+    public partial class frmNotices : DevExpress.XtraEditors.XtraForm
     {
         Int32 lnFormNo = 0, lnPTDiff = 0, lnPaidMonth = 0, lnPaidYear = 0;
         Boolean UpdateSW = false;
@@ -34,7 +34,7 @@ namespace IAC2021SQL
 
         private void frmNotices_Load(object sender, EventArgs e)
         {
-            NoticeDatenullableDateTimePicker.Value = DateTime.Now.Date.AddDays(-15);  // Moses Newman 11/30/2021 Subtract 15 for run date default!
+            NoticeDatenullableDateTimePicker.EditValue = DateTime.Now.Date.AddDays(-15);  // Moses Newman 11/30/2021 Subtract 15 for run date default!
             PerformAutoScale();
         }
 
@@ -58,10 +58,10 @@ namespace IAC2021SQL
 
             if (NoticeiacDataSet.System.Rows.Count == 0)
             {
-                SystemTableAdapter.Insert((DateTime)NoticeDatenullableDateTimePicker.Value, Convert.ToDateTime("01/01/1900"), Convert.ToDateTime("12/11/2013"));
+                SystemTableAdapter.Insert((DateTime)NoticeDatenullableDateTimePicker.EditValue, Convert.ToDateTime("01/01/1900"), Convert.ToDateTime("12/11/2013"));
             }
             else
-                SystemTableAdapter.Update((DateTime)NoticeDatenullableDateTimePicker.Value, NoticeiacDataSet.System.Rows[0].Field<DateTime>("OpenNoticeRunDate"), NoticeiacDataSet.System.Rows[0].Field<DateTime>("LastUpdateDate"),1);
+                SystemTableAdapter.Update((DateTime)NoticeDatenullableDateTimePicker.EditValue, NoticeiacDataSet.System.Rows[0].Field<DateTime>("OpenNoticeRunDate"), NoticeiacDataSet.System.Rows[0].Field<DateTime>("LastUpdateDate"),1);
 
             SystemTableAdapter.Connection.Close();
             SystemTableAdapter.Dispose();
@@ -117,7 +117,7 @@ namespace IAC2021SQL
             if (NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_REGULAR_AMOUNT") > lnAmountDifference)
                 return;
 
-            DateTime ldNewPaidThru, ldFormDate = (DateTime)NoticeDatenullableDateTimePicker.Value,
+            DateTime ldNewPaidThru, ldFormDate = (DateTime)NoticeDatenullableDateTimePicker.EditValue,
                      ldFebEndThisYear = Convert.ToDateTime("03/01/" + DateTime.Now.Date.Year.ToString().Substring(2, 2)).AddDays(-1); ;
             // Moses Newman 12/16/2014 proper C# way to do antiquated date add above!!! 
             // Moses Newman 04/16/2018 call Program.NextDueDate instead of hardcode!
@@ -133,7 +133,7 @@ namespace IAC2021SQL
             }
 
             TimeSpan ltActDateDiff,ltMassDateDiff; // Moses Newman 11/14/2021 Create Mass Date Diff
-            ldFormDate = (DateTime)NoticeDatenullableDateTimePicker.Value;
+            ldFormDate = (DateTime)NoticeDatenullableDateTimePicker.EditValue;
             ltActDateDiff = ldFormDate - ldNewPaidThru;
             lnActDateDiff = (Int32)(ltActDateDiff.TotalDays);
             ltMassDateDiff = ldFormDate.AddDays(10) - ldNewPaidThru;   // Moses Newman 11/14/2021 Create Mass Date Diff 
@@ -884,10 +884,10 @@ namespace IAC2021SQL
 
         private void NoticeDatenullableDateTimePicker_Validated(object sender, EventArgs e)
         {
-            DateTime? ldCurrentDate = (DateTime?)NoticeDatenullableDateTimePicker.Value;
-            if (ldCurrentDate.Value != null)
+            DateTime? ldCurrentDate = (DateTime?)NoticeDatenullableDateTimePicker.EditValue;
+            if (NoticeDatenullableDateTimePicker.EditValue != null)
                 if (ldCurrentDate.Value.Month == 2 && ldCurrentDate.Value.Day == 30)
-                    NoticeDatenullableDateTimePicker.Value = Convert.ToDateTime("02/28" + ldCurrentDate.Value.Year.ToString());
+                    NoticeDatenullableDateTimePicker.EditValue = Convert.ToDateTime("02/28" + ldCurrentDate.Value.Year.ToString());
 
         }
 

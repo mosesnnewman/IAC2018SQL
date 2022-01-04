@@ -457,6 +457,7 @@
             this.tabPage1.SuspendLayout();
             this.DealerAccountsGroupBox.SuspendLayout();
             this.DealerInfogroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDealerStartDate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DLRLISTBYNUMbindingSource)).BeginInit();
             this.DealerHistoryTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DealerHistorydataGridView)).BeginInit();
@@ -1902,7 +1903,7 @@
             this.nullableDateTimePickerDealerStartDate.Name = "nullableDateTimePickerDealerStartDate";
             this.nullableDateTimePickerDealerStartDate.Size = new System.Drawing.Size(92, 20);
             this.nullableDateTimePickerDealerStartDate.TabIndex = 9;
-            this.nullableDateTimePickerDealerStartDate.Value = new System.DateTime(2021, 5, 27, 0, 0, 0, 0);
+            this.nullableDateTimePickerDealerStartDate.Value = new System.DateTime(2021, 12, 29, 0, 0, 0, 0);
             this.nullableDateTimePickerDealerStartDate.ValueChanged += new System.EventHandler(this.nullableDateTimePickerDealerStartDate_ValueChanged);
             this.nullableDateTimePickerDealerStartDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
@@ -3421,14 +3422,19 @@
             // ClosedDealerMaintenance
             // 
             this.AllowDrop = true;
+            this.Appearance.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.Appearance.Options.UseBackColor = true;
+            this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.BackColor = System.Drawing.Color.CornflowerBlue;
             this.ClientSize = new System.Drawing.Size(995, 627);
             this.Controls.Add(this.DealerHistorytabControl);
             this.Controls.Add(this.toolStrip1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.KeyPreview = true;
+            this.LookAndFeel.SkinName = "McSkin";
+            this.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.MaximizeBox = false;
             this.Name = "ClosedDealerMaintenance";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Closed Dealer Maintenance";
@@ -3446,6 +3452,7 @@
             this.DealerAccountsGroupBox.PerformLayout();
             this.DealerInfogroupBox.ResumeLayout(false);
             this.DealerInfogroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDealerStartDate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DLRLISTBYNUMbindingSource)).EndInit();
             this.DealerHistoryTab.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DealerHistorydataGridView)).EndInit();

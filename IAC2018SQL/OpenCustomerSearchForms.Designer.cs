@@ -148,7 +148,7 @@
             cUSTOMER_DOBLabel.AutoSize = true;
             cUSTOMER_DOBLabel.Location = new System.Drawing.Point(219, 181);
             cUSTOMER_DOBLabel.Name = "cUSTOMER_DOBLabel";
-            cUSTOMER_DOBLabel.Size = new System.Drawing.Size(90, 13);
+            cUSTOMER_DOBLabel.Size = new System.Drawing.Size(89, 13);
             cUSTOMER_DOBLabel.TabIndex = 89;
             cUSTOMER_DOBLabel.Text = "DATE  OF BIRTH:";
             // 
@@ -223,7 +223,7 @@
             cUSTOMER_STATELabel.AutoSize = true;
             cUSTOMER_STATELabel.Location = new System.Drawing.Point(34, 182);
             cUSTOMER_STATELabel.Name = "cUSTOMER_STATELabel";
-            cUSTOMER_STATELabel.Size = new System.Drawing.Size(39, 13);
+            cUSTOMER_STATELabel.Size = new System.Drawing.Size(37, 13);
             cUSTOMER_STATELabel.TabIndex = 85;
             cUSTOMER_STATELabel.Text = "STATE:";
             // 
@@ -682,7 +682,7 @@
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(36, 22);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
@@ -748,12 +748,16 @@
             // 
             // frmOpenCustomerLookup
             // 
+            this.Appearance.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.BackColor = System.Drawing.Color.CornflowerBlue;
             this.ClientSize = new System.Drawing.Size(900, 523);
             this.Controls.Add(this.bindingNavigator1);
             this.Controls.Add(this.tabControl1);
+            this.LookAndFeel.SkinName = "McSkin";
+            this.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.MaximizeBox = false;
             this.Name = "frmOpenCustomerLookup";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Open Customer Lookup";

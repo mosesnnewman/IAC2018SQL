@@ -11,7 +11,7 @@ using System.IO;
 
 namespace IAC2021SQL
 {
-    public partial class frmCreateAutoBankFiles : Form
+    public partial class frmCreateAutoBankFiles : DevExpress.XtraEditors.XtraForm
     {
 
         public frmCreateAutoBankFiles()

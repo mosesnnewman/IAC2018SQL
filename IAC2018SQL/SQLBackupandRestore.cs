@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
+using Microsoft.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using Microsoft.SqlServer.Dts.Runtime;
@@ -11,6 +11,9 @@ using Microsoft.SqlServer.Management.Common;
 using System.IO;
 using System.Windows.Forms;
 using Microsoft.VisualBasic.FileIO;
+using DevExpress;
+using DevExpress.XtraEditors;
+
 
 // Moses Newman 10/19/2018 Changed SQL to SQL-IAC server.
 // Moses Newman 10/21/2018 Changed location of SSIS to SQL-IAC.
@@ -226,7 +229,7 @@ namespace IAC2021SQL
         // 04/10/2012 Moses Newman Add General Backup on Demand Function 
         public Boolean GeneralBackup()
         {
-            FolderBrowserDialog FolderBrowser = new FolderBrowserDialog();
+            XtraFolderBrowserDialog FolderBrowser = new XtraFolderBrowserDialog();
 
             IACDataSet BackupDataSet = new IACDataSet();
             IACDataSetTableAdapters.DataPathTableAdapter DataPathTableAdapter = new IACDataSetTableAdapters.DataPathTableAdapter();
@@ -244,6 +247,10 @@ namespace IAC2021SQL
             
             targetPath += "PrePostBackup" + @"\";
             deletePath += @"\" + "PrePostBackup";
+            
+            FolderBrowser.UseParentFormIcon = true;
+            FolderBrowser.DialogStyle = DevExpress.Utils.CommonDialogs.FolderBrowserDialogStyle.Compact;
+            
             FolderBrowser.SelectedPath = targetPath;
             FolderBrowser.Description = "Select folder to BACKUP TO.";
             FolderBrowser.ShowDialog();
@@ -461,7 +468,7 @@ namespace IAC2021SQL
         // 04/10/2012 Moses Newman Add General Restore on Demand Function 
         public Boolean GeneralRestore()
         {
-            FolderBrowserDialog FolderBrowser = new FolderBrowserDialog();
+            XtraFolderBrowserDialog FolderBrowser = new XtraFolderBrowserDialog();
 
             IACDataSet BackupDataSet = new IACDataSet();
             IACDataSetTableAdapters.DataPathTableAdapter DataPathTableAdapter = new IACDataSetTableAdapters.DataPathTableAdapter();

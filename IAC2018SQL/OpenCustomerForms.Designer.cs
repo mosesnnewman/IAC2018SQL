@@ -581,6 +581,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.cUSTHISTDataGridView)).BeginInit();
             this.tabCustInfo1.SuspendLayout();
             this.groupBox9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDOB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.StateRatesbindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.letterTypeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.letterNumberBindingSource)).BeginInit();
@@ -605,6 +606,12 @@
             this.groupBoxDates.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.closedCreditManagerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tsbDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerFollowUpDate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateClosed)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateOpened)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateofAccountInformation)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateofFirstDelinquency)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateofLastPayment)).BeginInit();
             this.groupBoxCodes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TermFrequenciesbindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PortfolioTypesbindingSource)).BeginInit();
@@ -2180,7 +2187,7 @@
             this.txtDOB.Name = "txtDOB";
             this.txtDOB.Size = new System.Drawing.Size(100, 23);
             this.txtDOB.TabIndex = 94;
-            this.txtDOB.Value = new System.DateTime(2020, 9, 28, 0, 0, 0, 0);
+            this.txtDOB.Value = new System.DateTime(2021, 12, 29, 0, 0, 0, 0);
             this.txtDOB.ValueChanged += new System.EventHandler(this.txtDOB_ValueChanged);
             this.txtDOB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
@@ -4268,7 +4275,7 @@
             this.nullableDateTimePickerFollowUpDate.Name = "nullableDateTimePickerFollowUpDate";
             this.nullableDateTimePickerFollowUpDate.Size = new System.Drawing.Size(119, 25);
             this.nullableDateTimePickerFollowUpDate.TabIndex = 24;
-            this.nullableDateTimePickerFollowUpDate.Value = new System.DateTime(2020, 9, 28, 0, 0, 0, 0);
+            this.nullableDateTimePickerFollowUpDate.Value = new System.DateTime(2021, 12, 29, 0, 0, 0, 0);
             this.nullableDateTimePickerFollowUpDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // nullableDateTimePickerDateClosed
@@ -4279,7 +4286,7 @@
             this.nullableDateTimePickerDateClosed.Name = "nullableDateTimePickerDateClosed";
             this.nullableDateTimePickerDateClosed.Size = new System.Drawing.Size(119, 25);
             this.nullableDateTimePickerDateClosed.TabIndex = 23;
-            this.nullableDateTimePickerDateClosed.Value = new System.DateTime(2020, 9, 28, 0, 0, 0, 0);
+            this.nullableDateTimePickerDateClosed.Value = new System.DateTime(2021, 12, 29, 0, 0, 0, 0);
             // 
             // nullableDateTimePickerDateOpened
             // 
@@ -4289,7 +4296,7 @@
             this.nullableDateTimePickerDateOpened.Name = "nullableDateTimePickerDateOpened";
             this.nullableDateTimePickerDateOpened.Size = new System.Drawing.Size(119, 25);
             this.nullableDateTimePickerDateOpened.TabIndex = 22;
-            this.nullableDateTimePickerDateOpened.Value = new System.DateTime(2020, 9, 28, 0, 0, 0, 0);
+            this.nullableDateTimePickerDateOpened.Value = new System.DateTime(2021, 12, 29, 0, 0, 0, 0);
             // 
             // nullableDateTimePickerDateofAccountInformation
             // 
@@ -4299,7 +4306,7 @@
             this.nullableDateTimePickerDateofAccountInformation.Name = "nullableDateTimePickerDateofAccountInformation";
             this.nullableDateTimePickerDateofAccountInformation.Size = new System.Drawing.Size(119, 25);
             this.nullableDateTimePickerDateofAccountInformation.TabIndex = 21;
-            this.nullableDateTimePickerDateofAccountInformation.Value = new System.DateTime(2020, 9, 28, 0, 0, 0, 0);
+            this.nullableDateTimePickerDateofAccountInformation.Value = new System.DateTime(2021, 12, 29, 0, 0, 0, 0);
             // 
             // nullableDateTimePickerDateofFirstDelinquency
             // 
@@ -4309,7 +4316,7 @@
             this.nullableDateTimePickerDateofFirstDelinquency.Name = "nullableDateTimePickerDateofFirstDelinquency";
             this.nullableDateTimePickerDateofFirstDelinquency.Size = new System.Drawing.Size(119, 25);
             this.nullableDateTimePickerDateofFirstDelinquency.TabIndex = 20;
-            this.nullableDateTimePickerDateofFirstDelinquency.Value = new System.DateTime(2020, 9, 28, 0, 0, 0, 0);
+            this.nullableDateTimePickerDateofFirstDelinquency.Value = new System.DateTime(2021, 12, 29, 0, 0, 0, 0);
             // 
             // nullableDateTimePickerDateofLastPayment
             // 
@@ -4319,7 +4326,7 @@
             this.nullableDateTimePickerDateofLastPayment.Name = "nullableDateTimePickerDateofLastPayment";
             this.nullableDateTimePickerDateofLastPayment.Size = new System.Drawing.Size(119, 25);
             this.nullableDateTimePickerDateofLastPayment.TabIndex = 19;
-            this.nullableDateTimePickerDateofLastPayment.Value = new System.DateTime(2020, 9, 28, 0, 0, 0, 0);
+            this.nullableDateTimePickerDateofLastPayment.Value = new System.DateTime(2021, 12, 29, 0, 0, 0, 0);
             // 
             // label135
             // 
@@ -5251,13 +5258,18 @@
             // 
             // frmOpenCustMaint
             // 
+            this.Appearance.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.Appearance.Options.UseBackColor = true;
+            this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.BackColor = System.Drawing.Color.CornflowerBlue;
             this.ClientSize = new System.Drawing.Size(1124, 642);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.tabOpenCustomerMaintenance);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LookAndFeel.SkinName = "McSkin";
+            this.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.MaximizeBox = false;
             this.Name = "frmOpenCustMaint";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Open Customer File Maintenance";
@@ -5283,6 +5295,7 @@
             this.tabCustInfo1.ResumeLayout(false);
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDOB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.StateRatesbindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.letterTypeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.letterNumberBindingSource)).EndInit();
@@ -5316,6 +5329,12 @@
             this.groupBoxDates.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.closedCreditManagerBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tsbDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerFollowUpDate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateClosed)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateOpened)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateofAccountInformation)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateofFirstDelinquency)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateofLastPayment)).EndInit();
             this.groupBoxCodes.ResumeLayout(false);
             this.groupBoxCodes.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.TermFrequenciesbindingSource)).EndInit();

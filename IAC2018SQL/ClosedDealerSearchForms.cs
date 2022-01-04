@@ -9,10 +9,12 @@ using System.Windows.Forms;
 using IAC2021SQL;
 using Excel = Microsoft.Office.Interop.Excel;
 using Microsoft.Office.Tools.Excel;
+using DevExpress.XtraEditors;
+
 
 namespace IAC2021SQL
 {
-    public partial class frmDealerLookup : Form
+    public partial class frmDealerLookup : DevExpress.XtraEditors.XtraForm
     {
         private BackgroundWorker worker = new BackgroundWorker();
         private String lsProgMessage = "",targetPath = "";
@@ -201,7 +203,7 @@ namespace IAC2021SQL
         private String GetFilePath()
         {
             String targetPath = "";
-            FolderBrowserDialog FolderBrowser = new FolderBrowserDialog();
+            XtraFolderBrowserDialog FolderBrowser = new XtraFolderBrowserDialog();
 
             //Create an Excel workbook instance and open it from the predefined location
             // Moses Newman 11/21/2017 Remove hard coded UNC pathing.

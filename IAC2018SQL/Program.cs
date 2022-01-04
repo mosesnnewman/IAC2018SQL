@@ -15,11 +15,13 @@ using Newtonsoft.Json;
 using System.Net;
 
 using TValue6Engine2;
+using DevExpress.XtraEditors;
+using DevExpress.Utils;
 
 
 namespace IAC2021SQL
 {
-	static class Program
+	public static class Program
 	{
 		// Moses Newman 08/20/2021
 		private const long CUSTOMER_ID = 5856172571257250771;  // Change this to your unique Customer ID number.
@@ -2988,8 +2990,12 @@ namespace IAC2021SQL
 
 
 		[STAThread]
-		static void Main()
+		public static void Main()
 		{
+			WindowsFormsSettings.EnableFormSkins();
+			WindowsFormsSettings.EnableMdiFormSkins();
+
+			DevExpress.XtraEditors.WindowsFormsSettings.UseDXDialogs = DefaultBoolean.True;
 			long customerId;
 			customerId = CUSTOMER_ID;
 			tvWorkspace = new TVWorkspace(customerId);

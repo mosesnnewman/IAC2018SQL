@@ -135,7 +135,7 @@
             labelDealerStartDate.BackColor = System.Drawing.Color.Transparent;
             labelDealerStartDate.Location = new System.Drawing.Point(365, 51);
             labelDealerStartDate.Name = "labelDealerStartDate";
-            labelDealerStartDate.Size = new System.Drawing.Size(69, 13);
+            labelDealerStartDate.Size = new System.Drawing.Size(67, 13);
             labelDealerStartDate.TabIndex = 143;
             labelDealerStartDate.Text = "START DATE:";
             labelDealerStartDate.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -154,7 +154,7 @@
             label67.AutoSize = true;
             label67.Location = new System.Drawing.Point(32, 128);
             label67.Name = "label67";
-            label67.Size = new System.Drawing.Size(39, 13);
+            label67.Size = new System.Drawing.Size(37, 13);
             label67.TabIndex = 139;
             label67.Text = "STATE:";
             label67.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -174,7 +174,7 @@
             label72.AutoSize = true;
             label72.Location = new System.Drawing.Point(413, 103);
             label72.Name = "label72";
-            label72.Size = new System.Drawing.Size(29, 13);
+            label72.Size = new System.Drawing.Size(28, 13);
             label72.TabIndex = 132;
             label72.Text = "FAX:";
             label72.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -257,7 +257,7 @@
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(36, 22);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
@@ -671,13 +671,18 @@
             // 
             // frmDealerLookup
             // 
+            this.Appearance.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.Appearance.Options.UseBackColor = true;
+            this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.BackColor = System.Drawing.Color.CornflowerBlue;
             this.ClientSize = new System.Drawing.Size(1050, 587);
             this.Controls.Add(this.bindingNavigator1);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LookAndFeel.SkinName = "McSkin";
+            this.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.MaximizeBox = false;
             this.Name = "frmDealerLookup";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Closed Dealer Lookup";

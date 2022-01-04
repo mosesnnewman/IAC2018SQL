@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace IAC2021SQL
 {
-    public partial class formClosedPayment : Form
+    public partial class formClosedPayment : DevExpress.XtraEditors.XtraForm
     {
         System.Windows.Forms.Label labelOverPayment, lblIncome, lblPaidThrough, labelISFDate;
 

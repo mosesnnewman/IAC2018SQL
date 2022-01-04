@@ -132,6 +132,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator)).BeginInit();
             this.bindingNavigator.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dateTimePickerPostDate)).BeginInit();
             this.SuspendLayout();
             // 
             // cUSTOMER_DEALERLabel
@@ -877,7 +878,7 @@
             this.groupBox2.Controls.Add(this.textBoxDealerLossReserve);
             this.groupBox2.Location = new System.Drawing.Point(179, 203);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(542, 320);
+            this.groupBox2.Size = new System.Drawing.Size(542, 322);
             this.groupBox2.TabIndex = 177;
             this.groupBox2.TabStop = false;
             this.groupBox2.UseCompatibleTextRendering = true;
@@ -947,20 +948,24 @@
             this.dateTimePickerPostDate.Name = "dateTimePickerPostDate";
             this.dateTimePickerPostDate.Size = new System.Drawing.Size(85, 20);
             this.dateTimePickerPostDate.TabIndex = 7;
-            this.dateTimePickerPostDate.Value = new System.DateTime(2013, 6, 12, 0, 0, 0, 0);
+            this.dateTimePickerPostDate.Value = new System.DateTime(2021, 12, 29, 0, 0, 0, 0);
             this.dateTimePickerPostDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // FormClosedDealerContingentMaintenance
             // 
+            this.Appearance.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(900, 574);
             this.Controls.Add(this.bindingNavigator);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.DealerInfogroupBox);
+            this.LookAndFeel.SkinName = "McSkin";
+            this.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.MaximizeBox = false;
             this.Name = "FormClosedDealerContingentMaintenance";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Closed Dealer Contingent Maintenance";
@@ -981,6 +986,7 @@
             this.bindingNavigator.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dateTimePickerPostDate)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

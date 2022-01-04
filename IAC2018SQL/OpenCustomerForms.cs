@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace IAC2021SQL
 {
-    public partial class frmOpenCustMaint : Form
+    public partial class frmOpenCustMaint : DevExpress.XtraEditors.XtraForm
     {
         private string lPaidThroughMM, lPaidThroughYY, lPaidThrough, lControl_Month, lControl_Year, lControlDate,
                 lcExpYear1, lcExpYear2, lcExpYear3, lcExpYear4, lcExpYear5, lcExpYear6, lcExpYear7, lcExpYear8,

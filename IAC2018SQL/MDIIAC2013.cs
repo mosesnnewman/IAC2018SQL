@@ -14,11 +14,12 @@ using System.IO;
 using Microsoft.SqlServer.Dts.Runtime;
 using Microsoft.SqlServer.Management.Smo;
 using Microsoft.SqlServer.Management.Common;
+using DevExpress.XtraSplashScreen;
 
 
 namespace IAC2021SQL
 {
-    public partial class MDIIAC2013 : Form
+    public partial class MDIIAC2013 : DevExpress.XtraEditors.XtraForm
     {
         private int childFormNumber = 0;
         private BackgroundWorker worker;
@@ -144,13 +145,21 @@ namespace IAC2021SQL
         {
             String lsConnect = IAC2021SQL.Properties.Settings.Default.IAC2010SQLConnectionString.ToUpper(), DataBase = "";
             Hide();
-            SplashForm frmSplash = new SplashForm();
-            frmSplash.Show();
-            frmSplash.Update();
-            Thread.Sleep(5000);
-            frmSplash.Close();
+
+            
+            //SplashForm frmSplash = new SplashForm();
+            //frmSplash.Show();
+            //frmSplash.Update();
+            //Thread.Sleep(5000);
+            //frmSplash.Close();
+            //frmSplash.Dispose();
+
             LoginForm frmLogin = new LoginForm();
+
+            Thread.Sleep(4000);
+            frmLogin.TopMost = true;
             frmLogin.ShowDialog();
+            
             if (frmLogin.gbLoginCorrect && Program.LockfileShare())
             {
                 DataBase = lsConnect.Substring(lsConnect.IndexOf("INITIAL CATALOG=") + 16,

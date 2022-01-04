@@ -9,19 +9,22 @@ using System.Windows.Forms;
 
 namespace IAC2021SQL
 {
-    public partial class LoginForm : Form
+    public partial class LoginForm : DevExpress.XtraEditors.XtraForm
     {
         public bool gbLoginCorrect = false;
 
         public LoginForm()
         {
             InitializeComponent();
+            uLISTTableAdapter.FillAll(iACDataSet.ULIST);
+            bindingSourceULIST.DataSource = iACDataSet.ULIST;
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            uLISTTableAdapter.Fill(iACDataSet.ULIST, txtUserID.Text.ToString().TrimEnd(), txtPassword.Text.ToString().TrimEnd());
-            if (iACDataSet.ULIST.Rows.Count == 0)
+            IACDataSet lookupSet = new IACDataSet();
+            uLISTTableAdapter.Fill(lookupSet.ULIST, txtUserID.Text.ToString().TrimEnd(), txtPassword.Text.ToString().TrimEnd());
+            if (lookupSet.ULIST.Rows.Count == 0)
             {
                 var ldlgAnswer = MessageBox.Show("No match found for that username and password combination.  Would you like to try again?", "Login Warning", MessageBoxButtons.YesNo);
                 if (ldlgAnswer == DialogResult.No)                 
@@ -31,11 +34,10 @@ namespace IAC2021SQL
                 }
                 else
                 {
-                    txtPassword.Text = "";
-                    ActiveControl = txtUserID;
-                    txtUserID.SelectAll();
+                    txtPassword.EditValue = "";
+                    ActiveControl = txtPassword;
+                    txtPassword.SelectAll();
                 }
-
             }
             else
             {
@@ -46,7 +48,7 @@ namespace IAC2021SQL
                     Program.GsDataPath = iACDataSet.DataPath.Rows[0].Field<String>("UNCROOT").TrimEnd();
                 gbLoginCorrect = true;
                 Program.gsUserID = txtUserID.Text.ToString().TrimEnd();  
-                Program.gsUserName = iACDataSet.ULIST.Rows[0].Field<String>("LIST_NAME").ToString().TrimEnd();
+                Program.gsUserName = iACDataSet.ULIST.Rows[bindingSourceULIST.Position].Field<String>("LIST_NAME").ToString().TrimEnd();
                 iACDataSet.ULIST.Clear();
                 Close();
             }
@@ -79,6 +81,12 @@ namespace IAC2021SQL
         private void LoginForm_Load(object sender, EventArgs e)
         {
             PerformAutoScale();
+            txtUserID.Focus();
+            ActiveControl = txtUserID;
+        }
+
+        private void txtUserID_EditValueChanged(object sender, EventArgs e)
+        {
         }
     }
 }

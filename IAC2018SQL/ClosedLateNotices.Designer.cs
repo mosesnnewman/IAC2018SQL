@@ -29,57 +29,18 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.NoticeDatenullableDateTimePicker = new ProManApp.NullableDateTimePicker();
-            this.labelLateNotices = new System.Windows.Forms.Label();
-            this.buttonPost = new System.Windows.Forms.Button();
-            this.buttonCancel = new System.Windows.Forms.Button();
             this.NoticeiacDataSet = new IAC2021SQL.IACDataSet();
             this.NoticebindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nOTICETableAdapter = new IAC2021SQL.IACDataSetTableAdapters.NOTICETableAdapter();
             this.customerTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.CUSTOMERTableAdapter();
+            this.buttonPost = new DevExpress.XtraEditors.SimpleButton();
+            this.buttonCancel = new DevExpress.XtraEditors.SimpleButton();
+            this.NoticeDatenullableDateTimePicker = new DevExpress.XtraEditors.DateEdit();
             ((System.ComponentModel.ISupportInitialize)(this.NoticeiacDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NoticebindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NoticeDatenullableDateTimePicker.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NoticeDatenullableDateTimePicker.Properties)).BeginInit();
             this.SuspendLayout();
-            // 
-            // NoticeDatenullableDateTimePicker
-            // 
-            this.NoticeDatenullableDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.NoticeDatenullableDateTimePicker.Location = new System.Drawing.Point(198, 49);
-            this.NoticeDatenullableDateTimePicker.Name = "NoticeDatenullableDateTimePicker";
-            this.NoticeDatenullableDateTimePicker.Size = new System.Drawing.Size(83, 20);
-            this.NoticeDatenullableDateTimePicker.TabIndex = 0;
-            this.NoticeDatenullableDateTimePicker.Value = new System.DateTime(2021, 9, 7, 0, 0, 0, 0);
-            this.NoticeDatenullableDateTimePicker.Validated += new System.EventHandler(this.NoticeDatenullableDateTimePicker_Validated);
-            // 
-            // labelLateNotices
-            // 
-            this.labelLateNotices.AutoSize = true;
-            this.labelLateNotices.Location = new System.Drawing.Point(98, 58);
-            this.labelLateNotices.Name = "labelLateNotices";
-            this.labelLateNotices.Size = new System.Drawing.Size(91, 13);
-            this.labelLateNotices.TabIndex = 1;
-            this.labelLateNotices.Text = "Late Notice Date:";
-            this.labelLateNotices.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // buttonPost
-            // 
-            this.buttonPost.Location = new System.Drawing.Point(111, 110);
-            this.buttonPost.Name = "buttonPost";
-            this.buttonPost.Size = new System.Drawing.Size(75, 23);
-            this.buttonPost.TabIndex = 2;
-            this.buttonPost.Text = "&Post";
-            this.buttonPost.UseVisualStyleBackColor = true;
-            this.buttonPost.Click += new System.EventHandler(this.buttonPost_Click);
-            // 
-            // buttonCancel
-            // 
-            this.buttonCancel.Location = new System.Drawing.Point(192, 110);
-            this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(75, 23);
-            this.buttonCancel.TabIndex = 3;
-            this.buttonCancel.Text = "&Cancel";
-            this.buttonCancel.UseVisualStyleBackColor = true;
-            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // NoticeiacDataSet
             // 
@@ -99,36 +60,86 @@
             // 
             this.customerTableAdapter.ClearBeforeFill = true;
             // 
+            // buttonPost
+            // 
+            this.buttonPost.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonPost.Appearance.Options.UseFont = true;
+            this.buttonPost.Location = new System.Drawing.Point(58, 108);
+            this.buttonPost.LookAndFeel.SkinName = "McSkin";
+            this.buttonPost.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.buttonPost.Name = "buttonPost";
+            this.buttonPost.Size = new System.Drawing.Size(122, 39);
+            this.buttonPost.TabIndex = 1;
+            this.buttonPost.Text = "&Post";
+            this.buttonPost.Click += new System.EventHandler(this.buttonPost_Click);
+            // 
+            // buttonCancel
+            // 
+            this.buttonCancel.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCancel.Appearance.Options.UseFont = true;
+            this.buttonCancel.Location = new System.Drawing.Point(198, 108);
+            this.buttonCancel.LookAndFeel.SkinName = "McSkin";
+            this.buttonCancel.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.buttonCancel.Name = "buttonCancel";
+            this.buttonCancel.Size = new System.Drawing.Size(122, 39);
+            this.buttonCancel.TabIndex = 2;
+            this.buttonCancel.Text = "&Cancel";
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
+            // 
+            // NoticeDatenullableDateTimePicker
+            // 
+            this.NoticeDatenullableDateTimePicker.EditValue = new System.DateTime(2021, 12, 27, 11, 0, 15, 272);
+            this.NoticeDatenullableDateTimePicker.Location = new System.Drawing.Point(135, 36);
+            this.NoticeDatenullableDateTimePicker.Name = "NoticeDatenullableDateTimePicker";
+            this.NoticeDatenullableDateTimePicker.Properties.AdvancedModeOptions.AllowCaretAnimation = DevExpress.Utils.DefaultBoolean.True;
+            this.NoticeDatenullableDateTimePicker.Properties.AdvancedModeOptions.AllowSelectionAnimation = DevExpress.Utils.DefaultBoolean.True;
+            this.NoticeDatenullableDateTimePicker.Properties.AdvancedModeOptions.Label = "Notice Date";
+            this.NoticeDatenullableDateTimePicker.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NoticeDatenullableDateTimePicker.Properties.Appearance.Options.UseFont = true;
+            this.NoticeDatenullableDateTimePicker.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.NoticeDatenullableDateTimePicker.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.NoticeDatenullableDateTimePicker.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.Fluent;
+            this.NoticeDatenullableDateTimePicker.Properties.LookAndFeel.SkinName = "McSkin";
+            this.NoticeDatenullableDateTimePicker.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.NoticeDatenullableDateTimePicker.Properties.UseAdvancedMode = DevExpress.Utils.DefaultBoolean.True;
+            this.NoticeDatenullableDateTimePicker.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
+            this.NoticeDatenullableDateTimePicker.Size = new System.Drawing.Size(109, 40);
+            this.NoticeDatenullableDateTimePicker.TabIndex = 14;
+            this.NoticeDatenullableDateTimePicker.Validated += new System.EventHandler(this.NoticeDatenullableDateTimePicker_Validated);
+            // 
             // frmNotices
             // 
+            this.Appearance.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.Appearance.Options.UseBackColor = true;
+            this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(379, 183);
+            this.ControlBox = false;
+            this.Controls.Add(this.NoticeDatenullableDateTimePicker);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonPost);
-            this.Controls.Add(this.labelLateNotices);
-            this.Controls.Add(this.NoticeDatenullableDateTimePicker);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "frmNotices";
             this.Text = "Closed End Notices";
             this.Load += new System.EventHandler(this.frmNotices_Load);
             ((System.ComponentModel.ISupportInitialize)(this.NoticeiacDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NoticebindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NoticeDatenullableDateTimePicker.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NoticeDatenullableDateTimePicker.Properties)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private ProManApp.NullableDateTimePicker NoticeDatenullableDateTimePicker;
-        private System.Windows.Forms.Label labelLateNotices;
-        private System.Windows.Forms.Button buttonPost;
-        private System.Windows.Forms.Button buttonCancel;
         private IACDataSet NoticeiacDataSet;
         private System.Windows.Forms.BindingSource NoticebindingSource;
         private IACDataSetTableAdapters.NOTICETableAdapter nOTICETableAdapter;
         private IACDataSetTableAdapters.CUSTOMERTableAdapter customerTableAdapter;
+        private DevExpress.XtraEditors.SimpleButton buttonPost;
+        private DevExpress.XtraEditors.SimpleButton buttonCancel;
+        private DevExpress.XtraEditors.DateEdit NoticeDatenullableDateTimePicker;
     }
 }

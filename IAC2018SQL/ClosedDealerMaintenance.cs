@@ -13,7 +13,7 @@ using System.Transactions;
 
 namespace IAC2021SQL
 {
-    public partial class ClosedDealerMaintenance : Form
+    public partial class ClosedDealerMaintenance : DevExpress.XtraEditors.XtraForm
     {
         //private String Program.gsKey="";
         private System.Data.SqlClient.SqlTransaction tableAdapTran = null;

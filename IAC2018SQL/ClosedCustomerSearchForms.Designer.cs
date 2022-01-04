@@ -194,7 +194,9 @@
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCustLookup)).BeginInit();
             this.CustomerGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NullableDateTimePickerSrchDOB)).BeginInit();
             this.groupBoxCosigner.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerCOSDOB)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewVehicleLookup)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Vehicle_CustomerbindingSource)).BeginInit();
@@ -785,7 +787,7 @@
             this.NullableDateTimePickerSrchDOB.Name = "NullableDateTimePickerSrchDOB";
             this.NullableDateTimePickerSrchDOB.Size = new System.Drawing.Size(86, 22);
             this.NullableDateTimePickerSrchDOB.TabIndex = 121;
-            this.NullableDateTimePickerSrchDOB.Value = new System.DateTime(2018, 2, 21, 0, 0, 0, 0);
+            this.NullableDateTimePickerSrchDOB.Value = new System.DateTime(2021, 12, 29, 0, 0, 0, 0);
             // 
             // richTextBoxEmailAddress
             // 
@@ -853,7 +855,7 @@
             this.nullableDateTimePickerCOSDOB.Name = "nullableDateTimePickerCOSDOB";
             this.nullableDateTimePickerCOSDOB.Size = new System.Drawing.Size(86, 22);
             this.nullableDateTimePickerCOSDOB.TabIndex = 122;
-            this.nullableDateTimePickerCOSDOB.Value = new System.DateTime(2018, 2, 21, 0, 0, 0, 0);
+            this.nullableDateTimePickerCOSDOB.Value = new System.DateTime(2021, 12, 29, 0, 0, 0, 0);
             // 
             // textBoxCOSWORKEXT
             // 
@@ -1406,12 +1408,16 @@
             // 
             // frmCustomerLookup
             // 
+            this.Appearance.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.BackColor = System.Drawing.Color.CornflowerBlue;
             this.ClientSize = new System.Drawing.Size(1050, 618);
             this.Controls.Add(this.bindingNavigator1);
             this.Controls.Add(this.tabControl1);
+            this.LookAndFeel.SkinName = "McSkin";
+            this.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.MaximizeBox = false;
             this.Name = "frmCustomerLookup";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Closed Customer Lookup";
@@ -1423,8 +1429,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCustLookup)).EndInit();
             this.CustomerGroupBox.ResumeLayout(false);
             this.CustomerGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NullableDateTimePickerSrchDOB)).EndInit();
             this.groupBoxCosigner.ResumeLayout(false);
             this.groupBoxCosigner.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerCOSDOB)).EndInit();
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewVehicleLookup)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Vehicle_CustomerbindingSource)).EndInit();
