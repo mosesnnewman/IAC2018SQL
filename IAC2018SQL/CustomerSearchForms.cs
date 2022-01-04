@@ -12,7 +12,7 @@ using IAC2021SQL;
 
 namespace IAC2021SQL
 {
-    public partial class frmGeneralCustomerLookup : Form
+    public partial class frmGeneralCustomerLookup : DevExpress.XtraEditors.XtraForm
     {
 
         public frmGeneralCustomerLookup()

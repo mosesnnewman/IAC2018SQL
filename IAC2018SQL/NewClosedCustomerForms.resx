@@ -7503,10 +7503,10 @@
     <value>Bottom</value>
   </data>
   <data name="standaloneBarDockControl1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 627</value>
+    <value>0, 630</value>
   </data>
   <data name="standaloneBarDockControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1225, 27</value>
+    <value>1231, 27</value>
   </data>
   <data name="standaloneBarDockControl1.Text" xml:space="preserve">
     <value>standaloneBarDockControl1</value>
@@ -8210,7 +8210,7 @@
     <value>887, 51</value>
   </data>
   <data name="comboBoxGN.Size" type="System.Drawing.Size, System.Drawing">
-    <value>99, 29</value>
+    <value>99, 21</value>
   </data>
   <data name="comboBoxGN.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -8234,7 +8234,7 @@
     <value>9</value>
   </data>
   <data name="textBoxTIN.Size" type="System.Drawing.Size, System.Drawing">
-    <value>116, 29</value>
+    <value>116, 22</value>
   </data>
   <data name="textBoxTIN.TabIndex" type="System.Int32, mscorlib">
     <value>27</value>
@@ -8288,7 +8288,7 @@
     <value>64, 81</value>
   </data>
   <data name="checkBoxExcludeVSI.Size" type="System.Drawing.Size, System.Drawing">
-    <value>108, 25</value>
+    <value>84, 17</value>
   </data>
   <data name="checkBoxExcludeVSI.TabIndex" type="System.Int32, mscorlib">
     <value>36</value>
@@ -8342,7 +8342,7 @@
     <value>64, 23</value>
   </data>
   <data name="comboBoxGAP.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 29</value>
+    <value>121, 21</value>
   </data>
   <data name="comboBoxGAP.TabIndex" type="System.Int32, mscorlib">
     <value>34</value>
@@ -9645,7 +9645,7 @@
     <value>6</value>
   </data>
   <data name="textBoxOpenAccount.Size" type="System.Drawing.Size, System.Drawing">
-    <value>67, 29</value>
+    <value>67, 22</value>
   </data>
   <data name="textBoxOpenAccount.TabIndex" type="System.Int32, mscorlib">
     <value>86</value>
@@ -9675,7 +9675,7 @@
     <value>6</value>
   </data>
   <data name="textBoxAccount.Size" type="System.Drawing.Size, System.Drawing">
-    <value>67, 29</value>
+    <value>67, 22</value>
   </data>
   <data name="textBoxAccount.TabIndex" type="System.Int32, mscorlib">
     <value>57</value>
@@ -9719,9 +9719,6 @@
   <data name="groupBox10.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
-  <data name="groupBox10.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt</value>
-  </data>
   <data name="groupBox10.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
@@ -9738,7 +9735,7 @@
     <value>groupBox10</value>
   </data>
   <data name="&gt;&gt;groupBox10.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>DevExpress.XtraEditors.GroupControl, DevExpress.Utils.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
   <data name="&gt;&gt;groupBox10.Parent" xml:space="preserve">
     <value>xtraTabPageCustInfo1</value>
@@ -11226,7 +11223,7 @@
     <value>groupBox14</value>
   </data>
   <data name="&gt;&gt;groupBox14.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>DevExpress.XtraEditors.GroupControl, DevExpress.Utils.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
   <data name="&gt;&gt;groupBox14.Parent" xml:space="preserve">
     <value>xtraTabPageCustInfo2</value>
@@ -12672,7 +12669,7 @@
     <value>groupBox15</value>
   </data>
   <data name="&gt;&gt;groupBox15.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>DevExpress.XtraEditors.GroupControl, DevExpress.Utils.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
   <data name="&gt;&gt;groupBox15.Parent" xml:space="preserve">
     <value>xtraTabPageVehicle</value>
@@ -14506,7 +14503,7 @@
     <value>groupBox16</value>
   </data>
   <data name="&gt;&gt;groupBox16.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>DevExpress.XtraEditors.GroupControl, DevExpress.Utils.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
   <data name="&gt;&gt;groupBox16.Parent" xml:space="preserve">
     <value>xtraTabPageCosigner</value>
@@ -14767,7 +14764,7 @@
     <value>groupBox23</value>
   </data>
   <data name="&gt;&gt;groupBox23.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>DevExpress.XtraEditors.GroupControl, DevExpress.Utils.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
   <data name="&gt;&gt;groupBox23.Parent" xml:space="preserve">
     <value>xtraTabPage1</value>
@@ -14962,7 +14959,7 @@
     <value>groupBox24</value>
   </data>
   <data name="&gt;&gt;groupBox24.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>DevExpress.XtraEditors.GroupControl, DevExpress.Utils.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
   <data name="&gt;&gt;groupBox24.Parent" xml:space="preserve">
     <value>xtraTabPage2</value>
@@ -15238,7 +15235,7 @@
     <value>groupBox17</value>
   </data>
   <data name="&gt;&gt;groupBox17.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>DevExpress.XtraEditors.GroupControl, DevExpress.Utils.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
   <data name="&gt;&gt;groupBox17.Parent" xml:space="preserve">
     <value>xtraTabPageBank</value>
@@ -16417,7 +16414,7 @@
     <value>groupBox18</value>
   </data>
   <data name="&gt;&gt;groupBox18.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>DevExpress.XtraEditors.GroupControl, DevExpress.Utils.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
   <data name="&gt;&gt;groupBox18.Parent" xml:space="preserve">
     <value>xtraTabPageHistory</value>
@@ -16926,7 +16923,7 @@
     <value>groupBox19</value>
   </data>
   <data name="&gt;&gt;groupBox19.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>DevExpress.XtraEditors.GroupControl, DevExpress.Utils.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
   <data name="&gt;&gt;groupBox19.Parent" xml:space="preserve">
     <value>xtraTabPageComments</value>
@@ -17484,7 +17481,7 @@
     <value>groupBox20</value>
   </data>
   <data name="&gt;&gt;groupBox20.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>DevExpress.XtraEditors.GroupControl, DevExpress.Utils.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
   <data name="&gt;&gt;groupBox20.Parent" xml:space="preserve">
     <value>xtraTabPageCustomerFees</value>
@@ -17737,6 +17734,9 @@
   </data>
   <data name="colOrgTitleReceived.Caption" xml:space="preserve">
     <value>Old Title Received </value>
+  </data>
+  <data name="repositoryItemCheckEdit1.AutoHeight" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="colOrgTitleReceived.Visible" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -18039,7 +18039,7 @@
     <value>groupBox21</value>
   </data>
   <data name="&gt;&gt;groupBox21.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>DevExpress.XtraEditors.GroupControl, DevExpress.Utils.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
   <data name="&gt;&gt;groupBox21.Parent" xml:space="preserve">
     <value>xtraTabPageRepoHistory</value>
@@ -19944,7 +19944,7 @@
     <value>groupBox22</value>
   </data>
   <data name="&gt;&gt;groupBox22.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>DevExpress.XtraEditors.GroupControl, DevExpress.Utils.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
   <data name="&gt;&gt;groupBox22.Parent" xml:space="preserve">
     <value>xtraTabPageTSB</value>
@@ -21937,6 +21937,12 @@
   </data>
   <data name="&gt;&gt;colOrgTitleReceived.Type" xml:space="preserve">
     <value>DevExpress.XtraGrid.Columns.GridColumn, DevExpress.XtraGrid.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;repositoryItemCheckEdit1.Name" xml:space="preserve">
+    <value>repositoryItemCheckEdit1</value>
+  </data>
+  <data name="&gt;&gt;repositoryItemCheckEdit1.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit, DevExpress.XtraEditors.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
   <data name="&gt;&gt;colNewTitleReceived.Name" xml:space="preserve">
     <value>colNewTitleReceived</value>

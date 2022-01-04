@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace IAC2021SQL
 {
-    public partial class ClosedMasterContingentMaintenance : Form
+    public partial class ClosedMasterContingentMaintenance : DevExpress.XtraEditors.XtraForm
     {
         private Boolean lbEdit = false, lbAdd = false, lbILockedIt = false;
         private System.Data.SqlClient.SqlTransaction tableAdapTran = null;

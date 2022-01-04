@@ -46,64 +46,64 @@
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="ReportQueries" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="ReportQueries" msprop:Generator_UserDSName="ReportQueries">
+  <xs:element name="ReportQueries" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_UserDSName="ReportQueries" msprop:Generator_DataSetName="ReportQueries">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="ClosedCustomerBuyback" msprop:Generator_TableClassName="ClosedCustomerBuybackDataTable" msprop:Generator_TableVarName="tableClosedCustomerBuyback" msprop:Generator_RowChangedName="ClosedCustomerBuybackRowChanged" msprop:Generator_TablePropName="ClosedCustomerBuyback" msprop:Generator_RowDeletingName="ClosedCustomerBuybackRowDeleting" msprop:Generator_RowChangingName="ClosedCustomerBuybackRowChanging" msprop:Generator_RowEvHandlerName="ClosedCustomerBuybackRowChangeEventHandler" msprop:Generator_RowDeletedName="ClosedCustomerBuybackRowDeleted" msprop:Generator_RowClassName="ClosedCustomerBuybackRow" msprop:Generator_UserTableName="ClosedCustomerBuyback" msprop:Generator_RowEvArgName="ClosedCustomerBuybackRowChangeEvent">
+        <xs:element name="ClosedCustomerBuyback" msprop:Generator_RowEvHandlerName="ClosedCustomerBuybackRowChangeEventHandler" msprop:Generator_RowDeletedName="ClosedCustomerBuybackRowDeleted" msprop:Generator_RowDeletingName="ClosedCustomerBuybackRowDeleting" msprop:Generator_RowEvArgName="ClosedCustomerBuybackRowChangeEvent" msprop:Generator_TablePropName="ClosedCustomerBuyback" msprop:Generator_RowChangedName="ClosedCustomerBuybackRowChanged" msprop:Generator_RowChangingName="ClosedCustomerBuybackRowChanging" msprop:Generator_TableClassName="ClosedCustomerBuybackDataTable" msprop:Generator_RowClassName="ClosedCustomerBuybackRow" msprop:Generator_TableVarName="tableClosedCustomerBuyback" msprop:Generator_UserTableName="ClosedCustomerBuyback">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="name" msprop:Generator_ColumnVarNameInTable="columnname" msprop:Generator_ColumnPropNameInRow="name" msprop:Generator_ColumnPropNameInTable="nameColumn" msprop:Generator_UserColumnName="name" minOccurs="0">
+              <xs:element name="name" msprop:Generator_ColumnPropNameInRow="name" msprop:Generator_ColumnPropNameInTable="nameColumn" msprop:Generator_ColumnVarNameInTable="columnname" msprop:Generator_UserColumnName="name" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="31" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="typecode" msprop:Generator_ColumnVarNameInTable="columntypecode" msprop:Generator_ColumnPropNameInRow="typecode" msprop:Generator_ColumnPropNameInTable="typecodeColumn" msprop:Generator_UserColumnName="typecode" minOccurs="0">
+              <xs:element name="typecode" msprop:Generator_ColumnPropNameInRow="typecode" msprop:Generator_ColumnPropNameInTable="typecodeColumn" msprop:Generator_ColumnVarNameInTable="columntypecode" msprop:Generator_UserColumnName="typecode" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="2" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="CUSTHIST_NO" msprop:Generator_ColumnVarNameInTable="columnCUSTHIST_NO" msprop:Generator_ColumnPropNameInRow="CUSTHIST_NO" msprop:Generator_ColumnPropNameInTable="CUSTHIST_NOColumn" msprop:Generator_UserColumnName="CUSTHIST_NO">
+              <xs:element name="CUSTHIST_NO" msprop:Generator_ColumnPropNameInRow="CUSTHIST_NO" msprop:Generator_ColumnPropNameInTable="CUSTHIST_NOColumn" msprop:Generator_ColumnVarNameInTable="columnCUSTHIST_NO" msprop:Generator_UserColumnName="CUSTHIST_NO">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="6" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="CUSTOMER_DEALER" msprop:Generator_ColumnVarNameInTable="columnCUSTOMER_DEALER" msprop:Generator_ColumnPropNameInRow="CUSTOMER_DEALER" msprop:Generator_ColumnPropNameInTable="CUSTOMER_DEALERColumn" msprop:Generator_UserColumnName="CUSTOMER_DEALER" minOccurs="0">
+              <xs:element name="CUSTOMER_DEALER" msprop:Generator_ColumnPropNameInRow="CUSTOMER_DEALER" msprop:Generator_ColumnPropNameInTable="CUSTOMER_DEALERColumn" msprop:Generator_ColumnVarNameInTable="columnCUSTOMER_DEALER" msprop:Generator_UserColumnName="CUSTOMER_DEALER" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="3" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="CUSTHIST_PAY_DATE" msprop:Generator_ColumnVarNameInTable="columnCUSTHIST_PAY_DATE" msprop:Generator_ColumnPropNameInRow="CUSTHIST_PAY_DATE" msprop:Generator_ColumnPropNameInTable="CUSTHIST_PAY_DATEColumn" msprop:Generator_UserColumnName="CUSTHIST_PAY_DATE" type="xs:dateTime" />
-              <xs:element name="CUSTHIST_PAYMENT_TYPE" msprop:Generator_ColumnVarNameInTable="columnCUSTHIST_PAYMENT_TYPE" msprop:Generator_ColumnPropNameInRow="CUSTHIST_PAYMENT_TYPE" msprop:Generator_ColumnPropNameInTable="CUSTHIST_PAYMENT_TYPEColumn" msprop:Generator_UserColumnName="CUSTHIST_PAYMENT_TYPE" minOccurs="0">
+              <xs:element name="CUSTHIST_PAY_DATE" msprop:Generator_ColumnPropNameInRow="CUSTHIST_PAY_DATE" msprop:Generator_ColumnPropNameInTable="CUSTHIST_PAY_DATEColumn" msprop:Generator_ColumnVarNameInTable="columnCUSTHIST_PAY_DATE" msprop:Generator_UserColumnName="CUSTHIST_PAY_DATE" type="xs:dateTime" />
+              <xs:element name="CUSTHIST_PAYMENT_TYPE" msprop:Generator_ColumnPropNameInRow="CUSTHIST_PAYMENT_TYPE" msprop:Generator_ColumnPropNameInTable="CUSTHIST_PAYMENT_TYPEColumn" msprop:Generator_ColumnVarNameInTable="columnCUSTHIST_PAYMENT_TYPE" msprop:Generator_UserColumnName="CUSTHIST_PAYMENT_TYPE" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="1" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="CUSTHIST_PAYMENT_CODE" msprop:Generator_ColumnVarNameInTable="columnCUSTHIST_PAYMENT_CODE" msprop:Generator_ColumnPropNameInRow="CUSTHIST_PAYMENT_CODE" msprop:Generator_ColumnPropNameInTable="CUSTHIST_PAYMENT_CODEColumn" msprop:Generator_UserColumnName="CUSTHIST_PAYMENT_CODE" minOccurs="0">
+              <xs:element name="CUSTHIST_PAYMENT_CODE" msprop:Generator_ColumnPropNameInRow="CUSTHIST_PAYMENT_CODE" msprop:Generator_ColumnPropNameInTable="CUSTHIST_PAYMENT_CODEColumn" msprop:Generator_ColumnVarNameInTable="columnCUSTHIST_PAYMENT_CODE" msprop:Generator_UserColumnName="CUSTHIST_PAYMENT_CODE" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="1" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="CUSTHIST_PAYMENT_RCV" msprop:Generator_ColumnVarNameInTable="columnCUSTHIST_PAYMENT_RCV" msprop:Generator_ColumnPropNameInRow="CUSTHIST_PAYMENT_RCV" msprop:Generator_ColumnPropNameInTable="CUSTHIST_PAYMENT_RCVColumn" msprop:Generator_UserColumnName="CUSTHIST_PAYMENT_RCV" type="xs:decimal" minOccurs="0" />
-              <xs:element name="CUSTOMER_STATE" msprop:Generator_ColumnVarNameInTable="columnCUSTOMER_STATE" msprop:Generator_ColumnPropNameInRow="CUSTOMER_STATE" msprop:Generator_ColumnPropNameInTable="CUSTOMER_STATEColumn" msprop:Generator_UserColumnName="CUSTOMER_STATE" minOccurs="0">
+              <xs:element name="CUSTHIST_PAYMENT_RCV" msprop:Generator_ColumnPropNameInRow="CUSTHIST_PAYMENT_RCV" msprop:Generator_ColumnPropNameInTable="CUSTHIST_PAYMENT_RCVColumn" msprop:Generator_ColumnVarNameInTable="columnCUSTHIST_PAYMENT_RCV" msprop:Generator_UserColumnName="CUSTHIST_PAYMENT_RCV" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CUSTOMER_STATE" msprop:Generator_ColumnPropNameInRow="CUSTOMER_STATE" msprop:Generator_ColumnPropNameInTable="CUSTOMER_STATEColumn" msprop:Generator_ColumnVarNameInTable="columnCUSTOMER_STATE" msprop:Generator_UserColumnName="CUSTOMER_STATE" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="2" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="DEALER_ST" msprop:Generator_ColumnVarNameInTable="columnDEALER_ST" msprop:Generator_ColumnPropNameInRow="DEALER_ST" msprop:Generator_ColumnPropNameInTable="DEALER_STColumn" msprop:Generator_UserColumnName="DEALER_ST" minOccurs="0">
+              <xs:element name="DEALER_ST" msprop:Generator_ColumnPropNameInRow="DEALER_ST" msprop:Generator_ColumnPropNameInTable="DEALER_STColumn" msprop:Generator_ColumnVarNameInTable="columnDEALER_ST" msprop:Generator_UserColumnName="DEALER_ST" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="2" />

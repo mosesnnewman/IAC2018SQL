@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManagerIAC = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::IAC2021SQL.SplashFormNew), true, true, true);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MDIIAC2013));
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.ClosedEndFunctionsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -344,7 +345,7 @@
             this.openEndToolStripMenuItem1});
             this.postingToolStripMenuItem2.Image = global::IAC2021SQL.Properties.Resources.Process_16x_24;
             this.postingToolStripMenuItem2.Name = "postingToolStripMenuItem2";
-            this.postingToolStripMenuItem2.Size = new System.Drawing.Size(141, 22);
+            this.postingToolStripMenuItem2.Size = new System.Drawing.Size(140, 22);
             this.postingToolStripMenuItem2.Text = "&Posting";
             // 
             // closedEndToolStripMenuItem1
@@ -487,7 +488,7 @@
             this.fixPaidThroughsToolStripMenuItem1});
             this.adminToolsToolStripMenuItem.Image = global::IAC2021SQL.Properties.Resources.Toolbox_16x_24;
             this.adminToolsToolStripMenuItem.Name = "adminToolsToolStripMenuItem";
-            this.adminToolsToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
+            this.adminToolsToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.adminToolsToolStripMenuItem.Text = "&Admin Tools";
             // 
             // backupToolStripMenuItem
@@ -524,7 +525,7 @@
             // 
             this.createWellsFargoExtractToolStripMenuItem1.Image = global::IAC2021SQL.Properties.Resources.ExcelWorksheetView_16x_24;
             this.createWellsFargoExtractToolStripMenuItem1.Name = "createWellsFargoExtractToolStripMenuItem1";
-            this.createWellsFargoExtractToolStripMenuItem1.Size = new System.Drawing.Size(247, 22);
+            this.createWellsFargoExtractToolStripMenuItem1.Size = new System.Drawing.Size(245, 22);
             this.createWellsFargoExtractToolStripMenuItem1.Text = "Create Bank &Extract";
             this.createWellsFargoExtractToolStripMenuItem1.Click += new System.EventHandler(this.createWellsFargoExtractToolStripMenuItem1_Click);
             // 
@@ -532,7 +533,7 @@
             // 
             this.aUTOBANKTransferAndReportsToolStripMenuItem.Image = global::IAC2021SQL.Properties.Resources.AutoComplete_16x_24;
             this.aUTOBANKTransferAndReportsToolStripMenuItem.Name = "aUTOBANKTransferAndReportsToolStripMenuItem";
-            this.aUTOBANKTransferAndReportsToolStripMenuItem.Size = new System.Drawing.Size(247, 22);
+            this.aUTOBANKTransferAndReportsToolStripMenuItem.Size = new System.Drawing.Size(245, 22);
             this.aUTOBANKTransferAndReportsToolStripMenuItem.Text = "&AUTOBANK Transfer and Reports";
             this.aUTOBANKTransferAndReportsToolStripMenuItem.Click += new System.EventHandler(this.aUTOBANKTransferAndReportsToolStripMenuItem_Click);
             // 
@@ -540,7 +541,7 @@
             // 
             this.importPCPAYFileToolStripMenuItem.Image = global::IAC2021SQL.Properties.Resources.Import_grey_16x_24;
             this.importPCPAYFileToolStripMenuItem.Name = "importPCPAYFileToolStripMenuItem";
-            this.importPCPAYFileToolStripMenuItem.Size = new System.Drawing.Size(247, 22);
+            this.importPCPAYFileToolStripMenuItem.Size = new System.Drawing.Size(245, 22);
             this.importPCPAYFileToolStripMenuItem.Text = "&ImportPCPAY File";
             this.importPCPAYFileToolStripMenuItem.Click += new System.EventHandler(this.importPCPAYFileToolStripMenuItem_Click);
             // 
@@ -548,7 +549,7 @@
             // 
             this.tSBExtractToolStripMenuItem.Image = global::IAC2021SQL.Properties.Resources.Export_16x_24;
             this.tSBExtractToolStripMenuItem.Name = "tSBExtractToolStripMenuItem";
-            this.tSBExtractToolStripMenuItem.Size = new System.Drawing.Size(247, 22);
+            this.tSBExtractToolStripMenuItem.Size = new System.Drawing.Size(245, 22);
             this.tSBExtractToolStripMenuItem.Text = "&TSB Extract";
             this.tSBExtractToolStripMenuItem.Click += new System.EventHandler(this.tSBExtractToolStripMenuItem_Click);
             // 
@@ -560,7 +561,7 @@
             this.importPNSToolStripMenuItem});
             this.closedImportPCPAYFileToolStripMenuItem.Image = global::IAC2021SQL.Properties.Resources.MoneyEditor_16x_24;
             this.closedImportPCPAYFileToolStripMenuItem.Name = "closedImportPCPAYFileToolStripMenuItem";
-            this.closedImportPCPAYFileToolStripMenuItem.Size = new System.Drawing.Size(247, 22);
+            this.closedImportPCPAYFileToolStripMenuItem.Size = new System.Drawing.Size(245, 22);
             this.closedImportPCPAYFileToolStripMenuItem.Text = "&Payment Imports";
             // 
             // importIVRPaymentsToolStripMenuItem
@@ -894,125 +895,125 @@
             // newCustomerEditListToolStripMenuItem1
             // 
             this.newCustomerEditListToolStripMenuItem1.Name = "newCustomerEditListToolStripMenuItem1";
-            this.newCustomerEditListToolStripMenuItem1.Size = new System.Drawing.Size(322, 22);
+            this.newCustomerEditListToolStripMenuItem1.Size = new System.Drawing.Size(321, 22);
             this.newCustomerEditListToolStripMenuItem1.Text = "&New Customer Edit List (OPNRPT01)";
             this.newCustomerEditListToolStripMenuItem1.Click += new System.EventHandler(this.newCustomerEditListToolStripMenuItem1_Click);
             // 
             // paymentReceiptsBalanceJournalToolStripMenuItem1
             // 
             this.paymentReceiptsBalanceJournalToolStripMenuItem1.Name = "paymentReceiptsBalanceJournalToolStripMenuItem1";
-            this.paymentReceiptsBalanceJournalToolStripMenuItem1.Size = new System.Drawing.Size(322, 22);
+            this.paymentReceiptsBalanceJournalToolStripMenuItem1.Size = new System.Drawing.Size(321, 22);
             this.paymentReceiptsBalanceJournalToolStripMenuItem1.Text = "&Payment Receipts Balance Journal (OPNRPT07)";
             this.paymentReceiptsBalanceJournalToolStripMenuItem1.Click += new System.EventHandler(this.paymentReceiptsBalanceJournalToolStripMenuItem1_Click);
             // 
             // delinquencyReportToolStripMenuItem
             // 
             this.delinquencyReportToolStripMenuItem.Name = "delinquencyReportToolStripMenuItem";
-            this.delinquencyReportToolStripMenuItem.Size = new System.Drawing.Size(322, 22);
+            this.delinquencyReportToolStripMenuItem.Size = new System.Drawing.Size(321, 22);
             this.delinquencyReportToolStripMenuItem.Text = "&Delinquency Reports";
             this.delinquencyReportToolStripMenuItem.Click += new System.EventHandler(this.delinquencyReportToolStripMenuItem_Click);
             // 
             // collectionReportToolStripMenuItem
             // 
             this.collectionReportToolStripMenuItem.Name = "collectionReportToolStripMenuItem";
-            this.collectionReportToolStripMenuItem.Size = new System.Drawing.Size(322, 22);
+            this.collectionReportToolStripMenuItem.Size = new System.Drawing.Size(321, 22);
             this.collectionReportToolStripMenuItem.Text = "&Collection Report";
             // 
             // paidInfullReportToolStripMenuItem1
             // 
             this.paidInfullReportToolStripMenuItem1.Name = "paidInfullReportToolStripMenuItem1";
-            this.paidInfullReportToolStripMenuItem1.Size = new System.Drawing.Size(322, 22);
+            this.paidInfullReportToolStripMenuItem1.Size = new System.Drawing.Size(321, 22);
             this.paidInfullReportToolStripMenuItem1.Text = "Paid in &Full Report";
             this.paidInfullReportToolStripMenuItem1.Click += new System.EventHandler(this.paidInfullReportToolStripMenuItem1_Click);
             // 
             // chargesAppliedToDealerReportToolStripMenuItem1
             // 
             this.chargesAppliedToDealerReportToolStripMenuItem1.Name = "chargesAppliedToDealerReportToolStripMenuItem1";
-            this.chargesAppliedToDealerReportToolStripMenuItem1.Size = new System.Drawing.Size(322, 22);
+            this.chargesAppliedToDealerReportToolStripMenuItem1.Size = new System.Drawing.Size(321, 22);
             this.chargesAppliedToDealerReportToolStripMenuItem1.Text = "Charges &Applied to Dealer Report (OPNRPT15)";
             this.chargesAppliedToDealerReportToolStripMenuItem1.Click += new System.EventHandler(this.chargesAppliedToDealerReportToolStripMenuItem1_Click);
             // 
             // customerLateChargeListingIACRPT35ToolStripMenuItem
             // 
             this.customerLateChargeListingIACRPT35ToolStripMenuItem.Name = "customerLateChargeListingIACRPT35ToolStripMenuItem";
-            this.customerLateChargeListingIACRPT35ToolStripMenuItem.Size = new System.Drawing.Size(322, 22);
+            this.customerLateChargeListingIACRPT35ToolStripMenuItem.Size = new System.Drawing.Size(321, 22);
             this.customerLateChargeListingIACRPT35ToolStripMenuItem.Text = "Customer &Late Charge Listing (OPNRPT35)";
             this.customerLateChargeListingIACRPT35ToolStripMenuItem.Click += new System.EventHandler(this.customerLateChargeListingIACRPT35ToolStripMenuItem_Click);
             // 
             // addOnEditListToolStripMenuItem
             // 
             this.addOnEditListToolStripMenuItem.Name = "addOnEditListToolStripMenuItem";
-            this.addOnEditListToolStripMenuItem.Size = new System.Drawing.Size(322, 22);
+            this.addOnEditListToolStripMenuItem.Size = new System.Drawing.Size(321, 22);
             this.addOnEditListToolStripMenuItem.Text = "&Add-On Edit List (OPNRPT02)";
             this.addOnEditListToolStripMenuItem.Click += new System.EventHandler(this.addOnEditListToolStripMenuItem_Click);
             // 
             // dealerContingentEditListWithTotalsOPNRPT03ToolStripMenuItem
             // 
             this.dealerContingentEditListWithTotalsOPNRPT03ToolStripMenuItem.Name = "dealerContingentEditListWithTotalsOPNRPT03ToolStripMenuItem";
-            this.dealerContingentEditListWithTotalsOPNRPT03ToolStripMenuItem.Size = new System.Drawing.Size(322, 22);
+            this.dealerContingentEditListWithTotalsOPNRPT03ToolStripMenuItem.Size = new System.Drawing.Size(321, 22);
             this.dealerContingentEditListWithTotalsOPNRPT03ToolStripMenuItem.Text = "C&ontingent Edit List With Totals (OPNRPT03)";
             this.dealerContingentEditListWithTotalsOPNRPT03ToolStripMenuItem.Click += new System.EventHandler(this.dealerContingentEditListWithTotalsOPNRPT03ToolStripMenuItem_Click);
             // 
             // reprintStatementsToolStripMenuItem
             // 
             this.reprintStatementsToolStripMenuItem.Name = "reprintStatementsToolStripMenuItem";
-            this.reprintStatementsToolStripMenuItem.Size = new System.Drawing.Size(322, 22);
+            this.reprintStatementsToolStripMenuItem.Size = new System.Drawing.Size(321, 22);
             this.reprintStatementsToolStripMenuItem.Text = "Reprint &Statements";
             this.reprintStatementsToolStripMenuItem.Click += new System.EventHandler(this.reprintStatementsToolStripMenuItem_Click);
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(322, 22);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(321, 22);
             this.toolStripMenuItem3.Text = "Print New &Business Statements";
             this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
             // 
             // customerFinanceReportOFINRPTToolStripMenuItem
             // 
             this.customerFinanceReportOFINRPTToolStripMenuItem.Name = "customerFinanceReportOFINRPTToolStripMenuItem";
-            this.customerFinanceReportOFINRPTToolStripMenuItem.Size = new System.Drawing.Size(322, 22);
+            this.customerFinanceReportOFINRPTToolStripMenuItem.Size = new System.Drawing.Size(321, 22);
             this.customerFinanceReportOFINRPTToolStripMenuItem.Text = "Customer F&inance Report (OFINRPT)";
             this.customerFinanceReportOFINRPTToolStripMenuItem.Click += new System.EventHandler(this.customerFinanceReportOFINRPTToolStripMenuItem_Click);
             // 
             // openLoanTrialBalanceToolStripMenuItem
             // 
             this.openLoanTrialBalanceToolStripMenuItem.Name = "openLoanTrialBalanceToolStripMenuItem";
-            this.openLoanTrialBalanceToolStripMenuItem.Size = new System.Drawing.Size(322, 22);
+            this.openLoanTrialBalanceToolStripMenuItem.Size = new System.Drawing.Size(321, 22);
             this.openLoanTrialBalanceToolStripMenuItem.Text = "Open Loan &Trial Balance";
             this.openLoanTrialBalanceToolStripMenuItem.Click += new System.EventHandler(this.openLoanTrialBalanceToolStripMenuItem_Click);
             // 
             // dealerSummaryReportOPNRPT26ToolStripMenuItem
             // 
             this.dealerSummaryReportOPNRPT26ToolStripMenuItem.Name = "dealerSummaryReportOPNRPT26ToolStripMenuItem";
-            this.dealerSummaryReportOPNRPT26ToolStripMenuItem.Size = new System.Drawing.Size(322, 22);
+            this.dealerSummaryReportOPNRPT26ToolStripMenuItem.Size = new System.Drawing.Size(321, 22);
             this.dealerSummaryReportOPNRPT26ToolStripMenuItem.Text = "Dealer Su&mmary Report  (OPNRPT26)";
             this.dealerSummaryReportOPNRPT26ToolStripMenuItem.Click += new System.EventHandler(this.dealerSummaryReportOPNRPT26ToolStripMenuItem_Click);
             // 
             // dealerHistoryReportOPNRPT41ToolStripMenuItem
             // 
             this.dealerHistoryReportOPNRPT41ToolStripMenuItem.Name = "dealerHistoryReportOPNRPT41ToolStripMenuItem";
-            this.dealerHistoryReportOPNRPT41ToolStripMenuItem.Size = new System.Drawing.Size(322, 22);
+            this.dealerHistoryReportOPNRPT41ToolStripMenuItem.Size = new System.Drawing.Size(321, 22);
             this.dealerHistoryReportOPNRPT41ToolStripMenuItem.Text = "Dealer &History Report (OPNRPT41)";
             this.dealerHistoryReportOPNRPT41ToolStripMenuItem.Click += new System.EventHandler(this.dealerHistoryReportOPNRPT41ToolStripMenuItem_Click);
             // 
             // masterHistoryReportIACRPT43ToolStripMenuItem1
             // 
             this.masterHistoryReportIACRPT43ToolStripMenuItem1.Name = "masterHistoryReportIACRPT43ToolStripMenuItem1";
-            this.masterHistoryReportIACRPT43ToolStripMenuItem1.Size = new System.Drawing.Size(322, 22);
+            this.masterHistoryReportIACRPT43ToolStripMenuItem1.Size = new System.Drawing.Size(321, 22);
             this.masterHistoryReportIACRPT43ToolStripMenuItem1.Text = "&Master History Report (IACRPT43)";
             this.masterHistoryReportIACRPT43ToolStripMenuItem1.Click += new System.EventHandler(this.masterHistoryReportIACRPT43ToolStripMenuItem1_Click);
             // 
             // openCustomerBuyBackReportBUYBACKToolStripMenuItem
             // 
             this.openCustomerBuyBackReportBUYBACKToolStripMenuItem.Name = "openCustomerBuyBackReportBUYBACKToolStripMenuItem";
-            this.openCustomerBuyBackReportBUYBACKToolStripMenuItem.Size = new System.Drawing.Size(322, 22);
+            this.openCustomerBuyBackReportBUYBACKToolStripMenuItem.Size = new System.Drawing.Size(321, 22);
             this.openCustomerBuyBackReportBUYBACKToolStripMenuItem.Text = "Open Customer &Buy Back Report (BUYBACK)";
             this.openCustomerBuyBackReportBUYBACKToolStripMenuItem.Click += new System.EventHandler(this.openCustomerBuyBackReportBUYBACKToolStripMenuItem_Click);
             // 
             // firstPaymentDefaultReportToolStripMenuItem1
             // 
             this.firstPaymentDefaultReportToolStripMenuItem1.Name = "firstPaymentDefaultReportToolStripMenuItem1";
-            this.firstPaymentDefaultReportToolStripMenuItem1.Size = new System.Drawing.Size(322, 22);
+            this.firstPaymentDefaultReportToolStripMenuItem1.Size = new System.Drawing.Size(321, 22);
             this.firstPaymentDefaultReportToolStripMenuItem1.Text = "First Payment Default Report";
             this.firstPaymentDefaultReportToolStripMenuItem1.Click += new System.EventHandler(this.firstPaymentDefaultReportToolStripMenuItem1_Click);
             // 
@@ -1032,7 +1033,7 @@
             this.globalSearchPDFUploaderToolStripMenuItem,
             this.fixPartialPaymentsToolStripMenuItem});
             this.toolsMenu.Name = "toolsMenu";
-            this.toolsMenu.Size = new System.Drawing.Size(47, 20);
+            this.toolsMenu.Size = new System.Drawing.Size(46, 20);
             this.toolsMenu.Text = "&Tools";
             // 
             // deepSearchToolStripMenuItem
@@ -1152,42 +1153,42 @@
             // newWindowToolStripMenuItem
             // 
             this.newWindowToolStripMenuItem.Name = "newWindowToolStripMenuItem";
-            this.newWindowToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.newWindowToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.newWindowToolStripMenuItem.Text = "&New Window";
             this.newWindowToolStripMenuItem.Click += new System.EventHandler(this.ShowNewForm);
             // 
             // cascadeToolStripMenuItem
             // 
             this.cascadeToolStripMenuItem.Name = "cascadeToolStripMenuItem";
-            this.cascadeToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.cascadeToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.cascadeToolStripMenuItem.Text = "&Cascade";
             this.cascadeToolStripMenuItem.Click += new System.EventHandler(this.CascadeToolStripMenuItem_Click);
             // 
             // tileVerticalToolStripMenuItem
             // 
             this.tileVerticalToolStripMenuItem.Name = "tileVerticalToolStripMenuItem";
-            this.tileVerticalToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.tileVerticalToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.tileVerticalToolStripMenuItem.Text = "Tile &Vertical";
             this.tileVerticalToolStripMenuItem.Click += new System.EventHandler(this.TileVerticalToolStripMenuItem_Click);
             // 
             // tileHorizontalToolStripMenuItem
             // 
             this.tileHorizontalToolStripMenuItem.Name = "tileHorizontalToolStripMenuItem";
-            this.tileHorizontalToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.tileHorizontalToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.tileHorizontalToolStripMenuItem.Text = "Tile &Horizontal";
             this.tileHorizontalToolStripMenuItem.Click += new System.EventHandler(this.TileHorizontalToolStripMenuItem_Click);
             // 
             // closeAllToolStripMenuItem
             // 
             this.closeAllToolStripMenuItem.Name = "closeAllToolStripMenuItem";
-            this.closeAllToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.closeAllToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.closeAllToolStripMenuItem.Text = "C&lose All";
             this.closeAllToolStripMenuItem.Click += new System.EventHandler(this.CloseAllToolStripMenuItem_Click);
             // 
             // arrangeIconsToolStripMenuItem
             // 
             this.arrangeIconsToolStripMenuItem.Name = "arrangeIconsToolStripMenuItem";
-            this.arrangeIconsToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.arrangeIconsToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.arrangeIconsToolStripMenuItem.Text = "&Arrange Icons";
             this.arrangeIconsToolStripMenuItem.Click += new System.EventHandler(this.ArrangeIconsToolStripMenuItem_Click);
             // 
@@ -1258,15 +1259,17 @@
             // 
             // MDIIAC2013
             // 
+            this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.BackColor = System.Drawing.SystemColors.Desktop;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1008, 704);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.menuStrip);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IconOptions.Image = ((System.Drawing.Image)(resources.GetObject("MDIIAC2013.IconOptions.Image")));
             this.IsMdiContainer = true;
+            this.LookAndFeel.SkinName = "McSkin";
+            this.LookAndFeel.UseDefaultLookAndFeel = false;
             this.MainMenuStrip = this.menuStrip;
             this.Name = "MDIIAC2013";
             this.Text = "IAC 2018 SQL";

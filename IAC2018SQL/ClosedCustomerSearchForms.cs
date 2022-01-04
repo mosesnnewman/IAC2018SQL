@@ -11,7 +11,7 @@ using IAC2021SQL;
 
 namespace IAC2021SQL
 {
-    public partial class frmCustomerLookup : Form
+    public partial class frmCustomerLookup : DevExpress.XtraEditors.XtraForm
     {
         private String _LookupType = "B"; 
         public String LookupFormType

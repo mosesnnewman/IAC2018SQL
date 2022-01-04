@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace IAC2021SQL
 {
-    public partial class ReportViewer : Form
+    public partial class ReportViewer : DevExpress.XtraEditors.XtraForm
     {
         public ReportViewer()
         {

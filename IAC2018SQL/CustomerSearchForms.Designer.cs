@@ -50,11 +50,11 @@
             System.Windows.Forms.Label cUSTOMER_PURCHASE_ORDERLabel;
             System.Windows.Forms.Label label3;
             System.Windows.Forms.Label label7;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGeneralCustomerLookup));
             this.CustomerbindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.iacDataSet1 = new IAC2021SQL.IACDataSet();
@@ -187,7 +187,7 @@
             cUSTOMER_DOBLabel.AutoSize = true;
             cUSTOMER_DOBLabel.Location = new System.Drawing.Point(219, 181);
             cUSTOMER_DOBLabel.Name = "cUSTOMER_DOBLabel";
-            cUSTOMER_DOBLabel.Size = new System.Drawing.Size(90, 13);
+            cUSTOMER_DOBLabel.Size = new System.Drawing.Size(89, 13);
             cUSTOMER_DOBLabel.TabIndex = 89;
             cUSTOMER_DOBLabel.Text = "DATE  OF BIRTH:";
             // 
@@ -291,7 +291,7 @@
             lblVehicleYear.BackColor = System.Drawing.Color.Transparent;
             lblVehicleYear.Location = new System.Drawing.Point(59, 60);
             lblVehicleYear.Name = "lblVehicleYear";
-            lblVehicleYear.Size = new System.Drawing.Size(71, 13);
+            lblVehicleYear.Size = new System.Drawing.Size(69, 13);
             lblVehicleYear.TabIndex = 77;
             lblVehicleYear.Text = "Vehicle Year:";
             // 
@@ -300,7 +300,7 @@
             cUSTOMER_STATELabel.AutoSize = true;
             cUSTOMER_STATELabel.Location = new System.Drawing.Point(34, 181);
             cUSTOMER_STATELabel.Name = "cUSTOMER_STATELabel";
-            cUSTOMER_STATELabel.Size = new System.Drawing.Size(39, 13);
+            cUSTOMER_STATELabel.Size = new System.Drawing.Size(37, 13);
             cUSTOMER_STATELabel.TabIndex = 85;
             cUSTOMER_STATELabel.Text = "STATE:";
             // 
@@ -349,7 +349,7 @@
             label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label3.Location = new System.Drawing.Point(270, 20);
             label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(79, 15);
+            label3.Size = new System.Drawing.Size(78, 15);
             label3.TabIndex = 95;
             label3.Text = "CUSTOMER#:";
             // 
@@ -454,8 +454,8 @@
             // CUSTOMER_SS_1
             // 
             this.CUSTOMER_SS_1.DataPropertyName = "CUSTOMER_SS_1";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.CUSTOMER_SS_1.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.CUSTOMER_SS_1.DefaultCellStyle = dataGridViewCellStyle1;
             this.CUSTOMER_SS_1.HeaderText = "SOCIAL SEC#";
             this.CUSTOMER_SS_1.Name = "CUSTOMER_SS_1";
             this.CUSTOMER_SS_1.ReadOnly = true;
@@ -463,8 +463,8 @@
             // 
             // SOCDASH1
             // 
-            dataGridViewCellStyle7.NullValue = "-";
-            this.SOCDASH1.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle2.NullValue = "-";
+            this.SOCDASH1.DefaultCellStyle = dataGridViewCellStyle2;
             this.SOCDASH1.HeaderText = "";
             this.SOCDASH1.Name = "SOCDASH1";
             this.SOCDASH1.ReadOnly = true;
@@ -473,8 +473,8 @@
             // CUSTOMER_SS_2
             // 
             this.CUSTOMER_SS_2.DataPropertyName = "CUSTOMER_SS_2";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.CUSTOMER_SS_2.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.CUSTOMER_SS_2.DefaultCellStyle = dataGridViewCellStyle3;
             this.CUSTOMER_SS_2.HeaderText = "";
             this.CUSTOMER_SS_2.Name = "CUSTOMER_SS_2";
             this.CUSTOMER_SS_2.ReadOnly = true;
@@ -482,8 +482,8 @@
             // 
             // SOCDASH2
             // 
-            dataGridViewCellStyle9.NullValue = "-";
-            this.SOCDASH2.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle4.NullValue = "-";
+            this.SOCDASH2.DefaultCellStyle = dataGridViewCellStyle4;
             this.SOCDASH2.HeaderText = "";
             this.SOCDASH2.Name = "SOCDASH2";
             this.SOCDASH2.ReadOnly = true;
@@ -492,8 +492,8 @@
             // CUSTOMER_SS_3
             // 
             this.CUSTOMER_SS_3.DataPropertyName = "CUSTOMER_SS_3";
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.CUSTOMER_SS_3.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.CUSTOMER_SS_3.DefaultCellStyle = dataGridViewCellStyle5;
             this.CUSTOMER_SS_3.HeaderText = "";
             this.CUSTOMER_SS_3.Name = "CUSTOMER_SS_3";
             this.CUSTOMER_SS_3.ReadOnly = true;
@@ -1029,7 +1029,7 @@
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(36, 22);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
@@ -1095,13 +1095,17 @@
             // 
             // frmGeneralCustomerLookup
             // 
+            this.Appearance.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.Appearance.Options.UseBackColor = true;
+            this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.BackColor = System.Drawing.Color.CornflowerBlue;
             this.ClientSize = new System.Drawing.Size(933, 523);
             this.Controls.Add(this.bindingNavigator1);
             this.Controls.Add(this.tabControl1);
-            this.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Tahoma", 8.25F);
+            this.LookAndFeel.SkinName = "McSkin";
+            this.LookAndFeel.UseDefaultLookAndFeel = false;
             this.Name = "frmGeneralCustomerLookup";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "General Customer Lookup";

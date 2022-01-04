@@ -96,6 +96,7 @@
             this.tabPage1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TextBoxPostDate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MACONTbindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MasterListbindingSource)).BeginInit();
@@ -242,7 +243,7 @@
             this.TextBoxPostDate.Name = "TextBoxPostDate";
             this.TextBoxPostDate.Size = new System.Drawing.Size(81, 20);
             this.TextBoxPostDate.TabIndex = 183;
-            this.TextBoxPostDate.Value = new System.DateTime(2013, 6, 12, 0, 0, 0, 0);
+            this.TextBoxPostDate.Value = new System.DateTime(2021, 12, 29, 0, 0, 0, 0);
             this.TextBoxPostDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // MACONTbindingSource
@@ -619,12 +620,17 @@
             // 
             // ClosedMasterContingentMaintenance
             // 
+            this.Appearance.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.Appearance.Options.UseBackColor = true;
+            this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.BackColor = System.Drawing.Color.CornflowerBlue;
             this.ClientSize = new System.Drawing.Size(900, 509);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LookAndFeel.SkinName = "McSkin";
+            this.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.MaximizeBox = false;
             this.Name = "ClosedMasterContingentMaintenance";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Closed Master Contingent Maintenance";
@@ -639,6 +645,7 @@
             this.toolStrip1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TextBoxPostDate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MACONTbindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

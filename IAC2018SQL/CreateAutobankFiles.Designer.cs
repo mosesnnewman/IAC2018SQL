@@ -170,9 +170,11 @@
             // 
             // frmCreateAutoBankFiles
             // 
+            this.Appearance.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.Appearance.Options.UseBackColor = true;
+            this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(539, 209);
             this.Controls.Add(this.nullableDateTimePickerBsnkTranDate);
             this.Controls.Add(this.nullableDateTimePickerCutOffDate);
@@ -185,7 +187,10 @@
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonPost);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LookAndFeel.SkinName = "McSkin";
+            this.LookAndFeel.UseDefaultLookAndFeel = false;
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
             this.Name = "frmCreateAutoBankFiles";
             this.Text = "Create EFT Files / Reports";
             this.Load += new System.EventHandler(this.frmCreateAutoBankFiles_Load);

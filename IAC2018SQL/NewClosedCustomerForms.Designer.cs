@@ -339,7 +339,7 @@
             this.colImgSort1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.xtraTabControlCustomerMaint = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPageCustInfo1 = new DevExpress.XtraTab.XtraTabPage();
-            this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.groupBox10 = new DevExpress.XtraEditors.GroupControl();
             this.checkEditAllotment = new DevExpress.XtraEditors.CheckEdit();
             this.toolbarFormManager1 = new DevExpress.XtraBars.ToolbarForm.ToolbarFormManager(this.components);
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
@@ -418,7 +418,7 @@
             this.textBoxOpenAccount = new System.Windows.Forms.TextBox();
             this.textBoxAccount = new System.Windows.Forms.TextBox();
             this.xtraTabPageCustInfo2 = new DevExpress.XtraTab.XtraTabPage();
-            this.groupBox14 = new System.Windows.Forms.GroupBox();
+            this.groupBox14 = new DevExpress.XtraEditors.GroupControl();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.colorTextBoxTotalDue = new DevExpress.XtraEditors.TextEdit();
             this.txtContractStatus = new DevExpress.XtraEditors.TextEdit();
@@ -470,7 +470,7 @@
             this.textBoxIACType = new System.Windows.Forms.TextBox();
             this.textBox14 = new System.Windows.Forms.TextBox();
             this.xtraTabPageVehicle = new DevExpress.XtraTab.XtraTabPage();
-            this.groupBox15 = new System.Windows.Forms.GroupBox();
+            this.groupBox15 = new DevExpress.XtraEditors.GroupControl();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.textBox19 = new System.Windows.Forms.TextBox();
             this.textBox49 = new System.Windows.Forms.TextBox();
@@ -520,7 +520,7 @@
             this.txtModel = new System.Windows.Forms.TextBox();
             this.txtVehicleYear = new System.Windows.Forms.TextBox();
             this.xtraTabPageCosigner = new DevExpress.XtraTab.XtraTabPage();
-            this.groupBox16 = new System.Windows.Forms.GroupBox();
+            this.groupBox16 = new DevExpress.XtraEditors.GroupControl();
             this.groupBoxCOSSBT = new System.Windows.Forms.GroupBox();
             this.buttonCOSMessage = new DevExpress.XtraEditors.SimpleButton();
             this.buttonCOSConfirm = new DevExpress.XtraEditors.SimpleButton();
@@ -582,10 +582,10 @@
             this.textBox60 = new System.Windows.Forms.TextBox();
             this.textBox61 = new System.Windows.Forms.TextBox();
             this.xtraTabPageBank = new DevExpress.XtraTab.XtraTabPage();
-            this.groupBox17 = new System.Windows.Forms.GroupBox();
+            this.groupBox17 = new DevExpress.XtraEditors.GroupControl();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
-            this.groupBox23 = new System.Windows.Forms.GroupBox();
+            this.groupBox23 = new DevExpress.XtraEditors.GroupControl();
             this.textEditBankMonthlyPayment = new DevExpress.XtraEditors.TextEdit();
             this.checkEditBankAutoPay = new DevExpress.XtraEditors.CheckEdit();
             this.textEditBankAccountNumber = new DevExpress.XtraEditors.TextEdit();
@@ -595,7 +595,7 @@
             this.textEditBankCity = new DevExpress.XtraEditors.TextEdit();
             this.textEditBankName = new DevExpress.XtraEditors.TextEdit();
             this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
-            this.groupBox24 = new System.Windows.Forms.GroupBox();
+            this.groupBox24 = new DevExpress.XtraEditors.GroupControl();
             this.comboBoxEditExpYear = new DevExpress.XtraEditors.ComboBoxEdit();
             this.lookUpEditExpMonth = new DevExpress.XtraEditors.LookUpEdit();
             this.textEditCreditCardCVV = new DevExpress.XtraEditors.TextEdit();
@@ -610,7 +610,7 @@
             this.textBox87 = new System.Windows.Forms.TextBox();
             this.textBox88 = new System.Windows.Forms.TextBox();
             this.xtraTabPageHistory = new DevExpress.XtraTab.XtraTabPage();
-            this.groupBox18 = new System.Windows.Forms.GroupBox();
+            this.groupBox18 = new DevExpress.XtraEditors.GroupControl();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
             this.checkEditCollectionAgentHistory = new DevExpress.XtraEditors.CheckEdit();
             this.checkEditOverideInterestHistory = new DevExpress.XtraEditors.CheckEdit();
@@ -655,7 +655,7 @@
             this.colCUSTHIST_PAYMENT_CODE = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCUSTHIST_THRU_UD = new DevExpress.XtraGrid.Columns.GridColumn();
             this.xtraTabPageComments = new DevExpress.XtraTab.XtraTabPage();
-            this.groupBox19 = new System.Windows.Forms.GroupBox();
+            this.groupBox19 = new DevExpress.XtraEditors.GroupControl();
             this.cOMMENTGridControl = new DevExpress.XtraGrid.GridControl();
             this.cOMMENTgridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colDATE = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -685,7 +685,7 @@
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.txtCommentNo = new System.Windows.Forms.TextBox();
             this.xtraTabPageCustomerFees = new DevExpress.XtraTab.XtraTabPage();
-            this.groupBox20 = new System.Windows.Forms.GroupBox();
+            this.groupBox20 = new DevExpress.XtraEditors.GroupControl();
             this.groupBoxFees = new System.Windows.Forms.GroupBox();
             this.textBoxTotalFees = new System.Windows.Forms.TextBox();
             this.textBoxRepairFee5 = new System.Windows.Forms.TextBox();
@@ -706,7 +706,7 @@
             this.textBox39 = new System.Windows.Forms.TextBox();
             this.textBox40 = new System.Windows.Forms.TextBox();
             this.xtraTabPageRepoHistory = new DevExpress.XtraTab.XtraTabPage();
-            this.groupBox21 = new System.Windows.Forms.GroupBox();
+            this.groupBox21 = new DevExpress.XtraEditors.GroupControl();
             this.gridControlRepoLog = new DevExpress.XtraGrid.GridControl();
             this.gridViewRepoLog = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colDateOfChange = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -728,6 +728,7 @@
             this.colOrgAutionHouseDate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNewAuctionHouseDate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colOrgTitleReceived = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.colNewTitleReceived = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colOrgDateTitleReceived = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNewDateTitleReceived = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -741,7 +742,7 @@
             this.textBox46 = new System.Windows.Forms.TextBox();
             this.textBox52 = new System.Windows.Forms.TextBox();
             this.xtraTabPageTSB = new DevExpress.XtraTab.XtraTabPage();
-            this.groupBox22 = new System.Windows.Forms.GroupBox();
+            this.groupBox22 = new DevExpress.XtraEditors.GroupControl();
             this.groupBoxDates = new System.Windows.Forms.GroupBox();
             this.checkBoxFollowUpDate = new System.Windows.Forms.CheckBox();
             this.nullableDateTimePickerFollowUpDate = new DevExpress.XtraEditors.DateEdit();
@@ -1096,6 +1097,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControlCustomerMaint)).BeginInit();
             this.xtraTabControlCustomerMaint.SuspendLayout();
             this.xtraTabPageCustInfo1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupBox10)).BeginInit();
             this.groupBox10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditAllotment.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolbarFormManager1)).BeginInit();
@@ -1117,6 +1119,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.checkBoxVehicleWarranty.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkBoxRefi.Properties)).BeginInit();
             this.xtraTabPageCustInfo2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupBox14)).BeginInit();
             this.groupBox14.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.colorTextBoxTotalDue.Properties)).BeginInit();
@@ -1135,6 +1138,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtPaymentDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPaymentDate.Properties)).BeginInit();
             this.xtraTabPageVehicle.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupBox15)).BeginInit();
             this.groupBox15.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.VehicleGroupBox.SuspendLayout();
@@ -1156,6 +1160,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtEffectiveDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEffectiveDate.Properties)).BeginInit();
             this.xtraTabPageCosigner.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupBox16)).BeginInit();
             this.groupBox16.SuspendLayout();
             this.groupBoxCOSSBT.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -1164,10 +1169,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtCOSDOB.Properties)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.xtraTabPageBank.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupBox17)).BeginInit();
             this.groupBox17.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.xtraTabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupBox23)).BeginInit();
             this.groupBox23.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textEditBankMonthlyPayment.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditBankAutoPay.Properties)).BeginInit();
@@ -1178,6 +1185,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.textEditBankCity.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditBankName.Properties)).BeginInit();
             this.xtraTabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupBox24)).BeginInit();
             this.groupBox24.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEditExpYear.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEditExpMonth.Properties)).BeginInit();
@@ -1186,6 +1194,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.textEditCreditCardName.Properties)).BeginInit();
             this.groupBox6.SuspendLayout();
             this.xtraTabPageHistory.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupBox18)).BeginInit();
             this.groupBox18.SuspendLayout();
             this.groupBox11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditCollectionAgentHistory.Properties)).BeginInit();
@@ -1200,6 +1209,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControlCustomerHist)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewCustomerHistory)).BeginInit();
             this.xtraTabPageComments.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupBox19)).BeginInit();
             this.groupBox19.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cOMMENTGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cOMMENTgridView)).BeginInit();
@@ -1211,15 +1221,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
             this.groupBox7.SuspendLayout();
             this.xtraTabPageCustomerFees.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupBox20)).BeginInit();
             this.groupBox20.SuspendLayout();
             this.groupBoxFees.SuspendLayout();
             this.groupBox12.SuspendLayout();
             this.xtraTabPageRepoHistory.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupBox21)).BeginInit();
             this.groupBox21.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlRepoLog)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewRepoLog)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
             this.groupBox13.SuspendLayout();
             this.xtraTabPageTSB.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupBox22)).BeginInit();
             this.groupBox22.SuspendLayout();
             this.groupBoxDates.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerFollowUpDate.Properties.CalendarTimeProperties)).BeginInit();
@@ -2781,8 +2795,6 @@
             // 
             resources.ApplyResources(this.xtraTabControlCustomerMaint, "xtraTabControlCustomerMaint");
             this.xtraTabControlCustomerMaint.AllowHtmlDraw = true;
-            this.xtraTabControlCustomerMaint.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.xtraTabControlCustomerMaint.Appearance.Options.UseBackColor = true;
             this.xtraTabControlCustomerMaint.AppearancePage.PageClient.BackColor = System.Drawing.Color.Transparent;
             this.xtraTabControlCustomerMaint.AppearancePage.PageClient.BackColor2 = ((System.Drawing.Color)(resources.GetObject("xtraTabControlCustomerMaint.AppearancePage.PageClient.BackColor2")));
             this.xtraTabControlCustomerMaint.AppearancePage.PageClient.Options.UseBackColor = true;
@@ -2818,7 +2830,9 @@
             // 
             // groupBox10
             // 
-            this.groupBox10.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.groupBox10.Appearance.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.groupBox10.Appearance.Options.UseBackColor = true;
+            this.groupBox10.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.groupBox10.Controls.Add(this.checkEditAllotment);
             this.groupBox10.Controls.Add(this.checkEditMilitary);
             this.groupBox10.Controls.Add(this.checkEditNoContact);
@@ -2906,7 +2920,6 @@
             this.groupBox10.Controls.Add(this.groupBoxRefi);
             resources.ApplyResources(this.groupBox10, "groupBox10");
             this.groupBox10.Name = "groupBox10";
-            this.groupBox10.TabStop = false;
             // 
             // checkEditAllotment
             // 
@@ -3817,12 +3830,13 @@
             // 
             // groupBox14
             // 
-            this.groupBox14.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.groupBox14.Appearance.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.groupBox14.Appearance.Options.UseBackColor = true;
+            this.groupBox14.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.groupBox14.Controls.Add(this.groupBox1);
             this.groupBox14.Controls.Add(this.groupBox9);
             resources.ApplyResources(this.groupBox14, "groupBox14");
             this.groupBox14.Name = "groupBox14";
-            this.groupBox14.TabStop = false;
             // 
             // groupBox1
             // 
@@ -4437,12 +4451,13 @@
             // 
             // groupBox15
             // 
-            this.groupBox15.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.groupBox15.Appearance.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.groupBox15.Appearance.Options.UseBackColor = true;
+            this.groupBox15.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.groupBox15.Controls.Add(this.groupBox2);
             this.groupBox15.Controls.Add(this.VehicleGroupBox);
             resources.ApplyResources(this.groupBox15, "groupBox15");
             this.groupBox15.Name = "groupBox15";
-            this.groupBox15.TabStop = false;
             // 
             // groupBox2
             // 
@@ -4734,7 +4749,7 @@
             // 
             // nullableDateTimePickerAucDate
             // 
-            this.nullableDateTimePickerAucDate.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.VehiclebindingSource, "AuctionHouse", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "d"));
+            this.nullableDateTimePickerAucDate.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.VehiclebindingSource, "AuctionHouseDate", true));
             resources.ApplyResources(this.nullableDateTimePickerAucDate, "nullableDateTimePickerAucDate");
             this.nullableDateTimePickerAucDate.Name = "nullableDateTimePickerAucDate";
             this.nullableDateTimePickerAucDate.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("nullableDateTimePickerAucDate.Properties.Appearance.Font")));
@@ -4994,14 +5009,15 @@
             // 
             // groupBox16
             // 
-            this.groupBox16.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.groupBox16.Appearance.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.groupBox16.Appearance.Options.UseBackColor = true;
+            this.groupBox16.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.groupBox16.Controls.Add(this.groupBoxCOSSBT);
             this.groupBox16.Controls.Add(this.groupBox5);
             this.groupBox16.Controls.Add(this.groupBox4);
             this.groupBox16.Controls.Add(this.groupBox3);
             resources.ApplyResources(this.groupBox16, "groupBox16");
             this.groupBox16.Name = "groupBox16";
-            this.groupBox16.TabStop = false;
             // 
             // groupBoxCOSSBT
             // 
@@ -5608,12 +5624,13 @@
             // 
             // groupBox17
             // 
-            this.groupBox17.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.groupBox17.Appearance.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.groupBox17.Appearance.Options.UseBackColor = true;
+            this.groupBox17.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.groupBox17.Controls.Add(this.xtraTabControl1);
             this.groupBox17.Controls.Add(this.groupBox6);
             resources.ApplyResources(this.groupBox17, "groupBox17");
             this.groupBox17.Name = "groupBox17";
-            this.groupBox17.TabStop = false;
             // 
             // xtraTabControl1
             // 
@@ -5644,7 +5661,9 @@
             // 
             // groupBox23
             // 
-            this.groupBox23.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.groupBox23.Appearance.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.groupBox23.Appearance.Options.UseBackColor = true;
+            this.groupBox23.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.groupBox23.Controls.Add(this.textEditBankMonthlyPayment);
             this.groupBox23.Controls.Add(this.checkEditBankAutoPay);
             this.groupBox23.Controls.Add(this.textEditBankAccountNumber);
@@ -5655,7 +5674,6 @@
             this.groupBox23.Controls.Add(this.textEditBankName);
             resources.ApplyResources(this.groupBox23, "groupBox23");
             this.groupBox23.Name = "groupBox23";
-            this.groupBox23.TabStop = false;
             // 
             // textEditBankMonthlyPayment
             // 
@@ -5858,7 +5876,9 @@
             // 
             // groupBox24
             // 
-            this.groupBox24.BackColor = System.Drawing.Color.Salmon;
+            this.groupBox24.Appearance.BackColor = System.Drawing.Color.Salmon;
+            this.groupBox24.Appearance.Options.UseBackColor = true;
+            this.groupBox24.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.groupBox24.Controls.Add(this.comboBoxEditExpYear);
             this.groupBox24.Controls.Add(this.lookUpEditExpMonth);
             this.groupBox24.Controls.Add(this.textEditCreditCardCVV);
@@ -5866,7 +5886,6 @@
             this.groupBox24.Controls.Add(this.textEditCreditCardName);
             resources.ApplyResources(this.groupBox24, "groupBox24");
             this.groupBox24.Name = "groupBox24";
-            this.groupBox24.TabStop = false;
             // 
             // comboBoxEditExpYear
             // 
@@ -6072,13 +6091,14 @@
             // 
             // groupBox18
             // 
-            this.groupBox18.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.groupBox18.Appearance.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.groupBox18.Appearance.Options.UseBackColor = true;
+            this.groupBox18.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.groupBox18.Controls.Add(this.groupBox11);
             this.groupBox18.Controls.Add(this.standaloneBarDockControl1);
             this.groupBox18.Controls.Add(this.gridControlCustomerHist);
             resources.ApplyResources(this.groupBox18, "groupBox18");
             this.groupBox18.Name = "groupBox18";
-            this.groupBox18.TabStop = false;
             // 
             // groupBox11
             // 
@@ -6684,12 +6704,13 @@
             // 
             // groupBox19
             // 
-            this.groupBox19.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.groupBox19.Appearance.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.groupBox19.Appearance.Options.UseBackColor = true;
+            this.groupBox19.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.groupBox19.Controls.Add(this.cOMMENTGridControl);
             this.groupBox19.Controls.Add(this.groupBox7);
             resources.ApplyResources(this.groupBox19, "groupBox19");
             this.groupBox19.Name = "groupBox19";
-            this.groupBox19.TabStop = false;
             // 
             // cOMMENTGridControl
             // 
@@ -7009,12 +7030,13 @@
             // 
             // groupBox20
             // 
-            this.groupBox20.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.groupBox20.Appearance.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.groupBox20.Appearance.Options.UseBackColor = true;
+            this.groupBox20.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.groupBox20.Controls.Add(this.groupBoxFees);
             this.groupBox20.Controls.Add(this.groupBox12);
             resources.ApplyResources(this.groupBox20, "groupBox20");
             this.groupBox20.Name = "groupBox20";
-            this.groupBox20.TabStop = false;
             // 
             // groupBoxFees
             // 
@@ -7181,12 +7203,13 @@
             // 
             // groupBox21
             // 
-            this.groupBox21.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.groupBox21.Appearance.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.groupBox21.Appearance.Options.UseBackColor = true;
+            this.groupBox21.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.groupBox21.Controls.Add(this.gridControlRepoLog);
             this.groupBox21.Controls.Add(this.groupBox13);
             resources.ApplyResources(this.groupBox21, "groupBox21");
             this.groupBox21.Name = "groupBox21";
-            this.groupBox21.TabStop = false;
             // 
             // gridControlRepoLog
             // 
@@ -7195,6 +7218,8 @@
             this.gridControlRepoLog.MainView = this.gridViewRepoLog;
             this.gridControlRepoLog.MenuManager = this.toolbarFormManager1;
             this.gridControlRepoLog.Name = "gridControlRepoLog";
+            this.gridControlRepoLog.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemCheckEdit1});
             this.gridControlRepoLog.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewRepoLog});
             // 
@@ -7358,12 +7383,23 @@
             // colOrgTitleReceived
             // 
             resources.ApplyResources(this.colOrgTitleReceived, "colOrgTitleReceived");
+            this.colOrgTitleReceived.ColumnEdit = this.repositoryItemCheckEdit1;
             this.colOrgTitleReceived.FieldName = "OrgTitleReceived";
             this.colOrgTitleReceived.Name = "colOrgTitleReceived";
+            // 
+            // repositoryItemCheckEdit1
+            // 
+            resources.ApplyResources(this.repositoryItemCheckEdit1, "repositoryItemCheckEdit1");
+            this.repositoryItemCheckEdit1.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
+            this.repositoryItemCheckEdit1.LookAndFeel.SkinName = "McSkin";
+            this.repositoryItemCheckEdit1.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.repositoryItemCheckEdit1.Name = "repositoryItemCheckEdit1";
+            this.repositoryItemCheckEdit1.NullStyle = DevExpress.XtraEditors.Controls.StyleIndeterminate.Unchecked;
             // 
             // colNewTitleReceived
             // 
             resources.ApplyResources(this.colNewTitleReceived, "colNewTitleReceived");
+            this.colNewTitleReceived.ColumnEdit = this.repositoryItemCheckEdit1;
             this.colNewTitleReceived.FieldName = "NewTitleReceived";
             this.colNewTitleReceived.Name = "colNewTitleReceived";
             // 
@@ -7458,7 +7494,9 @@
             // 
             // groupBox22
             // 
-            this.groupBox22.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.groupBox22.Appearance.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.groupBox22.Appearance.Options.UseBackColor = true;
+            this.groupBox22.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.groupBox22.Controls.Add(this.groupBoxDates);
             this.groupBox22.Controls.Add(this.groupBoxCodes);
             this.groupBox22.Controls.Add(this.groupBoxDollars);
@@ -7467,7 +7505,6 @@
             this.groupBox22.Controls.Add(this.groupBoxAccountNumber);
             resources.ApplyResources(this.groupBox22, "groupBox22");
             this.groupBox22.Name = "groupBox22";
-            this.groupBox22.TabStop = false;
             // 
             // groupBoxDates
             // 
@@ -8303,7 +8340,7 @@
             // 
             // frmNewCustMaint
             // 
-            this.Appearance.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.Appearance.BackColor = System.Drawing.Color.CornflowerBlue;
             this.Appearance.Options.UseBackColor = true;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
@@ -8370,6 +8407,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControlCustomerMaint)).EndInit();
             this.xtraTabControlCustomerMaint.ResumeLayout(false);
             this.xtraTabPageCustInfo1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupBox10)).EndInit();
             this.groupBox10.ResumeLayout(false);
             this.groupBox10.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditAllotment.Properties)).EndInit();
@@ -8395,6 +8433,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.checkBoxVehicleWarranty.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkBoxRefi.Properties)).EndInit();
             this.xtraTabPageCustInfo2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupBox14)).EndInit();
             this.groupBox14.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -8415,6 +8454,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtPaymentDate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPaymentDate.Properties)).EndInit();
             this.xtraTabPageVehicle.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupBox15)).EndInit();
             this.groupBox15.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -8440,6 +8480,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtEffectiveDate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEffectiveDate.Properties)).EndInit();
             this.xtraTabPageCosigner.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupBox16)).EndInit();
             this.groupBox16.ResumeLayout(false);
             this.groupBoxCOSSBT.ResumeLayout(false);
             this.groupBoxCOSSBT.PerformLayout();
@@ -8452,10 +8493,12 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.xtraTabPageBank.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupBox17)).EndInit();
             this.groupBox17.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
             this.xtraTabControl1.ResumeLayout(false);
             this.xtraTabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupBox23)).EndInit();
             this.groupBox23.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.textEditBankMonthlyPayment.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditBankAutoPay.Properties)).EndInit();
@@ -8466,6 +8509,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.textEditBankCity.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditBankName.Properties)).EndInit();
             this.xtraTabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupBox24)).EndInit();
             this.groupBox24.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEditExpYear.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEditExpMonth.Properties)).EndInit();
@@ -8475,6 +8519,7 @@
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             this.xtraTabPageHistory.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupBox18)).EndInit();
             this.groupBox18.ResumeLayout(false);
             this.groupBox18.PerformLayout();
             this.groupBox11.ResumeLayout(false);
@@ -8491,6 +8536,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControlCustomerHist)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewCustomerHistory)).EndInit();
             this.xtraTabPageComments.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupBox19)).EndInit();
             this.groupBox19.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cOMMENTGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cOMMENTgridView)).EndInit();
@@ -8503,18 +8549,22 @@
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
             this.xtraTabPageCustomerFees.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupBox20)).EndInit();
             this.groupBox20.ResumeLayout(false);
             this.groupBoxFees.ResumeLayout(false);
             this.groupBoxFees.PerformLayout();
             this.groupBox12.ResumeLayout(false);
             this.groupBox12.PerformLayout();
             this.xtraTabPageRepoHistory.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupBox21)).EndInit();
             this.groupBox21.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlRepoLog)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewRepoLog)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
             this.groupBox13.ResumeLayout(false);
             this.groupBox13.PerformLayout();
             this.xtraTabPageTSB.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupBox22)).EndInit();
             this.groupBox22.ResumeLayout(false);
             this.groupBoxDates.ResumeLayout(false);
             this.groupBoxDates.PerformLayout();
@@ -8654,7 +8704,7 @@
         private DevExpress.XtraBars.BarDockControl barDockControl3;
         private DevExpress.XtraBars.BarDockControl barDockControl4;
         private DevExpress.XtraTab.XtraTabPage xtraTabPageCustInfo1;
-        private System.Windows.Forms.GroupBox groupBox10;
+        private DevExpress.XtraEditors.GroupControl groupBox10;
         private DevExpress.XtraEditors.DateEdit nullableDateTimePickerDateContractReceived;
         private DevExpress.XtraEditors.SimpleButton buttonDealerEmail;
         private System.Windows.Forms.TextBox textBoxDealerEmail;
@@ -9103,15 +9153,14 @@
         private DevExpress.XtraBars.BarButtonItem barButtonItemTimeValueToExcel;
         private DevExpress.XtraBars.BarButtonItem barButtonItemCaculateBuyout;
         private DevExpress.XtraEditors.CheckEdit checkBoxSendToDealer;
-        private System.Windows.Forms.GroupBox groupBox14;
-        private System.Windows.Forms.GroupBox groupBox15;
-        private System.Windows.Forms.GroupBox groupBox16;
-        private System.Windows.Forms.GroupBox groupBox17;
-        private System.Windows.Forms.GroupBox groupBox18;
-        private System.Windows.Forms.GroupBox groupBox19;
-        private System.Windows.Forms.GroupBox groupBox20;
-        private System.Windows.Forms.GroupBox groupBox21;
-        private System.Windows.Forms.GroupBox groupBox22;
+        private DevExpress.XtraEditors.GroupControl groupBox14;
+        private DevExpress.XtraEditors.GroupControl groupBox15;
+        private DevExpress.XtraEditors.GroupControl groupBox16;
+        private DevExpress.XtraEditors.GroupControl groupBox17;
+        private DevExpress.XtraEditors.GroupControl groupBox18;
+        private DevExpress.XtraEditors.GroupControl groupBox19;
+        private DevExpress.XtraEditors.GroupControl groupBox21;
+        private DevExpress.XtraEditors.GroupControl groupBox22;
         private DevExpress.XtraTab.XtraTabControl xtraTabControl1;
         private DevExpress.XtraTab.XtraTabPage xtraTabPage1;
         private DevExpress.XtraEditors.TextEdit textEditBankAccountNumber;
@@ -9127,8 +9176,8 @@
         private DevExpress.XtraEditors.TextEdit textEditCreditCardNumber;
         private DevExpress.XtraEditors.TextEdit textEditCreditCardName;
         private DevExpress.XtraEditors.ComboBoxEdit comboBoxEditExpYear;
-        private System.Windows.Forms.GroupBox groupBox23;
-        private System.Windows.Forms.GroupBox groupBox24;
+        private DevExpress.XtraEditors.GroupControl groupBox23;
+        private DevExpress.XtraEditors.GroupControl groupBox24;
         private DevExpress.XtraEditors.CheckEdit checkEditCustomerInsurance;
         private DevExpress.XtraEditors.CheckEdit checkEditAutoPay;
         private DevExpress.XtraEditors.CheckEdit checkEditWrongAddress;
@@ -9142,6 +9191,8 @@
         private DevExpress.XtraEditors.CheckEdit checkEditCollectionAgent;
         private DevExpress.XtraEditors.CheckEdit checkEditCollectionAgentHistory;
         private DevExpress.XtraEditors.CheckEdit checkEditOverideInterestHistory;
+        private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
+        private DevExpress.XtraEditors.GroupControl groupBox20;
     }
 }
 

@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace IAC2021SQL
 {
-    public partial class FormClosedDealerContingentMaintenance : Form
+    public partial class FormClosedDealerContingentMaintenance : DevExpress.XtraEditors.XtraForm
     {
         private Boolean lbFormClosing = false, lbEdit = false, lbAdd = false, lbILockedIt = false,
                         lbFromSetRelated = false,lbFromMovement = false, lbFromDealerNameChange = false;

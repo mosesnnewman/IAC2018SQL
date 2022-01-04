@@ -73,6 +73,16 @@ namespace IAC2021SQL.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _007_SMALL {
+            get {
+                object obj = ResourceManager.GetObject("007-SMALL", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Account_16x {
             get {
                 object obj = ResourceManager.GetObject("Account_16x", resourceCulture);
@@ -676,6 +686,36 @@ namespace IAC2021SQL.Properties {
         internal static System.Drawing.Bitmap InputChevron_16x {
             get {
                 object obj = ResourceManager.GetObject("InputChevron_16x", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap login_button_png_18022 {
+            get {
+                object obj = ResourceManager.GetObject("login-button-png-18022", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Logout_Button_PNG {
+            get {
+                object obj = ResourceManager.GetObject("Logout-Button-PNG", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Logout_Button_PNG2 {
+            get {
+                object obj = ResourceManager.GetObject("Logout-Button-PNG2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
