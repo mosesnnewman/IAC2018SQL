@@ -347,7 +347,7 @@ namespace IAC2021SQL
 
         void worker_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
-            lfrm.QueryprogressBar.Value = e.ProgressPercentage;
+            lfrm.QueryprogressBar.EditValue = e.ProgressPercentage;
         }
 
     }

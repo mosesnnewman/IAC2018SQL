@@ -7209,10 +7209,10 @@
     <value>221, 173</value>
   </metadata>
   <metadata name="commentTypesBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1043, 212</value>
+    <value>17, 251</value>
   </metadata>
   <metadata name="DealerListCustbindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>385, 212</value>
+    <value>563, 212</value>
   </metadata>
   <metadata name="dEALERBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>637, 134</value>
@@ -7221,7 +7221,7 @@
     <value>595, 173</value>
   </metadata>
   <metadata name="EmailbindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>809, 251</value>
+    <value>813, 251</value>
   </metadata>
   <metadata name="bindingSourceGenCodes.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 56</value>
@@ -7233,7 +7233,7 @@
     <value>17, 290</value>
   </metadata>
   <metadata name="letterNumberBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>605, 251</value>
+    <value>609, 251</value>
   </metadata>
   <metadata name="DLRLISTBYNUMbindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>222, 134</value>
@@ -7257,7 +7257,7 @@
     <value>410, 56</value>
   </metadata>
   <metadata name="OPNBANKbindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 212</value>
+    <value>195, 212</value>
   </metadata>
   <metadata name="CustomerFeesBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>917, 95</value>
@@ -7269,28 +7269,28 @@
     <value>223, 368</value>
   </metadata>
   <metadata name="closedCreditManagerBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1058, 368</value>
+    <value>17, 407</value>
   </metadata>
   <metadata name="tsbDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>1034, 56</value>
   </metadata>
   <metadata name="TermsFrequencybindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>299, 17</value>
+    <value>464, 17</value>
   </metadata>
   <metadata name="PortfolioTypesbindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>519, 17</value>
+    <value>684, 17</value>
   </metadata>
   <metadata name="InterestTypesbindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>728, 17</value>
+    <value>893, 17</value>
   </metadata>
   <metadata name="ECOACodesbindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>931, 17</value>
+    <value>1096, 17</value>
   </metadata>
   <metadata name="ComplianceConditionCodesbindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
   <metadata name="ConsumerIndicatorsbindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>593, 212</value>
+    <value>771, 212</value>
   </metadata>
   <metadata name="AccountTypesbindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>203, 56</value>
@@ -7320,25 +7320,25 @@
     <value>955, 173</value>
   </metadata>
   <metadata name="aLTNAMETableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1124, 173</value>
+    <value>17, 212</value>
   </metadata>
   <metadata name="oPNBANKTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>205, 212</value>
+    <value>383, 212</value>
   </metadata>
   <metadata name="dealerlistTableAdapterCust.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>439, 134</value>
   </metadata>
   <metadata name="dLRLISTBYNUMTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>833, 212</value>
+    <value>1011, 212</value>
   </metadata>
   <metadata name="comment_TypesTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 251</value>
+    <value>231, 251</value>
   </metadata>
   <metadata name="nOTICETableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>230, 251</value>
+    <value>444, 251</value>
   </metadata>
   <metadata name="letterNumberTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>969, 251</value>
+    <value>973, 251</value>
   </metadata>
   <metadata name="letterTypeTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>202, 290</value>
@@ -7382,11 +7382,67 @@
   <data name="xtraTabControlCustomerMaint.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
+  <data name="xtraTabControlCustomerMaint.HeaderAutoFill" type="DevExpress.Utils.DefaultBoolean, DevExpress.Data.v21.2">
+    <value>True</value>
+  </data>
   <data name="xtraTabControlCustomerMaint.HeaderButtonsShowMode" type="DevExpress.XtraTab.TabButtonShowMode, DevExpress.XtraEditors.v21.2">
     <value>Never</value>
   </data>
   <data name="xtraTabControlCustomerMaint.HeaderOrientation" type="DevExpress.XtraTab.TabOrientation, DevExpress.XtraEditors.v21.2">
     <value>Horizontal</value>
+  </data>
+  <metadata name="imageCollectionTabs.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>299, 17</value>
+  </metadata>
+  <assembly alias="DevExpress.Utils.v21.2" name="DevExpress.Utils.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+  <data name="imageCollectionTabs.ImageStream" type="DevExpress.Utils.ImageCollectionStreamer, DevExpress.Utils.v21.2" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFpEZXZFeHByZXNzLlV0aWxzLnYyMS4yLCBWZXJzaW9uPTIxLjIu
+        NC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI4OGQxNzU0ZDcwMGU0OWEMAwAAAFFT
+        eXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRv
+        a2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAAChEZXZFeHByZXNzLlV0aWxzLkltYWdlQ29sbGVjdGlvblN0
+        cmVhbWVyAgAAAAlJbWFnZVNpemUERGF0YQQHE1N5c3RlbS5EcmF3aW5nLlNpemUDAAAAAgIAAAAF/P//
+        /xNTeXN0ZW0uRHJhd2luZy5TaXplAgAAAAV3aWR0aAZoZWlnaHQAAAgIAwAAABAAAAAQAAAACQUAAAAP
+        BQAAAOIIAAAC3wIAAIlQTkcNChoKAAAADUlIRFIAAAAQAAAAEAgGAAAAH/P/YQAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADr8AAA6/ATgFUyQAAAKBSURBVDhPjVNLTxNRFB5ajNGNG5f+AmOQR0dqBQOJC2Ni
+        DCxE04ctiZrIwseCjfhAiKSaSIVS2hqbaCJEjfVtW22IUJVEqAna6AKVpkhfQcVIeXQ683nuHRI1LuyZ
+        zJlz7z3nu+f77h0B8iIUkJFTUGARZO6LMwGFPCR6FHpYIS/miMWZsEwlzcfPwnqsHdYTHTTFuigeQYCU
+        R2BkFKHIGB5FomqtrAIoyv+BBOakFdYFyq/ccwSyvMzHxRiJmP/Nm3YuEc08ZhDajQ04GYyzVbIVsSXK
+        VhhNCYs0IaizqvoStazZZqPWJTZCaYURBvdPihUaMVPQ9TRFPk+xjPOPZyCopeSVPHy3g9hg2EdjdipA
+        6OVr2BxhZNmmNJehtO39k9SoCjH6IaMCLFE2E0xbZUbXVT/0e1vQ1u+HprwJWz1Z1NCLQg51fUnovPOI
+        JudQ2x3nfXMRW05fIgQZJXorNDoTVlWbsUbcz/Uw9Y7jWmAM6UwW4VgCte4sRM9X1PWSNlRDIqrqH2z3
+        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
+        QmCCCw==
+</value>
   </data>
   <data name="xtraTabControlCustomerMaint.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
@@ -7394,8 +7450,56 @@
   <data name="xtraTabControlCustomerMaint.MultiLine" type="DevExpress.Utils.DefaultBoolean, DevExpress.Data.v21.2">
     <value>True</value>
   </data>
-  <data name="xtraTabControlCustomerMaint.PageImagePosition" type="DevExpress.XtraTab.TabPageImagePosition, DevExpress.XtraEditors.v21.2">
-    <value>None</value>
+  <data name="groupControlVerifacto.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="groupControlVerifacto.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1228, 653</value>
+  </data>
+  <data name="groupControlVerifacto.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;groupControlVerifacto.Name" xml:space="preserve">
+    <value>groupControlVerifacto</value>
+  </data>
+  <data name="&gt;&gt;groupControlVerifacto.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.GroupControl, DevExpress.Utils.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;groupControlVerifacto.Parent" xml:space="preserve">
+    <value>xtraTabPageVerifacto</value>
+  </data>
+  <data name="&gt;&gt;groupControlVerifacto.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="xtraTabPageVerifacto.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1228, 653</value>
+  </data>
+  <data name="xtraTabPageVerifacto.Text" xml:space="preserve">
+    <value>Verifacto</value>
+  </data>
+  <data name="&gt;&gt;xtraTabPageVerifacto.Name" xml:space="preserve">
+    <value>xtraTabPageVerifacto</value>
+  </data>
+  <data name="&gt;&gt;xtraTabPageVerifacto.Type" xml:space="preserve">
+    <value>DevExpress.XtraTab.XtraTabPage, DevExpress.XtraEditors.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;xtraTabPageVerifacto.Parent" xml:space="preserve">
+    <value>xtraTabControlCustomerMaint</value>
+  </data>
+  <data name="&gt;&gt;xtraTabPageVerifacto.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="xtraTabControlCustomerMaint.ShowHeaderFocus" type="DevExpress.Utils.DefaultBoolean, DevExpress.Data.v21.2">
+    <value>True</value>
+  </data>
+  <data name="xtraTabControlCustomerMaint.ShowTabHeader" type="DevExpress.Utils.DefaultBoolean, DevExpress.Data.v21.2">
+    <value>True</value>
+  </data>
+  <data name="xtraTabControlCustomerMaint.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1236, 683</value>
+  </data>
+  <data name="xtraTabControlCustomerMaint.TabIndex" type="System.Int32, mscorlib">
+    <value>220</value>
   </data>
   <data name="xtraTabPageCustInfo1.Appearance.PageClient.BackColor2" type="System.Drawing.Color, System.Drawing">
     <value>LightSteelBlue</value>
@@ -7407,7 +7511,7 @@
     <value>588, 260</value>
   </data>
   <metadata name="toolbarFormManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 485</value>
+    <value>516, 485</value>
   </metadata>
   <data name="barDockControlTop.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -7802,7 +7906,6 @@
   <data name="txtDOB.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
-  <assembly alias="DevExpress.Utils.v21.2" name="DevExpress.Utils.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
   <data name="txtDOB.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v21.2">
     <value>Combo</value>
   </data>
@@ -9760,18 +9863,6 @@
   </data>
   <data name="&gt;&gt;xtraTabPageCustInfo1.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="xtraTabControlCustomerMaint.ShowHeaderFocus" type="DevExpress.Utils.DefaultBoolean, DevExpress.Data.v21.2">
-    <value>True</value>
-  </data>
-  <data name="xtraTabControlCustomerMaint.ShowTabHeader" type="DevExpress.Utils.DefaultBoolean, DevExpress.Data.v21.2">
-    <value>True</value>
-  </data>
-  <data name="xtraTabControlCustomerMaint.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1236, 683</value>
-  </data>
-  <data name="xtraTabControlCustomerMaint.TabIndex" type="System.Int32, mscorlib">
-    <value>220</value>
   </data>
   <data name="xtraTabPageCustInfo2.Appearance.Header.BackColor2" type="System.Drawing.Color, System.Drawing">
     <value>Transparent</value>
@@ -19989,7 +20080,7 @@
     <value>0, 0</value>
   </data>
   <metadata name="toolbarFormManager2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>192, 485</value>
+    <value>691, 485</value>
   </metadata>
   <data name="barDockControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -20076,7 +20167,7 @@
     <value>0, 0</value>
   </data>
   <metadata name="barManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>472, 485</value>
+    <value>866, 485</value>
   </metadata>
   <data name="toolStripButton1.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -21614,6 +21705,12 @@
   <data name="&gt;&gt;colImgSort1.Type" xml:space="preserve">
     <value>DevExpress.XtraGrid.Columns.GridColumn, DevExpress.XtraGrid.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
+  <data name="&gt;&gt;imageCollectionTabs.Name" xml:space="preserve">
+    <value>imageCollectionTabs</value>
+  </data>
+  <data name="&gt;&gt;imageCollectionTabs.Type" xml:space="preserve">
+    <value>DevExpress.Utils.ImageCollection, DevExpress.Utils.v21.2, Version=21.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
   <data name="&gt;&gt;toolbarFormManager1.Name" xml:space="preserve">
     <value>toolbarFormManager1</value>
   </data>
@@ -22104,37 +22201,37 @@
     <value>837, 368</value>
   </metadata>
   <metadata name="closedCreditManagerTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 407</value>
+    <value>264, 407</value>
   </metadata>
   <metadata name="consumerIndicatorsTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>258, 407</value>
+    <value>505, 407</value>
   </metadata>
   <metadata name="accountStatusesTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>490, 407</value>
+    <value>737, 407</value>
   </metadata>
   <metadata name="paymentRatingsTableAdapter1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>703, 407</value>
+    <value>950, 407</value>
   </metadata>
   <metadata name="accountTypesTableAdapter1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>923, 407</value>
-  </metadata>
-  <metadata name="complianceConditionCodesTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 446</value>
   </metadata>
+  <metadata name="complianceConditionCodesTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>223, 446</value>
+  </metadata>
   <metadata name="eCOACodesTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>292, 446</value>
+    <value>498, 446</value>
   </metadata>
   <metadata name="interestTypesTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>482, 446</value>
+    <value>688, 446</value>
   </metadata>
   <metadata name="portfolioTypesTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>679, 446</value>
+    <value>885, 446</value>
   </metadata>
   <metadata name="termsFrequencyTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>882, 446</value>
+    <value>17, 485</value>
   </metadata>
   <metadata name="mASTERTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1091, 479</value>
+    <value>991, 485</value>
   </metadata>
   <data name="labelCheckNumber.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -22209,10 +22306,10 @@
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <metadata name="formAssistant1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1264, 446</value>
+    <value>229, 485</value>
   </metadata>
   <metadata name="behaviorManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1397, 446</value>
+    <value>362, 485</value>
   </metadata>
   <data name="barButtonItem1.Caption" xml:space="preserve">
     <value>Print Customer &amp;Receipt</value>

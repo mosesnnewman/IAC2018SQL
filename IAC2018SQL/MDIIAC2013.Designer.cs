@@ -166,6 +166,10 @@
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
             // 
+            // splashScreenManagerIAC
+            // 
+            splashScreenManagerIAC.ClosingDelay = 500;
+            // 
             // menuStrip
             // 
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {

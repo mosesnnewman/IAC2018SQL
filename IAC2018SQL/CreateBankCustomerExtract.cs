@@ -2203,7 +2203,7 @@ namespace IAC2021SQL
             MDIIAC2013 MDIMain = (MDIIAC2013)MdiParent;
             QueryProgress lfrm;
             lfrm = (QueryProgress)MDIMain.frm;
-            lfrm.QueryprogressBar.Value = (e.ProgressPercentage < 101) ? e.ProgressPercentage : 100;
+            lfrm.QueryprogressBar.EditValue = (e.ProgressPercentage < 101) ? e.ProgressPercentage : 100;
             if (CreateTabs)
                 lfrm.lblProgress.Text = "Creating TAB Delimited File Bank" + "\n"+ lsProgMessage;
             else

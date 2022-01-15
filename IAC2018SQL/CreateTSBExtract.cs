@@ -11,7 +11,7 @@ using System.Threading;
 
 namespace IAC2021SQL
 {
-    public partial class frmCreateTSBExtract : Form
+    public partial class frmCreateTSBExtract : DevExpress.XtraEditors.XtraForm
     {
         private Int32 lnACollectionCnt = 0, lnACurrent = 0, lnA30 = 0, lnA60 = 0, lnA90 = 0, lnA120 = 0, lnA150 = 0, lnA180 = 0, lnAOther = 0,
                       lnCollectionAcct = 0, lnDateDiff = 0;
@@ -41,9 +41,9 @@ namespace IAC2021SQL
 
             ldControlDate = ((DateTime)ControlDatesTableAdapter.TSB()).Date;
 
-            nullableDateTimePickerControlDate.Value = ldControlDate;
-            nullableDateTimePickerFrom.Value = ldControlDate.AddDays(1);
-            nullableDateTimePickerTo.Value = ((DateTime)CUSTHISTTableAdapter.LastUPDDate()).Date;
+            nullableDateTimePickerControlDate.EditValue = ldControlDate;
+            nullableDateTimePickerFrom.EditValue = ldControlDate.AddDays(1);
+            nullableDateTimePickerTo.EditValue = ((DateTime)CUSTHISTTableAdapter.LastUPDDate()).Date;
             TempData.Dispose();
             PaySet.Dispose();
         }
@@ -58,7 +58,7 @@ namespace IAC2021SQL
         {
             TSBDataSetTableAdapters.ClosedCreditManagerTableAdapter ClosedCreditManagerTableAdapter = new TSBDataSetTableAdapters.ClosedCreditManagerTableAdapter();
             // Moses Newman 11/9/2021 Update Date Of Account Information
-            ClosedCreditManagerTableAdapter.UpdateDateOfAccountInformation(((DateTime)nullableDateTimePickerTo.Value).Date.AddDays(1));
+            ClosedCreditManagerTableAdapter.UpdateDateOfAccountInformation(((DateTime)nullableDateTimePickerTo.EditValue).Date.AddDays(1));
 
             SQLBackupandRestore SQLBR = new SQLBackupandRestore();
             SQLBR.RunJob("TSBXMLImport", "Create TSB Import XML", false);
@@ -84,7 +84,7 @@ namespace IAC2021SQL
             lfrm.ShowDialog();
             lfrm.Close();
             // Moses Newmn 09/01/2020 Update ControlDate!
-            ControlDatesTableAdapter.TSBUpdateControlDate((DateTime)nullableDateTimePickerTo.Value);
+            ControlDatesTableAdapter.TSBUpdateControlDate((DateTime)nullableDateTimePickerTo.EditValue);
             Close();
         }
 
@@ -94,7 +94,7 @@ namespace IAC2021SQL
             TSBDataSet tsbSet = new TSBDataSet();
             String lsCreditBureau = (!checkBoxIgnoreBureauSwitch.Checked) ? "Y%" : "%";   // Get all Active customers if Ignore Credit Bureau Switch checkbox is checked
 
-            DateTime ldControlDate = (DateTime)nullableDateTimePickerControlDate.Value;
+            DateTime ldControlDate = (DateTime)nullableDateTimePickerControlDate.EditValue;
             IACDataSetTableAdapters.ClosedWSHISTTableAdapter ClosedWSHISTTableAdapter = new IACDataSetTableAdapters.ClosedWSHISTTableAdapter();
             IACDataSetTableAdapters.CUSTHISTTableAdapter CUSTHISTTableAdapter = new IACDataSetTableAdapters.CUSTHISTTableAdapter();
             IACDataSetTableAdapters.OPNHCUSTTableAdapter OPNHCUSTTableAdapter = new IACDataSetTableAdapters.OPNHCUSTTableAdapter();
@@ -106,7 +106,7 @@ namespace IAC2021SQL
             // Moses Newman 08/24/2020 Stop clearing CreditManagerTable!
             //ClosedCreditManagerTableAdapter.DeleteAll(); 
             // Moses Newman 05/3/2014 Get rid of SQL Pass Through!
-            CUSTOMERTableAdapter.FillByPaidInLast5Years(TSBDATA.CUSTOMER, lsCreditBureau, (DateTime)nullableDateTimePickerTo.Value);
+            CUSTOMERTableAdapter.FillByPaidInLast5Years(TSBDATA.CUSTOMER, lsCreditBureau, (DateTime)nullableDateTimePickerTo.EditValue);
             if (TSBDATA.CUSTOMER.Rows.Count < 1)
             {
                 MessageBox.Show("*** There are NO CUSTOMERS to transfer! ***");
@@ -264,7 +264,7 @@ namespace IAC2021SQL
                     TSBDATA.CUSTOMER.Rows[i].Field<Int32>("CUSTOMER_DAY_DUE"));
                 // Moses Newman 06/8/2015 Start history from contract date!
                 ClosedWSHISTTableAdapter.Fill(TSBDATA.ClosedWSHIST, TSBDATA.CUSTOMER.Rows[i].Field<String>("CUSTOMER_NO"),
-                    TSBDATA.CUSTOMER.Rows[i].Field<DateTime>("ContractDate"), (DateTime)nullableDateTimePickerTo.Value, (DateTime)nullableDateTimePickerFrom.Value);
+                    TSBDATA.CUSTOMER.Rows[i].Field<DateTime>("ContractDate"), (DateTime)nullableDateTimePickerTo.EditValue, (DateTime)nullableDateTimePickerFrom.EditValue);
                 //ClosedWSHISTTableAdapter.Fill(TSBDATA.ClosedWSHIST, TSBDATA.CUSTOMER.Rows[i].Field<String>("CUSTOMER_NO"),
                 // (DateTime)nullableDateTimePickerFrom.Value, (DateTime)nullableDateTimePickerTo.Value);
                 if (TSBDATA.ClosedWSHIST.Rows.Count > 0)
@@ -290,7 +290,7 @@ namespace IAC2021SQL
                     // Moses Newman 05/02/2021 Date of First delinquent <=
                     if (TSBDATA.ClosedWSHIST.Rows[0].Field<DateTime?>("HIST_DATE_OF_FIRST_DELINQUENT") != null && lsAcctStatusCode != "11" && lsAcctStatusCode != "13")
                         tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<DateTime?>("CRDMGR_DATE_FIRST_DELINQUENT",
-                            TSBDATA.ClosedWSHIST.Rows[0].Field<DateTime?>("HIST_DATE_OF_FIRST_DELINQUENT") <= (DateTime?)nullableDateTimePickerTo.Value ? TSBDATA.ClosedWSHIST.Rows[0].Field<DateTime?>("HIST_DATE_OF_FIRST_DELINQUENT") : null);
+                            TSBDATA.ClosedWSHIST.Rows[0].Field<DateTime?>("HIST_DATE_OF_FIRST_DELINQUENT") <= (DateTime?)nullableDateTimePickerTo.EditValue ? TSBDATA.ClosedWSHIST.Rows[0].Field<DateTime?>("HIST_DATE_OF_FIRST_DELINQUENT") : null);
                     else
                         // 03/20/2016 Moses Newman if Hist_Date_First_delinqueny is NULL then leave it null!
                         //if(lsAcctStatusCode == "97")
@@ -377,43 +377,35 @@ namespace IAC2021SQL
                 //if (!tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].Field<Boolean>("PaymentHistoryOverride"))
                 if(NewAccount)
                     tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<String>("PaymentProfile",
-                     (String)CUSTHISTTableAdapter.PaymentProfile(TSBDATA.CUSTOMER.Rows[i].Field<String>("CUSTOMER_NO"), (DateTime)nullableDateTimePickerTo.Value));
+                     (String)CUSTHISTTableAdapter.PaymentProfile(TSBDATA.CUSTOMER.Rows[i].Field<String>("CUSTOMER_NO"), (DateTime)nullableDateTimePickerTo.EditValue));
                 else
                     tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<String>("PaymentProfile",
                         UpdateCurrentMonthOnly(tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].Field<String>("PaymentProfile"),
-                        (String)CUSTHISTTableAdapter.PaymentProfile(TSBDATA.CUSTOMER.Rows[i].Field<String>("CUSTOMER_NO"), (DateTime)nullableDateTimePickerTo.Value)));
+                        (String)CUSTHISTTableAdapter.PaymentProfile(TSBDATA.CUSTOMER.Rows[i].Field<String>("CUSTOMER_NO"), (DateTime)nullableDateTimePickerTo.EditValue)));
 
                 // Moses Newman 06/11/2020 added Report 
                 tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<Boolean>("Report", (TSBDATA.CUSTOMER.Rows[i].Field<String>("CUSTOMER_CREDIT_BUREAU") == "Y") ? true : false);
                 // Moses Newman 08/31/2020 Add DateOfAccountInformation
                 // Moses Newman 12/03/2020 Make Date of Account Inforamtion 1'st of following month to include all of this month in history!
-                tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<DateTime>("DateOfAccountInformation", ((DateTime)nullableDateTimePickerTo.Value).Date.AddDays(1));
+                tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<DateTime>("DateOfAccountInformation", ((DateTime)nullableDateTimePickerTo.EditValue).Date.AddDays(1));
                 // Moses Newman 09/26/2020 Set Interest Type
                 tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<String>("InterestType", "F");
                 ClosedCreditManagerBindingSource.EndEdit();
-                /*try
+                tsbSet.ClosedCreditManager.AcceptChanges();
+                try
                 {
                     ClosedCreditManagerTableAdapter.Update(tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position]);
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("There was a genereal error: " + ex.Message);
-                }*/
-            }
-            // Moses Newman 11/9/2021 Update all records.
-            try
-            {
-                ClosedCreditManagerTableAdapter.Update(tsbSet.ClosedCreditManager);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("There was a genereal error: " + ex.Message);
+                    MessageBox.Show("There was a general error: " + ex.Message);
+                }
             }
             CUSTOMERTableAdapter.Dispose();
             CUSTHISTTableAdapter.Dispose();
             IACDataSetTableAdapters.OPNCUSTTableAdapter OPNCUSTTableAdapter = new IACDataSetTableAdapters.OPNCUSTTableAdapter();
             // Moses Newman 05/3/2014 Get rid of SQL Pass Through!
-            OPNCUSTTableAdapter.FillByPaidInLast5Years(TSBDATA.OPNCUST, lsCreditBureau, (DateTime)nullableDateTimePickerTo.Value);
+            OPNCUSTTableAdapter.FillByPaidInLast5Years(TSBDATA.OPNCUST, lsCreditBureau, (DateTime)nullableDateTimePickerTo.EditValue);
             if (TSBDATA.OPNCUST.Rows.Count < 1)
             {
                 MessageBox.Show("*** There are NO OPEN CUSTOMERS to transfer! ***");
@@ -507,7 +499,7 @@ namespace IAC2021SQL
                     TSBDATA.OPNCUST.Rows[i].Field<Int32>("CUSTOMER_DAY_DUE"));
                 // Moses Newman 06/08/2015 Start History from Contract Date!
                 OpenWSHISTTableAdapter.Fill(TSBDATA.OpenWSHIST, TSBDATA.OPNCUST.Rows[i].Field<String>("CUSTOMER_NO"),
-                    TSBDATA.OPNCUST.Rows[i].Field<DateTime>("CUSTOMER_CONTRACT_DATE"), (DateTime)nullableDateTimePickerTo.Value, (DateTime)nullableDateTimePickerFrom.Value);
+                    TSBDATA.OPNCUST.Rows[i].Field<DateTime>("CUSTOMER_CONTRACT_DATE"), (DateTime)nullableDateTimePickerTo.EditValue, (DateTime)nullableDateTimePickerFrom.EditValue);
                 //OpenWSHISTTableAdapter.Fill(TSBDATA.OpenWSHIST, TSBDATA.OPNCUST.Rows[i].Field<String>("CUSTOMER_NO"),
                 //  (DateTime)nullableDateTimePickerFrom.Value, (DateTime)nullableDateTimePickerTo.Value);
                 String tempCust = TSBDATA.OPNCUST.Rows[i].Field<String>("CUSTOMER_NO");
@@ -535,14 +527,14 @@ namespace IAC2021SQL
                     // Moses Newman 05/02/2021 Date of First delinquent <=
                     if (TSBDATA.OpenWSHIST.Rows[0].Field<Nullable<DateTime>>("HIST_DATE_OF_FIRST_DELINQUENT") != null && lsAcctStatusCode != "11" && lsAcctStatusCode != "13")
                         tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<DateTime?>("CRDMGR_DATE_FIRST_DELINQUENT",
-                            TSBDATA.OpenWSHIST.Rows[0].Field<DateTime?>("HIST_DATE_OF_FIRST_DELINQUENT") <= (DateTime?)nullableDateTimePickerTo.Value ? TSBDATA.OpenWSHIST.Rows[0].Field<DateTime?>("HIST_DATE_OF_FIRST_DELINQUENT") : null);
+                            TSBDATA.OpenWSHIST.Rows[0].Field<DateTime?>("HIST_DATE_OF_FIRST_DELINQUENT") <= (DateTime?)nullableDateTimePickerTo.EditValue ? TSBDATA.OpenWSHIST.Rows[0].Field<DateTime?>("HIST_DATE_OF_FIRST_DELINQUENT") : null);
                     else
                         tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<Nullable<DateTime>>("CRDMGR_DATE_FIRST_DELINQUENT", null);
                 }
                 tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<Nullable<DateTime>>("CRDMGR_ACCT_DATE_CLOSED",
                     null);
                 if (TSBDATA.OPNCUST.Rows[i].Field<String>("CUSTOMER_ACT_STAT") == "I")
-                    if (lsAcctStatusCode != "11" && TSBDATA.OPNCUST.Rows[i].Field<Nullable<DateTime>>("CUSTOMER_LAST_PAYMENT_DATE") <= (DateTime)nullableDateTimePickerTo.Value)
+                    if (lsAcctStatusCode != "11" && TSBDATA.OPNCUST.Rows[i].Field<Nullable<DateTime>>("CUSTOMER_LAST_PAYMENT_DATE") <= (DateTime)nullableDateTimePickerTo.EditValue)
                         tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<Nullable<DateTime>>("CRDMGR_ACCT_DATE_CLOSED",
                             TSBDATA.OPNCUST.Rows[i].Field<Nullable<DateTime>>("CUSTOMER_LAST_PAYMENT_DATE"));
                     else
@@ -623,26 +615,27 @@ namespace IAC2021SQL
                 //if (!tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].Field<Boolean>("PaymentHistoryOverride"))
                 if (NewAccount)
                     tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<String>("PaymentProfile",
-                     (String)OPNHCUSTTableAdapter.PaymentProfile(TSBDATA.OPNCUST.Rows[i].Field<String>("CUSTOMER_NO"), (DateTime)nullableDateTimePickerTo.Value));
+                     (String)OPNHCUSTTableAdapter.PaymentProfile(TSBDATA.OPNCUST.Rows[i].Field<String>("CUSTOMER_NO"), (DateTime)nullableDateTimePickerTo.EditValue));
                 else
                     tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<String>("PaymentProfile",
                         UpdateCurrentMonthOnly(tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].Field<String>("PaymentProfile"),
-                        (String)OPNHCUSTTableAdapter.PaymentProfile(TSBDATA.OPNCUST.Rows[i].Field<String>("CUSTOMER_NO"), (DateTime)nullableDateTimePickerTo.Value)));
+                        (String)OPNHCUSTTableAdapter.PaymentProfile(TSBDATA.OPNCUST.Rows[i].Field<String>("CUSTOMER_NO"), (DateTime)nullableDateTimePickerTo.EditValue)));
                 // Moses Newman 06/11/2020 added Report
                 tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<Boolean>("Report", (TSBDATA.OPNCUST.Rows[i].Field<String>("CUSTOMER_CREDIT_BUREAU") == "Y") ? true : false);
                 // Moses Newman 08/31/2020 Add DateOfAccountInformation
                 // Moses Newman 05/01/2021 Always set to To Date + 1 day
-                tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<DateTime>("DateOfAccountInformation", ((DateTime)nullableDateTimePickerTo.Value).Date.AddDays(1));
+                tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<DateTime>("DateOfAccountInformation", ((DateTime)nullableDateTimePickerTo.EditValue).Date.AddDays(1));
                 // Moses Newman 09/26/2020 Set Interest Type
                 tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position].SetField<String>("InterestType", "F");
                 ClosedCreditManagerBindingSource.EndEdit();
+                tsbSet.ClosedCreditManager.AcceptChanges();
                 try
                 {
                     ClosedCreditManagerTableAdapter.Update(tsbSet.ClosedCreditManager.Rows[ClosedCreditManagerBindingSource.Position]);
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("There was a genereal error: " + ex.Message);
+                    MessageBox.Show("There was a general error: " + ex.Message);
                 }
             }
             if (checkBoxCreateBoth.Checked)
@@ -656,7 +649,7 @@ namespace IAC2021SQL
             MDIIAC2013 MDIMain = (MDIIAC2013)MdiParent;
             QueryProgress lfrm;
             lfrm = (QueryProgress)MDIMain.frm;
-            lfrm.QueryprogressBar.Value = (e.ProgressPercentage < 101) ? e.ProgressPercentage : 100;
+            lfrm.QueryprogressBar.EditValue = (e.ProgressPercentage < 101) ? e.ProgressPercentage : 100;
             if (CreateFile)
                 lfrm.lblProgress.Text = "Creating ICMEXTR File" + "\n" + lsProgMessage;
             else
@@ -750,7 +743,7 @@ namespace IAC2021SQL
                         lsAcctPaymentRating = " ";
                 }
                 else
-                    lsAcctStatusCode = WhatsTheDiff(TSBDATA, (DateTime)nullableDateTimePickerControlDate.Value, CustomerPos);
+                    lsAcctStatusCode = WhatsTheDiff(TSBDATA, (DateTime)nullableDateTimePickerControlDate.EditValue, CustomerPos);
             }
             else
             {
@@ -784,7 +777,7 @@ namespace IAC2021SQL
                         lsAcctPaymentRating = " ";
                 }
                 else
-                    lsAcctStatusCode = WhatsTheDiff(TSBDATA, (DateTime)nullableDateTimePickerControlDate.Value, CustomerPos, true);
+                    lsAcctStatusCode = WhatsTheDiff(TSBDATA, (DateTime)nullableDateTimePickerControlDate.EditValue, CustomerPos, true);
             }
         }
 

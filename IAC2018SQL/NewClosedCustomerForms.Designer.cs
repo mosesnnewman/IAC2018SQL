@@ -338,6 +338,9 @@
             this.colSMSTemplate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colImgSort1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.xtraTabControlCustomerMaint = new DevExpress.XtraTab.XtraTabControl();
+            this.imageCollectionTabs = new DevExpress.Utils.ImageCollection(this.components);
+            this.xtraTabPageVerifacto = new DevExpress.XtraTab.XtraTabPage();
+            this.groupControlVerifacto = new DevExpress.XtraEditors.GroupControl();
             this.xtraTabPageCustInfo1 = new DevExpress.XtraTab.XtraTabPage();
             this.groupBox10 = new DevExpress.XtraEditors.GroupControl();
             this.checkEditAllotment = new DevExpress.XtraEditors.CheckEdit();
@@ -1096,6 +1099,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.paymentDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControlCustomerMaint)).BeginInit();
             this.xtraTabControlCustomerMaint.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imageCollectionTabs)).BeginInit();
+            this.xtraTabPageVerifacto.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControlVerifacto)).BeginInit();
             this.xtraTabPageCustInfo1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupBox10)).BeginInit();
             this.groupBox10.SuspendLayout();
@@ -2798,12 +2804,13 @@
             this.xtraTabControlCustomerMaint.AppearancePage.PageClient.BackColor = System.Drawing.Color.Transparent;
             this.xtraTabControlCustomerMaint.AppearancePage.PageClient.BackColor2 = ((System.Drawing.Color)(resources.GetObject("xtraTabControlCustomerMaint.AppearancePage.PageClient.BackColor2")));
             this.xtraTabControlCustomerMaint.AppearancePage.PageClient.Options.UseBackColor = true;
+            this.xtraTabControlCustomerMaint.Images = this.imageCollectionTabs;
             this.xtraTabControlCustomerMaint.LookAndFeel.SkinMaskColor = System.Drawing.Color.SteelBlue;
             this.xtraTabControlCustomerMaint.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.SteelBlue;
             this.xtraTabControlCustomerMaint.LookAndFeel.SkinName = "McSkin";
             this.xtraTabControlCustomerMaint.LookAndFeel.UseDefaultLookAndFeel = false;
             this.xtraTabControlCustomerMaint.Name = "xtraTabControlCustomerMaint";
-            this.xtraTabControlCustomerMaint.SelectedTabPage = this.xtraTabPageCustInfo1;
+            this.xtraTabControlCustomerMaint.SelectedTabPage = this.xtraTabPageVerifacto;
             this.xtraTabControlCustomerMaint.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPageCustInfo1,
             this.xtraTabPageCustInfo2,
@@ -2814,9 +2821,37 @@
             this.xtraTabPageComments,
             this.xtraTabPageCustomerFees,
             this.xtraTabPageRepoHistory,
-            this.xtraTabPageTSB});
+            this.xtraTabPageTSB,
+            this.xtraTabPageVerifacto});
             this.xtraTabControlCustomerMaint.SelectedPageChanged += new DevExpress.XtraTab.TabPageChangedEventHandler(this.xtraTabControlCustomerMaint_SelectedPageChanged);
             this.xtraTabControlCustomerMaint.CloseButtonClick += new System.EventHandler(this.xtraTabControlCustomerMaint_CloseButtonClick);
+            // 
+            // imageCollectionTabs
+            // 
+            this.imageCollectionTabs.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("imageCollectionTabs.ImageStream")));
+            this.imageCollectionTabs.Images.SetKeyName(0, "Verifacto.jpg");
+            this.imageCollectionTabs.Images.SetKeyName(1, "XtraBars.png");
+            this.imageCollectionTabs.Images.SetKeyName(2, "Verifacto.jpg");
+            this.imageCollectionTabs.InsertImage(global::IAC2021SQL.Properties.Resources.login_button_png_18022, "login_button_png_18022", typeof(global::IAC2021SQL.Properties.Resources), 3);
+            this.imageCollectionTabs.Images.SetKeyName(3, "login_button_png_18022");
+            // 
+            // xtraTabPageVerifacto
+            // 
+            this.xtraTabPageVerifacto.Controls.Add(this.groupControlVerifacto);
+            this.xtraTabPageVerifacto.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.xtraTabPageVerifacto.Name = "xtraTabPageVerifacto";
+            resources.ApplyResources(this.xtraTabPageVerifacto, "xtraTabPageVerifacto");
+            this.xtraTabPageVerifacto.Paint += new System.Windows.Forms.PaintEventHandler(this.xtraTabPageVerifacto_Paint);
+            // 
+            // groupControlVerifacto
+            // 
+            this.groupControlVerifacto.Appearance.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.groupControlVerifacto.Appearance.Options.UseBackColor = true;
+            this.groupControlVerifacto.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            resources.ApplyResources(this.groupControlVerifacto, "groupControlVerifacto");
+            this.groupControlVerifacto.LookAndFeel.SkinName = "McSkin";
+            this.groupControlVerifacto.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.groupControlVerifacto.Name = "groupControlVerifacto";
             // 
             // xtraTabPageCustInfo1
             // 
@@ -3959,6 +3994,7 @@
             resources.ApplyResources(this.textBoxCheckNo, "textBoxCheckNo");
             this.textBoxCheckNo.Name = "textBoxCheckNo";
             this.textBoxCheckNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            this.textBoxCheckNo.Validated += new System.EventHandler(this.textBoxCheckNo_Validated);
             // 
             // label2
             // 
@@ -3971,6 +4007,8 @@
             this.checkBoxCheckIssued.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.cUSTOMERBindingSource, "IsCheckPrinted", true));
             this.checkBoxCheckIssued.Name = "checkBoxCheckIssued";
             this.checkBoxCheckIssued.UseVisualStyleBackColor = true;
+            this.checkBoxCheckIssued.CheckedChanged += new System.EventHandler(this.checkBoxCheckIssued_CheckedChanged);
+            this.checkBoxCheckIssued.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // textBoxDealerCashPrice
             // 
@@ -8406,6 +8444,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.paymentDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControlCustomerMaint)).EndInit();
             this.xtraTabControlCustomerMaint.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.imageCollectionTabs)).EndInit();
+            this.xtraTabPageVerifacto.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControlVerifacto)).EndInit();
             this.xtraTabPageCustInfo1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupBox10)).EndInit();
             this.groupBox10.ResumeLayout(false);
@@ -9193,6 +9234,9 @@
         private DevExpress.XtraEditors.CheckEdit checkEditOverideInterestHistory;
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
         private DevExpress.XtraEditors.GroupControl groupBox20;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPageVerifacto;
+        private DevExpress.Utils.ImageCollection imageCollectionTabs;
+        private DevExpress.XtraEditors.GroupControl groupControlVerifacto;
     }
 }
 

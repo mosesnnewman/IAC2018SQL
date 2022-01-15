@@ -544,7 +544,7 @@ namespace IAC2021SQL
             MDIIAC2013 MDIMain = (MDIIAC2013)System.Windows.Forms.Application.OpenForms["MDIIAC2013"];
             QueryProgress lfrm;
             lfrm = (QueryProgress)MDIMain.frm;
-            lfrm.QueryprogressBar.Value = (progress < 101) ? progress : 100;
+            lfrm.QueryprogressBar.EditValue = (progress < 101) ? progress : 100;
             lfrm.lblProgress.Text = "Backing up IAC2012 SQL Database Objects" + "\n" + lsProgMessage;
         }
 
@@ -553,7 +553,7 @@ namespace IAC2021SQL
             MDIIAC2013 MDIMain = (MDIIAC2013)System.Windows.Forms.Application.OpenForms["MDIIAC2013"];
             QueryProgress lfrm;
             lfrm = (QueryProgress)MDIMain.frm;
-            lfrm.QueryprogressBar.Value = (progress < 101) ? progress : 100;
+            lfrm.QueryprogressBar.EditValue = (progress < 101) ? progress : 100;
             lfrm.lblProgress.Text = "Restoring IAC2012 SQL Database Objects" + "\n" + lsProgMessage;
         }
 
