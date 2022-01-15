@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace IAC2021SQL
 {
-    public partial class QueryProgress : Form
+    public partial class QueryProgress : DevExpress.XtraEditors.XtraForm
     {
         public QueryProgress()
         {

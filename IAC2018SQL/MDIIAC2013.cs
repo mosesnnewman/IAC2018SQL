@@ -156,7 +156,7 @@ namespace IAC2021SQL
 
             LoginForm frmLogin = new LoginForm();
 
-            Thread.Sleep(4000);
+            //Thread.Sleep(4000);
             frmLogin.TopMost = true;
             frmLogin.ShowDialog();
             
@@ -189,7 +189,7 @@ namespace IAC2021SQL
         {
             QueryProgress lfrm;
             lfrm = (QueryProgress)frm;
-            lfrm.QueryprogressBar.Value = e.ProgressPercentage;
+            lfrm.QueryprogressBar.EditValue = e.ProgressPercentage;
 
             if(Program.gsProgMessage != "")
                 lfrm.lblProgress.Text = Program.gsProgMessage;
@@ -1296,7 +1296,7 @@ namespace IAC2021SQL
         {
             QueryProgress lfrm;
             lfrm = (QueryProgress)frm;
-            lfrm.QueryprogressBar.Value = e.ProgressPercentage;
+            lfrm.QueryprogressBar.EditValue = e.ProgressPercentage;
             lfrm.lblProgress.Text = "RECREATING AMORTIZE AND AmortTemp records." + Program.gsAmortProgressText;
         }
 

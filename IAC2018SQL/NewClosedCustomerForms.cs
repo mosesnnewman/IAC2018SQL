@@ -5308,6 +5308,42 @@ namespace IAC2021SQL
             e.Handled = true;
         }
 
+        private void checkBoxCheckIssued_CheckedChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+            if (checkBoxCheckIssued.Checked)
+            {
+                labelCheckNumber.Visible = true;
+                textBoxCheckNo.Visible = true;
+            }
+            else
+            {
+                labelCheckNumber.Visible = false;
+                textBoxCheckNo.Visible = false;
+            }
+        }
+
+        // Moses Newman 07/16/2020 Add comment on check number box validation if Check Number box is filled in.
+        private void textBoxCheckNo_Validated(object sender, EventArgs e)
+        {
+            // Moses Newman 07/16/2021 Make sure the Overpayment comment does not already exist!
+            Int32 lnCount = 0;
+            if (cUSTOMER_ACT_STATTextBox.Text == "I" && textBoxCheckNo.Text != "")
+            {
+                var loCount = cOMMENTTableAdapter.OverpayCount(iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO"));
+
+                lnCount = loCount != null ? (Int32)loCount : 0;
+                if (lnCount == 0)
+                    MakeComment("*** Overpayment Check Issued Check Number: " + textBoxCheckNo.Text + " ***", "", 0, false);
+            }
+        }
+
+        private void xtraTabPageVerifacto_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         private void checkEditMilitary_CheckedChanged(object sender, EventArgs e)
         {
             Object SendTest = sender;

@@ -333,7 +333,7 @@ namespace IAC2021SQL
 
             QueryProgress lfrm;
             lfrm = (QueryProgress)MDIMain.frm;
-            lfrm.QueryprogressBar.Value = (e.ProgressPercentage < 101) ? e.ProgressPercentage : 100;
+            lfrm.QueryprogressBar.EditValue = (e.ProgressPercentage < 101) ? e.ProgressPercentage : 100;
 
             lfrm.lblProgress.Text = "Creating Dealer EXCEL Extract" + "\n" + lsProgMessage;
         }

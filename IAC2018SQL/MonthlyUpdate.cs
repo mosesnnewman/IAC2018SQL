@@ -805,7 +805,7 @@ namespace IAC2021SQL
         {
             lfrm.lblProgress.Text = lsProgress;
             lfrm.lblProgress.Refresh();
-            lfrm.QueryprogressBar.Value = e.ProgressPercentage;
+            lfrm.QueryprogressBar.EditValue = e.ProgressPercentage;
         }
 
     }
