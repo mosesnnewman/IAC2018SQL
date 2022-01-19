@@ -50,25 +50,28 @@
             // 
             this.lblProgress.Appearance.Options.UseTextOptions = true;
             this.lblProgress.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.lblProgress.Appearance.TextOptions.Trimming = DevExpress.Utils.Trimming.None;
             this.lblProgress.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Top;
             this.lblProgress.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.lblProgress.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Vertical;
             this.lblProgress.Location = new System.Drawing.Point(15, 14);
             this.lblProgress.LookAndFeel.SkinName = "McSkin";
             this.lblProgress.LookAndFeel.UseDefaultLookAndFeel = false;
             this.lblProgress.Name = "lblProgress";
-            this.lblProgress.Size = new System.Drawing.Size(0, 0);
+            this.lblProgress.Size = new System.Drawing.Size(370, 0);
             this.lblProgress.TabIndex = 1;
             // 
             // groupControl1
             // 
             this.groupControl1.Appearance.BackColor = System.Drawing.Color.LightSteelBlue;
             this.groupControl1.Appearance.Options.UseBackColor = true;
+            this.groupControl1.AutoSize = true;
             this.groupControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.groupControl1.Controls.Add(this.QueryprogressBar);
             this.groupControl1.Controls.Add(this.lblProgress);
             this.groupControl1.Location = new System.Drawing.Point(-2, -2);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(396, 119);
+            this.groupControl1.Size = new System.Drawing.Size(395, 120);
             this.groupControl1.TabIndex = 2;
             // 
             // QueryProgress
@@ -84,8 +87,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.QueryprogressBar.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
-            this.groupControl1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

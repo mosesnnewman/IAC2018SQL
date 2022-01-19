@@ -83,6 +83,7 @@
             this.nullableDateTimePickerControlDate.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
             this.nullableDateTimePickerControlDate.Size = new System.Drawing.Size(109, 26);
             this.nullableDateTimePickerControlDate.TabIndex = 3;
+            this.nullableDateTimePickerControlDate.EditValueChanged += new System.EventHandler(this.nullableDateTimePickerControlDate_EditValueChanged);
             // 
             // checkBoxCreateBoth
             // 
@@ -132,6 +133,7 @@
             this.nullableDateTimePickerFrom.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
             this.nullableDateTimePickerFrom.Size = new System.Drawing.Size(109, 26);
             this.nullableDateTimePickerFrom.TabIndex = 13;
+            this.nullableDateTimePickerFrom.EditValueChanged += new System.EventHandler(this.nullableDateTimePickerFrom_EditValueChanged);
             // 
             // nullableDateTimePickerTo
             // 

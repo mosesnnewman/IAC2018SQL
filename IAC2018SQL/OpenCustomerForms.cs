@@ -610,7 +610,8 @@ namespace IAC2021SQL
                 aLTNAMETableAdapter.Fill(iACDataSet.ALTNAME, cUSTOMER_NOTextBox.Text.ToString(), cUSTOMER_IAC_TypeTextBox.Text.ToString());
                 oPNBANKTableAdapter.Fill(iACDataSet.OPNBANK, cUSTOMER_NOTextBox.Text.ToString(), "O");
                 // Moses Newman 09/26/2020 Add ClosedCreditManager code 15 for Credit Line Loans (Open End)
-                closedCreditManagerTableAdapter.Fill(tsbDataSet.ClosedCreditManager, cUSTOMER_NOTextBox.Text.ToString(), "15");
+                // Moses Newman 01/15/2022 Now we use Portfolio Type instead of ACCT_TYPE_CODE.
+                closedCreditManagerTableAdapter.Fill(tsbDataSet.ClosedCreditManager, cUSTOMER_NOTextBox.Text.ToString(), "C");
                 if (iACDataSet.ALTNAME.Rows.Count == 0)
                     Create_New_ALTNAMERecord(cUSTOMER_NOTextBox.Text.ToString());
                 StateRatesTableAdapter.Fill(iACDataSet.StateRates, iACDataSet.OPNCUST.Rows[0].Field<String>("CUSTOMER_STATE"));
