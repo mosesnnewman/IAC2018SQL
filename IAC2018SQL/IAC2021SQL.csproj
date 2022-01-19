@@ -43,7 +43,7 @@
     <SuiteName>IAC2021SQL</SuiteName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>113</ApplicationRevision>
+    <ApplicationRevision>123</ApplicationRevision>
     <ApplicationVersion>10.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -705,6 +705,12 @@
     <Compile Include="ColorTextBox.Designer.cs">
       <DependentUpon>ColorTextBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="CreateTSBExtract.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateTSBExtract.Designer.cs">
+      <DependentUpon>CreateTSBExtract.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCashPaymentSummary.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1331,12 +1337,6 @@
     <Compile Include="OpenDelinquencyReports.Designer.cs">
       <DependentUpon>OpenDelinquencyReports.cs</DependentUpon>
     </Compile>
-    <Compile Include="CreateTSBExtract.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CreateTSBExtract.Designer.cs">
-      <DependentUpon>CreateTSBExtract.cs</DependentUpon>
-    </Compile>
     <Compile Include="OpenPaidInFullReport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1767,6 +1767,9 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ClosedReceivedContractReport.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="CreateTSBExtract.resx">
+      <DependentUpon>CreateTSBExtract.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormCashPaymentSummary.resx">
       <DependentUpon>FormCashPaymentSummary.cs</DependentUpon>
     </EmbeddedResource>
@@ -2083,9 +2086,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="OpenDelinquencyReports.resx">
       <DependentUpon>OpenDelinquencyReports.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CreateTSBExtract.resx">
-      <DependentUpon>CreateTSBExtract.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OpenPaidInFullReport.resx">
       <DependentUpon>OpenPaidInFullReport.cs</DependentUpon>

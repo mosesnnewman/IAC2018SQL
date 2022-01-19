@@ -922,10 +922,10 @@ namespace IAC2021SQL
                 aLTNAMETableAdapter.Fill(iACDataSet.ALTNAME, cUSTOMER_NOTextBox.Text.ToString(), cUSTOMER_IAC_TypeTextBox.Text.ToString());
                 oPNBANKTableAdapter.Fill(iACDataSet.OPNBANK, cUSTOMER_NOTextBox.Text.ToString(), "C");
                 // Moses Newman 08/02/2020 Add ClosedCreditManager 
-                closedCreditManagerTableAdapter.Fill(tsbDataSet.ClosedCreditManager, cUSTOMER_NOTextBox.Text.ToString(), "00");
+                closedCreditManagerTableAdapter.Fill(tsbDataSet.ClosedCreditManager, cUSTOMER_NOTextBox.Text.ToString(), "I");
                 // Moses Newman 08/24/2020 possibly unsecured NON-AUTO loan!
-                if(tsbDataSet.ClosedCreditManager.Rows.Count == 0)
-                    closedCreditManagerTableAdapter.Fill(tsbDataSet.ClosedCreditManager, cUSTOMER_NOTextBox.Text.ToString(), "01");
+                //if(tsbDataSet.ClosedCreditManager.Rows.Count == 0)
+                    //closedCreditManagerTableAdapter.Fill(tsbDataSet.ClosedCreditManager, cUSTOMER_NOTextBox.Text.ToString(), "01");
                 // Moses Newman 12/23/2013 Add Email Address Record
                 emailTableAdapter.Fill(iACDataSet.Email, cUSTOMER_NOTextBox.Text);
                 // Moses Newman 04/18/2019 Add Repo Log Tab

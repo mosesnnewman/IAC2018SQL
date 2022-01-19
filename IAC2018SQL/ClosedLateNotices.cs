@@ -64,12 +64,12 @@ namespace IAC2021SQL
                 case 22:
                 case 23:
                 case 24:
-                    tmpDate = DateTime.Parse(tmpDate.Year.ToString() + "-" + tmpDate.Month.ToString() + "-20");
+                    tmpDate = DateTime.Parse(DateTime.Now.Date.AddMonths(-1).Year.ToString() + "-" + DateTime.Now.Date.AddMonths(-1).Month.ToString() + "-20");
                     break;
                 case 25:
                 case 26:
                 case 27:
-                    tmpDate = DateTime.Parse(tmpDate.Year.ToString() + "-" + tmpDate.Month.ToString() + "-25");
+                    tmpDate = DateTime.Parse(DateTime.Now.Date.AddMonths(-1).Year.ToString() + "-" + DateTime.Now.Date.AddMonths(-1).Month.ToString() + "-25");
                     break;
                 case 30:
                 case 28:
@@ -78,7 +78,11 @@ namespace IAC2021SQL
                 case 2:
                 case 3:
                 case 4:
-                    tmpDate = DateTime.Parse(tmpDate.Year.ToString() + "-" + tmpDate.Month.ToString() + "-30");
+                    if (tmpDate.Month != 2)
+                        tmpDate = DateTime.Parse(DateTime.Now.Date.AddMonths(-1).Year.ToString() + "-" + DateTime.Now.Date.AddMonths(-1).Month.ToString() + "-30");
+                    else  // February and handle leap year
+                        tmpDate = DateTime.Parse(DateTime.Now.Date.AddMonths(-1).Year.ToString() + "-" + DateTime.Now.Date.AddMonths(-1).Month.ToString() + "-" +
+                            DateTime.Parse("03/1/" + tmpDate.Year.ToString()).AddDays(-1).Day.ToString());
                     break;
             }
             NoticeDatenullableDateTimePicker.EditValue = tmpDate;  // Moses Newman 11/30/2021 Subtract 15 for run date default!
@@ -154,6 +158,7 @@ namespace IAC2021SQL
             lnCustLCBal = 0;
             lnCustBalance = 0;
             lnCustContractStat = 0;
+            String CustTemp = NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_NO");
 
             // Moses Newman 12/09/2018 Add test for OverrideLateCharge flag.
             if (NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_ACT_STAT") == "I" ||
@@ -165,7 +170,8 @@ namespace IAC2021SQL
                 return;
 
             DateTime ldNewPaidThru, ldFormDate = (DateTime)NoticeDatenullableDateTimePicker.EditValue,
-                     ldFebEndThisYear = Convert.ToDateTime("03/01/" + DateTime.Now.Date.Year.ToString().Substring(2, 2)).AddDays(-1); ;
+                     ldFebEndThisYear = Convert.ToDateTime("03/01/" + DateTime.Now.Date.Year.ToString().Substring(2, 2)).AddDays(-1),
+                     tmpDate; 
             // Moses Newman 12/16/2014 proper C# way to do antiquated date add above!!! 
             // Moses Newman 04/16/2018 call Program.NextDueDate instead of hardcode!
             ldNewPaidThru = Program.NextDueDate(CustomerPos, NoticeiacDataSet);
@@ -184,7 +190,59 @@ namespace IAC2021SQL
             ltActDateDiff = ldFormDate - ldNewPaidThru;
             lnActDateDiff = (Int32)(ltActDateDiff.TotalDays);
             // Moses Newman 01/05/2022 Now we base mass off the month in advance delinquency report
-            ltMassDateDiff = DateTime.Now.Date.AddMonths(1) - ldNewPaidThru;   // Moses Newman 11/14/2021 Create Mass Date Diff 
+            // Moses Newman 01/18/2022 Get the actual date it's being run based on 5,10,15,20,25,30 due days
+            tmpDate = DateTime.Now.Date;
+            switch (tmpDate.Day)
+            {
+                case 5:
+                case 6:
+                case 7:
+                case 8:
+                case 9:
+                    tmpDate = DateTime.Parse(tmpDate.Year.ToString() + "-" + tmpDate.Month.ToString() + "-5");
+                    break;
+                case 10:
+                case 11:
+                case 12:
+                case 13:
+                case 14:
+                    tmpDate = DateTime.Parse(tmpDate.Year.ToString() + "-" + tmpDate.Month.ToString() + "-10");
+                    break;
+                case 15:
+                case 16:
+                case 17:
+                case 18:
+                case 19:
+                    tmpDate = DateTime.Parse(tmpDate.Year.ToString() + "-" + tmpDate.Month.ToString() + "-15");
+                    break;
+                case 20:
+                case 21:
+                case 22:
+                case 23:
+                case 24:
+                    tmpDate = DateTime.Parse(tmpDate.Year.ToString() + "-" + tmpDate.Month.ToString() + "-20");
+                    break;
+                case 25:
+                case 26:
+                case 27:
+                    tmpDate = DateTime.Parse(tmpDate.Year.ToString() + "-" + tmpDate.Month.ToString() + "-25");
+                    break;
+                case 30:
+                case 28:
+                case 29:
+                case 1:
+                case 2:
+                case 3:
+                case 4:
+                    if(tmpDate.Month != 2)
+                        tmpDate = DateTime.Parse(tmpDate.Year.ToString() + "-" + tmpDate.Month.ToString() + "-30");
+                    else  // February and handle leap yeara
+                        tmpDate = DateTime.Parse(tmpDate.Year.ToString() + "-" + tmpDate.Month.ToString() + "-" +
+                            DateTime.Parse("03/1/"+ tmpDate.Year.ToString()).AddDays(-1).Day.ToString());
+                    break;
+            }
+            // Now use the actual date it is being run on + 1 month for testing against 30 or 60 day delinquents for Mass 2 and 4
+            ltMassDateDiff = tmpDate.AddMonths(1) - ldNewPaidThru;   // Moses Newman 11/14/2021 Create Mass Date Diff 
             lnMassDateDiff = (Int32)(ltMassDateDiff.TotalDays); // Moses Newman 11/14/2021 Create Mass Date Diff 
             // Moses Newman 01/05/2022 Mass 2 and 4 due date schedule
             switch(lnFormDay)
@@ -219,7 +277,11 @@ namespace IAC2021SQL
                 if (!((ldFormDate.Year == ldNewPaidThru.Year) && (ldFormDate.Month == ldNewPaidThru.Month)))
                     return;
 
-            if (((ldFormDate.Month < ldNewPaidThru.Month) && (ldFormDate.Year == ldNewPaidThru.Year))||
+
+            // Moses Newman 01/19/2022 If MA 2 or 4 don't exit if new due date is past run date 
+            Int32 lnAge = lnMassDateDiff / 30;
+            if (!(NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_STATE") == "MA" && (lnAge == 1 || lnAge == 2)))
+                if (((ldFormDate.Month < ldNewPaidThru.Month) && (ldFormDate.Year == ldNewPaidThru.Year))||
                 (ldFormDate.Year < ldNewPaidThru.Year))
                 return;
 
@@ -236,7 +298,6 @@ namespace IAC2021SQL
             // Moses Newman 11/30/2021 Only new calc from now on for Mass!
             if (NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_STATE") == "MA")
             {
-                Int32 lnAge = lnMassDateDiff / 30;
                 // Moses Newman 01/4/2022 Mass 2 and 4 now = lnMassDateDiff / 30 = 1 then form 2 if = 2 then form 4
                 switch(lnAge)
                 {
@@ -771,21 +832,18 @@ namespace IAC2021SQL
                 NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_REGULAR_AMOUNT")-
                 lnLateCharge + NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("PartialPayment"));
             // Moses Newman 11/17/2021 Handle proper Amount Past Due if 2 or 4 new calculation
-            if (NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_STATE") == "MA" &&
-               (NoticeiacDataSet.NOTICE.Rows[NoticebindingSource.Position].Field<Decimal>("AmountPastDue") < 0 )) /*||
-               (NoticeiacDataSet.NOTICE.Rows[NoticebindingSource.Position].Field<Decimal>("AmountPastDue") <
-                NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_REGULAR_AMOUNT") && NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_BALANCE") >= NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_REGULAR_AMOUNT"))))*/
-                //if (lnFormNo == 2 || lnFormNo == 4) Moses Newman 01/04/2022 Only add extra month for MASS Form4
-                if (lnFormNo == 4)
+            if (NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_STATE") == "MA")
+                switch(lnFormNo)
                 {
-                    NoticeiacDataSet.NOTICE.Rows[NoticebindingSource.Position].SetField<Decimal>("AmountPastDue",
-                        (NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_CONTRACT_STATUS") * -1) -
-                        lnLateCharge + NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("PartialPayment"));
-                    NoticeiacDataSet.NOTICE.Rows[NoticebindingSource.Position].SetField<Decimal>("NOTICE_CONTRACT_STATUS",
-                        (NoticeiacDataSet.NOTICE.Rows[NoticebindingSource.Position].Field<Decimal>("NOTICE_REGULAR_AMOUNT") +
-                        NoticeiacDataSet.NOTICE.Rows[NoticebindingSource.Position].Field<Decimal>("NOTICE_LATE_CHARGE") +
-                        NoticeiacDataSet.NOTICE.Rows[NoticebindingSource.Position].Field<Decimal>("AmountPastDue") -
-                        NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("PartialPayment")) * -1);
+                    case 2:
+                    case 4:
+                        NoticeiacDataSet.NOTICE.Rows[NoticebindingSource.Position].SetField<Decimal>("AmountPastDue",
+                            (NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_CONTRACT_STATUS") * -1));
+                        NoticeiacDataSet.NOTICE.Rows[NoticebindingSource.Position].SetField<Decimal>("NOTICE_CONTRACT_STATUS",
+                            (NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_REGULAR_AMOUNT") +
+                            NoticeiacDataSet.NOTICE.Rows[NoticebindingSource.Position].Field<Decimal>("AmountPastDue") -
+                            NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("PartialPayment")) * -1);
+                        break;
                 }
             // Moses Newman 06/21/2018 Add PartialPayment
             NoticeiacDataSet.NOTICE.Rows[NoticebindingSource.Position].SetField<Decimal>("PartialPayment", 

@@ -1550,10 +1550,10 @@ namespace IAC2021SQL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public ClosedCreditManagerRow FindByCRDMGR_ACCOUNT_NUMBERCRDMGR_ACCT_TYPE_CODE(string CRDMGR_ACCOUNT_NUMBER, string CRDMGR_ACCT_TYPE_CODE) {
+            public ClosedCreditManagerRow FindByCRDMGR_ACCOUNT_NUMBERCRDMGR_ACCT_PORTFOLIO_TYPE(string CRDMGR_ACCOUNT_NUMBER, string CRDMGR_ACCT_PORTFOLIO_TYPE) {
                 return ((ClosedCreditManagerRow)(this.Rows.Find(new object[] {
                             CRDMGR_ACCOUNT_NUMBER,
-                            CRDMGR_ACCT_TYPE_CODE})));
+                            CRDMGR_ACCT_PORTFOLIO_TYPE})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1781,7 +1781,7 @@ namespace IAC2021SQL {
                 base.Columns.Add(this.columnFollowUpDateOverride);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnCRDMGR_ACCOUNT_NUMBER,
-                                this.columnCRDMGR_ACCT_TYPE_CODE}, true));
+                                this.columnCRDMGR_ACCT_PORTFOLIO_TYPE}, true));
                 this.columnCRDMGR_CUST_LAST_NAME.DefaultValue = ((string)("  "));
                 this.columnCRDMGR_CUST_LAST_NAME.MaxLength = 25;
                 this.columnCRDMGR_CUST_FIRST_NAME.DefaultValue = ((string)(" "));
@@ -1825,6 +1825,7 @@ namespace IAC2021SQL {
                 this.columnCRDMGR_ACCT_HIGHEST_CREDIT.DefaultValue = ((decimal)(0m));
                 this.columnCRDMGR_ACCT_ECOA_CODE.DefaultValue = ((string)(" "));
                 this.columnCRDMGR_ACCT_ECOA_CODE.MaxLength = 1;
+                this.columnCRDMGR_ACCT_PORTFOLIO_TYPE.AllowDBNull = false;
                 this.columnCRDMGR_ACCT_PORTFOLIO_TYPE.DefaultValue = ((string)(" "));
                 this.columnCRDMGR_ACCT_PORTFOLIO_TYPE.MaxLength = 1;
                 this.columnCRDMGR_ORIGINAL_CHARGE_OFF_AMT.DefaultValue = ((decimal)(0m));
@@ -6034,13 +6035,7 @@ namespace IAC2021SQL {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string CRDMGR_ACCT_PORTFOLIO_TYPE {
                 get {
-                    try {
-                        return ((string)(this[this.tableClosedCreditManager.CRDMGR_ACCT_PORTFOLIO_TYPEColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'CRDMGR_ACCT_PORTFOLIO_TYPE\' in table \'ClosedCreditManager\' " +
-                                "is DBNull.", e);
-                    }
+                    return ((string)(this[this.tableClosedCreditManager.CRDMGR_ACCT_PORTFOLIO_TYPEColumn]));
                 }
                 set {
                     this[this.tableClosedCreditManager.CRDMGR_ACCT_PORTFOLIO_TYPEColumn] = value;
@@ -7000,18 +6995,6 @@ namespace IAC2021SQL {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetCRDMGR_ACCT_ECOA_CODENull() {
                 this[this.tableClosedCreditManager.CRDMGR_ACCT_ECOA_CODEColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsCRDMGR_ACCT_PORTFOLIO_TYPENull() {
-                return this.IsNull(this.tableClosedCreditManager.CRDMGR_ACCT_PORTFOLIO_TYPEColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetCRDMGR_ACCT_PORTFOLIO_TYPENull() {
-                this[this.tableClosedCreditManager.CRDMGR_ACCT_PORTFOLIO_TYPEColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9608,8 +9591,8 @@ namespace IAC2021SQL.TSBDataSetTableAdapters {
             this._adapter.DeleteCommand.CommandText = "dbo.CreditManagerDelete";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.StoredProcedure;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CRDMGR_ACCOUNT_NUMBER", global::System.Data.SqlDbType.Char, 30, global::System.Data.ParameterDirection.Input, 0, 0, "CRDMGR_ACCOUNT_NUMBER", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CRDMGR_ACCT_TYPE_CODE", global::System.Data.SqlDbType.Char, 2, global::System.Data.ParameterDirection.Input, 0, 0, "CRDMGR_ACCT_TYPE_CODE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CRDMGR_ACCOUNT_NUMBER", global::System.Data.SqlDbType.Char, 6, global::System.Data.ParameterDirection.Input, 0, 0, "CRDMGR_ACCOUNT_NUMBER", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CRDMGR_ACCT_PORTFOLIO_TYPE", global::System.Data.SqlDbType.Char, 1, global::System.Data.ParameterDirection.Input, 0, 0, "CRDMGR_ACCT_PORTFOLIO_TYPE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "dbo.CreditManagerInsert";
@@ -9630,7 +9613,7 @@ namespace IAC2021SQL.TSBDataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CRDMGR_CUST_COUNTRY", global::System.Data.SqlDbType.Char, 2, global::System.Data.ParameterDirection.Input, 0, 0, "CRDMGR_CUST_COUNTRY", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CRDMGR_CUST_ADDRESS_IND", global::System.Data.SqlDbType.Char, 1, global::System.Data.ParameterDirection.Input, 0, 0, "CRDMGR_CUST_ADDRESS_IND", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CRDMGR_CUST_RESIDENCE_CODE", global::System.Data.SqlDbType.Char, 1, global::System.Data.ParameterDirection.Input, 0, 0, "CRDMGR_CUST_RESIDENCE_CODE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CRDMGR_ACCOUNT_NUMBER", global::System.Data.SqlDbType.VarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, "CRDMGR_ACCOUNT_NUMBER", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CRDMGR_ACCOUNT_NUMBER", global::System.Data.SqlDbType.Char, 6, global::System.Data.ParameterDirection.Input, 0, 0, "CRDMGR_ACCOUNT_NUMBER", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CRDMGR_ACCT_TYPE_CODE", global::System.Data.SqlDbType.Char, 2, global::System.Data.ParameterDirection.Input, 0, 0, "CRDMGR_ACCT_TYPE_CODE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CRDMGR_ACCT_STATUS_CODE", global::System.Data.SqlDbType.Char, 2, global::System.Data.ParameterDirection.Input, 0, 0, "CRDMGR_ACCT_STATUS_CODE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CRDMGR_ACCT_PAYMENT_RATING", global::System.Data.SqlDbType.Char, 1, global::System.Data.ParameterDirection.Input, 0, 0, "CRDMGR_ACCT_PAYMENT_RATING", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -9702,7 +9685,7 @@ namespace IAC2021SQL.TSBDataSetTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CRDMGR_CUST_COUNTRY", global::System.Data.SqlDbType.Char, 2, global::System.Data.ParameterDirection.Input, 0, 0, "CRDMGR_CUST_COUNTRY", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CRDMGR_CUST_ADDRESS_IND", global::System.Data.SqlDbType.Char, 1, global::System.Data.ParameterDirection.Input, 0, 0, "CRDMGR_CUST_ADDRESS_IND", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CRDMGR_CUST_RESIDENCE_CODE", global::System.Data.SqlDbType.Char, 1, global::System.Data.ParameterDirection.Input, 0, 0, "CRDMGR_CUST_RESIDENCE_CODE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CRDMGR_ACCOUNT_NUMBER", global::System.Data.SqlDbType.VarChar, 30, global::System.Data.ParameterDirection.Input, 0, 0, "CRDMGR_ACCOUNT_NUMBER", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CRDMGR_ACCOUNT_NUMBER", global::System.Data.SqlDbType.Char, 6, global::System.Data.ParameterDirection.Input, 0, 0, "CRDMGR_ACCOUNT_NUMBER", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CRDMGR_ACCT_TYPE_CODE", global::System.Data.SqlDbType.Char, 2, global::System.Data.ParameterDirection.Input, 0, 0, "CRDMGR_ACCT_TYPE_CODE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CRDMGR_ACCT_STATUS_CODE", global::System.Data.SqlDbType.Char, 2, global::System.Data.ParameterDirection.Input, 0, 0, "CRDMGR_ACCT_STATUS_CODE", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CRDMGR_ACCT_PAYMENT_RATING", global::System.Data.SqlDbType.Char, 1, global::System.Data.ParameterDirection.Input, 0, 0, "CRDMGR_ACCT_PAYMENT_RATING", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -9772,8 +9755,8 @@ namespace IAC2021SQL.TSBDataSetTableAdapters {
             this._commandCollection[0].CommandText = "dbo.CreditManagerSelect";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CRDMGR_ACCOUNT_NUMBER", global::System.Data.SqlDbType.Char, 30, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CRDMGR_ACCT_TYPE_CODE", global::System.Data.SqlDbType.Char, 2, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CRDMGR_ACCOUNT_NUMBER", global::System.Data.SqlDbType.Char, 6, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CRDMGR_ACCT_PORTFOLIO_TYPE", global::System.Data.SqlDbType.Char, 1, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = "dbo.CreditManagerDeleteAll";
@@ -9824,7 +9807,7 @@ namespace IAC2021SQL.TSBDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(TSBDataSet.ClosedCreditManagerDataTable dataTable, string CRDMGR_ACCOUNT_NUMBER, string CRDMGR_ACCT_TYPE_CODE) {
+        public virtual int Fill(TSBDataSet.ClosedCreditManagerDataTable dataTable, string CRDMGR_ACCOUNT_NUMBER, string CRDMGR_ACCT_PORTFOLIO_TYPE) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((CRDMGR_ACCOUNT_NUMBER == null)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -9832,11 +9815,11 @@ namespace IAC2021SQL.TSBDataSetTableAdapters {
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((string)(CRDMGR_ACCOUNT_NUMBER));
             }
-            if ((CRDMGR_ACCT_TYPE_CODE == null)) {
+            if ((CRDMGR_ACCT_PORTFOLIO_TYPE == null)) {
                 this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(CRDMGR_ACCT_TYPE_CODE));
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(CRDMGR_ACCT_PORTFOLIO_TYPE));
             }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -9849,7 +9832,7 @@ namespace IAC2021SQL.TSBDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual TSBDataSet.ClosedCreditManagerDataTable GetData(string CRDMGR_ACCOUNT_NUMBER, string CRDMGR_ACCT_TYPE_CODE) {
+        public virtual TSBDataSet.ClosedCreditManagerDataTable GetData(string CRDMGR_ACCOUNT_NUMBER, string CRDMGR_ACCT_PORTFOLIO_TYPE) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((CRDMGR_ACCOUNT_NUMBER == null)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
@@ -9857,11 +9840,11 @@ namespace IAC2021SQL.TSBDataSetTableAdapters {
             else {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((string)(CRDMGR_ACCOUNT_NUMBER));
             }
-            if ((CRDMGR_ACCT_TYPE_CODE == null)) {
+            if ((CRDMGR_ACCT_PORTFOLIO_TYPE == null)) {
                 this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(CRDMGR_ACCT_TYPE_CODE));
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(CRDMGR_ACCT_PORTFOLIO_TYPE));
             }
             TSBDataSet.ClosedCreditManagerDataTable dataTable = new TSBDataSet.ClosedCreditManagerDataTable();
             this.Adapter.Fill(dataTable);
@@ -9997,18 +9980,18 @@ namespace IAC2021SQL.TSBDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(string CRDMGR_ACCOUNT_NUMBER, string CRDMGR_ACCT_TYPE_CODE) {
+        public virtual int Delete(string CRDMGR_ACCOUNT_NUMBER, string CRDMGR_ACCT_PORTFOLIO_TYPE) {
             if ((CRDMGR_ACCOUNT_NUMBER == null)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(CRDMGR_ACCOUNT_NUMBER));
             }
-            if ((CRDMGR_ACCT_TYPE_CODE == null)) {
+            if ((CRDMGR_ACCT_PORTFOLIO_TYPE == null)) {
                 this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(CRDMGR_ACCT_TYPE_CODE));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(CRDMGR_ACCT_PORTFOLIO_TYPE));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
