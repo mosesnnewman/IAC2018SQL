@@ -17,6 +17,7 @@ using System.Net;
 using TValue6Engine2;
 using DevExpress.XtraEditors;
 using DevExpress.Utils;
+using System.Net.Http;
 
 
 namespace IAC2021SQL
@@ -61,6 +62,7 @@ namespace IAC2021SQL
 
 		static private System.Data.SqlClient.SqlTransaction tableAdapTran = null;
 		static private System.Data.SqlClient.SqlConnection tableAdapConn = null;
+		static public readonly HttpClient client = new HttpClient();
 
 		static private void ClearAllVariables()
 		{
@@ -1413,7 +1415,7 @@ namespace IAC2021SQL
 			Decimal lnMasterOLoan = 0;
 			String lsMasterKey = "";
 			Object loDealhistSeq = null, loMastHistSeq = null, loMasterKey = null, loCustHistSeq = null, loLastPostDate = null;
-            DateTime ldLastPostDate;
+            DateTime ldLastPostDate,ldTempDate;
 
 			WS_DEALERTableAdapter.Fill(WS_DEALER);
 			StatementCustomerHeaderTableAdapter.DeleteNewBusinessStatements(); // Delete old new business statements!
@@ -1441,7 +1443,12 @@ namespace IAC2021SQL
                 CustomerPostDataSet.OPNCUST.Rows[i].SetField<Decimal>("CUSTOMER_TOTAL_ISF",0);
                 CustomerPostDataSet.OPNCUST.Rows[i].SetField<String>("CUSTOMER_CONTROL_MONTH",DateTime.Now.Date.Month.ToString().PadLeft(2,'0'));
                 CustomerPostDataSet.OPNCUST.Rows[i].SetField<String>("CUSTOMER_CONTROL_YEAR",DateTime.Now.Date.Year.ToString().Substring(2,2));
-                CustomerPostDataSet.OPNCUST.Rows[i].SetField<String>("CUSTOMER_POST_IND","D");
+				// Moses Newmasn 01/22/2022 Make sure Paid Thru is correct on new business!
+				ldTempDate = CustomerPostDataSet.OPNCUST.Rows[i].Field<DateTime>("CUSTOMER_INIT_DATE");
+				ldTempDate = CustomerPostDataSet.OPNCUST.Rows[i].Field<DateTime>("CUSTOMER_INIT_DATE").AddMonths(-1);
+				CustomerPostDataSet.OPNCUST.Rows[i].SetField<String>("CUSTOMER_PAID_THRU", 
+					ldTempDate.Month.ToString().PadLeft(2, '0') + ldTempDate.Year.ToString().Substring(2, 2));
+				CustomerPostDataSet.OPNCUST.Rows[i].SetField<String>("CUSTOMER_POST_IND","D");
                 CustomerPostDataSet.OPNCUST.Rows[i].SetField<Decimal>("CUSTOMER_BALANCE",
                     CustomerPostDataSet.OPNCUST.Rows[i].Field<Decimal>("CUSTOMER_LOAN_AMOUNT"));
                 CustomerPostDataSet.OPNCUST.Rows[i].SetField<Decimal>("CUSTOMER_TOT_FINANCE_CHARGE",
@@ -1457,7 +1464,7 @@ namespace IAC2021SQL
                     CUSTOMERTableAdapter.Update(CustomerPostDataSet.OPNCUST.Rows[i]);
 					CUSTHISTTableAdapter.Insert(CustomerPostDataSet.OPNCUST.Rows[i].Field<String>("CUSTOMER_NO"),"","O",DateTime.Now.Date,lnSeq,false,
                         "A",CustomerPostDataSet.OPNCUST.Rows[i].Field<Decimal>("CUSTOMER_LOAN_AMOUNT"),0,0,0,0,
-                        CustomerPostDataSet.OPNCUST.Rows[i].Field<String>("CUSTOMER_PAID_THRU"),CustomerPostDataSet.OPNCUST.Rows[i].Field<String>("CUSTOMER_PAID_THRU_MM"),CustomerPostDataSet.OPNCUST.Rows[i].Field<String>("CUSTOMER_PAID_THRU_YY"),
+                        CustomerPostDataSet.OPNCUST.Rows[i].Field<String>("CUSTOMER_PAID_THRU"),CustomerPostDataSet.OPNCUST.Rows[i].Field<String>("CUSTOMER_PAID_THRU").Substring(0,2),CustomerPostDataSet.OPNCUST.Rows[i].Field<String>("CUSTOMER_PAID_THRU").Substring(2,2),
                         "NEW",
                         CustomerPostDataSet.OPNCUST.Rows[i].Field<Decimal>("CUSTOMER_CONTRACT_STATUS"),
                         CustomerPostDataSet.OPNCUST.Rows[i].Field<Decimal>("CUSTOMER_INTEREST_RATE1"),

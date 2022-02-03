@@ -1665,23 +1665,16 @@ namespace IAC2021SQL
 
         private void txtFirstPayDate_Validated(object sender, EventArgs e)
         {
-            if (!lbAddFlag)
+            String lcHighValue = "";
+            lcHighValue += (char)255;
+
+            if (!lbAddFlag && iACDataSet.OPNCUST.Rows[0].Field<String>("CUSTOMER_POST_IND") != lcHighValue)
                 return;
-            Int32 lnPTMonth = 0, lnPTYear = 0;
+            DateTime ldTempDate;
 
-            lnPTMonth = iACDataSet.OPNCUST.Rows[0].Field<DateTime>("CUSTOMER_INIT_DATE").Month;
-            lnPTYear = iACDataSet.OPNCUST.Rows[0].Field<DateTime>("CUSTOMER_INIT_DATE").Year;
-
-            if (lnPTMonth == 1)
-            {
-                lnPTMonth = 12;
-                lnPTYear -= 1;
-            }
-            else
-                lnPTMonth -= 1;
-
-            txtPaidThrough.Text = lnPTMonth.ToString().TrimEnd().PadLeft(2, '0') + lnPTYear.ToString().Substring(2, 2);
-            txtFirstPayDate.Value = txtFirstPayDate.Value;
+            ldTempDate = iACDataSet.OPNCUST.Rows[0].Field<DateTime>("CUSTOMER_INIT_DATE");
+            ldTempDate = iACDataSet.OPNCUST.Rows[0].Field<DateTime>("CUSTOMER_INIT_DATE").AddMonths(-1);
+            txtPaidThrough.Text = ldTempDate.Month.ToString().PadLeft(2, '0') + ldTempDate.Year.ToString().Substring(2, 2);
         }
 
         private void buttonLetter_Click(object sender, EventArgs e)

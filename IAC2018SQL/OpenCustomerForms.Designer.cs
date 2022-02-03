@@ -637,7 +637,7 @@
             label11.AutoSize = true;
             label11.Location = new System.Drawing.Point(22, 33);
             label11.Name = "label11";
-            label11.Size = new System.Drawing.Size(92, 15);
+            label11.Size = new System.Drawing.Size(91, 15);
             label11.TabIndex = 53;
             label11.Text = "CUSTOMER NO:";
             // 
@@ -665,7 +665,7 @@
             label5.AutoSize = true;
             label5.Location = new System.Drawing.Point(43, 21);
             label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(92, 15);
+            label5.Size = new System.Drawing.Size(91, 15);
             label5.TabIndex = 41;
             label5.Text = "CUSTOMER NO:";
             // 
@@ -702,7 +702,7 @@
             label8.AutoSize = true;
             label8.Location = new System.Drawing.Point(292, 47);
             label8.Name = "label8";
-            label8.Size = new System.Drawing.Size(61, 15);
+            label8.Size = new System.Drawing.Size(60, 15);
             label8.TabIndex = 53;
             label8.Text = "PAY DATE:";
             // 
@@ -711,7 +711,7 @@
             cUSTOMER_ACT_STATLabel.AutoSize = true;
             cUSTOMER_ACT_STATLabel.Location = new System.Drawing.Point(586, 23);
             cUSTOMER_ACT_STATLabel.Name = "cUSTOMER_ACT_STATLabel";
-            cUSTOMER_ACT_STATLabel.Size = new System.Drawing.Size(50, 15);
+            cUSTOMER_ACT_STATLabel.Size = new System.Drawing.Size(48, 15);
             cUSTOMER_ACT_STATLabel.TabIndex = 3;
             cUSTOMER_ACT_STATLabel.Text = "STATUS:";
             // 
@@ -765,7 +765,7 @@
             cUSTOMER_NO_CONTACTLabel.AutoSize = true;
             cUSTOMER_NO_CONTACTLabel.Location = new System.Drawing.Point(519, 196);
             cUSTOMER_NO_CONTACTLabel.Name = "cUSTOMER_NO_CONTACTLabel";
-            cUSTOMER_NO_CONTACTLabel.Size = new System.Drawing.Size(118, 15);
+            cUSTOMER_NO_CONTACTLabel.Size = new System.Drawing.Size(116, 15);
             cUSTOMER_NO_CONTACTLabel.TabIndex = 15;
             cUSTOMER_NO_CONTACTLabel.Text = "NO CONTACT (Y/N):";
             // 
@@ -804,7 +804,7 @@
             cUSTOMER_CITYLabel.AutoSize = true;
             cUSTOMER_CITYLabel.Location = new System.Drawing.Point(85, 196);
             cUSTOMER_CITYLabel.Name = "cUSTOMER_CITYLabel";
-            cUSTOMER_CITYLabel.Size = new System.Drawing.Size(35, 15);
+            cUSTOMER_CITYLabel.Size = new System.Drawing.Size(34, 15);
             cUSTOMER_CITYLabel.TabIndex = 28;
             cUSTOMER_CITYLabel.Text = "CITY:";
             // 
@@ -813,7 +813,7 @@
             cUSTOMER_STATELabel.AutoSize = true;
             cUSTOMER_STATELabel.Location = new System.Drawing.Point(76, 231);
             cUSTOMER_STATELabel.Name = "cUSTOMER_STATELabel";
-            cUSTOMER_STATELabel.Size = new System.Drawing.Size(42, 15);
+            cUSTOMER_STATELabel.Size = new System.Drawing.Size(40, 15);
             cUSTOMER_STATELabel.TabIndex = 30;
             cUSTOMER_STATELabel.Text = "STATE:";
             // 
@@ -840,7 +840,7 @@
             cUSTOMER_COMMENT_2Label.AutoSize = true;
             cUSTOMER_COMMENT_2Label.Location = new System.Drawing.Point(561, 57);
             cUSTOMER_COMMENT_2Label.Name = "cUSTOMER_COMMENT_2Label";
-            cUSTOMER_COMMENT_2Label.Size = new System.Drawing.Size(77, 15);
+            cUSTOMER_COMMENT_2Label.Size = new System.Drawing.Size(76, 15);
             cUSTOMER_COMMENT_2Label.TabIndex = 44;
             cUSTOMER_COMMENT_2Label.Text = "COMMENTS:";
             // 
@@ -867,7 +867,7 @@
             cUSTOMER_CREDIT_SCORE_NLabel.AutoSize = true;
             cUSTOMER_CREDIT_SCORE_NLabel.Location = new System.Drawing.Point(550, 369);
             cUSTOMER_CREDIT_SCORE_NLabel.Name = "cUSTOMER_CREDIT_SCORE_NLabel";
-            cUSTOMER_CREDIT_SCORE_NLabel.Size = new System.Drawing.Size(88, 15);
+            cUSTOMER_CREDIT_SCORE_NLabel.Size = new System.Drawing.Size(87, 15);
             cUSTOMER_CREDIT_SCORE_NLabel.TabIndex = 54;
             cUSTOMER_CREDIT_SCORE_NLabel.Text = "CREDIT SCORE:";
             // 
@@ -876,7 +876,7 @@
             cUSTOMER_ALLOTMENTLabel.AutoSize = true;
             cUSTOMER_ALLOTMENTLabel.Location = new System.Drawing.Point(525, 265);
             cUSTOMER_ALLOTMENTLabel.Name = "cUSTOMER_ALLOTMENTLabel";
-            cUSTOMER_ALLOTMENTLabel.Size = new System.Drawing.Size(112, 15);
+            cUSTOMER_ALLOTMENTLabel.Size = new System.Drawing.Size(110, 15);
             cUSTOMER_ALLOTMENTLabel.TabIndex = 57;
             cUSTOMER_ALLOTMENTLabel.Text = "ALLOTMENT PROG:";
             // 
@@ -885,7 +885,7 @@
             cUSTOMER_DISTRIBUTOR_NOLabel.AutoSize = true;
             cUSTOMER_DISTRIBUTOR_NOLabel.Location = new System.Drawing.Point(535, 404);
             cUSTOMER_DISTRIBUTOR_NOLabel.Name = "cUSTOMER_DISTRIBUTOR_NOLabel";
-            cUSTOMER_DISTRIBUTOR_NOLabel.Size = new System.Drawing.Size(102, 15);
+            cUSTOMER_DISTRIBUTOR_NOLabel.Size = new System.Drawing.Size(100, 15);
             cUSTOMER_DISTRIBUTOR_NOLabel.TabIndex = 59;
             cUSTOMER_DISTRIBUTOR_NOLabel.Text = "DISTRIBUTOR NO:";
             // 
@@ -903,7 +903,7 @@
             label12.AutoSize = true;
             label12.Location = new System.Drawing.Point(100, 26);
             label12.Name = "label12";
-            label12.Size = new System.Drawing.Size(92, 15);
+            label12.Size = new System.Drawing.Size(91, 15);
             label12.TabIndex = 4;
             label12.Text = "CUSTOMER NO:";
             label12.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -924,7 +924,7 @@
             label14.AutoSize = true;
             label14.Location = new System.Drawing.Point(97, 57);
             label14.Name = "label14";
-            label14.Size = new System.Drawing.Size(93, 15);
+            label14.Size = new System.Drawing.Size(91, 15);
             label14.TabIndex = 53;
             label14.Text = "FIRST PAY DATE:";
             label14.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -944,7 +944,7 @@
             label17.AutoSize = true;
             label17.Location = new System.Drawing.Point(603, 57);
             label17.Name = "label17";
-            label17.Size = new System.Drawing.Size(122, 15);
+            label17.Size = new System.Drawing.Size(120, 15);
             label17.TabIndex = 59;
             label17.Text = "COLLECTION AGENT:";
             // 
@@ -972,7 +972,7 @@
             label20.AutoSize = true;
             label20.Location = new System.Drawing.Point(338, 119);
             label20.Name = "label20";
-            label20.Size = new System.Drawing.Size(97, 15);
+            label20.Size = new System.Drawing.Size(96, 15);
             label20.TabIndex = 64;
             label20.Text = "LOAN AMOUNT:";
             label20.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -992,7 +992,7 @@
             label23.AutoSize = true;
             label23.Location = new System.Drawing.Point(579, 114);
             label23.Name = "label23";
-            label23.Size = new System.Drawing.Size(144, 15);
+            label23.Size = new System.Drawing.Size(143, 15);
             label23.TabIndex = 70;
             label23.Text = "NO OF PAYMENTS MADE:";
             label23.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -1002,7 +1002,7 @@
             label25.AutoSize = true;
             label25.Location = new System.Drawing.Point(129, 181);
             label25.Name = "label25";
-            label25.Size = new System.Drawing.Size(61, 15);
+            label25.Size = new System.Drawing.Size(60, 15);
             label25.TabIndex = 75;
             label25.Text = "PAY DATE:";
             label25.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -1012,7 +1012,7 @@
             label27.AutoSize = true;
             label27.Location = new System.Drawing.Point(594, 181);
             label27.Name = "label27";
-            label27.Size = new System.Drawing.Size(85, 15);
+            label27.Size = new System.Drawing.Size(84, 15);
             label27.TabIndex = 80;
             label27.Text = "LATE CHARGE:";
             // 
@@ -1030,7 +1030,7 @@
             label1.AutoSize = true;
             label1.Location = new System.Drawing.Point(48, 23);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(71, 15);
+            label1.Size = new System.Drawing.Size(70, 15);
             label1.TabIndex = 0;
             label1.Text = "CUSTOMER:";
             // 
@@ -1058,7 +1058,7 @@
             label63.AutoSize = true;
             label63.Location = new System.Drawing.Point(16, 28);
             label63.Name = "label63";
-            label63.Size = new System.Drawing.Size(92, 15);
+            label63.Size = new System.Drawing.Size(91, 15);
             label63.TabIndex = 98;
             label63.Text = "CUSTOMER NO:";
             // 
@@ -1086,7 +1086,7 @@
             label75.AutoSize = true;
             label75.Location = new System.Drawing.Point(607, 31);
             label75.Name = "label75";
-            label75.Size = new System.Drawing.Size(30, 15);
+            label75.Size = new System.Drawing.Size(29, 15);
             label75.TabIndex = 136;
             label75.Text = "EXT:";
             // 
@@ -1095,7 +1095,7 @@
             label76.AutoSize = true;
             label76.Location = new System.Drawing.Point(604, 50);
             label76.Name = "label76";
-            label76.Size = new System.Drawing.Size(30, 15);
+            label76.Size = new System.Drawing.Size(29, 15);
             label76.TabIndex = 149;
             label76.Text = "EXT:";
             // 
@@ -1104,7 +1104,7 @@
             label77.AutoSize = true;
             label77.Location = new System.Drawing.Point(604, 80);
             label77.Name = "label77";
-            label77.Size = new System.Drawing.Size(30, 15);
+            label77.Size = new System.Drawing.Size(29, 15);
             label77.TabIndex = 151;
             label77.Text = "EXT:";
             // 
@@ -1113,7 +1113,7 @@
             label78.AutoSize = true;
             label78.Location = new System.Drawing.Point(604, 110);
             label78.Name = "label78";
-            label78.Size = new System.Drawing.Size(30, 15);
+            label78.Size = new System.Drawing.Size(29, 15);
             label78.TabIndex = 153;
             label78.Text = "EXT:";
             // 
@@ -1122,7 +1122,7 @@
             label79.AutoSize = true;
             label79.Location = new System.Drawing.Point(604, 140);
             label79.Name = "label79";
-            label79.Size = new System.Drawing.Size(30, 15);
+            label79.Size = new System.Drawing.Size(29, 15);
             label79.TabIndex = 155;
             label79.Text = "EXT:";
             // 
@@ -1180,7 +1180,7 @@
             label85.AutoSize = true;
             label85.Location = new System.Drawing.Point(10, 25);
             label85.Name = "label85";
-            label85.Size = new System.Drawing.Size(92, 15);
+            label85.Size = new System.Drawing.Size(91, 15);
             label85.TabIndex = 98;
             label85.Text = "CUSTOMER NO:";
             // 
@@ -1189,7 +1189,7 @@
             cUSTOMER_AUTOPAYLabel.AutoSize = true;
             cUSTOMER_AUTOPAYLabel.Location = new System.Drawing.Point(542, 231);
             cUSTOMER_AUTOPAYLabel.Name = "cUSTOMER_AUTOPAYLabel";
-            cUSTOMER_AUTOPAYLabel.Size = new System.Drawing.Size(93, 15);
+            cUSTOMER_AUTOPAYLabel.Size = new System.Drawing.Size(92, 15);
             cUSTOMER_AUTOPAYLabel.TabIndex = 52;
             cUSTOMER_AUTOPAYLabel.Text = "AUTOPAY (Y/N):";
             // 
@@ -1208,7 +1208,7 @@
             label32.AutoSize = true;
             label32.Location = new System.Drawing.Point(673, 66);
             label32.Name = "label32";
-            label32.Size = new System.Drawing.Size(91, 15);
+            label32.Size = new System.Drawing.Size(88, 15);
             label32.TabIndex = 92;
             label32.Text = "INTEREST RATE:";
             // 
@@ -1217,7 +1217,7 @@
             label42.AutoSize = true;
             label42.Location = new System.Drawing.Point(476, 66);
             label42.Name = "label42";
-            label42.Size = new System.Drawing.Size(50, 15);
+            label42.Size = new System.Drawing.Size(48, 15);
             label42.TabIndex = 114;
             label42.Text = "STATUS:";
             label42.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -1227,7 +1227,7 @@
             label43.AutoSize = true;
             label43.Location = new System.Drawing.Point(446, 94);
             label43.Name = "label43";
-            label43.Size = new System.Drawing.Size(82, 15);
+            label43.Size = new System.Drawing.Size(80, 15);
             label43.TabIndex = 116;
             label43.Text = "CREDIT LIMIT:";
             label43.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -1237,7 +1237,7 @@
             label34.AutoSize = true;
             label34.Location = new System.Drawing.Point(123, 66);
             label34.Name = "label34";
-            label34.Size = new System.Drawing.Size(69, 15);
+            label34.Size = new System.Drawing.Size(68, 15);
             label34.TabIndex = 129;
             label34.Text = "PAID THRU:";
             label34.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -1256,7 +1256,7 @@
             label24.AutoSize = true;
             label24.Location = new System.Drawing.Point(88, 88);
             label24.Name = "label24";
-            label24.Size = new System.Drawing.Size(104, 15);
+            label24.Size = new System.Drawing.Size(101, 15);
             label24.TabIndex = 132;
             label24.Text = "CONTRACT DATE:";
             label24.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -1266,7 +1266,7 @@
             label30.AutoSize = true;
             label30.Location = new System.Drawing.Point(73, 38);
             label30.Name = "label30";
-            label30.Size = new System.Drawing.Size(118, 15);
+            label30.Size = new System.Drawing.Size(116, 15);
             label30.TabIndex = 128;
             label30.Text = "PAYMENT AMOUNT:";
             label30.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -1277,7 +1277,7 @@
             label97.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label97.Location = new System.Drawing.Point(220, 467);
             label97.Name = "label97";
-            label97.Size = new System.Drawing.Size(79, 15);
+            label97.Size = new System.Drawing.Size(76, 15);
             label97.TabIndex = 82;
             label97.Text = "LETTER TYPE:";
             // 
@@ -1287,7 +1287,7 @@
             label96.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             label96.Location = new System.Drawing.Point(50, 467);
             label96.Name = "label96";
-            label96.Size = new System.Drawing.Size(70, 15);
+            label96.Size = new System.Drawing.Size(68, 15);
             label96.TabIndex = 80;
             label96.Text = "LETTER NO:";
             // 
@@ -1296,7 +1296,7 @@
             labelCountryCode.AutoSize = true;
             labelCountryCode.Location = new System.Drawing.Point(539, 127);
             labelCountryCode.Name = "labelCountryCode";
-            labelCountryCode.Size = new System.Drawing.Size(99, 15);
+            labelCountryCode.Size = new System.Drawing.Size(98, 15);
             labelCountryCode.TabIndex = 84;
             labelCountryCode.Text = "COUNTRY CODE:";
             // 
@@ -1305,7 +1305,7 @@
             label16.AutoSize = true;
             label16.Location = new System.Drawing.Point(524, 300);
             label16.Name = "label16";
-            label16.Size = new System.Drawing.Size(113, 15);
+            label16.Size = new System.Drawing.Size(112, 15);
             label16.TabIndex = 86;
             label16.Text = "MILITARY SEERVICE:";
             // 
@@ -1314,7 +1314,7 @@
             labelProductCode.AutoSize = true;
             labelProductCode.Location = new System.Drawing.Point(540, 334);
             labelProductCode.Name = "labelProductCode";
-            labelProductCode.Size = new System.Drawing.Size(98, 15);
+            labelProductCode.Size = new System.Drawing.Size(97, 15);
             labelProductCode.TabIndex = 88;
             labelProductCode.Text = "PRODUCT CODE:";
             // 
@@ -1342,7 +1342,7 @@
             label28.AutoSize = true;
             label28.Location = new System.Drawing.Point(120, 179);
             label28.Name = "label28";
-            label28.Size = new System.Drawing.Size(71, 15);
+            label28.Size = new System.Drawing.Size(69, 15);
             label28.TabIndex = 144;
             label28.Text = "STATUS NO:";
             label28.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -1352,7 +1352,7 @@
             label33.AutoSize = true;
             label33.Location = new System.Drawing.Point(125, 208);
             label33.Name = "label33";
-            label33.Size = new System.Drawing.Size(66, 15);
+            label33.Size = new System.Drawing.Size(64, 15);
             label33.TabIndex = 145;
             label33.Text = "STATUS #1:";
             label33.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -1362,7 +1362,7 @@
             label35.AutoSize = true;
             label35.Location = new System.Drawing.Point(125, 237);
             label35.Name = "label35";
-            label35.Size = new System.Drawing.Size(66, 15);
+            label35.Size = new System.Drawing.Size(64, 15);
             label35.TabIndex = 146;
             label35.Text = "STATUS #2:";
             label35.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -1372,7 +1372,7 @@
             labelTotalPay.AutoSize = true;
             labelTotalPay.Location = new System.Drawing.Point(456, 179);
             labelTotalPay.Name = "labelTotalPay";
-            labelTotalPay.Size = new System.Drawing.Size(67, 15);
+            labelTotalPay.Size = new System.Drawing.Size(65, 15);
             labelTotalPay.TabIndex = 148;
             labelTotalPay.Text = "TOTAL PAY:";
             labelTotalPay.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -1382,7 +1382,7 @@
             label36.AutoSize = true;
             label36.Location = new System.Drawing.Point(459, 208);
             label36.Name = "label36";
-            label36.Size = new System.Drawing.Size(69, 15);
+            label36.Size = new System.Drawing.Size(68, 15);
             label36.TabIndex = 150;
             label36.Text = "REG. AMT1:";
             label36.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -1392,7 +1392,7 @@
             label37.AutoSize = true;
             label37.Location = new System.Drawing.Point(462, 237);
             label37.Name = "label37";
-            label37.Size = new System.Drawing.Size(66, 15);
+            label37.Size = new System.Drawing.Size(65, 15);
             label37.TabIndex = 152;
             label37.Text = "REG AMT2:";
             label37.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -1402,7 +1402,7 @@
             label38.AutoSize = true;
             label38.Location = new System.Drawing.Point(688, 179);
             label38.Name = "label38";
-            label38.Size = new System.Drawing.Size(73, 15);
+            label38.Size = new System.Drawing.Size(70, 15);
             label38.TabIndex = 154;
             label38.Text = "TOTAL LATE:";
             label38.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -1412,7 +1412,7 @@
             label39.AutoSize = true;
             label39.Location = new System.Drawing.Point(700, 208);
             label39.Name = "label39";
-            label39.Size = new System.Drawing.Size(62, 15);
+            label39.Size = new System.Drawing.Size(60, 15);
             label39.TabIndex = 156;
             label39.Text = "TOTAL ISF:";
             label39.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -1422,7 +1422,7 @@
             label40.AutoSize = true;
             label40.Location = new System.Drawing.Point(44, 122);
             label40.Name = "label40";
-            label40.Size = new System.Drawing.Size(148, 15);
+            label40.Size = new System.Drawing.Size(146, 15);
             label40.TabIndex = 157;
             label40.Text = "CONTROL DATE (MM/YY):";
             label40.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -1442,7 +1442,7 @@
             label44.AutoSize = true;
             label44.Location = new System.Drawing.Point(417, 122);
             label44.Name = "label44";
-            label44.Size = new System.Drawing.Size(109, 15);
+            label44.Size = new System.Drawing.Size(108, 15);
             label44.TabIndex = 162;
             label44.Text = "CREDIT AVAILABLE:";
             label44.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -1452,7 +1452,7 @@
             label46.AutoSize = true;
             label46.Location = new System.Drawing.Point(325, 150);
             label46.Name = "label46";
-            label46.Size = new System.Drawing.Size(110, 15);
+            label46.Size = new System.Drawing.Size(109, 15);
             label46.TabIndex = 134;
             label46.Text = "LAST FIN. CHARGE:";
             label46.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -1462,7 +1462,7 @@
             label47.AutoSize = true;
             label47.Location = new System.Drawing.Point(373, 181);
             label47.Name = "label47";
-            label47.Size = new System.Drawing.Size(60, 15);
+            label47.Size = new System.Drawing.Size(59, 15);
             label47.TabIndex = 137;
             label47.Text = "PAY TYPE:";
             label47.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -1472,7 +1472,7 @@
             label49.AutoSize = true;
             label49.Location = new System.Drawing.Point(581, 150);
             label49.Name = "label49";
-            label49.Size = new System.Drawing.Size(96, 15);
+            label49.Size = new System.Drawing.Size(94, 15);
             label49.TabIndex = 139;
             label49.Text = "TOTAL FINANCE:";
             label49.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -1482,7 +1482,7 @@
             label50.AutoSize = true;
             label50.Location = new System.Drawing.Point(675, 38);
             label50.Name = "label50";
-            label50.Size = new System.Drawing.Size(89, 15);
+            label50.Size = new System.Drawing.Size(87, 15);
             label50.TabIndex = 166;
             label50.Text = "PAID INTEREST:";
             label50.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -2187,7 +2187,7 @@
             this.txtDOB.Name = "txtDOB";
             this.txtDOB.Size = new System.Drawing.Size(100, 23);
             this.txtDOB.TabIndex = 94;
-            this.txtDOB.Value = new System.DateTime(2021, 12, 29, 0, 0, 0, 0);
+            this.txtDOB.Value = new System.DateTime(2022, 1, 22, 0, 0, 0, 0);
             this.txtDOB.ValueChanged += new System.EventHandler(this.txtDOB_ValueChanged);
             this.txtDOB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
@@ -2894,6 +2894,7 @@
             this.txtPaymentDate.Name = "txtPaymentDate";
             this.txtPaymentDate.Size = new System.Drawing.Size(100, 23);
             this.txtPaymentDate.TabIndex = 57;
+            this.txtPaymentDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // txtFirstPayDate
             // 
@@ -2905,6 +2906,7 @@
             this.txtFirstPayDate.Name = "txtFirstPayDate";
             this.txtFirstPayDate.Size = new System.Drawing.Size(100, 23);
             this.txtFirstPayDate.TabIndex = 45;
+            this.txtFirstPayDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             this.txtFirstPayDate.Validated += new System.EventHandler(this.txtFirstPayDate_Validated);
             // 
             // textBox17
@@ -4028,7 +4030,7 @@
             this.label94.AutoSize = true;
             this.label94.Location = new System.Drawing.Point(66, 132);
             this.label94.Name = "label94";
-            this.label94.Size = new System.Drawing.Size(89, 15);
+            this.label94.Size = new System.Drawing.Size(90, 15);
             this.label94.TabIndex = 178;
             this.label94.Text = "Expiration Date:";
             // 
@@ -4275,7 +4277,7 @@
             this.nullableDateTimePickerFollowUpDate.Name = "nullableDateTimePickerFollowUpDate";
             this.nullableDateTimePickerFollowUpDate.Size = new System.Drawing.Size(119, 25);
             this.nullableDateTimePickerFollowUpDate.TabIndex = 24;
-            this.nullableDateTimePickerFollowUpDate.Value = new System.DateTime(2021, 12, 29, 0, 0, 0, 0);
+            this.nullableDateTimePickerFollowUpDate.Value = new System.DateTime(2022, 1, 22, 0, 0, 0, 0);
             this.nullableDateTimePickerFollowUpDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // nullableDateTimePickerDateClosed
@@ -4286,7 +4288,7 @@
             this.nullableDateTimePickerDateClosed.Name = "nullableDateTimePickerDateClosed";
             this.nullableDateTimePickerDateClosed.Size = new System.Drawing.Size(119, 25);
             this.nullableDateTimePickerDateClosed.TabIndex = 23;
-            this.nullableDateTimePickerDateClosed.Value = new System.DateTime(2021, 12, 29, 0, 0, 0, 0);
+            this.nullableDateTimePickerDateClosed.Value = new System.DateTime(2022, 1, 22, 0, 0, 0, 0);
             // 
             // nullableDateTimePickerDateOpened
             // 
@@ -4296,7 +4298,7 @@
             this.nullableDateTimePickerDateOpened.Name = "nullableDateTimePickerDateOpened";
             this.nullableDateTimePickerDateOpened.Size = new System.Drawing.Size(119, 25);
             this.nullableDateTimePickerDateOpened.TabIndex = 22;
-            this.nullableDateTimePickerDateOpened.Value = new System.DateTime(2021, 12, 29, 0, 0, 0, 0);
+            this.nullableDateTimePickerDateOpened.Value = new System.DateTime(2022, 1, 22, 0, 0, 0, 0);
             // 
             // nullableDateTimePickerDateofAccountInformation
             // 
@@ -4306,7 +4308,7 @@
             this.nullableDateTimePickerDateofAccountInformation.Name = "nullableDateTimePickerDateofAccountInformation";
             this.nullableDateTimePickerDateofAccountInformation.Size = new System.Drawing.Size(119, 25);
             this.nullableDateTimePickerDateofAccountInformation.TabIndex = 21;
-            this.nullableDateTimePickerDateofAccountInformation.Value = new System.DateTime(2021, 12, 29, 0, 0, 0, 0);
+            this.nullableDateTimePickerDateofAccountInformation.Value = new System.DateTime(2022, 1, 22, 0, 0, 0, 0);
             // 
             // nullableDateTimePickerDateofFirstDelinquency
             // 
@@ -4316,7 +4318,7 @@
             this.nullableDateTimePickerDateofFirstDelinquency.Name = "nullableDateTimePickerDateofFirstDelinquency";
             this.nullableDateTimePickerDateofFirstDelinquency.Size = new System.Drawing.Size(119, 25);
             this.nullableDateTimePickerDateofFirstDelinquency.TabIndex = 20;
-            this.nullableDateTimePickerDateofFirstDelinquency.Value = new System.DateTime(2021, 12, 29, 0, 0, 0, 0);
+            this.nullableDateTimePickerDateofFirstDelinquency.Value = new System.DateTime(2022, 1, 22, 0, 0, 0, 0);
             // 
             // nullableDateTimePickerDateofLastPayment
             // 
@@ -4326,7 +4328,7 @@
             this.nullableDateTimePickerDateofLastPayment.Name = "nullableDateTimePickerDateofLastPayment";
             this.nullableDateTimePickerDateofLastPayment.Size = new System.Drawing.Size(119, 25);
             this.nullableDateTimePickerDateofLastPayment.TabIndex = 19;
-            this.nullableDateTimePickerDateofLastPayment.Value = new System.DateTime(2021, 12, 29, 0, 0, 0, 0);
+            this.nullableDateTimePickerDateofLastPayment.Value = new System.DateTime(2022, 1, 22, 0, 0, 0, 0);
             // 
             // label135
             // 

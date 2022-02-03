@@ -44,6 +44,8 @@
             this.progressBarControl.Location = new System.Drawing.Point(15, 557);
             this.progressBarControl.Name = "progressBarControl";
             this.progressBarControl.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.progressBarControl.Properties.LookAndFeel.SkinName = "McSkin";
+            this.progressBarControl.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.progressBarControl.Size = new System.Drawing.Size(871, 19);
             this.progressBarControl.TabIndex = 5;
             // 

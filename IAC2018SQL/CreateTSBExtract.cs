@@ -159,7 +159,8 @@ namespace IAC2021SQL
                     // Moses Newman 01/15/2022
                 if (tsbSet.ClosedCreditManager.Rows.Count == 0)
                 {
-                    tsbSet.ClosedCreditManager.NewRow();
+                    DataRow newrow = tsbSet.ClosedCreditManager.NewRow();
+                    tsbSet.ClosedCreditManager.Rows.Add(newrow);
                 }
                 // Strip apostrophes from first and last name if they exist
                 tsbSet.ClosedCreditManager.Rows[0].SetField<String>("CRDMGR_CUST_FIRST_NAME", TSBDATA.CUSTOMER.Rows[i].Field<String>("CUSTOMER_FIRST_NAME").Replace(@"'", ""));
@@ -1048,7 +1049,9 @@ namespace IAC2021SQL
         private String UpdateCurrentMonthOnly(String OldHistString,String NewHistString)
         {
             String DatePart, OldDatePart, HistPart;
-
+            // Moses Newman 02/03/2022
+            if (OldHistString == null)
+                return NewHistString;
             DatePart = NewHistString.Substring(0, 7);
             OldDatePart = OldHistString.Substring(0, 7);
             HistPart = NewHistString.Substring(7,1) + OldHistString.Substring(7, 23);

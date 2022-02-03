@@ -100,7 +100,6 @@
             System.Windows.Forms.Label lblInsCo;
             System.Windows.Forms.Label label60;
             System.Windows.Forms.Label label59;
-            System.Windows.Forms.Label label58;
             System.Windows.Forms.Label label57;
             System.Windows.Forms.Label label56;
             System.Windows.Forms.Label label55;
@@ -126,7 +125,6 @@
             System.Windows.Forms.Label labelAnnualIncome;
             System.Windows.Forms.Label labelCosignerCreditScore;
             System.Windows.Forms.Label label75;
-            System.Windows.Forms.Label label74;
             System.Windows.Forms.Label label64;
             System.Windows.Forms.Label label65;
             System.Windows.Forms.Label label67;
@@ -339,8 +337,6 @@
             this.colImgSort1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.xtraTabControlCustomerMaint = new DevExpress.XtraTab.XtraTabControl();
             this.imageCollectionTabs = new DevExpress.Utils.ImageCollection(this.components);
-            this.xtraTabPageVerifacto = new DevExpress.XtraTab.XtraTabPage();
-            this.groupControlVerifacto = new DevExpress.XtraEditors.GroupControl();
             this.xtraTabPageCustInfo1 = new DevExpress.XtraTab.XtraTabPage();
             this.groupBox10 = new DevExpress.XtraEditors.GroupControl();
             this.checkEditAllotment = new DevExpress.XtraEditors.CheckEdit();
@@ -483,10 +479,27 @@
             this.textBox47 = new System.Windows.Forms.TextBox();
             this.textBox48 = new System.Windows.Forms.TextBox();
             this.VehicleGroupBox = new System.Windows.Forms.GroupBox();
+            this.checkEditJointOwnership = new DevExpress.XtraEditors.CheckEdit();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControlIssueName1 = new DevExpress.XtraEditors.LabelControl();
+            this.dateEditIssueDate3 = new DevExpress.XtraEditors.DateEdit();
+            this.textEditIssueName3 = new DevExpress.XtraEditors.TextEdit();
+            this.dateEditIssueDate2 = new DevExpress.XtraEditors.DateEdit();
+            this.textEditIssueName2 = new DevExpress.XtraEditors.TextEdit();
+            this.dateEditIssueDate1 = new DevExpress.XtraEditors.DateEdit();
+            this.textEditIssueName1 = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.textEditPortfolio = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.textEditPolicyStatus = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.dateEditCancellationDate = new DevExpress.XtraEditors.DateEdit();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.checkBoxFullRecourse = new DevExpress.XtraEditors.CheckEdit();
             this.textBoxTierPoints = new System.Windows.Forms.TextBox();
             this.textBoxBuyersAnnualIncome = new System.Windows.Forms.TextBox();
+            this.checkBoxFullRecourse = new DevExpress.XtraEditors.CheckEdit();
             this.comboBoxCreditCode = new System.Windows.Forms.ComboBox();
             this.cUSTOMER_COS_PHONETextBox = new System.Windows.Forms.TextBox();
             this.cUSTOMER_CREDIT_SCORE_ATextBox = new System.Windows.Forms.TextBox();
@@ -494,14 +507,14 @@
             this.cUSTOMER_COS_NAMETextBox = new System.Windows.Forms.TextBox();
             this.textBoxMileage = new System.Windows.Forms.TextBox();
             this.groupBoxRepo = new System.Windows.Forms.GroupBox();
-            this.checkBoxElectronicLien = new System.Windows.Forms.CheckBox();
+            this.checkBoxElectronicLien = new DevExpress.XtraEditors.CheckEdit();
             this.nullableDateTimePickerDateTitleReleased = new DevExpress.XtraEditors.DateEdit();
-            this.checkBoxTitleReleased = new System.Windows.Forms.CheckBox();
+            this.checkBoxTitleReleased = new DevExpress.XtraEditors.CheckEdit();
             this.textBoxLTV = new System.Windows.Forms.TextBox();
             this.comboBoxRepoInd = new System.Windows.Forms.ComboBox();
             this.nullableDateTimePickerAucDate = new DevExpress.XtraEditors.DateEdit();
             this.nullableDateTimePickerLocDate = new DevExpress.XtraEditors.DateEdit();
-            this.checkBoxTitleReceived = new System.Windows.Forms.CheckBox();
+            this.checkBoxTitleReceived = new DevExpress.XtraEditors.CheckEdit();
             this.comboBoxRepoCodes = new System.Windows.Forms.ComboBox();
             this.cUSTOMER_REPO_CDEtextBox = new System.Windows.Forms.TextBox();
             this.cUSTOMER_REPO_INDtextBox = new System.Windows.Forms.TextBox();
@@ -514,7 +527,6 @@
             this.txtEffectiveDate = new DevExpress.XtraEditors.DateEdit();
             this.txtAgentPhone = new System.Windows.Forms.MaskedTextBox();
             this.txtJointOwner = new System.Windows.Forms.TextBox();
-            this.txtJointOwnership = new System.Windows.Forms.TextBox();
             this.txtInsuranceAgent = new System.Windows.Forms.TextBox();
             this.txtPolicyNumber = new System.Windows.Forms.TextBox();
             this.txtVIN = new System.Windows.Forms.TextBox();
@@ -550,6 +562,7 @@
             this.txtALTContact2 = new System.Windows.Forms.TextBox();
             this.txtALTContact1 = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.checkEditUsePrimaryAddress = new DevExpress.XtraEditors.CheckEdit();
             this.buttonCOSValidate = new DevExpress.XtraEditors.SimpleButton();
             this.textBoxCosignerTierPoints = new System.Windows.Forms.TextBox();
             this.buttonCosLetter = new DevExpress.XtraEditors.SimpleButton();
@@ -563,7 +576,6 @@
             this.textBoxCosignerCreditScore = new System.Windows.Forms.TextBox();
             this.txtCOSDOB = new DevExpress.XtraEditors.DateEdit();
             this.txtCOSWorkExt = new System.Windows.Forms.TextBox();
-            this.txtUsePrimaryAddress = new System.Windows.Forms.TextBox();
             this.txtCOSSS_3 = new System.Windows.Forms.TextBox();
             this.txtCOSSS_2 = new System.Windows.Forms.TextBox();
             this.txtCOSSS_1 = new System.Windows.Forms.TextBox();
@@ -912,7 +924,6 @@
             lblInsCo = new System.Windows.Forms.Label();
             label60 = new System.Windows.Forms.Label();
             label59 = new System.Windows.Forms.Label();
-            label58 = new System.Windows.Forms.Label();
             label57 = new System.Windows.Forms.Label();
             label56 = new System.Windows.Forms.Label();
             label55 = new System.Windows.Forms.Label();
@@ -938,7 +949,6 @@
             labelAnnualIncome = new System.Windows.Forms.Label();
             labelCosignerCreditScore = new System.Windows.Forms.Label();
             label75 = new System.Windows.Forms.Label();
-            label74 = new System.Windows.Forms.Label();
             label64 = new System.Windows.Forms.Label();
             label65 = new System.Windows.Forms.Label();
             label67 = new System.Windows.Forms.Label();
@@ -1100,8 +1110,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControlCustomerMaint)).BeginInit();
             this.xtraTabControlCustomerMaint.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollectionTabs)).BeginInit();
-            this.xtraTabPageVerifacto.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControlVerifacto)).BeginInit();
             this.xtraTabPageCustInfo1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupBox10)).BeginInit();
             this.groupBox10.SuspendLayout();
@@ -1148,15 +1156,32 @@
             this.groupBox15.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.VehicleGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEditJointOwnership.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEditIssueDate3.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEditIssueDate3.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditIssueName3.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEditIssueDate2.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEditIssueDate2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditIssueName2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEditIssueDate1.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEditIssueDate1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditIssueName1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditPortfolio.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditPolicyStatus.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEditCancellationDate.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEditCancellationDate.Properties)).BeginInit();
             this.groupBox8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.checkBoxFullRecourse.Properties)).BeginInit();
             this.groupBoxRepo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.checkBoxElectronicLien.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateTitleReleased.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateTitleReleased.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkBoxTitleReleased.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerAucDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerAucDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerLocDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerLocDate.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkBoxTitleReceived.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerTitleDateReceived.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerTitleDateReceived.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerRepoDate.Properties.CalendarTimeProperties)).BeginInit();
@@ -1171,6 +1196,7 @@
             this.groupBoxCOSSBT.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEditUsePrimaryAddress.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCOSDOB.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCOSDOB.Properties)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -1624,11 +1650,6 @@
             resources.ApplyResources(label59, "label59");
             label59.Name = "label59";
             // 
-            // label58
-            // 
-            resources.ApplyResources(label58, "label58");
-            label58.Name = "label58";
-            // 
             // label57
             // 
             resources.ApplyResources(label57, "label57");
@@ -1765,12 +1786,6 @@
             // 
             resources.ApplyResources(label75, "label75");
             label75.Name = "label75";
-            // 
-            // label74
-            // 
-            resources.ApplyResources(label74, "label74");
-            label74.BackColor = System.Drawing.Color.Transparent;
-            label74.Name = "label74";
             // 
             // label64
             // 
@@ -2810,7 +2825,7 @@
             this.xtraTabControlCustomerMaint.LookAndFeel.SkinName = "McSkin";
             this.xtraTabControlCustomerMaint.LookAndFeel.UseDefaultLookAndFeel = false;
             this.xtraTabControlCustomerMaint.Name = "xtraTabControlCustomerMaint";
-            this.xtraTabControlCustomerMaint.SelectedTabPage = this.xtraTabPageVerifacto;
+            this.xtraTabControlCustomerMaint.SelectedTabPage = this.xtraTabPageCustInfo1;
             this.xtraTabControlCustomerMaint.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPageCustInfo1,
             this.xtraTabPageCustInfo2,
@@ -2821,8 +2836,7 @@
             this.xtraTabPageComments,
             this.xtraTabPageCustomerFees,
             this.xtraTabPageRepoHistory,
-            this.xtraTabPageTSB,
-            this.xtraTabPageVerifacto});
+            this.xtraTabPageTSB});
             this.xtraTabControlCustomerMaint.SelectedPageChanged += new DevExpress.XtraTab.TabPageChangedEventHandler(this.xtraTabControlCustomerMaint_SelectedPageChanged);
             this.xtraTabControlCustomerMaint.CloseButtonClick += new System.EventHandler(this.xtraTabControlCustomerMaint_CloseButtonClick);
             // 
@@ -2834,24 +2848,6 @@
             this.imageCollectionTabs.Images.SetKeyName(2, "Verifacto.jpg");
             this.imageCollectionTabs.InsertImage(global::IAC2021SQL.Properties.Resources.login_button_png_18022, "login_button_png_18022", typeof(global::IAC2021SQL.Properties.Resources), 3);
             this.imageCollectionTabs.Images.SetKeyName(3, "login_button_png_18022");
-            // 
-            // xtraTabPageVerifacto
-            // 
-            this.xtraTabPageVerifacto.Controls.Add(this.groupControlVerifacto);
-            this.xtraTabPageVerifacto.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
-            this.xtraTabPageVerifacto.Name = "xtraTabPageVerifacto";
-            resources.ApplyResources(this.xtraTabPageVerifacto, "xtraTabPageVerifacto");
-            this.xtraTabPageVerifacto.Paint += new System.Windows.Forms.PaintEventHandler(this.xtraTabPageVerifacto_Paint);
-            // 
-            // groupControlVerifacto
-            // 
-            this.groupControlVerifacto.Appearance.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.groupControlVerifacto.Appearance.Options.UseBackColor = true;
-            this.groupControlVerifacto.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            resources.ApplyResources(this.groupControlVerifacto, "groupControlVerifacto");
-            this.groupControlVerifacto.LookAndFeel.SkinName = "McSkin";
-            this.groupControlVerifacto.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.groupControlVerifacto.Name = "groupControlVerifacto";
             // 
             // xtraTabPageCustInfo1
             // 
@@ -4566,6 +4562,23 @@
             // VehicleGroupBox
             // 
             this.VehicleGroupBox.BackColor = System.Drawing.Color.Transparent;
+            this.VehicleGroupBox.Controls.Add(this.checkEditJointOwnership);
+            this.VehicleGroupBox.Controls.Add(this.labelControl6);
+            this.VehicleGroupBox.Controls.Add(this.labelControl5);
+            this.VehicleGroupBox.Controls.Add(this.labelControl4);
+            this.VehicleGroupBox.Controls.Add(this.labelControlIssueName1);
+            this.VehicleGroupBox.Controls.Add(this.dateEditIssueDate3);
+            this.VehicleGroupBox.Controls.Add(this.textEditIssueName3);
+            this.VehicleGroupBox.Controls.Add(this.dateEditIssueDate2);
+            this.VehicleGroupBox.Controls.Add(this.textEditIssueName2);
+            this.VehicleGroupBox.Controls.Add(this.dateEditIssueDate1);
+            this.VehicleGroupBox.Controls.Add(this.textEditIssueName1);
+            this.VehicleGroupBox.Controls.Add(this.labelControl3);
+            this.VehicleGroupBox.Controls.Add(this.textEditPortfolio);
+            this.VehicleGroupBox.Controls.Add(this.labelControl2);
+            this.VehicleGroupBox.Controls.Add(this.textEditPolicyStatus);
+            this.VehicleGroupBox.Controls.Add(this.labelControl1);
+            this.VehicleGroupBox.Controls.Add(this.dateEditCancellationDate);
             this.VehicleGroupBox.Controls.Add(this.groupBox8);
             this.VehicleGroupBox.Controls.Add(this.textBoxMileage);
             this.VehicleGroupBox.Controls.Add(this.groupBoxRepo);
@@ -4577,8 +4590,6 @@
             this.VehicleGroupBox.Controls.Add(label60);
             this.VehicleGroupBox.Controls.Add(this.txtJointOwner);
             this.VehicleGroupBox.Controls.Add(label59);
-            this.VehicleGroupBox.Controls.Add(label58);
-            this.VehicleGroupBox.Controls.Add(this.txtJointOwnership);
             this.VehicleGroupBox.Controls.Add(label57);
             this.VehicleGroupBox.Controls.Add(label56);
             this.VehicleGroupBox.Controls.Add(this.txtInsuranceAgent);
@@ -4598,13 +4609,262 @@
             this.VehicleGroupBox.Name = "VehicleGroupBox";
             this.VehicleGroupBox.TabStop = false;
             // 
+            // checkEditJointOwnership
+            // 
+            this.checkEditJointOwnership.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.VehiclebindingSource, "VEHICLE_JOINT_OWNER", true));
+            resources.ApplyResources(this.checkEditJointOwnership, "checkEditJointOwnership");
+            this.checkEditJointOwnership.MenuManager = this.toolbarFormManager1;
+            this.checkEditJointOwnership.Name = "checkEditJointOwnership";
+            this.checkEditJointOwnership.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("checkEditJointOwnership.Properties.Appearance.Font")));
+            this.checkEditJointOwnership.Properties.Appearance.Options.UseFont = true;
+            this.checkEditJointOwnership.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.checkEditJointOwnership.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.checkEditJointOwnership.Properties.Caption = resources.GetString("checkEditJointOwnership.Properties.Caption");
+            this.checkEditJointOwnership.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
+            this.checkEditJointOwnership.Properties.CheckBoxOptions.SvgColorChecked = System.Drawing.Color.Black;
+            this.checkEditJointOwnership.Properties.ContentAlignment = ((DevExpress.Utils.HorzAlignment)(resources.GetObject("checkEditJointOwnership.Properties.ContentAlignment")));
+            this.checkEditJointOwnership.Properties.GlyphAlignment = ((DevExpress.Utils.HorzAlignment)(resources.GetObject("checkEditJointOwnership.Properties.GlyphAlignment")));
+            this.checkEditJointOwnership.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
+            this.checkEditJointOwnership.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.LightSteelBlue;
+            this.checkEditJointOwnership.Properties.LookAndFeel.SkinName = "McSkin";
+            this.checkEditJointOwnership.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.checkEditJointOwnership.Properties.NullStyle = DevExpress.XtraEditors.Controls.StyleIndeterminate.Unchecked;
+            this.checkEditJointOwnership.QueryCheckStateByValue += new DevExpress.XtraEditors.Controls.QueryCheckStateByValueEventHandler(this.checkEditJointOwnership_QueryCheckStateByValue);
+            this.checkEditJointOwnership.QueryValueByCheckState += new DevExpress.XtraEditors.Controls.QueryValueByCheckStateEventHandler(this.checkEditJointOwnership_QueryValueByCheckState);
+            this.checkEditJointOwnership.CheckedChanged += new System.EventHandler(this.checkEditJointOwnership_CheckedChanged);
+            this.checkEditJointOwnership.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            // 
+            // labelControl6
+            // 
+            this.labelControl6.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("labelControl6.Appearance.Font")));
+            this.labelControl6.Appearance.Options.UseFont = true;
+            resources.ApplyResources(this.labelControl6, "labelControl6");
+            this.labelControl6.LookAndFeel.SkinName = "McSkin";
+            this.labelControl6.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.labelControl6.Name = "labelControl6";
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("labelControl5.Appearance.Font")));
+            this.labelControl5.Appearance.Options.UseFont = true;
+            resources.ApplyResources(this.labelControl5, "labelControl5");
+            this.labelControl5.LookAndFeel.SkinName = "McSkin";
+            this.labelControl5.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.labelControl5.Name = "labelControl5";
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("labelControl4.Appearance.Font")));
+            this.labelControl4.Appearance.Options.UseFont = true;
+            resources.ApplyResources(this.labelControl4, "labelControl4");
+            this.labelControl4.LookAndFeel.SkinName = "McSkin";
+            this.labelControl4.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.labelControl4.Name = "labelControl4";
+            // 
+            // labelControlIssueName1
+            // 
+            this.labelControlIssueName1.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("labelControlIssueName1.Appearance.Font")));
+            this.labelControlIssueName1.Appearance.Options.UseFont = true;
+            resources.ApplyResources(this.labelControlIssueName1, "labelControlIssueName1");
+            this.labelControlIssueName1.LookAndFeel.SkinName = "McSkin";
+            this.labelControlIssueName1.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.labelControlIssueName1.Name = "labelControlIssueName1";
+            // 
+            // dateEditIssueDate3
+            // 
+            this.dateEditIssueDate3.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.VehiclebindingSource, "IssueDate3", true));
+            resources.ApplyResources(this.dateEditIssueDate3, "dateEditIssueDate3");
+            this.dateEditIssueDate3.Name = "dateEditIssueDate3";
+            this.dateEditIssueDate3.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("dateEditIssueDate3.Properties.Appearance.Font")));
+            this.dateEditIssueDate3.Properties.Appearance.Options.UseFont = true;
+            this.dateEditIssueDate3.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("dateEditIssueDate3.Properties.Buttons"))))});
+            this.dateEditIssueDate3.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("dateEditIssueDate3.Properties.CalendarTimeProperties.Buttons"))))});
+            this.dateEditIssueDate3.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.Fluent;
+            this.dateEditIssueDate3.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
+            this.dateEditIssueDate3.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
+            this.dateEditIssueDate3.Properties.LookAndFeel.SkinName = "McSkin";
+            this.dateEditIssueDate3.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.dateEditIssueDate3.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
+            this.dateEditIssueDate3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            // 
+            // textEditIssueName3
+            // 
+            this.textEditIssueName3.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.VehiclebindingSource, "IssueName3", true));
+            resources.ApplyResources(this.textEditIssueName3, "textEditIssueName3");
+            this.textEditIssueName3.MenuManager = this.toolbarFormManager1;
+            this.textEditIssueName3.Name = "textEditIssueName3";
+            this.textEditIssueName3.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textEditIssueName3.Properties.Appearance.Font")));
+            this.textEditIssueName3.Properties.Appearance.Options.UseFont = true;
+            this.textEditIssueName3.Properties.AppearanceDisabled.BackColor = System.Drawing.SystemColors.Control;
+            this.textEditIssueName3.Properties.AppearanceDisabled.BorderColor = System.Drawing.Color.White;
+            this.textEditIssueName3.Properties.AppearanceDisabled.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.textEditIssueName3.Properties.AppearanceDisabled.Options.UseBackColor = true;
+            this.textEditIssueName3.Properties.AppearanceDisabled.Options.UseBorderColor = true;
+            this.textEditIssueName3.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.textEditIssueName3.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.textEditIssueName3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            // 
+            // dateEditIssueDate2
+            // 
+            this.dateEditIssueDate2.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.VehiclebindingSource, "IssueDate2", true));
+            resources.ApplyResources(this.dateEditIssueDate2, "dateEditIssueDate2");
+            this.dateEditIssueDate2.Name = "dateEditIssueDate2";
+            this.dateEditIssueDate2.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("dateEditIssueDate2.Properties.Appearance.Font")));
+            this.dateEditIssueDate2.Properties.Appearance.Options.UseFont = true;
+            this.dateEditIssueDate2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("dateEditIssueDate2.Properties.Buttons"))))});
+            this.dateEditIssueDate2.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("dateEditIssueDate2.Properties.CalendarTimeProperties.Buttons"))))});
+            this.dateEditIssueDate2.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.Fluent;
+            this.dateEditIssueDate2.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
+            this.dateEditIssueDate2.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
+            this.dateEditIssueDate2.Properties.LookAndFeel.SkinName = "McSkin";
+            this.dateEditIssueDate2.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.dateEditIssueDate2.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
+            this.dateEditIssueDate2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            // 
+            // textEditIssueName2
+            // 
+            this.textEditIssueName2.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.VehiclebindingSource, "IssueName2", true));
+            resources.ApplyResources(this.textEditIssueName2, "textEditIssueName2");
+            this.textEditIssueName2.MenuManager = this.toolbarFormManager1;
+            this.textEditIssueName2.Name = "textEditIssueName2";
+            this.textEditIssueName2.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textEditIssueName2.Properties.Appearance.Font")));
+            this.textEditIssueName2.Properties.Appearance.Options.UseFont = true;
+            this.textEditIssueName2.Properties.AppearanceDisabled.BackColor = System.Drawing.SystemColors.Control;
+            this.textEditIssueName2.Properties.AppearanceDisabled.BorderColor = System.Drawing.Color.White;
+            this.textEditIssueName2.Properties.AppearanceDisabled.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.textEditIssueName2.Properties.AppearanceDisabled.Options.UseBackColor = true;
+            this.textEditIssueName2.Properties.AppearanceDisabled.Options.UseBorderColor = true;
+            this.textEditIssueName2.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.textEditIssueName2.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.textEditIssueName2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            // 
+            // dateEditIssueDate1
+            // 
+            this.dateEditIssueDate1.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.VehiclebindingSource, "IssueDate1", true));
+            resources.ApplyResources(this.dateEditIssueDate1, "dateEditIssueDate1");
+            this.dateEditIssueDate1.Name = "dateEditIssueDate1";
+            this.dateEditIssueDate1.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("dateEditIssueDate1.Properties.Appearance.Font")));
+            this.dateEditIssueDate1.Properties.Appearance.Options.UseFont = true;
+            this.dateEditIssueDate1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("dateEditIssueDate1.Properties.Buttons"))))});
+            this.dateEditIssueDate1.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("dateEditIssueDate1.Properties.CalendarTimeProperties.Buttons"))))});
+            this.dateEditIssueDate1.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.Fluent;
+            this.dateEditIssueDate1.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
+            this.dateEditIssueDate1.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
+            this.dateEditIssueDate1.Properties.LookAndFeel.SkinName = "McSkin";
+            this.dateEditIssueDate1.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.dateEditIssueDate1.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
+            this.dateEditIssueDate1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            // 
+            // textEditIssueName1
+            // 
+            this.textEditIssueName1.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.VehiclebindingSource, "IssueName1", true));
+            resources.ApplyResources(this.textEditIssueName1, "textEditIssueName1");
+            this.textEditIssueName1.MenuManager = this.toolbarFormManager1;
+            this.textEditIssueName1.Name = "textEditIssueName1";
+            this.textEditIssueName1.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textEditIssueName1.Properties.Appearance.Font")));
+            this.textEditIssueName1.Properties.Appearance.Options.UseFont = true;
+            this.textEditIssueName1.Properties.AppearanceDisabled.BackColor = System.Drawing.SystemColors.Control;
+            this.textEditIssueName1.Properties.AppearanceDisabled.BorderColor = System.Drawing.Color.White;
+            this.textEditIssueName1.Properties.AppearanceDisabled.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.textEditIssueName1.Properties.AppearanceDisabled.Options.UseBackColor = true;
+            this.textEditIssueName1.Properties.AppearanceDisabled.Options.UseBorderColor = true;
+            this.textEditIssueName1.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.textEditIssueName1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.textEditIssueName1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("labelControl3.Appearance.Font")));
+            this.labelControl3.Appearance.Options.UseFont = true;
+            resources.ApplyResources(this.labelControl3, "labelControl3");
+            this.labelControl3.LookAndFeel.SkinName = "McSkin";
+            this.labelControl3.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.labelControl3.Name = "labelControl3";
+            // 
+            // textEditPortfolio
+            // 
+            this.textEditPortfolio.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.VehiclebindingSource, "Portfolio", true));
+            resources.ApplyResources(this.textEditPortfolio, "textEditPortfolio");
+            this.textEditPortfolio.MenuManager = this.toolbarFormManager1;
+            this.textEditPortfolio.Name = "textEditPortfolio";
+            this.textEditPortfolio.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textEditPortfolio.Properties.Appearance.Font")));
+            this.textEditPortfolio.Properties.Appearance.Options.UseFont = true;
+            this.textEditPortfolio.Properties.AppearanceDisabled.BackColor = System.Drawing.SystemColors.Control;
+            this.textEditPortfolio.Properties.AppearanceDisabled.BorderColor = System.Drawing.Color.White;
+            this.textEditPortfolio.Properties.AppearanceDisabled.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.textEditPortfolio.Properties.AppearanceDisabled.Options.UseBackColor = true;
+            this.textEditPortfolio.Properties.AppearanceDisabled.Options.UseBorderColor = true;
+            this.textEditPortfolio.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.textEditPortfolio.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.textEditPortfolio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("labelControl2.Appearance.Font")));
+            this.labelControl2.Appearance.Options.UseFont = true;
+            resources.ApplyResources(this.labelControl2, "labelControl2");
+            this.labelControl2.LookAndFeel.SkinName = "McSkin";
+            this.labelControl2.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.labelControl2.Name = "labelControl2";
+            // 
+            // textEditPolicyStatus
+            // 
+            this.textEditPolicyStatus.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.VehiclebindingSource, "PolicyStatus", true));
+            resources.ApplyResources(this.textEditPolicyStatus, "textEditPolicyStatus");
+            this.textEditPolicyStatus.MenuManager = this.toolbarFormManager1;
+            this.textEditPolicyStatus.Name = "textEditPolicyStatus";
+            this.textEditPolicyStatus.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textEditPolicyStatus.Properties.Appearance.Font")));
+            this.textEditPolicyStatus.Properties.Appearance.Options.UseFont = true;
+            this.textEditPolicyStatus.Properties.AppearanceDisabled.BackColor = System.Drawing.SystemColors.Control;
+            this.textEditPolicyStatus.Properties.AppearanceDisabled.BorderColor = System.Drawing.Color.White;
+            this.textEditPolicyStatus.Properties.AppearanceDisabled.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.textEditPolicyStatus.Properties.AppearanceDisabled.Options.UseBackColor = true;
+            this.textEditPolicyStatus.Properties.AppearanceDisabled.Options.UseBorderColor = true;
+            this.textEditPolicyStatus.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.textEditPolicyStatus.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.textEditPolicyStatus.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("labelControl1.Appearance.Font")));
+            this.labelControl1.Appearance.Options.UseFont = true;
+            resources.ApplyResources(this.labelControl1, "labelControl1");
+            this.labelControl1.LookAndFeel.SkinName = "McSkin";
+            this.labelControl1.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.labelControl1.Name = "labelControl1";
+            // 
+            // dateEditCancellationDate
+            // 
+            this.dateEditCancellationDate.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.VehiclebindingSource, "VEHICLE_EXP_DATE", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "d"));
+            resources.ApplyResources(this.dateEditCancellationDate, "dateEditCancellationDate");
+            this.dateEditCancellationDate.Name = "dateEditCancellationDate";
+            this.dateEditCancellationDate.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("dateEditCancellationDate.Properties.Appearance.Font")));
+            this.dateEditCancellationDate.Properties.Appearance.Options.UseFont = true;
+            this.dateEditCancellationDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("dateEditCancellationDate.Properties.Buttons"))))});
+            this.dateEditCancellationDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("dateEditCancellationDate.Properties.CalendarTimeProperties.Buttons"))))});
+            this.dateEditCancellationDate.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.Fluent;
+            this.dateEditCancellationDate.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
+            this.dateEditCancellationDate.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
+            this.dateEditCancellationDate.Properties.LookAndFeel.SkinName = "McSkin";
+            this.dateEditCancellationDate.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.dateEditCancellationDate.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
+            this.dateEditCancellationDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            // 
             // groupBox8
             // 
             this.groupBox8.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox8.Controls.Add(this.checkBoxFullRecourse);
-            this.groupBox8.Controls.Add(label199);
             this.groupBox8.Controls.Add(this.textBoxTierPoints);
             this.groupBox8.Controls.Add(this.textBoxBuyersAnnualIncome);
+            this.groupBox8.Controls.Add(this.checkBoxFullRecourse);
+            this.groupBox8.Controls.Add(label199);
             this.groupBox8.Controls.Add(label200);
             this.groupBox8.Controls.Add(this.comboBoxCreditCode);
             this.groupBox8.Controls.Add(this.cUSTOMER_COS_PHONETextBox);
@@ -4617,6 +4877,20 @@
             resources.ApplyResources(this.groupBox8, "groupBox8");
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.TabStop = false;
+            // 
+            // textBoxTierPoints
+            // 
+            this.textBoxTierPoints.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "TierPoints", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "0", "N0"));
+            resources.ApplyResources(this.textBoxTierPoints, "textBoxTierPoints");
+            this.textBoxTierPoints.Name = "textBoxTierPoints";
+            this.textBoxTierPoints.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            // 
+            // textBoxBuyersAnnualIncome
+            // 
+            this.textBoxBuyersAnnualIncome.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "AnnualIncome", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "C2"));
+            resources.ApplyResources(this.textBoxBuyersAnnualIncome, "textBoxBuyersAnnualIncome");
+            this.textBoxBuyersAnnualIncome.Name = "textBoxBuyersAnnualIncome";
+            this.textBoxBuyersAnnualIncome.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // checkBoxFullRecourse
             // 
@@ -4633,20 +4907,7 @@
             this.checkBoxFullRecourse.Properties.Caption = resources.GetString("checkBoxFullRecourse.Properties.Caption");
             this.checkBoxFullRecourse.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
             this.checkBoxFullRecourse.Properties.CheckBoxOptions.SvgColorChecked = System.Drawing.Color.Red;
-            // 
-            // textBoxTierPoints
-            // 
-            this.textBoxTierPoints.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "TierPoints", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "0", "N0"));
-            resources.ApplyResources(this.textBoxTierPoints, "textBoxTierPoints");
-            this.textBoxTierPoints.Name = "textBoxTierPoints";
-            this.textBoxTierPoints.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
-            // 
-            // textBoxBuyersAnnualIncome
-            // 
-            this.textBoxBuyersAnnualIncome.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "AnnualIncome", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "C2"));
-            resources.ApplyResources(this.textBoxBuyersAnnualIncome, "textBoxBuyersAnnualIncome");
-            this.textBoxBuyersAnnualIncome.Name = "textBoxBuyersAnnualIncome";
-            this.textBoxBuyersAnnualIncome.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            this.checkBoxFullRecourse.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // comboBoxCreditCode
             // 
@@ -4732,11 +4993,20 @@
             // 
             // checkBoxElectronicLien
             // 
-            resources.ApplyResources(this.checkBoxElectronicLien, "checkBoxElectronicLien");
             this.checkBoxElectronicLien.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.VehiclebindingSource, "ElectronicLien", true));
-            this.checkBoxElectronicLien.ForeColor = System.Drawing.SystemColors.ControlText;
+            resources.ApplyResources(this.checkBoxElectronicLien, "checkBoxElectronicLien");
             this.checkBoxElectronicLien.Name = "checkBoxElectronicLien";
-            this.checkBoxElectronicLien.UseVisualStyleBackColor = true;
+            this.checkBoxElectronicLien.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("checkBoxElectronicLien.Properties.Appearance.Font")));
+            this.checkBoxElectronicLien.Properties.Appearance.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.checkBoxElectronicLien.Properties.Appearance.Options.UseFont = true;
+            this.checkBoxElectronicLien.Properties.Appearance.Options.UseForeColor = true;
+            this.checkBoxElectronicLien.Properties.Caption = resources.GetString("checkBoxElectronicLien.Properties.Caption");
+            this.checkBoxElectronicLien.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
+            this.checkBoxElectronicLien.Properties.GlyphAlignment = ((DevExpress.Utils.HorzAlignment)(resources.GetObject("checkBoxElectronicLien.Properties.GlyphAlignment")));
+            this.checkBoxElectronicLien.Properties.LookAndFeel.SkinName = "McSkin";
+            this.checkBoxElectronicLien.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.checkBoxElectronicLien.CheckedChanged += new System.EventHandler(this.CheckBoxElectronicLien_CheckedChanged);
+            this.checkBoxElectronicLien.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // nullableDateTimePickerDateTitleReleased
             // 
@@ -4761,11 +5031,20 @@
             // 
             // checkBoxTitleReleased
             // 
-            resources.ApplyResources(this.checkBoxTitleReleased, "checkBoxTitleReleased");
             this.checkBoxTitleReleased.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.VehiclebindingSource, "TitleReleased", true));
-            this.checkBoxTitleReleased.ForeColor = System.Drawing.SystemColors.ControlText;
+            resources.ApplyResources(this.checkBoxTitleReleased, "checkBoxTitleReleased");
             this.checkBoxTitleReleased.Name = "checkBoxTitleReleased";
-            this.checkBoxTitleReleased.UseVisualStyleBackColor = true;
+            this.checkBoxTitleReleased.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("checkBoxTitleReleased.Properties.Appearance.Font")));
+            this.checkBoxTitleReleased.Properties.Appearance.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.checkBoxTitleReleased.Properties.Appearance.Options.UseFont = true;
+            this.checkBoxTitleReleased.Properties.Appearance.Options.UseForeColor = true;
+            this.checkBoxTitleReleased.Properties.Caption = resources.GetString("checkBoxTitleReleased.Properties.Caption");
+            this.checkBoxTitleReleased.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
+            this.checkBoxTitleReleased.Properties.GlyphAlignment = ((DevExpress.Utils.HorzAlignment)(resources.GetObject("checkBoxTitleReleased.Properties.GlyphAlignment")));
+            this.checkBoxTitleReleased.Properties.LookAndFeel.SkinName = "McSkin";
+            this.checkBoxTitleReleased.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.checkBoxTitleReleased.CheckedChanged += new System.EventHandler(this.CheckBoxTitleReleased_CheckedChanged);
+            this.checkBoxTitleReleased.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // textBoxLTV
             // 
@@ -4801,6 +5080,7 @@
             this.nullableDateTimePickerAucDate.Properties.LookAndFeel.SkinName = "McSkin";
             this.nullableDateTimePickerAucDate.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.nullableDateTimePickerAucDate.EditValueChanged += new System.EventHandler(this.nullableDateTimePickerAucDate_EditValueChanged);
+            this.nullableDateTimePickerAucDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // nullableDateTimePickerLocDate
             // 
@@ -4818,14 +5098,25 @@
             this.nullableDateTimePickerLocDate.Properties.LookAndFeel.SkinName = "McSkin";
             this.nullableDateTimePickerLocDate.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.nullableDateTimePickerLocDate.EditValueChanged += new System.EventHandler(this.nullableDateTimePickerLocDate_EditValueChanged);
+            this.nullableDateTimePickerLocDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // checkBoxTitleReceived
             // 
-            resources.ApplyResources(this.checkBoxTitleReceived, "checkBoxTitleReceived");
             this.checkBoxTitleReceived.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.VehiclebindingSource, "TitleReceived", true));
-            this.checkBoxTitleReceived.ForeColor = System.Drawing.SystemColors.ControlText;
+            resources.ApplyResources(this.checkBoxTitleReceived, "checkBoxTitleReceived");
             this.checkBoxTitleReceived.Name = "checkBoxTitleReceived";
-            this.checkBoxTitleReceived.UseVisualStyleBackColor = true;
+            this.checkBoxTitleReceived.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("checkBoxTitleReceived.Properties.Appearance.Font")));
+            this.checkBoxTitleReceived.Properties.Appearance.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.checkBoxTitleReceived.Properties.Appearance.Options.UseFont = true;
+            this.checkBoxTitleReceived.Properties.Appearance.Options.UseForeColor = true;
+            this.checkBoxTitleReceived.Properties.Caption = resources.GetString("checkBoxTitleReceived.Properties.Caption");
+            this.checkBoxTitleReceived.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
+            this.checkBoxTitleReceived.Properties.ContentAlignment = ((DevExpress.Utils.HorzAlignment)(resources.GetObject("checkBoxTitleReceived.Properties.ContentAlignment")));
+            this.checkBoxTitleReceived.Properties.GlyphAlignment = ((DevExpress.Utils.HorzAlignment)(resources.GetObject("checkBoxTitleReceived.Properties.GlyphAlignment")));
+            this.checkBoxTitleReceived.Properties.LookAndFeel.SkinName = "McSkin";
+            this.checkBoxTitleReceived.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.checkBoxTitleReceived.CheckedChanged += new System.EventHandler(this.CheckBoxTitleReceived_CheckedChanged);
+            this.checkBoxTitleReceived.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // comboBoxRepoCodes
             // 
@@ -4852,6 +5143,7 @@
             this.cUSTOMER_REPO_INDtextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_REPO_IND", true));
             resources.ApplyResources(this.cUSTOMER_REPO_INDtextBox, "cUSTOMER_REPO_INDtextBox");
             this.cUSTOMER_REPO_INDtextBox.Name = "cUSTOMER_REPO_INDtextBox";
+            this.cUSTOMER_REPO_INDtextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // nullableDateTimePickerTitleDateReceived
             // 
@@ -4916,6 +5208,7 @@
             this.nullableDateTimePickerRepoDate.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.nullableDateTimePickerRepoDate.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
             this.nullableDateTimePickerRepoDate.EditValueChanged += new System.EventHandler(this.nullableDateTimePickerRepoDate_ValueChanged);
+            this.nullableDateTimePickerRepoDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // txtExpirationDate
             // 
@@ -4973,15 +5266,6 @@
             resources.ApplyResources(this.txtJointOwner, "txtJointOwner");
             this.txtJointOwner.Name = "txtJointOwner";
             this.txtJointOwner.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
-            // 
-            // txtJointOwnership
-            // 
-            this.txtJointOwnership.AllowDrop = true;
-            this.txtJointOwnership.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtJointOwnership.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.VehiclebindingSource, "VEHICLE_JOINT_OWNER", true));
-            resources.ApplyResources(this.txtJointOwnership, "txtJointOwnership");
-            this.txtJointOwnership.Name = "txtJointOwnership";
-            this.txtJointOwnership.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // txtInsuranceAgent
             // 
@@ -5298,6 +5582,7 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.checkEditUsePrimaryAddress);
             this.groupBox4.Controls.Add(this.buttonCOSValidate);
             this.groupBox4.Controls.Add(label66);
             this.groupBox4.Controls.Add(labelCosignerTierPoints);
@@ -5320,8 +5605,6 @@
             this.groupBox4.Controls.Add(this.txtCOSDOB);
             this.groupBox4.Controls.Add(label75);
             this.groupBox4.Controls.Add(this.txtCOSWorkExt);
-            this.groupBox4.Controls.Add(this.txtUsePrimaryAddress);
-            this.groupBox4.Controls.Add(label74);
             this.groupBox4.Controls.Add(this.txtCOSSS_3);
             this.groupBox4.Controls.Add(this.txtCOSSS_2);
             this.groupBox4.Controls.Add(this.txtCOSSS_1);
@@ -5346,6 +5629,31 @@
             resources.ApplyResources(this.groupBox4, "groupBox4");
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.TabStop = false;
+            // 
+            // checkEditUsePrimaryAddress
+            // 
+            this.checkEditUsePrimaryAddress.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "COSIGNER_SAME_ADDRESS", true));
+            resources.ApplyResources(this.checkEditUsePrimaryAddress, "checkEditUsePrimaryAddress");
+            this.checkEditUsePrimaryAddress.MenuManager = this.toolbarFormManager1;
+            this.checkEditUsePrimaryAddress.Name = "checkEditUsePrimaryAddress";
+            this.checkEditUsePrimaryAddress.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("checkEditUsePrimaryAddress.Properties.Appearance.Font")));
+            this.checkEditUsePrimaryAddress.Properties.Appearance.Options.UseFont = true;
+            this.checkEditUsePrimaryAddress.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.checkEditUsePrimaryAddress.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.checkEditUsePrimaryAddress.Properties.Caption = resources.GetString("checkEditUsePrimaryAddress.Properties.Caption");
+            this.checkEditUsePrimaryAddress.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
+            this.checkEditUsePrimaryAddress.Properties.CheckBoxOptions.SvgColorChecked = System.Drawing.Color.Black;
+            this.checkEditUsePrimaryAddress.Properties.ContentAlignment = ((DevExpress.Utils.HorzAlignment)(resources.GetObject("checkEditUsePrimaryAddress.Properties.ContentAlignment")));
+            this.checkEditUsePrimaryAddress.Properties.GlyphAlignment = ((DevExpress.Utils.HorzAlignment)(resources.GetObject("checkEditUsePrimaryAddress.Properties.GlyphAlignment")));
+            this.checkEditUsePrimaryAddress.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
+            this.checkEditUsePrimaryAddress.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.LightSteelBlue;
+            this.checkEditUsePrimaryAddress.Properties.LookAndFeel.SkinName = "McSkin";
+            this.checkEditUsePrimaryAddress.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.checkEditUsePrimaryAddress.Properties.NullStyle = DevExpress.XtraEditors.Controls.StyleIndeterminate.Unchecked;
+            this.checkEditUsePrimaryAddress.QueryCheckStateByValue += new DevExpress.XtraEditors.Controls.QueryCheckStateByValueEventHandler(this.checkEditUsePrimaryAddress_QueryCheckStateByValue);
+            this.checkEditUsePrimaryAddress.QueryValueByCheckState += new DevExpress.XtraEditors.Controls.QueryValueByCheckStateEventHandler(this.checkEditUsePrimaryAddress_QueryValueByCheckState);
+            this.checkEditUsePrimaryAddress.CheckedChanged += new System.EventHandler(this.checkEditUsePrimaryAddress_CheckedChanged);
+            this.checkEditUsePrimaryAddress.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // buttonCOSValidate
             // 
@@ -5479,15 +5787,6 @@
             resources.ApplyResources(this.txtCOSWorkExt, "txtCOSWorkExt");
             this.txtCOSWorkExt.Name = "txtCOSWorkExt";
             this.txtCOSWorkExt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
-            // 
-            // txtUsePrimaryAddress
-            // 
-            this.txtUsePrimaryAddress.AllowDrop = true;
-            this.txtUsePrimaryAddress.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtUsePrimaryAddress.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "COSIGNER_SAME_ADDRESS", true));
-            resources.ApplyResources(this.txtUsePrimaryAddress, "txtUsePrimaryAddress");
-            this.txtUsePrimaryAddress.Name = "txtUsePrimaryAddress";
-            this.txtUsePrimaryAddress.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // txtCOSSS_3
             // 
@@ -5726,6 +6025,7 @@
             this.textEditBankMonthlyPayment.Properties.Appearance.Options.UseFont = true;
             this.textEditBankMonthlyPayment.Properties.Appearance.Options.UseTextOptions = true;
             this.textEditBankMonthlyPayment.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.textEditBankMonthlyPayment.Properties.AutoHeight = ((bool)(resources.GetObject("textEditBankMonthlyPayment.Properties.AutoHeight")));
             this.textEditBankMonthlyPayment.Properties.DisplayFormat.FormatString = "c2";
             this.textEditBankMonthlyPayment.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.textEditBankMonthlyPayment.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
@@ -5765,6 +6065,7 @@
             this.textEditBankAccountNumber.Properties.AdvancedModeOptions.LabelAppearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Bottom;
             this.textEditBankAccountNumber.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textEditBankAccountNumber.Properties.Appearance.Font")));
             this.textEditBankAccountNumber.Properties.Appearance.Options.UseFont = true;
+            this.textEditBankAccountNumber.Properties.AutoHeight = ((bool)(resources.GetObject("textEditBankAccountNumber.Properties.AutoHeight")));
             this.textEditBankAccountNumber.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
             this.textEditBankAccountNumber.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
             this.textEditBankAccountNumber.Properties.LookAndFeel.SkinName = "McSkin";
@@ -5790,6 +6091,7 @@
             this.textEditBankCheckDigit.Properties.AdvancedModeOptions.LabelAppearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Bottom;
             this.textEditBankCheckDigit.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textEditBankCheckDigit.Properties.Appearance.Font")));
             this.textEditBankCheckDigit.Properties.Appearance.Options.UseFont = true;
+            this.textEditBankCheckDigit.Properties.AutoHeight = ((bool)(resources.GetObject("textEditBankCheckDigit.Properties.AutoHeight")));
             this.textEditBankCheckDigit.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
             this.textEditBankCheckDigit.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
             this.textEditBankCheckDigit.Properties.LookAndFeel.SkinName = "McSkin";
@@ -5815,6 +6117,7 @@
             this.textEditBankRoutingNumber.Properties.AdvancedModeOptions.LabelAppearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Bottom;
             this.textEditBankRoutingNumber.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textEditBankRoutingNumber.Properties.Appearance.Font")));
             this.textEditBankRoutingNumber.Properties.Appearance.Options.UseFont = true;
+            this.textEditBankRoutingNumber.Properties.AutoHeight = ((bool)(resources.GetObject("textEditBankRoutingNumber.Properties.AutoHeight")));
             this.textEditBankRoutingNumber.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
             this.textEditBankRoutingNumber.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
             this.textEditBankRoutingNumber.Properties.LookAndFeel.SkinName = "McSkin";
@@ -5841,6 +6144,7 @@
             this.textEditBankState.Properties.AdvancedModeOptions.LabelAppearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Bottom;
             this.textEditBankState.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textEditBankState.Properties.Appearance.Font")));
             this.textEditBankState.Properties.Appearance.Options.UseFont = true;
+            this.textEditBankState.Properties.AutoHeight = ((bool)(resources.GetObject("textEditBankState.Properties.AutoHeight")));
             this.textEditBankState.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
             this.textEditBankState.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
             this.textEditBankState.Properties.LookAndFeel.SkinName = "McSkin";
@@ -5866,6 +6170,7 @@
             this.textEditBankCity.Properties.AdvancedModeOptions.LabelAppearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Bottom;
             this.textEditBankCity.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textEditBankCity.Properties.Appearance.Font")));
             this.textEditBankCity.Properties.Appearance.Options.UseFont = true;
+            this.textEditBankCity.Properties.AutoHeight = ((bool)(resources.GetObject("textEditBankCity.Properties.AutoHeight")));
             this.textEditBankCity.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
             this.textEditBankCity.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
             this.textEditBankCity.Properties.LookAndFeel.SkinName = "McSkin";
@@ -5891,6 +6196,7 @@
             this.textEditBankName.Properties.AdvancedModeOptions.LabelAppearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Bottom;
             this.textEditBankName.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textEditBankName.Properties.Appearance.Font")));
             this.textEditBankName.Properties.Appearance.Options.UseFont = true;
+            this.textEditBankName.Properties.AutoHeight = ((bool)(resources.GetObject("textEditBankName.Properties.AutoHeight")));
             this.textEditBankName.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
             this.textEditBankName.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
             this.textEditBankName.Properties.LookAndFeel.SkinName = "McSkin";
@@ -5938,6 +6244,7 @@
             this.comboBoxEditExpYear.Properties.AdvancedModeOptions.LabelAppearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Bottom;
             this.comboBoxEditExpYear.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("comboBoxEditExpYear.Properties.Appearance.Font")));
             this.comboBoxEditExpYear.Properties.Appearance.Options.UseFont = true;
+            this.comboBoxEditExpYear.Properties.AutoHeight = ((bool)(resources.GetObject("comboBoxEditExpYear.Properties.AutoHeight")));
             this.comboBoxEditExpYear.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("comboBoxEditExpYear.Properties.Buttons"))))});
             this.comboBoxEditExpYear.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.Salmon;
@@ -5961,6 +6268,7 @@
             this.lookUpEditExpMonth.Properties.AdvancedModeOptions.LabelAppearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Bottom;
             this.lookUpEditExpMonth.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("lookUpEditExpMonth.Properties.Appearance.Font")));
             this.lookUpEditExpMonth.Properties.Appearance.Options.UseFont = true;
+            this.lookUpEditExpMonth.Properties.AutoHeight = ((bool)(resources.GetObject("lookUpEditExpMonth.Properties.AutoHeight")));
             this.lookUpEditExpMonth.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("lookUpEditExpMonth.Properties.Buttons"))))});
             this.lookUpEditExpMonth.Properties.DataSource = this.bindingSourceMonthNames;
@@ -5989,6 +6297,7 @@
             this.textEditCreditCardCVV.Properties.AdvancedModeOptions.LabelAppearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Bottom;
             this.textEditCreditCardCVV.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textEditCreditCardCVV.Properties.Appearance.Font")));
             this.textEditCreditCardCVV.Properties.Appearance.Options.UseFont = true;
+            this.textEditCreditCardCVV.Properties.AutoHeight = ((bool)(resources.GetObject("textEditCreditCardCVV.Properties.AutoHeight")));
             this.textEditCreditCardCVV.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.Salmon;
             this.textEditCreditCardCVV.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
             this.textEditCreditCardCVV.Properties.LookAndFeel.SkinName = "McSkin";
@@ -6016,6 +6325,7 @@
             this.textEditCreditCardNumber.Properties.AdvancedModeOptions.LabelAppearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Bottom;
             this.textEditCreditCardNumber.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textEditCreditCardNumber.Properties.Appearance.Font")));
             this.textEditCreditCardNumber.Properties.Appearance.Options.UseFont = true;
+            this.textEditCreditCardNumber.Properties.AutoHeight = ((bool)(resources.GetObject("textEditCreditCardNumber.Properties.AutoHeight")));
             this.textEditCreditCardNumber.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.Salmon;
             this.textEditCreditCardNumber.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Salmon;
             this.textEditCreditCardNumber.Properties.LookAndFeel.SkinName = "McSkin";
@@ -6043,6 +6353,7 @@
             this.textEditCreditCardName.Properties.AdvancedModeOptions.LabelAppearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Bottom;
             this.textEditCreditCardName.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textEditCreditCardName.Properties.Appearance.Font")));
             this.textEditCreditCardName.Properties.Appearance.Options.UseFont = true;
+            this.textEditCreditCardName.Properties.AutoHeight = ((bool)(resources.GetObject("textEditCreditCardName.Properties.AutoHeight")));
             this.textEditCreditCardName.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.Salmon;
             this.textEditCreditCardName.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
             this.textEditCreditCardName.Properties.LookAndFeel.SkinName = "McSkin";
@@ -8445,8 +8756,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControlCustomerMaint)).EndInit();
             this.xtraTabControlCustomerMaint.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.imageCollectionTabs)).EndInit();
-            this.xtraTabPageVerifacto.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.groupControlVerifacto)).EndInit();
             this.xtraTabPageCustInfo1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupBox10)).EndInit();
             this.groupBox10.ResumeLayout(false);
@@ -8501,17 +8810,34 @@
             this.groupBox2.PerformLayout();
             this.VehicleGroupBox.ResumeLayout(false);
             this.VehicleGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEditJointOwnership.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEditIssueDate3.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEditIssueDate3.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditIssueName3.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEditIssueDate2.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEditIssueDate2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditIssueName2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEditIssueDate1.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEditIssueDate1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditIssueName1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditPortfolio.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditPolicyStatus.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEditCancellationDate.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEditCancellationDate.Properties)).EndInit();
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.checkBoxFullRecourse.Properties)).EndInit();
             this.groupBoxRepo.ResumeLayout(false);
             this.groupBoxRepo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.checkBoxElectronicLien.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateTitleReleased.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateTitleReleased.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkBoxTitleReleased.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerAucDate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerAucDate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerLocDate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerLocDate.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkBoxTitleReceived.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerTitleDateReceived.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerTitleDateReceived.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerRepoDate.Properties.CalendarTimeProperties)).EndInit();
@@ -8529,6 +8855,7 @@
             this.groupBox5.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEditUsePrimaryAddress.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCOSDOB.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCOSDOB.Properties)).EndInit();
             this.groupBox3.ResumeLayout(false);
@@ -8828,14 +9155,14 @@
         private System.Windows.Forms.GroupBox VehicleGroupBox;
         private System.Windows.Forms.TextBox textBoxMileage;
         private System.Windows.Forms.GroupBox groupBoxRepo;
-        private System.Windows.Forms.CheckBox checkBoxElectronicLien;
+        private DevExpress.XtraEditors.CheckEdit checkBoxElectronicLien;
         private DevExpress.XtraEditors.DateEdit nullableDateTimePickerDateTitleReleased;
-        private System.Windows.Forms.CheckBox checkBoxTitleReleased;
+        private DevExpress.XtraEditors.CheckEdit checkBoxTitleReleased;
         private System.Windows.Forms.TextBox textBoxLTV;
         private System.Windows.Forms.ComboBox comboBoxRepoInd;
         private DevExpress.XtraEditors.DateEdit nullableDateTimePickerAucDate;
         private DevExpress.XtraEditors.DateEdit nullableDateTimePickerLocDate;
-        private System.Windows.Forms.CheckBox checkBoxTitleReceived;
+        private DevExpress.XtraEditors.CheckEdit checkBoxTitleReceived;
         private System.Windows.Forms.ComboBox comboBoxRepoCodes;
         private System.Windows.Forms.TextBox cUSTOMER_REPO_CDEtextBox;
         private System.Windows.Forms.TextBox cUSTOMER_REPO_INDtextBox;
@@ -8848,7 +9175,6 @@
         private DevExpress.XtraEditors.DateEdit txtEffectiveDate;
         private System.Windows.Forms.MaskedTextBox txtAgentPhone;
         private System.Windows.Forms.TextBox txtJointOwner;
-        private System.Windows.Forms.TextBox txtJointOwnership;
         private System.Windows.Forms.TextBox txtInsuranceAgent;
         private System.Windows.Forms.TextBox txtPolicyNumber;
         private System.Windows.Forms.TextBox txtVIN;
@@ -8895,7 +9221,6 @@
         private System.Windows.Forms.TextBox textBoxCosignerCreditScore;
         private DevExpress.XtraEditors.DateEdit txtCOSDOB;
         private System.Windows.Forms.TextBox txtCOSWorkExt;
-        private System.Windows.Forms.TextBox txtUsePrimaryAddress;
         private System.Windows.Forms.TextBox txtCOSSS_3;
         private System.Windows.Forms.TextBox txtCOSSS_2;
         private System.Windows.Forms.TextBox txtCOSSS_1;
@@ -9234,9 +9559,25 @@
         private DevExpress.XtraEditors.CheckEdit checkEditOverideInterestHistory;
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
         private DevExpress.XtraEditors.GroupControl groupBox20;
-        private DevExpress.XtraTab.XtraTabPage xtraTabPageVerifacto;
         private DevExpress.Utils.ImageCollection imageCollectionTabs;
-        private DevExpress.XtraEditors.GroupControl groupControlVerifacto;
+        private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraEditors.TextEdit textEditPortfolio;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.TextEdit textEditPolicyStatus;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.DateEdit dateEditCancellationDate;
+        private DevExpress.XtraEditors.LabelControl labelControl5;
+        private DevExpress.XtraEditors.LabelControl labelControl4;
+        private DevExpress.XtraEditors.LabelControl labelControlIssueName1;
+        private DevExpress.XtraEditors.DateEdit dateEditIssueDate3;
+        private DevExpress.XtraEditors.TextEdit textEditIssueName3;
+        private DevExpress.XtraEditors.DateEdit dateEditIssueDate2;
+        private DevExpress.XtraEditors.TextEdit textEditIssueName2;
+        private DevExpress.XtraEditors.DateEdit dateEditIssueDate1;
+        private DevExpress.XtraEditors.TextEdit textEditIssueName1;
+        private DevExpress.XtraEditors.LabelControl labelControl6;
+        private DevExpress.XtraEditors.CheckEdit checkEditJointOwnership;
+        private DevExpress.XtraEditors.CheckEdit checkEditUsePrimaryAddress;
     }
 }
 
