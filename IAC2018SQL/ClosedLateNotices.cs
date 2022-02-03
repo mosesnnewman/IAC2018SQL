@@ -833,18 +833,23 @@ namespace IAC2021SQL
                 lnLateCharge + NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("PartialPayment"));
             // Moses Newman 11/17/2021 Handle proper Amount Past Due if 2 or 4 new calculation
             if (NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_STATE") == "MA")
-                switch(lnFormNo)
+            {
+                switch (lnFormNo)
                 {
                     case 2:
+                        NoticeiacDataSet.NOTICE.Rows[NoticebindingSource.Position].SetField<Decimal>("AmountPastDue",
+                            NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_LATE_CHARGE_BAL"));
+                        break;
                     case 4:
                         NoticeiacDataSet.NOTICE.Rows[NoticebindingSource.Position].SetField<Decimal>("AmountPastDue",
                             (NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_CONTRACT_STATUS") * -1));
-                        NoticeiacDataSet.NOTICE.Rows[NoticebindingSource.Position].SetField<Decimal>("NOTICE_CONTRACT_STATUS",
-                            (NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_REGULAR_AMOUNT") +
-                            NoticeiacDataSet.NOTICE.Rows[NoticebindingSource.Position].Field<Decimal>("AmountPastDue") -
-                            NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("PartialPayment")) * -1);
                         break;
                 }
+                NoticeiacDataSet.NOTICE.Rows[NoticebindingSource.Position].SetField<Decimal>("NOTICE_CONTRACT_STATUS",
+                    (NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_REGULAR_AMOUNT") +
+                    NoticeiacDataSet.NOTICE.Rows[NoticebindingSource.Position].Field<Decimal>("AmountPastDue") -
+                    NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("PartialPayment")) * -1);
+            }
             // Moses Newman 06/21/2018 Add PartialPayment
             NoticeiacDataSet.NOTICE.Rows[NoticebindingSource.Position].SetField<Decimal>("PartialPayment", 
                 NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("PartialPayment"));

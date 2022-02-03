@@ -31,72 +31,140 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLeeMason));
-            this.buttonVehicleExtract = new System.Windows.Forms.Button();
-            this.buttonLeeMasonImport = new System.Windows.Forms.Button();
-            this.buttonClose = new System.Windows.Forms.Button();
+            this.splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::IAC2021SQL.WaitFormVerifacto), true, true);
+            this.groupControlVerifacto = new DevExpress.XtraEditors.GroupControl();
+            this.groupControlButtons = new DevExpress.XtraEditors.GroupControl();
+            this.buttonClose = new DevExpress.XtraEditors.SimpleButton();
+            this.buttonLeeMasonImport = new DevExpress.XtraEditors.SimpleButton();
+            this.buttonVehicleExtract = new DevExpress.XtraEditors.SimpleButton();
+            this.XmlGridView = new XmlGridViewSample.XmlGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControlVerifacto)).BeginInit();
+            this.groupControlVerifacto.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControlButtons)).BeginInit();
+            this.groupControlButtons.SuspendLayout();
             this.SuspendLayout();
             // 
-            // buttonVehicleExtract
+            // splashScreenManager1
             // 
-            this.buttonVehicleExtract.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonVehicleExtract.Image = ((System.Drawing.Image)(resources.GetObject("buttonVehicleExtract.Image")));
-            this.buttonVehicleExtract.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonVehicleExtract.Location = new System.Drawing.Point(58, 83);
-            this.buttonVehicleExtract.Name = "buttonVehicleExtract";
-            this.buttonVehicleExtract.Size = new System.Drawing.Size(104, 103);
-            this.buttonVehicleExtract.TabIndex = 0;
-            this.buttonVehicleExtract.Text = "&Vehicle Extract";
-            this.buttonVehicleExtract.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.buttonVehicleExtract.UseVisualStyleBackColor = true;
-            this.buttonVehicleExtract.Click += new System.EventHandler(this.buttonVehicleExtract_Click);
+            this.splashScreenManager1.ClosingDelay = 500;
             // 
-            // buttonLeeMasonImport
+            // groupControlVerifacto
             // 
-            this.buttonLeeMasonImport.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonLeeMasonImport.Image = ((System.Drawing.Image)(resources.GetObject("buttonLeeMasonImport.Image")));
-            this.buttonLeeMasonImport.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonLeeMasonImport.Location = new System.Drawing.Point(195, 83);
-            this.buttonLeeMasonImport.Name = "buttonLeeMasonImport";
-            this.buttonLeeMasonImport.Size = new System.Drawing.Size(104, 103);
-            this.buttonLeeMasonImport.TabIndex = 1;
-            this.buttonLeeMasonImport.Text = "&Lee Mason Import";
-            this.buttonLeeMasonImport.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.buttonLeeMasonImport.UseVisualStyleBackColor = true;
-            this.buttonLeeMasonImport.Click += new System.EventHandler(this.buttonLeeMasonImport_Click);
+            this.groupControlVerifacto.Appearance.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.groupControlVerifacto.Appearance.Options.UseBackColor = true;
+            this.groupControlVerifacto.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.groupControlVerifacto.Controls.Add(this.groupControlButtons);
+            this.groupControlVerifacto.Controls.Add(this.XmlGridView);
+            this.groupControlVerifacto.Location = new System.Drawing.Point(0, -3);
+            this.groupControlVerifacto.LookAndFeel.SkinName = "McSkin";
+            this.groupControlVerifacto.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.groupControlVerifacto.Name = "groupControlVerifacto";
+            this.groupControlVerifacto.Size = new System.Drawing.Size(1225, 631);
+            this.groupControlVerifacto.TabIndex = 3;
+            // 
+            // groupControlButtons
+            // 
+            this.groupControlButtons.Appearance.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.groupControlButtons.Appearance.Options.UseBackColor = true;
+            this.groupControlButtons.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.groupControlButtons.Controls.Add(this.buttonClose);
+            this.groupControlButtons.Controls.Add(this.buttonLeeMasonImport);
+            this.groupControlButtons.Controls.Add(this.buttonVehicleExtract);
+            this.groupControlButtons.Location = new System.Drawing.Point(1, 471);
+            this.groupControlButtons.LookAndFeel.SkinName = "McSkin";
+            this.groupControlButtons.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.groupControlButtons.Name = "groupControlButtons";
+            this.groupControlButtons.Size = new System.Drawing.Size(415, 159);
+            this.groupControlButtons.TabIndex = 4;
             // 
             // buttonClose
             // 
-            this.buttonClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonClose.Image = ((System.Drawing.Image)(resources.GetObject("buttonClose.Image")));
-            this.buttonClose.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonClose.Location = new System.Drawing.Point(331, 83);
+            this.buttonClose.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonClose.Appearance.Options.UseFont = true;
+            this.buttonClose.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonClose.ImageOptions.Image")));
+            this.buttonClose.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
+            this.buttonClose.Location = new System.Drawing.Point(291, 28);
+            this.buttonClose.LookAndFeel.SkinName = "McSkin";
+            this.buttonClose.LookAndFeel.UseDefaultLookAndFeel = false;
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.Size = new System.Drawing.Size(104, 103);
             this.buttonClose.TabIndex = 2;
             this.buttonClose.Text = "&Close";
-            this.buttonClose.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.buttonClose.UseVisualStyleBackColor = true;
-            this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
+            this.buttonClose.Click += new System.EventHandler(this.ButtonClose_Click);
+            // 
+            // buttonLeeMasonImport
+            // 
+            this.buttonLeeMasonImport.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonLeeMasonImport.Appearance.Options.UseFont = true;
+            this.buttonLeeMasonImport.Appearance.Options.UseTextOptions = true;
+            this.buttonLeeMasonImport.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.buttonLeeMasonImport.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonLeeMasonImport.ImageOptions.Image")));
+            this.buttonLeeMasonImport.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
+            this.buttonLeeMasonImport.Location = new System.Drawing.Point(155, 28);
+            this.buttonLeeMasonImport.LookAndFeel.SkinName = "McSkin";
+            this.buttonLeeMasonImport.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.buttonLeeMasonImport.Name = "buttonLeeMasonImport";
+            this.buttonLeeMasonImport.Size = new System.Drawing.Size(104, 103);
+            this.buttonLeeMasonImport.TabIndex = 1;
+            this.buttonLeeMasonImport.Text = "Verifacto &Import";
+            this.buttonLeeMasonImport.Click += new System.EventHandler(this.ButtonLeeMasonImport_Click);
+            // 
+            // buttonVehicleExtract
+            // 
+            this.buttonVehicleExtract.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonVehicleExtract.Appearance.Options.UseFont = true;
+            this.buttonVehicleExtract.Appearance.Options.UseTextOptions = true;
+            this.buttonVehicleExtract.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.buttonVehicleExtract.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonVehicleExtract.ImageOptions.Image")));
+            this.buttonVehicleExtract.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
+            this.buttonVehicleExtract.Location = new System.Drawing.Point(19, 28);
+            this.buttonVehicleExtract.LookAndFeel.SkinName = "McSkin";
+            this.buttonVehicleExtract.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.buttonVehicleExtract.Name = "buttonVehicleExtract";
+            this.buttonVehicleExtract.Size = new System.Drawing.Size(104, 103);
+            this.buttonVehicleExtract.TabIndex = 0;
+            this.buttonVehicleExtract.Text = "&Export to Verifacto";
+            this.buttonVehicleExtract.Click += new System.EventHandler(this.ButtonVehicleExtract_Click);
+            // 
+            // XmlGridView
+            // 
+            this.XmlGridView.DataFilePath = "";
+            this.XmlGridView.DataSetTableIndex = 0;
+            this.XmlGridView.Location = new System.Drawing.Point(416, 3);
+            this.XmlGridView.Name = "XmlGridView";
+            this.XmlGridView.Size = new System.Drawing.Size(809, 628);
+            this.XmlGridView.TabIndex = 3;
+            this.XmlGridView.ViewMode = XmlGridViewSample.XmlGridView.VIEW_MODE.XML;
             // 
             // FormLeeMason
             // 
+            this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(495, 269);
-            this.Controls.Add(this.buttonClose);
-            this.Controls.Add(this.buttonLeeMasonImport);
-            this.Controls.Add(this.buttonVehicleExtract);
+            this.ClientSize = new System.Drawing.Size(1226, 626);
+            this.Controls.Add(this.groupControlVerifacto);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormLeeMason";
-            this.Text = "Lee Mason Import and Export";
+            this.Text = "Verifacto Import and Export";
+            this.Load += new System.EventHandler(this.FormLeeMason_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControlVerifacto)).EndInit();
+            this.groupControlVerifacto.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControlButtons)).EndInit();
+            this.groupControlButtons.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button buttonVehicleExtract;
-        private System.Windows.Forms.Button buttonLeeMasonImport;
-        private System.Windows.Forms.Button buttonClose;
+        private DevExpress.XtraEditors.SimpleButton buttonVehicleExtract;
+        private DevExpress.XtraEditors.SimpleButton buttonLeeMasonImport;
+        private DevExpress.XtraEditors.SimpleButton buttonClose;
+        private DevExpress.XtraEditors.GroupControl groupControlVerifacto;
+        private DevExpress.XtraEditors.GroupControl groupControlButtons;
+        private XmlGridViewSample.XmlGridView XmlGridView;
+        private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1;
     }
 }

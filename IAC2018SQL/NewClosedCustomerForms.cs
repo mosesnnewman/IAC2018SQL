@@ -331,7 +331,18 @@ namespace IAC2021SQL
             txtEffectiveDate.Enabled = false;
             txtExpirationDate.Enabled = false;
             txtJointOwner.Enabled = false;
-            txtJointOwnership.Enabled = false;
+            checkEditJointOwnership.Enabled = false;
+            // Moses Newman 01/30/2022 Verifacto Fields
+            textEditPolicyStatus.Enabled = false;
+            dateEditCancellationDate.Enabled = false;
+            textEditPortfolio.Enabled = false;
+            textEditIssueName1.Enabled = false;
+            dateEditIssueDate1.Enabled = false;
+            textEditIssueName2.Enabled = false;
+            dateEditIssueDate2.Enabled = false;
+            textEditIssueName3.Enabled = false;
+            dateEditIssueDate3.Enabled = false;
+
             // Moses Newman 12/18/2013 Add new fields to Vehicle tab and move Credit score, Repo, and Misc fields to Vehicle Tab.
             textBoxMileage.Enabled = false;
             nullableDateTimePickerRepoDate.Enabled = false;
@@ -378,7 +389,7 @@ namespace IAC2021SQL
             // Moses Newman 06/09/2017 changed txtCOSJunior to comboBox supporting gencodes.
             comboBoxCOSJunior.Enabled = false;
             txtCOSPhone.Enabled = false;
-            txtUsePrimaryAddress.Enabled = false;
+            checkEditUsePrimaryAddress.Enabled = false;
             txtCOSWorkPhone.Enabled = false;
             txtCOSWorkExt.Enabled = false;
             txtCOSAddress.Enabled = false;
@@ -682,7 +693,18 @@ namespace IAC2021SQL
             txtEffectiveDate.Enabled = true;
             txtExpirationDate.Enabled = true;
             txtJointOwner.Enabled = true;
-            txtJointOwnership.Enabled = true;
+            checkEditJointOwnership.Enabled = true;
+            // Moses Newman 01/30/2022 Verifacto Fields
+            textEditPolicyStatus.Enabled = true;
+            dateEditCancellationDate.Enabled = true;
+            textEditPortfolio.Enabled = true;
+            textEditIssueName1.Enabled = true;
+            dateEditIssueDate1.Enabled = true;
+            textEditIssueName2.Enabled = true;
+            dateEditIssueDate2.Enabled = true;
+            textEditIssueName3.Enabled = true;
+            dateEditIssueDate3.Enabled = true;
+
             // Moses Newman 01/29/2017
             textBoxBuyersAnnualIncome.Enabled = true;
 
@@ -739,7 +761,7 @@ namespace IAC2021SQL
             // Moses Newman 06/09/2017 changed txtCOSJunior to comboBox supporting gencodes.
             comboBoxCOSJunior.Enabled = true;
             txtCOSPhone.Enabled = true;
-            txtUsePrimaryAddress.Enabled = true;
+            checkEditUsePrimaryAddress.Enabled = true;
             txtCOSWorkPhone.Enabled = true;
             txtCOSWorkExt.Enabled = true;
             txtCOSAddress.Enabled = true;
@@ -1533,7 +1555,7 @@ namespace IAC2021SQL
                     // Moses Newman 06/09/2017 changed txtCOSJunior to comboBox supporting gencodes.
                     comboBoxCOSJunior.Enabled = true;
                     txtCOSPhone.Enabled = true;
-                    txtUsePrimaryAddress.Enabled = true;
+                    checkEditUsePrimaryAddress.Enabled = true;
                     txtCOSWorkPhone.Enabled = true;
                     txtCOSWorkExt.Enabled = true;
                     txtCOSAddress.Enabled = true;
@@ -1600,7 +1622,18 @@ namespace IAC2021SQL
                     txtExpirationDate.EditValue = null;
 
                     txtJointOwner.Enabled = true;
-                    txtJointOwnership.Enabled = true;
+                    checkEditJointOwnership.Enabled = true;
+                    // Moses Newman 01/30/2022 Verifacto Fields
+                    textEditPolicyStatus.Enabled = true;
+                    dateEditCancellationDate.Enabled = true;
+                    textEditPortfolio.Enabled = true;
+                    textEditIssueName1.Enabled = true;
+                    dateEditIssueDate1.Enabled = true;
+                    textEditIssueName2.Enabled = true;
+                    dateEditIssueDate2.Enabled = true;
+                    textEditIssueName3.Enabled = true;
+                    dateEditIssueDate3.Enabled = true;
+
                     // Moses Newman 12/18/2013 Add new fields to Vehicle tab and move Credit score, Repo, and Misc fields to Vehicle Tab.
                     textBoxMileage.Enabled = true;
                     nullableDateTimePickerRepoDate.Enabled = true;
@@ -2281,10 +2314,10 @@ namespace IAC2021SQL
                 toolStripButtonSave.Enabled = true;
         }
 
-        private void txtUsePrimaryAddress_Validated(object sender, EventArgs e)
+        private void checkEditUsePrimaryAddress_Validated(object sender, EventArgs e)
         {
             // Moses Newman 05/03/2012 Must copy main address if this box is Y!
-            if (txtUsePrimaryAddress.Text.TrimEnd().ToUpper() == "Y")
+            if (checkEditUsePrimaryAddress.Text.TrimEnd().ToUpper() == "Y")
             {
                 iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("COSIGNER_ADDRESS1", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<String>("CUSTOMER_STREET_1"));
                 iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("COSIGNER_CITY", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<String>("CUSTOMER_CITY"));
@@ -2618,9 +2651,9 @@ namespace IAC2021SQL
 
         private void comboBoxCreditCode_Validated(object sender, EventArgs e)
         {
-            xtraTabControlCustomerMaint.SelectedTabPageIndex = 3;
+            /*xtraTabControlCustomerMaint.SelectedTabPageIndex = 3;
             ActiveControl = txtCOSFirstName;
-            txtCOSFirstName.Select();
+            txtCOSFirstName.Select();*/
         }
 
 
@@ -2858,21 +2891,6 @@ namespace IAC2021SQL
         {
             if (textBoxLTV.Text == "")
                 textBoxLTV.Text = "0.00";
-        }
-
-        private void textBoxTSBPaymentRating_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void GroupBoxRepo_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TxtAgentPhone_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
-        {
-
         }
 
         private void CheckBoxTitleReleased_CheckedChanged(object sender, EventArgs e)
@@ -5339,9 +5357,90 @@ namespace IAC2021SQL
             }
         }
 
-        private void xtraTabPageVerifacto_Paint(object sender, PaintEventArgs e)
+        private void checkEditJointOwnership_CheckedChanged(object sender, EventArgs e)
         {
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+        }
 
+        private void checkEditJointOwnership_QueryCheckStateByValue(object sender, DevExpress.XtraEditors.Controls.QueryCheckStateByValueEventArgs e)
+        {
+            string val = e.Value.ToString();
+            switch (val)
+            {
+                case "Y":
+                    e.CheckState = CheckState.Checked;
+                    break;
+                case "N":
+                    e.CheckState = CheckState.Unchecked;
+                    break;
+                default:
+                    e.CheckState = CheckState.Unchecked;
+                    break;
+            }
+            e.Handled = true;
+        }
+
+        private void checkEditJointOwnership_QueryValueByCheckState(object sender, DevExpress.XtraEditors.Controls.QueryValueByCheckStateEventArgs e)
+        {
+            CheckEdit edit = sender as CheckEdit;
+            object val = edit.EditValue;
+            switch (e.CheckState)
+            {
+                case CheckState.Checked:
+                    e.Value = "Y";
+                    break;
+                case CheckState.Unchecked:
+                    e.Value = "N";
+                    break;
+                default:
+                    e.Value = "N";
+                    break;
+            }
+            e.Handled = true;
+        }
+
+        private void checkEditUsePrimaryAddress_CheckedChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void checkEditUsePrimaryAddress_QueryCheckStateByValue(object sender, DevExpress.XtraEditors.Controls.QueryCheckStateByValueEventArgs e)
+        {
+            string val = e.Value.ToString();
+            switch (val)
+            {
+                case "Y":
+                    e.CheckState = CheckState.Checked;
+                    break;
+                case "N":
+                    e.CheckState = CheckState.Unchecked;
+                    break;
+                default:
+                    e.CheckState = CheckState.Unchecked;
+                    break;
+            }
+            e.Handled = true;
+        }
+
+        private void checkEditUsePrimaryAddress_QueryValueByCheckState(object sender, DevExpress.XtraEditors.Controls.QueryValueByCheckStateEventArgs e)
+        {
+            CheckEdit edit = sender as CheckEdit;
+            object val = edit.EditValue;
+            switch (e.CheckState)
+            {
+                case CheckState.Checked:
+                    e.Value = "Y";
+                    break;
+                case CheckState.Unchecked:
+                    e.Value = "N";
+                    break;
+                default:
+                    e.Value = "N";
+                    break;
+            }
+            e.Handled = true;
         }
 
         private void checkEditMilitary_CheckedChanged(object sender, EventArgs e)

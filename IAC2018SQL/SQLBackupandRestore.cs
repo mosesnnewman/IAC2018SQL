@@ -127,7 +127,11 @@ namespace IAC2021SQL
 
         public void VehicleExtractJob()
         {
-            RunJob("CreateVehicleExtract", "CreateVehicleExtract");
+            RunJob("CreateVerifactoExtract", "CreateVerifactoExtract",false);
+        }
+        public void VERIFACTOJob()
+        {
+            RunJob("ImportVERIFACTOFile", "ImportVERIFACTOFile",false);
         }
 
         public void LeeMasonJob()
