@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace IAC2021SQL
 {
-    public partial class frmReprintStatements : Form
+    public partial class frmReprintStatements : DevExpress.XtraEditors.XtraForm
     {
 
         public frmReprintStatements()
@@ -27,7 +27,7 @@ namespace IAC2021SQL
             loDueDate = StatementCustomerHeaderTableAdapter.LastDueDate();
             if (loDueDate != null)
             {
-                StatementDatenullableDateTimePicker.Value = (DateTime)loDueDate;
+                StatementDatenullableDateTimePicker.EditValue = (DateTime)loDueDate;
                 StatementDatenullableDateTimePicker.Text = ((DateTime)loDueDate).ToShortDateString();
             }
             StatementCustomerHeaderTableAdapter.Dispose();
@@ -70,9 +70,9 @@ namespace IAC2021SQL
             OPNHCUSTBindingSource.DataSource = ReportData.OPNHCUST;
             PAYMENTTypeBindingSource.DataSource = ReportData.PAYMENTTYPE;
             // Moses Newman 03/16/2012 Added test to make sure not UNPOSTED NEW BUSINESS!
-            OPNCUSTTableAdapter.CustomizeFill(@"SELECT * FROM OPNCUST WHERE CUSTOMER_ACT_STAT = 'A' AND CUSTOMER_POST_IND <> CHAR(255) AND CUSTOMER_DAY_DUE = " + ((DateTime)StatementDatenullableDateTimePicker.Value).Day.ToString().TrimStart().TrimEnd());
+            OPNCUSTTableAdapter.CustomizeFill(@"SELECT * FROM OPNCUST WHERE CUSTOMER_ACT_STAT = 'A' AND CUSTOMER_POST_IND <> CHAR(255) AND CUSTOMER_DAY_DUE = " + StatementDatenullableDateTimePicker.DateTime.Day.ToString().TrimStart().TrimEnd());
             OPNCUSTTableAdapter.CustomFillBy(ReportData.OPNCUST);
-            StatementCustomerHeaderTableAdapter.FillByDueDate(ReportData.StatementCustomerHeader, ((DateTime)StatementDatenullableDateTimePicker.Value).Date, false, false);
+            StatementCustomerHeaderTableAdapter.FillByDueDate(ReportData.StatementCustomerHeader, StatementDatenullableDateTimePicker.DateTime.Date, false, false);
             if (ReportData.StatementCustomerHeader.Rows.Count == 0 || ReportData.OPNCUST.Rows.Count == 0)
                 MessageBox.Show("*** Sorry there are no statements for the DUE DATE you entered!!! ***");
             else
@@ -81,7 +81,7 @@ namespace IAC2021SQL
                 ldLastClosingDate = ReportData.StatementCustomerHeader.Rows[0].Field<DateTime>("LastClosingDate");
                 OPNHCUSTTableAdapter.FillByDateRange(ReportData.OPNHCUST, ldLastClosingDate, ldClosingDate);
                 // Moses Newman 03/16/2012 Added test to make sure not UNPOSTED NEW BUSINESS!
-                OPNDEALRTableAdapter.CustomizeFill(@"SELECT * FROM OPNDEALR WHERE OPNDEALR_ACC_NO IN (SELECT CUSTOMER_DEALER FROM OPNCUST WHERE CUSTOMER_ACT_STAT = 'A' AND CUSTOMER_POST_IND <> CHAR(255) AND CUSTOMER_DAY_DUE = " + ((DateTime)StatementDatenullableDateTimePicker.Value).Day.ToString().TrimStart().TrimEnd() + ")");
+                OPNDEALRTableAdapter.CustomizeFill(@"SELECT * FROM OPNDEALR WHERE OPNDEALR_ACC_NO IN (SELECT CUSTOMER_DEALER FROM OPNCUST WHERE CUSTOMER_ACT_STAT = 'A' AND CUSTOMER_POST_IND <> CHAR(255) AND CUSTOMER_DAY_DUE = " + StatementDatenullableDateTimePicker.DateTime.Day.ToString().TrimStart().TrimEnd() + ")");
                 OPNDEALRTableAdapter.CustomFillBy(ReportData.OPNDEALR);
                 OPNRATETableAdapter.FillAll(ReportData.OPNRATE);
                 PAYMENTTYPETableAdapter.Fill(ReportData.PAYMENTTYPE);
@@ -116,7 +116,7 @@ namespace IAC2021SQL
                 //myReportObject.SetParameterValue("Start", ldLastClosingDate);
                 //myReportObject.SetParameterValue("End", ldClosingDate);
                 myReportObject.SetParameterValue("gsMessage", textBoxMessage.Text.Trim());
-                myReportObject.SetParameterValue("gdEntryDate", (DateTime)StatementDatenullableDateTimePicker.Value);
+                myReportObject.SetParameterValue("gdEntryDate", StatementDatenullableDateTimePicker.DateTime);
                 myReportObject.SetParameterValue("gdClosingDate", ldClosingDate);
                 myReportObject.SetParameterValue("gbNewAdd", false);
                 rptViewer.crystalReportViewer.ReportSource = myReportObject;
@@ -127,12 +127,12 @@ namespace IAC2021SQL
             OPNHCUSTBindingSource.Dispose();
         }
 
-        private void StatementDatenullableDateTimePicker_ValueChanged(object sender, EventArgs e)
+        private void textBoxMessage_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void textBoxMessage_TextChanged(object sender, EventArgs e)
+        private void StatementDatenullableDateTimePicker_EditValueChanged(object sender, EventArgs e)
         {
 
         }

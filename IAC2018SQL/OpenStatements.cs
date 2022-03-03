@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace IAC2021SQL
 {
-    public partial class frmOpenStatements : Form
+    public partial class frmOpenStatements : DevExpress.XtraEditors.XtraForm
     {
-        Int32   lnMoreStateCode = 0;
+        Int32 lnMoreStateCode = 0;
         Decimal lnMonthlyInterest = 0,lnPaymentDiff = 0,lnHoldRate1 = 0,lnHoldRate2 = 0,lnHoldRate3 = 0,lnPeriodic1 = 0,lnPeriodic2 = 0, lnPeriodic3 = 0,
                 lnHoldInterest1 = 0, lnHoldInterest2 = 0, lnHoldInterest3 = 0,lnNewBalance = 0,lnHoldUpdateAmount = 0, lnHoldPrevBalance = 0,lnHoldBalance = 0,
                 lnCustomerPrevBalance = 0,lnMasterOLOAN = 0,lnPreviousBalance = 0,lnPaymentDateDiff = 0,lnHoldISF = 0,lnHoldLate = 0,
@@ -47,14 +47,14 @@ namespace IAC2021SQL
             if (loDueDate != null)
             {
                 ldTempDate = (DateTime)loDueDate;
-                LastClosingDatenullableDateTimePicker.Value = ldTempDate;
-                LastClosingDatenullableDateTimePicker.Text = ldTempDate.ToShortDateString();
+                LastClosingDatenullableDateTimePicker.EditValue = ldTempDate;
+                //LastClosingDatenullableDateTimePicker.Text = ldTempDate.ToShortDateString();
                 ldTempDate = ldTempDate.AddMonths(1);
-                ClosingDatenullableDateTimePicker.Value = ldTempDate;
-                ClosingDatenullableDateTimePicker.Text = ldTempDate.ToShortDateString();
+                ClosingDatenullableDateTimePicker.EditValue = ldTempDate;
+                //ClosingDatenullableDateTimePicker.Text = ldTempDate.ToShortDateString();
                 ldTempDate = ldTempDate.AddMonths(1);
-                StatementDatenullableDateTimePicker.Value = ldTempDate;
-                StatementDatenullableDateTimePicker.Text = ldTempDate.ToShortDateString();
+                StatementDatenullableDateTimePicker.EditValue = ldTempDate;
+                //StatementDatenullableDateTimePicker.Text = ldTempDate.ToShortDateString();
             }
             StatementCustomerHeaderTableAdapter.Dispose();
             ReportData.Dispose();
@@ -65,7 +65,7 @@ namespace IAC2021SQL
 
             int lnProgress = 0, lnTotalSteps = 0;
 
-            opncustTableAdapter.CustomizeFill("SELECT * FROM OPNCUST WHERE CUSTOMER_ACT_STAT <> \'I\' AND CUSTOMER_POST_IND <> CHAR(255) AND CUSTOMER_DAY_DUE = " + ((DateTime)StatementDatenullableDateTimePicker.Value).Day.ToString().TrimStart().TrimEnd());
+            opncustTableAdapter.CustomizeFill("SELECT * FROM OPNCUST WHERE CUSTOMER_ACT_STAT <> \'I\' AND CUSTOMER_POST_IND <> CHAR(255) AND CUSTOMER_DAY_DUE = " + StatementDatenullableDateTimePicker.DateTime.Day.ToString().TrimStart().TrimEnd());
             opncustTableAdapter.CustomFillBy(StatementDataSet.OPNCUST);
 
             if (StatementDataSet.OPNCUST.Rows.Count == 0)
@@ -74,7 +74,7 @@ namespace IAC2021SQL
                 return;
             }
 
-            OPN_WS_DEALER_STATEMENTSTableAdapter.Fill(StatementDataSet.OPN_WS_DEALER_STATEMENTS, ((DateTime)StatementDatenullableDateTimePicker.Value).Day);
+            OPN_WS_DEALER_STATEMENTSTableAdapter.Fill(StatementDataSet.OPN_WS_DEALER_STATEMENTS, StatementDatenullableDateTimePicker.DateTime.Day);
             OPN_WS_DEALER_STATEMENTSBindingSource.DataSource = StatementDataSet.OPN_WS_DEALER_STATEMENTS;
 
        
@@ -120,7 +120,7 @@ namespace IAC2021SQL
             lbPaymentFlag = false;
 
             TimeSpan ltActDateDiff;
-            DateTime ldFormDate = ((DateTime)StatementDatenullableDateTimePicker.Value).Date;
+            DateTime ldFormDate = StatementDatenullableDateTimePicker.DateTime.Date;
  
             ltActDateDiff = StatementDataSet.OPNCUST.Rows[CustomerPos].Field<DateTime>("CUSTOMER_INIT_DATE").Date -ldFormDate;
             lnActDateDiff = (Int32)(ltActDateDiff.TotalDays);
@@ -137,9 +137,9 @@ namespace IAC2021SQL
 
             // Get all history for this customer where Payment Date is > Last Closing Date and <= Closing Date
             OPNHCUSTTableAdapter.FillByCustDateRange(StatementDataSet.OPNHCUST, StatementDataSet.OPNCUST.Rows[CustomerPos].Field<String>("CUSTOMER_NO"),
-                            (DateTime)LastClosingDatenullableDateTimePicker.Value, (DateTime)ClosingDatenullableDateTimePicker.Value);
+                            LastClosingDatenullableDateTimePicker.DateTime, ClosingDatenullableDateTimePicker.DateTime);
             string lsCustTemp = StatementDataSet.OPNCUST.Rows[CustomerPos].Field<String>("CUSTOMER_NO");
-            if (StatementDataSet.OPNCUST.Rows[CustomerPos].Field<DateTime>("CUSTOMER_INIT_DATE").Date >= ((DateTime)StatementDatenullableDateTimePicker.Value).Date)
+            if (StatementDataSet.OPNCUST.Rows[CustomerPos].Field<DateTime>("CUSTOMER_INIT_DATE").Date >= StatementDatenullableDateTimePicker.DateTime.Date)
             {
                 lnMonthlyInterest = 0;
                 lnPaymentDiff = StatementDataSet.OPNCUST.Rows[CustomerPos].Field<Decimal>("CUSTOMER_BALANCE");
@@ -157,7 +157,7 @@ namespace IAC2021SQL
                     NoPaymentsRcv(CustomerPos);
                 }
                 else
-                    if (StatementDataSet.OPNCUST.Rows[CustomerPos].Field<DateTime>("CUSTOMER_LAST_PAYMENT_DATE").Date < ((DateTime)LastClosingDatenullableDateTimePicker.Value).Date)
+                    if (StatementDataSet.OPNCUST.Rows[CustomerPos].Field<DateTime>("CUSTOMER_LAST_PAYMENT_DATE").Date < LastClosingDatenullableDateTimePicker.DateTime.Date)
                     {
                         lnMonthlyInterest = 0;
                         lnPaymentDiff = StatementDataSet.OPNCUST.Rows[CustomerPos].Field<Decimal>("CUSTOMER_PREV_BALANCE");
@@ -223,8 +223,8 @@ namespace IAC2021SQL
                     lnLastBalance = StatementDataSet.OPNHCUST.Rows[i].Field<Decimal>("CUSTHIST_BALANCE");
 
                 if (StatementDataSet.OPNHCUST.Rows[i].Field<Decimal>("CUSTHIST_PAYMENT_RCV") != 0)
-                    if (StatementDataSet.OPNHCUST.Rows[i].Field<DateTime>("CUSTHIST_PAY_DATE").Date < ((DateTime)ClosingDatenullableDateTimePicker.Value).Date &&
-                        StatementDataSet.OPNHCUST.Rows[i].Field<DateTime>("CUSTHIST_PAY_DATE").Date > ((DateTime)LastClosingDatenullableDateTimePicker.Value).Date)
+                    if (StatementDataSet.OPNHCUST.Rows[i].Field<DateTime>("CUSTHIST_PAY_DATE").Date < ClosingDatenullableDateTimePicker.DateTime.Date &&
+                        StatementDataSet.OPNHCUST.Rows[i].Field<DateTime>("CUSTHIST_PAY_DATE").Date > LastClosingDatenullableDateTimePicker.DateTime.Date)
                     {
                         lbPaymentFlag = false;
                         lnFirstPaymentDiff = 0;
@@ -258,14 +258,14 @@ namespace IAC2021SQL
 
             if (lbFirstFlag)
             {
-                ltActDateDiff = StatementDataSet.OPNHCUST.Rows[CusthistPos].Field<DateTime>("CUSTHIST_PAY_DATE").Date - ((DateTime)LastClosingDatenullableDateTimePicker.Value).Date;
+                ltActDateDiff = StatementDataSet.OPNHCUST.Rows[CusthistPos].Field<DateTime>("CUSTHIST_PAY_DATE").Date - LastClosingDatenullableDateTimePicker.DateTime.Date;
                 lnActDateDiff = (Int32)(ltActDateDiff.TotalDays);
                 lnHoldPayDate = StatementDataSet.OPNHCUST.Rows[CusthistPos].Field<DateTime>("CUSTHIST_PAY_DATE").Date;
             }
             else
                 if (IsLast) // Last history record
                 {
-                    ltActDateDiff = ((DateTime)ClosingDatenullableDateTimePicker.Value).Date - lnHoldPayDate;
+                    ltActDateDiff = ClosingDatenullableDateTimePicker.DateTime.Date - lnHoldPayDate;
                     lnActDateDiff = (Int32)(ltActDateDiff.TotalDays);
                 }
                 else
@@ -320,7 +320,7 @@ namespace IAC2021SQL
 
             // Check the difference between transmittal date and the present closing date
             TimeSpan ltActDateDiff;
-            DateTime ldFormDate = ((DateTime)ClosingDatenullableDateTimePicker.Value).Date;
+            DateTime ldFormDate = ClosingDatenullableDateTimePicker.DateTime.Date;
             ltActDateDiff = ldFormDate - StatementDataSet.OPNCUST.Rows[CustomerPos].Field<DateTime>("CUSTOMER_CONTRACT_DATE").Date;
             lnActDateDiff = (Int32)(ltActDateDiff.TotalDays);
 
@@ -403,7 +403,7 @@ namespace IAC2021SQL
 
             // Get # of Days Between Closing Date
             TimeSpan ltActDateDiff;
-            ltActDateDiff = ((DateTime)ClosingDatenullableDateTimePicker.Value).Date - ((DateTime)LastClosingDatenullableDateTimePicker.Value).Date;
+            ltActDateDiff = ClosingDatenullableDateTimePicker.DateTime.Date - LastClosingDatenullableDateTimePicker.DateTime.Date;
             lnActDateDiff = (Int32)(ltActDateDiff.TotalDays);
 
             lnPaymentDateDiff = lnActDateDiff;
@@ -863,9 +863,9 @@ namespace IAC2021SQL
                     StatementDataSet.OPN_WS_DEALER_STATEMENTS.Rows[WSSTATEMENTDEALERPos].SetField<Int32>("WRONG_ACCTS", StatementDataSet.OPN_WS_DEALER_STATEMENTS.Rows[WSSTATEMENTDEALERPos].Field<Int32>("WRONG_ACCTS")    + 1);
                 StatementDataSet.OPN_WS_DEALER_STATEMENTS.Rows[WSSTATEMENTDEALERPos].SetField<Int32>("NO_ACCTS",    StatementDataSet.OPN_WS_DEALER_STATEMENTS.Rows[WSSTATEMENTDEALERPos].Field<Int32>("NO_ACCTS")       + 1);
                 StatementDealerSummaryTableAdapter.Delete(StatementDataSet.OPNCUST.Rows[CustomerPos].Field<String>("CUSTOMER_DEALER"),
-                                                          ((DateTime)StatementDatenullableDateTimePicker.Value).Date);
+                                                          StatementDatenullableDateTimePicker.DateTime.Date);
                 StatementDealerSummaryTableAdapter.Insert(StatementDataSet.OPNCUST.Rows[CustomerPos].Field<String>("CUSTOMER_DEALER"),
-                                                          ((DateTime)StatementDatenullableDateTimePicker.Value).Date,
+                                                          StatementDatenullableDateTimePicker.DateTime.Date,
                                                           StatementDataSet.OPN_WS_DEALER_STATEMENTS.Rows[WSSTATEMENTDEALERPos].Field<Decimal>("OS_L"),
                                                           StatementDataSet.OPN_WS_DEALER_STATEMENTS.Rows[WSSTATEMENTDEALERPos].Field<Decimal>("BALANCE"),
                                                           StatementDataSet.OPN_WS_DEALER_STATEMENTS.Rows[WSSTATEMENTDEALERPos].Field<Int32>("GOOD_ACCTS"),
@@ -876,10 +876,10 @@ namespace IAC2021SQL
 
         private void NoticeDatenullableDateTimePicker_Validated(object sender, EventArgs e)
         {
-            DateTime? ldCurrentDate = (DateTime?)ClosingDatenullableDateTimePicker.Value;
+            DateTime? ldCurrentDate = (DateTime?)ClosingDatenullableDateTimePicker.EditValue;
             if (ldCurrentDate.Value != null)
                 if (ldCurrentDate.Value.Month == 2 && ldCurrentDate.Value.Day == 30)
-                    ClosingDatenullableDateTimePicker.Value = Convert.ToDateTime("02/28" + ldCurrentDate.Value.Year.ToString());
+                    ClosingDatenullableDateTimePicker.EditValue = Convert.ToDateTime("02/28" + ldCurrentDate.Value.Year.ToString());
         }
 
         private void buttonPost_Click(object sender, EventArgs e)
@@ -936,14 +936,14 @@ namespace IAC2021SQL
             StatementCustomerHeaderBindingSource.DataSource = StatementDataSet.StatementCustomerHeader;
 
             // First row of boxes on statement
-            StatementCustomerHeaderTableAdapter.Fill(StatementDataSet.StatementCustomerHeader,StatementDataSet.OPNCUST.Rows[CustomerPos].Field<String>("CUSTOMER_NO"),((DateTime)StatementDatenullableDateTimePicker.Value).Date,false,false);
+            StatementCustomerHeaderTableAdapter.Fill(StatementDataSet.StatementCustomerHeader,StatementDataSet.OPNCUST.Rows[CustomerPos].Field<String>("CUSTOMER_NO"),StatementDatenullableDateTimePicker.DateTime.Date,false,false);
             if (StatementDataSet.StatementCustomerHeader.Rows.Count == 0)
             {
                 StatementCustomerHeaderBindingSource.AddNew();
                 StatementCustomerHeaderBindingSource.EndEdit();
             }
             StatementDataSet.StatementCustomerHeader.Rows[0].SetField<String>("AccountNumber", StatementDataSet.OPNCUST.Rows[CustomerPos].Field<String>("CUSTOMER_NO"));
-            StatementDataSet.StatementCustomerHeader.Rows[0].SetField<DateTime>("ScheduledPaymentDate", ((DateTime)StatementDatenullableDateTimePicker.Value).Date);
+            StatementDataSet.StatementCustomerHeader.Rows[0].SetField<DateTime>("ScheduledPaymentDate", StatementDatenullableDateTimePicker.DateTime.Date);
             StatementDataSet.StatementCustomerHeader.Rows[0].SetField<Decimal>("ScheduledPayment", StatementDataSet.OPNCUST.Rows[CustomerPos].Field<Decimal>("CUSTOMER_REGULAR_AMOUNT"));            
 
             if(lbBypass)
@@ -975,8 +975,8 @@ namespace IAC2021SQL
             
             // Second Row of boxes non redundant fields
             StatementDataSet.StatementCustomerHeader.Rows[0].SetField<Decimal>("PreviousBalance",lnHoldPrevBalance);
-            StatementDataSet.StatementCustomerHeader.Rows[0].SetField<DateTime>("ClosingDate", ((DateTime)ClosingDatenullableDateTimePicker.Value).Date);
-            StatementDataSet.StatementCustomerHeader.Rows[0].SetField<DateTime>("LastClosingDate", ((DateTime)LastClosingDatenullableDateTimePicker.Value).Date);
+            StatementDataSet.StatementCustomerHeader.Rows[0].SetField<DateTime>("ClosingDate", ClosingDatenullableDateTimePicker.DateTime.Date);
+            StatementDataSet.StatementCustomerHeader.Rows[0].SetField<DateTime>("LastClosingDate", LastClosingDatenullableDateTimePicker.DateTime.Date);
 
             CheckPayments(CustomerPos);
             StatementDataSet.OPNCUST.Rows[CustomerPos].SetField<String>("CUSTOMER_PAY_REM_1", "STAT");
@@ -1007,7 +1007,7 @@ namespace IAC2021SQL
 
             // Get all history for this customer where Payment Date is > Last Closing Date and <= Closing Date
             OPNHCUSTTableAdapter.FillByCustDateRange(StatementDataSet.OPNHCUST, StatementDataSet.OPNCUST.Rows[CustomerPos].Field<String>("CUSTOMER_NO"),
-                                                    (DateTime)LastClosingDatenullableDateTimePicker.Value, (DateTime)ClosingDatenullableDateTimePicker.Value);
+                                                    LastClosingDatenullableDateTimePicker.DateTime, ClosingDatenullableDateTimePicker.DateTime);
             for (int i = 0; i < StatementDataSet.OPNHCUST.Rows.Count; i++)
             {
                 // Insufficient Funds
@@ -1027,7 +1027,8 @@ namespace IAC2021SQL
                 // Add Ons
                 if (StatementDataSet.OPNHCUST.Rows[i].Field<String>("CUSTHIST_PAY_REM_1").Trim() == "ADD")
                 {
-                    lnHoldUpdateAmount = StatementDataSet.OPNHCUST.Rows[i].Field<Decimal>("CUSTHIST_PAYMENT_RCV");
+                    // Moses Newman 02/09/2022 change = to += to accumulate Add On totals
+                    lnHoldUpdateAmount += StatementDataSet.OPNHCUST.Rows[i].Field<Decimal>("CUSTHIST_PAYMENT_RCV");
                     continue;
                 }
 

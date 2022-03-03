@@ -479,6 +479,10 @@
             this.textBox47 = new System.Windows.Forms.TextBox();
             this.textBox48 = new System.Windows.Forms.TextBox();
             this.VehicleGroupBox = new System.Windows.Forms.GroupBox();
+            this.textEditComprehensiveDeductible = new DevExpress.XtraEditors.TextEdit();
+            this.checkEditHasComprehensive = new DevExpress.XtraEditors.CheckEdit();
+            this.textEditCollisionDeductible = new DevExpress.XtraEditors.TextEdit();
+            this.checkEditHasCollision = new DevExpress.XtraEditors.CheckEdit();
             this.checkEditJointOwnership = new DevExpress.XtraEditors.CheckEdit();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
@@ -525,7 +529,7 @@
             this.nullableDateTimePickerRepoDate = new DevExpress.XtraEditors.DateEdit();
             this.txtExpirationDate = new DevExpress.XtraEditors.DateEdit();
             this.txtEffectiveDate = new DevExpress.XtraEditors.DateEdit();
-            this.txtAgentPhone = new System.Windows.Forms.MaskedTextBox();
+            this.txtAgentPhone = new DevExpress.XtraEditors.TextEdit();
             this.txtJointOwner = new System.Windows.Forms.TextBox();
             this.txtInsuranceAgent = new System.Windows.Forms.TextBox();
             this.txtPolicyNumber = new System.Windows.Forms.TextBox();
@@ -1156,6 +1160,10 @@
             this.groupBox15.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.VehicleGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditComprehensiveDeductible.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEditHasComprehensive.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditCollisionDeductible.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEditHasCollision.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditJointOwnership.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEditIssueDate3.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEditIssueDate3.Properties)).BeginInit();
@@ -1190,6 +1198,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtExpirationDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEffectiveDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEffectiveDate.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAgentPhone.Properties)).BeginInit();
             this.xtraTabPageCosigner.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupBox16)).BeginInit();
             this.groupBox16.SuspendLayout();
@@ -4562,6 +4571,10 @@
             // VehicleGroupBox
             // 
             this.VehicleGroupBox.BackColor = System.Drawing.Color.Transparent;
+            this.VehicleGroupBox.Controls.Add(this.textEditComprehensiveDeductible);
+            this.VehicleGroupBox.Controls.Add(this.checkEditHasComprehensive);
+            this.VehicleGroupBox.Controls.Add(this.textEditCollisionDeductible);
+            this.VehicleGroupBox.Controls.Add(this.checkEditHasCollision);
             this.VehicleGroupBox.Controls.Add(this.checkEditJointOwnership);
             this.VehicleGroupBox.Controls.Add(this.labelControl6);
             this.VehicleGroupBox.Controls.Add(this.labelControl5);
@@ -4608,6 +4621,97 @@
             resources.ApplyResources(this.VehicleGroupBox, "VehicleGroupBox");
             this.VehicleGroupBox.Name = "VehicleGroupBox";
             this.VehicleGroupBox.TabStop = false;
+            // 
+            // textEditComprehensiveDeductible
+            // 
+            this.textEditComprehensiveDeductible.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.VehiclebindingSource, "ComprehensiveDeductible", true));
+            resources.ApplyResources(this.textEditComprehensiveDeductible, "textEditComprehensiveDeductible");
+            this.textEditComprehensiveDeductible.MenuManager = this.toolbarFormManager1;
+            this.textEditComprehensiveDeductible.Name = "textEditComprehensiveDeductible";
+            this.textEditComprehensiveDeductible.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textEditComprehensiveDeductible.Properties.Appearance.Font")));
+            this.textEditComprehensiveDeductible.Properties.Appearance.Options.UseFont = true;
+            this.textEditComprehensiveDeductible.Properties.Appearance.Options.UseTextOptions = true;
+            this.textEditComprehensiveDeductible.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.textEditComprehensiveDeductible.Properties.AppearanceDisabled.BackColor = System.Drawing.SystemColors.Control;
+            this.textEditComprehensiveDeductible.Properties.AppearanceDisabled.BorderColor = System.Drawing.Color.White;
+            this.textEditComprehensiveDeductible.Properties.AppearanceDisabled.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.textEditComprehensiveDeductible.Properties.AppearanceDisabled.Options.UseBackColor = true;
+            this.textEditComprehensiveDeductible.Properties.AppearanceDisabled.Options.UseBorderColor = true;
+            this.textEditComprehensiveDeductible.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.textEditComprehensiveDeductible.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.textEditComprehensiveDeductible.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.textEditComprehensiveDeductible.Properties.MaskSettings.Set("mask", "c");
+            this.textEditComprehensiveDeductible.Properties.UseMaskAsDisplayFormat = ((bool)(resources.GetObject("textEditComprehensiveDeductible.Properties.UseMaskAsDisplayFormat")));
+            this.textEditComprehensiveDeductible.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            // 
+            // checkEditHasComprehensive
+            // 
+            this.checkEditHasComprehensive.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.VehiclebindingSource, "HasComprehensive", true));
+            resources.ApplyResources(this.checkEditHasComprehensive, "checkEditHasComprehensive");
+            this.checkEditHasComprehensive.MenuManager = this.toolbarFormManager1;
+            this.checkEditHasComprehensive.Name = "checkEditHasComprehensive";
+            this.checkEditHasComprehensive.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("checkEditHasComprehensive.Properties.Appearance.Font")));
+            this.checkEditHasComprehensive.Properties.Appearance.Options.UseFont = true;
+            this.checkEditHasComprehensive.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.checkEditHasComprehensive.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.checkEditHasComprehensive.Properties.Caption = resources.GetString("checkEditHasComprehensive.Properties.Caption");
+            this.checkEditHasComprehensive.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
+            this.checkEditHasComprehensive.Properties.CheckBoxOptions.SvgColorChecked = System.Drawing.Color.Black;
+            this.checkEditHasComprehensive.Properties.ContentAlignment = ((DevExpress.Utils.HorzAlignment)(resources.GetObject("checkEditHasComprehensive.Properties.ContentAlignment")));
+            this.checkEditHasComprehensive.Properties.GlyphAlignment = ((DevExpress.Utils.HorzAlignment)(resources.GetObject("checkEditHasComprehensive.Properties.GlyphAlignment")));
+            this.checkEditHasComprehensive.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
+            this.checkEditHasComprehensive.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.LightSteelBlue;
+            this.checkEditHasComprehensive.Properties.LookAndFeel.SkinName = "McSkin";
+            this.checkEditHasComprehensive.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.checkEditHasComprehensive.Properties.NullStyle = DevExpress.XtraEditors.Controls.StyleIndeterminate.Unchecked;
+            this.checkEditHasComprehensive.CheckedChanged += new System.EventHandler(this.checkEditHasComprehensive_CheckedChanged);
+            // 
+            // textEditCollisionDeductible
+            // 
+            this.textEditCollisionDeductible.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.VehiclebindingSource, "CollisionDeductible", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "C2"));
+            resources.ApplyResources(this.textEditCollisionDeductible, "textEditCollisionDeductible");
+            this.textEditCollisionDeductible.MenuManager = this.toolbarFormManager1;
+            this.textEditCollisionDeductible.Name = "textEditCollisionDeductible";
+            this.textEditCollisionDeductible.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textEditCollisionDeductible.Properties.Appearance.Font")));
+            this.textEditCollisionDeductible.Properties.Appearance.Options.UseFont = true;
+            this.textEditCollisionDeductible.Properties.Appearance.Options.UseTextOptions = true;
+            this.textEditCollisionDeductible.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.textEditCollisionDeductible.Properties.AppearanceDisabled.BackColor = System.Drawing.SystemColors.Control;
+            this.textEditCollisionDeductible.Properties.AppearanceDisabled.BorderColor = System.Drawing.Color.White;
+            this.textEditCollisionDeductible.Properties.AppearanceDisabled.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.textEditCollisionDeductible.Properties.AppearanceDisabled.Options.UseBackColor = true;
+            this.textEditCollisionDeductible.Properties.AppearanceDisabled.Options.UseBorderColor = true;
+            this.textEditCollisionDeductible.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.textEditCollisionDeductible.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.textEditCollisionDeductible.Properties.LookAndFeel.SkinName = "McSkin";
+            this.textEditCollisionDeductible.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.textEditCollisionDeductible.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.textEditCollisionDeductible.Properties.MaskSettings.Set("mask", "c");
+            this.textEditCollisionDeductible.Properties.UseMaskAsDisplayFormat = ((bool)(resources.GetObject("textEditCollisionDeductible.Properties.UseMaskAsDisplayFormat")));
+            this.textEditCollisionDeductible.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            // 
+            // checkEditHasCollision
+            // 
+            this.checkEditHasCollision.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.VehiclebindingSource, "HasCollision", true));
+            resources.ApplyResources(this.checkEditHasCollision, "checkEditHasCollision");
+            this.checkEditHasCollision.MenuManager = this.toolbarFormManager1;
+            this.checkEditHasCollision.Name = "checkEditHasCollision";
+            this.checkEditHasCollision.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("checkEditHasCollision.Properties.Appearance.Font")));
+            this.checkEditHasCollision.Properties.Appearance.Options.UseFont = true;
+            this.checkEditHasCollision.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.checkEditHasCollision.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.checkEditHasCollision.Properties.Caption = resources.GetString("checkEditHasCollision.Properties.Caption");
+            this.checkEditHasCollision.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
+            this.checkEditHasCollision.Properties.CheckBoxOptions.SvgColorChecked = System.Drawing.Color.Black;
+            this.checkEditHasCollision.Properties.ContentAlignment = ((DevExpress.Utils.HorzAlignment)(resources.GetObject("checkEditHasCollision.Properties.ContentAlignment")));
+            this.checkEditHasCollision.Properties.GlyphAlignment = ((DevExpress.Utils.HorzAlignment)(resources.GetObject("checkEditHasCollision.Properties.GlyphAlignment")));
+            this.checkEditHasCollision.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
+            this.checkEditHasCollision.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.LightSteelBlue;
+            this.checkEditHasCollision.Properties.LookAndFeel.SkinName = "McSkin";
+            this.checkEditHasCollision.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.checkEditHasCollision.Properties.NullStyle = DevExpress.XtraEditors.Controls.StyleIndeterminate.Unchecked;
+            this.checkEditHasCollision.CheckedChanged += new System.EventHandler(this.checkEditHasCollision_CheckedChanged);
+            this.checkEditHasCollision.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // checkEditJointOwnership
             // 
@@ -5256,7 +5360,21 @@
             this.txtAgentPhone.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.VehiclebindingSource, "VEHICLE_AGENT_PHONE", true));
             resources.ApplyResources(this.txtAgentPhone, "txtAgentPhone");
             this.txtAgentPhone.Name = "txtAgentPhone";
-            this.txtAgentPhone.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.txtAgentPhone.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("txtAgentPhone.Properties.Appearance.Font")));
+            this.txtAgentPhone.Properties.Appearance.Options.UseFont = true;
+            this.txtAgentPhone.Properties.AppearanceDisabled.BackColor = System.Drawing.SystemColors.Control;
+            this.txtAgentPhone.Properties.AppearanceDisabled.BorderColor = System.Drawing.Color.White;
+            this.txtAgentPhone.Properties.AppearanceDisabled.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.txtAgentPhone.Properties.AppearanceDisabled.Options.UseBackColor = true;
+            this.txtAgentPhone.Properties.AppearanceDisabled.Options.UseBorderColor = true;
+            this.txtAgentPhone.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.txtAgentPhone.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.txtAgentPhone.Properties.LookAndFeel.SkinName = "McSkin";
+            this.txtAgentPhone.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.txtAgentPhone.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.SimpleMaskManager));
+            this.txtAgentPhone.Properties.MaskSettings.Set("mask", "(000) 000-0000");
+            this.txtAgentPhone.Properties.MaskSettings.Set("saveLiterals", false);
+            this.txtAgentPhone.Properties.UseMaskAsDisplayFormat = ((bool)(resources.GetObject("txtAgentPhone.Properties.UseMaskAsDisplayFormat")));
             this.txtAgentPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // txtJointOwner
@@ -8810,6 +8928,10 @@
             this.groupBox2.PerformLayout();
             this.VehicleGroupBox.ResumeLayout(false);
             this.VehicleGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditComprehensiveDeductible.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEditHasComprehensive.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditCollisionDeductible.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEditHasCollision.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditJointOwnership.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEditIssueDate3.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEditIssueDate3.Properties)).EndInit();
@@ -8846,6 +8968,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtExpirationDate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEffectiveDate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtEffectiveDate.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAgentPhone.Properties)).EndInit();
             this.xtraTabPageCosigner.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupBox16)).EndInit();
             this.groupBox16.ResumeLayout(false);
@@ -9173,7 +9296,7 @@
         private DevExpress.XtraEditors.DateEdit nullableDateTimePickerRepoDate;
         private DevExpress.XtraEditors.DateEdit txtExpirationDate;
         private DevExpress.XtraEditors.DateEdit txtEffectiveDate;
-        private System.Windows.Forms.MaskedTextBox txtAgentPhone;
+        private DevExpress.XtraEditors.TextEdit txtAgentPhone;
         private System.Windows.Forms.TextBox txtJointOwner;
         private System.Windows.Forms.TextBox txtInsuranceAgent;
         private System.Windows.Forms.TextBox txtPolicyNumber;
@@ -9578,6 +9701,10 @@
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.CheckEdit checkEditJointOwnership;
         private DevExpress.XtraEditors.CheckEdit checkEditUsePrimaryAddress;
+        private DevExpress.XtraEditors.TextEdit textEditComprehensiveDeductible;
+        private DevExpress.XtraEditors.CheckEdit checkEditHasComprehensive;
+        private DevExpress.XtraEditors.TextEdit textEditCollisionDeductible;
+        private DevExpress.XtraEditors.CheckEdit checkEditHasCollision;
     }
 }
 
