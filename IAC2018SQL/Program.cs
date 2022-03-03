@@ -378,6 +378,9 @@ namespace IAC2021SQL
 			currentLine += 1;
 			// Create a cash flow line for the payoff date and unknown payment amount
 			tvDocument.CashFlowMatrix.AddLine();
+			// Moses Newman 02/21/2022 Prevent possibility of current line being less than actual lines on SOME new business
+			if (tvDocument.CashFlowMatrix.NumberOfLines < currentLine)
+				currentLine = tvDocument.CashFlowMatrix.NumberOfLines;
 			if (CUSTOMERDT.Rows[0].Field<String>("CUSTOMER_BUY_OUT") != "Y" || CUSTOMERDT.Rows[0].Field<Decimal>("CUSTOMER_BALANCE") <= 0)
 				tvDocument.CashFlowMatrix.SetEvent(currentLine, TVConstants.TVEventType.Payment, arPaymentEvents[2]);
 			else
@@ -2999,6 +3002,7 @@ namespace IAC2021SQL
 		[STAThread]
 		public static void Main()
 		{
+			//new Cybele.Thinfinity.VirtualUI().Start();
 			WindowsFormsSettings.EnableFormSkins();
 			WindowsFormsSettings.EnableMdiFormSkins();
 

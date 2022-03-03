@@ -14,7 +14,7 @@ using System.Threading;
 
 namespace IAC2021SQL
 {
-    public partial class frmCreateBankCustomerExtract : Form
+    public partial class frmCreateBankCustomerExtract : DevExpress.XtraEditors.XtraForm
     {
         private BackgroundWorker worker = new BackgroundWorker();
         private Boolean Open = false,CreateTabs = false;
@@ -53,6 +53,8 @@ namespace IAC2021SQL
 
         private void frmCreateBankCustomerExtract_Load(object sender, EventArgs e)
         {
+            radioGroupMatch.EditValue = null;
+            radioGroupMatch.SelectedIndex = -1;
             // Moses Newman 04/20/2014 Add Active Inactive or Both, Dealer choice, and date range.
             Int32 lnRunMonth = DateTime.Now.Date.Month, lnRunYear = DateTime.Now.Date.Year;
             IACDataSet Bank = new IACDataSet();
@@ -63,13 +65,13 @@ namespace IAC2021SQL
             BindingSource bindingSourceDLRLISTBYNUM = new BindingSource();
             BindingSource bindingSourceState = new BindingSource();
             radioButtonActive.Checked = true;
-            nullableDateTimePickerStartDate.Value = DateTime.Parse("01/01/1980");
-            nullableDateTimePickerEndDate.Value = DateTime.Now.Date;
+            nullableDateTimePickerStartDate.EditValue = DateTime.Parse("01/01/1980");
+            nullableDateTimePickerEndDate.EditValue = DateTime.Now.Date;
             // Moses Newman 03/30/2016 add seperate paid interest date range selection.
-            nullableDateTimePickerPIStartDate.Value = DateTime.Parse("01/01/1980");
-            nullableDateTimePickerPIEndDate.Value = DateTime.Now.Date;
+            nullableDateTimePickerPIStartDate.EditValue = DateTime.Parse("01/01/1980");
+            nullableDateTimePickerPIEndDate.EditValue = DateTime.Now.Date;
             // 03/25/2016 Moses Newman add buyout date field 
-            nullableDateTimePickerBuyoutDate.Value = DateTime.Now.Date;
+            nullableDateTimePickerBuyoutDate.EditValue = DateTime.Now.Date;
             bindingSourceDLRLISTBYNUM.DataSource = Bank.DLRLISTBYNUM;
             DLRLISTBYNUMTableAdapter.Fill(Bank.DLRLISTBYNUM);
             bindingSourceDLRLISTBYNUM.AddNew();
@@ -115,7 +117,7 @@ namespace IAC2021SQL
             listBoxFieldList.ValueMember = "EXCELColumnName";
             listBoxFieldList.Refresh();
         }
-        
+
         private void buttonCancel_Click(object sender, EventArgs e)
         {
             Close();
@@ -156,260 +158,6 @@ namespace IAC2021SQL
             Thread.Sleep(5000);
             SQLBR.Dispose();
 
-            /*
-                        StreamWriter strm = new StreamWriter(sourcePath,false);
-
-                        CustomerExtractTableAdapter.FillByAll(Extensions.CustomerExtract);
-                        // Create HEADER record for AUTOBANK file
-                        CreateTabs = true;
-                        Decimal lnProg = 0;
-
-                        // Create Header
-                        // Profile Information
-                        strm.Write("CUSTOMER_FIRST_NAME" + lsTabChar);
-                        strm.Write("CUSTOMER_LAST_NAME" + lsTabChar);
-                        strm.Write("CUSTOMER_STREET_1" + lsTabChar);
-                        strm.Write("CUSTOMER_STREET_2" + lsTabChar);
-                        strm.Write("CUSTOMER_CITY"  + lsTabChar);
-                        strm.Write("CUSTOMER_STATE" + lsTabChar);
-                        strm.Write("ZipCode" + lsTabChar);
-                        strm.Write("SSN" + lsTabChar); 
-                        strm.Write("CUSTOMER_DOB" + lsTabChar);
-                        strm.Write("CUSTOMER_IAC_TYPE" + lsTabChar);
-                        // 03/22/2016 Moses Newman Remove unused INTEREST_TYPE_INDICATOR
-                        //strm.Write("INTEREST_TYPE_INDICATOR" + lsTabChar);
-                        // 03/22/2016 Moses Newman Remove unused field branch number
-                        //strm.Write("BRANCH_NUMBER" + lsTabChar);
-                        strm.Write("CUSTOMER_NO" + lsTabChar);
-                        // 03/22/2016 Moses Newman Remove unused LOAN_SEQUENCE#
-                        //strm.Write("LOAN_SEQUENCE_NUMBER" + lsTabChar);
-                        strm.Write("LEGAL_STATE_CODE" + lsTabChar);
-                        strm.Write("CUSTOMER_ORIGINAL_AMOUNT" + lsTabChar);
-                        strm.Write("CUSTOMER_REGULAR_AMOUNT" + lsTabChar);
-                        // 03/22/2016 Moses Newman Remove unused Payment_Frequency
-                        //strm.Write("PAYMENT_FREQUENCY" + lsTabChar);
-                        strm.Write("CUSTOMER_LOAN_AMOUNT" + lsTabChar);
-                        strm.Write("CUSTOMER_LOAN_CASH" + lsTabChar);
-                        strm.Write("CUSTOMER_TERM" + lsTabChar);
-                        strm.Write("CUSTOMER_FINANCE_CHARGE" + lsTabChar);
-                        strm.Write("CUSTOMER_LOAN_INTEREST" + lsTabChar);
-                        strm.Write("PaidInterest" + lsTabChar);
-                        strm.Write("CUSTOMER_UE_INTEREST" + lsTabChar);
-                        strm.Write("CUSTOMER_BALANCE" + lsTabChar);
-                        strm.Write("CUSTOMER_BUYOUT" + lsTabChar);
-                        strm.Write("CUSTOMER_LATE_CHARGE_BAL" + lsTabChar);
-                        strm.Write("CUSTOMER_ANNUAL_PERCENTAGE_RATE" + lsTabChar);
-                        strm.Write("CUSTOMER_CONTRACT_DATE" + lsTabChar);
-                        strm.Write("CUSTOMER_INIT_DATE" + lsTabChar);
-                        strm.Write("CUSTOMER_MATURITY_DATE" + lsTabChar);
-                        strm.Write("CUSTOMER_NEXT_DUE_DATE" + lsTabChar);
-                        strm.Write("CUSTOMER_LAST_PAYMENT_DATE" + lsTabChar);
-                        // Moses Newman 01/09/2018 added CUSTOMER_PAID_THRU
-                        strm.Write("CUSTOMER_PAID_THRU" + lsTabChar);
-                        // Moses Newman 01/09/2018 added CUSTOMER_NO_OF_PAYMENTS_MADE
-                        strm.Write("CUSTOMER_NO_OF_PAYMENTS_MADE" + lsTabChar);
-                        strm.Write("CUSTOMER_MONTHS_EXTENDED" + lsTabChar);
-                        // Moses Newman 01/09/2018 added CUSTOMER_CREDIT_SCORE_N
-                        strm.Write("CUSTOMER_CREDIT_SCORE_N" + lsTabChar);
-                        // Moses Newman 01/09/2018 added AnnualIncome
-                        strm.Write("AnnualIncome" + lsTabChar);
-                        // Moses Newman 01/09/2018 added Tier
-                        strm.Write("Tier" + lsTabChar);
-                        // Moses Newman 01/09/2018 added Co-Buyer Credit Score and Anual Income
-                        strm.Write("CosignerAnnualIncome" + lsTabChar);
-                        strm.Write("CosignerCreditScore" + lsTabChar);
-                        strm.Write("VEHICLE_VIN"  + lsTabChar);
-                        strm.Write("VEHICLE_YEAR" + lsTabChar);
-                        strm.Write("VEHICLE_MAKE" + lsTabChar);
-                        strm.Write("VEHICLE_MODEL" + lsTabChar);
-                        // Moses Newman 01/09/2018 added Mileage
-                        strm.Write("Mileage" + lsTabChar);
-                        strm.Write("CUSTOMER_DEALER" + lsTabChar);
-                        strm.Write("DEALER_NAME" + lsTabChar);
-                        strm.Write("DEALER_STATE" + lsTabChar);
-                        strm.Write("VEHICLE_INS_COMPANY" + lsTabChar);
-                        strm.Write("VEHICLE_POLICY_NO" + lsTabChar);
-                        strm.Write("VEHICLE_EFF_DATE" + lsTabChar);
-                        strm.Write("VEHICLE_EXP_DATE" + lsTabChar);
-                        strm.Write("CUSTOMER_REPO_IND" + lsTabChar);
-                        strm.Write("CUSTOMER_ACT_STAT" + lsTabChar);
-                        // Moses Newman 01/30/2019 Added new fields
-                        strm.Write("Tier Points" + lsTabChar);
-                        strm.Write("COS Tier Points" + lsTabChar);
-                        strm.Write("Funding Date" + lsTabChar);
-                        strm.Write("DLR Cash Price" + lsTabChar);
-                        strm.Write("Partial Payment" + lsTabChar);
-                        strm.Write("LTV" + lsTabChar);
-                        strm.Write("Control Date" + lsTabChar);
-                        strm.Write("Full Recourse" + lsTabChar);
-                        strm.Write("Gap Ins" + lsTabChar);
-                        strm.Write("Warranty" + lsTabChar);
-                        strm.WriteLine("Last Pay Code");
-                        for (Int32 i = 0; i < Extensions.CustomerExtract.Rows.Count; i++)
-                        {
-                            lnProg = ((Decimal)(i + 1) / (Decimal)Extensions.CustomerExtract.Rows.Count) * (Decimal)100;
-                            lsProgMessage = "Record: " + i.ToString().TrimStart() + " of " + Extensions.CustomerExtract.Rows.Count.ToString() + ".";
-                            worker.ReportProgress((Int32)lnProg);
-
-                            // Profile Information
-                            strm.Write(Extensions.CustomerExtract.Rows[RowCount].Field<String>("CUSTOMER_FIRST_NAME") + lsTabChar);
-                            strm.Write(Extensions.CustomerExtract.Rows[RowCount].Field<String>("CUSTOMER_LAST_NAME") + lsTabChar);
-                            strm.Write(Extensions.CustomerExtract.Rows[RowCount].Field<String>("CUSTOMER_STREET_1") +lsTabChar);
-                            strm.Write(Extensions.CustomerExtract.Rows[RowCount].Field<String>("CUSTOMER_STREET_2") + lsTabChar);
-                            strm.Write(Extensions.CustomerExtract.Rows[RowCount].Field<String>("CUSTOMER_CITY") + lsTabChar);
-                            strm.Write(Extensions.CustomerExtract.Rows[RowCount].Field<String>("CUSTOMER_STATE") + lsTabChar);
-                            strm.Write(Extensions.CustomerExtract.Rows[RowCount].Field<String>("CUSTOMER_ZIP_1").PadLeft(5,'0') + (Extensions.CustomerExtract.Rows[RowCount].Field<String>("CUSTOMER_ZIP_2") != "" ?  "-" + Extensions.CustomerExtract.Rows[RowCount].Field<String>("CUSTOMER_ZIP_2").PadLeft(4,'0') : "") + lsTabChar);
-                            strm.Write(Extensions.CustomerExtract.Rows[RowCount].Field<String>("CUSTOMER_SS_1") + Extensions.CustomerExtract.Rows[RowCount].Field<String>("CUSTOMER_SS_2") + Extensions.CustomerExtract.Rows[RowCount].Field<String>("CUSTOMER_SS_3"));
-                            strm.Write(lsTabChar);
-                            if (Extensions.CustomerExtract.Rows[RowCount].Field<Nullable<DateTime>>("CUSTOMER_DOB") != null)
-                                strm.Write(Extensions.CustomerExtract.Rows[RowCount].Field<DateTime>("CUSTOMER_DOB").ToShortDateString());
-                            else
-                                strm.Write("          ");
-                            strm.Write(lsTabChar);
-
-                            //Contract Information
-                            strm.Write(Extensions.CustomerExtract.Rows[RowCount].Field<String>("CUSTOMER_IAC_TYPE") + lsTabChar);
-                            // Moses Newman 03/26/2016 Remove Interest Type Indicator
-                            //if (Extensions.CustomerExtract.Rows[RowCount].Field<String>("CUSTOMER_IAC_TYPE") == "C")
-                              //  strm.Write("Pre-computed Interest" + lsTabChar);
-                            //else
-                              //  strm.Write("Interest Bearing" + lsTabChar);
-                            //strm.Write("   " + lsTabChar);
-                            strm.Write(Extensions.CustomerExtract.Rows[RowCount].Field<String>("CUSTOMER_NO") + lsTabChar);
-                            //strm.Write("   " + lsTabChar);
-                            strm.Write(Extensions.CustomerExtract.Rows[RowCount].Field<String>("CUSTOMER_STATE") + lsTabChar);
-                            strm.Write(Extensions.CustomerExtract.Rows[RowCount].Field<Decimal>("CUSTOMER_ORIGINAL_AMOUNT").ToString() + lsTabChar);
-                            strm.Write(Extensions.CustomerExtract.Rows[RowCount].Field<Decimal>("CUSTOMER_REGULAR_AMOUNT").ToString() + lsTabChar);
-                            // Moses Newman 03/26/2016 Removed Payment Frequency 
-                            //strm.Write("Monthly" + lsTabChar);
-                            strm.Write(Extensions.CustomerExtract.Rows[RowCount].Field<Decimal>("CUSTOMER_LOAN_AMOUNT").ToString() + lsTabChar);
-                            strm.Write(Extensions.CustomerExtract.Rows[RowCount].Field<Decimal>("CUSTOMER_LOAN_CASH").ToString() + lsTabChar);
-                            strm.Write(Extensions.CustomerExtract.Rows[RowCount].Field<Int32>("CUSTOMER_TERM").ToString() + lsTabChar);
-                            strm.Write(Extensions.CustomerExtract.Rows[RowCount].Field<Decimal>("CUSTOMER_TD_FINANCE_CHARGE").ToString() + lsTabChar);
-                            strm.Write(Extensions.CustomerExtract.Rows[RowCount].Field<Decimal>("CUSTOMER_LOAN_INTEREST").ToString() + lsTabChar);
-                            strm.Write(Extensions.CustomerExtract.Rows[RowCount].Field<Decimal>("PaidInterest").ToString() + lsTabChar);
-                            strm.Write(Extensions.CustomerExtract.Rows[RowCount].Field<Decimal>("CUSTOMER_UE_INTEREST").ToString() + lsTabChar);
-                            strm.Write(Extensions.CustomerExtract.Rows[RowCount].Field<Decimal>("CUSTOMER_BALANCE").ToString() + lsTabChar);
-                            strm.Write(Extensions.CustomerExtract.Rows[RowCount].Field<Decimal>("CUSTOMER_BUYOUT").ToString() + lsTabChar);
-                            strm.Write(Extensions.CustomerExtract.Rows[RowCount].Field<Decimal>("CUSTOMER_LATE_CHARGE_BAL").ToString() + lsTabChar);
-                            strm.Write(Extensions.CustomerExtract.Rows[RowCount].Field<Decimal>("CUSTOMER_ANNUAL_PERCENTAGE_RATE").ToString() + lsTabChar);
-                            strm.Write(Extensions.CustomerExtract.Rows[RowCount].Field<DateTime>("CUSTOMER_CONTRACT_DATE").ToShortDateString() + lsTabChar);
-                            strm.Write(Extensions.CustomerExtract.Rows[RowCount].Field<DateTime>("CUSTOMER_INIT_DATE").ToShortDateString() + lsTabChar);
-                            if (Extensions.CustomerExtract.Rows[RowCount].Field<String>("CUSTOMER_IAC_TYPE") == "C")
-                                strm.Write(Extensions.CustomerExtract.Rows[RowCount].Field<DateTime>("CUSTOMER_MATURITY_DATE").ToShortDateString() + lsTabChar);
-                            else
-                                strm.Write("          " + lsTabChar);
-                            strm.Write(Extensions.CustomerExtract.Rows[RowCount].Field<DateTime>("CUSTOMER_NEXT_DUE_DATE").ToShortDateString() + lsTabChar);
-                            if (Extensions.CustomerExtract.Rows[RowCount].Field<Nullable<DateTime>>("CUSTOMER_LAST_PAYMENT_DATE") != null)
-                                strm.Write(Extensions.CustomerExtract.Rows[RowCount].Field<DateTime>("CUSTOMER_LAST_PAYMENT_DATE").ToShortDateString() + lsTabChar);
-                            else
-                                strm.Write("          " + lsTabChar);
-                            // Moses Newman 01/09/2018 Added CUSTOMER_PAID_THRU
-                            //strm.Write(((Extensions.CustomerExtract.Rows[RowCount].Field<String>("CUSTOMER_IAC_TYPE") == "C") ? ClosedPaidThrough(Extensions.CustomerExtract.Rows[RowCount].Field<String>("CUSTOMER_NO")).ToShortDateString() : OpenPaidThrough(Extensions.CustomerExtract.Rows[RowCount].Field<String>("CUSTOMER_NO")).ToShortDateString()) + lsTabChar);
-                            // Moses Newman 06/22/2020 write normal paid thru
-                            strm.Write(Extensions.CustomerExtract.Rows[RowCount].Field<String>("CUSTOMER_PAID_THRU") + lsTabChar);
-                            // Moses Newman 01/09/2018 New Fields CUSTOMER_NO_OF_PAYMENTS_MADE
-                            // Moses Newman 01/09/2018 New Fields CUSTOMER_NO_OF_PAYMENTS_MADE
-                            strm.Write(Extensions.CustomerExtract.Rows[RowCount].Field<Int32>("CUSTOMER_NO_OF_PAYMENTS_MADE").ToString() + lsTabChar);
-                            strm.Write(Extensions.CustomerExtract.Rows[RowCount].Field<Int32>("CUSTOMER_MONTHS_EXTENDED").ToString() + lsTabChar);
-                            // Moses Newman 01/09/2018 Added CUSTOMER_CREDIT_SCORE_N
-                            strm.Write(Extensions.CustomerExtract.Rows[RowCount].Field<Int32>("CUSTOMER_CREDIT_SCORE_N").ToString() + lsTabChar);
-                            if (Extensions.CustomerExtract.Rows[RowCount].Field<String>("CUSTOMER_IAC_TYPE") == "C")
-                            {
-                                // Moses Newman 01/09/2018 Added AnnualIncome
-                                strm.Write(Extensions.CustomerExtract.Rows[RowCount].Field<Decimal>("AnnualIncome").ToString() + lsTabChar);
-                                // Moses Newman 01/09/2018 Added Tier
-                                strm.Write(Extensions.CustomerExtract.Rows[RowCount].Field<String>("CUSTOMER_CREDIT_SCORE_A").ToString() + lsTabChar);
-                                // Moses Newman 01/09/2018 added Co-Buyer Credit Score and Anual Income
-                                strm.Write(Extensions.CustomerExtract.Rows[RowCount].Field<Decimal>("CosignerAnnualIncome").ToString() + lsTabChar);
-                                strm.Write(Extensions.CustomerExtract.Rows[RowCount].Field<Decimal>("CosignerCreditScore").ToString() + lsTabChar);
-                                // Collateral Information
-                                //strm.Write(lsTabChar);
-                                strm.Write(Extensions.CustomerExtract.Rows[RowCount].Field<String>("VEHICLE_VIN").Trim() + lsTabChar);
-                                strm.Write(Extensions.CustomerExtract.Rows[RowCount].Field<Int32>("VEHICLE_YEAR").ToString() + lsTabChar);
-                                strm.Write(Extensions.CustomerExtract.Rows[RowCount].Field<String>("VEHICLE_MAKE") + lsTabChar);
-                                strm.Write(Extensions.CustomerExtract.Rows[RowCount].Field<String>("VEHICLE_MODEL") + lsTabChar);
-                                // Moses Newman 01/09/2018 added Mileage
-                                strm.Write(Extensions.CustomerExtract.Rows[RowCount].Field<Decimal>("Mileage").ToString() + lsTabChar);
-                                strm.Write(Extensions.CustomerExtract.Rows[RowCount].Field<String>("CUSTOMER_DEALER") + lsTabChar);
-                                strm.Write(Extensions.CustomerExtract.Rows[RowCount].Field<String>("DEALER_NAME") + lsTabChar);
-                                // Moses Newman 04/21/2014 Add DEALER_STATE
-                                strm.Write(Extensions.CustomerExtract.Rows[RowCount].Field<String>("DEALER_STATE") + lsTabChar);
-                                strm.Write(Extensions.CustomerExtract.Rows[RowCount].Field<String>("VEHICLE_INS_COMPANY") + lsTabChar);
-                                strm.Write(Extensions.CustomerExtract.Rows[RowCount].Field<String>("VEHICLE_POLICY_NO") + lsTabChar);
-                                strm.Write(Extensions.CustomerExtract.Rows[RowCount].Field<DateTime>("VEHICLE_EFF_DATE").ToShortDateString() + lsTabChar);
-                                strm.Write(Extensions.CustomerExtract.Rows[RowCount].Field<DateTime>("VEHICLE_EXP_DATE").ToShortDateString() + lsTabChar);
-                                // Moses Newman 03/25/2016 Add Repo Ind
-                                strm.Write(Extensions.CustomerExtract.Rows[RowCount].Field<String>("CUSTOMER_REPO_IND") + lsTabChar);
-                                strm.Write(Extensions.CustomerExtract.Rows[RowCount].Field<String>("CUSTOMER_ACT_STAT") + lsTabChar);
-                                // Moses Newman 01/29/202 Added new fields
-                                strm.Write(Extensions.CustomerExtract.Rows[RowCount].Field<Decimal>("TierPoints").ToString() + lsTabChar);
-                                strm.Write(Extensions.CustomerExtract.Rows[RowCount].Field<Decimal>("CosignerTierPoints").ToString() + lsTabChar);
-                                strm.Write(Extensions.CustomerExtract.Rows[RowCount].Field<DateTime>("FundingDate").ToShortDateString() + lsTabChar);
-                                strm.Write(Extensions.CustomerExtract.Rows[RowCount].Field<Decimal>("DealerCashPrice").ToString() + lsTabChar);
-                                strm.Write(Extensions.CustomerExtract.Rows[RowCount].Field<Decimal>("PartialPayment").ToString() + lsTabChar);
-                                strm.Write(Extensions.CustomerExtract.Rows[RowCount].Field<Decimal>("Ltv").ToString() + lsTabChar);
-                                strm.Write(Extensions.CustomerExtract.Rows[RowCount].Field<DateTime>("ControlDate").ToShortDateString() + lsTabChar);
-                                strm.Write((Extensions.CustomerExtract.Rows[RowCount].Field<Boolean>("IsFullRecourse") ? "Yes" : "No") + lsTabChar);
-                                strm.Write(Extensions.CustomerExtract.Rows[RowCount].Field<String>("GapIns").PadRight(10,' ') + lsTabChar);
-                                strm.Write((Extensions.CustomerExtract.Rows[RowCount].Field<Boolean>("Warranty") ? "Yes" : "No") + lsTabChar);
-                                strm.Write(Extensions.CustomerExtract.Rows[RowCount].Field<String>("LastPostingCode") + lsTabChar);
-                                strm.Write(Extensions.CustomerExtract.Rows[RowCount].Field<String>("CUSTOMER_PAYMENT_TYPE") + lsTabChar);
-                                strm.Write(Extensions.CustomerExtract.Rows[RowCount].Field<String>("CUSTOMER_PAYMENT_CODE") + lsTabChar);
-                                strm.Write(Extensions.CustomerExtract.Rows[RowCount].Field<DateTime?>("PaymentDate") != null ?
-                                    Extensions.CustomerExtract.Rows[RowCount].Field <DateTime> ("PaymentDate").ToShortDateString():new String(' ',10) + lsTabChar);
-                                strm.WriteLine(Extensions.CustomerExtract.Rows[RowCount].Field<String>("PREVIOUS_PAID_THRU"));
-                            }
-                            else
-                            {
-                                // Moses Newman 01/09/2018 Added AnnualIncome
-                                strm.Write(" ".PadRight(15) + lsTabChar);
-                                // Moses Newman 01/09/2018 Added Tier
-                                strm.Write(" ".PadRight(1) + lsTabChar);
-                                // Moses Newman 01/09/2018 Added CosignerAnnualIncome
-                                strm.Write(" ".PadRight(15) + lsTabChar);
-                                // Moses Newman 01/09/2018 Added CosignerCreditScore
-                                strm.Write(" ".PadRight(3) + lsTabChar);
-                                strm.Write(lsTabChar);
-                                strm.Write(" ".PadRight(25) + lsTabChar);
-                                strm.Write(" ".PadRight(4) + lsTabChar);
-                                strm.Write(" ".PadRight(15) + lsTabChar);
-                                strm.Write(" ".PadRight(15) + lsTabChar);
-                                // Moses Newman 01/09/2018 Added mileage
-                                strm.Write(" ".PadRight(6) + lsTabChar);
-                                strm.Write(Extensions.CustomerExtract.Rows[RowCount].Field<String>("CUSTOMER_DEALER") + lsTabChar);
-                                strm.Write(Extensions.CustomerExtract.Rows[RowCount].Field<String>("DEALER_NAME") + lsTabChar);
-                                // Moses Newman 04/21/2014 Add DEALER_STATE
-                                strm.Write(Extensions.CustomerExtract.Rows[RowCount].Field<String>("DEALER_STATE") + lsTabChar);
-                                strm.Write(" ".PadRight(25) + lsTabChar);
-                                strm.Write(" ".PadRight(15) + lsTabChar);
-                                strm.Write(" ".PadRight(10) + lsTabChar);
-                                strm.Write(" ".PadRight(10) + lsTabChar);
-                                // Moses Newman 03/25/2016 Add Repo Ind
-                                strm.Write(" ".PadRight(1) + lsTabChar);
-                                strm.Write(" ".PadRight(1) + lsTabChar);
-                                // Moses Newman 01/29/2020 Added new fields
-                                strm.Write(" ".PadRight(3) + lsTabChar);
-                                strm.Write(" ".PadRight(3) + lsTabChar);
-                                strm.Write(" ".PadRight(8) + lsTabChar);
-                                strm.Write(" ".PadRight(13) + lsTabChar);
-                                strm.Write(" ".PadRight(13) + lsTabChar);
-                                strm.Write(" ".PadRight(7) + lsTabChar);
-                                strm.Write(Extensions.CustomerExtract.Rows[RowCount].Field<DateTime>("ControlDate").ToShortDateString() + lsTabChar);
-                                strm.Write(" ".PadRight(3) + lsTabChar);
-                                strm.Write(" ".PadRight(5) + lsTabChar);
-                                strm.Write(" ".PadRight(3) + lsTabChar);
-                                strm.Write(Extensions.CustomerExtract.Rows[RowCount].Field<String>("LastPostingCode") + lsTabChar);
-                                strm.Write(Extensions.CustomerExtract.Rows[RowCount].Field<String>("CUSTOMER_PAYMENT_TYPE") + lsTabChar);
-                                strm.Write(Extensions.CustomerExtract.Rows[RowCount].Field<String>("CUSTOMER_PAYMENT_CODE") + lsTabChar);
-                                strm.Write((Extensions.CustomerExtract.Rows[RowCount].Field<DateTime?>("PaymentDate") != null ?
-                                            Extensions.CustomerExtract.Rows[RowCount].Field<DateTime>("PaymentDate").ToShortDateString() : new String(' ', 10)) + lsTabChar);
-                                strm.WriteLine(Extensions.CustomerExtract.Rows[RowCount].Field<String>("PREVIOUS_PAID_THRU"));
-                            }
-                        }
-                        strm.Flush();
-                        strm.Close();
-                        */
             // Moses Newman 11/14/2019 Add Excel Automation column and page formatting
             //Create an Excel application instance
             Excel.Application excelApp = new Excel.Application();
@@ -1193,7 +941,7 @@ namespace IAC2021SQL
                     }
                 }
             }
-            if(checkBoxExtensions.Checked)
+            if(radioGroupMatch.SelectedIndex == 2)
             {
                 // Moses Newman 10/27/2020 Handle Column data conversion even if not the same order because additonal fields where selected.
                 Int32 ExtColumn = 0, TotPaymentsColumn = 0, ContractStatusColumn = 0;
@@ -1222,7 +970,7 @@ namespace IAC2021SQL
                 }
                 // Moses Newman 10/27/2020 end mod
             }
-            if (checkBoxTrialBalance.Checked)  // Moses Newman 01/28/2020 handle numeric format Balance and Buyout
+            if (radioGroupMatch.SelectedIndex == 1)  // Moses Newman 01/28/2020 handle numeric format Balance and Buyout
             {
                 // Moses Newman 10/27/2020 Handle Column data conversion even if not the same order because additonal fields where selected.
                 Int32 BalanceColumn = 0, BuyoutColumn = 0;
@@ -1247,7 +995,7 @@ namespace IAC2021SQL
                 }
                 // Moses Newman 10/27/2020 end mod
             }
-            if (checkBoxMatchNBFields.Checked)
+            if (radioGroupMatch.SelectedIndex == 0)
             {
                 Excel.Range CopyRange = excelWorkSheet.get_Range("F:F");
                 Excel.Range InsertRange = excelWorkSheet.get_Range("J:J");
@@ -1438,25 +1186,29 @@ namespace IAC2021SQL
 
         private void buttonTransfer_Click(object sender, EventArgs e)
         {
+            if (txtControlDateStart.EditValue == null)
+                txtControlDateStart.EditValue = "";
+            if (txtControlDateEnd.EditValue == null)
+                txtControlDateEnd.EditValue = "";
             // Moses Newman 03/25/2020 Add Control Date
-            if(txtControlDateStart.Text.Trim() != "" && txtControlDateStart.Text.Length == 4 && txtControlDateEnd.Text.Trim() != "" && txtControlDateEnd.Text.Length == 4)
+            if (txtControlDateStart.EditValue.ToString().Trim() != "" && txtControlDateStart.EditValue.ToString().Length == 4 && txtControlDateEnd.EditValue.ToString().Trim() != "" && txtControlDateEnd.EditValue.ToString().Length == 4)
             {
                 DateTime ldCtrlDateStart, ldCtrlDateEnd;
 
-                lnControlMonthStart = Convert.ToInt32(txtControlDateStart.Text.Substring(0, 2));
-                lnControlYearStart   = Convert.ToInt32(txtControlDateStart.Text.Substring(2, 2));
-                lnControlMonthEnd = Convert.ToInt32(txtControlDateEnd.Text.Substring(0, 2));
-                lnControlYearEnd = Convert.ToInt32(txtControlDateEnd.Text.Substring(2, 2));
+                lnControlMonthStart = Convert.ToInt32(txtControlDateStart.EditValue.ToString().Substring(0, 2));
+                lnControlYearStart   = Convert.ToInt32(txtControlDateStart.EditValue.ToString().Substring(2, 2));
+                lnControlMonthEnd = Convert.ToInt32(txtControlDateEnd.EditValue.ToString().Substring(0, 2));
+                lnControlYearEnd = Convert.ToInt32(txtControlDateEnd.EditValue.ToString().Substring(2, 2));
 
                 ldCtrlDateStart = DateTime.Parse(lnControlMonthStart.ToString().PadLeft(2,'0')+"/01/"+DateTime.Now.Year.ToString().Substring(0, 2) + lnControlYearStart.ToString());
                 ldCtrlDateEnd = DateTime.Parse(lnControlMonthEnd.ToString().PadLeft(2, '0') + "/01/" + DateTime.Now.Year.ToString().Substring(0, 2) + lnControlYearEnd.ToString());
                 ldCtrlDateEnd = ldCtrlDateEnd.AddMonths(1).AddDays(-1);
-                if (!checkBoxMatchNBFields.Checked)  // Moses Newman 07/01/2020
+                if (radioGroupMatch.SelectedIndex != 0)  // Moses Newman 07/01/2020
                 {
                     ldStart = ldCtrlDateStart;
                     ldEnd = ldCtrlDateEnd;
-                    nullableDateTimePickerStartDate.Value = ldStart;
-                    nullableDateTimePickerEndDate.Value = ldEnd;
+                    nullableDateTimePickerStartDate.DateTime = ldStart;
+                    nullableDateTimePickerEndDate.DateTime = ldEnd;
                     nullableDateTimePickerStartDate.Refresh();
                     nullableDateTimePickerEndDate.Refresh();
                     lnControlMonthStart = 0;
@@ -1472,11 +1224,11 @@ namespace IAC2021SQL
                 lnControlMonthEnd = 0;
                 lnControlYearEnd = 0;
             }
-            ldStart = ((DateTime)nullableDateTimePickerStartDate.Value).Date;
-            ldEnd = ((DateTime)nullableDateTimePickerEndDate.Value).Date;
+            ldStart = nullableDateTimePickerStartDate.DateTime.Date;
+            ldEnd = nullableDateTimePickerEndDate.DateTime.Date;
             // Moses Newman 03/30/2016 add seperate paid interest date range selection.
-            ldPIStart = ((DateTime)nullableDateTimePickerPIStartDate.Value).Date;
-            ldPIEnd = ((DateTime)nullableDateTimePickerPIEndDate.Value).Date;
+            ldPIStart = nullableDateTimePickerPIStartDate.DateTime.Date;
+            ldPIEnd = nullableDateTimePickerPIEndDate.DateTime.Date;
             if (radioButtonActive.Checked)
                 lsStat = "A%";
             else
@@ -1542,7 +1294,7 @@ namespace IAC2021SQL
             }
         }
 
-        private void checkBoxMatchNBFields_CheckStateChanged(object sender, EventArgs e)
+        /*private void checkBoxMatchNBFields_CheckStateChanged(object sender, EventArgs e)
         {
             if (checkBoxMatchNBFields.Checked)
             {
@@ -1597,23 +1349,106 @@ namespace IAC2021SQL
                 listBoxSelectedFields.DataSource = SelectedFields;
                 RefreshFieldListBoxes();
             }
-        }
+        }*/
 
-        private void checkBoxMatchNBFields_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void checkBoxTrialBalance_CheckStateChanged(object sender, EventArgs e)
+        /*private void checkBoxTrialBalance_CheckStateChanged(object sender, EventArgs e)
         {
             if (checkBoxExtensions.Checked)
                 checkBoxExtensions.Checked = false;
             if(checkBoxMatchNBFields.Checked)
                 checkBoxMatchNBFields.Checked = false;
+        }*/
 
+        private void radioGroupMatch_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (radioGroupMatch.SelectedIndex)
+            {
+                case 0:
+                        ClearPreviousSelection();
+                        FullFieldList.Clear();
+                        for (int i = 0; i < FieldListData.ExtractFieldList.Rows.Count; i++)
+                        {
+                            ExField.FldName = FieldListData.ExtractFieldList.Rows[i].Field<String>("FieldName");
+                            ExField.EXCELColumnName = FieldListData.ExtractFieldList.Rows[i].Field<String>("EXCELColumnName");
+                            ExField.NBField = FieldListData.ExtractFieldList.Rows[i].Field<Boolean>("NewBusinessField");
+                            ExField.NBOrder = FieldListData.ExtractFieldList.Rows[i].Field<Int32>("NBOrder");
+                            ExField.ExtField = FieldListData.ExtractFieldList.Rows[i].Field<Boolean>("ExtensionField");
+                            ExField.ExtOrder = FieldListData.ExtractFieldList.Rows[i].Field<Int32>("ExtOrder");
+                            ExField.FldNumber = i + 1;
+                            FullFieldList.Add(ExField);
+                        }
+                        SelectedFields.Clear();
+                        foreach (Fld Selection in FullFieldList.ToList())
+                        {
+                            if (Selection.NBField)
+                            {
+                                SelectedFields.Add(Selection);
+                                FullFieldList.Remove(Selection);
+                            }
+                        }
+                        RefreshFieldListBoxes();
+                        break;
+                case 1:
+                        ClearPreviousSelection();
+                        break;
+                case 2:
+                        ClearPreviousSelection();
+                        FullFieldList.Clear();
+                        for (int i = 0; i < FieldListData.ExtractFieldList.Rows.Count; i++)
+                        {
+                            ExField.FldName = FieldListData.ExtractFieldList.Rows[i].Field<String>("FieldName");
+                            ExField.EXCELColumnName = FieldListData.ExtractFieldList.Rows[i].Field<String>("EXCELColumnName");
+                            ExField.NBField = FieldListData.ExtractFieldList.Rows[i].Field<Boolean>("NewBusinessField");
+                            ExField.NBOrder = FieldListData.ExtractFieldList.Rows[i].Field<Int32>("NBOrder");
+                            ExField.ExtField = FieldListData.ExtractFieldList.Rows[i].Field<Boolean>("ExtensionField");
+                            ExField.ExtOrder = FieldListData.ExtractFieldList.Rows[i].Field<Int32>("ExtOrder");
+                            ExField.FldNumber = i + 1;
+                            FullFieldList.Add(ExField);
+                        }
+                        SelectedFields.Clear();
+                        foreach (Fld Selection in FullFieldList.ToList())
+                        {
+                            if (Selection.ExtField)
+                            {
+                                SelectedFields.Add(Selection);
+                                FullFieldList.Remove(Selection);
+                            }
+                        }
+                        RefreshFieldListBoxes();
+                        break;
+            }
         }
 
-        private void checkBoxExtensions_CheckStateChanged(object sender, EventArgs e)
+        private void ClearPreviousSelection()
+        {
+            FullFieldList.Clear();
+            if (FullFieldList.Count != FieldListData.ExtractFieldList.Rows.Count)
+            {
+                for (int i = 0; i < FieldListData.ExtractFieldList.Rows.Count; i++)
+                {
+                    ExField.FldName = FieldListData.ExtractFieldList.Rows[i].Field<String>("FieldName");
+                    ExField.EXCELColumnName = FieldListData.ExtractFieldList.Rows[i].Field<String>("EXCELColumnName");
+                    ExField.NBField = FieldListData.ExtractFieldList.Rows[i].Field<Boolean>("NewBusinessField");
+                    ExField.NBOrder = FieldListData.ExtractFieldList.Rows[i].Field<Int32>("NBOrder");
+                    ExField.ExtField = FieldListData.ExtractFieldList.Rows[i].Field<Boolean>("ExtensionField");
+                    ExField.ExtOrder = FieldListData.ExtractFieldList.Rows[i].Field<Int32>("ExtOrder");
+                    ExField.FldNumber = i + 1;
+                    FullFieldList.Add(ExField);
+                }
+            }
+            SelectedFields.Clear();
+            listBoxFieldList.DataSource = FullFieldList;
+            listBoxSelectedFields.DataSource = SelectedFields;
+            RefreshFieldListBoxes();
+        }
+
+        private void simpleButtonClearRadioButtons_Click(object sender, EventArgs e)
+        {
+            radioGroupMatch.SelectedIndex = -1;
+            ClearPreviousSelection();
+        }
+
+        /*private void checkBoxExtensions_CheckStateChanged(object sender, EventArgs e)
         {
             if (checkBoxExtensions.Checked)
             {
@@ -1668,7 +1503,7 @@ namespace IAC2021SQL
                 listBoxSelectedFields.DataSource = SelectedFields;
                 RefreshFieldListBoxes();
             }
-        }
+        }*/
 
         private void buttonMoveAllFieldsRight_Click(object sender, EventArgs e)
         {
@@ -1758,22 +1593,22 @@ namespace IAC2021SQL
             // Moses Newman 01/17/2020 Add checkBoxTrialBalance to match Trial Balance.
             // Moses Newman 03/25/2020 Add ControlDate
             // Moses Newman 06/26/2020 add New Extension functionality.
-            if (!checkBoxExtensions.Checked)
+            if (radioGroupMatch.SelectedIndex != 2)
                 CUSTOMERTableAdapter.FillBySelection(Bank.CUSTOMER,
                                             lsStat, ldStart, ldEnd, lsDealer, lsDealerState, lsRepo,
-                                            checkBoxTrialBalance.Checked, checkBoxFundingDate.Checked,
+                                            radioGroupMatch.SelectedIndex == 1, checkBoxFundingDate.Checked,
                                             lnControlMonthStart, lnControlYearStart, lnControlMonthEnd, lnControlYearEnd);
             else
                 CUSTOMERTableAdapter.FillByExtensions(Bank.CUSTOMER, lsStat, ldStart, ldEnd, lsDealer, lsDealerState, lsRepo,
-                                                      checkBoxTrialBalance.Checked, checkBoxFundingDate.Checked,
+                                                      radioGroupMatch.SelectedIndex == 1, checkBoxFundingDate.Checked,
                                                       lnControlMonthStart, lnControlYearStart, lnControlMonthEnd, lnControlYearEnd);
             // Moses Newman 06/26/2020 add New Extension functionality.
-            if (!checkBoxExtensions.Checked)
-                OPNCUSTTableAdapter.FillBySelection(Bank.OPNCUST, lsStat, ldStart, ldEnd, lsDealer, lsDealerState, checkBoxTrialBalance.Checked,
+            if (radioGroupMatch.SelectedIndex != 2)
+                OPNCUSTTableAdapter.FillBySelection(Bank.OPNCUST, lsStat, ldStart, ldEnd, lsDealer, lsDealerState, radioGroupMatch.SelectedIndex == 1 ? true:false,
                                                 lnControlMonthStart, lnControlYearStart, lnControlMonthEnd, lnControlYearEnd);
             else
                 OPNCUSTTableAdapter.FillByExtensions(Bank.OPNCUST, lsStat, ldStart, ldEnd, lsDealer, lsDealerState,
-                                                      checkBoxTrialBalance.Checked, checkBoxFundingDate.Checked,
+                                                      radioGroupMatch.SelectedIndex == 1, checkBoxFundingDate.Checked,
                                                       lnControlMonthStart, lnControlYearStart, lnControlMonthEnd, lnControlYearEnd);
 
             if (Bank.CUSTOMER.Rows.Count < 1 && Bank.OPNCUST.Rows.Count < 1)
@@ -1830,8 +1665,8 @@ namespace IAC2021SQL
                 Extensions.CustomerExtract.Rows[RowCount].SetField<Decimal>("CUSTOMER_LOAN_INTEREST", Bank.CUSTOMER.Rows[i].Field<Decimal>("CUSTOMER_LOAN_INTEREST"));
                 // 03/25/2016 Moses Newman Get buyout as of buyout date entered
                 // 01/28/2021 Moses Newman if match trial balance selected DO NOT AMORT!
-                Extensions.CustomerExtract.Rows[RowCount].SetField<Decimal>("CUSTOMER_BALANCE", !checkBoxTrialBalance.Checked ? Program.TVSimpleGetBuyout(Bank,
-                    (DateTime)nullableDateTimePickerBuyoutDate.Value,
+                Extensions.CustomerExtract.Rows[RowCount].SetField<Decimal>("CUSTOMER_BALANCE", radioGroupMatch.SelectedIndex != 1 ? Program.TVSimpleGetBuyout(Bank,
+                    nullableDateTimePickerBuyoutDate.DateTime,
                     (Double)Bank.CUSTOMER.Rows[i].Field<Int32>("CUSTOMER_TERM"),
                     (Double)(Bank.CUSTOMER.Rows[i].Field<Decimal>("CUSTOMER_ANNUAL_PERCENTAGE_RATE") / 100),
                     (Double)Bank.CUSTOMER.Rows[i].Field<Decimal>("CUSTOMER_REGULAR_AMOUNT"),
@@ -1991,7 +1826,7 @@ namespace IAC2021SQL
                         Bank.CUSTOMER.Rows[i].Field<String>("CUSTOMER_PAYMENT_TYPE") + Bank.CUSTOMER.Rows[i].Field<String>("CUSTOMER_PAYMENT_CODE"));
                 else
                     Extensions.CustomerExtract.Rows[RowCount].SetField<String>("LastPostingCode", "");
-                if (checkBoxExtensions.Checked)
+                if (radioGroupMatch.SelectedIndex == 2)
                 {
                     ExtensionsTableAdapter.FillByCustomerNo(Extensions.Extensions, Bank.CUSTOMER.Rows[i].Field<String>("CUSTOMER_NO"), ldStart, ldEnd, lnControlMonthStart, lnControlYearStart, lnControlMonthStart, lnControlMonthEnd);
                     if (Extensions.Extensions.Rows.Count > 0)
@@ -2140,7 +1975,7 @@ namespace IAC2021SQL
                         Bank.OPNCUST.Rows[i].Field<String>("CUSTOMER_PAY_TYPE") + Bank.OPNCUST.Rows[i].Field<String>("CUSTOMER_PAY_CODE"));
                 else
                     Extensions.CustomerExtract.Rows[RowCount].SetField<String>("LastPostingCode", "");
-                if (checkBoxExtensions.Checked)
+                if (radioGroupMatch.SelectedIndex == 2)
                 {
                     OpenExtensionsTableAdapter.FillByCustomerNo(Extensions.OpenExtensions, Bank.OPNCUST.Rows[i].Field<String>("CUSTOMER_NO"), ldStart, ldEnd, lnControlMonthStart, lnControlYearStart, lnControlMonthStart, lnControlMonthEnd);
                     if (Extensions.OpenExtensions.Rows.Count > 0)

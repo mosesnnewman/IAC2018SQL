@@ -342,6 +342,11 @@ namespace IAC2021SQL
             dateEditIssueDate2.Enabled = false;
             textEditIssueName3.Enabled = false;
             dateEditIssueDate3.Enabled = false;
+            // Moses Newman 02/11/2022
+            checkEditHasCollision.Enabled = false;
+            checkEditHasComprehensive.Enabled = false;
+            textEditCollisionDeductible.Enabled = false;
+            textEditComprehensiveDeductible.Enabled = false;
 
             // Moses Newman 12/18/2013 Add new fields to Vehicle tab and move Credit score, Repo, and Misc fields to Vehicle Tab.
             textBoxMileage.Enabled = false;
@@ -704,6 +709,11 @@ namespace IAC2021SQL
             dateEditIssueDate2.Enabled = true;
             textEditIssueName3.Enabled = true;
             dateEditIssueDate3.Enabled = true;
+            // Moses Newman 02/11/2022
+            checkEditHasCollision.Enabled = true;
+            checkEditHasComprehensive.Enabled = true;
+            textEditCollisionDeductible.Enabled = true;
+            textEditComprehensiveDeductible.Enabled = true;
 
             // Moses Newman 01/29/2017
             textBoxBuyersAnnualIncome.Enabled = true;
@@ -1633,6 +1643,12 @@ namespace IAC2021SQL
                     dateEditIssueDate2.Enabled = true;
                     textEditIssueName3.Enabled = true;
                     dateEditIssueDate3.Enabled = true;
+                    // Moses Newman 02/11/2022
+                    checkEditHasCollision.Enabled = true;
+                    checkEditHasComprehensive.Enabled = true;
+                    textEditCollisionDeductible.Enabled = true;
+                    textEditComprehensiveDeductible.Enabled = true;
+
 
                     // Moses Newman 12/18/2013 Add new fields to Vehicle tab and move Credit score, Repo, and Misc fields to Vehicle Tab.
                     textBoxMileage.Enabled = true;
@@ -5441,6 +5457,18 @@ namespace IAC2021SQL
                     break;
             }
             e.Handled = true;
+        }
+
+        private void checkEditHasCollision_CheckedChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void checkEditHasComprehensive_CheckedChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
         }
 
         private void checkEditMilitary_CheckedChanged(object sender, EventArgs e)
