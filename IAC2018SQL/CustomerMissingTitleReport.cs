@@ -8,10 +8,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevExpress.XtraReports.UI;
 
 namespace IAC2021SQL
 {
-    public partial class CustomerMissingTitleReport: Form
+    public partial class CustomerMissingTitleReport : DevExpress.XtraEditors.XtraForm
     {
         public CustomerMissingTitleReport()
         {
@@ -21,8 +22,10 @@ namespace IAC2021SQL
         // Moses Newman 02/02/2014 Add Date, Dealer, and Status selection criteria
         private void CustomerMissingTitleReport_Load(object sender, EventArgs e)
         {
-            nullableDateTimePickerStartDate.Value = DateTime.Parse("01/01/1980").Date;
-            nullableDateTimePickerEndDate.Value = DateTime.Now.Date;
+            // TODO: This line of code loads data into the 'iACDataSet.state' table. You can move, or remove it, as needed.
+            this.stateTableAdapter.Fill(this.iACDataSet.state);
+            nullableDateTimePickerStartDate.EditValue = DateTime.Parse("01/01/1980").Date;
+            nullableDateTimePickerEndDate.EditValue = DateTime.Now.Date;
             dlrlistbynumTableAdapter.Fill(iACDataSet.DLRLISTBYNUM);
             bindingSourceDLRLISTBYNUM.AddNew();
             bindingSourceDLRLISTBYNUM.EndEdit();
@@ -35,10 +38,10 @@ namespace IAC2021SQL
         {
             // Moses Newman 02/02/2014 Add Date, Dealer, and Status selection criteria
             String lsDealer = comboBoxDealer.Text.TrimEnd() + "%", lsStatus = "%";
+            // Moses Newman 03/03/2022 Add Dealer State
+            String lsDealerState = lookUpEditState.EditValue.ToString().Trim() + "%";
             Hide();
             MDIIAC2013 MDImain = (MDIIAC2013)MdiParent;
-            MDImain.CreateFormInstance("ReportViewer", false);
-            ReportViewer rptViewer = (ReportViewer)MDImain.ActiveMdiChild;
 
             IACDataSet VehicleDataSet = new IACDataSet();
             IACDataSetTableAdapters.DataPathTableAdapter DataPathTableAdapter = new IACDataSetTableAdapters.DataPathTableAdapter();
@@ -51,33 +54,41 @@ namespace IAC2021SQL
                 if (radioButtonInactive.Checked)
                     lsStatus = "I" + lsStatus;
             // Moses Newman 02/02/2014 Add Date, Dealer, and Status selection criteria
-            VehicleMissingTitleTableAdapter.Fill(VehicleDataSet.VehicleMissingTitle, lsDealer, lsStatus,(DateTime)nullableDateTimePickerStartDate.Value,(DateTime)nullableDateTimePickerEndDate.Value);
+            VehicleMissingTitleTableAdapter.Fill(VehicleDataSet.VehicleMissingTitle, lsDealer, lsDealerState,lsStatus,(DateTime)nullableDateTimePickerStartDate.EditValue,(DateTime)nullableDateTimePickerEndDate.EditValue);
             if (VehicleDataSet.VehicleMissingTitle.Rows.Count == 0)
                 MessageBox.Show("*** Sorry there are no Vehicle Missing Title records for ACTIVE CUSTOMERS ***");
             else
             {
-                VehicleMissingTitleReport myReportObject = new VehicleMissingTitleReport();
-                myReportObject.SetDataSource(VehicleDataSet);
-                myReportObject.SetParameterValue("gsUserID", Program.gsUserID);
-                myReportObject.SetParameterValue("gsUserName", Program.gsUserName);
-                // Moses Newman 02/05/2014 Add Selection Criteria to Report Heading
-                myReportObject.SetParameterValue("gdStartDate", (DateTime)nullableDateTimePickerStartDate.Value);
-                myReportObject.SetParameterValue("gdEndDate", (DateTime)nullableDateTimePickerEndDate.Value);
+                // Moses Newman 03/03/2022 Covert to XtraReport
+                var report = new XtraReportVehicleMissingTitle();
+                report.DataSource = VehicleDataSet;
+                report.DataMember = "VehicleMissingTitle";
+                report.RequestParameters = false;
+                report.Parameters["gsUserID"].Value = Program.gsUserID;
+                report.Parameters["gsUserName"].Value = Program.gsUserName;
+                report.Parameters["gdStartDate"].Value = (DateTime)nullableDateTimePickerStartDate.EditValue;
+                report.Parameters["gdEndDate"].Value = (DateTime)nullableDateTimePickerEndDate.EditValue;
+
                 switch (lsStatus)
                 {
                     case "A%":
-                        myReportObject.SetParameterValue("gsStatus", "Active");
+                        report.Parameters["gsStatus"].Value = "Active";
                         break;
                     case "I%":
-                        myReportObject.SetParameterValue("gsStatus", "Inactive");
+                        report.Parameters["gsStatus"].Value = "Inactive";
                         break;
                     default:
-                        myReportObject.SetParameterValue("gsStatus", "Both");
+                        report.Parameters["gsStatus"].Value = "Both";
                         break;
                 }
-                rptViewer.crystalReportViewer.ReportSource = myReportObject;
-                rptViewer.crystalReportViewer.Refresh();
-                rptViewer.Show();
+                
+                
+                var tool = new ReportPrintTool(report);
+
+                tool.PreviewRibbonForm.MdiParent = MDImain;
+                tool.AutoShowParametersPanel = false;
+                tool.PreviewRibbonForm.WindowState = FormWindowState.Maximized;
+                tool.ShowRibbonPreview();
             }
             Close();
         }

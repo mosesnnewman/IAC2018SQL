@@ -29,63 +29,75 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.buttonPost = new System.Windows.Forms.Button();
-            this.buttonCancel = new System.Windows.Forms.Button();
-            this.labelStartDate = new System.Windows.Forms.Label();
+            this.buttonPost = new DevExpress.XtraEditors.SimpleButton();
+            this.buttonCancel = new DevExpress.XtraEditors.SimpleButton();
+            this.labelStartDate = new DevExpress.XtraEditors.LabelControl();
             this.iACDataSet = new IAC2021SQL.IACDataSet();
-            this.labelEndDate = new System.Windows.Forms.Label();
-            this.nullableDateTimePickerStartDate = new ProManApp.NullableDateTimePicker();
-            this.nullableDateTimePickerEndDate = new ProManApp.NullableDateTimePicker();
+            this.labelEndDate = new DevExpress.XtraEditors.LabelControl();
+            this.nullableDateTimePickerStartDate = new DevExpress.XtraEditors.DateEdit();
+            this.nullableDateTimePickerEndDate = new DevExpress.XtraEditors.DateEdit();
             this.textBoxDealerName = new System.Windows.Forms.TextBox();
             this.bindingSourceDLRLISTBYNUM = new System.Windows.Forms.BindingSource(this.components);
             this.comboBoxDealer = new System.Windows.Forms.ComboBox();
-            this.labelDealerNum = new System.Windows.Forms.Label();
+            this.labelDealerNum = new DevExpress.XtraEditors.LabelControl();
             this.dlrlistbynumTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.DLRLISTBYNUMTableAdapter();
             this.closedCustomerBuybackTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.ClosedCustomerBuybackTableAdapter();
             this.radioButtonActive = new System.Windows.Forms.RadioButton();
             this.radioButtonInactive = new System.Windows.Forms.RadioButton();
             this.radioButtonBoth = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupControlMissingTitle = new DevExpress.XtraEditors.GroupControl();
+            this.lookUpEditState = new DevExpress.XtraEditors.LookUpEdit();
+            this.stateBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.labelControlState = new DevExpress.XtraEditors.LabelControl();
+            this.stateTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.stateTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.iACDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerStartDate.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerStartDate.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerEndDate.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerEndDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceDLRLISTBYNUM)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControlMissingTitle)).BeginInit();
+            this.groupControlMissingTitle.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEditState.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stateBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonPost
             // 
-            this.buttonPost.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonPost.Location = new System.Drawing.Point(182, 256);
+            this.buttonPost.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonPost.Appearance.Options.UseFont = true;
+            this.buttonPost.Location = new System.Drawing.Point(181, 255);
             this.buttonPost.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonPost.Name = "buttonPost";
             this.buttonPost.Size = new System.Drawing.Size(112, 35);
-            this.buttonPost.TabIndex = 5;
+            this.buttonPost.TabIndex = 8;
             this.buttonPost.Text = "&Print";
-            this.buttonPost.UseVisualStyleBackColor = true;
             this.buttonPost.Click += new System.EventHandler(this.buttonPrint_Click);
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCancel.Location = new System.Drawing.Point(303, 256);
+            this.buttonCancel.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCancel.Appearance.Options.UseFont = true;
+            this.buttonCancel.Location = new System.Drawing.Point(302, 255);
             this.buttonCancel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(112, 35);
-            this.buttonCancel.TabIndex = 6;
+            this.buttonCancel.TabIndex = 9;
             this.buttonCancel.Text = "&Cancel";
-            this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // labelStartDate
             // 
-            this.labelStartDate.AutoSize = true;
-            this.labelStartDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelStartDate.Location = new System.Drawing.Point(48, 35);
+            this.labelStartDate.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelStartDate.Appearance.Options.UseFont = true;
+            this.labelStartDate.Location = new System.Drawing.Point(56, 12);
             this.labelStartDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelStartDate.Name = "labelStartDate";
-            this.labelStartDate.Size = new System.Drawing.Size(98, 20);
+            this.labelStartDate.Size = new System.Drawing.Size(89, 20);
             this.labelStartDate.TabIndex = 5;
             this.labelStartDate.Text = "Start Date:";
-            this.labelStartDate.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // iACDataSet
             // 
@@ -94,44 +106,51 @@
             // 
             // labelEndDate
             // 
-            this.labelEndDate.AutoSize = true;
-            this.labelEndDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelEndDate.Location = new System.Drawing.Point(53, 69);
+            this.labelEndDate.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEndDate.Appearance.Options.UseFont = true;
+            this.labelEndDate.Location = new System.Drawing.Point(64, 46);
             this.labelEndDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelEndDate.Name = "labelEndDate";
-            this.labelEndDate.Size = new System.Drawing.Size(90, 20);
+            this.labelEndDate.Size = new System.Drawing.Size(81, 20);
             this.labelEndDate.TabIndex = 8;
             this.labelEndDate.Text = "End Date:";
-            this.labelEndDate.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // nullableDateTimePickerStartDate
             // 
-            this.nullableDateTimePickerStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.nullableDateTimePickerStartDate.Location = new System.Drawing.Point(151, 29);
+            this.nullableDateTimePickerStartDate.EditValue = new System.DateTime(2022, 3, 3, 0, 0, 0, 0);
+            this.nullableDateTimePickerStartDate.EnterMoveNextControl = true;
+            this.nullableDateTimePickerStartDate.Location = new System.Drawing.Point(150, 12);
             this.nullableDateTimePickerStartDate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nullableDateTimePickerStartDate.Name = "nullableDateTimePickerStartDate";
-            this.nullableDateTimePickerStartDate.Size = new System.Drawing.Size(140, 26);
-            this.nullableDateTimePickerStartDate.TabIndex = 9;
-            this.nullableDateTimePickerStartDate.Value = new System.DateTime(2014, 2, 3, 0, 0, 0, 0);
+            this.nullableDateTimePickerStartDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.nullableDateTimePickerStartDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.nullableDateTimePickerStartDate.Size = new System.Drawing.Size(86, 20);
+            this.nullableDateTimePickerStartDate.TabIndex = 1;
             // 
             // nullableDateTimePickerEndDate
             // 
-            this.nullableDateTimePickerEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.nullableDateTimePickerEndDate.Location = new System.Drawing.Point(151, 63);
+            this.nullableDateTimePickerEndDate.EditValue = new System.DateTime(2022, 3, 3, 0, 0, 0, 0);
+            this.nullableDateTimePickerEndDate.EnterMoveNextControl = true;
+            this.nullableDateTimePickerEndDate.Location = new System.Drawing.Point(150, 46);
             this.nullableDateTimePickerEndDate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nullableDateTimePickerEndDate.Name = "nullableDateTimePickerEndDate";
-            this.nullableDateTimePickerEndDate.Size = new System.Drawing.Size(140, 26);
-            this.nullableDateTimePickerEndDate.TabIndex = 10;
-            this.nullableDateTimePickerEndDate.Value = new System.DateTime(2014, 2, 3, 0, 0, 0, 0);
+            this.nullableDateTimePickerEndDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.nullableDateTimePickerEndDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.nullableDateTimePickerEndDate.Size = new System.Drawing.Size(86, 20);
+            this.nullableDateTimePickerEndDate.TabIndex = 2;
             // 
             // textBoxDealerName
             // 
             this.textBoxDealerName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceDLRLISTBYNUM, "DEALER_NAME", true));
-            this.textBoxDealerName.Location = new System.Drawing.Point(251, 103);
+            this.textBoxDealerName.Location = new System.Drawing.Point(250, 79);
             this.textBoxDealerName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.textBoxDealerName.Name = "textBoxDealerName";
             this.textBoxDealerName.ReadOnly = true;
-            this.textBoxDealerName.Size = new System.Drawing.Size(328, 26);
+            this.textBoxDealerName.Size = new System.Drawing.Size(328, 22);
             this.textBoxDealerName.TabIndex = 15;
             // 
             // bindingSourceDLRLISTBYNUM
@@ -144,24 +163,23 @@
             this.comboBoxDealer.DataSource = this.bindingSourceDLRLISTBYNUM;
             this.comboBoxDealer.DisplayMember = "DEALER_ACC_NO";
             this.comboBoxDealer.FormattingEnabled = true;
-            this.comboBoxDealer.Location = new System.Drawing.Point(151, 101);
+            this.comboBoxDealer.Location = new System.Drawing.Point(150, 80);
             this.comboBoxDealer.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comboBoxDealer.Name = "comboBoxDealer";
-            this.comboBoxDealer.Size = new System.Drawing.Size(86, 28);
-            this.comboBoxDealer.TabIndex = 14;
+            this.comboBoxDealer.Size = new System.Drawing.Size(86, 21);
+            this.comboBoxDealer.TabIndex = 3;
             this.comboBoxDealer.ValueMember = "DEALER_ACC_NO";
             // 
             // labelDealerNum
             // 
-            this.labelDealerNum.AutoSize = true;
-            this.labelDealerNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelDealerNum.Location = new System.Drawing.Point(73, 109);
+            this.labelDealerNum.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDealerNum.Appearance.Options.UseFont = true;
+            this.labelDealerNum.Location = new System.Drawing.Point(87, 81);
             this.labelDealerNum.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelDealerNum.Name = "labelDealerNum";
-            this.labelDealerNum.Size = new System.Drawing.Size(67, 20);
+            this.labelDealerNum.Size = new System.Drawing.Size(58, 20);
             this.labelDealerNum.TabIndex = 13;
             this.labelDealerNum.Text = "Dealer:";
-            this.labelDealerNum.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // dlrlistbynumTableAdapter
             // 
@@ -179,7 +197,7 @@
             this.radioButtonActive.Location = new System.Drawing.Point(43, 11);
             this.radioButtonActive.Name = "radioButtonActive";
             this.radioButtonActive.Size = new System.Drawing.Size(76, 24);
-            this.radioButtonActive.TabIndex = 16;
+            this.radioButtonActive.TabIndex = 5;
             this.radioButtonActive.TabStop = true;
             this.radioButtonActive.Text = "&Active";
             this.radioButtonActive.UseVisualStyleBackColor = true;
@@ -191,7 +209,7 @@
             this.radioButtonInactive.Location = new System.Drawing.Point(43, 39);
             this.radioButtonInactive.Name = "radioButtonInactive";
             this.radioButtonInactive.Size = new System.Drawing.Size(90, 24);
-            this.radioButtonInactive.TabIndex = 17;
+            this.radioButtonInactive.TabIndex = 6;
             this.radioButtonInactive.Text = "&Inactive";
             this.radioButtonInactive.UseVisualStyleBackColor = true;
             // 
@@ -202,7 +220,7 @@
             this.radioButtonBoth.Location = new System.Drawing.Point(43, 67);
             this.radioButtonBoth.Name = "radioButtonBoth";
             this.radioButtonBoth.Size = new System.Drawing.Size(65, 24);
-            this.radioButtonBoth.TabIndex = 18;
+            this.radioButtonBoth.TabIndex = 7;
             this.radioButtonBoth.Text = "&Both";
             this.radioButtonBoth.UseVisualStyleBackColor = true;
             // 
@@ -211,54 +229,110 @@
             this.groupBox1.Controls.Add(this.radioButtonBoth);
             this.groupBox1.Controls.Add(this.radioButtonInactive);
             this.groupBox1.Controls.Add(this.radioButtonActive);
-            this.groupBox1.Location = new System.Drawing.Point(214, 141);
+            this.groupBox1.Location = new System.Drawing.Point(213, 140);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(169, 102);
             this.groupBox1.TabIndex = 19;
             this.groupBox1.TabStop = false;
             // 
+            // groupControlMissingTitle
+            // 
+            this.groupControlMissingTitle.Appearance.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.groupControlMissingTitle.Appearance.Options.UseBackColor = true;
+            this.groupControlMissingTitle.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.groupControlMissingTitle.Controls.Add(this.lookUpEditState);
+            this.groupControlMissingTitle.Controls.Add(this.labelControlState);
+            this.groupControlMissingTitle.Controls.Add(this.groupBox1);
+            this.groupControlMissingTitle.Controls.Add(this.textBoxDealerName);
+            this.groupControlMissingTitle.Controls.Add(this.comboBoxDealer);
+            this.groupControlMissingTitle.Controls.Add(this.labelDealerNum);
+            this.groupControlMissingTitle.Controls.Add(this.nullableDateTimePickerEndDate);
+            this.groupControlMissingTitle.Controls.Add(this.nullableDateTimePickerStartDate);
+            this.groupControlMissingTitle.Controls.Add(this.labelEndDate);
+            this.groupControlMissingTitle.Controls.Add(this.labelStartDate);
+            this.groupControlMissingTitle.Controls.Add(this.buttonCancel);
+            this.groupControlMissingTitle.Controls.Add(this.buttonPost);
+            this.groupControlMissingTitle.Location = new System.Drawing.Point(1, -1);
+            this.groupControlMissingTitle.Name = "groupControlMissingTitle";
+            this.groupControlMissingTitle.Size = new System.Drawing.Size(627, 322);
+            this.groupControlMissingTitle.TabIndex = 20;
+            this.groupControlMissingTitle.Text = "groupControl1";
+            // 
+            // lookUpEditState
+            // 
+            this.lookUpEditState.EditValue = "";
+            this.lookUpEditState.EnterMoveNextControl = true;
+            this.lookUpEditState.Location = new System.Drawing.Point(150, 115);
+            this.lookUpEditState.Name = "lookUpEditState";
+            this.lookUpEditState.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lookUpEditState.Properties.DataSource = this.stateBindingSource;
+            this.lookUpEditState.Properties.DisplayMember = "name";
+            this.lookUpEditState.Properties.ValueMember = "abbreviation";
+            this.lookUpEditState.Size = new System.Drawing.Size(107, 20);
+            this.lookUpEditState.TabIndex = 4;
+            // 
+            // stateBindingSource
+            // 
+            this.stateBindingSource.DataMember = "state";
+            this.stateBindingSource.DataSource = this.iACDataSet;
+            // 
+            // labelControlState
+            // 
+            this.labelControlState.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControlState.Appearance.Options.UseFont = true;
+            this.labelControlState.Appearance.Options.UseTextOptions = true;
+            this.labelControlState.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.labelControlState.Location = new System.Drawing.Point(96, 115);
+            this.labelControlState.Name = "labelControlState";
+            this.labelControlState.Size = new System.Drawing.Size(49, 20);
+            this.labelControlState.TabIndex = 20;
+            this.labelControlState.Text = "State:";
+            // 
+            // stateTableAdapter
+            // 
+            this.stateTableAdapter.ClearBeforeFill = true;
+            // 
             // CustomerMissingTitleReport
             // 
+            this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(627, 320);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.textBoxDealerName);
-            this.Controls.Add(this.comboBoxDealer);
-            this.Controls.Add(this.labelDealerNum);
-            this.Controls.Add(this.nullableDateTimePickerEndDate);
-            this.Controls.Add(this.nullableDateTimePickerStartDate);
-            this.Controls.Add(this.labelEndDate);
-            this.Controls.Add(this.labelStartDate);
-            this.Controls.Add(this.buttonCancel);
-            this.Controls.Add(this.buttonPost);
+            this.Controls.Add(this.groupControlMissingTitle);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "CustomerMissingTitleReport";
             this.Text = "Print CustomerMissing Title Report";
             this.Load += new System.EventHandler(this.CustomerMissingTitleReport_Load);
             ((System.ComponentModel.ISupportInitialize)(this.iACDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerStartDate.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerStartDate.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerEndDate.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerEndDate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceDLRLISTBYNUM)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControlMissingTitle)).EndInit();
+            this.groupControlMissingTitle.ResumeLayout(false);
+            this.groupControlMissingTitle.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEditState.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stateBindingSource)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button buttonPost;
-        private System.Windows.Forms.Button buttonCancel;
-        private System.Windows.Forms.Label labelStartDate;
+        private DevExpress.XtraEditors.SimpleButton buttonPost;
+        private DevExpress.XtraEditors.SimpleButton buttonCancel;
+        private DevExpress.XtraEditors.LabelControl labelStartDate;
         private IACDataSet iACDataSet;
-        private System.Windows.Forms.Label labelEndDate;
-        private ProManApp.NullableDateTimePicker nullableDateTimePickerStartDate;
-        private ProManApp.NullableDateTimePicker nullableDateTimePickerEndDate;
+        private DevExpress.XtraEditors.LabelControl labelEndDate;
+        private DevExpress.XtraEditors.DateEdit nullableDateTimePickerStartDate;
+        private DevExpress.XtraEditors.DateEdit nullableDateTimePickerEndDate;
         private System.Windows.Forms.TextBox textBoxDealerName;
         private System.Windows.Forms.ComboBox comboBoxDealer;
-        private System.Windows.Forms.Label labelDealerNum;
+        private DevExpress.XtraEditors.LabelControl labelDealerNum;
         private System.Windows.Forms.BindingSource bindingSourceDLRLISTBYNUM;
         private IACDataSetTableAdapters.DLRLISTBYNUMTableAdapter dlrlistbynumTableAdapter;
         private IACDataSetTableAdapters.ClosedCustomerBuybackTableAdapter closedCustomerBuybackTableAdapter;
@@ -266,5 +340,10 @@
         private System.Windows.Forms.RadioButton radioButtonInactive;
         private System.Windows.Forms.RadioButton radioButtonBoth;
         private System.Windows.Forms.GroupBox groupBox1;
+        private DevExpress.XtraEditors.GroupControl groupControlMissingTitle;
+        private DevExpress.XtraEditors.LabelControl labelControlState;
+        private DevExpress.XtraEditors.LookUpEdit lookUpEditState;
+        private System.Windows.Forms.BindingSource stateBindingSource;
+        private IACDataSetTableAdapters.stateTableAdapter stateTableAdapter;
     }
 }
