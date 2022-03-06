@@ -178,15 +178,15 @@ namespace IAC2021SQL
             lnPaidMonth = ldNewPaidThru.Month;
             lnPaidYear = Convert.ToInt32(ldNewPaidThru.Year.ToString().Substring(2, 2));
             lnFormDay = ldFormDate.Day;
+
+            TimeSpan ltActDateDiff,ltMassDateDiff; // Moses Newman 11/14/2021 Create Mass Date Diff
+            ldFormDate = (DateTime)NoticeDatenullableDateTimePicker.EditValue;
             // Moses Newman 04/26/2012 make form date actual DUE Date if 2/28 or 2/29(Leap Year)
             if (ldFormDate.Month == 2 && ldFormDate.Day > 27)
             {
                 ldFormDate = ldFebEndThisYear;
                 lnFormDay = 30;
             }
-
-            TimeSpan ltActDateDiff,ltMassDateDiff; // Moses Newman 11/14/2021 Create Mass Date Diff
-            ldFormDate = (DateTime)NoticeDatenullableDateTimePicker.EditValue;
             ltActDateDiff = ldFormDate - ldNewPaidThru;
             lnActDateDiff = (Int32)(ltActDateDiff.TotalDays);
             // Moses Newman 01/05/2022 Now we base mass off the month in advance delinquency report
@@ -234,11 +234,20 @@ namespace IAC2021SQL
                 case 2:
                 case 3:
                 case 4:
+                    // Moses Newman if the day is 1,2,3,4 (Your are running really as of the 30th of the previous month!)
+                    switch (tmpDate.Day)
+                    {
+                        case 1:
+                        case 2:
+                        case 3:
+                        case 4:
+                            tmpDate = tmpDate.AddMonths(-1);
+                            break;
+                    }
                     if(tmpDate.Month != 2)
                         tmpDate = DateTime.Parse(tmpDate.Year.ToString() + "-" + tmpDate.Month.ToString() + "-30");
-                    else  // February and handle leap yeara
-                        tmpDate = DateTime.Parse(tmpDate.Year.ToString() + "-" + tmpDate.Month.ToString() + "-" +
-                            DateTime.Parse("03/1/"+ tmpDate.Year.ToString()).AddDays(-1).Day.ToString());
+                    else  // February and handle leap year
+                        tmpDate = ldFebEndThisYear;
                     break;
             }
             // Now use the actual date it is being run on + 1 month for testing against 30 or 60 day delinquents for Mass 2 and 4
