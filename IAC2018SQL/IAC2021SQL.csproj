@@ -42,7 +42,7 @@
     <SuiteName>IAC2021SQL</SuiteName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>155</ApplicationRevision>
+    <ApplicationRevision>159</ApplicationRevision>
     <ApplicationVersion>10.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -759,6 +759,18 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Thinfinity.VirtualUI.cs" />
+    <Compile Include="XtraReportClosedTrialBalance.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReportClosedTrialBalance.Designer.cs">
+      <DependentUpon>XtraReportClosedTrialBalance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReportClosedTrialBalanceDealerSummary.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReportClosedTrialBalanceDealerSummary.Designer.cs">
+      <DependentUpon>XtraReportClosedTrialBalanceDealerSummary.cs</DependentUpon>
+    </Compile>
     <Compile Include="XtraReportVehicleMissingTitle.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -1821,6 +1833,12 @@
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="IACSplashScreen.resx">
       <DependentUpon>IACSplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReportClosedTrialBalance.resx">
+      <DependentUpon>XtraReportClosedTrialBalance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReportClosedTrialBalanceDealerSummary.resx">
+      <DependentUpon>XtraReportClosedTrialBalanceDealerSummary.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="XtraReportVehicleMissingTitle.resx">
       <DependentUpon>XtraReportVehicleMissingTitle.cs</DependentUpon>
