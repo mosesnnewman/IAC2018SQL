@@ -844,18 +844,18 @@ namespace IAC2021SQL
             textBoxRepairFee5.Enabled = true;
             // Moses Newman 08/03/2020
             //TSB
-            //textBoxCurrentBalance.Enabled = true;
-            //textBoxAmountPastDue.Enabled = true;
-            //textBoxActualPaymentAmount.Enabled = true;
-            //textBoxHighestCredit.Enabled = true;
-            //textBoxOrgChargeOffAmount.Enabled = true;
-            //textBoxSchMonthlyPaymentAmount.Enabled = true;
-            //textBoxCreditLimit.Enabled = true;
-            //nullableDateTimePickerDateofLastPayment.Enabled = true;
-            //nullableDateTimePickerDateofFirstDelinquency.Enabled = true;
-            //nullableDateTimePickerDateofAccountInformation.Enabled = true;
-            //nullableDateTimePickerDateOpened.Enabled = true;
-            //nullableDateTimePickerDateClosed.Enabled = true;
+            textBoxCurrentBalance.Enabled = true;
+            textBoxAmountPastDue.Enabled = true;
+            textBoxActualPaymentAmount.Enabled = true;
+            textBoxHighestCredit.Enabled = true;
+            textBoxOrgChargeOffAmount.Enabled = true;
+            textBoxSchMonthlyPaymentAmount.Enabled = true;
+            textBoxCreditLimit.Enabled = true;
+            nullableDateTimePickerDateofLastPayment.Enabled = true;
+            nullableDateTimePickerDateofFirstDelinquency.Enabled = true;
+            nullableDateTimePickerDateofAccountInformation.Enabled = true;
+            nullableDateTimePickerDateOpened.Enabled = true;
+            nullableDateTimePickerDateClosed.Enabled = true;
             nullableDateTimePickerFollowUpDate.Enabled = true;
             comboBoxAccountStatus.Enabled = true;
             comboBoxPaymentRating.Enabled = true;
@@ -3093,24 +3093,7 @@ namespace IAC2021SQL
 
         private void comboBoxAccountStatus_SelectedValueChanged(object sender, EventArgs e)
         {
-            if (lbAddFlag || lbEdit)
-            {
-                toolStripButtonSave.Enabled = true;
-                // Moses Newman 08/15/2020 enable Payment Rating if Account Status is changed to 13,65,89,94, or 95.
-                switch (comboBoxAccountStatus.SelectedValue)
-                {
-                    case "13":
-                    case "65":
-                    case "89":
-                    case "94":
-                    case "95":
-                        comboBoxPaymentRating.Enabled = true;
-                        break;
-                    default:
-                        comboBoxPaymentRating.Enabled = false;
-                        break;
-                }
-            }
+
         }
 
         private void comboBoxPaymentRating_SelectedValueChanged(object sender, EventArgs e)
@@ -5466,6 +5449,24 @@ namespace IAC2021SQL
         }
 
         private void checkEditHasComprehensive_CheckedChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void checkBoxAccountType_CheckedChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void comboBoxAccountType_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void comboBoxSpecialComment_SelectedValueChanged(object sender, EventArgs e)
         {
             if (lbAddFlag || lbEdit)
                 toolStripButtonSave.Enabled = true;

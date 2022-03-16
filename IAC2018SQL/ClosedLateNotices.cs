@@ -12,7 +12,7 @@ namespace IAC2021SQL
     public partial class frmNotices : DevExpress.XtraEditors.XtraForm
     {
         Int32 lnFormNo = 0, lnPTDiff = 0, lnPaidMonth = 0, lnPaidYear = 0;
-        Boolean UpdateSW = false;
+        Boolean UpdateSW = false,gb4PastEOM = false;  // Moses Newman 03/08/2022 add flag to know if 30th (or feb 28,29) run was in following month
         // 12/13/2011 Moses Newman removed all references to lnTotLateCharge as we are no longer using an itterative add, using SQL Query instead 
         Decimal     lnLateCharge = 0, lnCustContractStat = 0, lnCustBuyout = 0,lnCustLCBal = 0,lnCustBalance = 0,lnDeltaCustBal = 0,
                         gnTotalLateCharge = 0,gnTotalInt =0, lnTempMasthistOLOAN = 0,lnDealerYTDOloanTemp = 0;
@@ -36,6 +36,12 @@ namespace IAC2021SQL
         {
             // Moses Newman 01/05/2022 Intelligently determine the desired rundate even if running a few days late.
             DateTime tmpDate = DateTime.Now.Date.AddDays(-15);
+            if (DateTime.Now.Date.Month == 3 && DateTime.Now.Date.Day < 15)  // Moses Newman 03/10/2022 Handle 2/28 and 2/25 for Februrary
+                if(DateTime.IsLeapYear(tmpDate.Year))
+                    tmpDate = tmpDate.AddDays(1);
+                else
+                    tmpDate = tmpDate.AddDays(2);
+
             switch (tmpDate.Day)
             {
                 case 5:
@@ -192,6 +198,7 @@ namespace IAC2021SQL
             // Moses Newman 01/05/2022 Now we base mass off the month in advance delinquency report
             // Moses Newman 01/18/2022 Get the actual date it's being run based on 5,10,15,20,25,30 due days
             tmpDate = DateTime.Now.Date;
+            gb4PastEOM = false;
             switch (tmpDate.Day)
             {
                 case 5:
@@ -242,6 +249,7 @@ namespace IAC2021SQL
                         case 3:
                         case 4:
                             tmpDate = tmpDate.AddMonths(-1);
+                            gb4PastEOM = true;
                             break;
                     }
                     if(tmpDate.Month != 2)
@@ -850,12 +858,29 @@ namespace IAC2021SQL
                             NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_LATE_CHARGE_BAL"));
                         break;
                     case 4:
+                        if(!gb4PastEOM)
+                            NoticeiacDataSet.NOTICE.Rows[NoticebindingSource.Position].SetField<Decimal>("AmountPastDue",
+                                (NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_CONTRACT_STATUS") * -1));
+                        else // Moses Newman 03/08/2022 Subtract one regular payment if run past month end.
+                            NoticeiacDataSet.NOTICE.Rows[NoticebindingSource.Position].SetField<Decimal>("AmountPastDue",
+                                (NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_CONTRACT_STATUS") * -1) -
+                                NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_REGULAR_AMOUNT"));
                         NoticeiacDataSet.NOTICE.Rows[NoticebindingSource.Position].SetField<Decimal>("AmountPastDue",
-                            (NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_CONTRACT_STATUS") * -1));
+                            NoticeiacDataSet.NOTICE.Rows[NoticebindingSource.Position].Field<Decimal>("AmountPastDue") +
+                            NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("PartialPayment"));
                         break;
                 }
                 NoticeiacDataSet.NOTICE.Rows[NoticebindingSource.Position].SetField<Decimal>("NOTICE_CONTRACT_STATUS",
                     (NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_REGULAR_AMOUNT") +
+                    NoticeiacDataSet.NOTICE.Rows[NoticebindingSource.Position].Field<Decimal>("NOTICE_LATE_CHARGE") +
+                    NoticeiacDataSet.NOTICE.Rows[NoticebindingSource.Position].Field<Decimal>("AmountPastDue") -
+                    NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("PartialPayment")) * -1);
+            }
+            else 
+            {
+                NoticeiacDataSet.NOTICE.Rows[NoticebindingSource.Position].SetField<Decimal>("NOTICE_CONTRACT_STATUS",
+                    (NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_REGULAR_AMOUNT") +
+                    NoticeiacDataSet.NOTICE.Rows[NoticebindingSource.Position].Field<Decimal>("NOTICE_LATE_CHARGE") +
                     NoticeiacDataSet.NOTICE.Rows[NoticebindingSource.Position].Field<Decimal>("AmountPastDue") -
                     NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("PartialPayment")) * -1);
             }

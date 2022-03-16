@@ -364,14 +364,14 @@
             this.textBoxAuthNo = new System.Windows.Forms.TextBox();
             this.radioButtonMktg = new System.Windows.Forms.RadioButton();
             this.radioButtonAcct = new System.Windows.Forms.RadioButton();
-            this.checkBoxDNTMktg = new System.Windows.Forms.CheckBox();
-            this.checkBoxDNTAcct = new System.Windows.Forms.CheckBox();
+            this.checkBoxDNTMktg = new DevExpress.XtraEditors.CheckEdit();
+            this.checkBoxDNTAcct = new DevExpress.XtraEditors.CheckEdit();
             this.comboBoxGN = new System.Windows.Forms.ComboBox();
             this.textBoxTIN = new System.Windows.Forms.TextBox();
             this.buttonValidate = new DevExpress.XtraEditors.SimpleButton();
             this.groupBoxGapWarranty = new System.Windows.Forms.GroupBox();
-            this.checkBoxExcludeVSI = new System.Windows.Forms.CheckBox();
-            this.checkBoxWarranty = new System.Windows.Forms.CheckBox();
+            this.checkBoxExcludeVSI = new DevExpress.XtraEditors.CheckEdit();
+            this.checkBoxWarranty = new DevExpress.XtraEditors.CheckEdit();
             this.comboBoxGAP = new System.Windows.Forms.ComboBox();
             this.cUSTOMER_CELL_PHONETextBox = new System.Windows.Forms.MaskedTextBox();
             this.textBoxMiddleName = new System.Windows.Forms.TextBox();
@@ -425,7 +425,7 @@
             this.txtLastPaymentMade = new System.Windows.Forms.TextBox();
             this.textBoxCheckNo = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.checkBoxCheckIssued = new System.Windows.Forms.CheckBox();
+            this.checkBoxCheckIssued = new DevExpress.XtraEditors.CheckEdit();
             this.textBoxDealerCashPrice = new System.Windows.Forms.TextBox();
             this.txtPaidThrough = new System.Windows.Forms.MaskedTextBox();
             this.txtControlDate = new System.Windows.Forms.TextBox();
@@ -445,9 +445,9 @@
             this.checkEditCollectionAgent = new DevExpress.XtraEditors.CheckEdit();
             this.checkEditOverideInterest = new DevExpress.XtraEditors.CheckEdit();
             this.nullableDateTimePickerFundingDate = new DevExpress.XtraEditors.DateEdit();
-            this.checkBoxOverrideLateCharge = new System.Windows.Forms.CheckBox();
+            this.checkBoxOverrideLateCharge = new DevExpress.XtraEditors.CheckEdit();
             this.DateTimePickerContractDate = new DevExpress.XtraEditors.DateEdit();
-            this.checkBoxSimple = new System.Windows.Forms.CheckBox();
+            this.checkBoxSimple = new DevExpress.XtraEditors.CheckEdit();
             this.txtFirstPayDate = new DevExpress.XtraEditors.DateEdit();
             this.txtPaymentDate = new DevExpress.XtraEditors.DateEdit();
             this.textBox18 = new System.Windows.Forms.TextBox();
@@ -546,8 +546,8 @@
             this.textBoxCOSAuthNo = new System.Windows.Forms.TextBox();
             this.radioButtonCOSMktg = new System.Windows.Forms.RadioButton();
             this.radioButtonCOSAcct = new System.Windows.Forms.RadioButton();
-            this.checkBoxCOSDNTMktg = new System.Windows.Forms.CheckBox();
-            this.checkBoxCOSDNTAcct = new System.Windows.Forms.CheckBox();
+            this.checkBoxCOSDNTMktg = new DevExpress.XtraEditors.CheckEdit();
+            this.checkBoxCOSDNTAcct = new DevExpress.XtraEditors.CheckEdit();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.txtALTExt4 = new System.Windows.Forms.TextBox();
             this.txtALTExt3 = new System.Windows.Forms.TextBox();
@@ -763,7 +763,7 @@
             this.xtraTabPageTSB = new DevExpress.XtraTab.XtraTabPage();
             this.groupBox22 = new DevExpress.XtraEditors.GroupControl();
             this.groupBoxDates = new System.Windows.Forms.GroupBox();
-            this.checkBoxFollowUpDate = new System.Windows.Forms.CheckBox();
+            this.checkBoxFollowUpDate = new DevExpress.XtraEditors.CheckEdit();
             this.nullableDateTimePickerFollowUpDate = new DevExpress.XtraEditors.DateEdit();
             this.nullableDateTimePickerDateClosed = new DevExpress.XtraEditors.DateEdit();
             this.nullableDateTimePickerDateOpened = new DevExpress.XtraEditors.DateEdit();
@@ -775,14 +775,14 @@
             this.label138 = new System.Windows.Forms.Label();
             this.label139 = new System.Windows.Forms.Label();
             this.groupBoxCodes = new System.Windows.Forms.GroupBox();
-            this.checkBoxECOACode = new System.Windows.Forms.CheckBox();
-            this.checkBoxPaymentProfile = new System.Windows.Forms.CheckBox();
-            this.checkBoxComplianceCode = new System.Windows.Forms.CheckBox();
-            this.checkBoxConsumerIndicator = new System.Windows.Forms.CheckBox();
-            this.checkBoxAccountType = new System.Windows.Forms.CheckBox();
-            this.checkBoxSpecialComment = new System.Windows.Forms.CheckBox();
-            this.checkBoxPaymentRating = new System.Windows.Forms.CheckBox();
-            this.checkBoxAccountStatus = new System.Windows.Forms.CheckBox();
+            this.checkBoxECOACode = new DevExpress.XtraEditors.CheckEdit();
+            this.checkBoxPaymentProfile = new DevExpress.XtraEditors.CheckEdit();
+            this.checkBoxComplianceCode = new DevExpress.XtraEditors.CheckEdit();
+            this.checkBoxConsumerIndicator = new DevExpress.XtraEditors.CheckEdit();
+            this.checkBoxAccountType = new DevExpress.XtraEditors.CheckEdit();
+            this.checkBoxSpecialComment = new DevExpress.XtraEditors.CheckEdit();
+            this.checkBoxPaymentRating = new DevExpress.XtraEditors.CheckEdit();
+            this.checkBoxAccountStatus = new DevExpress.XtraEditors.CheckEdit();
             this.buttonEditPaymentHistory = new DevExpress.XtraEditors.SimpleButton();
             this.label152 = new System.Windows.Forms.Label();
             this.textBoxPaymentHistoryProfile = new System.Windows.Forms.TextBox();
@@ -804,8 +804,10 @@
             this.label143 = new System.Windows.Forms.Label();
             this.comboBoxSpecialComment = new System.Windows.Forms.ComboBox();
             this.label142 = new System.Windows.Forms.Label();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.comboBoxPaymentRating = new System.Windows.Forms.ComboBox();
             this.label141 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBoxAccountStatus = new System.Windows.Forms.ComboBox();
             this.groupBoxDollars = new System.Windows.Forms.GroupBox();
             this.label137 = new System.Windows.Forms.Label();
@@ -823,9 +825,9 @@
             this.labelCurrentBalance = new System.Windows.Forms.Label();
             this.textBoxCurrentBalance = new System.Windows.Forms.TextBox();
             this.groupBoxPurge = new System.Windows.Forms.GroupBox();
-            this.checkBoxPurge = new System.Windows.Forms.CheckBox();
+            this.checkBoxPurge = new DevExpress.XtraEditors.CheckEdit();
             this.groupBoxReportStatus = new System.Windows.Forms.GroupBox();
-            this.checkBoxReportTSB = new System.Windows.Forms.CheckBox();
+            this.checkBoxReportTSB = new DevExpress.XtraEditors.CheckEdit();
             this.groupBoxAccountNumber = new System.Windows.Forms.GroupBox();
             this.textBox68 = new System.Windows.Forms.TextBox();
             this.textBox69 = new System.Windows.Forms.TextBox();
@@ -1132,7 +1134,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateContractReceived.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateContractReceived.Properties)).BeginInit();
             this.groupBoxSBT.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.checkBoxDNTMktg.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkBoxDNTAcct.Properties)).BeginInit();
             this.groupBoxGapWarranty.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.checkBoxExcludeVSI.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkBoxWarranty.Properties)).BeginInit();
             this.groupBoxRefi.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.checkBoxVehicleWarranty.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkBoxRefi.Properties)).BeginInit();
@@ -1144,13 +1150,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtContractStatus.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MaturityDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MaturityDate.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkBoxCheckIssued.Properties)).BeginInit();
             this.groupBox9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditCollectionAgent.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditOverideInterest.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerFundingDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerFundingDate.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkBoxOverrideLateCharge.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DateTimePickerContractDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DateTimePickerContractDate.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkBoxSimple.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFirstPayDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFirstPayDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPaymentDate.Properties.CalendarTimeProperties)).BeginInit();
@@ -1203,6 +1212,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupBox16)).BeginInit();
             this.groupBox16.SuspendLayout();
             this.groupBoxCOSSBT.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.checkBoxCOSDNTMktg.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkBoxCOSDNTAcct.Properties)).BeginInit();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditUsePrimaryAddress.Properties)).BeginInit();
@@ -1277,6 +1288,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupBox22)).BeginInit();
             this.groupBox22.SuspendLayout();
             this.groupBoxDates.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.checkBoxFollowUpDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerFollowUpDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerFollowUpDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateClosed.Properties.CalendarTimeProperties)).BeginInit();
@@ -1290,9 +1302,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateofLastPayment.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateofLastPayment.Properties)).BeginInit();
             this.groupBoxCodes.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.checkBoxECOACode.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkBoxPaymentProfile.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkBoxComplianceCode.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkBoxConsumerIndicator.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkBoxAccountType.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkBoxSpecialComment.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkBoxPaymentRating.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkBoxAccountStatus.Properties)).BeginInit();
             this.groupBoxDollars.SuspendLayout();
             this.groupBoxPurge.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.checkBoxPurge.Properties)).BeginInit();
             this.groupBoxReportStatus.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.checkBoxReportTSB.Properties)).BeginInit();
             this.groupBoxAccountNumber.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolbarFormManager2)).BeginInit();
@@ -3345,18 +3367,22 @@
             // 
             // checkBoxDNTMktg
             // 
-            resources.ApplyResources(this.checkBoxDNTMktg, "checkBoxDNTMktg");
             this.checkBoxDNTMktg.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.cUSTOMERBindingSource, "DNTMktg", true));
+            resources.ApplyResources(this.checkBoxDNTMktg, "checkBoxDNTMktg");
             this.checkBoxDNTMktg.Name = "checkBoxDNTMktg";
-            this.checkBoxDNTMktg.UseVisualStyleBackColor = true;
+            this.checkBoxDNTMktg.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("checkBoxDNTMktg.Properties.Appearance.Font")));
+            this.checkBoxDNTMktg.Properties.Appearance.Options.UseFont = true;
+            this.checkBoxDNTMktg.Properties.Caption = resources.GetString("checkBoxDNTMktg.Properties.Caption");
             this.checkBoxDNTMktg.CheckedChanged += new System.EventHandler(this.checkBoxDNTMktg_CheckedChanged);
             // 
             // checkBoxDNTAcct
             // 
-            resources.ApplyResources(this.checkBoxDNTAcct, "checkBoxDNTAcct");
             this.checkBoxDNTAcct.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.cUSTOMERBindingSource, "DNTAcct", true));
+            resources.ApplyResources(this.checkBoxDNTAcct, "checkBoxDNTAcct");
             this.checkBoxDNTAcct.Name = "checkBoxDNTAcct";
-            this.checkBoxDNTAcct.UseVisualStyleBackColor = true;
+            this.checkBoxDNTAcct.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("checkBoxDNTAcct.Properties.Appearance.Font")));
+            this.checkBoxDNTAcct.Properties.Appearance.Options.UseFont = true;
+            this.checkBoxDNTAcct.Properties.Caption = resources.GetString("checkBoxDNTAcct.Properties.Caption");
             this.checkBoxDNTAcct.CheckedChanged += new System.EventHandler(this.checkBoxDNTAcct_CheckedChanged);
             this.checkBoxDNTAcct.Click += new System.EventHandler(this.checkBoxDNTAcct_Click);
             // 
@@ -3406,17 +3432,19 @@
             // 
             // checkBoxExcludeVSI
             // 
-            resources.ApplyResources(this.checkBoxExcludeVSI, "checkBoxExcludeVSI");
             this.checkBoxExcludeVSI.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.cUSTOMERBindingSource, "ExcludeVSI", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "0"));
+            resources.ApplyResources(this.checkBoxExcludeVSI, "checkBoxExcludeVSI");
             this.checkBoxExcludeVSI.Name = "checkBoxExcludeVSI";
-            this.checkBoxExcludeVSI.UseVisualStyleBackColor = true;
+            this.checkBoxExcludeVSI.Properties.Caption = resources.GetString("checkBoxExcludeVSI.Properties.Caption");
             // 
             // checkBoxWarranty
             // 
-            resources.ApplyResources(this.checkBoxWarranty, "checkBoxWarranty");
             this.checkBoxWarranty.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.cUSTOMERBindingSource, "Warranty", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "0"));
+            resources.ApplyResources(this.checkBoxWarranty, "checkBoxWarranty");
             this.checkBoxWarranty.Name = "checkBoxWarranty";
-            this.checkBoxWarranty.UseVisualStyleBackColor = true;
+            this.checkBoxWarranty.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("checkBoxWarranty.Properties.Appearance.Font")));
+            this.checkBoxWarranty.Properties.Appearance.Options.UseFont = true;
+            this.checkBoxWarranty.Properties.Caption = resources.GetString("checkBoxWarranty.Properties.Caption");
             this.checkBoxWarranty.CheckedChanged += new System.EventHandler(this.checkBoxWarranty_CheckedChanged);
             // 
             // comboBoxGAP
@@ -4008,10 +4036,12 @@
             // 
             // checkBoxCheckIssued
             // 
-            resources.ApplyResources(this.checkBoxCheckIssued, "checkBoxCheckIssued");
             this.checkBoxCheckIssued.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.cUSTOMERBindingSource, "IsCheckPrinted", true));
+            resources.ApplyResources(this.checkBoxCheckIssued, "checkBoxCheckIssued");
             this.checkBoxCheckIssued.Name = "checkBoxCheckIssued";
-            this.checkBoxCheckIssued.UseVisualStyleBackColor = true;
+            this.checkBoxCheckIssued.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("checkBoxCheckIssued.Properties.Appearance.Font")));
+            this.checkBoxCheckIssued.Properties.Appearance.Options.UseFont = true;
+            this.checkBoxCheckIssued.Properties.Caption = resources.GetString("checkBoxCheckIssued.Properties.Caption");
             this.checkBoxCheckIssued.CheckedChanged += new System.EventHandler(this.checkBoxCheckIssued_CheckedChanged);
             this.checkBoxCheckIssued.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
@@ -4253,10 +4283,12 @@
             // 
             // checkBoxOverrideLateCharge
             // 
-            resources.ApplyResources(this.checkBoxOverrideLateCharge, "checkBoxOverrideLateCharge");
             this.checkBoxOverrideLateCharge.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.cUSTOMERBindingSource, "OverrideLateCharge", true));
+            resources.ApplyResources(this.checkBoxOverrideLateCharge, "checkBoxOverrideLateCharge");
             this.checkBoxOverrideLateCharge.Name = "checkBoxOverrideLateCharge";
-            this.checkBoxOverrideLateCharge.UseVisualStyleBackColor = true;
+            this.checkBoxOverrideLateCharge.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("checkBoxOverrideLateCharge.Properties.Appearance.Font")));
+            this.checkBoxOverrideLateCharge.Properties.Appearance.Options.UseFont = true;
+            this.checkBoxOverrideLateCharge.Properties.Caption = resources.GetString("checkBoxOverrideLateCharge.Properties.Caption");
             this.checkBoxOverrideLateCharge.CheckedChanged += new System.EventHandler(this.checkBoxOverrideLateCharge_CheckedChanged);
             // 
             // DateTimePickerContractDate
@@ -4283,7 +4315,9 @@
             // 
             resources.ApplyResources(this.checkBoxSimple, "checkBoxSimple");
             this.checkBoxSimple.Name = "checkBoxSimple";
-            this.checkBoxSimple.UseVisualStyleBackColor = true;
+            this.checkBoxSimple.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("checkBoxSimple.Properties.Appearance.Font")));
+            this.checkBoxSimple.Properties.Appearance.Options.UseFont = true;
+            this.checkBoxSimple.Properties.Caption = resources.GetString("checkBoxSimple.Properties.Caption");
             this.checkBoxSimple.CheckedChanged += new System.EventHandler(this.checkBoxSimple_CheckedChanged);
             // 
             // txtFirstPayDate
@@ -5525,17 +5559,21 @@
             // 
             // checkBoxCOSDNTMktg
             // 
-            resources.ApplyResources(this.checkBoxCOSDNTMktg, "checkBoxCOSDNTMktg");
             this.checkBoxCOSDNTMktg.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.cUSTOMERBindingSource, "DNTMktg", true));
+            resources.ApplyResources(this.checkBoxCOSDNTMktg, "checkBoxCOSDNTMktg");
             this.checkBoxCOSDNTMktg.Name = "checkBoxCOSDNTMktg";
-            this.checkBoxCOSDNTMktg.UseVisualStyleBackColor = true;
+            this.checkBoxCOSDNTMktg.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("checkBoxCOSDNTMktg.Properties.Appearance.Font")));
+            this.checkBoxCOSDNTMktg.Properties.Appearance.Options.UseFont = true;
+            this.checkBoxCOSDNTMktg.Properties.Caption = resources.GetString("checkBoxCOSDNTMktg.Properties.Caption");
             // 
             // checkBoxCOSDNTAcct
             // 
-            resources.ApplyResources(this.checkBoxCOSDNTAcct, "checkBoxCOSDNTAcct");
             this.checkBoxCOSDNTAcct.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.cUSTOMERBindingSource, "COSDNTAcct", true));
+            resources.ApplyResources(this.checkBoxCOSDNTAcct, "checkBoxCOSDNTAcct");
             this.checkBoxCOSDNTAcct.Name = "checkBoxCOSDNTAcct";
-            this.checkBoxCOSDNTAcct.UseVisualStyleBackColor = true;
+            this.checkBoxCOSDNTAcct.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("checkBoxCOSDNTAcct.Properties.Appearance.Font")));
+            this.checkBoxCOSDNTAcct.Properties.Appearance.Options.UseFont = true;
+            this.checkBoxCOSDNTAcct.Properties.Caption = resources.GetString("checkBoxCOSDNTAcct.Properties.Caption");
             // 
             // groupBox5
             // 
@@ -7994,10 +8032,13 @@
             // 
             // checkBoxFollowUpDate
             // 
-            resources.ApplyResources(this.checkBoxFollowUpDate, "checkBoxFollowUpDate");
             this.checkBoxFollowUpDate.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.closedCreditManagerBindingSource, "FollowUpDateOverride", true));
+            resources.ApplyResources(this.checkBoxFollowUpDate, "checkBoxFollowUpDate");
             this.checkBoxFollowUpDate.Name = "checkBoxFollowUpDate";
-            this.checkBoxFollowUpDate.UseVisualStyleBackColor = true;
+            this.checkBoxFollowUpDate.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("checkBoxFollowUpDate.Properties.Appearance.Font")));
+            this.checkBoxFollowUpDate.Properties.Appearance.Options.UseFont = true;
+            this.checkBoxFollowUpDate.Properties.Caption = resources.GetString("checkBoxFollowUpDate.Properties.Caption");
+            this.checkBoxFollowUpDate.CheckedChanged += new System.EventHandler(this.checkBoxFollowUpDate_CheckedChanged);
             // 
             // nullableDateTimePickerFollowUpDate
             // 
@@ -8016,6 +8057,7 @@
             this.nullableDateTimePickerFollowUpDate.Properties.LookAndFeel.SkinName = "McSkin";
             this.nullableDateTimePickerFollowUpDate.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.nullableDateTimePickerFollowUpDate.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
+            this.nullableDateTimePickerFollowUpDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // nullableDateTimePickerDateClosed
             // 
@@ -8032,6 +8074,7 @@
             this.nullableDateTimePickerDateClosed.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
             this.nullableDateTimePickerDateClosed.Properties.LookAndFeel.SkinName = "McSkin";
             this.nullableDateTimePickerDateClosed.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.nullableDateTimePickerDateClosed.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // nullableDateTimePickerDateOpened
             // 
@@ -8048,6 +8091,7 @@
             this.nullableDateTimePickerDateOpened.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
             this.nullableDateTimePickerDateOpened.Properties.LookAndFeel.SkinName = "McSkin";
             this.nullableDateTimePickerDateOpened.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.nullableDateTimePickerDateOpened.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // nullableDateTimePickerDateofAccountInformation
             // 
@@ -8064,6 +8108,7 @@
             this.nullableDateTimePickerDateofAccountInformation.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
             this.nullableDateTimePickerDateofAccountInformation.Properties.LookAndFeel.SkinName = "McSkin";
             this.nullableDateTimePickerDateofAccountInformation.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.nullableDateTimePickerDateofAccountInformation.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // nullableDateTimePickerDateofFirstDelinquency
             // 
@@ -8081,6 +8126,7 @@
             this.nullableDateTimePickerDateofFirstDelinquency.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
             this.nullableDateTimePickerDateofFirstDelinquency.Properties.LookAndFeel.SkinName = "McSkin";
             this.nullableDateTimePickerDateofFirstDelinquency.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.nullableDateTimePickerDateofFirstDelinquency.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // nullableDateTimePickerDateofLastPayment
             // 
@@ -8100,6 +8146,7 @@
             this.nullableDateTimePickerDateofLastPayment.Properties.LookAndFeel.SkinName = "McSkin";
             this.nullableDateTimePickerDateofLastPayment.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.nullableDateTimePickerDateofLastPayment.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
+            this.nullableDateTimePickerDateofLastPayment.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // label135
             // 
@@ -8153,8 +8200,10 @@
             this.groupBoxCodes.Controls.Add(this.label143);
             this.groupBoxCodes.Controls.Add(this.comboBoxSpecialComment);
             this.groupBoxCodes.Controls.Add(this.label142);
+            this.groupBoxCodes.Controls.Add(this.comboBox3);
             this.groupBoxCodes.Controls.Add(this.comboBoxPaymentRating);
             this.groupBoxCodes.Controls.Add(this.label141);
+            this.groupBoxCodes.Controls.Add(this.comboBox2);
             this.groupBoxCodes.Controls.Add(this.comboBoxAccountStatus);
             resources.ApplyResources(this.groupBoxCodes, "groupBoxCodes");
             this.groupBoxCodes.Name = "groupBoxCodes";
@@ -8162,59 +8211,67 @@
             // 
             // checkBoxECOACode
             // 
-            resources.ApplyResources(this.checkBoxECOACode, "checkBoxECOACode");
             this.checkBoxECOACode.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.closedCreditManagerBindingSource, "ECOACodeOverride", true));
+            resources.ApplyResources(this.checkBoxECOACode, "checkBoxECOACode");
             this.checkBoxECOACode.Name = "checkBoxECOACode";
-            this.checkBoxECOACode.UseVisualStyleBackColor = true;
+            this.checkBoxECOACode.Properties.Caption = resources.GetString("checkBoxECOACode.Properties.Caption");
+            this.checkBoxECOACode.CheckedChanged += new System.EventHandler(this.checkBoxECOACode_CheckedChanged);
             // 
             // checkBoxPaymentProfile
             // 
-            resources.ApplyResources(this.checkBoxPaymentProfile, "checkBoxPaymentProfile");
             this.checkBoxPaymentProfile.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.closedCreditManagerBindingSource, "PaymentHistoryOverride", true));
+            resources.ApplyResources(this.checkBoxPaymentProfile, "checkBoxPaymentProfile");
             this.checkBoxPaymentProfile.Name = "checkBoxPaymentProfile";
-            this.checkBoxPaymentProfile.UseVisualStyleBackColor = true;
+            this.checkBoxPaymentProfile.Properties.Caption = resources.GetString("checkBoxPaymentProfile.Properties.Caption");
+            this.checkBoxPaymentProfile.CheckedChanged += new System.EventHandler(this.checkBoxPaymentProfile_CheckedChanged);
             // 
             // checkBoxComplianceCode
             // 
-            resources.ApplyResources(this.checkBoxComplianceCode, "checkBoxComplianceCode");
             this.checkBoxComplianceCode.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.closedCreditManagerBindingSource, "ComplianceConditionCodeOverride", true));
+            resources.ApplyResources(this.checkBoxComplianceCode, "checkBoxComplianceCode");
             this.checkBoxComplianceCode.Name = "checkBoxComplianceCode";
-            this.checkBoxComplianceCode.UseVisualStyleBackColor = true;
+            this.checkBoxComplianceCode.Properties.Caption = resources.GetString("checkBoxComplianceCode.Properties.Caption");
+            this.checkBoxComplianceCode.CheckedChanged += new System.EventHandler(this.checkBoxComplianceCode_CheckedChanged);
             // 
             // checkBoxConsumerIndicator
             // 
-            resources.ApplyResources(this.checkBoxConsumerIndicator, "checkBoxConsumerIndicator");
             this.checkBoxConsumerIndicator.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.closedCreditManagerBindingSource, "ConsumerIndicatorOverride", true));
+            resources.ApplyResources(this.checkBoxConsumerIndicator, "checkBoxConsumerIndicator");
             this.checkBoxConsumerIndicator.Name = "checkBoxConsumerIndicator";
-            this.checkBoxConsumerIndicator.UseVisualStyleBackColor = true;
+            this.checkBoxConsumerIndicator.Properties.Caption = resources.GetString("checkBoxConsumerIndicator.Properties.Caption");
+            this.checkBoxConsumerIndicator.CheckedChanged += new System.EventHandler(this.checkBoxConsumerIndicator_CheckedChanged);
             // 
             // checkBoxAccountType
             // 
-            resources.ApplyResources(this.checkBoxAccountType, "checkBoxAccountType");
             this.checkBoxAccountType.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.closedCreditManagerBindingSource, "AccountTypeOverride", true));
+            resources.ApplyResources(this.checkBoxAccountType, "checkBoxAccountType");
             this.checkBoxAccountType.Name = "checkBoxAccountType";
-            this.checkBoxAccountType.UseVisualStyleBackColor = true;
+            this.checkBoxAccountType.Properties.Caption = resources.GetString("checkBoxAccountType.Properties.Caption");
+            this.checkBoxAccountType.CheckedChanged += new System.EventHandler(this.checkBoxAccountType_CheckedChanged);
             // 
             // checkBoxSpecialComment
             // 
-            resources.ApplyResources(this.checkBoxSpecialComment, "checkBoxSpecialComment");
             this.checkBoxSpecialComment.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.closedCreditManagerBindingSource, "SpecialCommentOverride", true));
+            resources.ApplyResources(this.checkBoxSpecialComment, "checkBoxSpecialComment");
             this.checkBoxSpecialComment.Name = "checkBoxSpecialComment";
-            this.checkBoxSpecialComment.UseVisualStyleBackColor = true;
+            this.checkBoxSpecialComment.Properties.Caption = resources.GetString("checkBoxSpecialComment.Properties.Caption");
+            this.checkBoxSpecialComment.CheckedChanged += new System.EventHandler(this.checkBoxSpecialComment_CheckedChanged);
             // 
             // checkBoxPaymentRating
             // 
-            resources.ApplyResources(this.checkBoxPaymentRating, "checkBoxPaymentRating");
             this.checkBoxPaymentRating.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.closedCreditManagerBindingSource, "PaymentRatingOverride", true));
+            resources.ApplyResources(this.checkBoxPaymentRating, "checkBoxPaymentRating");
             this.checkBoxPaymentRating.Name = "checkBoxPaymentRating";
-            this.checkBoxPaymentRating.UseVisualStyleBackColor = true;
+            this.checkBoxPaymentRating.Properties.Caption = resources.GetString("checkBoxPaymentRating.Properties.Caption");
+            this.checkBoxPaymentRating.CheckedChanged += new System.EventHandler(this.checkBoxPaymentRating_CheckedChanged);
             // 
             // checkBoxAccountStatus
             // 
-            resources.ApplyResources(this.checkBoxAccountStatus, "checkBoxAccountStatus");
             this.checkBoxAccountStatus.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.closedCreditManagerBindingSource, "AccountStatusOverride", true));
+            resources.ApplyResources(this.checkBoxAccountStatus, "checkBoxAccountStatus");
             this.checkBoxAccountStatus.Name = "checkBoxAccountStatus";
-            this.checkBoxAccountStatus.UseVisualStyleBackColor = true;
+            this.checkBoxAccountStatus.Properties.Caption = resources.GetString("checkBoxAccountStatus.Properties.Caption");
+            this.checkBoxAccountStatus.CheckedChanged += new System.EventHandler(this.checkBoxAccountStatus_CheckedChanged);
             // 
             // buttonEditPaymentHistory
             // 
@@ -8238,6 +8295,7 @@
             this.textBoxPaymentHistoryProfile.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.closedCreditManagerBindingSource, "PaymentProfile", true));
             resources.ApplyResources(this.textBoxPaymentHistoryProfile, "textBoxPaymentHistoryProfile");
             this.textBoxPaymentHistoryProfile.Name = "textBoxPaymentHistoryProfile";
+            this.textBoxPaymentHistoryProfile.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // textBoxTermsDuration
             // 
@@ -8245,6 +8303,7 @@
             this.textBoxTermsDuration.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.closedCreditManagerBindingSource, "CRDMGR_ACCT_TERMS_DURATION", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N0"));
             resources.ApplyResources(this.textBoxTermsDuration, "textBoxTermsDuration");
             this.textBoxTermsDuration.Name = "textBoxTermsDuration";
+            this.textBoxTermsDuration.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // label149
             // 
@@ -8260,6 +8319,8 @@
             resources.ApplyResources(this.comboBoxTermsFrequency, "comboBoxTermsFrequency");
             this.comboBoxTermsFrequency.Name = "comboBoxTermsFrequency";
             this.comboBoxTermsFrequency.ValueMember = "Code";
+            this.comboBoxTermsFrequency.SelectedValueChanged += new System.EventHandler(this.comboBoxTermsFrequency_SelectedValueChanged);
+            this.comboBoxTermsFrequency.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // label150
             // 
@@ -8275,6 +8336,8 @@
             resources.ApplyResources(this.comboBoxPortfolioType, "comboBoxPortfolioType");
             this.comboBoxPortfolioType.Name = "comboBoxPortfolioType";
             this.comboBoxPortfolioType.ValueMember = "Code";
+            this.comboBoxPortfolioType.SelectedValueChanged += new System.EventHandler(this.comboBoxPortfolioType_SelectedValueChanged);
+            this.comboBoxPortfolioType.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // label148
             // 
@@ -8290,6 +8353,8 @@
             resources.ApplyResources(this.comboBoxInterestType, "comboBoxInterestType");
             this.comboBoxInterestType.Name = "comboBoxInterestType";
             this.comboBoxInterestType.ValueMember = "Code";
+            this.comboBoxInterestType.SelectedValueChanged += new System.EventHandler(this.comboBoxInterestType_SelectedValueChanged);
+            this.comboBoxInterestType.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // label147
             // 
@@ -8305,6 +8370,8 @@
             resources.ApplyResources(this.comboBoxECOACode, "comboBoxECOACode");
             this.comboBoxECOACode.Name = "comboBoxECOACode";
             this.comboBoxECOACode.ValueMember = "Code";
+            this.comboBoxECOACode.SelectedValueChanged += new System.EventHandler(this.comboBoxECOACode_SelectedValueChanged);
+            this.comboBoxECOACode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // labelComplianceConditionCode
             // 
@@ -8320,6 +8387,8 @@
             resources.ApplyResources(this.comboBoxComplianceConditionCode, "comboBoxComplianceConditionCode");
             this.comboBoxComplianceConditionCode.Name = "comboBoxComplianceConditionCode";
             this.comboBoxComplianceConditionCode.ValueMember = "Code";
+            this.comboBoxComplianceConditionCode.SelectedValueChanged += new System.EventHandler(this.comboBoxComplianceConditionCode_SelectedValueChanged);
+            this.comboBoxComplianceConditionCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // label145
             // 
@@ -8335,6 +8404,8 @@
             resources.ApplyResources(this.comboBoxConsumerIndicator, "comboBoxConsumerIndicator");
             this.comboBoxConsumerIndicator.Name = "comboBoxConsumerIndicator";
             this.comboBoxConsumerIndicator.ValueMember = "Code";
+            this.comboBoxConsumerIndicator.SelectedValueChanged += new System.EventHandler(this.comboBoxConsumerIndicator_SelectedValueChanged);
+            this.comboBoxConsumerIndicator.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // label144
             // 
@@ -8350,6 +8421,8 @@
             resources.ApplyResources(this.comboBoxAccountType, "comboBoxAccountType");
             this.comboBoxAccountType.Name = "comboBoxAccountType";
             this.comboBoxAccountType.ValueMember = "Code";
+            this.comboBoxAccountType.SelectedValueChanged += new System.EventHandler(this.comboBoxAccountType_SelectedValueChanged);
+            this.comboBoxAccountType.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // label143
             // 
@@ -8365,11 +8438,24 @@
             resources.ApplyResources(this.comboBoxSpecialComment, "comboBoxSpecialComment");
             this.comboBoxSpecialComment.Name = "comboBoxSpecialComment";
             this.comboBoxSpecialComment.ValueMember = "Code";
+            this.comboBoxSpecialComment.SelectedValueChanged += new System.EventHandler(this.comboBoxSpecialComment_SelectedValueChanged);
+            this.comboBoxSpecialComment.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // label142
             // 
             resources.ApplyResources(this.label142, "label142");
             this.label142.Name = "label142";
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.DataSource = this.PaymentRatingsbindingSource;
+            this.comboBox3.DisplayMember = "Description";
+            this.comboBox3.FormattingEnabled = true;
+            resources.ApplyResources(this.comboBox3, "comboBox3");
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.ValueMember = "PaymentRating";
+            this.comboBox3.SelectedValueChanged += new System.EventHandler(this.comboBoxPaymentRating_SelectedValueChanged);
+            this.comboBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // comboBoxPaymentRating
             // 
@@ -8385,6 +8471,17 @@
             // 
             resources.ApplyResources(this.label141, "label141");
             this.label141.Name = "label141";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.DataSource = this.AccountStatusesbindingSource;
+            this.comboBox2.DisplayMember = "Description";
+            this.comboBox2.FormattingEnabled = true;
+            resources.ApplyResources(this.comboBox2, "comboBox2");
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.ValueMember = "Code";
+            this.comboBox2.SelectedValueChanged += new System.EventHandler(this.comboBoxAccountStatus_SelectedValueChanged);
+            this.comboBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // comboBoxAccountStatus
             // 
@@ -8427,6 +8524,7 @@
             this.textBoxCreditLimit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.closedCreditManagerBindingSource, "CRDMGR_ACCT_CREDIT_LIMIT", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "0", "C2"));
             resources.ApplyResources(this.textBoxCreditLimit, "textBoxCreditLimit");
             this.textBoxCreditLimit.Name = "textBoxCreditLimit";
+            this.textBoxCreditLimit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // labelSchMonthlyPayment
             // 
@@ -8439,6 +8537,7 @@
             this.textBoxSchMonthlyPaymentAmount.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.closedCreditManagerBindingSource, "CRDMGR_SCHED_MONTHLY_PAYMENT", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "0", "C2"));
             resources.ApplyResources(this.textBoxSchMonthlyPaymentAmount, "textBoxSchMonthlyPaymentAmount");
             this.textBoxSchMonthlyPaymentAmount.Name = "textBoxSchMonthlyPaymentAmount";
+            this.textBoxSchMonthlyPaymentAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // labelChargeOffAmount
             // 
@@ -8451,6 +8550,7 @@
             this.textBoxOrgChargeOffAmount.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.closedCreditManagerBindingSource, "CRDMGR_ORIGINAL_CHARGE_OFF_AMT", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "0", "C2"));
             resources.ApplyResources(this.textBoxOrgChargeOffAmount, "textBoxOrgChargeOffAmount");
             this.textBoxOrgChargeOffAmount.Name = "textBoxOrgChargeOffAmount";
+            this.textBoxOrgChargeOffAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // label134
             // 
@@ -8463,6 +8563,7 @@
             this.textBoxHighestCredit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.closedCreditManagerBindingSource, "CRDMGR_ACCT_HIGHEST_CREDIT", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "0", "C2"));
             resources.ApplyResources(this.textBoxHighestCredit, "textBoxHighestCredit");
             this.textBoxHighestCredit.Name = "textBoxHighestCredit";
+            this.textBoxHighestCredit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // label133
             // 
@@ -8475,6 +8576,7 @@
             this.textBoxActualPaymentAmount.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.closedCreditManagerBindingSource, "CRDMGR_ACTUAL_PAYMENT_AMOUNT", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "0", "C2"));
             resources.ApplyResources(this.textBoxActualPaymentAmount, "textBoxActualPaymentAmount");
             this.textBoxActualPaymentAmount.Name = "textBoxActualPaymentAmount";
+            this.textBoxActualPaymentAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // labelAmountPastDue
             // 
@@ -8487,6 +8589,7 @@
             this.textBoxAmountPastDue.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.closedCreditManagerBindingSource, "CRDMGR_AMOUNT_PAST_DUE", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "0", "C2"));
             resources.ApplyResources(this.textBoxAmountPastDue, "textBoxAmountPastDue");
             this.textBoxAmountPastDue.Name = "textBoxAmountPastDue";
+            this.textBoxAmountPastDue.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // labelCurrentBalance
             // 
@@ -8499,6 +8602,7 @@
             this.textBoxCurrentBalance.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.closedCreditManagerBindingSource, "CRDMGR_ACCT_CURRENT_BAL", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "0", "C2"));
             resources.ApplyResources(this.textBoxCurrentBalance, "textBoxCurrentBalance");
             this.textBoxCurrentBalance.Name = "textBoxCurrentBalance";
+            this.textBoxCurrentBalance.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // groupBoxPurge
             // 
@@ -8509,10 +8613,11 @@
             // 
             // checkBoxPurge
             // 
-            resources.ApplyResources(this.checkBoxPurge, "checkBoxPurge");
             this.checkBoxPurge.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.closedCreditManagerBindingSource, "Purge", true));
+            resources.ApplyResources(this.checkBoxPurge, "checkBoxPurge");
             this.checkBoxPurge.Name = "checkBoxPurge";
-            this.checkBoxPurge.UseVisualStyleBackColor = true;
+            this.checkBoxPurge.Properties.Caption = resources.GetString("checkBoxPurge.Properties.Caption");
+            this.checkBoxPurge.CheckedChanged += new System.EventHandler(this.checkBoxPurge_CheckedChanged);
             // 
             // groupBoxReportStatus
             // 
@@ -8523,10 +8628,11 @@
             // 
             // checkBoxReportTSB
             // 
-            resources.ApplyResources(this.checkBoxReportTSB, "checkBoxReportTSB");
             this.checkBoxReportTSB.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.closedCreditManagerBindingSource, "Report", true));
+            resources.ApplyResources(this.checkBoxReportTSB, "checkBoxReportTSB");
             this.checkBoxReportTSB.Name = "checkBoxReportTSB";
-            this.checkBoxReportTSB.UseVisualStyleBackColor = true;
+            this.checkBoxReportTSB.Properties.Caption = resources.GetString("checkBoxReportTSB.Properties.Caption");
+            this.checkBoxReportTSB.CheckedChanged += new System.EventHandler(this.checkBoxReportTSB_CheckedChanged);
             // 
             // groupBoxAccountNumber
             // 
@@ -8894,8 +9000,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateContractReceived.Properties)).EndInit();
             this.groupBoxSBT.ResumeLayout(false);
             this.groupBoxSBT.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.checkBoxDNTMktg.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkBoxDNTAcct.Properties)).EndInit();
             this.groupBoxGapWarranty.ResumeLayout(false);
             this.groupBoxGapWarranty.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.checkBoxExcludeVSI.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkBoxWarranty.Properties)).EndInit();
             this.groupBoxRefi.ResumeLayout(false);
             this.groupBoxRefi.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.checkBoxVehicleWarranty.Properties)).EndInit();
@@ -8909,14 +9019,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtContractStatus.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MaturityDate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MaturityDate.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkBoxCheckIssued.Properties)).EndInit();
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditCollectionAgent.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditOverideInterest.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerFundingDate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerFundingDate.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkBoxOverrideLateCharge.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DateTimePickerContractDate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DateTimePickerContractDate.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkBoxSimple.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFirstPayDate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFirstPayDate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPaymentDate.Properties.CalendarTimeProperties)).EndInit();
@@ -8974,6 +9087,8 @@
             this.groupBox16.ResumeLayout(false);
             this.groupBoxCOSSBT.ResumeLayout(false);
             this.groupBoxCOSSBT.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.checkBoxCOSDNTMktg.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkBoxCOSDNTAcct.Properties)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.groupBox4.ResumeLayout(false);
@@ -9059,6 +9174,7 @@
             this.groupBox22.ResumeLayout(false);
             this.groupBoxDates.ResumeLayout(false);
             this.groupBoxDates.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.checkBoxFollowUpDate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerFollowUpDate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerFollowUpDate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateClosed.Properties.CalendarTimeProperties)).EndInit();
@@ -9073,12 +9189,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDateofLastPayment.Properties)).EndInit();
             this.groupBoxCodes.ResumeLayout(false);
             this.groupBoxCodes.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.checkBoxECOACode.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkBoxPaymentProfile.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkBoxComplianceCode.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkBoxConsumerIndicator.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkBoxAccountType.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkBoxSpecialComment.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkBoxPaymentRating.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkBoxAccountStatus.Properties)).EndInit();
             this.groupBoxDollars.ResumeLayout(false);
             this.groupBoxDollars.PerformLayout();
             this.groupBoxPurge.ResumeLayout(false);
-            this.groupBoxPurge.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.checkBoxPurge.Properties)).EndInit();
             this.groupBoxReportStatus.ResumeLayout(false);
-            this.groupBoxReportStatus.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.checkBoxReportTSB.Properties)).EndInit();
             this.groupBoxAccountNumber.ResumeLayout(false);
             this.groupBoxAccountNumber.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
@@ -9205,13 +9329,13 @@
         private System.Windows.Forms.TextBox textBoxAuthNo;
         private System.Windows.Forms.RadioButton radioButtonMktg;
         private System.Windows.Forms.RadioButton radioButtonAcct;
-        private System.Windows.Forms.CheckBox checkBoxDNTMktg;
-        private System.Windows.Forms.CheckBox checkBoxDNTAcct;
+        private DevExpress.XtraEditors.CheckEdit checkBoxDNTMktg;
+        private DevExpress.XtraEditors.CheckEdit checkBoxDNTAcct;
         private System.Windows.Forms.ComboBox comboBoxGN;
         private System.Windows.Forms.TextBox textBoxTIN;
         private System.Windows.Forms.GroupBox groupBoxGapWarranty;
-        private System.Windows.Forms.CheckBox checkBoxExcludeVSI;
-        private System.Windows.Forms.CheckBox checkBoxWarranty;
+        private DevExpress.XtraEditors.CheckEdit checkBoxExcludeVSI;
+        private DevExpress.XtraEditors.CheckEdit checkBoxWarranty;
         private System.Windows.Forms.ComboBox comboBoxGAP;
         private System.Windows.Forms.MaskedTextBox cUSTOMER_CELL_PHONETextBox;
         private System.Windows.Forms.TextBox textBoxMiddleName;
@@ -9311,8 +9435,8 @@
         private System.Windows.Forms.TextBox textBoxCOSAuthNo;
         private System.Windows.Forms.RadioButton radioButtonCOSMktg;
         private System.Windows.Forms.RadioButton radioButtonCOSAcct;
-        private System.Windows.Forms.CheckBox checkBoxCOSDNTMktg;
-        private System.Windows.Forms.CheckBox checkBoxCOSDNTAcct;
+        private DevExpress.XtraEditors.CheckEdit checkBoxCOSDNTMktg;
+        private DevExpress.XtraEditors.CheckEdit checkBoxCOSDNTAcct;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.TextBox txtALTExt4;
         private System.Windows.Forms.TextBox txtALTExt3;
@@ -9428,7 +9552,7 @@
         private System.Windows.Forms.TextBox textBox46;
         private System.Windows.Forms.TextBox textBox52;
         private System.Windows.Forms.GroupBox groupBoxDates;
-        private System.Windows.Forms.CheckBox checkBoxFollowUpDate;
+        private DevExpress.XtraEditors.CheckEdit checkBoxFollowUpDate;
         private DevExpress.XtraEditors.DateEdit nullableDateTimePickerFollowUpDate;
         private DevExpress.XtraEditors.DateEdit nullableDateTimePickerDateClosed;
         private DevExpress.XtraEditors.DateEdit nullableDateTimePickerDateOpened;
@@ -9440,14 +9564,14 @@
         private System.Windows.Forms.Label label138;
         private System.Windows.Forms.Label label139;
         private System.Windows.Forms.GroupBox groupBoxCodes;
-        private System.Windows.Forms.CheckBox checkBoxECOACode;
-        private System.Windows.Forms.CheckBox checkBoxPaymentProfile;
-        private System.Windows.Forms.CheckBox checkBoxComplianceCode;
-        private System.Windows.Forms.CheckBox checkBoxConsumerIndicator;
-        private System.Windows.Forms.CheckBox checkBoxAccountType;
-        private System.Windows.Forms.CheckBox checkBoxSpecialComment;
-        private System.Windows.Forms.CheckBox checkBoxPaymentRating;
-        private System.Windows.Forms.CheckBox checkBoxAccountStatus;
+        private DevExpress.XtraEditors.CheckEdit checkBoxECOACode;
+        private DevExpress.XtraEditors.CheckEdit checkBoxPaymentProfile;
+        private DevExpress.XtraEditors.CheckEdit checkBoxComplianceCode;
+        private DevExpress.XtraEditors.CheckEdit checkBoxConsumerIndicator;
+        private DevExpress.XtraEditors.CheckEdit checkBoxAccountType;
+        private DevExpress.XtraEditors.CheckEdit checkBoxSpecialComment;
+        private DevExpress.XtraEditors.CheckEdit checkBoxPaymentRating;
+        private DevExpress.XtraEditors.CheckEdit checkBoxAccountStatus;
         private DevExpress.XtraEditors.SimpleButton buttonEditPaymentHistory;
         private System.Windows.Forms.Label label152;
         private System.Windows.Forms.TextBox textBoxPaymentHistoryProfile;
@@ -9488,9 +9612,9 @@
         private System.Windows.Forms.Label labelCurrentBalance;
         private System.Windows.Forms.TextBox textBoxCurrentBalance;
         private System.Windows.Forms.GroupBox groupBoxPurge;
-        private System.Windows.Forms.CheckBox checkBoxPurge;
+        private DevExpress.XtraEditors.CheckEdit checkBoxPurge;
         private System.Windows.Forms.GroupBox groupBoxReportStatus;
-        private System.Windows.Forms.CheckBox checkBoxReportTSB;
+        private DevExpress.XtraEditors.CheckEdit checkBoxReportTSB;
         private System.Windows.Forms.GroupBox groupBoxAccountNumber;
         private System.Windows.Forms.TextBox textBox68;
         private System.Windows.Forms.TextBox textBox69;
@@ -9504,9 +9628,9 @@
         private DevExpress.XtraEditors.CheckEdit checkBoxVehicleWarranty;
         private System.Windows.Forms.GroupBox groupBox9;
         private DevExpress.XtraEditors.DateEdit nullableDateTimePickerFundingDate;
-        private System.Windows.Forms.CheckBox checkBoxOverrideLateCharge;
+        private DevExpress.XtraEditors.CheckEdit checkBoxOverrideLateCharge;
         private DevExpress.XtraEditors.DateEdit DateTimePickerContractDate;
-        private System.Windows.Forms.CheckBox checkBoxSimple;
+        private DevExpress.XtraEditors.CheckEdit checkBoxSimple;
         private DevExpress.XtraEditors.DateEdit txtFirstPayDate;
         private DevExpress.XtraEditors.DateEdit txtPaymentDate;
         private System.Windows.Forms.TextBox textBox18;
@@ -9530,7 +9654,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox textBoxCheckNo;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.CheckBox checkBoxCheckIssued;
+        private DevExpress.XtraEditors.CheckEdit checkBoxCheckIssued;
         private System.Windows.Forms.TextBox textBoxDealerCashPrice;
         private System.Windows.Forms.MaskedTextBox txtPaidThrough;
         private System.Windows.Forms.TextBox txtControlDate;
@@ -9705,6 +9829,8 @@
         private DevExpress.XtraEditors.CheckEdit checkEditHasComprehensive;
         private DevExpress.XtraEditors.TextEdit textEditCollisionDeductible;
         private DevExpress.XtraEditors.CheckEdit checkEditHasCollision;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox comboBox2;
     }
 }
 
