@@ -28,31 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.nullableDateTimePickerDueDate = new ProManApp.NullableDateTimePicker();
             this.labelLateNotices = new System.Windows.Forms.Label();
-            this.buttonPost = new System.Windows.Forms.Button();
-            this.buttonCancel = new System.Windows.Forms.Button();
-            this.comboBoxAgedPeriod = new System.Windows.Forms.ComboBox();
+            this.buttonPost = new DevExpress.XtraEditors.SimpleButton();
+            this.buttonCancel = new DevExpress.XtraEditors.SimpleButton();
             this.labelAgedPeriod = new System.Windows.Forms.Label();
-            this.checkBoxCollections = new System.Windows.Forms.CheckBox();
-            this.comboBoxSortType = new System.Windows.Forms.ComboBox();
+            this.checkBoxCollections = new DevExpress.XtraEditors.CheckEdit();
             this.labelSortType = new System.Windows.Forms.Label();
+            this.nullableDateTimePickerDueDate = new DevExpress.XtraEditors.DateEdit();
+            this.comboBoxAgedPeriod = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.comboBoxSortType = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            ((System.ComponentModel.ISupportInitialize)(this.checkBoxCollections.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDueDate.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDueDate.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxAgedPeriod.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxSortType.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
+            this.groupControl1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // nullableDateTimePickerDueDate
-            // 
-            this.nullableDateTimePickerDueDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.nullableDateTimePickerDueDate.Location = new System.Drawing.Point(218, 36);
-            this.nullableDateTimePickerDueDate.Margin = new System.Windows.Forms.Padding(4);
-            this.nullableDateTimePickerDueDate.Name = "nullableDateTimePickerDueDate";
-            this.nullableDateTimePickerDueDate.Size = new System.Drawing.Size(123, 26);
-            this.nullableDateTimePickerDueDate.TabIndex = 0;
-            this.nullableDateTimePickerDueDate.Value = new System.DateTime(2018, 11, 20, 0, 0, 0, 0);
             // 
             // labelLateNotices
             // 
             this.labelLateNotices.AutoSize = true;
-            this.labelLateNotices.Location = new System.Drawing.Point(121, 47);
+            this.labelLateNotices.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLateNotices.Location = new System.Drawing.Point(93, 49);
             this.labelLateNotices.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelLateNotices.Name = "labelLateNotices";
             this.labelLateNotices.Size = new System.Drawing.Size(82, 20);
@@ -62,47 +61,33 @@
             // 
             // buttonPost
             // 
-            this.buttonPost.Location = new System.Drawing.Point(169, 192);
+            this.buttonPost.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonPost.Appearance.Options.UseFont = true;
+            this.buttonPost.Location = new System.Drawing.Point(169, 199);
             this.buttonPost.Margin = new System.Windows.Forms.Padding(4);
             this.buttonPost.Name = "buttonPost";
             this.buttonPost.Size = new System.Drawing.Size(112, 36);
             this.buttonPost.TabIndex = 2;
             this.buttonPost.Text = "&Print";
-            this.buttonPost.UseVisualStyleBackColor = true;
             this.buttonPost.Click += new System.EventHandler(this.buttonPost_Click);
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Location = new System.Drawing.Point(290, 192);
+            this.buttonCancel.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCancel.Appearance.Options.UseFont = true;
+            this.buttonCancel.Location = new System.Drawing.Point(290, 199);
             this.buttonCancel.Margin = new System.Windows.Forms.Padding(4);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(112, 36);
             this.buttonCancel.TabIndex = 3;
             this.buttonCancel.Text = "&Cancel";
-            this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
-            // 
-            // comboBoxAgedPeriod
-            // 
-            this.comboBoxAgedPeriod.FormattingEnabled = true;
-            this.comboBoxAgedPeriod.Items.AddRange(new object[] {
-            "30 Days",
-            "60 Days",
-            "90 Days",
-            "120 Days",
-            "150 Days",
-            "180+ Days",
-            "ALL PERIOD DEALER SUMMARY"});
-            this.comboBoxAgedPeriod.Location = new System.Drawing.Point(218, 77);
-            this.comboBoxAgedPeriod.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBoxAgedPeriod.Name = "comboBoxAgedPeriod";
-            this.comboBoxAgedPeriod.Size = new System.Drawing.Size(325, 28);
-            this.comboBoxAgedPeriod.TabIndex = 1;
             // 
             // labelAgedPeriod
             // 
             this.labelAgedPeriod.AutoSize = true;
-            this.labelAgedPeriod.Location = new System.Drawing.Point(92, 89);
+            this.labelAgedPeriod.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAgedPeriod.Location = new System.Drawing.Point(63, 83);
             this.labelAgedPeriod.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelAgedPeriod.Name = "labelAgedPeriod";
             this.labelAgedPeriod.Size = new System.Drawing.Size(112, 20);
@@ -112,29 +97,19 @@
             // 
             // checkBoxCollections
             // 
-            this.checkBoxCollections.AutoSize = true;
-            this.checkBoxCollections.Location = new System.Drawing.Point(96, 111);
+            this.checkBoxCollections.Location = new System.Drawing.Point(182, 111);
             this.checkBoxCollections.Name = "checkBoxCollections";
+            this.checkBoxCollections.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxCollections.Properties.Appearance.Options.UseFont = true;
+            this.checkBoxCollections.Properties.Caption = "Collections?";
             this.checkBoxCollections.Size = new System.Drawing.Size(114, 24);
             this.checkBoxCollections.TabIndex = 6;
-            this.checkBoxCollections.Text = "Collections?";
-            this.checkBoxCollections.UseVisualStyleBackColor = true;
-            // 
-            // comboBoxSortType
-            // 
-            this.comboBoxSortType.FormattingEnabled = true;
-            this.comboBoxSortType.Items.AddRange(new object[] {
-            "Customer Number",
-            "Due Date"});
-            this.comboBoxSortType.Location = new System.Drawing.Point(218, 134);
-            this.comboBoxSortType.Name = "comboBoxSortType";
-            this.comboBoxSortType.Size = new System.Drawing.Size(184, 28);
-            this.comboBoxSortType.TabIndex = 7;
             // 
             // labelSortType
             // 
             this.labelSortType.AutoSize = true;
-            this.labelSortType.Location = new System.Drawing.Point(122, 142);
+            this.labelSortType.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSortType.Location = new System.Drawing.Point(88, 149);
             this.labelSortType.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelSortType.Name = "labelSortType";
             this.labelSortType.Size = new System.Drawing.Size(87, 20);
@@ -142,41 +117,121 @@
             this.labelSortType.Text = "Sort Order:";
             this.labelSortType.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
+            // nullableDateTimePickerDueDate
+            // 
+            this.nullableDateTimePickerDueDate.EditValue = new System.DateTime(2022, 4, 8, 0, 0, 0, 0);
+            this.nullableDateTimePickerDueDate.Location = new System.Drawing.Point(182, 43);
+            this.nullableDateTimePickerDueDate.Margin = new System.Windows.Forms.Padding(4);
+            this.nullableDateTimePickerDueDate.Name = "nullableDateTimePickerDueDate";
+            this.nullableDateTimePickerDueDate.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nullableDateTimePickerDueDate.Properties.Appearance.Options.UseFont = true;
+            this.nullableDateTimePickerDueDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.nullableDateTimePickerDueDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.nullableDateTimePickerDueDate.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.Fluent;
+            this.nullableDateTimePickerDueDate.Properties.LookAndFeel.SkinName = "McSkin";
+            this.nullableDateTimePickerDueDate.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.nullableDateTimePickerDueDate.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
+            this.nullableDateTimePickerDueDate.Size = new System.Drawing.Size(123, 26);
+            this.nullableDateTimePickerDueDate.TabIndex = 0;
+            // 
+            // comboBoxAgedPeriod
+            // 
+            this.comboBoxAgedPeriod.Location = new System.Drawing.Point(182, 77);
+            this.comboBoxAgedPeriod.Name = "comboBoxAgedPeriod";
+            this.comboBoxAgedPeriod.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxAgedPeriod.Properties.Appearance.Options.UseFont = true;
+            this.comboBoxAgedPeriod.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxAgedPeriod.Properties.AppearanceDropDown.Options.UseFont = true;
+            this.comboBoxAgedPeriod.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.comboBoxAgedPeriod.Properties.Items.AddRange(new object[] {
+            "30 Days",
+            "60 Days",
+            "90 Days",
+            "120 Days",
+            "150 Days",
+            "180+ Days",
+            "ALL PERIOD DEALER SUMMARY"});
+            this.comboBoxAgedPeriod.Properties.LookAndFeel.SkinName = "McSkin";
+            this.comboBoxAgedPeriod.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.comboBoxAgedPeriod.Size = new System.Drawing.Size(325, 26);
+            this.comboBoxAgedPeriod.TabIndex = 1;
+            // 
+            // comboBoxSortType
+            // 
+            this.comboBoxSortType.Location = new System.Drawing.Point(182, 143);
+            this.comboBoxSortType.Name = "comboBoxSortType";
+            this.comboBoxSortType.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxSortType.Properties.Appearance.Options.UseFont = true;
+            this.comboBoxSortType.Properties.AppearanceDropDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxSortType.Properties.AppearanceDropDown.Options.UseFont = true;
+            this.comboBoxSortType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.comboBoxSortType.Properties.Items.AddRange(new object[] {
+            "Customer Number",
+            "Due Date"});
+            this.comboBoxSortType.Properties.LookAndFeel.SkinName = "McSkin";
+            this.comboBoxSortType.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.comboBoxSortType.Size = new System.Drawing.Size(184, 26);
+            this.comboBoxSortType.TabIndex = 7;
+            // 
+            // groupControl1
+            // 
+            this.groupControl1.Appearance.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.groupControl1.Appearance.Options.UseBackColor = true;
+            this.groupControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.groupControl1.Controls.Add(this.comboBoxSortType);
+            this.groupControl1.Controls.Add(this.comboBoxAgedPeriod);
+            this.groupControl1.Controls.Add(this.labelSortType);
+            this.groupControl1.Controls.Add(this.checkBoxCollections);
+            this.groupControl1.Controls.Add(this.labelAgedPeriod);
+            this.groupControl1.Controls.Add(this.buttonCancel);
+            this.groupControl1.Controls.Add(this.buttonPost);
+            this.groupControl1.Controls.Add(this.labelLateNotices);
+            this.groupControl1.Controls.Add(this.nullableDateTimePickerDueDate);
+            this.groupControl1.Location = new System.Drawing.Point(0, 0);
+            this.groupControl1.Name = "groupControl1";
+            this.groupControl1.Size = new System.Drawing.Size(570, 279);
+            this.groupControl1.TabIndex = 9;
+            this.groupControl1.Text = "groupControl1";
+            // 
             // frmClosedDelinquencyReports
             // 
+            this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(569, 276);
-            this.Controls.Add(this.labelSortType);
-            this.Controls.Add(this.comboBoxSortType);
-            this.Controls.Add(this.checkBoxCollections);
-            this.Controls.Add(this.labelAgedPeriod);
-            this.Controls.Add(this.comboBoxAgedPeriod);
-            this.Controls.Add(this.buttonCancel);
-            this.Controls.Add(this.buttonPost);
-            this.Controls.Add(this.labelLateNotices);
-            this.Controls.Add(this.nullableDateTimePickerDueDate);
+            this.Controls.Add(this.groupControl1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmClosedDelinquencyReports";
             this.Text = "Closed Delinquency Reports";
             this.Load += new System.EventHandler(this.frmClosedDelinquencyReports_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.checkBoxCollections.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDueDate.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDueDate.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxAgedPeriod.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxSortType.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
+            this.groupControl1.ResumeLayout(false);
+            this.groupControl1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private ProManApp.NullableDateTimePicker nullableDateTimePickerDueDate;
+        private DevExpress.XtraEditors.DateEdit nullableDateTimePickerDueDate;
         private System.Windows.Forms.Label labelLateNotices;
-        private System.Windows.Forms.Button buttonPost;
-        private System.Windows.Forms.Button buttonCancel;
-        private System.Windows.Forms.ComboBox comboBoxAgedPeriod;
+        private DevExpress.XtraEditors.SimpleButton buttonPost;
+        private DevExpress.XtraEditors.SimpleButton buttonCancel;
         private System.Windows.Forms.Label labelAgedPeriod;
-        private System.Windows.Forms.CheckBox checkBoxCollections;
-        private System.Windows.Forms.ComboBox comboBoxSortType;
+        private DevExpress.XtraEditors.CheckEdit checkBoxCollections;
         private System.Windows.Forms.Label labelSortType;
+        private DevExpress.XtraEditors.ComboBoxEdit comboBoxAgedPeriod;
+        private DevExpress.XtraEditors.ComboBoxEdit comboBoxSortType;
+        private DevExpress.XtraEditors.GroupControl groupControl1;
     }
 }

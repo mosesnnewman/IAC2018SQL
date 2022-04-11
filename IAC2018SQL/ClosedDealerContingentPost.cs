@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace IAC2021SQL
 {
-    public partial class frmClosedDealerContingentPost : Form
+    public partial class frmClosedDealerContingentPost : DevExpress.XtraEditors.XtraForm
     {
         Decimal lnMASTER_LOSS = 0, lnMASTER_CONT = 0, lnMASTER_ADJ = 0, lnMASTER_BAD = 0, lnMASTER_RSV = 0, lnMASTER_OS_LOANS = 0, lnMASTER_NOTES = 0,
                 lnMASTER_AMORT_INT = 0;
@@ -76,7 +76,7 @@ namespace IAC2021SQL
             lnTotalWork = ContingiacDataSet.WS_DEALER_CONT.Rows.Count;
             for (Int32 i = 0; i < ContingiacDataSet.WS_DEALER_CONT.Rows.Count; i++)
             {
-                DEALERTableAdapter.Fill(ContingiacDataSet.DEALER, ContingiacDataSet.WS_DEALER_CONT[i].Field<String>("KEY"));
+                DEALERTableAdapter.Fill(ContingiacDataSet.DEALER, ContingiacDataSet.WS_DEALER_CONT[i].Field<Int32>("KEY"));
                 if (ContingiacDataSet.DEALER.Rows.Count != 0)
                 {
                     ContingiacDataSet.DEALER.Rows[0].SetField<Decimal>("DEALER_CUR_LOSS",       ContingiacDataSet.WS_DEALER_CONT.Rows[i].Field<Decimal>("LOSS_RES"));
@@ -156,10 +156,10 @@ namespace IAC2021SQL
             DEALHISTBindingSource.EndEdit();
 
             // Start of DEALHIST KEY Fields
-            ContingiacDataSet.DEALHIST.Rows[DEALHISTBindingSource.Position].SetField<String>("DEALHIST_ACC_NO", ContingiacDataSet.DEALER.Rows[0].Field<String>("DEALER_ACC_NO"));
+            ContingiacDataSet.DEALHIST.Rows[DEALHISTBindingSource.Position].SetField<Int32>("DEALHIST_ACC_NO", ContingiacDataSet.DEALER.Rows[0].Field<Int32>("id"));
             ContingiacDataSet.DEALHIST.Rows[DEALHISTBindingSource.Position].SetField<DateTime>("DEALHIST_POST_DATE", DateTime.Now.Date);
             ContingiacDataSet.DEALHIST.Rows[DEALHISTBindingSource.Position].SetField<DateTime>("DEALHIST_LAST_POST_DATE", ContingiacDataSet.DEALER.Rows[0].Field<DateTime>("DEALER_POST_DATE"));
-            loDealerHistSeq = DEALHISTTableAdapter.SeqNoQuery(ContingiacDataSet.DEALER.Rows[0].Field<String>("DEALER_ACC_NO"), DateTime.Now.Date, ContingiacDataSet.DEALER.Rows[0].Field<DateTime>("DEALER_POST_DATE").Date);
+            loDealerHistSeq = DEALHISTTableAdapter.SeqNoQuery(ContingiacDataSet.DEALER.Rows[0].Field<Int32>("DEALER_ACC_NO"), DateTime.Now.Date, ContingiacDataSet.DEALER.Rows[0].Field<DateTime>("DEALER_POST_DATE").Date);
             if (loDealerHistSeq != null)
                 lnSeq = (int)loDealerHistSeq + 1;
             else

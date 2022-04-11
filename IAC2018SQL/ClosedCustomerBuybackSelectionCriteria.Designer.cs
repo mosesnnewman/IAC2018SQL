@@ -29,67 +29,58 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.buttonPost = new System.Windows.Forms.Button();
-            this.buttonCancel = new System.Windows.Forms.Button();
             this.labelStartDate = new System.Windows.Forms.Label();
             this.iACDataSet = new IAC2021SQL.IACDataSet();
             this.labelEndDate = new System.Windows.Forms.Label();
-            this.nullableDateTimePickerStartDate = new ProManApp.NullableDateTimePicker();
-            this.nullableDateTimePickerEndDate = new ProManApp.NullableDateTimePicker();
-            this.textBoxDealerName = new System.Windows.Forms.TextBox();
             this.bindingSourceDLRLISTBYNUM = new System.Windows.Forms.BindingSource(this.components);
-            this.comboBoxDealer = new System.Windows.Forms.ComboBox();
             this.labelDealerNum = new System.Windows.Forms.Label();
             this.dlrlistbynumTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.DLRLISTBYNUMTableAdapter();
-            this.PAYCODEcomboBox = new System.Windows.Forms.ComboBox();
             this.PaymentCodebindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.PaymentTypetextBox = new System.Windows.Forms.TextBox();
-            this.PaymentTypecomboBox = new System.Windows.Forms.ComboBox();
             this.PaymentTypebindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.CodeTypetextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pAYMENTTYPETableAdapter = new IAC2021SQL.IACDataSetTableAdapters.PAYMENTTYPETableAdapter();
             this.pAYCODETableAdapter = new IAC2021SQL.IACDataSetTableAdapters.PAYCODETableAdapter();
             this.closedCustomerBuybackTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.ClosedCustomerBuybackTableAdapter();
-            this.comboBoxDealerState = new System.Windows.Forms.ComboBox();
             this.labelDealerState = new System.Windows.Forms.Label();
             this.labelCustomerState = new System.Windows.Forms.Label();
-            this.comboBoxCustomerState = new System.Windows.Forms.ComboBox();
+            this.nullableDateTimePickerStartDate = new DevExpress.XtraEditors.DateEdit();
+            this.nullableDateTimePickerEndDate = new DevExpress.XtraEditors.DateEdit();
+            this.buttonCancel = new DevExpress.XtraEditors.SimpleButton();
+            this.buttonPost = new DevExpress.XtraEditors.SimpleButton();
+            this.lookUpEditDealer = new DevExpress.XtraEditors.LookUpEdit();
+            this.lookUpEditDealerState = new DevExpress.XtraEditors.LookUpEdit();
+            this.DealerStateBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.CustomerStateBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.stateTableAdapter1 = new IAC2021SQL.IACDataSetTableAdapters.stateTableAdapter();
+            this.lookUpEditCustomerState = new DevExpress.XtraEditors.LookUpEdit();
+            this.lookUpEditPaymentType = new DevExpress.XtraEditors.LookUpEdit();
+            this.lookUpEditCodeType = new DevExpress.XtraEditors.LookUpEdit();
+            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             ((System.ComponentModel.ISupportInitialize)(this.iACDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerStartDate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerEndDate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceDLRLISTBYNUM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PaymentCodebindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PaymentTypebindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerStartDate.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerStartDate.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerEndDate.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerEndDate.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEditDealer.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEditDealerState.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DealerStateBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CustomerStateBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEditCustomerState.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEditPaymentType.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEditCodeType.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
+            this.groupControl1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // buttonPost
-            // 
-            this.buttonPost.Location = new System.Drawing.Point(232, 307);
-            this.buttonPost.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.buttonPost.Name = "buttonPost";
-            this.buttonPost.Size = new System.Drawing.Size(112, 35);
-            this.buttonPost.TabIndex = 5;
-            this.buttonPost.Text = "&Print";
-            this.buttonPost.UseVisualStyleBackColor = true;
-            this.buttonPost.Click += new System.EventHandler(this.buttonPost_Click);
-            // 
-            // buttonCancel
-            // 
-            this.buttonCancel.Location = new System.Drawing.Point(353, 307);
-            this.buttonCancel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(112, 35);
-            this.buttonCancel.TabIndex = 6;
-            this.buttonCancel.Text = "&Cancel";
-            this.buttonCancel.UseVisualStyleBackColor = true;
-            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // labelStartDate
             // 
             this.labelStartDate.AutoSize = true;
-            this.labelStartDate.Location = new System.Drawing.Point(70, 42);
+            this.labelStartDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelStartDate.Location = new System.Drawing.Point(159, 39);
             this.labelStartDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelStartDate.Name = "labelStartDate";
             this.labelStartDate.Size = new System.Drawing.Size(87, 20);
@@ -105,7 +96,8 @@
             // labelEndDate
             // 
             this.labelEndDate.AutoSize = true;
-            this.labelEndDate.Location = new System.Drawing.Point(75, 81);
+            this.labelEndDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelEndDate.Location = new System.Drawing.Point(164, 75);
             this.labelEndDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelEndDate.Name = "labelEndDate";
             this.labelEndDate.Size = new System.Drawing.Size(81, 20);
@@ -113,57 +105,16 @@
             this.labelEndDate.Text = "End Date:";
             this.labelEndDate.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // nullableDateTimePickerStartDate
-            // 
-            this.nullableDateTimePickerStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.nullableDateTimePickerStartDate.Location = new System.Drawing.Point(173, 31);
-            this.nullableDateTimePickerStartDate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.nullableDateTimePickerStartDate.Name = "nullableDateTimePickerStartDate";
-            this.nullableDateTimePickerStartDate.Size = new System.Drawing.Size(140, 26);
-            this.nullableDateTimePickerStartDate.TabIndex = 9;
-            this.nullableDateTimePickerStartDate.Value = new System.DateTime(2018, 12, 9, 0, 0, 0, 0);
-            // 
-            // nullableDateTimePickerEndDate
-            // 
-            this.nullableDateTimePickerEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.nullableDateTimePickerEndDate.Location = new System.Drawing.Point(173, 68);
-            this.nullableDateTimePickerEndDate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.nullableDateTimePickerEndDate.Name = "nullableDateTimePickerEndDate";
-            this.nullableDateTimePickerEndDate.Size = new System.Drawing.Size(140, 26);
-            this.nullableDateTimePickerEndDate.TabIndex = 10;
-            this.nullableDateTimePickerEndDate.Value = new System.DateTime(2018, 12, 9, 0, 0, 0, 0);
-            // 
-            // textBoxDealerName
-            // 
-            this.textBoxDealerName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceDLRLISTBYNUM, "DEALER_NAME", true));
-            this.textBoxDealerName.Location = new System.Drawing.Point(273, 107);
-            this.textBoxDealerName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBoxDealerName.Name = "textBoxDealerName";
-            this.textBoxDealerName.ReadOnly = true;
-            this.textBoxDealerName.Size = new System.Drawing.Size(328, 26);
-            this.textBoxDealerName.TabIndex = 15;
-            // 
             // bindingSourceDLRLISTBYNUM
             // 
             this.bindingSourceDLRLISTBYNUM.DataMember = "DLRLISTBYNUM";
             this.bindingSourceDLRLISTBYNUM.DataSource = this.iACDataSet;
             // 
-            // comboBoxDealer
-            // 
-            this.comboBoxDealer.DataSource = this.bindingSourceDLRLISTBYNUM;
-            this.comboBoxDealer.DisplayMember = "DEALER_ACC_NO";
-            this.comboBoxDealer.FormattingEnabled = true;
-            this.comboBoxDealer.Location = new System.Drawing.Point(173, 105);
-            this.comboBoxDealer.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.comboBoxDealer.Name = "comboBoxDealer";
-            this.comboBoxDealer.Size = new System.Drawing.Size(86, 28);
-            this.comboBoxDealer.TabIndex = 14;
-            this.comboBoxDealer.ValueMember = "DEALER_ACC_NO";
-            // 
             // labelDealerNum
             // 
             this.labelDealerNum.AutoSize = true;
-            this.labelDealerNum.Location = new System.Drawing.Point(95, 113);
+            this.labelDealerNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDealerNum.Location = new System.Drawing.Point(184, 111);
             this.labelDealerNum.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelDealerNum.Name = "labelDealerNum";
             this.labelDealerNum.Size = new System.Drawing.Size(60, 20);
@@ -175,66 +126,21 @@
             // 
             this.dlrlistbynumTableAdapter.ClearBeforeFill = true;
             // 
-            // PAYCODEcomboBox
-            // 
-            this.PAYCODEcomboBox.DataSource = this.PaymentCodebindingSource;
-            this.PAYCODEcomboBox.DisplayMember = "DESCRIPTION";
-            this.PAYCODEcomboBox.FormattingEnabled = true;
-            this.PAYCODEcomboBox.Location = new System.Drawing.Point(207, 257);
-            this.PAYCODEcomboBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.PAYCODEcomboBox.Name = "PAYCODEcomboBox";
-            this.PAYCODEcomboBox.Size = new System.Drawing.Size(301, 28);
-            this.PAYCODEcomboBox.TabIndex = 20;
-            this.PAYCODEcomboBox.ValueMember = "CODE";
-            this.PAYCODEcomboBox.SelectedIndexChanged += new System.EventHandler(this.PAYCODEcomboBox_SelectedIndexChanged);
-            // 
             // PaymentCodebindingSource
             // 
             this.PaymentCodebindingSource.DataMember = "PAYCODE";
             this.PaymentCodebindingSource.DataSource = this.iACDataSet;
-            // 
-            // PaymentTypetextBox
-            // 
-            this.PaymentTypetextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.PaymentTypetextBox.Location = new System.Drawing.Point(173, 222);
-            this.PaymentTypetextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.PaymentTypetextBox.Name = "PaymentTypetextBox";
-            this.PaymentTypetextBox.Size = new System.Drawing.Size(24, 26);
-            this.PaymentTypetextBox.TabIndex = 17;
-            this.PaymentTypetextBox.Validated += new System.EventHandler(this.PaymentTypetextBox_Validated);
-            // 
-            // PaymentTypecomboBox
-            // 
-            this.PaymentTypecomboBox.DataSource = this.PaymentTypebindingSource;
-            this.PaymentTypecomboBox.DisplayMember = "DESCRIPTION";
-            this.PaymentTypecomboBox.FormattingEnabled = true;
-            this.PaymentTypecomboBox.Location = new System.Drawing.Point(207, 220);
-            this.PaymentTypecomboBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.PaymentTypecomboBox.Name = "PaymentTypecomboBox";
-            this.PaymentTypecomboBox.Size = new System.Drawing.Size(301, 28);
-            this.PaymentTypecomboBox.TabIndex = 18;
-            this.PaymentTypecomboBox.ValueMember = "TYPE";
-            this.PaymentTypecomboBox.SelectedIndexChanged += new System.EventHandler(this.PaymentTypecomboBox_SelectedIndexChanged);
             // 
             // PaymentTypebindingSource
             // 
             this.PaymentTypebindingSource.DataMember = "PAYMENTTYPE";
             this.PaymentTypebindingSource.DataSource = this.iACDataSet;
             // 
-            // CodeTypetextBox
-            // 
-            this.CodeTypetextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.CodeTypetextBox.Location = new System.Drawing.Point(173, 259);
-            this.CodeTypetextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.CodeTypetextBox.Name = "CodeTypetextBox";
-            this.CodeTypetextBox.Size = new System.Drawing.Size(24, 26);
-            this.CodeTypetextBox.TabIndex = 19;
-            this.CodeTypetextBox.Validated += new System.EventHandler(this.CodeTypetextBox_Validated);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(40, 228);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(129, 219);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(113, 20);
@@ -245,7 +151,8 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(39, 265);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(128, 255);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(117, 20);
@@ -265,21 +172,11 @@
             // 
             this.closedCustomerBuybackTableAdapter.ClearBeforeFill = true;
             // 
-            // comboBoxDealerState
-            // 
-            this.comboBoxDealerState.DisplayMember = "name";
-            this.comboBoxDealerState.FormattingEnabled = true;
-            this.comboBoxDealerState.Location = new System.Drawing.Point(173, 144);
-            this.comboBoxDealerState.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.comboBoxDealerState.Name = "comboBoxDealerState";
-            this.comboBoxDealerState.Size = new System.Drawing.Size(140, 28);
-            this.comboBoxDealerState.TabIndex = 23;
-            this.comboBoxDealerState.ValueMember = "abbreviation";
-            // 
             // labelDealerState
             // 
             this.labelDealerState.AutoSize = true;
-            this.labelDealerState.Location = new System.Drawing.Point(48, 152);
+            this.labelDealerState.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDealerState.Location = new System.Drawing.Point(137, 147);
             this.labelDealerState.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelDealerState.Name = "labelDealerState";
             this.labelDealerState.Size = new System.Drawing.Size(107, 20);
@@ -290,7 +187,8 @@
             // labelCustomerState
             // 
             this.labelCustomerState.AutoSize = true;
-            this.labelCustomerState.Location = new System.Drawing.Point(26, 191);
+            this.labelCustomerState.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCustomerState.Location = new System.Drawing.Point(115, 183);
             this.labelCustomerState.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelCustomerState.Name = "labelCustomerState";
             this.labelCustomerState.Size = new System.Drawing.Size(129, 20);
@@ -298,76 +196,242 @@
             this.labelCustomerState.Text = "Customer State :";
             this.labelCustomerState.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // comboBoxCustomerState
+            // nullableDateTimePickerStartDate
             // 
-            this.comboBoxCustomerState.DisplayMember = "name";
-            this.comboBoxCustomerState.FormattingEnabled = true;
-            this.comboBoxCustomerState.Location = new System.Drawing.Point(173, 183);
-            this.comboBoxCustomerState.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.comboBoxCustomerState.Name = "comboBoxCustomerState";
-            this.comboBoxCustomerState.Size = new System.Drawing.Size(140, 28);
-            this.comboBoxCustomerState.TabIndex = 25;
-            this.comboBoxCustomerState.ValueMember = "abbreviation";
+            this.nullableDateTimePickerStartDate.EditValue = new System.DateTime(2013, 6, 12, 0, 0, 0, 0);
+            this.nullableDateTimePickerStartDate.Location = new System.Drawing.Point(264, 33);
+            this.nullableDateTimePickerStartDate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.nullableDateTimePickerStartDate.Name = "nullableDateTimePickerStartDate";
+            this.nullableDateTimePickerStartDate.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nullableDateTimePickerStartDate.Properties.Appearance.Options.UseFont = true;
+            this.nullableDateTimePickerStartDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.nullableDateTimePickerStartDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.nullableDateTimePickerStartDate.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.Fluent;
+            this.nullableDateTimePickerStartDate.Properties.LookAndFeel.SkinName = "McSkin";
+            this.nullableDateTimePickerStartDate.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.nullableDateTimePickerStartDate.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
+            this.nullableDateTimePickerStartDate.Size = new System.Drawing.Size(126, 26);
+            this.nullableDateTimePickerStartDate.TabIndex = 9;
+            // 
+            // nullableDateTimePickerEndDate
+            // 
+            this.nullableDateTimePickerEndDate.EditValue = new System.DateTime(2013, 6, 12, 0, 0, 0, 0);
+            this.nullableDateTimePickerEndDate.Location = new System.Drawing.Point(264, 69);
+            this.nullableDateTimePickerEndDate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.nullableDateTimePickerEndDate.Name = "nullableDateTimePickerEndDate";
+            this.nullableDateTimePickerEndDate.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nullableDateTimePickerEndDate.Properties.Appearance.Options.UseFont = true;
+            this.nullableDateTimePickerEndDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.nullableDateTimePickerEndDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.nullableDateTimePickerEndDate.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.Fluent;
+            this.nullableDateTimePickerEndDate.Properties.LookAndFeel.SkinName = "McSkin";
+            this.nullableDateTimePickerEndDate.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.nullableDateTimePickerEndDate.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
+            this.nullableDateTimePickerEndDate.Size = new System.Drawing.Size(126, 26);
+            this.nullableDateTimePickerEndDate.TabIndex = 10;
+            // 
+            // buttonCancel
+            // 
+            this.buttonCancel.Location = new System.Drawing.Point(318, 308);
+            this.buttonCancel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonCancel.Name = "buttonCancel";
+            this.buttonCancel.Size = new System.Drawing.Size(112, 35);
+            this.buttonCancel.TabIndex = 29;
+            this.buttonCancel.Text = "&Cancel";
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
+            // 
+            // buttonPost
+            // 
+            this.buttonPost.Location = new System.Drawing.Point(197, 308);
+            this.buttonPost.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonPost.Name = "buttonPost";
+            this.buttonPost.Size = new System.Drawing.Size(112, 35);
+            this.buttonPost.TabIndex = 28;
+            this.buttonPost.Text = "&Print";
+            this.buttonPost.Click += new System.EventHandler(this.buttonPost_Click);
+            // 
+            // lookUpEditDealer
+            // 
+            this.lookUpEditDealer.Location = new System.Drawing.Point(264, 105);
+            this.lookUpEditDealer.Name = "lookUpEditDealer";
+            this.lookUpEditDealer.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lookUpEditDealer.Properties.Appearance.Options.UseFont = true;
+            this.lookUpEditDealer.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
+            this.lookUpEditDealer.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lookUpEditDealer.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "id", 100, DevExpress.Utils.FormatType.Numeric, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("DEALER_NAME", "DEALER_NAME", 800, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            this.lookUpEditDealer.Properties.DataSource = this.bindingSourceDLRLISTBYNUM;
+            this.lookUpEditDealer.Properties.DisplayMember = "id";
+            this.lookUpEditDealer.Properties.LookAndFeel.SkinName = "McSkin";
+            this.lookUpEditDealer.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.lookUpEditDealer.Properties.NullText = "";
+            this.lookUpEditDealer.Properties.ValueMember = "id";
+            this.lookUpEditDealer.Size = new System.Drawing.Size(86, 26);
+            this.lookUpEditDealer.TabIndex = 14;
+            // 
+            // lookUpEditDealerState
+            // 
+            this.lookUpEditDealerState.Location = new System.Drawing.Point(264, 141);
+            this.lookUpEditDealerState.Name = "lookUpEditDealerState";
+            this.lookUpEditDealerState.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lookUpEditDealerState.Properties.Appearance.Options.UseFont = true;
+            this.lookUpEditDealerState.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
+            this.lookUpEditDealerState.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lookUpEditDealerState.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("name", "name", 37, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("abbreviation", "abbreviation", 74, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            this.lookUpEditDealerState.Properties.DataSource = this.DealerStateBindingSource;
+            this.lookUpEditDealerState.Properties.DisplayMember = "name";
+            this.lookUpEditDealerState.Properties.NullText = "";
+            this.lookUpEditDealerState.Properties.ValueMember = "abbreviation";
+            this.lookUpEditDealerState.Size = new System.Drawing.Size(247, 26);
+            this.lookUpEditDealerState.TabIndex = 15;
+            // 
+            // DealerStateBindingSource
+            // 
+            this.DealerStateBindingSource.DataMember = "state";
+            this.DealerStateBindingSource.DataSource = this.iACDataSet;
+            // 
+            // CustomerStateBindingSource
+            // 
+            this.CustomerStateBindingSource.DataMember = "state";
+            this.CustomerStateBindingSource.DataSource = this.iACDataSet;
+            // 
+            // stateTableAdapter1
+            // 
+            this.stateTableAdapter1.ClearBeforeFill = true;
+            // 
+            // lookUpEditCustomerState
+            // 
+            this.lookUpEditCustomerState.Location = new System.Drawing.Point(264, 177);
+            this.lookUpEditCustomerState.Name = "lookUpEditCustomerState";
+            this.lookUpEditCustomerState.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lookUpEditCustomerState.Properties.Appearance.Options.UseFont = true;
+            this.lookUpEditCustomerState.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
+            this.lookUpEditCustomerState.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lookUpEditCustomerState.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("name", "name", 37, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("abbreviation", "abbreviation", 74, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            this.lookUpEditCustomerState.Properties.DataSource = this.CustomerStateBindingSource;
+            this.lookUpEditCustomerState.Properties.DisplayMember = "name";
+            this.lookUpEditCustomerState.Properties.NullText = "";
+            this.lookUpEditCustomerState.Properties.ValueMember = "abbreviation";
+            this.lookUpEditCustomerState.Size = new System.Drawing.Size(247, 26);
+            this.lookUpEditCustomerState.TabIndex = 16;
+            // 
+            // lookUpEditPaymentType
+            // 
+            this.lookUpEditPaymentType.Location = new System.Drawing.Point(264, 213);
+            this.lookUpEditPaymentType.Name = "lookUpEditPaymentType";
+            this.lookUpEditPaymentType.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lookUpEditPaymentType.Properties.Appearance.Options.UseFont = true;
+            this.lookUpEditPaymentType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lookUpEditPaymentType.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("TYPE", "TYPE", 31, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.Ascending, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("DESCRIPTION", "DESCRIPTION", 77, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            this.lookUpEditPaymentType.Properties.DataSource = this.PaymentTypebindingSource;
+            this.lookUpEditPaymentType.Properties.DisplayMember = "TYPE";
+            this.lookUpEditPaymentType.Properties.NullText = "";
+            this.lookUpEditPaymentType.Properties.ValueMember = "TYPE";
+            this.lookUpEditPaymentType.Size = new System.Drawing.Size(60, 26);
+            this.lookUpEditPaymentType.TabIndex = 30;
+            this.lookUpEditPaymentType.EditValueChanged += new System.EventHandler(this.lookUpEditPaymentType_EditValueChanged);
+            // 
+            // lookUpEditCodeType
+            // 
+            this.lookUpEditCodeType.Location = new System.Drawing.Point(264, 249);
+            this.lookUpEditCodeType.Name = "lookUpEditCodeType";
+            this.lookUpEditCodeType.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lookUpEditCodeType.Properties.Appearance.Options.UseFont = true;
+            this.lookUpEditCodeType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lookUpEditCodeType.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("CODE", "CODE", 39, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.Ascending, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("DESCRIPTION", "DESCRIPTION", 77, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            this.lookUpEditCodeType.Properties.DataSource = this.PaymentCodebindingSource;
+            this.lookUpEditCodeType.Properties.DisplayMember = "CODE";
+            this.lookUpEditCodeType.Properties.NullText = "";
+            this.lookUpEditCodeType.Properties.ValueMember = "CODE";
+            this.lookUpEditCodeType.Size = new System.Drawing.Size(60, 26);
+            this.lookUpEditCodeType.TabIndex = 31;
+            // 
+            // groupControl1
+            // 
+            this.groupControl1.Appearance.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.groupControl1.Appearance.Options.UseBackColor = true;
+            this.groupControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.groupControl1.Controls.Add(this.lookUpEditCodeType);
+            this.groupControl1.Controls.Add(this.lookUpEditPaymentType);
+            this.groupControl1.Controls.Add(this.lookUpEditCustomerState);
+            this.groupControl1.Controls.Add(this.lookUpEditDealerState);
+            this.groupControl1.Controls.Add(this.lookUpEditDealer);
+            this.groupControl1.Controls.Add(this.buttonCancel);
+            this.groupControl1.Controls.Add(this.buttonPost);
+            this.groupControl1.Controls.Add(this.nullableDateTimePickerEndDate);
+            this.groupControl1.Controls.Add(this.nullableDateTimePickerStartDate);
+            this.groupControl1.Controls.Add(this.labelCustomerState);
+            this.groupControl1.Controls.Add(this.labelDealerState);
+            this.groupControl1.Controls.Add(this.label2);
+            this.groupControl1.Controls.Add(this.label1);
+            this.groupControl1.Controls.Add(this.labelDealerNum);
+            this.groupControl1.Controls.Add(this.labelEndDate);
+            this.groupControl1.Controls.Add(this.labelStartDate);
+            this.groupControl1.Location = new System.Drawing.Point(2, -3);
+            this.groupControl1.Name = "groupControl1";
+            this.groupControl1.Size = new System.Drawing.Size(626, 376);
+            this.groupControl1.TabIndex = 32;
+            this.groupControl1.Text = "groupControl1";
             // 
             // frmClosedCustomerBuybackReport
             // 
+            this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(627, 372);
-            this.Controls.Add(this.labelCustomerState);
-            this.Controls.Add(this.comboBoxCustomerState);
-            this.Controls.Add(this.labelDealerState);
-            this.Controls.Add(this.comboBoxDealerState);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.PAYCODEcomboBox);
-            this.Controls.Add(this.PaymentTypetextBox);
-            this.Controls.Add(this.PaymentTypecomboBox);
-            this.Controls.Add(this.CodeTypetextBox);
-            this.Controls.Add(this.textBoxDealerName);
-            this.Controls.Add(this.comboBoxDealer);
-            this.Controls.Add(this.labelDealerNum);
-            this.Controls.Add(this.nullableDateTimePickerEndDate);
-            this.Controls.Add(this.nullableDateTimePickerStartDate);
-            this.Controls.Add(this.labelEndDate);
-            this.Controls.Add(this.labelStartDate);
-            this.Controls.Add(this.buttonCancel);
-            this.Controls.Add(this.buttonPost);
+            this.Controls.Add(this.groupControl1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmClosedCustomerBuybackReport";
             this.Text = "Print Closed Customer Buyback Report (BUYBACK)";
             this.Load += new System.EventHandler(this.frmClosedCustomerBuybackReport_Load);
             ((System.ComponentModel.ISupportInitialize)(this.iACDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerStartDate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerEndDate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceDLRLISTBYNUM)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PaymentCodebindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PaymentTypebindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerStartDate.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerStartDate.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerEndDate.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerEndDate.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEditDealer.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEditDealerState.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DealerStateBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CustomerStateBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEditCustomerState.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEditPaymentType.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEditCodeType.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
+            this.groupControl1.ResumeLayout(false);
+            this.groupControl1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button buttonPost;
-        private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.Label labelStartDate;
         private IACDataSet iACDataSet;
         private System.Windows.Forms.Label labelEndDate;
-        private ProManApp.NullableDateTimePicker nullableDateTimePickerStartDate;
-        private ProManApp.NullableDateTimePicker nullableDateTimePickerEndDate;
-        private System.Windows.Forms.TextBox textBoxDealerName;
-        private System.Windows.Forms.ComboBox comboBoxDealer;
         private System.Windows.Forms.Label labelDealerNum;
         private System.Windows.Forms.BindingSource bindingSourceDLRLISTBYNUM;
         private IACDataSetTableAdapters.DLRLISTBYNUMTableAdapter dlrlistbynumTableAdapter;
-        private System.Windows.Forms.ComboBox PAYCODEcomboBox;
-        private System.Windows.Forms.TextBox PaymentTypetextBox;
-        private System.Windows.Forms.ComboBox PaymentTypecomboBox;
-        private System.Windows.Forms.TextBox CodeTypetextBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.BindingSource PaymentTypebindingSource;
@@ -375,9 +439,20 @@
         private System.Windows.Forms.BindingSource PaymentCodebindingSource;
         private IACDataSetTableAdapters.PAYCODETableAdapter pAYCODETableAdapter;
         private IACDataSetTableAdapters.ClosedCustomerBuybackTableAdapter closedCustomerBuybackTableAdapter;
-        private System.Windows.Forms.ComboBox comboBoxDealerState;
         private System.Windows.Forms.Label labelDealerState;
         private System.Windows.Forms.Label labelCustomerState;
-        private System.Windows.Forms.ComboBox comboBoxCustomerState;
+        private DevExpress.XtraEditors.DateEdit nullableDateTimePickerStartDate;
+        private DevExpress.XtraEditors.DateEdit nullableDateTimePickerEndDate;
+        private DevExpress.XtraEditors.SimpleButton buttonCancel;
+        private DevExpress.XtraEditors.SimpleButton buttonPost;
+        private DevExpress.XtraEditors.LookUpEdit lookUpEditDealer;
+        private DevExpress.XtraEditors.LookUpEdit lookUpEditDealerState;
+        private System.Windows.Forms.BindingSource CustomerStateBindingSource;
+        private IACDataSetTableAdapters.stateTableAdapter stateTableAdapter1;
+        private DevExpress.XtraEditors.LookUpEdit lookUpEditCustomerState;
+        private System.Windows.Forms.BindingSource DealerStateBindingSource;
+        private DevExpress.XtraEditors.LookUpEdit lookUpEditPaymentType;
+        private DevExpress.XtraEditors.LookUpEdit lookUpEditCodeType;
+        private DevExpress.XtraEditors.GroupControl groupControl1;
     }
 }

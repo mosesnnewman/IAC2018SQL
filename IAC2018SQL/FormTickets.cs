@@ -7,26 +7,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevExpress.XtraGrid.Views.Base;
+using System.Globalization;
+using DevExpress.XtraEditors;
 
 namespace IAC2021SQL
 {
-    public partial class FormTickets : Form
+    public partial class FormTickets : DevExpress.XtraEditors.XtraForm
     {
         private ListData listDataSet = new ListData();
 
         private ProductionMainTablesTableAdapters.ACCOUNTTableAdapter aCCOUNTTableAdapter = new ProductionMainTablesTableAdapters.ACCOUNTTableAdapter();
 
-        private TicketsTableAdapters.TicketAccountsTableAdapter ticketAccountsTableAdapter = new TicketsTableAdapters.TicketAccountsTableAdapter();
         private ListDataTableAdapters.PAYCODETableAdapter PAYCODETableAdapter = new ListDataTableAdapters.PAYCODETableAdapter();
         private ListDataTableAdapters.PAYMENTTYPETableAdapter PAYMENTTYPETableAdapter = new ListDataTableAdapters.PAYMENTTYPETableAdapter();
         private ProductionMainTablesTableAdapters.ULISTTableAdapter ULISTTableAdapter = new ProductionMainTablesTableAdapters.ULISTTableAdapter();
         private ProductionMainTablesTableAdapters.CONTINGTableAdapter CONTINGTableAdapter = new ProductionMainTablesTableAdapters.CONTINGTableAdapter();
         private ProductionMainTablesTableAdapters.PAYMENTTableAdapter PAYMENTTableAdapter = new ProductionMainTablesTableAdapters.PAYMENTTableAdapter();
 
-        private BindingSource bindingSourceTicketAccounts = new BindingSource();
         private BindingSource bindingSourcePaymentTypes = new BindingSource();
         private BindingSource bindingSourcePaymentCodes = new BindingSource();
-
+       
         private Tickets.TicketHeaderRow NewTicketHeader;
         private Tickets.TicketDetailRow NewTicketDetail;
 
@@ -48,88 +49,20 @@ namespace IAC2021SQL
 
         private void FormTickets_Load(object sender, EventArgs e)
         {
+            this.pAYCODETableAdapter1.Fill(this.listData.PAYCODE);
+            this.pAYMENTTYPETableAdapter1.Fill(this.listData.PAYMENTTYPE);
             ResetAll();
-            this.Account.AspectToStringConverter = delegate (object x)
-            {
-                Int32 AcctNumber;
-                //Int32.TryParse((String)x, out AcctNumber); // GLAccount is not a string anymore, it's an integer!
-                try
-                {
-                    AcctNumber = (x == System.DBNull.Value) ? 0 : (Int32)x;
-                    Int32 FoundIndex = bindingSourceTicketAccounts.Find("AcctID", AcctNumber);
-                    if (FoundIndex > -1)
-                        return ticketsdataset.TicketAccounts.Rows[FoundIndex].Field<String>("Account");
-                    else
-                        return "";
-                }
-                catch (System.NullReferenceException)
-                {
-                    return "";
-                }
-            };
-            this.Dealer.AspectToStringConverter = delegate (object x)
-            {
-                String lsDealer;
-                lsDealer = (x == System.DBNull.Value) ? "" : (x.ToString() != "" ? x.ToString().PadLeft(3, '0') : "");
-                return lsDealer;
-            };
-/*
-            buttonEdit.Enabled = false; // Moses Newman 08/16/2021
-            buttonDeleteTicket.Enabled = false; // Moses Newman 08/16/2021
-            _EditMode = false;
-            _AddMode = false;
-            _ViewMode = true;
-
-            NullableDateTimePickerDate.Value = null;
-            NullableDateTimePickerDate.Refresh();
-            buttonClearDetail.Enabled = false;
-            buttonSaveTicket.Enabled = false;
-            buttonCancelTicket.Enabled = false;
-            buttonAdd.Enabled = false;
-            buttonDeleteEntry.Enabled = false; // Moses Newman 07/28/2021
-            PAYMENTTYPETableAdapter.Fill(listDataSet.PAYMENTTYPE);
-            PAYCODETableAdapter.Fill(listDataSet.PAYCODE);
-
-            bindingSourcePaymentTypes.DataSource = listDataSet;
-            bindingSourcePaymentTypes.DataMember = "PAYMENTTYPE";
-            bindingSourcePaymentCodes.DataSource = listDataSet;
-            bindingSourcePaymentCodes.DataMember = "PAYCODE";
-
-            ticketHeaderTableAdapter.FillByAll(ticketsdataset.TicketHeader);
+            richTextBox1.Enabled = true;
+            richTextBox1.Text = "";
+            richTextBox1.Enabled = false;
             ticketAccountsTableAdapter.FillByAll(ticketsdataset.TicketAccounts);
-            bindingSourceTicketAccounts.DataSource = ticketsdataset;
-            bindingSourceTicketAccounts.DataMember = "TicketAccounts";
-
-            this.Account.AspectToStringConverter = delegate (object x)
-            {
-                Int32 AcctNumber;
-                //Int32.TryParse((String)x, out AcctNumber); // GLAccount is not a string anymore, it's an integer!
-                try
-                {
-                    AcctNumber = (x == System.DBNull.Value) ? 0 : (Int32)x;
-                    Int32 FoundIndex = bindingSourceTicketAccounts.Find("AcctID", AcctNumber);
-                    if (FoundIndex > -1)
-                        return ticketsdataset.TicketAccounts.Rows[FoundIndex].Field<String>("Account");
-                    else
-                        return "";
-                }
-                catch(System.NullReferenceException)
-                {
-                    return "";
-                }
-            };
-            this.Dealer.AspectToStringConverter = delegate (object x)
-            {
-                String lsDealer;
-                lsDealer = (x == System.DBNull.Value) ? "" : (x.ToString() != "" ? x.ToString().PadLeft(3,'0'):"");
-                return lsDealer;
-            };
-            colorTextBoxDebits.Debit = true;
-            colorTextBoxCredits.Debit = false;
-            richTextBox1.Text = ""; // Moss Newman 07/28/2021
-            ActiveControl = textBoxAccount;
-            textBoxAccount.Select();
-            */
+            dEALERTableAdapter.FillByAll(lookupDataSet.DEALER);
+            ProductionMainTables.DEALERRow newDealerRow = lookupDataSet.DEALER.NewDEALERRow();
+            newDealerRow.id = 0;
+            newDealerRow.DEALER_NAME = "";
+            newDealerRow.DEALER_CITY = "";
+            newDealerRow.DEALER_ACC_NO = "";
+            lookupDataSet.DEALER.AddDEALERRow(newDealerRow);
         }
 
         private void buttonAdd_Click(object sender, EventArgs e)
@@ -143,116 +76,12 @@ namespace IAC2021SQL
             ticketsdataset.TicketDetail.AddTicketDetailRow(NewTicketDetail);
             ticketsdataset.TicketDetail.Rows[bindingSourceTicketDetail.Position].SetField<Int32>("DetailID", bindingSourceTicketDetail.Position + 1);
             bindingSourceTicketDetail.MoveLast();
-            dataListView1.Refresh();
+            gridControl1.Refresh();
             this.Refresh();
             buttonAdd.Enabled = true;
             buttonSaveTicket.Enabled = true;
             buttonClearDetail.Enabled = true;
             buttonDeleteEntry.Enabled = true;
-        }
-
-        private void dataListView1_CellEditStarting(object sender, BrightIdeasSoftware.CellEditEventArgs e)
-        {
-            Int32 cindex = e.Column.Index,AccountID,RowNum;
-            var AccountColumn = dataListView1.GetColumn(1);
-            var RowColumn = dataListView1.GetColumn(0);
-
-            switch (cindex)
-            {
-                case 1:
-                    ComboBox cbAccount = new ComboBox();
-                    cbAccount.Bounds = e.CellBounds;
-                    cbAccount.Font = ((BrightIdeasSoftware.DataListView)sender).Font;
-                    cbAccount.DropDownStyle = ComboBoxStyle.DropDownList;
-                    //cbAccount.SelectedValueChanged += CbAccount_SelectedValueChanged;
-                    // Moses Newman 07/28/2021 Add Code to grab the selected GLAccount from the TicketDetail if one already was selected, instead
-                    // of defaulting to CASH!
-                    RowNum = (Int32)RowColumn.GetValue(e.RowObject);
-                    if (ticketsdataset.TicketDetail.Rows.Count != 0)
-                    {
-                        if (RowNum - 1 < ticketsdataset.TicketDetail.Rows.Count)
-                            bindingSourceTicketAccounts.Position = bindingSourceTicketAccounts.Find("AcctID",
-                                                ticketsdataset.TicketDetail.Rows[RowNum - 1].Field<Int32?>("GLAccount") != null ? 
-                                                            ticketsdataset.TicketDetail.Rows[RowNum - 1].Field<Int32>("GLAccount") : 0);
-                    }
-                    else
-                        bindingSourceTicketAccounts.MoveFirst();
-                    cbAccount.DataSource = bindingSourceTicketAccounts;
-                    cbAccount.ValueMember = "AcctID";
-                    cbAccount.DisplayMember = "Account";
-                    cbAccount.SelectedValue = "AcctID"; // should select the entry that reflects the currentvalue
-                    cbAccount.KeyPress += GeneralKeypress;
-                    e.Control = cbAccount;
-                    break;
-                case 3:
-                case 4:
-                    break;
-                case 5:
-                    try
-                    {
-                        AccountID = (Int32)AccountColumn.GetValue(e.RowObject);
-                    }
-                    catch (System.InvalidCastException)
-                    {
-                        AccountID = 0;
-                        break;
-                    }
-                    if (AccountID == 2)
-                    {
-                        e.Control.Enabled = false;
-                        break;
-                    }
-                    else
-                        e.Control.Enabled = true;
-                    listDataSet.PAYCODE.Clear();
-                    bindingSourceTicketAccounts.MoveFirst();
-                    ComboBox cbPaymentType = new ComboBox();
-                    cbPaymentType.Bounds = e.CellBounds;
-                    cbPaymentType.Width = 250;
-                    cbPaymentType.Font = ((BrightIdeasSoftware.DataListView)sender).Font;
-                    cbPaymentType.DropDownStyle = ComboBoxStyle.DropDownList;
-                    cbPaymentType.DataSource = bindingSourcePaymentTypes;
-                    cbPaymentType.ValueMember = "TYPE";
-                    cbPaymentType.DisplayMember = "DESCRIPTION";
-                    cbPaymentType.SelectedValue = "TYPE"; // should select the entry that reflects the currentvalue
-                    //cbPaymentType.SelectedValueChanged += CbPaymentType_SelectedValueChanged;
-                    cbPaymentType.KeyPress += GeneralKeypress;
-                    e.Control = cbPaymentType;
-                    break;
-                case 6:
-                    try
-                    {
-                        AccountID = (Int32)AccountColumn.GetValue(e.RowObject);
-                        if (AccountID == 2)
-                        {
-                            e.Control.Enabled = false;
-                            break;
-                        }
-                        else
-                            e.Control.Enabled = true;
-                        if (listDataSet.PAYCODE.Rows.Count > 0)
-                        {
-                            bindingSourceTicketAccounts.MoveFirst();
-                            ComboBox cbPaymentCode = new ComboBox();
-                            cbPaymentCode.Bounds = e.CellBounds;
-                            cbPaymentCode.Width = 250;
-                            cbPaymentCode.Font = ((BrightIdeasSoftware.DataListView)sender).Font;
-                            cbPaymentCode.DropDownStyle = ComboBoxStyle.DropDownList;
-                            cbPaymentCode.DataSource = bindingSourcePaymentCodes;
-                            cbPaymentCode.ValueMember = "CODE";
-                            cbPaymentCode.DisplayMember = "DESCRIPTION";
-                            cbPaymentCode.SelectedValue = "CODE"; // should select the entry that reflects the currentvalue
-                                                                  //cbPaymentCode.SelectedValueChanged += CbPaymentCode_SelectedValueChanged;
-                            cbPaymentCode.KeyPress += GeneralKeypress;
-                            e.Control = cbPaymentCode;
-                        }
-                        break;
-                    }
-                    catch (System.InvalidCastException)
-                    {
-                        break;
-                    }
-            }
         }
 
         private void Control_TextChanged(object sender, EventArgs e)
@@ -302,18 +131,24 @@ namespace IAC2021SQL
             }
             if (Debits != Credits)
             {
-                OutofBalance = Debits > Credits ? Debits - Credits:Credits - Debits;
+                OutofBalance = Debits > Credits ? Debits - Credits : Credits - Debits;
             }
 
             else
                 OutofBalance = 0;
-            colorTextBoxDebits.Debit = true;
-            colorTextBoxCredits.Debit = false;
+            //colorTextBoxDebits.Debit = true;
+            colorTextBoxDebits.ForeColor = Color.Red;
+            colorTextBoxCredits.ForeColor = Color.Green;
             colorTextBoxDebits.Text = String.Format("{0:C}", Debits);
             colorTextBoxCredits.Text = String.Format("{0:C}", Credits);
             colorTextBoxOutofBalance.Text = String.Format("{0:C}", OutofBalance);
+            if (OutofBalance != 0)
+                colorTextBoxOutofBalance.ForeColor = Color.Red;
+            else
+                colorTextBoxOutofBalance.ForeColor = Color.Black;
         }
 
+        
         private void dataListView1_CellEditFinished(object sender, BrightIdeasSoftware.CellEditEventArgs e)
         {
             Int32 cindex = e.Column.Index;
@@ -345,21 +180,21 @@ namespace IAC2021SQL
             cUSTOMERTableAdapter.Fill(productionMainTables.CUSTOMER, lsCustomerNo);
             if (productionMainTables.CUSTOMER.Rows.Count == 0 && lsCustomerNo != "")
             {
-                var ldlgAnswer = MessageBox.Show("Sorry no customers found that match your selected account number!", "Customer Not Found",MessageBoxButtons.OK);
+                var ldlgAnswer = MessageBox.Show("Sorry no customers found that match your selected account number!", "Customer Not Found", MessageBoxButtons.OK);
                 return;
             }
             else
             {
                 richTextBox1.Enabled = true;
-                dataListView1.Enabled = true;
-                dEALERTableAdapter.Fill(productionMainTables.DEALER, productionMainTables.CUSTOMER.Rows[0].Field<String>("CUSTOMER_DEALER"));
+                gridControl1.Enabled = true;
+                dEALERTableAdapter.Fill(productionMainTables.DEALER, productionMainTables.CUSTOMER.Rows[0].Field<Int32>("CUSTOMER_DEALER"));
                 ticketAccountsTableAdapter.FillByAll(ticketsdataset.TicketAccounts);
-                bindingSourceTicketAccounts.DataSource = ticketsdataset;
-                bindingSourceTicketAccounts.DataMember = "TicketAccounts";
+                ticketAccountsBindingSource.DataSource = ticketsdataset;
+                ticketAccountsBindingSource.DataMember = "TicketAccounts";
                 NewTicketHeader = ticketsdataset.TicketHeader.NewTicketHeaderRow();
 
                 NewTicketHeader.AccountNumber = productionMainTables.CUSTOMER.Rows[0].Field<Int32>("CustomerID");
-                NewTicketHeader.DealerNumber = productionMainTables.CUSTOMER.Rows[0].Field<String>("CUSTOMER_DEALER");
+                NewTicketHeader.DealerNumber = productionMainTables.CUSTOMER.Rows[0].Field<Int32>("CUSTOMER_DEALER");
                 NewTicketHeader.Date = DateTime.Now.Date;
                 NewTicketHeader.MadeBy = Program.gsUserID.TrimEnd();
                 NewTicketHeader.Explanation = "";  // Moses Newman 07/28/2021
@@ -400,7 +235,7 @@ namespace IAC2021SQL
 
         private void buttonSaveTicket_Click(object sender, EventArgs e)
         {
-            int? insertID = 0,lnSeq;
+            int? insertID = 0, lnSeq;
             Boolean MissingPayType = false, MissingPayCode = false;
             Object loContingentSeq = null;
             Char NotPosted = '\u00FF';
@@ -443,7 +278,7 @@ namespace IAC2021SQL
             if (_AddMode)
             {
                 ticketHeaderTableAdapter.Insert(ticketsdataset.TicketHeader.Rows[bindingSourceTicketHeader.Position].Field<Int32>("AccountNumber"),
-                ticketsdataset.TicketHeader.Rows[bindingSourceTicketHeader.Position].Field<String>("DealerNumber").PadLeft(3, '0'),
+                ticketsdataset.TicketHeader.Rows[bindingSourceTicketHeader.Position].Field<Int32>("DealerNumber"),
                 ticketsdataset.TicketHeader.Rows[bindingSourceTicketHeader.Position].Field<DateTime>("Date"),
                 ticketsdataset.TicketHeader.Rows[bindingSourceTicketHeader.Position].Field<String>("MadeBy"),
                 ticketsdataset.TicketHeader.Rows[bindingSourceTicketHeader.Position].Field<String>("ApprovedBy"),
@@ -457,7 +292,7 @@ namespace IAC2021SQL
                 PAYMENTTableAdapter.DeleteByTicketID(insertID);
                 CONTINGTableAdapter.DeleteByTicketID(insertID);
             }
-            for (int i = 0;i < ticketsdataset.TicketDetail.Rows.Count; i++)
+            for (int i = 0; i < ticketsdataset.TicketDetail.Rows.Count; i++)
             {
                 if (ticketsdataset.TicketDetail.Rows[i].RowState != DataRowState.Deleted)
                 {
@@ -470,7 +305,7 @@ namespace IAC2021SQL
                         NewPayment.PAYMENT_ADD_ON = "";
                         NewPayment.PAYMENT_IAC_TYPE = "C";
                         NewPayment.PAYMENT_DATE = ticketsdataset.TicketHeader.Rows[bindingSourceTicketHeader.Position].Field<DateTime>("Date");
-                        NewPayment.PAYMENT_DEALER = ticketsdataset.TicketHeader.Rows[bindingSourceTicketHeader.Position].Field<String>("DealerNumber");
+                        NewPayment.PAYMENT_DEALER = ticketsdataset.TicketHeader.Rows[bindingSourceTicketHeader.Position].Field<Int32>("DealerNumber");
                         NewPayment.PAYMENT_POST_INDICATOR = "";
                         NewPayment.PAYMENT_AMOUNT_RCV = ticketsdataset.TicketDetail.Rows[i].Field<Decimal>("Debit") != 0 ? ticketsdataset.TicketDetail.Rows[i].Field<Decimal>("Debit") : ticketsdataset.TicketDetail.Rows[i].Field<Decimal>("Credit");
                         NewPayment.PAYMENT_TYPE = ticketsdataset.TicketDetail.Rows[i].Field<String>("PaymentType");
@@ -498,9 +333,9 @@ namespace IAC2021SQL
                         NewPayment.FromIVR = false;
                         NewPayment.TicketDetailID = ticketsdataset.TicketDetail.Rows[i].Field<Int32>("DetailID");  // Moses Newman 08/17/2021 
                         NewPayment.TicketID = (Int32)insertID;
- 
+
                         productionMainTables.PAYMENT.AddPAYMENTRow(NewPayment);
-                        NewPayment = null; 
+                        NewPayment = null;
                         PAYMENTTableAdapter.Update(productionMainTables.PAYMENT.Rows[productionMainTables.PAYMENT.Rows.Count - 1]);
                         if (ticketsdataset.TicketDetail.Rows[i].Field<Int32>("GLAccount") != 1 &&
                             ticketsdataset.TicketDetail.Rows[i].Field<Int32>("GLAccount") != 7 &&
@@ -508,11 +343,8 @@ namespace IAC2021SQL
                         {
                             NewConting = productionMainTables.CONTING.NewCONTINGRow();
 
-                            NewConting.CONTING_DEALER = ticketsdataset.TicketDetail.Rows[i].Field<String>("SubDealer").Trim() != "" &&
-                                                            ticketsdataset.TicketDetail.Rows[i].Field<String>("SubDealer") != null ?
-                                                                ticketsdataset.TicketDetail.Rows[i].Field<String>("SubDealer") : ticketsdataset.TicketHeader.Rows[bindingSourceTicketHeader.Position].Field<String>("DealerNumber");
-                            if (NewConting.CONTING_DEALER.Trim().Length < 3)
-                                NewConting.CONTING_DEALER = NewConting.CONTING_DEALER.Trim().PadLeft(3, '0'); // 06/13/2021 Just in case, make sure 0 padded to 3 chars!
+                            NewConting.CONTING_DEALER = ticketsdataset.TicketDetail.Rows[i].Field<Int32>("SubDealer") != 0 ?
+                                                                ticketsdataset.TicketDetail.Rows[i].Field<Int32>("SubDealer") : ticketsdataset.TicketHeader.Rows[bindingSourceTicketHeader.Position].Field<Int32>("DealerNumber");
                             NewConting.CONTING_POST_DATE = ticketsdataset.TicketHeader.Rows[bindingSourceTicketHeader.Position].Field<DateTime>("Date");
                             loContingentSeq = CONTINGTableAdapter.MaxSeqQuery(NewConting.CONTING_DEALER, ticketsdataset.TicketHeader.Rows[bindingSourceTicketHeader.Position].Field<DateTime>("Date"));
                             if (loContingentSeq != null)
@@ -581,8 +413,8 @@ namespace IAC2021SQL
                                     break;
                             }
                             productionMainTables.CONTING.AddCONTINGRow(NewConting);
-                            NewConting = null; 
-                            CONTINGTableAdapter.Update(productionMainTables.CONTING.Rows[productionMainTables.CONTING.Rows.Count-1]);
+                            NewConting = null;
+                            CONTINGTableAdapter.Update(productionMainTables.CONTING.Rows[productionMainTables.CONTING.Rows.Count - 1]);
                         }
                     }
                 }
@@ -601,14 +433,9 @@ namespace IAC2021SQL
             // End Mod 08/16/2021*/
         }
 
-        private void dataListView1_MouseClick(object sender, MouseEventArgs e)
-        {
-            //System.Windows.Forms.SendKeys.Send("{TAB}");
-        }
-
         private void MoveToTicket(Int32 tnTicketID)
         {
-            dataListView1.Enabled = false;
+            gridControl1.Enabled = false;
             Int32 FoundIndex = 0;
             ticketHeaderTableAdapter.FillByAll(ticketsdataset.TicketHeader);
             FoundIndex = bindingSourceTicketHeader.Find("TicketID", tnTicketID);
@@ -627,7 +454,7 @@ namespace IAC2021SQL
             else
                 return;
             cUSTOMERTableAdapter.Fill(productionMainTables.CUSTOMER, ticketsdataset.TicketHeader.Rows[bindingSourceTicketHeader.Position].Field<Int32>("AccountNumber").ToString().PadLeft(6, '0'));
-            dEALERTableAdapter.Fill(productionMainTables.DEALER, productionMainTables.CUSTOMER.Rows[0].Field<String>("CUSTOMER_DEALER"));
+            dEALERTableAdapter.Fill(productionMainTables.DEALER, productionMainTables.CUSTOMER.Rows[0].Field<Int32>("CUSTOMER_DEALER"));
             GetTrialBalance();
             ULISTTableAdapter.FillById(productionMainTables.ULIST, ticketsdataset.TicketHeader.Rows[bindingSourceTicketHeader.Position].Field<String>("MadeBy"));
             textBoxMadeBy.Text = ticketsdataset.TicketHeader.Rows[bindingSourceTicketHeader.Position].Field<String>("MadeBy") + " " + productionMainTables.ULIST.Rows[0].Field<String>("LIST_NAME");
@@ -640,9 +467,9 @@ namespace IAC2021SQL
         {
             if (buttonCancelTicket.Enabled)
                 return;
-            dataListView1.Enabled = false;
-            Int32 lnTicketID = 0,FoundIndex = 0;
-            if(ticketsdataset.TicketHeader.Rows.Count == 1)
+            gridControl1.Enabled = false;
+            Int32 lnTicketID = 0, FoundIndex = 0;
+            if (ticketsdataset.TicketHeader.Rows.Count == 1)
             {
                 lnTicketID = ticketsdataset.TicketHeader.Rows[bindingSourceTicketHeader.Position].Field<Int32>("TicketID");
                 ticketHeaderTableAdapter.FillByAll(ticketsdataset.TicketHeader);
@@ -662,12 +489,14 @@ namespace IAC2021SQL
             richTextBox1.Enabled = false;
             if (bindingSourceTicketHeader.Position > -1)
             {
+                PAYCODETableAdapter.FillByType(listDataSet.PAYCODE, "*");
+                pAYCODEBindingSource.DataSource = listDataSet.PAYCODE;
                 ticketDetailTableAdapter.FillByTicketID(ticketsdataset.TicketDetail, ticketsdataset.TicketHeader.Rows[bindingSourceTicketHeader.Position].Field<Int32>("TicketID"));
             }
             else
                 return;
             cUSTOMERTableAdapter.Fill(productionMainTables.CUSTOMER, ticketsdataset.TicketHeader.Rows[bindingSourceTicketHeader.Position].Field<Int32>("AccountNumber").ToString().PadLeft(6, '0'));
-            dEALERTableAdapter.Fill(productionMainTables.DEALER, productionMainTables.CUSTOMER.Rows[0].Field<String>("CUSTOMER_DEALER"));
+            dEALERTableAdapter.Fill(productionMainTables.DEALER, productionMainTables.CUSTOMER.Rows[0].Field<Int32>("CUSTOMER_DEALER"));
             //CONTINGTableAdapter.FillByTicketID(productionMainTables.CONTING, ticketsdataset.TicketHeader.Rows[bindingSourceTicketHeader.Position].Field<Int32>("TicketID"));
             //PAYMENTTableAdapter.FillByTicketID(productionMainTables.PAYMENT, ticketsdataset.TicketHeader.Rows[bindingSourceTicketHeader.Position].Field<Int32>("TicketID")); // Moses Newman 08/17/2021
             GetTrialBalance();
@@ -684,7 +513,7 @@ namespace IAC2021SQL
         {
             if (buttonCancelTicket.Enabled)
                 return;
-            dataListView1.Enabled = false;
+            gridControl1.Enabled = false;
             buttonAdd.Enabled = false;
             buttonSaveTicket.Enabled = false;
             buttonClearDetail.Enabled = false;
@@ -694,12 +523,14 @@ namespace IAC2021SQL
             richTextBox1.Enabled = false;
             if (bindingSourceTicketHeader.Position > -1)
             {
+                PAYCODETableAdapter.FillByType(listDataSet.PAYCODE, "*");
+                pAYCODEBindingSource.DataSource = listDataSet.PAYCODE;
                 ticketDetailTableAdapter.FillByTicketID(ticketsdataset.TicketDetail, ticketsdataset.TicketHeader.Rows[bindingSourceTicketHeader.Position].Field<Int32>("TicketID"));
             }
             else
                 return;
             cUSTOMERTableAdapter.Fill(productionMainTables.CUSTOMER, ticketsdataset.TicketHeader.Rows[bindingSourceTicketHeader.Position].Field<Int32>("AccountNumber").ToString().PadLeft(6, '0'));
-            dEALERTableAdapter.Fill(productionMainTables.DEALER, productionMainTables.CUSTOMER.Rows[0].Field<String>("CUSTOMER_DEALER"));
+            dEALERTableAdapter.Fill(productionMainTables.DEALER, productionMainTables.CUSTOMER.Rows[0].Field<Int32>("CUSTOMER_DEALER"));
             //CONTINGTableAdapter.FillByTicketID(productionMainTables.CONTING, ticketsdataset.TicketHeader.Rows[bindingSourceTicketHeader.Position].Field<Int32>("TicketID"));
             //PAYMENTTableAdapter.FillByTicketID(productionMainTables.PAYMENT, ticketsdataset.TicketHeader.Rows[bindingSourceTicketHeader.Position].Field<Int32>("TicketID")); // Moses Newman 08/17/2021
             GetTrialBalance();
@@ -763,7 +594,7 @@ namespace IAC2021SQL
             buttonDeleteEntry.Enabled = false;
             textBoxTicketID.Text = "";
             textBoxTicketID.Refresh();
-            richTextBox1.Text = "";
+            richTextBox1.EditValue = "";
             ActiveControl = textBoxAccount;
             textBoxAccount.Select();
             // Moses Newman 08/16/2021 Mod starts
@@ -773,34 +604,18 @@ namespace IAC2021SQL
             // End Mod 08/16/2021
         }
 
-        private void dataListView1_FormatCell(object sender, BrightIdeasSoftware.FormatCellEventArgs e)
-        {
-            int cindex = e.ColumnIndex;
-
-            switch(cindex)
-            {
-                case 3:
-                    e.SubItem.ForeColor = Color.Red;
-                    break;
-                case 4:
-                    e.SubItem.ForeColor = Color.Green;
-                    break;
-            }
-        }
-
         // Moses Newman 08/16/2021
         private void buttonEdit_Click(object sender, EventArgs e)
         {
             if (ticketsdataset.TicketHeader.Rows[bindingSourceTicketHeader.Position].Field<Boolean>("IsPosted"))
                 MessageBox.Show("*** This ticket or part of it, has already been posted.  You may not edit it. ***");
-            if (productionMainTables.CUSTOMER.Rows.Count == 0 || ticketsdataset.TicketHeader.Rows[bindingSourceTicketHeader.Position].Field<Boolean>("IsPosted")) 
+            if (productionMainTables.CUSTOMER.Rows.Count == 0 || ticketsdataset.TicketHeader.Rows[bindingSourceTicketHeader.Position].Field<Boolean>("IsPosted"))
                 return;
-
             //_EditMode = true;
             //_ViewMode = false;
             _AddMode = false;
             richTextBox1.Enabled = true;
-            dataListView1.Enabled = true;
+            gridControl1.Enabled = true;
             buttonEdit.Enabled = false;
             buttonReprint.Enabled = false;
             buttonAdd.Enabled = true;
@@ -838,7 +653,7 @@ namespace IAC2021SQL
         {
             if (buttonCancelTicket.Enabled)
                 return;
-            dataListView1.Enabled = false;
+            gridControl1.Enabled = false;
             Int32 lnTicketID = 0, FoundIndex = 0;
             if (ticketsdataset.TicketHeader.Rows.Count == 1)
             {
@@ -860,12 +675,14 @@ namespace IAC2021SQL
             richTextBox1.Enabled = false;
             if (bindingSourceTicketHeader.Position > -1)
             {
+                PAYCODETableAdapter.FillByType(listDataSet.PAYCODE, "*");
+                pAYCODEBindingSource.DataSource = listDataSet.PAYCODE;
                 ticketDetailTableAdapter.FillByTicketID(ticketsdataset.TicketDetail, ticketsdataset.TicketHeader.Rows[bindingSourceTicketHeader.Position].Field<Int32>("TicketID"));
             }
             else
                 return;
             cUSTOMERTableAdapter.Fill(productionMainTables.CUSTOMER, ticketsdataset.TicketHeader.Rows[bindingSourceTicketHeader.Position].Field<Int32>("AccountNumber").ToString().PadLeft(6, '0'));
-            dEALERTableAdapter.Fill(productionMainTables.DEALER, productionMainTables.CUSTOMER.Rows[0].Field<String>("CUSTOMER_DEALER"));
+            dEALERTableAdapter.Fill(productionMainTables.DEALER, productionMainTables.CUSTOMER.Rows[0].Field<Int32>("CUSTOMER_DEALER"));
             //CONTINGTableAdapter.FillByTicketID(productionMainTables.CONTING, ticketsdataset.TicketHeader.Rows[bindingSourceTicketHeader.Position].Field<Int32>("TicketID"));
             //PAYMENTTableAdapter.FillByTicketID(productionMainTables.PAYMENT, ticketsdataset.TicketHeader.Rows[bindingSourceTicketHeader.Position].Field<Int32>("TicketID")); // Moses Newman 08/17/2021
             GetTrialBalance();
@@ -876,14 +693,13 @@ namespace IAC2021SQL
             textBoxTicketID.Refresh();
             //_ViewMode = true;
             buttonEdit.Enabled = true;
-
         }
 
         private void buttonLast_Click(object sender, EventArgs e)
         {
             if (buttonCancelTicket.Enabled)
                 return;
-            dataListView1.Enabled = false;
+            gridControl1.Enabled = false;
             buttonAdd.Enabled = false;
             buttonSaveTicket.Enabled = false;
             buttonClearDetail.Enabled = false;
@@ -893,12 +709,14 @@ namespace IAC2021SQL
             richTextBox1.Enabled = false;
             if (bindingSourceTicketHeader.Position > -1)
             {
+                PAYCODETableAdapter.FillByType(listDataSet.PAYCODE, "*");
+                pAYCODEBindingSource.DataSource = listDataSet.PAYCODE;
                 ticketDetailTableAdapter.FillByTicketID(ticketsdataset.TicketDetail, ticketsdataset.TicketHeader.Rows[bindingSourceTicketHeader.Position].Field<Int32>("TicketID"));
             }
             else
                 return;
             cUSTOMERTableAdapter.Fill(productionMainTables.CUSTOMER, ticketsdataset.TicketHeader.Rows[bindingSourceTicketHeader.Position].Field<Int32>("AccountNumber").ToString().PadLeft(6, '0'));
-            dEALERTableAdapter.Fill(productionMainTables.DEALER, productionMainTables.CUSTOMER.Rows[0].Field<String>("CUSTOMER_DEALER"));
+            dEALERTableAdapter.Fill(productionMainTables.DEALER, productionMainTables.CUSTOMER.Rows[0].Field<Int32>("CUSTOMER_DEALER"));
             //CONTINGTableAdapter.FillByTicketID(productionMainTables.CONTING, ticketsdataset.TicketHeader.Rows[bindingSourceTicketHeader.Position].Field<Int32>("TicketID"));
             //PAYMENTTableAdapter.FillByTicketID(productionMainTables.PAYMENT, ticketsdataset.TicketHeader.Rows[bindingSourceTicketHeader.Position].Field<Int32>("TicketID")); // Moses Newman 08/17/2021
             GetTrialBalance();
@@ -917,21 +735,16 @@ namespace IAC2021SQL
                 return;
             if (ticketsdataset.TicketDetail.Rows.Count > 0)
                 ticketsdataset.TicketDetail.Rows[bindingSourceTicketDetail.Position].Delete();
-            buttonDeleteEntry.Enabled = ticketsdataset.TicketDetail.Rows.Count > 0 ? true:false;
+            buttonDeleteEntry.Enabled = ticketsdataset.TicketDetail.Rows.Count > 0 ? true : false;
             for (int i = 0; i < ticketsdataset.TicketDetail.Rows.Count; i++)  // Moses Newman 08/19/2021
                 if (ticketsdataset.TicketDetail.Rows[i].RowState != DataRowState.Deleted)
                     ticketsdataset.TicketDetail.Rows[i].SetField<Int32>("DetailID", i + 1);
             bindingSourceTicketDetail.MoveLast();
-            dataListView1.Refresh();
+            gridControl1.Refresh();
             this.Refresh();
             buttonAdd.Enabled = true;
             buttonSaveTicket.Enabled = true;
             buttonClearDetail.Enabled = true;
-        }
-
-        private void dataListView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //bindingSourceTicketDetail.Position = dataListView1.SelectedIndex;
         }
 
         private void ResetAll()
@@ -947,7 +760,7 @@ namespace IAC2021SQL
             _AddMode = false;
             //_ViewMode = true;
 
-            NullableDateTimePickerDate.Value = null;
+            NullableDateTimePickerDate.EditValue = null;
             NullableDateTimePickerDate.Refresh();
             buttonClearDetail.Enabled = false;
             buttonSaveTicket.Enabled = false;
@@ -964,14 +777,85 @@ namespace IAC2021SQL
 
             ticketHeaderTableAdapter.FillByAll(ticketsdataset.TicketHeader);
             ticketAccountsTableAdapter.FillByAll(ticketsdataset.TicketAccounts);
-            bindingSourceTicketAccounts.DataSource = ticketsdataset;
-            bindingSourceTicketAccounts.DataMember = "TicketAccounts";
+            ticketAccountsBindingSource.DataSource = ticketsdataset;
+            ticketAccountsBindingSource.DataMember = "TicketAccounts";
 
-            colorTextBoxDebits.Debit = true;
-            colorTextBoxCredits.Debit = false;
-            richTextBox1.Text = ""; // Moss Newman 07/28/2021
+            colorTextBoxDebits.ForeColor = Color.Red;
+            colorTextBoxCredits.ForeColor = Color.Green;
+            richTextBox1.Text = "";
+            richTextBox1.EditValue = ""; // Moses Newman 07/28/2021
             ActiveControl = textBoxAccount;
             textBoxAccount.Select();
+        }
+
+        private void gridView1_CustomColumnDisplayText(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventArgs e)
+        {
+            if (e.ListSourceRowIndex == DevExpress.XtraGrid.GridControl.InvalidRowHandle)
+                return;
+            
+            Int32 AcctNumber,DealerID;
+            ColumnView view = sender as ColumnView;
+            switch(e.Column.FieldName)
+            {
+                case "GLAccount":
+                    AcctNumber = e.Value != System.DBNull.Value ? (Int32)e.Value : 0;
+                    Int32 FoundIndex = ticketAccountsBindingSource.Find("AcctID", AcctNumber);
+                    e.Column.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+                    if (FoundIndex > -1)
+                        e.DisplayText = ticketsdataset.TicketAccounts.Rows[FoundIndex].Field<String>("Account");
+                    else
+                        e.DisplayText = "";
+                    break;
+                case "SubDealer":
+                    DealerID = e.Value != System.DBNull.Value ? (Int32)e.Value : 0;
+                    if(DealerID == 0)
+                        e.DisplayText = "";
+                    break;
+            }
+        }
+
+        private void gridView1_CellValueChanged(object sender, CellValueChangedEventArgs e)
+        {
+            ColumnView view = (ColumnView)sender;
+            String cFieldName = e.Column.FieldName;
+            switch (cFieldName)
+            {
+                case "Debit":
+                case "Credit":
+                    GetTrialBalance();
+                    this.Refresh();
+                    break;
+            }
+        }
+
+        private void richTextBox1_CustomDisplayText(object sender, DevExpress.XtraEditors.Controls.CustomDisplayTextEventArgs e)
+        {
+            if (String.IsNullOrEmpty(textBoxAccount.Text))
+                e.DisplayText = String.Empty;
+        }
+
+        private void gridView1_ShownEditor(object sender, EventArgs e)
+        {
+            ColumnView view = (ColumnView)sender;
+            if (view.FocusedColumn.FieldName == "PaymentCode")
+            {
+                LookUpEdit editor = (LookUpEdit)view.ActiveEditor;
+                string PayType = Convert.ToString(view.GetFocusedRowCellValue("PaymentType"));
+                PAYCODETableAdapter.FillByType(listDataSet.PAYCODE, PayType);
+                pAYCODEBindingSource.DataSource = listDataSet.PAYCODE;
+                editor.Properties.DataSource = pAYCODEBindingSource;
+            }
+        }
+
+        private void repositoryItemLookUpEdit4_EditValueChanged(object sender, EventArgs e)
+        {
+            this.gridView1.PostEditor();
+            this.gridView1.SetFocusedRowCellValue("PaymentCode", null);
+        }
+
+        private void textBoxAccount_EditValueChanged(object sender, EventArgs e)
+        {
+            richTextBox1.Refresh();
         }
     }
 }

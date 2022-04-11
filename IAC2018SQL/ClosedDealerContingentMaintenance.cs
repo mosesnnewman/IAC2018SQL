@@ -31,9 +31,8 @@ namespace IAC2021SQL
 
         private void StartUpConfiguration()
         {
-            dateTimePickerPostDate.Value = DateTime.Now.Date;
-            DealerNamecomboBox.Text = "";
-            DEALERcomboBox.Text = "";
+            dateTimePickerPostDate.EditValue = DateTime.Now.Date;
+            DEALERcomboBox.EditValue = 0;
             Text = "Closed Dealer Contingents (VIEW Mode)";
 
             toolStripButtonAdd.Enabled = true;
@@ -81,7 +80,6 @@ namespace IAC2021SQL
                 bindingNavigator.Visible = true;
                 toolStripButtonCancel.Visible = false;
                 toolStripButtonCancel.Enabled = false;
-                DealerNamecomboBox.Enabled = true;
                 DEALERcomboBox.Enabled = true;
             }
             else
@@ -126,7 +124,6 @@ namespace IAC2021SQL
                 setRelatedData();
                 toolStripButtonCancel.Visible = false;
                 toolStripButtonCancel.Enabled = false;
-                DealerNamecomboBox.Enabled = false;
                 DEALERcomboBox.Enabled = false;
                 ActiveControl = dateTimePickerPostDate;
                 dateTimePickerPostDate.Select();
@@ -167,7 +164,6 @@ namespace IAC2021SQL
             bindingNavigator.Visible = true;
             toolStripButtonCancel.Visible = false;
             toolStripButtonCancel.Enabled = false;
-            DealerNamecomboBox.Enabled = false;
             DEALERcomboBox.Enabled = false;
             ActiveControl = dateTimePickerPostDate;
             dateTimePickerPostDate.Select();
@@ -203,9 +199,7 @@ namespace IAC2021SQL
 
         private void SetAddMode()
         {
-            DEALERcomboBox.Text = "";
-
-            DealerNamecomboBox.Text = "";
+            DEALERcomboBox.EditValue = 0;
             lbEdit = false;
             lbAdd = true;
             toolStripButtonEdit.Enabled = false;
@@ -224,7 +218,7 @@ namespace IAC2021SQL
 
         private void SetViewMode()
         {
-            dateTimePickerPostDate.Value = DateTime.Now.Date;
+            dateTimePickerPostDate.EditValue = DateTime.Now.Date;
             Text = "Closed Dealer Contingents (VIEW Mode)";
 
             toolStripButtonAdd.Enabled = true;
@@ -237,7 +231,7 @@ namespace IAC2021SQL
 
         private void setRelatedData()
         {
-            String lsDealer = DEALERcomboBox.Text;
+            Int32 lnDealer = (Int32)DEALERcomboBox.EditValue;
 
             if (lbEdit)
                 return;
@@ -247,25 +241,26 @@ namespace IAC2021SQL
             if (!lbAdd)
             {
                 if(!lbFromMovement)
-                    cONTINGTableAdapter.FillByDealerDate(CONTINGiacDataSet.CONTING, lsDealer, (DateTime)dateTimePickerPostDate.Value, 30);
+                    cONTINGTableAdapter.FillByDealerDate(CONTINGiacDataSet.CONTING, lnDealer, (DateTime)dateTimePickerPostDate.EditValue, 30);
             }
 
 
             if (CONTINGiacDataSet.CONTING.Rows.Count > 0)
             {
-                dEALERTableAdapter.Fill(CONTINGiacDataSet.DEALER, CONTINGiacDataSet.CONTING.Rows[CONTINGbindingSource.Position].Field<String>("CONTING_DEALER"));
-                dateTimePickerPostDate.Value = CONTINGiacDataSet.CONTING.Rows[CONTINGbindingSource.Position].Field<DateTime>("CONTING_POST_DATE").Date;
+                dEALERTableAdapter.Fill(CONTINGiacDataSet.DEALER, CONTINGiacDataSet.CONTING.Rows[CONTINGbindingSource.Position].Field<Int32>("CONTING_DEALER"));
+                dateTimePickerPostDate.EditValue = CONTINGiacDataSet.CONTING.Rows[CONTINGbindingSource.Position].Field<DateTime>("CONTING_POST_DATE").Date;
             }
             else
             {
-                dEALERTableAdapter.Fill(CONTINGiacDataSet.DEALER, DEALERcomboBox.Text.TrimStart().TrimEnd());
-                dateTimePickerPostDate.Value = DateTime.Now.Date;
+                if ((Int32)DEALERcomboBox.EditValue == 0)
+                    return;
+                dEALERTableAdapter.Fill(CONTINGiacDataSet.DEALER, (Int32)DEALERcomboBox.EditValue);
+                dateTimePickerPostDate.EditValue = DateTime.Now.Date;
             }
             if (CONTINGiacDataSet.DEALER.Rows.Count > 0)
             {
                 lbFromDealerNameChange = true;
-                DEALERcomboBox.Text = CONTINGiacDataSet.DEALER.Rows[0].Field<String>("DEALER_ACC_NO");
-                DealerNamecomboBox.Text = CONTINGiacDataSet.DEALER.Rows[0].Field<String>("DEALER_NAME");
+                DEALERcomboBox.EditValue = CONTINGiacDataSet.DEALER.Rows[0].Field<Int32>("id");
             }
             lbFromSetRelated = false;
         }
@@ -282,103 +277,6 @@ namespace IAC2021SQL
                 if (ActiveControl == DEALERcomboBox)
                     return;
                 toolStripButtonSave.Enabled = true;
-            }
-        }
-
-        private void DEALERcomboBox_Validated(object sender, EventArgs e)
-        {
-            if (lbFormClosing  || DEALERcomboBox.Text.TrimEnd() == "")
-                return;
-
-            int lnContingentPos = 0, lnSeq = 0;
-
-            Object loContingentSeq = null;
-
-            String lsDealerNo = "";
-
-            if (DEALERcomboBox.Text.ToString().Trim().Length < 3 && DEALERcomboBox.Text.ToString().Trim().Length > 0)
-            {
-                lbFromDealerNameChange = true;
-                DEALERcomboBox.Text = DEALERcomboBox.Text.PadLeft(3, '0');
-            }
-
-            lsDealerNo = DEALERcomboBox.Text;
-            if (!lbEdit)
-            {
-                setRelatedData();
-            }
-            if (CONTINGiacDataSet.CONTING.Rows.Count != 0)
-            {
-                if (CONTINGbindingSource.Position == -1)
-                    lnContingentPos = CONTINGbindingSource.Find("CONTING_DEALER", lsDealerNo);
-                else
-                    lnContingentPos = CONTINGbindingSource.Position;
-                if (lnContingentPos > -1)
-                {
-                    if (lbAdd)
-                        return;
-                    else
-                        CONTINGbindingSource.Position = lnContingentPos;
-                }
-                else
-                {
-                    if (!lbAdd)
-                    {
-                        lsDealerNo = CONTINGiacDataSet.CONTING.Rows[0].Field<String>("CONTINGENT_DEALER");
-                        CONTINGbindingSource.MoveFirst();
-                    }
-                }
-            }
-            else
-            {
-                if (!lbAdd)
-                    return;
-            }
-
-            if (CONTINGiacDataSet.DEALER.Rows.Count == 0 && DEALERcomboBox.Text.TrimEnd().Length != 0)
-            {
-                MessageBox.Show("Sorry no dealer found that matches your selected dealer number!");
-                DEALERcomboBox.Text = "";
-                DealerNamecomboBox.Text = "";
-                ActiveControl = DealerNamecomboBox;
-                DealerNamecomboBox.SelectAll();
-            }
-            else
-             {
-                if (lbEdit)
-                    if (CONTINGiacDataSet.CONTING.Rows.Count == 0)
-                    {
-                        MessageBox.Show("Sorry no contingent records found that match your selected dealer number!");
-                        ActiveControl = DEALERcomboBox;
-                        DEALERcomboBox.Select();
-                    }
-                if (lbAdd && DEALERcomboBox.Text.ToString().TrimEnd() != "")
-                {
-                    CONTINGbindingSource.AddNew();
-                    CONTINGbindingSource.EndEdit();
-
-                    CONTINGiacDataSet.CONTING.Rows[CONTINGbindingSource.Position].SetField<String>("CONTING_DEALER", DEALERcomboBox.Text.ToString());
-                    CONTINGiacDataSet.CONTING.Rows[CONTINGbindingSource.Position].SetField<DateTime>("CONTING_POST_DATE", DateTime.Now.Date);
-                    loContingentSeq = cONTINGTableAdapter.MaxSeqQuery(DEALERcomboBox.Text.ToString(), DateTime.Now.Date);
-                    if (loContingentSeq != null)
-                        lnSeq = (int)loContingentSeq + 1;
-                    else
-                        lnSeq = 0;   //Closed and Open contingents start with 0 for first sequence number
-                    CONTINGiacDataSet.CONTING.Rows[CONTINGbindingSource.Position].SetField<Int32>("CONTING_ENTRY_SEQ", lnSeq);
-                    CONTINGiacDataSet.CONTING.Rows[CONTINGbindingSource.Position].SetField<Char>("CONTING_POST_IND", (Char)(255));
-                    if (CONTINGiacDataSet.CONTING.Rows.Count != 0)
-                    {
-                        toolStripButtonSave.Enabled = true;
-                    }
-                }
-                if (CONTINGiacDataSet.DEALER.Rows.Count > 0 && !lbAdd)
-                    //DealerNamecomboBox.Text = CONTINGiacDataSet.DEALER.Rows[0].Field<String>("DEALER_NAME");
-                if (lbAdd || lbEdit)
-                {
-                    dateTimePickerPostDate.Enabled = true;
-                    ActiveControl = dateTimePickerPostDate;
-                    dateTimePickerPostDate.Select();
-                }
             }
         }
 
@@ -417,7 +315,7 @@ namespace IAC2021SQL
             }
             finally
             {
-                cONTINGTableAdapter.UnlockRecord(Program.gsUserID, CONTINGiacDataSet.CONTING.Rows[CONTINGbindingSource.Position].Field<String>("CONTING_DEALER"),
+                cONTINGTableAdapter.UnlockRecord(Program.gsUserID, CONTINGiacDataSet.CONTING.Rows[CONTINGbindingSource.Position].Field<Int32>("CONTING_DEALER"),
                                                 CONTINGiacDataSet.CONTING.Rows[CONTINGbindingSource.Position].Field<DateTime>("CONTING_POST_DATE"),
                                                 CONTINGiacDataSet.CONTING.Rows[CONTINGbindingSource.Position].Field<Int32>("CONTING_ENTRY_SEQ"));
                 tableAdapConn.Close();
@@ -443,13 +341,7 @@ namespace IAC2021SQL
                 }
             }
         }
-         
-        private void DEALERcomboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            ActiveControl = DealerNamecomboBox;
-            DealerNamecomboBox.Select();
-        }
-
+        
         private void toolStripButtonAdd_Click(object sender, EventArgs e)
         {
             SetAddMode();
@@ -460,6 +352,99 @@ namespace IAC2021SQL
             SetEditMode();
         }
 
+        private void DEALERcomboBox_Validated(object sender, EventArgs e)
+        {
+            if (lbFormClosing || (Int32)DEALERcomboBox.EditValue == 0)
+                return;
+
+            int lnContingentPos = 0, lnSeq = 0;
+
+            Object loContingentSeq = null;
+
+            Int32 lnDealerNo = DEALERcomboBox.EditValue != null ? (Int32)DEALERcomboBox.EditValue:0;
+            if (!lbEdit)
+            {
+                setRelatedData();
+            }
+            if (CONTINGiacDataSet.CONTING.Rows.Count != 0)
+            {
+                if (CONTINGbindingSource.Position == -1)
+                    lnContingentPos = CONTINGbindingSource.Find("CONTING_DEALER", lnDealerNo);
+                else
+                    lnContingentPos = CONTINGbindingSource.Position;
+                if (lnContingentPos > -1)
+                {
+                    if (lbAdd)
+                        return;
+                    else
+                        CONTINGbindingSource.Position = lnContingentPos;
+                }
+                else
+                {
+                    if (!lbAdd)
+                    {
+                        lnDealerNo = CONTINGiacDataSet.CONTING.Rows[0].Field<Int32>("CONTINGENT_DEALER");
+                        CONTINGbindingSource.MoveFirst();
+                    }
+                }
+            }
+            else
+            {
+                if (!lbAdd)
+                    return;
+            }
+
+            if (CONTINGiacDataSet.DEALER.Rows.Count == 0 && (Int32)DEALERcomboBox.EditValue != 0)
+            {
+                MessageBox.Show("Sorry no dealer found that matches your selected dealer number!");
+                DEALERcomboBox.EditValue = 0;
+                
+                ActiveControl = dEALER_NAMETextBox;
+                dEALER_NAMETextBox.SelectAll();
+            }
+            else
+            {
+                if (lbEdit)
+                    if (CONTINGiacDataSet.CONTING.Rows.Count == 0)
+                    {
+                        MessageBox.Show("Sorry no contingent records found that match your selected dealer number!");
+                        ActiveControl = DEALERcomboBox;
+                        DEALERcomboBox.Select();
+                    }
+                if (lbAdd && (Int32)DEALERcomboBox.EditValue != 0)
+                {
+                    CONTINGbindingSource.AddNew();
+                    CONTINGbindingSource.EndEdit();
+
+                    CONTINGiacDataSet.CONTING.Rows[CONTINGbindingSource.Position].SetField<Int32>("CONTING_DEALER", (Int32)DEALERcomboBox.EditValue);
+                    CONTINGiacDataSet.CONTING.Rows[CONTINGbindingSource.Position].SetField<DateTime>("CONTING_POST_DATE", DateTime.Now.Date);
+                    loContingentSeq = cONTINGTableAdapter.MaxSeqQuery((Int32)DEALERcomboBox.EditValue, DateTime.Now.Date);
+                    if (loContingentSeq != null)
+                        lnSeq = (int)loContingentSeq + 1;
+                    else
+                        lnSeq = 0;   //Closed and Open contingents start with 0 for first sequence number
+                    CONTINGiacDataSet.CONTING.Rows[CONTINGbindingSource.Position].SetField<Int32>("CONTING_ENTRY_SEQ", lnSeq);
+                    CONTINGiacDataSet.CONTING.Rows[CONTINGbindingSource.Position].SetField<Char>("CONTING_POST_IND", (Char)(255));
+                    if (CONTINGiacDataSet.CONTING.Rows.Count != 0)
+                    {
+                        toolStripButtonSave.Enabled = true;
+                    }
+                }
+                if (CONTINGiacDataSet.DEALER.Rows.Count > 0 && !lbAdd)
+                    if (lbAdd || lbEdit)
+                    {
+                        dateTimePickerPostDate.Enabled = true;
+                        ActiveControl = dateTimePickerPostDate;
+                        dateTimePickerPostDate.Select();
+                    }
+            }
+        }
+
+        private void DEALERcomboBox_EditValueChanged(object sender, EventArgs e)
+        {
+            ActiveControl = DEALERcomboBox;
+            System.Windows.Forms.SendKeys.Send("{TAB}");
+        }
 
         private void toolStripButtonCancel_Click(object sender, EventArgs e)
         {
@@ -476,8 +461,7 @@ namespace IAC2021SQL
             if (CONTINGiacDataSet.CONTING.Rows.Count > 0)
                 CONTINGiacDataSet.CONTING.Clear();
             else
-                DEALERcomboBox.Text = "";
-            DealerNamecomboBox.Text = "";
+                DEALERcomboBox.EditValue = 0;
             DefaultSettings();
             setRelatedData();
             ActiveControl = dateTimePickerPostDate;
@@ -502,13 +486,13 @@ namespace IAC2021SQL
                 return;
             Object loLockedBy = null;
 
-            loLockedBy = cONTINGTableAdapter.LockedBy(CONTINGiacDataSet.CONTING.Rows[CONTINGbindingSource.Position].Field<String>("CONTING_DEALER"),
+            loLockedBy = cONTINGTableAdapter.LockedBy(CONTINGiacDataSet.CONTING.Rows[CONTINGbindingSource.Position].Field<Int32>("CONTING_DEALER"),
                                                     CONTINGiacDataSet.CONTING.Rows[CONTINGbindingSource.Position].Field<DateTime>("CONTING_POST_DATE"),
                                                     CONTINGiacDataSet.CONTING.Rows[CONTINGbindingSource.Position].Field<Int32>("CONTING_ENTRY_SEQ"));
             if (loLockedBy != null)
             {
                 if ((String)loLockedBy == Program.gsUserID && lbILockedIt)
-                    cONTINGTableAdapter.UnlockRecord(Program.gsUserID,CONTINGiacDataSet.CONTING.Rows[CONTINGbindingSource.Position].Field<String>("CONTING_DEALER"),
+                    cONTINGTableAdapter.UnlockRecord(Program.gsUserID,CONTINGiacDataSet.CONTING.Rows[CONTINGbindingSource.Position].Field<Int32>("CONTING_DEALER"),
                                                     CONTINGiacDataSet.CONTING.Rows[CONTINGbindingSource.Position].Field<DateTime>("CONTING_POST_DATE"),
                                                     CONTINGiacDataSet.CONTING.Rows[CONTINGbindingSource.Position].Field<Int32>("CONTING_ENTRY_SEQ"));
             }
@@ -518,7 +502,7 @@ namespace IAC2021SQL
         {
             if (CONTINGiacDataSet.CONTING.Rows.Count < 1)
                 return;
-            String lsDealer = CONTINGiacDataSet.CONTING.Rows[0].Field<String>("CONTING_DEALER");
+            Int32 lnDealer = CONTINGiacDataSet.CONTING.Rows[0].Field<Int32>("CONTING_DEALER");
             DateTime ldSrchDate = CONTINGiacDataSet.CONTING.Rows[0].Field<DateTime>("CONTING_POST_DATE");
             Validate();
             CONTINGbindingSource.EndEdit();
@@ -534,7 +518,7 @@ namespace IAC2021SQL
 
             try
             {
-                cONTINGTableAdapter.Delete(CONTINGiacDataSet.CONTING.Rows[CONTINGbindingSource.Position].Field<String>("CONTING_DEALER"),
+                cONTINGTableAdapter.Delete(CONTINGiacDataSet.CONTING.Rows[CONTINGbindingSource.Position].Field<Int32>("CONTING_DEALER"),
                                                 CONTINGiacDataSet.CONTING.Rows[CONTINGbindingSource.Position].Field<DateTime>("CONTING_POST_DATE"),
                                                 CONTINGiacDataSet.CONTING.Rows[CONTINGbindingSource.Position].Field<Int32>("CONTING_ENTRY_SEQ"));
                 tableAdapTran.Commit();
@@ -563,8 +547,8 @@ namespace IAC2021SQL
                 CONTINGiacDataSet.AcceptChanges();
                 CONTINGiacDataSet.CONTING.Clear();
                 lbFromDealerNameChange = true;
-                DEALERcomboBox.Text = lsDealer;
-                dateTimePickerPostDate.Value = ldSrchDate;
+                DEALERcomboBox.EditValue= lnDealer;
+                dateTimePickerPostDate.EditValue = ldSrchDate;
                 setRelatedData();
                 DefaultSettings();
                 ActiveControl = dateTimePickerPostDate;
@@ -579,7 +563,7 @@ namespace IAC2021SQL
             if (CONTINGiacDataSet.CONTING.Rows.Count > 0)
             {
                 lbFromMovement = true;
-                DEALERcomboBox.Text = CONTINGiacDataSet.CONTING.Rows[CONTINGbindingSource.Position].Field<String>("CONTING_DEALER");
+                DEALERcomboBox.EditValue = CONTINGiacDataSet.CONTING.Rows[CONTINGbindingSource.Position].Field<Int32>("CONTING_DEALER");
                 setRelatedData();
                 lbFromMovement = false;
             }
@@ -587,14 +571,14 @@ namespace IAC2021SQL
 
         private void LockContingRecord()
         {
-            Object loLockedBy   = cONTINGTableAdapter.LockedBy(DEALERcomboBox.Text, (DateTime)dateTimePickerPostDate.Value, CONTINGiacDataSet.CONTING.Rows[CONTINGbindingSource.Position].Field<Int32>("CONTING_ENTRY_SEQ")),
-                   loLockedTime = cONTINGTableAdapter.LockTime(DEALERcomboBox.Text, (DateTime)dateTimePickerPostDate.Value, CONTINGiacDataSet.CONTING.Rows[CONTINGbindingSource.Position].Field<Int32>("CONTING_ENTRY_SEQ"));
+            Object loLockedBy   = cONTINGTableAdapter.LockedBy((Int32)DEALERcomboBox.EditValue, (DateTime)dateTimePickerPostDate.EditValue, CONTINGiacDataSet.CONTING.Rows[CONTINGbindingSource.Position].Field<Int32>("CONTING_ENTRY_SEQ")),
+                   loLockedTime = cONTINGTableAdapter.LockTime((Int32)DEALERcomboBox.EditValue, (DateTime)dateTimePickerPostDate.EditValue, CONTINGiacDataSet.CONTING.Rows[CONTINGbindingSource.Position].Field<Int32>("CONTING_ENTRY_SEQ"));
 
             if (loLockedBy != null && ((String)loLockedBy).TrimEnd() != "")
             {
                 IACDataSetTableAdapters.ULISTTableAdapter ULISTTableAdapter = new IACDataSetTableAdapters.ULISTTableAdapter();
                 ULISTTableAdapter.FillById(CONTINGiacDataSet.ULIST, Program.gsUserID);
-                MessageBox.Show("*** (CONTINGENT RECORD) DEALER#: " + DEALERcomboBox.Text + " POST DATE:" + dateTimePickerPostDate.Text + " SEQUENCE #: " + CONTINGiacDataSet.CONTING.Rows[CONTINGbindingSource.Position].Field<Int32>("CONTING_ENTRY_SEQ").ToString().TrimStart() + " WAS LOCKED BY USER: " +
+                MessageBox.Show("*** (CONTINGENT RECORD) DEALER#: " + DEALERcomboBox.EditValue.ToString().Trim() + " POST DATE:" + dateTimePickerPostDate.Text + " SEQUENCE #: " + CONTINGiacDataSet.CONTING.Rows[CONTINGbindingSource.Position].Field<Int32>("CONTING_ENTRY_SEQ").ToString().TrimStart() + " WAS LOCKED BY USER: " +
                     loLockedBy + " " +
                     CONTINGiacDataSet.ULIST.Rows[0].Field<String>("LIST_NAME") +
                     "\nON: " + ((DateTime)loLockedTime).ToLongDateString() + " " +
@@ -609,28 +593,9 @@ namespace IAC2021SQL
             }
             else
             {
-                cONTINGTableAdapter.LockRecord(Program.gsUserID, DEALERcomboBox.Text, (DateTime)dateTimePickerPostDate.Value, CONTINGiacDataSet.CONTING.Rows[CONTINGbindingSource.Position].Field<Int32>("CONTING_ENTRY_SEQ"));
+                cONTINGTableAdapter.LockRecord(Program.gsUserID, (Int32)DEALERcomboBox.EditValue, (DateTime)dateTimePickerPostDate.EditValue, CONTINGiacDataSet.CONTING.Rows[CONTINGbindingSource.Position].Field<Int32>("CONTING_ENTRY_SEQ"));
                 lbILockedIt = true;   //  Make sure other instances of form don't unlock this record!
             }
-        }
-
-        private void DealerNamecomboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (CONTINGiacDataSet.DEALERLIST.Rows.Count > 0 && DealerNamecomboBox.SelectedIndex >= 0 && !lbFromDealerNameChange)
-            {
-                lbFromDealerNameChange = true;
-                DEALERcomboBox.Text = CONTINGiacDataSet.DEALERLIST.Rows[DealerNamecomboBox.SelectedIndex].Field<String>("DEALER_ACC_NO");
-            }
-            else
-            {
-                lbFromDealerNameChange = false;
-                ActiveControl = dateTimePickerPostDate;
-                dateTimePickerPostDate.Select();
-                return;
-            }
-            System.Windows.Forms.SendKeys.Send("{TAB}");
-            System.Windows.Forms.SendKeys.Send("{TAB}");
-            System.Windows.Forms.SendKeys.Send("{TAB}");
         }
     }
 }

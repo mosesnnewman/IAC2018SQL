@@ -9,11 +9,8 @@ using System.Windows.Forms;
 
 namespace IAC2021SQL
 {
-    public partial class frmClosedCustomerBuybackReport : Form
+    public partial class frmClosedCustomerBuybackReport : DevExpress.XtraEditors.XtraForm
     {
-        // Moses Newman 12/09/2018 Add Customer and Dealer State selection criteria
-        private BindingSource CustomerStateBindingSource = new BindingSource();
-        private BindingSource DealerStateBindingSource = new BindingSource();
         private IACDataSetTableAdapters.stateTableAdapter stateTableAdapter = new IACDataSetTableAdapters.stateTableAdapter();
 
         public frmClosedCustomerBuybackReport()
@@ -23,6 +20,8 @@ namespace IAC2021SQL
 
         private void frmClosedCustomerBuybackReport_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'iACDataSet.state' table. You can move, or remove it, as needed.
+            this.stateTableAdapter1.Fill(this.iACDataSet.state);
             // Moses Newman 12/09/2018 Add Customer and Dealer State selection criteria
             stateTableAdapter.Fill(iACDataSet.state);
 
@@ -40,28 +39,21 @@ namespace IAC2021SQL
             iACDataSet.state.Rows[DealerStateBindingSource.Position].SetField<String>("name", "");
             DealerStateBindingSource.EndEdit();
 
-            comboBoxDealerState.DataSource = CustomerStateBindingSource;
-            comboBoxDealerState.DisplayMember = "name";
-            comboBoxDealerState.ValueMember = "abbreviation";
+            lookUpEditDealerState.Properties.DataSource = DealerStateBindingSource;
 
-            comboBoxCustomerState.DataSource = DealerStateBindingSource;
-            comboBoxCustomerState.DisplayMember = "name";
-            comboBoxCustomerState.ValueMember = "abbreviation";
-            comboBoxCustomerState.SelectedItem.ToString();
+            lookUpEditCustomerState.Properties.DataSource = CustomerStateBindingSource;
 
             this.pAYCODETableAdapter.Fill(this.iACDataSet.PAYCODE);
             this.pAYMENTTYPETableAdapter.Fill(this.iACDataSet.PAYMENTTYPE);
             Int32 lnRunMonth = DateTime.Now.Date.Month, lnRunYear = DateTime.Now.Date.Year;
 
-            nullableDateTimePickerStartDate.Value = DateTime.Now.Date;
-            nullableDateTimePickerEndDate.Value = DateTime.Now.Date;
+            nullableDateTimePickerStartDate.EditValue = DateTime.Now.Date;
+            nullableDateTimePickerEndDate.EditValue = DateTime.Now.Date;
             dlrlistbynumTableAdapter.Fill(iACDataSet.DLRLISTBYNUM);
             bindingSourceDLRLISTBYNUM.AddNew();
             bindingSourceDLRLISTBYNUM.EndEdit();
-            iACDataSet.DLRLISTBYNUM.Rows[bindingSourceDLRLISTBYNUM.Position].SetField<String>("DEALER_ACC_NO", "   ");
             iACDataSet.DLRLISTBYNUM.Rows[bindingSourceDLRLISTBYNUM.Position].SetField<String>("DEALER_NAME", "                  ");
             bindingSourceDLRLISTBYNUM.EndEdit();
-            PaymentTypecomboBox.Text = "";
         }
         
         private void buttonPost_Click(object sender, EventArgs e)
@@ -84,13 +76,14 @@ namespace IAC2021SQL
         {
             IACDataSetTableAdapters.ClosedCustomerBuybackSummaryTableAdapter ClosedCustomerBuybackSummaryTableAdapter = 
                                 new IACDataSetTableAdapters.ClosedCustomerBuybackSummaryTableAdapter();
-            String  lsType      = PaymentTypetextBox.Text.TrimEnd() + "%", lsCode = CodeTypetextBox.Text + "%", // Moses Newman 07/16/2021 do not use code desc
-                    lsDealer    = comboBoxDealer.Text.TrimEnd() + "%",
-                    lsDealerState = comboBoxDealerState.SelectedValue.ToString().TrimEnd() + "%", 
-                    lsCustomerState = comboBoxCustomerState.SelectedValue.ToString().TrimEnd() + "%";
+            String  lsType = lookUpEditPaymentType.EditValue != null ? lookUpEditPaymentType.EditValue.ToString().Trim() : "" + "%", 
+                    lsCode = lookUpEditCodeType.EditValue != null ? lookUpEditCodeType.EditValue.ToString().Trim() : "" + "%",
+                    lsDealer    = lookUpEditDealer.EditValue != null ? lookUpEditDealer.EditValue.ToString().Trim() : "" + "%",
+                    lsDealerState = lookUpEditDealerState.EditValue != null ? lookUpEditDealerState.EditValue.ToString().Trim() : "" + "%", 
+                    lsCustomerState = lookUpEditCustomerState.EditValue != null ? lookUpEditCustomerState.EditValue.ToString().Trim() : "" + "%";
 
-            closedCustomerBuybackTableAdapter.Fill(iACDataSet.ClosedCustomerBuyback, ((DateTime)nullableDateTimePickerEndDate.Value).Date, ((DateTime)nullableDateTimePickerStartDate.Value).Date, lsType,lsCode,lsDealer,lsDealerState,lsCustomerState);
-            ClosedCustomerBuybackSummaryTableAdapter.Fill(iACDataSet.ClosedCustomerBuybackSummary, ((DateTime)nullableDateTimePickerEndDate.Value).Date, ((DateTime)nullableDateTimePickerStartDate.Value).Date, lsType, lsCode, lsDealer,lsDealerState,lsCustomerState);
+            closedCustomerBuybackTableAdapter.Fill(iACDataSet.ClosedCustomerBuyback, ((DateTime)nullableDateTimePickerEndDate.EditValue).Date, ((DateTime)nullableDateTimePickerStartDate.EditValue).Date, lsType,lsCode,lsDealer,lsDealerState,lsCustomerState);
+            ClosedCustomerBuybackSummaryTableAdapter.Fill(iACDataSet.ClosedCustomerBuybackSummary, ((DateTime)nullableDateTimePickerEndDate.EditValue).Date, ((DateTime)nullableDateTimePickerStartDate.EditValue).Date, lsType, lsCode, lsDealer,lsDealerState,lsCustomerState);
             
             if (iACDataSet.ClosedCustomerBuyback.Rows.Count == 0)
                 MessageBox.Show("*** Sorry there are no CUSTOMER HISTORY records for the DATES and /or DEALER you selected!!! ***");
@@ -98,8 +91,8 @@ namespace IAC2021SQL
             {
                 ClosedCustomerBuybackReport myReportObject = new ClosedCustomerBuybackReport();
                 myReportObject.SetDataSource(iACDataSet);
-                myReportObject.SetParameterValue("gdStartDate", ((DateTime)nullableDateTimePickerStartDate.Value).Date);
-                myReportObject.SetParameterValue("gdEndDate", ((DateTime)nullableDateTimePickerEndDate.Value).Date);
+                myReportObject.SetParameterValue("gdStartDate", ((DateTime)nullableDateTimePickerStartDate.EditValue).Date);
+                myReportObject.SetParameterValue("gdEndDate", ((DateTime)nullableDateTimePickerEndDate.EditValue).Date);
                 myReportObject.SetParameterValue("gsUserID", Program.gsUserID);
                 myReportObject.SetParameterValue("gsUserName", Program.gsUserName);
                 rptViewer.crystalReportViewer.ReportSource = myReportObject;
@@ -108,116 +101,14 @@ namespace IAC2021SQL
             }
         }
 
-        private void PaymentTypecomboBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void lookUpEditPaymentType_EditValueChanged(object sender, EventArgs e)
         {
-            if (PaymentTypecomboBox.SelectedIndex >= 0)
-            {
-                PaymentTypetextBox.Text = iACDataSet.PAYMENTTYPE.Rows[PaymentTypecomboBox.SelectedIndex].Field<String>("TYPE");
-            }
-            if (PaymentTypetextBox.Text.ToString().ToUpper().TrimEnd() == "W")
-                pAYCODETableAdapter.FillByCodeW(iACDataSet.PAYCODE);
-            else
-                pAYCODETableAdapter.Fill(iACDataSet.PAYCODE);
-            if (ActiveControl == PaymentTypecomboBox)
-            {
-                ActiveControl = CodeTypetextBox;
-                CodeTypetextBox.SelectAll();
-            }
-        }
-
-        private void PaymentTypetextBox_Validated(object sender, EventArgs e)
-        {
-            if (PaymentTypetextBox.Text.TrimEnd() == "")
-                return;
-            DataRow FoundRow;
-            if (iACDataSet.PAYMENTTYPE.Rows.Count == 0)
-                pAYMENTTYPETableAdapter.Fill(iACDataSet.PAYMENTTYPE);
-            FoundRow = iACDataSet.PAYMENTTYPE.Rows.Find(PaymentTypetextBox.Text.ToString().TrimEnd());
-
-            if (FoundRow == null)
-            {
-                if (PaymentTypetextBox.Text.ToString().Trim().Length != 0)
-                    MessageBox.Show("Incorrect Payment Type entered. Please respecify.");
-                if (Program.gbClosedPaymentAdd || Modal)
-                {
-                    ActiveControl = PaymentTypecomboBox;
-                    PaymentTypecomboBox.SelectAll();
-                }
-            }
-            else
-            {
-                PaymentTypecomboBox.Text = FoundRow.Field<String>("DESCRIPTION");
-                if (PaymentTypetextBox.Text.ToString().ToUpper().TrimEnd() == "W")
-                    pAYCODETableAdapter.FillByCodeW(iACDataSet.PAYCODE);
-                else
-                    pAYCODETableAdapter.Fill(iACDataSet.PAYCODE);
-                    if (Modal || Program.gbClosedPaymentAdd)
-                    {
-                        ActiveControl = CodeTypetextBox;
-                        CodeTypetextBox.SelectAll();
-                    }
-                }
-
-        }
-
-        private void CodeTypetextBox_Validated(object sender, EventArgs e)
-        {
-            if (iACDataSet.PAYCODE.Rows.Count < 1 || CodeTypetextBox.Text.TrimEnd() == "")
-                return;
-
-            DataRow FoundRow;
-
-            if ((CodeTypetextBox.Text == "H" || CodeTypetextBox.Text == "L") && PaymentTypetextBox.Text != "W")
-                PaymentTypetextBox.Text = "W";
-
-            if (PaymentTypetextBox.Text == "W")
-            {
-                switch (CodeTypetextBox.Text.ToString().TrimEnd())
-                {
-                    case "L":
-                    case "H":
-                        break;
-                    case "C":
-                    default:
-                        CodeTypetextBox.Text = "H";
-                        break;
-                }
-            }
-
-            if (PaymentTypetextBox.Text == "W" && iACDataSet.PAYCODE.Rows.Count != 2)
-                pAYCODETableAdapter.FillByCodeW(iACDataSet.PAYCODE);
-            FoundRow = iACDataSet.PAYCODE.Rows.Find(CodeTypetextBox.Text.ToString().TrimEnd());
-
-            if (FoundRow == null)
-            {
-                if (CodeTypetextBox.Text.ToString().Trim().Length != 0)
-                {
-                    MessageBox.Show("Sorry no payment code found that matches your selected payment code!");
-                    CodeTypetextBox.Text = "";
-                    ActiveControl = PAYCODEcomboBox;
-                    CodeTypetextBox.SelectAll();
-                }
-            }
-            else
-                PAYCODEcomboBox.Text = FoundRow.Field<String>("DESCRIPTION");
-        }
-
-        private void PAYCODEcomboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (iACDataSet.PAYCODE.Rows.Count < 1)
-                return;
-            if (PAYCODEcomboBox.SelectedIndex > -1)
-                CodeTypetextBox.Text = iACDataSet.PAYCODE.Rows[PAYCODEcomboBox.SelectedIndex].Field<String>("CODE");
-            else
-            {
-                if (PaymentTypetextBox.Text != "W")
-                    if (CodeTypetextBox.Text.TrimEnd() == "")
-                        CodeTypetextBox.Text = "N";
-                    else
-                        if (CodeTypetextBox.Text.TrimEnd() != "L" || CodeTypetextBox.Text.TrimEnd() != "H")
-                            CodeTypetextBox.Text = "H";
-                CodeTypetextBox_Validated(sender, e);
-            }
+            iACDataSet.PAYCODE.Clear();
+            pAYCODETableAdapter.FillByType(iACDataSet.PAYCODE, (String)lookUpEditPaymentType.EditValue);
+            PaymentCodebindingSource.DataSource = iACDataSet.PAYCODE;
+            PaymentCodebindingSource.MoveFirst();
+            lookUpEditCodeType.EditValue = iACDataSet.PAYCODE.Rows[0].Field<String>("Code");
+            lookUpEditCodeType.Refresh();
         }
     }
 }

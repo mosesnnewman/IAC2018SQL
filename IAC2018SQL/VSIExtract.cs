@@ -15,7 +15,7 @@ using Microsoft.Office.Tools.Excel;
 
 namespace IAC2021SQL
 {
-    public partial class FormVSIExtract : Form
+    public partial class FormVSIExtract : DevExpress.XtraEditors.XtraForm
     {
 
         public FormVSIExtract()
@@ -28,12 +28,11 @@ namespace IAC2021SQL
         {
             this.dLRLISTBYNUMTableAdapter.Fill(this.iACDataSet.DLRLISTBYNUM);
             bindingSourceDLRLISTBYNUM.DataSource = iACDataSet.DLRLISTBYNUM;
-            nullableDateTimePickerStartDate.Value = DateTime.Parse("01/01/1980").Date;
-            nullableDateTimePickerEndDate.Value = DateTime.Now.Date;
+            nullableDateTimePickerStartDate.EditValue = DateTime.Parse("01/01/1980").Date;
+            nullableDateTimePickerEndDate.EditValue = DateTime.Now.Date;
             dLRLISTBYNUMTableAdapter.Fill(iACDataSet.DLRLISTBYNUM);
             bindingSourceDLRLISTBYNUM.AddNew();
             bindingSourceDLRLISTBYNUM.EndEdit();
-            iACDataSet.DLRLISTBYNUM.Rows[bindingSourceDLRLISTBYNUM.Position].SetField<String>("DEALER_ACC_NO", "   ");
             iACDataSet.DLRLISTBYNUM.Rows[bindingSourceDLRLISTBYNUM.Position].SetField<String>("DEALER_NAME", "                  ");
             bindingSourceDLRLISTBYNUM.EndEdit();
         }
@@ -41,15 +40,15 @@ namespace IAC2021SQL
         private void buttonPost_Click(object sender, EventArgs e)
         {
             SQLBackupandRestore SQLBR = new SQLBackupandRestore();
-            String lsDealer = comboBoxDealer.Text.TrimEnd() + "%", lsState = textBoxState.Text.Trim() + "%";
-
+            String lsDealer = lookUpEditDealer.EditValue != null ? lookUpEditDealer.EditValue.ToString().Trim() : "" + '%';
+            String lsState = lookUpEditState.EditValue.ToString().Trim() + "%";
             IACDataSetTableAdapters.CustomerVSITableAdapter CustomerVSITableAdapter = new IACDataSetTableAdapters.CustomerVSITableAdapter();
-            CustomerVSITableAdapter.Fill(iACDataSet.CustomerVSI, (DateTime)nullableDateTimePickerStartDate.Value, (DateTime)nullableDateTimePickerEndDate.Value,lsDealer,lsState);
+            CustomerVSITableAdapter.Fill(iACDataSet.CustomerVSI, (DateTime)nullableDateTimePickerStartDate.EditValue, (DateTime)nullableDateTimePickerEndDate.EditValue,lsDealer,lsState);
 
-            String  lsUNCROOT = Program.GsDataPath, lsExcelFileOut = lsUNCROOT + @"\AccStuff\mfdata\EXCLDATA\CustomerVSIExtract.xls",
-                               lsTemplate = lsUNCROOT + @"\AccStuff\mfdata\EXCLDATA\CustomerVSIExtractTemplate.xls",
+            String  lsUNCROOT = Program.GsDataPath, lsExcelFileOut = lsUNCROOT + @"AccStuff\mfdata\EXCLDATA\CustomerVSIExtract.xlsx",
+                               lsTemplate = lsUNCROOT + @"AccStuff\mfdata\EXCLDATA\CustomerVSIExtractTemplate.xlsx",
 
-                    lsNewFileOut = lsUNCROOT + @"\AccStuff\mfdata\EXCLDATA\CustomerVSIExtract" + DateTime.Now.Date.Year.ToString() + DateTime.Now.Date.Month.ToString().PadLeft(2, '0') + DateTime.Now.Date.Day.ToString().PadLeft(2, '0') + @".xlsx";
+                    lsNewFileOut = lsUNCROOT + @"AccStuff\mfdata\EXCLDATA\CustomerVSIExtract" + DateTime.Now.Date.Year.ToString() + DateTime.Now.Date.Month.ToString().PadLeft(2, '0') + DateTime.Now.Date.Day.ToString().PadLeft(2, '0') + @".xlsx";
 
             if (File.Exists(lsExcelFileOut))
                 File.Delete(lsExcelFileOut);

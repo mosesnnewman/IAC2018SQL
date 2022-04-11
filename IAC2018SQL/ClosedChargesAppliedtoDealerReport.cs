@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace IAC2021SQL
 {
-    public partial class frmClosedChargesAppliedtoDealerReport : Form
+    public partial class frmClosedChargesAppliedtoDealerReport : DevExpress.XtraEditors.XtraForm
     {
         private IACDataSetTableAdapters.ClosedChargesAppliedToDealerTableAdapter ClosedChargesAppliedToDealerTableAdapter = new IACDataSetTableAdapters.ClosedChargesAppliedToDealerTableAdapter();
         
@@ -22,12 +22,11 @@ namespace IAC2021SQL
         {
             Int32 lnRunMonth = DateTime.Now.Date.Month, lnRunYear = DateTime.Now.Date.Year;
 
-            nullableDateTimePickerStartDate.Value = null;
-            nullableDateTimePickerEndDate.Value = null;
+            nullableDateTimePickerStartDate.EditValue = DateTime.Now.AddMonths(-1).Date;
+            nullableDateTimePickerEndDate.EditValue = DateTime.Now.Date;
             dlrlistbynumTableAdapter.Fill(iACDataSet.DLRLISTBYNUM);
             bindingSourceDLRLISTBYNUM.AddNew();
             bindingSourceDLRLISTBYNUM.EndEdit();
-            iACDataSet.DLRLISTBYNUM.Rows[bindingSourceDLRLISTBYNUM.Position].SetField<String>("DEALER_ACC_NO", "   ");
             iACDataSet.DLRLISTBYNUM.Rows[bindingSourceDLRLISTBYNUM.Position].SetField<String>("DEALER_NAME", "                  ");
             bindingSourceDLRLISTBYNUM.EndEdit();
         }
@@ -50,23 +49,23 @@ namespace IAC2021SQL
 
         private void PrintChargesAppliedtoDealer(ReportViewer rptViewer)
         {
-            String lsDealerNum = comboBoxDealer.Text.TrimEnd().TrimStart();
+            String lsDealerNum = lookUpEditDealer.EditValue != null ? lookUpEditDealer.EditValue.ToString().Trim() : "" + '%';
 
-            if (lsDealerNum.Length == 0 && (nullableDateTimePickerStartDate.Value == null && nullableDateTimePickerEndDate.Value == null))
+            if (lsDealerNum.Length == 0 && (nullableDateTimePickerStartDate.EditValue == null && nullableDateTimePickerEndDate.EditValue == null))
                 // No Dealer or Date Range
                 ClosedChargesAppliedToDealerTableAdapter.Fill(iACDataSet.ClosedChargesAppliedToDealer, null, null, null);
             else
-                if (lsDealerNum.Length == 3 && (nullableDateTimePickerStartDate.Value == null && nullableDateTimePickerEndDate.Value == null))
+                if (lsDealerNum.Length > 0 && (nullableDateTimePickerStartDate.EditValue == null && nullableDateTimePickerEndDate.EditValue == null))
                     // Dealer but no Date Range
                     ClosedChargesAppliedToDealerTableAdapter.Fill(iACDataSet.ClosedChargesAppliedToDealer, lsDealerNum, null, null);
                 else
-                    if (lsDealerNum.Length == 3 && (nullableDateTimePickerStartDate.Value != null && nullableDateTimePickerEndDate.Value != null))
+                    if (lsDealerNum.Length > 0 && (nullableDateTimePickerStartDate.EditValue != null && nullableDateTimePickerEndDate.EditValue != null))
                         // Dealer and Date Range
-                        ClosedChargesAppliedToDealerTableAdapter.Fill(iACDataSet.ClosedChargesAppliedToDealer, lsDealerNum, (DateTime)nullableDateTimePickerStartDate.Value, (DateTime)nullableDateTimePickerEndDate.Value);
+                        ClosedChargesAppliedToDealerTableAdapter.Fill(iACDataSet.ClosedChargesAppliedToDealer, lsDealerNum, (DateTime)nullableDateTimePickerStartDate.EditValue, (DateTime)nullableDateTimePickerEndDate.EditValue);
                     else
-                        if (lsDealerNum.Length == 0 && (nullableDateTimePickerStartDate.Value != null && nullableDateTimePickerEndDate.Value != null))
+                        if (lsDealerNum.Length == 0 && (nullableDateTimePickerStartDate.EditValue != null && nullableDateTimePickerEndDate.EditValue != null))
                           // No Dealer but Date Range
-                            ClosedChargesAppliedToDealerTableAdapter.Fill(iACDataSet.ClosedChargesAppliedToDealer, null, (DateTime)nullableDateTimePickerStartDate.Value, (DateTime)nullableDateTimePickerEndDate.Value);
+                            ClosedChargesAppliedToDealerTableAdapter.Fill(iACDataSet.ClosedChargesAppliedToDealer, null, (DateTime)nullableDateTimePickerStartDate.EditValue, (DateTime)nullableDateTimePickerEndDate.EditValue);
 
             if (iACDataSet.ClosedChargesAppliedToDealer.Rows.Count == 0)
                 MessageBox.Show("*** Sorry there are no Charges Applied To Dealer records for the DATES and / or DEALER you selected!!! ***");
@@ -74,8 +73,8 @@ namespace IAC2021SQL
             {
                 ClosedChargesAppliedToDealer myReportObject = new ClosedChargesAppliedToDealer();
                 myReportObject.SetDataSource(iACDataSet);
-                myReportObject.SetParameterValue("gdFromDate", (nullableDateTimePickerStartDate.Value != null) ? (DateTime)nullableDateTimePickerStartDate.Value : Convert.ToDateTime("01/01/1900"));
-                myReportObject.SetParameterValue("gdToDate", (nullableDateTimePickerEndDate.Value != null) ? (DateTime)nullableDateTimePickerEndDate.Value : Convert.ToDateTime("01/01/1900"));
+                myReportObject.SetParameterValue("gdFromDate", (nullableDateTimePickerStartDate.EditValue != null) ? (DateTime)nullableDateTimePickerStartDate.EditValue : Convert.ToDateTime("01/01/1900"));
+                myReportObject.SetParameterValue("gdToDate", (nullableDateTimePickerEndDate.EditValue != null) ? (DateTime)nullableDateTimePickerEndDate.EditValue : Convert.ToDateTime("01/01/1900"));
                 myReportObject.SetParameterValue("gsUserID", Program.gsUserID);
                 myReportObject.SetParameterValue("gsUserName", Program.gsUserName);
                 rptViewer.crystalReportViewer.ReportSource = myReportObject;

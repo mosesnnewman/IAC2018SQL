@@ -106,6 +106,7 @@ namespace IAC2021SQL
             cUSTHISTDataGridView.Controls.Add(cTB);
             cTB.Location = this.cUSTHISTDataGridView.GetCellDisplayRectangle(4, row2.Index, true).Location;
             cTB.Size = this.cUSTHISTDataGridView.GetCellDisplayRectangle(4, row2.Index, true).Size;*/
+            this.cUSTOMER_DEALERcomboBox.EditValueChanged += new System.EventHandler(this.cUSTOMER_DEALERcomboBox_EditValueChanged);
         }
 
         private void StartupConfiguration()
@@ -141,9 +142,11 @@ namespace IAC2021SQL
                     gnCustomerBalance = 0;
                     gnCustomerBuyout = 0;
                     cUSTOMER_NOTextBox.Text = "";
-                    cUSTOMER_DEALERcomboBox.Text = "";
-                    DealerNamecomboBox.Text = "";
-                    cUSTOMER_DEALERcomboBox.Text = "";
+                    cUSTOMER_DEALERcomboBox.EditValue =null;
+                }
+                else
+                {
+                    cUSTOMER_DEALERcomboBox.EditValue = iACDataSet.CUSTOMER.Rows[0].Field<Int32>("CUSTOMER_DEALER");
                 }
             }
             else
@@ -152,8 +155,7 @@ namespace IAC2021SQL
                 gnCustomerBuyout = 0;
                 cUSTOMER_NOTextBox.Text = "";
                 cUSTOMER_PURCHASE_ORDERTextBox.Text = "";
-                DealerNamecomboBox.Text = "";
-                cUSTOMER_DEALERcomboBox.Text = "";
+                cUSTOMER_DEALERcomboBox.EditValue = "";
                 textBox1.Text = "";
             }
             Program.gsKey = null;
@@ -195,7 +197,6 @@ namespace IAC2021SQL
             cUSTOMER_SS_2TextBox.Enabled = false;
             cUSTOMER_SS_3TextBox.Enabled = false;
             cUSTOMER_DEALERcomboBox.Enabled = false;
-            DealerNamecomboBox.Enabled = false;
             cUSTOMER_COMMENT_1TextBox.Enabled = false;
             cUSTOMER_COMMENT_2TextBox.Enabled = false;
             checkEditCustomerInsurance.Enabled = false;
@@ -545,7 +546,6 @@ namespace IAC2021SQL
             cUSTOMER_SS_2TextBox.Enabled = true;
             cUSTOMER_SS_3TextBox.Enabled = true;
             cUSTOMER_DEALERcomboBox.Enabled = true;
-            DealerNamecomboBox.Enabled = true;
             cUSTOMER_COMMENT_1TextBox.Enabled = true;
             cUSTOMER_COMMENT_2TextBox.Enabled = true;
             checkEditCustomerInsurance.Enabled = true;
@@ -946,7 +946,7 @@ namespace IAC2021SQL
                 textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", DealerListCustbindingSource, "DEALER_NAME", true));
                 textBox8.DataBindings.Add(new System.Windows.Forms.Binding("Text", DealerListCustbindingSource, "DEALER_NAME", true));
                 // Moses Newman 04/10/2014 add dealer state to first tab customer screen
-                dEALERTableAdapter.Fill(iACDataSet.DEALER, iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_DEALER"));
+                dEALERTableAdapter.Fill(iACDataSet.DEALER, iACDataSet.CUSTOMER.Rows[0].Field<Int32>("CUSTOMER_DEALER"));
                 cUSTOMER_PURCHASE_ORDERTextBox.Text = iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_PURCHASE_ORDER").ToString();
                 cUSTHISTTableAdapter.FillByCustomerNo(iACDataSet.CUSTHIST, cUSTOMER_NOTextBox.Text.ToString());
                 cOMMENTTableAdapter.FillByCustNo(iACDataSet.COMMENT, cUSTOMER_NOTextBox.Text.ToString());
@@ -963,21 +963,8 @@ namespace IAC2021SQL
                 // Moses Newman 04/18/2019 Add Repo Log Tab
                 RepoLogTableAdapter.FillByCustomerNo(RepoData.RepoLog, cUSTOMER_NOTextBox.Text);
                 gridControlRepoLog.DataSource = RepoData.RepoLog;
-                /*
-                // Moses Newman 08/30/2021 Fix issues with nuldates in 64 bit version
-                if (iACDataSet.VEHICLE.Rows[0].Field<DateTime?>("RepoDate") == null)
-                    iACDataSet.VEHICLE.Rows[0].SetField<DateTime>("RepoDate", DateTime.Parse("01/01/1900"));
-                if (iACDataSet.VEHICLE.Rows[0].Field<DateTime?>("LocationDate") == null)
-                    iACDataSet.VEHICLE.Rows[0].SetField<DateTime>("LocationDate", DateTime.Parse("01/01/1900"));
-                if (iACDataSet.VEHICLE.Rows[0].Field<DateTime?>("AuctionHouseDate") == null)
-                    iACDataSet.VEHICLE.Rows[0].SetField<DateTime>("AuctionHouseDate", DateTime.Parse("01/01/1900"));
-                if (iACDataSet.VEHICLE.Rows[0].Field<DateTime?>("TitleDateReceived") == null)
-                    iACDataSet.VEHICLE.Rows[0].SetField<DateTime>("TitleDateReceived", DateTime.Parse("01/01/1900"));
-                if (iACDataSet.VEHICLE.Rows[0].Field<DateTime?>("DateTitleReleased") == null)
-                    iACDataSet.VEHICLE.Rows[0].SetField<DateTime>("DateTitleReleased", DateTime.Parse("01/01/1900"));
-                VehiclebindingSource.EndEdit();
-                // Moses Newman End Mod 08/30/2021
-                */
+                // Moses Newman 04/07/2022 
+                cUSTOMER_DEALERcomboBox.EditValue = iACDataSet.CUSTOMER.Rows[0].Field<Int32>("CUSTOMER_DEALER");
                 // Moses Newman 08/02/2013 Save CUSTOMER_BALANCE so maintenance can NOT ALTER IT even though we display the current balance only posting routines may recalculate it and write the data.
                 if (iACDataSet.CUSTOMER.Rows[0].Field<Nullable<Decimal>>("CUSTOMER_BALANCE") != null && iACDataSet.CUSTOMER.Rows[0].Field<Nullable<Decimal>>("CUSTOMER_BALANCE") != 0)
                 {
@@ -1127,8 +1114,10 @@ namespace IAC2021SQL
                 return;
 
             cUSTOMERBindingSource.MoveFirst();
+            cUSTOMERBindingSource.EndEdit();
             // Moses Newman 04/26/2012 Handle refresh of Dealer Name after cancel from edit!
-            DealerListCustbindingSource.Position = DealerListCustbindingSource.Find("DEALER_ACC_NO", iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_DEALER"));
+            // Moses Newman 03/20/2022 Now use id instead of DEALER_ACC_NO
+            DealerListCustbindingSource.Position = DealerListCustbindingSource.Find("id", iACDataSet.CUSTOMER.Rows[0].Field<Int32>("CUSTOMER_DEALER"));
 
             // Moses Newman 03/01/2012 Create new opnbank record if none!
             if (iACDataSet.OPNBANK.Rows.Count == 0)
@@ -1207,44 +1196,59 @@ namespace IAC2021SQL
                 //comboBoxLetterNo.SelectedIndex = 0;
                 //comboBoxLetterType.SelectedIndex = 0;
                 // Moses Newman 09/12/2017 Handle a user who texted STOP!
-                if (iACDataSet.CUSTOMER.Rows[0].Field<Boolean>("TConfirmed"))
+                try
                 {
-                    if (GetSubscriberStatus(iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_CELL_PHONE")) == "Inactive")
+                    if (iACDataSet.CUSTOMER.Rows[0].Field<Boolean>("TConfirmed"))
                     {
-                        if (!lbEdit && !lbAddFlag)
-                            cUSTOMERTableAdapter.ResetSBT(iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO"),false);
-                        iACDataSet.CUSTOMER.Rows[0].SetField<Boolean>("TAcct", false);
-                        radioButtonAcct.Checked = false;
-                        iACDataSet.CUSTOMER.Rows[0].SetField<String>("TPin", "");
-                        buttonConfirm.ForeColor = Color.Crimson;
-                        iACDataSet.CUSTOMER.Rows[0].SetField<Boolean>("TConfirmed", false);
-                        iACDataSet.CUSTOMER.Rows[0].SetField<Boolean>("DNTAcct", true);
-                        iACDataSet.CUSTOMER.Rows[0].EndEdit();
-                        MakeComment("CUSTOMER UNSUBSCRIBED SBT BY TEXTING STOP.", "", 0, false);
+                        if (GetSubscriberStatus(iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_CELL_PHONE")) == "Inactive")
+                        {
+                            if (!lbEdit && !lbAddFlag)
+                                cUSTOMERTableAdapter.ResetSBT(iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO"), false);
+                            iACDataSet.CUSTOMER.Rows[0].SetField<Boolean>("TAcct", false);
+                            radioButtonAcct.Checked = false;
+                            iACDataSet.CUSTOMER.Rows[0].SetField<String>("TPin", "");
+                            buttonConfirm.ForeColor = Color.Crimson;
+                            iACDataSet.CUSTOMER.Rows[0].SetField<Boolean>("TConfirmed", false);
+                            iACDataSet.CUSTOMER.Rows[0].SetField<Boolean>("DNTAcct", true);
+                            iACDataSet.CUSTOMER.Rows[0].EndEdit();
+                            MakeComment("CUSTOMER UNSUBSCRIBED SBT BY TEXTING STOP.", "", 0, false);
+                        }
                     }
                 }
+                catch (System.ServiceModel.ServerTooBusyException e)
+                {
+                    MessageBox.Show(e.Message);
+                }
+                    
                 buttonValidate.ForeColor = iACDataSet.CUSTOMER.Rows[0].Field<Boolean>("CellValid") ? Color.Green : Color.Crimson;
                 buttonConfirm.ForeColor = iACDataSet.CUSTOMER.Rows[0].Field<Boolean>("TConfirmed") ? Color.Green : Color.Crimson;
                 buttonMessage.Enabled = iACDataSet.CUSTOMER.Rows[0].Field<Boolean>("TConfirmed");
                 // Moses Newman 09/13/2017 Store the orginal value of the phone number to test for changes!
                 cUSTOMER_CELL_PHONETextBox.Tag = cUSTOMER_CELL_PHONETextBox.Text;
 
-                // Moses Newman 09/18/2021 Handle a cosigner who texted STOP!
-                if (iACDataSet.CUSTOMER.Rows[0].Field<Boolean>("COSTConfirmed"))
+                try
                 {
-                    if (GetSubscriberStatus(iACDataSet.CUSTOMER.Rows[0].Field<String>("COSIGNER_CELL_PHONE")) == "Inactive")
+                    // Moses Newman 09/18/2021 Handle a cosigner who texted STOP!
+                    if (iACDataSet.CUSTOMER.Rows[0].Field<Boolean>("COSTConfirmed"))
                     {
-                        if (!lbEdit && !lbAddFlag)
-                            cUSTOMERTableAdapter.ResetSBT(iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO"), true);
-                        iACDataSet.CUSTOMER.Rows[0].SetField<Boolean>("COSTAcct", false);
-                        radioButtonCOSAcct.Checked = false;
-                        iACDataSet.CUSTOMER.Rows[0].SetField<String>("COSTPin", "");
-                        buttonCOSConfirm.ForeColor = Color.Crimson;
-                        iACDataSet.CUSTOMER.Rows[0].SetField<Boolean>("COSTConfirmed", false);
-                        iACDataSet.CUSTOMER.Rows[0].SetField<Boolean>("COSDNTAcct", true);
-                        iACDataSet.CUSTOMER.Rows[0].EndEdit();
-                        MakeComment("COSIGNER UNSUBSCRIBED SBT BY TEXTING STOP.", "", 0, false);
+                        if (GetSubscriberStatus(iACDataSet.CUSTOMER.Rows[0].Field<String>("COSIGNER_CELL_PHONE")) == "Inactive")
+                        {
+                            if (!lbEdit && !lbAddFlag)
+                                cUSTOMERTableAdapter.ResetSBT(iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO"), true);
+                            iACDataSet.CUSTOMER.Rows[0].SetField<Boolean>("COSTAcct", false);
+                            radioButtonCOSAcct.Checked = false;
+                            iACDataSet.CUSTOMER.Rows[0].SetField<String>("COSTPin", "");
+                            buttonCOSConfirm.ForeColor = Color.Crimson;
+                            iACDataSet.CUSTOMER.Rows[0].SetField<Boolean>("COSTConfirmed", false);
+                            iACDataSet.CUSTOMER.Rows[0].SetField<Boolean>("COSDNTAcct", true);
+                            iACDataSet.CUSTOMER.Rows[0].EndEdit();
+                            MakeComment("COSIGNER UNSUBSCRIBED SBT BY TEXTING STOP.", "", 0, false);
+                        }
                     }
+                }
+                catch (System.ServiceModel.ServerTooBusyException e)
+                {
+                    MessageBox.Show(e.Message);
                 }
                 buttonCOSValidate.ForeColor = iACDataSet.CUSTOMER.Rows[0].Field<Boolean>("COSCellValid") ? Color.Green : Color.Crimson;
                 buttonCOSConfirm.ForeColor = iACDataSet.CUSTOMER.Rows[0].Field<Boolean>("COSTConfirmed") ? Color.Green : Color.Crimson;
@@ -1438,7 +1442,6 @@ namespace IAC2021SQL
                     cUSTOMER_SS_2TextBox.Enabled = true;
                     cUSTOMER_SS_3TextBox.Enabled = true;
                     cUSTOMER_DEALERcomboBox.Enabled = true;
-                    DealerNamecomboBox.Enabled = true;
                     cUSTOMER_COMMENT_1TextBox.Enabled = true;
                     cUSTOMER_COMMENT_2TextBox.Enabled = true;
                     checkEditCustomerInsurance.Enabled = true;
@@ -1839,42 +1842,6 @@ namespace IAC2021SQL
             txtVehicleYear.Select();
         }
 
-        private void cUSTOMER_DEALERcomboBox_Validated(object sender, EventArgs e)
-        {
-            if (iACDataSet.CUSTOMER.Rows.Count == 0)
-                return;
-            Int32 DLRPOS = -1;
-            Object Key = null;
-            if (cUSTOMER_DEALERcomboBox.Text.ToString().Trim().Length < 3 && cUSTOMER_DEALERcomboBox.Text.ToString().Trim().Length > 0)
-                cUSTOMER_DEALERcomboBox.Text = cUSTOMER_DEALERcomboBox.Text.PadLeft(3, '0');
-
-            Key = cUSTOMER_DEALERcomboBox.Text.ToString().TrimEnd();
-            DLRPOS = DLRLISTBYNUMbindingSource.Find("DEALER_ACC_NO", Key);
-
-            if (DLRPOS == -1 && cUSTOMER_DEALERcomboBox.Text.ToString().Trim().Length != 0)
-            {
-                MessageBox.Show("Sorry no dealer found that matches your selected dealer number!");
-                Key = null;
-                DealerNamecomboBox.Text = "";
-                cUSTOMER_DEALERcomboBox.Text = "";
-                ActiveControl = DealerNamecomboBox;
-                DealerNamecomboBox.SelectAll();
-            }
-            else
-            {
-                DealerListCustbindingSource.Position = DealerListCustbindingSource.Find("DEALER_ACC_NO", Key);
-                if (lbEdit || lbAddFlag)
-                {
-                    // Moses Newman 04/10/2014 add dealer state to first tab customer screen
-                    dEALERTableAdapter.Fill(iACDataSet.DEALER, (String)Key);
-                    toolStripButtonSave.Enabled = true;
-                }
-                ActiveControl = cUSTOMER_COMMENT_1TextBox;
-                cUSTOMER_COMMENT_1TextBox.SelectAll();
-                errorProviderCustomerForm.Clear();
-            }
-        }
-
         private void cUSTOMER_DEALERcomboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (lbEdit || lbAddFlag)
@@ -2137,7 +2104,7 @@ namespace IAC2021SQL
             RepoLogTableAdapter.FillByCustomerNo(repoDataSet.RepoLog, ReportData.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO"));
             if (repoDataSet.RepoLog.Count > 0)
                 RepoCustomer.Fill(repoDataSet.CUSTOMER, cUSTOMER_NOTextBox.Text);
-            DEALERTableAdapter.Fill(ReportData.DEALER, ReportData.CUSTOMER.Rows[0].Field<String>("CUSTOMER_DEALER"));
+            DEALERTableAdapter.Fill(ReportData.DEALER, ReportData.CUSTOMER.Rows[0].Field<Int32>("CUSTOMER_DEALER"));
             ClosedCustomerHistory myReportObject = new ClosedCustomerHistory();
             myReportObject.SetDataSource(ReportData);
             // Moses Newman 04/22/2019 Add Repo Log Set DataSource of second subreport (RepoLog) to new RepoDataSet
@@ -2229,7 +2196,7 @@ namespace IAC2021SQL
                                        lsFullComment,
                                        //"Created and sent Letter#" + comboBoxLetterNo.Text.TrimEnd().TrimStart() + ".",
                                        //" ", " ",
-                                       "  ", cUSTOMER_DEALERcomboBox.Text.ToString().TrimEnd(),
+                                       "  ", (Int32)cUSTOMER_DEALERcomboBox.EditValue,
                                        Program.gsUserID + "  ",
                                        DateTime.Now.Hour.ToString().PadLeft(2, '0') + DateTime.Now.Minute.ToString().PadLeft(2, '0') + DateTime.Now.Second.ToString().PadLeft(2, '0'),
                                        false, @"WordDoc.bmp", lsDataPath + lsCommentKey + ".docx",
@@ -2252,7 +2219,7 @@ namespace IAC2021SQL
                     lnSeq = lnSeq + 1;
 
                 // Moses Newman 10/18/2017 create string unique key that will become word filename!
-                lsCommentKey = cUSTOMER_NOTextBox.Text + DateTime.Now.Date.ToString("yyyyMMdd") + lnSeq.ToString().Trim() + cUSTOMER_DEALERcomboBox.SelectedValue.ToString().Trim() + Program.gsUserID;
+                lsCommentKey = cUSTOMER_NOTextBox.Text + DateTime.Now.Date.ToString("yyyyMMdd") + lnSeq.ToString().Trim() + cUSTOMER_DEALERcomboBox.EditValue.ToString().Trim() + Program.gsUserID;
                 // Moses Newman 11/21/2017 Remove hard coded UNC Pathing
                 MailMergeComponents DealerMailMerge = new MailMergeComponents();
                 DealerMailMerge.CreateMailMerge(iACDataSet, true, @"AUTOLETTER#" + lsLetterNo, lsLetterType, true, textBoxDealerEmail.Text.Trim(), lsDataPath + lsCommentKey + ".docx");
@@ -2263,7 +2230,7 @@ namespace IAC2021SQL
                                            lsFullComment,
                                            //"Created and sent Letter#" + comboBoxLetterNo.Text.TrimEnd().TrimStart() + ".",
                                            //" ", " ",
-                                           "  ", cUSTOMER_DEALERcomboBox.Text.ToString().TrimEnd(),
+                                           "  ", (Int32)cUSTOMER_DEALERcomboBox.EditValue,
                                            Program.gsUserID + "  ",
                                            DateTime.Now.Hour.ToString().PadLeft(2, '0') + DateTime.Now.Minute.ToString().PadLeft(2, '0') + DateTime.Now.Second.ToString().PadLeft(2, '0'),
                                            false, @"WordDoc.bmp", lsDataPath + lsCommentKey + ".docx",
@@ -2644,7 +2611,7 @@ namespace IAC2021SQL
                                            lsFullComment,
                                            //"Created and sent Letter#" + comboBoxLetterNo.Text.TrimEnd().TrimStart() + ".",
                                            //" ", " ",
-                                           "  ", cUSTOMER_DEALERcomboBox.Text.ToString().TrimEnd(),
+                                           "  ", (Int32)cUSTOMER_DEALERcomboBox.EditValue,
                                            Program.gsUserID + "  ",
                                            DateTime.Now.Hour.ToString().PadLeft(2, '0') + DateTime.Now.Minute.ToString().PadLeft(2, '0') + DateTime.Now.Second.ToString().PadLeft(2, '0'), false, "WordDoc.bmp", lsDataPath, Convert.ToInt32(comboBoxLetterNo.Text.TrimEnd().TrimStart()), "", "", 0);
                 cOMMENTTableAdapter.FillByCustNo(iACDataSet.COMMENT, cUSTOMER_NOTextBox.Text);
@@ -2987,7 +2954,7 @@ namespace IAC2021SQL
                                            lsFullComment,
                                            //"Created and sent Letter#" + comboBoxLetterNo.Text.TrimEnd().TrimStart() + ".",
                                            //" ", " ",
-                                           "  ", cUSTOMER_DEALERcomboBox.Text.ToString().TrimEnd(),
+                                           "  ", (Int32)cUSTOMER_DEALERcomboBox.EditValue,
                                            Program.gsUserID + "  ",
                                            DateTime.Now.Hour.ToString().PadLeft(2, '0') + DateTime.Now.Minute.ToString().PadLeft(2, '0') + DateTime.Now.Second.ToString().PadLeft(2, '0'), false, "WordDoc.bmp", lsDataPath, Convert.ToInt32(comboBoxLetterNo.Text.TrimEnd().TrimStart()), "", "", 0);
                 cOMMENTTableAdapter.FillByCustNo(iACDataSet.COMMENT, cUSTOMER_NOTextBox.Text);
@@ -3028,53 +2995,6 @@ namespace IAC2021SQL
                 }
             }
             checkBoxSendToDealer.Refresh();
-        }
-
-        private void DealerNamecomboBox_SelectedIndexChanged_1(object sender, EventArgs e)
-        {
-            if (lbEdit || lbAddFlag)
-            {
-                // Moses Newman 12/19/2019 Send to Dealer Checkbox added.
-                if (textBoxDealerEmail.Text.Trim() != "")
-                {
-                    checkBoxSendToDealer.Visible = true;
-                    checkBoxSendToDealer.Enabled = true;
-                }
-                else
-                {
-                    checkBoxSendToDealer.Enabled = false;
-                    checkBoxSendToDealer.Visible = false;
-                }
-            }
-            else
-            {
-                // Moses Newman 12/19/2019 Send to Dealer Checkbox added.
-                if (textBoxDealerEmail.Text.Trim() != "")
-                {
-                    checkBoxSendToDealer.Visible = true;
-                    checkBoxSendToDealer.Enabled = false;
-                }
-                else
-                {
-                    checkBoxSendToDealer.Enabled = false;
-                    checkBoxSendToDealer.Visible = false;
-                }
-            }
-            checkBoxSendToDealer.Refresh();
-        }
-
-        private void textBoxDealerEmail_Validated(object sender, EventArgs e)
-        {
-        }
-
-        private void cUSTOMER_STREET_1TextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cUSTOMER_NOTextBox_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void comboBoxTSBPaymentRating_SelectedValueChanged(object sender, EventArgs e)
@@ -3659,8 +3579,7 @@ namespace IAC2021SQL
                 iACDataSet.COMMENT.Clear();
                 // Moses Newman 03/27/2013 Add SQL Serrver Email Table to DELETE
                 iACDataSet.Email.Clear();
-                cUSTOMER_DEALERcomboBox.Text = "";
-                DealerNamecomboBox.Text = "";
+                cUSTOMER_DEALERcomboBox.EditValue = null;
                 Program.gsKey = null;
                 frmNewCustMaint_Load(sender, e);
             }
@@ -3747,7 +3666,7 @@ namespace IAC2021SQL
                 return;
             }
 
-            if (cUSTOMER_DEALERcomboBox.Text.Length == 0)
+            if (cUSTOMER_DEALERcomboBox.EditValue == null)
             {
                 GeneralValidationError("*** You must enter a DEALER NUMBER! ***", cUSTOMER_DEALERcomboBox);
                 return;
@@ -3848,7 +3767,7 @@ namespace IAC2021SQL
                             iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position].SetField<String>("PAYMENT_IAC_TYPE", "C");
                             iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position].SetField<DateTime>("PAYMENT_DATE", DateTime.Now.Date);
                             iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position].SetField<String>("PAYMENT_POST_INDICATOR", " ");
-                            iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position].SetField<String>("PAYMENT_DEALER", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<String>("CUSTOMER_DEALER"));
+                            iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position].SetField<Int32>("PAYMENT_DEALER", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<Int32>("CUSTOMER_DEALER"));
                             iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position].SetField<String>("PAYMENT_TYPE", "F");
                             iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position].SetField<String>("PAYMENT_CODE_2", " ");
                             iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position].SetField<String>("PAYMENT_AUTO_PAY", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<String>("CUSTOMER_AUTOPAY"));
@@ -3928,7 +3847,7 @@ namespace IAC2021SQL
                                 iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position].SetField<String>("PAYMENT_IAC_TYPE", "C");
                                 iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position].SetField<DateTime>("PAYMENT_DATE", DateTime.Now.Date);
                                 iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position].SetField<String>("PAYMENT_POST_INDICATOR", " ");
-                                iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position].SetField<String>("PAYMENT_DEALER", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<String>("CUSTOMER_DEALER"));
+                                iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position].SetField<Int32>("PAYMENT_DEALER", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<Int32>("CUSTOMER_DEALER"));
                                 iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position].SetField<String>("PAYMENT_TYPE", "F");
                                 iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position].SetField<String>("PAYMENT_CODE_2", " ");
                                 iACDataSet.PAYMENT.Rows[PaymentBindingSource.Position].SetField<String>("PAYMENT_AUTO_PAY", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<String>("CUSTOMER_AUTOPAY"));
@@ -4988,7 +4907,7 @@ namespace IAC2021SQL
 
             if (repoDataSet.RepoLog.Count > 0)
                 RepoCustomer.Fill(repoDataSet.CUSTOMER, cUSTOMER_NOTextBox.Text);
-            DEALERTableAdapter.Fill(ReportData.DEALER, ReportData.CUSTOMER.Rows[0].Field<String>("CUSTOMER_DEALER"));
+            DEALERTableAdapter.Fill(ReportData.DEALER, ReportData.CUSTOMER.Rows[0].Field<Int32>("CUSTOMER_DEALER"));
             ClosedCustomerHistory myReportObject = new ClosedCustomerHistory();
             myReportObject.SetDataSource(ReportData);
             // Moses Newman 04/22/2019 Add Repo Log Set DataSource of second subreport (RepoLog) to new RepoDataSet
@@ -5472,6 +5391,30 @@ namespace IAC2021SQL
                 toolStripButtonSave.Enabled = true;
         }
 
+        private void cUSTOMER_DEALERcomboBox_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+            {
+                toolStripButtonSave.Enabled = true;
+                // Moses Newman 12/19/2019 Send to Dealer Checkbox added.
+                if (textBoxDealerEmail.Text.Trim() != "")
+                {
+                    checkBoxSendToDealer.Visible = true;
+                    checkBoxSendToDealer.Enabled = true;
+                }
+                else
+                {
+                    checkBoxSendToDealer.Enabled = false;
+                    checkBoxSendToDealer.Visible = false;
+                }
+                checkBoxSendToDealer.Refresh();
+            }
+            ActiveControl = cUSTOMER_DEALERcomboBox;
+            dEALERTableAdapter.Fill(iACDataSet.DEALER, (Int32)cUSTOMER_DEALERcomboBox.EditValue);
+            textEditDealerName.Refresh();
+            System.Windows.Forms.SendKeys.Send("{TAB}");
+        }
+
         private void checkEditMilitary_CheckedChanged(object sender, EventArgs e)
         {
             Object SendTest = sender;
@@ -5521,7 +5464,7 @@ namespace IAC2021SQL
             else
                 lnSeq = lnSeq + 1;
             view.SetRowCellValue(e.RowHandle, "COMMENT_SEQ_NO", lnSeq);
-            view.SetRowCellValue(e.RowHandle, "COMMENT_DEALER", cUSTOMER_DEALERcomboBox.Text.ToString().TrimEnd());
+            view.SetRowCellValue(e.RowHandle, "COMMENT_DEALER", (Int32)cUSTOMER_DEALERcomboBox.EditValue);
         }
 
         //Moses Newman 11/23/2021 Use DevExpress GridView instead of DataGridView for comments tab now
@@ -5827,6 +5770,10 @@ namespace IAC2021SQL
             {
                 return e.Message;
             }
+            catch(System.ServiceModel.ServerTooBusyException e)
+            {
+                return e.Message;
+            }
             if (!wSSubscribersStatusResponse.Result)
             {
                 return wSSubscribersStatusResponse.Message;
@@ -5953,7 +5900,7 @@ namespace IAC2021SQL
                                         //loTempComment.Field2,
                                         //loTempComment.Field3,
                                         "",
-                                        iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_DEALER"),
+                                        iACDataSet.CUSTOMER.Rows[0].Field<Int32>("CUSTOMER_DEALER"),
                                         Program.gsUserID + "  ",
                                         DateTime.Now.Hour.ToString().PadLeft(2, '0') + DateTime.Now.Minute.ToString().PadLeft(2, '0') + DateTime.Now.Second.ToString().PadLeft(2, '0'),
                                         false, "", "",
@@ -6094,7 +6041,7 @@ namespace IAC2021SQL
                                        lsFullComment,
                                        //"Created and sent cosigner Letter#" + comboBoxCosLetterNo.Text.TrimEnd().TrimStart() + ".",
                                        //" ", " ", 
-                                       "  ", cUSTOMER_DEALERcomboBox.Text.ToString().TrimEnd(),
+                                       "  ", (Int32)cUSTOMER_DEALERcomboBox.EditValue,
                                        Program.gsUserID + "  ",
                                        DateTime.Now.Hour.ToString().PadLeft(2, '0') + DateTime.Now.Minute.ToString().PadLeft(2, '0') + DateTime.Now.Second.ToString().PadLeft(2, '0'),
                                        false, @"WordDoc.bmp", lsDataPath + lsCommentKey + ".docx",

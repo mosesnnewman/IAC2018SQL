@@ -30,22 +30,29 @@ namespace IAC2021SQL
         private void InitializeComponent()
         {
             this.groupBoxButtons = new System.Windows.Forms.GroupBox();
-            this.buttonCancel = new System.Windows.Forms.Button();
-            this.buttonPost = new System.Windows.Forms.Button();
+            this.buttonCancel = new DevExpress.XtraEditors.SimpleButton();
+            this.buttonPost = new DevExpress.XtraEditors.SimpleButton();
             this.groupBoxSelection = new System.Windows.Forms.GroupBox();
-            this.nullableDateTimePickerEndDate = new ProManApp.NullableDateTimePicker();
-            this.nullableDateTimePickerStartDate = new ProManApp.NullableDateTimePicker();
+            this.nullableDateTimePickerEndDate = new DevExpress.XtraEditors.DateEdit();
+            this.nullableDateTimePickerStartDate = new DevExpress.XtraEditors.DateEdit();
             this.labelEndDate = new System.Windows.Forms.Label();
             this.labelStartDate = new System.Windows.Forms.Label();
+            this.groupControlCashPaymentSummary = new DevExpress.XtraEditors.GroupControl();
             this.groupBoxButtons.SuspendLayout();
             this.groupBoxSelection.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerEndDate.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerEndDate.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerStartDate.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerStartDate.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControlCashPaymentSummary)).BeginInit();
+            this.groupControlCashPaymentSummary.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBoxButtons
             // 
             this.groupBoxButtons.Controls.Add(this.buttonCancel);
             this.groupBoxButtons.Controls.Add(this.buttonPost);
-            this.groupBoxButtons.Location = new System.Drawing.Point(24, 110);
+            this.groupBoxButtons.Location = new System.Drawing.Point(23, 110);
             this.groupBoxButtons.Name = "groupBoxButtons";
             this.groupBoxButtons.Size = new System.Drawing.Size(490, 185);
             this.groupBoxButtons.TabIndex = 36;
@@ -53,27 +60,32 @@ namespace IAC2021SQL
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCancel.Image = global::IAC2021SQL.Properties.Resources.Cancel_64x;
+            this.buttonCancel.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCancel.Appearance.Options.UseFont = true;
+            this.buttonCancel.ImageOptions.Image = global::IAC2021SQL.Properties.Resources.Cancel_64x;
+            this.buttonCancel.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
             this.buttonCancel.Location = new System.Drawing.Point(276, 15);
+            this.buttonCancel.LookAndFeel.SkinName = "McSkin";
+            this.buttonCancel.LookAndFeel.UseDefaultLookAndFeel = false;
             this.buttonCancel.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(168, 154);
             this.buttonCancel.TabIndex = 25;
-            this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // buttonPost
             // 
-            this.buttonPost.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonPost.Image = global::IAC2021SQL.Properties.Resources.ExportToExcel_64x;
+            this.buttonPost.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonPost.Appearance.Options.UseFont = true;
+            this.buttonPost.ImageOptions.Image = global::IAC2021SQL.Properties.Resources.ExportToExcel_64x;
+            this.buttonPost.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
             this.buttonPost.Location = new System.Drawing.Point(46, 15);
+            this.buttonPost.LookAndFeel.SkinName = "McSkin";
+            this.buttonPost.LookAndFeel.UseDefaultLookAndFeel = false;
             this.buttonPost.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.buttonPost.Name = "buttonPost";
             this.buttonPost.Size = new System.Drawing.Size(168, 154);
             this.buttonPost.TabIndex = 24;
-            this.buttonPost.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.buttonPost.UseVisualStyleBackColor = true;
             this.buttonPost.Click += new System.EventHandler(this.buttonPost_Click);
             // 
             // groupBoxSelection
@@ -82,7 +94,7 @@ namespace IAC2021SQL
             this.groupBoxSelection.Controls.Add(this.nullableDateTimePickerStartDate);
             this.groupBoxSelection.Controls.Add(this.labelEndDate);
             this.groupBoxSelection.Controls.Add(this.labelStartDate);
-            this.groupBoxSelection.Location = new System.Drawing.Point(124, 2);
+            this.groupBoxSelection.Location = new System.Drawing.Point(122, 2);
             this.groupBoxSelection.Name = "groupBoxSelection";
             this.groupBoxSelection.Size = new System.Drawing.Size(291, 94);
             this.groupBoxSelection.TabIndex = 37;
@@ -90,25 +102,37 @@ namespace IAC2021SQL
             // 
             // nullableDateTimePickerEndDate
             // 
-            this.nullableDateTimePickerEndDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nullableDateTimePickerEndDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.nullableDateTimePickerEndDate.EditValue = new System.DateTime(2021, 7, 7, 0, 0, 0, 0);
             this.nullableDateTimePickerEndDate.Location = new System.Drawing.Point(141, 50);
             this.nullableDateTimePickerEndDate.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.nullableDateTimePickerEndDate.Name = "nullableDateTimePickerEndDate";
+            this.nullableDateTimePickerEndDate.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nullableDateTimePickerEndDate.Properties.Appearance.Options.UseFont = true;
+            this.nullableDateTimePickerEndDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.nullableDateTimePickerEndDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.nullableDateTimePickerEndDate.Properties.LookAndFeel.SkinName = "McSkin";
+            this.nullableDateTimePickerEndDate.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.nullableDateTimePickerEndDate.Size = new System.Drawing.Size(107, 26);
             this.nullableDateTimePickerEndDate.TabIndex = 28;
-            this.nullableDateTimePickerEndDate.Value = new System.DateTime(2021, 7, 7, 0, 0, 0, 0);
             // 
             // nullableDateTimePickerStartDate
             // 
-            this.nullableDateTimePickerStartDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nullableDateTimePickerStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.nullableDateTimePickerStartDate.EditValue = new System.DateTime(2021, 7, 7, 0, 0, 0, 0);
             this.nullableDateTimePickerStartDate.Location = new System.Drawing.Point(141, 18);
             this.nullableDateTimePickerStartDate.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.nullableDateTimePickerStartDate.Name = "nullableDateTimePickerStartDate";
+            this.nullableDateTimePickerStartDate.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nullableDateTimePickerStartDate.Properties.Appearance.Options.UseFont = true;
+            this.nullableDateTimePickerStartDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.nullableDateTimePickerStartDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.nullableDateTimePickerStartDate.Properties.LookAndFeel.SkinName = "McSkin";
+            this.nullableDateTimePickerStartDate.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.nullableDateTimePickerStartDate.Size = new System.Drawing.Size(107, 26);
             this.nullableDateTimePickerStartDate.TabIndex = 27;
-            this.nullableDateTimePickerStartDate.Value = new System.DateTime(2021, 7, 7, 0, 0, 0, 0);
             // 
             // labelEndDate
             // 
@@ -134,14 +158,26 @@ namespace IAC2021SQL
             this.labelStartDate.Text = "Start Date:";
             this.labelStartDate.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
+            // groupControlCashPaymentSummary
+            // 
+            this.groupControlCashPaymentSummary.Appearance.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.groupControlCashPaymentSummary.Appearance.Options.UseBackColor = true;
+            this.groupControlCashPaymentSummary.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.groupControlCashPaymentSummary.Controls.Add(this.groupBoxSelection);
+            this.groupControlCashPaymentSummary.Controls.Add(this.groupBoxButtons);
+            this.groupControlCashPaymentSummary.Location = new System.Drawing.Point(2, 0);
+            this.groupControlCashPaymentSummary.Name = "groupControlCashPaymentSummary";
+            this.groupControlCashPaymentSummary.Size = new System.Drawing.Size(536, 318);
+            this.groupControlCashPaymentSummary.TabIndex = 38;
+            this.groupControlCashPaymentSummary.Text = "groupControl1";
+            // 
             // FormCashPaymentSummary
             // 
+            this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(538, 317);
-            this.Controls.Add(this.groupBoxSelection);
-            this.Controls.Add(this.groupBoxButtons);
+            this.Controls.Add(this.groupControlCashPaymentSummary);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "FormCashPaymentSummary";
             this.Text = "Cash Payment Summary Report";
@@ -149,6 +185,12 @@ namespace IAC2021SQL
             this.groupBoxButtons.ResumeLayout(false);
             this.groupBoxSelection.ResumeLayout(false);
             this.groupBoxSelection.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerEndDate.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerEndDate.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerStartDate.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerStartDate.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControlCashPaymentSummary)).EndInit();
+            this.groupControlCashPaymentSummary.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -156,12 +198,13 @@ namespace IAC2021SQL
         #endregion
 
         private System.Windows.Forms.GroupBox groupBoxButtons;
-        private System.Windows.Forms.Button buttonCancel;
-        private System.Windows.Forms.Button buttonPost;
+        private DevExpress.XtraEditors.SimpleButton buttonCancel;
+        private DevExpress.XtraEditors.SimpleButton buttonPost;
         private System.Windows.Forms.GroupBox groupBoxSelection;
-        private ProManApp.NullableDateTimePicker nullableDateTimePickerEndDate;
-        private ProManApp.NullableDateTimePicker nullableDateTimePickerStartDate;
+        private DevExpress.XtraEditors.DateEdit nullableDateTimePickerEndDate;
+        private DevExpress.XtraEditors.DateEdit nullableDateTimePickerStartDate;
         private System.Windows.Forms.Label labelEndDate;
         private System.Windows.Forms.Label labelStartDate;
+        private DevExpress.XtraEditors.GroupControl groupControlCashPaymentSummary;
     }
 }

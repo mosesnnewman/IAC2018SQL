@@ -48,7 +48,7 @@ namespace IAC2021SQL
                     Program.GsDataPath = iACDataSet.DataPath.Rows[0].Field<String>("UNCROOT").TrimEnd();
                 gbLoginCorrect = true;
                 Program.gsUserID = txtUserID.Text.ToString().TrimEnd();  
-                Program.gsUserName = iACDataSet.ULIST.Rows[bindingSourceULIST.Position].Field<String>("LIST_NAME").ToString().TrimEnd();
+                Program.gsUserName = lookupSet.ULIST.Rows[0].Field<String>("LIST_NAME").ToString().TrimEnd();
                 iACDataSet.ULIST.Clear();
                 Close();
             }

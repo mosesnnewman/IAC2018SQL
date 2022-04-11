@@ -128,7 +128,7 @@ namespace IAC2021SQL
                     Close();
                     return;
                 }
-                DEALERTableAdapter.Fill(iACDataSet.DEALER, iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_DEALER"));
+                DEALERTableAdapter.Fill(iACDataSet.DEALER, iACDataSet.CUSTOMER.Rows[0].Field<Int32>("CUSTOMER_DEALER"));
                 // Moses Newman 04/17/2018 Add filling with NON CHECK PAYMENTS option
                 if(_IsNotCheck)
                     CUSTHISTTableAdapter.FillByCheckPayments(iACDataSet.CUSTHIST, _CustNo);

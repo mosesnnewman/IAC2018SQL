@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCreateBankCustomerExtract));
             this.tabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.tabSelections = new DevExpress.XtraTab.XtraTabPage();
@@ -38,6 +39,8 @@
             this.nullableDateTimePickerPIEndDate = new DevExpress.XtraEditors.DateEdit();
             this.nullableDateTimePickerPIStartDate = new DevExpress.XtraEditors.DateEdit();
             this.groupBoxMainSelection = new System.Windows.Forms.GroupBox();
+            this.lookUpEditState = new DevExpress.XtraEditors.LookUpEdit();
+            this.lookUpEditDealer = new DevExpress.XtraEditors.LookUpEdit();
             this.radioGroupMatch = new DevExpress.XtraEditors.RadioGroup();
             this.simpleButtonClearRadioButtons = new DevExpress.XtraEditors.SimpleButton();
             this.txtControlDateEnd = new DevExpress.XtraEditors.TextEdit();
@@ -49,9 +52,6 @@
             this.nullableDateTimePickerBuyoutDate = new DevExpress.XtraEditors.DateEdit();
             this.checkBoxRepos = new DevExpress.XtraEditors.CheckEdit();
             this.label1 = new DevExpress.XtraEditors.LabelControl();
-            this.comboBoxState = new System.Windows.Forms.ComboBox();
-            this.textBoxDealerName = new DevExpress.XtraEditors.TextEdit();
-            this.comboBoxDealer = new System.Windows.Forms.ComboBox();
             this.labelDealerNum = new DevExpress.XtraEditors.LabelControl();
             this.nullableDateTimePickerEndDate = new DevExpress.XtraEditors.DateEdit();
             this.nullableDateTimePickerStartDate = new DevExpress.XtraEditors.DateEdit();
@@ -72,6 +72,12 @@
             this.listBoxFieldList = new DevExpress.XtraEditors.ListBoxControl();
             this.listBoxSelectedFields = new DevExpress.XtraEditors.ListBoxControl();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.bindingSourceDLRLISTBYNUM = new System.Windows.Forms.BindingSource(this.components);
+            this.bindingSourceState = new System.Windows.Forms.BindingSource(this.components);
+            this.Bank = new IAC2021SQL.IACDataSet();
+            this.aCCOUNTTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.ACCOUNTTableAdapter();
+            this.DLRLISTBYNUMTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.DLRLISTBYNUMTableAdapter();
+            this.stateTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.stateTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.tabControl1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabSelections.SuspendLayout();
@@ -83,6 +89,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerPIStartDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerPIStartDate.Properties)).BeginInit();
             this.groupBoxMainSelection.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEditState.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEditDealer.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radioGroupMatch.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtControlDateEnd.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtControlDateStart.Properties)).BeginInit();
@@ -90,7 +98,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerBuyoutDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerBuyoutDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkBoxRepos.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBoxDealerName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerEndDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerEndDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerStartDate.Properties.CalendarTimeProperties)).BeginInit();
@@ -99,7 +106,12 @@
             this.tabFieldList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
             this.groupControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.listBoxFieldList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listBoxSelectedFields)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceDLRLISTBYNUM)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceState)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Bank)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -177,8 +189,10 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.nullableDateTimePickerPIEndDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.nullableDateTimePickerPIEndDate.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.Fluent;
             this.nullableDateTimePickerPIEndDate.Properties.LookAndFeel.SkinName = "McSkin";
             this.nullableDateTimePickerPIEndDate.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.nullableDateTimePickerPIEndDate.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
             this.nullableDateTimePickerPIEndDate.Size = new System.Drawing.Size(95, 20);
             this.nullableDateTimePickerPIEndDate.TabIndex = 21;
             // 
@@ -191,13 +205,17 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.nullableDateTimePickerPIStartDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.nullableDateTimePickerPIStartDate.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.Fluent;
             this.nullableDateTimePickerPIStartDate.Properties.LookAndFeel.SkinName = "McSkin";
             this.nullableDateTimePickerPIStartDate.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.nullableDateTimePickerPIStartDate.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
             this.nullableDateTimePickerPIStartDate.Size = new System.Drawing.Size(95, 20);
             this.nullableDateTimePickerPIStartDate.TabIndex = 20;
             // 
             // groupBoxMainSelection
             // 
+            this.groupBoxMainSelection.Controls.Add(this.lookUpEditState);
+            this.groupBoxMainSelection.Controls.Add(this.lookUpEditDealer);
             this.groupBoxMainSelection.Controls.Add(this.radioGroupMatch);
             this.groupBoxMainSelection.Controls.Add(this.simpleButtonClearRadioButtons);
             this.groupBoxMainSelection.Controls.Add(this.txtControlDateEnd);
@@ -209,9 +227,6 @@
             this.groupBoxMainSelection.Controls.Add(this.nullableDateTimePickerBuyoutDate);
             this.groupBoxMainSelection.Controls.Add(this.checkBoxRepos);
             this.groupBoxMainSelection.Controls.Add(this.label1);
-            this.groupBoxMainSelection.Controls.Add(this.comboBoxState);
-            this.groupBoxMainSelection.Controls.Add(this.textBoxDealerName);
-            this.groupBoxMainSelection.Controls.Add(this.comboBoxDealer);
             this.groupBoxMainSelection.Controls.Add(this.labelDealerNum);
             this.groupBoxMainSelection.Controls.Add(this.nullableDateTimePickerEndDate);
             this.groupBoxMainSelection.Controls.Add(this.nullableDateTimePickerStartDate);
@@ -223,6 +238,46 @@
             this.groupBoxMainSelection.TabIndex = 5;
             this.groupBoxMainSelection.TabStop = false;
             this.groupBoxMainSelection.Text = "Standard Filters";
+            // 
+            // lookUpEditState
+            // 
+            this.lookUpEditState.Location = new System.Drawing.Point(103, 121);
+            this.lookUpEditState.Name = "lookUpEditState";
+            this.lookUpEditState.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lookUpEditState.Properties.Appearance.Options.UseFont = true;
+            this.lookUpEditState.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
+            this.lookUpEditState.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lookUpEditState.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("name", "name", 37, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("abbreviation", "abbreviation", 74, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            this.lookUpEditState.Properties.DataSource = this.bindingSourceState;
+            this.lookUpEditState.Properties.DisplayMember = "name";
+            this.lookUpEditState.Properties.NullText = "";
+            this.lookUpEditState.Properties.ValueMember = "abbreviation";
+            this.lookUpEditState.Size = new System.Drawing.Size(86, 26);
+            this.lookUpEditState.TabIndex = 119;
+            // 
+            // lookUpEditDealer
+            // 
+            this.lookUpEditDealer.Location = new System.Drawing.Point(103, 93);
+            this.lookUpEditDealer.Name = "lookUpEditDealer";
+            this.lookUpEditDealer.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lookUpEditDealer.Properties.Appearance.Options.UseFont = true;
+            this.lookUpEditDealer.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
+            this.lookUpEditDealer.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lookUpEditDealer.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "id", 100, DevExpress.Utils.FormatType.Numeric, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("DEALER_NAME", "DEALER_NAME", 800, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            this.lookUpEditDealer.Properties.DataSource = this.bindingSourceDLRLISTBYNUM;
+            this.lookUpEditDealer.Properties.DisplayMember = "id";
+            this.lookUpEditDealer.Properties.LookAndFeel.SkinName = "McSkin";
+            this.lookUpEditDealer.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.lookUpEditDealer.Properties.NullText = "";
+            this.lookUpEditDealer.Properties.ValueMember = "id";
+            this.lookUpEditDealer.Size = new System.Drawing.Size(86, 26);
+            this.lookUpEditDealer.TabIndex = 12;
             // 
             // radioGroupMatch
             // 
@@ -317,8 +372,10 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.nullableDateTimePickerBuyoutDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.nullableDateTimePickerBuyoutDate.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.Fluent;
             this.nullableDateTimePickerBuyoutDate.Properties.LookAndFeel.SkinName = "McSkin";
             this.nullableDateTimePickerBuyoutDate.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.nullableDateTimePickerBuyoutDate.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
             this.nullableDateTimePickerBuyoutDate.Size = new System.Drawing.Size(95, 20);
             this.nullableDateTimePickerBuyoutDate.TabIndex = 7;
             // 
@@ -340,43 +397,6 @@
             this.label1.TabIndex = 30;
             this.label1.Text = "Dealer State:";
             // 
-            // comboBoxState
-            // 
-            this.comboBoxState.DisplayMember = "abbreviation";
-            this.comboBoxState.FormattingEnabled = true;
-            this.comboBoxState.Location = new System.Drawing.Point(103, 126);
-            this.comboBoxState.Name = "comboBoxState";
-            this.comboBoxState.Size = new System.Drawing.Size(166, 21);
-            this.comboBoxState.TabIndex = 13;
-            this.comboBoxState.ValueMember = "abbreviation";
-            // 
-            // textBoxDealerName
-            // 
-            this.textBoxDealerName.Location = new System.Drawing.Point(169, 97);
-            this.textBoxDealerName.Name = "textBoxDealerName";
-            this.textBoxDealerName.Properties.AppearanceDisabled.BackColor = System.Drawing.SystemColors.Control;
-            this.textBoxDealerName.Properties.AppearanceDisabled.BorderColor = System.Drawing.Color.White;
-            this.textBoxDealerName.Properties.AppearanceDisabled.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.textBoxDealerName.Properties.AppearanceDisabled.Options.UseBackColor = true;
-            this.textBoxDealerName.Properties.AppearanceDisabled.Options.UseBorderColor = true;
-            this.textBoxDealerName.Properties.AppearanceDisabled.Options.UseForeColor = true;
-            this.textBoxDealerName.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.textBoxDealerName.Properties.LookAndFeel.SkinName = "McSkin";
-            this.textBoxDealerName.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.textBoxDealerName.Properties.ReadOnly = true;
-            this.textBoxDealerName.Size = new System.Drawing.Size(220, 20);
-            this.textBoxDealerName.TabIndex = 12;
-            // 
-            // comboBoxDealer
-            // 
-            this.comboBoxDealer.DisplayMember = "DEALER_ACC_NO";
-            this.comboBoxDealer.FormattingEnabled = true;
-            this.comboBoxDealer.Location = new System.Drawing.Point(103, 98);
-            this.comboBoxDealer.Name = "comboBoxDealer";
-            this.comboBoxDealer.Size = new System.Drawing.Size(59, 21);
-            this.comboBoxDealer.TabIndex = 11;
-            this.comboBoxDealer.ValueMember = "DEALER_ACC_NO";
-            // 
             // labelDealerNum
             // 
             this.labelDealerNum.Location = new System.Drawing.Point(63, 106);
@@ -394,8 +414,10 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.nullableDateTimePickerEndDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.nullableDateTimePickerEndDate.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.Fluent;
             this.nullableDateTimePickerEndDate.Properties.LookAndFeel.SkinName = "McSkin";
             this.nullableDateTimePickerEndDate.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.nullableDateTimePickerEndDate.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
             this.nullableDateTimePickerEndDate.Size = new System.Drawing.Size(95, 20);
             this.nullableDateTimePickerEndDate.TabIndex = 8;
             // 
@@ -408,8 +430,10 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.nullableDateTimePickerStartDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.nullableDateTimePickerStartDate.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.Fluent;
             this.nullableDateTimePickerStartDate.Properties.LookAndFeel.SkinName = "McSkin";
             this.nullableDateTimePickerStartDate.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.nullableDateTimePickerStartDate.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
             this.nullableDateTimePickerStartDate.Size = new System.Drawing.Size(95, 20);
             this.nullableDateTimePickerStartDate.TabIndex = 6;
             // 
@@ -580,7 +604,6 @@
             // 
             // listBoxFieldList
             // 
-            //this.listBoxFieldList.FormattingEnabled = true;
             this.listBoxFieldList.Location = new System.Drawing.Point(2, 6);
             this.listBoxFieldList.Name = "listBoxFieldList";
             this.listBoxFieldList.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
@@ -589,7 +612,6 @@
             // 
             // listBoxSelectedFields
             // 
-            //this.listBoxSelectedFields.FormattingEnabled = true;
             this.listBoxSelectedFields.Location = new System.Drawing.Point(397, 6);
             this.listBoxSelectedFields.Name = "listBoxSelectedFields";
             this.listBoxSelectedFields.SelectionMode = System.Windows.Forms.SelectionMode.MultiExtended;
@@ -606,6 +628,34 @@
             this.groupControl2.Size = new System.Drawing.Size(688, 437);
             this.groupControl2.TabIndex = 1;
             this.groupControl2.Text = "groupControl2";
+            // 
+            // bindingSourceDLRLISTBYNUM
+            // 
+            this.bindingSourceDLRLISTBYNUM.DataMember = "DLRLISTBYNUM";
+            this.bindingSourceDLRLISTBYNUM.DataSource = this.Bank;
+            // 
+            // bindingSourceState
+            // 
+            this.bindingSourceState.AllowNew = true;
+            this.bindingSourceState.DataMember = "state";
+            this.bindingSourceState.DataSource = this.Bank;
+            // 
+            // Bank
+            // 
+            this.Bank.DataSetName = "IACDataSet";
+            this.Bank.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // aCCOUNTTableAdapter
+            // 
+            this.aCCOUNTTableAdapter.ClearBeforeFill = true;
+            // 
+            // DLRLISTBYNUMTableAdapter
+            // 
+            this.DLRLISTBYNUMTableAdapter.ClearBeforeFill = true;
+            // 
+            // stateTableAdapter
+            // 
+            this.stateTableAdapter.ClearBeforeFill = true;
             // 
             // frmCreateBankCustomerExtract
             // 
@@ -633,6 +683,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerPIStartDate.Properties)).EndInit();
             this.groupBoxMainSelection.ResumeLayout(false);
             this.groupBoxMainSelection.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEditState.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEditDealer.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radioGroupMatch.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtControlDateEnd.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtControlDateStart.Properties)).EndInit();
@@ -640,7 +692,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerBuyoutDate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerBuyoutDate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkBoxRepos.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBoxDealerName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerEndDate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerEndDate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerStartDate.Properties.CalendarTimeProperties)).EndInit();
@@ -650,7 +701,12 @@
             this.tabFieldList.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
             this.groupControl3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.listBoxFieldList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listBoxSelectedFields)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceDLRLISTBYNUM)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceState)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Bank)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -669,9 +725,6 @@
         private DevExpress.XtraEditors.DateEdit nullableDateTimePickerBuyoutDate;
         private DevExpress.XtraEditors.CheckEdit checkBoxRepos;
         private DevExpress.XtraEditors.LabelControl label1;
-        private System.Windows.Forms.ComboBox comboBoxState;
-        private DevExpress.XtraEditors.TextEdit textBoxDealerName;
-        private System.Windows.Forms.ComboBox comboBoxDealer;
         private DevExpress.XtraEditors.LabelControl labelDealerNum;
         private DevExpress.XtraEditors.DateEdit nullableDateTimePickerEndDate;
         private DevExpress.XtraEditors.DateEdit nullableDateTimePickerStartDate;
@@ -700,5 +753,13 @@
         private DevExpress.XtraEditors.GroupControl groupControl2;
         private DevExpress.XtraEditors.RadioGroup radioGroupMatch;
         private DevExpress.XtraEditors.SimpleButton simpleButtonClearRadioButtons;
+        private DevExpress.XtraEditors.LookUpEdit lookUpEditDealer;
+        private DevExpress.XtraEditors.LookUpEdit lookUpEditState;
+        private System.Windows.Forms.BindingSource bindingSourceDLRLISTBYNUM;
+        private System.Windows.Forms.BindingSource bindingSourceState;
+        private IACDataSet Bank;
+        private IACDataSetTableAdapters.ACCOUNTTableAdapter aCCOUNTTableAdapter;
+        private IACDataSetTableAdapters.DLRLISTBYNUMTableAdapter DLRLISTBYNUMTableAdapter;
+        private IACDataSetTableAdapters.stateTableAdapter stateTableAdapter;
     }
 }

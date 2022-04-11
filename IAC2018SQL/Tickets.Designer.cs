@@ -499,7 +499,7 @@ namespace IAC2021SQL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public TicketHeaderRow AddTicketHeaderRow(int AccountNumber, string DealerNumber, System.DateTime Date, string MadeBy, string ApprovedBy, string Explanation, bool IsPosted) {
+            public TicketHeaderRow AddTicketHeaderRow(int AccountNumber, int DealerNumber, System.DateTime Date, string MadeBy, string ApprovedBy, string Explanation, bool IsPosted) {
                 TicketHeaderRow rowTicketHeaderRow = ((TicketHeaderRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -556,7 +556,7 @@ namespace IAC2021SQL {
                 base.Columns.Add(this.columnTicketID);
                 this.columnAccountNumber = new global::System.Data.DataColumn("AccountNumber", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnAccountNumber);
-                this.columnDealerNumber = new global::System.Data.DataColumn("DealerNumber", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnDealerNumber = new global::System.Data.DataColumn("DealerNumber", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDealerNumber);
                 this.columnDate = new global::System.Data.DataColumn("Date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDate);
@@ -579,8 +579,6 @@ namespace IAC2021SQL {
                 this.columnAccountNumber.AllowDBNull = false;
                 this.columnAccountNumber.DefaultValue = ((int)(0));
                 this.columnDealerNumber.AllowDBNull = false;
-                this.columnDealerNumber.DefaultValue = ((string)(""));
-                this.columnDealerNumber.MaxLength = 3;
                 this.columnDate.AllowDBNull = false;
                 this.columnMadeBy.DefaultValue = ((string)(""));
                 this.columnMadeBy.MaxLength = 3;
@@ -881,7 +879,7 @@ namespace IAC2021SQL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public TicketDetailRow AddTicketDetailRow(int TicketID, string SubDealer, decimal Debit, decimal Credit, int DetailID, string PaymentType, string PaymentCode, int GLAccount, bool IsPosted) {
+            public TicketDetailRow AddTicketDetailRow(int TicketID, int SubDealer, decimal Debit, decimal Credit, int DetailID, string PaymentType, string PaymentCode, int GLAccount, bool IsPosted) {
                 TicketDetailRow rowTicketDetailRow = ((TicketDetailRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         TicketID,
@@ -939,7 +937,7 @@ namespace IAC2021SQL {
             private void InitClass() {
                 this.columnTicketID = new global::System.Data.DataColumn("TicketID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTicketID);
-                this.columnSubDealer = new global::System.Data.DataColumn("SubDealer", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnSubDealer = new global::System.Data.DataColumn("SubDealer", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSubDealer);
                 this.columnDebit = new global::System.Data.DataColumn("Debit", typeof(decimal), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDebit);
@@ -959,8 +957,8 @@ namespace IAC2021SQL {
                                 this.columnTicketID,
                                 this.columnDetailID}, true));
                 this.columnTicketID.AllowDBNull = false;
-                this.columnSubDealer.DefaultValue = ((string)(""));
-                this.columnSubDealer.MaxLength = 3;
+                this.columnSubDealer.AllowDBNull = false;
+                this.columnSubDealer.DefaultValue = ((int)(0));
                 this.columnDebit.DefaultValue = ((decimal)(0m));
                 this.columnCredit.DefaultValue = ((decimal)(0m));
                 this.columnDetailID.AutoIncrementSeed = -1;
@@ -1454,9 +1452,9 @@ namespace IAC2021SQL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string DealerNumber {
+            public int DealerNumber {
                 get {
-                    return ((string)(this[this.tableTicketHeader.DealerNumberColumn]));
+                    return ((int)(this[this.tableTicketHeader.DealerNumberColumn]));
                 }
                 set {
                     this[this.tableTicketHeader.DealerNumberColumn] = value;
@@ -1614,14 +1612,9 @@ namespace IAC2021SQL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string SubDealer {
+            public int SubDealer {
                 get {
-                    try {
-                        return ((string)(this[this.tableTicketDetail.SubDealerColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'SubDealer\' in table \'TicketDetail\' is DBNull.", e);
-                    }
+                    return ((int)(this[this.tableTicketDetail.SubDealerColumn]));
                 }
                 set {
                     this[this.tableTicketDetail.SubDealerColumn] = value;
@@ -1733,18 +1726,6 @@ namespace IAC2021SQL {
                 set {
                     this[this.tableTicketDetail.IsPostedColumn] = value;
                 }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsSubDealerNull() {
-                return this.IsNull(this.tableTicketDetail.SubDealerColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetSubDealerNull() {
-                this[this.tableTicketDetail.SubDealerColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2172,7 +2153,7 @@ namespace IAC2021SQL.TicketsTableAdapters {
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.StoredProcedure;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AccountNumber", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, "AccountNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DealerNumber", global::System.Data.SqlDbType.Char, 3, global::System.Data.ParameterDirection.Input, 0, 0, "DealerNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DealerNumber", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, "DealerNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Date", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, "Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MadeBy", global::System.Data.SqlDbType.Char, 3, global::System.Data.ParameterDirection.Input, 0, 0, "MadeBy", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ApprovedBy", global::System.Data.SqlDbType.Char, 3, global::System.Data.ParameterDirection.Input, 0, 0, "ApprovedBy", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -2186,7 +2167,7 @@ namespace IAC2021SQL.TicketsTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TicketID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, "TicketID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AccountNumber", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, "AccountNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DealerNumber", global::System.Data.SqlDbType.Char, 3, global::System.Data.ParameterDirection.Input, 0, 0, "DealerNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DealerNumber", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, "DealerNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Date", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, "Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MadeBy", global::System.Data.SqlDbType.Char, 3, global::System.Data.ParameterDirection.Input, 0, 0, "MadeBy", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ApprovedBy", global::System.Data.SqlDbType.Char, 3, global::System.Data.ParameterDirection.Input, 0, 0, "ApprovedBy", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -2344,18 +2325,18 @@ namespace IAC2021SQL.TicketsTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(global::System.Nullable<int> AccountNumber, string DealerNumber, global::System.Nullable<global::System.DateTime> Date, string MadeBy, string ApprovedBy, string Explanation, ref global::System.Nullable<int> InsertID, global::System.Nullable<bool> IsPosted) {
+        public virtual int Insert(global::System.Nullable<int> AccountNumber, global::System.Nullable<int> DealerNumber, global::System.Nullable<global::System.DateTime> Date, string MadeBy, string ApprovedBy, string Explanation, ref global::System.Nullable<int> InsertID, global::System.Nullable<bool> IsPosted) {
             if ((AccountNumber.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((int)(AccountNumber.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            if ((DealerNumber == null)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
+            if ((DealerNumber.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((int)(DealerNumber.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(DealerNumber));
+                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
             if ((Date.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(Date.Value));
@@ -2420,7 +2401,7 @@ namespace IAC2021SQL.TicketsTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<int> TicketID, global::System.Nullable<int> AccountNumber, string DealerNumber, global::System.Nullable<global::System.DateTime> Date, string MadeBy, string ApprovedBy, string Explanation, global::System.Nullable<bool> IsPosted) {
+        public virtual int Update(global::System.Nullable<int> TicketID, global::System.Nullable<int> AccountNumber, global::System.Nullable<int> DealerNumber, global::System.Nullable<global::System.DateTime> Date, string MadeBy, string ApprovedBy, string Explanation, global::System.Nullable<bool> IsPosted) {
             if ((TicketID.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(TicketID.Value));
             }
@@ -2433,11 +2414,11 @@ namespace IAC2021SQL.TicketsTableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((DealerNumber == null)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            if ((DealerNumber.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(DealerNumber.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(DealerNumber));
+                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
             if ((Date.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(Date.Value));
@@ -2660,7 +2641,7 @@ namespace IAC2021SQL.TicketsTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TicketID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, "TicketID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DetailID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, "DetailID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@GLAccount", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, "GLAccount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SubDealer", global::System.Data.SqlDbType.Char, 3, global::System.Data.ParameterDirection.Input, 0, 0, "SubDealer", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SubDealer", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, "SubDealer", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Debit", global::System.Data.SqlDbType.Money, 8, global::System.Data.ParameterDirection.Input, 19, 4, "Debit", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Credit", global::System.Data.SqlDbType.Money, 8, global::System.Data.ParameterDirection.Input, 19, 4, "Credit", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PaymentType", global::System.Data.SqlDbType.Char, 1, global::System.Data.ParameterDirection.Input, 0, 0, "PaymentType", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -2674,7 +2655,7 @@ namespace IAC2021SQL.TicketsTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TicketID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, "TicketID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DetailID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, "DetailID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@GLAccount", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, "GLAccount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SubDealer", global::System.Data.SqlDbType.Char, 3, global::System.Data.ParameterDirection.Input, 0, 0, "SubDealer", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@SubDealer", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, "SubDealer", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Debit", global::System.Data.SqlDbType.Money, 8, global::System.Data.ParameterDirection.Input, 19, 4, "Debit", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Credit", global::System.Data.SqlDbType.Money, 8, global::System.Data.ParameterDirection.Input, 19, 4, "Credit", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PaymentType", global::System.Data.SqlDbType.Char, 1, global::System.Data.ParameterDirection.Input, 0, 0, "PaymentType", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -2871,7 +2852,7 @@ namespace IAC2021SQL.TicketsTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(global::System.Nullable<int> TicketID, global::System.Nullable<int> DetailID, global::System.Nullable<int> GLAccount, string SubDealer, global::System.Nullable<decimal> Debit, global::System.Nullable<decimal> Credit, string PaymentType, string PaymentCode, global::System.Nullable<bool> IsPosted) {
+        public virtual int Insert(global::System.Nullable<int> TicketID, global::System.Nullable<int> DetailID, global::System.Nullable<int> GLAccount, global::System.Nullable<int> SubDealer, global::System.Nullable<decimal> Debit, global::System.Nullable<decimal> Credit, string PaymentType, string PaymentCode, global::System.Nullable<bool> IsPosted) {
             if ((TicketID.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((int)(TicketID.Value));
             }
@@ -2890,11 +2871,11 @@ namespace IAC2021SQL.TicketsTableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((SubDealer == null)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
+            if ((SubDealer.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((int)(SubDealer.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(SubDealer));
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             if ((Debit.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[5].Value = ((decimal)(Debit.Value));
@@ -2946,7 +2927,7 @@ namespace IAC2021SQL.TicketsTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<int> TicketID, global::System.Nullable<int> DetailID, global::System.Nullable<int> GLAccount, string SubDealer, global::System.Nullable<decimal> Debit, global::System.Nullable<decimal> Credit, string PaymentType, string PaymentCode, global::System.Nullable<bool> IsPosted) {
+        public virtual int Update(global::System.Nullable<int> TicketID, global::System.Nullable<int> DetailID, global::System.Nullable<int> GLAccount, global::System.Nullable<int> SubDealer, global::System.Nullable<decimal> Debit, global::System.Nullable<decimal> Credit, string PaymentType, string PaymentCode, global::System.Nullable<bool> IsPosted) {
             if ((TicketID.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(TicketID.Value));
             }
@@ -2965,11 +2946,11 @@ namespace IAC2021SQL.TicketsTableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((SubDealer == null)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            if ((SubDealer.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(SubDealer.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(SubDealer));
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             if ((Debit.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[5].Value = ((decimal)(Debit.Value));

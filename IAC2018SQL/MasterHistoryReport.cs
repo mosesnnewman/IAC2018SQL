@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace IAC2021SQL
 {
-    public partial class frmMasterHistoryReport : Form
+    public partial class frmMasterHistoryReport : DevExpress.XtraEditors.XtraForm
     {
 
         public frmMasterHistoryReport()
@@ -21,8 +21,8 @@ namespace IAC2021SQL
         {
             Int32 lnRunMonth = DateTime.Now.Date.Month, lnRunYear = DateTime.Now.Date.Year;
 
-            nullableDateTimePickerStartDate.Value = DateTime.Now.Date;
-            nullableDateTimePickerEndDate.Value = DateTime.Now.Date;
+            nullableDateTimePickerStartDate.EditValue = DateTime.Now.Date;
+            nullableDateTimePickerEndDate.EditValue = DateTime.Now.Date;
             masterlistTableAdapter.Fill(iACDataSet.MASTERLIST);
             bindingSourceMasterList.AddNew();
             bindingSourceMasterList.EndEdit();
@@ -49,19 +49,19 @@ namespace IAC2021SQL
 
         private void PrintMasterHistory(ReportViewer rptViewer)
         {
-            String lsAccountNum = comboBoxAccount.Text.TrimEnd().TrimStart() + "%";
+            String lsAccountNum = lookUpEditAccount.EditValue != null ? lookUpEditAccount.EditValue.ToString().Trim() : "" + '%';
 
-            masthistTableAdapter.FillByMasterDateRange(iACDataSet.MASTHIST, lsAccountNum, (DateTime)nullableDateTimePickerStartDate.Value, (DateTime)nullableDateTimePickerEndDate.Value);
+            masthistTableAdapter.FillByMasterDateRange(iACDataSet.MASTHIST, lsAccountNum, (DateTime)nullableDateTimePickerStartDate.EditValue, (DateTime)nullableDateTimePickerEndDate.EditValue);
             // Moses Newman 10/13/2020 Replace Custom Query with Stored Procedure
-            masterTableAdapter.FillByDateRange(iACDataSet.MASTER, lsAccountNum, (DateTime)nullableDateTimePickerStartDate.Value, (DateTime)nullableDateTimePickerEndDate.Value);
+            masterTableAdapter.FillByDateRange(iACDataSet.MASTER, lsAccountNum, (DateTime)nullableDateTimePickerStartDate.EditValue, (DateTime)nullableDateTimePickerEndDate.EditValue);
             if (iACDataSet.MASTHIST.Rows.Count == 0)
                 MessageBox.Show("*** Sorry there are no MASTHIST records for the DATES and /or ACCOUNT you selected!!! ***");
             else
             {
                 MasterHistory myReportObject = new MasterHistory();
                 myReportObject.SetDataSource(iACDataSet);
-                myReportObject.SetParameterValue("gdFromDate", (DateTime)nullableDateTimePickerStartDate.Value);
-                myReportObject.SetParameterValue("gdToDate", (DateTime)nullableDateTimePickerEndDate.Value);
+                myReportObject.SetParameterValue("gdFromDate", (DateTime)nullableDateTimePickerStartDate.EditValue);
+                myReportObject.SetParameterValue("gdToDate", (DateTime)nullableDateTimePickerEndDate.EditValue);
                 myReportObject.SetParameterValue("gsUserID", Program.gsUserID);
                 myReportObject.SetParameterValue("gsUserName", Program.gsUserName);
                 rptViewer.crystalReportViewer.ReportSource = myReportObject;

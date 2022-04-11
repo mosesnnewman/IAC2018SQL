@@ -53,17 +53,12 @@ namespace IAC2021SQL
 
         private void frmCreateBankCustomerExtract_Load(object sender, EventArgs e)
         {
-            radioGroupMatch.EditValue = null;
+            this.aCCOUNTTableAdapter.Fill(this.Bank.ACCOUNT);
             radioGroupMatch.SelectedIndex = -1;
             // Moses Newman 04/20/2014 Add Active Inactive or Both, Dealer choice, and date range.
             Int32 lnRunMonth = DateTime.Now.Date.Month, lnRunYear = DateTime.Now.Date.Year;
-            IACDataSet Bank = new IACDataSet();
-            IACDataSetTableAdapters.DLRLISTBYNUMTableAdapter DLRLISTBYNUMTableAdapter = new IACDataSetTableAdapters.DLRLISTBYNUMTableAdapter();
-            IACDataSetTableAdapters.stateTableAdapter stateTableAdapter = new IACDataSetTableAdapters.stateTableAdapter();
-            // Moses Newman 01/28/2020 Add field picker tab.
 
-            BindingSource bindingSourceDLRLISTBYNUM = new BindingSource();
-            BindingSource bindingSourceState = new BindingSource();
+            // Moses Newman 01/28/2020 Add field picker tab.
             radioButtonActive.Checked = true;
             nullableDateTimePickerStartDate.EditValue = DateTime.Parse("01/01/1980");
             nullableDateTimePickerEndDate.EditValue = DateTime.Now.Date;
@@ -76,11 +71,9 @@ namespace IAC2021SQL
             DLRLISTBYNUMTableAdapter.Fill(Bank.DLRLISTBYNUM);
             bindingSourceDLRLISTBYNUM.AddNew();
             bindingSourceDLRLISTBYNUM.EndEdit();
-            Bank.DLRLISTBYNUM.Rows[bindingSourceDLRLISTBYNUM.Position].SetField<String>("DEALER_ACC_NO", "   ");
             Bank.DLRLISTBYNUM.Rows[bindingSourceDLRLISTBYNUM.Position].SetField<String>("DEALER_NAME", "                  ");
             bindingSourceDLRLISTBYNUM.EndEdit();
-            comboBoxDealer.DataSource = bindingSourceDLRLISTBYNUM;
-            textBoxDealerName.DataBindings.Add("Text", bindingSourceDLRLISTBYNUM, "DEALER_NAME");
+            lookUpEditDealer.Properties.DataSource = bindingSourceDLRLISTBYNUM;
             //Moses Newman 03/11/2020 Add Funding Date Search default to unchecked
             checkBoxFundingDate.Checked = false;
 
@@ -93,9 +86,9 @@ namespace IAC2021SQL
             Bank.state.Rows[bindingSourceState.Position].SetField("name", "");
             bindingSourceState.EndEdit();
            
-            comboBoxState.DataSource = bindingSourceState;
-            comboBoxState.DisplayMember = "name";
-            comboBoxState.ValueMember = "abbreviation";
+            lookUpEditState.Properties.DataSource = bindingSourceState;
+            lookUpEditState.Properties.DisplayMember = "name";
+            lookUpEditState.Properties.ValueMember = "abbreviation";
             Bank.Dispose();
 
             // Moses Newman 01/28/2020 Add field picker tab.
@@ -1234,14 +1227,13 @@ namespace IAC2021SQL
             else
                 if (radioButtonInactive.Checked)
                     lsStat = "I%";
-            if (comboBoxDealer.Text.TrimEnd().Length == 3)
-                lsDealer = comboBoxDealer.Text.TrimEnd() + lsDealer;
+            lsDealer = lookUpEditDealer.EditValue != null ? lookUpEditDealer.EditValue.ToString().Trim() : "" + '%';
             // Moses Newman 03/26/2015 Added Repo and Dealer State Filters
             if (checkBoxRepos.Checked)
                 lsRepo = "Y%";
             else
                 lsRepo = "%";
-            lsDealerState = (comboBoxState.SelectedValue != null) ? comboBoxState.SelectedValue.ToString().TrimStart().TrimEnd() + "%" : "%";
+            lsDealerState = (lookUpEditState.EditValue != null) ? lookUpEditState.EditValue.ToString().TrimStart().TrimEnd() + "%" : "%";
             MDIIAC2013 MDIMain = (MDIIAC2013)MdiParent;
             MDIMain.CreateFormInstance("QueryProgress", true, false, true);
             QueryProgress lfrm;
@@ -1635,7 +1627,7 @@ namespace IAC2021SQL
                 TempRec.CUSTOMER_ADD_ON = "";
 
                 Extensions.CustomerExtract.Rows.Add(TempRec);
-                DEALERTableAdapter.Fill(Bank.DEALER, Bank.CUSTOMER.Rows[i].Field<String>("CUSTOMER_DEALER"));
+                DEALERTableAdapter.Fill(Bank.DEALER, Bank.CUSTOMER.Rows[i].Field<Int32>("CUSTOMER_DEALER"));
                 // Moses Newman 01/29/2020 
                 CUSTHISTTableAdapter.FillByGetNewRecord(Bank.CUSTHIST, Bank.CUSTOMER.Rows[i].Field<String>("CUSTOMER_NO"));
 
@@ -1643,7 +1635,7 @@ namespace IAC2021SQL
                 Extensions.CustomerExtract.Rows[RowCount].SetField<String>("CUSTOMER_NO", Bank.CUSTOMER.Rows[i].Field<String>("CUSTOMER_NO"));
                 Extensions.CustomerExtract.Rows[RowCount].SetField<String>("CUSTOMER_ADD_ON", Bank.CUSTOMER.Rows[i].Field<String>("CUSTOMER_ADD_ON"));
                 Extensions.CustomerExtract.Rows[RowCount].SetField<String>("CUSTOMER_IAC_TYPE", "C");
-                Extensions.CustomerExtract.Rows[RowCount].SetField<String>("CUSTOMER_DEALER", Bank.CUSTOMER.Rows[i].Field<String>("CUSTOMER_DEALER"));
+                Extensions.CustomerExtract.Rows[RowCount].SetField<Int32>("CUSTOMER_DEALER", Bank.CUSTOMER.Rows[i].Field<Int32>("CUSTOMER_DEALER"));
                 Extensions.CustomerExtract.Rows[RowCount].SetField<String>("DEALER_NAME", Bank.DEALER.Rows[0].Field<String>("DEALER_NAME"));
                 // Moses Newman 04/21/2014 Add DEALER_STATE
                 Extensions.CustomerExtract.Rows[RowCount].SetField<String>("DEALER_STATE", Bank.DEALER.Rows[0].Field<String>("DEALER_ST"));
@@ -1893,7 +1885,7 @@ namespace IAC2021SQL
                 Extensions.CustomerExtract.Rows[RowCount].SetField<String>("CUSTOMER_NO", Bank.OPNCUST.Rows[i].Field<String>("CUSTOMER_NO"));
                 Extensions.CustomerExtract.Rows[RowCount].SetField<String>("CUSTOMER_ADD_ON", Bank.OPNCUST.Rows[i].Field<String>("CUSTOMER_ADD_ON"));
                 Extensions.CustomerExtract.Rows[RowCount].SetField<String>("CUSTOMER_IAC_TYPE", "O");
-                Extensions.CustomerExtract.Rows[RowCount].SetField<String>("CUSTOMER_DEALER", Bank.OPNCUST.Rows[i].Field<String>("CUSTOMER_DEALER"));
+                Extensions.CustomerExtract.Rows[RowCount].SetField<Int32>("CUSTOMER_DEALER", Convert.ToInt32(Bank.OPNCUST.Rows[i].Field<String>("CUSTOMER_DEALER")));
                 Extensions.CustomerExtract.Rows[RowCount].SetField<String>("DEALER_NAME", Bank.OPNDEALR.Rows[0].Field<String>("OPNDEALR_NAME"));
                 // Moses Newman 04/21/2014 Add DEALER_STATE
                 Extensions.CustomerExtract.Rows[RowCount].SetField<String>("DEALER_STATE", Bank.OPNDEALR.Rows[0].Field<String>("OPNDEALR_ST"));

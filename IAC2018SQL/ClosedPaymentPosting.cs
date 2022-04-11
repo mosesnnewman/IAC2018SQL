@@ -240,7 +240,7 @@ namespace IAC2021SQL
             for (int i = 0; i < PAYMENTPostDataSet.DEALER.Rows.Count; i++)
             {
                 DailyDealerSummaryTableAdapter.Insert(DateTime.Now.Date.Date,
-                                                      PAYMENTPostDataSet.DEALER.Rows[i].Field<String>("DEALER_ACC_NO"),
+                                                      PAYMENTPostDataSet.DEALER.Rows[i].Field<Int32>("id"),
                                                       PAYMENTPostDataSet.DEALER.Rows[i].Field<Decimal>("DEALER_CUR_OLOAN"),
                                                       PAYMENTPostDataSet.DEALER.Rows[i].Field<Decimal>("DEALER_CUR_SIMPLE_INT"),
                                                       PAYMENTPostDataSet.DEALER.Rows[i].Field<Decimal>("DEALER_CUR_AMORT_INT"),
@@ -1014,7 +1014,8 @@ namespace IAC2021SQL
             DEALERTableAdapter.FillByUnPostedPayments(PAYMENTDataSet.DEALER);
             for (Int32 dlrCount = 0; dlrCount < PAYMENTDataSet.WS_DEALER_PAY.Rows.Count; dlrCount++)
             {
-                DEALERPos = DEALERBindingSource.Find("DEALER_ACC_NO", PAYMENTDataSet.WS_DEALER_PAY.Rows[dlrCount].Field<String>("KEY"));
+                // Moses Newman 03/27/2022 Key is now Int32 and NOT string
+                DEALERPos = DEALERBindingSource.Find("id", PAYMENTDataSet.WS_DEALER_PAY.Rows[dlrCount].Field<Int32>("KEY"));
                 if (DEALERPos > -1)
                 {
                     PAYMENTDataSet.WS_DEALER_PAY.Rows[dlrCount].SetField<Decimal>("OS_L", PAYMENTDataSet.WS_DEALER_PAY.Rows[dlrCount].Field<Decimal>("OS_L") * -1);
@@ -1086,7 +1087,8 @@ namespace IAC2021SQL
             if (DEALHISTPos > -1)
             {
                 // Set up the new history record key
-                PAYMENTDataSet.DEALHIST.Rows[DEALHISTPos].SetField<String>("DEALHIST_ACC_NO", PAYMENTDataSet.DEALER.Rows[DEALERPos].Field<String>("DEALER_ACC_NO"));
+                // Moses Newman 03/27/2022 DEALHIST_ACC_NO is now Int32 foreign key
+                PAYMENTDataSet.DEALHIST.Rows[DEALHISTPos].SetField<Int32>("DEALHIST_ACC_NO", PAYMENTDataSet.DEALER.Rows[DEALERPos].Field<Int32>("id"));
                 PAYMENTDataSet.DEALHIST.Rows[DEALHISTPos].SetField<DateTime>("DEALHIST_POST_DATE", DateTime.Now.Date);
                 PAYMENTDataSet.DEALHIST.Rows[DEALHISTPos].SetField<DateTime>("DEALHIST_LAST_POST_DATE", DateTime.Now.Date);
                 //  End of DEALHIST KEY
@@ -1394,7 +1396,8 @@ namespace IAC2021SQL
             PaymentDistributionBindingsource.DataSource = PAYMENTDataSet.PaymentDistribution;
 
             WS_DEALER_PAYBindingsource.MoveFirst();
-            WSDealerPos = WS_DEALER_PAYBindingsource.Find("KEY", PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_DEALER"));
+            // Moses Newman 03/27/2022 CUSTOMER_DEALER is now Int32 not String
+            WSDealerPos = WS_DEALER_PAYBindingsource.Find("KEY", PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<Int32>("CUSTOMER_DEALER"));
             if (WSDealerPos >= 0)
             {
                 // Moses Newman 08/20/2012  Fix rounding
@@ -1672,7 +1675,7 @@ namespace IAC2021SQL
                 DEALHISTBindingSource.MoveFirst();
                 for (int i = 0; i < DEALERDataSet.DEALHIST.Rows.Count; i++)
                 {
-                    loDealhistSeq = DEALHISTTableAdapter.SeqNoQuery(DEALERDataSet.DEALHIST.Rows[i].Field<String>("DEALHIST_ACC_NO"), DateTime.Now.Date, DateTime.Now.Date);
+                    loDealhistSeq = DEALHISTTableAdapter.SeqNoQuery(DEALERDataSet.DEALHIST.Rows[i].Field<Int32>("DEALHIST_ACC_NO"), DateTime.Now.Date, DateTime.Now.Date);
                     if (loDealhistSeq != null)
                         lnSeq = (int)loDealhistSeq + 1;
                     else
