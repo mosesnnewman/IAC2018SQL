@@ -296,7 +296,7 @@ namespace IAC2021SQL
                                         //loTempComment.Field2,
                                         //loTempComment.Field3,
                                         "",
-                                        iACDataSet.CUSTOMER.Rows[custrow].Field<String>("CUSTOMER_DEALER"),
+                                        iACDataSet.CUSTOMER.Rows[custrow].Field<Int32>("CUSTOMER_DEALER"),
                                         Program.gsUserID + "  ",
                                         DateTime.Now.Hour.ToString().PadLeft(2, '0') + DateTime.Now.Minute.ToString().PadLeft(2, '0') + DateTime.Now.Second.ToString().PadLeft(2, '0'),
                                         false, "", "",

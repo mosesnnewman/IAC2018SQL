@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace IAC2021SQL
 {
-    public partial class CreateEFTNotices : Form
+    public partial class CreateEFTNotices : DevExpress.XtraEditors.XtraForm
     {
         IACDataSet iACDataSet = new IACDataSet();
         IACDataSetTableAdapters.CUSTOMERTableAdapter CustomerTableAdapter = new IACDataSetTableAdapters.CUSTOMERTableAdapter();
@@ -58,7 +58,7 @@ namespace IAC2021SQL
                 ldECHDate = DateTime.Parse(DateTime.Now.Date.Month.ToString() + "/" + comboBoxDayDue.Text + "/" + DateTime.Now.Date.Year.ToString());
             }
             
-            nullableDateTimePicker1.Value = ldECHDate;
+            nullableDateTimePicker1.EditValue = ldECHDate;
         }
 
         private void worker_DoMailMerge(object sender, DoWorkEventArgs e)
@@ -78,7 +78,7 @@ namespace IAC2021SQL
                 EmailTableAdapter.Dispose();
                 EmailTableAdapter = null;
             }
-            ldDueDate = (DateTime)nullableDateTimePicker1.Value;
+            ldDueDate = (DateTime)nullableDateTimePicker1.EditValue;
             lbSMS = false;
             lsMergeFileName = (String)listBoxMergeFileName.Items[listBoxMergeFileName.SelectedIndex];
             if (comboBoxDayDue.Text.TrimEnd() == "")
@@ -125,7 +125,7 @@ namespace IAC2021SQL
         private void button2_Click(object sender, EventArgs e)
         {
             lnDayDue = Convert.ToInt32(comboBoxDayDue.Text);
-            ldDueDate = (DateTime)nullableDateTimePicker1.Value;
+            ldDueDate = (DateTime)nullableDateTimePicker1.EditValue;
             lbSMS = true;
             if (comboBoxDayDue.Text.TrimEnd() == "")
                 lnDayDue = 0;
@@ -172,6 +172,5 @@ namespace IAC2021SQL
         {
             lsTestEmail = textBoxTestEmail.Text.TrimStart().TrimEnd();
         }
-
     }
 }

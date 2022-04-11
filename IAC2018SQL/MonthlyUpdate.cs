@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace IAC2021SQL
 {
-    public partial class frmMonthlyupdate : Form
+    public partial class frmMonthlyupdate : DevExpress.XtraEditors.XtraForm
     {
         String lsProgress = "";
         Decimal lnMonthToDateInterest = 0,lnLastBalance = 0;
@@ -343,7 +343,8 @@ namespace IAC2021SQL
                         UpdateiacDataSet.DEALER.Rows[DEALERPos].SetField<Decimal>("DEALER_CUR_OLOAN", 0);
                     if (UpdateiacDataSet.DEALER.Rows[DEALERPos].Field<Nullable<Decimal>>("DEALER_YTD_OLOAN") == null)
                         UpdateiacDataSet.DEALER.Rows[DEALERPos].SetField<Decimal>("DEALER_YTD_OLOAN", 0);
-                    MonthlyUpdateTotalsByDealerTableAdapter.Fill(UpdateiacDataSet.MonthlyUpdateTotalsByDealer, UpdateiacDataSet.DEALER.Rows[DEALERPos].Field<String>("DEALER_ACC_NO"));
+                    // Moses Newman 03/32/2022 use integer id for DelearNum now!
+                    MonthlyUpdateTotalsByDealerTableAdapter.Fill(UpdateiacDataSet.MonthlyUpdateTotalsByDealer, UpdateiacDataSet.DEALER.Rows[DEALERPos].Field<Int32>("id"));
                     if (UpdateiacDataSet.MonthlyUpdateTotalsByDealer.Rows.Count > 0)
                         DeltaOSLoans = UpdateiacDataSet.MonthlyUpdateTotalsByDealer.Rows[0].Field<Decimal>("Balance") - UpdateiacDataSet.DEALER.Rows[DEALERPos].Field<Decimal>("DEALER_YTD_OLOAN");
                     else
@@ -393,13 +394,14 @@ namespace IAC2021SQL
             if (DEALHISTPos > -1)
             {
                 // Set up the new history record key
-                UpdateiacDataSet.DEALHIST.Rows[DEALHISTPos].SetField<String>("DEALHIST_ACC_NO", UpdateiacDataSet.DEALER.Rows[DEALERPos].Field<String>("DEALER_ACC_NO"));
+                // Moses Newman 03/31/2022 DEALHIST_ACC_NO is now integer foreign key mapped to DEALER.id!
+                UpdateiacDataSet.DEALHIST.Rows[DEALHISTPos].SetField<Int32>("DEALHIST_ACC_NO", UpdateiacDataSet.DEALER.Rows[DEALERPos].Field<Int32>("id"));
                 // Moses Newman 12/31/2013 Fix DEALHIST_LAST_POST_DATE to be the same as post date since other transactions most likely accured today!
                 UpdateiacDataSet.DEALHIST.Rows[DEALHISTPos].SetField<DateTime>("DEALHIST_POST_DATE", ldNewRun);
                 UpdateiacDataSet.DEALHIST.Rows[DEALHISTPos].SetField<DateTime>("DEALHIST_LAST_POST_DATE", ldNewRun);
                 // Moses Newman 11/7/2013 add sequence number
                 // Moses Newman 12/31/2013 Fix DEALHIST_LAST_POST_DATE to be the same as post date since other transactions most likely accured today!
-                loDealhistSeq = DEALHISTTableAdapter.SeqNoQuery(UpdateiacDataSet.DEALHIST.Rows[DEALHISTPos].Field<String>("DEALHIST_ACC_NO"), ldNewRun, ldNewRun);
+                loDealhistSeq = DEALHISTTableAdapter.SeqNoQuery(UpdateiacDataSet.DEALHIST.Rows[DEALHISTPos].Field<Int32>("DEALHIST_ACC_NO"), ldNewRun, ldNewRun);
                 if (loDealhistSeq != null)
                     lnSeq = (int)loDealhistSeq + 1;
                 else

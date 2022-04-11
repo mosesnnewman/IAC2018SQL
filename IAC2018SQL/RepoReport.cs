@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace IAC2021SQL
 {
-    public partial class FormRepoReport : Form
+    public partial class FormRepoReport : DevExpress.XtraEditors.XtraForm
     {
         public FormRepoReport()
         {
@@ -46,14 +46,14 @@ namespace IAC2021SQL
                 lsStatus = "I";
             if (radioButtonStatusBoth.Checked)
                 lsStatus = "%";
-            if (nullableDateTimePickerStartDate.Value == null)
+            if (nullableDateTimePickerStartDate.EditValue == null)
                 ldStartDate = DateTime.Parse("01/01/1980");
             else
-                ldStartDate = (DateTime)nullableDateTimePickerStartDate.Value;
-            if (nullableDateTimePickerEndDate.Value == null)
+                ldStartDate = (DateTime)nullableDateTimePickerStartDate.EditValue;
+            if (nullableDateTimePickerEndDate.EditValue == null)
                 ldEndDate = DateTime.Now;
             else
-                ldEndDate = (DateTime)nullableDateTimePickerEndDate.Value;
+                ldEndDate = (DateTime)nullableDateTimePickerEndDate.EditValue;
             CUSTOMERTableAdapter.FillByRepoCode(DelinquencyData.CUSTOMER, lsAgeCode, ldStartDate,ldEndDate,lsStatus,lsRepoCode);
             // Moses Newman 11/19/2013 Moses Newman added ldCurrDate as new parameter to DealerFillByDelinQuencies Query
             DEALERTableAdapter.FillByRepoCode(DelinquencyData.DEALER, lsAgeCode, ldStartDate, ldEndDate, lsStatus, lsRepoCode);
@@ -95,8 +95,8 @@ namespace IAC2021SQL
 
         private void FormRepoReport_Load(object sender, EventArgs e)
         {
-            nullableDateTimePickerEndDate.Value = null;
-            nullableDateTimePickerStartDate.Value = null;
+            nullableDateTimePickerEndDate.EditValue = null;
+            nullableDateTimePickerStartDate.EditValue = null;
             repoCodesTableAdapter.Fill(this.DelinquencyData.RepoCodes);
             radioButtonIndBoth.Checked = true;
             radioButtonStatusBoth.Checked = true;

@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace IAC2021SQL
 {
-    public partial class frmClosedDelinquencyReports : Form
+    public partial class frmClosedDelinquencyReports : DevExpress.XtraEditors.XtraForm
     {
         public frmClosedDelinquencyReports()
         {
@@ -20,13 +20,13 @@ namespace IAC2021SQL
         {
             PerformAutoScale();
             comboBoxAgedPeriod.SelectedIndex = 0;
-            nullableDateTimePickerDueDate.Value = DateTime.Now.Date;
+            nullableDateTimePickerDueDate.EditValue = DateTime.Now.Date;
             comboBoxSortType.SelectedIndex = 0;
         }
 
         private void PrintDelinquencyReport()
         {
-            DateTime ldCurrDate = ((DateTime)(nullableDateTimePickerDueDate.Value)).Date; 
+            DateTime ldCurrDate = ((DateTime)(nullableDateTimePickerDueDate.EditValue)).Date; 
 
             IACDataSet DelinquencyData = new IACDataSet();
             IACDataSetTableAdapters.ClosedDealerAgedSummarySelectTableAdapter ClosedDealerAgedSummarySelectTableAdapter = new IACDataSetTableAdapters.ClosedDealerAgedSummarySelectTableAdapter();

@@ -103,7 +103,7 @@ namespace IAC2021SQL
                 textBoxDealerNo.Text = gsData.CUSTOMER.Rows[0].Field<String>("CUSTOMER_DEALER");
                 textBoxDealerNo.Refresh();
 
-                DEALERTableAdapter.Fill(gsData.DEALER, gsData.CUSTOMER.Rows[0].Field<String>("CUSTOMER_DEALER"));
+                DEALERTableAdapter.Fill(gsData.DEALER, gsData.CUSTOMER.Rows[0].Field<Int32>("CUSTOMER_DEALER"));
                 if (gsData.DEALER.Rows.Count > 0)
                 {
                     textBoxDealerName.Text = gsData.DEALER.Rows[0].Field<String>("DEALER_NAME");

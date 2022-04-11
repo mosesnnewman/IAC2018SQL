@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace IAC2021SQL
 {
-    public partial class frmClosedPayedInAdvanceReport : Form
+    public partial class frmClosedPayedInAdvanceReport : DevExpress.XtraEditors.XtraForm
     {
 
         public frmClosedPayedInAdvanceReport()
@@ -20,16 +20,16 @@ namespace IAC2021SQL
         private void frmClosedPayedInAdvanceReport_Load(object sender, EventArgs e)
         {
             PerformAutoScale();
-            nullableDateTimePickerDueDate.Value = DateTime.Now.Date;
+            nullableDateTimePickerDueDate.EditValue = DateTime.Now.Date;
         }
 
         private void PrintDelinquencyReport()
         {
-            DateTime ldCurrDate = ((DateTime)(nullableDateTimePickerDueDate.Value)).Date;
+            DateTime ldCurrDate = ((DateTime)(nullableDateTimePickerDueDate.EditValue)).Date;
 
             IACDataSet DelinquencyData = new IACDataSet();
-            IACDataSetTableAdapters.ClosedDealerAgedSummarySelectTableAdapter ClosedDealerAgedSummarySelectTableAdapter = new IACDataSetTableAdapters.ClosedDealerAgedSummarySelectTableAdapter();
-            IACDataSetTableAdapters.ClosedDealerAgedSummarySelectCOLTableAdapter ClosedDealerAgedSummarySelectCOLTableAdapter = new IACDataSetTableAdapters.ClosedDealerAgedSummarySelectCOLTableAdapter();
+            //IACDataSetTableAdapters.ClosedDealerAgedSummarySelectTableAdapter ClosedDealerAgedSummarySelectTableAdapter = new IACDataSetTableAdapters.ClosedDealerAgedSummarySelectTableAdapter();
+            //IACDataSetTableAdapters.ClosedDealerAgedSummarySelectCOLTableAdapter ClosedDealerAgedSummarySelectCOLTableAdapter = new IACDataSetTableAdapters.ClosedDealerAgedSummarySelectCOLTableAdapter();
             IACDataSetTableAdapters.CUSTOMERTableAdapter CUSTOMERTableAdapter = new IACDataSetTableAdapters.CUSTOMERTableAdapter();
             IACDataSetTableAdapters.DEALERTableAdapter DEALERTableAdapter = new IACDataSetTableAdapters.DEALERTableAdapter();
 
@@ -60,8 +60,6 @@ namespace IAC2021SQL
 
             CUSTOMERTableAdapter.Dispose();
             DEALERTableAdapter.Dispose();
-            ClosedDealerAgedSummarySelectTableAdapter.Dispose();
-            ClosedDealerAgedSummarySelectCOLTableAdapter.Dispose();
         }
 
 

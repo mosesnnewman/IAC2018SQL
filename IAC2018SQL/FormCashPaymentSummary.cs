@@ -15,7 +15,7 @@ using System.IO;
 
 namespace IAC2021SQL
 {
-    public partial class FormCashPaymentSummary : Form
+    public partial class FormCashPaymentSummary : DevExpress.XtraEditors.XtraForm
     {
         private PaymentDataSet PaymentData = new PaymentDataSet();
         private PaymentDataSetTableAdapters.CashPaymentSummaryTableAdapter CashPaymentSummaryTableAdapter = new PaymentDataSetTableAdapters.CashPaymentSummaryTableAdapter();
@@ -43,16 +43,21 @@ namespace IAC2021SQL
                 ldEnd = ldEnd.AddDays(-1);
             }
 
-            nullableDateTimePickerStartDate.Value = ldStart;
-            nullableDateTimePickerEndDate.Value = ldEnd;
+            nullableDateTimePickerStartDate.EditValue = DateTime.Now.AddMonths(-1).Date;
+            nullableDateTimePickerEndDate.EditValue = DateTime.Now.Date;
         }
 
         private void buttonPost_Click(object sender, EventArgs e)
         {
             SQLBackupandRestore SQLBR = new SQLBackupandRestore();
 
-            CashPaymentSummaryTableAdapter.Fill(PaymentData.CashPaymentSummary, (DateTime)nullableDateTimePickerStartDate.Value, (DateTime)nullableDateTimePickerEndDate.Value);
+            CashPaymentSummaryTableAdapter.Fill(PaymentData.CashPaymentSummary, (DateTime)nullableDateTimePickerStartDate.EditValue, (DateTime)nullableDateTimePickerEndDate.EditValue);
             RowCount = PaymentData.CashPaymentSummary.Rows.Count;
+            if(RowCount < 1)
+            {
+                MessageBox.Show("*** No records were returned for this date range! ***");
+                return;
+            }
             if (SQLBR.RunJob("CreateCashSummary", "Create Cash Summary EXCEL", false))
             {
                 Thread.Sleep(2000);
@@ -312,8 +317,7 @@ namespace IAC2021SQL
             String tmpString;
             foreach(Excel.Range rCell in SubTotalRange.Rows)
             {
-                
-                tmpString = rCell.Cells[1,1].Value2.ToString().Trim();
+                tmpString = rCell.Cells[1, 1].Value2 != null ? rCell.Cells[1,1].Value2.ToString().Trim():"";
                 if (tmpString.Length > 5)
                     if (tmpString.Substring(tmpString.Length - 5, 5) == "Total" || tmpString.Substring(0, 11) == "Grand Total")
                         rCell.Font.Bold = true;

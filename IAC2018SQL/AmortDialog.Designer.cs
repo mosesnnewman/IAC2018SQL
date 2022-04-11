@@ -29,42 +29,52 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AmortDialog));
-            this.btnPrint = new System.Windows.Forms.Button();
+            this.btnPrint = new DevExpress.XtraEditors.SimpleButton();
             this.txtLoanAmount = new System.Windows.Forms.TextBox();
             this.txtTerm = new System.Windows.Forms.TextBox();
             this.txtNominalRate = new System.Windows.Forms.TextBox();
-            this.txtFirstPayment = new System.Windows.Forms.DateTimePicker();
+            this.txtFirstPayment = new DevExpress.XtraEditors.DateEdit();
             this.txtMonthlyPayment = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtTotalPayment = new System.Windows.Forms.TextBox();
             this.txtTotalInterest = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.btnCalc = new System.Windows.Forms.Button();
-            this.buttonPrintScreen = new System.Windows.Forms.Button();
+            this.btnCalc = new DevExpress.XtraEditors.SimpleButton();
+            this.buttonPrintScreen = new DevExpress.XtraEditors.SimpleButton();
             this.label7 = new System.Windows.Forms.Label();
-            this.dateTimePickerContractDate = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerContractDate = new DevExpress.XtraEditors.DateEdit();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
+            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            ((System.ComponentModel.ISupportInitialize)(this.txtFirstPayment.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtFirstPayment.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateTimePickerContractDate.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateTimePickerContractDate.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
+            this.groupControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnPrint
             // 
-            this.btnPrint.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrint.Location = new System.Drawing.Point(159, 331);
+            this.btnPrint.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrint.Appearance.Options.UseFont = true;
+            this.btnPrint.Appearance.Options.UseTextOptions = true;
+            this.btnPrint.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.btnPrint.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnPrint.Location = new System.Drawing.Point(160, 343);
             this.btnPrint.Name = "btnPrint";
             this.btnPrint.Size = new System.Drawing.Size(137, 99);
             this.btnPrint.TabIndex = 0;
             this.btnPrint.Text = "&Print Amortization Schedule";
-            this.btnPrint.UseVisualStyleBackColor = true;
             this.btnPrint.Click += new System.EventHandler(this.button1_Click);
             // 
             // txtLoanAmount
             // 
             this.txtLoanAmount.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLoanAmount.Location = new System.Drawing.Point(261, 35);
+            this.txtLoanAmount.Location = new System.Drawing.Point(262, 47);
             this.txtLoanAmount.Name = "txtLoanAmount";
             this.txtLoanAmount.Size = new System.Drawing.Size(116, 33);
             this.txtLoanAmount.TabIndex = 1;
@@ -75,7 +85,7 @@
             // txtTerm
             // 
             this.txtTerm.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTerm.Location = new System.Drawing.Point(345, 67);
+            this.txtTerm.Location = new System.Drawing.Point(346, 80);
             this.txtTerm.Name = "txtTerm";
             this.txtTerm.Size = new System.Drawing.Size(32, 33);
             this.txtTerm.TabIndex = 2;
@@ -85,7 +95,7 @@
             // txtNominalRate
             // 
             this.txtNominalRate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNominalRate.Location = new System.Drawing.Point(299, 99);
+            this.txtNominalRate.Location = new System.Drawing.Point(300, 113);
             this.txtNominalRate.Name = "txtNominalRate";
             this.txtNominalRate.Size = new System.Drawing.Size(78, 33);
             this.txtNominalRate.TabIndex = 3;
@@ -94,18 +104,27 @@
             // 
             // txtFirstPayment
             // 
-            this.txtFirstPayment.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFirstPayment.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.txtFirstPayment.Location = new System.Drawing.Point(261, 163);
+            this.txtFirstPayment.EditValue = new System.DateTime(2022, 4, 6, 0, 0, 0, 0);
+            this.txtFirstPayment.Location = new System.Drawing.Point(262, 178);
             this.txtFirstPayment.Name = "txtFirstPayment";
-            this.txtFirstPayment.Size = new System.Drawing.Size(116, 33);
+            this.txtFirstPayment.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFirstPayment.Properties.Appearance.Options.UseFont = true;
+            this.txtFirstPayment.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtFirstPayment.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtFirstPayment.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.Fluent;
+            this.txtFirstPayment.Properties.LookAndFeel.SkinName = "McSkin";
+            this.txtFirstPayment.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.txtFirstPayment.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
+            this.txtFirstPayment.Size = new System.Drawing.Size(116, 32);
             this.txtFirstPayment.TabIndex = 4;
-            this.txtFirstPayment.ValueChanged += new System.EventHandler(this.txtFirstPayment_ValueChanged);
+            this.txtFirstPayment.EditValueChanged += new System.EventHandler(this.txtFirstPayment_ValueChanged);
             // 
             // txtMonthlyPayment
             // 
             this.txtMonthlyPayment.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMonthlyPayment.Location = new System.Drawing.Point(261, 195);
+            this.txtMonthlyPayment.Location = new System.Drawing.Point(262, 210);
             this.txtMonthlyPayment.Name = "txtMonthlyPayment";
             this.txtMonthlyPayment.Size = new System.Drawing.Size(116, 33);
             this.txtMonthlyPayment.TabIndex = 5;
@@ -117,16 +136,16 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(92, 194);
+            this.label4.Location = new System.Drawing.Point(90, 218);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(164, 25);
+            this.label4.Size = new System.Drawing.Size(163, 25);
             this.label4.TabIndex = 10;
             this.label4.Text = "Monthly Payment:";
             // 
             // txtTotalPayment
             // 
             this.txtTotalPayment.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalPayment.Location = new System.Drawing.Point(261, 227);
+            this.txtTotalPayment.Location = new System.Drawing.Point(262, 243);
             this.txtTotalPayment.Name = "txtTotalPayment";
             this.txtTotalPayment.ReadOnly = true;
             this.txtTotalPayment.Size = new System.Drawing.Size(116, 33);
@@ -136,7 +155,7 @@
             // txtTotalInterest
             // 
             this.txtTotalInterest.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalInterest.Location = new System.Drawing.Point(261, 259);
+            this.txtTotalInterest.Location = new System.Drawing.Point(262, 276);
             this.txtTotalInterest.Name = "txtTotalInterest";
             this.txtTotalInterest.ReadOnly = true;
             this.txtTotalInterest.Size = new System.Drawing.Size(116, 33);
@@ -147,9 +166,9 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(120, 226);
+            this.label5.Location = new System.Drawing.Point(120, 251);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(136, 25);
+            this.label5.Size = new System.Drawing.Size(133, 25);
             this.label5.TabIndex = 13;
             this.label5.Text = "Total Payment:";
             // 
@@ -157,60 +176,70 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(130, 258);
+            this.label6.Location = new System.Drawing.Point(129, 284);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(126, 25);
+            this.label6.Size = new System.Drawing.Size(124, 25);
             this.label6.TabIndex = 14;
             this.label6.Text = "Total Interest:";
             // 
             // btnCalc
             // 
-            this.btnCalc.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCalc.Location = new System.Drawing.Point(15, 331);
+            this.btnCalc.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCalc.Appearance.Options.UseFont = true;
+            this.btnCalc.Location = new System.Drawing.Point(16, 343);
             this.btnCalc.Name = "btnCalc";
             this.btnCalc.Size = new System.Drawing.Size(137, 99);
             this.btnCalc.TabIndex = 15;
             this.btnCalc.Text = "&Calculate";
-            this.btnCalc.UseVisualStyleBackColor = true;
             this.btnCalc.Click += new System.EventHandler(this.btnCalc_Click);
             // 
             // buttonPrintScreen
             // 
-            this.buttonPrintScreen.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonPrintScreen.Image = ((System.Drawing.Image)(resources.GetObject("buttonPrintScreen.Image")));
-            this.buttonPrintScreen.Location = new System.Drawing.Point(303, 331);
+            this.buttonPrintScreen.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonPrintScreen.Appearance.Options.UseFont = true;
+            this.buttonPrintScreen.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonPrintScreen.ImageOptions.Image")));
+            this.buttonPrintScreen.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
+            this.buttonPrintScreen.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
+            this.buttonPrintScreen.Location = new System.Drawing.Point(304, 343);
             this.buttonPrintScreen.Name = "buttonPrintScreen";
             this.buttonPrintScreen.Size = new System.Drawing.Size(137, 99);
             this.buttonPrintScreen.TabIndex = 16;
             this.buttonPrintScreen.Text = "Print &Screen";
-            this.buttonPrintScreen.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.buttonPrintScreen.UseVisualStyleBackColor = true;
             this.buttonPrintScreen.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(83, 162);
+            this.label7.Location = new System.Drawing.Point(81, 185);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(173, 25);
+            this.label7.Size = new System.Drawing.Size(172, 25);
             this.label7.TabIndex = 18;
             this.label7.Text = "First Payment Date:";
             // 
             // dateTimePickerContractDate
             // 
-            this.dateTimePickerContractDate.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerContractDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerContractDate.Location = new System.Drawing.Point(261, 131);
+            this.dateTimePickerContractDate.EditValue = new System.DateTime(2022, 4, 6, 0, 0, 0, 0);
+            this.dateTimePickerContractDate.Location = new System.Drawing.Point(262, 146);
             this.dateTimePickerContractDate.Name = "dateTimePickerContractDate";
-            this.dateTimePickerContractDate.Size = new System.Drawing.Size(116, 33);
+            this.dateTimePickerContractDate.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerContractDate.Properties.Appearance.Options.UseFont = true;
+            this.dateTimePickerContractDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateTimePickerContractDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateTimePickerContractDate.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.Fluent;
+            this.dateTimePickerContractDate.Properties.LookAndFeel.SkinName = "McSkin";
+            this.dateTimePickerContractDate.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.dateTimePickerContractDate.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
+            this.dateTimePickerContractDate.Size = new System.Drawing.Size(116, 32);
             this.dateTimePickerContractDate.TabIndex = 17;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(127, 34);
+            this.label8.Location = new System.Drawing.Point(124, 55);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(129, 25);
             this.label8.TabIndex = 6;
@@ -220,9 +249,9 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(78, 66);
+            this.label9.Location = new System.Drawing.Point(77, 88);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(178, 25);
+            this.label9.Size = new System.Drawing.Size(176, 25);
             this.label9.TabIndex = 7;
             this.label9.Text = "Term (# of Months):";
             // 
@@ -230,7 +259,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(126, 98);
+            this.label10.Location = new System.Drawing.Point(123, 121);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(130, 25);
             this.label10.TabIndex = 8;
@@ -240,67 +269,86 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(124, 130);
+            this.label11.Location = new System.Drawing.Point(121, 153);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(132, 25);
             this.label11.TabIndex = 9;
             this.label11.Text = "Contract Date:";
             // 
+            // groupControl1
+            // 
+            this.groupControl1.Appearance.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.groupControl1.Appearance.Options.UseBackColor = true;
+            this.groupControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.groupControl1.Controls.Add(this.label7);
+            this.groupControl1.Controls.Add(this.dateTimePickerContractDate);
+            this.groupControl1.Controls.Add(this.buttonPrintScreen);
+            this.groupControl1.Controls.Add(this.btnCalc);
+            this.groupControl1.Controls.Add(this.label6);
+            this.groupControl1.Controls.Add(this.label5);
+            this.groupControl1.Controls.Add(this.txtTotalInterest);
+            this.groupControl1.Controls.Add(this.txtTotalPayment);
+            this.groupControl1.Controls.Add(this.label4);
+            this.groupControl1.Controls.Add(this.label11);
+            this.groupControl1.Controls.Add(this.label10);
+            this.groupControl1.Controls.Add(this.label9);
+            this.groupControl1.Controls.Add(this.label8);
+            this.groupControl1.Controls.Add(this.txtMonthlyPayment);
+            this.groupControl1.Controls.Add(this.txtFirstPayment);
+            this.groupControl1.Controls.Add(this.txtNominalRate);
+            this.groupControl1.Controls.Add(this.txtTerm);
+            this.groupControl1.Controls.Add(this.txtLoanAmount);
+            this.groupControl1.Controls.Add(this.btnPrint);
+            this.groupControl1.Location = new System.Drawing.Point(0, -2);
+            this.groupControl1.Name = "groupControl1";
+            this.groupControl1.Size = new System.Drawing.Size(457, 467);
+            this.groupControl1.TabIndex = 19;
+            this.groupControl1.Text = "groupControl1";
+            // 
             // AmortDialog
             // 
+            this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(454, 462);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.dateTimePickerContractDate);
-            this.Controls.Add(this.buttonPrintScreen);
-            this.Controls.Add(this.btnCalc);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.txtTotalInterest);
-            this.Controls.Add(this.txtTotalPayment);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.txtMonthlyPayment);
-            this.Controls.Add(this.txtFirstPayment);
-            this.Controls.Add(this.txtNominalRate);
-            this.Controls.Add(this.txtTerm);
-            this.Controls.Add(this.txtLoanAmount);
-            this.Controls.Add(this.btnPrint);
+            this.Controls.Add(this.groupControl1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "AmortDialog";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Amortization Parameters";
             this.Load += new System.EventHandler(this.AmortDialog_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.txtFirstPayment.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtFirstPayment.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateTimePickerContractDate.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateTimePickerContractDate.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
+            this.groupControl1.ResumeLayout(false);
+            this.groupControl1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button btnPrint;
+        private DevExpress.XtraEditors.SimpleButton btnPrint;
         private System.Windows.Forms.TextBox txtLoanAmount;
         private System.Windows.Forms.TextBox txtTerm;
         private System.Windows.Forms.TextBox txtNominalRate;
-        private System.Windows.Forms.DateTimePicker txtFirstPayment;
+        private DevExpress.XtraEditors.DateEdit txtFirstPayment;
         private System.Windows.Forms.TextBox txtMonthlyPayment;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtTotalPayment;
         private System.Windows.Forms.TextBox txtTotalInterest;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button btnCalc;
-        private System.Windows.Forms.Button buttonPrintScreen;
+        private DevExpress.XtraEditors.SimpleButton btnCalc;
+        private DevExpress.XtraEditors.SimpleButton buttonPrintScreen;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DateTimePicker dateTimePickerContractDate;
+        private DevExpress.XtraEditors.DateEdit dateTimePickerContractDate;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
+        private DevExpress.XtraEditors.GroupControl groupControl1;
     }
 }

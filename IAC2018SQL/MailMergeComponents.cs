@@ -101,7 +101,14 @@ namespace IAC2021SQL
             for (Int32 i = 0; i < MergeDataSet.CUSTOMER.Rows.Count; i++)
             {
                 // Moses Newman 07/26/2017 add CustBank records in case letter needs that table. (ie. Autoletter#9)
-                CustBankTableAdapter.CustBankLoadAll(MergeDataSet.CUSTOMER.Rows[i].Field<String>("CUSTOMER_NO") + Program.gsUserID, 0, Program.NextDueDate(i, MergeDataSet), false, false, "Y");
+                try
+                {
+                    CustBankTableAdapter.CustBankLoadAll(MergeDataSet.CUSTOMER.Rows[i].Field<String>("CUSTOMER_NO") + Program.gsUserID, 0, Program.NextDueDate(i, MergeDataSet), false, false, "Y");
+                }
+                catch(Exception e)
+                {
+                    MessageBox.Show("The Error Message Is:" + e.Message);
+                }
                 MergeDataSet.CUSTOMER.Rows[i].SetField<String>("CUSTOMER_NO", MergeDataSet.CUSTOMER.Rows[i].Field<String>("CUSTOMER_NO") + Program.gsUserID);
                 if (MergeDataSet.CUSTOMER.Rows[i].Field<Nullable<Decimal>>("CUSTOMER_CONTRACT_STATUS") == null)
                     MergeDataSet.CUSTOMER.Rows[i].SetField<Decimal>("CUSTOMER_CONTRACT_STATUS", 0);
@@ -340,7 +347,7 @@ namespace IAC2021SQL
             {
                 if (MergeDataSet.NOTICE.Rows[i].Field<Int32>("NOTICE_FORM_NO") == tnLetterNo && MergeDataSet.NOTICE.Rows[i].Field<String>("NOTICE_WRONG_ADDRESS") != "Y")
                 {
-                    DEALERBindingSource.Position = DEALERBindingSource.Find("DEALER_ACC_NO", MergeDataSet.NOTICE.Rows[i].Field<String>("NOTICE_DEALER"));
+                    DEALERBindingSource.Position = DEALERBindingSource.Find("id", MergeDataSet.NOTICE.Rows[i].Field<Int32>("NOTICE_DEALER"));
                     MergeDataSet.NOTICE.Rows[i].SetField<String>("DEALER_NAME", MergeDataSet.DEALER.Rows[DEALERBindingSource.Position].Field<String>("DEALER_NAME"));
                     MergeDataSet.NOTICE.Rows[i].SetField<Decimal>("NOTICE_CONTRACT_STATUS", MergeDataSet.NOTICE.Rows[i].Field<Decimal>("NOTICE_CONTRACT_STATUS") * -1);
                     // Moses Newman 11/25/2018 add CosignerNotice flag to signify if this is a notice to to coborrower address.
@@ -406,7 +413,8 @@ namespace IAC2021SQL
                 //if ((tnLetterNo == 0 || tnLetterNo == 1 || tnLetterNo == 2 || tnLetterNo == 3 || tnLetterNo == 6 || tnLetterNo == 9) && tbMakeComments)
                 if (tbMakeComments)
                 {
-                    String FileName = "", lsCustNo = "", lsDealer = "";
+                    String FileName = "", lsCustNo = "";
+                    Int32 lnDealer;
                     oWord = new Word.Application();
                     oWordDoc = new Word.Document();
                     oWordDoc = oWord.Documents.Add(ref oTemplatePath, ref oMissing, ref oMissing, ref oTrue);
@@ -421,7 +429,7 @@ namespace IAC2021SQL
                         NewMailMerge.DataSource.FirstRecord = (int)NewMailMerge.DataSource.ActiveRecord;
                         NewMailMerge.DataSource.LastRecord = (int)NewMailMerge.DataSource.ActiveRecord;
                         lsCustNo = NewMailMerge.DataSource.DataFields["NOTICE_NO"].Value;
-                        lsDealer = NewMailMerge.DataSource.DataFields["NOTICE_DEALER"].Value;
+                        lnDealer = Convert.ToInt32(NewMailMerge.DataSource.DataFields["NOTICE_DEALER"].Value);
                         // Moses Newman 11/25/2018 Handle cosigner notices.
                         lbCosigner = NewMailMerge.DataSource.DataFields["CosignerNotice"].Value == "False" ? false : true;
                         lsCommentText = "";
@@ -456,7 +464,7 @@ namespace IAC2021SQL
                                 break;
                         }
 
-                        FileName = MakeNoticeComment(lsCustNo, lsDealer, lsCommentText);
+                        FileName = MakeNoticeComment(lsCustNo, lnDealer, lsCommentText);
                         tsProgMessage = "*** Creating attachement for Notice Number: " + tnLetterNo + " for Customer: " + lsCustNo + " " + (CustomerCount + 1).ToString() + " of " + NewMailMerge.DataSource.RecordCount.ToString();
                         lnProgress = (Int32)(Math.Round(((Double)(CustomerCount + 1) / (Double)NewMailMerge.DataSource.RecordCount), 2) * 100);
                         worker.ReportProgress(lnProgress);
@@ -495,7 +503,7 @@ namespace IAC2021SQL
             MergeDataSet.Dispose();
         }
 
-        private String MakeNoticeComment(String CustomerNo, String Dealer, String CommentMessage)
+        private String MakeNoticeComment(String CustomerNo, Int32 Dealer, String CommentMessage)
         {
             IACDataSetTableAdapters.COMMENTTableAdapter cOMMENTTableAdapter = new IACDataSetTableAdapters.COMMENTTableAdapter();
 

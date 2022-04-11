@@ -296,7 +296,7 @@ namespace IAC2021SQL
                                         //APIMessage,
                                         //" ",
                                         "  ",
-                                        IACData.CUSTOMER.Rows[i].Field<String>("CUSTOMER_DEALER"),
+                                        IACData.CUSTOMER.Rows[i].Field<Int32>("CUSTOMER_DEALER"),
                                         Program.gsUserID + "  ",
                                         DateTime.Now.Hour.ToString().PadLeft(2, '0') + DateTime.Now.Minute.ToString().PadLeft(2, '0') + DateTime.Now.Second.ToString().PadLeft(2, '0'),
                                         false, "", @"", 0, "", "", 0);

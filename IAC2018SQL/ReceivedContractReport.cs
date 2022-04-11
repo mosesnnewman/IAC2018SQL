@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace IAC2021SQL
 {
-    public partial class ClosedCustomerReceivedContractReport: Form
+    public partial class ClosedCustomerReceivedContractReport : DevExpress.XtraEditors.XtraForm
     {
         public ClosedCustomerReceivedContractReport()
         {
@@ -21,12 +21,11 @@ namespace IAC2021SQL
         // Moses Newman 02/02/2014 Add Date, Dealer, and Status selection criteria
         private void ClosedCustomerReceivedContractReport_Load(object sender, EventArgs e)
         {
-            nullableDateTimePickerStartDate.Value = DateTime.Parse("01/01/1980").Date;
-            nullableDateTimePickerEndDate.Value = DateTime.Now.Date;
+            nullableDateTimePickerStartDate.EditValue = DateTime.Parse("01/01/1980").Date;
+            nullableDateTimePickerEndDate.EditValue = DateTime.Now.Date;
             dlrlistbynumTableAdapter.Fill(iACDataSet.DLRLISTBYNUM);
             bindingSourceDLRLISTBYNUM.AddNew();
             bindingSourceDLRLISTBYNUM.EndEdit();
-            iACDataSet.DLRLISTBYNUM.Rows[bindingSourceDLRLISTBYNUM.Position].SetField<String>("DEALER_ACC_NO", "   ");
             iACDataSet.DLRLISTBYNUM.Rows[bindingSourceDLRLISTBYNUM.Position].SetField<String>("DEALER_NAME", "                  ");
             bindingSourceDLRLISTBYNUM.EndEdit();
         }
@@ -34,7 +33,8 @@ namespace IAC2021SQL
         private void buttonPrint_Click(object sender, EventArgs e)
         {
             // Moses Newman 02/02/2014 Add Date, Dealer, and Status selection criteria
-            String lsDealer = comboBoxDealer.Text.TrimEnd() + "%", lsStatus = "%";
+            String lsDealer = lookUpEditDealer.EditValue != null ? lookUpEditDealer.EditValue.ToString().Trim() : "" + '%',
+                   lsStatus = "%";
             Hide();
             MDIIAC2013 MDImain = (MDIIAC2013)MdiParent;
             MDImain.CreateFormInstance("ReportViewer", false);
@@ -43,6 +43,7 @@ namespace IAC2021SQL
             IACDataSet VehicleDataSet = new IACDataSet();
             IACDataSetTableAdapters.DataPathTableAdapter DataPathTableAdapter = new IACDataSetTableAdapters.DataPathTableAdapter();
             IACDataSetTableAdapters.CUSTOMERTableAdapter CUSTOMERTableAdapter = new IACDataSetTableAdapters.CUSTOMERTableAdapter();
+            IACDataSetTableAdapters.DEALERTableAdapter DEALERTableAdapter = new IACDataSetTableAdapters.DEALERTableAdapter();
 
             // Moses Newman 02/02/2014 Add Date, Dealer, and Status selection criteria
             if (radioButtonActive.Checked)
@@ -51,7 +52,8 @@ namespace IAC2021SQL
                 if (radioButtonInactive.Checked)
                     lsStatus = "I" + lsStatus;
             // Moses Newman 02/02/2014 Add Date, Dealer, and Status selection criteria
-            CUSTOMERTableAdapter.ReceivedContract(VehicleDataSet.CUSTOMER, lsDealer, lsStatus,(DateTime)nullableDateTimePickerStartDate.Value,(DateTime)nullableDateTimePickerEndDate.Value);
+            CUSTOMERTableAdapter.ReceivedContract(VehicleDataSet.CUSTOMER, lsDealer, lsStatus,(DateTime)nullableDateTimePickerStartDate.EditValue,(DateTime)nullableDateTimePickerEndDate.EditValue);
+            DEALERTableAdapter.FillByAll(VehicleDataSet.DEALER);
             if (VehicleDataSet.CUSTOMER.Rows.Count == 0)
                 MessageBox.Show("*** Sorry there are no received contracts for ACTIVE CUSTOMERS ***");
             else
@@ -61,8 +63,8 @@ namespace IAC2021SQL
                 myReportObject.SetParameterValue("gsUserID", Program.gsUserID);
                 myReportObject.SetParameterValue("gsUserName", Program.gsUserName);
                 // Moses Newman 02/05/2014 Add Selection Criteria to Report Heading
-                myReportObject.SetParameterValue("gdStartDate", (DateTime)nullableDateTimePickerStartDate.Value);
-                myReportObject.SetParameterValue("gdEndDate", (DateTime)nullableDateTimePickerEndDate.Value);
+                myReportObject.SetParameterValue("gdStartDate", (DateTime)nullableDateTimePickerStartDate.EditValue);
+                myReportObject.SetParameterValue("gdEndDate", (DateTime)nullableDateTimePickerEndDate.EditValue);
                 switch (lsStatus)
                 {
                     case "A%":

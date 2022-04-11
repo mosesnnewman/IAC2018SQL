@@ -29,7 +29,6 @@ namespace IAC2021SQL
             dlrlistbynumTableAdapter.Fill(iACDataSet.DLRLISTBYNUM);
             bindingSourceDLRLISTBYNUM.AddNew();
             bindingSourceDLRLISTBYNUM.EndEdit();
-            iACDataSet.DLRLISTBYNUM.Rows[bindingSourceDLRLISTBYNUM.Position].SetField<String>("DEALER_ACC_NO", "   ");
             iACDataSet.DLRLISTBYNUM.Rows[bindingSourceDLRLISTBYNUM.Position].SetField<String>("DEALER_NAME", "                  ");
             bindingSourceDLRLISTBYNUM.EndEdit();
         }
@@ -37,7 +36,8 @@ namespace IAC2021SQL
         private void buttonPrint_Click(object sender, EventArgs e)
         {
             // Moses Newman 02/02/2014 Add Date, Dealer, and Status selection criteria
-            String lsDealer = comboBoxDealer.Text.TrimEnd() + "%", lsStatus = "%";
+            String  lsDealer = lookUpEditDealer.EditValue != null ? lookUpEditDealer.EditValue.ToString().Trim() : "" + '%',
+                    lsStatus = "%";
             // Moses Newman 03/03/2022 Add Dealer State
             String lsDealerState = lookUpEditState.EditValue.ToString().Trim() + "%";
             Hide();

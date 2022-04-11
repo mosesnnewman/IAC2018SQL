@@ -84,7 +84,7 @@ namespace IAC2021SQL
             row.Height = 45;
             row.DefaultCellStyle.BackColor = (row.Index % 2 == 0) ? Color.Bisque : Color.White;
             row.MinimumHeight = 20;
-
+            lookUpEditCodeType.Properties.DataSource = PAYCODEbindingSource;
             StartUpConfiguration();
             PerformAutoScale();
         }
@@ -96,9 +96,8 @@ namespace IAC2021SQL
                 Program.gsKey = null;
                 lbAddFlag = false;
             }
-            PaymentTypetextBox.Text = "R";
-            CodeTypetextBox.Text = "N";
-            PAYCODEcomboBox.Text = "NONE";
+            lookUpEditPaymentType.EditValue = "R";
+            lookUpEditCodeType.EditValue = "N";
             EFTtextBox.Text = "N";
             txtPaymentDate.Text = DateTime.Today.ToShortDateString();
             labelOverPayment.Visible = false;
@@ -109,8 +108,6 @@ namespace IAC2021SQL
 
             lblPaidThrough.Visible = false;
             lblPaidThrough.Enabled = true;
-
-            PaymentTypecomboBox.Text = "";
 
             SetViewMode();
 
@@ -124,10 +121,8 @@ namespace IAC2021SQL
             toolStripButtonEdit.Enabled = true;
             toolStripButtonDelete.Enabled = true;
             txtCheckValue.ReadOnly = true;
-            PaymentTypetextBox.ReadOnly = true;
-            PaymentTypecomboBox.Enabled = false;
-            CodeTypetextBox.ReadOnly = true;
-            PAYCODEcomboBox.Enabled = false;
+            lookUpEditPaymentType.Enabled = false;
+            lookUpEditCodeType.Enabled = false;
             EFTtextBox.ReadOnly = true;
             listBoxTSBCommentCode.Enabled = false;
             txtOverPayment.ReadOnly = true;
@@ -146,10 +141,8 @@ namespace IAC2021SQL
         {
             Text = "Closed Payments (EDIT Mode)";
             txtCheckValue.ReadOnly = false;
-            PaymentTypetextBox.ReadOnly = false;
-            PaymentTypecomboBox.Enabled = true;
-            CodeTypetextBox.ReadOnly = false;
-            PAYCODEcomboBox.Enabled = true;
+            lookUpEditPaymentType.Enabled = true;
+            lookUpEditCodeType.Enabled = true;
             EFTtextBox.ReadOnly = false;
             listBoxTSBCommentCode.Enabled = true;
             txtOverPayment.ReadOnly = false;
@@ -176,10 +169,8 @@ namespace IAC2021SQL
 
             Text = "Closed Payments (ADD Mode)";
             txtCheckValue.ReadOnly = false;
-            PaymentTypetextBox.ReadOnly = false;
-            PaymentTypecomboBox.Enabled = true;
-            CodeTypetextBox.ReadOnly = false;
-            PAYCODEcomboBox.Enabled = true;
+            lookUpEditPaymentType.Enabled = true;
+            lookUpEditCodeType.Enabled = true;
             EFTtextBox.ReadOnly = false;
             listBoxTSBCommentCode.Enabled = true;
             txtOverPayment.ReadOnly = false;
@@ -215,7 +206,6 @@ namespace IAC2021SQL
         private void setRelatedData()
         {
             string lPaidThroughMM, lPaidThroughYY, lPaidThrough;
-            DataRow FoundRow;
 
             // Moses Newman 01/16/2014 Handle wrong balance issue if 1st payment in batch.
             if (ClosedPaymentiacDataSet.PAYMENT.Rows.Count != 0)
@@ -248,7 +238,7 @@ namespace IAC2021SQL
                 lPaidThroughYY = ClosedPaymentiacDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_PAID_THRU_YY");
                 lPaidThrough = lPaidThroughMM.TrimEnd() + '/' + lPaidThroughYY.TrimEnd();
                 txtPaidThrough.Text = lPaidThrough;
-                dEALERTableAdapter.Fill(ClosedPaymentiacDataSet.DEALER,DealertextBox.Text.ToString().TrimEnd());
+                dEALERTableAdapter.Fill(ClosedPaymentiacDataSet.DEALER,Convert.ToInt32(DealertextBox.Text));
                 comment_TypesTableAdapter.Fill(ClosedPaymentiacDataSet.Comment_Types);
                 PaymentbindingSource.EndEdit();
                 // Moses Newman 08/02/2013 Save CUSTOMER_BALANCE so maintenance can NOT ALTER IT even though we display the current balance only posting routines may recalculate it and write the data.
@@ -284,9 +274,6 @@ namespace IAC2021SQL
                                                 ClosedPaymentiacDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_AMORTIZE_IND") == "S" ? true : false, true, true, false));
                 if (PaymentbindingSource.Position > -1)
                 {
-                    FoundRow = ClosedPaymentiacDataSet.PAYMENTTYPE.FindByTYPE(ClosedPaymentiacDataSet.PAYMENT.Rows[PaymentbindingSource.Position].Field<String>("PAYMENT_TYPE"));
-                    if (FoundRow != null)
-                        PaymentTypecomboBox.Text = FoundRow.Field<String>("Description");
                     if (ClosedPaymentiacDataSet.PAYMENT.Rows[PaymentbindingSource.Position].Field<String>("PAYMENT_TYPE") == "I")
                     {
                         if (lbAddFlag || lbEdit)
@@ -393,10 +380,10 @@ namespace IAC2021SQL
                 {
                     cUSTOMERTableAdapter.Fill(ClosedPaymentiacDataSet.CUSTOMER, cUSTOMER_NOTextBox.Text.ToString().Trim());
                 }
-                if(ClosedPaymentiacDataSet.CUSTOMER.Rows.Count > 0 && lbAddFlag) // Moses Newman 10/26/2021 no more payments to Inactive accounts!
-                    if(ClosedPaymentiacDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_ACT_STAT") == "I")
+                if (ClosedPaymentiacDataSet.CUSTOMER.Rows.Count > 0 && lbAddFlag) // Moses Newman 10/26/2021 no more payments to Inactive accounts!
+                    if (ClosedPaymentiacDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_ACT_STAT") == "I")
                     {
-                        MessageBox.Show("*** SORRY ACCOUNT: " + cUSTOMER_NOTextBox.Text.ToString().Trim() + " " +ClosedPaymentiacDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_FIRST_NAME").Trim() + " " + ClosedPaymentiacDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_LAST_NAME").Trim() + " IS INACTIVE! ***");
+                        MessageBox.Show("*** SORRY ACCOUNT: " + cUSTOMER_NOTextBox.Text.ToString().Trim() + " " + ClosedPaymentiacDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_FIRST_NAME").Trim() + " " + ClosedPaymentiacDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_LAST_NAME").Trim() + " IS INACTIVE! ***");
                         ClosedPaymentiacDataSet.CUSTOMER.Clear();
                         cUSTOMER_NOTextBox.Text = "";
                         setRelatedData();
@@ -441,14 +428,11 @@ namespace IAC2021SQL
                     ClosedPaymentiacDataSet.PAYMENT.Rows[PaymentbindingSource.Position].SetField<String>("PAYMENT_IAC_TYPE", "C");
                     ClosedPaymentiacDataSet.PAYMENT.Rows[PaymentbindingSource.Position].SetField<DateTime>("PAYMENT_DATE", DateTime.Now.Date);
                     ClosedPaymentiacDataSet.PAYMENT.Rows[PaymentbindingSource.Position].SetField<String>("PAYMENT_POST_INDICATOR", " ");
-                    ClosedPaymentiacDataSet.PAYMENT.Rows[PaymentbindingSource.Position].SetField<String>("PAYMENT_DEALER", DealertextBox.Text.ToString().TrimEnd());
+                    ClosedPaymentiacDataSet.PAYMENT.Rows[PaymentbindingSource.Position].SetField<Int32>("PAYMENT_DEALER", ClosedPaymentiacDataSet.CUSTOMER.Rows[0].Field<Int32>("CUSTOMER_DEALER"));
                     ClosedPaymentiacDataSet.PAYMENT.Rows[PaymentbindingSource.Position].SetField<String>("PAYMENT_TYPE", "R");
                     ClosedPaymentiacDataSet.PAYMENT.Rows[PaymentbindingSource.Position].SetField<String>("PAYMENT_CODE_2", "N");
                     ClosedPaymentiacDataSet.PAYMENT.Rows[PaymentbindingSource.Position].SetField<String>("PAYMENT_AUTO_PAY", ClosedPaymentiacDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_AUTOPAY"));
                     ClosedPaymentiacDataSet.PAYMENT.Rows[PaymentbindingSource.Position].SetField<String>("PAYMENT_TSB_COMMENT_CODE", ClosedPaymentiacDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_TSB_COMMENT_CODE"));
-                    PaymentTypecomboBox.Text = "Regular Payment";
-                    CodeTypetextBox.Text = "N";
-                    PAYCODEcomboBox.Text = "NONE";
                     EFTtextBox.Text = ClosedPaymentiacDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_AUTOPAY");
 
                     if (ClosedPaymentiacDataSet.CUSTOMER.Rows.Count != 0)
@@ -462,142 +446,6 @@ namespace IAC2021SQL
                     txtCheckValue.SelectAll();
                 }
             }
-    }
-
-
-
-        private void PaymentTypecomboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (PaymentTypetextBox.Text == "I" || PaymentbindingSource.Position < 0)
-                return;
-            if (PaymentTypecomboBox.SelectedIndex > -1)
-            {
-                PaymentTypetextBox.Text = ClosedPaymentiacDataSet.PAYMENTTYPE.Rows[PaymentTypecomboBox.SelectedIndex].Field<String>("TYPE");
-
-                if (lbAddFlag || lbEdit)
-                    toolStripButtonSave.Enabled = true;
-            }
-            if (PaymentTypetextBox.Text.ToString().ToUpper().TrimEnd() == "W")
-                pAYCODETableAdapter.FillByCodeW(ClosedPaymentiacDataSet.PAYCODE);
-            else
-            {
-                // Moses Newman 04/13/2021 Fill Paycodes
-                pAYCODETableAdapter.FillByType(ClosedPaymentiacDataSet.PAYCODE, PaymentTypetextBox.Text.ToString().ToUpper().TrimEnd());
-                // Moses Newman 04/28/2021 don't default code if one exists in payment already!
-                if (ClosedPaymentiacDataSet.PAYMENT.Rows[PaymentbindingSource.Position].Field<String>("PAYMENT_CODE_2") == null || ClosedPaymentiacDataSet.PAYMENT.Rows[PaymentbindingSource.Position].Field<String>("PAYMENT_CODE_2") == "")
-                {
-                    switch (PaymentTypetextBox.Text.ToString().ToUpper().TrimEnd())
-                    {
-                        // Moses Newman 04/13/2021 Default to first record in list
-                        case "B":
-                            CodeTypetextBox.Text = "G";
-                            break;
-                        // Moses Newman 07/07/2021 
-                        case "R":
-                            CodeTypetextBox.Text = "C";
-                            break;
-                        case "W":
-                            CodeTypetextBox.Text = "H";
-                            break;
-                        default:
-                            CodeTypetextBox.Text = " ";
-                            break;
-                    }
-                }
-                CodeTypetextBox.Refresh();
-                PAYCODEbindingSource.DataSource = ClosedPaymentiacDataSet.PAYCODE;
-                PAYCODEcomboBox.Refresh();
-            }
-            /* Moses Newman 04/13/2021
-            if (PaymentTypetextBox.Text.ToString().ToUpper().TrimEnd() == "W")
-            {
-                if (ClosedPaymentiacDataSet.PAYCODE.Rows.Count != 2)
-                    pAYCODETableAdapter.FillByCodeW(ClosedPaymentiacDataSet.PAYCODE);
-            }
-            else
-            {
-                if (ClosedPaymentiacDataSet.PAYCODE.Rows.Count == 2)
-                    pAYCODETableAdapter.Fill(ClosedPaymentiacDataSet.PAYCODE);
-            }*/
-            toolStripButtonSave.Enabled = true;
-            //HandleISF();
-            if (ActiveControl == PaymentTypecomboBox)
-            {
-                ActiveControl = CodeTypetextBox;
-                CodeTypetextBox.SelectAll();
-            }
-        }
-
-
-        private void PaymentTypetextBox_Validated(object sender = null, EventArgs e = null)
-        {
-            if (PaymentTypetextBox.Text.TrimEnd() == "")
-                return;
-            DataRow FoundRow;
-            if (ClosedPaymentiacDataSet.PAYMENTTYPE.Rows.Count == 0)
-                pAYMENTTYPETableAdapter.Fill(ClosedPaymentiacDataSet.PAYMENTTYPE);
-            FoundRow = ClosedPaymentiacDataSet.PAYMENTTYPE.Rows.Find(PaymentTypetextBox.Text.TrimEnd());
-
-            if (FoundRow == null)
-            {
-                if (PaymentTypetextBox.Text.ToString().Trim().Length != 0)
-                    MessageBox.Show("Incorrect Payment Type entered. Please respecify.");
-                if (lbAddFlag || lbEdit)
-                {
-                    ActiveControl = PaymentTypecomboBox;
-                    PaymentTypecomboBox.SelectAll();
-                }
-            }
-            else
-            {
-                PaymentTypecomboBox.Text = FoundRow.Field<String>("DESCRIPTION");
-                if (PaymentTypetextBox.Text.ToString().ToUpper().TrimEnd() == "E")
-                {
-                    lblPaidThrough.Enabled = true;
-                    lblPaidThrough.Visible = true;
-                    PaidThroughUDtextBox.Enabled = true;
-                    PaidThroughUDtextBox.Visible = true;
-                    ActiveControl = PaidThroughUDtextBox;
-                    PaidThroughUDtextBox.SelectAll();
-                }
-                else
-                {
-                    lblPaidThrough.Enabled = false;
-                    lblPaidThrough.Visible = false;
-                    PaidThroughUDtextBox.Enabled = false;
-                    PaidThroughUDtextBox.Visible = false;
-                    // Moses Newman 04/13/2021 Fill Paycodes
-                    pAYCODETableAdapter.FillByType(ClosedPaymentiacDataSet.PAYCODE, PaymentTypetextBox.Text.ToString().ToUpper().TrimEnd());
-                    // Moses Newman 04/28/2021 don't default code if one exists in payment already!
-                    if (ClosedPaymentiacDataSet.PAYMENT.Rows[PaymentbindingSource.Position].Field<String>("PAYMENT_CODE_2") == null || ClosedPaymentiacDataSet.PAYMENT.Rows[PaymentbindingSource.Position].Field<String>("PAYMENT_CODE_2") == "")
-                    {
-                        switch (PaymentTypetextBox.Text.ToString().ToUpper().TrimEnd())
-                        {
-                            // Moses Newman 04/13/2021 Default to first record in list
-                            case "B":
-                                CodeTypetextBox.Text = "G";
-                                break;
-                            case "W":
-                                CodeTypetextBox.Text = "H";
-                                break;
-                            default:
-                                CodeTypetextBox.Text = " ";
-                                break;
-                        }
-                    }
-                    CodeTypetextBox.Refresh();
-                    PAYCODEbindingSource.DataSource = ClosedPaymentiacDataSet.PAYCODE;
-                    PAYCODEcomboBox.Refresh();
-                    //pAYCODETableAdapter.Fill(ClosedPaymentiacDataSet.PAYCODE);
-                    if (lbEdit || lbAddFlag)
-                    {
-                        ActiveControl = CodeTypetextBox;
-                        CodeTypetextBox.SelectAll();
-                    }
-                }
-            }
-            // New routine to handle ISF date selection
-            //HandleISF();
         }
 
         private void txtCheckValue_Validated(object sender, EventArgs e)
@@ -670,91 +518,10 @@ namespace IAC2021SQL
                 }
         }
 
-        private void PAYCODEcomboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (ClosedPaymentiacDataSet.PAYCODE.Rows.Count < 1)
-                return;
-            if (PAYCODEcomboBox.SelectedIndex > -1)
-                CodeTypetextBox.Text = ClosedPaymentiacDataSet.PAYCODE.Rows[PAYCODEcomboBox.SelectedIndex].Field<String>("CODE");
-            else
-            {
-                if (PaymentTypetextBox.Text != "W")
-                    if (CodeTypetextBox.Text.TrimEnd() == "")
-                        CodeTypetextBox.Text = "N";
-                    else
-                        if (CodeTypetextBox.Text.TrimEnd() != "L" || CodeTypetextBox.Text.TrimEnd() != "H")
-                            CodeTypetextBox.Text = "H";
-                //CodeTypetextBox_Validated(); // Moses Newman 04/28/2021 commented this out
-            }
-            if (lbEdit || lbAddFlag)
-            {
-                ActiveControl = EFTtextBox;
-                EFTtextBox.SelectAll();
-                toolStripButtonSave.Enabled = true;
-            }
-        }
-
-        private void CodeTypetextBox_Validated(object sender = null, EventArgs e = null)
-        {
-            if (ClosedPaymentiacDataSet.PAYCODE.Rows.Count < 1 || CodeTypetextBox.Text.TrimEnd() == "")
-                return;
-
-            DataRow FoundRow;
-
-            if ((CodeTypetextBox.Text == "H" || CodeTypetextBox.Text == "L") && PaymentTypetextBox.Text != "W")
-                PaymentTypetextBox.Text = "W";
-
-            if (PaymentTypetextBox.Text == "W")
-            {
-                switch (CodeTypetextBox.Text.ToString().TrimEnd())
-                {
-                    case "L":
-                    case "H":
-                        break;
-                    case "C":
-                    default:
-                        CodeTypetextBox.Text = "H";
-                        break;
-                }
-            }
-            String tmpcode = PaymentTypetextBox.Text;
-            if (PaymentTypetextBox.Text == "W" && ClosedPaymentiacDataSet.PAYCODE.Rows.Count != 2)
-            {
-                ClosedPaymentiacDataSet.PAYCODE.Clear();
-                pAYCODETableAdapter.FillByCodeW(ClosedPaymentiacDataSet.PAYCODE);
-            }
-            FoundRow = ClosedPaymentiacDataSet.PAYCODE.Rows.Find(CodeTypetextBox.Text.ToString().TrimEnd());
-
-            if (FoundRow == null)
-            {
-                if (CodeTypetextBox.Text.ToString().Trim().Length != 0)
-                {
-                    // Moses Newman 04/28/2021
-                    //MessageBox.Show("Sorry no payment code found that matches your selected payment code!");
-                    CodeTypetextBox.Text = "";
-                    ActiveControl = PAYCODEcomboBox;
-                    CodeTypetextBox.SelectAll();
-                }
-            }
-            else
-            {
-                PAYCODEcomboBox.Text = FoundRow.Field<String>("DESCRIPTION");
-                if (lbEdit || lbAddFlag)
-                {
-                    ActiveControl = EFTtextBox;
-                    EFTtextBox.SelectAll();
-                }
-            }
-            if (lbEdit || lbAddFlag)
-                toolStripButtonSave.Enabled = true;
-            else
-                toolStripButtonSave.Enabled = false;
-        }
-
         private void PaidThroughtextBox_Validated(object sender, EventArgs e)
         {
-            ActiveControl = CodeTypetextBox;
-            CodeTypetextBox.SelectAll();
+            ActiveControl = lookUpEditCodeType;
+            lookUpEditCodeType.SelectAll();
         }
 
         private void toolStripButton1_Click(object sender, EventArgs e)
@@ -867,8 +634,6 @@ namespace IAC2021SQL
                     cUSTOMER_NOTextBox.Text = ClosedPaymentiacDataSet.PAYMENT.Rows[PaymentbindingSource.Position].Field<String>("PAYMENT_CUSTOMER");
                 }
                 setRelatedData();
-                PaymentTypetextBox_Validated(sender, e);
-                CodeTypetextBox_Validated(sender, e);
                 ActiveControl = cUSTOMER_NOTextBox;
                 cUSTOMER_NOTextBox.SelectAll();
             }
@@ -894,10 +659,7 @@ namespace IAC2021SQL
             SetAddMode();
             txtLoanBalance.Text = "";
             txtPaidThrough.Text = "";
-            PaymentTypecomboBox.Text = "";
             txtPaymentDate.Text = "";
-            CodeTypetextBox.Text = "";
-            PAYCODEcomboBox.Text = "";
             txtCheckValue.Text = "";
             txtPaymentDate.Text = "";
             txtIncome.Visible = false;
@@ -922,6 +684,9 @@ namespace IAC2021SQL
 
         private void LockPaymentRecord()
         {
+            if (PaymentbindingSource.Position == -1)
+                return;
+
             Object loLockedBy = paymentTableAdapter.LockedBy(cUSTOMER_NOTextBox.Text, ClosedPaymentiacDataSet.PAYMENT.Rows[PaymentbindingSource.Position].Field<DateTime>("PAYMENT_DATE"), ClosedPaymentiacDataSet.PAYMENT.Rows[PaymentbindingSource.Position].Field<Int32>("SeqNo")),
             loLockedTime = paymentTableAdapter.LockTime(cUSTOMER_NOTextBox.Text, ClosedPaymentiacDataSet.PAYMENT.Rows[PaymentbindingSource.Position].Field<DateTime>("PAYMENT_DATE"), ClosedPaymentiacDataSet.PAYMENT.Rows[PaymentbindingSource.Position].Field<Int32>("SeqNo"));
 
@@ -965,7 +730,7 @@ namespace IAC2021SQL
                     lnSeq = 1;
             }
             else
-                lnSeq = lnSeq + 1;
+                lnSeq++;
         }
 
         private void cOMMENTDataGridView_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
@@ -1041,10 +806,7 @@ namespace IAC2021SQL
             txtPaidThrough.Text = "";
             txtLoanBalance.Text = "";
             txtPaidThrough.Text = "";
-            PaymentTypecomboBox.Text = "";
             txtPaymentDate.Text = "";
-            CodeTypetextBox.Text = "";
-            PAYCODEcomboBox.Text = "";
             txtCheckValue.Text = "";
             txtPaymentDate.Text = "";
 
@@ -1079,6 +841,72 @@ namespace IAC2021SQL
         private void PaymentbindingSource_AddingNew(object sender, AddingNewEventArgs e)
         {
             lbNewPayment = true;
+        }
+
+        private void lookUpEditPaymentType_EditValueChanged(object sender, EventArgs e)
+        {
+            if (!lbEdit & !lbAddFlag)
+            {
+                ClosedPaymentiacDataSet.PAYCODE.Clear();
+                pAYCODETableAdapter.FillByType(ClosedPaymentiacDataSet.PAYCODE, "*");
+                PAYCODEbindingSource.DataSource = ClosedPaymentiacDataSet.PAYCODE;
+                return;
+            }
+            ClosedPaymentiacDataSet.PAYCODE.Clear();
+            pAYCODETableAdapter.FillByType(ClosedPaymentiacDataSet.PAYCODE, (String)lookUpEditPaymentType.EditValue);
+            PAYCODEbindingSource.DataSource = ClosedPaymentiacDataSet.PAYCODE;
+            PAYCODEbindingSource.MoveFirst();
+            lookUpEditCodeType.EditValue = ClosedPaymentiacDataSet.PAYCODE.Rows[0].Field<String>("Code");
+            lookUpEditCodeType.Refresh();
+            toolStripButtonSave.Enabled = true;
+        }
+
+        private void lookUpEditPaymentType_Validated(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty((String)lookUpEditPaymentType.EditValue))
+                return;
+            if ((String)lookUpEditPaymentType.EditValue == "E")
+            {
+                lblPaidThrough.Enabled = true;
+                lblPaidThrough.Visible = true;
+                PaidThroughUDtextBox.Enabled = true;
+                PaidThroughUDtextBox.Visible = true;
+                ActiveControl = PaidThroughUDtextBox;
+                PaidThroughUDtextBox.SelectAll();
+            }
+            else
+            {
+                lblPaidThrough.Enabled = false;
+                lblPaidThrough.Visible = false;
+                PaidThroughUDtextBox.Enabled = false;
+                PaidThroughUDtextBox.Visible = false;
+                // Moses Newman 04/13/2021 Fill Paycodes
+                pAYCODETableAdapter.FillByType(ClosedPaymentiacDataSet.PAYCODE, (String)lookUpEditPaymentType.EditValue);
+                // Moses Newman 04/28/2021 don't default code if one exists in payment already!
+                if (ClosedPaymentiacDataSet.PAYMENT.Rows[PaymentbindingSource.Position].Field<String>("PAYMENT_CODE_2") == null || ClosedPaymentiacDataSet.PAYMENT.Rows[PaymentbindingSource.Position].Field<String>("PAYMENT_CODE_2") == "")
+                {
+                    switch ((String)lookUpEditPaymentType.EditValue)
+                    {
+                        // Moses Newman 04/13/2021 Default to first record in list
+                        case "B":
+                            lookUpEditCodeType.EditValue = "G";
+                            break;
+                        case "W":
+                            lookUpEditCodeType.EditValue = "H";
+                            break;
+                        default:
+                            lookUpEditCodeType.EditValue = " ";
+                            break;
+                    }
+                }
+                lookUpEditCodeType.Refresh();
+                PAYCODEbindingSource.DataSource = ClosedPaymentiacDataSet.PAYCODE;
+                if (lbEdit || lbAddFlag)
+                {
+                    ActiveControl = lookUpEditCodeType;
+                    lookUpEditCodeType.SelectAll();
+                }
+            }
         }
 
         private void toolStripButtonDelete_Click(object sender, EventArgs e)
@@ -1158,7 +986,7 @@ namespace IAC2021SQL
         private void SelectCheck()
         {
             FormSelectCheck frmSelectCheckInst;
-            frmSelectCheckInst = new FormSelectCheck(cUSTOMER_NOTextBox.Text.TrimEnd(), true, PaymentTypetextBox.Text.Trim());
+            frmSelectCheckInst = new FormSelectCheck(cUSTOMER_NOTextBox.Text.TrimEnd(), true, (String)lookUpEditPaymentType.EditValue);
             if (!frmSelectCheckInst.DoNotShow)
             {
                 frmSelectCheckInst.ShowDialog();
@@ -1186,7 +1014,7 @@ namespace IAC2021SQL
             if (ClosedPaymentiacDataSet.PAYMENT.Rows.Count < 1 || PaymentbindingSource.Position < 0)
                 return;
             PaymentbindingSource.EndEdit();
-            if (PaymentTypetextBox.Text.ToString().ToUpper().TrimEnd() != "I" && ClosedPaymentiacDataSet.PAYMENT.Rows[PaymentbindingSource.Position].Field<Decimal>("PAYMENT_AMOUNT_RCV") >= 0)
+            if ((String)lookUpEditPaymentType.EditValue != "I" && ClosedPaymentiacDataSet.PAYMENT.Rows[PaymentbindingSource.Position].Field<Decimal>("PAYMENT_AMOUNT_RCV") >= 0)
             {
                 if (lbAddFlag || lbEdit)
                     if (ClosedPaymentiacDataSet.PAYMENT.Rows[PaymentbindingSource.Position].Field<Nullable<DateTime>>("PAYMENT_ISF_DATE") != null)
@@ -1238,10 +1066,10 @@ namespace IAC2021SQL
             Decimal.TryParse(txtCheckValue.Text, System.Globalization.NumberStyles.Currency, System.Globalization.CultureInfo.CreateSpecificCulture("en-US"), out lnCheckValue);
             if(!lbAddFlag && !lbEdit)
                 return;
-            if(PaymentTypetextBox.Text.ToUpper() != "I" && lnCheckValue >= 0) 
+            if((String)lookUpEditPaymentType.EditValue != "I" && lnCheckValue >= 0) 
                 return;
             // Moses Newman 04/29/2018 Do not call select check if payment is ADJ and checkboxNoAdjLookBack is checked!
-            if (lnCheckValue < 0 && PaymentTypetextBox.Text.ToUpper() == "A" && checkBoxNoAdjLookBack.Checked)
+            if (lnCheckValue < 0 && (String)lookUpEditPaymentType.EditValue == "A" && checkBoxNoAdjLookBack.Checked)
                 return;
             PaymentbindingSource.EndEdit(); 
             if (PaymentbindingSource.Position > -1)
@@ -1255,7 +1083,7 @@ namespace IAC2021SQL
                 }
                 else
                 {
-                    ClosedPaymentiacDataSet.PAYMENT.Rows[PaymentbindingSource.Position].SetField<String>("PAYMENT_TYPE", PaymentTypetextBox.Text.ToUpper());
+                    ClosedPaymentiacDataSet.PAYMENT.Rows[PaymentbindingSource.Position].SetField<String>("PAYMENT_TYPE", (String)lookUpEditPaymentType.EditValue);
                     PaymentbindingSource.EndEdit();
                 }
                 HandleISF();

@@ -1213,7 +1213,8 @@ namespace IAC2021SQL
                 tableAdapTran = DEALERTableAdapter.BeginTransaction();
                 DEALERTableAdapter.Transaction = tableAdapTran;
                 DEALHISTTableAdapter.Transaction = tableAdapTran;
-                DEALERTableAdapter.Fill(DEALER, WS_DEALER[dlrCount].Field<String>("KEY").ToString());
+				// Moses Newman 03/27/2022 DEALER now uses integer key id
+				DEALERTableAdapter.Fill(DEALER, WS_DEALER[dlrCount].Field<Int32>("KEY"));
 				DEALER.Rows[0].SetField<Decimal>("DEALER_CUR_RSV", 0);
 				DEALER.Rows[0].SetField<Decimal>("DEALER_CUR_CONT", 0);
 				DEALER.Rows[0].SetField<Decimal>("DEALER_CUR_ADJ", 0);
@@ -1237,7 +1238,7 @@ namespace IAC2021SQL
 				DEALER.Rows[0].SetField<Decimal>("DEALER_CUR_SIMPLE_PDI", 0);
 				DEALER.Rows[0].SetField<Decimal>("DEALER_CUR_OLD_PDI", 0);
 				lnMasterOLoan += WS_DEALER.Rows[dlrCount].Field<Decimal>("OS_L");
-				loDealhistSeq = DEALHISTTableAdapter.SeqNoQuery(WS_DEALER.Rows[dlrCount].Field<String>("KEY").ToString(), NowDate.Date, NowDate.Date);
+				loDealhistSeq = DEALHISTTableAdapter.SeqNoQuery(WS_DEALER.Rows[dlrCount].Field<Int32>("KEY"), NowDate.Date, NowDate.Date);
 				if (loDealhistSeq != null)
 					lnSeq = (int)loDealhistSeq + 1;
 				else
@@ -1245,7 +1246,8 @@ namespace IAC2021SQL
 				DealerBindingSource.EndEdit();
 				DealhistBindingSource.AddNew();
 				DealhistBindingSource.EndEdit();
-				DEALHIST.Rows[DealhistBindingSource.Position].SetField<String>("DEALHIST_ACC_NO", DEALER.Rows[0].Field<String>("DEALER_ACC_NO"));
+				// Moses Newman 03/27/2022 DEALHIST_ACC_NO now integer
+				DEALHIST.Rows[DealhistBindingSource.Position].SetField<Int32>("DEALHIST_ACC_NO", DEALER.Rows[0].Field<Int32>("id"));
                 // Moses Newman  08/3/2013 have to limit DEALHIST_NAME TO 25 Charaters if ther are single quotes because they require padding with aditional quotes
 				DEALHIST.Rows[DealhistBindingSource.Position].SetField<String>("DEALHIST_NAME", Left(DEALER.Rows[0].Field<String>("DEALER_NAME").Replace("\'", "\'\'"),25));
 				DEALHIST.Rows[DealhistBindingSource.Position].SetField<Decimal>("DEALHIST_CUR_RSV", DEALER.Rows[0].Field<Decimal>("DEALER_CUR_RSV"));

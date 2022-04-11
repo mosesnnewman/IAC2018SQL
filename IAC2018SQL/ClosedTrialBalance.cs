@@ -11,7 +11,7 @@ using System.IO;
 
 namespace IAC2021SQL
 {
-    public partial class frmClosedTrialBalance : Form
+    public partial class frmClosedTrialBalance : DevExpress.XtraEditors.XtraForm
     {
 
         public frmClosedTrialBalance()
@@ -32,7 +32,7 @@ namespace IAC2021SQL
             dlrlistbynumTableAdapter.Fill(iACDataSet.DLRLISTBYNUM);
             DLRLISTBYNUMbindingSource.AddNew();
             DLRLISTBYNUMbindingSource.EndEdit();
-            iACDataSet.DLRLISTBYNUM.Rows[DLRLISTBYNUMbindingSource.Position].SetField<String>("DEALER_ACC_NO", "   ");
+            
             iACDataSet.DLRLISTBYNUM.Rows[DLRLISTBYNUMbindingSource.Position].SetField<String>("DEALER_NAME", "                  ");
             DLRLISTBYNUMbindingSource.EndEdit();
         }
@@ -55,9 +55,9 @@ namespace IAC2021SQL
 
         private void PrintClosedTrialBalance(ReportViewer rptViewer)
         {
-            String  lsDealerNum = comboBoxDealer.Text.TrimEnd().TrimStart() + "%",lsState;
+            String  lsDealerNum = lookUpEditDealer.EditValue != null ? lookUpEditDealer.EditValue.ToString().Trim():"" + "%",lsState;
 
-            lsState = (comboBoxState.SelectedValue != null) ? comboBoxState.SelectedValue.ToString().TrimStart().TrimEnd() + "%" : "%";
+            lsState = (lookUpEditState.EditValue != null) ? lookUpEditState.EditValue.ToString().Trim() + "%" : "%";
 
             IACDataSetTableAdapters.CUSTOMERTableAdapter CUSTOMERTableAdapter = new IACDataSetTableAdapters.CUSTOMERTableAdapter();
             IACDataSetTableAdapters.DEALERTableAdapter DEALERTableAdapter = new IACDataSetTableAdapters.DEALERTableAdapter();
@@ -83,9 +83,9 @@ namespace IAC2021SQL
             SQLBackupandRestore SQLBR = new SQLBackupandRestore();
             TrialBalancePretty TBP = new TrialBalancePretty();
 
-            String lsDealerNum = comboBoxDealer.Text.TrimEnd().TrimStart() + "%", lsState;
+            String lsDealerNum = lookUpEditDealer.EditValue != null ? lookUpEditDealer.EditValue.ToString().Trim() : "" + "%", lsState;
 
-            lsState = (comboBoxState.SelectedValue != null) ? comboBoxState.SelectedValue.ToString().TrimStart().TrimEnd() + "%" : "%";
+            lsState = (lookUpEditState.EditValue != null) ? lookUpEditState.EditValue.ToString().Trim() + "%" : "%";
 
             IACDataSetTableAdapters.CUSTOMERTableAdapter CUSTOMERTableAdapter = new IACDataSetTableAdapters.CUSTOMERTableAdapter();
             IACDataSetTableAdapters.ClosedDealerSummaryTableAdapter ClosedDealerSummaryTableAdapter = new IACDataSetTableAdapters.ClosedDealerSummaryTableAdapter();

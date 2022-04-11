@@ -36,9 +36,7 @@
             this.labelEndDate = new DevExpress.XtraEditors.LabelControl();
             this.nullableDateTimePickerStartDate = new DevExpress.XtraEditors.DateEdit();
             this.nullableDateTimePickerEndDate = new DevExpress.XtraEditors.DateEdit();
-            this.textBoxDealerName = new System.Windows.Forms.TextBox();
             this.bindingSourceDLRLISTBYNUM = new System.Windows.Forms.BindingSource(this.components);
-            this.comboBoxDealer = new System.Windows.Forms.ComboBox();
             this.labelDealerNum = new DevExpress.XtraEditors.LabelControl();
             this.dlrlistbynumTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.DLRLISTBYNUMTableAdapter();
             this.closedCustomerBuybackTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.ClosedCustomerBuybackTableAdapter();
@@ -51,6 +49,7 @@
             this.stateBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.labelControlState = new DevExpress.XtraEditors.LabelControl();
             this.stateTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.stateTableAdapter();
+            this.lookUpEditDealer = new DevExpress.XtraEditors.LookUpEdit();
             ((System.ComponentModel.ISupportInitialize)(this.iACDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerStartDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerStartDate.Properties)).BeginInit();
@@ -62,13 +61,14 @@
             this.groupControlMissingTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEditState.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stateBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEditDealer.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonPost
             // 
             this.buttonPost.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonPost.Appearance.Options.UseFont = true;
-            this.buttonPost.Location = new System.Drawing.Point(181, 255);
+            this.buttonPost.Location = new System.Drawing.Point(197, 268);
             this.buttonPost.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonPost.Name = "buttonPost";
             this.buttonPost.Size = new System.Drawing.Size(112, 35);
@@ -80,7 +80,7 @@
             // 
             this.buttonCancel.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCancel.Appearance.Options.UseFont = true;
-            this.buttonCancel.Location = new System.Drawing.Point(302, 255);
+            this.buttonCancel.Location = new System.Drawing.Point(318, 268);
             this.buttonCancel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(112, 35);
@@ -92,7 +92,7 @@
             // 
             this.labelStartDate.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelStartDate.Appearance.Options.UseFont = true;
-            this.labelStartDate.Location = new System.Drawing.Point(56, 12);
+            this.labelStartDate.Location = new System.Drawing.Point(213, 25);
             this.labelStartDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelStartDate.Name = "labelStartDate";
             this.labelStartDate.Size = new System.Drawing.Size(89, 20);
@@ -108,7 +108,7 @@
             // 
             this.labelEndDate.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelEndDate.Appearance.Options.UseFont = true;
-            this.labelEndDate.Location = new System.Drawing.Point(64, 46);
+            this.labelEndDate.Location = new System.Drawing.Point(221, 61);
             this.labelEndDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelEndDate.Name = "labelEndDate";
             this.labelEndDate.Size = new System.Drawing.Size(81, 20);
@@ -119,62 +119,44 @@
             // 
             this.nullableDateTimePickerStartDate.EditValue = new System.DateTime(2022, 3, 3, 0, 0, 0, 0);
             this.nullableDateTimePickerStartDate.EnterMoveNextControl = true;
-            this.nullableDateTimePickerStartDate.Location = new System.Drawing.Point(150, 12);
+            this.nullableDateTimePickerStartDate.Location = new System.Drawing.Point(307, 19);
             this.nullableDateTimePickerStartDate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nullableDateTimePickerStartDate.Name = "nullableDateTimePickerStartDate";
+            this.nullableDateTimePickerStartDate.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nullableDateTimePickerStartDate.Properties.Appearance.Options.UseFont = true;
             this.nullableDateTimePickerStartDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.nullableDateTimePickerStartDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.nullableDateTimePickerStartDate.Size = new System.Drawing.Size(86, 20);
+            this.nullableDateTimePickerStartDate.Size = new System.Drawing.Size(107, 26);
             this.nullableDateTimePickerStartDate.TabIndex = 1;
             // 
             // nullableDateTimePickerEndDate
             // 
             this.nullableDateTimePickerEndDate.EditValue = new System.DateTime(2022, 3, 3, 0, 0, 0, 0);
             this.nullableDateTimePickerEndDate.EnterMoveNextControl = true;
-            this.nullableDateTimePickerEndDate.Location = new System.Drawing.Point(150, 46);
+            this.nullableDateTimePickerEndDate.Location = new System.Drawing.Point(307, 55);
             this.nullableDateTimePickerEndDate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.nullableDateTimePickerEndDate.Name = "nullableDateTimePickerEndDate";
+            this.nullableDateTimePickerEndDate.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nullableDateTimePickerEndDate.Properties.Appearance.Options.UseFont = true;
             this.nullableDateTimePickerEndDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.nullableDateTimePickerEndDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.nullableDateTimePickerEndDate.Size = new System.Drawing.Size(86, 20);
+            this.nullableDateTimePickerEndDate.Size = new System.Drawing.Size(107, 26);
             this.nullableDateTimePickerEndDate.TabIndex = 2;
-            // 
-            // textBoxDealerName
-            // 
-            this.textBoxDealerName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bindingSourceDLRLISTBYNUM, "DEALER_NAME", true));
-            this.textBoxDealerName.Location = new System.Drawing.Point(250, 79);
-            this.textBoxDealerName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.textBoxDealerName.Name = "textBoxDealerName";
-            this.textBoxDealerName.ReadOnly = true;
-            this.textBoxDealerName.Size = new System.Drawing.Size(328, 22);
-            this.textBoxDealerName.TabIndex = 15;
             // 
             // bindingSourceDLRLISTBYNUM
             // 
             this.bindingSourceDLRLISTBYNUM.DataMember = "DLRLISTBYNUM";
             this.bindingSourceDLRLISTBYNUM.DataSource = this.iACDataSet;
             // 
-            // comboBoxDealer
-            // 
-            this.comboBoxDealer.DataSource = this.bindingSourceDLRLISTBYNUM;
-            this.comboBoxDealer.DisplayMember = "DEALER_ACC_NO";
-            this.comboBoxDealer.FormattingEnabled = true;
-            this.comboBoxDealer.Location = new System.Drawing.Point(150, 80);
-            this.comboBoxDealer.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.comboBoxDealer.Name = "comboBoxDealer";
-            this.comboBoxDealer.Size = new System.Drawing.Size(86, 21);
-            this.comboBoxDealer.TabIndex = 3;
-            this.comboBoxDealer.ValueMember = "DEALER_ACC_NO";
-            // 
             // labelDealerNum
             // 
             this.labelDealerNum.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelDealerNum.Appearance.Options.UseFont = true;
-            this.labelDealerNum.Location = new System.Drawing.Point(87, 81);
+            this.labelDealerNum.Location = new System.Drawing.Point(244, 97);
             this.labelDealerNum.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelDealerNum.Name = "labelDealerNum";
             this.labelDealerNum.Size = new System.Drawing.Size(58, 20);
@@ -229,7 +211,7 @@
             this.groupBox1.Controls.Add(this.radioButtonBoth);
             this.groupBox1.Controls.Add(this.radioButtonInactive);
             this.groupBox1.Controls.Add(this.radioButtonActive);
-            this.groupBox1.Location = new System.Drawing.Point(213, 140);
+            this.groupBox1.Location = new System.Drawing.Point(229, 153);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(169, 102);
             this.groupBox1.TabIndex = 19;
@@ -240,11 +222,10 @@
             this.groupControlMissingTitle.Appearance.BackColor = System.Drawing.Color.LightSteelBlue;
             this.groupControlMissingTitle.Appearance.Options.UseBackColor = true;
             this.groupControlMissingTitle.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.groupControlMissingTitle.Controls.Add(this.lookUpEditDealer);
             this.groupControlMissingTitle.Controls.Add(this.lookUpEditState);
             this.groupControlMissingTitle.Controls.Add(this.labelControlState);
             this.groupControlMissingTitle.Controls.Add(this.groupBox1);
-            this.groupControlMissingTitle.Controls.Add(this.textBoxDealerName);
-            this.groupControlMissingTitle.Controls.Add(this.comboBoxDealer);
             this.groupControlMissingTitle.Controls.Add(this.labelDealerNum);
             this.groupControlMissingTitle.Controls.Add(this.nullableDateTimePickerEndDate);
             this.groupControlMissingTitle.Controls.Add(this.nullableDateTimePickerStartDate);
@@ -262,14 +243,17 @@
             // 
             this.lookUpEditState.EditValue = "";
             this.lookUpEditState.EnterMoveNextControl = true;
-            this.lookUpEditState.Location = new System.Drawing.Point(150, 115);
+            this.lookUpEditState.Location = new System.Drawing.Point(307, 127);
             this.lookUpEditState.Name = "lookUpEditState";
+            this.lookUpEditState.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lookUpEditState.Properties.Appearance.Options.UseFont = true;
+            this.lookUpEditState.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
             this.lookUpEditState.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.lookUpEditState.Properties.DataSource = this.stateBindingSource;
             this.lookUpEditState.Properties.DisplayMember = "name";
             this.lookUpEditState.Properties.ValueMember = "abbreviation";
-            this.lookUpEditState.Size = new System.Drawing.Size(107, 20);
+            this.lookUpEditState.Size = new System.Drawing.Size(107, 26);
             this.lookUpEditState.TabIndex = 4;
             // 
             // stateBindingSource
@@ -283,7 +267,7 @@
             this.labelControlState.Appearance.Options.UseFont = true;
             this.labelControlState.Appearance.Options.UseTextOptions = true;
             this.labelControlState.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.labelControlState.Location = new System.Drawing.Point(96, 115);
+            this.labelControlState.Location = new System.Drawing.Point(253, 133);
             this.labelControlState.Name = "labelControlState";
             this.labelControlState.Size = new System.Drawing.Size(49, 20);
             this.labelControlState.TabIndex = 20;
@@ -292,6 +276,27 @@
             // stateTableAdapter
             // 
             this.stateTableAdapter.ClearBeforeFill = true;
+            // 
+            // lookUpEditDealer
+            // 
+            this.lookUpEditDealer.Location = new System.Drawing.Point(307, 91);
+            this.lookUpEditDealer.Name = "lookUpEditDealer";
+            this.lookUpEditDealer.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lookUpEditDealer.Properties.Appearance.Options.UseFont = true;
+            this.lookUpEditDealer.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
+            this.lookUpEditDealer.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lookUpEditDealer.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "id", 100, DevExpress.Utils.FormatType.Numeric, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("DEALER_NAME", "DEALER_NAME", 800, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            this.lookUpEditDealer.Properties.DataSource = this.bindingSourceDLRLISTBYNUM;
+            this.lookUpEditDealer.Properties.DisplayMember = "id";
+            this.lookUpEditDealer.Properties.LookAndFeel.SkinName = "McSkin";
+            this.lookUpEditDealer.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.lookUpEditDealer.Properties.NullText = "";
+            this.lookUpEditDealer.Properties.ValueMember = "id";
+            this.lookUpEditDealer.Size = new System.Drawing.Size(86, 26);
+            this.lookUpEditDealer.TabIndex = 21;
             // 
             // CustomerMissingTitleReport
             // 
@@ -318,6 +323,7 @@
             this.groupControlMissingTitle.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEditState.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stateBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEditDealer.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -330,8 +336,6 @@
         private DevExpress.XtraEditors.LabelControl labelEndDate;
         private DevExpress.XtraEditors.DateEdit nullableDateTimePickerStartDate;
         private DevExpress.XtraEditors.DateEdit nullableDateTimePickerEndDate;
-        private System.Windows.Forms.TextBox textBoxDealerName;
-        private System.Windows.Forms.ComboBox comboBoxDealer;
         private DevExpress.XtraEditors.LabelControl labelDealerNum;
         private System.Windows.Forms.BindingSource bindingSourceDLRLISTBYNUM;
         private IACDataSetTableAdapters.DLRLISTBYNUMTableAdapter dlrlistbynumTableAdapter;
@@ -345,5 +349,6 @@
         private DevExpress.XtraEditors.LookUpEdit lookUpEditState;
         private System.Windows.Forms.BindingSource stateBindingSource;
         private IACDataSetTableAdapters.stateTableAdapter stateTableAdapter;
+        private DevExpress.XtraEditors.LookUpEdit lookUpEditDealer;
     }
 }

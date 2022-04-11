@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace IAC2021SQL
 {
-    public partial class ClosedOverPaymentReport : Form
+    public partial class ClosedOverPaymentReport : DevExpress.XtraEditors.XtraForm
     {
         public ClosedOverPaymentReport()
         {
@@ -20,7 +20,7 @@ namespace IAC2021SQL
         private void buttonExcel_Click(object sender, EventArgs e)
         {
             PaymentDataSetTableAdapters.ClosedOverPaymentsTableAdapter ClosedOverPaymentsTableAdapter = new PaymentDataSetTableAdapters.ClosedOverPaymentsTableAdapter();
-            ClosedOverPaymentsTableAdapter.CreateOverPayments(((DateTime)(nullableDateTimePickerFrom.Value)).Date, ((DateTime)(nullableDateTimePickerTo.Value)).Date);
+            ClosedOverPaymentsTableAdapter.CreateOverPayments(((DateTime)(nullableDateTimePickerFrom.EditValue)).Date, ((DateTime)(nullableDateTimePickerTo.EditValue)).Date);
             ClosedOverpayment OP = new ClosedOverpayment();
             OP.CreateIt();
         }
@@ -32,8 +32,8 @@ namespace IAC2021SQL
 
         private void ClosedOverPaymentReport_Load(object sender, EventArgs e)
         {
-            nullableDateTimePickerFrom.Value = DateTime.Parse("01/01/1980");
-            nullableDateTimePickerTo.Value = DateTime.Now.Date;
+            nullableDateTimePickerFrom.EditValue = DateTime.Parse("01/01/1980");
+            nullableDateTimePickerTo.EditValue = DateTime.Now.Date;
         }
     }
 }

@@ -54,11 +54,10 @@
             this.DealerCityTextBox = new System.Windows.Forms.TextBox();
             this.DealerStateTextBox = new System.Windows.Forms.TextBox();
             this.DealerInfogroupBox = new System.Windows.Forms.GroupBox();
-            this.DEALERcomboBox = new System.Windows.Forms.ComboBox();
+            this.DEALERcomboBox = new DevExpress.XtraEditors.LookUpEdit();
             this.DLRLISTBYNUMbindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.DealerNamecomboBox = new System.Windows.Forms.ComboBox();
-            this.DealerListbindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DealerZipTextBox = new System.Windows.Forms.TextBox();
+            this.DealerListbindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.CONTINGbindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dEALERTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.DEALERTableAdapter();
             this.cONTINGTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.CONTINGTableAdapter();
@@ -104,7 +103,7 @@
             this.textBoxInterestSimple = new System.Windows.Forms.TextBox();
             this.textBoxOLD_SW = new System.Windows.Forms.TextBox();
             this.textBoxAMORT_SW = new System.Windows.Forms.TextBox();
-            this.dateTimePickerPostDate = new ProManApp.NullableDateTimePicker();
+            this.dateTimePickerPostDate = new DevExpress.XtraEditors.DateEdit();
             cUSTOMER_DEALERLabel = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
             cUSTOMER_STREET_1Label = new System.Windows.Forms.Label();
@@ -125,6 +124,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.DealerbindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CONTINGiacDataSet)).BeginInit();
             this.DealerInfogroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DEALERcomboBox.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DLRLISTBYNUMbindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DealerListbindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CONTINGbindingSource)).BeginInit();
@@ -132,7 +132,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator)).BeginInit();
             this.bindingNavigator.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dateTimePickerPostDate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateTimePickerPostDate.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateTimePickerPostDate.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // cUSTOMER_DEALERLabel
@@ -316,7 +317,7 @@
             this.dEALER_NAMETextBox.MaxLength = 30;
             this.dEALER_NAMETextBox.Name = "dEALER_NAMETextBox";
             this.dEALER_NAMETextBox.ReadOnly = true;
-            this.dEALER_NAMETextBox.Size = new System.Drawing.Size(183, 20);
+            this.dEALER_NAMETextBox.Size = new System.Drawing.Size(363, 20);
             this.dEALER_NAMETextBox.TabIndex = 2;
             this.dEALER_NAMETextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
@@ -373,7 +374,6 @@
             // 
             this.DealerInfogroupBox.AutoSize = true;
             this.DealerInfogroupBox.Controls.Add(this.DEALERcomboBox);
-            this.DealerInfogroupBox.Controls.Add(this.DealerNamecomboBox);
             this.DealerInfogroupBox.Controls.Add(this.DealerZipTextBox);
             this.DealerInfogroupBox.Controls.Add(this.DealerStateTextBox);
             this.DealerInfogroupBox.Controls.Add(this.DealerCityTextBox);
@@ -387,21 +387,30 @@
             this.DealerInfogroupBox.Controls.Add(cUSTOMER_DEALERLabel);
             this.DealerInfogroupBox.Location = new System.Drawing.Point(287, 21);
             this.DealerInfogroupBox.Name = "DealerInfogroupBox";
-            this.DealerInfogroupBox.Size = new System.Drawing.Size(327, 178);
+            this.DealerInfogroupBox.Size = new System.Drawing.Size(459, 178);
             this.DealerInfogroupBox.TabIndex = 175;
             this.DealerInfogroupBox.TabStop = false;
             // 
             // DEALERcomboBox
             // 
-            this.DEALERcomboBox.DataSource = this.DLRLISTBYNUMbindingSource;
-            this.DEALERcomboBox.DisplayMember = "DEALER_ACC_NO";
-            this.DEALERcomboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DEALERcomboBox.FormattingEnabled = true;
-            this.DEALERcomboBox.Location = new System.Drawing.Point(87, 29);
+            this.DEALERcomboBox.Location = new System.Drawing.Point(87, 30);
             this.DEALERcomboBox.Name = "DEALERcomboBox";
-            this.DEALERcomboBox.Size = new System.Drawing.Size(45, 21);
+            this.DEALERcomboBox.Properties.Appearance.Options.UseTextOptions = true;
+            this.DEALERcomboBox.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.DEALERcomboBox.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.DEALERcomboBox.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "id", 19, DevExpress.Utils.FormatType.Numeric, "", true, DevExpress.Utils.HorzAlignment.Far, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("DEALER_NAME", "DEALER_NAME", 84, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
+            this.DEALERcomboBox.Properties.DataSource = this.DLRLISTBYNUMbindingSource;
+            this.DEALERcomboBox.Properties.DisplayMember = "id";
+            this.DEALERcomboBox.Properties.MaxLength = 10;
+            this.DEALERcomboBox.Properties.NullText = "";
+            this.DEALERcomboBox.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            this.DEALERcomboBox.Properties.ValueMember = "id";
+            this.DEALERcomboBox.Size = new System.Drawing.Size(114, 20);
             this.DEALERcomboBox.TabIndex = 0;
-            this.DEALERcomboBox.SelectedIndexChanged += new System.EventHandler(this.DEALERcomboBox_SelectedIndexChanged);
+            this.DEALERcomboBox.EditValueChanged += new System.EventHandler(this.DEALERcomboBox_EditValueChanged);
             this.DEALERcomboBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             this.DEALERcomboBox.Validated += new System.EventHandler(this.DEALERcomboBox_Validated);
             // 
@@ -409,24 +418,6 @@
             // 
             this.DLRLISTBYNUMbindingSource.DataMember = "DLRLISTBYNUM";
             this.DLRLISTBYNUMbindingSource.DataSource = this.CONTINGiacDataSet;
-            // 
-            // DealerNamecomboBox
-            // 
-            this.DealerNamecomboBox.DataSource = this.DealerListbindingSource;
-            this.DealerNamecomboBox.DisplayMember = "dealer_name";
-            this.DealerNamecomboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DealerNamecomboBox.FormattingEnabled = true;
-            this.DealerNamecomboBox.Location = new System.Drawing.Point(135, 29);
-            this.DealerNamecomboBox.Name = "DealerNamecomboBox";
-            this.DealerNamecomboBox.Size = new System.Drawing.Size(182, 21);
-            this.DealerNamecomboBox.TabIndex = 1;
-            this.DealerNamecomboBox.SelectedIndexChanged += new System.EventHandler(this.DealerNamecomboBox_SelectedIndexChanged);
-            this.DealerNamecomboBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
-            // 
-            // DealerListbindingSource
-            // 
-            this.DealerListbindingSource.DataMember = "DEALERLIST";
-            this.DealerListbindingSource.DataSource = this.CONTINGiacDataSet;
             // 
             // DealerZipTextBox
             // 
@@ -441,6 +432,11 @@
             this.DealerZipTextBox.TabIndex = 6;
             this.DealerZipTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.DealerZipTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            // 
+            // DealerListbindingSource
+            // 
+            this.DealerListbindingSource.DataMember = "DEALERLIST";
+            this.DealerListbindingSource.DataSource = this.CONTINGiacDataSet;
             // 
             // CONTINGbindingSource
             // 
@@ -942,13 +938,21 @@
             // 
             // dateTimePickerPostDate
             // 
-            this.dateTimePickerPostDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerPostDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerPostDate.EditValue = new System.DateTime(2022, 3, 21, 0, 0, 0, 0);
             this.dateTimePickerPostDate.Location = new System.Drawing.Point(260, 17);
             this.dateTimePickerPostDate.Name = "dateTimePickerPostDate";
+            this.dateTimePickerPostDate.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerPostDate.Properties.Appearance.Options.UseFont = true;
+            this.dateTimePickerPostDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateTimePickerPostDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.dateTimePickerPostDate.Properties.CalendarView = DevExpress.XtraEditors.Repository.CalendarView.Fluent;
+            this.dateTimePickerPostDate.Properties.LookAndFeel.SkinName = "McSkin";
+            this.dateTimePickerPostDate.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.dateTimePickerPostDate.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
             this.dateTimePickerPostDate.Size = new System.Drawing.Size(85, 20);
             this.dateTimePickerPostDate.TabIndex = 7;
-            this.dateTimePickerPostDate.Value = new System.DateTime(2021, 12, 29, 0, 0, 0, 0);
             this.dateTimePickerPostDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // FormClosedDealerContingentMaintenance
@@ -976,6 +980,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.CONTINGiacDataSet)).EndInit();
             this.DealerInfogroupBox.ResumeLayout(false);
             this.DealerInfogroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DEALERcomboBox.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DLRLISTBYNUMbindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DealerListbindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CONTINGbindingSource)).EndInit();
@@ -986,7 +991,8 @@
             this.bindingNavigator.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dateTimePickerPostDate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateTimePickerPostDate.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateTimePickerPostDate.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1005,10 +1011,8 @@
         private System.Windows.Forms.BindingSource CONTINGbindingSource;
         private IACDataSetTableAdapters.CONTINGTableAdapter cONTINGTableAdapter;
         private IACDataSet CONTINGiacDataSet;
-        private System.Windows.Forms.ComboBox DealerNamecomboBox;
         private System.Windows.Forms.BindingSource DealerListbindingSource;
         private IACDataSetTableAdapters.DEALERLISTTableAdapter dEALERLISTTableAdapter;
-        private System.Windows.Forms.ComboBox DEALERcomboBox;
         private System.Windows.Forms.BindingSource DLRLISTBYNUMbindingSource;
         private IACDataSetTableAdapters.DLRLISTBYNUMTableAdapter dLRLISTBYNUMTableAdapter;
         private System.Windows.Forms.ToolStrip toolStrip1;
@@ -1046,11 +1050,12 @@
         private System.Windows.Forms.TextBox textBoxNotesPayable;
         private System.Windows.Forms.TextBox textBoxNPComment;
         private System.Windows.Forms.GroupBox groupBox2;
-        private ProManApp.NullableDateTimePicker dateTimePickerPostDate;
+        private DevExpress.XtraEditors.DateEdit dateTimePickerPostDate;
         private System.Windows.Forms.TextBox textBoxOLD_SW;
         private System.Windows.Forms.TextBox textBoxAMORT_SW;
         private System.Windows.Forms.TextBox textBoxSIMPLE_SW;
         private System.Windows.Forms.TextBox textBoxInterestSimpleComment;
         private System.Windows.Forms.TextBox textBoxInterestSimple;
+        private DevExpress.XtraEditors.LookUpEdit DEALERcomboBox;
     }
 }

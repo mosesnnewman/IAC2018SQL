@@ -129,7 +129,7 @@
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="label45.Location" type="System.Drawing.Point, System.Drawing">
-    <value>152, 498</value>
+    <value>187, 501</value>
   </data>
   <data name="label45.Size" type="System.Drawing.Size, System.Drawing">
     <value>99, 20</value>
@@ -150,7 +150,7 @@
     <value>groupBox10</value>
   </data>
   <data name="&gt;&gt;label45.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>14</value>
   </data>
   <metadata name="label48.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -183,7 +183,7 @@
     <value>groupBox10</value>
   </data>
   <data name="&gt;&gt;label48.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>16</value>
   </data>
   <metadata name="labelAuthNo.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -252,7 +252,7 @@
     <value>groupBox10</value>
   </data>
   <data name="&gt;&gt;label153.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>19</value>
   </data>
   <metadata name="label154.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -285,7 +285,7 @@
     <value>groupBox10</value>
   </data>
   <data name="&gt;&gt;label154.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>20</value>
   </data>
   <metadata name="label155.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -318,7 +318,7 @@
     <value>groupBox10</value>
   </data>
   <data name="&gt;&gt;label155.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>21</value>
   </data>
   <metadata name="label156.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -330,7 +330,7 @@
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="label156.Location" type="System.Drawing.Point, System.Drawing">
-    <value>278, 435</value>
+    <value>278, 428</value>
   </data>
   <data name="label156.Size" type="System.Drawing.Size, System.Drawing">
     <value>83, 20</value>
@@ -351,7 +351,7 @@
     <value>groupBox10</value>
   </data>
   <data name="&gt;&gt;label156.ZOrder" xml:space="preserve">
-    <value>20</value>
+    <value>22</value>
   </data>
   <metadata name="labelGAP.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -396,7 +396,7 @@
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="label159.Location" type="System.Drawing.Point, System.Drawing">
-    <value>543, 472</value>
+    <value>579, 472</value>
   </data>
   <data name="label159.Size" type="System.Drawing.Size, System.Drawing">
     <value>134, 20</value>
@@ -417,7 +417,7 @@
     <value>groupBox10</value>
   </data>
   <data name="&gt;&gt;label159.ZOrder" xml:space="preserve">
-    <value>27</value>
+    <value>29</value>
   </data>
   <metadata name="label161.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -453,7 +453,7 @@
     <value>groupBox10</value>
   </data>
   <data name="&gt;&gt;label161.ZOrder" xml:space="preserve">
-    <value>32</value>
+    <value>34</value>
   </data>
   <metadata name="label162.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -486,7 +486,7 @@
     <value>groupBox10</value>
   </data>
   <data name="&gt;&gt;label162.ZOrder" xml:space="preserve">
-    <value>34</value>
+    <value>36</value>
   </data>
   <metadata name="label163.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -519,7 +519,7 @@
     <value>groupBox10</value>
   </data>
   <data name="&gt;&gt;label163.ZOrder" xml:space="preserve">
-    <value>36</value>
+    <value>38</value>
   </data>
   <metadata name="label165.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -7390,8 +7390,11 @@
   <data name="xtraTabPageCustInfo1.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>None</value>
   </data>
-  <data name="checkEditAllotment.Location" type="System.Drawing.Point, System.Drawing">
-    <value>588, 260</value>
+  <data name="textEditDealerName.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="textEditDealerName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>288, 466</value>
   </data>
   <metadata name="toolbarFormManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>516, 485</value>
@@ -7510,6 +7513,114 @@
   <data name="&gt;&gt;standaloneBarDockControl1.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="textEditDealerName.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
+  <data name="textEditDealerName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>285, 26</value>
+  </data>
+  <data name="textEditDealerName.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
+  </data>
+  <data name="&gt;&gt;textEditDealerName.Name" xml:space="preserve">
+    <value>textEditDealerName</value>
+  </data>
+  <data name="&gt;&gt;textEditDealerName.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;textEditDealerName.Parent" xml:space="preserve">
+    <value>groupBox10</value>
+  </data>
+  <data name="&gt;&gt;textEditDealerName.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="cUSTOMER_DEALERcomboBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>171, 466</value>
+  </data>
+  <data name="cUSTOMER_DEALERcomboBox.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
+  <data name="cUSTOMER_DEALERcomboBox.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v21.2">
+    <value>Combo</value>
+  </data>
+  <data name="cUSTOMER_DEALERcomboBox.Properties.Columns" xml:space="preserve">
+    <value>id</value>
+  </data>
+  <data name="cUSTOMER_DEALERcomboBox.Properties.Columns1" xml:space="preserve">
+    <value>id</value>
+  </data>
+  <data name="cUSTOMER_DEALERcomboBox.Properties.Columns2" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="cUSTOMER_DEALERcomboBox.Properties.Columns3" type="DevExpress.Utils.FormatType, DevExpress.Data.v21.2">
+    <value>Numeric</value>
+  </data>
+  <data name="cUSTOMER_DEALERcomboBox.Properties.Columns4" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cUSTOMER_DEALERcomboBox.Properties.Columns5" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cUSTOMER_DEALERcomboBox.Properties.Columns6" type="DevExpress.Utils.HorzAlignment, DevExpress.Data.v21.2">
+    <value>Far</value>
+  </data>
+  <data name="cUSTOMER_DEALERcomboBox.Properties.Columns7" type="DevExpress.Data.ColumnSortOrder, DevExpress.Data.v21.2">
+    <value>None</value>
+  </data>
+  <data name="cUSTOMER_DEALERcomboBox.Properties.Columns8" type="DevExpress.Utils.DefaultBoolean, DevExpress.Data.v21.2">
+    <value>Default</value>
+  </data>
+  <data name="cUSTOMER_DEALERcomboBox.Properties.Columns9" xml:space="preserve">
+    <value>DEALER_NAME</value>
+  </data>
+  <data name="cUSTOMER_DEALERcomboBox.Properties.Columns10" xml:space="preserve">
+    <value>DEALER_NAME</value>
+  </data>
+  <data name="cUSTOMER_DEALERcomboBox.Properties.Columns11" type="System.Int32, mscorlib">
+    <value>84</value>
+  </data>
+  <data name="cUSTOMER_DEALERcomboBox.Properties.Columns12" type="DevExpress.Utils.FormatType, DevExpress.Data.v21.2">
+    <value>None</value>
+  </data>
+  <data name="cUSTOMER_DEALERcomboBox.Properties.Columns13" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cUSTOMER_DEALERcomboBox.Properties.Columns14" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cUSTOMER_DEALERcomboBox.Properties.Columns15" type="DevExpress.Utils.HorzAlignment, DevExpress.Data.v21.2">
+    <value>Near</value>
+  </data>
+  <data name="cUSTOMER_DEALERcomboBox.Properties.Columns16" type="DevExpress.Data.ColumnSortOrder, DevExpress.Data.v21.2">
+    <value>None</value>
+  </data>
+  <data name="cUSTOMER_DEALERcomboBox.Properties.Columns17" type="DevExpress.Utils.DefaultBoolean, DevExpress.Data.v21.2">
+    <value>Default</value>
+  </data>
+  <data name="cUSTOMER_DEALERcomboBox.Properties.NullText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cUSTOMER_DEALERcomboBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>114, 26</value>
+  </data>
+  <data name="cUSTOMER_DEALERcomboBox.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="&gt;&gt;cUSTOMER_DEALERcomboBox.Name" xml:space="preserve">
+    <value>cUSTOMER_DEALERcomboBox</value>
+  </data>
+  <data name="&gt;&gt;cUSTOMER_DEALERcomboBox.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.LookUpEdit, DevExpress.XtraEditors.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;cUSTOMER_DEALERcomboBox.Parent" xml:space="preserve">
+    <value>groupBox10</value>
+  </data>
+  <data name="&gt;&gt;cUSTOMER_DEALERcomboBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="checkEditAllotment.Location" type="System.Drawing.Point, System.Drawing">
+    <value>588, 260</value>
+  </data>
   <data name="checkEditAllotment.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
@@ -7538,7 +7649,7 @@
     <value>groupBox10</value>
   </data>
   <data name="&gt;&gt;checkEditAllotment.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="checkEditMilitary.Location" type="System.Drawing.Point, System.Drawing">
     <value>664, 431</value>
@@ -7568,7 +7679,7 @@
     <value>groupBox10</value>
   </data>
   <data name="&gt;&gt;checkEditMilitary.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="checkEditNoContact.Location" type="System.Drawing.Point, System.Drawing">
     <value>635, 395</value>
@@ -7601,7 +7712,7 @@
     <value>groupBox10</value>
   </data>
   <data name="&gt;&gt;checkEditNoContact.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="checkEditWrongAddress.Location" type="System.Drawing.Point, System.Drawing">
     <value>588, 363</value>
@@ -7634,7 +7745,7 @@
     <value>groupBox10</value>
   </data>
   <data name="&gt;&gt;checkEditWrongAddress.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="checkEditAutoPay.Location" type="System.Drawing.Point, System.Drawing">
     <value>658, 192</value>
@@ -7664,7 +7775,7 @@
     <value>groupBox10</value>
   </data>
   <data name="&gt;&gt;checkEditAutoPay.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="checkEditCustomerInsurance.Location" type="System.Drawing.Point, System.Drawing">
     <value>638, 158</value>
@@ -7697,7 +7808,7 @@
     <value>groupBox10</value>
   </data>
   <data name="&gt;&gt;checkEditCustomerInsurance.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>7</value>
   </data>
   <data name="checkBoxSendToDealer.Location" type="System.Drawing.Point, System.Drawing">
     <value>588, 534</value>
@@ -7724,7 +7835,7 @@
     <value>groupBox10</value>
   </data>
   <data name="&gt;&gt;checkBoxSendToDealer.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>8</value>
   </data>
   <data name="colorCheckBoxReceivedContract.Location" type="System.Drawing.Point, System.Drawing">
     <value>897, 467</value>
@@ -7751,7 +7862,7 @@
     <value>groupBox10</value>
   </data>
   <data name="&gt;&gt;colorCheckBoxReceivedContract.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>9</value>
   </data>
   <data name="checkBoxFullRecourseTab1.Location" type="System.Drawing.Point, System.Drawing">
     <value>756, 467</value>
@@ -7778,7 +7889,7 @@
     <value>groupBox10</value>
   </data>
   <data name="&gt;&gt;checkBoxFullRecourseTab1.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>10</value>
   </data>
   <data name="txtDOB.EditValue" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
@@ -7811,7 +7922,7 @@
     <value>groupBox10</value>
   </data>
   <data name="&gt;&gt;txtDOB.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>11</value>
   </data>
   <data name="nullableDateTimePickerDateContractReceived.EditValue" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
@@ -7853,7 +7964,7 @@
     <value>groupBox10</value>
   </data>
   <data name="&gt;&gt;nullableDateTimePickerDateContractReceived.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>12</value>
   </data>
   <data name="buttonDealerEmail.Appearance.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 12pt</value>
@@ -7914,7 +8025,7 @@
     <value>groupBox10</value>
   </data>
   <data name="&gt;&gt;buttonDealerEmail.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>13</value>
   </data>
   <data name="textBoxDealerEmail.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -7923,7 +8034,7 @@
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="textBoxDealerEmail.Location" type="System.Drawing.Point, System.Drawing">
-    <value>254, 495</value>
+    <value>288, 495</value>
   </data>
   <data name="textBoxDealerEmail.MaxLength" type="System.Int32, mscorlib">
     <value>50</value>
@@ -7944,7 +8055,7 @@
     <value>groupBox10</value>
   </data>
   <data name="&gt;&gt;textBoxDealerEmail.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>15</value>
   </data>
   <data name="buttonMessage.Appearance.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 12pt, style=Bold</value>
@@ -8184,7 +8295,7 @@
     <value>groupBox10</value>
   </data>
   <data name="&gt;&gt;groupBoxSBT.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>17</value>
   </data>
   <data name="comboBoxGN.Location" type="System.Drawing.Point, System.Drawing">
     <value>887, 51</value>
@@ -8205,7 +8316,10 @@
     <value>groupBox10</value>
   </data>
   <data name="&gt;&gt;comboBoxGN.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>18</value>
+  </data>
+  <data name="textBoxTIN.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="textBoxTIN.Location" type="System.Drawing.Point, System.Drawing">
     <value>364, 426</value>
@@ -8214,7 +8328,7 @@
     <value>9</value>
   </data>
   <data name="textBoxTIN.Size" type="System.Drawing.Size, System.Drawing">
-    <value>116, 22</value>
+    <value>116, 26</value>
   </data>
   <data name="textBoxTIN.TabIndex" type="System.Int32, mscorlib">
     <value>27</value>
@@ -8229,7 +8343,7 @@
     <value>groupBox10</value>
   </data>
   <data name="&gt;&gt;textBoxTIN.ZOrder" xml:space="preserve">
-    <value>21</value>
+    <value>23</value>
   </data>
   <data name="buttonValidate.Appearance.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 12pt, style=Bold</value>
@@ -8256,7 +8370,7 @@
     <value>groupBox10</value>
   </data>
   <data name="&gt;&gt;buttonValidate.ZOrder" xml:space="preserve">
-    <value>22</value>
+    <value>24</value>
   </data>
   <data name="checkBoxExcludeVSI.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -8355,7 +8469,7 @@
     <value>groupBox10</value>
   </data>
   <data name="&gt;&gt;groupBoxGapWarranty.ZOrder" xml:space="preserve">
-    <value>23</value>
+    <value>25</value>
   </data>
   <data name="cUSTOMER_CELL_PHONETextBox.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 12pt</value>
@@ -8382,7 +8496,7 @@
     <value>groupBox10</value>
   </data>
   <data name="&gt;&gt;cUSTOMER_CELL_PHONETextBox.ZOrder" xml:space="preserve">
-    <value>24</value>
+    <value>26</value>
   </data>
   <data name="textBoxMiddleName.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 12pt</value>
@@ -8409,7 +8523,7 @@
     <value>groupBox10</value>
   </data>
   <data name="&gt;&gt;textBoxMiddleName.ZOrder" xml:space="preserve">
-    <value>25</value>
+    <value>27</value>
   </data>
   <data name="labelInsuranceExpired.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -8442,7 +8556,7 @@
     <value>groupBox10</value>
   </data>
   <data name="&gt;&gt;labelInsuranceExpired.ZOrder" xml:space="preserve">
-    <value>26</value>
+    <value>28</value>
   </data>
   <data name="textBoxDealerState.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -8451,7 +8565,7 @@
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="textBoxDealerState.Location" type="System.Drawing.Point, System.Drawing">
-    <value>680, 466</value>
+    <value>716, 466</value>
   </data>
   <data name="textBoxDealerState.MaxLength" type="System.Int32, mscorlib">
     <value>2</value>
@@ -8472,7 +8586,7 @@
     <value>groupBox10</value>
   </data>
   <data name="&gt;&gt;textBoxDealerState.ZOrder" xml:space="preserve">
-    <value>28</value>
+    <value>30</value>
   </data>
   <data name="richTextBoxEmailAddress.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 12pt</value>
@@ -8499,7 +8613,7 @@
     <value>groupBox10</value>
   </data>
   <data name="&gt;&gt;richTextBoxEmailAddress.ZOrder" xml:space="preserve">
-    <value>29</value>
+    <value>31</value>
   </data>
   <data name="buttonSendMail.Appearance.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 12pt</value>
@@ -8562,7 +8676,7 @@
     <value>groupBox10</value>
   </data>
   <data name="&gt;&gt;buttonSendMail.ZOrder" xml:space="preserve">
-    <value>30</value>
+    <value>32</value>
   </data>
   <data name="labelCustinRepo.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -8595,7 +8709,7 @@
     <value>groupBox10</value>
   </data>
   <data name="&gt;&gt;labelCustinRepo.ZOrder" xml:space="preserve">
-    <value>31</value>
+    <value>33</value>
   </data>
   <data name="buttonLetter.Appearance.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 12pt</value>
@@ -8695,7 +8809,7 @@
     <value>groupBox10</value>
   </data>
   <data name="&gt;&gt;buttonLetter.ZOrder" xml:space="preserve">
-    <value>33</value>
+    <value>35</value>
   </data>
   <data name="comboBoxLetterType.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -8722,7 +8836,7 @@
     <value>groupBox10</value>
   </data>
   <data name="&gt;&gt;comboBoxLetterType.ZOrder" xml:space="preserve">
-    <value>35</value>
+    <value>37</value>
   </data>
   <data name="comboBoxLetterNo.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -8749,7 +8863,7 @@
     <value>groupBox10</value>
   </data>
   <data name="&gt;&gt;comboBoxLetterNo.ZOrder" xml:space="preserve">
-    <value>37</value>
+    <value>39</value>
   </data>
   <data name="cUSTOMER_NOTextBox.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 12pt</value>
@@ -8782,7 +8896,7 @@
     <value>groupBox10</value>
   </data>
   <data name="&gt;&gt;cUSTOMER_NOTextBox.ZOrder" xml:space="preserve">
-    <value>38</value>
+    <value>40</value>
   </data>
   <data name="cUSTOMER_WORK_EXTtextBox.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 12pt</value>
@@ -8812,7 +8926,7 @@
     <value>groupBox10</value>
   </data>
   <data name="&gt;&gt;cUSTOMER_WORK_EXTtextBox.ZOrder" xml:space="preserve">
-    <value>39</value>
+    <value>41</value>
   </data>
   <data name="cUSTOMER_PHONE_EXTtextBox.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 12pt</value>
@@ -8842,66 +8956,6 @@
     <value>groupBox10</value>
   </data>
   <data name="&gt;&gt;cUSTOMER_PHONE_EXTtextBox.ZOrder" xml:space="preserve">
-    <value>40</value>
-  </data>
-  <data name="cUSTOMER_DEALERcomboBox.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="cUSTOMER_DEALERcomboBox.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt</value>
-  </data>
-  <data name="cUSTOMER_DEALERcomboBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>171, 464</value>
-  </data>
-  <data name="cUSTOMER_DEALERcomboBox.MaxLength" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="cUSTOMER_DEALERcomboBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>52, 28</value>
-  </data>
-  <data name="cUSTOMER_DEALERcomboBox.TabIndex" type="System.Int32, mscorlib">
-    <value>28</value>
-  </data>
-  <data name="&gt;&gt;cUSTOMER_DEALERcomboBox.Name" xml:space="preserve">
-    <value>cUSTOMER_DEALERcomboBox</value>
-  </data>
-  <data name="&gt;&gt;cUSTOMER_DEALERcomboBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;cUSTOMER_DEALERcomboBox.Parent" xml:space="preserve">
-    <value>groupBox10</value>
-  </data>
-  <data name="&gt;&gt;cUSTOMER_DEALERcomboBox.ZOrder" xml:space="preserve">
-    <value>41</value>
-  </data>
-  <data name="DealerNamecomboBox.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="DealerNamecomboBox.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt</value>
-  </data>
-  <data name="DealerNamecomboBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>230, 464</value>
-  </data>
-  <data name="DealerNamecomboBox.MaxLength" type="System.Int32, mscorlib">
-    <value>25</value>
-  </data>
-  <data name="DealerNamecomboBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>308, 28</value>
-  </data>
-  <data name="DealerNamecomboBox.TabIndex" type="System.Int32, mscorlib">
-    <value>29</value>
-  </data>
-  <data name="&gt;&gt;DealerNamecomboBox.Name" xml:space="preserve">
-    <value>DealerNamecomboBox</value>
-  </data>
-  <data name="&gt;&gt;DealerNamecomboBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;DealerNamecomboBox.Parent" xml:space="preserve">
-    <value>groupBox10</value>
-  </data>
-  <data name="&gt;&gt;DealerNamecomboBox.ZOrder" xml:space="preserve">
     <value>42</value>
   </data>
   <data name="cUSTOMER_COMMENT_2TextBox.Font" type="System.Drawing.Font, System.Drawing">

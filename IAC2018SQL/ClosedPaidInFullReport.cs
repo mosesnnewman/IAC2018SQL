@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace IAC2021SQL
 {
-    public partial class frmClosedPaidInFullReport : Form
+    public partial class frmClosedPaidInFullReport : DevExpress.XtraEditors.XtraForm
     {
 
         public frmClosedPaidInFullReport()
@@ -20,8 +20,8 @@ namespace IAC2021SQL
         private void frmClosedPaidInFullReport_Load(object sender, EventArgs e)
         {
             Int32 lnRunMonth = DateTime.Now.Date.Month, lnRunYear = DateTime.Now.Date.Year;
-            nullableDateTimePickerFrom.Value = DateTime.Now.Date;
-            nullableDateTimePickerTo.Value = DateTime.Now.Date;
+            nullableDateTimePickerFrom.EditValue = DateTime.Now.Date;
+            nullableDateTimePickerTo.EditValue = DateTime.Now.Date;
             stateTableAdapter.Fill(iACDataSet.state);
             StatebindingSource.DataSource = iACDataSet.state;
             StatebindingSource.AddNew();
@@ -33,7 +33,7 @@ namespace IAC2021SQL
             DLRLISTBYNUMbindingSource.DataSource = iACDataSet.DLRLISTBYNUM;
             DLRLISTBYNUMbindingSource.AddNew();
             DLRLISTBYNUMbindingSource.EndEdit();
-            iACDataSet.DLRLISTBYNUM.Rows[DLRLISTBYNUMbindingSource.Position].SetField<String>("DEALER_ACC_NO", "   ");
+            //iACDataSet.DLRLISTBYNUM.Rows[DLRLISTBYNUMbindingSource.Position].SetField<Int32>("id",0);
             iACDataSet.DLRLISTBYNUM.Rows[DLRLISTBYNUMbindingSource.Position].SetField<String>("DEALER_NAME", "                  ");
             DLRLISTBYNUMbindingSource.EndEdit();
         }
@@ -55,19 +55,20 @@ namespace IAC2021SQL
 
         private void PrintClosedPaidInFullReport(ReportViewer rptViewer)
         {
-            String  lsDealerNum = comboBoxDealer.Text.TrimEnd().TrimStart() + "%",lsState;
+            String lsDealerNum = lookUpEditDealer.EditValue != null ? lookUpEditDealer.EditValue.ToString().Trim():"" + '%';
+            String lsState;
 
-            lsState = (comboBoxState.SelectedValue != null) ? comboBoxState.SelectedValue.ToString().TrimStart().TrimEnd() + "%" : "%";
+            lsState = (lookUpEditState.EditValue != null) ? lookUpEditState.EditValue.ToString().TrimStart().TrimEnd() + "%" : "%";
             IACDataSetTableAdapters.PaidInFullTableAdapter  PaidInFullTableAdapter = new IACDataSetTableAdapters.PaidInFullTableAdapter();
             IACDataSetTableAdapters.DEALERTableAdapter DEALERTableAdapter = new IACDataSetTableAdapters.DEALERTableAdapter();
 
             BindingSource PaidInFullBindingSource = new BindingSource();
             PaidInFullBindingSource.DataSource = iACDataSet.PaidInFull;
 
-            DEALERTableAdapter.FillByPaidInFull(iACDataSet.DEALER, lsState, lsDealerNum, ((DateTime)(nullableDateTimePickerFrom.Value)).Date, ((DateTime)(nullableDateTimePickerTo.Value)).Date);
+            DEALERTableAdapter.FillByPaidInFull(iACDataSet.DEALER, lsState, lsDealerNum, ((DateTime)(nullableDateTimePickerFrom.EditValue)).Date, ((DateTime)(nullableDateTimePickerTo.EditValue)).Date);
 
             // This one actually populates the SQL Server PaidInFullTable
-            PaidInFullTableAdapter.ClosedPaidInFullFill(lsState, lsDealerNum,((DateTime)(nullableDateTimePickerFrom.Value)).Date,((DateTime)(nullableDateTimePickerTo.Value)).Date);
+            PaidInFullTableAdapter.ClosedPaidInFullFill(lsState, lsDealerNum,((DateTime)(nullableDateTimePickerFrom.EditValue)).Date,((DateTime)(nullableDateTimePickerTo.EditValue)).Date);
             //Thist one brings the records back into the DataTable
             PaidInFullTableAdapter.FillByAllClosed(iACDataSet.PaidInFull);
 
@@ -75,8 +76,8 @@ namespace IAC2021SQL
             myReportObject.SetDataSource(iACDataSet);
             myReportObject.SetParameterValue("gsUserID", Program.gsUserID);
             myReportObject.SetParameterValue("gsUserName", Program.gsUserName);
-            myReportObject.SetParameterValue("gdFromDate", (DateTime)nullableDateTimePickerFrom.Value);
-            myReportObject.SetParameterValue("gdToDate", (DateTime)nullableDateTimePickerTo.Value);
+            myReportObject.SetParameterValue("gdFromDate", (DateTime)nullableDateTimePickerFrom.EditValue);
+            myReportObject.SetParameterValue("gdToDate", (DateTime)nullableDateTimePickerTo.EditValue);
             rptViewer.crystalReportViewer.ReportSource = myReportObject;
             rptViewer.crystalReportViewer.Refresh();
             rptViewer.Show();

@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("IAC2021SQL")]
+[assembly: AssemblyTitle("IAC2022SQL")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("IAC2021SQL")]
+[assembly: AssemblyProduct("IAC2022SQL")]
 [assembly: AssemblyCopyright("Copyright ©  2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

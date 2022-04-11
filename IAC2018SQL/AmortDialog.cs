@@ -15,7 +15,7 @@ using CrystalDecisions.Shared;
 
 namespace IAC2021SQL
 {
-    public partial class AmortDialog : Form
+    public partial class AmortDialog : DevExpress.XtraEditors.XtraForm
     {
         private Amortization myReportObject = new Amortization();
         private Program.AmortRec[] AmortTable;
@@ -47,8 +47,8 @@ namespace IAC2021SQL
             myReportObject.SetParameterValue("Term", lnTerm);
             myReportObject.SetParameterValue("AmountBorrowed", lnCash);
             myReportObject.SetParameterValue("TotalInterest", lnLoanInterest);
-            myReportObject.SetParameterValue("FirstPaymentDate", (DateTime)txtFirstPayment.Value);
-            myReportObject.SetParameterValue("ContractDate", (DateTime)dateTimePickerContractDate.Value);
+            myReportObject.SetParameterValue("FirstPaymentDate", (DateTime)txtFirstPayment.EditValue);
+            myReportObject.SetParameterValue("ContractDate", (DateTime)dateTimePickerContractDate.EditValue);
             myReportObject.SetParameterValue("gsUserID", "XXX");
             myReportObject.SetParameterValue("gsUserName", "Stand Alone");
             myReportObject.SetParameterValue("CustomerPrint", false);
@@ -96,7 +96,7 @@ namespace IAC2021SQL
 
             String lsErrorMessage = "DAmort Table Created!";
             // Moses Newman 09/12/2013 No more precalculated loans.
-            Program.TVAmortize(dateTimePickerContractDate.Value, txtFirstPayment.Value, ref lnCash, ref lnTerm, ref lnNominalRate, ref lnRegularPay, ref lsErrorMessage, ref AmortTable, false, "99-" + Program.gsUserID, true);
+            Program.TVAmortize((DateTime)dateTimePickerContractDate.EditValue, (DateTime)txtFirstPayment.EditValue, ref lnCash, ref lnTerm, ref lnNominalRate, ref lnRegularPay, ref lsErrorMessage, ref AmortTable, false, "99-" + Program.gsUserID, true);
             TVAPRInfoTableAdapter.Fill(ReportData.TVAPRInfo, "99-" + Program.gsUserID);
             if (ReportData.TVAPRInfo.Rows.Count > 0)
             {

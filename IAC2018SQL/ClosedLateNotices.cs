@@ -598,7 +598,7 @@ namespace IAC2021SQL
             lnTotalWork = NoticeiacDataSet.WS_NOTICE_DEALER.Rows.Count;
             for (Int32 i = 0; i < NoticeiacDataSet.WS_NOTICE_DEALER.Rows.Count; i++)
             {
-                DEALERTableAdapter.Fill(NoticeiacDataSet.DEALER, NoticeiacDataSet.WS_NOTICE_DEALER[i].Field<String>("KEY"));
+                DEALERTableAdapter.Fill(NoticeiacDataSet.DEALER, NoticeiacDataSet.WS_NOTICE_DEALER[i].Field<Int32>("KEY"));
                 if (NoticeiacDataSet.DEALER.Rows.Count != 0)
                 {
                     NoticeiacDataSet.DEALER.Rows[0].SetField<Decimal>("DEALER_CUR_RSV", 0);
@@ -647,10 +647,10 @@ namespace IAC2021SQL
             DEALHISTBindingSource.EndEdit();
 
             // Start of DEALHIST KEY Fields
-            NoticeiacDataSet.DEALHIST.Rows[DEALHISTBindingSource.Position].SetField<String>("DEALHIST_ACC_NO", NoticeiacDataSet.DEALER.Rows[0].Field<String>("DEALER_ACC_NO"));
+            NoticeiacDataSet.DEALHIST.Rows[DEALHISTBindingSource.Position].SetField<Int32>("DEALHIST_ACC_NO", NoticeiacDataSet.DEALER.Rows[0].Field<Int32>("id"));
             NoticeiacDataSet.DEALHIST.Rows[DEALHISTBindingSource.Position].SetField<DateTime>("DEALHIST_POST_DATE", NoticeiacDataSet.DEALER.Rows[0].Field<DateTime>("DEALER_POST_DATE"));
             NoticeiacDataSet.DEALHIST.Rows[DEALHISTBindingSource.Position].SetField<DateTime>("DEALHIST_LAST_POST_DATE", NoticeiacDataSet.DEALER.Rows[0].Field<DateTime>("DEALER_POST_DATE"));
-            loDealerHistSeq = DEALHISTTableAdapter.SeqNoQuery(NoticeiacDataSet.DEALER.Rows[0].Field<String>("DEALER_ACC_NO"), DateTime.Now.Date, NoticeiacDataSet.DEALER.Rows[0].Field<DateTime>("DEALER_POST_DATE").Date);
+            loDealerHistSeq = DEALHISTTableAdapter.SeqNoQuery(NoticeiacDataSet.DEALER.Rows[0].Field<Int32>("id"), DateTime.Now.Date, NoticeiacDataSet.DEALER.Rows[0].Field<DateTime>("DEALER_POST_DATE").Date);
             if (loDealerHistSeq != null)
                 lnSeq = (int)loDealerHistSeq + 1;
             else
@@ -694,10 +694,10 @@ namespace IAC2021SQL
             DEALHISTBindingSource.EndEdit();
 
             // Start of DEALHIST KEY Fields
-            NoticeiacDataSet.DEALHIST.Rows[DEALHISTBindingSource.Position].SetField<String>("DEALHIST_ACC_NO", NoticeiacDataSet.DEALER.Rows[0].Field<String>("DEALER_ACC_NO"));
+            NoticeiacDataSet.DEALHIST.Rows[DEALHISTBindingSource.Position].SetField<Int32>("DEALHIST_ACC_NO", NoticeiacDataSet.DEALER.Rows[0].Field<Int32>("id"));
             NoticeiacDataSet.DEALHIST.Rows[DEALHISTBindingSource.Position].SetField<DateTime>("DEALHIST_POST_DATE", NoticeiacDataSet.DEALER.Rows[0].Field<DateTime>("DEALER_POST_DATE"));
             NoticeiacDataSet.DEALHIST.Rows[DEALHISTBindingSource.Position].SetField<DateTime>("DEALHIST_LAST_POST_DATE", NoticeiacDataSet.DEALER.Rows[0].Field<DateTime>("DEALER_POST_DATE"));
-            loDealerHistSeq = DEALHISTTableAdapter.SeqNoQuery(NoticeiacDataSet.DEALER.Rows[0].Field<String>("DEALER_ACC_NO"), DateTime.Now.Date, NoticeiacDataSet.DEALER.Rows[0].Field<DateTime>("DEALER_POST_DATE").Date);
+            loDealerHistSeq = DEALHISTTableAdapter.SeqNoQuery(NoticeiacDataSet.DEALER.Rows[0].Field<Int32>("id"), DateTime.Now.Date, NoticeiacDataSet.DEALER.Rows[0].Field<DateTime>("DEALER_POST_DATE").Date);
             if (loDealerHistSeq != null)
                 lnSeq = (int)loDealerHistSeq + 1;
             else
@@ -811,7 +811,7 @@ namespace IAC2021SQL
             NoticeiacDataSet.NOTICE.Rows[NoticebindingSource.Position].SetField<String>("NOTICE_NO", NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_NO"));
             NoticeiacDataSet.NOTICE.Rows[NoticebindingSource.Position].SetField<String>("NOTICE_ADD_ON", NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_ADD_ON"));
             NoticeiacDataSet.NOTICE.Rows[NoticebindingSource.Position].SetField<String>("NOTICE_IAC_TYPE", NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_IAC_TYPE"));
-            NoticeiacDataSet.NOTICE.Rows[NoticebindingSource.Position].SetField<String>("NOTICE_DEALER", NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_DEALER"));
+            NoticeiacDataSet.NOTICE.Rows[NoticebindingSource.Position].SetField<Int32>("NOTICE_DEALER", NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<Int32>("CUSTOMER_DEALER"));
             NoticeiacDataSet.NOTICE.Rows[NoticebindingSource.Position].SetField<Int32>("NOTICE_DAY_DUE", NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<Int32>("CUSTOMER_DAY_DUE"));
             NoticeiacDataSet.NOTICE.Rows[NoticebindingSource.Position].SetField<String>("NOTICE_STREET_1", NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_STREET_1"));
             NoticeiacDataSet.NOTICE.Rows[NoticebindingSource.Position].SetField<String>("NOTICE_PHONE_NO", NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_PHONE_NO"));

@@ -71,7 +71,7 @@
             this.radioButtonBoth = new System.Windows.Forms.RadioButton();
             this.radioButtonInactive = new System.Windows.Forms.RadioButton();
             this.radioButtonActive = new System.Windows.Forms.RadioButton();
-            this.btnSearch = new System.Windows.Forms.Button();
+            this.btnSearch = new DevExpress.XtraEditors.SimpleButton();
             this.textBoxDealer = new System.Windows.Forms.TextBox();
             this.maskedTextBoxStartDate = new System.Windows.Forms.MaskedTextBox();
             this.textBoxDealerEmail = new System.Windows.Forms.TextBox();
@@ -545,7 +545,7 @@
             this.btnSearch.Size = new System.Drawing.Size(106, 37);
             this.btnSearch.TabIndex = 13;
             this.btnSearch.Text = "Search";
-            this.btnSearch.UseVisualStyleBackColor = true;
+            //this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // textBoxDealer
@@ -721,7 +721,7 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.DataGridView dataGridViewDealerLookup;
         private System.Windows.Forms.GroupBox CustomerGroupBox;
-        private System.Windows.Forms.Button btnSearch;
+        private DevExpress.XtraEditors.SimpleButton btnSearch;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.GroupBox DealerInfogroupBox;
         private System.Windows.Forms.TextBox textBoxDealerEmail;

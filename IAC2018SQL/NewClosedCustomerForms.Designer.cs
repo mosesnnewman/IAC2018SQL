@@ -339,13 +339,15 @@
             this.imageCollectionTabs = new DevExpress.Utils.ImageCollection(this.components);
             this.xtraTabPageCustInfo1 = new DevExpress.XtraTab.XtraTabPage();
             this.groupBox10 = new DevExpress.XtraEditors.GroupControl();
-            this.checkEditAllotment = new DevExpress.XtraEditors.CheckEdit();
+            this.textEditDealerName = new DevExpress.XtraEditors.TextEdit();
             this.toolbarFormManager1 = new DevExpress.XtraBars.ToolbarForm.ToolbarFormManager(this.components);
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.standaloneBarDockControl1 = new DevExpress.XtraBars.StandaloneBarDockControl();
+            this.cUSTOMER_DEALERcomboBox = new DevExpress.XtraEditors.LookUpEdit();
+            this.checkEditAllotment = new DevExpress.XtraEditors.CheckEdit();
             this.checkEditMilitary = new DevExpress.XtraEditors.CheckEdit();
             this.checkEditNoContact = new DevExpress.XtraEditors.CheckEdit();
             this.checkEditWrongAddress = new DevExpress.XtraEditors.CheckEdit();
@@ -386,8 +388,6 @@
             this.cUSTOMER_NOTextBox = new System.Windows.Forms.TextBox();
             this.cUSTOMER_WORK_EXTtextBox = new System.Windows.Forms.TextBox();
             this.cUSTOMER_PHONE_EXTtextBox = new System.Windows.Forms.TextBox();
-            this.cUSTOMER_DEALERcomboBox = new System.Windows.Forms.ComboBox();
-            this.DealerNamecomboBox = new System.Windows.Forms.ComboBox();
             this.cUSTOMER_COMMENT_2TextBox = new System.Windows.Forms.TextBox();
             this.cUSTOMER_Add_OnTextBox = new System.Windows.Forms.TextBox();
             this.labelCustHasComments = new System.Windows.Forms.Label();
@@ -1119,8 +1119,10 @@
             this.xtraTabPageCustInfo1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupBox10)).BeginInit();
             this.groupBox10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEditAllotment.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditDealerName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolbarFormManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cUSTOMER_DEALERcomboBox.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEditAllotment.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditMilitary.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditNoContact.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditWrongAddress.Properties)).BeginInit();
@@ -2895,6 +2897,8 @@
             this.groupBox10.Appearance.BackColor = System.Drawing.Color.LightSteelBlue;
             this.groupBox10.Appearance.Options.UseBackColor = true;
             this.groupBox10.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.groupBox10.Controls.Add(this.textEditDealerName);
+            this.groupBox10.Controls.Add(this.cUSTOMER_DEALERcomboBox);
             this.groupBox10.Controls.Add(this.checkEditAllotment);
             this.groupBox10.Controls.Add(this.checkEditMilitary);
             this.groupBox10.Controls.Add(this.checkEditNoContact);
@@ -2936,8 +2940,6 @@
             this.groupBox10.Controls.Add(this.cUSTOMER_NOTextBox);
             this.groupBox10.Controls.Add(this.cUSTOMER_WORK_EXTtextBox);
             this.groupBox10.Controls.Add(this.cUSTOMER_PHONE_EXTtextBox);
-            this.groupBox10.Controls.Add(this.cUSTOMER_DEALERcomboBox);
-            this.groupBox10.Controls.Add(this.DealerNamecomboBox);
             this.groupBox10.Controls.Add(this.cUSTOMER_COMMENT_2TextBox);
             this.groupBox10.Controls.Add(this.cUSTOMER_Add_OnTextBox);
             this.groupBox10.Controls.Add(this.labelCustHasComments);
@@ -2983,29 +2985,14 @@
             resources.ApplyResources(this.groupBox10, "groupBox10");
             this.groupBox10.Name = "groupBox10";
             // 
-            // checkEditAllotment
+            // textEditDealerName
             // 
-            this.checkEditAllotment.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_ALLOTMENT", true));
-            resources.ApplyResources(this.checkEditAllotment, "checkEditAllotment");
-            this.checkEditAllotment.MenuManager = this.toolbarFormManager1;
-            this.checkEditAllotment.Name = "checkEditAllotment";
-            this.checkEditAllotment.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("checkEditAllotment.Properties.Appearance.Font")));
-            this.checkEditAllotment.Properties.Appearance.Options.UseFont = true;
-            this.checkEditAllotment.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
-            this.checkEditAllotment.Properties.AppearanceDisabled.Options.UseForeColor = true;
-            this.checkEditAllotment.Properties.Caption = resources.GetString("checkEditAllotment.Properties.Caption");
-            this.checkEditAllotment.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
-            this.checkEditAllotment.Properties.CheckBoxOptions.SvgColorChecked = System.Drawing.Color.Black;
-            this.checkEditAllotment.Properties.ContentAlignment = ((DevExpress.Utils.HorzAlignment)(resources.GetObject("checkEditAllotment.Properties.ContentAlignment")));
-            this.checkEditAllotment.Properties.GlyphAlignment = ((DevExpress.Utils.HorzAlignment)(resources.GetObject("checkEditAllotment.Properties.GlyphAlignment")));
-            this.checkEditAllotment.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
-            this.checkEditAllotment.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.LightSteelBlue;
-            this.checkEditAllotment.Properties.LookAndFeel.SkinName = "McSkin";
-            this.checkEditAllotment.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.checkEditAllotment.Properties.NullStyle = DevExpress.XtraEditors.Controls.StyleIndeterminate.Unchecked;
-            this.checkEditAllotment.QueryCheckStateByValue += new DevExpress.XtraEditors.Controls.QueryCheckStateByValueEventHandler(this.checkEditAllotment_QueryCheckStateByValue);
-            this.checkEditAllotment.QueryValueByCheckState += new DevExpress.XtraEditors.Controls.QueryValueByCheckStateEventHandler(this.checkEditAllotment_QueryValueByCheckState);
-            this.checkEditAllotment.CheckedChanged += new System.EventHandler(this.checkEditAllotment_CheckedChanged);
+            this.textEditDealerName.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.dEALERBindingSource, "DEALER_NAME", true));
+            resources.ApplyResources(this.textEditDealerName, "textEditDealerName");
+            this.textEditDealerName.MenuManager = this.toolbarFormManager1;
+            this.textEditDealerName.Name = "textEditDealerName";
+            this.textEditDealerName.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textEditDealerName.Properties.Appearance.Font")));
+            this.textEditDealerName.Properties.Appearance.Options.UseFont = true;
             // 
             // toolbarFormManager1
             // 
@@ -3048,6 +3035,55 @@
             this.standaloneBarDockControl1.CausesValidation = false;
             this.standaloneBarDockControl1.Manager = this.toolbarFormManager1;
             this.standaloneBarDockControl1.Name = "standaloneBarDockControl1";
+            // 
+            // cUSTOMER_DEALERcomboBox
+            // 
+            this.cUSTOMER_DEALERcomboBox.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_DEALER", true));
+            resources.ApplyResources(this.cUSTOMER_DEALERcomboBox, "cUSTOMER_DEALERcomboBox");
+            this.cUSTOMER_DEALERcomboBox.MenuManager = this.toolbarFormManager1;
+            this.cUSTOMER_DEALERcomboBox.Name = "cUSTOMER_DEALERcomboBox";
+            this.cUSTOMER_DEALERcomboBox.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("cUSTOMER_DEALERcomboBox.Properties.Appearance.Font")));
+            this.cUSTOMER_DEALERcomboBox.Properties.Appearance.Options.UseFont = true;
+            this.cUSTOMER_DEALERcomboBox.Properties.Appearance.Options.UseTextOptions = true;
+            this.cUSTOMER_DEALERcomboBox.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.cUSTOMER_DEALERcomboBox.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
+            this.cUSTOMER_DEALERcomboBox.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("cUSTOMER_DEALERcomboBox.Properties.Buttons"))))});
+            this.cUSTOMER_DEALERcomboBox.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo(resources.GetString("cUSTOMER_DEALERcomboBox.Properties.Columns"), resources.GetString("cUSTOMER_DEALERcomboBox.Properties.Columns1"), ((int)(resources.GetObject("cUSTOMER_DEALERcomboBox.Properties.Columns2"))), ((DevExpress.Utils.FormatType)(resources.GetObject("cUSTOMER_DEALERcomboBox.Properties.Columns3"))), resources.GetString("cUSTOMER_DEALERcomboBox.Properties.Columns4"), ((bool)(resources.GetObject("cUSTOMER_DEALERcomboBox.Properties.Columns5"))), ((DevExpress.Utils.HorzAlignment)(resources.GetObject("cUSTOMER_DEALERcomboBox.Properties.Columns6"))), ((DevExpress.Data.ColumnSortOrder)(resources.GetObject("cUSTOMER_DEALERcomboBox.Properties.Columns7"))), ((DevExpress.Utils.DefaultBoolean)(resources.GetObject("cUSTOMER_DEALERcomboBox.Properties.Columns8")))),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo(resources.GetString("cUSTOMER_DEALERcomboBox.Properties.Columns9"), resources.GetString("cUSTOMER_DEALERcomboBox.Properties.Columns10"), ((int)(resources.GetObject("cUSTOMER_DEALERcomboBox.Properties.Columns11"))), ((DevExpress.Utils.FormatType)(resources.GetObject("cUSTOMER_DEALERcomboBox.Properties.Columns12"))), resources.GetString("cUSTOMER_DEALERcomboBox.Properties.Columns13"), ((bool)(resources.GetObject("cUSTOMER_DEALERcomboBox.Properties.Columns14"))), ((DevExpress.Utils.HorzAlignment)(resources.GetObject("cUSTOMER_DEALERcomboBox.Properties.Columns15"))), ((DevExpress.Data.ColumnSortOrder)(resources.GetObject("cUSTOMER_DEALERcomboBox.Properties.Columns16"))), ((DevExpress.Utils.DefaultBoolean)(resources.GetObject("cUSTOMER_DEALERcomboBox.Properties.Columns17"))))});
+            this.cUSTOMER_DEALERcomboBox.Properties.DataSource = this.DLRLISTBYNUMbindingSource;
+            this.cUSTOMER_DEALERcomboBox.Properties.DisplayMember = "id";
+            this.cUSTOMER_DEALERcomboBox.Properties.LookAndFeel.SkinName = "McSkin";
+            this.cUSTOMER_DEALERcomboBox.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.cUSTOMER_DEALERcomboBox.Properties.NullText = resources.GetString("cUSTOMER_DEALERcomboBox.Properties.NullText");
+            this.cUSTOMER_DEALERcomboBox.Properties.ValueMember = "id";
+            this.cUSTOMER_DEALERcomboBox.EditValueChanged += new System.EventHandler(this.cUSTOMER_DEALERcomboBox_EditValueChanged);
+            this.cUSTOMER_DEALERcomboBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            // 
+            // checkEditAllotment
+            // 
+            this.checkEditAllotment.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_ALLOTMENT", true));
+            resources.ApplyResources(this.checkEditAllotment, "checkEditAllotment");
+            this.checkEditAllotment.MenuManager = this.toolbarFormManager1;
+            this.checkEditAllotment.Name = "checkEditAllotment";
+            this.checkEditAllotment.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("checkEditAllotment.Properties.Appearance.Font")));
+            this.checkEditAllotment.Properties.Appearance.Options.UseFont = true;
+            this.checkEditAllotment.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.checkEditAllotment.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.checkEditAllotment.Properties.Caption = resources.GetString("checkEditAllotment.Properties.Caption");
+            this.checkEditAllotment.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
+            this.checkEditAllotment.Properties.CheckBoxOptions.SvgColorChecked = System.Drawing.Color.Black;
+            this.checkEditAllotment.Properties.ContentAlignment = ((DevExpress.Utils.HorzAlignment)(resources.GetObject("checkEditAllotment.Properties.ContentAlignment")));
+            this.checkEditAllotment.Properties.GlyphAlignment = ((DevExpress.Utils.HorzAlignment)(resources.GetObject("checkEditAllotment.Properties.GlyphAlignment")));
+            this.checkEditAllotment.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
+            this.checkEditAllotment.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.LightSteelBlue;
+            this.checkEditAllotment.Properties.LookAndFeel.SkinName = "McSkin";
+            this.checkEditAllotment.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.checkEditAllotment.Properties.NullStyle = DevExpress.XtraEditors.Controls.StyleIndeterminate.Unchecked;
+            this.checkEditAllotment.QueryCheckStateByValue += new DevExpress.XtraEditors.Controls.QueryCheckStateByValueEventHandler(this.checkEditAllotment_QueryCheckStateByValue);
+            this.checkEditAllotment.QueryValueByCheckState += new DevExpress.XtraEditors.Controls.QueryValueByCheckStateEventHandler(this.checkEditAllotment_QueryValueByCheckState);
+            this.checkEditAllotment.CheckedChanged += new System.EventHandler(this.checkEditAllotment_CheckedChanged);
             // 
             // checkEditMilitary
             // 
@@ -3294,7 +3330,6 @@
             this.textBoxDealerEmail.Name = "textBoxDealerEmail";
             this.textBoxDealerEmail.TextChanged += new System.EventHandler(this.textBoxDealerEmail_TextChanged);
             this.textBoxDealerEmail.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
-            this.textBoxDealerEmail.Validated += new System.EventHandler(this.textBoxDealerEmail_Validated);
             // 
             // groupBoxSBT
             // 
@@ -3561,7 +3596,6 @@
             this.cUSTOMER_NOTextBox.BackColor = System.Drawing.Color.Gold;
             resources.ApplyResources(this.cUSTOMER_NOTextBox, "cUSTOMER_NOTextBox");
             this.cUSTOMER_NOTextBox.Name = "cUSTOMER_NOTextBox";
-            this.cUSTOMER_NOTextBox.TextChanged += new System.EventHandler(this.cUSTOMER_NOTextBox_TextChanged);
             this.cUSTOMER_NOTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             this.cUSTOMER_NOTextBox.Validated += new System.EventHandler(this.cUSTOMER_NOTextBox_Validated);
             // 
@@ -3580,33 +3614,6 @@
             resources.ApplyResources(this.cUSTOMER_PHONE_EXTtextBox, "cUSTOMER_PHONE_EXTtextBox");
             this.cUSTOMER_PHONE_EXTtextBox.Name = "cUSTOMER_PHONE_EXTtextBox";
             this.cUSTOMER_PHONE_EXTtextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
-            // 
-            // cUSTOMER_DEALERcomboBox
-            // 
-            this.cUSTOMER_DEALERcomboBox.AllowDrop = true;
-            this.cUSTOMER_DEALERcomboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.cUSTOMERBindingSource, "CUSTOMER_DEALER", true));
-            this.cUSTOMER_DEALERcomboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_DEALER", true));
-            this.cUSTOMER_DEALERcomboBox.DataSource = this.DLRLISTBYNUMbindingSource;
-            this.cUSTOMER_DEALERcomboBox.DisplayMember = "DEALER_ACC_NO";
-            resources.ApplyResources(this.cUSTOMER_DEALERcomboBox, "cUSTOMER_DEALERcomboBox");
-            this.cUSTOMER_DEALERcomboBox.FormattingEnabled = true;
-            this.cUSTOMER_DEALERcomboBox.Name = "cUSTOMER_DEALERcomboBox";
-            this.cUSTOMER_DEALERcomboBox.ValueMember = "DEALER_ACC_NO";
-            this.cUSTOMER_DEALERcomboBox.SelectedIndexChanged += new System.EventHandler(this.cUSTOMER_DEALERcomboBox_SelectedIndexChanged);
-            this.cUSTOMER_DEALERcomboBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
-            this.cUSTOMER_DEALERcomboBox.Validated += new System.EventHandler(this.cUSTOMER_DEALERcomboBox_Validated);
-            // 
-            // DealerNamecomboBox
-            // 
-            this.DealerNamecomboBox.AllowDrop = true;
-            this.DealerNamecomboBox.DataSource = this.DealerListCustbindingSource;
-            this.DealerNamecomboBox.DisplayMember = "dealer_name";
-            resources.ApplyResources(this.DealerNamecomboBox, "DealerNamecomboBox");
-            this.DealerNamecomboBox.FormattingEnabled = true;
-            this.DealerNamecomboBox.Name = "DealerNamecomboBox";
-            this.DealerNamecomboBox.ValueMember = "dealer_name";
-            this.DealerNamecomboBox.SelectedIndexChanged += new System.EventHandler(this.DealerNamecomboBox_SelectedIndexChanged_1);
-            this.DealerNamecomboBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // cUSTOMER_COMMENT_2TextBox
             // 
@@ -3743,7 +3750,6 @@
             this.cUSTOMER_STREET_1TextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_STREET_1", true));
             resources.ApplyResources(this.cUSTOMER_STREET_1TextBox, "cUSTOMER_STREET_1TextBox");
             this.cUSTOMER_STREET_1TextBox.Name = "cUSTOMER_STREET_1TextBox";
-            this.cUSTOMER_STREET_1TextBox.TextChanged += new System.EventHandler(this.cUSTOMER_STREET_1TextBox_TextChanged);
             this.cUSTOMER_STREET_1TextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             this.cUSTOMER_STREET_1TextBox.Validated += new System.EventHandler(this.cUSTOMER_STREET_1TextBox_Validated);
             // 
@@ -8984,8 +8990,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupBox10)).EndInit();
             this.groupBox10.ResumeLayout(false);
             this.groupBox10.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEditAllotment.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditDealerName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolbarFormManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cUSTOMER_DEALERcomboBox.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEditAllotment.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditMilitary.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditNoContact.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditWrongAddress.Properties)).EndInit();
@@ -9350,8 +9358,6 @@
         private System.Windows.Forms.TextBox cUSTOMER_NOTextBox;
         private System.Windows.Forms.TextBox cUSTOMER_WORK_EXTtextBox;
         private System.Windows.Forms.TextBox cUSTOMER_PHONE_EXTtextBox;
-        private System.Windows.Forms.ComboBox cUSTOMER_DEALERcomboBox;
-        private System.Windows.Forms.ComboBox DealerNamecomboBox;
         private System.Windows.Forms.TextBox cUSTOMER_COMMENT_2TextBox;
         private System.Windows.Forms.TextBox cUSTOMER_Add_OnTextBox;
         private System.Windows.Forms.Label labelCustHasComments;
@@ -9831,6 +9837,8 @@
         private DevExpress.XtraEditors.CheckEdit checkEditHasCollision;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.ComboBox comboBox2;
+        private DevExpress.XtraEditors.LookUpEdit cUSTOMER_DEALERcomboBox;
+        private DevExpress.XtraEditors.TextEdit textEditDealerName;
     }
 }
 
