@@ -507,16 +507,6 @@ namespace IAC2021SQL
 
             lnMoneyRemaining = PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<Decimal>("PAYMENT_AMOUNT_RCV");
             lnMoneyRemaining -= lnLCBPay;
-            // Buyout as of today is balance
-            /*lnSimpleBalance = Program.TVSimpleGetBuyout(PAYMENTDataSet,
-                                                PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<DateTime>("PAYMENT_DATE"),
-                                                (Double)PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<Int32>("CUSTOMER_TERM"),
-                                                (Double)(PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_ANNUAL_PERCENTAGE_RATE") / 100),
-                                                (Double)PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_REGULAR_AMOUNT"),
-                                                PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_NO"),
-                                                // Moses Newman 04/30/2017 Handle Simple interest or Daily Compunding
-                                                PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_AMORTIZE_IND") == "S" ? true:false, true, false, true, PaymentPos, true);
-            */
             // Moses Newman 10/17/2018 Make sure we have latest amort for both payments if multiple payments for same customer!
             GetPartialPaymentandLateFeeBalance(ref worker, PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_NO"), ref PAYMENTDataSet, CustomerPos, true, PaymentPos, false);
             TVAmortTableAdapter.FillByCustomerNoandPaymentSeq(PAYMENTDataSet.TVAmort, PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_NO"), PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<Int32>("SeqNo"));

@@ -120,6 +120,7 @@
             // 
             // buttonExcel
             // 
+            this.buttonExcel.Enabled = false;
             this.buttonExcel.ImageOptions.Image = global::IAC2021SQL.Properties.Resources.ExportToExcel_64x;
             this.buttonExcel.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
             this.buttonExcel.Location = new System.Drawing.Point(164, 134);

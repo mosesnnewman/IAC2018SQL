@@ -10,6 +10,10 @@ using System.Windows.Forms;
 using System.Threading;
 using System.Reflection;
 using System.IO;
+using DevExpress.XtraReports.UI;
+using DevExpress.DataAccess.Sql;
+using DevExpress.DataAccess.Sql.DataApi;
+
 
 using Microsoft.SqlServer.Dts.Runtime;
 using Microsoft.SqlServer.Management.Smo;
@@ -276,7 +280,6 @@ namespace IAC2021SQL
         private void worker_DoNewClosedPaymentPostingWithPost(object sender, DoWorkEventArgs e)
         {
             ClosedPaymentPosting CPaymentPosting = new ClosedPaymentPosting();
-            //CPaymentPosting.CopyAmortizetoAmortTemp(ReportData, ref worker);
             CPaymentPosting.NewClosedPaymentPosting(ref ReportData, ref worker,true);
         }
 
@@ -672,6 +675,7 @@ namespace IAC2021SQL
                 if (Backup.PrePostBackup())
                 {
                     ReportData = new IACDataSet();
+                    TempPosting tempPosting = new TempPosting();
                     IACDataSetTableAdapters.PaymentTypeCodeSummarySelectTableAdapter PaymentTypeCodeSummarySelectTableAdapter = new IACDataSetTableAdapters.PaymentTypeCodeSummarySelectTableAdapter();
                     IACDataSetTableAdapters.PAYMENTTableAdapter PAYMENTTableAdapter = new IACDataSetTableAdapters.PAYMENTTableAdapter();
                     IACDataSetTableAdapters.WS_DEALER_PAYTableAdapter WS_DEALER_PAYTableAdapter = new IACDataSetTableAdapters.WS_DEALER_PAYTableAdapter();
@@ -681,9 +685,12 @@ namespace IAC2021SQL
                     IACDataSetTableAdapters.PaymentDistributionTableAdapter PaymentDistributionTableAdapter = new IACDataSetTableAdapters.PaymentDistributionTableAdapter();
                     IACDataSetTableAdapters.MasterTotalTempTableAdapter MasterTotalTempTableAdapter = new IACDataSetTableAdapters.MasterTotalTempTableAdapter();
 
+                    TempPostingTableAdapters.tempCustomerTableAdapter tempCustomerTableAdapter = new TempPostingTableAdapters.tempCustomerTableAdapter();
+                    TempPostingTableAdapters.tempDEALERTableAdapter tempDEALERTableAdapter = new TempPostingTableAdapters.tempDEALERTableAdapter();
+                    TempPostingTableAdapters.tempPAYMENTTableAdapter tempPAYMENTTableAdapter = new TempPostingTableAdapters.tempPAYMENTTableAdapter();
+
                     PAYMENTTableAdapter.FillByAll(ReportData.PAYMENT);
                     PaymentTypeCodeSummarySelectTableAdapter.Fill(ReportData.PaymentTypeCodeSummarySelect);
-
                     if (ReportData.PAYMENT.Rows.Count == 0)
                     {
                         MessageBox.Show("*** There are NO UNPOSTED Closed End Payments! ***");
@@ -705,6 +712,13 @@ namespace IAC2021SQL
                     PAYCODETableAdapter.Fill(ReportData.PAYCODE);
                     ULISTTableAdapter.FillById(ReportData.ULIST, Program.gsUserID);
 
+                    tempPAYMENTTableAdapter.DeleteAll();
+                    foreach (DataRow dr in ReportData.PAYMENT.Rows)
+                    {
+                        tempPosting.tempPAYMENT.Rows.Add(dr.ItemArray);
+                    }
+                    tempPAYMENTTableAdapter.Update(tempPosting.tempPAYMENT);
+
                     CreateFormInstance("QueryProgress", true, false, true);
                     QueryProgress lfrm;
                     lfrm = (QueryProgress)frm;
@@ -718,24 +732,58 @@ namespace IAC2021SQL
                     lfrm.lblProgress.Text = "Posting Closed Payments WITH Update";
                     lfrm.ShowDialog();
 
-                    PaymentDistributionTableAdapter.FillByPayments(ReportData.PaymentDistribution);
-                    MasterTotalTempTableAdapter.Fill(ReportData.MasterTotalTemp);
+                    tempCustomerTableAdapter.DeleteAll();
+                    foreach (DataRow dr in ReportData.CUSTOMER.Rows)
+                    {
+                        tempPosting.tempCustomer.Rows.Add(dr.ItemArray);
+                    }
+                    tempCustomerTableAdapter.Update(tempPosting.tempCustomer);
 
+                    tempDEALERTableAdapter.DeleteAll();
+                    foreach (DataRow dr in ReportData.DEALER.Rows)
+                    {
+                        tempPosting.tempDEALER.Rows.Add(dr.ItemArray);
+                    }
+                    tempDEALERTableAdapter.Update(tempPosting.tempDEALER);
 
-                    ClosedPaymentBalanceJournal myReportObject = new ClosedPaymentBalanceJournal();
-                    myReportObject.SetDataSource(ReportData);
-                    myReportObject.SetParameterValue("gsUserID", Program.gsUserID);
-                    myReportObject.SetParameterValue("gsUserName", Program.gsUserName);
-                    myReportObject.SetParameterValue("TotalIVR", lnTotalIVR);
-                    myReportObject.SetParameterValue("TotalIVRAmex", lnTotalIVRAmex);
-                    myReportObject.SetParameterValue("TotalIVRFees", lnTotalIVRFees);
-                    myReportObject.SetParameterValue("gsFormTitle", "Closed Payment Receipts Balance Journal - With Update");
+                    MDIIAC2013 MDImain = (MDIIAC2013)MdiParent;
+                    var report = new XtraReportClosedPaymentBalanceJournal();
+                    SqlDataSource ds = report.DataSource as SqlDataSource;
 
-                    CreateFormInstance("ReportViewer", false);
-                    ReportViewer rptViewr = (ReportViewer)ActiveMdiChild;
-                    rptViewr.crystalReportViewer.ReportSource = myReportObject;
-                    rptViewr.crystalReportViewer.Refresh();
-                    rptViewr.Show();
+                    report.DataSource = ds;
+                    report.RequestParameters = false;
+                    report.Parameters["gsUserID"].Value = Program.gsUserID;
+                    report.Parameters["gsUserName"].Value = Program.gsUserName;
+                    report.Parameters["TotalIVR"].Value = lnTotalIVR;
+                    report.Parameters["TotalIVRAmex"].Value = lnTotalIVRAmex;
+                    report.Parameters["TotalIVRFees"].Value = lnTotalIVRFees;
+                    report.Parameters["gsFormTitle"].Value = "Closed Payment Receipts Balance Journal - With Update";
+
+                    XRSubreport subReportDealerSummary = report.FindControl("SubreportDealerSummary", true) as XRSubreport;
+                    XtraReport reportSource = subReportDealerSummary.ReportSource as XtraReport;
+                    SqlDataSource DealerSummaryds = reportSource.DataSource as SqlDataSource;
+
+                    reportSource.DataSource = DealerSummaryds;
+
+                    XRSubreport subreportBalanceTotals = report.FindControl("SubreportBalanceTotals", true) as XRSubreport;
+                    XtraReport reportSourceBT = subreportBalanceTotals.ReportSource as XtraReport;
+                    SqlDataSource BalanceTotalsds = reportSourceBT.DataSource as SqlDataSource;
+
+                    reportSourceBT.DataSource = BalanceTotalsds;
+
+                    XRSubreport subreportPaymentTypeSummary = report.FindControl("SubreportPaymentTypeSummary", true) as XRSubreport;
+                    XtraReport reportSourcePT = subreportPaymentTypeSummary.ReportSource as XtraReport;
+                    SqlDataSource PaymentTypesds = reportSourcePT.DataSource as SqlDataSource;
+
+                    reportSourcePT.DataSource = PaymentTypesds;
+
+                    var tool = new ReportPrintTool(report);
+
+                    tool.PreviewRibbonForm.MdiParent = MDImain;
+                    tool.AutoShowParametersPanel = false;
+                    tool.PreviewRibbonForm.WindowState = FormWindowState.Maximized;
+                    tool.ShowRibbonPreview();
+
                     ReportData.Clear();
                     ReportData.Dispose();
                     Program.ReleaseExclusiveLock();
@@ -780,6 +828,8 @@ namespace IAC2021SQL
         public void paymentReceiptsBalanceJurnalToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ReportData = new IACDataSet();
+            TempPosting tempPosting = new TempPosting();
+
             IACDataSetTableAdapters.PaymentTypeCodeSummarySelectTableAdapter PaymentTypeCodeSummarySelectTableAdapter = new IACDataSetTableAdapters.PaymentTypeCodeSummarySelectTableAdapter();
             IACDataSetTableAdapters.PAYMENTTableAdapter PAYMENTTableAdapter = new IACDataSetTableAdapters.PAYMENTTableAdapter();
             IACDataSetTableAdapters.WS_DEALER_PAYTableAdapter WS_DEALER_PAYTableAdapter = new IACDataSetTableAdapters.WS_DEALER_PAYTableAdapter();
@@ -789,6 +839,10 @@ namespace IAC2021SQL
             IACDataSetTableAdapters.PaymentDistributionTableAdapter PaymentDistributionTableAdapter = new IACDataSetTableAdapters.PaymentDistributionTableAdapter();
             IACDataSetTableAdapters.MasterTotalTempTableAdapter MasterTotalTempTableAdapter = new IACDataSetTableAdapters.MasterTotalTempTableAdapter();
 
+            TempPostingTableAdapters.tempCustomerTableAdapter tempCustomerTableAdapter = new TempPostingTableAdapters.tempCustomerTableAdapter();
+            TempPostingTableAdapters.tempDEALERTableAdapter tempDEALERTableAdapter = new TempPostingTableAdapters.tempDEALERTableAdapter();
+            TempPostingTableAdapters.tempPAYMENTTableAdapter tempPAYMENTTableAdapter = new TempPostingTableAdapters.tempPAYMENTTableAdapter();
+
             PAYMENTTableAdapter.FillByAll(ReportData.PAYMENT);
             PaymentTypeCodeSummarySelectTableAdapter.Fill(ReportData.PaymentTypeCodeSummarySelect);
             if (ReportData.PAYMENT.Rows.Count == 0)
@@ -796,11 +850,28 @@ namespace IAC2021SQL
                 MessageBox.Show("*** There are NO UNPOSTED Closed End Payments! ***");
                 return;
             }
+
+            // Moses Newman 01/19/2018 Add TotalIVR, TotalIVRAmex, TotalIVRFees
+            Object loTotalIVR = null, loTotalIVRAmex = null, loTotalIVRFees = null;
+            Decimal lnTotalIVR = 0, lnTotalIVRAmex = 0, lnTotalIVRFees = 0;
+            loTotalIVR = PAYMENTTableAdapter.IVRSUM();
+            loTotalIVRAmex = PAYMENTTableAdapter.AMEXTOT();
+            loTotalIVRFees = PAYMENTTableAdapter.IVRFEETOT();
+            lnTotalIVR = loTotalIVR != null ? (Decimal)loTotalIVR : lnTotalIVR;
+            lnTotalIVRAmex = loTotalIVRAmex != null ? (Decimal)loTotalIVRAmex : lnTotalIVRAmex;
+            lnTotalIVRFees = loTotalIVRFees != null ? (Decimal)loTotalIVRFees : lnTotalIVRFees;
             WS_DEALER_PAYTableAdapter.ClearBeforeFill = true;
             WS_DEALER_PAYTableAdapter.Fill(ReportData.WS_DEALER_PAY);
             PAYMENTTypeTableAdapter.Fill(ReportData.PAYMENTTYPE);
             PAYCODETableAdapter.Fill(ReportData.PAYCODE);
             ULISTTableAdapter.FillById(ReportData.ULIST, Program.gsUserID);
+
+            tempPAYMENTTableAdapter.DeleteAll();
+            foreach (DataRow dr in ReportData.PAYMENT.Rows)
+            {
+                tempPosting.tempPAYMENT.Rows.Add(dr.ItemArray);
+            }
+            tempPAYMENTTableAdapter.Update(tempPosting.tempPAYMENT);
 
             CreateFormInstance("QueryProgress", true, false, true);
             QueryProgress lfrm;
@@ -815,32 +886,61 @@ namespace IAC2021SQL
             lfrm.lblProgress.Text = "Posting Closed Payments Without Update";
             lfrm.ShowDialog();
 
-            PaymentDistributionTableAdapter.FillByPayments(ReportData.PaymentDistribution);
-            MasterTotalTempTableAdapter.Fill(ReportData.MasterTotalTemp);
-            // Moses Newman 01/19/2018 Add TotalIVR, TotalIVRAmex, TotalIVRFees
-            Object loTotalIVR = null, loTotalIVRAmex = null, loTotalIVRFees = null;
-            Decimal lnTotalIVR = 0, lnTotalIVRAmex = 0, lnTotalIVRFees = 0;
-            loTotalIVR = PAYMENTTableAdapter.IVRSUM();
-            loTotalIVRAmex = PAYMENTTableAdapter.AMEXTOT();
-            loTotalIVRFees = PAYMENTTableAdapter.IVRFEETOT();
-            lnTotalIVR = loTotalIVR != null ? (Decimal)loTotalIVR:lnTotalIVR;
-            lnTotalIVRAmex = loTotalIVRAmex != null ? (Decimal)loTotalIVRAmex : lnTotalIVRAmex;
-            lnTotalIVRFees = loTotalIVRFees != null ? (Decimal)loTotalIVRFees : lnTotalIVRFees;
-                 
-            ClosedPaymentBalanceJournal myReportObject = new ClosedPaymentBalanceJournal();
-            myReportObject.SetDataSource(ReportData);
-            myReportObject.SetParameterValue("gsUserID", Program.gsUserID);
-            myReportObject.SetParameterValue("gsUserName", Program.gsUserName);
-            myReportObject.SetParameterValue("TotalIVR", lnTotalIVR);
-            myReportObject.SetParameterValue("TotalIVRAmex", lnTotalIVRAmex);
-            myReportObject.SetParameterValue("TotalIVRFees", lnTotalIVRFees);
-            myReportObject.SetParameterValue("gsFormTitle", "Closed Payment Receipts Balance Journal - No Update");
+            tempCustomerTableAdapter.DeleteAll();
+            ReportData.CUSTOMER.Columns.Remove("TempPT");
+            foreach (DataRow dr in ReportData.CUSTOMER.Rows)
+            {
+                tempPosting.tempCustomer.Rows.Add(dr.ItemArray);
+            }
+            tempCustomerTableAdapter.Update(tempPosting.tempCustomer);
 
-            CreateFormInstance("ReportViewer", false);
-            ReportViewer rptViewr = (ReportViewer)ActiveMdiChild;
-            rptViewr.crystalReportViewer.ReportSource = myReportObject;
-            rptViewr.crystalReportViewer.Refresh();
-            rptViewr.Show();
+            tempDEALERTableAdapter.DeleteAll();
+            foreach (DataRow dr in ReportData.DEALER.Rows)
+            {
+                tempPosting.tempDEALER.Rows.Add(dr.ItemArray);
+            }
+            tempDEALERTableAdapter.Update(tempPosting.tempDEALER);
+
+            // Moses Newman 03/03/2022 Covert to XtraReport
+            MDIIAC2013 MDImain = (MDIIAC2013)MdiParent;
+            var report = new XtraReportClosedPaymentBalanceJournal();
+            SqlDataSource ds = report.DataSource as SqlDataSource;
+
+            report.DataSource = ds;
+            report.RequestParameters = false;
+            report.Parameters["gsUserID"].Value = Program.gsUserID;
+            report.Parameters["gsUserName"].Value = Program.gsUserName;
+            report.Parameters["TotalIVR"].Value = lnTotalIVR;
+            report.Parameters["TotalIVRAmex"].Value = lnTotalIVRAmex;
+            report.Parameters["TotalIVRFees"].Value = lnTotalIVRFees;
+            report.Parameters["gsFormTitle"].Value = "Closed Payment Receipts Balance Journal - No Update";
+
+            // Moses Newman 04/17/2022 Now do DealerSummary Sub Report datasource!
+            XRSubreport subReportDealerSummary = report.FindControl("SubreportDealerSummary", true) as XRSubreport;
+            XtraReport reportSource = subReportDealerSummary.ReportSource as XtraReport;
+            SqlDataSource DealerSummaryds = reportSource.DataSource as SqlDataSource;
+
+            reportSource.DataSource = DealerSummaryds;
+
+            XRSubreport subreportBalanceTotals = report.FindControl("SubreportBalanceTotals", true) as XRSubreport;
+            XtraReport reportSourceBT = subreportBalanceTotals.ReportSource as XtraReport;
+            SqlDataSource BalanceTotalsds = reportSourceBT.DataSource as SqlDataSource;
+
+            reportSourceBT.DataSource = BalanceTotalsds;
+
+            XRSubreport subreportPaymentTypeSummary = report.FindControl("SubreportPaymentTypeSummary", true) as XRSubreport;
+            XtraReport reportSourcePT = subreportPaymentTypeSummary.ReportSource as XtraReport;
+            SqlDataSource PaymentTypesds = reportSourcePT.DataSource as SqlDataSource;
+
+            reportSourcePT.DataSource = PaymentTypesds;
+
+            var tool = new ReportPrintTool(report);
+
+            tool.PreviewRibbonForm.MdiParent = MDImain;
+            tool.AutoShowParametersPanel = false;
+            tool.PreviewRibbonForm.WindowState = FormWindowState.Maximized;
+            tool.ShowRibbonPreview();
+
             ReportData.Clear();
             ReportData.Dispose();
         }
@@ -1282,11 +1382,6 @@ namespace IAC2021SQL
             lfrm.ShowDialog();
         }
 
-        private void toolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void worker_DoFixAmortRecords(object sender, DoWorkEventArgs e)
         {
             //Program.FixAmortize(ref worker,true);
@@ -1498,13 +1593,6 @@ namespace IAC2021SQL
             }
         }
 
-        private void recalcBuyoutToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-        }
-
-
- 
-            
         private void fix211DataToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CreateFormInstance("FormValidateCellPhones", false);
@@ -1674,11 +1762,6 @@ namespace IAC2021SQL
             CreateFormInstance("GlobalCapturePDFUploader", false);
         }
 
-        private void createWellsFargoExtractToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void fixPaidThroughsToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             CreateFormInstance("FixPaidThroughs", false);
@@ -1712,11 +1795,6 @@ namespace IAC2021SQL
         private void testToolStripMenuItem_Click(object sender, EventArgs e)
         { 
             CreateFormInstance("FormCashPaymentSummary", false);
-        }
-
-        private void closedEndToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

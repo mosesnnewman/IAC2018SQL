@@ -340,7 +340,6 @@
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(147, 20);
             this.toolStripMenuItem1.Text = "&***REMOVED*** Functions";
-            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // postingToolStripMenuItem2
             // 
@@ -362,41 +361,41 @@
             this.masterContingentsToolStripMenuItem,
             this.mosesFixesToolStripMenuItem});
             this.closedEndToolStripMenuItem1.Name = "closedEndToolStripMenuItem1";
-            this.closedEndToolStripMenuItem1.Size = new System.Drawing.Size(133, 22);
+            this.closedEndToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.closedEndToolStripMenuItem1.Text = "&Closed End";
             // 
             // newBusinessToolStripMenuItem1
             // 
             this.newBusinessToolStripMenuItem1.Name = "newBusinessToolStripMenuItem1";
-            this.newBusinessToolStripMenuItem1.Size = new System.Drawing.Size(178, 22);
+            this.newBusinessToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.newBusinessToolStripMenuItem1.Text = "&New Business";
             this.newBusinessToolStripMenuItem1.Click += new System.EventHandler(this.newBusinessToolStripMenuItem1_Click);
             // 
             // paymentsToolStripMenuItem4
             // 
             this.paymentsToolStripMenuItem4.Name = "paymentsToolStripMenuItem4";
-            this.paymentsToolStripMenuItem4.Size = new System.Drawing.Size(178, 22);
+            this.paymentsToolStripMenuItem4.Size = new System.Drawing.Size(180, 22);
             this.paymentsToolStripMenuItem4.Text = "&Payments";
             this.paymentsToolStripMenuItem4.Click += new System.EventHandler(this.paymentsToolStripMenuItem4_Click);
             // 
             // noticesToolStripMenuItem3
             // 
             this.noticesToolStripMenuItem3.Name = "noticesToolStripMenuItem3";
-            this.noticesToolStripMenuItem3.Size = new System.Drawing.Size(178, 22);
+            this.noticesToolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
             this.noticesToolStripMenuItem3.Text = "N&otices";
             this.noticesToolStripMenuItem3.Click += new System.EventHandler(this.noticesToolStripMenuItem3_Click);
             // 
             // dealerContingentsToolStripMenuItem
             // 
             this.dealerContingentsToolStripMenuItem.Name = "dealerContingentsToolStripMenuItem";
-            this.dealerContingentsToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
+            this.dealerContingentsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.dealerContingentsToolStripMenuItem.Text = "&Dealer Contingents";
             this.dealerContingentsToolStripMenuItem.Click += new System.EventHandler(this.dealerContingentsToolStripMenuItem_Click);
             // 
             // masterContingentsToolStripMenuItem
             // 
             this.masterContingentsToolStripMenuItem.Name = "masterContingentsToolStripMenuItem";
-            this.masterContingentsToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
+            this.masterContingentsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.masterContingentsToolStripMenuItem.Text = "M&aster Contingents";
             this.masterContingentsToolStripMenuItem.Click += new System.EventHandler(this.masterContingentsToolStripMenuItem_Click);
             // 
@@ -405,7 +404,7 @@
             this.mosesFixesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.recreatePaymentsToolStripMenuItem});
             this.mosesFixesToolStripMenuItem.Name = "mosesFixesToolStripMenuItem";
-            this.mosesFixesToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
+            this.mosesFixesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.mosesFixesToolStripMenuItem.Text = "MosesFixes";
             this.mosesFixesToolStripMenuItem.Visible = false;
             // 
@@ -427,7 +426,7 @@
             this.addOnsToolStripMenuItem,
             this.statementsToolStripMenuItem});
             this.openEndToolStripMenuItem1.Name = "openEndToolStripMenuItem1";
-            this.openEndToolStripMenuItem1.Size = new System.Drawing.Size(133, 22);
+            this.openEndToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.openEndToolStripMenuItem1.Text = "&Open End";
             // 
             // newBusinessToolStripMenuItem3
@@ -523,7 +522,6 @@
             this.createWellsFargoExtractToolStripMenuItem.Name = "createWellsFargoExtractToolStripMenuItem";
             this.createWellsFargoExtractToolStripMenuItem.Size = new System.Drawing.Size(243, 22);
             this.createWellsFargoExtractToolStripMenuItem.Text = "B&ank Transfers";
-            this.createWellsFargoExtractToolStripMenuItem.Click += new System.EventHandler(this.createWellsFargoExtractToolStripMenuItem_Click);
             // 
             // createWellsFargoExtractToolStripMenuItem1
             // 
@@ -671,9 +669,8 @@
             this.receivedContractReportToolStripMenuItem,
             this.testToolStripMenuItem});
             this.closedEndToolStripMenuItem.Name = "closedEndToolStripMenuItem";
-            this.closedEndToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.closedEndToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.closedEndToolStripMenuItem.Text = "&Closed End";
-            this.closedEndToolStripMenuItem.Click += new System.EventHandler(this.closedEndToolStripMenuItem_Click);
             // 
             // amortizationScheduleToolStripMenuItem
             // 
@@ -893,7 +890,7 @@
             this.openCustomerBuyBackReportBUYBACKToolStripMenuItem,
             this.firstPaymentDefaultReportToolStripMenuItem1});
             this.openEndToolStripMenuItem.Name = "openEndToolStripMenuItem";
-            this.openEndToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.openEndToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.openEndToolStripMenuItem.Text = "&Open End";
             // 
             // newCustomerEditListToolStripMenuItem1
