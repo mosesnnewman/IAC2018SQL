@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 using System.IO;
+using DevExpress.XtraReports.UI;
+using DevExpress.DataAccess.Sql;
+using DevExpress.DataAccess.Sql.DataApi;
 
 namespace IAC2021SQL
 {
@@ -39,12 +42,7 @@ namespace IAC2021SQL
         
         private void buttonPost_Click(object sender, EventArgs e)
         {
-            Hide();
-            MDIIAC2013 MDImain = (MDIIAC2013)MdiParent;
-            MDImain.CreateFormInstance("ReportViewer", false);
-            ReportViewer rptViewr = (ReportViewer)MDImain.ActiveMdiChild;
-
-            PrintClosedTrialBalance(rptViewr);
+            PrintClosedTrialBalance();
             Close();
         }
 
@@ -53,29 +51,49 @@ namespace IAC2021SQL
             Close();
         }
 
-        private void PrintClosedTrialBalance(ReportViewer rptViewer)
+        private void PrintClosedTrialBalance()
         {
-            String  lsDealerNum = lookUpEditDealer.EditValue != null ? lookUpEditDealer.EditValue.ToString().Trim():"" + "%",lsState;
+            Hide();
+            MDIIAC2013 MDImain = (MDIIAC2013)MdiParent;
+
+            String lsDealerNum = lookUpEditDealer.EditValue != null ? lookUpEditDealer.EditValue.ToString().Trim():"" + "%",lsState;
 
             lsState = (lookUpEditState.EditValue != null) ? lookUpEditState.EditValue.ToString().Trim() + "%" : "%";
 
-            IACDataSetTableAdapters.CUSTOMERTableAdapter CUSTOMERTableAdapter = new IACDataSetTableAdapters.CUSTOMERTableAdapter();
-            IACDataSetTableAdapters.DEALERTableAdapter DEALERTableAdapter = new IACDataSetTableAdapters.DEALERTableAdapter();
-            IACDataSetTableAdapters.WS_DEALER_TRIAL_BALANCETableAdapter WS_DEALER_TRIAL_BALANCETableAdapter = new IACDataSetTableAdapters.WS_DEALER_TRIAL_BALANCETableAdapter();
-            IACDataSetTableAdapters.MastHistTotalsTableAdapter MastHistTotalsTableAdapter = new IACDataSetTableAdapters.MastHistTotalsTableAdapter();
-            // Moses Newman 05/3/2014 Get rid of SQL Pass Through!
-            CUSTOMERTableAdapter.FillByStateDealer(iACDataSet.CUSTOMER, lsState, lsDealerNum);
-            DEALERTableAdapter.FillByCustomerStateDealer(iACDataSet.DEALER, lsState, lsDealerNum);
-            WS_DEALER_TRIAL_BALANCETableAdapter.FillByStateDealer(iACDataSet.WS_DEALER_TRIAL_BALANCE,lsState,lsDealerNum);
-            MastHistTotalsTableAdapter.Fill(iACDataSet.MastHistTotals,"C");
+            // Moses Newman 03/03/2022 Covert to XtraReport
+            var report = new XtraReportTrialBalance(); 
+            SqlDataSource ds = report.DataSource as SqlDataSource;
+           
+            ds.Queries[0].Parameters[0].Value = lsState;
+            ds.Queries[0].Parameters[1].Value = lsDealerNum;
+            ds.Queries[1].Parameters[0].Value = lsState;
+            ds.Queries[1].Parameters[1].Value = lsDealerNum;
+            ds.Queries[2].Parameters[0].Value = "C";
+            ds.Queries[3].Parameters[0].Value = lsState;
+            ds.Queries[3].Parameters[1].Value = lsDealerNum;
 
-            ClosedLoanTrialBalance myReportObject = new ClosedLoanTrialBalance();
-            myReportObject.SetDataSource(iACDataSet);
-            myReportObject.SetParameterValue("gsUserID", Program.gsUserID);
-            myReportObject.SetParameterValue("gsUserName", Program.gsUserName);
-            rptViewer.crystalReportViewer.ReportSource = myReportObject;
-            rptViewer.crystalReportViewer.Refresh();
-            rptViewer.Show();
+            report.DataSource = ds;
+            report.RequestParameters = false;
+            report.Parameters["gsUserID"].Value = Program.gsUserID;
+            report.Parameters["gsUserName"].Value = Program.gsUserName;
+
+            // Moses Newman 04/17/2022 Now do DealerSummary Sub Report datasource!
+            XRSubreport subReport = report.FindControl("DealerSummary", true) as XRSubreport;
+            XtraReport reportSource = subReport.ReportSource as XtraReport;
+            SqlDataSource subds = reportSource.DataSource as SqlDataSource;
+            subds.Queries[0].Parameters[0].Value = lsState;
+            subds.Queries[0].Parameters[1].Value = lsDealerNum;
+            subds.Queries[1].Parameters[0].Value = "C";
+            subds.Queries[2].Parameters[0].Value = lsState;
+            subds.Queries[2].Parameters[1].Value = lsDealerNum;
+            reportSource.DataSource = subds;
+
+            var tool = new ReportPrintTool(report);
+
+            tool.PreviewRibbonForm.MdiParent = MDImain;
+            tool.AutoShowParametersPanel = false;
+            tool.PreviewRibbonForm.WindowState = FormWindowState.Maximized;
+            tool.ShowRibbonPreview();
         }
 
         private void buttonExcel_Click(object sender, EventArgs e)

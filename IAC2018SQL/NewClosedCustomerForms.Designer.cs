@@ -341,11 +341,10 @@
             this.groupBox10 = new DevExpress.XtraEditors.GroupControl();
             this.textEditDealerName = new DevExpress.XtraEditors.TextEdit();
             this.toolbarFormManager1 = new DevExpress.XtraBars.ToolbarForm.ToolbarFormManager(this.components);
-            this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
+            this.standaloneBarDockControl1 = new DevExpress.XtraBars.StandaloneBarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.standaloneBarDockControl1 = new DevExpress.XtraBars.StandaloneBarDockControl();
             this.cUSTOMER_DEALERcomboBox = new DevExpress.XtraEditors.LookUpEdit();
             this.checkEditAllotment = new DevExpress.XtraEditors.CheckEdit();
             this.checkEditMilitary = new DevExpress.XtraEditors.CheckEdit();
@@ -839,11 +838,6 @@
             this.txtDealerDiscBal = new System.Windows.Forms.TextBox();
             this.formAssistant1 = new DevExpress.XtraBars.FormAssistant();
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
-            this.toolbarFormManager2 = new DevExpress.XtraBars.ToolbarForm.ToolbarFormManager(this.components);
-            this.barDockControl1 = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControl2 = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControl3 = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControl4 = new DevExpress.XtraBars.BarDockControl();
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.toolStrip1 = new DevExpress.XtraBars.Bar();
             this.toolStripButton1 = new DevExpress.XtraBars.BarButtonItem();
@@ -856,10 +850,10 @@
             this.barButtonItemPrintAmortizationSchedule = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItemTimeValueToExcel = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItemCaculateBuyout = new DevExpress.XtraBars.BarButtonItem();
-            this.barDockControl5 = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControl6 = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControl7 = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControl8 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl1 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl2 = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControl3 = new DevExpress.XtraBars.BarDockControl();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             label45 = new System.Windows.Forms.Label();
             label48 = new System.Windows.Forms.Label();
@@ -1319,7 +1313,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.checkBoxReportTSB.Properties)).BeginInit();
             this.groupBoxAccountNumber.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.toolbarFormManager2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -2996,18 +2989,20 @@
             // 
             // toolbarFormManager1
             // 
-            this.toolbarFormManager1.DockControls.Add(this.barDockControlTop);
+            this.toolbarFormManager1.DockControls.Add(this.standaloneBarDockControl1);
             this.toolbarFormManager1.DockControls.Add(this.barDockControlBottom);
             this.toolbarFormManager1.DockControls.Add(this.barDockControlLeft);
             this.toolbarFormManager1.DockControls.Add(this.barDockControlRight);
-            this.toolbarFormManager1.DockControls.Add(this.standaloneBarDockControl1);
             this.toolbarFormManager1.Form = this;
             // 
-            // barDockControlTop
+            // standaloneBarDockControl1
             // 
-            this.barDockControlTop.CausesValidation = false;
-            resources.ApplyResources(this.barDockControlTop, "barDockControlTop");
-            this.barDockControlTop.Manager = this.toolbarFormManager1;
+            this.standaloneBarDockControl1.Appearance.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.standaloneBarDockControl1.Appearance.Options.UseBackColor = true;
+            resources.ApplyResources(this.standaloneBarDockControl1, "standaloneBarDockControl1");
+            this.standaloneBarDockControl1.CausesValidation = false;
+            this.standaloneBarDockControl1.Manager = this.toolbarFormManager1;
+            this.standaloneBarDockControl1.Name = "standaloneBarDockControl1";
             // 
             // barDockControlBottom
             // 
@@ -3026,15 +3021,6 @@
             this.barDockControlRight.CausesValidation = false;
             resources.ApplyResources(this.barDockControlRight, "barDockControlRight");
             this.barDockControlRight.Manager = this.toolbarFormManager1;
-            // 
-            // standaloneBarDockControl1
-            // 
-            this.standaloneBarDockControl1.Appearance.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.standaloneBarDockControl1.Appearance.Options.UseBackColor = true;
-            resources.ApplyResources(this.standaloneBarDockControl1, "standaloneBarDockControl1");
-            this.standaloneBarDockControl1.CausesValidation = false;
-            this.standaloneBarDockControl1.Manager = this.toolbarFormManager1;
-            this.standaloneBarDockControl1.Name = "standaloneBarDockControl1";
             // 
             // cUSTOMER_DEALERcomboBox
             // 
@@ -8700,47 +8686,15 @@
             resources.ApplyResources(this.txtDealerDiscBal, "txtDealerDiscBal");
             this.txtDealerDiscBal.Name = "txtDealerDiscBal";
             // 
-            // toolbarFormManager2
-            // 
-            this.toolbarFormManager2.DockControls.Add(this.barDockControl1);
-            this.toolbarFormManager2.DockControls.Add(this.barDockControl2);
-            this.toolbarFormManager2.DockControls.Add(this.barDockControl3);
-            this.toolbarFormManager2.DockControls.Add(this.barDockControl4);
-            this.toolbarFormManager2.Form = this;
-            // 
-            // barDockControl1
-            // 
-            this.barDockControl1.CausesValidation = false;
-            resources.ApplyResources(this.barDockControl1, "barDockControl1");
-            this.barDockControl1.Manager = this.toolbarFormManager2;
-            // 
-            // barDockControl2
-            // 
-            this.barDockControl2.CausesValidation = false;
-            resources.ApplyResources(this.barDockControl2, "barDockControl2");
-            this.barDockControl2.Manager = this.toolbarFormManager2;
-            // 
-            // barDockControl3
-            // 
-            this.barDockControl3.CausesValidation = false;
-            resources.ApplyResources(this.barDockControl3, "barDockControl3");
-            this.barDockControl3.Manager = this.toolbarFormManager2;
-            // 
-            // barDockControl4
-            // 
-            this.barDockControl4.CausesValidation = false;
-            resources.ApplyResources(this.barDockControl4, "barDockControl4");
-            this.barDockControl4.Manager = this.toolbarFormManager2;
-            // 
             // barManager1
             // 
             this.barManager1.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
             this.toolStrip1,
             this.HistoryBar});
-            this.barManager1.DockControls.Add(this.barDockControl5);
-            this.barManager1.DockControls.Add(this.barDockControl6);
-            this.barManager1.DockControls.Add(this.barDockControl7);
-            this.barManager1.DockControls.Add(this.barDockControl8);
+            this.barManager1.DockControls.Add(this.barDockControlTop);
+            this.barManager1.DockControls.Add(this.barDockControl1);
+            this.barManager1.DockControls.Add(this.barDockControl2);
+            this.barManager1.DockControls.Add(this.barDockControl3);
             this.barManager1.Form = this;
             this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.toolStripButton1,
@@ -8883,29 +8837,29 @@
             this.barButtonItemCaculateBuyout.PaintStyle = DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph;
             this.barButtonItemCaculateBuyout.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemCaculateBuyout_ItemClick);
             // 
-            // barDockControl5
+            // barDockControlTop
             // 
-            this.barDockControl5.CausesValidation = false;
-            resources.ApplyResources(this.barDockControl5, "barDockControl5");
-            this.barDockControl5.Manager = this.barManager1;
+            this.barDockControlTop.CausesValidation = false;
+            resources.ApplyResources(this.barDockControlTop, "barDockControlTop");
+            this.barDockControlTop.Manager = this.barManager1;
             // 
-            // barDockControl6
+            // barDockControl1
             // 
-            this.barDockControl6.CausesValidation = false;
-            resources.ApplyResources(this.barDockControl6, "barDockControl6");
-            this.barDockControl6.Manager = this.barManager1;
+            this.barDockControl1.CausesValidation = false;
+            resources.ApplyResources(this.barDockControl1, "barDockControl1");
+            this.barDockControl1.Manager = this.barManager1;
             // 
-            // barDockControl7
+            // barDockControl2
             // 
-            this.barDockControl7.CausesValidation = false;
-            resources.ApplyResources(this.barDockControl7, "barDockControl7");
-            this.barDockControl7.Manager = this.barManager1;
+            this.barDockControl2.CausesValidation = false;
+            resources.ApplyResources(this.barDockControl2, "barDockControl2");
+            this.barDockControl2.Manager = this.barManager1;
             // 
-            // barDockControl8
+            // barDockControl3
             // 
-            this.barDockControl8.CausesValidation = false;
-            resources.ApplyResources(this.barDockControl8, "barDockControl8");
-            this.barDockControl8.Manager = this.barManager1;
+            this.barDockControl3.CausesValidation = false;
+            resources.ApplyResources(this.barDockControl3, "barDockControl3");
+            this.barDockControl3.Manager = this.barManager1;
             // 
             // barButtonItem1
             // 
@@ -8927,15 +8881,10 @@
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
-            this.Controls.Add(this.barDockControlTop);
-            this.Controls.Add(this.barDockControl3);
-            this.Controls.Add(this.barDockControl4);
             this.Controls.Add(this.barDockControl2);
+            this.Controls.Add(this.barDockControl3);
             this.Controls.Add(this.barDockControl1);
-            this.Controls.Add(this.barDockControl7);
-            this.Controls.Add(this.barDockControl8);
-            this.Controls.Add(this.barDockControl6);
-            this.Controls.Add(this.barDockControl5);
+            this.Controls.Add(this.barDockControlTop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.IconOptions.Image = ((System.Drawing.Image)(resources.GetObject("frmNewCustMaint.IconOptions.Image")));
             this.LookAndFeel.SkinName = "McSkin";
@@ -9214,7 +9163,6 @@
             this.groupBoxAccountNumber.ResumeLayout(false);
             this.groupBoxAccountNumber.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.toolbarFormManager2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -9317,15 +9265,6 @@
         private DevExpress.XtraBars.FormAssistant formAssistant1;
         private DevExpress.Utils.Behaviors.BehaviorManager behaviorManager1;
         private DevExpress.XtraBars.ToolbarForm.ToolbarFormManager toolbarFormManager1;
-        private DevExpress.XtraBars.BarDockControl barDockControlTop;
-        private DevExpress.XtraBars.BarDockControl barDockControlBottom;
-        private DevExpress.XtraBars.BarDockControl barDockControlLeft;
-        private DevExpress.XtraBars.BarDockControl barDockControlRight;
-        private DevExpress.XtraBars.ToolbarForm.ToolbarFormManager toolbarFormManager2;
-        private DevExpress.XtraBars.BarDockControl barDockControl1;
-        private DevExpress.XtraBars.BarDockControl barDockControl2;
-        private DevExpress.XtraBars.BarDockControl barDockControl3;
-        private DevExpress.XtraBars.BarDockControl barDockControl4;
         private DevExpress.XtraTab.XtraTabPage xtraTabPageCustInfo1;
         private DevExpress.XtraEditors.GroupControl groupBox10;
         private DevExpress.XtraEditors.DateEdit nullableDateTimePickerDateContractReceived;
@@ -9761,9 +9700,6 @@
         private DevExpress.XtraBars.BarButtonItem toolStripButtonEdit;
         private DevExpress.XtraBars.BarButtonItem toolStripButtonDelete;
         private DevExpress.XtraBars.BarButtonItem toolStripButtonSave;
-        private DevExpress.XtraBars.BarDockControl barDockControl5;
-        private DevExpress.XtraBars.BarDockControl barDockControl6;
-        private DevExpress.XtraBars.BarDockControl barDockControl8;
         private DevExpress.XtraBars.StandaloneBarDockControl standaloneBarDockControl1;
         private DevExpress.XtraBars.Bar HistoryBar;
         private DevExpress.XtraBars.BarButtonItem barButtonItemPrintCustomerHistory;
@@ -9839,6 +9775,13 @@
         private System.Windows.Forms.ComboBox comboBox2;
         private DevExpress.XtraEditors.LookUpEdit cUSTOMER_DEALERcomboBox;
         private DevExpress.XtraEditors.TextEdit textEditDealerName;
+        private DevExpress.XtraBars.BarDockControl barDockControlBottom;
+        private DevExpress.XtraBars.BarDockControl barDockControlLeft;
+        private DevExpress.XtraBars.BarDockControl barDockControlRight;
+        private DevExpress.XtraBars.BarDockControl barDockControl2;
+        private DevExpress.XtraBars.BarDockControl barDockControlTop;
+        private DevExpress.XtraBars.BarDockControl barDockControl1;
+        private DevExpress.XtraBars.BarDockControl barDockControl3;
     }
 }
 
