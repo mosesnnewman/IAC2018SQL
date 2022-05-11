@@ -12,7 +12,7 @@ using System.Threading;
 
 namespace IAC2021SQL
 {
-    public partial class frmImportDefiPDFs : System.Windows.Forms.Form
+    public partial class frmImportDefiPDFs : DevExpress.XtraEditors.XtraForm
     {
         //Acrobat application as a private member variable of the class
         private CAcroApp mApp;
@@ -81,7 +81,7 @@ namespace IAC2021SQL
                     TextBoxLastName.Text = ImportData.CUSTOMER.Rows[i].Field<String>("CUSTOMER_LAST_NAME");
                     TextBoxLastName.Refresh();
 
-                    textBoxDealerNo.Text = ImportData.CUSTOMER.Rows[i].Field<String>("CUSTOMER_DEALER");
+                    textBoxDealerNo.Text = ImportData.CUSTOMER.Rows[i].Field<Int32>("CUSTOMER_DEALER").ToString().Trim();
                     textBoxDealerNo.Refresh();
 
                     textBoxSSNLast4.Text = ImportData.CUSTOMER.Rows[i].Field<String>("CUSTOMER_SS_3");
@@ -90,7 +90,7 @@ namespace IAC2021SQL
                     textBoxSide.Text = "CLOSED";
                     textBoxSide.Refresh();
 
-                    progressBarStatus.Value = ((i + 1) / ImportData.CUSTOMER.Rows.Count) * 100;
+                    progressBarStatus.EditValue = ((i + 1) / ImportData.CUSTOMER.Rows.Count) * 100;
 
                     DEFIPDFImagesTableAdapter.FillByCustomerNo(PDFData.DEFIPDFImages, ImportData.CUSTOMER.Rows[i].Field<String>("CUSTOMER_NO"));
 
@@ -172,7 +172,7 @@ namespace IAC2021SQL
                             { new FieldItem(1, ImportData.CUSTOMER.Rows[i].Field<String>("CUSTOMER_NO"))
                             , new FieldItem(2, ImportData.CUSTOMER.Rows[i].Field<String>("CUSTOMER_FIRST_NAME"))
                             , new FieldItem(9, ImportData.CUSTOMER.Rows[i].Field<String>("CUSTOMER_LAST_NAME"))
-                            , new FieldItem(5, ImportData.CUSTOMER.Rows[i].Field<String>("CUSTOMER_DEALER"))
+                            , new FieldItem(5, ImportData.CUSTOMER.Rows[i].Field<Int32>("CUSTOMER_DEALER").ToString().Trim())
                             , new FieldItem(4, ImportData.CUSTOMER.Rows[i].Field<String>("CUSTOMER_SS_3"))
                             , new FieldItem(12,"CLOSED") };
 
@@ -199,7 +199,7 @@ namespace IAC2021SQL
             }
             labelProgress.Text = "DONE!";
             labelProgress.Refresh();
-            progressBarStatus.Value = 100;
+            progressBarStatus.EditValue = 100;
             progressBarStatus.Refresh();
         }
 

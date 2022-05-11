@@ -85,7 +85,8 @@ namespace IAC2021SQL
             {
                 case "C":
                     opnclscustomerTableAdapter.FillByClosed(iacDataSetReceipts.OPNCLSCUSTOMER, _CustomerNo);
-                    dealerTableAdapter.Fill(iacDataSetReceipts.DEALER, iacDataSetReceipts.OPNCLSCUSTOMER.Rows[0].Field<Int32>("CUSTOMER_DEALER"));
+                    // Moses Newman 05/03/2022 Dealer is an integer in DEALER but not in OPNCLSCUSTOMER!
+                    dealerTableAdapter.Fill(iacDataSetReceipts.DEALER, Int32.Parse(iacDataSetReceipts.OPNCLSCUSTOMER.Rows[0].Field<String>("CUSTOMER_DEALER")));
                     textBoxDealerName.Text = iacDataSetReceipts.DEALER.Rows[0].Field<String>("DEALER_NAME");
                     break;
                 case "O":

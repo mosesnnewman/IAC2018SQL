@@ -746,7 +746,7 @@ namespace IAC2021SQL
                     }
                     tempDEALERTableAdapter.Update(tempPosting.tempDEALER);
 
-                    MDIIAC2013 MDImain = (MDIIAC2013)MdiParent;
+                    MDIIAC2013 MDImain = this;
                     var report = new XtraReportClosedPaymentBalanceJournal();
                     SqlDataSource ds = report.DataSource as SqlDataSource;
 
@@ -902,7 +902,7 @@ namespace IAC2021SQL
             tempDEALERTableAdapter.Update(tempPosting.tempDEALER);
 
             // Moses Newman 03/03/2022 Covert to XtraReport
-            MDIIAC2013 MDImain = (MDIIAC2013)MdiParent;
+            MDIIAC2013 MDImain = this;
             var report = new XtraReportClosedPaymentBalanceJournal();
             SqlDataSource ds = report.DataSource as SqlDataSource;
 
@@ -933,6 +933,7 @@ namespace IAC2021SQL
             SqlDataSource PaymentTypesds = reportSourcePT.DataSource as SqlDataSource;
 
             reportSourcePT.DataSource = PaymentTypesds;
+
 
             var tool = new ReportPrintTool(report);
 

@@ -384,7 +384,7 @@
             this.buttonLetter = new DevExpress.XtraEditors.SimpleButton();
             this.comboBoxLetterType = new System.Windows.Forms.ComboBox();
             this.comboBoxLetterNo = new System.Windows.Forms.ComboBox();
-            this.cUSTOMER_NOTextBox = new System.Windows.Forms.TextBox();
+            this.cUSTOMER_NOTextBox = new DevExpress.XtraEditors.TextEdit();
             this.cUSTOMER_WORK_EXTtextBox = new System.Windows.Forms.TextBox();
             this.cUSTOMER_PHONE_EXTtextBox = new System.Windows.Forms.TextBox();
             this.cUSTOMER_COMMENT_2TextBox = new System.Windows.Forms.TextBox();
@@ -405,7 +405,7 @@
             this.cUSTOMER_STREET_1TextBox = new System.Windows.Forms.TextBox();
             this.cUSTOMER_LAST_NAMETextBox = new System.Windows.Forms.TextBox();
             this.cUSTOMER_FIRST_NAMETextBox = new System.Windows.Forms.TextBox();
-            this.cUSTOMER_PURCHASE_ORDERTextBox = new System.Windows.Forms.TextBox();
+            this.cUSTOMER_PURCHASE_ORDERTextBox = new DevExpress.XtraEditors.TextEdit();
             this.cUSTOMER_ACT_STATTextBox = new System.Windows.Forms.TextBox();
             this.cUSTOMER_IAC_TypeTextBox = new System.Windows.Forms.TextBox();
             this.cUSTOMER_WORK_PHONETextBox = new System.Windows.Forms.MaskedTextBox();
@@ -803,11 +803,9 @@
             this.label143 = new System.Windows.Forms.Label();
             this.comboBoxSpecialComment = new System.Windows.Forms.ComboBox();
             this.label142 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.comboBoxPaymentRating = new System.Windows.Forms.ComboBox();
             this.label141 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBoxAccountStatus = new System.Windows.Forms.ComboBox();
+            this.comboBoxAccountStatus = new DevExpress.XtraEditors.LookUpEdit();
             this.groupBoxDollars = new System.Windows.Forms.GroupBox();
             this.label137 = new System.Windows.Forms.Label();
             this.textBoxCreditLimit = new System.Windows.Forms.TextBox();
@@ -1135,6 +1133,8 @@
             this.groupBoxGapWarranty.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.checkBoxExcludeVSI.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkBoxWarranty.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cUSTOMER_NOTextBox.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cUSTOMER_PURCHASE_ORDERTextBox.Properties)).BeginInit();
             this.groupBoxRefi.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.checkBoxVehicleWarranty.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkBoxRefi.Properties)).BeginInit();
@@ -1306,6 +1306,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.checkBoxSpecialComment.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkBoxPaymentRating.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkBoxAccountStatus.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxAccountStatus.Properties)).BeginInit();
             this.groupBoxDollars.SuspendLayout();
             this.groupBoxPurge.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.checkBoxPurge.Properties)).BeginInit();
@@ -3025,6 +3026,7 @@
             // cUSTOMER_DEALERcomboBox
             // 
             this.cUSTOMER_DEALERcomboBox.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_DEALER", true));
+            this.cUSTOMER_DEALERcomboBox.EnterMoveNextControl = true;
             resources.ApplyResources(this.cUSTOMER_DEALERcomboBox, "cUSTOMER_DEALERcomboBox");
             this.cUSTOMER_DEALERcomboBox.MenuManager = this.toolbarFormManager1;
             this.cUSTOMER_DEALERcomboBox.Name = "cUSTOMER_DEALERcomboBox";
@@ -3040,12 +3042,15 @@
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo(resources.GetString("cUSTOMER_DEALERcomboBox.Properties.Columns9"), resources.GetString("cUSTOMER_DEALERcomboBox.Properties.Columns10"), ((int)(resources.GetObject("cUSTOMER_DEALERcomboBox.Properties.Columns11"))), ((DevExpress.Utils.FormatType)(resources.GetObject("cUSTOMER_DEALERcomboBox.Properties.Columns12"))), resources.GetString("cUSTOMER_DEALERcomboBox.Properties.Columns13"), ((bool)(resources.GetObject("cUSTOMER_DEALERcomboBox.Properties.Columns14"))), ((DevExpress.Utils.HorzAlignment)(resources.GetObject("cUSTOMER_DEALERcomboBox.Properties.Columns15"))), ((DevExpress.Data.ColumnSortOrder)(resources.GetObject("cUSTOMER_DEALERcomboBox.Properties.Columns16"))), ((DevExpress.Utils.DefaultBoolean)(resources.GetObject("cUSTOMER_DEALERcomboBox.Properties.Columns17"))))});
             this.cUSTOMER_DEALERcomboBox.Properties.DataSource = this.DLRLISTBYNUMbindingSource;
             this.cUSTOMER_DEALERcomboBox.Properties.DisplayMember = "id";
+            this.cUSTOMER_DEALERcomboBox.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Buffered;
             this.cUSTOMER_DEALERcomboBox.Properties.LookAndFeel.SkinName = "McSkin";
             this.cUSTOMER_DEALERcomboBox.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
             this.cUSTOMER_DEALERcomboBox.Properties.NullText = resources.GetString("cUSTOMER_DEALERcomboBox.Properties.NullText");
+            this.cUSTOMER_DEALERcomboBox.Properties.PopupFilterMode = DevExpress.XtraEditors.PopupFilterMode.StartsWith;
+            this.cUSTOMER_DEALERcomboBox.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            this.cUSTOMER_DEALERcomboBox.Properties.ValidateOnEnterKey = true;
             this.cUSTOMER_DEALERcomboBox.Properties.ValueMember = "id";
             this.cUSTOMER_DEALERcomboBox.EditValueChanged += new System.EventHandler(this.cUSTOMER_DEALERcomboBox_EditValueChanged);
-            this.cUSTOMER_DEALERcomboBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // checkEditAllotment
             // 
@@ -3199,6 +3204,7 @@
             this.checkBoxSendToDealer.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("checkBoxSendToDealer.Properties.Appearance.Font")));
             this.checkBoxSendToDealer.Properties.Appearance.Options.UseFont = true;
             this.checkBoxSendToDealer.Properties.Caption = resources.GetString("checkBoxSendToDealer.Properties.Caption");
+            this.checkBoxSendToDealer.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
             this.checkBoxSendToDealer.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
             this.checkBoxSendToDealer.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
             this.checkBoxSendToDealer.Properties.LookAndFeel.SkinName = "McSkin";
@@ -3394,6 +3400,7 @@
             this.checkBoxDNTMktg.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("checkBoxDNTMktg.Properties.Appearance.Font")));
             this.checkBoxDNTMktg.Properties.Appearance.Options.UseFont = true;
             this.checkBoxDNTMktg.Properties.Caption = resources.GetString("checkBoxDNTMktg.Properties.Caption");
+            this.checkBoxDNTMktg.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
             this.checkBoxDNTMktg.CheckedChanged += new System.EventHandler(this.checkBoxDNTMktg_CheckedChanged);
             // 
             // checkBoxDNTAcct
@@ -3404,6 +3411,7 @@
             this.checkBoxDNTAcct.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("checkBoxDNTAcct.Properties.Appearance.Font")));
             this.checkBoxDNTAcct.Properties.Appearance.Options.UseFont = true;
             this.checkBoxDNTAcct.Properties.Caption = resources.GetString("checkBoxDNTAcct.Properties.Caption");
+            this.checkBoxDNTAcct.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
             this.checkBoxDNTAcct.CheckedChanged += new System.EventHandler(this.checkBoxDNTAcct_CheckedChanged);
             this.checkBoxDNTAcct.Click += new System.EventHandler(this.checkBoxDNTAcct_Click);
             // 
@@ -3412,8 +3420,8 @@
             this.comboBoxGN.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.cUSTOMERBindingSource, "CUSTOMER_SUFFIX", true));
             this.comboBoxGN.DataSource = this.bindingSourceGenCodes;
             this.comboBoxGN.DisplayMember = "Description";
-            this.comboBoxGN.FormattingEnabled = true;
             resources.ApplyResources(this.comboBoxGN, "comboBoxGN");
+            this.comboBoxGN.FormattingEnabled = true;
             this.comboBoxGN.Name = "comboBoxGN";
             this.comboBoxGN.ValueMember = "gcode";
             this.comboBoxGN.SelectedIndexChanged += new System.EventHandler(this.comboBoxGN_SelectedIndexChanged);
@@ -3456,7 +3464,10 @@
             this.checkBoxExcludeVSI.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.cUSTOMERBindingSource, "ExcludeVSI", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "0"));
             resources.ApplyResources(this.checkBoxExcludeVSI, "checkBoxExcludeVSI");
             this.checkBoxExcludeVSI.Name = "checkBoxExcludeVSI";
+            this.checkBoxExcludeVSI.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("checkBoxExcludeVSI.Properties.Appearance.Font")));
+            this.checkBoxExcludeVSI.Properties.Appearance.Options.UseFont = true;
             this.checkBoxExcludeVSI.Properties.Caption = resources.GetString("checkBoxExcludeVSI.Properties.Caption");
+            this.checkBoxExcludeVSI.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
             // 
             // checkBoxWarranty
             // 
@@ -3466,6 +3477,7 @@
             this.checkBoxWarranty.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("checkBoxWarranty.Properties.Appearance.Font")));
             this.checkBoxWarranty.Properties.Appearance.Options.UseFont = true;
             this.checkBoxWarranty.Properties.Caption = resources.GetString("checkBoxWarranty.Properties.Caption");
+            this.checkBoxWarranty.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
             this.checkBoxWarranty.CheckedChanged += new System.EventHandler(this.checkBoxWarranty_CheckedChanged);
             // 
             // comboBoxGAP
@@ -3474,8 +3486,8 @@
             this.comboBoxGAP.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.cUSTOMERBindingSource, "GapIns", true));
             this.comboBoxGAP.DataSource = this.bindingSourceGap;
             this.comboBoxGAP.DisplayMember = "Descrition";
-            this.comboBoxGAP.FormattingEnabled = true;
             resources.ApplyResources(this.comboBoxGAP, "comboBoxGAP");
+            this.comboBoxGAP.FormattingEnabled = true;
             this.comboBoxGAP.Name = "comboBoxGAP";
             this.comboBoxGAP.ValueMember = "Descrition";
             this.comboBoxGAP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
@@ -3579,10 +3591,16 @@
             // cUSTOMER_NOTextBox
             // 
             this.cUSTOMER_NOTextBox.AllowDrop = true;
-            this.cUSTOMER_NOTextBox.BackColor = System.Drawing.Color.Gold;
+            this.cUSTOMER_NOTextBox.EnterMoveNextControl = true;
             resources.ApplyResources(this.cUSTOMER_NOTextBox, "cUSTOMER_NOTextBox");
             this.cUSTOMER_NOTextBox.Name = "cUSTOMER_NOTextBox";
-            this.cUSTOMER_NOTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            this.cUSTOMER_NOTextBox.Properties.Appearance.BackColor = System.Drawing.Color.Gold;
+            this.cUSTOMER_NOTextBox.Properties.Appearance.BorderColor = System.Drawing.Color.White;
+            this.cUSTOMER_NOTextBox.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("cUSTOMER_NOTextBox.Properties.Appearance.Font")));
+            this.cUSTOMER_NOTextBox.Properties.Appearance.Options.UseBackColor = true;
+            this.cUSTOMER_NOTextBox.Properties.Appearance.Options.UseBorderColor = true;
+            this.cUSTOMER_NOTextBox.Properties.Appearance.Options.UseFont = true;
+            this.cUSTOMER_NOTextBox.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.cUSTOMER_NOTextBox.Validated += new System.EventHandler(this.cUSTOMER_NOTextBox_Validated);
             // 
             // cUSTOMER_WORK_EXTtextBox
@@ -3763,14 +3781,24 @@
             // cUSTOMER_PURCHASE_ORDERTextBox
             // 
             this.cUSTOMER_PURCHASE_ORDERTextBox.AllowDrop = true;
-            this.cUSTOMER_PURCHASE_ORDERTextBox.BackColor = System.Drawing.Color.Gold;
-            this.cUSTOMER_PURCHASE_ORDERTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.cUSTOMER_PURCHASE_ORDERTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_PURCHASE_ORDER", true));
+            this.cUSTOMER_PURCHASE_ORDERTextBox.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_PURCHASE_ORDER", true));
+            this.cUSTOMER_PURCHASE_ORDERTextBox.EnterMoveNextControl = true;
             resources.ApplyResources(this.cUSTOMER_PURCHASE_ORDERTextBox, "cUSTOMER_PURCHASE_ORDERTextBox");
             this.cUSTOMER_PURCHASE_ORDERTextBox.Name = "cUSTOMER_PURCHASE_ORDERTextBox";
-            this.cUSTOMER_PURCHASE_ORDERTextBox.TextChanged += new System.EventHandler(this.cUSTOMER_PURCHASE_ORDERTextBox_TextChanged);
+            this.cUSTOMER_PURCHASE_ORDERTextBox.Properties.Appearance.BackColor = System.Drawing.Color.Gold;
+            this.cUSTOMER_PURCHASE_ORDERTextBox.Properties.Appearance.BorderColor = System.Drawing.Color.White;
+            this.cUSTOMER_PURCHASE_ORDERTextBox.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("cUSTOMER_PURCHASE_ORDERTextBox.Properties.Appearance.Font")));
+            this.cUSTOMER_PURCHASE_ORDERTextBox.Properties.Appearance.Options.UseBackColor = true;
+            this.cUSTOMER_PURCHASE_ORDERTextBox.Properties.Appearance.Options.UseBorderColor = true;
+            this.cUSTOMER_PURCHASE_ORDERTextBox.Properties.Appearance.Options.UseFont = true;
+            this.cUSTOMER_PURCHASE_ORDERTextBox.Properties.AppearanceFocused.BorderColor = System.Drawing.Color.Black;
+            this.cUSTOMER_PURCHASE_ORDERTextBox.Properties.AppearanceFocused.Font = ((System.Drawing.Font)(resources.GetObject("cUSTOMER_PURCHASE_ORDERTextBox.Properties.AppearanceFocused.Font")));
+            this.cUSTOMER_PURCHASE_ORDERTextBox.Properties.AppearanceFocused.Options.UseBorderColor = true;
+            this.cUSTOMER_PURCHASE_ORDERTextBox.Properties.AppearanceFocused.Options.UseFont = true;
+            this.cUSTOMER_PURCHASE_ORDERTextBox.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.cUSTOMER_PURCHASE_ORDERTextBox.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.cUSTOMER_PURCHASE_ORDERTextBox.EditValueChanged += new System.EventHandler(this.cUSTOMER_PURCHASE_ORDERTextBox_TextChanged);
             this.cUSTOMER_PURCHASE_ORDERTextBox.Enter += new System.EventHandler(this.cUSTOMER_PURCHASE_ORDERTextBox_Enter);
-            this.cUSTOMER_PURCHASE_ORDERTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             this.cUSTOMER_PURCHASE_ORDERTextBox.Validated += new System.EventHandler(this.cUSTOMER_PURCHASE_ORDERTextBox_Validated);
             // 
             // cUSTOMER_ACT_STATTextBox
@@ -4034,6 +4062,7 @@
             this.checkBoxCheckIssued.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("checkBoxCheckIssued.Properties.Appearance.Font")));
             this.checkBoxCheckIssued.Properties.Appearance.Options.UseFont = true;
             this.checkBoxCheckIssued.Properties.Caption = resources.GetString("checkBoxCheckIssued.Properties.Caption");
+            this.checkBoxCheckIssued.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
             this.checkBoxCheckIssued.CheckedChanged += new System.EventHandler(this.checkBoxCheckIssued_CheckedChanged);
             this.checkBoxCheckIssued.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
@@ -4281,6 +4310,7 @@
             this.checkBoxOverrideLateCharge.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("checkBoxOverrideLateCharge.Properties.Appearance.Font")));
             this.checkBoxOverrideLateCharge.Properties.Appearance.Options.UseFont = true;
             this.checkBoxOverrideLateCharge.Properties.Caption = resources.GetString("checkBoxOverrideLateCharge.Properties.Caption");
+            this.checkBoxOverrideLateCharge.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
             this.checkBoxOverrideLateCharge.CheckedChanged += new System.EventHandler(this.checkBoxOverrideLateCharge_CheckedChanged);
             // 
             // DateTimePickerContractDate
@@ -4310,6 +4340,7 @@
             this.checkBoxSimple.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("checkBoxSimple.Properties.Appearance.Font")));
             this.checkBoxSimple.Properties.Appearance.Options.UseFont = true;
             this.checkBoxSimple.Properties.Caption = resources.GetString("checkBoxSimple.Properties.Caption");
+            this.checkBoxSimple.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
             this.checkBoxSimple.CheckedChanged += new System.EventHandler(this.checkBoxSimple_CheckedChanged);
             // 
             // txtFirstPayDate
@@ -5557,6 +5588,7 @@
             this.checkBoxCOSDNTMktg.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("checkBoxCOSDNTMktg.Properties.Appearance.Font")));
             this.checkBoxCOSDNTMktg.Properties.Appearance.Options.UseFont = true;
             this.checkBoxCOSDNTMktg.Properties.Caption = resources.GetString("checkBoxCOSDNTMktg.Properties.Caption");
+            this.checkBoxCOSDNTMktg.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
             // 
             // checkBoxCOSDNTAcct
             // 
@@ -5566,6 +5598,7 @@
             this.checkBoxCOSDNTAcct.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("checkBoxCOSDNTAcct.Properties.Appearance.Font")));
             this.checkBoxCOSDNTAcct.Properties.Appearance.Options.UseFont = true;
             this.checkBoxCOSDNTAcct.Properties.Caption = resources.GetString("checkBoxCOSDNTAcct.Properties.Caption");
+            this.checkBoxCOSDNTAcct.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
             // 
             // groupBox5
             // 
@@ -8030,6 +8063,7 @@
             this.checkBoxFollowUpDate.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("checkBoxFollowUpDate.Properties.Appearance.Font")));
             this.checkBoxFollowUpDate.Properties.Appearance.Options.UseFont = true;
             this.checkBoxFollowUpDate.Properties.Caption = resources.GetString("checkBoxFollowUpDate.Properties.Caption");
+            this.checkBoxFollowUpDate.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
             this.checkBoxFollowUpDate.CheckedChanged += new System.EventHandler(this.checkBoxFollowUpDate_CheckedChanged);
             // 
             // nullableDateTimePickerFollowUpDate
@@ -8192,10 +8226,8 @@
             this.groupBoxCodes.Controls.Add(this.label143);
             this.groupBoxCodes.Controls.Add(this.comboBoxSpecialComment);
             this.groupBoxCodes.Controls.Add(this.label142);
-            this.groupBoxCodes.Controls.Add(this.comboBox3);
             this.groupBoxCodes.Controls.Add(this.comboBoxPaymentRating);
             this.groupBoxCodes.Controls.Add(this.label141);
-            this.groupBoxCodes.Controls.Add(this.comboBox2);
             this.groupBoxCodes.Controls.Add(this.comboBoxAccountStatus);
             resources.ApplyResources(this.groupBoxCodes, "groupBoxCodes");
             this.groupBoxCodes.Name = "groupBoxCodes";
@@ -8207,6 +8239,7 @@
             resources.ApplyResources(this.checkBoxECOACode, "checkBoxECOACode");
             this.checkBoxECOACode.Name = "checkBoxECOACode";
             this.checkBoxECOACode.Properties.Caption = resources.GetString("checkBoxECOACode.Properties.Caption");
+            this.checkBoxECOACode.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
             this.checkBoxECOACode.CheckedChanged += new System.EventHandler(this.checkBoxECOACode_CheckedChanged);
             // 
             // checkBoxPaymentProfile
@@ -8215,6 +8248,7 @@
             resources.ApplyResources(this.checkBoxPaymentProfile, "checkBoxPaymentProfile");
             this.checkBoxPaymentProfile.Name = "checkBoxPaymentProfile";
             this.checkBoxPaymentProfile.Properties.Caption = resources.GetString("checkBoxPaymentProfile.Properties.Caption");
+            this.checkBoxPaymentProfile.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
             this.checkBoxPaymentProfile.CheckedChanged += new System.EventHandler(this.checkBoxPaymentProfile_CheckedChanged);
             // 
             // checkBoxComplianceCode
@@ -8223,6 +8257,7 @@
             resources.ApplyResources(this.checkBoxComplianceCode, "checkBoxComplianceCode");
             this.checkBoxComplianceCode.Name = "checkBoxComplianceCode";
             this.checkBoxComplianceCode.Properties.Caption = resources.GetString("checkBoxComplianceCode.Properties.Caption");
+            this.checkBoxComplianceCode.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
             this.checkBoxComplianceCode.CheckedChanged += new System.EventHandler(this.checkBoxComplianceCode_CheckedChanged);
             // 
             // checkBoxConsumerIndicator
@@ -8231,6 +8266,7 @@
             resources.ApplyResources(this.checkBoxConsumerIndicator, "checkBoxConsumerIndicator");
             this.checkBoxConsumerIndicator.Name = "checkBoxConsumerIndicator";
             this.checkBoxConsumerIndicator.Properties.Caption = resources.GetString("checkBoxConsumerIndicator.Properties.Caption");
+            this.checkBoxConsumerIndicator.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
             this.checkBoxConsumerIndicator.CheckedChanged += new System.EventHandler(this.checkBoxConsumerIndicator_CheckedChanged);
             // 
             // checkBoxAccountType
@@ -8239,6 +8275,7 @@
             resources.ApplyResources(this.checkBoxAccountType, "checkBoxAccountType");
             this.checkBoxAccountType.Name = "checkBoxAccountType";
             this.checkBoxAccountType.Properties.Caption = resources.GetString("checkBoxAccountType.Properties.Caption");
+            this.checkBoxAccountType.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
             this.checkBoxAccountType.CheckedChanged += new System.EventHandler(this.checkBoxAccountType_CheckedChanged);
             // 
             // checkBoxSpecialComment
@@ -8247,6 +8284,7 @@
             resources.ApplyResources(this.checkBoxSpecialComment, "checkBoxSpecialComment");
             this.checkBoxSpecialComment.Name = "checkBoxSpecialComment";
             this.checkBoxSpecialComment.Properties.Caption = resources.GetString("checkBoxSpecialComment.Properties.Caption");
+            this.checkBoxSpecialComment.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
             this.checkBoxSpecialComment.CheckedChanged += new System.EventHandler(this.checkBoxSpecialComment_CheckedChanged);
             // 
             // checkBoxPaymentRating
@@ -8255,6 +8293,7 @@
             resources.ApplyResources(this.checkBoxPaymentRating, "checkBoxPaymentRating");
             this.checkBoxPaymentRating.Name = "checkBoxPaymentRating";
             this.checkBoxPaymentRating.Properties.Caption = resources.GetString("checkBoxPaymentRating.Properties.Caption");
+            this.checkBoxPaymentRating.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
             this.checkBoxPaymentRating.CheckedChanged += new System.EventHandler(this.checkBoxPaymentRating_CheckedChanged);
             // 
             // checkBoxAccountStatus
@@ -8263,6 +8302,7 @@
             resources.ApplyResources(this.checkBoxAccountStatus, "checkBoxAccountStatus");
             this.checkBoxAccountStatus.Name = "checkBoxAccountStatus";
             this.checkBoxAccountStatus.Properties.Caption = resources.GetString("checkBoxAccountStatus.Properties.Caption");
+            this.checkBoxAccountStatus.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
             this.checkBoxAccountStatus.CheckedChanged += new System.EventHandler(this.checkBoxAccountStatus_CheckedChanged);
             // 
             // buttonEditPaymentHistory
@@ -8438,17 +8478,6 @@
             resources.ApplyResources(this.label142, "label142");
             this.label142.Name = "label142";
             // 
-            // comboBox3
-            // 
-            this.comboBox3.DataSource = this.PaymentRatingsbindingSource;
-            this.comboBox3.DisplayMember = "Description";
-            this.comboBox3.FormattingEnabled = true;
-            resources.ApplyResources(this.comboBox3, "comboBox3");
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.ValueMember = "PaymentRating";
-            this.comboBox3.SelectedValueChanged += new System.EventHandler(this.comboBoxPaymentRating_SelectedValueChanged);
-            this.comboBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
-            // 
             // comboBoxPaymentRating
             // 
             this.comboBoxPaymentRating.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.closedCreditManagerBindingSource, "CRDMGR_ACCT_PAYMENT_RATING", true));
@@ -8458,32 +8487,32 @@
             resources.ApplyResources(this.comboBoxPaymentRating, "comboBoxPaymentRating");
             this.comboBoxPaymentRating.Name = "comboBoxPaymentRating";
             this.comboBoxPaymentRating.ValueMember = "PaymentRating";
+            this.comboBoxPaymentRating.SelectedValueChanged += new System.EventHandler(this.comboBoxComplianceConditionCode_SelectedValueChanged);
             // 
             // label141
             // 
             resources.ApplyResources(this.label141, "label141");
             this.label141.Name = "label141";
             // 
-            // comboBox2
-            // 
-            this.comboBox2.DataSource = this.AccountStatusesbindingSource;
-            this.comboBox2.DisplayMember = "Description";
-            this.comboBox2.FormattingEnabled = true;
-            resources.ApplyResources(this.comboBox2, "comboBox2");
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.ValueMember = "Code";
-            this.comboBox2.SelectedValueChanged += new System.EventHandler(this.comboBoxAccountStatus_SelectedValueChanged);
-            this.comboBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
-            // 
             // comboBoxAccountStatus
             // 
-            this.comboBoxAccountStatus.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.closedCreditManagerBindingSource, "CRDMGR_ACCT_STATUS_CODE", true));
-            this.comboBoxAccountStatus.DataSource = this.AccountStatusesbindingSource;
-            this.comboBoxAccountStatus.DisplayMember = "Description";
-            this.comboBoxAccountStatus.FormattingEnabled = true;
+            this.comboBoxAccountStatus.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.closedCreditManagerBindingSource, "CRDMGR_ACCT_STATUS_CODE", true));
+            this.comboBoxAccountStatus.EnterMoveNextControl = true;
             resources.ApplyResources(this.comboBoxAccountStatus, "comboBoxAccountStatus");
             this.comboBoxAccountStatus.Name = "comboBoxAccountStatus";
-            this.comboBoxAccountStatus.ValueMember = "Code";
+            this.comboBoxAccountStatus.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("comboBoxAccountStatus.Properties.Appearance.Font")));
+            this.comboBoxAccountStatus.Properties.Appearance.Options.UseFont = true;
+            this.comboBoxAccountStatus.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("comboBoxAccountStatus.Properties.Buttons"))))});
+            this.comboBoxAccountStatus.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo(resources.GetString("comboBoxAccountStatus.Properties.Columns"), resources.GetString("comboBoxAccountStatus.Properties.Columns1"), ((int)(resources.GetObject("comboBoxAccountStatus.Properties.Columns2"))), ((DevExpress.Utils.FormatType)(resources.GetObject("comboBoxAccountStatus.Properties.Columns3"))), resources.GetString("comboBoxAccountStatus.Properties.Columns4"), ((bool)(resources.GetObject("comboBoxAccountStatus.Properties.Columns5"))), ((DevExpress.Utils.HorzAlignment)(resources.GetObject("comboBoxAccountStatus.Properties.Columns6"))), ((DevExpress.Data.ColumnSortOrder)(resources.GetObject("comboBoxAccountStatus.Properties.Columns7"))), ((DevExpress.Utils.DefaultBoolean)(resources.GetObject("comboBoxAccountStatus.Properties.Columns8"))))});
+            this.comboBoxAccountStatus.Properties.DataSource = this.AccountStatusesbindingSource;
+            this.comboBoxAccountStatus.Properties.DisplayMember = "Description";
+            this.comboBoxAccountStatus.Properties.LookAndFeel.SkinName = "McSkin";
+            this.comboBoxAccountStatus.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.comboBoxAccountStatus.Properties.NullText = resources.GetString("comboBoxAccountStatus.Properties.NullText");
+            this.comboBoxAccountStatus.Properties.ValueMember = "Code";
+            this.comboBoxAccountStatus.EditValueChanged += new System.EventHandler(this.comboBoxAccountStatus_EditValueChanged);
             // 
             // groupBoxDollars
             // 
@@ -8609,6 +8638,7 @@
             resources.ApplyResources(this.checkBoxPurge, "checkBoxPurge");
             this.checkBoxPurge.Name = "checkBoxPurge";
             this.checkBoxPurge.Properties.Caption = resources.GetString("checkBoxPurge.Properties.Caption");
+            this.checkBoxPurge.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
             this.checkBoxPurge.CheckedChanged += new System.EventHandler(this.checkBoxPurge_CheckedChanged);
             // 
             // groupBoxReportStatus
@@ -8624,6 +8654,7 @@
             resources.ApplyResources(this.checkBoxReportTSB, "checkBoxReportTSB");
             this.checkBoxReportTSB.Name = "checkBoxReportTSB";
             this.checkBoxReportTSB.Properties.Caption = resources.GetString("checkBoxReportTSB.Properties.Caption");
+            this.checkBoxReportTSB.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
             this.checkBoxReportTSB.CheckedChanged += new System.EventHandler(this.checkBoxReportTSB_CheckedChanged);
             // 
             // groupBoxAccountNumber
@@ -8963,6 +8994,8 @@
             this.groupBoxGapWarranty.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.checkBoxExcludeVSI.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkBoxWarranty.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cUSTOMER_NOTextBox.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cUSTOMER_PURCHASE_ORDERTextBox.Properties)).EndInit();
             this.groupBoxRefi.ResumeLayout(false);
             this.groupBoxRefi.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.checkBoxVehicleWarranty.Properties)).EndInit();
@@ -9154,6 +9187,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.checkBoxSpecialComment.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkBoxPaymentRating.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkBoxAccountStatus.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxAccountStatus.Properties)).EndInit();
             this.groupBoxDollars.ResumeLayout(false);
             this.groupBoxDollars.PerformLayout();
             this.groupBoxPurge.ResumeLayout(false);
@@ -9294,7 +9328,7 @@
         private DevExpress.XtraEditors.SimpleButton buttonLetter;
         private System.Windows.Forms.ComboBox comboBoxLetterType;
         private System.Windows.Forms.ComboBox comboBoxLetterNo;
-        private System.Windows.Forms.TextBox cUSTOMER_NOTextBox;
+        private DevExpress.XtraEditors.TextEdit cUSTOMER_NOTextBox;
         private System.Windows.Forms.TextBox cUSTOMER_WORK_EXTtextBox;
         private System.Windows.Forms.TextBox cUSTOMER_PHONE_EXTtextBox;
         private System.Windows.Forms.TextBox cUSTOMER_COMMENT_2TextBox;
@@ -9315,7 +9349,7 @@
         private System.Windows.Forms.TextBox cUSTOMER_STREET_1TextBox;
         private System.Windows.Forms.TextBox cUSTOMER_LAST_NAMETextBox;
         private System.Windows.Forms.TextBox cUSTOMER_FIRST_NAMETextBox;
-        private System.Windows.Forms.TextBox cUSTOMER_PURCHASE_ORDERTextBox;
+        private DevExpress.XtraEditors.TextEdit cUSTOMER_PURCHASE_ORDERTextBox;
         private System.Windows.Forms.TextBox cUSTOMER_ACT_STATTextBox;
         private System.Windows.Forms.TextBox cUSTOMER_IAC_TypeTextBox;
         private System.Windows.Forms.MaskedTextBox cUSTOMER_WORK_PHONETextBox;
@@ -9540,7 +9574,7 @@
         private System.Windows.Forms.Label label142;
         private System.Windows.Forms.ComboBox comboBoxPaymentRating;
         private System.Windows.Forms.Label label141;
-        private System.Windows.Forms.ComboBox comboBoxAccountStatus;
+        private DevExpress.XtraEditors.LookUpEdit comboBoxAccountStatus;
         private System.Windows.Forms.GroupBox groupBoxDollars;
         private System.Windows.Forms.Label label137;
         private System.Windows.Forms.TextBox textBoxCreditLimit;
@@ -9771,8 +9805,6 @@
         private DevExpress.XtraEditors.CheckEdit checkEditHasComprehensive;
         private DevExpress.XtraEditors.TextEdit textEditCollisionDeductible;
         private DevExpress.XtraEditors.CheckEdit checkEditHasCollision;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
         private DevExpress.XtraEditors.LookUpEdit cUSTOMER_DEALERcomboBox;
         private DevExpress.XtraEditors.TextEdit textEditDealerName;
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;

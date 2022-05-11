@@ -12,7 +12,8 @@ namespace IAC2021SQL
     public partial class FormClosedDealerContingentMaintenance : DevExpress.XtraEditors.XtraForm
     {
         private Boolean lbFormClosing = false, lbEdit = false, lbAdd = false, lbILockedIt = false,
-                        lbFromSetRelated = false,lbFromMovement = false, lbFromDealerNameChange = false;
+                        lbFromSetRelated = false, lbFromMovement = false, lbFromDealerNameChange = false;
+
         private System.Data.SqlClient.SqlTransaction tableAdapTran = null;
         private System.Data.SqlClient.SqlConnection tableAdapConn = null;
 
@@ -23,14 +24,14 @@ namespace IAC2021SQL
 
         private void FormClosedDealerContingentMaintenance_Load(object sender, EventArgs e)
         {
-            dLRLISTBYNUMTableAdapter.Fill(CONTINGiacDataSet.DLRLISTBYNUM);
-            dEALERLISTTableAdapter.FillAll(CONTINGiacDataSet.DEALERLIST);
             StartUpConfiguration();
             PerformAutoScale();
         }
 
         private void StartUpConfiguration()
         {
+            dLRLISTBYNUMTableAdapter.Fill(CONTINGiacDataSet.DLRLISTBYNUM);
+            dEALERLISTTableAdapter.FillAll(CONTINGiacDataSet.DEALERLIST);
             dateTimePickerPostDate.EditValue = DateTime.Now.Date;
             DEALERcomboBox.EditValue = 0;
             Text = "Closed Dealer Contingents (VIEW Mode)";
@@ -440,8 +441,16 @@ namespace IAC2021SQL
             }
         }
 
+        private void FormClosedDealerContingentMaintenance_Shown(object sender, EventArgs e)
+        {
+            DEALERcomboBox.Focus();
+        }
+
         private void DEALERcomboBox_EditValueChanged(object sender, EventArgs e)
         {
+            Int32 lnEditVal = DEALERcomboBox.EditValue != null ? (Int32)DEALERcomboBox.EditValue : 0;
+            if (lnEditVal == 0)
+                return;
             ActiveControl = DEALERcomboBox;
             System.Windows.Forms.SendKeys.Send("{TAB}");
         }

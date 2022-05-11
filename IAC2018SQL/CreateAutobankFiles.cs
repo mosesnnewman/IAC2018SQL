@@ -372,7 +372,8 @@ namespace IAC2021SQL
                     AUTOBANK.PAYMENT.Rows[PAYMENTBindingSource.Position].SetField<String>("PAYMENT_ADD_ON", " ");
                     AUTOBANK.PAYMENT.Rows[PAYMENTBindingSource.Position].SetField<String>("PAYMENT_IAC_TYPE", "C");
                     AUTOBANK.PAYMENT.Rows[PAYMENTBindingSource.Position].SetField<DateTime>("PAYMENT_DATE", DateTime.Now.Date);
-                    AUTOBANK.PAYMENT.Rows[PAYMENTBindingSource.Position].SetField<String>("PAYMENT_DEALER", AUTOBANK.CUSTOMER.Rows[0].Field<String>("CUSTOMER_DEALER"));
+                    // Moses Newman 05/02/2022 Dealer Number is now Int32
+                    AUTOBANK.PAYMENT.Rows[PAYMENTBindingSource.Position].SetField<Int32>("PAYMENT_DEALER", AUTOBANK.CUSTOMER.Rows[0].Field<Int32>("CUSTOMER_DEALER"));
                     AUTOBANK.PAYMENT.Rows[PAYMENTBindingSource.Position].SetField<Decimal>("PAYMENT_AMOUNT_RCV", AUTOBANK.AutomaticPayments.Rows[i].Field<Decimal>("Amount"));
                     AUTOBANK.PAYMENT.Rows[PAYMENTBindingSource.Position].SetField<String>("PAYMENT_TYPE", AUTOBANK.AutomaticPayments.Rows[i].Field<String>("PaymentType"));
                     AUTOBANK.PAYMENT.Rows[PAYMENTBindingSource.Position].SetField<String>("PAYMENT_CODE_2", AUTOBANK.AutomaticPayments.Rows[i].Field<String>("PaymentCode"));

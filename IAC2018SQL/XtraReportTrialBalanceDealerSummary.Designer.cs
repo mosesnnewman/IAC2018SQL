@@ -99,17 +99,17 @@
             this.TotalCont2 = new DevExpress.XtraReports.UI.XRLabel();
             this.TotalAdj2 = new DevExpress.XtraReports.UI.XRLabel();
             this.PageFooterArea1 = new DevExpress.XtraReports.UI.PageFooterBand();
-            this.NewDealerID = new DevExpress.XtraReports.UI.CalculatedField();
-            this.StateTotals = new DevExpress.XtraReports.UI.CalculatedField();
-            this.topMarginBand1 = new DevExpress.XtraReports.UI.TopMarginBand();
-            this.bottomMarginBand1 = new DevExpress.XtraReports.UI.BottomMarginBand();
-            this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             this.PageNofM1 = new DevExpress.XtraReports.UI.XRPageInfo();
             this.DataTime1 = new DevExpress.XtraReports.UI.XRPageInfo();
             this.Text5 = new DevExpress.XtraReports.UI.XRLabel();
             this.gsUserID_1 = new DevExpress.XtraReports.UI.XRLabel();
             this.gsUserName_1 = new DevExpress.XtraReports.UI.XRLabel();
             this.DataDate1 = new DevExpress.XtraReports.UI.XRPageInfo();
+            this.NewDealerID = new DevExpress.XtraReports.UI.CalculatedField();
+            this.StateTotals = new DevExpress.XtraReports.UI.CalculatedField();
+            this.topMarginBand1 = new DevExpress.XtraReports.UI.TopMarginBand();
+            this.bottomMarginBand1 = new DevExpress.XtraReports.UI.BottomMarginBand();
+            this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             this.gsUserID = new DevExpress.XtraReports.Parameters.Parameter();
             this.gsUserName = new DevExpress.XtraReports.Parameters.Parameter();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
@@ -125,11 +125,13 @@
             this.WSDEALERINT1,
             this.WSDEALERPAIDINT1,
             this.NewDealerID_1});
+            this.Detail.Dpi = 254F;
             this.Detail.DrillDownExpanded = false;
-            this.Detail.HeightF = 19F;
+            this.Detail.HeightF = 48.26F;
+            this.Detail.HierarchyPrintOptions.Indent = 50.8F;
             this.Detail.KeepTogether = true;
             this.Detail.Name = "Detail";
-            this.Detail.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
+            this.Detail.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 254F);
             this.Detail.SortFields.AddRange(new DevExpress.XtraReports.UI.GroupField[] {
             new DevExpress.XtraReports.UI.GroupField("DEALER.DEALER_ST", DevExpress.XtraReports.UI.XRColumnSortOrder.None)});
             this.Detail.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
@@ -141,14 +143,15 @@
             this.WSDEALERACCTS1.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.WSDEALERACCTS1.BorderWidth = 1F;
             this.WSDEALERACCTS1.CanGrow = false;
+            this.WSDEALERACCTS1.Dpi = 254F;
             this.WSDEALERACCTS1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[DEALER].[DEALERWsDealerTrialBalanceFillByStateDealer].[WS_DEALER_ACCTS]")});
             this.WSDEALERACCTS1.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.WSDEALERACCTS1.ForeColor = System.Drawing.Color.Black;
-            this.WSDEALERACCTS1.LocationFloat = new DevExpress.Utils.PointFloat(308.3333F, 0F);
+            this.WSDEALERACCTS1.LocationFloat = new DevExpress.Utils.PointFloat(783.1666F, 0F);
             this.WSDEALERACCTS1.Name = "WSDEALERACCTS1";
-            this.WSDEALERACCTS1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.WSDEALERACCTS1.SizeF = new System.Drawing.SizeF(42.84722F, 18.33333F);
+            this.WSDEALERACCTS1.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.WSDEALERACCTS1.SizeF = new System.Drawing.SizeF(108.832F, 46.56666F);
             this.WSDEALERACCTS1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
             // 
             // WSDEALEROSL1
@@ -158,14 +161,15 @@
             this.WSDEALEROSL1.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.WSDEALEROSL1.BorderWidth = 1F;
             this.WSDEALEROSL1.CanGrow = false;
+            this.WSDEALEROSL1.Dpi = 254F;
             this.WSDEALEROSL1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[DEALER].[DEALERWsDealerTrialBalanceFillByStateDealer].[WS_DEALER_OS_L]")});
             this.WSDEALEROSL1.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.WSDEALEROSL1.ForeColor = System.Drawing.Color.Black;
-            this.WSDEALEROSL1.LocationFloat = new DevExpress.Utils.PointFloat(359.1705F, 0F);
+            this.WSDEALEROSL1.LocationFloat = new DevExpress.Utils.PointFloat(912.2931F, 0F);
             this.WSDEALEROSL1.Name = "WSDEALEROSL1";
-            this.WSDEALEROSL1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.WSDEALEROSL1.SizeF = new System.Drawing.SizeF(113.5417F, 18.33333F);
+            this.WSDEALEROSL1.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.WSDEALEROSL1.SizeF = new System.Drawing.SizeF(288.396F, 46.56666F);
             this.WSDEALEROSL1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
             this.WSDEALEROSL1.TextFormatString = "{0:C2}";
             // 
@@ -176,14 +180,15 @@
             this.WSDEALERBAL1.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.WSDEALERBAL1.BorderWidth = 1F;
             this.WSDEALERBAL1.CanGrow = false;
+            this.WSDEALERBAL1.Dpi = 254F;
             this.WSDEALERBAL1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[DEALER].[DEALERWsDealerTrialBalanceFillByStateDealer].[WS_DEALER_BAL]")});
             this.WSDEALERBAL1.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.WSDEALERBAL1.ForeColor = System.Drawing.Color.Black;
-            this.WSDEALERBAL1.LocationFloat = new DevExpress.Utils.PointFloat(480.7022F, 0F);
+            this.WSDEALERBAL1.LocationFloat = new DevExpress.Utils.PointFloat(1220.984F, 0F);
             this.WSDEALERBAL1.Name = "WSDEALERBAL1";
-            this.WSDEALERBAL1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.WSDEALERBAL1.SizeF = new System.Drawing.SizeF(106.7361F, 18.33333F);
+            this.WSDEALERBAL1.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.WSDEALERBAL1.SizeF = new System.Drawing.SizeF(271.1096F, 46.56666F);
             this.WSDEALERBAL1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
             this.WSDEALERBAL1.TextFormatString = "{0:C2}";
             // 
@@ -194,14 +199,15 @@
             this.WSDEALERCONT1.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.WSDEALERCONT1.BorderWidth = 1F;
             this.WSDEALERCONT1.CanGrow = false;
+            this.WSDEALERCONT1.Dpi = 254F;
             this.WSDEALERCONT1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[DEALER].[DEALERWsDealerTrialBalanceFillByStateDealer].[WS_DEALER_CONT]")});
             this.WSDEALERCONT1.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.WSDEALERCONT1.ForeColor = System.Drawing.Color.Black;
-            this.WSDEALERCONT1.LocationFloat = new DevExpress.Utils.PointFloat(595.4283F, 0F);
+            this.WSDEALERCONT1.LocationFloat = new DevExpress.Utils.PointFloat(1512.388F, 0F);
             this.WSDEALERCONT1.Name = "WSDEALERCONT1";
-            this.WSDEALERCONT1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.WSDEALERCONT1.SizeF = new System.Drawing.SizeF(128.8241F, 18.33333F);
+            this.WSDEALERCONT1.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.WSDEALERCONT1.SizeF = new System.Drawing.SizeF(327.2133F, 46.56666F);
             this.WSDEALERCONT1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
             this.WSDEALERCONT1.TextFormatString = "{0:C2}";
             // 
@@ -212,14 +218,15 @@
             this.WSDEALERADJ1.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.WSDEALERADJ1.BorderWidth = 1F;
             this.WSDEALERADJ1.CanGrow = false;
+            this.WSDEALERADJ1.Dpi = 254F;
             this.WSDEALERADJ1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[DEALER].[DEALERWsDealerTrialBalanceFillByStateDealer].[WS_DEALER_ADJ]")});
             this.WSDEALERADJ1.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.WSDEALERADJ1.ForeColor = System.Drawing.Color.Black;
-            this.WSDEALERADJ1.LocationFloat = new DevExpress.Utils.PointFloat(732.2424F, 0F);
+            this.WSDEALERADJ1.LocationFloat = new DevExpress.Utils.PointFloat(1859.896F, 0F);
             this.WSDEALERADJ1.Name = "WSDEALERADJ1";
-            this.WSDEALERADJ1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.WSDEALERADJ1.SizeF = new System.Drawing.SizeF(106.9444F, 18.33333F);
+            this.WSDEALERADJ1.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.WSDEALERADJ1.SizeF = new System.Drawing.SizeF(271.6388F, 46.56666F);
             this.WSDEALERADJ1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
             this.WSDEALERADJ1.TextFormatString = "{0:C2}";
             // 
@@ -230,14 +237,15 @@
             this.WSDEALERINT1.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.WSDEALERINT1.BorderWidth = 1F;
             this.WSDEALERINT1.CanGrow = false;
+            this.WSDEALERINT1.Dpi = 254F;
             this.WSDEALERINT1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[DEALER].[DEALERWsDealerTrialBalanceFillByStateDealer].[WS_DEALER_INT]")});
             this.WSDEALERINT1.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.WSDEALERINT1.ForeColor = System.Drawing.Color.Black;
-            this.WSDEALERINT1.LocationFloat = new DevExpress.Utils.PointFloat(847.1768F, 0F);
+            this.WSDEALERINT1.LocationFloat = new DevExpress.Utils.PointFloat(2151.829F, 0F);
             this.WSDEALERINT1.Name = "WSDEALERINT1";
-            this.WSDEALERINT1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.WSDEALERINT1.SizeF = new System.Drawing.SizeF(104.375F, 18.33333F);
+            this.WSDEALERINT1.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.WSDEALERINT1.SizeF = new System.Drawing.SizeF(265.1125F, 46.56666F);
             this.WSDEALERINT1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
             this.WSDEALERINT1.TextFormatString = "{0:C2}";
             // 
@@ -248,14 +256,15 @@
             this.WSDEALERPAIDINT1.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.WSDEALERPAIDINT1.BorderWidth = 1F;
             this.WSDEALERPAIDINT1.CanGrow = false;
+            this.WSDEALERPAIDINT1.Dpi = 254F;
             this.WSDEALERPAIDINT1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[DEALER].[DEALERWsDealerTrialBalanceFillByStateDealer].[WS_DEALER_PAID_INT]")});
             this.WSDEALERPAIDINT1.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.WSDEALERPAIDINT1.ForeColor = System.Drawing.Color.Black;
-            this.WSDEALERPAIDINT1.LocationFloat = new DevExpress.Utils.PointFloat(959.5417F, 0F);
+            this.WSDEALERPAIDINT1.LocationFloat = new DevExpress.Utils.PointFloat(2428.887F, 0F);
             this.WSDEALERPAIDINT1.Name = "WSDEALERPAIDINT1";
-            this.WSDEALERPAIDINT1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.WSDEALERPAIDINT1.SizeF = new System.Drawing.SizeF(104.375F, 18.33333F);
+            this.WSDEALERPAIDINT1.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.WSDEALERPAIDINT1.SizeF = new System.Drawing.SizeF(265.1128F, 46.56666F);
             this.WSDEALERPAIDINT1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
             this.WSDEALERPAIDINT1.TextFormatString = "{0:C2}";
             // 
@@ -266,26 +275,28 @@
             this.NewDealerID_1.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.NewDealerID_1.BorderWidth = 1F;
             this.NewDealerID_1.CanGrow = false;
+            this.NewDealerID_1.Dpi = 254F;
             this.NewDealerID_1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[DEALER].[DEALER_ST] + \'-\' + FormatString(\'{0:0}\', [DEALER].[id]) + \' \' + [DEALER" +
                     "].[DEALER_NAME]\n")});
             this.NewDealerID_1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.NewDealerID_1.ForeColor = System.Drawing.Color.Black;
-            this.NewDealerID_1.LocationFloat = new DevExpress.Utils.PointFloat(8.333309F, 0.666666F);
+            this.NewDealerID_1.LocationFloat = new DevExpress.Utils.PointFloat(21.1666F, 1.693332F);
             this.NewDealerID_1.Name = "NewDealerID_1";
-            this.NewDealerID_1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.NewDealerID_1.SizeF = new System.Drawing.SizeF(300F, 18.33333F);
+            this.NewDealerID_1.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.NewDealerID_1.SizeF = new System.Drawing.SizeF(762F, 46.56666F);
             this.NewDealerID_1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
             // GroupHeaderArea1
             // 
             this.GroupHeaderArea1.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.GroupNameDEALERST1});
+            this.GroupHeaderArea1.Dpi = 254F;
             this.GroupHeaderArea1.GroupFields.AddRange(new DevExpress.XtraReports.UI.GroupField[] {
             new DevExpress.XtraReports.UI.GroupField("DEALER_ST", DevExpress.XtraReports.UI.XRColumnSortOrder.Ascending)});
-            this.GroupHeaderArea1.HeightF = 23F;
+            this.GroupHeaderArea1.HeightF = 58.42F;
             this.GroupHeaderArea1.Name = "GroupHeaderArea1";
-            this.GroupHeaderArea1.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
+            this.GroupHeaderArea1.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 254F);
             this.GroupHeaderArea1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
             // GroupNameDEALERST1
@@ -295,14 +306,15 @@
             this.GroupNameDEALERST1.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.GroupNameDEALERST1.BorderWidth = 1F;
             this.GroupNameDEALERST1.CanGrow = false;
+            this.GroupNameDEALERST1.Dpi = 254F;
             this.GroupNameDEALERST1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "\'STATE: \' + [DEALER].[DEALER_ST]")});
             this.GroupNameDEALERST1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.GroupNameDEALERST1.ForeColor = System.Drawing.Color.Black;
             this.GroupNameDEALERST1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
             this.GroupNameDEALERST1.Name = "GroupNameDEALERST1";
-            this.GroupNameDEALERST1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.GroupNameDEALERST1.SizeF = new System.Drawing.SizeF(251.1806F, 15.34722F);
+            this.GroupNameDEALERST1.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.GroupNameDEALERST1.SizeF = new System.Drawing.SizeF(637.9987F, 38.98194F);
             this.GroupNameDEALERST1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
             // GroupFooterArea1
@@ -316,10 +328,11 @@
             this.TotalIntByState1,
             this.TotalPaidInterestByState1,
             this.StateTotals_1});
-            this.GroupFooterArea1.HeightF = 36F;
+            this.GroupFooterArea1.Dpi = 254F;
+            this.GroupFooterArea1.HeightF = 91.44F;
             this.GroupFooterArea1.KeepTogether = true;
             this.GroupFooterArea1.Name = "GroupFooterArea1";
-            this.GroupFooterArea1.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
+            this.GroupFooterArea1.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 254F);
             this.GroupFooterArea1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
             // TotalAcctsByState1
@@ -329,14 +342,15 @@
             this.TotalAcctsByState1.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.TotalAcctsByState1.BorderWidth = 1F;
             this.TotalAcctsByState1.CanGrow = false;
+            this.TotalAcctsByState1.Dpi = 254F;
             this.TotalAcctsByState1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumSum([DEALER].[DEALERWsDealerTrialBalanceFillByStateDealer].[WS_DEALER_ACCTS])")});
             this.TotalAcctsByState1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.TotalAcctsByState1.ForeColor = System.Drawing.Color.Black;
-            this.TotalAcctsByState1.LocationFloat = new DevExpress.Utils.PointFloat(275F, 8.333333F);
+            this.TotalAcctsByState1.LocationFloat = new DevExpress.Utils.PointFloat(698.5F, 21.16667F);
             this.TotalAcctsByState1.Name = "TotalAcctsByState1";
-            this.TotalAcctsByState1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.TotalAcctsByState1.SizeF = new System.Drawing.SizeF(76.18056F, 18.33333F);
+            this.TotalAcctsByState1.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.TotalAcctsByState1.SizeF = new System.Drawing.SizeF(193.4986F, 46.56667F);
             xrSummary1.Running = DevExpress.XtraReports.UI.SummaryRunning.Group;
             this.TotalAcctsByState1.Summary = xrSummary1;
             this.TotalAcctsByState1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
@@ -348,14 +362,15 @@
             this.TotalCustTotalsByState1.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.TotalCustTotalsByState1.BorderWidth = 1F;
             this.TotalCustTotalsByState1.CanGrow = false;
+            this.TotalCustTotalsByState1.Dpi = 254F;
             this.TotalCustTotalsByState1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumSum([DEALER].[DEALERWsDealerTrialBalanceFillByStateDealer].[WS_DEALER_OS_L])")});
             this.TotalCustTotalsByState1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.TotalCustTotalsByState1.ForeColor = System.Drawing.Color.Black;
-            this.TotalCustTotalsByState1.LocationFloat = new DevExpress.Utils.PointFloat(359.1705F, 8.333333F);
+            this.TotalCustTotalsByState1.LocationFloat = new DevExpress.Utils.PointFloat(912.2931F, 21.16667F);
             this.TotalCustTotalsByState1.Name = "TotalCustTotalsByState1";
-            this.TotalCustTotalsByState1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.TotalCustTotalsByState1.SizeF = new System.Drawing.SizeF(113.5417F, 18.33333F);
+            this.TotalCustTotalsByState1.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.TotalCustTotalsByState1.SizeF = new System.Drawing.SizeF(288.396F, 46.56667F);
             xrSummary2.Running = DevExpress.XtraReports.UI.SummaryRunning.Group;
             this.TotalCustTotalsByState1.Summary = xrSummary2;
             this.TotalCustTotalsByState1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
@@ -368,14 +383,15 @@
             this.TotalDealerTotalsByState1.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.TotalDealerTotalsByState1.BorderWidth = 1F;
             this.TotalDealerTotalsByState1.CanGrow = false;
+            this.TotalDealerTotalsByState1.Dpi = 254F;
             this.TotalDealerTotalsByState1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumSum([DEALER].[DEALERWsDealerTrialBalanceFillByStateDealer].[WS_DEALER_BAL])")});
             this.TotalDealerTotalsByState1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.TotalDealerTotalsByState1.ForeColor = System.Drawing.Color.Black;
-            this.TotalDealerTotalsByState1.LocationFloat = new DevExpress.Utils.PointFloat(480.7022F, 8.333333F);
+            this.TotalDealerTotalsByState1.LocationFloat = new DevExpress.Utils.PointFloat(1220.984F, 21.16667F);
             this.TotalDealerTotalsByState1.Name = "TotalDealerTotalsByState1";
-            this.TotalDealerTotalsByState1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.TotalDealerTotalsByState1.SizeF = new System.Drawing.SizeF(106.7361F, 18.33333F);
+            this.TotalDealerTotalsByState1.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.TotalDealerTotalsByState1.SizeF = new System.Drawing.SizeF(271.1096F, 46.56667F);
             xrSummary3.Running = DevExpress.XtraReports.UI.SummaryRunning.Group;
             this.TotalDealerTotalsByState1.Summary = xrSummary3;
             this.TotalDealerTotalsByState1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
@@ -388,14 +404,15 @@
             this.TotalContByState1.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.TotalContByState1.BorderWidth = 1F;
             this.TotalContByState1.CanGrow = false;
+            this.TotalContByState1.Dpi = 254F;
             this.TotalContByState1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumSum([DEALER].[DEALERWsDealerTrialBalanceFillByStateDealer].[WS_DEALER_CONT])")});
             this.TotalContByState1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.TotalContByState1.ForeColor = System.Drawing.Color.Black;
-            this.TotalContByState1.LocationFloat = new DevExpress.Utils.PointFloat(617.5163F, 8.333333F);
+            this.TotalContByState1.LocationFloat = new DevExpress.Utils.PointFloat(1568.491F, 21.16667F);
             this.TotalContByState1.Name = "TotalContByState1";
-            this.TotalContByState1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.TotalContByState1.SizeF = new System.Drawing.SizeF(106.7361F, 18.33333F);
+            this.TotalContByState1.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.TotalContByState1.SizeF = new System.Drawing.SizeF(271.1097F, 46.56667F);
             xrSummary4.Running = DevExpress.XtraReports.UI.SummaryRunning.Group;
             this.TotalContByState1.Summary = xrSummary4;
             this.TotalContByState1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
@@ -408,14 +425,15 @@
             this.TotalAdjByState1.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.TotalAdjByState1.BorderWidth = 1F;
             this.TotalAdjByState1.CanGrow = false;
+            this.TotalAdjByState1.Dpi = 254F;
             this.TotalAdjByState1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumSum([DEALER].[DEALERWsDealerTrialBalanceFillByStateDealer].[WS_DEALER_ADJ])")});
             this.TotalAdjByState1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.TotalAdjByState1.ForeColor = System.Drawing.Color.Black;
-            this.TotalAdjByState1.LocationFloat = new DevExpress.Utils.PointFloat(732.2424F, 8.333333F);
+            this.TotalAdjByState1.LocationFloat = new DevExpress.Utils.PointFloat(1859.896F, 21.16667F);
             this.TotalAdjByState1.Name = "TotalAdjByState1";
-            this.TotalAdjByState1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.TotalAdjByState1.SizeF = new System.Drawing.SizeF(106.9444F, 18.33333F);
+            this.TotalAdjByState1.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.TotalAdjByState1.SizeF = new System.Drawing.SizeF(271.6388F, 46.56667F);
             xrSummary5.Running = DevExpress.XtraReports.UI.SummaryRunning.Report;
             this.TotalAdjByState1.Summary = xrSummary5;
             this.TotalAdjByState1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
@@ -428,14 +446,15 @@
             this.TotalIntByState1.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.TotalIntByState1.BorderWidth = 1F;
             this.TotalIntByState1.CanGrow = false;
+            this.TotalIntByState1.Dpi = 254F;
             this.TotalIntByState1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumSum([DEALER].[DEALERWsDealerTrialBalanceFillByStateDealer].[WS_DEALER_INT])")});
             this.TotalIntByState1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.TotalIntByState1.ForeColor = System.Drawing.Color.Black;
-            this.TotalIntByState1.LocationFloat = new DevExpress.Utils.PointFloat(847.1768F, 8.333333F);
+            this.TotalIntByState1.LocationFloat = new DevExpress.Utils.PointFloat(2151.829F, 21.16667F);
             this.TotalIntByState1.Name = "TotalIntByState1";
-            this.TotalIntByState1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.TotalIntByState1.SizeF = new System.Drawing.SizeF(104.375F, 18.33333F);
+            this.TotalIntByState1.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.TotalIntByState1.SizeF = new System.Drawing.SizeF(265.1125F, 46.56667F);
             xrSummary6.Running = DevExpress.XtraReports.UI.SummaryRunning.Report;
             this.TotalIntByState1.Summary = xrSummary6;
             this.TotalIntByState1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
@@ -448,15 +467,16 @@
             this.TotalPaidInterestByState1.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.TotalPaidInterestByState1.BorderWidth = 1F;
             this.TotalPaidInterestByState1.CanGrow = false;
+            this.TotalPaidInterestByState1.Dpi = 254F;
             this.TotalPaidInterestByState1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumSum([DEALER].[DEALERWsDealerTrialBalanceFillByStateDealer].[WS_DEALER_PAID_INT" +
                     "])")});
             this.TotalPaidInterestByState1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.TotalPaidInterestByState1.ForeColor = System.Drawing.Color.Black;
-            this.TotalPaidInterestByState1.LocationFloat = new DevExpress.Utils.PointFloat(959.5417F, 8.333333F);
+            this.TotalPaidInterestByState1.LocationFloat = new DevExpress.Utils.PointFloat(2428.887F, 21.16667F);
             this.TotalPaidInterestByState1.Name = "TotalPaidInterestByState1";
-            this.TotalPaidInterestByState1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.TotalPaidInterestByState1.SizeF = new System.Drawing.SizeF(104.375F, 18.33333F);
+            this.TotalPaidInterestByState1.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.TotalPaidInterestByState1.SizeF = new System.Drawing.SizeF(265.1128F, 46.56667F);
             xrSummary7.Running = DevExpress.XtraReports.UI.SummaryRunning.Report;
             this.TotalPaidInterestByState1.Summary = xrSummary7;
             this.TotalPaidInterestByState1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
@@ -469,22 +489,24 @@
             this.StateTotals_1.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.StateTotals_1.BorderWidth = 1F;
             this.StateTotals_1.CanGrow = false;
+            this.StateTotals_1.Dpi = 254F;
             this.StateTotals_1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[DEALER].[DEALER_ST] + \' TOTALS:\'\n")});
             this.StateTotals_1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.StateTotals_1.ForeColor = System.Drawing.Color.Black;
-            this.StateTotals_1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 8.333333F);
+            this.StateTotals_1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 21.16667F);
             this.StateTotals_1.Name = "StateTotals_1";
-            this.StateTotals_1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.StateTotals_1.SizeF = new System.Drawing.SizeF(251.1806F, 15.34722F);
+            this.StateTotals_1.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.StateTotals_1.SizeF = new System.Drawing.SizeF(637.9987F, 38.98194F);
             this.StateTotals_1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
             // ReportHeaderArea1
             // 
-            this.ReportHeaderArea1.HeightF = 15F;
+            this.ReportHeaderArea1.Dpi = 254F;
+            this.ReportHeaderArea1.HeightF = 38.1F;
             this.ReportHeaderArea1.KeepTogether = true;
             this.ReportHeaderArea1.Name = "ReportHeaderArea1";
-            this.ReportHeaderArea1.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
+            this.ReportHeaderArea1.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 254F);
             this.ReportHeaderArea1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
             // PageHeaderArea1
@@ -498,9 +520,10 @@
             this.xrLabel1,
             this.Text8,
             this.Text15});
-            this.PageHeaderArea1.HeightF = 41F;
+            this.PageHeaderArea1.Dpi = 254F;
+            this.PageHeaderArea1.HeightF = 104.14F;
             this.PageHeaderArea1.Name = "PageHeaderArea1";
-            this.PageHeaderArea1.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
+            this.PageHeaderArea1.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 254F);
             this.PageHeaderArea1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
             // Text3
@@ -510,12 +533,13 @@
             this.Text3.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.Text3.BorderWidth = 1F;
             this.Text3.CanGrow = false;
+            this.Text3.Dpi = 254F;
             this.Text3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.Text3.ForeColor = System.Drawing.Color.Black;
-            this.Text3.LocationFloat = new DevExpress.Utils.PointFloat(595.4283F, 16.91666F);
+            this.Text3.LocationFloat = new DevExpress.Utils.PointFloat(1512.388F, 42.96832F);
             this.Text3.Name = "Text3";
-            this.Text3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.Text3.SizeF = new System.Drawing.SizeF(128.8241F, 18.33333F);
+            this.Text3.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.Text3.SizeF = new System.Drawing.SizeF(327.2133F, 46.56666F);
             this.Text3.Text = "DLR CONTINGENT";
             this.Text3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
             // 
@@ -526,12 +550,13 @@
             this.Text14.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.Text14.BorderWidth = 1F;
             this.Text14.CanGrow = false;
+            this.Text14.Dpi = 254F;
             this.Text14.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.Text14.ForeColor = System.Drawing.Color.Black;
-            this.Text14.LocationFloat = new DevExpress.Utils.PointFloat(309.5139F, 16.91665F);
+            this.Text14.LocationFloat = new DevExpress.Utils.PointFloat(786.1653F, 42.96829F);
             this.Text14.Name = "Text14";
-            this.Text14.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.Text14.SizeF = new System.Drawing.SizeF(41.66667F, 18.33333F);
+            this.Text14.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.Text14.SizeF = new System.Drawing.SizeF(105.8333F, 46.56666F);
             this.Text14.Text = "ACCTS";
             this.Text14.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
@@ -542,12 +567,13 @@
             this.Text11.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.Text11.BorderWidth = 1F;
             this.Text11.CanGrow = false;
+            this.Text11.Dpi = 254F;
             this.Text11.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.Text11.ForeColor = System.Drawing.Color.Black;
-            this.Text11.LocationFloat = new DevExpress.Utils.PointFloat(372.7122F, 16.91665F);
+            this.Text11.LocationFloat = new DevExpress.Utils.PointFloat(946.689F, 42.96829F);
             this.Text11.Name = "Text11";
-            this.Text11.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.Text11.SizeF = new System.Drawing.SizeF(100F, 18.33333F);
+            this.Text11.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.Text11.SizeF = new System.Drawing.SizeF(254F, 46.56666F);
             this.Text11.Text = "CUST TOTALS";
             this.Text11.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
@@ -558,12 +584,13 @@
             this.Text9.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.Text9.BorderWidth = 1F;
             this.Text9.CanGrow = false;
+            this.Text9.Dpi = 254F;
             this.Text9.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.Text9.ForeColor = System.Drawing.Color.Black;
-            this.Text9.LocationFloat = new DevExpress.Utils.PointFloat(480.7022F, 16.91665F);
+            this.Text9.LocationFloat = new DevExpress.Utils.PointFloat(1220.984F, 42.96829F);
             this.Text9.Name = "Text9";
-            this.Text9.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.Text9.SizeF = new System.Drawing.SizeF(106.7361F, 18.33333F);
+            this.Text9.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.Text9.SizeF = new System.Drawing.SizeF(271.1096F, 46.56666F);
             this.Text9.Text = "DEALER TOTALS\t";
             this.Text9.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
             // 
@@ -574,12 +601,13 @@
             this.Text7.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.Text7.BorderWidth = 1F;
             this.Text7.CanGrow = false;
+            this.Text7.Dpi = 254F;
             this.Text7.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.Text7.ForeColor = System.Drawing.Color.Black;
-            this.Text7.LocationFloat = new DevExpress.Utils.PointFloat(10.04168F, 16.91666F);
+            this.Text7.LocationFloat = new DevExpress.Utils.PointFloat(25.50587F, 42.96832F);
             this.Text7.Name = "Text7";
-            this.Text7.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.Text7.SizeF = new System.Drawing.SizeF(105.9028F, 18.33333F);
+            this.Text7.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.Text7.SizeF = new System.Drawing.SizeF(268.9931F, 46.56666F);
             this.Text7.Text = "DEALER";
             this.Text7.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
@@ -590,12 +618,13 @@
             this.xrLabel1.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.xrLabel1.BorderWidth = 1F;
             this.xrLabel1.CanGrow = false;
+            this.xrLabel1.Dpi = 254F;
             this.xrLabel1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.xrLabel1.ForeColor = System.Drawing.Color.Black;
-            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(746.4783F, 16.91666F);
+            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(1896.055F, 42.96832F);
             this.xrLabel1.Name = "xrLabel1";
-            this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel1.SizeF = new System.Drawing.SizeF(92.70844F, 18.33333F);
+            this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.xrLabel1.SizeF = new System.Drawing.SizeF(235.4794F, 46.56666F);
             this.xrLabel1.Text = "DEALER A/A";
             this.xrLabel1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
@@ -606,12 +635,13 @@
             this.Text8.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.Text8.BorderWidth = 1F;
             this.Text8.CanGrow = false;
+            this.Text8.Dpi = 254F;
             this.Text8.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.Text8.ForeColor = System.Drawing.Color.Black;
-            this.Text8.LocationFloat = new DevExpress.Utils.PointFloat(847.1766F, 16.91662F);
+            this.Text8.LocationFloat = new DevExpress.Utils.PointFloat(2151.829F, 42.96822F);
             this.Text8.Name = "Text8";
-            this.Text8.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.Text8.SizeF = new System.Drawing.SizeF(104.3752F, 18.33333F);
+            this.Text8.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.Text8.SizeF = new System.Drawing.SizeF(265.1128F, 46.56666F);
             this.Text8.Text = "INTEREST E/C";
             this.Text8.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
@@ -622,12 +652,13 @@
             this.Text15.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.Text15.BorderWidth = 1F;
             this.Text15.CanGrow = false;
+            this.Text15.Dpi = 254F;
             this.Text15.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.Text15.ForeColor = System.Drawing.Color.Black;
-            this.Text15.LocationFloat = new DevExpress.Utils.PointFloat(959.5417F, 16.91665F);
+            this.Text15.LocationFloat = new DevExpress.Utils.PointFloat(2428.887F, 42.96829F);
             this.Text15.Name = "Text15";
-            this.Text15.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.Text15.SizeF = new System.Drawing.SizeF(104.375F, 18.33333F);
+            this.Text15.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.Text15.SizeF = new System.Drawing.SizeF(265.1128F, 46.56666F);
             this.Text15.Text = "PAID INTEREST";
             this.Text15.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
@@ -647,10 +678,11 @@
             this.TotalOLoan1,
             this.TotalCont2,
             this.TotalAdj2});
-            this.ReportFooterArea1.HeightF = 66F;
+            this.ReportFooterArea1.Dpi = 254F;
+            this.ReportFooterArea1.HeightF = 167.64F;
             this.ReportFooterArea1.KeepTogether = true;
             this.ReportFooterArea1.Name = "ReportFooterArea1";
-            this.ReportFooterArea1.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
+            this.ReportFooterArea1.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 254F);
             this.ReportFooterArea1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
             // TotalAccts1
@@ -660,14 +692,15 @@
             this.TotalAccts1.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.TotalAccts1.BorderWidth = 1F;
             this.TotalAccts1.CanGrow = false;
+            this.TotalAccts1.Dpi = 254F;
             this.TotalAccts1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumSum([DEALER].[DEALERWsDealerTrialBalanceFillByStateDealer].[WS_DEALER_ACCTS])")});
             this.TotalAccts1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.TotalAccts1.ForeColor = System.Drawing.Color.Black;
-            this.TotalAccts1.LocationFloat = new DevExpress.Utils.PointFloat(275F, 10.83333F);
+            this.TotalAccts1.LocationFloat = new DevExpress.Utils.PointFloat(698.5F, 27.51666F);
             this.TotalAccts1.Name = "TotalAccts1";
-            this.TotalAccts1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.TotalAccts1.SizeF = new System.Drawing.SizeF(76.18056F, 18.33333F);
+            this.TotalAccts1.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.TotalAccts1.SizeF = new System.Drawing.SizeF(193.4986F, 46.56666F);
             xrSummary8.Running = DevExpress.XtraReports.UI.SummaryRunning.Report;
             this.TotalAccts1.Summary = xrSummary8;
             this.TotalAccts1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
@@ -679,14 +712,15 @@
             this.TotalCustTotals1.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.TotalCustTotals1.BorderWidth = 1F;
             this.TotalCustTotals1.CanGrow = false;
+            this.TotalCustTotals1.Dpi = 254F;
             this.TotalCustTotals1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumSum([DEALER].[DEALERWsDealerTrialBalanceFillByStateDealer].[WS_DEALER_OS_L])")});
             this.TotalCustTotals1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.TotalCustTotals1.ForeColor = System.Drawing.Color.Black;
-            this.TotalCustTotals1.LocationFloat = new DevExpress.Utils.PointFloat(359.1705F, 10.83333F);
+            this.TotalCustTotals1.LocationFloat = new DevExpress.Utils.PointFloat(912.2931F, 27.51666F);
             this.TotalCustTotals1.Name = "TotalCustTotals1";
-            this.TotalCustTotals1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.TotalCustTotals1.SizeF = new System.Drawing.SizeF(113.5417F, 18.33333F);
+            this.TotalCustTotals1.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.TotalCustTotals1.SizeF = new System.Drawing.SizeF(288.396F, 46.56666F);
             xrSummary9.Running = DevExpress.XtraReports.UI.SummaryRunning.Report;
             this.TotalCustTotals1.Summary = xrSummary9;
             this.TotalCustTotals1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
@@ -699,14 +733,15 @@
             this.TotalDealerTotals1.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.TotalDealerTotals1.BorderWidth = 1F;
             this.TotalDealerTotals1.CanGrow = false;
+            this.TotalDealerTotals1.Dpi = 254F;
             this.TotalDealerTotals1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumSum([DEALER].[DEALERWsDealerTrialBalanceFillByStateDealer].[WS_DEALER_BAL])")});
             this.TotalDealerTotals1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.TotalDealerTotals1.ForeColor = System.Drawing.Color.Black;
-            this.TotalDealerTotals1.LocationFloat = new DevExpress.Utils.PointFloat(480.7022F, 10.83333F);
+            this.TotalDealerTotals1.LocationFloat = new DevExpress.Utils.PointFloat(1220.984F, 27.51666F);
             this.TotalDealerTotals1.Name = "TotalDealerTotals1";
-            this.TotalDealerTotals1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.TotalDealerTotals1.SizeF = new System.Drawing.SizeF(106.7361F, 18.33333F);
+            this.TotalDealerTotals1.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.TotalDealerTotals1.SizeF = new System.Drawing.SizeF(271.1096F, 46.56666F);
             xrSummary10.Running = DevExpress.XtraReports.UI.SummaryRunning.Report;
             this.TotalDealerTotals1.Summary = xrSummary10;
             this.TotalDealerTotals1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
@@ -719,14 +754,15 @@
             this.TotalCont1.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.TotalCont1.BorderWidth = 1F;
             this.TotalCont1.CanGrow = false;
+            this.TotalCont1.Dpi = 254F;
             this.TotalCont1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumSum([DEALER].[DEALERWsDealerTrialBalanceFillByStateDealer].[WS_DEALER_CONT])")});
             this.TotalCont1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.TotalCont1.ForeColor = System.Drawing.Color.Black;
-            this.TotalCont1.LocationFloat = new DevExpress.Utils.PointFloat(603.9052F, 10.83333F);
+            this.TotalCont1.LocationFloat = new DevExpress.Utils.PointFloat(1533.919F, 27.51666F);
             this.TotalCont1.Name = "TotalCont1";
-            this.TotalCont1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.TotalCont1.SizeF = new System.Drawing.SizeF(120.3472F, 18.33333F);
+            this.TotalCont1.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.TotalCont1.SizeF = new System.Drawing.SizeF(305.682F, 46.56666F);
             xrSummary11.Running = DevExpress.XtraReports.UI.SummaryRunning.Report;
             this.TotalCont1.Summary = xrSummary11;
             this.TotalCont1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
@@ -739,14 +775,15 @@
             this.TotalAdj1.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.TotalAdj1.BorderWidth = 1F;
             this.TotalAdj1.CanGrow = false;
+            this.TotalAdj1.Dpi = 254F;
             this.TotalAdj1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumSum([DEALER].[DEALERWsDealerTrialBalanceFillByStateDealer].[WS_DEALER_ADJ])")});
             this.TotalAdj1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.TotalAdj1.ForeColor = System.Drawing.Color.Black;
-            this.TotalAdj1.LocationFloat = new DevExpress.Utils.PointFloat(732.2424F, 10.83333F);
+            this.TotalAdj1.LocationFloat = new DevExpress.Utils.PointFloat(1859.896F, 27.51666F);
             this.TotalAdj1.Name = "TotalAdj1";
-            this.TotalAdj1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.TotalAdj1.SizeF = new System.Drawing.SizeF(106.9444F, 18.33333F);
+            this.TotalAdj1.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.TotalAdj1.SizeF = new System.Drawing.SizeF(271.6388F, 46.56666F);
             xrSummary12.Running = DevExpress.XtraReports.UI.SummaryRunning.Report;
             this.TotalAdj1.Summary = xrSummary12;
             this.TotalAdj1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
@@ -759,14 +796,15 @@
             this.TotalInt1.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.TotalInt1.BorderWidth = 1F;
             this.TotalInt1.CanGrow = false;
+            this.TotalInt1.Dpi = 254F;
             this.TotalInt1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumSum([DEALER].[DEALERWsDealerTrialBalanceFillByStateDealer].[WS_DEALER_INT])")});
             this.TotalInt1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.TotalInt1.ForeColor = System.Drawing.Color.Black;
-            this.TotalInt1.LocationFloat = new DevExpress.Utils.PointFloat(847.1768F, 10.83333F);
+            this.TotalInt1.LocationFloat = new DevExpress.Utils.PointFloat(2151.829F, 27.51666F);
             this.TotalInt1.Name = "TotalInt1";
-            this.TotalInt1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.TotalInt1.SizeF = new System.Drawing.SizeF(104.375F, 18.33333F);
+            this.TotalInt1.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.TotalInt1.SizeF = new System.Drawing.SizeF(265.1125F, 46.56666F);
             xrSummary13.Running = DevExpress.XtraReports.UI.SummaryRunning.Report;
             this.TotalInt1.Summary = xrSummary13;
             this.TotalInt1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
@@ -779,15 +817,16 @@
             this.TotalPaidInterest1.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.TotalPaidInterest1.BorderWidth = 1F;
             this.TotalPaidInterest1.CanGrow = false;
+            this.TotalPaidInterest1.Dpi = 254F;
             this.TotalPaidInterest1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumSum([DEALER].[DEALERWsDealerTrialBalanceFillByStateDealer].[WS_DEALER_PAID_INT" +
                     "])")});
             this.TotalPaidInterest1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.TotalPaidInterest1.ForeColor = System.Drawing.Color.Black;
-            this.TotalPaidInterest1.LocationFloat = new DevExpress.Utils.PointFloat(959.5417F, 10.83333F);
+            this.TotalPaidInterest1.LocationFloat = new DevExpress.Utils.PointFloat(2428.887F, 27.51666F);
             this.TotalPaidInterest1.Name = "TotalPaidInterest1";
-            this.TotalPaidInterest1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.TotalPaidInterest1.SizeF = new System.Drawing.SizeF(104.375F, 18.33333F);
+            this.TotalPaidInterest1.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.TotalPaidInterest1.SizeF = new System.Drawing.SizeF(265.1128F, 46.56666F);
             xrSummary14.Running = DevExpress.XtraReports.UI.SummaryRunning.Report;
             this.TotalPaidInterest1.Summary = xrSummary14;
             this.TotalPaidInterest1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
@@ -800,12 +839,13 @@
             this.Text2.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.Text2.BorderWidth = 1F;
             this.Text2.CanGrow = false;
+            this.Text2.Dpi = 254F;
             this.Text2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.Text2.ForeColor = System.Drawing.Color.Black;
-            this.Text2.LocationFloat = new DevExpress.Utils.PointFloat(0F, 10.83333F);
+            this.Text2.LocationFloat = new DevExpress.Utils.PointFloat(0F, 27.51666F);
             this.Text2.Name = "Text2";
-            this.Text2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.Text2.SizeF = new System.Drawing.SizeF(119.7917F, 18.33333F);
+            this.Text2.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.Text2.SizeF = new System.Drawing.SizeF(304.2709F, 46.56666F);
             this.Text2.Text = "GRAND TOTALS:";
             this.Text2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
@@ -815,13 +855,14 @@
             this.Line1.BorderColor = System.Drawing.Color.Black;
             this.Line1.Borders = DevExpress.XtraPrinting.BorderSide.Top;
             this.Line1.BorderWidth = 1F;
+            this.Line1.Dpi = 254F;
             this.Line1.Font = new System.Drawing.Font("Times New Roman", 9.75F);
             this.Line1.ForeColor = System.Drawing.Color.Black;
             this.Line1.LineWidth = 3F;
-            this.Line1.LocationFloat = new DevExpress.Utils.PointFloat(1.041667F, 3.54166F);
+            this.Line1.LocationFloat = new DevExpress.Utils.PointFloat(2.645833F, 8.995817F);
             this.Line1.Name = "Line1";
-            this.Line1.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
-            this.Line1.SizeF = new System.Drawing.SizeF(1062.875F, 3.125F);
+            this.Line1.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 254F);
+            this.Line1.SizeF = new System.Drawing.SizeF(2691.354F, 7.937502F);
             // 
             // Text1
             // 
@@ -830,12 +871,13 @@
             this.Text1.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.Text1.BorderWidth = 1F;
             this.Text1.CanGrow = false;
+            this.Text1.Dpi = 254F;
             this.Text1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.Text1.ForeColor = System.Drawing.Color.Black;
-            this.Text1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 42.08333F);
+            this.Text1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 106.8917F);
             this.Text1.Name = "Text1";
-            this.Text1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.Text1.SizeF = new System.Drawing.SizeF(119.7917F, 18.33333F);
+            this.Text1.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.Text1.SizeF = new System.Drawing.SizeF(304.2709F, 46.56666F);
             this.Text1.Text = "MASTER TOTALS:";
             this.Text1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
@@ -846,14 +888,15 @@
             this.TotalOLoan1.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.TotalOLoan1.BorderWidth = 1F;
             this.TotalOLoan1.CanGrow = false;
+            this.TotalOLoan1.Dpi = 254F;
             this.TotalOLoan1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[MasthistTotalsSelect].[TotalOLoan]")});
             this.TotalOLoan1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.TotalOLoan1.ForeColor = System.Drawing.Color.Black;
-            this.TotalOLoan1.LocationFloat = new DevExpress.Utils.PointFloat(480.7022F, 41.66667F);
+            this.TotalOLoan1.LocationFloat = new DevExpress.Utils.PointFloat(1220.984F, 105.8333F);
             this.TotalOLoan1.Name = "TotalOLoan1";
-            this.TotalOLoan1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.TotalOLoan1.SizeF = new System.Drawing.SizeF(106.7361F, 18.33333F);
+            this.TotalOLoan1.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.TotalOLoan1.SizeF = new System.Drawing.SizeF(271.1096F, 46.56665F);
             this.TotalOLoan1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
             this.TotalOLoan1.TextFormatString = "{0:C2}";
             // 
@@ -864,14 +907,15 @@
             this.TotalCont2.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.TotalCont2.BorderWidth = 1F;
             this.TotalCont2.CanGrow = false;
+            this.TotalCont2.Dpi = 254F;
             this.TotalCont2.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[MasthistTotalsSelect].[TotalCont]")});
             this.TotalCont2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.TotalCont2.ForeColor = System.Drawing.Color.Black;
-            this.TotalCont2.LocationFloat = new DevExpress.Utils.PointFloat(603.9052F, 41.66667F);
+            this.TotalCont2.LocationFloat = new DevExpress.Utils.PointFloat(1533.919F, 105.8333F);
             this.TotalCont2.Name = "TotalCont2";
-            this.TotalCont2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.TotalCont2.SizeF = new System.Drawing.SizeF(120.3472F, 18.33333F);
+            this.TotalCont2.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.TotalCont2.SizeF = new System.Drawing.SizeF(305.682F, 46.56665F);
             this.TotalCont2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
             this.TotalCont2.TextFormatString = "{0:C2}";
             // 
@@ -882,14 +926,15 @@
             this.TotalAdj2.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.TotalAdj2.BorderWidth = 1F;
             this.TotalAdj2.CanGrow = false;
+            this.TotalAdj2.Dpi = 254F;
             this.TotalAdj2.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[MasthistTotalsSelect].[TotalAdj]")});
             this.TotalAdj2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.TotalAdj2.ForeColor = System.Drawing.Color.Black;
-            this.TotalAdj2.LocationFloat = new DevExpress.Utils.PointFloat(732.2424F, 41.66667F);
+            this.TotalAdj2.LocationFloat = new DevExpress.Utils.PointFloat(1859.896F, 105.8333F);
             this.TotalAdj2.Name = "TotalAdj2";
-            this.TotalAdj2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.TotalAdj2.SizeF = new System.Drawing.SizeF(106.9444F, 18.33333F);
+            this.TotalAdj2.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.TotalAdj2.SizeF = new System.Drawing.SizeF(271.6388F, 46.56665F);
             this.TotalAdj2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
             this.TotalAdj2.TextFormatString = "{0:C2}";
             // 
@@ -902,10 +947,114 @@
             this.gsUserID_1,
             this.gsUserName_1,
             this.DataDate1});
-            this.PageFooterArea1.HeightF = 18.33333F;
+            this.PageFooterArea1.Dpi = 254F;
+            this.PageFooterArea1.HeightF = 46.56666F;
             this.PageFooterArea1.Name = "PageFooterArea1";
-            this.PageFooterArea1.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
+            this.PageFooterArea1.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 254F);
             this.PageFooterArea1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            // 
+            // PageNofM1
+            // 
+            this.PageNofM1.BackColor = System.Drawing.Color.Transparent;
+            this.PageNofM1.BorderColor = System.Drawing.Color.Black;
+            this.PageNofM1.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.PageNofM1.BorderWidth = 1F;
+            this.PageNofM1.Dpi = 254F;
+            this.PageNofM1.Font = new System.Drawing.Font("Arial", 10F);
+            this.PageNofM1.ForeColor = System.Drawing.Color.Black;
+            this.PageNofM1.LocationFloat = new DevExpress.Utils.PointFloat(2291.834F, 0F);
+            this.PageNofM1.Name = "PageNofM1";
+            this.PageNofM1.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.PageNofM1.SizeF = new System.Drawing.SizeF(402.1663F, 46.56666F);
+            this.PageNofM1.StylePriority.UseTextAlignment = false;
+            this.PageNofM1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
+            // 
+            // DataTime1
+            // 
+            this.DataTime1.BackColor = System.Drawing.Color.Transparent;
+            this.DataTime1.BorderColor = System.Drawing.Color.Black;
+            this.DataTime1.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.DataTime1.BorderWidth = 1F;
+            this.DataTime1.Dpi = 254F;
+            this.DataTime1.Font = new System.Drawing.Font("Arial", 10F);
+            this.DataTime1.ForeColor = System.Drawing.Color.Black;
+            this.DataTime1.LocationFloat = new DevExpress.Utils.PointFloat(219.3925F, 0F);
+            this.DataTime1.Name = "DataTime1";
+            this.DataTime1.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.DataTime1.PageInfo = DevExpress.XtraPrinting.PageInfo.DateTime;
+            this.DataTime1.SizeF = new System.Drawing.SizeF(206.375F, 46.56666F);
+            this.DataTime1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            this.DataTime1.TextFormatString = "{0:t}";
+            // 
+            // Text5
+            // 
+            this.Text5.BackColor = System.Drawing.Color.Transparent;
+            this.Text5.BorderColor = System.Drawing.Color.Black;
+            this.Text5.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.Text5.BorderWidth = 1F;
+            this.Text5.CanGrow = false;
+            this.Text5.Dpi = 254F;
+            this.Text5.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.Text5.ForeColor = System.Drawing.Color.Black;
+            this.Text5.LocationFloat = new DevExpress.Utils.PointFloat(494.5594F, 0F);
+            this.Text5.Name = "Text5";
+            this.Text5.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.Text5.SizeF = new System.Drawing.SizeF(127F, 46.56666F);
+            this.Text5.Text = "USER:";
+            this.Text5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            // 
+            // gsUserID_1
+            // 
+            this.gsUserID_1.BackColor = System.Drawing.Color.Transparent;
+            this.gsUserID_1.BorderColor = System.Drawing.Color.Black;
+            this.gsUserID_1.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.gsUserID_1.BorderWidth = 1F;
+            this.gsUserID_1.CanGrow = false;
+            this.gsUserID_1.Dpi = 254F;
+            this.gsUserID_1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "?gsUserID")});
+            this.gsUserID_1.Font = new System.Drawing.Font("Arial", 10F);
+            this.gsUserID_1.ForeColor = System.Drawing.Color.Black;
+            this.gsUserID_1.LocationFloat = new DevExpress.Utils.PointFloat(621.5591F, 0F);
+            this.gsUserID_1.Name = "gsUserID_1";
+            this.gsUserID_1.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.gsUserID_1.SizeF = new System.Drawing.SizeF(110.0666F, 46.56666F);
+            this.gsUserID_1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            // 
+            // gsUserName_1
+            // 
+            this.gsUserName_1.BackColor = System.Drawing.Color.Transparent;
+            this.gsUserName_1.BorderColor = System.Drawing.Color.Black;
+            this.gsUserName_1.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.gsUserName_1.BorderWidth = 1F;
+            this.gsUserName_1.CanGrow = false;
+            this.gsUserName_1.Dpi = 254F;
+            this.gsUserName_1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "?gsUserName")});
+            this.gsUserName_1.Font = new System.Drawing.Font("Arial", 10F);
+            this.gsUserName_1.ForeColor = System.Drawing.Color.Black;
+            this.gsUserName_1.LocationFloat = new DevExpress.Utils.PointFloat(788.2466F, 0F);
+            this.gsUserName_1.Name = "gsUserName_1";
+            this.gsUserName_1.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.gsUserName_1.SizeF = new System.Drawing.SizeF(402.1666F, 46.56666F);
+            this.gsUserName_1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            // 
+            // DataDate1
+            // 
+            this.DataDate1.BackColor = System.Drawing.Color.Transparent;
+            this.DataDate1.BorderColor = System.Drawing.Color.Black;
+            this.DataDate1.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.DataDate1.BorderWidth = 1F;
+            this.DataDate1.Dpi = 254F;
+            this.DataDate1.Font = new System.Drawing.Font("Arial", 10F);
+            this.DataDate1.ForeColor = System.Drawing.Color.Black;
+            this.DataDate1.LocationFloat = new DevExpress.Utils.PointFloat(7.725834F, 0F);
+            this.DataDate1.Name = "DataDate1";
+            this.DataDate1.Padding = new DevExpress.XtraPrinting.PaddingInfo(5, 5, 0, 0, 254F);
+            this.DataDate1.PageInfo = DevExpress.XtraPrinting.PageInfo.DateTime;
+            this.DataDate1.SizeF = new System.Drawing.SizeF(174.625F, 46.56666F);
+            this.DataDate1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            this.DataDate1.TextFormatString = "{0:MM/dd/yyyy}";
             // 
             // NewDealerID
             // 
@@ -922,12 +1071,14 @@
             // 
             // topMarginBand1
             // 
-            this.topMarginBand1.HeightF = 16F;
+            this.topMarginBand1.Dpi = 254F;
+            this.topMarginBand1.HeightF = 50F;
             this.topMarginBand1.Name = "topMarginBand1";
             // 
             // bottomMarginBand1
             // 
-            this.bottomMarginBand1.HeightF = 16F;
+            this.bottomMarginBand1.Dpi = 254F;
+            this.bottomMarginBand1.HeightF = 50F;
             this.bottomMarginBand1.Name = "bottomMarginBand1";
             // 
             // sqlDataSource1
@@ -978,103 +1129,6 @@
             masterDetailInfo1});
             this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
-            // PageNofM1
-            // 
-            this.PageNofM1.BackColor = System.Drawing.Color.Transparent;
-            this.PageNofM1.BorderColor = System.Drawing.Color.Black;
-            this.PageNofM1.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.PageNofM1.BorderWidth = 1F;
-            this.PageNofM1.Font = new System.Drawing.Font("Arial", 10F);
-            this.PageNofM1.ForeColor = System.Drawing.Color.Black;
-            this.PageNofM1.LocationFloat = new DevExpress.Utils.PointFloat(905.5834F, 0F);
-            this.PageNofM1.Name = "PageNofM1";
-            this.PageNofM1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.PageNofM1.SizeF = new System.Drawing.SizeF(158.3333F, 18.33333F);
-            this.PageNofM1.StylePriority.UseTextAlignment = false;
-            this.PageNofM1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
-            // 
-            // DataTime1
-            // 
-            this.DataTime1.BackColor = System.Drawing.Color.Transparent;
-            this.DataTime1.BorderColor = System.Drawing.Color.Black;
-            this.DataTime1.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.DataTime1.BorderWidth = 1F;
-            this.DataTime1.Font = new System.Drawing.Font("Arial", 10F);
-            this.DataTime1.ForeColor = System.Drawing.Color.Black;
-            this.DataTime1.LocationFloat = new DevExpress.Utils.PointFloat(86.375F, 0F);
-            this.DataTime1.Name = "DataTime1";
-            this.DataTime1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.DataTime1.PageInfo = DevExpress.XtraPrinting.PageInfo.DateTime;
-            this.DataTime1.SizeF = new System.Drawing.SizeF(81.25F, 18.33333F);
-            this.DataTime1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
-            this.DataTime1.TextFormatString = "{0:t}";
-            // 
-            // Text5
-            // 
-            this.Text5.BackColor = System.Drawing.Color.Transparent;
-            this.Text5.BorderColor = System.Drawing.Color.Black;
-            this.Text5.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.Text5.BorderWidth = 1F;
-            this.Text5.CanGrow = false;
-            this.Text5.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.Text5.ForeColor = System.Drawing.Color.Black;
-            this.Text5.LocationFloat = new DevExpress.Utils.PointFloat(194.7084F, 0F);
-            this.Text5.Name = "Text5";
-            this.Text5.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.Text5.SizeF = new System.Drawing.SizeF(50F, 18.33333F);
-            this.Text5.Text = "USER:";
-            this.Text5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
-            // 
-            // gsUserID_1
-            // 
-            this.gsUserID_1.BackColor = System.Drawing.Color.Transparent;
-            this.gsUserID_1.BorderColor = System.Drawing.Color.Black;
-            this.gsUserID_1.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.gsUserID_1.BorderWidth = 1F;
-            this.gsUserID_1.CanGrow = false;
-            this.gsUserID_1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "?gsUserID")});
-            this.gsUserID_1.Font = new System.Drawing.Font("Arial", 10F);
-            this.gsUserID_1.ForeColor = System.Drawing.Color.Black;
-            this.gsUserID_1.LocationFloat = new DevExpress.Utils.PointFloat(244.7083F, 0F);
-            this.gsUserID_1.Name = "gsUserID_1";
-            this.gsUserID_1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.gsUserID_1.SizeF = new System.Drawing.SizeF(43.3333F, 18.33333F);
-            this.gsUserID_1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
-            // 
-            // gsUserName_1
-            // 
-            this.gsUserName_1.BackColor = System.Drawing.Color.Transparent;
-            this.gsUserName_1.BorderColor = System.Drawing.Color.Black;
-            this.gsUserName_1.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.gsUserName_1.BorderWidth = 1F;
-            this.gsUserName_1.CanGrow = false;
-            this.gsUserName_1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "?gsUserName")});
-            this.gsUserName_1.Font = new System.Drawing.Font("Arial", 10F);
-            this.gsUserName_1.ForeColor = System.Drawing.Color.Black;
-            this.gsUserName_1.LocationFloat = new DevExpress.Utils.PointFloat(310.3333F, 0F);
-            this.gsUserName_1.Name = "gsUserName_1";
-            this.gsUserName_1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.gsUserName_1.SizeF = new System.Drawing.SizeF(158.3333F, 18.33333F);
-            this.gsUserName_1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
-            // 
-            // DataDate1
-            // 
-            this.DataDate1.BackColor = System.Drawing.Color.Transparent;
-            this.DataDate1.BorderColor = System.Drawing.Color.Black;
-            this.DataDate1.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.DataDate1.BorderWidth = 1F;
-            this.DataDate1.Font = new System.Drawing.Font("Arial", 10F);
-            this.DataDate1.ForeColor = System.Drawing.Color.Black;
-            this.DataDate1.LocationFloat = new DevExpress.Utils.PointFloat(3.041667F, 0F);
-            this.DataDate1.Name = "DataDate1";
-            this.DataDate1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.DataDate1.PageInfo = DevExpress.XtraPrinting.PageInfo.DateTime;
-            this.DataDate1.SizeF = new System.Drawing.SizeF(68.75F, 18.33333F);
-            this.DataDate1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
-            this.DataDate1.TextFormatString = "{0:MM/dd/yyyy}";
-            // 
             // gsUserID
             // 
             this.gsUserID.Description = "Enter gsUserID:";
@@ -1104,13 +1158,17 @@
             this.sqlDataSource1});
             this.DataMember = "DEALER";
             this.DataSource = this.sqlDataSource1;
+            this.DefaultPrinterSettingsUsing.UseLandscape = true;
+            this.Dpi = 254F;
             this.Landscape = true;
-            this.Margins = new System.Drawing.Printing.Margins(16, 16, 16, 16);
-            this.PageHeight = 850;
-            this.PageWidth = 1100;
+            this.Margins = new System.Drawing.Printing.Margins(50, 50, 50, 50);
+            this.PageHeight = 2159;
+            this.PageWidth = 2794;
             this.Parameters.AddRange(new DevExpress.XtraReports.Parameters.Parameter[] {
             this.gsUserID,
             this.gsUserName});
+            this.ReportUnit = DevExpress.XtraReports.UI.ReportUnit.TenthsOfAMillimeter;
+            this.SnapGridSize = 25F;
             this.Version = "21.2";
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 

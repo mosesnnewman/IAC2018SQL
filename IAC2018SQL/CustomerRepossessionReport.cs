@@ -8,10 +8,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevExpress.XtraReports.UI;
+using DevExpress.DataAccess.Sql;
+using DevExpress.DataAccess.Sql.DataApi;
+
 
 namespace IAC2021SQL
 {
-    public partial class CustomerRepossessionReport : Form
+    public partial class CustomerRepossessionReport : DevExpress.XtraEditors.XtraForm
     {
         public CustomerRepossessionReport()
         {
@@ -24,24 +28,14 @@ namespace IAC2021SQL
             SQLBackupandRestore SQLBR = new SQLBackupandRestore();
             Hide();
             MDIIAC2013 MDImain = (MDIIAC2013)MdiParent;
-            MDImain.CreateFormInstance("ReportViewer", false);
-            ReportViewer rptViewer = (ReportViewer)MDImain.ActiveMdiChild;
 
             IACDataSet VehicleDataSet = new IACDataSet(); 
             IACDataSetTableAdapters.CUSTOMERTableAdapter CUSTOMERTableAdapter = new IACDataSetTableAdapters.CUSTOMERTableAdapter();
-            IACDataSetTableAdapters.CreditCodesTableAdapter CreditCodesTableAdapter = new IACDataSetTableAdapters.CreditCodesTableAdapter();
             IACDataSetTableAdapters.DataPathTableAdapter DataPathTableAdapter = new IACDataSetTableAdapters.DataPathTableAdapter();
-            IACDataSetTableAdapters.DEALERTableAdapter DEALERTableAdapter = new IACDataSetTableAdapters.DEALERTableAdapter();
-            IACDataSetTableAdapters.RepoCodesTableAdapter RepoCodesTableAdapter = new IACDataSetTableAdapters.RepoCodesTableAdapter();
-            IACDataSetTableAdapters.VEHICLETableAdapter VEHICLETableAdapter = new IACDataSetTableAdapters.VEHICLETableAdapter();
 
             DataPathTableAdapter.Fill(VehicleDataSet.DataPath);
 
             CUSTOMERTableAdapter.FillByVehicle(VehicleDataSet.CUSTOMER);
-            CreditCodesTableAdapter.Fill(VehicleDataSet.CreditCodes);
-            DEALERTableAdapter.FillByVehicle(VehicleDataSet.DEALER);
-            RepoCodesTableAdapter.Fill(VehicleDataSet.RepoCodes);
-            VEHICLETableAdapter.FillByAllActive(VehicleDataSet.VEHICLE);
 
             if (VehicleDataSet.CUSTOMER.Rows.Count == 0)
                 MessageBox.Show("*** Sorry there are no VEHICLE records for ACTIVE CUSTOMERS ***");
@@ -53,13 +47,22 @@ namespace IAC2021SQL
 
                 if(System.IO.File.Exists(deletePath))
                     System.IO.File.Delete(deletePath);
-                VehicleRepossessionReport myReportObject = new VehicleRepossessionReport();
-                myReportObject.SetDataSource(VehicleDataSet);
-                myReportObject.SetParameterValue("gsUserID", Program.gsUserID);
-                myReportObject.SetParameterValue("gsUserName", Program.gsUserName);
-                rptViewer.crystalReportViewer.ReportSource = myReportObject;
-                rptViewer.crystalReportViewer.Refresh();
-                rptViewer.Show();
+
+                // Moses Newman 04/25/2022 Covert to XtraReport
+                var report = new XtraReportVehicleReposession();
+                SqlDataSource ds = report.DataSource as SqlDataSource;
+
+                report.DataSource = ds;
+                report.RequestParameters = false;
+                report.Parameters["gsUserID"].Value = Program.gsUserID;
+                report.Parameters["gsUserName"].Value = Program.gsUserName;
+
+                var tool = new ReportPrintTool(report);
+
+                tool.PreviewRibbonForm.MdiParent = MDImain;
+                tool.AutoShowParametersPanel = false;
+                tool.PreviewRibbonForm.WindowState = FormWindowState.Maximized;
+                tool.ShowRibbonPreview();
                 SQLBR.CustomerRepoExtractJob();
             }
             SQLBR.Dispose();

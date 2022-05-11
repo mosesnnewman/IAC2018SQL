@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Reflection;
 using System.Transactions;
+using DevExpress.XtraEditors;
 
 
 namespace IAC2021SQL
@@ -56,9 +57,40 @@ namespace IAC2021SQL
                 }
                 else
                 {
-                    MessageBox.Show("Sorry no dealer found that matches your selected dealer number! If you like to add a new record use the NEW button on the toolbar!");
-                    ActiveControl = DEALERcomboBox;
-                    DEALERcomboBox.SelectAll();
+                    lbAddFlag = true;
+                    toolStripButtonNew.Enabled = false;
+                    iacDataSet.DEALER.Clear();
+                    DealerbindingSource.AddNew();
+                    DealerbindingSource.EndEdit();
+
+                    // Set NULL VALUES to empty string
+                    iacDataSet.DEALER.Rows[DealerbindingSource.Position].SetField<String>("DEALER_ACC_NO", DEALERcomboBox.EditValue.ToString().Trim());
+                    iacDataSet.DEALER.Rows[DealerbindingSource.Position].SetField<String>("DEALER_STATUS", "A");
+                    iacDataSet.DEALER.Rows[DealerbindingSource.Position].SetField<DateTime>("DEALER_POST_DATE", DateTime.Now.Date);
+                    iacDataSet.DEALER.Rows[DealerbindingSource.Position].SetField<DateTime>("DealerStartDate", DateTime.Now.Date);
+                    iacDataSet.DEALER.Rows[DealerbindingSource.Position].SetField<String>("CellPhone", "");
+                    iacDataSet.DEALER.Rows[DealerbindingSource.Position].SetField<String>("DEALER_NAME", "");
+                    iacDataSet.DEALER.Rows[DealerbindingSource.Position].SetField<String>("DEALER_ADDR", "");
+                    iacDataSet.DEALER.Rows[DealerbindingSource.Position].SetField<String>("DEALER_HOME_PHONE", "");
+                    iacDataSet.DEALER.Rows[DealerbindingSource.Position].SetField<String>("DEALER_CITY", "");
+                    iacDataSet.DEALER.Rows[DealerbindingSource.Position].SetField<String>("DEALER_ST", "");
+                    iacDataSet.DEALER.Rows[DealerbindingSource.Position].SetField<String>("DEALER_WORK_PHONE", "");
+                    iacDataSet.DEALER.Rows[DealerbindingSource.Position].SetField<String>("DEALER_ZIP", "");
+
+                    nullableDateTimePickerDealerStartDate.Enabled = true;
+                    DEALER_STREETTextBox.Enabled = true;
+                    DealerCityTextBox.Enabled = true;
+                    DealerStateTextBox.Enabled = true;
+                    DealerZipTextBox.Enabled = true;
+                    DealerHomePhoneTextBox.Enabled = true;
+                    maskedTextBoxCellPhone.Enabled = true;
+                    DEALERWorkPhoneTextBox.Enabled = true;
+                    textBoxDealerEmail.Enabled = true;
+                    dEALER_NAMETextBox.Enabled = true;
+                    toolStripButtonEdit.Enabled = false;
+                    DEALERcomboBox.Enabled = false;
+                    /*ActiveControl = dEALER_NAMETextBox;
+                    dEALER_NAMETextBox.SelectAll();*/
                 }
             }
         }
@@ -108,21 +140,22 @@ namespace IAC2021SQL
                 if (DLRPOS != -1)
                 {
                     DealerListbindingSource.Position = DealerListbindingSource.Find("id", (Int32)Key);
-                    ActiveControl = dEALER_NAMETextBox;
-                    dEALER_NAMETextBox.SelectAll();
                 }
             }
             else
-                DEALERcomboBox.EditValue = lnDealerNo;
+            {
+                //DEALERcomboBox.EditValue = lnDealerNo;
+            }
+            //dEALER_NAMETextBox.Focus();
+            //dEALER_NAMETextBox.SelectAll();
         }
 
         private void toolStripButtonSave_Click(object sender, EventArgs e)
         {
             Int32 lnDealerNo = 0;
-            Int32? insertID = null;
 
             if (lbAddFlag)
-                iacDataSet.DEALER.Rows[DealerbindingSource.Position].SetField<String>("DEALER_ACC_NO","");
+                iacDataSet.DEALER.Rows[DealerbindingSource.Position].SetField<String>("DEALER_ACC_NO", DEALERcomboBox.EditValue.ToString().Trim());
             Validate();  //Validate form so all data sets are updated with field values
             DealerbindingSource.EndEdit();
             if(!lbAddFlag)
@@ -140,7 +173,9 @@ namespace IAC2021SQL
                 if (!lbAddFlag)
                     dEALERTableAdapter.Update(iacDataSet.DEALER.Rows[DealerbindingSource.Position]);
                 else
-                    dEALERTableAdapter.Insert(iacDataSet.DEALER.Rows[DealerbindingSource.Position].Field<String>("DEALER_NAME"),
+                    // Moses Newman 05/10/2022 Allow user entry of NEW dealer number, no more identity for id!
+                    dEALERTableAdapter.Insert(iacDataSet.DEALER.Rows[DealerbindingSource.Position].Field<String>("DEALER_ACC_NO"),
+                                              iacDataSet.DEALER.Rows[DealerbindingSource.Position].Field<String>("DEALER_NAME"),
                                               iacDataSet.DEALER.Rows[DealerbindingSource.Position].Field<String>("DEALER_ADDR"),
                                               iacDataSet.DEALER.Rows[DealerbindingSource.Position].Field<String>("DEALER_HOME_PHONE"),
                                               iacDataSet.DEALER.Rows[DealerbindingSource.Position].Field<String>("DEALER_CITY"),
@@ -178,8 +213,7 @@ namespace IAC2021SQL
                                               iacDataSet.DEALER.Rows[DealerbindingSource.Position].Field<DateTime?>("LockTime"),
                                               iacDataSet.DEALER.Rows[DealerbindingSource.Position].Field<DateTime?>("DealerStartDate"),
                                               iacDataSet.DEALER.Rows[DealerbindingSource.Position].Field<String>("CellPhone"),
-                                              iacDataSet.DEALER.Rows[DealerbindingSource.Position].Field<String>("Email"),
-                                              ref insertID); ;
+                                              iacDataSet.DEALER.Rows[DealerbindingSource.Position].Field<String>("Email"));
                 tableAdapTran.Commit();
             }
             catch (System.Data.SqlClient.SqlException ex)
@@ -199,6 +233,7 @@ namespace IAC2021SQL
             }
             finally
             {
+                /*   Moses Newman 05/10/2022 no more identity for id.
                 if (lbAddFlag)
                 {
                     if (insertID != null)
@@ -206,7 +241,7 @@ namespace IAC2021SQL
                         lnDealerNo = (Int32)insertID;
                         iacDataSet.DEALER.Rows[DealerbindingSource.Position].SetField<String>("DEALER_ACC_NO", Convert.ToString(lnDealerNo).Trim());
                     }
-                }
+                }*/
                 dEALERTableAdapter.UnlockRecord(iacDataSet.DEALER.Rows[DealerbindingSource.Position].Field<Int32>("id"));
                 tableAdapConn.Close();
                 tableAdapConn = null;
@@ -231,8 +266,9 @@ namespace IAC2021SQL
 
         private void DealerMaintenance_Load(object sender, EventArgs e)
         {
-            ActiveControl = DEALERcomboBox;
-            DEALERcomboBox.SelectAll();
+            /*ActiveControl = DEALERcomboBox;
+            DEALERcomboBox.Focus();
+            DEALERcomboBox.SelectAll();*/
             StartUpConfiguration();
             PerformAutoScale();
         }
@@ -279,7 +315,8 @@ namespace IAC2021SQL
                 maskedTextBoxCellPhone.Enabled = false;
                 nullableDateTimePickerDealerStartDate.Enabled = false;
                 toolStripButtonEdit.Enabled = true;
-                toolStripButtonNew.Enabled = true;
+                // Moses Newman 05/10/2022 no more identity specification for id, so no NEW button for now!
+                toolStripButtonNew.Enabled = false;
                 textBoxDealerEmail.Enabled = false;
                 ActiveControl = DEALERcomboBox;
                 DEALERcomboBox.SelectAll();
@@ -438,8 +475,10 @@ namespace IAC2021SQL
 
         private void DEALERcomboBox_EditValueChanged(object sender, EventArgs e)
         {
-            ActiveControl = DEALERcomboBox;
-            System.Windows.Forms.SendKeys.Send("{TAB}");
+            Int32 lnEditVal = DEALERcomboBox.EditValue != null ? (Int32)DEALERcomboBox.EditValue : 0;
+            if (lnEditVal == 0)
+                return;
+            System.Windows.Forms.SendKeys.Send("{ENTER}");
         }
 
         private void toolStripButtonNew_Click(object sender, EventArgs e)
@@ -491,9 +530,34 @@ namespace IAC2021SQL
         {
             if(lbAddFlag)
             {
-                e.DisplayText = "NEWDEALER";
+                //e.DisplayText = "NEWDEALER";
             }
                
+        }
+
+        private void ClosedDealerMaintenance_Shown(object sender, EventArgs e)
+        {
+            this.DEALERcomboBox.Focus();
+        }
+
+        private void DEALERcomboBox_ProcessNewValue(object sender, DevExpress.XtraEditors.Controls.ProcessNewValueEventArgs e)
+        {
+            DataRow newListRow = iacDataSet.DLRLISTBYNUM.NewRow();
+
+            if (lbAddFlag || lbEdit)
+                return;
+            if ((string)e.DisplayValue.ToString() != String.Empty && MessageBox.Show(
+                    this, "Dealer number: " + (string)e.DisplayValue.ToString() + " does not exist. Would you like to add it?",
+                    "Confirm", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                DLRLISTBYNUMbindingSource.AddNew();
+                DLRLISTBYNUMbindingSource.EndEdit();
+                iacDataSet.DLRLISTBYNUM.Rows[DLRLISTBYNUMbindingSource.Position].SetField("id", (Int32)e.DisplayValue);
+                iacDataSet.DLRLISTBYNUM.Rows[DLRLISTBYNUMbindingSource.Position].SetField("DEALER_NAME", "");
+                DLRLISTBYNUMbindingSource.EndEdit();
+                e.Handled = true;
+                dEALER_NAMETextBox.Focus();
+            }
         }
 
         private void nullableDateTimePickerDealerStartDate_ValueChanged(object sender, EventArgs e)

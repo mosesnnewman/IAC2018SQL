@@ -9,7 +9,7 @@
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>IAC2021SQL</RootNamespace>
-    <AssemblyName>IAC2022SQLTEST</AssemblyName>
+    <AssemblyName>IAC2021SQL</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>false</IsWebBootstrapper>
@@ -25,7 +25,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <PublishUrl>\\DC-IAC\PUBLIC\moses\IAC2022SQLTESTInstall\</PublishUrl>
+    <PublishUrl>\\DC-IAC\Public\moses\IAC2021SQLInstall\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Unc</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -41,8 +41,8 @@
     <SuiteName>IAC2021SQL</SuiteName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>23</ApplicationRevision>
-    <ApplicationVersion>20.0.0.%2a</ApplicationVersion>
+    <ApplicationRevision>30</ApplicationRevision>
+    <ApplicationVersion>22.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -56,7 +56,7 @@
     <TargetZone>LocalIntranet</TargetZone>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>1683_Lightbulb.ico</ApplicationIcon>
+    <ApplicationIcon>CarLoan.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup />
   <PropertyGroup>
@@ -388,10 +388,6 @@
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="ObjectListView, Version=2.9.1.17344, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4, processorArchitecture=AMD64">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\ObjectListView.dll</HintPath>
-    </Reference>
     <Reference Include="PdfSharp, Version=1.50.5147.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
       <HintPath>..\packages\PDFsharp.1.50.5147\lib\net20\PdfSharp.dll</HintPath>
     </Reference>
@@ -469,6 +465,7 @@
       <HintPath>..\packages\System.Data.SqlClient.4.8.3\lib\net461\System.Data.SqlClient.dll</HintPath>
     </Reference>
     <Reference Include="System.Data.SqlXml" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Diagnostics.DiagnosticSource, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Diagnostics.DiagnosticSource.6.0.0\lib\net461\System.Diagnostics.DiagnosticSource.dll</HintPath>
     </Reference>
@@ -572,6 +569,7 @@
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
     <Reference Include="System.Runtime.Serialization.Primitives, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Runtime.Serialization.Primitives.4.3.0\lib\net46\System.Runtime.Serialization.Primitives.dll</HintPath>
       <Private>True</Private>
@@ -769,6 +767,66 @@
       <DependentUpon>TempPosting.xsd</DependentUpon>
     </Compile>
     <Compile Include="Thinfinity.VirtualUI.cs" />
+    <Compile Include="XtraReportClosedDelinquencySummarySubreport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReportClosedDelinquencySummarySubreport.Designer.cs">
+      <DependentUpon>XtraReportClosedDelinquencySummarySubreport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReportClosedDelinquencySummary.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReportClosedDelinquencySummary.Designer.cs">
+      <DependentUpon>XtraReportClosedDelinquencySummary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReportFinanceDealerSummary.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReportFinanceDealerSummary.Designer.cs">
+      <DependentUpon>XtraReportFinanceDealerSummary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReportFinanceReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReportFinanceReport.Designer.cs">
+      <DependentUpon>XtraReportFinanceReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReportMonthlyUpdateDailyInterestVariance.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReportMonthlyUpdateDailyInterestVariance.Designer.cs">
+      <DependentUpon>XtraReportMonthlyUpdateDailyInterestVariance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReportMonthlyUpdateDealerSummary.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReportMonthlyUpdateDealerSummary.Designer.cs">
+      <DependentUpon>XtraReportMonthlyUpdateDealerSummary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReportMonthlyUpdateListing.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReportMonthlyUpdateListing.Designer.cs">
+      <DependentUpon>XtraReportMonthlyUpdateListing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReportOpenChargesAppliedToDealer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReportOpenChargesAppliedToDealer.Designer.cs">
+      <DependentUpon>XtraReportOpenChargesAppliedToDealer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReportShortBalanceReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReportShortBalanceReport.Designer.cs">
+      <DependentUpon>XtraReportShortBalanceReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReportVehicleReposession.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReportVehicleReposession.Designer.cs">
+      <DependentUpon>XtraReportVehicleReposession.cs</DependentUpon>
+    </Compile>
     <Compile Include="XtraReportClosedPaymentBalanceTotals.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -1857,6 +1915,36 @@
     <EmbeddedResource Include="IACSplashScreen.resx">
       <DependentUpon>IACSplashScreen.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="XtraReportClosedDelinquencySummarySubreport.resx">
+      <DependentUpon>XtraReportClosedDelinquencySummarySubreport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReportClosedDelinquencySummary.resx">
+      <DependentUpon>XtraReportClosedDelinquencySummary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReportFinanceDealerSummary.resx">
+      <DependentUpon>XtraReportFinanceDealerSummary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReportFinanceReport.resx">
+      <DependentUpon>XtraReportFinanceReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReportMonthlyUpdateDailyInterestVariance.resx">
+      <DependentUpon>XtraReportMonthlyUpdateDailyInterestVariance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReportMonthlyUpdateDealerSummary.resx">
+      <DependentUpon>XtraReportMonthlyUpdateDealerSummary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReportMonthlyUpdateListing.resx">
+      <DependentUpon>XtraReportMonthlyUpdateListing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReportOpenChargesAppliedToDealer.resx">
+      <DependentUpon>XtraReportOpenChargesAppliedToDealer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReportShortBalanceReport.resx">
+      <DependentUpon>XtraReportShortBalanceReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReportVehicleReposession.resx">
+      <DependentUpon>XtraReportVehicleReposession.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="XtraReportClosedPaymentBalanceTotals.resx">
       <DependentUpon>XtraReportClosedPaymentBalanceTotals.cs</DependentUpon>
     </EmbeddedResource>
@@ -2416,7 +2504,6 @@
     <None Include="ListData.xss">
       <DependentUpon>ListData.xsd</DependentUpon>
     </None>
-    <None Include="ObjectListView2012.csproj" />
     <None Include="ProductionMainTables.xsc">
       <DependentUpon>ProductionMainTables.xsd</DependentUpon>
     </None>
@@ -3871,23 +3958,13 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
-    <PublishFile Include="ObjectListView">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
-      <FileType>Assembly</FileType>
-    </PublishFile>
     <PublishFile Include="ObjectListView.pdb">
       <Visible>False</Visible>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Include</PublishState>
+      <PublishState>Exclude</PublishState>
       <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>

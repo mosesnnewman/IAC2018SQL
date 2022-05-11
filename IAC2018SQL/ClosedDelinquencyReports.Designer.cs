@@ -38,6 +38,8 @@
             this.comboBoxAgedPeriod = new DevExpress.XtraEditors.ComboBoxEdit();
             this.comboBoxSortType = new DevExpress.XtraEditors.ComboBoxEdit();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.checkEditSortAndGroupDetailByState = new DevExpress.XtraEditors.CheckEdit();
+            this.checkEditSortAndGroupDealerByState = new DevExpress.XtraEditors.CheckEdit();
             ((System.ComponentModel.ISupportInitialize)(this.checkBoxCollections.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDueDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDueDate.Properties)).BeginInit();
@@ -45,6 +47,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxSortType.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEditSortAndGroupDetailByState.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEditSortAndGroupDealerByState.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // labelLateNotices
@@ -63,7 +67,7 @@
             // 
             this.buttonPost.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonPost.Appearance.Options.UseFont = true;
-            this.buttonPost.Location = new System.Drawing.Point(169, 199);
+            this.buttonPost.Location = new System.Drawing.Point(169, 226);
             this.buttonPost.Margin = new System.Windows.Forms.Padding(4);
             this.buttonPost.Name = "buttonPost";
             this.buttonPost.Size = new System.Drawing.Size(112, 36);
@@ -75,7 +79,7 @@
             // 
             this.buttonCancel.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCancel.Appearance.Options.UseFont = true;
-            this.buttonCancel.Location = new System.Drawing.Point(290, 199);
+            this.buttonCancel.Location = new System.Drawing.Point(290, 226);
             this.buttonCancel.Margin = new System.Windows.Forms.Padding(4);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(112, 36);
@@ -182,6 +186,8 @@
             this.groupControl1.Appearance.BackColor = System.Drawing.Color.LightSteelBlue;
             this.groupControl1.Appearance.Options.UseBackColor = true;
             this.groupControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.groupControl1.Controls.Add(this.checkEditSortAndGroupDealerByState);
+            this.groupControl1.Controls.Add(this.checkEditSortAndGroupDetailByState);
             this.groupControl1.Controls.Add(this.comboBoxSortType);
             this.groupControl1.Controls.Add(this.comboBoxAgedPeriod);
             this.groupControl1.Controls.Add(this.labelSortType);
@@ -196,6 +202,28 @@
             this.groupControl1.Size = new System.Drawing.Size(570, 279);
             this.groupControl1.TabIndex = 9;
             this.groupControl1.Text = "groupControl1";
+            // 
+            // checkEditSortAndGroupDetailByState
+            // 
+            this.checkEditSortAndGroupDetailByState.EditValue = true;
+            this.checkEditSortAndGroupDetailByState.Location = new System.Drawing.Point(182, 176);
+            this.checkEditSortAndGroupDetailByState.Name = "checkEditSortAndGroupDetailByState";
+            this.checkEditSortAndGroupDetailByState.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkEditSortAndGroupDetailByState.Properties.Appearance.Options.UseFont = true;
+            this.checkEditSortAndGroupDetailByState.Properties.Caption = "Sort And Group Detail By State?";
+            this.checkEditSortAndGroupDetailByState.Size = new System.Drawing.Size(261, 24);
+            this.checkEditSortAndGroupDetailByState.TabIndex = 9;
+            // 
+            // checkEditSortAndGroupDealerByState
+            // 
+            this.checkEditSortAndGroupDealerByState.EditValue = true;
+            this.checkEditSortAndGroupDealerByState.Location = new System.Drawing.Point(182, 199);
+            this.checkEditSortAndGroupDealerByState.Name = "checkEditSortAndGroupDealerByState";
+            this.checkEditSortAndGroupDealerByState.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkEditSortAndGroupDealerByState.Properties.Appearance.Options.UseFont = true;
+            this.checkEditSortAndGroupDealerByState.Properties.Caption = "Sort And Group Dealer Summary By State?";
+            this.checkEditSortAndGroupDealerByState.Size = new System.Drawing.Size(348, 24);
+            this.checkEditSortAndGroupDealerByState.TabIndex = 10;
             // 
             // frmClosedDelinquencyReports
             // 
@@ -217,6 +245,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEditSortAndGroupDetailByState.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEditSortAndGroupDealerByState.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -233,5 +263,7 @@
         private DevExpress.XtraEditors.ComboBoxEdit comboBoxAgedPeriod;
         private DevExpress.XtraEditors.ComboBoxEdit comboBoxSortType;
         private DevExpress.XtraEditors.GroupControl groupControl1;
+        private DevExpress.XtraEditors.CheckEdit checkEditSortAndGroupDealerByState;
+        private DevExpress.XtraEditors.CheckEdit checkEditSortAndGroupDetailByState;
     }
 }

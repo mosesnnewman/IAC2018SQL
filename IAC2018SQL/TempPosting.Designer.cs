@@ -3238,7 +3238,6 @@ namespace IAC2021SQL {
                 this.columnGapIns.MaxLength = 10;
                 this.columnTPin.MaxLength = 10;
                 this.columnCheckNumber.MaxLength = 10;
-                this.columnTotalDue.ReadOnly = true;
                 this.columnCOSTPin.MaxLength = 10;
             }
             
@@ -12436,6 +12435,7 @@ namespace IAC2021SQL.TempPostingTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CheckNumber", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "CheckNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ReceivedContract", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 1, 0, "ReceivedContract", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateContractReceived", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, "DateContractReceived", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TotalDue", global::System.Data.SqlDbType.Money, 8, global::System.Data.ParameterDirection.Input, 19, 4, "TotalDue", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@COSCellValid", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 1, 0, "COSCellValid", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@COSDNTAcct", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 1, 0, "COSDNTAcct", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@COSDNTMktg", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 1, 0, "COSDNTMktg", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -12692,6 +12692,7 @@ namespace IAC2021SQL.TempPostingTableAdapters {
                     string CheckNumber, 
                     global::System.Nullable<bool> ReceivedContract, 
                     global::System.Nullable<global::System.DateTime> DateContractReceived, 
+                    global::System.Nullable<decimal> TotalDue, 
                     global::System.Nullable<bool> COSCellValid, 
                     global::System.Nullable<bool> COSDNTAcct, 
                     global::System.Nullable<bool> COSDNTMktg, 
@@ -13695,47 +13696,53 @@ namespace IAC2021SQL.TempPostingTableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[166].Value = global::System.DBNull.Value;
             }
-            if ((COSCellValid.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[167].Value = ((bool)(COSCellValid.Value));
+            if ((TotalDue.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[167].Value = ((decimal)(TotalDue.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[167].Value = global::System.DBNull.Value;
             }
-            if ((COSDNTAcct.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[168].Value = ((bool)(COSDNTAcct.Value));
+            if ((COSCellValid.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[168].Value = ((bool)(COSCellValid.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[168].Value = global::System.DBNull.Value;
             }
-            if ((COSDNTMktg.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[169].Value = ((bool)(COSDNTMktg.Value));
+            if ((COSDNTAcct.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[169].Value = ((bool)(COSDNTAcct.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[169].Value = global::System.DBNull.Value;
             }
-            if ((COSTAcct.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[170].Value = ((bool)(COSTAcct.Value));
+            if ((COSDNTMktg.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[170].Value = ((bool)(COSDNTMktg.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[170].Value = global::System.DBNull.Value;
             }
-            if ((COSTBoth.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[171].Value = ((bool)(COSTBoth.Value));
+            if ((COSTAcct.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[171].Value = ((bool)(COSTAcct.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[171].Value = global::System.DBNull.Value;
             }
-            if ((COSTPin == null)) {
+            if ((COSTBoth.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[172].Value = ((bool)(COSTBoth.Value));
+            }
+            else {
                 this.Adapter.InsertCommand.Parameters[172].Value = global::System.DBNull.Value;
             }
+            if ((COSTPin == null)) {
+                this.Adapter.InsertCommand.Parameters[173].Value = global::System.DBNull.Value;
+            }
             else {
-                this.Adapter.InsertCommand.Parameters[172].Value = ((string)(COSTPin));
+                this.Adapter.InsertCommand.Parameters[173].Value = ((string)(COSTPin));
             }
             if ((COSTConfirmed.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[173].Value = ((bool)(COSTConfirmed.Value));
+                this.Adapter.InsertCommand.Parameters[174].Value = ((bool)(COSTConfirmed.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[173].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[174].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 

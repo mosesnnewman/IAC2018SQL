@@ -14,12 +14,13 @@ using Microsoft.SqlServer.Dts.Runtime;
 using Microsoft.SqlServer.Management.Smo;
 using Microsoft.SqlServer.Management.Common;
 using Excel = Microsoft.Office.Interop.Excel;
+using DevExpress.XtraEditors;
 
 
 namespace IAC2021SQL
 {
     // Moses Newman 11/06/2019 Create PayNSeconds SFTP download and import int PAYMENTS routines.
-    public partial class frmPNSImport : Form
+    public partial class frmPNSImport : DevExpress.XtraEditors.XtraForm
     {
         private string host = @"204.13.110.68";
         private string username = @"iacinc_0";
@@ -68,12 +69,12 @@ namespace IAC2021SQL
                             sftp.DownloadFile(FullRemoteArchivePath, fileStream);
                         }
                         sftp.Disconnect();
-                        progressBarDownload.Value = Progress;
+                        progressBarDownload.EditValue = Progress;
                     }
                 }
                 catch (Exception er)
                 {
-                    MessageBox.Show("Download Failed due to " + er.Message,"*** Download File Error ***",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    XtraMessageBox.Show("Download Failed due to " + er.Message,"*** Download File Error ***",MessageBoxButtons.OK,MessageBoxIcon.Error);
                     return false;
                 }
             }
@@ -116,7 +117,7 @@ namespace IAC2021SQL
                         success = downloadFile(file.Name, @"\\dc-iac\Public\PayNSeconds", FilesOnly.Count(), FileNumber);
                         if (!success)
                         {
-                            MessageBox.Show("*** Error downloading: " + file.Name + " Import not completed! ***", "PNS Download Failure", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            XtraMessageBox.Show("*** Error downloading: " + file.Name + " Import not completed! ***", "PNS Download Failure", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             return 0;
                         }
                         orgFile = (SftpFile)file;
@@ -129,7 +130,7 @@ namespace IAC2021SQL
                 }
                 catch (Exception e)
                 {
-                    MessageBox.Show("An exception has been caught " + e.ToString(),"PNS Download Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    XtraMessageBox.Show("An exception has been caught " + e.ToString(),"PNS Download Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
                     return 0;
                 }
             }
@@ -198,7 +199,7 @@ namespace IAC2021SQL
                         labelDownload.Text = "Executing PNSIMPORT.dtsx for file " + FileNumber.ToString().Trim() + " of " + TotalFiles.ToString().Trim();
                         labelDownload.Refresh();
                         //pkgResults = pkg.Execute();
-                        progressBarDownload.Value = Progress;
+                        progressBarDownload.EditValue = Progress;
                     }
                 }
                 PayNSecondsTableAdapter.Fill(PNS.PayNSeconds);
@@ -242,7 +243,7 @@ namespace IAC2021SQL
 
                 labelDownload.Text = "Executing PNSToPayments.dtsx";
                 labelDownload.Refresh();
-                progressBarDownload.Value = (Int32)100;
+                progressBarDownload.EditValue = (Int32)100;
 
                 labelDownload.Text = "";
                 labelDownload.Refresh();
@@ -251,7 +252,7 @@ namespace IAC2021SQL
             }
             else
             {
-                MessageBox.Show("*** Download Failure(s)! No files updated! ***", "PNSIMPORT FAILURE", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                XtraMessageBox.Show("*** Download Failure(s)! No files updated! ***", "PNSIMPORT FAILURE", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 ReturnCode = false;
             }
             PNS.PayNSeconds.Clear();
@@ -293,10 +294,10 @@ namespace IAC2021SQL
                             RenameFile(lsOldFile, lsNewFile);
                         }
                     }
-                    MessageBox.Show("*** Import of " + PNS.PayNSeconds.Rows.Count.ToString().Trim() + " PayNSeconds RECORDS complete. ***", "PNS Payments Import");
+                    XtraMessageBox.Show("*** Import of " + PNS.PayNSeconds.Rows.Count.ToString().Trim() + " PayNSeconds RECORDS complete. ***", "PNS Payments Import");
                 }
                 else
-                    MessageBox.Show("*** NO IVR RECORDS FOUND! ***", "IVR Payments Import");
+                    XtraMessageBox.Show("*** NO IVR RECORDS FOUND! ***", "IVR Payments Import");
             }
             PayNSecondsTableAdapter.Dispose();
             PNS.Dispose();
@@ -328,10 +329,10 @@ namespace IAC2021SQL
                             RenameFile(lsOldFile, lsNewFile);
                         }
                     }
-                    MessageBox.Show("*** Import of " + PNS.PayNSeconds.Rows.Count.ToString().Trim() + " PayNSeconds RECORDS complete. ***", "PNS Payments Import");
+                    XtraMessageBox.Show("*** Import of " + PNS.PayNSeconds.Rows.Count.ToString().Trim() + " PayNSeconds RECORDS complete. ***", "PNS Payments Import");
                 }
                 else
-                    MessageBox.Show("*** NO IVR RECORDS FOUND! ***", "IVR Payments Import");
+                    XtraMessageBox.Show("*** NO IVR RECORDS FOUND! ***", "IVR Payments Import");
             }
             PayNSecondsTableAdapter.Dispose();
             PNS.Dispose();

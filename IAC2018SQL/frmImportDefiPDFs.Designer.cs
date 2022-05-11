@@ -35,8 +35,8 @@
             System.Windows.Forms.Label label2;
             System.Windows.Forms.Label label1;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmImportDefiPDFs));
-            this.buttonTransfer = new System.Windows.Forms.Button();
-            this.buttonCancel = new System.Windows.Forms.Button();
+            this.buttonTransfer = new DevExpress.XtraEditors.SimpleButton();
+            this.buttonCancel = new DevExpress.XtraEditors.SimpleButton();
             this.groupBoxIndexFields = new System.Windows.Forms.GroupBox();
             this.textBoxSide = new System.Windows.Forms.TextBox();
             this.textBoxSSNLast4 = new System.Windows.Forms.TextBox();
@@ -44,9 +44,10 @@
             this.TextBoxLastName = new System.Windows.Forms.TextBox();
             this.TextBoxFirstName = new System.Windows.Forms.TextBox();
             this.TextBoxCutomerNo = new System.Windows.Forms.TextBox();
-            this.progressBarStatus = new System.Windows.Forms.ProgressBar();
+            this.progressBarStatus = new DevExpress.XtraEditors.ProgressBarControl();
             this.labelProgress = new System.Windows.Forms.Label();
             this.groupBoxProgress = new System.Windows.Forms.GroupBox();
+            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             label3 = new System.Windows.Forms.Label();
             label53 = new System.Windows.Forms.Label();
             label7 = new System.Windows.Forms.Label();
@@ -54,7 +55,10 @@
             label2 = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
             this.groupBoxIndexFields.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.progressBarStatus.Properties)).BeginInit();
             this.groupBoxProgress.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
+            this.groupControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label3
@@ -118,29 +122,35 @@
             // 
             // buttonTransfer
             // 
-            this.buttonTransfer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonTransfer.Image = ((System.Drawing.Image)(resources.GetObject("buttonTransfer.Image")));
-            this.buttonTransfer.Location = new System.Drawing.Point(268, 404);
+            this.buttonTransfer.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonTransfer.Appearance.Options.UseFont = true;
+            this.buttonTransfer.Appearance.Options.UseTextOptions = true;
+            this.buttonTransfer.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.buttonTransfer.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonTransfer.ImageOptions.Image")));
+            this.buttonTransfer.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
+            this.buttonTransfer.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
+            this.buttonTransfer.Location = new System.Drawing.Point(264, 400);
             this.buttonTransfer.Name = "buttonTransfer";
             this.buttonTransfer.Size = new System.Drawing.Size(151, 103);
             this.buttonTransfer.TabIndex = 14;
             this.buttonTransfer.Text = "&Import Defi PDF Images";
-            this.buttonTransfer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.buttonTransfer.UseVisualStyleBackColor = true;
             this.buttonTransfer.Click += new System.EventHandler(this.buttonTransfer_Click);
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCancel.Image = ((System.Drawing.Image)(resources.GetObject("buttonCancel.Image")));
-            this.buttonCancel.Location = new System.Drawing.Point(445, 404);
+            this.buttonCancel.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCancel.Appearance.Options.UseFont = true;
+            this.buttonCancel.Appearance.Options.UseTextOptions = true;
+            this.buttonCancel.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.buttonCancel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonCancel.ImageOptions.Image")));
+            this.buttonCancel.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
+            this.buttonCancel.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.TopCenter;
+            this.buttonCancel.Location = new System.Drawing.Point(441, 400);
             this.buttonCancel.Margin = new System.Windows.Forms.Padding(4);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(151, 103);
             this.buttonCancel.TabIndex = 13;
             this.buttonCancel.Text = "&Cancel";
-            this.buttonCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // groupBoxIndexFields
@@ -236,7 +246,6 @@
             this.progressBarStatus.Location = new System.Drawing.Point(82, 334);
             this.progressBarStatus.Name = "progressBarStatus";
             this.progressBarStatus.Size = new System.Drawing.Size(512, 35);
-            this.progressBarStatus.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.progressBarStatus.TabIndex = 16;
             // 
             // labelProgress
@@ -253,35 +262,50 @@
             this.groupBoxProgress.Controls.Add(this.labelProgress);
             this.groupBoxProgress.Controls.Add(this.progressBarStatus);
             this.groupBoxProgress.Controls.Add(this.groupBoxIndexFields);
-            this.groupBoxProgress.Location = new System.Drawing.Point(102, 8);
+            this.groupBoxProgress.Location = new System.Drawing.Point(98, 4);
             this.groupBoxProgress.Name = "groupBoxProgress";
             this.groupBoxProgress.Size = new System.Drawing.Size(677, 384);
             this.groupBoxProgress.TabIndex = 18;
             this.groupBoxProgress.TabStop = false;
             // 
+            // groupControl1
+            // 
+            this.groupControl1.Appearance.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.groupControl1.Appearance.Options.UseBackColor = true;
+            this.groupControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.groupControl1.Controls.Add(this.buttonTransfer);
+            this.groupControl1.Controls.Add(this.buttonCancel);
+            this.groupControl1.Controls.Add(this.groupBoxProgress);
+            this.groupControl1.Location = new System.Drawing.Point(0, -2);
+            this.groupControl1.Name = "groupControl1";
+            this.groupControl1.Size = new System.Drawing.Size(866, 526);
+            this.groupControl1.TabIndex = 19;
+            this.groupControl1.Text = "groupControl1";
+            // 
             // frmImportDefiPDFs
             // 
-            this.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.Appearance.Options.UseFont = true;
             this.ClientSize = new System.Drawing.Size(865, 523);
-            this.Controls.Add(this.groupBoxProgress);
-            this.Controls.Add(this.buttonTransfer);
-            this.Controls.Add(this.buttonCancel);
+            this.Controls.Add(this.groupControl1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "frmImportDefiPDFs";
             this.Text = "Import Defi PDF Images";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmImportDefiPDFs_FormClosed);
             this.groupBoxIndexFields.ResumeLayout(false);
             this.groupBoxIndexFields.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.progressBarStatus.Properties)).EndInit();
             this.groupBoxProgress.ResumeLayout(false);
             this.groupBoxProgress.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
+            this.groupControl1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        public System.Windows.Forms.Button buttonTransfer;
-        private System.Windows.Forms.Button buttonCancel;
+        public DevExpress.XtraEditors.SimpleButton buttonTransfer;
+        private DevExpress.XtraEditors.SimpleButton buttonCancel;
         private System.Windows.Forms.GroupBox groupBoxIndexFields;
         private System.Windows.Forms.TextBox textBoxSide;
         private System.Windows.Forms.TextBox textBoxSSNLast4;
@@ -289,8 +313,9 @@
         private System.Windows.Forms.TextBox TextBoxLastName;
         private System.Windows.Forms.TextBox TextBoxFirstName;
         private System.Windows.Forms.TextBox TextBoxCutomerNo;
-        private System.Windows.Forms.ProgressBar progressBarStatus;
+        private DevExpress.XtraEditors.ProgressBarControl progressBarStatus;
         private System.Windows.Forms.Label labelProgress;
         private System.Windows.Forms.GroupBox groupBoxProgress;
+        private DevExpress.XtraEditors.GroupControl groupControl1;
     }
 }

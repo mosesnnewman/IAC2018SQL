@@ -898,18 +898,18 @@ namespace IAC2021SQL
             gnRepairFee1 = 0; gnRepairFee2 = 0; gnRepairFee3 = 0; gnRepairFee4 = 0; gnRepairFee5 = 0;
             if (lbAddFlag || lbEdit)
                 return;
-            if (cUSTOMER_NOTextBox.Text.ToString().TrimEnd().Length > 0)
+            if (cUSTOMER_NOTextBox.EditValue.ToString().Trim().Length > 0)
             {
-                cUSTOMERTableAdapter.Fill(iACDataSet.CUSTOMER, cUSTOMER_NOTextBox.Text.ToString());
+                cUSTOMERTableAdapter.Fill(iACDataSet.CUSTOMER, cUSTOMER_NOTextBox.EditValue.ToString().Trim());
             }
             else
-                if (cUSTOMER_PURCHASE_ORDERTextBox.Text.ToString().Length > 0)
+                if (cUSTOMER_PURCHASE_ORDERTextBox.EditValue.ToString().Trim().Length > 0)
                 {
-                    cUSTOMERTableAdapter.FillByPurchaseOrder(iACDataSet.CUSTOMER, cUSTOMER_PURCHASE_ORDERTextBox.Text.ToString());
+                    cUSTOMERTableAdapter.FillByPurchaseOrder(iACDataSet.CUSTOMER, cUSTOMER_PURCHASE_ORDERTextBox.EditValue.ToString().Trim());
                     // Moses Newman 02/28/2018 Added fill of cUSTOMER_NOTextBox.Text with found customer_no
                     if (iACDataSet.CUSTOMER.Rows.Count > 0)
                     {
-                        cUSTOMER_NOTextBox.Text = iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO");
+                        cUSTOMER_NOTextBox.EditValue = iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO");
                         cUSTOMER_NOTextBox.Refresh();
                     }
                 }
@@ -1037,9 +1037,29 @@ namespace IAC2021SQL
                             iACDataSet.CUSTOMER.Rows[0].SetField<Decimal>("CUSTOMER_BUYOUT", 0);
                             iACDataSet.CUSTOMER.Rows[0].SetField<Decimal>("CUSTOMER_BALANCE", 0);
                         }
+                    iACDataSet.CUSTOMER.Rows[0].SetField<Decimal>("TotalDue", 0);  //Moses Newman 04/30/2022
                     // Moses Newman 03/25/2021 Use CUSTOMER_BUYOUT for TotalDue if Total Due is greater than balance.
                     if (!lbAddFlag && iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_POST_IND") != lcHighValue)
                     {
+                        if (iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_ACT_STAT") == "A")
+                        {
+                            DateTime ldNewPaidThru;
+                            TimeSpan TotDueDateDiff;
+                            Int32 MonthsDiff;
+
+                            // Moses Newman 04/30/2022
+                            if (iACDataSet.CUSTOMER.Rows[0].Field<Int32>("CUSTOMER_DAY_DUE") == 30 && Convert.ToInt32(iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_PAID_THRU_MM")) == 2)
+                            {
+                                ldNewPaidThru = Convert.ToDateTime("02/1/" + DateTime.Now.Year.ToString().Substring(0, 2) + iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_PAID_THRU_YY"));
+                                //ldNewPaidThru = ldNewPaidThru.AddDays(-1); // Force Date to proper February Date!
+                            }
+                            else
+                                ldNewPaidThru = Convert.ToDateTime(iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_PAID_THRU_MM") + "/01/" + DateTime.Now.Year.ToString().Substring(0, 2) + iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_PAID_THRU_YY"));
+                            TotDueDateDiff = DateTime.Now.Date - ldNewPaidThru;
+                            MonthsDiff = (Int32)(TotDueDateDiff.Days / (365.2425 / 12));
+                            iACDataSet.CUSTOMER.Rows[0].SetField<Decimal>("TotalDue",
+                                MonthsDiff * iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_REGULAR_AMOUNT") - iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("PartialPayment") + iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_LATE_CHARGE_BAL"));
+                        }
                         // Moses Newman 3/29/2021-30
                         if (iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("TotalDue") >= gnCustomerBalance || (iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("TotalDue") < 0 && gnCustomerBalance < 0))
                             iACDataSet.CUSTOMER.Rows[0].SetField<Decimal>("TotalDue", iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_BUYOUT") > 0 ?
@@ -1787,24 +1807,26 @@ namespace IAC2021SQL
 
         private void cUSTOMER_PURCHASE_ORDERTextBox_Validated(object sender, EventArgs e)
         {
-            if (lbAddFlag || lbEdit)
+            if (lbAddFlag || lbEdit || !String.IsNullOrEmpty(cUSTOMER_NOTextBox.EditValue.ToString().Trim()))
                 return;     // If in add or Edit mode not doing a lookup on the PO Number!
-            // Moses Newman 03/01/2011 Do Not Zero pad piurchase order it must be right space padded to 8
-            if (cUSTOMER_PURCHASE_ORDERTextBox.Text.ToString().Trim().Length < 8 && cUSTOMER_PURCHASE_ORDERTextBox.Text.ToString().Trim().Length > 0)
-                cUSTOMER_PURCHASE_ORDERTextBox.Text = cUSTOMER_PURCHASE_ORDERTextBox.Text.PadRight(8, ' ');
-            cUSTOMER_NOTextBox.Text = "";
+            if (cUSTOMER_PURCHASE_ORDERTextBox.EditValue == null)
+                cUSTOMER_PURCHASE_ORDERTextBox.EditValue = "";
+            // Moses Newman 03/01/2011 Do Not Zero pad purchase order it must be right space padded to 8
+            if (cUSTOMER_PURCHASE_ORDERTextBox.EditValue.ToString().Trim().Length < 8 && cUSTOMER_PURCHASE_ORDERTextBox.EditValue.ToString().Trim().Length > 0)
+                cUSTOMER_PURCHASE_ORDERTextBox.EditValue = cUSTOMER_PURCHASE_ORDERTextBox.EditValue.ToString().PadRight(8, ' ');
+            //cUSTOMER_NOTextBox.EditValue = "";
             setRelatedData();
-            if (iACDataSet.CUSTOMER.Rows.Count == 0 && cUSTOMER_PURCHASE_ORDERTextBox.Text.ToString().Trim().Length != 0)
+            if (iACDataSet.CUSTOMER.Rows.Count == 0 && cUSTOMER_PURCHASE_ORDERTextBox.EditValue.ToString().Trim().Length != 0)
             {
                 MessageBox.Show("Sorry no customers found that match your selected purchase order number!");
-                cUSTOMER_PURCHASE_ORDERTextBox.Text = "";
+                cUSTOMER_PURCHASE_ORDERTextBox.EditValue= "";
                 ActiveControl = cUSTOMER_PURCHASE_ORDERTextBox;
-                cUSTOMER_PURCHASE_ORDERTextBox.Select();
+                cUSTOMER_PURCHASE_ORDERTextBox.SelectAll();
             }
             else
             {
                 ActiveControl = cUSTOMER_FIRST_NAMETextBox;
-                cUSTOMER_FIRST_NAMETextBox.Select();
+                cUSTOMER_FIRST_NAMETextBox.SelectAll();
             }
 
         }
@@ -1840,28 +1862,6 @@ namespace IAC2021SQL
             xtraTabControlCustomerMaint.SelectedTabPageIndex = 2;
             ActiveControl = txtVehicleYear;
             txtVehicleYear.Select();
-        }
-
-        private void cUSTOMER_DEALERcomboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (lbEdit || lbAddFlag)
-            {
-                // Moses Newman 12/19/2019 Send to Dealer Checkbox added.
-                if (textBoxDealerEmail.Text.Trim() != "")
-                {
-                    checkBoxSendToDealer.Visible = true;
-                    checkBoxSendToDealer.Enabled = true;
-                }
-                else
-                {
-                    checkBoxSendToDealer.Enabled = false;
-                    checkBoxSendToDealer.Visible = false;
-                }
-                checkBoxSendToDealer.Refresh();
-                // Moses Newman 03/01/2012 Only TAB out of CUSTOMER_NO field if that is the active field!
-                if (ActiveControl == cUSTOMER_NOTextBox)
-                    System.Windows.Forms.SendKeys.Send("{TAB}");
-            }
         }
 
         private void LockCustomerRecord(bool byPO = false)
@@ -2259,12 +2259,6 @@ namespace IAC2021SQL
         private void GeneralValidationError(String error, Control Ctrl)
         {
             errorProviderCustomerForm.SetError(Ctrl, error);
-        }
-
-        private void cUSTOMER_FIRST_NAMETextBox_Validated(object sender, EventArgs e)
-        {
-            if (cUSTOMER_FIRST_NAMETextBox.Text.Length != 0)
-                errorProviderCustomerForm.Clear();
         }
 
         private void cUSTOMER_LAST_NAMETextBox_Validated(object sender, EventArgs e)
@@ -3011,11 +3005,6 @@ namespace IAC2021SQL
                 toolStripButtonSave.Enabled = true;
         }
 
-        private void comboBoxAccountStatus_SelectedValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void comboBoxPaymentRating_SelectedValueChanged(object sender, EventArgs e)
         {
             if (lbAddFlag || lbEdit)
@@ -3057,7 +3046,7 @@ namespace IAC2021SQL
         {
             if(comboBoxPaymentRating.Enabled)
             {
-                switch (comboBoxAccountStatus.SelectedValue)
+                switch (comboBoxAccountStatus.EditValue)
                 {
                     case "13":
                     case "65":
@@ -3503,10 +3492,14 @@ namespace IAC2021SQL
             Visible = true;
             if (Program.gsKey != null)
             {
-                cUSTOMER_NOTextBox.Text = Program.gsKey;
-                setRelatedData();
-                ActiveControl = cUSTOMER_FIRST_NAMETextBox;
-                cUSTOMER_FIRST_NAMETextBox.Select();
+                cUSTOMER_NOTextBox.Focus();
+                cUSTOMER_NOTextBox.SelectAll();
+                cUSTOMER_NOTextBox.EditValue = Program.gsKey;
+                Validate();
+                //setRelatedData(); // Moses Newman 05/02/2022
+
+                ActiveControl = cUSTOMER_PURCHASE_ORDERTextBox;
+                cUSTOMER_PURCHASE_ORDERTextBox.Select();
             }
             Program.gsKey = null;
         }
@@ -5409,10 +5402,28 @@ namespace IAC2021SQL
                 }
                 checkBoxSendToDealer.Refresh();
             }
+            // Moses Newman 05/03/2022 new stuff
+            Int32 lnEditVal = cUSTOMER_DEALERcomboBox.EditValue != null ? (Int32)cUSTOMER_DEALERcomboBox.EditValue : 0;
+            if (lnEditVal == 0)
+                return;
+            // End New Stuff
+
             ActiveControl = cUSTOMER_DEALERcomboBox;
             dEALERTableAdapter.Fill(iACDataSet.DEALER, (Int32)cUSTOMER_DEALERcomboBox.EditValue);
-            textEditDealerName.Refresh();
+            //textEditDealerName.Refresh();
             System.Windows.Forms.SendKeys.Send("{TAB}");
+        }
+
+        private void cUSTOMER_FIRST_NAMETextBox_Validated(object sender, EventArgs e)
+        {
+            if (cUSTOMER_FIRST_NAMETextBox.Text.Length != 0)
+                errorProviderCustomerForm.Clear();
+        }
+
+        private void comboBoxAccountStatus_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
         }
 
         private void checkEditMilitary_CheckedChanged(object sender, EventArgs e)

@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace IAC2021SQL
 {
-    public partial class frmOpenCustomerFinanceChargeReport : Form
+    public partial class frmOpenCustomerFinanceChargeReport : DevExpress.XtraEditors.XtraForm
     {
 
         public frmOpenCustomerFinanceChargeReport()
@@ -19,6 +19,10 @@ namespace IAC2021SQL
 
         private void frmOpenCustomerFinanceChargeReport_Load(object sender, EventArgs e)
         {
+            DateTime ldStart = DateTime.Now.Date;
+            ldStart = ldStart.AddMonths(1);
+            StatementDatenullableDateTimePicker.EditValue = ldStart;
+
             PerformAutoScale();
         }
         
@@ -46,10 +50,10 @@ namespace IAC2021SQL
             IACDataSetTableAdapters.StatementCustomerHeaderTableAdapter StatementCustomerHeaderTableAdapter = new IACDataSetTableAdapters.StatementCustomerHeaderTableAdapter();
             IACDataSetTableAdapters.StatementDealerSummaryTableAdapter StatementDealerSummaryTableAdapter = new IACDataSetTableAdapters.StatementDealerSummaryTableAdapter();
 
-            OPNCUSTTableAdapter.CustomizeFill("SELECT * FROM OPNCUST WHERE CUSTOMER_ACT_STAT <> \'I\' AND CUSTOMER_DAY_DUE = " + ((DateTime)StatementDatenullableDateTimePicker.Value).Day.ToString().TrimStart().TrimEnd() + " ORDER BY CUSTOMER_DEALER,CUSTOMER_NO");
+            OPNCUSTTableAdapter.CustomizeFill("SELECT * FROM OPNCUST WHERE CUSTOMER_ACT_STAT <> \'I\' AND CUSTOMER_DAY_DUE = " + ((DateTime)StatementDatenullableDateTimePicker.EditValue).Day.ToString().TrimStart().TrimEnd() + " ORDER BY CUSTOMER_DEALER,CUSTOMER_NO");
             OPNCUSTTableAdapter.CustomFillBy(ReportData.OPNCUST);
-            StatementCustomerHeaderTableAdapter.FillByDueDate(ReportData.StatementCustomerHeader, ((DateTime)StatementDatenullableDateTimePicker.Value).Date,false,false);
-            StatementDealerSummaryTableAdapter.FillByDueDate(ReportData.StatementDealerSummary, ((DateTime)StatementDatenullableDateTimePicker.Value).Date);
+            StatementCustomerHeaderTableAdapter.FillByDueDate(ReportData.StatementCustomerHeader, ((DateTime)StatementDatenullableDateTimePicker.EditValue).Date,false,false);
+            StatementDealerSummaryTableAdapter.FillByDueDate(ReportData.StatementDealerSummary, ((DateTime)StatementDatenullableDateTimePicker.EditValue).Date);
             if (ReportData.StatementCustomerHeader.Rows.Count == 0 || ReportData.OPNCUST.Rows.Count == 0)
                 MessageBox.Show("*** Sorry there are no statements for the DUE DATE you entered!!! ***");
             else

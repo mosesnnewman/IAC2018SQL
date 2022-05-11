@@ -34,11 +34,11 @@
             DevExpress.XtraReports.UI.XRSummary xrSummary2 = new DevExpress.XtraReports.UI.XRSummary();
             DevExpress.XtraReports.UI.XRSummary xrSummary3 = new DevExpress.XtraReports.UI.XRSummary();
             DevExpress.XtraReports.UI.XRSummary xrSummary4 = new DevExpress.XtraReports.UI.XRSummary();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(XtraReportClosedPaymentDealerSummary));
             DevExpress.XtraReports.UI.XRSummary xrSummary5 = new DevExpress.XtraReports.UI.XRSummary();
             DevExpress.XtraReports.UI.XRSummary xrSummary6 = new DevExpress.XtraReports.UI.XRSummary();
             DevExpress.XtraReports.UI.XRSummary xrSummary7 = new DevExpress.XtraReports.UI.XRSummary();
             DevExpress.XtraReports.UI.XRSummary xrSummary8 = new DevExpress.XtraReports.UI.XRSummary();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(XtraReportClosedPaymentDealerSummary));
             DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery1 = new DevExpress.DataAccess.Sql.StoredProcQuery();
             this.DetailArea1 = new DevExpress.XtraReports.UI.DetailBand();
             this.xrLabel2 = new DevExpress.XtraReports.UI.XRLabel();
@@ -57,6 +57,8 @@
             this.xrLabel12 = new DevExpress.XtraReports.UI.XRLabel();
             this.ReportHeaderArea1 = new DevExpress.XtraReports.UI.ReportHeaderBand();
             this.PageHeaderArea1 = new DevExpress.XtraReports.UI.PageHeaderBand();
+            this.Picture1 = new DevExpress.XtraReports.UI.XRPictureBox();
+            this.gsFormTitle1 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel3 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel4 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel5 = new DevExpress.XtraReports.UI.XRLabel();
@@ -92,6 +94,7 @@
             this.bottomMarginBand1 = new DevExpress.XtraReports.UI.BottomMarginBand();
             this.gsUserName = new DevExpress.XtraReports.Parameters.Parameter();
             this.gsUserID = new DevExpress.XtraReports.Parameters.Parameter();
+            this.gsFormTitle = new DevExpress.XtraReports.Parameters.Parameter();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // DetailArea1
@@ -351,16 +354,49 @@
             // PageHeaderArea1
             // 
             this.PageHeaderArea1.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.Picture1,
+            this.gsFormTitle1,
             this.xrLabel3,
             this.xrLabel4,
             this.xrLabel5,
             this.xrLabel6,
             this.xrLabel7,
             this.xrLine1});
-            this.PageHeaderArea1.HeightF = 88.97224F;
+            this.PageHeaderArea1.HeightF = 167.3889F;
             this.PageHeaderArea1.Name = "PageHeaderArea1";
             this.PageHeaderArea1.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.PageHeaderArea1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            // 
+            // Picture1
+            // 
+            this.Picture1.BackColor = System.Drawing.Color.Transparent;
+            this.Picture1.BorderColor = System.Drawing.Color.Black;
+            this.Picture1.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.Picture1.BorderWidth = 1F;
+            this.Picture1.Font = new System.Drawing.Font("Times New Roman", 9.75F);
+            this.Picture1.ForeColor = System.Drawing.Color.Black;
+            this.Picture1.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource("img", resources.GetString("Picture1.ImageSource"));
+            this.Picture1.LocationFloat = new DevExpress.Utils.PointFloat(812.1389F, 0F);
+            this.Picture1.Name = "Picture1";
+            this.Picture1.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
+            this.Picture1.SizeF = new System.Drawing.SizeF(246.3889F, 95F);
+            // 
+            // gsFormTitle1
+            // 
+            this.gsFormTitle1.BackColor = System.Drawing.Color.Transparent;
+            this.gsFormTitle1.BorderColor = System.Drawing.Color.Black;
+            this.gsFormTitle1.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.gsFormTitle1.BorderWidth = 1F;
+            this.gsFormTitle1.CanGrow = false;
+            this.gsFormTitle1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "?gsFormTitle")});
+            this.gsFormTitle1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
+            this.gsFormTitle1.ForeColor = System.Drawing.Color.Black;
+            this.gsFormTitle1.LocationFloat = new DevExpress.Utils.PointFloat(295.4722F, 66.66665F);
+            this.gsFormTitle1.Name = "gsFormTitle1";
+            this.gsFormTitle1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.gsFormTitle1.SizeF = new System.Drawing.SizeF(516.6667F, 25F);
+            this.gsFormTitle1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
             // xrLabel3
             // 
@@ -371,7 +407,7 @@
             this.xrLabel3.CanGrow = false;
             this.xrLabel3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
             this.xrLabel3.ForeColor = System.Drawing.Color.Black;
-            this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(476.3889F, 57.66667F);
+            this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(476.3889F, 138.6667F);
             this.xrLabel3.Name = "xrLabel3";
             this.xrLabel3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel3.SizeF = new System.Drawing.SizeF(133.3333F, 18.33333F);
@@ -388,7 +424,7 @@
             this.xrLabel4.CanGrow = false;
             this.xrLabel4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
             this.xrLabel4.ForeColor = System.Drawing.Color.Black;
-            this.xrLabel4.LocationFloat = new DevExpress.Utils.PointFloat(622.2222F, 57.66667F);
+            this.xrLabel4.LocationFloat = new DevExpress.Utils.PointFloat(622.2222F, 138.6667F);
             this.xrLabel4.Name = "xrLabel4";
             this.xrLabel4.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel4.SizeF = new System.Drawing.SizeF(116.6667F, 18.33333F);
@@ -405,7 +441,7 @@
             this.xrLabel5.CanGrow = false;
             this.xrLabel5.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
             this.xrLabel5.ForeColor = System.Drawing.Color.Black;
-            this.xrLabel5.LocationFloat = new DevExpress.Utils.PointFloat(402.75F, 16F);
+            this.xrLabel5.LocationFloat = new DevExpress.Utils.PointFloat(402.75F, 97F);
             this.xrLabel5.Name = "xrLabel5";
             this.xrLabel5.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel5.SizeF = new System.Drawing.SizeF(262.5F, 25F);
@@ -421,7 +457,7 @@
             this.xrLabel6.CanGrow = false;
             this.xrLabel6.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
             this.xrLabel6.ForeColor = System.Drawing.Color.Black;
-            this.xrLabel6.LocationFloat = new DevExpress.Utils.PointFloat(748.6111F, 57.66667F);
+            this.xrLabel6.LocationFloat = new DevExpress.Utils.PointFloat(748.6111F, 138.6667F);
             this.xrLabel6.Name = "xrLabel6";
             this.xrLabel6.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel6.SizeF = new System.Drawing.SizeF(150F, 18.33333F);
@@ -438,7 +474,7 @@
             this.xrLabel7.CanGrow = false;
             this.xrLabel7.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
             this.xrLabel7.ForeColor = System.Drawing.Color.Black;
-            this.xrLabel7.LocationFloat = new DevExpress.Utils.PointFloat(913.8889F, 57.66667F);
+            this.xrLabel7.LocationFloat = new DevExpress.Utils.PointFloat(913.8889F, 138.6667F);
             this.xrLabel7.Name = "xrLabel7";
             this.xrLabel7.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel7.SizeF = new System.Drawing.SizeF(150F, 18.33333F);
@@ -455,7 +491,7 @@
             this.xrLine1.Font = new System.Drawing.Font("Times New Roman", 9.75F);
             this.xrLine1.ForeColor = System.Drawing.Color.Navy;
             this.xrLine1.LineWidth = 3F;
-            this.xrLine1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 80.93056F);
+            this.xrLine1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 161.9306F);
             this.xrLine1.Name = "xrLine1";
             this.xrLine1.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.xrLine1.SizeF = new System.Drawing.SizeF(1068F, 3.125F);
@@ -802,6 +838,11 @@
             this.gsUserID.Description = "Enter gsUserID:";
             this.gsUserID.Name = "gsUserID";
             // 
+            // gsFormTitle
+            // 
+            this.gsFormTitle.Description = "Enter gsFormTitle";
+            this.gsFormTitle.Name = "gsFormTitle";
+            // 
             // XtraReportClosedPaymentDealerSummary
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -834,7 +875,8 @@
             this.PageWidth = 1100;
             this.Parameters.AddRange(new DevExpress.XtraReports.Parameters.Parameter[] {
             this.gsUserName,
-            this.gsUserID});
+            this.gsUserID,
+            this.gsFormTitle});
             this.Version = "21.2";
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
@@ -894,5 +936,8 @@
         private DevExpress.XtraReports.UI.XRPageInfo DataDate1;
         private DevExpress.XtraReports.Parameters.Parameter gsUserName;
         private DevExpress.XtraReports.Parameters.Parameter gsUserID;
+        private DevExpress.XtraReports.UI.XRPictureBox Picture1;
+        private DevExpress.XtraReports.UI.XRLabel gsFormTitle1;
+        private DevExpress.XtraReports.Parameters.Parameter gsFormTitle;
     }
 }
