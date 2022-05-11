@@ -148,25 +148,6 @@ namespace IAC2021SQL
                 colorTextBoxOutofBalance.ForeColor = Color.Black;
         }
 
-        
-        private void dataListView1_CellEditFinished(object sender, BrightIdeasSoftware.CellEditEventArgs e)
-        {
-            Int32 cindex = e.Column.Index;
-            switch (cindex)
-            {
-                case 3:
-                case 4:
-                    GetTrialBalance();
-                    this.Refresh();
-                    break;
-                case 5:
-                    PAYCODETableAdapter.FillByType(listDataSet.PAYCODE, e.NewValue.ToString());
-                    //System.Windows.Forms.SendKeys.Send("{TAB}");
-                    break;
-            }
-
-        }
-
         private void textBoxAccount_Validated(object sender, EventArgs e)
         {
             productionMainTables.DEALER.Clear();
@@ -856,6 +837,28 @@ namespace IAC2021SQL
         private void textBoxAccount_EditValueChanged(object sender, EventArgs e)
         {
             richTextBox1.Refresh();
+        }
+
+        private void gridView1_CellValueChanging(object sender, CellValueChangedEventArgs e)
+        {
+        }
+
+        private void gridView1_KeyDown(object sender, KeyEventArgs e)
+        {
+        }
+
+        private void gridView1_FocusedColumnChanged(object sender, FocusedColumnChangedEventArgs e)
+        {
+            ColumnView view = (ColumnView)sender;
+            String cFieldName = e.FocusedColumn.FieldName;
+            switch (cFieldName)
+            {
+                case "Debit":
+                case "Credit":
+                    GetTrialBalance();
+                    this.Refresh();
+                    break;
+            }
         }
     }
 }

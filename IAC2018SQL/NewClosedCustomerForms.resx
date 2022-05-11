@@ -4719,7 +4719,7 @@
     <value>72, 55</value>
   </data>
   <data name="label127.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 13</value>
+    <value>51, 13</value>
   </data>
   <data name="label127.TabIndex" type="System.Int32, mscorlib">
     <value>106</value>
@@ -7332,7 +7332,7 @@
   <data name="imageCollectionTabs.ImageStream" type="DevExpress.Utils.ImageCollectionStreamer, DevExpress.Utils.v21.2" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFpEZXZFeHByZXNzLlV0aWxzLnYyMS4yLCBWZXJzaW9uPTIxLjIu
-        Ni4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI4OGQxNzU0ZDcwMGU0OWEMAwAAAFFT
+        Ny4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI4OGQxNzU0ZDcwMGU0OWEMAwAAAFFT
         eXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRv
         a2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAAChEZXZFeHByZXNzLlV0aWxzLkltYWdlQ29sbGVjdGlvblN0
         cmVhbWVyAgAAAAlJbWFnZVNpemUERGF0YQQHE1N5c3RlbS5EcmF3aW5nLlNpemUDAAAAAgIAAAAF/P//
@@ -7793,13 +7793,13 @@
     <value>588, 534</value>
   </data>
   <data name="checkBoxSendToDealer.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt, style=Bold</value>
+    <value>Microsoft Sans Serif, 12pt, style=Bold</value>
   </data>
   <data name="checkBoxSendToDealer.Properties.Caption" xml:space="preserve">
     <value>Copy to DLR</value>
   </data>
   <data name="checkBoxSendToDealer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>130, 25</value>
+    <value>130, 24</value>
   </data>
   <data name="checkBoxSendToDealer.TabIndex" type="System.Int32, mscorlib">
     <value>110</value>
@@ -7820,13 +7820,13 @@
     <value>897, 467</value>
   </data>
   <data name="colorCheckBoxReceivedContract.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt</value>
+    <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="colorCheckBoxReceivedContract.Properties.Caption" xml:space="preserve">
     <value>Received Contract?</value>
   </data>
   <data name="colorCheckBoxReceivedContract.Size" type="System.Drawing.Size, System.Drawing">
-    <value>157, 25</value>
+    <value>157, 24</value>
   </data>
   <data name="colorCheckBoxReceivedContract.TabIndex" type="System.Int32, mscorlib">
     <value>107</value>
@@ -7847,13 +7847,13 @@
     <value>756, 467</value>
   </data>
   <data name="checkBoxFullRecourseTab1.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt</value>
+    <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="checkBoxFullRecourseTab1.Properties.Caption" xml:space="preserve">
     <value>Full Recourse?</value>
   </data>
   <data name="checkBoxFullRecourseTab1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>132, 25</value>
+    <value>132, 24</value>
   </data>
   <data name="checkBoxFullRecourseTab1.TabIndex" type="System.Int32, mscorlib">
     <value>58</value>
@@ -7889,7 +7889,7 @@
     <value>107, 26</value>
   </data>
   <data name="txtDOB.TabIndex" type="System.Int32, mscorlib">
-    <value>109</value>
+    <value>23</value>
   </data>
   <data name="&gt;&gt;txtDOB.Name" xml:space="preserve">
     <value>txtDOB</value>
@@ -7913,7 +7913,7 @@
     <value>1068, 460</value>
   </data>
   <data name="nullableDateTimePickerDateContractReceived.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt</value>
+    <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="nullableDateTimePickerDateContractReceived.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v21.2">
     <value>Combo</value>
@@ -7925,7 +7925,7 @@
     <value>Combo</value>
   </data>
   <data name="nullableDateTimePickerDateContractReceived.Size" type="System.Drawing.Size, System.Drawing">
-    <value>119, 28</value>
+    <value>119, 26</value>
   </data>
   <data name="nullableDateTimePickerDateContractReceived.TabIndex" type="System.Int32, mscorlib">
     <value>108</value>
@@ -8276,11 +8276,14 @@
   <data name="&gt;&gt;groupBoxSBT.ZOrder" xml:space="preserve">
     <value>17</value>
   </data>
+  <data name="comboBoxGN.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
   <data name="comboBoxGN.Location" type="System.Drawing.Point, System.Drawing">
-    <value>887, 51</value>
+    <value>887, 52</value>
   </data>
   <data name="comboBoxGN.Size" type="System.Drawing.Size, System.Drawing">
-    <value>99, 21</value>
+    <value>99, 28</value>
   </data>
   <data name="comboBoxGN.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -8357,11 +8360,14 @@
   <data name="checkBoxExcludeVSI.Location" type="System.Drawing.Point, System.Drawing">
     <value>64, 81</value>
   </data>
+  <data name="checkBoxExcludeVSI.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
   <data name="checkBoxExcludeVSI.Properties.Caption" xml:space="preserve">
     <value>Exclude VSI</value>
   </data>
   <data name="checkBoxExcludeVSI.Size" type="System.Drawing.Size, System.Drawing">
-    <value>84, 20</value>
+    <value>120, 24</value>
   </data>
   <data name="checkBoxExcludeVSI.TabIndex" type="System.Int32, mscorlib">
     <value>36</value>
@@ -8382,13 +8388,13 @@
     <value>64, 59</value>
   </data>
   <data name="checkBoxWarranty.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt</value>
+    <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="checkBoxWarranty.Properties.Caption" xml:space="preserve">
     <value>Warranty</value>
   </data>
   <data name="checkBoxWarranty.Size" type="System.Drawing.Size, System.Drawing">
-    <value>93, 25</value>
+    <value>93, 24</value>
   </data>
   <data name="checkBoxWarranty.TabIndex" type="System.Int32, mscorlib">
     <value>35</value>
@@ -8405,11 +8411,14 @@
   <data name="&gt;&gt;checkBoxWarranty.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="comboBoxGAP.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
   <data name="comboBoxGAP.Location" type="System.Drawing.Point, System.Drawing">
     <value>64, 23</value>
   </data>
   <data name="comboBoxGAP.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 21</value>
+    <value>121, 28</value>
   </data>
   <data name="comboBoxGAP.TabIndex" type="System.Int32, mscorlib">
     <value>34</value>
@@ -8426,8 +8435,11 @@
   <data name="&gt;&gt;comboBoxGAP.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="groupBoxGapWarranty.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
   <data name="groupBoxGapWarranty.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1003, 98</value>
+    <value>1003, 85</value>
   </data>
   <data name="groupBoxGapWarranty.Size" type="System.Drawing.Size, System.Drawing">
     <value>196, 118</value>
@@ -8511,7 +8523,7 @@
     <value>Microsoft Sans Serif, 12pt, style=Bold</value>
   </data>
   <data name="labelInsuranceExpired.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1006, 67</value>
+    <value>1006, 60</value>
   </data>
   <data name="labelInsuranceExpired.Size" type="System.Drawing.Size, System.Drawing">
     <value>191, 20</value>
@@ -8664,7 +8676,7 @@
     <value>Microsoft Sans Serif, 12pt, style=Bold</value>
   </data>
   <data name="labelCustinRepo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1006, 42</value>
+    <value>1006, 32</value>
   </data>
   <data name="labelCustinRepo.Size" type="System.Drawing.Size, System.Drawing">
     <value>166, 20</value>
@@ -8844,17 +8856,14 @@
   <data name="&gt;&gt;comboBoxLetterNo.ZOrder" xml:space="preserve">
     <value>39</value>
   </data>
-  <data name="cUSTOMER_NOTextBox.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt</value>
-  </data>
   <data name="cUSTOMER_NOTextBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="cUSTOMER_NOTextBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>171, 20</value>
   </data>
-  <data name="cUSTOMER_NOTextBox.MaxLength" type="System.Int32, mscorlib">
-    <value>6</value>
+  <data name="cUSTOMER_NOTextBox.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="cUSTOMER_NOTextBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>67, 26</value>
@@ -8862,14 +8871,11 @@
   <data name="cUSTOMER_NOTextBox.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="cUSTOMER_NOTextBox.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Right</value>
-  </data>
   <data name="&gt;&gt;cUSTOMER_NOTextBox.Name" xml:space="preserve">
     <value>cUSTOMER_NOTextBox</value>
   </data>
   <data name="&gt;&gt;cUSTOMER_NOTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v21.2, Version=21.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
   <data name="&gt;&gt;cUSTOMER_NOTextBox.Parent" xml:space="preserve">
     <value>groupBox10</value>
@@ -8998,7 +9004,7 @@
     <value>Microsoft Sans Serif, 12pt, style=Bold</value>
   </data>
   <data name="labelCustHasComments.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1006, 16</value>
+    <value>1006, 4</value>
   </data>
   <data name="labelCustHasComments.Size" type="System.Drawing.Size, System.Drawing">
     <value>213, 20</value>
@@ -9450,11 +9456,14 @@
   <data name="&gt;&gt;cUSTOMER_FIRST_NAMETextBox.ZOrder" xml:space="preserve">
     <value>61</value>
   </data>
-  <data name="cUSTOMER_PURCHASE_ORDERTextBox.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt</value>
-  </data>
   <data name="cUSTOMER_PURCHASE_ORDERTextBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>479, 20</value>
+  </data>
+  <data name="cUSTOMER_PURCHASE_ORDERTextBox.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
+  <data name="cUSTOMER_PURCHASE_ORDERTextBox.Properties.AppearanceFocused.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="cUSTOMER_PURCHASE_ORDERTextBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>67, 26</value>
@@ -9462,14 +9471,11 @@
   <data name="cUSTOMER_PURCHASE_ORDERTextBox.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="cUSTOMER_PURCHASE_ORDERTextBox.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Right</value>
-  </data>
   <data name="&gt;&gt;cUSTOMER_PURCHASE_ORDERTextBox.Name" xml:space="preserve">
     <value>cUSTOMER_PURCHASE_ORDERTextBox</value>
   </data>
   <data name="&gt;&gt;cUSTOMER_PURCHASE_ORDERTextBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v21.2, Version=21.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
   <data name="&gt;&gt;cUSTOMER_PURCHASE_ORDERTextBox.Parent" xml:space="preserve">
     <value>groupBox10</value>
@@ -9589,13 +9595,13 @@
     <value>24, 49</value>
   </data>
   <data name="checkBoxVehicleWarranty.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt</value>
+    <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="checkBoxVehicleWarranty.Properties.Caption" xml:space="preserve">
     <value>WARRANTY?</value>
   </data>
   <data name="checkBoxVehicleWarranty.Size" type="System.Drawing.Size, System.Drawing">
-    <value>118, 25</value>
+    <value>118, 24</value>
   </data>
   <data name="checkBoxVehicleWarranty.TabIndex" type="System.Int32, mscorlib">
     <value>112</value>
@@ -9616,7 +9622,7 @@
     <value>24, 23</value>
   </data>
   <data name="checkBoxRefi.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt</value>
+    <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="checkBoxRefi.Properties.Caption" xml:space="preserve">
     <value>REFINANCE?</value>
@@ -9625,7 +9631,7 @@
     <value>Near</value>
   </data>
   <data name="checkBoxRefi.Size" type="System.Drawing.Size, System.Drawing">
-    <value>118, 25</value>
+    <value>118, 24</value>
   </data>
   <data name="checkBoxRefi.TabIndex" type="System.Int32, mscorlib">
     <value>110</value>
@@ -9645,6 +9651,9 @@
   <data name="textBoxOpenAccount.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <data name="textBoxOpenAccount.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
   <data name="textBoxOpenAccount.Location" type="System.Drawing.Point, System.Drawing">
     <value>280, 45</value>
   </data>
@@ -9652,7 +9661,7 @@
     <value>6</value>
   </data>
   <data name="textBoxOpenAccount.Size" type="System.Drawing.Size, System.Drawing">
-    <value>67, 21</value>
+    <value>67, 26</value>
   </data>
   <data name="textBoxOpenAccount.TabIndex" type="System.Int32, mscorlib">
     <value>86</value>
@@ -9675,6 +9684,9 @@
   <data name="textBoxAccount.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <data name="textBoxAccount.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
   <data name="textBoxAccount.Location" type="System.Drawing.Point, System.Drawing">
     <value>280, 14</value>
   </data>
@@ -9682,7 +9694,7 @@
     <value>6</value>
   </data>
   <data name="textBoxAccount.Size" type="System.Drawing.Size, System.Drawing">
-    <value>67, 21</value>
+    <value>67, 26</value>
   </data>
   <data name="textBoxAccount.TabIndex" type="System.Int32, mscorlib">
     <value>57</value>
@@ -18661,7 +18673,7 @@
     <value>Override?</value>
   </data>
   <data name="checkBoxFollowUpDate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>84, 21</value>
+    <value>84, 22</value>
   </data>
   <data name="checkBoxFollowUpDate.TabIndex" type="System.Int32, mscorlib">
     <value>25</value>
@@ -19006,7 +19018,7 @@
     <value>529, 220</value>
   </data>
   <data name="groupBoxDates.TabIndex" type="System.Int32, mscorlib">
-    <value>31</value>
+    <value>18</value>
   </data>
   <data name="groupBoxDates.Text" xml:space="preserve">
     <value>Dates</value>
@@ -19030,10 +19042,10 @@
     <value>Override?</value>
   </data>
   <data name="checkBoxECOACode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>84, 20</value>
+    <value>84, 22</value>
   </data>
   <data name="checkBoxECOACode.TabIndex" type="System.Int32, mscorlib">
-    <value>38</value>
+    <value>40</value>
   </data>
   <data name="&gt;&gt;checkBoxECOACode.Name" xml:space="preserve">
     <value>checkBoxECOACode</value>
@@ -19054,10 +19066,10 @@
     <value>Override?</value>
   </data>
   <data name="checkBoxPaymentProfile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>84, 20</value>
+    <value>84, 22</value>
   </data>
   <data name="checkBoxPaymentProfile.TabIndex" type="System.Int32, mscorlib">
-    <value>45</value>
+    <value>47</value>
   </data>
   <data name="&gt;&gt;checkBoxPaymentProfile.Name" xml:space="preserve">
     <value>checkBoxPaymentProfile</value>
@@ -19078,10 +19090,10 @@
     <value>Override?</value>
   </data>
   <data name="checkBoxComplianceCode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>84, 20</value>
+    <value>84, 22</value>
   </data>
   <data name="checkBoxComplianceCode.TabIndex" type="System.Int32, mscorlib">
-    <value>36</value>
+    <value>38</value>
   </data>
   <data name="&gt;&gt;checkBoxComplianceCode.Name" xml:space="preserve">
     <value>checkBoxComplianceCode</value>
@@ -19102,10 +19114,10 @@
     <value>Override?</value>
   </data>
   <data name="checkBoxConsumerIndicator.Size" type="System.Drawing.Size, System.Drawing">
-    <value>84, 20</value>
+    <value>84, 22</value>
   </data>
   <data name="checkBoxConsumerIndicator.TabIndex" type="System.Int32, mscorlib">
-    <value>34</value>
+    <value>36</value>
   </data>
   <data name="&gt;&gt;checkBoxConsumerIndicator.Name" xml:space="preserve">
     <value>checkBoxConsumerIndicator</value>
@@ -19126,10 +19138,10 @@
     <value>Override?</value>
   </data>
   <data name="checkBoxAccountType.Size" type="System.Drawing.Size, System.Drawing">
-    <value>84, 20</value>
+    <value>84, 22</value>
   </data>
   <data name="checkBoxAccountType.TabIndex" type="System.Int32, mscorlib">
-    <value>32</value>
+    <value>34</value>
   </data>
   <data name="&gt;&gt;checkBoxAccountType.Name" xml:space="preserve">
     <value>checkBoxAccountType</value>
@@ -19150,10 +19162,10 @@
     <value>Override?</value>
   </data>
   <data name="checkBoxSpecialComment.Size" type="System.Drawing.Size, System.Drawing">
-    <value>84, 20</value>
+    <value>84, 22</value>
   </data>
   <data name="checkBoxSpecialComment.TabIndex" type="System.Int32, mscorlib">
-    <value>30</value>
+    <value>32</value>
   </data>
   <data name="&gt;&gt;checkBoxSpecialComment.Name" xml:space="preserve">
     <value>checkBoxSpecialComment</value>
@@ -19174,10 +19186,10 @@
     <value>Override?</value>
   </data>
   <data name="checkBoxPaymentRating.Size" type="System.Drawing.Size, System.Drawing">
-    <value>84, 20</value>
+    <value>84, 22</value>
   </data>
   <data name="checkBoxPaymentRating.TabIndex" type="System.Int32, mscorlib">
-    <value>125</value>
+    <value>30</value>
   </data>
   <data name="&gt;&gt;checkBoxPaymentRating.Name" xml:space="preserve">
     <value>checkBoxPaymentRating</value>
@@ -19198,7 +19210,7 @@
     <value>Override?</value>
   </data>
   <data name="checkBoxAccountStatus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>84, 20</value>
+    <value>84, 22</value>
   </data>
   <data name="checkBoxAccountStatus.TabIndex" type="System.Int32, mscorlib">
     <value>28</value>
@@ -19225,7 +19237,7 @@
     <value>182, 25</value>
   </data>
   <data name="buttonEditPaymentHistory.TabIndex" type="System.Int32, mscorlib">
-    <value>44</value>
+    <value>46</value>
   </data>
   <data name="buttonEditPaymentHistory.Text" xml:space="preserve">
     <value>Edit Payment History Profile</value>
@@ -19279,7 +19291,7 @@
     <value>276, 25</value>
   </data>
   <data name="textBoxPaymentHistoryProfile.TabIndex" type="System.Int32, mscorlib">
-    <value>43</value>
+    <value>45</value>
   </data>
   <data name="&gt;&gt;textBoxPaymentHistoryProfile.Name" xml:space="preserve">
     <value>textBoxPaymentHistoryProfile</value>
@@ -19303,7 +19315,7 @@
     <value>25, 25</value>
   </data>
   <data name="textBoxTermsDuration.TabIndex" type="System.Int32, mscorlib">
-    <value>42</value>
+    <value>44</value>
   </data>
   <data name="textBoxTermsDuration.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Right</value>
@@ -19354,7 +19366,7 @@
     <value>182, 25</value>
   </data>
   <data name="comboBoxTermsFrequency.TabIndex" type="System.Int32, mscorlib">
-    <value>41</value>
+    <value>43</value>
   </data>
   <data name="&gt;&gt;comboBoxTermsFrequency.Name" xml:space="preserve">
     <value>comboBoxTermsFrequency</value>
@@ -19402,7 +19414,7 @@
     <value>141, 25</value>
   </data>
   <data name="comboBoxPortfolioType.TabIndex" type="System.Int32, mscorlib">
-    <value>40</value>
+    <value>42</value>
   </data>
   <data name="&gt;&gt;comboBoxPortfolioType.Name" xml:space="preserve">
     <value>comboBoxPortfolioType</value>
@@ -19426,7 +19438,7 @@
     <value>82, 17</value>
   </data>
   <data name="label148.TabIndex" type="System.Int32, mscorlib">
-    <value>115</value>
+    <value>8</value>
   </data>
   <data name="label148.Text" xml:space="preserve">
     <value>Interest Type</value>
@@ -19450,7 +19462,7 @@
     <value>199, 25</value>
   </data>
   <data name="comboBoxInterestType.TabIndex" type="System.Int32, mscorlib">
-    <value>39</value>
+    <value>41</value>
   </data>
   <data name="&gt;&gt;comboBoxInterestType.Name" xml:space="preserve">
     <value>comboBoxInterestType</value>
@@ -19498,7 +19510,7 @@
     <value>264, 25</value>
   </data>
   <data name="comboBoxECOACode.TabIndex" type="System.Int32, mscorlib">
-    <value>37</value>
+    <value>39</value>
   </data>
   <data name="&gt;&gt;comboBoxECOACode.Name" xml:space="preserve">
     <value>comboBoxECOACode</value>
@@ -19546,7 +19558,7 @@
     <value>773, 25</value>
   </data>
   <data name="comboBoxComplianceConditionCode.TabIndex" type="System.Int32, mscorlib">
-    <value>35</value>
+    <value>37</value>
   </data>
   <data name="&gt;&gt;comboBoxComplianceConditionCode.Name" xml:space="preserve">
     <value>comboBoxComplianceConditionCode</value>
@@ -19594,7 +19606,7 @@
     <value>773, 25</value>
   </data>
   <data name="comboBoxConsumerIndicator.TabIndex" type="System.Int32, mscorlib">
-    <value>33</value>
+    <value>35</value>
   </data>
   <data name="&gt;&gt;comboBoxConsumerIndicator.Name" xml:space="preserve">
     <value>comboBoxConsumerIndicator</value>
@@ -19642,7 +19654,7 @@
     <value>773, 25</value>
   </data>
   <data name="comboBoxAccountType.TabIndex" type="System.Int32, mscorlib">
-    <value>31</value>
+    <value>33</value>
   </data>
   <data name="&gt;&gt;comboBoxAccountType.Name" xml:space="preserve">
     <value>comboBoxAccountType</value>
@@ -19690,7 +19702,7 @@
     <value>773, 25</value>
   </data>
   <data name="comboBoxSpecialComment.TabIndex" type="System.Int32, mscorlib">
-    <value>29</value>
+    <value>31</value>
   </data>
   <data name="&gt;&gt;comboBoxSpecialComment.Name" xml:space="preserve">
     <value>comboBoxSpecialComment</value>
@@ -19731,27 +19743,6 @@
   <data name="&gt;&gt;label142.ZOrder" xml:space="preserve">
     <value>29</value>
   </data>
-  <data name="comboBox3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>194, 46</value>
-  </data>
-  <data name="comboBox3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>773, 25</value>
-  </data>
-  <data name="comboBox3.TabIndex" type="System.Int32, mscorlib">
-    <value>27</value>
-  </data>
-  <data name="&gt;&gt;comboBox3.Name" xml:space="preserve">
-    <value>comboBox3</value>
-  </data>
-  <data name="&gt;&gt;comboBox3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;comboBox3.Parent" xml:space="preserve">
-    <value>groupBoxCodes</value>
-  </data>
-  <data name="&gt;&gt;comboBox3.ZOrder" xml:space="preserve">
-    <value>30</value>
-  </data>
   <data name="comboBoxPaymentRating.Location" type="System.Drawing.Point, System.Drawing">
     <value>194, 46</value>
   </data>
@@ -19759,7 +19750,7 @@
     <value>773, 25</value>
   </data>
   <data name="comboBoxPaymentRating.TabIndex" type="System.Int32, mscorlib">
-    <value>27</value>
+    <value>29</value>
   </data>
   <data name="&gt;&gt;comboBoxPaymentRating.Name" xml:space="preserve">
     <value>comboBoxPaymentRating</value>
@@ -19771,7 +19762,7 @@
     <value>groupBoxCodes</value>
   </data>
   <data name="&gt;&gt;comboBoxPaymentRating.ZOrder" xml:space="preserve">
-    <value>31</value>
+    <value>30</value>
   </data>
   <data name="label141.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -19798,34 +19789,49 @@
     <value>groupBoxCodes</value>
   </data>
   <data name="&gt;&gt;label141.ZOrder" xml:space="preserve">
-    <value>32</value>
-  </data>
-  <data name="comboBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>194, 20</value>
-  </data>
-  <data name="comboBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>773, 25</value>
-  </data>
-  <data name="comboBox2.TabIndex" type="System.Int32, mscorlib">
-    <value>27</value>
-  </data>
-  <data name="&gt;&gt;comboBox2.Name" xml:space="preserve">
-    <value>comboBox2</value>
-  </data>
-  <data name="&gt;&gt;comboBox2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;comboBox2.Parent" xml:space="preserve">
-    <value>groupBoxCodes</value>
-  </data>
-  <data name="&gt;&gt;comboBox2.ZOrder" xml:space="preserve">
-    <value>33</value>
+    <value>31</value>
   </data>
   <data name="comboBoxAccountStatus.Location" type="System.Drawing.Point, System.Drawing">
     <value>194, 20</value>
   </data>
+  <data name="comboBoxAccountStatus.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 9.75pt</value>
+  </data>
+  <data name="comboBoxAccountStatus.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v21.2">
+    <value>Combo</value>
+  </data>
+  <data name="comboBoxAccountStatus.Properties.Columns" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="comboBoxAccountStatus.Properties.Columns1" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="comboBoxAccountStatus.Properties.Columns2" type="System.Int32, mscorlib">
+    <value>773</value>
+  </data>
+  <data name="comboBoxAccountStatus.Properties.Columns3" type="DevExpress.Utils.FormatType, DevExpress.Data.v21.2">
+    <value>None</value>
+  </data>
+  <data name="comboBoxAccountStatus.Properties.Columns4" xml:space="preserve">
+    <value />
+  </data>
+  <data name="comboBoxAccountStatus.Properties.Columns5" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="comboBoxAccountStatus.Properties.Columns6" type="DevExpress.Utils.HorzAlignment, DevExpress.Data.v21.2">
+    <value>Near</value>
+  </data>
+  <data name="comboBoxAccountStatus.Properties.Columns7" type="DevExpress.Data.ColumnSortOrder, DevExpress.Data.v21.2">
+    <value>None</value>
+  </data>
+  <data name="comboBoxAccountStatus.Properties.Columns8" type="DevExpress.Utils.DefaultBoolean, DevExpress.Data.v21.2">
+    <value>Default</value>
+  </data>
+  <data name="comboBoxAccountStatus.Properties.NullText" xml:space="preserve">
+    <value />
+  </data>
   <data name="comboBoxAccountStatus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>773, 25</value>
+    <value>773, 24</value>
   </data>
   <data name="comboBoxAccountStatus.TabIndex" type="System.Int32, mscorlib">
     <value>27</value>
@@ -19834,13 +19840,13 @@
     <value>comboBoxAccountStatus</value>
   </data>
   <data name="&gt;&gt;comboBoxAccountStatus.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>DevExpress.XtraEditors.LookUpEdit, DevExpress.XtraEditors.v21.2, Version=21.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
   <data name="&gt;&gt;comboBoxAccountStatus.Parent" xml:space="preserve">
     <value>groupBoxCodes</value>
   </data>
   <data name="&gt;&gt;comboBoxAccountStatus.ZOrder" xml:space="preserve">
-    <value>34</value>
+    <value>32</value>
   </data>
   <data name="groupBoxCodes.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9.75pt</value>
@@ -19852,7 +19858,7 @@
     <value>1076, 284</value>
   </data>
   <data name="groupBoxCodes.TabIndex" type="System.Int32, mscorlib">
-    <value>32</value>
+    <value>26</value>
   </data>
   <data name="groupBoxCodes.Text" xml:space="preserve">
     <value>Codes</value>
@@ -20278,7 +20284,7 @@
     <value>529, 220</value>
   </data>
   <data name="groupBoxDollars.TabIndex" type="System.Int32, mscorlib">
-    <value>30</value>
+    <value>10</value>
   </data>
   <data name="groupBoxDollars.Text" xml:space="preserve">
     <value>Dollars</value>
@@ -20302,7 +20308,7 @@
     <value>Purge</value>
   </data>
   <data name="checkBoxPurge.Size" type="System.Drawing.Size, System.Drawing">
-    <value>61, 20</value>
+    <value>61, 22</value>
   </data>
   <data name="checkBoxPurge.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -20329,7 +20335,7 @@
     <value>84, 55</value>
   </data>
   <data name="groupBoxPurge.TabIndex" type="System.Int32, mscorlib">
-    <value>29</value>
+    <value>7</value>
   </data>
   <data name="groupBoxPurge.Text" xml:space="preserve">
     <value>Purge</value>
@@ -20353,7 +20359,7 @@
     <value>Report</value>
   </data>
   <data name="checkBoxReportTSB.Size" type="System.Drawing.Size, System.Drawing">
-    <value>67, 20</value>
+    <value>67, 22</value>
   </data>
   <data name="checkBoxReportTSB.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -20380,7 +20386,7 @@
     <value>133, 55</value>
   </data>
   <data name="groupBoxReportStatus.TabIndex" type="System.Int32, mscorlib">
-    <value>28</value>
+    <value>6</value>
   </data>
   <data name="groupBoxReportStatus.Text" xml:space="preserve">
     <value>Report Status</value>
@@ -20509,7 +20515,7 @@
     <value>529, 55</value>
   </data>
   <data name="groupBoxAccountNumber.TabIndex" type="System.Int32, mscorlib">
-    <value>27</value>
+    <value>1</value>
   </data>
   <data name="groupBoxAccountNumber.Text" xml:space="preserve">
     <value>Account Number</value>
@@ -20533,7 +20539,7 @@
     <value>1226, 657</value>
   </data>
   <data name="groupBox22.TabIndex" type="System.Int32, mscorlib">
-    <value>33</value>
+    <value>0</value>
   </data>
   <data name="&gt;&gt;groupBox22.Name" xml:space="preserve">
     <value>groupBox22</value>
@@ -20737,7 +20743,7 @@
   </data>
   <data name="toolStripButtonSave.ImageOptions.SvgImage" type="DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v21.2" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAFlEZXZFeHByZXNzLkRhdGEudjIxLjIsIFZlcnNpb249MjEuMi42
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFlEZXZFeHByZXNzLkRhdGEudjIxLjIsIFZlcnNpb249MjEuMi43
         LjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjg4ZDE3NTRkNzAwZTQ5YQUBAAAAHURl
         dkV4cHJlc3MuVXRpbHMuU3ZnLlN2Z0ltYWdlAQAAAAREYXRhBwICAAAACQMAAAAPAwAAAMICAAAC77u/
         PD94bWwgdmVyc2lvbj0nMS4wJyBlbmNvZGluZz0nVVRGLTgnPz4NCjxzdmcgeD0iMHB4IiB5PSIwcHgi

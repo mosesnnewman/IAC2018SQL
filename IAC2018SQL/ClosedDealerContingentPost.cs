@@ -159,7 +159,7 @@ namespace IAC2021SQL
             ContingiacDataSet.DEALHIST.Rows[DEALHISTBindingSource.Position].SetField<Int32>("DEALHIST_ACC_NO", ContingiacDataSet.DEALER.Rows[0].Field<Int32>("id"));
             ContingiacDataSet.DEALHIST.Rows[DEALHISTBindingSource.Position].SetField<DateTime>("DEALHIST_POST_DATE", DateTime.Now.Date);
             ContingiacDataSet.DEALHIST.Rows[DEALHISTBindingSource.Position].SetField<DateTime>("DEALHIST_LAST_POST_DATE", ContingiacDataSet.DEALER.Rows[0].Field<DateTime>("DEALER_POST_DATE"));
-            loDealerHistSeq = DEALHISTTableAdapter.SeqNoQuery(ContingiacDataSet.DEALER.Rows[0].Field<Int32>("DEALER_ACC_NO"), DateTime.Now.Date, ContingiacDataSet.DEALER.Rows[0].Field<DateTime>("DEALER_POST_DATE").Date);
+            loDealerHistSeq = DEALHISTTableAdapter.SeqNoQuery(ContingiacDataSet.DEALER.Rows[0].Field<Int32>("id"), DateTime.Now.Date, ContingiacDataSet.DEALER.Rows[0].Field<DateTime>("DEALER_POST_DATE").Date);
             if (loDealerHistSeq != null)
                 lnSeq = (int)loDealerHistSeq + 1;
             else

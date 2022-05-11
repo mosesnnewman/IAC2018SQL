@@ -145,6 +145,7 @@
             this.txtUserID.Properties.AdvancedModeOptions.AllowCaretAnimation = DevExpress.Utils.DefaultBoolean.True;
             this.txtUserID.Properties.AdvancedModeOptions.AllowSelectionAnimation = DevExpress.Utils.DefaultBoolean.True;
             this.txtUserID.Properties.AdvancedModeOptions.UseDirectXPaint = DevExpress.Utils.DefaultBoolean.False;
+            this.txtUserID.Properties.AllowDropDownWhenReadOnly = DevExpress.Utils.DefaultBoolean.False;
             this.txtUserID.Properties.Appearance.BackColor = System.Drawing.Color.White;
             this.txtUserID.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUserID.Properties.Appearance.Options.UseBackColor = true;
@@ -315,6 +316,7 @@
             this.Text = "Login";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.LoginForm_Load);
+            this.Shown += new System.EventHandler(this.LoginForm_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceULIST)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iACDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();

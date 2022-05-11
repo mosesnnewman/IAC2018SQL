@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCreateAutoBankFiles));
-            this.buttonPost = new System.Windows.Forms.Button();
-            this.buttonCancel = new System.Windows.Forms.Button();
+            this.buttonPost = new DevExpress.XtraEditors.SimpleButton();
+            this.buttonCancel = new DevExpress.XtraEditors.SimpleButton();
             this.label1 = new System.Windows.Forms.Label();
             this.labelBankTranDate = new System.Windows.Forms.Label();
             this.textBoxDayDue = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.checkBoxAutobank = new System.Windows.Forms.CheckBox();
-            this.buttonTransfer = new System.Windows.Forms.Button();
+            this.buttonTransfer = new DevExpress.XtraEditors.SimpleButton();
             this.nullableDateTimePickerCutOffDate = new DevExpress.XtraEditors.DateEdit();
             this.nullableDateTimePickerBsnkTranDate = new DevExpress.XtraEditors.DateEdit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerCutOffDate.Properties.CalendarTimeProperties)).BeginInit();
@@ -47,26 +47,26 @@
             // 
             // buttonPost
             // 
-            this.buttonPost.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonPost.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonPost.Appearance.Options.UseFont = true;
             this.buttonPost.Location = new System.Drawing.Point(150, 144);
             this.buttonPost.Margin = new System.Windows.Forms.Padding(4);
             this.buttonPost.Name = "buttonPost";
             this.buttonPost.Size = new System.Drawing.Size(100, 28);
             this.buttonPost.TabIndex = 5;
             this.buttonPost.Text = "&Print / Post";
-            this.buttonPost.UseVisualStyleBackColor = true;
             this.buttonPost.Click += new System.EventHandler(this.buttonPost_Click);
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCancel.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCancel.Appearance.Options.UseFont = true;
             this.buttonCancel.Location = new System.Drawing.Point(258, 144);
             this.buttonCancel.Margin = new System.Windows.Forms.Padding(4);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(100, 28);
             this.buttonCancel.TabIndex = 6;
             this.buttonCancel.Text = "&Cancel";
-            this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
             // label1
@@ -130,14 +130,15 @@
             // 
             // buttonTransfer
             // 
-            this.buttonTransfer.Image = ((System.Drawing.Image)(resources.GetObject("buttonTransfer.Image")));
+            this.buttonTransfer.Appearance.Options.UseTextOptions = true;
+            this.buttonTransfer.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.buttonTransfer.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonTransfer.ImageOptions.Image")));
+            this.buttonTransfer.ImageOptions.ImageToTextAlignment = DevExpress.XtraEditors.ImageAlignToText.TopCenter;
             this.buttonTransfer.Location = new System.Drawing.Point(379, 94);
             this.buttonTransfer.Name = "buttonTransfer";
             this.buttonTransfer.Size = new System.Drawing.Size(110, 103);
             this.buttonTransfer.TabIndex = 12;
             this.buttonTransfer.Text = "&Transfer Payments";
-            this.buttonTransfer.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.buttonTransfer.UseVisualStyleBackColor = true;
             this.buttonTransfer.Click += new System.EventHandler(this.buttonTransfer_Click);
             // 
             // nullableDateTimePickerCutOffDate
@@ -205,14 +206,14 @@
 
         #endregion
 
-        private System.Windows.Forms.Button buttonPost;
-        private System.Windows.Forms.Button buttonCancel;
+        private DevExpress.XtraEditors.SimpleButton buttonPost;
+        private DevExpress.XtraEditors.SimpleButton buttonCancel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label labelBankTranDate;
         private System.Windows.Forms.TextBox textBoxDayDue;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.CheckBox checkBoxAutobank;
-        private System.Windows.Forms.Button buttonTransfer;
+        private DevExpress.XtraEditors.SimpleButton buttonTransfer;
         private DevExpress.XtraEditors.DateEdit nullableDateTimePickerCutOffDate;
         private DevExpress.XtraEditors.DateEdit nullableDateTimePickerBsnkTranDate;
     }

@@ -88,5 +88,10 @@ namespace IAC2021SQL
         private void txtUserID_EditValueChanged(object sender, EventArgs e)
         {
         }
+
+        private void LoginForm_Shown(object sender, EventArgs e)
+        {
+            txtUserID.Focus();
+        }
     }
 }

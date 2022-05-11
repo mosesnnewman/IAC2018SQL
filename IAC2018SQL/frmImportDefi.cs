@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace IAC2021SQL
 {
-    public partial class frmImportDefi : Form
+    public partial class frmImportDefi : DevExpress.XtraEditors.XtraForm
     {
         public frmImportDefi()
         {

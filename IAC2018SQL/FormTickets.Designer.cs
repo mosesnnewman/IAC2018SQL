@@ -53,7 +53,6 @@ namespace IAC2021SQL
             this.buttonNext = new DevExpress.XtraEditors.SimpleButton();
             this.buttonPrevious = new DevExpress.XtraEditors.SimpleButton();
             this.buttonAdd = new DevExpress.XtraEditors.SimpleButton();
-            this.TicketID = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.bindingSourceTicketDetail = new System.Windows.Forms.BindingSource(this.components);
             this.ticketsdataset = new IAC2021SQL.Tickets();
             this.cUSTOMERTableAdapter = new IAC2021SQL.ProductionMainTablesTableAdapters.CUSTOMERTableAdapter();
@@ -414,16 +413,6 @@ namespace IAC2021SQL
             this.buttonAdd.Text = "&Add Entry";
             this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
-            // TicketID
-            // 
-            this.TicketID.AspectName = "TicketID";
-            this.TicketID.DisplayIndex = 0;
-            this.TicketID.HeaderTextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TicketID.HeaderTriStateCheckBox = true;
-            this.TicketID.IsEditable = false;
-            this.TicketID.IsVisible = false;
-            this.TicketID.Text = "";
-            // 
             // bindingSourceTicketDetail
             // 
             this.bindingSourceTicketDetail.DataMember = "TicketDetail";
@@ -697,8 +686,11 @@ namespace IAC2021SQL
             this.gridView1.OptionsView.ColumnHeaderAutoHeight = DevExpress.Utils.DefaultBoolean.True;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.ShownEditor += new System.EventHandler(this.gridView1_ShownEditor);
+            this.gridView1.FocusedColumnChanged += new DevExpress.XtraGrid.Views.Base.FocusedColumnChangedEventHandler(this.gridView1_FocusedColumnChanged);
             this.gridView1.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView1_CellValueChanged);
+            this.gridView1.CellValueChanging += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView1_CellValueChanging);
             this.gridView1.CustomColumnDisplayText += new DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventHandler(this.gridView1_CustomColumnDisplayText);
+            this.gridView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gridView1_KeyDown);
             // 
             // colSubDealer
             // 
@@ -1081,7 +1073,6 @@ namespace IAC2021SQL
         private System.Windows.Forms.GroupBox groupBoxHeader;
         private System.Windows.Forms.BindingSource bindingSourceDealer;
         private ProductionMainTablesTableAdapters.DEALERTableAdapter dEALERTableAdapter;
-        private BrightIdeasSoftware.OLVColumn TicketID;
         private DevExpress.XtraEditors.SimpleButton buttonAdd;
         public Tickets ticketsdataset;
         private System.Windows.Forms.Label labelExplanation;

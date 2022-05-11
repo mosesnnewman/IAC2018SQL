@@ -393,6 +393,7 @@
             // 
             // DEALERcomboBox
             // 
+            this.DEALERcomboBox.EnterMoveNextControl = true;
             this.DEALERcomboBox.Location = new System.Drawing.Point(87, 30);
             this.DEALERcomboBox.Name = "DEALERcomboBox";
             this.DEALERcomboBox.Properties.Appearance.Options.UseTextOptions = true;
@@ -404,14 +405,16 @@
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("DEALER_NAME", "DEALER_NAME", 84, DevExpress.Utils.FormatType.None, "", true, DevExpress.Utils.HorzAlignment.Near, DevExpress.Data.ColumnSortOrder.None, DevExpress.Utils.DefaultBoolean.Default)});
             this.DEALERcomboBox.Properties.DataSource = this.DLRLISTBYNUMbindingSource;
             this.DEALERcomboBox.Properties.DisplayMember = "id";
+            this.DEALERcomboBox.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Buffered;
             this.DEALERcomboBox.Properties.MaxLength = 10;
             this.DEALERcomboBox.Properties.NullText = "";
+            this.DEALERcomboBox.Properties.PopupFilterMode = DevExpress.XtraEditors.PopupFilterMode.StartsWith;
             this.DEALERcomboBox.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            this.DEALERcomboBox.Properties.ValidateOnEnterKey = true;
             this.DEALERcomboBox.Properties.ValueMember = "id";
             this.DEALERcomboBox.Size = new System.Drawing.Size(114, 20);
             this.DEALERcomboBox.TabIndex = 0;
             this.DEALERcomboBox.EditValueChanged += new System.EventHandler(this.DEALERcomboBox_EditValueChanged);
-            this.DEALERcomboBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             this.DEALERcomboBox.Validated += new System.EventHandler(this.DEALERcomboBox_Validated);
             // 
             // DLRLISTBYNUMbindingSource
@@ -975,6 +978,7 @@
             this.Text = "Closed Dealer Contingent Maintenance";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormClosedDealerContingentMaintenance_FormClosing);
             this.Load += new System.EventHandler(this.FormClosedDealerContingentMaintenance_Load);
+            this.Shown += new System.EventHandler(this.FormClosedDealerContingentMaintenance_Shown);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             ((System.ComponentModel.ISupportInitialize)(this.DealerbindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CONTINGiacDataSet)).EndInit();

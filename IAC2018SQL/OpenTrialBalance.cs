@@ -32,8 +32,13 @@ namespace IAC2021SQL
             dlrlistbynumTableAdapter.Fill(iACDataSet.DLRLISTBYNUM);
             DLRLISTBYNUMbindingSource.AddNew();
             DLRLISTBYNUMbindingSource.EndEdit();
+            // Moses Newman 05/05/2022 Add DEALER_ACC_NO at run time because closed end no longer uses this field in the list
+            iACDataSet.DLRLISTBYNUM.Columns.Add("DEALER_ACC_NO", typeof(String));
             iACDataSet.DLRLISTBYNUM.Rows[DLRLISTBYNUMbindingSource.Position].SetField<String>("DEALER_ACC_NO", "   ");
             iACDataSet.DLRLISTBYNUM.Rows[DLRLISTBYNUMbindingSource.Position].SetField<String>("DEALER_NAME", "                  ");
+            for (int i = 0; i < iACDataSet.DLRLISTBYNUM.Rows.Count; i++)
+                iACDataSet.DLRLISTBYNUM.Rows[DLRLISTBYNUMbindingSource.Position].SetField<String>("DEALER_ACC_NO",
+                    iACDataSet.DLRLISTBYNUM.Rows[DLRLISTBYNUMbindingSource.Position].Field<Int32>("id").ToString().Trim());
             DLRLISTBYNUMbindingSource.EndEdit();
         }
         

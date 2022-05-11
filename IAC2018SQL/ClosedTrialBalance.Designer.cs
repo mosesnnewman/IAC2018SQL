@@ -183,7 +183,7 @@
             this.groupControlTrialBalance.Controls.Add(this.labelRunMonth);
             this.groupControlTrialBalance.Location = new System.Drawing.Point(-1, -1);
             this.groupControlTrialBalance.Name = "groupControlTrialBalance";
-            this.groupControlTrialBalance.Size = new System.Drawing.Size(443, 260);
+            this.groupControlTrialBalance.Size = new System.Drawing.Size(446, 260);
             this.groupControlTrialBalance.TabIndex = 21;
             this.groupControlTrialBalance.Text = "groupControl1";
             // 

@@ -1,17 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevExpress.XtraReports.UI;
+using DevExpress.DataAccess.Sql;
+
 
 namespace IAC2021SQL
 {
-    public partial class CustomerShortBalanceReport : Form
+    public partial class CustomerShortBalanceReport : DevExpress.XtraEditors.XtraForm
     {
         public CustomerShortBalanceReport()
         {
@@ -20,12 +15,8 @@ namespace IAC2021SQL
 
         private void buttonPrint_Click(object sender, EventArgs e)
         {
-            //String deletePath = "";
-            //SQLBackupandRestore SQLBR = new SQLBackupandRestore();
             Hide();
             MDIIAC2013 MDImain = (MDIIAC2013)MdiParent;
-            MDImain.CreateFormInstance("ReportViewer", false);
-            ReportViewer rptViewer = (ReportViewer)MDImain.ActiveMdiChild;
 
             IACDataSet ReportDataSet = new IACDataSet();
             IACDataSetTableAdapters.ClosedCustomerShortBalanceTableAdapter ClosedCustomerShortBalanceTableAdapter = new IACDataSetTableAdapters.ClosedCustomerShortBalanceTableAdapter();
@@ -36,24 +27,22 @@ namespace IAC2021SQL
                 MessageBox.Show("*** Sorry there are no Customers with Short Balances! ***");
             else
             {
-                /*
-                deletePath = ReportDataSet.DataPath.Rows[0].Field<String>("Path").TrimEnd();
+                // Moses Newman 05/09/2022 Covert to XtraReport
+                var report = new XtraReportShortBalanceReport();
+                SqlDataSource ds = report.DataSource as SqlDataSource;
 
-                deletePath += @"EXCLDATA\CustomerRepoExtract.xls";
+                report.DataSource = ds;
+                report.RequestParameters = false;
+                report.Parameters["gsUserID"].Value = Program.gsUserID;
+                report.Parameters["gsUserName"].Value = Program.gsUserName;
 
-                if(System.IO.File.Exists(deletePath))
-                    System.IO.File.Delete(deletePath);*/
-                ShortBalanceReport myReportObject = new ShortBalanceReport();
-                myReportObject.SetDataSource(ReportDataSet);
-                myReportObject.SetParameterValue("gsUserID", Program.gsUserID);
-                myReportObject.SetParameterValue("gsUserName", Program.gsUserName);
-                rptViewer.crystalReportViewer.ReportSource = myReportObject;
-                rptViewer.crystalReportViewer.Refresh();
-                rptViewer.Show();
-                //SQLBR.CustomerRepoExtractJob();
+                var tool = new ReportPrintTool(report);
+
+                tool.PreviewRibbonForm.MdiParent = MDImain;
+                tool.AutoShowParametersPanel = false;
+                tool.PreviewRibbonForm.WindowState = FormWindowState.Maximized;
+                tool.ShowRibbonPreview();
             }
-            //SQLBR.Dispose();
-            //SQLBR = null;
             Close();
         }
 

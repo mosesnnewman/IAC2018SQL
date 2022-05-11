@@ -6,6 +6,15 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using DevExpress.XtraGrid.Views.Base;
+using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraGrid.Columns;
+using DevExpress.XtraGrid.Repository;
+using DevExpress.XtraEditors;
+using DevExpress.Data;
+using DevExpress.XtraBars;
+using Word = Microsoft.Office.Interop.Word;
+
 
 namespace IAC2021SQL
 {
@@ -17,8 +26,6 @@ namespace IAC2021SQL
         private System.Data.SqlClient.SqlConnection tableAdapConn = null;
 
         private Boolean lbAddFlag = false, lbEdit = false, lbFormClosing = false, lbNewPayment = false, lbILockedIt = false,lbJustSaved = false;
-
-        private DataGridViewComboBoxEditingControl editingControl;
 
         private Decimal gnCustomerBalance = 0, gnCustomerBuyout = 0;
 
@@ -80,10 +87,6 @@ namespace IAC2021SQL
             buttonChangeISFDate.Visible = false;
             buttonChangeISFDate.Enabled = false;
 
-            DataGridViewRow row = cOMMENTDataGridView.RowTemplate;
-            row.Height = 45;
-            row.DefaultCellStyle.BackColor = (row.Index % 2 == 0) ? Color.Bisque : Color.White;
-            row.MinimumHeight = 20;
             lookUpEditCodeType.Properties.DataSource = PAYCODEbindingSource;
             StartUpConfiguration();
             PerformAutoScale();
@@ -128,7 +131,10 @@ namespace IAC2021SQL
             txtOverPayment.ReadOnly = true;
             txtIncome.ReadOnly = true;
             PaidThroughUDtextBox.ReadOnly = true;
-            cOMMENTDataGridView.ReadOnly = true;
+            cOMMENTDataGridView.Enabled = true;
+            cOMMENTgridView.OptionsBehavior.Editable = false;
+            cUSTHISTDataGridView.Enabled = true;
+            gridViewCustomerHistory.OptionsBehavior.Editable = false;
             bindingNavigator.Enabled = true;
             bindingNavigator.Visible = true;
             toolStripButtonCancel.Visible = false;
@@ -148,7 +154,10 @@ namespace IAC2021SQL
             txtOverPayment.ReadOnly = false;
             txtIncome.ReadOnly = false;
             PaidThroughUDtextBox.ReadOnly = false;
-            cOMMENTDataGridView.ReadOnly = false;
+            cOMMENTDataGridView.Enabled = true;
+            cOMMENTgridView.OptionsBehavior.Editable = true;
+            cUSTHISTDataGridView.Enabled = true;
+            gridViewCustomerHistory.OptionsBehavior.Editable = false;
             toolStripButtonAdd.Enabled = false;
             toolStripButtonEdit.Enabled = false;
             toolStripButtonDelete.Enabled = false;
@@ -176,7 +185,10 @@ namespace IAC2021SQL
             txtOverPayment.ReadOnly = false;
             txtIncome.ReadOnly = false;
             PaidThroughUDtextBox.ReadOnly = false;
-            cOMMENTDataGridView.ReadOnly = false;
+            cOMMENTDataGridView.Enabled = true;
+            cOMMENTgridView.OptionsBehavior.Editable = true;
+            cUSTHISTDataGridView.Enabled = true;
+            gridViewCustomerHistory.OptionsBehavior.Editable = false;
             toolStripButtonAdd.Enabled = false;
             toolStripButtonEdit.Enabled = false;
             toolStripButtonDelete.Enabled = false;
@@ -607,19 +619,6 @@ namespace IAC2021SQL
             }
         }
 
-        private void cUSTHISTDataGridView_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
-        {
-            foreach (DataGridViewRow r in cUSTHISTDataGridView.Rows)
-                r.DefaultCellStyle.BackColor = (r.Index % 2 == 0) ? Color.White : Color.LightYellow;
-
-        }
-
-        private void cOMMENTDataGridView_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
-        {
-            foreach (DataGridViewRow r in cOMMENTDataGridView.Rows)
-                r.DefaultCellStyle.BackColor = (r.Index % 2 == 0) ? Color.White : Color.LightYellow;
-        }
-
         private void PaymentbindingSource_PositionChanged(object sender, EventArgs e)
         {
             if (lbJustSaved || PaymentbindingSource.Position == -1)
@@ -731,46 +730,6 @@ namespace IAC2021SQL
             }
             else
                 lnSeq++;
-        }
-
-        private void cOMMENTDataGridView_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
-        {
-            if (e.Control.GetType().Name != "DataGridViewComboBoxEditingControl")
-            {
-                editingControl = null;
-                return;
-            }
-            editingControl = (DataGridViewComboBoxEditingControl)e.Control;
-            if (!lbEdit)
-                editingControl.Enabled = false;
-            editingControl.SelectedIndexChanged += new EventHandler(editingControl_SelectedIndexChanged);
-        }
-
-        private void editingControl_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (editingControl == null)
-                return;
-            if (editingControl.SelectedIndex >= 0)
-            {
-                toolStripButtonSave.Enabled = true;
-                cOMMENTDataGridView.Rows[cOMMENTDataGridView.CurrentRow.Index].Cells["Comment"].Value = ClosedPaymentiacDataSet.Comment_Types.Rows[editingControl.SelectedIndex].Field<String>("Description").ToString().TrimEnd().ToUpper();
-                cOMMENTDataGridView.Rows[cOMMENTDataGridView.CurrentRow.Index].Cells["COMMENT_SEQ_NO"].Value = lnSeq;
-                cOMMENTDataGridView.Rows[cOMMENTDataGridView.CurrentRow.Index].Cells["COMMENT_DEALER"].Value = DealertextBox.Text.ToString().TrimEnd();
-                cOMMENTDataGridView.Rows[cOMMENTDataGridView.CurrentRow.Index].Cells["COMMENT_ID_TYPE"].Value = cOMMENTDataGridView.Rows[cOMMENTDataGridView.CurrentRow.Index].Cells["ID"].Value.ToString().TrimEnd() + ClosedPaymentiacDataSet.Comment_Types.Rows[editingControl.SelectedIndex].Field<String>("Type").ToString().TrimEnd();
-            }
-        }
-
-        private void cOMMENTDataGridView_CellEndEdit(object sender, DataGridViewCellEventArgs e)
-        {
-            if (editingControl == null)
-                return;
-            editingControl.SelectedIndexChanged -= new EventHandler(editingControl_SelectedIndexChanged);
-            editingControl = null;
-        }
-
-        private void cOMMENTDataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
-        {
-            MessageBox.Show("The error is: " + e.Exception.ToString() + " The bad value is:" + cOMMENTDataGridView.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() + '\n' + e.Context.ToString());
         }
 
         private void cOMMENTDataGridView_UserDeletedRow(object sender, DataGridViewRowEventArgs e)
@@ -907,6 +866,128 @@ namespace IAC2021SQL
                     lookUpEditCodeType.SelectAll();
                 }
             }
+        }
+
+        private void cOMMENTgridView_CustomUnboundColumnData(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDataEventArgs e)
+        {
+            GridView view = sender as GridView;
+            if (e.Column.FieldName == "colThumb" && e.IsGetData)
+                e.Value = getWordImage(view, e.ListSourceRowIndex);
+        }
+
+        // Return the WordImage for a specific row.
+        private Bitmap getWordImage(GridView view, int listSourceRowIndex)
+        {
+            Bitmap img;
+            img = new Bitmap(IAC2021SQL.Properties.Resources.WordDoc);
+            if (!String.IsNullOrEmpty(Convert.ToString(view.GetListSourceRowCellValue(listSourceRowIndex, "LetterPath"))) || !String.IsNullOrEmpty(Convert.ToString(view.GetListSourceRowCellValue(listSourceRowIndex, "SMSPath"))))
+                return img;
+            else
+                return null;
+        }
+
+        private void cOMMENTgridView_CellValueChanging(object sender, CellValueChangedEventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void cOMMENTgridView_InitNewRow(object sender, InitNewRowEventArgs e)
+        {
+            GridView view = sender as GridView;
+
+            object loQuery = null;
+            view.SetRowCellValue(e.RowHandle, "COMMENT_USERID", Program.gsUserID.TrimEnd());
+            view.SetRowCellValue(e.RowHandle, "COMMENT_DATE", DateTime.Now.Date);
+            view.SetRowCellValue(e.RowHandle, "COMMENT_NO", txtCommentNo.Text.ToString().TrimEnd());
+            view.SetRowCellValue(e.RowHandle, "COMMENT_HHMMSS",
+                DateTime.Now.Hour.ToString().PadLeft(2, '0') + DateTime.Now.Minute.ToString().PadLeft(2, '0') + DateTime.Now.Second.ToString().PadLeft(2, '0'));
+            if (lnSeq == 0)
+            {
+                loQuery = cOMMENTTableAdapter.SeqNoQuery(txtCommentNo.Text.ToString().TrimEnd(), DateTime.Now.Date);
+                if (loQuery != null)
+                    lnSeq = (int)loQuery + 1;
+                else
+                    lnSeq = 1;
+            }
+            else
+                lnSeq = lnSeq + 1;
+            view.SetRowCellValue(e.RowHandle, "COMMENT_SEQ_NO", lnSeq);
+            view.SetRowCellValue(e.RowHandle, "COMMENT_DEALER", Convert.ToInt32(DealertextBox.Text));
+        }
+
+        private void cOMMENTgridView_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Delete && e.Modifiers == Keys.Control && (lbEdit || lbAddFlag))
+            {
+                if (MessageBox.Show("Delete row?", "Confirmation", MessageBoxButtons.YesNo) !=
+                  DialogResult.Yes)
+                    return;
+                GridView view = sender as GridView;
+                view.DeleteRow(view.FocusedRowHandle);
+                toolStripButtonSave.Enabled = true;
+            }
+        }
+
+        private void cOMMENTgridView_RowCellClick(object sender, RowCellClickEventArgs e)
+        {
+            GridView view = sender as GridView;
+            if (e.Column.FieldName == "colThumb")
+            {
+                String lsPath = getPath(view, view.GetDataSourceRowIndex(e.RowHandle));
+                // If the LetterPath field is not empty open the word document.
+                if (!String.IsNullOrEmpty(lsPath))
+                {
+
+                    if (System.IO.File.Exists(lsPath))
+                    {
+                        Word._Application application = new Word.Application();
+                        Word._Document document = application.Documents.Open(lsPath);
+                        // Old method to open using windows default editor for filetype.
+                        //System.Diagnostics.Process.Start(lsPath);
+                        document.Activate();
+                        application.Visible = true;
+                    }
+                    else
+                        MessageBox.Show("The document: " + lsPath + " seems to be missing!",
+                                        "Specified Document Missing");
+                }
+            }
+        }
+
+        // Return the Path for a specific row.
+        private String getPath(GridView view, int listSourceRowIndex)
+        {
+            return !String.IsNullOrEmpty(Convert.ToString(view.GetListSourceRowCellValue(listSourceRowIndex, "LetterPath"))) ?
+                    Convert.ToString(view.GetListSourceRowCellValue(listSourceRowIndex, "LetterPath")) :
+                    Convert.ToString(view.GetListSourceRowCellValue(listSourceRowIndex, "SMSPath"));
+        }
+
+        private void tabClosedPayments_SelectedPageChanged(object sender, DevExpress.XtraTab.TabPageChangedEventArgs e)
+        {
+            switch (tabClosedPayments.SelectedTabPageIndex)
+            {
+                case 2:
+                    // Moses Newman 12/1/2021 order by id descending
+                    GridColumn colID = cOMMENTgridView.Columns["id"];
+                    cOMMENTgridView.BeginSort();
+                    try
+                    {
+                        cOMMENTgridView.ClearSorting();
+                        // Moses Newman 12/1/2021 order by id descending
+                        colID.SortOrder = ColumnSortOrder.Descending;
+                    }
+                    finally
+                    {
+                        cOMMENTgridView.EndSort();
+                    }
+                    break;
+            }
+        }
+
+        private void lookUpEditCodeType_Enter(object sender, EventArgs e)
+        {
+            HandleISF();
         }
 
         private void toolStripButtonDelete_Click(object sender, EventArgs e)
@@ -1086,7 +1167,6 @@ namespace IAC2021SQL
                     ClosedPaymentiacDataSet.PAYMENT.Rows[PaymentbindingSource.Position].SetField<String>("PAYMENT_TYPE", (String)lookUpEditPaymentType.EditValue);
                     PaymentbindingSource.EndEdit();
                 }
-                HandleISF();
             }
         }
 
