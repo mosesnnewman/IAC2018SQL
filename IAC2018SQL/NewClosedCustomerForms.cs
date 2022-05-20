@@ -4890,7 +4890,7 @@ namespace IAC2021SQL
                 checkBoxSendToDealer.Refresh();
             }
             // Moses Newman 05/03/2022 new stuff
-            Int32 lnEditVal = cUSTOMER_DEALERcomboBox.EditValue != null ? (Int32)cUSTOMER_DEALERcomboBox.EditValue : 0;
+            Int32 lnEditVal = !String.IsNullOrEmpty(cUSTOMER_DEALERcomboBox.EditValue.ToString()) ? (Int32)cUSTOMER_DEALERcomboBox.EditValue : 0;
             if (lnEditVal == 0)
                 return;
             // End New Stuff
