@@ -269,6 +269,7 @@ namespace IAC2021SQL
             /*ActiveControl = DEALERcomboBox;
             DEALERcomboBox.Focus();
             DEALERcomboBox.SelectAll();*/
+            nullableDateTimePickerDealerStartDate.EditValue = DateTime.Now.Date;
             StartUpConfiguration();
             PerformAutoScale();
         }

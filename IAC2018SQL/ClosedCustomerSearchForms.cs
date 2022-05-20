@@ -163,6 +163,7 @@ namespace IAC2021SQL
                         Close();
                         break;
                     case "B":
+                        Hide();
                         lsCustomer_Type = dataGridViewCustLookup.SelectedRows[0].Cells["CustomerActType"].Value.ToString().TrimEnd();
                         MDIIAC2013 MDImain = (MDIIAC2013)MdiParent;
                         if (lsCustomer_Type == "O")
@@ -173,6 +174,7 @@ namespace IAC2021SQL
                         ClearAllFields();
                         Refresh();
                         Show();
+                        SendToBack();
                         break;
                 }
             }
@@ -224,6 +226,7 @@ namespace IAC2021SQL
                         Close();
                         break;
                     case "B":
+                        Hide();
                         iacDataSet1.Clear();
                         ClearAllFields();
                         Refresh();
@@ -231,6 +234,7 @@ namespace IAC2021SQL
                         newMDIChild2.MdiParent = ParentForm;
                         newMDIChild2.Show();
                         Show();
+                        SendToBack();
                         break;
                 }
             }

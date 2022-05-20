@@ -1176,10 +1176,6 @@ namespace IAC2021SQL
             rptViewr.Show();
         }
 
-        private void monthlyUpdateToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-        }
-
         private void dealerContingentsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (Program.LockfileExclusive())

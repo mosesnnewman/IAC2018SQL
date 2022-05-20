@@ -11764,7 +11764,7 @@
     <value>Combo</value>
   </data>
   <data name="dateEditIssueDate3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>109, 28</value>
+    <value>119, 28</value>
   </data>
   <data name="dateEditIssueDate3.TabIndex" type="System.Int32, mscorlib">
     <value>230</value>
@@ -11821,7 +11821,7 @@
     <value>Combo</value>
   </data>
   <data name="dateEditIssueDate2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>109, 28</value>
+    <value>119, 28</value>
   </data>
   <data name="dateEditIssueDate2.TabIndex" type="System.Int32, mscorlib">
     <value>228</value>
@@ -11878,7 +11878,7 @@
     <value>Combo</value>
   </data>
   <data name="dateEditIssueDate1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>109, 28</value>
+    <value>119, 28</value>
   </data>
   <data name="dateEditIssueDate1.TabIndex" type="System.Int32, mscorlib">
     <value>226</value>
@@ -12064,7 +12064,7 @@
     <value>Combo</value>
   </data>
   <data name="dateEditCancellationDate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>109, 28</value>
+    <value>119, 28</value>
   </data>
   <data name="dateEditCancellationDate.TabIndex" type="System.Int32, mscorlib">
     <value>221</value>
@@ -12403,7 +12403,7 @@
     <value>Combo</value>
   </data>
   <data name="nullableDateTimePickerDateTitleReleased.Size" type="System.Drawing.Size, System.Drawing">
-    <value>109, 28</value>
+    <value>119, 28</value>
   </data>
   <data name="nullableDateTimePickerDateTitleReleased.TabIndex" type="System.Int32, mscorlib">
     <value>246</value>
@@ -12721,7 +12721,7 @@
     <value>Combo</value>
   </data>
   <data name="nullableDateTimePickerTitleDateReceived.Size" type="System.Drawing.Size, System.Drawing">
-    <value>109, 28</value>
+    <value>119, 28</value>
   </data>
   <data name="nullableDateTimePickerTitleDateReceived.TabIndex" type="System.Int32, mscorlib">
     <value>243</value>
@@ -12847,7 +12847,7 @@
     <value>Combo</value>
   </data>
   <data name="nullableDateTimePickerRepoDate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>109, 28</value>
+    <value>119, 28</value>
   </data>
   <data name="nullableDateTimePickerRepoDate.TabIndex" type="System.Int32, mscorlib">
     <value>236</value>
@@ -12901,7 +12901,7 @@
     <value>Combo</value>
   </data>
   <data name="txtExpirationDate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>109, 28</value>
+    <value>119, 28</value>
   </data>
   <data name="txtExpirationDate.TabIndex" type="System.Int32, mscorlib">
     <value>220</value>
@@ -12934,7 +12934,7 @@
     <value>Combo</value>
   </data>
   <data name="txtEffectiveDate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>109, 28</value>
+    <value>119, 28</value>
   </data>
   <data name="txtEffectiveDate.TabIndex" type="System.Int32, mscorlib">
     <value>219</value>

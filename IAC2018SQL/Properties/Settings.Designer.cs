@@ -12,7 +12,7 @@ namespace IAC2021SQL.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.1.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.2.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -29,17 +29,6 @@ namespace IAC2021SQL.Properties {
         public global::System.Drawing.Font Setting {
             get {
                 return ((global::System.Drawing.Font)(this["Setting"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=SQL-IAC;Initial Catalog=IACSQLPRODUCTION;Integrated Security=True;Asy" +
-            "nchronous Processing=True;MultipleActiveResultSets=True;Connect Timeout=30")]
-        public string SSISParamsConnectionString {
-            get {
-                return ((string)(this["SSISParamsConnectionString"]));
             }
         }
         

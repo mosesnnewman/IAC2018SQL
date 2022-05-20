@@ -126,16 +126,6 @@
             this.cUSTOMER__PHONE_NOSrchTextBox = new System.Windows.Forms.MaskedTextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dataGridViewVehicleLookup = new System.Windows.Forms.DataGridView();
-            this.vEHICLECUSTNODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vEHICLEADDONDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CUSTOMER_FIRST_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CUSTOMER_LAST_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vEHICLEYEARDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vEHICLEMAKEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vEHICLEMODELDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vEHICLEVINDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vEHICLEINSCOMPANYDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vEHICLEPOLICYNODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Vehicle_CustomerbindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.VehicleGroupBox = new System.Windows.Forms.GroupBox();
             this.txtVIN = new System.Windows.Forms.TextBox();
@@ -156,6 +146,15 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.customerMailTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.CustomerMailTableAdapter();
+            this.vEHICLECUSTNODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CUSTOMER_FIRST_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CUSTOMER_LAST_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vEHICLEYEARDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vEHICLEMAKEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vEHICLEMODELDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vEHICLEVINDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vEHICLEINSCOMPANYDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vEHICLEPOLICYNODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             cUSTOMER_CONTACTLabel = new System.Windows.Forms.Label();
             cUSTOMER_SS_1Label = new System.Windows.Forms.Label();
             cUSTOMER_DOBLabel = new System.Windows.Forms.Label();
@@ -787,7 +786,7 @@
             this.NullableDateTimePickerSrchDOB.Name = "NullableDateTimePickerSrchDOB";
             this.NullableDateTimePickerSrchDOB.Size = new System.Drawing.Size(86, 22);
             this.NullableDateTimePickerSrchDOB.TabIndex = 121;
-            this.NullableDateTimePickerSrchDOB.Value = new System.DateTime(2021, 12, 29, 0, 0, 0, 0);
+            this.NullableDateTimePickerSrchDOB.Value = new System.DateTime(2022, 5, 19, 0, 0, 0, 0);
             // 
             // richTextBoxEmailAddress
             // 
@@ -855,7 +854,7 @@
             this.nullableDateTimePickerCOSDOB.Name = "nullableDateTimePickerCOSDOB";
             this.nullableDateTimePickerCOSDOB.Size = new System.Drawing.Size(86, 22);
             this.nullableDateTimePickerCOSDOB.TabIndex = 122;
-            this.nullableDateTimePickerCOSDOB.Value = new System.DateTime(2021, 12, 29, 0, 0, 0, 0);
+            this.nullableDateTimePickerCOSDOB.Value = new System.DateTime(2022, 5, 19, 0, 0, 0, 0);
             // 
             // textBoxCOSWORKEXT
             // 
@@ -1132,7 +1131,6 @@
             this.dataGridViewVehicleLookup.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewVehicleLookup.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.vEHICLECUSTNODataGridViewTextBoxColumn,
-            this.vEHICLEADDONDataGridViewTextBoxColumn,
             this.CUSTOMER_FIRST_NAME,
             this.CUSTOMER_LAST_NAME,
             this.vEHICLEYEARDataGridViewTextBoxColumn,
@@ -1142,89 +1140,14 @@
             this.vEHICLEINSCOMPANYDataGridViewTextBoxColumn,
             this.vEHICLEPOLICYNODataGridViewTextBoxColumn});
             this.dataGridViewVehicleLookup.DataSource = this.Vehicle_CustomerbindingSource;
-            this.dataGridViewVehicleLookup.Location = new System.Drawing.Point(6, 256);
+            this.dataGridViewVehicleLookup.Location = new System.Drawing.Point(5, 256);
             this.dataGridViewVehicleLookup.Name = "dataGridViewVehicleLookup";
             this.dataGridViewVehicleLookup.ReadOnly = true;
             this.dataGridViewVehicleLookup.RowTemplate.Height = 24;
-            this.dataGridViewVehicleLookup.Size = new System.Drawing.Size(848, 194);
+            this.dataGridViewVehicleLookup.Size = new System.Drawing.Size(1009, 290);
             this.dataGridViewVehicleLookup.TabIndex = 25;
             this.dataGridViewVehicleLookup.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewVehicleLookup_CellDoubleClick);
             this.dataGridViewVehicleLookup.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridViewVehicleLookup_DataBindingComplete);
-            // 
-            // vEHICLECUSTNODataGridViewTextBoxColumn
-            // 
-            this.vEHICLECUSTNODataGridViewTextBoxColumn.DataPropertyName = "VEHICLE_CUST_NO";
-            this.vEHICLECUSTNODataGridViewTextBoxColumn.HeaderText = "CUST NO.";
-            this.vEHICLECUSTNODataGridViewTextBoxColumn.Name = "vEHICLECUSTNODataGridViewTextBoxColumn";
-            this.vEHICLECUSTNODataGridViewTextBoxColumn.ReadOnly = true;
-            this.vEHICLECUSTNODataGridViewTextBoxColumn.Width = 50;
-            // 
-            // vEHICLEADDONDataGridViewTextBoxColumn
-            // 
-            this.vEHICLEADDONDataGridViewTextBoxColumn.Name = "vEHICLEADDONDataGridViewTextBoxColumn";
-            this.vEHICLEADDONDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // CUSTOMER_FIRST_NAME
-            // 
-            this.CUSTOMER_FIRST_NAME.DataPropertyName = "CUSTOMER_FIRST_NAME";
-            this.CUSTOMER_FIRST_NAME.HeaderText = "FIRST NAME";
-            this.CUSTOMER_FIRST_NAME.Name = "CUSTOMER_FIRST_NAME";
-            this.CUSTOMER_FIRST_NAME.ReadOnly = true;
-            this.CUSTOMER_FIRST_NAME.Width = 80;
-            // 
-            // CUSTOMER_LAST_NAME
-            // 
-            this.CUSTOMER_LAST_NAME.DataPropertyName = "CUSTOMER_LAST_NAME";
-            this.CUSTOMER_LAST_NAME.HeaderText = "LAST NAME";
-            this.CUSTOMER_LAST_NAME.Name = "CUSTOMER_LAST_NAME";
-            this.CUSTOMER_LAST_NAME.ReadOnly = true;
-            // 
-            // vEHICLEYEARDataGridViewTextBoxColumn
-            // 
-            this.vEHICLEYEARDataGridViewTextBoxColumn.DataPropertyName = "VEHICLE_YEAR";
-            this.vEHICLEYEARDataGridViewTextBoxColumn.HeaderText = "YEAR";
-            this.vEHICLEYEARDataGridViewTextBoxColumn.Name = "vEHICLEYEARDataGridViewTextBoxColumn";
-            this.vEHICLEYEARDataGridViewTextBoxColumn.ReadOnly = true;
-            this.vEHICLEYEARDataGridViewTextBoxColumn.Width = 45;
-            // 
-            // vEHICLEMAKEDataGridViewTextBoxColumn
-            // 
-            this.vEHICLEMAKEDataGridViewTextBoxColumn.DataPropertyName = "VEHICLE_MAKE";
-            this.vEHICLEMAKEDataGridViewTextBoxColumn.HeaderText = "MAKE";
-            this.vEHICLEMAKEDataGridViewTextBoxColumn.Name = "vEHICLEMAKEDataGridViewTextBoxColumn";
-            this.vEHICLEMAKEDataGridViewTextBoxColumn.ReadOnly = true;
-            this.vEHICLEMAKEDataGridViewTextBoxColumn.Width = 80;
-            // 
-            // vEHICLEMODELDataGridViewTextBoxColumn
-            // 
-            this.vEHICLEMODELDataGridViewTextBoxColumn.DataPropertyName = "VEHICLE_MODEL";
-            this.vEHICLEMODELDataGridViewTextBoxColumn.HeaderText = "MODEL";
-            this.vEHICLEMODELDataGridViewTextBoxColumn.Name = "vEHICLEMODELDataGridViewTextBoxColumn";
-            this.vEHICLEMODELDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // vEHICLEVINDataGridViewTextBoxColumn
-            // 
-            this.vEHICLEVINDataGridViewTextBoxColumn.DataPropertyName = "VEHICLE_VIN";
-            this.vEHICLEVINDataGridViewTextBoxColumn.HeaderText = "VIN NUMBER";
-            this.vEHICLEVINDataGridViewTextBoxColumn.Name = "vEHICLEVINDataGridViewTextBoxColumn";
-            this.vEHICLEVINDataGridViewTextBoxColumn.ReadOnly = true;
-            this.vEHICLEVINDataGridViewTextBoxColumn.Width = 130;
-            // 
-            // vEHICLEINSCOMPANYDataGridViewTextBoxColumn
-            // 
-            this.vEHICLEINSCOMPANYDataGridViewTextBoxColumn.DataPropertyName = "VEHICLE_INS_COMPANY";
-            this.vEHICLEINSCOMPANYDataGridViewTextBoxColumn.HeaderText = "INSURANCE COMPANY";
-            this.vEHICLEINSCOMPANYDataGridViewTextBoxColumn.Name = "vEHICLEINSCOMPANYDataGridViewTextBoxColumn";
-            this.vEHICLEINSCOMPANYDataGridViewTextBoxColumn.ReadOnly = true;
-            this.vEHICLEINSCOMPANYDataGridViewTextBoxColumn.Width = 90;
-            // 
-            // vEHICLEPOLICYNODataGridViewTextBoxColumn
-            // 
-            this.vEHICLEPOLICYNODataGridViewTextBoxColumn.DataPropertyName = "VEHICLE_POLICY_NO";
-            this.vEHICLEPOLICYNODataGridViewTextBoxColumn.HeaderText = "POLICY NUMBER";
-            this.vEHICLEPOLICYNODataGridViewTextBoxColumn.Name = "vEHICLEPOLICYNODataGridViewTextBoxColumn";
-            this.vEHICLEPOLICYNODataGridViewTextBoxColumn.ReadOnly = true;
-            this.vEHICLEPOLICYNODataGridViewTextBoxColumn.Width = 90;
             // 
             // Vehicle_CustomerbindingSource
             // 
@@ -1245,7 +1168,7 @@
             this.VehicleGroupBox.Controls.Add(lblModel);
             this.VehicleGroupBox.Controls.Add(lblVehicleYear);
             this.VehicleGroupBox.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VehicleGroupBox.Location = new System.Drawing.Point(189, 8);
+            this.VehicleGroupBox.Location = new System.Drawing.Point(268, 8);
             this.VehicleGroupBox.Name = "VehicleGroupBox";
             this.VehicleGroupBox.Size = new System.Drawing.Size(482, 242);
             this.VehicleGroupBox.TabIndex = 96;
@@ -1406,6 +1329,76 @@
             // 
             this.customerMailTableAdapter.ClearBeforeFill = true;
             // 
+            // vEHICLECUSTNODataGridViewTextBoxColumn
+            // 
+            this.vEHICLECUSTNODataGridViewTextBoxColumn.DataPropertyName = "VEHICLE_CUST_NO";
+            this.vEHICLECUSTNODataGridViewTextBoxColumn.HeaderText = "CUST NO.";
+            this.vEHICLECUSTNODataGridViewTextBoxColumn.Name = "vEHICLECUSTNODataGridViewTextBoxColumn";
+            this.vEHICLECUSTNODataGridViewTextBoxColumn.ReadOnly = true;
+            this.vEHICLECUSTNODataGridViewTextBoxColumn.Width = 50;
+            // 
+            // CUSTOMER_FIRST_NAME
+            // 
+            this.CUSTOMER_FIRST_NAME.DataPropertyName = "CUSTOMER_FIRST_NAME";
+            this.CUSTOMER_FIRST_NAME.HeaderText = "FIRST NAME";
+            this.CUSTOMER_FIRST_NAME.Name = "CUSTOMER_FIRST_NAME";
+            this.CUSTOMER_FIRST_NAME.ReadOnly = true;
+            this.CUSTOMER_FIRST_NAME.Width = 80;
+            // 
+            // CUSTOMER_LAST_NAME
+            // 
+            this.CUSTOMER_LAST_NAME.DataPropertyName = "CUSTOMER_LAST_NAME";
+            this.CUSTOMER_LAST_NAME.HeaderText = "LAST NAME";
+            this.CUSTOMER_LAST_NAME.Name = "CUSTOMER_LAST_NAME";
+            this.CUSTOMER_LAST_NAME.ReadOnly = true;
+            // 
+            // vEHICLEYEARDataGridViewTextBoxColumn
+            // 
+            this.vEHICLEYEARDataGridViewTextBoxColumn.DataPropertyName = "VEHICLE_YEAR";
+            this.vEHICLEYEARDataGridViewTextBoxColumn.HeaderText = "YEAR";
+            this.vEHICLEYEARDataGridViewTextBoxColumn.Name = "vEHICLEYEARDataGridViewTextBoxColumn";
+            this.vEHICLEYEARDataGridViewTextBoxColumn.ReadOnly = true;
+            this.vEHICLEYEARDataGridViewTextBoxColumn.Width = 45;
+            // 
+            // vEHICLEMAKEDataGridViewTextBoxColumn
+            // 
+            this.vEHICLEMAKEDataGridViewTextBoxColumn.DataPropertyName = "VEHICLE_MAKE";
+            this.vEHICLEMAKEDataGridViewTextBoxColumn.HeaderText = "MAKE";
+            this.vEHICLEMAKEDataGridViewTextBoxColumn.Name = "vEHICLEMAKEDataGridViewTextBoxColumn";
+            this.vEHICLEMAKEDataGridViewTextBoxColumn.ReadOnly = true;
+            this.vEHICLEMAKEDataGridViewTextBoxColumn.Width = 80;
+            // 
+            // vEHICLEMODELDataGridViewTextBoxColumn
+            // 
+            this.vEHICLEMODELDataGridViewTextBoxColumn.DataPropertyName = "VEHICLE_MODEL";
+            this.vEHICLEMODELDataGridViewTextBoxColumn.HeaderText = "MODEL";
+            this.vEHICLEMODELDataGridViewTextBoxColumn.Name = "vEHICLEMODELDataGridViewTextBoxColumn";
+            this.vEHICLEMODELDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // vEHICLEVINDataGridViewTextBoxColumn
+            // 
+            this.vEHICLEVINDataGridViewTextBoxColumn.DataPropertyName = "VEHICLE_VIN";
+            this.vEHICLEVINDataGridViewTextBoxColumn.HeaderText = "VIN NUMBER";
+            this.vEHICLEVINDataGridViewTextBoxColumn.Name = "vEHICLEVINDataGridViewTextBoxColumn";
+            this.vEHICLEVINDataGridViewTextBoxColumn.ReadOnly = true;
+            this.vEHICLEVINDataGridViewTextBoxColumn.Width = 180;
+            // 
+            // vEHICLEINSCOMPANYDataGridViewTextBoxColumn
+            // 
+            this.vEHICLEINSCOMPANYDataGridViewTextBoxColumn.DataPropertyName = "VEHICLE_INS_COMPANY";
+            this.vEHICLEINSCOMPANYDataGridViewTextBoxColumn.HeaderText = "INSURANCE COMPANY";
+            this.vEHICLEINSCOMPANYDataGridViewTextBoxColumn.Name = "vEHICLEINSCOMPANYDataGridViewTextBoxColumn";
+            this.vEHICLEINSCOMPANYDataGridViewTextBoxColumn.ReadOnly = true;
+            this.vEHICLEINSCOMPANYDataGridViewTextBoxColumn.Width = 180;
+            // 
+            // vEHICLEPOLICYNODataGridViewTextBoxColumn
+            // 
+            this.vEHICLEPOLICYNODataGridViewTextBoxColumn.DataPropertyName = "VEHICLE_POLICY_NO";
+            this.vEHICLEPOLICYNODataGridViewTextBoxColumn.HeaderText = "POLICY NUMBER";
+            this.vEHICLEPOLICYNODataGridViewTextBoxColumn.Name = "vEHICLEPOLICYNODataGridViewTextBoxColumn";
+            this.vEHICLEPOLICYNODataGridViewTextBoxColumn.ReadOnly = true;
+            this.vEHICLEPOLICYNODataGridViewTextBoxColumn.Width = 180;
+            // 
             // frmCustomerLookup
             // 
             this.Appearance.BackColor = System.Drawing.Color.CornflowerBlue;
@@ -1482,16 +1475,6 @@
         private System.Windows.Forms.TextBox txtVIN;
         private System.Windows.Forms.BindingSource Vehicle_CustomerbindingSource;
         private IACDataSetTableAdapters.Customer_VehicleTableAdapter customer_VehicleTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn vEHICLECUSTNODataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn vEHICLEADDONDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CUSTOMER_FIRST_NAME;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CUSTOMER_LAST_NAME;
-        private System.Windows.Forms.DataGridViewTextBoxColumn vEHICLEYEARDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn vEHICLEMAKEDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn vEHICLEMODELDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn vEHICLEVINDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn vEHICLEINSCOMPANYDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn vEHICLEPOLICYNODataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingNavigator bindingNavigator1;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
@@ -1537,5 +1520,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cUSTOMERDEALERDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn EmailAddress;
         private System.Windows.Forms.DataGridViewTextBoxColumn CosignerEmail;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vEHICLECUSTNODataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CUSTOMER_FIRST_NAME;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CUSTOMER_LAST_NAME;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vEHICLEYEARDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vEHICLEMAKEDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vEHICLEMODELDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vEHICLEVINDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vEHICLEINSCOMPANYDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vEHICLEPOLICYNODataGridViewTextBoxColumn;
     }
 }
