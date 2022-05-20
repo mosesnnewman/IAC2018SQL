@@ -3601,7 +3601,11 @@
             this.cUSTOMER_NOTextBox.Properties.Appearance.Options.UseBorderColor = true;
             this.cUSTOMER_NOTextBox.Properties.Appearance.Options.UseFont = true;
             this.cUSTOMER_NOTextBox.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
-            this.cUSTOMER_NOTextBox.Validated += new System.EventHandler(this.cUSTOMER_NOTextBox_Validated);
+            this.cUSTOMER_NOTextBox.Properties.EditValueChangedDelay = 5000;
+            this.cUSTOMER_NOTextBox.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Buffered;
+            this.cUSTOMER_NOTextBox.EditValueChanged += new System.EventHandler(this.cUSTOMER_NOTextBox_EditValueChanged);
+            this.cUSTOMER_NOTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cUSTOMER_NOTextBox_KeyDown);
+            this.cUSTOMER_NOTextBox.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.cUSTOMER_NOTextBox_PreviewKeyDown);
             // 
             // cUSTOMER_WORK_EXTtextBox
             // 

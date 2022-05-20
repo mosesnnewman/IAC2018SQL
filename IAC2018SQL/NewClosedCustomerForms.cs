@@ -133,7 +133,7 @@ namespace IAC2021SQL
             textBox1.DataBindings.Clear();
             textBox8.DataBindings.Clear();
             monthNamesTableAdapter.Fill(iACDataSet.MonthNames);
-            cUSTOMER_NOTextBox.Text = (Program.gsKey != null) ? Program.gsKey : "";
+            cUSTOMER_NOTextBox.EditValue = (Program.gsKey != null) ? Program.gsKey : "";
             if (Program.gsKey != null)
             {
                 setRelatedData();
@@ -141,7 +141,7 @@ namespace IAC2021SQL
                 {
                     gnCustomerBalance = 0;
                     gnCustomerBuyout = 0;
-                    cUSTOMER_NOTextBox.Text = "";
+                    cUSTOMER_NOTextBox.EditValue = "";
                     cUSTOMER_DEALERcomboBox.EditValue =null;
                 }
                 else
@@ -153,8 +153,8 @@ namespace IAC2021SQL
             {
                 gnCustomerBalance = 0;
                 gnCustomerBuyout = 0;
-                cUSTOMER_NOTextBox.Text = "";
-                cUSTOMER_PURCHASE_ORDERTextBox.Text = "";
+                cUSTOMER_NOTextBox.EditValue = "";
+                cUSTOMER_PURCHASE_ORDERTextBox.EditValue = "";
                 cUSTOMER_DEALERcomboBox.EditValue = "";
                 textBox1.Text = "";
             }
@@ -165,7 +165,7 @@ namespace IAC2021SQL
             }
 
             
-            ActiveControl = cUSTOMER_NOTextBox;
+            cUSTOMER_NOTextBox.Focus();
             cUSTOMER_NOTextBox.SelectAll();
         }
 
@@ -898,15 +898,17 @@ namespace IAC2021SQL
             gnRepairFee1 = 0; gnRepairFee2 = 0; gnRepairFee3 = 0; gnRepairFee4 = 0; gnRepairFee5 = 0;
             if (lbAddFlag || lbEdit)
                 return;
-            if (cUSTOMER_NOTextBox.EditValue.ToString().Trim().Length > 0)
+            if (!String.IsNullOrEmpty((String)cUSTOMER_NOTextBox.EditValue))
             {
+                iACDataSet.CUSTOMER.Clear();
                 cUSTOMERTableAdapter.Fill(iACDataSet.CUSTOMER, cUSTOMER_NOTextBox.EditValue.ToString().Trim());
             }
             else
-                if (cUSTOMER_PURCHASE_ORDERTextBox.EditValue.ToString().Trim().Length > 0)
+                if(!String.IsNullOrEmpty((String)cUSTOMER_PURCHASE_ORDERTextBox.EditValue))
                 {
+                    iACDataSet.CUSTOMER.Clear();
                     cUSTOMERTableAdapter.FillByPurchaseOrder(iACDataSet.CUSTOMER, cUSTOMER_PURCHASE_ORDERTextBox.EditValue.ToString().Trim());
-                    // Moses Newman 02/28/2018 Added fill of cUSTOMER_NOTextBox.Text with found customer_no
+                    // Moses Newman 02/28/2018 Added fill of cUSTOMER_NOTextBox.EditValue with found customer_no
                     if (iACDataSet.CUSTOMER.Rows.Count > 0)
                     {
                         cUSTOMER_NOTextBox.EditValue = iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO");
@@ -947,21 +949,21 @@ namespace IAC2021SQL
                 textBox8.DataBindings.Add(new System.Windows.Forms.Binding("Text", DealerListCustbindingSource, "DEALER_NAME", true));
                 // Moses Newman 04/10/2014 add dealer state to first tab customer screen
                 dEALERTableAdapter.Fill(iACDataSet.DEALER, iACDataSet.CUSTOMER.Rows[0].Field<Int32>("CUSTOMER_DEALER"));
-                cUSTOMER_PURCHASE_ORDERTextBox.Text = iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_PURCHASE_ORDER").ToString();
-                cUSTHISTTableAdapter.FillByCustomerNo(iACDataSet.CUSTHIST, cUSTOMER_NOTextBox.Text.ToString());
-                cOMMENTTableAdapter.FillByCustNo(iACDataSet.COMMENT, cUSTOMER_NOTextBox.Text.ToString());
-                vEHICLETableAdapter.FillByCustomerNo(iACDataSet.VEHICLE, cUSTOMER_NOTextBox.Text.ToString());
-                aLTNAMETableAdapter.Fill(iACDataSet.ALTNAME, cUSTOMER_NOTextBox.Text.ToString(), cUSTOMER_IAC_TypeTextBox.Text.ToString());
-                oPNBANKTableAdapter.Fill(iACDataSet.OPNBANK, cUSTOMER_NOTextBox.Text.ToString(), "C");
+                cUSTOMER_PURCHASE_ORDERTextBox.EditValue = iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_PURCHASE_ORDER").ToString();
+                cUSTHISTTableAdapter.FillByCustomerNo(iACDataSet.CUSTHIST, cUSTOMER_NOTextBox.EditValue.ToString().Trim());
+                cOMMENTTableAdapter.FillByCustNo(iACDataSet.COMMENT, cUSTOMER_NOTextBox.EditValue.ToString().Trim());
+                vEHICLETableAdapter.FillByCustomerNo(iACDataSet.VEHICLE, cUSTOMER_NOTextBox.EditValue.ToString().Trim());
+                aLTNAMETableAdapter.Fill(iACDataSet.ALTNAME, cUSTOMER_NOTextBox.EditValue.ToString().Trim(), cUSTOMER_IAC_TypeTextBox.Text.ToString());
+                oPNBANKTableAdapter.Fill(iACDataSet.OPNBANK, cUSTOMER_NOTextBox.EditValue.ToString().Trim(), "C");
                 // Moses Newman 08/02/2020 Add ClosedCreditManager 
-                closedCreditManagerTableAdapter.Fill(tsbDataSet.ClosedCreditManager, cUSTOMER_NOTextBox.Text.ToString(), "I");
+                closedCreditManagerTableAdapter.Fill(tsbDataSet.ClosedCreditManager, cUSTOMER_NOTextBox.EditValue.ToString().Trim(), "I");
                 // Moses Newman 08/24/2020 possibly unsecured NON-AUTO loan!
                 //if(tsbDataSet.ClosedCreditManager.Rows.Count == 0)
-                    //closedCreditManagerTableAdapter.Fill(tsbDataSet.ClosedCreditManager, cUSTOMER_NOTextBox.Text.ToString(), "01");
+                    //closedCreditManagerTableAdapter.Fill(tsbDataSet.ClosedCreditManager, cUSTOMER_NOTextBox.EditValue.ToString(), "01");
                 // Moses Newman 12/23/2013 Add Email Address Record
-                emailTableAdapter.Fill(iACDataSet.Email, cUSTOMER_NOTextBox.Text);
+                emailTableAdapter.Fill(iACDataSet.Email, cUSTOMER_NOTextBox.EditValue.ToString().Trim());
                 // Moses Newman 04/18/2019 Add Repo Log Tab
-                RepoLogTableAdapter.FillByCustomerNo(RepoData.RepoLog, cUSTOMER_NOTextBox.Text);
+                RepoLogTableAdapter.FillByCustomerNo(RepoData.RepoLog, cUSTOMER_NOTextBox.EditValue.ToString().Trim());
                 gridControlRepoLog.DataSource = RepoData.RepoLog;
                 // Moses Newman 04/07/2022 
                 cUSTOMER_DEALERcomboBox.EditValue = iACDataSet.CUSTOMER.Rows[0].Field<Int32>("CUSTOMER_DEALER");
@@ -972,7 +974,7 @@ namespace IAC2021SQL
                 }
                 else
                 {
-                    loLastBalance = cUSTHISTTableAdapter.LastBalance(cUSTOMER_NOTextBox.Text);
+                    loLastBalance = cUSTHISTTableAdapter.LastBalance(cUSTOMER_NOTextBox.EditValue.ToString().Trim());
                     if (loLastBalance != null)
                         gnCustomerBalance = (Decimal)loLastBalance;
                     else
@@ -985,14 +987,14 @@ namespace IAC2021SQL
                 else
                     gnCustomerBuyout = gnCustomerBalance;
                 if (iACDataSet.ALTNAME.Rows.Count == 0)
-                    Create_New_ALTNAMERecord(cUSTOMER_NOTextBox.Text.ToString().TrimEnd());
+                    Create_New_ALTNAMERecord(cUSTOMER_NOTextBox.EditValue.ToString().Trim());
                 if (iACDataSet.OPNBANK.Rows.Count == 0)
-                    Create_New_OPNBANKRecord(cUSTOMER_NOTextBox.Text.ToString().TrimEnd());
+                    Create_New_OPNBANKRecord(cUSTOMER_NOTextBox.EditValue.ToString().Trim());
                 if (iACDataSet.VEHICLE.Rows.Count == 0)
-                    Create_New_VEHICLERecord(cUSTOMER_NOTextBox.Text.ToString().TrimEnd());
+                    Create_New_VEHICLERecord(cUSTOMER_NOTextBox.EditValue.ToString().Trim());
                 // Moses Newman 12/23/2013 Add Email Address Record
                 if (iACDataSet.Email.Rows.Count == 0)
-                    Create_New_EmailRecord(cUSTOMER_NOTextBox.Text);
+                    Create_New_EmailRecord(cUSTOMER_NOTextBox.EditValue.ToString().Trim());
                 // Moses Newman 09/5/2012 set unearned interest to 0 if NULL!
                 if (iACDataSet.CUSTOMER.Rows[0].Field<Nullable<Decimal>>("CUSTOMER_UE_INTEREST") == null)
                     iACDataSet.CUSTOMER.Rows[0].SetField<Decimal>("CUSTOMER_UE_INTEREST", 0);
@@ -1141,7 +1143,7 @@ namespace IAC2021SQL
 
             // Moses Newman 03/01/2012 Create new opnbank record if none!
             if (iACDataSet.OPNBANK.Rows.Count == 0)
-                Create_New_OPNBANKRecord(cUSTOMER_NOTextBox.Text.ToString().TrimEnd());
+                Create_New_OPNBANKRecord(cUSTOMER_NOTextBox.EditValue.ToString().Trim());
             iACDataSet.OPNBANK.Rows[0].SetField<String>("OPNBANK_EXP_MMYY", iACDataSet.OPNBANK.Rows[0].Field<String>("OPNBANK_EXP_MMYY").PadRight(4, ' '));
             if (iACDataSet.OPNBANK.Rows[0].Field<String>("OPNBANK_EXP_MMYY").Substring(2, 2).Trim() != "")
             {
@@ -1292,517 +1294,6 @@ namespace IAC2021SQL
 
         private void cUSTOMER_NOTextBox_Validated(object sender, EventArgs e)
         {
-            string lsCustomerNo;
-            if (lbEdit)
-                return;  // Do not requery data on an edit!!!
-            if (cUSTOMER_NOTextBox.Text.ToString().Trim().Length < 6 && cUSTOMER_NOTextBox.Text.ToString().Trim().Length > 0)
-                cUSTOMER_NOTextBox.Text = cUSTOMER_NOTextBox.Text.Trim().PadLeft(6, '0');
-            lsCustomerNo = cUSTOMER_NOTextBox.Text.ToString().Trim();
-            if (lsCustomerNo == "")  // Moses Newman 03/02/2012 previously only returned if in Add Mode!!!
-                return;
-            if (!lbAddFlag)
-                setRelatedData();
-            if (iACDataSet.CUSTOMER.Rows.Count == 0 && lsCustomerNo != "")
-            {
-                var ldlgAnswer = MessageBox.Show("Sorry no customers found that match your selected account number! Would you like to add a new record?", "Add New Prompt", MessageBoxButtons.YesNo);
-                if (ldlgAnswer == DialogResult.No)
-                {
-                    cUSTOMER_NOTextBox.Text = "";
-                    ActiveControl = cUSTOMER_NOTextBox;
-                    cUSTOMER_NOTextBox.Select();
-                }
-                else
-                {
-                    Text = "Closed Customer Maintenance (ADD Mode)";
-                    String lcHighValue = "";
-                    lcHighValue += (char)255;
-
-                    lbAddFlag = true;
-                    cUSTOMERBindingSource.AddNew();
-                    cUSTOMERBindingSource.EndEdit();
-                    toolStripButton1.Enabled = false;
-                    toolStripButtonSave.Enabled = true;
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_NO", lsCustomerNo);
-                    cUSTOMERBindingSource.EndEdit();
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_PURCHASE_ORDER", "");
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_ADD_ON", " ");
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_IAC_TYPE", "C");
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_POST_IND", lcHighValue);
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_ACT_STAT", "A");
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_FIRST_NAME", "");
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_LAST_NAME", "");
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_SUFFIX", "");
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_CONTACT", "");
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_STREET_1", "");
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_STREET_2", "");
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_CITY", "");
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_STATE", "");
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_ZIP_1", "");
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_ZIP_2", "");
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_PHONE_NO", "");
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_PHONE_EXT", "");
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_WORK_PHONE", "");
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_WORK_EXT", "");
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_CELL_PHONE", "");
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_SS_1", "");
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_SS_2", "");
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_SS_3", "");
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_REBATE_CODE", "");
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_COMMENT_1", "");
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_COMMENT_2", "");
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_INSURANCE", "N");
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_AUTOPAY", "N");
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Int32>("CUSTOMER_CREDIT_SCORE_N", 0);
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_CREDIT_SCORE_A", "");
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_ALLOTMENT", "N");
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Int32>("CUSTOMER_DISTRIBUTOR_NO", 0);
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Int32>("CUSTOMER_BRANCH_NUMBER", 0);
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_WRONG_ADDRESS", "N");
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_NO_CONTACT", "N");
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_COS_NAME", "");
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_COS_PHONE", "");
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_REPO_IND", "N");
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_REPO_CDE", "");
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_PAYMENT_TYPE", "");
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_PAYMENT_CODE", "");
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<DateTime>("CUSTOMER_INIT_DATE", DateTime.Now.Date.AddMonths(1));
-                    // Moses Newman 01/20/2015 Add Contract Date
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<DateTime>("ContractDate", DateTime.Now.Date);
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Nullable<DateTime>>("CUSTOMER_LAST_PAYMENT_DATE", null);
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Int32>("CUSTOMER_DAY_DUE", 0);
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Int32>("CUSTOMER_TERM", 0);
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_CREDIT_STATUS", "N");
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Decimal>("CUSTOMER_REGULAR_AMOUNT", 0);
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Decimal>("CUSTOMER_BALANCE", 0);
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Decimal>("CUSTOMER_LOAN_AMOUNT", 0);
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Decimal>("CUSTOMER_LOAN_INTEREST", 0);
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Decimal>("CUSTOMER_LATE_CHARGE", 0);
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Decimal>("CUSTOMER_LATE_CHARGE_BAL", 0);
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Decimal>("CUSTOMER_PAID_INTEREST", 0);
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Decimal>("CUSTOMER_UE_INTEREST", 0);
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Decimal>("CUSTOMER_ANNUAL_PERCENTAGE_RATE", 0);
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Decimal>("CUSTOMER_LOAN_CASH", 0);
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Int32>("CUSTOMER_NO_OF_PAYMENTS_MADE", 0);
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_INT_OVERRIDE", "N");
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Double>("CUSTOMER_PARTIAL_PAYMENTS", 0);
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_CREDIT_BUREAU", "Y");
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Decimal>("CUSTOMER_DEALER_DISC", 0);
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Decimal>("CUSTOMER_DEALER_DISC_BAL", 0);
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Int32>("CUSTOMER_CREDIT_LIMIT", 0);
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Decimal>("CUSTOMER_LAST_PAYMENT_MADE", 0);
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_REBATE_CODE", "");
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_AMORTIZE_IND", "S");
-                    // Moses Newman 12/18/2013 Remove all references to CUSTOMER_LETTER_N FIELDS AS NO LONGER IN TABLE!
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Int32>("CUSTOMER_BUYOUT", 0);
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Int32>("CUSTOMER_CONTROL_MONTH", 0);
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Int32>("CUSTOMER_CONTROL_YEAR", 0);
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Int32>("CUSTOMER_CREDIT_AVAILABLE", 0);
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_ALT_FLAG", "N");
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("COSIGNER_FIRST_NAME", "");
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("COSIGNER_LAST_NAME", "");
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("COSIGNER_HOME_PHONE", "");
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("COSIGNER_WORK_PHONE", "");
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("COSIGNER_WORK_EXT", "");
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("COSIGNER_CELL_PHONE", "");
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("COSIGNER_ADDRESS1", "");
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("COSIGNER_CITY", "");
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("COSIGNER_STATE", "");
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("COSIGNER_ZIP_CODE", "");
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("COSIGNER_SS1", "");
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("COSIGNER_SS2", "");
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("COSIGNER_SS3", "");
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("COSIGNER_SAME_ADDRESS", "N");
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("COSIGNER_JUNIOR", "");
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Nullable<DateTime>>("COSIGNER_DOB_DATE", null);
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<DateTime>("MaturityDate", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<DateTime>("CUSTOMER_INIT_DATE").AddMonths(iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<Int32>("CUSTOMER_TERM") - 1));
-                    this.MaturityDate.EditValue = iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<DateTime>("CUSTOMER_INIT_DATE").AddMonths(iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<Int32>("CUSTOMER_TERM") - 1);
-                    this.MaturityDate.Refresh();
-                    Create_New_ALTNAMERecord(lsCustomerNo);
-                    Create_New_OPNBANKRecord(lsCustomerNo);
-                    Create_New_VEHICLERecord(lsCustomerNo);
-                    // Moses Newman 12/23/2013 Create Email Address Record
-                    Create_New_EmailRecord(lsCustomerNo);
-
-                    // Moses Newman 06/12/2018 Create new CustomerFees Record
-                    // Moses Newman 09/21/2018 ONLY add if a CustomerFees record does NOT already exist!
-                    CustomerFeesTableAdapter.Fill(iACDataSet.CustomerFees, iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO"));
-                    if (iACDataSet.CustomerFees.Rows.Count < 1)  // Moses Newman 06/12/2018 Add new record if none exists in CustomerFees!
-                    {
-                        IACDataSet.CustomerFeesRow NewCustomerFeesRow = iACDataSet.CustomerFees.NewCustomerFeesRow();
-                        NewCustomerFeesRow.CustomerNo = iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO");
-                        iACDataSet.CustomerFees.Rows.Add(NewCustomerFeesRow);
-                        // Moses Newman 02/23/2019 Make sure new record has the correct CUSTOMER_NO!!!
-                        iACDataSet.CustomerFees.Rows[0].SetField<String>("CustomerNo", iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO"));
-                        // Add record even if not yet in add or edit mode!
-                        CustomerFeesTableAdapter.Update(iACDataSet.CustomerFees.Rows[0]);
-                    }
-
-
-                    // Customer Info
-                    cUSTOMER_NOTextBox.Enabled = true;
-                    cUSTOMER_PURCHASE_ORDERTextBox.Enabled = true;
-                    cUSTOMER_ACT_STATTextBox.Enabled = false;
-                    cUSTOMER_FIRST_NAMETextBox.Enabled = true;
-                    cUSTOMER_LAST_NAMETextBox.Enabled = true;
-                    comboBoxGN.Enabled = true;
-                    cUSTOMER_CONTACTTextBox.Enabled = true;
-                    cUSTOMER_STREET_1TextBox.Enabled = true;
-                    cUSTOMER_STREET_2TextBox.Enabled = true;
-                    cUSTOMER_CITYTextBox.Enabled = true;
-                    cUSTOMER_STATETextBox.Enabled = true;
-                    cUSTOMER_ZIP_1TextBox.Enabled = true;
-                    cUSTOMER_ZIP_2TextBox.Enabled = true;
-                    cUSTOMER_PHONE_NOTextBox.Enabled = true;
-                    cUSTOMER_PHONE_EXTtextBox.Enabled = true;
-                    cUSTOMER_WORK_PHONETextBox.Enabled = true;
-                    cUSTOMER_WORK_EXTtextBox.Enabled = true;
-                    cUSTOMER_CELL_PHONETextBox.Enabled = true;
-                    txtDOB.Enabled = true;
-                    cUSTOMER_SS_1TextBox.Enabled = true;
-                    cUSTOMER_SS_2TextBox.Enabled = true;
-                    cUSTOMER_SS_3TextBox.Enabled = true;
-                    cUSTOMER_DEALERcomboBox.Enabled = true;
-                    cUSTOMER_COMMENT_1TextBox.Enabled = true;
-                    cUSTOMER_COMMENT_2TextBox.Enabled = true;
-                    checkEditCustomerInsurance.Enabled = true;
-                    checkEditAutoPay.Enabled = true;
-                    cUSTOMER_CREDIT_SCORE_NTextBox.Enabled = true;
-                    cUSTOMER_CREDIT_SCORE_ATextBox.Enabled = true;
-                    checkEditAllotment.Enabled = true;
-                    cUSTOMER_DISTRIBUTOR_NOTextBox.Enabled = true;
-                    cUSTOMER_BRANCH_NUMBERTextBox.Enabled = true;
-                    checkEditWrongAddress.Enabled = true;
-                    checkEditNoContact.Enabled = true;
-                    // Moses Newman 12/23/2013 Added Email Address
-                    richTextBoxEmailAddress.Enabled = true;
-                    // Moses Newman 12/23/2013 Added Refi CheckBox
-                    checkBoxRefi.Enabled = true;
-                    //
-                    // Moses Newman 01/13/2019 Added Warranty CheckBox and OpenAccount
-                    checkBoxVehicleWarranty.Enabled = true;
-                    //
-                    // Moses Newman 01/29/2017 Added Middle Name, GAP Insurance type, Warranty, TIN
-                    textBoxMiddleName.Enabled = true;
-                    comboBoxGAP.Enabled = true;
-                    checkBoxWarranty.Enabled = true;
-                    // Moses Newman 01/24/2018 added ExcludeVSI
-                    checkBoxExcludeVSI.Enabled = true;
-                    textBoxTIN.Enabled = true;
-                    // Moses Newman 09/02/2017
-                    //buttonValidate.Enabled = true;
-                    // Moses Newman 09/06/2017
-                    radioButtonAcct.Enabled = true;
-                    buttonConfirm.Enabled = true;
-                    textBoxAuthNo.Enabled = true;
-                    checkBoxDNTAcct.Enabled = true;
-                    // Moses Newman 09/20/2021
-                    radioButtonCOSAcct.Enabled = true;
-                    buttonCOSConfirm.Enabled = true;
-                    textBoxCOSAuthNo.Enabled = true;
-                    checkBoxCOSDNTAcct.Enabled = true;
-                    // Moses Newman 05/24/2018 
-                    checkEditMilitary.Enabled = true;
-                    // Moses Newman 12/19/2019 Send to Dealer Checkbox added.
-                    if (textBoxDealerEmail.Text.Trim() != "")
-                    {
-                        checkBoxSendToDealer.Visible = true;
-                        checkBoxSendToDealer.Enabled = true;
-                    }
-                    else
-                    {
-                        checkBoxSendToDealer.Enabled = false;
-                        checkBoxSendToDealer.Visible = false;
-                    }
-                    checkBoxSendToDealer.Refresh();
-                    // Customer Info 2
-                    txtFirstPayDate.Enabled = true;
-                    comboBoxDayDue.Enabled = true;
-                    txtTerm.Enabled = true;
-                    checkEditCollectionAgent.Enabled = true;
-                    txtRegularPay.Enabled = true;
-                    txtLoan.Enabled = true;
-                    txtLoanInterest.Enabled = true;
-                    txtAPR.Enabled = true;
-                    txtCASH.Enabled = true;
-                    txtNoOfPaymentsMade.Enabled = true;
-                    // Moses Newman 01/08/2014 Do not enable override interest field if Annual Interest is set to ZERO!!!
-                    if (iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<Decimal>("CUSTOMER_ANNUAL_PERCENTAGE_RATE") != 0)
-                        checkEditOverideInterest.Enabled = true;
-                    else
-                        checkEditOverideInterest.Enabled = false;
-                    txtPaymentDate.Enabled = false;
-                    txtPaymentDate.EditValue = null;
-                    nullableDateTimePickerPayDate.EditValue = txtPaymentDate.EditValue;
-                    nullableDateTimePickerPayDate.Text = txtPaymentDate.Text;
-                    txtPaymentType.Enabled = true;
-                    txtPaymentCode.Enabled = true;
-                    txtLateCharge.Enabled = true;
-                    txtLateChargeBal.Enabled = true;
-                    txtLastPaymentMade.Enabled = true;
-                    txtCustomerBalance.Enabled = true;
-                    txtPaidInterest.Enabled = true;
-                    txtUEInterest.Enabled = true;
-                    txtPaidThrough.Enabled = true;
-                    txtCustomerBuyout.Enabled = true;
-                    txtCustomerPayRem2.Enabled = true;
-                    txtDealerDisc.Enabled = true;
-                    txtContractStatus.Enabled = true;
-                    txtPaidDiscount.Enabled = true;
-                    txtDealerDiscBal.Enabled = true;
-                    txtCreditLimit.Enabled = true;
-                    txtRebateCode.Enabled = true;
-                    txtCreditAvailable.Enabled = true;
-                    txtControlDate.Enabled = true;
-                    txtNumberofMonths.Enabled = true;
-                    // Moses Newman 08/26/2020 retired these objects
-                    //txtCreditBureau.Enabled = true;
-                    //listBoxTSBCommentCode.Enabled = true;
-                    // Moses Newman 01/20/2015 Add Contract Date
-                    DateTimePickerContractDate.Enabled = true;
-                    // Moses Newman 06/19/2015 add TSB Payment Rating Override
-                    // Moses Newman 08/26/2020 retired these items
-                    //checkBoxTSBOverride.Enabled = true;
-                    //comboBoxTSBPaymentRating.Enabled = true;
-                    // Moses Newman 12/09/2018 Add OverrideLateCharge
-                    checkBoxOverrideLateCharge.Enabled = true;
-                    // Moses Newman 12/22/2019
-                    nullableDateTimePickerFundingDate.Enabled = true;
-                    // Moses Newman 07/21/2020 Add checkbox for overpayment check issue and check number.
-                    checkBoxCheckIssued.Enabled = true;
-                    textBoxCheckNo.Enabled = true;
-                    // Moses Newman 02/28/2021 Add CheckBox for Received Contrat? and Date Contract Received fields
-                    colorCheckBoxReceivedContract.Enabled = true;
-                    if (colorCheckBoxReceivedContract.Checked)
-                    {
-                        nullableDateTimePickerDateContractReceived.Enabled = true;
-                        nullableDateTimePickerDateContractReceived.Visible = true;
-                    }
-                    else
-                    {
-                        nullableDateTimePickerDateContractReceived.Enabled = false;
-                        nullableDateTimePickerDateContractReceived.Visible = false;
-                    }
-
-                    txtCOSFirstName.Enabled = true;
-                    txtCOSLastName.Enabled = true;
-                    // Moses Newman 06/09/2017 changed txtCOSJunior to comboBox supporting gencodes.
-                    comboBoxCOSJunior.Enabled = true;
-                    txtCOSPhone.Enabled = true;
-                    checkEditUsePrimaryAddress.Enabled = true;
-                    txtCOSWorkPhone.Enabled = true;
-                    txtCOSWorkExt.Enabled = true;
-                    txtCOSAddress.Enabled = true;
-                    txtCOSCell.Enabled = true;
-                    txtCOSCity.Enabled = true;
-                    txtCOSSS_1.Enabled = true;
-                    txtCOSSS_2.Enabled = true;
-                    txtCOSSS_3.Enabled = true;
-                    txtCOSState.Enabled = true;
-                    txtCOSZip.Enabled = true;
-                    txtCOSDOB.Enabled = true;
-                    txtCOSDOB.EditValue = null;
-                    // Moses Newman 04/30/2019 Added CosignerTierPoints
-                    textBoxCosignerTierPoints.Enabled = true;
-
-
-
-                    txtALTContact1.Enabled = true;
-                    txtALTContact2.Enabled = true;
-                    txtALTContact3.Enabled = true;
-                    txtALTContact4.Enabled = true;
-                    txtALTRelation1.Enabled = true;
-                    txtALTRelation2.Enabled = true;
-                    txtALTRelation3.Enabled = true;
-                    txtALTRelation4.Enabled = true;
-                    txtALTPhone1.Enabled = true;
-                    txtALTPhone2.Enabled = true;
-                    txtALTPhone3.Enabled = true;
-                    txtALTPhone4.Enabled = true;
-                    txtALTExt1.Enabled = true;
-                    txtALTExt2.Enabled = true;
-                    txtALTExt3.Enabled = true;
-                    txtALTExt4.Enabled = true;
-                    // Moses Newman 01/29/2017
-                    textBoxCosignerCreditScore.Enabled = true;
-                    textBoxCosignerAnnualIncome.Enabled = true;
-                    textBoxCosignerEmail.Enabled = true;
-
-
-                    textEditBankName.Enabled = true;
-                    textEditBankCity.Enabled = true;
-                    textEditBankState.Enabled = true;
-                    textEditBankRoutingNumber.Enabled = true;
-                    textEditBankCheckDigit.Enabled = true;
-                    textEditBankAccountNumber.Enabled = true;
-                    checkEditBankAutoPay.Enabled = true;
-                    textEditBankMonthlyPayment.Enabled = true;
-                    // Moses Newman 01/29/2017 Added Maturity Date
-                    MaturityDate.Enabled = true;
-
-                    // Vehice Tab
-                    txtVehicleYear.Enabled = true;
-                    txtMake.Enabled = true;
-                    txtModel.Enabled = true;
-                    txtVIN.Enabled = true;
-                    txtInsuranceCompany.Enabled = true;
-                    txtPolicyNumber.Enabled = true;
-                    txtInsuranceAgent.Enabled = true;
-                    txtAgentPhone.Enabled = true;
-                    txtEffectiveDate.Enabled = true;
-                    txtEffectiveDate.EditValue = null;
-
-                    txtExpirationDate.Enabled = true;
-                    txtExpirationDate.EditValue = null;
-
-                    txtJointOwner.Enabled = true;
-                    checkEditJointOwnership.Enabled = true;
-                    // Moses Newman 01/30/2022 Verifacto Fields
-                    textEditPolicyStatus.Enabled = true;
-                    dateEditCancellationDate.Enabled = true;
-                    textEditPortfolio.Enabled = true;
-                    textEditIssueName1.Enabled = true;
-                    dateEditIssueDate1.Enabled = true;
-                    textEditIssueName2.Enabled = true;
-                    dateEditIssueDate2.Enabled = true;
-                    textEditIssueName3.Enabled = true;
-                    dateEditIssueDate3.Enabled = true;
-                    // Moses Newman 02/11/2022
-                    checkEditHasCollision.Enabled = true;
-                    checkEditHasComprehensive.Enabled = true;
-                    textEditCollisionDeductible.Enabled = true;
-                    textEditComprehensiveDeductible.Enabled = true;
-
-
-                    // Moses Newman 12/18/2013 Add new fields to Vehicle tab and move Credit score, Repo, and Misc fields to Vehicle Tab.
-                    textBoxMileage.Enabled = true;
-                    nullableDateTimePickerRepoDate.Enabled = true;
-                    textBoxRepoAgent.Enabled = true;
-                    textBoxCurrentLocation.Enabled = true;
-                    textBoxAuctionHouse.Enabled = true;
-                    checkBoxTitleReceived.Enabled = true;
-                    nullableDateTimePickerTitleDateReceived.Enabled = true;
-                    // Moses Newman 09/08/2019 TitleReleased, DateTitleReleased, ElectronicLien
-                    checkBoxTitleReleased.Enabled = true;
-                    nullableDateTimePickerDateTitleReleased.Enabled = true;
-                    checkBoxElectronicLien.Enabled = true;
-                    cUSTOMER_CREDIT_SCORE_NTextBox.Enabled = true;
-                    cUSTOMER_CREDIT_SCORE_ATextBox.Enabled = true;
-                    comboBoxCreditCode.Enabled = true;
-                    // Moses Newman 12/9/2013 Add dropdowns for credit score and reposessions
-                    cUSTOMER_REPO_INDtextBox.Enabled = true;
-                    cUSTOMER_REPO_CDEtextBox.Enabled = true;
-                    // Moses Newman 11/22/2016 Handle new IND code of R.
-                    if (cUSTOMER_REPO_INDtextBox.Text == "Y" || cUSTOMER_REPO_INDtextBox.Text == "P" || cUSTOMER_REPO_INDtextBox.Text == "R" || cUSTOMER_REPO_INDtextBox.Text == "Z")
-                    {
-                        comboBoxRepoCodes.Enabled = true;
-                    }
-                    else
-                        comboBoxRepoCodes.Enabled = false;
-                    comboBoxRepoInd.Enabled = true;
-                    cUSTOMER_COS_NAMETextBox.Enabled = true;
-                    cUSTOMER_COS_PHONETextBox.Enabled = true;
-                    // Moses Newman 01/09/2014 Add Current Location Date and Auction House Date
-                    nullableDateTimePickerLocDate.Enabled = true;
-                    nullableDateTimePickerAucDate.Enabled = true;
-                    // Moses Newman 04/10/2014 Add Full Recourse Checkbox
-                    checkBoxFullRecourse.Enabled = true;
-                    // Moses Newman 06/13/2018 Add Full Recourse CheckBox to first tab also;
-                    checkBoxFullRecourseTab1.Enabled = true;
-                    // Moses Newman 01/29/2017
-                    textBoxBuyersAnnualIncome.Enabled = true;
-                    textBoxTier.Enabled = true;
-                    // Moses Newman 04/30/2019 Added TierPoints
-                    textBoxTierPoints.Enabled = true;
-                    // Moses Newman 05/13/2019 Add LTV
-                    textBoxLTV.Enabled = true;
-                    // Moses Newman 05/20/2019 Added DealerCashPrice
-                    textBoxDealerCashPrice.Enabled = true;
-
-
-
-                    // Comment Tab
-                    //Moses Newman 11/23/2021 Use DevExpress GridView instead of DataGridView for comments tab now
-                    cOMMENTGridControl.Enabled = true;
-                    cOMMENTgridView.OptionsBehavior.Editable = true;
-                    cOMMENTgridView.OptionsView.NewItemRowPosition = NewItemRowPosition.Top;
-
-                    checkBoxSimple.Checked = true;
-                    checkBoxSimple.Visible = true;
-
-                    // Moses Newman 06/12/2018
-                    // Fees
-                    textBoxRepoFees.Enabled = true;
-                    textBoxStorageFees.Enabled = true;
-                    textBoxImpoundFees.Enabled = true;
-                    textBoxResaleFees.Enabled = true;
-                    textBoxRepairFee1.Enabled = true;
-                    textBoxRepairFee2.Enabled = true;
-                    textBoxRepairFee3.Enabled = true;
-                    textBoxRepairFee4.Enabled = true;
-                    textBoxRepairFee5.Enabled = true;
-
-                    // Moses Newman 08/03/2020
-                    //TSB
-                    //textBoxCurrentBalance.Enabled = true;
-                    //textBoxAmountPastDue.Enabled = true;
-                    //textBoxActualPaymentAmount.Enabled = true;
-                    //textBoxHighestCredit.Enabled = true;
-                    //textBoxOrgChargeOffAmount.Enabled = true;
-                    //textBoxSchMonthlyPaymentAmount.Enabled = true;
-                    //textBoxCreditLimit.Enabled = true;
-                    //nullableDateTimePickerDateofLastPayment.Enabled = true;
-                    //nullableDateTimePickerDateofFirstDelinquency.Enabled = true;
-                    //nullableDateTimePickerDateofAccountInformation.Enabled = true;
-                    //nullableDateTimePickerDateOpened.Enabled = true;
-                    //nullableDateTimePickerDateClosed.Enabled = true;
-                    nullableDateTimePickerFollowUpDate.Enabled = true;
-                    comboBoxAccountStatus.Enabled = true;
-                    comboBoxPaymentRating.Enabled = true;
-                    comboBoxSpecialComment.Enabled = true;
-                    comboBoxAccountType.Enabled = true;
-                    comboBoxConsumerIndicator.Enabled = true;
-                    comboBoxComplianceConditionCode.Enabled = true;
-                    comboBoxECOACode.Enabled = true;
-                    //comboBoxInterestType.Enabled = true;
-                    //comboBoxPortfolioType.Enabled = true;
-                    //comboBoxTermsFrequency.Enabled = true;
-                    //textBoxTermsDuration.Enabled = true;
-                    // Moses Newman 08/24/2020 enable new override TSB checkboxes
-                    checkBoxReportTSB.Enabled = true;
-                    checkBoxPurge.Enabled = true;
-                    checkBoxFollowUpDate.Enabled = true;
-                    checkBoxAccountStatus.Enabled = true;
-                    checkBoxPaymentRating.Enabled = true;
-                    checkBoxSpecialComment.Enabled = true;
-                    checkBoxAccountType.Enabled = true;
-                    checkBoxConsumerIndicator.Enabled = true;
-                    checkBoxComplianceCode.Enabled = true;
-                    checkBoxECOACode.Enabled = true;
-                    checkBoxPaymentProfile.Enabled = true;
-                    // Moses Newman 09/04/2020 toggle Edit Payment History only enable if there is a Credit Manager Record
-                    if (tsbDataSet.ClosedCreditManager.Rows.Count != 0)
-                        this.buttonEditPaymentHistory.Enabled = true;
-                    else
-                        this.buttonEditPaymentHistory.Enabled = false;
-
-                    this.toolStripButtonEdit.Enabled = false;
-                    ActiveControl = cUSTOMER_PURCHASE_ORDERTextBox;
-                    cUSTOMER_PURCHASE_ORDERTextBox.Select();
-                }
-            }
-            else
-            {
-                if (!lbAddFlag && !lbEdit)
-                    toolStripButtonEdit.Enabled = true;
-                // Moses Newman 06/12/2020 Add test for not posted, can only delete non posted new business!
-                String lcHighValue = ""+(char)255;
-                if (iACDataSet.CUSTHIST.Rows.Count == 0 && !lbEdit && iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<String>("CUSTOMER_POST_IND") == lcHighValue)
-                    toolStripButtonDelete.Enabled = true;
-                else
-                    toolStripButtonDelete.Enabled = false;
-                ActiveControl = cUSTOMER_FIRST_NAMETextBox;
-                cUSTOMER_FIRST_NAMETextBox.Select();
-            }
         }
 
         private void cUSTOMER_PURCHASE_ORDERTextBox_Validated(object sender, EventArgs e)
@@ -1869,14 +1360,14 @@ namespace IAC2021SQL
             // Moses Newman 8/8/2013 Return if No Customer Selected
             if (iACDataSet.CUSTOMER.Rows.Count == 0)
                 return;
-            Object loLockedBy = cUSTOMERTableAdapter.LockedBy(cUSTOMER_NOTextBox.Text),
-                   loLockedTime = cUSTOMERTableAdapter.LockTime(cUSTOMER_NOTextBox.Text);
+            Object loLockedBy = cUSTOMERTableAdapter.LockedBy(cUSTOMER_NOTextBox.EditValue.ToString().Trim()),
+                   loLockedTime = cUSTOMERTableAdapter.LockTime(cUSTOMER_NOTextBox.EditValue.ToString().Trim());
 
             if (loLockedBy != null && ((String)loLockedBy).TrimEnd() != "")
             {
                 IACDataSetTableAdapters.ULISTTableAdapter ULISTTableAdapter = new IACDataSetTableAdapters.ULISTTableAdapter();
                 ULISTTableAdapter.FillById(iACDataSet.ULIST, Program.gsUserID);
-                MessageBox.Show("*** CUSTOMER: " + cUSTOMER_NOTextBox.Text + " WAS LOCKED BY USER: " +
+                MessageBox.Show("*** CUSTOMER: " + cUSTOMER_NOTextBox.EditValue.ToString().Trim() + " WAS LOCKED BY USER: " +
                     loLockedBy + " " +
                     iACDataSet.ULIST.Rows[0].Field<String>("LIST_NAME") +
                     "\nON: " + ((DateTime)loLockedTime).ToLongDateString() + " " +
@@ -1894,11 +1385,11 @@ namespace IAC2021SQL
                 cUSTOMERTableAdapter.LockRecord(Program.gsUserID, iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO"));
                 lbILockedIt = true;   //  Make sure other instances of form don't unlocke this record!
                 if (iACDataSet.ALTNAME.Rows.Count == 0)
-                    Create_New_ALTNAMERecord(cUSTOMER_NOTextBox.Text.ToString().TrimEnd());
+                    Create_New_ALTNAMERecord(cUSTOMER_NOTextBox.EditValue.ToString().TrimEnd());
                 if (iACDataSet.OPNBANK.Rows.Count == 0)
-                    Create_New_OPNBANKRecord(cUSTOMER_NOTextBox.Text.ToString().TrimEnd());
+                    Create_New_OPNBANKRecord(cUSTOMER_NOTextBox.EditValue.ToString().TrimEnd());
                 if (iACDataSet.VEHICLE.Rows.Count == 0)
-                    Create_New_VEHICLERecord(cUSTOMER_NOTextBox.Text.ToString().TrimEnd());
+                    Create_New_VEHICLERecord(cUSTOMER_NOTextBox.EditValue.ToString().TrimEnd());
             }
         }
 
@@ -2022,11 +1513,11 @@ namespace IAC2021SQL
             }
 
             // Moses Newman 08/23/2021
-            Program.TVAmortize(ldStartDate, ldFirstPaymentDate, ref lnCash, ref lnTerm, ref lnAPR, ref lnRegularPay, ref lsErrorMessage, ref AmortTable, false, cUSTOMER_NOTextBox.Text, true);
+            Program.TVAmortize(ldStartDate, ldFirstPaymentDate, ref lnCash, ref lnTerm, ref lnAPR, ref lnRegularPay, ref lsErrorMessage, ref AmortTable, false, cUSTOMER_NOTextBox.EditValue.ToString().Trim(), true);
             if (lnRegularPay != 0 && lnTerm != 0)
             {
                 lnTotal = lnRegularPay * lnTerm;
-                TVAPRInfoTableAdapter.Fill(iACDataSet.TVAPRInfo, cUSTOMER_NOTextBox.Text);
+                TVAPRInfoTableAdapter.Fill(iACDataSet.TVAPRInfo, cUSTOMER_NOTextBox.EditValue.ToString().Trim());
                 if (iACDataSet.TVAPRInfo.Rows.Count > 0)
                 {
                     lnCash = (Double)iACDataSet.TVAPRInfo.Rows[0].Field<Decimal>("AmountFinanced");
@@ -2097,13 +1588,13 @@ namespace IAC2021SQL
             IACDataSetTableAdapters.DEALERTableAdapter DEALERTableAdapter = new IACDataSetTableAdapters.DEALERTableAdapter();
             RepoDataSetTableAdapters.CUSTOMERTableAdapter RepoCustomer = new RepoDataSetTableAdapters.CUSTOMERTableAdapter();
 
-            CustomerTableAdapter.Fill(ReportData.CUSTOMER, cUSTOMER_NOTextBox.Text);
+            CustomerTableAdapter.Fill(ReportData.CUSTOMER, cUSTOMER_NOTextBox.EditValue.ToString().Trim());
             CUSTHISTTableAdapter.FillByCustomerNo(ReportData.CUSTHIST, ReportData.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO"));
             COMMENTTableAdapter.FillByCustNo(ReportData.COMMENT, ReportData.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO"));
             // Moses Newman 04/22/2019 Add Repo Log
             RepoLogTableAdapter.FillByCustomerNo(repoDataSet.RepoLog, ReportData.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO"));
             if (repoDataSet.RepoLog.Count > 0)
-                RepoCustomer.Fill(repoDataSet.CUSTOMER, cUSTOMER_NOTextBox.Text);
+                RepoCustomer.Fill(repoDataSet.CUSTOMER, cUSTOMER_NOTextBox.EditValue.ToString().Trim());
             DEALERTableAdapter.Fill(ReportData.DEALER, ReportData.CUSTOMER.Rows[0].Field<Int32>("CUSTOMER_DEALER"));
             ClosedCustomerHistory myReportObject = new ClosedCustomerHistory();
             myReportObject.SetDataSource(ReportData);
@@ -2149,7 +1640,7 @@ namespace IAC2021SQL
             MDImain.CreateFormInstance("FormReciept", false, false, true);
             FormReciept receipt = (FormReciept)MDImain.frm;
 
-            receipt.gsCustomerNo = cUSTOMER_NOTextBox.Text;
+            receipt.gsCustomerNo = cUSTOMER_NOTextBox.EditValue.ToString().Trim();
             receipt.gsOpenClose = "C";
             receipt.Show();
         }
@@ -2174,7 +1665,7 @@ namespace IAC2021SQL
             cOMMENTBindingSource.EndEdit();
             if (lnSeq == 0)
             {
-                loQuery = cOMMENTTableAdapter.SeqNoQuery(cUSTOMER_NOTextBox.Text, DateTime.Now.Date);
+                loQuery = cOMMENTTableAdapter.SeqNoQuery(cUSTOMER_NOTextBox.EditValue.ToString().Trim(), DateTime.Now.Date);
                 if (loQuery != null)
                     lnSeq = (int)loQuery + 1;
                 else
@@ -2184,7 +1675,7 @@ namespace IAC2021SQL
                 lnSeq = lnSeq + 1;
 
             // Moses Newman 10/18/2017 create string unique key that will become word filename!
-            lsCommentKey = cUSTOMER_NOTextBox.Text + DateTime.Now.Date.ToString("yyyyMMdd") + lnSeq.ToString().Trim() + Program.gsUserID;
+            lsCommentKey = cUSTOMER_NOTextBox.EditValue.ToString().Trim() + DateTime.Now.Date.ToString("yyyyMMdd") + lnSeq.ToString().Trim() + Program.gsUserID;
             MailMergeComponents MailMerge = new MailMergeComponents();
             lsDataPath = lsUNCROOT.Trim() + @"CommentAttachments\Letters\";
             // Moses Newman 11/21/2017 Remove hard coded UNC Pathing
@@ -2192,7 +1683,7 @@ namespace IAC2021SQL
             // Moses Newman 02/22/2019 Add Full Comment
             lsFullComment = "Created and sent Letter#" + comboBoxLetterNo.Text.TrimEnd().TrimStart() + ".";
             // Moses Newman 11/21/2017 Remove hard coded UNC Pathing
-            cOMMENTTableAdapter.Insert(cUSTOMER_NOTextBox.Text, DateTime.Now.Date, lnSeq, Program.gsUserID,
+            cOMMENTTableAdapter.Insert(cUSTOMER_NOTextBox.EditValue.ToString().Trim(), DateTime.Now.Date, lnSeq, Program.gsUserID,
                                        lsFullComment,
                                        //"Created and sent Letter#" + comboBoxLetterNo.Text.TrimEnd().TrimStart() + ".",
                                        //" ", " ",
@@ -2201,7 +1692,7 @@ namespace IAC2021SQL
                                        DateTime.Now.Hour.ToString().PadLeft(2, '0') + DateTime.Now.Minute.ToString().PadLeft(2, '0') + DateTime.Now.Second.ToString().PadLeft(2, '0'),
                                        false, @"WordDoc.bmp", lsDataPath + lsCommentKey + ".docx",
                                        Convert.ToInt32(comboBoxLetterNo.Text.TrimEnd().TrimStart()), "", "", 0);
-            cOMMENTTableAdapter.FillByCustNo(iACDataSet.COMMENT, cUSTOMER_NOTextBox.Text);
+            cOMMENTTableAdapter.FillByCustNo(iACDataSet.COMMENT, cUSTOMER_NOTextBox.EditValue.ToString().Trim());
             // Moses Newman 12/23/2019 Send the mailmerge to dealer email if Copy To Dealer selected.
             if(checkBoxSendToDealer.Checked && textBoxDealerEmail.Text.Trim() != "")
             {
@@ -2209,7 +1700,7 @@ namespace IAC2021SQL
                 cOMMENTBindingSource.EndEdit();
                 if (lnSeq == 0)
                 {
-                    loQuery = cOMMENTTableAdapter.SeqNoQuery(cUSTOMER_NOTextBox.Text, DateTime.Now.Date);
+                    loQuery = cOMMENTTableAdapter.SeqNoQuery(cUSTOMER_NOTextBox.EditValue.ToString().Trim(), DateTime.Now.Date);
                     if (loQuery != null)
                         lnSeq = (int)loQuery + 1;
                     else
@@ -2219,14 +1710,14 @@ namespace IAC2021SQL
                     lnSeq = lnSeq + 1;
 
                 // Moses Newman 10/18/2017 create string unique key that will become word filename!
-                lsCommentKey = cUSTOMER_NOTextBox.Text + DateTime.Now.Date.ToString("yyyyMMdd") + lnSeq.ToString().Trim() + cUSTOMER_DEALERcomboBox.EditValue.ToString().Trim() + Program.gsUserID;
+                lsCommentKey = cUSTOMER_NOTextBox.EditValue.ToString().Trim() + DateTime.Now.Date.ToString("yyyyMMdd") + lnSeq.ToString().Trim() + cUSTOMER_DEALERcomboBox.EditValue.ToString().Trim() + Program.gsUserID;
                 // Moses Newman 11/21/2017 Remove hard coded UNC Pathing
                 MailMergeComponents DealerMailMerge = new MailMergeComponents();
                 DealerMailMerge.CreateMailMerge(iACDataSet, true, @"AUTOLETTER#" + lsLetterNo, lsLetterType, true, textBoxDealerEmail.Text.Trim(), lsDataPath + lsCommentKey + ".docx");
                 // Moses Newman 02/22/2019 Add Full Comment
                 lsFullComment = "Created and sent dealer Letter#" + comboBoxLetterNo.Text.TrimEnd().TrimStart() + ".";
                 // Moses Newman 11/21/2017 Remove hard coded UNC Pathing
-                cOMMENTTableAdapter.Insert(cUSTOMER_NOTextBox.Text, DateTime.Now.Date, lnSeq, Program.gsUserID,
+                cOMMENTTableAdapter.Insert(cUSTOMER_NOTextBox.EditValue.ToString().Trim(), DateTime.Now.Date, lnSeq, Program.gsUserID,
                                            lsFullComment,
                                            //"Created and sent Letter#" + comboBoxLetterNo.Text.TrimEnd().TrimStart() + ".",
                                            //" ", " ",
@@ -2235,7 +1726,7 @@ namespace IAC2021SQL
                                            DateTime.Now.Hour.ToString().PadLeft(2, '0') + DateTime.Now.Minute.ToString().PadLeft(2, '0') + DateTime.Now.Second.ToString().PadLeft(2, '0'),
                                            false, @"WordDoc.bmp", lsDataPath + lsCommentKey + ".docx",
                                            Convert.ToInt32(comboBoxLetterNo.Text.TrimEnd().TrimStart()), "", "", 0);
-                cOMMENTTableAdapter.FillByCustNo(iACDataSet.COMMENT, cUSTOMER_NOTextBox.Text);
+                cOMMENTTableAdapter.FillByCustNo(iACDataSet.COMMENT, cUSTOMER_NOTextBox.EditValue.ToString().Trim());
             }
             comboBoxLetterNo.Text = " ";
             comboBoxLetterType.Text = " ";
@@ -2589,7 +2080,7 @@ namespace IAC2021SQL
                 cOMMENTBindingSource.EndEdit();
                 if (lnSeq == 0)
                 {
-                    loQuery = cOMMENTTableAdapter.SeqNoQuery(cUSTOMER_NOTextBox.Text, DateTime.Now.Date);
+                    loQuery = cOMMENTTableAdapter.SeqNoQuery(cUSTOMER_NOTextBox.EditValue.ToString().Trim(), DateTime.Now.Date);
                     if (loQuery != null)
                         lnSeq = (int)loQuery + 1;
                     else
@@ -2601,14 +2092,14 @@ namespace IAC2021SQL
                 lsDataPath = lsUNCROOT.Trim() + @"CommentAttachments\Letters";
                 // Moses Newman 02/22/2019 Add Full Comment
                 lsFullComment = "Created and sent Letter#" + comboBoxLetterNo.Text.TrimEnd().TrimStart() + ".";
-                cOMMENTTableAdapter.Insert(cUSTOMER_NOTextBox.Text, DateTime.Now.Date, lnSeq, Program.gsUserID,
+                cOMMENTTableAdapter.Insert(cUSTOMER_NOTextBox.EditValue.ToString().Trim(), DateTime.Now.Date, lnSeq, Program.gsUserID,
                                            lsFullComment,
                                            //"Created and sent Letter#" + comboBoxLetterNo.Text.TrimEnd().TrimStart() + ".",
                                            //" ", " ",
                                            "  ", (Int32)cUSTOMER_DEALERcomboBox.EditValue,
                                            Program.gsUserID + "  ",
                                            DateTime.Now.Hour.ToString().PadLeft(2, '0') + DateTime.Now.Minute.ToString().PadLeft(2, '0') + DateTime.Now.Second.ToString().PadLeft(2, '0'), false, "WordDoc.bmp", lsDataPath, Convert.ToInt32(comboBoxLetterNo.Text.TrimEnd().TrimStart()), "", "", 0);
-                cOMMENTTableAdapter.FillByCustNo(iACDataSet.COMMENT, cUSTOMER_NOTextBox.Text);
+                cOMMENTTableAdapter.FillByCustNo(iACDataSet.COMMENT, cUSTOMER_NOTextBox.EditValue.ToString().Trim());
                 comboBoxLetterNo.Text = " ";
                 comboBoxLetterType.Text = " ";
             }
@@ -2932,7 +2423,7 @@ namespace IAC2021SQL
                 cOMMENTBindingSource.EndEdit();
                 if (lnSeq == 0)
                 {
-                    loQuery = cOMMENTTableAdapter.SeqNoQuery(cUSTOMER_NOTextBox.Text, DateTime.Now.Date);
+                    loQuery = cOMMENTTableAdapter.SeqNoQuery(cUSTOMER_NOTextBox.EditValue.ToString().Trim(), DateTime.Now.Date);
                     if (loQuery != null)
                         lnSeq = (int)loQuery + 1;
                     else
@@ -2944,14 +2435,14 @@ namespace IAC2021SQL
                 lsDataPath = lsUNCROOT.Trim() + @"CommentAttachments\Letters";
                 // Moses Newman 02/22/2019 Add Full Comment
                 lsFullComment = "Created and sent dealer Letter#" + comboBoxLetterNo.Text.TrimEnd().TrimStart() + ".";
-                cOMMENTTableAdapter.Insert(cUSTOMER_NOTextBox.Text, DateTime.Now.Date, lnSeq, Program.gsUserID,
+                cOMMENTTableAdapter.Insert(cUSTOMER_NOTextBox.EditValue.ToString().Trim(), DateTime.Now.Date, lnSeq, Program.gsUserID,
                                            lsFullComment,
                                            //"Created and sent Letter#" + comboBoxLetterNo.Text.TrimEnd().TrimStart() + ".",
                                            //" ", " ",
                                            "  ", (Int32)cUSTOMER_DEALERcomboBox.EditValue,
                                            Program.gsUserID + "  ",
                                            DateTime.Now.Hour.ToString().PadLeft(2, '0') + DateTime.Now.Minute.ToString().PadLeft(2, '0') + DateTime.Now.Second.ToString().PadLeft(2, '0'), false, "WordDoc.bmp", lsDataPath, Convert.ToInt32(comboBoxLetterNo.Text.TrimEnd().TrimStart()), "", "", 0);
-                cOMMENTTableAdapter.FillByCustNo(iACDataSet.COMMENT, cUSTOMER_NOTextBox.Text);
+                cOMMENTTableAdapter.FillByCustNo(iACDataSet.COMMENT, cUSTOMER_NOTextBox.EditValue.ToString().Trim());
                 comboBoxLetterNo.Text = " ";
                 comboBoxLetterType.Text = " ";
             }
@@ -3495,11 +2986,7 @@ namespace IAC2021SQL
                 cUSTOMER_NOTextBox.Focus();
                 cUSTOMER_NOTextBox.SelectAll();
                 cUSTOMER_NOTextBox.EditValue = Program.gsKey;
-                Validate();
-                //setRelatedData(); // Moses Newman 05/02/2022
-
-                ActiveControl = cUSTOMER_PURCHASE_ORDERTextBox;
-                cUSTOMER_PURCHASE_ORDERTextBox.Select();
+                SendKeys.Send("{ENTER}");
             }
             Program.gsKey = null;
         }
@@ -3513,7 +3000,7 @@ namespace IAC2021SQL
             string lsCustomerNo = "";
 
             Validate();  //Validate form so all data sets are updated with field values
-            lsCustomerNo = cUSTOMER_NOTextBox.Text.ToString().TrimEnd();
+            lsCustomerNo = cUSTOMER_NOTextBox.EditValue.ToString().Trim();
 
             tableAdapConn = new System.Data.SqlClient.SqlConnection();
             tableAdapConn.ConnectionString = IAC2021SQL.Properties.Settings.Default.IAC2010SQLConnectionString;
@@ -3614,7 +3101,7 @@ namespace IAC2021SQL
 
                 if (iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<Decimal>("CUSTOMER_BALANCE") == 0)
                 {
-                    loLastBalance = cUSTHISTTableAdapter.LastBalance(cUSTOMER_NOTextBox.Text);
+                    loLastBalance = cUSTHISTTableAdapter.LastBalance(cUSTOMER_NOTextBox.EditValue.ToString().Trim());
                     if (loLastBalance != null)
                         gnCustomerBalance = (Decimal)loLastBalance;
                     if (gnCustomerBalance != 0)
@@ -3710,8 +3197,8 @@ namespace IAC2021SQL
                 txtVehicleYear.SelectAll();
                 return;
             }
-            lsCustomerNo = cUSTOMER_NOTextBox.Text.ToString().Trim();
-            cUSTOMER_PURCHASE_ORDERTextBox.Text = cUSTOMER_PURCHASE_ORDERTextBox.Text.TrimEnd();
+            lsCustomerNo = cUSTOMER_NOTextBox.EditValue.ToString().Trim();
+            cUSTOMER_PURCHASE_ORDERTextBox.EditValue = cUSTOMER_PURCHASE_ORDERTextBox.EditValue.ToString().Trim();
             cUSTOMERBindingSource.EndEdit();
             cUSTHISTBindingSource.EndEdit();
             cOMMENTBindingSource.EndEdit();
@@ -4114,7 +3601,7 @@ namespace IAC2021SQL
             MDImain.CreateFormInstance("FormReciept", false, false, true);
             FormReciept receipt = (FormReciept)MDImain.frm;
 
-            receipt.gsCustomerNo = cUSTOMER_NOTextBox.Text;
+            receipt.gsCustomerNo = cUSTOMER_NOTextBox.EditValue.ToString().Trim();
             receipt.gsOpenClose = "C";
             receipt.Show();
         }
@@ -4124,12 +3611,12 @@ namespace IAC2021SQL
             // Moses Newman 04/02/2018 Create EXCEL output dump of TVAmort file showing GetPartialPaymentandLateFeeBalance extra fields.
             IACDataSet PT = new IACDataSet();
             IACDataSetTableAdapters.TVAmortTableAdapter TVAmortTableAdapter = new IACDataSetTableAdapters.TVAmortTableAdapter();
-            TVAmortTableAdapter.FillByCustomerNo(iACDataSet.TVAmort, cUSTOMER_NOTextBox.Text.Trim());
+            TVAmortTableAdapter.FillByCustomerNo(iACDataSet.TVAmort, cUSTOMER_NOTextBox.EditValue.ToString().Trim());
 
             BackgroundWorker BW = new BackgroundWorker();
             ClosedPaymentPosting CP = new ClosedPaymentPosting();
 
-            CP.GetPartialPaymentandLateFeeBalance(ref BW, cUSTOMER_NOTextBox.Text.Trim(), ref PT, 0, false, -1, false, false);
+            CP.GetPartialPaymentandLateFeeBalance(ref BW, cUSTOMER_NOTextBox.EditValue.ToString().Trim(), ref PT, 0, false, -1, false, false);
 
             SqlConnection cnn;
             string connectionstring = null;
@@ -4138,18 +3625,18 @@ namespace IAC2021SQL
             int i = 0;
             int j = 0;
 
-            String lsUNCROOT = Program.GsDataPath, lsExcelFileOut = lsUNCROOT + @"\moses\TVEXCEL\" + cUSTOMER_NOTextBox.Text.Trim() + "TVAmort.xlsx";
+            String lsUNCROOT = Program.GsDataPath, lsExcelFileOut = lsUNCROOT + @"\moses\TVEXCEL\" + cUSTOMER_NOTextBox.EditValue.ToString().Trim() + "TVAmort.xlsx";
             connectionstring = IAC2021SQL.Properties.Settings.Default.IAC2010SQLConnectionString.ToUpper();
             cnn = new SqlConnection(connectionstring);
             cnn.Open();
-            //sql = "SELECT * FROM TVAmort WHERE CustomerNo = '" + cUSTOMER_NOTextBox.Text.Trim() + "'";
+            //sql = "SELECT * FROM TVAmort WHERE CustomerNo = '" + cUSTOMER_NOTextBox.EditValue.ToString().Trim() + "'";
             // Moses Newman 07/25/2019 Order By CUSTHIST order.
             sql = "SELECT [CustomerNo],ROW_NUMBER() OVER(ORDER BY CustomerNo, HistoryDate, HistorySeq)[RowNumber], " +
                         " [Event],[HistoryDate] [Date],[New],[LateFee],[ISF],[NonCash],[Payment],[Interest],[Principal],[Balance],[RateChange],[ContractStatus]," +
                         " [PartialPayment], [LateFeeBalance],[PaidThrough],[ExtensionMonths],[LastPPBBalance],[LastLFBalance],[LastPPBUsed],[LastPPBUsedLC],[PrevPPBUsed],[PrevPPBUsedLC]," +
                         " [DeltaPTMonths],[ISFDate],[ISFSeqNo],[ISFPaymentType],[ISFPaymentCode],[HistorySeq],[PaymentSeq],[PaymentCode],[HistoryDate] " +
                         " FROM [TVAmort] " +
-                        " WHERE CustomerNo = '" + cUSTOMER_NOTextBox.Text.Trim() + "' ORDER BY CustomerNo,HistoryDate, HistorySeq";
+                        " WHERE CustomerNo = '" + cUSTOMER_NOTextBox.EditValue.ToString().Trim() + "' ORDER BY CustomerNo,HistoryDate, HistorySeq";
             SqlDataAdapter dscmd = new SqlDataAdapter(sql, cnn);
             DataSet ds = new DataSet();
             dscmd.Fill(ds);
@@ -4174,7 +3661,7 @@ namespace IAC2021SQL
 
                 Excel.Worksheet excelWorkSheet;
                 excelWorkSheet = excelWorkBook.Worksheets.Add();
-                excelWorkSheet.Name = cUSTOMER_NOTextBox.Text.Trim() + "TVAmort";
+                excelWorkSheet.Name = cUSTOMER_NOTextBox.EditValue.ToString().Trim() + "TVAmort";
                 foreach (Excel.Worksheet sheet in excelWorkBook.Worksheets)
                     if (sheet.Name != excelWorkSheet.Name)
                         sheet.Delete();
@@ -4191,7 +3678,7 @@ namespace IAC2021SQL
 
 
 
-                excelWorkSheet.PageSetup.CenterHeader = "&\"Arial\"&B&12&KFF0000" + cUSTOMER_NOTextBox.Text.Trim() + "TVAmort";
+                excelWorkSheet.PageSetup.CenterHeader = "&\"Arial\"&B&12&KFF0000" + cUSTOMER_NOTextBox.EditValue.ToString().Trim() + "TVAmort";
                 excelWorkSheet.Visible = Excel.XlSheetVisibility.xlSheetVisible;
 
                 Excel.Range CustomerNo = excelWorkSheet.get_Range("A:A");
@@ -4550,7 +4037,7 @@ namespace IAC2021SQL
 
         private void lookUpEditExpMonth_EditValueChanged(object sender, EventArgs e)
         {
-            if (cUSTOMER_NOTextBox.Text.Trim() == "")
+            if (cUSTOMER_NOTextBox.EditValue.ToString().Trim() == "")
                 return;
             if ((lbEdit || lbAddFlag) && OPNBANKbindingSource.Position > -1 && comboBoxEditExpYear.Text.Trim() != "" && lookUpEditExpMonth.EditValue != null)
             {
@@ -4563,7 +4050,7 @@ namespace IAC2021SQL
 
         private void lookUpEditExpYear_EditValueChanged(object sender, EventArgs e)
         {
-            if (cUSTOMER_NOTextBox.Text.Trim() == "")
+            if (cUSTOMER_NOTextBox.EditValue.ToString().Trim() == "")
                 return;
             if ((lbEdit || lbAddFlag) && OPNBANKbindingSource.Position > -1 && comboBoxEditExpYear.EditValue != null)
             {
@@ -4581,7 +4068,7 @@ namespace IAC2021SQL
 
         private void comboBoxEditExpYear_EditValueChanged(object sender, EventArgs e)
         {
-            if (cUSTOMER_NOTextBox.Text.Trim() == "")
+            if (cUSTOMER_NOTextBox.EditValue.ToString().Trim() == "")
                 return;
             if ((lbEdit || lbAddFlag) && OPNBANKbindingSource.Position > -1 && comboBoxEditExpYear.EditValue != null)
             {
@@ -4885,7 +4372,7 @@ namespace IAC2021SQL
             IACDataSetTableAdapters.DEALERTableAdapter DEALERTableAdapter = new IACDataSetTableAdapters.DEALERTableAdapter();
             RepoDataSetTableAdapters.CUSTOMERTableAdapter RepoCustomer = new RepoDataSetTableAdapters.CUSTOMERTableAdapter();
 
-            CustomerTableAdapter.Fill(ReportData.CUSTOMER, cUSTOMER_NOTextBox.Text);
+            CustomerTableAdapter.Fill(ReportData.CUSTOMER, cUSTOMER_NOTextBox.EditValue.ToString().Trim());
             if (ReportData.CUSTOMER.Rows.Count < 1)
                 return;
             CUSTHISTTableAdapter.FillByCustomerNo(ReportData.CUSTHIST, ReportData.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO"));
@@ -4899,7 +4386,7 @@ namespace IAC2021SQL
             ReportViewer rptViewr = (ReportViewer)MDImain.frm;
 
             if (repoDataSet.RepoLog.Count > 0)
-                RepoCustomer.Fill(repoDataSet.CUSTOMER, cUSTOMER_NOTextBox.Text);
+                RepoCustomer.Fill(repoDataSet.CUSTOMER, cUSTOMER_NOTextBox.EditValue.ToString().Trim());
             DEALERTableAdapter.Fill(ReportData.DEALER, ReportData.CUSTOMER.Rows[0].Field<Int32>("CUSTOMER_DEALER"));
             ClosedCustomerHistory myReportObject = new ClosedCustomerHistory();
             myReportObject.SetDataSource(ReportData);
@@ -4939,7 +4426,7 @@ namespace IAC2021SQL
             Object loPTDate = null;
             DateTime ldTempDate;
 
-            loPTDate = TVAmortTableAdapter.PaidThrough(cUSTOMER_NOTextBox.Text);
+            loPTDate = TVAmortTableAdapter.PaidThrough(cUSTOMER_NOTextBox.EditValue.ToString().Trim());
             if (loPTDate != null)
                 txtPaidThrough.Text = (String)loPTDate;
             else
@@ -5426,6 +4913,1045 @@ namespace IAC2021SQL
                 toolStripButtonSave.Enabled = true;
         }
 
+        private void cUSTOMER_NOTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            /*if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Tab)
+            {
+                string lsCustomerNo;
+                if (lbEdit || String.IsNullOrEmpty((String)cUSTOMER_NOTextBox.EditValue))
+                    return;  // Do not requery data on an edit!!!
+                if (cUSTOMER_NOTextBox.EditValue.ToString().Trim().Length < 6 && cUSTOMER_NOTextBox.EditValue.ToString().Trim().Length > 0)
+                    cUSTOMER_NOTextBox.EditValue = cUSTOMER_NOTextBox.EditValue.ToString().Trim().PadLeft(6, '0');
+                lsCustomerNo = cUSTOMER_NOTextBox.EditValue.ToString().Trim();
+                if (lsCustomerNo == "")  // Moses Newman 03/02/2012 previously only returned if in Add Mode!!!
+                    return;
+                if (!lbAddFlag)
+                    setRelatedData();
+                if (iACDataSet.CUSTOMER.Rows.Count == 0 && lsCustomerNo != "")
+                {
+                    var ldlgAnswer = MessageBox.Show("Sorry no customers found that match your selected account number! Would you like to add a new record?", "Add New Prompt", MessageBoxButtons.YesNo);
+                    if (ldlgAnswer == DialogResult.No)
+                    {
+                        cUSTOMER_NOTextBox.EditValue = "";
+                        ActiveControl = cUSTOMER_NOTextBox;
+                        cUSTOMER_NOTextBox.Select();
+                    }
+                    else
+                    {
+                        Text = "Closed Customer Maintenance (ADD Mode)";
+                        String lcHighValue = "";
+                        lcHighValue += (char)255;
+
+                        lbAddFlag = true;
+                        cUSTOMERBindingSource.AddNew();
+                        cUSTOMERBindingSource.EndEdit();
+                        toolStripButton1.Enabled = false;
+                        toolStripButtonSave.Enabled = true;
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_NO", lsCustomerNo);
+                        cUSTOMERBindingSource.EndEdit();
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_PURCHASE_ORDER", "");
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_ADD_ON", " ");
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_IAC_TYPE", "C");
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_POST_IND", lcHighValue);
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_ACT_STAT", "A");
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_FIRST_NAME", "");
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_LAST_NAME", "");
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_SUFFIX", "");
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_CONTACT", "");
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_STREET_1", "");
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_STREET_2", "");
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_CITY", "");
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_STATE", "");
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_ZIP_1", "");
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_ZIP_2", "");
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_PHONE_NO", "");
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_PHONE_EXT", "");
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_WORK_PHONE", "");
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_WORK_EXT", "");
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_CELL_PHONE", "");
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_SS_1", "");
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_SS_2", "");
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_SS_3", "");
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_REBATE_CODE", "");
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_COMMENT_1", "");
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_COMMENT_2", "");
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_INSURANCE", "N");
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_AUTOPAY", "N");
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Int32>("CUSTOMER_CREDIT_SCORE_N", 0);
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_CREDIT_SCORE_A", "");
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_ALLOTMENT", "N");
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Int32>("CUSTOMER_DISTRIBUTOR_NO", 0);
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Int32>("CUSTOMER_BRANCH_NUMBER", 0);
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_WRONG_ADDRESS", "N");
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_NO_CONTACT", "N");
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_COS_NAME", "");
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_COS_PHONE", "");
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_REPO_IND", "N");
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_REPO_CDE", "");
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_PAYMENT_TYPE", "");
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_PAYMENT_CODE", "");
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<DateTime>("CUSTOMER_INIT_DATE", DateTime.Now.Date.AddMonths(1));
+                        // Moses Newman 01/20/2015 Add Contract Date
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<DateTime>("ContractDate", DateTime.Now.Date);
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Nullable<DateTime>>("CUSTOMER_LAST_PAYMENT_DATE", null);
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Int32>("CUSTOMER_DAY_DUE", 0);
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Int32>("CUSTOMER_TERM", 0);
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_CREDIT_STATUS", "N");
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Decimal>("CUSTOMER_REGULAR_AMOUNT", 0);
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Decimal>("CUSTOMER_BALANCE", 0);
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Decimal>("CUSTOMER_LOAN_AMOUNT", 0);
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Decimal>("CUSTOMER_LOAN_INTEREST", 0);
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Decimal>("CUSTOMER_LATE_CHARGE", 0);
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Decimal>("CUSTOMER_LATE_CHARGE_BAL", 0);
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Decimal>("CUSTOMER_PAID_INTEREST", 0);
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Decimal>("CUSTOMER_UE_INTEREST", 0);
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Decimal>("CUSTOMER_ANNUAL_PERCENTAGE_RATE", 0);
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Decimal>("CUSTOMER_LOAN_CASH", 0);
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Int32>("CUSTOMER_NO_OF_PAYMENTS_MADE", 0);
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_INT_OVERRIDE", "N");
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Double>("CUSTOMER_PARTIAL_PAYMENTS", 0);
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_CREDIT_BUREAU", "Y");
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Decimal>("CUSTOMER_DEALER_DISC", 0);
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Decimal>("CUSTOMER_DEALER_DISC_BAL", 0);
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Int32>("CUSTOMER_CREDIT_LIMIT", 0);
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Decimal>("CUSTOMER_LAST_PAYMENT_MADE", 0);
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_REBATE_CODE", "");
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_AMORTIZE_IND", "S");
+                        // Moses Newman 12/18/2013 Remove all references to CUSTOMER_LETTER_N FIELDS AS NO LONGER IN TABLE!
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Int32>("CUSTOMER_BUYOUT", 0);
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Int32>("CUSTOMER_CONTROL_MONTH", 0);
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Int32>("CUSTOMER_CONTROL_YEAR", 0);
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Int32>("CUSTOMER_CREDIT_AVAILABLE", 0);
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_ALT_FLAG", "N");
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("COSIGNER_FIRST_NAME", "");
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("COSIGNER_LAST_NAME", "");
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("COSIGNER_HOME_PHONE", "");
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("COSIGNER_WORK_PHONE", "");
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("COSIGNER_WORK_EXT", "");
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("COSIGNER_CELL_PHONE", "");
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("COSIGNER_ADDRESS1", "");
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("COSIGNER_CITY", "");
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("COSIGNER_STATE", "");
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("COSIGNER_ZIP_CODE", "");
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("COSIGNER_SS1", "");
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("COSIGNER_SS2", "");
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("COSIGNER_SS3", "");
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("COSIGNER_SAME_ADDRESS", "N");
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("COSIGNER_JUNIOR", "");
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Nullable<DateTime>>("COSIGNER_DOB_DATE", null);
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<DateTime>("MaturityDate", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<DateTime>("CUSTOMER_INIT_DATE").AddMonths(iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<Int32>("CUSTOMER_TERM") - 1));
+                        this.MaturityDate.EditValue = iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<DateTime>("CUSTOMER_INIT_DATE").AddMonths(iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<Int32>("CUSTOMER_TERM") - 1);
+                        this.MaturityDate.Refresh();
+                        Create_New_ALTNAMERecord(lsCustomerNo);
+                        Create_New_OPNBANKRecord(lsCustomerNo);
+                        Create_New_VEHICLERecord(lsCustomerNo);
+                        // Moses Newman 12/23/2013 Create Email Address Record
+                        Create_New_EmailRecord(lsCustomerNo);
+
+                        // Moses Newman 06/12/2018 Create new CustomerFees Record
+                        // Moses Newman 09/21/2018 ONLY add if a CustomerFees record does NOT already exist!
+                        CustomerFeesTableAdapter.Fill(iACDataSet.CustomerFees, iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO"));
+                        if (iACDataSet.CustomerFees.Rows.Count < 1)  // Moses Newman 06/12/2018 Add new record if none exists in CustomerFees!
+                        {
+                            IACDataSet.CustomerFeesRow NewCustomerFeesRow = iACDataSet.CustomerFees.NewCustomerFeesRow();
+                            NewCustomerFeesRow.CustomerNo = iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO");
+                            iACDataSet.CustomerFees.Rows.Add(NewCustomerFeesRow);
+                            // Moses Newman 02/23/2019 Make sure new record has the correct CUSTOMER_NO!!!
+                            iACDataSet.CustomerFees.Rows[0].SetField<String>("CustomerNo", iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO"));
+                            // Add record even if not yet in add or edit mode!
+                            CustomerFeesTableAdapter.Update(iACDataSet.CustomerFees.Rows[0]);
+                        }
+
+
+                        // Customer Info
+                        cUSTOMER_NOTextBox.Enabled = true;
+                        cUSTOMER_PURCHASE_ORDERTextBox.Enabled = true;
+                        cUSTOMER_ACT_STATTextBox.Enabled = false;
+                        cUSTOMER_FIRST_NAMETextBox.Enabled = true;
+                        cUSTOMER_LAST_NAMETextBox.Enabled = true;
+                        comboBoxGN.Enabled = true;
+                        cUSTOMER_CONTACTTextBox.Enabled = true;
+                        cUSTOMER_STREET_1TextBox.Enabled = true;
+                        cUSTOMER_STREET_2TextBox.Enabled = true;
+                        cUSTOMER_CITYTextBox.Enabled = true;
+                        cUSTOMER_STATETextBox.Enabled = true;
+                        cUSTOMER_ZIP_1TextBox.Enabled = true;
+                        cUSTOMER_ZIP_2TextBox.Enabled = true;
+                        cUSTOMER_PHONE_NOTextBox.Enabled = true;
+                        cUSTOMER_PHONE_EXTtextBox.Enabled = true;
+                        cUSTOMER_WORK_PHONETextBox.Enabled = true;
+                        cUSTOMER_WORK_EXTtextBox.Enabled = true;
+                        cUSTOMER_CELL_PHONETextBox.Enabled = true;
+                        txtDOB.Enabled = true;
+                        cUSTOMER_SS_1TextBox.Enabled = true;
+                        cUSTOMER_SS_2TextBox.Enabled = true;
+                        cUSTOMER_SS_3TextBox.Enabled = true;
+                        cUSTOMER_DEALERcomboBox.Enabled = true;
+                        cUSTOMER_COMMENT_1TextBox.Enabled = true;
+                        cUSTOMER_COMMENT_2TextBox.Enabled = true;
+                        checkEditCustomerInsurance.Enabled = true;
+                        checkEditAutoPay.Enabled = true;
+                        cUSTOMER_CREDIT_SCORE_NTextBox.Enabled = true;
+                        cUSTOMER_CREDIT_SCORE_ATextBox.Enabled = true;
+                        checkEditAllotment.Enabled = true;
+                        cUSTOMER_DISTRIBUTOR_NOTextBox.Enabled = true;
+                        cUSTOMER_BRANCH_NUMBERTextBox.Enabled = true;
+                        checkEditWrongAddress.Enabled = true;
+                        checkEditNoContact.Enabled = true;
+                        // Moses Newman 12/23/2013 Added Email Address
+                        richTextBoxEmailAddress.Enabled = true;
+                        // Moses Newman 12/23/2013 Added Refi CheckBox
+                        checkBoxRefi.Enabled = true;
+                        //
+                        // Moses Newman 01/13/2019 Added Warranty CheckBox and OpenAccount
+                        checkBoxVehicleWarranty.Enabled = true;
+                        //
+                        // Moses Newman 01/29/2017 Added Middle Name, GAP Insurance type, Warranty, TIN
+                        textBoxMiddleName.Enabled = true;
+                        comboBoxGAP.Enabled = true;
+                        checkBoxWarranty.Enabled = true;
+                        // Moses Newman 01/24/2018 added ExcludeVSI
+                        checkBoxExcludeVSI.Enabled = true;
+                        textBoxTIN.Enabled = true;
+                        // Moses Newman 09/02/2017
+                        //buttonValidate.Enabled = true;
+                        // Moses Newman 09/06/2017
+                        radioButtonAcct.Enabled = true;
+                        buttonConfirm.Enabled = true;
+                        textBoxAuthNo.Enabled = true;
+                        checkBoxDNTAcct.Enabled = true;
+                        // Moses Newman 09/20/2021
+                        radioButtonCOSAcct.Enabled = true;
+                        buttonCOSConfirm.Enabled = true;
+                        textBoxCOSAuthNo.Enabled = true;
+                        checkBoxCOSDNTAcct.Enabled = true;
+                        // Moses Newman 05/24/2018 
+                        checkEditMilitary.Enabled = true;
+                        // Moses Newman 12/19/2019 Send to Dealer Checkbox added.
+                        if (textBoxDealerEmail.Text.Trim() != "")
+                        {
+                            checkBoxSendToDealer.Visible = true;
+                            checkBoxSendToDealer.Enabled = true;
+                        }
+                        else
+                        {
+                            checkBoxSendToDealer.Enabled = false;
+                            checkBoxSendToDealer.Visible = false;
+                        }
+                        checkBoxSendToDealer.Refresh();
+                        // Customer Info 2
+                        txtFirstPayDate.Enabled = true;
+                        comboBoxDayDue.Enabled = true;
+                        txtTerm.Enabled = true;
+                        checkEditCollectionAgent.Enabled = true;
+                        txtRegularPay.Enabled = true;
+                        txtLoan.Enabled = true;
+                        txtLoanInterest.Enabled = true;
+                        txtAPR.Enabled = true;
+                        txtCASH.Enabled = true;
+                        txtNoOfPaymentsMade.Enabled = true;
+                        // Moses Newman 01/08/2014 Do not enable override interest field if Annual Interest is set to ZERO!!!
+                        if (iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<Decimal>("CUSTOMER_ANNUAL_PERCENTAGE_RATE") != 0)
+                            checkEditOverideInterest.Enabled = true;
+                        else
+                            checkEditOverideInterest.Enabled = false;
+                        txtPaymentDate.Enabled = false;
+                        txtPaymentDate.EditValue = null;
+                        nullableDateTimePickerPayDate.EditValue = txtPaymentDate.EditValue;
+                        nullableDateTimePickerPayDate.Text = txtPaymentDate.Text;
+                        txtPaymentType.Enabled = true;
+                        txtPaymentCode.Enabled = true;
+                        txtLateCharge.Enabled = true;
+                        txtLateChargeBal.Enabled = true;
+                        txtLastPaymentMade.Enabled = true;
+                        txtCustomerBalance.Enabled = true;
+                        txtPaidInterest.Enabled = true;
+                        txtUEInterest.Enabled = true;
+                        txtPaidThrough.Enabled = true;
+                        txtCustomerBuyout.Enabled = true;
+                        txtCustomerPayRem2.Enabled = true;
+                        txtDealerDisc.Enabled = true;
+                        txtContractStatus.Enabled = true;
+                        txtPaidDiscount.Enabled = true;
+                        txtDealerDiscBal.Enabled = true;
+                        txtCreditLimit.Enabled = true;
+                        txtRebateCode.Enabled = true;
+                        txtCreditAvailable.Enabled = true;
+                        txtControlDate.Enabled = true;
+                        txtNumberofMonths.Enabled = true;
+                        // Moses Newman 08/26/2020 retired these objects
+                        //txtCreditBureau.Enabled = true;
+                        //listBoxTSBCommentCode.Enabled = true;
+                        // Moses Newman 01/20/2015 Add Contract Date
+                        DateTimePickerContractDate.Enabled = true;
+                        // Moses Newman 06/19/2015 add TSB Payment Rating Override
+                        // Moses Newman 08/26/2020 retired these items
+                        //checkBoxTSBOverride.Enabled = true;
+                        //comboBoxTSBPaymentRating.Enabled = true;
+                        // Moses Newman 12/09/2018 Add OverrideLateCharge
+                        checkBoxOverrideLateCharge.Enabled = true;
+                        // Moses Newman 12/22/2019
+                        nullableDateTimePickerFundingDate.Enabled = true;
+                        // Moses Newman 07/21/2020 Add checkbox for overpayment check issue and check number.
+                        checkBoxCheckIssued.Enabled = true;
+                        textBoxCheckNo.Enabled = true;
+                        // Moses Newman 02/28/2021 Add CheckBox for Received Contrat? and Date Contract Received fields
+                        colorCheckBoxReceivedContract.Enabled = true;
+                        if (colorCheckBoxReceivedContract.Checked)
+                        {
+                            nullableDateTimePickerDateContractReceived.Enabled = true;
+                            nullableDateTimePickerDateContractReceived.Visible = true;
+                        }
+                        else
+                        {
+                            nullableDateTimePickerDateContractReceived.Enabled = false;
+                            nullableDateTimePickerDateContractReceived.Visible = false;
+                        }
+
+                        txtCOSFirstName.Enabled = true;
+                        txtCOSLastName.Enabled = true;
+                        // Moses Newman 06/09/2017 changed txtCOSJunior to comboBox supporting gencodes.
+                        comboBoxCOSJunior.Enabled = true;
+                        txtCOSPhone.Enabled = true;
+                        checkEditUsePrimaryAddress.Enabled = true;
+                        txtCOSWorkPhone.Enabled = true;
+                        txtCOSWorkExt.Enabled = true;
+                        txtCOSAddress.Enabled = true;
+                        txtCOSCell.Enabled = true;
+                        txtCOSCity.Enabled = true;
+                        txtCOSSS_1.Enabled = true;
+                        txtCOSSS_2.Enabled = true;
+                        txtCOSSS_3.Enabled = true;
+                        txtCOSState.Enabled = true;
+                        txtCOSZip.Enabled = true;
+                        txtCOSDOB.Enabled = true;
+                        txtCOSDOB.EditValue = null;
+                        // Moses Newman 04/30/2019 Added CosignerTierPoints
+                        textBoxCosignerTierPoints.Enabled = true;
+
+
+
+                        txtALTContact1.Enabled = true;
+                        txtALTContact2.Enabled = true;
+                        txtALTContact3.Enabled = true;
+                        txtALTContact4.Enabled = true;
+                        txtALTRelation1.Enabled = true;
+                        txtALTRelation2.Enabled = true;
+                        txtALTRelation3.Enabled = true;
+                        txtALTRelation4.Enabled = true;
+                        txtALTPhone1.Enabled = true;
+                        txtALTPhone2.Enabled = true;
+                        txtALTPhone3.Enabled = true;
+                        txtALTPhone4.Enabled = true;
+                        txtALTExt1.Enabled = true;
+                        txtALTExt2.Enabled = true;
+                        txtALTExt3.Enabled = true;
+                        txtALTExt4.Enabled = true;
+                        // Moses Newman 01/29/2017
+                        textBoxCosignerCreditScore.Enabled = true;
+                        textBoxCosignerAnnualIncome.Enabled = true;
+                        textBoxCosignerEmail.Enabled = true;
+
+
+                        textEditBankName.Enabled = true;
+                        textEditBankCity.Enabled = true;
+                        textEditBankState.Enabled = true;
+                        textEditBankRoutingNumber.Enabled = true;
+                        textEditBankCheckDigit.Enabled = true;
+                        textEditBankAccountNumber.Enabled = true;
+                        checkEditBankAutoPay.Enabled = true;
+                        textEditBankMonthlyPayment.Enabled = true;
+                        // Moses Newman 01/29/2017 Added Maturity Date
+                        MaturityDate.Enabled = true;
+
+                        // Vehice Tab
+                        txtVehicleYear.Enabled = true;
+                        txtMake.Enabled = true;
+                        txtModel.Enabled = true;
+                        txtVIN.Enabled = true;
+                        txtInsuranceCompany.Enabled = true;
+                        txtPolicyNumber.Enabled = true;
+                        txtInsuranceAgent.Enabled = true;
+                        txtAgentPhone.Enabled = true;
+                        txtEffectiveDate.Enabled = true;
+                        txtEffectiveDate.EditValue = null;
+
+                        txtExpirationDate.Enabled = true;
+                        txtExpirationDate.EditValue = null;
+
+                        txtJointOwner.Enabled = true;
+                        checkEditJointOwnership.Enabled = true;
+                        // Moses Newman 01/30/2022 Verifacto Fields
+                        textEditPolicyStatus.Enabled = true;
+                        dateEditCancellationDate.Enabled = true;
+                        textEditPortfolio.Enabled = true;
+                        textEditIssueName1.Enabled = true;
+                        dateEditIssueDate1.Enabled = true;
+                        textEditIssueName2.Enabled = true;
+                        dateEditIssueDate2.Enabled = true;
+                        textEditIssueName3.Enabled = true;
+                        dateEditIssueDate3.Enabled = true;
+                        // Moses Newman 02/11/2022
+                        checkEditHasCollision.Enabled = true;
+                        checkEditHasComprehensive.Enabled = true;
+                        textEditCollisionDeductible.Enabled = true;
+                        textEditComprehensiveDeductible.Enabled = true;
+
+
+                        // Moses Newman 12/18/2013 Add new fields to Vehicle tab and move Credit score, Repo, and Misc fields to Vehicle Tab.
+                        textBoxMileage.Enabled = true;
+                        nullableDateTimePickerRepoDate.Enabled = true;
+                        textBoxRepoAgent.Enabled = true;
+                        textBoxCurrentLocation.Enabled = true;
+                        textBoxAuctionHouse.Enabled = true;
+                        checkBoxTitleReceived.Enabled = true;
+                        nullableDateTimePickerTitleDateReceived.Enabled = true;
+                        // Moses Newman 09/08/2019 TitleReleased, DateTitleReleased, ElectronicLien
+                        checkBoxTitleReleased.Enabled = true;
+                        nullableDateTimePickerDateTitleReleased.Enabled = true;
+                        checkBoxElectronicLien.Enabled = true;
+                        cUSTOMER_CREDIT_SCORE_NTextBox.Enabled = true;
+                        cUSTOMER_CREDIT_SCORE_ATextBox.Enabled = true;
+                        comboBoxCreditCode.Enabled = true;
+                        // Moses Newman 12/9/2013 Add dropdowns for credit score and reposessions
+                        cUSTOMER_REPO_INDtextBox.Enabled = true;
+                        cUSTOMER_REPO_CDEtextBox.Enabled = true;
+                        // Moses Newman 11/22/2016 Handle new IND code of R.
+                        if (cUSTOMER_REPO_INDtextBox.Text == "Y" || cUSTOMER_REPO_INDtextBox.Text == "P" || cUSTOMER_REPO_INDtextBox.Text == "R" || cUSTOMER_REPO_INDtextBox.Text == "Z")
+                        {
+                            comboBoxRepoCodes.Enabled = true;
+                        }
+                        else
+                            comboBoxRepoCodes.Enabled = false;
+                        comboBoxRepoInd.Enabled = true;
+                        cUSTOMER_COS_NAMETextBox.Enabled = true;
+                        cUSTOMER_COS_PHONETextBox.Enabled = true;
+                        // Moses Newman 01/09/2014 Add Current Location Date and Auction House Date
+                        nullableDateTimePickerLocDate.Enabled = true;
+                        nullableDateTimePickerAucDate.Enabled = true;
+                        // Moses Newman 04/10/2014 Add Full Recourse Checkbox
+                        checkBoxFullRecourse.Enabled = true;
+                        // Moses Newman 06/13/2018 Add Full Recourse CheckBox to first tab also;
+                        checkBoxFullRecourseTab1.Enabled = true;
+                        // Moses Newman 01/29/2017
+                        textBoxBuyersAnnualIncome.Enabled = true;
+                        textBoxTier.Enabled = true;
+                        // Moses Newman 04/30/2019 Added TierPoints
+                        textBoxTierPoints.Enabled = true;
+                        // Moses Newman 05/13/2019 Add LTV
+                        textBoxLTV.Enabled = true;
+                        // Moses Newman 05/20/2019 Added DealerCashPrice
+                        textBoxDealerCashPrice.Enabled = true;
+
+
+
+                        // Comment Tab
+                        //Moses Newman 11/23/2021 Use DevExpress GridView instead of DataGridView for comments tab now
+                        cOMMENTGridControl.Enabled = true;
+                        cOMMENTgridView.OptionsBehavior.Editable = true;
+                        cOMMENTgridView.OptionsView.NewItemRowPosition = NewItemRowPosition.Top;
+
+                        checkBoxSimple.Checked = true;
+                        checkBoxSimple.Visible = true;
+
+                        // Moses Newman 06/12/2018
+                        // Fees
+                        textBoxRepoFees.Enabled = true;
+                        textBoxStorageFees.Enabled = true;
+                        textBoxImpoundFees.Enabled = true;
+                        textBoxResaleFees.Enabled = true;
+                        textBoxRepairFee1.Enabled = true;
+                        textBoxRepairFee2.Enabled = true;
+                        textBoxRepairFee3.Enabled = true;
+                        textBoxRepairFee4.Enabled = true;
+                        textBoxRepairFee5.Enabled = true;
+
+                        // Moses Newman 08/03/2020
+                        //TSB
+                        //textBoxCurrentBalance.Enabled = true;
+                        //textBoxAmountPastDue.Enabled = true;
+                        //textBoxActualPaymentAmount.Enabled = true;
+                        //textBoxHighestCredit.Enabled = true;
+                        //textBoxOrgChargeOffAmount.Enabled = true;
+                        //textBoxSchMonthlyPaymentAmount.Enabled = true;
+                        //textBoxCreditLimit.Enabled = true;
+                        //nullableDateTimePickerDateofLastPayment.Enabled = true;
+                        //nullableDateTimePickerDateofFirstDelinquency.Enabled = true;
+                        //nullableDateTimePickerDateofAccountInformation.Enabled = true;
+                        //nullableDateTimePickerDateOpened.Enabled = true;
+                        //nullableDateTimePickerDateClosed.Enabled = true;
+                        nullableDateTimePickerFollowUpDate.Enabled = true;
+                        comboBoxAccountStatus.Enabled = true;
+                        comboBoxPaymentRating.Enabled = true;
+                        comboBoxSpecialComment.Enabled = true;
+                        comboBoxAccountType.Enabled = true;
+                        comboBoxConsumerIndicator.Enabled = true;
+                        comboBoxComplianceConditionCode.Enabled = true;
+                        comboBoxECOACode.Enabled = true;
+                        //comboBoxInterestType.Enabled = true;
+                        //comboBoxPortfolioType.Enabled = true;
+                        //comboBoxTermsFrequency.Enabled = true;
+                        //textBoxTermsDuration.Enabled = true;
+                        // Moses Newman 08/24/2020 enable new override TSB checkboxes
+                        checkBoxReportTSB.Enabled = true;
+                        checkBoxPurge.Enabled = true;
+                        checkBoxFollowUpDate.Enabled = true;
+                        checkBoxAccountStatus.Enabled = true;
+                        checkBoxPaymentRating.Enabled = true;
+                        checkBoxSpecialComment.Enabled = true;
+                        checkBoxAccountType.Enabled = true;
+                        checkBoxConsumerIndicator.Enabled = true;
+                        checkBoxComplianceCode.Enabled = true;
+                        checkBoxECOACode.Enabled = true;
+                        checkBoxPaymentProfile.Enabled = true;
+                        // Moses Newman 09/04/2020 toggle Edit Payment History only enable if there is a Credit Manager Record
+                        if (tsbDataSet.ClosedCreditManager.Rows.Count != 0)
+                            this.buttonEditPaymentHistory.Enabled = true;
+                        else
+                            this.buttonEditPaymentHistory.Enabled = false;
+
+                        this.toolStripButtonEdit.Enabled = false;
+                        cUSTOMER_PURCHASE_ORDERTextBox.Focus();
+                        cUSTOMER_PURCHASE_ORDERTextBox.SelectAll();
+                    }
+                }
+                else
+                {
+                    if (!lbAddFlag && !lbEdit)
+                        toolStripButtonEdit.Enabled = true;
+                    // Moses Newman 06/12/2020 Add test for not posted, can only delete non posted new business!
+                    String lcHighValue = "" + (char)255;
+                    if (iACDataSet.CUSTHIST.Rows.Count == 0 && !lbEdit && iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<String>("CUSTOMER_POST_IND") == lcHighValue)
+                        toolStripButtonDelete.Enabled = true;
+                    else
+                        toolStripButtonDelete.Enabled = false;
+                    ActiveControl = cUSTOMER_FIRST_NAMETextBox;
+                    cUSTOMER_FIRST_NAMETextBox.Select();
+                }
+            }*/
+        }
+
+        private void cUSTOMER_NOTextBox_EditValueChanged(object sender, EventArgs e)
+        {
+            string lsCustomerNo;
+            if (lbEdit || String.IsNullOrEmpty((String)cUSTOMER_NOTextBox.EditValue))
+                return;  // Do not requery data on an edit!!!
+            if (cUSTOMER_NOTextBox.EditValue.ToString().Trim().Length < 6 && cUSTOMER_NOTextBox.EditValue.ToString().Trim().Length > 0)
+                cUSTOMER_NOTextBox.EditValue = cUSTOMER_NOTextBox.EditValue.ToString().Trim().PadLeft(6, '0');
+            lsCustomerNo = cUSTOMER_NOTextBox.EditValue.ToString().Trim();
+            if (lsCustomerNo == "")  // Moses Newman 03/02/2012 previously only returned if in Add Mode!!!
+                return;
+            if (!lbAddFlag)
+                setRelatedData();
+            if (iACDataSet.CUSTOMER.Rows.Count == 0 && lsCustomerNo != "")
+            {
+                var ldlgAnswer = MessageBox.Show("Sorry no customers found that match your selected account number! Would you like to add a new record?", "Add New Prompt", MessageBoxButtons.YesNo);
+                if (ldlgAnswer == DialogResult.No)
+                {
+                    cUSTOMER_NOTextBox.EditValue = "";
+                    ActiveControl = cUSTOMER_NOTextBox;
+                    cUSTOMER_NOTextBox.Select();
+                }
+                else
+                {
+                    Text = "Closed Customer Maintenance (ADD Mode)";
+                    String lcHighValue = "";
+                    lcHighValue += (char)255;
+
+                    lbAddFlag = true;
+                    cUSTOMERBindingSource.AddNew();
+                    cUSTOMERBindingSource.EndEdit();
+                    toolStripButton1.Enabled = false;
+                    toolStripButtonSave.Enabled = true;
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_NO", lsCustomerNo);
+                    cUSTOMERBindingSource.EndEdit();
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_PURCHASE_ORDER", "");
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_ADD_ON", " ");
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_IAC_TYPE", "C");
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_POST_IND", lcHighValue);
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_ACT_STAT", "A");
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_FIRST_NAME", "");
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_LAST_NAME", "");
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_SUFFIX", "");
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_CONTACT", "");
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_STREET_1", "");
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_STREET_2", "");
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_CITY", "");
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_STATE", "");
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_ZIP_1", "");
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_ZIP_2", "");
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_PHONE_NO", "");
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_PHONE_EXT", "");
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_WORK_PHONE", "");
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_WORK_EXT", "");
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_CELL_PHONE", "");
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_SS_1", "");
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_SS_2", "");
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_SS_3", "");
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_REBATE_CODE", "");
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_COMMENT_1", "");
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_COMMENT_2", "");
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_INSURANCE", "N");
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_AUTOPAY", "N");
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Int32>("CUSTOMER_CREDIT_SCORE_N", 0);
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_CREDIT_SCORE_A", "");
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_ALLOTMENT", "N");
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Int32>("CUSTOMER_DISTRIBUTOR_NO", 0);
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Int32>("CUSTOMER_BRANCH_NUMBER", 0);
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_WRONG_ADDRESS", "N");
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_NO_CONTACT", "N");
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_COS_NAME", "");
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_COS_PHONE", "");
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_REPO_IND", "N");
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_REPO_CDE", "");
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_PAYMENT_TYPE", "");
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_PAYMENT_CODE", "");
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<DateTime>("CUSTOMER_INIT_DATE", DateTime.Now.Date.AddMonths(1));
+                    // Moses Newman 01/20/2015 Add Contract Date
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<DateTime>("ContractDate", DateTime.Now.Date);
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Nullable<DateTime>>("CUSTOMER_LAST_PAYMENT_DATE", null);
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Int32>("CUSTOMER_DAY_DUE", 0);
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Int32>("CUSTOMER_TERM", 0);
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_CREDIT_STATUS", "N");
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Decimal>("CUSTOMER_REGULAR_AMOUNT", 0);
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Decimal>("CUSTOMER_BALANCE", 0);
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Decimal>("CUSTOMER_LOAN_AMOUNT", 0);
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Decimal>("CUSTOMER_LOAN_INTEREST", 0);
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Decimal>("CUSTOMER_LATE_CHARGE", 0);
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Decimal>("CUSTOMER_LATE_CHARGE_BAL", 0);
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Decimal>("CUSTOMER_PAID_INTEREST", 0);
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Decimal>("CUSTOMER_UE_INTEREST", 0);
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Decimal>("CUSTOMER_ANNUAL_PERCENTAGE_RATE", 0);
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Decimal>("CUSTOMER_LOAN_CASH", 0);
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Int32>("CUSTOMER_NO_OF_PAYMENTS_MADE", 0);
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_INT_OVERRIDE", "N");
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Double>("CUSTOMER_PARTIAL_PAYMENTS", 0);
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_CREDIT_BUREAU", "Y");
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Decimal>("CUSTOMER_DEALER_DISC", 0);
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Decimal>("CUSTOMER_DEALER_DISC_BAL", 0);
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Int32>("CUSTOMER_CREDIT_LIMIT", 0);
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Decimal>("CUSTOMER_LAST_PAYMENT_MADE", 0);
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_REBATE_CODE", "");
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_AMORTIZE_IND", "S");
+                    // Moses Newman 12/18/2013 Remove all references to CUSTOMER_LETTER_N FIELDS AS NO LONGER IN TABLE!
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Int32>("CUSTOMER_BUYOUT", 0);
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Int32>("CUSTOMER_CONTROL_MONTH", 0);
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Int32>("CUSTOMER_CONTROL_YEAR", 0);
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Int32>("CUSTOMER_CREDIT_AVAILABLE", 0);
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_ALT_FLAG", "N");
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("COSIGNER_FIRST_NAME", "");
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("COSIGNER_LAST_NAME", "");
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("COSIGNER_HOME_PHONE", "");
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("COSIGNER_WORK_PHONE", "");
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("COSIGNER_WORK_EXT", "");
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("COSIGNER_CELL_PHONE", "");
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("COSIGNER_ADDRESS1", "");
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("COSIGNER_CITY", "");
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("COSIGNER_STATE", "");
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("COSIGNER_ZIP_CODE", "");
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("COSIGNER_SS1", "");
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("COSIGNER_SS2", "");
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("COSIGNER_SS3", "");
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("COSIGNER_SAME_ADDRESS", "N");
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("COSIGNER_JUNIOR", "");
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Nullable<DateTime>>("COSIGNER_DOB_DATE", null);
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<DateTime>("MaturityDate", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<DateTime>("CUSTOMER_INIT_DATE").AddMonths(iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<Int32>("CUSTOMER_TERM") - 1));
+                    this.MaturityDate.EditValue = iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<DateTime>("CUSTOMER_INIT_DATE").AddMonths(iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<Int32>("CUSTOMER_TERM") - 1);
+                    this.MaturityDate.Refresh();
+                    Create_New_ALTNAMERecord(lsCustomerNo);
+                    Create_New_OPNBANKRecord(lsCustomerNo);
+                    Create_New_VEHICLERecord(lsCustomerNo);
+                    // Moses Newman 12/23/2013 Create Email Address Record
+                    Create_New_EmailRecord(lsCustomerNo);
+
+                    // Moses Newman 06/12/2018 Create new CustomerFees Record
+                    // Moses Newman 09/21/2018 ONLY add if a CustomerFees record does NOT already exist!
+                    CustomerFeesTableAdapter.Fill(iACDataSet.CustomerFees, iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO"));
+                    if (iACDataSet.CustomerFees.Rows.Count < 1)  // Moses Newman 06/12/2018 Add new record if none exists in CustomerFees!
+                    {
+                        IACDataSet.CustomerFeesRow NewCustomerFeesRow = iACDataSet.CustomerFees.NewCustomerFeesRow();
+                        NewCustomerFeesRow.CustomerNo = iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO");
+                        iACDataSet.CustomerFees.Rows.Add(NewCustomerFeesRow);
+                        // Moses Newman 02/23/2019 Make sure new record has the correct CUSTOMER_NO!!!
+                        iACDataSet.CustomerFees.Rows[0].SetField<String>("CustomerNo", iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO"));
+                        // Add record even if not yet in add or edit mode!
+                        CustomerFeesTableAdapter.Update(iACDataSet.CustomerFees.Rows[0]);
+                    }
+
+
+                    // Customer Info
+                    cUSTOMER_NOTextBox.Enabled = true;
+                    cUSTOMER_PURCHASE_ORDERTextBox.Enabled = true;
+                    cUSTOMER_ACT_STATTextBox.Enabled = false;
+                    cUSTOMER_FIRST_NAMETextBox.Enabled = true;
+                    cUSTOMER_LAST_NAMETextBox.Enabled = true;
+                    comboBoxGN.Enabled = true;
+                    cUSTOMER_CONTACTTextBox.Enabled = true;
+                    cUSTOMER_STREET_1TextBox.Enabled = true;
+                    cUSTOMER_STREET_2TextBox.Enabled = true;
+                    cUSTOMER_CITYTextBox.Enabled = true;
+                    cUSTOMER_STATETextBox.Enabled = true;
+                    cUSTOMER_ZIP_1TextBox.Enabled = true;
+                    cUSTOMER_ZIP_2TextBox.Enabled = true;
+                    cUSTOMER_PHONE_NOTextBox.Enabled = true;
+                    cUSTOMER_PHONE_EXTtextBox.Enabled = true;
+                    cUSTOMER_WORK_PHONETextBox.Enabled = true;
+                    cUSTOMER_WORK_EXTtextBox.Enabled = true;
+                    cUSTOMER_CELL_PHONETextBox.Enabled = true;
+                    txtDOB.Enabled = true;
+                    cUSTOMER_SS_1TextBox.Enabled = true;
+                    cUSTOMER_SS_2TextBox.Enabled = true;
+                    cUSTOMER_SS_3TextBox.Enabled = true;
+                    cUSTOMER_DEALERcomboBox.Enabled = true;
+                    cUSTOMER_COMMENT_1TextBox.Enabled = true;
+                    cUSTOMER_COMMENT_2TextBox.Enabled = true;
+                    checkEditCustomerInsurance.Enabled = true;
+                    checkEditAutoPay.Enabled = true;
+                    cUSTOMER_CREDIT_SCORE_NTextBox.Enabled = true;
+                    cUSTOMER_CREDIT_SCORE_ATextBox.Enabled = true;
+                    checkEditAllotment.Enabled = true;
+                    cUSTOMER_DISTRIBUTOR_NOTextBox.Enabled = true;
+                    cUSTOMER_BRANCH_NUMBERTextBox.Enabled = true;
+                    checkEditWrongAddress.Enabled = true;
+                    checkEditNoContact.Enabled = true;
+                    // Moses Newman 12/23/2013 Added Email Address
+                    richTextBoxEmailAddress.Enabled = true;
+                    // Moses Newman 12/23/2013 Added Refi CheckBox
+                    checkBoxRefi.Enabled = true;
+                    //
+                    // Moses Newman 01/13/2019 Added Warranty CheckBox and OpenAccount
+                    checkBoxVehicleWarranty.Enabled = true;
+                    //
+                    // Moses Newman 01/29/2017 Added Middle Name, GAP Insurance type, Warranty, TIN
+                    textBoxMiddleName.Enabled = true;
+                    comboBoxGAP.Enabled = true;
+                    checkBoxWarranty.Enabled = true;
+                    // Moses Newman 01/24/2018 added ExcludeVSI
+                    checkBoxExcludeVSI.Enabled = true;
+                    textBoxTIN.Enabled = true;
+                    // Moses Newman 09/02/2017
+                    //buttonValidate.Enabled = true;
+                    // Moses Newman 09/06/2017
+                    radioButtonAcct.Enabled = true;
+                    buttonConfirm.Enabled = true;
+                    textBoxAuthNo.Enabled = true;
+                    checkBoxDNTAcct.Enabled = true;
+                    // Moses Newman 09/20/2021
+                    radioButtonCOSAcct.Enabled = true;
+                    buttonCOSConfirm.Enabled = true;
+                    textBoxCOSAuthNo.Enabled = true;
+                    checkBoxCOSDNTAcct.Enabled = true;
+                    // Moses Newman 05/24/2018 
+                    checkEditMilitary.Enabled = true;
+                    // Moses Newman 12/19/2019 Send to Dealer Checkbox added.
+                    if (textBoxDealerEmail.Text.Trim() != "")
+                    {
+                        checkBoxSendToDealer.Visible = true;
+                        checkBoxSendToDealer.Enabled = true;
+                    }
+                    else
+                    {
+                        checkBoxSendToDealer.Enabled = false;
+                        checkBoxSendToDealer.Visible = false;
+                    }
+                    checkBoxSendToDealer.Refresh();
+                    // Customer Info 2
+                    txtFirstPayDate.Enabled = true;
+                    comboBoxDayDue.Enabled = true;
+                    txtTerm.Enabled = true;
+                    checkEditCollectionAgent.Enabled = true;
+                    txtRegularPay.Enabled = true;
+                    txtLoan.Enabled = true;
+                    txtLoanInterest.Enabled = true;
+                    txtAPR.Enabled = true;
+                    txtCASH.Enabled = true;
+                    txtNoOfPaymentsMade.Enabled = true;
+                    // Moses Newman 01/08/2014 Do not enable override interest field if Annual Interest is set to ZERO!!!
+                    if (iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<Decimal>("CUSTOMER_ANNUAL_PERCENTAGE_RATE") != 0)
+                        checkEditOverideInterest.Enabled = true;
+                    else
+                        checkEditOverideInterest.Enabled = false;
+                    txtPaymentDate.Enabled = false;
+                    txtPaymentDate.EditValue = null;
+                    nullableDateTimePickerPayDate.EditValue = txtPaymentDate.EditValue;
+                    nullableDateTimePickerPayDate.Text = txtPaymentDate.Text;
+                    txtPaymentType.Enabled = true;
+                    txtPaymentCode.Enabled = true;
+                    txtLateCharge.Enabled = true;
+                    txtLateChargeBal.Enabled = true;
+                    txtLastPaymentMade.Enabled = true;
+                    txtCustomerBalance.Enabled = true;
+                    txtPaidInterest.Enabled = true;
+                    txtUEInterest.Enabled = true;
+                    txtPaidThrough.Enabled = true;
+                    txtCustomerBuyout.Enabled = true;
+                    txtCustomerPayRem2.Enabled = true;
+                    txtDealerDisc.Enabled = true;
+                    txtContractStatus.Enabled = true;
+                    txtPaidDiscount.Enabled = true;
+                    txtDealerDiscBal.Enabled = true;
+                    txtCreditLimit.Enabled = true;
+                    txtRebateCode.Enabled = true;
+                    txtCreditAvailable.Enabled = true;
+                    txtControlDate.Enabled = true;
+                    txtNumberofMonths.Enabled = true;
+                    // Moses Newman 08/26/2020 retired these objects
+                    //txtCreditBureau.Enabled = true;
+                    //listBoxTSBCommentCode.Enabled = true;
+                    // Moses Newman 01/20/2015 Add Contract Date
+                    DateTimePickerContractDate.Enabled = true;
+                    // Moses Newman 06/19/2015 add TSB Payment Rating Override
+                    // Moses Newman 08/26/2020 retired these items
+                    //checkBoxTSBOverride.Enabled = true;
+                    //comboBoxTSBPaymentRating.Enabled = true;
+                    // Moses Newman 12/09/2018 Add OverrideLateCharge
+                    checkBoxOverrideLateCharge.Enabled = true;
+                    // Moses Newman 12/22/2019
+                    nullableDateTimePickerFundingDate.Enabled = true;
+                    // Moses Newman 07/21/2020 Add checkbox for overpayment check issue and check number.
+                    checkBoxCheckIssued.Enabled = true;
+                    textBoxCheckNo.Enabled = true;
+                    // Moses Newman 02/28/2021 Add CheckBox for Received Contrat? and Date Contract Received fields
+                    colorCheckBoxReceivedContract.Enabled = true;
+                    if (colorCheckBoxReceivedContract.Checked)
+                    {
+                        nullableDateTimePickerDateContractReceived.Enabled = true;
+                        nullableDateTimePickerDateContractReceived.Visible = true;
+                    }
+                    else
+                    {
+                        nullableDateTimePickerDateContractReceived.Enabled = false;
+                        nullableDateTimePickerDateContractReceived.Visible = false;
+                    }
+
+                    txtCOSFirstName.Enabled = true;
+                    txtCOSLastName.Enabled = true;
+                    // Moses Newman 06/09/2017 changed txtCOSJunior to comboBox supporting gencodes.
+                    comboBoxCOSJunior.Enabled = true;
+                    txtCOSPhone.Enabled = true;
+                    checkEditUsePrimaryAddress.Enabled = true;
+                    txtCOSWorkPhone.Enabled = true;
+                    txtCOSWorkExt.Enabled = true;
+                    txtCOSAddress.Enabled = true;
+                    txtCOSCell.Enabled = true;
+                    txtCOSCity.Enabled = true;
+                    txtCOSSS_1.Enabled = true;
+                    txtCOSSS_2.Enabled = true;
+                    txtCOSSS_3.Enabled = true;
+                    txtCOSState.Enabled = true;
+                    txtCOSZip.Enabled = true;
+                    txtCOSDOB.Enabled = true;
+                    txtCOSDOB.EditValue = null;
+                    // Moses Newman 04/30/2019 Added CosignerTierPoints
+                    textBoxCosignerTierPoints.Enabled = true;
+
+
+
+                    txtALTContact1.Enabled = true;
+                    txtALTContact2.Enabled = true;
+                    txtALTContact3.Enabled = true;
+                    txtALTContact4.Enabled = true;
+                    txtALTRelation1.Enabled = true;
+                    txtALTRelation2.Enabled = true;
+                    txtALTRelation3.Enabled = true;
+                    txtALTRelation4.Enabled = true;
+                    txtALTPhone1.Enabled = true;
+                    txtALTPhone2.Enabled = true;
+                    txtALTPhone3.Enabled = true;
+                    txtALTPhone4.Enabled = true;
+                    txtALTExt1.Enabled = true;
+                    txtALTExt2.Enabled = true;
+                    txtALTExt3.Enabled = true;
+                    txtALTExt4.Enabled = true;
+                    // Moses Newman 01/29/2017
+                    textBoxCosignerCreditScore.Enabled = true;
+                    textBoxCosignerAnnualIncome.Enabled = true;
+                    textBoxCosignerEmail.Enabled = true;
+
+
+                    textEditBankName.Enabled = true;
+                    textEditBankCity.Enabled = true;
+                    textEditBankState.Enabled = true;
+                    textEditBankRoutingNumber.Enabled = true;
+                    textEditBankCheckDigit.Enabled = true;
+                    textEditBankAccountNumber.Enabled = true;
+                    checkEditBankAutoPay.Enabled = true;
+                    textEditBankMonthlyPayment.Enabled = true;
+                    // Moses Newman 01/29/2017 Added Maturity Date
+                    MaturityDate.Enabled = true;
+
+                    // Vehice Tab
+                    txtVehicleYear.Enabled = true;
+                    txtMake.Enabled = true;
+                    txtModel.Enabled = true;
+                    txtVIN.Enabled = true;
+                    txtInsuranceCompany.Enabled = true;
+                    txtPolicyNumber.Enabled = true;
+                    txtInsuranceAgent.Enabled = true;
+                    txtAgentPhone.Enabled = true;
+                    txtEffectiveDate.Enabled = true;
+                    txtEffectiveDate.EditValue = null;
+
+                    txtExpirationDate.Enabled = true;
+                    txtExpirationDate.EditValue = null;
+
+                    txtJointOwner.Enabled = true;
+                    checkEditJointOwnership.Enabled = true;
+                    // Moses Newman 01/30/2022 Verifacto Fields
+                    textEditPolicyStatus.Enabled = true;
+                    dateEditCancellationDate.Enabled = true;
+                    textEditPortfolio.Enabled = true;
+                    textEditIssueName1.Enabled = true;
+                    dateEditIssueDate1.Enabled = true;
+                    textEditIssueName2.Enabled = true;
+                    dateEditIssueDate2.Enabled = true;
+                    textEditIssueName3.Enabled = true;
+                    dateEditIssueDate3.Enabled = true;
+                    // Moses Newman 02/11/2022
+                    checkEditHasCollision.Enabled = true;
+                    checkEditHasComprehensive.Enabled = true;
+                    textEditCollisionDeductible.Enabled = true;
+                    textEditComprehensiveDeductible.Enabled = true;
+
+
+                    // Moses Newman 12/18/2013 Add new fields to Vehicle tab and move Credit score, Repo, and Misc fields to Vehicle Tab.
+                    textBoxMileage.Enabled = true;
+                    nullableDateTimePickerRepoDate.Enabled = true;
+                    textBoxRepoAgent.Enabled = true;
+                    textBoxCurrentLocation.Enabled = true;
+                    textBoxAuctionHouse.Enabled = true;
+                    checkBoxTitleReceived.Enabled = true;
+                    nullableDateTimePickerTitleDateReceived.Enabled = true;
+                    // Moses Newman 09/08/2019 TitleReleased, DateTitleReleased, ElectronicLien
+                    checkBoxTitleReleased.Enabled = true;
+                    nullableDateTimePickerDateTitleReleased.Enabled = true;
+                    checkBoxElectronicLien.Enabled = true;
+                    cUSTOMER_CREDIT_SCORE_NTextBox.Enabled = true;
+                    cUSTOMER_CREDIT_SCORE_ATextBox.Enabled = true;
+                    comboBoxCreditCode.Enabled = true;
+                    // Moses Newman 12/9/2013 Add dropdowns for credit score and reposessions
+                    cUSTOMER_REPO_INDtextBox.Enabled = true;
+                    cUSTOMER_REPO_CDEtextBox.Enabled = true;
+                    // Moses Newman 11/22/2016 Handle new IND code of R.
+                    if (cUSTOMER_REPO_INDtextBox.Text == "Y" || cUSTOMER_REPO_INDtextBox.Text == "P" || cUSTOMER_REPO_INDtextBox.Text == "R" || cUSTOMER_REPO_INDtextBox.Text == "Z")
+                    {
+                        comboBoxRepoCodes.Enabled = true;
+                    }
+                    else
+                        comboBoxRepoCodes.Enabled = false;
+                    comboBoxRepoInd.Enabled = true;
+                    cUSTOMER_COS_NAMETextBox.Enabled = true;
+                    cUSTOMER_COS_PHONETextBox.Enabled = true;
+                    // Moses Newman 01/09/2014 Add Current Location Date and Auction House Date
+                    nullableDateTimePickerLocDate.Enabled = true;
+                    nullableDateTimePickerAucDate.Enabled = true;
+                    // Moses Newman 04/10/2014 Add Full Recourse Checkbox
+                    checkBoxFullRecourse.Enabled = true;
+                    // Moses Newman 06/13/2018 Add Full Recourse CheckBox to first tab also;
+                    checkBoxFullRecourseTab1.Enabled = true;
+                    // Moses Newman 01/29/2017
+                    textBoxBuyersAnnualIncome.Enabled = true;
+                    textBoxTier.Enabled = true;
+                    // Moses Newman 04/30/2019 Added TierPoints
+                    textBoxTierPoints.Enabled = true;
+                    // Moses Newman 05/13/2019 Add LTV
+                    textBoxLTV.Enabled = true;
+                    // Moses Newman 05/20/2019 Added DealerCashPrice
+                    textBoxDealerCashPrice.Enabled = true;
+
+
+
+                    // Comment Tab
+                    //Moses Newman 11/23/2021 Use DevExpress GridView instead of DataGridView for comments tab now
+                    cOMMENTGridControl.Enabled = true;
+                    cOMMENTgridView.OptionsBehavior.Editable = true;
+                    cOMMENTgridView.OptionsView.NewItemRowPosition = NewItemRowPosition.Top;
+
+                    checkBoxSimple.Checked = true;
+                    checkBoxSimple.Visible = true;
+
+                    // Moses Newman 06/12/2018
+                    // Fees
+                    textBoxRepoFees.Enabled = true;
+                    textBoxStorageFees.Enabled = true;
+                    textBoxImpoundFees.Enabled = true;
+                    textBoxResaleFees.Enabled = true;
+                    textBoxRepairFee1.Enabled = true;
+                    textBoxRepairFee2.Enabled = true;
+                    textBoxRepairFee3.Enabled = true;
+                    textBoxRepairFee4.Enabled = true;
+                    textBoxRepairFee5.Enabled = true;
+
+                    // Moses Newman 08/03/2020
+                    //TSB
+                    //textBoxCurrentBalance.Enabled = true;
+                    //textBoxAmountPastDue.Enabled = true;
+                    //textBoxActualPaymentAmount.Enabled = true;
+                    //textBoxHighestCredit.Enabled = true;
+                    //textBoxOrgChargeOffAmount.Enabled = true;
+                    //textBoxSchMonthlyPaymentAmount.Enabled = true;
+                    //textBoxCreditLimit.Enabled = true;
+                    //nullableDateTimePickerDateofLastPayment.Enabled = true;
+                    //nullableDateTimePickerDateofFirstDelinquency.Enabled = true;
+                    //nullableDateTimePickerDateofAccountInformation.Enabled = true;
+                    //nullableDateTimePickerDateOpened.Enabled = true;
+                    //nullableDateTimePickerDateClosed.Enabled = true;
+                    nullableDateTimePickerFollowUpDate.Enabled = true;
+                    comboBoxAccountStatus.Enabled = true;
+                    comboBoxPaymentRating.Enabled = true;
+                    comboBoxSpecialComment.Enabled = true;
+                    comboBoxAccountType.Enabled = true;
+                    comboBoxConsumerIndicator.Enabled = true;
+                    comboBoxComplianceConditionCode.Enabled = true;
+                    comboBoxECOACode.Enabled = true;
+                    //comboBoxInterestType.Enabled = true;
+                    //comboBoxPortfolioType.Enabled = true;
+                    //comboBoxTermsFrequency.Enabled = true;
+                    //textBoxTermsDuration.Enabled = true;
+                    // Moses Newman 08/24/2020 enable new override TSB checkboxes
+                    checkBoxReportTSB.Enabled = true;
+                    checkBoxPurge.Enabled = true;
+                    checkBoxFollowUpDate.Enabled = true;
+                    checkBoxAccountStatus.Enabled = true;
+                    checkBoxPaymentRating.Enabled = true;
+                    checkBoxSpecialComment.Enabled = true;
+                    checkBoxAccountType.Enabled = true;
+                    checkBoxConsumerIndicator.Enabled = true;
+                    checkBoxComplianceCode.Enabled = true;
+                    checkBoxECOACode.Enabled = true;
+                    checkBoxPaymentProfile.Enabled = true;
+                    // Moses Newman 09/04/2020 toggle Edit Payment History only enable if there is a Credit Manager Record
+                    if (tsbDataSet.ClosedCreditManager.Rows.Count != 0)
+                        this.buttonEditPaymentHistory.Enabled = true;
+                    else
+                        this.buttonEditPaymentHistory.Enabled = false;
+
+                    this.toolStripButtonEdit.Enabled = false;
+                    cUSTOMER_PURCHASE_ORDERTextBox.Focus();
+                    cUSTOMER_PURCHASE_ORDERTextBox.SelectAll();
+                }
+            }
+            else
+            {
+                if (!lbAddFlag && !lbEdit)
+                    toolStripButtonEdit.Enabled = true;
+                // Moses Newman 06/12/2020 Add test for not posted, can only delete non posted new business!
+                String lcHighValue = "" + (char)255;
+                if (iACDataSet.CUSTHIST.Rows.Count == 0 && !lbEdit && iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<String>("CUSTOMER_POST_IND") == lcHighValue)
+                    toolStripButtonDelete.Enabled = true;
+                else
+                    toolStripButtonDelete.Enabled = false;
+                ActiveControl = cUSTOMER_FIRST_NAMETextBox;
+                cUSTOMER_FIRST_NAMETextBox.Select();
+            }
+        }
+
+        private void cUSTOMER_NOTextBox_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            /*if (e.KeyData == Keys.Tab)
+                e.IsInputKey = true;*/
+        }
+
         private void checkEditMilitary_CheckedChanged(object sender, EventArgs e)
         {
             Object SendTest = sender;
@@ -5490,11 +6016,6 @@ namespace IAC2021SQL
                 view.DeleteRow(view.FocusedRowHandle);
                 toolStripButtonSave.Enabled = true;
             }
-        }
-
-        private void textBoxRepairFee5_Validated(object sender, EventArgs e)
-        {
-
         }
 
         private void CalcTotalFees()
@@ -5688,8 +6209,8 @@ namespace IAC2021SQL
             subscriber.CustomField1 = "";
             subscriber.CustomField2 = "";
             subscriber.CustomField3 = "";
-            subscriber.PrivateCode = cUSTOMER_PURCHASE_ORDERTextBox.Text;
-            subscriber.UniqueID = cUSTOMER_NOTextBox.Text;
+            subscriber.PrivateCode = !String.IsNullOrEmpty((String)cUSTOMER_PURCHASE_ORDERTextBox.EditValue) ? cUSTOMER_PURCHASE_ORDERTextBox.EditValue.ToString().Trim():"";
+            subscriber.UniqueID = cUSTOMER_NOTextBox.EditValue.ToString().Trim();
 
             WSSubscriberResponse wSSubscriberResponse = subscriberService.UpdateSubscriber(securityToken, subscriber);
 
@@ -5723,8 +6244,8 @@ namespace IAC2021SQL
             subscriber.CustomField1 = "";
             subscriber.CustomField2 = "";
             subscriber.CustomField3 = "";
-            subscriber.PrivateCode = cUSTOMER_PURCHASE_ORDERTextBox.Text.Trim() + "COS";
-            subscriber.UniqueID = cUSTOMER_NOTextBox.Text.Trim() + "COS";
+            subscriber.PrivateCode = cUSTOMER_PURCHASE_ORDERTextBox.EditValue.ToString().Trim() + "COS";
+            subscriber.UniqueID = cUSTOMER_NOTextBox.EditValue.ToString().Trim() + "COS";
 
             WSSubscriberResponse wSSubscriberResponse = subscriberService.UpdateSubscriber(securityToken, subscriber);
 
@@ -5851,8 +6372,8 @@ namespace IAC2021SQL
             String lsCommentKey = "",lsFullComment = "";
 
             Microsoft.Office.Interop.Word._Application oWord = new Microsoft.Office.Interop.Word.Application();
-            Microsoft.Office.Interop.Word._Document oWordDoc = new Microsoft.Office.Interop.Word.Document();
             oWord.Visible = true;
+            Microsoft.Office.Interop.Word._Document oWordDoc = new Microsoft.Office.Interop.Word.Document();
 
             oWordDoc = oWord.Documents.Add();
             Microsoft.Office.Interop.Word.Range rng = oWordDoc.Range(ref start, ref end);
@@ -5870,7 +6391,7 @@ namespace IAC2021SQL
             else
                 lnSeq = lnSeq + 1;
             // Moses Newman 10/18/2017 create string unique key that will become word filename!
-            lsCommentKey = cUSTOMER_NOTextBox.Text + DateTime.Now.Date.ToString("yyyyMMdd") + lnSeq.ToString().Trim() + Program.gsUserID;
+            lsCommentKey = cUSTOMER_NOTextBox.EditValue.ToString().Trim() + DateTime.Now.Date.ToString("yyyyMMdd") + lnSeq.ToString().Trim() + Program.gsUserID;
             // Moses Newman 11/21/2017 Remove hard coded UNC Pathing.
             FileName = lsUNCROOT + @"CommentAttachments\SMS\" + lsCommentKey + ".docx";
             rng.Text = CommentMessage;
@@ -5917,7 +6438,7 @@ namespace IAC2021SQL
                                         false, "", "",
                                         0, @"WordDoc.bmp", FileName.ToString(), tnTemplateNo);
 
-            cOMMENTTableAdapter.FillByCustNo(iACDataSet.COMMENT, cUSTOMER_NOTextBox.Text);
+            cOMMENTTableAdapter.FillByCustNo(iACDataSet.COMMENT, cUSTOMER_NOTextBox.EditValue.ToString().Trim());
             if (lbAddFlag || lbEdit)
                 toolStripButtonSave.Enabled = true;
         }
@@ -6030,7 +6551,7 @@ namespace IAC2021SQL
             cOMMENTBindingSource.EndEdit();
             if (lnSeq == 0)
             {
-                loQuery = cOMMENTTableAdapter.SeqNoQuery(cUSTOMER_NOTextBox.Text, DateTime.Now.Date);
+                loQuery = cOMMENTTableAdapter.SeqNoQuery(cUSTOMER_NOTextBox.EditValue.ToString().Trim(), DateTime.Now.Date);
                 if (loQuery != null)
                     lnSeq = (int)loQuery + 1;
                 else
@@ -6040,7 +6561,7 @@ namespace IAC2021SQL
                 lnSeq = lnSeq + 1;
 
             // Moses Newman 10/18/2017 create string unique key that will become word filename!
-            lsCommentKey = cUSTOMER_NOTextBox.Text + DateTime.Now.Date.ToString("yyyyMMdd") + lnSeq.ToString().Trim() + Program.gsUserID;
+            lsCommentKey = cUSTOMER_NOTextBox.EditValue.ToString().Trim() + DateTime.Now.Date.ToString("yyyyMMdd") + lnSeq.ToString().Trim() + Program.gsUserID;
             MailMergeComponents MailMerge = new MailMergeComponents();
             lsDataPath = lsUNCROOT.Trim() + @"CommentAttachments\Letters\";
             // Moses Newman 11/21/2017 Remove hard coded UNC Pathing
@@ -6048,7 +6569,7 @@ namespace IAC2021SQL
             // Moses Newman 02/22/2019 Add Full Comment
             lsFullComment = "Created and sent cosigner Letter#" + comboBoxCosLetterNo.Text.TrimEnd().TrimStart() + ".";
             // Moses Newman 11/21/2017 Remove hard coded UNC Pathing
-            cOMMENTTableAdapter.Insert(cUSTOMER_NOTextBox.Text, DateTime.Now.Date, lnSeq, Program.gsUserID,
+            cOMMENTTableAdapter.Insert(cUSTOMER_NOTextBox.EditValue.ToString().Trim(), DateTime.Now.Date, lnSeq, Program.gsUserID,
                                        lsFullComment,
                                        //"Created and sent cosigner Letter#" + comboBoxCosLetterNo.Text.TrimEnd().TrimStart() + ".",
                                        //" ", " ", 
@@ -6057,7 +6578,7 @@ namespace IAC2021SQL
                                        DateTime.Now.Hour.ToString().PadLeft(2, '0') + DateTime.Now.Minute.ToString().PadLeft(2, '0') + DateTime.Now.Second.ToString().PadLeft(2, '0'),
                                        false, @"WordDoc.bmp", lsDataPath + lsCommentKey + ".docx",
                                        Convert.ToInt32(comboBoxCosLetterNo.Text.TrimEnd().TrimStart()), "", "", 0);
-            cOMMENTTableAdapter.FillByCustNo(iACDataSet.COMMENT, cUSTOMER_NOTextBox.Text);
+            cOMMENTTableAdapter.FillByCustNo(iACDataSet.COMMENT, cUSTOMER_NOTextBox.EditValue.ToString().Trim());
 
             comboBoxCosLetterNo.Text = " ";
             comboBoxCosLetterType.Text = " ";

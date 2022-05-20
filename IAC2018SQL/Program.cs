@@ -18,6 +18,7 @@ using TValue6Engine2;
 using DevExpress.XtraEditors;
 using DevExpress.Utils;
 using System.Net.Http;
+using Sentry;
 
 
 namespace IAC2021SQL
@@ -1000,11 +1001,11 @@ namespace IAC2021SQL
 			ProcessClosedCustomer(ref CustomerPostDataSet,ref CustomerTableAdapter,ref CustomerHistTableAdapter, ref lnTotalCustomerDealerDisc, ref lnMasterInterest,ref worker);
 		}
 
-		
-		static public void ProcessClosedCustomer(ref IACDataSet CustomerPostDataSet, 
-										   ref IACDataSetTableAdapters.CUSTOMERTableAdapter CUSTOMERTableAdapter, 
+
+		static public void ProcessClosedCustomer(ref IACDataSet CustomerPostDataSet,
+										   ref IACDataSetTableAdapters.CUSTOMERTableAdapter CUSTOMERTableAdapter,
 										   ref IACDataSetTableAdapters.CUSTHISTTableAdapter CUSTHISTTableAdapter, ref Decimal lnTotalCustomerDealerDisc,
-										   ref Decimal lnMasterInterest,ref BackgroundWorker worker)
+										   ref Decimal lnMasterInterest, ref BackgroundWorker worker)
 		{
 			DateTime NowDate = DateTime.Now;  // Moses Newman 12/03/2020 So I can change posting date if testing!
 			IACDataSetTableAdapters.ACCOUNTTableAdapter ACCOUNTTableAdapter = new IACDataSetTableAdapters.ACCOUNTTableAdapter();
@@ -1014,9 +1015,9 @@ namespace IAC2021SQL
 			IACDataSetTableAdapters.DEALHISTTableAdapter DEALHISTTableAdapter = new IACDataSetTableAdapters.DEALHISTTableAdapter();
 			IACDataSetTableAdapters.MASTERTableAdapter MASTERTableAdapter = new IACDataSetTableAdapters.MASTERTableAdapter();
 			IACDataSetTableAdapters.MASTHISTTableAdapter MASTHISTTableAdapter = new IACDataSetTableAdapters.MASTHISTTableAdapter();
-            // Moses Newman 12/12/2014
-            // Add TVAmortTableAdapter.PaidThrough instead of CUSTOMERTableAdapter.GetPaidThrough
-            IACDataSetTableAdapters.TVAmortTableAdapter TVAmortTableAdapter = new IACDataSetTableAdapters.TVAmortTableAdapter();
+			// Moses Newman 12/12/2014
+			// Add TVAmortTableAdapter.PaidThrough instead of CUSTOMERTableAdapter.GetPaidThrough
+			IACDataSetTableAdapters.TVAmortTableAdapter TVAmortTableAdapter = new IACDataSetTableAdapters.TVAmortTableAdapter();
 			IACDataSet.ACCOUNTDataTable ACCOUNT = new IACDataSet.ACCOUNTDataTable();
 			IACDataSet.AMORTIZEDataTable AMORTIZE = new IACDataSet.AMORTIZEDataTable();
 			IACDataSet.DEALERDataTable DEALER = new IACDataSet.DEALERDataTable();
@@ -1041,9 +1042,9 @@ namespace IAC2021SQL
 
 
 			int lnSeq = 0;
-			Decimal lnInitialPrepayPenalty = 25,lnBuyout=0,lnMasterOLoan = 0;
+			Decimal lnInitialPrepayPenalty = 25, lnBuyout = 0, lnMasterOLoan = 0;
 			String lsAmortMessage = "", lsMasterKey = "";
-			Double lnLoanAmount = 0,lnAPR = 0,lnRegularAmount = 0,lnTerm = 0;
+			Double lnLoanAmount = 0, lnAPR = 0, lnRegularAmount = 0, lnTerm = 0;
 			Object loDealhistSeq = null, loMastHistSeq = null, loMasterKey = null, loCustHistSeq = null;
 
 			AmortRec[] AmortTable;
@@ -1064,20 +1065,20 @@ namespace IAC2021SQL
 			WS_DEALERTableAdapter.Connection = tableAdapConn;
 			WS_DEALERTableAdapter.Transaction = tableAdapTran;
 			WS_DEALERTableAdapter.Fill(WS_DEALER);
-            Object loPaidThru = null;
-            String lsPaidThru = "";
+			Object loPaidThru = null;
+			String lsPaidThru = "";
 			for (int i = 0; i < CustomerPostDataSet.CUSTOMER.Rows.Count; i++)
 			{
-                // Moses Newman 12/19/2013 No need to set CUSTOMER_PAID_THRU_MM or CUSTOMER_PAID_THRU_YY as they are now computed fields!
-                // Moses Newman 05/30/2014 Add call to ClosedCustomerPaidThrough to get correct paid thru
-                // Moses Newman 12/12/2014 Change CUSTOMERTableAdapter.GetPaidThrough to TVAmortTableAdapter.PaidThrough!
-                loPaidThru = TVAmortTableAdapter.PaidThrough(CustomerPostDataSet.CUSTOMER.Rows[i].Field<String>("CUSTOMER_NO"));
-                if(loPaidThru != null)
-                    lsPaidThru = (String)loPaidThru;
-                else
-                    lsPaidThru = "    ";
-                CustomerPostDataSet.CUSTOMER.Rows[i].SetField<String>("CUSTOMER_PAID_THRU",lsPaidThru);
-                CustomerPostDataSet.CUSTOMER.Rows[i].SetField<Decimal>("CUSTOMER_HIGHEST_BALANCE_DUE", 0);
+				// Moses Newman 12/19/2013 No need to set CUSTOMER_PAID_THRU_MM or CUSTOMER_PAID_THRU_YY as they are now computed fields!
+				// Moses Newman 05/30/2014 Add call to ClosedCustomerPaidThrough to get correct paid thru
+				// Moses Newman 12/12/2014 Change CUSTOMERTableAdapter.GetPaidThrough to TVAmortTableAdapter.PaidThrough!
+				loPaidThru = TVAmortTableAdapter.PaidThrough(CustomerPostDataSet.CUSTOMER.Rows[i].Field<String>("CUSTOMER_NO"));
+				if (loPaidThru != null)
+					lsPaidThru = (String)loPaidThru;
+				else
+					lsPaidThru = "    ";
+				CustomerPostDataSet.CUSTOMER.Rows[i].SetField<String>("CUSTOMER_PAID_THRU", lsPaidThru);
+				CustomerPostDataSet.CUSTOMER.Rows[i].SetField<Decimal>("CUSTOMER_HIGHEST_BALANCE_DUE", 0);
 				CustomerPostDataSet.CUSTOMER.Rows[i].SetField<Decimal>("CUSTOMER_LAST_PAYMENT_MADE", 0);
 				CustomerPostDataSet.CUSTOMER.Rows[i].SetField<Nullable<DateTime>>("CUSTOMER_HIGHEST_BALANCE_DUE", null);
 				CustomerPostDataSet.CUSTOMER.Rows[i].SetField<Int32>("CUSTOMER_NO_OF_PAYMENTS_MADE", 0);
@@ -1088,12 +1089,12 @@ namespace IAC2021SQL
 				CustomerPostDataSet.CUSTOMER.Rows[i].SetField<Decimal>("CUSTOMER_LATE_CHARGE_BAL", 0);
 				CustomerPostDataSet.CUSTOMER.Rows[i].SetField<Decimal>("CUSTOMER_PT_UPDATE", 0);
 				CustomerPostDataSet.CUSTOMER.Rows[i].SetField<Decimal>("CUSTOMER_CREDIT_AVAILABLE", 0);
-                // Moses Newman 04/26/2013 Simple Interest do NOT Pre-Calculate Interest!
-                // Moses Newman 03/21/2014 do not clear out estimate of Loan Interest anymore!
-                /*
+				// Moses Newman 04/26/2013 Simple Interest do NOT Pre-Calculate Interest!
+				// Moses Newman 03/21/2014 do not clear out estimate of Loan Interest anymore!
+				/*
                 if (CustomerPostDataSet.CUSTOMER.Rows[i].Field<String>("CUSTOMER_AMORTIZE_IND").ToUpper() == "S")
                     CustomerPostDataSet.CUSTOMER.Rows[i].SetField<Decimal>("CUSTOMER_LOAN_INTEREST", (Decimal)0.00);*/
-						CustomerPostDataSet.CUSTOMER.Rows[i].SetField<Decimal>("CUSTOMER_UE_INTEREST", 0);
+				CustomerPostDataSet.CUSTOMER.Rows[i].SetField<Decimal>("CUSTOMER_UE_INTEREST", 0);
 				// Moses Newman 01/17/2013 Simple Interest No More Precalculated Interest!!!
 				CustomerPostDataSet.CUSTOMER.Rows[i].SetField<Decimal>("CUSTOMER_BALANCE", CustomerPostDataSet.CUSTOMER.Rows[i].Field<Decimal>("CUSTOMER_LOAN_CASH"));
 				CustomerPostDataSet.CUSTOMER.Rows[i].SetField<Decimal>("CUSTOMER_PREV_BALANCE", CustomerPostDataSet.CUSTOMER.Rows[i].Field<Decimal>("CUSTOMER_LOAN_CASH"));
@@ -1118,15 +1119,15 @@ namespace IAC2021SQL
 				CustomerPostDataSet.CUSTHIST.Rows[CusthistBindingSource.Position].SetField<String>("CUSTHIST_NO", CustomerPostDataSet.CUSTOMER.Rows[i].Field<String>("CUSTOMER_NO"));
 				CustomerPostDataSet.CUSTHIST.Rows[CusthistBindingSource.Position].SetField<String>("CUSTHIST_ADD_ON", CustomerPostDataSet.CUSTOMER.Rows[i].Field<String>("CUSTOMER_ADD_ON"));
 				CustomerPostDataSet.CUSTHIST.Rows[CusthistBindingSource.Position].SetField<String>("CUSTHIST_IAC_TYPE", CustomerPostDataSet.CUSTOMER.Rows[i].Field<String>("CUSTOMER_IAC_TYPE"));
-                // Moses Newman 01/20/2015 Set the date of the NEW hostory record = to the new Contract Date field!
-                if (CustomerPostDataSet.CUSTOMER.Rows[i].Field<Nullable<DateTime>>("ContractDate") == null)
-                    CustomerPostDataSet.CUSTOMER.Rows[i].SetField<DateTime>("ContractDate", NowDate.Date);
-                CustomerPostDataSet.CUSTHIST.Rows[CusthistBindingSource.Position].SetField<DateTime>("CUSTHIST_PAY_DATE", CustomerPostDataSet.CUSTOMER.Rows[i].Field<DateTime>("ContractDate"));
-                CustomerPostDataSet.CUSTHIST.Rows[CusthistBindingSource.Position].SetField<Int32>("CUSTHIST_DATE_SEQ", lnSeq);
-                // Moses Newman 03/15/2018 added TransactionDate, Fee, FromIVR
-                CustomerPostDataSet.CUSTHIST.Rows[CusthistBindingSource.Position].SetField<DateTime>("TransactionDate", NowDate.Date);  // Moses Newman 03/14/2019 todays date instead of contract date!
-                CustomerPostDataSet.CUSTHIST.Rows[CusthistBindingSource.Position].SetField<Decimal>("Fee", 0);
-                CustomerPostDataSet.CUSTHIST.Rows[CusthistBindingSource.Position].SetField<Boolean>("FromIVR", false);
+				// Moses Newman 01/20/2015 Set the date of the NEW hostory record = to the new Contract Date field!
+				if (CustomerPostDataSet.CUSTOMER.Rows[i].Field<Nullable<DateTime>>("ContractDate") == null)
+					CustomerPostDataSet.CUSTOMER.Rows[i].SetField<DateTime>("ContractDate", NowDate.Date);
+				CustomerPostDataSet.CUSTHIST.Rows[CusthistBindingSource.Position].SetField<DateTime>("CUSTHIST_PAY_DATE", CustomerPostDataSet.CUSTOMER.Rows[i].Field<DateTime>("ContractDate"));
+				CustomerPostDataSet.CUSTHIST.Rows[CusthistBindingSource.Position].SetField<Int32>("CUSTHIST_DATE_SEQ", lnSeq);
+				// Moses Newman 03/15/2018 added TransactionDate, Fee, FromIVR
+				CustomerPostDataSet.CUSTHIST.Rows[CusthistBindingSource.Position].SetField<DateTime>("TransactionDate", NowDate.Date);  // Moses Newman 03/14/2019 todays date instead of contract date!
+				CustomerPostDataSet.CUSTHIST.Rows[CusthistBindingSource.Position].SetField<Decimal>("Fee", 0);
+				CustomerPostDataSet.CUSTHIST.Rows[CusthistBindingSource.Position].SetField<Boolean>("FromIVR", false);
 				CustomerPostDataSet.CUSTHIST.Rows[CusthistBindingSource.Position].SetField<Decimal>("CUSTHIST_BALANCE", CustomerPostDataSet.CUSTOMER.Rows[i].Field<Decimal>("CUSTOMER_BALANCE"));
 				CustomerPostDataSet.CUSTHIST.Rows[CusthistBindingSource.Position].SetField<Decimal>("CUSTHIST_LATE_CHARGE", 0);
 				CustomerPostDataSet.CUSTHIST.Rows[CusthistBindingSource.Position].SetField<Decimal>("CUSTHIST_LATE_CHARGE_BAL", 0);
@@ -1144,24 +1145,24 @@ namespace IAC2021SQL
 				lnMasterInterest += CustomerPostDataSet.CUSTOMER.Rows[i].Field<Decimal>("CUSTOMER_LOAN_INTEREST");
 				CUSTOMERTableAdapter.Transaction = tableAdapTran;
 				CUSTHISTTableAdapter.Transaction = tableAdapTran;
-                // Moses Newman 04/30/2017 Add Handling of "N" for Normal Daily Compounding
+				// Moses Newman 04/30/2017 Add Handling of "N" for Normal Daily Compounding
 				if (CustomerPostDataSet.CUSTOMER.Rows[i].Field<String>("CUSTOMER_AMORTIZE_IND").ToUpper() == "Y" ||
 					CustomerPostDataSet.CUSTOMER.Rows[i].Field<String>("CUSTOMER_AMORTIZE_IND").ToUpper() == "S" ||
-                    CustomerPostDataSet.CUSTOMER.Rows[i].Field<String>("CUSTOMER_AMORTIZE_IND").ToUpper() == "N")
+					CustomerPostDataSet.CUSTOMER.Rows[i].Field<String>("CUSTOMER_AMORTIZE_IND").ToUpper() == "N")
 				{
 					lnLoanAmount = Convert.ToDouble(CustomerPostDataSet.CUSTOMER.Rows[i].Field<Decimal>("CUSTOMER_LOAN_CASH"));
 					lnTerm = Convert.ToDouble(CustomerPostDataSet.CUSTOMER.Rows[i].Field<Int32>("CUSTOMER_TERM"));
 					lnAPR = Convert.ToDouble(CustomerPostDataSet.CUSTOMER.Rows[i].Field<Decimal>("CUSTOMER_ANNUAL_PERCENTAGE_RATE"));
 					lnAPR = lnAPR / 100;
 					//lnMonthlyAmountOwed = Convert.ToDouble(CustomerPostDataSet.CUSTOMER.Rows[i].Field<Decimal>("CUSTOMER_REGULAR_AMOUNT"));
-                    if (lnAPR != 0)
-                        lnRegularAmount = 0;
-                    else
-                        lnRegularAmount = (Double)CustomerPostDataSet.CUSTOMER.Rows[i].Field<Decimal>("CUSTOMER_REGULAR_AMOUNT");
+					if (lnAPR != 0)
+						lnRegularAmount = 0;
+					else
+						lnRegularAmount = (Double)CustomerPostDataSet.CUSTOMER.Rows[i].Field<Decimal>("CUSTOMER_REGULAR_AMOUNT");
 					AmortTable = new AmortRec[CustomerPostDataSet.CUSTOMER.Rows[i].Field<Int32>("CUSTOMER_TERM")];
-                    // Moses Newman 01/21/2015 Add Contract Date handling!
+					// Moses Newman 01/21/2015 Add Contract Date handling!
 					// Moses Newman 08/23/2021 Call New TVAmortizeAPI
-                    TVAmortize(CustomerPostDataSet.CUSTOMER.Rows[i].Field<DateTime>("ContractDate").Date,CustomerPostDataSet.CUSTOMER.Rows[i].Field<DateTime>("CUSTOMER_INIT_DATE").Date, ref lnLoanAmount, ref lnTerm, ref lnAPR, ref lnRegularAmount, ref lsAmortMessage, ref AmortTable, true);
+					TVAmortize(CustomerPostDataSet.CUSTOMER.Rows[i].Field<DateTime>("ContractDate").Date, CustomerPostDataSet.CUSTOMER.Rows[i].Field<DateTime>("CUSTOMER_INIT_DATE").Date, ref lnLoanAmount, ref lnTerm, ref lnAPR, ref lnRegularAmount, ref lsAmortMessage, ref AmortTable, true);
 					lnAPR = lnAPR * 100;
 					AMORTIZETableAdapter.Transaction = tableAdapTran;
 				}
@@ -1171,10 +1172,10 @@ namespace IAC2021SQL
 				{
 					CUSTOMERTableAdapter.Update(CustomerPostDataSet.CUSTOMER.Rows[i]);
 					CUSTHISTTableAdapter.Update(CustomerPostDataSet.CUSTHIST.Rows[CusthistBindingSource.Position]);
-                    // Moses Newman 04/30/2017 add handling of N form Normal Daily Compounding
+					// Moses Newman 04/30/2017 add handling of N form Normal Daily Compounding
 					if (CustomerPostDataSet.CUSTOMER.Rows[i].Field<String>("CUSTOMER_AMORTIZE_IND").ToUpper() == "Y" ||
 						CustomerPostDataSet.CUSTOMER.Rows[i].Field<String>("CUSTOMER_AMORTIZE_IND").ToUpper() == "S" ||
-                        CustomerPostDataSet.CUSTOMER.Rows[i].Field<String>("CUSTOMER_AMORTIZE_IND").ToUpper() == "N")
+						CustomerPostDataSet.CUSTOMER.Rows[i].Field<String>("CUSTOMER_AMORTIZE_IND").ToUpper() == "N")
 					{
 						AMORTIZETableAdapter.Insert(CustomerPostDataSet.CUSTOMER.Rows[i].Field<String>("CUSTOMER_NO"),
 													CustomerPostDataSet.CUSTOMER.Rows[i].Field<String>("CUSTOMER_ADD_ON"),
@@ -1206,82 +1207,84 @@ namespace IAC2021SQL
 					worker.ReportProgress(30);
 				}
 				tableAdapTran = CUSTOMERTableAdapter.BeginTransaction();
-		}
+			}
+			Int32 tempID = 0;
 			for (Int32 dlrCount = 0; dlrCount < WS_DEALER.Rows.Count; dlrCount++)
 			{
-                tableAdapTran.Dispose();
-                tableAdapTran = DEALERTableAdapter.BeginTransaction();
-                DEALERTableAdapter.Transaction = tableAdapTran;
-                DEALHISTTableAdapter.Transaction = tableAdapTran;
-				// Moses Newman 03/27/2022 DEALER now uses integer key id
-				DEALERTableAdapter.Fill(DEALER, WS_DEALER[dlrCount].Field<Int32>("KEY"));
-				DEALER.Rows[0].SetField<Decimal>("DEALER_CUR_RSV", 0);
-				DEALER.Rows[0].SetField<Decimal>("DEALER_CUR_CONT", 0);
-				DEALER.Rows[0].SetField<Decimal>("DEALER_CUR_ADJ", 0);
-				DEALER.Rows[0].SetField<Decimal>("DEALER_CUR_BAD", 0);
-				DEALER.Rows[0].SetField<Decimal>("DEALER_CUR_LOSS", 0);
-				DEALER.Rows[0].SetField<Decimal>("DEALER_CUR_OLOAN", WS_DEALER.Rows[dlrCount].Field<Decimal>("OS_L"));
-                DEALER.Rows[0].SetField<Decimal>("DEALER_YTD_OLOAN", DEALER.Rows[0].Field<Nullable<Decimal>>("DEALER_YTD_OLOAN") != null ? DEALER.Rows[0].Field<Decimal>("DEALER_YTD_OLOAN") + WS_DEALER.Rows[dlrCount].Field<Decimal>("OS_L") : WS_DEALER.Rows[dlrCount].Field<Decimal>("OS_L"));
-				DEALER.Rows[0].SetField<DateTime>("DEALER_POST_DATE", NowDate.Date);
-				DEALER.Rows[0].SetField<Decimal>("DEALER_CUR_AMORT_INT", WS_DEALER.Rows[dlrCount].Field<Decimal>("AMORT_INT"));
-                DEALER.Rows[0].SetField<Decimal>("DEALER_YTD_AMORT_INT", DEALER.Rows[0].Field<Nullable<Decimal>>("DEALER_YTD_AMORT_INT") != null ? DEALER.Rows[0].Field<Decimal>("DEALER_YTD_AMORT_INT") + WS_DEALER.Rows[dlrCount].Field<Decimal>("AMORT_INT") : WS_DEALER.Rows[dlrCount].Field<Decimal>("AMORT_INT"));
-				DEALER.Rows[0].SetField<Decimal>("DEALER_CUR_SIMPLE_INT", WS_DEALER.Rows[dlrCount].Field<Decimal>("SIMPLE_INT"));
-                if(DEALER.Rows[0].Field<Nullable<Decimal>>("DEALER_YTD_SIMPLE_INT") != null)
-				    DEALER.Rows[0].SetField<Decimal>("DEALER_YTD_SIMPLE_INT", DEALER.Rows[0].Field<Decimal>("DEALER_YTD_SIMPLE_INT") + WS_DEALER.Rows[dlrCount].Field<Decimal>("SIMPLE_INT"));
-                else
-                    DEALER.Rows[0].SetField<Decimal>("DEALER_YTD_SIMPLE_INT", WS_DEALER.Rows[dlrCount].Field<Decimal>("SIMPLE_INT"));
-                if (DEALER.Rows[0].Field<Nullable<Decimal>>("DEALER_YTD_SIMPLE_PDI") == null)
-                    DEALER.Rows[0].SetField<Decimal>("DEALER_YTD_SIMPLE_PDI", 0);
-                DEALER.Rows[0].SetField<Decimal>("DEALER_CUR_OLD_INT", WS_DEALER.Rows[dlrCount].Field<Decimal>("OLD_INT"));
-                DEALER.Rows[0].SetField<Decimal>("DEALER_YTD_OLD_INT", DEALER.Rows[0].Field<Nullable<Decimal>>("DEALER_YTD_OLD_INT") != null ? DEALER.Rows[0].Field<Decimal>("DEALER_YTD_OLD_INT") + WS_DEALER.Rows[dlrCount].Field<Decimal>("OLD_INT") : WS_DEALER.Rows[dlrCount].Field<Decimal>("OLD_INT"));
-                DEALER.Rows[0].SetField<Decimal>("DEALER_CUR_AMORT_PDI", 0);
-				DEALER.Rows[0].SetField<Decimal>("DEALER_CUR_SIMPLE_PDI", 0);
-				DEALER.Rows[0].SetField<Decimal>("DEALER_CUR_OLD_PDI", 0);
-				lnMasterOLoan += WS_DEALER.Rows[dlrCount].Field<Decimal>("OS_L");
-				loDealhistSeq = DEALHISTTableAdapter.SeqNoQuery(WS_DEALER.Rows[dlrCount].Field<Int32>("KEY"), NowDate.Date, NowDate.Date);
-				if (loDealhistSeq != null)
-					lnSeq = (int)loDealhistSeq + 1;
-				else
-					lnSeq = 1;
-				DealerBindingSource.EndEdit();
-				DealhistBindingSource.AddNew();
-				DealhistBindingSource.EndEdit();
-				// Moses Newman 03/27/2022 DEALHIST_ACC_NO now integer
-				DEALHIST.Rows[DealhistBindingSource.Position].SetField<Int32>("DEALHIST_ACC_NO", DEALER.Rows[0].Field<Int32>("id"));
-                // Moses Newman  08/3/2013 have to limit DEALHIST_NAME TO 25 Charaters if ther are single quotes because they require padding with aditional quotes
-				DEALHIST.Rows[DealhistBindingSource.Position].SetField<String>("DEALHIST_NAME", Left(DEALER.Rows[0].Field<String>("DEALER_NAME").Replace("\'", "\'\'"),25));
-				DEALHIST.Rows[DealhistBindingSource.Position].SetField<Decimal>("DEALHIST_CUR_RSV", DEALER.Rows[0].Field<Decimal>("DEALER_CUR_RSV"));
-				DEALHIST.Rows[DealhistBindingSource.Position].SetField<Decimal>("DEALHIST_CUR_CONT", DEALER.Rows[0].Field<Decimal>("DEALER_CUR_CONT"));
-				DEALHIST.Rows[DealhistBindingSource.Position].SetField<Decimal>("DEALHIST_CUR_OLOAN", DEALER.Rows[0].Field<Decimal>("DEALER_CUR_OLOAN"));
-				DEALHIST.Rows[DealhistBindingSource.Position].SetField<Decimal>("DEALHIST_CUR_ADJ", DEALER.Rows[0].Field<Decimal>("DEALER_CUR_ADJ"));
-				DEALHIST.Rows[DealhistBindingSource.Position].SetField<Decimal>("DEALHIST_CUR_BAD", DEALER.Rows[0].Field<Decimal>("DEALER_CUR_BAD"));
-				DEALHIST.Rows[DealhistBindingSource.Position].SetField<Decimal>("DEALHIST_CUR_LOSS", DEALER.Rows[0].Field<Decimal>("DEALER_CUR_LOSS"));
-				DEALHIST.Rows[DealhistBindingSource.Position].SetField<Decimal>("DEALHIST_YTD_RSV", DEALER.Rows[0].Field<Decimal>("DEALER_YTD_RSV"));
-				DEALHIST.Rows[DealhistBindingSource.Position].SetField<Decimal>("DEALHIST_YTD_CONT", DEALER.Rows[0].Field<Decimal>("DEALER_YTD_CONT"));
-				DEALHIST.Rows[DealhistBindingSource.Position].SetField<Decimal>("DEALHIST_YTD_OLOAN", DEALER.Rows[0].Field<Decimal>("DEALER_YTD_OLOAN"));
-				DEALHIST.Rows[DealhistBindingSource.Position].SetField<Decimal>("DEALHIST_YTD_ADJ", DEALER.Rows[0].Field<Decimal>("DEALER_YTD_ADJ"));
-				DEALHIST.Rows[DealhistBindingSource.Position].SetField<Decimal>("DEALHIST_YTD_BAD", DEALER.Rows[0].Field<Decimal>("DEALER_YTD_BAD"));
-				DEALHIST.Rows[DealhistBindingSource.Position].SetField<Decimal>("DEALHIST_YTD_LOSS", DEALER.Rows[0].Field<Decimal>("DEALER_YTD_LOSS"));
-				DEALHIST.Rows[DealhistBindingSource.Position].SetField<DateTime>("DEALHIST_POST_DATE", NowDate.Date);
-				DEALHIST.Rows[DealhistBindingSource.Position].SetField<DateTime>("DEALHIST_LAST_POST_DATE", NowDate.Date);
-				DEALHIST.Rows[DealhistBindingSource.Position].SetField<Int32>("DEALHIST_SEQ_NO", lnSeq);
-				DEALHIST.Rows[DealhistBindingSource.Position].SetField<String>("DEALHIST_POST_CODE", "N");
-				DEALHIST.Rows[DealhistBindingSource.Position].SetField<Decimal>("DEALHIST_CUR_AMORT_INT", DEALER.Rows[0].Field<Decimal>("DEALER_CUR_AMORT_INT"));
-				DEALHIST.Rows[DealhistBindingSource.Position].SetField<Decimal>("DEALHIST_CUR_AMORT_PDI", DEALER.Rows[0].Field<Decimal>("DEALER_CUR_AMORT_PDI"));
-				DEALHIST.Rows[DealhistBindingSource.Position].SetField<Decimal>("DEALHIST_YTD_AMORT_INT", DEALER.Rows[0].Field<Decimal>("DEALER_YTD_AMORT_INT"));
-				DEALHIST.Rows[DealhistBindingSource.Position].SetField<Decimal>("DEALHIST_YTD_AMORT_PDI", DEALER.Rows[0].Field<Decimal>("DEALER_YTD_AMORT_PDI"));
-				DEALHIST.Rows[DealhistBindingSource.Position].SetField<Decimal>("DEALHIST_CUR_SIMPLE_INT", DEALER.Rows[0].Field<Decimal>("DEALER_CUR_SIMPLE_INT"));
-				DEALHIST.Rows[DealhistBindingSource.Position].SetField<Decimal>("DEALHIST_CUR_SIMPLE_PDI", DEALER.Rows[0].Field<Decimal>("DEALER_CUR_SIMPLE_PDI"));
-				DEALHIST.Rows[DealhistBindingSource.Position].SetField<Decimal>("DEALHIST_YTD_SIMPLE_INT", DEALER.Rows[0].Field<Decimal>("DEALER_YTD_SIMPLE_INT"));
-				DEALHIST.Rows[DealhistBindingSource.Position].SetField<Decimal>("DEALHIST_YTD_SIMPLE_PDI", DEALER.Rows[0].Field<Decimal>("DEALER_YTD_SIMPLE_PDI"));
-				DEALHIST.Rows[DealhistBindingSource.Position].SetField<Decimal>("DEALHIST_CUR_OLD_INT", DEALER.Rows[0].Field<Decimal>("DEALER_CUR_OLD_INT"));
-				DEALHIST.Rows[DealhistBindingSource.Position].SetField<Decimal>("DEALHIST_CUR_OLD_PDI", DEALER.Rows[0].Field<Decimal>("DEALER_CUR_OLD_PDI"));
-				DEALHIST.Rows[DealhistBindingSource.Position].SetField<Decimal>("DEALHIST_YTD_OLD_INT", DEALER.Rows[0].Field<Decimal>("DEALER_YTD_OLD_INT"));
-				DEALHIST.Rows[DealhistBindingSource.Position].SetField<Decimal>("DEALHIST_YTD_OLD_PDI", DEALER.Rows[0].Field<Decimal>("DEALER_YTD_OLD_PDI"));
-				DealhistBindingSource.EndEdit();
-				DEALHISTTableAdapter.Transaction = tableAdapTran;
+				tempID = WS_DEALER[dlrCount].Field<Int32>("KEY");
 				try
 				{
+					tableAdapTran.Dispose();
+					tableAdapTran = DEALERTableAdapter.BeginTransaction();
+					DEALERTableAdapter.Transaction = tableAdapTran;
+					DEALHISTTableAdapter.Transaction = tableAdapTran;
+					// Moses Newman 03/27/2022 DEALER now uses integer key id
+					DEALERTableAdapter.Fill(DEALER, WS_DEALER[dlrCount].Field<Int32>("KEY"));
+					DEALER.Rows[0].SetField<Decimal>("DEALER_CUR_RSV", 0);
+					DEALER.Rows[0].SetField<Decimal>("DEALER_CUR_CONT", 0);
+					DEALER.Rows[0].SetField<Decimal>("DEALER_CUR_ADJ", 0);
+					DEALER.Rows[0].SetField<Decimal>("DEALER_CUR_BAD", 0);
+					DEALER.Rows[0].SetField<Decimal>("DEALER_CUR_LOSS", 0);
+					DEALER.Rows[0].SetField<Decimal>("DEALER_CUR_OLOAN", WS_DEALER.Rows[dlrCount].Field<Decimal>("OS_L"));
+					DEALER.Rows[0].SetField<Decimal>("DEALER_YTD_OLOAN", DEALER.Rows[0].Field<Nullable<Decimal>>("DEALER_YTD_OLOAN") != null ? DEALER.Rows[0].Field<Decimal>("DEALER_YTD_OLOAN") + WS_DEALER.Rows[dlrCount].Field<Decimal>("OS_L") : WS_DEALER.Rows[dlrCount].Field<Decimal>("OS_L"));
+					DEALER.Rows[0].SetField<DateTime>("DEALER_POST_DATE", NowDate.Date);
+					DEALER.Rows[0].SetField<Decimal>("DEALER_CUR_AMORT_INT", WS_DEALER.Rows[dlrCount].Field<Decimal>("AMORT_INT"));
+					DEALER.Rows[0].SetField<Decimal>("DEALER_YTD_AMORT_INT", DEALER.Rows[0].Field<Nullable<Decimal>>("DEALER_YTD_AMORT_INT") != null ? DEALER.Rows[0].Field<Decimal>("DEALER_YTD_AMORT_INT") + WS_DEALER.Rows[dlrCount].Field<Decimal>("AMORT_INT") : WS_DEALER.Rows[dlrCount].Field<Decimal>("AMORT_INT"));
+					DEALER.Rows[0].SetField<Decimal>("DEALER_CUR_SIMPLE_INT", WS_DEALER.Rows[dlrCount].Field<Decimal>("SIMPLE_INT"));
+					if (DEALER.Rows[0].Field<Nullable<Decimal>>("DEALER_YTD_SIMPLE_INT") != null)
+						DEALER.Rows[0].SetField<Decimal>("DEALER_YTD_SIMPLE_INT", DEALER.Rows[0].Field<Decimal>("DEALER_YTD_SIMPLE_INT") + WS_DEALER.Rows[dlrCount].Field<Decimal>("SIMPLE_INT"));
+					else
+						DEALER.Rows[0].SetField<Decimal>("DEALER_YTD_SIMPLE_INT", WS_DEALER.Rows[dlrCount].Field<Decimal>("SIMPLE_INT"));
+					if (DEALER.Rows[0].Field<Nullable<Decimal>>("DEALER_YTD_SIMPLE_PDI") == null)
+						DEALER.Rows[0].SetField<Decimal>("DEALER_YTD_SIMPLE_PDI", 0);
+					DEALER.Rows[0].SetField<Decimal>("DEALER_CUR_OLD_INT", WS_DEALER.Rows[dlrCount].Field<Decimal>("OLD_INT"));
+					DEALER.Rows[0].SetField<Decimal>("DEALER_YTD_OLD_INT", DEALER.Rows[0].Field<Nullable<Decimal>>("DEALER_YTD_OLD_INT") != null ? DEALER.Rows[0].Field<Decimal>("DEALER_YTD_OLD_INT") + WS_DEALER.Rows[dlrCount].Field<Decimal>("OLD_INT") : WS_DEALER.Rows[dlrCount].Field<Decimal>("OLD_INT"));
+					DEALER.Rows[0].SetField<Decimal>("DEALER_CUR_AMORT_PDI", 0);
+					DEALER.Rows[0].SetField<Decimal>("DEALER_CUR_SIMPLE_PDI", 0);
+					DEALER.Rows[0].SetField<Decimal>("DEALER_CUR_OLD_PDI", 0);
+					lnMasterOLoan += WS_DEALER.Rows[dlrCount].Field<Decimal>("OS_L");
+					loDealhistSeq = DEALHISTTableAdapter.SeqNoQuery(WS_DEALER.Rows[dlrCount].Field<Int32>("KEY"), NowDate.Date, NowDate.Date);
+					if (loDealhistSeq != null)
+						lnSeq = (int)loDealhistSeq + 1;
+					else
+						lnSeq = 1;
+					DealerBindingSource.EndEdit();
+					DealhistBindingSource.AddNew();
+					DealhistBindingSource.EndEdit();
+					// Moses Newman 03/27/2022 DEALHIST_ACC_NO now integer
+					DEALHIST.Rows[DealhistBindingSource.Position].SetField<Int32>("DEALHIST_ACC_NO", DEALER.Rows[0].Field<Int32>("id"));
+					// Moses Newman  08/3/2013 have to limit DEALHIST_NAME TO 25 Charaters if ther are single quotes because they require padding with aditional quotes
+					DEALHIST.Rows[DealhistBindingSource.Position].SetField<String>("DEALHIST_NAME", Left(DEALER.Rows[0].Field<String>("DEALER_NAME").Replace("\'", "\'\'"), 25));
+					DEALHIST.Rows[DealhistBindingSource.Position].SetField<Decimal>("DEALHIST_CUR_RSV", DEALER.Rows[0].Field<Decimal>("DEALER_CUR_RSV"));
+					DEALHIST.Rows[DealhistBindingSource.Position].SetField<Decimal>("DEALHIST_CUR_CONT", DEALER.Rows[0].Field<Decimal>("DEALER_CUR_CONT"));
+					DEALHIST.Rows[DealhistBindingSource.Position].SetField<Decimal>("DEALHIST_CUR_OLOAN", DEALER.Rows[0].Field<Decimal>("DEALER_CUR_OLOAN"));
+					DEALHIST.Rows[DealhistBindingSource.Position].SetField<Decimal>("DEALHIST_CUR_ADJ", DEALER.Rows[0].Field<Decimal>("DEALER_CUR_ADJ"));
+					DEALHIST.Rows[DealhistBindingSource.Position].SetField<Decimal>("DEALHIST_CUR_BAD", DEALER.Rows[0].Field<Decimal>("DEALER_CUR_BAD"));
+					DEALHIST.Rows[DealhistBindingSource.Position].SetField<Decimal>("DEALHIST_CUR_LOSS", DEALER.Rows[0].Field<Decimal>("DEALER_CUR_LOSS"));
+					DEALHIST.Rows[DealhistBindingSource.Position].SetField<Decimal>("DEALHIST_YTD_RSV", DEALER.Rows[0].Field<Decimal>("DEALER_YTD_RSV"));
+					DEALHIST.Rows[DealhistBindingSource.Position].SetField<Decimal>("DEALHIST_YTD_CONT", DEALER.Rows[0].Field<Decimal>("DEALER_YTD_CONT"));
+					DEALHIST.Rows[DealhistBindingSource.Position].SetField<Decimal>("DEALHIST_YTD_OLOAN", DEALER.Rows[0].Field<Decimal>("DEALER_YTD_OLOAN"));
+					DEALHIST.Rows[DealhistBindingSource.Position].SetField<Decimal>("DEALHIST_YTD_ADJ", DEALER.Rows[0].Field<Decimal>("DEALER_YTD_ADJ"));
+					DEALHIST.Rows[DealhistBindingSource.Position].SetField<Decimal>("DEALHIST_YTD_BAD", DEALER.Rows[0].Field<Decimal>("DEALER_YTD_BAD"));
+					DEALHIST.Rows[DealhistBindingSource.Position].SetField<Decimal>("DEALHIST_YTD_LOSS", DEALER.Rows[0].Field<Decimal>("DEALER_YTD_LOSS"));
+					DEALHIST.Rows[DealhistBindingSource.Position].SetField<DateTime>("DEALHIST_POST_DATE", NowDate.Date);
+					DEALHIST.Rows[DealhistBindingSource.Position].SetField<DateTime>("DEALHIST_LAST_POST_DATE", NowDate.Date);
+					DEALHIST.Rows[DealhistBindingSource.Position].SetField<Int32>("DEALHIST_SEQ_NO", lnSeq);
+					DEALHIST.Rows[DealhistBindingSource.Position].SetField<String>("DEALHIST_POST_CODE", "N");
+					DEALHIST.Rows[DealhistBindingSource.Position].SetField<Decimal>("DEALHIST_CUR_AMORT_INT", DEALER.Rows[0].Field<Decimal>("DEALER_CUR_AMORT_INT"));
+					DEALHIST.Rows[DealhistBindingSource.Position].SetField<Decimal>("DEALHIST_CUR_AMORT_PDI", DEALER.Rows[0].Field<Decimal>("DEALER_CUR_AMORT_PDI"));
+					DEALHIST.Rows[DealhistBindingSource.Position].SetField<Decimal>("DEALHIST_YTD_AMORT_INT", DEALER.Rows[0].Field<Decimal>("DEALER_YTD_AMORT_INT"));
+					DEALHIST.Rows[DealhistBindingSource.Position].SetField<Decimal>("DEALHIST_YTD_AMORT_PDI", DEALER.Rows[0].Field<Decimal>("DEALER_YTD_AMORT_PDI"));
+					DEALHIST.Rows[DealhistBindingSource.Position].SetField<Decimal>("DEALHIST_CUR_SIMPLE_INT", DEALER.Rows[0].Field<Decimal>("DEALER_CUR_SIMPLE_INT"));
+					DEALHIST.Rows[DealhistBindingSource.Position].SetField<Decimal>("DEALHIST_CUR_SIMPLE_PDI", DEALER.Rows[0].Field<Decimal>("DEALER_CUR_SIMPLE_PDI"));
+					DEALHIST.Rows[DealhistBindingSource.Position].SetField<Decimal>("DEALHIST_YTD_SIMPLE_INT", DEALER.Rows[0].Field<Decimal>("DEALER_YTD_SIMPLE_INT"));
+					DEALHIST.Rows[DealhistBindingSource.Position].SetField<Decimal>("DEALHIST_YTD_SIMPLE_PDI", DEALER.Rows[0].Field<Decimal>("DEALER_YTD_SIMPLE_PDI"));
+					DEALHIST.Rows[DealhistBindingSource.Position].SetField<Decimal>("DEALHIST_CUR_OLD_INT", DEALER.Rows[0].Field<Decimal>("DEALER_CUR_OLD_INT"));
+					DEALHIST.Rows[DealhistBindingSource.Position].SetField<Decimal>("DEALHIST_CUR_OLD_PDI", DEALER.Rows[0].Field<Decimal>("DEALER_CUR_OLD_PDI"));
+					DEALHIST.Rows[DealhistBindingSource.Position].SetField<Decimal>("DEALHIST_YTD_OLD_INT", DEALER.Rows[0].Field<Decimal>("DEALER_YTD_OLD_INT"));
+					DEALHIST.Rows[DealhistBindingSource.Position].SetField<Decimal>("DEALHIST_YTD_OLD_PDI", DEALER.Rows[0].Field<Decimal>("DEALER_YTD_OLD_PDI"));
+					DealhistBindingSource.EndEdit();
+					DEALHISTTableAdapter.Transaction = tableAdapTran;
 					DEALERTableAdapter.Update(DEALER.Rows[0]);
 					DEALHISTTableAdapter.Update(DEALHIST.Rows[DealhistBindingSource.Position]);
 					tableAdapTran.Commit();
@@ -1303,10 +1306,10 @@ namespace IAC2021SQL
 			}
 			tableAdapTran.Dispose();
 			lnMasterInterest += lnTotalCustomerDealerDisc;
-            loMasterKey = ACCOUNTTableAdapter.AccountNumber("OS_LOANS");
-            lsMasterKey = (String)loMasterKey;
+			loMasterKey = ACCOUNTTableAdapter.AccountNumber("OS_LOANS");
+			lsMasterKey = (String)loMasterKey;
 
-			MASTERTableAdapter.Fill(MASTER, lsMasterKey.TrimEnd()); 
+			MASTERTableAdapter.Fill(MASTER, lsMasterKey.TrimEnd());
 			MASTER.Rows[0].SetField<Decimal>("MASTER_CUR_CONT", 0);
 			MASTER.Rows[0].SetField<Decimal>("MASTER_CUR_RSV", 0);
 			MASTER.Rows[0].SetField<Decimal>("MASTER_CUR_ADJ", 0);
@@ -1317,10 +1320,10 @@ namespace IAC2021SQL
 			MASTER.Rows[0].SetField<DateTime>("MASTER_POST_DATE", NowDate.Date);
 			MASTER.Rows[0].SetField<Decimal>("MASTER_AMORT_CUR_OLOAN", 0);
 			MASTER.Rows[0].SetField<Decimal>("MASTER_SIMPLE_CUR_OLOAN", lnMasterOLoan);
-            if(MASTER.Rows[0].Field<Nullable<Decimal>>("MASTER_SIMPLE_YTD_OLOAN") != null)
-			    MASTER.Rows[0].SetField<Decimal>("MASTER_SIMPLE_YTD_OLOAN", MASTER.Rows[0].Field<Decimal>("MASTER_SIMPLE_YTD_OLOAN") + lnMasterOLoan);
-            else
-                MASTER.Rows[0].SetField<Decimal>("MASTER_SIMPLE_YTD_OLOAN", lnMasterOLoan);
+			if (MASTER.Rows[0].Field<Nullable<Decimal>>("MASTER_SIMPLE_YTD_OLOAN") != null)
+				MASTER.Rows[0].SetField<Decimal>("MASTER_SIMPLE_YTD_OLOAN", MASTER.Rows[0].Field<Decimal>("MASTER_SIMPLE_YTD_OLOAN") + lnMasterOLoan);
+			else
+				MASTER.Rows[0].SetField<Decimal>("MASTER_SIMPLE_YTD_OLOAN", lnMasterOLoan);
 			MasterBindingSource.EndEdit();
 			MasthistBindingSource.AddNew();
 			MasthistBindingSource.EndEdit();
@@ -1329,24 +1332,24 @@ namespace IAC2021SQL
 				lnSeq = (int)loMastHistSeq + 1;
 			else
 				lnSeq = 1;
-            MASTHIST.Rows[MasthistBindingSource.Position].SetField<String>("MASTHIST_ACC_NO", MASTER.Rows[0].Field<String>("MASTER_ACC_NO"));
+			MASTHIST.Rows[MasthistBindingSource.Position].SetField<String>("MASTHIST_ACC_NO", MASTER.Rows[0].Field<String>("MASTER_ACC_NO"));
 			MASTHIST.Rows[MasthistBindingSource.Position].SetField<DateTime>("MASTHIST_POST_DATE", NowDate.Date);
 			MASTHIST.Rows[MasthistBindingSource.Position].SetField<Int32>("MASTHIST_SEQ_NO", lnSeq);
-            MASTHIST.Rows[MasthistBindingSource.Position].SetField<String>("MASTHIST_NAME", MASTER.Rows[0].Field<String>("MASTER_NAME"));
+			MASTHIST.Rows[MasthistBindingSource.Position].SetField<String>("MASTHIST_NAME", MASTER.Rows[0].Field<String>("MASTER_NAME"));
 			MASTHIST.Rows[MasthistBindingSource.Position].SetField<Decimal>("MASTHIST_CUR_OLOAN", MASTER.Rows[0].Field<Decimal>("MASTER_CUR_OLOAN"));
 			MASTHIST.Rows[MasthistBindingSource.Position].SetField<Decimal>("MASTHIST_YTD_OLOAN", MASTER.Rows[0].Field<Decimal>("MASTER_YTD_OLOAN"));
 			MASTHIST.Rows[MasthistBindingSource.Position].SetField<Decimal>("MASTHIST_CUR_NOTES", MASTER.Rows[0].Field<Decimal>("MASTER_CUR_NOTES"));
 			MASTHIST.Rows[MasthistBindingSource.Position].SetField<Decimal>("MASTHIST_YTD_NOTES", MASTER.Rows[0].Field<Decimal>("MASTER_YTD_NOTES"));
 			MASTHIST.Rows[MasthistBindingSource.Position].SetField<String>("MASTHIST_IAC_TYPE", "C");
-			MasthistBindingSource.EndEdit();            
+			MasthistBindingSource.EndEdit();
 			tableAdapTran = MASTERTableAdapter.BeginTransaction();
 			MASTHISTTableAdapter.Transaction = tableAdapTran;
-            MASTERTableAdapter.Transaction = tableAdapTran;
+			MASTERTableAdapter.Transaction = tableAdapTran;
 			try
 			{
 				MASTERTableAdapter.Update(MASTER.Rows[0]);
 				MASTHISTTableAdapter.Update(MASTHIST.Rows[MasthistBindingSource.Position]);
-                tableAdapTran.Commit();
+				tableAdapTran.Commit();
 			}
 			catch (System.Data.SqlClient.SqlException ex)
 			{
@@ -3004,6 +3007,20 @@ namespace IAC2021SQL
 		[STAThread]
 		public static void Main()
 		{
+			// Init the Sentry SDK
+			/*SentrySdk.Init(o =>
+			{
+				// Tells which project in Sentry to send events to:
+				o.Dsn = "https://65349d4a2297495e9058065949f0f0f72161607f390a4b2f81e44bec9acbe7a9.ingest.sentry.io/6410249";
+				// When configuring for the first time, to see what the SDK is doing:
+				o.Debug = true;
+				// Set TracesSampleRate to 1.0 to capture 100% of transactions for performance monitoring.
+				// We recommend adjusting this value in production.
+				o.TracesSampleRate = 1.0;
+			});
+
+			// Configure WinForms to throw exceptions so Sentry can capture them.
+			Application.SetUnhandledExceptionMode(UnhandledExceptionMode.ThrowException);*/
 			//new Cybele.Thinfinity.VirtualUI().Start();
 			WindowsFormsSettings.EnableFormSkins();
 			WindowsFormsSettings.EnableMdiFormSkins();
