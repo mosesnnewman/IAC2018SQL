@@ -3964,6 +3964,7 @@ namespace IAC2021SQL
             switch (xtraTabControlCustomerMaint.SelectedTabPageIndex)
             {
                 case 6:
+                    setRelatedData();
                     // Moses Newman 12/1/2021 order by id descending
                     GridColumn colID = cOMMENTgridView.Columns["id"];
                     //GridColumn colDate = cOMMENTgridView.Columns["COMMENT_DATE"];
