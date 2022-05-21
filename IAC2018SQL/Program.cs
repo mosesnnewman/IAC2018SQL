@@ -3007,20 +3007,23 @@ namespace IAC2021SQL
 		[STAThread]
 		public static void Main()
 		{
+			var version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
 			// Init the Sentry SDK
-			/*SentrySdk.Init(o =>
+			SentrySdk.Init(o =>
 			{
 				// Tells which project in Sentry to send events to:
-				o.Dsn = "https://65349d4a2297495e9058065949f0f0f72161607f390a4b2f81e44bec9acbe7a9.ingest.sentry.io/6410249";
+				o.Dsn = "https://60daaed084764145928b932e7f08d6c7@o1249545.ingest.sentry.io/6410249";
 				// When configuring for the first time, to see what the SDK is doing:
 				o.Debug = true;
 				// Set TracesSampleRate to 1.0 to capture 100% of transactions for performance monitoring.
 				// We recommend adjusting this value in production.
 				o.TracesSampleRate = 1.0;
+				o.Release = "IAC2022SQL@" + version.ToString();
 			});
-
+			
 			// Configure WinForms to throw exceptions so Sentry can capture them.
-			Application.SetUnhandledExceptionMode(UnhandledExceptionMode.ThrowException);*/
+			Application.SetUnhandledExceptionMode(UnhandledExceptionMode.ThrowException);
+			//SentrySdk.CaptureMessage("Hello Sentry");
 			//new Cybele.Thinfinity.VirtualUI().Start();
 			WindowsFormsSettings.EnableFormSkins();
 			WindowsFormsSettings.EnableMdiFormSkins();
