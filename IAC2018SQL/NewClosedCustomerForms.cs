@@ -898,16 +898,28 @@ namespace IAC2021SQL
             gnRepairFee1 = 0; gnRepairFee2 = 0; gnRepairFee3 = 0; gnRepairFee4 = 0; gnRepairFee5 = 0;
             if (lbAddFlag || lbEdit)
                 return;
-            if (!String.IsNullOrEmpty((String)cUSTOMER_NOTextBox.EditValue))
+
+            iACDataSet.ALTNAME.Clear();
+            iACDataSet.COMMENT.Clear();
+            iACDataSet.CUSTHIST.Clear();
+            iACDataSet.DEALER.Clear();
+            iACDataSet.Email.Clear();
+            iACDataSet.OPNBANK.Clear();
+            iACDataSet.VEHICLE.Clear();
+
+            cUSTOMERTableAdapter.Connection.Close();
+            if (!String.IsNullOrEmpty(cUSTOMER_NOTextBox.EditValue.ToString())) // Moses Newman 05/21/2022 use ToString() instead of cast.
             {
                 iACDataSet.CUSTOMER.Clear();
                 cUSTOMERTableAdapter.Fill(iACDataSet.CUSTOMER, cUSTOMER_NOTextBox.EditValue.ToString().Trim());
             }
             else
-                if(!String.IsNullOrEmpty((String)cUSTOMER_PURCHASE_ORDERTextBox.EditValue))
+            {
+                String tempPO = cUSTOMER_PURCHASE_ORDERTextBox.EditValue.ToString().Trim();
+                iACDataSet.CUSTOMER.Clear();
+                if (!String.IsNullOrEmpty(tempPO))  // Moses Newman 05/21/2022 use ToString() instead of cast.
                 {
-                    iACDataSet.CUSTOMER.Clear();
-                    cUSTOMERTableAdapter.FillByPurchaseOrder(iACDataSet.CUSTOMER, cUSTOMER_PURCHASE_ORDERTextBox.EditValue.ToString().Trim());
+                    cUSTOMERTableAdapter.FillByPurchaseOrder(iACDataSet.CUSTOMER, tempPO);
                     // Moses Newman 02/28/2018 Added fill of cUSTOMER_NOTextBox.EditValue with found customer_no
                     if (iACDataSet.CUSTOMER.Rows.Count > 0)
                     {
@@ -917,7 +929,7 @@ namespace IAC2021SQL
                 }
                 else
                     return;
-
+            }
             if (iACDataSet.CUSTOMER.Rows.Count > 0)
             {
                 // Moses Newman 12/9/2013 preselect Credit Score Drop Down Choice and Repo Drop Down Choice if he coresponding customer record fields are valid.
@@ -959,7 +971,7 @@ namespace IAC2021SQL
                 closedCreditManagerTableAdapter.Fill(tsbDataSet.ClosedCreditManager, cUSTOMER_NOTextBox.EditValue.ToString().Trim(), "I");
                 // Moses Newman 08/24/2020 possibly unsecured NON-AUTO loan!
                 //if(tsbDataSet.ClosedCreditManager.Rows.Count == 0)
-                    //closedCreditManagerTableAdapter.Fill(tsbDataSet.ClosedCreditManager, cUSTOMER_NOTextBox.EditValue.ToString(), "01");
+                //closedCreditManagerTableAdapter.Fill(tsbDataSet.ClosedCreditManager, cUSTOMER_NOTextBox.EditValue.ToString(), "01");
                 // Moses Newman 12/23/2013 Add Email Address Record
                 emailTableAdapter.Fill(iACDataSet.Email, cUSTOMER_NOTextBox.EditValue.ToString().Trim());
                 // Moses Newman 04/18/2019 Add Repo Log Tab
@@ -1065,15 +1077,15 @@ namespace IAC2021SQL
                         // Moses Newman 3/29/2021-30
                         if (iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("TotalDue") >= gnCustomerBalance || (iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("TotalDue") < 0 && gnCustomerBalance < 0))
                             iACDataSet.CUSTOMER.Rows[0].SetField<Decimal>("TotalDue", iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_BUYOUT") > 0 ?
-                                iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_BUYOUT"):0);
+                                iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_BUYOUT") : 0);
                         // Moses Newman 03/26/2021 if total due is negative
                         if (iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("TotalDue") < 0)
                             iACDataSet.CUSTOMER.Rows[0].SetField<Decimal>("TotalDue",
                                 iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_REGULAR_AMOUNT") +
                                 iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_LATE_CHARGE") +
-                                (iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_CONTRACT_STATUS") < 0 ? 
+                                (iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_CONTRACT_STATUS") < 0 ?
                                 Math.Abs(iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_CONTRACT_STATUS")) -
-                                iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_LATE_CHARGE"):0) -
+                                iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_LATE_CHARGE") : 0) -
                                 iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("PartialPayment"));
                     }
                 }
@@ -1241,7 +1253,7 @@ namespace IAC2021SQL
                 {
                     MessageBox.Show(e.Message);
                 }
-                    
+
                 buttonValidate.ForeColor = iACDataSet.CUSTOMER.Rows[0].Field<Boolean>("CellValid") ? Color.Green : Color.Crimson;
                 buttonConfirm.ForeColor = iACDataSet.CUSTOMER.Rows[0].Field<Boolean>("TConfirmed") ? Color.Green : Color.Crimson;
                 buttonMessage.Enabled = iACDataSet.CUSTOMER.Rows[0].Field<Boolean>("TConfirmed");
@@ -1290,36 +1302,7 @@ namespace IAC2021SQL
                 checkEditMilitary.Font = new System.Drawing.Font(checkEditMilitary.Font, FontStyle.Regular);
                 checkEditMilitary.ForeColor = SystemColors.ControlText;
             }
-        }
-
-        private void cUSTOMER_NOTextBox_Validated(object sender, EventArgs e)
-        {
-        }
-
-        private void cUSTOMER_PURCHASE_ORDERTextBox_Validated(object sender, EventArgs e)
-        {
-            if (lbAddFlag || lbEdit || !String.IsNullOrEmpty(cUSTOMER_NOTextBox.EditValue.ToString().Trim()))
-                return;     // If in add or Edit mode not doing a lookup on the PO Number!
-            if (cUSTOMER_PURCHASE_ORDERTextBox.EditValue == null)
-                cUSTOMER_PURCHASE_ORDERTextBox.EditValue = "";
-            // Moses Newman 03/01/2011 Do Not Zero pad purchase order it must be right space padded to 8
-            if (cUSTOMER_PURCHASE_ORDERTextBox.EditValue.ToString().Trim().Length < 8 && cUSTOMER_PURCHASE_ORDERTextBox.EditValue.ToString().Trim().Length > 0)
-                cUSTOMER_PURCHASE_ORDERTextBox.EditValue = cUSTOMER_PURCHASE_ORDERTextBox.EditValue.ToString().PadRight(8, ' ');
-            //cUSTOMER_NOTextBox.EditValue = "";
-            setRelatedData();
-            if (iACDataSet.CUSTOMER.Rows.Count == 0 && cUSTOMER_PURCHASE_ORDERTextBox.EditValue.ToString().Trim().Length != 0)
-            {
-                MessageBox.Show("Sorry no customers found that match your selected purchase order number!");
-                cUSTOMER_PURCHASE_ORDERTextBox.EditValue= "";
-                ActiveControl = cUSTOMER_PURCHASE_ORDERTextBox;
-                cUSTOMER_PURCHASE_ORDERTextBox.SelectAll();
-            }
-            else
-            {
-                ActiveControl = cUSTOMER_FIRST_NAMETextBox;
-                cUSTOMER_FIRST_NAMETextBox.SelectAll();
-            }
-
+            cOMMENTGridControl.Refresh();
         }
 
         private void General_KeyPress(object sender, KeyPressEventArgs e)
@@ -1741,7 +1724,7 @@ namespace IAC2021SQL
 
         private void cUSTOMER_PURCHASE_ORDERTextBox_Enter(object sender, EventArgs e)
         {
-            ActiveControl = cUSTOMER_PURCHASE_ORDERTextBox;
+            cUSTOMER_PURCHASE_ORDERTextBox.Focus();
             cUSTOMER_PURCHASE_ORDERTextBox.SelectAll();
             cUSTOMER_PURCHASE_ORDERTextBox.Cursor = Cursors.IBeam;
             Cursor.Show();
@@ -5944,6 +5927,32 @@ namespace IAC2021SQL
                     toolStripButtonDelete.Enabled = false;
                 ActiveControl = cUSTOMER_FIRST_NAMETextBox;
                 cUSTOMER_FIRST_NAMETextBox.Select();
+            }
+        }
+
+        private void cUSTOMER_PURCHASE_ORDERTextBox_EditValueChanged(object sender, EventArgs e)
+        {
+            // Moses Newman 05/21/2022 Move from Validated event!
+            if (lbAddFlag || lbEdit || !String.IsNullOrEmpty(cUSTOMER_NOTextBox.EditValue.ToString().Trim()))
+                return;     // If in add or Edit mode not doing a lookup on the PO Number!
+            if (cUSTOMER_PURCHASE_ORDERTextBox.EditValue == null)
+                cUSTOMER_PURCHASE_ORDERTextBox.EditValue = "";
+            // Moses Newman 03/01/2011 Do Not Zero pad purchase order it must be right space padded to 8
+            /*if (cUSTOMER_PURCHASE_ORDERTextBox.EditValue.ToString().Trim().Length < 8 && cUSTOMER_PURCHASE_ORDERTextBox.EditValue.ToString().Trim().Length > 0)
+                cUSTOMER_PURCHASE_ORDERTextBox.EditValue = cUSTOMER_PURCHASE_ORDERTextBox.EditValue.ToString().PadRight(8, ' ');*/
+            //cUSTOMER_NOTextBox.EditValue = "";
+            setRelatedData();
+            if (iACDataSet.CUSTOMER.Rows.Count == 0 && cUSTOMER_PURCHASE_ORDERTextBox.EditValue.ToString().Trim().Length != 0)
+            {
+                MessageBox.Show("Sorry no customers found that match your selected purchase order number!");
+                cUSTOMER_PURCHASE_ORDERTextBox.EditValue = "";
+                ActiveControl = cUSTOMER_PURCHASE_ORDERTextBox;
+                cUSTOMER_PURCHASE_ORDERTextBox.SelectAll();
+            }
+            else
+            {
+                ActiveControl = cUSTOMER_FIRST_NAMETextBox;
+                cUSTOMER_FIRST_NAMETextBox.SelectAll();
             }
         }
 

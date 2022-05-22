@@ -3007,6 +3007,7 @@ namespace IAC2021SQL
 		[STAThread]
 		public static void Main()
 		{
+			// Moses Newman 05/20/2022 Add Sentry Error Capturing
 			var version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
 			// Init the Sentry SDK
 			SentrySdk.Init(o =>
@@ -3020,7 +3021,6 @@ namespace IAC2021SQL
 				o.TracesSampleRate = 1.0;
 				o.Release = "IAC2022SQL@" + version.ToString();
 			});
-			
 			// Configure WinForms to throw exceptions so Sentry can capture them.
 			Application.SetUnhandledExceptionMode(UnhandledExceptionMode.ThrowException);
 			//SentrySdk.CaptureMessage("Hello Sentry");
