@@ -3604,10 +3604,10 @@
             this.cUSTOMER_NOTextBox.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.cUSTOMER_NOTextBox.Properties.EditValueChangedDelay = 5000;
             this.cUSTOMER_NOTextBox.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Buffered;
-            this.cUSTOMER_NOTextBox.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
-            this.cUSTOMER_NOTextBox.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
-            this.cUSTOMER_NOTextBox.Properties.MaskSettings.Set("mask", "d");
-            this.cUSTOMER_NOTextBox.Properties.MaskSettings.Set("culture", "en-US");
+            this.cUSTOMER_NOTextBox.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.SimpleMaskManager));
+            this.cUSTOMER_NOTextBox.Properties.MaskSettings.Set("mask", "######");
+            this.cUSTOMER_NOTextBox.Properties.MaskSettings.Set("saveLiterals", false);
+            this.cUSTOMER_NOTextBox.Properties.MaskSettings.Set("placeholder", '\0');
             this.cUSTOMER_NOTextBox.Properties.MaxLength = 6;
             this.cUSTOMER_NOTextBox.Properties.UseMaskAsDisplayFormat = ((bool)(resources.GetObject("cUSTOMER_NOTextBox.Properties.UseMaskAsDisplayFormat")));
             this.cUSTOMER_NOTextBox.EditValueChanged += new System.EventHandler(this.cUSTOMER_NOTextBox_EditValueChanged);
@@ -3808,10 +3808,12 @@
             this.cUSTOMER_PURCHASE_ORDERTextBox.Properties.AppearanceFocused.Options.UseFont = true;
             this.cUSTOMER_PURCHASE_ORDERTextBox.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.cUSTOMER_PURCHASE_ORDERTextBox.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.cUSTOMER_PURCHASE_ORDERTextBox.Properties.EditValueChangedDelay = 5000;
+            this.cUSTOMER_PURCHASE_ORDERTextBox.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Buffered;
             this.cUSTOMER_PURCHASE_ORDERTextBox.Properties.MaxLength = 8;
-            this.cUSTOMER_PURCHASE_ORDERTextBox.EditValueChanged += new System.EventHandler(this.cUSTOMER_PURCHASE_ORDERTextBox_TextChanged);
+            this.cUSTOMER_PURCHASE_ORDERTextBox.EditValueChanged += new System.EventHandler(this.cUSTOMER_PURCHASE_ORDERTextBox_EditValueChanged);
+            this.cUSTOMER_PURCHASE_ORDERTextBox.TextChanged += new System.EventHandler(this.cUSTOMER_PURCHASE_ORDERTextBox_TextChanged);
             this.cUSTOMER_PURCHASE_ORDERTextBox.Enter += new System.EventHandler(this.cUSTOMER_PURCHASE_ORDERTextBox_Enter);
-            this.cUSTOMER_PURCHASE_ORDERTextBox.Validated += new System.EventHandler(this.cUSTOMER_PURCHASE_ORDERTextBox_Validated);
             // 
             // cUSTOMER_ACT_STATTextBox
             // 

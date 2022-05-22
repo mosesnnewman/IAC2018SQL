@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Sentry;
 
 namespace IAC2021SQL
 {
@@ -49,6 +50,18 @@ namespace IAC2021SQL
                 gbLoginCorrect = true;
                 Program.gsUserID = txtUserID.Text.ToString().TrimEnd();  
                 Program.gsUserName = lookupSet.ULIST.Rows[0].Field<String>("LIST_NAME").ToString().TrimEnd();
+                // Moses Newman 05/21/2022 Add User to Sentry for error reporting by user/
+                SentrySdk.ConfigureScope(scope =>
+                {
+                    scope.User = new User
+                    {
+                        Id = Program.gsUserID,
+                        Username = Program.gsUserName,
+                        IpAddress = "{{auto}}",
+                        Email = lookupSet.ULIST.Rows[0].Field<String>("Email").ToString().TrimEnd()
+                    };
+                });
+
                 iACDataSet.ULIST.Clear();
                 Close();
             }
