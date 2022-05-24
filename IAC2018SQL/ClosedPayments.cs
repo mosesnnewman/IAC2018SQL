@@ -757,8 +757,12 @@ namespace IAC2021SQL
             toolStripButtonCancel.Enabled = false;
             if (lbNewPayment)
             {
-                ClosedPaymentiacDataSet.PAYMENT.Rows[PaymentbindingSource.Position].CancelEdit();
-                PaymentbindingSource.RemoveCurrent();
+                // Moses Newman 05/24/2022 c776edd8140d472b8891363108fc6168
+                if (PaymentbindingSource.Position > -1 && PaymentbindingSource.Position < ClosedPaymentiacDataSet.PAYMENT.Rows.Count)
+                {
+                    ClosedPaymentiacDataSet.PAYMENT.Rows[PaymentbindingSource.Position].CancelEdit();
+                    PaymentbindingSource.RemoveCurrent();
+                }
                 lbNewPayment = false;
             }
             cUSTOMER_NOTextBox.Text = "";
@@ -804,6 +808,8 @@ namespace IAC2021SQL
 
         private void lookUpEditPaymentType_EditValueChanged(object sender, EventArgs e)
         {
+            LookUpEdit lookUpEdit = sender as LookUpEdit;
+
             if (!lbEdit & !lbAddFlag)
             {
                 ClosedPaymentiacDataSet.PAYCODE.Clear();
@@ -812,7 +818,7 @@ namespace IAC2021SQL
                 return;
             }
             ClosedPaymentiacDataSet.PAYCODE.Clear();
-            pAYCODETableAdapter.FillByType(ClosedPaymentiacDataSet.PAYCODE, (String)lookUpEditPaymentType.EditValue);
+            pAYCODETableAdapter.FillByType(ClosedPaymentiacDataSet.PAYCODE, lookUpEdit.EditValue.ToString());
             PAYCODEbindingSource.DataSource = ClosedPaymentiacDataSet.PAYCODE;
             PAYCODEbindingSource.MoveFirst();
             lookUpEditCodeType.EditValue = ClosedPaymentiacDataSet.PAYCODE.Rows[0].Field<String>("Code");
@@ -1147,10 +1153,10 @@ namespace IAC2021SQL
             Decimal.TryParse(txtCheckValue.Text, System.Globalization.NumberStyles.Currency, System.Globalization.CultureInfo.CreateSpecificCulture("en-US"), out lnCheckValue);
             if(!lbAddFlag && !lbEdit)
                 return;
-            if((String)lookUpEditPaymentType.EditValue != "I" && lnCheckValue >= 0) 
+            if(lookUpEditPaymentType.EditValue.ToString() != "I" && lnCheckValue >= 0) 
                 return;
             // Moses Newman 04/29/2018 Do not call select check if payment is ADJ and checkboxNoAdjLookBack is checked!
-            if (lnCheckValue < 0 && (String)lookUpEditPaymentType.EditValue == "A" && checkBoxNoAdjLookBack.Checked)
+            if (lnCheckValue < 0 && lookUpEditPaymentType.EditValue.ToString() == "A" && checkBoxNoAdjLookBack.Checked)
                 return;
             PaymentbindingSource.EndEdit(); 
             if (PaymentbindingSource.Position > -1)
@@ -1164,7 +1170,7 @@ namespace IAC2021SQL
                 }
                 else
                 {
-                    ClosedPaymentiacDataSet.PAYMENT.Rows[PaymentbindingSource.Position].SetField<String>("PAYMENT_TYPE", (String)lookUpEditPaymentType.EditValue);
+                    ClosedPaymentiacDataSet.PAYMENT.Rows[PaymentbindingSource.Position].SetField<String>("PAYMENT_TYPE", lookUpEditPaymentType.EditValue.ToString());
                     PaymentbindingSource.EndEdit();
                 }
             }

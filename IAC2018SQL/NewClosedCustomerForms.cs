@@ -146,7 +146,8 @@ namespace IAC2021SQL
                 }
                 else
                 {
-                    cUSTOMER_DEALERcomboBox.EditValue = iACDataSet.CUSTOMER.Rows[0].Field<Int32>("CUSTOMER_DEALER");
+                    // Moses Newman 05/24/2022 change to nullable int
+                    cUSTOMER_DEALERcomboBox.EditValue = iACDataSet.CUSTOMER.Rows[0].Field<Int32?>("CUSTOMER_DEALER");
                 }
             }
             else
@@ -4021,12 +4022,14 @@ namespace IAC2021SQL
 
         private void lookUpEditExpMonth_EditValueChanged(object sender, EventArgs e)
         {
-            if (cUSTOMER_NOTextBox.EditValue.ToString().Trim() == "")
+            LookUpEdit expMonth = sender as LookUpEdit;
+
+            if (expMonth.EditValue.ToString().Trim() == "")
                 return;
-            if ((lbEdit || lbAddFlag) && OPNBANKbindingSource.Position > -1 && comboBoxEditExpYear.Text.Trim() != "" && lookUpEditExpMonth.EditValue != null)
+            if ((lbEdit || lbAddFlag) && OPNBANKbindingSource.Position > -1 && comboBoxEditExpYear.Text.Trim() != "" && expMonth.EditValue != null)
             {
                 iACDataSet.OPNBANK.Rows[OPNBANKbindingSource.Position].SetField<String>("OPNBANK_EXP_MMYY",
-                    lookUpEditExpMonth.EditValue.ToString().PadLeft(2, '0') + comboBoxEditExpYear.Text.Substring(2, 2));
+                    expMonth.EditValue.ToString().PadLeft(2, '0') + comboBoxEditExpYear.EditValue.ToString().Substring(2, 2));
                 OPNBANKbindingSource.EndEdit();
                 toolStripButtonSave.Enabled = true;
             }
@@ -4034,14 +4037,15 @@ namespace IAC2021SQL
 
         private void lookUpEditExpYear_EditValueChanged(object sender, EventArgs e)
         {
+            LookUpEdit expYear = sender as LookUpEdit;
             if (cUSTOMER_NOTextBox.EditValue.ToString().Trim() == "")
                 return;
-            if ((lbEdit || lbAddFlag) && OPNBANKbindingSource.Position > -1 && comboBoxEditExpYear.EditValue != null)
+            if ((lbEdit || lbAddFlag) && OPNBANKbindingSource.Position > -1 && expYear.EditValue != null)
             {
-                if (comboBoxEditExpYear.Text.Length == 4)
+                if (expYear.ToString().Length == 4)
                 {
                     iACDataSet.OPNBANK.Rows[OPNBANKbindingSource.Position].SetField<String>("OPNBANK_EXP_MMYY",
-                        lookUpEditExpMonth.EditValue.ToString().PadLeft(2, '0') + comboBoxEditExpYear.Text.Substring(2, 2));
+                        lookUpEditExpMonth.EditValue.ToString().PadLeft(2, '0') + expYear.ToString().Substring(2, 2));
                 }
                 else
                     iACDataSet.OPNBANK.Rows[OPNBANKbindingSource.Position].SetField<String>("OPNBANK_EXP_MMYY","");
@@ -4052,14 +4056,16 @@ namespace IAC2021SQL
 
         private void comboBoxEditExpYear_EditValueChanged(object sender, EventArgs e)
         {
+            DevExpress.XtraEditors.ComboBoxEdit expYear = sender as DevExpress.XtraEditors.ComboBoxEdit;
+
             if (cUSTOMER_NOTextBox.EditValue.ToString().Trim() == "")
                 return;
-            if ((lbEdit || lbAddFlag) && OPNBANKbindingSource.Position > -1 && comboBoxEditExpYear.EditValue != null)
+            if ((lbEdit || lbAddFlag) && OPNBANKbindingSource.Position > -1 && expYear.EditValue != null)
             {
                 if (comboBoxEditExpYear.Text.Length == 4)
                 {
                     iACDataSet.OPNBANK.Rows[OPNBANKbindingSource.Position].SetField<String>("OPNBANK_EXP_MMYY",
-                        lookUpEditExpMonth.EditValue.ToString().PadLeft(2, '0') + comboBoxEditExpYear.Text.Substring(2, 2));
+                        lookUpEditExpMonth.EditValue.ToString().PadLeft(2, '0') + expYear.EditValue.ToString().Substring(2, 2));
                 }
                 else
                     iACDataSet.OPNBANK.Rows[OPNBANKbindingSource.Position].SetField<String>("OPNBANK_EXP_MMYY", "");
@@ -4857,6 +4863,8 @@ namespace IAC2021SQL
 
         private void cUSTOMER_DEALERcomboBox_EditValueChanged(object sender, EventArgs e)
         {
+            LookUpEdit textEditor = (LookUpEdit)sender;
+
             if (lbEdit || lbAddFlag)
             {
                 toolStripButtonSave.Enabled = true;
@@ -4874,13 +4882,13 @@ namespace IAC2021SQL
                 checkBoxSendToDealer.Refresh();
             }
             // Moses Newman 05/03/2022 new stuff
-            Int32 lnEditVal = !String.IsNullOrEmpty(cUSTOMER_DEALERcomboBox.EditValue.ToString()) ? (Int32)cUSTOMER_DEALERcomboBox.EditValue : 0;
+            Int32 lnEditVal = !String.IsNullOrEmpty(textEditor.EditValue.ToString()) ? (Int32)textEditor.EditValue : 0;
             if (lnEditVal == 0)
                 return;
             // End New Stuff
 
             ActiveControl = cUSTOMER_DEALERcomboBox;
-            dEALERTableAdapter.Fill(iACDataSet.DEALER, (Int32)cUSTOMER_DEALERcomboBox.EditValue);
+            dEALERTableAdapter.Fill(iACDataSet.DEALER, (Int32)textEditor.EditValue);
             //textEditDealerName.Refresh();
             System.Windows.Forms.SendKeys.Send("{TAB}");
         }
@@ -5417,12 +5425,14 @@ namespace IAC2021SQL
 
         private void cUSTOMER_NOTextBox_EditValueChanged(object sender, EventArgs e)
         {
+            TextEdit textEdit = (TextEdit)sender;
+
             string lsCustomerNo;
-            if (lbEdit || String.IsNullOrEmpty((String)cUSTOMER_NOTextBox.EditValue))
+            if (lbEdit || String.IsNullOrEmpty((String)textEdit.EditValue))
                 return;  // Do not requery data on an edit!!!
-            if (cUSTOMER_NOTextBox.EditValue.ToString().Trim().Length < 6 && cUSTOMER_NOTextBox.EditValue.ToString().Trim().Length > 0)
-                cUSTOMER_NOTextBox.EditValue = cUSTOMER_NOTextBox.EditValue.ToString().Trim().PadLeft(6, '0');
-            lsCustomerNo = cUSTOMER_NOTextBox.EditValue.ToString().Trim();
+            if (textEdit.EditValue.ToString().Trim().Length < 6 && textEdit.EditValue.ToString().Trim().Length > 0)
+                textEdit.EditValue = textEdit.EditValue.ToString().Trim().PadLeft(6, '0');
+            lsCustomerNo = textEdit.EditValue.ToString().Trim();
             if (lsCustomerNo == "")  // Moses Newman 03/02/2012 previously only returned if in Add Mode!!!
                 return;
             if (!lbAddFlag)
@@ -5432,8 +5442,8 @@ namespace IAC2021SQL
                 var ldlgAnswer = MessageBox.Show("Sorry no customers found that match your selected account number! Would you like to add a new record?", "Add New Prompt", MessageBoxButtons.YesNo);
                 if (ldlgAnswer == DialogResult.No)
                 {
-                    cUSTOMER_NOTextBox.EditValue = "";
-                    ActiveControl = cUSTOMER_NOTextBox;
+                    textEdit.EditValue = "";
+                    cUSTOMER_NOTextBox.Focus();
                     cUSTOMER_NOTextBox.Select();
                 }
                 else
@@ -5932,21 +5942,23 @@ namespace IAC2021SQL
 
         private void cUSTOMER_PURCHASE_ORDERTextBox_EditValueChanged(object sender, EventArgs e)
         {
+            TextEdit textEdit = sender as TextEdit;
+
             // Moses Newman 05/21/2022 Move from Validated event!
             if (lbAddFlag || lbEdit || !String.IsNullOrEmpty(cUSTOMER_NOTextBox.EditValue.ToString().Trim()))
                 return;     // If in add or Edit mode not doing a lookup on the PO Number!
-            if (cUSTOMER_PURCHASE_ORDERTextBox.EditValue == null)
-                cUSTOMER_PURCHASE_ORDERTextBox.EditValue = "";
+            if (textEdit.EditValue == null)
+                textEdit.EditValue = "";
             // Moses Newman 03/01/2011 Do Not Zero pad purchase order it must be right space padded to 8
             /*if (cUSTOMER_PURCHASE_ORDERTextBox.EditValue.ToString().Trim().Length < 8 && cUSTOMER_PURCHASE_ORDERTextBox.EditValue.ToString().Trim().Length > 0)
                 cUSTOMER_PURCHASE_ORDERTextBox.EditValue = cUSTOMER_PURCHASE_ORDERTextBox.EditValue.ToString().PadRight(8, ' ');*/
             //cUSTOMER_NOTextBox.EditValue = "";
             setRelatedData();
-            if (iACDataSet.CUSTOMER.Rows.Count == 0 && cUSTOMER_PURCHASE_ORDERTextBox.EditValue.ToString().Trim().Length != 0)
+            if (iACDataSet.CUSTOMER.Rows.Count == 0 && textEdit.EditValue.ToString().Trim().Length != 0)
             {
                 MessageBox.Show("Sorry no customers found that match your selected purchase order number!");
-                cUSTOMER_PURCHASE_ORDERTextBox.EditValue = "";
-                ActiveControl = cUSTOMER_PURCHASE_ORDERTextBox;
+                textEdit.EditValue = "";
+                cUSTOMER_PURCHASE_ORDERTextBox.Focus();
                 cUSTOMER_PURCHASE_ORDERTextBox.SelectAll();
             }
             else
