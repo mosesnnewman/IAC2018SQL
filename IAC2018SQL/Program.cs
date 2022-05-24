@@ -603,7 +603,6 @@ namespace IAC2021SQL
 
 			IACDataSetTableAdapters.CUSTOMERTableAdapter CUSTOMERTableAdapter = new IACDataSetTableAdapters.CUSTOMERTableAdapter();
 			IACDataSetTableAdapters.TVAmortTableAdapter TVAmortTableAdapter = new IACDataSetTableAdapters.TVAmortTableAdapter();
-			TVAmortTableAdapter.DeleteByCustomerNo(tcCustomer);
 			Int32 AmortIndex = 0;
 			TVAmortDT.Clear();
 			CUSTOMERTableAdapter.Fill(CustomerDT, tcCustomer);
@@ -622,8 +621,7 @@ namespace IAC2021SQL
 						// Create new DataRow objects and add to DataTable.
 						dr = TVAmortDT.NewRow();
 						dr["CustomerNo"] = tcCustomer;
-						sequenceNumber ++;
-						dr["RowNumber"] = sequenceNumber;
+						dr["RowNumber"] = ++sequenceNumber;
 						if (AmortIndex < tdtCUSTHIST.Rows.Count)
 						{
 							dr["Event"] = tdtCUSTHIST.Rows[AmortIndex].Field<String>("CUSTHIST_PAY_REM_1");
@@ -682,8 +680,7 @@ namespace IAC2021SQL
 						// Create new DataRow objects and add to DataTable.
 						dr = TVAmortDT.NewRow();
 						dr["CustomerNo"] = tcCustomer;
-						sequenceNumber++;
-						dr["RowNumber"] = sequenceNumber;
+						dr["RowNumber"] = ++sequenceNumber;
 						if (sequenceNumber >  tdtCUSTHIST.Rows.Count)
 							if (!tbAmort)
 								// Moses Newman 02/26/2021 UNEARNED only if closing balance > 0!
@@ -773,8 +770,7 @@ namespace IAC2021SQL
 						// Create new DataRow objects and add to DataTable.
 						dr = TVAmortDT.NewRow();
 						dr["CustomerNo"] = tcCustomer;
-						sequenceNumber += 1;
-						dr["RowNumber"] = sequenceNumber;
+						dr["RowNumber"] = ++sequenceNumber;
 						dr["Event"] = tdtCUSTHIST.Rows[AmortIndex].Field<String>("CUSTHIST_PAY_REM_1");
 						dr["Date"] = eventDate;
 						dr["Payment"] = 0;
@@ -797,9 +793,8 @@ namespace IAC2021SQL
 						{
 							// Create new DataRow objects and add to DataTable.
 							dr = TVAmortDT.NewRow();
-							dr["CustomerNo"] = tcCustomer;
-							sequenceNumber += 1;
-							dr["RowNumber"] = sequenceNumber;
+							dr["CustomerNo"] = tcCustomer;							sequenceNumber++;
+							dr["RowNumber"] = ++sequenceNumber;
 							dr["Event"] = sequenceNumber.ToString() + " Totals";
 							dr["Date"] = eventDate;
 							dr["Payment"] = line.NegativeCashFlowSum / CENTS_PER_DOLLAR;
@@ -816,8 +811,7 @@ namespace IAC2021SQL
 							// Create new DataRow objects and add to DataTable.
 							dr = TVAmortDT.NewRow();
 							dr["CustomerNo"] = tcCustomer;
-							sequenceNumber += 1;
-							dr["RowNumber"] = sequenceNumber;
+							dr["RowNumber"] = ++sequenceNumber;
 							dr["Date"] = eventDate;
 							dr["Event"] = "Grand Totals";
 							dr["Payment"] = line.NegativeCashFlowSum / CENTS_PER_DOLLAR;
@@ -829,6 +823,9 @@ namespace IAC2021SQL
 						break;
 				}
 			}
+			// Moses Newman 05/24/2022 Delete old amort here before update in case antoher user
+			// Already created a new amort. 2b68ee2ebb0b4463827a73e720658bba
+			TVAmortTableAdapter.DeleteByCustomerNo(tcCustomer);
 			TVAmortTableAdapter.Update(TVAmortDT);
 			TVAmortTableAdapter.Dispose();
 			TVAmortDT.Dispose();
