@@ -883,7 +883,7 @@
             this.Picture1.Font = new System.Drawing.Font("Times New Roman", 9.75F);
             this.Picture1.ForeColor = System.Drawing.Color.Black;
             this.Picture1.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource("img", resources.GetString("Picture1.ImageSource"));
-            this.Picture1.LocationFloat = new DevExpress.Utils.PointFloat(820.1112F, 2.70834F);
+            this.Picture1.LocationFloat = new DevExpress.Utils.PointFloat(816.1112F, 2.70834F);
             this.Picture1.Name = "Picture1";
             this.Picture1.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.Picture1.SizeF = new System.Drawing.SizeF(246.3889F, 95F);
@@ -899,7 +899,7 @@
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "?gsFormTitle")});
             this.gsFormTitle1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
             this.gsFormTitle1.ForeColor = System.Drawing.Color.Black;
-            this.gsFormTitle1.LocationFloat = new DevExpress.Utils.PointFloat(303.4445F, 69.37501F);
+            this.gsFormTitle1.LocationFloat = new DevExpress.Utils.PointFloat(275.6667F, 69.37501F);
             this.gsFormTitle1.Name = "gsFormTitle1";
             this.gsFormTitle1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.gsFormTitle1.SizeF = new System.Drawing.SizeF(516.6667F, 25F);

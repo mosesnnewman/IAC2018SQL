@@ -627,7 +627,7 @@
             this.Picture1.Font = new System.Drawing.Font("Times New Roman", 9.75F);
             this.Picture1.ForeColor = System.Drawing.Color.Black;
             this.Picture1.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource("img", resources.GetString("Picture1.ImageSource"));
-            this.Picture1.LocationFloat = new DevExpress.Utils.PointFloat(803.611F, 0F);
+            this.Picture1.LocationFloat = new DevExpress.Utils.PointFloat(800.486F, 0F);
             this.Picture1.Name = "Picture1";
             this.Picture1.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.Picture1.SizeF = new System.Drawing.SizeF(246.3889F, 95F);
@@ -641,10 +641,10 @@
             this.Text3.CanGrow = false;
             this.Text3.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
             this.Text3.ForeColor = System.Drawing.Color.Black;
-            this.Text3.LocationFloat = new DevExpress.Utils.PointFloat(0F, 102.1667F);
+            this.Text3.LocationFloat = new DevExpress.Utils.PointFloat(2.604248F, 102.1667F);
             this.Text3.Name = "Text3";
             this.Text3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.Text3.SizeF = new System.Drawing.SizeF(1050F, 25F);
+            this.Text3.SizeF = new System.Drawing.SizeF(1044.792F, 25F);
             this.Text3.Text = "CLOSED CUSTOMER DELINQUENCY DEALER SUMMARY REPORT";
             this.Text3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
             // 

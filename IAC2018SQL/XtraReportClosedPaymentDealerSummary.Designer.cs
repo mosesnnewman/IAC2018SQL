@@ -217,7 +217,7 @@
             this.xrLabel8.Multiline = true;
             this.xrLabel8.Name = "xrLabel8";
             this.xrLabel8.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel8.SizeF = new System.Drawing.SizeF(100F, 18.33333F);
+            this.xrLabel8.SizeF = new System.Drawing.SizeF(107.9166F, 18.33333F);
             this.xrLabel8.StylePriority.UseFont = false;
             this.xrLabel8.Text = "xrLabel8";
             // 
@@ -244,7 +244,7 @@
             this.xrLine2.BorderWidth = 1F;
             this.xrLine2.Font = new System.Drawing.Font("Times New Roman", 9.75F);
             this.xrLine2.ForeColor = System.Drawing.Color.Black;
-            this.xrLine2.LocationFloat = new DevExpress.Utils.PointFloat(512.125F, 0F);
+            this.xrLine2.LocationFloat = new DevExpress.Utils.PointFloat(511.8055F, 0F);
             this.xrLine2.Name = "xrLine2";
             this.xrLine2.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.xrLine2.SizeF = new System.Drawing.SizeF(556.1943F, 2F);

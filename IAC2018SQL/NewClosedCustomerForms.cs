@@ -916,7 +916,7 @@ namespace IAC2021SQL
             }
             else
             {
-                String tempPO = cUSTOMER_PURCHASE_ORDERTextBox.EditValue.ToString().Trim();
+                String tempPO = cUSTOMER_PURCHASE_ORDERTextBox.EditValue != null ? cUSTOMER_PURCHASE_ORDERTextBox.EditValue.ToString().Trim():"";
                 iACDataSet.CUSTOMER.Clear();
                 if (!String.IsNullOrEmpty(tempPO))  // Moses Newman 05/21/2022 use ToString() instead of cast.
                 {
@@ -1114,16 +1114,16 @@ namespace IAC2021SQL
                     CustomerFeesTableAdapter.Update(iACDataSet.CustomerFees.Rows[0]);
                 }
                 // Moses Newamn 06/12/2018 Calculate total fees after population globals.
-                gnRepoFees = iACDataSet.CustomerFees.Rows[0].Field<Decimal>("Repo");
-                gnStorageFees = iACDataSet.CustomerFees.Rows[0].Field<Decimal>("Storage");
-                gnImpoundFees = iACDataSet.CustomerFees.Rows[0].Field<Decimal>("Impound");
-                gnResaleFees = iACDataSet.CustomerFees.Rows[0].Field<Decimal>("Resale");
-                gnRepairFee1 = iACDataSet.CustomerFees.Rows[0].Field<Decimal>("Repair1");
-                gnRepairFee2 = iACDataSet.CustomerFees.Rows[0].Field<Decimal>("Repair2");
-                gnRepairFee3 = iACDataSet.CustomerFees.Rows[0].Field<Decimal>("Repair3");
-                gnRepairFee4 = iACDataSet.CustomerFees.Rows[0].Field<Decimal>("Repair4");
-                gnRepairFee5 = iACDataSet.CustomerFees.Rows[0].Field<Decimal>("Repair5");
-                CalcTotalFees();
+                // Moses Newman 05/25/2022 Don't allow nulls
+                gnRepoFees = iACDataSet.CustomerFees.Rows[0].Field<Decimal?>("Repo") != null ? iACDataSet.CustomerFees.Rows[0].Field<Decimal>("Repo"):(Decimal)0;
+                gnStorageFees = iACDataSet.CustomerFees.Rows[0].Field<Decimal?>("Storage") != null ? iACDataSet.CustomerFees.Rows[0].Field<Decimal>("Storage"): (Decimal)0;
+                gnImpoundFees = iACDataSet.CustomerFees.Rows[0].Field<Decimal?>("Impound") != null ? iACDataSet.CustomerFees.Rows[0].Field<Decimal>("Impound") : (Decimal)0;
+                gnResaleFees = iACDataSet.CustomerFees.Rows[0].Field<Decimal?>("Resale") != null ? iACDataSet.CustomerFees.Rows[0].Field<Decimal>("Resale") : (Decimal)0;
+                gnRepairFee1 = iACDataSet.CustomerFees.Rows[0].Field<Decimal?>("Repair1") != null ? iACDataSet.CustomerFees.Rows[0].Field<Decimal>("Repair1") : (Decimal)0;
+                gnRepairFee2 = iACDataSet.CustomerFees.Rows[0].Field<Decimal?>("Repair2") != null ? iACDataSet.CustomerFees.Rows[0].Field<Decimal>("Repair2") : (Decimal)0;
+                gnRepairFee3 = iACDataSet.CustomerFees.Rows[0].Field<Decimal?>("Repair3") != null ? iACDataSet.CustomerFees.Rows[0].Field<Decimal>("Repair3") : (Decimal)0;
+                gnRepairFee4 = iACDataSet.CustomerFees.Rows[0].Field<Decimal?>("Repair4") != null ? iACDataSet.CustomerFees.Rows[0].Field<Decimal>("Repair4") : (Decimal)0;
+                gnRepairFee5 = iACDataSet.CustomerFees.Rows[0].Field<Decimal?>("Repair5") != null ? iACDataSet.CustomerFees.Rows[0].Field<Decimal>("Repair5") : (Decimal)0;
                 /* Moses Newman 06/13/2018 Make sure Full Recourse Checkbox on first tab is checked if IsFullRecourse!
                 if(iACDataSet.CUSTOMER.Rows[0].Field<Boolean>("IsFullRecourse"))
                 {
@@ -4882,7 +4882,8 @@ namespace IAC2021SQL
                 checkBoxSendToDealer.Refresh();
             }
             // Moses Newman 05/03/2022 new stuff
-            Int32 lnEditVal = !String.IsNullOrEmpty(textEditor.EditValue.ToString()) ? (Int32)textEditor.EditValue : 0;
+            String tmpEditValStr = textEditor.EditValue == null ? String.Empty:textEditor.EditValue.ToString(); 
+            Int32 lnEditVal = !String.IsNullOrEmpty(tmpEditValStr) ? (Int32)textEditor.EditValue : 0;
             if (lnEditVal == 0)
                 return;
             // End New Stuff
