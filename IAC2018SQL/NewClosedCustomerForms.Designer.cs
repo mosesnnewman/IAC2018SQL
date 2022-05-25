@@ -7609,6 +7609,7 @@
             this.textBoxTotalFees.AllowDrop = true;
             resources.ApplyResources(this.textBoxTotalFees, "textBoxTotalFees");
             this.textBoxTotalFees.Name = "textBoxTotalFees";
+            this.textBoxTotalFees.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // textBoxRepairFee5
             // 
@@ -7616,6 +7617,7 @@
             this.textBoxRepairFee5.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.CustomerFeesBindingSource, "Repair5", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "0", "C2"));
             resources.ApplyResources(this.textBoxRepairFee5, "textBoxRepairFee5");
             this.textBoxRepairFee5.Name = "textBoxRepairFee5";
+            this.textBoxRepairFee5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // textBoxRepairFee4
             // 
@@ -7623,6 +7625,7 @@
             this.textBoxRepairFee4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.CustomerFeesBindingSource, "Repair4", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "C2"));
             resources.ApplyResources(this.textBoxRepairFee4, "textBoxRepairFee4");
             this.textBoxRepairFee4.Name = "textBoxRepairFee4";
+            this.textBoxRepairFee4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // textBoxRepairFee3
             // 
@@ -7630,6 +7633,7 @@
             this.textBoxRepairFee3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.CustomerFeesBindingSource, "Repair3", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "0", "C2"));
             resources.ApplyResources(this.textBoxRepairFee3, "textBoxRepairFee3");
             this.textBoxRepairFee3.Name = "textBoxRepairFee3";
+            this.textBoxRepairFee3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // textBoxRepairFee2
             // 
@@ -7637,6 +7641,7 @@
             this.textBoxRepairFee2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.CustomerFeesBindingSource, "Repair2", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "0", "C2"));
             resources.ApplyResources(this.textBoxRepairFee2, "textBoxRepairFee2");
             this.textBoxRepairFee2.Name = "textBoxRepairFee2";
+            this.textBoxRepairFee2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // textBoxRepairFee1
             // 
@@ -7644,6 +7649,7 @@
             this.textBoxRepairFee1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.CustomerFeesBindingSource, "Repair1", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "0", "C2"));
             resources.ApplyResources(this.textBoxRepairFee1, "textBoxRepairFee1");
             this.textBoxRepairFee1.Name = "textBoxRepairFee1";
+            this.textBoxRepairFee1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // textBoxResaleFees
             // 
@@ -7651,6 +7657,7 @@
             this.textBoxResaleFees.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.CustomerFeesBindingSource, "Resale", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "0", "C2"));
             resources.ApplyResources(this.textBoxResaleFees, "textBoxResaleFees");
             this.textBoxResaleFees.Name = "textBoxResaleFees";
+            this.textBoxResaleFees.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // textBoxImpoundFees
             // 
@@ -7658,6 +7665,7 @@
             this.textBoxImpoundFees.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.CustomerFeesBindingSource, "Impound", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "0", "C2"));
             resources.ApplyResources(this.textBoxImpoundFees, "textBoxImpoundFees");
             this.textBoxImpoundFees.Name = "textBoxImpoundFees";
+            this.textBoxImpoundFees.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // textBoxStorageFees
             // 
@@ -7665,6 +7673,7 @@
             this.textBoxStorageFees.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.CustomerFeesBindingSource, "Storage", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "0", "C2"));
             resources.ApplyResources(this.textBoxStorageFees, "textBoxStorageFees");
             this.textBoxStorageFees.Name = "textBoxStorageFees";
+            this.textBoxStorageFees.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // textBoxRepoFees
             // 
@@ -7672,6 +7681,7 @@
             this.textBoxRepoFees.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.CustomerFeesBindingSource, "Repo", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "0", "C2"));
             resources.ApplyResources(this.textBoxRepoFees, "textBoxRepoFees");
             this.textBoxRepoFees.Name = "textBoxRepoFees";
+            this.textBoxRepoFees.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // groupBox12
             // 

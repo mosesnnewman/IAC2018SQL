@@ -105,6 +105,7 @@ namespace IAC2021SQL
             IACDataSetTableAdapters.MasterTotalTempTableAdapter MasterTotalTempTableAdapter = new IACDataSetTableAdapters.MasterTotalTempTableAdapter();
             IACDataSetTableAdapters.NOTICETableAdapter NOTICETableAdapter = new IACDataSetTableAdapters.NOTICETableAdapter();
             IACDataSetTableAdapters.PaymentDistributionTableAdapter PaymentDistributionTableAdapter = new IACDataSetTableAdapters.PaymentDistributionTableAdapter();
+            IACDataSetTableAdapters.TVAmortTableAdapter TVAmortTableAdapter = new TVAmortTableAdapter();
 
             AMORTIZEBindingSource.DataSource = PAYMENTPostDataSet.AMORTIZE;
             CUSTOMERBindingSource.DataSource = PAYMENTPostDataSet.CUSTOMER;
@@ -129,6 +130,11 @@ namespace IAC2021SQL
                 MessageBox.Show("No new payments to post!", "New Payments Posting Error");
                 return;
             }
+            // Moses Newman 05/25/2022 Start
+            TVAmortTableAdapter.DeleteAll();
+            TVAmortTableAdapter.Dispose();
+            // Moses Newman 05/25/2022 End
+
             CustomerTableAdapter.FillByUnPostedPayments(PAYMENTPostDataSet.CUSTOMER);
             AMORTIZETableAdapter.FillByPayments(PAYMENTPostDataSet.AMORTIZE);
             // Moses Newman 04/28/2018 No need to have anymore than today data in here, going to phase this table out and use TVAmort
@@ -140,6 +146,7 @@ namespace IAC2021SQL
             Object loCustomerPayCount = null;
             Decimal NewBalance = 0;
             Int32 lnCustomerPayCount = 0;
+
             for (int PaymentPos = 0; PaymentPos < PAYMENTPostDataSet.PAYMENT.Rows.Count; PaymentPos++)
             {
                 lnCustomerPayCount = 0;
