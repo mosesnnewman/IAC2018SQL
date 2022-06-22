@@ -371,6 +371,7 @@
             this.textBoxTIN = new System.Windows.Forms.TextBox();
             this.buttonValidate = new DevExpress.XtraEditors.SimpleButton();
             this.groupBoxGapWarranty = new System.Windows.Forms.GroupBox();
+            this.textEditWarrantyCompany = new DevExpress.XtraEditors.TextEdit();
             this.checkBoxExcludeVSI = new DevExpress.XtraEditors.CheckEdit();
             this.checkBoxWarranty = new DevExpress.XtraEditors.CheckEdit();
             this.comboBoxGAP = new System.Windows.Forms.ComboBox();
@@ -1131,6 +1132,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.checkBoxDNTMktg.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkBoxDNTAcct.Properties)).BeginInit();
             this.groupBoxGapWarranty.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditWarrantyCompany.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkBoxExcludeVSI.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkBoxWarranty.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cUSTOMER_NOTextBox.Properties)).BeginInit();
@@ -2852,7 +2854,7 @@
             this.xtraTabControlCustomerMaint.LookAndFeel.SkinName = "McSkin";
             this.xtraTabControlCustomerMaint.LookAndFeel.UseDefaultLookAndFeel = false;
             this.xtraTabControlCustomerMaint.Name = "xtraTabControlCustomerMaint";
-            this.xtraTabControlCustomerMaint.SelectedTabPage = this.xtraTabPageCustInfo1;
+            this.xtraTabControlCustomerMaint.SelectedTabPage = this.xtraTabPageCustInfo2;
             this.xtraTabControlCustomerMaint.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPageCustInfo1,
             this.xtraTabPageCustInfo2,
@@ -3451,6 +3453,7 @@
             // 
             // groupBoxGapWarranty
             // 
+            this.groupBoxGapWarranty.Controls.Add(this.textEditWarrantyCompany);
             this.groupBoxGapWarranty.Controls.Add(this.checkBoxExcludeVSI);
             this.groupBoxGapWarranty.Controls.Add(labelGAP);
             this.groupBoxGapWarranty.Controls.Add(this.checkBoxWarranty);
@@ -3458,6 +3461,23 @@
             resources.ApplyResources(this.groupBoxGapWarranty, "groupBoxGapWarranty");
             this.groupBoxGapWarranty.Name = "groupBoxGapWarranty";
             this.groupBoxGapWarranty.TabStop = false;
+            // 
+            // textEditWarrantyCompany
+            // 
+            this.textEditWarrantyCompany.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.VehiclebindingSource, "WarrantyCompany", true));
+            resources.ApplyResources(this.textEditWarrantyCompany, "textEditWarrantyCompany");
+            this.textEditWarrantyCompany.MenuManager = this.toolbarFormManager1;
+            this.textEditWarrantyCompany.Name = "textEditWarrantyCompany";
+            this.textEditWarrantyCompany.Properties.AdvancedModeOptions.Label = resources.GetString("textEditWarrantyCompany.Properties.AdvancedModeOptions.Label");
+            this.textEditWarrantyCompany.Properties.AdvancedModeOptions.LabelAppearance.Font = ((System.Drawing.Font)(resources.GetObject("textEditWarrantyCompany.Properties.AdvancedModeOptions.LabelAppearance.Font")));
+            this.textEditWarrantyCompany.Properties.AdvancedModeOptions.LabelAppearance.Options.UseFont = true;
+            this.textEditWarrantyCompany.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textEditWarrantyCompany.Properties.Appearance.Font")));
+            this.textEditWarrantyCompany.Properties.Appearance.Options.UseFont = true;
+            this.textEditWarrantyCompany.Properties.Appearance.Options.UseTextOptions = true;
+            this.textEditWarrantyCompany.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.textEditWarrantyCompany.Properties.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.textEditWarrantyCompany.Properties.UseAdvancedMode = DevExpress.Utils.DefaultBoolean.True;
+            this.textEditWarrantyCompany.EditValueChanged += new System.EventHandler(this.textEditWarrantyCompany_EditValueChanged);
             // 
             // checkBoxExcludeVSI
             // 
@@ -9016,6 +9036,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.checkBoxDNTAcct.Properties)).EndInit();
             this.groupBoxGapWarranty.ResumeLayout(false);
             this.groupBoxGapWarranty.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditWarrantyCompany.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkBoxExcludeVSI.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkBoxWarranty.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cUSTOMER_NOTextBox.Properties)).EndInit();
@@ -9838,6 +9859,7 @@
         private DevExpress.XtraBars.BarDockControl barDockControlTop;
         private DevExpress.XtraBars.BarDockControl barDockControl1;
         private DevExpress.XtraBars.BarDockControl barDockControl3;
+        private DevExpress.XtraEditors.TextEdit textEditWarrantyCompany;
     }
 }
 

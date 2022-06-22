@@ -230,6 +230,8 @@ namespace IAC2021SQL
             // Moses Newman 01/29/2017 Added Middle Name, GAP Insurance type, Warranty, TIN
             textBoxMiddleName.Enabled = false;
             comboBoxGAP.Enabled = false;
+            // Moses Newman 06/01/2022 Add Warranty Company
+            textEditWarrantyCompany.Enabled = false;
             checkBoxWarranty.Enabled = false;
             // Moses Newman 01/24/2018 added ExcludeVSI
             checkBoxExcludeVSI.Enabled = false;
@@ -578,6 +580,8 @@ namespace IAC2021SQL
             // Moses Newman 01/29/2017 Added Middle Name, GAP Insurance type, Warranty, TIN
             textBoxMiddleName.Enabled = true;
             comboBoxGAP.Enabled = true;
+            // Moses Newman 06/01/2022 Add Warranty Company
+            textEditWarrantyCompany.Enabled = true;
             checkBoxWarranty.Enabled = true;
             // Moses Newman 01/24/2018 added ExcludeVSI
             checkBoxExcludeVSI.Enabled = true;
@@ -3947,6 +3951,9 @@ namespace IAC2021SQL
         {
             switch (xtraTabControlCustomerMaint.SelectedTabPageIndex)
             {
+                case 1:
+                    setRelatedData();
+                    break;
                 case 6:
                     setRelatedData();
                     // Moses Newman 12/1/2021 order by id descending
@@ -5620,6 +5627,8 @@ namespace IAC2021SQL
                     // Moses Newman 01/29/2017 Added Middle Name, GAP Insurance type, Warranty, TIN
                     textBoxMiddleName.Enabled = true;
                     comboBoxGAP.Enabled = true;
+                    // Moses Newman 06/01/2022 Add Warranty Company
+                    textEditWarrantyCompany.Enabled = true;
                     checkBoxWarranty.Enabled = true;
                     // Moses Newman 01/24/2018 added ExcludeVSI
                     checkBoxExcludeVSI.Enabled = true;
@@ -5967,6 +5976,13 @@ namespace IAC2021SQL
                 ActiveControl = cUSTOMER_FIRST_NAMETextBox;
                 cUSTOMER_FIRST_NAMETextBox.SelectAll();
             }
+        }
+
+        private void textEditWarrantyCompany_EditValueChanged(object sender, EventArgs e)
+        {
+            // Moses Newman 06/01/2022 Add Warranty Company Field
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
         }
 
         private void cUSTOMER_NOTextBox_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)

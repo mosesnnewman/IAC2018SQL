@@ -9,7 +9,7 @@
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>IAC2021SQL</RootNamespace>
-    <AssemblyName>IAC2022SQLTEST</AssemblyName>
+    <AssemblyName>IAC2021SQL</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>false</IsWebBootstrapper>
@@ -25,7 +25,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <PublishUrl>\\DC-IAC\PUBLIC\moses\IAC2022SQLTESTInstall\</PublishUrl>
+    <PublishUrl>\\DC-IAC\Public\moses\IAC2021SQLInstall\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Unc</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -35,28 +35,30 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>\\DC-IAC\PUBLIC\moses\IAC2021SQLInstall\</InstallUrl>
     <TargetCulture>en-US</TargetCulture>
     <ProductName>IAC 2021SQL</ProductName>
     <PublisherName>Moses Newman</PublisherName>
     <SuiteName>IAC2021SQL</SuiteName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>18</ApplicationRevision>
-    <ApplicationVersion>20.0.0.%2a</ApplicationVersion>
+    <ApplicationRevision>6</ApplicationRevision>
+    <ApplicationVersion>27.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>IAC2021SQL.Program</StartupObject>
+    <StartupObject>
+    </StartupObject>
   </PropertyGroup>
   <PropertyGroup />
   <PropertyGroup>
     <TargetZone>LocalIntranet</TargetZone>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>1683_Lightbulb.ico</ApplicationIcon>
+    <ApplicationIcon>CarLoan.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup />
   <PropertyGroup>
@@ -181,37 +183,37 @@
       <HintPath>..\packages\CrystalReports.Windows.Forms.13.0.4001\lib\net40\CrystalDecisions.Windows.Forms.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="DevExpress.BonusSkins.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Charts.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.CodeParser.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Data.Desktop.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Data.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.DataAccess.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Dialogs.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Images.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Office.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Pdf.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Pdf.v21.2.Drawing, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.PivotGrid.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Printing.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.RichEdit.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.RichEdit.v21.2.Export, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Sparkline.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Utils.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Utils.v21.2.UI, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Xpo.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraBars.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraCharts.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraDialogs.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraEditors.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraGauges.v21.2.Core, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraGrid.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraLayout.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraPrinting.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraReports.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraReports.v21.2.Extensions, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.XtraRichEdit.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraTreeList.v21.2, Version=21.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.BonusSkins.v21.2, Version=21.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Charts.v21.2.Core, Version=21.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.CodeParser.v21.2, Version=21.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.Desktop.v21.2, Version=21.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v21.2, Version=21.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.DataAccess.v21.2, Version=21.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Dialogs.v21.2.Core, Version=21.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Images.v21.2, Version=21.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v21.2.Core, Version=21.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Pdf.v21.2.Core, Version=21.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Pdf.v21.2.Drawing, Version=21.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.PivotGrid.v21.2.Core, Version=21.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v21.2.Core, Version=21.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v21.2.Core, Version=21.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v21.2.Export, Version=21.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v21.2.Core, Version=21.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v21.2, Version=21.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v21.2.UI, Version=21.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v21.2, Version=21.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v21.2, Version=21.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v21.2, Version=21.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraDialogs.v21.2, Version=21.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v21.2, Version=21.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGauges.v21.2.Core, Version=21.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v21.2, Version=21.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v21.2, Version=21.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v21.2, Version=21.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v21.2, Version=21.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v21.2.Extensions, Version=21.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraRichEdit.v21.2, Version=21.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v21.2, Version=21.2.8.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304">
       <HintPath>..\packages\CrystalReports.13.0.5.891\lib\net40\FlashControlV71.dll</HintPath>
       <Private>True</Private>
@@ -219,8 +221,8 @@
     <Reference Include="log4net, Version=2.0.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <HintPath>..\packages\log4net.2.0.13\lib\net45\log4net.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Data.ConnectionUI, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
@@ -388,10 +390,6 @@
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="ObjectListView, Version=2.9.1.17344, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4, processorArchitecture=AMD64">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\ObjectListView.dll</HintPath>
-    </Reference>
     <Reference Include="PdfSharp, Version=1.50.5147.0, Culture=neutral, PublicKeyToken=f94615aa0424f9eb, processorArchitecture=MSIL">
       <HintPath>..\packages\PDFsharp.1.50.5147\lib\net20\PdfSharp.dll</HintPath>
     </Reference>
@@ -413,6 +411,9 @@
       <HintPath>..\packages\CrystalReports.13.0.5.891\lib\net40\SAPBusinessObjects.WPF.ViewerShared.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Sentry, Version=3.17.1.0, Culture=neutral, PublicKeyToken=fba2ec45388e2af0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sentry.3.17.1\lib\net461\Sentry.dll</HintPath>
+    </Reference>
     <Reference Include="ShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
       <HintPath>..\packages\CrystalReports.ShockwaveFlashObjects.13.0.4001\lib\net40\ShockwaveFlashObjects.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
@@ -426,6 +427,9 @@
     </Reference>
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Immutable, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.5.0.0\lib\net461\System.Collections.Immutable.dll</HintPath>
     </Reference>
     <Reference Include="System.Collections.NonGeneric, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Collections.NonGeneric.4.3.0\lib\net46\System.Collections.NonGeneric.dll</HintPath>
@@ -469,6 +473,7 @@
       <HintPath>..\packages\System.Data.SqlClient.4.8.3\lib\net461\System.Data.SqlClient.dll</HintPath>
     </Reference>
     <Reference Include="System.Data.SqlXml" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Diagnostics.DiagnosticSource, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Diagnostics.DiagnosticSource.6.0.0\lib\net461\System.Diagnostics.DiagnosticSource.dll</HintPath>
     </Reference>
@@ -542,6 +547,9 @@
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Reflection.Metadata, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Reflection.Metadata.5.0.0\lib\net461\System.Reflection.Metadata.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime, Version=4.1.1.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Runtime.4.3.1\lib\net462\System.Runtime.dll</HintPath>
       <Private>True</Private>
@@ -572,6 +580,7 @@
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
     <Reference Include="System.Runtime.Serialization.Primitives, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Runtime.Serialization.Primitives.4.3.0\lib\net46\System.Runtime.Serialization.Primitives.dll</HintPath>
       <Private>True</Private>
@@ -617,19 +626,19 @@
     </Reference>
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.ServiceProcess" />
-    <Reference Include="System.Text.Encodings.Web, Version=4.0.5.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Text.Encodings.Web.4.7.2\lib\net461\System.Text.Encodings.Web.dll</HintPath>
+    <Reference Include="System.Text.Encodings.Web, Version=5.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.5.0.1\lib\net461\System.Text.Encodings.Web.dll</HintPath>
     </Reference>
-    <Reference Include="System.Text.Json, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Text.Json.4.6.0\lib\net461\System.Text.Json.dll</HintPath>
+    <Reference Include="System.Text.Json, Version=5.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.5.0.2\lib\net461\System.Text.Json.dll</HintPath>
     </Reference>
     <Reference Include="System.Text.RegularExpressions, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Text.RegularExpressions.4.3.1\lib\net463\System.Text.RegularExpressions.dll</HintPath>
       <Private>True</Private>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.2\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="System.Transactions" />
     <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
@@ -758,17 +767,105 @@
     <Compile Include="IACSplashScreen.Designer.cs">
       <DependentUpon>IACSplashScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProductionMainTables.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProductionMainTables.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="TempPosting.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TempPosting.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Thinfinity.VirtualUI.cs" />
+    <Compile Include="XtraReportClosedDelinquencySummarySubreport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReportClosedDelinquencySummarySubreport.Designer.cs">
+      <DependentUpon>XtraReportClosedDelinquencySummarySubreport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReportClosedDelinquencySummary.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReportClosedDelinquencySummary.Designer.cs">
+      <DependentUpon>XtraReportClosedDelinquencySummary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReportFinanceDealerSummary.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReportFinanceDealerSummary.Designer.cs">
+      <DependentUpon>XtraReportFinanceDealerSummary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReportFinanceReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReportFinanceReport.Designer.cs">
+      <DependentUpon>XtraReportFinanceReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReportMonthlyUpdateDailyInterestVariance.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReportMonthlyUpdateDailyInterestVariance.Designer.cs">
+      <DependentUpon>XtraReportMonthlyUpdateDailyInterestVariance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReportMonthlyUpdateDealerSummary.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReportMonthlyUpdateDealerSummary.Designer.cs">
+      <DependentUpon>XtraReportMonthlyUpdateDealerSummary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReportMonthlyUpdateListing.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReportMonthlyUpdateListing.Designer.cs">
+      <DependentUpon>XtraReportMonthlyUpdateListing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReportOpenChargesAppliedToDealer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReportOpenChargesAppliedToDealer.Designer.cs">
+      <DependentUpon>XtraReportOpenChargesAppliedToDealer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReportShortBalanceReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReportShortBalanceReport.Designer.cs">
+      <DependentUpon>XtraReportShortBalanceReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReportVehicleReposession.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReportVehicleReposession.Designer.cs">
+      <DependentUpon>XtraReportVehicleReposession.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReportClosedPaymentBalanceTotals.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReportClosedPaymentBalanceTotals.Designer.cs">
+      <DependentUpon>XtraReportClosedPaymentBalanceTotals.cs</DependentUpon>
+    </Compile>
     <Compile Include="XtraReportClosedPaymentBalanceJournal.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="XtraReportClosedPaymentBalanceJournal.Designer.cs">
       <DependentUpon>XtraReportClosedPaymentBalanceJournal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReportClosedPaymentDealerSummary.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReportClosedPaymentDealerSummary.Designer.cs">
+      <DependentUpon>XtraReportClosedPaymentDealerSummary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReportClosedPaymentTypeSummary.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReportClosedPaymentTypeSummary.Designer.cs">
+      <DependentUpon>XtraReportClosedPaymentTypeSummary.cs</DependentUpon>
     </Compile>
     <Compile Include="XtraReportDelinquency.cs">
       <SubType>Component</SubType>
@@ -822,11 +919,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ListData.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="ProductionMainTables.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ProductionMainTables.xsd</DependentUpon>
     </Compile>
     <Compile Include="ReceivedContractReport.cs">
       <SubType>Form</SubType>
@@ -1834,8 +1926,47 @@
     <EmbeddedResource Include="IACSplashScreen.resx">
       <DependentUpon>IACSplashScreen.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="XtraReportClosedDelinquencySummarySubreport.resx">
+      <DependentUpon>XtraReportClosedDelinquencySummarySubreport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReportClosedDelinquencySummary.resx">
+      <DependentUpon>XtraReportClosedDelinquencySummary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReportFinanceDealerSummary.resx">
+      <DependentUpon>XtraReportFinanceDealerSummary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReportFinanceReport.resx">
+      <DependentUpon>XtraReportFinanceReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReportMonthlyUpdateDailyInterestVariance.resx">
+      <DependentUpon>XtraReportMonthlyUpdateDailyInterestVariance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReportMonthlyUpdateDealerSummary.resx">
+      <DependentUpon>XtraReportMonthlyUpdateDealerSummary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReportMonthlyUpdateListing.resx">
+      <DependentUpon>XtraReportMonthlyUpdateListing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReportOpenChargesAppliedToDealer.resx">
+      <DependentUpon>XtraReportOpenChargesAppliedToDealer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReportShortBalanceReport.resx">
+      <DependentUpon>XtraReportShortBalanceReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReportVehicleReposession.resx">
+      <DependentUpon>XtraReportVehicleReposession.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReportClosedPaymentBalanceTotals.resx">
+      <DependentUpon>XtraReportClosedPaymentBalanceTotals.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="XtraReportClosedPaymentBalanceJournal.resx">
       <DependentUpon>XtraReportClosedPaymentBalanceJournal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReportClosedPaymentDealerSummary.resx">
+      <DependentUpon>XtraReportClosedPaymentDealerSummary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReportClosedPaymentTypeSummary.resx">
+      <DependentUpon>XtraReportClosedPaymentTypeSummary.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="XtraReportDelinquency.resx">
       <DependentUpon>XtraReportDelinquency.cs</DependentUpon>
@@ -2384,7 +2515,6 @@
     <None Include="ListData.xss">
       <DependentUpon>ListData.xsd</DependentUpon>
     </None>
-    <None Include="ObjectListView2012.csproj" />
     <None Include="ProductionMainTables.xsc">
       <DependentUpon>ProductionMainTables.xsd</DependentUpon>
     </None>
@@ -2531,6 +2661,17 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\TemplateWSProxy\TemplateWSService1.wsdl" />
+    <None Include="TempPosting.xsc">
+      <DependentUpon>TempPosting.xsd</DependentUpon>
+    </None>
+    <None Include="TempPosting.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TempPosting.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="TempPosting.xss">
+      <DependentUpon>TempPosting.xsd</DependentUpon>
+    </None>
     <None Include="Tickets.xsc">
       <DependentUpon>Tickets.xsd</DependentUpon>
     </None>
@@ -3208,16 +3349,6 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
-    <PublishFile Include="Microsoft.Bcl.AsyncInterfaces">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
-      <FileType>Assembly</FileType>
-    </PublishFile>
     <PublishFile Include="Microsoft.Data.ConnectionUI">
       <Visible>False</Visible>
       <Group>
@@ -3828,23 +3959,13 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
-    <PublishFile Include="ObjectListView">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
-      <FileType>Assembly</FileType>
-    </PublishFile>
     <PublishFile Include="ObjectListView.pdb">
       <Visible>False</Visible>
       <Group>
       </Group>
       <TargetPath>
       </TargetPath>
-      <PublishState>Include</PublishState>
+      <PublishState>Exclude</PublishState>
       <IncludeHash>True</IncludeHash>
       <FileType>File</FileType>
     </PublishFile>
@@ -4039,36 +4160,6 @@
       <FileType>Assembly</FileType>
     </PublishFile>
     <PublishFile Include="System.Security.Principal.Windows">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
-      <FileType>Assembly</FileType>
-    </PublishFile>
-    <PublishFile Include="System.Text.Encodings.Web">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
-      <FileType>Assembly</FileType>
-    </PublishFile>
-    <PublishFile Include="System.Text.Json">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
-      <FileType>Assembly</FileType>
-    </PublishFile>
-    <PublishFile Include="System.Threading.Tasks.Extensions">
       <Visible>False</Visible>
       <Group>
       </Group>

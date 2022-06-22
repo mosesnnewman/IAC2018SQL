@@ -470,8 +470,8 @@
             this.TotalOriginalAmountAndChange_1.BorderWidth = 1F;
             this.TotalOriginalAmountAndChange_1.CanGrow = false;
             this.TotalOriginalAmountAndChange_1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumSum([MonthEndAmount]+[ChangeDueToISF])"),
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Visible", "iif([this].[Value] == 0, False,True)\n")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Visible", "iif([this].[Value] == 0, False,True)\n"),
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumSum([OriginalAmount])+sumSum([ChangeDueToISF])")});
             this.TotalOriginalAmountAndChange_1.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8F, System.Drawing.FontStyle.Bold);
             this.TotalOriginalAmountAndChange_1.ForeColor = System.Drawing.Color.Black;
             this.TotalOriginalAmountAndChange_1.LocationFloat = new DevExpress.Utils.PointFloat(483.3333F, 25F);
