@@ -1400,10 +1400,10 @@ namespace IAC2021SQL
                 // Moses Newman 08/20/2012  Fix rounding
                 // Moses Newman 03/05/2012  Change lnBalance to lnSimpleDiff for new simple interest style posting
                 PAYMENTDataSet.WS_DEALER_PAY.Rows[WSDealerPos].SetField<Decimal>("OS_L", PAYMENTDataSet.WS_DEALER_PAY.Rows[WSDealerPos].Field<Decimal>("OS_L") - lnSimpleDiff);
-                if (PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_PAY_REM_1").TrimEnd() == "PAID")
-                    lnIntAdj = lnCustUEI;
-                else
-                    lnIntAdj = 0;
+                lnIntAdj = 0;
+                if (PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_PAY_REM_1") != null)
+                    if (PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_PAY_REM_1").TrimEnd() == "PAID")
+                        lnIntAdj = lnCustUEI;
                 PAYMENTDataSet.WS_DEALER_PAY.Rows[WSDealerPos].SetField<Decimal>("INT", PAYMENTDataSet.WS_DEALER_PAY.Rows[WSDealerPos].Field<Decimal>("INT") + Convert.ToDecimal(lnAccruedInt - lnIntAdj));
 
                 switch (PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_AMORTIZE_IND"))

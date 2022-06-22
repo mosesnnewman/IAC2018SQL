@@ -156,8 +156,8 @@ namespace IAC2021SQL
         {
             IACDataSetTableAdapters.LateRatesSelectTableAdapter LateRatesSelectTableAdapter = new IACDataSetTableAdapters.LateRatesSelectTableAdapter();
             Decimal lnAmountDifference = 0;
-            Int32 lnActDateDiff = 0, lnFormDay = 0, lnMassDateDiff = 0, lnMassFormNo = 0, // Moses Newman 11/14/2021 Add Mass Date Diff
-                  lnMassDueDay = 0;
+            Int32 lnActDateDiff = 0, lnFormDay = 0, lnMassDateDiff = 0, lnMassFormNo = 99, // Moses Newman 11/14/2021 Add Mass Date Diff
+                  lnMassDueDay = 99; // Moses Newman 06/21/2022 Default MassDueDay and MassFormNo to 99
             // Initialize for each record
             lnFormNo = 0;
             lnLateCharge = 0;
@@ -330,6 +330,8 @@ namespace IAC2021SQL
                         }
                         break;
                 }
+                if (lnFormNo == 0 && NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<Int32>("CUSTOMER_DAY_DUE") == lnMassDueDay)
+                    lnMassFormNo = 0;
                 //lnMassFormNo = (lnMassDateDiff / 5) + 1;
             }
 
@@ -392,7 +394,8 @@ namespace IAC2021SQL
             }
 
             if ((lnFormNo == 0 || lnFormNo == 6 || lnFormNo == 9) && lnFormDay != NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<Int32>("CUSTOMER_DAY_DUE"))
-                return;
+                if(lnMassFormNo != 0)  // Moses Newman 06/21/2022 handle Mass First Payment Default.
+                    return;
             // Moses Newman 04/24/2018 No Late Charges for customers with a partial payment that is less than $1 short of a full payment!
             // Moses Newman 07/12/2018 Added () around lnFormNo == 0 || lnFormNo == 1 so lnFormNo == 0 does not get skipped!
             if ((lnFormNo == 0 || lnFormNo == 1) &&

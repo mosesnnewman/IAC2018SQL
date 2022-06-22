@@ -169,7 +169,9 @@ namespace IAC2021SQL
                 DataBase = lsConnect.Substring(lsConnect.IndexOf("INITIAL CATALOG=") + 16,
                         (lsConnect.IndexOf(";", lsConnect.IndexOf("INITIAL CATALOG=") + 16) - (lsConnect.IndexOf("INITIAL CATALOG=") + 16)));
                 frmLogin.Dispose();
-                Text = "IAC 2021 SQL " + "(Hello: " + Program.gsUserName.ToString().ToUpper() + ") [DataBase: " + DataBase + "]";
+                // Moses Newman 05/20/2022 Add Sentry Error Capturing
+                var version = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
+                Text = "IAC 2022 SQL " + "(Hello: " + Program.gsUserName.ToString().ToUpper() + ") [DataBase: " + DataBase + "] v."+version.ToString();
                 if (Program.gsUserID == "MNN")
                     mosesFixesToolStripMenuItem.Visible = true;
                 else
@@ -1530,19 +1532,13 @@ namespace IAC2021SQL
             ReportData = new IACDataSet();
             // Moses Newman 11/29/2020 add new Daily Interest Variance Sub Report
             DailyDataSet DailyData = new DailyDataSet();
-            IACDataSetTableAdapters.CUSTOMERTableAdapter CUSTOMERTableAdapter = new IACDataSetTableAdapters.CUSTOMERTableAdapter();
             IACDataSetTableAdapters.CUSTHISTTableAdapter CUSTHISTTableAdapter = new IACDataSetTableAdapters.CUSTHISTTableAdapter();
-            IACDataSetTableAdapters.DEALERTableAdapter DEALERTableAdapter = new IACDataSetTableAdapters.DEALERTableAdapter();
             IACDataSetTableAdapters.SystemTableAdapter SystemTableAdapter = new IACDataSetTableAdapters.SystemTableAdapter();
-
-            DailyDataSetTableAdapters.DailyInterestVarianceTableAdapter DailyInterestVarianceTableAdapter = new DailyDataSetTableAdapters.DailyInterestVarianceTableAdapter();
 
             SystemTableAdapter.Fill(ReportData.System,1);
 
             DateTime ldLastRun = ReportData.System.Rows[0].Field<DateTime>("LastUpdateDate");
 
-            CUSTOMERTableAdapter.FillByUpdates(ReportData.CUSTOMER, ldLastRun);
-            DEALERTableAdapter.FillByUpdates(ReportData.DEALER, ldLastRun);
             CUSTHISTTableAdapter.FillByUpdatesOnly(ReportData.CUSTHIST, ldLastRun);
             if (ReportData.CUSTHIST.Rows.Count == 0)
             {
@@ -1550,22 +1546,46 @@ namespace IAC2021SQL
                 return;
             }
 
-            DailyInterestVarianceTableAdapter.Fill(DailyData.DailyInterestVariance, ldLastRun);
-            MonthlyUpdateListing myReportObject = new MonthlyUpdateListing();
 
-            //MonthlyUpdateDevience myReportObject = new MonthlyUpdateDevience();
-            myReportObject.SetDataSource(ReportData);
-            myReportObject.Subreports["DailyInterestVariance.rpt"].SetDataSource(DailyData);   // Moses Newman 11/29/2020 add new data source
-            myReportObject.SetParameterValue("gsUserID", Program.gsUserID);
-            myReportObject.SetParameterValue("gsUserName", Program.gsUserName);
-            myReportObject.SetParameterValue("gsFormTitle", "Monthly Interest Update Report");
-            myReportObject.SetParameterValue("gdLastRun", ldLastRun);
+            // Moses Newman 05/31/2022 Convert to XtraReport
+            var report = new XtraReportMonthlyInterest();
+            SqlDataSource ds = report.DataSource as SqlDataSource;
 
-            CreateFormInstance("ReportViewer", false);
-            ReportViewer rptViewr = (ReportViewer)ActiveMdiChild;
-            rptViewr.crystalReportViewer.ReportSource = myReportObject;
-            rptViewr.crystalReportViewer.Refresh();
-            rptViewr.Show();
+            ds.Queries[0].Parameters[0].Value = ldLastRun;
+            ds.Queries[1].Parameters[0].Value = ldLastRun;
+            ds.Queries[2].Parameters[0].Value = ldLastRun;
+
+            report.DataSource = ds;
+            report.RequestParameters = false;
+            report.Parameters["gsUserID"].Value = Program.gsUserID;
+            report.Parameters["gsUserName"].Value = Program.gsUserName;
+            report.Parameters["gsFormTitle"].Value = "Monthly Interest Update Report";
+            report.Parameters["gdLastRun"].Value = ldLastRun;
+
+            // Moses Newman 05/31/2022 Now do DealerSummary Sub Report datasource!
+            XRSubreport subReportDealer = report.FindControl("SubreportDealerSummary", true) as XRSubreport;
+            XtraReport reportSourceDealer = subReportDealer.ReportSource as XtraReport;
+            SqlDataSource subdealerds = reportSourceDealer.DataSource as SqlDataSource;
+            subdealerds.Queries[0].Parameters[0].Value = ldLastRun;
+            subdealerds.Queries[1].Parameters[0].Value = ldLastRun;
+            subdealerds.Queries[2].Parameters[0].Value = ldLastRun;
+            reportSourceDealer.DataSource = subdealerds;
+
+            // Moses Newman 05/31/2022 Now do Interest Variance Sub Report datasource!
+            XRSubreport subReportInterestVariance = report.FindControl("SubreportDailyInterestVariance", true) as XRSubreport;
+            XtraReport reportSourceInterestVariance = subReportInterestVariance.ReportSource as XtraReport;
+            SqlDataSource subInterestVarianceds = reportSourceInterestVariance.DataSource as SqlDataSource;
+            subInterestVarianceds.Queries[0].Parameters[0].Value = ldLastRun;
+            reportSourceInterestVariance.DataSource = subInterestVarianceds;
+
+            var tool = new ReportPrintTool(report);
+
+            MDIIAC2013 MDImain = this;
+            tool.PreviewRibbonForm.MdiParent = MDImain;
+            tool.AutoShowParametersPanel = false;
+            tool.PreviewRibbonForm.WindowState = FormWindowState.Maximized;
+            tool.ShowRibbonPreview();
+
             ReportData.Clear();
             ReportData.Dispose();
         }
