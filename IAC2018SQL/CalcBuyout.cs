@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace IAC2021SQL
 {
-    public partial class CalcBuyout : Form
+    public partial class CalcBuyout : DevExpress.XtraEditors.XtraForm
     {
         private IACDataSet _DataSet;
 
@@ -32,7 +32,7 @@ namespace IAC2021SQL
             textBoxBuyout.Text = "CALCULATING...".ToString(new CultureInfo("en-US"));
             textBoxBuyout.Text =
             Program.TVSimpleGetBuyout(_DataSet,
-                    (DateTime)nullableDateTimePicker1.Value,
+                    (DateTime)nullableDateTimePicker1.EditValue,
                     (Double)_DataSet.CUSTOMER.Rows[0].Field<Int32>("CUSTOMER_TERM"),
                     (Double)(_DataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_ANNUAL_PERCENTAGE_RATE") / 100),
                     (Double)_DataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_REGULAR_AMOUNT"),
@@ -42,7 +42,7 @@ namespace IAC2021SQL
 
         private void CalcBuyout_Load(object sender, EventArgs e)
         {
-            nullableDateTimePicker1.Value = DateTime.Now.Date;
+            nullableDateTimePicker1.EditValue = DateTime.Now.Date;
         }
     }
 }
