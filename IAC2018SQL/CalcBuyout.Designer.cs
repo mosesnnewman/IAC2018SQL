@@ -28,73 +28,103 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.nullableDateTimePicker1 = new ProManApp.NullableDateTimePicker();
-            this.textBoxBuyout = new System.Windows.Forms.TextBox();
-            this.labelBuyout = new System.Windows.Forms.Label();
-            this.buttonCalcBuyout = new System.Windows.Forms.Button();
+            this.nullableDateTimePicker1 = new DevExpress.XtraEditors.DateEdit();
+            this.textBoxBuyout = new DevExpress.XtraEditors.TextEdit();
+            this.labelBuyout = new DevExpress.XtraEditors.LabelControl();
+            this.buttonCalcBuyout = new DevExpress.XtraEditors.SimpleButton();
+            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePicker1.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePicker1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBoxBuyout.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
+            this.groupControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // nullableDateTimePicker1
             // 
-            this.nullableDateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.nullableDateTimePicker1.Location = new System.Drawing.Point(93, 50);
+            this.nullableDateTimePicker1.EditValue = new System.DateTime(2022, 6, 23, 0, 0, 0, 0);
+            this.nullableDateTimePicker1.Location = new System.Drawing.Point(86, 50);
             this.nullableDateTimePicker1.Name = "nullableDateTimePicker1";
-            this.nullableDateTimePicker1.Size = new System.Drawing.Size(99, 20);
+            this.nullableDateTimePicker1.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nullableDateTimePicker1.Properties.Appearance.Options.UseFont = true;
+            this.nullableDateTimePicker1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.nullableDateTimePicker1.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.nullableDateTimePicker1.Size = new System.Drawing.Size(112, 26);
             this.nullableDateTimePicker1.TabIndex = 0;
-            this.nullableDateTimePicker1.Value = new System.DateTime(2013, 6, 12, 0, 0, 0, 0);
             // 
             // textBoxBuyout
             // 
-            this.textBoxBuyout.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxBuyout.Location = new System.Drawing.Point(113, 95);
+            this.textBoxBuyout.Location = new System.Drawing.Point(86, 95);
             this.textBoxBuyout.Name = "textBoxBuyout";
-            this.textBoxBuyout.ReadOnly = true;
+            this.textBoxBuyout.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxBuyout.Properties.Appearance.Options.UseFont = true;
+            this.textBoxBuyout.Properties.ReadOnly = true;
             this.textBoxBuyout.Size = new System.Drawing.Size(139, 26);
             this.textBoxBuyout.TabIndex = 1;
             // 
             // labelBuyout
             // 
-            this.labelBuyout.AutoSize = true;
-            this.labelBuyout.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBuyout.Location = new System.Drawing.Point(32, 101);
+            this.labelBuyout.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelBuyout.Appearance.Options.UseFont = true;
+            this.labelBuyout.Location = new System.Drawing.Point(17, 101);
             this.labelBuyout.Name = "labelBuyout";
-            this.labelBuyout.Size = new System.Drawing.Size(75, 20);
+            this.labelBuyout.Size = new System.Drawing.Size(66, 20);
             this.labelBuyout.TabIndex = 2;
             this.labelBuyout.Text = "Buyout: ";
             // 
             // buttonCalcBuyout
             // 
-            this.buttonCalcBuyout.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCalcBuyout.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCalcBuyout.Appearance.Options.UseFont = true;
             this.buttonCalcBuyout.Location = new System.Drawing.Point(87, 176);
             this.buttonCalcBuyout.Name = "buttonCalcBuyout";
             this.buttonCalcBuyout.Size = new System.Drawing.Size(110, 39);
             this.buttonCalcBuyout.TabIndex = 3;
             this.buttonCalcBuyout.Text = "&Calculate";
-            this.buttonCalcBuyout.UseVisualStyleBackColor = true;
             this.buttonCalcBuyout.Click += new System.EventHandler(this.buttonCalcBuyout_Click);
+            // 
+            // groupControl1
+            // 
+            this.groupControl1.Appearance.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.groupControl1.Appearance.Options.UseBackColor = true;
+            this.groupControl1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.groupControl1.Controls.Add(this.buttonCalcBuyout);
+            this.groupControl1.Controls.Add(this.labelBuyout);
+            this.groupControl1.Controls.Add(this.textBoxBuyout);
+            this.groupControl1.Controls.Add(this.nullableDateTimePicker1);
+            this.groupControl1.Location = new System.Drawing.Point(0, -1);
+            this.groupControl1.Name = "groupControl1";
+            this.groupControl1.Size = new System.Drawing.Size(284, 265);
+            this.groupControl1.TabIndex = 4;
+            this.groupControl1.Text = "groupControl1";
             // 
             // CalcBuyout
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(284, 264);
-            this.Controls.Add(this.buttonCalcBuyout);
-            this.Controls.Add(this.labelBuyout);
-            this.Controls.Add(this.textBoxBuyout);
-            this.Controls.Add(this.nullableDateTimePicker1);
+            this.Controls.Add(this.groupControl1);
             this.Name = "CalcBuyout";
             this.Text = "Calculate Buyout";
             this.Load += new System.EventHandler(this.CalcBuyout_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePicker1.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePicker1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBoxBuyout.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
+            this.groupControl1.ResumeLayout(false);
+            this.groupControl1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private ProManApp.NullableDateTimePicker nullableDateTimePicker1;
-        private System.Windows.Forms.TextBox textBoxBuyout;
-        private System.Windows.Forms.Label labelBuyout;
-        private System.Windows.Forms.Button buttonCalcBuyout;
+        private DevExpress.XtraEditors.DateEdit nullableDateTimePicker1;
+        private DevExpress.XtraEditors.TextEdit textBoxBuyout;
+        private DevExpress.XtraEditors.LabelControl labelBuyout;
+        private DevExpress.XtraEditors.SimpleButton buttonCalcBuyout;
+        private DevExpress.XtraEditors.GroupControl groupControl1;
     }
 }
