@@ -330,8 +330,6 @@ namespace IAC2021SQL
                         }
                         break;
                 }
-                if (lnFormNo == 0 && NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<Int32>("CUSTOMER_DAY_DUE") == lnMassDueDay)
-                    lnMassFormNo = 0;
                 //lnMassFormNo = (lnMassDateDiff / 5) + 1;
             }
 
@@ -342,8 +340,19 @@ namespace IAC2021SQL
                 NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].SetField<Int32>("CUSTOMER_NO_OF_PAYMENTS_MADE", 0);
             if (NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<Int32>("CUSTOMER_TERM") == NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<Int32>("CUSTOMER_PAY_REM_2") &&
                 NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_LATE_CHARGE_BAL") == 0)
-                // Moses Newman 02/15/2019 use normal Form if they already got a First Payment Default notice!
-                lnFormNo = 0;
+            // Moses Newman 02/15/2019 use normal Form if they already got a First Payment Default notice!
+            {
+                if (NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_STATE") != "MA")
+                    lnFormNo = 0;
+                else
+                {
+                    if (NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<Int32>("CUSTOMER_DAY_DUE") == lnMassDueDay)
+                    {
+                        lnMassFormNo = 0;
+                        lnFormNo = 0;
+                    }
+                }
+            }
             else
             {
                 // If notice is 4 or 5 already do not create notice!
@@ -360,7 +369,7 @@ namespace IAC2021SQL
                                 //((lnMassDateDiff >= 35 && lnMassDateDiff < 40 && NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_STATE") == "MA") || (lnActDateDiff >= 40 && lnActDateDiff < 45 && NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_STATE") != "MA")))
                                 // Moses Newman 01/04/2022 Now we already know if MassFormNo == 4
                                 (lnActDateDiff >= 40 && lnActDateDiff < 45 && NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_STATE") != "MA"))
-                // Moses Newman 11/14/2021 Handle Mass Form 4 generating 10 days earlier
+                    // Moses Newman 11/14/2021 Handle Mass Form 4 generating 10 days earlier
                     switch (lnActDateDiff)
                     {
                         case 40:
@@ -375,11 +384,11 @@ namespace IAC2021SQL
                     lnFormNo = 9;
                 else
                     if (lnFormNo > 5)
-                        lnFormNo = 6;
+                    lnFormNo = 6;
             }
             Int32 lnACTFirstDiff = CheckFirstPayment(CustomerPos, ldFormDate);
             // Moses Newman lnFormNo is always initially 0 so if it is 0 after TestLCDate and the lnActDateDiff is < 0 don't produce the notice!
-            if (lnFormNo == 0 && lnActDateDiff < 0)
+            if (lnFormNo == 0 && lnActDateDiff < 0 && lnMassFormNo != 0)  // Moses Newman 06/25/2022 don't skip if MassFormNo = 0
                 return;
             if (lnACTFirstDiff < 0)
                 return;

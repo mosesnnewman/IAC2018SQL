@@ -227,13 +227,13 @@ namespace IAC2021SQL
                     return;
                 if (PaymentbindingSource.Position == -1)
                     PaymentbindingSource.MoveFirst();
-                if (PaymentbindingSource.Position > -1 && cUSTOMER_NOTextBox.Text.Length != 6)
-                    cUSTOMER_NOTextBox.Text = ClosedPaymentiacDataSet.PAYMENT.Rows[PaymentbindingSource.Position].Field<String>("PAYMENT_CUSTOMER");
+                if (PaymentbindingSource.Position > -1 && cUSTOMER_NOTextBox.EditValue.ToString().Trim().Length != 6)
+                    cUSTOMER_NOTextBox.EditValue = ClosedPaymentiacDataSet.PAYMENT.Rows[PaymentbindingSource.Position].Field<String>("PAYMENT_CUSTOMER");
             }
             try
             {
-                cUSTHISTTableAdapter.FillByCustomerNo(ClosedPaymentiacDataSet.CUSTHIST, cUSTOMER_NOTextBox.Text.TrimEnd());
-                cOMMENTTableAdapter.FillByCustNo(ClosedPaymentiacDataSet.COMMENT, cUSTOMER_NOTextBox.Text.TrimEnd());
+                cUSTHISTTableAdapter.FillByCustomerNo(ClosedPaymentiacDataSet.CUSTHIST, cUSTOMER_NOTextBox.EditValue.ToString().Trim());
+                cOMMENTTableAdapter.FillByCustNo(ClosedPaymentiacDataSet.COMMENT, cUSTOMER_NOTextBox.EditValue.ToString().Trim());
             }
             catch
             {
@@ -242,8 +242,8 @@ namespace IAC2021SQL
             gnCustomerBalance = 0;
             gnCustomerBuyout = 0;
 
-            if (cUSTOMER_NOTextBox.Text.ToString().TrimEnd().Length > 0)
-                cUSTOMERTableAdapter.Fill(ClosedPaymentiacDataSet.CUSTOMER, cUSTOMER_NOTextBox.Text.ToString());
+            if (cUSTOMER_NOTextBox.EditValue.ToString().Trim().Length > 0)
+                cUSTOMERTableAdapter.Fill(ClosedPaymentiacDataSet.CUSTOMER, cUSTOMER_NOTextBox.EditValue.ToString().Trim());
             if (ClosedPaymentiacDataSet.CUSTOMER.Rows.Count > 0)
             {
                 lPaidThroughMM = ClosedPaymentiacDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_PAID_THRU_MM");
@@ -339,13 +339,13 @@ namespace IAC2021SQL
             int lnPaymentPos = 0;
             String lsCustNo = "";
 
-            if (lbFormClosing || cUSTOMER_NOTextBox.Text.TrimEnd() == "" || lbEdit)
+            if (lbFormClosing || cUSTOMER_NOTextBox.EditValue.ToString().Trim() == "" || lbEdit)
                 return;
 
-            if (cUSTOMER_NOTextBox.Text.ToString().Trim().Length < 6 && cUSTOMER_NOTextBox.Text.ToString().Trim().Length > 0)
-                cUSTOMER_NOTextBox.Text = cUSTOMER_NOTextBox.Text.PadLeft(6, '0');
+            if (cUSTOMER_NOTextBox.EditValue.ToString().Trim().Length < 6 && cUSTOMER_NOTextBox.EditValue.ToString().Trim().Length > 0)
+                cUSTOMER_NOTextBox.EditValue = cUSTOMER_NOTextBox.EditValue.ToString().Trim().PadLeft(6, '0');
 
-            lsCustNo = cUSTOMER_NOTextBox.Text;
+            lsCustNo = cUSTOMER_NOTextBox.EditValue.ToString().Trim();
 
             paymentTableAdapter.FillByAll(ClosedPaymentiacDataSet.PAYMENT);
 
@@ -388,26 +388,26 @@ namespace IAC2021SQL
             if (ClosedPaymentiacDataSet.PAYMENT.Rows.Count != 0 || lbAddFlag)
             {
                 setRelatedData();
-                if (lbAddFlag && ClosedPaymentiacDataSet.CUSTOMER.Rows.Count == 0 && cUSTOMER_NOTextBox.Text.ToString().Trim().Length != 0)
+                if (lbAddFlag && ClosedPaymentiacDataSet.CUSTOMER.Rows.Count == 0 && cUSTOMER_NOTextBox.EditValue.ToString().Trim().Length != 0)
                 {
-                    cUSTOMERTableAdapter.Fill(ClosedPaymentiacDataSet.CUSTOMER, cUSTOMER_NOTextBox.Text.ToString().Trim());
+                    cUSTOMERTableAdapter.Fill(ClosedPaymentiacDataSet.CUSTOMER, cUSTOMER_NOTextBox.EditValue.ToString().Trim());
                 }
                 if (ClosedPaymentiacDataSet.CUSTOMER.Rows.Count > 0 && lbAddFlag) // Moses Newman 10/26/2021 no more payments to Inactive accounts!
                     if (ClosedPaymentiacDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_ACT_STAT") == "I")
                     {
-                        MessageBox.Show("*** SORRY ACCOUNT: " + cUSTOMER_NOTextBox.Text.ToString().Trim() + " " + ClosedPaymentiacDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_FIRST_NAME").Trim() + " " + ClosedPaymentiacDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_LAST_NAME").Trim() + " IS INACTIVE! ***");
+                        MessageBox.Show("*** SORRY ACCOUNT: " + cUSTOMER_NOTextBox.EditValue.ToString().Trim() + " " + ClosedPaymentiacDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_FIRST_NAME").Trim() + " " + ClosedPaymentiacDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_LAST_NAME").Trim() + " IS INACTIVE! ***");
                         ClosedPaymentiacDataSet.CUSTOMER.Clear();
-                        cUSTOMER_NOTextBox.Text = "";
+                        cUSTOMER_NOTextBox.EditValue = "";
                         setRelatedData();
                         ActiveControl = cUSTOMER_NOTextBox;
                         cUSTOMER_NOTextBox.Select();
                         return;
                     }
             }
-            if (ClosedPaymentiacDataSet.CUSTOMER.Rows.Count == 0 && cUSTOMER_NOTextBox.Text.ToString().Trim().Length != 0)
+            if (ClosedPaymentiacDataSet.CUSTOMER.Rows.Count == 0 && cUSTOMER_NOTextBox.EditValue.ToString().Trim().Length != 0)
             {
                 MessageBox.Show("Sorry no customers found that match your selected account number!");
-                cUSTOMER_NOTextBox.Text = "";
+                cUSTOMER_NOTextBox.EditValue = "";
                 ActiveControl = cUSTOMER_NOTextBox;
                 cUSTOMER_NOTextBox.Select();
             }
@@ -419,7 +419,7 @@ namespace IAC2021SQL
                 {
                     ClosedPaymentiacDataSet.PAYMENT.Rows[PaymentbindingSource.Position].SetField<String>("PAYMENT_TYPE", "I");
                     //MessageBox.Show("Sorry but customer must be active or payment must be an INSUF to post!");
-                    //cUSTOMER_NOTextBox.Text = "";
+                    //cUSTOMER_NOTextBox.EditValue = "";
                     //toolStripButtonAdd_Click(sender, e);
                     //return;
                 }*/
@@ -430,12 +430,12 @@ namespace IAC2021SQL
                         ActiveControl = cUSTOMER_NOTextBox;
                         cUSTOMER_NOTextBox.Select();
                     }
-                if (lbAddFlag && cUSTOMER_NOTextBox.Text.ToString().TrimEnd() != "")
+                if (lbAddFlag && cUSTOMER_NOTextBox.EditValue.ToString().Trim() != "")
                 {
                     PaymentbindingSource.AddNew();
                     PaymentbindingSource.EndEdit();
 
-                    ClosedPaymentiacDataSet.PAYMENT.Rows[PaymentbindingSource.Position].SetField<String>("PAYMENT_CUSTOMER", cUSTOMER_NOTextBox.Text.ToString());
+                    ClosedPaymentiacDataSet.PAYMENT.Rows[PaymentbindingSource.Position].SetField<String>("PAYMENT_CUSTOMER", cUSTOMER_NOTextBox.EditValue.ToString().Trim());
                     ClosedPaymentiacDataSet.PAYMENT.Rows[PaymentbindingSource.Position].SetField<String>("PAYMENT_ADD_ON", " ");
                     ClosedPaymentiacDataSet.PAYMENT.Rows[PaymentbindingSource.Position].SetField<String>("PAYMENT_IAC_TYPE", "C");
                     ClosedPaymentiacDataSet.PAYMENT.Rows[PaymentbindingSource.Position].SetField<DateTime>("PAYMENT_DATE", DateTime.Now.Date);
@@ -547,7 +547,7 @@ namespace IAC2021SQL
             Visible = true;
             if (Program.gsKey != null)
             {
-                cUSTOMER_NOTextBox.Text = Program.gsKey;
+                cUSTOMER_NOTextBox.EditValue = Program.gsKey;
                 System.Windows.Forms.SendKeys.Send("{TAB}");
                 Program.gsKey = null;
             }
@@ -561,7 +561,7 @@ namespace IAC2021SQL
             PaymentbindingSource.EndEdit();
 
             Validate();  //Validate form so all data sets are updated with field values
-            lsCustomerNo = cUSTOMER_NOTextBox.Text.ToString().Trim();
+            lsCustomerNo = cUSTOMER_NOTextBox.EditValue.ToString().Trim();
             if (ClosedPaymentiacDataSet.CUSTOMER.Rows.Count == 0)
                 return;
             tableAdapConn = new System.Data.SqlClient.SqlConnection();
@@ -630,7 +630,7 @@ namespace IAC2021SQL
             {
                 if (!lbAddFlag && !lbEdit && bindingNavigator.Visible)
                 {
-                    cUSTOMER_NOTextBox.Text = ClosedPaymentiacDataSet.PAYMENT.Rows[PaymentbindingSource.Position].Field<String>("PAYMENT_CUSTOMER");
+                    cUSTOMER_NOTextBox.EditValue = ClosedPaymentiacDataSet.PAYMENT.Rows[PaymentbindingSource.Position].Field<String>("PAYMENT_CUSTOMER");
                 }
                 setRelatedData();
                 ActiveControl = cUSTOMER_NOTextBox;
@@ -640,7 +640,7 @@ namespace IAC2021SQL
 
         private void toolStripButtonAdd_Click(object sender, EventArgs e)
         {
-            cUSTOMER_NOTextBox.Text = "";
+            cUSTOMER_NOTextBox.EditValue = "";
             lbEdit = false;
             lbAddFlag = true;
             toolStripButtonEdit.Enabled = false;
@@ -686,14 +686,14 @@ namespace IAC2021SQL
             if (PaymentbindingSource.Position == -1)
                 return;
 
-            Object loLockedBy = paymentTableAdapter.LockedBy(cUSTOMER_NOTextBox.Text, ClosedPaymentiacDataSet.PAYMENT.Rows[PaymentbindingSource.Position].Field<DateTime>("PAYMENT_DATE"), ClosedPaymentiacDataSet.PAYMENT.Rows[PaymentbindingSource.Position].Field<Int32>("SeqNo")),
-            loLockedTime = paymentTableAdapter.LockTime(cUSTOMER_NOTextBox.Text, ClosedPaymentiacDataSet.PAYMENT.Rows[PaymentbindingSource.Position].Field<DateTime>("PAYMENT_DATE"), ClosedPaymentiacDataSet.PAYMENT.Rows[PaymentbindingSource.Position].Field<Int32>("SeqNo"));
+            Object loLockedBy = paymentTableAdapter.LockedBy(cUSTOMER_NOTextBox.EditValue.ToString().Trim(), ClosedPaymentiacDataSet.PAYMENT.Rows[PaymentbindingSource.Position].Field<DateTime>("PAYMENT_DATE"), ClosedPaymentiacDataSet.PAYMENT.Rows[PaymentbindingSource.Position].Field<Int32>("SeqNo")),
+            loLockedTime = paymentTableAdapter.LockTime(cUSTOMER_NOTextBox.EditValue.ToString().Trim(), ClosedPaymentiacDataSet.PAYMENT.Rows[PaymentbindingSource.Position].Field<DateTime>("PAYMENT_DATE"), ClosedPaymentiacDataSet.PAYMENT.Rows[PaymentbindingSource.Position].Field<Int32>("SeqNo"));
 
             if (loLockedBy != null && ((String)loLockedBy).TrimEnd() != "")
             {
                 IACDataSetTableAdapters.ULISTTableAdapter ULISTTableAdapter = new IACDataSetTableAdapters.ULISTTableAdapter();
                 ULISTTableAdapter.FillById(ClosedPaymentiacDataSet.ULIST, Program.gsUserID);
-                MessageBox.Show("*** PAYMENT: " + cUSTOMER_NOTextBox.Text + " WAS LOCKED BY USER: " +
+                MessageBox.Show("*** PAYMENT: " + cUSTOMER_NOTextBox.EditValue.ToString().Trim() + " WAS LOCKED BY USER: " +
                     loLockedBy + " " +
                     ClosedPaymentiacDataSet.ULIST.Rows[0].Field<String>("LIST_NAME") +
                     "\nON: " + ((DateTime)loLockedTime).ToLongDateString() + " " +
@@ -765,7 +765,7 @@ namespace IAC2021SQL
                 }
                 lbNewPayment = false;
             }
-            cUSTOMER_NOTextBox.Text = "";
+            cUSTOMER_NOTextBox.EditValue = "";
             txtPaidThrough.Text = "";
             txtLoanBalance.Text = "";
             txtPaidThrough.Text = "";
@@ -1035,7 +1035,7 @@ namespace IAC2021SQL
                 }
                 else
                 {
-                    cUSTOMER_NOTextBox.Text = "";
+                    cUSTOMER_NOTextBox.EditValue = "";
                     txtPaidThrough.Text = "";
                 }
                 if (ClosedPaymentiacDataSet.PAYMENT.Rows.Count > 0)
@@ -1073,7 +1073,7 @@ namespace IAC2021SQL
         private void SelectCheck()
         {
             FormSelectCheck frmSelectCheckInst;
-            frmSelectCheckInst = new FormSelectCheck(cUSTOMER_NOTextBox.Text.TrimEnd(), true, (String)lookUpEditPaymentType.EditValue);
+            frmSelectCheckInst = new FormSelectCheck(cUSTOMER_NOTextBox.EditValue.ToString().Trim(), true, (String)lookUpEditPaymentType.EditValue);
             if (!frmSelectCheckInst.DoNotShow)
             {
                 frmSelectCheckInst.ShowDialog();

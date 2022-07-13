@@ -30,6 +30,10 @@ using DevExpress.XtraGrid.Repository;
 using DevExpress.XtraEditors;
 using DevExpress.Data;
 using DevExpress.XtraBars;
+using DevExpress.XtraReports.UI;
+using DevExpress.DataAccess.Sql;
+using DevExpress.DataAccess.Sql.DataApi;
+
 
 namespace IAC2021SQL
 {
@@ -2688,12 +2692,20 @@ namespace IAC2021SQL
                     MakeComment("Cosigner Cell Phone Number VALIDATED.", wSCarrierLookupResponse.Message, 0, false);
                     buttonCOSValidate.ForeColor = Color.Green;
                     iACDataSet.CUSTOMER.Rows[0].SetField<Boolean>("COSCellValid", true);
+                    // Moses Newman reset COSTpin from AUTO to nothing 07/13/2022
+                    iACDataSet.CUSTOMER.Rows[0].SetField<String>("COSTPin", "");
+                    cUSTOMERBindingSource.EndEdit();
+                    radioButtonCOSAcct.Checked = false;
                 }
                 else
                 {
                     MakeComment("*** Cosigner Cell Number not VALIDATED because it is a LANDLINE! ***", wSCarrierLookupResponse.Message, 0, false);
                     buttonCOSValidate.ForeColor = Color.Crimson;
                     iACDataSet.CUSTOMER.Rows[0].SetField<Boolean>("COSCellValid", false);
+                    // Moses Newman reset COSTpin from AUTO to nothing 07/13/2022
+                    iACDataSet.CUSTOMER.Rows[0].SetField<String>("COSTPin", "");
+                    cUSTOMERBindingSource.EndEdit();
+                    radioButtonCOSAcct.Checked = false;
                 }
             }
             toolStripButtonSave.Enabled = true;
@@ -3461,8 +3473,8 @@ namespace IAC2021SQL
                 return;
             Double lnAnnualPercentageRate = 0, lnLoanInterest = 0, lnTotal = 0;
             MDIIAC2013 MDImain = (MDIIAC2013)MdiParent;
-            MDImain.CreateFormInstance("ReportViewer", false);
-            ReportViewer rptViewr = (ReportViewer)MDImain.ActiveMdiChild;
+            //MDImain.CreateFormInstance("ReportViewer", false);
+            //ReportViewer rptViewr = (ReportViewer)MDImain.ActiveMdiChild;
             switch (iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_AMORTIZE_IND"))
             {
                 case " ":
@@ -3499,30 +3511,39 @@ namespace IAC2021SQL
                     worker.Dispose();
                     CP.Dispose();
                     CP = null;
-                    myReportObject.SetDataSource(iACDataSet);
-                    // 09/27/2012 Moses Newman Handle Simple Interest Amort Scedule printing
-                    if (!checkBoxSimple.Checked)
-                        myReportObject.SetParameterValue("CompoundPeriod", "Compound Daily");
-                    else
-                        myReportObject.SetParameterValue("CompoundPeriod", "Daily Exact");
-                    myReportObject.SetParameterValue("APR", (iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_ANNUAL_PERCENTAGE_RATE") / 100));
-                    myReportObject.SetParameterValue("EffectiveAnnualRate", Math.Round(Math.Pow((1 + ((Double)(iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_ANNUAL_PERCENTAGE_RATE") / 100) / 12)), 12), 8) - 1);
-                    myReportObject.SetParameterValue("Term", iACDataSet.CUSTOMER.Rows[0].Field<Int32>("CUSTOMER_TERM"));
-                    myReportObject.SetParameterValue("AmountBorrowed", iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_LOAN_CASH"));
-                    myReportObject.SetParameterValue("TotalInterest", iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_LOAN_INTEREST"));
-                    myReportObject.SetParameterValue("FirstPaymentDate", iACDataSet.CUSTOMER.Rows[0].Field<DateTime>("CUSTOMER_INIT_DATE"));
-                    myReportObject.SetParameterValue("gsUserID", Program.gsUserID);
-                    myReportObject.SetParameterValue("gsUserName", Program.gsUserName);
-                    myReportObject.SetParameterValue("CustomerPrint", true);
-                    myReportObject.SetParameterValue("gsCustomer", iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO"));
+                    // Moses Newman 07/12m/2022 Covert to XtraReport
+                    var report = new XtraReportTVAmortizationDistribution();
+                    SqlDataSource ds = report.DataSource as SqlDataSource;
 
-                    rptViewr.crystalReportViewer.ReportSource = myReportObject;
-                    rptViewr.crystalReportViewer.Refresh();
-                    rptViewr.Show();
+                    ds.Queries[0].Parameters[0].Value = "99-" + Program.gsUserID;
+
+                    report.DataSource = ds;
+                    report.RequestParameters = false;
+                    if (!checkBoxSimple.Checked)
+                        report.Parameters["CompoundPeriod"].Value = "Compound Daily";
+                    else
+                        report.Parameters["CompoundPeriod"].Value = "Daily Exact";
+                    report.Parameters["APR"].Value = iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_ANNUAL_PERCENTAGE_RATE") / 100;
+                    report.Parameters["EffectiveAnnualRate"].Value = Math.Round(Math.Pow((1 + ((Double)(iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_ANNUAL_PERCENTAGE_RATE") / 100) / 12)), 12), 8) - 1;
+                    report.Parameters["Term"].Value = iACDataSet.CUSTOMER.Rows[0].Field<Int32>("CUSTOMER_TERM");
+                    report.Parameters["AmountBorrowed"].Value = iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_LOAN_CASH");
+                    report.Parameters["TotalInterest"].Value = iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_LOAN_INTEREST");
+                    report.Parameters["FirstPaymentDate"].Value = iACDataSet.CUSTOMER.Rows[0].Field<DateTime>("CUSTOMER_INIT_DATE");
+                    report.Parameters["gsUserID"].Value = Program.gsUserID;
+                    report.Parameters["gsUserName"].Value = Program.gsUserName;
+                    report.Parameters["CustomerPrint"].Value = true;
+                    report.Parameters["gsCustomer"].Value = iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO");
+
+
+                    var tool = new ReportPrintTool(report);
+
+                    tool.PreviewRibbonForm.MdiParent = MDImain;
+                    tool.AutoShowParametersPanel = false;
+                    tool.PreviewRibbonForm.WindowState = FormWindowState.Maximized;
+                    tool.ShowRibbonPreview();
                     break;
                 case "S":
                 case "N":
-                    TVAmortizationDistribution TVAmortReport = new TVAmortizationDistribution();
                     // Moses Newman 08/28/2013 Make sure Amortization Date is always >= the last transaction date or TimeValue will crash.
                     Object loLastDate = cUSTHISTTableAdapter.LastTransactionDate(iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO"));
                     IACDataSetTableAdapters.TVAmortTableAdapter TVAmortTableAdapter = new IACDataSetTableAdapters.TVAmortTableAdapter();
@@ -3551,28 +3572,37 @@ namespace IAC2021SQL
                         lnLoanInterest = (Double)iACDataSet.TVAPRInfo.Rows[0].Field<Decimal>("FinanceCharge");
                         lnTotal = (Double)iACDataSet.TVAPRInfo.Rows[0].Field<Decimal>("TotalofPayments");
                     }
+                    // Moses Newman 07/11/2022 Covert to XtraReport
+                    var reportA = new XtraReportTVAmortizationDistribution();
+                    SqlDataSource dsA = reportA.DataSource as SqlDataSource;
 
-                    TVAmortReport.SetDataSource(iACDataSet);
+                    dsA.Queries[0].Parameters[0].Value = iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO");
+                    dsA.Queries[1].Parameters[0].Value = iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO");
+
+                    reportA.DataSource = dsA;
+                    reportA.RequestParameters = false;
                     if (!checkBoxSimple.Checked)
-                        TVAmortReport.SetParameterValue("CompoundPeriod", "Daily Exact");
+                        reportA.Parameters["CompoundPeriod"].Value = "Daily Exact";
                     else
-                        TVAmortReport.SetParameterValue("CompoundPeriod", "Exact Days");
-                    TVAmortReport.SetParameterValue("APR", (iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_ANNUAL_PERCENTAGE_RATE") / 100));
-                    TVAmortReport.SetParameterValue("EffectiveAnnualRate", Math.Round(Math.Pow((1 + ((Double)(iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_ANNUAL_PERCENTAGE_RATE") / 100) / 12)), 12), 8) - 1);
-                    TVAmortReport.SetParameterValue("Term", iACDataSet.CUSTOMER.Rows[0].Field<Int32>("CUSTOMER_TERM"));
-                    TVAmortReport.SetParameterValue("AmountBorrowed", iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_LOAN_CASH"));
-                    TVAmortReport.SetParameterValue("TotalInterest", iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_LOAN_INTEREST"));
-                    // Moses Newman 01/21/2015 Handle Contract Date!
-                    TVAmortReport.SetParameterValue("FirstPaymentDate", iACDataSet.CUSTOMER.Rows[0].Field<DateTime>("ContractDate"));
-                    TVAmortReport.SetParameterValue("gsUserID", Program.gsUserID);
-                    TVAmortReport.SetParameterValue("gsUserName", Program.gsUserName);
-                    TVAmortReport.SetParameterValue("CustomerPrint", true);
-                    TVAmortReport.SetParameterValue("gsCustomer", iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO"));
-                    TVAmortReport.SetParameterValue("IsSimple", checkBoxSimple.Checked);
+                        reportA.Parameters["CompoundPeriod"].Value = "Exact Days";
+                    reportA.Parameters["APR"].Value = iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_ANNUAL_PERCENTAGE_RATE") / 100;
+                    reportA.Parameters["EffectiveAnnualRate"].Value = Math.Round(Math.Pow((1 + ((Double)(iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_ANNUAL_PERCENTAGE_RATE") / 100) / 12)), 12), 8) - 1;
+                    reportA.Parameters["Term"].Value = iACDataSet.CUSTOMER.Rows[0].Field<Int32>("CUSTOMER_TERM");
+                    reportA.Parameters["AmountBorrowed"].Value = iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_LOAN_CASH");
+                    reportA.Parameters["TotalInterest"].Value = iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_LOAN_INTEREST");
+                    reportA.Parameters["FirstPaymentDate"].Value = iACDataSet.CUSTOMER.Rows[0].Field<DateTime>("ContractDate");
+                    reportA.Parameters["gsUserID"].Value = Program.gsUserID;
+                    reportA.Parameters["gsUserName"].Value = Program.gsUserName;
+                    reportA.Parameters["CustomerPrint"].Value = true;
+                    reportA.Parameters["gsCustomer"].Value = iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO");
+                    reportA.Parameters["IsSimple"].Value = checkBoxSimple.Checked;
 
-                    rptViewr.crystalReportViewer.ReportSource = TVAmortReport;
-                    rptViewr.crystalReportViewer.Refresh();
-                    rptViewr.Show();
+                    var toolA = new ReportPrintTool(reportA);
+
+                    toolA.PreviewRibbonForm.MdiParent = MDImain;
+                    toolA.AutoShowParametersPanel = false;
+                    toolA.PreviewRibbonForm.WindowState = FormWindowState.Maximized;
+                    toolA.ShowRibbonPreview();
                     break;
             }
 
@@ -5985,6 +6015,11 @@ namespace IAC2021SQL
                 toolStripButtonSave.Enabled = true;
         }
 
+        private void xtraTabControlCustomerMaint_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void cUSTOMER_NOTextBox_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
         {
             /*if (e.KeyData == Keys.Tab)
@@ -6127,12 +6162,20 @@ namespace IAC2021SQL
                     MakeComment("Cell Phone Number VALIDATED.", wSCarrierLookupResponse.Message, 0, false);
                     buttonValidate.ForeColor = Color.Green;
                     iACDataSet.CUSTOMER.Rows[0].SetField<Boolean>("CellValid", true);
+                    // Moses Newman reset PIN from AUTO to nothing 07/08/2022
+                    iACDataSet.CUSTOMER.Rows[0].SetField<String>("TPin", "");
+                    cUSTOMERBindingSource.EndEdit();
+                    radioButtonAcct.Checked = false; 
                 }
                 else
                 {
                     MakeComment("*** Cell Number not VALIDATED because it is a LANDLINE! ***", wSCarrierLookupResponse.Message, 0, false);
                     buttonValidate.ForeColor = Color.Crimson;
                     iACDataSet.CUSTOMER.Rows[0].SetField<Boolean>("CellValid", false);
+                    // Moses Newman reset PIN from AUTO to nothing 07/08/2022
+                    iACDataSet.CUSTOMER.Rows[0].SetField<String>("TPin", "");
+                    cUSTOMERBindingSource.EndEdit();
+                    radioButtonAcct.Checked = false;
                 }
             }
             toolStripButtonSave.Enabled = true;
