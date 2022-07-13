@@ -12,6 +12,10 @@ using System.Text;
 using System.Windows.Forms;
 using CrystalDecisions.CrystalReports.Engine;
 using CrystalDecisions.Shared;
+using DevExpress.XtraReports.UI;
+using DevExpress.DataAccess.Sql;
+using DevExpress.DataAccess.Sql.DataApi;
+
 
 namespace IAC2021SQL
 {
@@ -34,30 +38,33 @@ namespace IAC2021SQL
 
         private void button1_Click(object sender, System.EventArgs e)
         {
-            ReportViewer rptViewr = new ReportViewer();
-            IACDataSetTableAdapters.AmortTempTableAdapter AmortTempTableAdapter = new IACDataSetTableAdapters.AmortTempTableAdapter();
+            // Moses Newman 07/12m/2022 Covert to XtraReport
+            var report = new XtraReportAmortization();
+            SqlDataSource ds = report.DataSource as SqlDataSource;
 
-            AmortTempTableAdapter.FillByCustomer(ReportData.AmortTemp,"99-" + Program.gsUserID);
+            ds.Queries[0].Parameters[0].Value = "99-" + Program.gsUserID;
 
-            myReportObject.SetDataSource(ReportData);
-           
-            myReportObject.SetParameterValue("CompoundPeriod", "Daily Exact");
-            myReportObject.SetParameterValue("NominalRate", lnNominalRate);
-            myReportObject.SetParameterValue("AnnualPercentageRate", lnAnnualPercentageRate);
-            myReportObject.SetParameterValue("Term", lnTerm);
-            myReportObject.SetParameterValue("AmountBorrowed", lnCash);
-            myReportObject.SetParameterValue("TotalInterest", lnLoanInterest);
-            myReportObject.SetParameterValue("FirstPaymentDate", (DateTime)txtFirstPayment.EditValue);
-            myReportObject.SetParameterValue("ContractDate", (DateTime)dateTimePickerContractDate.EditValue);
-            myReportObject.SetParameterValue("gsUserID", "XXX");
-            myReportObject.SetParameterValue("gsUserName", "Stand Alone");
-            myReportObject.SetParameterValue("CustomerPrint", false);
-            myReportObject.SetParameterValue("gsCustomer", "99-" + Program.gsUserID);
+            report.DataSource = ds;
+            report.RequestParameters = false;
+            report.Parameters["CompoundPeriod"].Value = "Daily Exact";
+            report.Parameters["NominalRate"].Value = lnNominalRate;
+            report.Parameters["AnnualPercentageRate"].Value = lnAnnualPercentageRate;
+            report.Parameters["Term"].Value = lnTerm;
+            report.Parameters["AmountBorrowed"].Value = lnCash;
+            report.Parameters["TotalInterest"].Value = lnLoanInterest;
+            report.Parameters["FirstPaymentDate"].Value = (DateTime)txtFirstPayment.EditValue;
+            report.Parameters["ContractDate"].Value = (DateTime)dateTimePickerContractDate.EditValue;
+            report.Parameters["gsUserID"].Value = "XXX";
+            report.Parameters["gsUserName"].Value = "Stand Alone";
+            report.Parameters["CustomerPrint"].Value = false;
+            report.Parameters["gsCustomer"].Value = "99-" + Program.gsUserID;
 
+            var tool = new ReportPrintTool(report);
 
-            rptViewr.crystalReportViewer.ReportSource = myReportObject;
-            rptViewr.crystalReportViewer.Refresh();
-            rptViewr.Show();
+            //tool.PreviewRibbonForm.MdiParent = MDImain;
+            tool.AutoShowParametersPanel = false;
+            tool.PreviewRibbonForm.WindowState = FormWindowState.Maximized;
+            tool.ShowRibbonPreview();
         }
 
         private void btnCalc_Click(object sender, EventArgs e)

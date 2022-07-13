@@ -105,7 +105,7 @@
             this.textBox16 = new System.Windows.Forms.TextBox();
             this.cUSTOMER_Add_OnTextBox = new System.Windows.Forms.TextBox();
             this.cUSTOMER_IAC_TypeTextBox = new System.Windows.Forms.TextBox();
-            this.cUSTOMER_NOTextBox = new System.Windows.Forms.TextBox();
+            this.cUSTOMER_NOTextBox = new DevExpress.XtraEditors.TextEdit();
             this.tabHistory = new DevExpress.XtraTab.XtraTabPage();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.cUSTHISTDataGridView = new DevExpress.XtraGrid.GridControl();
@@ -211,6 +211,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEditPaymentType.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.specialCommentCodesBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cUSTOMER_NOTextBox.Properties)).BeginInit();
             this.tabHistory.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
@@ -240,7 +241,7 @@
             label7.AutoSize = true;
             label7.Location = new System.Drawing.Point(6, 247);
             label7.Name = "label7";
-            label7.Size = new System.Drawing.Size(57, 13);
+            label7.Size = new System.Drawing.Size(56, 13);
             label7.TabIndex = 148;
             label7.Text = "CB CODE:";
             // 
@@ -258,7 +259,7 @@
             label5.AutoSize = true;
             label5.Location = new System.Drawing.Point(33, 206);
             label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(75, 13);
+            label5.Size = new System.Drawing.Size(77, 13);
             label5.TabIndex = 145;
             label5.Text = "EFT PAYMENT:";
             // 
@@ -267,7 +268,7 @@
             label4.AutoSize = true;
             label4.Location = new System.Drawing.Point(34, 182);
             label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(65, 13);
+            label4.Size = new System.Drawing.Size(66, 13);
             label4.TabIndex = 143;
             label4.Text = "CODE TYPE:";
             // 
@@ -276,7 +277,7 @@
             label3.AutoSize = true;
             label3.Location = new System.Drawing.Point(33, 155);
             label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(80, 13);
+            label3.Size = new System.Drawing.Size(82, 13);
             label3.TabIndex = 141;
             label3.Text = "PAYMENT TYPE:";
             // 
@@ -294,7 +295,7 @@
             label14.AutoSize = true;
             label14.Location = new System.Drawing.Point(33, 104);
             label14.Name = "label14";
-            label14.Size = new System.Drawing.Size(83, 13);
+            label14.Size = new System.Drawing.Size(85, 13);
             label14.TabIndex = 137;
             label14.Text = "PAYMENT DATE:";
             // 
@@ -303,7 +304,7 @@
             label34.AutoSize = true;
             label34.Location = new System.Drawing.Point(33, 78);
             label34.Name = "label34";
-            label34.Size = new System.Drawing.Size(64, 13);
+            label34.Size = new System.Drawing.Size(65, 13);
             label34.TabIndex = 135;
             label34.Text = "PAID THRU:";
             // 
@@ -321,25 +322,27 @@
             label31.AutoSize = true;
             label31.Location = new System.Drawing.Point(33, 26);
             label31.Name = "label31";
-            label31.Size = new System.Drawing.Size(61, 13);
+            label31.Size = new System.Drawing.Size(60, 13);
             label31.TabIndex = 133;
             label31.Text = "LOAN BAL:";
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new System.Drawing.Point(13, 45);
+            label8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label8.Location = new System.Drawing.Point(13, 46);
             label8.Name = "label8";
-            label8.Size = new System.Drawing.Size(49, 13);
+            label8.Size = new System.Drawing.Size(51, 15);
             label8.TabIndex = 153;
             label8.Text = "DEALER:";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(13, 19);
+            label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label1.Location = new System.Drawing.Point(13, 20);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(67, 13);
+            label1.Size = new System.Drawing.Size(70, 15);
             label1.TabIndex = 4;
             label1.Text = "CUSTOMER:";
             // 
@@ -357,7 +360,7 @@
             label10.AutoSize = true;
             label10.Location = new System.Drawing.Point(16, 18);
             label10.Name = "label10";
-            label10.Size = new System.Drawing.Size(87, 13);
+            label10.Size = new System.Drawing.Size(88, 13);
             label10.TabIndex = 41;
             label10.Text = "CUSTOMER NO:";
             // 
@@ -366,7 +369,7 @@
             label11.AutoSize = true;
             label11.Location = new System.Drawing.Point(246, 41);
             label11.Name = "label11";
-            label11.Size = new System.Drawing.Size(54, 13);
+            label11.Size = new System.Drawing.Size(55, 13);
             label11.TabIndex = 53;
             label11.Text = "PAY DATE:";
             // 
@@ -403,7 +406,7 @@
             label17.AutoSize = true;
             label17.Location = new System.Drawing.Point(14, 29);
             label17.Name = "label17";
-            label17.Size = new System.Drawing.Size(87, 13);
+            label17.Size = new System.Drawing.Size(88, 13);
             label17.TabIndex = 53;
             label17.Text = "CUSTOMER NO:";
             // 
@@ -568,6 +571,7 @@
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 21);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -941,18 +945,20 @@
             // 
             this.textBox6.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.DealerbindingSource, "DEALER_NAME", true));
             this.textBox6.Enabled = false;
+            this.textBox6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox6.Location = new System.Drawing.Point(143, 38);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(220, 22);
+            this.textBox6.Size = new System.Drawing.Size(220, 23);
             this.textBox6.TabIndex = 7;
             // 
             // DealertextBox
             // 
             this.DealertextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.CustomerbindingSource, "CUSTOMER_DEALER", true));
             this.DealertextBox.Enabled = false;
+            this.DealertextBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DealertextBox.Location = new System.Drawing.Point(96, 38);
             this.DealertextBox.Name = "DealertextBox";
-            this.DealertextBox.Size = new System.Drawing.Size(45, 22);
+            this.DealertextBox.Size = new System.Drawing.Size(45, 23);
             this.DealertextBox.TabIndex = 6;
             this.DealertextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -960,46 +966,56 @@
             // 
             this.textBox15.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.CustomerbindingSource, "CUSTOMER_LAST_NAME", true));
             this.textBox15.Enabled = false;
+            this.textBox15.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox15.Location = new System.Drawing.Point(340, 12);
             this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(132, 22);
+            this.textBox15.Size = new System.Drawing.Size(132, 23);
             this.textBox15.TabIndex = 5;
             // 
             // textBox16
             // 
             this.textBox16.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.CustomerbindingSource, "CUSTOMER_FIRST_NAME", true));
             this.textBox16.Enabled = false;
+            this.textBox16.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox16.Location = new System.Drawing.Point(204, 12);
             this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(132, 22);
+            this.textBox16.Size = new System.Drawing.Size(132, 23);
             this.textBox16.TabIndex = 4;
             // 
             // cUSTOMER_Add_OnTextBox
             // 
             this.cUSTOMER_Add_OnTextBox.Enabled = false;
+            this.cUSTOMER_Add_OnTextBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cUSTOMER_Add_OnTextBox.Location = new System.Drawing.Point(157, 12);
             this.cUSTOMER_Add_OnTextBox.Name = "cUSTOMER_Add_OnTextBox";
-            this.cUSTOMER_Add_OnTextBox.Size = new System.Drawing.Size(17, 22);
+            this.cUSTOMER_Add_OnTextBox.Size = new System.Drawing.Size(17, 23);
             this.cUSTOMER_Add_OnTextBox.TabIndex = 2;
             // 
             // cUSTOMER_IAC_TypeTextBox
             // 
             this.cUSTOMER_IAC_TypeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.CustomerbindingSource, "CUSTOMER_IAC_TYPE", true));
             this.cUSTOMER_IAC_TypeTextBox.Enabled = false;
+            this.cUSTOMER_IAC_TypeTextBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cUSTOMER_IAC_TypeTextBox.Location = new System.Drawing.Point(178, 12);
             this.cUSTOMER_IAC_TypeTextBox.Name = "cUSTOMER_IAC_TypeTextBox";
-            this.cUSTOMER_IAC_TypeTextBox.Size = new System.Drawing.Size(17, 22);
+            this.cUSTOMER_IAC_TypeTextBox.Size = new System.Drawing.Size(17, 23);
             this.cUSTOMER_IAC_TypeTextBox.TabIndex = 3;
             // 
             // cUSTOMER_NOTextBox
             // 
             this.cUSTOMER_NOTextBox.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.cUSTOMER_NOTextBox.Location = new System.Drawing.Point(96, 12);
-            this.cUSTOMER_NOTextBox.MaxLength = 6;
+            this.cUSTOMER_NOTextBox.Location = new System.Drawing.Point(96, 13);
             this.cUSTOMER_NOTextBox.Name = "cUSTOMER_NOTextBox";
+            this.cUSTOMER_NOTextBox.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cUSTOMER_NOTextBox.Properties.Appearance.Options.UseFont = true;
+            this.cUSTOMER_NOTextBox.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
+            this.cUSTOMER_NOTextBox.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.SimpleMaskManager));
+            this.cUSTOMER_NOTextBox.Properties.MaskSettings.Set("mask", "999999");
+            this.cUSTOMER_NOTextBox.Properties.MaskSettings.Set("placeholder", '\0');
+            this.cUSTOMER_NOTextBox.Properties.MaskSettings.Set("saveLiterals", false);
+            this.cUSTOMER_NOTextBox.Properties.UseMaskAsDisplayFormat = true;
             this.cUSTOMER_NOTextBox.Size = new System.Drawing.Size(58, 22);
             this.cUSTOMER_NOTextBox.TabIndex = 1;
-            this.cUSTOMER_NOTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.cUSTOMER_NOTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             this.cUSTOMER_NOTextBox.Validated += new System.EventHandler(this.cUSTOMER_NOTextBox_Validated);
             // 
@@ -1854,6 +1870,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.specialCommentCodesBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cUSTOMER_NOTextBox.Properties)).EndInit();
             this.tabHistory.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
@@ -1911,7 +1928,7 @@
         private System.Windows.Forms.TextBox textBox16;
         private System.Windows.Forms.TextBox cUSTOMER_Add_OnTextBox;
         private System.Windows.Forms.TextBox cUSTOMER_IAC_TypeTextBox;
-        private System.Windows.Forms.TextBox cUSTOMER_NOTextBox;
+        private DevExpress.XtraEditors.TextEdit cUSTOMER_NOTextBox;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private DevExpress.XtraTab.XtraTabPage tabComments;
         private System.Windows.Forms.GroupBox groupBox8;

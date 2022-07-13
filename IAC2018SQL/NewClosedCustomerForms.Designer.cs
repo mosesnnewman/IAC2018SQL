@@ -2854,7 +2854,7 @@
             this.xtraTabControlCustomerMaint.LookAndFeel.SkinName = "McSkin";
             this.xtraTabControlCustomerMaint.LookAndFeel.UseDefaultLookAndFeel = false;
             this.xtraTabControlCustomerMaint.Name = "xtraTabControlCustomerMaint";
-            this.xtraTabControlCustomerMaint.SelectedTabPage = this.xtraTabPageCustInfo2;
+            this.xtraTabControlCustomerMaint.SelectedTabPage = this.xtraTabPageCustInfo1;
             this.xtraTabControlCustomerMaint.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPageCustInfo1,
             this.xtraTabPageCustInfo2,
@@ -2868,6 +2868,7 @@
             this.xtraTabPageTSB});
             this.xtraTabControlCustomerMaint.SelectedPageChanged += new DevExpress.XtraTab.TabPageChangedEventHandler(this.xtraTabControlCustomerMaint_SelectedPageChanged);
             this.xtraTabControlCustomerMaint.CloseButtonClick += new System.EventHandler(this.xtraTabControlCustomerMaint_CloseButtonClick);
+            this.xtraTabControlCustomerMaint.Click += new System.EventHandler(this.xtraTabControlCustomerMaint_Click);
             // 
             // imageCollectionTabs
             // 
@@ -7460,6 +7461,7 @@
             // 
             // repositoryItemMemoEdit1
             // 
+            this.repositoryItemMemoEdit1.MaxLength = 255;
             this.repositoryItemMemoEdit1.Name = "repositoryItemMemoEdit1";
             // 
             // colCOMMENT_NO
