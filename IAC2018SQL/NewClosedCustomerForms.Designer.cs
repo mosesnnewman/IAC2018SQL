@@ -3280,6 +3280,7 @@
             // 
             // nullableDateTimePickerDateContractReceived
             // 
+            this.nullableDateTimePickerDateContractReceived.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "DateContractReceived", true));
             resources.ApplyResources(this.nullableDateTimePickerDateContractReceived, "nullableDateTimePickerDateContractReceived");
             this.nullableDateTimePickerDateContractReceived.Name = "nullableDateTimePickerDateContractReceived";
             this.nullableDateTimePickerDateContractReceived.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("nullableDateTimePickerDateContractReceived.Properties.Appearance.Font")));

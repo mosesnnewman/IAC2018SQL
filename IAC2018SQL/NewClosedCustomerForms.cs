@@ -6440,7 +6440,9 @@ namespace IAC2021SQL
 
         private void MakeComment(String CommentMessage, String APIMessage, Int32 tnTemplateNo = 0, Boolean tbAddTextSent = true,Boolean tbCosginerTextSent = false)
         {
-
+            // Moses Newman 07/22/2022
+            if (iACDataSet.CUSTOMER.Rows.Count < 1)
+                return;
             CommentMessage = CommentMessage.Replace("{MISC$}", iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_REGULAR_AMOUNT").ToString("C", new CultureInfo("en-US")));
             CommentMessage = CommentMessage.Replace("{MISC1}", Program.NextDueDate(0, iACDataSet).ToString("d", new CultureInfo("en-US")));
             Object oMissing = System.Reflection.Missing.Value,

@@ -42,7 +42,7 @@
     <SuiteName>IAC2021SQL</SuiteName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>3</ApplicationRevision>
+    <ApplicationRevision>5</ApplicationRevision>
     <ApplicationVersion>28.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -789,6 +789,24 @@
     </Compile>
     <Compile Include="XtraReportAmortization.Designer.cs">
       <DependentUpon>XtraReportAmortization.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReportClosedCustomerEditList.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReportClosedCustomerEditList.Designer.cs">
+      <DependentUpon>XtraReportClosedCustomerEditList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReportClosedCustomerEditListDealerSummary.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReportClosedCustomerEditListDealerSummary.Designer.cs">
+      <DependentUpon>XtraReportClosedCustomerEditListDealerSummary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReportClosedCustomerEditListTotalsByDueDate.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReportClosedCustomerEditListTotalsByDueDate.Designer.cs">
+      <DependentUpon>XtraReportClosedCustomerEditListTotalsByDueDate.cs</DependentUpon>
     </Compile>
     <Compile Include="XtraReportClosedDelinquencySummarySubreport.cs">
       <SubType>Component</SubType>
@@ -1941,6 +1959,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="XtraReportAmortization.resx">
       <DependentUpon>XtraReportAmortization.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReportClosedCustomerEditList.resx">
+      <DependentUpon>XtraReportClosedCustomerEditList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReportClosedCustomerEditListDealerSummary.resx">
+      <DependentUpon>XtraReportClosedCustomerEditListDealerSummary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReportClosedCustomerEditListTotalsByDueDate.resx">
+      <DependentUpon>XtraReportClosedCustomerEditListTotalsByDueDate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="XtraReportClosedDelinquencySummarySubreport.resx">
       <DependentUpon>XtraReportClosedDelinquencySummarySubreport.cs</DependentUpon>
