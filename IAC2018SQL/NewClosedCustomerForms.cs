@@ -3608,11 +3608,6 @@ namespace IAC2021SQL
 
         }
 
-        private void xtraTabPageHistory_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void barButtonItemPrintCustomerReceipt_ItemClick(object sender, ItemClickEventArgs e)
         {
             MDIIAC2013 MDImain = (MDIIAC2013)MdiParent;
@@ -4394,39 +4389,54 @@ namespace IAC2021SQL
         {
             IACDataSet ReportData = new IACDataSet();
             IACDataSetTableAdapters.CUSTOMERTableAdapter CustomerTableAdapter = new IACDataSetTableAdapters.CUSTOMERTableAdapter();
-            IACDataSetTableAdapters.CUSTHISTTableAdapter CUSTHISTTableAdapter = new IACDataSetTableAdapters.CUSTHISTTableAdapter();
-            IACDataSetTableAdapters.COMMENTTableAdapter COMMENTTableAdapter = new IACDataSetTableAdapters.COMMENTTableAdapter();
-            IACDataSetTableAdapters.DEALERTableAdapter DEALERTableAdapter = new IACDataSetTableAdapters.DEALERTableAdapter();
             RepoDataSetTableAdapters.CUSTOMERTableAdapter RepoCustomer = new RepoDataSetTableAdapters.CUSTOMERTableAdapter();
 
             CustomerTableAdapter.Fill(ReportData.CUSTOMER, cUSTOMER_NOTextBox.EditValue.ToString().Trim());
             if (ReportData.CUSTOMER.Rows.Count < 1)
                 return;
-            CUSTHISTTableAdapter.FillByCustomerNo(ReportData.CUSTHIST, ReportData.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO"));
-            COMMENTTableAdapter.FillByCustNo(ReportData.COMMENT, ReportData.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO"));
             // Moses Newman 04/22/2019 Add Repo Log
             RepoLogTableAdapter.FillByCustomerNo(repoDataSet.RepoLog, ReportData.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO"));
             if (ReportData.CUSTOMER.Rows.Count < 1)
                 return;
+
             MDIIAC2013 MDImain = (MDIIAC2013)MdiParent;
-            MDImain.CreateFormInstance("ReportViewer", false);
-            ReportViewer rptViewr = (ReportViewer)MDImain.frm;
 
-            if (repoDataSet.RepoLog.Count > 0)
-                RepoCustomer.Fill(repoDataSet.CUSTOMER, cUSTOMER_NOTextBox.EditValue.ToString().Trim());
-            DEALERTableAdapter.Fill(ReportData.DEALER, ReportData.CUSTOMER.Rows[0].Field<Int32>("CUSTOMER_DEALER"));
-            ClosedCustomerHistory myReportObject = new ClosedCustomerHistory();
-            myReportObject.SetDataSource(ReportData);
-            // Moses Newman 04/22/2019 Add Repo Log Set DataSource of second subreport (RepoLog) to new RepoDataSet
-            myReportObject.Subreports[1].SetDataSource(repoDataSet);
-            myReportObject.SetParameterValue("gsUserID", Program.gsUserID);
-            myReportObject.SetParameterValue("gsUserName", Program.gsUserName);
-            // Moses Newman 04/23/2019 Add Record Count of RepoLog table to supress footer on blank RepoLog
-            myReportObject.SetParameterValue("giCount", repoDataSet.RepoLog.Count);
+            // Moses Newman 08/01/2022 Covert to XtraReport
+            var report = new XtraReportClosedCustomerHistory();
+            SqlDataSource ds = report.DataSource as SqlDataSource;
 
-            rptViewr.crystalReportViewer.ReportSource = myReportObject;
-            rptViewr.crystalReportViewer.Refresh();
-            rptViewr.Show();
+            ds.Queries[0].Parameters[0].Value = ReportData.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO");
+            ds.Queries[1].Parameters[0].Value = ReportData.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO");
+            ds.Queries[2].Parameters[0].Value = ReportData.CUSTOMER.Rows[0].Field<Int32>("CUSTOMER_DEALER");
+
+            report.DataSource = ds;
+            report.RequestParameters = false;
+            report.Parameters["gsUserID"].Value = Program.gsUserID;
+            report.Parameters["gsUserName"].Value = Program.gsUserName;
+            report.Parameters["giCount"].Value = repoDataSet.RepoLog.Count;
+
+            // Moses Newman 08/01/2022 Now do COMMENT Sub Report datasource!
+            XRSubreport subReportComments = report.FindControl("SubreportComments", true) as XRSubreport;
+            XtraReport CommentReportSource = subReportComments.ReportSource as XtraReport;
+            SqlDataSource subcommentds = CommentReportSource.DataSource as SqlDataSource;
+            subcommentds.Queries[0].Parameters[0].Value = ReportData.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO");
+            subcommentds.Queries[1].Parameters[0].Value = ReportData.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO");
+            CommentReportSource.DataSource = subcommentds;
+
+            // Moses Newman 08/01/2022 Now do RepoLog Sub Report datasource!
+            XRSubreport subReportRepoLog = report.FindControl("SubreportRepoLog", true) as XRSubreport;
+            XtraReport RepoLogReportSource = subReportRepoLog.ReportSource as XtraReport;
+            SqlDataSource subrepologds = RepoLogReportSource.DataSource as SqlDataSource;
+            subrepologds.Queries[0].Parameters[0].Value = ReportData.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO");
+            subrepologds.Queries[1].Parameters[0].Value = ReportData.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO");
+            RepoLogReportSource.DataSource = subrepologds;
+
+            var tool = new ReportPrintTool(report);
+
+            tool.PreviewRibbonForm.MdiParent = MDImain;
+            tool.AutoShowParametersPanel = false;
+            tool.PreviewRibbonForm.WindowState = FormWindowState.Maximized;
+            tool.ShowRibbonPreview();
         }
 
         private void nullableDateTimePickerDateContractReceived_EnabledChanged(object sender, EventArgs e)

@@ -42,7 +42,7 @@
     <SuiteName>IAC2021SQL</SuiteName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>5</ApplicationRevision>
+    <ApplicationRevision>6</ApplicationRevision>
     <ApplicationVersion>28.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -790,6 +790,12 @@
     <Compile Include="XtraReportAmortization.Designer.cs">
       <DependentUpon>XtraReportAmortization.cs</DependentUpon>
     </Compile>
+    <Compile Include="XtraReportClosedCustomerComments.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReportClosedCustomerComments.Designer.cs">
+      <DependentUpon>XtraReportClosedCustomerComments.cs</DependentUpon>
+    </Compile>
     <Compile Include="XtraReportClosedCustomerEditList.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -807,6 +813,18 @@
     </Compile>
     <Compile Include="XtraReportClosedCustomerEditListTotalsByDueDate.Designer.cs">
       <DependentUpon>XtraReportClosedCustomerEditListTotalsByDueDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReportClosedCustomerHistory.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReportClosedCustomerHistory.Designer.cs">
+      <DependentUpon>XtraReportClosedCustomerHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReportClosedCustomerRepoLog.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReportClosedCustomerRepoLog.Designer.cs">
+      <DependentUpon>XtraReportClosedCustomerRepoLog.cs</DependentUpon>
     </Compile>
     <Compile Include="XtraReportClosedDelinquencySummarySubreport.cs">
       <SubType>Component</SubType>
@@ -1960,6 +1978,9 @@
     <EmbeddedResource Include="XtraReportAmortization.resx">
       <DependentUpon>XtraReportAmortization.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="XtraReportClosedCustomerComments.resx">
+      <DependentUpon>XtraReportClosedCustomerComments.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="XtraReportClosedCustomerEditList.resx">
       <DependentUpon>XtraReportClosedCustomerEditList.cs</DependentUpon>
     </EmbeddedResource>
@@ -1968,6 +1989,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="XtraReportClosedCustomerEditListTotalsByDueDate.resx">
       <DependentUpon>XtraReportClosedCustomerEditListTotalsByDueDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReportClosedCustomerHistory.resx">
+      <DependentUpon>XtraReportClosedCustomerHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReportClosedCustomerRepoLog.resx">
+      <DependentUpon>XtraReportClosedCustomerRepoLog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="XtraReportClosedDelinquencySummarySubreport.resx">
       <DependentUpon>XtraReportClosedDelinquencySummarySubreport.cs</DependentUpon>
