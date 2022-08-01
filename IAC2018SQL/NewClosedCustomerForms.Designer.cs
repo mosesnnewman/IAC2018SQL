@@ -6653,7 +6653,6 @@
             this.xtraTabPageHistory.Controls.Add(this.groupBox18);
             this.xtraTabPageHistory.Name = "xtraTabPageHistory";
             resources.ApplyResources(this.xtraTabPageHistory, "xtraTabPageHistory");
-            this.xtraTabPageHistory.Paint += new System.Windows.Forms.PaintEventHandler(this.xtraTabPageHistory_Paint);
             // 
             // groupBox18
             // 
