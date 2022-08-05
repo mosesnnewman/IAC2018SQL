@@ -1096,33 +1096,37 @@ namespace IAC2021SQL
         {
             ReportData = new IACDataSet();
             IACDataSetTableAdapters.NOTICETableAdapter NOTICETableAdapter = new IACDataSetTableAdapters.NOTICETableAdapter();
-            IACDataSetTableAdapters.DEALERTableAdapter DEALERTableAdapter = new IACDataSetTableAdapters.DEALERTableAdapter();
-            IACDataSetTableAdapters.ULISTTableAdapter ULISTTableAdapter   = new IACDataSetTableAdapters.ULISTTableAdapter();
             IACDataSetTableAdapters.SystemTableAdapter SystemTableAdapter = new IACDataSetTableAdapters.SystemTableAdapter();
 
             NOTICETableAdapter.FillAll(ReportData.NOTICE);
-            DEALERTableAdapter.FillByNotice(ReportData.DEALER);
-
             if (ReportData.NOTICE.Rows.Count == 0)
             {
                 MessageBox.Show("*** There are NO NOTICES! ***");
                 return;
             }
-            ULISTTableAdapter.FillById(ReportData.ULIST, Program.gsUserID);
             SystemTableAdapter.Fill(ReportData.System,1);
+            // Moses Newman 08/05/2022 Covert to XtraReport
+            var report = new XtraReportClosedCustomerLateChargeListing();
+            SqlDataSource ds = report.DataSource as SqlDataSource;
 
-            ClosedCustomerLateChargeListing myReportObject = new ClosedCustomerLateChargeListing();
-            myReportObject.SetDataSource(ReportData);
-            myReportObject.SetParameterValue("gsUserID", Program.gsUserID);
-            myReportObject.SetParameterValue("gsUserName", Program.gsUserName);
-            myReportObject.SetParameterValue("gdRunDate", ReportData.System.Rows[0].Field<DateTime>("ClosedNoticeRunDate"));
+            report.DataSource = ds;
+            report.RequestParameters = false;
+            report.Parameters["gsUserID"].Value = Program.gsUserID;
+            report.Parameters["gsUserName"].Value = Program.gsUserName;
+            report.Parameters["gdRunDate"].Value = ReportData.System.Rows[0].Field<DateTime>("ClosedNoticeRunDate");
 
-            CreateFormInstance("ReportViewer", false);
-            ReportViewer rptViewr = (ReportViewer)ActiveMdiChild;
-            rptViewr.crystalReportViewer.ReportSource = myReportObject;
-            rptViewr.crystalReportViewer.Refresh();
-            rptViewr.Show();
+            // Moses Newman 08/05/2022 Now do DealerSummary Sub Report datasource!
+            XRSubreport subReport = report.FindControl("SubreportDealerSummary", true) as XRSubreport;
+            XtraReport reportSource = subReport.ReportSource as XtraReport;
+            SqlDataSource subds = reportSource.DataSource as SqlDataSource;
+            reportSource.DataSource = subds;
 
+            var tool = new ReportPrintTool(report);
+
+            tool.PreviewRibbonForm.MdiParent = this;
+            tool.AutoShowParametersPanel = false;
+            tool.PreviewRibbonForm.WindowState = FormWindowState.Maximized;
+            tool.ShowRibbonPreview();
         }
 
         private void noticesToolStripMenuItem2_Click(object sender, EventArgs e)

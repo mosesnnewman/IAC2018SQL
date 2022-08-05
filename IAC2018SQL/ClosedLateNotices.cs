@@ -438,7 +438,17 @@ namespace IAC2021SQL
                 // Moses Newman 11/8/2017 If CuttOff field set to zero just use rate only, for VA
                 if ( lnLateCharge > NoticeiacDataSet.LateRatesSelect.Rows[0].Field<Decimal>("CutOff") && NoticeiacDataSet.LateRatesSelect.Rows[0].Field<Decimal>("CutOff") != 0)
                     lnLateCharge = NoticeiacDataSet.LateRatesSelect.Rows[0].Field<Decimal>("CutOff");
-
+                switch(NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_STATE"))
+                {
+                    case "MD": // Minimum $5 late charge
+                        if (lnLateCharge < 5) 
+                            lnLateCharge = 5;
+                        break;
+                    case "NJ": // NJ alsays $10 if cash price under $10,000 otherwise 5% from table
+                        if(NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_LOAN_CASH") < 10000)
+                            lnLateCharge = 10;
+                        break;
+                }
             }
             else
             {
