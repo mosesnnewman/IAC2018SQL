@@ -62,7 +62,6 @@
             this.GroupHeaderArea1 = new DevExpress.XtraReports.UI.GroupHeaderBand();
             this.CUSTOMERNO1 = new DevExpress.XtraReports.UI.XRLabel();
             this.CUSTOMERFIRSTNAME1 = new DevExpress.XtraReports.UI.XRLabel();
-            this.CUSTOMERLASTNAME1 = new DevExpress.XtraReports.UI.XRLabel();
             this.CUSTOMERINITDATE1 = new DevExpress.XtraReports.UI.XRLabel();
             this.CUSTOMERREGULARAMOUNT1 = new DevExpress.XtraReports.UI.XRLabel();
             this.CUSTOMERREBATECODE1 = new DevExpress.XtraReports.UI.XRLabel();
@@ -461,7 +460,6 @@
             this.GroupHeaderArea1.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.CUSTOMERNO1,
             this.CUSTOMERFIRSTNAME1,
-            this.CUSTOMERLASTNAME1,
             this.CUSTOMERINITDATE1,
             this.CUSTOMERREGULARAMOUNT1,
             this.CUSTOMERREBATECODE1,
@@ -521,31 +519,15 @@
             this.CUSTOMERFIRSTNAME1.BorderWidth = 1F;
             this.CUSTOMERFIRSTNAME1.CanGrow = false;
             this.CUSTOMERFIRSTNAME1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[CUSTHISTCUSTOMER].[COSIGNER_FIRST_NAME]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "TRIM([CUSTHISTCUSTOMER].[CUSTOMER_FIRST_NAME])+\' \'+TRIM([CUSTHISTCUSTOMER].[CUSTO" +
+                    "MER_LAST_NAME])")});
             this.CUSTOMERFIRSTNAME1.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.CUSTOMERFIRSTNAME1.ForeColor = System.Drawing.Color.Black;
-            this.CUSTOMERFIRSTNAME1.LocationFloat = new DevExpress.Utils.PointFloat(75F, 41.04167F);
+            this.CUSTOMERFIRSTNAME1.LocationFloat = new DevExpress.Utils.PointFloat(75F, 41.04166F);
             this.CUSTOMERFIRSTNAME1.Name = "CUSTOMERFIRSTNAME1";
             this.CUSTOMERFIRSTNAME1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.CUSTOMERFIRSTNAME1.SizeF = new System.Drawing.SizeF(81.25F, 18.33333F);
+            this.CUSTOMERFIRSTNAME1.SizeF = new System.Drawing.SizeF(233.3333F, 18.33333F);
             this.CUSTOMERFIRSTNAME1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
-            // 
-            // CUSTOMERLASTNAME1
-            // 
-            this.CUSTOMERLASTNAME1.BackColor = System.Drawing.Color.Transparent;
-            this.CUSTOMERLASTNAME1.BorderColor = System.Drawing.Color.Black;
-            this.CUSTOMERLASTNAME1.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.CUSTOMERLASTNAME1.BorderWidth = 1F;
-            this.CUSTOMERLASTNAME1.CanGrow = false;
-            this.CUSTOMERLASTNAME1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[CUSTHISTCUSTOMER].[COSIGNER_LAST_NAME]")});
-            this.CUSTOMERLASTNAME1.Font = new System.Drawing.Font("Segoe UI", 8F);
-            this.CUSTOMERLASTNAME1.ForeColor = System.Drawing.Color.Black;
-            this.CUSTOMERLASTNAME1.LocationFloat = new DevExpress.Utils.PointFloat(166.6667F, 41.04167F);
-            this.CUSTOMERLASTNAME1.Name = "CUSTOMERLASTNAME1";
-            this.CUSTOMERLASTNAME1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.CUSTOMERLASTNAME1.SizeF = new System.Drawing.SizeF(120.8333F, 18.33333F);
-            this.CUSTOMERLASTNAME1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
             // CUSTOMERINITDATE1
             // 
@@ -558,11 +540,12 @@
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[CUSTHISTCUSTOMER].[CUSTOMER_INIT_DATE]")});
             this.CUSTOMERINITDATE1.Font = new System.Drawing.Font("Segoe UI", 8F);
             this.CUSTOMERINITDATE1.ForeColor = System.Drawing.Color.Black;
-            this.CUSTOMERINITDATE1.LocationFloat = new DevExpress.Utils.PointFloat(316.6667F, 41.04167F);
+            this.CUSTOMERINITDATE1.LocationFloat = new DevExpress.Utils.PointFloat(317.7083F, 41.04166F);
             this.CUSTOMERINITDATE1.Name = "CUSTOMERINITDATE1";
             this.CUSTOMERINITDATE1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.CUSTOMERINITDATE1.SizeF = new System.Drawing.SizeF(53.125F, 14.86111F);
+            this.CUSTOMERINITDATE1.SizeF = new System.Drawing.SizeF(67.70834F, 18.33333F);
             this.CUSTOMERINITDATE1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            this.CUSTOMERINITDATE1.TextFormatString = "{0:MM/dd/yyyy}";
             // 
             // CUSTOMERREGULARAMOUNT1
             // 
@@ -578,7 +561,7 @@
             this.CUSTOMERREGULARAMOUNT1.LocationFloat = new DevExpress.Utils.PointFloat(466.6667F, 41.04167F);
             this.CUSTOMERREGULARAMOUNT1.Name = "CUSTOMERREGULARAMOUNT1";
             this.CUSTOMERREGULARAMOUNT1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.CUSTOMERREGULARAMOUNT1.SizeF = new System.Drawing.SizeF(71.80554F, 14.86111F);
+            this.CUSTOMERREGULARAMOUNT1.SizeF = new System.Drawing.SizeF(71.80554F, 18.33333F);
             this.CUSTOMERREGULARAMOUNT1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
             this.CUSTOMERREGULARAMOUNT1.TextFormatString = "{0:C2}";
             // 
@@ -613,7 +596,7 @@
             this.CUSTOMERLOANINTEREST1.LocationFloat = new DevExpress.Utils.PointFloat(753.125F, 41.04167F);
             this.CUSTOMERLOANINTEREST1.Name = "CUSTOMERLOANINTEREST1";
             this.CUSTOMERLOANINTEREST1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.CUSTOMERLOANINTEREST1.SizeF = new System.Drawing.SizeF(71.80548F, 14.86111F);
+            this.CUSTOMERLOANINTEREST1.SizeF = new System.Drawing.SizeF(71.80548F, 18.33333F);
             this.CUSTOMERLOANINTEREST1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
             this.CUSTOMERLOANINTEREST1.TextFormatString = "{0:C2}";
             // 
@@ -631,7 +614,7 @@
             this.CUSTOMERANNUALPERCENTAGERATE1.LocationFloat = new DevExpress.Utils.PointFloat(891.6667F, 41.04167F);
             this.CUSTOMERANNUALPERCENTAGERATE1.Name = "CUSTOMERANNUALPERCENTAGERATE1";
             this.CUSTOMERANNUALPERCENTAGERATE1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.CUSTOMERANNUALPERCENTAGERATE1.SizeF = new System.Drawing.SizeF(49.4444F, 14.86111F);
+            this.CUSTOMERANNUALPERCENTAGERATE1.SizeF = new System.Drawing.SizeF(49.4444F, 18.33333F);
             this.CUSTOMERANNUALPERCENTAGERATE1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
             this.CUSTOMERANNUALPERCENTAGERATE1.TextFormatString = "{0:F}";
             // 
@@ -1335,7 +1318,6 @@
         private DevExpress.XtraReports.UI.GroupHeaderBand GroupHeaderArea1;
         private DevExpress.XtraReports.UI.XRLabel CUSTOMERNO1;
         private DevExpress.XtraReports.UI.XRLabel CUSTOMERFIRSTNAME1;
-        private DevExpress.XtraReports.UI.XRLabel CUSTOMERLASTNAME1;
         private DevExpress.XtraReports.UI.XRLabel CUSTOMERINITDATE1;
         private DevExpress.XtraReports.UI.XRLabel CUSTOMERREGULARAMOUNT1;
         private DevExpress.XtraReports.UI.XRLabel CUSTOMERREBATECODE1;
