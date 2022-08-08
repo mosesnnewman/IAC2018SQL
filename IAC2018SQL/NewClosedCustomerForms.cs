@@ -6030,6 +6030,11 @@ namespace IAC2021SQL
 
         }
 
+        private void groupBox10_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         private void cUSTOMER_NOTextBox_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
         {
             /*if (e.KeyData == Keys.Tab)

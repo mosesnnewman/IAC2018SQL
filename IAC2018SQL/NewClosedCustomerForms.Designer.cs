@@ -2981,6 +2981,7 @@
             this.groupBox10.Controls.Add(this.groupBoxRefi);
             resources.ApplyResources(this.groupBox10, "groupBox10");
             this.groupBox10.Name = "groupBox10";
+            this.groupBox10.Paint += new System.Windows.Forms.PaintEventHandler(this.groupBox10_Paint);
             // 
             // textEditDealerName
             // 
@@ -3626,10 +3627,10 @@
             this.cUSTOMER_NOTextBox.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
             this.cUSTOMER_NOTextBox.Properties.EditValueChangedDelay = 5000;
             this.cUSTOMER_NOTextBox.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Buffered;
-            this.cUSTOMER_NOTextBox.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.SimpleMaskManager));
-            this.cUSTOMER_NOTextBox.Properties.MaskSettings.Set("mask", "######");
-            this.cUSTOMER_NOTextBox.Properties.MaskSettings.Set("saveLiterals", false);
-            this.cUSTOMER_NOTextBox.Properties.MaskSettings.Set("placeholder", '\0');
+            this.cUSTOMER_NOTextBox.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.RegularMaskManager));
+            this.cUSTOMER_NOTextBox.Properties.MaskSettings.Set("mask", "\\d*");
+            this.cUSTOMER_NOTextBox.Properties.MaskSettings.Set("placeholder", ' ');
+            this.cUSTOMER_NOTextBox.Properties.MaskSettings.Set("MaskManagerSignature", "ignoreMaskBlank=True");
             this.cUSTOMER_NOTextBox.Properties.MaxLength = 6;
             this.cUSTOMER_NOTextBox.Properties.UseMaskAsDisplayFormat = ((bool)(resources.GetObject("cUSTOMER_NOTextBox.Properties.UseMaskAsDisplayFormat")));
             this.cUSTOMER_NOTextBox.EditValueChanged += new System.EventHandler(this.cUSTOMER_NOTextBox_EditValueChanged);

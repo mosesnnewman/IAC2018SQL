@@ -8,6 +8,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevExpress.XtraReports.UI;
+using DevExpress.DataAccess.Sql;
+using DevExpress.DataAccess.Sql.DataApi;
+
 
 namespace IAC2021SQL
 {
@@ -35,51 +39,43 @@ namespace IAC2021SQL
             // Moses Newman 02/02/2014 Add Date, Dealer, and Status selection criteria
             String lsDealer = lookUpEditDealer.EditValue != null ? lookUpEditDealer.EditValue.ToString().Trim() : "" + '%',
                    lsStatus = "%";
-            Hide();
             MDIIAC2013 MDImain = (MDIIAC2013)MdiParent;
-            MDImain.CreateFormInstance("ReportViewer", false);
-            ReportViewer rptViewer = (ReportViewer)MDImain.ActiveMdiChild;
 
             IACDataSet VehicleDataSet = new IACDataSet();
-            IACDataSetTableAdapters.DataPathTableAdapter DataPathTableAdapter = new IACDataSetTableAdapters.DataPathTableAdapter();
             IACDataSetTableAdapters.CUSTOMERTableAdapter CUSTOMERTableAdapter = new IACDataSetTableAdapters.CUSTOMERTableAdapter();
-            IACDataSetTableAdapters.DEALERTableAdapter DEALERTableAdapter = new IACDataSetTableAdapters.DEALERTableAdapter();
 
             // Moses Newman 02/02/2014 Add Date, Dealer, and Status selection criteria
             if (radioButtonActive.Checked)
                 lsStatus = "A" + lsStatus;
             else
                 if (radioButtonInactive.Checked)
-                    lsStatus = "I" + lsStatus;
+                lsStatus = "I" + lsStatus;
             // Moses Newman 02/02/2014 Add Date, Dealer, and Status selection criteria
-            CUSTOMERTableAdapter.ReceivedContract(VehicleDataSet.CUSTOMER, lsDealer, lsStatus,(DateTime)nullableDateTimePickerStartDate.EditValue,(DateTime)nullableDateTimePickerEndDate.EditValue);
-            DEALERTableAdapter.FillByAll(VehicleDataSet.DEALER);
+            CUSTOMERTableAdapter.ReceivedContract(VehicleDataSet.CUSTOMER, lsDealer, lsStatus, (DateTime)nullableDateTimePickerStartDate.EditValue, (DateTime)nullableDateTimePickerEndDate.EditValue);
             if (VehicleDataSet.CUSTOMER.Rows.Count == 0)
-                MessageBox.Show("*** Sorry there are no received contracts for ACTIVE CUSTOMERS ***");
+                MessageBox.Show("*** Sorry there are no received contracts for " + lsStatus == "A" ? "ACTIVE":"INACTIVE" + " CUSTOMERS ***");
             else
             {
-                ClosedReceivedContractReport myReportObject = new ClosedReceivedContractReport();
-                myReportObject.SetDataSource(VehicleDataSet);
-                myReportObject.SetParameterValue("gsUserID", Program.gsUserID);
-                myReportObject.SetParameterValue("gsUserName", Program.gsUserName);
-                // Moses Newman 02/05/2014 Add Selection Criteria to Report Heading
-                myReportObject.SetParameterValue("gdStartDate", (DateTime)nullableDateTimePickerStartDate.EditValue);
-                myReportObject.SetParameterValue("gdEndDate", (DateTime)nullableDateTimePickerEndDate.EditValue);
-                switch (lsStatus)
-                {
-                    case "A%":
-                        myReportObject.SetParameterValue("gsStatus", "Active");
-                        break;
-                    case "I%":
-                        myReportObject.SetParameterValue("gsStatus", "Inactive");
-                        break;
-                    default:
-                        myReportObject.SetParameterValue("gsStatus", "Both");
-                        break;
-                }
-                rptViewer.crystalReportViewer.ReportSource = myReportObject;
-                rptViewer.crystalReportViewer.Refresh();
-                rptViewer.Show();
+
+                // Moses Newman 08/08/2022 Covert to XtraReport
+                var report = new XtraReportClosedReceivedContract();
+                SqlDataSource ds = report.DataSource as SqlDataSource;
+
+                report.DataSource = ds;
+                report.RequestParameters = false;
+                report.Parameters["gsUserID"].Value = Program.gsUserID;
+                report.Parameters["gsUserName"].Value = Program.gsUserName;
+                report.Parameters["gdStartDate"].Value = (DateTime)nullableDateTimePickerStartDate.EditValue;
+                report.Parameters["gdEndDate"].Value = (DateTime)nullableDateTimePickerEndDate.EditValue;
+                report.Parameters["gsStatus"].Value = lsStatus;
+                report.Parameters["gsDealer"].Value = lsDealer;
+
+                var tool = new ReportPrintTool(report);
+
+                tool.PreviewRibbonForm.MdiParent = MDImain;
+                tool.AutoShowParametersPanel = false;
+                tool.PreviewRibbonForm.WindowState = FormWindowState.Maximized;
+                tool.ShowRibbonPreview();
             }
             Close();
         }
