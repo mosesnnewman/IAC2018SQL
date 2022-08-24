@@ -34,12 +34,6 @@
             DevExpress.XtraReports.UI.XRSummary xrSummary4 = new DevExpress.XtraReports.UI.XRSummary();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(XtraReportClosedCustomerEditList));
             this.Area3 = new DevExpress.XtraReports.UI.DetailBand();
-            this.GroupHeaderArea1 = new DevExpress.XtraReports.UI.GroupHeaderBand();
-            this.GroupFooterArea1 = new DevExpress.XtraReports.UI.GroupFooterBand();
-            this.Area1 = new DevExpress.XtraReports.UI.ReportHeaderBand();
-            this.Area2 = new DevExpress.XtraReports.UI.PageHeaderBand();
-            this.Area4 = new DevExpress.XtraReports.UI.ReportFooterBand();
-            this.Area5 = new DevExpress.XtraReports.UI.PageFooterBand();
             this.CUSTOMERIACTYPE1 = new DevExpress.XtraReports.UI.XRLabel();
             this.CUSTOMERNO1 = new DevExpress.XtraReports.UI.XRLabel();
             this.CUSTOMERDEALER1 = new DevExpress.XtraReports.UI.XRLabel();
@@ -54,6 +48,7 @@
             this.CUSTOMERDAYDUE1 = new DevExpress.XtraReports.UI.XRLabel();
             this.CUSTOMERDEALERDISC1 = new DevExpress.XtraReports.UI.XRLabel();
             this.IsTci_1 = new DevExpress.XtraReports.UI.XRLabel();
+            this.GroupHeaderArea1 = new DevExpress.XtraReports.UI.GroupHeaderBand();
             this.DEALERNAME1 = new DevExpress.XtraReports.UI.XRLabel();
             this.Line1 = new DevExpress.XtraReports.UI.XRLine();
             this.Text10 = new DevExpress.XtraReports.UI.XRLabel();
@@ -67,16 +62,22 @@
             this.Text1 = new DevExpress.XtraReports.UI.XRLabel();
             this.Text9 = new DevExpress.XtraReports.UI.XRLabel();
             this.Text7 = new DevExpress.XtraReports.UI.XRLabel();
+            this.GroupFooterArea1 = new DevExpress.XtraReports.UI.GroupFooterBand();
             this.TotalInterest1 = new DevExpress.XtraReports.UI.XRLabel();
             this.TotalCash1 = new DevExpress.XtraReports.UI.XRLabel();
             this.TotalLoanAmount1 = new DevExpress.XtraReports.UI.XRLabel();
             this.TotalDealerDisc1 = new DevExpress.XtraReports.UI.XRLabel();
             this.Line3 = new DevExpress.XtraReports.UI.XRLine();
+            this.Area1 = new DevExpress.XtraReports.UI.ReportHeaderBand();
+            this.Area2 = new DevExpress.XtraReports.UI.PageHeaderBand();
+            this.Picture1 = new DevExpress.XtraReports.UI.XRPictureBox();
             this.Text3 = new DevExpress.XtraReports.UI.XRLabel();
+            this.Area4 = new DevExpress.XtraReports.UI.ReportFooterBand();
             this.Section4 = new DevExpress.XtraReports.UI.SubBand();
-            this.ReportFooterSection2 = new DevExpress.XtraReports.UI.SubBand();
             this.Subreport1 = new DevExpress.XtraReports.UI.XRSubreport();
+            this.ReportFooterSection2 = new DevExpress.XtraReports.UI.SubBand();
             this.Subreport2 = new DevExpress.XtraReports.UI.XRSubreport();
+            this.Area5 = new DevExpress.XtraReports.UI.PageFooterBand();
             this.DataDate1 = new DevExpress.XtraReports.UI.XRPageInfo();
             this.DataTime1 = new DevExpress.XtraReports.UI.XRPageInfo();
             this.gsUserID_1 = new DevExpress.XtraReports.UI.XRLabel();
@@ -88,7 +89,8 @@
             this.IsTci = new DevExpress.XtraReports.UI.CalculatedField();
             this.gsUserName = new DevExpress.XtraReports.Parameters.Parameter();
             this.gsUserID = new DevExpress.XtraReports.Parameters.Parameter();
-            this.Picture1 = new DevExpress.XtraReports.UI.XRPictureBox();
+            this.topMarginBand1 = new DevExpress.XtraReports.UI.TopMarginBand();
+            this.bottomMarginBand1 = new DevExpress.XtraReports.UI.BottomMarginBand();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // Area3
@@ -113,87 +115,6 @@
             this.Area3.Name = "Area3";
             this.Area3.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.Area3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
-            // 
-            // GroupHeaderArea1
-            // 
-            this.GroupHeaderArea1.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-            this.DEALERNAME1,
-            this.Line1,
-            this.Text10,
-            this.Text6,
-            this.Text15,
-            this.Text14,
-            this.Text13,
-            this.Text12,
-            this.Text4,
-            this.Text2,
-            this.Text1,
-            this.Text9,
-            this.Text7});
-            this.GroupHeaderArea1.GroupFields.AddRange(new DevExpress.XtraReports.UI.GroupField[] {
-            new DevExpress.XtraReports.UI.GroupField("CUSTOMER_DEALER", DevExpress.XtraReports.UI.XRColumnSortOrder.Ascending)});
-            this.GroupHeaderArea1.HeightF = 48F;
-            this.GroupHeaderArea1.KeepTogether = true;
-            this.GroupHeaderArea1.Name = "GroupHeaderArea1";
-            this.GroupHeaderArea1.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
-            this.GroupHeaderArea1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
-            // 
-            // GroupFooterArea1
-            // 
-            this.GroupFooterArea1.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-            this.TotalInterest1,
-            this.TotalCash1,
-            this.TotalLoanAmount1,
-            this.TotalDealerDisc1,
-            this.Line3});
-            this.GroupFooterArea1.HeightF = 31.33333F;
-            this.GroupFooterArea1.KeepTogether = true;
-            this.GroupFooterArea1.Name = "GroupFooterArea1";
-            this.GroupFooterArea1.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
-            this.GroupFooterArea1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
-            // 
-            // Area1
-            // 
-            this.Area1.HeightF = 0F;
-            this.Area1.KeepTogether = true;
-            this.Area1.Name = "Area1";
-            this.Area1.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
-            this.Area1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
-            this.Area1.Visible = false;
-            // 
-            // Area2
-            // 
-            this.Area2.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-            this.Picture1,
-            this.Text3});
-            this.Area2.HeightF = 142F;
-            this.Area2.Name = "Area2";
-            this.Area2.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
-            this.Area2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
-            // 
-            // Area4
-            // 
-            this.Area4.HeightF = 0F;
-            this.Area4.Name = "Area4";
-            this.Area4.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
-            this.Area4.SubBands.AddRange(new DevExpress.XtraReports.UI.SubBand[] {
-            this.Section4,
-            this.ReportFooterSection2});
-            this.Area4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
-            // 
-            // Area5
-            // 
-            this.Area5.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-            this.DataDate1,
-            this.DataTime1,
-            this.gsUserID_1,
-            this.gsUserName_1,
-            this.PageNofM1,
-            this.Text5});
-            this.Area5.HeightF = 18F;
-            this.Area5.Name = "Area5";
-            this.Area5.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
-            this.Area5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
             // CUSTOMERIACTYPE1
             // 
@@ -433,6 +354,30 @@
             this.IsTci_1.SizeF = new System.Drawing.SizeF(12.5F, 18.33333F);
             this.IsTci_1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
             // 
+            // GroupHeaderArea1
+            // 
+            this.GroupHeaderArea1.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.DEALERNAME1,
+            this.Line1,
+            this.Text10,
+            this.Text6,
+            this.Text15,
+            this.Text14,
+            this.Text13,
+            this.Text12,
+            this.Text4,
+            this.Text2,
+            this.Text1,
+            this.Text9,
+            this.Text7});
+            this.GroupHeaderArea1.GroupFields.AddRange(new DevExpress.XtraReports.UI.GroupField[] {
+            new DevExpress.XtraReports.UI.GroupField("CUSTOMER_DEALER", DevExpress.XtraReports.UI.XRColumnSortOrder.Ascending)});
+            this.GroupHeaderArea1.HeightF = 48F;
+            this.GroupHeaderArea1.KeepTogether = true;
+            this.GroupHeaderArea1.Name = "GroupHeaderArea1";
+            this.GroupHeaderArea1.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
+            this.GroupHeaderArea1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            // 
             // DEALERNAME1
             // 
             this.DEALERNAME1.BackColor = System.Drawing.Color.Transparent;
@@ -640,6 +585,20 @@
             this.Text7.Text = "TCI";
             this.Text7.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
+            // GroupFooterArea1
+            // 
+            this.GroupFooterArea1.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.TotalInterest1,
+            this.TotalCash1,
+            this.TotalLoanAmount1,
+            this.TotalDealerDisc1,
+            this.Line3});
+            this.GroupFooterArea1.HeightF = 31.33333F;
+            this.GroupFooterArea1.KeepTogether = true;
+            this.GroupFooterArea1.Name = "GroupFooterArea1";
+            this.GroupFooterArea1.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
+            this.GroupFooterArea1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            // 
             // TotalInterest1
             // 
             this.TotalInterest1.BackColor = System.Drawing.Color.Transparent;
@@ -730,6 +689,39 @@
             this.Line3.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.Line3.SizeF = new System.Drawing.SizeF(433.3333F, 3.125F);
             // 
+            // Area1
+            // 
+            this.Area1.HeightF = 0F;
+            this.Area1.KeepTogether = true;
+            this.Area1.Name = "Area1";
+            this.Area1.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
+            this.Area1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            this.Area1.Visible = false;
+            // 
+            // Area2
+            // 
+            this.Area2.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.Picture1,
+            this.Text3});
+            this.Area2.HeightF = 142F;
+            this.Area2.Name = "Area2";
+            this.Area2.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
+            this.Area2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            // 
+            // Picture1
+            // 
+            this.Picture1.BackColor = System.Drawing.Color.Transparent;
+            this.Picture1.BorderColor = System.Drawing.Color.Black;
+            this.Picture1.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.Picture1.BorderWidth = 1F;
+            this.Picture1.Font = new System.Drawing.Font("Times New Roman", 9.75F);
+            this.Picture1.ForeColor = System.Drawing.Color.Black;
+            this.Picture1.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource("img", resources.GetString("Picture1.ImageSource"));
+            this.Picture1.LocationFloat = new DevExpress.Utils.PointFloat(803.6111F, 0F);
+            this.Picture1.Name = "Picture1";
+            this.Picture1.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
+            this.Picture1.SizeF = new System.Drawing.SizeF(246.3889F, 95F);
+            // 
             // Text3
             // 
             this.Text3.BackColor = System.Drawing.Color.Transparent;
@@ -746,6 +738,16 @@
             this.Text3.Text = "CLOSED EDIT LIST- NEW CUSTOMERS NOT POSTED";
             this.Text3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
             // 
+            // Area4
+            // 
+            this.Area4.HeightF = 0F;
+            this.Area4.Name = "Area4";
+            this.Area4.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
+            this.Area4.SubBands.AddRange(new DevExpress.XtraReports.UI.SubBand[] {
+            this.Section4,
+            this.ReportFooterSection2});
+            this.Area4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            // 
             // Section4
             // 
             this.Section4.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
@@ -756,6 +758,13 @@
             this.Section4.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.Section4.PageBreak = DevExpress.XtraReports.UI.PageBreak.BeforeBand;
             this.Section4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            // 
+            // Subreport1
+            // 
+            this.Subreport1.LocationFloat = new DevExpress.Utils.PointFloat(2.777778F, 8.333333F);
+            this.Subreport1.Name = "Subreport1";
+            this.Subreport1.ReportSource = new DevExpress.XtraReports.UI.XtraReport();
+            this.Subreport1.SizeF = new System.Drawing.SizeF(947.2222F, 25F);
             // 
             // ReportFooterSection2
             // 
@@ -768,19 +777,26 @@
             this.ReportFooterSection2.PageBreak = DevExpress.XtraReports.UI.PageBreak.BeforeBand;
             this.ReportFooterSection2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
-            // Subreport1
-            // 
-            this.Subreport1.LocationFloat = new DevExpress.Utils.PointFloat(2.777778F, 8.333333F);
-            this.Subreport1.Name = "Subreport1";
-            this.Subreport1.ReportSource = new DevExpress.XtraReports.UI.XtraReport();
-            this.Subreport1.SizeF = new System.Drawing.SizeF(947.2222F, 25F);
-            // 
             // Subreport2
             // 
             this.Subreport2.LocationFloat = new DevExpress.Utils.PointFloat(2.777778F, 10.27778F);
             this.Subreport2.Name = "Subreport2";
             this.Subreport2.ReportSource = new DevExpress.XtraReports.UI.XtraReport();
             this.Subreport2.SizeF = new System.Drawing.SizeF(288.8889F, 23.05556F);
+            // 
+            // Area5
+            // 
+            this.Area5.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.DataDate1,
+            this.DataTime1,
+            this.gsUserID_1,
+            this.gsUserName_1,
+            this.PageNofM1,
+            this.Text5});
+            this.Area5.HeightF = 18F;
+            this.Area5.Name = "Area5";
+            this.Area5.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
+            this.Area5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
             // DataDate1
             // 
@@ -905,19 +921,15 @@
             this.gsUserID.Description = "Enter gsUserID:";
             this.gsUserID.Name = "gsUserID";
             // 
-            // Picture1
+            // topMarginBand1
             // 
-            this.Picture1.BackColor = System.Drawing.Color.Transparent;
-            this.Picture1.BorderColor = System.Drawing.Color.Black;
-            this.Picture1.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.Picture1.BorderWidth = 1F;
-            this.Picture1.Font = new System.Drawing.Font("Times New Roman", 9.75F);
-            this.Picture1.ForeColor = System.Drawing.Color.Black;
-            this.Picture1.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource("img", resources.GetString("Picture1.ImageSource"));
-            this.Picture1.LocationFloat = new DevExpress.Utils.PointFloat(803.6111F, 0F);
-            this.Picture1.Name = "Picture1";
-            this.Picture1.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
-            this.Picture1.SizeF = new System.Drawing.SizeF(246.3889F, 95F);
+            this.topMarginBand1.HeightF = 25F;
+            this.topMarginBand1.Name = "topMarginBand1";
+            // 
+            // bottomMarginBand1
+            // 
+            this.bottomMarginBand1.HeightF = 25F;
+            this.bottomMarginBand1.Name = "bottomMarginBand1";
             // 
             // XtraReportClosedCustomerEditList
             // 
@@ -928,7 +940,9 @@
             this.Area1,
             this.Area2,
             this.Area4,
-            this.Area5});
+            this.Area5,
+            this.topMarginBand1,
+            this.bottomMarginBand1});
             this.CalculatedFields.AddRange(new DevExpress.XtraReports.UI.CalculatedField[] {
             this.APR,
             this.PaidThru,
@@ -1003,5 +1017,7 @@
         private DevExpress.XtraReports.Parameters.Parameter gsUserName;
         private DevExpress.XtraReports.Parameters.Parameter gsUserID;
         private DevExpress.XtraReports.UI.XRPictureBox Picture1;
+        private DevExpress.XtraReports.UI.TopMarginBand topMarginBand1;
+        private DevExpress.XtraReports.UI.BottomMarginBand bottomMarginBand1;
     }
 }

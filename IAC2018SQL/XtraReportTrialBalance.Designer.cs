@@ -50,7 +50,6 @@
             DevExpress.XtraReports.UI.XRSummary xrSummary17 = new DevExpress.XtraReports.UI.XRSummary();
             DevExpress.XtraReports.UI.XRSummary xrSummary18 = new DevExpress.XtraReports.UI.XRSummary();
             DevExpress.XtraReports.UI.XRGroupSortingSummary xrGroupSortingSummary2 = new DevExpress.XtraReports.UI.XRGroupSortingSummary();
-            DevExpress.DataAccess.ConnectionParameters.CustomStringConnectionParameters customStringConnectionParameters1 = new DevExpress.DataAccess.ConnectionParameters.CustomStringConnectionParameters();
             DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery1 = new DevExpress.DataAccess.Sql.StoredProcQuery();
             DevExpress.DataAccess.Sql.QueryParameter queryParameter1 = new DevExpress.DataAccess.Sql.QueryParameter();
             DevExpress.DataAccess.Sql.QueryParameter queryParameter2 = new DevExpress.DataAccess.Sql.QueryParameter();
@@ -113,6 +112,7 @@
             this.Text24 = new DevExpress.XtraReports.UI.XRLabel();
             this.Text23 = new DevExpress.XtraReports.UI.XRLabel();
             this.ReportFooterB = new DevExpress.XtraReports.UI.SubBand();
+            this.DealerSummary = new DevExpress.XtraReports.UI.XRSubreport();
             this.gsUserID = new DevExpress.XtraReports.Parameters.Parameter();
             this.gsUserName = new DevExpress.XtraReports.Parameters.Parameter();
             this.PageFooter = new DevExpress.XtraReports.UI.PageFooterBand();
@@ -140,7 +140,6 @@
             this.groupHeaderBand2 = new DevExpress.XtraReports.UI.GroupHeaderBand();
             this.groupFooterBand2 = new DevExpress.XtraReports.UI.GroupFooterBand();
             this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
-            this.DealerSummary = new DevExpress.XtraReports.UI.XRSubreport();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // Detail
@@ -995,6 +994,17 @@
             this.ReportFooterB.PageBreak = DevExpress.XtraReports.UI.PageBreak.BeforeBand;
             this.ReportFooterB.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
+            // DealerSummary
+            // 
+            this.DealerSummary.Dpi = 254F;
+            this.DealerSummary.GenerateOwnPages = true;
+            this.DealerSummary.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
+            this.DealerSummary.Name = "DealerSummary";
+            this.DealerSummary.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gsUserID", this.gsUserID));
+            this.DealerSummary.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gsUserName", this.gsUserName));
+            this.DealerSummary.ReportSource = new IAC2021SQL.XtraReportTrialBalanceDealerSummary();
+            this.DealerSummary.SizeF = new System.Drawing.SizeF(2694F, 127F);
+            // 
             // gsUserID
             // 
             this.gsUserID.Description = "Enter gsUserID:";
@@ -1374,13 +1384,9 @@
             // 
             // sqlDataSource1
             // 
-            this.sqlDataSource1.ConnectionName = "Connection";
+            this.sqlDataSource1.ConnectionName = "IAC2021SQL.Properties.Settings.IAC2010SQLConnectionString";
             this.sqlDataSource1.ConnectionOptions.CommandTimeout = 60;
             this.sqlDataSource1.ConnectionOptions.DbCommandTimeout = 60;
-            customStringConnectionParameters1.ConnectionString = "XpoProvider=MSSqlServer;Data Source=SQL-IAC;Initial Catalog=IACSQLTEST;Integrated" +
-    " Security=True;Asynchronous Processing=True;MultipleActiveResultSets=True;Connec" +
-    "t Timeout=60";
-            this.sqlDataSource1.ConnectionParameters = customStringConnectionParameters1;
             this.sqlDataSource1.Name = "sqlDataSource1";
             storedProcQuery1.MetaSerializable = "<Meta X=\"20\" Y=\"20\" Width=\"240\" Height=\"3621\" />";
             storedProcQuery1.Name = "CUSTOMER";
@@ -1447,17 +1453,6 @@
             masterDetailInfo2});
             this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
-            // DealerSummary
-            // 
-            this.DealerSummary.Dpi = 254F;
-            this.DealerSummary.GenerateOwnPages = true;
-            this.DealerSummary.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
-            this.DealerSummary.Name = "DealerSummary";
-            this.DealerSummary.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gsUserID", this.gsUserID));
-            this.DealerSummary.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gsUserName", this.gsUserName));
-            this.DealerSummary.ReportSource = new IAC2021SQL.XtraReportTrialBalanceDealerSummary();
-            this.DealerSummary.SizeF = new System.Drawing.SizeF(2694F, 127F);
-            // 
             // XtraReportTrialBalance
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -1494,7 +1489,7 @@
             this.ReportPrintOptions.PrintOnEmptyDataSource = false;
             this.ReportUnit = DevExpress.XtraReports.UI.ReportUnit.TenthsOfAMillimeter;
             this.SnapGridSize = 25F;
-            this.Version = "21.2";
+            this.Version = "22.1";
             this.BeforePrint += new System.Drawing.Printing.PrintEventHandler(this.XtraReportTrialBalance_BeforePrint);
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 

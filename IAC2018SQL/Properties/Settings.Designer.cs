@@ -35,8 +35,9 @@ namespace IAC2021SQL.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=SQL-IAC;Initial Catalog=IACSQLTEST;Integrated Security=True;Asynchron" +
-            "ous Processing=True;MultipleActiveResultSets=True;Connect Timeout=60")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=SQL-IAC;Initial Catalog=IACSQLPRODUCTION;Integrated Security=True;Mul" +
+            "tipleActiveResultSets=True;Connect Timeout=60;Encrypt=False;TrustServerCertifica" +
+            "te=True")]
         public string IAC2010SQLConnectionString {
             get {
                 return ((string)(this["IAC2010SQLConnectionString"]));
