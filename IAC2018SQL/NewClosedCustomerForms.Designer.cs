@@ -3632,7 +3632,6 @@
             this.cUSTOMER_NOTextBox.Properties.MaskSettings.Set("placeholder", ' ');
             this.cUSTOMER_NOTextBox.Properties.MaskSettings.Set("MaskManagerSignature", "ignoreMaskBlank=True");
             this.cUSTOMER_NOTextBox.Properties.MaxLength = 6;
-            this.cUSTOMER_NOTextBox.Properties.UseMaskAsDisplayFormat = ((bool)(resources.GetObject("cUSTOMER_NOTextBox.Properties.UseMaskAsDisplayFormat")));
             this.cUSTOMER_NOTextBox.EditValueChanged += new System.EventHandler(this.cUSTOMER_NOTextBox_EditValueChanged);
             this.cUSTOMER_NOTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cUSTOMER_NOTextBox_KeyDown);
             this.cUSTOMER_NOTextBox.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.cUSTOMER_NOTextBox_PreviewKeyDown);

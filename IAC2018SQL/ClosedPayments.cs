@@ -573,6 +573,12 @@ namespace IAC2021SQL
             ClosedPaymentiacDataSet.PAYMENT.Rows[PaymentbindingSource.Position].SetField<String>("PAYMENT_IAC_TYPE", "C");
             
             PaymentbindingSource.EndEdit();
+            // Moses Newman 08/09/2022 if PAYMENT DATE is NULL for any reason default to now!
+            if (ClosedPaymentiacDataSet.PAYMENT.Rows[PaymentbindingSource.Position].Field<DateTime?>("PAYMENT_DATE") == null)
+            {
+                ClosedPaymentiacDataSet.PAYMENT.Rows[PaymentbindingSource.Position].SetField<DateTime>("PAYMENT_DATE", DateTime.Now.Date);
+                PaymentbindingSource.EndEdit();
+            }
             try
             {
                 paymentTableAdapter.Update(ClosedPaymentiacDataSet.PAYMENT.Rows[PaymentbindingSource.Position]);

@@ -90,7 +90,7 @@ namespace IAC2021SQL
             SqlParameter jobParameter;
             int jobResult;
 
-            jobConnection = new SqlConnection("Data Source=SQL-IAC;Initial Catalog=msdb;Integrated Security=SSPI");
+            jobConnection = new SqlConnection("Data Source=SQL-IAC;Initial Catalog=msdb;Integrated Security=SSPI;TrustServerCertificate=True");
             jobCommand = new SqlCommand("sp_start_job", jobConnection);
             jobCommand.CommandType = CommandType.StoredProcedure;
 
@@ -250,7 +250,7 @@ namespace IAC2021SQL
             deletePath = sourcePath;
             
             targetPath += "PrePostBackup" + @"\";
-            deletePath += @"\" + "PrePostBackup";
+            deletePath += @"PrePostBackup";
             
             FolderBrowser.UseParentFormIcon = true;
             FolderBrowser.DialogStyle = DevExpress.Utils.CommonDialogs.FolderBrowserDialogStyle.Compact;

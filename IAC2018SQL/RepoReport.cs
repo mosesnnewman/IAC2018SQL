@@ -1,4 +1,4 @@
-﻿ using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevExpress.XtraReports.UI;
+using DevExpress.DataAccess.Sql;
+
 
 namespace IAC2021SQL
 {
@@ -20,30 +23,29 @@ namespace IAC2021SQL
         private void buttonPrint_Click(object sender, EventArgs e)
         {
             MDIIAC2013 MDImain = (MDIIAC2013)MdiParent;
-            DateTime ldStartDate = DateTime.Parse("01/01/1980"),ldEndDate = DateTime.Now;
+            DateTime ldStartDate = DateTime.Now.Date.AddYears(-1),ldEndDate = DateTime.Now.Date;
             
             String lsRepoCode = cUSTOMER_REPO_CDEtextBox.Text.Trim() + "%",lsAgeCode = "%",lsStatus = "%";
 
             IACDataSetTableAdapters.CUSTOMERTableAdapter CUSTOMERTableAdapter = new IACDataSetTableAdapters.CUSTOMERTableAdapter();
             IACDataSetTableAdapters.DEALERTableAdapter DEALERTableAdapter = new IACDataSetTableAdapters.DEALERTableAdapter();
-            IACDataSetTableAdapters.VEHICLETableAdapter VEHICLETableAdapter = new IACDataSetTableAdapters.VEHICLETableAdapter();
             if (radioButtonY.Checked)
-                lsAgeCode = "Y";
+                lsAgeCode = "Y%";
             if (radioButtonP.Checked)
-                lsAgeCode = "P";
+                lsAgeCode = "P%";
             if (radioButtonR.Checked)
-                lsAgeCode = "R";
+                lsAgeCode = "R%";
             if (radioButtonI.Checked)
-                lsAgeCode = "I";
+                lsAgeCode = "I%";
             // Moses Newman 12/03/2019 change lsStatus = "Z" to lsAgeCode = "Z" as it is a repo_ind not a status!
             if (radioButtonZ.Checked)
-                lsAgeCode = "Z";
+                lsAgeCode = "Z%";
             if (radioButtonIndBoth.Checked)
                 lsAgeCode = "%";
             if (radioButtonActive.Checked)
-                lsStatus = "A";
+                lsStatus = "A%";
             if (radioButtonInactive.Checked)
-                lsStatus = "I";
+                lsStatus = "I%";
             if (radioButtonStatusBoth.Checked)
                 lsStatus = "%";
             if (nullableDateTimePickerStartDate.EditValue == null)
@@ -57,34 +59,37 @@ namespace IAC2021SQL
             CUSTOMERTableAdapter.FillByRepoCode(DelinquencyData.CUSTOMER, lsAgeCode, ldStartDate,ldEndDate,lsStatus,lsRepoCode);
             // Moses Newman 11/19/2013 Moses Newman added ldCurrDate as new parameter to DealerFillByDelinQuencies Query
             DEALERTableAdapter.FillByRepoCode(DelinquencyData.DEALER, lsAgeCode, ldStartDate, ldEndDate, lsStatus, lsRepoCode);
-            //RepoCodesTableAdapter.Fill(DelinquencyData.RepoCodes);
-            VEHICLETableAdapter.FillByRepo(DelinquencyData.VEHICLE, lsAgeCode, ldStartDate, ldEndDate, lsStatus, lsRepoCode);
             if (DelinquencyData.CUSTOMER.Rows.Count != 0 && DelinquencyData.DEALER.Rows.Count != 0)
             {
                 Hide();
-                MDImain.CreateFormInstance("ReportViewer", false);
-                ReportViewer rptViewer = (ReportViewer)MDImain.ActiveMdiChild;
+                // Moses Newman 08/24/2022 Covert to XtraReport
+                var report = new XtraReportClosedCustomerDelinquencyRepoReport();
+                SqlDataSource ds = report.DataSource as SqlDataSource;
 
-                ClosedCustomerDelinquencyRepoReport myReportObject = new ClosedCustomerDelinquencyRepoReport();
-                myReportObject.SetDataSource(DelinquencyData);
-                myReportObject.SetParameterValue("gsUserID", Program.gsUserID);
-                myReportObject.SetParameterValue("gsUserName", Program.gsUserName);
-                myReportObject.SetParameterValue("gsRepoInd",lsAgeCode);
-                myReportObject.SetParameterValue("gnAgedMonths", 8);
-                myReportObject.SetParameterValue("gdCurrentDate", ldStartDate);
-                myReportObject.SetParameterValue("gdStartDate", ldStartDate);
-                myReportObject.SetParameterValue("gdEndDate", ldEndDate);
-                myReportObject.SetParameterValue("gsRepoCode", cUSTOMER_REPO_CDEtextBox.Text.Trim());
-                myReportObject.SetParameterValue("gsCustStatus", lsStatus);
-                rptViewer.crystalReportViewer.ReportSource = myReportObject;
-                rptViewer.crystalReportViewer.Refresh();
-                rptViewer.Show();
+                report.DataSource = ds;
+                report.RequestParameters = false;
+                report.Parameters["gsUserID"].Value = Program.gsUserID;
+                report.Parameters["gsUserName"].Value = Program.gsUserName;
+                report.Parameters["gsRepoInd"].Value = lsAgeCode;
+                report.Parameters["gnAgedMonths"].Value = 8;
+                report.Parameters["gdCurrentDate"].Value = ldStartDate;
+                report.Parameters["gdStartDate"].Value = ldStartDate;
+                report.Parameters["gdEndDate"].Value = ldEndDate;
+                report.Parameters["gsRepoCode"].Value = cUSTOMER_REPO_CDEtextBox.Text.Trim() + '%';
+                report.Parameters["gsCustStatus"].Value = lsStatus;
+
+                var tool = new ReportPrintTool(report);
+
+                tool.PreviewRibbonForm.MdiParent = MDImain;
+                tool.AutoShowParametersPanel = false;
+                tool.PreviewRibbonForm.WindowState = FormWindowState.Maximized;
+                tool.ShowRibbonPreview();
+
                 DelinquencyData.Clear();
                 DelinquencyData.Dispose();
 
-                VEHICLETableAdapter.Dispose();
-                CUSTOMERTableAdapter.Dispose();
                 DEALERTableAdapter.Dispose();
+                CUSTOMERTableAdapter.Dispose();
                 Close();
             }
             else
@@ -95,8 +100,8 @@ namespace IAC2021SQL
 
         private void FormRepoReport_Load(object sender, EventArgs e)
         {
-            nullableDateTimePickerEndDate.EditValue = null;
-            nullableDateTimePickerStartDate.EditValue = null;
+            nullableDateTimePickerEndDate.EditValue = DateTime.Now.Date;
+            nullableDateTimePickerStartDate.EditValue = DateTime.Parse(DateTime.Now.Month.ToString()+"/"+DateTime.Now.Year.ToString());
             repoCodesTableAdapter.Fill(this.DelinquencyData.RepoCodes);
             radioButtonIndBoth.Checked = true;
             radioButtonStatusBoth.Checked = true;

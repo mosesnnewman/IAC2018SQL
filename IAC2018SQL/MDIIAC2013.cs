@@ -1105,7 +1105,7 @@ namespace IAC2021SQL
                 return;
             }
             SystemTableAdapter.Fill(ReportData.System,1);
-            // Moses Newman 08/05/2022 Covert to XtraReport
+            // Moses Newman 08/05/2022 Convert to XtraReport
             var report = new XtraReportClosedCustomerLateChargeListing();
             SqlDataSource ds = report.DataSource as SqlDataSource;
 
