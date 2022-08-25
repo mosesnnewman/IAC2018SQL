@@ -1462,7 +1462,7 @@
             this.RepoCode_1.LocationFloat = new DevExpress.Utils.PointFloat(682.2917F, 111.4583F);
             this.RepoCode_1.Name = "RepoCode_1";
             this.RepoCode_1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.RepoCode_1.SizeF = new System.Drawing.SizeF(89.58331F, 15.34722F);
+            this.RepoCode_1.SizeF = new System.Drawing.SizeF(106.25F, 15.34722F);
             this.RepoCode_1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
             // gdStartDate1
@@ -1526,10 +1526,10 @@
             this.Text33.CanGrow = false;
             this.Text33.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.Text33.ForeColor = System.Drawing.Color.Black;
-            this.Text33.LocationFloat = new DevExpress.Utils.PointFloat(772.9167F, 111.4583F);
+            this.Text33.LocationFloat = new DevExpress.Utils.PointFloat(788.5417F, 111.4583F);
             this.Text33.Name = "Text33";
             this.Text33.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.Text33.SizeF = new System.Drawing.SizeF(103.125F, 15.34722F);
+            this.Text33.SizeF = new System.Drawing.SizeF(111.4583F, 15.34722F);
             this.Text33.Text = "CUST STATUS:";
             this.Text33.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
@@ -1544,7 +1544,7 @@
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Status]")});
             this.Status_1.Font = new System.Drawing.Font("Arial", 10F);
             this.Status_1.ForeColor = System.Drawing.Color.Black;
-            this.Status_1.LocationFloat = new DevExpress.Utils.PointFloat(884.375F, 111.4583F);
+            this.Status_1.LocationFloat = new DevExpress.Utils.PointFloat(900F, 111.4583F);
             this.Status_1.Name = "Status_1";
             this.Status_1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.Status_1.SizeF = new System.Drawing.SizeF(50F, 15.34722F);
@@ -1731,7 +1731,7 @@
             this.RepoCode_2.LocationFloat = new DevExpress.Utils.PointFloat(682.2917F, 99.44445F);
             this.RepoCode_2.Name = "RepoCode_2";
             this.RepoCode_2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.RepoCode_2.SizeF = new System.Drawing.SizeF(89.58331F, 15.34722F);
+            this.RepoCode_2.SizeF = new System.Drawing.SizeF(106.25F, 15.34722F);
             this.RepoCode_2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
             // Text32
@@ -1746,7 +1746,7 @@
             this.Text32.LocationFloat = new DevExpress.Utils.PointFloat(628.125F, 99.44444F);
             this.Text32.Name = "Text32";
             this.Text32.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.Text32.SizeF = new System.Drawing.SizeF(45.83333F, 15.34722F);
+            this.Text32.SizeF = new System.Drawing.SizeF(54.16669F, 15.34722F);
             this.Text32.Text = "CODE:";
             this.Text32.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
@@ -1759,10 +1759,10 @@
             this.Text35.CanGrow = false;
             this.Text35.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.Text35.ForeColor = System.Drawing.Color.Black;
-            this.Text35.LocationFloat = new DevExpress.Utils.PointFloat(771.875F, 99.44444F);
+            this.Text35.LocationFloat = new DevExpress.Utils.PointFloat(788.5417F, 99.44444F);
             this.Text35.Name = "Text35";
             this.Text35.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.Text35.SizeF = new System.Drawing.SizeF(103.125F, 15.34722F);
+            this.Text35.SizeF = new System.Drawing.SizeF(111.4583F, 15.34722F);
             this.Text35.Text = "CUST STATUS:";
             this.Text35.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
@@ -1829,7 +1829,7 @@
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Status]")});
             this.Status_2.Font = new System.Drawing.Font("Arial", 10F);
             this.Status_2.ForeColor = System.Drawing.Color.Black;
-            this.Status_2.LocationFloat = new DevExpress.Utils.PointFloat(884.375F, 99.44444F);
+            this.Status_2.LocationFloat = new DevExpress.Utils.PointFloat(900F, 99.44444F);
             this.Status_2.Name = "Status_2";
             this.Status_2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.Status_2.SizeF = new System.Drawing.SizeF(50F, 15.34722F);
