@@ -707,7 +707,8 @@
             // 
             // WarrantyText
             // 
-            this.WarrantyText.Expression = "Iif([PaidInFullPriorToMaturity.Warranty], \'Yes\', \'No\')";
+            this.WarrantyText.DataMember = "ClosedCustomerPaidInFullPriorToMaturity";
+            this.WarrantyText.Expression = "Iif([Warranty], \'Yes\', \'No\')";
             this.WarrantyText.FieldType = DevExpress.XtraReports.UI.FieldType.String;
             this.WarrantyText.Name = "WarrantyText";
             // 

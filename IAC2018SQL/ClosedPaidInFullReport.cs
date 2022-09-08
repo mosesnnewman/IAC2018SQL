@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
+using DevExpress.XtraReports.UI;
+using DevExpress.DataAccess.Sql;
+
 
 namespace IAC2021SQL
 {
@@ -41,10 +39,7 @@ namespace IAC2021SQL
         private void buttonPost_Click(object sender, EventArgs e)
         {
             Hide();
-            MDIIAC2013 MDImain = (MDIIAC2013)MdiParent;
-            MDImain.CreateFormInstance("ReportViewer", false);
-            ReportViewer rptViewr = (ReportViewer)MDImain.ActiveMdiChild;
-            PrintClosedPaidInFullReport(rptViewr);
+            PrintClosedPaidInFullReport();
             Close();
         }
 
@@ -53,34 +48,37 @@ namespace IAC2021SQL
             Close();
         }
 
-        private void PrintClosedPaidInFullReport(ReportViewer rptViewer)
+        private void PrintClosedPaidInFullReport()
         {
             String lsDealerNum = lookUpEditDealer.EditValue != null ? lookUpEditDealer.EditValue.ToString().Trim():"" + '%';
             String lsState;
 
             lsState = (lookUpEditState.EditValue != null) ? lookUpEditState.EditValue.ToString().TrimStart().TrimEnd() + "%" : "%";
             IACDataSetTableAdapters.PaidInFullTableAdapter  PaidInFullTableAdapter = new IACDataSetTableAdapters.PaidInFullTableAdapter();
-            IACDataSetTableAdapters.DEALERTableAdapter DEALERTableAdapter = new IACDataSetTableAdapters.DEALERTableAdapter();
-
-            BindingSource PaidInFullBindingSource = new BindingSource();
-            PaidInFullBindingSource.DataSource = iACDataSet.PaidInFull;
-
-            DEALERTableAdapter.FillByPaidInFull(iACDataSet.DEALER, lsState, lsDealerNum, ((DateTime)(nullableDateTimePickerFrom.EditValue)).Date, ((DateTime)(nullableDateTimePickerTo.EditValue)).Date);
 
             // This one actually populates the SQL Server PaidInFullTable
             PaidInFullTableAdapter.ClosedPaidInFullFill(lsState, lsDealerNum,((DateTime)(nullableDateTimePickerFrom.EditValue)).Date,((DateTime)(nullableDateTimePickerTo.EditValue)).Date);
-            //Thist one brings the records back into the DataTable
-            PaidInFullTableAdapter.FillByAllClosed(iACDataSet.PaidInFull);
+            MDIIAC2013 MDImain = (MDIIAC2013)MdiParent;
 
-            ClosedPaidInFullReport myReportObject = new ClosedPaidInFullReport();
-            myReportObject.SetDataSource(iACDataSet);
-            myReportObject.SetParameterValue("gsUserID", Program.gsUserID);
-            myReportObject.SetParameterValue("gsUserName", Program.gsUserName);
-            myReportObject.SetParameterValue("gdFromDate", (DateTime)nullableDateTimePickerFrom.EditValue);
-            myReportObject.SetParameterValue("gdToDate", (DateTime)nullableDateTimePickerTo.EditValue);
-            rptViewer.crystalReportViewer.ReportSource = myReportObject;
-            rptViewer.crystalReportViewer.Refresh();
-            rptViewer.Show();
+            // Moses Newman 09/07/2022 Covert to XtraReport
+            var report = new XtraReportClosedPaidInFull();
+            SqlDataSource ds = report.DataSource as SqlDataSource;
+
+            report.DataSource = ds;
+            report.RequestParameters = false;
+            report.Parameters["gsUserID"].Value = Program.gsUserID;
+            report.Parameters["gsUserName"].Value = Program.gsUserName;
+            report.Parameters["gdFromDate"].Value = (DateTime)nullableDateTimePickerFrom.EditValue;
+            report.Parameters["gdToDate"].Value = (DateTime)nullableDateTimePickerTo.EditValue;
+            report.Parameters["gsState"].Value = lsState;
+            report.Parameters["gsDealer"].Value = lsDealerNum;
+
+            var tool = new ReportPrintTool(report);
+
+            tool.PreviewRibbonForm.MdiParent = MDImain;
+            tool.AutoShowParametersPanel = false;
+            tool.PreviewRibbonForm.WindowState = FormWindowState.Maximized;
+            tool.ShowRibbonPreview();
         }
     }
 }
