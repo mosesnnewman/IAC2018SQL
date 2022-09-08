@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.XtraReports.UI;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -6,6 +7,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using DevExpress.DataAccess.Sql;
+
 
 namespace IAC2021SQL
 {
@@ -42,10 +45,7 @@ namespace IAC2021SQL
         private void buttonPost_Click(object sender, EventArgs e)
         {
             Hide();
-            MDIIAC2013 MDImain = (MDIIAC2013)MdiParent;
-            MDImain.CreateFormInstance("ReportViewer", false);
-            ReportViewer rptViewr = (ReportViewer)MDImain.ActiveMdiChild;
-            PrintClosedPaidInFullPriorToMaturityReport(rptViewr);
+            PrintClosedPaidInFullPriorToMaturityReport();
             Close();
         }
 
@@ -54,7 +54,7 @@ namespace IAC2021SQL
             Close();
         }
 
-        private void PrintClosedPaidInFullPriorToMaturityReport(ReportViewer rptViewer)
+        private void PrintClosedPaidInFullPriorToMaturityReport()
         {
             String lsDealerNum = lookUpEditDealer.EditValue != null ? lookUpEditDealer.EditValue.ToString().Trim() : "" + "%", lsState,
                     lsPaymentType = lookUpEditPaymentType.EditValue != null ? lookUpEditPaymentType.EditValue.ToString().Trim() : "" + "%",
@@ -62,28 +62,32 @@ namespace IAC2021SQL
                     lsDealer = lookUpEditDealer.EditValue != null ? lookUpEditDealer.EditValue.ToString().Trim() : "" + "%";
 
             lsState = lookUpEditState.EditValue != null ? lookUpEditState.EditValue.ToString().Trim() : "" + "%";
-            IACDataSetTableAdapters.PaidInFullPriorToMaturityTableAdapter PaidInFullPriorToMaturityTableAdapter = new IACDataSetTableAdapters.PaidInFullPriorToMaturityTableAdapter();
+
+            // Moses Newman 09/06/2022 Covert to XtraReport
+            MDIIAC2013 MDImain = (MDIIAC2013)MdiParent;
+            var report = new XtraReportClosedPaidInFullPriorToMaturity();
+            SqlDataSource ds = report.DataSource as SqlDataSource;
+
+            report.DataSource = ds;
+            report.RequestParameters = false;
+            report.Parameters["gsUserID"].Value = Program.gsUserID;
+            report.Parameters["gsUserName"].Value = Program.gsUserName;
+            report.Parameters["gdFromDate"].Value = (DateTime)nullableDateTimePickerFrom.EditValue;
+            report.Parameters["gdToDate"].Value = (DateTime)nullableDateTimePickerTo.EditValue;
+            report.Parameters["gbGap"].Value = checkBoxGap.Checked;
+            report.Parameters["gbWarranty"].Value = checkBoxWarranty.Checked;
+            report.Parameters["gsState"].Value = lsState;
+            report.Parameters["gsDealerNo"].Value = lsDealerNum;
+            report.Parameters["gsPaymentType"].Value = lsPaymentType;
+            report.Parameters["gsPaymentCode"].Value = lsPaymentCode;
 
 
-            PaidInFullPriorToMaturityTableAdapter.Fill(iACDataSet.PaidInFullPriorToMaturity,
-                                                        (DateTime)nullableDateTimePickerFrom.EditValue,
-                                                        (DateTime)nullableDateTimePickerTo.EditValue,
-                                                        lsState,
-                                                        lsDealerNum,
-                                                        lsPaymentType,
-                                                        lsPaymentCode,
-                                                        checkBoxGap.Checked,
-                                                        checkBoxWarranty.Checked);
+            var tool = new ReportPrintTool(report);
 
-            ClosedPaidInFullPriorToMaturityReport myReportObject = new ClosedPaidInFullPriorToMaturityReport();
-            myReportObject.SetDataSource(iACDataSet);
-            myReportObject.SetParameterValue("gsUserID", Program.gsUserID);
-            myReportObject.SetParameterValue("gsUserName", Program.gsUserName);
-            myReportObject.SetParameterValue("gdFromDate", (DateTime)nullableDateTimePickerFrom.EditValue);
-            myReportObject.SetParameterValue("gdToDate", (DateTime)nullableDateTimePickerTo.EditValue);
-            rptViewer.crystalReportViewer.ReportSource = myReportObject;
-            rptViewer.crystalReportViewer.Refresh();
-            rptViewer.Show();
+            tool.PreviewRibbonForm.MdiParent = MDImain;
+            tool.AutoShowParametersPanel = false;
+            tool.PreviewRibbonForm.WindowState = FormWindowState.Maximized;
+            tool.ShowRibbonPreview();
         }
     }
 }

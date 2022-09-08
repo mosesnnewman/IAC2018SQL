@@ -603,22 +603,26 @@
             this.gdFromDate.Description = "Enter gdFromDate:";
             this.gdFromDate.Name = "gdFromDate";
             this.gdFromDate.Type = typeof(System.DateTime);
+            this.gdFromDate.ValueInfo = "2022-08-01";
             // 
             // gsUserName
             // 
             this.gsUserName.Description = "Enter gsUserName:";
             this.gsUserName.Name = "gsUserName";
+            this.gsUserName.ValueInfo = "Moses Newman";
             // 
             // gsUserID
             // 
             this.gsUserID.Description = "Enter gsUserID:";
             this.gsUserID.Name = "gsUserID";
+            this.gsUserID.ValueInfo = "MNN";
             // 
             // gdToDate
             // 
             this.gdToDate.Description = "Enter gdToDate:";
             this.gdToDate.Name = "gdToDate";
             this.gdToDate.Type = typeof(System.DateTime);
+            this.gdToDate.ValueInfo = "2022-09-07";
             // 
             // topMarginBand1
             // 
@@ -671,12 +675,17 @@
             this.Margins = new System.Drawing.Printing.Margins(20, 20, 20, 20);
             this.PageHeight = 850;
             this.PageWidth = 1100;
+            this.ParameterPanelLayoutItems.AddRange(new DevExpress.XtraReports.Parameters.ParameterPanelLayoutItem[] {
+            new DevExpress.XtraReports.Parameters.ParameterLayoutItem(this.gdFromDate, DevExpress.XtraReports.Parameters.Orientation.Horizontal),
+            new DevExpress.XtraReports.Parameters.ParameterLayoutItem(this.gsUserName, DevExpress.XtraReports.Parameters.Orientation.Horizontal),
+            new DevExpress.XtraReports.Parameters.ParameterLayoutItem(this.gsUserID, DevExpress.XtraReports.Parameters.Orientation.Horizontal),
+            new DevExpress.XtraReports.Parameters.ParameterLayoutItem(this.gdToDate, DevExpress.XtraReports.Parameters.Orientation.Horizontal)});
             this.Parameters.AddRange(new DevExpress.XtraReports.Parameters.Parameter[] {
             this.gdFromDate,
             this.gsUserName,
             this.gsUserID,
             this.gdToDate});
-            this.Version = "21.2";
+            this.Version = "22.1";
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
         }

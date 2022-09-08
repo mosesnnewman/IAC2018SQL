@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
+
+using DevExpress.XtraReports.UI;
+using DevExpress.DataAccess.Sql;
+
 
 namespace IAC2021SQL
 {
@@ -27,39 +25,27 @@ namespace IAC2021SQL
         {
             DateTime ldCurrDate = ((DateTime)(nullableDateTimePickerDueDate.EditValue)).Date;
 
-            IACDataSet DelinquencyData = new IACDataSet();
-            //IACDataSetTableAdapters.ClosedDealerAgedSummarySelectTableAdapter ClosedDealerAgedSummarySelectTableAdapter = new IACDataSetTableAdapters.ClosedDealerAgedSummarySelectTableAdapter();
-            //IACDataSetTableAdapters.ClosedDealerAgedSummarySelectCOLTableAdapter ClosedDealerAgedSummarySelectCOLTableAdapter = new IACDataSetTableAdapters.ClosedDealerAgedSummarySelectCOLTableAdapter();
-            IACDataSetTableAdapters.CUSTOMERTableAdapter CUSTOMERTableAdapter = new IACDataSetTableAdapters.CUSTOMERTableAdapter();
-            IACDataSetTableAdapters.DEALERTableAdapter DEALERTableAdapter = new IACDataSetTableAdapters.DEALERTableAdapter();
-
             MDIIAC2013 MDImain = (MDIIAC2013)MdiParent;
 
 
-            CUSTOMERTableAdapter.FillByPaidInAdvance(DelinquencyData.CUSTOMER, ldCurrDate);
-            
-            DEALERTableAdapter.FillByPaidInAdvance(DelinquencyData.DEALER, ldCurrDate);
+            Hide();
 
-            if (DelinquencyData.CUSTOMER.Rows.Count != 0 && DelinquencyData.DEALER.Rows.Count != 0)
-            {
-                Hide();
-                MDImain.CreateFormInstance("ReportViewer", false);
-                ReportViewer rptViewer = (ReportViewer)MDImain.ActiveMdiChild;
+            // Moses Newman 09/07/2022 Covert to XtraReport
+            var report = new XtraReportClosedPaidInAdvance();
+            SqlDataSource ds = report.DataSource as SqlDataSource;
 
-                ClosedPaidInAdvance myReportObject = new ClosedPaidInAdvance();
-                myReportObject.SetDataSource(DelinquencyData);
-                myReportObject.SetParameterValue("gsUserID", Program.gsUserID);
-                myReportObject.SetParameterValue("gsUserName", Program.gsUserName);
-                myReportObject.SetParameterValue("gdCurrentDate", ldCurrDate);
-                rptViewer.crystalReportViewer.ReportSource = myReportObject;
-                rptViewer.crystalReportViewer.Refresh();
-                rptViewer.Show();
-            }
-            DelinquencyData.Clear();
-            DelinquencyData.Dispose();
+            report.DataSource = ds;
+            report.RequestParameters = false;
+            report.Parameters["gsUserID"].Value = Program.gsUserID;
+            report.Parameters["gsUserName"].Value = Program.gsUserName;
+            report.Parameters["gdCurrentDate"].Value = ldCurrDate;
 
-            CUSTOMERTableAdapter.Dispose();
-            DEALERTableAdapter.Dispose();
+            var tool = new ReportPrintTool(report);
+
+            tool.PreviewRibbonForm.MdiParent = MDImain;
+            tool.AutoShowParametersPanel = false;
+            tool.PreviewRibbonForm.WindowState = FormWindowState.Maximized;
+            tool.ShowRibbonPreview();
         }
 
 

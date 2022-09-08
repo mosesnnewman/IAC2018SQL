@@ -43,7 +43,7 @@
     <SuiteName>IAC2021SQL</SuiteName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationRevision>7</ApplicationRevision>
     <ApplicationVersion>30.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -798,6 +798,12 @@
     <Compile Include="XtraReportAmortization.Designer.cs">
       <DependentUpon>XtraReportAmortization.cs</DependentUpon>
     </Compile>
+    <Compile Include="XtraReportClosedChargesAppliedToDealer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReportClosedChargesAppliedToDealer.Designer.cs">
+      <DependentUpon>XtraReportClosedChargesAppliedToDealer.cs</DependentUpon>
+    </Compile>
     <Compile Include="XtraReportClosedCustomerComments.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -869,6 +875,30 @@
     </Compile>
     <Compile Include="XtraReportClosedDelinquencySummary.Designer.cs">
       <DependentUpon>XtraReportClosedDelinquencySummary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReportClosedFirstPaymentDefault.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReportClosedFirstPaymentDefault.Designer.cs">
+      <DependentUpon>XtraReportClosedFirstPaymentDefault.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReportClosedFirstPaymentDefaultDealerSummary.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReportClosedFirstPaymentDefaultDealerSummary.Designer.cs">
+      <DependentUpon>XtraReportClosedFirstPaymentDefaultDealerSummary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReportClosedPaidInAdvance.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReportClosedPaidInAdvance.Designer.cs">
+      <DependentUpon>XtraReportClosedPaidInAdvance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReportClosedPaidInAdvanceDealerSummary.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReportClosedPaidInAdvanceDealerSummary.Designer.cs">
+      <DependentUpon>XtraReportClosedPaidInAdvanceDealerSummary.cs</DependentUpon>
     </Compile>
     <Compile Include="XtraReportClosedPaidInFull.cs">
       <SubType>Component</SubType>
@@ -2028,6 +2058,9 @@
     <EmbeddedResource Include="XtraReportAmortization.resx">
       <DependentUpon>XtraReportAmortization.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="XtraReportClosedChargesAppliedToDealer.resx">
+      <DependentUpon>XtraReportClosedChargesAppliedToDealer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="XtraReportClosedCustomerComments.resx">
       <DependentUpon>XtraReportClosedCustomerComments.cs</DependentUpon>
     </EmbeddedResource>
@@ -2063,6 +2096,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="XtraReportClosedDelinquencySummary.resx">
       <DependentUpon>XtraReportClosedDelinquencySummary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReportClosedFirstPaymentDefault.resx">
+      <DependentUpon>XtraReportClosedFirstPaymentDefault.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReportClosedFirstPaymentDefaultDealerSummary.resx">
+      <DependentUpon>XtraReportClosedFirstPaymentDefaultDealerSummary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReportClosedPaidInAdvance.resx">
+      <DependentUpon>XtraReportClosedPaidInAdvance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReportClosedPaidInAdvanceDealerSummary.resx">
+      <DependentUpon>XtraReportClosedPaidInAdvanceDealerSummary.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="XtraReportClosedPaidInFull.resx">
       <DependentUpon>XtraReportClosedPaidInFull.cs</DependentUpon>

@@ -19,6 +19,7 @@ using Microsoft.SqlServer.Dts.Runtime;
 using Microsoft.SqlServer.Management.Smo;
 using Microsoft.SqlServer.Management.Common;
 using DevExpress.XtraSplashScreen;
+using ProManApp;
 
 
 namespace IAC2021SQL
@@ -804,7 +805,6 @@ namespace IAC2021SQL
         {
             IACDataSet ReportData = new IACDataSet();
             IACDataSetTableAdapters.CUSTOMERTableAdapter CustomerTableAdapter = new IACDataSetTableAdapters.CUSTOMERTableAdapter();
-            IACDataSetTableAdapters.DEALERTableAdapter DEALERTableAdapter = new IACDataSetTableAdapters.DEALERTableAdapter();
 
             CustomerTableAdapter.FillByNonPosted(ReportData.CUSTOMER);
             if (ReportData.CUSTOMER.Rows.Count < 1)
@@ -813,17 +813,22 @@ namespace IAC2021SQL
                 return;
             }
                 
-            DEALERTableAdapter.FillByNonPostedCustomers(ReportData.DEALER);
-            ClosedCustomerEditList myReportObject = new ClosedCustomerEditList();
-            myReportObject.SetDataSource(ReportData);
-            myReportObject.SetParameterValue("gsUserID", Program.gsUserID);
-            myReportObject.SetParameterValue("gsUserName", Program.gsUserName);
+            MDIIAC2013 MDImain = this;
+            // Moses Newman 09/07/2022 Covert to XtraReport
+            var report = new XtraReportClosedCustomerEditList();
+            SqlDataSource ds = report.DataSource as SqlDataSource;
 
-            CreateFormInstance("ReportViewer", false);
-            ReportViewer rptViewr = (ReportViewer)ActiveMdiChild;
-            rptViewr.crystalReportViewer.ReportSource = myReportObject;
-            rptViewr.crystalReportViewer.Refresh();
-            rptViewr.Show();
+            report.DataSource = ds;
+            report.RequestParameters = false;
+            report.Parameters["gsUserID"].Value = Program.gsUserID;
+            report.Parameters["gsUserName"].Value = Program.gsUserName;
+
+            var tool = new ReportPrintTool(report);
+
+            tool.PreviewRibbonForm.MdiParent = MDImain;
+            tool.AutoShowParametersPanel = false;
+            tool.PreviewRibbonForm.WindowState = FormWindowState.Maximized;
+            tool.ShowRibbonPreview();
         }
 
         // Closed Report 07 Paymnent Receipts Balance Journal without post

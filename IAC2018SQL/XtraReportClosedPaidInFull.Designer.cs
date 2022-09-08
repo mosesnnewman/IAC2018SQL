@@ -28,8 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(XtraReportClosedPaidInFull));
             DevExpress.XtraReports.UI.XRSummary xrSummary1 = new DevExpress.XtraReports.UI.XRSummary();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery1 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery2 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter1 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter2 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter3 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter4 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.MasterDetailInfo masterDetailInfo1 = new DevExpress.DataAccess.Sql.MasterDetailInfo();
+            DevExpress.DataAccess.Sql.RelationColumnInfo relationColumnInfo1 = new DevExpress.DataAccess.Sql.RelationColumnInfo();
             this.Area3 = new DevExpress.XtraReports.UI.DetailBand();
             this.CustomerNo1 = new DevExpress.XtraReports.UI.XRLabel();
             this.TypeCode_1 = new DevExpress.XtraReports.UI.XRLabel();
@@ -38,7 +47,6 @@
             this.ContractDate1 = new DevExpress.XtraReports.UI.XRLabel();
             this.FirstPaymentDate1 = new DevExpress.XtraReports.UI.XRLabel();
             this.DateClosed1 = new DevExpress.XtraReports.UI.XRLabel();
-            this.Dealer1 = new DevExpress.XtraReports.UI.XRLabel();
             this.DEALERNAME1 = new DevExpress.XtraReports.UI.XRLabel();
             this.State1 = new DevExpress.XtraReports.UI.XRLabel();
             this.Area1 = new DevExpress.XtraReports.UI.ReportHeaderBand();
@@ -76,6 +84,9 @@
             this.gsUserID = new DevExpress.XtraReports.Parameters.Parameter();
             this.topMarginBand1 = new DevExpress.XtraReports.UI.TopMarginBand();
             this.bottomMarginBand1 = new DevExpress.XtraReports.UI.BottomMarginBand();
+            this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
+            this.gsState = new DevExpress.XtraReports.Parameters.Parameter();
+            this.gsDealer = new DevExpress.XtraReports.Parameters.Parameter();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // Area3
@@ -88,7 +99,6 @@
             this.ContractDate1,
             this.FirstPaymentDate1,
             this.DateClosed1,
-            this.Dealer1,
             this.DEALERNAME1,
             this.State1});
             this.Area3.HeightF = 17F;
@@ -181,6 +191,7 @@
             this.ContractDate1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.ContractDate1.SizeF = new System.Drawing.SizeF(92.70834F, 14.58333F);
             this.ContractDate1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            this.ContractDate1.TextFormatString = "{0:MM/dd/yyyy}";
             // 
             // FirstPaymentDate1
             // 
@@ -198,6 +209,7 @@
             this.FirstPaymentDate1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.FirstPaymentDate1.SizeF = new System.Drawing.SizeF(92.70834F, 14.58333F);
             this.FirstPaymentDate1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            this.FirstPaymentDate1.TextFormatString = "{0:MM/dd/yyyy}";
             // 
             // DateClosed1
             // 
@@ -215,23 +227,7 @@
             this.DateClosed1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.DateClosed1.SizeF = new System.Drawing.SizeF(92.70834F, 14.58333F);
             this.DateClosed1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
-            // 
-            // Dealer1
-            // 
-            this.Dealer1.BackColor = System.Drawing.Color.Transparent;
-            this.Dealer1.BorderColor = System.Drawing.Color.Black;
-            this.Dealer1.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.Dealer1.BorderWidth = 1F;
-            this.Dealer1.CanGrow = false;
-            this.Dealer1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[Dealer]")});
-            this.Dealer1.Font = new System.Drawing.Font("Arial", 10F);
-            this.Dealer1.ForeColor = System.Drawing.Color.Black;
-            this.Dealer1.LocationFloat = new DevExpress.Utils.PointFloat(766.6667F, 0F);
-            this.Dealer1.Name = "Dealer1";
-            this.Dealer1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.Dealer1.SizeF = new System.Drawing.SizeF(28.125F, 16.66667F);
-            this.Dealer1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            this.DateClosed1.TextFormatString = "{0:MM/dd/yyyy}";
             // 
             // DEALERNAME1
             // 
@@ -241,13 +237,14 @@
             this.DEALERNAME1.BorderWidth = 1F;
             this.DEALERNAME1.CanGrow = false;
             this.DEALERNAME1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[DEALER_NAME]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[PaidInFullDEALER].[DEALER_ST]+\'-\'+ToStr([PaidInFullDEALER].[id])+\' \'+[PaidInFull" +
+                    "DEALER].[DEALER_NAME]")});
             this.DEALERNAME1.Font = new System.Drawing.Font("Arial", 8F);
             this.DEALERNAME1.ForeColor = System.Drawing.Color.Black;
-            this.DEALERNAME1.LocationFloat = new DevExpress.Utils.PointFloat(800F, 0F);
+            this.DEALERNAME1.LocationFloat = new DevExpress.Utils.PointFloat(766.6667F, 0F);
             this.DEALERNAME1.Name = "DEALERNAME1";
             this.DEALERNAME1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.DEALERNAME1.SizeF = new System.Drawing.SizeF(202.0833F, 16.66667F);
+            this.DEALERNAME1.SizeF = new System.Drawing.SizeF(235.4166F, 16.66667F);
             this.DEALERNAME1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
             // State1
@@ -264,7 +261,7 @@
             this.State1.LocationFloat = new DevExpress.Utils.PointFloat(1008.333F, 0F);
             this.State1.Name = "State1";
             this.State1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.State1.SizeF = new System.Drawing.SizeF(19.79167F, 16.66667F);
+            this.State1.SizeF = new System.Drawing.SizeF(31.66693F, 16.66667F);
             this.State1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
             // Area1
@@ -324,7 +321,7 @@
             this.Text21.LocationFloat = new DevExpress.Utils.PointFloat(316.6667F, 130.3333F);
             this.Text21.Name = "Text21";
             this.Text21.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.Text21.SizeF = new System.Drawing.SizeF(91.66666F, 16.66667F);
+            this.Text21.SizeF = new System.Drawing.SizeF(103.125F, 16.66667F);
             this.Text21.Text = "DATE RANGE:";
             this.Text21.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
@@ -344,6 +341,7 @@
             this.gdFromDate1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.gdFromDate1.SizeF = new System.Drawing.SizeF(83.33334F, 16.66667F);
             this.gdFromDate1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            this.gdFromDate1.TextFormatString = "{0:MM/dd/yyyy}";
             // 
             // Text22
             // 
@@ -377,6 +375,7 @@
             this.gdToDate1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.gdToDate1.SizeF = new System.Drawing.SizeF(83.33334F, 16.66667F);
             this.gdToDate1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            this.gdToDate1.TextFormatString = "{0:MM/dd/yyyy}";
             // 
             // Area2
             // 
@@ -641,7 +640,7 @@
             this.gsUserName_1.LocationFloat = new DevExpress.Utils.PointFloat(200F, 0F);
             this.gsUserName_1.Name = "gsUserName_1";
             this.gsUserName_1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.gsUserName_1.SizeF = new System.Drawing.SizeF(158.3333F, 18.33333F);
+            this.gsUserName_1.SizeF = new System.Drawing.SizeF(219.7916F, 18.33333F);
             this.gsUserName_1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
             // gsUserID_1
@@ -658,7 +657,7 @@
             this.gsUserID_1.LocationFloat = new DevExpress.Utils.PointFloat(158.3333F, 0F);
             this.gsUserID_1.Name = "gsUserID_1";
             this.gsUserID_1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.gsUserID_1.SizeF = new System.Drawing.SizeF(33.33333F, 18.33333F);
+            this.gsUserID_1.SizeF = new System.Drawing.SizeF(41.66672F, 18.33333F);
             this.gsUserID_1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
             // Text5
@@ -689,21 +688,22 @@
             this.DataTime1.Name = "DataTime1";
             this.DataTime1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.DataTime1.PageInfo = DevExpress.XtraPrinting.PageInfo.DateTime;
-            this.DataTime1.SizeF = new System.Drawing.SizeF(70.83334F, 18.33333F);
+            this.DataTime1.SizeF = new System.Drawing.SizeF(76.04167F, 18.33333F);
             this.DataTime1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
-            this.DataTime1.TextFormatString = "{0:t}";
+            this.DataTime1.TextFormatString = "{0:MM/dd/yyyy}";
             // 
             // TypeCode
             // 
-            this.TypeCode.Expression = "[PaidInFull.PaymentType] + \' / \' + [PaidInFull.PaymentCode]";
+            this.TypeCode.DataMember = "PaidInFull";
+            this.TypeCode.Expression = "[PaymentType] + \' / \' + [PaymentCode]";
             this.TypeCode.FieldType = DevExpress.XtraReports.UI.FieldType.String;
             this.TypeCode.Name = "TypeCode";
             // 
             // SSNUM
             // 
-            this.SSNUM.Expression = "Iif(True, \'#NOT_SUPPORTED#\', \'Left([PaidInFull.SocialSecurity], 3)\') + \'-\' + Subs" +
-    "tring([PaidInFull.SocialSecurity], 4, 2) + \'-\' + Iif(True, \'#NOT_SUPPORTED#\', \'R" +
-    "ight([PaidInFull.SocialSecurity], 4)\')";
+            this.SSNUM.DataMember = "PaidInFull";
+            this.SSNUM.Expression = "Substring([SocialSecurity], 0, 3) + \'-\' + Substring([SocialSecurity], 3, 2) + \'-\'" +
+    " + Substring([SocialSecurity], 5, 4)";
             this.SSNUM.FieldType = DevExpress.XtraReports.UI.FieldType.String;
             this.SSNUM.Name = "SSNUM";
             // 
@@ -712,22 +712,26 @@
             this.gdFromDate.Description = "Enter gdFromDate:";
             this.gdFromDate.Name = "gdFromDate";
             this.gdFromDate.Type = typeof(System.DateTime);
+            this.gdFromDate.ValueInfo = "2022-08-01";
             // 
             // gdToDate
             // 
             this.gdToDate.Description = "Enter gdToDate:";
             this.gdToDate.Name = "gdToDate";
             this.gdToDate.Type = typeof(System.DateTime);
+            this.gdToDate.ValueInfo = "2022-09-07";
             // 
             // gsUserName
             // 
             this.gsUserName.Description = "Enter gsUserName:";
             this.gsUserName.Name = "gsUserName";
+            this.gsUserName.ValueInfo = "Moses Newman";
             // 
             // gsUserID
             // 
             this.gsUserID.Description = "Enter gsUserID:";
             this.gsUserID.Name = "gsUserID";
+            this.gsUserID.ValueInfo = "MNN";
             // 
             // topMarginBand1
             // 
@@ -738,6 +742,55 @@
             // 
             this.bottomMarginBand1.HeightF = 25F;
             this.bottomMarginBand1.Name = "bottomMarginBand1";
+            // 
+            // sqlDataSource1
+            // 
+            this.sqlDataSource1.ConnectionName = "IAC2021SQL.Properties.Settings.IAC2010SQLConnectionString";
+            this.sqlDataSource1.Name = "sqlDataSource1";
+            storedProcQuery1.Name = "PaidInFull";
+            storedProcQuery1.StoredProcName = "PaidInFullSelectAllClosed";
+            storedProcQuery2.Name = "DEALER";
+            queryParameter1.Name = "@State";
+            queryParameter1.Type = typeof(DevExpress.DataAccess.Expression);
+            queryParameter1.Value = new DevExpress.DataAccess.Expression("?gsState", typeof(string));
+            queryParameter2.Name = "@Dealer";
+            queryParameter2.Type = typeof(DevExpress.DataAccess.Expression);
+            queryParameter2.Value = new DevExpress.DataAccess.Expression("?gsDealer", typeof(string));
+            queryParameter3.Name = "@From";
+            queryParameter3.Type = typeof(DevExpress.DataAccess.Expression);
+            queryParameter3.Value = new DevExpress.DataAccess.Expression("?gdFromDate", typeof(System.DateTime));
+            queryParameter4.Name = "@To";
+            queryParameter4.Type = typeof(DevExpress.DataAccess.Expression);
+            queryParameter4.Value = new DevExpress.DataAccess.Expression("?gdToDate", typeof(System.DateTime));
+            storedProcQuery2.Parameters.AddRange(new DevExpress.DataAccess.Sql.QueryParameter[] {
+            queryParameter1,
+            queryParameter2,
+            queryParameter3,
+            queryParameter4});
+            storedProcQuery2.StoredProcName = "ClosedDealerPaidInFull";
+            this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
+            storedProcQuery1,
+            storedProcQuery2});
+            masterDetailInfo1.DetailQueryName = "DEALER";
+            relationColumnInfo1.NestedKeyColumn = "DEALER_ACC_NO";
+            relationColumnInfo1.ParentKeyColumn = "Dealer";
+            masterDetailInfo1.KeyColumns.Add(relationColumnInfo1);
+            masterDetailInfo1.MasterQueryName = "PaidInFull";
+            this.sqlDataSource1.Relations.AddRange(new DevExpress.DataAccess.Sql.MasterDetailInfo[] {
+            masterDetailInfo1});
+            this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
+            // 
+            // gsState
+            // 
+            this.gsState.Description = "Enter gsState:";
+            this.gsState.Name = "gsState";
+            this.gsState.ValueInfo = "%";
+            // 
+            // gsDealer
+            // 
+            this.gsDealer.Description = "Enter gsDealer:";
+            this.gsDealer.Name = "gsDealer";
+            this.gsDealer.ValueInfo = "%";
             // 
             // XtraReportClosedPaidInFull
             // 
@@ -752,15 +805,28 @@
             this.CalculatedFields.AddRange(new DevExpress.XtraReports.UI.CalculatedField[] {
             this.TypeCode,
             this.SSNUM});
+            this.ComponentStorage.AddRange(new System.ComponentModel.IComponent[] {
+            this.sqlDataSource1});
+            this.DataMember = "PaidInFull";
+            this.DataSource = this.sqlDataSource1;
             this.Landscape = true;
             this.Margins = new System.Drawing.Printing.Margins(25, 25, 25, 25);
             this.PageHeight = 850;
             this.PageWidth = 1100;
+            this.ParameterPanelLayoutItems.AddRange(new DevExpress.XtraReports.Parameters.ParameterPanelLayoutItem[] {
+            new DevExpress.XtraReports.Parameters.ParameterLayoutItem(this.gdFromDate, DevExpress.XtraReports.Parameters.Orientation.Horizontal),
+            new DevExpress.XtraReports.Parameters.ParameterLayoutItem(this.gdToDate, DevExpress.XtraReports.Parameters.Orientation.Horizontal),
+            new DevExpress.XtraReports.Parameters.ParameterLayoutItem(this.gsUserName, DevExpress.XtraReports.Parameters.Orientation.Horizontal),
+            new DevExpress.XtraReports.Parameters.ParameterLayoutItem(this.gsUserID, DevExpress.XtraReports.Parameters.Orientation.Horizontal),
+            new DevExpress.XtraReports.Parameters.ParameterLayoutItem(this.gsState, DevExpress.XtraReports.Parameters.Orientation.Horizontal),
+            new DevExpress.XtraReports.Parameters.ParameterLayoutItem(this.gsDealer, DevExpress.XtraReports.Parameters.Orientation.Horizontal)});
             this.Parameters.AddRange(new DevExpress.XtraReports.Parameters.Parameter[] {
             this.gdFromDate,
             this.gdToDate,
             this.gsUserName,
-            this.gsUserID});
+            this.gsUserID,
+            this.gsState,
+            this.gsDealer});
             this.Version = "22.1";
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
@@ -776,7 +842,6 @@
         private DevExpress.XtraReports.UI.XRLabel ContractDate1;
         private DevExpress.XtraReports.UI.XRLabel FirstPaymentDate1;
         private DevExpress.XtraReports.UI.XRLabel DateClosed1;
-        private DevExpress.XtraReports.UI.XRLabel Dealer1;
         private DevExpress.XtraReports.UI.XRLabel DEALERNAME1;
         private DevExpress.XtraReports.UI.XRLabel State1;
         private DevExpress.XtraReports.UI.ReportHeaderBand Area1;
@@ -814,5 +879,8 @@
         private DevExpress.XtraReports.UI.XRPictureBox Picture1;
         private DevExpress.XtraReports.UI.TopMarginBand topMarginBand1;
         private DevExpress.XtraReports.UI.BottomMarginBand bottomMarginBand1;
+        private DevExpress.DataAccess.Sql.SqlDataSource sqlDataSource1;
+        private DevExpress.XtraReports.Parameters.Parameter gsState;
+        private DevExpress.XtraReports.Parameters.Parameter gsDealer;
     }
 }
