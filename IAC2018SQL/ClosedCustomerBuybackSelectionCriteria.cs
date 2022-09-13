@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
+using DevExpress.XtraReports.UI;
+using DevExpress.DataAccess.Sql;
+
 
 namespace IAC2021SQL
 {
@@ -58,12 +56,7 @@ namespace IAC2021SQL
         
         private void buttonPost_Click(object sender, EventArgs e)
         {
-            Hide();
-            MDIIAC2013 MDImain = (MDIIAC2013)MdiParent;
-            MDImain.CreateFormInstance("ReportViewer", false);
-            ReportViewer rptViewr = (ReportViewer)MDImain.ActiveMdiChild;
-
-            PrintCustomerBuyback(rptViewr);
+            PrintCustomerBuyback();
             Close();
         }
 
@@ -72,32 +65,46 @@ namespace IAC2021SQL
             Close();
         }
 
-        private void PrintCustomerBuyback(ReportViewer rptViewer)
+        private void PrintCustomerBuyback()
         {
-            IACDataSetTableAdapters.ClosedCustomerBuybackSummaryTableAdapter ClosedCustomerBuybackSummaryTableAdapter = 
-                                new IACDataSetTableAdapters.ClosedCustomerBuybackSummaryTableAdapter();
-            String  lsType = lookUpEditPaymentType.EditValue != null ? lookUpEditPaymentType.EditValue.ToString().Trim() : "" + "%", 
+                    String  lsType = lookUpEditPaymentType.EditValue != null ? lookUpEditPaymentType.EditValue.ToString().Trim() : "" + "%", 
                     lsCode = lookUpEditCodeType.EditValue != null ? lookUpEditCodeType.EditValue.ToString().Trim() : "" + "%",
                     lsDealer    = lookUpEditDealer.EditValue != null ? lookUpEditDealer.EditValue.ToString().Trim() : "" + "%",
                     lsDealerState = lookUpEditDealerState.EditValue != null ? lookUpEditDealerState.EditValue.ToString().Trim() : "" + "%", 
                     lsCustomerState = lookUpEditCustomerState.EditValue != null ? lookUpEditCustomerState.EditValue.ToString().Trim() : "" + "%";
 
             closedCustomerBuybackTableAdapter.Fill(iACDataSet.ClosedCustomerBuyback, ((DateTime)nullableDateTimePickerEndDate.EditValue).Date, ((DateTime)nullableDateTimePickerStartDate.EditValue).Date, lsType,lsCode,lsDealer,lsDealerState,lsCustomerState);
-            ClosedCustomerBuybackSummaryTableAdapter.Fill(iACDataSet.ClosedCustomerBuybackSummary, ((DateTime)nullableDateTimePickerEndDate.EditValue).Date, ((DateTime)nullableDateTimePickerStartDate.EditValue).Date, lsType, lsCode, lsDealer,lsDealerState,lsCustomerState);
             
             if (iACDataSet.ClosedCustomerBuyback.Rows.Count == 0)
                 MessageBox.Show("*** Sorry there are no CUSTOMER HISTORY records for the DATES and /or DEALER you selected!!! ***");
             else
             {
-                ClosedCustomerBuybackReport myReportObject = new ClosedCustomerBuybackReport();
-                myReportObject.SetDataSource(iACDataSet);
-                myReportObject.SetParameterValue("gdStartDate", ((DateTime)nullableDateTimePickerStartDate.EditValue).Date);
-                myReportObject.SetParameterValue("gdEndDate", ((DateTime)nullableDateTimePickerEndDate.EditValue).Date);
-                myReportObject.SetParameterValue("gsUserID", Program.gsUserID);
-                myReportObject.SetParameterValue("gsUserName", Program.gsUserName);
-                rptViewer.crystalReportViewer.ReportSource = myReportObject;
-                rptViewer.crystalReportViewer.Refresh();
-                rptViewer.Show();
+                Hide();
+                MDIIAC2013 MDImain = (MDIIAC2013)MdiParent;
+
+                // Moses Newman 09/12/2022 Covert to XtraReport
+                var report = new XtraReportClosedCustomerBuyback();
+                SqlDataSource ds = report.DataSource as SqlDataSource;
+
+                report.DataSource = ds;
+                report.RequestParameters = false;
+                report.Parameters["gsUserID"].Value = Program.gsUserID;
+                report.Parameters["gsUserName"].Value = Program.gsUserName;
+                report.Parameters["gdStartDate"].Value = ((DateTime)nullableDateTimePickerStartDate.EditValue).Date;
+                report.Parameters["gdEndDate"].Value = ((DateTime)nullableDateTimePickerEndDate.EditValue).Date;
+                report.Parameters["gsType"].Value = lsType;
+                report.Parameters["gsCode"].Value = lsCode;
+                report.Parameters["gsDealer"].Value = lsDealer;
+                report.Parameters["gsDealerState"].Value = lsDealerState;
+                report.Parameters["gsState"].Value = lsCustomerState;
+
+
+                var tool = new ReportPrintTool(report);
+
+                tool.PreviewRibbonForm.MdiParent = MDImain;
+                tool.AutoShowParametersPanel = false;
+                tool.PreviewRibbonForm.WindowState = FormWindowState.Maximized;
+                tool.ShowRibbonPreview();
             }
         }
 
