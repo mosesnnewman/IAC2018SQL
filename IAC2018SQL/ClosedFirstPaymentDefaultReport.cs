@@ -6,7 +6,7 @@ using DevExpress.DataAccess.Sql;
 
 namespace IAC2021SQL
 {
-    public partial class frmClosedFirstPaymentDefaultReport : Form
+    public partial class frmClosedFirstPaymentDefaultReport : DevExpress.XtraEditors.XtraForm
     {
         BackgroundWorker worker;
         QueryProgress lfrm;
@@ -20,7 +20,7 @@ namespace IAC2021SQL
         private void frmClosedFirstPaymentDefaultReport_Load(object sender, EventArgs e)
         {
             PerformAutoScale();
-            nullableDateTimePickerDueDate.Value = DateTime.Now.Date;
+            nullableDateTimePickerDueDate.EditValue = DateTime.Now.Date;
         }
 
         private void worker_PrintDelinquencyReport(object sender, DoWorkEventArgs e)
@@ -31,7 +31,7 @@ namespace IAC2021SQL
         private void DoAmort()
         {
             IACDataSet WorkSet = new IACDataSet();
-            DateTime ldCurrDate = ((DateTime)(nullableDateTimePickerDueDate.Value)).Date;
+            DateTime ldCurrDate = ((DateTime)(nullableDateTimePickerDueDate.EditValue)).Date;
             ClosedPaymentPosting CPaymentPost = new ClosedPaymentPosting();
             int lnProgress = 0;
             IACDataSetTableAdapters.CUSTOMERTableAdapter CUSTOMERTableAdapter = new IACDataSetTableAdapters.CUSTOMERTableAdapter();
@@ -51,7 +51,7 @@ namespace IAC2021SQL
 
         private void PrintDelinquencyReport()
         {
-            DateTime ldCurrDate = ((DateTime)(nullableDateTimePickerDueDate.Value)).Date;
+            DateTime ldCurrDate = ((DateTime)(nullableDateTimePickerDueDate.EditValue)).Date;
 
             IACDataSet DelinquencyData = new IACDataSet();
             IACDataSetTableAdapters.CUSTOMERTableAdapter CUSTOMERTableAdapter = new IACDataSetTableAdapters.CUSTOMERTableAdapter();
