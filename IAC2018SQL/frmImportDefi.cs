@@ -1,10 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
+using System.Data;
+using System.Data.SqlClient;
+using DevExpress.XtraReports.UI;
+using DevExpress.DataAccess.Sql;
 
 namespace IAC2021SQL
 {
@@ -18,9 +17,23 @@ namespace IAC2021SQL
         
         private void buttonTransfer_Click(object sender, EventArgs e)
         {
-            IACDataSetTableAdapters.CUSTOMERTableAdapter CUSTOMERTableAdapter = new IACDataSetTableAdapters.CUSTOMERTableAdapter();
+            SqlConnection PDFConnection = new SqlConnection("Data Source=SQL-IAC;Initial Catalog=IACSQLPRODUCTION;Integrated Security=SSPI;TrustServerCertificate=True");
 
-            CUSTOMERTableAdapter.ImportFromDEFI();
+            IACDataSetTableAdapters.CUSTOMERTableAdapter CUSTOMERTableAdapter = new IACDataSetTableAdapters.CUSTOMERTableAdapter();
+            // Moses Newman 09/16/2022 change to SqlCommand with timeout so that stored procedure does not timeout!
+
+            using (SqlCommand cmd = new SqlCommand("ImportFromDEFI"))
+            {
+                cmd.Connection = PDFConnection;
+                cmd.CommandTimeout = 300; //in seconds
+                                          //etc...
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Connection.Open();
+                cmd.ExecuteNonQuery();
+                cmd.Connection.Close();
+            }
+
+            //CUSTOMERTableAdapter.ImportFromDEFI();
             PrintIt();
 
             MessageBox.Show("*** Finished importing Defi XML Applications! ***");
@@ -56,7 +69,6 @@ namespace IAC2021SQL
             MDIIAC2013 MDImain = (MDIIAC2013)MdiParent, MDImain2 = (MDIIAC2013)MdiParent;
             IACDataSet ReportData = new IACDataSet();
             IACDataSetTableAdapters.CUSTOMERTableAdapter CustomerTableAdapter = new IACDataSetTableAdapters.CUSTOMERTableAdapter();
-            IACDataSetTableAdapters.DEALERTableAdapter DEALERTableAdapter = new IACDataSetTableAdapters.DEALERTableAdapter();
             IACDataSetTableAdapters.DuplicatesDefiTableAdapter DuplicatesDefiTableAdapter = new IACDataSetTableAdapters.DuplicatesDefiTableAdapter();
 
 
@@ -67,33 +79,43 @@ namespace IAC2021SQL
             }
             else
             {
-                DEALERTableAdapter.FillByMissingDealersDefi(ReportData.DEALER);
-                ClosedCustomerEditListDefi myReportObject = new ClosedCustomerEditListDefi();
-                MDImain.CreateFormInstance("ReportViewer", false);
-                ReportViewer rptViewr = (ReportViewer)MDImain.ActiveMdiChild;
-                myReportObject.SetDataSource(ReportData);
-                myReportObject.SetParameterValue("gsUserID", Program.gsUserID);
-                myReportObject.SetParameterValue("gsUserName", Program.gsUserName);
+                // Moses Newman 09/21/2022 Covert to XtraReport
+                var report = new XtraReportClosedCustomerEditList();
+                SqlDataSource ds = report.DataSource as SqlDataSource;
 
-                rptViewr.crystalReportViewer.ReportSource = myReportObject;
-                rptViewr.crystalReportViewer.Refresh();
-                rptViewr.Show();
+                report.DataSource = ds;
+                report.RequestParameters = false;
+                report.Parameters["gsUserID"].Value = Program.gsUserID;
+                report.Parameters["gsUserName"].Value = Program.gsUserName;
+                report.Parameters["gbDEFI"].Value = true;
+
+                var tool = new ReportPrintTool(report);
+
+                tool.PreviewRibbonForm.MdiParent = MDImain;
+                tool.AutoShowParametersPanel = false;
+                tool.PreviewRibbonForm.WindowState = FormWindowState.Maximized;
+                tool.ShowRibbonPreview();
+
             }
-            CustomerTableAdapter.FillByDupesDefi(ReportData.CUSTOMER);  
             DuplicatesDefiTableAdapter.FillByAll(ReportData.DuplicatesDefi);
-            DEALERTableAdapter.FillByDupesDefi(ReportData.DEALER);
             if (ReportData.DuplicatesDefi.Rows.Count > 0)
-            {  
-                DefiDuplicates myReportObject2 = new DefiDuplicates();
-                myReportObject2.SetDataSource(ReportData);
-                myReportObject2.SetParameterValue("gsUserID", Program.gsUserID);
-                myReportObject2.SetParameterValue("gsUserName", Program.gsUserName);
-                myReportObject2.SetParameterValue("gsTitle", "Defi - Rejected Duplicate Accounts");
-                MDImain2.CreateFormInstance("ReportViewer", false);
-                ReportViewer rptViewr2 = (ReportViewer)MDImain2.ActiveMdiChild;
-                rptViewr2.crystalReportViewer.ReportSource = myReportObject2;
-                rptViewr2.crystalReportViewer.Refresh();
-                rptViewr2.Show();
+            {
+                // Moses Newman 09/21/2022 Covert to XtraReport
+                var report = new XtraReportDefiDuplicates();
+                SqlDataSource ds = report.DataSource as SqlDataSource;
+
+                report.DataSource = ds;
+                report.RequestParameters = false;
+                report.Parameters["gsUserID"].Value = Program.gsUserID;
+                report.Parameters["gsUserName"].Value = Program.gsUserName;
+                report.Parameters["gsTitle"].Value = "Defi - Rejected Duplicate Accounts";
+
+                var tool = new ReportPrintTool(report);
+
+                tool.PreviewRibbonForm.MdiParent = MDImain;
+                tool.AutoShowParametersPanel = false;
+                tool.PreviewRibbonForm.WindowState = FormWindowState.Maximized;
+                tool.ShowRibbonPreview();
             }   
         }
     }

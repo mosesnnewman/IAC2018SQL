@@ -70,26 +70,6 @@
             this.gdStartDate1 = new DevExpress.XtraReports.UI.XRLabel();
             this.gdEndDate1 = new DevExpress.XtraReports.UI.XRLabel();
             this.Text14 = new DevExpress.XtraReports.UI.XRLabel();
-            this.Area4 = new DevExpress.XtraReports.UI.ReportFooterBand();
-            this.Area5 = new DevExpress.XtraReports.UI.PageFooterBand();
-            this.PageNofM1 = new DevExpress.XtraReports.UI.XRPageInfo();
-            this.gsUserName_1 = new DevExpress.XtraReports.UI.XRLabel();
-            this.gsUserID_1 = new DevExpress.XtraReports.UI.XRLabel();
-            this.Text6 = new DevExpress.XtraReports.UI.XRLabel();
-            this.DataTime1 = new DevExpress.XtraReports.UI.XRPageInfo();
-            this.DataDate1 = new DevExpress.XtraReports.UI.XRPageInfo();
-            this.gsUserName = new DevExpress.XtraReports.Parameters.Parameter();
-            this.gsUserID = new DevExpress.XtraReports.Parameters.Parameter();
-            this.gdEndDate = new DevExpress.XtraReports.Parameters.Parameter();
-            this.topMarginBand1 = new DevExpress.XtraReports.UI.TopMarginBand();
-            this.bottomMarginBand1 = new DevExpress.XtraReports.UI.BottomMarginBand();
-            this.gsDealer = new DevExpress.XtraReports.Parameters.Parameter();
-            this.gsDealerState = new DevExpress.XtraReports.Parameters.Parameter();
-            this.gsState = new DevExpress.XtraReports.Parameters.Parameter();
-            this.gsType = new DevExpress.XtraReports.Parameters.Parameter();
-            this.gsCode = new DevExpress.XtraReports.Parameters.Parameter();
-            this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
-            this.gdStartDate = new DevExpress.XtraReports.Parameters.Parameter();
             this.SubBand1 = new DevExpress.XtraReports.UI.SubBand();
             this.xrLine1 = new DevExpress.XtraReports.UI.XRLine();
             this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
@@ -99,7 +79,27 @@
             this.xrLabel5 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel6 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel7 = new DevExpress.XtraReports.UI.XRLabel();
+            this.Area4 = new DevExpress.XtraReports.UI.ReportFooterBand();
             this.DealerSummary = new DevExpress.XtraReports.UI.XRSubreport();
+            this.gdEndDate = new DevExpress.XtraReports.Parameters.Parameter();
+            this.gdStartDate = new DevExpress.XtraReports.Parameters.Parameter();
+            this.gsCode = new DevExpress.XtraReports.Parameters.Parameter();
+            this.gsType = new DevExpress.XtraReports.Parameters.Parameter();
+            this.gsDealer = new DevExpress.XtraReports.Parameters.Parameter();
+            this.gsDealerState = new DevExpress.XtraReports.Parameters.Parameter();
+            this.gsState = new DevExpress.XtraReports.Parameters.Parameter();
+            this.Area5 = new DevExpress.XtraReports.UI.PageFooterBand();
+            this.PageNofM1 = new DevExpress.XtraReports.UI.XRPageInfo();
+            this.gsUserName_1 = new DevExpress.XtraReports.UI.XRLabel();
+            this.gsUserID_1 = new DevExpress.XtraReports.UI.XRLabel();
+            this.Text6 = new DevExpress.XtraReports.UI.XRLabel();
+            this.DataTime1 = new DevExpress.XtraReports.UI.XRPageInfo();
+            this.DataDate1 = new DevExpress.XtraReports.UI.XRPageInfo();
+            this.gsUserName = new DevExpress.XtraReports.Parameters.Parameter();
+            this.gsUserID = new DevExpress.XtraReports.Parameters.Parameter();
+            this.topMarginBand1 = new DevExpress.XtraReports.UI.TopMarginBand();
+            this.bottomMarginBand1 = new DevExpress.XtraReports.UI.BottomMarginBand();
+            this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // Area3
@@ -261,7 +261,7 @@
             // GroupHeaderArea1
             // 
             this.GroupHeaderArea1.GroupFields.AddRange(new DevExpress.XtraReports.UI.GroupField[] {
-            new DevExpress.XtraReports.UI.GroupField("CUSTOMER_DEALER", DevExpress.XtraReports.UI.XRColumnSortOrder.Ascending)});
+            new DevExpress.XtraReports.UI.GroupField("typecode", DevExpress.XtraReports.UI.XRColumnSortOrder.Ascending)});
             this.GroupHeaderArea1.HeightF = 0F;
             this.GroupHeaderArea1.KeepTogether = true;
             this.GroupHeaderArea1.Name = "GroupHeaderArea1";
@@ -271,7 +271,7 @@
             // GroupHeaderArea2
             // 
             this.GroupHeaderArea2.GroupFields.AddRange(new DevExpress.XtraReports.UI.GroupField[] {
-            new DevExpress.XtraReports.UI.GroupField("typecode", DevExpress.XtraReports.UI.XRColumnSortOrder.Ascending)});
+            new DevExpress.XtraReports.UI.GroupField("CUSTOMER_DEALER", DevExpress.XtraReports.UI.XRColumnSortOrder.Ascending)});
             this.GroupHeaderArea2.HeightF = 0F;
             this.GroupHeaderArea2.KeepTogether = true;
             this.GroupHeaderArea2.Level = 1;
@@ -555,231 +555,6 @@
             this.Text14.Text = "TO";
             this.Text14.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
             // 
-            // Area4
-            // 
-            this.Area4.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-            this.DealerSummary});
-            this.Area4.HeightF = 58F;
-            this.Area4.KeepTogether = true;
-            this.Area4.Name = "Area4";
-            this.Area4.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
-            this.Area4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
-            // 
-            // Area5
-            // 
-            this.Area5.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-            this.PageNofM1,
-            this.gsUserName_1,
-            this.gsUserID_1,
-            this.Text6,
-            this.DataTime1,
-            this.DataDate1});
-            this.Area5.HeightF = 41F;
-            this.Area5.Name = "Area5";
-            this.Area5.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
-            this.Area5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
-            // 
-            // PageNofM1
-            // 
-            this.PageNofM1.BackColor = System.Drawing.Color.Transparent;
-            this.PageNofM1.BorderColor = System.Drawing.Color.Black;
-            this.PageNofM1.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.PageNofM1.BorderWidth = 1F;
-            this.PageNofM1.Font = new System.Drawing.Font("Arial", 10F);
-            this.PageNofM1.ForeColor = System.Drawing.Color.Black;
-            this.PageNofM1.LocationFloat = new DevExpress.Utils.PointFloat(591.6667F, 0F);
-            this.PageNofM1.Name = "PageNofM1";
-            this.PageNofM1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.PageNofM1.SizeF = new System.Drawing.SizeF(158.3333F, 18.33333F);
-            this.PageNofM1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
-            // 
-            // gsUserName_1
-            // 
-            this.gsUserName_1.BackColor = System.Drawing.Color.Transparent;
-            this.gsUserName_1.BorderColor = System.Drawing.Color.Black;
-            this.gsUserName_1.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.gsUserName_1.BorderWidth = 1F;
-            this.gsUserName_1.CanGrow = false;
-            this.gsUserName_1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "?gsUserName")});
-            this.gsUserName_1.Font = new System.Drawing.Font("Arial", 10F);
-            this.gsUserName_1.ForeColor = System.Drawing.Color.Black;
-            this.gsUserName_1.LocationFloat = new DevExpress.Utils.PointFloat(291.6667F, 0F);
-            this.gsUserName_1.Name = "gsUserName_1";
-            this.gsUserName_1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.gsUserName_1.SizeF = new System.Drawing.SizeF(250F, 18.33333F);
-            this.gsUserName_1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
-            // 
-            // gsUserID_1
-            // 
-            this.gsUserID_1.BackColor = System.Drawing.Color.Transparent;
-            this.gsUserID_1.BorderColor = System.Drawing.Color.Black;
-            this.gsUserID_1.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.gsUserID_1.BorderWidth = 1F;
-            this.gsUserID_1.CanGrow = false;
-            this.gsUserID_1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "?gsUserID")});
-            this.gsUserID_1.Font = new System.Drawing.Font("Arial", 10F);
-            this.gsUserID_1.ForeColor = System.Drawing.Color.Black;
-            this.gsUserID_1.LocationFloat = new DevExpress.Utils.PointFloat(250F, 0F);
-            this.gsUserID_1.Name = "gsUserID_1";
-            this.gsUserID_1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.gsUserID_1.SizeF = new System.Drawing.SizeF(41.66666F, 18.33333F);
-            this.gsUserID_1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
-            // 
-            // Text6
-            // 
-            this.Text6.BackColor = System.Drawing.Color.Transparent;
-            this.Text6.BorderColor = System.Drawing.Color.Black;
-            this.Text6.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.Text6.BorderWidth = 1F;
-            this.Text6.CanGrow = false;
-            this.Text6.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.Text6.ForeColor = System.Drawing.Color.Black;
-            this.Text6.LocationFloat = new DevExpress.Utils.PointFloat(183.3333F, 0F);
-            this.Text6.Name = "Text6";
-            this.Text6.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.Text6.SizeF = new System.Drawing.SizeF(50F, 18.33333F);
-            this.Text6.Text = "USER:";
-            this.Text6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
-            // 
-            // DataTime1
-            // 
-            this.DataTime1.BackColor = System.Drawing.Color.Transparent;
-            this.DataTime1.BorderColor = System.Drawing.Color.Black;
-            this.DataTime1.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.DataTime1.BorderWidth = 1F;
-            this.DataTime1.Font = new System.Drawing.Font("Arial", 10F);
-            this.DataTime1.ForeColor = System.Drawing.Color.Black;
-            this.DataTime1.LocationFloat = new DevExpress.Utils.PointFloat(83.33334F, 0F);
-            this.DataTime1.Name = "DataTime1";
-            this.DataTime1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.DataTime1.PageInfo = DevExpress.XtraPrinting.PageInfo.DateTime;
-            this.DataTime1.SizeF = new System.Drawing.SizeF(70.83334F, 18.33333F);
-            this.DataTime1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
-            this.DataTime1.TextFormatString = "{0:t}";
-            // 
-            // DataDate1
-            // 
-            this.DataDate1.BackColor = System.Drawing.Color.Transparent;
-            this.DataDate1.BorderColor = System.Drawing.Color.Black;
-            this.DataDate1.Borders = DevExpress.XtraPrinting.BorderSide.None;
-            this.DataDate1.BorderWidth = 1F;
-            this.DataDate1.Font = new System.Drawing.Font("Arial", 10F);
-            this.DataDate1.ForeColor = System.Drawing.Color.Black;
-            this.DataDate1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
-            this.DataDate1.Name = "DataDate1";
-            this.DataDate1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.DataDate1.PageInfo = DevExpress.XtraPrinting.PageInfo.DateTime;
-            this.DataDate1.SizeF = new System.Drawing.SizeF(80.20834F, 18.33333F);
-            this.DataDate1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
-            this.DataDate1.TextFormatString = "{0:MM/dd/yyyy}";
-            // 
-            // gsUserName
-            // 
-            this.gsUserName.Description = "Enter gsUserName:";
-            this.gsUserName.Name = "gsUserName";
-            this.gsUserName.ValueInfo = "Moses Newman";
-            // 
-            // gsUserID
-            // 
-            this.gsUserID.Description = "Enter gsUserID:";
-            this.gsUserID.Name = "gsUserID";
-            this.gsUserID.ValueInfo = "MNN";
-            // 
-            // gdEndDate
-            // 
-            this.gdEndDate.Description = "Enter gdEndDate:";
-            this.gdEndDate.Name = "gdEndDate";
-            this.gdEndDate.Type = typeof(System.DateTime);
-            this.gdEndDate.ValueInfo = "2022-09-12";
-            // 
-            // topMarginBand1
-            // 
-            this.topMarginBand1.HeightF = 50F;
-            this.topMarginBand1.Name = "topMarginBand1";
-            // 
-            // bottomMarginBand1
-            // 
-            this.bottomMarginBand1.HeightF = 50F;
-            this.bottomMarginBand1.Name = "bottomMarginBand1";
-            // 
-            // gsDealer
-            // 
-            this.gsDealer.Description = "Enter Dealer Number";
-            this.gsDealer.Name = "gsDealer";
-            this.gsDealer.ValueInfo = "%";
-            // 
-            // gsDealerState
-            // 
-            this.gsDealerState.Description = "Enter Dealer State:";
-            this.gsDealerState.Name = "gsDealerState";
-            this.gsDealerState.ValueInfo = "%";
-            // 
-            // gsState
-            // 
-            this.gsState.Description = "Enter Customer State:";
-            this.gsState.Name = "gsState";
-            this.gsState.ValueInfo = "%";
-            // 
-            // gsType
-            // 
-            this.gsType.Description = "Enter Payment Type:";
-            this.gsType.Name = "gsType";
-            this.gsType.ValueInfo = "%";
-            // 
-            // gsCode
-            // 
-            this.gsCode.Description = "Enter Payment Code:";
-            this.gsCode.Name = "gsCode";
-            this.gsCode.ValueInfo = "%";
-            // 
-            // sqlDataSource1
-            // 
-            this.sqlDataSource1.ConnectionName = "IAC2021SQL.Properties.Settings.IAC2010SQLConnectionString";
-            this.sqlDataSource1.Name = "sqlDataSource1";
-            storedProcQuery1.Name = "ClosedCustomerBuyBackSelect";
-            queryParameter1.Name = "@EndDate";
-            queryParameter1.Type = typeof(DevExpress.DataAccess.Expression);
-            queryParameter1.Value = new DevExpress.DataAccess.Expression("?gdEndDate", typeof(System.DateTime));
-            queryParameter2.Name = "@StartDate";
-            queryParameter2.Type = typeof(DevExpress.DataAccess.Expression);
-            queryParameter2.Value = new DevExpress.DataAccess.Expression("?gdStartDate", typeof(System.DateTime));
-            queryParameter3.Name = "@CUSTHIST_PAYMENT_TYPE";
-            queryParameter3.Type = typeof(DevExpress.DataAccess.Expression);
-            queryParameter3.Value = new DevExpress.DataAccess.Expression("?gsType", typeof(string));
-            queryParameter4.Name = "@CUSTHIST_PAYMENT_CODE";
-            queryParameter4.Type = typeof(DevExpress.DataAccess.Expression);
-            queryParameter4.Value = new DevExpress.DataAccess.Expression("?gsCode", typeof(string));
-            queryParameter5.Name = "@CUSTOMER_DEALER";
-            queryParameter5.Type = typeof(DevExpress.DataAccess.Expression);
-            queryParameter5.Value = new DevExpress.DataAccess.Expression("?gsDealer", typeof(string));
-            queryParameter6.Name = "@DEALER_STATE";
-            queryParameter6.Type = typeof(DevExpress.DataAccess.Expression);
-            queryParameter6.Value = new DevExpress.DataAccess.Expression("?gsDealerState", typeof(string));
-            queryParameter7.Name = "@CUSTOMER_STATE";
-            queryParameter7.Type = typeof(DevExpress.DataAccess.Expression);
-            queryParameter7.Value = new DevExpress.DataAccess.Expression("?gsState", typeof(string));
-            storedProcQuery1.Parameters.AddRange(new DevExpress.DataAccess.Sql.QueryParameter[] {
-            queryParameter1,
-            queryParameter2,
-            queryParameter3,
-            queryParameter4,
-            queryParameter5,
-            queryParameter6,
-            queryParameter7});
-            storedProcQuery1.StoredProcName = "ClosedCustomerBuyBackSelect";
-            this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            storedProcQuery1});
-            this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
-            // 
-            // gdStartDate
-            // 
-            this.gdStartDate.Description = "Enter Start Date:";
-            this.gdStartDate.Name = "gdStartDate";
-            this.gdStartDate.Type = typeof(System.DateTime);
-            this.gdStartDate.ValueInfo = "2022-08-01";
-            // 
             // SubBand1
             // 
             this.SubBand1.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
@@ -920,12 +695,23 @@
             this.xrLabel7.Text = "CUST# / ST";
             this.xrLabel7.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
+            // Area4
+            // 
+            this.Area4.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.DealerSummary});
+            this.Area4.HeightF = 58F;
+            this.Area4.KeepTogether = true;
+            this.Area4.Name = "Area4";
+            this.Area4.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
+            this.Area4.PageBreak = DevExpress.XtraReports.UI.PageBreak.BeforeBand;
+            this.Area4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            // 
             // DealerSummary
             // 
             this.DealerSummary.LocationFloat = new DevExpress.Utils.PointFloat(6.597222F, 5.555555F);
             this.DealerSummary.Name = "DealerSummary";
             this.DealerSummary.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gdEndDate", this.gdEndDate));
-            this.DealerSummary.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gsStartDate", this.gdStartDate));
+            this.DealerSummary.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gdStartDate", this.gdStartDate));
             this.DealerSummary.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gsCode", this.gsCode));
             this.DealerSummary.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gsType", this.gsType));
             this.DealerSummary.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gsDealer", this.gsDealer));
@@ -933,6 +719,221 @@
             this.DealerSummary.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gsState", this.gsState));
             this.DealerSummary.ReportSource = new IAC2021SQL.XtraReportClosedCustomerBuybackDealerSummary();
             this.DealerSummary.SizeF = new System.Drawing.SizeF(735.0695F, 50F);
+            // 
+            // gdEndDate
+            // 
+            this.gdEndDate.Description = "Enter gdEndDate:";
+            this.gdEndDate.Name = "gdEndDate";
+            this.gdEndDate.Type = typeof(System.DateTime);
+            this.gdEndDate.ValueInfo = "2022-09-12";
+            // 
+            // gdStartDate
+            // 
+            this.gdStartDate.Description = "Enter Start Date:";
+            this.gdStartDate.Name = "gdStartDate";
+            this.gdStartDate.Type = typeof(System.DateTime);
+            this.gdStartDate.ValueInfo = "2022-08-01";
+            // 
+            // gsCode
+            // 
+            this.gsCode.Description = "Enter Payment Code:";
+            this.gsCode.Name = "gsCode";
+            this.gsCode.ValueInfo = "%";
+            // 
+            // gsType
+            // 
+            this.gsType.Description = "Enter Payment Type:";
+            this.gsType.Name = "gsType";
+            this.gsType.ValueInfo = "%";
+            // 
+            // gsDealer
+            // 
+            this.gsDealer.Description = "Enter Dealer Number";
+            this.gsDealer.Name = "gsDealer";
+            this.gsDealer.ValueInfo = "%";
+            // 
+            // gsDealerState
+            // 
+            this.gsDealerState.Description = "Enter Dealer State:";
+            this.gsDealerState.Name = "gsDealerState";
+            this.gsDealerState.ValueInfo = "%";
+            // 
+            // gsState
+            // 
+            this.gsState.Description = "Enter Customer State:";
+            this.gsState.Name = "gsState";
+            this.gsState.ValueInfo = "%";
+            // 
+            // Area5
+            // 
+            this.Area5.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.PageNofM1,
+            this.gsUserName_1,
+            this.gsUserID_1,
+            this.Text6,
+            this.DataTime1,
+            this.DataDate1});
+            this.Area5.HeightF = 41F;
+            this.Area5.Name = "Area5";
+            this.Area5.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
+            this.Area5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            // 
+            // PageNofM1
+            // 
+            this.PageNofM1.BackColor = System.Drawing.Color.Transparent;
+            this.PageNofM1.BorderColor = System.Drawing.Color.Black;
+            this.PageNofM1.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.PageNofM1.BorderWidth = 1F;
+            this.PageNofM1.Font = new System.Drawing.Font("Arial", 10F);
+            this.PageNofM1.ForeColor = System.Drawing.Color.Black;
+            this.PageNofM1.LocationFloat = new DevExpress.Utils.PointFloat(591.6667F, 0F);
+            this.PageNofM1.Name = "PageNofM1";
+            this.PageNofM1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.PageNofM1.SizeF = new System.Drawing.SizeF(158.3333F, 18.33333F);
+            this.PageNofM1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            // 
+            // gsUserName_1
+            // 
+            this.gsUserName_1.BackColor = System.Drawing.Color.Transparent;
+            this.gsUserName_1.BorderColor = System.Drawing.Color.Black;
+            this.gsUserName_1.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.gsUserName_1.BorderWidth = 1F;
+            this.gsUserName_1.CanGrow = false;
+            this.gsUserName_1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "?gsUserName")});
+            this.gsUserName_1.Font = new System.Drawing.Font("Arial", 10F);
+            this.gsUserName_1.ForeColor = System.Drawing.Color.Black;
+            this.gsUserName_1.LocationFloat = new DevExpress.Utils.PointFloat(291.6667F, 0F);
+            this.gsUserName_1.Name = "gsUserName_1";
+            this.gsUserName_1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.gsUserName_1.SizeF = new System.Drawing.SizeF(250F, 18.33333F);
+            this.gsUserName_1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            // 
+            // gsUserID_1
+            // 
+            this.gsUserID_1.BackColor = System.Drawing.Color.Transparent;
+            this.gsUserID_1.BorderColor = System.Drawing.Color.Black;
+            this.gsUserID_1.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.gsUserID_1.BorderWidth = 1F;
+            this.gsUserID_1.CanGrow = false;
+            this.gsUserID_1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "?gsUserID")});
+            this.gsUserID_1.Font = new System.Drawing.Font("Arial", 10F);
+            this.gsUserID_1.ForeColor = System.Drawing.Color.Black;
+            this.gsUserID_1.LocationFloat = new DevExpress.Utils.PointFloat(250F, 0F);
+            this.gsUserID_1.Name = "gsUserID_1";
+            this.gsUserID_1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.gsUserID_1.SizeF = new System.Drawing.SizeF(41.66666F, 18.33333F);
+            this.gsUserID_1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            // 
+            // Text6
+            // 
+            this.Text6.BackColor = System.Drawing.Color.Transparent;
+            this.Text6.BorderColor = System.Drawing.Color.Black;
+            this.Text6.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.Text6.BorderWidth = 1F;
+            this.Text6.CanGrow = false;
+            this.Text6.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.Text6.ForeColor = System.Drawing.Color.Black;
+            this.Text6.LocationFloat = new DevExpress.Utils.PointFloat(183.3333F, 0F);
+            this.Text6.Name = "Text6";
+            this.Text6.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.Text6.SizeF = new System.Drawing.SizeF(50F, 18.33333F);
+            this.Text6.Text = "USER:";
+            this.Text6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            // 
+            // DataTime1
+            // 
+            this.DataTime1.BackColor = System.Drawing.Color.Transparent;
+            this.DataTime1.BorderColor = System.Drawing.Color.Black;
+            this.DataTime1.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.DataTime1.BorderWidth = 1F;
+            this.DataTime1.Font = new System.Drawing.Font("Arial", 10F);
+            this.DataTime1.ForeColor = System.Drawing.Color.Black;
+            this.DataTime1.LocationFloat = new DevExpress.Utils.PointFloat(83.33334F, 0F);
+            this.DataTime1.Name = "DataTime1";
+            this.DataTime1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.DataTime1.PageInfo = DevExpress.XtraPrinting.PageInfo.DateTime;
+            this.DataTime1.SizeF = new System.Drawing.SizeF(70.83334F, 18.33333F);
+            this.DataTime1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            this.DataTime1.TextFormatString = "{0:t}";
+            // 
+            // DataDate1
+            // 
+            this.DataDate1.BackColor = System.Drawing.Color.Transparent;
+            this.DataDate1.BorderColor = System.Drawing.Color.Black;
+            this.DataDate1.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.DataDate1.BorderWidth = 1F;
+            this.DataDate1.Font = new System.Drawing.Font("Arial", 10F);
+            this.DataDate1.ForeColor = System.Drawing.Color.Black;
+            this.DataDate1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
+            this.DataDate1.Name = "DataDate1";
+            this.DataDate1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.DataDate1.PageInfo = DevExpress.XtraPrinting.PageInfo.DateTime;
+            this.DataDate1.SizeF = new System.Drawing.SizeF(80.20834F, 18.33333F);
+            this.DataDate1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            this.DataDate1.TextFormatString = "{0:MM/dd/yyyy}";
+            // 
+            // gsUserName
+            // 
+            this.gsUserName.Description = "Enter gsUserName:";
+            this.gsUserName.Name = "gsUserName";
+            this.gsUserName.ValueInfo = "Moses Newman";
+            // 
+            // gsUserID
+            // 
+            this.gsUserID.Description = "Enter gsUserID:";
+            this.gsUserID.Name = "gsUserID";
+            this.gsUserID.ValueInfo = "MNN";
+            // 
+            // topMarginBand1
+            // 
+            this.topMarginBand1.HeightF = 50F;
+            this.topMarginBand1.Name = "topMarginBand1";
+            // 
+            // bottomMarginBand1
+            // 
+            this.bottomMarginBand1.HeightF = 50F;
+            this.bottomMarginBand1.Name = "bottomMarginBand1";
+            // 
+            // sqlDataSource1
+            // 
+            this.sqlDataSource1.ConnectionName = "IAC2021SQL.Properties.Settings.IAC2010SQLConnectionString";
+            this.sqlDataSource1.Name = "sqlDataSource1";
+            storedProcQuery1.Name = "ClosedCustomerBuyBackSelect";
+            queryParameter1.Name = "@EndDate";
+            queryParameter1.Type = typeof(DevExpress.DataAccess.Expression);
+            queryParameter1.Value = new DevExpress.DataAccess.Expression("?gdEndDate", typeof(System.DateTime));
+            queryParameter2.Name = "@StartDate";
+            queryParameter2.Type = typeof(DevExpress.DataAccess.Expression);
+            queryParameter2.Value = new DevExpress.DataAccess.Expression("?gdStartDate", typeof(System.DateTime));
+            queryParameter3.Name = "@CUSTHIST_PAYMENT_TYPE";
+            queryParameter3.Type = typeof(DevExpress.DataAccess.Expression);
+            queryParameter3.Value = new DevExpress.DataAccess.Expression("?gsType", typeof(string));
+            queryParameter4.Name = "@CUSTHIST_PAYMENT_CODE";
+            queryParameter4.Type = typeof(DevExpress.DataAccess.Expression);
+            queryParameter4.Value = new DevExpress.DataAccess.Expression("?gsCode", typeof(string));
+            queryParameter5.Name = "@CUSTOMER_DEALER";
+            queryParameter5.Type = typeof(DevExpress.DataAccess.Expression);
+            queryParameter5.Value = new DevExpress.DataAccess.Expression("?gsDealer", typeof(string));
+            queryParameter6.Name = "@DEALER_STATE";
+            queryParameter6.Type = typeof(DevExpress.DataAccess.Expression);
+            queryParameter6.Value = new DevExpress.DataAccess.Expression("?gsDealerState", typeof(string));
+            queryParameter7.Name = "@CUSTOMER_STATE";
+            queryParameter7.Type = typeof(DevExpress.DataAccess.Expression);
+            queryParameter7.Value = new DevExpress.DataAccess.Expression("?gsState", typeof(string));
+            storedProcQuery1.Parameters.AddRange(new DevExpress.DataAccess.Sql.QueryParameter[] {
+            queryParameter1,
+            queryParameter2,
+            queryParameter3,
+            queryParameter4,
+            queryParameter5,
+            queryParameter6,
+            queryParameter7});
+            storedProcQuery1.StoredProcName = "ClosedCustomerBuyBackSelect";
+            this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
+            storedProcQuery1});
+            this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
             // XtraReportClosedCustomerBuyback
             // 

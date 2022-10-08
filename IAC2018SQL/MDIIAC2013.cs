@@ -822,6 +822,7 @@ namespace IAC2021SQL
             report.RequestParameters = false;
             report.Parameters["gsUserID"].Value = Program.gsUserID;
             report.Parameters["gsUserName"].Value = Program.gsUserName;
+            report.Parameters["gbDEFI"].Value = false;
 
             var tool = new ReportPrintTool(report);
 
@@ -1560,9 +1561,9 @@ namespace IAC2021SQL
             var report = new XtraReportMonthlyInterest();
             SqlDataSource ds = report.DataSource as SqlDataSource;
 
-            ds.Queries[0].Parameters[0].Value = ldLastRun;
+            /*ds.Queries[0].Parameters[0].Value = ldLastRun;
             ds.Queries[1].Parameters[0].Value = ldLastRun;
-            ds.Queries[2].Parameters[0].Value = ldLastRun;
+            ds.Queries[2].Parameters[0].Value = ldLastRun;*/
 
             report.DataSource = ds;
             report.RequestParameters = false;
@@ -1572,20 +1573,20 @@ namespace IAC2021SQL
             report.Parameters["gdLastRun"].Value = ldLastRun;
 
             // Moses Newman 05/31/2022 Now do DealerSummary Sub Report datasource!
-            XRSubreport subReportDealer = report.FindControl("SubreportDealerSummary", true) as XRSubreport;
+            /*XRSubreport subReportDealer = report.FindControl("DealerSummary", true) as XRSubreport;
             XtraReport reportSourceDealer = subReportDealer.ReportSource as XtraReport;
             SqlDataSource subdealerds = reportSourceDealer.DataSource as SqlDataSource;
             subdealerds.Queries[0].Parameters[0].Value = ldLastRun;
             subdealerds.Queries[1].Parameters[0].Value = ldLastRun;
             subdealerds.Queries[2].Parameters[0].Value = ldLastRun;
-            reportSourceDealer.DataSource = subdealerds;
+            reportSourceDealer.DataSource = subdealerds;*/
 
             // Moses Newman 05/31/2022 Now do Interest Variance Sub Report datasource!
-            XRSubreport subReportInterestVariance = report.FindControl("SubreportDailyInterestVariance", true) as XRSubreport;
+            /*XRSubreport subReportInterestVariance = report.FindControl("SubreportDailyInterestVariance", true) as XRSubreport;
             XtraReport reportSourceInterestVariance = subReportInterestVariance.ReportSource as XtraReport;
             SqlDataSource subInterestVarianceds = reportSourceInterestVariance.DataSource as SqlDataSource;
             subInterestVarianceds.Queries[0].Parameters[0].Value = ldLastRun;
-            reportSourceInterestVariance.DataSource = subInterestVarianceds;
+            reportSourceInterestVariance.DataSource = subInterestVarianceds;*/
 
             var tool = new ReportPrintTool(report);
 

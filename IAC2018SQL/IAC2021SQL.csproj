@@ -43,7 +43,7 @@
     <SuiteName>IAC2021SQL</SuiteName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>9</ApplicationRevision>
+    <ApplicationRevision>13</ApplicationRevision>
     <ApplicationVersion>30.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -947,6 +947,12 @@
     </Compile>
     <Compile Include="XtraReportDealerSummary.Designer.cs">
       <DependentUpon>XtraReportDealerSummary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReportDefiDuplicates.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReportDefiDuplicates.Designer.cs">
+      <DependentUpon>XtraReportDefiDuplicates.cs</DependentUpon>
     </Compile>
     <Compile Include="XtraReportFinanceDealerSummary.cs">
       <SubType>Component</SubType>
@@ -2168,6 +2174,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="XtraReportDealerSummary.resx">
       <DependentUpon>XtraReportDealerSummary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReportDefiDuplicates.resx">
+      <DependentUpon>XtraReportDefiDuplicates.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="XtraReportFinanceDealerSummary.resx">
       <DependentUpon>XtraReportFinanceDealerSummary.cs</DependentUpon>
