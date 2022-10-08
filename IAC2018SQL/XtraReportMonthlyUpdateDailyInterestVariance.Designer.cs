@@ -76,6 +76,7 @@
             this.bottomMarginBand1 = new DevExpress.XtraReports.UI.BottomMarginBand();
             this.gsUserID = new DevExpress.XtraReports.Parameters.Parameter();
             this.gsUserName = new DevExpress.XtraReports.Parameters.Parameter();
+            this.gdLastRun = new DevExpress.XtraReports.Parameters.Parameter();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // Area3
@@ -629,8 +630,8 @@
             this.sqlDataSourceMonthlyUpdateDailyInterestVariance.Name = "sqlDataSourceMonthlyUpdateDailyInterestVariance";
             storedProcQuery1.Name = "DailyInterestVariance";
             queryParameter1.Name = "@MonthEnd";
-            queryParameter1.Type = typeof(System.DateTime);
-            queryParameter1.ValueInfo = "2022-04-30";
+            queryParameter1.Type = typeof(DevExpress.DataAccess.Expression);
+            queryParameter1.Value = new DevExpress.DataAccess.Expression("?gdLastRun", typeof(System.DateTime));
             storedProcQuery1.Parameters.AddRange(new DevExpress.DataAccess.Sql.QueryParameter[] {
             queryParameter1});
             storedProcQuery1.StoredProcName = "DailyInterestVariance";
@@ -652,11 +653,20 @@
             // 
             this.gsUserID.Description = "Enter gsUserID";
             this.gsUserID.Name = "gsUserID";
+            this.gsUserID.ValueInfo = "MNN";
             // 
             // gsUserName
             // 
             this.gsUserName.Description = "Enter gsUserName";
             this.gsUserName.Name = "gsUserName";
+            this.gsUserName.ValueInfo = "Mosew Newman";
+            // 
+            // gdLastRun
+            // 
+            this.gdLastRun.Description = "Enter Run Date:";
+            this.gdLastRun.Name = "gdLastRun";
+            this.gdLastRun.Type = typeof(System.DateTime);
+            this.gdLastRun.ValueInfo = "2022-09-30";
             // 
             // XtraReportMonthlyUpdateDailyInterestVariance
             // 
@@ -678,10 +688,15 @@
             this.Margins = new System.Drawing.Printing.Margins(16, 16, 16, 16);
             this.PageHeight = 850;
             this.PageWidth = 1100;
+            this.ParameterPanelLayoutItems.AddRange(new DevExpress.XtraReports.Parameters.ParameterPanelLayoutItem[] {
+            new DevExpress.XtraReports.Parameters.ParameterLayoutItem(this.gsUserID, DevExpress.XtraReports.Parameters.Orientation.Horizontal),
+            new DevExpress.XtraReports.Parameters.ParameterLayoutItem(this.gsUserName, DevExpress.XtraReports.Parameters.Orientation.Horizontal),
+            new DevExpress.XtraReports.Parameters.ParameterLayoutItem(this.gdLastRun, DevExpress.XtraReports.Parameters.Orientation.Horizontal)});
             this.Parameters.AddRange(new DevExpress.XtraReports.Parameters.Parameter[] {
             this.gsUserID,
-            this.gsUserName});
-            this.Version = "21.2";
+            this.gsUserName,
+            this.gdLastRun});
+            this.Version = "22.1";
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
         }
@@ -728,5 +743,6 @@
         private DevExpress.XtraReports.UI.BottomMarginBand bottomMarginBand1;
         private DevExpress.XtraReports.Parameters.Parameter gsUserID;
         private DevExpress.XtraReports.Parameters.Parameter gsUserName;
+        private DevExpress.XtraReports.Parameters.Parameter gdLastRun;
     }
 }

@@ -9,6 +9,8 @@ using Acrobat;
 using RestSharp.Extensions;
 using RestSharp.Authenticators;
 using System.Threading;
+using System.Data.SqlClient;
+using DevExpress.XtraCharts.Native;
 
 namespace IAC2021SQL
 {
@@ -35,6 +37,8 @@ namespace IAC2021SQL
 
         public void ImportPDFs()
         {
+            SqlConnection PDFConnection = new SqlConnection("Data Source=SQL-IAC;Initial Catalog=IACSQLPRODUCTION;Integrated Security=SSPI;TrustServerCertificate=True");
+
             //IAC objects
             CAcroPDDoc pdDocIn;
             CAcroPDDoc pdDocOut;
@@ -48,7 +52,19 @@ namespace IAC2021SQL
             PaymentDataSetTableAdapters.DEFIPDFImagesTableAdapter DEFIPDFImagesTableAdapter = new PaymentDataSetTableAdapters.DEFIPDFImagesTableAdapter();
 
             //Int32 progress = 0;
-            CustomerTableAdapter.ImportDEFIPDFs();
+
+            // Moses Newman 09/16/2022 change to SqlCommand with timeout so that stored procedure does not timeout!
+            using (SqlCommand cmd = new SqlCommand("ImportDEFIPDFs"))
+            {
+                cmd.Connection = PDFConnection;
+                cmd.CommandTimeout = 300; //in seconds
+                                          //etc...
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Connection.Open();
+                cmd.ExecuteNonQuery();
+                cmd.Connection.Close();
+            }
+            //CustomerTableAdapter.ImportDEFIPDFs();
             CustomerTableAdapter.FillByDefiImages(ImportData.CUSTOMER);
             if (ImportData.CUSTOMER.Rows.Count < 1)
             {

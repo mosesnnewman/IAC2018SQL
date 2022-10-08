@@ -106,11 +106,12 @@
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[CUSTOMER_DAY_DUE]")});
             this.CUSTOMERDAYDUE1.Font = new System.Drawing.Font("Arial", 10F);
             this.CUSTOMERDAYDUE1.ForeColor = System.Drawing.Color.Black;
-            this.CUSTOMERDAYDUE1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
+            this.CUSTOMERDAYDUE1.LocationFloat = new DevExpress.Utils.PointFloat(3F, 0F);
             this.CUSTOMERDAYDUE1.Name = "CUSTOMERDAYDUE1";
             this.CUSTOMERDAYDUE1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.CUSTOMERDAYDUE1.SizeF = new System.Drawing.SizeF(32.29167F, 18.33333F);
-            this.CUSTOMERDAYDUE1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
+            this.CUSTOMERDAYDUE1.StylePriority.UseTextAlignment = false;
+            this.CUSTOMERDAYDUE1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
             // 
             // CustomerCount1
             // 
@@ -127,9 +128,10 @@
             this.CustomerCount1.Name = "CustomerCount1";
             this.CustomerCount1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.CustomerCount1.SizeF = new System.Drawing.SizeF(32.29167F, 18.33333F);
+            this.CustomerCount1.StylePriority.UseTextAlignment = false;
             xrSummary1.Running = DevExpress.XtraReports.UI.SummaryRunning.Group;
             this.CustomerCount1.Summary = xrSummary1;
-            this.CustomerCount1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            this.CustomerCount1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
             // 
             // TotalLoanAmountbyGroup1
             // 
@@ -193,7 +195,7 @@
             this.Text2.CanGrow = false;
             this.Text2.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.Text2.ForeColor = System.Drawing.Color.Black;
-            this.Text2.LocationFloat = new DevExpress.Utils.PointFloat(2.083333F, 27.08333F);
+            this.Text2.LocationFloat = new DevExpress.Utils.PointFloat(3F, 27.08333F);
             this.Text2.Multiline = true;
             this.Text2.Name = "Text2";
             this.Text2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -210,7 +212,7 @@
             this.Line7.Font = new System.Drawing.Font("Times New Roman", 9.75F);
             this.Line7.ForeColor = System.Drawing.Color.Navy;
             this.Line7.LineWidth = 3F;
-            this.Line7.LocationFloat = new DevExpress.Utils.PointFloat(0F, 65.625F);
+            this.Line7.LocationFloat = new DevExpress.Utils.PointFloat(3F, 65.625F);
             this.Line7.Name = "Line7";
             this.Line7.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.Line7.SizeF = new System.Drawing.SizeF(283.3333F, 3.125F);
@@ -224,7 +226,7 @@
             this.Text3.CanGrow = false;
             this.Text3.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.Text3.ForeColor = System.Drawing.Color.Black;
-            this.Text3.LocationFloat = new DevExpress.Utils.PointFloat(41.66667F, 41.66667F);
+            this.Text3.LocationFloat = new DevExpress.Utils.PointFloat(42.66667F, 41.66667F);
             this.Text3.Name = "Text3";
             this.Text3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.Text3.SizeF = new System.Drawing.SizeF(120.8334F, 18.33333F);
@@ -240,7 +242,7 @@
             this.Text4.CanGrow = false;
             this.Text4.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.Text4.ForeColor = System.Drawing.Color.Black;
-            this.Text4.LocationFloat = new DevExpress.Utils.PointFloat(175F, 41.66667F);
+            this.Text4.LocationFloat = new DevExpress.Utils.PointFloat(176F, 41.66667F);
             this.Text4.Name = "Text4";
             this.Text4.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.Text4.SizeF = new System.Drawing.SizeF(108.3333F, 18.33333F);
@@ -343,9 +345,10 @@
             this.GrandTotalCustomerCount1.Name = "GrandTotalCustomerCount1";
             this.GrandTotalCustomerCount1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.GrandTotalCustomerCount1.SizeF = new System.Drawing.SizeF(32.29167F, 18.33333F);
+            this.GrandTotalCustomerCount1.StylePriority.UseTextAlignment = false;
             xrSummary4.Running = DevExpress.XtraReports.UI.SummaryRunning.Report;
             this.GrandTotalCustomerCount1.Summary = xrSummary4;
-            this.GrandTotalCustomerCount1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            this.GrandTotalCustomerCount1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
             // 
             // ReportFooterSection2
             // 
