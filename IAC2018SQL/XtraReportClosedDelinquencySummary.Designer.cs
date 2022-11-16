@@ -177,6 +177,7 @@
             this.xrLine1 = new DevExpress.XtraReports.UI.XRLine();
             this.topMarginBand1 = new DevExpress.XtraReports.UI.TopMarginBand();
             this.bottomMarginBand1 = new DevExpress.XtraReports.UI.BottomMarginBand();
+            this.gdThisRun = new DevExpress.XtraReports.Parameters.Parameter();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // Area3
@@ -719,7 +720,7 @@
             this.gdCurrentDate1.BorderWidth = 1F;
             this.gdCurrentDate1.CanGrow = false;
             this.gdCurrentDate1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "Now()")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "?gdThisRun")});
             this.gdCurrentDate1.Font = new System.Drawing.Font("Arial", 10F);
             this.gdCurrentDate1.ForeColor = System.Drawing.Color.Black;
             this.gdCurrentDate1.LocationFloat = new DevExpress.Utils.PointFloat(533.3333F, 160.5F);
@@ -727,6 +728,7 @@
             this.gdCurrentDate1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.gdCurrentDate1.SizeF = new System.Drawing.SizeF(75F, 15.34722F);
             this.gdCurrentDate1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            this.gdCurrentDate1.TextFormatString = "{0:MM/dd/yyyy}";
             // 
             // Text2
             // 
@@ -1543,11 +1545,13 @@
             // 
             this.gsUserName.Description = "Enter gsUserName:";
             this.gsUserName.Name = "gsUserName";
+            this.gsUserName.ValueInfo = "Moses Newman";
             // 
             // gsUserID
             // 
             this.gsUserID.Description = "Enter gsUserID:";
             this.gsUserID.Name = "gsUserID";
+            this.gsUserID.ValueInfo = "MNN";
             // 
             // sqlDataSourceClosedDeliquencySummary
             // 
@@ -1556,7 +1560,7 @@
             storedProcQuery1.Name = "ClosedDealerAgedSummarySelect";
             queryParameter1.Name = "@RunDate";
             queryParameter1.Type = typeof(DevExpress.DataAccess.Expression);
-            queryParameter1.Value = new DevExpress.DataAccess.Expression("TODAY()", typeof(System.DateTime));
+            queryParameter1.Value = new DevExpress.DataAccess.Expression("?gdThisRun", typeof(System.DateTime));
             storedProcQuery1.Parameters.AddRange(new DevExpress.DataAccess.Sql.QueryParameter[] {
             queryParameter1});
             storedProcQuery1.StoredProcName = "ClosedCustomerDelinquencySummary";
@@ -2123,6 +2127,13 @@
             this.bottomMarginBand1.HeightF = 25F;
             this.bottomMarginBand1.Name = "bottomMarginBand1";
             // 
+            // gdThisRun
+            // 
+            this.gdThisRun.Description = "Parameter1";
+            this.gdThisRun.Name = "gdThisRun";
+            this.gdThisRun.Type = typeof(System.DateTime);
+            this.gdThisRun.ValueInfo = "2022-11-07";
+            // 
             // XtraReportClosedDelinquencySummary
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -2149,10 +2160,15 @@
             this.Margins = new System.Drawing.Printing.Margins(25, 25, 25, 25);
             this.PageHeight = 850;
             this.PageWidth = 1100;
+            this.ParameterPanelLayoutItems.AddRange(new DevExpress.XtraReports.Parameters.ParameterPanelLayoutItem[] {
+            new DevExpress.XtraReports.Parameters.ParameterLayoutItem(this.gsUserName, DevExpress.XtraReports.Parameters.Orientation.Horizontal),
+            new DevExpress.XtraReports.Parameters.ParameterLayoutItem(this.gsUserID, DevExpress.XtraReports.Parameters.Orientation.Horizontal),
+            new DevExpress.XtraReports.Parameters.ParameterLayoutItem(this.gdThisRun, DevExpress.XtraReports.Parameters.Orientation.Horizontal)});
             this.Parameters.AddRange(new DevExpress.XtraReports.Parameters.Parameter[] {
             this.gsUserName,
-            this.gsUserID});
-            this.Version = "21.2";
+            this.gsUserID,
+            this.gdThisRun});
+            this.Version = "22.1";
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
         }
@@ -2264,5 +2280,6 @@
         private DevExpress.XtraReports.UI.XRLabel xrLabel24;
         private DevExpress.XtraReports.UI.TopMarginBand topMarginBand1;
         private DevExpress.XtraReports.UI.BottomMarginBand bottomMarginBand1;
+        private DevExpress.XtraReports.Parameters.Parameter gdThisRun;
     }
 }

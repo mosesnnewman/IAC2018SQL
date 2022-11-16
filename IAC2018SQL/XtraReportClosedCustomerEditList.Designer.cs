@@ -390,7 +390,6 @@
             this.Text9,
             this.Text7});
             this.GroupHeaderArea1.GroupFields.AddRange(new DevExpress.XtraReports.UI.GroupField[] {
-            new DevExpress.XtraReports.UI.GroupField("CUSTOMERDEALER.DEALER_ST", DevExpress.XtraReports.UI.XRColumnSortOrder.Ascending),
             new DevExpress.XtraReports.UI.GroupField("CUSTOMER_DEALER", DevExpress.XtraReports.UI.XRColumnSortOrder.Ascending)});
             this.GroupHeaderArea1.HeightF = 48F;
             this.GroupHeaderArea1.KeepTogether = true;

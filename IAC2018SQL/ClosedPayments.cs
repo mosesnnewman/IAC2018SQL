@@ -339,6 +339,9 @@ namespace IAC2021SQL
             int lnPaymentPos = 0;
             String lsCustNo = "";
 
+            // Moses Newman 10/16/2022
+            if (cUSTOMER_NOTextBox.EditValue == null)
+                return;
             if (lbFormClosing || cUSTOMER_NOTextBox.EditValue.ToString().Trim() == "" || lbEdit)
                 return;
 

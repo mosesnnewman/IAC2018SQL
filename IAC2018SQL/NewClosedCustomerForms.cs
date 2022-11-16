@@ -1567,41 +1567,6 @@ namespace IAC2021SQL
                 errorProviderCustomerForm.Clear();
         }
 
-        private void toolStripButton3_Click(object sender, EventArgs e)
-        {
-            MDIIAC2013 MDImain = (MDIIAC2013)MdiParent;
-            MDImain.CreateFormInstance("ReportViewer", false);
-            ReportViewer rptViewr = (ReportViewer)MDImain.frm;
-
-            IACDataSet ReportData = new IACDataSet();
-            IACDataSetTableAdapters.CUSTOMERTableAdapter CustomerTableAdapter = new IACDataSetTableAdapters.CUSTOMERTableAdapter();
-            IACDataSetTableAdapters.CUSTHISTTableAdapter CUSTHISTTableAdapter = new IACDataSetTableAdapters.CUSTHISTTableAdapter();
-            IACDataSetTableAdapters.COMMENTTableAdapter COMMENTTableAdapter = new IACDataSetTableAdapters.COMMENTTableAdapter();
-            IACDataSetTableAdapters.DEALERTableAdapter DEALERTableAdapter = new IACDataSetTableAdapters.DEALERTableAdapter();
-            RepoDataSetTableAdapters.CUSTOMERTableAdapter RepoCustomer = new RepoDataSetTableAdapters.CUSTOMERTableAdapter();
-
-            CustomerTableAdapter.Fill(ReportData.CUSTOMER, cUSTOMER_NOTextBox.EditValue.ToString().Trim());
-            CUSTHISTTableAdapter.FillByCustomerNo(ReportData.CUSTHIST, ReportData.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO"));
-            COMMENTTableAdapter.FillByCustNo(ReportData.COMMENT, ReportData.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO"));
-            // Moses Newman 04/22/2019 Add Repo Log
-            RepoLogTableAdapter.FillByCustomerNo(repoDataSet.RepoLog, ReportData.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO"));
-            if (repoDataSet.RepoLog.Count > 0)
-                RepoCustomer.Fill(repoDataSet.CUSTOMER, cUSTOMER_NOTextBox.EditValue.ToString().Trim());
-            DEALERTableAdapter.Fill(ReportData.DEALER, ReportData.CUSTOMER.Rows[0].Field<Int32>("CUSTOMER_DEALER"));
-            ClosedCustomerHistory myReportObject = new ClosedCustomerHistory();
-            myReportObject.SetDataSource(ReportData);
-            // Moses Newman 04/22/2019 Add Repo Log Set DataSource of second subreport (RepoLog) to new RepoDataSet
-            myReportObject.Subreports[1].SetDataSource(repoDataSet);
-            myReportObject.SetParameterValue("gsUserID", Program.gsUserID);
-            myReportObject.SetParameterValue("gsUserName", Program.gsUserName);
-            // Moses Newman 04/23/2019 Add Record Count of RepoLog table to supress footer on blank RepoLog
-            myReportObject.SetParameterValue("giCount", repoDataSet.RepoLog.Count);
-
-            rptViewr.crystalReportViewer.ReportSource = myReportObject;
-            rptViewr.crystalReportViewer.Refresh();
-            rptViewr.Show();
-        }
-
         private void comboBoxLetterNo_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (lbEdit)
@@ -3490,8 +3455,6 @@ namespace IAC2021SQL
                              ldFirstPaymentDate = iACDataSet.CUSTOMER.Rows[0].Field<DateTime>("CUSTOMER_INIT_DATE");
                     ClosedPaymentPosting CP = new ClosedPaymentPosting();
                     BackgroundWorker worker = new BackgroundWorker();
-
-                    AmortizationDistribution myReportObject = new AmortizationDistribution();
 
                     IACDataSetTableAdapters.AmortTempTableAdapter AmortTempTableAdapter = new IACDataSetTableAdapters.AmortTempTableAdapter();
 

@@ -21,7 +21,6 @@ namespace IAC2021SQL
 {
     public partial class AmortDialog : DevExpress.XtraEditors.XtraForm
     {
-        private Amortization myReportObject = new Amortization();
         private Program.AmortRec[] AmortTable;
 
         private Double lnRegularPay = 0, lnTotal = 0, lnTerm = 0, lnLoanInterest = 0, lnCash = 0;
@@ -38,7 +37,7 @@ namespace IAC2021SQL
 
         private void button1_Click(object sender, System.EventArgs e)
         {
-            // Moses Newman 07/12m/2022 Covert to XtraReport
+            // Moses Newman 07/12/2022 Covert to XtraReport
             var report = new XtraReportAmortization();
             SqlDataSource ds = report.DataSource as SqlDataSource;
 
