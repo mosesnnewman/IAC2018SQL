@@ -43,7 +43,7 @@
     <SuiteName>IAC2021SQL</SuiteName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>21</ApplicationRevision>
+    <ApplicationRevision>22</ApplicationRevision>
     <ApplicationVersion>30.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -1007,6 +1007,12 @@
     </Compile>
     <Compile Include="XtraReportPNSRejects.Designer.cs">
       <DependentUpon>XtraReportPNSRejects.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReportReceipt.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReportReceipt.Designer.cs">
+      <DependentUpon>XtraReportReceipt.cs</DependentUpon>
     </Compile>
     <Compile Include="XtraReportShortBalanceReport.cs">
       <SubType>Component</SubType>
@@ -2216,6 +2222,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="XtraReportPNSRejects.resx">
       <DependentUpon>XtraReportPNSRejects.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReportReceipt.resx">
+      <DependentUpon>XtraReportReceipt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="XtraReportShortBalanceReport.resx">
       <DependentUpon>XtraReportShortBalanceReport.cs</DependentUpon>

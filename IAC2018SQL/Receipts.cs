@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using DevExpress.XtraReports.UI;
+using DevExpress.DataAccess.Sql;
+using System;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace IAC2021SQL
 {
-    public partial class FormReciept : Form
+    public partial class FormReciept : DevExpress.XtraEditors.XtraForm
     {
         private String _CustomerNo;
         private String _OpenClose;
@@ -37,7 +34,7 @@ namespace IAC2021SQL
         {
             setRelatedData();
 
-            nullableDateTimePickerHoldDate.Value = null;
+            nullableDateTimePickerHoldDate.EditValue = null;
 
             textBoxCashTendered.Enabled = false;
             textBox100s.Enabled = false;
@@ -213,12 +210,12 @@ namespace IAC2021SQL
             if (checkBoxHold.Checked)
             {
                 nullableDateTimePickerHoldDate.Enabled = true;
-                if (nullableDateTimePickerHoldDate.Value == null)
-                    nullableDateTimePickerHoldDate.Value = DateTime.Now.Date;
+                if (nullableDateTimePickerHoldDate.EditValue == null)
+                    nullableDateTimePickerHoldDate.EditValue = DateTime.Now.Date;
             }
             else
             {
-                nullableDateTimePickerHoldDate.Value = null;
+                nullableDateTimePickerHoldDate.EditValue = null;
                 nullableDateTimePickerHoldDate.Enabled = false;
             }
         }
@@ -336,9 +333,28 @@ namespace IAC2021SQL
                 oRECEIPTTableAdapter.Update(iacDataSetReceipts.ORECEIPT.Rows[bindingSourceORECEIPT.Position]);
                 bindingSourceReceipt.EndEdit();
                 receiptTableAdapter.Update(iacDataSetReceipts.Receipt.Rows[bindingSourceReceipt.Position]);
-
                 MDIIAC2013 MDImain = (MDIIAC2013)MdiParent;
-                MDImain.CreateFormInstance("ReportViewer", false);
+                // Moses Newman 11/16/2022 Covert to XtraReport
+                var report = new XtraReportReceipt();
+                SqlDataSource ds = report.DataSource as SqlDataSource;
+
+                report.DataSource = ds;
+                report.RequestParameters = false;
+                report.Parameters["gsUserID"].Value = Program.gsUserID;
+                report.Parameters["gsUserName"].Value = Program.gsUserName;
+                report.Parameters["gsDealerName"].Value = textBoxDealerName.Text;
+                report.Parameters["gnOldReceipt"].Value = lnReceiptNumber;
+                report.Parameters["gsSide"].Value = _OpenClose;
+                report.Parameters["gsCustomer"].Value = _CustomerNo;
+
+                var tool = new ReportPrintTool(report);
+
+                tool.PreviewRibbonForm.MdiParent = MDImain;
+                tool.AutoShowParametersPanel = false;
+                tool.PreviewRibbonForm.WindowState = FormWindowState.Maximized;
+                tool.ShowRibbonPreview();
+
+                /*MDImain.CreateFormInstance("ReportViewer", false);
                 ReportViewer rptViewr = (ReportViewer)MDImain.frm;
 
                 Receipt myReportObject = new Receipt();
@@ -351,7 +367,7 @@ namespace IAC2021SQL
 
                 rptViewr.crystalReportViewer.ReportSource = myReportObject;
                 rptViewr.crystalReportViewer.Refresh();
-                rptViewr.Show();
+                rptViewr.Show();*/
 
 
                 Close();
