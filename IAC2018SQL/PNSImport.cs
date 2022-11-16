@@ -15,6 +15,8 @@ using Microsoft.SqlServer.Management.Smo;
 using Microsoft.SqlServer.Management.Common;
 using Excel = Microsoft.Office.Interop.Excel;
 using DevExpress.XtraEditors;
+using DevExpress.XtraReports.UI;
+using DevExpress.DataAccess.Sql;
 
 
 namespace IAC2021SQL
@@ -215,17 +217,23 @@ namespace IAC2021SQL
                     {
                         MDIIAC2013 MDImain = (MDIIAC2013)MdiParent;
                         Hide();
-                        MDImain.CreateFormInstance("ReportViewer", false);
-                        ReportViewer rptViewer = (ReportViewer)MDImain.ActiveMdiChild;
 
-                        PNSRejects myReportObject = new PNSRejects();
-                        myReportObject.SetDataSource(PNS);
-                        myReportObject.SetParameterValue("gsUserID", Program.gsUserID);
-                        myReportObject.SetParameterValue("gsUserName", Program.gsUserName);
-                        myReportObject.SetParameterValue("gsTitle", "PNS PAYMENT REJECTS REPORT");
-                        rptViewer.crystalReportViewer.ReportSource = myReportObject;
-                        rptViewer.crystalReportViewer.Refresh();
-                        rptViewer.Show();
+                        // Moses Newman 11/06/2022 Covert to XtraReport
+                        var report = new XtraReportPNSRejects();
+                        SqlDataSource ds = report.DataSource as SqlDataSource;
+
+                        report.DataSource = ds;
+                        report.RequestParameters = false;
+                        report.Parameters["gsUserID"].Value = Program.gsUserID;
+                        report.Parameters["gsUserName"].Value = Program.gsUserName;
+                        report.Parameters["gsTitle"].Value = "PNS PAYMENT REJECTS REPORT";
+
+                        var tool = new ReportPrintTool(report);
+
+                        tool.PreviewRibbonForm.MdiParent = MDImain;
+                        tool.AutoShowParametersPanel = false;
+                        tool.PreviewRibbonForm.WindowState = FormWindowState.Maximized;
+                        tool.ShowRibbonPreview();
                     }
                 }
                 if (SQLBR.RunJob("PNSToPayment", "Insert into Payment", false))
@@ -435,17 +443,23 @@ namespace IAC2021SQL
             {
                 MDIIAC2013 MDImain = (MDIIAC2013)MdiParent;
                 Hide();
-                MDImain.CreateFormInstance("ReportViewer", false);
-                ReportViewer rptViewer = (ReportViewer)MDImain.ActiveMdiChild;
 
-                PNSRejects myReportObject = new PNSRejects();
-                myReportObject.SetDataSource(PNS);
-                myReportObject.SetParameterValue("gsUserID", Program.gsUserID);
-                myReportObject.SetParameterValue("gsUserName", Program.gsUserName);
-                myReportObject.SetParameterValue("gsTitle", "PNS PAYMENT REJECTS REPORT");
-                rptViewer.crystalReportViewer.ReportSource = myReportObject;
-                rptViewer.crystalReportViewer.Refresh();
-                rptViewer.Show();
+                // Moses Newman 11/06/2022 Covert to XtraReport
+                var report = new XtraReportPNSRejects();
+                SqlDataSource ds = report.DataSource as SqlDataSource;
+
+                report.DataSource = ds;
+                report.RequestParameters = false;
+                report.Parameters["gsUserID"].Value = Program.gsUserID;
+                report.Parameters["gsUserName"].Value = Program.gsUserName;
+                report.Parameters["gsTitle"].Value = "PNS PAYMENT REJECTS REPORT";
+
+                var tool = new ReportPrintTool(report);
+
+                tool.PreviewRibbonForm.MdiParent = MDImain;
+                tool.AutoShowParametersPanel = false;
+                tool.PreviewRibbonForm.WindowState = FormWindowState.Maximized;
+                tool.ShowRibbonPreview();
             }
         }
     }

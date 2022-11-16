@@ -1539,65 +1539,7 @@ namespace IAC2021SQL
 
         private void monthlyInterestReportToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ReportData = new IACDataSet();
-            // Moses Newman 11/29/2020 add new Daily Interest Variance Sub Report
-            DailyDataSet DailyData = new DailyDataSet();
-            IACDataSetTableAdapters.CUSTHISTTableAdapter CUSTHISTTableAdapter = new IACDataSetTableAdapters.CUSTHISTTableAdapter();
-            IACDataSetTableAdapters.SystemTableAdapter SystemTableAdapter = new IACDataSetTableAdapters.SystemTableAdapter();
-
-            SystemTableAdapter.Fill(ReportData.System,1);
-
-            DateTime ldLastRun = ReportData.System.Rows[0].Field<DateTime>("LastUpdateDate");
-
-            CUSTHISTTableAdapter.FillByUpdatesOnly(ReportData.CUSTHIST, ldLastRun);
-            if (ReportData.CUSTHIST.Rows.Count == 0)
-            {
-                MessageBox.Show("*** There are no UPDATES to report on! ***");
-                return;
-            }
-
-
-            // Moses Newman 05/31/2022 Convert to XtraReport
-            var report = new XtraReportMonthlyInterest();
-            SqlDataSource ds = report.DataSource as SqlDataSource;
-
-            /*ds.Queries[0].Parameters[0].Value = ldLastRun;
-            ds.Queries[1].Parameters[0].Value = ldLastRun;
-            ds.Queries[2].Parameters[0].Value = ldLastRun;*/
-
-            report.DataSource = ds;
-            report.RequestParameters = false;
-            report.Parameters["gsUserID"].Value = Program.gsUserID;
-            report.Parameters["gsUserName"].Value = Program.gsUserName;
-            report.Parameters["gsFormTitle"].Value = "Monthly Interest Update Report";
-            report.Parameters["gdLastRun"].Value = ldLastRun;
-
-            // Moses Newman 05/31/2022 Now do DealerSummary Sub Report datasource!
-            /*XRSubreport subReportDealer = report.FindControl("DealerSummary", true) as XRSubreport;
-            XtraReport reportSourceDealer = subReportDealer.ReportSource as XtraReport;
-            SqlDataSource subdealerds = reportSourceDealer.DataSource as SqlDataSource;
-            subdealerds.Queries[0].Parameters[0].Value = ldLastRun;
-            subdealerds.Queries[1].Parameters[0].Value = ldLastRun;
-            subdealerds.Queries[2].Parameters[0].Value = ldLastRun;
-            reportSourceDealer.DataSource = subdealerds;*/
-
-            // Moses Newman 05/31/2022 Now do Interest Variance Sub Report datasource!
-            /*XRSubreport subReportInterestVariance = report.FindControl("SubreportDailyInterestVariance", true) as XRSubreport;
-            XtraReport reportSourceInterestVariance = subReportInterestVariance.ReportSource as XtraReport;
-            SqlDataSource subInterestVarianceds = reportSourceInterestVariance.DataSource as SqlDataSource;
-            subInterestVarianceds.Queries[0].Parameters[0].Value = ldLastRun;
-            reportSourceInterestVariance.DataSource = subInterestVarianceds;*/
-
-            var tool = new ReportPrintTool(report);
-
-            MDIIAC2013 MDImain = this;
-            tool.PreviewRibbonForm.MdiParent = MDImain;
-            tool.AutoShowParametersPanel = false;
-            tool.PreviewRibbonForm.WindowState = FormWindowState.Maximized;
-            tool.ShowRibbonPreview();
-
-            ReportData.Clear();
-            ReportData.Dispose();
+            CreateFormInstance("frmClosedMonthlyUpdateSelectPeriod", false);
         }
 
         private void chargesAppliedToDealerReportToolStripMenuItem_Click(object sender, EventArgs e)

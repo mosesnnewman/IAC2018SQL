@@ -70,18 +70,6 @@ namespace IAC2021SQL
                         if (DelinquencyData.CUSTOMER.Rows.Count != 0 && DelinquencyData.DEALER.Rows.Count != 0)
                         {
                             Hide();
-                            /*MDImain.CreateFormInstance("ReportViewer", false);
-                            ReportViewer rptViewer = (ReportViewer)MDImain.ActiveMdiChild;
-
-                            ClosedCustomerDelinquency myReportObject = new ClosedCustomerDelinquency();
-                            myReportObject.SetDataSource(DelinquencyData);
-                            myReportObject.SetParameterValue("gsUserID", Program.gsUserID);
-                            myReportObject.SetParameterValue("gsUserName", Program.gsUserName);
-                            myReportObject.SetParameterValue("gnAgedMonths", comboBoxAgedPeriod.SelectedIndex + 1);
-                            myReportObject.SetParameterValue("gdCurrentDate", ldCurrDate);
-                            rptViewer.crystalReportViewer.ReportSource = myReportObject;
-                            rptViewer.crystalReportViewer.Refresh();
-                            rptViewer.Show();*/
                             // Moses Newman 04/26/2022 Covert to XtraReport
                             var report = new XtraReportDelinquency();
                             SqlDataSource ds = report.DataSource as SqlDataSource;
@@ -153,7 +141,7 @@ namespace IAC2021SQL
                     }
                     else
                     {
-                        CUSTOMERTableAdapter.FillByDelinquenciesCOL(DelinquencyData.CUSTOMER, lnAgedTest, ldCurrDate,lsSortType);
+                        /*CUSTOMERTableAdapter.FillByDelinquenciesCOL(DelinquencyData.CUSTOMER, lnAgedTest, ldCurrDate,lsSortType);
                         // Moses Newman 11/19/2013 Moses Newman added ldCurrDate as new parameter to DealerFillByDelinQuencies Query
                         DEALERTableAdapter.FillByDelinquenciesCOL(DelinquencyData.DEALER, lnAgedTest, ldCurrDate);
                         // Moses Newman 09/27/2021 
@@ -174,7 +162,7 @@ namespace IAC2021SQL
                             rptViewer.crystalReportViewer.ReportSource = myReportObject;
                             rptViewer.crystalReportViewer.Refresh();
                             rptViewer.Show();
-                        }
+                        }*/
                     }
                     break;
                 case 7:
@@ -193,6 +181,7 @@ namespace IAC2021SQL
                             report.RequestParameters = false;
                             report.Parameters["gsUserID"].Value = Program.gsUserID;
                             report.Parameters["gsUserName"].Value = Program.gsUserName;
+                            report.Parameters["gdThisRun"].Value = ldCurrDate;
 
                             var tool = new ReportPrintTool(report);
 
@@ -204,7 +193,7 @@ namespace IAC2021SQL
                     }
                     else // Moses Newman 02/24/2015 Add Collections version of Delinquency Summary Report
                     {
-                        ClosedDealerAgedSummarySelectTableAdapter.SetCommandTimeout(360);
+                        /*ClosedDealerAgedSummarySelectTableAdapter.SetCommandTimeout(360);
                         ClosedDealerAgedSummarySelectTableAdapter.Fill(DelinquencyData.ClosedDealerAgedSummarySelect, ldCurrDate);
                         ClosedDealerAgedSummarySelectCOLTableAdapter.Fill(DelinquencyData.ClosedDealerAgedSummarySelectCOL, ldCurrDate);
                         if (DelinquencyData.ClosedDealerAgedSummarySelect.Rows.Count != 0)
@@ -222,8 +211,7 @@ namespace IAC2021SQL
                             rptViewer.crystalReportViewer.ReportSource = myReportObject;
                             rptViewer.crystalReportViewer.Refresh();
                             rptViewer.Show();
-                        }
-
+                        }*/
                     }
                     break;
                 case 8:
