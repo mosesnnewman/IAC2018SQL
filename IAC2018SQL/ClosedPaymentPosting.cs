@@ -189,6 +189,9 @@ namespace IAC2021SQL
                 }*/
                 worker.ReportProgress((Int32)((Double)(((Double)PaymentPos + 1.0000) / (Double)PAYMENTPostDataSet.PAYMENT.Rows.Count) * 100.0000));
             }
+            // Moses Newman 12/1/2022
+            lnMasterNPNP = (Decimal)PAYMENTTableAdapter.NPNP(); 
+            lnMasterNP = (Decimal)PAYMENTTableAdapter.NP();
             ClosedPaymentDealerPost(ref PAYMENTPostDataSet, ref worker);
             ClosedPaymentMasterPost(ref PAYMENTPostDataSet, ref worker);
             ClosedPaymentMASTHISTPost(ref PAYMENTPostDataSet, ref worker);
@@ -1471,6 +1474,7 @@ namespace IAC2021SQL
 
         void ClosedPaymentAccumIOL(int PaymentPos, ref IACDataSet PAYMENTDataSet, ref BackgroundWorker worker)
         {
+            decimal lntemppay = 0;
             lnMasterInterest += lnAccruedInt;
 
             lnMasterDiscount += (Decimal)lnPaidDiscount;
@@ -1492,6 +1496,7 @@ namespace IAC2021SQL
                 case "V":
                 case "P":
                 case "I":
+                    lntemppay = PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<Decimal>("PAYMENT_AMOUNT_RCV");
                     lnMasterNPNP += PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<Decimal>("PAYMENT_AMOUNT_RCV");
                     lnNonCashFeesandCharges = lnMasterOloan;
                     break;
