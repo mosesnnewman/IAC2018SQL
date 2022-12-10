@@ -16,8 +16,8 @@ namespace IAC2021SQL
         private void XtraReportClosedPaidInAdvanceDealerSummary_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
         {
             // Moses Newman 09/07/2022 Turn off PageHeaderSection2 when printing dealer summary subreport.
-            this.MasterReport.Bands["Area2"].SubBands[0].Visible = false;
-            this.MasterReport.Bands["Area2"].SubBands[1].Visible = true;
+            //this.MasterReport.Bands["Area2"].SubBands[0].Visible = false;
+            //this.MasterReport.Bands["Area2"].SubBands[1].Visible = false;
         }
     }
 }
