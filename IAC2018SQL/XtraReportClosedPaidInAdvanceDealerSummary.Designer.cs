@@ -70,6 +70,14 @@
             this.topMarginBand1 = new DevExpress.XtraReports.UI.TopMarginBand();
             this.bottomMarginBand1 = new DevExpress.XtraReports.UI.BottomMarginBand();
             this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
+            this.Text26 = new DevExpress.XtraReports.UI.XRLabel();
+            this.Text28 = new DevExpress.XtraReports.UI.XRLabel();
+            this.Text27 = new DevExpress.XtraReports.UI.XRLabel();
+            this.gdCurrentDate2 = new DevExpress.XtraReports.UI.XRLabel();
+            this.Picture1 = new DevExpress.XtraReports.UI.XRPictureBox();
+            this.Text24 = new DevExpress.XtraReports.UI.XRLabel();
+            this.Text23 = new DevExpress.XtraReports.UI.XRLabel();
+            this.Line3 = new DevExpress.XtraReports.UI.XRLine();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // Area3
@@ -134,7 +142,7 @@
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumCount([CUSTOMER_NO])")});
             this.TotalDelinquentsByDealer2.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.TotalDelinquentsByDealer2.ForeColor = System.Drawing.Color.Black;
-            this.TotalDelinquentsByDealer2.LocationFloat = new DevExpress.Utils.PointFloat(758.3333F, 0F);
+            this.TotalDelinquentsByDealer2.LocationFloat = new DevExpress.Utils.PointFloat(819.3333F, 0F);
             this.TotalDelinquentsByDealer2.Name = "TotalDelinquentsByDealer2";
             this.TotalDelinquentsByDealer2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.TotalDelinquentsByDealer2.SizeF = new System.Drawing.SizeF(61.45833F, 18.33333F);
@@ -190,7 +198,16 @@
             // 
             // PageHeaderArea1
             // 
-            this.PageHeaderArea1.HeightF = 41F;
+            this.PageHeaderArea1.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.Line3,
+            this.Text26,
+            this.Text28,
+            this.Text27,
+            this.gdCurrentDate2,
+            this.Picture1,
+            this.Text24,
+            this.Text23});
+            this.PageHeaderArea1.HeightF = 188.0555F;
             this.PageHeaderArea1.Name = "PageHeaderArea1";
             this.PageHeaderArea1.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.PageHeaderArea1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
@@ -264,7 +281,7 @@
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumCount([CUSTOMER_NO])")});
             this.GrandTotalDelinquentCount1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
             this.GrandTotalDelinquentCount1.ForeColor = System.Drawing.Color.Black;
-            this.GrandTotalDelinquentCount1.LocationFloat = new DevExpress.Utils.PointFloat(758.3333F, 8.333333F);
+            this.GrandTotalDelinquentCount1.LocationFloat = new DevExpress.Utils.PointFloat(819.3333F, 8.333333F);
             this.GrandTotalDelinquentCount1.Name = "GrandTotalDelinquentCount1";
             this.GrandTotalDelinquentCount1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.GrandTotalDelinquentCount1.SizeF = new System.Drawing.SizeF(61.45833F, 15.34722F);
@@ -459,6 +476,133 @@
             masterDetailInfo1});
             this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
+            // Text26
+            // 
+            this.Text26.BackColor = System.Drawing.Color.Transparent;
+            this.Text26.BorderColor = System.Drawing.Color.Black;
+            this.Text26.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.Text26.BorderWidth = 1F;
+            this.Text26.CanGrow = false;
+            this.Text26.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
+            this.Text26.ForeColor = System.Drawing.Color.Black;
+            this.Text26.LocationFloat = new DevExpress.Utils.PointFloat(262.5001F, 57.77779F);
+            this.Text26.Name = "Text26";
+            this.Text26.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.Text26.SizeF = new System.Drawing.SizeF(525F, 25F);
+            this.Text26.StylePriority.UseTextAlignment = false;
+            this.Text26.Text = "CLOSED PAID IN ADVANCE DEALER SUMMARY REPORT";
+            this.Text26.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            // 
+            // Text28
+            // 
+            this.Text28.BackColor = System.Drawing.Color.Transparent;
+            this.Text28.BorderColor = System.Drawing.Color.Black;
+            this.Text28.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.Text28.BorderWidth = 1F;
+            this.Text28.CanGrow = false;
+            this.Text28.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold);
+            this.Text28.ForeColor = System.Drawing.Color.Black;
+            this.Text28.LocationFloat = new DevExpress.Utils.PointFloat(774.6667F, 158.3333F);
+            this.Text28.Name = "Text28";
+            this.Text28.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.Text28.SizeF = new System.Drawing.SizeF(158.3333F, 18.26389F);
+            this.Text28.Text = "# OF ADVANCE PAYMENTS";
+            this.Text28.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            // 
+            // Text27
+            // 
+            this.Text27.BackColor = System.Drawing.Color.Transparent;
+            this.Text27.BorderColor = System.Drawing.Color.Black;
+            this.Text27.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.Text27.BorderWidth = 1F;
+            this.Text27.CanGrow = false;
+            this.Text27.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.Text27.ForeColor = System.Drawing.Color.Black;
+            this.Text27.LocationFloat = new DevExpress.Utils.PointFloat(450F, 125F);
+            this.Text27.Name = "Text27";
+            this.Text27.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.Text27.SizeF = new System.Drawing.SizeF(83.33331F, 15.34723F);
+            this.Text27.Text = "RUN DATE:";
+            this.Text27.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            // 
+            // gdCurrentDate2
+            // 
+            this.gdCurrentDate2.BackColor = System.Drawing.Color.Transparent;
+            this.gdCurrentDate2.BorderColor = System.Drawing.Color.Black;
+            this.gdCurrentDate2.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.gdCurrentDate2.BorderWidth = 1F;
+            this.gdCurrentDate2.CanGrow = false;
+            this.gdCurrentDate2.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "?gdCurrentDate")});
+            this.gdCurrentDate2.Font = new System.Drawing.Font("Arial", 10F);
+            this.gdCurrentDate2.ForeColor = System.Drawing.Color.Black;
+            this.gdCurrentDate2.LocationFloat = new DevExpress.Utils.PointFloat(533.3334F, 125F);
+            this.gdCurrentDate2.Name = "gdCurrentDate2";
+            this.gdCurrentDate2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.gdCurrentDate2.SizeF = new System.Drawing.SizeF(98.95837F, 15.34723F);
+            this.gdCurrentDate2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            this.gdCurrentDate2.TextFormatString = "{0:MM/dd/yyyy}";
+            // 
+            // Picture1
+            // 
+            this.Picture1.BackColor = System.Drawing.Color.Transparent;
+            this.Picture1.BorderColor = System.Drawing.Color.Black;
+            this.Picture1.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.Picture1.BorderWidth = 1F;
+            this.Picture1.Font = new System.Drawing.Font("Times New Roman", 9.75F);
+            this.Picture1.ForeColor = System.Drawing.Color.Black;
+            this.Picture1.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource("img", resources.GetString("Picture1.ImageSource"));
+            this.Picture1.LocationFloat = new DevExpress.Utils.PointFloat(800.0001F, 0F);
+            this.Picture1.Name = "Picture1";
+            this.Picture1.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
+            this.Picture1.SizeF = new System.Drawing.SizeF(246.3889F, 95F);
+            // 
+            // Text24
+            // 
+            this.Text24.BackColor = System.Drawing.Color.Transparent;
+            this.Text24.BorderColor = System.Drawing.Color.Black;
+            this.Text24.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.Text24.BorderWidth = 1F;
+            this.Text24.CanGrow = false;
+            this.Text24.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold);
+            this.Text24.ForeColor = System.Drawing.Color.Black;
+            this.Text24.LocationFloat = new DevExpress.Utils.PointFloat(956.875F, 158.3333F);
+            this.Text24.Name = "Text24";
+            this.Text24.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.Text24.SizeF = new System.Drawing.SizeF(93.125F, 18.26389F);
+            this.Text24.Text = "LOAN BALANCE";
+            this.Text24.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            // 
+            // Text23
+            // 
+            this.Text23.BackColor = System.Drawing.Color.Transparent;
+            this.Text23.BorderColor = System.Drawing.Color.Black;
+            this.Text23.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.Text23.BorderWidth = 1F;
+            this.Text23.CanGrow = false;
+            this.Text23.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold);
+            this.Text23.ForeColor = System.Drawing.Color.Black;
+            this.Text23.LocationFloat = new DevExpress.Utils.PointFloat(8.333374F, 158.3333F);
+            this.Text23.Name = "Text23";
+            this.Text23.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.Text23.SizeF = new System.Drawing.SizeF(58.33333F, 18.26389F);
+            this.Text23.Text = "DEALER";
+            this.Text23.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            // 
+            // Line3
+            // 
+            this.Line3.BackColor = System.Drawing.Color.Transparent;
+            this.Line3.BorderColor = System.Drawing.Color.Navy;
+            this.Line3.Borders = DevExpress.XtraPrinting.BorderSide.Top;
+            this.Line3.BorderWidth = 1F;
+            this.Line3.Font = new System.Drawing.Font("Times New Roman", 9.75F);
+            this.Line3.ForeColor = System.Drawing.Color.Navy;
+            this.Line3.LineWidth = 3F;
+            this.Line3.LocationFloat = new DevExpress.Utils.PointFloat(0F, 179.7638F);
+            this.Line3.Name = "Line3";
+            this.Line3.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
+            this.Line3.SizeF = new System.Drawing.SizeF(1050F, 3.125F);
+            // 
             // XtraReportClosedPaidInAdvanceDealerSummary
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -527,5 +671,13 @@
         private DevExpress.XtraReports.UI.TopMarginBand topMarginBand1;
         private DevExpress.XtraReports.UI.BottomMarginBand bottomMarginBand1;
         private DevExpress.DataAccess.Sql.SqlDataSource sqlDataSource1;
+        private DevExpress.XtraReports.UI.XRLabel Text26;
+        private DevExpress.XtraReports.UI.XRLabel Text28;
+        private DevExpress.XtraReports.UI.XRLabel Text27;
+        private DevExpress.XtraReports.UI.XRLabel gdCurrentDate2;
+        private DevExpress.XtraReports.UI.XRPictureBox Picture1;
+        private DevExpress.XtraReports.UI.XRLabel Text24;
+        private DevExpress.XtraReports.UI.XRLabel Text23;
+        private DevExpress.XtraReports.UI.XRLine Line3;
     }
 }
