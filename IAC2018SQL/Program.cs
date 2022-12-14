@@ -1746,7 +1746,7 @@ namespace IAC2021SQL
 					// Try and open LOCKFILE for EXCLUSIVE ReadWrite Access
 					fs.Close();
 					fs.Dispose();
-					fs = new FileStream(lsFilePath, FileMode.Open, FileAccess.ReadWrite, FileShare.None);
+					fs = new FileStream(lsFilePath, FileMode.Open, FileAccess.Read, FileShare.None);
 				}
 				catch (IOException ex)
 				{
@@ -1787,7 +1787,7 @@ namespace IAC2021SQL
 				try
 				{
 				// Try and open the LOCKFILE for shared ReadWrite Access
-				fs = new FileStream(lsFilePath,FileMode.Open,FileAccess.ReadWrite,FileShare.ReadWrite);
+				fs = new FileStream(lsFilePath,FileMode.Open,FileAccess.Read,FileShare.Read);
 				}
 				catch (IOException ex)
 				{
