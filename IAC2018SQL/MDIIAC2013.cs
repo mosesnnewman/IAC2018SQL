@@ -898,6 +898,7 @@ namespace IAC2021SQL
             ReportData.CUSTOMER.Columns.Remove("TempPT");
             foreach (DataRow dr in ReportData.CUSTOMER.Rows)
             {
+                // Moses Newman 12/14/2022 Handle CUSTOMER_PARTIAL_PAYMENTS GREATER THAN SINGLE DIGIT TO THE LEFT
                 tempPosting.tempCustomer.Rows.Add(dr.ItemArray);
             }
             tempCustomerTableAdapter.Update(tempPosting.tempCustomer);

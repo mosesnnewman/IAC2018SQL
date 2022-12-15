@@ -190,8 +190,8 @@ namespace IAC2021SQL
                 worker.ReportProgress((Int32)((Double)(((Double)PaymentPos + 1.0000) / (Double)PAYMENTPostDataSet.PAYMENT.Rows.Count) * 100.0000));
             }
             // Moses Newman 12/1/2022
-            lnMasterNPNP = (Decimal)PAYMENTTableAdapter.NPNP(); 
-            lnMasterNP = (Decimal)PAYMENTTableAdapter.NP();
+            //lnMasterNPNP = (Decimal)PAYMENTTableAdapter.NPNP(); 
+            //lnMasterNP = (Decimal)PAYMENTTableAdapter.NP();
             ClosedPaymentDealerPost(ref PAYMENTPostDataSet, ref worker);
             ClosedPaymentMasterPost(ref PAYMENTPostDataSet, ref worker);
             ClosedPaymentMASTHISTPost(ref PAYMENTPostDataSet, ref worker);
