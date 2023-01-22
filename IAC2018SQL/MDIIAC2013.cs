@@ -1766,5 +1766,10 @@ namespace IAC2021SQL
         { 
             CreateFormInstance("FormCashPaymentSummary", false);
         }
+
+        private void PrintCoupons_Click(object sender, EventArgs e)
+        {
+            CreateFormInstance("PrintCoupons", false);
+        }
     }
 }

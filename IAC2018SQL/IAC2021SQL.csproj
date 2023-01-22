@@ -43,7 +43,7 @@
     <SuiteName>IAC2021SQL</SuiteName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>8</ApplicationRevision>
+    <ApplicationRevision>10</ApplicationRevision>
     <ApplicationVersion>100.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -775,6 +775,12 @@
       <DependentUpon>TempPosting.xsd</DependentUpon>
     </Compile>
     <Compile Include="Thinfinity.VirtualUI.cs" />
+    <Compile Include="XtraFormPrintCoupons.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XtraFormPrintCoupons.Designer.cs">
+      <DependentUpon>XtraFormPrintCoupons.cs</DependentUpon>
+    </Compile>
     <Compile Include="XtraReportAmortization.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -816,6 +822,18 @@
     </Compile>
     <Compile Include="XtraReportClosedCustomerDelinquencyRepoReport.Designer.cs">
       <DependentUpon>XtraReportClosedCustomerDelinquencyRepoReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReportCouponBook.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReportCouponBook.Designer.cs">
+      <DependentUpon>XtraReportCouponBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReportOpenCustomerEditList.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReportOpenCustomerEditList.Designer.cs">
+      <DependentUpon>XtraReportOpenCustomerEditList.cs</DependentUpon>
     </Compile>
     <Compile Include="XtraReportClosedCustomerEditList.cs">
       <SubType>Component</SubType>
@@ -2095,6 +2113,9 @@
     <EmbeddedResource Include="IACSplashScreen.resx">
       <DependentUpon>IACSplashScreen.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="XtraFormPrintCoupons.resx">
+      <DependentUpon>XtraFormPrintCoupons.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="XtraReportAmortization.resx">
       <DependentUpon>XtraReportAmortization.cs</DependentUpon>
     </EmbeddedResource>
@@ -2115,6 +2136,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="XtraReportClosedCustomerDelinquencyRepoReport.resx">
       <DependentUpon>XtraReportClosedCustomerDelinquencyRepoReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReportCouponBook.resx">
+      <DependentUpon>XtraReportCouponBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReportOpenCustomerEditList.resx">
+      <DependentUpon>XtraReportOpenCustomerEditList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="XtraReportClosedCustomerEditList.resx">
       <DependentUpon>XtraReportClosedCustomerEditList.cs</DependentUpon>
