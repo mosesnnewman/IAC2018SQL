@@ -19,6 +19,7 @@ using DevExpress.XtraEditors;
 using DevExpress.Utils;
 using System.Net.Http;
 using Sentry;
+using System.Data.SqlClient;
 
 
 namespace IAC2021SQL
@@ -991,11 +992,28 @@ namespace IAC2021SQL
 			MailMergeComponents MailMerge = new MailMergeComponents();
 
 			MailMerge.CreateMailMerge(CustomerPostDataSet);
-            // Mose 02/14/2018 add envelopes to new business
+            // Moses newman 02/14/2018 add envelopes to new business
             MailMerge.CreateMailMerge(CustomerPostDataSet,false,"","S",false,"","",true);
 
 			lnREAD = CustomerPostDataSet.CUSTOMER.Rows.Count;
-			ProcessClosedCustomer(ref CustomerPostDataSet,ref CustomerTableAdapter,ref CustomerHistTableAdapter, ref lnTotalCustomerDealerDisc, ref lnMasterInterest,ref worker);
+			// Moses Newman 01/19/2023 Create Coupon Records For New Business
+            SqlConnection CouponConnection = new SqlConnection("Data Source=SQL-IAC;Initial Catalog=IACSQLPRODUCTION;Integrated Security=SSPI;TrustServerCertificate=True");
+            using (SqlCommand cmd = new SqlCommand("CreateCoupons"))
+            {
+                cmd.Connection = CouponConnection;
+                cmd.CommandTimeout = 300; //in seconds
+                                          //etc...
+                cmd.CommandType = CommandType.StoredProcedure;
+				cmd.Parameters.AddWithValue("@CustomerNUM",SqlDbType.Int).Value = 0;
+                cmd.Parameters.AddWithValue("@StartTerm", SqlDbType.Int).Value = 1;
+                cmd.Parameters.AddWithValue("@TicketCount", SqlDbType.Int).Value = 0;
+				// Moses Newman 01/21/2023
+                cmd.Parameters.AddWithValue("@PurgeNB", SqlDbType.Int).Value = 1;
+                cmd.Connection.Open();
+                cmd.ExecuteNonQuery();
+                cmd.Connection.Close();
+            }
+            ProcessClosedCustomer(ref CustomerPostDataSet,ref CustomerTableAdapter,ref CustomerHistTableAdapter, ref lnTotalCustomerDealerDisc, ref lnMasterInterest,ref worker);
 		}
 
 

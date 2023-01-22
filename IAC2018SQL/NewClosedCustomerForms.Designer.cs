@@ -8167,6 +8167,7 @@
             // 
             // nullableDateTimePickerDateofAccountInformation
             // 
+            this.nullableDateTimePickerDateofAccountInformation.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.closedCreditManagerBindingSource, "DateOfAccountInformation", true));
             resources.ApplyResources(this.nullableDateTimePickerDateofAccountInformation, "nullableDateTimePickerDateofAccountInformation");
             this.nullableDateTimePickerDateofAccountInformation.Name = "nullableDateTimePickerDateofAccountInformation";
             this.nullableDateTimePickerDateofAccountInformation.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("nullableDateTimePickerDateofAccountInformation.Properties.Appearance.Font")));
