@@ -29,13 +29,24 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery5 = new DevExpress.DataAccess.Sql.StoredProcQuery();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter5 = new DevExpress.DataAccess.Sql.QueryParameter();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PrintCoupons));
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery2 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter2 = new DevExpress.DataAccess.Sql.QueryParameter();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.buttonCancel = new DevExpress.XtraEditors.SimpleButton();
+            this.buttonPrint = new DevExpress.XtraEditors.SimpleButton();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
+            this.textEditTotalPayments = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
+            this.textEditPaymentsLeft = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
+            this.textEditRegularPayment = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
+            this.textEditBalance = new DevExpress.XtraEditors.TextEdit();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.buttonPrint = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
@@ -48,24 +59,19 @@
             this.spinEditStartTicket = new DevExpress.XtraEditors.SpinEdit();
             this.spinEditTicketCount = new DevExpress.XtraEditors.SpinEdit();
             this.DateEditNextPayDate = new DevExpress.XtraEditors.DateEdit();
-            this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
-            this.textEditBalance = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
-            this.textEditRegularPayment = new DevExpress.XtraEditors.TextEdit();
-            this.buttonCancel = new DevExpress.XtraEditors.SimpleButton();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.checkEditAllNewBusiness = new DevExpress.XtraEditors.CheckEdit();
             this.cUSTOMER_NOTextBox = new DevExpress.XtraEditors.TextEdit();
             this.labelControlAccountNumber = new DevExpress.XtraEditors.LabelControl();
-            this.checkEditAllNewBusiness = new DevExpress.XtraEditors.CheckEdit();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
-            this.textEditPaymentsLeft = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
-            this.textEditTotalPayments = new DevExpress.XtraEditors.TextEdit();
+            this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditTotalPayments.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditPaymentsLeft.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditRegularPayment.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditBalance.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditZip.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditState.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditCity.Properties)).BeginInit();
@@ -75,15 +81,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.spinEditTicketCount.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DateEditNextPayDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DateEditNextPayDate.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditBalance.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditRegularPayment.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cUSTOMER_NOTextBox.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEditAllNewBusiness.Properties)).BeginInit();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditPaymentsLeft.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditTotalPayments.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEditAllNewBusiness.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cUSTOMER_NOTextBox.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl1
@@ -99,6 +99,169 @@
             this.groupControl1.Size = new System.Drawing.Size(781, 395);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "groupControl1";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.buttonCancel);
+            this.groupBox3.Controls.Add(this.buttonPrint);
+            this.groupBox3.Location = new System.Drawing.Point(228, 246);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(324, 136);
+            this.groupBox3.TabIndex = 99;
+            this.groupBox3.TabStop = false;
+            // 
+            // buttonCancel
+            // 
+            this.buttonCancel.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCancel.Appearance.Options.UseFont = true;
+            this.buttonCancel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonCancel.ImageOptions.Image")));
+            this.buttonCancel.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.buttonCancel.Location = new System.Drawing.Point(175, 20);
+            this.buttonCancel.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonCancel.Name = "buttonCancel";
+            this.buttonCancel.Size = new System.Drawing.Size(110, 103);
+            this.buttonCancel.TabIndex = 96;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
+            // 
+            // buttonPrint
+            // 
+            this.buttonPrint.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonPrint.ImageOptions.Image")));
+            this.buttonPrint.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.buttonPrint.Location = new System.Drawing.Point(40, 21);
+            this.buttonPrint.Name = "buttonPrint";
+            this.buttonPrint.Size = new System.Drawing.Size(110, 103);
+            this.buttonPrint.TabIndex = 89;
+            this.buttonPrint.Click += new System.EventHandler(this.buttonPrint_Click);
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.labelControl10);
+            this.groupBox2.Controls.Add(this.textEditTotalPayments);
+            this.groupBox2.Controls.Add(this.labelControl9);
+            this.groupBox2.Controls.Add(this.textEditPaymentsLeft);
+            this.groupBox2.Controls.Add(this.labelControl8);
+            this.groupBox2.Controls.Add(this.textEditRegularPayment);
+            this.groupBox2.Controls.Add(this.labelControl7);
+            this.groupBox2.Controls.Add(this.textEditBalance);
+            this.groupBox2.Controls.Add(this.labelControl6);
+            this.groupBox2.Controls.Add(this.labelControl5);
+            this.groupBox2.Controls.Add(this.labelControl4);
+            this.groupBox2.Controls.Add(this.labelControl3);
+            this.groupBox2.Controls.Add(this.labelControl2);
+            this.groupBox2.Controls.Add(this.textEditZip);
+            this.groupBox2.Controls.Add(this.textEditState);
+            this.groupBox2.Controls.Add(this.textEditCity);
+            this.groupBox2.Controls.Add(this.textEditAddress);
+            this.groupBox2.Controls.Add(this.textEditName);
+            this.groupBox2.Controls.Add(this.labelControl1);
+            this.groupBox2.Controls.Add(this.spinEditStartTicket);
+            this.groupBox2.Controls.Add(this.spinEditTicketCount);
+            this.groupBox2.Controls.Add(this.DateEditNextPayDate);
+            this.groupBox2.Location = new System.Drawing.Point(3, 61);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(774, 179);
+            this.groupBox2.TabIndex = 98;
+            this.groupBox2.TabStop = false;
+            // 
+            // labelControl10
+            // 
+            this.labelControl10.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl10.Appearance.Options.UseFont = true;
+            this.labelControl10.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Horizontal;
+            this.labelControl10.Location = new System.Drawing.Point(599, 138);
+            this.labelControl10.Name = "labelControl10";
+            this.labelControl10.Size = new System.Drawing.Size(109, 21);
+            this.labelControl10.TabIndex = 99;
+            this.labelControl10.Text = "Total payments:";
+            // 
+            // textEditTotalPayments
+            // 
+            this.textEditTotalPayments.Enabled = false;
+            this.textEditTotalPayments.Location = new System.Drawing.Point(710, 131);
+            this.textEditTotalPayments.Name = "textEditTotalPayments";
+            this.textEditTotalPayments.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textEditTotalPayments.Properties.Appearance.Options.UseFont = true;
+            this.textEditTotalPayments.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.textEditTotalPayments.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.textEditTotalPayments.Properties.DisplayFormat.FormatString = "n0";
+            this.textEditTotalPayments.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.textEditTotalPayments.Size = new System.Drawing.Size(51, 28);
+            this.textEditTotalPayments.TabIndex = 98;
+            // 
+            // labelControl9
+            // 
+            this.labelControl9.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl9.Appearance.Options.UseFont = true;
+            this.labelControl9.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Horizontal;
+            this.labelControl9.Location = new System.Drawing.Point(308, 138);
+            this.labelControl9.Name = "labelControl9";
+            this.labelControl9.Size = new System.Drawing.Size(97, 21);
+            this.labelControl9.TabIndex = 97;
+            this.labelControl9.Text = "Payments left:";
+            // 
+            // textEditPaymentsLeft
+            // 
+            this.textEditPaymentsLeft.Enabled = false;
+            this.textEditPaymentsLeft.Location = new System.Drawing.Point(408, 131);
+            this.textEditPaymentsLeft.Name = "textEditPaymentsLeft";
+            this.textEditPaymentsLeft.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textEditPaymentsLeft.Properties.Appearance.Options.UseFont = true;
+            this.textEditPaymentsLeft.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.textEditPaymentsLeft.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.textEditPaymentsLeft.Properties.DisplayFormat.FormatString = "n0";
+            this.textEditPaymentsLeft.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.textEditPaymentsLeft.Size = new System.Drawing.Size(51, 28);
+            this.textEditPaymentsLeft.TabIndex = 96;
+            // 
+            // labelControl8
+            // 
+            this.labelControl8.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl8.Appearance.Options.UseFont = true;
+            this.labelControl8.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Horizontal;
+            this.labelControl8.Location = new System.Drawing.Point(553, 110);
+            this.labelControl8.Name = "labelControl8";
+            this.labelControl8.Size = new System.Drawing.Size(122, 21);
+            this.labelControl8.TabIndex = 95;
+            this.labelControl8.Text = "Regular Payment:";
+            // 
+            // textEditRegularPayment
+            // 
+            this.textEditRegularPayment.Enabled = false;
+            this.textEditRegularPayment.Location = new System.Drawing.Point(677, 103);
+            this.textEditRegularPayment.Name = "textEditRegularPayment";
+            this.textEditRegularPayment.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textEditRegularPayment.Properties.Appearance.Options.UseFont = true;
+            this.textEditRegularPayment.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.textEditRegularPayment.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.textEditRegularPayment.Properties.DisplayFormat.FormatString = "C2";
+            this.textEditRegularPayment.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.textEditRegularPayment.Size = new System.Drawing.Size(84, 28);
+            this.textEditRegularPayment.TabIndex = 94;
+            // 
+            // labelControl7
+            // 
+            this.labelControl7.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl7.Appearance.Options.UseFont = true;
+            this.labelControl7.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Horizontal;
+            this.labelControl7.Location = new System.Drawing.Point(349, 110);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(56, 21);
+            this.labelControl7.TabIndex = 93;
+            this.labelControl7.Text = "Balance:";
+            // 
+            // textEditBalance
+            // 
+            this.textEditBalance.Enabled = false;
+            this.textEditBalance.Location = new System.Drawing.Point(408, 103);
+            this.textEditBalance.Name = "textEditBalance";
+            this.textEditBalance.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textEditBalance.Properties.Appearance.Options.UseFont = true;
+            this.textEditBalance.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.textEditBalance.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.textEditBalance.Properties.DisplayFormat.FormatString = "C2";
+            this.textEditBalance.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.textEditBalance.Size = new System.Drawing.Size(142, 28);
+            this.textEditBalance.TabIndex = 92;
             // 
             // labelControl6
             // 
@@ -121,16 +284,6 @@
             this.labelControl5.Size = new System.Drawing.Size(142, 21);
             this.labelControl5.TabIndex = 90;
             this.labelControl5.Text = "Number of coupons:";
-            // 
-            // buttonPrint
-            // 
-            this.buttonPrint.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonPrint.ImageOptions.Image")));
-            this.buttonPrint.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.buttonPrint.Location = new System.Drawing.Point(40, 21);
-            this.buttonPrint.Name = "buttonPrint";
-            this.buttonPrint.Size = new System.Drawing.Size(110, 103);
-            this.buttonPrint.TabIndex = 89;
-            this.buttonPrint.Click += new System.EventHandler(this.buttonPrint_Click);
             // 
             // labelControl4
             // 
@@ -249,6 +402,9 @@
             this.spinEditStartTicket.Properties.Appearance.Options.UseFont = true;
             this.spinEditStartTicket.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.spinEditStartTicket.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.spinEditStartTicket.Properties.IsFloatValue = false;
+            this.spinEditStartTicket.Properties.MaskSettings.Set("mask", "N00");
             this.spinEditStartTicket.Size = new System.Drawing.Size(67, 28);
             this.spinEditStartTicket.TabIndex = 79;
             // 
@@ -265,6 +421,10 @@
             this.spinEditTicketCount.Properties.Appearance.Options.UseFont = true;
             this.spinEditTicketCount.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.spinEditTicketCount.Properties.DisplayFormat.FormatString = "n0";
+            this.spinEditTicketCount.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.spinEditTicketCount.Properties.IsFloatValue = false;
+            this.spinEditTicketCount.Properties.MaskSettings.Set("mask", "N00");
             this.spinEditTicketCount.Size = new System.Drawing.Size(67, 28);
             this.spinEditTicketCount.TabIndex = 78;
             // 
@@ -287,89 +447,35 @@
             this.DateEditNextPayDate.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
             this.DateEditNextPayDate.Properties.LookAndFeel.SkinName = "McSkin";
             this.DateEditNextPayDate.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.DateEditNextPayDate.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.DateEditNextPayDate.Properties.UseAdvancedMode = DevExpress.Utils.DefaultBoolean.True;
             this.DateEditNextPayDate.Properties.VistaDisplayMode = DevExpress.Utils.DefaultBoolean.False;
             this.DateEditNextPayDate.Size = new System.Drawing.Size(119, 28);
             this.DateEditNextPayDate.TabIndex = 77;
             // 
-            // sqlDataSource1
+            // groupBox1
             // 
-            this.sqlDataSource1.ConnectionName = "IAC2021SQL.Properties.Settings.IAC2010SQLConnectionString";
-            this.sqlDataSource1.Name = "sqlDataSource1";
-            storedProcQuery5.Name = "ClosedCustomerSelect";
-            queryParameter5.Name = "@CUSTOMER_NO";
-            queryParameter5.Type = typeof(string);
-            queryParameter5.ValueInfo = "201501";
-            storedProcQuery5.Parameters.AddRange(new DevExpress.DataAccess.Sql.QueryParameter[] {
-            queryParameter5});
-            storedProcQuery5.StoredProcName = "ClosedCustomerSelect";
-            this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            storedProcQuery5});
-            this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
+            this.groupBox1.Controls.Add(this.checkEditAllNewBusiness);
+            this.groupBox1.Controls.Add(this.cUSTOMER_NOTextBox);
+            this.groupBox1.Controls.Add(this.labelControlAccountNumber);
+            this.groupBox1.Location = new System.Drawing.Point(156, 0);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(469, 56);
+            this.groupBox1.TabIndex = 97;
+            this.groupBox1.TabStop = false;
             // 
-            // textEditBalance
+            // checkEditAllNewBusiness
             // 
-            this.textEditBalance.Enabled = false;
-            this.textEditBalance.Location = new System.Drawing.Point(408, 103);
-            this.textEditBalance.Name = "textEditBalance";
-            this.textEditBalance.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textEditBalance.Properties.Appearance.Options.UseFont = true;
-            this.textEditBalance.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
-            this.textEditBalance.Properties.AppearanceDisabled.Options.UseForeColor = true;
-            this.textEditBalance.Properties.DisplayFormat.FormatString = "C2";
-            this.textEditBalance.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.textEditBalance.Size = new System.Drawing.Size(142, 28);
-            this.textEditBalance.TabIndex = 92;
-            // 
-            // labelControl7
-            // 
-            this.labelControl7.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl7.Appearance.Options.UseFont = true;
-            this.labelControl7.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Horizontal;
-            this.labelControl7.Location = new System.Drawing.Point(349, 110);
-            this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(56, 21);
-            this.labelControl7.TabIndex = 93;
-            this.labelControl7.Text = "Balance:";
-            // 
-            // labelControl8
-            // 
-            this.labelControl8.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl8.Appearance.Options.UseFont = true;
-            this.labelControl8.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Horizontal;
-            this.labelControl8.Location = new System.Drawing.Point(553, 110);
-            this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(122, 21);
-            this.labelControl8.TabIndex = 95;
-            this.labelControl8.Text = "Regular Payment:";
-            // 
-            // textEditRegularPayment
-            // 
-            this.textEditRegularPayment.Enabled = false;
-            this.textEditRegularPayment.Location = new System.Drawing.Point(677, 103);
-            this.textEditRegularPayment.Name = "textEditRegularPayment";
-            this.textEditRegularPayment.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textEditRegularPayment.Properties.Appearance.Options.UseFont = true;
-            this.textEditRegularPayment.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
-            this.textEditRegularPayment.Properties.AppearanceDisabled.Options.UseForeColor = true;
-            this.textEditRegularPayment.Properties.DisplayFormat.FormatString = "C2";
-            this.textEditRegularPayment.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.textEditRegularPayment.Size = new System.Drawing.Size(84, 28);
-            this.textEditRegularPayment.TabIndex = 94;
-            // 
-            // buttonCancel
-            // 
-            this.buttonCancel.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCancel.Appearance.Options.UseFont = true;
-            this.buttonCancel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonCancel.ImageOptions.Image")));
-            this.buttonCancel.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.buttonCancel.Location = new System.Drawing.Point(175, 20);
-            this.buttonCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(110, 103);
-            this.buttonCancel.TabIndex = 96;
-            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
+            this.checkEditAllNewBusiness.Location = new System.Drawing.Point(197, 17);
+            this.checkEditAllNewBusiness.Name = "checkEditAllNewBusiness";
+            this.checkEditAllNewBusiness.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkEditAllNewBusiness.Properties.Appearance.Options.UseFont = true;
+            this.checkEditAllNewBusiness.Properties.Caption = "All New Business Last Posting";
+            this.checkEditAllNewBusiness.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
+            this.checkEditAllNewBusiness.Properties.ContentAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.checkEditAllNewBusiness.Properties.NullStyle = DevExpress.XtraEditors.Controls.StyleIndeterminate.Unchecked;
+            this.checkEditAllNewBusiness.Size = new System.Drawing.Size(233, 25);
+            this.checkEditAllNewBusiness.TabIndex = 4;
+            this.checkEditAllNewBusiness.CheckedChanged += new System.EventHandler(this.checkEditAllNewBusiness_CheckedChanged);
             // 
             // cUSTOMER_NOTextBox
             // 
@@ -407,120 +513,20 @@
             this.labelControlAccountNumber.TabIndex = 3;
             this.labelControlAccountNumber.Text = "Account #:";
             // 
-            // checkEditAllNewBusiness
+            // sqlDataSource1
             // 
-            this.checkEditAllNewBusiness.Location = new System.Drawing.Point(197, 17);
-            this.checkEditAllNewBusiness.Name = "checkEditAllNewBusiness";
-            this.checkEditAllNewBusiness.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkEditAllNewBusiness.Properties.Appearance.Options.UseFont = true;
-            this.checkEditAllNewBusiness.Properties.Caption = "All New Business Last Posting";
-            this.checkEditAllNewBusiness.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
-            this.checkEditAllNewBusiness.Properties.ContentAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.checkEditAllNewBusiness.Properties.NullStyle = DevExpress.XtraEditors.Controls.StyleIndeterminate.Unchecked;
-            this.checkEditAllNewBusiness.Size = new System.Drawing.Size(233, 25);
-            this.checkEditAllNewBusiness.TabIndex = 4;
-            this.checkEditAllNewBusiness.CheckedChanged += new System.EventHandler(this.checkEditAllNewBusiness_CheckedChanged);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.checkEditAllNewBusiness);
-            this.groupBox1.Controls.Add(this.cUSTOMER_NOTextBox);
-            this.groupBox1.Controls.Add(this.labelControlAccountNumber);
-            this.groupBox1.Location = new System.Drawing.Point(156, 0);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(469, 56);
-            this.groupBox1.TabIndex = 97;
-            this.groupBox1.TabStop = false;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.labelControl10);
-            this.groupBox2.Controls.Add(this.textEditTotalPayments);
-            this.groupBox2.Controls.Add(this.labelControl9);
-            this.groupBox2.Controls.Add(this.textEditPaymentsLeft);
-            this.groupBox2.Controls.Add(this.labelControl8);
-            this.groupBox2.Controls.Add(this.textEditRegularPayment);
-            this.groupBox2.Controls.Add(this.labelControl7);
-            this.groupBox2.Controls.Add(this.textEditBalance);
-            this.groupBox2.Controls.Add(this.labelControl6);
-            this.groupBox2.Controls.Add(this.labelControl5);
-            this.groupBox2.Controls.Add(this.labelControl4);
-            this.groupBox2.Controls.Add(this.labelControl3);
-            this.groupBox2.Controls.Add(this.labelControl2);
-            this.groupBox2.Controls.Add(this.textEditZip);
-            this.groupBox2.Controls.Add(this.textEditState);
-            this.groupBox2.Controls.Add(this.textEditCity);
-            this.groupBox2.Controls.Add(this.textEditAddress);
-            this.groupBox2.Controls.Add(this.textEditName);
-            this.groupBox2.Controls.Add(this.labelControl1);
-            this.groupBox2.Controls.Add(this.spinEditStartTicket);
-            this.groupBox2.Controls.Add(this.spinEditTicketCount);
-            this.groupBox2.Controls.Add(this.DateEditNextPayDate);
-            this.groupBox2.Location = new System.Drawing.Point(3, 61);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(774, 179);
-            this.groupBox2.TabIndex = 98;
-            this.groupBox2.TabStop = false;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.buttonCancel);
-            this.groupBox3.Controls.Add(this.buttonPrint);
-            this.groupBox3.Location = new System.Drawing.Point(228, 246);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(324, 136);
-            this.groupBox3.TabIndex = 99;
-            this.groupBox3.TabStop = false;
-            // 
-            // labelControl9
-            // 
-            this.labelControl9.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl9.Appearance.Options.UseFont = true;
-            this.labelControl9.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Horizontal;
-            this.labelControl9.Location = new System.Drawing.Point(308, 138);
-            this.labelControl9.Name = "labelControl9";
-            this.labelControl9.Size = new System.Drawing.Size(97, 21);
-            this.labelControl9.TabIndex = 97;
-            this.labelControl9.Text = "Payments left:";
-            // 
-            // textEditPaymentsLeft
-            // 
-            this.textEditPaymentsLeft.Enabled = false;
-            this.textEditPaymentsLeft.Location = new System.Drawing.Point(408, 131);
-            this.textEditPaymentsLeft.Name = "textEditPaymentsLeft";
-            this.textEditPaymentsLeft.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textEditPaymentsLeft.Properties.Appearance.Options.UseFont = true;
-            this.textEditPaymentsLeft.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
-            this.textEditPaymentsLeft.Properties.AppearanceDisabled.Options.UseForeColor = true;
-            this.textEditPaymentsLeft.Properties.DisplayFormat.FormatString = "n0";
-            this.textEditPaymentsLeft.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.textEditPaymentsLeft.Size = new System.Drawing.Size(51, 28);
-            this.textEditPaymentsLeft.TabIndex = 96;
-            // 
-            // labelControl10
-            // 
-            this.labelControl10.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl10.Appearance.Options.UseFont = true;
-            this.labelControl10.AutoSizeMode = DevExpress.XtraEditors.LabelAutoSizeMode.Horizontal;
-            this.labelControl10.Location = new System.Drawing.Point(599, 138);
-            this.labelControl10.Name = "labelControl10";
-            this.labelControl10.Size = new System.Drawing.Size(109, 21);
-            this.labelControl10.TabIndex = 99;
-            this.labelControl10.Text = "Total payments:";
-            // 
-            // textEditTotalPayments
-            // 
-            this.textEditTotalPayments.Enabled = false;
-            this.textEditTotalPayments.Location = new System.Drawing.Point(710, 131);
-            this.textEditTotalPayments.Name = "textEditTotalPayments";
-            this.textEditTotalPayments.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textEditTotalPayments.Properties.Appearance.Options.UseFont = true;
-            this.textEditTotalPayments.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
-            this.textEditTotalPayments.Properties.AppearanceDisabled.Options.UseForeColor = true;
-            this.textEditTotalPayments.Properties.DisplayFormat.FormatString = "n0";
-            this.textEditTotalPayments.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.textEditTotalPayments.Size = new System.Drawing.Size(51, 28);
-            this.textEditTotalPayments.TabIndex = 98;
+            this.sqlDataSource1.ConnectionName = "IAC2021SQL.Properties.Settings.IAC2010SQLConnectionString";
+            this.sqlDataSource1.Name = "sqlDataSource1";
+            storedProcQuery2.Name = "ClosedCustomerSelect";
+            queryParameter2.Name = "@CUSTOMER_NO";
+            queryParameter2.Type = typeof(string);
+            queryParameter2.ValueInfo = "201501";
+            storedProcQuery2.Parameters.AddRange(new DevExpress.DataAccess.Sql.QueryParameter[] {
+            queryParameter2});
+            storedProcQuery2.StoredProcName = "ClosedCustomerSelect";
+            this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
+            storedProcQuery2});
+            this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
             // PrintCoupons
             // 
@@ -535,6 +541,13 @@
             this.Load += new System.EventHandler(this.PrintCoupons_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditTotalPayments.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditPaymentsLeft.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditRegularPayment.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditBalance.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditZip.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditState.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditCity.Properties)).EndInit();
@@ -544,17 +557,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.spinEditTicketCount.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DateEditNextPayDate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DateEditNextPayDate.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditBalance.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditRegularPayment.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cUSTOMER_NOTextBox.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEditAllNewBusiness.Properties)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.textEditPaymentsLeft.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditTotalPayments.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEditAllNewBusiness.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cUSTOMER_NOTextBox.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }

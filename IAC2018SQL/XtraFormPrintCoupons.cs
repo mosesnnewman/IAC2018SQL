@@ -78,7 +78,7 @@ namespace IAC2021SQL
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@CustomerNUM", SqlDbType.Int).Value = lnCustomerID;
                 cmd.Parameters.AddWithValue("@StartTerm", SqlDbType.Int).Value = (Int32)spinEditStartTicket.Value;
-                cmd.Parameters.AddWithValue("@TicketCount", SqlDbType.Int).Value = (Int32)spinEditStartTicket.Value;
+                cmd.Parameters.AddWithValue("@TicketCount", SqlDbType.Int).Value = (Int32)spinEditTicketCount.Value;
                 cmd.Parameters.AddWithValue("@PurgeNB", SqlDbType.Int).Value = 0;
                 cmd.Connection.Open();
                 cmd.ExecuteNonQuery();
