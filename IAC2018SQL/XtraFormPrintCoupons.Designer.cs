@@ -30,10 +30,15 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PrintCoupons));
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery1 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter1 = new DevExpress.DataAccess.Sql.QueryParameter();
             DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery2 = new DevExpress.DataAccess.Sql.StoredProcQuery();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter2 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery3 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.MasterDetailInfo masterDetailInfo1 = new DevExpress.DataAccess.Sql.MasterDetailInfo();
+            DevExpress.DataAccess.Sql.RelationColumnInfo relationColumnInfo1 = new DevExpress.DataAccess.Sql.RelationColumnInfo();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.checkEditEmail = new DevExpress.XtraEditors.CheckEdit();
             this.buttonCancel = new DevExpress.XtraEditors.SimpleButton();
             this.buttonPrint = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -64,9 +69,12 @@
             this.cUSTOMER_NOTextBox = new DevExpress.XtraEditors.TextEdit();
             this.labelControlAccountNumber = new DevExpress.XtraEditors.LabelControl();
             this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
+            this.sqlDataSource2 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
+            this.progressBarControlEmail = new DevExpress.XtraEditors.ProgressBarControl();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEditEmail.Properties)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textEditTotalPayments.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditPaymentsLeft.Properties)).BeginInit();
@@ -84,6 +92,7 @@
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditAllNewBusiness.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cUSTOMER_NOTextBox.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.progressBarControlEmail.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl1
@@ -96,19 +105,34 @@
             this.groupControl1.Controls.Add(this.groupBox1);
             this.groupControl1.Location = new System.Drawing.Point(-1, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(781, 395);
+            this.groupControl1.Size = new System.Drawing.Size(781, 485);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "groupControl1";
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.progressBarControlEmail);
+            this.groupBox3.Controls.Add(this.checkEditEmail);
             this.groupBox3.Controls.Add(this.buttonCancel);
             this.groupBox3.Controls.Add(this.buttonPrint);
-            this.groupBox3.Location = new System.Drawing.Point(228, 246);
+            this.groupBox3.Location = new System.Drawing.Point(223, 253);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(324, 136);
+            this.groupBox3.Size = new System.Drawing.Size(334, 204);
             this.groupBox3.TabIndex = 99;
             this.groupBox3.TabStop = false;
+            // 
+            // checkEditEmail
+            // 
+            this.checkEditEmail.Location = new System.Drawing.Point(63, 19);
+            this.checkEditEmail.Name = "checkEditEmail";
+            this.checkEditEmail.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkEditEmail.Properties.Appearance.Options.UseFont = true;
+            this.checkEditEmail.Properties.Caption = "Email instead of printing";
+            this.checkEditEmail.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
+            this.checkEditEmail.Properties.ContentAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.checkEditEmail.Properties.NullStyle = DevExpress.XtraEditors.Controls.StyleIndeterminate.Unchecked;
+            this.checkEditEmail.Size = new System.Drawing.Size(209, 25);
+            this.checkEditEmail.TabIndex = 100;
             // 
             // buttonCancel
             // 
@@ -116,7 +140,7 @@
             this.buttonCancel.Appearance.Options.UseFont = true;
             this.buttonCancel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonCancel.ImageOptions.Image")));
             this.buttonCancel.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.buttonCancel.Location = new System.Drawing.Point(175, 20);
+            this.buttonCancel.Location = new System.Drawing.Point(180, 81);
             this.buttonCancel.Margin = new System.Windows.Forms.Padding(4);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(110, 103);
@@ -127,7 +151,7 @@
             // 
             this.buttonPrint.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonPrint.ImageOptions.Image")));
             this.buttonPrint.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.buttonPrint.Location = new System.Drawing.Point(40, 21);
+            this.buttonPrint.Location = new System.Drawing.Point(45, 82);
             this.buttonPrint.Name = "buttonPrint";
             this.buttonPrint.Size = new System.Drawing.Size(110, 103);
             this.buttonPrint.TabIndex = 89;
@@ -517,22 +541,53 @@
             // 
             this.sqlDataSource1.ConnectionName = "IAC2021SQL.Properties.Settings.IAC2010SQLConnectionString";
             this.sqlDataSource1.Name = "sqlDataSource1";
-            storedProcQuery2.Name = "ClosedCustomerSelect";
-            queryParameter2.Name = "@CUSTOMER_NO";
-            queryParameter2.Type = typeof(string);
-            queryParameter2.ValueInfo = "201501";
-            storedProcQuery2.Parameters.AddRange(new DevExpress.DataAccess.Sql.QueryParameter[] {
-            queryParameter2});
-            storedProcQuery2.StoredProcName = "ClosedCustomerSelect";
+            storedProcQuery1.Name = "ClosedCustomerSelect";
+            queryParameter1.Name = "@CUSTOMER_NO";
+            queryParameter1.Type = typeof(string);
+            queryParameter1.ValueInfo = "201501";
+            storedProcQuery1.Parameters.AddRange(new DevExpress.DataAccess.Sql.QueryParameter[] {
+            queryParameter1});
+            storedProcQuery1.StoredProcName = "ClosedCustomerSelect";
             this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            storedProcQuery2});
+            storedProcQuery1});
             this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
+            // 
+            // sqlDataSource2
+            // 
+            this.sqlDataSource2.ConnectionName = "IAC2021SQL.Properties.Settings.IAC2010SQLConnectionString";
+            this.sqlDataSource2.Name = "sqlDataSource2";
+            storedProcQuery2.MetaSerializable = "<Meta X=\"20\" Y=\"20\" Width=\"230\" Height=\"3621\" />";
+            storedProcQuery2.Name = "CUSTOMER";
+            storedProcQuery2.StoredProcName = "ClosedCustomerFillByCoupons";
+            storedProcQuery3.MetaSerializable = "<Meta X=\"270\" Y=\"20\" Width=\"100\" Height=\"161\" />";
+            storedProcQuery3.Name = "Email";
+            storedProcQuery3.StoredProcName = "EmailFillByCoupons";
+            this.sqlDataSource2.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
+            storedProcQuery2,
+            storedProcQuery3});
+            masterDetailInfo1.DetailQueryName = "Email";
+            relationColumnInfo1.NestedKeyColumn = "CustomerNo";
+            relationColumnInfo1.ParentKeyColumn = "CUSTOMER_NO";
+            masterDetailInfo1.KeyColumns.Add(relationColumnInfo1);
+            masterDetailInfo1.MasterQueryName = "CUSTOMER";
+            this.sqlDataSource2.Relations.AddRange(new DevExpress.DataAccess.Sql.MasterDetailInfo[] {
+            masterDetailInfo1});
+            this.sqlDataSource2.ResultSchemaSerializable = resources.GetString("sqlDataSource2.ResultSchemaSerializable");
+            // 
+            // progressBarControlEmail
+            // 
+            this.progressBarControlEmail.Location = new System.Drawing.Point(18, 50);
+            this.progressBarControlEmail.Name = "progressBarControlEmail";
+            this.progressBarControlEmail.Properties.ShowTitle = true;
+            this.progressBarControlEmail.Properties.TextOrientation = DevExpress.Utils.Drawing.TextOrientation.Horizontal;
+            this.progressBarControlEmail.Size = new System.Drawing.Size(298, 26);
+            this.progressBarControlEmail.TabIndex = 100;
             // 
             // PrintCoupons
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(779, 394);
+            this.ClientSize = new System.Drawing.Size(779, 482);
             this.Controls.Add(this.groupControl1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -542,6 +597,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.checkEditEmail.Properties)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textEditTotalPayments.Properties)).EndInit();
@@ -561,6 +617,7 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditAllNewBusiness.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cUSTOMER_NOTextBox.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.progressBarControlEmail.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -599,5 +656,8 @@
         private DevExpress.XtraEditors.TextEdit textEditTotalPayments;
         private DevExpress.XtraEditors.LabelControl labelControl9;
         private DevExpress.XtraEditors.TextEdit textEditPaymentsLeft;
+        private DevExpress.XtraEditors.CheckEdit checkEditEmail;
+        private DevExpress.DataAccess.Sql.SqlDataSource sqlDataSource2;
+        private DevExpress.XtraEditors.ProgressBarControl progressBarControlEmail;
     }
 }

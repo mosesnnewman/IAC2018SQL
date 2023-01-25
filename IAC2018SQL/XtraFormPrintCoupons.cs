@@ -5,8 +5,13 @@ using DevExpress.DataAccess.Sql;
 using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using Outlook = Microsoft.Office.Interop.Outlook;
+using DevExpress.XtraPrinting.Native;
+using System.DirectoryServices.AccountManagement;
+using DevExpress.XtraPrinting;
 
 namespace IAC2021SQL
 {
@@ -84,25 +89,98 @@ namespace IAC2021SQL
                 cmd.ExecuteNonQuery();
                 cmd.Connection.Close();
             }
-            MDIIAC2013 MDImain = (MDIIAC2013)MdiParent;
-            var report = new XtraReportCouponBook();
-            SqlDataSource ds = report.DataSource as SqlDataSource;
+            if (!checkEditEmail.Checked)
+            {
+                progressBarControlEmail.Enabled = false;
+                progressBarControlEmail.Visible = false;
+                var report = new XtraReportCouponBook();
+                SqlDataSource ds = report.DataSource as SqlDataSource;
 
-            report.DataSource = ds;
-            report.RequestParameters = false;
+                report.DataSource = ds;
+                report.RequestParameters = false;
+                var tool = new ReportPrintTool(report);
+                MDIIAC2013 MDImain = (MDIIAC2013)MdiParent;
 
-            var tool = new ReportPrintTool(report);
+                tool.PreviewRibbonForm.MdiParent = MDImain;
+                tool.AutoShowParametersPanel = false;
+                tool.PreviewRibbonForm.WindowState = FormWindowState.Maximized;
+                tool.ShowRibbonPreview();
+            }
+            else
+            {
+                progressBarControlEmail.Visible = true;
+                progressBarControlEmail.Enabled = true;
+                progressBarControlEmail.Properties.Step = 1;
+                progressBarControlEmail.Properties.PercentView = true;
+                progressBarControlEmail.Properties.Minimum = 0;
+                Object mailitem;
+                String CurrentUserEmail = UserPrincipal.Current.EmailAddress;
 
-            tool.PreviewRibbonForm.MdiParent = MDImain;
-            tool.AutoShowParametersPanel = false;
-            tool.PreviewRibbonForm.WindowState = FormWindowState.Maximized;
-            tool.ShowRibbonPreview();
+                Outlook.Application outlookApp = new Outlook.Application();
+                sqlDataSource2.Fill();
+                ITable srcCUSTOMER = sqlDataSource2.Result[0];
+                DataTable destCUSTOMER = new DataTable("CUSTOMER");
+                foreach (IColumn column in srcCUSTOMER.Columns)
+                    destCUSTOMER.Columns.Add(column.Name, column.Type);
+                foreach (IRow row in srcCUSTOMER)
+                    destCUSTOMER.Rows.Add(row.ToArray());
+
+                ITable srcCUSTOMEREmail = sqlDataSource2.Result[1];
+                DataTable destCUSTOMEREmail = new DataTable("CUSTOMEREmail");
+                foreach (IColumn column in srcCUSTOMEREmail.Columns)
+                    destCUSTOMEREmail.Columns.Add(column.Name, column.Type);
+                foreach (IRow row in srcCUSTOMEREmail)
+                    destCUSTOMEREmail.Rows.Add(row.ToArray());
+                progressBarControlEmail.Properties.Maximum = destCUSTOMEREmail.Rows.Count;
+                for (int i = 0; i < destCUSTOMEREmail.Rows.Count; i++)
+                {
+                    using (SqlCommand cmd = new SqlCommand("CreateCoupons"))
+                    {                  
+                        cmd.Connection = CouponConnection;
+                        cmd.CommandTimeout = 300; //in seconds
+                                                  //etc...
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@CustomerNUM", SqlDbType.Int).Value = destCUSTOMEREmail.Rows[i].Field<String>("CustomerNo");
+                        cmd.Parameters.AddWithValue("@StartTerm", SqlDbType.Int).Value = (Int32)spinEditStartTicket.Value;
+                        cmd.Parameters.AddWithValue("@TicketCount", SqlDbType.Int).Value = (Int32)spinEditTicketCount.Value;
+                        cmd.Parameters.AddWithValue("@PurgeNB", SqlDbType.Int).Value = 0;
+                        cmd.Connection.Open();
+                        cmd.ExecuteNonQuery();
+                        cmd.Connection.Close();
+                    }
+                    XtraReportCouponBook report = new XtraReportCouponBook();
+                    SqlDataSource ds = report.DataSource as SqlDataSource;
+                    report.DataSource = ds;
+                    report.RequestParameters = false;
+                    String lsFileName = @"\\DC-IAC\Public\Coupons\" + destCUSTOMEREmail.Rows[i].Field<String>("CustomerNo") + "Coupons.pdf";
+                    report.ExportToPdf(lsFileName); 
+
+                    mailitem = outlookApp.CreateItem(Outlook.OlItemType.olMailItem);
+                    Outlook.MailItem mailItem = (Outlook.MailItem)mailitem;
+                    mailItem.Subject = "*** LOAN PAYMENT COUPONS FROM IAC, INC. ***";
+                    mailItem.SentOnBehalfOfName = CurrentUserEmail;
+                    mailItem.To = destCUSTOMEREmail.Rows[i].Field<String>("EmailAddress");
+                    mailItem.Importance = Outlook.OlImportance.olImportanceHigh;
+                    mailItem.BodyFormat = Outlook.OlBodyFormat.olFormatRichText;
+                    mailItem.Body = "Attached please find the PDF of you loan payment coupons. IAC, INC.";
+                    mailItem.Attachments.Add(lsFileName, Outlook.OlAttachmentType.olByValue,1,lsFileName);
+                    mailItem.Send();
+                    progressBarControlEmail.PerformStep();
+                    progressBarControlEmail.Update();
+                }
+                //outlookApp.Quit();
+                progressBarControlEmail.Properties.Step = 1;
+                progressBarControlEmail.Properties.PercentView = true;
+                progressBarControlEmail.Properties.Minimum = 0;
+                progressBarControlEmail.Visible = false;
+            }
         }
-
         private void PrintCoupons_Load(object sender, EventArgs e)
         {
             cUSTOMER_NOTextBox.EditValue = "";
             checkEditAllNewBusiness.Checked = false;
+            progressBarControlEmail.Enabled = false;
+            progressBarControlEmail.Visible = false;
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
