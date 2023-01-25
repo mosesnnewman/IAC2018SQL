@@ -162,7 +162,7 @@ namespace IAC2021SQL
                     mailItem.To = destCUSTOMEREmail.Rows[i].Field<String>("EmailAddress");
                     mailItem.Importance = Outlook.OlImportance.olImportanceHigh;
                     mailItem.BodyFormat = Outlook.OlBodyFormat.olFormatRichText;
-                    mailItem.Body = "Attached please find the PDF of you loan payment coupons. IAC, INC.";
+                    mailItem.Body = "Attached please find the PDF of your loan payment coupons. IAC, INC.";
                     mailItem.Attachments.Add(lsFileName, Outlook.OlAttachmentType.olByValue,1,lsFileName);
                     mailItem.Send();
                     progressBarControlEmail.PerformStep();
