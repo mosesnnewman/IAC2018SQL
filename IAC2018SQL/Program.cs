@@ -997,7 +997,7 @@ namespace IAC2021SQL
 
 			lnREAD = CustomerPostDataSet.CUSTOMER.Rows.Count;
 			// Moses Newman 01/19/2023 Create Coupon Records For New Business
-            SqlConnection CouponConnection = new SqlConnection("Data Source=SQL-IAC;Initial Catalog=IACSQLPRODUCTION;Integrated Security=SSPI;TrustServerCertificate=True");
+            SqlConnection CouponConnection = new SqlConnection(IAC2021SQL.Properties.Settings.Default.IAC2010SQLConnectionString.ToUpper());
             using (SqlCommand cmd = new SqlCommand("CreateCoupons"))
             {
                 cmd.Connection = CouponConnection;
