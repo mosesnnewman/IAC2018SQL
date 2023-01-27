@@ -45,7 +45,7 @@ namespace IAC2021SQL
                 textEditZip.EditValue = dest.Rows[0].Field<String>("CUSTOMER_ZIP_1");
                 textEditBalance.EditValue = dest.Rows[0].Field<Decimal>("CUSTOMER_BALANCE");
                 textEditRegularPayment.EditValue = dest.Rows[0].Field<Decimal>("CUSTOMER_REGULAR_AMOUNT");
-                textEditTotalPayments.EditValue = dest.Rows[0].Field<Int32>("CUSTOMER_TERM"); 
+                textEditTotalPayments.EditValue = dest.Rows[0].Field<Int32>("CUSTOMER_TERM");
                 textEditPaymentsLeft.EditValue = dest.Rows[0].Field<Int32>("CUSTOMER_TERM") -
                     dest.Rows[0].Field<Int32>("CUSTOMER_NO_OF_PAYMENTS_MADE");
                 spinEditTicketCount.Value = dest.Rows[0].Field<Int32>("CUSTOMER_TERM");
@@ -135,7 +135,7 @@ namespace IAC2021SQL
                 for (int i = 0; i < destCUSTOMEREmail.Rows.Count; i++)
                 {
                     using (SqlCommand cmd = new SqlCommand("CreateCoupons"))
-                    {                  
+                    {
                         cmd.Connection = CouponConnection;
                         cmd.CommandTimeout = 300; //in seconds
                                                   //etc...
@@ -153,7 +153,7 @@ namespace IAC2021SQL
                     report.DataSource = ds;
                     report.RequestParameters = false;
                     String lsFileName = @"\\DC-IAC\Public\Coupons\" + destCUSTOMEREmail.Rows[i].Field<String>("CustomerNo") + "Coupons.pdf";
-                    report.ExportToPdf(lsFileName); 
+                    report.ExportToPdf(lsFileName);
 
                     mailitem = outlookApp.CreateItem(Outlook.OlItemType.olMailItem);
                     Outlook.MailItem mailItem = (Outlook.MailItem)mailitem;
@@ -163,7 +163,7 @@ namespace IAC2021SQL
                     mailItem.Importance = Outlook.OlImportance.olImportanceHigh;
                     mailItem.BodyFormat = Outlook.OlBodyFormat.olFormatRichText;
                     mailItem.Body = "Attached please find the PDF of your loan payment coupons. IAC, INC.";
-                    mailItem.Attachments.Add(lsFileName, Outlook.OlAttachmentType.olByValue,1,lsFileName);
+                    mailItem.Attachments.Add(lsFileName, Outlook.OlAttachmentType.olByValue, 1, lsFileName);
                     mailItem.Send();
                     progressBarControlEmail.PerformStep();
                     progressBarControlEmail.Update();
@@ -181,6 +181,8 @@ namespace IAC2021SQL
             checkEditAllNewBusiness.Checked = false;
             progressBarControlEmail.Enabled = false;
             progressBarControlEmail.Visible = false;
+            checkEditLimitToYear.Visible = false;
+            checkEditLimitToYear.Enabled = false;
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
@@ -190,7 +192,7 @@ namespace IAC2021SQL
 
         private void checkEditAllNewBusiness_CheckedChanged(object sender, EventArgs e)
         {
-            if(checkEditAllNewBusiness.Checked)
+            if (checkEditAllNewBusiness.Checked)
             {
                 cUSTOMER_NOTextBox.EditValue = "";
                 DateEditNextPayDate.EditValue = null;
@@ -206,9 +208,28 @@ namespace IAC2021SQL
                 textEditPaymentsLeft.EditValue = "";
                 textEditTotalPayments.EditValue = "";
                 cUSTOMER_NOTextBox.Enabled = false;
+                checkEditLimitToYear.Visible = true;
+                checkEditLimitToYear.Enabled = true;
             }
             else
+            {
                 cUSTOMER_NOTextBox.Enabled = true;
+                checkEditLimitToYear.Visible = false;
+                checkEditLimitToYear.Enabled = false;
+            }
+        }
+
+        // Moses Newman 01/26/2023 Add limit to one year option for new business print
+        private void checkEditLimitToYear_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkEditLimitToYear.Checked)
+            {
+                spinEditTicketCount.Value = 12;
+            }
+            else
+            {
+                spinEditTicketCount.Value = 0;
+            }
         }
     }
 }
