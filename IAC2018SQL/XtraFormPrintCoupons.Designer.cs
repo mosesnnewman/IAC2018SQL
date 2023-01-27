@@ -30,14 +30,15 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PrintCoupons));
-            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery1 = new DevExpress.DataAccess.Sql.StoredProcQuery();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter1 = new DevExpress.DataAccess.Sql.QueryParameter();
-            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery2 = new DevExpress.DataAccess.Sql.StoredProcQuery();
-            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery3 = new DevExpress.DataAccess.Sql.StoredProcQuery();
-            DevExpress.DataAccess.Sql.MasterDetailInfo masterDetailInfo1 = new DevExpress.DataAccess.Sql.MasterDetailInfo();
-            DevExpress.DataAccess.Sql.RelationColumnInfo relationColumnInfo1 = new DevExpress.DataAccess.Sql.RelationColumnInfo();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery4 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter2 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery5 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery6 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.MasterDetailInfo masterDetailInfo2 = new DevExpress.DataAccess.Sql.MasterDetailInfo();
+            DevExpress.DataAccess.Sql.RelationColumnInfo relationColumnInfo2 = new DevExpress.DataAccess.Sql.RelationColumnInfo();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.progressBarControlEmail = new DevExpress.XtraEditors.ProgressBarControl();
             this.checkEditEmail = new DevExpress.XtraEditors.CheckEdit();
             this.buttonCancel = new DevExpress.XtraEditors.SimpleButton();
             this.buttonPrint = new DevExpress.XtraEditors.SimpleButton();
@@ -70,10 +71,11 @@
             this.labelControlAccountNumber = new DevExpress.XtraEditors.LabelControl();
             this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             this.sqlDataSource2 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
-            this.progressBarControlEmail = new DevExpress.XtraEditors.ProgressBarControl();
+            this.checkEditLimitToYear = new DevExpress.XtraEditors.CheckEdit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.progressBarControlEmail.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditEmail.Properties)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.textEditTotalPayments.Properties)).BeginInit();
@@ -92,7 +94,7 @@
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditAllNewBusiness.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cUSTOMER_NOTextBox.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.progressBarControlEmail.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEditLimitToYear.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl1
@@ -105,7 +107,7 @@
             this.groupControl1.Controls.Add(this.groupBox1);
             this.groupControl1.Location = new System.Drawing.Point(-1, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(781, 485);
+            this.groupControl1.Size = new System.Drawing.Size(781, 527);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "groupControl1";
             // 
@@ -115,11 +117,20 @@
             this.groupBox3.Controls.Add(this.checkEditEmail);
             this.groupBox3.Controls.Add(this.buttonCancel);
             this.groupBox3.Controls.Add(this.buttonPrint);
-            this.groupBox3.Location = new System.Drawing.Point(223, 253);
+            this.groupBox3.Location = new System.Drawing.Point(223, 299);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(334, 204);
             this.groupBox3.TabIndex = 99;
             this.groupBox3.TabStop = false;
+            // 
+            // progressBarControlEmail
+            // 
+            this.progressBarControlEmail.Location = new System.Drawing.Point(18, 50);
+            this.progressBarControlEmail.Name = "progressBarControlEmail";
+            this.progressBarControlEmail.Properties.ShowTitle = true;
+            this.progressBarControlEmail.Properties.TextOrientation = DevExpress.Utils.Drawing.TextOrientation.Horizontal;
+            this.progressBarControlEmail.Size = new System.Drawing.Size(298, 26);
+            this.progressBarControlEmail.TabIndex = 100;
             // 
             // checkEditEmail
             // 
@@ -181,7 +192,7 @@
             this.groupBox2.Controls.Add(this.spinEditStartTicket);
             this.groupBox2.Controls.Add(this.spinEditTicketCount);
             this.groupBox2.Controls.Add(this.DateEditNextPayDate);
-            this.groupBox2.Location = new System.Drawing.Point(3, 61);
+            this.groupBox2.Location = new System.Drawing.Point(3, 90);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(774, 179);
             this.groupBox2.TabIndex = 98;
@@ -478,12 +489,13 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.checkEditLimitToYear);
             this.groupBox1.Controls.Add(this.checkEditAllNewBusiness);
             this.groupBox1.Controls.Add(this.cUSTOMER_NOTextBox);
             this.groupBox1.Controls.Add(this.labelControlAccountNumber);
             this.groupBox1.Location = new System.Drawing.Point(156, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(469, 56);
+            this.groupBox1.Size = new System.Drawing.Size(469, 83);
             this.groupBox1.TabIndex = 97;
             this.groupBox1.TabStop = false;
             // 
@@ -541,53 +553,58 @@
             // 
             this.sqlDataSource1.ConnectionName = "IAC2021SQL.Properties.Settings.IAC2010SQLConnectionString";
             this.sqlDataSource1.Name = "sqlDataSource1";
-            storedProcQuery1.Name = "ClosedCustomerSelect";
-            queryParameter1.Name = "@CUSTOMER_NO";
-            queryParameter1.Type = typeof(string);
-            queryParameter1.ValueInfo = "201501";
-            storedProcQuery1.Parameters.AddRange(new DevExpress.DataAccess.Sql.QueryParameter[] {
-            queryParameter1});
-            storedProcQuery1.StoredProcName = "ClosedCustomerSelect";
+            storedProcQuery4.Name = "ClosedCustomerSelect";
+            queryParameter2.Name = "@CUSTOMER_NO";
+            queryParameter2.Type = typeof(string);
+            queryParameter2.ValueInfo = "201501";
+            storedProcQuery4.Parameters.AddRange(new DevExpress.DataAccess.Sql.QueryParameter[] {
+            queryParameter2});
+            storedProcQuery4.StoredProcName = "ClosedCustomerSelect";
             this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            storedProcQuery1});
+            storedProcQuery4});
             this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
             // 
             // sqlDataSource2
             // 
             this.sqlDataSource2.ConnectionName = "IAC2021SQL.Properties.Settings.IAC2010SQLConnectionString";
             this.sqlDataSource2.Name = "sqlDataSource2";
-            storedProcQuery2.MetaSerializable = "<Meta X=\"20\" Y=\"20\" Width=\"230\" Height=\"3621\" />";
-            storedProcQuery2.Name = "CUSTOMER";
-            storedProcQuery2.StoredProcName = "ClosedCustomerFillByCoupons";
-            storedProcQuery3.MetaSerializable = "<Meta X=\"270\" Y=\"20\" Width=\"100\" Height=\"161\" />";
-            storedProcQuery3.Name = "Email";
-            storedProcQuery3.StoredProcName = "EmailFillByCoupons";
+            storedProcQuery5.MetaSerializable = "<Meta X=\"20\" Y=\"20\" Width=\"230\" Height=\"3621\" />";
+            storedProcQuery5.Name = "CUSTOMER";
+            storedProcQuery5.StoredProcName = "ClosedCustomerFillByCoupons";
+            storedProcQuery6.MetaSerializable = "<Meta X=\"270\" Y=\"20\" Width=\"100\" Height=\"161\" />";
+            storedProcQuery6.Name = "Email";
+            storedProcQuery6.StoredProcName = "EmailFillByCoupons";
             this.sqlDataSource2.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            storedProcQuery2,
-            storedProcQuery3});
-            masterDetailInfo1.DetailQueryName = "Email";
-            relationColumnInfo1.NestedKeyColumn = "CustomerNo";
-            relationColumnInfo1.ParentKeyColumn = "CUSTOMER_NO";
-            masterDetailInfo1.KeyColumns.Add(relationColumnInfo1);
-            masterDetailInfo1.MasterQueryName = "CUSTOMER";
+            storedProcQuery5,
+            storedProcQuery6});
+            masterDetailInfo2.DetailQueryName = "Email";
+            relationColumnInfo2.NestedKeyColumn = "CustomerNo";
+            relationColumnInfo2.ParentKeyColumn = "CUSTOMER_NO";
+            masterDetailInfo2.KeyColumns.Add(relationColumnInfo2);
+            masterDetailInfo2.MasterQueryName = "CUSTOMER";
             this.sqlDataSource2.Relations.AddRange(new DevExpress.DataAccess.Sql.MasterDetailInfo[] {
-            masterDetailInfo1});
+            masterDetailInfo2});
             this.sqlDataSource2.ResultSchemaSerializable = resources.GetString("sqlDataSource2.ResultSchemaSerializable");
             // 
-            // progressBarControlEmail
+            // checkEditLimitToYear
             // 
-            this.progressBarControlEmail.Location = new System.Drawing.Point(18, 50);
-            this.progressBarControlEmail.Name = "progressBarControlEmail";
-            this.progressBarControlEmail.Properties.ShowTitle = true;
-            this.progressBarControlEmail.Properties.TextOrientation = DevExpress.Utils.Drawing.TextOrientation.Horizontal;
-            this.progressBarControlEmail.Size = new System.Drawing.Size(298, 26);
-            this.progressBarControlEmail.TabIndex = 100;
+            this.checkEditLimitToYear.Location = new System.Drawing.Point(197, 47);
+            this.checkEditLimitToYear.Name = "checkEditLimitToYear";
+            this.checkEditLimitToYear.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkEditLimitToYear.Properties.Appearance.Options.UseFont = true;
+            this.checkEditLimitToYear.Properties.Caption = "Limit to 1 year?";
+            this.checkEditLimitToYear.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
+            this.checkEditLimitToYear.Properties.ContentAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.checkEditLimitToYear.Properties.NullStyle = DevExpress.XtraEditors.Controls.StyleIndeterminate.Unchecked;
+            this.checkEditLimitToYear.Size = new System.Drawing.Size(142, 25);
+            this.checkEditLimitToYear.TabIndex = 5;
+            this.checkEditLimitToYear.CheckedChanged += new System.EventHandler(this.checkEditLimitToYear_CheckedChanged);
             // 
             // PrintCoupons
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(779, 482);
+            this.ClientSize = new System.Drawing.Size(779, 526);
             this.Controls.Add(this.groupControl1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -597,6 +614,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.progressBarControlEmail.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditEmail.Properties)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -617,7 +635,7 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditAllNewBusiness.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cUSTOMER_NOTextBox.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.progressBarControlEmail.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEditLimitToYear.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -659,5 +677,6 @@
         private DevExpress.XtraEditors.CheckEdit checkEditEmail;
         private DevExpress.DataAccess.Sql.SqlDataSource sqlDataSource2;
         private DevExpress.XtraEditors.ProgressBarControl progressBarControlEmail;
+        private DevExpress.XtraEditors.CheckEdit checkEditLimitToYear;
     }
 }
