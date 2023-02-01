@@ -636,7 +636,6 @@
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
             this.toolStripMenuItem2.Size = new System.Drawing.Size(59, 20);
             this.toolStripMenuItem2.Text = "&Reports";
-            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
             // 
             // closedEndToolStripMenuItem
             // 

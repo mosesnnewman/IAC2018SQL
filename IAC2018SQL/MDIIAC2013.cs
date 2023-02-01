@@ -620,32 +620,34 @@ namespace IAC2021SQL
             ReportData.Dispose();
         }
 
-        private void toolStripMenuItem2_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void newCustomerEditListToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             IACDataSet ReportData = new IACDataSet();
             IACDataSetTableAdapters.OPNCUSTTableAdapter CustomerTableAdapter = new IACDataSetTableAdapters.OPNCUSTTableAdapter();
-            IACDataSetTableAdapters.OPNDEALRTableAdapter DEALERTableAdapter = new IACDataSetTableAdapters.OPNDEALRTableAdapter();
-            IACDataSetTableAdapters.OPNRATETableAdapter OPNRATETableAdapter = new IACDataSetTableAdapters.OPNRATETableAdapter();
 
             CustomerTableAdapter.FillByNonPosted(ReportData.OPNCUST);
-            DEALERTableAdapter.FillByNonPostedCustomers(ReportData.OPNDEALR);
-            OPNRATETableAdapter.FillAll(ReportData.OPNRATE);
+            if (ReportData.OPNCUST.Rows.Count < 1)
+            {
+                MessageBox.Show("*** There are NO CUSTOMERS IN NEW BUSINESS! ***");
+                return;
+            }
 
-            OpenCustomerEditList myReportObject = new OpenCustomerEditList();
-            myReportObject.SetDataSource(ReportData);
-            myReportObject.SetParameterValue("gsUserID", Program.gsUserID);
-            myReportObject.SetParameterValue("gsUserName", Program.gsUserName);
+            MDIIAC2013 MDImain = this;
+            // Moses Newman 01/31/2023 Convert to XtraReport
+            var report = new XtraReportOpenCustomerEditList();
+            SqlDataSource ds = report.DataSource as SqlDataSource;
 
-            CreateFormInstance("ReportViewer", false);
-            ReportViewer rptViewr = (ReportViewer)ActiveMdiChild;
-            rptViewr.crystalReportViewer.ReportSource = myReportObject;
-            rptViewr.crystalReportViewer.Refresh();
-            rptViewr.Show();
+            report.DataSource = ds;
+            report.RequestParameters = false;
+            report.Parameters["gsUserID"].Value = Program.gsUserID;
+            report.Parameters["gsUserName"].Value = Program.gsUserName;
+
+            var tool = new ReportPrintTool(report);
+
+            tool.PreviewRibbonForm.MdiParent = MDImain;
+            tool.AutoShowParametersPanel = false;
+            tool.PreviewRibbonForm.WindowState = FormWindowState.Maximized;
+            tool.ShowRibbonPreview();
         }
 
         private void newBusinessToolStripMenuItem1_Click(object sender, EventArgs e)

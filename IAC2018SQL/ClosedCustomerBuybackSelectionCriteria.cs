@@ -18,7 +18,6 @@ namespace IAC2021SQL
 
         private void frmClosedCustomerBuybackReport_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'iACDataSet.state' table. You can move, or remove it, as needed.
             this.stateTableAdapter1.Fill(this.iACDataSet.state);
             // Moses Newman 12/09/2018 Add Customer and Dealer State selection criteria
             stateTableAdapter.Fill(iACDataSet.state);

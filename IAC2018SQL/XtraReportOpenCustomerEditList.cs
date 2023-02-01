@@ -39,14 +39,5 @@ namespace IAC2021SQL
                 e.Cancel = true;
             }
         }
-
-        private void TotalDealerDisc1_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
-        {
-            decimal.TryParse(Convert.ToString(TotalDealerDisc1.Summary.GetResult()), out decimal totalDealerDisc);
-            if (totalDealerDisc == 0)
-            {
-                e.Cancel = true;
-            }
-        }
     }
 }
