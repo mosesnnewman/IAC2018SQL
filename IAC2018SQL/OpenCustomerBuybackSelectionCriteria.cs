@@ -1,16 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
+using DevExpress.XtraReports.UI;
+using DevExpress.DataAccess.Sql;
+
 
 namespace IAC2021SQL
 {
-    public partial class frmOpenCustomerBuybackReport : Form
+    public partial class frmOpenCustomerBuybackReport : DevExpress.XtraEditors.XtraForm
     {
+        private IACDataSetTableAdapters.stateTableAdapter stateTableAdapter = new IACDataSetTableAdapters.stateTableAdapter();
 
         public frmOpenCustomerBuybackReport()
         {
@@ -19,29 +18,45 @@ namespace IAC2021SQL
 
         private void frmOpenCustomerBuybackReport_Load(object sender, EventArgs e)
         {
+            this.stateTableAdapter1.Fill(this.iACDataSet.state);
+            // Moses Newman 12/09/2018 Add Customer and Dealer State selection criteria
+            stateTableAdapter.Fill(iACDataSet.state);
+
+            CustomerStateBindingSource.DataSource = iACDataSet.state;
+            CustomerStateBindingSource.AddNew();
+            CustomerStateBindingSource.EndEdit();
+            iACDataSet.state.Rows[CustomerStateBindingSource.Position].SetField<String>("abbreviation", "");
+            iACDataSet.state.Rows[CustomerStateBindingSource.Position].SetField<String>("name", "");
+            CustomerStateBindingSource.EndEdit();
+
+            DealerStateBindingSource.DataSource = iACDataSet.state;
+            DealerStateBindingSource.AddNew();
+            DealerStateBindingSource.EndEdit();
+            iACDataSet.state.Rows[DealerStateBindingSource.Position].SetField<String>("abbreviation", "");
+            iACDataSet.state.Rows[DealerStateBindingSource.Position].SetField<String>("name", "");
+            DealerStateBindingSource.EndEdit();
+
+            lookUpEditDealerState.Properties.DataSource = DealerStateBindingSource;
+
+            lookUpEditCustomerState.Properties.DataSource = CustomerStateBindingSource;
+
             this.pAYCODETableAdapter.Fill(this.iACDataSet.PAYCODE);
             this.pAYMENTTYPETableAdapter.Fill(this.iACDataSet.PAYMENTTYPE);
             Int32 lnRunMonth = DateTime.Now.Date.Month, lnRunYear = DateTime.Now.Date.Year;
 
-            nullableDateTimePickerStartDate.Value = DateTime.Now.Date;
-            nullableDateTimePickerEndDate.Value = DateTime.Now.Date;
-            opndlrlistbynumTableAdapter.Fill(iACDataSet.OPNDLRLISTBYNUM);
+            nullableDateTimePickerStartDate.EditValue = DateTime.Now.Date;
+            nullableDateTimePickerEndDate.EditValue = DateTime.Now.Date;
+            dlrlistbynumTableAdapter.Fill(iACDataSet.OPNDLRLISTBYNUM);
             bindingSourceDLRLISTBYNUM.AddNew();
             bindingSourceDLRLISTBYNUM.EndEdit();
-            iACDataSet.DLRLISTBYNUM.Rows[bindingSourceDLRLISTBYNUM.Position].SetField<String>("OPNDLR_ACC_NO", "   ");
-            iACDataSet.DLRLISTBYNUM.Rows[bindingSourceDLRLISTBYNUM.Position].SetField<String>("OPNDLR_NAME", "                  ");
+            iACDataSet.OPNDLRLISTBYNUM.Rows[bindingSourceDLRLISTBYNUM.Position].SetField<String>("OPNDEALR_ACC_NO", "");
+            iACDataSet.OPNDLRLISTBYNUM.Rows[bindingSourceDLRLISTBYNUM.Position].SetField<String>("OPNDEALR_NAME", "                  ");
             bindingSourceDLRLISTBYNUM.EndEdit();
-            PaymentTypecomboBox.Text = "";
         }
         
         private void buttonPost_Click(object sender, EventArgs e)
         {
-            Hide();
-            MDIIAC2013 MDImain = (MDIIAC2013)MdiParent;
-            MDImain.CreateFormInstance("ReportViewer", false);
-            ReportViewer rptViewr = (ReportViewer)MDImain.ActiveMdiChild;
-
-            PrintCustomerBuyback(rptViewr);
+            PrintCustomerBuyback();
             Close();
         }
 
@@ -50,144 +65,57 @@ namespace IAC2021SQL
             Close();
         }
 
-        private void PrintCustomerBuyback(ReportViewer rptViewer)
+        private void PrintCustomerBuyback()
         {
-            IACDataSetTableAdapters.OpenCustomerBuybackTableAdapter OpenCustomerBuybackTableAdapter =
-                                new IACDataSetTableAdapters.OpenCustomerBuybackTableAdapter();
-            IACDataSetTableAdapters.OpenCustomerBuybackSummaryTableAdapter OpenCustomerBuybackSummaryTableAdapter = 
-                                new IACDataSetTableAdapters.OpenCustomerBuybackSummaryTableAdapter();
-            String  lsType      = PaymentTypetextBox.Text.TrimEnd() + "%", lsCode = PAYCODEcomboBox.Text.TrimEnd() + "%",
-                    lsDealer    = comboBoxDealer.Text.TrimEnd() + "%";
+                    String  lsType = lookUpEditPaymentType.EditValue != null ? lookUpEditPaymentType.EditValue.ToString().Trim() : "" + "%", 
+                    lsCode = lookUpEditCodeType.EditValue != null ? lookUpEditCodeType.EditValue.ToString().Trim() : "" + "%",
+                    lsDealer    = lookUpEditDealer.EditValue != null ? lookUpEditDealer.EditValue.ToString().Trim() : "" + "%",
+                    lsDealerState = lookUpEditDealerState.EditValue != null ? lookUpEditDealerState.EditValue.ToString().Trim() : "" + "%", 
+                    lsCustomerState = lookUpEditCustomerState.EditValue != null ? lookUpEditCustomerState.EditValue.ToString().Trim() : "" + "%";
 
-            OpenCustomerBuybackTableAdapter.Fill(iACDataSet.OpenCustomerBuyback, ((DateTime)nullableDateTimePickerEndDate.Value).Date, ((DateTime)nullableDateTimePickerStartDate.Value).Date, lsType,lsCode,lsDealer);
-            OpenCustomerBuybackSummaryTableAdapter.Fill(iACDataSet.OpenCustomerBuybackSummary, ((DateTime)nullableDateTimePickerEndDate.Value).Date, ((DateTime)nullableDateTimePickerStartDate.Value).Date, lsType, lsCode, lsDealer);
+            openCustomerBuybackTableAdapter.Fill(iACDataSet.OpenCustomerBuyback, ((DateTime)nullableDateTimePickerEndDate.EditValue).Date, ((DateTime)nullableDateTimePickerStartDate.EditValue).Date, lsType,lsCode,lsDealer,lsDealerState,lsCustomerState);
             
             if (iACDataSet.OpenCustomerBuyback.Rows.Count == 0)
-                MessageBox.Show("*** Sorry there are no OPEN CUSTOMER HISTORY records for the DATES and /or DEALER you selected!!! ***");
+                MessageBox.Show("*** Sorry there are no CUSTOMER HISTORY records for the DATES and /or DEALER you selected!!! ***");
             else
             {
-                OpenCustomerBuybackReport myReportObject = new OpenCustomerBuybackReport();
-                myReportObject.SetDataSource(iACDataSet);
-                myReportObject.SetParameterValue("gdStartDate", ((DateTime)nullableDateTimePickerStartDate.Value).Date);
-                myReportObject.SetParameterValue("gdEndDate", ((DateTime)nullableDateTimePickerEndDate.Value).Date);
-                myReportObject.SetParameterValue("gsUserID", Program.gsUserID);
-                myReportObject.SetParameterValue("gsUserName", Program.gsUserName);
-                rptViewer.crystalReportViewer.ReportSource = myReportObject;
-                rptViewer.crystalReportViewer.Refresh();
-                rptViewer.Show();
+                Hide();
+                MDIIAC2013 MDImain = (MDIIAC2013)MdiParent;
+
+                // Moses Newman 09/12/2022 Covert to XtraReport
+                var report = new XtraReportOpenCustomerBuyback();
+                SqlDataSource ds = report.DataSource as SqlDataSource;
+
+                report.DataSource = ds;
+                report.RequestParameters = false;
+                report.Parameters["gsUserID"].Value = Program.gsUserID;
+                report.Parameters["gsUserName"].Value = Program.gsUserName;
+                report.Parameters["gdStartDate"].Value = ((DateTime)nullableDateTimePickerStartDate.EditValue).Date;
+                report.Parameters["gdEndDate"].Value = ((DateTime)nullableDateTimePickerEndDate.EditValue).Date;
+                report.Parameters["gsType"].Value = lsType;
+                report.Parameters["gsCode"].Value = lsCode;
+                report.Parameters["gsDealer"].Value = lsDealer;
+                report.Parameters["gsDealerState"].Value = lsDealerState;
+                report.Parameters["gsState"].Value = lsCustomerState;
+
+
+                var tool = new ReportPrintTool(report);
+
+                tool.PreviewRibbonForm.MdiParent = MDImain;
+                tool.AutoShowParametersPanel = false;
+                tool.PreviewRibbonForm.WindowState = FormWindowState.Maximized;
+                tool.ShowRibbonPreview();
             }
         }
 
-        private void PaymentTypecomboBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void lookUpEditPaymentType_EditValueChanged(object sender, EventArgs e)
         {
-            if (PaymentTypecomboBox.SelectedIndex >= 0)
-            {
-                PaymentTypetextBox.Text = iACDataSet.PAYMENTTYPE.Rows[PaymentTypecomboBox.SelectedIndex].Field<String>("TYPE");
-            }
-            if (PaymentTypetextBox.Text.ToString().ToUpper().TrimEnd() == "W")
-                pAYCODETableAdapter.FillByCodeW(iACDataSet.PAYCODE);
-            else
-                pAYCODETableAdapter.Fill(iACDataSet.PAYCODE);
-            if (ActiveControl == PaymentTypecomboBox)
-            {
-                ActiveControl = CodeTypetextBox;
-                CodeTypetextBox.SelectAll();
-            }
-        }
-
-        private void PaymentTypetextBox_Validated(object sender, EventArgs e)
-        {
-            if (PaymentTypetextBox.Text.TrimEnd() == "")
-                return;
-            DataRow FoundRow;
-            if (iACDataSet.PAYMENTTYPE.Rows.Count == 0)
-                pAYMENTTYPETableAdapter.Fill(iACDataSet.PAYMENTTYPE);
-            FoundRow = iACDataSet.PAYMENTTYPE.Rows.Find(PaymentTypetextBox.Text.ToString().TrimEnd());
-
-            if (FoundRow == null)
-            {
-                if (PaymentTypetextBox.Text.ToString().Trim().Length != 0)
-                    MessageBox.Show("Incorrect Payment Type entered. Please respecify.");
-                if (Program.gbClosedPaymentAdd || Modal)
-                {
-                    ActiveControl = PaymentTypecomboBox;
-                    PaymentTypecomboBox.SelectAll();
-                }
-            }
-            else
-            {
-                PaymentTypecomboBox.Text = FoundRow.Field<String>("DESCRIPTION");
-                if (PaymentTypetextBox.Text.ToString().ToUpper().TrimEnd() == "W")
-                    pAYCODETableAdapter.FillByCodeW(iACDataSet.PAYCODE);
-                else
-                    pAYCODETableAdapter.Fill(iACDataSet.PAYCODE);
-                    if (Modal || Program.gbClosedPaymentAdd)
-                    {
-                        ActiveControl = CodeTypetextBox;
-                        CodeTypetextBox.SelectAll();
-                    }
-                }
-
-        }
-
-        private void CodeTypetextBox_Validated(object sender, EventArgs e)
-        {
-            if (iACDataSet.PAYCODE.Rows.Count < 1 || CodeTypetextBox.Text.TrimEnd() == "")
-                return;
-
-            DataRow FoundRow;
-
-            if ((CodeTypetextBox.Text == "H" || CodeTypetextBox.Text == "L") && PaymentTypetextBox.Text != "W")
-                PaymentTypetextBox.Text = "W";
-
-            if (PaymentTypetextBox.Text == "W")
-            {
-                switch (CodeTypetextBox.Text.ToString().TrimEnd())
-                {
-                    case "L":
-                    case "H":
-                        break;
-                    case "C":
-                    default:
-                        CodeTypetextBox.Text = "H";
-                        break;
-                }
-            }
-
-            if (PaymentTypetextBox.Text == "W" && iACDataSet.PAYCODE.Rows.Count != 2)
-                pAYCODETableAdapter.FillByCodeW(iACDataSet.PAYCODE);
-            FoundRow = iACDataSet.PAYCODE.Rows.Find(CodeTypetextBox.Text.ToString().TrimEnd());
-
-            if (FoundRow == null)
-            {
-                if (CodeTypetextBox.Text.ToString().Trim().Length != 0)
-                {
-                    MessageBox.Show("Sorry no payment code found that matches your selected payment code!");
-                    CodeTypetextBox.Text = "";
-                    ActiveControl = PAYCODEcomboBox;
-                    CodeTypetextBox.SelectAll();
-                }
-            }
-            else
-                PAYCODEcomboBox.Text = FoundRow.Field<String>("DESCRIPTION");
-        }
-
-        private void PAYCODEcomboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (iACDataSet.PAYCODE.Rows.Count < 1)
-                return;
-            if (PAYCODEcomboBox.SelectedIndex > -1)
-                CodeTypetextBox.Text = iACDataSet.PAYCODE.Rows[PAYCODEcomboBox.SelectedIndex].Field<String>("CODE");
-            else
-            {
-                if (PaymentTypetextBox.Text != "W")
-                    if (CodeTypetextBox.Text.TrimEnd() == "")
-                        CodeTypetextBox.Text = "N";
-                    else
-                        if (CodeTypetextBox.Text.TrimEnd() != "L" || CodeTypetextBox.Text.TrimEnd() != "H")
-                            CodeTypetextBox.Text = "H";
-                CodeTypetextBox_Validated(sender, e);
-            }
+            iACDataSet.PAYCODE.Clear();
+            pAYCODETableAdapter.FillByType(iACDataSet.PAYCODE, (String)lookUpEditPaymentType.EditValue);
+            PaymentCodebindingSource.DataSource = iACDataSet.PAYCODE;
+            PaymentCodebindingSource.MoveFirst();
+            lookUpEditCodeType.EditValue = iACDataSet.PAYCODE.Rows[0].Field<String>("Code");
+            lookUpEditCodeType.Refresh();
         }
     }
 }

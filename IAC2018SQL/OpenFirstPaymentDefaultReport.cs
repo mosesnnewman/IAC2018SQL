@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
+﻿using DevExpress.XtraReports.UI;
+using DevExpress.DataAccess.Sql;
+using System;
 using System.Windows.Forms;
 
 namespace IAC2021SQL
 {
-    public partial class frmOpenFirstPaymentDefaultReport : Form
+    public partial class frmOpenFirstPaymentDefaultReport : DevExpress.XtraEditors.XtraForm
     {
         public frmOpenFirstPaymentDefaultReport()
         {
@@ -19,42 +15,43 @@ namespace IAC2021SQL
         private void frmOpenFirstPaymentDefaultReport_Load(object sender, EventArgs e)
         {
             PerformAutoScale();
-            nullableDateTimePickerDueDate.Value = DateTime.Now.Date;
+            nullableDateTimePickerDueDate.EditValue = DateTime.Now.Date;
         }
 
         private void PrintDelinquencyReport()
         {
-            MDIIAC2013 MDImain = (MDIIAC2013)MdiParent;
-            DateTime ldCurrDate = ((DateTime)(nullableDateTimePickerDueDate.Value)).Date;
+            DateTime ldCurrDate = ((DateTime)(nullableDateTimePickerDueDate.EditValue)).Date;
 
             IACDataSet DelinquencyData = new IACDataSet();
             IACDataSetTableAdapters.OPNCUSTTableAdapter CUSTOMERTableAdapter = new IACDataSetTableAdapters.OPNCUSTTableAdapter();
-            IACDataSetTableAdapters.OPNDEALRTableAdapter DEALERTableAdapter = new IACDataSetTableAdapters.OPNDEALRTableAdapter();
-
 
             CUSTOMERTableAdapter.FillByFirstPaymentDefault(DelinquencyData.OPNCUST, ldCurrDate);
-            DEALERTableAdapter.FillByFirstPaymentDefault(DelinquencyData.OPNDEALR, ldCurrDate);
 
-            if (DelinquencyData.OPNCUST.Rows.Count != 0 && DelinquencyData.OPNDEALR.Rows.Count != 0)
+            if (DelinquencyData.OPNCUST.Rows.Count != 0)
             {
                 Hide();
-                MDImain.CreateFormInstance("ReportViewer", false);
-                ReportViewer rptViewer = (ReportViewer)MDImain.ActiveMdiChild;
 
-                OpenFirstPaymentDefault myReportObject = new OpenFirstPaymentDefault();
-                myReportObject.SetDataSource(DelinquencyData);
-                myReportObject.SetParameterValue("gsUserID", Program.gsUserID);
-                myReportObject.SetParameterValue("gsUserName", Program.gsUserName);
-                myReportObject.SetParameterValue("gdCurrentDate", ldCurrDate);
-                rptViewer.crystalReportViewer.ReportSource = myReportObject;
-                rptViewer.crystalReportViewer.Refresh();
-                rptViewer.Show();
+                // Moses Newman 01/31/2022 Covert to XtraReport
+                var report = new XtraReportOpenFirstPaymentDefault();
+                SqlDataSource ds = report.DataSource as SqlDataSource;
+
+                report.DataSource = ds;
+                report.RequestParameters = false;
+                report.Parameters["gsUserID"].Value = Program.gsUserID;
+                report.Parameters["gsUserName"].Value = Program.gsUserName;
+                report.Parameters["gdCurrentDate"].Value = ldCurrDate;
+
+                var tool = new ReportPrintTool(report);
+                MDIIAC2013 MDImain = (MDIIAC2013)MdiParent;
+                tool.PreviewRibbonForm.MdiParent = MDImain;
+                tool.AutoShowParametersPanel = false;
+                tool.PreviewRibbonForm.WindowState = FormWindowState.Maximized;
+                tool.ShowRibbonPreview();
             }
             DelinquencyData.Clear();
             DelinquencyData.Dispose();
 
             CUSTOMERTableAdapter.Dispose();
-            DEALERTableAdapter.Dispose();
         }
 
 

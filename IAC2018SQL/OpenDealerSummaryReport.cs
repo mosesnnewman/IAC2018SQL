@@ -1,15 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
+using DevExpress.XtraReports.UI;
+using DevExpress.DataAccess.Sql;
 
 namespace IAC2021SQL
 {
-    public partial class frmOpenDealerSummaryReport : Form
+    public partial class frmOpenDealerSummaryReport : DevExpress.XtraEditors.XtraForm
     {
 
         public frmOpenDealerSummaryReport()
@@ -31,11 +27,7 @@ namespace IAC2021SQL
         private void buttonPost_Click(object sender, EventArgs e)
         {
             Hide();
-            MDIIAC2013 MDImain = (MDIIAC2013)MdiParent;
-            MDImain.CreateFormInstance("ReportViewer", false);
-            ReportViewer rptViewr = (ReportViewer)MDImain.ActiveMdiChild;
-
-            PrintDealerSummary(rptViewr);
+            PrintDealerSummary();
             Close();
         }
 
@@ -44,7 +36,7 @@ namespace IAC2021SQL
             Close();
         }
 
-        private void PrintDealerSummary(ReportViewer rptViewer)
+        private void PrintDealerSummary()
         {
             DateTime ldRunDate;
             String lsRunDate = "";
@@ -73,17 +65,27 @@ namespace IAC2021SQL
             OpenDealerSummaryTableAdapter.Fill(ReportData.OpenDealerSummary, ldRunDate.Month, ldRunDate.Year);
 
             if (ReportData.OpenDealerSummary.Rows.Count == 0)
-                MessageBox.Show("*** Sorry there are no OPNHDEAL records for the RUN MONTH AND YEAR you entered!!! ***");
+                MessageBox.Show("*** Sorry there are no dealer history records for the RUN MONTH AND YEAR you entered!!! ***");
             else
             {
-                OpenDealerSummary myReportObject = new OpenDealerSummary();
-                myReportObject.SetDataSource(ReportData);
-                myReportObject.SetParameterValue("gdCutOffDate", ldRunDate);
-                myReportObject.SetParameterValue("gsUserID", Program.gsUserID);
-                myReportObject.SetParameterValue("gsUserName", Program.gsUserName);
-                rptViewer.crystalReportViewer.ReportSource = myReportObject;
-                rptViewer.crystalReportViewer.Refresh();
-                rptViewer.Show();
+                // Moses Newman 09/13/2022 Convert to XtraReport
+                MDIIAC2013 MDImain = (MDIIAC2013)MdiParent;
+
+                var report = new XtraReportOpenDealerSummary();
+                SqlDataSource ds = report.DataSource as SqlDataSource;
+
+                report.DataSource = ds;
+                report.RequestParameters = false;
+                report.Parameters["gsUserID"].Value = Program.gsUserID;
+                report.Parameters["gsUserName"].Value = Program.gsUserName;
+                report.Parameters["gdCutOffDate"].Value = ldRunDate;
+
+                var tool = new ReportPrintTool(report);
+
+                tool.PreviewRibbonForm.MdiParent = MDImain;
+                tool.AutoShowParametersPanel = false;
+                tool.PreviewRibbonForm.WindowState = FormWindowState.Maximized;
+                tool.ShowRibbonPreview();
             }
         }
     }

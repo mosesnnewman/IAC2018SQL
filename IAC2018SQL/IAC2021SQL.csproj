@@ -43,7 +43,7 @@
     <SuiteName>IAC2021SQL</SuiteName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>15</ApplicationRevision>
+    <ApplicationRevision>17</ApplicationRevision>
     <ApplicationVersion>100.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -679,6 +679,24 @@
       <DependentUpon>AmortizationDistribution.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="OpenDealerSummaryReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OpenDealerSummaryReport.Designer.cs">
+      <DependentUpon>OpenDealerSummaryReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OpenDealerHistoryReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OpenDealerHistoryReport.Designer.cs">
+      <DependentUpon>OpenDealerHistoryReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OpenCustomerBuybackSelectionCriteria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OpenCustomerBuybackSelectionCriteria.Designer.cs">
+      <DependentUpon>OpenCustomerBuybackSelectionCriteria.cs</DependentUpon>
+    </Compile>
     <Compile Include="ClosedCustomerTierSummaryReport.cs">
       <DependentUpon>ClosedCustomerTierSummaryReport.rpt</DependentUpon>
       <DesignTime>True</DesignTime>
@@ -793,6 +811,30 @@
     <Compile Include="XtraReportClosedChargesAppliedToDealer.Designer.cs">
       <DependentUpon>XtraReportClosedChargesAppliedToDealer.cs</DependentUpon>
     </Compile>
+    <Compile Include="XtraReportOpenDealerSummary.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReportOpenDealerSummary.Designer.cs">
+      <DependentUpon>XtraReportOpenDealerSummary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReportOpenDealerHistory.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReportOpenDealerHistory.Designer.cs">
+      <DependentUpon>XtraReportOpenDealerHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReportOpenCustomerBuybackDealerSummary.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReportOpenCustomerBuybackDealerSummary.Designer.cs">
+      <DependentUpon>XtraReportOpenCustomerBuybackDealerSummary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReportOpenCustomerBuyback.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReportOpenCustomerBuyback.Designer.cs">
+      <DependentUpon>XtraReportOpenCustomerBuyback.cs</DependentUpon>
+    </Compile>
     <Compile Include="XtraReportClosedCustomerBuyback.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -823,6 +865,30 @@
     <Compile Include="XtraReportClosedCustomerDelinquencyRepoReport.Designer.cs">
       <DependentUpon>XtraReportClosedCustomerDelinquencyRepoReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="XtraReportClosedCustomerEditListDealerSummary.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReportClosedCustomerEditListDealerSummary.Designer.cs">
+      <DependentUpon>XtraReportClosedCustomerEditListDealerSummary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReportOpenFirstPaymentDefaultDealerSummary.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReportOpenFirstPaymentDefaultDealerSummary.Designer.cs">
+      <DependentUpon>XtraReportOpenFirstPaymentDefaultDealerSummary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReportOpenFirstPaymentDefault.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReportOpenFirstPaymentDefault.Designer.cs">
+      <DependentUpon>XtraReportOpenFirstPaymentDefault.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReportOpenCustomerEditListTotalsByDueDate.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReportOpenCustomerEditListTotalsByDueDate.Designer.cs">
+      <DependentUpon>XtraReportOpenCustomerEditListTotalsByDueDate.cs</DependentUpon>
+    </Compile>
     <Compile Include="XtraReportCouponBook.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -840,12 +906,6 @@
     </Compile>
     <Compile Include="XtraReportClosedCustomerEditList.Designer.cs">
       <DependentUpon>XtraReportClosedCustomerEditList.cs</DependentUpon>
-    </Compile>
-    <Compile Include="XtraReportClosedCustomerEditListDealerSummary.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="XtraReportClosedCustomerEditListDealerSummary.Designer.cs">
-      <DependentUpon>XtraReportClosedCustomerEditListDealerSummary.cs</DependentUpon>
     </Compile>
     <Compile Include="XtraReportClosedCustomerEditListTotalsByDueDate.cs">
       <SubType>Component</SubType>
@@ -996,6 +1056,12 @@
     </Compile>
     <Compile Include="XtraReportOpenChargesAppliedToDealer.Designer.cs">
       <DependentUpon>XtraReportOpenChargesAppliedToDealer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReportOpenCustomerEditListDealerSummary.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReportOpenCustomerEditListDealerSummary.Designer.cs">
+      <DependentUpon>XtraReportOpenCustomerEditListDealerSummary.cs</DependentUpon>
     </Compile>
     <Compile Include="XtraReportPNSRejects.cs">
       <SubType>Component</SubType>
@@ -1690,12 +1756,6 @@
       <DependentUpon>CustomerEFTListing.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="OpenCustomerBuybackSelectionCriteria.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="OpenCustomerBuybackSelectionCriteria.Designer.cs">
-      <DependentUpon>OpenCustomerBuybackSelectionCriteria.cs</DependentUpon>
-    </Compile>
     <Compile Include="OpenCustomerBuybackReport.cs">
       <DependentUpon>OpenCustomerBuybackReport.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -1714,23 +1774,11 @@
     <Compile Include="MasterHistoryReport.Designer.cs">
       <DependentUpon>MasterHistoryReport.cs</DependentUpon>
     </Compile>
-    <Compile Include="OpenDealerHistoryReport.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="OpenDealerHistoryReport.Designer.cs">
-      <DependentUpon>OpenDealerHistoryReport.cs</DependentUpon>
-    </Compile>
     <Compile Include="OpenDealerHistory.cs">
       <DependentUpon>OpenDealerHistory.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="OpenDealerSummaryReport.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="OpenDealerSummaryReport.Designer.cs">
-      <DependentUpon>OpenDealerSummaryReport.cs</DependentUpon>
     </Compile>
     <Compile Include="OpenDealerSummary.cs">
       <DependentUpon>OpenDealerSummary.rpt</DependentUpon>
@@ -2073,6 +2121,15 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>AmortizationDistribution.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="OpenDealerSummaryReport.resx">
+      <DependentUpon>OpenDealerSummaryReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OpenDealerHistoryReport.resx">
+      <DependentUpon>OpenDealerHistoryReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OpenCustomerBuybackSelectionCriteria.resx">
+      <DependentUpon>OpenCustomerBuybackSelectionCriteria.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ClosedCustomerEditListDefi.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ClosedCustomerEditListDefi.cs</LastGenOutput>
@@ -2122,6 +2179,18 @@
     <EmbeddedResource Include="XtraReportClosedChargesAppliedToDealer.resx">
       <DependentUpon>XtraReportClosedChargesAppliedToDealer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="XtraReportOpenDealerSummary.resx">
+      <DependentUpon>XtraReportOpenDealerSummary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReportOpenDealerHistory.resx">
+      <DependentUpon>XtraReportOpenDealerHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReportOpenCustomerBuybackDealerSummary.resx">
+      <DependentUpon>XtraReportOpenCustomerBuybackDealerSummary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReportOpenCustomerBuyback.resx">
+      <DependentUpon>XtraReportOpenCustomerBuyback.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="XtraReportClosedCustomerBuyback.resx">
       <DependentUpon>XtraReportClosedCustomerBuyback.cs</DependentUpon>
     </EmbeddedResource>
@@ -2137,6 +2206,18 @@
     <EmbeddedResource Include="XtraReportClosedCustomerDelinquencyRepoReport.resx">
       <DependentUpon>XtraReportClosedCustomerDelinquencyRepoReport.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="XtraReportClosedCustomerEditListDealerSummary.resx">
+      <DependentUpon>XtraReportClosedCustomerEditListDealerSummary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReportOpenFirstPaymentDefaultDealerSummary.resx">
+      <DependentUpon>XtraReportOpenFirstPaymentDefaultDealerSummary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReportOpenFirstPaymentDefault.resx">
+      <DependentUpon>XtraReportOpenFirstPaymentDefault.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReportOpenCustomerEditListTotalsByDueDate.resx">
+      <DependentUpon>XtraReportOpenCustomerEditListTotalsByDueDate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="XtraReportCouponBook.resx">
       <DependentUpon>XtraReportCouponBook.cs</DependentUpon>
     </EmbeddedResource>
@@ -2145,9 +2226,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="XtraReportClosedCustomerEditList.resx">
       <DependentUpon>XtraReportClosedCustomerEditList.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="XtraReportClosedCustomerEditListDealerSummary.resx">
-      <DependentUpon>XtraReportClosedCustomerEditListDealerSummary.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="XtraReportClosedCustomerEditListTotalsByDueDate.resx">
       <DependentUpon>XtraReportClosedCustomerEditListTotalsByDueDate.cs</DependentUpon>
@@ -2223,6 +2301,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="XtraReportOpenChargesAppliedToDealer.resx">
       <DependentUpon>XtraReportOpenChargesAppliedToDealer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReportOpenCustomerEditListDealerSummary.resx">
+      <DependentUpon>XtraReportOpenCustomerEditListDealerSummary.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="XtraReportPNSRejects.resx">
       <DependentUpon>XtraReportPNSRejects.cs</DependentUpon>
@@ -2593,9 +2674,6 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CustomerEFTListing.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="OpenCustomerBuybackSelectionCriteria.resx">
-      <DependentUpon>OpenCustomerBuybackSelectionCriteria.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="OpenCustomerBuybackReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>OpenCustomerBuybackReport.cs</LastGenOutput>
@@ -2607,15 +2685,9 @@
     <EmbeddedResource Include="MasterHistoryReport.resx">
       <DependentUpon>MasterHistoryReport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OpenDealerHistoryReport.resx">
-      <DependentUpon>OpenDealerHistoryReport.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="OpenDealerHistory.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>OpenDealerHistory.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="OpenDealerSummaryReport.resx">
-      <DependentUpon>OpenDealerSummaryReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OpenDealerSummary.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
