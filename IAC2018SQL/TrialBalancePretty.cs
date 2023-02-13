@@ -56,7 +56,10 @@ namespace IAC2021SQL
             {
                 if (Rng.Value != null)
                 {
-                    tmpString = Rng.Value;
+                    if (Rng.Value.GetType().FullName != "System.String")
+                        tmpString = Rng.Value.ToString();
+                    else
+                        tmpString = Rng.Value;
                     Rng.Value = tmpString.Trim();
                 }
             }
@@ -184,7 +187,10 @@ namespace IAC2021SQL
             {
                 if (Rng2.Value != null)
                 {
-                    tmpString = Rng2.Value;
+                    if (Rng2.Value.GetType().FullName != "System.String")
+                        tmpString = Rng2.Value.ToString();
+                    else
+                        tmpString = Rng2.Value;
                     Rng2.Value = tmpString.Trim();
                 }
             }
@@ -312,7 +318,10 @@ namespace IAC2021SQL
             {
                 if (Rng3.Value != null)
                 {
-                    tmpString = Rng3.Value;
+                    if (Rng3.Value.GetType().FullName != "System.String")
+                        tmpString = Rng3.Value.ToString();
+                    else
+                        tmpString = Rng3.Value;
                     Rng3.Value = tmpString.Trim();
                 }
             }
@@ -377,7 +386,10 @@ namespace IAC2021SQL
             {
                 if (Rng4.Value != null)
                 {
-                    tmpString = Rng4.Value;
+                    if (Rng4.Value.GetType().FullName != "System.String")
+                        tmpString = Rng4.Value.ToString();
+                    else
+                        tmpString = Rng4.Value;
                     Rng4.Value = tmpString.Trim();
                 }
             }
