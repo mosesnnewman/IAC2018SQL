@@ -43,7 +43,7 @@
     <SuiteName>IAC2021SQL</SuiteName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>17</ApplicationRevision>
+    <ApplicationRevision>18</ApplicationRevision>
     <ApplicationVersion>100.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -679,6 +679,12 @@
       <DependentUpon>AmortizationDistribution.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="OpenTrialBalance .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OpenTrialBalance .Designer.cs">
+      <DependentUpon>OpenTrialBalance .cs</DependentUpon>
+    </Compile>
     <Compile Include="OpenDealerSummaryReport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1081,6 +1087,18 @@
     <Compile Include="XtraReportShortBalanceReport.Designer.cs">
       <DependentUpon>XtraReportShortBalanceReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="XtraReportOpenTrialBalance.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReportOpenTrialBalance.Designer.cs">
+      <DependentUpon>XtraReportOpenTrialBalance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReportOpenTrialBalanceDealerSummary.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReportOpenTrialBalanceDealerSummary.Designer.cs">
+      <DependentUpon>XtraReportOpenTrialBalanceDealerSummary.cs</DependentUpon>
+    </Compile>
     <Compile Include="XtraReportTVAmortizationDistribution.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -1249,12 +1267,6 @@
     </Compile>
     <Compile Include="ClosedDealerSearchForms.Designer.cs">
       <DependentUpon>ClosedDealerSearchForms.cs</DependentUpon>
-    </Compile>
-    <Compile Include="OpenTrialBalance.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="OpenTrialBalance.Designer.cs">
-      <DependentUpon>OpenTrialBalance.cs</DependentUpon>
     </Compile>
     <Compile Include="frmImportDefi.cs">
       <SubType>Form</SubType>
@@ -2121,6 +2133,9 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>AmortizationDistribution.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="OpenTrialBalance .resx">
+      <DependentUpon>OpenTrialBalance .cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="OpenDealerSummaryReport.resx">
       <DependentUpon>OpenDealerSummaryReport.cs</DependentUpon>
     </EmbeddedResource>
@@ -2314,6 +2329,12 @@
     <EmbeddedResource Include="XtraReportShortBalanceReport.resx">
       <DependentUpon>XtraReportShortBalanceReport.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="XtraReportOpenTrialBalance.resx">
+      <DependentUpon>XtraReportOpenTrialBalance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReportOpenTrialBalanceDealerSummary.resx">
+      <DependentUpon>XtraReportOpenTrialBalanceDealerSummary.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="XtraReportTVAmortizationDistribution.resx">
       <DependentUpon>XtraReportTVAmortizationDistribution.cs</DependentUpon>
     </EmbeddedResource>
@@ -2372,9 +2393,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GlobalCapturePDFUploader.resx">
       <DependentUpon>GlobalCapturePDFUploader.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="OpenTrialBalance.resx">
-      <DependentUpon>OpenTrialBalance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmImportDefi.resx">
       <DependentUpon>frmImportDefi.cs</DependentUpon>
