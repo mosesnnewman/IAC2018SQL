@@ -192,7 +192,8 @@ namespace IAC2021SQL
 
                 // Create records for AUTOBANK file                    
                 strm.Write("6");
-                strm.Write("27");
+                // Moses Newman 02/22/2023
+                strm.Write(AUTOBANK.EFTList.Rows[i].Field<Boolean>("Savings") ? "37" : "27");
                 strm.Write(AUTOBANK.EFTList.Rows[i].Field<String>("OPNBANK_TRAN_CODE"));
                 strm.Write(AUTOBANK.EFTList.Rows[i].Field<String>("OPNBANK_CHECK_DIGIT"));
                 strm.Write(AUTOBANK.EFTList.Rows[i].Field<String>("OPNBANK_ACCOUNT_NO").PadRight(17));

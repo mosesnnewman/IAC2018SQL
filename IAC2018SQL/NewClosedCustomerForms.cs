@@ -451,6 +451,8 @@ namespace IAC2021SQL
             textEditBankAccountNumber.Enabled = false;
             checkEditBankAutoPay.Enabled = false;
             textEditBankMonthlyPayment.Enabled = false;
+            // Moses Newman 02/22/2023
+            radioGroupAccountType.Enabled = false;
 
             //Credit Card Info
             textEditCreditCardNumber.Enabled = false;
@@ -829,6 +831,9 @@ namespace IAC2021SQL
             textEditBankAccountNumber.Enabled = true;
             checkEditBankAutoPay.Enabled = true;
             textEditBankMonthlyPayment.Enabled = true;
+            // Moses Newman 02/22/2023
+            radioGroupAccountType.Enabled = true;
+
 
             //Credit Card Info
             textEditCreditCardNumber.Enabled = true;
@@ -5784,6 +5789,8 @@ namespace IAC2021SQL
                     textEditBankAccountNumber.Enabled = true;
                     checkEditBankAutoPay.Enabled = true;
                     textEditBankMonthlyPayment.Enabled = true;
+                    // Moses Newman 02/22/2023
+                    radioGroupAccountType.Enabled = true;
                     // Moses Newman 01/29/2017 Added Maturity Date
                     MaturityDate.Enabled = true;
 
@@ -5988,14 +5995,11 @@ namespace IAC2021SQL
                 toolStripButtonSave.Enabled = true;
         }
 
-        private void xtraTabControlCustomerMaint_Click(object sender, EventArgs e)
+        // Moses Newman 02/22/2023
+        private void radioGroupAccountType_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-        }
-
-        private void groupBox10_Paint(object sender, PaintEventArgs e)
-        {
-
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
         }
 
         private void cUSTOMER_NOTextBox_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
