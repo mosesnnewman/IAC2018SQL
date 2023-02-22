@@ -605,6 +605,7 @@
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
             this.groupBox23 = new DevExpress.XtraEditors.GroupControl();
+            this.radioGroupAccountType = new DevExpress.XtraEditors.RadioGroup();
             this.textEditBankMonthlyPayment = new DevExpress.XtraEditors.TextEdit();
             this.checkEditBankAutoPay = new DevExpress.XtraEditors.CheckEdit();
             this.textEditBankAccountNumber = new DevExpress.XtraEditors.TextEdit();
@@ -1226,6 +1227,7 @@
             this.xtraTabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupBox23)).BeginInit();
             this.groupBox23.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radioGroupAccountType.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditBankMonthlyPayment.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditBankAutoPay.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditBankAccountNumber.Properties)).BeginInit();
@@ -2868,7 +2870,6 @@
             this.xtraTabPageTSB});
             this.xtraTabControlCustomerMaint.SelectedPageChanged += new DevExpress.XtraTab.TabPageChangedEventHandler(this.xtraTabControlCustomerMaint_SelectedPageChanged);
             this.xtraTabControlCustomerMaint.CloseButtonClick += new System.EventHandler(this.xtraTabControlCustomerMaint_CloseButtonClick);
-            this.xtraTabControlCustomerMaint.Click += new System.EventHandler(this.xtraTabControlCustomerMaint_Click);
             // 
             // imageCollectionTabs
             // 
@@ -2981,7 +2982,6 @@
             this.groupBox10.Controls.Add(this.groupBoxRefi);
             resources.ApplyResources(this.groupBox10, "groupBox10");
             this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Paint += new System.Windows.Forms.PaintEventHandler(this.groupBox10_Paint);
             // 
             // textEditDealerName
             // 
@@ -6218,6 +6218,7 @@
             this.groupBox23.Appearance.BackColor = System.Drawing.Color.LightSteelBlue;
             this.groupBox23.Appearance.Options.UseBackColor = true;
             this.groupBox23.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.groupBox23.Controls.Add(this.radioGroupAccountType);
             this.groupBox23.Controls.Add(this.textEditBankMonthlyPayment);
             this.groupBox23.Controls.Add(this.checkEditBankAutoPay);
             this.groupBox23.Controls.Add(this.textEditBankAccountNumber);
@@ -6228,6 +6229,22 @@
             this.groupBox23.Controls.Add(this.textEditBankName);
             resources.ApplyResources(this.groupBox23, "groupBox23");
             this.groupBox23.Name = "groupBox23";
+            // 
+            // radioGroupAccountType
+            // 
+            this.radioGroupAccountType.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.OPNBANKbindingSource, "Savings", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "false"));
+            resources.ApplyResources(this.radioGroupAccountType, "radioGroupAccountType");
+            this.radioGroupAccountType.MenuManager = this.toolbarFormManager1;
+            this.radioGroupAccountType.Name = "radioGroupAccountType";
+            this.radioGroupAccountType.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.radioGroupAccountType.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("radioGroupAccountType.Properties.Appearance.Font")));
+            this.radioGroupAccountType.Properties.Appearance.Options.UseBackColor = true;
+            this.radioGroupAccountType.Properties.Appearance.Options.UseFont = true;
+            this.radioGroupAccountType.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.radioGroupAccountType.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(((object)(resources.GetObject("radioGroupAccountType.Properties.Items"))), resources.GetString("radioGroupAccountType.Properties.Items1"), ((bool)(resources.GetObject("radioGroupAccountType.Properties.Items2"))), ((object)(resources.GetObject("radioGroupAccountType.Properties.Items3"))), resources.GetString("radioGroupAccountType.Properties.Items4")),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(((object)(resources.GetObject("radioGroupAccountType.Properties.Items5"))), resources.GetString("radioGroupAccountType.Properties.Items6"), ((bool)(resources.GetObject("radioGroupAccountType.Properties.Items7"))), ((object)(resources.GetObject("radioGroupAccountType.Properties.Items8"))), resources.GetString("radioGroupAccountType.Properties.Items9"))});
+            this.radioGroupAccountType.SelectedIndexChanged += new System.EventHandler(this.radioGroupAccountType_SelectedIndexChanged);
             // 
             // textEditBankMonthlyPayment
             // 
@@ -9144,6 +9161,7 @@
             this.xtraTabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupBox23)).EndInit();
             this.groupBox23.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.radioGroupAccountType.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditBankMonthlyPayment.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditBankAutoPay.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditBankAccountNumber.Properties)).EndInit();
@@ -9863,6 +9881,7 @@
         private DevExpress.XtraBars.BarDockControl barDockControl1;
         private DevExpress.XtraBars.BarDockControl barDockControl3;
         private DevExpress.XtraEditors.TextEdit textEditWarrantyCompany;
+        private DevExpress.XtraEditors.RadioGroup radioGroupAccountType;
     }
 }
 

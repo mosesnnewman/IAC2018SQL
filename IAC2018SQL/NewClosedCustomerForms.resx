@@ -15130,6 +15130,60 @@
   <data name="xtraTabPage1.Appearance.PageClient.BackColor2" type="System.Drawing.Color, System.Drawing">
     <value>LightSteelBlue</value>
   </data>
+  <data name="radioGroupAccountType.Location" type="System.Drawing.Point, System.Drawing">
+    <value>271, 224</value>
+  </data>
+  <data name="radioGroupAccountType.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="radioGroupAccountType.Properties.Items" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="radioGroupAccountType.Properties.Items1" xml:space="preserve">
+    <value>Checking</value>
+  </data>
+  <data name="radioGroupAccountType.Properties.Items2" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="radioGroupAccountType.Properties.Items3" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="radioGroupAccountType.Properties.Items4" xml:space="preserve">
+    <value>Checking</value>
+  </data>
+  <data name="radioGroupAccountType.Properties.Items5" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="radioGroupAccountType.Properties.Items6" xml:space="preserve">
+    <value>Savings</value>
+  </data>
+  <data name="radioGroupAccountType.Properties.Items7" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="radioGroupAccountType.Properties.Items8" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="radioGroupAccountType.Properties.Items9" xml:space="preserve">
+    <value>Savings</value>
+  </data>
+  <data name="radioGroupAccountType.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 59</value>
+  </data>
+  <data name="radioGroupAccountType.TabIndex" type="System.Int32, mscorlib">
+    <value>416</value>
+  </data>
+  <data name="&gt;&gt;radioGroupAccountType.Name" xml:space="preserve">
+    <value>radioGroupAccountType</value>
+  </data>
+  <data name="&gt;&gt;radioGroupAccountType.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.RadioGroup, DevExpress.XtraEditors.v22.1, Version=22.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;radioGroupAccountType.Parent" xml:space="preserve">
+    <value>groupBox23</value>
+  </data>
+  <data name="&gt;&gt;radioGroupAccountType.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="textEditBankMonthlyPayment.Location" type="System.Drawing.Point, System.Drawing">
     <value>92, 264</value>
   </data>
@@ -15158,7 +15212,7 @@
     <value>groupBox23</value>
   </data>
   <data name="&gt;&gt;textEditBankMonthlyPayment.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="checkEditBankAutoPay.Location" type="System.Drawing.Point, System.Drawing">
     <value>271, 289</value>
@@ -15185,7 +15239,7 @@
     <value>groupBox23</value>
   </data>
   <data name="&gt;&gt;checkEditBankAutoPay.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="textEditBankAccountNumber.Location" type="System.Drawing.Point, System.Drawing">
     <value>92, 206</value>
@@ -15215,7 +15269,7 @@
     <value>groupBox23</value>
   </data>
   <data name="&gt;&gt;textEditBankAccountNumber.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="textEditBankCheckDigit.Location" type="System.Drawing.Point, System.Drawing">
     <value>228, 148</value>
@@ -15245,7 +15299,7 @@
     <value>groupBox23</value>
   </data>
   <data name="&gt;&gt;textEditBankCheckDigit.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="textEditBankRoutingNumber.Location" type="System.Drawing.Point, System.Drawing">
     <value>92, 148</value>
@@ -15275,7 +15329,7 @@
     <value>groupBox23</value>
   </data>
   <data name="&gt;&gt;textEditBankRoutingNumber.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="textEditBankState.Location" type="System.Drawing.Point, System.Drawing">
     <value>306, 90</value>
@@ -15305,7 +15359,7 @@
     <value>groupBox23</value>
   </data>
   <data name="&gt;&gt;textEditBankState.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="textEditBankCity.Location" type="System.Drawing.Point, System.Drawing">
     <value>92, 90</value>
@@ -15335,7 +15389,7 @@
     <value>groupBox23</value>
   </data>
   <data name="&gt;&gt;textEditBankCity.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="textEditBankName.Location" type="System.Drawing.Point, System.Drawing">
     <value>92, 32</value>
@@ -15365,7 +15419,7 @@
     <value>groupBox23</value>
   </data>
   <data name="&gt;&gt;textEditBankName.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="groupBox23.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 1</value>
