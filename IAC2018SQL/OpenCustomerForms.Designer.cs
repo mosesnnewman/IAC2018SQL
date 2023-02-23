@@ -103,7 +103,6 @@
             System.Windows.Forms.Label labelCountryCode;
             System.Windows.Forms.Label label16;
             System.Windows.Forms.Label labelProductCode;
-            System.Windows.Forms.Label label95;
             System.Windows.Forms.Label label26;
             System.Windows.Forms.Label label28;
             System.Windows.Forms.Label label33;
@@ -124,17 +123,17 @@
             System.Windows.Forms.Label label140;
             System.Windows.Forms.Label label132;
             System.Windows.Forms.Label label151;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmOpenCustMaint));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cUSTOMERBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.iACDataSet = new IAC2021SQL.IACDataSet();
             this.tabComments = new System.Windows.Forms.TabPage();
@@ -322,35 +321,27 @@
             this.textBox60 = new System.Windows.Forms.TextBox();
             this.textBox61 = new System.Windows.Forms.TextBox();
             this.tabBank = new System.Windows.Forms.TabPage();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.label103 = new System.Windows.Forms.Label();
-            this.textBoxMonthlyPayment = new System.Windows.Forms.TextBox();
+            this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
+            this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
+            this.groupBox23 = new DevExpress.XtraEditors.GroupControl();
+            this.radioGroupAccountType = new DevExpress.XtraEditors.RadioGroup();
             this.OPNBANKbindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.txtBankAutoPay = new System.Windows.Forms.TextBox();
-            this.txtBankAccountNumber = new System.Windows.Forms.TextBox();
-            this.label90 = new System.Windows.Forms.Label();
-            this.txtBankCheckDigit = new System.Windows.Forms.TextBox();
-            this.label89 = new System.Windows.Forms.Label();
-            this.txtBankRoutingNumber = new System.Windows.Forms.TextBox();
-            this.label88 = new System.Windows.Forms.Label();
-            this.txtBankState = new System.Windows.Forms.TextBox();
-            this.label87 = new System.Windows.Forms.Label();
-            this.txtBankCity = new System.Windows.Forms.TextBox();
-            this.label86 = new System.Windows.Forms.Label();
-            this.txtBankName = new System.Windows.Forms.TextBox();
-            this.lblBankName = new System.Windows.Forms.Label();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.ExpYearcomboBox = new System.Windows.Forms.ComboBox();
-            this.label94 = new System.Windows.Forms.Label();
-            this.ExpMonthcomboBox = new System.Windows.Forms.ComboBox();
+            this.textEditBankMonthlyPayment = new DevExpress.XtraEditors.TextEdit();
+            this.checkEditBankAutoPay = new DevExpress.XtraEditors.CheckEdit();
+            this.textEditBankAccountNumber = new DevExpress.XtraEditors.TextEdit();
+            this.textEditBankCheckDigit = new DevExpress.XtraEditors.TextEdit();
+            this.textEditBankRoutingNumber = new DevExpress.XtraEditors.TextEdit();
+            this.textEditBankState = new DevExpress.XtraEditors.TextEdit();
+            this.textEditBankCity = new DevExpress.XtraEditors.TextEdit();
+            this.textEditBankName = new DevExpress.XtraEditors.TextEdit();
+            this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
+            this.groupBox24 = new DevExpress.XtraEditors.GroupControl();
+            this.comboBoxEditExpYear = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.lookUpEditExpMonth = new DevExpress.XtraEditors.LookUpEdit();
             this.bindingSourceMonthNames = new System.Windows.Forms.BindingSource(this.components);
-            this.txtCreditCardCVV = new System.Windows.Forms.TextBox();
-            this.label93 = new System.Windows.Forms.Label();
-            this.label92 = new System.Windows.Forms.Label();
-            this.txtCreditCardName = new System.Windows.Forms.TextBox();
-            this.txtCreditCardNumber = new System.Windows.Forms.TextBox();
-            this.label91 = new System.Windows.Forms.Label();
+            this.textEditCreditCardCVV = new DevExpress.XtraEditors.TextEdit();
+            this.textEditCreditCardNumber = new DevExpress.XtraEditors.TextEdit();
+            this.textEditCreditCardName = new DevExpress.XtraEditors.TextEdit();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.textBox27 = new System.Windows.Forms.TextBox();
             this.textBox57 = new System.Windows.Forms.TextBox();
@@ -545,7 +536,6 @@
             labelCountryCode = new System.Windows.Forms.Label();
             label16 = new System.Windows.Forms.Label();
             labelProductCode = new System.Windows.Forms.Label();
-            label95 = new System.Windows.Forms.Label();
             label26 = new System.Windows.Forms.Label();
             label28 = new System.Windows.Forms.Label();
             label33 = new System.Windows.Forms.Label();
@@ -596,11 +586,30 @@
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.tabBank.SuspendLayout();
-            this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
+            this.xtraTabControl1.SuspendLayout();
+            this.xtraTabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupBox23)).BeginInit();
+            this.groupBox23.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radioGroupAccountType.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.OPNBANKbindingSource)).BeginInit();
-            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditBankMonthlyPayment.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEditBankAutoPay.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditBankAccountNumber.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditBankCheckDigit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditBankRoutingNumber.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditBankState.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditBankCity.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditBankName.Properties)).BeginInit();
+            this.xtraTabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupBox24)).BeginInit();
+            this.groupBox24.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEditExpYear.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEditExpMonth.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceMonthNames)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditCreditCardCVV.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditCreditCardNumber.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditCreditCardName.Properties)).BeginInit();
             this.groupBox6.SuspendLayout();
             this.tabTSB.SuspendLayout();
             this.groupBoxDates.SuspendLayout();
@@ -1318,15 +1327,6 @@
             labelProductCode.TabIndex = 88;
             labelProductCode.Text = "PRODUCT CODE:";
             // 
-            // label95
-            // 
-            label95.AutoSize = true;
-            label95.Location = new System.Drawing.Point(293, 148);
-            label95.Name = "label95";
-            label95.Size = new System.Drawing.Size(87, 15);
-            label95.TabIndex = 174;
-            label95.Text = "Autopay (Y/N):";
-            // 
             // label26
             // 
             label26.AutoSize = true;
@@ -1585,10 +1585,10 @@
             // Date
             // 
             this.Date.DataPropertyName = "COMMENT_DATE";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle1.Format = "d";
-            dataGridViewCellStyle1.NullValue = null;
-            this.Date.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle21.Format = "d";
+            dataGridViewCellStyle21.NullValue = null;
+            this.Date.DefaultCellStyle = dataGridViewCellStyle21;
             this.Date.HeaderText = "DATE";
             this.Date.Name = "Date";
             this.Date.ReadOnly = true;
@@ -1597,9 +1597,9 @@
             // 
             this.Type.DataPropertyName = "COMMENT_TYPE";
             this.Type.DataSource = this.commentTypesBindingSource;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.Format = "N0";
-            this.Type.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle22.Format = "N0";
+            this.Type.DefaultCellStyle = dataGridViewCellStyle22;
             this.Type.DisplayMember = "ListItems";
             this.Type.DropDownWidth = 200;
             this.Type.HeaderText = "TYPE";
@@ -1618,8 +1618,8 @@
             // ID
             // 
             this.ID.DataPropertyName = "COMMENT_USERID";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ID.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ID.DefaultCellStyle = dataGridViewCellStyle23;
             this.ID.HeaderText = "ID";
             this.ID.MaxInputLength = 3;
             this.ID.Name = "ID";
@@ -1629,9 +1629,9 @@
             // Comment
             // 
             this.Comment.DataPropertyName = "COMMENT_WHOLE";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Comment.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Comment.DefaultCellStyle = dataGridViewCellStyle24;
             this.Comment.HeaderText = "COMMENT";
             this.Comment.MaxInputLength = 180;
             this.Comment.Name = "Comment";
@@ -2000,10 +2000,10 @@
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "CUSTHIST_PAY_DATE";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle5.Format = "d";
-            dataGridViewCellStyle5.NullValue = null;
-            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle25.Format = "d";
+            dataGridViewCellStyle25.NullValue = null;
+            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle25;
             this.dataGridViewTextBoxColumn4.HeaderText = "POST DATE";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
@@ -2019,49 +2019,49 @@
             // dataGridViewTextBoxColumn9
             // 
             this.dataGridViewTextBoxColumn9.DataPropertyName = "CUSTHIST_PAYMENT_RCV";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle6.Format = "C2";
-            dataGridViewCellStyle6.NullValue = null;
-            this.dataGridViewTextBoxColumn9.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle26.Format = "C2";
+            dataGridViewCellStyle26.NullValue = null;
+            this.dataGridViewTextBoxColumn9.DefaultCellStyle = dataGridViewCellStyle26;
             this.dataGridViewTextBoxColumn9.HeaderText = "PAYMENT AMOUNT";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             // 
             // dataGridViewTextBoxColumn8
             // 
             this.dataGridViewTextBoxColumn8.DataPropertyName = "CUSTHIST_BALANCE";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle7.Format = "C2";
-            dataGridViewCellStyle7.NullValue = null;
-            this.dataGridViewTextBoxColumn8.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle27.Format = "C2";
+            dataGridViewCellStyle27.NullValue = null;
+            this.dataGridViewTextBoxColumn8.DefaultCellStyle = dataGridViewCellStyle27;
             this.dataGridViewTextBoxColumn8.HeaderText = "LOAN BALANCE";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             // 
             // dataGridViewTextBoxColumn18
             // 
             this.dataGridViewTextBoxColumn18.DataPropertyName = "CUSTHIST_CONTRACT_STATUS";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle8.Format = "C2";
-            dataGridViewCellStyle8.NullValue = null;
-            this.dataGridViewTextBoxColumn18.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle28.Format = "C2";
+            dataGridViewCellStyle28.NullValue = null;
+            this.dataGridViewTextBoxColumn18.DefaultCellStyle = dataGridViewCellStyle28;
             this.dataGridViewTextBoxColumn18.HeaderText = "CONTRACT STATUS";
             this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
             // 
             // dataGridViewTextBoxColumn13
             // 
             this.dataGridViewTextBoxColumn13.DataPropertyName = "CUSTHIST_LATE_CHARGE_BAL";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle9.Format = "C2";
-            dataGridViewCellStyle9.NullValue = null;
-            this.dataGridViewTextBoxColumn13.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle29.Format = "C2";
+            dataGridViewCellStyle29.NullValue = null;
+            this.dataGridViewTextBoxColumn13.DefaultCellStyle = dataGridViewCellStyle29;
             this.dataGridViewTextBoxColumn13.HeaderText = "LATE CHARGE BALANCE";
             this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
             // 
             // dataGridViewTextBoxColumn15
             // 
             this.dataGridViewTextBoxColumn15.DataPropertyName = "SHORT_PAID_THRU";
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.NullValue = null;
-            this.dataGridViewTextBoxColumn15.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle30.NullValue = null;
+            this.dataGridViewTextBoxColumn15.DefaultCellStyle = dataGridViewCellStyle30;
             this.dataGridViewTextBoxColumn15.HeaderText = "PAID THROUGH";
             this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
             this.dataGridViewTextBoxColumn15.ReadOnly = true;
@@ -2187,7 +2187,7 @@
             this.txtDOB.Name = "txtDOB";
             this.txtDOB.Size = new System.Drawing.Size(100, 23);
             this.txtDOB.TabIndex = 94;
-            this.txtDOB.Value = new System.DateTime(2022, 1, 22, 0, 0, 0, 0);
+            this.txtDOB.Value = new System.DateTime(2023, 2, 23, 0, 0, 0, 0);
             this.txtDOB.ValueChanged += new System.EventHandler(this.txtDOB_ValueChanged);
             this.txtDOB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
@@ -3794,7 +3794,7 @@
             // tabBank
             // 
             this.tabBank.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.tabBank.Controls.Add(this.tabControl1);
+            this.tabBank.Controls.Add(this.xtraTabControl1);
             this.tabBank.Controls.Add(this.groupBox6);
             this.tabBank.Location = new System.Drawing.Point(4, 24);
             this.tabBank.Name = "tabBank";
@@ -3802,316 +3802,449 @@
             this.tabBank.TabIndex = 6;
             this.tabBank.Text = "Bank Info";
             // 
-            // tabControl1
+            // xtraTabControl1
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(276, 156);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(463, 253);
-            this.tabControl1.TabIndex = 110;
+            this.xtraTabControl1.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.xtraTabControl1.Appearance.Options.UseBackColor = true;
+            this.xtraTabControl1.Location = new System.Drawing.Point(327, 107);
+            this.xtraTabControl1.LookAndFeel.SkinName = "McSkin";
+            this.xtraTabControl1.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.xtraTabControl1.Name = "xtraTabControl1";
+            this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
+            this.xtraTabControl1.Size = new System.Drawing.Size(463, 373);
+            this.xtraTabControl1.TabIndex = 404;
+            this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
+            this.xtraTabPage1,
+            this.xtraTabPage2});
             // 
-            // tabPage1
+            // xtraTabPage1
             // 
-            this.tabPage1.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.tabPage1.Controls.Add(this.label103);
-            this.tabPage1.Controls.Add(this.textBoxMonthlyPayment);
-            this.tabPage1.Controls.Add(this.txtBankAutoPay);
-            this.tabPage1.Controls.Add(label95);
-            this.tabPage1.Controls.Add(this.txtBankAccountNumber);
-            this.tabPage1.Controls.Add(this.label90);
-            this.tabPage1.Controls.Add(this.txtBankCheckDigit);
-            this.tabPage1.Controls.Add(this.label89);
-            this.tabPage1.Controls.Add(this.txtBankRoutingNumber);
-            this.tabPage1.Controls.Add(this.label88);
-            this.tabPage1.Controls.Add(this.txtBankState);
-            this.tabPage1.Controls.Add(this.label87);
-            this.tabPage1.Controls.Add(this.txtBankCity);
-            this.tabPage1.Controls.Add(this.label86);
-            this.tabPage1.Controls.Add(this.txtBankName);
-            this.tabPage1.Controls.Add(this.lblBankName);
-            this.tabPage1.Location = new System.Drawing.Point(4, 24);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(455, 225);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "EFT / eCheck";
+            this.xtraTabPage1.Appearance.PageClient.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.xtraTabPage1.Appearance.PageClient.BackColor2 = System.Drawing.Color.LightSteelBlue;
+            this.xtraTabPage1.Appearance.PageClient.Options.UseBackColor = true;
+            this.xtraTabPage1.Appearance.PageClient.Options.UseBorderColor = true;
+            this.xtraTabPage1.Appearance.PageClient.Options.UseFont = true;
+            this.xtraTabPage1.Appearance.PageClient.Options.UseForeColor = true;
+            this.xtraTabPage1.Appearance.PageClient.Options.UseTextOptions = true;
+            this.xtraTabPage1.Controls.Add(this.groupBox23);
+            this.xtraTabPage1.Name = "xtraTabPage1";
+            this.xtraTabPage1.Size = new System.Drawing.Size(455, 343);
+            this.xtraTabPage1.Text = "EFT / eCheck";
             // 
-            // label103
+            // groupBox23
             // 
-            this.label103.AutoSize = true;
-            this.label103.Location = new System.Drawing.Point(32, 178);
-            this.label103.Name = "label103";
-            this.label103.Size = new System.Drawing.Size(104, 15);
-            this.label103.TabIndex = 177;
-            this.label103.Text = "Payment Amount:";
+            this.groupBox23.Appearance.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.groupBox23.Appearance.Options.UseBackColor = true;
+            this.groupBox23.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.groupBox23.Controls.Add(this.radioGroupAccountType);
+            this.groupBox23.Controls.Add(this.textEditBankMonthlyPayment);
+            this.groupBox23.Controls.Add(this.checkEditBankAutoPay);
+            this.groupBox23.Controls.Add(this.textEditBankAccountNumber);
+            this.groupBox23.Controls.Add(this.textEditBankCheckDigit);
+            this.groupBox23.Controls.Add(this.textEditBankRoutingNumber);
+            this.groupBox23.Controls.Add(this.textEditBankState);
+            this.groupBox23.Controls.Add(this.textEditBankCity);
+            this.groupBox23.Controls.Add(this.textEditBankName);
+            this.groupBox23.Location = new System.Drawing.Point(0, 1);
+            this.groupBox23.Name = "groupBox23";
+            this.groupBox23.Size = new System.Drawing.Size(454, 346);
+            this.groupBox23.TabIndex = 416;
             // 
-            // textBoxMonthlyPayment
+            // radioGroupAccountType
             // 
-            this.textBoxMonthlyPayment.AllowDrop = true;
-            this.textBoxMonthlyPayment.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OPNBANKbindingSource, "OPNBANK_MONTHLY_PAYMENT", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "C2"));
-            this.textBoxMonthlyPayment.Location = new System.Drawing.Point(152, 169);
-            this.textBoxMonthlyPayment.Name = "textBoxMonthlyPayment";
-            this.textBoxMonthlyPayment.Size = new System.Drawing.Size(119, 23);
-            this.textBoxMonthlyPayment.TabIndex = 175;
-            this.textBoxMonthlyPayment.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.radioGroupAccountType.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.OPNBANKbindingSource, "Savings", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "false"));
+            this.radioGroupAccountType.Location = new System.Drawing.Point(271, 224);
+            this.radioGroupAccountType.Name = "radioGroupAccountType";
+            this.radioGroupAccountType.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.radioGroupAccountType.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.radioGroupAccountType.Properties.Appearance.Options.UseBackColor = true;
+            this.radioGroupAccountType.Properties.Appearance.Options.UseFont = true;
+            this.radioGroupAccountType.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.radioGroupAccountType.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(false, "Checking", true, null, "Checking"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem(true, "Savings", true, null, "Savings")});
+            this.radioGroupAccountType.Size = new System.Drawing.Size(107, 59);
+            this.radioGroupAccountType.TabIndex = 416;
+            this.radioGroupAccountType.SelectedIndexChanged += new System.EventHandler(this.radioGroupAccountType_SelectedIndexChanged);
+            this.radioGroupAccountType.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // OPNBANKbindingSource
             // 
             this.OPNBANKbindingSource.DataMember = "OPNBANK";
             this.OPNBANKbindingSource.DataSource = this.iACDataSet;
             // 
-            // txtBankAutoPay
+            // textEditBankMonthlyPayment
             // 
-            this.txtBankAutoPay.AllowDrop = true;
-            this.txtBankAutoPay.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_AUTO_PAY", true));
-            this.txtBankAutoPay.Location = new System.Drawing.Point(400, 140);
-            this.txtBankAutoPay.MaxLength = 1;
-            this.txtBankAutoPay.Name = "txtBankAutoPay";
-            this.txtBankAutoPay.Size = new System.Drawing.Size(20, 23);
-            this.txtBankAutoPay.TabIndex = 174;
-            this.txtBankAutoPay.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            this.textEditBankMonthlyPayment.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.OPNBANKbindingSource, "OPNBANK_MONTHLY_PAYMENT", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "C2"));
+            this.textEditBankMonthlyPayment.Location = new System.Drawing.Point(92, 264);
+            this.textEditBankMonthlyPayment.Name = "textEditBankMonthlyPayment";
+            this.textEditBankMonthlyPayment.Properties.AdvancedModeOptions.AllowCaretAnimation = DevExpress.Utils.DefaultBoolean.True;
+            this.textEditBankMonthlyPayment.Properties.AdvancedModeOptions.AllowSelectionAnimation = DevExpress.Utils.DefaultBoolean.True;
+            this.textEditBankMonthlyPayment.Properties.AdvancedModeOptions.Label = "Payment Amount";
+            this.textEditBankMonthlyPayment.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.textEditBankMonthlyPayment.Properties.Appearance.Options.UseFont = true;
+            this.textEditBankMonthlyPayment.Properties.Appearance.Options.UseTextOptions = true;
+            this.textEditBankMonthlyPayment.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.textEditBankMonthlyPayment.Properties.AutoHeight = false;
+            this.textEditBankMonthlyPayment.Properties.DisplayFormat.FormatString = "c2";
+            this.textEditBankMonthlyPayment.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.textEditBankMonthlyPayment.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
+            this.textEditBankMonthlyPayment.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
+            this.textEditBankMonthlyPayment.Properties.LookAndFeel.SkinName = "McSkin";
+            this.textEditBankMonthlyPayment.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.textEditBankMonthlyPayment.Properties.UseAdvancedMode = DevExpress.Utils.DefaultBoolean.True;
+            this.textEditBankMonthlyPayment.Size = new System.Drawing.Size(133, 50);
+            this.textEditBankMonthlyPayment.TabIndex = 415;
+            this.textEditBankMonthlyPayment.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
-            // txtBankAccountNumber
+            // checkEditBankAutoPay
             // 
-            this.txtBankAccountNumber.AllowDrop = true;
-            this.txtBankAccountNumber.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OPNBANKbindingSource, "OPNBANK_ACCOUNT_NO", true));
-            this.txtBankAccountNumber.Location = new System.Drawing.Point(152, 140);
-            this.txtBankAccountNumber.MaxLength = 17;
-            this.txtBankAccountNumber.Name = "txtBankAccountNumber";
-            this.txtBankAccountNumber.Size = new System.Drawing.Size(117, 23);
-            this.txtBankAccountNumber.TabIndex = 173;
-            this.txtBankAccountNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            this.checkEditBankAutoPay.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_AUTO_PAY", true));
+            this.checkEditBankAutoPay.Location = new System.Drawing.Point(271, 289);
+            this.checkEditBankAutoPay.Name = "checkEditBankAutoPay";
+            this.checkEditBankAutoPay.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.checkEditBankAutoPay.Properties.Appearance.Options.UseFont = true;
+            this.checkEditBankAutoPay.Properties.Caption = "Autopay?";
+            this.checkEditBankAutoPay.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
+            this.checkEditBankAutoPay.Properties.CheckBoxOptions.SvgColorChecked = System.Drawing.Color.Black;
+            this.checkEditBankAutoPay.Size = new System.Drawing.Size(91, 25);
+            this.checkEditBankAutoPay.TabIndex = 6;
+            this.checkEditBankAutoPay.QueryCheckStateByValue += new DevExpress.XtraEditors.Controls.QueryCheckStateByValueEventHandler(this.checkEditBankAutoPay_QueryCheckStateByValue);
+            this.checkEditBankAutoPay.QueryValueByCheckState += new DevExpress.XtraEditors.Controls.QueryValueByCheckStateEventHandler(this.checkEditBankAutoPay_QueryValueByCheckState);
+            this.checkEditBankAutoPay.CheckedChanged += new System.EventHandler(this.checkEditBankAutoPay_CheckedChanged_1);
+            this.checkEditBankAutoPay.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
-            // label90
+            // textEditBankAccountNumber
             // 
-            this.label90.AutoSize = true;
-            this.label90.Location = new System.Drawing.Point(34, 148);
-            this.label90.Name = "label90";
-            this.label90.Size = new System.Drawing.Size(102, 15);
-            this.label90.TabIndex = 10;
-            this.label90.Text = "Account Number:";
+            this.textEditBankAccountNumber.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.OPNBANKbindingSource, "OPNBANK_ACCOUNT_NO", true));
+            this.textEditBankAccountNumber.Location = new System.Drawing.Point(92, 206);
+            this.textEditBankAccountNumber.Name = "textEditBankAccountNumber";
+            this.textEditBankAccountNumber.Properties.AdvancedModeOptions.AllowCaretAnimation = DevExpress.Utils.DefaultBoolean.True;
+            this.textEditBankAccountNumber.Properties.AdvancedModeOptions.AllowSelectionAnimation = DevExpress.Utils.DefaultBoolean.True;
+            this.textEditBankAccountNumber.Properties.AdvancedModeOptions.Label = "Account Number";
+            this.textEditBankAccountNumber.Properties.AdvancedModeOptions.LabelAppearance.Options.UseTextOptions = true;
+            this.textEditBankAccountNumber.Properties.AdvancedModeOptions.LabelAppearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.textEditBankAccountNumber.Properties.AdvancedModeOptions.LabelAppearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Bottom;
+            this.textEditBankAccountNumber.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.textEditBankAccountNumber.Properties.Appearance.Options.UseFont = true;
+            this.textEditBankAccountNumber.Properties.AutoHeight = false;
+            this.textEditBankAccountNumber.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
+            this.textEditBankAccountNumber.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
+            this.textEditBankAccountNumber.Properties.LookAndFeel.SkinName = "McSkin";
+            this.textEditBankAccountNumber.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.textEditBankAccountNumber.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.RegularMaskManager));
+            this.textEditBankAccountNumber.Properties.MaskSettings.Set("MaskManagerSignature", "ignoreMaskBlank=True");
+            this.textEditBankAccountNumber.Properties.MaskSettings.Set("mask", "[0-9 A-Z]{0, 17}");
+            this.textEditBankAccountNumber.Properties.MaskSettings.Set("placeholder", '\0');
+            this.textEditBankAccountNumber.Properties.UseAdvancedMode = DevExpress.Utils.DefaultBoolean.True;
+            this.textEditBankAccountNumber.Size = new System.Drawing.Size(173, 50);
+            this.textEditBankAccountNumber.TabIndex = 5;
+            this.textEditBankAccountNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
-            // txtBankCheckDigit
+            // textEditBankCheckDigit
             // 
-            this.txtBankCheckDigit.AllowDrop = true;
-            this.txtBankCheckDigit.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OPNBANKbindingSource, "OPNBANK_CHECK_DIGIT", true));
-            this.txtBankCheckDigit.Location = new System.Drawing.Point(152, 110);
-            this.txtBankCheckDigit.MaxLength = 1;
-            this.txtBankCheckDigit.Name = "txtBankCheckDigit";
-            this.txtBankCheckDigit.Size = new System.Drawing.Size(18, 23);
-            this.txtBankCheckDigit.TabIndex = 172;
-            this.txtBankCheckDigit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            this.textEditBankCheckDigit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.OPNBANKbindingSource, "OPNBANK_CHECK_DIGIT", true));
+            this.textEditBankCheckDigit.Location = new System.Drawing.Point(228, 148);
+            this.textEditBankCheckDigit.Name = "textEditBankCheckDigit";
+            this.textEditBankCheckDigit.Properties.AdvancedModeOptions.AllowCaretAnimation = DevExpress.Utils.DefaultBoolean.True;
+            this.textEditBankCheckDigit.Properties.AdvancedModeOptions.AllowSelectionAnimation = DevExpress.Utils.DefaultBoolean.True;
+            this.textEditBankCheckDigit.Properties.AdvancedModeOptions.Label = "Check Digit";
+            this.textEditBankCheckDigit.Properties.AdvancedModeOptions.LabelAppearance.Options.UseTextOptions = true;
+            this.textEditBankCheckDigit.Properties.AdvancedModeOptions.LabelAppearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.textEditBankCheckDigit.Properties.AdvancedModeOptions.LabelAppearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Bottom;
+            this.textEditBankCheckDigit.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.textEditBankCheckDigit.Properties.Appearance.Options.UseFont = true;
+            this.textEditBankCheckDigit.Properties.AutoHeight = false;
+            this.textEditBankCheckDigit.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
+            this.textEditBankCheckDigit.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
+            this.textEditBankCheckDigit.Properties.LookAndFeel.SkinName = "McSkin";
+            this.textEditBankCheckDigit.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.textEditBankCheckDigit.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.RegularMaskManager));
+            this.textEditBankCheckDigit.Properties.MaskSettings.Set("MaskManagerSignature", "ignoreMaskBlank=True");
+            this.textEditBankCheckDigit.Properties.MaskSettings.Set("mask", "[0-9 A-Z]{1}");
+            this.textEditBankCheckDigit.Properties.MaskSettings.Set("placeholder", '\0');
+            this.textEditBankCheckDigit.Properties.UseAdvancedMode = DevExpress.Utils.DefaultBoolean.True;
+            this.textEditBankCheckDigit.Size = new System.Drawing.Size(92, 50);
+            this.textEditBankCheckDigit.TabIndex = 4;
+            this.textEditBankCheckDigit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
-            // label89
+            // textEditBankRoutingNumber
             // 
-            this.label89.AutoSize = true;
-            this.label89.Location = new System.Drawing.Point(65, 118);
-            this.label89.Name = "label89";
-            this.label89.Size = new System.Drawing.Size(71, 15);
-            this.label89.TabIndex = 8;
-            this.label89.Text = "Check Digit:";
+            this.textEditBankRoutingNumber.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.OPNBANKbindingSource, "OPNBANK_TRAN_CODE", true));
+            this.textEditBankRoutingNumber.Location = new System.Drawing.Point(92, 148);
+            this.textEditBankRoutingNumber.Name = "textEditBankRoutingNumber";
+            this.textEditBankRoutingNumber.Properties.AdvancedModeOptions.AllowCaretAnimation = DevExpress.Utils.DefaultBoolean.True;
+            this.textEditBankRoutingNumber.Properties.AdvancedModeOptions.AllowSelectionAnimation = DevExpress.Utils.DefaultBoolean.True;
+            this.textEditBankRoutingNumber.Properties.AdvancedModeOptions.Label = "Routing Number";
+            this.textEditBankRoutingNumber.Properties.AdvancedModeOptions.LabelAppearance.Options.UseTextOptions = true;
+            this.textEditBankRoutingNumber.Properties.AdvancedModeOptions.LabelAppearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.textEditBankRoutingNumber.Properties.AdvancedModeOptions.LabelAppearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Bottom;
+            this.textEditBankRoutingNumber.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.textEditBankRoutingNumber.Properties.Appearance.Options.UseFont = true;
+            this.textEditBankRoutingNumber.Properties.AutoHeight = false;
+            this.textEditBankRoutingNumber.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
+            this.textEditBankRoutingNumber.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
+            this.textEditBankRoutingNumber.Properties.LookAndFeel.SkinName = "McSkin";
+            this.textEditBankRoutingNumber.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.textEditBankRoutingNumber.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.RegularMaskManager));
+            this.textEditBankRoutingNumber.Properties.MaskSettings.Set("MaskManagerSignature", "ignoreMaskBlank=True");
+            this.textEditBankRoutingNumber.Properties.MaskSettings.Set("mask", "[0-9]{0, 9}");
+            this.textEditBankRoutingNumber.Properties.MaskSettings.Set("placeholder", '\0');
+            this.textEditBankRoutingNumber.Properties.UseAdvancedMode = DevExpress.Utils.DefaultBoolean.True;
+            this.textEditBankRoutingNumber.Size = new System.Drawing.Size(133, 50);
+            this.textEditBankRoutingNumber.TabIndex = 3;
+            this.textEditBankRoutingNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
-            // txtBankRoutingNumber
+            // textEditBankState
             // 
-            this.txtBankRoutingNumber.AllowDrop = true;
-            this.txtBankRoutingNumber.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OPNBANKbindingSource, "OPNBANK_TRAN_CODE", true));
-            this.txtBankRoutingNumber.Location = new System.Drawing.Point(152, 80);
-            this.txtBankRoutingNumber.MaxLength = 9;
-            this.txtBankRoutingNumber.Name = "txtBankRoutingNumber";
-            this.txtBankRoutingNumber.Size = new System.Drawing.Size(86, 23);
-            this.txtBankRoutingNumber.TabIndex = 171;
-            this.txtBankRoutingNumber.Text = " ";
-            this.txtBankRoutingNumber.TextChanged += new System.EventHandler(this.txtBankRoutingNumber_TextChanged);
-            this.txtBankRoutingNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            this.textEditBankState.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.OPNBANKbindingSource, "OPNBANK_STATE", true));
+            this.textEditBankState.Location = new System.Drawing.Point(306, 90);
+            this.textEditBankState.Name = "textEditBankState";
+            this.textEditBankState.Properties.AdvancedModeOptions.AllowCaretAnimation = DevExpress.Utils.DefaultBoolean.True;
+            this.textEditBankState.Properties.AdvancedModeOptions.AllowSelectionAnimation = DevExpress.Utils.DefaultBoolean.True;
+            this.textEditBankState.Properties.AdvancedModeOptions.Label = "State";
+            this.textEditBankState.Properties.AdvancedModeOptions.LabelAppearance.Options.UseTextOptions = true;
+            this.textEditBankState.Properties.AdvancedModeOptions.LabelAppearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.textEditBankState.Properties.AdvancedModeOptions.LabelAppearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Bottom;
+            this.textEditBankState.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.textEditBankState.Properties.Appearance.Options.UseFont = true;
+            this.textEditBankState.Properties.AutoHeight = false;
+            this.textEditBankState.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
+            this.textEditBankState.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
+            this.textEditBankState.Properties.LookAndFeel.SkinName = "McSkin";
+            this.textEditBankState.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.textEditBankState.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.RegularMaskManager));
+            this.textEditBankState.Properties.MaskSettings.Set("MaskManagerSignature", "ignoreMaskBlank=True");
+            this.textEditBankState.Properties.MaskSettings.Set("mask", "[A-Z]{2}");
+            this.textEditBankState.Properties.MaskSettings.Set("placeholder", '\0');
+            this.textEditBankState.Properties.UseAdvancedMode = DevExpress.Utils.DefaultBoolean.True;
+            this.textEditBankState.Size = new System.Drawing.Size(54, 50);
+            this.textEditBankState.TabIndex = 2;
+            this.textEditBankState.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
-            // label88
+            // textEditBankCity
             // 
-            this.label88.AutoSize = true;
-            this.label88.Location = new System.Drawing.Point(37, 88);
-            this.label88.Name = "label88";
-            this.label88.Size = new System.Drawing.Size(99, 15);
-            this.label88.TabIndex = 6;
-            this.label88.Text = "Routing Number:";
+            this.textEditBankCity.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.OPNBANKbindingSource, "OPNBANK_CITY", true));
+            this.textEditBankCity.Location = new System.Drawing.Point(92, 90);
+            this.textEditBankCity.Name = "textEditBankCity";
+            this.textEditBankCity.Properties.AdvancedModeOptions.AllowCaretAnimation = DevExpress.Utils.DefaultBoolean.True;
+            this.textEditBankCity.Properties.AdvancedModeOptions.AllowSelectionAnimation = DevExpress.Utils.DefaultBoolean.True;
+            this.textEditBankCity.Properties.AdvancedModeOptions.Label = "City";
+            this.textEditBankCity.Properties.AdvancedModeOptions.LabelAppearance.Options.UseTextOptions = true;
+            this.textEditBankCity.Properties.AdvancedModeOptions.LabelAppearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.textEditBankCity.Properties.AdvancedModeOptions.LabelAppearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Bottom;
+            this.textEditBankCity.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.textEditBankCity.Properties.Appearance.Options.UseFont = true;
+            this.textEditBankCity.Properties.AutoHeight = false;
+            this.textEditBankCity.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
+            this.textEditBankCity.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
+            this.textEditBankCity.Properties.LookAndFeel.SkinName = "McSkin";
+            this.textEditBankCity.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.textEditBankCity.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.RegularMaskManager));
+            this.textEditBankCity.Properties.MaskSettings.Set("MaskManagerSignature", "ignoreMaskBlank=True");
+            this.textEditBankCity.Properties.MaskSettings.Set("mask", "[0-9 A-Z a-z]{0, 16}");
+            this.textEditBankCity.Properties.MaskSettings.Set("placeholder", '\0');
+            this.textEditBankCity.Properties.UseAdvancedMode = DevExpress.Utils.DefaultBoolean.True;
+            this.textEditBankCity.Size = new System.Drawing.Size(133, 50);
+            this.textEditBankCity.TabIndex = 1;
+            this.textEditBankCity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
-            // txtBankState
+            // textEditBankName
             // 
-            this.txtBankState.AllowDrop = true;
-            this.txtBankState.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OPNBANKbindingSource, "OPNBANK_STATE", true));
-            this.txtBankState.Location = new System.Drawing.Point(395, 50);
-            this.txtBankState.MaxLength = 2;
-            this.txtBankState.Name = "txtBankState";
-            this.txtBankState.Size = new System.Drawing.Size(25, 23);
-            this.txtBankState.TabIndex = 170;
-            this.txtBankState.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            this.textEditBankName.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.OPNBANKbindingSource, "OPNBANK_NAME", true));
+            this.textEditBankName.Location = new System.Drawing.Point(92, 32);
+            this.textEditBankName.Name = "textEditBankName";
+            this.textEditBankName.Properties.AdvancedModeOptions.AllowCaretAnimation = DevExpress.Utils.DefaultBoolean.True;
+            this.textEditBankName.Properties.AdvancedModeOptions.AllowSelectionAnimation = DevExpress.Utils.DefaultBoolean.True;
+            this.textEditBankName.Properties.AdvancedModeOptions.Label = "Bank Name";
+            this.textEditBankName.Properties.AdvancedModeOptions.LabelAppearance.Options.UseTextOptions = true;
+            this.textEditBankName.Properties.AdvancedModeOptions.LabelAppearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.textEditBankName.Properties.AdvancedModeOptions.LabelAppearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Bottom;
+            this.textEditBankName.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.textEditBankName.Properties.Appearance.Options.UseFont = true;
+            this.textEditBankName.Properties.AutoHeight = false;
+            this.textEditBankName.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
+            this.textEditBankName.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
+            this.textEditBankName.Properties.LookAndFeel.SkinName = "McSkin";
+            this.textEditBankName.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.textEditBankName.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.RegularMaskManager));
+            this.textEditBankName.Properties.MaskSettings.Set("MaskManagerSignature", "ignoreMaskBlank=True");
+            this.textEditBankName.Properties.MaskSettings.Set("mask", "[0-9 A-Z a-z]{0, 30}");
+            this.textEditBankName.Properties.MaskSettings.Set("placeholder", '\0');
+            this.textEditBankName.Properties.UseAdvancedMode = DevExpress.Utils.DefaultBoolean.True;
+            this.textEditBankName.Size = new System.Drawing.Size(268, 50);
+            this.textEditBankName.TabIndex = 0;
+            this.textEditBankName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
-            // label87
+            // xtraTabPage2
             // 
-            this.label87.AutoSize = true;
-            this.label87.Location = new System.Drawing.Point(344, 58);
-            this.label87.Name = "label87";
-            this.label87.Size = new System.Drawing.Size(36, 15);
-            this.label87.TabIndex = 4;
-            this.label87.Text = "State:";
+            this.xtraTabPage2.Appearance.PageClient.BackColor = System.Drawing.Color.Salmon;
+            this.xtraTabPage2.Appearance.PageClient.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.xtraTabPage2.Appearance.PageClient.Options.UseBackColor = true;
+            this.xtraTabPage2.Appearance.PageClient.Options.UseFont = true;
+            this.xtraTabPage2.Controls.Add(this.groupBox24);
+            this.xtraTabPage2.Name = "xtraTabPage2";
+            this.xtraTabPage2.Size = new System.Drawing.Size(455, 343);
+            this.xtraTabPage2.Text = "Credit Card";
             // 
-            // txtBankCity
+            // groupBox24
             // 
-            this.txtBankCity.AllowDrop = true;
-            this.txtBankCity.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OPNBANKbindingSource, "OPNBANK_CITY", true));
-            this.txtBankCity.Location = new System.Drawing.Point(152, 50);
-            this.txtBankCity.MaxLength = 16;
-            this.txtBankCity.Name = "txtBankCity";
-            this.txtBankCity.Size = new System.Drawing.Size(133, 23);
-            this.txtBankCity.TabIndex = 169;
-            this.txtBankCity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            this.groupBox24.Appearance.BackColor = System.Drawing.Color.Salmon;
+            this.groupBox24.Appearance.Options.UseBackColor = true;
+            this.groupBox24.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.groupBox24.Controls.Add(this.comboBoxEditExpYear);
+            this.groupBox24.Controls.Add(this.lookUpEditExpMonth);
+            this.groupBox24.Controls.Add(this.textEditCreditCardCVV);
+            this.groupBox24.Controls.Add(this.textEditCreditCardNumber);
+            this.groupBox24.Controls.Add(this.textEditCreditCardName);
+            this.groupBox24.Location = new System.Drawing.Point(0, 1);
+            this.groupBox24.Name = "groupBox24";
+            this.groupBox24.Size = new System.Drawing.Size(454, 342);
+            this.groupBox24.TabIndex = 417;
             // 
-            // label86
+            // comboBoxEditExpYear
             // 
-            this.label86.AutoSize = true;
-            this.label86.Location = new System.Drawing.Point(105, 58);
-            this.label86.Name = "label86";
-            this.label86.Size = new System.Drawing.Size(31, 15);
-            this.label86.TabIndex = 2;
-            this.label86.Text = "City:";
+            this.comboBoxEditExpYear.Location = new System.Drawing.Point(216, 236);
+            this.comboBoxEditExpYear.Name = "comboBoxEditExpYear";
+            this.comboBoxEditExpYear.Properties.AdvancedModeOptions.AllowCaretAnimation = DevExpress.Utils.DefaultBoolean.True;
+            this.comboBoxEditExpYear.Properties.AdvancedModeOptions.AllowSelectionAnimation = DevExpress.Utils.DefaultBoolean.True;
+            this.comboBoxEditExpYear.Properties.AdvancedModeOptions.Label = "Exp Year";
+            this.comboBoxEditExpYear.Properties.AdvancedModeOptions.LabelAppearance.Options.UseTextOptions = true;
+            this.comboBoxEditExpYear.Properties.AdvancedModeOptions.LabelAppearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.comboBoxEditExpYear.Properties.AdvancedModeOptions.LabelAppearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Bottom;
+            this.comboBoxEditExpYear.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.comboBoxEditExpYear.Properties.Appearance.Options.UseFont = true;
+            this.comboBoxEditExpYear.Properties.AutoHeight = false;
+            this.comboBoxEditExpYear.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.comboBoxEditExpYear.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.Salmon;
+            this.comboBoxEditExpYear.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
+            this.comboBoxEditExpYear.Properties.LookAndFeel.SkinName = "McSkin";
+            this.comboBoxEditExpYear.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.comboBoxEditExpYear.Properties.UseAdvancedMode = DevExpress.Utils.DefaultBoolean.True;
+            this.comboBoxEditExpYear.Size = new System.Drawing.Size(85, 50);
+            this.comboBoxEditExpYear.TabIndex = 11;
+            this.comboBoxEditExpYear.EditValueChanged += new System.EventHandler(this.comboBoxEditExpYear_EditValueChanged_1);
+            this.comboBoxEditExpYear.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
-            // txtBankName
+            // lookUpEditExpMonth
             // 
-            this.txtBankName.AllowDrop = true;
-            this.txtBankName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OPNBANKbindingSource, "OPNBANK_NAME", true));
-            this.txtBankName.Location = new System.Drawing.Point(152, 20);
-            this.txtBankName.MaxLength = 30;
-            this.txtBankName.Name = "txtBankName";
-            this.txtBankName.Size = new System.Drawing.Size(268, 23);
-            this.txtBankName.TabIndex = 168;
-            this.txtBankName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
-            // 
-            // lblBankName
-            // 
-            this.lblBankName.AutoSize = true;
-            this.lblBankName.Location = new System.Drawing.Point(65, 28);
-            this.lblBankName.Name = "lblBankName";
-            this.lblBankName.Size = new System.Drawing.Size(71, 15);
-            this.lblBankName.TabIndex = 0;
-            this.lblBankName.Text = "Bank Name:";
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.BackColor = System.Drawing.Color.Salmon;
-            this.tabPage2.Controls.Add(this.ExpYearcomboBox);
-            this.tabPage2.Controls.Add(this.label94);
-            this.tabPage2.Controls.Add(this.ExpMonthcomboBox);
-            this.tabPage2.Controls.Add(this.txtCreditCardCVV);
-            this.tabPage2.Controls.Add(this.label93);
-            this.tabPage2.Controls.Add(this.label92);
-            this.tabPage2.Controls.Add(this.txtCreditCardName);
-            this.tabPage2.Controls.Add(this.txtCreditCardNumber);
-            this.tabPage2.Controls.Add(this.label91);
-            this.tabPage2.Location = new System.Drawing.Point(4, 24);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(455, 225);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Credit Card";
-            // 
-            // ExpYearcomboBox
-            // 
-            this.ExpYearcomboBox.AllowDrop = true;
-            this.ExpYearcomboBox.FormattingEnabled = true;
-            this.ExpYearcomboBox.Location = new System.Drawing.Point(267, 123);
-            this.ExpYearcomboBox.Name = "ExpYearcomboBox";
-            this.ExpYearcomboBox.Size = new System.Drawing.Size(66, 23);
-            this.ExpYearcomboBox.TabIndex = 179;
-            this.ExpYearcomboBox.SelectedIndexChanged += new System.EventHandler(this.ExpYearcomboBox_SelectedIndexChanged);
-            this.ExpYearcomboBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
-            // 
-            // label94
-            // 
-            this.label94.AutoSize = true;
-            this.label94.Location = new System.Drawing.Point(66, 132);
-            this.label94.Name = "label94";
-            this.label94.Size = new System.Drawing.Size(90, 15);
-            this.label94.TabIndex = 178;
-            this.label94.Text = "Expiration Date:";
-            // 
-            // ExpMonthcomboBox
-            // 
-            this.ExpMonthcomboBox.AllowDrop = true;
-            this.ExpMonthcomboBox.DataSource = this.bindingSourceMonthNames;
-            this.ExpMonthcomboBox.DisplayMember = "MonthName";
-            this.ExpMonthcomboBox.FormattingEnabled = true;
-            this.ExpMonthcomboBox.Location = new System.Drawing.Point(169, 123);
-            this.ExpMonthcomboBox.Name = "ExpMonthcomboBox";
-            this.ExpMonthcomboBox.Size = new System.Drawing.Size(86, 23);
-            this.ExpMonthcomboBox.TabIndex = 178;
-            this.ExpMonthcomboBox.ValueMember = "MonthNumber";
-            this.ExpMonthcomboBox.SelectedValueChanged += new System.EventHandler(this.ExpMonthcomboBox_SelectedValueChanged);
-            this.ExpMonthcomboBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            this.lookUpEditExpMonth.Location = new System.Drawing.Point(94, 236);
+            this.lookUpEditExpMonth.Name = "lookUpEditExpMonth";
+            this.lookUpEditExpMonth.Properties.AdvancedModeOptions.AllowCaretAnimation = DevExpress.Utils.DefaultBoolean.True;
+            this.lookUpEditExpMonth.Properties.AdvancedModeOptions.AllowSelectionAnimation = DevExpress.Utils.DefaultBoolean.True;
+            this.lookUpEditExpMonth.Properties.AdvancedModeOptions.Label = "Exp Month";
+            this.lookUpEditExpMonth.Properties.AdvancedModeOptions.LabelAppearance.Options.UseTextOptions = true;
+            this.lookUpEditExpMonth.Properties.AdvancedModeOptions.LabelAppearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.lookUpEditExpMonth.Properties.AdvancedModeOptions.LabelAppearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Bottom;
+            this.lookUpEditExpMonth.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.lookUpEditExpMonth.Properties.Appearance.Options.UseFont = true;
+            this.lookUpEditExpMonth.Properties.AutoHeight = false;
+            this.lookUpEditExpMonth.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lookUpEditExpMonth.Properties.DataSource = this.bindingSourceMonthNames;
+            this.lookUpEditExpMonth.Properties.DisplayMember = "MonthName";
+            this.lookUpEditExpMonth.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.Salmon;
+            this.lookUpEditExpMonth.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
+            this.lookUpEditExpMonth.Properties.LookAndFeel.SkinName = "McSkin";
+            this.lookUpEditExpMonth.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.lookUpEditExpMonth.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
+            this.lookUpEditExpMonth.Properties.UseAdvancedMode = DevExpress.Utils.DefaultBoolean.True;
+            this.lookUpEditExpMonth.Properties.ValueMember = "MonthNumber";
+            this.lookUpEditExpMonth.Size = new System.Drawing.Size(116, 50);
+            this.lookUpEditExpMonth.TabIndex = 10;
+            this.lookUpEditExpMonth.EditValueChanged += new System.EventHandler(this.lookUpEditExpMonth_EditValueChanged_1);
+            this.lookUpEditExpMonth.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // bindingSourceMonthNames
             // 
             this.bindingSourceMonthNames.DataMember = "MonthNames";
             this.bindingSourceMonthNames.DataSource = this.iACDataSet;
             // 
-            // txtCreditCardCVV
+            // textEditCreditCardCVV
             // 
-            this.txtCreditCardCVV.AllowDrop = true;
-            this.txtCreditCardCVV.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OPNBANKbindingSource, "OPNBANK_CW_CODE", true));
-            this.txtCreditCardCVV.Location = new System.Drawing.Point(169, 94);
-            this.txtCreditCardCVV.MaxLength = 4;
-            this.txtCreditCardCVV.Name = "txtCreditCardCVV";
-            this.txtCreditCardCVV.Size = new System.Drawing.Size(35, 23);
-            this.txtCreditCardCVV.TabIndex = 177;
-            this.txtCreditCardCVV.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            this.textEditCreditCardCVV.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.OPNBANKbindingSource, "OPNBANK_CW_CODE", true));
+            this.textEditCreditCardCVV.Location = new System.Drawing.Point(93, 176);
+            this.textEditCreditCardCVV.Name = "textEditCreditCardCVV";
+            this.textEditCreditCardCVV.Properties.AdvancedModeOptions.AllowCaretAnimation = DevExpress.Utils.DefaultBoolean.True;
+            this.textEditCreditCardCVV.Properties.AdvancedModeOptions.AllowSelectionAnimation = DevExpress.Utils.DefaultBoolean.True;
+            this.textEditCreditCardCVV.Properties.AdvancedModeOptions.Label = "CVV Code";
+            this.textEditCreditCardCVV.Properties.AdvancedModeOptions.LabelAppearance.Options.UseTextOptions = true;
+            this.textEditCreditCardCVV.Properties.AdvancedModeOptions.LabelAppearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.textEditCreditCardCVV.Properties.AdvancedModeOptions.LabelAppearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Bottom;
+            this.textEditCreditCardCVV.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.textEditCreditCardCVV.Properties.Appearance.Options.UseFont = true;
+            this.textEditCreditCardCVV.Properties.AutoHeight = false;
+            this.textEditCreditCardCVV.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.Salmon;
+            this.textEditCreditCardCVV.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
+            this.textEditCreditCardCVV.Properties.LookAndFeel.SkinName = "McSkin";
+            this.textEditCreditCardCVV.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.textEditCreditCardCVV.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.SimpleMaskManager));
+            this.textEditCreditCardCVV.Properties.MaskSettings.Set("MaskManagerSignature", "ignoreMaskBlank=True");
+            this.textEditCreditCardCVV.Properties.MaskSettings.Set("mask", "0009");
+            this.textEditCreditCardCVV.Properties.MaskSettings.Set("placeholder", '\0');
+            this.textEditCreditCardCVV.Properties.MaskSettings.Set("saveLiterals", false);
+            this.textEditCreditCardCVV.Properties.UseAdvancedMode = DevExpress.Utils.DefaultBoolean.True;
+            this.textEditCreditCardCVV.Properties.UseMaskAsDisplayFormat = true;
+            this.textEditCreditCardCVV.Size = new System.Drawing.Size(92, 50);
+            this.textEditCreditCardCVV.TabIndex = 9;
+            this.textEditCreditCardCVV.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
-            // label93
+            // textEditCreditCardNumber
             // 
-            this.label93.AutoSize = true;
-            this.label93.Location = new System.Drawing.Point(92, 102);
-            this.label93.Name = "label93";
-            this.label93.Size = new System.Drawing.Size(63, 15);
-            this.label93.TabIndex = 175;
-            this.label93.Text = "CVV Code:";
+            this.textEditCreditCardNumber.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.OPNBANKbindingSource, "OPNBANK_CARD_NO", true));
+            this.textEditCreditCardNumber.Location = new System.Drawing.Point(93, 56);
+            this.textEditCreditCardNumber.Name = "textEditCreditCardNumber";
+            this.textEditCreditCardNumber.Properties.AdvancedModeOptions.AllowCaretAnimation = DevExpress.Utils.DefaultBoolean.True;
+            this.textEditCreditCardNumber.Properties.AdvancedModeOptions.AllowSelectionAnimation = DevExpress.Utils.DefaultBoolean.True;
+            this.textEditCreditCardNumber.Properties.AdvancedModeOptions.Label = "Card Number";
+            this.textEditCreditCardNumber.Properties.AdvancedModeOptions.LabelAppearance.Options.UseTextOptions = true;
+            this.textEditCreditCardNumber.Properties.AdvancedModeOptions.LabelAppearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.textEditCreditCardNumber.Properties.AdvancedModeOptions.LabelAppearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Bottom;
+            this.textEditCreditCardNumber.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.textEditCreditCardNumber.Properties.Appearance.Options.UseFont = true;
+            this.textEditCreditCardNumber.Properties.AutoHeight = false;
+            this.textEditCreditCardNumber.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.Salmon;
+            this.textEditCreditCardNumber.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Salmon;
+            this.textEditCreditCardNumber.Properties.LookAndFeel.SkinName = "McSkin";
+            this.textEditCreditCardNumber.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.textEditCreditCardNumber.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.SimpleMaskManager));
+            this.textEditCreditCardNumber.Properties.MaskSettings.Set("MaskManagerSignature", "ignoreMaskBlank=True");
+            this.textEditCreditCardNumber.Properties.MaskSettings.Set("mask", "0000 0000 0000 0000");
+            this.textEditCreditCardNumber.Properties.MaskSettings.Set("placeholder", '\0');
+            this.textEditCreditCardNumber.Properties.MaskSettings.Set("saveLiterals", false);
+            this.textEditCreditCardNumber.Properties.UseAdvancedMode = DevExpress.Utils.DefaultBoolean.True;
+            this.textEditCreditCardNumber.Properties.UseMaskAsDisplayFormat = true;
+            this.textEditCreditCardNumber.Size = new System.Drawing.Size(268, 50);
+            this.textEditCreditCardNumber.TabIndex = 7;
+            this.textEditCreditCardNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
-            // label92
+            // textEditCreditCardName
             // 
-            this.label92.AutoSize = true;
-            this.label92.Location = new System.Drawing.Point(113, 73);
-            this.label92.Name = "label92";
-            this.label92.Size = new System.Drawing.Size(42, 15);
-            this.label92.TabIndex = 174;
-            this.label92.Text = "Name:";
-            // 
-            // txtCreditCardName
-            // 
-            this.txtCreditCardName.AllowDrop = true;
-            this.txtCreditCardName.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OPNBANKbindingSource, "OPNBANK_CUST_NAME", true));
-            this.txtCreditCardName.Location = new System.Drawing.Point(169, 65);
-            this.txtCreditCardName.MaxLength = 30;
-            this.txtCreditCardName.Name = "txtCreditCardName";
-            this.txtCreditCardName.Size = new System.Drawing.Size(219, 23);
-            this.txtCreditCardName.TabIndex = 176;
-            this.txtCreditCardName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
-            // 
-            // txtCreditCardNumber
-            // 
-            this.txtCreditCardNumber.AllowDrop = true;
-            this.txtCreditCardNumber.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.OPNBANKbindingSource, "OPNBANK_CARD_NO", true));
-            this.txtCreditCardNumber.Location = new System.Drawing.Point(169, 36);
-            this.txtCreditCardNumber.MaxLength = 16;
-            this.txtCreditCardNumber.Name = "txtCreditCardNumber";
-            this.txtCreditCardNumber.Size = new System.Drawing.Size(107, 23);
-            this.txtCreditCardNumber.TabIndex = 175;
-            this.txtCreditCardNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
-            // 
-            // label91
-            // 
-            this.label91.AutoSize = true;
-            this.label91.Location = new System.Drawing.Point(73, 44);
-            this.label91.Name = "label91";
-            this.label91.Size = new System.Drawing.Size(82, 15);
-            this.label91.TabIndex = 171;
-            this.label91.Text = "Card Number:";
+            this.textEditCreditCardName.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.OPNBANKbindingSource, "OPNBANK_CUST_NAME", true));
+            this.textEditCreditCardName.Location = new System.Drawing.Point(93, 116);
+            this.textEditCreditCardName.Name = "textEditCreditCardName";
+            this.textEditCreditCardName.Properties.AdvancedModeOptions.AllowCaretAnimation = DevExpress.Utils.DefaultBoolean.True;
+            this.textEditCreditCardName.Properties.AdvancedModeOptions.AllowSelectionAnimation = DevExpress.Utils.DefaultBoolean.True;
+            this.textEditCreditCardName.Properties.AdvancedModeOptions.Label = "Name";
+            this.textEditCreditCardName.Properties.AdvancedModeOptions.LabelAppearance.Options.UseTextOptions = true;
+            this.textEditCreditCardName.Properties.AdvancedModeOptions.LabelAppearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.textEditCreditCardName.Properties.AdvancedModeOptions.LabelAppearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Bottom;
+            this.textEditCreditCardName.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.textEditCreditCardName.Properties.Appearance.Options.UseFont = true;
+            this.textEditCreditCardName.Properties.AutoHeight = false;
+            this.textEditCreditCardName.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.Salmon;
+            this.textEditCreditCardName.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
+            this.textEditCreditCardName.Properties.LookAndFeel.SkinName = "McSkin";
+            this.textEditCreditCardName.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.textEditCreditCardName.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.RegularMaskManager));
+            this.textEditCreditCardName.Properties.MaskSettings.Set("MaskManagerSignature", "ignoreMaskBlank=True");
+            this.textEditCreditCardName.Properties.MaskSettings.Set("mask", "[A-Z a-z]{0, 40}");
+            this.textEditCreditCardName.Properties.MaskSettings.Set("placeholder", '\0');
+            this.textEditCreditCardName.Properties.UseAdvancedMode = DevExpress.Utils.DefaultBoolean.True;
+            this.textEditCreditCardName.Size = new System.Drawing.Size(268, 50);
+            this.textEditCreditCardName.TabIndex = 8;
+            this.textEditCreditCardName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // groupBox6
             // 
@@ -4277,7 +4410,7 @@
             this.nullableDateTimePickerFollowUpDate.Name = "nullableDateTimePickerFollowUpDate";
             this.nullableDateTimePickerFollowUpDate.Size = new System.Drawing.Size(119, 25);
             this.nullableDateTimePickerFollowUpDate.TabIndex = 24;
-            this.nullableDateTimePickerFollowUpDate.Value = new System.DateTime(2022, 1, 22, 0, 0, 0, 0);
+            this.nullableDateTimePickerFollowUpDate.Value = new System.DateTime(2023, 2, 23, 0, 0, 0, 0);
             this.nullableDateTimePickerFollowUpDate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // nullableDateTimePickerDateClosed
@@ -4288,7 +4421,7 @@
             this.nullableDateTimePickerDateClosed.Name = "nullableDateTimePickerDateClosed";
             this.nullableDateTimePickerDateClosed.Size = new System.Drawing.Size(119, 25);
             this.nullableDateTimePickerDateClosed.TabIndex = 23;
-            this.nullableDateTimePickerDateClosed.Value = new System.DateTime(2022, 1, 22, 0, 0, 0, 0);
+            this.nullableDateTimePickerDateClosed.Value = new System.DateTime(2023, 2, 23, 0, 0, 0, 0);
             // 
             // nullableDateTimePickerDateOpened
             // 
@@ -4298,7 +4431,7 @@
             this.nullableDateTimePickerDateOpened.Name = "nullableDateTimePickerDateOpened";
             this.nullableDateTimePickerDateOpened.Size = new System.Drawing.Size(119, 25);
             this.nullableDateTimePickerDateOpened.TabIndex = 22;
-            this.nullableDateTimePickerDateOpened.Value = new System.DateTime(2022, 1, 22, 0, 0, 0, 0);
+            this.nullableDateTimePickerDateOpened.Value = new System.DateTime(2023, 2, 23, 0, 0, 0, 0);
             // 
             // nullableDateTimePickerDateofAccountInformation
             // 
@@ -4308,7 +4441,7 @@
             this.nullableDateTimePickerDateofAccountInformation.Name = "nullableDateTimePickerDateofAccountInformation";
             this.nullableDateTimePickerDateofAccountInformation.Size = new System.Drawing.Size(119, 25);
             this.nullableDateTimePickerDateofAccountInformation.TabIndex = 21;
-            this.nullableDateTimePickerDateofAccountInformation.Value = new System.DateTime(2022, 1, 22, 0, 0, 0, 0);
+            this.nullableDateTimePickerDateofAccountInformation.Value = new System.DateTime(2023, 2, 23, 0, 0, 0, 0);
             // 
             // nullableDateTimePickerDateofFirstDelinquency
             // 
@@ -4318,7 +4451,7 @@
             this.nullableDateTimePickerDateofFirstDelinquency.Name = "nullableDateTimePickerDateofFirstDelinquency";
             this.nullableDateTimePickerDateofFirstDelinquency.Size = new System.Drawing.Size(119, 25);
             this.nullableDateTimePickerDateofFirstDelinquency.TabIndex = 20;
-            this.nullableDateTimePickerDateofFirstDelinquency.Value = new System.DateTime(2022, 1, 22, 0, 0, 0, 0);
+            this.nullableDateTimePickerDateofFirstDelinquency.Value = new System.DateTime(2023, 2, 23, 0, 0, 0, 0);
             // 
             // nullableDateTimePickerDateofLastPayment
             // 
@@ -4328,7 +4461,7 @@
             this.nullableDateTimePickerDateofLastPayment.Name = "nullableDateTimePickerDateofLastPayment";
             this.nullableDateTimePickerDateofLastPayment.Size = new System.Drawing.Size(119, 25);
             this.nullableDateTimePickerDateofLastPayment.TabIndex = 19;
-            this.nullableDateTimePickerDateofLastPayment.Value = new System.DateTime(2022, 1, 22, 0, 0, 0, 0);
+            this.nullableDateTimePickerDateofLastPayment.Value = new System.DateTime(2023, 2, 23, 0, 0, 0, 0);
             // 
             // label135
             // 
@@ -5317,13 +5450,30 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.tabBank.ResumeLayout(false);
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
+            this.xtraTabControl1.ResumeLayout(false);
+            this.xtraTabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupBox23)).EndInit();
+            this.groupBox23.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.radioGroupAccountType.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.OPNBANKbindingSource)).EndInit();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditBankMonthlyPayment.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEditBankAutoPay.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditBankAccountNumber.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditBankCheckDigit.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditBankRoutingNumber.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditBankState.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditBankCity.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditBankName.Properties)).EndInit();
+            this.xtraTabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupBox24)).EndInit();
+            this.groupBox24.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEditExpYear.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lookUpEditExpMonth.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceMonthNames)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditCreditCardCVV.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditCreditCardNumber.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditCreditCardName.Properties)).EndInit();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             this.tabTSB.ResumeLayout(false);
@@ -5539,31 +5689,6 @@
         private System.Windows.Forms.TextBox textBoxProductCode;
         private System.Windows.Forms.BindingSource bindingSourceMonthNames;
         private IACDataSetTableAdapters.MonthNamesTableAdapter monthNamesTableAdapter;
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TextBox txtBankAutoPay;
-        private System.Windows.Forms.TextBox txtBankAccountNumber;
-        private System.Windows.Forms.Label label90;
-        private System.Windows.Forms.TextBox txtBankCheckDigit;
-        private System.Windows.Forms.Label label89;
-        private System.Windows.Forms.TextBox txtBankRoutingNumber;
-        private System.Windows.Forms.Label label88;
-        private System.Windows.Forms.TextBox txtBankState;
-        private System.Windows.Forms.Label label87;
-        private System.Windows.Forms.TextBox txtBankCity;
-        private System.Windows.Forms.Label label86;
-        private System.Windows.Forms.TextBox txtBankName;
-        private System.Windows.Forms.Label lblBankName;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.ComboBox ExpYearcomboBox;
-        private System.Windows.Forms.Label label94;
-        private System.Windows.Forms.ComboBox ExpMonthcomboBox;
-        private System.Windows.Forms.TextBox txtCreditCardCVV;
-        private System.Windows.Forms.Label label93;
-        private System.Windows.Forms.Label label92;
-        private System.Windows.Forms.TextBox txtCreditCardName;
-        private System.Windows.Forms.TextBox txtCreditCardNumber;
-        private System.Windows.Forms.Label label91;
         private System.Windows.Forms.GroupBox groupBox9;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
@@ -5608,8 +5733,6 @@
         private System.Windows.Forms.TextBox textBoxInterestRate;
         private System.Windows.Forms.ErrorProvider errorProviderCustomerForm;
         private System.Windows.Forms.MaskedTextBox txtPaidThrough;
-        private System.Windows.Forms.Label label103;
-        private System.Windows.Forms.TextBox textBoxMonthlyPayment;
         private System.Windows.Forms.BindingSource specialCommentCodesBindingSource;
         private IACDataSetTableAdapters.SpecialCommentCodesTableAdapter specialCommentCodesTableAdapter;
         private ProManApp.NullableDateTimePicker txtDOB;
@@ -5705,6 +5828,25 @@
         private TSBDataSetTableAdapters.PortfolioTypesTableAdapter portfolioTypesTableAdapter;
         private System.Windows.Forms.BindingSource TermFrequenciesbindingSource;
         private TSBDataSetTableAdapters.TermsFrequencyTableAdapter termsFrequencyTableAdapter;
+        private DevExpress.XtraTab.XtraTabControl xtraTabControl1;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage1;
+        private DevExpress.XtraEditors.GroupControl groupBox23;
+        private DevExpress.XtraEditors.RadioGroup radioGroupAccountType;
+        private DevExpress.XtraEditors.TextEdit textEditBankMonthlyPayment;
+        private DevExpress.XtraEditors.CheckEdit checkEditBankAutoPay;
+        private DevExpress.XtraEditors.TextEdit textEditBankAccountNumber;
+        private DevExpress.XtraEditors.TextEdit textEditBankCheckDigit;
+        private DevExpress.XtraEditors.TextEdit textEditBankRoutingNumber;
+        private DevExpress.XtraEditors.TextEdit textEditBankState;
+        private DevExpress.XtraEditors.TextEdit textEditBankCity;
+        private DevExpress.XtraEditors.TextEdit textEditBankName;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage2;
+        private DevExpress.XtraEditors.GroupControl groupBox24;
+        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEditExpYear;
+        private DevExpress.XtraEditors.LookUpEdit lookUpEditExpMonth;
+        private DevExpress.XtraEditors.TextEdit textEditCreditCardCVV;
+        private DevExpress.XtraEditors.TextEdit textEditCreditCardNumber;
+        private DevExpress.XtraEditors.TextEdit textEditCreditCardName;
     }
 }
 
