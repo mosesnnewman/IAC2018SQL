@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.XtraEditors;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -327,21 +328,24 @@ namespace IAC2021SQL
             //Bank Info
 
             //EFT/eCHeck
-            txtBankName.Enabled = false;
-            txtBankCity.Enabled = false;
-            txtBankState.Enabled = false;
-            txtBankRoutingNumber.Enabled = false;
-            txtBankCheckDigit.Enabled = false;
-            txtBankAccountNumber.Enabled = false;
-            txtBankAutoPay.Enabled = false;
-            textBoxMonthlyPayment.Enabled = false;
+            textEditBankName.Enabled = false;
+            textEditBankCity.Enabled = false;
+            textEditBankState.Enabled = false;
+            textEditBankRoutingNumber.Enabled = false;
+            textEditBankCheckDigit.Enabled = false;
+            textEditBankAccountNumber.Enabled = false;
+            checkEditBankAutoPay.Enabled = false;
+            textEditBankMonthlyPayment.Enabled = false;
+            // Moses Newman 02/23/2023
+            radioGroupAccountType.Enabled = false;
 
             //Credit Card Info
-            txtCreditCardNumber.Enabled = false;
-            txtCreditCardName.Enabled = false;
-            txtCreditCardCVV.Enabled = false;
-            ExpMonthcomboBox.Enabled = false;
-            ExpYearcomboBox.Enabled = false;
+            textEditCreditCardNumber.Enabled = false;
+            textEditCreditCardName.Enabled = false;
+            textEditCreditCardCVV.Enabled = false;
+            lookUpEditExpMonth.Enabled = false;
+            comboBoxEditExpYear.Enabled = false;
+
             //cOMMENTDataGridView.Enabled = false;
             cOMMENTDataGridView.AllowUserToAddRows = false;
             cOMMENTDataGridView.AllowUserToDeleteRows = false;
@@ -516,21 +520,25 @@ namespace IAC2021SQL
             //Bank Info
 
             //EFT/eCHeck
-            txtBankName.Enabled = true;
-            txtBankCity.Enabled = true;
-            txtBankState.Enabled = true;
-            txtBankRoutingNumber.Enabled = true;
-            txtBankCheckDigit.Enabled = true;
-            txtBankAccountNumber.Enabled = true;
-            txtBankAutoPay.Enabled = true;
-            textBoxMonthlyPayment.Enabled = true;
+            textEditBankName.Enabled = true;
+            textEditBankCity.Enabled = true;
+            textEditBankState.Enabled = true;
+            textEditBankRoutingNumber.Enabled = true;
+            textEditBankCheckDigit.Enabled = true;
+            textEditBankAccountNumber.Enabled = true;
+            checkEditBankAutoPay.Enabled = true;
+            textEditBankMonthlyPayment.Enabled = true;
+            // Moses Newman 02/23/2023
+            radioGroupAccountType.Enabled = true;
+
+
 
             //Credit Card Info
-            txtCreditCardNumber.Enabled = true;
-            txtCreditCardName.Enabled = true;
-            txtCreditCardCVV.Enabled = true;
-            ExpMonthcomboBox.Enabled = true;
-            ExpYearcomboBox.Enabled = true;
+            textEditCreditCardNumber.Enabled = true;
+            textEditCreditCardName.Enabled = true;
+            textEditCreditCardCVV.Enabled = true;
+            lookUpEditExpMonth.Enabled = true;
+            comboBoxEditExpYear.Enabled = true;
 
             cOMMENTDataGridView.Enabled = true;
             cOMMENTDataGridView.AllowUserToAddRows = true;
@@ -655,7 +663,8 @@ namespace IAC2021SQL
             lcExpYear9 = (lnExpYear1 + 8).ToString();
             lcExpYear10 = (lnExpYear1 + 9).ToString();
 
-            ExpYearcomboBox.Items.AddRange(new object[] {
+            comboBoxEditExpYear.Properties.Items.AddRange(new object[] {
+                    "",
                     lcExpYear1,
                     lcExpYear2,
                     lcExpYear3,
@@ -671,9 +680,9 @@ namespace IAC2021SQL
             {
                 if (iACDataSet.OPNBANK.Rows[0].Field<String>("OPNBANK_EXP_MMYY").Substring(0, 2).Trim() != "")
                 {
-                    ExpMonthcomboBox.SelectedIndex = Convert.ToInt32(iACDataSet.OPNBANK.Rows[0].Field<String>("OPNBANK_EXP_MMYY").Substring(0, 2).Trim()) - 1;
+                    lookUpEditExpMonth.EditValue = iACDataSet.OPNBANK.Rows[0].Field<String>("OPNBANK_EXP_MMYY").Substring(0, 2).Trim();
                 }
-                ExpYearcomboBox.Text = lcExpYear6;
+                comboBoxEditExpYear.EditValue = lcExpYear6;
             }
 
             int lnRowCount = iACDataSet.OPNCOMM.Rows.Count;
@@ -981,13 +990,17 @@ namespace IAC2021SQL
                     txtALTExt3.Enabled = true;
                     txtALTExt4.Enabled = true;
 
-                    txtBankName.Enabled = true;
-                    txtBankCity.Enabled = true;
-                    txtBankState.Enabled = true;
-                    txtBankRoutingNumber.Enabled = true;
-                    txtBankCheckDigit.Enabled = true;
-                    txtBankAccountNumber.Enabled = true;
-                    txtBankAutoPay.Enabled = true;
+                    textEditBankName.Enabled = true;
+                    textEditBankCity.Enabled = true;
+                    textEditBankState.Enabled = true;
+                    textEditBankRoutingNumber.Enabled = true;
+                    textEditBankCheckDigit.Enabled = true;
+                    textEditBankAccountNumber.Enabled = true;
+                    checkEditBankAutoPay.Enabled = true;
+                    textEditBankMonthlyPayment.Enabled = true;
+                    // Moses Newman 02/23/2023
+                    radioGroupAccountType.Enabled = true;
+
 
                     cOMMENTDataGridView.Enabled = true;
                     cOMMENTDataGridView.AllowUserToAddRows = true;
@@ -1628,39 +1641,113 @@ namespace IAC2021SQL
             receipt.Show();
         }
 
-        private void txtBankRoutingNumber_TextChanged(object sender, EventArgs e)
+        private void checkEditAutopay_QueryCheckStateByValue(object sender, DevExpress.XtraEditors.Controls.QueryCheckStateByValueEventArgs e)
         {
-            if (txtBankRoutingNumber.Text.TrimEnd().Length == 9)
+            string val = e.Value.ToString();
+            switch (val)
             {
-                txtBankCheckDigit.Text = txtBankRoutingNumber.Text.Substring(8, 1);
-                txtBankRoutingNumber.Text = txtBankRoutingNumber.Text.Substring(0, 8);
+                case "Y":
+                    e.CheckState = CheckState.Checked;
+                    break;
+                case "N":
+                    e.CheckState = CheckState.Unchecked;
+                    break;
+                default:
+                    e.CheckState = CheckState.Unchecked;
+                    break;
             }
+            e.Handled = true;
         }
 
-        private void ExpMonthcomboBox_SelectedValueChanged(object sender, EventArgs e)
+        private void checkEditAutopay_QueryValueByCheckState(object sender, DevExpress.XtraEditors.Controls.QueryValueByCheckStateEventArgs e)
         {
-            if (cUSTOMER_NOTextBox.Text.Trim() == "")
+            CheckEdit edit = sender as CheckEdit;
+            object val = edit.EditValue;
+            switch (e.CheckState)
+            {
+                case CheckState.Checked:
+                    e.Value = "Y";
+                    break;
+                case CheckState.Unchecked:
+                    e.Value = "N";
+                    break;
+                default:
+                    e.Value = "N";
+                    break;
+            }
+            e.Handled = true;
+        }
+
+        private void lookUpEditExpMonth_EditValueChanged(object sender, EventArgs e)
+        {
+            LookUpEdit expMonth = sender as LookUpEdit;
+
+            if (expMonth.EditValue.ToString().Trim() == "")
                 return;
-            if ((lbEdit || lbAddFlag) && OPNBANKbindingSource.Position > -1 && ExpYearcomboBox.Text.Trim() != "" && ExpMonthcomboBox.SelectedValue != null)
+            if ((lbEdit || lbAddFlag) && OPNBANKbindingSource.Position > -1 && comboBoxEditExpYear.Text.Trim() != "" && expMonth.EditValue != null)
             {
                 iACDataSet.OPNBANK.Rows[OPNBANKbindingSource.Position].SetField<String>("OPNBANK_EXP_MMYY",
-                    ExpMonthcomboBox.SelectedValue.ToString().PadLeft(2, '0') + ExpYearcomboBox.Text.Substring(2, 2));
+                    expMonth.EditValue.ToString().PadLeft(2, '0') + comboBoxEditExpYear.EditValue.ToString().Substring(2, 2));
                 OPNBANKbindingSource.EndEdit();
                 toolStripButtonSave.Enabled = true;
             }
         }
 
-        private void ExpYearcomboBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void lookUpEditExpYear_EditValueChanged(object sender, EventArgs e)
         {
-            if (cUSTOMER_NOTextBox.Text.Trim() == "")
+            LookUpEdit expYear = sender as LookUpEdit;
+            if (cUSTOMER_NOTextBox.Text.ToString().Trim() == "")
                 return;
-            if ((lbEdit || lbAddFlag) && OPNBANKbindingSource.Position > -1 && ExpMonthcomboBox.SelectedValue != null)
+            if ((lbEdit || lbAddFlag) && OPNBANKbindingSource.Position > -1 && expYear.EditValue != null)
             {
-                iACDataSet.OPNBANK.Rows[OPNBANKbindingSource.Position].SetField<String>("OPNBANK_EXP_MMYY",
-                    ExpMonthcomboBox.SelectedValue.ToString().PadLeft(2, '0') + ExpYearcomboBox.Text.Substring(2, 2));
+                if (expYear.ToString().Length == 4)
+                {
+                    iACDataSet.OPNBANK.Rows[OPNBANKbindingSource.Position].SetField<String>("OPNBANK_EXP_MMYY",
+                        lookUpEditExpMonth.EditValue.ToString().PadLeft(2, '0') + expYear.ToString().Substring(2, 2));
+                }
+                else
+                    iACDataSet.OPNBANK.Rows[OPNBANKbindingSource.Position].SetField<String>("OPNBANK_EXP_MMYY", "");
                 OPNBANKbindingSource.EndEdit();
                 toolStripButtonSave.Enabled = true;
             }
+        }
+
+        private void comboBoxEditExpYear_EditValueChanged(object sender, EventArgs e)
+        {
+            DevExpress.XtraEditors.ComboBoxEdit expYear = sender as DevExpress.XtraEditors.ComboBoxEdit;
+
+            if (cUSTOMER_NOTextBox.Text.ToString().Trim() == "")
+                return;
+            if ((lbEdit || lbAddFlag) && OPNBANKbindingSource.Position > -1 && expYear.EditValue != null)
+            {
+                if (comboBoxEditExpYear.Text.Length == 4)
+                {
+                    iACDataSet.OPNBANK.Rows[OPNBANKbindingSource.Position].SetField<String>("OPNBANK_EXP_MMYY",
+                        lookUpEditExpMonth.EditValue.ToString().PadLeft(2, '0') + expYear.EditValue.ToString().Substring(2, 2));
+                }
+                else
+                    iACDataSet.OPNBANK.Rows[OPNBANKbindingSource.Position].SetField<String>("OPNBANK_EXP_MMYY", "");
+                OPNBANKbindingSource.EndEdit();
+                toolStripButtonSave.Enabled = true;
+            }
+        }
+
+        private void textEditBankRoutingNumber_TextChanged(object sender, EventArgs e)
+        {
+            if (lbEdit && toolStripButtonSave.Enabled == false)
+                toolStripButtonSave.Enabled = true;
+            if (textEditBankRoutingNumber.Text.Length == 9)
+            {
+                textEditBankCheckDigit.Text = textEditBankRoutingNumber.Text.Substring(8, 1);
+                textEditBankRoutingNumber.Text = textEditBankRoutingNumber.Text.Substring(0, 8);
+                System.Windows.Forms.SendKeys.Send("{TAB}");
+            }
+        }
+
+        private void checkEditBankAutoPay_CheckedChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
         }
 
         private void txtFirstPayDate_Validated(object sender, EventArgs e)
@@ -1934,6 +2021,91 @@ namespace IAC2021SQL
         {
             if (lbAddFlag || lbEdit)
                 toolStripButtonSave.Enabled = true;
+        }
+
+        // Moses Newman 02/23/2023
+        private void radioGroupAccountType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void checkEditBankAutoPay_CheckedChanged_1(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void lookUpEditExpMonth_EditValueChanged_1(object sender, EventArgs e)
+        {
+            LookUpEdit expMonth = sender as LookUpEdit;
+
+            if (expMonth.EditValue.ToString().Trim() == "")
+                return;
+            if ((lbEdit || lbAddFlag) && OPNBANKbindingSource.Position > -1 && comboBoxEditExpYear.Text.Trim() != "" && expMonth.EditValue != null)
+            {
+                iACDataSet.OPNBANK.Rows[OPNBANKbindingSource.Position].SetField<String>("OPNBANK_EXP_MMYY",
+                    expMonth.EditValue.ToString().PadLeft(2, '0') + comboBoxEditExpYear.EditValue.ToString().Substring(2, 2));
+                OPNBANKbindingSource.EndEdit();
+                toolStripButtonSave.Enabled = true;
+            }
+        }
+
+        private void comboBoxEditExpYear_EditValueChanged_1(object sender, EventArgs e)
+        {
+            DevExpress.XtraEditors.ComboBoxEdit expYear = sender as DevExpress.XtraEditors.ComboBoxEdit;
+
+            if (cUSTOMER_NOTextBox.Text.ToString().Trim() == "")
+                return;
+            if ((lbEdit || lbAddFlag) && OPNBANKbindingSource.Position > -1 && expYear.EditValue != null)
+            {
+                if (comboBoxEditExpYear.Text.Length == 4)
+                {
+                    iACDataSet.OPNBANK.Rows[OPNBANKbindingSource.Position].SetField<String>("OPNBANK_EXP_MMYY",
+                        lookUpEditExpMonth.EditValue.ToString().PadLeft(2, '0') + expYear.EditValue.ToString().Substring(2, 2));
+                }
+                else
+                    iACDataSet.OPNBANK.Rows[OPNBANKbindingSource.Position].SetField<String>("OPNBANK_EXP_MMYY", "");
+                OPNBANKbindingSource.EndEdit();
+                toolStripButtonSave.Enabled = true;
+            }
+        }
+
+        private void checkEditBankAutoPay_QueryCheckStateByValue(object sender, DevExpress.XtraEditors.Controls.QueryCheckStateByValueEventArgs e)
+        {
+            string val = e.Value.ToString();
+            switch (val)
+            {
+                case "Y":
+                    e.CheckState = CheckState.Checked;
+                    break;
+                case "N":
+                    e.CheckState = CheckState.Unchecked;
+                    break;
+                default:
+                    e.CheckState = CheckState.Unchecked;
+                    break;
+            }
+            e.Handled = true;
+        }
+
+        private void checkEditBankAutoPay_QueryValueByCheckState(object sender, DevExpress.XtraEditors.Controls.QueryValueByCheckStateEventArgs e)
+        {
+            CheckEdit edit = sender as CheckEdit;
+            object val = edit.EditValue;
+            switch (e.CheckState)
+            {
+                case CheckState.Checked:
+                    e.Value = "Y";
+                    break;
+                case CheckState.Unchecked:
+                    e.Value = "N";
+                    break;
+                default:
+                    e.Value = "N";
+                    break;
+            }
+            e.Handled = true;
         }
 
         private void comboBoxTermsFrequency_SelectedValueChanged(object sender, EventArgs e)
