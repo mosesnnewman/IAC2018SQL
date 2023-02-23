@@ -11774,7 +11774,7 @@ VALUES        (@CUSTHIST_NO)</CommandText>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="CustBankTableAdapter" GeneratorDataComponentClassName="CustBankTableAdapter" Name="CustBank" UserDataComponentName="CustBankTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLTEST.dbo.CustBankSelect" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLPRODUCTION.dbo.CustBankSelect" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.CustBankSelect</CommandText>
@@ -11985,6 +11985,7 @@ VALUES        (@CUSTHIST_NO)</CommandText>
               <Mapping SourceColumn="COSTBoth" DataSetColumn="COSTBoth" />
               <Mapping SourceColumn="COSTPin" DataSetColumn="COSTPin" />
               <Mapping SourceColumn="COSTConfirmed" DataSetColumn="COSTConfirmed" />
+              <Mapping SourceColumn="Savings" DataSetColumn="Savings" />
             </Mappings>
             <Sources>
               <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLTEST.dbo.CustBankFill" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="CustBankLoadAll" Modifier="Public" Name="CustBankLoadAll" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="CustBankLoadAll">
@@ -16411,7 +16412,7 @@ SET                DEALER_STATUS = @DEALER_STATUS</CommandText>
                 </xs:simpleType>
               </xs:element>
               <xs:element name="OPNBANK_MONTHLY_PAYMENT" msprop:Generator_ColumnPropNameInTable="OPNBANK_MONTHLY_PAYMENTColumn" msprop:Generator_ColumnPropNameInRow="OPNBANK_MONTHLY_PAYMENT" msprop:Generator_UserColumnName="OPNBANK_MONTHLY_PAYMENT" msprop:Generator_ColumnVarNameInTable="columnOPNBANK_MONTHLY_PAYMENT" type="xs:decimal" default="0" minOccurs="0" />
-              <xs:element name="Savings" msprop:Generator_UserColumnName="Savings" msprop:Generator_ColumnPropNameInTable="SavingsColumn" msprop:Generator_ColumnPropNameInRow="Savings" msprop:Generator_ColumnVarNameInTable="columnSavings" type="xs:boolean" default="false" minOccurs="0" />
+              <xs:element name="Savings" msprop:Generator_ColumnPropNameInTable="SavingsColumn" msprop:Generator_ColumnPropNameInRow="Savings" msprop:Generator_UserColumnName="Savings" msprop:Generator_ColumnVarNameInTable="columnSavings" type="xs:boolean" default="false" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -21112,14 +21113,14 @@ SET                DEALER_STATUS = @DEALER_STATUS</CommandText>
         <xs:element name="EFTList" msprop:Generator_RowEvHandlerName="EFTListRowChangeEventHandler" msprop:Generator_RowDeletedName="EFTListRowDeleted" msprop:Generator_RowDeletingName="EFTListRowDeleting" msprop:Generator_RowEvArgName="EFTListRowChangeEvent" msprop:Generator_TablePropName="EFTList" msprop:Generator_RowChangedName="EFTListRowChanged" msprop:Generator_UserTableName="EFTList" msprop:Generator_RowChangingName="EFTListRowChanging" msprop:Generator_RowClassName="EFTListRow" msprop:Generator_TableClassName="EFTListDataTable" msprop:Generator_TableVarName="tableEFTList">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="CUSTOMER_NO" msprop:Generator_ColumnPropNameInTable="CUSTOMER_NOColumn" msprop:Generator_ColumnPropNameInRow="CUSTOMER_NO" msprop:Generator_UserColumnName="CUSTOMER_NO" msprop:Generator_ColumnVarNameInTable="columnCUSTOMER_NO" minOccurs="0">
+              <xs:element name="CUSTOMER_NO" msprop:Generator_ColumnPropNameInTable="CUSTOMER_NOColumn" msprop:Generator_ColumnPropNameInRow="CUSTOMER_NO" msprop:Generator_UserColumnName="CUSTOMER_NO" msprop:Generator_ColumnVarNameInTable="columnCUSTOMER_NO">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="6" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="CUSTOMER_IAC_TYPE" msprop:Generator_ColumnPropNameInTable="CUSTOMER_IAC_TYPEColumn" msprop:Generator_ColumnPropNameInRow="CUSTOMER_IAC_TYPE" msprop:Generator_UserColumnName="CUSTOMER_IAC_TYPE" msprop:Generator_ColumnVarNameInTable="columnCUSTOMER_IAC_TYPE" minOccurs="0">
+              <xs:element name="CUSTOMER_IAC_TYPE" msprop:Generator_ColumnPropNameInTable="CUSTOMER_IAC_TYPEColumn" msprop:Generator_ColumnPropNameInRow="CUSTOMER_IAC_TYPE" msprop:Generator_UserColumnName="CUSTOMER_IAC_TYPE" msprop:Generator_ColumnVarNameInTable="columnCUSTOMER_IAC_TYPE">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="1" />
@@ -21206,7 +21207,7 @@ SET                DEALER_STATUS = @DEALER_STATUS</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="Savings" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="Savings" msprop:Generator_ColumnPropNameInTable="SavingsColumn" msprop:Generator_ColumnVarNameInTable="columnSavings" msprop:Generator_UserColumnName="Savings" type="xs:boolean" minOccurs="0" />
+              <xs:element name="Savings" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Savings" msprop:Generator_ColumnPropNameInTable="SavingsColumn" msprop:Generator_ColumnPropNameInRow="Savings" msprop:Generator_ColumnVarNameInTable="columnSavings" type="xs:boolean" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -23546,6 +23547,7 @@ SET                DEALER_STATUS = @DEALER_STATUS</CommandText>
                 </xs:simpleType>
               </xs:element>
               <xs:element name="COSTConfirmed" msprop:Generator_ColumnPropNameInTable="COSTConfirmedColumn" msprop:Generator_ColumnPropNameInRow="COSTConfirmed" msprop:Generator_UserColumnName="COSTConfirmed" msprop:Generator_ColumnVarNameInTable="columnCOSTConfirmed" type="xs:boolean" minOccurs="0" />
+              <xs:element name="Savings" msprop:Generator_ColumnPropNameInRow="Savings" msprop:Generator_ColumnPropNameInTable="SavingsColumn" msprop:Generator_ColumnVarNameInTable="columnSavings" msprop:Generator_UserColumnName="Savings" type="xs:boolean" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
