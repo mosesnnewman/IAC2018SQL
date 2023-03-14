@@ -200,8 +200,10 @@ namespace IAC2021SQL
 							FindRow = CUSTHISTBindingSource.Find("ID", PAYMENTDT.Rows[pcnt].Field<Int32>("ISFID"));
 							if (FindRow > -1)
 							{
-								// Moses Newman 01/01/2021 Now make bounced check 0 amount in time value instead of deleting it!
-								DTPayStream.Rows[FindRow].SetField<Decimal>("CUSTHIST_PAYMENT_RCV", 0);
+                                // Moses Newman 01/01/2021 Now make bounced check 0 amount in time value instead of deleting it!
+                                // Moses Newman 03/14/2023 Make TValue payment = original amount + adj amount (its negative) instead of 0
+                                DTPayStream.Rows[FindRow].SetField<Decimal>("CUSTHIST_PAYMENT_RCV", 
+									DTPayStream.Rows[FindRow].Field<Decimal>("CUSTHIST_PAYMENT_RCV")+PAYMENTDT.Rows[pcnt].Field<Decimal>("PAYMENT_AMOUNT_RCV"));
 								//CUSTHISTBindingSource.RemoveAt(FindRow);
 								CUSTHISTBindingSource.EndEdit();
 								DTPayStream.AcceptChanges();
