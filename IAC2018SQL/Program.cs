@@ -2369,7 +2369,7 @@ namespace IAC2021SQL
             TimeSpan ltsDateDiff;
             string lsEvent = "";
             Boolean lbADJFound = false;  // Moses Newmn 12/10/2018 Flag to fix negative adjustment issue if reversing a previous negative adjustment.
-
+			Int32 lnPaymentNumber = 0;
 
             CUSTOMERTableAdapter.Fill(FixData.CUSTOMER, tsCustomerNo);
 
@@ -2489,93 +2489,107 @@ namespace IAC2021SQL
                                 lnPayAmount = FixData.TVAmort.Rows[i].Field<Decimal>("Payment");
                             else
                                 lnPayAmount = FixData.TVAmort.Rows[i].Field<Decimal>("NonCash");
-                            if (lnPayAmount >= 0)  // Moses Newman 01/04/2021 make sure payments for 0 (Bounced Checks) set lnPayments to 0!
-                                // Moses Newman 08/23/2018 properly handle WAVE Late Fees
-                                if (FixData.TVAmort.Rows[i].Field<String>("PaymentCode") != "WL" && lnPayAmount != 0)
-                                    lnPayments = (Int32)((lnPayAmount + lnPrePaymentPartialPayment) / lnRegular);
-                                else
-                                    lnPayments = 0;
-                            else
-                            {
-                                if (lnPayAmount < 0 && FixData.TVAmort.Rows[i].Field<String>("PaymentCode") != "WL")
-                                {
-                                    CurrentRow = i;
-                                    // Moses Newman 06/28/2018 no reason to check for negative payment, because if not ISF date wont find it anyway!
-                                    var res = from row in FixData.TVAmort.AsEnumerable()
-                                              where row.Field<String>("CustomerNo") == FixData.TVAmort.Rows[CurrentRow].Field<String>("CustomerNo") &&
-                                                    row.Field<String>("Event").Trim() != "UPD" && row.Field<String>("Event").Trim() != "LATE" &&
-                                                    row.Field<DateTime?>("Date") == FixData.TVAmort.Rows[CurrentRow].Field<DateTime?>("ISFDate") &&
-                                                    row.Field<Int32?>("HistorySeq") == FixData.TVAmort.Rows[CurrentRow].Field<Int32?>("ISFSeqNo") &&
-                                                    row.Field<String>("PaymentCode") == FixData.TVAmort.Rows[CurrentRow].Field<String>("ISFPaymentType") +
-                                                                                        FixData.TVAmort.Rows[CurrentRow].Field<String>("ISFPaymentCode")
-                                              select row;
+							if (lnPayAmount >= 0)  // Moses Newman 01/04/2021 make sure payments for 0 (Bounced Checks) set lnPayments to 0!
+												   // Moses Newman 08/23/2018 properly handle WAVE Late Fees
+								if (FixData.TVAmort.Rows[i].Field<String>("PaymentCode") != "WL" && lnPayAmount != 0)
+								{
+									// Moses Newman 03/22/2023 Handle Military Rate and Monthly Payment change
+									lnPaymentNumber += 1;
+									lnRegular = GetMonthlyPayment(tsCustomerNo, lnPaymentNumber, FixData.TVAmort.Rows[i].Field<DateTime>("Date"));
+									lnPayments = (Int32)((lnPayAmount + lnPrePaymentPartialPayment) / lnRegular);
+									if (lnPayments < 1)
+									{
+										lnPaymentNumber -= 1;
+									}
+									else
+									{
+										lnPaymentNumber -= 1;
+										lnPaymentNumber += lnPayments;
+									}
+								}
+								else
+									lnPayments = 0;
+							else
+							{
+								if (lnPayAmount < 0 && FixData.TVAmort.Rows[i].Field<String>("PaymentCode") != "WL")
+								{
+									CurrentRow = i;
+									// Moses Newman 06/28/2018 no reason to check for negative payment, because if not ISF date wont find it anyway!
+									var res = from row in FixData.TVAmort.AsEnumerable()
+											  where row.Field<String>("CustomerNo") == FixData.TVAmort.Rows[CurrentRow].Field<String>("CustomerNo") &&
+													row.Field<String>("Event").Trim() != "UPD" && row.Field<String>("Event").Trim() != "LATE" &&
+													row.Field<DateTime?>("Date") == FixData.TVAmort.Rows[CurrentRow].Field<DateTime?>("ISFDate") &&
+													row.Field<Int32?>("HistorySeq") == FixData.TVAmort.Rows[CurrentRow].Field<Int32?>("ISFSeqNo") &&
+													row.Field<String>("PaymentCode") == FixData.TVAmort.Rows[CurrentRow].Field<String>("ISFPaymentType") +
+																						FixData.TVAmort.Rows[CurrentRow].Field<String>("ISFPaymentCode")
+											  select row;
 
 
-                                    // Moses Newman 04/19/2018 if isf fields are empty got to last previous match.
-                                    if (!res.Any())
-                                    {
-                                        var subres = from dres in FixData.TVAmort.AsEnumerable()
-                                                     where dres.Field<String>("CustomerNo") == FixData.TVAmort.Rows[CurrentRow].Field<String>("CustomerNo") &&
-                                                           dres.Field<String>("Event").Trim() != "UPD" && dres.Field<String>("Event").Trim() != "LATE" &&
-                                                           dres.Field<String>("Event").Trim() != "NEW" &&
-                                                           dres.Field<Decimal>("Payment") == FixData.TVAmort.Rows[CurrentRow].Field<Decimal>("Payment") * -1 &&
-                                                           dres.Date < FixData.TVAmort.Rows[CurrentRow].Field<DateTime>("Date").Date
-                                                     select dres;
-                                        if (subres.Any())
-                                            res = from row in FixData.TVAmort.AsEnumerable()
-                                                  where row.Field<String>("Event").Trim() != "UPD" && row.Field<String>("Event").Trim() != "LATE" &&
-                                                        row.Field<DateTime?>("Date") == (from dres in FixData.TVAmort
-                                                                                         where dres.Field<String>("CustomerNo") == FixData.TVAmort.Rows[CurrentRow].Field<String>("CustomerNo") &&
-                                                                                               dres.Field<String>("Event").Trim() != "UPD" && dres.Field<String>("Event").Trim() != "LATE" &&
-                                                                                               dres.Field<String>("Event").Trim() != "NEW" &&
-                                                                                               dres.Field<Decimal>("Payment") == FixData.TVAmort.Rows[CurrentRow].Field<Decimal>("Payment") * -1 &&
-                                                                                               dres.Date < FixData.TVAmort.Rows[CurrentRow].Field<DateTime>("Date").Date
-                                                                                         select dres.Date).Max()
-                                                  select row;
-                                        else
-                                            res = subres;
-                                    }
-                                    if (res.Any())
-                                    {
-                                        // Moses Newman 08/10/2019 Only reduce by Previous Partial Payment Balance Used if it is > 0!
-                                        lnPayments = (Int32)((lnPayAmount + (res.ElementAt(0).PrevPPBUsed < 0 ? res.ElementAt(0).PrevPPBUsed:0)) / lnRegular);
-                                        lnPartialPayment = res.ElementAt(0).PrevPPBUsed + res.ElementAt(0).PrevPPBUsedLC;
-                                        lnPartialPayment *= -1;
-                                        FixData.TVAmort.Rows[i].SetField<Decimal>("LateFeeBalance", lnLastLateFeeBalance +
-                                            (res.ElementAt(0).LastLFBalance - res.ElementAt(0).LateFeeBalance));
-                                        // Moses Newman 07/25/2019 Fix partial payment return if partial bounce from old days when multiple checks where combined with one.
-                                        if(lnPayAmount * -1 < res.ElementAt(0).Payment) // Moses Newman 08/10/2019 only do this if bounced check was more than one check combined.
-                                            // Moses Newman 11/14/2019 partial payment on partial return is the last partial - the difference in amounts)
-                                            FixData.TVAmort.Rows[i].SetField<Decimal>("PartialPayment", lnLastPartialPaymentBalance - (lnPayAmount + res.ElementAt(0).Payment));
-                                        else
-                                            FixData.TVAmort.Rows[i].SetField<Decimal>("PartialPayment", lnLastPartialPaymentBalance + res.ElementAt(0).LastPPBBalance - res.ElementAt(0).PartialPayment);
-                                        // Moses Newman 08/01/2018 new partial payment after INSUF could be greater than a payment so we must adjust lnPayments accordingly!
-                                        Int32 lnPaymentsAdjust = (Int32)(FixData.TVAmort.Rows[i].Field<Decimal>("PartialPayment") / lnRegular);
-                                        lnPayments += lnPaymentsAdjust;
-                                        // Moses Newman 08/10/2019 On a negative payment NEVER increase the paid thru!!!
-                                        if (lnPayments > 0)
-                                            lnPayments = 0;
-                                        // Moses Newman 01/15/2019 If INSUF leaves negative partial payment back off one month and add complete payment to partial payment.
-                                        lnTempPartial = FixData.TVAmort.Rows[i].Field<Decimal>("PartialPayment") - (lnPaymentsAdjust * lnRegular);
-                                        if(lnTempPartial < 0 && lnPayments != 0) // Moses Newman 01/23/2020 make sure lnPayments is not 0.
-                                        {
-                                            lnPayments -= 1;
-                                            lnTempPartial += lnRegular;
-                                        }
-                                        // 01/15/2019
-                                        FixData.TVAmort.Rows[i].SetField<Decimal>("PartialPayment", lnTempPartial);
-                                        // Moses Newman 08/01/2018 end partial payment fixup
-                                        // Moses Newman 12/10/2018 Set Flag for found ADJ to reverse.
-                                        lbADJFound = true;
-                                    }
-                                    else
-                                    {
+									// Moses Newman 04/19/2018 if isf fields are empty got to last previous match.
+									if (!res.Any())
+									{
+										var subres = from dres in FixData.TVAmort.AsEnumerable()
+													 where dres.Field<String>("CustomerNo") == FixData.TVAmort.Rows[CurrentRow].Field<String>("CustomerNo") &&
+														   dres.Field<String>("Event").Trim() != "UPD" && dres.Field<String>("Event").Trim() != "LATE" &&
+														   dres.Field<String>("Event").Trim() != "NEW" &&
+														   dres.Field<Decimal>("Payment") == FixData.TVAmort.Rows[CurrentRow].Field<Decimal>("Payment") * -1 &&
+														   dres.Date < FixData.TVAmort.Rows[CurrentRow].Field<DateTime>("Date").Date
+													 select dres;
+										if (subres.Any())
+											res = from row in FixData.TVAmort.AsEnumerable()
+												  where row.Field<String>("Event").Trim() != "UPD" && row.Field<String>("Event").Trim() != "LATE" &&
+														row.Field<DateTime?>("Date") == (from dres in FixData.TVAmort
+																						 where dres.Field<String>("CustomerNo") == FixData.TVAmort.Rows[CurrentRow].Field<String>("CustomerNo") &&
+																							   dres.Field<String>("Event").Trim() != "UPD" && dres.Field<String>("Event").Trim() != "LATE" &&
+																							   dres.Field<String>("Event").Trim() != "NEW" &&
+																							   dres.Field<Decimal>("Payment") == FixData.TVAmort.Rows[CurrentRow].Field<Decimal>("Payment") * -1 &&
+																							   dres.Date < FixData.TVAmort.Rows[CurrentRow].Field<DateTime>("Date").Date
+																						 select dres.Date).Max()
+												  select row;
+										else
+											res = subres;
+									}
+									if (res.Any())
+									{
+										// Moses Newman 08/10/2019 Only reduce by Previous Partial Payment Balance Used if it is > 0!
+										lnPayments = (Int32)((lnPayAmount + (res.ElementAt(0).PrevPPBUsed < 0 ? res.ElementAt(0).PrevPPBUsed : 0)) / lnRegular);
+										lnPartialPayment = res.ElementAt(0).PrevPPBUsed + res.ElementAt(0).PrevPPBUsedLC;
+										lnPartialPayment *= -1;
+										FixData.TVAmort.Rows[i].SetField<Decimal>("LateFeeBalance", lnLastLateFeeBalance +
+											(res.ElementAt(0).LastLFBalance - res.ElementAt(0).LateFeeBalance));
+										// Moses Newman 07/25/2019 Fix partial payment return if partial bounce from old days when multiple checks where combined with one.
+										if (lnPayAmount * -1 < res.ElementAt(0).Payment) // Moses Newman 08/10/2019 only do this if bounced check was more than one check combined.
+																						 // Moses Newman 11/14/2019 partial payment on partial return is the last partial - the difference in amounts)
+											FixData.TVAmort.Rows[i].SetField<Decimal>("PartialPayment", lnLastPartialPaymentBalance - (lnPayAmount + res.ElementAt(0).Payment));
+										else
+											FixData.TVAmort.Rows[i].SetField<Decimal>("PartialPayment", lnLastPartialPaymentBalance + res.ElementAt(0).LastPPBBalance - res.ElementAt(0).PartialPayment);
+										// Moses Newman 08/01/2018 new partial payment after INSUF could be greater than a payment so we must adjust lnPayments accordingly!
+										Int32 lnPaymentsAdjust = (Int32)(FixData.TVAmort.Rows[i].Field<Decimal>("PartialPayment") / lnRegular);
+										lnPayments += lnPaymentsAdjust;
+										// Moses Newman 08/10/2019 On a negative payment NEVER increase the paid thru!!!
+										if (lnPayments > 0)
+											lnPayments = 0;
+										// Moses Newman 01/15/2019 If INSUF leaves negative partial payment back off one month and add complete payment to partial payment.
+										lnTempPartial = FixData.TVAmort.Rows[i].Field<Decimal>("PartialPayment") - (lnPaymentsAdjust * lnRegular);
+										if (lnTempPartial < 0 && lnPayments != 0) // Moses Newman 01/23/2020 make sure lnPayments is not 0.
+										{
+											lnPayments -= 1;
+											lnTempPartial += lnRegular;
+										}
+										// 01/15/2019
+										FixData.TVAmort.Rows[i].SetField<Decimal>("PartialPayment", lnTempPartial);
+										// Moses Newman 08/01/2018 end partial payment fixup
+										// Moses Newman 12/10/2018 Set Flag for found ADJ to reverse.
+										lbADJFound = true;
+									}
+									else
+									{
 										lnPartialPayment = 0;
-                                        // Moses Newman 04/24/2018 If no match dont include partial payment balance in lnPayment calculations!
-                                        lnPayments = (Int32)((lnPayAmount) / lnRegular);
+										// Moses Newman 04/24/2018 If no match dont include partial payment balance in lnPayment calculations!
+										lnPayments = (Int32)((lnPayAmount) / lnRegular);
 										// Moses Newman 01/19/2021
-										if (FixData.TVAmort.Rows[i].Field<String>("PaymentCode").Substring(0,1) != "W")
-                                        {
+										if (FixData.TVAmort.Rows[i].Field<String>("PaymentCode").Substring(0, 1) != "W")
+										{
 											lnPartialPayment = FixData.TVAmort.Rows[i].Field<Decimal>("Payment") - (lnPayments * lnRegular);
 											// Moses Newman 02/10/2021 
 											if (lnPartialPayment < 0)
@@ -2589,8 +2603,8 @@ namespace IAC2021SQL
 											}
 										}  // End of 01/19/2021 Partial payment fix
 										FixData.TVAmort.Rows[i].SetField<Int32>("DeltaPTMonths", lnPayments);
-                                        // Moses Newman 04/24/2018 dont let the Partial Payment balance go negative on a negative payment!
-                                        /*if (lnLastPartialPaymentBalance == 0)
+										// Moses Newman 04/24/2018 dont let the Partial Payment balance go negative on a negative payment!
+										/*if (lnLastPartialPaymentBalance == 0)
                                             lnPartialPayment = 0;
                                         else
                                         {
@@ -2601,14 +2615,14 @@ namespace IAC2021SQL
                                                 lnPartialPayment = lnLastPartialPaymentBalance + lnPartialPayment;
 
 										}*/
-                                        if (lsEvent == "PAID")
-                                        {
-                                            FixData.TVAmort.Rows[i].SetField<Decimal>("PartialPayment", 0);
-                                            FixData.TVAmort.Rows[i].SetField<Decimal>("LateFeeBalance", 0);
-                                        }
-                                    }
-                                }
-                            }
+										if (lsEvent == "PAID")
+										{
+											FixData.TVAmort.Rows[i].SetField<Decimal>("PartialPayment", 0);
+											FixData.TVAmort.Rows[i].SetField<Decimal>("LateFeeBalance", 0);
+										}
+									}
+								}
+							}
                             if (lnPayAmount > 0)
                             {
                                 if (FixData.TVAmort.Rows[i].Field<String>("PaymentCode") != "WL")
@@ -3019,9 +3033,22 @@ namespace IAC2021SQL
 				throw new Exception("Unable to release license token. " + response.Content);
 			}
 		}
+		static public Decimal GetMonthlyPayment(String CustomerNo,Int32 PaymentNumber,DateTime PayDate)
+		{
+            SqlConnection SQLCON = new SqlConnection(IAC2021SQL.Properties.Settings.Default.IAC2010SQLConnectionString.ToUpper());
+            SQLCON.Open();
+            SqlCommand SQLCommand = new SqlCommand("SelectMonthlyPayment",SQLCON);
+            SQLCommand.CommandType = CommandType.StoredProcedure;
+			SQLCommand.Parameters.Add("@CustomerNo", SqlDbType.VarChar).Value = CustomerNo;
+            SQLCommand.Parameters.Add("@PaymentNumber", SqlDbType.Int).Value = PaymentNumber;
+            SQLCommand.Parameters.Add("@PaymentDate", SqlDbType.DateTime).Value = PayDate;
 
+            Decimal MonthlyPayment = (Decimal)SQLCommand.ExecuteScalar();
+			SQLCON.Close();
+			return MonthlyPayment;
+        }
 
-		[STAThread]
+        [STAThread]
 		public static void Main()
 		{
 			// Moses Newman 05/20/2022 Add Sentry Error Capturing

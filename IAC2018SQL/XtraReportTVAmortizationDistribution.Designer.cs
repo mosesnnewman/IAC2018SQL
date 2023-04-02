@@ -184,6 +184,7 @@
             this.GrandTotalInterest = new DevExpress.XtraReports.UI.CalculatedField();
             this.calcBuyout = new DevExpress.XtraReports.UI.CalculatedField();
             this.calcUnearned = new DevExpress.XtraReports.UI.CalculatedField();
+            this.xrControlStyleRateChange = new DevExpress.XtraReports.UI.XRControlStyle();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // Area3
@@ -305,7 +306,8 @@
             this.Event_1.BorderWidth = 1F;
             this.Event_1.CanGrow = false;
             this.Event_1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[NewEvent]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[NewEvent]"),
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "ForeColor", "IIF([NewEvent] = \'RTCHG\',\'RED\',\'BLACK\')\n")});
             this.Event_1.Font = new System.Drawing.Font("Arial", 8F);
             this.Event_1.ForeColor = System.Drawing.Color.Black;
             this.Event_1.LocationFloat = new DevExpress.Utils.PointFloat(207.2917F, 0F);
@@ -399,7 +401,8 @@
             this.Payment_1.CanGrow = false;
             this.Payment_1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[CalcPayment]"),
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Visible", "iif([CalcPayment] <> 0, True,False)")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Visible", "iif([CalcPayment] <> 0, True,False)"),
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "ForeColor", "IIF([NewEvent] = \'RTCHG\',\'RED\',\'BLACK\')\n")});
             this.Payment_1.Font = new System.Drawing.Font("Arial", 8F);
             this.Payment_1.ForeColor = System.Drawing.Color.Black;
             this.Payment_1.LocationFloat = new DevExpress.Utils.PointFloat(633.3333F, 0F);
@@ -408,6 +411,7 @@
             this.Payment_1.SizeF = new System.Drawing.SizeF(85.41666F, 15.34722F);
             this.Payment_1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
             this.Payment_1.TextFormatString = "{0:C2}";
+            this.Payment_1.BeforePrint += new System.Drawing.Printing.PrintEventHandler(this.Payment_1_BeforePrint);
             // 
             // GroupHeaderArea1
             // 
@@ -2058,6 +2062,13 @@
             this.calcUnearned.FieldType = DevExpress.XtraReports.UI.FieldType.Decimal;
             this.calcUnearned.Name = "calcUnearned";
             // 
+            // xrControlStyleRateChange
+            // 
+            this.xrControlStyleRateChange.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrControlStyleRateChange.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.xrControlStyleRateChange.Name = "xrControlStyleRateChange";
+            this.xrControlStyleRateChange.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
+            // 
             // XtraReportTVAmortizationDistribution
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -2134,6 +2145,8 @@
             this.CustomerPrint,
             this.gsCustomer,
             this.IsSimple});
+            this.StyleSheet.AddRange(new DevExpress.XtraReports.UI.XRControlStyle[] {
+            this.xrControlStyleRateChange});
             this.Version = "22.1";
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
@@ -2271,5 +2284,6 @@
         private DevExpress.XtraReports.UI.CalculatedField GrandTotalInterest;
         private DevExpress.XtraReports.UI.CalculatedField calcBuyout;
         private DevExpress.XtraReports.UI.CalculatedField calcUnearned;
+        private DevExpress.XtraReports.UI.XRControlStyle xrControlStyleRateChange;
     }
 }
