@@ -1224,7 +1224,7 @@
             this.gsUserID,
             this.gsUserName,
             this.gsFormTitle});
-            this.Version = "21.2";
+            this.Version = "22.1";
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
         }

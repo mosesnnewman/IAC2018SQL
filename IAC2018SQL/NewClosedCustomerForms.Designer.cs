@@ -4535,8 +4535,8 @@
             this.txtRegularPay.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_REGULAR_AMOUNT", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "C2"));
             resources.ApplyResources(this.txtRegularPay, "txtRegularPay");
             this.txtRegularPay.Name = "txtRegularPay";
-            this.txtRegularPay.TextChanged += new System.EventHandler(this.txtRegularPay_Validated);
             this.txtRegularPay.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            this.txtRegularPay.Validated += new System.EventHandler(this.txtRegularPay_Validated);
             // 
             // txtTerm
             // 

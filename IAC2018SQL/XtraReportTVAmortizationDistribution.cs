@@ -87,5 +87,17 @@ namespace IAC2021SQL
         {
             e.Cancel = Convert.ToDouble(GrandTotalBalance_1.Summary.GetResult()) == 0;
         }
+
+        private void Payment_1_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        {
+            XRLabel label = (XRLabel)sender;
+            XtraReportBase report = label.Report;
+            string Event = Convert.ToString(report.GetCurrentColumnValue("NewEvent"));
+
+            if (Event.Equals("RTCHG"))
+            {
+                label.Text = string.Format("{0:##0.000;#;#}", label.Value) + " %";
+            }
+        }
     }
 }

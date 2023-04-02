@@ -462,7 +462,9 @@ namespace IAC2021SQL
                 // Moses Newman 01/15/2022
                 if (tsbSet.ClosedCreditManager.Rows.Count == 0)
                 {
-                    tsbSet.ClosedCreditManager.NewRow();
+                    // Moses Newman 04/01/2023
+                    DataRow newrow = tsbSet.ClosedCreditManager.NewRow();
+                    tsbSet.ClosedCreditManager.Rows.Add(newrow);
                 }
                 // Strip apostrophes from first and last name if they exist
                 tsbSet.ClosedCreditManager.Rows[0].SetField<String>("CRDMGR_CUST_FIRST_NAME", TSBDATA.OPNCUST.Rows[i].Field<String>("CUSTOMER_FIRST_NAME").Replace(@"'", ""));
