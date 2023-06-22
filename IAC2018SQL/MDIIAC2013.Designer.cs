@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManagerIAC = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::IAC2021SQL.SplashFormNew), true, true, true);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MDIIAC2013));
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.ClosedEndFunctionsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,6 +40,7 @@
             this.masterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.paymentsToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.ticketsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.warrantiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.OpenEndFucntionsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CustomersMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dealersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -114,6 +114,7 @@
             this.overPaymentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.receivedContractReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.testToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.PrintCoupons = new System.Windows.Forms.ToolStripMenuItem();
             this.openEndToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newCustomerEditListToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.paymentReceiptsBalanceJournalToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -138,7 +139,6 @@
             this.createSumRecsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.printScreenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fix211DataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.importTCIAppsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.importDefiPDFImagesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
@@ -162,14 +162,9 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.PrintCoupons = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // splashScreenManagerIAC
-            // 
-            splashScreenManagerIAC.ClosingDelay = 500;
             // 
             // menuStrip
             // 
@@ -196,7 +191,8 @@
             this.toolStripMenuItem4,
             this.contingentToolStripMenuItem1,
             this.paymentsToolStripMenuItem2,
-            this.ticketsToolStripMenuItem});
+            this.ticketsToolStripMenuItem,
+            this.warrantiesToolStripMenuItem});
             this.ClosedEndFunctionsMenuItem.Name = "ClosedEndFunctionsMenuItem";
             this.ClosedEndFunctionsMenuItem.Size = new System.Drawing.Size(133, 20);
             this.ClosedEndFunctionsMenuItem.Text = "&Closed End Functions";
@@ -264,6 +260,14 @@
             this.ticketsToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
             this.ticketsToolStripMenuItem.Text = "&Tickets";
             this.ticketsToolStripMenuItem.Click += new System.EventHandler(this.ticketsToolStripMenuItem_Click);
+            // 
+            // warrantiesToolStripMenuItem
+            // 
+            this.warrantiesToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("warrantiesToolStripMenuItem.Image")));
+            this.warrantiesToolStripMenuItem.Name = "warrantiesToolStripMenuItem";
+            this.warrantiesToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
+            this.warrantiesToolStripMenuItem.Text = "&Warranties";
+            this.warrantiesToolStripMenuItem.Click += new System.EventHandler(this.warrantiesToolStripMenuItem_Click);
             // 
             // OpenEndFucntionsMenuItem
             // 
@@ -349,7 +353,7 @@
             this.openEndToolStripMenuItem1});
             this.postingToolStripMenuItem2.Image = global::IAC2021SQL.Properties.Resources.Process_16x_24;
             this.postingToolStripMenuItem2.Name = "postingToolStripMenuItem2";
-            this.postingToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.postingToolStripMenuItem2.Size = new System.Drawing.Size(140, 22);
             this.postingToolStripMenuItem2.Text = "&Posting";
             // 
             // closedEndToolStripMenuItem1
@@ -492,7 +496,7 @@
             this.fixPaidThroughsToolStripMenuItem1});
             this.adminToolsToolStripMenuItem.Image = global::IAC2021SQL.Properties.Resources.Toolbox_16x_24;
             this.adminToolsToolStripMenuItem.Name = "adminToolsToolStripMenuItem";
-            this.adminToolsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.adminToolsToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
             this.adminToolsToolStripMenuItem.Text = "&Admin Tools";
             // 
             // backupToolStripMenuItem
@@ -869,6 +873,13 @@
             this.testToolStripMenuItem.Text = "Cash Payment Summary";
             this.testToolStripMenuItem.Click += new System.EventHandler(this.testToolStripMenuItem_Click);
             // 
+            // PrintCoupons
+            // 
+            this.PrintCoupons.Name = "PrintCoupons";
+            this.PrintCoupons.Size = new System.Drawing.Size(317, 22);
+            this.PrintCoupons.Text = "Print Loan Payment Coupons";
+            this.PrintCoupons.Click += new System.EventHandler(this.PrintCoupons_Click);
+            // 
             // openEndToolStripMenuItem
             // 
             this.openEndToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -1026,7 +1037,6 @@
             this.createSumRecsToolStripMenuItem,
             this.printScreenToolStripMenuItem,
             this.fix211DataToolStripMenuItem,
-            this.importTCIAppsToolStripMenuItem,
             this.toolStripMenuItem5,
             this.importDefiPDFImagesToolStripMenuItem,
             this.toolStripMenuItem6,
@@ -1070,17 +1080,6 @@
             this.fix211DataToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
             this.fix211DataToolStripMenuItem.Text = "&ValidateCellPhones";
             this.fix211DataToolStripMenuItem.Click += new System.EventHandler(this.fix211DataToolStripMenuItem_Click);
-            // 
-            // importTCIAppsToolStripMenuItem
-            // 
-            this.importTCIAppsToolStripMenuItem.Enabled = false;
-            this.importTCIAppsToolStripMenuItem.Image = global::IAC2021SQL.Properties.Resources.ImportFile_16x;
-            this.importTCIAppsToolStripMenuItem.Name = "importTCIAppsToolStripMenuItem";
-            this.importTCIAppsToolStripMenuItem.ShowShortcutKeys = false;
-            this.importTCIAppsToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
-            this.importTCIAppsToolStripMenuItem.Text = "&Import TCI Apps";
-            this.importTCIAppsToolStripMenuItem.Visible = false;
-            this.importTCIAppsToolStripMenuItem.Click += new System.EventHandler(this.importTCIAppsToolStripMenuItem_Click);
             // 
             // toolStripMenuItem5
             // 
@@ -1259,13 +1258,6 @@
             this.toolStripStatusLabel.Text = "Status";
             this.toolStripStatusLabel.Visible = false;
             // 
-            // PrintCoupons
-            // 
-            this.PrintCoupons.Name = "PrintCoupons";
-            this.PrintCoupons.Size = new System.Drawing.Size(317, 22);
-            this.PrintCoupons.Text = "Print Loan Payment Coupons";
-            this.PrintCoupons.Click += new System.EventHandler(this.PrintCoupons_Click);
-            // 
             // MDIIAC2013
             // 
             this.Appearance.Options.UseFont = true;
@@ -1407,7 +1399,6 @@
         private System.Windows.Forms.ToolStripMenuItem paidInAdvanceReportToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
         private System.Windows.Forms.ToolStripMenuItem repoReportToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem importTCIAppsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem6;
         private System.Windows.Forms.ToolStripMenuItem importIVRPaymentsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem closedImportPCPAYFileToolStripMenuItem1;
@@ -1427,6 +1418,7 @@
         private System.Windows.Forms.ToolStripMenuItem ticketsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem testToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem PrintCoupons;
+        private System.Windows.Forms.ToolStripMenuItem warrantiesToolStripMenuItem;
     }
 }
 

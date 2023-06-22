@@ -6,12 +6,11 @@
         <Connections>
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="IAC2010SQLConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="IAC2010SQLConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.IAC2021SQL.Properties.Settings.GlobalReference.Default.IAC2010SQLConnectionString" Provider="System.Data.SqlClient" />
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ParamsConnectionString" IsAppSettingsProperty="true" Modifier="Assembly" Name="ParamsConnectionString (Settings)" PropertyReference="ApplicationSettings.IAC2021SQL.Properties.Settings.GlobalReference.Default.ParamsConnectionString" Provider="System.Data.OleDb" />
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="SSISParamsConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="SSISParamsConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.IAC2021SQL.Properties.Settings.GlobalReference.Default.IAC2010SQLConnectionString" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DailyPaymentsTableAdapter" GeneratorDataComponentClassName="DailyPaymentsTableAdapter" Name="DailyPayments" UserDataComponentName="DailyPaymentsTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLPRODUCTION.dbo.DailyPaymentsSelect" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLTEST.dbo.DailyPaymentsSelect" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.DailyPaymentsSelect</CommandText>
@@ -33,7 +32,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="IVRRejectsTableAdapter" GeneratorDataComponentClassName="IVRRejectsTableAdapter" Name="IVRRejects" UserDataComponentName="IVRRejectsTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLPRODUCTION.dbo.IVRRejectsSelect" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLTEST.dbo.IVRRejectsSelect" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.IVRRejectsDelete</CommandText>
@@ -133,7 +132,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PayNSecondsTableAdapter" GeneratorDataComponentClassName="PayNSecondsTableAdapter" Name="PayNSeconds" UserDataComponentName="PayNSecondsTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLPRODUCTION.dbo.PayNSecondsSelect" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLTEST.dbo.PayNSecondsSelect" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.PayNSecondsSelect</CommandText>
@@ -272,7 +271,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PNSIMPORTParamsTableAdapter" GeneratorDataComponentClassName="PNSIMPORTParamsTableAdapter" Name="PNSIMPORTParams" UserDataComponentName="PNSIMPORTParamsTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="SSISParamsConnectionString (Settings)" DbObjectName="IACSQLPRODUCTION.dbo.PNSIMPORTParamsSelect" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLTEST.dbo.PNSIMPORTParamsSelect" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.PNSIMPORTParamsDelete</CommandText>
@@ -323,7 +322,7 @@
               <Mapping SourceColumn="UNCBasePath" DataSetColumn="UNCBasePath" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="SSISParamsConnectionString (Settings)" DbObjectName="IACSQLPRODUCTION.dbo.PNSIMPORTParamsDeleteAll" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="DeleteAll" Modifier="Public" Name="DeleteAll" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteAll">
+              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLPRODUCTION.dbo.PNSIMPORTParamsDeleteAll" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="DeleteAll" Modifier="Public" Name="DeleteAll" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteAll">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.PNSIMPORTParamsDeleteAll</CommandText>
@@ -337,7 +336,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ExtractFieldListTableAdapter" GeneratorDataComponentClassName="ExtractFieldListTableAdapter" Name="ExtractFieldList" UserDataComponentName="ExtractFieldListTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLPRODUCTION.dbo.ExtractFieldListSelect" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLTEST.dbo.ExtractFieldListSelect" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.ExtractFieldListSelect</CommandText>
@@ -415,7 +414,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DEFIPDFImagesTableAdapter" GeneratorDataComponentClassName="DEFIPDFImagesTableAdapter" Name="DEFIPDFImages" UserDataComponentName="DEFIPDFImagesTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLPRODUCTION.dbo.DEFIPDFImagesSelect" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLTEST.dbo.DEFIPDFImagesSelect" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.DEFIPDFImagesDelete</CommandText>
@@ -524,7 +523,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ControlDateTableAdapter" GeneratorDataComponentClassName="ControlDateTableAdapter" Name="ControlDate" UserDataComponentName="ControlDateTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLPRODUCTION.dbo.ControlDateSelect" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLTEST.dbo.ControlDateSelect" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.ControlDateDELETE</CommandText>
@@ -597,7 +596,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ExtensionsTableAdapter" GeneratorDataComponentClassName="ExtensionsTableAdapter" Name="Extensions" UserDataComponentName="ExtensionsTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLPRODUCTION.dbo.ExtensionsSelect" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLTEST.dbo.ExtensionsSelect" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.ExtensionsSelect</CommandText>
@@ -618,6 +617,7 @@
               <Mapping SourceColumn="PREVIOUS_PAID_THRU" DataSetColumn="PREVIOUS_PAID_THRU" />
               <Mapping SourceColumn="TotalPayments" DataSetColumn="TotalPayments" />
               <Mapping SourceColumn="ContractStatus" DataSetColumn="ContractStatus" />
+              <Mapping SourceColumn="CUSTHIST_THRU_UD" DataSetColumn="CUSTHIST_THRU_UD1" />
             </Mappings>
             <Sources>
               <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLPRODUCTION.dbo.ExtensionsFillByCustomer" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="FillByCustomerNo" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByCustomerNo" GeneratorSourceName="FillByCustomerNo" GetMethodModifier="Public" GetMethodName="GetDataByCustomerNo" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByCustomerNo" UserSourceName="FillByCustomerNo">
@@ -641,7 +641,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="OpenExtensionsTableAdapter" GeneratorDataComponentClassName="OpenExtensionsTableAdapter" Name="OpenExtensions" UserDataComponentName="OpenExtensionsTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLPRODUCTION.dbo.OpenExtensionsSelect" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLTEST.dbo.OpenExtensionsSelect" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.OpenExtensionsSelect</CommandText>
@@ -1107,7 +1107,6 @@
               <Mapping SourceColumn="VEHICLE_YEAR" DataSetColumn="VEHICLE_YEAR" />
               <Mapping SourceColumn="VEHICLE_MAKE" DataSetColumn="VEHICLE_MAKE" />
               <Mapping SourceColumn="VEHICLE_MODEL" DataSetColumn="VEHICLE_MODEL" />
-              <Mapping SourceColumn="CUSTOMER_DEALER" DataSetColumn="CUSTOMER_DEALER" />
               <Mapping SourceColumn="DEALER_NAME" DataSetColumn="DEALER_NAME" />
               <Mapping SourceColumn="DEALER_STATE" DataSetColumn="DEALER_STATE" />
               <Mapping SourceColumn="VEHICLE_INS_COMPANY" DataSetColumn="VEHICLE_INS_COMPANY" />
@@ -1239,6 +1238,7 @@
               <Mapping SourceColumn="ElectronicLien" DataSetColumn="ElectronicLien" />
               <Mapping SourceColumn="ReceivedContract" DataSetColumn="ReceivedContract" />
               <Mapping SourceColumn="DateContractReceived" DataSetColumn="DateContractReceived" />
+              <Mapping SourceColumn="CUSTOMER_DEALER" DataSetColumn="CUSTOMER_DEALER1" />
             </Mappings>
             <Sources>
               <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLPRODUCTION.dbo.CustomerExtractDeleteAll" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="DeleteAll" Modifier="Public" Name="DeleteAll" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteAll">
@@ -1310,7 +1310,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="CashPaymentSummaryTableAdapter" GeneratorDataComponentClassName="CashPaymentSummaryTableAdapter" Name="CashPaymentSummary" UserDataComponentName="CashPaymentSummaryTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLPRODUCTION.dbo.CashPaymentSummarySELECT" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLTEST.dbo.CashPaymentSummarySELECT" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.CashPaymentSummarySELECT</CommandText>
@@ -1362,6 +1362,684 @@
                     <CommandText>dbo.CashPaymentSummaryWeekCount</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="InvoicesTableAdapter" GeneratorDataComponentClassName="InvoicesTableAdapter" Name="Invoices" UserDataComponentName="InvoicesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLTEST.dbo.InvoicesSelect" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.InvoicesDelete</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@id" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.InvoicesInsert</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@CustomerID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumn="CustomerID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@DateDue" Precision="23" ProviderType="DateTime" Scale="3" Size="8" SourceColumn="DateDue" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@CreateDate" Precision="23" ProviderType="DateTime" Scale="3" Size="8" SourceColumn="CreateDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@OriginalDateDue" Precision="23" ProviderType="DateTime" Scale="3" Size="8" SourceColumn="OriginalDateDue" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ExtensionCount" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumn="ExtensionCount" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@Description" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumn="Description" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="money" DbType="Currency" Direction="Input" ParameterName="@Amount" Precision="19" ProviderType="Money" Scale="4" Size="8" SourceColumn="Amount" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="money" DbType="Currency" Direction="Input" ParameterName="@TotalPaid" Precision="19" ProviderType="Money" Scale="4" Size="8" SourceColumn="TotalPaid" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="money" DbType="Currency" Direction="Input" ParameterName="@TotalDue" Precision="19" ProviderType="Money" Scale="4" Size="8" SourceColumn="TotalDue" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="bit" DbType="Boolean" Direction="Input" ParameterName="@IsPaid" Precision="1" ProviderType="Bit" Scale="0" Size="1" SourceColumn="IsPaid" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="money" DbType="Currency" Direction="Input" ParameterName="@ContractStatus" Precision="19" ProviderType="Money" Scale="4" Size="8" SourceColumn="ContractStatus" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="money" DbType="Currency" Direction="Input" ParameterName="@LateFeeBalance" Precision="19" ProviderType="Money" Scale="4" Size="8" SourceColumn="LateFeeBalance" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="money" DbType="Currency" Direction="Input" ParameterName="@PartialPayment" Precision="19" ProviderType="Money" Scale="4" Size="8" SourceColumn="PartialPayment" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="char" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@PaidThru" Precision="0" ProviderType="Char" Scale="0" Size="4" SourceColumn="PaidThru" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@PaidThroughDate" Precision="23" ProviderType="DateTime" Scale="3" Size="8" SourceColumn="PaidThroughDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.InvoicesSelect</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@id" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.InvoicesUpdate</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@id" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@CreateDate" Precision="23" ProviderType="DateTime" Scale="3" Size="8" SourceColumn="CreateDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@OriginalDateDue" Precision="23" ProviderType="DateTime" Scale="3" Size="8" SourceColumn="OriginalDateDue" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ExtensionCount" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumn="ExtensionCount" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@Description" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumn="Description" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="money" DbType="Currency" Direction="Input" ParameterName="@Amount" Precision="19" ProviderType="Money" Scale="4" Size="8" SourceColumn="Amount" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="money" DbType="Currency" Direction="Input" ParameterName="@TotalPaid" Precision="19" ProviderType="Money" Scale="4" Size="8" SourceColumn="TotalPaid" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="money" DbType="Currency" Direction="Input" ParameterName="@TotalDue" Precision="19" ProviderType="Money" Scale="4" Size="8" SourceColumn="TotalDue" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="bit" DbType="Boolean" Direction="Input" ParameterName="@IsPaid" Precision="1" ProviderType="Bit" Scale="0" Size="1" SourceColumn="IsPaid" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="money" DbType="Currency" Direction="Input" ParameterName="@ContractStatus" Precision="19" ProviderType="Money" Scale="4" Size="8" SourceColumn="ContractStatus" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="money" DbType="Currency" Direction="Input" ParameterName="@LateFeeBalance" Precision="19" ProviderType="Money" Scale="4" Size="8" SourceColumn="LateFeeBalance" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="money" DbType="Currency" Direction="Input" ParameterName="@PartialPayment" Precision="19" ProviderType="Money" Scale="4" Size="8" SourceColumn="PartialPayment" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="char" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@PaidThru" Precision="0" ProviderType="Char" Scale="0" Size="4" SourceColumn="PaidThru" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@PaidThroughDate" Precision="23" ProviderType="DateTime" Scale="3" Size="8" SourceColumn="PaidThroughDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+              <Mapping SourceColumn="CustomerID" DataSetColumn="CustomerID" />
+              <Mapping SourceColumn="DateDue" DataSetColumn="DateDue" />
+              <Mapping SourceColumn="CreateDate" DataSetColumn="CreateDate" />
+              <Mapping SourceColumn="OriginalDateDue" DataSetColumn="OriginalDateDue" />
+              <Mapping SourceColumn="ExtensionCount" DataSetColumn="ExtensionCount" />
+              <Mapping SourceColumn="Description" DataSetColumn="Description" />
+              <Mapping SourceColumn="Amount" DataSetColumn="Amount" />
+              <Mapping SourceColumn="TotalPaid" DataSetColumn="TotalPaid" />
+              <Mapping SourceColumn="TotalDue" DataSetColumn="TotalDue" />
+              <Mapping SourceColumn="IsPaid" DataSetColumn="IsPaid" />
+              <Mapping SourceColumn="ContractStatus" DataSetColumn="ContractStatus" />
+              <Mapping SourceColumn="LateFeeBalance" DataSetColumn="LateFeeBalance" />
+              <Mapping SourceColumn="PartialPayment" DataSetColumn="PartialPayment" />
+              <Mapping SourceColumn="PaidThru" DataSetColumn="PaidThru" />
+              <Mapping SourceColumn="PaidThroughDate" DataSetColumn="PaidThroughDate" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLTEST.dbo.InvoiceContractStatus" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="ContractStatus" Modifier="Public" Name="ContractStatus" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="ContractStatus">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.InvoiceContractStatus</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@CustomerID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@LastTransDate" Precision="23" ProviderType="DateTime" Scale="3" Size="8" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLTEST.dbo.InvoicesDeleteAddedRecordsWithZeroPaid" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="DeleteAddedRecordsWithZeroPaid" Modifier="Public" Name="DeleteAddedRecordsWithZeroPaid" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="DeleteAddedRecordsWithZeroPaid">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.InvoicesDeleteAddedRecordsWithZeroPaid</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@CustomerID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLTEST.dbo.InvoicesFillAllByCustomerId" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="FillAllByCustomerId" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataAllByCustomerId" GeneratorSourceName="FillAllByCustomerId" GetMethodModifier="Public" GetMethodName="GetDataAllByCustomerId" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataAllByCustomerId" UserSourceName="FillAllByCustomerId">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.InvoicesFillAllByCustomerId</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@CustomerID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLTEST.dbo.InvoicesFillAllNotPaidInFullByCustomerId" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="FillAllByNotPaidInFullByCustomerId" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataAllByNotPaidInFullByCustomerId" GeneratorSourceName="FillAllByNotPaidInFullByCustomerId" GetMethodModifier="Public" GetMethodName="GetDataAllByNotPaidInFullByCustomerId" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataAllByNotPaidInFullByCustomerId" UserSourceName="FillAllByNotPaidInFullByCustomerId">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.InvoicesFillAllNotPaidInFullByCustomerId</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@CustomerID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@Type" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLTEST.dbo.InvoicesFillAllPaidByCustomerIdDateRange" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="FillAllPaidByCustomerIDDateRange" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataAllPaidByCustomerIDDateRange" GeneratorSourceName="FillAllPaidByCustomerIDDateRange" GetMethodModifier="Public" GetMethodName="GetDataAllPaidByCustomerIDDateRange" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataAllPaidByCustomerIDDateRange" UserSourceName="FillAllPaidByCustomerIDDateRange">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.InvoicesFillAllPaidByCustomerIdDateRange</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@CustomerID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@Type" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@End" Precision="23" ProviderType="DateTime" Scale="3" Size="8" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLTEST.dbo.InvoicesFillAllNotPaidInFullByCustomerIdDateRange" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="FillByNotPaidInFullDateRange" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByNotPaidInFullDateRange" GeneratorSourceName="FillByNotPaidInFullDateRange" GetMethodModifier="Public" GetMethodName="GetDataByNotPaidInFullDateRange" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByNotPaidInFullDateRange" UserSourceName="FillByNotPaidInFullDateRange">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.InvoicesFillAllNotPaidInFullByCustomerIdDateRange</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@CustomerID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@Type" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@End" Precision="23" ProviderType="DateTime" Scale="3" Size="8" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLTEST.dbo.InvoicesFillAllByPaymentID" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="FillByPaymentID" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByPaymentID" GeneratorSourceName="FillByPaymentID" GetMethodModifier="Public" GetMethodName="GetDataByPaymentID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByPaymentID" UserSourceName="FillByPaymentID">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.InvoicesFillAllByPaymentID</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@PaymentID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLTEST.dbo.InvoicesGetLateChargeBalanceByDate" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="GetLateChargeBalanceByDate" Modifier="Public" Name="GetLateChargeBalanceByDate" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="GetLateChargeBalanceByDate">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.InvoicesGetLateChargeBalanceByDate</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@CustomerID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@ThisDate" Precision="23" ProviderType="DateTime" Scale="3" Size="8" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLTEST.dbo.InvoicesGetPartialPaymentByDate" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="GetPartialPaymentByDate" Modifier="Public" Name="GetPartialPaymentByDate" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="GetPartialPaymentByDate">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.InvoicesGetPartialPaymentByDate</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@CustomerID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@ThisDate" Precision="23" ProviderType="DateTime" Scale="3" Size="8" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLTEST.dbo.InvoicesApplyExtension" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="InvoicesApplyExtension" Modifier="Public" Name="InvoicesApplyExtension" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="InvoicesApplyExtension">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.InvoicesApplyExtension</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@CustomerID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ExtensionCount" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLTEST.dbo.InvoicesGetLastDateDue" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="LastDateDue" Modifier="Public" Name="LastDateDue" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="LastDateDue">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.InvoicesGetLastDateDue</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@CustomerID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLTEST.dbo.InvoicesGetLastExtensionCount" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="LastExtensionCount" Modifier="Public" Name="LastExtensionCount" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy6" UserSourceName="LastExtensionCount">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.InvoicesGetLastExtensionCount</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@CustomerID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLTEST.dbo.InvoicesGetLastLateFee" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="LastLateFee" Modifier="Public" Name="LastLateFee" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy7" UserSourceName="LastLateFee">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.InvoicesGetLastLateFee</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@CustomerID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLTEST.dbo.InvoiceGetLateChargeBalance" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="LateChargeBalance" Modifier="Public" Name="LateChargeBalance" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy8" UserSourceName="LateChargeBalance">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.InvoiceGetLateChargeBalance</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@CustomerID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLTEST.dbo.InvoicesNumberOfPayments" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="NumberOfPayments" Modifier="Public" Name="NumberOfPayments" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy9" UserSourceName="NumberOfPayments">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.InvoicesNumberOfPayments</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@CustomerID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLTEST.dbo.InvoiceGetPaidThroughDate" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="PaidThroughDate" Modifier="Public" Name="PaidThroughDate" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy10" UserSourceName="PaidThroughDate">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.InvoiceGetPaidThroughDate</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@CustomerID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLTEST.dbo.InvoiceGetPaidThru" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="PaidThru" Modifier="Public" Name="PaidThru" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy11" UserSourceName="PaidThru">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.InvoiceGetPaidThru</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@CustomerID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLTEST.dbo.InvoiceGetPartialPayment" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="PartialPayment" Modifier="Public" Name="PartialPayment" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy12" UserSourceName="PartialPayment">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.InvoiceGetPartialPayment</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@CustomerID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLTEST.dbo.InvoicesUpdateOnlyBuckets" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="UpdateOnlyBuckets" Modifier="Public" Name="UpdateOnlyBuckets" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy13" UserSourceName="UpdateOnlyBuckets">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.InvoicesUpdateOnlyBuckets</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@id" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="money" DbType="Currency" Direction="Input" ParameterName="@ContractStatus" Precision="19" ProviderType="Money" Scale="4" Size="8" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="money" DbType="Currency" Direction="Input" ParameterName="@LateFeeBalance" Precision="19" ProviderType="Money" Scale="4" Size="8" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="money" DbType="Currency" Direction="Input" ParameterName="@PartialPayment" Precision="19" ProviderType="Money" Scale="4" Size="8" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="char" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@PaidThru" Precision="0" ProviderType="Char" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@PaidThroughDate" Precision="23" ProviderType="DateTime" Scale="3" Size="8" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PaymentHistoryTableAdapter" GeneratorDataComponentClassName="PaymentHistoryTableAdapter" Name="PaymentHistory" UserDataComponentName="PaymentHistoryTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLTEST.dbo.PaymentHistorySelect" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.PaymentHistoryDelete</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@CustomerNo" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumn="CustomerNo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@PaymentDate" Precision="23" ProviderType="DateTime" Scale="3" Size="8" SourceColumn="PaymentDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@SeqNo" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumn="SeqNo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.PaymentHistoryInsert</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@CusthistID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumn="CusthistID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="bit" DbType="Boolean" Direction="Input" ParameterName="@IsINSUF" Precision="1" ProviderType="Bit" Scale="0" Size="1" SourceColumn="IsINSUF" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@CustomerNo" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumn="CustomerNo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@PaymentDate" Precision="23" ProviderType="DateTime" Scale="3" Size="8" SourceColumn="PaymentDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@SeqNo" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumn="SeqNo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ExtCount" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumn="ExtCount" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@DealerId" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumn="DealerId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="money" DbType="Currency" Direction="Input" ParameterName="@Amount" Precision="19" ProviderType="Money" Scale="4" Size="8" SourceColumn="Amount" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="money" DbType="Currency" Direction="Input" ParameterName="@Balance" Precision="19" ProviderType="Money" Scale="4" Size="8" SourceColumn="Balance" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="money" DbType="Currency" Direction="Input" ParameterName="@Buyout" Precision="19" ProviderType="Money" Scale="4" Size="8" SourceColumn="Buyout" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="money" DbType="Currency" Direction="Input" ParameterName="@ContractStatus" Precision="19" ProviderType="Money" Scale="4" Size="8" SourceColumn="ContractStatus" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="money" DbType="Currency" Direction="Input" ParameterName="@PartialPayment" Precision="19" ProviderType="Money" Scale="4" Size="8" SourceColumn="PartialPayment" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="money" DbType="Currency" Direction="Input" ParameterName="@LateFeeBalance" Precision="19" ProviderType="Money" Scale="4" Size="8" SourceColumn="LateFeeBalance" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="char" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@PaidThru" Precision="0" ProviderType="Char" Scale="0" Size="4" SourceColumn="PaidThru" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@PaidThroughDate" Precision="23" ProviderType="DateTime" Scale="3" Size="8" SourceColumn="PaidThroughDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="char" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Type" Precision="0" ProviderType="Char" Scale="0" Size="1" SourceColumn="Type" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="char" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Code" Precision="0" ProviderType="Char" Scale="0" Size="1" SourceColumn="Code" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@ISFDate" Precision="23" ProviderType="DateTime" Scale="3" Size="8" SourceColumn="ISFDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="money" DbType="Currency" Direction="Input" ParameterName="@PaidInt" Precision="19" ProviderType="Money" Scale="4" Size="8" SourceColumn="PaidInt" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="money" DbType="Currency" Direction="Input" ParameterName="@AccruedInt" Precision="19" ProviderType="Money" Scale="4" Size="8" SourceColumn="AccruedInt" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="money" DbType="Currency" Direction="Input" ParameterName="@LateChargePaid" Precision="19" ProviderType="Money" Scale="4" Size="8" SourceColumn="LateChargePaid" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="bit" DbType="Boolean" Direction="Input" ParameterName="@AutoPay" Precision="1" ProviderType="Bit" Scale="0" Size="1" SourceColumn="AutoPay" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="char" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@CreditCardType" Precision="0" ProviderType="Char" Scale="0" Size="5" SourceColumn="CreditCardType" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="bit" DbType="Boolean" Direction="Input" ParameterName="@IsLocked" Precision="1" ProviderType="Bit" Scale="0" Size="1" SourceColumn="IsLocked" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="char" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@LockedBy" Precision="0" ProviderType="Char" Scale="0" Size="3" SourceColumn="LockedBy" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@LockTime" Precision="23" ProviderType="DateTime" Scale="3" Size="8" SourceColumn="LockTime" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@TransactionDate" Precision="23" ProviderType="DateTime" Scale="3" Size="8" SourceColumn="TransactionDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="money" DbType="Currency" Direction="Input" ParameterName="@Fee" Precision="19" ProviderType="Money" Scale="4" Size="8" SourceColumn="Fee" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="bit" DbType="Boolean" Direction="Input" ParameterName="@FromIVR" Precision="1" ProviderType="Bit" Scale="0" Size="1" SourceColumn="FromIVR" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ISFSeqNo" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumn="ISFSeqNo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="char" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@ISFType" Precision="0" ProviderType="Char" Scale="0" Size="1" SourceColumn="ISFType" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="char" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@ISFCode" Precision="0" ProviderType="Char" Scale="0" Size="1" SourceColumn="ISFCode" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ISFID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumn="ISFID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@TicketID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumn="TicketID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@TicketDetailID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumn="TicketDetailID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="bit" DbType="Boolean" Direction="Input" ParameterName="@UsedInFull" Precision="1" ProviderType="Bit" Scale="0" Size="1" SourceColumn="UsedInFull" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="money" DbType="Currency" Direction="Input" ParameterName="@AmountUsed" Precision="19" ProviderType="Money" Scale="4" Size="8" SourceColumn="AmountUsed" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.PaymentHistorySelect</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@CustomerId" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@PaymentDate" Precision="23" ProviderType="DateTime" Scale="3" Size="8" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@SeqNo" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.PaymentHistoryUpdate</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@CusthistID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumn="CusthistID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="bit" DbType="Boolean" Direction="Input" ParameterName="@IsINSUF" Precision="1" ProviderType="Bit" Scale="0" Size="1" SourceColumn="IsINSUF" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@CustomerNo" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumn="CustomerNo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@PaymentDate" Precision="23" ProviderType="DateTime" Scale="3" Size="8" SourceColumn="PaymentDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@SeqNo" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumn="SeqNo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ExtCount" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumn="ExtCount" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@DealerId" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumn="DealerId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="money" DbType="Currency" Direction="Input" ParameterName="@Amount" Precision="19" ProviderType="Money" Scale="4" Size="8" SourceColumn="Amount" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="money" DbType="Currency" Direction="Input" ParameterName="@Balance" Precision="19" ProviderType="Money" Scale="4" Size="8" SourceColumn="Balance" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="money" DbType="Currency" Direction="Input" ParameterName="@Buyout" Precision="19" ProviderType="Money" Scale="4" Size="8" SourceColumn="Buyout" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="money" DbType="Currency" Direction="Input" ParameterName="@ContractStatus" Precision="19" ProviderType="Money" Scale="4" Size="8" SourceColumn="ContractStatus" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="money" DbType="Currency" Direction="Input" ParameterName="@PartialPayment" Precision="19" ProviderType="Money" Scale="4" Size="8" SourceColumn="PartialPayment" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="money" DbType="Currency" Direction="Input" ParameterName="@LateFeeBalance" Precision="19" ProviderType="Money" Scale="4" Size="8" SourceColumn="LateFeeBalance" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="char" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@PaidThru" Precision="0" ProviderType="Char" Scale="0" Size="4" SourceColumn="PaidThru" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@PaidThroughDate" Precision="23" ProviderType="DateTime" Scale="3" Size="8" SourceColumn="PaidThroughDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="char" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Type" Precision="0" ProviderType="Char" Scale="0" Size="1" SourceColumn="Type" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="char" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Code" Precision="0" ProviderType="Char" Scale="0" Size="1" SourceColumn="Code" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@ISFDate" Precision="23" ProviderType="DateTime" Scale="3" Size="8" SourceColumn="ISFDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="money" DbType="Currency" Direction="Input" ParameterName="@PaidInt" Precision="19" ProviderType="Money" Scale="4" Size="8" SourceColumn="PaidInt" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="money" DbType="Currency" Direction="Input" ParameterName="@AccruedInt" Precision="19" ProviderType="Money" Scale="4" Size="8" SourceColumn="AccruedInt" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="money" DbType="Currency" Direction="Input" ParameterName="@LateChargePaid" Precision="19" ProviderType="Money" Scale="4" Size="8" SourceColumn="LateChargePaid" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="bit" DbType="Boolean" Direction="Input" ParameterName="@AutoPay" Precision="1" ProviderType="Bit" Scale="0" Size="1" SourceColumn="AutoPay" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="char" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@CreditCardType" Precision="0" ProviderType="Char" Scale="0" Size="5" SourceColumn="CreditCardType" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="bit" DbType="Boolean" Direction="Input" ParameterName="@IsLocked" Precision="1" ProviderType="Bit" Scale="0" Size="1" SourceColumn="IsLocked" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="char" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@LockedBy" Precision="0" ProviderType="Char" Scale="0" Size="3" SourceColumn="LockedBy" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@LockTime" Precision="23" ProviderType="DateTime" Scale="3" Size="8" SourceColumn="LockTime" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@TransactionDate" Precision="23" ProviderType="DateTime" Scale="3" Size="8" SourceColumn="TransactionDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="money" DbType="Currency" Direction="Input" ParameterName="@Fee" Precision="19" ProviderType="Money" Scale="4" Size="8" SourceColumn="Fee" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="bit" DbType="Boolean" Direction="Input" ParameterName="@FromIVR" Precision="1" ProviderType="Bit" Scale="0" Size="1" SourceColumn="FromIVR" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ISFSeqNo" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumn="ISFSeqNo" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="char" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@ISFType" Precision="0" ProviderType="Char" Scale="0" Size="1" SourceColumn="ISFType" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="char" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@ISFCode" Precision="0" ProviderType="Char" Scale="0" Size="1" SourceColumn="ISFCode" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ISFID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumn="ISFID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@TicketID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumn="TicketID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@TicketDetailID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumn="TicketDetailID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="bit" DbType="Boolean" Direction="Input" ParameterName="@UsedInFull" Precision="1" ProviderType="Bit" Scale="0" Size="1" SourceColumn="UsedInFull" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="money" DbType="Currency" Direction="Input" ParameterName="@AmountUsed" Precision="19" ProviderType="Money" Scale="4" Size="8" SourceColumn="AmountUsed" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+              <Mapping SourceColumn="CusthistID" DataSetColumn="CusthistID" />
+              <Mapping SourceColumn="IsINSUF" DataSetColumn="IsINSUF" />
+              <Mapping SourceColumn="CustomerNo" DataSetColumn="CustomerNo" />
+              <Mapping SourceColumn="PaymentDate" DataSetColumn="PaymentDate" />
+              <Mapping SourceColumn="SeqNo" DataSetColumn="SeqNo" />
+              <Mapping SourceColumn="ExtCount" DataSetColumn="ExtCount" />
+              <Mapping SourceColumn="DealerId" DataSetColumn="DealerId" />
+              <Mapping SourceColumn="Amount" DataSetColumn="Amount" />
+              <Mapping SourceColumn="Type" DataSetColumn="Type" />
+              <Mapping SourceColumn="Code" DataSetColumn="Code" />
+              <Mapping SourceColumn="ISFDate" DataSetColumn="ISFDate" />
+              <Mapping SourceColumn="PaidInt" DataSetColumn="PaidInt" />
+              <Mapping SourceColumn="AccruedInt" DataSetColumn="AccruedInt" />
+              <Mapping SourceColumn="LateChargePaid" DataSetColumn="LateChargePaid" />
+              <Mapping SourceColumn="AutoPay" DataSetColumn="AutoPay" />
+              <Mapping SourceColumn="CreditCardType" DataSetColumn="CreditCardType" />
+              <Mapping SourceColumn="IsLocked" DataSetColumn="IsLocked" />
+              <Mapping SourceColumn="LockedBy" DataSetColumn="LockedBy" />
+              <Mapping SourceColumn="LockTime" DataSetColumn="LockTime" />
+              <Mapping SourceColumn="TransactionDate" DataSetColumn="TransactionDate" />
+              <Mapping SourceColumn="Fee" DataSetColumn="Fee" />
+              <Mapping SourceColumn="FromIVR" DataSetColumn="FromIVR" />
+              <Mapping SourceColumn="ISFSeqNo" DataSetColumn="ISFSeqNo" />
+              <Mapping SourceColumn="ISFType" DataSetColumn="ISFType" />
+              <Mapping SourceColumn="ISFCode" DataSetColumn="ISFCode" />
+              <Mapping SourceColumn="ISFID" DataSetColumn="ISFID" />
+              <Mapping SourceColumn="TicketID" DataSetColumn="TicketID" />
+              <Mapping SourceColumn="TicketDetailID" DataSetColumn="TicketDetailID" />
+              <Mapping SourceColumn="UsedInFull" DataSetColumn="UsedInFull" />
+              <Mapping SourceColumn="AmountUsed" DataSetColumn="AmountUsed" />
+              <Mapping SourceColumn="Balance" DataSetColumn="Balance" />
+              <Mapping SourceColumn="Buyout" DataSetColumn="Buyout" />
+              <Mapping SourceColumn="ContractStatus" DataSetColumn="ContractStatus" />
+              <Mapping SourceColumn="PartialPayment" DataSetColumn="PartialPayment" />
+              <Mapping SourceColumn="PaidThru" DataSetColumn="PaidThru" />
+              <Mapping SourceColumn="PaidThroughDate" DataSetColumn="PaidThroughDate" />
+              <Mapping SourceColumn="LateFeeBalance" DataSetColumn="LateFeeBalance" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLTEST.dbo.PaymentHistoryBalanceToDate" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="BalanceToDate" Modifier="Public" Name="BalanceToDate" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="BalanceToDate">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.PaymentHistoryBalanceToDate</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@CustomerNo" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@PaymentDate" Precision="23" ProviderType="DateTime" Scale="3" Size="8" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLTEST.dbo.PaymentHistoryContractStatusByPayment" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="ContractStatusByPayment" Modifier="Public" Name="ContractStatusByPayment" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="ContractStatusByPayment">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.PaymentHistoryContractStatusByPayment</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@CustomerID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@LastTransDate" Precision="23" ProviderType="DateTime" Scale="3" Size="8" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@PaidThrough" Precision="23" ProviderType="DateTime" Scale="3" Size="8" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="money" DbType="Currency" Direction="Input" ParameterName="@PartialPayment" Precision="19" ProviderType="Money" Scale="4" Size="8" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="money" DbType="Currency" Direction="Input" ParameterName="@LateChargeBalance" Precision="19" ProviderType="Money" Scale="4" Size="8" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLTEST.dbo.PaymentHistoryFillAllByCustomerId" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="FillAllByCustomerId" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataAllByCustomerId" GeneratorSourceName="FillAllByCustomerId" GetMethodModifier="Public" GetMethodName="GetDataAllByCustomerId" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataAllByCustomerId" UserSourceName="FillAllByCustomerId">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.PaymentHistoryFillAllByCustomerId</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@CustomerId" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLTEST.dbo.PaymentHistorySelectByCusthistID" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="FillByCusthistID" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByCusthistID" GeneratorSourceName="FillByCusthistID" GetMethodModifier="Public" GetMethodName="GetDataByCusthistID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByCusthistID" UserSourceName="FillByCusthistID">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.PaymentHistorySelectByCusthistID</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@CusthistID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLTEST.dbo.PaymentHistorySelectById" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="FillByID" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByID" GeneratorSourceName="FillByID" GetMethodModifier="Public" GetMethodName="GetDataByID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByID" UserSourceName="FillByID">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.PaymentHistorySelectById</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLTEST.dbo.PaymentHistoryUnused" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="FillByUnused" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByUnused" GeneratorSourceName="FillByUnused" GetMethodModifier="Public" GetMethodName="GetDataByUnused" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByUnused" UserSourceName="FillByUnused">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.PaymentHistoryUnused</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@CustomerNo" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLTEST.dbo.PaymentHistoryGetPaymentIDByISFID" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="GetPaymentIDByISFID" Modifier="Public" Name="GetPaymentIDByISFID" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="GetPaymentIDByISFID">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.PaymentHistoryGetPaymentIDByISFID</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@ISFID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLTEST.dbo.PaymentHistoryLateChargeToReturn" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="LateChargeToReturn" Modifier="Public" Name="LateChargeToReturn" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="LateChargeToReturn">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.PaymentHistoryLateChargeToReturn</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@id" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLTEST.dbo.PaymentHistorySecondToLastBalancePlusNewInterest" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="SecondToLastBalancePlusNewInterest" Modifier="Public" Name="SecondToLastBalancePlusNewInterest" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="SecondToLastBalancePlusNewInterest">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.PaymentHistorySecondToLastBalancePlusNewInterest</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@CustomerNo" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLTEST.dbo.PaymentHistoryUpdateOnlyBuckets" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="UpdateOnlyBuckets" Modifier="Public" Name="UpdateOnlyBuckets" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="UpdateOnlyBuckets">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.PaymentHistoryUpdateOnlyBuckets</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@id" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="money" DbType="Currency" Direction="Input" ParameterName="@ContractStatus" Precision="19" ProviderType="Money" Scale="4" Size="8" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="money" DbType="Currency" Direction="Input" ParameterName="@LateFeeBalance" Precision="19" ProviderType="Money" Scale="4" Size="8" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="money" DbType="Currency" Direction="Input" ParameterName="@PartialPayment" Precision="19" ProviderType="Money" Scale="4" Size="8" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="char" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@PaidThru" Precision="0" ProviderType="Char" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@PaidThroughDate" Precision="23" ProviderType="DateTime" Scale="3" Size="8" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="PaymentInvoiceTableAdapter" GeneratorDataComponentClassName="PaymentInvoiceTableAdapter" Name="PaymentInvoice" UserDataComponentName="PaymentInvoiceTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLTEST.dbo.PaymentInvoiceSelect" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.PaymentInvoiceDelete</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@PaymentId" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumn="PaymentId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@InvoiceId" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumn="InvoiceId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.PaymentInvoiceInsert</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@CustomerId" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumn="CustomerId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@PaymentId" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumn="PaymentId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@InvoiceId" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumn="InvoiceId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="money" DbType="Currency" Direction="Input" ParameterName="@Amount" Precision="19" ProviderType="Money" Scale="4" Size="8" SourceColumn="Amount" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="money" DbType="Currency" Direction="Input" ParameterName="@ReturnedAmount" Precision="19" ProviderType="Money" Scale="4" Size="8" SourceColumn="ReturnedAmount" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="bit" DbType="Boolean" Direction="Input" ParameterName="@FullReturn" Precision="1" ProviderType="Bit" Scale="0" Size="1" SourceColumn="FullReturn" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="char" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Type" Precision="0" ProviderType="Char" Scale="0" Size="1" SourceColumn="Type" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="char" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Code" Precision="0" ProviderType="Char" Scale="0" Size="1" SourceColumn="Code" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@Description" Precision="0" ProviderType="VarChar" Scale="0" Size="10" SourceColumn="Description" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@TranID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumn="TranID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.PaymentInvoiceSelect</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@PaymentId" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@InvoiceId" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.PaymentInvoiceUpdate</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@PaymentId" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumn="PaymentId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@InvoiceId" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumn="InvoiceId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="money" DbType="Currency" Direction="Input" ParameterName="@Amount" Precision="19" ProviderType="Money" Scale="4" Size="8" SourceColumn="Amount" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="money" DbType="Currency" Direction="Input" ParameterName="@ReturnedAmount" Precision="19" ProviderType="Money" Scale="4" Size="8" SourceColumn="ReturnedAmount" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="bit" DbType="Boolean" Direction="Input" ParameterName="@FullReturn" Precision="1" ProviderType="Bit" Scale="0" Size="1" SourceColumn="FullReturn" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="char" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Type" Precision="0" ProviderType="Char" Scale="0" Size="1" SourceColumn="Type" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="char" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@Code" Precision="0" ProviderType="Char" Scale="0" Size="1" SourceColumn="Code" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="varchar" DbType="AnsiString" Direction="Input" ParameterName="@Description" Precision="0" ProviderType="VarChar" Scale="0" Size="10" SourceColumn="Description" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@TranID" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumn="TranID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="CustomerId" DataSetColumn="CustomerId" />
+              <Mapping SourceColumn="PaymentId" DataSetColumn="PaymentId" />
+              <Mapping SourceColumn="InvoiceId" DataSetColumn="InvoiceId" />
+              <Mapping SourceColumn="Amount" DataSetColumn="Amount" />
+              <Mapping SourceColumn="ReturnedAmount" DataSetColumn="ReturnedAmount" />
+              <Mapping SourceColumn="FullReturn" DataSetColumn="FullReturn" />
+              <Mapping SourceColumn="Type" DataSetColumn="Type" />
+              <Mapping SourceColumn="Code" DataSetColumn="Code" />
+              <Mapping SourceColumn="Description" DataSetColumn="Description" />
+              <Mapping SourceColumn="TranID" DataSetColumn="TranID" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLTEST.dbo.PaymentInvoiceFillByPaymentID" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="FillByPaymentID" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByPaymentID" GeneratorSourceName="FillByPaymentID" GetMethodModifier="Public" GetMethodName="GetDataByPaymentID" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByPaymentID" UserSourceName="FillByPaymentID">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.PaymentInvoiceFillByPaymentID</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@PaymentId" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </SelectCommand>
@@ -1714,6 +2392,7 @@
               <xs:element name="CUSTHIST_THRU_UD" msprop:Generator_ColumnPropNameInTable="CUSTHIST_THRU_UDColumn" msprop:nullValue="0" msprop:Generator_ColumnPropNameInRow="CUSTHIST_THRU_UD" msprop:Generator_UserColumnName="CUSTHIST_THRU_UD" msprop:Generator_ColumnVarNameInTable="columnCUSTHIST_THRU_UD" type="xs:int" default="0" minOccurs="0" />
               <xs:element name="TotalPayments" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="TotalPaymentsColumn" msprop:Generator_ColumnPropNameInRow="TotalPayments" msprop:Generator_UserColumnName="TotalPayments" msprop:Generator_ColumnVarNameInTable="columnTotalPayments" type="xs:decimal" minOccurs="0" />
               <xs:element name="ContractStatus" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="ContractStatusColumn" msprop:Generator_ColumnPropNameInRow="ContractStatus" msprop:Generator_UserColumnName="ContractStatus" msprop:Generator_ColumnVarNameInTable="columnContractStatus" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CUSTHIST_THRU_UD1" msdata:Caption="CUSTHIST_THRU_UD" msprop:Generator_ColumnPropNameInTable="CUSTHIST_THRU_UD1Column" msprop:Generator_ColumnPropNameInRow="CUSTHIST_THRU_UD1" msprop:Generator_UserColumnName="CUSTHIST_THRU_UD1" msprop:Generator_ColumnVarNameInTable="columnCUSTHIST_THRU_UD1" type="xs:decimal" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -2461,6 +3140,7 @@
               <xs:element name="ElectronicLien" msprop:Generator_ColumnPropNameInTable="ElectronicLienColumn" msprop:Generator_ColumnPropNameInRow="ElectronicLien" msprop:Generator_UserColumnName="ElectronicLien" msprop:Generator_ColumnVarNameInTable="columnElectronicLien" type="xs:boolean" default="false" minOccurs="0" />
               <xs:element name="ReceivedContract" msprop:Generator_ColumnPropNameInTable="ReceivedContractColumn" msprop:Generator_ColumnPropNameInRow="ReceivedContract" msprop:Generator_UserColumnName="ReceivedContract" msprop:Generator_ColumnVarNameInTable="columnReceivedContract" type="xs:boolean" default="false" minOccurs="0" />
               <xs:element name="DateContractReceived" msprop:Generator_ColumnPropNameInTable="DateContractReceivedColumn" msprop:Generator_ColumnPropNameInRow="DateContractReceived" msprop:Generator_UserColumnName="DateContractReceived" msprop:Generator_ColumnVarNameInTable="columnDateContractReceived" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="CUSTOMER_DEALER1" msdata:Caption="CUSTOMER_DEALER" msprop:Generator_ColumnPropNameInTable="CUSTOMER_DEALER1Column" msprop:Generator_ColumnPropNameInRow="CUSTOMER_DEALER1" msprop:Generator_UserColumnName="CUSTOMER_DEALER1" msprop:Generator_ColumnVarNameInTable="columnCUSTOMER_DEALER1" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -2504,11 +3184,169 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="Invoices" msprop:Generator_RowEvHandlerName="InvoicesRowChangeEventHandler" msprop:Generator_RowDeletedName="InvoicesRowDeleted" msprop:Generator_RowDeletingName="InvoicesRowDeleting" msprop:Generator_RowEvArgName="InvoicesRowChangeEvent" msprop:Generator_TablePropName="Invoices" msprop:Generator_RowChangedName="InvoicesRowChanged" msprop:Generator_UserTableName="Invoices" msprop:Generator_RowChangingName="InvoicesRowChanging" msprop:Generator_RowClassName="InvoicesRow" msprop:Generator_TableClassName="InvoicesDataTable" msprop:Generator_TableVarName="tableInvoices">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_UserColumnName="id" msprop:Generator_ColumnVarNameInTable="columnid" type="xs:int" />
+              <xs:element name="CustomerID" msprop:Generator_ColumnPropNameInTable="CustomerIDColumn" msprop:Generator_ColumnPropNameInRow="CustomerID" msprop:Generator_UserColumnName="CustomerID" msprop:Generator_ColumnVarNameInTable="columnCustomerID" type="xs:int" />
+              <xs:element name="DateDue" msprop:Generator_ColumnPropNameInTable="DateDueColumn" msprop:Generator_ColumnPropNameInRow="DateDue" msprop:Generator_UserColumnName="DateDue" msprop:Generator_ColumnVarNameInTable="columnDateDue" type="xs:dateTime" />
+              <xs:element name="CreateDate" msprop:Generator_ColumnPropNameInTable="CreateDateColumn" msprop:Generator_ColumnPropNameInRow="CreateDate" msprop:Generator_UserColumnName="CreateDate" msprop:Generator_ColumnVarNameInTable="columnCreateDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="OriginalDateDue" msprop:Generator_ColumnPropNameInTable="OriginalDateDueColumn" msprop:Generator_ColumnPropNameInRow="OriginalDateDue" msprop:Generator_UserColumnName="OriginalDateDue" msprop:Generator_ColumnVarNameInTable="columnOriginalDateDue" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ExtensionCount" msprop:Generator_ColumnPropNameInTable="ExtensionCountColumn" msprop:Generator_ColumnPropNameInRow="ExtensionCount" msprop:Generator_UserColumnName="ExtensionCount" msprop:Generator_ColumnVarNameInTable="columnExtensionCount" type="xs:int" minOccurs="0" />
+              <xs:element name="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_UserColumnName="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Amount" msprop:Generator_ColumnPropNameInTable="AmountColumn" msprop:Generator_ColumnPropNameInRow="Amount" msprop:Generator_UserColumnName="Amount" msprop:Generator_ColumnVarNameInTable="columnAmount" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TotalPaid" msprop:Generator_ColumnPropNameInTable="TotalPaidColumn" msprop:Generator_ColumnPropNameInRow="TotalPaid" msprop:Generator_UserColumnName="TotalPaid" msprop:Generator_ColumnVarNameInTable="columnTotalPaid" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TotalDue" msprop:Generator_ColumnPropNameInTable="TotalDueColumn" msprop:Generator_ColumnPropNameInRow="TotalDue" msprop:Generator_UserColumnName="TotalDue" msprop:Generator_ColumnVarNameInTable="columnTotalDue" type="xs:decimal" minOccurs="0" />
+              <xs:element name="IsPaid" msprop:Generator_ColumnPropNameInTable="IsPaidColumn" msprop:Generator_ColumnPropNameInRow="IsPaid" msprop:Generator_UserColumnName="IsPaid" msprop:Generator_ColumnVarNameInTable="columnIsPaid" type="xs:boolean" minOccurs="0" />
+              <xs:element name="ContractStatus" msprop:Generator_ColumnPropNameInTable="ContractStatusColumn" msprop:Generator_ColumnPropNameInRow="ContractStatus" msprop:Generator_UserColumnName="ContractStatus" msprop:Generator_ColumnVarNameInTable="columnContractStatus" type="xs:decimal" minOccurs="0" />
+              <xs:element name="LateFeeBalance" msprop:Generator_ColumnPropNameInTable="LateFeeBalanceColumn" msprop:Generator_ColumnPropNameInRow="LateFeeBalance" msprop:Generator_UserColumnName="LateFeeBalance" msprop:Generator_ColumnVarNameInTable="columnLateFeeBalance" type="xs:decimal" minOccurs="0" />
+              <xs:element name="PartialPayment" msprop:Generator_ColumnPropNameInTable="PartialPaymentColumn" msprop:Generator_ColumnPropNameInRow="PartialPayment" msprop:Generator_UserColumnName="PartialPayment" msprop:Generator_ColumnVarNameInTable="columnPartialPayment" type="xs:decimal" minOccurs="0" />
+              <xs:element name="PaidThru" msprop:Generator_ColumnPropNameInTable="PaidThruColumn" msprop:Generator_ColumnPropNameInRow="PaidThru" msprop:Generator_UserColumnName="PaidThru" msprop:Generator_ColumnVarNameInTable="columnPaidThru" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PaidThroughDate" msprop:Generator_ColumnPropNameInTable="PaidThroughDateColumn" msprop:nullValue="_throw" msprop:Generator_ColumnPropNameInRow="PaidThroughDate" msprop:Generator_UserColumnName="PaidThroughDate" msprop:Generator_ColumnVarNameInTable="columnPaidThroughDate" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="PaymentHistory" msprop:Generator_RowEvHandlerName="PaymentHistoryRowChangeEventHandler" msprop:Generator_RowDeletedName="PaymentHistoryRowDeleted" msprop:Generator_RowDeletingName="PaymentHistoryRowDeleting" msprop:Generator_RowEvArgName="PaymentHistoryRowChangeEvent" msprop:Generator_TablePropName="PaymentHistory" msprop:Generator_RowChangedName="PaymentHistoryRowChanged" msprop:Generator_UserTableName="PaymentHistory" msprop:Generator_RowChangingName="PaymentHistoryRowChanging" msprop:Generator_RowClassName="PaymentHistoryRow" msprop:Generator_TableClassName="PaymentHistoryDataTable" msprop:Generator_TableVarName="tablePaymentHistory">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_UserColumnName="id" msprop:Generator_ColumnVarNameInTable="columnid" type="xs:int" />
+              <xs:element name="CusthistID" msprop:Generator_ColumnPropNameInTable="CusthistIDColumn" msprop:Generator_ColumnPropNameInRow="CusthistID" msprop:Generator_UserColumnName="CusthistID" msprop:Generator_ColumnVarNameInTable="columnCusthistID" type="xs:int" />
+              <xs:element name="IsINSUF" msprop:Generator_ColumnPropNameInTable="IsINSUFColumn" msprop:Generator_ColumnPropNameInRow="IsINSUF" msprop:Generator_UserColumnName="IsINSUF" msprop:Generator_ColumnVarNameInTable="columnIsINSUF" type="xs:boolean" minOccurs="0" />
+              <xs:element name="CustomerNo" msprop:Generator_ColumnPropNameInTable="CustomerNoColumn" msprop:Generator_ColumnPropNameInRow="CustomerNo" msprop:Generator_UserColumnName="CustomerNo" msprop:Generator_ColumnVarNameInTable="columnCustomerNo" type="xs:int" />
+              <xs:element name="PaymentDate" msprop:Generator_ColumnPropNameInTable="PaymentDateColumn" msprop:Generator_ColumnPropNameInRow="PaymentDate" msprop:Generator_UserColumnName="PaymentDate" msprop:Generator_ColumnVarNameInTable="columnPaymentDate" type="xs:dateTime" />
+              <xs:element name="SeqNo" msprop:Generator_ColumnPropNameInTable="SeqNoColumn" msprop:Generator_ColumnPropNameInRow="SeqNo" msprop:Generator_UserColumnName="SeqNo" msprop:Generator_ColumnVarNameInTable="columnSeqNo" type="xs:int" />
+              <xs:element name="ExtCount" msprop:Generator_ColumnPropNameInTable="ExtCountColumn" msprop:Generator_ColumnPropNameInRow="ExtCount" msprop:Generator_UserColumnName="ExtCount" msprop:Generator_ColumnVarNameInTable="columnExtCount" type="xs:int" minOccurs="0" />
+              <xs:element name="DealerId" msprop:Generator_ColumnPropNameInTable="DealerIdColumn" msprop:Generator_ColumnPropNameInRow="DealerId" msprop:Generator_UserColumnName="DealerId" msprop:Generator_ColumnVarNameInTable="columnDealerId" type="xs:int" minOccurs="0" />
+              <xs:element name="Amount" msprop:Generator_ColumnPropNameInTable="AmountColumn" msprop:Generator_ColumnPropNameInRow="Amount" msprop:Generator_UserColumnName="Amount" msprop:Generator_ColumnVarNameInTable="columnAmount" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Type" msprop:Generator_ColumnPropNameInTable="TypeColumn" msprop:Generator_ColumnPropNameInRow="Type" msprop:Generator_UserColumnName="Type" msprop:Generator_ColumnVarNameInTable="columnType" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Code" msprop:Generator_ColumnPropNameInTable="CodeColumn" msprop:Generator_ColumnPropNameInRow="Code" msprop:Generator_UserColumnName="Code" msprop:Generator_ColumnVarNameInTable="columnCode" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ISFDate" msprop:Generator_ColumnPropNameInTable="ISFDateColumn" msprop:Generator_ColumnPropNameInRow="ISFDate" msprop:Generator_UserColumnName="ISFDate" msprop:Generator_ColumnVarNameInTable="columnISFDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="PaidInt" msprop:Generator_ColumnPropNameInTable="PaidIntColumn" msprop:Generator_ColumnPropNameInRow="PaidInt" msprop:Generator_UserColumnName="PaidInt" msprop:Generator_ColumnVarNameInTable="columnPaidInt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="AccruedInt" msprop:Generator_ColumnPropNameInTable="AccruedIntColumn" msprop:Generator_ColumnPropNameInRow="AccruedInt" msprop:Generator_UserColumnName="AccruedInt" msprop:Generator_ColumnVarNameInTable="columnAccruedInt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="LateChargePaid" msprop:Generator_ColumnPropNameInTable="LateChargePaidColumn" msprop:Generator_ColumnPropNameInRow="LateChargePaid" msprop:Generator_UserColumnName="LateChargePaid" msprop:Generator_ColumnVarNameInTable="columnLateChargePaid" type="xs:decimal" minOccurs="0" />
+              <xs:element name="AutoPay" msprop:Generator_ColumnPropNameInTable="AutoPayColumn" msprop:Generator_ColumnPropNameInRow="AutoPay" msprop:Generator_UserColumnName="AutoPay" msprop:Generator_ColumnVarNameInTable="columnAutoPay" type="xs:boolean" minOccurs="0" />
+              <xs:element name="CreditCardType" msprop:Generator_ColumnPropNameInTable="CreditCardTypeColumn" msprop:Generator_ColumnPropNameInRow="CreditCardType" msprop:Generator_UserColumnName="CreditCardType" msprop:Generator_ColumnVarNameInTable="columnCreditCardType" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IsLocked" msprop:Generator_ColumnPropNameInTable="IsLockedColumn" msprop:Generator_ColumnPropNameInRow="IsLocked" msprop:Generator_UserColumnName="IsLocked" msprop:Generator_ColumnVarNameInTable="columnIsLocked" type="xs:boolean" minOccurs="0" />
+              <xs:element name="LockedBy" msprop:Generator_ColumnPropNameInTable="LockedByColumn" msprop:Generator_ColumnPropNameInRow="LockedBy" msprop:Generator_UserColumnName="LockedBy" msprop:Generator_ColumnVarNameInTable="columnLockedBy" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="3" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LockTime" msprop:Generator_ColumnPropNameInTable="LockTimeColumn" msprop:Generator_ColumnPropNameInRow="LockTime" msprop:Generator_UserColumnName="LockTime" msprop:Generator_ColumnVarNameInTable="columnLockTime" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="TransactionDate" msprop:Generator_ColumnPropNameInTable="TransactionDateColumn" msprop:Generator_ColumnPropNameInRow="TransactionDate" msprop:Generator_UserColumnName="TransactionDate" msprop:Generator_ColumnVarNameInTable="columnTransactionDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Fee" msprop:Generator_ColumnPropNameInTable="FeeColumn" msprop:Generator_ColumnPropNameInRow="Fee" msprop:Generator_UserColumnName="Fee" msprop:Generator_ColumnVarNameInTable="columnFee" type="xs:decimal" minOccurs="0" />
+              <xs:element name="FromIVR" msprop:Generator_ColumnPropNameInTable="FromIVRColumn" msprop:Generator_ColumnPropNameInRow="FromIVR" msprop:Generator_UserColumnName="FromIVR" msprop:Generator_ColumnVarNameInTable="columnFromIVR" type="xs:boolean" minOccurs="0" />
+              <xs:element name="ISFSeqNo" msprop:Generator_ColumnPropNameInTable="ISFSeqNoColumn" msprop:Generator_ColumnPropNameInRow="ISFSeqNo" msprop:Generator_UserColumnName="ISFSeqNo" msprop:Generator_ColumnVarNameInTable="columnISFSeqNo" type="xs:int" minOccurs="0" />
+              <xs:element name="ISFType" msprop:Generator_ColumnPropNameInTable="ISFTypeColumn" msprop:Generator_ColumnPropNameInRow="ISFType" msprop:Generator_UserColumnName="ISFType" msprop:Generator_ColumnVarNameInTable="columnISFType" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ISFCode" msprop:Generator_ColumnPropNameInTable="ISFCodeColumn" msprop:Generator_ColumnPropNameInRow="ISFCode" msprop:Generator_UserColumnName="ISFCode" msprop:Generator_ColumnVarNameInTable="columnISFCode" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ISFID" msprop:Generator_ColumnPropNameInTable="ISFIDColumn" msprop:Generator_ColumnPropNameInRow="ISFID" msprop:Generator_UserColumnName="ISFID" msprop:Generator_ColumnVarNameInTable="columnISFID" type="xs:int" minOccurs="0" />
+              <xs:element name="TicketID" msprop:Generator_ColumnPropNameInTable="TicketIDColumn" msprop:Generator_ColumnPropNameInRow="TicketID" msprop:Generator_UserColumnName="TicketID" msprop:Generator_ColumnVarNameInTable="columnTicketID" type="xs:int" minOccurs="0" />
+              <xs:element name="TicketDetailID" msprop:Generator_ColumnPropNameInTable="TicketDetailIDColumn" msprop:Generator_ColumnPropNameInRow="TicketDetailID" msprop:Generator_UserColumnName="TicketDetailID" msprop:Generator_ColumnVarNameInTable="columnTicketDetailID" type="xs:int" minOccurs="0" />
+              <xs:element name="UsedInFull" msprop:Generator_ColumnPropNameInTable="UsedInFullColumn" msprop:Generator_ColumnPropNameInRow="UsedInFull" msprop:Generator_UserColumnName="UsedInFull" msprop:Generator_ColumnVarNameInTable="columnUsedInFull" type="xs:boolean" minOccurs="0" />
+              <xs:element name="AmountUsed" msprop:Generator_ColumnPropNameInTable="AmountUsedColumn" msprop:Generator_ColumnPropNameInRow="AmountUsed" msprop:Generator_UserColumnName="AmountUsed" msprop:Generator_ColumnVarNameInTable="columnAmountUsed" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Balance" msprop:Generator_ColumnPropNameInTable="BalanceColumn" msprop:Generator_ColumnPropNameInRow="Balance" msprop:Generator_UserColumnName="Balance" msprop:Generator_ColumnVarNameInTable="columnBalance" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Buyout" msprop:Generator_ColumnPropNameInTable="BuyoutColumn" msprop:Generator_ColumnPropNameInRow="Buyout" msprop:Generator_UserColumnName="Buyout" msprop:Generator_ColumnVarNameInTable="columnBuyout" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ContractStatus" msprop:Generator_ColumnPropNameInTable="ContractStatusColumn" msprop:Generator_ColumnPropNameInRow="ContractStatus" msprop:Generator_UserColumnName="ContractStatus" msprop:Generator_ColumnVarNameInTable="columnContractStatus" type="xs:decimal" minOccurs="0" />
+              <xs:element name="PartialPayment" msprop:Generator_ColumnPropNameInTable="PartialPaymentColumn" msprop:Generator_ColumnPropNameInRow="PartialPayment" msprop:Generator_UserColumnName="PartialPayment" msprop:Generator_ColumnVarNameInTable="columnPartialPayment" type="xs:decimal" minOccurs="0" />
+              <xs:element name="PaidThru" msprop:Generator_ColumnPropNameInTable="PaidThruColumn" msprop:Generator_ColumnPropNameInRow="PaidThru" msprop:Generator_UserColumnName="PaidThru" msprop:Generator_ColumnVarNameInTable="columnPaidThru" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PaidThroughDate" msprop:Generator_ColumnPropNameInTable="PaidThroughDateColumn" msprop:Generator_ColumnPropNameInRow="PaidThroughDate" msprop:Generator_UserColumnName="PaidThroughDate" msprop:Generator_ColumnVarNameInTable="columnPaidThroughDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="LateFeeBalance" msprop:Generator_ColumnPropNameInTable="LateFeeBalanceColumn" msprop:Generator_ColumnPropNameInRow="LateFeeBalance" msprop:Generator_UserColumnName="LateFeeBalance" msprop:Generator_ColumnVarNameInTable="columnLateFeeBalance" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="PaymentInvoice" msprop:Generator_RowEvHandlerName="PaymentInvoiceRowChangeEventHandler" msprop:Generator_RowDeletedName="PaymentInvoiceRowDeleted" msprop:Generator_RowDeletingName="PaymentInvoiceRowDeleting" msprop:Generator_RowEvArgName="PaymentInvoiceRowChangeEvent" msprop:Generator_TablePropName="PaymentInvoice" msprop:Generator_RowChangedName="PaymentInvoiceRowChanged" msprop:Generator_UserTableName="PaymentInvoice" msprop:Generator_RowChangingName="PaymentInvoiceRowChanging" msprop:Generator_RowClassName="PaymentInvoiceRow" msprop:Generator_TableClassName="PaymentInvoiceDataTable" msprop:Generator_TableVarName="tablePaymentInvoice">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CustomerId" msprop:Generator_ColumnPropNameInTable="CustomerIdColumn" msprop:Generator_ColumnPropNameInRow="CustomerId" msprop:Generator_UserColumnName="CustomerId" msprop:Generator_ColumnVarNameInTable="columnCustomerId" type="xs:int" />
+              <xs:element name="PaymentId" msprop:Generator_ColumnPropNameInTable="PaymentIdColumn" msprop:Generator_ColumnPropNameInRow="PaymentId" msprop:Generator_UserColumnName="PaymentId" msprop:Generator_ColumnVarNameInTable="columnPaymentId" type="xs:int" />
+              <xs:element name="InvoiceId" msprop:Generator_ColumnPropNameInTable="InvoiceIdColumn" msprop:Generator_ColumnPropNameInRow="InvoiceId" msprop:Generator_UserColumnName="InvoiceId" msprop:Generator_ColumnVarNameInTable="columnInvoiceId" type="xs:int" />
+              <xs:element name="Amount" msprop:Generator_ColumnPropNameInTable="AmountColumn" msprop:Generator_ColumnPropNameInRow="Amount" msprop:Generator_UserColumnName="Amount" msprop:Generator_ColumnVarNameInTable="columnAmount" type="xs:decimal" />
+              <xs:element name="ReturnedAmount" msprop:Generator_ColumnPropNameInTable="ReturnedAmountColumn" msprop:Generator_ColumnPropNameInRow="ReturnedAmount" msprop:Generator_UserColumnName="ReturnedAmount" msprop:Generator_ColumnVarNameInTable="columnReturnedAmount" type="xs:decimal" minOccurs="0" />
+              <xs:element name="FullReturn" msprop:Generator_ColumnPropNameInTable="FullReturnColumn" msprop:Generator_ColumnPropNameInRow="FullReturn" msprop:Generator_UserColumnName="FullReturn" msprop:Generator_ColumnVarNameInTable="columnFullReturn" type="xs:boolean" minOccurs="0" />
+              <xs:element name="Type" msprop:Generator_ColumnPropNameInTable="TypeColumn" msprop:Generator_ColumnPropNameInRow="Type" msprop:Generator_UserColumnName="Type" msprop:Generator_ColumnVarNameInTable="columnType" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Code" msprop:Generator_ColumnPropNameInTable="CodeColumn" msprop:Generator_ColumnPropNameInRow="Code" msprop:Generator_UserColumnName="Code" msprop:Generator_ColumnVarNameInTable="columnCode" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_UserColumnName="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TranID" msprop:Generator_ColumnPropNameInTable="TranIDColumn" msprop:Generator_ColumnPropNameInRow="TranID" msprop:Generator_UserColumnName="TranID" msprop:Generator_ColumnVarNameInTable="columnTranID" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:IVRRejects" />
       <xs:field xpath="mstns:ID" />
+    </xs:unique>
+    <xs:unique name="PayNSeconds_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:PayNSeconds" />
+      <xs:field xpath="mstns:id" />
     </xs:unique>
     <xs:unique name="DEFIPDFImages_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:DEFIPDFImages" />
@@ -2525,6 +3363,20 @@
     <xs:unique name="CashPaymentSummary_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:CashPaymentSummary" />
       <xs:field xpath="mstns:Date" />
+    </xs:unique>
+    <xs:unique name="Invoices_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Invoices" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+    <xs:unique name="PaymentHistory_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:PaymentHistory" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+    <xs:unique name="PaymentInvoice_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:PaymentInvoice" />
+      <xs:field xpath="mstns:PaymentId" />
+      <xs:field xpath="mstns:InvoiceId" />
+      <xs:field xpath="mstns:Amount" />
     </xs:unique>
   </xs:element>
 </xs:schema>

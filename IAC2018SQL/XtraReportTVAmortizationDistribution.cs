@@ -73,11 +73,6 @@ namespace IAC2021SQL
             e.Cancel = Convert.ToDouble(GrandTotalPayments1.Summary.GetResult()) == 0;
         }
 
-        private void GrandTotalInterest1_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
-        {
-            e.Cancel = Convert.ToDouble(GrandTotalInterest1.Summary.GetResult()) == 0;
-        }
-
         private void NewTotalPrincipal_1_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
         {
             e.Cancel = Convert.ToDouble(NewTotalPrincipal_1.Summary.GetResult()) == 0;
@@ -98,6 +93,21 @@ namespace IAC2021SQL
             {
                 label.Text = string.Format("{0:##0.000;#;#}", label.Value) + " %";
             }
+        }
+
+        private void TotalPaidInterest_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        {
+            e.Cancel = Convert.ToDouble(TotalPaidInterest.Summary.GetResult()) == 0;
+        }
+
+        private void GrandTotalPaidInterest1_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        {
+            e.Cancel = Convert.ToDouble(GrandTotalPaidInterest1.Summary.GetResult()) == 0;
+        }
+
+        private void GrandTotalInterest1_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        {
+            e.Cancel = Convert.ToDouble(GrandTotalInterest1.Summary.GetResult()) == 0;
         }
     }
 }

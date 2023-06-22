@@ -20,7 +20,13 @@ using DevExpress.Utils;
 using System.Net.Http;
 using Sentry;
 using System.Data.SqlClient;
-
+using DevExpress.CodeParser;
+using IAC2021SQL.PaymentDataSetTableAdapters;
+using static DevExpress.XtraPrinting.Native.ExportOptionsPropertiesNames;
+using System.Threading;
+using Microsoft.VisualStudio.Data.Services;
+using System.Drawing.Drawing2D;
+using IAC2021SQL.IACDataSetTableAdapters;
 
 namespace IAC2021SQL
 {
@@ -37,6 +43,7 @@ namespace IAC2021SQL
 		public struct AmortRec
 		{
 			public double InterestAmount;
+			public double PaidInterestAmount; // Moses Newman 05/25/2023
 			public double PrincipleAmount;
 			public double Balance;
 		}
@@ -580,8 +587,9 @@ namespace IAC2021SQL
 				// Get the currency values
 				if (line.CustomEventBaseType == (int) TVConstants.TVCustomEventBaseType.Payment)
 				{
-					tAmortRec[currentline].InterestAmount = line.InterestAccrued / CENTS_PER_DOLLAR; 
-					tAmortRec[currentline].PrincipleAmount = line.Principal / CENTS_PER_DOLLAR;
+					tAmortRec[currentline].InterestAmount = line.InterestAccrued / CENTS_PER_DOLLAR;
+                    tAmortRec[currentline].PaidInterestAmount = line.InterestPaid / CENTS_PER_DOLLAR; // Moses Newman 05/25/2023
+                    tAmortRec[currentline].PrincipleAmount = line.Principal / CENTS_PER_DOLLAR;
 					tAmortRec[currentline].Balance = line.Balance / CENTS_PER_DOLLAR;
 					if (!MemOnly)
 						AmortTempTableAdapter.Insert(tcCustomer, currentline+1, Convert.ToDecimal(tAmortRec[currentline].InterestAmount), Convert.ToDecimal(tAmortRec[currentline].PrincipleAmount), Convert.ToDecimal(tAmortRec[currentline].Balance), (Decimal)(line.InterestPaid / CENTS_PER_DOLLAR), (Decimal)((line.NegativeCashFlowSum -line.InterestPaid) / CENTS_PER_DOLLAR), "");
@@ -595,6 +603,9 @@ namespace IAC2021SQL
 		{
 			IACDataSet.TVAmortDataTable TVAmortDT = new IACDataSet.TVAmortDataTable();
 			IACDataSet.CUSTOMERDataTable CustomerDT = new IACDataSet.CUSTOMERDataTable();
+			PaymentDataSet PDS = new PaymentDataSet();
+			PaymentDataSetTableAdapters.PaymentHistoryTableAdapter paymentHistoryTableAdapter = new PaymentHistoryTableAdapter();
+
 			if (tcCustomer == "99-")
 				tcCustomer += gsUserID;
 
@@ -667,12 +678,27 @@ namespace IAC2021SQL
 
 							// Moses Newman 10/17/2018 add PaymentSeq for lookup in posting.
 							dr["PaymentSeq"] = tdtCUSTHIST.Rows[AmortIndex].Field<Int32?>("PaymentSeq") != null ? tdtCUSTHIST.Rows[AmortIndex].Field<Int32>("PaymentSeq") : 0;
-							dr["PartialPayment"] = tdtCUSTHIST.Rows[AmortIndex]["PartialPayment"];
-							dr["LateFeeBalance"] = tdtCUSTHIST.Rows[AmortIndex]["CUSTHIST_LATE_CHARGE_BAL"];
-						}
+							// Moses Newman 06/20/2023 If PaymentHistory Record exists use it instead of CUSTHIST
+							paymentHistoryTableAdapter.FillByCusthistID(PDS.PaymentHistory, tdtCUSTHIST.Rows[AmortIndex].Field<Int32?>("id"));
+							if (PDS.PaymentHistory.Rows.Count > 0)
+							{
+								dr["PartialPayment"] = PDS.PaymentHistory.Rows[0].Field<Decimal>("PartialPayment");
+								dr["LateFeeBalance"] = PDS.PaymentHistory.Rows[0].Field<Decimal>("LateFeeBalance");
+								// Moses Newman 06/19/2023 add Contract Status
+								dr["ContractStatus"] = PDS.PaymentHistory.Rows[0].Field<Decimal>("ContractStatus");
+							}
+							else
+							{
+								dr["PartialPayment"] = tdtCUSTHIST.Rows[AmortIndex]["PartialPayment"];
+								dr["LateFeeBalance"] = tdtCUSTHIST.Rows[AmortIndex]["CUSTHIST_LATE_CHARGE_BAL"];
+								// Moses Newman 06/19/2023 add Contract Status
+								dr["ContractStatus"] = tdtCUSTHIST.Rows[AmortIndex]["CUSTHIST_CONTRACT_STATUS"];
+							}
+                        }
 						AmortIndex ++;
 						dr["Date"] = eventDate;
 						dr["Interest"] = line.InterestAccrued / CENTS_PER_DOLLAR;
+						dr["PaidInterest"] = line.InterestPaid / CENTS_PER_DOLLAR; // Moses Newman 05/25/2023
 						dr["Principal"] = line.Principal / CENTS_PER_DOLLAR;
 						dr["Balance"] = line.BalanceDueTotal / CENTS_PER_DOLLAR;
 						dr["PaymentCode"] = "";
@@ -709,25 +735,59 @@ namespace IAC2021SQL
 							dr["PaymentCode"] = (String)tdtCUSTHIST.Rows[AmortIndex - 1]["CUSTHIST_PAYMENT_TYPE"] + (String)tdtCUSTHIST.Rows[AmortIndex - 1]["CUSTHIST_PAYMENT_CODE"];
 							// Moses Newman 03/20/2018 Add History Sequence Number to amort
 							dr["HistorySeq"] = tdtCUSTHIST.Rows[AmortIndex - 1]["CUSTHIST_DATE_SEQ"];
-							// Moses Newman 07/25/2019 Add History Date to Amort for proper sequencing in FixLateFeesandPartialPayments
-							dr["HistoryDate"] = tdtCUSTHIST.Rows[AmortIndex - 1]["CUSTHIST_PAY_DATE"];
-							dr["PartialPayment"] = tdtCUSTHIST.Rows[AmortIndex - 1]["PartialPayment"];
-							dr["LateFeeBalance"] = tdtCUSTHIST.Rows[AmortIndex - 1]["CUSTHIST_LATE_CHARGE_BAL"];
-							if (tdtCUSTHIST.Rows[AmortIndex - 1]["CUSTHIST_PAID_THRU"].ToString().Trim() != "")
-							{
-								if (CustomerDT.Rows[0].Field<Int32>("CUSTOMER_DAY_DUE") == 30 && tdtCUSTHIST.Rows[AmortIndex - 1]["CUSTHIST_PAID_THRU"].ToString().Substring(0, 2) == "02")
-								{
-									LeapDate = DateTime.Parse("03/01/" + DateTime.Now.Year.ToString().Substring(0, 2) +
-											   tdtCUSTHIST.Rows[AmortIndex - 1]["CUSTHIST_PAID_THRU"].ToString().Substring(2, 2)).AddDays(-1);
-									lsDayDue = LeapDate.Day.ToString().Trim().PadLeft(2, '0');
-								}
+                            // Moses Newman 06/20/2023 If PaymentHistory Record exists use it instead of CUSTHIST
+                            paymentHistoryTableAdapter.FillByCusthistID(PDS.PaymentHistory, tdtCUSTHIST.Rows[AmortIndex-1].Field<Int32?>("id"));
+                            if (PDS.PaymentHistory.Rows.Count > 0)
+                            {
+                                dr["HistoryDate"] = PDS.PaymentHistory.Rows[0].Field<DateTime>("PaymentDate");
+                                dr["PartialPayment"] = PDS.PaymentHistory.Rows[0].Field<Decimal>("PartialPayment");
+                                dr["LateFeeBalance"] = PDS.PaymentHistory.Rows[0].Field<Decimal>("LateFeeBalance");
+                                // Moses Newman 06/19/2023 add Contract Status
+                                dr["ContractStatus"] = PDS.PaymentHistory.Rows[0].Field<Decimal>("ContractStatus");
+								if (PDS.PaymentHistory.Rows[0].Field<DateTime?>("PaidThroughDate") != null)
+									dr["PaidThrough"] = PDS.PaymentHistory.Rows[0].Field<DateTime>("PaidThroughDate");
 								else
-									lsDayDue = CustomerDT.Rows[0].Field<Int32>("CUSTOMER_DAY_DUE").ToString().Trim().PadLeft(2, '0');
-								dr["PaidThrough"] = DateTime.Parse(tdtCUSTHIST.Rows[AmortIndex - 1]["CUSTHIST_PAID_THRU"].ToString().Substring(0, 2) + '/' + lsDayDue + '/' +
-													DateTime.Now.Year.ToString().Substring(0, 2) + tdtCUSTHIST.Rows[AmortIndex - 1]["CUSTHIST_PAID_THRU"].ToString().Substring(2, 2));
-							}
-							// Moses Newman 03/22/2018 Add Extension Months to Amort 
-							if (dr["Event"].ToString().Trim() == "EXT")
+								{
+									if (tdtCUSTHIST.Rows[AmortIndex - 1]["CUSTHIST_PAID_THRU"].ToString().Trim() != "")
+									{
+										if (CustomerDT.Rows[0].Field<Int32>("CUSTOMER_DAY_DUE") == 30 && tdtCUSTHIST.Rows[AmortIndex - 1]["CUSTHIST_PAID_THRU"].ToString().Substring(0, 2) == "02")
+										{
+											LeapDate = DateTime.Parse("03/01/" + DateTime.Now.Year.ToString().Substring(0, 2) +
+													   tdtCUSTHIST.Rows[AmortIndex - 1]["CUSTHIST_PAID_THRU"].ToString().Substring(2, 2)).AddDays(-1);
+											lsDayDue = LeapDate.Day.ToString().Trim().PadLeft(2, '0');
+										}
+										else
+											lsDayDue = CustomerDT.Rows[0].Field<Int32>("CUSTOMER_DAY_DUE").ToString().Trim().PadLeft(2, '0');
+										dr["PaidThrough"] = DateTime.Parse(tdtCUSTHIST.Rows[AmortIndex - 1]["CUSTHIST_PAID_THRU"].ToString().Substring(0, 2) + '/' + lsDayDue + '/' +
+															DateTime.Now.Year.ToString().Substring(0, 2) + tdtCUSTHIST.Rows[AmortIndex - 1]["CUSTHIST_PAID_THRU"].ToString().Substring(2, 2));
+									}
+								}
+                            }
+                            else
+                            {
+                                // Moses Newman 07/25/2019 Add History Date to Amort for proper sequencing in FixLateFeesandPartialPayments
+                                dr["HistoryDate"] = tdtCUSTHIST.Rows[AmortIndex - 1]["CUSTHIST_PAY_DATE"];
+                                dr["PartialPayment"] = tdtCUSTHIST.Rows[AmortIndex - 1]["PartialPayment"];
+                                dr["LateFeeBalance"] = tdtCUSTHIST.Rows[AmortIndex - 1]["CUSTHIST_LATE_CHARGE_BAL"];
+                                // Moses Newman 06/19/2023 add Contract Status
+                                dr["ContractStatus"] = tdtCUSTHIST.Rows[AmortIndex - 1]["CUSTHIST_CONTRACT_STATUS"];
+                                if (tdtCUSTHIST.Rows[AmortIndex - 1]["CUSTHIST_PAID_THRU"].ToString().Trim() != "")
+                                {
+                                    if (CustomerDT.Rows[0].Field<Int32>("CUSTOMER_DAY_DUE") == 30 && tdtCUSTHIST.Rows[AmortIndex - 1]["CUSTHIST_PAID_THRU"].ToString().Substring(0, 2) == "02")
+                                    {
+                                        LeapDate = DateTime.Parse("03/01/" + DateTime.Now.Year.ToString().Substring(0, 2) +
+                                                   tdtCUSTHIST.Rows[AmortIndex - 1]["CUSTHIST_PAID_THRU"].ToString().Substring(2, 2)).AddDays(-1);
+                                        lsDayDue = LeapDate.Day.ToString().Trim().PadLeft(2, '0');
+                                    }
+                                    else
+                                        lsDayDue = CustomerDT.Rows[0].Field<Int32>("CUSTOMER_DAY_DUE").ToString().Trim().PadLeft(2, '0');
+                                    dr["PaidThrough"] = DateTime.Parse(tdtCUSTHIST.Rows[AmortIndex - 1]["CUSTHIST_PAID_THRU"].ToString().Substring(0, 2) + '/' + lsDayDue + '/' +
+                                                        DateTime.Now.Year.ToString().Substring(0, 2) + tdtCUSTHIST.Rows[AmortIndex - 1]["CUSTHIST_PAID_THRU"].ToString().Substring(2, 2));
+                                }
+                            }
+
+                            // Moses Newman 03/22/2018 Add Extension Months to Amort 
+                            if (dr["Event"].ToString().Trim() == "EXT")
 								dr["ExtensionMonths"] = tdtCUSTHIST.Rows[AmortIndex - 1]["CUSTHIST_THRU_UD"];
 							switch (line.CustomEventBaseType)
 							{
@@ -763,7 +823,8 @@ namespace IAC2021SQL
 							}
 						} // Moses Newman 05/10/2021
 						dr["Interest"] = line.InterestAccrued / CENTS_PER_DOLLAR;
-						dr["Principal"] = line.Principal / CENTS_PER_DOLLAR;
+                        dr["PaidInterest"] = line.InterestPaid / CENTS_PER_DOLLAR; // Moses Newman 05/25/2023
+                        dr["Principal"] = line.Principal / CENTS_PER_DOLLAR;
 						dr["Balance"] = line.BalanceDueTotal / CENTS_PER_DOLLAR;
 						TVAmortDT.Rows.Add(dr);
 						break;
@@ -778,7 +839,8 @@ namespace IAC2021SQL
 						dr["Date"] = eventDate;
 						dr["Payment"] = 0;
 						dr["Interest"] = line.InterestAccrued / CENTS_PER_DOLLAR;
-						dr["Principal"] = line.Principal / CENTS_PER_DOLLAR;
+                        dr["PaidInterest"] = line.InterestPaid / CENTS_PER_DOLLAR; // Moses Newman 05/25/2023
+                        dr["Principal"] = line.Principal / CENTS_PER_DOLLAR;
 						dr["RateChange"] = (Decimal)(rateChangeRate);
 						dr["Balance"] = line.BalanceDueTotal / CENTS_PER_DOLLAR;
 						dr["HistorySeq"] = tdtCUSTHIST.Rows[AmortIndex]["CUSTHIST_DATE_SEQ"];
@@ -802,7 +864,8 @@ namespace IAC2021SQL
 							dr["Date"] = eventDate;
 							dr["Payment"] = line.NegativeCashFlowSum / CENTS_PER_DOLLAR;
 							dr["Interest"] = line.InterestPaid / CENTS_PER_DOLLAR;
-							dr["Principal"] = line.Principal / CENTS_PER_DOLLAR;
+                            dr["PaidInterest"] = line.InterestPaid / CENTS_PER_DOLLAR; // Moses Newman 05/25/2023
+                            dr["Principal"] = line.Principal / CENTS_PER_DOLLAR;
 							dr["Balance"] = 0;
 							TVAmortDT.Rows.Add(dr);
 						}
@@ -819,7 +882,8 @@ namespace IAC2021SQL
 							dr["Event"] = "Grand Totals";
 							dr["Payment"] = line.NegativeCashFlowSum / CENTS_PER_DOLLAR;
 							dr["Interest"] = line.InterestAccrued / CENTS_PER_DOLLAR;
-							dr["Principal"] = line.Principal / CENTS_PER_DOLLAR;
+                            dr["PaidInterest"] = line.InterestPaid / CENTS_PER_DOLLAR; // Moses Newman 05/25/2023
+                            dr["Principal"] = line.Principal / CENTS_PER_DOLLAR;
 							dr["Balance"] = 0;
 							TVAmortDT.Rows.Add(dr);
 						}
@@ -2761,11 +2825,15 @@ namespace IAC2021SQL
                             ltsDateDiff = FixData.TVAmort.Rows[i].Field<DateTime>("PaidThrough") - FixData.TVAmort.Rows[i].Field<DateTime>("Date");
                             lnDateDiff = (Int32)ltsDateDiff.TotalDays;
                             lnDateDiff /= 30;
-                            // Moses Newman 09/25/2018 If Loan already payed off Contract Status = Partial Payment Balance
-                            if (lnLastBalance > 0)
-                                lnContractStatus = lnDateDiff * lnRegular + lnLastPartialPaymentBalance - lnLastLateFeeBalance;
-                            else
-                                lnContractStatus = lnLastPartialPaymentBalance;
+							// Moses Newman 09/25/2018 If Loan already payed off Contract Status = Partial Payment Balance
+							if (lnLastBalance > 0)
+								lnContractStatus = lnDateDiff * lnRegular + lnLastPartialPaymentBalance - lnLastLateFeeBalance;
+							else
+							{
+								//lnContractStatus = lnLastPartialPaymentBalance;  Moses Newman 05/26/2023
+								lnContractStatus = -lnLastBalance;
+								lnLastPartialPaymentBalance = lnLastBalance;
+                            }
                             ltsDateDiff = ldFirstPaymentDate - FixData.TVAmort.Rows[i].Field<DateTime>("PaidThrough");
                             lnNewDiff = (Int32)ltsDateDiff.TotalDays;
                             if (lnNewDiff == 1 && FixData.TVAmort.Rows[i].Field<DateTime>("Date") < ldFirstPaymentDate)
@@ -2945,7 +3013,7 @@ namespace IAC2021SQL
 		{
 			String uploadedFileName = String.Empty;
 
-			var request = new RestRequest("api/files/", Method.POST);
+			var request = new RestRequest("api/files/", RestSharp.Method.POST);
 			request.AddFile("File", fileToPost);
 			var response = ApiClient.Execute(request);
 
@@ -2979,7 +3047,7 @@ namespace IAC2021SQL
 			var token = Program.GetLicense();
 			// Moses Newman 12/16/2021 Replaced RestRequest("api/dbs/{db}/archives/{arch}?token={token}" 
 			// with RestRequest("api/dbs/{db}/archives/{arch}?token=" + (String)token because suddenly {token} was not being substituted.
-			var request = new RestRequest("api/dbs/{db}/archives/{arch}?token=" + (String)token, Method.POST);
+			var request = new RestRequest("api/dbs/{db}/archives/{arch}?token=" + (String)token, RestSharp.Method.POST);
 			//request.AddParameter("token",token, ParameterType.UrlSegment); //have to specifiy type on POST
 			request.AddParameter("db", DatabaseID, ParameterType.UrlSegment);
 			request.AddParameter("arch", ArchiveID, ParameterType.UrlSegment);
@@ -3046,6 +3114,554 @@ namespace IAC2021SQL
             Decimal MonthlyPayment = (Decimal)SQLCommand.ExecuteScalar();
 			SQLCON.Close();
 			return MonthlyPayment;
+        }
+
+        static public void ApplySinglePayment(String CustomerNo,Int32 PaymentId)
+        {
+            Int32 TempCust = Convert.ToInt32(CustomerNo);
+            IACDataSet IDS = new IACDataSet();
+            IACDataSet.TVAmortDataTable CurrentRec = new IACDataSet.TVAmortDataTable();
+            IACDataSet.TVAmortDataTable PreviousRec = new IACDataSet.TVAmortDataTable();
+
+            PaymentDataSet PDS = new PaymentDataSet();
+
+            IACDataSetTableAdapters.CUSTOMERTableAdapter CUSTOMERTableAdapter = new IACDataSetTableAdapters.CUSTOMERTableAdapter();
+			IACDataSetTableAdapters.TVAmortTableAdapter tVAmortTableAdapter = new IACDataSetTableAdapters.TVAmortTableAdapter();
+            PaymentDataSetTableAdapters.InvoicesTableAdapter InvoicesTableAdapter = new PaymentDataSetTableAdapters.InvoicesTableAdapter();
+            PaymentDataSetTableAdapters.PaymentHistoryTableAdapter PaymentHistoryTableAdapter = new PaymentDataSetTableAdapters.PaymentHistoryTableAdapter();
+            PaymentDataSetTableAdapters.PaymentInvoiceTableAdapter PaymentInvoiceTableAdapter = new PaymentDataSetTableAdapters.PaymentInvoiceTableAdapter();
+
+            CUSTOMERTableAdapter.Fill(IDS.CUSTOMER, CustomerNo);
+			Decimal lnRegularPayment = IDS.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_REGULAR_AMOUNT"),
+					lnUnusedFunds = 0, lnAmountPaid = 0;
+
+            PaymentHistoryTableAdapter.FillByID(PDS.PaymentHistory, PaymentId);
+            if (PDS.PaymentHistory.Rows.Count == 0)
+				return;
+			Int32 lnNumMonthlies = 0,
+				  InvoiceCount = 0;
+
+			if (PDS.PaymentHistory.Rows[0].Field<Decimal>("Amount") > 0)
+				InvoicesTableAdapter.FillByNotPaidInFullDateRange(PDS.Invoices, TempCust, "Monthly Payment", (DateTime?)null);
+            else
+				InvoicesTableAdapter.FillAllPaidByCustomerIDDateRange(PDS.Invoices, TempCust, "Monthly Payment", (DateTime?)null);
+
+			var loBalance = PaymentHistoryTableAdapter.BalanceToDate(TempCust, PDS.PaymentHistory.Rows[0].Field<DateTime>("PaymentDate"));
+			Decimal lnBalance = loBalance != null ? (Decimal)loBalance : 0;
+ 
+            lnUnusedFunds = PDS.PaymentHistory.Rows[0].Field<Decimal>("Amount");
+            var loPartialPayment = InvoicesTableAdapter.PartialPayment(TempCust);
+            Decimal lnPartialPayment = loPartialPayment != null ? (Decimal)loPartialPayment : 0,
+					lnOverPayment = 0;
+			Boolean lbLastPayment = false,
+					lbCreateOverPayment = false;
+			Object loContractStatus = null;
+
+
+            if (lnUnusedFunds > 0)
+			{
+				switch (PDS.PaymentHistory.Rows[0].Field<String>("Type") + PDS.PaymentHistory.Rows[0].Field<String>("Code"))
+				{
+					case "WL":
+						break;
+					/*case "WH":
+					case "WC":
+						lnUnusedFunds = 0;
+						lnNumMonthlies = 0;
+						break;*/
+					default:
+						if(lnPartialPayment + lnUnusedFunds >= lnBalance && lnBalance != 0)
+						{
+							lbLastPayment = true;
+							lnOverPayment = (lnPartialPayment + lnUnusedFunds) - lnBalance;
+							if (lnOverPayment > 0)
+							{
+								lnUnusedFunds -= lnOverPayment;
+								lbCreateOverPayment = true;
+							}
+						}
+						lnNumMonthlies = (Int32)Math.Floor((lnPartialPayment+lnUnusedFunds) / lnRegularPayment);
+                        if (PDS.Invoices.Count == 0 && lnUnusedFunds > 0)
+                        {
+							if (lbLastPayment)
+							{
+								if (lnNumMonthlies > 0)
+									CreateNewInvoice(TempCust, lnRegularPayment);
+								else
+									CreateNewInvoice(TempCust, lnUnusedFunds);
+								if (lnOverPayment != 0)
+								{
+									CreateNewInvoice(TempCust, lnOverPayment, "OVER PAYMENT");
+									lbCreateOverPayment = false;
+								}
+							}
+							else
+							{
+								if (lnNumMonthlies > 0 || lnUnusedFunds < lnBalance)
+									CreateNewInvoice(TempCust, lnRegularPayment);
+								else
+									CreateNewInvoice(TempCust, lnUnusedFunds);
+							}
+                            InvoicesTableAdapter.FillByNotPaidInFullDateRange(PDS.Invoices, TempCust, "Monthly Payment", (DateTime?)null);
+							InvoiceCount = 0;
+                        }
+                        break;
+				}
+				while (InvoiceCount < PDS.Invoices.Count && lnUnusedFunds > 0)
+				{
+					while (lnUnusedFunds > 0 && InvoiceCount < PDS.Invoices.Count)
+					{
+						while (lnNumMonthlies > 0 && InvoiceCount < PDS.Invoices.Count && lnUnusedFunds != 0)
+						{
+							if (lnUnusedFunds >= PDS.Invoices.Rows[InvoiceCount].Field<Decimal>("TotalDue"))
+								lnAmountPaid = PDS.Invoices.Rows[InvoiceCount].Field<Decimal>("TotalDue");
+							else
+								lnAmountPaid = lnUnusedFunds;
+							lnUnusedFunds -= lnAmountPaid;
+							PDS.Invoices.Rows[InvoiceCount].SetField<Decimal>("TotalPaid", PDS.Invoices.Rows[InvoiceCount].Field<Decimal>("TotalPaid") + lnAmountPaid);
+							PDS.Invoices.Rows[InvoiceCount].SetField<Decimal>("TotalDue", 0);
+							PDS.Invoices.Rows[InvoiceCount].SetField<Boolean>("IsPaid",true);	
+                            lnNumMonthlies--;
+							InvoicesTableAdapter.Update(PDS.Invoices.Rows[InvoiceCount]);
+                            PaymentInvoiceTableAdapter.Insert(TempCust, PaymentId, PDS.Invoices.Rows[InvoiceCount].Field<Int32>("id"), lnAmountPaid, 0, false,
+								  PDS.PaymentHistory.Rows[0].Field<String>("Type"), PDS.PaymentHistory.Rows[0].Field<String>("Code"),
+								  PDS.PaymentHistory.Rows[0].Field<String>("CreditCardType"), 0);
+							InvoiceCount++;
+						}
+						while (lnNumMonthlies == 0 && lnUnusedFunds > 0)
+						{
+							lnUnusedFunds = ApplyPaymentToLates(CustomerNo, lnUnusedFunds, PDS.PaymentHistory.Rows[0].Field<DateTime>("PaymentDate"), PaymentId);
+							if (lnUnusedFunds == 0 || InvoiceCount >= PDS.Invoices.Count)
+							{
+                                if (InvoiceCount >= PDS.Invoices.Count && lnUnusedFunds > 0)
+                                {
+                                    if (lbLastPayment)
+                                    {
+                                        CreateNewInvoice(TempCust, lnUnusedFunds);
+                                        if (lnOverPayment != 0)
+                                        {
+                                            CreateNewInvoice(TempCust, lnOverPayment, "OVER PAYMENT");
+                                            lbCreateOverPayment = false;
+                                        }
+                                    }
+                                    else
+                                    {
+                                        if (lnUnusedFunds < lnBalance)
+                                            CreateNewInvoice(TempCust, lnRegularPayment);
+                                        else
+                                            CreateNewInvoice(TempCust, lnUnusedFunds);
+                                    }
+                                    InvoicesTableAdapter.FillByNotPaidInFullDateRange(PDS.Invoices, TempCust, "Monthly Payment", (DateTime?)null);
+									InvoiceCount = 0;
+                                }
+								else
+									return;
+							}
+							if (lnUnusedFunds <= PDS.Invoices.Rows[InvoiceCount].Field<Decimal>("TotalDue"))
+							{
+								lnAmountPaid = lnUnusedFunds;
+								lnUnusedFunds = 0;
+								PDS.Invoices.Rows[InvoiceCount].SetField<Decimal>("TotalPaid", PDS.Invoices.Rows[InvoiceCount].Field<Decimal>("TotalPaid") + lnAmountPaid);
+								PDS.Invoices.Rows[InvoiceCount].SetField<Decimal>("TotalDue", PDS.Invoices.Rows[InvoiceCount].Field<Decimal>("Amount") -
+																							  PDS.Invoices.Rows[InvoiceCount].Field<Decimal>("TotalPaid"));
+								PDS.Invoices.Rows[InvoiceCount].SetField<Boolean>("IsPaid", (PDS.Invoices.Rows[InvoiceCount].Field<Decimal>("TotalDue") == 0) ? true : false);
+                                InvoicesTableAdapter.Update(PDS.Invoices.Rows[InvoiceCount]);
+                                PaymentInvoiceTableAdapter.Insert(TempCust, PaymentId, PDS.Invoices.Rows[InvoiceCount].Field<Int32>("id"), lnAmountPaid, 0, false,
+                                      PDS.PaymentHistory.Rows[0].Field<String>("Type"), PDS.PaymentHistory.Rows[0].Field<String>("Code"),
+                                      PDS.PaymentHistory.Rows[0].Field<String>("CreditCardType"), 0);
+                                if (PDS.Invoices.Rows[InvoiceCount].Field<Boolean>("IsPaid"))
+                                    InvoiceCount++;
+                            }
+                            else
+							{
+								lnAmountPaid = PDS.Invoices.Rows[InvoiceCount].Field<Decimal>("TotalDue");
+								lnUnusedFunds -= lnAmountPaid;
+								PDS.Invoices.Rows[InvoiceCount].SetField<Decimal>("TotalPaid", PDS.Invoices.Rows[InvoiceCount].Field<Decimal>("Amount"));
+								PDS.Invoices.Rows[InvoiceCount].SetField<Decimal>("TotalDue", 0);
+								PDS.Invoices.Rows[InvoiceCount].SetField<Boolean>("IsPaid", true);
+                                loContractStatus = InvoicesTableAdapter.ContractStatus(TempCust, PDS.Invoices.Rows[InvoiceCount].Field<DateTime>("DateDue"));
+                                InvoicesTableAdapter.Update(PDS.Invoices.Rows[InvoiceCount]);
+                                PaymentInvoiceTableAdapter.Insert(TempCust, PaymentId, PDS.Invoices.Rows[InvoiceCount].Field<Int32>("id"), lnAmountPaid, 0, false,
+                                      PDS.PaymentHistory.Rows[0].Field<String>("Type"), PDS.PaymentHistory.Rows[0].Field<String>("Code"),
+                                      PDS.PaymentHistory.Rows[0].Field<String>("CreditCardType"), 0);
+                                InvoiceCount++;
+                            }
+                        }
+						if (InvoiceCount > PDS.Invoices.Count && lnUnusedFunds > 0)
+						{
+                            if (lbLastPayment)
+                            {
+                                CreateNewInvoice(TempCust, lnUnusedFunds);
+                                if (lnOverPayment != 0)
+                                {
+                                    CreateNewInvoice(TempCust, lnOverPayment, "OVER PAYMENT");
+                                    lbCreateOverPayment = false;
+                                }
+                            }
+                            else
+                            {
+                                if (lnUnusedFunds < lnBalance)
+                                    CreateNewInvoice(TempCust, lnRegularPayment);
+                                else
+                                    CreateNewInvoice(TempCust, lnUnusedFunds);
+                            }
+                            InvoicesTableAdapter.FillByNotPaidInFullDateRange(PDS.Invoices, TempCust, "Monthly Payment", (DateTime?)null);
+                            InvoiceCount = 0;
+                            InvoicesTableAdapter.FillByNotPaidInFullDateRange(PDS.Invoices, TempCust, "Monthly Payment", (DateTime?)null);
+							InvoiceCount = 0;
+						}
+					}
+                }
+				if(lbCreateOverPayment)
+				{
+                    CreateNewInvoice(TempCust, lnOverPayment, "OVER PAYMENT");
+                    lbCreateOverPayment = false;
+                }
+            }
+			else
+			{
+				if (lnUnusedFunds == 0)
+				{
+					switch (PDS.PaymentHistory.Rows[0].Field<String>("Type"))
+					{
+						case "E":
+							HandleExtensions(TempCust, PDS.PaymentHistory.Rows[0].Field<Int32>("ExtCount"));
+							break;
+					}
+				}
+				if (lnUnusedFunds < 0)
+				{
+                    Decimal LateChargeToReturn = 0;
+                    Object oLateChargeToReturn = null;
+
+                    oLateChargeToReturn = PaymentHistoryTableAdapter.LateChargeToReturn(PDS.PaymentHistory.Rows[0].Field<Int32>("ID"));
+					LateChargeToReturn = oLateChargeToReturn != null ? (Decimal)oLateChargeToReturn : 0;
+
+                    lnNumMonthlies = (Int32)Math.Floor(-(lnUnusedFunds+lnPartialPayment) / lnRegularPayment);
+					lnNumMonthlies = lnNumMonthlies < 0 ? 0: lnNumMonthlies;
+					InvoiceCount = PDS.Invoices.Count - 1;
+
+                    while (InvoiceCount >= 0 && lnUnusedFunds < 0)
+					{
+						while (lnUnusedFunds < 0 && InvoiceCount >= 0)
+						{
+							while (lnNumMonthlies > 0 && InvoiceCount >= 0 && lnUnusedFunds < 0)
+							{
+								lnAmountPaid = -PDS.Invoices.Rows[InvoiceCount].Field<Decimal>("TotalPaid");
+								lnUnusedFunds -= lnAmountPaid;
+								PDS.Invoices.Rows[InvoiceCount].SetField<Decimal>("TotalPaid", 0);
+								PDS.Invoices.Rows[InvoiceCount].SetField<Decimal>("TotalDue", PDS.Invoices.Rows[InvoiceCount].Field<Decimal>("Amount"));
+								PDS.Invoices.Rows[InvoiceCount].SetField<Boolean>("IsPaid", false);
+                                InvoicesTableAdapter.Update(PDS.Invoices.Rows[InvoiceCount]);
+                                PaymentInvoiceTableAdapter.Insert(TempCust, PaymentId, PDS.Invoices.Rows[InvoiceCount].Field<Int32>("id"), lnAmountPaid, 0, false,
+									  PDS.PaymentHistory.Rows[0].Field<String>("Type"), PDS.PaymentHistory.Rows[0].Field<String>("Code"),
+									  PDS.PaymentHistory.Rows[0].Field<String>("CreditCardType"), 0);
+								lnNumMonthlies = (Int32)Math.Floor(-lnUnusedFunds / lnRegularPayment);
+							    InvoiceCount--;
+							}
+							while (lnNumMonthlies == 0 && lnUnusedFunds < 0)
+							{
+								if (LateChargeToReturn != 0)
+								{
+									ApplyPaymentToLates(CustomerNo, LateChargeToReturn, PDS.PaymentHistory.Rows[0].Field<DateTime>("PaymentDate"), PaymentId);
+									lnUnusedFunds -= LateChargeToReturn;
+                                }
+								if (lnUnusedFunds == 0 || InvoiceCount < 0)
+									return;
+								if (PDS.Invoices.Rows[InvoiceCount].Field<Decimal>("TotalPaid") != 0)
+								{
+									if (Math.Abs(lnUnusedFunds) >= PDS.Invoices.Rows[InvoiceCount].Field<Decimal>("TotalPaid"))
+									{
+										lnAmountPaid = PDS.Invoices.Rows[InvoiceCount].Field<Decimal>("TotalPaid");
+										lnUnusedFunds += lnAmountPaid;
+										PDS.Invoices.Rows[InvoiceCount].SetField<Decimal>("TotalPaid", 0);
+										PDS.Invoices.Rows[InvoiceCount].SetField<Decimal>("TotalDue", PDS.Invoices.Rows[InvoiceCount].Field<Decimal>("Amount"));
+										PDS.Invoices.Rows[InvoiceCount].SetField<Boolean>("IsPaid", false);
+                                        InvoicesTableAdapter.Update(PDS.Invoices.Rows[InvoiceCount]);
+                                        PaymentInvoiceTableAdapter.Insert(TempCust, PaymentId, PDS.Invoices.Rows[InvoiceCount].Field<Int32>("id"), -lnAmountPaid, 0, false,
+                                              PDS.PaymentHistory.Rows[0].Field<String>("Type"), PDS.PaymentHistory.Rows[0].Field<String>("Code"),
+                                              PDS.PaymentHistory.Rows[0].Field<String>("CreditCardType"), 0);
+										InvoiceCount--;
+                                    }
+                                    else
+									{
+                                        lnAmountPaid = lnUnusedFunds;
+                                        lnUnusedFunds = 0;
+                                        PDS.Invoices.Rows[InvoiceCount].SetField<Decimal>("TotalPaid", PDS.Invoices.Rows[InvoiceCount].Field<Decimal>("TotalPaid") + lnAmountPaid);
+                                        PDS.Invoices.Rows[InvoiceCount].SetField<Decimal>("TotalDue", PDS.Invoices.Rows[InvoiceCount].Field<Decimal>("Amount") -
+																									  PDS.Invoices.Rows[InvoiceCount].Field<Decimal>("TotalPaid"));
+                                        PDS.Invoices.Rows[InvoiceCount].SetField<Boolean>("IsPaid", false);
+                                        InvoicesTableAdapter.Update(PDS.Invoices.Rows[InvoiceCount]);
+                                        PaymentInvoiceTableAdapter.Insert(TempCust, PaymentId, PDS.Invoices.Rows[InvoiceCount].Field<Int32>("id"), lnAmountPaid, 0, false,
+                                              PDS.PaymentHistory.Rows[0].Field<String>("Type"), PDS.PaymentHistory.Rows[0].Field<String>("Code"),
+                                              PDS.PaymentHistory.Rows[0].Field<String>("CreditCardType"), 0);
+                                    }
+                                }
+							}
+						}
+					}
+					InvoicesTableAdapter.DeleteAddedRecordsWithZeroPaid(TempCust);
+				}
+			}
+        }
+
+		static public void UpdateBuckets(Int32 CustomerNo,PaymentDataSet PDS,Int32 PaymentCount,DateTime ThisTranDate)
+		{
+			PaymentDataSetTableAdapters.InvoicesTableAdapter InvoicesTableAdapter = new InvoicesTableAdapter();
+            PaymentDataSetTableAdapters.PaymentHistoryTableAdapter PaymentHistoryTableAdapter = new PaymentHistoryTableAdapter();
+			Decimal LateFeeBalance = 0, PartialPayment = 0, ContractStatus = 0;
+			String PaidThrough;
+			DateTime PaidThroughDate;
+
+			Object oLFB, oPP, oCS,oPT,oPTD;
+
+			oLFB = InvoicesTableAdapter.GetLateChargeBalanceByDate(CustomerNo,ThisTranDate);
+			oPP = InvoicesTableAdapter.PartialPayment(CustomerNo);
+			oPT = InvoicesTableAdapter.PaidThru(CustomerNo);
+			oPTD = InvoicesTableAdapter.PaidThroughDate(CustomerNo);
+
+            LateFeeBalance = oLFB != null ? (Decimal)oLFB : 0;
+            PartialPayment = oPP != null ? (Decimal)oPP : 0;
+			PaidThrough = oPT != null ? (String)oPT : "";
+			PaidThroughDate = oPTD != null ? (DateTime)oPTD : DateTime.Parse("01/01/1980");
+            oCS = PaymentHistoryTableAdapter.ContractStatusByPayment(CustomerNo, ThisTranDate,PaidThroughDate,PartialPayment,LateFeeBalance);
+            ContractStatus = oCS != null ? (Decimal)oCS : 0;
+
+            PaymentHistoryTableAdapter.UpdateOnlyBuckets(PDS.PaymentHistory.Rows[PaymentCount].Field<Int32>("id"), ContractStatus, LateFeeBalance, PartialPayment, PaidThrough, PaidThroughDate);
+        }
+        static public Decimal ApplyPaymentToLates(String CustomerNo,Decimal tnUnusedFunds,DateTime tdEnd,Int32 PaymentId)
+        {
+            Int32 TempCust = Convert.ToInt32(CustomerNo);
+
+            IACDataSet IDS = new IACDataSet();
+
+            PaymentDataSet PDS = new PaymentDataSet();
+            PaymentDataSetTableAdapters.InvoicesTableAdapter InvoicesTableAdapter = new PaymentDataSetTableAdapters.InvoicesTableAdapter();
+            PaymentDataSetTableAdapters.PaymentHistoryTableAdapter PaymentHistoryTableAdapter = new PaymentDataSetTableAdapters.PaymentHistoryTableAdapter();
+            PaymentDataSetTableAdapters.PaymentInvoiceTableAdapter PaymentInvoiceTableAdapter = new PaymentDataSetTableAdapters.PaymentInvoiceTableAdapter();
+
+            if (tnUnusedFunds == 0)
+				return 0;
+
+			Decimal lnAmountPaid = 0;
+            Int32 InvoiceCount = 0;
+
+            PaymentHistoryTableAdapter.FillByID(PDS.PaymentHistory, PaymentId);
+            if (tnUnusedFunds > 0)
+			{
+                InvoicesTableAdapter.FillByNotPaidInFullDateRange(PDS.Invoices, TempCust, "Late Fee", tdEnd);
+				while (tnUnusedFunds != 0 && InvoiceCount < PDS.Invoices.Count)
+				{
+					if (PDS.Invoices.Rows[InvoiceCount].Field<Decimal>("TotalPaid") == 0)
+					{
+						if (tnUnusedFunds <= PDS.Invoices.Rows[InvoiceCount].Field<Decimal>("TotalDue"))
+						{
+							PDS.Invoices.Rows[InvoiceCount].SetField<Decimal>("TotalPaid", tnUnusedFunds);
+							PDS.Invoices.Rows[InvoiceCount].SetField<Decimal>("TotalDue", PDS.Invoices.Rows[InvoiceCount].Field<Decimal>("Amount") -
+																						  tnUnusedFunds);
+							PDS.Invoices.Rows[InvoiceCount].SetField<Boolean>("IsPaid", (PDS.Invoices.Rows[InvoiceCount].Field<Decimal>("TotalDue") == 0) ? true : false);
+                            lnAmountPaid = tnUnusedFunds;
+							tnUnusedFunds -= lnAmountPaid;
+							InvoicesTableAdapter.Update(PDS.Invoices.Rows[InvoiceCount]);
+                            PaymentInvoiceTableAdapter.Insert(TempCust, PaymentId, PDS.Invoices.Rows[InvoiceCount].Field<Int32>("id"), lnAmountPaid, 0, false,
+								  PDS.PaymentHistory.Rows[0].Field<String>("Type"), PDS.PaymentHistory.Rows[0].Field<String>("Code"),
+								  PDS.PaymentHistory.Rows[0].Field<String>("CreditCardType"), 0);
+							if (PDS.Invoices.Rows[InvoiceCount].Field<Boolean>("IsPaid"))
+								InvoiceCount++;
+						}
+						else
+						{
+							lnAmountPaid = PDS.Invoices.Rows[InvoiceCount].Field<Decimal>("TotalDue");
+							tnUnusedFunds -= lnAmountPaid;
+							PDS.Invoices.Rows[InvoiceCount].SetField<Decimal>("TotalPaid", lnAmountPaid);
+							PDS.Invoices.Rows[InvoiceCount].SetField<Decimal>("TotalDue", 0);
+							PDS.Invoices.Rows[InvoiceCount].SetField<Boolean>("IsPaid", true);
+                            InvoicesTableAdapter.Update(PDS.Invoices.Rows[InvoiceCount]);
+                            PaymentInvoiceTableAdapter.Insert(TempCust, PaymentId, PDS.Invoices.Rows[InvoiceCount].Field<Int32>("id"), lnAmountPaid, 0, false,
+								  PDS.PaymentHistory.Rows[0].Field<String>("Type"), PDS.PaymentHistory.Rows[0].Field<String>("Code"),
+								  PDS.PaymentHistory.Rows[0].Field<String>("CreditCardType"), 0);
+							if (PDS.Invoices.Rows[InvoiceCount].Field<Boolean>("IsPaid"))
+								InvoiceCount++;
+						}
+					}
+					else
+					{
+						if (tnUnusedFunds <= PDS.Invoices.Rows[InvoiceCount].Field<Decimal>("TotalDue"))
+						{
+
+							PDS.Invoices.Rows[InvoiceCount].SetField<Decimal>("TotalDue", PDS.Invoices.Rows[InvoiceCount].Field<Decimal>("TotalDue") - tnUnusedFunds);
+							PDS.Invoices.Rows[InvoiceCount].SetField<Boolean>("IsPaid", (PDS.Invoices.Rows[InvoiceCount].Field<Decimal>("TotalDue") == 0) ? true : false);
+							lnAmountPaid = tnUnusedFunds;
+							PDS.Invoices.Rows[InvoiceCount].SetField<Decimal>("TotalPaid", PDS.Invoices.Rows[InvoiceCount].Field<Decimal>("TotalPaid") + lnAmountPaid);
+                            tnUnusedFunds -= lnAmountPaid;
+							InvoicesTableAdapter.Update(PDS.Invoices.Rows[InvoiceCount]);
+                            PaymentInvoiceTableAdapter.Insert(TempCust, PaymentId, PDS.Invoices.Rows[InvoiceCount].Field<Int32>("id"), lnAmountPaid, 0, false,
+								  PDS.PaymentHistory.Rows[0].Field<String>("Type"), PDS.PaymentHistory.Rows[0].Field<String>("Code"),
+								  PDS.PaymentHistory.Rows[0].Field<String>("CreditCardType"), 0);
+							if (PDS.Invoices.Rows[InvoiceCount].Field<Boolean>("IsPaid"))
+								InvoiceCount++;
+						}
+						else
+						{
+							lnAmountPaid = PDS.Invoices.Rows[InvoiceCount].Field<Decimal>("TotalDue");
+							tnUnusedFunds -= lnAmountPaid;
+							PDS.Invoices.Rows[InvoiceCount].SetField<Decimal>("TotalPaid", PDS.Invoices.Rows[InvoiceCount].Field<Decimal>("Amount"));
+							PDS.Invoices.Rows[InvoiceCount].SetField<Decimal>("TotalDue", 0);
+							PDS.Invoices.Rows[InvoiceCount].SetField<Boolean>("IsPaid", true);
+                            InvoicesTableAdapter.Update(PDS.Invoices.Rows[InvoiceCount]);
+                            PaymentInvoiceTableAdapter.Insert(TempCust, PaymentId, PDS.Invoices.Rows[InvoiceCount].Field<Int32>("id"), lnAmountPaid, 0, false,
+								  PDS.PaymentHistory.Rows[0].Field<String>("Type"), PDS.PaymentHistory.Rows[0].Field<String>("Code"),
+								  PDS.PaymentHistory.Rows[0].Field<String>("CreditCardType"), 0);
+							if (PDS.Invoices.Rows[InvoiceCount].Field<Boolean>("IsPaid"))
+								InvoiceCount++;
+						}
+					}
+				}
+			}
+			else
+			{
+                InvoicesTableAdapter.FillAllPaidByCustomerIDDateRange(PDS.Invoices, TempCust, "Late Fee", tdEnd);
+				InvoiceCount = PDS.Invoices.Rows.Count - 1;
+                while (tnUnusedFunds != 0 && InvoiceCount >= 0)
+				{
+					if (PDS.Invoices.Rows[InvoiceCount].Field<Decimal>("TotalPaid") > 0)
+					{
+						if (Math.Abs(tnUnusedFunds) >= PDS.Invoices.Rows[InvoiceCount].Field<Decimal>("TotalPaid"))
+						{
+							lnAmountPaid = -PDS.Invoices.Rows[InvoiceCount].Field<Decimal>("TotalPaid");
+							tnUnusedFunds -= lnAmountPaid;
+							PDS.Invoices.Rows[InvoiceCount].SetField<Decimal>("TotalPaid", 0);
+							PDS.Invoices.Rows[InvoiceCount].SetField<Decimal>("TotalDue", PDS.Invoices.Rows[InvoiceCount].Field<Decimal>("Amount"));
+							PDS.Invoices.Rows[InvoiceCount].SetField<Boolean>("IsPaid", false);
+                            InvoicesTableAdapter.Update(PDS.Invoices.Rows[InvoiceCount]);
+                            PaymentInvoiceTableAdapter.Insert(TempCust, PaymentId, PDS.Invoices.Rows[InvoiceCount].Field<Int32>("id"), lnAmountPaid, 0, false,
+                                  PDS.PaymentHistory.Rows[0].Field<String>("Type"), PDS.PaymentHistory.Rows[0].Field<String>("Code"),
+                                  PDS.PaymentHistory.Rows[0].Field<String>("CreditCardType"), 0);
+                        }
+                        else
+						{
+                            lnAmountPaid = tnUnusedFunds;
+                            tnUnusedFunds = 0;
+                            PDS.Invoices.Rows[InvoiceCount].SetField<Decimal>("TotalPaid", PDS.Invoices.Rows[InvoiceCount].Field<Decimal>("TotalPaid") + lnAmountPaid);
+                            PDS.Invoices.Rows[InvoiceCount].SetField<Decimal>("TotalDue", PDS.Invoices.Rows[InvoiceCount].Field<Decimal>("Amount") -
+                                                                                          PDS.Invoices.Rows[InvoiceCount].Field<Decimal>("TotalPaid"));
+                            PDS.Invoices.Rows[InvoiceCount].SetField<Boolean>("IsPaid", false);
+                            InvoicesTableAdapter.Update(PDS.Invoices.Rows[InvoiceCount]);
+                            PaymentInvoiceTableAdapter.Insert(TempCust,PaymentId, PDS.Invoices.Rows[InvoiceCount].Field<Int32>("id"), lnAmountPaid, 0, false, 
+															  PDS.PaymentHistory.Rows[0].Field<String>("Type"), PDS.PaymentHistory.Rows[0].Field<String>("Code"), 
+															  PDS.PaymentHistory.Rows[0].Field<String>("CreditCardType"),0);
+                        }
+                        if (!PDS.Invoices.Rows[InvoiceCount].Field<Boolean>("IsPaid") && PDS.Invoices.Rows[InvoiceCount].Field<Decimal>("TotalPaid") == 0)
+							InvoiceCount--;
+					}
+					else
+					{
+						InvoiceCount--;
+					}
+				}
+			}
+            return tnUnusedFunds;
+        }
+
+
+        static public void CreateNewInvoice(Int32 TempCust,Decimal Amount,String Caption = "Monthly Payment")
+		{
+			PaymentDataSetTableAdapters.InvoicesTableAdapter invoicesTableAdapter = new InvoicesTableAdapter();
+
+            var loLastExtensionCount = invoicesTableAdapter.LastExtensionCount(TempCust);
+            Int32 LastExtensionCount = loLastExtensionCount != null ? (Int32)loLastExtensionCount : 0;
+            var loLastDateDue = invoicesTableAdapter.LastDateDue(TempCust);
+
+
+            DateTime LastInvoiceDate = loLastDateDue != null ? (DateTime)loLastDateDue : DateTime.Now.Date;
+            DateTime NewDate, OldDate;
+
+            if (LastInvoiceDate.Month == 2 && (LastInvoiceDate.Day == 28 || LastInvoiceDate.Day == 29))
+            {
+                NewDate = DateTime.Parse("03/30/" + LastInvoiceDate.Year.ToString());
+            }
+            else
+            {
+                if (LastInvoiceDate.Month == 1 && LastInvoiceDate.Day == 30)
+                {
+                    NewDate = DateTime.Parse("03/1/" + LastInvoiceDate.Year.ToString()).AddDays(-1);
+                }
+                else
+                {
+                    NewDate = LastInvoiceDate.AddMonths(1);
+                }
+            }
+            OldDate = NewDate.AddMonths(-LastExtensionCount);
+            if (OldDate.Month == 3 && OldDate.Day < 5)
+            {
+                NewDate = DateTime.Parse("03/1/" + OldDate.Year.ToString()).AddDays(-1);
+            }
+            else
+                if (OldDate.Month != 2 && (OldDate.Day == 28 || OldDate.Day == 29))
+					OldDate = DateTime.Parse(OldDate.Month.ToString() + "/30/" + OldDate.Year.ToString());
+            
+			Decimal lnContractStatus, lnLateFeeBalance, lnPartialPaymentByRow;
+
+            Object loContractStatus = null, loPaidThru = null, loLateFeeBalance = null, loPartialPaymentByRow = null,
+				   loPaidThroughDate = null;
+            String lsPaidThru;
+            DateTime? ldPaidThroughDate;
+            loContractStatus = invoicesTableAdapter.ContractStatus(TempCust, DateTime.Now.Date);
+            lnContractStatus = loContractStatus != null ? (Decimal)loContractStatus : 0;
+            loLateFeeBalance = invoicesTableAdapter.LateChargeBalance(TempCust);
+            lnLateFeeBalance = loLateFeeBalance != null ? (Decimal)loLateFeeBalance : 0;
+            loPartialPaymentByRow = invoicesTableAdapter.PartialPayment(TempCust);
+            lnPartialPaymentByRow = loPartialPaymentByRow != null ? (Decimal)loPartialPaymentByRow : 0;
+            loPaidThru = invoicesTableAdapter.PaidThru(TempCust);
+            lsPaidThru = loPaidThru != null ? (String)loPaidThru : "";
+            loPaidThroughDate = invoicesTableAdapter.PaidThroughDate(TempCust);
+            ldPaidThroughDate = loPaidThroughDate != null ? (DateTime)loPaidThroughDate : (DateTime?)null;
+            
+			if (Caption != "OVER PAYMENT")
+			{
+                invoicesTableAdapter.Insert(TempCust, NewDate, DateTime.Now.Date, OldDate, LastExtensionCount, Caption, Amount, 0, Amount, false,
+											lnContractStatus,lnLateFeeBalance,lnPartialPaymentByRow,lsPaidThru,ldPaidThroughDate);
+            }
+            else
+			{
+                invoicesTableAdapter.Insert(TempCust, NewDate, DateTime.Now.Date, OldDate, LastExtensionCount, Caption, Amount, Amount, 0, true,
+                                            lnContractStatus, lnLateFeeBalance, lnPartialPaymentByRow, lsPaidThru, ldPaidThroughDate);
+            }
+        }
+
+        static public void ApplyAllPayments(String CustomerNo)
+		{
+			Int32 TempCust = Convert.ToInt32(CustomerNo);
+
+			IACDataSet IDS = new IACDataSet();
+			IACDataSetTableAdapters.CUSTOMERTableAdapter cUSTOMERTableAdapter = new IACDataSetTableAdapters.CUSTOMERTableAdapter();
+
+			cUSTOMERTableAdapter.Fill(IDS.CUSTOMER, CustomerNo);
+
+			PaymentDataSet PDS = new PaymentDataSet();
+
+			PaymentDataSetTableAdapters.PaymentHistoryTableAdapter PaymentHistoryTableAdapter = new PaymentDataSetTableAdapters.PaymentHistoryTableAdapter();
+
+            PaymentHistoryTableAdapter.FillAllByCustomerId(PDS.PaymentHistory, TempCust);
+            Program.TVSimpleGetBuyout(IDS,
+                                               DateTime.Now.Date,
+                                               (Double)IDS.CUSTOMER.Rows[0].Field<Int32>("CUSTOMER_TERM"),
+                                               (Double)(IDS.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_ANNUAL_PERCENTAGE_RATE") / 100),
+                                               (Double)IDS.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_REGULAR_AMOUNT"),
+                                               IDS.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO"),
+                                               // 04/30/2017 Handle BOTH Simple Interest and Normal Daily Compounding
+                                               IDS.CUSTOMER.Rows[0].Field<String>("CUSTOMER_AMORTIZE_IND") == "S" ? true : false, true, false, false, -1, true);
+            for (int i = 0;i< PDS.PaymentHistory.Rows.Count;i++)
+			{
+				ApplySinglePayment(CustomerNo, PDS.PaymentHistory.Rows[i].Field<Int32>("id"));
+				UpdateBuckets(TempCust, PDS, i, PDS.PaymentHistory.Rows[i].Field<DateTime>("PaymentDate"));
+			}
+        }
+
+        static public void HandleExtensions(Int32 CustomerNo, Int32 ExtensionCount)
+        {
+            PaymentDataSetTableAdapters.InvoicesTableAdapter InvoicesTableAdapter = new PaymentDataSetTableAdapters.InvoicesTableAdapter();
+            InvoicesTableAdapter.InvoicesApplyExtension(CustomerNo, ExtensionCount);
         }
 
         [STAThread]
