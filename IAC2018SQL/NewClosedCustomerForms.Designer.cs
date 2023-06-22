@@ -339,12 +339,15 @@
             this.imageCollectionTabs = new DevExpress.Utils.ImageCollection(this.components);
             this.xtraTabPageCustInfo1 = new DevExpress.XtraTab.XtraTabPage();
             this.groupBox10 = new DevExpress.XtraEditors.GroupControl();
-            this.textEditDealerName = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
+            this.hyperLinkEditWarrantyEmail = new DevExpress.XtraEditors.HyperLinkEdit();
+            this.bindingSourceWarrantyCompany = new System.Windows.Forms.BindingSource(this.components);
             this.toolbarFormManager1 = new DevExpress.XtraBars.ToolbarForm.ToolbarFormManager(this.components);
             this.standaloneBarDockControl1 = new DevExpress.XtraBars.StandaloneBarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.textEditDealerName = new DevExpress.XtraEditors.TextEdit();
             this.cUSTOMER_DEALERcomboBox = new DevExpress.XtraEditors.LookUpEdit();
             this.checkEditAllotment = new DevExpress.XtraEditors.CheckEdit();
             this.checkEditMilitary = new DevExpress.XtraEditors.CheckEdit();
@@ -371,10 +374,10 @@
             this.textBoxTIN = new System.Windows.Forms.TextBox();
             this.buttonValidate = new DevExpress.XtraEditors.SimpleButton();
             this.groupBoxGapWarranty = new System.Windows.Forms.GroupBox();
-            this.textEditWarrantyCompany = new DevExpress.XtraEditors.TextEdit();
             this.checkBoxExcludeVSI = new DevExpress.XtraEditors.CheckEdit();
             this.checkBoxWarranty = new DevExpress.XtraEditors.CheckEdit();
             this.comboBoxGAP = new System.Windows.Forms.ComboBox();
+            this.textEditWarrantyCompany = new DevExpress.XtraEditors.LookUpEdit();
             this.cUSTOMER_CELL_PHONETextBox = new System.Windows.Forms.MaskedTextBox();
             this.textBoxMiddleName = new System.Windows.Forms.TextBox();
             this.labelInsuranceExpired = new System.Windows.Forms.Label();
@@ -855,6 +858,8 @@
             this.barDockControl2 = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl3 = new DevExpress.XtraBars.BarDockControl();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.warrantyCompanyTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.WarrantyCompanyTableAdapter();
+            this.layoutConverter1 = new DevExpress.XtraLayout.Converter.LayoutConverter(this.components);
             label45 = new System.Windows.Forms.Label();
             label48 = new System.Windows.Forms.Label();
             labelAuthNo = new System.Windows.Forms.Label();
@@ -1113,8 +1118,10 @@
             this.xtraTabPageCustInfo1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupBox10)).BeginInit();
             this.groupBox10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditDealerName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hyperLinkEditWarrantyEmail.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceWarrantyCompany)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolbarFormManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditDealerName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cUSTOMER_DEALERcomboBox.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditAllotment.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditMilitary.Properties)).BeginInit();
@@ -1133,9 +1140,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.checkBoxDNTMktg.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkBoxDNTAcct.Properties)).BeginInit();
             this.groupBoxGapWarranty.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditWarrantyCompany.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkBoxExcludeVSI.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkBoxWarranty.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditWarrantyCompany.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cUSTOMER_NOTextBox.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cUSTOMER_PURCHASE_ORDERTextBox.Properties)).BeginInit();
             this.groupBoxRefi.SuspendLayout();
@@ -2895,6 +2902,8 @@
             this.groupBox10.Appearance.BackColor = System.Drawing.Color.LightSteelBlue;
             this.groupBox10.Appearance.Options.UseBackColor = true;
             this.groupBox10.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.groupBox10.Controls.Add(this.labelControl7);
+            this.groupBox10.Controls.Add(this.hyperLinkEditWarrantyEmail);
             this.groupBox10.Controls.Add(this.textEditDealerName);
             this.groupBox10.Controls.Add(this.cUSTOMER_DEALERcomboBox);
             this.groupBox10.Controls.Add(this.checkEditAllotment);
@@ -2983,14 +2992,33 @@
             resources.ApplyResources(this.groupBox10, "groupBox10");
             this.groupBox10.Name = "groupBox10";
             // 
-            // textEditDealerName
+            // labelControl7
             // 
-            this.textEditDealerName.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.dEALERBindingSource, "DEALER_NAME", true));
-            resources.ApplyResources(this.textEditDealerName, "textEditDealerName");
-            this.textEditDealerName.MenuManager = this.toolbarFormManager1;
-            this.textEditDealerName.Name = "textEditDealerName";
-            this.textEditDealerName.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textEditDealerName.Properties.Appearance.Font")));
-            this.textEditDealerName.Properties.Appearance.Options.UseFont = true;
+            this.labelControl7.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("labelControl7.Appearance.Font")));
+            this.labelControl7.Appearance.Options.UseFont = true;
+            resources.ApplyResources(this.labelControl7, "labelControl7");
+            this.labelControl7.Name = "labelControl7";
+            // 
+            // hyperLinkEditWarrantyEmail
+            // 
+            this.hyperLinkEditWarrantyEmail.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bindingSourceWarrantyCompany, "EmailAddress", true));
+            resources.ApplyResources(this.hyperLinkEditWarrantyEmail, "hyperLinkEditWarrantyEmail");
+            this.hyperLinkEditWarrantyEmail.MenuManager = this.toolbarFormManager1;
+            this.hyperLinkEditWarrantyEmail.Name = "hyperLinkEditWarrantyEmail";
+            this.hyperLinkEditWarrantyEmail.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("hyperLinkEditWarrantyEmail.Properties.Appearance.Font")));
+            this.hyperLinkEditWarrantyEmail.Properties.Appearance.Options.UseFont = true;
+            this.hyperLinkEditWarrantyEmail.Properties.AppearanceReadOnly.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(71)))), ((int)(((byte)(163)))));
+            this.hyperLinkEditWarrantyEmail.Properties.AppearanceReadOnly.Options.UseForeColor = true;
+            this.hyperLinkEditWarrantyEmail.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.RegExpMaskManager));
+            this.hyperLinkEditWarrantyEmail.Properties.MaskSettings.Set("mask", "(\\w|[.\\-])+@(\\w|[\\-]+.)*(\\w|[\\-]){2,63}.[a-zA-Z]{2,4}");
+            this.hyperLinkEditWarrantyEmail.Properties.ReadOnly = true;
+            this.hyperLinkEditWarrantyEmail.Properties.UseAdvancedMode = DevExpress.Utils.DefaultBoolean.True;
+            this.hyperLinkEditWarrantyEmail.OpenLink += new DevExpress.XtraEditors.Controls.OpenLinkEventHandler(this.hyperLinkEditWarrantyEmail_OpenLink);
+            // 
+            // bindingSourceWarrantyCompany
+            // 
+            this.bindingSourceWarrantyCompany.DataMember = "WarrantyCompany";
+            this.bindingSourceWarrantyCompany.DataSource = this.iACDataSet;
             // 
             // toolbarFormManager1
             // 
@@ -3026,6 +3054,15 @@
             this.barDockControlRight.CausesValidation = false;
             resources.ApplyResources(this.barDockControlRight, "barDockControlRight");
             this.barDockControlRight.Manager = this.toolbarFormManager1;
+            // 
+            // textEditDealerName
+            // 
+            this.textEditDealerName.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.dEALERBindingSource, "DEALER_NAME", true));
+            resources.ApplyResources(this.textEditDealerName, "textEditDealerName");
+            this.textEditDealerName.MenuManager = this.toolbarFormManager1;
+            this.textEditDealerName.Name = "textEditDealerName";
+            this.textEditDealerName.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textEditDealerName.Properties.Appearance.Font")));
+            this.textEditDealerName.Properties.Appearance.Options.UseFont = true;
             // 
             // cUSTOMER_DEALERcomboBox
             // 
@@ -3456,31 +3493,14 @@
             // 
             // groupBoxGapWarranty
             // 
-            this.groupBoxGapWarranty.Controls.Add(this.textEditWarrantyCompany);
             this.groupBoxGapWarranty.Controls.Add(this.checkBoxExcludeVSI);
             this.groupBoxGapWarranty.Controls.Add(labelGAP);
             this.groupBoxGapWarranty.Controls.Add(this.checkBoxWarranty);
             this.groupBoxGapWarranty.Controls.Add(this.comboBoxGAP);
+            this.groupBoxGapWarranty.Controls.Add(this.textEditWarrantyCompany);
             resources.ApplyResources(this.groupBoxGapWarranty, "groupBoxGapWarranty");
             this.groupBoxGapWarranty.Name = "groupBoxGapWarranty";
             this.groupBoxGapWarranty.TabStop = false;
-            // 
-            // textEditWarrantyCompany
-            // 
-            this.textEditWarrantyCompany.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.VehiclebindingSource, "WarrantyCompany", true));
-            resources.ApplyResources(this.textEditWarrantyCompany, "textEditWarrantyCompany");
-            this.textEditWarrantyCompany.MenuManager = this.toolbarFormManager1;
-            this.textEditWarrantyCompany.Name = "textEditWarrantyCompany";
-            this.textEditWarrantyCompany.Properties.AdvancedModeOptions.Label = resources.GetString("textEditWarrantyCompany.Properties.AdvancedModeOptions.Label");
-            this.textEditWarrantyCompany.Properties.AdvancedModeOptions.LabelAppearance.Font = ((System.Drawing.Font)(resources.GetObject("textEditWarrantyCompany.Properties.AdvancedModeOptions.LabelAppearance.Font")));
-            this.textEditWarrantyCompany.Properties.AdvancedModeOptions.LabelAppearance.Options.UseFont = true;
-            this.textEditWarrantyCompany.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textEditWarrantyCompany.Properties.Appearance.Font")));
-            this.textEditWarrantyCompany.Properties.Appearance.Options.UseFont = true;
-            this.textEditWarrantyCompany.Properties.Appearance.Options.UseTextOptions = true;
-            this.textEditWarrantyCompany.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.textEditWarrantyCompany.Properties.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.textEditWarrantyCompany.Properties.UseAdvancedMode = DevExpress.Utils.DefaultBoolean.True;
-            this.textEditWarrantyCompany.EditValueChanged += new System.EventHandler(this.textEditWarrantyCompany_EditValueChanged);
             // 
             // checkBoxExcludeVSI
             // 
@@ -3514,6 +3534,33 @@
             this.comboBoxGAP.Name = "comboBoxGAP";
             this.comboBoxGAP.ValueMember = "Descrition";
             this.comboBoxGAP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            // 
+            // textEditWarrantyCompany
+            // 
+            this.textEditWarrantyCompany.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.VehiclebindingSource, "WarrantyID", true));
+            resources.ApplyResources(this.textEditWarrantyCompany, "textEditWarrantyCompany");
+            this.textEditWarrantyCompany.MenuManager = this.toolbarFormManager1;
+            this.textEditWarrantyCompany.Name = "textEditWarrantyCompany";
+            this.textEditWarrantyCompany.Properties.AdvancedModeOptions.Label = resources.GetString("textEditWarrantyCompany.Properties.AdvancedModeOptions.Label");
+            this.textEditWarrantyCompany.Properties.AdvancedModeOptions.LabelAppearance.Font = ((System.Drawing.Font)(resources.GetObject("textEditWarrantyCompany.Properties.AdvancedModeOptions.LabelAppearance.Font")));
+            this.textEditWarrantyCompany.Properties.AdvancedModeOptions.LabelAppearance.Options.UseFont = true;
+            this.textEditWarrantyCompany.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textEditWarrantyCompany.Properties.Appearance.Font")));
+            this.textEditWarrantyCompany.Properties.Appearance.Options.UseFont = true;
+            this.textEditWarrantyCompany.Properties.Appearance.Options.UseTextOptions = true;
+            this.textEditWarrantyCompany.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.textEditWarrantyCompany.Properties.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.textEditWarrantyCompany.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("textEditWarrantyCompany.Properties.Buttons"))))});
+            this.textEditWarrantyCompany.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo(resources.GetString("textEditWarrantyCompany.Properties.Columns"), resources.GetString("textEditWarrantyCompany.Properties.Columns1"), ((int)(resources.GetObject("textEditWarrantyCompany.Properties.Columns2"))), ((DevExpress.Utils.FormatType)(resources.GetObject("textEditWarrantyCompany.Properties.Columns3"))), resources.GetString("textEditWarrantyCompany.Properties.Columns4"), ((bool)(resources.GetObject("textEditWarrantyCompany.Properties.Columns5"))), ((DevExpress.Utils.HorzAlignment)(resources.GetObject("textEditWarrantyCompany.Properties.Columns6"))), ((DevExpress.Data.ColumnSortOrder)(resources.GetObject("textEditWarrantyCompany.Properties.Columns7"))), ((DevExpress.Utils.DefaultBoolean)(resources.GetObject("textEditWarrantyCompany.Properties.Columns8")))),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo(resources.GetString("textEditWarrantyCompany.Properties.Columns9"), resources.GetString("textEditWarrantyCompany.Properties.Columns10"), ((int)(resources.GetObject("textEditWarrantyCompany.Properties.Columns11"))), ((DevExpress.Utils.FormatType)(resources.GetObject("textEditWarrantyCompany.Properties.Columns12"))), resources.GetString("textEditWarrantyCompany.Properties.Columns13"), ((bool)(resources.GetObject("textEditWarrantyCompany.Properties.Columns14"))), ((DevExpress.Utils.HorzAlignment)(resources.GetObject("textEditWarrantyCompany.Properties.Columns15"))), ((DevExpress.Data.ColumnSortOrder)(resources.GetObject("textEditWarrantyCompany.Properties.Columns16"))), ((DevExpress.Utils.DefaultBoolean)(resources.GetObject("textEditWarrantyCompany.Properties.Columns17"))))});
+            this.textEditWarrantyCompany.Properties.DataSource = this.bindingSourceWarrantyCompany;
+            this.textEditWarrantyCompany.Properties.DisplayMember = "Company";
+            this.textEditWarrantyCompany.Properties.HeaderClickMode = DevExpress.XtraEditors.Controls.HeaderClickMode.AutoSearch;
+            this.textEditWarrantyCompany.Properties.NullText = resources.GetString("textEditWarrantyCompany.Properties.NullText");
+            this.textEditWarrantyCompany.Properties.UseAdvancedMode = DevExpress.Utils.DefaultBoolean.True;
+            this.textEditWarrantyCompany.Properties.ValueMember = "id";
+            this.textEditWarrantyCompany.EditValueChanged += new System.EventHandler(this.textEditWarrantyCompany_EditValueChanged);
             // 
             // cUSTOMER_CELL_PHONETextBox
             // 
@@ -8966,6 +9013,10 @@
             this.barButtonItem1.ItemAppearance.Normal.Options.UseBackColor = true;
             this.barButtonItem1.Name = "barButtonItem1";
             // 
+            // warrantyCompanyTableAdapter
+            // 
+            this.warrantyCompanyTableAdapter.ClearBeforeFill = true;
+            // 
             // frmNewCustMaint
             // 
             this.Appearance.BackColor = System.Drawing.Color.CornflowerBlue;
@@ -8980,7 +9031,9 @@
             this.Controls.Add(this.barDockControl3);
             this.Controls.Add(this.barDockControl1);
             this.Controls.Add(this.barDockControlTop);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.HtmlImages = this.imageCollectionTabs;
             this.IconOptions.Image = ((System.Drawing.Image)(resources.GetObject("frmNewCustMaint.IconOptions.Image")));
             this.LookAndFeel.SkinName = "McSkin";
             this.LookAndFeel.UseDefaultLookAndFeel = false;
@@ -9034,8 +9087,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupBox10)).EndInit();
             this.groupBox10.ResumeLayout(false);
             this.groupBox10.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditDealerName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hyperLinkEditWarrantyEmail.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceWarrantyCompany)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolbarFormManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditDealerName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cUSTOMER_DEALERcomboBox.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditAllotment.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditMilitary.Properties)).EndInit();
@@ -9056,9 +9111,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.checkBoxDNTAcct.Properties)).EndInit();
             this.groupBoxGapWarranty.ResumeLayout(false);
             this.groupBoxGapWarranty.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEditWarrantyCompany.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkBoxExcludeVSI.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkBoxWarranty.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditWarrantyCompany.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cUSTOMER_NOTextBox.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cUSTOMER_PURCHASE_ORDERTextBox.Properties)).EndInit();
             this.groupBoxRefi.ResumeLayout(false);
@@ -9880,8 +9935,13 @@
         private DevExpress.XtraBars.BarDockControl barDockControlTop;
         private DevExpress.XtraBars.BarDockControl barDockControl1;
         private DevExpress.XtraBars.BarDockControl barDockControl3;
-        private DevExpress.XtraEditors.TextEdit textEditWarrantyCompany;
         private DevExpress.XtraEditors.RadioGroup radioGroupAccountType;
+        private DevExpress.XtraEditors.LookUpEdit textEditWarrantyCompany;
+        private System.Windows.Forms.BindingSource bindingSourceWarrantyCompany;
+        private IACDataSetTableAdapters.WarrantyCompanyTableAdapter warrantyCompanyTableAdapter;
+        private DevExpress.XtraEditors.HyperLinkEdit hyperLinkEditWarrantyEmail;
+        private DevExpress.XtraLayout.Converter.LayoutConverter layoutConverter1;
+        private DevExpress.XtraEditors.LabelControl labelControl7;
     }
 }
 

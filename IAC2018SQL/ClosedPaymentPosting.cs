@@ -518,7 +518,7 @@ namespace IAC2021SQL
             lnMoneyRemaining = PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<Decimal>("PAYMENT_AMOUNT_RCV");
             lnMoneyRemaining -= lnLCBPay;
             // Moses Newman 10/17/2018 Make sure we have latest amort for both payments if multiple payments for same customer!
-            GetPartialPaymentandLateFeeBalance(ref worker, PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_NO"), ref PAYMENTDataSet, CustomerPos, true, PaymentPos, false);
+            NewGetPartialPaymentandLateFeeBalance(ref worker, PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_NO"), ref PAYMENTDataSet, CustomerPos, true, PaymentPos, false);
             TVAmortTableAdapter.FillByCustomerNoandPaymentSeq(PAYMENTDataSet.TVAmort, PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_NO"), PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<Int32>("SeqNo"));
             lnPrinciplePaid = 0;
             String TempCust = PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_NO");
@@ -1467,7 +1467,7 @@ namespace IAC2021SQL
         void ClosedPaymentPartialPayment(int PaymentPos, Int32 CustomerPos, ref IACDataSet PAYMENTDataSet, ref BackgroundWorker worker, Boolean Post = false)
         {
             // Moses Newman 12/22/2014 must now pass the Post paramaeter to determine if the CUSTOMER record should be rewritten or not!
-            GetPartialPaymentandLateFeeBalance(ref worker,PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_NO"), ref PAYMENTDataSet,CustomerPos, true, PaymentPos,Post);
+            NewGetPartialPaymentandLateFeeBalance(ref worker,PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_NO"), ref PAYMENTDataSet,CustomerPos, true, PaymentPos,Post);
             CUSTOMERBindingSource.EndEdit();
             PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].SetField<Double>("CUSTOMER_PARTIAL_PAYMENTS", (Double)(PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("PartialPayment") / PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_REGULAR_AMOUNT")));
         }
@@ -1861,6 +1861,84 @@ namespace IAC2021SQL
             TVAmortTableAdapter.Dispose();
         }
 
+        // Moses Newman 05/19/2023 Use new Invoices table for all calculations instead of Program.FixLateandPartialBuckets!
+        public void NewGetPartialPaymentandLateFeeBalance(ref BackgroundWorker worker, String tsCustomerNo, ref IACDataSet DT, Int32 CustPos = 0, Boolean tbPayment = false,
+            Int32 tnPaymentPos = -1, Boolean tbPost = false, Boolean UpdateLast = false)
+        {
+            IACDataSetTableAdapters.CUSTOMERTableAdapter CUSTOMERTableAdapter = new IACDataSetTableAdapters.CUSTOMERTableAdapter();
+            IACDataSetTableAdapters.CUSTHISTTableAdapter CUSTHISTTableAdapter = new IACDataSetTableAdapters.CUSTHISTTableAdapter();
+            IACDataSetTableAdapters.TVAmortTableAdapter TVAmortTableAdapter = new IACDataSetTableAdapters.TVAmortTableAdapter();
+            IACDataSetTableAdapters.PAYMENTTableAdapter PAYMENTTableAdapter = new IACDataSetTableAdapters.PAYMENTTableAdapter();
+            PaymentDataSet paymentDataSet = new PaymentDataSet();
+            PaymentDataSetTableAdapters.InvoicesTableAdapter invoicesTableAdapter = new PaymentDataSetTableAdapters.InvoicesTableAdapter();
+
+
+            Int32 LastRow = DT.TVAmort.Rows.Count - 1, lnNumPay = 0;
+            Decimal lnSimpBal = 0,lnLateFeeBalance = 0,lnPartialPayment = 0;
+
+            if (DT.CUSTOMER.Rows.Count == 0)
+            {
+                CUSTOMERTableAdapter.Fill(DT.CUSTOMER, tsCustomerNo);
+                CustPos = 0;
+            }
+            if (DT.CUSTOMER.Rows.Count == 0)
+                return;
+
+            var loNumPay = invoicesTableAdapter.NumberOfPayments(DT.CUSTOMER.Rows[CustPos].Field<Int32>("CustomerID"));
+            lnNumPay = loNumPay != null ? (Int32)lnNumPay : 0;
+
+            Decimal lnLateCharge = 0,lnContractStatus = 0;
+            String lsPaidThrough = "";
+            Object loLateCharge = null,loLateFeeBalance = null,loPartialPayment = null,loPaidThrough = null,loContractStatus = null;
+
+            loLateCharge = invoicesTableAdapter.LastLateFee(DT.CUSTOMER.Rows[CustPos].Field<Int32>("CustomerID"));
+            lnLateCharge = loLateCharge != null ? (Decimal)loLateCharge:0;
+            loLateFeeBalance = invoicesTableAdapter.LateChargeBalance(DT.CUSTOMER.Rows[CustPos].Field<Int32>("CustomerID"));
+            lnLateFeeBalance = loLateFeeBalance != null ? (Decimal)loLateFeeBalance : 0;
+            loPartialPayment = invoicesTableAdapter.PartialPayment(DT.CUSTOMER.Rows[CustPos].Field<Int32>("CustomerID"));
+            lnPartialPayment = loPartialPayment != null ? (Decimal)loPartialPayment : 0;
+            loPaidThrough = invoicesTableAdapter.PaidThru(DT.CUSTOMER.Rows[CustPos].Field<Int32>("CustomerID"));
+            lsPaidThrough = loPaidThrough != null ? (String)loPaidThrough : "";
+            loContractStatus = invoicesTableAdapter.ContractStatus(DT.CUSTOMER.Rows[CustPos].Field<Int32>("CustomerID"), DateTime.Now.Date);
+            lnContractStatus = loContractStatus != null ? (Decimal)loContractStatus : 0;
+
+            DT.CUSTOMER.Rows[CustPos].SetField<Decimal>("PartialPayment", lnPartialPayment);
+            DT.CUSTOMER.Rows[CustPos].SetField<Decimal>("CUSTOMER_LATE_CHARGE", lnLateCharge);
+            DT.CUSTOMER.Rows[CustPos].SetField<Decimal>("CUSTOMER_LATE_CHARGE_BAL", lnLateFeeBalance);
+            DT.CUSTOMER.Rows[CustPos].SetField<Int32>("CUSTOMER_NO_OF_PAYMENTS_MADE", lnNumPay);
+            DT.CUSTOMER.Rows[CustPos].SetField<Int32>("CUSTOMER_PAY_REM_2", DT.CUSTOMER.Rows[CustPos].Field<Int32>("CUSTOMER_TERM") - lnNumPay);
+            DT.CUSTOMER.Rows[CustPos].SetField<String>("CUSTOMER_PAID_THRU", lsPaidThrough);               
+            DT.CUSTOMER.Rows[CustPos].SetField<Decimal>("CUSTOMER_CONTRACT_STATUS", lnContractStatus);
+
+            DT.CUSTOMER.Rows[CustPos].EndEdit();
+            // Moses Newman 12/22/2014 DO NOT Update Customer Record Unless Posting!
+            if (tbPayment && tnPaymentPos != -1)
+            {
+                lnSimpBal = Program.TVSimpleGetBuyout(DT, DT.PAYMENT.Rows[tnPaymentPos].Field<DateTime>("PAYMENT_DATE").Date,
+                                 (Double)DT.CUSTOMER.Rows[CustPos].Field<Int32>("CUSTOMER_TERM"),
+                                 (Double)(DT.CUSTOMER.Rows[CustPos].Field<Decimal>("CUSTOMER_ANNUAL_PERCENTAGE_RATE") / 100),
+                                 (Double)DT.CUSTOMER.Rows[CustPos].Field<Decimal>("CUSTOMER_REGULAR_AMOUNT"),
+                                 DT.CUSTOMER.Rows[CustPos].Field<String>("CUSTOMER_NO"),
+                                 // 04/30/2017 Handle BOTH Simple Interest and Normal Daily Compounding
+                                 // Moses Newman 04/02/2018 fixed Payment and PaymentPos parameters so TVSimpleGetBuyout knows to add payments!
+                                 DT.CUSTOMER.Rows[CustPos].Field<String>("CUSTOMER_AMORTIZE_IND") == "S" ? true : false, true, false, tbPayment, tnPaymentPos, true);
+            }
+            lnSimpleBalance = lnSimpBal;
+            TVAmortTableAdapter.FillByCustomerNo(DT.TVAmort, tsCustomerNo);
+
+            if (tbPost)
+            {
+                CUSTOMERTableAdapter.Update(DT.CUSTOMER.Rows[CustPos]);
+                if (UpdateLast)
+                    CUSTHISTTableAdapter.UpdateLastRecord(tsCustomerNo);
+            }
+            CUSTOMERTableAdapter.Dispose();
+            CUSTHISTTableAdapter.Dispose();
+            PAYMENTTableAdapter.Dispose();
+            TVAmortTableAdapter.Dispose();
+            invoicesTableAdapter.Dispose();
+        }
+
         public void ResetHistoryPaidThroughandLateChargeBalance(ref BackgroundWorker worker,string tsCustomerNo)
         {
             IACDataSet ResetDT = new IACDataSet();
@@ -1954,7 +2032,7 @@ namespace IAC2021SQL
                        // continue;
                     worker.ReportProgress((Int32)((Double)(((Double)itr + 1.0000) / (Double)dt.CUSTOMER.Rows.Count) * 100.0000));
                     // Moses Newman 12/22/2014 Must update CUSTOMER RECORD IN RECALC MODE!
-                   GetPartialPaymentandLateFeeBalance(ref worker, dt.CUSTOMER.Rows[itr].Field<String>("CUSTOMER_NO"), ref dt, itr, false, -1, true);
+                   NewGetPartialPaymentandLateFeeBalance(ref worker, dt.CUSTOMER.Rows[itr].Field<String>("CUSTOMER_NO"), ref dt, itr, false, -1, true);
                    ResetHistoryPaidThroughandLateChargeBalance(ref worker, dt.CUSTOMER.Rows[itr].Field<String>("CUSTOMER_NO"));
                 }
                 Program.gsProgMessage = "";

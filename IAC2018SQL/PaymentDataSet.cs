@@ -4,6 +4,30 @@
 
     partial class PaymentDataSet
     {
+        partial class OpenExtensionsDataTable
+        {
+        }
+
+        partial class PaymentInvoiceDataTable
+        {
+        }
+
+        partial class PaymentHistoryDataTable
+        {
+        }
+
+        partial class InvoicesDataTable
+        {
+        }
+
+        partial class CashPaymentSummaryDataTable
+        {
+        }
+
+        partial class ExtractFieldListDataTable
+        {
+        }
+
         partial class CustomerExtractDataTable
         {
         }
@@ -36,6 +60,38 @@
 
 namespace IAC2021SQL.PaymentDataSetTableAdapters
 {
+    partial class ClosedOverPaymentsTableAdapter
+    {
+    }
+
+    partial class OpenExtensionsTableAdapter
+    {
+    }
+
+    partial class PaymentInvoiceTableAdapter
+    {
+    }
+
+    partial class PaymentHistoryTableAdapter
+    {
+    }
+
+    partial class InvoicesTableAdapter
+    {
+    }
+
+    partial class CustomerExtractTableAdapter
+    {
+    }
+
+    partial class CashPaymentSummaryTableAdapter
+    {
+    }
+
+    partial class ExtractFieldListTableAdapter
+    {
+    }
+
     partial class PNSRejectsTableAdapter
     {
     }

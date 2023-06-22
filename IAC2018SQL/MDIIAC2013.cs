@@ -331,7 +331,8 @@ namespace IAC2021SQL
 
         private void paymentsToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            CreateFormInstance("formClosedPayment", false);
+            CreateFormInstance("XtraFormClosedPayments", false);
+            //CreateFormInstance("formClosedPayment", false);
         }
 
         private void paymentsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1644,11 +1645,6 @@ namespace IAC2021SQL
             CreateFormInstance("FormRepoReport", false);
         }
 
-        private void importTCIAppsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            CreateFormInstance("frmImportTCI", false);
-        }
-
         private void toolStripMenuItem6_Click(object sender, EventArgs e)
         {
             CreateFormInstance("FormBULKSMSMessage", false);
@@ -1772,6 +1768,11 @@ namespace IAC2021SQL
         private void PrintCoupons_Click(object sender, EventArgs e)
         {
             CreateFormInstance("PrintCoupons", false);
+        }
+
+        private void warrantiesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CreateFormInstance("XtraFormWarrantyCompanies", false);
         }
     }
 }

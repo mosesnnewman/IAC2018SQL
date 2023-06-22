@@ -127,7 +127,7 @@ namespace IAC2021SQL
                 lsProgress = "*** Working on customer number: " + UpdateiacDataSet.CUSTOMER.Rows[i].Field<String>("CUSTOMER_NO");
                 try
                 {
-                    CP.GetPartialPaymentandLateFeeBalance(ref worker, UpdateiacDataSet.CUSTOMER.Rows[i].Field<String>("CUSTOMER_NO"), ref UpdateiacDataSet, i, false, -1, true);
+                    CP.NewGetPartialPaymentandLateFeeBalance(ref worker, UpdateiacDataSet.CUSTOMER.Rows[i].Field<String>("CUSTOMER_NO"), ref UpdateiacDataSet, i, false, -1, true);
                 }
                 catch (Exception ex)
                 {
@@ -135,7 +135,6 @@ namespace IAC2021SQL
                 }
                 // Moses Newman 04/02/2018 Update Last CUSTHIST record!
                 CUSTHISTTableAdapter.UpdateLastRecord(UpdateiacDataSet.CUSTOMER.Rows[i].Field<String>("CUSTOMER_NO"));
-                //CP.ResetHistoryPaidThroughandLateChargeBalance(ref worker, UpdateiacDataSet.CUSTOMER.Rows[i].Field<String>("CUSTOMER_NO"));
                 lnProgress = (Int32)(Math.Round(((Double)i / (Double)lnTotalSteps), 2) * 100);
                 worker.ReportProgress(lnProgress);
             }

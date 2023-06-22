@@ -49,7 +49,7 @@ namespace IAC2021SQL
                   DT.CUSTOMER.Rows[i].Field<String>("CUSTOMER_NO"),
                     // 04/30/2017 Handle BOTH Simple Interest and Normal Daily Compounding
                   DT.CUSTOMER.Rows[i].Field<String>("CUSTOMER_AMORTIZE_IND") == "S" ? true : false, true, false, false, -1, true);
-                CP.GetPartialPaymentandLateFeeBalance(ref BW, DT.CUSTOMER.Rows[i].Field<String>("CUSTOMER_NO"), ref DT, i, false, -1, true, true);
+                CP.NewGetPartialPaymentandLateFeeBalance(ref BW, DT.CUSTOMER.Rows[i].Field<String>("CUSTOMER_NO"), ref DT, i, false, -1, true, true);
             }
             label1.Text = "*** DONE! ***";
             label1.Refresh();

@@ -33,7 +33,7 @@ using DevExpress.XtraBars;
 using DevExpress.XtraReports.UI;
 using DevExpress.DataAccess.Sql;
 using DevExpress.DataAccess.Sql.DataApi;
-
+using Microsoft.IdentityModel.Tokens;
 
 namespace IAC2021SQL
 {
@@ -42,7 +42,8 @@ namespace IAC2021SQL
         // Moses Newman 12/16/2020
         BindingSource PaymentBindingSource = new BindingSource();
         IACDataSetTableAdapters.PAYMENTTableAdapter PAYMENTTableAdapter = new IACDataSetTableAdapters.PAYMENTTableAdapter();
-
+        // Moses Newman 05/08/2023
+        IACDataSetTableAdapters.WarrantyCompanyTableAdapter WarrantyCompanyTableAdapter = new IACDataSetTableAdapters.WarrantyCompanyTableAdapter();
         // Moses Newman 08/2/2013 need to save orginal BALANCE so that maintenance DOES NOT ALTER IT!
         private Object loLastBalance = null;
         private Decimal gnCustomerBalance = 0, gnCustomerBuyout = 0,gnTotalFees = 0,gnRepoFees = 0,gnStorageFees = 0,gnImpoundFees = 0, gnResaleFees = 0,
@@ -111,6 +112,7 @@ namespace IAC2021SQL
             cTB.Location = this.cUSTHISTDataGridView.GetCellDisplayRectangle(4, row2.Index, true).Location;
             cTB.Size = this.cUSTHISTDataGridView.GetCellDisplayRectangle(4, row2.Index, true).Size;*/
             this.cUSTOMER_DEALERcomboBox.EditValueChanged += new System.EventHandler(this.cUSTOMER_DEALERcomboBox_EditValueChanged);
+            warrantyCompanyTableAdapter.FillByAll(iACDataSet.WarrantyCompany);
         }
 
         private void StartupConfiguration()
@@ -991,6 +993,11 @@ namespace IAC2021SQL
                 // Moses Newman 04/18/2019 Add Repo Log Tab
                 RepoLogTableAdapter.FillByCustomerNo(RepoData.RepoLog, cUSTOMER_NOTextBox.EditValue.ToString().Trim());
                 gridControlRepoLog.DataSource = RepoData.RepoLog;
+                // Moses Newman 05/08/2023 
+                WarrantyCompanyTableAdapter.FillByAll(iACDataSet.WarrantyCompany);
+                bindingSourceWarrantyCompany.Position = bindingSourceWarrantyCompany.Find("id", iACDataSet.VEHICLE.Rows[VehiclebindingSource.Position].Field<Int32>("WarrantyID"));
+                if (bindingSourceWarrantyCompany.Position == -1)
+                    bindingSourceWarrantyCompany.Position = 0; // First record id = 1 is NONE
                 // Moses Newman 04/07/2022 
                 cUSTOMER_DEALERcomboBox.EditValue = iACDataSet.CUSTOMER.Rows[0].Field<Int32>("CUSTOMER_DEALER");
                 // Moses Newman 08/02/2013 Save CUSTOMER_BALANCE so maintenance can NOT ALTER IT even though we display the current balance only posting routines may recalculate it and write the data.
@@ -3597,7 +3604,7 @@ namespace IAC2021SQL
             BackgroundWorker BW = new BackgroundWorker();
             ClosedPaymentPosting CP = new ClosedPaymentPosting();
 
-            CP.GetPartialPaymentandLateFeeBalance(ref BW, cUSTOMER_NOTextBox.EditValue.ToString().Trim(), ref PT, 0, false, -1, false, false);
+            CP.NewGetPartialPaymentandLateFeeBalance(ref BW, cUSTOMER_NOTextBox.EditValue.ToString().Trim(), ref PT, 0, false, -1, false, false);
 
             SqlConnection cnn;
             string connectionstring = null;
@@ -6000,6 +6007,17 @@ namespace IAC2021SQL
         {
             if (lbEdit || lbAddFlag)
                 toolStripButtonSave.Enabled = true;
+        }
+
+        private void hyperLinkEditWarrantyEmail_OpenLink(object sender, DevExpress.XtraEditors.Controls.OpenLinkEventArgs e)
+        {
+            if (e.EditValue.ToString().IsNullOrEmpty())
+                return;
+            const string mailPrefix = "mailto:";
+            if (!e.EditValue.ToString().ToLower().StartsWith(mailPrefix))
+            {
+                e.EditValue = mailPrefix + e.EditValue.ToString();
+            }
         }
 
         private void cUSTOMER_NOTextBox_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)

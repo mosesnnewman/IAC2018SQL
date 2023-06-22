@@ -1484,18 +1484,18 @@ ORDER BY MonthNumber</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="state" msprop:Generator_RowClassName="stateRow" msprop:Generator_RowEvHandlerName="stateRowChangeEventHandler" msprop:Generator_RowDeletedName="stateRowDeleted" msprop:Generator_RowDeletingName="stateRowDeleting" msprop:Generator_RowEvArgName="stateRowChangeEvent" msprop:Generator_TablePropName="state" msprop:Generator_RowChangedName="stateRowChanged" msprop:Generator_UserTableName="state" msprop:Generator_RowChangingName="stateRowChanging" msprop:Generator_TableClassName="stateDataTable" msprop:Generator_TableVarName="tablestate">
+        <xs:element name="state" msprop:Generator_RowEvHandlerName="stateRowChangeEventHandler" msprop:Generator_RowDeletedName="stateRowDeleted" msprop:Generator_RowDeletingName="stateRowDeleting" msprop:Generator_RowEvArgName="stateRowChangeEvent" msprop:Generator_TablePropName="state" msprop:Generator_RowChangedName="stateRowChanged" msprop:Generator_UserTableName="state" msprop:Generator_RowChangingName="stateRowChanging" msprop:Generator_RowClassName="stateRow" msprop:Generator_TableClassName="stateDataTable" msprop:Generator_TableVarName="tablestate">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="id" msprop:Generator_UserColumnName="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnVarNameInTable="columnid" type="xs:int" minOccurs="0" />
-              <xs:element name="name" msprop:Generator_UserColumnName="name" msprop:Generator_ColumnPropNameInTable="nameColumn" msprop:Generator_ColumnPropNameInRow="name" msprop:Generator_ColumnVarNameInTable="columnname" minOccurs="0">
+              <xs:element name="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_UserColumnName="id" msprop:Generator_ColumnVarNameInTable="columnid" type="xs:int" minOccurs="0" />
+              <xs:element name="name" msprop:Generator_ColumnPropNameInTable="nameColumn" msprop:Generator_ColumnPropNameInRow="name" msprop:Generator_UserColumnName="name" msprop:Generator_ColumnVarNameInTable="columnname" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="abbreviation" msprop:Generator_UserColumnName="abbreviation" msprop:Generator_ColumnPropNameInTable="abbreviationColumn" msprop:Generator_ColumnPropNameInRow="abbreviation" msprop:Generator_ColumnVarNameInTable="columnabbreviation" minOccurs="0">
+              <xs:element name="abbreviation" msprop:Generator_ColumnPropNameInTable="abbreviationColumn" msprop:Generator_ColumnPropNameInRow="abbreviation" msprop:Generator_UserColumnName="abbreviation" msprop:Generator_ColumnVarNameInTable="columnabbreviation" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />

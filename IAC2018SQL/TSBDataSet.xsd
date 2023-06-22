@@ -5,7 +5,6 @@
       <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
           <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="IAC2010SQLConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="IAC2010SQLConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.IAC2021SQL.Properties.Settings.GlobalReference.Default.IAC2010SQLConnectionString" Provider="System.Data.SqlClient" />
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="SSISParamsConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="SSISParamsConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.IAC2021SQL.Properties.Settings.GlobalReference.Default.SSISParamsConnectionString" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ClosedCreditManagerTableAdapter" GeneratorDataComponentClassName="ClosedCreditManagerTableAdapter" Name="ClosedCreditManager" UserDataComponentName="ClosedCreditManagerTableAdapter">
