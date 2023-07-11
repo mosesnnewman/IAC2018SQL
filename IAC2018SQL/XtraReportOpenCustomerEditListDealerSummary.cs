@@ -13,7 +13,7 @@ namespace IAC2021SQL
             InitializeComponent();
         }
 
-        private void TotalCustomerLoanAmount1_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        private void TotalCustomerLoanAmount1_BeforePrint(object sender, CancelEventArgs e)
         {
             decimal.TryParse(Convert.ToString(TotalCustomerLoanAmount1.Summary.GetResult()), out decimal totalLoanAmount);
             if (totalLoanAmount == 0)
@@ -22,7 +22,7 @@ namespace IAC2021SQL
             }
         }
 
-        private void TotalCustomerLoanInterest1_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        private void TotalCustomerLoanInterest1_BeforePrint(object sender, CancelEventArgs e)
         {
             decimal.TryParse(Convert.ToString(TotalCustomerLoanInterest1.Summary.GetResult()), out decimal totalLoanInterest);
             if (totalLoanInterest == 0)
@@ -31,7 +31,7 @@ namespace IAC2021SQL
             }
         }
 
-        private void TotalDealerDiscount1_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        private void TotalDealerDiscount1_BeforePrint(object sender, CancelEventArgs e)
         {
             decimal.TryParse(Convert.ToString(TotalDealerDiscount1.Summary.GetResult()), out decimal totalDealerDiscount);
             if (totalDealerDiscount == 0)
@@ -40,7 +40,7 @@ namespace IAC2021SQL
             }
         }
 
-        private void GrandTotalCustomerLoanAmount1_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        private void GrandTotalCustomerLoanAmount1_BeforePrint(object sender, CancelEventArgs e)
         {
             decimal.TryParse(Convert.ToString(GrandTotalCustomerLoanAmount1.Summary.GetResult()), out decimal totalGrandTotalLoanAmount);
             if (totalGrandTotalLoanAmount == 0)
@@ -49,7 +49,7 @@ namespace IAC2021SQL
             }
         }
 
-        private void GrandTotalCustomerLoanInterest1_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        private void GrandTotalCustomerLoanInterest1_BeforePrint(object sender, CancelEventArgs e)
         {
             decimal.TryParse(Convert.ToString(GrandTotalCustomerLoanInterest1.Summary.GetResult()), out decimal totalGrandTotalLoanInterest);
             if (totalGrandTotalLoanInterest == 0)
@@ -58,7 +58,7 @@ namespace IAC2021SQL
             }
         }
 
-        private void GrandTotalCustomerDealerDiscount1_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        private void GrandTotalCustomerDealerDiscount1_BeforePrint(object sender, CancelEventArgs e)
         {
             decimal.TryParse(Convert.ToString(GrandTotalCustomerDealerDiscount1.Summary.GetResult()), out decimal totalGrandTotalDealerDiscount);
             if (totalGrandTotalDealerDiscount == 0)

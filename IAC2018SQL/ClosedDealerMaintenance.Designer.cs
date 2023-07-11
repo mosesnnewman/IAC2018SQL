@@ -567,8 +567,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.iacDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dEALER_NAMETextBox.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DealerbindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDealerStartDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDealerStartDate.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerDealerStartDate.Properties.CalendarTimeProperties)).BeginInit();
             this.DealerAccountsGroupBox.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).BeginInit();
@@ -608,7 +608,7 @@
             // 
             label19.Location = new System.Drawing.Point(466, 26);
             label19.Name = "label19";
-            label19.Size = new System.Drawing.Size(71, 13);
+            label19.Size = new System.Drawing.Size(73, 13);
             label19.TabIndex = 179;
             label19.Text = "YEAR TO DATE";
             // 
@@ -624,7 +624,7 @@
             // 
             label16.Location = new System.Drawing.Point(425, 99);
             label16.Name = "label16";
-            label16.Size = new System.Drawing.Size(116, 13);
+            label16.Size = new System.Drawing.Size(118, 13);
             label16.TabIndex = 177;
             label16.Text = "OUTSTANDING LOANS:";
             // 
@@ -632,7 +632,7 @@
             // 
             label17.Location = new System.Drawing.Point(26, 99);
             label17.Name = "label17";
-            label17.Size = new System.Drawing.Size(116, 13);
+            label17.Size = new System.Drawing.Size(118, 13);
             label17.TabIndex = 175;
             label17.Text = "OUTSTANDING LOANS:";
             // 
@@ -640,7 +640,7 @@
             // 
             cUSTOMER_DOBLabel.Location = new System.Drawing.Point(278, 26);
             cUSTOMER_DOBLabel.Name = "cUSTOMER_DOBLabel";
-            cUSTOMER_DOBLabel.Size = new System.Drawing.Size(29, 13);
+            cUSTOMER_DOBLabel.Size = new System.Drawing.Size(30, 13);
             cUSTOMER_DOBLabel.TabIndex = 173;
             cUSTOMER_DOBLabel.Text = "DATE:";
             // 
@@ -648,7 +648,7 @@
             // 
             label9.Location = new System.Drawing.Point(423, 255);
             label9.Name = "label9";
-            label9.Size = new System.Drawing.Size(118, 13);
+            label9.Size = new System.Drawing.Size(121, 13);
             label9.TabIndex = 171;
             label9.Text = "INTEREST NON AMORT:";
             // 
@@ -656,7 +656,7 @@
             // 
             label10.Location = new System.Drawing.Point(451, 229);
             label10.Name = "label10";
-            label10.Size = new System.Drawing.Size(90, 13);
+            label10.Size = new System.Drawing.Size(93, 13);
             label10.TabIndex = 169;
             label10.Text = "INTEREST AMORT:";
             // 
@@ -672,7 +672,7 @@
             // 
             label12.Location = new System.Drawing.Point(459, 151);
             label12.Name = "label12";
-            label12.Size = new System.Drawing.Size(82, 13);
+            label12.Size = new System.Drawing.Size(81, 13);
             label12.TabIndex = 165;
             label12.Text = "RECOVERY BAD:";
             // 
@@ -680,7 +680,7 @@
             // 
             label13.Location = new System.Drawing.Point(500, 125);
             label13.Name = "label13";
-            label13.Size = new System.Drawing.Size(41, 13);
+            label13.Size = new System.Drawing.Size(42, 13);
             label13.TabIndex = 163;
             label13.Text = "ADJUST:";
             // 
@@ -688,7 +688,7 @@
             // 
             label14.Location = new System.Drawing.Point(423, 73);
             label14.Name = "label14";
-            label14.Size = new System.Drawing.Size(118, 13);
+            label14.Size = new System.Drawing.Size(120, 13);
             label14.TabIndex = 161;
             label14.Text = "CONTINGENT RESERVE:";
             // 
@@ -703,7 +703,7 @@
             // 
             label8.Location = new System.Drawing.Point(24, 255);
             label8.Name = "label8";
-            label8.Size = new System.Drawing.Size(118, 13);
+            label8.Size = new System.Drawing.Size(121, 13);
             label8.TabIndex = 157;
             label8.Text = "INTEREST NON AMORT:";
             // 
@@ -711,7 +711,7 @@
             // 
             label7.Location = new System.Drawing.Point(52, 229);
             label7.Name = "label7";
-            label7.Size = new System.Drawing.Size(90, 13);
+            label7.Size = new System.Drawing.Size(93, 13);
             label7.TabIndex = 155;
             label7.Text = "INTEREST AMORT:";
             // 
@@ -727,7 +727,7 @@
             // 
             label5.Location = new System.Drawing.Point(60, 151);
             label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(82, 13);
+            label5.Size = new System.Drawing.Size(81, 13);
             label5.TabIndex = 151;
             label5.Text = "RECOVERY BAD:";
             // 
@@ -735,7 +735,7 @@
             // 
             label4.Location = new System.Drawing.Point(101, 125);
             label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(41, 13);
+            label4.Size = new System.Drawing.Size(42, 13);
             label4.TabIndex = 149;
             label4.Text = "ADJUST:";
             // 
@@ -743,7 +743,7 @@
             // 
             label3.Location = new System.Drawing.Point(24, 73);
             label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(118, 13);
+            label3.Size = new System.Drawing.Size(120, 13);
             label3.TabIndex = 147;
             label3.Text = "CONTINGENT RESERVE:";
             // 
@@ -759,7 +759,7 @@
             // 
             cUSTOMER_ACT_STATLabel.Location = new System.Drawing.Point(395, 25);
             cUSTOMER_ACT_STATLabel.Name = "cUSTOMER_ACT_STATLabel";
-            cUSTOMER_ACT_STATLabel.Size = new System.Drawing.Size(40, 13);
+            cUSTOMER_ACT_STATLabel.Size = new System.Drawing.Size(42, 13);
             cUSTOMER_ACT_STATLabel.TabIndex = 141;
             cUSTOMER_ACT_STATLabel.Text = "STATUS:";
             // 
@@ -775,7 +775,7 @@
             // 
             label67.Location = new System.Drawing.Point(38, 128);
             label67.Name = "label67";
-            label67.Size = new System.Drawing.Size(32, 13);
+            label67.Size = new System.Drawing.Size(34, 13);
             label67.TabIndex = 139;
             label67.Text = "STATE:";
             // 
@@ -783,7 +783,7 @@
             // 
             label68.Location = new System.Drawing.Point(47, 103);
             label68.Name = "label68";
-            label68.Size = new System.Drawing.Size(23, 13);
+            label68.Size = new System.Drawing.Size(24, 13);
             label68.TabIndex = 138;
             label68.Text = "CITY:";
             // 
@@ -799,7 +799,7 @@
             // 
             label73.Location = new System.Drawing.Point(411, 77);
             label73.Name = "label73";
-            label73.Size = new System.Drawing.Size(24, 13);
+            label73.Size = new System.Drawing.Size(23, 13);
             label73.TabIndex = 131;
             label73.Text = "BUS:";
             // 
@@ -843,7 +843,7 @@
             // 
             label20.Location = new System.Drawing.Point(466, 27);
             label20.Name = "label20";
-            label20.Size = new System.Drawing.Size(71, 13);
+            label20.Size = new System.Drawing.Size(73, 13);
             label20.TabIndex = 179;
             label20.Text = "YEAR TO DATE";
             // 
@@ -859,7 +859,7 @@
             // 
             label23.Location = new System.Drawing.Point(424, 95);
             label23.Name = "label23";
-            label23.Size = new System.Drawing.Size(116, 13);
+            label23.Size = new System.Drawing.Size(118, 13);
             label23.TabIndex = 177;
             label23.Text = "OUTSTANDING LOANS:";
             // 
@@ -867,7 +867,7 @@
             // 
             label24.Location = new System.Drawing.Point(26, 95);
             label24.Name = "label24";
-            label24.Size = new System.Drawing.Size(116, 13);
+            label24.Size = new System.Drawing.Size(118, 13);
             label24.TabIndex = 175;
             label24.Text = "OUTSTANDING LOANS:";
             // 
@@ -875,7 +875,7 @@
             // 
             label25.Location = new System.Drawing.Point(278, 27);
             label25.Name = "label25";
-            label25.Size = new System.Drawing.Size(29, 13);
+            label25.Size = new System.Drawing.Size(30, 13);
             label25.TabIndex = 173;
             label25.Text = "DATE:";
             // 
@@ -883,7 +883,7 @@
             // 
             label26.Location = new System.Drawing.Point(450, 195);
             label26.Name = "label26";
-            label26.Size = new System.Drawing.Size(90, 13);
+            label26.Size = new System.Drawing.Size(93, 13);
             label26.TabIndex = 171;
             label26.Text = "AMORT INTEREST:";
             // 
@@ -891,7 +891,7 @@
             // 
             label27.Location = new System.Drawing.Point(452, 175);
             label27.Name = "label27";
-            label27.Size = new System.Drawing.Size(88, 13);
+            label27.Size = new System.Drawing.Size(90, 13);
             label27.TabIndex = 169;
             label27.Text = "SIMPLE INTEREST:";
             // 
@@ -907,7 +907,7 @@
             // 
             label29.Location = new System.Drawing.Point(423, 135);
             label29.Name = "label29";
-            label29.Size = new System.Drawing.Size(117, 13);
+            label29.Size = new System.Drawing.Size(116, 13);
             label29.TabIndex = 165;
             label29.Text = "RECOVERY BAD DEBTS:";
             // 
@@ -915,7 +915,7 @@
             // 
             label30.Location = new System.Drawing.Point(499, 115);
             label30.Name = "label30";
-            label30.Size = new System.Drawing.Size(41, 13);
+            label30.Size = new System.Drawing.Size(42, 13);
             label30.TabIndex = 163;
             label30.Text = "ADJUST:";
             // 
@@ -923,7 +923,7 @@
             // 
             label31.Location = new System.Drawing.Point(422, 75);
             label31.Name = "label31";
-            label31.Size = new System.Drawing.Size(118, 13);
+            label31.Size = new System.Drawing.Size(120, 13);
             label31.TabIndex = 161;
             label31.Text = "CONTINGENT RESERVE:";
             // 
@@ -939,7 +939,7 @@
             // 
             label33.Location = new System.Drawing.Point(52, 195);
             label33.Name = "label33";
-            label33.Size = new System.Drawing.Size(90, 13);
+            label33.Size = new System.Drawing.Size(93, 13);
             label33.TabIndex = 157;
             label33.Text = "AMORT INTEREST:";
             // 
@@ -947,7 +947,7 @@
             // 
             label34.Location = new System.Drawing.Point(54, 175);
             label34.Name = "label34";
-            label34.Size = new System.Drawing.Size(88, 13);
+            label34.Size = new System.Drawing.Size(90, 13);
             label34.TabIndex = 155;
             label34.Text = "SIMPLE INTEREST:";
             // 
@@ -963,7 +963,7 @@
             // 
             label36.Location = new System.Drawing.Point(25, 135);
             label36.Name = "label36";
-            label36.Size = new System.Drawing.Size(117, 13);
+            label36.Size = new System.Drawing.Size(116, 13);
             label36.TabIndex = 151;
             label36.Text = "RECOVERY BAD DEBTS:";
             // 
@@ -971,7 +971,7 @@
             // 
             label37.Location = new System.Drawing.Point(101, 115);
             label37.Name = "label37";
-            label37.Size = new System.Drawing.Size(41, 13);
+            label37.Size = new System.Drawing.Size(42, 13);
             label37.TabIndex = 149;
             label37.Text = "ADJUST:";
             // 
@@ -979,7 +979,7 @@
             // 
             label38.Location = new System.Drawing.Point(24, 75);
             label38.Name = "label38";
-            label38.Size = new System.Drawing.Size(118, 13);
+            label38.Size = new System.Drawing.Size(120, 13);
             label38.TabIndex = 147;
             label38.Text = "CONTINGENT RESERVE:";
             // 
@@ -1003,7 +1003,7 @@
             // 
             label64.Location = new System.Drawing.Point(323, 19);
             label64.Name = "label64";
-            label64.Size = new System.Drawing.Size(58, 13);
+            label64.Size = new System.Drawing.Size(60, 13);
             label64.TabIndex = 173;
             label64.Text = "POST DATE:";
             // 
@@ -1019,7 +1019,7 @@
             // 
             label63.Location = new System.Drawing.Point(529, 71);
             label63.Name = "label63";
-            label63.Size = new System.Drawing.Size(46, 13);
+            label63.Size = new System.Drawing.Size(47, 13);
             label63.TabIndex = 207;
             label63.Text = "OLD YTD:";
             // 
@@ -1027,7 +1027,7 @@
             // 
             label70.Location = new System.Drawing.Point(513, 51);
             label70.Name = "label70";
-            label70.Size = new System.Drawing.Size(62, 13);
+            label70.Size = new System.Drawing.Size(64, 13);
             label70.TabIndex = 206;
             label70.Text = "AMORT YTD:";
             // 
@@ -1035,7 +1035,7 @@
             // 
             label71.Location = new System.Drawing.Point(101, 71);
             label71.Name = "label71";
-            label71.Size = new System.Drawing.Size(76, 13);
+            label71.Size = new System.Drawing.Size(77, 13);
             label71.TabIndex = 205;
             label71.Text = "OLD CURRENT:";
             // 
@@ -1043,7 +1043,7 @@
             // 
             label74.Location = new System.Drawing.Point(85, 51);
             label74.Name = "label74";
-            label74.Size = new System.Drawing.Size(92, 13);
+            label74.Size = new System.Drawing.Size(94, 13);
             label74.TabIndex = 204;
             label74.Text = "AMORT CURRENT:";
             // 
@@ -1051,7 +1051,7 @@
             // 
             label65.Location = new System.Drawing.Point(529, 71);
             label65.Name = "label65";
-            label65.Size = new System.Drawing.Size(46, 13);
+            label65.Size = new System.Drawing.Size(47, 13);
             label65.TabIndex = 197;
             label65.Text = "OLD YTD:";
             // 
@@ -1059,7 +1059,7 @@
             // 
             label69.Location = new System.Drawing.Point(513, 51);
             label69.Name = "label69";
-            label69.Size = new System.Drawing.Size(62, 13);
+            label69.Size = new System.Drawing.Size(64, 13);
             label69.TabIndex = 196;
             label69.Text = "AMORT YTD:";
             // 
@@ -1067,7 +1067,7 @@
             // 
             label77.Location = new System.Drawing.Point(101, 71);
             label77.Name = "label77";
-            label77.Size = new System.Drawing.Size(76, 13);
+            label77.Size = new System.Drawing.Size(77, 13);
             label77.TabIndex = 195;
             label77.Text = "OLD CURRENT:";
             // 
@@ -1075,7 +1075,7 @@
             // 
             label78.Location = new System.Drawing.Point(85, 51);
             label78.Name = "label78";
-            label78.Size = new System.Drawing.Size(92, 13);
+            label78.Size = new System.Drawing.Size(94, 13);
             label78.TabIndex = 194;
             label78.Text = "AMORT CURRENT:";
             // 
@@ -1091,7 +1091,7 @@
             // 
             label83.Location = new System.Drawing.Point(323, 19);
             label83.Name = "label83";
-            label83.Size = new System.Drawing.Size(58, 13);
+            label83.Size = new System.Drawing.Size(60, 13);
             label83.TabIndex = 173;
             label83.Text = "POST DATE:";
             // 
@@ -1107,7 +1107,7 @@
             // 
             label86.Location = new System.Drawing.Point(453, 203);
             label86.Name = "label86";
-            label86.Size = new System.Drawing.Size(88, 13);
+            label86.Size = new System.Drawing.Size(90, 13);
             label86.TabIndex = 184;
             label86.Text = "INTEREST SIMPLE:";
             // 
@@ -1115,7 +1115,7 @@
             // 
             label87.Location = new System.Drawing.Point(54, 203);
             label87.Name = "label87";
-            label87.Size = new System.Drawing.Size(88, 13);
+            label87.Size = new System.Drawing.Size(90, 13);
             label87.TabIndex = 183;
             label87.Text = "INTEREST SIMPLE:";
             // 
@@ -1123,7 +1123,7 @@
             // 
             label88.Location = new System.Drawing.Point(515, 31);
             label88.Name = "label88";
-            label88.Size = new System.Drawing.Size(60, 13);
+            label88.Size = new System.Drawing.Size(61, 13);
             label88.TabIndex = 201;
             label88.Text = "SIMPLE YTD:";
             // 
@@ -1131,7 +1131,7 @@
             // 
             label89.Location = new System.Drawing.Point(87, 31);
             label89.Name = "label89";
-            label89.Size = new System.Drawing.Size(90, 13);
+            label89.Size = new System.Drawing.Size(91, 13);
             label89.TabIndex = 200;
             label89.Text = "SIMPLE CURRENT:";
             // 
@@ -1139,7 +1139,7 @@
             // 
             label90.Location = new System.Drawing.Point(515, 31);
             label90.Name = "label90";
-            label90.Size = new System.Drawing.Size(60, 13);
+            label90.Size = new System.Drawing.Size(61, 13);
             label90.TabIndex = 211;
             label90.Text = "SIMPLE YTD:";
             // 
@@ -1147,7 +1147,7 @@
             // 
             label91.Location = new System.Drawing.Point(87, 31);
             label91.Name = "label91";
-            label91.Size = new System.Drawing.Size(90, 13);
+            label91.Size = new System.Drawing.Size(91, 13);
             label91.TabIndex = 210;
             label91.Text = "SIMPLE CURRENT:";
             // 
@@ -1155,7 +1155,7 @@
             // 
             label60.Location = new System.Drawing.Point(519, 31);
             label60.Name = "label60";
-            label60.Size = new System.Drawing.Size(60, 13);
+            label60.Size = new System.Drawing.Size(61, 13);
             label60.TabIndex = 211;
             label60.Text = "SIMPLE YTD:";
             // 
@@ -1163,7 +1163,7 @@
             // 
             label61.Location = new System.Drawing.Point(91, 31);
             label61.Name = "label61";
-            label61.Size = new System.Drawing.Size(90, 13);
+            label61.Size = new System.Drawing.Size(91, 13);
             label61.TabIndex = 210;
             label61.Text = "SIMPLE CURRENT:";
             // 
@@ -1171,7 +1171,7 @@
             // 
             label62.Location = new System.Drawing.Point(533, 71);
             label62.Name = "label62";
-            label62.Size = new System.Drawing.Size(46, 13);
+            label62.Size = new System.Drawing.Size(47, 13);
             label62.TabIndex = 207;
             label62.Text = "OLD YTD:";
             // 
@@ -1179,7 +1179,7 @@
             // 
             label75.Location = new System.Drawing.Point(517, 51);
             label75.Name = "label75";
-            label75.Size = new System.Drawing.Size(62, 13);
+            label75.Size = new System.Drawing.Size(64, 13);
             label75.TabIndex = 206;
             label75.Text = "AMORT YTD:";
             // 
@@ -1187,7 +1187,7 @@
             // 
             label76.Location = new System.Drawing.Point(105, 71);
             label76.Name = "label76";
-            label76.Size = new System.Drawing.Size(76, 13);
+            label76.Size = new System.Drawing.Size(77, 13);
             label76.TabIndex = 205;
             label76.Text = "OLD CURRENT:";
             // 
@@ -1195,7 +1195,7 @@
             // 
             label79.Location = new System.Drawing.Point(89, 51);
             label79.Name = "label79";
-            label79.Size = new System.Drawing.Size(92, 13);
+            label79.Size = new System.Drawing.Size(94, 13);
             label79.TabIndex = 204;
             label79.Text = "AMORT CURRENT:";
             // 
@@ -1203,7 +1203,7 @@
             // 
             label80.Location = new System.Drawing.Point(519, 31);
             label80.Name = "label80";
-            label80.Size = new System.Drawing.Size(60, 13);
+            label80.Size = new System.Drawing.Size(61, 13);
             label80.TabIndex = 201;
             label80.Text = "SIMPLE YTD:";
             // 
@@ -1211,7 +1211,7 @@
             // 
             label81.Location = new System.Drawing.Point(91, 31);
             label81.Name = "label81";
-            label81.Size = new System.Drawing.Size(90, 13);
+            label81.Size = new System.Drawing.Size(91, 13);
             label81.TabIndex = 200;
             label81.Text = "SIMPLE CURRENT:";
             // 
@@ -1219,7 +1219,7 @@
             // 
             label92.Location = new System.Drawing.Point(533, 71);
             label92.Name = "label92";
-            label92.Size = new System.Drawing.Size(46, 13);
+            label92.Size = new System.Drawing.Size(47, 13);
             label92.TabIndex = 197;
             label92.Text = "OLD YTD:";
             // 
@@ -1227,7 +1227,7 @@
             // 
             label93.Location = new System.Drawing.Point(517, 51);
             label93.Name = "label93";
-            label93.Size = new System.Drawing.Size(62, 13);
+            label93.Size = new System.Drawing.Size(64, 13);
             label93.TabIndex = 196;
             label93.Text = "AMORT YTD:";
             // 
@@ -1235,7 +1235,7 @@
             // 
             label94.Location = new System.Drawing.Point(105, 71);
             label94.Name = "label94";
-            label94.Size = new System.Drawing.Size(76, 13);
+            label94.Size = new System.Drawing.Size(77, 13);
             label94.TabIndex = 195;
             label94.Text = "OLD CURRENT:";
             // 
@@ -1243,7 +1243,7 @@
             // 
             label95.Location = new System.Drawing.Point(89, 51);
             label95.Name = "label95";
-            label95.Size = new System.Drawing.Size(92, 13);
+            label95.Size = new System.Drawing.Size(94, 13);
             label95.TabIndex = 194;
             label95.Text = "AMORT CURRENT:";
             // 
@@ -1251,7 +1251,7 @@
             // 
             label96.Location = new System.Drawing.Point(466, 215);
             label96.Name = "label96";
-            label96.Size = new System.Drawing.Size(74, 13);
+            label96.Size = new System.Drawing.Size(76, 13);
             label96.TabIndex = 184;
             label96.Text = "OLD INTEREST:";
             // 
@@ -1259,7 +1259,7 @@
             // 
             label97.Location = new System.Drawing.Point(68, 215);
             label97.Name = "label97";
-            label97.Size = new System.Drawing.Size(74, 13);
+            label97.Size = new System.Drawing.Size(76, 13);
             label97.TabIndex = 183;
             label97.Text = "OLD INTEREST:";
             // 
@@ -1267,7 +1267,7 @@
             // 
             label40.Location = new System.Drawing.Point(466, 215);
             label40.Name = "label40";
-            label40.Size = new System.Drawing.Size(74, 13);
+            label40.Size = new System.Drawing.Size(76, 13);
             label40.TabIndex = 184;
             label40.Text = "OLD INTEREST:";
             // 
@@ -1275,7 +1275,7 @@
             // 
             label41.Location = new System.Drawing.Point(68, 215);
             label41.Name = "label41";
-            label41.Size = new System.Drawing.Size(74, 13);
+            label41.Size = new System.Drawing.Size(76, 13);
             label41.TabIndex = 183;
             label41.Text = "OLD INTEREST:";
             // 
@@ -1283,7 +1283,7 @@
             // 
             label42.Location = new System.Drawing.Point(466, 27);
             label42.Name = "label42";
-            label42.Size = new System.Drawing.Size(71, 13);
+            label42.Size = new System.Drawing.Size(73, 13);
             label42.TabIndex = 179;
             label42.Text = "YEAR TO DATE";
             // 
@@ -1299,7 +1299,7 @@
             // 
             label44.Location = new System.Drawing.Point(424, 95);
             label44.Name = "label44";
-            label44.Size = new System.Drawing.Size(116, 13);
+            label44.Size = new System.Drawing.Size(118, 13);
             label44.TabIndex = 177;
             label44.Text = "OUTSTANDING LOANS:";
             // 
@@ -1307,7 +1307,7 @@
             // 
             label45.Location = new System.Drawing.Point(26, 95);
             label45.Name = "label45";
-            label45.Size = new System.Drawing.Size(116, 13);
+            label45.Size = new System.Drawing.Size(118, 13);
             label45.TabIndex = 175;
             label45.Text = "OUTSTANDING LOANS:";
             // 
@@ -1315,7 +1315,7 @@
             // 
             label46.Location = new System.Drawing.Point(278, 27);
             label46.Name = "label46";
-            label46.Size = new System.Drawing.Size(29, 13);
+            label46.Size = new System.Drawing.Size(30, 13);
             label46.TabIndex = 173;
             label46.Text = "DATE:";
             // 
@@ -1323,7 +1323,7 @@
             // 
             label47.Location = new System.Drawing.Point(450, 195);
             label47.Name = "label47";
-            label47.Size = new System.Drawing.Size(90, 13);
+            label47.Size = new System.Drawing.Size(93, 13);
             label47.TabIndex = 171;
             label47.Text = "AMORT INTEREST:";
             // 
@@ -1331,7 +1331,7 @@
             // 
             label48.Location = new System.Drawing.Point(452, 175);
             label48.Name = "label48";
-            label48.Size = new System.Drawing.Size(88, 13);
+            label48.Size = new System.Drawing.Size(90, 13);
             label48.TabIndex = 169;
             label48.Text = "SIMPLE INTEREST:";
             // 
@@ -1347,7 +1347,7 @@
             // 
             label50.Location = new System.Drawing.Point(423, 135);
             label50.Name = "label50";
-            label50.Size = new System.Drawing.Size(117, 13);
+            label50.Size = new System.Drawing.Size(116, 13);
             label50.TabIndex = 165;
             label50.Text = "RECOVERY BAD DEBTS:";
             // 
@@ -1355,7 +1355,7 @@
             // 
             label51.Location = new System.Drawing.Point(499, 115);
             label51.Name = "label51";
-            label51.Size = new System.Drawing.Size(41, 13);
+            label51.Size = new System.Drawing.Size(42, 13);
             label51.TabIndex = 163;
             label51.Text = "ADJUST:";
             // 
@@ -1363,7 +1363,7 @@
             // 
             label52.Location = new System.Drawing.Point(422, 75);
             label52.Name = "label52";
-            label52.Size = new System.Drawing.Size(118, 13);
+            label52.Size = new System.Drawing.Size(120, 13);
             label52.TabIndex = 161;
             label52.Text = "CONTINGENT RESERVE:";
             // 
@@ -1379,7 +1379,7 @@
             // 
             label54.Location = new System.Drawing.Point(52, 195);
             label54.Name = "label54";
-            label54.Size = new System.Drawing.Size(90, 13);
+            label54.Size = new System.Drawing.Size(93, 13);
             label54.TabIndex = 157;
             label54.Text = "AMORT INTEREST:";
             // 
@@ -1387,7 +1387,7 @@
             // 
             label55.Location = new System.Drawing.Point(54, 175);
             label55.Name = "label55";
-            label55.Size = new System.Drawing.Size(88, 13);
+            label55.Size = new System.Drawing.Size(90, 13);
             label55.TabIndex = 155;
             label55.Text = "SIMPLE INTEREST:";
             // 
@@ -1403,7 +1403,7 @@
             // 
             label57.Location = new System.Drawing.Point(25, 135);
             label57.Name = "label57";
-            label57.Size = new System.Drawing.Size(117, 13);
+            label57.Size = new System.Drawing.Size(116, 13);
             label57.TabIndex = 151;
             label57.Text = "RECOVERY BAD DEBTS:";
             // 
@@ -1411,7 +1411,7 @@
             // 
             label58.Location = new System.Drawing.Point(101, 115);
             label58.Name = "label58";
-            label58.Size = new System.Drawing.Size(41, 13);
+            label58.Size = new System.Drawing.Size(42, 13);
             label58.TabIndex = 149;
             label58.Text = "ADJUST:";
             // 
@@ -1419,7 +1419,7 @@
             // 
             label98.Location = new System.Drawing.Point(24, 75);
             label98.Name = "label98";
-            label98.Size = new System.Drawing.Size(118, 13);
+            label98.Size = new System.Drawing.Size(120, 13);
             label98.TabIndex = 147;
             label98.Text = "CONTINGENT RESERVE:";
             // 
@@ -1437,7 +1437,7 @@
             labelDealerStartDate.Appearance.Options.UseBackColor = true;
             labelDealerStartDate.Location = new System.Drawing.Point(373, 51);
             labelDealerStartDate.Name = "labelDealerStartDate";
-            labelDealerStartDate.Size = new System.Drawing.Size(62, 13);
+            labelDealerStartDate.Size = new System.Drawing.Size(65, 13);
             labelDealerStartDate.TabIndex = 143;
             labelDealerStartDate.Text = "START DATE:";
             // 
@@ -1464,7 +1464,7 @@
             label100.AutoSize = true;
             label100.Location = new System.Drawing.Point(462, 215);
             label100.Name = "label100";
-            label100.Size = new System.Drawing.Size(81, 13);
+            label100.Size = new System.Drawing.Size(83, 13);
             label100.TabIndex = 184;
             label100.Text = "OLD INTEREST:";
             // 
@@ -1473,7 +1473,7 @@
             label101.AutoSize = true;
             label101.Location = new System.Drawing.Point(64, 215);
             label101.Name = "label101";
-            label101.Size = new System.Drawing.Size(81, 13);
+            label101.Size = new System.Drawing.Size(83, 13);
             label101.TabIndex = 183;
             label101.Text = "OLD INTEREST:";
             // 
@@ -1482,7 +1482,7 @@
             label102.AutoSize = true;
             label102.Location = new System.Drawing.Point(466, 27);
             label102.Name = "label102";
-            label102.Size = new System.Drawing.Size(76, 13);
+            label102.Size = new System.Drawing.Size(78, 13);
             label102.TabIndex = 179;
             label102.Text = "YEAR TO DATE";
             // 
@@ -1491,7 +1491,7 @@
             label103.AutoSize = true;
             label103.Location = new System.Drawing.Point(100, 27);
             label103.Name = "label103";
-            label103.Size = new System.Drawing.Size(55, 13);
+            label103.Size = new System.Drawing.Size(56, 13);
             label103.TabIndex = 178;
             label103.Text = "CURRENT";
             // 
@@ -1500,7 +1500,7 @@
             label104.AutoSize = true;
             label104.Location = new System.Drawing.Point(423, 95);
             label104.Name = "label104";
-            label104.Size = new System.Drawing.Size(122, 13);
+            label104.Size = new System.Drawing.Size(124, 13);
             label104.TabIndex = 177;
             label104.Text = "OUTSTANDING LOANS:";
             // 
@@ -1509,7 +1509,7 @@
             label105.AutoSize = true;
             label105.Location = new System.Drawing.Point(25, 95);
             label105.Name = "label105";
-            label105.Size = new System.Drawing.Size(122, 13);
+            label105.Size = new System.Drawing.Size(124, 13);
             label105.TabIndex = 175;
             label105.Text = "OUTSTANDING LOANS:";
             // 
@@ -1518,7 +1518,7 @@
             label106.AutoSize = true;
             label106.Location = new System.Drawing.Point(278, 27);
             label106.Name = "label106";
-            label106.Size = new System.Drawing.Size(35, 13);
+            label106.Size = new System.Drawing.Size(36, 13);
             label106.TabIndex = 173;
             label106.Text = "DATE:";
             // 
@@ -1527,7 +1527,7 @@
             label107.AutoSize = true;
             label107.Location = new System.Drawing.Point(445, 195);
             label107.Name = "label107";
-            label107.Size = new System.Drawing.Size(97, 13);
+            label107.Size = new System.Drawing.Size(100, 13);
             label107.TabIndex = 171;
             label107.Text = "AMORT INTEREST:";
             // 
@@ -1536,7 +1536,7 @@
             label108.AutoSize = true;
             label108.Location = new System.Drawing.Point(445, 175);
             label108.Name = "label108";
-            label108.Size = new System.Drawing.Size(95, 13);
+            label108.Size = new System.Drawing.Size(97, 13);
             label108.TabIndex = 169;
             label108.Text = "SIMPLE INTEREST:";
             // 
@@ -1554,7 +1554,7 @@
             label110.AutoSize = true;
             label110.Location = new System.Drawing.Point(418, 135);
             label110.Name = "label110";
-            label110.Size = new System.Drawing.Size(124, 13);
+            label110.Size = new System.Drawing.Size(123, 13);
             label110.TabIndex = 165;
             label110.Text = "RECOVERY BAD DEBTS:";
             // 
@@ -1563,7 +1563,7 @@
             label111.AutoSize = true;
             label111.Location = new System.Drawing.Point(499, 115);
             label111.Name = "label111";
-            label111.Size = new System.Drawing.Size(48, 13);
+            label111.Size = new System.Drawing.Size(49, 13);
             label111.TabIndex = 163;
             label111.Text = "ADJUST:";
             // 
@@ -1572,7 +1572,7 @@
             label112.AutoSize = true;
             label112.Location = new System.Drawing.Point(416, 75);
             label112.Name = "label112";
-            label112.Size = new System.Drawing.Size(125, 13);
+            label112.Size = new System.Drawing.Size(127, 13);
             label112.TabIndex = 161;
             label112.Text = "CONTINGENT RESERVE:";
             // 
@@ -1590,7 +1590,7 @@
             label114.AutoSize = true;
             label114.Location = new System.Drawing.Point(47, 195);
             label114.Name = "label114";
-            label114.Size = new System.Drawing.Size(97, 13);
+            label114.Size = new System.Drawing.Size(100, 13);
             label114.TabIndex = 157;
             label114.Text = "AMORT INTEREST:";
             // 
@@ -1599,7 +1599,7 @@
             label115.AutoSize = true;
             label115.Location = new System.Drawing.Point(47, 175);
             label115.Name = "label115";
-            label115.Size = new System.Drawing.Size(95, 13);
+            label115.Size = new System.Drawing.Size(97, 13);
             label115.TabIndex = 155;
             label115.Text = "SIMPLE INTEREST:";
             // 
@@ -1617,7 +1617,7 @@
             label117.AutoSize = true;
             label117.Location = new System.Drawing.Point(20, 135);
             label117.Name = "label117";
-            label117.Size = new System.Drawing.Size(124, 13);
+            label117.Size = new System.Drawing.Size(123, 13);
             label117.TabIndex = 151;
             label117.Text = "RECOVERY BAD DEBTS:";
             // 
@@ -1626,7 +1626,7 @@
             label118.AutoSize = true;
             label118.Location = new System.Drawing.Point(101, 115);
             label118.Name = "label118";
-            label118.Size = new System.Drawing.Size(48, 13);
+            label118.Size = new System.Drawing.Size(49, 13);
             label118.TabIndex = 149;
             label118.Text = "ADJUST:";
             // 
@@ -1635,7 +1635,7 @@
             label119.AutoSize = true;
             label119.Location = new System.Drawing.Point(18, 75);
             label119.Name = "label119";
-            label119.Size = new System.Drawing.Size(125, 13);
+            label119.Size = new System.Drawing.Size(127, 13);
             label119.TabIndex = 147;
             label119.Text = "CONTINGENT RESERVE:";
             // 

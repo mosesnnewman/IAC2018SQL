@@ -78,7 +78,7 @@
             this.COMMENTDATE1.CanGrow = false;
             this.COMMENTDATE1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[COMMENT_DATE]")});
-            this.COMMENTDATE1.Font = new System.Drawing.Font("Arial", 10F);
+            this.COMMENTDATE1.Font = new DevExpress.Drawing.DXFont("Arial", 10F);
             this.COMMENTDATE1.ForeColor = System.Drawing.Color.Black;
             this.COMMENTDATE1.LocationFloat = new DevExpress.Utils.PointFloat(4.166667F, 0F);
             this.COMMENTDATE1.Name = "COMMENTDATE1";
@@ -96,7 +96,7 @@
             this.COMMENTSEQNO1.CanGrow = false;
             this.COMMENTSEQNO1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[COMMENT_SEQ_NO]")});
-            this.COMMENTSEQNO1.Font = new System.Drawing.Font("Arial", 10F);
+            this.COMMENTSEQNO1.Font = new DevExpress.Drawing.DXFont("Arial", 10F);
             this.COMMENTSEQNO1.ForeColor = System.Drawing.Color.Black;
             this.COMMENTSEQNO1.LocationFloat = new DevExpress.Utils.PointFloat(88.54166F, 0F);
             this.COMMENTSEQNO1.Name = "COMMENTSEQNO1";
@@ -114,7 +114,7 @@
             this.COMMENTUSERID1.CanGrow = false;
             this.COMMENTUSERID1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[COMMENT_USERID]")});
-            this.COMMENTUSERID1.Font = new System.Drawing.Font("Arial", 10F);
+            this.COMMENTUSERID1.Font = new DevExpress.Drawing.DXFont("Arial", 10F);
             this.COMMENTUSERID1.ForeColor = System.Drawing.Color.Black;
             this.COMMENTUSERID1.LocationFloat = new DevExpress.Utils.PointFloat(135.4167F, 0F);
             this.COMMENTUSERID1.Name = "COMMENTUSERID1";
@@ -130,7 +130,7 @@
             this.COMMENTWHOLE1.BorderWidth = 1F;
             this.COMMENTWHOLE1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[COMMENT_WHOLE]")});
-            this.COMMENTWHOLE1.Font = new System.Drawing.Font("Arial", 10F);
+            this.COMMENTWHOLE1.Font = new DevExpress.Drawing.DXFont("Arial", 10F);
             this.COMMENTWHOLE1.ForeColor = System.Drawing.Color.Black;
             this.COMMENTWHOLE1.LocationFloat = new DevExpress.Utils.PointFloat(180F, 0F);
             this.COMMENTWHOLE1.Multiline = true;
@@ -163,7 +163,7 @@
             this.Text5.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.Text5.BorderWidth = 1F;
             this.Text5.CanGrow = false;
-            this.Text5.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
+            this.Text5.Font = new DevExpress.Drawing.DXFont("Segoe UI", 14F, DevExpress.Drawing.DXFontStyle.Bold);
             this.Text5.ForeColor = System.Drawing.Color.Black;
             this.Text5.LocationFloat = new DevExpress.Utils.PointFloat(0F, 95.00002F);
             this.Text5.Name = "Text5";
@@ -179,7 +179,7 @@
             this.Text1.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.Text1.BorderWidth = 1F;
             this.Text1.CanGrow = false;
-            this.Text1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.Text1.Font = new DevExpress.Drawing.DXFont("Arial", 10F, DevExpress.Drawing.DXFontStyle.Bold);
             this.Text1.ForeColor = System.Drawing.Color.Black;
             this.Text1.LocationFloat = new DevExpress.Utils.PointFloat(183.3333F, 166.6667F);
             this.Text1.Name = "Text1";
@@ -195,7 +195,7 @@
             this.Text2.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.Text2.BorderWidth = 1F;
             this.Text2.CanGrow = false;
-            this.Text2.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.Text2.Font = new DevExpress.Drawing.DXFont("Arial", 10F, DevExpress.Drawing.DXFontStyle.Bold);
             this.Text2.ForeColor = System.Drawing.Color.Black;
             this.Text2.LocationFloat = new DevExpress.Utils.PointFloat(133.3333F, 166.6667F);
             this.Text2.Name = "Text2";
@@ -211,7 +211,7 @@
             this.Text3.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.Text3.BorderWidth = 1F;
             this.Text3.CanGrow = false;
-            this.Text3.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.Text3.Font = new DevExpress.Drawing.DXFont("Arial", 10F, DevExpress.Drawing.DXFontStyle.Bold);
             this.Text3.ForeColor = System.Drawing.Color.Black;
             this.Text3.LocationFloat = new DevExpress.Utils.PointFloat(83.33334F, 166.6667F);
             this.Text3.Name = "Text3";
@@ -227,7 +227,7 @@
             this.Text4.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.Text4.BorderWidth = 1F;
             this.Text4.CanGrow = false;
-            this.Text4.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.Text4.Font = new DevExpress.Drawing.DXFont("Arial", 10F, DevExpress.Drawing.DXFontStyle.Bold);
             this.Text4.ForeColor = System.Drawing.Color.Black;
             this.Text4.LocationFloat = new DevExpress.Utils.PointFloat(0F, 166.6667F);
             this.Text4.Name = "Text4";
@@ -242,7 +242,7 @@
             this.Picture1.BorderColor = System.Drawing.Color.Black;
             this.Picture1.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.Picture1.BorderWidth = 1F;
-            this.Picture1.Font = new System.Drawing.Font("Times New Roman", 9.75F);
+            this.Picture1.Font = new DevExpress.Drawing.DXFont("Times New Roman", 9.75F);
             this.Picture1.ForeColor = System.Drawing.Color.Black;
             this.Picture1.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource("img", resources.GetString("Picture1.ImageSource"));
             this.Picture1.LocationFloat = new DevExpress.Utils.PointFloat(809.6112F, 0F);
@@ -325,7 +325,7 @@
             this.DataMember = "COMMENT";
             this.DataSource = this.sqlDataSource1;
             this.Landscape = true;
-            this.Margins = new System.Drawing.Printing.Margins(22, 22, 22, 22);
+            this.Margins = new DevExpress.Drawing.DXMargins(22, 22, 22, 22);
             this.PageHeight = 850;
             this.PageWidth = 1100;
             this.Parameters.AddRange(new DevExpress.XtraReports.Parameters.Parameter[] {

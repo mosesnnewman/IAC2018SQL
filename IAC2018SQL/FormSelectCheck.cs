@@ -1,4 +1,5 @@
-﻿using IAC2021SQL.IACDataSetTableAdapters;
+﻿using DevExpress.XtraPrinting.Native;
+using IAC2021SQL.IACDataSetTableAdapters;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -7,10 +8,11 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using DevExpress.XtraGrid.Views.Grid;
 
 namespace IAC2021SQL
 {
-    public partial class FormSelectCheck : Form
+    public partial class FormSelectCheck : DevExpress.XtraEditors.XtraForm
     {
         private String _CustNo,_ISFPaymentType,_ISFPaymentCode;
         private DateTime _ISFDate;
@@ -81,6 +83,39 @@ namespace IAC2021SQL
             set { _ISFPaymentType = ISFPaymentType; }
         }
 
+        private void gridView1_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
+        {
+            GridView view = sender as GridView;
+            int index = view.GetDataRowHandleByGroupRowHandle(e.RowHandle);
+            var cellValue = view.GetRowCellValue(index, "CUSTHIST_PAY_DATE");
+            int dataSourceRowIndex = view.GetDataSourceRowIndex(e.RowHandle);
+            if (!_IsClosed)
+            {
+                if (iACDataSet.OPNCUST.Count > 0 && view.SelectedRowsCount > 0)
+                {
+                    _ISFDate = (DateTime)cellValue;
+                    Close();
+                }
+            }
+            else
+            {
+                if (iACDataSet.CUSTOMER.Count > 0 && view.SelectedRowsCount > 0)
+                {
+                    _ISFDate = (DateTime)cellValue;
+                    _PaidInt = iACDataSet.CUSTHIST.Rows[dataSourceRowIndex].Field<Decimal>("CUSTHIST_CURR_INT");
+                    _LateCharge = iACDataSet.CUSTHIST.Rows[dataSourceRowIndex].Field<Decimal>("CUSTHIST_LATE_CHARGE_PAID");
+                    _IsSimple = iACDataSet.CUSTHIST.Rows[dataSourceRowIndex].Field<Boolean>("IsSimple");
+                    // Moses Newman 04/13/2018 set _ISFSeqNo,_ISFPaymentType,_ISFPaymentCode
+                    _ISFSeqNo = iACDataSet.CUSTHIST.Rows[dataSourceRowIndex].Field<Int32>("CUSTHIST_DATE_SEQ");
+                    _ISFPaymentType = iACDataSet.CUSTHIST.Rows[dataSourceRowIndex].Field<String>("CUSTHIST_PAYMENT_TYPE");
+                    _ISFPaymentCode = iACDataSet.CUSTHIST.Rows[dataSourceRowIndex].Field<String>("CUSTHIST_PAYMENT_CODE");
+                    // Moses Newman 10/09/2020 
+                    _ISFID = iACDataSet.CUSTHIST.Rows[dataSourceRowIndex].Field<Int32>("ID");
+                    Close();
+                }
+            }
+        }
+
         public String ISFPaymentCode
         {
             get { return _ISFPaymentCode; }
@@ -139,41 +174,7 @@ namespace IAC2021SQL
                 cUSTHISTBindingSource.DataSource = iACDataSet.CUSTHIST;
                 textBoxDealerName.DataBindings.Clear();
                 textBoxDealerName.DataBindings.Add(new Binding("Text",iACDataSet,"DEALER.DEALER_NAME"));
-                cUSTHISTDataGridView.DataSource = cUSTHISTBindingSource;
             }   
-        }
-
-        private void cUSTHISTDataGridView_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
-        {
-            foreach (DataGridViewRow r in cUSTHISTDataGridView.Rows)
-                r.DefaultCellStyle.BackColor = (r.Index % 2 == 0) ? Color.White : Color.LightYellow;
-        }
-
-        private void cUSTHISTDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (!_IsClosed)
-            {
-                if (iACDataSet.OPNCUST.Count > 0 && cUSTHISTDataGridView.SelectedRows.Count > 0)
-                {
-                    _ISFDate = (DateTime)(cUSTHISTDataGridView.SelectedRows[0].Cells["dataGridViewTextBoxColumnPostDate"].Value);
-                    Close();
-                }
-            }
-           else
-                if (iACDataSet.CUSTOMER.Count > 0 && cUSTHISTDataGridView.SelectedRows.Count > 0)
-                {
-                    _ISFDate = (DateTime)(cUSTHISTDataGridView.SelectedRows[0].Cells["dataGridViewTextBoxColumnPostDate"].Value);
-                    _PaidInt = iACDataSet.CUSTHIST.Rows[cUSTHISTDataGridView.SelectedRows[0].Index].Field<Decimal>("CUSTHIST_CURR_INT");
-                    _LateCharge = iACDataSet.CUSTHIST.Rows[cUSTHISTDataGridView.SelectedRows[0].Index].Field<Decimal>("CUSTHIST_LATE_CHARGE_PAID");
-                    _IsSimple = iACDataSet.CUSTHIST.Rows[cUSTHISTDataGridView.SelectedRows[0].Index].Field<Boolean>("IsSimple");
-                    // Moses Newman 04/13/2018 set _ISFSeqNo,_ISFPaymentType,_ISFPaymentCode
-                    _ISFSeqNo = iACDataSet.CUSTHIST.Rows[cUSTHISTDataGridView.SelectedRows[0].Index].Field<Int32>("CUSTHIST_DATE_SEQ");
-                    _ISFPaymentType = iACDataSet.CUSTHIST.Rows[cUSTHISTDataGridView.SelectedRows[0].Index].Field<String>("CUSTHIST_PAYMENT_TYPE");
-                    _ISFPaymentCode = iACDataSet.CUSTHIST.Rows[cUSTHISTDataGridView.SelectedRows[0].Index].Field<String>("CUSTHIST_PAYMENT_CODE");
-                    // Moses Newman 10/09/2020 
-                    _ISFID = iACDataSet.CUSTHIST.Rows[cUSTHISTDataGridView.SelectedRows[0].Index].Field<Int32>("ID");                    
-                    Close();
-                }
         }
 
         private void FormSelectCheck_Load(object sender, EventArgs e)

@@ -13,7 +13,7 @@ namespace IAC2021SQL
             InitializeComponent();
         }
 
-        private void TotalLoanAmount1_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        private void TotalLoanAmount1_BeforePrint(object sender, CancelEventArgs e)
         {
             decimal.TryParse(Convert.ToString(TotalLoanAmount1.Summary.GetResult()), out decimal totalLoanAmount);
             if (totalLoanAmount == 0)
@@ -22,7 +22,7 @@ namespace IAC2021SQL
             }
         }
 
-        private void TotalCash1_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        private void TotalCash1_BeforePrint(object sender, CancelEventArgs e)
         {
             decimal.TryParse(Convert.ToString(TotalCash1.Summary.GetResult()), out decimal totalCash);
             if (totalCash == 0)
@@ -31,7 +31,7 @@ namespace IAC2021SQL
             }
         }
 
-        private void TotalInterest1_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        private void TotalInterest1_BeforePrint(object sender, CancelEventArgs e)
         {
             decimal.TryParse(Convert.ToString(TotalInterest1.Summary.GetResult()), out decimal totalInterest);
             if (totalInterest == 0)
@@ -40,7 +40,7 @@ namespace IAC2021SQL
             }
         }
 
-        private void TotalDealerDisc1_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        private void TotalDealerDisc1_BeforePrint(object sender, CancelEventArgs e)
         {
             decimal.TryParse(Convert.ToString(TotalDealerDisc1.Summary.GetResult()), out decimal totalDealerDisc);
             if (totalDealerDisc == 0)

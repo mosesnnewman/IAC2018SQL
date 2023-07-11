@@ -13,7 +13,7 @@ namespace IAC2021SQL
             InitializeComponent();
         }
 
-        private void XtraReportClosedCustomerDelinquencyRepoDealerSummary_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        private void XtraReportClosedCustomerDelinquencyRepoDealerSummary_BeforePrint(object sender, CancelEventArgs e)
         {
             // Moses Newman 08/23/2022 Turn off PageHeaderSection2 when printing dealer summary subreport.
             this.MasterReport.Bands["Area2"].SubBands[0].Visible = false;

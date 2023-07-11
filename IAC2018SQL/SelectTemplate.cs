@@ -7,11 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevExpress.XtraEditors;
 using IAC2021SQL.TemplateWSProxy;
 
 namespace IAC2021SQL
 {
-    public partial class FormTemplates : Form
+    public partial class FormTemplates : DevExpress.XtraEditors.XtraForm
     {
         private WSTemplateListResponse wSTemplateResponse;
         private int tempID = -1;
@@ -41,6 +42,7 @@ namespace IAC2021SQL
             }
         }
 
+        private static KeyValuePair<int, string>[] KvpSource;
         public FormTemplates()
         {
             InitializeComponent();
@@ -56,36 +58,51 @@ namespace IAC2021SQL
             if (!wSTemplateResponse.Result)
                 return;
 
-            comboBoxTemplates.ValueMember = "Key";
-            comboBoxTemplates.DisplayMember = "Value";
-
+            KvpSource = new KeyValuePair<int, string>[wSTemplateResponse.Response.Length];
+            Int32 i = 0;
             foreach (TemplateDetail Template in wSTemplateResponse.Response)
             {
-                comboBoxTemplates.Items.Add(new KeyValuePair<int, string>(Template.TemplateID, Template.Title));
+                KvpSource[i++]=(new KeyValuePair<int, string>(Template.TemplateID, Template.Title));
             }
-            comboBoxTemplates.SelectedIndex = 0;
+            comboBoxTemplates.Properties.ValueMember = "Key";
+            comboBoxTemplates.Properties.DisplayMember = "Value";
+            comboBoxTemplates.Properties.DataSource = KvpSource;
+            comboBoxTemplates.Properties.ForceInitialize();
+            comboBoxTemplates.Properties.PopulateColumns();
+            comboBoxTemplates.Properties.Columns["Key"].Visible = true;
+            comboBoxTemplates.ItemIndex = 0;
         }
 
         private void buttonSelect_Click(object sender, EventArgs e)
         {
-            if(wSTemplateResponse.Response[comboBoxTemplates.SelectedIndex].TemplateID != 6)
-                templateText = wSTemplateResponse.Response[comboBoxTemplates.SelectedIndex].Text;
+            if(wSTemplateResponse.Response[comboBoxTemplates.ItemIndex].TemplateID != 6)
+                templateText = wSTemplateResponse.Response[comboBoxTemplates.ItemIndex].Text;
             else
                 // Moses Newman 06/28/2018 Add Subject for welcome message.
-                templateText = wSTemplateResponse.Response[comboBoxTemplates.SelectedIndex].Subject + " " +
-                               wSTemplateResponse.Response[comboBoxTemplates.SelectedIndex].Text;
-            tempID = wSTemplateResponse.Response[comboBoxTemplates.SelectedIndex].TemplateID;
+                templateText = wSTemplateResponse.Response[comboBoxTemplates.ItemIndex].Subject + " " +
+                               wSTemplateResponse.Response[comboBoxTemplates.ItemIndex].Text;
+            tempID = wSTemplateResponse.Response[comboBoxTemplates.ItemIndex].TemplateID;
             this.Close();
         }
 
         private void comboBoxTemplates_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (wSTemplateResponse.Response[comboBoxTemplates.SelectedIndex].TemplateID != 6)
-                textBoxMessage.Text = wSTemplateResponse.Response[comboBoxTemplates.SelectedIndex].Text;
+            if (wSTemplateResponse.Response[comboBoxTemplates.ItemIndex].TemplateID != 6)
+                textBoxMessage.EditValue = wSTemplateResponse.Response[comboBoxTemplates.ItemIndex].Text;
             else
                 // Moses Newman 06/28/2018 Add Subject for welcome message.
-                textBoxMessage.Text = wSTemplateResponse.Response[comboBoxTemplates.SelectedIndex].Subject + " " +
-                               wSTemplateResponse.Response[comboBoxTemplates.SelectedIndex].Text;
+                textBoxMessage.EditValue = wSTemplateResponse.Response[comboBoxTemplates.ItemIndex].Subject + " " +
+                               wSTemplateResponse.Response[comboBoxTemplates.ItemIndex].Text;
+        }
+
+        private void comboBoxTemplates_EditValueChanged(object sender, EventArgs e)
+        {
+            if (wSTemplateResponse.Response[comboBoxTemplates.ItemIndex].TemplateID != 6)
+                textBoxMessage.EditValue = wSTemplateResponse.Response[comboBoxTemplates.ItemIndex].Text;
+            else
+                // Moses Newman 06/28/2018 Add Subject for welcome message.
+                textBoxMessage.EditValue = wSTemplateResponse.Response[comboBoxTemplates.ItemIndex].Subject + " " +
+                               wSTemplateResponse.Response[comboBoxTemplates.ItemIndex].Text;
         }
     }
 }

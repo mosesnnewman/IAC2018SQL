@@ -102,7 +102,7 @@
             this.PostDate1.CanGrow = false;
             this.PostDate1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[PostDate]")});
-            this.PostDate1.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8F);
+            this.PostDate1.Font = new DevExpress.Drawing.DXFont("Lucida Sans Typewriter", 8F);
             this.PostDate1.ForeColor = System.Drawing.Color.Black;
             this.PostDate1.LocationFloat = new DevExpress.Utils.PointFloat(125F, 0F);
             this.PostDate1.Name = "PostDate1";
@@ -121,7 +121,7 @@
             this.InterestType_1.CanGrow = false;
             this.InterestType_1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[InterestType]")});
-            this.InterestType_1.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8F);
+            this.InterestType_1.Font = new DevExpress.Drawing.DXFont("Lucida Sans Typewriter", 8F);
             this.InterestType_1.ForeColor = System.Drawing.Color.Black;
             this.InterestType_1.LocationFloat = new DevExpress.Utils.PointFloat(250F, 0F);
             this.InterestType_1.Name = "InterestType_1";
@@ -139,7 +139,7 @@
             this.MonthEndAmount1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[MonthEndAmount]"),
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Visible", "iif([MonthEndAmount] == 0, False,True)\n")});
-            this.MonthEndAmount1.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8F);
+            this.MonthEndAmount1.Font = new DevExpress.Drawing.DXFont("Lucida Sans Typewriter", 8F);
             this.MonthEndAmount1.ForeColor = System.Drawing.Color.Black;
             this.MonthEndAmount1.LocationFloat = new DevExpress.Utils.PointFloat(641.6667F, 0F);
             this.MonthEndAmount1.Name = "MonthEndAmount1";
@@ -159,7 +159,7 @@
             this.OriginalAmount1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[OriginalAmount]"),
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Visible", "iif([OriginalAmount] == 0, False,True)\n")});
-            this.OriginalAmount1.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8F);
+            this.OriginalAmount1.Font = new DevExpress.Drawing.DXFont("Lucida Sans Typewriter", 8F);
             this.OriginalAmount1.ForeColor = System.Drawing.Color.Black;
             this.OriginalAmount1.LocationFloat = new DevExpress.Utils.PointFloat(472.9167F, 0F);
             this.OriginalAmount1.Name = "OriginalAmount1";
@@ -179,7 +179,7 @@
             this.ChangeDueToISF1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[ChangeDueToISF]"),
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Visible", "iif([ChangeDueToISF] == 0, False,True)\n")});
-            this.ChangeDueToISF1.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8F);
+            this.ChangeDueToISF1.Font = new DevExpress.Drawing.DXFont("Lucida Sans Typewriter", 8F);
             this.ChangeDueToISF1.ForeColor = System.Drawing.Color.Black;
             this.ChangeDueToISF1.LocationFloat = new DevExpress.Utils.PointFloat(800F, 0F);
             this.ChangeDueToISF1.Name = "ChangeDueToISF1";
@@ -230,7 +230,7 @@
             this.Text1.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.Text1.BorderWidth = 1F;
             this.Text1.CanGrow = false;
-            this.Text1.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8F, System.Drawing.FontStyle.Bold);
+            this.Text1.Font = new DevExpress.Drawing.DXFont("Lucida Sans Typewriter", 8F, DevExpress.Drawing.DXFontStyle.Bold);
             this.Text1.ForeColor = System.Drawing.Color.Black;
             this.Text1.LocationFloat = new DevExpress.Utils.PointFloat(125F, 41.66667F);
             this.Text1.Name = "Text1";
@@ -246,7 +246,7 @@
             this.Text3.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.Text3.BorderWidth = 1F;
             this.Text3.CanGrow = false;
-            this.Text3.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8F, System.Drawing.FontStyle.Bold);
+            this.Text3.Font = new DevExpress.Drawing.DXFont("Lucida Sans Typewriter", 8F, DevExpress.Drawing.DXFontStyle.Bold);
             this.Text3.ForeColor = System.Drawing.Color.Black;
             this.Text3.LocationFloat = new DevExpress.Utils.PointFloat(250F, 41.66667F);
             this.Text3.Name = "Text3";
@@ -262,7 +262,7 @@
             this.Text5.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.Text5.BorderWidth = 1F;
             this.Text5.CanGrow = false;
-            this.Text5.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8F, System.Drawing.FontStyle.Bold);
+            this.Text5.Font = new DevExpress.Drawing.DXFont("Lucida Sans Typewriter", 8F, DevExpress.Drawing.DXFontStyle.Bold);
             this.Text5.ForeColor = System.Drawing.Color.Black;
             this.Text5.LocationFloat = new DevExpress.Utils.PointFloat(472.9167F, 41.66667F);
             this.Text5.Name = "Text5";
@@ -278,7 +278,7 @@
             this.Text4.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.Text4.BorderWidth = 1F;
             this.Text4.CanGrow = false;
-            this.Text4.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8F, System.Drawing.FontStyle.Bold);
+            this.Text4.Font = new DevExpress.Drawing.DXFont("Lucida Sans Typewriter", 8F, DevExpress.Drawing.DXFontStyle.Bold);
             this.Text4.ForeColor = System.Drawing.Color.Black;
             this.Text4.LocationFloat = new DevExpress.Utils.PointFloat(641.6667F, 41.66667F);
             this.Text4.Name = "Text4";
@@ -294,7 +294,7 @@
             this.Text6.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.Text6.BorderWidth = 1F;
             this.Text6.CanGrow = false;
-            this.Text6.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8F, System.Drawing.FontStyle.Bold);
+            this.Text6.Font = new DevExpress.Drawing.DXFont("Lucida Sans Typewriter", 8F, DevExpress.Drawing.DXFontStyle.Bold);
             this.Text6.ForeColor = System.Drawing.Color.Black;
             this.Text6.LocationFloat = new DevExpress.Utils.PointFloat(800F, 41.66667F);
             this.Text6.Name = "Text6";
@@ -310,7 +310,7 @@
             this.Text7.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.Text7.BorderWidth = 1F;
             this.Text7.CanGrow = false;
-            this.Text7.Font = new System.Drawing.Font("Lucida Sans Typewriter", 14F, System.Drawing.FontStyle.Underline);
+            this.Text7.Font = new DevExpress.Drawing.DXFont("Lucida Sans Typewriter", 14F, DevExpress.Drawing.DXFontStyle.Underline);
             this.Text7.ForeColor = System.Drawing.Color.Black;
             this.Text7.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
             this.Text7.Name = "Text7";
@@ -325,7 +325,7 @@
             this.Line1.BorderColor = System.Drawing.Color.Black;
             this.Line1.Borders = DevExpress.XtraPrinting.BorderSide.Top;
             this.Line1.BorderWidth = 1F;
-            this.Line1.Font = new System.Drawing.Font("Times New Roman", 9.75F);
+            this.Line1.Font = new DevExpress.Drawing.DXFont("Times New Roman", 9.75F);
             this.Line1.ForeColor = System.Drawing.Color.Black;
             this.Line1.LineWidth = 3F;
             this.Line1.LocationFloat = new DevExpress.Utils.PointFloat(125F, 55.20833F);
@@ -373,7 +373,7 @@
             this.Text8.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.Text8.BorderWidth = 1F;
             this.Text8.CanGrow = false;
-            this.Text8.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8F, System.Drawing.FontStyle.Bold);
+            this.Text8.Font = new DevExpress.Drawing.DXFont("Lucida Sans Typewriter", 8F, DevExpress.Drawing.DXFontStyle.Bold);
             this.Text8.ForeColor = System.Drawing.Color.Black;
             this.Text8.LocationFloat = new DevExpress.Utils.PointFloat(125F, 25F);
             this.Text8.Name = "Text8";
@@ -392,7 +392,7 @@
             this.TotalMonthEndAmount1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumSum([MonthEndAmount])"),
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Visible", "iif([this].[Value] == 0, False,True)\n")});
-            this.TotalMonthEndAmount1.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8F, System.Drawing.FontStyle.Bold);
+            this.TotalMonthEndAmount1.Font = new DevExpress.Drawing.DXFont("Lucida Sans Typewriter", 8F, DevExpress.Drawing.DXFontStyle.Bold);
             this.TotalMonthEndAmount1.ForeColor = System.Drawing.Color.Black;
             this.TotalMonthEndAmount1.LocationFloat = new DevExpress.Utils.PointFloat(650F, 25F);
             this.TotalMonthEndAmount1.Name = "TotalMonthEndAmount1";
@@ -414,7 +414,7 @@
             this.TotalChangeDueToISF1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumSum([ChangeDueToISF])"),
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Visible", "iif([this].[Value] == 0, False,True)\n")});
-            this.TotalChangeDueToISF1.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8F, System.Drawing.FontStyle.Bold);
+            this.TotalChangeDueToISF1.Font = new DevExpress.Drawing.DXFont("Lucida Sans Typewriter", 8F, DevExpress.Drawing.DXFontStyle.Bold);
             this.TotalChangeDueToISF1.ForeColor = System.Drawing.Color.Black;
             this.TotalChangeDueToISF1.LocationFloat = new DevExpress.Utils.PointFloat(808.3333F, 25F);
             this.TotalChangeDueToISF1.Name = "TotalChangeDueToISF1";
@@ -436,7 +436,7 @@
             this.TotalChangeDueToISF2.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumSum([ChangeDueToISF])"),
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Visible", "iif([this].[Value] == 0, False,True)\n")});
-            this.TotalChangeDueToISF2.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8F, System.Drawing.FontStyle.Bold);
+            this.TotalChangeDueToISF2.Font = new DevExpress.Drawing.DXFont("Lucida Sans Typewriter", 8F, DevExpress.Drawing.DXFontStyle.Bold);
             this.TotalChangeDueToISF2.ForeColor = System.Drawing.Color.Black;
             this.TotalChangeDueToISF2.LocationFloat = new DevExpress.Utils.PointFloat(483.3333F, 8.333333F);
             this.TotalChangeDueToISF2.Name = "TotalChangeDueToISF2";
@@ -454,7 +454,7 @@
             this.Text2.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.Text2.BorderWidth = 1F;
             this.Text2.CanGrow = false;
-            this.Text2.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8F, System.Drawing.FontStyle.Bold);
+            this.Text2.Font = new DevExpress.Drawing.DXFont("Lucida Sans Typewriter", 8F, DevExpress.Drawing.DXFontStyle.Bold);
             this.Text2.ForeColor = System.Drawing.Color.Black;
             this.Text2.LocationFloat = new DevExpress.Utils.PointFloat(333.3333F, 8.333333F);
             this.Text2.Name = "Text2";
@@ -473,7 +473,7 @@
             this.TotalOriginalAmountAndChange_1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Visible", "iif([this].[Value] == 0, False,True)\n"),
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumSum([OriginalAmount])+sumSum([ChangeDueToISF])")});
-            this.TotalOriginalAmountAndChange_1.Font = new System.Drawing.Font("Lucida Sans Typewriter", 8F, System.Drawing.FontStyle.Bold);
+            this.TotalOriginalAmountAndChange_1.Font = new DevExpress.Drawing.DXFont("Lucida Sans Typewriter", 8F, DevExpress.Drawing.DXFontStyle.Bold);
             this.TotalOriginalAmountAndChange_1.ForeColor = System.Drawing.Color.Black;
             this.TotalOriginalAmountAndChange_1.LocationFloat = new DevExpress.Utils.PointFloat(483.3333F, 25F);
             this.TotalOriginalAmountAndChange_1.Name = "TotalOriginalAmountAndChange_1";
@@ -491,7 +491,7 @@
             this.Line3.BorderColor = System.Drawing.Color.Black;
             this.Line3.Borders = DevExpress.XtraPrinting.BorderSide.Top;
             this.Line3.BorderWidth = 1F;
-            this.Line3.Font = new System.Drawing.Font("Times New Roman", 9.75F);
+            this.Line3.Font = new DevExpress.Drawing.DXFont("Times New Roman", 9.75F);
             this.Line3.ForeColor = System.Drawing.Color.Black;
             this.Line3.LineWidth = 3F;
             this.Line3.LocationFloat = new DevExpress.Utils.PointFloat(125F, 0F);
@@ -530,7 +530,7 @@
             this.gsUserName_1.CanGrow = false;
             this.gsUserName_1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "?gsUserName")});
-            this.gsUserName_1.Font = new System.Drawing.Font("Arial", 10F);
+            this.gsUserName_1.Font = new DevExpress.Drawing.DXFont("Arial", 10F);
             this.gsUserName_1.ForeColor = System.Drawing.Color.Black;
             this.gsUserName_1.LocationFloat = new DevExpress.Utils.PointFloat(296.6666F, 1F);
             this.gsUserName_1.Name = "gsUserName_1";
@@ -544,7 +544,7 @@
             this.DataTime1.BorderColor = System.Drawing.Color.Black;
             this.DataTime1.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.DataTime1.BorderWidth = 1F;
-            this.DataTime1.Font = new System.Drawing.Font("Arial", 10F);
+            this.DataTime1.Font = new DevExpress.Drawing.DXFont("Arial", 10F);
             this.DataTime1.ForeColor = System.Drawing.Color.Black;
             this.DataTime1.LocationFloat = new DevExpress.Utils.PointFloat(96.66667F, 1F);
             this.DataTime1.Name = "DataTime1";
@@ -561,7 +561,7 @@
             this.xrLabel1.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.xrLabel1.BorderWidth = 1F;
             this.xrLabel1.CanGrow = false;
-            this.xrLabel1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.xrLabel1.Font = new DevExpress.Drawing.DXFont("Arial", 10F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrLabel1.ForeColor = System.Drawing.Color.Black;
             this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(205F, 1F);
             this.xrLabel1.Name = "xrLabel1";
@@ -579,7 +579,7 @@
             this.gsUserID_1.CanGrow = false;
             this.gsUserID_1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "?gsUserID")});
-            this.gsUserID_1.Font = new System.Drawing.Font("Arial", 10F);
+            this.gsUserID_1.Font = new DevExpress.Drawing.DXFont("Arial", 10F);
             this.gsUserID_1.ForeColor = System.Drawing.Color.Black;
             this.gsUserID_1.LocationFloat = new DevExpress.Utils.PointFloat(255F, 0.9999911F);
             this.gsUserID_1.Name = "gsUserID_1";
@@ -593,7 +593,7 @@
             this.DataDate1.BorderColor = System.Drawing.Color.Black;
             this.DataDate1.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.DataDate1.BorderWidth = 1F;
-            this.DataDate1.Font = new System.Drawing.Font("Arial", 10F);
+            this.DataDate1.Font = new DevExpress.Drawing.DXFont("Arial", 10F);
             this.DataDate1.ForeColor = System.Drawing.Color.Black;
             this.DataDate1.LocationFloat = new DevExpress.Utils.PointFloat(5.000007F, 1F);
             this.DataDate1.Name = "DataDate1";
@@ -609,7 +609,7 @@
             this.PageNofM1.BorderColor = System.Drawing.Color.Black;
             this.PageNofM1.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.PageNofM1.BorderWidth = 1F;
-            this.PageNofM1.Font = new System.Drawing.Font("Arial", 10F);
+            this.PageNofM1.Font = new DevExpress.Drawing.DXFont("Arial", 10F);
             this.PageNofM1.ForeColor = System.Drawing.Color.Black;
             this.PageNofM1.LocationFloat = new DevExpress.Utils.PointFloat(900F, 1F);
             this.PageNofM1.Name = "PageNofM1";
@@ -685,7 +685,7 @@
             this.DataMember = "DailyInterestVariance";
             this.DataSource = this.sqlDataSourceMonthlyUpdateDailyInterestVariance;
             this.Landscape = true;
-            this.Margins = new System.Drawing.Printing.Margins(16, 16, 16, 16);
+            this.Margins = new DevExpress.Drawing.DXMargins(16, 16, 16, 16);
             this.PageHeight = 850;
             this.PageWidth = 1100;
             this.ParameterPanelLayoutItems.AddRange(new DevExpress.XtraReports.Parameters.ParameterPanelLayoutItem[] {

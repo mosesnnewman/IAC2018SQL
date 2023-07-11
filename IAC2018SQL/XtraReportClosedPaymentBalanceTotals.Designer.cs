@@ -170,7 +170,7 @@
             this.xrLabel2.CanGrow = false;
             this.xrLabel2.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[MasterNPNP]")});
-            this.xrLabel2.Font = new System.Drawing.Font("Lucida Sans Typewriter", 10F);
+            this.xrLabel2.Font = new DevExpress.Drawing.DXFont("Lucida Sans Typewriter", 10F);
             this.xrLabel2.ForeColor = System.Drawing.Color.Black;
             this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(337.4722F, 78.05557F);
             this.xrLabel2.Name = "xrLabel2";
@@ -186,7 +186,7 @@
             this.xrLabel3.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.xrLabel3.BorderWidth = 1F;
             this.xrLabel3.CanGrow = false;
-            this.xrLabel3.Font = new System.Drawing.Font("Lucida Sans Typewriter", 10F, System.Drawing.FontStyle.Bold);
+            this.xrLabel3.Font = new DevExpress.Drawing.DXFont("Lucida Sans Typewriter", 10F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrLabel3.ForeColor = System.Drawing.Color.Black;
             this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(538.861F, 35F);
             this.xrLabel3.Name = "xrLabel3";
@@ -204,7 +204,7 @@
             this.xrLabel4.CanGrow = false;
             this.xrLabel4.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[PrincipalPayable]")});
-            this.xrLabel4.Font = new System.Drawing.Font("Lucida Sans Typewriter", 10F);
+            this.xrLabel4.Font = new DevExpress.Drawing.DXFont("Lucida Sans Typewriter", 10F);
             this.xrLabel4.ForeColor = System.Drawing.Color.Black;
             this.xrLabel4.LocationFloat = new DevExpress.Utils.PointFloat(828.4445F, 10F);
             this.xrLabel4.Name = "xrLabel4";
@@ -220,7 +220,7 @@
             this.xrLabel5.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.xrLabel5.BorderWidth = 1F;
             this.xrLabel5.CanGrow = false;
-            this.xrLabel5.Font = new System.Drawing.Font("Lucida Sans Typewriter", 10F, System.Drawing.FontStyle.Bold);
+            this.xrLabel5.Font = new DevExpress.Drawing.DXFont("Lucida Sans Typewriter", 10F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrLabel5.ForeColor = System.Drawing.Color.Black;
             this.xrLabel5.LocationFloat = new DevExpress.Utils.PointFloat(538.861F, 10F);
             this.xrLabel5.Name = "xrLabel5";
@@ -238,7 +238,7 @@
             this.xrLabel6.CanGrow = false;
             this.xrLabel6.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "?TotalIVRAmex")});
-            this.xrLabel6.Font = new System.Drawing.Font("Lucida Sans Typewriter", 10F);
+            this.xrLabel6.Font = new DevExpress.Drawing.DXFont("Lucida Sans Typewriter", 10F);
             this.xrLabel6.ForeColor = System.Drawing.Color.Black;
             this.xrLabel6.LocationFloat = new DevExpress.Utils.PointFloat(828.4445F, 276.6667F);
             this.xrLabel6.Name = "xrLabel6";
@@ -254,7 +254,7 @@
             this.xrLabel7.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.xrLabel7.BorderWidth = 1F;
             this.xrLabel7.CanGrow = false;
-            this.xrLabel7.Font = new System.Drawing.Font("Lucida Sans Typewriter", 10F, System.Drawing.FontStyle.Bold);
+            this.xrLabel7.Font = new DevExpress.Drawing.DXFont("Lucida Sans Typewriter", 10F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrLabel7.ForeColor = System.Drawing.Color.Black;
             this.xrLabel7.LocationFloat = new DevExpress.Utils.PointFloat(538.861F, 276.6667F);
             this.xrLabel7.Name = "xrLabel7";
@@ -272,7 +272,7 @@
             this.xrLabel8.CanGrow = false;
             this.xrLabel8.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "?TotalIVRFees")});
-            this.xrLabel8.Font = new System.Drawing.Font("Lucida Sans Typewriter", 10F);
+            this.xrLabel8.Font = new DevExpress.Drawing.DXFont("Lucida Sans Typewriter", 10F);
             this.xrLabel8.ForeColor = System.Drawing.Color.Black;
             this.xrLabel8.LocationFloat = new DevExpress.Utils.PointFloat(828.4445F, 251.6667F);
             this.xrLabel8.Name = "xrLabel8";
@@ -288,7 +288,7 @@
             this.xrLabel9.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.xrLabel9.BorderWidth = 1F;
             this.xrLabel9.CanGrow = false;
-            this.xrLabel9.Font = new System.Drawing.Font("Lucida Sans Typewriter", 10F, System.Drawing.FontStyle.Bold);
+            this.xrLabel9.Font = new DevExpress.Drawing.DXFont("Lucida Sans Typewriter", 10F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrLabel9.ForeColor = System.Drawing.Color.Black;
             this.xrLabel9.LocationFloat = new DevExpress.Utils.PointFloat(538.861F, 251.6667F);
             this.xrLabel9.Name = "xrLabel9";
@@ -306,7 +306,7 @@
             this.xrLabel10.CanGrow = false;
             this.xrLabel10.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "?TotalIVR")});
-            this.xrLabel10.Font = new System.Drawing.Font("Lucida Sans Typewriter", 10F);
+            this.xrLabel10.Font = new DevExpress.Drawing.DXFont("Lucida Sans Typewriter", 10F);
             this.xrLabel10.ForeColor = System.Drawing.Color.Black;
             this.xrLabel10.LocationFloat = new DevExpress.Utils.PointFloat(828.4445F, 218.3334F);
             this.xrLabel10.Name = "xrLabel10";
@@ -322,7 +322,7 @@
             this.xrLabel11.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.xrLabel11.BorderWidth = 1F;
             this.xrLabel11.CanGrow = false;
-            this.xrLabel11.Font = new System.Drawing.Font("Lucida Sans Typewriter", 10F, System.Drawing.FontStyle.Bold);
+            this.xrLabel11.Font = new DevExpress.Drawing.DXFont("Lucida Sans Typewriter", 10F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrLabel11.ForeColor = System.Drawing.Color.Black;
             this.xrLabel11.LocationFloat = new DevExpress.Utils.PointFloat(538.861F, 218.3334F);
             this.xrLabel11.Name = "xrLabel11";
@@ -340,7 +340,7 @@
             this.xrLabel12.CanGrow = false;
             this.xrLabel12.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[AdjustedNotesPayable]")});
-            this.xrLabel12.Font = new System.Drawing.Font("Lucida Sans Typewriter", 10F);
+            this.xrLabel12.Font = new DevExpress.Drawing.DXFont("Lucida Sans Typewriter", 10F);
             this.xrLabel12.ForeColor = System.Drawing.Color.Black;
             this.xrLabel12.LocationFloat = new DevExpress.Utils.PointFloat(337.4722F, 10F);
             this.xrLabel12.Name = "xrLabel12";
@@ -358,7 +358,7 @@
             this.xrLabel13.CanGrow = false;
             this.xrLabel13.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[MasterISF]")});
-            this.xrLabel13.Font = new System.Drawing.Font("Lucida Sans Typewriter", 10F);
+            this.xrLabel13.Font = new DevExpress.Drawing.DXFont("Lucida Sans Typewriter", 10F);
             this.xrLabel13.ForeColor = System.Drawing.Color.Black;
             this.xrLabel13.LocationFloat = new DevExpress.Utils.PointFloat(337.4722F, 56.04167F);
             this.xrLabel13.Name = "xrLabel13";
@@ -374,7 +374,7 @@
             this.xrLabel14.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.xrLabel14.BorderWidth = 1F;
             this.xrLabel14.CanGrow = false;
-            this.xrLabel14.Font = new System.Drawing.Font("Lucida Sans Typewriter", 10F, System.Drawing.FontStyle.Bold);
+            this.xrLabel14.Font = new DevExpress.Drawing.DXFont("Lucida Sans Typewriter", 10F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrLabel14.ForeColor = System.Drawing.Color.Black;
             this.xrLabel14.LocationFloat = new DevExpress.Utils.PointFloat(97.88885F, 56.04167F);
             this.xrLabel14.Name = "xrLabel14";
@@ -392,7 +392,7 @@
             this.xrLabel15.CanGrow = false;
             this.xrLabel15.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[TotalNotesPayable]")});
-            this.xrLabel15.Font = new System.Drawing.Font("Lucida Sans Typewriter", 10F);
+            this.xrLabel15.Font = new DevExpress.Drawing.DXFont("Lucida Sans Typewriter", 10F);
             this.xrLabel15.ForeColor = System.Drawing.Color.Black;
             this.xrLabel15.LocationFloat = new DevExpress.Utils.PointFloat(828.4445F, 193.3334F);
             this.xrLabel15.Name = "xrLabel15";
@@ -410,7 +410,7 @@
             this.xrLabel16.CanGrow = false;
             this.xrLabel16.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[calculatedField1]")});
-            this.xrLabel16.Font = new System.Drawing.Font("Lucida Sans Typewriter", 10F);
+            this.xrLabel16.Font = new DevExpress.Drawing.DXFont("Lucida Sans Typewriter", 10F);
             this.xrLabel16.ForeColor = System.Drawing.Color.Black;
             this.xrLabel16.LocationFloat = new DevExpress.Utils.PointFloat(828.4445F, 56.04167F);
             this.xrLabel16.Name = "xrLabel16";
@@ -426,7 +426,7 @@
             this.xrLabel17.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.xrLabel17.BorderWidth = 1F;
             this.xrLabel17.CanGrow = false;
-            this.xrLabel17.Font = new System.Drawing.Font("Lucida Sans Typewriter", 10F, System.Drawing.FontStyle.Bold);
+            this.xrLabel17.Font = new DevExpress.Drawing.DXFont("Lucida Sans Typewriter", 10F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrLabel17.ForeColor = System.Drawing.Color.Black;
             this.xrLabel17.LocationFloat = new DevExpress.Utils.PointFloat(506.5695F, 56.04167F);
             this.xrLabel17.Name = "xrLabel17";
@@ -444,7 +444,7 @@
             this.xrLabel18.CanGrow = false;
             this.xrLabel18.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[SimpleInterest]")});
-            this.xrLabel18.Font = new System.Drawing.Font("Lucida Sans Typewriter", 10F);
+            this.xrLabel18.Font = new DevExpress.Drawing.DXFont("Lucida Sans Typewriter", 10F);
             this.xrLabel18.ForeColor = System.Drawing.Color.Black;
             this.xrLabel18.LocationFloat = new DevExpress.Utils.PointFloat(337.4722F, 218.3334F);
             this.xrLabel18.Name = "xrLabel18";
@@ -460,7 +460,7 @@
             this.xrLabel19.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.xrLabel19.BorderWidth = 1F;
             this.xrLabel19.CanGrow = false;
-            this.xrLabel19.Font = new System.Drawing.Font("Lucida Sans Typewriter", 10F, System.Drawing.FontStyle.Bold);
+            this.xrLabel19.Font = new DevExpress.Drawing.DXFont("Lucida Sans Typewriter", 10F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrLabel19.ForeColor = System.Drawing.Color.Black;
             this.xrLabel19.LocationFloat = new DevExpress.Utils.PointFloat(97.88885F, 218.3334F);
             this.xrLabel19.Name = "xrLabel19";
@@ -478,7 +478,7 @@
             this.xrLabel20.CanGrow = false;
             this.xrLabel20.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[TotalAmount]")});
-            this.xrLabel20.Font = new System.Drawing.Font("Lucida Sans Typewriter", 10F);
+            this.xrLabel20.Font = new DevExpress.Drawing.DXFont("Lucida Sans Typewriter", 10F);
             this.xrLabel20.ForeColor = System.Drawing.Color.Black;
             this.xrLabel20.LocationFloat = new DevExpress.Utils.PointFloat(337.4722F, 343.3334F);
             this.xrLabel20.Name = "xrLabel20";
@@ -494,7 +494,7 @@
             this.xrLabel21.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.xrLabel21.BorderWidth = 1F;
             this.xrLabel21.CanGrow = false;
-            this.xrLabel21.Font = new System.Drawing.Font("Lucida Sans Typewriter", 10F, System.Drawing.FontStyle.Bold);
+            this.xrLabel21.Font = new DevExpress.Drawing.DXFont("Lucida Sans Typewriter", 10F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrLabel21.ForeColor = System.Drawing.Color.Black;
             this.xrLabel21.LocationFloat = new DevExpress.Utils.PointFloat(97.88885F, 343.3334F);
             this.xrLabel21.Name = "xrLabel21";
@@ -510,7 +510,7 @@
             this.xrLabel22.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.xrLabel22.BorderWidth = 1F;
             this.xrLabel22.CanGrow = false;
-            this.xrLabel22.Font = new System.Drawing.Font("Lucida Sans Typewriter", 10F, System.Drawing.FontStyle.Bold);
+            this.xrLabel22.Font = new DevExpress.Drawing.DXFont("Lucida Sans Typewriter", 10F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrLabel22.ForeColor = System.Drawing.Color.Black;
             this.xrLabel22.LocationFloat = new DevExpress.Utils.PointFloat(97.88885F, 310F);
             this.xrLabel22.Name = "xrLabel22";
@@ -526,7 +526,7 @@
             this.xrLabel23.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.xrLabel23.BorderWidth = 1F;
             this.xrLabel23.CanGrow = false;
-            this.xrLabel23.Font = new System.Drawing.Font("Lucida Sans Typewriter", 10F, System.Drawing.FontStyle.Bold);
+            this.xrLabel23.Font = new DevExpress.Drawing.DXFont("Lucida Sans Typewriter", 10F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrLabel23.ForeColor = System.Drawing.Color.Black;
             this.xrLabel23.LocationFloat = new DevExpress.Utils.PointFloat(97.88885F, 276.6667F);
             this.xrLabel23.Name = "xrLabel23";
@@ -542,7 +542,7 @@
             this.xrLabel24.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.xrLabel24.BorderWidth = 1F;
             this.xrLabel24.CanGrow = false;
-            this.xrLabel24.Font = new System.Drawing.Font("Lucida Sans Typewriter", 10F, System.Drawing.FontStyle.Bold);
+            this.xrLabel24.Font = new DevExpress.Drawing.DXFont("Lucida Sans Typewriter", 10F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrLabel24.ForeColor = System.Drawing.Color.Black;
             this.xrLabel24.LocationFloat = new DevExpress.Utils.PointFloat(97.88885F, 251.6667F);
             this.xrLabel24.Name = "xrLabel24";
@@ -560,7 +560,7 @@
             this.xrLabel25.CanGrow = false;
             this.xrLabel25.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[DealerDiscount]")});
-            this.xrLabel25.Font = new System.Drawing.Font("Lucida Sans Typewriter", 10F);
+            this.xrLabel25.Font = new DevExpress.Drawing.DXFont("Lucida Sans Typewriter", 10F);
             this.xrLabel25.ForeColor = System.Drawing.Color.Black;
             this.xrLabel25.LocationFloat = new DevExpress.Utils.PointFloat(337.4722F, 310F);
             this.xrLabel25.Name = "xrLabel25";
@@ -578,7 +578,7 @@
             this.xrLabel26.CanGrow = false;
             this.xrLabel26.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[OldNonAmortInterest]")});
-            this.xrLabel26.Font = new System.Drawing.Font("Lucida Sans Typewriter", 10F);
+            this.xrLabel26.Font = new DevExpress.Drawing.DXFont("Lucida Sans Typewriter", 10F);
             this.xrLabel26.ForeColor = System.Drawing.Color.Black;
             this.xrLabel26.LocationFloat = new DevExpress.Utils.PointFloat(337.4722F, 276.6667F);
             this.xrLabel26.Name = "xrLabel26";
@@ -596,7 +596,7 @@
             this.xrLabel27.CanGrow = false;
             this.xrLabel27.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[NewAmortizedInterest]")});
-            this.xrLabel27.Font = new System.Drawing.Font("Lucida Sans Typewriter", 10F);
+            this.xrLabel27.Font = new DevExpress.Drawing.DXFont("Lucida Sans Typewriter", 10F);
             this.xrLabel27.ForeColor = System.Drawing.Color.Black;
             this.xrLabel27.LocationFloat = new DevExpress.Utils.PointFloat(337.4722F, 251.6667F);
             this.xrLabel27.Name = "xrLabel27";
@@ -612,7 +612,7 @@
             this.xrLabel28.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.xrLabel28.BorderWidth = 1F;
             this.xrLabel28.CanGrow = false;
-            this.xrLabel28.Font = new System.Drawing.Font("Lucida Sans Typewriter", 10F, System.Drawing.FontStyle.Bold);
+            this.xrLabel28.Font = new DevExpress.Drawing.DXFont("Lucida Sans Typewriter", 10F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrLabel28.ForeColor = System.Drawing.Color.Black;
             this.xrLabel28.LocationFloat = new DevExpress.Utils.PointFloat(538.861F, 78.05557F);
             this.xrLabel28.Name = "xrLabel28";
@@ -628,7 +628,7 @@
             this.xrLabel29.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.xrLabel29.BorderWidth = 1F;
             this.xrLabel29.CanGrow = false;
-            this.xrLabel29.Font = new System.Drawing.Font("Lucida Sans Typewriter", 10F, System.Drawing.FontStyle.Bold);
+            this.xrLabel29.Font = new DevExpress.Drawing.DXFont("Lucida Sans Typewriter", 10F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrLabel29.ForeColor = System.Drawing.Color.Black;
             this.xrLabel29.LocationFloat = new DevExpress.Utils.PointFloat(97.88885F, 193.3334F);
             this.xrLabel29.Name = "xrLabel29";
@@ -646,7 +646,7 @@
             this.xrLabel30.CanGrow = false;
             this.xrLabel30.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[TotalNotesReceivable]")});
-            this.xrLabel30.Font = new System.Drawing.Font("Lucida Sans Typewriter", 10F);
+            this.xrLabel30.Font = new DevExpress.Drawing.DXFont("Lucida Sans Typewriter", 10F);
             this.xrLabel30.ForeColor = System.Drawing.Color.Black;
             this.xrLabel30.LocationFloat = new DevExpress.Utils.PointFloat(828.4445F, 78.05557F);
             this.xrLabel30.Name = "xrLabel30";
@@ -664,7 +664,7 @@
             this.xrLabel31.CanGrow = false;
             this.xrLabel31.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[TotalNotesPayable]")});
-            this.xrLabel31.Font = new System.Drawing.Font("Lucida Sans Typewriter", 10F);
+            this.xrLabel31.Font = new DevExpress.Drawing.DXFont("Lucida Sans Typewriter", 10F);
             this.xrLabel31.ForeColor = System.Drawing.Color.Black;
             this.xrLabel31.LocationFloat = new DevExpress.Utils.PointFloat(337.4722F, 193.3334F);
             this.xrLabel31.Name = "xrLabel31";
@@ -679,7 +679,7 @@
             this.xrLine1.BorderColor = System.Drawing.Color.Black;
             this.xrLine1.Borders = DevExpress.XtraPrinting.BorderSide.Top;
             this.xrLine1.BorderWidth = 1F;
-            this.xrLine1.Font = new System.Drawing.Font("Times New Roman", 9.75F);
+            this.xrLine1.Font = new DevExpress.Drawing.DXFont("Times New Roman", 9.75F);
             this.xrLine1.ForeColor = System.Drawing.Color.Black;
             this.xrLine1.LineWidth = 3F;
             this.xrLine1.LocationFloat = new DevExpress.Utils.PointFloat(97.19446F, 186.0417F);
@@ -696,7 +696,7 @@
             this.xrLabel32.CanGrow = false;
             this.xrLabel32.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[MasterSundry]")});
-            this.xrLabel32.Font = new System.Drawing.Font("Lucida Sans Typewriter", 10F);
+            this.xrLabel32.Font = new DevExpress.Drawing.DXFont("Lucida Sans Typewriter", 10F);
             this.xrLabel32.ForeColor = System.Drawing.Color.Black;
             this.xrLabel32.LocationFloat = new DevExpress.Utils.PointFloat(828.4445F, 117.1528F);
             this.xrLabel32.Name = "xrLabel32";
@@ -714,7 +714,7 @@
             this.xrLabel33.CanGrow = false;
             this.xrLabel33.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[MasterEXT]")});
-            this.xrLabel33.Font = new System.Drawing.Font("Lucida Sans Typewriter", 10F);
+            this.xrLabel33.Font = new DevExpress.Drawing.DXFont("Lucida Sans Typewriter", 10F);
             this.xrLabel33.ForeColor = System.Drawing.Color.Black;
             this.xrLabel33.LocationFloat = new DevExpress.Utils.PointFloat(828.4445F, 139.1667F);
             this.xrLabel33.Name = "xrLabel33";
@@ -730,7 +730,7 @@
             this.xrLabel34.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.xrLabel34.BorderWidth = 1F;
             this.xrLabel34.CanGrow = false;
-            this.xrLabel34.Font = new System.Drawing.Font("Lucida Sans Typewriter", 10F, System.Drawing.FontStyle.Bold);
+            this.xrLabel34.Font = new DevExpress.Drawing.DXFont("Lucida Sans Typewriter", 10F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrLabel34.ForeColor = System.Drawing.Color.Black;
             this.xrLabel34.LocationFloat = new DevExpress.Utils.PointFloat(538.861F, 139.1667F);
             this.xrLabel34.Name = "xrLabel34";
@@ -746,7 +746,7 @@
             this.xrLabel35.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.xrLabel35.BorderWidth = 1F;
             this.xrLabel35.CanGrow = false;
-            this.xrLabel35.Font = new System.Drawing.Font("Lucida Sans Typewriter", 10F, System.Drawing.FontStyle.Bold);
+            this.xrLabel35.Font = new DevExpress.Drawing.DXFont("Lucida Sans Typewriter", 10F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrLabel35.ForeColor = System.Drawing.Color.Black;
             this.xrLabel35.LocationFloat = new DevExpress.Utils.PointFloat(538.861F, 117.1528F);
             this.xrLabel35.Name = "xrLabel35";
@@ -762,7 +762,7 @@
             this.xrLabel36.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.xrLabel36.BorderWidth = 1F;
             this.xrLabel36.CanGrow = false;
-            this.xrLabel36.Font = new System.Drawing.Font("Lucida Sans Typewriter", 10F, System.Drawing.FontStyle.Bold);
+            this.xrLabel36.Font = new DevExpress.Drawing.DXFont("Lucida Sans Typewriter", 10F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrLabel36.ForeColor = System.Drawing.Color.Black;
             this.xrLabel36.LocationFloat = new DevExpress.Utils.PointFloat(538.861F, 193.3334F);
             this.xrLabel36.Name = "xrLabel36";
@@ -780,7 +780,7 @@
             this.xrLabel37.CanGrow = false;
             this.xrLabel37.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[InterestDueToISF]")});
-            this.xrLabel37.Font = new System.Drawing.Font("Lucida Sans Typewriter", 10F);
+            this.xrLabel37.Font = new DevExpress.Drawing.DXFont("Lucida Sans Typewriter", 10F);
             this.xrLabel37.ForeColor = System.Drawing.Color.Black;
             this.xrLabel37.LocationFloat = new DevExpress.Utils.PointFloat(828.4445F, 35F);
             this.xrLabel37.Name = "xrLabel37";
@@ -798,7 +798,7 @@
             this.xrLabel38.CanGrow = false;
             this.xrLabel38.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[MasterUEI]")});
-            this.xrLabel38.Font = new System.Drawing.Font("Lucida Sans Typewriter", 10F);
+            this.xrLabel38.Font = new DevExpress.Drawing.DXFont("Lucida Sans Typewriter", 10F);
             this.xrLabel38.ForeColor = System.Drawing.Color.Black;
             this.xrLabel38.LocationFloat = new DevExpress.Utils.PointFloat(337.4722F, 35F);
             this.xrLabel38.Name = "xrLabel38";
@@ -814,7 +814,7 @@
             this.xrLabel39.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.xrLabel39.BorderWidth = 1F;
             this.xrLabel39.CanGrow = false;
-            this.xrLabel39.Font = new System.Drawing.Font("Lucida Sans Typewriter", 10F, System.Drawing.FontStyle.Bold);
+            this.xrLabel39.Font = new DevExpress.Drawing.DXFont("Lucida Sans Typewriter", 10F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrLabel39.ForeColor = System.Drawing.Color.Black;
             this.xrLabel39.LocationFloat = new DevExpress.Utils.PointFloat(97.88885F, 78.05557F);
             this.xrLabel39.Name = "xrLabel39";
@@ -830,7 +830,7 @@
             this.xrLabel40.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.xrLabel40.BorderWidth = 1F;
             this.xrLabel40.CanGrow = false;
-            this.xrLabel40.Font = new System.Drawing.Font("Lucida Sans Typewriter", 10F, System.Drawing.FontStyle.Bold);
+            this.xrLabel40.Font = new DevExpress.Drawing.DXFont("Lucida Sans Typewriter", 10F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrLabel40.ForeColor = System.Drawing.Color.Black;
             this.xrLabel40.LocationFloat = new DevExpress.Utils.PointFloat(97.88885F, 35F);
             this.xrLabel40.Name = "xrLabel40";
@@ -846,7 +846,7 @@
             this.xrLabel41.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.xrLabel41.BorderWidth = 1F;
             this.xrLabel41.CanGrow = false;
-            this.xrLabel41.Font = new System.Drawing.Font("Lucida Sans Typewriter", 10F, System.Drawing.FontStyle.Bold);
+            this.xrLabel41.Font = new DevExpress.Drawing.DXFont("Lucida Sans Typewriter", 10F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrLabel41.ForeColor = System.Drawing.Color.Black;
             this.xrLabel41.LocationFloat = new DevExpress.Utils.PointFloat(97.88885F, 10F);
             this.xrLabel41.Name = "xrLabel41";
@@ -880,7 +880,7 @@
             this.Picture1.BorderColor = System.Drawing.Color.Black;
             this.Picture1.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.Picture1.BorderWidth = 1F;
-            this.Picture1.Font = new System.Drawing.Font("Times New Roman", 9.75F);
+            this.Picture1.Font = new DevExpress.Drawing.DXFont("Times New Roman", 9.75F);
             this.Picture1.ForeColor = System.Drawing.Color.Black;
             this.Picture1.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource("img", resources.GetString("Picture1.ImageSource"));
             this.Picture1.LocationFloat = new DevExpress.Utils.PointFloat(816.1112F, 2.70834F);
@@ -897,7 +897,7 @@
             this.gsFormTitle1.CanGrow = false;
             this.gsFormTitle1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "?gsFormTitle")});
-            this.gsFormTitle1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
+            this.gsFormTitle1.Font = new DevExpress.Drawing.DXFont("Segoe UI", 14F, DevExpress.Drawing.DXFontStyle.Bold);
             this.gsFormTitle1.ForeColor = System.Drawing.Color.Black;
             this.gsFormTitle1.LocationFloat = new DevExpress.Utils.PointFloat(275.6667F, 69.37501F);
             this.gsFormTitle1.Name = "gsFormTitle1";
@@ -911,7 +911,7 @@
             this.DataDate1.BorderColor = System.Drawing.Color.Black;
             this.DataDate1.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.DataDate1.BorderWidth = 1F;
-            this.DataDate1.Font = new System.Drawing.Font("Arial", 10F);
+            this.DataDate1.Font = new DevExpress.Drawing.DXFont("Arial", 10F);
             this.DataDate1.ForeColor = System.Drawing.Color.Black;
             this.DataDate1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
             this.DataDate1.Name = "DataDate1";
@@ -949,7 +949,7 @@
             this.PageNofM1.BorderColor = System.Drawing.Color.Black;
             this.PageNofM1.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.PageNofM1.BorderWidth = 1F;
-            this.PageNofM1.Font = new System.Drawing.Font("Arial", 10F);
+            this.PageNofM1.Font = new DevExpress.Drawing.DXFont("Arial", 10F);
             this.PageNofM1.ForeColor = System.Drawing.Color.Black;
             this.PageNofM1.LocationFloat = new DevExpress.Utils.PointFloat(889.9999F, 0F);
             this.PageNofM1.Name = "PageNofM1";
@@ -966,7 +966,7 @@
             this.gsUserName_1.CanGrow = false;
             this.gsUserName_1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "?gsUserName")});
-            this.gsUserName_1.Font = new System.Drawing.Font("Arial", 10F);
+            this.gsUserName_1.Font = new DevExpress.Drawing.DXFont("Arial", 10F);
             this.gsUserName_1.ForeColor = System.Drawing.Color.Black;
             this.gsUserName_1.LocationFloat = new DevExpress.Utils.PointFloat(291.6667F, 0F);
             this.gsUserName_1.Name = "gsUserName_1";
@@ -983,7 +983,7 @@
             this.gsUserID_1.CanGrow = false;
             this.gsUserID_1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "?gsUserID")});
-            this.gsUserID_1.Font = new System.Drawing.Font("Arial", 10F);
+            this.gsUserID_1.Font = new DevExpress.Drawing.DXFont("Arial", 10F);
             this.gsUserID_1.ForeColor = System.Drawing.Color.Black;
             this.gsUserID_1.LocationFloat = new DevExpress.Utils.PointFloat(250F, 0F);
             this.gsUserID_1.Name = "gsUserID_1";
@@ -998,7 +998,7 @@
             this.xrLabel1.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.xrLabel1.BorderWidth = 1F;
             this.xrLabel1.CanGrow = false;
-            this.xrLabel1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.xrLabel1.Font = new DevExpress.Drawing.DXFont("Arial", 10F, DevExpress.Drawing.DXFontStyle.Bold);
             this.xrLabel1.ForeColor = System.Drawing.Color.Black;
             this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(200F, 0F);
             this.xrLabel1.Name = "xrLabel1";
@@ -1013,7 +1013,7 @@
             this.DataTime1.BorderColor = System.Drawing.Color.Black;
             this.DataTime1.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.DataTime1.BorderWidth = 1F;
-            this.DataTime1.Font = new System.Drawing.Font("Arial", 10F);
+            this.DataTime1.Font = new DevExpress.Drawing.DXFont("Arial", 10F);
             this.DataTime1.ForeColor = System.Drawing.Color.Black;
             this.DataTime1.LocationFloat = new DevExpress.Utils.PointFloat(91.66665F, 0F);
             this.DataTime1.Name = "DataTime1";
@@ -1211,7 +1211,7 @@
             this.DataMember = "MasterTotalTemp";
             this.DataSource = this.sqlDataSourceClosedPaymentBalanceTotals;
             this.Landscape = true;
-            this.Margins = new System.Drawing.Printing.Margins(16, 16, 16, 16);
+            this.Margins = new DevExpress.Drawing.DXMargins(16, 16, 16, 16);
             this.PageHeight = 850;
             this.PageWidth = 1100;
             this.Parameters.AddRange(new DevExpress.XtraReports.Parameters.Parameter[] {
