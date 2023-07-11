@@ -95,7 +95,7 @@
             this.DEALERACCNO1.CanGrow = false;
             this.DEALERACCNO1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[DEALER_ACC_NO]")});
-            this.DEALERACCNO1.Font = new System.Drawing.Font("Arial", 8F);
+            this.DEALERACCNO1.Font = new DevExpress.Drawing.DXFont("Arial", 8F);
             this.DEALERACCNO1.ForeColor = System.Drawing.Color.Black;
             this.DEALERACCNO1.LocationFloat = new DevExpress.Utils.PointFloat(4.166667F, 0.4166667F);
             this.DEALERACCNO1.Name = "DEALERACCNO1";
@@ -112,7 +112,7 @@
             this.CUSTOMERNO1.CanGrow = false;
             this.CUSTOMERNO1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[CUSTOMER_NO]")});
-            this.CUSTOMERNO1.Font = new System.Drawing.Font("Arial", 8F);
+            this.CUSTOMERNO1.Font = new DevExpress.Drawing.DXFont("Arial", 8F);
             this.CUSTOMERNO1.ForeColor = System.Drawing.Color.Black;
             this.CUSTOMERNO1.LocationFloat = new DevExpress.Utils.PointFloat(49.51389F, 0F);
             this.CUSTOMERNO1.Name = "CUSTOMERNO1";
@@ -129,7 +129,7 @@
             this.CUSTOMERFIRSTNAME1.CanGrow = false;
             this.CUSTOMERFIRSTNAME1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[CUSTOMER_FIRST_NAME]")});
-            this.CUSTOMERFIRSTNAME1.Font = new System.Drawing.Font("Arial", 8F);
+            this.CUSTOMERFIRSTNAME1.Font = new DevExpress.Drawing.DXFont("Arial", 8F);
             this.CUSTOMERFIRSTNAME1.ForeColor = System.Drawing.Color.Black;
             this.CUSTOMERFIRSTNAME1.LocationFloat = new DevExpress.Utils.PointFloat(120.8333F, 0F);
             this.CUSTOMERFIRSTNAME1.Name = "CUSTOMERFIRSTNAME1";
@@ -146,7 +146,7 @@
             this.CUSTOMERLASTNAME1.CanGrow = false;
             this.CUSTOMERLASTNAME1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[CUSTOMER_LAST_NAME]")});
-            this.CUSTOMERLASTNAME1.Font = new System.Drawing.Font("Arial", 8F);
+            this.CUSTOMERLASTNAME1.Font = new DevExpress.Drawing.DXFont("Arial", 8F);
             this.CUSTOMERLASTNAME1.ForeColor = System.Drawing.Color.Black;
             this.CUSTOMERLASTNAME1.LocationFloat = new DevExpress.Utils.PointFloat(256.1805F, 0F);
             this.CUSTOMERLASTNAME1.Name = "CUSTOMERLASTNAME1";
@@ -163,7 +163,7 @@
             this.CUSTOMERBALANCE1.CanGrow = false;
             this.CUSTOMERBALANCE1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[CUSTOMER_BALANCE]")});
-            this.CUSTOMERBALANCE1.Font = new System.Drawing.Font("Arial", 8F);
+            this.CUSTOMERBALANCE1.Font = new DevExpress.Drawing.DXFont("Arial", 8F);
             this.CUSTOMERBALANCE1.ForeColor = System.Drawing.Color.Black;
             this.CUSTOMERBALANCE1.LocationFloat = new DevExpress.Utils.PointFloat(518.8195F, 0F);
             this.CUSTOMERBALANCE1.Name = "CUSTOMERBALANCE1";
@@ -181,7 +181,7 @@
             this.CUSTOMERBUYOUT1.CanGrow = false;
             this.CUSTOMERBUYOUT1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[CUSTOMER_BUYOUT]")});
-            this.CUSTOMERBUYOUT1.Font = new System.Drawing.Font("Arial", 8F);
+            this.CUSTOMERBUYOUT1.Font = new DevExpress.Drawing.DXFont("Arial", 8F);
             this.CUSTOMERBUYOUT1.ForeColor = System.Drawing.Color.Black;
             this.CUSTOMERBUYOUT1.LocationFloat = new DevExpress.Utils.PointFloat(615.4861F, 0F);
             this.CUSTOMERBUYOUT1.Name = "CUSTOMERBUYOUT1";
@@ -199,7 +199,7 @@
             this.PaidThrough_1.CanGrow = false;
             this.PaidThrough_1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[PaidThrough]")});
-            this.PaidThrough_1.Font = new System.Drawing.Font("Arial", 8F);
+            this.PaidThrough_1.Font = new DevExpress.Drawing.DXFont("Arial", 8F);
             this.PaidThrough_1.ForeColor = System.Drawing.Color.Black;
             this.PaidThrough_1.LocationFloat = new DevExpress.Utils.PointFloat(726.0417F, 0F);
             this.PaidThrough_1.Name = "PaidThrough_1";
@@ -216,7 +216,7 @@
             this.CUSTOMERREGULARAMOUNT1.CanGrow = false;
             this.CUSTOMERREGULARAMOUNT1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[CUSTOMER_REGULAR_AMOUNT]")});
-            this.CUSTOMERREGULARAMOUNT1.Font = new System.Drawing.Font("Arial", 8F);
+            this.CUSTOMERREGULARAMOUNT1.Font = new DevExpress.Drawing.DXFont("Arial", 8F);
             this.CUSTOMERREGULARAMOUNT1.ForeColor = System.Drawing.Color.Black;
             this.CUSTOMERREGULARAMOUNT1.LocationFloat = new DevExpress.Utils.PointFloat(418.75F, 0F);
             this.CUSTOMERREGULARAMOUNT1.Name = "CUSTOMERREGULARAMOUNT1";
@@ -258,7 +258,7 @@
             this.Picture1.BorderColor = System.Drawing.Color.Black;
             this.Picture1.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.Picture1.BorderWidth = 1F;
-            this.Picture1.Font = new System.Drawing.Font("Times New Roman", 9.75F);
+            this.Picture1.Font = new DevExpress.Drawing.DXFont("Times New Roman", 9.75F);
             this.Picture1.ForeColor = System.Drawing.Color.Black;
             this.Picture1.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource("img", resources.GetString("Picture1.ImageSource"));
             this.Picture1.LocationFloat = new DevExpress.Utils.PointFloat(563.6111F, 0F);
@@ -273,7 +273,7 @@
             this.Text1.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.Text1.BorderWidth = 1F;
             this.Text1.CanGrow = false;
-            this.Text1.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold);
+            this.Text1.Font = new DevExpress.Drawing.DXFont("Arial", 8F, DevExpress.Drawing.DXFontStyle.Bold);
             this.Text1.ForeColor = System.Drawing.Color.Black;
             this.Text1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 157.5F);
             this.Text1.Name = "Text1";
@@ -289,7 +289,7 @@
             this.Text2.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.Text2.BorderWidth = 1F;
             this.Text2.CanGrow = false;
-            this.Text2.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold);
+            this.Text2.Font = new DevExpress.Drawing.DXFont("Arial", 8F, DevExpress.Drawing.DXFontStyle.Bold);
             this.Text2.ForeColor = System.Drawing.Color.Black;
             this.Text2.LocationFloat = new DevExpress.Utils.PointFloat(50F, 157.5F);
             this.Text2.Name = "Text2";
@@ -305,7 +305,7 @@
             this.Text3.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.Text3.BorderWidth = 1F;
             this.Text3.CanGrow = false;
-            this.Text3.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold);
+            this.Text3.Font = new DevExpress.Drawing.DXFont("Arial", 8F, DevExpress.Drawing.DXFontStyle.Bold);
             this.Text3.ForeColor = System.Drawing.Color.Black;
             this.Text3.LocationFloat = new DevExpress.Utils.PointFloat(116.6667F, 157.5F);
             this.Text3.Name = "Text3";
@@ -321,7 +321,7 @@
             this.Text4.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.Text4.BorderWidth = 1F;
             this.Text4.CanGrow = false;
-            this.Text4.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold);
+            this.Text4.Font = new DevExpress.Drawing.DXFont("Arial", 8F, DevExpress.Drawing.DXFontStyle.Bold);
             this.Text4.ForeColor = System.Drawing.Color.Black;
             this.Text4.LocationFloat = new DevExpress.Utils.PointFloat(258.3333F, 157.5F);
             this.Text4.Name = "Text4";
@@ -337,7 +337,7 @@
             this.Text5.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.Text5.BorderWidth = 1F;
             this.Text5.CanGrow = false;
-            this.Text5.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold);
+            this.Text5.Font = new DevExpress.Drawing.DXFont("Arial", 8F, DevExpress.Drawing.DXFontStyle.Bold);
             this.Text5.ForeColor = System.Drawing.Color.Black;
             this.Text5.LocationFloat = new DevExpress.Utils.PointFloat(516.6667F, 157.5F);
             this.Text5.Name = "Text5";
@@ -353,7 +353,7 @@
             this.Text6.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.Text6.BorderWidth = 1F;
             this.Text6.CanGrow = false;
-            this.Text6.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold);
+            this.Text6.Font = new DevExpress.Drawing.DXFont("Arial", 8F, DevExpress.Drawing.DXFontStyle.Bold);
             this.Text6.ForeColor = System.Drawing.Color.Black;
             this.Text6.LocationFloat = new DevExpress.Utils.PointFloat(616.6667F, 157.5F);
             this.Text6.Name = "Text6";
@@ -369,7 +369,7 @@
             this.Text9.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.Text9.BorderWidth = 1F;
             this.Text9.CanGrow = false;
-            this.Text9.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold);
+            this.Text9.Font = new DevExpress.Drawing.DXFont("Arial", 8F, DevExpress.Drawing.DXFontStyle.Bold);
             this.Text9.ForeColor = System.Drawing.Color.Black;
             this.Text9.LocationFloat = new DevExpress.Utils.PointFloat(708.3333F, 157.5F);
             this.Text9.Name = "Text9";
@@ -385,7 +385,7 @@
             this.Text18.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.Text18.BorderWidth = 1F;
             this.Text18.CanGrow = false;
-            this.Text18.Font = new System.Drawing.Font("Arial", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
+            this.Text18.Font = new DevExpress.Drawing.DXFont("Arial", 14F, ((DevExpress.Drawing.DXFontStyle)((DevExpress.Drawing.DXFontStyle.Bold | DevExpress.Drawing.DXFontStyle.Underline))));
             this.Text18.ForeColor = System.Drawing.Color.Black;
             this.Text18.LocationFloat = new DevExpress.Utils.PointFloat(0F, 95F);
             this.Text18.Name = "Text18";
@@ -400,7 +400,7 @@
             this.Line2.BorderColor = System.Drawing.Color.Black;
             this.Line2.Borders = DevExpress.XtraPrinting.BorderSide.Top;
             this.Line2.BorderWidth = 1F;
-            this.Line2.Font = new System.Drawing.Font("Times New Roman", 9.75F);
+            this.Line2.Font = new DevExpress.Drawing.DXFont("Times New Roman", 9.75F);
             this.Line2.ForeColor = System.Drawing.Color.Black;
             this.Line2.LineWidth = 3F;
             this.Line2.LocationFloat = new DevExpress.Utils.PointFloat(0F, 174.8611F);
@@ -415,7 +415,7 @@
             this.Text8.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.Text8.BorderWidth = 1F;
             this.Text8.CanGrow = false;
-            this.Text8.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold);
+            this.Text8.Font = new DevExpress.Drawing.DXFont("Arial", 8F, DevExpress.Drawing.DXFontStyle.Bold);
             this.Text8.ForeColor = System.Drawing.Color.Black;
             this.Text8.LocationFloat = new DevExpress.Utils.PointFloat(416.6666F, 157.5F);
             this.Text8.Name = "Text8";
@@ -455,7 +455,7 @@
             this.gsUserName_1.CanGrow = false;
             this.gsUserName_1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "?gsUserName")});
-            this.gsUserName_1.Font = new System.Drawing.Font("Arial", 8F);
+            this.gsUserName_1.Font = new DevExpress.Drawing.DXFont("Arial", 8F);
             this.gsUserName_1.ForeColor = System.Drawing.Color.Black;
             this.gsUserName_1.LocationFloat = new DevExpress.Utils.PointFloat(291.6667F, 0F);
             this.gsUserName_1.Name = "gsUserName_1";
@@ -472,7 +472,7 @@
             this.gsUserID_1.CanGrow = false;
             this.gsUserID_1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "?gsUserID")});
-            this.gsUserID_1.Font = new System.Drawing.Font("Arial", 8F);
+            this.gsUserID_1.Font = new DevExpress.Drawing.DXFont("Arial", 8F);
             this.gsUserID_1.ForeColor = System.Drawing.Color.Black;
             this.gsUserID_1.LocationFloat = new DevExpress.Utils.PointFloat(250F, 0F);
             this.gsUserID_1.Name = "gsUserID_1";
@@ -487,7 +487,7 @@
             this.Text17.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.Text17.BorderWidth = 1F;
             this.Text17.CanGrow = false;
-            this.Text17.Font = new System.Drawing.Font("Arial", 8F, System.Drawing.FontStyle.Bold);
+            this.Text17.Font = new DevExpress.Drawing.DXFont("Arial", 8F, DevExpress.Drawing.DXFontStyle.Bold);
             this.Text17.ForeColor = System.Drawing.Color.Black;
             this.Text17.LocationFloat = new DevExpress.Utils.PointFloat(200F, 0F);
             this.Text17.Name = "Text17";
@@ -502,7 +502,7 @@
             this.DataTime1.BorderColor = System.Drawing.Color.Black;
             this.DataTime1.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.DataTime1.BorderWidth = 1F;
-            this.DataTime1.Font = new System.Drawing.Font("Arial", 8F);
+            this.DataTime1.Font = new DevExpress.Drawing.DXFont("Arial", 8F);
             this.DataTime1.ForeColor = System.Drawing.Color.Black;
             this.DataTime1.LocationFloat = new DevExpress.Utils.PointFloat(91.66666F, 0F);
             this.DataTime1.Name = "DataTime1";
@@ -518,7 +518,7 @@
             this.DataDate1.BorderColor = System.Drawing.Color.Black;
             this.DataDate1.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.DataDate1.BorderWidth = 1F;
-            this.DataDate1.Font = new System.Drawing.Font("Arial", 8F);
+            this.DataDate1.Font = new DevExpress.Drawing.DXFont("Arial", 8F);
             this.DataDate1.ForeColor = System.Drawing.Color.Black;
             this.DataDate1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
             this.DataDate1.Name = "DataDate1";
@@ -533,7 +533,7 @@
             this.PageNofM1.BorderColor = System.Drawing.Color.Black;
             this.PageNofM1.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.PageNofM1.BorderWidth = 1F;
-            this.PageNofM1.Font = new System.Drawing.Font("Arial", 8F);
+            this.PageNofM1.Font = new DevExpress.Drawing.DXFont("Arial", 8F);
             this.PageNofM1.ForeColor = System.Drawing.Color.Black;
             this.PageNofM1.LocationFloat = new DevExpress.Utils.PointFloat(641.6667F, 0F);
             this.PageNofM1.Name = "PageNofM1";
@@ -594,7 +594,7 @@
             this.sqlDataSource1});
             this.DataMember = "ClosedCustomerShortBalance";
             this.DataSource = this.sqlDataSource1;
-            this.Margins = new System.Drawing.Printing.Margins(20, 20, 20, 20);
+            this.Margins = new DevExpress.Drawing.DXMargins(20, 20, 20, 20);
             this.Parameters.AddRange(new DevExpress.XtraReports.Parameters.Parameter[] {
             this.gsUserName,
             this.gsUserID});

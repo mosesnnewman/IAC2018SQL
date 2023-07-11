@@ -27,6 +27,7 @@ using System.Threading;
 using Microsoft.VisualStudio.Data.Services;
 using System.Drawing.Drawing2D;
 using IAC2021SQL.IACDataSetTableAdapters;
+using IAC2021SQL.ProductionMainTablesTableAdapters;
 
 namespace IAC2021SQL
 {
@@ -672,7 +673,9 @@ namespace IAC2021SQL
 									dr["ISFPaymentCode"] = tdtCUSTHIST.Rows[AmortIndex].Field<String>("ISFPaymentCode");
 									break;
 							}
-							dr["HistorySeq"] = tdtCUSTHIST.Rows[AmortIndex]["CUSTHIST_DATE_SEQ"];
+                            // Moses Newman 06/26/2023 Add HistoryID
+                            dr["HistoryID"] = tdtCUSTHIST.Rows[AmortIndex]["ID"];
+                            dr["HistorySeq"] = tdtCUSTHIST.Rows[AmortIndex]["CUSTHIST_DATE_SEQ"];
 							// Moses Newman 07/25/2019 Add History Date to Amort for proper sequencing in FixLateFeesandPartialPayments
 							dr["HistoryDate"] = tdtCUSTHIST.Rows[AmortIndex]["CUSTHIST_PAY_DATE"];
 
@@ -735,6 +738,9 @@ namespace IAC2021SQL
 							dr["PaymentCode"] = (String)tdtCUSTHIST.Rows[AmortIndex - 1]["CUSTHIST_PAYMENT_TYPE"] + (String)tdtCUSTHIST.Rows[AmortIndex - 1]["CUSTHIST_PAYMENT_CODE"];
 							// Moses Newman 03/20/2018 Add History Sequence Number to amort
 							dr["HistorySeq"] = tdtCUSTHIST.Rows[AmortIndex - 1]["CUSTHIST_DATE_SEQ"];
+                            // Moses Newman 06/26/2023 Add HistoryID
+                            dr["HistoryID"] = tdtCUSTHIST.Rows[AmortIndex - 1]["ID"];
+
                             // Moses Newman 06/20/2023 If PaymentHistory Record exists use it instead of CUSTHIST
                             paymentHistoryTableAdapter.FillByCusthistID(PDS.PaymentHistory, tdtCUSTHIST.Rows[AmortIndex-1].Field<Int32?>("id"));
                             if (PDS.PaymentHistory.Rows.Count > 0)
@@ -844,8 +850,10 @@ namespace IAC2021SQL
 						dr["RateChange"] = (Decimal)(rateChangeRate);
 						dr["Balance"] = line.BalanceDueTotal / CENTS_PER_DOLLAR;
 						dr["HistorySeq"] = tdtCUSTHIST.Rows[AmortIndex]["CUSTHIST_DATE_SEQ"];
-						// Moses Newman 07/25/2019 Add History Date to Amort for proper sequencing in FixLateFeesandPartialPayments
-						dr["HistoryDate"] = tdtCUSTHIST.Rows[AmortIndex]["CUSTHIST_PAY_DATE"];
+                        // Moses Newman 06/26/2023 Add HistoryID
+                        dr["HistoryID"] = tdtCUSTHIST.Rows[AmortIndex]["ID"];
+                        // Moses Newman 07/25/2019 Add History Date to Amort for proper sequencing in FixLateFeesandPartialPayments
+                        dr["HistoryDate"] = tdtCUSTHIST.Rows[AmortIndex]["CUSTHIST_PAY_DATE"];
 						dr["PaymentCode"] = "F";
 						// Moses Newman 12/16/2020 Add Payment Code!
 						dr["PaymentSeq"] = tdtCUSTHIST.Rows[AmortIndex].Field<Int32?>("PaymentSeq") != null ? tdtCUSTHIST.Rows[AmortIndex].Field<Int32>("PaymentSeq") : 0;
@@ -3120,13 +3128,11 @@ namespace IAC2021SQL
         {
             Int32 TempCust = Convert.ToInt32(CustomerNo);
             IACDataSet IDS = new IACDataSet();
-            IACDataSet.TVAmortDataTable CurrentRec = new IACDataSet.TVAmortDataTable();
-            IACDataSet.TVAmortDataTable PreviousRec = new IACDataSet.TVAmortDataTable();
 
             PaymentDataSet PDS = new PaymentDataSet();
 
             IACDataSetTableAdapters.CUSTOMERTableAdapter CUSTOMERTableAdapter = new IACDataSetTableAdapters.CUSTOMERTableAdapter();
-			IACDataSetTableAdapters.TVAmortTableAdapter tVAmortTableAdapter = new IACDataSetTableAdapters.TVAmortTableAdapter();
+			IACDataSetTableAdapters.TVAmortTableAdapter TVAmortTableAdapter = new IACDataSetTableAdapters.TVAmortTableAdapter();
             PaymentDataSetTableAdapters.InvoicesTableAdapter InvoicesTableAdapter = new PaymentDataSetTableAdapters.InvoicesTableAdapter();
             PaymentDataSetTableAdapters.PaymentHistoryTableAdapter PaymentHistoryTableAdapter = new PaymentDataSetTableAdapters.PaymentHistoryTableAdapter();
             PaymentDataSetTableAdapters.PaymentInvoiceTableAdapter PaymentInvoiceTableAdapter = new PaymentDataSetTableAdapters.PaymentInvoiceTableAdapter();
@@ -3146,8 +3152,9 @@ namespace IAC2021SQL
             else
 				InvoicesTableAdapter.FillAllPaidByCustomerIDDateRange(PDS.Invoices, TempCust, "Monthly Payment", (DateTime?)null);
 
-			var loBalance = PaymentHistoryTableAdapter.BalanceToDate(TempCust, PDS.PaymentHistory.Rows[0].Field<DateTime>("PaymentDate"));
-			Decimal lnBalance = loBalance != null ? (Decimal)loBalance : 0;
+			var loBalance = PaymentHistoryTableAdapter.OriginalBalance(TempCust, PDS.PaymentHistory.Rows[0].Field<DateTime>("PaymentDate"),
+                                                                                          PDS.PaymentHistory.Rows[0].Field<Int32>("SeqNo"));
+            Decimal lnBalance = loBalance != null ? (Decimal)loBalance : 0;
  
             lnUnusedFunds = PDS.PaymentHistory.Rows[0].Field<Decimal>("Amount");
             var loPartialPayment = InvoicesTableAdapter.PartialPayment(TempCust);
@@ -3155,8 +3162,6 @@ namespace IAC2021SQL
 					lnOverPayment = 0;
 			Boolean lbLastPayment = false,
 					lbCreateOverPayment = false;
-			Object loContractStatus = null;
-
 
             if (lnUnusedFunds > 0)
 			{
@@ -3170,15 +3175,12 @@ namespace IAC2021SQL
 						lnNumMonthlies = 0;
 						break;*/
 					default:
-						if(lnPartialPayment + lnUnusedFunds >= lnBalance && lnBalance != 0)
+						if (lnBalance < 0)
 						{
 							lbLastPayment = true;
-							lnOverPayment = (lnPartialPayment + lnUnusedFunds) - lnBalance;
-							if (lnOverPayment > 0)
-							{
-								lnUnusedFunds -= lnOverPayment;
-								lbCreateOverPayment = true;
-							}
+							lnOverPayment = -lnBalance;
+							lnUnusedFunds -= lnOverPayment;
+							lbCreateOverPayment = true;
 						}
 						lnNumMonthlies = (Int32)Math.Floor((lnPartialPayment+lnUnusedFunds) / lnRegularPayment);
                         if (PDS.Invoices.Count == 0 && lnUnusedFunds > 0)
@@ -3279,7 +3281,6 @@ namespace IAC2021SQL
 								PDS.Invoices.Rows[InvoiceCount].SetField<Decimal>("TotalPaid", PDS.Invoices.Rows[InvoiceCount].Field<Decimal>("Amount"));
 								PDS.Invoices.Rows[InvoiceCount].SetField<Decimal>("TotalDue", 0);
 								PDS.Invoices.Rows[InvoiceCount].SetField<Boolean>("IsPaid", true);
-                                loContractStatus = InvoicesTableAdapter.ContractStatus(TempCust, PDS.Invoices.Rows[InvoiceCount].Field<DateTime>("DateDue"));
                                 InvoicesTableAdapter.Update(PDS.Invoices.Rows[InvoiceCount]);
                                 PaymentInvoiceTableAdapter.Insert(TempCust, PaymentId, PDS.Invoices.Rows[InvoiceCount].Field<Int32>("id"), lnAmountPaid, 0, false,
                                       PDS.PaymentHistory.Rows[0].Field<String>("Type"), PDS.PaymentHistory.Rows[0].Field<String>("Code"),
@@ -3337,8 +3338,10 @@ namespace IAC2021SQL
                     oLateChargeToReturn = PaymentHistoryTableAdapter.LateChargeToReturn(PDS.PaymentHistory.Rows[0].Field<Int32>("ID"));
 					LateChargeToReturn = oLateChargeToReturn != null ? (Decimal)oLateChargeToReturn : 0;
 
-                    lnNumMonthlies = (Int32)Math.Floor(-(lnUnusedFunds+lnPartialPayment) / lnRegularPayment);
-					lnNumMonthlies = lnNumMonthlies < 0 ? 0: lnNumMonthlies;
+					// Moses Newman 06/23/2023 Don't take into account partial payment in negative payments, can't be used to increase monthly payments
+                    //lnNumMonthlies = (Int32)Math.Floor(-(lnUnusedFunds+lnPartialPayment) / lnRegularPayment);
+                    lnNumMonthlies = (Int32)Math.Floor(-lnUnusedFunds / lnRegularPayment);
+                    lnNumMonthlies = lnNumMonthlies < 0 ? 0: lnNumMonthlies;
 					InvoiceCount = PDS.Invoices.Count - 1;
 
                     while (InvoiceCount >= 0 && lnUnusedFunds < 0)
@@ -3363,8 +3366,9 @@ namespace IAC2021SQL
 							{
 								if (LateChargeToReturn != 0)
 								{
-									ApplyPaymentToLates(CustomerNo, LateChargeToReturn, PDS.PaymentHistory.Rows[0].Field<DateTime>("PaymentDate"), PaymentId);
-									lnUnusedFunds -= LateChargeToReturn;
+									ApplyPaymentToLates(CustomerNo, -LateChargeToReturn, PDS.PaymentHistory.Rows[0].Field<DateTime>("PaymentDate"), PaymentId);
+									lnUnusedFunds += LateChargeToReturn;
+									LateChargeToReturn = 0;
                                 }
 								if (lnUnusedFunds == 0 || InvoiceCount < 0)
 									return;
@@ -3600,32 +3604,13 @@ namespace IAC2021SQL
                 if (OldDate.Month != 2 && (OldDate.Day == 28 || OldDate.Day == 29))
 					OldDate = DateTime.Parse(OldDate.Month.ToString() + "/30/" + OldDate.Year.ToString());
             
-			Decimal lnContractStatus, lnLateFeeBalance, lnPartialPaymentByRow;
-
-            Object loContractStatus = null, loPaidThru = null, loLateFeeBalance = null, loPartialPaymentByRow = null,
-				   loPaidThroughDate = null;
-            String lsPaidThru;
-            DateTime? ldPaidThroughDate;
-            loContractStatus = invoicesTableAdapter.ContractStatus(TempCust, DateTime.Now.Date);
-            lnContractStatus = loContractStatus != null ? (Decimal)loContractStatus : 0;
-            loLateFeeBalance = invoicesTableAdapter.LateChargeBalance(TempCust);
-            lnLateFeeBalance = loLateFeeBalance != null ? (Decimal)loLateFeeBalance : 0;
-            loPartialPaymentByRow = invoicesTableAdapter.PartialPayment(TempCust);
-            lnPartialPaymentByRow = loPartialPaymentByRow != null ? (Decimal)loPartialPaymentByRow : 0;
-            loPaidThru = invoicesTableAdapter.PaidThru(TempCust);
-            lsPaidThru = loPaidThru != null ? (String)loPaidThru : "";
-            loPaidThroughDate = invoicesTableAdapter.PaidThroughDate(TempCust);
-            ldPaidThroughDate = loPaidThroughDate != null ? (DateTime)loPaidThroughDate : (DateTime?)null;
-            
 			if (Caption != "OVER PAYMENT")
 			{
-                invoicesTableAdapter.Insert(TempCust, NewDate, DateTime.Now.Date, OldDate, LastExtensionCount, Caption, Amount, 0, Amount, false,
-											lnContractStatus,lnLateFeeBalance,lnPartialPaymentByRow,lsPaidThru,ldPaidThroughDate);
+                invoicesTableAdapter.Insert(TempCust, NewDate, DateTime.Now.Date, OldDate, LastExtensionCount, Caption, Amount, 0, Amount, false);
             }
             else
 			{
-                invoicesTableAdapter.Insert(TempCust, NewDate, DateTime.Now.Date, OldDate, LastExtensionCount, Caption, Amount, Amount, 0, true,
-                                            lnContractStatus, lnLateFeeBalance, lnPartialPaymentByRow, lsPaidThru, ldPaidThroughDate);
+                invoicesTableAdapter.Insert(TempCust, NewDate, DateTime.Now.Date, OldDate, LastExtensionCount, Caption, Amount, Amount, 0, true);
             }
         }
 
@@ -3653,7 +3638,7 @@ namespace IAC2021SQL
                                                IDS.CUSTOMER.Rows[0].Field<String>("CUSTOMER_AMORTIZE_IND") == "S" ? true : false, true, false, false, -1, true);
             for (int i = 0;i< PDS.PaymentHistory.Rows.Count;i++)
 			{
-				ApplySinglePayment(CustomerNo, PDS.PaymentHistory.Rows[i].Field<Int32>("id"));
+                ApplySinglePayment(CustomerNo, PDS.PaymentHistory.Rows[i].Field<Int32>("id"));
 				UpdateBuckets(TempCust, PDS, i, PDS.PaymentHistory.Rows[i].Field<DateTime>("PaymentDate"));
 			}
         }

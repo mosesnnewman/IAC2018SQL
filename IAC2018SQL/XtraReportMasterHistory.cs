@@ -13,7 +13,7 @@ namespace IAC2021SQL
             InitializeComponent();
         }
 
-        private void TotalCurReserve1_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        private void TotalCurReserve1_BeforePrint(object sender, CancelEventArgs e)
         {
             decimal.TryParse(Convert.ToString(TotalCurReserve1.Summary.GetResult()), out decimal totalCurReserve);
             if (totalCurReserve == 0)
@@ -22,7 +22,7 @@ namespace IAC2021SQL
             }
         }
 
-        private void TotalYTDReserve1_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        private void TotalYTDReserve1_BeforePrint(object sender, CancelEventArgs e)
         {
             decimal.TryParse(Convert.ToString(TotalYTDReserve1.Summary.GetResult()), out decimal totalYTDReserve);
             if (totalYTDReserve == 0)
@@ -31,7 +31,7 @@ namespace IAC2021SQL
             }
         }
 
-        private void TotalCurCont1_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        private void TotalCurCont1_BeforePrint(object sender, CancelEventArgs e)
         {
             decimal.TryParse(Convert.ToString(TotalCurCont1.Summary.GetResult()), out decimal totalCurCont);
             if (totalCurCont == 0)
@@ -40,7 +40,7 @@ namespace IAC2021SQL
             }
         }
 
-        private void TotalYTDCont1_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        private void TotalYTDCont1_BeforePrint(object sender, CancelEventArgs e)
         {
             decimal.TryParse(Convert.ToString(TotalYTDCont1.Summary.GetResult()), out decimal totalYTDCont);
             if (totalYTDCont == 0)
@@ -49,7 +49,7 @@ namespace IAC2021SQL
             }
         }
 
-        private void TotalCurOLoan1_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        private void TotalCurOLoan1_BeforePrint(object sender, CancelEventArgs e)
         {
             decimal.TryParse(Convert.ToString(TotalCurOLoan1.Summary.GetResult()), out decimal totalCurOloan);
             if (totalCurOloan == 0)
@@ -58,7 +58,7 @@ namespace IAC2021SQL
             }
         }
 
-        private void TotalYTDOLoan1_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        private void TotalYTDOLoan1_BeforePrint(object sender, CancelEventArgs e)
         {
             decimal.TryParse(Convert.ToString(TotalYTDOLoan1.Summary.GetResult()), out decimal totalYTDOloan);
             if (totalYTDOloan == 0)
@@ -67,7 +67,7 @@ namespace IAC2021SQL
             }
         }
 
-        private void TotalCurNotesPayable1_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        private void TotalCurNotesPayable1_BeforePrint(object sender, CancelEventArgs e)
         {
             decimal.TryParse(Convert.ToString(TotalCurNotesPayable1.Summary.GetResult()), out decimal totalCurNotesPayable);
             if (totalCurNotesPayable == 0)
@@ -76,7 +76,7 @@ namespace IAC2021SQL
             }
         }
 
-        private void TotalTYDNotesPayable1_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        private void TotalTYDNotesPayable1_BeforePrint(object sender, CancelEventArgs e)
         {
             decimal.TryParse(Convert.ToString(TotalTYDNotesPayable1.Summary.GetResult()), out decimal totalYTDNotesPayable);
             if (totalYTDNotesPayable == 0)
@@ -85,7 +85,7 @@ namespace IAC2021SQL
             }
         }
 
-        private void TotalCurBad1_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        private void TotalCurBad1_BeforePrint(object sender, CancelEventArgs e)
         {
             decimal.TryParse(Convert.ToString(TotalCurBad1.Summary.GetResult()), out decimal totalCurBad);
             if (totalCurBad == 0)
@@ -94,7 +94,7 @@ namespace IAC2021SQL
             }
         }
 
-        private void TotalYTDBad1_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        private void TotalYTDBad1_BeforePrint(object sender, CancelEventArgs e)
         {
             decimal.TryParse(Convert.ToString(TotalYTDBad1.Summary.GetResult()), out decimal totalYTDBad);
             if (totalYTDBad == 0)
@@ -103,7 +103,7 @@ namespace IAC2021SQL
             }
         }
 
-        private void TotalCurLoss1_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        private void TotalCurLoss1_BeforePrint(object sender, CancelEventArgs e)
         {
             decimal.TryParse(Convert.ToString(TotalCurLoss1.Summary.GetResult()), out decimal totalCurLoss);
             if (totalCurLoss == 0)
@@ -112,7 +112,7 @@ namespace IAC2021SQL
             }
         }
 
-        private void TotalYTDLoss1_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        private void TotalYTDLoss1_BeforePrint(object sender, CancelEventArgs e)
         {
             decimal.TryParse(Convert.ToString(TotalYTDLoss1.Summary.GetResult()), out decimal totalYTDLoss);
             if (totalYTDLoss == 0)
@@ -121,7 +121,7 @@ namespace IAC2021SQL
             }
         }
 
-        private void TotalCurAdj1_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        private void TotalCurAdj1_BeforePrint(object sender, CancelEventArgs e)
         {
             decimal.TryParse(Convert.ToString(TotalCurAdj1.Summary.GetResult()), out decimal totalCurAdj);
             if (totalCurAdj == 0)
@@ -130,7 +130,7 @@ namespace IAC2021SQL
             }
         }
 
-        private void TotalYTDAdj1_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        private void TotalYTDAdj1_BeforePrint(object sender, CancelEventArgs e)
         {
             decimal.TryParse(Convert.ToString(TotalYTDAdj1.Summary.GetResult()), out decimal totalYTDAdj);
             if (totalYTDAdj == 0)
@@ -139,7 +139,7 @@ namespace IAC2021SQL
             }
         }
 
-        private void TotalCurInt1_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        private void TotalCurInt1_BeforePrint(object sender, CancelEventArgs e)
         {
             decimal.TryParse(Convert.ToString(TotalCurInt1.Summary.GetResult()), out decimal totalCurInt);
             if (totalCurInt == 0)
@@ -148,7 +148,7 @@ namespace IAC2021SQL
             }
         }
 
-        private void TotalYTDInt1_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        private void TotalYTDInt1_BeforePrint(object sender, CancelEventArgs e)
         {
             decimal.TryParse(Convert.ToString(TotalYTDInt1.Summary.GetResult()), out decimal totalYTDInt);
             if (totalYTDInt == 0)
@@ -157,7 +157,7 @@ namespace IAC2021SQL
             }
         }
 
-        private void TotalCurAmortInt1_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        private void TotalCurAmortInt1_BeforePrint(object sender, CancelEventArgs e)
         {
             decimal.TryParse(Convert.ToString(TotalCurAmortInt1.Summary.GetResult()), out decimal totalCurAmortInt);
             if (totalCurAmortInt == 0)
@@ -166,7 +166,7 @@ namespace IAC2021SQL
             }
         }
 
-        private void TotalYTDAmortInt1_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        private void TotalYTDAmortInt1_BeforePrint(object sender, CancelEventArgs e)
         {
             decimal.TryParse(Convert.ToString(TotalYTDAmortInt1.Summary.GetResult()), out decimal totalYTDAmortInt);
             if (totalYTDAmortInt == 0)

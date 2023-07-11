@@ -32,7 +32,7 @@ namespace IAC2021SQL
                 DealerTotalInterest += Convert.ToDecimal(e.Value);
         }
 
-        private void AuditBalanceByDealer1_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        private void AuditBalanceByDealer1_BeforePrint(object sender, CancelEventArgs e)
         {
             DateTime RunDate = (DateTime)this.Parameters["gdLastRun"].Value;
             DealerPreviousBalance = (Decimal)this.PrevBalanceByDealer1.Summary.GetResult();
@@ -47,7 +47,7 @@ namespace IAC2021SQL
                 AuditBalanceByDealer1.Text = "";
         }
 
-        private void NextMonthEndDate_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        private void NextMonthEndDate_BeforePrint(object sender, CancelEventArgs e)
         {
             DateTime NewRunDate = (DateTime)this.Parameters["gdLastRun"].Value;
             DateTime NextMonthDate = NewRunDate.AddDays(1);
@@ -66,7 +66,7 @@ namespace IAC2021SQL
             NextMonthEndDate.Text = NewText;
         }
 
-        private void ChangeDueToISF1_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        private void ChangeDueToISF1_BeforePrint(object sender, CancelEventArgs e)
         {
             decimal.TryParse(Convert.ToString(ChangeDueToISF1.Summary.GetResult()), out decimal changeDueToISF);
             if (changeDueToISF == 0)
@@ -75,7 +75,7 @@ namespace IAC2021SQL
             }
         }
 
-        private void NewBusinessbyDealer1_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        private void NewBusinessbyDealer1_BeforePrint(object sender, CancelEventArgs e)
         {
             decimal.TryParse(Convert.ToString(NewBusinessbyDealer1.Summary.GetResult()), out decimal newBusinessbyDealer);
             if (newBusinessbyDealer == 0)
@@ -84,7 +84,7 @@ namespace IAC2021SQL
             }
         }
 
-        private void PrevBalanceByDealer1_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        private void PrevBalanceByDealer1_BeforePrint(object sender, CancelEventArgs e)
         {
             decimal.TryParse(Convert.ToString(PrevBalanceByDealer1.Summary.GetResult()), out decimal prevBalanceByDealer);
             if (prevBalanceByDealer == 0)
@@ -93,7 +93,7 @@ namespace IAC2021SQL
             }
         }
 
-        private void InterestByDealer1_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        private void InterestByDealer1_BeforePrint(object sender, CancelEventArgs e)
         {
             decimal.TryParse(Convert.ToString(InterestByDealer1.Summary.GetResult()), out decimal interestByDealer);
             if (interestByDealer == 0)
@@ -102,7 +102,7 @@ namespace IAC2021SQL
             }
         }
 
-        private void LateFeesbyDealer1_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        private void LateFeesbyDealer1_BeforePrint(object sender, CancelEventArgs e)
         {
             decimal.TryParse(Convert.ToString(LateFeesbyDealer1.Summary.GetResult()), out decimal lateFeesbyDealer);
             if (lateFeesbyDealer == 0)
@@ -111,7 +111,7 @@ namespace IAC2021SQL
             }
         }
 
-        private void ISFFeesbyDealer1_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        private void ISFFeesbyDealer1_BeforePrint(object sender, CancelEventArgs e)
         {
             decimal.TryParse(Convert.ToString(ISFFeesbyDealer1.Summary.GetResult()), out decimal iSFFeesbyDealer);
             if (iSFFeesbyDealer == 0)
@@ -120,7 +120,7 @@ namespace IAC2021SQL
             }
         }
 
-        private void NonCashFeesbyDealer1_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        private void NonCashFeesbyDealer1_BeforePrint(object sender, CancelEventArgs e)
         {
             decimal.TryParse(Convert.ToString(NonCashFeesbyDealer1.Summary.GetResult()), out decimal nonCashFeesbyDealer);
             if (nonCashFeesbyDealer == 0)
@@ -129,7 +129,7 @@ namespace IAC2021SQL
             }
         }
 
-        private void PaymentsbyDealer1_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        private void PaymentsbyDealer1_BeforePrint(object sender, CancelEventArgs e)
         {
             decimal.TryParse(Convert.ToString(PaymentsbyDealer1.Summary.GetResult()), out decimal paymentsbyDealer);
             if (paymentsbyDealer == 0)
@@ -138,7 +138,7 @@ namespace IAC2021SQL
             }
         }
 
-        private void BalanceByDealer1_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        private void BalanceByDealer1_BeforePrint(object sender, CancelEventArgs e)
         {
             decimal.TryParse(Convert.ToString(BalanceByDealer1.Summary.GetResult()), out decimal balanceByDealer);
             if (balanceByDealer == 0)
@@ -147,7 +147,7 @@ namespace IAC2021SQL
             }
         }
 
-        private void stateprevbal_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        private void stateprevbal_BeforePrint(object sender, CancelEventArgs e)
         {
             decimal.TryParse(Convert.ToString(stateprevbal.Summary.GetResult()), out decimal statePreviousBalance);
             if (statePreviousBalance == 0)
@@ -156,7 +156,7 @@ namespace IAC2021SQL
             }
         }
 
-        private void StateChangeDueToISF_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        private void StateChangeDueToISF_BeforePrint(object sender, CancelEventArgs e)
         {
             decimal.TryParse(Convert.ToString(StateChangeDueToISF.Summary.GetResult()), out decimal stateChangeDueToISF);
             if (stateChangeDueToISF == 0)
@@ -165,7 +165,7 @@ namespace IAC2021SQL
             }
         }
 
-        private void StateNewBusiness_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        private void StateNewBusiness_BeforePrint(object sender, CancelEventArgs e)
         {
             decimal.TryParse(Convert.ToString(StateNewBusiness.Summary.GetResult()), out decimal stateNewBusiness);
             if (stateNewBusiness == 0)
@@ -174,7 +174,7 @@ namespace IAC2021SQL
             }
         }
 
-        private void StateInterest_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        private void StateInterest_BeforePrint(object sender, CancelEventArgs e)
         {
             decimal.TryParse(Convert.ToString(StateInterest.Summary.GetResult()), out decimal stateInterest);
             if (stateInterest == 0)
@@ -183,7 +183,7 @@ namespace IAC2021SQL
             }
         }
 
-        private void StateLateFees_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        private void StateLateFees_BeforePrint(object sender, CancelEventArgs e)
         {
             decimal.TryParse(Convert.ToString(StateLateFees.Summary.GetResult()), out decimal stateLateFees);
             if (stateLateFees == 0)
@@ -192,7 +192,7 @@ namespace IAC2021SQL
             }
         }
 
-        private void StateISFFees_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        private void StateISFFees_BeforePrint(object sender, CancelEventArgs e)
         {
             decimal.TryParse(Convert.ToString(StateISFFees.Summary.GetResult()), out decimal stateISFFees);
             if (stateISFFees == 0)
@@ -201,7 +201,7 @@ namespace IAC2021SQL
             }
         }
 
-        private void StateNonCash_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        private void StateNonCash_BeforePrint(object sender, CancelEventArgs e)
         {
             decimal.TryParse(Convert.ToString(StateNonCash.Summary.GetResult()), out decimal stateNonCash);
             if (stateNonCash == 0)
@@ -210,7 +210,7 @@ namespace IAC2021SQL
             }
         }
 
-        private void StatePayments_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        private void StatePayments_BeforePrint(object sender, CancelEventArgs e)
         {
             decimal.TryParse(Convert.ToString(StatePayments.Summary.GetResult()), out decimal statePayments);
             if (statePayments == 0)
@@ -219,7 +219,7 @@ namespace IAC2021SQL
             }
         }
 
-        private void StateNewBalance_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        private void StateNewBalance_BeforePrint(object sender, CancelEventArgs e)
         {
             decimal.TryParse(Convert.ToString(StateNewBalance.Summary.GetResult()), out decimal stateNewBalance);
             if (stateNewBalance == 0)
@@ -234,7 +234,7 @@ namespace IAC2021SQL
                 StateTotalInterest += Convert.ToDecimal(e.Value);
         }
 
-        private void xrLabel23_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        private void xrLabel23_BeforePrint(object sender, CancelEventArgs e)
         {
             DateTime RunDate = (DateTime)this.Parameters["gdLastRun"].Value;
             StatePreviousBalance = (Decimal)this.stateprevbal.Summary.GetResult();
@@ -256,7 +256,7 @@ namespace IAC2021SQL
                 TotalInterest += Convert.ToDecimal(e.Value);
         }
 
-        private void XtraReportMonthlyUpdateDealerSummary_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        private void XtraReportMonthlyUpdateDealerSummary_BeforePrint(object sender, CancelEventArgs e)
         {
             // Moses Newman 10/7/2022 Turn off Area2 SubBand2 when printing dealer summary subreport.
             this.MasterReport.Bands["Area2"].SubBands[1].Visible = false;
@@ -268,7 +268,7 @@ namespace IAC2021SQL
                 StatePreviousBalance += Convert.ToDecimal(e.Value);
         }
 
-        private void TotalAuditBalance1_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        private void TotalAuditBalance1_BeforePrint(object sender, CancelEventArgs e)
         {
             DateTime RunDate = (DateTime)this.Parameters["gdLastRun"].Value;
             PreviousBalance = (Decimal)this.TotalPrevBalance1.Summary.GetResult();

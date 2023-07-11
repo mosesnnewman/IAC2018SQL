@@ -7,15 +7,10 @@ using System.Drawing;
 // Moses Newman 12/21/2017 Use System.Globilization with parsing instead of Convert function to prevent issues on
 // multiple amorts, AFTER the $ and formating is added to Loan Amount or Monthly Payment
 using System.Globalization;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-using CrystalDecisions.CrystalReports.Engine;
-using CrystalDecisions.Shared;
-using DevExpress.XtraReports.UI;
-using DevExpress.DataAccess.Sql;
-using DevExpress.DataAccess.Sql.DataApi;
 
+using DevExpress.DataAccess.Sql;
+using DevExpress.XtraReports.UI;
 
 namespace IAC2021SQL
 {

@@ -13,7 +13,7 @@ namespace IAC2021SQL
             InitializeComponent();
         }
 
-        private void XtraReportTrialBalance_BeforePrint(object sender, System.Drawing.Printing.PrintEventArgs e)
+        private void XtraReportTrialBalance_BeforePrint(object sender, CancelEventArgs e)
         {
         }
     }
