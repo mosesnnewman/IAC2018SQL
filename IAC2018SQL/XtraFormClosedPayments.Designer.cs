@@ -94,6 +94,7 @@
             this.colPAYMENT_AUTO_PAY = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.colPAYMENT_ISF_DATE = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPAYMENT_THRU_UD = new DevExpress.XtraGrid.Columns.GridColumn();
             this.windowsUIButtonPanel1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlPaymentGrid = new DevExpress.XtraLayout.LayoutControlItem();
@@ -434,7 +435,7 @@
             this.gridControlPayments.Name = "gridControlPayments";
             this.gridControlPayments.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCheckEdit1});
-            this.gridControlPayments.Size = new System.Drawing.Size(632, 471);
+            this.gridControlPayments.Size = new System.Drawing.Size(681, 471);
             this.gridControlPayments.TabIndex = 163;
             this.gridControlPayments.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -545,9 +546,21 @@
             // gridView2
             // 
             this.gridView2.Appearance.EvenRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.gridView2.Appearance.EvenRow.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gridView2.Appearance.EvenRow.Options.UseBackColor = true;
-            this.gridView2.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView2.Appearance.EvenRow.Options.UseFont = true;
+            this.gridView2.Appearance.EvenRow.Options.UseTextOptions = true;
+            this.gridView2.Appearance.EvenRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView2.Appearance.FooterPanel.Font = new System.Drawing.Font("Segoe UI", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView2.Appearance.FooterPanel.Options.UseFont = true;
+            this.gridView2.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gridView2.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gridView2.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.gridView2.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridView2.Appearance.OddRow.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView2.Appearance.OddRow.Options.UseFont = true;
+            this.gridView2.Appearance.OddRow.Options.UseTextOptions = true;
+            this.gridView2.Appearance.OddRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colPAYMENT_CUSTOMER,
             this.colPAYMENT_DATE,
@@ -555,7 +568,8 @@
             this.colPAYMENT_TYPE,
             this.colPAYMENT_CODE_2,
             this.colPAYMENT_AUTO_PAY,
-            this.colPAYMENT_ISF_DATE});
+            this.colPAYMENT_ISF_DATE,
+            this.colPAYMENT_THRU_UD});
             this.gridView2.GridControl = this.gridControlPayments;
             this.gridView2.Name = "gridView2";
             this.gridView2.OptionsBehavior.Editable = false;
@@ -564,6 +578,8 @@
             this.gridView2.OptionsView.EnableAppearanceEvenRow = true;
             this.gridView2.OptionsView.EnableAppearanceOddRow = true;
             this.gridView2.OptionsView.ShowDetailButtons = false;
+            this.gridView2.OptionsView.ShowFooter = true;
+            this.gridView2.CustomColumnDisplayText += new DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventHandler(this.gridView2_CustomColumnDisplayText);
             // 
             // colPAYMENT_CUSTOMER
             // 
@@ -572,6 +588,8 @@
             this.colPAYMENT_CUSTOMER.Caption = "Customer";
             this.colPAYMENT_CUSTOMER.FieldName = "PAYMENT_CUSTOMER";
             this.colPAYMENT_CUSTOMER.Name = "colPAYMENT_CUSTOMER";
+            this.colPAYMENT_CUSTOMER.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "SeqNo", "{0} Payments")});
             this.colPAYMENT_CUSTOMER.Visible = true;
             this.colPAYMENT_CUSTOMER.VisibleIndex = 0;
             this.colPAYMENT_CUSTOMER.Width = 100;
@@ -664,6 +682,16 @@
             this.colPAYMENT_ISF_DATE.VisibleIndex = 5;
             this.colPAYMENT_ISF_DATE.Width = 100;
             // 
+            // colPAYMENT_THRU_UD
+            // 
+            this.colPAYMENT_THRU_UD.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colPAYMENT_THRU_UD.AppearanceCell.Options.UseFont = true;
+            this.colPAYMENT_THRU_UD.Caption = "Ext";
+            this.colPAYMENT_THRU_UD.FieldName = "PAYMENT_THRU_UD";
+            this.colPAYMENT_THRU_UD.Name = "colPAYMENT_THRU_UD";
+            this.colPAYMENT_THRU_UD.Visible = true;
+            this.colPAYMENT_THRU_UD.VisibleIndex = 7;
+            // 
             // windowsUIButtonPanel1
             // 
             this.windowsUIButtonPanel1.AllowGlyphSkinning = false;
@@ -685,10 +713,10 @@
             new DevExpress.XtraBars.Docking2010.WindowsUIButton("Delete", true, windowsUIButtonImageOptions3, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, 2, false),
             new DevExpress.XtraBars.Docking2010.WindowsUIButton("Exit", true, windowsUIButtonImageOptions4, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, 3, false)});
             this.windowsUIButtonPanel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.windowsUIButtonPanel1.Location = new System.Drawing.Point(648, 12);
+            this.windowsUIButtonPanel1.Location = new System.Drawing.Point(697, 12);
             this.windowsUIButtonPanel1.Name = "windowsUIButtonPanel1";
             this.windowsUIButtonPanel1.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.windowsUIButtonPanel1.Size = new System.Drawing.Size(347, 471);
+            this.windowsUIButtonPanel1.Size = new System.Drawing.Size(298, 471);
             this.windowsUIButtonPanel1.TabIndex = 165;
             this.windowsUIButtonPanel1.Text = "windowsUIButtonPanel1";
             this.windowsUIButtonPanel1.ButtonClick += new DevExpress.XtraBars.Docking2010.ButtonEventHandler(this.windowsUIButtonPanel1_ButtonClick);
@@ -710,7 +738,7 @@
             this.layoutControlPaymentGrid.Location = new System.Drawing.Point(0, 0);
             this.layoutControlPaymentGrid.MinSize = new System.Drawing.Size(104, 24);
             this.layoutControlPaymentGrid.Name = "layoutControlPaymentGrid";
-            this.layoutControlPaymentGrid.Size = new System.Drawing.Size(636, 475);
+            this.layoutControlPaymentGrid.Size = new System.Drawing.Size(685, 475);
             this.layoutControlPaymentGrid.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlPaymentGrid.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlPaymentGrid.TextVisible = false;
@@ -718,10 +746,10 @@
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.windowsUIButtonPanel1;
-            this.layoutControlItem2.Location = new System.Drawing.Point(636, 0);
+            this.layoutControlItem2.Location = new System.Drawing.Point(685, 0);
             this.layoutControlItem2.MinSize = new System.Drawing.Size(54, 4);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(351, 475);
+            this.layoutControlItem2.Size = new System.Drawing.Size(302, 475);
             this.layoutControlItem2.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
@@ -1876,5 +1904,6 @@
         private DevExpress.Utils.Html.HtmlTemplateCollection htmlTemplateCollection1;
         private DevExpress.Utils.Html.HtmlTemplate htmlTemplate1;
         private DevExpress.Utils.SvgImageCollection svgImageCollection1;
+        private DevExpress.XtraGrid.Columns.GridColumn colPAYMENT_THRU_UD;
     }
 }

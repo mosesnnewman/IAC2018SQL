@@ -64,12 +64,7 @@ namespace IAC2021SQL
         {
             if (ClosedPaymentiacDataSet.PAYMENT.Rows.Count == 0)
             {
-                sqlDataSourceClosedPayments.Fill();
-
-
-                ITable srcPAYMENTS = sqlDataSourceClosedPayments.Result[3];
-                foreach (IRow row in srcPAYMENTS)
-                    ClosedPaymentiacDataSet.PAYMENT.Rows.Add(row.ToArray());
+                FillPayments();
                 if (ClosedPaymentiacDataSet.PAYMENT.Rows.Count == 0)
                     return;
             }
@@ -95,21 +90,6 @@ namespace IAC2021SQL
             ITable srcPAYMENTTYPE = sqlDataSourceClosedPayments.Result[4];
             foreach (IRow row in srcPAYMENTTYPE)
                 ClosedPaymentiacDataSet.PAYMENTTYPE.Rows.Add(row.ToArray());
-            /*if (lbJustSaved || PaymentbindingSource.Position == -1)
-            {
-                lbJustSaved = false;
-                return;
-            }
-            if (ClosedPaymentiacDataSet.PAYMENT.Rows.Count > 0)
-            {
-                if (!lbAddFlag && !lbEdit && bindingNavigator.Visible)
-                {
-                    cUSTOMER_NOTextBox.EditValue = ClosedPaymentiacDataSet.PAYMENT.Rows[PaymentbindingSource.Position].Field<String>("PAYMENT_CUSTOMER");
-                }
-                setRelatedData();
-                ActiveControl = cUSTOMER_NOTextBox;
-                cUSTOMER_NOTextBox.SelectAll();
-            }*/
         }
 
         private void DoProgress()
@@ -144,6 +124,25 @@ namespace IAC2021SQL
         private void PaymentbindingSource_AddingNew(object sender, AddingNewEventArgs e)
         {
             lbNewPayment = true;
+        }
+
+        private void gridView2_CustomColumnDisplayText(object sender, CustomColumnDisplayTextEventArgs e)
+        {
+            switch (e.Column.FieldName)
+            {
+                case "PAYMENT_THRU_UD":
+                    if ((int)e.Value == 0)
+                    {
+                        e.DisplayText = "";
+                    }
+                    break;
+                case "PAYMENT_AMOUNT_RCV":
+                    if ((Decimal)e.Value == 0)
+                    {
+                        e.DisplayText = "";
+                    }
+                    break;
+            }
         }
 
         // Return the WordImage for a specific row.
@@ -244,12 +243,12 @@ namespace IAC2021SQL
                             frmPaymentEdit.lbEdit = false;
                             break;
                     }
-                    //frmPaymentEdit.FillIt();
                     frmPaymentEdit.Visible = false;
                     frmPaymentEdit.ShowDialog(this);
                     this.Show();
                     frmPaymentEdit.Dispose();
                     ClosedPaymentiacDataSet.PAYMENT.Clear();
+                    FillPayments();
                     break;
                 case "Delete":
                     HtmlTemplateCollection htmlTemplates = new HtmlTemplateCollection();
@@ -261,12 +260,13 @@ namespace IAC2021SQL
                         "?";  
                     msgArgs.Text = "This will permanently delete this payment! Do you want to delete it?"; 
                     var result = XtraMessageBox.Show(msgArgs);
-                    if(result.ToString() == "OK")
+                    if (result.ToString() == "OK")
                     {
-                        PaymentbindingSource.RemoveCurrent();
-                        PaymentbindingSource.EndEdit();
-                        paymentTableAdapter.Update(ClosedPaymentiacDataSet.PAYMENT);
-                        ClosedPaymentiacDataSet.PAYMENT.AcceptChanges();                        
+                        paymentTableAdapter.Delete(ClosedPaymentiacDataSet.PAYMENT.Rows[PaymentbindingSource.Position].Field<String>("PAYMENT_CUSTOMER"),
+                                                   ClosedPaymentiacDataSet.PAYMENT.Rows[PaymentbindingSource.Position].Field<DateTime>("PAYMENT_DATE"),
+                                                   ClosedPaymentiacDataSet.PAYMENT.Rows[PaymentbindingSource.Position].Field<Int32>("SeqNo"));
+                        ClosedPaymentiacDataSet.PAYMENT.Clear();
+                        FillPayments();
                     }
                     break;
                 case "Exit":
@@ -283,6 +283,13 @@ namespace IAC2021SQL
                 return;
             }
         }
-
+        
+        private void FillPayments()
+        {
+            sqlDataSourceClosedPayments.Fill();
+            ITable srcPAYMENTS = sqlDataSourceClosedPayments.Result[3];
+            foreach (IRow row in srcPAYMENTS)
+                ClosedPaymentiacDataSet.PAYMENT.Rows.Add(row.ToArray());
+        }
     }
 }

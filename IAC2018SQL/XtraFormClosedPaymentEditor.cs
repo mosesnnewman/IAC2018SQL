@@ -14,6 +14,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraBars.Docking2010;
 using Microsoft.Office.Interop.Outlook;
+using Microsoft.IdentityModel.Tokens;
 
 namespace IAC2021SQL
 {
@@ -57,8 +58,6 @@ namespace IAC2021SQL
                     e.CheckState = CheckState.Checked;
                     break;
                 case "N":
-                    e.CheckState = CheckState.Unchecked;
-                    break;
                 default:
                     e.CheckState = CheckState.Unchecked;
                     break;
@@ -76,8 +75,6 @@ namespace IAC2021SQL
                     e.Value = "Y";
                     break;
                 case CheckState.Unchecked:
-                    e.Value = "N";
-                    break;
                 default:
                     e.Value = "N";
                     break;
@@ -91,8 +88,15 @@ namespace IAC2021SQL
             switch (lookUpEdit.EditValue.ToString())
             {
                 case "I":
+                    Decimal lnCheckValue = !String.IsNullOrEmpty(textEditAmount.EditValue.ToString()) ? Convert.ToDecimal(textEditAmount.EditValue) : 0;
+                    if (lnCheckValue > 0)
+                    {
+                        lnCheckValue *= -1;
+                        textEditAmount.EditValue = lnCheckValue;
+                    }
                     layoutControlISFDate.ContentVisible = true;
                     layoutControlChangeISFDateButton.ContentVisible = true;
+
                     break;
                 case "E":
                     layoutControlExtensionCount.ContentVisible = true;
@@ -100,7 +104,7 @@ namespace IAC2021SQL
                     break;
             }
 
-            if (!lbEdit & !lbAddFlag)
+            if (!lbEdit && !lbAddFlag)
             {
                 iacDataSet.PAYCODE.Clear();
                 paycodeTableAdapter.FillByType(iacDataSet.PAYCODE, "*");
@@ -113,7 +117,7 @@ namespace IAC2021SQL
             bindingSourcePAYCODE.MoveFirst();
             lookUpEditPaymentCode.EditValue = iacDataSet.PAYCODE.Rows[0].Field<String>("Code");
             lookUpEditPaymentCode.Refresh();
-            windowsUIButtonPanel1.Buttons[1].Properties.Enabled = true;
+            //windowsUIButtonPanel1.Buttons[1].Properties.Enabled = true;
             HandleISF();
         }
 
@@ -126,7 +130,25 @@ namespace IAC2021SQL
             paymenttypeTableAdapter.Fill(iacDataSet.PAYMENTTYPE);
             customerTableAdapter.FillByAllPosted(customerLookupDataSet.CUSTOMER);
             layoutControlOverPayment.ContentVisible = false;
-            layoutControlIncome.ContentVisible = false;
+            layoutControlISFDate.ContentVisible = false;
+            layoutControlChangeISFDateButton.ContentVisible = false;
+            layoutControlExtensionCount.ContentVisible = false;
+            textEditPaidThrough.Enabled = false;
+            if (lbAddFlag || CustomerID == 0)
+            {
+                textEditPaidThrough.Enabled = false;
+                dateEditPaymentDate.Enabled = false;
+                textEditAmount.Enabled = false;
+                lookUpEditPaymentType.Enabled = false;
+                lookUpEditPaymentCode.Enabled = false;
+                checkEditEFT.Enabled = false;
+            }
+            else
+            {
+                textEditCustomerID.Enabled = false;
+                windowsUIButtonPanel1.Buttons[0].Properties.Enabled = false;
+            }
+            windowsUIButtonPanel1.Buttons[1].Properties.Enabled = false;
             textEditCustomerID.EditValue = CustomerID;
         }
         public void FillIt()
@@ -150,7 +172,6 @@ namespace IAC2021SQL
                 }
                 else
                     iacDataSet.PAYMENT.Rows[bindingSourcePAYMENT.Position].SetField<String>("PAYMENT_CUSTOMER", textEditCustomerID.EditValue.ToString().PadLeft(6, '0'));
-                bindingSourcePAYMENT.EndEdit();
             }
             Refresh();
         }
@@ -160,37 +181,34 @@ namespace IAC2021SQL
         {
             if (iacDataSet.PAYMENT.Rows.Count < 1 || bindingSourcePAYMENT.Position < 0)
                 return;
-            bindingSourcePAYMENT.EndEdit();
-            if ((String)lookUpEditPaymentType.EditValue != "I" && iacDataSet.PAYMENT.Rows[bindingSourcePAYMENT.Position].Field<Decimal>("PAYMENT_AMOUNT_RCV") >= 0)
+            //bindingSourcePAYMENT.EndEdit();
+            if (((String)lookUpEditPaymentType.EditValue != "I" && iacDataSet.PAYMENT.Rows[bindingSourcePAYMENT.Position].Field<Decimal>("PAYMENT_AMOUNT_RCV") >= 0) ||
+                (checkEditNoAdjLookBack.Checked && (String)lookUpEditPaymentType.EditValue == "A"))
             {
                 if (lbAddFlag || lbEdit)
-                    if (iacDataSet.PAYMENT.Rows[bindingSourcePAYMENT.Position].Field<Nullable<DateTime>>("PAYMENT_ISF_DATE") != null)
-                    {
-                        iacDataSet.PAYMENT.Rows[bindingSourcePAYMENT.Position].SetField<Nullable<DateTime>>("PAYMENT_ISF_DATE", null);
-                        bindingSourcePAYMENT.EndEdit();
-                    }
+                    if (!String.IsNullOrEmpty(dateEditISFDate.EditValue.ToString()))
+                        dateEditISFDate.EditValue = "";
                 layoutControlChangeISFDateButton.ContentVisible = false;
                 layoutControlISFDate.ContentVisible = false;
                 return;
             }
             else
             {
-                if (iacDataSet.PAYMENT.Rows[bindingSourcePAYMENT.Position].Field<Nullable<DateTime>>("PAYMENT_ISF_DATE") != null)
+                if (!String.IsNullOrEmpty(dateEditISFDate.EditValue.ToString()))
                 {
+                    layoutControlISFDate.ContentVisible = true;
                     layoutControlChangeISFDateButton.ContentVisible = true;
-                    if (lbAddFlag || lbEdit)
-                        layoutControlChangeISFDateButton.ContentVisible = true;
-                    else
-                        layoutControlChangeISFDateButton.ContentVisible = false;
                 }
                 else
+                {
+                    layoutControlISFDate.ContentVisible = false;
                     layoutControlChangeISFDateButton.ContentVisible = false;
-                layoutControlISFDate.ContentVisible = true;
+                }
             }
 
             if (!lbAddFlag && !lbEdit)
                 return;
-            if (iacDataSet.PAYMENT.Rows[bindingSourcePAYMENT.Position].Field<Nullable<DateTime>>("PAYMENT_ISF_DATE") == null)
+            if (String.IsNullOrEmpty(dateEditISFDate.EditValue.ToString()))
             {
                 SelectCheck();
             }
@@ -201,24 +219,34 @@ namespace IAC2021SQL
         {
             FormSelectCheck frmSelectCheckInst;
             frmSelectCheckInst = new FormSelectCheck(iacDataSet.PAYMENT.Rows[bindingSourcePAYMENT.Position].Field<String>("PAYMENT_CUSTOMER"), true, (String)lookUpEditPaymentType.EditValue);
-            if (!frmSelectCheckInst.DoNotShow)
+            if (!frmSelectCheckInst.DoNotShow) 
             {
                 frmSelectCheckInst.ShowDialog();
-                iacDataSet.PAYMENT.Rows[bindingSourcePAYMENT.Position].SetField<DateTime>("PAYMENT_ISF_DATE", frmSelectCheckInst.ldISFDate);
-                iacDataSet.PAYMENT.Rows[bindingSourcePAYMENT.Position].SetField<Decimal>("PAYMENT_CURR_INT", frmSelectCheckInst.lnCurrInt);
-                iacDataSet.PAYMENT.Rows[bindingSourcePAYMENT.Position].SetField<Decimal>("PAYMENT_LATE_CHARGE_PAID", frmSelectCheckInst.lnLateChargePaid);
-                iacDataSet.PAYMENT.Rows[bindingSourcePAYMENT.Position].SetField<Boolean>("IsSimple", frmSelectCheckInst.lbIsSimple);
-                // Moses Newman 04/13/2018 Add ISFSeqNo, ISFPaymentType, and ISFPaymentCode so that excact reversed payment can be found.
-                iacDataSet.PAYMENT.Rows[bindingSourcePAYMENT.Position].SetField<Int32>("ISFSeqNo", frmSelectCheckInst.ISFSeqNo);
-                iacDataSet.PAYMENT.Rows[bindingSourcePAYMENT.Position].SetField<String>("ISFPaymentType", frmSelectCheckInst.ISFPaymentType);
-                iacDataSet.PAYMENT.Rows[bindingSourcePAYMENT.Position].SetField<String>("ISFPaymentCode", frmSelectCheckInst.ISFPaymentCode);
-                // Moses Newman 10/10/2020
-                iacDataSet.PAYMENT.Rows[bindingSourcePAYMENT.Position].SetField<Int32>("ISFID", frmSelectCheckInst.ISFID);
-                bindingSourcePAYMENT.EndEdit();
+                if (frmSelectCheckInst.ldISFDate != DateTime.Parse("01/01/0001"))
+                {
+                    dateEditISFDate.EditValue = frmSelectCheckInst.ldISFDate;
+                    iacDataSet.PAYMENT.Rows[bindingSourcePAYMENT.Position].SetField<DateTime>("PAYMENT_ISF_DATE", frmSelectCheckInst.ldISFDate);
+                    iacDataSet.PAYMENT.Rows[bindingSourcePAYMENT.Position].SetField<Decimal>("PAYMENT_CURR_INT", frmSelectCheckInst.lnCurrInt);
+                    iacDataSet.PAYMENT.Rows[bindingSourcePAYMENT.Position].SetField<Decimal>("PAYMENT_LATE_CHARGE_PAID", frmSelectCheckInst.lnLateChargePaid);
+                    iacDataSet.PAYMENT.Rows[bindingSourcePAYMENT.Position].SetField<Boolean>("IsSimple", frmSelectCheckInst.lbIsSimple);
+                    // Moses Newman 04/13/2018 Add ISFSeqNo, ISFPaymentType, and ISFPaymentCode so that excact reversed payment can be found.
+                    iacDataSet.PAYMENT.Rows[bindingSourcePAYMENT.Position].SetField<Int32>("ISFSeqNo", frmSelectCheckInst.ISFSeqNo);
+                    iacDataSet.PAYMENT.Rows[bindingSourcePAYMENT.Position].SetField<String>("ISFPaymentType", frmSelectCheckInst.ISFPaymentType);
+                    iacDataSet.PAYMENT.Rows[bindingSourcePAYMENT.Position].SetField<String>("ISFPaymentCode", frmSelectCheckInst.ISFPaymentCode);
+                    // Moses Newman 10/10/2020
+                    iacDataSet.PAYMENT.Rows[bindingSourcePAYMENT.Position].SetField<Int32>("ISFID", frmSelectCheckInst.ISFID);
+                    layoutControlISFDate.ContentVisible = true;
+                    layoutControlChangeISFDateButton.ContentVisible = true;
+                }
+                //bindingSourcePAYMENT.EndEdit();
             }
             else
             {
-                iacDataSet.PAYMENT.Rows[bindingSourcePAYMENT.Position].SetField<DateTime?>("PAYMENT_ISF_DATE", null);
+                if (iacDataSet.PAYMENT.Rows[bindingSourcePAYMENT.Position].Field<DateTime?>("PAYMENT_DATE") == null)
+                {
+                    layoutControlISFDate.ContentVisible = false;
+                    layoutControlChangeISFDateButton.ContentVisible = false;
+                }
             }
             frmSelectCheckInst.Dispose();
         }
@@ -275,19 +303,6 @@ namespace IAC2021SQL
                     break;
             }
         }
-        private void General_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == '\r')
-            {
-                e.Handled = true;
-                System.Windows.Forms.SendKeys.Send("{TAB}");
-            }
-            else
-            {
-                windowsUIButtonPanel1.Buttons[1].Properties.Enabled = true;
-            }
-        }
-
         private void textEditCustomerID_EditValueChanged(object sender, EventArgs e)
         {
             if (_InFillIt)
@@ -298,8 +313,105 @@ namespace IAC2021SQL
             if(CustomerID !=0)
             {
                 FillIt();
+                if(iacDataSet.CUSTOMER.Rows.Count > 0 && iacDataSet.DEALER.Rows.Count > 0)
+                {
+                    dateEditPaymentDate.Enabled = true;
+                    textEditAmount.Enabled = true;
+                    lookUpEditPaymentType.Enabled = true;
+                    lookUpEditPaymentCode.Enabled = true;
+                    checkEditEFT.Enabled = true;
+                    if (lbAddFlag)
+                        windowsUIButtonPanel1.Buttons[0].Properties.Enabled = true;
+                }
             }
             _InFillIt = false;
+        }
+
+        private void textEditAmount_EditValueChanged(object sender, EventArgs e)
+        {
+            TextEdit textEditor = sender as TextEdit;
+            Decimal lnCheckValue;
+            Boolean _IsDecimal = Decimal.TryParse(textEditor.EditValue.ToString(), out lnCheckValue);
+            if (!_IsDecimal || lnCheckValue == 0)
+                return;
+            String PaymentType = !String.IsNullOrEmpty(lookUpEditPaymentType.EditValue.ToString()) ? lookUpEditPaymentType.EditValue.ToString() : "";
+            if (lnCheckValue > 0 && PaymentType == "I")
+            {
+                lnCheckValue *= -1;
+                textEditor.EditValue = lnCheckValue;
+            }
+        }
+
+        private void textEditAmount_Validated(object sender, EventArgs e)
+        {
+            TextEdit textEdit = sender as TextEdit;
+            Decimal lnCheckValue = 0, lnBalance = 0, lnOverPay;
+            Boolean _IsDecimal = Decimal.TryParse(textEdit.EditValue.ToString(), out lnCheckValue);
+            _IsDecimal = Decimal.TryParse(textEditBalance.EditValue.ToString(), out lnBalance);
+            if (lnCheckValue > lnBalance && (lbEdit || lbAddFlag))
+            {
+                // 
+                // OverPayment
+                // 
+                lnOverPay = lnCheckValue - lnBalance;
+                layoutControlOverPayment.ContentVisible = true;
+                textEditOverPayment.Enabled = false;
+                textEditOverPayment.EditValue = lnOverPay;
+                textEditOverPayment.Refresh();
+            }
+            else
+            {
+                lnOverPay = 0;
+                layoutControlOverPayment.ContentVisible = false;
+                textEditOverPayment.Enabled = false;
+                textEditOverPayment.EditValue = lnOverPay;
+                textEditOverPayment.Refresh();
+            }
+        }
+
+        private void dateEditPaymentDate_Properties_Modified(object sender, EventArgs e)
+        {
+            windowsUIButtonPanel1.Buttons[1].Properties.Enabled = true;
+        }
+
+        private void textEditCustomerID_Modified(object sender, EventArgs e)
+        {
+            windowsUIButtonPanel1.Buttons[1].Properties.Enabled =true;
+        }
+
+        private void dateEditPaymentDate_Modified(object sender, EventArgs e)
+        {
+            windowsUIButtonPanel1.Buttons[1].Properties.Enabled = true;
+        }
+
+        private void textEditAmount_Modified(object sender, EventArgs e)
+        {
+            windowsUIButtonPanel1.Buttons[1].Properties.Enabled = true;
+        }
+
+        private void dateEditISFDate_Modified(object sender, EventArgs e)
+        {
+            windowsUIButtonPanel1.Buttons[1].Properties.Enabled = true;
+        }
+
+        private void lookUpEditPaymentType_Modified(object sender, EventArgs e)
+        {
+            windowsUIButtonPanel1.Buttons[1].Properties.Enabled = true;
+        }
+
+        private void lookUpEditPaymentCode_Modified(object sender, EventArgs e)
+        {
+            windowsUIButtonPanel1.Buttons[1].Properties.Enabled = true;
+        }
+
+        private void textEditExtensionCount_Modified(object sender, EventArgs e)
+        {
+            windowsUIButtonPanel1.Buttons[1].Properties.Enabled = true;
+        }
+
+        private void checkEditEFT_Modified(object sender, EventArgs e)
+        {
+            windowsUIButtonPanel1.Buttons[1].Properties.Enabled = true;
         }
     }
 }
