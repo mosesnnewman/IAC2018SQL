@@ -1,14 +1,12 @@
-﻿using DevExpress.XtraPrinting.Native;
-using IAC2021SQL.IACDataSetTableAdapters;
+﻿using IAC2021SQL.IACDataSetTableAdapters;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.Utils.Html;
+using DevExpress.XtraEditors;
+
+
 
 namespace IAC2021SQL
 {
@@ -16,7 +14,7 @@ namespace IAC2021SQL
     {
         private String _CustNo,_ISFPaymentType,_ISFPaymentCode;
         private DateTime _ISFDate;
-        private Boolean _IsClosed,_IsSimple,_IsNotCheck = false,_DoNotShow = false;
+        private Boolean _IsClosed,_IsSimple,_IsNotCheck = true,_DoNotShow = false;
         private Decimal _PaidInt, _LateCharge;
         private Int32 _ISFSeqNo,_ISFID;
 
@@ -132,7 +130,7 @@ namespace IAC2021SQL
         {
             _IsClosed = tbClosed;
             _CustNo = tsCustno;
-            if (!tbClosed)
+            if (!_IsClosed)
             {
                 opncustTableAdapter.Fill(iACDataSet.OPNCUST, _CustNo);
                 if (iACDataSet.OPNCUST.Rows.Count == 0)
@@ -146,15 +144,23 @@ namespace IAC2021SQL
             else
             {
                 if (tsPayType == "I")
-                    _IsNotCheck = true;
+                    _IsNotCheck = false;
                 _DoNotShow = false;
-                String Answer = "Yes";
-                if(!_IsNotCheck)
-                    Answer = MessageBox.Show("Apply negative payment to a previous payment?", "Apply Negative Payment", MessageBoxButtons.YesNo).ToString();
+                String Answer = "No";
+                if (_IsNotCheck)
+                {
+                    HtmlTemplateCollection htmlTemplates = new HtmlTemplateCollection();
+                    var msgArgs = new XtraMessageBoxArgs();
+                    msgArgs.HtmlTemplate.Assign(htmlTemplate1);
+                    msgArgs.HtmlImages = svgImageCollection1;
+                    msgArgs.Text = "Apply negative payment to a previous payment?";
+                    msgArgs.Caption = "Apply Negative Payment";
+                    Answer = XtraMessageBox.Show(msgArgs).ToString();
+                }
                 IACDataSetTableAdapters.CUSTOMERTableAdapter CUSTOMERTableAdapter = new IACDataSetTableAdapters.CUSTOMERTableAdapter();
                 IACDataSetTableAdapters.DEALERTableAdapter DEALERTableAdapter = new IACDataSetTableAdapters.DEALERTableAdapter();
                 IACDataSetTableAdapters.CUSTHISTTableAdapter CUSTHISTTableAdapter = new IACDataSetTableAdapters.CUSTHISTTableAdapter();
-                if (Answer != "No")
+                if (Answer == "Yes")
                     CUSTOMERTableAdapter.Fill(iACDataSet.CUSTOMER, _CustNo);
                 else
                     _DoNotShow = true;
@@ -166,9 +172,9 @@ namespace IAC2021SQL
                 DEALERTableAdapter.Fill(iACDataSet.DEALER, iACDataSet.CUSTOMER.Rows[0].Field<Int32>("CUSTOMER_DEALER"));
                 // Moses Newman 04/17/2018 Add filling with NON CHECK PAYMENTS option
                 if(_IsNotCheck)
-                    CUSTHISTTableAdapter.FillByCheckPayments(iACDataSet.CUSTHIST, _CustNo);
-                else
                     CUSTHISTTableAdapter.FillByNonCheckPayments(iACDataSet.CUSTHIST, _CustNo);
+                else
+                    CUSTHISTTableAdapter.FillByCheckPayments(iACDataSet.CUSTHIST, _CustNo);
                 bindingSourceOPNCUST.DataSource = iACDataSet.CUSTOMER;
                 bindingSourceOPNDEALR.DataSource = iACDataSet.DEALER;
                 cUSTHISTBindingSource.DataSource = iACDataSet.CUSTHIST;
@@ -180,10 +186,6 @@ namespace IAC2021SQL
         private void FormSelectCheck_Load(object sender, EventArgs e)
         {
             PerformAutoScale();
-        }
-
-        private void FormSelectCheck_Activated(object sender, EventArgs e)
-        {
         }
     }
 }
