@@ -146,6 +146,7 @@
             this.fixCreateDateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.globalSearchPDFUploaderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fixPartialPaymentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.applyPaymentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.windowsMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.newWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cascadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -674,7 +675,7 @@
             this.testToolStripMenuItem,
             this.PrintCoupons});
             this.closedEndToolStripMenuItem.Name = "closedEndToolStripMenuItem";
-            this.closedEndToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.closedEndToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.closedEndToolStripMenuItem.Text = "&Closed End";
             // 
             // amortizationScheduleToolStripMenuItem
@@ -902,7 +903,7 @@
             this.openCustomerBuyBackReportBUYBACKToolStripMenuItem,
             this.firstPaymentDefaultReportToolStripMenuItem1});
             this.openEndToolStripMenuItem.Name = "openEndToolStripMenuItem";
-            this.openEndToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.openEndToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
             this.openEndToolStripMenuItem.Text = "&Open End";
             // 
             // newCustomerEditListToolStripMenuItem1
@@ -1043,7 +1044,8 @@
             this.carToolStripMenuItem,
             this.fixCreateDateToolStripMenuItem,
             this.globalSearchPDFUploaderToolStripMenuItem,
-            this.fixPartialPaymentsToolStripMenuItem});
+            this.fixPartialPaymentsToolStripMenuItem,
+            this.applyPaymentsToolStripMenuItem});
             this.toolsMenu.Name = "toolsMenu";
             this.toolsMenu.Size = new System.Drawing.Size(46, 20);
             this.toolsMenu.Text = "&Tools";
@@ -1137,6 +1139,14 @@
             this.fixPartialPaymentsToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
             this.fixPartialPaymentsToolStripMenuItem.Text = "FixPartialPayments";
             this.fixPartialPaymentsToolStripMenuItem.Click += new System.EventHandler(this.fixPartialPaymentsToolStripMenuItem_Click);
+            // 
+            // applyPaymentsToolStripMenuItem
+            // 
+            this.applyPaymentsToolStripMenuItem.Enabled = false;
+            this.applyPaymentsToolStripMenuItem.Name = "applyPaymentsToolStripMenuItem";
+            this.applyPaymentsToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
+            this.applyPaymentsToolStripMenuItem.Text = "Apply Payments";
+            this.applyPaymentsToolStripMenuItem.Click += new System.EventHandler(this.applyPaymentsToolStripMenuItem_Click);
             // 
             // windowsMenu
             // 
@@ -1244,7 +1254,7 @@
             // 
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel});
-            this.statusStrip.Location = new System.Drawing.Point(0, 682);
+            this.statusStrip.Location = new System.Drawing.Point(0, 677);
             this.statusStrip.Name = "statusStrip";
             this.statusStrip.Size = new System.Drawing.Size(1008, 22);
             this.statusStrip.TabIndex = 2;
@@ -1263,7 +1273,7 @@
             this.Appearance.Options.UseFont = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(1008, 704);
+            this.ClientSize = new System.Drawing.Size(1008, 699);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.menuStrip);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1419,6 +1429,7 @@
         private System.Windows.Forms.ToolStripMenuItem testToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem PrintCoupons;
         private System.Windows.Forms.ToolStripMenuItem warrantiesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem applyPaymentsToolStripMenuItem;
     }
 }
 

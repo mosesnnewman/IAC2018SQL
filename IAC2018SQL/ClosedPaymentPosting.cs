@@ -177,7 +177,7 @@ namespace IAC2021SQL
                     if (PAYMENTPostDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_ACT_STAT") == "A")
                     {
                         // Moses Newman 01/20/2021 AmortizeBindingSource only has one record per customer! so AmortPos should always be 0 if found
-                        NewBalance = ClosedPaymentProcessPayment(PaymentPos + pcount, CustomerPos, AmortPos, ref AMORTIZEBindingSource, ref PAYMENTPostDataSet, ref worker, Post, CurrentBalance, (lnCustomerPayCount > 1 && pcount < lnCustomerPayCount -1 ) ? true:false);
+                        NewBalance = ClosedPaymentProcessPayment(PaymentPos + pcount, CustomerPos, AmortPos, ref AMORTIZEBindingSource, ref PAYMENTPostDataSet, ref worker, Post, CurrentBalance); // Moses Newman 07/20/2023, (lnCustomerPayCount > 1 && pcount < lnCustomerPayCount -1 ) ? true:false);
                         CurrentBalance = NewBalance;
                     }
                 }
@@ -270,7 +270,7 @@ namespace IAC2021SQL
             }
         }
 
-        Decimal ClosedPaymentProcessPayment(Int32 PaymentPos, Int32 CustomerPos, Int32 AmortPos, ref BindingSource AmortizeBindingSource, ref IACDataSet PAYMENTDataSet, ref BackgroundWorker worker, Boolean post,Decimal CurBal, Boolean IsMulti)
+        Decimal ClosedPaymentProcessPayment(Int32 PaymentPos, Int32 CustomerPos, Int32 AmortPos, ref BindingSource AmortizeBindingSource, ref IACDataSet PAYMENTDataSet, ref BackgroundWorker worker, Boolean post,Decimal CurBal)
         {
             Decimal lnTodaysBalance = 0;
             IACDataSetTableAdapters.AMORTIZETableAdapter AMORTIZETableAdapter = new IACDataSetTableAdapters.AMORTIZETableAdapter();
@@ -299,32 +299,14 @@ namespace IAC2021SQL
                     lnLCBPay = PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_LATE_CHARGE_BAL");
             }
             lnTodaysBalance = CurBal;
-            // Moses Newman 08/2/2013 Store pre-processing balance
-            /*lnTodaysBalance = Program.TVSimpleGetBuyout(PAYMENTDataSet,
-                                               PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<DateTime>("PAYMENT_DATE"),
-                                               (Double)PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<Int32>("CUSTOMER_TERM"),
-                                               (Double)(PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_ANNUAL_PERCENTAGE_RATE") / 100),
-                                               (Double)PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_REGULAR_AMOUNT"),
-                                               PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_NO"),
-                // Moses Newman 04/30/2017 Add support for Simple Interest and Normal Daily Compounding
-                                               PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_AMORTIZE_IND") == "S" ? true : false, true, false, false, -1, true);
-            */
             lnOldBalance = CurBal; // Moses Newman 11/18/2020 change to parameter so the case of more than one payment from the same customer can be dealt with.  
             if (PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_ACT_STAT") == "A" &&
                 PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_BUY_OUT") != "N") // Moses Newman 02/17/2021  make N if Active and Y
                 PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].SetField<String>("CUSTOMER_BUY_OUT", "N");  
 
-            //lnOldBalance = 0;
             // Moses Newman 05/01/2018 ALWAYS use last history balance rather than CUSTOMER_BALANCE because
             // CUSTOMER_BALANCE is changed at the first run of this routine!
             IACDataSetTableAdapters.CUSTHISTTableAdapter CUSTHISTTableAdapter = new IACDataSetTableAdapters.CUSTHISTTableAdapter();
-            /*Object loLastBalance = null;
-            if (lnOldBalance == 0)
-            {
-                loLastBalance = CUSTHISTTableAdapter.LastBalance(PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_NO"));
-                if (loLastBalance != null)
-                    lnOldBalance = (Decimal)loLastBalance;
-            }*/
             switch (PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_AMORTIZE_IND"))
             {
                 // Amortization using no compounding US RULE SIMPLE INTEREST
@@ -394,12 +376,7 @@ namespace IAC2021SQL
             // Moses Newman 11/12/2020 Get real credit to note (Payment - Accrued Interest) so that is is for only one of the payments if the same account had
             // multiple payments today.
             String CustTemp = PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<String>("PAYMENT_CUSTOMER");
-            //lnSimpleDiff = lnSimpleBalance -lnOldBalance;
-            //lnSimpleDiff = (lnBalance - lnIntPay) *-1;
-            //if(Math.Abs(lnSimpleDiff - (lnSimpleBalance - lnOldBalance)) > (Decimal).01)
             lnSimpleDiff = lnSimpleBalance - lnOldBalance;
-            //if(lnIntPay == 0)
-            //lnIntPay = PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<Decimal>("PAYMENT_AMOUNT_RCV")+lnSimpleDiff;
             // Moses Newman 11/30/2020 INSUF will not show in amort, so the interest it causes must be 0 IF more than one payment today; 
 
             lnAccruedInt = lnIntPay;
@@ -419,7 +396,6 @@ namespace IAC2021SQL
 
             ClosedPaymentPartialPayment(PaymentPos, CustomerPos, ref PAYMENTDataSet, ref worker, post);
             // Moses Newman 01/29/2015 Move CloseOut AFTER GetPartialPaymentandLateFeeBalance happens!
-            //if (CurBal == 0)
             if (lnSimpleBalance == 0)
                 ClosedPaymentCloseOut(CustomerPos, ref PAYMENTDataSet, ref worker);
 
@@ -465,7 +441,6 @@ namespace IAC2021SQL
                                                                                                               // Moses Newman 12/1/2014 NO LONGER USING CUSTOMER_PAYMENTS MADE AS AN ACCUMULATOR, IT GETS SET IN   GetPartialPaymentandLateFeeBalance
                                                                                                               // Moses Newman 08/12/2013 mark customer's with 0 or overpaid balances to Inactive!
             if (lnSimpleBalance == 0)
-            //if (CurBal == 0)
             {
                 lnTermRem = 0;
                 PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].SetField<String>("CUSTOMER_ACT_STAT", "I");
@@ -1616,6 +1591,7 @@ namespace IAC2021SQL
                         CUSTHISTTableAdapter.ClosedCustomerHistorySetISINSUF(CUSTOMERDataSet.CUSTHIST.Rows[i].Field<Int32>("ISFID"));
                 }
                 CUSTHISTTableAdapter.Update(CUSTOMERDataSet.CUSTHIST);
+                Program.CreateFinalPayments(CUSTOMERDataSet);
             }
             catch (System.Data.SqlClient.SqlException ex)
             {

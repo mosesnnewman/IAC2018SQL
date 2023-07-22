@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions7 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(XtraFormClosedPaymentEditor));
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions8 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions9 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions2 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions3 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             this.iacDataSet = new IAC2021SQL.IACDataSet();
             this.bindingSourceCUSTOMER = new System.Windows.Forms.BindingSource(this.components);
             this.bindingSourceDEALER = new System.Windows.Forms.BindingSource(this.components);
@@ -41,12 +41,13 @@
             this.bindingSourcePAYMENT = new System.Windows.Forms.BindingSource(this.components);
             this.paymenttypeTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.PAYMENTTYPETableAdapter();
             this.LayoutPayment = new DevExpress.XtraLayout.LayoutControl();
+            this.checkEditNoAdjLookBack = new DevExpress.XtraEditors.CheckEdit();
+            this.checkEditEFT = new DevExpress.XtraEditors.CheckEdit();
             this.windowsUIButtonPanel1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.textEditExtensionCount = new DevExpress.XtraEditors.TextEdit();
             this.textEditAmount = new DevExpress.XtraEditors.TextEdit();
             this.dateEditISFDate = new DevExpress.XtraEditors.DateEdit();
             this.textEditOverPayment = new DevExpress.XtraEditors.TextEdit();
-            this.checkEditEFT = new DevExpress.XtraEditors.CheckEdit();
             this.dateEditPaymentDate = new DevExpress.XtraEditors.DateEdit();
             this.lookUpEditPaymentType = new DevExpress.XtraEditors.LookUpEdit();
             this.bindingSourcePAYMENTTYPE = new System.Windows.Forms.BindingSource(this.components);
@@ -64,7 +65,6 @@
             this.layoutControlBuyout = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlPaymentDate = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlOverPayment = new DevExpress.XtraLayout.LayoutControlItem();
-            this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlISFDate = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlChangeISFDateButton = new DevExpress.XtraLayout.LayoutControlItem();
@@ -72,12 +72,20 @@
             this.emptySpaceItem6 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlPaymentType = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlPaymentCode = new DevExpress.XtraLayout.LayoutControlItem();
-            this.emptySpaceItem9 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlAmount = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlExtensionCount = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem8 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem11 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem9 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem5 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem7 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem10 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem12 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem13 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.paymentTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.PAYMENTTableAdapter();
             this.dealerTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.DEALERTableAdapter();
@@ -101,26 +109,19 @@
             this.layoutControlDealerName = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlDealerID = new DevExpress.XtraLayout.LayoutControlItem();
             this.lookUpEditCustomerID = new DevExpress.XtraEditors.LookUpEdit();
-            this.emptySpaceItem5 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.emptySpaceItem7 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.emptySpaceItem10 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.emptySpaceItem12 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.checkEditNoAdjLookBack = new DevExpress.XtraEditors.CheckEdit();
-            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.emptySpaceItem13 = new DevExpress.XtraLayout.EmptySpaceItem();
             ((System.ComponentModel.ISupportInitialize)(this.iacDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceCUSTOMER)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceDEALER)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourcePAYMENT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LayoutPayment)).BeginInit();
             this.LayoutPayment.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEditNoAdjLookBack.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEditEFT.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditExtensionCount.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditAmount.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEditISFDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEditISFDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditOverPayment.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEditEFT.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEditPaymentDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEditPaymentDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEditPaymentType.Properties)).BeginInit();
@@ -137,7 +138,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlBuyout)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlPaymentDate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlOverPayment)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlISFDate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlChangeISFDateButton)).BeginInit();
@@ -145,12 +145,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlPaymentType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlPaymentCode)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlAmount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlExtensionCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -171,14 +179,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlDealerName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlDealerID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEditCustomerID.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEditNoAdjLookBack.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem13)).BeginInit();
             this.SuspendLayout();
             // 
             // iacDataSet
@@ -239,6 +239,41 @@
             this.LayoutPayment.TabIndex = 0;
             this.LayoutPayment.Text = "LayoutControl1";
             // 
+            // checkEditNoAdjLookBack
+            // 
+            this.checkEditNoAdjLookBack.Location = new System.Drawing.Point(178, 265);
+            this.checkEditNoAdjLookBack.Name = "checkEditNoAdjLookBack";
+            this.checkEditNoAdjLookBack.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkEditNoAdjLookBack.Properties.Appearance.Options.UseFont = true;
+            this.checkEditNoAdjLookBack.Properties.Caption = "No Adjustment Lookback";
+            this.checkEditNoAdjLookBack.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
+            this.checkEditNoAdjLookBack.Properties.ContentAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.checkEditNoAdjLookBack.Size = new System.Drawing.Size(573, 25);
+            this.checkEditNoAdjLookBack.StyleController = this.LayoutPayment;
+            this.checkEditNoAdjLookBack.TabIndex = 19;
+            // 
+            // checkEditEFT
+            // 
+            this.checkEditEFT.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bindingSourcePAYMENT, "PAYMENT_AUTO_PAY", true));
+            this.checkEditEFT.EnterMoveNextControl = true;
+            this.checkEditEFT.Location = new System.Drawing.Point(102, 236);
+            this.checkEditEFT.Name = "checkEditEFT";
+            this.checkEditEFT.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkEditEFT.Properties.Appearance.Options.UseFont = true;
+            this.checkEditEFT.Properties.Appearance.Options.UseTextOptions = true;
+            this.checkEditEFT.Properties.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.checkEditEFT.Properties.Caption = "EFT?";
+            this.checkEditEFT.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
+            this.checkEditEFT.Properties.ContentAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.checkEditEFT.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.checkEditEFT.Properties.Name = "checkEditEFT";
+            this.checkEditEFT.Size = new System.Drawing.Size(96, 25);
+            this.checkEditEFT.StyleController = this.LayoutPayment;
+            this.checkEditEFT.TabIndex = 11;
+            this.checkEditEFT.QueryCheckStateByValue += new DevExpress.XtraEditors.Controls.QueryCheckStateByValueEventHandler(this.checkEditEFT_QueryCheckStateByValue);
+            this.checkEditEFT.QueryValueByCheckState += new DevExpress.XtraEditors.Controls.QueryValueByCheckStateEventHandler(this.checkEditEFT_QueryValueByCheckState);
+            this.checkEditEFT.Modified += new System.EventHandler(this.checkEditEFT_Modified);
+            // 
             // windowsUIButtonPanel1
             // 
             this.windowsUIButtonPanel1.AllowGlyphSkinning = false;
@@ -248,13 +283,13 @@
             this.windowsUIButtonPanel1.AppearanceButton.Normal.Options.UseFont = true;
             this.windowsUIButtonPanel1.AppearanceButton.Pressed.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.windowsUIButtonPanel1.AppearanceButton.Pressed.Options.UseFont = true;
-            windowsUIButtonImageOptions7.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions7.Image")));
-            windowsUIButtonImageOptions8.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions8.Image")));
-            windowsUIButtonImageOptions9.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions9.Image")));
+            windowsUIButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions1.Image")));
+            windowsUIButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions2.Image")));
+            windowsUIButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions3.Image")));
             this.windowsUIButtonPanel1.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Search", true, windowsUIButtonImageOptions7, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Save", true, windowsUIButtonImageOptions8, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Close", true, windowsUIButtonImageOptions9, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Search", true, windowsUIButtonImageOptions1, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Save", true, windowsUIButtonImageOptions2, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Close", true, windowsUIButtonImageOptions3, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
             this.windowsUIButtonPanel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.windowsUIButtonPanel1.Location = new System.Drawing.Point(12, 348);
             this.windowsUIButtonPanel1.Name = "windowsUIButtonPanel1";
@@ -335,28 +370,6 @@
             this.textEditOverPayment.StyleController = this.LayoutPayment;
             this.textEditOverPayment.TabIndex = 12;
             this.textEditOverPayment.Visible = false;
-            // 
-            // checkEditEFT
-            // 
-            this.checkEditEFT.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bindingSourcePAYMENT, "PAYMENT_AUTO_PAY", true));
-            this.checkEditEFT.EnterMoveNextControl = true;
-            this.checkEditEFT.Location = new System.Drawing.Point(102, 236);
-            this.checkEditEFT.Name = "checkEditEFT";
-            this.checkEditEFT.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkEditEFT.Properties.Appearance.Options.UseFont = true;
-            this.checkEditEFT.Properties.Appearance.Options.UseTextOptions = true;
-            this.checkEditEFT.Properties.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.checkEditEFT.Properties.Caption = "EFT?";
-            this.checkEditEFT.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
-            this.checkEditEFT.Properties.ContentAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.checkEditEFT.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.checkEditEFT.Properties.Name = "checkEditEFT";
-            this.checkEditEFT.Size = new System.Drawing.Size(96, 25);
-            this.checkEditEFT.StyleController = this.LayoutPayment;
-            this.checkEditEFT.TabIndex = 11;
-            this.checkEditEFT.QueryCheckStateByValue += new DevExpress.XtraEditors.Controls.QueryCheckStateByValueEventHandler(this.checkEditEFT_QueryCheckStateByValue);
-            this.checkEditEFT.QueryValueByCheckState += new DevExpress.XtraEditors.Controls.QueryValueByCheckStateEventHandler(this.checkEditEFT_QueryValueByCheckState);
-            this.checkEditEFT.Modified += new System.EventHandler(this.checkEditEFT_Modified);
             // 
             // dateEditPaymentDate
             // 
@@ -635,14 +648,6 @@
             this.layoutControlOverPayment.Text = "Over Payment";
             this.layoutControlOverPayment.TextSize = new System.Drawing.Size(125, 21);
             // 
-            // emptySpaceItem2
-            // 
-            this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.Location = new System.Drawing.Point(243, 96);
-            this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(104, 32);
-            this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
-            // 
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
@@ -730,14 +735,6 @@
             this.layoutControlPaymentCode.Text = "Payment  Code";
             this.layoutControlPaymentCode.TextSize = new System.Drawing.Size(125, 21);
             // 
-            // emptySpaceItem9
-            // 
-            this.emptySpaceItem9.AllowHotTrack = false;
-            this.emptySpaceItem9.Location = new System.Drawing.Point(223, 32);
-            this.emptySpaceItem9.Name = "emptySpaceItem9";
-            this.emptySpaceItem9.Size = new System.Drawing.Size(124, 32);
-            this.emptySpaceItem9.TextSize = new System.Drawing.Size(0, 0);
-            // 
             // layoutControlAmount
             // 
             this.layoutControlAmount.AppearanceItemCaption.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -794,6 +791,80 @@
             this.emptySpaceItem11.Name = "emptySpaceItem11";
             this.emptySpaceItem11.Size = new System.Drawing.Size(743, 54);
             this.emptySpaceItem11.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // emptySpaceItem9
+            // 
+            this.emptySpaceItem9.AllowHotTrack = false;
+            this.emptySpaceItem9.Location = new System.Drawing.Point(223, 32);
+            this.emptySpaceItem9.Name = "emptySpaceItem9";
+            this.emptySpaceItem9.Size = new System.Drawing.Size(124, 32);
+            this.emptySpaceItem9.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // emptySpaceItem2
+            // 
+            this.emptySpaceItem2.AllowHotTrack = false;
+            this.emptySpaceItem2.Location = new System.Drawing.Point(243, 96);
+            this.emptySpaceItem2.Name = "emptySpaceItem2";
+            this.emptySpaceItem2.Size = new System.Drawing.Size(104, 32);
+            this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // emptySpaceItem5
+            // 
+            this.emptySpaceItem5.AllowHotTrack = false;
+            this.emptySpaceItem5.Location = new System.Drawing.Point(190, 224);
+            this.emptySpaceItem5.Name = "emptySpaceItem5";
+            this.emptySpaceItem5.Size = new System.Drawing.Size(553, 29);
+            this.emptySpaceItem5.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // layoutControlItem2
+            // 
+            this.layoutControlItem2.Control = this.checkEditEFT;
+            this.layoutControlItem2.Location = new System.Drawing.Point(90, 224);
+            this.layoutControlItem2.Name = "layoutControlItem2";
+            this.layoutControlItem2.Size = new System.Drawing.Size(100, 29);
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem2.TextVisible = false;
+            // 
+            // emptySpaceItem7
+            // 
+            this.emptySpaceItem7.AllowHotTrack = false;
+            this.emptySpaceItem7.Location = new System.Drawing.Point(571, 32);
+            this.emptySpaceItem7.Name = "emptySpaceItem7";
+            this.emptySpaceItem7.Size = new System.Drawing.Size(172, 32);
+            this.emptySpaceItem7.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // emptySpaceItem10
+            // 
+            this.emptySpaceItem10.AllowHotTrack = false;
+            this.emptySpaceItem10.Location = new System.Drawing.Point(0, 224);
+            this.emptySpaceItem10.Name = "emptySpaceItem10";
+            this.emptySpaceItem10.Size = new System.Drawing.Size(90, 29);
+            this.emptySpaceItem10.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // emptySpaceItem12
+            // 
+            this.emptySpaceItem12.AllowHotTrack = false;
+            this.emptySpaceItem12.Location = new System.Drawing.Point(223, 128);
+            this.emptySpaceItem12.Name = "emptySpaceItem12";
+            this.emptySpaceItem12.Size = new System.Drawing.Size(520, 32);
+            this.emptySpaceItem12.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // layoutControlItem4
+            // 
+            this.layoutControlItem4.Control = this.checkEditNoAdjLookBack;
+            this.layoutControlItem4.Location = new System.Drawing.Point(166, 253);
+            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.Size = new System.Drawing.Size(577, 29);
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem4.TextVisible = false;
+            // 
+            // emptySpaceItem13
+            // 
+            this.emptySpaceItem13.AllowHotTrack = false;
+            this.emptySpaceItem13.Location = new System.Drawing.Point(0, 253);
+            this.emptySpaceItem13.Name = "emptySpaceItem13";
+            this.emptySpaceItem13.Size = new System.Drawing.Size(166, 29);
+            this.emptySpaceItem13.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem1
             // 
@@ -1110,77 +1181,6 @@
             this.lookUpEditCustomerID.Size = new System.Drawing.Size(887, 28);
             this.lookUpEditCustomerID.TabIndex = 168;
             // 
-            // emptySpaceItem5
-            // 
-            this.emptySpaceItem5.AllowHotTrack = false;
-            this.emptySpaceItem5.Location = new System.Drawing.Point(190, 224);
-            this.emptySpaceItem5.Name = "emptySpaceItem5";
-            this.emptySpaceItem5.Size = new System.Drawing.Size(553, 29);
-            this.emptySpaceItem5.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // layoutControlItem2
-            // 
-            this.layoutControlItem2.Control = this.checkEditEFT;
-            this.layoutControlItem2.Location = new System.Drawing.Point(90, 224);
-            this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(100, 29);
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem2.TextVisible = false;
-            // 
-            // emptySpaceItem7
-            // 
-            this.emptySpaceItem7.AllowHotTrack = false;
-            this.emptySpaceItem7.Location = new System.Drawing.Point(571, 32);
-            this.emptySpaceItem7.Name = "emptySpaceItem7";
-            this.emptySpaceItem7.Size = new System.Drawing.Size(172, 32);
-            this.emptySpaceItem7.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // emptySpaceItem10
-            // 
-            this.emptySpaceItem10.AllowHotTrack = false;
-            this.emptySpaceItem10.Location = new System.Drawing.Point(0, 224);
-            this.emptySpaceItem10.Name = "emptySpaceItem10";
-            this.emptySpaceItem10.Size = new System.Drawing.Size(90, 29);
-            this.emptySpaceItem10.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // emptySpaceItem12
-            // 
-            this.emptySpaceItem12.AllowHotTrack = false;
-            this.emptySpaceItem12.Location = new System.Drawing.Point(223, 128);
-            this.emptySpaceItem12.Name = "emptySpaceItem12";
-            this.emptySpaceItem12.Size = new System.Drawing.Size(520, 32);
-            this.emptySpaceItem12.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // checkEditNoAdjLookBack
-            // 
-            this.checkEditNoAdjLookBack.Location = new System.Drawing.Point(178, 265);
-            this.checkEditNoAdjLookBack.Name = "checkEditNoAdjLookBack";
-            this.checkEditNoAdjLookBack.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkEditNoAdjLookBack.Properties.Appearance.Options.UseFont = true;
-            this.checkEditNoAdjLookBack.Properties.Caption = "No Adjustment Lookback";
-            this.checkEditNoAdjLookBack.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
-            this.checkEditNoAdjLookBack.Properties.ContentAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.checkEditNoAdjLookBack.Size = new System.Drawing.Size(573, 25);
-            this.checkEditNoAdjLookBack.StyleController = this.LayoutPayment;
-            this.checkEditNoAdjLookBack.TabIndex = 19;
-            // 
-            // layoutControlItem4
-            // 
-            this.layoutControlItem4.Control = this.checkEditNoAdjLookBack;
-            this.layoutControlItem4.Location = new System.Drawing.Point(166, 253);
-            this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(577, 29);
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem4.TextVisible = false;
-            // 
-            // emptySpaceItem13
-            // 
-            this.emptySpaceItem13.AllowHotTrack = false;
-            this.emptySpaceItem13.Location = new System.Drawing.Point(0, 253);
-            this.emptySpaceItem13.Name = "emptySpaceItem13";
-            this.emptySpaceItem13.Size = new System.Drawing.Size(166, 29);
-            this.emptySpaceItem13.TextSize = new System.Drawing.Size(0, 0);
-            // 
             // XtraFormClosedPaymentEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1196,12 +1196,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourcePAYMENT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LayoutPayment)).EndInit();
             this.LayoutPayment.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.checkEditNoAdjLookBack.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEditEFT.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditExtensionCount.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditAmount.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEditISFDate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEditISFDate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditOverPayment.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEditEFT.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEditPaymentDate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEditPaymentDate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEditPaymentType.Properties)).EndInit();
@@ -1218,7 +1219,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlBuyout)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlPaymentDate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlOverPayment)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlISFDate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlChangeISFDateButton)).EndInit();
@@ -1226,12 +1226,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlPaymentType)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlPaymentCode)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlAmount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlExtensionCount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
@@ -1252,14 +1260,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlDealerName)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlDealerID)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEditCustomerID.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkEditNoAdjLookBack.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem13)).EndInit();
             this.ResumeLayout(false);
 
         }

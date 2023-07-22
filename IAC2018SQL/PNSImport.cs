@@ -304,6 +304,8 @@ namespace IAC2021SQL
                             RenameFile(lsOldFile, lsNewFile);
                         }
                     }
+                    // Moses Newman 07/21/2023 Create PaymentHistory Records
+                    Program.CreateTempPayments();
                     XtraMessageBox.Show("*** Import of " + PNS.PayNSeconds.Rows.Count.ToString().Trim() + " PayNSeconds RECORDS complete. ***", "PNS Payments Import");
                 }
                 else
@@ -339,6 +341,8 @@ namespace IAC2021SQL
                             RenameFile(lsOldFile, lsNewFile);
                         }
                     }
+                    // Moses Newman 07/21/2023 Create PaymentHistory Records
+                    Program.CreateTempPayments();
                     XtraMessageBox.Show("*** Import of " + PNS.PayNSeconds.Rows.Count.ToString().Trim() + " PayNSeconds RECORDS complete. ***", "PNS Payments Import");
                 }
                 else
