@@ -33,6 +33,7 @@ namespace IAC2021SQL
             {
                 case "Apply Payments":
                     DoProgress();
+                    Close();
                     break;
                 case "Exit":
                     Close();
@@ -43,7 +44,7 @@ namespace IAC2021SQL
 
         private void DoProgress()
         {
-            cUSTOMERTableAdapter.Fill(ClosedPaymentiacDataSet.CUSTOMER,"201501");
+            cUSTOMERTableAdapter.FillByAllPosted(ClosedPaymentiacDataSet.CUSTOMER);
             progressBarControl1.Properties.Maximum = ClosedPaymentiacDataSet.CUSTOMER.Rows.Count;
             progressBarControl1.Visible = true;
             progressBarControl1.Enabled = true;

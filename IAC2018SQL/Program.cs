@@ -3405,15 +3405,20 @@ namespace IAC2021SQL
 			Boolean lbLastPayment = false,
 					lbCreateOverPayment = false,
 					lbPayLates = true; // Moses Newman 07/16/2023 for handling situations where late fees should not be paid;
-			String PayCode = PDS.PaymentHistory.Rows[0].Field<String>("Type") + PDS.PaymentHistory.Rows[0].Field<String>("Code");
+			String PayCode = PDS.PaymentHistory.Rows[0].Field<String>("Type") + PDS.PaymentHistory.Rows[0].Field<String>("Code"),
+				   PaymentType = PayCode.Substring(0, 1);
+
+			List<String> IncludeTypes = new List<String>
+			{"A","B","C","D","E","H","I","M","P","R","S","T","C","W","V"};
+
             List<String> NegAdjList = new List<String>
             {
                 "AW",
                 "WH",
                 "WC"
             };
-            // Moses Newman 07/16/2023 don't process payments that don't effect paid through or late fee balances or partials
-            if (NegAdjList.Contains(PayCode) || (PDS.PaymentHistory.Rows[0].Field<String>("Type") == "A" && lnUnusedFunds < 0 &&
+            // Moses Newman 07/16/2023 don"t process payments that don"t effect paid through or late fee balances or partials
+            if (NegAdjList.Contains(PayCode) || !IncludeTypes.Contains(PaymentType) || (PDS.PaymentHistory.Rows[0].Field<String>("Type") == "A" && lnUnusedFunds < 0 &&
                 String.IsNullOrEmpty(PDS.PaymentHistory.Rows[0].Field<Int32?>("ISFID").ToString())))
 				return;
             if (lnUnusedFunds > 0)
