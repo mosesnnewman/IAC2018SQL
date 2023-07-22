@@ -1774,5 +1774,10 @@ namespace IAC2021SQL
         {
             CreateFormInstance("XtraFormWarrantyCompanies", false);
         }
+
+        private void applyPaymentsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CreateFormInstance("DirectXFormApplyPayments", false);
+        }
     }
 }

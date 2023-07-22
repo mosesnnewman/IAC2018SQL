@@ -28,6 +28,8 @@ using Microsoft.VisualStudio.Data.Services;
 using System.Drawing.Drawing2D;
 using IAC2021SQL.IACDataSetTableAdapters;
 using IAC2021SQL.ProductionMainTablesTableAdapters;
+using Microsoft.IdentityModel.Tokens;
+using IAC2021SQL.RepoDataSetTableAdapters;
 
 namespace IAC2021SQL
 {
@@ -99,7 +101,7 @@ namespace IAC2021SQL
 
 			string szGroupName;
 
-			string[] arLoanNames = { "NEW", "LATE/ISF", "INSUF" };
+			string[] arLoanNames = { "NEW", "LATE/ISF", "NEG ADJ" };
 			string[] arPaymentNames = { "PAY/ADJ", "UPD", "BUYOUT/UNEARNED" };
 
 			int[] arLoanEvents;
@@ -119,7 +121,6 @@ namespace IAC2021SQL
 			try
 			{
 				tvDocument.CustomGroups.Add(out NewGroupID, szGroupName, groupType, includeInListOfCustomEvents);
-
 
 				//  Add each of the events associated with this group
 				for (int i = 0; i < arLoanNames.Length; i++)
@@ -334,11 +335,21 @@ namespace IAC2021SQL
 						// Moses Newman 07/31/2013 Added Cancelations and Waive Fees
 						case "C":
 						case "W":
-						case "E": // Moses Newman 01/29/2015 Extensions must now be able to call Amort!
-							tvDocument.CashFlowMatrix.SetEvent(currentLine, TVConstants.TVEventType.Payment, arPaymentEvents[0]);
-							tvDocument.CashFlowMatrix.SetAmount(currentLine, (double)DTPayStream.Rows[i].Field<Decimal>("CUSTHIST_PAYMENT_RCV") * CENTS_PER_DOLLAR);
+                        case "E": // Moses Newman 01/29/2015 Extensions must now be able to call Amort!
+                        case "O": // Moses Newman 07/16/2023 Handle Principal Only payment
+                                  // Moses Newman 07/16/2023 Add Negative ADJ that does not attach to previous payment.
+                            if (DTPayStream.Rows[i].Field<String>("CUSTHIST_PAYMENT_TYPE") == "A" &&
+                                String.IsNullOrEmpty(DTPayStream.Rows[i].Field<Int32?>("ISFID").ToString()) &&
+                                DTPayStream.Rows[i].Field<Decimal>("CUSTHIST_PAYMENT_RCV") < 0)
+ 									tvDocument.CashFlowMatrix.SetEvent(currentLine, TVConstants.TVEventType.Payment, arPaymentEvents[2]);
+							else
+                                tvDocument.CashFlowMatrix.SetEvent(currentLine, TVConstants.TVEventType.Payment, arPaymentEvents[0]);
+                            tvDocument.CashFlowMatrix.SetAmount(currentLine, (double)DTPayStream.Rows[i].Field<Decimal>("CUSTHIST_PAYMENT_RCV") * CENTS_PER_DOLLAR);
 							tvDocument.CashFlowMatrix.SetNumber(currentLine, 1);
-							break;
+							// Moses Newman 07/16/2023 Handle new Principal only payment type with Principal First Series
+							if (DTPayStream.Rows[i].Field<String>("CUSTHIST_PAYMENT_TYPE") == "O")
+								tvDocument.CashFlowMatrix.SetSpecialSeries(currentLine, 9);
+                            break;
 						case "I":
 						case "N":
 							if (DTPayStream.Rows[i].Field<String>("CUSTHIST_PAYMENT_TYPE") == "N")
@@ -2378,6 +2389,10 @@ namespace IAC2021SQL
                         // Moses Newman06/28/2016 if paycode = "I" IVR
 						lsPayDesc = (tsPayCode != "I") ? "CCARD":"IVR";
 						break;
+					case "O":
+						// Moses Newman 07/17/2023 New Principle First Payment
+						lsPayDesc = "PONLY";
+						break;
 					case "P":
 						lsPayDesc = "PWRCK";
 						break;
@@ -3124,6 +3139,233 @@ namespace IAC2021SQL
 			return MonthlyPayment;
         }
 
+		static public void CreateSingleTempPayment(String CustomerNo, DateTime PayDate, Int32 SeqNo)
+		{
+			PaymentDataSet paymentDataSet = new PaymentDataSet();
+
+			IACDataSetTableAdapters.CUSTOMERTableAdapter cUSTOMERTableAdapter = new IACDataSetTableAdapters.CUSTOMERTableAdapter();
+			IACDataSetTableAdapters.PAYMENTTableAdapter paymentAdapter = new IACDataSetTableAdapters.PAYMENTTableAdapter();
+
+			PaymentHistoryTableAdapter paymentHistoryTableAdapter = new PaymentHistoryTableAdapter();
+			IACDataSet ClosedPaymentiacDataSet = new IACDataSet();
+			Int32? id = 0;
+			paymentHistoryTableAdapter.FillByPAYMENTKey(paymentDataSet.PaymentHistory, Convert.ToInt32(CustomerNo), PayDate, SeqNo);
+			if (paymentDataSet.PaymentHistory.Rows.Count > 0)
+			{
+				Program.RemoveSinglePayment(paymentDataSet.PaymentHistory.Rows[0].Field<Int32>("id"));
+				paymentHistoryTableAdapter.Delete(paymentDataSet.PaymentHistory.Rows[0].Field<Int32>("id"));
+			}
+			paymentAdapter.FillByKey(ClosedPaymentiacDataSet.PAYMENT, CustomerNo, PayDate, SeqNo);
+
+			if (ClosedPaymentiacDataSet.PAYMENT.Rows.Count > 0)
+			{
+				Int32 i = 0;
+				cUSTOMERTableAdapter.Fill(ClosedPaymentiacDataSet.CUSTOMER, CustomerNo);
+				if (ClosedPaymentiacDataSet.CUSTOMER.Rows.Count > 0)
+				{
+					paymentHistoryTableAdapter.Insert((Int32?)null,
+													  ClosedPaymentiacDataSet.PAYMENT.Rows[i].Field<Int32?>("ISFID") != null,
+													  Convert.ToInt32(ClosedPaymentiacDataSet.PAYMENT.Rows[i].Field<String>("PAYMENT_CUSTOMER")),
+													  ClosedPaymentiacDataSet.PAYMENT.Rows[i].Field<DateTime?>("PAYMENT_DATE"),
+													  ClosedPaymentiacDataSet.PAYMENT.Rows[i].Field<Int32?>("SeqNo"),
+													  ClosedPaymentiacDataSet.PAYMENT.Rows[i].Field<Int32?>("PAYMENT_THRU_UD"),
+													  ClosedPaymentiacDataSet.PAYMENT.Rows[i].Field<Int32?>("PAYMENT_DEALER"),
+													  ClosedPaymentiacDataSet.PAYMENT.Rows[i].Field<Decimal?>("PAYMENT_AMOUNT_RCV"),
+													  ClosedPaymentiacDataSet.CUSTOMER.Rows[i].Field<Decimal?>("CUSTOMER_BALANCE"),
+													  ClosedPaymentiacDataSet.CUSTOMER.Rows[i].Field<Decimal?>("CUSTOMER_BUYOUT"),
+													  ClosedPaymentiacDataSet.CUSTOMER.Rows[i].Field<Decimal?>("CUSTOMER_CONTRACT_STATUS"),
+													  ClosedPaymentiacDataSet.CUSTOMER.Rows[i].Field<Decimal?>("PartialPayment"),
+													  ClosedPaymentiacDataSet.CUSTOMER.Rows[i].Field<Decimal?>("CUSTOMER_LATE_CHARGE_BAL"),
+													  ClosedPaymentiacDataSet.CUSTOMER.Rows[i].Field<String>("CUSTOMER_PAID_THRU"),
+													  ClosedPaymentiacDataSet.CUSTOMER.Rows[i].Field<DateTime?>("PaidThrough"),
+													  ClosedPaymentiacDataSet.PAYMENT.Rows[i].Field<String>("PAYMENT_TYPE"),
+													  ClosedPaymentiacDataSet.PAYMENT.Rows[i].Field<String>("PAYMENT_CODE_2"),
+													  ClosedPaymentiacDataSet.PAYMENT.Rows[i].Field<DateTime?>("PAYMENT_ISF_DATE"),
+													  ClosedPaymentiacDataSet.PAYMENT.Rows[i].Field<Decimal?>("PAYMENT_CURR_INT"),
+													  ClosedPaymentiacDataSet.PAYMENT.Rows[i].Field<Decimal?>("PAYMENT_CURR_INT"),
+													  ClosedPaymentiacDataSet.PAYMENT.Rows[i].Field<Decimal?>("PAYMENT_LATE_CHARGE_PAID"),
+													  ClosedPaymentiacDataSet.PAYMENT.Rows[i].Field<String>("PAYMENT_AUTO_PAY") == "Y" ? true : false,
+													  ClosedPaymentiacDataSet.PAYMENT.Rows[i].Field<String>("CreditCardType"),
+													  false,
+													  (String)null,
+													  (DateTime?)null,
+													  ClosedPaymentiacDataSet.PAYMENT.Rows[i].Field<DateTime?>("TransactionDate"),
+													  ClosedPaymentiacDataSet.PAYMENT.Rows[i].Field<Decimal?>("Fee"),
+													  ClosedPaymentiacDataSet.PAYMENT.Rows[i].Field<Boolean?>("FromIVR"),
+													  ClosedPaymentiacDataSet.PAYMENT.Rows[i].Field<Int32?>("ISFSeqNo"),
+													  ClosedPaymentiacDataSet.PAYMENT.Rows[i].Field<String>("ISFPaymentType"),
+													  ClosedPaymentiacDataSet.PAYMENT.Rows[i].Field<String>("ISFPaymentCode"),
+													  ClosedPaymentiacDataSet.PAYMENT.Rows[i].Field<Int32?>("ISFID"),
+													  ClosedPaymentiacDataSet.PAYMENT.Rows[i].Field<Int32?>("TicketID"),
+													  ClosedPaymentiacDataSet.PAYMENT.Rows[i].Field<Int32?>("TicketDetailID"),
+													  false,
+													  0, ref id);
+					Program.ApplySinglePayment(ClosedPaymentiacDataSet.PAYMENT.Rows[i].Field<String>("PAYMENT_CUSTOMER"), (Int32)id);
+				}
+			}
+			paymentDataSet.PaymentHistory.Clear();
+		}
+
+        static public void CreateTempPayments()
+		{
+			PaymentDataSet paymentDataSet = new PaymentDataSet();
+
+			IACDataSetTableAdapters.CUSTOMERTableAdapter cUSTOMERTableAdapter = new IACDataSetTableAdapters.CUSTOMERTableAdapter();
+            IACDataSetTableAdapters.PAYMENTTableAdapter paymentAdapter = new IACDataSetTableAdapters.PAYMENTTableAdapter();	
+
+            PaymentHistoryTableAdapter paymentHistoryTableAdapter = new PaymentHistoryTableAdapter();
+            IACDataSet ClosedPaymentiacDataSet = new IACDataSet();
+            Int32? id = 0;
+            paymentHistoryTableAdapter.FillAllByNULLCusthistID(paymentDataSet.PaymentHistory);
+            for (Int32 phCount = 0; phCount < paymentDataSet.PaymentHistory.Rows.Count; phCount++)
+            {
+                Program.RemoveSinglePayment(paymentDataSet.PaymentHistory.Rows[phCount].Field<Int32>("id"));
+            }
+            paymentHistoryTableAdapter.DeleteAllNULLCusthistID();
+			paymentAdapter.FillByAll(ClosedPaymentiacDataSet.PAYMENT);
+
+            for (Int32 i = 0; i < ClosedPaymentiacDataSet.PAYMENT.Rows.Count; i++)
+            {
+                cUSTOMERTableAdapter.Fill(ClosedPaymentiacDataSet.CUSTOMER, ClosedPaymentiacDataSet.PAYMENT.Rows[i].Field<String>("PAYMENT_CUSTOMER"));
+                paymentHistoryTableAdapter.Insert((Int32?)null,
+                                                  ClosedPaymentiacDataSet.PAYMENT.Rows[i].Field<Int32?>("ISFID") != null,
+                                                  Convert.ToInt32(ClosedPaymentiacDataSet.PAYMENT.Rows[i].Field<String>("PAYMENT_CUSTOMER")),
+                                                  ClosedPaymentiacDataSet.PAYMENT.Rows[i].Field<DateTime?>("PAYMENT_DATE"),
+                                                  ClosedPaymentiacDataSet.PAYMENT.Rows[i].Field<Int32?>("SeqNo"),
+                                                  ClosedPaymentiacDataSet.PAYMENT.Rows[i].Field<Int32?>("PAYMENT_THRU_UD"),
+                                                  ClosedPaymentiacDataSet.PAYMENT.Rows[i].Field<Int32?>("PAYMENT_DEALER"),
+                                                  ClosedPaymentiacDataSet.PAYMENT.Rows[i].Field<Decimal?>("PAYMENT_AMOUNT_RCV"),
+                                                  ClosedPaymentiacDataSet.CUSTOMER.Rows[0].Field<Decimal?>("CUSTOMER_BALANCE"),
+                                                  ClosedPaymentiacDataSet.CUSTOMER.Rows[0].Field<Decimal?>("CUSTOMER_BUYOUT"),
+                                                  ClosedPaymentiacDataSet.CUSTOMER.Rows[0].Field<Decimal?>("CUSTOMER_CONTRACT_STATUS"),
+                                                  ClosedPaymentiacDataSet.CUSTOMER.Rows[0].Field<Decimal?>("PartialPayment"),
+                                                  ClosedPaymentiacDataSet.CUSTOMER.Rows[0].Field<Decimal?>("CUSTOMER_LATE_CHARGE_BAL"),
+                                                  ClosedPaymentiacDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_PAID_THRU"),
+                                                  ClosedPaymentiacDataSet.CUSTOMER.Rows[0].Field<DateTime?>("PaidThrough"),
+                                                  ClosedPaymentiacDataSet.PAYMENT.Rows[i].Field<String>("PAYMENT_TYPE"),
+                                                  ClosedPaymentiacDataSet.PAYMENT.Rows[i].Field<String>("PAYMENT_CODE_2"),
+                                                  ClosedPaymentiacDataSet.PAYMENT.Rows[i].Field<DateTime?>("PAYMENT_ISF_DATE"),
+                                                  ClosedPaymentiacDataSet.PAYMENT.Rows[i].Field<Decimal?>("PAYMENT_CURR_INT"),
+                                                  ClosedPaymentiacDataSet.PAYMENT.Rows[i].Field<Decimal?>("PAYMENT_CURR_INT"),
+                                                  ClosedPaymentiacDataSet.PAYMENT.Rows[i].Field<Decimal?>("PAYMENT_LATE_CHARGE_PAID"),
+                                                  ClosedPaymentiacDataSet.PAYMENT.Rows[i].Field<String>("PAYMENT_AUTO_PAY") == "Y" ? true : false,
+                                                  ClosedPaymentiacDataSet.PAYMENT.Rows[i].Field<String>("CreditCardType"),
+                                                  false,
+                                                  (String)null,
+                                                  (DateTime?)null,
+                                                  ClosedPaymentiacDataSet.PAYMENT.Rows[i].Field<DateTime?>("TransactionDate"),
+                                                  ClosedPaymentiacDataSet.PAYMENT.Rows[i].Field<Decimal?>("Fee"),
+                                                  ClosedPaymentiacDataSet.PAYMENT.Rows[i].Field<Boolean?>("FromIVR"),
+                                                  ClosedPaymentiacDataSet.PAYMENT.Rows[i].Field<Int32?>("ISFSeqNo"),
+                                                  ClosedPaymentiacDataSet.PAYMENT.Rows[i].Field<String>("ISFPaymentType"),
+                                                  ClosedPaymentiacDataSet.PAYMENT.Rows[i].Field<String>("ISFPaymentCode"),
+                                                  ClosedPaymentiacDataSet.PAYMENT.Rows[i].Field<Int32?>("ISFID"),
+                                                  ClosedPaymentiacDataSet.PAYMENT.Rows[i].Field<Int32?>("TicketID"),
+                                                  ClosedPaymentiacDataSet.PAYMENT.Rows[i].Field<Int32?>("TicketDetailID"),
+                                                  false,
+                                                  0, ref id);
+                Program.ApplySinglePayment(ClosedPaymentiacDataSet.PAYMENT.Rows[i].Field<String>("PAYMENT_CUSTOMER"), (Int32)id);
+            }
+            paymentDataSet.PaymentHistory.Clear();
+        }
+		static public void CreateFinalPayments(IACDataSet ClosedPaymentiacDataSet)
+		{
+			PaymentDataSet paymentDataSet = new PaymentDataSet();
+
+			IACDataSetTableAdapters.CUSTOMERTableAdapter cUSTOMERTableAdapter = new IACDataSetTableAdapters.CUSTOMERTableAdapter();
+			IACDataSetTableAdapters.PAYMENTTableAdapter paymentAdapter = new IACDataSetTableAdapters.PAYMENTTableAdapter();
+
+			PaymentHistoryTableAdapter paymentHistoryTableAdapter = new PaymentHistoryTableAdapter();
+			Int32? id = 0;
+			paymentHistoryTableAdapter.FillAllByNULLCusthistID(paymentDataSet.PaymentHistory);
+			for (Int32 phCount = 0; phCount < paymentDataSet.PaymentHistory.Rows.Count; phCount++)
+			{
+				Program.RemoveSinglePayment(paymentDataSet.PaymentHistory.Rows[phCount].Field<Int32>("id"));
+			}
+			paymentHistoryTableAdapter.DeleteAllNULLCusthistID();
+
+
+			for (Int32 i = 0; i < ClosedPaymentiacDataSet.CUSTHIST.Rows.Count; i++)
+			{
+				ClosedPaymentiacDataSet.CUSTOMER.Clear();
+				cUSTOMERTableAdapter.Fill(ClosedPaymentiacDataSet.CUSTOMER, ClosedPaymentiacDataSet.CUSTHIST.Rows[i].Field<String>("CUSTHIST_NO"));
+				paymentHistoryTableAdapter.Insert(ClosedPaymentiacDataSet.CUSTHIST.Rows[i].Field<Int32?>("ID"),
+												  ClosedPaymentiacDataSet.CUSTHIST.Rows[i].Field<Int32?>("ISFID") != null,
+												  Convert.ToInt32(ClosedPaymentiacDataSet.CUSTHIST.Rows[i].Field<String>("CUSTHIST_NO")),
+												  ClosedPaymentiacDataSet.CUSTHIST.Rows[i].Field<DateTime?>("CUSTHIST_PAY_DATE"),
+												  ClosedPaymentiacDataSet.CUSTHIST.Rows[i].Field<Int32?>("CUSTHIST_DATE_SEQ"),
+												  ClosedPaymentiacDataSet.CUSTHIST.Rows[i].Field<Int32?>("CUSTHIST_THRU_UD"),
+												  ClosedPaymentiacDataSet.CUSTOMER.Rows[0].Field<Int32?>("CUSTOMER_DEALER"),
+												  ClosedPaymentiacDataSet.CUSTHIST.Rows[i].Field<Decimal?>("CUSTHIST_PAYMENT_RCV"),
+												  ClosedPaymentiacDataSet.CUSTHIST.Rows[i].Field<Decimal?>("CUSTHIST_BALANCE"),
+												  ClosedPaymentiacDataSet.CUSTHIST.Rows[i].Field<Decimal?>("CUSTHIST_BUYOUT"),
+												  ClosedPaymentiacDataSet.CUSTHIST.Rows[i].Field<Decimal?>("CUSTHIST_CONTRACT_STATUS"),
+												  ClosedPaymentiacDataSet.CUSTHIST.Rows[i].Field<Decimal?>("PartialPayment"),
+												  ClosedPaymentiacDataSet.CUSTHIST.Rows[i].Field<Decimal?>("CUSTHIST_LATE_CHARGE_BAL"),
+												  ClosedPaymentiacDataSet.CUSTHIST.Rows[i].Field<String>("CUSTHIST_PAID_THRU"),
+												  ClosedPaymentiacDataSet.CUSTHIST.Rows[i].Field<String>("CUSTHIST_PAID_THRU").Substring(0, 2) != "02" || 
+													ClosedPaymentiacDataSet.CUSTOMER.Rows[0].Field<Int32>("CUSTOMER_DUE_DAY") != 30 ?
+													DateTime.Parse(ClosedPaymentiacDataSet.CUSTHIST.Rows[i].Field<String>("CUSTHIST_PAID_THRU").Substring(0, 2) +
+														"/" + ClosedPaymentiacDataSet.CUSTOMER.Rows[0].Field<Int32>("CUSTOMER_DUE_DAY").ToString() + "/" +
+														CultureInfo.CurrentCulture.Calendar.ToFourDigitYear(CultureInfo.CurrentCulture.Calendar.ToFourDigitYear(
+															Convert.ToInt32(
+																ClosedPaymentiacDataSet.CUSTHIST.Rows[i].Field<String>("CUSTHIST_PAID_THRU").Substring(2, 2)))).ToString()) :
+													DateTime.Parse("03/01/" + CultureInfo.CurrentCulture.Calendar.ToFourDigitYear(
+														CultureInfo.CurrentCulture.Calendar.ToFourDigitYear(Convert.ToInt32(
+															ClosedPaymentiacDataSet.CUSTHIST.Rows[i].Field<String>("CUSTHIST_PAID_THRU").Substring(2, 2)))).ToString()).AddDays(-1),
+												  ClosedPaymentiacDataSet.CUSTHIST.Rows[i].Field<String>("CUSTHIST_PAYMENT_TYPE"),
+												  ClosedPaymentiacDataSet.CUSTHIST.Rows[i].Field<String>("CUSTHIST_PAYMENT_CODE"),
+												  ClosedPaymentiacDataSet.CUSTHIST.Rows[i].Field<DateTime?>("CUSTHIST_ISF_DATE"),
+												  ClosedPaymentiacDataSet.CUSTHIST.Rows[i].Field<Decimal?>("CUSTHIST_PAID_INTEREST"),
+												  ClosedPaymentiacDataSet.CUSTHIST.Rows[i].Field<Decimal?>("AccruedInterest"),
+												  ClosedPaymentiacDataSet.CUSTHIST.Rows[i].Field<Decimal?>("CUSTHIST_LATE_CHARGE_PAID"),
+												  ClosedPaymentiacDataSet.CUSTHIST.Rows[i].Field<String>("CUSTHIST_AUTO_PAY") == "Y" ? true : false,
+												  ClosedPaymentiacDataSet.CUSTHIST.Rows[i].Field<String>("CUSTHIST_PAY_REM_1"),
+												  false,
+												  (String)null,
+												  (DateTime?)null,
+												  ClosedPaymentiacDataSet.CUSTHIST.Rows[i].Field<DateTime?>("TransactionDate"),
+												  ClosedPaymentiacDataSet.CUSTHIST.Rows[i].Field<Decimal?>("Fee"),
+												  ClosedPaymentiacDataSet.CUSTHIST.Rows[i].Field<Boolean?>("FromIVR"),
+												  ClosedPaymentiacDataSet.CUSTHIST.Rows[i].Field<Int32?>("ISFSeqNo"),
+												  ClosedPaymentiacDataSet.CUSTHIST.Rows[i].Field<String>("ISFPaymentType"),
+												  ClosedPaymentiacDataSet.CUSTHIST.Rows[i].Field<String>("ISFPaymentCode"),
+												  ClosedPaymentiacDataSet.CUSTHIST.Rows[i].Field<Int32?>("ISFID"),
+												  ClosedPaymentiacDataSet.CUSTHIST.Rows[i].Field<Int32?>("TicketID"),
+												  ClosedPaymentiacDataSet.CUSTHIST.Rows[i].Field<Int32?>("TicketDetailID"),
+												  false,
+												  0, ref id);
+				Program.ApplySinglePayment(ClosedPaymentiacDataSet.CUSTHIST.Rows[i].Field<String>("CUSTHIST_NO"), (Int32)id);
+			}
+			paymentDataSet.PaymentHistory.Clear();
+		}
+
+        static public void RemoveSinglePayment(Int32 PaymentId)
+		{
+			PaymentDataSet paymentData = new PaymentDataSet();
+
+			PaymentDataSetTableAdapters.InvoicesTableAdapter InvoicesTableAdapter = new PaymentDataSetTableAdapters.InvoicesTableAdapter();
+			PaymentDataSetTableAdapters.PaymentInvoiceTableAdapter PaymentInvoiceTableAdapter = new PaymentDataSetTableAdapters.PaymentInvoiceTableAdapter();
+
+			PaymentInvoiceTableAdapter.FillByPaymentID(paymentData.PaymentInvoice, PaymentId);
+
+			for (Int32 i = paymentData.PaymentInvoice.Rows.Count - 1; i > -1; i--)
+			{
+				InvoicesTableAdapter.Fill(paymentData.Invoices, paymentData.PaymentInvoice.Rows[i].Field<Int32>("InvoiceId"));
+				if (paymentData.Invoices.Rows.Count > 0)
+				{
+					paymentData.Invoices.Rows[0].SetField<Decimal>("TotalPaid",
+						paymentData.Invoices.Rows[0].Field<Decimal>("TotalPaid") - paymentData.PaymentInvoice.Rows[i].Field<Decimal>("Amount"));
+					paymentData.Invoices.Rows[0].SetField<Decimal>("TotalDue",
+						paymentData.Invoices.Rows[0].Field<Decimal>("Amount") - paymentData.Invoices.Rows[0].Field<Decimal>("TotalPaid"));
+					paymentData.Invoices.Rows[0].SetField<Boolean>("IsPaid",
+						paymentData.Invoices.Rows[0].Field<Decimal>("TotalPaid") < paymentData.Invoices.Rows[0].Field<Decimal>("Amount") ? false : true);
+					InvoicesTableAdapter.Update(paymentData.Invoices.Rows[0]);
+				}
+				PaymentInvoiceTableAdapter.Delete(paymentData.PaymentInvoice.Rows[i].Field<Int32>("id"));
+            }
+		}
+
         static public void ApplySinglePayment(String CustomerNo,Int32 PaymentId)
         {
             Int32 TempCust = Convert.ToInt32(CustomerNo);
@@ -3161,19 +3403,25 @@ namespace IAC2021SQL
             Decimal lnPartialPayment = loPartialPayment != null ? (Decimal)loPartialPayment : 0,
 					lnOverPayment = 0;
 			Boolean lbLastPayment = false,
-					lbCreateOverPayment = false;
-
+					lbCreateOverPayment = false,
+					lbPayLates = true; // Moses Newman 07/16/2023 for handling situations where late fees should not be paid;
+			String PayCode = PDS.PaymentHistory.Rows[0].Field<String>("Type") + PDS.PaymentHistory.Rows[0].Field<String>("Code");
+            List<String> NegAdjList = new List<String>
+            {
+                "AW",
+                "WH",
+                "WC"
+            };
+            // Moses Newman 07/16/2023 don't process payments that don't effect paid through or late fee balances or partials
+            if (NegAdjList.Contains(PayCode) || (PDS.PaymentHistory.Rows[0].Field<String>("Type") == "A" && lnUnusedFunds < 0 &&
+                String.IsNullOrEmpty(PDS.PaymentHistory.Rows[0].Field<Int32?>("ISFID").ToString())))
+				return;
             if (lnUnusedFunds > 0)
 			{
-				switch (PDS.PaymentHistory.Rows[0].Field<String>("Type") + PDS.PaymentHistory.Rows[0].Field<String>("Code"))
+				switch (PayCode)
 				{
 					case "WL":
 						break;
-					/*case "WH":
-					case "WC":
-						lnUnusedFunds = 0;
-						lnNumMonthlies = 0;
-						break;*/
 					default:
 						if (lnBalance < 0)
 						{
@@ -3182,6 +3430,8 @@ namespace IAC2021SQL
 							lnUnusedFunds -= lnOverPayment;
 							lbCreateOverPayment = true;
 						}
+						if (lnUnusedFunds > 0 && lnUnusedFunds + lnPartialPayment < lnRegularPayment)
+							lbPayLates = false;
 						lnNumMonthlies = (Int32)Math.Floor((lnPartialPayment+lnUnusedFunds) / lnRegularPayment);
                         if (PDS.Invoices.Count == 0 && lnUnusedFunds > 0)
                         {
@@ -3231,8 +3481,8 @@ namespace IAC2021SQL
 							InvoiceCount++;
 						}
 						while (lnNumMonthlies == 0 && lnUnusedFunds > 0)
-						{
-							lnUnusedFunds = ApplyPaymentToLates(CustomerNo, lnUnusedFunds, PDS.PaymentHistory.Rows[0].Field<DateTime>("PaymentDate"), PaymentId);
+						{	if (lbPayLates) // Moses Newman 07/16/2023 No late fee payment in certain cases
+								lnUnusedFunds = ApplyPaymentToLates(CustomerNo, lnUnusedFunds, PDS.PaymentHistory.Rows[0].Field<DateTime>("PaymentDate"), PaymentId);
 							if (lnUnusedFunds == 0 || InvoiceCount >= PDS.Invoices.Count)
 							{
                                 if (InvoiceCount >= PDS.Invoices.Count && lnUnusedFunds > 0)
@@ -3333,15 +3583,19 @@ namespace IAC2021SQL
 				if (lnUnusedFunds < 0)
 				{
                     Decimal LateChargeToReturn = 0;
-                    Object oLateChargeToReturn = null;
+					Boolean returnLate = false;
+					if (lbPayLates)
+					{
+                        Object oLateChargeToReturn = null;
+                        oLateChargeToReturn = PaymentHistoryTableAdapter.LateChargeToReturn(PDS.PaymentHistory.Rows[0].Field<Int32>("ID"));
+						LateChargeToReturn = oLateChargeToReturn != null ? (Decimal)oLateChargeToReturn : 0;
 
-                    oLateChargeToReturn = PaymentHistoryTableAdapter.LateChargeToReturn(PDS.PaymentHistory.Rows[0].Field<Int32>("ID"));
-					LateChargeToReturn = oLateChargeToReturn != null ? (Decimal)oLateChargeToReturn : 0;
-
-					// Moses Newman 06/23/2023 Don't take into account partial payment in negative payments, can't be used to increase monthly payments
-                    //lnNumMonthlies = (Int32)Math.Floor(-(lnUnusedFunds+lnPartialPayment) / lnRegularPayment);
-                    lnNumMonthlies = (Int32)Math.Floor(-lnUnusedFunds / lnRegularPayment);
-                    lnNumMonthlies = lnNumMonthlies < 0 ? 0: lnNumMonthlies;
+						// Moses Newman 06/23/2023 Don't take into account partial payment in negative payments, can't be used to increase monthly payments
+						//lnNumMonthlies = (Int32)Math.Floor(-(lnUnusedFunds+lnPartialPayment) / lnRegularPayment);
+						lnNumMonthlies = (Int32)Math.Floor(-lnUnusedFunds / lnRegularPayment);
+						lnNumMonthlies = lnNumMonthlies < 0 ? 0 : lnNumMonthlies;
+						returnLate = true;
+					}
 					InvoiceCount = PDS.Invoices.Count - 1;
 
                     while (InvoiceCount >= 0 && lnUnusedFunds < 0)
@@ -3366,7 +3620,8 @@ namespace IAC2021SQL
 							{
 								if (LateChargeToReturn != 0)
 								{
-									ApplyPaymentToLates(CustomerNo, -LateChargeToReturn, PDS.PaymentHistory.Rows[0].Field<DateTime>("PaymentDate"), PaymentId);
+									if(returnLate)
+										ApplyPaymentToLates(CustomerNo, -LateChargeToReturn, PDS.PaymentHistory.Rows[0].Field<DateTime>("PaymentDate"), PaymentId);
 									lnUnusedFunds += LateChargeToReturn;
 									LateChargeToReturn = 0;
                                 }

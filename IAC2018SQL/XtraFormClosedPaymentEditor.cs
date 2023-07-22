@@ -15,6 +15,7 @@ using System.Windows.Forms;
 using DevExpress.XtraBars.Docking2010;
 using Microsoft.Office.Interop.Outlook;
 using Microsoft.IdentityModel.Tokens;
+using IAC2021SQL.ProductionMainTablesTableAdapters;
 
 namespace IAC2021SQL
 {
@@ -87,6 +88,7 @@ namespace IAC2021SQL
             LookUpEdit lookUpEdit = sender as LookUpEdit;
             switch (lookUpEdit.EditValue.ToString())
             {
+
                 case "I":
                     Decimal lnCheckValue = !String.IsNullOrEmpty(textEditAmount.EditValue.ToString()) ? Convert.ToDecimal(textEditAmount.EditValue) : 0;
                     if (lnCheckValue > 0)
@@ -96,7 +98,6 @@ namespace IAC2021SQL
                     }
                     layoutControlISFDate.ContentVisible = true;
                     layoutControlChangeISFDateButton.ContentVisible = true;
-
                     break;
                 case "E":
                     layoutControlExtensionCount.ContentVisible = true;
@@ -117,7 +118,6 @@ namespace IAC2021SQL
             bindingSourcePAYCODE.MoveFirst();
             lookUpEditPaymentCode.EditValue = iacDataSet.PAYCODE.Rows[0].Field<String>("Code");
             lookUpEditPaymentCode.Refresh();
-            //windowsUIButtonPanel1.Buttons[1].Properties.Enabled = true;
             HandleISF();
         }
 
@@ -294,8 +294,45 @@ namespace IAC2021SQL
                         iacDataSet.PAYMENT.Rows[bindingSourcePAYMENT.Position].SetField<Int32>("PAYMENT_DEALER", (Int32)textEditDealerID.EditValue);
                     }
                     bindingSourcePAYMENT.EndEdit();
-                    paymentTableAdapter.Update(iacDataSet.PAYMENT);
+                    Int32? SeqNo = 0;
+                    if (lbAddFlag)
+                    {
+                        paymentTableAdapter.InsertReturnSeqNo(iacDataSet.PAYMENT.Rows[bindingSourcePAYMENT.Position].Field<String>("PAYMENT_CUSTOMER"), "", "C",
+                                                              iacDataSet.PAYMENT.Rows[bindingSourcePAYMENT.Position].Field<DateTime?>("PAYMENT_DATE"),
+                                                              iacDataSet.PAYMENT.Rows[bindingSourcePAYMENT.Position].Field<Int32?>("PAYMENT_DEALER"),
+                                                              "",
+                                                              iacDataSet.PAYMENT.Rows[bindingSourcePAYMENT.Position].Field<Decimal?>("PAYMENT_AMOUNT_RCV"),
+                                                              iacDataSet.PAYMENT.Rows[bindingSourcePAYMENT.Position].Field<String>("PAYMENT_TYPE"),
+                                                              iacDataSet.PAYMENT.Rows[bindingSourcePAYMENT.Position].Field<Int32?>("PAYMENT_THRU_UD"),
+                                                              iacDataSet.PAYMENT.Rows[bindingSourcePAYMENT.Position].Field<String>("PAYMENT_CODE_2"),
+                                                              iacDataSet.PAYMENT.Rows[bindingSourcePAYMENT.Position].Field<String>("PAYMENT_AUTO_PAY"),
+                                                              iacDataSet.PAYMENT.Rows[bindingSourcePAYMENT.Position].Field<DateTime?>("PAYMENT_ISF_DATE"),
+                                                              iacDataSet.PAYMENT.Rows[bindingSourcePAYMENT.Position].Field<Decimal?>("PAYMENT_CURR_INT"),
+                                                              iacDataSet.PAYMENT.Rows[bindingSourcePAYMENT.Position].Field<Decimal?>("PAYMENT_LATE_CHARGE_PAID"),
+                                                              iacDataSet.PAYMENT.Rows[bindingSourcePAYMENT.Position].Field<String>("CreditCardType"),
+                                                              iacDataSet.PAYMENT.Rows[bindingSourcePAYMENT.Position].Field<Boolean?>("IsSimple"),
+                                                              iacDataSet.PAYMENT.Rows[bindingSourcePAYMENT.Position].Field<String>("PAYMENT_TSB_COMMENT_CODE"),
+                                                              iacDataSet.PAYMENT.Rows[bindingSourcePAYMENT.Position].Field<Boolean?>("IsLocked"),
+                                                              iacDataSet.PAYMENT.Rows[bindingSourcePAYMENT.Position].Field<String>("LockedBy"),
+                                                              iacDataSet.PAYMENT.Rows[bindingSourcePAYMENT.Position].Field<DateTime?>("LockTime"),
+                                                              ref SeqNo,
+                                                              DateTime.Now.Date,
+                                                              0,
+                                                              false,
+                                                              iacDataSet.PAYMENT.Rows[bindingSourcePAYMENT.Position].Field<Int32?>("ISFSeqNo"),
+                                                              iacDataSet.PAYMENT.Rows[bindingSourcePAYMENT.Position].Field<String>("ISFPAymentType"),
+                                                              iacDataSet.PAYMENT.Rows[bindingSourcePAYMENT.Position].Field<String>("ISFPAymentCode"),
+                                                              iacDataSet.PAYMENT.Rows[bindingSourcePAYMENT.Position].Field<Int32?>("ISFID"),
+                                                              iacDataSet.PAYMENT.Rows[bindingSourcePAYMENT.Position].Field<Int32?>("TicketID"),
+                                                              iacDataSet.PAYMENT.Rows[bindingSourcePAYMENT.Position].Field<Int32?>("TicketDetailID"));
+                    }
+                    else
+                    {
+                        paymentTableAdapter.Update(iacDataSet.PAYMENT);
+                        SeqNo = iacDataSet.PAYMENT.Rows[bindingSourcePAYMENT.Position].Field<Int32>("SeqNo");
+                    }
                     iacDataSet.PAYMENT.AcceptChanges();
+                    Program.CreateSingleTempPayment(textEditCustomerID.EditValue.ToString().PadLeft(6, '0'), (DateTime)dateEditPaymentDate.EditValue, (Int32)SeqNo);
                     Close();
                     break;
                 case "Close":

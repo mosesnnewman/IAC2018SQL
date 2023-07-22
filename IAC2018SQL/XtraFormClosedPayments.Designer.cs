@@ -29,16 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.Label label9;
-            System.Windows.Forms.Label label10;
-            System.Windows.Forms.Label label11;
-            System.Windows.Forms.Label label12;
-            System.Windows.Forms.Label label15;
-            System.Windows.Forms.Label label19;
-            System.Windows.Forms.Label label20;
-            System.Windows.Forms.Label label21;
-            System.Windows.Forms.Label label22;
-            System.Windows.Forms.Label label24;
             DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery1 = new DevExpress.DataAccess.Sql.StoredProcQuery();
             DevExpress.DataAccess.Sql.QueryParameter queryParameter1 = new DevExpress.DataAccess.Sql.QueryParameter();
             DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery2 = new DevExpress.DataAccess.Sql.StoredProcQuery();
@@ -50,7 +40,6 @@
             DevExpress.DataAccess.Sql.QueryParameter queryParameter3 = new DevExpress.DataAccess.Sql.QueryParameter();
             DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery7 = new DevExpress.DataAccess.Sql.StoredProcQuery();
             DevExpress.DataAccess.Sql.QueryParameter queryParameter4 = new DevExpress.DataAccess.Sql.QueryParameter();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter5 = new DevExpress.DataAccess.Sql.QueryParameter();
             DevExpress.DataAccess.Sql.MasterDetailInfo masterDetailInfo1 = new DevExpress.DataAccess.Sql.MasterDetailInfo();
             DevExpress.DataAccess.Sql.RelationColumnInfo relationColumnInfo1 = new DevExpress.DataAccess.Sql.RelationColumnInfo();
             DevExpress.DataAccess.Sql.MasterDetailInfo masterDetailInfo2 = new DevExpress.DataAccess.Sql.MasterDetailInfo();
@@ -113,17 +102,18 @@
             this.layoutControlDealerID = new DevExpress.XtraLayout.LayoutControlItem();
             this.tabInvoices = new DevExpress.XtraTab.XtraTabPage();
             this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.textBox17 = new System.Windows.Forms.TextBox();
-            this.textBox18 = new System.Windows.Forms.TextBox();
-            this.textBox19 = new System.Windows.Forms.TextBox();
-            this.textBox20 = new System.Windows.Forms.TextBox();
-            this.textBox21 = new System.Windows.Forms.TextBox();
-            this.textBox24 = new System.Windows.Forms.TextBox();
-            this.textBox25 = new System.Windows.Forms.TextBox();
-            this.label23 = new System.Windows.Forms.Label();
+            this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
+            this.textEdit4 = new DevExpress.XtraEditors.TextEdit();
+            this.textEdit5 = new DevExpress.XtraEditors.TextEdit();
+            this.textEdit6 = new DevExpress.XtraEditors.TextEdit();
+            this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.gridControlInvoices = new DevExpress.XtraGrid.GridControl();
             this.invoicesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridViewInvoices = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -134,9 +124,22 @@
             this.TotalPaid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TotalDue = new DevExpress.XtraGrid.Columns.GridColumn();
             this.IsPaid = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.repositoryItemCheckEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
+            this.colCustomerID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.tabHistory = new DevExpress.XtraTab.XtraTabPage();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
+            this.textEdit7 = new DevExpress.XtraEditors.TextEdit();
+            this.textEdit8 = new DevExpress.XtraEditors.TextEdit();
+            this.textEdit9 = new DevExpress.XtraEditors.TextEdit();
+            this.textEdit10 = new DevExpress.XtraEditors.TextEdit();
+            this.textEdit11 = new DevExpress.XtraEditors.TextEdit();
+            this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
             this.cUSTHISTDataGridView = new DevExpress.XtraGrid.GridControl();
             this.cUSTHISTBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridViewCustomerHistory = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -152,17 +155,6 @@
             this.colCUSTHIST_PAYMENT_TYPE = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCUSTHIST_PAYMENT_CODE = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCUSTHIST_THRU_UD = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.textBox22 = new System.Windows.Forms.TextBox();
-            this.txtPayDate = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
             this.cOMMENTBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.commentTypesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.specialCommentCodesBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -183,16 +175,6 @@
             this.htmlTemplateCollection1 = new DevExpress.Utils.Html.HtmlTemplateCollection();
             this.htmlTemplate1 = new DevExpress.Utils.Html.HtmlTemplate();
             this.svgImageCollection1 = new DevExpress.Utils.SvgImageCollection(this.components);
-            label9 = new System.Windows.Forms.Label();
-            label10 = new System.Windows.Forms.Label();
-            label11 = new System.Windows.Forms.Label();
-            label12 = new System.Windows.Forms.Label();
-            label15 = new System.Windows.Forms.Label();
-            label19 = new System.Windows.Forms.Label();
-            label20 = new System.Windows.Forms.Label();
-            label21 = new System.Windows.Forms.Label();
-            label22 = new System.Windows.Forms.Label();
-            label24 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.CustomerbindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ClosedPaymentiacDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PaymentTypebindingSource)).BeginInit();
@@ -228,18 +210,42 @@
             this.tabInvoices.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).BeginInit();
             this.groupControl4.SuspendLayout();
-            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
+            this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit6.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlInvoices)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.invoicesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewInvoices)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit2)).BeginInit();
             this.tabHistory.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
+            this.layoutControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit7.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit8.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit9.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit10.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit11.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cUSTHISTDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cUSTHISTBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewCustomerHistory)).BeginInit();
-            this.groupBox8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cOMMENTBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.commentTypesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.specialCommentCodesBindingSource)).BeginInit();
@@ -247,98 +253,6 @@
             this.toolStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.svgImageCollection1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Location = new System.Drawing.Point(16, 41);
-            label9.Name = "label9";
-            label9.Size = new System.Drawing.Size(105, 13);
-            label9.TabIndex = 44;
-            label9.Text = "PURCHASE ORDER:";
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Location = new System.Drawing.Point(16, 18);
-            label10.Name = "label10";
-            label10.Size = new System.Drawing.Size(88, 13);
-            label10.TabIndex = 41;
-            label10.Text = "CUSTOMER NO:";
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Location = new System.Drawing.Point(246, 41);
-            label11.Name = "label11";
-            label11.Size = new System.Drawing.Size(55, 13);
-            label11.TabIndex = 53;
-            label11.Text = "PAY DATE:";
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Location = new System.Drawing.Point(464, 41);
-            label12.Name = "label12";
-            label12.Size = new System.Drawing.Size(49, 13);
-            label12.TabIndex = 52;
-            label12.Text = "DEALER:";
-            // 
-            // label15
-            // 
-            label15.AutoSize = true;
-            label15.BackColor = System.Drawing.Color.Transparent;
-            label15.Location = new System.Drawing.Point(464, 18);
-            label15.Name = "label15";
-            label15.Size = new System.Drawing.Size(41, 13);
-            label15.TabIndex = 46;
-            label15.Text = "NAME:";
-            // 
-            // label19
-            // 
-            label19.AutoSize = true;
-            label19.Location = new System.Drawing.Point(16, 41);
-            label19.Name = "label19";
-            label19.Size = new System.Drawing.Size(105, 13);
-            label19.TabIndex = 44;
-            label19.Text = "PURCHASE ORDER:";
-            // 
-            // label20
-            // 
-            label20.AutoSize = true;
-            label20.Location = new System.Drawing.Point(16, 18);
-            label20.Name = "label20";
-            label20.Size = new System.Drawing.Size(88, 13);
-            label20.TabIndex = 41;
-            label20.Text = "CUSTOMER NO:";
-            // 
-            // label21
-            // 
-            label21.AutoSize = true;
-            label21.Location = new System.Drawing.Point(246, 41);
-            label21.Name = "label21";
-            label21.Size = new System.Drawing.Size(55, 13);
-            label21.TabIndex = 53;
-            label21.Text = "PAY DATE:";
-            // 
-            // label22
-            // 
-            label22.AutoSize = true;
-            label22.Location = new System.Drawing.Point(464, 41);
-            label22.Name = "label22";
-            label22.Size = new System.Drawing.Size(49, 13);
-            label22.TabIndex = 52;
-            label22.Text = "DEALER:";
-            // 
-            // label24
-            // 
-            label24.AutoSize = true;
-            label24.BackColor = System.Drawing.Color.Transparent;
-            label24.Location = new System.Drawing.Point(464, 18);
-            label24.Name = "label24";
-            label24.Size = new System.Drawing.Size(41, 13);
-            label24.TabIndex = 46;
-            label24.Text = "NAME:";
             // 
             // CustomerbindingSource
             // 
@@ -384,6 +298,8 @@
             // 
             // tabClosedPayments
             // 
+            this.tabClosedPayments.Appearance.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabClosedPayments.Appearance.Options.UseFont = true;
             this.tabClosedPayments.Location = new System.Drawing.Point(1, 2);
             this.tabClosedPayments.Name = "tabClosedPayments";
             this.tabClosedPayments.SelectedTabPage = this.tabPayment;
@@ -435,7 +351,7 @@
             this.gridControlPayments.Name = "gridControlPayments";
             this.gridControlPayments.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemCheckEdit1});
-            this.gridControlPayments.Size = new System.Drawing.Size(681, 471);
+            this.gridControlPayments.Size = new System.Drawing.Size(702, 471);
             this.gridControlPayments.TabIndex = 163;
             this.gridControlPayments.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -481,18 +397,13 @@
             storedProcQuery6.Parameters.AddRange(new DevExpress.DataAccess.Sql.QueryParameter[] {
             queryParameter3});
             storedProcQuery6.StoredProcName = "PaymentHistoryUnused";
-            storedProcQuery7.MetaSerializable = "<Meta X=\"1250\" Y=\"20\" Width=\"110\" Height=\"281\" />";
             storedProcQuery7.Name = "Invoices";
             queryParameter4.Name = "@CustomerID";
             queryParameter4.Type = typeof(int);
-            queryParameter4.ValueInfo = "221033";
-            queryParameter5.Name = "@MaxDate";
-            queryParameter5.Type = typeof(System.DateTime);
-            queryParameter5.ValueInfo = "2023-05-01";
+            queryParameter4.ValueInfo = "201501";
             storedProcQuery7.Parameters.AddRange(new DevExpress.DataAccess.Sql.QueryParameter[] {
-            queryParameter4,
-            queryParameter5});
-            storedProcQuery7.StoredProcName = "InvoicesSelectUnpaid";
+            queryParameter4});
+            storedProcQuery7.StoredProcName = "InvoicesFillAllByCustomerId";
             this.sqlDataSourceClosedPayments.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
             storedProcQuery1,
             storedProcQuery2,
@@ -551,7 +462,7 @@
             this.gridView2.Appearance.EvenRow.Options.UseFont = true;
             this.gridView2.Appearance.EvenRow.Options.UseTextOptions = true;
             this.gridView2.Appearance.EvenRow.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridView2.Appearance.FooterPanel.Font = new System.Drawing.Font("Segoe UI", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView2.Appearance.FooterPanel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gridView2.Appearance.FooterPanel.Options.UseFont = true;
             this.gridView2.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gridView2.Appearance.HeaderPanel.Options.UseFont = true;
@@ -573,12 +484,14 @@
             this.gridView2.GridControl = this.gridControlPayments;
             this.gridView2.Name = "gridView2";
             this.gridView2.OptionsBehavior.Editable = false;
+            this.gridView2.OptionsBehavior.ReadOnly = true;
             this.gridView2.OptionsDetail.EnableMasterViewMode = false;
             this.gridView2.OptionsView.ColumnAutoWidth = false;
             this.gridView2.OptionsView.EnableAppearanceEvenRow = true;
             this.gridView2.OptionsView.EnableAppearanceOddRow = true;
             this.gridView2.OptionsView.ShowDetailButtons = false;
             this.gridView2.OptionsView.ShowFooter = true;
+            this.gridView2.CustomDrawFooterCell += new DevExpress.XtraGrid.Views.Grid.FooterCellCustomDrawEventHandler(this.gridView2_CustomDrawFooterCell);
             this.gridView2.CustomColumnDisplayText += new DevExpress.XtraGrid.Views.Base.CustomColumnDisplayTextEventHandler(this.gridView2_CustomColumnDisplayText);
             // 
             // colPAYMENT_CUSTOMER
@@ -592,7 +505,7 @@
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Count, "SeqNo", "{0} Payments")});
             this.colPAYMENT_CUSTOMER.Visible = true;
             this.colPAYMENT_CUSTOMER.VisibleIndex = 0;
-            this.colPAYMENT_CUSTOMER.Width = 100;
+            this.colPAYMENT_CUSTOMER.Width = 103;
             // 
             // colPAYMENT_DATE
             // 
@@ -713,10 +626,10 @@
             new DevExpress.XtraBars.Docking2010.WindowsUIButton("Delete", true, windowsUIButtonImageOptions3, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, 2, false),
             new DevExpress.XtraBars.Docking2010.WindowsUIButton("Exit", true, windowsUIButtonImageOptions4, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, 3, false)});
             this.windowsUIButtonPanel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.windowsUIButtonPanel1.Location = new System.Drawing.Point(697, 12);
+            this.windowsUIButtonPanel1.Location = new System.Drawing.Point(718, 12);
             this.windowsUIButtonPanel1.Name = "windowsUIButtonPanel1";
             this.windowsUIButtonPanel1.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.windowsUIButtonPanel1.Size = new System.Drawing.Size(298, 471);
+            this.windowsUIButtonPanel1.Size = new System.Drawing.Size(277, 471);
             this.windowsUIButtonPanel1.TabIndex = 165;
             this.windowsUIButtonPanel1.Text = "windowsUIButtonPanel1";
             this.windowsUIButtonPanel1.ButtonClick += new DevExpress.XtraBars.Docking2010.ButtonEventHandler(this.windowsUIButtonPanel1_ButtonClick);
@@ -738,7 +651,7 @@
             this.layoutControlPaymentGrid.Location = new System.Drawing.Point(0, 0);
             this.layoutControlPaymentGrid.MinSize = new System.Drawing.Size(104, 24);
             this.layoutControlPaymentGrid.Name = "layoutControlPaymentGrid";
-            this.layoutControlPaymentGrid.Size = new System.Drawing.Size(685, 475);
+            this.layoutControlPaymentGrid.Size = new System.Drawing.Size(706, 475);
             this.layoutControlPaymentGrid.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlPaymentGrid.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlPaymentGrid.TextVisible = false;
@@ -746,10 +659,10 @@
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.windowsUIButtonPanel1;
-            this.layoutControlItem2.Location = new System.Drawing.Point(685, 0);
+            this.layoutControlItem2.Location = new System.Drawing.Point(706, 0);
             this.layoutControlItem2.MinSize = new System.Drawing.Size(54, 4);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(302, 475);
+            this.layoutControlItem2.Size = new System.Drawing.Size(281, 475);
             this.layoutControlItem2.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
@@ -908,7 +821,7 @@
             this.groupControl4.Appearance.BackColor = System.Drawing.Color.LightSteelBlue;
             this.groupControl4.Appearance.Options.UseBackColor = true;
             this.groupControl4.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.groupControl4.Controls.Add(this.groupBox3);
+            this.groupControl4.Controls.Add(this.layoutControl1);
             this.groupControl4.Controls.Add(this.gridControlInvoices);
             this.groupControl4.Location = new System.Drawing.Point(-4, 0);
             this.groupControl4.Name = "groupControl4";
@@ -916,123 +829,147 @@
             this.groupControl4.TabIndex = 163;
             this.groupControl4.Text = "groupControl4";
             // 
-            // groupBox3
+            // layoutControl1
             // 
-            this.groupBox3.Controls.Add(this.textBox5);
-            this.groupBox3.Controls.Add(this.textBox14);
-            this.groupBox3.Controls.Add(this.textBox17);
-            this.groupBox3.Controls.Add(label19);
-            this.groupBox3.Controls.Add(this.textBox18);
-            this.groupBox3.Controls.Add(label20);
-            this.groupBox3.Controls.Add(this.textBox19);
-            this.groupBox3.Controls.Add(this.textBox20);
-            this.groupBox3.Controls.Add(this.textBox21);
-            this.groupBox3.Controls.Add(this.textBox24);
-            this.groupBox3.Controls.Add(this.textBox25);
-            this.groupBox3.Controls.Add(label21);
-            this.groupBox3.Controls.Add(label22);
-            this.groupBox3.Controls.Add(this.label23);
-            this.groupBox3.Controls.Add(label24);
-            this.groupBox3.Location = new System.Drawing.Point(101, 14);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(814, 65);
-            this.groupBox3.TabIndex = 163;
-            this.groupBox3.TabStop = false;
+            this.layoutControl1.AutoScroll = false;
+            this.layoutControl1.Controls.Add(this.textEdit1);
+            this.layoutControl1.Controls.Add(this.textEdit3);
+            this.layoutControl1.Controls.Add(this.textEdit4);
+            this.layoutControl1.Controls.Add(this.textEdit5);
+            this.layoutControl1.Controls.Add(this.textEdit6);
+            this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.layoutControl1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.layoutControl1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControl1.Name = "layoutControl1";
+            this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(1161, 0, 650, 400);
+            this.layoutControl1.Root = this.layoutControlGroup2;
+            this.layoutControl1.Size = new System.Drawing.Size(1017, 81);
+            this.layoutControl1.TabIndex = 165;
+            this.layoutControl1.Text = "layoutControl1";
             // 
-            // textBox5
+            // textEdit1
             // 
-            this.textBox5.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox5.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.CustomerbindingSource, "CUSTOMER_SUFFIX", true));
-            this.textBox5.Location = new System.Drawing.Point(747, 11);
-            this.textBox5.MaxLength = 3;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(36, 22);
-            this.textBox5.TabIndex = 96;
+            this.textEdit1.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.DealerbindingSource, "DEALER_NAME", true));
+            this.textEdit1.Location = new System.Drawing.Point(294, 44);
+            this.textEdit1.Name = "textEdit1";
+            this.textEdit1.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textEdit1.Properties.Appearance.Options.UseFont = true;
+            this.textEdit1.Size = new System.Drawing.Size(711, 28);
+            this.textEdit1.StyleController = this.layoutControl1;
+            this.textEdit1.TabIndex = 8;
             // 
-            // textBox14
+            // textEdit3
             // 
-            this.textBox14.Location = new System.Drawing.Point(316, 34);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.ReadOnly = true;
-            this.textBox14.Size = new System.Drawing.Size(86, 22);
-            this.textBox14.TabIndex = 93;
+            this.textEdit3.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.DealerbindingSource, "id", true));
+            this.textEdit3.Location = new System.Drawing.Point(116, 44);
+            this.textEdit3.Name = "textEdit3";
+            this.textEdit3.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textEdit3.Properties.Appearance.Options.UseFont = true;
+            this.textEdit3.Size = new System.Drawing.Size(70, 28);
+            this.textEdit3.StyleController = this.layoutControl1;
+            this.textEdit3.TabIndex = 7;
             // 
-            // textBox17
+            // textEdit4
             // 
-            this.textBox17.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.DealerbindingSource, "DEALER_NAME", true));
-            this.textBox17.Location = new System.Drawing.Point(567, 34);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.ReadOnly = true;
-            this.textBox17.Size = new System.Drawing.Size(220, 22);
-            this.textBox17.TabIndex = 95;
+            this.textEdit4.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CustomerbindingSource, "CUSTOMER_LAST_NAME", true));
+            this.textEdit4.Location = new System.Drawing.Point(682, 12);
+            this.textEdit4.Name = "textEdit4";
+            this.textEdit4.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textEdit4.Properties.Appearance.Options.UseFont = true;
+            this.textEdit4.Size = new System.Drawing.Size(323, 28);
+            this.textEdit4.StyleController = this.layoutControl1;
+            this.textEdit4.TabIndex = 6;
             // 
-            // textBox18
+            // textEdit5
             // 
-            this.textBox18.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.CustomerbindingSource, "CUSTOMER_DEALER", true));
-            this.textBox18.Location = new System.Drawing.Point(520, 34);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.ReadOnly = true;
-            this.textBox18.Size = new System.Drawing.Size(45, 22);
-            this.textBox18.TabIndex = 94;
-            this.textBox18.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textEdit5.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CustomerbindingSource, "CUSTOMER_FIRST_NAME", true));
+            this.textEdit5.Location = new System.Drawing.Point(294, 12);
+            this.textEdit5.Name = "textEdit5";
+            this.textEdit5.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textEdit5.Properties.Appearance.Options.UseFont = true;
+            this.textEdit5.Size = new System.Drawing.Size(280, 28);
+            this.textEdit5.StyleController = this.layoutControl1;
+            this.textEdit5.TabIndex = 5;
             // 
-            // textBox19
+            // textEdit6
             // 
-            this.textBox19.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.CustomerbindingSource, "CUSTOMER_LAST_NAME", true));
-            this.textBox19.Location = new System.Drawing.Point(614, 11);
-            this.textBox19.Name = "textBox19";
-            this.textBox19.ReadOnly = true;
-            this.textBox19.Size = new System.Drawing.Size(131, 22);
-            this.textBox19.TabIndex = 91;
+            this.textEdit6.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CustomerbindingSource, "CustomerID", true));
+            this.textEdit6.Location = new System.Drawing.Point(116, 12);
+            this.textEdit6.Name = "textEdit6";
+            this.textEdit6.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textEdit6.Properties.Appearance.Options.UseFont = true;
+            this.textEdit6.Size = new System.Drawing.Size(70, 28);
+            this.textEdit6.StyleController = this.layoutControl1;
+            this.textEdit6.TabIndex = 4;
             // 
-            // textBox20
+            // layoutControlGroup2
             // 
-            this.textBox20.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.CustomerbindingSource, "CUSTOMER_FIRST_NAME", true));
-            this.textBox20.Location = new System.Drawing.Point(520, 11);
-            this.textBox20.Name = "textBox20";
-            this.textBox20.ReadOnly = true;
-            this.textBox20.Size = new System.Drawing.Size(92, 22);
-            this.textBox20.TabIndex = 90;
+            this.layoutControlGroup2.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.layoutControlGroup2.GroupBordersVisible = false;
+            this.layoutControlGroup2.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem1,
+            this.layoutControlItem3,
+            this.layoutControlItem4,
+            this.layoutControlItem5,
+            this.layoutControlItem6});
+            this.layoutControlGroup2.Name = "Root";
+            this.layoutControlGroup2.Size = new System.Drawing.Size(1017, 84);
+            this.layoutControlGroup2.TextVisible = false;
             // 
-            // textBox21
+            // layoutControlItem1
             // 
-            this.textBox21.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.CustomerbindingSource, "CUSTOMER_PURCHASE_ORDER", true));
-            this.textBox21.Location = new System.Drawing.Point(131, 34);
-            this.textBox21.Name = "textBox21";
-            this.textBox21.ReadOnly = true;
-            this.textBox21.Size = new System.Drawing.Size(58, 22);
-            this.textBox21.TabIndex = 92;
-            this.textBox21.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.layoutControlItem1.AppearanceItemCaption.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.layoutControlItem1.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutControlItem1.Control = this.textEdit6;
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem1.Name = "layoutControlCustomerID";
+            this.layoutControlItem1.Size = new System.Drawing.Size(178, 32);
+            this.layoutControlItem1.Text = "Customer ID";
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(100, 21);
             // 
-            // textBox24
+            // layoutControlItem3
             // 
-            this.textBox24.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.CustomerbindingSource, "CUSTOMER_ADD_ON", true));
-            this.textBox24.Location = new System.Drawing.Point(315, 11);
-            this.textBox24.Name = "textBox24";
-            this.textBox24.ReadOnly = true;
-            this.textBox24.Size = new System.Drawing.Size(17, 22);
-            this.textBox24.TabIndex = 89;
+            this.layoutControlItem3.AppearanceItemCaption.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.layoutControlItem3.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutControlItem3.Control = this.textEdit5;
+            this.layoutControlItem3.Location = new System.Drawing.Point(178, 0);
+            this.layoutControlItem3.Name = "layoutFirstName";
+            this.layoutControlItem3.Size = new System.Drawing.Size(388, 32);
+            this.layoutControlItem3.Text = "First Name";
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(100, 21);
             // 
-            // textBox25
+            // layoutControlItem4
             // 
-            this.textBox25.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.CustomerbindingSource, "CUSTOMER_NO", true));
-            this.textBox25.Location = new System.Drawing.Point(131, 11);
-            this.textBox25.Name = "textBox25";
-            this.textBox25.ReadOnly = true;
-            this.textBox25.Size = new System.Drawing.Size(58, 22);
-            this.textBox25.TabIndex = 88;
-            this.textBox25.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.layoutControlItem4.AppearanceItemCaption.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.layoutControlItem4.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutControlItem4.Control = this.textEdit4;
+            this.layoutControlItem4.Location = new System.Drawing.Point(566, 0);
+            this.layoutControlItem4.Name = "layoutLastName";
+            this.layoutControlItem4.Size = new System.Drawing.Size(431, 32);
+            this.layoutControlItem4.Text = "Last Name";
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(100, 21);
             // 
-            // label23
+            // layoutControlItem5
             // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(246, 18);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(53, 13);
-            this.label23.TabIndex = 51;
-            this.label23.Text = "ADD ON:";
+            this.layoutControlItem5.AppearanceItemCaption.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.layoutControlItem5.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutControlItem5.Control = this.textEdit1;
+            this.layoutControlItem5.Location = new System.Drawing.Point(178, 32);
+            this.layoutControlItem5.Name = "layoutControlDealerName";
+            this.layoutControlItem5.Size = new System.Drawing.Size(819, 32);
+            this.layoutControlItem5.Text = "Dealer Name";
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(100, 21);
+            // 
+            // layoutControlItem6
+            // 
+            this.layoutControlItem6.AppearanceItemCaption.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.layoutControlItem6.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutControlItem6.Control = this.textEdit3;
+            this.layoutControlItem6.Location = new System.Drawing.Point(0, 32);
+            this.layoutControlItem6.Name = "layoutControlDealerID";
+            this.layoutControlItem6.Size = new System.Drawing.Size(178, 32);
+            this.layoutControlItem6.Text = "Dealer ID";
+            this.layoutControlItem6.TextSize = new System.Drawing.Size(100, 21);
             // 
             // gridControlInvoices
             // 
@@ -1040,11 +977,12 @@
             this.gridControlInvoices.Location = new System.Drawing.Point(6, 85);
             this.gridControlInvoices.MainView = this.gridViewInvoices;
             this.gridControlInvoices.Name = "gridControlInvoices";
+            this.gridControlInvoices.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemCheckEdit2});
             this.gridControlInvoices.Size = new System.Drawing.Size(1005, 459);
             this.gridControlInvoices.TabIndex = 162;
             this.gridControlInvoices.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridViewInvoices,
-            this.gridView1});
+            this.gridViewInvoices});
             // 
             // invoicesBindingSource
             // 
@@ -1053,6 +991,24 @@
             // 
             // gridViewInvoices
             // 
+            this.gridViewInvoices.Appearance.EvenRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.gridViewInvoices.Appearance.EvenRow.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridViewInvoices.Appearance.EvenRow.Options.UseBackColor = true;
+            this.gridViewInvoices.Appearance.EvenRow.Options.UseFont = true;
+            this.gridViewInvoices.Appearance.FocusedCell.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridViewInvoices.Appearance.FocusedCell.Options.UseFont = true;
+            this.gridViewInvoices.Appearance.FocusedRow.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridViewInvoices.Appearance.FocusedRow.Options.UseFont = true;
+            this.gridViewInvoices.Appearance.FooterPanel.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridViewInvoices.Appearance.FooterPanel.Options.UseFont = true;
+            this.gridViewInvoices.Appearance.FooterPanel.Options.UseTextOptions = true;
+            this.gridViewInvoices.Appearance.FooterPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.gridViewInvoices.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridViewInvoices.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gridViewInvoices.Appearance.OddRow.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridViewInvoices.Appearance.OddRow.Options.UseFont = true;
+            this.gridViewInvoices.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridViewInvoices.Appearance.Row.Options.UseFont = true;
             this.gridViewInvoices.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.DateDue,
             this.Seq,
@@ -1060,9 +1016,18 @@
             this.Amount,
             this.TotalPaid,
             this.TotalDue,
-            this.IsPaid});
+            this.IsPaid,
+            this.colCustomerID});
             this.gridViewInvoices.GridControl = this.gridControlInvoices;
             this.gridViewInvoices.Name = "gridViewInvoices";
+            this.gridViewInvoices.OptionsBehavior.Editable = false;
+            this.gridViewInvoices.OptionsBehavior.ReadOnly = true;
+            this.gridViewInvoices.OptionsView.EnableAppearanceEvenRow = true;
+            this.gridViewInvoices.OptionsView.EnableAppearanceOddRow = true;
+            this.gridViewInvoices.OptionsView.FilterCriteriaDisplayStyle = DevExpress.XtraEditors.FilterCriteriaDisplayStyle.Text;
+            this.gridViewInvoices.OptionsView.ShowFooter = true;
+            this.gridViewInvoices.CustomDrawFooterCell += new DevExpress.XtraGrid.Views.Grid.FooterCellCustomDrawEventHandler(this.gridViewInvoices_CustomDrawFooterCell);
+            this.gridViewInvoices.CustomSummaryCalculate += new DevExpress.Data.CustomSummaryEventHandler(this.gridViewInvoices_CustomSummaryCalculate);
             // 
             // DateDue
             // 
@@ -1071,9 +1036,12 @@
             this.DateDue.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.DateDue.FieldName = "DateDue";
             this.DateDue.Name = "DateDue";
+            this.DateDue.OptionsColumn.ReadOnly = true;
+            this.DateDue.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Custom, DevExpress.Data.SummaryMode.Selection, "DateDue", "Status: {0:c2}", "1")});
             this.DateDue.Visible = true;
             this.DateDue.VisibleIndex = 0;
-            this.DateDue.Width = 57;
+            this.DateDue.Width = 123;
             // 
             // Seq
             // 
@@ -1084,16 +1052,17 @@
             this.Seq.Name = "Seq";
             this.Seq.Visible = true;
             this.Seq.VisibleIndex = 1;
-            this.Seq.Width = 35;
+            this.Seq.Width = 43;
             // 
             // Desc
             // 
             this.Desc.Caption = "Description";
             this.Desc.FieldName = "Description";
             this.Desc.Name = "Desc";
+            this.Desc.Tag = "";
             this.Desc.Visible = true;
             this.Desc.VisibleIndex = 2;
-            this.Desc.Width = 176;
+            this.Desc.Width = 229;
             // 
             // Amount
             // 
@@ -1102,9 +1071,11 @@
             this.Amount.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.Amount.FieldName = "Amount";
             this.Amount.Name = "Amount";
+            this.Amount.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Custom, DevExpress.Data.SummaryMode.Selection, "Amount", "L/C Bal: {0:c2}", "2")});
             this.Amount.Visible = true;
             this.Amount.VisibleIndex = 3;
-            this.Amount.Width = 76;
+            this.Amount.Width = 150;
             // 
             // TotalPaid
             // 
@@ -1113,9 +1084,11 @@
             this.TotalPaid.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.TotalPaid.FieldName = "TotalPaid";
             this.TotalPaid.Name = "TotalPaid";
+            this.TotalPaid.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Custom, DevExpress.Data.SummaryMode.Selection, "TotalPaid", "PartPay: {0:c2}", "3")});
             this.TotalPaid.Visible = true;
             this.TotalPaid.VisibleIndex = 4;
-            this.TotalPaid.Width = 76;
+            this.TotalPaid.Width = 150;
             // 
             // TotalDue
             // 
@@ -1124,23 +1097,35 @@
             this.TotalDue.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.TotalDue.FieldName = "TotalDue";
             this.TotalDue.Name = "TotalDue";
+            this.TotalDue.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Custom, DevExpress.Data.SummaryMode.Selection, "TotalDue", "PT: {0:##/##}", "4")});
             this.TotalDue.Visible = true;
             this.TotalDue.VisibleIndex = 5;
-            this.TotalDue.Width = 76;
+            this.TotalDue.Width = 150;
             // 
             // IsPaid
             // 
             this.IsPaid.Caption = "Paid In Full?";
+            this.IsPaid.ColumnEdit = this.repositoryItemCheckEdit2;
             this.IsPaid.FieldName = "IsPaid";
             this.IsPaid.Name = "IsPaid";
+            this.IsPaid.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Custom, DevExpress.Data.SummaryMode.Selection, "IsPaid", "PT Date: {0:d}", "5")});
             this.IsPaid.Visible = true;
             this.IsPaid.VisibleIndex = 6;
-            this.IsPaid.Width = 50;
+            this.IsPaid.Width = 139;
             // 
-            // gridView1
+            // repositoryItemCheckEdit2
             // 
-            this.gridView1.GridControl = this.gridControlInvoices;
-            this.gridView1.Name = "gridView1";
+            this.repositoryItemCheckEdit2.AutoHeight = false;
+            this.repositoryItemCheckEdit2.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
+            this.repositoryItemCheckEdit2.Name = "repositoryItemCheckEdit2";
+            this.repositoryItemCheckEdit2.NullStyle = DevExpress.XtraEditors.Controls.StyleIndeterminate.Unchecked;
+            // 
+            // colCustomerID
+            // 
+            this.colCustomerID.FieldName = "CustomerID";
+            this.colCustomerID.Name = "colCustomerID";
             // 
             // tabHistory
             // 
@@ -1157,13 +1142,155 @@
             this.groupControl2.Appearance.BackColor = System.Drawing.Color.LightSteelBlue;
             this.groupControl2.Appearance.Options.UseBackColor = true;
             this.groupControl2.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.groupControl2.Controls.Add(this.layoutControl2);
             this.groupControl2.Controls.Add(this.cUSTHISTDataGridView);
-            this.groupControl2.Controls.Add(this.groupBox8);
             this.groupControl2.Location = new System.Drawing.Point(-4, 0);
             this.groupControl2.Name = "groupControl2";
             this.groupControl2.Size = new System.Drawing.Size(1014, 576);
             this.groupControl2.TabIndex = 100;
             this.groupControl2.Text = "groupControl2";
+            // 
+            // layoutControl2
+            // 
+            this.layoutControl2.AutoScroll = false;
+            this.layoutControl2.Controls.Add(this.textEdit7);
+            this.layoutControl2.Controls.Add(this.textEdit8);
+            this.layoutControl2.Controls.Add(this.textEdit9);
+            this.layoutControl2.Controls.Add(this.textEdit10);
+            this.layoutControl2.Controls.Add(this.textEdit11);
+            this.layoutControl2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.layoutControl2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.layoutControl2.Location = new System.Drawing.Point(0, 0);
+            this.layoutControl2.Name = "layoutControl2";
+            this.layoutControl2.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(1161, 0, 650, 400);
+            this.layoutControl2.Root = this.layoutControlGroup3;
+            this.layoutControl2.Size = new System.Drawing.Size(1014, 81);
+            this.layoutControl2.TabIndex = 537;
+            this.layoutControl2.Text = "layoutControl1";
+            // 
+            // textEdit7
+            // 
+            this.textEdit7.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.DealerbindingSource, "DEALER_NAME", true));
+            this.textEdit7.Location = new System.Drawing.Point(294, 44);
+            this.textEdit7.Name = "textEdit7";
+            this.textEdit7.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textEdit7.Properties.Appearance.Options.UseFont = true;
+            this.textEdit7.Size = new System.Drawing.Size(708, 28);
+            this.textEdit7.StyleController = this.layoutControl2;
+            this.textEdit7.TabIndex = 8;
+            // 
+            // textEdit8
+            // 
+            this.textEdit8.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.DealerbindingSource, "id", true));
+            this.textEdit8.Location = new System.Drawing.Point(116, 44);
+            this.textEdit8.Name = "textEdit8";
+            this.textEdit8.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textEdit8.Properties.Appearance.Options.UseFont = true;
+            this.textEdit8.Size = new System.Drawing.Size(70, 28);
+            this.textEdit8.StyleController = this.layoutControl2;
+            this.textEdit8.TabIndex = 7;
+            // 
+            // textEdit9
+            // 
+            this.textEdit9.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CustomerbindingSource, "CUSTOMER_LAST_NAME", true));
+            this.textEdit9.Location = new System.Drawing.Point(681, 12);
+            this.textEdit9.Name = "textEdit9";
+            this.textEdit9.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textEdit9.Properties.Appearance.Options.UseFont = true;
+            this.textEdit9.Size = new System.Drawing.Size(321, 28);
+            this.textEdit9.StyleController = this.layoutControl2;
+            this.textEdit9.TabIndex = 6;
+            // 
+            // textEdit10
+            // 
+            this.textEdit10.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CustomerbindingSource, "CUSTOMER_FIRST_NAME", true));
+            this.textEdit10.Location = new System.Drawing.Point(294, 12);
+            this.textEdit10.Name = "textEdit10";
+            this.textEdit10.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textEdit10.Properties.Appearance.Options.UseFont = true;
+            this.textEdit10.Size = new System.Drawing.Size(279, 28);
+            this.textEdit10.StyleController = this.layoutControl2;
+            this.textEdit10.TabIndex = 5;
+            // 
+            // textEdit11
+            // 
+            this.textEdit11.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CustomerbindingSource, "CustomerID", true));
+            this.textEdit11.Location = new System.Drawing.Point(116, 12);
+            this.textEdit11.Name = "textEdit11";
+            this.textEdit11.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textEdit11.Properties.Appearance.Options.UseFont = true;
+            this.textEdit11.Size = new System.Drawing.Size(70, 28);
+            this.textEdit11.StyleController = this.layoutControl2;
+            this.textEdit11.TabIndex = 4;
+            // 
+            // layoutControlGroup3
+            // 
+            this.layoutControlGroup3.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.layoutControlGroup3.GroupBordersVisible = false;
+            this.layoutControlGroup3.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem7,
+            this.layoutControlItem8,
+            this.layoutControlItem9,
+            this.layoutControlItem10,
+            this.layoutControlItem11});
+            this.layoutControlGroup3.Name = "Root";
+            this.layoutControlGroup3.Size = new System.Drawing.Size(1014, 84);
+            this.layoutControlGroup3.TextVisible = false;
+            // 
+            // layoutControlItem7
+            // 
+            this.layoutControlItem7.AppearanceItemCaption.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.layoutControlItem7.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutControlItem7.Control = this.textEdit11;
+            this.layoutControlItem7.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem7.Name = "layoutControlCustomerID";
+            this.layoutControlItem7.Size = new System.Drawing.Size(178, 32);
+            this.layoutControlItem7.Text = "Customer ID";
+            this.layoutControlItem7.TextSize = new System.Drawing.Size(100, 21);
+            // 
+            // layoutControlItem8
+            // 
+            this.layoutControlItem8.AppearanceItemCaption.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.layoutControlItem8.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutControlItem8.Control = this.textEdit10;
+            this.layoutControlItem8.Location = new System.Drawing.Point(178, 0);
+            this.layoutControlItem8.Name = "layoutFirstName";
+            this.layoutControlItem8.Size = new System.Drawing.Size(387, 32);
+            this.layoutControlItem8.Text = "First Name";
+            this.layoutControlItem8.TextSize = new System.Drawing.Size(100, 21);
+            // 
+            // layoutControlItem9
+            // 
+            this.layoutControlItem9.AppearanceItemCaption.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.layoutControlItem9.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutControlItem9.Control = this.textEdit9;
+            this.layoutControlItem9.Location = new System.Drawing.Point(565, 0);
+            this.layoutControlItem9.Name = "layoutLastName";
+            this.layoutControlItem9.Size = new System.Drawing.Size(429, 32);
+            this.layoutControlItem9.Text = "Last Name";
+            this.layoutControlItem9.TextSize = new System.Drawing.Size(100, 21);
+            // 
+            // layoutControlItem10
+            // 
+            this.layoutControlItem10.AppearanceItemCaption.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.layoutControlItem10.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutControlItem10.Control = this.textEdit7;
+            this.layoutControlItem10.Location = new System.Drawing.Point(178, 32);
+            this.layoutControlItem10.Name = "layoutControlDealerName";
+            this.layoutControlItem10.Size = new System.Drawing.Size(816, 32);
+            this.layoutControlItem10.Text = "Dealer Name";
+            this.layoutControlItem10.TextSize = new System.Drawing.Size(100, 21);
+            // 
+            // layoutControlItem11
+            // 
+            this.layoutControlItem11.AppearanceItemCaption.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.layoutControlItem11.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutControlItem11.Control = this.textEdit8;
+            this.layoutControlItem11.Location = new System.Drawing.Point(0, 32);
+            this.layoutControlItem11.Name = "layoutControlDealerID";
+            this.layoutControlItem11.Size = new System.Drawing.Size(178, 32);
+            this.layoutControlItem11.Text = "Dealer ID";
+            this.layoutControlItem11.TextSize = new System.Drawing.Size(100, 21);
             // 
             // cUSTHISTDataGridView
             // 
@@ -1445,124 +1572,6 @@
             this.colCUSTHIST_THRU_UD.VisibleIndex = 11;
             this.colCUSTHIST_THRU_UD.Width = 66;
             // 
-            // groupBox8
-            // 
-            this.groupBox8.Controls.Add(this.textBox22);
-            this.groupBox8.Controls.Add(this.txtPayDate);
-            this.groupBox8.Controls.Add(this.textBox1);
-            this.groupBox8.Controls.Add(label9);
-            this.groupBox8.Controls.Add(this.textBox2);
-            this.groupBox8.Controls.Add(label10);
-            this.groupBox8.Controls.Add(this.textBox3);
-            this.groupBox8.Controls.Add(this.textBox4);
-            this.groupBox8.Controls.Add(this.textBox7);
-            this.groupBox8.Controls.Add(this.textBox8);
-            this.groupBox8.Controls.Add(this.textBox9);
-            this.groupBox8.Controls.Add(label11);
-            this.groupBox8.Controls.Add(label12);
-            this.groupBox8.Controls.Add(this.label13);
-            this.groupBox8.Controls.Add(label15);
-            this.groupBox8.Location = new System.Drawing.Point(100, 13);
-            this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(814, 65);
-            this.groupBox8.TabIndex = 99;
-            this.groupBox8.TabStop = false;
-            // 
-            // textBox22
-            // 
-            this.textBox22.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox22.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.CustomerbindingSource, "CUSTOMER_SUFFIX", true));
-            this.textBox22.Location = new System.Drawing.Point(747, 11);
-            this.textBox22.MaxLength = 3;
-            this.textBox22.Name = "textBox22";
-            this.textBox22.ReadOnly = true;
-            this.textBox22.Size = new System.Drawing.Size(36, 22);
-            this.textBox22.TabIndex = 96;
-            // 
-            // txtPayDate
-            // 
-            this.txtPayDate.Location = new System.Drawing.Point(316, 34);
-            this.txtPayDate.Name = "txtPayDate";
-            this.txtPayDate.ReadOnly = true;
-            this.txtPayDate.Size = new System.Drawing.Size(86, 22);
-            this.txtPayDate.TabIndex = 93;
-            // 
-            // textBox1
-            // 
-            this.textBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.DealerbindingSource, "DEALER_NAME", true));
-            this.textBox1.Location = new System.Drawing.Point(567, 34);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(220, 22);
-            this.textBox1.TabIndex = 95;
-            // 
-            // textBox2
-            // 
-            this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.CustomerbindingSource, "CUSTOMER_DEALER", true));
-            this.textBox2.Location = new System.Drawing.Point(520, 34);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(45, 22);
-            this.textBox2.TabIndex = 94;
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // textBox3
-            // 
-            this.textBox3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.CustomerbindingSource, "CUSTOMER_LAST_NAME", true));
-            this.textBox3.Location = new System.Drawing.Point(614, 11);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(131, 22);
-            this.textBox3.TabIndex = 91;
-            // 
-            // textBox4
-            // 
-            this.textBox4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.CustomerbindingSource, "CUSTOMER_FIRST_NAME", true));
-            this.textBox4.Location = new System.Drawing.Point(520, 11);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(92, 22);
-            this.textBox4.TabIndex = 90;
-            // 
-            // textBox7
-            // 
-            this.textBox7.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.CustomerbindingSource, "CUSTOMER_PURCHASE_ORDER", true));
-            this.textBox7.Location = new System.Drawing.Point(131, 34);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.ReadOnly = true;
-            this.textBox7.Size = new System.Drawing.Size(58, 22);
-            this.textBox7.TabIndex = 92;
-            this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // textBox8
-            // 
-            this.textBox8.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.CustomerbindingSource, "CUSTOMER_ADD_ON", true));
-            this.textBox8.Location = new System.Drawing.Point(315, 11);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.ReadOnly = true;
-            this.textBox8.Size = new System.Drawing.Size(17, 22);
-            this.textBox8.TabIndex = 89;
-            // 
-            // textBox9
-            // 
-            this.textBox9.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.CustomerbindingSource, "CUSTOMER_NO", true));
-            this.textBox9.Location = new System.Drawing.Point(131, 11);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.ReadOnly = true;
-            this.textBox9.Size = new System.Drawing.Size(58, 22);
-            this.textBox9.TabIndex = 88;
-            this.textBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(246, 18);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(53, 13);
-            this.label13.TabIndex = 51;
-            this.label13.Text = "ADD ON:";
-            // 
             // cOMMENTBindingSource
             // 
             this.cOMMENTBindingSource.DataMember = "COMMENT";
@@ -1765,20 +1774,42 @@
             this.tabInvoices.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).EndInit();
             this.groupControl4.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
+            this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit6.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlInvoices)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.invoicesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewInvoices)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit2)).EndInit();
             this.tabHistory.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();
+            this.layoutControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit7.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit8.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit9.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit10.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit11.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cUSTHISTDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cUSTHISTBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewCustomerHistory)).EndInit();
-            this.groupBox8.ResumeLayout(false);
-            this.groupBox8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cOMMENTBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.commentTypesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.specialCommentCodesBindingSource)).EndInit();
@@ -1801,17 +1832,6 @@
         private IACDataSetTableAdapters.PAYCODETableAdapter pAYCODETableAdapter;
         private DevExpress.XtraTab.XtraTabControl tabClosedPayments;
         private DevExpress.XtraTab.XtraTabPage tabHistory;
-        private System.Windows.Forms.GroupBox groupBox8;
-        private System.Windows.Forms.TextBox textBox22;
-        private System.Windows.Forms.TextBox txtPayDate;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.BindingSource cOMMENTBindingSource;
         private IACDataSetTableAdapters.COMMENTTableAdapter cOMMENTTableAdapter;
         private System.Windows.Forms.BindingSource commentTypesBindingSource;
@@ -1859,19 +1879,7 @@
         private System.Windows.Forms.ToolStripButton toolStripButton11;
         private System.Windows.Forms.ToolStripButton toolStripButton12;
         private System.Windows.Forms.ToolStripButton toolStripButton13;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private System.Windows.Forms.ToolStrip toolStrip2;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.TextBox textBox17;
-        private System.Windows.Forms.TextBox textBox18;
-        private System.Windows.Forms.TextBox textBox19;
-        private System.Windows.Forms.TextBox textBox20;
-        private System.Windows.Forms.TextBox textBox21;
-        private System.Windows.Forms.TextBox textBox24;
-        private System.Windows.Forms.TextBox textBox25;
-        private System.Windows.Forms.Label label23;
         private DevExpress.XtraTab.XtraTabPage tabPayment;
         private DevExpress.XtraLayout.LayoutControl layoutControlCustomerHeader;
         private DevExpress.XtraLayout.LayoutControlGroup Root;
@@ -1900,10 +1908,36 @@
         private DevExpress.XtraGrid.Columns.GridColumn colPAYMENT_AUTO_PAY;
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
         private DevExpress.XtraGrid.Columns.GridColumn colPAYMENT_ISF_DATE;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlPaymentGrid;
         private DevExpress.Utils.Html.HtmlTemplateCollection htmlTemplateCollection1;
         private DevExpress.Utils.Html.HtmlTemplate htmlTemplate1;
         private DevExpress.Utils.SvgImageCollection svgImageCollection1;
         private DevExpress.XtraGrid.Columns.GridColumn colPAYMENT_THRU_UD;
+        private DevExpress.XtraLayout.LayoutControl layoutControl1;
+        private DevExpress.XtraEditors.TextEdit textEdit1;
+        private DevExpress.XtraEditors.TextEdit textEdit3;
+        private DevExpress.XtraEditors.TextEdit textEdit4;
+        private DevExpress.XtraEditors.TextEdit textEdit5;
+        private DevExpress.XtraEditors.TextEdit textEdit6;
+        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup2;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
+        private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit2;
+        private DevExpress.XtraLayout.LayoutControl layoutControl2;
+        private DevExpress.XtraEditors.TextEdit textEdit7;
+        private DevExpress.XtraEditors.TextEdit textEdit8;
+        private DevExpress.XtraEditors.TextEdit textEdit9;
+        private DevExpress.XtraEditors.TextEdit textEdit10;
+        private DevExpress.XtraEditors.TextEdit textEdit11;
+        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup3;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlPaymentGrid;
+        private DevExpress.XtraGrid.Columns.GridColumn colCustomerID;
     }
 }
