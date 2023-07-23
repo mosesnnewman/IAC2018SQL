@@ -1,21 +1,8 @@
-﻿using CrystalDecisions.ReportAppServer.DataDefModel;
-using DevExpress.CodeParser;
-using DevExpress.XtraEditors;
-using IAC2021SQL.IACDataSetTableAdapters;
-using IAC2021SQL.ListDataTableAdapters;
+﻿using DevExpress.XtraEditors;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraBars.Docking2010;
-using Microsoft.Office.Interop.Outlook;
-using Microsoft.IdentityModel.Tokens;
-using IAC2021SQL.ProductionMainTablesTableAdapters;
 
 namespace IAC2021SQL
 {
@@ -183,7 +170,7 @@ namespace IAC2021SQL
                 return;
             //bindingSourcePAYMENT.EndEdit();
             if (((String)lookUpEditPaymentType.EditValue != "I" && iacDataSet.PAYMENT.Rows[bindingSourcePAYMENT.Position].Field<Decimal>("PAYMENT_AMOUNT_RCV") >= 0) ||
-                (checkEditNoAdjLookBack.Checked && (String)lookUpEditPaymentType.EditValue == "A"))
+                (checkEditNoAdjLookBack.Checked && (String)lookUpEditPaymentType.EditValue == "A") || (String)lookUpEditPaymentType.EditValue == "N")
             {
                 if (lbAddFlag || lbEdit)
                     if (!String.IsNullOrEmpty(dateEditISFDate.EditValue.ToString()))

@@ -53,7 +53,6 @@ namespace IAC2021SQL
         private void XtraFormClosedPayments_Load(object sender, EventArgs e)
         {
             this.specialCommentCodesTableAdapter.Fill(this.ClosedPaymentiacDataSet.SpecialCommentCodes);
-            //paymentTableAdapter.FillByAll(ClosedPaymentiacDataSet.PAYMENT);
             pAYCODETableAdapter.Fill(ClosedPaymentiacDataSet.PAYCODE);
             pAYMENTTYPETableAdapter.Fill(ClosedPaymentiacDataSet.PAYMENTTYPE);
             PerformAutoScale();
