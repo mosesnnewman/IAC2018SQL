@@ -38,7 +38,6 @@ namespace IAC2021SQL
                 case "Exit":
                     Close();
                     break;
-
             }
         }
 
@@ -50,12 +49,22 @@ namespace IAC2021SQL
             progressBarControl1.Enabled = true;
             progressBarControl1.Properties.ShowTitle = true;
             progressBarControl1.Properties.PercentView = false;
+            progressBarControl1.Properties.Step = 1;
+            progressBarControl1.Properties.Minimum = 1;
+            progressBarControl1.Properties.Maximum = ClosedPaymentiacDataSet.CUSTOMER.Rows.Count;
+            labelControl1.Visible = true;
             for (int i = 0; i < ClosedPaymentiacDataSet.CUSTOMER.Rows.Count; i++)
             {
                 Program.ApplyAllPayments(ClosedPaymentiacDataSet.CUSTOMER.Rows[i].Field<String>("CUSTOMER_NO"));
+                labelControl1.Text = ClosedPaymentiacDataSet.CUSTOMER.Rows[i].Field<String>("CUSTOMER_NO") + " " +
+                                     ClosedPaymentiacDataSet.CUSTOMER.Rows[i].Field<String>("CUSTOMER_FIRST_NAME") + " " +
+                                     ClosedPaymentiacDataSet.CUSTOMER.Rows[i].Field<String>("CUSTOMER_LAST_NAME") + " " +
+                                     (i+1).ToString() + " of " + ClosedPaymentiacDataSet.CUSTOMER.Rows.Count.ToString();
+                labelControl1.Refresh();
                 progressBarControl1.PerformStep();
                 progressBarControl1.Update();
             }
+            labelControl1.Visible = false;
         }
 
         private void progressBarControl1_CustomDisplayText(object sender, DevExpress.XtraEditors.Controls.CustomDisplayTextEventArgs e)
