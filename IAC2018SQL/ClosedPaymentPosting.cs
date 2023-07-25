@@ -1901,7 +1901,6 @@ namespace IAC2021SQL
             }
             lnSimpleBalance = lnSimpBal;
             TVAmortTableAdapter.FillByCustomerNo(DT.TVAmort, tsCustomerNo);
-
             if (tbPost)
             {
                 CUSTOMERTableAdapter.Update(DT.CUSTOMER.Rows[CustPos]);
