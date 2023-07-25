@@ -50,7 +50,7 @@ namespace IAC2021SQL
             progressBarControl1.Properties.ShowTitle = true;
             progressBarControl1.Properties.PercentView = false;
             progressBarControl1.Properties.Step = 1;
-            progressBarControl1.Properties.Minimum = 1;
+            progressBarControl1.Properties.Minimum = 0;
             progressBarControl1.Properties.Maximum = ClosedPaymentiacDataSet.CUSTOMER.Rows.Count;
             labelControl1.Visible = true;
             for (int i = 0; i < ClosedPaymentiacDataSet.CUSTOMER.Rows.Count; i++)

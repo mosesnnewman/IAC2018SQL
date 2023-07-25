@@ -1,8 +1,10 @@
-﻿using System;
+﻿using IAC2021SQL.PaymentDataSetTableAdapters;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Text;
 using System.Windows.Forms;
 
@@ -322,6 +324,56 @@ namespace IAC2021SQL
 
             CUSTHISTBindingSource.EndEdit();
             CUSTHISTTableAdapter.Update(UpdateiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position]);
+            // Moses Newman 07/24/2023 Add history record to PaymentHistory although not required.
+            Int32? id = 0;
+            PaymentDataSetTableAdapters.PaymentHistoryTableAdapter paymentHistoryTableAdapter = new PaymentHistoryTableAdapter();
+            paymentHistoryTableAdapter.Insert(UpdateiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].Field<Int32?>("ID"),
+                                  UpdateiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].Field<Int32?>("ISFID") != null,
+                                  Convert.ToInt32(UpdateiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].Field<String>("CUSTHIST_NO")),
+                                  UpdateiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].Field<DateTime?>("CUSTHIST_PAY_DATE"),
+                                  UpdateiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].Field<Int32?>("CUSTHIST_DATE_SEQ"),
+                                  UpdateiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].Field<Int32?>("CUSTHIST_THRU_UD"),
+                                  UpdateiacDataSet.CUSTOMER.Rows[CustomerPos].Field<Int32?>("CUSTOMER_DEALER"),
+                                  UpdateiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].Field<Decimal?>("CUSTHIST_PAYMENT_RCV"),
+                                  UpdateiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].Field<Decimal?>("CUSTHIST_BALANCE"),
+                                  UpdateiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].Field<Decimal?>("CUSTHIST_BUYOUT"),
+                                  UpdateiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].Field<Decimal?>("CUSTHIST_CONTRACT_STATUS"),
+                                  UpdateiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].Field<Decimal?>("PartialPayment"),
+                                  UpdateiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].Field<Decimal?>("CUSTHIST_LATE_CHARGE_BAL"),
+                                  UpdateiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].Field<String>("CUSTHIST_PAID_THRU"),
+                                  UpdateiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].Field<String>("CUSTHIST_PAID_THRU").Substring(0, 2) != "02" ||
+                                    UpdateiacDataSet.CUSTOMER.Rows[0].Field<Int32>("CUSTOMER_DUE_DAY") != 30 ?
+                                    DateTime.Parse(UpdateiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].Field<String>("CUSTHIST_PAID_THRU").Substring(0, 2) +
+                                        "/" + UpdateiacDataSet.CUSTOMER.Rows[0].Field<Int32>("CUSTOMER_DUE_DAY").ToString() + "/" +
+                                        CultureInfo.CurrentCulture.Calendar.ToFourDigitYear(CultureInfo.CurrentCulture.Calendar.ToFourDigitYear(
+                                            Convert.ToInt32(
+                                                UpdateiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].Field<String>("CUSTHIST_PAID_THRU").Substring(2, 2)))).ToString()) :
+                                    DateTime.Parse("03/01/" + CultureInfo.CurrentCulture.Calendar.ToFourDigitYear(
+                                        CultureInfo.CurrentCulture.Calendar.ToFourDigitYear(Convert.ToInt32(
+                                            UpdateiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].Field<String>("CUSTHIST_PAID_THRU").Substring(2, 2)))).ToString()).AddDays(-1),
+                                  UpdateiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].Field<String>("CUSTHIST_PAYMENT_TYPE"),
+                                  UpdateiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].Field<String>("CUSTHIST_PAYMENT_CODE"),
+                                  UpdateiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].Field<DateTime?>("CUSTHIST_ISF_DATE"),
+                                  UpdateiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].Field<Decimal?>("CUSTHIST_PAID_INTEREST"),
+                                  UpdateiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].Field<Decimal?>("AccruedInterest"),
+                                  UpdateiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].Field<Decimal?>("CUSTHIST_LATE_CHARGE_PAID"),
+                                  UpdateiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].Field<String>("CUSTHIST_AUTO_PAY") == "Y" ? true : false,
+                                  UpdateiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].Field<String>("CUSTHIST_PAY_REM_1"),
+                                  false,
+                                  (String)null,
+                                  (DateTime?)null,
+                                  UpdateiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].Field<DateTime?>("TransactionDate"),
+                                  UpdateiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].Field<Decimal?>("Fee"),
+                                  UpdateiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].Field<Boolean?>("FromIVR"),
+                                  UpdateiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].Field<Int32?>("ISFSeqNo"),
+                                  UpdateiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].Field<String>("ISFPaymentType"),
+                                  UpdateiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].Field<String>("ISFPaymentCode"),
+                                  UpdateiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].Field<Int32?>("ISFID"),
+                                  UpdateiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].Field<Int32?>("TicketID"),
+                                  UpdateiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].Field<Int32?>("TicketDetailID"),
+                                  false,
+                                  0, ref id);
+            // Moses Newman 07/24/2023 End PaymentHistory creation
         }
 
         void MonthlyUpdateDealerPost()
