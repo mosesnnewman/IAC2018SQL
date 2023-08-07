@@ -568,14 +568,25 @@ namespace IAC2021SQL
             CUSTHISTTableAdapter.Update(NoticeiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position]);
             NoticeiacDataSet.CUSTHIST.AcceptChanges();
             // Moses Newman 07/24/2023 Add history record to PaymentHistory although not required.
-            Int32? id = 0;
-            paymentHistoryTableAdapter.Insert(NoticeiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].Field<Int32?>("ID"),
+            Int32? id = 0, CusthistID; 
+            DateTime PaidThroughDate;
+            Object loPaidThroughDate = null, loCusthistID = null;
+
+            loPaidThroughDate = paymentHistoryTableAdapter.PaidThroughDate(NoticeiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].Field<String>("CUSTHIST_PAID_THRU"),
+                                                                           NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<Int32>("CUSTOMER_DAY_DUE"));
+            PaidThroughDate = loPaidThroughDate != null ? (DateTime)loPaidThroughDate : NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<DateTime>("CUSTOMER_INIT_DATE").AddMonths(-1);
+
+            loCusthistID = CUSTHISTTableAdapter.GetID(NoticeiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].Field<String>("CUSTHIST_NO"),
+                                                         NoticeiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].Field<DateTime>("CUSTHIST_PAY_DATE"),
+                                                         NoticeiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].Field<Int32>("CUSTHIST_DATE_SEQ"));
+            CusthistID = loCusthistID != null ? (Int32)loCusthistID : 0;
+            paymentHistoryTableAdapter.Insert(CusthistID,
                                   NoticeiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].Field<Int32?>("ISFID") != null,
                                   Convert.ToInt32(NoticeiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].Field<String>("CUSTHIST_NO")),
-                                  NoticeiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].Field<DateTime?>("CUSTHIST_PAY_DATE"),
-                                  NoticeiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].Field<Int32?>("CUSTHIST_DATE_SEQ"),
-                                  NoticeiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].Field<Int32?>("CUSTHIST_THRU_UD"),
-                                  NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<Int32?>("CUSTOMER_DEALER"),
+                                  NoticeiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].Field<DateTime>("CUSTHIST_PAY_DATE"),
+                                  NoticeiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].Field<Int32>("CUSTHIST_DATE_SEQ"),
+                                  (Int32?)NoticeiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].Field<Decimal?>("CUSTHIST_THRU_UD"),
+                                  NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<Int32>("CUSTOMER_DEALER"),
                                   NoticeiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].Field<Decimal?>("CUSTHIST_PAYMENT_RCV"),
                                   NoticeiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].Field<Decimal?>("CUSTHIST_BALANCE"),
                                   NoticeiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].Field<Decimal?>("CUSTHIST_BUYOUT"),
@@ -583,16 +594,7 @@ namespace IAC2021SQL
                                   NoticeiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].Field<Decimal?>("PartialPayment"),
                                   NoticeiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].Field<Decimal?>("CUSTHIST_LATE_CHARGE_BAL"),
                                   NoticeiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].Field<String>("CUSTHIST_PAID_THRU"),
-                                  NoticeiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].Field<String>("CUSTHIST_PAID_THRU").Substring(0, 2) != "02" ||
-                                    NoticeiacDataSet.CUSTOMER.Rows[0].Field<Int32>("CUSTOMER_DUE_DAY") != 30 ?
-                                    DateTime.Parse(NoticeiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].Field<String>("CUSTHIST_PAID_THRU").Substring(0, 2) +
-                                        "/" + NoticeiacDataSet.CUSTOMER.Rows[0].Field<Int32>("CUSTOMER_DUE_DAY").ToString() + "/" +
-                                        CultureInfo.CurrentCulture.Calendar.ToFourDigitYear(CultureInfo.CurrentCulture.Calendar.ToFourDigitYear(
-                                            Convert.ToInt32(
-                                                NoticeiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].Field<String>("CUSTHIST_PAID_THRU").Substring(2, 2)))).ToString()) :
-                                    DateTime.Parse("03/01/" + CultureInfo.CurrentCulture.Calendar.ToFourDigitYear(
-                                        CultureInfo.CurrentCulture.Calendar.ToFourDigitYear(Convert.ToInt32(
-                                            NoticeiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].Field<String>("CUSTHIST_PAID_THRU").Substring(2, 2)))).ToString()).AddDays(-1),
+                                  PaidThroughDate,
                                   NoticeiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].Field<String>("CUSTHIST_PAYMENT_TYPE"),
                                   NoticeiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].Field<String>("CUSTHIST_PAYMENT_CODE"),
                                   NoticeiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].Field<DateTime?>("CUSTHIST_ISF_DATE"),

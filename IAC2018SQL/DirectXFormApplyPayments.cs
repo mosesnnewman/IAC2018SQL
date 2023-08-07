@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using IAC2021SQL.PaymentDataSetTableAdapters;
 
 namespace IAC2021SQL
 {
@@ -43,7 +44,9 @@ namespace IAC2021SQL
 
         private void DoProgress()
         {
-            cUSTOMERTableAdapter.FillByAllPosted(ClosedPaymentiacDataSet.CUSTOMER);
+            PaymentDataSetTableAdapters.PaymentHistoryTableAdapter paymentHistoryTableAdapter = new PaymentHistoryTableAdapter();
+
+            cUSTOMERTableAdapter.Fill(ClosedPaymentiacDataSet.CUSTOMER,"191562");
             progressBarControl1.Properties.Maximum = ClosedPaymentiacDataSet.CUSTOMER.Rows.Count;
             progressBarControl1.Visible = true;
             progressBarControl1.Enabled = true;
@@ -53,6 +56,7 @@ namespace IAC2021SQL
             progressBarControl1.Properties.Minimum = 0;
             progressBarControl1.Properties.Maximum = ClosedPaymentiacDataSet.CUSTOMER.Rows.Count;
             labelControl1.Visible = true;
+            paymentHistoryTableAdapter.DeleteAllNULLCusthistID();
             for (int i = 0; i < ClosedPaymentiacDataSet.CUSTOMER.Rows.Count; i++)
             {
                 Program.ApplyAllPayments(ClosedPaymentiacDataSet.CUSTOMER.Rows[i].Field<String>("CUSTOMER_NO"));

@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using System.IO;
 using IAC2021SQL.IACDataSetTableAdapters;
 using Newtonsoft.Json;
+using IAC2021SQL.PaymentDataSetTableAdapters;
 
 namespace IAC2021SQL
 {
@@ -99,9 +100,10 @@ namespace IAC2021SQL
         /// <param name="worker"></param>
         public void NewClosedPaymentPosting(ref IACDataSet PAYMENTPostDataSet, ref BackgroundWorker worker, Boolean Post = false)
         {
-            IACDataSetTableAdapters.AMORTIZETableAdapter AMORTIZETableAdapter = new IACDataSetTableAdapters.AMORTIZETableAdapter();
-            IACDataSetTableAdapters.CUSTOMERTableAdapter CustomerTableAdapter = new IACDataSetTableAdapters.CUSTOMERTableAdapter();
-            IACDataSetTableAdapters.PAYMENTTableAdapter PAYMENTTableAdapter = new IACDataSetTableAdapters.PAYMENTTableAdapter();
+            IACDataSetTableAdapters.AMORTIZETableAdapter AMORTIZETableAdapter = new AMORTIZETableAdapter();
+            IACDataSetTableAdapters.CUSTOMERTableAdapter CustomerTableAdapter = new CUSTOMERTableAdapter();
+            IACDataSetTableAdapters.CUSTHISTTableAdapter cUSTHISTTableAdapter = new CUSTHISTTableAdapter();
+            IACDataSetTableAdapters.PAYMENTTableAdapter PAYMENTTableAdapter = new PAYMENTTableAdapter();
             IACDataSetTableAdapters.MasterTotalTempTableAdapter MasterTotalTempTableAdapter = new IACDataSetTableAdapters.MasterTotalTempTableAdapter();
             IACDataSetTableAdapters.NOTICETableAdapter NOTICETableAdapter = new IACDataSetTableAdapters.NOTICETableAdapter();
             IACDataSetTableAdapters.PaymentDistributionTableAdapter PaymentDistributionTableAdapter = new IACDataSetTableAdapters.PaymentDistributionTableAdapter();
@@ -143,7 +145,7 @@ namespace IAC2021SQL
             // Moses Newman 03/18/2018 Add TempPT for multiple payment PaidThrough accuracy
             PAYMENTPostDataSet.CUSTOMER.Columns.Add("TempPT", typeof(String));
             Decimal CurrentBalance = 0;
-            Object loCustomerPayCount = null;
+            Object loCustomerPayCount = null,loLastBalance = null; // Moses Newman 08/06/2023 add last balance from history
             Decimal NewBalance = 0;
             Int32 lnCustomerPayCount = 0;
 
@@ -169,7 +171,8 @@ namespace IAC2021SQL
 
                 loCustomerPayCount = PAYMENTTableAdapter.PaymentCountByCustomer(PAYMENTPostDataSet.PAYMENT.Rows[PaymentPos].Field<String>("PAYMENT_CUSTOMER"));
                 lnCustomerPayCount = (loCustomerPayCount != null) ? (Int32)loCustomerPayCount : 1;
-                CurrentBalance = PAYMENTPostDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_BALANCE");
+                loLastBalance = cUSTHISTTableAdapter.LastBalance(PAYMENTPostDataSet.PAYMENT.Rows[PaymentPos].Field<String>("PAYMENT_CUSTOMER"));
+                CurrentBalance = loLastBalance != null ? (Decimal)loLastBalance : PAYMENTPostDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_BALANCE");
                 NewBalance = 0;
                 for (Int32 pcount = 0; pcount < lnCustomerPayCount; pcount++)
                 {
@@ -329,7 +332,14 @@ namespace IAC2021SQL
                 lnDlrDisc = Math.Round(Convert.ToDouble(PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_DEALER_DISC_BAL") / PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<Int32>("CUSTOMER_PAY_REM_2")), 2);
             lnCustPaidThru = PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_PAID_THRU");
             lnPaidThru = PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_PAID_THRU");
-            PaidThru(CustomerPos, ref PAYMENTDataSet);
+            TimeSpan ltActDateDiff;
+            int lnActDateDiff = 0;
+            DateTime ldNewPaidThru = PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<DateTime>("PaidThrough");
+
+            ltActDateDiff = DateTime.Now.Subtract(ldNewPaidThru);
+            lnActDateDiff = ((Int32)(ltActDateDiff.TotalDays / 30));
+            lnTodayDiff = lnActDateDiff;
+
             lnPTDiff = lnTodayDiff;
 
             if (lnPTDiff == 0)
@@ -393,8 +403,6 @@ namespace IAC2021SQL
                     if (lnAVStatus > lnSimpleBalance)
                         PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].SetField<Decimal>("CUSTOMER_CONTRACT_STATUS", lnSimpleBalance * -1);
                 }
-
-            ClosedPaymentPartialPayment(PaymentPos, CustomerPos, ref PAYMENTDataSet, ref worker, post);
             // Moses Newman 01/29/2015 Move CloseOut AFTER GetPartialPaymentandLateFeeBalance happens!
             if (lnSimpleBalance == 0)
                 ClosedPaymentCloseOut(CustomerPos, ref PAYMENTDataSet, ref worker);
@@ -544,62 +552,6 @@ namespace IAC2021SQL
             // Moses Newman 04/30/2018 why touch CUSTOMER_BALANCE until post!?!
             PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].SetField<Decimal>("CUSTOMER_BALANCE", lnSimpleBalance);
             return (Decimal)lnPaidSimpleInt;
-        }
-
-        void PaidThru(int CustomerPos, ref IACDataSet PAYMENTDataSet)
-        {
-            IACDataSetTableAdapters.TVAmortTableAdapter TVAmortTableAdapter = new IACDataSetTableAdapters.TVAmortTableAdapter();
-            int lnActDateDiff = 0;
-            String lsTempPaidThru = "";
-            DateTime ldNewPaidThru;
-            IACDataSet.TVAmortDataTable TVAmort = PAYMENTDataSet.TVAmort;
-            IACDataSet.CUSTOMERDataTable CUSTOMER = PAYMENTDataSet.CUSTOMER;
-
-            // Moses Newman 11/23/2014 We already have the new payment in TVAmort because TimeValue routine was called is SimpleInterestAmortAllocation,
-            // So try and grab the SQL Server function CorrectPaidThrough instead of using old method of adding to existing paid thru.   
-            Object loPaidThru = TVAmortTableAdapter.PaidThrough(PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_NO"));
-            if (loPaidThru != null)
-            {
-                lsTempPaidThru = (String)loPaidThru;
-
-                if (PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<Int32>("CUSTOMER_DAY_DUE") == 30 && Convert.ToInt32(((String)loPaidThru).Substring(0, 2)) == 2)
-                {
-                    lsTempPaidThru = "03/01/" + DateTime.Now.Year.ToString().Substring(0, 2) + ((String)loPaidThru).Substring(2, 2);
-                    ldNewPaidThru = DateTime.Parse(lsTempPaidThru).Date;
-                    ldNewPaidThru = ldNewPaidThru.AddDays(-1);     // Last day of February
-                }
-                else
-                {
-                    lsTempPaidThru = ((String)loPaidThru).Substring(0, 2) + "/" + PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<Int32>("CUSTOMER_DAY_DUE").ToString().TrimStart() + "/" + DateTime.Now.Year.ToString().Substring(0, 2) + ((String)loPaidThru).Substring(2, 2);
-                    ldNewPaidThru = DateTime.Parse(lsTempPaidThru).Date;
-                }
-            }
-            else
-            {
-                if (PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<Int32>("CUSTOMER_DAY_DUE") == 30 && Convert.ToInt32(PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_PAID_THRU").Substring(0, 2)) == 2)
-                {
-                    lsTempPaidThru = "03/01/" + DateTime.Now.Year.ToString().Substring(0, 2) + PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_PAID_THRU").Substring(2, 2);
-                    ldNewPaidThru = DateTime.Parse(lsTempPaidThru).Date;
-                    ldNewPaidThru = ldNewPaidThru.AddDays(-1);     // Last day of February
-                }
-                else
-                {
-                    lsTempPaidThru = PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_PAID_THRU").Substring(0, 2) + "/" + PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<Int32>("CUSTOMER_DAY_DUE").ToString().TrimStart() + "/" + DateTime.Now.Year.ToString().Substring(0, 2) + PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_PAID_THRU").Substring(2, 2);
-                    ldNewPaidThru = DateTime.Parse(lsTempPaidThru).Date;
-                }
-                ldNewPaidThru = ldNewPaidThru.AddMonths(lnNoPay);      // Add number of payments to get next Paid Through Date.
-            }
-
-
-            TimeSpan ltActDateDiff;
-
-            ltActDateDiff = DateTime.Now.Subtract(ldNewPaidThru);
-            lnActDateDiff = ((Int32)(ltActDateDiff.TotalDays / 30));
-            lnTodayDiff = lnActDateDiff;
-            TVAmortTableAdapter.Dispose();
-            TVAmortTableAdapter = null;
-            // Moses Newman 11/24/2014 We have new paid through so save it NOW and not in move payment to customer!!!
-            PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].SetField<String>("CUSTOMER_PAID_THRU", ldNewPaidThru.Month.ToString().TrimStart().PadLeft(2, '0') + ldNewPaidThru.Year.ToString().TrimStart().Substring(2, 2).PadLeft(2, '0'));
         }
 
         void MovePaymenttoCustHist(int PaymentPos, int CustomerPos, int AmortPos, ref IACDataSet PAYMENTDataSet, ref BackgroundWorker worker, Boolean Post = false)
@@ -1436,17 +1388,6 @@ namespace IAC2021SQL
             }
         }
 
-        // Moses Newman 11/29/2014 Finally got rid of Frank's legacy COBOL converted Algorithms!!!
-        // Now Calls Stored Procedure to calculate Partial Payments and stores the whole number and not a fraction now!
-        // Moses Newman 12/22/2014 must now pass the Post paramaeter to determine if the CUSTOMER record should be rewritten or not!
-        void ClosedPaymentPartialPayment(int PaymentPos, Int32 CustomerPos, ref IACDataSet PAYMENTDataSet, ref BackgroundWorker worker, Boolean Post = false)
-        {
-            // Moses Newman 12/22/2014 must now pass the Post paramaeter to determine if the CUSTOMER record should be rewritten or not!
-            NewGetPartialPaymentandLateFeeBalance(ref worker,PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_NO"), ref PAYMENTDataSet,CustomerPos, true, PaymentPos,Post);
-            CUSTOMERBindingSource.EndEdit();
-            PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].SetField<Double>("CUSTOMER_PARTIAL_PAYMENTS", (Double)(PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("PartialPayment") / PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_REGULAR_AMOUNT")));
-        }
-
         void ClosedPaymentAccumIOL(int PaymentPos, ref IACDataSet PAYMENTDataSet, ref BackgroundWorker worker)
         {
             decimal lntemppay = 0;
@@ -1860,33 +1801,6 @@ namespace IAC2021SQL
             if (DT.CUSTOMER.Rows.Count == 0)
                 return;
 
-            var loNumPay = invoicesTableAdapter.NumberOfPayments(DT.CUSTOMER.Rows[CustPos].Field<Int32>("CustomerID"));
-            lnNumPay = loNumPay != null ? (Int32)lnNumPay : 0;
-
-            Decimal lnLateCharge = 0,lnContractStatus = 0;
-            String lsPaidThrough = "";
-            Object loLateCharge = null,loLateFeeBalance = null,loPartialPayment = null,loPaidThrough = null,loContractStatus = null;
-
-            loLateCharge = invoicesTableAdapter.LastLateFee(DT.CUSTOMER.Rows[CustPos].Field<Int32>("CustomerID"));
-            lnLateCharge = loLateCharge != null ? (Decimal)loLateCharge:0;
-            loLateFeeBalance = invoicesTableAdapter.LateChargeBalance(DT.CUSTOMER.Rows[CustPos].Field<Int32>("CustomerID"));
-            lnLateFeeBalance = loLateFeeBalance != null ? (Decimal)loLateFeeBalance : 0;
-            loPartialPayment = invoicesTableAdapter.PartialPayment(DT.CUSTOMER.Rows[CustPos].Field<Int32>("CustomerID"));
-            lnPartialPayment = loPartialPayment != null ? (Decimal)loPartialPayment : 0;
-            loPaidThrough = invoicesTableAdapter.PaidThru(DT.CUSTOMER.Rows[CustPos].Field<Int32>("CustomerID"));
-            lsPaidThrough = loPaidThrough != null ? (String)loPaidThrough : "";
-            loContractStatus = invoicesTableAdapter.ContractStatus(DT.CUSTOMER.Rows[CustPos].Field<Int32>("CustomerID"), DateTime.Now.Date);
-            lnContractStatus = loContractStatus != null ? (Decimal)loContractStatus : 0;
-
-            DT.CUSTOMER.Rows[CustPos].SetField<Decimal>("PartialPayment", lnPartialPayment);
-            DT.CUSTOMER.Rows[CustPos].SetField<Decimal>("CUSTOMER_LATE_CHARGE", lnLateCharge);
-            DT.CUSTOMER.Rows[CustPos].SetField<Decimal>("CUSTOMER_LATE_CHARGE_BAL", lnLateFeeBalance);
-            DT.CUSTOMER.Rows[CustPos].SetField<Int32>("CUSTOMER_NO_OF_PAYMENTS_MADE", lnNumPay);
-            DT.CUSTOMER.Rows[CustPos].SetField<Int32>("CUSTOMER_PAY_REM_2", DT.CUSTOMER.Rows[CustPos].Field<Int32>("CUSTOMER_TERM") - lnNumPay);
-            DT.CUSTOMER.Rows[CustPos].SetField<String>("CUSTOMER_PAID_THRU", lsPaidThrough);               
-            DT.CUSTOMER.Rows[CustPos].SetField<Decimal>("CUSTOMER_CONTRACT_STATUS", lnContractStatus);
-
-            DT.CUSTOMER.Rows[CustPos].EndEdit();
             // Moses Newman 12/22/2014 DO NOT Update Customer Record Unless Posting!
             if (tbPayment && tnPaymentPos != -1)
             {
@@ -1899,6 +1813,39 @@ namespace IAC2021SQL
                                  // Moses Newman 04/02/2018 fixed Payment and PaymentPos parameters so TVSimpleGetBuyout knows to add payments!
                                  DT.CUSTOMER.Rows[CustPos].Field<String>("CUSTOMER_AMORTIZE_IND") == "S" ? true : false, true, false, tbPayment, tnPaymentPos, true);
             }
+            var loNumPay = invoicesTableAdapter.NumberOfPayments(DT.CUSTOMER.Rows[CustPos].Field<Int32>("CustomerID"));
+            lnNumPay = loNumPay != null ? (Int32)loNumPay : 0;
+
+            Decimal lnLateCharge = 0, lnContractStatus = 0;
+            String lsPaidThrough = "";
+            Object loLateCharge = null, loLateFeeBalance = null, loPartialPayment = null, loPaidThrough = null, loContractStatus = null, loPaidThroughDate = null;
+            DateTime? ldPaidThroughDate;
+
+            loLateCharge = invoicesTableAdapter.LastLateFee(DT.CUSTOMER.Rows[CustPos].Field<Int32>("CustomerID"));
+            lnLateCharge = loLateCharge != null ? (Decimal)loLateCharge : 0;
+            loLateFeeBalance = invoicesTableAdapter.LateChargeBalance(DT.CUSTOMER.Rows[CustPos].Field<Int32>("CustomerID"));
+            lnLateFeeBalance = loLateFeeBalance != null ? (Decimal)loLateFeeBalance : 0;
+            loPartialPayment = invoicesTableAdapter.PartialPayment(DT.CUSTOMER.Rows[CustPos].Field<Int32>("CustomerID"));
+            lnPartialPayment = loPartialPayment != null ? (Decimal)loPartialPayment : 0;
+            loPaidThrough = invoicesTableAdapter.PaidThru(DT.CUSTOMER.Rows[CustPos].Field<Int32>("CustomerID"));
+            lsPaidThrough = loPaidThrough != null ? (String)loPaidThrough : "";
+            loPaidThroughDate = invoicesTableAdapter.PaidThroughDate(DT.CUSTOMER.Rows[CustPos].Field<Int32>("CustomerID"));
+            ldPaidThroughDate = loPaidThroughDate != null ? (DateTime)loPaidThroughDate : (DateTime?)null;
+            // Moses Newman 07/28/2023 Change DateTime.Now.Date to payments actual date!
+            if (tnPaymentPos >= 0)
+                loContractStatus = invoicesTableAdapter.ContractStatus(DT.CUSTOMER.Rows[CustPos].Field<Int32>("CustomerID"), DT.PAYMENT.Rows[tnPaymentPos].Field<DateTime>("PAYMENT_DATE").Date);
+            else
+                loContractStatus = invoicesTableAdapter.ContractStatus(DT.CUSTOMER.Rows[CustPos].Field<Int32>("CustomerID"), DateTime.Now.Date);
+            DT.CUSTOMER.Rows[CustPos].SetField<Decimal>("PartialPayment", lnPartialPayment);
+            DT.CUSTOMER.Rows[CustPos].SetField<Double>("CUSTOMER_PARTIAL_PAYMENTS", (Double)(DT.CUSTOMER.Rows[CustPos].Field<Decimal>("PartialPayment") / DT.CUSTOMER.Rows[CustPos].Field<Decimal>("CUSTOMER_REGULAR_AMOUNT")));
+            DT.CUSTOMER.Rows[CustPos].SetField<Decimal>("CUSTOMER_LATE_CHARGE", lnLateCharge);
+            DT.CUSTOMER.Rows[CustPos].SetField<Decimal>("CUSTOMER_LATE_CHARGE_BAL", lnLateFeeBalance);
+            DT.CUSTOMER.Rows[CustPos].SetField<Int32>("CUSTOMER_NO_OF_PAYMENTS_MADE", lnNumPay);
+            DT.CUSTOMER.Rows[CustPos].SetField<Int32>("CUSTOMER_PAY_REM_2", DT.CUSTOMER.Rows[CustPos].Field<Int32>("CUSTOMER_TERM") - lnNumPay);
+            DT.CUSTOMER.Rows[CustPos].SetField<String>("CUSTOMER_PAID_THRU", lsPaidThrough);
+            DT.CUSTOMER.Rows[CustPos].SetField<Decimal>("CUSTOMER_CONTRACT_STATUS", lnContractStatus);
+            DT.CUSTOMER.Rows[CustPos].SetField<DateTime?>("PaidThrough", ldPaidThroughDate);
+            DT.CUSTOMER.Rows[CustPos].EndEdit();
             lnSimpleBalance = lnSimpBal;
             TVAmortTableAdapter.FillByCustomerNo(DT.TVAmort, tsCustomerNo);
             if (tbPost)

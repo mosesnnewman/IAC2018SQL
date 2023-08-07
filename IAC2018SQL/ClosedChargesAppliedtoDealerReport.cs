@@ -65,7 +65,7 @@ namespace IAC2021SQL
             {
                 MDIIAC2013 MDImain = (MDIIAC2013)MdiParent;
 
-                // Moses Newman 09/07/2022 Covert to XtraReport
+                // Moses Newman 09/07/2022 Convert to XtraReport
                 var report = new XtraReportClosedChargesAppliedToDealer();
                 SqlDataSource ds = report.DataSource as SqlDataSource;
 
