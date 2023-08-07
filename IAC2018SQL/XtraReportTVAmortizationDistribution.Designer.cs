@@ -148,7 +148,6 @@
             this.gsUserID1 = new DevExpress.XtraReports.UI.XRLabel();
             this.gsUserName1 = new DevExpress.XtraReports.UI.XRLabel();
             this.Box1 = new DevExpress.XtraReports.UI.XRCrossBandBox();
-            this.Box5 = new DevExpress.XtraReports.UI.XRCrossBandBox();
             this.Box4 = new DevExpress.XtraReports.UI.XRCrossBandBox();
             this.Box6 = new DevExpress.XtraReports.UI.XRCrossBandBox();
             this.Box7 = new DevExpress.XtraReports.UI.XRCrossBandBox();
@@ -240,7 +239,8 @@
             // 
             this.xrLabel1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[RowNumber]")});
-            this.xrLabel1.Font = new DevExpress.Drawing.DXFont("Arial Narrow", 8.25F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
+            this.xrLabel1.Font = new DevExpress.Drawing.DXFont("Arial Narrow", 8.25F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {
+            new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(4.166667F, 0F);
             this.xrLabel1.Multiline = true;
             this.xrLabel1.Name = "xrLabel1";
@@ -1826,17 +1826,6 @@
             this.Box1.StartPointFloat = new DevExpress.Utils.PointFloat(18.75F, 147F);
             this.Box1.WidthF = 339.5833F;
             // 
-            // Box5
-            // 
-            this.Box5.AnchorVertical = ((DevExpress.XtraReports.UI.VerticalAnchorStyles)((DevExpress.XtraReports.UI.VerticalAnchorStyles.Top | DevExpress.XtraReports.UI.VerticalAnchorStyles.Bottom)));
-            this.Box5.BorderWidth = 1F;
-            this.Box5.EndBand = this.Area1;
-            this.Box5.EndPointFloat = new DevExpress.Utils.PointFloat(922.9167F, 279.1667F);
-            this.Box5.Name = "Box5";
-            this.Box5.StartBand = this.Area1;
-            this.Box5.StartPointFloat = new DevExpress.Utils.PointFloat(922.9167F, 279.1667F);
-            this.Box5.WidthF = 4F;
-            // 
             // Box4
             // 
             this.Box4.AnchorVertical = ((DevExpress.XtraReports.UI.VerticalAnchorStyles)((DevExpress.XtraReports.UI.VerticalAnchorStyles.Top | DevExpress.XtraReports.UI.VerticalAnchorStyles.Bottom)));
@@ -2155,7 +2144,8 @@
             // 
             // xrControlStyleRateChange
             // 
-            this.xrControlStyleRateChange.Font = new DevExpress.Drawing.DXFont("Arial", 8.25F, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
+            this.xrControlStyleRateChange.Font = new DevExpress.Drawing.DXFont("Arial", 8.25F, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {
+            new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrControlStyleRateChange.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.xrControlStyleRateChange.Name = "xrControlStyleRateChange";
             this.xrControlStyleRateChange.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
@@ -2206,7 +2196,6 @@
             this.sqlDataSource1});
             this.CrossBandControls.AddRange(new DevExpress.XtraReports.UI.XRCrossBandControl[] {
             this.Box1,
-            this.Box5,
             this.Box4,
             this.Box6,
             this.Box7,
@@ -2214,7 +2203,7 @@
             this.DataMember = "TVAmort";
             this.DataSource = this.sqlDataSource1;
             this.Landscape = true;
-            this.Margins = new DevExpress.Drawing.DXMargins(25, 75, 25, 50);
+            this.Margins = new DevExpress.Drawing.DXMargins(25F, 75F, 25F, 50F);
             this.PageHeight = 850;
             this.PageWidth = 1100;
             this.ParameterPanelLayoutItems.AddRange(new DevExpress.XtraReports.Parameters.ParameterPanelLayoutItem[] {
@@ -2245,7 +2234,7 @@
             this.IsSimple});
             this.StyleSheet.AddRange(new DevExpress.XtraReports.UI.XRControlStyle[] {
             this.xrControlStyleRateChange});
-            this.Version = "22.1";
+            this.Version = "23.1";
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
         }
@@ -2338,7 +2327,6 @@
         private DevExpress.XtraReports.UI.XRLabel gsUserID1;
         private DevExpress.XtraReports.UI.XRLabel gsUserName1;
         private DevExpress.XtraReports.UI.XRCrossBandBox Box1;
-        private DevExpress.XtraReports.UI.XRCrossBandBox Box5;
         private DevExpress.XtraReports.UI.XRCrossBandBox Box4;
         private DevExpress.XtraReports.UI.XRCrossBandBox Box6;
         private DevExpress.XtraReports.UI.XRCrossBandBox Box7;

@@ -163,7 +163,8 @@ namespace IAC2021SQL
                 switch (summaryID)
                 {
                     case 1: // The total summary calculated against the 'UnitPrice' column. 
-                        Object loContractStatus = invoicesTableAdapter.ContractStatus((Int32)view.GetRowCellValue(e.RowHandle, "CustomerID"), DateTime.Now.Date);
+                        DateTime thisPaymentDate = ClosedPaymentiacDataSet.PAYMENT.Rows[PaymentbindingSource.Position].Field<DateTime>("PAYMENT_DATE");
+                        Object loContractStatus = invoicesTableAdapter.ContractStatus((Int32)view.GetRowCellValue(e.RowHandle, "CustomerID"), thisPaymentDate);
                         TotalContractStatus = loContractStatus != null ? (Decimal)loContractStatus : 0;
                         e.TotalValue = TotalContractStatus;
                         break;
