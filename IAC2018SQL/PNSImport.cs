@@ -145,14 +145,15 @@ namespace IAC2021SQL
         private Boolean ReadPNSFile(PaymentDataSet PNS, Boolean withDownload = true)
         {
             IACDataSet PNSIAC = new IACDataSet();
-            Boolean ReturnCode = false;
+            Boolean ReturnCode = false, lbIsDone = false; // Moses Newman 08/08/2023 added lbIsDone
+            Object oIsDone = null; // Moses Newman 08/08/2023
             SQLBackupandRestore SQLBR = new SQLBackupandRestore();
             PaymentDataSetTableAdapters.PayNSecondsTableAdapter PayNSecondsTableAdapter = new PaymentDataSetTableAdapters.PayNSecondsTableAdapter();
             IACDataSetTableAdapters.PAYMENTTableAdapter PAYMENTTableAdapter = new IACDataSetTableAdapters.PAYMENTTableAdapter();
             IACDataSetTableAdapters.OPNPAYTableAdapter OPNPAYTableAdapter = new IACDataSetTableAdapters.OPNPAYTableAdapter();
             PaymentDataSetTableAdapters.PNSRejectsTableAdapter PNSRejectsTableAdapter = new PaymentDataSetTableAdapters.PNSRejectsTableAdapter();
             PaymentDataSetTableAdapters.PNSIMPORTParamsTableAdapter PNSIMPORTParamsTableAdapter = new PaymentDataSetTableAdapters.PNSIMPORTParamsTableAdapter();
-            Int32 FileNumber = 0, TotalFiles = 0, Progress = 0,TotalDownloads = 0;
+            Int32 FileNumber = 0, TotalFiles = 0, Progress = 0,TotalDownloads = 0, doneCount = 0;
             String FilePath = @"\\dc-iac\Public\PayNSeconds\",
                    ConnStringStart = @"Data Source=SQL-IAC;",
                    lsConnect = lsConnect = IAC2021SQL.Properties.Settings.Default.IAC2010SQLConnectionString.ToUpper(),
@@ -184,12 +185,21 @@ namespace IAC2021SQL
                         // Moses Newman 07/10/2021 No longer open and save xlsx files to insure Excel 2016 as new FormatExcel routine 
                         // handles that after proper formating of new Pay -N- Seconds format.
                         PNSIMPORTParamsTableAdapter.DeleteAll();
-                        PNSIMPORTParamsTableAdapter.Insert(ConnString, FileName, @"\\DC-IAC\Public\PayNSeconds\");
-
+                        PNSIMPORTParamsTableAdapter.Insert(ConnString, FileName, @"\\DC-IAC\Public\PayNSeconds\",false);
 
                         if (SQLBR.RunJob("PNSIMPORT", "Import from PayNSeconds", false))
                         {
-                            Thread.Sleep(5000);
+                            do
+                            {
+                                oIsDone = PNSIMPORTParamsTableAdapter.IsDone();
+                                lbIsDone = oIsDone != null ? (Boolean)oIsDone : false;
+                                doneCount++;
+                            } while (!lbIsDone && doneCount < 100001);
+                            if (doneCount > 100000)
+                                Thread.Sleep(5000);
+                            else
+                                Thread.Sleep(200);
+                            doneCount = 0;
                             try
                             {
                                 PayNSecondsTableAdapter.Fill(PNS.PayNSeconds);
@@ -318,6 +328,9 @@ namespace IAC2021SQL
 
         private void buttonReImport_Click(object sender, EventArgs e)
         {
+            // Moses Newman 08/08/2023 make lable visible
+            labelDownload.Text = "";
+            labelDownload.Visible = true;
             buttonReImport.Enabled = false;  // Moses Newman 09/14/2020 disable button so that Transfer SSIS Package can only get called once.
             PaymentDataSetTableAdapters.PayNSecondsTableAdapter PayNSecondsTableAdapter = new PaymentDataSetTableAdapters.PayNSecondsTableAdapter();
             PaymentDataSet PNS = new PaymentDataSet();
@@ -342,7 +355,7 @@ namespace IAC2021SQL
                         }
                     }
                     // Moses Newman 07/21/2023 Create PaymentHistory Records
-                    Program.CreateTempPayments();
+                    //Program.CreateTempPayments();
                     XtraMessageBox.Show("*** Import of " + PNS.PayNSeconds.Rows.Count.ToString().Trim() + " PayNSeconds RECORDS complete. ***", "PNS Payments Import");
                 }
                 else

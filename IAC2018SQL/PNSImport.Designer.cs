@@ -49,9 +49,9 @@
             this.labelDownload.LookAndFeel.SkinName = "McSkin";
             this.labelDownload.LookAndFeel.UseDefaultLookAndFeel = false;
             this.labelDownload.Name = "labelDownload";
-            this.labelDownload.Size = new System.Drawing.Size(37, 16);
+            this.labelDownload.Size = new System.Drawing.Size(85, 16);
             this.labelDownload.TabIndex = 14;
-            this.labelDownload.Text = "label1";
+            this.labelDownload.Text = "Download Info";
             this.labelDownload.Visible = false;
             // 
             // buttonReImport

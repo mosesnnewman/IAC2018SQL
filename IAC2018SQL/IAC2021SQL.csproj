@@ -42,7 +42,7 @@
     <SuiteName>IAC2023SQLTESTBED</SuiteName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>14</ApplicationRevision>
+    <ApplicationRevision>21</ApplicationRevision>
     <ApplicationVersion>200.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -740,16 +740,28 @@
     <Compile Include="AboutIAC2013SQL.Designer.cs">
       <DependentUpon>AboutIAC2013SQL.cs</DependentUpon>
     </Compile>
-    <Compile Include="Amortization.cs">
-      <DependentUpon>Amortization.rpt</DependentUpon>
-      <DesignTime>True</DesignTime>
+    <Compile Include="AutoPaymentRejects.cs">
       <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AutoPaymentRejects.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="AmortizationDistribution.cs">
+    <Compile Include="ClosedContingentEditList.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AmortizationDistribution.rpt</DependentUpon>
+      <DependentUpon>ClosedContingentEditList.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ClosedPaymentEditList.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ClosedPaymentEditList.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomerEFTListing.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CustomerEFTListing.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="DirectXFormApplyPayments.cs">
@@ -757,6 +769,18 @@
     </Compile>
     <Compile Include="DirectXFormApplyPayments.Designer.cs">
       <DependentUpon>DirectXFormApplyPayments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InternetPaymentRejects.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InternetPaymentRejects.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="IVRRejects.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IVRRejects.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="MessageBoxHTML.cs">
       <SubType>Form</SubType>
@@ -768,6 +792,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>PaymentDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Ticket.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Ticket.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="XtraFormClosedPaymentEditor.cs">
       <SubType>Form</SubType>
@@ -811,12 +841,6 @@
     <Compile Include="OpenCustomerBuybackSelectionCriteria.Designer.cs">
       <DependentUpon>OpenCustomerBuybackSelectionCriteria.cs</DependentUpon>
     </Compile>
-    <Compile Include="ClosedCustomerTierSummaryReport.cs">
-      <DependentUpon>ClosedCustomerTierSummaryReport.rpt</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="ClosedMonthlyUpdateSelectPeriod.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -829,12 +853,6 @@
     </Compile>
     <Compile Include="ClosedOverPaymentReport.Designer.cs">
       <DependentUpon>ClosedOverPaymentReport.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ClosedReceivedContractReport.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ClosedReceivedContractReport.rpt</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="ColorCheckBox.cs">
       <SubType>Component</SubType>
@@ -1268,12 +1286,6 @@
     <Compile Include="XtraReportViewer.Designer.cs">
       <DependentUpon>XtraReportViewer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ticket.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Ticket.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="FormTickets.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1296,12 +1308,6 @@
     </Compile>
     <Compile Include="ReceivedContractReport.Designer.cs">
       <DependentUpon>ReceivedContractReport.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DailyInterestVariance.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DailyInterestVariance.rpt</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="DailyDataSet.cs">
       <DependentUpon>DailyDataSet.xsd</DependentUpon>
@@ -1353,18 +1359,6 @@
       <DependentUpon>Tickets.xsd</DependentUpon>
     </Compile>
     <Compile Include="TrialBalancePretty.cs" />
-    <Compile Include="ClosedCustomerEditListDefi.cs">
-      <DependentUpon>ClosedCustomerEditListDefi.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ClosedCustomerEditListTCI.cs">
-      <DependentUpon>ClosedCustomerEditListTCI.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="ClosedDealerSearchForms.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1376,12 +1370,6 @@
     </Compile>
     <Compile Include="frmImportDefi.Designer.cs">
       <DependentUpon>frmImportDefi.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PNSRejects.cs">
-      <DependentUpon>PNSRejects.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="PNSImport.cs">
       <SubType>Form</SubType>
@@ -1396,12 +1384,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RepoDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="MonthlyUpdateDevience.cs">
-      <DependentUpon>MonthlyUpdateDevience.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="OpenFirstPaymentDefaultReport.cs">
       <SubType>Form</SubType>
@@ -1421,18 +1403,6 @@
     <Compile Include="ClosedPaidInFullPriorToMaturityReport.Designer.cs">
       <DependentUpon>ClosedPaidInFullPriorToMaturityReport.cs</DependentUpon>
     </Compile>
-    <Compile Include="ClosedPaidInFullPriorToMaturityReport1.cs">
-      <DependentUpon>ClosedPaidInFullPriorToMaturityReport.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="IVRRejects.cs">
-      <DependentUpon>IVRRejects.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="PaymentDataSet.cs">
       <DependentUpon>PaymentDataSet.xsd</DependentUpon>
     </Compile>
@@ -1441,18 +1411,6 @@
     </Compile>
     <Compile Include="FixPaidThroughs.Designer.cs">
       <DependentUpon>FixPaidThroughs.cs</DependentUpon>
-    </Compile>
-    <Compile Include="RepoLog.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RepoLog.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="DefiDuplicates.cs">
-      <DependentUpon>DefiDuplicates.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="TSBDataSet.cs">
       <DependentUpon>TSBDataSet.xsd</DependentUpon>
@@ -1475,12 +1433,6 @@
     <Compile Include="IVRImport.Designer.cs">
       <DependentUpon>IVRImport.cs</DependentUpon>
     </Compile>
-    <Compile Include="ClosedPaidInAdvance.cs">
-      <DependentUpon>ClosedPaidInAdvance.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="ClosedPayedInAdvance.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1492,24 +1444,6 @@
     </Compile>
     <Compile Include="ClosedFirstPaymentDefaultReport.Designer.cs">
       <DependentUpon>ClosedFirstPaymentDefaultReport.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ClosedFirstPaymentDefault.cs">
-      <DependentUpon>ClosedFirstPaymentDefault.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ClosedCustomerDelinquencyRepoReport.cs">
-      <DependentUpon>ClosedCustomerDelinquencyRepoReport.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ClosedCustomerDelinquencyCOL.cs">
-      <DependentUpon>ClosedCustomerDelinquencyCOL.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="customobject.cs" />
     <Compile Include="DataGridViewImageColumnHeaderCell.cs" />
@@ -1525,12 +1459,6 @@
     <Compile Include="FormSMSMessage.Designer.cs">
       <DependentUpon>FormSMSMessage.cs</DependentUpon>
     </Compile>
-    <Compile Include="PaymentTypeSummary.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PaymentTypeSummary.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="SelectTemplate.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1542,12 +1470,6 @@
     </Compile>
     <Compile Include="FormValidateCellPhones.Designer.cs">
       <DependentUpon>FormValidateCellPhones.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmImportTCI.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmImportTCI.Designer.cs">
-      <DependentUpon>frmImportTCI.cs</DependentUpon>
     </Compile>
     <Compile Include="Service References\GeneralWSProxy\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -1585,58 +1507,10 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="sortablebindinglist.cs" />
-    <Compile Include="TCIDuplicates.cs">
-      <DependentUpon>TCIDuplicates.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="InternetPaymentRejects.cs">
-      <DependentUpon>InternetPaymentRejects.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="AutoPaymentRejects.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AutoPaymentRejects.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ClosedCustomerDelinquency.cs">
-      <DependentUpon>ClosedCustomerDelinquency.rpt</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ClosedCustomerDelinquencySummary.cs">
-      <DependentUpon>ClosedCustomerDelinquencySummary.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="OpenCustomerDelinquencySummary.cs">
       <DependentUpon>OpenCustomerDelinquencySummary.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ClosedCustomerDelinquencySummaryCOL.cs">
-      <DependentUpon>ClosedCustomerDelinquencySummaryCOL.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ClosedDealerHistory.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ClosedDealerHistory.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ClosedDealerSummary.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ClosedDealerSummary.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="ClosedDealerSummaryReport.cs">
@@ -1651,23 +1525,11 @@
     <Compile Include="ClosedTrialBalance.Designer.cs">
       <DependentUpon>ClosedTrialBalance.cs</DependentUpon>
     </Compile>
-    <Compile Include="ClosedChargesAppliedToDealer.cs">
-      <DependentUpon>ClosedChargesAppliedToDealer.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="ClosedDealerHistoryReport.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ClosedDealerHistoryReport.Designer.cs">
       <DependentUpon>ClosedDealerHistoryReport.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ClosedCustomerBuybackReport.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ClosedCustomerBuybackReport.rpt</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="ClosedCustomerBuybackSelectionCriteria.cs">
       <SubType>Form</SubType>
@@ -1681,12 +1543,6 @@
     <Compile Include="ClosedPaidInFullReport.Designer.cs">
       <DependentUpon>ClosedPaidInFullReport.cs</DependentUpon>
     </Compile>
-    <Compile Include="ClosedPaidInFullReport1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ClosedPaidInFullReport.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="ClosedDelinquencyReports.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1698,12 +1554,6 @@
     </Compile>
     <Compile Include="ClosedChargesAppliedtoDealerReport.Designer.cs">
       <DependentUpon>ClosedChargesAppliedtoDealerReport.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ClosedMonthEndBalanceReport.cs">
-      <DependentUpon>ClosedMonthEndBalanceReport.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="ClosedCustomerTierSummary.cs">
       <SubType>Form</SubType>
@@ -1738,12 +1588,6 @@
     <Compile Include="RepoReport.Designer.cs">
       <DependentUpon>RepoReport.cs</DependentUpon>
     </Compile>
-    <Compile Include="ShortBalanceReport.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ShortBalanceReport.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="CustomerMissingTitleReport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1755,18 +1599,6 @@
     </Compile>
     <Compile Include="CustomerRepossessionReport.Designer.cs">
       <DependentUpon>CustomerRepossessionReport.cs</DependentUpon>
-    </Compile>
-    <Compile Include="VehicleMissingTitleReport.cs">
-      <DependentUpon>VehicleMissingTitleReport.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="VehicleRepossessionReport.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>VehicleRepossessionReport.rpt</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Fix211Data.cs">
       <SubType>Form</SubType>
@@ -1809,18 +1641,6 @@
     </Compile>
     <Compile Include="OpenChargesAppliedtoDealerReport.Designer.cs">
       <DependentUpon>OpenChargesAppliedtoDealerReport.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MonthlyUpdateListing.cs">
-      <DependentUpon>MonthlyUpdateListing.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="TVAmortizationDistribution.cs">
-      <DependentUpon>TVAmortizationDistribution.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Defines.cs" />
     <Compile Include="CalcBuyout.cs">
@@ -1865,20 +1685,8 @@
     <Compile Include="CreateAutobankFiles.Designer.cs">
       <DependentUpon>CreateAutobankFiles.cs</DependentUpon>
     </Compile>
-    <Compile Include="CustomerEFTListing.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CustomerEFTListing.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="OpenCustomerBuybackReport.cs">
       <DependentUpon>OpenCustomerBuybackReport.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="MasterHistory1.cs">
-      <DependentUpon>MasterHistory.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <SubType>Component</SubType>
@@ -1891,12 +1699,6 @@
     </Compile>
     <Compile Include="OpenDealerHistory.cs">
       <DependentUpon>OpenDealerHistory.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="OpenDealerSummary.cs">
-      <DependentUpon>OpenDealerSummary.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <SubType>Component</SubType>
@@ -1916,35 +1718,11 @@
     </Compile>
     <Compile Include="OpenPaymentPosting.cs" />
     <Compile Include="ClosedPaymentPosting.cs" />
-    <Compile Include="ClosedCustomerEditList.cs">
-      <DependentUpon>ClosedCustomerEditList.rpt</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ClosedPaymentBalanceJournal1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ClosedPaymentBalanceJournal.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ClosedPaymentEditList.cs">
-      <DependentUpon>ClosedPaymentEditList.rpt</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="ClosedLateNotices.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ClosedLateNotices.Designer.cs">
       <DependentUpon>ClosedLateNotices.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ClosedCustomerLateChargeListing.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ClosedCustomerLateChargeListing.rpt</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="ClosedDealerContingentPost.cs">
       <SubType>Form</SubType>
@@ -1958,35 +1736,11 @@
     <Compile Include="ClosedMasterContingentPost.Designer.cs">
       <DependentUpon>ClosedMasterContingentPost.cs</DependentUpon>
     </Compile>
-    <Compile Include="ClosedCustomerHistory.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ClosedCustomerHistory.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ClosedContingentEditList.cs">
-      <DependentUpon>ClosedContingentEditList.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ClosedLoanTrialBalance.cs">
-      <DependentUpon>ClosedLoanTrialBalance.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="ClosedMasterContingentMaintenance.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ClosedMasterContingentMaintenance.Designer.cs">
       <DependentUpon>ClosedMasterContingentMaintenance.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Receipt.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Receipt.rpt</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Receipts.cs">
       <SubType>Form</SubType>
@@ -2228,16 +1982,36 @@
       <DependentUpon>AmortDialog.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Amortization.rpt">
+    <EmbeddedResource Include="AutoPaymentRejects.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Amortization.cs</LastGenOutput>
+      <LastGenOutput>AutoPaymentRejects.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="AmortizationDistribution.rpt">
+    <EmbeddedResource Include="ClosedContingentEditList.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>AmortizationDistribution.cs</LastGenOutput>
+      <LastGenOutput>ClosedContingentEditList.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClosedPaymentEditList.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ClosedPaymentEditList.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerEFTListing.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CustomerEFTListing.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="DirectXFormApplyPayments.resx">
       <DependentUpon>DirectXFormApplyPayments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InternetPaymentRejects.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>InternetPaymentRejects.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IVRRejects.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>IVRRejects.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ticket.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Ticket.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="XtraFormClosedPaymentEditor.resx">
       <DependentUpon>XtraFormClosedPaymentEditor.cs</DependentUpon>
@@ -2262,18 +2036,6 @@
     <EmbeddedResource Include="OpenCustomerBuybackSelectionCriteria.resx">
       <DependentUpon>OpenCustomerBuybackSelectionCriteria.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ClosedCustomerEditListDefi.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ClosedCustomerEditListDefi.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ClosedCustomerEditListTCI.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ClosedCustomerEditListTCI.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ClosedCustomerTierSummaryReport.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ClosedCustomerTierSummaryReport.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="ClosedDealerSearchForms.resx">
       <DependentUpon>ClosedDealerSearchForms.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -2283,10 +2045,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ClosedOverPaymentReport.resx">
       <DependentUpon>ClosedOverPaymentReport.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ClosedReceivedContractReport.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ClosedReceivedContractReport.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="CreateTSBExtract.resx">
       <DependentUpon>CreateTSBExtract.cs</DependentUpon>
@@ -2486,19 +2244,11 @@
     <EmbeddedResource Include="XtraReportViewer.resx">
       <DependentUpon>XtraReportViewer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ticket.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Ticket.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormTickets.resx">
       <DependentUpon>FormTickets.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReceivedContractReport.resx">
       <DependentUpon>ReceivedContractReport.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DailyInterestVariance.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>DailyInterestVariance.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="FormDelinquencyPeriods.resx">
       <DependentUpon>FormDelinquencyPeriods.cs</DependentUpon>
@@ -2515,17 +2265,9 @@
     <EmbeddedResource Include="frmImportDefi.resx">
       <DependentUpon>frmImportDefi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PNSRejects.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>PNSRejects.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="PNSImport.resx">
       <DependentUpon>PNSImport.cs</DependentUpon>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MonthlyUpdateDevience.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>MonthlyUpdateDevience.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="OpenFirstPaymentDefaultReport.resx">
       <DependentUpon>OpenFirstPaymentDefaultReport.cs</DependentUpon>
@@ -2537,24 +2279,8 @@
     <EmbeddedResource Include="ClosedPaidInFullPriorToMaturityReport.resx">
       <DependentUpon>ClosedPaidInFullPriorToMaturityReport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ClosedPaidInFullPriorToMaturityReport.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ClosedPaidInFullPriorToMaturityReport1.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="FixPaidThroughs.resx">
       <DependentUpon>FixPaidThroughs.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="IVRRejects.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>IVRRejects.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RepoLog.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>RepoLog.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DefiDuplicates.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>DefiDuplicates.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="VSIExtract.resx">
       <DependentUpon>VSIExtract.cs</DependentUpon>
@@ -2562,27 +2288,11 @@
     <EmbeddedResource Include="IVRImport.resx">
       <DependentUpon>IVRImport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ClosedPaidInAdvance.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ClosedPaidInAdvance.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="ClosedPayedInAdvance.resx">
       <DependentUpon>ClosedPayedInAdvance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ClosedFirstPaymentDefaultReport.resx">
       <DependentUpon>ClosedFirstPaymentDefaultReport.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ClosedFirstPaymentDefault.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ClosedFirstPaymentDefault.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ClosedCustomerDelinquencyRepoReport.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ClosedCustomerDelinquencyRepoReport.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ClosedCustomerDelinquencyCOL.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ClosedCustomerDelinquencyCOL.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="FormBulkSMSMessage.resx">
       <DependentUpon>FormBulkSMSMessage.cs</DependentUpon>
@@ -2590,73 +2300,22 @@
     <EmbeddedResource Include="FormSMSMessage.resx">
       <DependentUpon>FormSMSMessage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PaymentTypeSummary.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>PaymentTypeSummary.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="SelectTemplate.resx">
       <DependentUpon>SelectTemplate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormValidateCellPhones.resx">
       <DependentUpon>FormValidateCellPhones.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmImportTCI.resx">
-      <DependentUpon>frmImportTCI.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TCIDuplicates.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>TCIDuplicates.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="InternetPaymentRejects.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>InternetPaymentRejects.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AutoPaymentRejects.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>AutoPaymentRejects.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ClosedCustomerDelinquency.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ClosedCustomerDelinquency.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ClosedCustomerDelinquencySummary.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ClosedCustomerDelinquencySummary.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="OpenCustomerDelinquencySummary.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>OpenCustomerDelinquencySummary.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ClosedCustomerDelinquencySummaryCOL.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ClosedCustomerDelinquencySummaryCOL.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ClosedCustomerEditList.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ClosedCustomerEditList.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="ClosedDealerContingentMaintenance.resx">
       <DependentUpon>ClosedDealerContingentMaintenance.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="ClosedDealerHistory.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ClosedDealerHistory.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ClosedPaymentBalanceJournal.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ClosedPaymentBalanceJournal1.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ClosedPaymentEditList.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ClosedPaymentEditList.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="ClosedLateNotices.resx">
       <DependentUpon>ClosedLateNotices.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ClosedCustomerLateChargeListing.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ClosedCustomerLateChargeListing.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="ClosedDealerContingentPost.resx">
       <DependentUpon>ClosedDealerContingentPost.cs</DependentUpon>
@@ -2664,24 +2323,8 @@
     <EmbeddedResource Include="ClosedMasterContingentPost.resx">
       <DependentUpon>ClosedMasterContingentPost.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ClosedCustomerHistory.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ClosedCustomerHistory.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ClosedContingentEditList.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ClosedContingentEditList.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ClosedLoanTrialBalance.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ClosedLoanTrialBalance.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="ClosedMasterContingentMaintenance.resx">
       <DependentUpon>ClosedMasterContingentMaintenance.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ClosedDealerSummary.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ClosedDealerSummary.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="ClosedDealerSummaryReport.resx">
       <DependentUpon>ClosedDealerSummaryReport.cs</DependentUpon>
@@ -2689,26 +2332,14 @@
     <EmbeddedResource Include="ClosedTrialBalance.resx">
       <DependentUpon>ClosedTrialBalance.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ClosedChargesAppliedToDealer.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ClosedChargesAppliedToDealer.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="ClosedDealerHistoryReport.resx">
       <DependentUpon>ClosedDealerHistoryReport.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ClosedCustomerBuybackReport.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ClosedCustomerBuybackReport.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="ClosedCustomerBuybackSelectionCriteria.resx">
       <DependentUpon>ClosedCustomerBuybackSelectionCriteria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ClosedPaidInFullReport.resx">
       <DependentUpon>ClosedPaidInFullReport.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ClosedPaidInFullReport.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ClosedPaidInFullReport1.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="ClosedDelinquencyReports.resx">
       <DependentUpon>ClosedDelinquencyReports.cs</DependentUpon>
@@ -2718,10 +2349,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ClosedChargesAppliedtoDealerReport.resx">
       <DependentUpon>ClosedChargesAppliedtoDealerReport.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ClosedMonthEndBalanceReport.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ClosedMonthEndBalanceReport.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="ClosedCustomerTierSummary.resx">
       <DependentUpon>ClosedCustomerTierSummary.cs</DependentUpon>
@@ -2738,23 +2365,11 @@
     <EmbeddedResource Include="RepoReport.resx">
       <DependentUpon>RepoReport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ShortBalanceReport.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ShortBalanceReport.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="CustomerMissingTitleReport.resx">
       <DependentUpon>CustomerMissingTitleReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerRepossessionReport.resx">
       <DependentUpon>CustomerRepossessionReport.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="VehicleMissingTitleReport.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>VehicleMissingTitleReport.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="VehicleRepossessionReport.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>VehicleRepossessionReport.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Fix211Data.resx">
       <DependentUpon>Fix211Data.cs</DependentUpon>
@@ -2779,14 +2394,6 @@
     <EmbeddedResource Include="OpenChargesAppliedtoDealerReport.resx">
       <DependentUpon>OpenChargesAppliedtoDealerReport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MonthlyUpdateListing.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>MonthlyUpdateListing.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TVAmortizationDistribution.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>TVAmortizationDistribution.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="OpenDelinquencyReports.resx">
       <DependentUpon>OpenDelinquencyReports.cs</DependentUpon>
     </EmbeddedResource>
@@ -2806,17 +2413,9 @@
     <EmbeddedResource Include="CreateAutobankFiles.resx">
       <DependentUpon>CreateAutobankFiles.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomerEFTListing.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CustomerEFTListing.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="OpenCustomerBuybackReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>OpenCustomerBuybackReport.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MasterHistory.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>MasterHistory1.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="MasterHistoryReport.resx">
       <DependentUpon>MasterHistoryReport.cs</DependentUpon>
@@ -2825,20 +2424,12 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>OpenDealerHistory.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="OpenDealerSummary.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>OpenDealerSummary.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="PrintNewBusinessStatements.resx">
       <DependentUpon>PrintNewBusinessStatements.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OpenCustomerLateChargeListing.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>OpenCustomerLateChargeListing.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Receipt.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Receipt.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Receipts.resx">
       <DependentUpon>Receipts.cs</DependentUpon>

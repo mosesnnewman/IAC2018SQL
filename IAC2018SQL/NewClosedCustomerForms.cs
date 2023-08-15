@@ -3501,8 +3501,6 @@ namespace IAC2021SQL
                     report.Parameters["APR"].Value = iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_ANNUAL_PERCENTAGE_RATE") / 100;
                     report.Parameters["EffectiveAnnualRate"].Value = Math.Round(Math.Pow((1 + ((Double)(iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_ANNUAL_PERCENTAGE_RATE") / 100) / 12)), 12), 8) - 1;
                     report.Parameters["Term"].Value = iACDataSet.CUSTOMER.Rows[0].Field<Int32>("CUSTOMER_TERM");
-                    report.Parameters["AmountBorrowed"].Value = iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_LOAN_CASH");
-                    report.Parameters["TotalInterest"].Value = iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_LOAN_INTEREST");
                     report.Parameters["FirstPaymentDate"].Value = iACDataSet.CUSTOMER.Rows[0].Field<DateTime>("CUSTOMER_INIT_DATE");
                     report.Parameters["gsUserID"].Value = Program.gsUserID;
                     report.Parameters["gsUserName"].Value = Program.gsUserName;
@@ -3551,8 +3549,8 @@ namespace IAC2021SQL
                     var reportA = new XtraReportTVAmortizationDistribution();
                     SqlDataSource dsA = reportA.DataSource as SqlDataSource;
 
-                    dsA.Queries[0].Parameters[0].Value = iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO");
-                    dsA.Queries[1].Parameters[0].Value = iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO");
+                    //dsA.Queries[0].Parameters[0].Value = iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO");
+                    //dsA.Queries[1].Parameters[0].Value = iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO");
 
                     reportA.DataSource = dsA;
                     reportA.RequestParameters = false;
@@ -3563,8 +3561,6 @@ namespace IAC2021SQL
                     reportA.Parameters["APR"].Value = iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_ANNUAL_PERCENTAGE_RATE") / 100;
                     reportA.Parameters["EffectiveAnnualRate"].Value = Math.Round(Math.Pow((1 + ((Double)(iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_ANNUAL_PERCENTAGE_RATE") / 100) / 12)), 12), 8) - 1;
                     reportA.Parameters["Term"].Value = iACDataSet.CUSTOMER.Rows[0].Field<Int32>("CUSTOMER_TERM");
-                    reportA.Parameters["AmountBorrowed"].Value = iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_LOAN_CASH");
-                    reportA.Parameters["TotalInterest"].Value = iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_LOAN_INTEREST");
                     reportA.Parameters["FirstPaymentDate"].Value = iACDataSet.CUSTOMER.Rows[0].Field<DateTime>("ContractDate");
                     reportA.Parameters["gsUserID"].Value = Program.gsUserID;
                     reportA.Parameters["gsUserName"].Value = Program.gsUserName;

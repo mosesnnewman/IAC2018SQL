@@ -153,6 +153,8 @@ namespace IAC2021SQL
 
         private void gridViewInvoices_CustomSummaryCalculate(object sender, CustomSummaryEventArgs e)
         {
+            if (PaymentbindingSource.Position > ClosedPaymentiacDataSet.PAYMENT.Rows.Count)
+                return;
             GridView view = sender as GridView;
             // Get the summary ID. 
             int summaryID = Convert.ToInt32((e.Item as GridSummaryItem).Tag);
