@@ -670,6 +670,15 @@ namespace IAC2021SQL
             PAYMENTDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].SetField<String>("CUSTHIST_PAID_THRU", PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_PAID_THRU"));
             // Moses Newman 11/29/2014 start saving partial payment to customer history from now on!
             PAYMENTDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].SetField<Decimal>("PartialPayment", PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("PartialPayment"));
+            // Moses Newman 08/08/2023
+            if(PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<Int32?>("PNSRef") != null)
+                PAYMENTDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].SetField<Int32>("PNSRef", PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<Int32>("PNSRef"));
+            if (PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<String>("PNSPayMethod") != null)
+                PAYMENTDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].SetField<String>("PNSPayMethod", PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<String>("PNSPayMethod"));
+            if (PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<String>("PNSService") != null)
+                PAYMENTDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].SetField<String>("PNSService", PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<String>("PNSService"));
+            if (PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<DateTime?>("PNSTransactionDate") != null)
+                PAYMENTDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].SetField<DateTime>("PNSTransactionDate", PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<DateTime>("PNSTransactionDate"));
         }
 
         void MovePaymenttoCustomer(int PaymentPos, int CustomerPos, ref IACDataSet PAYMENTDataSet, ref BackgroundWorker worker)

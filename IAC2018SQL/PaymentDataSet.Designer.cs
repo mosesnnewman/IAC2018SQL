@@ -2247,6 +2247,8 @@ namespace IAC2021SQL {
             
             private global::System.Data.DataColumn columnUNCBasePath;
             
+            private global::System.Data.DataColumn columnIsDone;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public PNSIMPORTParamsDataTable() {
@@ -2314,6 +2316,14 @@ namespace IAC2021SQL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn IsDoneColumn {
+                get {
+                    return this.columnIsDone;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2349,13 +2359,14 @@ namespace IAC2021SQL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public PNSIMPORTParamsRow AddPNSIMPORTParamsRow(string ConnString, string PNSXLSFileName, string UNCBasePath) {
+            public PNSIMPORTParamsRow AddPNSIMPORTParamsRow(string ConnString, string PNSXLSFileName, string UNCBasePath, bool IsDone) {
                 PNSIMPORTParamsRow rowPNSIMPORTParamsRow = ((PNSIMPORTParamsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         ConnString,
                         PNSXLSFileName,
-                        UNCBasePath};
+                        UNCBasePath,
+                        IsDone};
                 rowPNSIMPORTParamsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowPNSIMPORTParamsRow);
                 return rowPNSIMPORTParamsRow;
@@ -2382,6 +2393,7 @@ namespace IAC2021SQL {
                 this.columnConnString = base.Columns["ConnString"];
                 this.columnPNSXLSFileName = base.Columns["PNSXLSFileName"];
                 this.columnUNCBasePath = base.Columns["UNCBasePath"];
+                this.columnIsDone = base.Columns["IsDone"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2395,6 +2407,8 @@ namespace IAC2021SQL {
                 base.Columns.Add(this.columnPNSXLSFileName);
                 this.columnUNCBasePath = new global::System.Data.DataColumn("UNCBasePath", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnUNCBasePath);
+                this.columnIsDone = new global::System.Data.DataColumn("IsDone", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIsDone);
                 this.columnid.AutoIncrement = true;
                 this.columnid.AutoIncrementSeed = -1;
                 this.columnid.AutoIncrementStep = -1;
@@ -2403,6 +2417,7 @@ namespace IAC2021SQL {
                 this.columnConnString.MaxLength = 255;
                 this.columnPNSXLSFileName.MaxLength = 255;
                 this.columnUNCBasePath.MaxLength = 255;
+                this.columnIsDone.DefaultValue = ((bool)(false));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10905,6 +10920,22 @@ namespace IAC2021SQL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsDone {
+                get {
+                    try {
+                        return ((bool)(this[this.tablePNSIMPORTParams.IsDoneColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'IsDone\' in table \'PNSIMPORTParams\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablePNSIMPORTParams.IsDoneColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsConnStringNull() {
                 return this.IsNull(this.tablePNSIMPORTParams.ConnStringColumn);
             }
@@ -10937,6 +10968,18 @@ namespace IAC2021SQL {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetUNCBasePathNull() {
                 this[this.tablePNSIMPORTParams.UNCBasePathColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsIsDoneNull() {
+                return this.IsNull(this.tablePNSIMPORTParams.IsDoneColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetIsDoneNull() {
+                this[this.tablePNSIMPORTParams.IsDoneColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -21524,6 +21567,7 @@ namespace IAC2021SQL.PaymentDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("ConnString", "ConnString");
             tableMapping.ColumnMappings.Add("PNSXLSFileName", "PNSXLSFileName");
             tableMapping.ColumnMappings.Add("UNCBasePath", "UNCBasePath");
+            tableMapping.ColumnMappings.Add("IsDone", "IsDone");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -21539,6 +21583,7 @@ namespace IAC2021SQL.PaymentDataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ConnString", global::System.Data.SqlDbType.VarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "ConnString", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PNSXLSFileName", global::System.Data.SqlDbType.VarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "PNSXLSFileName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UNCBasePath", global::System.Data.SqlDbType.VarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "UNCBasePath", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsDone", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 1, 0, "IsDone", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = "dbo.PNSIMPORTParamsUpdate";
@@ -21548,6 +21593,7 @@ namespace IAC2021SQL.PaymentDataSetTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ConnString", global::System.Data.SqlDbType.VarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "ConnString", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PNSXLSFileName", global::System.Data.SqlDbType.VarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "PNSXLSFileName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UNCBasePath", global::System.Data.SqlDbType.VarChar, 255, global::System.Data.ParameterDirection.Input, 0, 0, "UNCBasePath", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsDone", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 1, 0, "IsDone", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -21560,7 +21606,7 @@ namespace IAC2021SQL.PaymentDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "dbo.PNSIMPORTParamsSelect";
@@ -21572,6 +21618,11 @@ namespace IAC2021SQL.PaymentDataSetTableAdapters {
             this._commandCollection[1].CommandText = "dbo.PNSIMPORTParamsDeleteAll";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "dbo.PNSIMPORTParamsGetIsDone";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -21670,7 +21721,7 @@ namespace IAC2021SQL.PaymentDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string ConnString, string PNSXLSFileName, string UNCBasePath) {
+        public virtual int Insert(string ConnString, string PNSXLSFileName, string UNCBasePath, global::System.Nullable<bool> IsDone) {
             if ((ConnString == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
@@ -21688,6 +21739,12 @@ namespace IAC2021SQL.PaymentDataSetTableAdapters {
             }
             else {
                 this.Adapter.InsertCommand.Parameters[3].Value = ((string)(UNCBasePath));
+            }
+            if ((IsDone.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((bool)(IsDone.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -21709,7 +21766,7 @@ namespace IAC2021SQL.PaymentDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<int> id, string ConnString, string PNSXLSFileName, string UNCBasePath) {
+        public virtual int Update(global::System.Nullable<int> id, string ConnString, string PNSXLSFileName, string UNCBasePath, global::System.Nullable<bool> IsDone) {
             if ((id.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(id.Value));
             }
@@ -21733,6 +21790,12 @@ namespace IAC2021SQL.PaymentDataSetTableAdapters {
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(UNCBasePath));
+            }
+            if ((IsDone.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((bool)(IsDone.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -21770,6 +21833,34 @@ namespace IAC2021SQL.PaymentDataSetTableAdapters {
                 }
             }
             return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual object IsDone() {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return null;
+            }
+            else {
+                return ((object)(returnValue));
+            }
         }
     }
     

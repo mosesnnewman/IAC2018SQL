@@ -13,6 +13,7 @@ using System.Windows.Forms;
 using Microsoft.VisualBasic.FileIO;
 using DevExpress;
 using DevExpress.XtraEditors;
+using System.Threading;
 
 
 // Moses Newman 10/19/2018 Changed SQL to SQL-IAC server.
@@ -104,7 +105,16 @@ namespace IAC2021SQL
             jobParameter.Value = tsJobName;
 
             jobConnection.Open();
-            jobCommand.ExecuteNonQuery();
+            try
+            {
+                jobCommand.ExecuteNonQuery();
+            }
+            // Moses Newman 08/08/2023
+            catch (Microsoft.Data.SqlClient.SqlException ex) 
+            {
+                Thread.Sleep(5000);
+                jobCommand.ExecuteNonQuery();
+            }
             jobResult = (Int32)jobCommand.Parameters["@RETURN_VALUE"].Value;
             jobConnection.Close();
 

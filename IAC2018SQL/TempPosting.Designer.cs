@@ -4306,6 +4306,14 @@ namespace IAC2021SQL {
             
             private global::System.Data.DataColumn columnTicketDetailID;
             
+            private global::System.Data.DataColumn columnPNSRef;
+            
+            private global::System.Data.DataColumn columnPNSPayMethod;
+            
+            private global::System.Data.DataColumn columnPNSService;
+            
+            private global::System.Data.DataColumn columnPNSTransactionDate;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public tempPAYMENTDataTable() {
@@ -4581,6 +4589,38 @@ namespace IAC2021SQL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn PNSRefColumn {
+                get {
+                    return this.columnPNSRef;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn PNSPayMethodColumn {
+                get {
+                    return this.columnPNSPayMethod;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn PNSServiceColumn {
+                get {
+                    return this.columnPNSService;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn PNSTransactionDateColumn {
+                get {
+                    return this.columnPNSTransactionDate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -4646,7 +4686,11 @@ namespace IAC2021SQL {
                         string ISFPaymentCode, 
                         int ISFID, 
                         int TicketID, 
-                        int TicketDetailID) {
+                        int TicketDetailID, 
+                        int PNSRef, 
+                        string PNSPayMethod, 
+                        string PNSService, 
+                        System.DateTime PNSTransactionDate) {
                 tempPAYMENTRow rowtempPAYMENTRow = ((tempPAYMENTRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         PAYMENT_CUSTOMER,
@@ -4678,7 +4722,11 @@ namespace IAC2021SQL {
                         ISFPaymentCode,
                         ISFID,
                         TicketID,
-                        TicketDetailID};
+                        TicketDetailID,
+                        PNSRef,
+                        PNSPayMethod,
+                        PNSService,
+                        PNSTransactionDate};
                 rowtempPAYMENTRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowtempPAYMENTRow);
                 return rowtempPAYMENTRow;
@@ -4740,6 +4788,10 @@ namespace IAC2021SQL {
                 this.columnISFID = base.Columns["ISFID"];
                 this.columnTicketID = base.Columns["TicketID"];
                 this.columnTicketDetailID = base.Columns["TicketDetailID"];
+                this.columnPNSRef = base.Columns["PNSRef"];
+                this.columnPNSPayMethod = base.Columns["PNSPayMethod"];
+                this.columnPNSService = base.Columns["PNSService"];
+                this.columnPNSTransactionDate = base.Columns["PNSTransactionDate"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4805,6 +4857,14 @@ namespace IAC2021SQL {
                 base.Columns.Add(this.columnTicketID);
                 this.columnTicketDetailID = new global::System.Data.DataColumn("TicketDetailID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTicketDetailID);
+                this.columnPNSRef = new global::System.Data.DataColumn("PNSRef", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPNSRef);
+                this.columnPNSPayMethod = new global::System.Data.DataColumn("PNSPayMethod", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPNSPayMethod);
+                this.columnPNSService = new global::System.Data.DataColumn("PNSService", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPNSService);
+                this.columnPNSTransactionDate = new global::System.Data.DataColumn("PNSTransactionDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPNSTransactionDate);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnPAYMENT_CUSTOMER,
                                 this.columnPAYMENT_DATE,
@@ -4824,6 +4884,8 @@ namespace IAC2021SQL {
                 this.columnSeqNo.AllowDBNull = false;
                 this.columnISFPaymentType.MaxLength = 1;
                 this.columnISFPaymentCode.MaxLength = 1;
+                this.columnPNSPayMethod.MaxLength = 4;
+                this.columnPNSService.MaxLength = 10;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -11535,6 +11597,70 @@ namespace IAC2021SQL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int PNSRef {
+                get {
+                    try {
+                        return ((int)(this[this.tabletempPAYMENT.PNSRefColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PNSRef\' in table \'tempPAYMENT\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletempPAYMENT.PNSRefColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string PNSPayMethod {
+                get {
+                    try {
+                        return ((string)(this[this.tabletempPAYMENT.PNSPayMethodColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PNSPayMethod\' in table \'tempPAYMENT\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletempPAYMENT.PNSPayMethodColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string PNSService {
+                get {
+                    try {
+                        return ((string)(this[this.tabletempPAYMENT.PNSServiceColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PNSService\' in table \'tempPAYMENT\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletempPAYMENT.PNSServiceColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public System.DateTime PNSTransactionDate {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tabletempPAYMENT.PNSTransactionDateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PNSTransactionDate\' in table \'tempPAYMENT\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletempPAYMENT.PNSTransactionDateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsPAYMENT_ADD_ONNull() {
                 return this.IsNull(this.tabletempPAYMENT.PAYMENT_ADD_ONColumn);
             }
@@ -11855,6 +11981,54 @@ namespace IAC2021SQL {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetTicketDetailIDNull() {
                 this[this.tabletempPAYMENT.TicketDetailIDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsPNSRefNull() {
+                return this.IsNull(this.tabletempPAYMENT.PNSRefColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetPNSRefNull() {
+                this[this.tabletempPAYMENT.PNSRefColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsPNSPayMethodNull() {
+                return this.IsNull(this.tabletempPAYMENT.PNSPayMethodColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetPNSPayMethodNull() {
+                this[this.tabletempPAYMENT.PNSPayMethodColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsPNSServiceNull() {
+                return this.IsNull(this.tabletempPAYMENT.PNSServiceColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetPNSServiceNull() {
+                this[this.tabletempPAYMENT.PNSServiceColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsPNSTransactionDateNull() {
+                return this.IsNull(this.tabletempPAYMENT.PNSTransactionDateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetPNSTransactionDateNull() {
+                this[this.tabletempPAYMENT.PNSTransactionDateColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -14544,6 +14718,10 @@ namespace IAC2021SQL.TempPostingTableAdapters {
             tableMapping.ColumnMappings.Add("ISFID", "ISFID");
             tableMapping.ColumnMappings.Add("TicketID", "TicketID");
             tableMapping.ColumnMappings.Add("TicketDetailID", "TicketDetailID");
+            tableMapping.ColumnMappings.Add("PNSRef", "PNSRef");
+            tableMapping.ColumnMappings.Add("PNSPayMethod", "PNSPayMethod");
+            tableMapping.ColumnMappings.Add("PNSService", "PNSService");
+            tableMapping.ColumnMappings.Add("PNSTransactionDate", "PNSTransactionDate");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
@@ -14580,6 +14758,10 @@ namespace IAC2021SQL.TempPostingTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ISFID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, "ISFID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TicketID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, "TicketID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TicketDetailID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, "TicketDetailID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PNSRef", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, "PNSRef", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PNSPayMethod", global::System.Data.SqlDbType.VarChar, 4, global::System.Data.ParameterDirection.Input, 0, 0, "PNSPayMethod", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PNSService", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "PNSService", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PNSTransactionDate", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, "PNSTransactionDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -14692,7 +14874,11 @@ namespace IAC2021SQL.TempPostingTableAdapters {
                     string ISFPaymentCode, 
                     global::System.Nullable<int> ISFID, 
                     global::System.Nullable<int> TicketID, 
-                    global::System.Nullable<int> TicketDetailID) {
+                    global::System.Nullable<int> TicketDetailID, 
+                    global::System.Nullable<int> PNSRef, 
+                    string PNSPayMethod, 
+                    string PNSService, 
+                    global::System.Nullable<global::System.DateTime> PNSTransactionDate) {
             if ((PAYMENT_CUSTOMER == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
@@ -14872,6 +15058,30 @@ namespace IAC2021SQL.TempPostingTableAdapters {
             }
             else {
                 this.Adapter.InsertCommand.Parameters[30].Value = global::System.DBNull.Value;
+            }
+            if ((PNSRef.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[31].Value = ((int)(PNSRef.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[31].Value = global::System.DBNull.Value;
+            }
+            if ((PNSPayMethod == null)) {
+                this.Adapter.InsertCommand.Parameters[32].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[32].Value = ((string)(PNSPayMethod));
+            }
+            if ((PNSService == null)) {
+                this.Adapter.InsertCommand.Parameters[33].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[33].Value = ((string)(PNSService));
+            }
+            if ((PNSTransactionDate.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[34].Value = ((System.DateTime)(PNSTransactionDate.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[34].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
