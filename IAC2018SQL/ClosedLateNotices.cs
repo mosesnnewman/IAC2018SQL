@@ -480,11 +480,14 @@ namespace IAC2021SQL
         {
             PaymentDataSetTableAdapters.PaymentHistoryTableAdapter paymentHistoryTableAdapter = new PaymentHistoryTableAdapter();
             IACDataSetTableAdapters.CUSTHISTTableAdapter CUSTHISTTableAdapter = new IACDataSetTableAdapters.CUSTHISTTableAdapter();
+            PaymentDataSetTableAdapters.InvoicesTableAdapter invoicesTableAdapter = new InvoicesTableAdapter();
             BindingSource CUSTHISTBindingSource = new BindingSource();
 
             Int32 lnSeq = 0;
             Object loCustHistSeq = null;
             Decimal lnOldBalance = 0;
+            String TempCust = NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_NO");
+            DateTime ldNow = DateTime.Now.Date;
 
             CUSTHISTBindingSource.DataSource = NoticeiacDataSet.CUSTHIST;
             lnOldBalance = NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_BALANCE");
@@ -492,7 +495,7 @@ namespace IAC2021SQL
             CUSTHISTBindingSource.EndEdit();
             NoticeiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].SetField<String>("CUSTHIST_NO", NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_NO"));
             NoticeiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].SetField<String>("CUSTHIST_ADD_ON", NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_ADD_ON"));
-            NoticeiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].SetField<DateTime>("CUSTHIST_PAY_DATE", DateTime.Now.Date);
+            NoticeiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].SetField<DateTime>("CUSTHIST_PAY_DATE", ldNow);
             // Moses Newman 03/15/2018 Added TransactionDate, Fee, FromIVR
             NoticeiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].SetField<DateTime>("TransactionDate", DateTime.Now.Date);
             NoticeiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].SetField<Decimal>("Fee", 0);
@@ -501,7 +504,7 @@ namespace IAC2021SQL
             NoticeiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].SetField<Decimal>("CUSTHIST_LATE_CHARGE", lnLateCharge);
             // Moses Newman 09/30/2103 accumulate total late charges for creating two seperate MASTHIST 211 records one with late charges and one with interest;
             gnTotalLateCharge += lnLateCharge;
-            loCustHistSeq = CUSTHISTTableAdapter.SeqNoQuery(NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_NO"), DateTime.Now.Date);
+            loCustHistSeq = CUSTHISTTableAdapter.SeqNoQuery(NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_NO"), ldNow);
             if (loCustHistSeq != null)
                 lnSeq = (int)loCustHistSeq + 1;
             else
@@ -523,10 +526,19 @@ namespace IAC2021SQL
             CUSTHISTTableAdapter.Update(NoticeiacDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position]);
             NoticeiacDataSet.CUSTHIST.AcceptChanges();
             // Moses Newman 07/24/2023 Create New Late Fee Invoice
-            Program.CreateNewInvoice(NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<Int32>("CustomerID"), lnLateCharge);
+            invoicesTableAdapter.Insert(NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<Int32>("CustomerID"),
+                                        ldNow,
+                                        DateTime.Now.Date,
+                                        ldNow, 
+                                        0,
+                                        "Late Fee",
+                                        lnLateCharge, 
+                                        0, 
+                                        lnLateCharge,
+                                        false);
             // Moses Newman 09/27/2013 Get REAL CUSTOMER_BALANCE AND CUSTOMER_BUYOUT from TimeValue
             NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].SetField<Decimal>("CUSTOMER_BALANCE", Program.TVSimpleGetBuyout(NoticeiacDataSet,
-                           DateTime.Now.Date,
+                           ldNow,
                            (Double)NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<Int32>("CUSTOMER_TERM"),
                            (Double)(NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_ANNUAL_PERCENTAGE_RATE") / 100),
                            (Double)NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_REGULAR_AMOUNT"),
@@ -534,7 +546,7 @@ namespace IAC2021SQL
                            // Moses Newman 04/30/2017 Handle Normal Amortization and Simple Interest US Rule.
                            NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_AMORTIZE_IND") == "S" ? true:false, true, false, false, -1, true));
             NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].SetField<Decimal>("CUSTOMER_BUYOUT", Program.TVSimpleGetBuyout(NoticeiacDataSet,
-                                            DateTime.Now.Date,
+                                            ldNow,
                                             (Double)NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<Int32>("CUSTOMER_TERM"),
                                             (Double)(NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_ANNUAL_PERCENTAGE_RATE") / 100),
                                             (Double)NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_REGULAR_AMOUNT"),

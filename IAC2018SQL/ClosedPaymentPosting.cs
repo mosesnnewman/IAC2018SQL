@@ -1845,6 +1845,7 @@ namespace IAC2021SQL
                 loContractStatus = invoicesTableAdapter.ContractStatus(DT.CUSTOMER.Rows[CustPos].Field<Int32>("CustomerID"), DT.PAYMENT.Rows[tnPaymentPos].Field<DateTime>("PAYMENT_DATE").Date);
             else
                 loContractStatus = invoicesTableAdapter.ContractStatus(DT.CUSTOMER.Rows[CustPos].Field<Int32>("CustomerID"), DateTime.Now.Date);
+            lnContractStatus = loContractStatus != null ? (Decimal)loContractStatus : 0;
             DT.CUSTOMER.Rows[CustPos].SetField<Decimal>("PartialPayment", lnPartialPayment);
             DT.CUSTOMER.Rows[CustPos].SetField<Double>("CUSTOMER_PARTIAL_PAYMENTS", (Double)(DT.CUSTOMER.Rows[CustPos].Field<Decimal>("PartialPayment") / DT.CUSTOMER.Rows[CustPos].Field<Decimal>("CUSTOMER_REGULAR_AMOUNT")));
             DT.CUSTOMER.Rows[CustPos].SetField<Decimal>("CUSTOMER_LATE_CHARGE", lnLateCharge);
