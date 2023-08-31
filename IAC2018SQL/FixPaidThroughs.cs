@@ -29,20 +29,20 @@ namespace IAC2021SQL
             IACDataSetTableAdapters.CUSTOMERTableAdapter CUSTOMERTableAdapter = new IACDataSetTableAdapters.CUSTOMERTableAdapter();
             IACDataSetTableAdapters.CUSTHISTTableAdapter CUSTHISTTableAdapter = new IACDataSetTableAdapters.CUSTHISTTableAdapter();
 
-            CUSTOMERTableAdapter.Fill(DT.CUSTOMER, cUSTOMER_NOTextBox.Text.Trim());
-            //CUSTOMERTableAdapter.FillByAll(DT.CUSTOMER);
+            //CUSTOMERTableAdapter.Fill(DT.CUSTOMER, cUSTOMER_NOTextBox.Text.Trim());
+            CUSTOMERTableAdapter.FillByAllPosted(DT.CUSTOMER);
             label1.Text = "Fixing Paid Throughs, Number of Payments, Statuses etc.";
             label1.Refresh();
             for (int i = 0; i < DT.CUSTOMER.Rows.Count; i++)
             {
-                //if (DT.CUSTOMER.Rows[i].Field<Nullable<DateTime>>("CUSTOMER_LAST_PAYMENT_DATE") != null)
-                    //ldDate = DT.CUSTOMER.Rows[i].Field<DateTime>("CUSTOMER_LAST_PAYMENT_DATE");
-                //else
-                ldDate = DateTime.Now.Date;
+                if (DT.CUSTOMER.Rows[i].Field<Nullable<DateTime>>("CUSTOMER_LAST_PAYMENT_DATE") != null)
+                    ldDate = DT.CUSTOMER.Rows[i].Field<DateTime>("CUSTOMER_LAST_PAYMENT_DATE");
+                else
+                    ldDate = DateTime.Now.Date;
                 label1.Text = "CREATING AMORT TABLES WORKING ON: CUSTOMER NUMBER: " + DT.CUSTOMER.Rows[i].Field<String>("CUSTOMER_NO") + " " + (i + 1).ToString() + " OF " + DT.CUSTOMER.Rows.Count.ToString();
                 label1.Refresh();
    
-                lnSimpBal = Program.TVSimpleGetBuyout(DT, DateTime.Now.Date,
+                lnSimpBal = Program.TVSimpleGetBuyout(DT, ldDate,
                   (Double)DT.CUSTOMER.Rows[i].Field<Int32>("CUSTOMER_TERM"),
                   (Double)(DT.CUSTOMER.Rows[i].Field<Decimal>("CUSTOMER_ANNUAL_PERCENTAGE_RATE") / 100),
                   (Double)DT.CUSTOMER.Rows[i].Field<Decimal>("CUSTOMER_REGULAR_AMOUNT"),

@@ -3423,9 +3423,9 @@ namespace IAC2021SQL
 
             List<String> NegAdjList = new List<String>
             {
-                "AW",
-                "WH",
-                "WC"
+                "AW" //,
+                //"WH",
+                //"WC"
             };
             // Moses Newman 07/16/2023 don"t process payments that don"t effect paid through or late fee balances or partials
             if (NegAdjList.Contains(PayCode) || !IncludeTypes.Contains(PaymentType) || (PDS.PaymentHistory.Rows[0].Field<String>("Type") == "A" && lnUnusedFunds < 0 &&
@@ -3436,6 +3436,8 @@ namespace IAC2021SQL
 				switch (PayCode)
 				{
 					case "WL":
+					case "WC":
+					case "WH":
 						break;
 					default:
 						if (lnBalance < 0)

@@ -1075,9 +1075,11 @@ namespace IAC2021SQL
                         excelWorkSheet.Cells[i, 1].Value = "Totals DLR# " + excelWorkSheet.Cells[i - 1, 7].Text;
                         excelWorkSheet.Cells[i, 3].Value = Convert.ToDecimal(excelWorkSheet.Cells[i + 1, 3].Value);
                         if (excelWorkSheet.Cells[i - 1, 2].Value == "C")
-                            TotalClosedLoans += excelWorkSheet.Cells[i + 1, 3].Value;
+                            // Moses Newman 08/22/2023
+                            TotalClosedLoans += excelWorkSheet.Cells[i + 1, 3].Value is null ? 0:excelWorkSheet.Cells[i + 1, 3].Value;
                         else
-                            TotalOpenLoans += excelWorkSheet.Cells[i + 1, 3].Value;   
+                            // Moses Newman 08/22/2023
+                            TotalOpenLoans += excelWorkSheet.Cells[i + 1, 3].Value is null ? 0 : excelWorkSheet.Cells[i + 1, 3].Value;   
                         excelWorkSheet.Cells[i + 1, 3].Value = "";
                         excelWorkSheet.Cells[i + 1, 7].Value = "";
                         excelWorkSheet.Cells[i, 3].Font.FontStyle = "Bold";

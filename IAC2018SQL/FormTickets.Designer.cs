@@ -33,7 +33,6 @@ namespace IAC2021SQL
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTickets));
             this.textBoxName = new DevExpress.XtraEditors.TextEdit();
             this.cUSTOMERBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.productionMainTables = new IAC2021SQL.ProductionMainTables();
             this.textBoxMiddleInitial = new DevExpress.XtraEditors.TextEdit();
             this.textBoxLastName = new DevExpress.XtraEditors.TextEdit();
             this.labelName = new System.Windows.Forms.Label();
@@ -55,8 +54,8 @@ namespace IAC2021SQL
             this.buttonAdd = new DevExpress.XtraEditors.SimpleButton();
             this.bindingSourceTicketDetail = new System.Windows.Forms.BindingSource(this.components);
             this.ticketsdataset = new IAC2021SQL.Tickets();
-            this.cUSTOMERTableAdapter = new IAC2021SQL.ProductionMainTablesTableAdapters.CUSTOMERTableAdapter();
-            this.dEALERTableAdapter = new IAC2021SQL.ProductionMainTablesTableAdapters.DEALERTableAdapter();
+            this.cUSTOMERTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.CUSTOMERTableAdapter();
+            this.dEALERTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.DEALERTableAdapter();
             this.bindingSourceTicketHeader = new System.Windows.Forms.BindingSource(this.components);
             this.labelExplanation = new System.Windows.Forms.Label();
             this.labelDate = new System.Windows.Forms.Label();
@@ -83,7 +82,7 @@ namespace IAC2021SQL
             this.colSubDealer = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemLookUpEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.lookupDEALERBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.lookupDataSet = new IAC2021SQL.ProductionMainTables();
+            this.lookupDataSet = new IAC2021SQL.IACDataSet();
             this.colDebit = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCredit = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDetailID = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -98,16 +97,16 @@ namespace IAC2021SQL
             this.repositoryItemLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.ticketAccountsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dEALERBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.productionMainTablesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
             this.ticketAccountsTableAdapter = new IAC2021SQL.TicketsTableAdapters.TicketAccountsTableAdapter();
             this.pAYMENTTYPETableAdapter1 = new IAC2021SQL.ListDataTableAdapters.PAYMENTTYPETableAdapter();
             this.pAYCODETableAdapter1 = new IAC2021SQL.ListDataTableAdapters.PAYCODETableAdapter();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.richTextBox1 = new DevExpress.XtraEditors.MemoEdit();
+            this.productionMainTables = new IAC2021SQL.IACDataSet();
+            this.dEALERTableAdapter1 = new IAC2021SQL.ProductionMainTablesTableAdapters.DEALERTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.textBoxName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cUSTOMERBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productionMainTables)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textBoxMiddleInitial.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textBoxLastName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textBoxDealerNumber.Properties)).BeginInit();
@@ -125,8 +124,8 @@ namespace IAC2021SQL
             ((System.ComponentModel.ISupportInitialize)(this.colorTextBoxOutofBalance.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.colorTextBoxCredits.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.colorTextBoxDebits.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.NullableDateTimePickerDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NullableDateTimePickerDate.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NullableDateTimePickerDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit2)).BeginInit();
@@ -140,11 +139,11 @@ namespace IAC2021SQL
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ticketAccountsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dEALERBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productionMainTablesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.richTextBox1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productionMainTables)).BeginInit();
             this.SuspendLayout();
             // 
             // textBoxName
@@ -164,11 +163,6 @@ namespace IAC2021SQL
             // 
             this.cUSTOMERBindingSource.DataMember = "CUSTOMER";
             this.cUSTOMERBindingSource.DataSource = this.productionMainTables;
-            // 
-            // productionMainTables
-            // 
-            this.productionMainTables.DataSetName = "ProductionMainTables";
-            this.productionMainTables.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // textBoxMiddleInitial
             // 
@@ -926,16 +920,6 @@ namespace IAC2021SQL
             this.ticketAccountsBindingSource.DataMember = "TicketAccounts";
             this.ticketAccountsBindingSource.DataSource = this.ticketsdataset;
             // 
-            // dEALERBindingSource
-            // 
-            this.dEALERBindingSource.DataMember = "DEALER";
-            this.dEALERBindingSource.DataSource = this.productionMainTablesBindingSource;
-            // 
-            // productionMainTablesBindingSource
-            // 
-            this.productionMainTablesBindingSource.DataSource = this.productionMainTables;
-            this.productionMainTablesBindingSource.Position = 0;
-            // 
             // ticketAccountsTableAdapter
             // 
             this.ticketAccountsTableAdapter.ClearBeforeFill = true;
@@ -995,6 +979,15 @@ namespace IAC2021SQL
             this.richTextBox1.TabIndex = 18;
             this.richTextBox1.CustomDisplayText += new DevExpress.XtraEditors.Controls.CustomDisplayTextEventHandler(this.richTextBox1_CustomDisplayText);
             // 
+            // productionMainTables
+            // 
+            this.productionMainTables.DataSetName = "IACDataSet";
+            this.productionMainTables.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dEALERTableAdapter1
+            // 
+            this.dEALERTableAdapter1.ClearBeforeFill = true;
+            // 
             // FormTickets
             // 
             this.Appearance.Options.UseFont = true;
@@ -1009,7 +1002,6 @@ namespace IAC2021SQL
             this.Load += new System.EventHandler(this.FormTickets_Load);
             ((System.ComponentModel.ISupportInitialize)(this.textBoxName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cUSTOMERBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productionMainTables)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textBoxMiddleInitial.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textBoxLastName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textBoxDealerNumber.Properties)).EndInit();
@@ -1043,12 +1035,12 @@ namespace IAC2021SQL
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ticketAccountsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dEALERBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productionMainTablesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.richTextBox1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productionMainTables)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1058,13 +1050,12 @@ namespace IAC2021SQL
         private TicketsTableAdapters.TicketHeaderTableAdapter ticketHeaderTableAdapter;
         private System.Windows.Forms.BindingSource bindingSourceTicketDetail;
         private TicketsTableAdapters.TicketDetailTableAdapter ticketDetailTableAdapter;
-        private ProductionMainTables productionMainTables;
         private DevExpress.XtraEditors.TextEdit textBoxName;
         private DevExpress.XtraEditors.TextEdit textBoxMiddleInitial;
         private System.Windows.Forms.BindingSource cUSTOMERBindingSource;
         private DevExpress.XtraEditors.TextEdit textBoxLastName;
         private System.Windows.Forms.Label labelName;
-        private ProductionMainTablesTableAdapters.CUSTOMERTableAdapter cUSTOMERTableAdapter;
+        private IACDataSetTableAdapters.CUSTOMERTableAdapter cUSTOMERTableAdapter;
         private System.Windows.Forms.Label label1;
         private DevExpress.XtraEditors.TextEdit textBoxDealerNumber;
         private DevExpress.XtraEditors.TextEdit textBoxAccount;
@@ -1072,7 +1063,7 @@ namespace IAC2021SQL
         private DevExpress.XtraEditors.TextEdit textBoxDealerName;
         private System.Windows.Forms.GroupBox groupBoxHeader;
         private System.Windows.Forms.BindingSource bindingSourceDealer;
-        private ProductionMainTablesTableAdapters.DEALERTableAdapter dEALERTableAdapter;
+        private IACDataSetTableAdapters.DEALERTableAdapter dEALERTableAdapter;
         private DevExpress.XtraEditors.SimpleButton buttonAdd;
         public Tickets ticketsdataset;
         private System.Windows.Forms.Label labelExplanation;
@@ -1114,9 +1105,8 @@ namespace IAC2021SQL
         private System.Windows.Forms.BindingSource ticketAccountsBindingSource;
         private TicketsTableAdapters.TicketAccountsTableAdapter ticketAccountsTableAdapter;
         private System.Windows.Forms.BindingSource dEALERBindingSource;
-        private System.Windows.Forms.BindingSource productionMainTablesBindingSource;
         private System.Windows.Forms.BindingSource lookupDEALERBindingSource;
-        private ProductionMainTables lookupDataSet;
+        private IACDataSet lookupDataSet;
         private ListData listData;
         private System.Windows.Forms.BindingSource pAYMENTTYPEBindingSource;
         private ListDataTableAdapters.PAYMENTTYPETableAdapter pAYMENTTYPETableAdapter1;
@@ -1128,5 +1118,7 @@ namespace IAC2021SQL
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit repositoryItemLookUpEdit4;
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.MemoEdit richTextBox1;
+        private IACDataSet productionMainTables;
+        private ProductionMainTablesTableAdapters.DEALERTableAdapter dEALERTableAdapter1;
     }
 }
