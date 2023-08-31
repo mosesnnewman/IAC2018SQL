@@ -16,14 +16,13 @@ namespace IAC2021SQL
     public partial class FormTickets : DevExpress.XtraEditors.XtraForm
     {
         private ListData listDataSet = new ListData();
-
-        private ProductionMainTablesTableAdapters.ACCOUNTTableAdapter aCCOUNTTableAdapter = new ProductionMainTablesTableAdapters.ACCOUNTTableAdapter();
+        private IACDataSetTableAdapters.ACCOUNTTableAdapter aCCOUNTTableAdapter = new IACDataSetTableAdapters.ACCOUNTTableAdapter();
 
         private ListDataTableAdapters.PAYCODETableAdapter PAYCODETableAdapter = new ListDataTableAdapters.PAYCODETableAdapter();
         private ListDataTableAdapters.PAYMENTTYPETableAdapter PAYMENTTYPETableAdapter = new ListDataTableAdapters.PAYMENTTYPETableAdapter();
-        private ProductionMainTablesTableAdapters.ULISTTableAdapter ULISTTableAdapter = new ProductionMainTablesTableAdapters.ULISTTableAdapter();
-        private ProductionMainTablesTableAdapters.CONTINGTableAdapter CONTINGTableAdapter = new ProductionMainTablesTableAdapters.CONTINGTableAdapter();
-        private ProductionMainTablesTableAdapters.PAYMENTTableAdapter PAYMENTTableAdapter = new ProductionMainTablesTableAdapters.PAYMENTTableAdapter();
+        private IACDataSetTableAdapters.ULISTTableAdapter ULISTTableAdapter = new IACDataSetTableAdapters.ULISTTableAdapter();
+        private IACDataSetTableAdapters.CONTINGTableAdapter CONTINGTableAdapter = new IACDataSetTableAdapters.CONTINGTableAdapter();
+        private IACDataSetTableAdapters.PAYMENTTableAdapter PAYMENTTableAdapter = new IACDataSetTableAdapters.PAYMENTTableAdapter();
 
         private BindingSource bindingSourcePaymentTypes = new BindingSource();
         private BindingSource bindingSourcePaymentCodes = new BindingSource();
@@ -31,8 +30,8 @@ namespace IAC2021SQL
         private Tickets.TicketHeaderRow NewTicketHeader;
         private Tickets.TicketDetailRow NewTicketDetail;
 
-        private ProductionMainTables.CONTINGRow NewConting;
-        private ProductionMainTables.PAYMENTRow NewPayment;
+        private IACDataSet.CONTINGRow NewConting;
+        private IACDataSet.PAYMENTRow NewPayment;
 
         public String CustomerNo
         {
@@ -57,7 +56,7 @@ namespace IAC2021SQL
             richTextBox1.Enabled = false;
             ticketAccountsTableAdapter.FillByAll(ticketsdataset.TicketAccounts);
             dEALERTableAdapter.FillByAll(lookupDataSet.DEALER);
-            ProductionMainTables.DEALERRow newDealerRow = lookupDataSet.DEALER.NewDEALERRow();
+            IACDataSet.DEALERRow newDealerRow = lookupDataSet.DEALER.NewDEALERRow();
             newDealerRow.id = 0;
             newDealerRow.DEALER_NAME = "";
             newDealerRow.DEALER_CITY = "";

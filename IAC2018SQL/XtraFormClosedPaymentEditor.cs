@@ -246,7 +246,8 @@ namespace IAC2021SQL
         private void textEditExtensionCount_EditValueChanged(object sender, EventArgs e)
         {
             TextEdit textEdit = sender as TextEdit;
-            textEdit.EditValue = textEdit.EditValue.ToString() != "" ? textEdit.EditValue : 0;
+            // Moses Newman 08/29/2023 Handle null values properly!
+            textEdit.EditValue = !String.IsNullOrEmpty(textEdit.EditValue.ToString()) ? textEdit.EditValue : 0;
             if ((Int32)textEdit.EditValue == 0)
                 layoutControlExtensionCount.ContentVisible = false;
             else

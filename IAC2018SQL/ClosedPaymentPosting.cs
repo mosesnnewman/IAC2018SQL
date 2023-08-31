@@ -310,6 +310,7 @@ namespace IAC2021SQL
             // Moses Newman 05/01/2018 ALWAYS use last history balance rather than CUSTOMER_BALANCE because
             // CUSTOMER_BALANCE is changed at the first run of this routine!
             IACDataSetTableAdapters.CUSTHISTTableAdapter CUSTHISTTableAdapter = new IACDataSetTableAdapters.CUSTHISTTableAdapter();
+            String TempCust = PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_NO");
             switch (PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_AMORTIZE_IND"))
             {
                 // Amortization using no compounding US RULE SIMPLE INTEREST
