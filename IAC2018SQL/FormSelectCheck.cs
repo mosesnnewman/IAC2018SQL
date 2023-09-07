@@ -143,10 +143,13 @@ namespace IAC2021SQL
             }
             else
             {
-                if (tsPayType == "I")
-                    _IsNotCheck = false;
-                _DoNotShow = false;
                 String Answer = "No";
+                if (tsPayType == "I")
+                {
+                    Answer = "Yes"; // Moses Newman 09/07/2023 Make sure always shows if Insuficient and no assigned check.
+                    _IsNotCheck = false;
+                }
+                _DoNotShow = false;
                 if (_IsNotCheck)
                 {
                     HtmlTemplateCollection htmlTemplates = new HtmlTemplateCollection();

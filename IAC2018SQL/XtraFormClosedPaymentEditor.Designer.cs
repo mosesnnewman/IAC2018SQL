@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions10 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions4 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(XtraFormClosedPaymentEditor));
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions11 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions12 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions5 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions6 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             this.iacDataSet = new IAC2021SQL.IACDataSet();
             this.bindingSourceCUSTOMER = new System.Windows.Forms.BindingSource(this.components);
             this.bindingSourceDEALER = new System.Windows.Forms.BindingSource(this.components);
@@ -283,13 +283,13 @@
             this.windowsUIButtonPanel1.AppearanceButton.Normal.Options.UseFont = true;
             this.windowsUIButtonPanel1.AppearanceButton.Pressed.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.windowsUIButtonPanel1.AppearanceButton.Pressed.Options.UseFont = true;
-            windowsUIButtonImageOptions10.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions10.Image")));
-            windowsUIButtonImageOptions11.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions11.Image")));
-            windowsUIButtonImageOptions12.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions12.Image")));
+            windowsUIButtonImageOptions4.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions4.Image")));
+            windowsUIButtonImageOptions5.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions5.Image")));
+            windowsUIButtonImageOptions6.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions6.Image")));
             this.windowsUIButtonPanel1.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Search", true, windowsUIButtonImageOptions10, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Save", true, windowsUIButtonImageOptions11, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Close", true, windowsUIButtonImageOptions12, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Search", true, windowsUIButtonImageOptions4, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Save", true, windowsUIButtonImageOptions5, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Close", true, windowsUIButtonImageOptions6, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
             this.windowsUIButtonPanel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.windowsUIButtonPanel1.Location = new System.Drawing.Point(12, 348);
             this.windowsUIButtonPanel1.Name = "windowsUIButtonPanel1";
@@ -334,7 +334,7 @@
             this.textEditAmount.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.textEditAmount.Properties.DisplayFormat.FormatString = "c2";
             this.textEditAmount.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.textEditAmount.Size = new System.Drawing.Size(90, 28);
+            this.textEditAmount.Size = new System.Drawing.Size(110, 28);
             this.textEditAmount.StyleController = this.LayoutPayment;
             this.textEditAmount.TabIndex = 17;
             this.textEditAmount.EditValueChanged += new System.EventHandler(this.textEditAmount_EditValueChanged);
@@ -372,7 +372,7 @@
             this.textEditOverPayment.Properties.Appearance.Options.UseFont = true;
             this.textEditOverPayment.Properties.DisplayFormat.FormatString = "c2";
             this.textEditOverPayment.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.textEditOverPayment.Size = new System.Drawing.Size(91, 28);
+            this.textEditOverPayment.Size = new System.Drawing.Size(110, 28);
             this.textEditOverPayment.StyleController = this.LayoutPayment;
             this.textEditOverPayment.TabIndex = 12;
             this.textEditOverPayment.Visible = false;
@@ -480,7 +480,7 @@
             this.textEditBuyout.Properties.AppearanceDisabled.Options.UseForeColor = true;
             this.textEditBuyout.Properties.DisplayFormat.FormatString = "c2";
             this.textEditBuyout.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.textEditBuyout.Size = new System.Drawing.Size(90, 28);
+            this.textEditBuyout.Size = new System.Drawing.Size(110, 28);
             this.textEditBuyout.StyleController = this.LayoutPayment;
             this.textEditBuyout.TabIndex = 5;
             // 
@@ -500,7 +500,7 @@
             this.textEditBalance.Properties.AppearanceDisabled.Options.UseForeColor = true;
             this.textEditBalance.Properties.DisplayFormat.FormatString = "c2";
             this.textEditBalance.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.textEditBalance.Size = new System.Drawing.Size(90, 28);
+            this.textEditBalance.Size = new System.Drawing.Size(110, 28);
             this.textEditBalance.StyleController = this.LayoutPayment;
             this.textEditBalance.TabIndex = 4;
             // 
@@ -583,9 +583,9 @@
             // emptySpaceItem3
             // 
             this.emptySpaceItem3.AllowHotTrack = false;
-            this.emptySpaceItem3.Location = new System.Drawing.Point(223, 0);
+            this.emptySpaceItem3.Location = new System.Drawing.Point(243, 0);
             this.emptySpaceItem3.Name = "emptySpaceItem3";
-            this.emptySpaceItem3.Size = new System.Drawing.Size(520, 32);
+            this.emptySpaceItem3.Size = new System.Drawing.Size(500, 32);
             this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlLoanBalance
@@ -601,7 +601,7 @@
             this.layoutControlLoanBalance.Control = this.textEditBalance;
             this.layoutControlLoanBalance.Location = new System.Drawing.Point(0, 0);
             this.layoutControlLoanBalance.Name = "layoutControlLoanBalance";
-            this.layoutControlLoanBalance.Size = new System.Drawing.Size(223, 32);
+            this.layoutControlLoanBalance.Size = new System.Drawing.Size(243, 32);
             this.layoutControlLoanBalance.Text = "Loan Balance";
             this.layoutControlLoanBalance.TextSize = new System.Drawing.Size(125, 21);
             // 
@@ -618,7 +618,7 @@
             this.layoutControlBuyout.Control = this.textEditBuyout;
             this.layoutControlBuyout.Location = new System.Drawing.Point(0, 32);
             this.layoutControlBuyout.Name = "layoutControlBuyout";
-            this.layoutControlBuyout.Size = new System.Drawing.Size(223, 32);
+            this.layoutControlBuyout.Size = new System.Drawing.Size(243, 32);
             this.layoutControlBuyout.Text = "Buyout";
             this.layoutControlBuyout.TextSize = new System.Drawing.Size(125, 21);
             // 
@@ -650,7 +650,7 @@
             this.layoutControlOverPayment.Control = this.textEditOverPayment;
             this.layoutControlOverPayment.Location = new System.Drawing.Point(347, 32);
             this.layoutControlOverPayment.Name = "layoutControlOverPayment";
-            this.layoutControlOverPayment.Size = new System.Drawing.Size(224, 32);
+            this.layoutControlOverPayment.Size = new System.Drawing.Size(243, 32);
             this.layoutControlOverPayment.Text = "Over Payment";
             this.layoutControlOverPayment.TextSize = new System.Drawing.Size(125, 21);
             // 
@@ -752,7 +752,7 @@
             this.layoutControlAmount.Control = this.textEditAmount;
             this.layoutControlAmount.Location = new System.Drawing.Point(0, 128);
             this.layoutControlAmount.Name = "layoutControlAmount";
-            this.layoutControlAmount.Size = new System.Drawing.Size(223, 32);
+            this.layoutControlAmount.Size = new System.Drawing.Size(243, 32);
             this.layoutControlAmount.Text = "Amount";
             this.layoutControlAmount.TextSize = new System.Drawing.Size(125, 21);
             // 
@@ -801,9 +801,9 @@
             // emptySpaceItem9
             // 
             this.emptySpaceItem9.AllowHotTrack = false;
-            this.emptySpaceItem9.Location = new System.Drawing.Point(223, 32);
+            this.emptySpaceItem9.Location = new System.Drawing.Point(243, 32);
             this.emptySpaceItem9.Name = "emptySpaceItem9";
-            this.emptySpaceItem9.Size = new System.Drawing.Size(124, 32);
+            this.emptySpaceItem9.Size = new System.Drawing.Size(104, 32);
             this.emptySpaceItem9.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem2
@@ -834,9 +834,9 @@
             // emptySpaceItem7
             // 
             this.emptySpaceItem7.AllowHotTrack = false;
-            this.emptySpaceItem7.Location = new System.Drawing.Point(571, 32);
+            this.emptySpaceItem7.Location = new System.Drawing.Point(590, 32);
             this.emptySpaceItem7.Name = "emptySpaceItem7";
-            this.emptySpaceItem7.Size = new System.Drawing.Size(172, 32);
+            this.emptySpaceItem7.Size = new System.Drawing.Size(153, 32);
             this.emptySpaceItem7.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem10
@@ -850,9 +850,9 @@
             // emptySpaceItem12
             // 
             this.emptySpaceItem12.AllowHotTrack = false;
-            this.emptySpaceItem12.Location = new System.Drawing.Point(223, 128);
+            this.emptySpaceItem12.Location = new System.Drawing.Point(243, 128);
             this.emptySpaceItem12.Name = "emptySpaceItem12";
-            this.emptySpaceItem12.Size = new System.Drawing.Size(520, 32);
+            this.emptySpaceItem12.Size = new System.Drawing.Size(500, 32);
             this.emptySpaceItem12.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem4

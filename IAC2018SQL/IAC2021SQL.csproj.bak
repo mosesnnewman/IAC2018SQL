@@ -10,7 +10,7 @@
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>IAC2021SQL</RootNamespace>
-    <AssemblyName>IAC2021SQL</AssemblyName>
+    <AssemblyName>PRODUCTION TEST BED</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>false</IsWebBootstrapper>
@@ -26,7 +26,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <PublishUrl>\\DC-IAC\Public\moses\IAC2021SQLInstall\</PublishUrl>
+    <PublishUrl>\\DC-IAC\Public\moses\IAC2022SQLTESTInstall\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Unc</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -37,28 +37,27 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <TargetCulture>en-US</TargetCulture>
-    <ProductName>IAC 2021SQL</ProductName>
+    <ProductName>IAC TEST BED</ProductName>
     <PublisherName>Moses Newman</PublisherName>
-    <SuiteName>IAC2021SQL</SuiteName>
+    <SuiteName>IAC2023SQLTESTBED</SuiteName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>34</ApplicationRevision>
-    <ApplicationVersion>100.22.26.%2a</ApplicationVersion>
+    <ApplicationRevision>31</ApplicationRevision>
+    <ApplicationVersion>200.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>
-    </StartupObject>
+    <StartupObject>IAC2021SQL.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup />
   <PropertyGroup>
     <TargetZone>LocalIntranet</TargetZone>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>CarLoan.ico</ApplicationIcon>
+    <ApplicationIcon>1683_Lightbulb.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup />
   <PropertyGroup>
@@ -81,6 +80,7 @@
     <DefineConstants>
     </DefineConstants>
   </PropertyGroup>
+  <PropertyGroup />
   <PropertyGroup>
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
@@ -160,13 +160,112 @@
     <Reference Include="CrystalDecisions.Windows.Forms">
       <HintPath>..\..\..\..\..\..\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win64_x64\dotnet\CrystalDecisions.Windows.Forms.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.Data.Desktop.v23.1, Version=23.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Data.v23.1, Version=23.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\DevExpress.Data.23.1.3\lib\net452\DevExpress.Data.v23.1.dll</HintPath>
+    <Reference Include="DevExpress.BonusSkins.v23.1, Version=23.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Charts.v23.1.Core, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.Charts.Core.23.1.5\lib\net452\DevExpress.Charts.v23.1.Core.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.Drawing.v23.1, Version=23.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Printing.v23.1.Core, Version=23.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Utils.v23.1, Version=23.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.CodeParser.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.CodeParser.23.1.5\lib\net452\DevExpress.CodeParser.v23.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.Desktop.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.Data.Desktop.23.1.5\lib\net452\DevExpress.Data.Desktop.v23.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.Data.23.1.5\lib\net452\DevExpress.Data.v23.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.DataAccess.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.DataAccess.23.1.5\lib\net452\DevExpress.DataAccess.v23.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.DataVisualization.v23.1.Core, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.DataVisualization.Core.23.1.5\lib\net452\DevExpress.DataVisualization.v23.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Dialogs.v23.1.Core, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.Win.Dialogs.Core.23.1.5\lib\net452\DevExpress.Dialogs.v23.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Drawing.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.Drawing.23.1.5\lib\net452\DevExpress.Drawing.v23.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Office.v23.1.Core, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.Office.Core.23.1.5\lib\net452\DevExpress.Office.v23.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Pdf.v23.1.Core, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.Pdf.Core.23.1.5\lib\net452\DevExpress.Pdf.v23.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Pdf.v23.1.Drawing, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.Pdf.Drawing.23.1.5\lib\net452\DevExpress.Pdf.v23.1.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.PivotGrid.v23.1.Core, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.PivotGrid.Core.23.1.5\lib\net452\DevExpress.PivotGrid.v23.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v23.1.Core, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.Printing.Core.23.1.5\lib\net452\DevExpress.Printing.v23.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v23.1.Core, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.RichEdit.Core.23.1.5\lib\net452\DevExpress.RichEdit.v23.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v23.1.Export, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.RichEdit.Export.23.1.5\lib\net452\DevExpress.RichEdit.v23.1.Export.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Sparkline.v23.1.Core, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.Sparkline.Core.23.1.5\lib\net452\DevExpress.Sparkline.v23.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.Utils.23.1.5\lib\net452\DevExpress.Utils.v23.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpo.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.Xpo.23.1.5\lib\net452\DevExpress.Xpo.v23.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.Win.Navigation.23.1.5\lib\net452\DevExpress.XtraBars.v23.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v23.1.Design, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.Win.Navigation.23.1.5\lib\net452\Design\WinForms\Server\DevExpress.XtraBars.v23.1.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.Charts.23.1.5\lib\net452\DevExpress.XtraCharts.v23.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraDialogs.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.Win.Dialogs.23.1.5\lib\net452\DevExpress.XtraDialogs.v23.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraDialogs.v23.1.Design, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.Win.Dialogs.23.1.5\lib\net452\Design\WinForms\Server\DevExpress.XtraDialogs.v23.1.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.Win.Navigation.23.1.5\lib\net452\DevExpress.XtraEditors.v23.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v23.1.Design, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.Win.Navigation.23.1.5\lib\net452\Design\WinForms\Server\DevExpress.XtraEditors.v23.1.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraGauges.v23.1.Core, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.Gauges.Core.23.1.5\lib\net452\DevExpress.XtraGauges.v23.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.Win.Grid.23.1.5\lib\net452\DevExpress.XtraGrid.v23.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraGrid.v23.1.Design, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.Win.Grid.23.1.5\lib\net452\Design\WinForms\Server\DevExpress.XtraGrid.v23.1.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.Win.Navigation.23.1.5\lib\net452\DevExpress.XtraLayout.v23.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v23.1.Design, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.Win.Navigation.23.1.5\lib\net452\Design\WinForms\Server\DevExpress.XtraLayout.v23.1.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraPrinting.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.Win.Printing.23.1.5\lib\net452\DevExpress.XtraPrinting.v23.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraPrinting.v23.1.Design, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.Win.Printing.23.1.5\lib\net452\Design\WinForms\Server\DevExpress.XtraPrinting.v23.1.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraReports.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.Reporting.Core.23.1.5\lib\net452\DevExpress.XtraReports.v23.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.Win.TreeList.23.1.5\lib\net452\DevExpress.XtraTreeList.v23.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v23.1.Design, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <HintPath>..\packages\DevExpress.Win.TreeList.23.1.5\lib\net452\Design\WinForms\Server\DevExpress.XtraTreeList.v23.1.Design.dll</HintPath>
+    </Reference>
     <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304">
       <HintPath>..\packages\CrystalReports.13.0.5.891\lib\net40\FlashControlV71.dll</HintPath>
       <Private>True</Private>
@@ -641,19 +740,51 @@
     <Compile Include="AboutIAC2013SQL.Designer.cs">
       <DependentUpon>AboutIAC2013SQL.cs</DependentUpon>
     </Compile>
-    <Compile Include="Amortization.cs">
-      <DependentUpon>Amortization.rpt</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="AmortizationDistribution.cs">
+    <Compile Include="AutoPaymentRejects.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>AmortizationDistribution.rpt</DependentUpon>
+      <DependentUpon>AutoPaymentRejects.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="MessageBoxHTML.cs" />
+    <Compile Include="ClosedContingentEditList.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ClosedContingentEditList.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ClosedPaymentEditList.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ClosedPaymentEditList.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomerEFTListing.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CustomerEFTListing.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DirectXFormApplyPayments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DirectXFormApplyPayments.Designer.cs">
+      <DependentUpon>DirectXFormApplyPayments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InternetPaymentRejects.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InternetPaymentRejects.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="IVRRejects.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IVRRejects.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MessageBoxHTML.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MessageBoxHTML.Designer.cs">
       <DependentUpon>MessageBoxHTML.cs</DependentUpon>
     </Compile>
@@ -662,13 +793,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PaymentDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Ticket.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Ticket.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="XtraFormClosedPaymentEditor.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="XtraFormClosedPaymentEditor.Designer.cs">
       <DependentUpon>XtraFormClosedPaymentEditor.cs</DependentUpon>
     </Compile>
-    <Compile Include="XtraFormWarrantyCompanies.cs" />
+    <Compile Include="XtraFormWarrantyCompanies.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="XtraFormWarrantyCompanies.Designer.cs">
       <DependentUpon>XtraFormWarrantyCompanies.cs</DependentUpon>
     </Compile>
@@ -702,12 +841,6 @@
     <Compile Include="OpenCustomerBuybackSelectionCriteria.Designer.cs">
       <DependentUpon>OpenCustomerBuybackSelectionCriteria.cs</DependentUpon>
     </Compile>
-    <Compile Include="ClosedCustomerTierSummaryReport.cs">
-      <DependentUpon>ClosedCustomerTierSummaryReport.rpt</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="ClosedMonthlyUpdateSelectPeriod.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -720,12 +853,6 @@
     </Compile>
     <Compile Include="ClosedOverPaymentReport.Designer.cs">
       <DependentUpon>ClosedOverPaymentReport.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ClosedReceivedContractReport.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ClosedReceivedContractReport.rpt</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="ColorCheckBox.cs">
       <SubType>Component</SubType>
@@ -771,7 +898,9 @@
     <Compile Include="ProductionMainTables.cs">
       <DependentUpon>ProductionMainTables.xsd</DependentUpon>
     </Compile>
-    <Compile Include="IACSplashScreen.cs" />
+    <Compile Include="IACSplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="IACSplashScreen.Designer.cs">
       <DependentUpon>IACSplashScreen.cs</DependentUpon>
     </Compile>
@@ -797,239 +926,357 @@
     <Compile Include="XtraFormPrintCoupons.Designer.cs">
       <DependentUpon>XtraFormPrintCoupons.cs</DependentUpon>
     </Compile>
-    <Compile Include="XtraReportAmortization.cs" />
+    <Compile Include="XtraReportAmortization.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="XtraReportAmortization.Designer.cs">
       <DependentUpon>XtraReportAmortization.cs</DependentUpon>
     </Compile>
-    <Compile Include="XtraReportClosedChargesAppliedToDealer.cs" />
+    <Compile Include="XtraReportClosedChargesAppliedToDealer.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="XtraReportClosedChargesAppliedToDealer.Designer.cs">
       <DependentUpon>XtraReportClosedChargesAppliedToDealer.cs</DependentUpon>
     </Compile>
-    <Compile Include="XtraReportOpenDealerSummary.cs" />
+    <Compile Include="XtraReportOpenDealerSummary.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="XtraReportOpenDealerSummary.Designer.cs">
       <DependentUpon>XtraReportOpenDealerSummary.cs</DependentUpon>
     </Compile>
-    <Compile Include="XtraReportOpenDealerHistory.cs" />
+    <Compile Include="XtraReportOpenDealerHistory.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="XtraReportOpenDealerHistory.Designer.cs">
       <DependentUpon>XtraReportOpenDealerHistory.cs</DependentUpon>
     </Compile>
-    <Compile Include="XtraReportOpenCustomerBuybackDealerSummary.cs" />
+    <Compile Include="XtraReportOpenCustomerBuybackDealerSummary.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="XtraReportOpenCustomerBuybackDealerSummary.Designer.cs">
       <DependentUpon>XtraReportOpenCustomerBuybackDealerSummary.cs</DependentUpon>
     </Compile>
-    <Compile Include="XtraReportOpenCustomerBuyback.cs" />
+    <Compile Include="XtraReportOpenCustomerBuyback.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="XtraReportOpenCustomerBuyback.Designer.cs">
       <DependentUpon>XtraReportOpenCustomerBuyback.cs</DependentUpon>
     </Compile>
-    <Compile Include="XtraReportClosedCustomerBuyback.cs" />
+    <Compile Include="XtraReportClosedCustomerBuyback.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="XtraReportClosedCustomerBuyback.Designer.cs">
       <DependentUpon>XtraReportClosedCustomerBuyback.cs</DependentUpon>
     </Compile>
-    <Compile Include="XtraReportClosedCustomerBuybackDealerSummary.cs" />
+    <Compile Include="XtraReportClosedCustomerBuybackDealerSummary.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="XtraReportClosedCustomerBuybackDealerSummary.Designer.cs">
       <DependentUpon>XtraReportClosedCustomerBuybackDealerSummary.cs</DependentUpon>
     </Compile>
-    <Compile Include="XtraReportClosedCustomerComments.cs" />
+    <Compile Include="XtraReportClosedCustomerComments.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="XtraReportClosedCustomerComments.Designer.cs">
       <DependentUpon>XtraReportClosedCustomerComments.cs</DependentUpon>
     </Compile>
-    <Compile Include="XtraReportClosedCustomerDelinquencyRepoDealerSummary.cs" />
+    <Compile Include="XtraReportClosedCustomerDelinquencyRepoDealerSummary.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="XtraReportClosedCustomerDelinquencyRepoDealerSummary.Designer.cs">
       <DependentUpon>XtraReportClosedCustomerDelinquencyRepoDealerSummary.cs</DependentUpon>
     </Compile>
-    <Compile Include="XtraReportClosedCustomerDelinquencyRepoReport.cs" />
+    <Compile Include="XtraReportClosedCustomerDelinquencyRepoReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="XtraReportClosedCustomerDelinquencyRepoReport.Designer.cs">
       <DependentUpon>XtraReportClosedCustomerDelinquencyRepoReport.cs</DependentUpon>
     </Compile>
-    <Compile Include="XtraReportClosedCustomerEditListDealerSummary.cs" />
+    <Compile Include="XtraReportClosedCustomerEditListDealerSummary.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="XtraReportClosedCustomerEditListDealerSummary.Designer.cs">
       <DependentUpon>XtraReportClosedCustomerEditListDealerSummary.cs</DependentUpon>
     </Compile>
-    <Compile Include="XtraReportOpenFirstPaymentDefaultDealerSummary.cs" />
+    <Compile Include="XtraReportOpenFirstPaymentDefaultDealerSummary.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="XtraReportOpenFirstPaymentDefaultDealerSummary.Designer.cs">
       <DependentUpon>XtraReportOpenFirstPaymentDefaultDealerSummary.cs</DependentUpon>
     </Compile>
-    <Compile Include="XtraReportOpenFirstPaymentDefault.cs" />
+    <Compile Include="XtraReportOpenFirstPaymentDefault.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="XtraReportOpenFirstPaymentDefault.Designer.cs">
       <DependentUpon>XtraReportOpenFirstPaymentDefault.cs</DependentUpon>
     </Compile>
-    <Compile Include="XtraReportOpenCustomerEditListTotalsByDueDate.cs" />
+    <Compile Include="XtraReportOpenCustomerEditListTotalsByDueDate.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="XtraReportOpenCustomerEditListTotalsByDueDate.Designer.cs">
       <DependentUpon>XtraReportOpenCustomerEditListTotalsByDueDate.cs</DependentUpon>
     </Compile>
-    <Compile Include="XtraReportCouponBook.cs" />
+    <Compile Include="XtraReportCouponBook.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="XtraReportCouponBook.Designer.cs">
       <DependentUpon>XtraReportCouponBook.cs</DependentUpon>
     </Compile>
-    <Compile Include="XtraReportOpenCustomerEditList.cs" />
+    <Compile Include="XtraReportOpenCustomerEditList.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="XtraReportOpenCustomerEditList.Designer.cs">
       <DependentUpon>XtraReportOpenCustomerEditList.cs</DependentUpon>
     </Compile>
-    <Compile Include="XtraReportClosedCustomerEditList.cs" />
+    <Compile Include="XtraReportClosedCustomerEditList.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="XtraReportClosedCustomerEditList.Designer.cs">
       <DependentUpon>XtraReportClosedCustomerEditList.cs</DependentUpon>
     </Compile>
-    <Compile Include="XtraReportClosedCustomerEditListTotalsByDueDate.cs" />
+    <Compile Include="XtraReportClosedCustomerEditListTotalsByDueDate.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="XtraReportClosedCustomerEditListTotalsByDueDate.Designer.cs">
       <DependentUpon>XtraReportClosedCustomerEditListTotalsByDueDate.cs</DependentUpon>
     </Compile>
-    <Compile Include="XtraReportClosedCustomerHistory.cs" />
+    <Compile Include="XtraReportClosedCustomerHistory.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="XtraReportClosedCustomerHistory.Designer.cs">
       <DependentUpon>XtraReportClosedCustomerHistory.cs</DependentUpon>
     </Compile>
-    <Compile Include="XtraReportClosedCustomerLateChargeDealerSummary.cs" />
+    <Compile Include="XtraReportClosedCustomerLateChargeDealerSummary.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="XtraReportClosedCustomerLateChargeDealerSummary.Designer.cs">
       <DependentUpon>XtraReportClosedCustomerLateChargeDealerSummary.cs</DependentUpon>
     </Compile>
-    <Compile Include="XtraReportClosedCustomerLateChargeListing.cs" />
+    <Compile Include="XtraReportClosedCustomerLateChargeListing.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="XtraReportClosedCustomerLateChargeListing.Designer.cs">
       <DependentUpon>XtraReportClosedCustomerLateChargeListing.cs</DependentUpon>
     </Compile>
-    <Compile Include="XtraReportClosedCustomerRepoLog.cs" />
+    <Compile Include="XtraReportClosedCustomerRepoLog.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="XtraReportClosedCustomerRepoLog.Designer.cs">
       <DependentUpon>XtraReportClosedCustomerRepoLog.cs</DependentUpon>
     </Compile>
-    <Compile Include="XtraReportClosedDelinquencySummarySubreport.cs" />
+    <Compile Include="XtraReportClosedDelinquencySummarySubreport.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="XtraReportClosedDelinquencySummarySubreport.Designer.cs">
       <DependentUpon>XtraReportClosedDelinquencySummarySubreport.cs</DependentUpon>
     </Compile>
-    <Compile Include="XtraReportClosedDelinquencySummary.cs" />
+    <Compile Include="XtraReportClosedDelinquencySummary.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="XtraReportClosedDelinquencySummary.Designer.cs">
       <DependentUpon>XtraReportClosedDelinquencySummary.cs</DependentUpon>
     </Compile>
-    <Compile Include="XtraReportClosedFirstPaymentDefault.cs" />
+    <Compile Include="XtraReportClosedFirstPaymentDefault.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="XtraReportClosedFirstPaymentDefault.Designer.cs">
       <DependentUpon>XtraReportClosedFirstPaymentDefault.cs</DependentUpon>
     </Compile>
-    <Compile Include="XtraReportClosedFirstPaymentDefaultDealerSummary.cs" />
+    <Compile Include="XtraReportClosedFirstPaymentDefaultDealerSummary.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="XtraReportClosedFirstPaymentDefaultDealerSummary.Designer.cs">
       <DependentUpon>XtraReportClosedFirstPaymentDefaultDealerSummary.cs</DependentUpon>
     </Compile>
-    <Compile Include="XtraReportClosedPaidInAdvance.cs" />
+    <Compile Include="XtraReportClosedPaidInAdvance.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="XtraReportClosedPaidInAdvance.Designer.cs">
       <DependentUpon>XtraReportClosedPaidInAdvance.cs</DependentUpon>
     </Compile>
-    <Compile Include="XtraReportClosedPaidInAdvanceDealerSummary.cs" />
+    <Compile Include="XtraReportClosedPaidInAdvanceDealerSummary.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="XtraReportClosedPaidInAdvanceDealerSummary.Designer.cs">
       <DependentUpon>XtraReportClosedPaidInAdvanceDealerSummary.cs</DependentUpon>
     </Compile>
-    <Compile Include="XtraReportClosedPaidInFull.cs" />
+    <Compile Include="XtraReportClosedPaidInFull.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="XtraReportClosedPaidInFull.Designer.cs">
       <DependentUpon>XtraReportClosedPaidInFull.cs</DependentUpon>
     </Compile>
-    <Compile Include="XtraReportClosedPaidInFullPriorToMaturity.cs" />
+    <Compile Include="XtraReportClosedPaidInFullPriorToMaturity.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="XtraReportClosedPaidInFullPriorToMaturity.Designer.cs">
       <DependentUpon>XtraReportClosedPaidInFullPriorToMaturity.cs</DependentUpon>
     </Compile>
-    <Compile Include="XtraReportClosedReceivedContract.cs" />
+    <Compile Include="XtraReportClosedReceivedContract.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="XtraReportClosedReceivedContract.Designer.cs">
       <DependentUpon>XtraReportClosedReceivedContract.cs</DependentUpon>
     </Compile>
-    <Compile Include="XtraReportClosedTierSummary.cs" />
+    <Compile Include="XtraReportClosedTierSummary.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="XtraReportClosedTierSummary.Designer.cs">
       <DependentUpon>XtraReportClosedTierSummary.cs</DependentUpon>
     </Compile>
-    <Compile Include="XtraReportDealerHistory.cs" />
+    <Compile Include="XtraReportDealerHistory.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="XtraReportDealerHistory.Designer.cs">
       <DependentUpon>XtraReportDealerHistory.cs</DependentUpon>
     </Compile>
-    <Compile Include="XtraReportDealerSummary.cs" />
+    <Compile Include="XtraReportDealerSummary.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="XtraReportDealerSummary.Designer.cs">
       <DependentUpon>XtraReportDealerSummary.cs</DependentUpon>
     </Compile>
-    <Compile Include="XtraReportDefiDuplicates.cs" />
+    <Compile Include="XtraReportDefiDuplicates.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="XtraReportDefiDuplicates.Designer.cs">
       <DependentUpon>XtraReportDefiDuplicates.cs</DependentUpon>
     </Compile>
-    <Compile Include="XtraReportFinanceDealerSummary.cs" />
+    <Compile Include="XtraReportFinanceDealerSummary.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="XtraReportFinanceDealerSummary.Designer.cs">
       <DependentUpon>XtraReportFinanceDealerSummary.cs</DependentUpon>
     </Compile>
-    <Compile Include="XtraReportFinanceReport.cs" />
+    <Compile Include="XtraReportFinanceReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="XtraReportFinanceReport.Designer.cs">
       <DependentUpon>XtraReportFinanceReport.cs</DependentUpon>
     </Compile>
-    <Compile Include="XtraReportMasterHistory.cs" />
+    <Compile Include="XtraReportMasterHistory.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="XtraReportMasterHistory.Designer.cs">
       <DependentUpon>XtraReportMasterHistory.cs</DependentUpon>
     </Compile>
-    <Compile Include="XtraReportMonthlyUpdateDailyInterestVariance.cs" />
+    <Compile Include="XtraReportMonthlyUpdateDailyInterestVariance.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="XtraReportMonthlyUpdateDailyInterestVariance.Designer.cs">
       <DependentUpon>XtraReportMonthlyUpdateDailyInterestVariance.cs</DependentUpon>
     </Compile>
-    <Compile Include="XtraReportMonthlyUpdateDealerSummary.cs" />
+    <Compile Include="XtraReportMonthlyUpdateDealerSummary.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="XtraReportMonthlyUpdateDealerSummary.Designer.cs">
       <DependentUpon>XtraReportMonthlyUpdateDealerSummary.cs</DependentUpon>
     </Compile>
-    <Compile Include="XtraReportMonthlyUpdateListing.cs" />
+    <Compile Include="XtraReportMonthlyUpdateListing.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="XtraReportMonthlyUpdateListing.Designer.cs">
       <DependentUpon>XtraReportMonthlyUpdateListing.cs</DependentUpon>
     </Compile>
-    <Compile Include="XtraReportOpenChargesAppliedToDealer.cs" />
+    <Compile Include="XtraReportOpenChargesAppliedToDealer.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="XtraReportOpenChargesAppliedToDealer.Designer.cs">
       <DependentUpon>XtraReportOpenChargesAppliedToDealer.cs</DependentUpon>
     </Compile>
-    <Compile Include="XtraReportOpenCustomerEditListDealerSummary.cs" />
+    <Compile Include="XtraReportOpenCustomerEditListDealerSummary.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="XtraReportOpenCustomerEditListDealerSummary.Designer.cs">
       <DependentUpon>XtraReportOpenCustomerEditListDealerSummary.cs</DependentUpon>
     </Compile>
-    <Compile Include="XtraReportPNSRejects.cs" />
+    <Compile Include="XtraReportPNSRejects.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="XtraReportPNSRejects.Designer.cs">
       <DependentUpon>XtraReportPNSRejects.cs</DependentUpon>
     </Compile>
-    <Compile Include="XtraReportReceipt.cs" />
+    <Compile Include="XtraReportReceipt.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="XtraReportReceipt.Designer.cs">
       <DependentUpon>XtraReportReceipt.cs</DependentUpon>
     </Compile>
-    <Compile Include="XtraReportShortBalanceReport.cs" />
+    <Compile Include="XtraReportShortBalanceReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="XtraReportShortBalanceReport.Designer.cs">
       <DependentUpon>XtraReportShortBalanceReport.cs</DependentUpon>
     </Compile>
-    <Compile Include="XtraReportOpenTrialBalance.cs" />
+    <Compile Include="XtraReportOpenTrialBalance.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="XtraReportOpenTrialBalance.Designer.cs">
       <DependentUpon>XtraReportOpenTrialBalance.cs</DependentUpon>
     </Compile>
-    <Compile Include="XtraReportOpenTrialBalanceDealerSummary.cs" />
+    <Compile Include="XtraReportOpenTrialBalanceDealerSummary.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="XtraReportOpenTrialBalanceDealerSummary.Designer.cs">
       <DependentUpon>XtraReportOpenTrialBalanceDealerSummary.cs</DependentUpon>
     </Compile>
-    <Compile Include="XtraReportTVAmortizationDistribution.cs" />
+    <Compile Include="XtraReportTVAmortizationDistribution.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="XtraReportTVAmortizationDistribution.Designer.cs">
       <DependentUpon>XtraReportTVAmortizationDistribution.cs</DependentUpon>
     </Compile>
-    <Compile Include="XtraReportVehicleReposession.cs" />
+    <Compile Include="XtraReportVehicleReposession.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="XtraReportVehicleReposession.Designer.cs">
       <DependentUpon>XtraReportVehicleReposession.cs</DependentUpon>
     </Compile>
-    <Compile Include="XtraReportClosedPaymentBalanceTotals.cs" />
+    <Compile Include="XtraReportClosedPaymentBalanceTotals.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="XtraReportClosedPaymentBalanceTotals.Designer.cs">
       <DependentUpon>XtraReportClosedPaymentBalanceTotals.cs</DependentUpon>
     </Compile>
-    <Compile Include="XtraReportClosedPaymentBalanceJournal.cs" />
+    <Compile Include="XtraReportClosedPaymentBalanceJournal.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="XtraReportClosedPaymentBalanceJournal.Designer.cs">
       <DependentUpon>XtraReportClosedPaymentBalanceJournal.cs</DependentUpon>
     </Compile>
-    <Compile Include="XtraReportClosedPaymentDealerSummary.cs" />
+    <Compile Include="XtraReportClosedPaymentDealerSummary.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="XtraReportClosedPaymentDealerSummary.Designer.cs">
       <DependentUpon>XtraReportClosedPaymentDealerSummary.cs</DependentUpon>
     </Compile>
-    <Compile Include="XtraReportClosedPaymentTypeSummary.cs" />
+    <Compile Include="XtraReportClosedPaymentTypeSummary.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="XtraReportClosedPaymentTypeSummary.Designer.cs">
       <DependentUpon>XtraReportClosedPaymentTypeSummary.cs</DependentUpon>
     </Compile>
-    <Compile Include="XtraReportDelinquency.cs" />
+    <Compile Include="XtraReportDelinquency.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="XtraReportDelinquency.Designer.cs">
       <DependentUpon>XtraReportDelinquency.cs</DependentUpon>
     </Compile>
-    <Compile Include="XtraReportTrialBalance.cs" />
+    <Compile Include="XtraReportTrialBalance.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="XtraReportTrialBalance.Designer.cs">
       <DependentUpon>XtraReportTrialBalance.cs</DependentUpon>
     </Compile>
-    <Compile Include="XtraReportTrialBalanceDealerSummary.cs" />
+    <Compile Include="XtraReportTrialBalanceDealerSummary.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="XtraReportTrialBalanceDealerSummary.Designer.cs">
       <DependentUpon>XtraReportTrialBalanceDealerSummary.cs</DependentUpon>
     </Compile>
-    <Compile Include="XtraReportVehicleMissingTitle.cs" />
+    <Compile Include="XtraReportVehicleMissingTitle.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="XtraReportVehicleMissingTitle.Designer.cs">
       <DependentUpon>XtraReportVehicleMissingTitle.cs</DependentUpon>
     </Compile>
@@ -1038,12 +1285,6 @@
     </Compile>
     <Compile Include="XtraReportViewer.Designer.cs">
       <DependentUpon>XtraReportViewer.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Ticket.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Ticket.rpt</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="FormTickets.cs">
       <SubType>Form</SubType>
@@ -1067,12 +1308,6 @@
     </Compile>
     <Compile Include="ReceivedContractReport.Designer.cs">
       <DependentUpon>ReceivedContractReport.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DailyInterestVariance.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DailyInterestVariance.rpt</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="DailyDataSet.cs">
       <DependentUpon>DailyDataSet.xsd</DependentUpon>
@@ -1124,18 +1359,6 @@
       <DependentUpon>Tickets.xsd</DependentUpon>
     </Compile>
     <Compile Include="TrialBalancePretty.cs" />
-    <Compile Include="ClosedCustomerEditListDefi.cs">
-      <DependentUpon>ClosedCustomerEditListDefi.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ClosedCustomerEditListTCI.cs">
-      <DependentUpon>ClosedCustomerEditListTCI.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="ClosedDealerSearchForms.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1147,12 +1370,6 @@
     </Compile>
     <Compile Include="frmImportDefi.Designer.cs">
       <DependentUpon>frmImportDefi.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PNSRejects.cs">
-      <DependentUpon>PNSRejects.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="PNSImport.cs">
       <SubType>Form</SubType>
@@ -1167,12 +1384,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RepoDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="MonthlyUpdateDevience.cs">
-      <DependentUpon>MonthlyUpdateDevience.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="OpenFirstPaymentDefaultReport.cs">
       <SubType>Form</SubType>
@@ -1192,18 +1403,6 @@
     <Compile Include="ClosedPaidInFullPriorToMaturityReport.Designer.cs">
       <DependentUpon>ClosedPaidInFullPriorToMaturityReport.cs</DependentUpon>
     </Compile>
-    <Compile Include="ClosedPaidInFullPriorToMaturityReport1.cs">
-      <DependentUpon>ClosedPaidInFullPriorToMaturityReport.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="IVRRejects.cs">
-      <DependentUpon>IVRRejects.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="PaymentDataSet.cs">
       <DependentUpon>PaymentDataSet.xsd</DependentUpon>
     </Compile>
@@ -1212,18 +1411,6 @@
     </Compile>
     <Compile Include="FixPaidThroughs.Designer.cs">
       <DependentUpon>FixPaidThroughs.cs</DependentUpon>
-    </Compile>
-    <Compile Include="RepoLog.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>RepoLog.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="DefiDuplicates.cs">
-      <DependentUpon>DefiDuplicates.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="TSBDataSet.cs">
       <DependentUpon>TSBDataSet.xsd</DependentUpon>
@@ -1246,12 +1433,6 @@
     <Compile Include="IVRImport.Designer.cs">
       <DependentUpon>IVRImport.cs</DependentUpon>
     </Compile>
-    <Compile Include="ClosedPaidInAdvance.cs">
-      <DependentUpon>ClosedPaidInAdvance.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="ClosedPayedInAdvance.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1263,24 +1444,6 @@
     </Compile>
     <Compile Include="ClosedFirstPaymentDefaultReport.Designer.cs">
       <DependentUpon>ClosedFirstPaymentDefaultReport.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ClosedFirstPaymentDefault.cs">
-      <DependentUpon>ClosedFirstPaymentDefault.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ClosedCustomerDelinquencyRepoReport.cs">
-      <DependentUpon>ClosedCustomerDelinquencyRepoReport.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ClosedCustomerDelinquencyCOL.cs">
-      <DependentUpon>ClosedCustomerDelinquencyCOL.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="customobject.cs" />
     <Compile Include="DataGridViewImageColumnHeaderCell.cs" />
@@ -1296,12 +1459,6 @@
     <Compile Include="FormSMSMessage.Designer.cs">
       <DependentUpon>FormSMSMessage.cs</DependentUpon>
     </Compile>
-    <Compile Include="PaymentTypeSummary.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PaymentTypeSummary.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="SelectTemplate.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1313,12 +1470,6 @@
     </Compile>
     <Compile Include="FormValidateCellPhones.Designer.cs">
       <DependentUpon>FormValidateCellPhones.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmImportTCI.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmImportTCI.Designer.cs">
-      <DependentUpon>frmImportTCI.cs</DependentUpon>
     </Compile>
     <Compile Include="Service References\GeneralWSProxy\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -1356,58 +1507,10 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="sortablebindinglist.cs" />
-    <Compile Include="TCIDuplicates.cs">
-      <DependentUpon>TCIDuplicates.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="InternetPaymentRejects.cs">
-      <DependentUpon>InternetPaymentRejects.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="AutoPaymentRejects.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AutoPaymentRejects.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ClosedCustomerDelinquency.cs">
-      <DependentUpon>ClosedCustomerDelinquency.rpt</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ClosedCustomerDelinquencySummary.cs">
-      <DependentUpon>ClosedCustomerDelinquencySummary.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="OpenCustomerDelinquencySummary.cs">
       <DependentUpon>OpenCustomerDelinquencySummary.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ClosedCustomerDelinquencySummaryCOL.cs">
-      <DependentUpon>ClosedCustomerDelinquencySummaryCOL.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ClosedDealerHistory.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ClosedDealerHistory.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ClosedDealerSummary.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ClosedDealerSummary.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="ClosedDealerSummaryReport.cs">
@@ -1422,23 +1525,11 @@
     <Compile Include="ClosedTrialBalance.Designer.cs">
       <DependentUpon>ClosedTrialBalance.cs</DependentUpon>
     </Compile>
-    <Compile Include="ClosedChargesAppliedToDealer.cs">
-      <DependentUpon>ClosedChargesAppliedToDealer.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="ClosedDealerHistoryReport.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ClosedDealerHistoryReport.Designer.cs">
       <DependentUpon>ClosedDealerHistoryReport.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ClosedCustomerBuybackReport.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ClosedCustomerBuybackReport.rpt</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="ClosedCustomerBuybackSelectionCriteria.cs">
       <SubType>Form</SubType>
@@ -1452,12 +1543,6 @@
     <Compile Include="ClosedPaidInFullReport.Designer.cs">
       <DependentUpon>ClosedPaidInFullReport.cs</DependentUpon>
     </Compile>
-    <Compile Include="ClosedPaidInFullReport1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ClosedPaidInFullReport.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="ClosedDelinquencyReports.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1469,12 +1554,6 @@
     </Compile>
     <Compile Include="ClosedChargesAppliedtoDealerReport.Designer.cs">
       <DependentUpon>ClosedChargesAppliedtoDealerReport.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ClosedMonthEndBalanceReport.cs">
-      <DependentUpon>ClosedMonthEndBalanceReport.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="ClosedCustomerTierSummary.cs">
       <SubType>Form</SubType>
@@ -1509,12 +1588,6 @@
     <Compile Include="RepoReport.Designer.cs">
       <DependentUpon>RepoReport.cs</DependentUpon>
     </Compile>
-    <Compile Include="ShortBalanceReport.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ShortBalanceReport.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="CustomerMissingTitleReport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1526,18 +1599,6 @@
     </Compile>
     <Compile Include="CustomerRepossessionReport.Designer.cs">
       <DependentUpon>CustomerRepossessionReport.cs</DependentUpon>
-    </Compile>
-    <Compile Include="VehicleMissingTitleReport.cs">
-      <DependentUpon>VehicleMissingTitleReport.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="VehicleRepossessionReport.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>VehicleRepossessionReport.rpt</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Fix211Data.cs">
       <SubType>Form</SubType>
@@ -1580,18 +1641,6 @@
     </Compile>
     <Compile Include="OpenChargesAppliedtoDealerReport.Designer.cs">
       <DependentUpon>OpenChargesAppliedtoDealerReport.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MonthlyUpdateListing.cs">
-      <DependentUpon>MonthlyUpdateListing.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="TVAmortizationDistribution.cs">
-      <DependentUpon>TVAmortizationDistribution.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Defines.cs" />
     <Compile Include="CalcBuyout.cs">
@@ -1636,20 +1685,8 @@
     <Compile Include="CreateAutobankFiles.Designer.cs">
       <DependentUpon>CreateAutobankFiles.cs</DependentUpon>
     </Compile>
-    <Compile Include="CustomerEFTListing.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CustomerEFTListing.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="OpenCustomerBuybackReport.cs">
       <DependentUpon>OpenCustomerBuybackReport.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="MasterHistory1.cs">
-      <DependentUpon>MasterHistory.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <SubType>Component</SubType>
@@ -1662,12 +1699,6 @@
     </Compile>
     <Compile Include="OpenDealerHistory.cs">
       <DependentUpon>OpenDealerHistory.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="OpenDealerSummary.cs">
-      <DependentUpon>OpenDealerSummary.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <SubType>Component</SubType>
@@ -1687,35 +1718,11 @@
     </Compile>
     <Compile Include="OpenPaymentPosting.cs" />
     <Compile Include="ClosedPaymentPosting.cs" />
-    <Compile Include="ClosedCustomerEditList.cs">
-      <DependentUpon>ClosedCustomerEditList.rpt</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ClosedPaymentBalanceJournal1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ClosedPaymentBalanceJournal.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ClosedPaymentEditList.cs">
-      <DependentUpon>ClosedPaymentEditList.rpt</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="ClosedLateNotices.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ClosedLateNotices.Designer.cs">
       <DependentUpon>ClosedLateNotices.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ClosedCustomerLateChargeListing.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ClosedCustomerLateChargeListing.rpt</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="ClosedDealerContingentPost.cs">
       <SubType>Form</SubType>
@@ -1729,35 +1736,11 @@
     <Compile Include="ClosedMasterContingentPost.Designer.cs">
       <DependentUpon>ClosedMasterContingentPost.cs</DependentUpon>
     </Compile>
-    <Compile Include="ClosedCustomerHistory.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>ClosedCustomerHistory.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ClosedContingentEditList.cs">
-      <DependentUpon>ClosedContingentEditList.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="ClosedLoanTrialBalance.cs">
-      <DependentUpon>ClosedLoanTrialBalance.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="ClosedMasterContingentMaintenance.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ClosedMasterContingentMaintenance.Designer.cs">
       <DependentUpon>ClosedMasterContingentMaintenance.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Receipt.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Receipt.rpt</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Receipts.cs">
       <SubType>Form</SubType>
@@ -1973,7 +1956,9 @@
       <DependentUpon>MDIIAC2013.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WaitFormVerifacto.cs" />
+    <Compile Include="WaitFormVerifacto.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="WaitFormVerifacto.Designer.cs">
       <DependentUpon>WaitFormVerifacto.cs</DependentUpon>
     </Compile>
@@ -1983,7 +1968,9 @@
     <Compile Include="XmlGridView.designer.cs">
       <DependentUpon>XmlGridView.cs</DependentUpon>
     </Compile>
-    <Compile Include="XtraReportStatement.cs" />
+    <Compile Include="XtraReportStatement.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="XtraReportStatement.Designer.cs">
       <DependentUpon>XtraReportStatement.cs</DependentUpon>
     </Compile>
@@ -1995,16 +1982,40 @@
       <DependentUpon>AmortDialog.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Amortization.rpt">
+    <EmbeddedResource Include="AutoPaymentRejects.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Amortization.cs</LastGenOutput>
+      <LastGenOutput>AutoPaymentRejects.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="AmortizationDistribution.rpt">
+    <EmbeddedResource Include="ClosedContingentEditList.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>AmortizationDistribution.cs</LastGenOutput>
+      <LastGenOutput>ClosedContingentEditList.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClosedPaymentEditList.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ClosedPaymentEditList.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerEFTListing.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CustomerEFTListing.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DirectXFormApplyPayments.resx">
+      <DependentUpon>DirectXFormApplyPayments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InternetPaymentRejects.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>InternetPaymentRejects.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IVRRejects.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>IVRRejects.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ticket.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Ticket.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="XtraFormClosedPaymentEditor.resx">
       <DependentUpon>XtraFormClosedPaymentEditor.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="XtraFormWarrantyCompanies.resx">
       <DependentUpon>XtraFormWarrantyCompanies.cs</DependentUpon>
@@ -2025,18 +2036,6 @@
     <EmbeddedResource Include="OpenCustomerBuybackSelectionCriteria.resx">
       <DependentUpon>OpenCustomerBuybackSelectionCriteria.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ClosedCustomerEditListDefi.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ClosedCustomerEditListDefi.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ClosedCustomerEditListTCI.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ClosedCustomerEditListTCI.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ClosedCustomerTierSummaryReport.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ClosedCustomerTierSummaryReport.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="ClosedDealerSearchForms.resx">
       <DependentUpon>ClosedDealerSearchForms.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -2046,10 +2045,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ClosedOverPaymentReport.resx">
       <DependentUpon>ClosedOverPaymentReport.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ClosedReceivedContractReport.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ClosedReceivedContractReport.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="CreateTSBExtract.resx">
       <DependentUpon>CreateTSBExtract.cs</DependentUpon>
@@ -2249,19 +2244,11 @@
     <EmbeddedResource Include="XtraReportViewer.resx">
       <DependentUpon>XtraReportViewer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ticket.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Ticket.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormTickets.resx">
       <DependentUpon>FormTickets.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReceivedContractReport.resx">
       <DependentUpon>ReceivedContractReport.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DailyInterestVariance.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>DailyInterestVariance.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="FormDelinquencyPeriods.resx">
       <DependentUpon>FormDelinquencyPeriods.cs</DependentUpon>
@@ -2278,17 +2265,9 @@
     <EmbeddedResource Include="frmImportDefi.resx">
       <DependentUpon>frmImportDefi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PNSRejects.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>PNSRejects.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="PNSImport.resx">
       <DependentUpon>PNSImport.cs</DependentUpon>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MonthlyUpdateDevience.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>MonthlyUpdateDevience.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="OpenFirstPaymentDefaultReport.resx">
       <DependentUpon>OpenFirstPaymentDefaultReport.cs</DependentUpon>
@@ -2300,24 +2279,8 @@
     <EmbeddedResource Include="ClosedPaidInFullPriorToMaturityReport.resx">
       <DependentUpon>ClosedPaidInFullPriorToMaturityReport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ClosedPaidInFullPriorToMaturityReport.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ClosedPaidInFullPriorToMaturityReport1.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="FixPaidThroughs.resx">
       <DependentUpon>FixPaidThroughs.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="IVRRejects.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>IVRRejects.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RepoLog.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>RepoLog.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DefiDuplicates.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>DefiDuplicates.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="VSIExtract.resx">
       <DependentUpon>VSIExtract.cs</DependentUpon>
@@ -2325,27 +2288,11 @@
     <EmbeddedResource Include="IVRImport.resx">
       <DependentUpon>IVRImport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ClosedPaidInAdvance.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ClosedPaidInAdvance.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="ClosedPayedInAdvance.resx">
       <DependentUpon>ClosedPayedInAdvance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ClosedFirstPaymentDefaultReport.resx">
       <DependentUpon>ClosedFirstPaymentDefaultReport.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ClosedFirstPaymentDefault.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ClosedFirstPaymentDefault.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ClosedCustomerDelinquencyRepoReport.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ClosedCustomerDelinquencyRepoReport.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ClosedCustomerDelinquencyCOL.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ClosedCustomerDelinquencyCOL.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="FormBulkSMSMessage.resx">
       <DependentUpon>FormBulkSMSMessage.cs</DependentUpon>
@@ -2353,73 +2300,22 @@
     <EmbeddedResource Include="FormSMSMessage.resx">
       <DependentUpon>FormSMSMessage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PaymentTypeSummary.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>PaymentTypeSummary.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="SelectTemplate.resx">
       <DependentUpon>SelectTemplate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormValidateCellPhones.resx">
       <DependentUpon>FormValidateCellPhones.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmImportTCI.resx">
-      <DependentUpon>frmImportTCI.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TCIDuplicates.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>TCIDuplicates.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="InternetPaymentRejects.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>InternetPaymentRejects.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AutoPaymentRejects.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>AutoPaymentRejects.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ClosedCustomerDelinquency.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ClosedCustomerDelinquency.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ClosedCustomerDelinquencySummary.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ClosedCustomerDelinquencySummary.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="OpenCustomerDelinquencySummary.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>OpenCustomerDelinquencySummary.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ClosedCustomerDelinquencySummaryCOL.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ClosedCustomerDelinquencySummaryCOL.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ClosedCustomerEditList.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ClosedCustomerEditList.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="ClosedDealerContingentMaintenance.resx">
       <DependentUpon>ClosedDealerContingentMaintenance.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="ClosedDealerHistory.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ClosedDealerHistory.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ClosedPaymentBalanceJournal.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ClosedPaymentBalanceJournal1.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ClosedPaymentEditList.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ClosedPaymentEditList.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="ClosedLateNotices.resx">
       <DependentUpon>ClosedLateNotices.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ClosedCustomerLateChargeListing.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ClosedCustomerLateChargeListing.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="ClosedDealerContingentPost.resx">
       <DependentUpon>ClosedDealerContingentPost.cs</DependentUpon>
@@ -2427,24 +2323,8 @@
     <EmbeddedResource Include="ClosedMasterContingentPost.resx">
       <DependentUpon>ClosedMasterContingentPost.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ClosedCustomerHistory.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ClosedCustomerHistory.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ClosedContingentEditList.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ClosedContingentEditList.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ClosedLoanTrialBalance.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ClosedLoanTrialBalance.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="ClosedMasterContingentMaintenance.resx">
       <DependentUpon>ClosedMasterContingentMaintenance.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ClosedDealerSummary.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ClosedDealerSummary.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="ClosedDealerSummaryReport.resx">
       <DependentUpon>ClosedDealerSummaryReport.cs</DependentUpon>
@@ -2452,26 +2332,14 @@
     <EmbeddedResource Include="ClosedTrialBalance.resx">
       <DependentUpon>ClosedTrialBalance.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ClosedChargesAppliedToDealer.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ClosedChargesAppliedToDealer.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="ClosedDealerHistoryReport.resx">
       <DependentUpon>ClosedDealerHistoryReport.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ClosedCustomerBuybackReport.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ClosedCustomerBuybackReport.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="ClosedCustomerBuybackSelectionCriteria.resx">
       <DependentUpon>ClosedCustomerBuybackSelectionCriteria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ClosedPaidInFullReport.resx">
       <DependentUpon>ClosedPaidInFullReport.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ClosedPaidInFullReport.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ClosedPaidInFullReport1.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="ClosedDelinquencyReports.resx">
       <DependentUpon>ClosedDelinquencyReports.cs</DependentUpon>
@@ -2481,10 +2349,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ClosedChargesAppliedtoDealerReport.resx">
       <DependentUpon>ClosedChargesAppliedtoDealerReport.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ClosedMonthEndBalanceReport.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ClosedMonthEndBalanceReport.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="ClosedCustomerTierSummary.resx">
       <DependentUpon>ClosedCustomerTierSummary.cs</DependentUpon>
@@ -2501,23 +2365,11 @@
     <EmbeddedResource Include="RepoReport.resx">
       <DependentUpon>RepoReport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ShortBalanceReport.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>ShortBalanceReport.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="CustomerMissingTitleReport.resx">
       <DependentUpon>CustomerMissingTitleReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerRepossessionReport.resx">
       <DependentUpon>CustomerRepossessionReport.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="VehicleMissingTitleReport.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>VehicleMissingTitleReport.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="VehicleRepossessionReport.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>VehicleRepossessionReport.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Fix211Data.resx">
       <DependentUpon>Fix211Data.cs</DependentUpon>
@@ -2542,14 +2394,6 @@
     <EmbeddedResource Include="OpenChargesAppliedtoDealerReport.resx">
       <DependentUpon>OpenChargesAppliedtoDealerReport.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MonthlyUpdateListing.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>MonthlyUpdateListing.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TVAmortizationDistribution.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>TVAmortizationDistribution.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="OpenDelinquencyReports.resx">
       <DependentUpon>OpenDelinquencyReports.cs</DependentUpon>
     </EmbeddedResource>
@@ -2569,17 +2413,9 @@
     <EmbeddedResource Include="CreateAutobankFiles.resx">
       <DependentUpon>CreateAutobankFiles.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomerEFTListing.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CustomerEFTListing.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="OpenCustomerBuybackReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>OpenCustomerBuybackReport.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MasterHistory.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>MasterHistory1.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="MasterHistoryReport.resx">
       <DependentUpon>MasterHistoryReport.cs</DependentUpon>
@@ -2588,20 +2424,12 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>OpenDealerHistory.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="OpenDealerSummary.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>OpenDealerSummary.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="PrintNewBusinessStatements.resx">
       <DependentUpon>PrintNewBusinessStatements.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OpenCustomerLateChargeListing.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>OpenCustomerLateChargeListing.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Receipt.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Receipt.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Receipts.resx">
       <DependentUpon>Receipts.cs</DependentUpon>
@@ -3134,7 +2962,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
-    <PublishFile Include="DevExpress.BonusSkins.v22.1">
+    <PublishFile Include="DevExpress.BonusSkins.v23.1">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -3144,7 +2972,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
-    <PublishFile Include="DevExpress.Charts.v22.1.Core">
+    <PublishFile Include="DevExpress.DataAccess.v23.1.UI">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -3154,7 +2982,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
-    <PublishFile Include="DevExpress.CodeParser.v22.1">
+    <PublishFile Include="DevExpress.Design.v23.1">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -3164,7 +2992,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
-    <PublishFile Include="DevExpress.Data.Desktop.v22.1">
+    <PublishFile Include="DevExpress.Diagram.v23.1.Core">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -3174,7 +3002,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
-    <PublishFile Include="DevExpress.Data.v22.1">
+    <PublishFile Include="DevExpress.Images.v23.1">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -3184,7 +3012,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
-    <PublishFile Include="DevExpress.DataAccess.v22.1">
+    <PublishFile Include="DevExpress.Utils.v23.1.UI">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -3194,7 +3022,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
-    <PublishFile Include="DevExpress.DataAccess.v22.1.UI">
+    <PublishFile Include="DevExpress.VisualStudioInterop.v23.1.Base">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -3204,7 +3032,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
-    <PublishFile Include="DevExpress.DataVisualization.v22.1.Core">
+    <PublishFile Include="DevExpress.XtraCharts.v23.1.Extensions">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -3214,7 +3042,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
-    <PublishFile Include="DevExpress.Diagram.v22.1.Core">
+    <PublishFile Include="DevExpress.XtraCharts.v23.1.Wizard">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -3224,7 +3052,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
-    <PublishFile Include="DevExpress.Dialogs.v22.1.Core">
+    <PublishFile Include="DevExpress.XtraDiagram.v23.1">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -3234,7 +3062,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
-    <PublishFile Include="DevExpress.Drawing.v22.1">
+    <PublishFile Include="DevExpress.XtraNavBar.v23.1">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -3244,7 +3072,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
-    <PublishFile Include="DevExpress.Images.v22.1">
+    <PublishFile Include="DevExpress.XtraPivotGrid.v23.1">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -3254,7 +3082,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
-    <PublishFile Include="DevExpress.Office.v22.1.Core">
+    <PublishFile Include="DevExpress.XtraReports.v23.1.Extensions">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -3264,7 +3092,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
-    <PublishFile Include="DevExpress.Pdf.v22.1.Core">
+    <PublishFile Include="DevExpress.XtraRichEdit.v23.1">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -3274,7 +3102,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
-    <PublishFile Include="DevExpress.Pdf.v22.1.Drawing">
+    <PublishFile Include="DevExpress.XtraVerticalGrid.v23.1">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -3284,267 +3112,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
-    <PublishFile Include="DevExpress.PivotGrid.v22.1.Core">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
-      <FileType>Assembly</FileType>
-    </PublishFile>
-    <PublishFile Include="DevExpress.Printing.v22.1.Core">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
-      <FileType>Assembly</FileType>
-    </PublishFile>
-    <PublishFile Include="DevExpress.RichEdit.v22.1.Core">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
-      <FileType>Assembly</FileType>
-    </PublishFile>
-    <PublishFile Include="DevExpress.RichEdit.v22.1.Export">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
-      <FileType>Assembly</FileType>
-    </PublishFile>
-    <PublishFile Include="DevExpress.Sparkline.v22.1.Core">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
-      <FileType>Assembly</FileType>
-    </PublishFile>
-    <PublishFile Include="DevExpress.Utils.v22.1">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
-      <FileType>Assembly</FileType>
-    </PublishFile>
-    <PublishFile Include="DevExpress.Utils.v22.1.UI">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
-      <FileType>Assembly</FileType>
-    </PublishFile>
-    <PublishFile Include="DevExpress.Xpo.v22.1">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
-      <FileType>Assembly</FileType>
-    </PublishFile>
-    <PublishFile Include="DevExpress.XtraBars.v22.1">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
-      <FileType>Assembly</FileType>
-    </PublishFile>
-    <PublishFile Include="DevExpress.XtraCharts.v22.1">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
-      <FileType>Assembly</FileType>
-    </PublishFile>
-    <PublishFile Include="DevExpress.XtraCharts.v22.1.Extensions">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
-      <FileType>Assembly</FileType>
-    </PublishFile>
-    <PublishFile Include="DevExpress.XtraCharts.v22.1.Wizard">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
-      <FileType>Assembly</FileType>
-    </PublishFile>
-    <PublishFile Include="DevExpress.XtraDiagram.v22.1">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
-      <FileType>Assembly</FileType>
-    </PublishFile>
-    <PublishFile Include="DevExpress.XtraDialogs.v22.1">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
-      <FileType>Assembly</FileType>
-    </PublishFile>
-    <PublishFile Include="DevExpress.XtraEditors.v22.1">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
-      <FileType>Assembly</FileType>
-    </PublishFile>
-    <PublishFile Include="DevExpress.XtraGauges.v22.1.Core">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
-      <FileType>Assembly</FileType>
-    </PublishFile>
-    <PublishFile Include="DevExpress.XtraGrid.v22.1">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
-      <FileType>Assembly</FileType>
-    </PublishFile>
-    <PublishFile Include="DevExpress.XtraLayout.v22.1">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
-      <FileType>Assembly</FileType>
-    </PublishFile>
-    <PublishFile Include="DevExpress.XtraNavBar.v22.1">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
-      <FileType>Assembly</FileType>
-    </PublishFile>
-    <PublishFile Include="DevExpress.XtraPivotGrid.v22.1">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
-      <FileType>Assembly</FileType>
-    </PublishFile>
-    <PublishFile Include="DevExpress.XtraPrinting.v22.1">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
-      <FileType>Assembly</FileType>
-    </PublishFile>
-    <PublishFile Include="DevExpress.XtraReports.v22.1">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
-      <FileType>Assembly</FileType>
-    </PublishFile>
-    <PublishFile Include="DevExpress.XtraReports.v22.1.Extensions">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
-      <FileType>Assembly</FileType>
-    </PublishFile>
-    <PublishFile Include="DevExpress.XtraRichEdit.v22.1">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
-      <FileType>Assembly</FileType>
-    </PublishFile>
-    <PublishFile Include="DevExpress.XtraTreeList.v22.1">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
-      <FileType>Assembly</FileType>
-    </PublishFile>
-    <PublishFile Include="DevExpress.XtraVerticalGrid.v22.1">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
-      <FileType>Assembly</FileType>
-    </PublishFile>
-    <PublishFile Include="de\DevExpress.Pdf.v22.1.Core.resources">
+    <PublishFile Include="de\DevExpress.Pdf.v23.1.Core.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -3554,7 +3122,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="de\DevExpress.PivotGrid.v22.1.Core.resources">
+    <PublishFile Include="de\DevExpress.PivotGrid.v23.1.Core.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -3564,7 +3132,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="de\DevExpress.Printing.v22.1.Core.resources">
+    <PublishFile Include="de\DevExpress.Printing.v23.1.Core.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -3574,7 +3142,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="de\DevExpress.RichEdit.v22.1.Core.resources">
+    <PublishFile Include="de\DevExpress.RichEdit.v23.1.Core.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -3584,7 +3152,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Satellite</FileType>
     </PublishFile>
-    <PublishFile Include="de\DevExpress.Sparkline.v22.1.Core.resources">
+    <PublishFile Include="de\DevExpress.Sparkline.v23.1.Core.resources">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -3684,6 +3252,36 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
+    <PublishFile Include="Microsoft.Data.SqlClient">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.Data.Tools.Sql.BatchParser">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.Identity.Client">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
     <PublishFile Include="Microsoft.Identity.Client.Extensions.Msal">
       <Visible>False</Visible>
       <Group>
@@ -3691,6 +3289,66 @@
       <TargetPath>
       </TargetPath>
       <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.IdentityModel.Abstractions">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.IdentityModel.JsonWebTokens">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.IdentityModel.Logging">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.IdentityModel.Protocols">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.IdentityModel.Protocols.OpenIdConnect">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.IdentityModel.Tokens">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
@@ -3714,7 +3372,37 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
+    <PublishFile Include="Microsoft.SqlServer.ConnectionInfo">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
     <PublishFile Include="Microsoft.SqlServer.Diagnostics.STrace">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.SqlServer.Dmf">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.SqlServer.Dmf.Common">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -3774,6 +3462,76 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
+    <PublishFile Include="Microsoft.SqlServer.Management.Assessment">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.SqlServer.Management.Collector">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.SqlServer.Management.CollectorEnum">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.SqlServer.Management.HadrData">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.SqlServer.Management.HadrModel">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.SqlServer.Management.RegisteredServers">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.SqlServer.Management.Sdk.Sfc">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
     <PublishFile Include="Microsoft.SqlServer.Management.SmoMetadataProvider">
       <Visible>False</Visible>
       <Group>
@@ -3791,6 +3549,56 @@
       <TargetPath>
       </TargetPath>
       <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.SqlServer.Management.SqlScriptPublish">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.SqlServer.Management.XEvent">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.SqlServer.Management.XEventDbScoped">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.SqlServer.Management.XEventDbScopedEnum">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.SqlServer.Management.XEventEnum">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
@@ -4464,10 +4272,12 @@
     <Error Condition="!Exists('..\packages\System.Text.Json.6.0.5\build\System.Text.Json.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Text.Json.6.0.5\build\System.Text.Json.targets'))" />
     <Error Condition="!Exists('..\packages\Sentry.3.24.0\build\Sentry.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Sentry.3.24.0\build\Sentry.props'))" />
     <Error Condition="!Exists('..\packages\Microsoft.Data.SqlClient.SNI.5.1.0\build\net462\Microsoft.Data.SqlClient.SNI.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Data.SqlClient.SNI.5.1.0\build\net462\Microsoft.Data.SqlClient.SNI.targets'))" />
+    <Error Condition="!Exists('..\packages\DevExpress.Reporting.Core.23.1.5\build\DevExpress.Reporting.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\DevExpress.Reporting.Core.23.1.5\build\DevExpress.Reporting.Core.targets'))" />
   </Target>
   <Import Project="..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" />
   <Import Project="..\packages\System.Text.Json.6.0.5\build\System.Text.Json.targets" Condition="Exists('..\packages\System.Text.Json.6.0.5\build\System.Text.Json.targets')" />
   <Import Project="..\packages\Microsoft.Data.SqlClient.SNI.5.1.0\build\net462\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('..\packages\Microsoft.Data.SqlClient.SNI.5.1.0\build\net462\Microsoft.Data.SqlClient.SNI.targets')" />
+  <Import Project="..\packages\DevExpress.Reporting.Core.23.1.5\build\DevExpress.Reporting.Core.targets" Condition="Exists('..\packages\DevExpress.Reporting.Core.23.1.5\build\DevExpress.Reporting.Core.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

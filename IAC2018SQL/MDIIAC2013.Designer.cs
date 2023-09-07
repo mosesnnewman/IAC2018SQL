@@ -1142,7 +1142,6 @@
             // 
             // applyPaymentsToolStripMenuItem
             // 
-            this.applyPaymentsToolStripMenuItem.Enabled = false;
             this.applyPaymentsToolStripMenuItem.Name = "applyPaymentsToolStripMenuItem";
             this.applyPaymentsToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
             this.applyPaymentsToolStripMenuItem.Text = "Apply Payments";
