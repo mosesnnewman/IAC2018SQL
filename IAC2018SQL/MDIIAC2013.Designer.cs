@@ -675,7 +675,7 @@
             this.testToolStripMenuItem,
             this.PrintCoupons});
             this.closedEndToolStripMenuItem.Name = "closedEndToolStripMenuItem";
-            this.closedEndToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.closedEndToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.closedEndToolStripMenuItem.Text = "&Closed End";
             // 
             // amortizationScheduleToolStripMenuItem
@@ -903,7 +903,7 @@
             this.openCustomerBuyBackReportBUYBACKToolStripMenuItem,
             this.firstPaymentDefaultReportToolStripMenuItem1});
             this.openEndToolStripMenuItem.Name = "openEndToolStripMenuItem";
-            this.openEndToolStripMenuItem.Size = new System.Drawing.Size(133, 22);
+            this.openEndToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.openEndToolStripMenuItem.Text = "&Open End";
             // 
             // newCustomerEditListToolStripMenuItem1
@@ -1142,6 +1142,7 @@
             // 
             // applyPaymentsToolStripMenuItem
             // 
+            this.applyPaymentsToolStripMenuItem.Enabled = false;
             this.applyPaymentsToolStripMenuItem.Name = "applyPaymentsToolStripMenuItem";
             this.applyPaymentsToolStripMenuItem.Size = new System.Drawing.Size(221, 22);
             this.applyPaymentsToolStripMenuItem.Text = "Apply Payments";

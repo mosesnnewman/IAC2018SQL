@@ -3274,7 +3274,7 @@ namespace IAC2021SQL
 		static public void CreateFinalPayments(IACDataSet ClosedPaymentiacDataSet)
 		{
 			PaymentDataSet paymentDataSet = new PaymentDataSet();
-
+			IACDataSet tempData	= new IACDataSet();
 			IACDataSetTableAdapters.CUSTOMERTableAdapter cUSTOMERTableAdapter = new IACDataSetTableAdapters.CUSTOMERTableAdapter();
 			IACDataSetTableAdapters.CUSTHISTTableAdapter cUSTHISTTableAdapter = new IACDataSetTableAdapters.CUSTHISTTableAdapter();
 			IACDataSetTableAdapters.PAYMENTTableAdapter paymentAdapter = new IACDataSetTableAdapters.PAYMENTTableAdapter();
@@ -3295,11 +3295,11 @@ namespace IAC2021SQL
 
 			for (Int32 i = 0; i < ClosedPaymentiacDataSet.CUSTHIST.Rows.Count; i++)
 			{
-				ClosedPaymentiacDataSet.CUSTOMER.Clear();
-				cUSTOMERTableAdapter.Fill(ClosedPaymentiacDataSet.CUSTOMER, ClosedPaymentiacDataSet.CUSTHIST.Rows[i].Field<String>("CUSTHIST_NO"));
+				tempData.CUSTOMER.Clear();
+				cUSTOMERTableAdapter.Fill(tempData.CUSTOMER, ClosedPaymentiacDataSet.CUSTHIST.Rows[i].Field<String>("CUSTHIST_NO"));
 				loPaidThroughDate = paymentHistoryTableAdapter.PaidThroughDate(ClosedPaymentiacDataSet.CUSTHIST.Rows[i].Field<String>("CUSTHIST_PAID_THRU"),
-									ClosedPaymentiacDataSet.CUSTOMER.Rows[0].Field<Int32>("CUSTOMER_DAY_DUE"));
-				PaidThroughDate = loPaidThroughDate != null ? (DateTime)loPaidThroughDate : ClosedPaymentiacDataSet.CUSTOMER.Rows[0].Field<DateTime>("CUSTOMER_INIT_DATE").AddMonths(-1);
+									tempData.CUSTOMER.Rows[0].Field<Int32>("CUSTOMER_DAY_DUE"));
+				PaidThroughDate = loPaidThroughDate != null ? (DateTime)loPaidThroughDate : tempData.CUSTOMER.Rows[0].Field<DateTime>("CUSTOMER_INIT_DATE").AddMonths(-1);
 				loCusthistID = cUSTHISTTableAdapter.GetID(ClosedPaymentiacDataSet.CUSTHIST.Rows[i].Field<String>("CUSTHIST_NO"),
 														 ClosedPaymentiacDataSet.CUSTHIST.Rows[i].Field<DateTime>("CUSTHIST_PAY_DATE"),
 														 ClosedPaymentiacDataSet.CUSTHIST.Rows[i].Field<Int32>("CUSTHIST_DATE_SEQ"));
@@ -3313,7 +3313,7 @@ namespace IAC2021SQL
 													  ClosedPaymentiacDataSet.CUSTHIST.Rows[i].Field<DateTime>("CUSTHIST_PAY_DATE"),
 													  ClosedPaymentiacDataSet.CUSTHIST.Rows[i].Field<Int32>("CUSTHIST_DATE_SEQ"),
 													  (Int32?)ClosedPaymentiacDataSet.CUSTHIST.Rows[i].Field<Decimal?>("CUSTHIST_THRU_UD"),
-													  ClosedPaymentiacDataSet.CUSTOMER.Rows[0].Field<Int32?>("CUSTOMER_DEALER"),
+													  tempData.CUSTOMER.Rows[0].Field<Int32?>("CUSTOMER_DEALER"),
 													  ClosedPaymentiacDataSet.CUSTHIST.Rows[i].Field<Decimal?>("CUSTHIST_PAYMENT_RCV"),
 													  ClosedPaymentiacDataSet.CUSTHIST.Rows[i].Field<Decimal?>("CUSTHIST_BALANCE"),
 													  ClosedPaymentiacDataSet.CUSTHIST.Rows[i].Field<Decimal?>("CUSTHIST_BUYOUT"),
@@ -3348,6 +3348,8 @@ namespace IAC2021SQL
 				}
 			}
 			paymentDataSet.PaymentHistory.Clear();
+			tempData.Clear();
+			tempData.Dispose();
 		}
 
         static public void RemoveSinglePayment(Int32 PaymentId)
@@ -3423,7 +3425,8 @@ namespace IAC2021SQL
 
             List<String> NegAdjList = new List<String>
             {
-                "AW" //,
+                "AW",
+				"RI"
                 //"WH",
                 //"WC"
             };

@@ -2877,7 +2877,6 @@
             this.xtraTabPageTSB});
             this.xtraTabControlCustomerMaint.SelectedPageChanged += new DevExpress.XtraTab.TabPageChangedEventHandler(this.xtraTabControlCustomerMaint_SelectedPageChanged);
             this.xtraTabControlCustomerMaint.CloseButtonClick += new System.EventHandler(this.xtraTabControlCustomerMaint_CloseButtonClick);
-            this.xtraTabControlCustomerMaint.Click += new System.EventHandler(this.xtraTabControlCustomerMaint_Click);
             // 
             // imageCollectionTabs
             // 
@@ -5655,6 +5654,7 @@
             this.radioButtonCOSMktg.Name = "radioButtonCOSMktg";
             this.radioButtonCOSMktg.TabStop = true;
             this.radioButtonCOSMktg.UseVisualStyleBackColor = true;
+            this.radioButtonCOSMktg.CheckedChanged += new System.EventHandler(this.radioButtonCOSMktg_CheckedChanged);
             // 
             // radioButtonCOSAcct
             // 
@@ -5663,6 +5663,8 @@
             this.radioButtonCOSAcct.Name = "radioButtonCOSAcct";
             this.radioButtonCOSAcct.TabStop = true;
             this.radioButtonCOSAcct.UseVisualStyleBackColor = true;
+            this.radioButtonCOSAcct.CheckedChanged += new System.EventHandler(this.radioButtonCOSAcct_CheckedChanged);
+            this.radioButtonCOSAcct.Click += new System.EventHandler(this.radioButtonCOSAcct_Click);
             // 
             // checkBoxCOSDNTMktg
             // 
@@ -6729,7 +6731,6 @@
             this.groupBox18.Controls.Add(this.gridControlCustomerHist);
             resources.ApplyResources(this.groupBox18, "groupBox18");
             this.groupBox18.Name = "groupBox18";
-            this.groupBox18.Paint += new System.Windows.Forms.PaintEventHandler(this.groupBox18_Paint);
             // 
             // groupBox11
             // 

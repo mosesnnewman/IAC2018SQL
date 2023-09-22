@@ -6016,16 +6016,6 @@ namespace IAC2021SQL
             }
         }
 
-        private void xtraTabControlCustomerMaint_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox18_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void cUSTOMER_NOTextBox_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
         {
             /*if (e.KeyData == Keys.Tab)

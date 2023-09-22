@@ -98,14 +98,17 @@
             this.Text3 = new DevExpress.XtraReports.UI.XRLabel();
             this.Area4 = new DevExpress.XtraReports.UI.ReportFooterBand();
             this.Section4 = new DevExpress.XtraReports.UI.SubBand();
+            this.SubreportDealerSummary = new DevExpress.XtraReports.UI.XRSubreport();
             this.gsUserID = new DevExpress.XtraReports.Parameters.Parameter();
             this.gsUserName = new DevExpress.XtraReports.Parameters.Parameter();
             this.gsFormTitle = new DevExpress.XtraReports.Parameters.Parameter();
             this.ReportFooterSection2 = new DevExpress.XtraReports.UI.SubBand();
+            this.SubreportBalanceTotals = new DevExpress.XtraReports.UI.XRSubreport();
             this.TotalIVR = new DevExpress.XtraReports.Parameters.Parameter();
             this.TotalIVRAmex = new DevExpress.XtraReports.Parameters.Parameter();
             this.TotalIVRFees = new DevExpress.XtraReports.Parameters.Parameter();
             this.ReportFooterSection3 = new DevExpress.XtraReports.UI.SubBand();
+            this.SubreportPaymentTypeSummary = new DevExpress.XtraReports.UI.XRSubreport();
             this.Area5 = new DevExpress.XtraReports.UI.PageFooterBand();
             this.DataDate1 = new DevExpress.XtraReports.UI.XRPageInfo();
             this.DataTime1 = new DevExpress.XtraReports.UI.XRPageInfo();
@@ -127,9 +130,6 @@
             this.xrLabel6 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel7 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel5 = new DevExpress.XtraReports.UI.XRLabel();
-            this.SubreportDealerSummary = new DevExpress.XtraReports.UI.XRSubreport();
-            this.SubreportBalanceTotals = new DevExpress.XtraReports.UI.XRSubreport();
-            this.SubreportPaymentTypeSummary = new DevExpress.XtraReports.UI.XRSubreport();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // Area3
@@ -814,7 +814,7 @@
             this.Text7.SizeF = new System.Drawing.SizeF(88.54175F, 31.73611F);
             this.Text7.Text = "ACCRUED INT\nUE/ INT.";
             this.Text7.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
-            this.Text7.TextTrimming = DevExpress.Drawing.DXStringTrimming.None; 
+            this.Text7.TextTrimming = DevExpress.Drawing.DXStringTrimming.None;
             // 
             // Text11
             // 
@@ -886,6 +886,18 @@
             this.Section4.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.Section4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
+            // SubreportDealerSummary
+            // 
+            this.SubreportDealerSummary.GenerateOwnPages = true;
+            this.SubreportDealerSummary.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
+            this.SubreportDealerSummary.Name = "SubreportDealerSummary";
+            this.SubreportDealerSummary.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gsUserID", this.gsUserID));
+            this.SubreportDealerSummary.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gsUserName", this.gsUserName));
+            this.SubreportDealerSummary.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gsFormTitle", this.gsFormTitle));
+            this.SubreportDealerSummary.ReportSource = new IAC2021SQL.XtraReportClosedPaymentDealerSummary();
+            this.SubreportDealerSummary.SizeF = new System.Drawing.SizeF(1060F, 25F);
+            this.SubreportDealerSummary.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.SubreportDealerSummary_BeforePrint);
+            // 
             // gsUserID
             // 
             this.gsUserID.Description = "Enter gsUserID:";
@@ -910,6 +922,20 @@
             this.ReportFooterSection2.Name = "ReportFooterSection2";
             this.ReportFooterSection2.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.ReportFooterSection2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            // 
+            // SubreportBalanceTotals
+            // 
+            this.SubreportBalanceTotals.GenerateOwnPages = true;
+            this.SubreportBalanceTotals.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
+            this.SubreportBalanceTotals.Name = "SubreportBalanceTotals";
+            this.SubreportBalanceTotals.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("TotalIVR", this.TotalIVR));
+            this.SubreportBalanceTotals.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("TotalIVRAmex", this.TotalIVRAmex));
+            this.SubreportBalanceTotals.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("TotalIVRFees", this.TotalIVRFees));
+            this.SubreportBalanceTotals.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gsUserID", this.gsUserID));
+            this.SubreportBalanceTotals.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gsUserName", this.gsUserName));
+            this.SubreportBalanceTotals.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gsFormTitle", this.gsFormTitle));
+            this.SubreportBalanceTotals.ReportSource = new IAC2021SQL.XtraReportClosedPaymentBalanceTotals();
+            this.SubreportBalanceTotals.SizeF = new System.Drawing.SizeF(1060F, 50F);
             // 
             // TotalIVR
             // 
@@ -940,6 +966,17 @@
             this.ReportFooterSection3.Name = "ReportFooterSection3";
             this.ReportFooterSection3.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.ReportFooterSection3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            // 
+            // SubreportPaymentTypeSummary
+            // 
+            this.SubreportPaymentTypeSummary.GenerateOwnPages = true;
+            this.SubreportPaymentTypeSummary.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
+            this.SubreportPaymentTypeSummary.Name = "SubreportPaymentTypeSummary";
+            this.SubreportPaymentTypeSummary.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gsUserID", this.gsUserID));
+            this.SubreportPaymentTypeSummary.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gsUserName", this.gsUserName));
+            this.SubreportPaymentTypeSummary.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gsFormTitle", this.gsFormTitle));
+            this.SubreportPaymentTypeSummary.ReportSource = new IAC2021SQL.XtraReportClosedPaymentTypeSummary();
+            this.SubreportPaymentTypeSummary.SizeF = new System.Drawing.SizeF(1060F, 50F);
             // 
             // Area5
             // 
@@ -1001,7 +1038,7 @@
             this.gsUserID_1.LocationFloat = new DevExpress.Utils.PointFloat(250F, 0F);
             this.gsUserID_1.Name = "gsUserID_1";
             this.gsUserID_1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.gsUserID_1.SizeF = new System.Drawing.SizeF(33.33331F, 18.33333F);
+            this.gsUserID_1.SizeF = new System.Drawing.SizeF(55.20831F, 18.33333F);
             this.gsUserID_1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
             // gsUserName_1
@@ -1015,7 +1052,7 @@
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "?gsUserName")});
             this.gsUserName_1.Font = new DevExpress.Drawing.DXFont("Arial", 10F);
             this.gsUserName_1.ForeColor = System.Drawing.Color.Black;
-            this.gsUserName_1.LocationFloat = new DevExpress.Utils.PointFloat(291.6667F, 0F);
+            this.gsUserName_1.LocationFloat = new DevExpress.Utils.PointFloat(308.3333F, 0F);
             this.gsUserName_1.Name = "gsUserName_1";
             this.gsUserName_1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.gsUserName_1.SizeF = new System.Drawing.SizeF(158.3333F, 18.33333F);
@@ -1252,43 +1289,6 @@
             this.xrLabel5.StylePriority.UseFont = false;
             this.xrLabel5.Text = "xrLabel4";
             // 
-            // SubreportDealerSummary
-            // 
-            this.SubreportDealerSummary.GenerateOwnPages = true;
-            this.SubreportDealerSummary.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
-            this.SubreportDealerSummary.Name = "SubreportDealerSummary";
-            this.SubreportDealerSummary.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gsUserID", this.gsUserID));
-            this.SubreportDealerSummary.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gsUserName", this.gsUserName));
-            this.SubreportDealerSummary.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gsFormTitle", this.gsFormTitle));
-            this.SubreportDealerSummary.ReportSource = new IAC2021SQL.XtraReportClosedPaymentDealerSummary();
-            this.SubreportDealerSummary.SizeF = new System.Drawing.SizeF(1060F, 25F);
-            this.SubreportDealerSummary.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.SubreportDealerSummary_BeforePrint);
-            // 
-            // SubreportBalanceTotals
-            // 
-            this.SubreportBalanceTotals.GenerateOwnPages = true;
-            this.SubreportBalanceTotals.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
-            this.SubreportBalanceTotals.Name = "SubreportBalanceTotals";
-            this.SubreportBalanceTotals.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("TotalIVR", this.TotalIVR));
-            this.SubreportBalanceTotals.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("TotalIVRAmex", this.TotalIVRAmex));
-            this.SubreportBalanceTotals.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("TotalIVRFees", this.TotalIVRFees));
-            this.SubreportBalanceTotals.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gsUserID", this.gsUserID));
-            this.SubreportBalanceTotals.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gsUserName", this.gsUserName));
-            this.SubreportBalanceTotals.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gsFormTitle", this.gsFormTitle));
-            this.SubreportBalanceTotals.ReportSource = new IAC2021SQL.XtraReportClosedPaymentBalanceTotals();
-            this.SubreportBalanceTotals.SizeF = new System.Drawing.SizeF(1060F, 50F);
-            // 
-            // SubreportPaymentTypeSummary
-            // 
-            this.SubreportPaymentTypeSummary.GenerateOwnPages = true;
-            this.SubreportPaymentTypeSummary.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
-            this.SubreportPaymentTypeSummary.Name = "SubreportPaymentTypeSummary";
-            this.SubreportPaymentTypeSummary.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gsUserID", this.gsUserID));
-            this.SubreportPaymentTypeSummary.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gsUserName", this.gsUserName));
-            this.SubreportPaymentTypeSummary.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gsFormTitle", this.gsFormTitle));
-            this.SubreportPaymentTypeSummary.ReportSource = new IAC2021SQL.XtraReportClosedPaymentTypeSummary();
-            this.SubreportPaymentTypeSummary.SizeF = new System.Drawing.SizeF(1060F, 50F);
-            // 
             // XtraReportClosedPaymentBalanceJournal
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -1314,7 +1314,7 @@
             this.DataMember = "PAYMENT";
             this.DataSource = this.sqlDataSourceClosedPaymentPosting;
             this.Landscape = true;
-            this.Margins = new DevExpress.Drawing.DXMargins(20, 20, 20, 20);
+            this.Margins = new DevExpress.Drawing.DXMargins(20F, 20F, 19.68504F, 19.68504F);
             this.PageHeight = 850;
             this.PageWidth = 1100;
             this.Parameters.AddRange(new DevExpress.XtraReports.Parameters.Parameter[] {
@@ -1324,7 +1324,7 @@
             this.TotalIVR,
             this.TotalIVRAmex,
             this.TotalIVRFees});
-            this.Version = "21.2";
+            this.Version = "23.1";
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
         }

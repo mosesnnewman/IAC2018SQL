@@ -114,7 +114,8 @@
             // 
             this.xrLabel2.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[DEALER_CUR_OLOAN]")});
-            this.xrLabel2.Font = new DevExpress.Drawing.DXFont("Arial Narrow", 9.75F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
+            this.xrLabel2.Font = new DevExpress.Drawing.DXFont("Arial Narrow", 9.75F, DevExpress.Drawing.DXFontStyle.Regular, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {
+            new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(511.8055F, 0F);
             this.xrLabel2.Multiline = true;
             this.xrLabel2.Name = "xrLabel2";
@@ -713,7 +714,7 @@
             this.gsUserID_1.LocationFloat = new DevExpress.Utils.PointFloat(253.8055F, 0F);
             this.gsUserID_1.Name = "gsUserID_1";
             this.gsUserID_1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.gsUserID_1.SizeF = new System.Drawing.SizeF(33.33333F, 18.33333F);
+            this.gsUserID_1.SizeF = new System.Drawing.SizeF(47.66669F, 18.33333F);
             this.gsUserID_1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
             // gsUserName_1
@@ -727,7 +728,7 @@
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "?gsUserName")});
             this.gsUserName_1.Font = new DevExpress.Drawing.DXFont("Arial", 10F);
             this.gsUserName_1.ForeColor = System.Drawing.Color.Black;
-            this.gsUserName_1.LocationFloat = new DevExpress.Utils.PointFloat(295.4722F, 0F);
+            this.gsUserName_1.LocationFloat = new DevExpress.Utils.PointFloat(301.4722F, 0F);
             this.gsUserName_1.Name = "gsUserName_1";
             this.gsUserName_1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.gsUserName_1.SizeF = new System.Drawing.SizeF(158.3333F, 18.33333F);
@@ -870,14 +871,14 @@
             this.DataMember = "DEALER";
             this.DataSource = this.sqlDataSourceClosedPaymentDealerSummary;
             this.Landscape = true;
-            this.Margins = new DevExpress.Drawing.DXMargins(16, 16, 16, 16);
+            this.Margins = new DevExpress.Drawing.DXMargins(16F, 16F, 16F, 16F);
             this.PageHeight = 850;
             this.PageWidth = 1100;
             this.Parameters.AddRange(new DevExpress.XtraReports.Parameters.Parameter[] {
             this.gsUserName,
             this.gsUserID,
             this.gsFormTitle});
-            this.Version = "21.2";
+            this.Version = "23.1";
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
         }
