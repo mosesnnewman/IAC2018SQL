@@ -145,9 +145,9 @@
             this.MonthlyPeriodicRate_1 = new DevExpress.XtraReports.UI.XRLabel();
             this.PrintAPR_1 = new DevExpress.XtraReports.UI.XRLabel();
             this.Area2 = new DevExpress.XtraReports.UI.PageHeaderBand();
-            this.Line4 = new DevExpress.XtraReports.UI.XRLine();
             this.CustomerName_1 = new DevExpress.XtraReports.UI.XRLabel();
             this.CustomerNo2 = new DevExpress.XtraReports.UI.XRLabel();
+            this.GridHeader = new DevExpress.XtraReports.UI.SubBand();
             this.xrTable1 = new DevExpress.XtraReports.UI.XRTable();
             this.xrTableRow1 = new DevExpress.XtraReports.UI.XRTableRow();
             this.xrTableCell15 = new DevExpress.XtraReports.UI.XRTableCell();
@@ -162,6 +162,7 @@
             this.xrTableCell9 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell10 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableCell11 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.Line4 = new DevExpress.XtraReports.UI.XRLine();
             this.Area4 = new DevExpress.XtraReports.UI.ReportFooterBand();
             this.Section4 = new DevExpress.XtraReports.UI.SubBand();
             this.Text30 = new DevExpress.XtraReports.UI.XRLabel();
@@ -187,6 +188,9 @@
             this.GrandTotalBalance_1 = new DevExpress.XtraReports.UI.XRLabel();
             this.GrandTotalNonCash1 = new DevExpress.XtraReports.UI.XRLabel();
             this.NewTotalPrincipal_1 = new DevExpress.XtraReports.UI.XRLabel();
+            this.SubBand1 = new DevExpress.XtraReports.UI.SubBand();
+            this.gsUserID = new DevExpress.XtraReports.Parameters.Parameter();
+            this.gsUserName = new DevExpress.XtraReports.Parameters.Parameter();
             this.Area5 = new DevExpress.XtraReports.UI.PageFooterBand();
             this.PrintDate2 = new DevExpress.XtraReports.UI.XRPageInfo();
             this.PrintTime1 = new DevExpress.XtraReports.UI.XRPageInfo();
@@ -215,8 +219,6 @@
             this.EffectiveAnnualRate = new DevExpress.XtraReports.Parameters.Parameter();
             this.Term = new DevExpress.XtraReports.Parameters.Parameter();
             this.FirstPaymentDate = new DevExpress.XtraReports.Parameters.Parameter();
-            this.gsUserName = new DevExpress.XtraReports.Parameters.Parameter();
-            this.gsUserID = new DevExpress.XtraReports.Parameters.Parameter();
             this.CustomerPrint = new DevExpress.XtraReports.Parameters.Parameter();
             this.gsCustomer = new DevExpress.XtraReports.Parameters.Parameter();
             this.IsSimple = new DevExpress.XtraReports.Parameters.Parameter();
@@ -238,6 +240,7 @@
             this.xrControlStyle1 = new DevExpress.XtraReports.UI.XRControlStyle();
             this.xrControlStyle2 = new DevExpress.XtraReports.UI.XRControlStyle();
             this.Box7 = new DevExpress.XtraReports.UI.XRCrossBandBox();
+            this.SubreportComments = new DevExpress.XtraReports.UI.XRSubreport();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
@@ -2093,32 +2096,18 @@
             // 
             this.Area2.BorderWidth = 0F;
             this.Area2.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-            this.Line4,
             this.CustomerName_1,
-            this.CustomerNo2,
-            this.xrTable1});
-            this.Area2.HeightF = 57.01667F;
+            this.CustomerNo2});
+            this.Area2.HeightF = 31.39165F;
             this.Area2.Name = "Area2";
             this.Area2.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.Area2.StylePriority.UseBorderColor = false;
             this.Area2.StylePriority.UseBorderDashStyle = false;
             this.Area2.StylePriority.UseBorders = false;
             this.Area2.StylePriority.UseBorderWidth = false;
+            this.Area2.SubBands.AddRange(new DevExpress.XtraReports.UI.SubBand[] {
+            this.GridHeader});
             this.Area2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
-            // 
-            // Line4
-            // 
-            this.Line4.BackColor = System.Drawing.Color.Transparent;
-            this.Line4.BorderColor = System.Drawing.Color.Maroon;
-            this.Line4.Borders = DevExpress.XtraPrinting.BorderSide.Top;
-            this.Line4.BorderWidth = 1F;
-            this.Line4.Font = new DevExpress.Drawing.DXFont("Times New Roman", 9.75F);
-            this.Line4.ForeColor = System.Drawing.Color.Maroon;
-            this.Line4.LineWidth = 3F;
-            this.Line4.LocationFloat = new DevExpress.Utils.PointFloat(4.166667F, 34.72223F);
-            this.Line4.Name = "Line4";
-            this.Line4.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
-            this.Line4.SizeF = new System.Drawing.SizeF(992.7082F, 3.125F);
             // 
             // CustomerName_1
             // 
@@ -2154,10 +2143,18 @@
             this.CustomerNo2.SizeF = new System.Drawing.SizeF(116.6667F, 18.33333F);
             this.CustomerNo2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
+            // GridHeader
+            // 
+            this.GridHeader.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrTable1,
+            this.Line4});
+            this.GridHeader.HeightF = 25.69167F;
+            this.GridHeader.Name = "GridHeader";
+            // 
             // xrTable1
             // 
             this.xrTable1.BorderWidth = 0F;
-            this.xrTable1.LocationFloat = new DevExpress.Utils.PointFloat(4.166668F, 41.66667F);
+            this.xrTable1.LocationFloat = new DevExpress.Utils.PointFloat(3.645844F, 6.944402F);
             this.xrTable1.Name = "xrTable1";
             this.xrTable1.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
             this.xrTableRow1});
@@ -2498,13 +2495,28 @@
             this.xrTableCell11.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.xrTableCell11.Weight = 88.253233800188539D;
             // 
+            // Line4
+            // 
+            this.Line4.BackColor = System.Drawing.Color.Transparent;
+            this.Line4.BorderColor = System.Drawing.Color.Maroon;
+            this.Line4.Borders = DevExpress.XtraPrinting.BorderSide.Top;
+            this.Line4.BorderWidth = 1F;
+            this.Line4.Font = new DevExpress.Drawing.DXFont("Times New Roman", 9.75F);
+            this.Line4.ForeColor = System.Drawing.Color.Maroon;
+            this.Line4.LineWidth = 3F;
+            this.Line4.LocationFloat = new DevExpress.Utils.PointFloat(3.645844F, 0F);
+            this.Line4.Name = "Line4";
+            this.Line4.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
+            this.Line4.SizeF = new System.Drawing.SizeF(992.7082F, 3.125F);
+            // 
             // Area4
             // 
             this.Area4.HeightF = 0F;
             this.Area4.Name = "Area4";
             this.Area4.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.Area4.SubBands.AddRange(new DevExpress.XtraReports.UI.SubBand[] {
-            this.Section4});
+            this.Section4,
+            this.SubBand1});
             this.Area4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
             // Section4
@@ -3021,6 +3033,26 @@
             this.NewTotalPrincipal_1.TextFormatString = "{0:C2}";
             this.NewTotalPrincipal_1.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.NewTotalPrincipal_1_BeforePrint);
             // 
+            // SubBand1
+            // 
+            this.SubBand1.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.SubreportComments});
+            this.SubBand1.HeightF = 50.22214F;
+            this.SubBand1.Name = "SubBand1";
+            this.SubBand1.PageBreak = DevExpress.XtraReports.UI.PageBreak.BeforeBand;
+            // 
+            // gsUserID
+            // 
+            this.gsUserID.Description = "Enter gUserID:";
+            this.gsUserID.Name = "gsUserID";
+            this.gsUserID.ValueInfo = "MNN";
+            // 
+            // gsUserName
+            // 
+            this.gsUserName.Description = "Enter gUserName:";
+            this.gsUserName.Name = "gsUserName";
+            this.gsUserName.ValueInfo = "Moses Newman";
+            // 
             // Area5
             // 
             this.Area5.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
@@ -3290,18 +3322,6 @@
             this.FirstPaymentDate.Name = "FirstPaymentDate";
             this.FirstPaymentDate.Type = typeof(System.DateTime);
             // 
-            // gsUserName
-            // 
-            this.gsUserName.Description = "Enter gUserName:";
-            this.gsUserName.Name = "gsUserName";
-            this.gsUserName.ValueInfo = "Moses Newman";
-            // 
-            // gsUserID
-            // 
-            this.gsUserID.Description = "Enter gUserID:";
-            this.gsUserID.Name = "gsUserID";
-            this.gsUserID.ValueInfo = "MNN";
-            // 
             // CustomerPrint
             // 
             this.CustomerPrint.Description = "Enter CustomerPrint:";
@@ -3537,6 +3557,16 @@
             this.Box7.StartBand = this.Section4;
             this.Box7.StartPointFloat = new DevExpress.Utils.PointFloat(608.3333F, 106.4834F);
             this.Box7.WidthF = 183.3334F;
+            // 
+            // SubreportComments
+            // 
+            this.SubreportComments.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
+            this.SubreportComments.Name = "SubreportComments";
+            this.SubreportComments.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gsUserID", this.gsUserID));
+            this.SubreportComments.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gsUserName", this.gsUserName));
+            this.SubreportComments.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gsCUSTOMER", this.gsCustomer));
+            this.SubreportComments.ReportSource = new IAC2021SQL.XtraReportClosedCustomerComments();
+            this.SubreportComments.SizeF = new System.Drawing.SizeF(1000F, 50F);
             // 
             // XtraReportTVAmortizationDistribution
             // 
@@ -3794,5 +3824,8 @@
         private DevExpress.XtraReports.UI.XRCrossBandBox Box7;
         private DevExpress.XtraReports.UI.XRLabel xrLabel1;
         private DevExpress.XtraReports.UI.XRLabel xrLabel2;
+        private DevExpress.XtraReports.UI.SubBand SubBand1;
+        private DevExpress.XtraReports.UI.XRSubreport SubreportComments;
+        private DevExpress.XtraReports.UI.SubBand GridHeader;
     }
 }
