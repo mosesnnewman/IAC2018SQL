@@ -594,7 +594,7 @@
             this.gsUserID_1.LocationFloat = new DevExpress.Utils.PointFloat(250F, 0F);
             this.gsUserID_1.Name = "gsUserID_1";
             this.gsUserID_1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.gsUserID_1.SizeF = new System.Drawing.SizeF(33.33333F, 18.33333F);
+            this.gsUserID_1.SizeF = new System.Drawing.SizeF(51.66669F, 18.33333F);
             this.gsUserID_1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
             // gsUserName_1
@@ -608,7 +608,7 @@
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "?gsUserName")});
             this.gsUserName_1.Font = new DevExpress.Drawing.DXFont("Arial", 10F);
             this.gsUserName_1.ForeColor = System.Drawing.Color.Black;
-            this.gsUserName_1.LocationFloat = new DevExpress.Utils.PointFloat(291.6667F, 0F);
+            this.gsUserName_1.LocationFloat = new DevExpress.Utils.PointFloat(301.6667F, 0F);
             this.gsUserName_1.Name = "gsUserName_1";
             this.gsUserName_1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.gsUserName_1.SizeF = new System.Drawing.SizeF(158.3333F, 18.33333F);
@@ -678,14 +678,14 @@
             this.DataMember = "PaymentTypeCodeSummarySelect";
             this.DataSource = this.sqlDataSource1;
             this.Landscape = true;
-            this.Margins = new DevExpress.Drawing.DXMargins(16, 16, 16, 16);
+            this.Margins = new DevExpress.Drawing.DXMargins(16F, 16F, 16F, 16F);
             this.PageHeight = 850;
             this.PageWidth = 1100;
             this.Parameters.AddRange(new DevExpress.XtraReports.Parameters.Parameter[] {
             this.gsUserID,
             this.gsUserName,
             this.gsFormTitle});
-            this.Version = "21.2";
+            this.Version = "23.1";
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
         }

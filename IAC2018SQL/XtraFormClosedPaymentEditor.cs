@@ -75,7 +75,8 @@ namespace IAC2021SQL
             LookUpEdit lookUpEdit = sender as LookUpEdit;
             switch (lookUpEdit.EditValue.ToString())
             {
-
+                case "":
+                    return;
                 case "I":
                     Decimal lnCheckValue = !String.IsNullOrEmpty(textEditAmount.EditValue.ToString()) ? Convert.ToDecimal(textEditAmount.EditValue) : 0;
                     if (lnCheckValue > 0)
@@ -148,6 +149,7 @@ namespace IAC2021SQL
             {
                 if (bindingSourcePAYMENT.Position == -1)
                 {
+                    lookUpEditPaymentType.EditValue = "";
                     IACDataSet.PAYMENTRow newRow = iacDataSet.PAYMENT.NewPAYMENTRow();
                     newRow.PAYMENT_CUSTOMER = textEditCustomerID.EditValue.ToString().PadLeft(6, '0');
                     newRow.PAYMENT_DATE = (DateTime)dateEditPaymentDate.EditValue;
@@ -156,6 +158,8 @@ namespace IAC2021SQL
                     newRow.PAYMENT_CODE_2 = "N";
                     newRow.PAYMENT_AUTO_PAY = "N";
                     iacDataSet.PAYMENT.AddPAYMENTRow(newRow);
+                    lookUpEditPaymentType.EditValue = newRow.PAYMENT_TYPE;
+                    lookUpEditPaymentCode.EditValue = newRow.PAYMENT_CODE_2;
                 }
                 else
                     iacDataSet.PAYMENT.Rows[bindingSourcePAYMENT.Position].SetField<String>("PAYMENT_CUSTOMER", textEditCustomerID.EditValue.ToString().PadLeft(6, '0'));
