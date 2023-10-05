@@ -10,7 +10,7 @@
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>IAC2021SQL</RootNamespace>
-    <AssemblyName>PRODUCTION TEST BED</AssemblyName>
+    <AssemblyName>IAC2021SQL</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>false</IsWebBootstrapper>
@@ -26,7 +26,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <PublishUrl>\\DC-IAC\Public\moses\IAC2022SQLTESTInstall\</PublishUrl>
+    <PublishUrl>\\DC-IAC\Public\moses\IAC2021SQLInstall\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Unc</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
@@ -37,12 +37,12 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <TargetCulture>en-US</TargetCulture>
-    <ProductName>IAC TEST BED</ProductName>
+    <ProductName>IAC 2021SQL</ProductName>
     <PublisherName>Moses Newman</PublisherName>
-    <SuiteName>IAC2023SQLTESTBED</SuiteName>
+    <SuiteName>IAC2021SQL</SuiteName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>42</ApplicationRevision>
+    <ApplicationRevision>2</ApplicationRevision>
     <ApplicationVersion>200.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -57,7 +57,7 @@
     <TargetZone>LocalIntranet</TargetZone>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>1683_Lightbulb.ico</ApplicationIcon>
+    <ApplicationIcon>CarLoan.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup />
   <PropertyGroup>

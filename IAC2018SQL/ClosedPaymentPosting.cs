@@ -502,7 +502,7 @@ namespace IAC2021SQL
             lnMoneyRemaining = PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<Decimal>("PAYMENT_AMOUNT_RCV");
             lnMoneyRemaining -= lnLCBPay;
             // Moses Newman 10/17/2018 Make sure we have latest amort for both payments if multiple payments for same customer!
-            NewGetPartialPaymentandLateFeeBalance(ref worker, PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_NO"), ref PAYMENTDataSet, CustomerPos, true, PaymentPos, false);
+            NewGetPartialPaymentandLateFeeBalance(PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_NO"), ref PAYMENTDataSet, CustomerPos, true, PaymentPos, false);
             TVAmortTableAdapter.FillByCustomerNoandPaymentSeq(PAYMENTDataSet.TVAmort, PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_NO"), PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<Int32>("SeqNo"));
             lnPrinciplePaid = 0;
             String TempCust = PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_NO");
@@ -1789,7 +1789,7 @@ namespace IAC2021SQL
         }
 
         // Moses Newman 05/19/2023 Use new Invoices table for all calculations instead of Program.FixLateandPartialBuckets!
-        public void NewGetPartialPaymentandLateFeeBalance(ref BackgroundWorker worker, String tsCustomerNo, ref IACDataSet DT, Int32 CustPos = 0, Boolean tbPayment = false,
+        public void NewGetPartialPaymentandLateFeeBalance(String tsCustomerNo, ref IACDataSet DT, Int32 CustPos = 0, Boolean tbPayment = false,
             Int32 tnPaymentPos = -1, Boolean tbPost = false, Boolean UpdateLast = false)
         {
             IACDataSetTableAdapters.CUSTOMERTableAdapter CUSTOMERTableAdapter = new IACDataSetTableAdapters.CUSTOMERTableAdapter();
@@ -1965,7 +1965,7 @@ namespace IAC2021SQL
                        // continue;
                     worker.ReportProgress((Int32)((Double)(((Double)itr + 1.0000) / (Double)dt.CUSTOMER.Rows.Count) * 100.0000));
                     // Moses Newman 12/22/2014 Must update CUSTOMER RECORD IN RECALC MODE!
-                   NewGetPartialPaymentandLateFeeBalance(ref worker, dt.CUSTOMER.Rows[itr].Field<String>("CUSTOMER_NO"), ref dt, itr, false, -1, true);
+                   NewGetPartialPaymentandLateFeeBalance(dt.CUSTOMER.Rows[itr].Field<String>("CUSTOMER_NO"), ref dt, itr, false, -1, true);
                    ResetHistoryPaidThroughandLateChargeBalance(ref worker, dt.CUSTOMER.Rows[itr].Field<String>("CUSTOMER_NO"));
                 }
                 Program.gsProgMessage = "";

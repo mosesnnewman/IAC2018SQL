@@ -260,7 +260,6 @@ namespace IAC2021SQL
                         OPNPAYTableAdapter.FillByAll(PNSIAC.OPNPAY);
                     }
                 }
-
                 labelDownload.Text = "Executing PNSToPayments.dtsx";
                 labelDownload.Refresh();
                 progressBarDownload.EditValue = (Int32)100;
@@ -355,7 +354,7 @@ namespace IAC2021SQL
                         }
                     }
                     // Moses Newman 07/21/2023 Create PaymentHistory Records
-                    //Program.CreateTempPayments();
+                    Program.CreateTempPayments();
                     XtraMessageBox.Show("*** Import of " + PNS.PayNSeconds.Rows.Count.ToString().Trim() + " PayNSeconds RECORDS complete. ***", "PNS Payments Import");
                 }
                 else

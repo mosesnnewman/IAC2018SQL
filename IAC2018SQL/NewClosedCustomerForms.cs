@@ -3600,7 +3600,7 @@ namespace IAC2021SQL
             BackgroundWorker BW = new BackgroundWorker();
             ClosedPaymentPosting CP = new ClosedPaymentPosting();
 
-            CP.NewGetPartialPaymentandLateFeeBalance(ref BW, cUSTOMER_NOTextBox.EditValue.ToString().Trim(), ref PT, 0, false, -1, false, false);
+            CP.NewGetPartialPaymentandLateFeeBalance(cUSTOMER_NOTextBox.EditValue.ToString().Trim(), ref PT, 0, false, -1, false, false);
 
             SqlConnection cnn;
             string connectionstring = null;
@@ -4354,60 +4354,6 @@ namespace IAC2021SQL
         {
             if (lbEdit && toolStripButtonSave.Enabled == false)
                 toolStripButtonSave.Enabled = true;
-        }
-
-        private void barButtonItemPrintCustomerHistory_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            IACDataSet ReportData = new IACDataSet();
-            IACDataSetTableAdapters.CUSTOMERTableAdapter CustomerTableAdapter = new IACDataSetTableAdapters.CUSTOMERTableAdapter();
-            RepoDataSetTableAdapters.CUSTOMERTableAdapter RepoCustomer = new RepoDataSetTableAdapters.CUSTOMERTableAdapter();
-
-            CustomerTableAdapter.Fill(ReportData.CUSTOMER, cUSTOMER_NOTextBox.EditValue.ToString().Trim());
-            if (ReportData.CUSTOMER.Rows.Count < 1)
-                return;
-            // Moses Newman 04/22/2019 Add Repo Log
-            RepoLogTableAdapter.FillByCustomerNo(repoDataSet.RepoLog, ReportData.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO"));
-            if (ReportData.CUSTOMER.Rows.Count < 1)
-                return;
-
-            MDIIAC2013 MDImain = (MDIIAC2013)MdiParent;
-
-            // Moses Newman 08/01/2022 Covert to XtraReport
-            var report = new XtraReportClosedCustomerHistory();
-            SqlDataSource ds = report.DataSource as SqlDataSource;
-
-            ds.Queries[0].Parameters[0].Value = ReportData.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO");
-            ds.Queries[1].Parameters[0].Value = ReportData.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO");
-            ds.Queries[2].Parameters[0].Value = ReportData.CUSTOMER.Rows[0].Field<Int32>("CUSTOMER_DEALER");
-
-            report.DataSource = ds;
-            report.RequestParameters = false;
-            report.Parameters["gsUserID"].Value = Program.gsUserID;
-            report.Parameters["gsUserName"].Value = Program.gsUserName;
-            report.Parameters["giCount"].Value = repoDataSet.RepoLog.Count;
-
-            // Moses Newman 08/01/2022 Now do COMMENT Sub Report datasource!
-            XRSubreport subReportComments = report.FindControl("SubreportComments", true) as XRSubreport;
-            XtraReport CommentReportSource = subReportComments.ReportSource as XtraReport;
-            SqlDataSource subcommentds = CommentReportSource.DataSource as SqlDataSource;
-            subcommentds.Queries[0].Parameters[0].Value = ReportData.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO");
-            subcommentds.Queries[1].Parameters[0].Value = ReportData.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO");
-            CommentReportSource.DataSource = subcommentds;
-
-            // Moses Newman 08/01/2022 Now do RepoLog Sub Report datasource!
-            XRSubreport subReportRepoLog = report.FindControl("SubreportRepoLog", true) as XRSubreport;
-            XtraReport RepoLogReportSource = subReportRepoLog.ReportSource as XtraReport;
-            SqlDataSource subrepologds = RepoLogReportSource.DataSource as SqlDataSource;
-            subrepologds.Queries[0].Parameters[0].Value = ReportData.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO");
-            subrepologds.Queries[1].Parameters[0].Value = ReportData.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO");
-            RepoLogReportSource.DataSource = subrepologds;
-
-            var tool = new ReportPrintTool(report);
-
-            tool.PreviewRibbonForm.MdiParent = MDImain;
-            tool.AutoShowParametersPanel = false;
-            tool.PreviewRibbonForm.WindowState = FormWindowState.Maximized;
-            tool.ShowRibbonPreview();
         }
 
         private void nullableDateTimePickerDateContractReceived_EnabledChanged(object sender, EventArgs e)

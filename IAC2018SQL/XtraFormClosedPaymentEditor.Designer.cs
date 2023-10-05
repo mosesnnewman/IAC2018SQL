@@ -1001,6 +1001,7 @@
             this.textEditCustomerID.Properties.DisplayMember = "CustomerID";
             this.textEditCustomerID.Properties.NullText = "";
             this.textEditCustomerID.Properties.PopupView = this.gridLookUpEdit1View;
+            this.textEditCustomerID.Properties.SearchMode = DevExpress.XtraEditors.Repository.GridLookUpSearchMode.None;
             this.textEditCustomerID.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.textEditCustomerID.Properties.ValueMember = "CustomerID";
             this.textEditCustomerID.Size = new System.Drawing.Size(97, 28);
