@@ -129,7 +129,7 @@ namespace IAC2021SQL
                 lsProgress = "*** Working on customer number: " + UpdateiacDataSet.CUSTOMER.Rows[i].Field<String>("CUSTOMER_NO");
                 try
                 {
-                    CP.NewGetPartialPaymentandLateFeeBalance(ref worker, UpdateiacDataSet.CUSTOMER.Rows[i].Field<String>("CUSTOMER_NO"), ref UpdateiacDataSet, i, false, -1, true);
+                    CP.NewGetPartialPaymentandLateFeeBalance(UpdateiacDataSet.CUSTOMER.Rows[i].Field<String>("CUSTOMER_NO"), ref UpdateiacDataSet, i, false, -1, true);
                 }
                 catch (Exception ex)
                 {

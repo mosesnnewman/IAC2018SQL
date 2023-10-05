@@ -848,7 +848,6 @@
             this.toolStripButtonDelete = new DevExpress.XtraBars.BarButtonItem();
             this.toolStripButtonSave = new DevExpress.XtraBars.BarButtonItem();
             this.HistoryBar = new DevExpress.XtraBars.Bar();
-            this.barButtonItemPrintCustomerHistory = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItemPrintCustomerReceipt = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItemPrintAmortizationSchedule = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItemTimeValueToExcel = new DevExpress.XtraBars.BarButtonItem();
@@ -8846,7 +8845,6 @@
             this.toolStripButtonEdit,
             this.toolStripButtonDelete,
             this.toolStripButtonSave,
-            this.barButtonItemPrintCustomerHistory,
             this.barButtonItemPrintCustomerReceipt,
             this.barButtonItemPrintAmortizationSchedule,
             this.barButtonItemTimeValueToExcel,
@@ -8917,23 +8915,12 @@
             this.HistoryBar.FloatLocation = new System.Drawing.Point(275, 706);
             this.HistoryBar.FloatSize = new System.Drawing.Size(46, 24);
             this.HistoryBar.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItemPrintCustomerHistory, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItemPrintCustomerReceipt, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItemPrintAmortizationSchedule, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemTimeValueToExcel),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemCaculateBuyout)});
             this.HistoryBar.StandaloneBarDockControl = this.standaloneBarDockControl1;
             resources.ApplyResources(this.HistoryBar, "HistoryBar");
-            // 
-            // barButtonItemPrintCustomerHistory
-            // 
-            resources.ApplyResources(this.barButtonItemPrintCustomerHistory, "barButtonItemPrintCustomerHistory");
-            this.barButtonItemPrintCustomerHistory.Id = 5;
-            this.barButtonItemPrintCustomerHistory.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItemPrintCustomerHistory.ImageOptions.Image")));
-            this.barButtonItemPrintCustomerHistory.ItemAppearance.Normal.BackColor = System.Drawing.Color.PaleGreen;
-            this.barButtonItemPrintCustomerHistory.ItemAppearance.Normal.Options.UseBackColor = true;
-            this.barButtonItemPrintCustomerHistory.Name = "barButtonItemPrintCustomerHistory";
-            this.barButtonItemPrintCustomerHistory.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItemPrintCustomerHistory_ItemClick);
             // 
             // barButtonItemPrintCustomerReceipt
             // 
@@ -9860,7 +9847,6 @@
         private DevExpress.XtraBars.BarButtonItem toolStripButtonSave;
         private DevExpress.XtraBars.StandaloneBarDockControl standaloneBarDockControl1;
         private DevExpress.XtraBars.Bar HistoryBar;
-        private DevExpress.XtraBars.BarButtonItem barButtonItemPrintCustomerHistory;
         private DevExpress.XtraBars.BarButtonItem barButtonItemPrintCustomerReceipt;
         private DevExpress.XtraBars.BarButtonItem barButtonItemPrintAmortizationSchedule;
         private DevExpress.XtraBars.BarButtonItem barButtonItemTimeValueToExcel;

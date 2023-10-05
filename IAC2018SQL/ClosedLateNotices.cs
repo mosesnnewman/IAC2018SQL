@@ -634,7 +634,7 @@ namespace IAC2021SQL
             // Recreate and remark history accordingly after post!
             ClosedPaymentPosting CP = new ClosedPaymentPosting();
             // Moses Newman 12/22/2014 must now pass the Post parameter to determine if the CUSTOMER record should be rewritten or not!
-            CP.NewGetPartialPaymentandLateFeeBalance(ref worker, NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_NO"), ref NoticeiacDataSet, CustomerPos,false,-1,true,true);
+            CP.NewGetPartialPaymentandLateFeeBalance(NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_NO"), ref NoticeiacDataSet, CustomerPos,false,-1,true,true);
             //CP.ResetHistoryPaidThroughandLateChargeBalance(ref worker, NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_NO"));
             CP.Dispose();
             CP = null;

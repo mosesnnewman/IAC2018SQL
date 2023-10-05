@@ -325,7 +325,26 @@ namespace IAC2021SQL
                     }
                     iacDataSet.PAYMENT.AcceptChanges();
                     Program.CreateSingleTempPayment(textEditCustomerID.EditValue.ToString().PadLeft(6, '0'), (DateTime)dateEditPaymentDate.EditValue, (Int32)SeqNo);
-                    Close();
+                    this.ActiveControl = layoutControlCustomerHeader;
+                    layoutControlCustomerHeader.ActiveControl = textEditCustomerID;
+                    Control c = this.ActiveControl;
+                    if (c is DevExpress.XtraLayout.LayoutControl)
+                    {
+                        if (!(((DevExpress.XtraLayout.LayoutControl)ActiveControl).ActiveControl == null))
+                        {
+                            c = ((DevExpress.XtraLayout.LayoutControl)ActiveControl).ActiveControl;
+                        }
+                    }
+                    if (c is DevExpress.XtraEditors.TextBoxMaskBox)
+                    {
+                        c = c.Parent;
+                    }
+                    this.Text = c.Name;
+                    iacDataSet.PAYMENT.Clear();
+                    iacDataSet.CUSTOMER.Clear();
+                    iacDataSet.DEALER.Clear();
+                    dateEditPaymentDate.EditValue = DateTime.Now.Date;
+                    //Close();
                     break;
                 case "Close":
                     Close();

@@ -57,9 +57,12 @@ namespace IAC2021SQL
 
             labelControl1.Visible = true;
             paymentHistoryTableAdapter.DeleteAllNULLCusthistID();
+            ClosedPaymentPosting cp = new ClosedPaymentPosting();
             for (int i = 0; i < ClosedPaymentiacDataSet.CUSTOMER.Rows.Count; i++)
             {
                 Program.ApplyAllPayments(ClosedPaymentiacDataSet.CUSTOMER.Rows[i].Field<String>("CUSTOMER_NO"));
+                cp.NewGetPartialPaymentandLateFeeBalance(ClosedPaymentiacDataSet.CUSTOMER.Rows[i].Field<String>("CUSTOMER_NO"),
+                                                         ref ClosedPaymentiacDataSet, i, false, -1,true, true);
                 progressBarControl1.PerformStep();
                 progressBarControl1.Update();
                 labelControl1.Text = ClosedPaymentiacDataSet.CUSTOMER.Rows[i].Field<String>("CUSTOMER_NO") + " " +

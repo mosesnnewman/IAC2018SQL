@@ -1775,26 +1775,6 @@ namespace IAC2021SQL
 		}
 		// End of Open End New Customer Posting
 
-		// Create table fields for improperly designed AMORTIZE table for Closed End New Customer Posting
-		static String CreateAmortFieldList(Int32 tnTerm)
-		{
-			// Moses Newman 03/02/2012 Reversed AMORTIZE_ADD_ON AND AMORTIZE_TYPE BECAUSE THEY WERE REVERSED
-			String lsReturnClause  = "INSERT INTO AMORTIZE (AMORTIZE_CUST_NO,AMORTIZE_ADD_ON,AMORTIZE_TYPE,AMORTIZE_LOAN_CASH,AMORTIZE_LOAN_TERM,";
-				   lsReturnClause += "AMORTIZE_LOAN_ANNUAL_RATE,AMORTIZE_MONTHLY_AMOUNT_OWED,";
-			for (int i = 1; i <= tnTerm; i++)
-			{
-				lsReturnClause += "AMORTIZE_INTEREST_AMOUNT_" + Convert.ToString(i).PadLeft(5, '0') + ",";
-				lsReturnClause += "AMORTIZE_PRINCIPLE_AMOUNT_" + Convert.ToString(i).PadLeft(5, '0') + ",";
-				lsReturnClause += "AMORTIZE_BALANCE_" + Convert.ToString(i).PadLeft(5, '0') + ",";
-				lsReturnClause += "AMORTIZE_INTEREST_PAID_" + Convert.ToString(i).PadLeft(5, '0') + ",";
-				lsReturnClause += "AMORTIZE_PRINCIPLE_PAID_" + Convert.ToString(i).PadLeft(5, '0');
-				if (i < tnTerm)
-					lsReturnClause += ",";
-				else
-					lsReturnClause += ") VALUES(";
-			}
-			return lsReturnClause;
-		}
 
 			static public void RecreatePayments()
 			{
@@ -3482,7 +3462,7 @@ namespace IAC2021SQL
 				}
 				while (InvoiceCount < PDS.Invoices.Count && lnUnusedFunds > 0)
 				{
-					while (lnUnusedFunds > 0 && InvoiceCount < PDS.Invoices.Count)
+                    while (lnUnusedFunds > 0 && InvoiceCount < PDS.Invoices.Count)
 					{
 						while (lnNumMonthlies > 0 && InvoiceCount < PDS.Invoices.Count && lnUnusedFunds != 0)
 						{
@@ -3559,7 +3539,8 @@ namespace IAC2021SQL
                                 InvoiceCount++;
                             }
                         }
-						if (InvoiceCount > PDS.Invoices.Count && lnUnusedFunds > 0)
+						// Moses Newman 10/04/2023 change > to >=
+						if (InvoiceCount >= PDS.Invoices.Count && lnUnusedFunds > 0)
 						{
                             if (lbLastPayment)
                             {
@@ -3577,8 +3558,6 @@ namespace IAC2021SQL
                                 else
                                     CreateNewInvoice(TempCust, lnUnusedFunds);
                             }
-                            InvoicesTableAdapter.FillByNotPaidInFullDateRange(PDS.Invoices, TempCust, "Monthly Payment", (DateTime?)null);
-                            InvoiceCount = 0;
                             InvoicesTableAdapter.FillByNotPaidInFullDateRange(PDS.Invoices, TempCust, "Monthly Payment", (DateTime?)null);
 							InvoiceCount = 0;
 						}
