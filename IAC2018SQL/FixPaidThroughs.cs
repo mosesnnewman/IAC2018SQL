@@ -29,8 +29,8 @@ namespace IAC2021SQL
             IACDataSetTableAdapters.CUSTOMERTableAdapter CUSTOMERTableAdapter = new IACDataSetTableAdapters.CUSTOMERTableAdapter();
             IACDataSetTableAdapters.CUSTHISTTableAdapter CUSTHISTTableAdapter = new IACDataSetTableAdapters.CUSTHISTTableAdapter();
 
-            //CUSTOMERTableAdapter.Fill(DT.CUSTOMER, cUSTOMER_NOTextBox.Text.Trim());
-            CUSTOMERTableAdapter.FillByAllPosted(DT.CUSTOMER);
+            CUSTOMERTableAdapter.Fill(DT.CUSTOMER, cUSTOMER_NOTextBox.Text.Trim());
+            //CUSTOMERTableAdapter.FillByAllPosted(DT.CUSTOMER);
             label1.Text = "Fixing Paid Throughs, Number of Payments, Statuses etc.";
             label1.Refresh();
             for (int i = 0; i < DT.CUSTOMER.Rows.Count; i++)
@@ -41,15 +41,19 @@ namespace IAC2021SQL
                     ldDate = DateTime.Now.Date;
                 label1.Text = "CREATING AMORT TABLES WORKING ON: CUSTOMER NUMBER: " + DT.CUSTOMER.Rows[i].Field<String>("CUSTOMER_NO") + " " + (i + 1).ToString() + " OF " + DT.CUSTOMER.Rows.Count.ToString();
                 label1.Refresh();
-   
+                //if (DT.CUSTOMER.Rows[i].Field<Int32>("CustomerID") > 221000)
+                //{
+
                 lnSimpBal = Program.TVSimpleGetBuyout(DT, ldDate,
                   (Double)DT.CUSTOMER.Rows[i].Field<Int32>("CUSTOMER_TERM"),
                   (Double)(DT.CUSTOMER.Rows[i].Field<Decimal>("CUSTOMER_ANNUAL_PERCENTAGE_RATE") / 100),
                   (Double)DT.CUSTOMER.Rows[i].Field<Decimal>("CUSTOMER_REGULAR_AMOUNT"),
                   DT.CUSTOMER.Rows[i].Field<String>("CUSTOMER_NO"),
-                    // 04/30/2017 Handle BOTH Simple Interest and Normal Daily Compounding
+                  // 04/30/2017 Handle BOTH Simple Interest and Normal Daily Compounding
                   DT.CUSTOMER.Rows[i].Field<String>("CUSTOMER_AMORTIZE_IND") == "S" ? true : false, true, false, false, -1, true);
                 CP.NewGetPartialPaymentandLateFeeBalance(DT.CUSTOMER.Rows[i].Field<String>("CUSTOMER_NO"), ref DT, i, false, -1, true, true);
+                //}
+
             }
             label1.Text = "*** DONE! ***";
             label1.Refresh();

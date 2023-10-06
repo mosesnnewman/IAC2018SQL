@@ -148,6 +148,8 @@ namespace IAC2021SQL
             Object loCustomerPayCount = null,loLastBalance = null; // Moses Newman 08/06/2023 add last balance from history
             Decimal NewBalance = 0;
             Int32 lnCustomerPayCount = 0;
+            // Moses Newman 10/05/2023 make sure all temp payments exist before posting!
+            Program.CreateTempPayments(); 
 
             for (int PaymentPos = 0; PaymentPos < PAYMENTPostDataSet.PAYMENT.Rows.Count; PaymentPos++)
             {
@@ -1474,11 +1476,13 @@ namespace IAC2021SQL
         void ClosedPaymentWriteCustomerChanges(ref IACDataSet CUSTOMERDataSet, ref BackgroundWorker worker)
         {
             IACDataSetTableAdapters.CUSTOMERTableAdapter CUSTOMERTableAdapter = new IACDataSetTableAdapters.CUSTOMERTableAdapter();
-            CUSTOMERBindingSource.MoveFirst();
+            //CUSTOMERBindingSource.MoveFirst();
             CUSTOMERBindingSource.EndEdit();
+            CUSTOMERDataSet.CUSTOMER.GetChanges();
             try
             {
                 CUSTOMERTableAdapter.Update(CUSTOMERDataSet.CUSTOMER);
+                CUSTOMERDataSet.CUSTOMER.AcceptChanges();
             }
             catch (System.Data.SqlClient.SqlException ex)
             {
@@ -1541,6 +1545,7 @@ namespace IAC2021SQL
                     if (CUSTOMERDataSet.CUSTHIST.Rows[i].Field<String>("CUSTHIST_PAYMENT_TYPE") == "I" || ((CUSTOMERDataSet.CUSTHIST.Rows[i].Field<Int32?>("ISFID") != null) ? CUSTOMERDataSet.CUSTHIST.Rows[i].Field<Int32>("ISFID"):0) != 0)
                         CUSTHISTTableAdapter.ClosedCustomerHistorySetISINSUF(CUSTOMERDataSet.CUSTHIST.Rows[i].Field<Int32>("ISFID"));
                 }
+                CUSTOMERDataSet.CUSTHIST.GetChanges();
                 CUSTHISTTableAdapter.Update(CUSTOMERDataSet.CUSTHIST);
                 Program.CreateFinalPayments(CUSTOMERDataSet);
             }
@@ -1572,9 +1577,11 @@ namespace IAC2021SQL
             DEALERBindingSource.MoveFirst();
 
             DEALERBindingSource.EndEdit();
+            DEALERDataSet.DEALER.GetChanges();
             try
             {
                 DEALERTableAdapter.Update(DEALERDataSet.DEALER);
+                DEALERDataSet.DEALER.AcceptChanges();
             }
             catch (System.Data.SqlClient.SqlException ex)
             {
@@ -1615,6 +1622,7 @@ namespace IAC2021SQL
                     DEALERDataSet.DEALHIST.Rows[i].SetField<Int32>("DEALHIST_SEQ_NO", lnSeq);
                     DEALERDataSet.DEALHIST.Rows[i].SetField<DateTime>("DEALHIST_LAST_POST_DATE", DateTime.Now.Date);
                     DEALHISTBindingSource.EndEdit();
+                    DEALERDataSet.DEALHIST.GetChanges();
                 }
                 DEALHISTTableAdapter.Update(DEALERDataSet.DEALHIST);
             }
@@ -1644,9 +1652,11 @@ namespace IAC2021SQL
             IACDataSetTableAdapters.MASTERTableAdapter MASTERTableAdapter = new IACDataSetTableAdapters.MASTERTableAdapter();
             MASTERBindingSource.MoveFirst();
             MASTERBindingSource.EndEdit();
+            MASTERDataSet.MASTER.GetChanges();
             try
             {
                 MASTERTableAdapter.Update(MASTERDataSet.MASTER);
+                MASTERDataSet.MASTER.AcceptChanges();
             }
             catch (System.Data.SqlClient.SqlException ex)
             {
@@ -1688,6 +1698,7 @@ namespace IAC2021SQL
                         lnSeq = 1;
                     MASTERDataSet.MASTHIST.Rows[i].SetField<Int32>("MASTHIST_SEQ_NO", lnSeq);
                     MASTHISTBindingSource.EndEdit();
+                    MASTERDataSet.MASTHIST.GetChanges();
                 }
                 MASTHISTTableAdapter.Update(MASTERDataSet.MASTHIST);
             }

@@ -262,6 +262,19 @@ namespace IAC2021SQL
                 }
                 labelDownload.Text = "Executing PNSToPayments.dtsx";
                 labelDownload.Refresh();
+                // Moses Newman 10/05/2023 Now make sure PNSToPayments is reall done, then create temp payments for invoices
+                do
+                {
+                    oIsDone = PNSIMPORTParamsTableAdapter.IsDone();
+                    lbIsDone = oIsDone != null ? (Boolean)oIsDone : false;
+                    doneCount++;
+                } while (!lbIsDone && doneCount < 100001);
+                if (doneCount > 100000)
+                    Thread.Sleep(5000);
+                else
+                    Thread.Sleep(200);
+                doneCount = 0;
+                Program.CreateTempPayments();
                 progressBarDownload.EditValue = (Int32)100;
 
                 labelDownload.Text = "";
@@ -313,8 +326,6 @@ namespace IAC2021SQL
                             RenameFile(lsOldFile, lsNewFile);
                         }
                     }
-                    // Moses Newman 07/21/2023 Create PaymentHistory Records
-                    Program.CreateTempPayments();
                     XtraMessageBox.Show("*** Import of " + PNS.PayNSeconds.Rows.Count.ToString().Trim() + " PayNSeconds RECORDS complete. ***", "PNS Payments Import");
                 }
                 else
@@ -353,8 +364,6 @@ namespace IAC2021SQL
                             RenameFile(lsOldFile, lsNewFile);
                         }
                     }
-                    // Moses Newman 07/21/2023 Create PaymentHistory Records
-                    Program.CreateTempPayments();
                     XtraMessageBox.Show("*** Import of " + PNS.PayNSeconds.Rows.Count.ToString().Trim() + " PayNSeconds RECORDS complete. ***", "PNS Payments Import");
                 }
                 else

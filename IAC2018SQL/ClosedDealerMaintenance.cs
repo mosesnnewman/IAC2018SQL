@@ -37,9 +37,9 @@ namespace IAC2021SQL
 
             if (lbAddFlag || lbEdit)
                 return;
-            if (DEALERcomboBox.EditValue != null)
+            if (!String.IsNullOrEmpty(DEALERcomboBox.EditValue.ToString()))
             {
-                iacDataSet.DEALER.Clear();
+                //iacDataSet.DEALER.Clear();
                 iacDataSet.DEALHIST.Clear();
                 dEALERTableAdapter.Fill(iacDataSet.DEALER, (Int32)DEALERcomboBox.EditValue);
                 if (iacDataSet.DEALER.Rows.Count > 0)
@@ -53,7 +53,7 @@ namespace IAC2021SQL
                     ResperOSLoanstextBox2.Text = ResperOSLoanstextBox.Text;
                     dLRLISTBYNUMTableAdapter.Fill(iacDataSet.DLRLISTBYNUM);
                     dEALERLISTTableAdapter.FillAll(iacDataSet.DEALERLIST);
-                    DEALERcomboBox.EditValue = (Program.gsKey != null) ? Program.gsKey : "";
+                    //DEALERcomboBox.EditValue = (Program.gsKey != null) ? Program.gsKey : "";
                 }
                 else
                 {
@@ -116,11 +116,16 @@ namespace IAC2021SQL
 
         private void DEALERcomboBox_Validated(object sender, EventArgs e)
         {
+            LookUpEdit lookUp = sender as LookUpEdit;
+            Object lookAt = lookUp.EditValue;
+
+            if (lookAt == null)
+                return;
             Int32 lnDealerNo = 0;
             Int32 DLRPOS = -1;
             Object Key = null;
 
-            lnDealerNo = DEALERcomboBox.EditValue != null ? (Int32)DEALERcomboBox.EditValue : 0;
+            lnDealerNo = !String.IsNullOrEmpty(lookUp.EditValue.ToString()) ? (Int32)lookUp.EditValue : 0;
 
             if (lnDealerNo == 0)
                 return;
@@ -146,8 +151,8 @@ namespace IAC2021SQL
             {
                 //DEALERcomboBox.EditValue = lnDealerNo;
             }
-            //dEALER_NAMETextBox.Focus();
-            //dEALER_NAMETextBox.SelectAll();
+            dEALER_NAMETextBox.Focus();
+            dEALER_NAMETextBox.SelectAll();
         }
 
         private void toolStripButtonSave_Click(object sender, EventArgs e)
@@ -476,10 +481,17 @@ namespace IAC2021SQL
 
         private void DEALERcomboBox_EditValueChanged(object sender, EventArgs e)
         {
-            Int32 lnEditVal = DEALERcomboBox.EditValue != null ? (Int32)DEALERcomboBox.EditValue : 0;
+            LookUpEdit lookUp = sender as LookUpEdit;
+            Object thisval = lookUp.EditValue;
+            if (thisval == null)
+                return;
+            if (lookUp.EditValue.ToString() != String.Empty)
+                if (lookUp.EditValue.GetType() == typeof(String))
+                    lookUp.EditValue = Convert.ToInt32(lookUp.EditValue);
+            Int32 lnEditVal = lookUp.EditValue.ToString()!=String.Empty ? (Int32)lookUp.EditValue : 0;
             if (lnEditVal == 0)
                 return;
-            System.Windows.Forms.SendKeys.Send("{ENTER}");
+            System.Windows.Forms.SendKeys.Send("{TAB}");
         }
 
         private void toolStripButtonNew_Click(object sender, EventArgs e)
@@ -545,15 +557,16 @@ namespace IAC2021SQL
         {
             DataRow newListRow = iacDataSet.DLRLISTBYNUM.NewRow();
 
+            LookUpEdit lookUp = sender as LookUpEdit; 
             if (lbAddFlag || lbEdit)
                 return;
-            if ((string)e.DisplayValue.ToString() != String.Empty && MessageBox.Show(
-                    this, "Dealer number: " + (string)e.DisplayValue.ToString() + " does not exist. Would you like to add it?",
+            if (!String.IsNullOrEmpty(lookUp.EditValue.ToString()) && MessageBox.Show(
+                    this, "Dealer number: " + lookUp.EditValue.ToString() + " does not exist. Would you like to add it?",
                     "Confirm", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 DLRLISTBYNUMbindingSource.AddNew();
                 DLRLISTBYNUMbindingSource.EndEdit();
-                iacDataSet.DLRLISTBYNUM.Rows[DLRLISTBYNUMbindingSource.Position].SetField("id", (Int32)e.DisplayValue);
+                iacDataSet.DLRLISTBYNUM.Rows[DLRLISTBYNUMbindingSource.Position].SetField("id", Convert.ToInt32(lookUp.EditValue));
                 iacDataSet.DLRLISTBYNUM.Rows[DLRLISTBYNUMbindingSource.Position].SetField("DEALER_NAME", "");
                 DLRLISTBYNUMbindingSource.EndEdit();
                 e.Handled = true;
