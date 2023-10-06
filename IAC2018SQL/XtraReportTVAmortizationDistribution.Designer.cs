@@ -191,6 +191,7 @@
             this.SubBand1 = new DevExpress.XtraReports.UI.SubBand();
             this.gsUserID = new DevExpress.XtraReports.Parameters.Parameter();
             this.gsUserName = new DevExpress.XtraReports.Parameters.Parameter();
+            this.gsCustomer = new DevExpress.XtraReports.Parameters.Parameter();
             this.Area5 = new DevExpress.XtraReports.UI.PageFooterBand();
             this.PrintDate2 = new DevExpress.XtraReports.UI.XRPageInfo();
             this.PrintTime1 = new DevExpress.XtraReports.UI.XRPageInfo();
@@ -220,7 +221,6 @@
             this.Term = new DevExpress.XtraReports.Parameters.Parameter();
             this.FirstPaymentDate = new DevExpress.XtraReports.Parameters.Parameter();
             this.CustomerPrint = new DevExpress.XtraReports.Parameters.Parameter();
-            this.gsCustomer = new DevExpress.XtraReports.Parameters.Parameter();
             this.IsSimple = new DevExpress.XtraReports.Parameters.Parameter();
             this.sqlDataSource1 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             this.topMarginBand1 = new DevExpress.XtraReports.UI.TopMarginBand();
@@ -1556,8 +1556,8 @@
             this.TotalNewLoans1.BorderWidth = 1F;
             this.TotalNewLoans1.CanGrow = false;
             this.TotalNewLoans1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumSum([New])"),
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Visible", "iif([TotalNewLoans1]<>0,True,False)")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Visible", "iif([TotalNewLoans1]<>0,True,False)"),
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumSum([New])")});
             this.TotalNewLoans1.Font = new DevExpress.Drawing.DXFont("Arial", 8F, DevExpress.Drawing.DXFontStyle.Bold);
             this.TotalNewLoans1.ForeColor = System.Drawing.Color.Black;
             this.TotalNewLoans1.Multiline = true;
@@ -1582,7 +1582,7 @@
             this.TotalLateFees1.BorderWidth = 1F;
             this.TotalLateFees1.CanGrow = false;
             this.TotalLateFees1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumSum([LateFee])")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumSum(iif([Event] <> \'BUYOUT\' AND [Event] <> \'UNEARNED\',[LateFee],0))")});
             this.TotalLateFees1.Font = new DevExpress.Drawing.DXFont("Arial", 8F, DevExpress.Drawing.DXFontStyle.Bold);
             this.TotalLateFees1.ForeColor = System.Drawing.Color.Black;
             this.TotalLateFees1.Name = "TotalLateFees1";
@@ -1606,7 +1606,7 @@
             this.TotalISFFees1.BorderWidth = 1F;
             this.TotalISFFees1.CanGrow = false;
             this.TotalISFFees1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumSum([ISF])")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumSum(iif([Event] <> \'BUYOUT\' AND [Event] <> \'UNEARNED\',[ISF],0))")});
             this.TotalISFFees1.Font = new DevExpress.Drawing.DXFont("Arial", 8F, DevExpress.Drawing.DXFontStyle.Bold);
             this.TotalISFFees1.ForeColor = System.Drawing.Color.Black;
             this.TotalISFFees1.Multiline = true;
@@ -1630,7 +1630,7 @@
             this.TotalNonCash1.BorderWidth = 1F;
             this.TotalNonCash1.CanGrow = false;
             this.TotalNonCash1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumSum([NonCash])")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumSum(iif([Event] <> \'BUYOUT\' AND [Event] <> \'UNEARNED\',[NonCash],0))")});
             this.TotalNonCash1.Font = new DevExpress.Drawing.DXFont("Arial", 8F, DevExpress.Drawing.DXFontStyle.Bold);
             this.TotalNonCash1.ForeColor = System.Drawing.Color.Black;
             this.TotalNonCash1.Multiline = true;
@@ -1702,7 +1702,7 @@
             this.TotalPaidInterest.BorderWidth = 1F;
             this.TotalPaidInterest.CanGrow = false;
             this.TotalPaidInterest.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumSum([PaidInterest])")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumSum([GrandTotalPaidInterest])")});
             this.TotalPaidInterest.Font = new DevExpress.Drawing.DXFont("Arial", 8F, DevExpress.Drawing.DXFontStyle.Bold);
             this.TotalPaidInterest.ForeColor = System.Drawing.Color.Black;
             this.TotalPaidInterest.Multiline = true;
@@ -1729,7 +1729,7 @@
             this.TotalPrincipal1.BorderWidth = 1F;
             this.TotalPrincipal1.CanGrow = false;
             this.TotalPrincipal1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumSum([GrandTotalPrincipal])")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumSuM([GrandTotalPrincipal])")});
             this.TotalPrincipal1.Font = new DevExpress.Drawing.DXFont("Arial", 8F, DevExpress.Drawing.DXFontStyle.Bold);
             this.TotalPrincipal1.ForeColor = System.Drawing.Color.Black;
             this.TotalPrincipal1.Multiline = true;
@@ -2026,7 +2026,7 @@
             this.TotalInterest1.BorderWidth = 1F;
             this.TotalInterest1.CanGrow = false;
             this.TotalInterest1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[TVAmortCUSTOMER].[CUSTOMERTVAPRInfo].[FinanceCharge]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[TVAmortCUSTOMER].[CUSTOMER_LOAN_INTEREST]")});
             this.TotalInterest1.Font = new DevExpress.Drawing.DXFont("Arial", 10F);
             this.TotalInterest1.ForeColor = System.Drawing.Color.Black;
             this.TotalInterest1.LocationFloat = new DevExpress.Utils.PointFloat(216.6667F, 277.3333F);
@@ -2650,7 +2650,7 @@
             this.TotalInterest3.BorderWidth = 1F;
             this.TotalInterest3.CanGrow = false;
             this.TotalInterest3.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[TVAmortCUSTOMER].[CUSTOMERTVAPRInfo].[FinanceCharge]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[TVAmortCUSTOMER].[CUSTOMER_LOAN_INTEREST]")});
             this.TotalInterest3.Font = new DevExpress.Drawing.DXFont("Arial", 10F, DevExpress.Drawing.DXFontStyle.Bold);
             this.TotalInterest3.ForeColor = System.Drawing.Color.Black;
             this.TotalInterest3.LocationFloat = new DevExpress.Utils.PointFloat(266.6667F, 231.4833F);
@@ -2669,7 +2669,8 @@
             this.TotalOfPayments_1.BorderWidth = 1F;
             this.TotalOfPayments_1.CanGrow = false;
             this.TotalOfPayments_1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[TVAmortCUSTOMER].[CUSTOMERTVAPRInfo].[TotalofPayments]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[TVAmortCUSTOMER].[CUSTOMERTVAPRInfo].[AmountFinanced]+[TVAmortCUSTOMER].[CUSTOME" +
+                    "R_LOAN_INTEREST]")});
             this.TotalOfPayments_1.Font = new DevExpress.Drawing.DXFont("Arial", 10F, DevExpress.Drawing.DXFontStyle.Bold);
             this.TotalOfPayments_1.ForeColor = System.Drawing.Color.Black;
             this.TotalOfPayments_1.LocationFloat = new DevExpress.Utils.PointFloat(630.2083F, 231.4833F);
@@ -2775,7 +2776,7 @@
             this.GrandTotalInterest1.BorderWidth = 1F;
             this.GrandTotalInterest1.CanGrow = false;
             this.GrandTotalInterest1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumSum([GrandTotalPaidInterest])")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumSum([GrandTotalInterest])")});
             this.GrandTotalInterest1.Font = new DevExpress.Drawing.DXFont("Arial", 8F, DevExpress.Drawing.DXFontStyle.Bold);
             this.GrandTotalInterest1.ForeColor = System.Drawing.Color.Black;
             this.GrandTotalInterest1.LocationFloat = new DevExpress.Utils.PointFloat(638.6666F, 8.333334F);
@@ -3053,6 +3054,12 @@
             this.gsUserName.Name = "gsUserName";
             this.gsUserName.ValueInfo = "Moses Newman";
             // 
+            // gsCustomer
+            // 
+            this.gsCustomer.Description = "Enter gsCustomer:";
+            this.gsCustomer.Name = "gsCustomer";
+            this.gsCustomer.ValueInfo = "200418";
+            // 
             // Area5
             // 
             this.Area5.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
@@ -3280,7 +3287,7 @@
             // NewTotalPrincipal
             // 
             this.NewTotalPrincipal.DataMember = "TVAmort";
-            this.NewTotalPrincipal.Expression = "[GrandTotalPrincipal]/*-[LastInterestAmount]*/";
+            this.NewTotalPrincipal.Expression = "iif([Event] <> \'BUYOUT\' AND [Event] <> \'UNEARNED\',[GrandTotalPrincipal],0)";
             this.NewTotalPrincipal.FieldType = DevExpress.XtraReports.UI.FieldType.Decimal;
             this.NewTotalPrincipal.Name = "NewTotalPrincipal";
             // 
@@ -3330,12 +3337,6 @@
             staticListLookUpSettings1.LookUpValues.Add(new DevExpress.XtraReports.Parameters.LookUpValue(true, null));
             staticListLookUpSettings1.LookUpValues.Add(new DevExpress.XtraReports.Parameters.LookUpValue(false, null));
             this.CustomerPrint.ValueSourceSettings = staticListLookUpSettings1;
-            // 
-            // gsCustomer
-            // 
-            this.gsCustomer.Description = "Enter gsCustomer:";
-            this.gsCustomer.Name = "gsCustomer";
-            this.gsCustomer.ValueInfo = "200418";
             // 
             // IsSimple
             // 
@@ -3444,8 +3445,7 @@
             // GrandTotalPrincipal
             // 
             this.GrandTotalPrincipal.DataMember = "TVAmort";
-            this.GrandTotalPrincipal.Expression = "/*IIF(Trim([Event]) <> \'BUYOUT\' AND trim([Event]) <> \'UNEARNED\',[Principal],0)*/\n" +
-    "[Principal]\n";
+            this.GrandTotalPrincipal.Expression = "IIF(Trim([Event]) <> \'BUYOUT\' AND trim([Event]) <> \'UNEARNED\',[Principal],0)\n";
             this.GrandTotalPrincipal.FieldType = DevExpress.XtraReports.UI.FieldType.Decimal;
             this.GrandTotalPrincipal.Name = "GrandTotalPrincipal";
             // 
@@ -3460,7 +3460,7 @@
             // GrandTotalPayments
             // 
             this.GrandTotalPayments.DataMember = "TVAmort";
-            this.GrandTotalPayments.Expression = "IIF(trim([Event]) <> \'BUYOUT\' AND trim([Event]) <> \'UNEARNED\',[CalcPayment],0)";
+            this.GrandTotalPayments.Expression = "IIF(trim([Event]) <> \'BUYOUT\' AND trim([Event]) <> \'UNEARNED\',[Payment],0)";
             this.GrandTotalPayments.FieldType = DevExpress.XtraReports.UI.FieldType.Decimal;
             this.GrandTotalPayments.Name = "GrandTotalPayments";
             // 
@@ -3495,7 +3495,7 @@
             // GrandTotalInterest
             // 
             this.GrandTotalInterest.DataMember = "TVAmort";
-            this.GrandTotalInterest.Expression = "[Interest]";
+            this.GrandTotalInterest.Expression = "iif(Trim([Event]) <> \'BUYOUT\' AND Trim([Event]) <> \'UNEARNED\',[Interest],0)";
             this.GrandTotalInterest.FieldType = DevExpress.XtraReports.UI.FieldType.Decimal;
             this.GrandTotalInterest.Name = "GrandTotalInterest";
             // 
@@ -3524,7 +3524,7 @@
             // GrandTotalPaidInterest
             // 
             this.GrandTotalPaidInterest.DataMember = "TVAmort";
-            this.GrandTotalPaidInterest.Expression = "[PaidInterest]";
+            this.GrandTotalPaidInterest.Expression = "iif(Trim([Event]) <> \'BUYOUT\' AND Trim([Event]) <> \'UNEARNED\',[PaidInterest],0)";
             this.GrandTotalPaidInterest.Name = "GrandTotalPaidInterest";
             // 
             // xrControlStyle1
