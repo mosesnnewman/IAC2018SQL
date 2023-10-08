@@ -409,6 +409,7 @@
             this.lookUpEditPaymentType.Properties.DataSource = this.bindingSourcePAYMENTTYPE;
             this.lookUpEditPaymentType.Properties.DisplayMember = "TYPE";
             this.lookUpEditPaymentType.Properties.NullText = "";
+            this.lookUpEditPaymentType.Properties.SearchMode = DevExpress.XtraEditors.Controls.SearchMode.OnlyInPopup;
             this.lookUpEditPaymentType.Properties.ValueMember = "TYPE";
             this.lookUpEditPaymentType.Size = new System.Drawing.Size(57, 28);
             this.lookUpEditPaymentType.StyleController = this.LayoutPayment;
@@ -434,6 +435,7 @@
             this.lookUpEditPaymentCode.Properties.DataSource = this.bindingSourcePAYCODE;
             this.lookUpEditPaymentCode.Properties.DisplayMember = "CODE";
             this.lookUpEditPaymentCode.Properties.NullText = "";
+            this.lookUpEditPaymentCode.Properties.SearchMode = DevExpress.XtraEditors.Controls.SearchMode.OnlyInPopup;
             this.lookUpEditPaymentCode.Properties.ValueMember = "CODE";
             this.lookUpEditPaymentCode.Size = new System.Drawing.Size(57, 28);
             this.lookUpEditPaymentCode.StyleController = this.LayoutPayment;

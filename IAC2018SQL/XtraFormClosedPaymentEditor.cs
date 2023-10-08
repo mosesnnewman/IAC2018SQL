@@ -73,6 +73,8 @@ namespace IAC2021SQL
         private void lookUpEditPaymentType_EditValueChanged(object sender, EventArgs e)
         {
             LookUpEdit lookUpEdit = sender as LookUpEdit;
+            if (lookUpEdit == null)
+                return;
             switch (lookUpEdit.EditValue.ToString())
             {
                 case "":
@@ -92,7 +94,7 @@ namespace IAC2021SQL
                     layoutControlExtensionCount.ContentVisible = true;
                     break;
             }
-
+            lookUpEdit.Properties.Buttons[0].PerformClick();
             if (!lbEdit && !lbAddFlag)
             {
                 iacDataSet.PAYCODE.Clear();
@@ -105,7 +107,10 @@ namespace IAC2021SQL
             bindingSourcePAYCODE.DataSource = iacDataSet.PAYCODE;
             bindingSourcePAYCODE.MoveFirst();
             lookUpEditPaymentCode.EditValue = iacDataSet.PAYCODE.Rows[0].Field<String>("Code");
+            if (lookUpEdit.EditValue.ToString() == "I" && lookUpEditPaymentCode.EditValue.ToString().Trim() == "")
+                lookUpEditPaymentCode.EditValue = "N";
             lookUpEditPaymentCode.Refresh();
+            ActiveControl = lookUpEditPaymentCode;
             HandleISF();
         }
 
@@ -138,6 +143,10 @@ namespace IAC2021SQL
             }
             windowsUIButtonPanel1.Buttons[1].Properties.Enabled = false;
             textEditCustomerID.EditValue = CustomerID;
+            if (lbAddFlag)
+                ActiveControl = textEditCustomerID;
+            else
+                ActiveControl = dateEditPaymentDate;
         }
         public void FillIt()
         {
@@ -344,6 +353,7 @@ namespace IAC2021SQL
                     iacDataSet.CUSTOMER.Clear();
                     iacDataSet.DEALER.Clear();
                     dateEditPaymentDate.EditValue = DateTime.Now.Date;
+                    ActiveControl = textEditCustomerID;
                     //Close();
                     break;
                 case "Close":
@@ -373,8 +383,9 @@ namespace IAC2021SQL
                 }
             }
             _InFillIt = false;
+            gedit.Properties.Buttons[0].PerformClick();
             textEditAmount.Focus();
-            System.Windows.Forms.SendKeys.Send("{TAB}");
+            //SendKeys.SendWait("{TAB}");
         }
 
         private void textEditAmount_EditValueChanged(object sender, EventArgs e)
