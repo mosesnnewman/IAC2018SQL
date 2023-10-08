@@ -373,6 +373,8 @@ namespace IAC2021SQL
                 }
             }
             _InFillIt = false;
+            textEditAmount.Focus();
+            System.Windows.Forms.SendKeys.Send("{TAB}");
         }
 
         private void textEditAmount_EditValueChanged(object sender, EventArgs e)

@@ -250,7 +250,7 @@
             this.checkEditNoAdjLookBack.Properties.ContentAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.checkEditNoAdjLookBack.Size = new System.Drawing.Size(573, 25);
             this.checkEditNoAdjLookBack.StyleController = this.LayoutPayment;
-            this.checkEditNoAdjLookBack.TabIndex = 19;
+            this.checkEditNoAdjLookBack.TabIndex = 18;
             // 
             // checkEditEFT
             // 
@@ -269,7 +269,7 @@
             this.checkEditEFT.Properties.Name = "checkEditEFT";
             this.checkEditEFT.Size = new System.Drawing.Size(96, 25);
             this.checkEditEFT.StyleController = this.LayoutPayment;
-            this.checkEditEFT.TabIndex = 11;
+            this.checkEditEFT.TabIndex = 13;
             this.checkEditEFT.QueryCheckStateByValue += new DevExpress.XtraEditors.Controls.QueryCheckStateByValueEventHandler(this.checkEditEFT_QueryCheckStateByValue);
             this.checkEditEFT.QueryValueByCheckState += new DevExpress.XtraEditors.Controls.QueryValueByCheckStateEventHandler(this.checkEditEFT_QueryValueByCheckState);
             this.checkEditEFT.Modified += new System.EventHandler(this.checkEditEFT_Modified);
@@ -294,7 +294,7 @@
             this.windowsUIButtonPanel1.Location = new System.Drawing.Point(12, 348);
             this.windowsUIButtonPanel1.Name = "windowsUIButtonPanel1";
             this.windowsUIButtonPanel1.Size = new System.Drawing.Size(739, 63);
-            this.windowsUIButtonPanel1.TabIndex = 4;
+            this.windowsUIButtonPanel1.TabIndex = 19;
             this.windowsUIButtonPanel1.Text = "windowsUIButtonPanel1";
             this.windowsUIButtonPanel1.ButtonClick += new DevExpress.XtraBars.Docking2010.ButtonEventHandler(this.windowsUIButtonPanel1_ButtonClick);
             // 
@@ -318,7 +318,7 @@
             this.textEditExtensionCount.Properties.NullText = "0";
             this.textEditExtensionCount.Size = new System.Drawing.Size(50, 28);
             this.textEditExtensionCount.StyleController = this.LayoutPayment;
-            this.textEditExtensionCount.TabIndex = 18;
+            this.textEditExtensionCount.TabIndex = 17;
             this.textEditExtensionCount.EditValueChanged += new System.EventHandler(this.textEditExtensionCount_EditValueChanged);
             this.textEditExtensionCount.Modified += new System.EventHandler(this.textEditExtensionCount_Modified);
             // 
@@ -336,7 +336,7 @@
             this.textEditAmount.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.textEditAmount.Size = new System.Drawing.Size(110, 28);
             this.textEditAmount.StyleController = this.LayoutPayment;
-            this.textEditAmount.TabIndex = 17;
+            this.textEditAmount.TabIndex = 10;
             this.textEditAmount.EditValueChanged += new System.EventHandler(this.textEditAmount_EditValueChanged);
             this.textEditAmount.Modified += new System.EventHandler(this.textEditAmount_Modified);
             this.textEditAmount.Validated += new System.EventHandler(this.textEditAmount_Validated);
@@ -361,7 +361,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateEditISFDate.Size = new System.Drawing.Size(109, 28);
             this.dateEditISFDate.StyleController = this.LayoutPayment;
-            this.dateEditISFDate.TabIndex = 14;
+            this.dateEditISFDate.TabIndex = 16;
             this.dateEditISFDate.Modified += new System.EventHandler(this.dateEditISFDate_Modified);
             // 
             // textEditOverPayment
@@ -374,7 +374,7 @@
             this.textEditOverPayment.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.textEditOverPayment.Size = new System.Drawing.Size(110, 28);
             this.textEditOverPayment.StyleController = this.LayoutPayment;
-            this.textEditOverPayment.TabIndex = 12;
+            this.textEditOverPayment.TabIndex = 14;
             this.textEditOverPayment.Visible = false;
             // 
             // dateEditPaymentDate
@@ -393,7 +393,7 @@
             this.dateEditPaymentDate.Properties.Modified += new System.EventHandler(this.dateEditPaymentDate_Properties_Modified);
             this.dateEditPaymentDate.Size = new System.Drawing.Size(110, 28);
             this.dateEditPaymentDate.StyleController = this.LayoutPayment;
-            this.dateEditPaymentDate.TabIndex = 10;
+            this.dateEditPaymentDate.TabIndex = 9;
             this.dateEditPaymentDate.Modified += new System.EventHandler(this.dateEditPaymentDate_Modified);
             // 
             // lookUpEditPaymentType
@@ -412,7 +412,7 @@
             this.lookUpEditPaymentType.Properties.ValueMember = "TYPE";
             this.lookUpEditPaymentType.Size = new System.Drawing.Size(57, 28);
             this.lookUpEditPaymentType.StyleController = this.LayoutPayment;
-            this.lookUpEditPaymentType.TabIndex = 9;
+            this.lookUpEditPaymentType.TabIndex = 11;
             this.lookUpEditPaymentType.EditValueChanged += new System.EventHandler(this.lookUpEditPaymentType_EditValueChanged);
             this.lookUpEditPaymentType.Modified += new System.EventHandler(this.lookUpEditPaymentType_Modified);
             // 
@@ -437,7 +437,7 @@
             this.lookUpEditPaymentCode.Properties.ValueMember = "CODE";
             this.lookUpEditPaymentCode.Size = new System.Drawing.Size(57, 28);
             this.lookUpEditPaymentCode.StyleController = this.LayoutPayment;
-            this.lookUpEditPaymentCode.TabIndex = 8;
+            this.lookUpEditPaymentCode.TabIndex = 12;
             this.lookUpEditPaymentCode.Modified += new System.EventHandler(this.lookUpEditPaymentCode_Modified);
             // 
             // bindingSourcePAYCODE
@@ -462,7 +462,7 @@
             this.textEditPaidThrough.Properties.UseMaskAsDisplayFormat = true;
             this.textEditPaidThrough.Size = new System.Drawing.Size(57, 28);
             this.textEditPaidThrough.StyleController = this.LayoutPayment;
-            this.textEditPaidThrough.TabIndex = 6;
+            this.textEditPaidThrough.TabIndex = 8;
             // 
             // textEditBuyout
             // 
@@ -482,7 +482,7 @@
             this.textEditBuyout.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.textEditBuyout.Size = new System.Drawing.Size(110, 28);
             this.textEditBuyout.StyleController = this.LayoutPayment;
-            this.textEditBuyout.TabIndex = 5;
+            this.textEditBuyout.TabIndex = 7;
             // 
             // textEditBalance
             // 
@@ -502,7 +502,7 @@
             this.textEditBalance.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.textEditBalance.Size = new System.Drawing.Size(110, 28);
             this.textEditBalance.StyleController = this.LayoutPayment;
-            this.textEditBalance.TabIndex = 4;
+            this.textEditBalance.TabIndex = 6;
             // 
             // simpleButton1
             // 
@@ -521,7 +521,7 @@
             this.buttonChangeISFDate.Name = "buttonChangeISFDate";
             this.buttonChangeISFDate.Size = new System.Drawing.Size(150, 22);
             this.buttonChangeISFDate.StyleController = this.LayoutPayment;
-            this.buttonChangeISFDate.TabIndex = 16;
+            this.buttonChangeISFDate.TabIndex = 15;
             this.buttonChangeISFDate.Text = "Change &ISF Date";
             this.buttonChangeISFDate.Click += new System.EventHandler(this.buttonChangeISFDate_Click);
             // 
@@ -933,7 +933,7 @@
             this.textEditDealerName.Properties.AppearanceDisabled.Options.UseForeColor = true;
             this.textEditDealerName.Size = new System.Drawing.Size(682, 28);
             this.textEditDealerName.StyleController = this.layoutControlCustomerHeader;
-            this.textEditDealerName.TabIndex = 8;
+            this.textEditDealerName.TabIndex = 5;
             // 
             // textEditDealerID
             // 
@@ -949,7 +949,7 @@
             this.textEditDealerID.Properties.AppearanceDisabled.Options.UseForeColor = true;
             this.textEditDealerID.Size = new System.Drawing.Size(97, 28);
             this.textEditDealerID.StyleController = this.layoutControlCustomerHeader;
-            this.textEditDealerID.TabIndex = 7;
+            this.textEditDealerID.TabIndex = 4;
             // 
             // textEditLastName
             // 
@@ -965,7 +965,7 @@
             this.textEditLastName.Properties.AppearanceDisabled.Options.UseForeColor = true;
             this.textEditLastName.Size = new System.Drawing.Size(295, 28);
             this.textEditLastName.StyleController = this.layoutControlCustomerHeader;
-            this.textEditLastName.TabIndex = 6;
+            this.textEditLastName.TabIndex = 3;
             // 
             // textEditFirstName
             // 
@@ -981,7 +981,7 @@
             this.textEditFirstName.Properties.AppearanceDisabled.Options.UseForeColor = true;
             this.textEditFirstName.Size = new System.Drawing.Size(279, 28);
             this.textEditFirstName.StyleController = this.layoutControlCustomerHeader;
-            this.textEditFirstName.TabIndex = 5;
+            this.textEditFirstName.TabIndex = 2;
             // 
             // textEditCustomerID
             // 
@@ -1006,7 +1006,7 @@
             this.textEditCustomerID.Properties.ValueMember = "CustomerID";
             this.textEditCustomerID.Size = new System.Drawing.Size(97, 28);
             this.textEditCustomerID.StyleController = this.layoutControlCustomerHeader;
-            this.textEditCustomerID.TabIndex = 4;
+            this.textEditCustomerID.TabIndex = 1;
             this.textEditCustomerID.EditValueChanged += new System.EventHandler(this.textEditCustomerID_EditValueChanged);
             // 
             // bindingSourceCustomerLookup

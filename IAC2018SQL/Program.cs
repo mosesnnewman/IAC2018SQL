@@ -3346,14 +3346,31 @@ namespace IAC2021SQL
 				InvoicesTableAdapter.Fill(paymentData.Invoices, paymentData.PaymentInvoice.Rows[i].Field<Int32>("InvoiceId"));
 				if (paymentData.Invoices.Rows.Count > 0)
 				{
-					paymentData.Invoices.Rows[0].SetField<Decimal>("TotalPaid",
-						paymentData.Invoices.Rows[0].Field<Decimal>("TotalPaid") - paymentData.PaymentInvoice.Rows[i].Field<Decimal>("Amount"));
-					paymentData.Invoices.Rows[0].SetField<Decimal>("TotalDue",
-						paymentData.Invoices.Rows[0].Field<Decimal>("Amount") - paymentData.Invoices.Rows[0].Field<Decimal>("TotalPaid"));
-					paymentData.Invoices.Rows[0].SetField<Boolean>("IsPaid",
-						paymentData.Invoices.Rows[0].Field<Decimal>("TotalPaid") < paymentData.Invoices.Rows[0].Field<Decimal>("Amount") ? false : true);
+					if (paymentData.PaymentInvoice.Rows[i].Field<String>("Type") != "E")
+					{
+						paymentData.Invoices.Rows[0].SetField<Decimal>("TotalPaid",
+							paymentData.Invoices.Rows[0].Field<Decimal>("TotalPaid") - paymentData.PaymentInvoice.Rows[i].Field<Decimal>("Amount"));
+						paymentData.Invoices.Rows[0].SetField<Decimal>("TotalDue",
+							paymentData.Invoices.Rows[0].Field<Decimal>("Amount") - paymentData.Invoices.Rows[0].Field<Decimal>("TotalPaid"));
+						paymentData.Invoices.Rows[0].SetField<Boolean>("IsPaid",
+							paymentData.Invoices.Rows[0].Field<Decimal>("TotalPaid") < paymentData.Invoices.Rows[0].Field<Decimal>("Amount") ? false : true);
+					}
+					else
+					{
+						paymentData.Invoices.Rows[0].SetField<DateTime>("DateDue",
+							(paymentData.Invoices.Rows[0].Field<DateTime>("DateDue").AddMonths(-paymentData.PaymentInvoice.Rows[i].Field<Int32>("ExtensionCount"))).Date);
+                        paymentData.Invoices.Rows[0].SetField<Int32>("ExtensionCount",
+                            paymentData.Invoices.Rows[0].Field<Int32>("ExtensionCount") -
+                                paymentData.PaymentInvoice.Rows[i].Field<Int32>("ExtensionCount"));
+                        if (paymentData.Invoices.Rows[0].Field<DateTime>("DateDue").Month != 2 &&
+                            (paymentData.Invoices.Rows[0].Field<DateTime>("DateDue").Day == 28 || paymentData.Invoices.Rows[0].Field<DateTime>("DateDue").Day == 29))
+						{
+							paymentData.Invoices.Rows[0].SetField<DateTime>("DateDue",
+							paymentData.Invoices.Rows[0].Field<DateTime>("DateDue").AddMonths(30 - paymentData.Invoices.Rows[0].Field<DateTime>("DateDue").Day));
+                        }
+                    }
 					InvoicesTableAdapter.Update(paymentData.Invoices.Rows[0]);
-				}
+                }
 				PaymentInvoiceTableAdapter.Delete(paymentData.PaymentInvoice.Rows[i].Field<Int32>("id"));
             }
 		}
@@ -3478,7 +3495,7 @@ namespace IAC2021SQL
 							InvoicesTableAdapter.Update(PDS.Invoices.Rows[InvoiceCount]);
                             PaymentInvoiceTableAdapter.Insert(TempCust, PaymentId, PDS.Invoices.Rows[InvoiceCount].Field<Int32>("id"), lnAmountPaid, 0, false,
 								  PDS.PaymentHistory.Rows[0].Field<String>("Type"), PDS.PaymentHistory.Rows[0].Field<String>("Code"),
-								  PDS.PaymentHistory.Rows[0].Field<String>("CreditCardType"), 0);
+								  PDS.PaymentHistory.Rows[0].Field<String>("CreditCardType"), 0,0);
 							InvoiceCount++;
 						}
 						while (lnNumMonthlies == 0 && lnUnusedFunds > 0)
@@ -3521,7 +3538,7 @@ namespace IAC2021SQL
                                 InvoicesTableAdapter.Update(PDS.Invoices.Rows[InvoiceCount]);
                                 PaymentInvoiceTableAdapter.Insert(TempCust, PaymentId, PDS.Invoices.Rows[InvoiceCount].Field<Int32>("id"), lnAmountPaid, 0, false,
                                       PDS.PaymentHistory.Rows[0].Field<String>("Type"), PDS.PaymentHistory.Rows[0].Field<String>("Code"),
-                                      PDS.PaymentHistory.Rows[0].Field<String>("CreditCardType"), 0);
+                                      PDS.PaymentHistory.Rows[0].Field<String>("CreditCardType"), 0,0);
                                 if (PDS.Invoices.Rows[InvoiceCount].Field<Boolean>("IsPaid"))
                                     InvoiceCount++;
                             }
@@ -3535,7 +3552,7 @@ namespace IAC2021SQL
                                 InvoicesTableAdapter.Update(PDS.Invoices.Rows[InvoiceCount]);
                                 PaymentInvoiceTableAdapter.Insert(TempCust, PaymentId, PDS.Invoices.Rows[InvoiceCount].Field<Int32>("id"), lnAmountPaid, 0, false,
                                       PDS.PaymentHistory.Rows[0].Field<String>("Type"), PDS.PaymentHistory.Rows[0].Field<String>("Code"),
-                                      PDS.PaymentHistory.Rows[0].Field<String>("CreditCardType"), 0);
+                                      PDS.PaymentHistory.Rows[0].Field<String>("CreditCardType"), 0,0);
                                 InvoiceCount++;
                             }
                         }
@@ -3589,7 +3606,7 @@ namespace IAC2021SQL
 					switch (PDS.PaymentHistory.Rows[0].Field<String>("Type"))
 					{
 						case "E":
-							HandleExtensions(TempCust, PDS.PaymentHistory.Rows[0].Field<Int32>("ExtCount"));
+							HandleExtensions(TempCust, PDS.PaymentHistory.Rows[0].Field<Int32>("ExtCount"), PDS.PaymentHistory.Rows[0].Field<Int32>("ID"));
 							break;
 					}
 				}
@@ -3625,7 +3642,7 @@ namespace IAC2021SQL
                                 InvoicesTableAdapter.Update(PDS.Invoices.Rows[InvoiceCount]);
                                 PaymentInvoiceTableAdapter.Insert(TempCust, PaymentId, PDS.Invoices.Rows[InvoiceCount].Field<Int32>("id"), lnAmountPaid, 0, false,
 									  PDS.PaymentHistory.Rows[0].Field<String>("Type"), PDS.PaymentHistory.Rows[0].Field<String>("Code"),
-									  PDS.PaymentHistory.Rows[0].Field<String>("CreditCardType"), 0);
+									  PDS.PaymentHistory.Rows[0].Field<String>("CreditCardType"), 0,0);
 								lnNumMonthlies = (Int32)Math.Floor(-lnUnusedFunds / lnRegularPayment);
 							    InvoiceCount--;
 							}
@@ -3652,7 +3669,7 @@ namespace IAC2021SQL
                                         InvoicesTableAdapter.Update(PDS.Invoices.Rows[InvoiceCount]);
                                         PaymentInvoiceTableAdapter.Insert(TempCust, PaymentId, PDS.Invoices.Rows[InvoiceCount].Field<Int32>("id"), -lnAmountPaid, 0, false,
                                               PDS.PaymentHistory.Rows[0].Field<String>("Type"), PDS.PaymentHistory.Rows[0].Field<String>("Code"),
-                                              PDS.PaymentHistory.Rows[0].Field<String>("CreditCardType"), 0);
+                                              PDS.PaymentHistory.Rows[0].Field<String>("CreditCardType"), 0,0);
 										InvoiceCount--;
                                     }
                                     else
@@ -3672,7 +3689,7 @@ namespace IAC2021SQL
                                         InvoicesTableAdapter.Update(PDS.Invoices.Rows[InvoiceCount]);
                                         PaymentInvoiceTableAdapter.Insert(TempCust, PaymentId, PDS.Invoices.Rows[InvoiceCount].Field<Int32>("id"), lnAmountPaid, 0, false,
                                               PDS.PaymentHistory.Rows[0].Field<String>("Type"), PDS.PaymentHistory.Rows[0].Field<String>("Code"),
-                                              PDS.PaymentHistory.Rows[0].Field<String>("CreditCardType"), 0);
+                                              PDS.PaymentHistory.Rows[0].Field<String>("CreditCardType"), 0,0);
                                     }
                                 }
 							}
@@ -3743,7 +3760,7 @@ namespace IAC2021SQL
 							InvoicesTableAdapter.Update(PDS.Invoices.Rows[InvoiceCount]);
                             PaymentInvoiceTableAdapter.Insert(TempCust, PaymentId, PDS.Invoices.Rows[InvoiceCount].Field<Int32>("id"), lnAmountPaid, 0, false,
 								  PDS.PaymentHistory.Rows[0].Field<String>("Type"), PDS.PaymentHistory.Rows[0].Field<String>("Code"),
-								  PDS.PaymentHistory.Rows[0].Field<String>("CreditCardType"), 0);
+								  PDS.PaymentHistory.Rows[0].Field<String>("CreditCardType"), 0,0);
 							if (PDS.Invoices.Rows[InvoiceCount].Field<Boolean>("IsPaid"))
 								InvoiceCount++;
 						}
@@ -3757,7 +3774,7 @@ namespace IAC2021SQL
                             InvoicesTableAdapter.Update(PDS.Invoices.Rows[InvoiceCount]);
                             PaymentInvoiceTableAdapter.Insert(TempCust, PaymentId, PDS.Invoices.Rows[InvoiceCount].Field<Int32>("id"), lnAmountPaid, 0, false,
 								  PDS.PaymentHistory.Rows[0].Field<String>("Type"), PDS.PaymentHistory.Rows[0].Field<String>("Code"),
-								  PDS.PaymentHistory.Rows[0].Field<String>("CreditCardType"), 0);
+								  PDS.PaymentHistory.Rows[0].Field<String>("CreditCardType"), 0,0);
 							if (PDS.Invoices.Rows[InvoiceCount].Field<Boolean>("IsPaid"))
 								InvoiceCount++;
 						}
@@ -3775,7 +3792,7 @@ namespace IAC2021SQL
 							InvoicesTableAdapter.Update(PDS.Invoices.Rows[InvoiceCount]);
                             PaymentInvoiceTableAdapter.Insert(TempCust, PaymentId, PDS.Invoices.Rows[InvoiceCount].Field<Int32>("id"), lnAmountPaid, 0, false,
 								  PDS.PaymentHistory.Rows[0].Field<String>("Type"), PDS.PaymentHistory.Rows[0].Field<String>("Code"),
-								  PDS.PaymentHistory.Rows[0].Field<String>("CreditCardType"), 0);
+								  PDS.PaymentHistory.Rows[0].Field<String>("CreditCardType"), 0,0);
 							if (PDS.Invoices.Rows[InvoiceCount].Field<Boolean>("IsPaid"))
 								InvoiceCount++;
 						}
@@ -3789,7 +3806,7 @@ namespace IAC2021SQL
                             InvoicesTableAdapter.Update(PDS.Invoices.Rows[InvoiceCount]);
                             PaymentInvoiceTableAdapter.Insert(TempCust, PaymentId, PDS.Invoices.Rows[InvoiceCount].Field<Int32>("id"), lnAmountPaid, 0, false,
 								  PDS.PaymentHistory.Rows[0].Field<String>("Type"), PDS.PaymentHistory.Rows[0].Field<String>("Code"),
-								  PDS.PaymentHistory.Rows[0].Field<String>("CreditCardType"), 0);
+								  PDS.PaymentHistory.Rows[0].Field<String>("CreditCardType"), 0,0);
 							if (PDS.Invoices.Rows[InvoiceCount].Field<Boolean>("IsPaid"))
 								InvoiceCount++;
 						}
@@ -3814,7 +3831,7 @@ namespace IAC2021SQL
                             InvoicesTableAdapter.Update(PDS.Invoices.Rows[InvoiceCount]);
                             PaymentInvoiceTableAdapter.Insert(TempCust, PaymentId, PDS.Invoices.Rows[InvoiceCount].Field<Int32>("id"), lnAmountPaid, 0, false,
                                   PDS.PaymentHistory.Rows[0].Field<String>("Type"), PDS.PaymentHistory.Rows[0].Field<String>("Code"),
-                                  PDS.PaymentHistory.Rows[0].Field<String>("CreditCardType"), 0);
+                                  PDS.PaymentHistory.Rows[0].Field<String>("CreditCardType"), 0,0);
                         }
                         else
 						{
@@ -3827,7 +3844,7 @@ namespace IAC2021SQL
                             InvoicesTableAdapter.Update(PDS.Invoices.Rows[InvoiceCount]);
                             PaymentInvoiceTableAdapter.Insert(TempCust,PaymentId, PDS.Invoices.Rows[InvoiceCount].Field<Int32>("id"), lnAmountPaid, 0, false, 
 															  PDS.PaymentHistory.Rows[0].Field<String>("Type"), PDS.PaymentHistory.Rows[0].Field<String>("Code"), 
-															  PDS.PaymentHistory.Rows[0].Field<String>("CreditCardType"),0);
+															  PDS.PaymentHistory.Rows[0].Field<String>("CreditCardType"),0,0);
                         }
                         if (!PDS.Invoices.Rows[InvoiceCount].Field<Boolean>("IsPaid") && PDS.Invoices.Rows[InvoiceCount].Field<Decimal>("TotalPaid") == 0)
 							InvoiceCount--;
@@ -3917,10 +3934,10 @@ namespace IAC2021SQL
 			}
         }
 
-        static public void HandleExtensions(Int32 CustomerNo, Int32 ExtensionCount)
+        static public void HandleExtensions(Int32 CustomerNo, Int32 ExtensionCount, Int32 PaymentID)
         {
             PaymentDataSetTableAdapters.InvoicesTableAdapter InvoicesTableAdapter = new PaymentDataSetTableAdapters.InvoicesTableAdapter();
-            InvoicesTableAdapter.InvoicesApplyExtension(CustomerNo, ExtensionCount);
+            InvoicesTableAdapter.InvoicesApplyExtension(CustomerNo, ExtensionCount,PaymentID);
         }
 
         [STAThread]
