@@ -9560,6 +9560,8 @@ namespace IAC2021SQL {
             
             private global::System.Data.DataColumn columnTranID;
             
+            private global::System.Data.DataColumn columnExtensionCount;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public PaymentInvoiceDataTable() {
@@ -9683,6 +9685,14 @@ namespace IAC2021SQL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ExtensionCountColumn {
+                get {
+                    return this.columnExtensionCount;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -9718,7 +9728,7 @@ namespace IAC2021SQL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public PaymentInvoiceRow AddPaymentInvoiceRow(int CustomerId, int PaymentId, int InvoiceId, decimal Amount, decimal ReturnedAmount, bool FullReturn, string Type, string Code, string Description, int TranID) {
+            public PaymentInvoiceRow AddPaymentInvoiceRow(int CustomerId, int PaymentId, int InvoiceId, decimal Amount, decimal ReturnedAmount, bool FullReturn, string Type, string Code, string Description, int TranID, int ExtensionCount) {
                 PaymentInvoiceRow rowPaymentInvoiceRow = ((PaymentInvoiceRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -9731,7 +9741,8 @@ namespace IAC2021SQL {
                         Type,
                         Code,
                         Description,
-                        TranID};
+                        TranID,
+                        ExtensionCount};
                 rowPaymentInvoiceRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowPaymentInvoiceRow);
                 return rowPaymentInvoiceRow;
@@ -9772,6 +9783,7 @@ namespace IAC2021SQL {
                 this.columnCode = base.Columns["Code"];
                 this.columnDescription = base.Columns["Description"];
                 this.columnTranID = base.Columns["TranID"];
+                this.columnExtensionCount = base.Columns["ExtensionCount"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9799,6 +9811,8 @@ namespace IAC2021SQL {
                 base.Columns.Add(this.columnDescription);
                 this.columnTranID = new global::System.Data.DataColumn("TranID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTranID);
+                this.columnExtensionCount = new global::System.Data.DataColumn("ExtensionCount", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnExtensionCount);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
                 this.columnid.AutoIncrement = true;
@@ -9814,6 +9828,7 @@ namespace IAC2021SQL {
                 this.columnType.MaxLength = 1;
                 this.columnCode.MaxLength = 1;
                 this.columnDescription.MaxLength = 10;
+                this.columnExtensionCount.DefaultValue = ((int)(0));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -19412,6 +19427,22 @@ namespace IAC2021SQL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int ExtensionCount {
+                get {
+                    if (this.IsExtensionCountNull()) {
+                        return 0;
+                    }
+                    else {
+                        return ((int)(this[this.tablePaymentInvoice.ExtensionCountColumn]));
+                    }
+                }
+                set {
+                    this[this.tablePaymentInvoice.ExtensionCountColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsReturnedAmountNull() {
                 return this.IsNull(this.tablePaymentInvoice.ReturnedAmountColumn);
             }
@@ -19480,6 +19511,18 @@ namespace IAC2021SQL {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetTranIDNull() {
                 this[this.tablePaymentInvoice.TranIDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsExtensionCountNull() {
+                return this.IsNull(this.tablePaymentInvoice.ExtensionCountColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetExtensionCountNull() {
+                this[this.tablePaymentInvoice.ExtensionCountColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -27801,6 +27844,7 @@ namespace IAC2021SQL.PaymentDataSetTableAdapters {
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.StoredProcedure;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateDue", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, "DateDue", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CreateDate", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, "CreateDate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@OriginalDateDue", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, "OriginalDateDue", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ExtensionCount", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, "ExtensionCount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -27897,6 +27941,7 @@ namespace IAC2021SQL.PaymentDataSetTableAdapters {
             this._commandCollection[10].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[10].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CustomerID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[10].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ExtensionCount", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[10].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PaymentID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[11] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[11].Connection = this.Connection;
             this._commandCollection[11].CommandText = "dbo.InvoicesGetLastDateDue";
@@ -28364,60 +28409,66 @@ namespace IAC2021SQL.PaymentDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<int> id, global::System.Nullable<global::System.DateTime> CreateDate, global::System.Nullable<global::System.DateTime> OriginalDateDue, global::System.Nullable<int> ExtensionCount, string Description, global::System.Nullable<decimal> Amount, global::System.Nullable<decimal> TotalPaid, global::System.Nullable<decimal> TotalDue, global::System.Nullable<bool> IsPaid) {
+        public virtual int Update(global::System.Nullable<int> id, global::System.Nullable<global::System.DateTime> DateDue, global::System.Nullable<global::System.DateTime> CreateDate, global::System.Nullable<global::System.DateTime> OriginalDateDue, global::System.Nullable<int> ExtensionCount, string Description, global::System.Nullable<decimal> Amount, global::System.Nullable<decimal> TotalPaid, global::System.Nullable<decimal> TotalDue, global::System.Nullable<bool> IsPaid) {
             if ((id.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(id.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            if ((CreateDate.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(CreateDate.Value));
+            if ((DateDue.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(DateDue.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((OriginalDateDue.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(OriginalDateDue.Value));
+            if ((CreateDate.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(CreateDate.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((ExtensionCount.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(ExtensionCount.Value));
+            if ((OriginalDateDue.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(OriginalDateDue.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            if ((Description == null)) {
+            if ((ExtensionCount.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(ExtensionCount.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Description));
-            }
-            if ((Amount.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((decimal)(Amount.Value));
-            }
-            else {
+            if ((Description == null)) {
                 this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
-            if ((TotalPaid.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((decimal)(TotalPaid.Value));
+            else {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Description));
+            }
+            if ((Amount.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((decimal)(Amount.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
-            if ((TotalDue.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((decimal)(TotalDue.Value));
+            if ((TotalPaid.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((decimal)(TotalPaid.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
-            if ((IsPaid.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((bool)(IsPaid.Value));
+            if ((TotalDue.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((decimal)(TotalDue.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+            }
+            if ((IsPaid.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((bool)(IsPaid.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -28586,7 +28637,7 @@ namespace IAC2021SQL.PaymentDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int InvoicesApplyExtension(global::System.Nullable<int> CustomerID, global::System.Nullable<int> ExtensionCount) {
+        public virtual int InvoicesApplyExtension(global::System.Nullable<int> CustomerID, global::System.Nullable<int> ExtensionCount, global::System.Nullable<int> PaymentID) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[10];
             if ((CustomerID.HasValue == true)) {
                 command.Parameters[1].Value = ((int)(CustomerID.Value));
@@ -28599,6 +28650,12 @@ namespace IAC2021SQL.PaymentDataSetTableAdapters {
             }
             else {
                 command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((PaymentID.HasValue == true)) {
+                command.Parameters[3].Value = ((int)(PaymentID.Value));
+            }
+            else {
+                command.Parameters[3].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -30665,6 +30722,7 @@ namespace IAC2021SQL.PaymentDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("Code", "Code");
             tableMapping.ColumnMappings.Add("Description", "Description");
             tableMapping.ColumnMappings.Add("TranID", "TranID");
+            tableMapping.ColumnMappings.Add("ExtensionCount", "ExtensionCount");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -30687,6 +30745,7 @@ namespace IAC2021SQL.PaymentDataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Code", global::System.Data.SqlDbType.Char, 1, global::System.Data.ParameterDirection.Input, 0, 0, "Code", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Description", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "Description", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TranID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, "TranID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ExtensionCount", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, "ExtensionCount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = "dbo.PaymentInvoiceUpdate";
@@ -30700,6 +30759,7 @@ namespace IAC2021SQL.PaymentDataSetTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Code", global::System.Data.SqlDbType.Char, 1, global::System.Data.ParameterDirection.Input, 0, 0, "Code", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Description", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "Description", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TranID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, "TranID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ExtensionCount", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, "ExtensionCount", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -30859,7 +30919,7 @@ namespace IAC2021SQL.PaymentDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(global::System.Nullable<int> CustomerId, global::System.Nullable<int> PaymentId, global::System.Nullable<int> InvoiceId, global::System.Nullable<decimal> Amount, global::System.Nullable<decimal> ReturnedAmount, global::System.Nullable<bool> FullReturn, string Type, string Code, string Description, global::System.Nullable<int> TranID) {
+        public virtual int Insert(global::System.Nullable<int> CustomerId, global::System.Nullable<int> PaymentId, global::System.Nullable<int> InvoiceId, global::System.Nullable<decimal> Amount, global::System.Nullable<decimal> ReturnedAmount, global::System.Nullable<bool> FullReturn, string Type, string Code, string Description, global::System.Nullable<int> TranID, global::System.Nullable<int> ExtensionCount) {
             if ((CustomerId.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((int)(CustomerId.Value));
             }
@@ -30920,6 +30980,12 @@ namespace IAC2021SQL.PaymentDataSetTableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
+            if ((ExtensionCount.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[11].Value = ((int)(ExtensionCount.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -30940,7 +31006,7 @@ namespace IAC2021SQL.PaymentDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<int> id, global::System.Nullable<decimal> Amount, global::System.Nullable<decimal> ReturnedAmount, global::System.Nullable<bool> FullReturn, string Type, string Code, string Description, global::System.Nullable<int> TranID) {
+        public virtual int Update(global::System.Nullable<int> id, global::System.Nullable<decimal> Amount, global::System.Nullable<decimal> ReturnedAmount, global::System.Nullable<bool> FullReturn, string Type, string Code, string Description, global::System.Nullable<int> TranID, global::System.Nullable<int> ExtensionCount) {
             if ((id.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(id.Value));
             }
@@ -30988,6 +31054,12 @@ namespace IAC2021SQL.PaymentDataSetTableAdapters {
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            if ((ExtensionCount.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(ExtensionCount.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
