@@ -3,6 +3,10 @@ using System;
 using System.Data;
 using System.Windows.Forms;
 using DevExpress.XtraBars.Docking2010;
+using DevExpress.Utils.Html;
+using DevExpress.Utils;
+using DevExpress.CodeParser;
+using static DevExpress.CodeParser.CodeStyle.Formatting.Rules;
 
 namespace IAC2021SQL
 {
@@ -150,12 +154,48 @@ namespace IAC2021SQL
         }
         public void FillIt()
         {
+            IACDataSet tempDataSet = new IACDataSet();
             customerTableAdapter.FillByID(iacDataSet.CUSTOMER, CustomerID);
             dealerTableAdapter.Fill(iacDataSet.DEALER, iacDataSet.CUSTOMER.Rows[0].Field<Int32>("CUSTOMER_DEALER"));
             if(!lbAddFlag)
                 paymentTableAdapter.FillByKey(iacDataSet.PAYMENT, iacDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO"), PaymentDate, SeqNo);
             else 
             {
+                paymentTableAdapter.Fill(tempDataSet.PAYMENT, textEditCustomerID.EditValue.ToString().PadLeft(6, '0'));
+                if (tempDataSet.PAYMENT.Rows.Count != 0)
+                {
+                    var msgArgs = new XtraMessageBoxArgs();
+                    msgArgs.HtmlTemplate.Assign(htmlTemplate1);
+                    msgArgs.HtmlImages = svgImageCollection1;
+                    msgArgs.Caption = "Closed Payment Entry Duplicate";
+                    msgArgs.Text = "*** There already is a payment for this customer. Do you want to add another ? ***";
+                    var result = XtraMessageBox.Show(msgArgs);
+                    if (result.ToString() != "OK")
+                    {
+                        this.ActiveControl = layoutControlCustomerHeader;
+                        layoutControlCustomerHeader.ActiveControl = textEditCustomerID;
+                        Control c = this.ActiveControl;
+                        if (c is DevExpress.XtraLayout.LayoutControl)
+                        {
+                            if (!(((DevExpress.XtraLayout.LayoutControl)ActiveControl).ActiveControl == null))
+                            {
+                                c = ((DevExpress.XtraLayout.LayoutControl)ActiveControl).ActiveControl;
+                            }
+                        }
+                        if (c is DevExpress.XtraEditors.TextBoxMaskBox)
+                        {
+                            c = c.Parent;
+                        }
+                        this.Text = c.Name;
+                        iacDataSet.PAYMENT.Clear();
+                        iacDataSet.CUSTOMER.Clear();
+                        iacDataSet.DEALER.Clear();
+                        dateEditPaymentDate.EditValue = DateTime.Now.Date;
+                        ActiveControl = textEditCustomerID;
+                        Refresh();
+                        return;
+                    }
+                }
                 if (bindingSourcePAYMENT.Position == -1)
                 {
                     lookUpEditPaymentType.EditValue = "";
@@ -290,6 +330,10 @@ namespace IAC2021SQL
                 case "Save":
                     if (lbAddFlag)
                     {
+                        if (bindingSourcePAYMENT.Position == -1)
+                        {
+                            FillIt();
+                        }       
                         iacDataSet.PAYMENT.Rows[bindingSourcePAYMENT.Position].SetField<String>("PAYMENT_CUSTOMER", textEditCustomerID.EditValue.ToString().PadLeft(6, '0'));
                         iacDataSet.PAYMENT.Rows[bindingSourcePAYMENT.Position].SetField<DateTime>("PAYMENT_DATE", (DateTime)dateEditPaymentDate.EditValue);
                         iacDataSet.PAYMENT.Rows[bindingSourcePAYMENT.Position].SetField<Int32>("PAYMENT_DEALER", (Int32)textEditDealerID.EditValue);
@@ -371,7 +415,7 @@ namespace IAC2021SQL
             if(CustomerID !=0)
             {
                 FillIt();
-                if(iacDataSet.CUSTOMER.Rows.Count > 0 && iacDataSet.DEALER.Rows.Count > 0)
+                if (iacDataSet.CUSTOMER.Rows.Count > 0 && iacDataSet.DEALER.Rows.Count > 0)
                 {
                     dateEditPaymentDate.Enabled = true;
                     textEditAmount.Enabled = true;
@@ -380,7 +424,29 @@ namespace IAC2021SQL
                     checkEditEFT.Enabled = true;
                     if (lbAddFlag)
                         windowsUIButtonPanel1.Buttons[0].Properties.Enabled = true;
+
+                    iacDataSet.CUSTOMER.Rows[0].SetField<Decimal>("CUSTOMER_BALANCE", Program.TVSimpleGetBuyout(iacDataSet,
+                    DateTime.Now.Date,
+                    (Double)iacDataSet.CUSTOMER.Rows[0].Field<Int32>("CUSTOMER_TERM"),
+                    (Double)(iacDataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_ANNUAL_PERCENTAGE_RATE") / 100),
+                    (Double)iacDataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_REGULAR_AMOUNT"),
+                    iacDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO"),
+                    // 04/30/2017 Handle BOTH Simple Interest and Normal Daily Compounding
+                    iacDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_AMORTIZE_IND") == "S" ? true : false, true, false, false, -1, true));
+
+                    iacDataSet.CUSTOMER.Rows[0].SetField<Decimal>("CUSTOMER_BUYOUT", Program.TVSimpleGetBuyout(iacDataSet,
+                            DateTime.Now.Date,
+                            (Double)iacDataSet.CUSTOMER.Rows[0].Field<Int32>("CUSTOMER_TERM"),
+                            (Double)(iacDataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_ANNUAL_PERCENTAGE_RATE") / 100),
+                            (Double)iacDataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_REGULAR_AMOUNT"),
+                            iacDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO"),
+                            // 04/30/2017 Handle BOTH Simple Interest and Normal Daily Compounding
+                            iacDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_AMORTIZE_IND") == "S" ? true : false, true, true, false));
+                    bindingSourceCUSTOMER.EndEdit();
+                    textEditBalance.Refresh();
+                    textEditBuyout.Refresh();
                 }
+               
             }
             _InFillIt = false;
             gedit.Properties.Buttons[0].PerformClick();

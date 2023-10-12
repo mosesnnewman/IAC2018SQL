@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions13 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(XtraFormClosedPaymentEditor));
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions2 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions3 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions14 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions15 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             this.iacDataSet = new IAC2021SQL.IACDataSet();
             this.bindingSourceCUSTOMER = new System.Windows.Forms.BindingSource(this.components);
             this.bindingSourceDEALER = new System.Windows.Forms.BindingSource(this.components);
@@ -109,6 +109,9 @@
             this.layoutControlDealerName = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlDealerID = new DevExpress.XtraLayout.LayoutControlItem();
             this.lookUpEditCustomerID = new DevExpress.XtraEditors.LookUpEdit();
+            this.htmlTemplateCollection1 = new DevExpress.Utils.Html.HtmlTemplateCollection();
+            this.htmlTemplate1 = new DevExpress.Utils.Html.HtmlTemplate();
+            this.svgImageCollection1 = new DevExpress.Utils.SvgImageCollection(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.iacDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceCUSTOMER)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceDEALER)).BeginInit();
@@ -179,6 +182,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlDealerName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlDealerID)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEditCustomerID.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.svgImageCollection1)).BeginInit();
             this.SuspendLayout();
             // 
             // iacDataSet
@@ -283,13 +287,13 @@
             this.windowsUIButtonPanel1.AppearanceButton.Normal.Options.UseFont = true;
             this.windowsUIButtonPanel1.AppearanceButton.Pressed.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.windowsUIButtonPanel1.AppearanceButton.Pressed.Options.UseFont = true;
-            windowsUIButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions1.Image")));
-            windowsUIButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions2.Image")));
-            windowsUIButtonImageOptions3.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions3.Image")));
+            windowsUIButtonImageOptions13.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions13.Image")));
+            windowsUIButtonImageOptions14.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions14.Image")));
+            windowsUIButtonImageOptions15.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions15.Image")));
             this.windowsUIButtonPanel1.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Search", true, windowsUIButtonImageOptions1, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Save", true, windowsUIButtonImageOptions2, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Close", true, windowsUIButtonImageOptions3, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Search", true, windowsUIButtonImageOptions13, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Save", true, windowsUIButtonImageOptions14, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Close", true, windowsUIButtonImageOptions15, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
             this.windowsUIButtonPanel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.windowsUIButtonPanel1.Location = new System.Drawing.Point(12, 348);
             this.windowsUIButtonPanel1.Name = "windowsUIButtonPanel1";
@@ -1190,6 +1194,21 @@
             this.lookUpEditCustomerID.Size = new System.Drawing.Size(887, 28);
             this.lookUpEditCustomerID.TabIndex = 168;
             // 
+            // htmlTemplateCollection1
+            // 
+            this.htmlTemplateCollection1.AddRange(new DevExpress.Utils.Html.HtmlTemplate[] {
+            this.htmlTemplate1});
+            // 
+            // htmlTemplate1
+            // 
+            this.htmlTemplate1.Name = "htmlTemplate1";
+            this.htmlTemplate1.Styles = resources.GetString("htmlTemplate1.Styles");
+            this.htmlTemplate1.Template = resources.GetString("htmlTemplate1.Template");
+            // 
+            // svgImageCollection1
+            // 
+            this.svgImageCollection1.Add("close", "image://svgimages/outlook inspired/close.svg");
+            // 
             // XtraFormClosedPaymentEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1269,6 +1288,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlDealerName)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlDealerID)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEditCustomerID.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.svgImageCollection1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1351,5 +1371,8 @@
         private DevExpress.XtraEditors.CheckEdit checkEditNoAdjLookBack;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem13;
+        private DevExpress.Utils.Html.HtmlTemplateCollection htmlTemplateCollection1;
+        private DevExpress.Utils.Html.HtmlTemplate htmlTemplate1;
+        private DevExpress.Utils.SvgImageCollection svgImageCollection1;
     }
 }
