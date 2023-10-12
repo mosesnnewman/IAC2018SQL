@@ -328,6 +328,7 @@ namespace IAC2021SQL
                     }
                     break;
                 case "Save":
+                    SendKeys.SendWait("{TAB}");  // Moses Newman 10/12/2023 save amount if not tabbed out.
                     if (lbAddFlag)
                     {
                         if (bindingSourcePAYMENT.Position == -1)
@@ -398,7 +399,8 @@ namespace IAC2021SQL
                     iacDataSet.DEALER.Clear();
                     dateEditPaymentDate.EditValue = DateTime.Now.Date;
                     ActiveControl = textEditCustomerID;
-                    //Close();
+                    if(!lbAddFlag)
+                        Close();
                     break;
                 case "Close":
                     Close();
