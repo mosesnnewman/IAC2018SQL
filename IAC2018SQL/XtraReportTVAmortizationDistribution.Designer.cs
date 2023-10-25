@@ -240,7 +240,9 @@
             this.xrControlStyle1 = new DevExpress.XtraReports.UI.XRControlStyle();
             this.xrControlStyle2 = new DevExpress.XtraReports.UI.XRControlStyle();
             this.Box7 = new DevExpress.XtraReports.UI.XRCrossBandBox();
+            this.SubBand2 = new DevExpress.XtraReports.UI.SubBand();
             this.SubreportComments = new DevExpress.XtraReports.UI.XRSubreport();
+            this.SubreportRepoLog = new DevExpress.XtraReports.UI.XRSubreport();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
@@ -2516,7 +2518,8 @@
             this.Area4.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.Area4.SubBands.AddRange(new DevExpress.XtraReports.UI.SubBand[] {
             this.Section4,
-            this.SubBand1});
+            this.SubBand1,
+            this.SubBand2});
             this.Area4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
             // Section4
@@ -3427,7 +3430,7 @@
             // 
             // topMarginBand1
             // 
-            this.topMarginBand1.HeightF = 25F;
+            this.topMarginBand1.HeightF = 22F;
             this.topMarginBand1.Name = "topMarginBand1";
             // 
             // bottomMarginBand1
@@ -3439,7 +3442,7 @@
             this.Text18,
             this.PrintTime1,
             this.gsUserName1});
-            this.bottomMarginBand1.HeightF = 50F;
+            this.bottomMarginBand1.HeightF = 28.33331F;
             this.bottomMarginBand1.Name = "bottomMarginBand1";
             // 
             // GrandTotalPrincipal
@@ -3558,6 +3561,14 @@
             this.Box7.StartPointFloat = new DevExpress.Utils.PointFloat(608.3333F, 106.4834F);
             this.Box7.WidthF = 183.3334F;
             // 
+            // SubBand2
+            // 
+            this.SubBand2.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.SubreportRepoLog});
+            this.SubBand2.HeightF = 51.90557F;
+            this.SubBand2.Name = "SubBand2";
+            this.SubBand2.PageBreak = DevExpress.XtraReports.UI.PageBreak.BeforeBand;
+            // 
             // SubreportComments
             // 
             this.SubreportComments.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
@@ -3567,6 +3578,13 @@
             this.SubreportComments.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gsCUSTOMER", this.gsCustomer));
             this.SubreportComments.ReportSource = new IAC2021SQL.XtraReportClosedCustomerComments();
             this.SubreportComments.SizeF = new System.Drawing.SizeF(1000F, 50F);
+            // 
+            // SubreportRepoLog
+            // 
+            this.SubreportRepoLog.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
+            this.SubreportRepoLog.Name = "SubreportRepoLog";
+            this.SubreportRepoLog.ReportSource = new IAC2021SQL.XtraReportClosedCustomerRepoLog();
+            this.SubreportRepoLog.SizeF = new System.Drawing.SizeF(1046F, 50F);
             // 
             // XtraReportTVAmortizationDistribution
             // 
@@ -3615,7 +3633,7 @@
             this.DataMember = "TVAmort";
             this.DataSource = this.sqlDataSource1;
             this.Landscape = true;
-            this.Margins = new DevExpress.Drawing.DXMargins(25F, 75F, 25F, 50F);
+            this.Margins = new DevExpress.Drawing.DXMargins(22F, 22F, 22F, 28.33331F);
             this.PageHeight = 850;
             this.PageWidth = 1100;
             this.ParameterPanelLayoutItems.AddRange(new DevExpress.XtraReports.Parameters.ParameterPanelLayoutItem[] {
@@ -3827,5 +3845,7 @@
         private DevExpress.XtraReports.UI.SubBand SubBand1;
         private DevExpress.XtraReports.UI.XRSubreport SubreportComments;
         private DevExpress.XtraReports.UI.SubBand GridHeader;
+        private DevExpress.XtraReports.UI.SubBand SubBand2;
+        private DevExpress.XtraReports.UI.XRSubreport SubreportRepoLog;
     }
 }

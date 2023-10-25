@@ -1424,6 +1424,13 @@ namespace IAC2021SQL
                 case "V":
                 case "P":
                 case "I":
+                case "O": // Moses Newman 10/25/2023 Handle OP and OV!
+                    if(PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<String>("PAYMENT_TYPE") == "O")
+                    {
+                        if (PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<String>("PAYMENT_CODE_2") != "P" &&
+                            PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<String>("PAYMENT_CODE_2") != "V")
+                            goto default;
+                    }
                     lntemppay = PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<Decimal>("PAYMENT_AMOUNT_RCV");
                     lnMasterNPNP += PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<Decimal>("PAYMENT_AMOUNT_RCV");
                     lnNonCashFeesandCharges = lnMasterOloan;
@@ -1466,6 +1473,13 @@ namespace IAC2021SQL
                 case "V":
                 case "P":
                 case "I":
+                case "O": // Moses Newman 10/25/2023 Handle OP and OV!
+                    if (PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<String>("PAYMENT_TYPE") == "O")
+                    {
+                        if (PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<String>("PAYMENT_CODE_2") != "P" &&
+                            PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<String>("PAYMENT_CODE_2") != "V")
+                            goto default;
+                    }
                     break;
                 default:
                     lnMasterAmortNP += PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<Decimal>("PAYMENT_AMOUNT_RCV");
