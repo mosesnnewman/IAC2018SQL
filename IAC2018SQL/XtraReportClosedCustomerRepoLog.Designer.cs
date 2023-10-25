@@ -486,7 +486,7 @@
             this.Picture1.Font = new DevExpress.Drawing.DXFont("Times New Roman", 9.75F);
             this.Picture1.ForeColor = System.Drawing.Color.Black;
             this.Picture1.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource("img", resources.GetString("Picture1.ImageSource"));
-            this.Picture1.LocationFloat = new DevExpress.Utils.PointFloat(809.3751F, 0F);
+            this.Picture1.LocationFloat = new DevExpress.Utils.PointFloat(809.611F, 0F);
             this.Picture1.Name = "Picture1";
             this.Picture1.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.Picture1.SizeF = new System.Drawing.SizeF(246.389F, 98.68056F);
@@ -907,10 +907,10 @@
             this.DataMember = "RepoLog";
             this.DataSource = this.sqlDataSource1;
             this.Landscape = true;
-            this.Margins = new DevExpress.Drawing.DXMargins(22, 22, 22, 22);
+            this.Margins = new DevExpress.Drawing.DXMargins(22F, 22F, 22F, 22F);
             this.PageHeight = 850;
             this.PageWidth = 1100;
-            this.Version = "22.1";
+            this.Version = "23.1";
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
         }
