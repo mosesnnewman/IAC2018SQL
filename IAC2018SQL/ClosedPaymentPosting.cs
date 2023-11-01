@@ -1874,7 +1874,8 @@ namespace IAC2021SQL
             lnContractStatus = loContractStatus != null ? (Decimal)loContractStatus : 0;
             DT.CUSTOMER.Rows[CustPos].SetField<Decimal>("PartialPayment", lnPartialPayment);
             DT.CUSTOMER.Rows[CustPos].SetField<Double>("CUSTOMER_PARTIAL_PAYMENTS", (Double)(DT.CUSTOMER.Rows[CustPos].Field<Decimal>("PartialPayment") / DT.CUSTOMER.Rows[CustPos].Field<Decimal>("CUSTOMER_REGULAR_AMOUNT")));
-            DT.CUSTOMER.Rows[CustPos].SetField<Decimal>("CUSTOMER_LATE_CHARGE", lnLateCharge);
+            // Moses Newman ONLY show last late charge if late charge balance is not 0!
+            DT.CUSTOMER.Rows[CustPos].SetField<Decimal>("CUSTOMER_LATE_CHARGE", lnLateFeeBalance != 0 ? lnLateCharge:0);
             DT.CUSTOMER.Rows[CustPos].SetField<Decimal>("CUSTOMER_LATE_CHARGE_BAL", lnLateFeeBalance);
             DT.CUSTOMER.Rows[CustPos].SetField<Int32>("CUSTOMER_NO_OF_PAYMENTS_MADE", lnNumPay);
             DT.CUSTOMER.Rows[CustPos].SetField<Int32>("CUSTOMER_PAY_REM_2", DT.CUSTOMER.Rows[CustPos].Field<Int32>("CUSTOMER_TERM") - lnNumPay);

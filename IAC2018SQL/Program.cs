@@ -1474,6 +1474,9 @@ namespace IAC2021SQL
 			tableAdapConn.Close();
 			tableAdapConn = null;
 			tableAdapTran = null;
+			// Moses Newman 10/30/2023 Create new invoices for new accounts!
+			PaymentDataSetTableAdapters.InvoicesTableAdapter invoicesTableAdapter = new InvoicesTableAdapter();
+			invoicesTableAdapter.CreateInvoicesAllNotExisting();
 		}
 		// End of Closed End New Customer Posting Routines
 

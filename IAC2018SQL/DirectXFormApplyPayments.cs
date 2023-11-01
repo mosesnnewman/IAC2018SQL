@@ -46,7 +46,7 @@ namespace IAC2021SQL
         {
             PaymentDataSetTableAdapters.PaymentHistoryTableAdapter paymentHistoryTableAdapter = new PaymentHistoryTableAdapter();
 
-            cUSTOMERTableAdapter.FillByAllPosted(ClosedPaymentiacDataSet.CUSTOMER);
+            cUSTOMERTableAdapter.Fill(ClosedPaymentiacDataSet.CUSTOMER,"231560");
             progressBarControl1.Visible = true;
             progressBarControl1.Enabled = true;
             progressBarControl1.Properties.ShowTitle = true;

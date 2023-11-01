@@ -59,7 +59,7 @@ namespace IAC2021SQL
 
                     if (!checkBoxCollections.Checked)
                     {
-                        CUSTOMERTableAdapter.FillByDelinquencies(DelinquencyData.CUSTOMER, lnAgedTest, ldCurrDate,lsSortType);
+                        CUSTOMERTableAdapter.FillByDelinquencies(DelinquencyData.CUSTOMER, lnAgedTest, ldCurrDate.Date,lsSortType);
                         // Moses Newman 11/19/2013 Moses Newman added ldCurrDate as new parameter to DealerFillByDelinQuencies Query
                         DEALERTableAdapter.FillByDelinquencies(DelinquencyData.DEALER, lnAgedTest, ldCurrDate);
                         // Moses Newman 09/27/2021 

@@ -29,6 +29,7 @@ namespace IAC2021SQL
             IACDataSetTableAdapters.CUSTOMERTableAdapter CUSTOMERTableAdapter = new IACDataSetTableAdapters.CUSTOMERTableAdapter();
             IACDataSetTableAdapters.CUSTHISTTableAdapter CUSTHISTTableAdapter = new IACDataSetTableAdapters.CUSTHISTTableAdapter();
 
+            //CUSTOMERTableAdapter.FillByUnPostedPayments(DT.CUSTOMER);
             CUSTOMERTableAdapter.Fill(DT.CUSTOMER, cUSTOMER_NOTextBox.Text.Trim());
             //CUSTOMERTableAdapter.FillByAllPosted(DT.CUSTOMER);
             label1.Text = "Fixing Paid Throughs, Number of Payments, Statuses etc.";
