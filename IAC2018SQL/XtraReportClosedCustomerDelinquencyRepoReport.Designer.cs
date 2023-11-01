@@ -154,6 +154,7 @@
             this.Text18 = new DevExpress.XtraReports.UI.XRLabel();
             this.GrandTotalDelinquentCount1 = new DevExpress.XtraReports.UI.XRLabel();
             this.ReportFooterSection2 = new DevExpress.XtraReports.UI.SubBand();
+            this.Subreport1 = new DevExpress.XtraReports.UI.XRSubreport();
             this.gdCurrentDate = new DevExpress.XtraReports.Parameters.Parameter();
             this.gdEndDate = new DevExpress.XtraReports.Parameters.Parameter();
             this.gdStartDate = new DevExpress.XtraReports.Parameters.Parameter();
@@ -182,7 +183,6 @@
             this.bottomMarginBand1 = new DevExpress.XtraReports.UI.BottomMarginBand();
             this.DealerNewId = new DevExpress.XtraReports.UI.CalculatedField();
             this.ldPaidThrough = new DevExpress.XtraReports.UI.CalculatedField();
-            this.Subreport1 = new DevExpress.XtraReports.UI.XRSubreport();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // Area3
@@ -241,7 +241,8 @@
             // 
             this.xrCheckBox1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
             new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "CheckBoxState", "[TitleReceived]")});
-            this.xrCheckBox1.Font = new DevExpress.Drawing.DXFont("Arial", 8.25F, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
+            this.xrCheckBox1.Font = new DevExpress.Drawing.DXFont("Arial", 8.25F, DevExpress.Drawing.DXFontStyle.Bold, DevExpress.Drawing.DXGraphicsUnit.Point, new DevExpress.Drawing.DXFontAdditionalProperty[] {
+            new DevExpress.Drawing.DXFontAdditionalProperty("GdiCharSet", ((byte)(0)))});
             this.xrCheckBox1.GlyphOptions.Alignment = DevExpress.Utils.HorzAlignment.Far;
             this.xrCheckBox1.LocationFloat = new DevExpress.Utils.PointFloat(273.6112F, 91.24998F);
             this.xrCheckBox1.Name = "xrCheckBox1";
@@ -1942,6 +1943,22 @@
             this.ReportFooterSection2.PageBreak = DevExpress.XtraReports.UI.PageBreak.BeforeBand;
             this.ReportFooterSection2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
+            // Subreport1
+            // 
+            this.Subreport1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
+            this.Subreport1.Name = "Subreport1";
+            this.Subreport1.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gdCurrentDate", this.gdCurrentDate));
+            this.Subreport1.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gdEndDate", this.gdEndDate));
+            this.Subreport1.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gdStartDate", this.gdStartDate));
+            this.Subreport1.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gnAgedMonths", this.gnAgedMonths));
+            this.Subreport1.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gsCustStatus", this.gsCustStatus));
+            this.Subreport1.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gsRepoCode", this.gsRepoCode));
+            this.Subreport1.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gsRepoInd", this.gsRepoInd));
+            this.Subreport1.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gsUserID", this.gsUserID));
+            this.Subreport1.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gsUserName", this.gsUserName));
+            this.Subreport1.ReportSource = new IAC2021SQL.XtraReportClosedCustomerDelinquencyRepoDealerSummary();
+            this.Subreport1.SizeF = new System.Drawing.SizeF(1050F, 50F);
+            // 
             // gdCurrentDate
             // 
             this.gdCurrentDate.Description = "Enter gdCurrentDate:";
@@ -2254,22 +2271,6 @@
             this.ldPaidThrough.FieldType = DevExpress.XtraReports.UI.FieldType.DateTime;
             this.ldPaidThrough.Name = "ldPaidThrough";
             // 
-            // Subreport1
-            // 
-            this.Subreport1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
-            this.Subreport1.Name = "Subreport1";
-            this.Subreport1.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gdCurrentDate", this.gdCurrentDate));
-            this.Subreport1.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gdEndDate", this.gdEndDate));
-            this.Subreport1.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gdStartDate", this.gdStartDate));
-            this.Subreport1.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gnAgedMonths", this.gnAgedMonths));
-            this.Subreport1.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gsCustStatus", this.gsCustStatus));
-            this.Subreport1.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gsRepoCode", this.gsRepoCode));
-            this.Subreport1.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gsRepoInd", this.gsRepoInd));
-            this.Subreport1.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gsUserID", this.gsUserID));
-            this.Subreport1.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gsUserName", this.gsUserName));
-            this.Subreport1.ReportSource = new IAC2021SQL.XtraReportClosedCustomerDelinquencyRepoDealerSummary();
-            this.Subreport1.SizeF = new System.Drawing.SizeF(1050F, 50F);
-            // 
             // XtraReportClosedCustomerDelinquencyRepoReport
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -2297,7 +2298,7 @@
             this.DataMember = "CUSTOMER";
             this.DataSource = this.sqlDataSource1;
             this.Landscape = true;
-            this.Margins = new DevExpress.Drawing.DXMargins(25, 25, 25, 25);
+            this.Margins = new DevExpress.Drawing.DXMargins(25F, 25F, 25F, 25F);
             this.PageHeight = 850;
             this.PageWidth = 1100;
             this.ParameterPanelLayoutItems.AddRange(new DevExpress.XtraReports.Parameters.ParameterPanelLayoutItem[] {
@@ -2320,7 +2321,7 @@
             this.gdEndDate,
             this.gsCustStatus,
             this.gsRepoInd});
-            this.Version = "22.1";
+            this.Version = "23.1";
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
         }

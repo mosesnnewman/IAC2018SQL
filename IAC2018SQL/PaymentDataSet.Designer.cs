@@ -27865,7 +27865,7 @@ namespace IAC2021SQL.PaymentDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[19];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[20];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "dbo.InvoicesSelect";
@@ -27881,34 +27881,31 @@ namespace IAC2021SQL.PaymentDataSetTableAdapters {
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LastTransDate", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "dbo.InvoicesDeleteAddedRecordsWithZeroPaid";
+            this._commandCollection[2].CommandText = "dbo.CreateInvoicesAllNotExisting";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CustomerID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "dbo.InvoicesFillAllByCustomerId";
+            this._commandCollection[3].CommandText = "dbo.InvoicesDeleteAddedRecordsWithZeroPaid";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CustomerID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = "dbo.InvoicesFillAllNotPaidInFullByCustomerId";
+            this._commandCollection[4].CommandText = "dbo.InvoicesFillAllByCustomerId";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CustomerID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Type", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = "dbo.InvoicesFillAllPaidByCustomerIdDateRange";
+            this._commandCollection[5].CommandText = "dbo.InvoicesFillAllNotPaidInFullByCustomerId";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CustomerID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Type", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@End", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[6].Connection = this.Connection;
-            this._commandCollection[6].CommandText = "dbo.InvoicesFillAllNotPaidInFullByCustomerIdDateRange";
+            this._commandCollection[6].CommandText = "dbo.InvoicesFillAllPaidByCustomerIdDateRange";
             this._commandCollection[6].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CustomerID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -27916,80 +27913,88 @@ namespace IAC2021SQL.PaymentDataSetTableAdapters {
             this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@End", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[7] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[7].Connection = this.Connection;
-            this._commandCollection[7].CommandText = "dbo.InvoicesFillAllByPaymentID";
+            this._commandCollection[7].CommandText = "dbo.InvoicesFillAllNotPaidInFullByCustomerIdDateRange";
             this._commandCollection[7].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PaymentID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CustomerID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Type", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@End", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[8] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[8].Connection = this.Connection;
-            this._commandCollection[8].CommandText = "dbo.InvoicesGetLateChargeBalanceByDate";
+            this._commandCollection[8].CommandText = "dbo.InvoicesFillAllByPaymentID";
             this._commandCollection[8].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CustomerID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ThisDate", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PaymentID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[9] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[9].Connection = this.Connection;
-            this._commandCollection[9].CommandText = "dbo.InvoicesGetPartialPaymentByDate";
+            this._commandCollection[9].CommandText = "dbo.InvoicesGetLateChargeBalanceByDate";
             this._commandCollection[9].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[9].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[9].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CustomerID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[9].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ThisDate", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[10] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[10].Connection = this.Connection;
-            this._commandCollection[10].CommandText = "dbo.InvoicesApplyExtension";
+            this._commandCollection[10].CommandText = "dbo.InvoicesGetPartialPaymentByDate";
             this._commandCollection[10].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[10].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[10].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CustomerID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[10].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ExtensionCount", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[10].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PaymentID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[10].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ThisDate", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[11] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[11].Connection = this.Connection;
-            this._commandCollection[11].CommandText = "dbo.InvoicesGetLastDateDue";
+            this._commandCollection[11].CommandText = "dbo.InvoicesApplyExtension";
             this._commandCollection[11].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[11].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[11].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CustomerID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[11].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ExtensionCount", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[11].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PaymentID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[12] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[12].Connection = this.Connection;
-            this._commandCollection[12].CommandText = "dbo.InvoicesGetLastExtensionCount";
+            this._commandCollection[12].CommandText = "dbo.InvoicesGetLastDateDue";
             this._commandCollection[12].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[12].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[12].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CustomerID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[13] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[13].Connection = this.Connection;
-            this._commandCollection[13].CommandText = "dbo.InvoicesGetLastLateFee";
+            this._commandCollection[13].CommandText = "dbo.InvoicesGetLastExtensionCount";
             this._commandCollection[13].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[13].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[13].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CustomerID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[14] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[14].Connection = this.Connection;
-            this._commandCollection[14].CommandText = "dbo.InvoiceGetLateChargeBalance";
+            this._commandCollection[14].CommandText = "dbo.InvoicesGetLastLateFee";
             this._commandCollection[14].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[14].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[14].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CustomerID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[15] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[15].Connection = this.Connection;
-            this._commandCollection[15].CommandText = "dbo.InvoicesNumberOfPayments";
+            this._commandCollection[15].CommandText = "dbo.InvoiceGetLateChargeBalance";
             this._commandCollection[15].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[15].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[15].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CustomerID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[16] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[16].Connection = this.Connection;
-            this._commandCollection[16].CommandText = "dbo.InvoiceGetPaidThroughDate";
+            this._commandCollection[16].CommandText = "dbo.InvoicesNumberOfPayments";
             this._commandCollection[16].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[16].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[16].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CustomerID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[17] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[17].Connection = this.Connection;
-            this._commandCollection[17].CommandText = "dbo.InvoiceGetPaidThru";
+            this._commandCollection[17].CommandText = "dbo.InvoiceGetPaidThroughDate";
             this._commandCollection[17].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[17].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[17].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CustomerID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[18] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[18].Connection = this.Connection;
-            this._commandCollection[18].CommandText = "dbo.InvoiceGetPartialPayment";
+            this._commandCollection[18].CommandText = "dbo.InvoiceGetPaidThru";
             this._commandCollection[18].CommandType = global::System.Data.CommandType.StoredProcedure;
             this._commandCollection[18].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[18].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CustomerID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[19] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[19].Connection = this.Connection;
+            this._commandCollection[19].CommandText = "dbo.InvoiceGetPartialPayment";
+            this._commandCollection[19].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[19].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[19].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CustomerID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -28033,7 +28038,7 @@ namespace IAC2021SQL.PaymentDataSetTableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int FillAllByCustomerId(PaymentDataSet.InvoicesDataTable dataTable, global::System.Nullable<int> CustomerID) {
-            this.Adapter.SelectCommand = this.CommandCollection[3];
+            this.Adapter.SelectCommand = this.CommandCollection[4];
             if ((CustomerID.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(CustomerID.Value));
             }
@@ -28052,7 +28057,7 @@ namespace IAC2021SQL.PaymentDataSetTableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual PaymentDataSet.InvoicesDataTable GetDataAllByCustomerId(global::System.Nullable<int> CustomerID) {
-            this.Adapter.SelectCommand = this.CommandCollection[3];
+            this.Adapter.SelectCommand = this.CommandCollection[4];
             if ((CustomerID.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(CustomerID.Value));
             }
@@ -28069,7 +28074,7 @@ namespace IAC2021SQL.PaymentDataSetTableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int FillAllByNotPaidInFullByCustomerId(PaymentDataSet.InvoicesDataTable dataTable, global::System.Nullable<int> CustomerID, string Type) {
-            this.Adapter.SelectCommand = this.CommandCollection[4];
+            this.Adapter.SelectCommand = this.CommandCollection[5];
             if ((CustomerID.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(CustomerID.Value));
             }
@@ -28094,7 +28099,7 @@ namespace IAC2021SQL.PaymentDataSetTableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual PaymentDataSet.InvoicesDataTable GetDataAllByNotPaidInFullByCustomerId(global::System.Nullable<int> CustomerID, string Type) {
-            this.Adapter.SelectCommand = this.CommandCollection[4];
+            this.Adapter.SelectCommand = this.CommandCollection[5];
             if ((CustomerID.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(CustomerID.Value));
             }
@@ -28117,7 +28122,7 @@ namespace IAC2021SQL.PaymentDataSetTableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int FillAllPaidByCustomerIDDateRange(PaymentDataSet.InvoicesDataTable dataTable, global::System.Nullable<int> CustomerID, string Type, global::System.Nullable<global::System.DateTime> End) {
-            this.Adapter.SelectCommand = this.CommandCollection[5];
+            this.Adapter.SelectCommand = this.CommandCollection[6];
             if ((CustomerID.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(CustomerID.Value));
             }
@@ -28148,7 +28153,7 @@ namespace IAC2021SQL.PaymentDataSetTableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual PaymentDataSet.InvoicesDataTable GetDataAllPaidByCustomerIDDateRange(global::System.Nullable<int> CustomerID, string Type, global::System.Nullable<global::System.DateTime> End) {
-            this.Adapter.SelectCommand = this.CommandCollection[5];
+            this.Adapter.SelectCommand = this.CommandCollection[6];
             if ((CustomerID.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(CustomerID.Value));
             }
@@ -28177,7 +28182,7 @@ namespace IAC2021SQL.PaymentDataSetTableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int FillByNotPaidInFullDateRange(PaymentDataSet.InvoicesDataTable dataTable, global::System.Nullable<int> CustomerID, string Type, global::System.Nullable<global::System.DateTime> End) {
-            this.Adapter.SelectCommand = this.CommandCollection[6];
+            this.Adapter.SelectCommand = this.CommandCollection[7];
             if ((CustomerID.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(CustomerID.Value));
             }
@@ -28208,7 +28213,7 @@ namespace IAC2021SQL.PaymentDataSetTableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual PaymentDataSet.InvoicesDataTable GetDataByNotPaidInFullDateRange(global::System.Nullable<int> CustomerID, string Type, global::System.Nullable<global::System.DateTime> End) {
-            this.Adapter.SelectCommand = this.CommandCollection[6];
+            this.Adapter.SelectCommand = this.CommandCollection[7];
             if ((CustomerID.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(CustomerID.Value));
             }
@@ -28237,7 +28242,7 @@ namespace IAC2021SQL.PaymentDataSetTableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
         public virtual int FillByPaymentID(PaymentDataSet.InvoicesDataTable dataTable, global::System.Nullable<int> PaymentID) {
-            this.Adapter.SelectCommand = this.CommandCollection[7];
+            this.Adapter.SelectCommand = this.CommandCollection[8];
             if ((PaymentID.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(PaymentID.Value));
             }
@@ -28256,7 +28261,7 @@ namespace IAC2021SQL.PaymentDataSetTableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual PaymentDataSet.InvoicesDataTable GetDataByPaymentID(global::System.Nullable<int> PaymentID) {
-            this.Adapter.SelectCommand = this.CommandCollection[7];
+            this.Adapter.SelectCommand = this.CommandCollection[8];
             if ((PaymentID.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[1].Value = ((int)(PaymentID.Value));
             }
@@ -28529,8 +28534,30 @@ namespace IAC2021SQL.PaymentDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int DeleteAddedRecordsWithZeroPaid(global::System.Nullable<int> CustomerID) {
+        public virtual int CreateInvoicesAllNotExisting() {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int DeleteAddedRecordsWithZeroPaid(global::System.Nullable<int> CustomerID) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
             if ((CustomerID.HasValue == true)) {
                 command.Parameters[1].Value = ((int)(CustomerID.Value));
             }
@@ -28558,46 +28585,6 @@ namespace IAC2021SQL.PaymentDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual object GetLateChargeBalanceByDate(global::System.Nullable<int> CustomerID, global::System.Nullable<global::System.DateTime> ThisDate) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[8];
-            if ((CustomerID.HasValue == true)) {
-                command.Parameters[1].Value = ((int)(CustomerID.Value));
-            }
-            else {
-                command.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            if ((ThisDate.HasValue == true)) {
-                command.Parameters[2].Value = ((System.DateTime)(ThisDate.Value));
-            }
-            else {
-                command.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
-            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                command.Connection.Open();
-            }
-            object returnValue;
-            try {
-                returnValue = command.ExecuteScalar();
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    command.Connection.Close();
-                }
-            }
-            if (((returnValue == null) 
-                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
-                return null;
-            }
-            else {
-                return ((object)(returnValue));
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual object GetPartialPaymentByDate(global::System.Nullable<int> CustomerID, global::System.Nullable<global::System.DateTime> ThisDate) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[9];
             if ((CustomerID.HasValue == true)) {
                 command.Parameters[1].Value = ((int)(CustomerID.Value));
@@ -28637,8 +28624,48 @@ namespace IAC2021SQL.PaymentDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int InvoicesApplyExtension(global::System.Nullable<int> CustomerID, global::System.Nullable<int> ExtensionCount, global::System.Nullable<int> PaymentID) {
+        public virtual object GetPartialPaymentByDate(global::System.Nullable<int> CustomerID, global::System.Nullable<global::System.DateTime> ThisDate) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[10];
+            if ((CustomerID.HasValue == true)) {
+                command.Parameters[1].Value = ((int)(CustomerID.Value));
+            }
+            else {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((ThisDate.HasValue == true)) {
+                command.Parameters[2].Value = ((System.DateTime)(ThisDate.Value));
+            }
+            else {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return null;
+            }
+            else {
+                return ((object)(returnValue));
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int InvoicesApplyExtension(global::System.Nullable<int> CustomerID, global::System.Nullable<int> ExtensionCount, global::System.Nullable<int> PaymentID) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[11];
             if ((CustomerID.HasValue == true)) {
                 command.Parameters[1].Value = ((int)(CustomerID.Value));
             }
@@ -28678,40 +28705,6 @@ namespace IAC2021SQL.PaymentDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual object LastDateDue(global::System.Nullable<int> CustomerID) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[11];
-            if ((CustomerID.HasValue == true)) {
-                command.Parameters[1].Value = ((int)(CustomerID.Value));
-            }
-            else {
-                command.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
-            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                command.Connection.Open();
-            }
-            object returnValue;
-            try {
-                returnValue = command.ExecuteScalar();
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    command.Connection.Close();
-                }
-            }
-            if (((returnValue == null) 
-                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
-                return null;
-            }
-            else {
-                return ((object)(returnValue));
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual object LastExtensionCount(global::System.Nullable<int> CustomerID) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[12];
             if ((CustomerID.HasValue == true)) {
                 command.Parameters[1].Value = ((int)(CustomerID.Value));
@@ -28745,7 +28738,7 @@ namespace IAC2021SQL.PaymentDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual object LastLateFee(global::System.Nullable<int> CustomerID) {
+        public virtual object LastExtensionCount(global::System.Nullable<int> CustomerID) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[13];
             if ((CustomerID.HasValue == true)) {
                 command.Parameters[1].Value = ((int)(CustomerID.Value));
@@ -28779,7 +28772,7 @@ namespace IAC2021SQL.PaymentDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual object LateChargeBalance(global::System.Nullable<int> CustomerID) {
+        public virtual object LastLateFee(global::System.Nullable<int> CustomerID) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[14];
             if ((CustomerID.HasValue == true)) {
                 command.Parameters[1].Value = ((int)(CustomerID.Value));
@@ -28813,7 +28806,7 @@ namespace IAC2021SQL.PaymentDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual object NumberOfPayments(global::System.Nullable<int> CustomerID) {
+        public virtual object LateChargeBalance(global::System.Nullable<int> CustomerID) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[15];
             if ((CustomerID.HasValue == true)) {
                 command.Parameters[1].Value = ((int)(CustomerID.Value));
@@ -28847,7 +28840,7 @@ namespace IAC2021SQL.PaymentDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual object PaidThroughDate(global::System.Nullable<int> CustomerID) {
+        public virtual object NumberOfPayments(global::System.Nullable<int> CustomerID) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[16];
             if ((CustomerID.HasValue == true)) {
                 command.Parameters[1].Value = ((int)(CustomerID.Value));
@@ -28881,7 +28874,7 @@ namespace IAC2021SQL.PaymentDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual object PaidThru(global::System.Nullable<int> CustomerID) {
+        public virtual object PaidThroughDate(global::System.Nullable<int> CustomerID) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[17];
             if ((CustomerID.HasValue == true)) {
                 command.Parameters[1].Value = ((int)(CustomerID.Value));
@@ -28915,8 +28908,42 @@ namespace IAC2021SQL.PaymentDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual object PartialPayment(global::System.Nullable<int> CustomerID) {
+        public virtual object PaidThru(global::System.Nullable<int> CustomerID) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[18];
+            if ((CustomerID.HasValue == true)) {
+                command.Parameters[1].Value = ((int)(CustomerID.Value));
+            }
+            else {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return null;
+            }
+            else {
+                return ((object)(returnValue));
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual object PartialPayment(global::System.Nullable<int> CustomerID) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[19];
             if ((CustomerID.HasValue == true)) {
                 command.Parameters[1].Value = ((int)(CustomerID.Value));
             }

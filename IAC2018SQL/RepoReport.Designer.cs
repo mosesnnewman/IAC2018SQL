@@ -55,6 +55,7 @@
             this.labelEnd = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.buttonExcel = new DevExpress.XtraEditors.SimpleButton();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupControlRepoReport = new DevExpress.XtraEditors.GroupControl();
@@ -63,10 +64,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceRepoCodes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DelinquencyData)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerStartDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerStartDate.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerEndDate.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerStartDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerEndDate.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerEndDate.Properties.CalendarTimeProperties)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -179,7 +180,7 @@
             // 
             this.buttonPrint.ImageOptions.Image = global::IAC2021SQL.Properties.Resources.Printer;
             this.buttonPrint.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.buttonPrint.Location = new System.Drawing.Point(62, 27);
+            this.buttonPrint.Location = new System.Drawing.Point(54, 27);
             this.buttonPrint.Margin = new System.Windows.Forms.Padding(6);
             this.buttonPrint.Name = "buttonPrint";
             this.buttonPrint.Size = new System.Drawing.Size(138, 135);
@@ -190,7 +191,7 @@
             // 
             this.buttonCancel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonCancel.ImageOptions.Image")));
             this.buttonCancel.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
-            this.buttonCancel.Location = new System.Drawing.Point(258, 27);
+            this.buttonCancel.Location = new System.Drawing.Point(384, 27);
             this.buttonCancel.Margin = new System.Windows.Forms.Padding(6);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(138, 135);
@@ -253,7 +254,7 @@
             this.radioButtonStatusBoth.AutoSize = true;
             this.radioButtonStatusBoth.Location = new System.Drawing.Point(18, 94);
             this.radioButtonStatusBoth.Name = "radioButtonStatusBoth";
-            this.radioButtonStatusBoth.Size = new System.Drawing.Size(50, 17);
+            this.radioButtonStatusBoth.Size = new System.Drawing.Size(49, 17);
             this.radioButtonStatusBoth.TabIndex = 2;
             this.radioButtonStatusBoth.TabStop = true;
             this.radioButtonStatusBoth.Text = "&Both";
@@ -341,13 +342,24 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.buttonExcel);
             this.groupBox3.Controls.Add(this.buttonCancel);
             this.groupBox3.Controls.Add(this.buttonPrint);
-            this.groupBox3.Location = new System.Drawing.Point(126, 314);
+            this.groupBox3.Location = new System.Drawing.Point(79, 314);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(458, 189);
+            this.groupBox3.Size = new System.Drawing.Size(576, 189);
             this.groupBox3.TabIndex = 128;
             this.groupBox3.TabStop = false;
+            // 
+            // buttonExcel
+            // 
+            this.buttonExcel.ImageOptions.Image = global::IAC2021SQL.Properties.Resources.ExportToExcel_64x;
+            this.buttonExcel.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.buttonExcel.Location = new System.Drawing.Point(219, 27);
+            this.buttonExcel.Name = "buttonExcel";
+            this.buttonExcel.Size = new System.Drawing.Size(138, 135);
+            this.buttonExcel.TabIndex = 19;
+            this.buttonExcel.Click += new System.EventHandler(this.buttonExcel_Click);
             // 
             // groupBox4
             // 
@@ -449,5 +461,6 @@
         private System.Windows.Forms.RadioButton radioButtonI;
         private System.Windows.Forms.RadioButton radioButtonZ;
         private DevExpress.XtraEditors.GroupControl groupControlRepoReport;
+        public DevExpress.XtraEditors.SimpleButton buttonExcel;
     }
 }
