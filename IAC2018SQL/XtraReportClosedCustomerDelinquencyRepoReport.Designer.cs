@@ -154,7 +154,6 @@
             this.Text18 = new DevExpress.XtraReports.UI.XRLabel();
             this.GrandTotalDelinquentCount1 = new DevExpress.XtraReports.UI.XRLabel();
             this.ReportFooterSection2 = new DevExpress.XtraReports.UI.SubBand();
-            this.Subreport1 = new DevExpress.XtraReports.UI.XRSubreport();
             this.gdCurrentDate = new DevExpress.XtraReports.Parameters.Parameter();
             this.gdEndDate = new DevExpress.XtraReports.Parameters.Parameter();
             this.gdStartDate = new DevExpress.XtraReports.Parameters.Parameter();
@@ -183,6 +182,7 @@
             this.bottomMarginBand1 = new DevExpress.XtraReports.UI.BottomMarginBand();
             this.DealerNewId = new DevExpress.XtraReports.UI.CalculatedField();
             this.ldPaidThrough = new DevExpress.XtraReports.UI.CalculatedField();
+            this.Subreport1 = new DevExpress.XtraReports.UI.XRSubreport();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // Area3
@@ -1943,22 +1943,6 @@
             this.ReportFooterSection2.PageBreak = DevExpress.XtraReports.UI.PageBreak.BeforeBand;
             this.ReportFooterSection2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
-            // Subreport1
-            // 
-            this.Subreport1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
-            this.Subreport1.Name = "Subreport1";
-            this.Subreport1.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gdCurrentDate", this.gdCurrentDate));
-            this.Subreport1.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gdEndDate", this.gdEndDate));
-            this.Subreport1.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gdStartDate", this.gdStartDate));
-            this.Subreport1.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gnAgedMonths", this.gnAgedMonths));
-            this.Subreport1.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gsCustStatus", this.gsCustStatus));
-            this.Subreport1.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gsRepoCode", this.gsRepoCode));
-            this.Subreport1.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gsRepoInd", this.gsRepoInd));
-            this.Subreport1.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gsUserID", this.gsUserID));
-            this.Subreport1.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gsUserName", this.gsUserName));
-            this.Subreport1.ReportSource = new IAC2021SQL.XtraReportClosedCustomerDelinquencyRepoDealerSummary();
-            this.Subreport1.SizeF = new System.Drawing.SizeF(1050F, 50F);
-            // 
             // gdCurrentDate
             // 
             this.gdCurrentDate.Description = "Enter gdCurrentDate:";
@@ -2270,6 +2254,22 @@
             this.ldPaidThrough.Expression = resources.GetString("ldPaidThrough.Expression");
             this.ldPaidThrough.FieldType = DevExpress.XtraReports.UI.FieldType.DateTime;
             this.ldPaidThrough.Name = "ldPaidThrough";
+            // 
+            // Subreport1
+            // 
+            this.Subreport1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
+            this.Subreport1.Name = "Subreport1";
+            this.Subreport1.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gdCurrentDate", this.gdCurrentDate));
+            this.Subreport1.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gdEndDate", this.gdEndDate));
+            this.Subreport1.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gdStartDate", this.gdStartDate));
+            this.Subreport1.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gnAgedMonths", this.gnAgedMonths));
+            this.Subreport1.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gsCustStatus", this.gsCustStatus));
+            this.Subreport1.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gsRepoCode", this.gsRepoCode));
+            this.Subreport1.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gsRepoInd", this.gsRepoInd));
+            this.Subreport1.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gsUserID", this.gsUserID));
+            this.Subreport1.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gsUserName", this.gsUserName));
+            this.Subreport1.ReportSource = new IAC2021SQL.XtraReportClosedCustomerDelinquencyRepoDealerSummary();
+            this.Subreport1.SizeF = new System.Drawing.SizeF(1050F, 50F);
             // 
             // XtraReportClosedCustomerDelinquencyRepoReport
             // 

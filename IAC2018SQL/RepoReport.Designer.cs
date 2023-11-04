@@ -31,6 +31,23 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label label50;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormRepoReport));
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery1 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter1 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter2 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter3 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter4 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter5 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery2 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter6 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter7 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter8 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter9 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.QueryParameter queryParameter10 = new DevExpress.DataAccess.Sql.QueryParameter();
+            DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery3 = new DevExpress.DataAccess.Sql.StoredProcQuery();
+            DevExpress.DataAccess.Sql.MasterDetailInfo masterDetailInfo1 = new DevExpress.DataAccess.Sql.MasterDetailInfo();
+            DevExpress.DataAccess.Sql.RelationColumnInfo relationColumnInfo1 = new DevExpress.DataAccess.Sql.RelationColumnInfo();
+            DevExpress.DataAccess.Sql.MasterDetailInfo masterDetailInfo2 = new DevExpress.DataAccess.Sql.MasterDetailInfo();
+            DevExpress.DataAccess.Sql.RelationColumnInfo relationColumnInfo2 = new DevExpress.DataAccess.Sql.RelationColumnInfo();
             this.radioButtonY = new System.Windows.Forms.RadioButton();
             this.radioButtonR = new System.Windows.Forms.RadioButton();
             this.radioButtonIndBoth = new System.Windows.Forms.RadioButton();
@@ -59,6 +76,7 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupControlRepoReport = new DevExpress.XtraEditors.GroupControl();
+            this.sqlDataSourceEXCEL = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             label50 = new System.Windows.Forms.Label();
             this.groupBoxRepoInd.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceRepoCodes)).BeginInit();
@@ -397,6 +415,74 @@
             this.groupControlRepoReport.TabIndex = 131;
             this.groupControlRepoReport.Text = "groupControl1";
             // 
+            // sqlDataSourceEXCEL
+            // 
+            this.sqlDataSourceEXCEL.ConnectionName = "IAC2021SQL.Properties.Settings.IAC2010SQLConnectionString";
+            this.sqlDataSourceEXCEL.Name = "sqlDataSourceEXCEL";
+            storedProcQuery1.MetaSerializable = "<Meta X=\"-70\" Y=\"-60\" Width=\"248\" Height=\"4481\" />";
+            storedProcQuery1.Name = "CUSTOMER";
+            queryParameter1.Name = "@RepoInd";
+            queryParameter1.Type = typeof(string);
+            queryParameter2.Name = "@StartDate";
+            queryParameter2.Type = typeof(System.DateTime);
+            queryParameter2.ValueInfo = "1753-01-01";
+            queryParameter3.Name = "@EndDate";
+            queryParameter3.Type = typeof(System.DateTime);
+            queryParameter3.ValueInfo = "1753-01-01";
+            queryParameter4.Name = "@Status";
+            queryParameter4.Type = typeof(string);
+            queryParameter5.Name = "@RepoCode";
+            queryParameter5.Type = typeof(string);
+            storedProcQuery1.Parameters.AddRange(new DevExpress.DataAccess.Sql.QueryParameter[] {
+            queryParameter1,
+            queryParameter2,
+            queryParameter3,
+            queryParameter4,
+            queryParameter5});
+            storedProcQuery1.StoredProcName = "ClosedCustomerFillByRepoCode";
+            storedProcQuery2.MetaSerializable = "<Meta X=\"220\" Y=\"-60\" Width=\"170\" Height=\"861\" />";
+            storedProcQuery2.Name = "DEALER";
+            queryParameter6.Name = "@RepoInd";
+            queryParameter6.Type = typeof(string);
+            queryParameter7.Name = "@StartDate";
+            queryParameter7.Type = typeof(System.DateTime);
+            queryParameter7.ValueInfo = "1753-01-01";
+            queryParameter8.Name = "@EndDate";
+            queryParameter8.Type = typeof(System.DateTime);
+            queryParameter8.ValueInfo = "1753-01-01";
+            queryParameter9.Name = "@Status";
+            queryParameter9.Type = typeof(string);
+            queryParameter10.Name = "@RepoCode";
+            queryParameter10.Type = typeof(string);
+            storedProcQuery2.Parameters.AddRange(new DevExpress.DataAccess.Sql.QueryParameter[] {
+            queryParameter6,
+            queryParameter7,
+            queryParameter8,
+            queryParameter9,
+            queryParameter10});
+            storedProcQuery2.StoredProcName = "ClosedDealersFillByRepoCode";
+            storedProcQuery3.MetaSerializable = "<Meta X=\"-180\" Y=\"-60\" Width=\"100\" Height=\"101\" />";
+            storedProcQuery3.Name = "RepoCodes";
+            storedProcQuery3.StoredProcName = "RepoCodesSelect";
+            this.sqlDataSourceEXCEL.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
+            storedProcQuery1,
+            storedProcQuery2,
+            storedProcQuery3});
+            masterDetailInfo1.DetailQueryName = "RepoCodes";
+            relationColumnInfo1.NestedKeyColumn = "Code";
+            relationColumnInfo1.ParentKeyColumn = "CUSTOMER_REPO_CDE";
+            masterDetailInfo1.KeyColumns.Add(relationColumnInfo1);
+            masterDetailInfo1.MasterQueryName = "CUSTOMER";
+            masterDetailInfo2.DetailQueryName = "DEALER";
+            relationColumnInfo2.NestedKeyColumn = "id";
+            relationColumnInfo2.ParentKeyColumn = "CUSTOMER_DEALER";
+            masterDetailInfo2.KeyColumns.Add(relationColumnInfo2);
+            masterDetailInfo2.MasterQueryName = "CUSTOMER";
+            this.sqlDataSourceEXCEL.Relations.AddRange(new DevExpress.DataAccess.Sql.MasterDetailInfo[] {
+            masterDetailInfo1,
+            masterDetailInfo2});
+            this.sqlDataSourceEXCEL.ResultSchemaSerializable = resources.GetString("sqlDataSourceEXCEL.ResultSchemaSerializable");
+            // 
             // FormRepoReport
             // 
             this.Appearance.Options.UseFont = true;
@@ -462,5 +548,6 @@
         private System.Windows.Forms.RadioButton radioButtonZ;
         private DevExpress.XtraEditors.GroupControl groupControlRepoReport;
         public DevExpress.XtraEditors.SimpleButton buttonExcel;
+        private DevExpress.DataAccess.Sql.SqlDataSource sqlDataSourceEXCEL;
     }
 }

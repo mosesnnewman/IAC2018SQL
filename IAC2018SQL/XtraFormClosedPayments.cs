@@ -1,29 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using DevExpress.XtraGrid.Views.Base;
 using DevExpress.XtraGrid.Views.Grid;
-using DevExpress.XtraGrid.Columns;
-using DevExpress.XtraGrid.Repository;
 using DevExpress.XtraEditors;
 using DevExpress.Data;
 using DevExpress.DataAccess.Sql.DataApi;
 using DevExpress.XtraBars.Docking2010;
-using Word = Microsoft.Office.Interop.Word;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 using DevExpress.Utils.Html;
-using Microsoft.Office.Core;
 using DevExpress.XtraGrid;
 using IAC2021SQL.PaymentDataSetTableAdapters;
-using DevExpress.Drawing;
-using DevExpress.ClipboardSource.SpreadsheetML;
-using DevExpress.Utils;
-using DevExpress.XtraGauges.Core;
 using DevExpress.LookAndFeel;
 
 namespace IAC2021SQL
