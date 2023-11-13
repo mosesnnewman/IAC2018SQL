@@ -260,7 +260,6 @@
             this.DLRLISTBYNUMbindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.VehiclebindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingSourceMonthNames = new System.Windows.Forms.BindingSource(this.components);
-            this.creditCodesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.RepoIndicatorsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.repoCodesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ALTNAMEbindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -296,7 +295,6 @@
             this.monthNamesTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.MonthNamesTableAdapter();
             this.errorProviderCustomerForm = new System.Windows.Forms.ErrorProvider(this.components);
             this.repoCodesTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.RepoCodesTableAdapter();
-            this.creditCodesTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.CreditCodesTableAdapter();
             this.wS_NOTICE_DEALERTableAdapter1 = new IAC2021SQL.IACDataSetTableAdapters.WS_NOTICE_DEALERTableAdapter();
             this.emailTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.EmailTableAdapter();
             this.specialCommentCodesTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.SpecialCommentCodesTableAdapter();
@@ -507,7 +505,6 @@
             this.textBoxTierPoints = new System.Windows.Forms.TextBox();
             this.textBoxBuyersAnnualIncome = new System.Windows.Forms.TextBox();
             this.checkBoxFullRecourse = new DevExpress.XtraEditors.CheckEdit();
-            this.comboBoxCreditCode = new System.Windows.Forms.ComboBox();
             this.cUSTOMER_COS_PHONETextBox = new System.Windows.Forms.TextBox();
             this.cUSTOMER_CREDIT_SCORE_ATextBox = new System.Windows.Forms.TextBox();
             this.cUSTOMER_CREDIT_SCORE_NTextBox = new System.Windows.Forms.TextBox();
@@ -1088,7 +1085,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.DLRLISTBYNUMbindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.VehiclebindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceMonthNames)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.creditCodesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RepoIndicatorsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repoCodesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ALTNAMEbindingSource)).BeginInit();
@@ -2509,11 +2505,6 @@
             this.bindingSourceMonthNames.DataMember = "MonthNames";
             this.bindingSourceMonthNames.DataSource = this.iACDataSet;
             // 
-            // creditCodesBindingSource
-            // 
-            this.creditCodesBindingSource.DataMember = "CreditCodes";
-            this.creditCodesBindingSource.DataSource = this.iACDataSet;
-            // 
             // RepoIndicatorsBindingSource
             // 
             this.RepoIndicatorsBindingSource.DataMember = "RepoIndicators";
@@ -2672,10 +2663,6 @@
             // repoCodesTableAdapter
             // 
             this.repoCodesTableAdapter.ClearBeforeFill = true;
-            // 
-            // creditCodesTableAdapter
-            // 
-            this.creditCodesTableAdapter.ClearBeforeFill = true;
             // 
             // wS_NOTICE_DEALERTableAdapter1
             // 
@@ -5109,7 +5096,6 @@
             this.groupBox8.Controls.Add(this.checkBoxFullRecourse);
             this.groupBox8.Controls.Add(label199);
             this.groupBox8.Controls.Add(label200);
-            this.groupBox8.Controls.Add(this.comboBoxCreditCode);
             this.groupBox8.Controls.Add(this.cUSTOMER_COS_PHONETextBox);
             this.groupBox8.Controls.Add(this.cUSTOMER_CREDIT_SCORE_ATextBox);
             this.groupBox8.Controls.Add(this.cUSTOMER_CREDIT_SCORE_NTextBox);
@@ -5151,16 +5137,6 @@
             this.checkBoxFullRecourse.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
             this.checkBoxFullRecourse.Properties.CheckBoxOptions.SvgColorChecked = System.Drawing.Color.Red;
             this.checkBoxFullRecourse.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
-            // 
-            // comboBoxCreditCode
-            // 
-            this.comboBoxCreditCode.DataSource = this.creditCodesBindingSource;
-            this.comboBoxCreditCode.DisplayMember = "Description";
-            resources.ApplyResources(this.comboBoxCreditCode, "comboBoxCreditCode");
-            this.comboBoxCreditCode.FormattingEnabled = true;
-            this.comboBoxCreditCode.Name = "comboBoxCreditCode";
-            this.comboBoxCreditCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
-            this.comboBoxCreditCode.Validated += new System.EventHandler(this.comboBoxCreditCode_Validated);
             // 
             // cUSTOMER_COS_PHONETextBox
             // 
@@ -9047,7 +9023,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.DLRLISTBYNUMbindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.VehiclebindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceMonthNames)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.creditCodesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RepoIndicatorsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repoCodesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ALTNAMEbindingSource)).EndInit();
@@ -9347,8 +9322,6 @@
         private System.Windows.Forms.ErrorProvider errorProviderCustomerForm;
         private System.Windows.Forms.BindingSource repoCodesBindingSource;
         private IACDataSetTableAdapters.RepoCodesTableAdapter repoCodesTableAdapter;
-        private System.Windows.Forms.BindingSource creditCodesBindingSource;
-        private IACDataSetTableAdapters.CreditCodesTableAdapter creditCodesTableAdapter;
         private IACDataSetTableAdapters.WS_NOTICE_DEALERTableAdapter wS_NOTICE_DEALERTableAdapter1;
         private System.Windows.Forms.BindingSource EmailbindingSource;
         private IACDataSetTableAdapters.EmailTableAdapter emailTableAdapter;
@@ -9765,7 +9738,6 @@
         private System.Windows.Forms.GroupBox groupBox8;
         private System.Windows.Forms.TextBox textBoxTierPoints;
         private System.Windows.Forms.TextBox textBoxBuyersAnnualIncome;
-        private System.Windows.Forms.ComboBox comboBoxCreditCode;
         private System.Windows.Forms.TextBox cUSTOMER_COS_PHONETextBox;
         private System.Windows.Forms.TextBox cUSTOMER_CREDIT_SCORE_ATextBox;
         private System.Windows.Forms.TextBox cUSTOMER_CREDIT_SCORE_NTextBox;
