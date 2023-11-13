@@ -747,16 +747,21 @@ namespace IAC2021SQL
 							dr["PaymentSeq"] = tdtCUSTHIST.Rows[AmortIndex - 1].Field<Int32?>("PaymentSeq") != null ? tdtCUSTHIST.Rows[AmortIndex - 1].Field<Int32>("PaymentSeq") : 0;
 							// Moses Newman 04/03/2018 Add Payment Code to TVAmort so we know what the wave type is!
 							dr["PaymentCode"] = (String)tdtCUSTHIST.Rows[AmortIndex - 1]["CUSTHIST_PAYMENT_TYPE"] + (String)tdtCUSTHIST.Rows[AmortIndex - 1]["CUSTHIST_PAYMENT_CODE"];
-							// Moses Newman 03/20/2018 Add History Sequence Number to amort
-							dr["HistorySeq"] = tdtCUSTHIST.Rows[AmortIndex - 1]["CUSTHIST_DATE_SEQ"];
-                            // Moses Newman 06/26/2023 Add HistoryID
-                            dr["HistoryID"] = tdtCUSTHIST.Rows[AmortIndex - 1]["ID"];
-
+							// Moses Newman 11/10/2023 don't add HistoryID if Buyout rows
+							if ((String)dr["Event"] != "BUYOUT" && (String)dr["Event"] != "UNEARNED")
+							{
+								// Moses Newman 03/20/2018 Add History Sequence Number to amort
+								dr["HistorySeq"] = tdtCUSTHIST.Rows[AmortIndex - 1]["CUSTHIST_DATE_SEQ"];
+								// Moses Newman 06/26/2023 Add HistoryID
+								dr["HistoryID"] = tdtCUSTHIST.Rows[AmortIndex - 1]["ID"];
+							}
                             // Moses Newman 06/20/2023 If PaymentHistory Record exists use it instead of CUSTHIST
                             paymentHistoryTableAdapter.FillByCusthistID(PDS.PaymentHistory, tdtCUSTHIST.Rows[AmortIndex-1].Field<Int32?>("id"));
                             if (PDS.PaymentHistory.Rows.Count > 0)
                             {
-                                dr["HistoryDate"] = PDS.PaymentHistory.Rows[0].Field<DateTime>("PaymentDate");
+                                // Moses Newman 11/10/2023 don't add HistoryID if Buyout rows
+                                if ((String)dr["Event"] != "BUYOUT" && (String)dr["Event"] != "UNEARNED")
+                                    dr["HistoryDate"] = PDS.PaymentHistory.Rows[0].Field<DateTime>("PaymentDate");
                                 dr["PartialPayment"] = PDS.PaymentHistory.Rows[0].Field<Decimal>("PartialPayment");
                                 dr["LateFeeBalance"] = PDS.PaymentHistory.Rows[0].Field<Decimal>("LateFeeBalance");
                                 // Moses Newman 06/19/2023 add Contract Status
@@ -782,8 +787,10 @@ namespace IAC2021SQL
                             }
                             else
                             {
-                                // Moses Newman 07/25/2019 Add History Date to Amort for proper sequencing in FixLateFeesandPartialPayments
-                                dr["HistoryDate"] = tdtCUSTHIST.Rows[AmortIndex - 1]["CUSTHIST_PAY_DATE"];
+                                // Moses Newman 11/10/2023 don't add HistoryID if Buyout rows
+                                if ((String)dr["Event"] != "BUYOUT" && (String)dr["Event"] != "UNEARNED")
+                                    // Moses Newman 07/25/2019 Add History Date to Amort for proper sequencing in FixLateFeesandPartialPayments
+                                    dr["HistoryDate"] = tdtCUSTHIST.Rows[AmortIndex - 1]["CUSTHIST_PAY_DATE"];
                                 dr["PartialPayment"] = tdtCUSTHIST.Rows[AmortIndex - 1]["PartialPayment"];
                                 dr["LateFeeBalance"] = tdtCUSTHIST.Rows[AmortIndex - 1]["CUSTHIST_LATE_CHARGE_BAL"];
                                 // Moses Newman 06/19/2023 add Contract Status

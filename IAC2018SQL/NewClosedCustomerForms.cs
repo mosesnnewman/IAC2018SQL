@@ -125,7 +125,6 @@ namespace IAC2021SQL
             genCodesTableAdapter.Fill(iACDataSet.GenCodes);
             gapSelectionsTableAdapter.Fill(iACDataSet.GapSelections);
             specialCommentCodesTableAdapter.Fill(iACDataSet.SpecialCommentCodes);
-            creditCodesTableAdapter.Fill(iACDataSet.CreditCodes);
             repoCodesTableAdapter.Fill(iACDataSet.RepoCodes);
             RepoIndicatorsTableAdapter.Fill(iACDataSet.RepoIndicators);
             letterTypeTableAdapter.Fill(iACDataSet.LetterType);
@@ -372,7 +371,6 @@ namespace IAC2021SQL
             checkBoxElectronicLien.Enabled = false;
             cUSTOMER_CREDIT_SCORE_NTextBox.Enabled = false;
             cUSTOMER_CREDIT_SCORE_ATextBox.Enabled = false;
-            comboBoxCreditCode.Enabled = false;
             cUSTOMER_REPO_INDtextBox.Enabled = false;
             cUSTOMER_REPO_CDEtextBox.Enabled = false;
             comboBoxRepoCodes.Enabled = false;
@@ -745,7 +743,6 @@ namespace IAC2021SQL
             checkBoxElectronicLien.Enabled = true;
             cUSTOMER_CREDIT_SCORE_NTextBox.Enabled = true;
             cUSTOMER_CREDIT_SCORE_ATextBox.Enabled = true;
-            comboBoxCreditCode.Enabled = true;
             // Moses Newman 12/9/2013 Add dropdowns for credit score and reposessions
             cUSTOMER_REPO_INDtextBox.Enabled = true;
             cUSTOMER_REPO_CDEtextBox.Enabled = true;
@@ -949,18 +946,13 @@ namespace IAC2021SQL
             if (iACDataSet.CUSTOMER.Rows.Count > 0)
             {
                 // Moses Newman 12/9/2013 preselect Credit Score Drop Down Choice and Repo Drop Down Choice if he coresponding customer record fields are valid.
-                Int32 CreditIndex = creditCodesBindingSource.Find("Code", iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_CREDIT_SCORE_A")),
-                        RepoIndex = repoCodesBindingSource.Find("Code", iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_REPO_CDE")),
-                        RepoIndIndex = RepoIndicatorsBindingSource.Find("Code", iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_REPO_IND"));  // Moses Newman 05/31/2018
+                Int32 RepoIndex = repoCodesBindingSource.Find("Code", iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_REPO_CDE")),
+                      RepoIndIndex = RepoIndicatorsBindingSource.Find("Code", iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_REPO_IND"));  // Moses Newman 05/31/2018
                 // Moses Newman 1/8/2014 Set in lbAlreadyIntOveride field so that interest overide record is NOT created if alreadty overided to zero.
                 if (iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_INT_OVERRIDE") == "Y")
                     lbAlreadyIntOverride = true;
                 else
                     lbAlreadyIntOverride = false;
-                if (CreditIndex > -1)
-                    comboBoxCreditCode.SelectedIndex = CreditIndex;
-                else
-                    comboBoxCreditCode.SelectedIndex = 0;
                 if (RepoIndex > -1)
                     comboBoxRepoCodes.SelectedIndex = RepoIndex;
                 else
@@ -5791,7 +5783,6 @@ namespace IAC2021SQL
                     checkBoxElectronicLien.Enabled = true;
                     cUSTOMER_CREDIT_SCORE_NTextBox.Enabled = true;
                     cUSTOMER_CREDIT_SCORE_ATextBox.Enabled = true;
-                    comboBoxCreditCode.Enabled = true;
                     // Moses Newman 12/9/2013 Add dropdowns for credit score and reposessions
                     cUSTOMER_REPO_INDtextBox.Enabled = true;
                     cUSTOMER_REPO_CDEtextBox.Enabled = true;
