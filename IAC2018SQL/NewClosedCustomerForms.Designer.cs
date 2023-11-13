@@ -7336,6 +7336,7 @@
             // 
             // cOMMENTgridView
             // 
+            this.cOMMENTgridView.ActiveFilterEnabled = false;
             this.cOMMENTgridView.Appearance.Empty.Font = ((System.Drawing.Font)(resources.GetObject("cOMMENTgridView.Appearance.Empty.Font")));
             this.cOMMENTgridView.Appearance.Empty.Options.UseFont = true;
             this.cOMMENTgridView.Appearance.EvenRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
@@ -7373,13 +7374,17 @@
             this.colImgSort});
             this.cOMMENTgridView.GridControl = this.cOMMENTGridControl;
             this.cOMMENTgridView.Name = "cOMMENTgridView";
+            this.cOMMENTgridView.OptionsFilter.AllowFilterEditor = false;
             this.cOMMENTgridView.OptionsView.EnableAppearanceEvenRow = true;
             this.cOMMENTgridView.OptionsView.EnableAppearanceOddRow = true;
+            this.cOMMENTgridView.OptionsView.FilterCriteriaDisplayStyle = DevExpress.XtraEditors.FilterCriteriaDisplayStyle.Text;
             this.cOMMENTgridView.OptionsView.RowAutoHeight = true;
+            this.cOMMENTgridView.OptionsView.ShowFilterPanelMode = DevExpress.XtraGrid.Views.Base.ShowFilterPanelMode.ShowAlways;
             this.cOMMENTgridView.OptionsView.ShowGroupPanel = false;
             this.cOMMENTgridView.RowCellClick += new DevExpress.XtraGrid.Views.Grid.RowCellClickEventHandler(this.gridView1_RowCellClick);
             this.cOMMENTgridView.InitNewRow += new DevExpress.XtraGrid.Views.Grid.InitNewRowEventHandler(this.cOMMENTgridView_InitNewRow);
             this.cOMMENTgridView.CellValueChanging += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.cOMMENTgridView_CellValueChanging);
+            this.cOMMENTgridView.CustomFilterDisplayText += new DevExpress.XtraEditors.Controls.ConvertEditValueEventHandler(this.cOMMENTgridView_CustomFilterDisplayText);
             this.cOMMENTgridView.CustomUnboundColumnData += new DevExpress.XtraGrid.Views.Base.CustomColumnDataEventHandler(this.gridView1_CustomUnboundColumnData);
             this.cOMMENTgridView.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cOMMENTgridView_KeyDown);
             // 
