@@ -3959,6 +3959,9 @@ namespace IAC2021SQL
                     {
                         cOMMENTgridView.EndSort();
                     }
+                    // Moses Newman 11/13/2023 Add filter selection of system generated comments only or all.
+                    cOMMENTgridView.ActiveFilterString = "StartsWith([COMMENT_WHOLE], 'TEXT SENT:') OR [COMMENT_USERID] = 'SYS'";
+                    cOMMENTgridView.ActiveFilterEnabled = false; 
                     break;
                 case 8:
                     // Moses Newman 12/20/2021 order by id descending
@@ -5953,6 +5956,19 @@ namespace IAC2021SQL
             }
         }
 
+        // Moses Newman 11/13/2023 Add filter selection of system generated comments only or all.
+        private void cOMMENTgridView_CustomFilterDisplayText(object sender, DevExpress.XtraEditors.Controls.ConvertEditValueEventArgs e)
+        {
+            if (e.Value == null)
+            {
+                e.Value = "All Comments";
+            }
+            else
+            {
+                e.Value = "System Generated Comments Only";
+            }
+            e.Handled = true;
+        }
         private void cUSTOMER_NOTextBox_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
         {
             /*if (e.KeyData == Keys.Tab)
