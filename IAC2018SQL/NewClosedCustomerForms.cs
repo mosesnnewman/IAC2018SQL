@@ -3961,6 +3961,7 @@ namespace IAC2021SQL
                     }
                     // Moses Newman 11/13/2023 Add filter selection of system generated comments only or all.
                     cOMMENTgridView.ActiveFilterString = "StartsWith([COMMENT_WHOLE], 'TEXT SENT:') OR [COMMENT_USERID] = 'SYS'";
+                    cOMMENTgridView.ActiveFilterString = "NOT StartsWith([COMMENT_WHOLE], 'TEXT SENT:') AND NOT [COMMENT_USERID] = 'SYS'";
                     cOMMENTgridView.ActiveFilterEnabled = false; 
                     break;
                 case 8:
@@ -5964,9 +5965,15 @@ namespace IAC2021SQL
                 e.Value = "All Comments";
             }
             else
-            {
-                e.Value = "System Generated Comments Only";
-            }
+                switch (e.Value.ToString())
+                {
+                    case "Not StartsWith([COMMENT_WHOLE], 'TEXT SENT:') And Not [COMMENT_USERID] = 'SYS'":
+                        e.Value = "User Entered Comments Only";
+                        break;
+                    default:
+                        e.Value = "System Generated Comments Only";
+                        break;
+                }
             e.Handled = true;
         }
         private void cUSTOMER_NOTextBox_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
