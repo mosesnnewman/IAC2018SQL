@@ -856,6 +856,7 @@
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.warrantyCompanyTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.WarrantyCompanyTableAdapter();
             this.layoutConverter1 = new DevExpress.XtraLayout.Converter.LayoutConverter(this.components);
+            this.colSMSTemplate1 = new DevExpress.XtraGrid.Columns.GridColumn();
             label45 = new System.Windows.Forms.Label();
             label48 = new System.Windows.Forms.Label();
             labelAuthNo = new System.Windows.Forms.Label();
@@ -7336,7 +7337,6 @@
             // 
             // cOMMENTgridView
             // 
-            this.cOMMENTgridView.ActiveFilterEnabled = false;
             this.cOMMENTgridView.Appearance.Empty.Font = ((System.Drawing.Font)(resources.GetObject("cOMMENTgridView.Appearance.Empty.Font")));
             this.cOMMENTgridView.Appearance.Empty.Options.UseFont = true;
             this.cOMMENTgridView.Appearance.EvenRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
@@ -7371,7 +7371,8 @@
             this.colCOMMENT_DEALER,
             this.colCOMMENT_HHMMSS,
             this.colid1,
-            this.colImgSort});
+            this.colImgSort,
+            this.colSMSTemplate1});
             this.cOMMENTgridView.GridControl = this.cOMMENTGridControl;
             this.cOMMENTgridView.Name = "cOMMENTgridView";
             this.cOMMENTgridView.OptionsFilter.AllowFilterEditor = false;
@@ -8988,6 +8989,11 @@
             // 
             this.warrantyCompanyTableAdapter.ClearBeforeFill = true;
             // 
+            // colSMSTemplate1
+            // 
+            this.colSMSTemplate1.FieldName = "SMSTemplate";
+            this.colSMSTemplate1.Name = "colSMSTemplate1";
+            // 
             // frmNewCustMaint
             // 
             this.Appearance.BackColor = System.Drawing.Color.CornflowerBlue;
@@ -9908,6 +9914,7 @@
         private DevExpress.XtraEditors.HyperLinkEdit hyperLinkEditWarrantyEmail;
         private DevExpress.XtraLayout.Converter.LayoutConverter layoutConverter1;
         private DevExpress.XtraEditors.LabelControl labelControl7;
+        private DevExpress.XtraGrid.Columns.GridColumn colSMSTemplate1;
     }
 }
 

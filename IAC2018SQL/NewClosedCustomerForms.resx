@@ -22728,6 +22728,12 @@
   <data name="&gt;&gt;layoutConverter1.Type" xml:space="preserve">
     <value>DevExpress.XtraLayout.Converter.LayoutConverter, DevExpress.XtraLayout.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
+  <data name="&gt;&gt;colSMSTemplate1.Name" xml:space="preserve">
+    <value>colSMSTemplate1</value>
+  </data>
+  <data name="&gt;&gt;colSMSTemplate1.Type" xml:space="preserve">
+    <value>DevExpress.XtraGrid.Columns.GridColumn, DevExpress.XtraGrid.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>frmNewCustMaint</value>
   </data>
