@@ -3637,7 +3637,7 @@ namespace IAC2021SQL
 						returnLate = true;
 					}
 					InvoiceCount = PDS.Invoices.Count - 1;
-
+                    Decimal LateAmount = 0; // Moses Newman 11/15/2023 Handle partial payment return if it was used to pay a late charge.
                     while (InvoiceCount >= 0 && lnUnusedFunds < 0)
 					{
 						while (lnUnusedFunds < 0 && InvoiceCount >= 0)
@@ -3658,52 +3658,102 @@ namespace IAC2021SQL
 							}
 							while (lnNumMonthlies == 0 && lnUnusedFunds < 0)
 							{
-								if (LateChargeToReturn != 0)
+                                if (LateChargeToReturn != 0)
 								{
-									if(returnLate)
-										ApplyPaymentToLates(CustomerNo, -LateChargeToReturn, PDS.PaymentHistory.Rows[0].Field<DateTime>("PaymentDate"), PaymentId);
-									lnUnusedFunds += LateChargeToReturn;
+                                    // Moses Newman 11/15/2023 Handle partial payment return if it was used to pay a late charge.
+                                    LateAmount = -LateChargeToReturn;
+                                    lnUnusedFunds += LateChargeToReturn;
 									LateChargeToReturn = 0;
+									// End 11/12/2023 Changes
+                                    if (returnLate)
+										ApplyPaymentToLates(CustomerNo, LateAmount, PDS.PaymentHistory.Rows[0].Field<DateTime>("PaymentDate"), PaymentId);
                                 }
 								if (lnUnusedFunds == 0 || InvoiceCount < 0)
 									return;
-								if (PDS.Invoices.Rows[InvoiceCount].Field<Decimal>("TotalPaid") != 0)
-								{
-									if (Math.Abs(lnUnusedFunds) >= PDS.Invoices.Rows[InvoiceCount].Field<Decimal>("TotalPaid"))
+								if (lnUnusedFunds < 0) // Moses Newman 11/15/2023 Handle partial payment return if it was used to pay a late charge.
+                                {
+									if (PDS.Invoices.Rows[InvoiceCount].Field<Decimal>("TotalPaid") != 0)
 									{
-										lnAmountPaid = PDS.Invoices.Rows[InvoiceCount].Field<Decimal>("TotalPaid");
-										lnUnusedFunds += lnAmountPaid;
-										PDS.Invoices.Rows[InvoiceCount].SetField<Decimal>("TotalPaid", 0);
-										PDS.Invoices.Rows[InvoiceCount].SetField<Decimal>("TotalDue", PDS.Invoices.Rows[InvoiceCount].Field<Decimal>("Amount"));
-										PDS.Invoices.Rows[InvoiceCount].SetField<Boolean>("IsPaid", false);
-                                        InvoicesTableAdapter.Update(PDS.Invoices.Rows[InvoiceCount]);
-                                        PaymentInvoiceTableAdapter.Insert(TempCust, PaymentId, PDS.Invoices.Rows[InvoiceCount].Field<Int32>("id"), -lnAmountPaid, 0, false,
-                                              PDS.PaymentHistory.Rows[0].Field<String>("Type"), PDS.PaymentHistory.Rows[0].Field<String>("Code"),
-                                              PDS.PaymentHistory.Rows[0].Field<String>("CreditCardType"), 0,0);
-										InvoiceCount--;
-                                    }
-                                    else
+										if (Math.Abs(lnUnusedFunds) >= PDS.Invoices.Rows[InvoiceCount].Field<Decimal>("TotalPaid"))
+										{
+											lnAmountPaid = PDS.Invoices.Rows[InvoiceCount].Field<Decimal>("TotalPaid");
+											lnUnusedFunds += lnAmountPaid;
+											PDS.Invoices.Rows[InvoiceCount].SetField<Decimal>("TotalPaid", 0);
+											PDS.Invoices.Rows[InvoiceCount].SetField<Decimal>("TotalDue", PDS.Invoices.Rows[InvoiceCount].Field<Decimal>("Amount"));
+											PDS.Invoices.Rows[InvoiceCount].SetField<Boolean>("IsPaid", false);
+											InvoicesTableAdapter.Update(PDS.Invoices.Rows[InvoiceCount]);
+											PaymentInvoiceTableAdapter.Insert(TempCust, PaymentId, PDS.Invoices.Rows[InvoiceCount].Field<Int32>("id"), -lnAmountPaid, 0, false,
+												  PDS.PaymentHistory.Rows[0].Field<String>("Type"), PDS.PaymentHistory.Rows[0].Field<String>("Code"),
+												  PDS.PaymentHistory.Rows[0].Field<String>("CreditCardType"), 0, 0);
+											InvoiceCount--;
+										}
+										else
+										{
+											lnAmountPaid = lnUnusedFunds;
+											lnUnusedFunds = 0;
+											PDS.Invoices.Rows[InvoiceCount].SetField<Decimal>("TotalPaid", PDS.Invoices.Rows[InvoiceCount].Field<Decimal>("TotalPaid") + lnAmountPaid);
+											PDS.Invoices.Rows[InvoiceCount].SetField<Decimal>("TotalDue", PDS.Invoices.Rows[InvoiceCount].Field<Decimal>("Amount") -
+																										  PDS.Invoices.Rows[InvoiceCount].Field<Decimal>("TotalPaid"));
+											PDS.Invoices.Rows[InvoiceCount].SetField<Boolean>("IsPaid", false);
+											if (lnUnusedFunds == 0 && PDS.Invoices.Rows[InvoiceCount].Field<String>("Description") == "Final Payment")
+											{
+												PDS.Invoices.Rows[InvoiceCount].SetField<Decimal>("Amount", PDS.Invoices.Rows[InvoiceCount].Field<Decimal>("TotalPaid"));
+												PDS.Invoices.Rows[InvoiceCount].SetField<Decimal>("TotalDue", 0);
+												PDS.Invoices.Rows[InvoiceCount].SetField<Boolean>("IsPaid", true);
+											}
+											InvoicesTableAdapter.Update(PDS.Invoices.Rows[InvoiceCount]);
+											PaymentInvoiceTableAdapter.Insert(TempCust, PaymentId, PDS.Invoices.Rows[InvoiceCount].Field<Int32>("id"), lnAmountPaid, 0, false,
+												  PDS.PaymentHistory.Rows[0].Field<String>("Type"), PDS.PaymentHistory.Rows[0].Field<String>("Code"),
+												  PDS.PaymentHistory.Rows[0].Field<String>("CreditCardType"), 0, 0);
+										}
+									}
+								}
+                                else // Moses Newman 11/15/2023 Handle partial payment return if it was used to pay a late charge.
+                                {
+                                    InvoicesTableAdapter.FillByNotPaidInFullDateRange(PDS.Invoices, TempCust, "Monthly Payment", (DateTime?)null);
+									InvoiceCount = PDS.Invoices.Rows.Count;
+									if (InvoiceCount == 0)
+										return;
+									Int32 OldInvCount = InvoiceCount;
+									InvoiceCount = 0;
+									while (InvoiceCount < OldInvCount && lnUnusedFunds > 0)
 									{
-                                        lnAmountPaid = lnUnusedFunds;
-                                        lnUnusedFunds = 0;
-                                        PDS.Invoices.Rows[InvoiceCount].SetField<Decimal>("TotalPaid", PDS.Invoices.Rows[InvoiceCount].Field<Decimal>("TotalPaid") + lnAmountPaid);
-                                        PDS.Invoices.Rows[InvoiceCount].SetField<Decimal>("TotalDue", PDS.Invoices.Rows[InvoiceCount].Field<Decimal>("Amount") -
-																									  PDS.Invoices.Rows[InvoiceCount].Field<Decimal>("TotalPaid"));
-                                        PDS.Invoices.Rows[InvoiceCount].SetField<Boolean>("IsPaid", false);
-                                        if (lnUnusedFunds == 0 && PDS.Invoices.Rows[InvoiceCount].Field<String>("Description") == "Final Payment")
-                                        {
-											PDS.Invoices.Rows[InvoiceCount].SetField<Decimal>("Amount", PDS.Invoices.Rows[InvoiceCount].Field<Decimal>("TotalPaid"));
-											PDS.Invoices.Rows[InvoiceCount].SetField<Decimal>("TotalDue", 0);
-                                            PDS.Invoices.Rows[InvoiceCount].SetField<Boolean>("IsPaid", true);
-                                        }
-                                        InvoicesTableAdapter.Update(PDS.Invoices.Rows[InvoiceCount]);
-                                        PaymentInvoiceTableAdapter.Insert(TempCust, PaymentId, PDS.Invoices.Rows[InvoiceCount].Field<Int32>("id"), lnAmountPaid, 0, false,
-                                              PDS.PaymentHistory.Rows[0].Field<String>("Type"), PDS.PaymentHistory.Rows[0].Field<String>("Code"),
-                                              PDS.PaymentHistory.Rows[0].Field<String>("CreditCardType"), 0,0);
-                                    }
+										if (PDS.Invoices.Rows[InvoiceCount].Field<Decimal>("TotalDue") != 0)
+										{
+											if (lnUnusedFunds >= PDS.Invoices.Rows[InvoiceCount].Field<Decimal>("TotalDue"))
+											{
+												lnAmountPaid = PDS.Invoices.Rows[InvoiceCount].Field<Decimal>("TotalDue");
+												lnUnusedFunds -= lnAmountPaid;
+												PDS.Invoices.Rows[InvoiceCount].SetField<Decimal>("TotalPaid", PDS.Invoices.Rows[InvoiceCount].Field<Decimal>("Amount"));
+												PDS.Invoices.Rows[InvoiceCount].SetField<Decimal>("TotalDue", 0);
+												PDS.Invoices.Rows[InvoiceCount].SetField<Boolean>("IsPaid", true);
+												InvoicesTableAdapter.Update(PDS.Invoices.Rows[InvoiceCount]);
+												PaymentInvoiceTableAdapter.Insert(TempCust, PaymentId, PDS.Invoices.Rows[InvoiceCount].Field<Int32>("id"), lnAmountPaid, 0, false,
+													  PDS.PaymentHistory.Rows[0].Field<String>("Type"), PDS.PaymentHistory.Rows[0].Field<String>("Code"),
+													  PDS.PaymentHistory.Rows[0].Field<String>("CreditCardType"), 0, 0);
+												InvoiceCount++;
+											}
+											else
+											{
+												lnAmountPaid = lnUnusedFunds;
+												lnUnusedFunds = 0;
+												PDS.Invoices.Rows[InvoiceCount].SetField<Decimal>("TotalPaid", PDS.Invoices.Rows[InvoiceCount].Field<Decimal>("TotalPaid") + lnAmountPaid);
+												PDS.Invoices.Rows[InvoiceCount].SetField<Decimal>("TotalDue", PDS.Invoices.Rows[InvoiceCount].Field<Decimal>("Amount") -
+																											  PDS.Invoices.Rows[InvoiceCount].Field<Decimal>("TotalPaid"));
+												PDS.Invoices.Rows[InvoiceCount].SetField<Boolean>("IsPaid",
+													PDS.Invoices.Rows[InvoiceCount].Field<Decimal>("TotalDue") == 0 ? true : false);
+												InvoicesTableAdapter.Update(PDS.Invoices.Rows[InvoiceCount]);
+												PaymentInvoiceTableAdapter.Insert(TempCust, PaymentId, PDS.Invoices.Rows[InvoiceCount].Field<Int32>("id"), lnAmountPaid, 0, false,
+													  PDS.PaymentHistory.Rows[0].Field<String>("Type"), PDS.PaymentHistory.Rows[0].Field<String>("Code"),
+													  PDS.PaymentHistory.Rows[0].Field<String>("CreditCardType"), 0, 0);
+											}
+										}
+										else
+											InvoiceCount++;
+									}
                                 }
-							}
-						}
+                            }
+                        }
 					}
 					InvoicesTableAdapter.DeleteAddedRecordsWithZeroPaid(TempCust);
 				}
