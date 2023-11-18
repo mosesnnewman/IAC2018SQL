@@ -1725,14 +1725,16 @@ namespace IAC2021SQL
                         else
                             Extensions.CustomerExtract.Rows[RowCount].SetField<Nullable<DateTime>>("VEHICLE_EXP_DATE", Convert.ToDateTime("01/01/1980"));
                     }
+                   // Moses Newman 11/18/2023 Make sure both Title Received and Electronic lien are not null before assingment.
                     // Moses Newman 10/26/2020 Title received Title Date Received
-                    Extensions.CustomerExtract.Rows[RowCount].SetField<Boolean>("TitleReceived", Bank.VEHICLE.Rows[0].Field<Boolean>("TitleReceived"));
+                    Extensions.CustomerExtract.Rows[RowCount].SetField<Boolean?>("TitleReceived", Bank.VEHICLE.Rows[0].Field<Boolean?>("TitleReceived"));
                     if (Bank.VEHICLE.Rows[0].Field<Nullable<DateTime>>("TitleDateReceived") != null) 
                         Extensions.CustomerExtract.Rows[RowCount].SetField<Nullable<DateTime>>("TitleDateReceived", Bank.VEHICLE.Rows[0].Field<Nullable<DateTime>>("TitleDateReceived"));
                     else
                         Extensions.CustomerExtract.Rows[RowCount].SetField<Nullable<DateTime>>("TitleDateReceived", Convert.ToDateTime("01/01/1980"));
                     // Moses Newman 10/27/2020 Add Electronic Lien
-                    Extensions.CustomerExtract.Rows[RowCount].SetField<Boolean>("ElectronicLien", Bank.VEHICLE.Rows[0].Field<Boolean>("ElectronicLien"));
+                    Extensions.CustomerExtract.Rows[RowCount].SetField<Boolean>("ElectronicLien", Bank.VEHICLE.Rows[0].Field<Boolean?>("ElectronicLien") != null ? 
+                        Bank.VEHICLE.Rows[0].Field<Boolean>("ElectronicLien"):false);
                 }
                 Extensions.CustomerExtract.Rows[RowCount].SetField<String>("CUSTOMER_REPO_IND", Bank.CUSTOMER.Rows[i].Field<String>("CUSTOMER_REPO_IND"));
                 Extensions.CustomerExtract.Rows[RowCount].SetField<String>("CUSTOMER_ACT_STAT", Bank.CUSTOMER.Rows[i].Field<String>("CUSTOMER_ACT_STAT"));
