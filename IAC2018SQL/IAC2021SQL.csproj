@@ -42,7 +42,7 @@
     <SuiteName>IAC2021SQL</SuiteName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>22</ApplicationRevision>
+    <ApplicationRevision>23</ApplicationRevision>
     <ApplicationVersion>200.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -212,6 +212,7 @@
     <Reference Include="DevExpress.Utils.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <HintPath>..\packages\DevExpress.Utils.23.1.5\lib\net452\DevExpress.Utils.v23.1.dll</HintPath>
     </Reference>
+    <Reference Include="DevExpress.Utils.v23.1.UI, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Xpo.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <HintPath>..\packages\DevExpress.Xpo.23.1.5\lib\net452\DevExpress.Xpo.v23.1.dll</HintPath>
     </Reference>
@@ -260,6 +261,7 @@
     <Reference Include="DevExpress.XtraReports.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <HintPath>..\packages\DevExpress.Reporting.Core.23.1.5\lib\net452\DevExpress.XtraReports.v23.1.dll</HintPath>
     </Reference>
+    <Reference Include="DevExpress.XtraReports.v23.1.Extensions, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraTreeList.v23.1, Version=23.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <HintPath>..\packages\DevExpress.Win.TreeList.23.1.5\lib\net452\DevExpress.XtraTreeList.v23.1.dll</HintPath>
     </Reference>
@@ -770,6 +772,11 @@
     <Compile Include="DirectXFormApplyPayments.Designer.cs">
       <DependentUpon>DirectXFormApplyPayments.cs</DependentUpon>
     </Compile>
+    <Compile Include="IACDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>IACDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="InternetPaymentRejects.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -878,11 +885,6 @@
     <Compile Include="FormCashPaymentSummary.Designer.cs">
       <DependentUpon>FormCashPaymentSummary.cs</DependentUpon>
     </Compile>
-    <Compile Include="IACDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>IACDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="NewClosedCustomerForms.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -932,11 +934,23 @@
     <Compile Include="XtraReportAmortization.Designer.cs">
       <DependentUpon>XtraReportAmortization.cs</DependentUpon>
     </Compile>
+    <Compile Include="XtraReportAutoPaymentRejects.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReportAutoPaymentRejects.Designer.cs">
+      <DependentUpon>XtraReportAutoPaymentRejects.cs</DependentUpon>
+    </Compile>
     <Compile Include="XtraReportClosedChargesAppliedToDealer.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="XtraReportClosedChargesAppliedToDealer.Designer.cs">
       <DependentUpon>XtraReportClosedChargesAppliedToDealer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReportCustomerEFTListing.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReportCustomerEFTListing.Designer.cs">
+      <DependentUpon>XtraReportCustomerEFTListing.cs</DependentUpon>
     </Compile>
     <Compile Include="XtraReportOpenDealerSummary.cs">
       <SubType>Component</SubType>
@@ -2066,8 +2080,14 @@
     <EmbeddedResource Include="XtraReportAmortization.resx">
       <DependentUpon>XtraReportAmortization.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="XtraReportAutoPaymentRejects.resx">
+      <DependentUpon>XtraReportAutoPaymentRejects.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="XtraReportClosedChargesAppliedToDealer.resx">
       <DependentUpon>XtraReportClosedChargesAppliedToDealer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReportCustomerEFTListing.resx">
+      <DependentUpon>XtraReportCustomerEFTListing.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="XtraReportOpenDealerSummary.resx">
       <DependentUpon>XtraReportOpenDealerSummary.cs</DependentUpon>

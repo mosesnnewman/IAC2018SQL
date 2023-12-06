@@ -454,6 +454,18 @@ namespace IAC2021SQL
             // Moses Newman 02/22/2023
             radioGroupAccountType.Enabled = false;
 
+            // Moses Newman 12/04/2023 
+            // Split Payments
+            comboBoxEditPaymentDay1.Enabled = false;
+            comboBoxEditPaymentDay2.Enabled = false;
+            comboBoxEditPaymentDay3.Enabled = false;
+            comboBoxEditPaymentDay4.Enabled = false;
+            textEditPayment1.Enabled = false;
+            textEditPayment2.Enabled = false;
+            textEditPayment3.Enabled = false;
+            textEditPayment4.Enabled = false;
+            checkEditSplitPay.Enabled = false;
+
             //Credit Card Info
             textEditCreditCardNumber.Enabled = false;
             textEditCreditCardName.Enabled = false;
@@ -833,6 +845,17 @@ namespace IAC2021SQL
             // Moses Newman 02/22/2023
             radioGroupAccountType.Enabled = true;
 
+            // Moses Newman 12/04/2023 
+            // Split Payments
+            comboBoxEditPaymentDay1.Enabled = true;
+            comboBoxEditPaymentDay2.Enabled = true;
+            comboBoxEditPaymentDay3.Enabled = true;
+            comboBoxEditPaymentDay4.Enabled = true;
+            textEditPayment1.Enabled = true;
+            textEditPayment2.Enabled = true;
+            textEditPayment3.Enabled = true;
+            textEditPayment4.Enabled = true;
+            checkEditSplitPay.Enabled = true;
 
             //Credit Card Info
             textEditCreditCardNumber.Enabled = true;
@@ -3942,6 +3965,12 @@ namespace IAC2021SQL
                 case 1:
                     setRelatedData();
                     break;
+                case 4:
+                    if (checkEditSplitPay.Checked)
+                        xtraTabControl1.TabPages[1].PageEnabled = true;
+                    else
+                        xtraTabControl1.TabPages[1].PageEnabled = false;
+                    break;
                 case 6:
                     setRelatedData();
                     // Moses Newman 12/1/2021 order by id descending
@@ -5726,7 +5755,7 @@ namespace IAC2021SQL
                     textBoxCosignerAnnualIncome.Enabled = true;
                     textBoxCosignerEmail.Enabled = true;
 
-
+                    //EFT/eCHeck
                     textEditBankName.Enabled = true;
                     textEditBankCity.Enabled = true;
                     textEditBankState.Enabled = true;
@@ -5739,6 +5768,18 @@ namespace IAC2021SQL
                     radioGroupAccountType.Enabled = true;
                     // Moses Newman 01/29/2017 Added Maturity Date
                     MaturityDate.Enabled = true;
+
+                    // Moses Newman 12/04/2023 
+                    // Split Payments
+                    comboBoxEditPaymentDay1.Enabled = true;
+                    comboBoxEditPaymentDay2.Enabled = true;
+                    comboBoxEditPaymentDay3.Enabled = true;
+                    comboBoxEditPaymentDay4.Enabled = true;
+                    textEditPayment1.Enabled = true;
+                    textEditPayment2.Enabled = true;
+                    textEditPayment3.Enabled = true;
+                    textEditPayment4.Enabled = true;
+                    checkEditSplitPay.Enabled = true;
 
                     // Vehice Tab
                     txtVehicleYear.Enabled = true;
@@ -5978,6 +6019,195 @@ namespace IAC2021SQL
                 }
             e.Handled = true;
         }
+
+        private void comboBoxEditPaymentDay1_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void comboBoxEditPaymentDay2_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void comboBoxEditPaymentDay3_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void comboBoxEditPaymentDay4_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void textEditPayment1_EditValueChanged(object sender, EventArgs e)
+        {
+            TextEdit textEdit = (TextEdit)sender;
+            if (lbAddFlag || lbEdit)
+            {
+                toolStripButtonSave.Enabled = true;
+            }
+        }
+
+        private void textEditPayment2_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+            {
+                toolStripButtonSave.Enabled = true;
+            }
+        }
+
+        private void textEditPayment3_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+            {
+                toolStripButtonSave.Enabled = true;
+            }
+        }
+
+        private void textEditPayment4_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+            {
+                toolStripButtonSave.Enabled = true;
+            }
+        }
+
+        private void SumSplitPayments()
+        {
+            if (iACDataSet.OPNBANK.Rows.Count > 0)
+            {
+                Decimal SplitSum = 0, PaymentUnused = iACDataSet.OPNBANK.Rows[0].Field<Decimal>("OPNBANK_MONTHLY_PAYMENT");
+                SplitSum += iACDataSet.OPNBANK.Rows[0].Field<Decimal?>("Payment1") != null ? iACDataSet.OPNBANK.Rows[0].Field<Decimal>("Payment1") : 0;
+                SplitSum += iACDataSet.OPNBANK.Rows[0].Field<Decimal?>("Payment2") != null ? iACDataSet.OPNBANK.Rows[0].Field<Decimal>("Payment2") : 0;
+                SplitSum += iACDataSet.OPNBANK.Rows[0].Field<Decimal?>("Payment3") != null ? iACDataSet.OPNBANK.Rows[0].Field<Decimal>("Payment3") : 0;
+                SplitSum += iACDataSet.OPNBANK.Rows[0].Field<Decimal?>("Payment4") != null ? iACDataSet.OPNBANK.Rows[0].Field<Decimal>("Payment4") : 0;
+                textEditTotalPayments.EditValue = SplitSum;
+                textEditTotalPayments.Refresh();
+                PaymentUnused -= SplitSum;
+                textEditAmountUnused.EditValue = PaymentUnused;
+                textEditAmountUnused.Refresh();
+            }
+        }
+
+        private void textEditPayment1_Validated(object sender, EventArgs e)
+        {
+            SumSplitPayments();
+        }
+
+        private void textEditPayment2_Validated(object sender, EventArgs e)
+        {
+            SumSplitPayments();
+        }
+
+        private void textEditPayment3_Validated(object sender, EventArgs e)
+        {
+            SumSplitPayments();
+        }
+
+        private void textEditPayment4_Validated(object sender, EventArgs e)
+        {
+            SumSplitPayments();
+        }
+
+        private void textEditPayment1_Validating(object sender, CancelEventArgs e)
+        {
+            if (iACDataSet.OPNBANK.Rows.Count < 1)
+                return;
+            System.Globalization.CultureInfo info = System.Globalization.CultureInfo.GetCultureInfo("en-US");
+            TextEdit textEdit = sender as TextEdit;
+            Decimal OldValue = !textEdit.OldEditValue.ToString().IsNullOrEmpty() ? Convert.ToDecimal(textEdit.OldEditValue) : 0,
+                    Unused = (Decimal?)textEditAmountUnused.EditValue != null ? Convert.ToDecimal(textEditAmountUnused.EditValue) : iACDataSet.OPNBANK.Rows[0].Field<Decimal>("OPNBANK_MONTHLY_PAYMENT"),
+                    thisValue = !textEdit.EditValue.ToString().IsNullOrEmpty() ? Convert.ToDecimal(textEdit.EditValue) : 0;
+            Unused += OldValue;
+            if (thisValue > Unused)
+            {
+                e.Cancel = true;
+                textEdit.ErrorText = "You only have " + Unused.ToString("c2", info) + " available!";
+            }
+        }
+
+        private void textEditPayment2_Validating(object sender, CancelEventArgs e)
+        {
+            if (iACDataSet.OPNBANK.Rows.Count < 1)
+                return;
+            System.Globalization.CultureInfo info = System.Globalization.CultureInfo.GetCultureInfo("en-US");
+            TextEdit textEdit = sender as TextEdit;
+            Decimal OldValue = !textEdit.OldEditValue.ToString().IsNullOrEmpty() ? Convert.ToDecimal(textEdit.OldEditValue) : 0,
+                    Unused = (Decimal?)textEditAmountUnused.EditValue != null ? Convert.ToDecimal(textEditAmountUnused.EditValue) : iACDataSet.OPNBANK.Rows[0].Field<Decimal>("OPNBANK_MONTHLY_PAYMENT"),
+                    thisValue = !textEdit.EditValue.ToString().IsNullOrEmpty() ? Convert.ToDecimal(textEdit.EditValue) : 0;
+            Unused += OldValue;
+            if (thisValue > Unused)
+            {
+                e.Cancel = true;
+                textEdit.ErrorText = "You only have " + Unused.ToString("c2", info) + " available!";
+            }
+        }
+
+        private void textEditPayment3_Validating(object sender, CancelEventArgs e)
+        {
+            if (iACDataSet.OPNBANK.Rows.Count < 1)
+                return;
+            System.Globalization.CultureInfo info = System.Globalization.CultureInfo.GetCultureInfo("en-US");
+            TextEdit textEdit = sender as TextEdit;
+            Decimal OldValue = !textEdit.OldEditValue.ToString().IsNullOrEmpty() ? Convert.ToDecimal(textEdit.OldEditValue) : 0,
+                    Unused = (Decimal?)textEditAmountUnused.EditValue != null ? Convert.ToDecimal(textEditAmountUnused.EditValue) : iACDataSet.OPNBANK.Rows[0].Field<Decimal>("OPNBANK_MONTHLY_PAYMENT"),
+                    thisValue = !textEdit.EditValue.ToString().IsNullOrEmpty() ? Convert.ToDecimal(textEdit.EditValue) : 0;
+            Unused += OldValue;
+            if (thisValue > Unused)
+            {
+                e.Cancel = true;
+                textEdit.ErrorText = "You only have " + Unused.ToString("c2", info) + " available!";
+            }
+        }
+
+        private void textEditPayment4_Validating(object sender, CancelEventArgs e)
+        {
+            if (iACDataSet.OPNBANK.Rows.Count < 1)
+                return;
+            System.Globalization.CultureInfo info = System.Globalization.CultureInfo.GetCultureInfo("en-US");
+            TextEdit textEdit = sender as TextEdit;
+            Decimal OldValue = !textEdit.OldEditValue.ToString().IsNullOrEmpty() ? Convert.ToDecimal(textEdit.OldEditValue) : 0,
+                    Unused = (Decimal?)textEditAmountUnused.EditValue != null ? Convert.ToDecimal(textEditAmountUnused.EditValue) : iACDataSet.OPNBANK.Rows[0].Field<Decimal>("OPNBANK_MONTHLY_PAYMENT"),
+                    thisValue = !textEdit.EditValue.ToString().IsNullOrEmpty() ? Convert.ToDecimal(textEdit.EditValue) : 0;
+            Unused += OldValue;
+            if (thisValue > Unused)
+            {
+                e.Cancel = true;
+                textEdit.ErrorText = "You only have " + Unused.ToString("c2", info) + " available!";
+            }
+        }
+
+        private void checkEditSplitPay_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckEdit checkEdit = sender as CheckEdit;
+
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+            if(checkEdit.Checked)
+                xtraTabControl1.TabPages[1].PageEnabled = true;
+            else
+                xtraTabControl1.TabPages[1].PageEnabled = false;
+        }
+
+        private void xtraTabControl1_SelectedPageChanged(object sender, DevExpress.XtraTab.TabPageChangedEventArgs e)
+        {
+            if(xtraTabControl1.SelectedTabPageIndex == 1)
+                SumSplitPayments();
+        }
+
+        private void xtraTabControl1_Enter(object sender, EventArgs e)
+        {
+            if (checkEditSplitPay.Checked)
+                xtraTabControl1.TabPages[1].PageEnabled = true;
+            else
+                xtraTabControl1.TabPages[1].PageEnabled = false;
+        }
+
         private void cUSTOMER_NOTextBox_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
         {
             /*if (e.KeyData == Keys.Tab)

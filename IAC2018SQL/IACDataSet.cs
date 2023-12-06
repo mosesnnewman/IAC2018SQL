@@ -1269,6 +1269,10 @@ namespace IAC2021SQL
 
 namespace IAC2021SQL.IACDataSetTableAdapters
 {
+    partial class WarrantyCompanyTableAdapter
+    {
+    }
+
     partial class ULISTTableAdapter
     {
     }
