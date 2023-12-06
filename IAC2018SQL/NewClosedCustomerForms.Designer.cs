@@ -603,8 +603,9 @@
             this.xtraTabPageBank = new DevExpress.XtraTab.XtraTabPage();
             this.groupBox17 = new DevExpress.XtraEditors.GroupControl();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
-            this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
+            this.xtraTabPageEFT = new DevExpress.XtraTab.XtraTabPage();
             this.groupBox23 = new DevExpress.XtraEditors.GroupControl();
+            this.checkEditSplitPay = new DevExpress.XtraEditors.CheckEdit();
             this.radioGroupAccountType = new DevExpress.XtraEditors.RadioGroup();
             this.textEditBankMonthlyPayment = new DevExpress.XtraEditors.TextEdit();
             this.checkEditBankAutoPay = new DevExpress.XtraEditors.CheckEdit();
@@ -614,7 +615,47 @@
             this.textEditBankState = new DevExpress.XtraEditors.TextEdit();
             this.textEditBankCity = new DevExpress.XtraEditors.TextEdit();
             this.textEditBankName = new DevExpress.XtraEditors.TextEdit();
-            this.xtraTabPage2 = new DevExpress.XtraTab.XtraTabPage();
+            this.xtraTabPageMultiPay = new DevExpress.XtraTab.XtraTabPage();
+            this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.textEditAmountUnused = new DevExpress.XtraEditors.TextEdit();
+            this.textEditTotalPayments = new DevExpress.XtraEditors.TextEdit();
+            this.textEditFullMonthlyPayment = new DevExpress.XtraEditors.TextEdit();
+            this.textEditPayment4 = new DevExpress.XtraEditors.TextEdit();
+            this.textEditPayment3 = new DevExpress.XtraEditors.TextEdit();
+            this.textEditPayment2 = new DevExpress.XtraEditors.TextEdit();
+            this.textEditPayment1 = new DevExpress.XtraEditors.TextEdit();
+            this.comboBoxEditPaymentDay1 = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.comboBoxEditPaymentDay2 = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.comboBoxEditPaymentDay3 = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.comboBoxEditPaymentDay4 = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItemPaymentDay1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItemPaymentDay2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItemPaymentAmount1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.layoutControlItemPaymentDay3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem6 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.layoutControlItemPaymentDay4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.simpleLabelItem1 = new DevExpress.XtraLayout.SimpleLabelItem();
+            this.emptySpaceItem5 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem7 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem8 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.layoutControlItemFullPaymentAmount = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem9 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.layoutControlItemTotalPayments = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem10 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.simpleSeparator1 = new DevExpress.XtraLayout.SimpleSeparator();
+            this.emptySpaceItem11 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.layoutControlItemAmountUnused = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem12 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.simpleSeparator2 = new DevExpress.XtraLayout.SimpleSeparator();
+            this.xtraTabPageCreditCard = new DevExpress.XtraTab.XtraTabPage();
             this.groupBox24 = new DevExpress.XtraEditors.GroupControl();
             this.comboBoxEditExpYear = new DevExpress.XtraEditors.ComboBoxEdit();
             this.lookUpEditExpMonth = new DevExpress.XtraEditors.LookUpEdit();
@@ -696,6 +737,7 @@
             this.colCOMMENT_HHMMSS = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colid1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colImgSort = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSMSTemplate1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.textBox23 = new System.Windows.Forms.TextBox();
@@ -856,7 +898,6 @@
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.warrantyCompanyTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.WarrantyCompanyTableAdapter();
             this.layoutConverter1 = new DevExpress.XtraLayout.Converter.LayoutConverter(this.components);
-            this.colSMSTemplate1 = new DevExpress.XtraGrid.Columns.GridColumn();
             label45 = new System.Windows.Forms.Label();
             label48 = new System.Windows.Forms.Label();
             labelAuthNo = new System.Windows.Forms.Label();
@@ -1227,9 +1268,10 @@
             this.groupBox17.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
-            this.xtraTabPage1.SuspendLayout();
+            this.xtraTabPageEFT.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupBox23)).BeginInit();
             this.groupBox23.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEditSplitPay.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radioGroupAccountType.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditBankMonthlyPayment.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditBankAutoPay.Properties)).BeginInit();
@@ -1239,7 +1281,48 @@
             ((System.ComponentModel.ISupportInitialize)(this.textEditBankState.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditBankCity.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditBankName.Properties)).BeginInit();
-            this.xtraTabPage2.SuspendLayout();
+            this.xtraTabPageMultiPay.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
+            this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditAmountUnused.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditTotalPayments.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditFullMonthlyPayment.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditPayment4.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditPayment3.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditPayment2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditPayment1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEditPaymentDay1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEditPaymentDay2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEditPaymentDay3.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEditPaymentDay4.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemPaymentDay1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemPaymentDay2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemPaymentAmount1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemPaymentDay3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemPaymentDay4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemFullPaymentAmount)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemTotalPayments)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.simpleSeparator1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemAmountUnused)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem12)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.simpleSeparator2)).BeginInit();
+            this.xtraTabPageCreditCard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupBox24)).BeginInit();
             this.groupBox24.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEditExpYear.Properties)).BeginInit();
@@ -6220,30 +6303,34 @@
             this.xtraTabControl1.LookAndFeel.SkinName = "McSkin";
             this.xtraTabControl1.LookAndFeel.UseDefaultLookAndFeel = false;
             this.xtraTabControl1.Name = "xtraTabControl1";
-            this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
+            this.xtraTabControl1.SelectedTabPage = this.xtraTabPageEFT;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
-            this.xtraTabPage1,
-            this.xtraTabPage2});
+            this.xtraTabPageEFT,
+            this.xtraTabPageMultiPay,
+            this.xtraTabPageCreditCard});
+            this.xtraTabControl1.SelectedPageChanged += new DevExpress.XtraTab.TabPageChangedEventHandler(this.xtraTabControl1_SelectedPageChanged);
+            this.xtraTabControl1.Enter += new System.EventHandler(this.xtraTabControl1_Enter);
             // 
-            // xtraTabPage1
+            // xtraTabPageEFT
             // 
-            this.xtraTabPage1.Appearance.PageClient.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.xtraTabPage1.Appearance.PageClient.BackColor2 = ((System.Drawing.Color)(resources.GetObject("xtraTabPage1.Appearance.PageClient.BackColor2")));
-            this.xtraTabPage1.Appearance.PageClient.Options.UseBackColor = true;
-            this.xtraTabPage1.Appearance.PageClient.Options.UseBorderColor = true;
-            this.xtraTabPage1.Appearance.PageClient.Options.UseFont = true;
-            this.xtraTabPage1.Appearance.PageClient.Options.UseForeColor = true;
-            this.xtraTabPage1.Appearance.PageClient.Options.UseTextOptions = true;
-            this.xtraTabPage1.Controls.Add(this.groupBox23);
-            this.xtraTabPage1.Name = "xtraTabPage1";
-            resources.ApplyResources(this.xtraTabPage1, "xtraTabPage1");
-            this.xtraTabPage1.Enter += new System.EventHandler(this.xtraTabPage1_Enter);
+            this.xtraTabPageEFT.Appearance.PageClient.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.xtraTabPageEFT.Appearance.PageClient.BackColor2 = ((System.Drawing.Color)(resources.GetObject("xtraTabPageEFT.Appearance.PageClient.BackColor2")));
+            this.xtraTabPageEFT.Appearance.PageClient.Options.UseBackColor = true;
+            this.xtraTabPageEFT.Appearance.PageClient.Options.UseBorderColor = true;
+            this.xtraTabPageEFT.Appearance.PageClient.Options.UseFont = true;
+            this.xtraTabPageEFT.Appearance.PageClient.Options.UseForeColor = true;
+            this.xtraTabPageEFT.Appearance.PageClient.Options.UseTextOptions = true;
+            this.xtraTabPageEFT.Controls.Add(this.groupBox23);
+            this.xtraTabPageEFT.Name = "xtraTabPageEFT";
+            resources.ApplyResources(this.xtraTabPageEFT, "xtraTabPageEFT");
+            this.xtraTabPageEFT.Enter += new System.EventHandler(this.xtraTabPage1_Enter);
             // 
             // groupBox23
             // 
             this.groupBox23.Appearance.BackColor = System.Drawing.Color.LightSteelBlue;
             this.groupBox23.Appearance.Options.UseBackColor = true;
             this.groupBox23.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.groupBox23.Controls.Add(this.checkEditSplitPay);
             this.groupBox23.Controls.Add(this.radioGroupAccountType);
             this.groupBox23.Controls.Add(this.textEditBankMonthlyPayment);
             this.groupBox23.Controls.Add(this.checkEditBankAutoPay);
@@ -6255,6 +6342,20 @@
             this.groupBox23.Controls.Add(this.textEditBankName);
             resources.ApplyResources(this.groupBox23, "groupBox23");
             this.groupBox23.Name = "groupBox23";
+            // 
+            // checkEditSplitPay
+            // 
+            this.checkEditSplitPay.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.OPNBANKbindingSource, "SplitPay", true));
+            resources.ApplyResources(this.checkEditSplitPay, "checkEditSplitPay");
+            this.checkEditSplitPay.MenuManager = this.toolbarFormManager1;
+            this.checkEditSplitPay.Name = "checkEditSplitPay";
+            this.checkEditSplitPay.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("checkEditSplitPay.Properties.Appearance.Font")));
+            this.checkEditSplitPay.Properties.Appearance.Options.UseFont = true;
+            this.checkEditSplitPay.Properties.Caption = resources.GetString("checkEditSplitPay.Properties.Caption");
+            this.checkEditSplitPay.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
+            this.checkEditSplitPay.Properties.CheckBoxOptions.SvgColorChecked = System.Drawing.Color.Black;
+            this.checkEditSplitPay.Properties.GlyphAlignment = ((DevExpress.Utils.HorzAlignment)(resources.GetObject("checkEditSplitPay.Properties.GlyphAlignment")));
+            this.checkEditSplitPay.CheckedChanged += new System.EventHandler(this.checkEditSplitPay_CheckedChanged);
             // 
             // radioGroupAccountType
             // 
@@ -6468,15 +6569,667 @@
             this.textEditBankName.Properties.UseAdvancedMode = DevExpress.Utils.DefaultBoolean.True;
             this.textEditBankName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
-            // xtraTabPage2
+            // xtraTabPageMultiPay
             // 
-            this.xtraTabPage2.Appearance.PageClient.BackColor = System.Drawing.Color.Salmon;
-            this.xtraTabPage2.Appearance.PageClient.Font = ((System.Drawing.Font)(resources.GetObject("xtraTabPage2.Appearance.PageClient.Font")));
-            this.xtraTabPage2.Appearance.PageClient.Options.UseBackColor = true;
-            this.xtraTabPage2.Appearance.PageClient.Options.UseFont = true;
-            this.xtraTabPage2.Controls.Add(this.groupBox24);
-            this.xtraTabPage2.Name = "xtraTabPage2";
-            resources.ApplyResources(this.xtraTabPage2, "xtraTabPage2");
+            this.xtraTabPageMultiPay.Controls.Add(this.layoutControl1);
+            this.xtraTabPageMultiPay.Name = "xtraTabPageMultiPay";
+            resources.ApplyResources(this.xtraTabPageMultiPay, "xtraTabPageMultiPay");
+            // 
+            // layoutControl1
+            // 
+            this.layoutControl1.Controls.Add(this.textEditAmountUnused);
+            this.layoutControl1.Controls.Add(this.textEditTotalPayments);
+            this.layoutControl1.Controls.Add(this.textEditFullMonthlyPayment);
+            this.layoutControl1.Controls.Add(this.textEditPayment4);
+            this.layoutControl1.Controls.Add(this.textEditPayment3);
+            this.layoutControl1.Controls.Add(this.textEditPayment2);
+            this.layoutControl1.Controls.Add(this.textEditPayment1);
+            this.layoutControl1.Controls.Add(this.comboBoxEditPaymentDay1);
+            this.layoutControl1.Controls.Add(this.comboBoxEditPaymentDay2);
+            this.layoutControl1.Controls.Add(this.comboBoxEditPaymentDay3);
+            this.layoutControl1.Controls.Add(this.comboBoxEditPaymentDay4);
+            resources.ApplyResources(this.layoutControl1, "layoutControl1");
+            this.layoutControl1.Name = "layoutControl1";
+            this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(897, 354, 650, 400);
+            this.layoutControl1.Root = this.Root;
+            // 
+            // textEditAmountUnused
+            // 
+            resources.ApplyResources(this.textEditAmountUnused, "textEditAmountUnused");
+            this.textEditAmountUnused.MenuManager = this.toolbarFormManager1;
+            this.textEditAmountUnused.Name = "textEditAmountUnused";
+            this.textEditAmountUnused.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textEditAmountUnused.Properties.Appearance.Font")));
+            this.textEditAmountUnused.Properties.Appearance.Options.UseFont = true;
+            this.textEditAmountUnused.Properties.AppearanceDisabled.Font = ((System.Drawing.Font)(resources.GetObject("textEditAmountUnused.Properties.AppearanceDisabled.Font")));
+            this.textEditAmountUnused.Properties.AppearanceDisabled.ForeColor = DevExpress.LookAndFeel.DXSkinColors.ForeColors.Critical;
+            this.textEditAmountUnused.Properties.AppearanceDisabled.Options.UseFont = true;
+            this.textEditAmountUnused.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.textEditAmountUnused.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.textEditAmountUnused.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.textEditAmountUnused.Properties.DisplayFormat.FormatString = "c2";
+            this.textEditAmountUnused.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.textEditAmountUnused.StyleController = this.layoutControl1;
+            // 
+            // textEditTotalPayments
+            // 
+            resources.ApplyResources(this.textEditTotalPayments, "textEditTotalPayments");
+            this.textEditTotalPayments.MenuManager = this.toolbarFormManager1;
+            this.textEditTotalPayments.Name = "textEditTotalPayments";
+            this.textEditTotalPayments.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textEditTotalPayments.Properties.Appearance.Font")));
+            this.textEditTotalPayments.Properties.Appearance.Options.UseFont = true;
+            this.textEditTotalPayments.Properties.Appearance.Options.UseTextOptions = true;
+            this.textEditTotalPayments.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.textEditTotalPayments.Properties.AppearanceDisabled.Font = ((System.Drawing.Font)(resources.GetObject("textEditTotalPayments.Properties.AppearanceDisabled.Font")));
+            this.textEditTotalPayments.Properties.AppearanceDisabled.ForeColor = DevExpress.LookAndFeel.DXSkinColors.ForeColors.ControlText;
+            this.textEditTotalPayments.Properties.AppearanceDisabled.Options.UseFont = true;
+            this.textEditTotalPayments.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.textEditTotalPayments.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.textEditTotalPayments.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.textEditTotalPayments.Properties.DisplayFormat.FormatString = "c2";
+            this.textEditTotalPayments.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.textEditTotalPayments.StyleController = this.layoutControl1;
+            // 
+            // textEditFullMonthlyPayment
+            // 
+            this.textEditFullMonthlyPayment.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.OPNBANKbindingSource, "OPNBANK_MONTHLY_PAYMENT", true));
+            resources.ApplyResources(this.textEditFullMonthlyPayment, "textEditFullMonthlyPayment");
+            this.textEditFullMonthlyPayment.MenuManager = this.toolbarFormManager1;
+            this.textEditFullMonthlyPayment.Name = "textEditFullMonthlyPayment";
+            this.textEditFullMonthlyPayment.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textEditFullMonthlyPayment.Properties.Appearance.Font")));
+            this.textEditFullMonthlyPayment.Properties.Appearance.Options.UseFont = true;
+            this.textEditFullMonthlyPayment.Properties.AppearanceDisabled.Font = ((System.Drawing.Font)(resources.GetObject("textEditFullMonthlyPayment.Properties.AppearanceDisabled.Font")));
+            this.textEditFullMonthlyPayment.Properties.AppearanceDisabled.ForeColor = DevExpress.LookAndFeel.DXSkinColors.ForeColors.Information;
+            this.textEditFullMonthlyPayment.Properties.AppearanceDisabled.Options.UseFont = true;
+            this.textEditFullMonthlyPayment.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.textEditFullMonthlyPayment.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.textEditFullMonthlyPayment.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.textEditFullMonthlyPayment.Properties.DisplayFormat.FormatString = "c2";
+            this.textEditFullMonthlyPayment.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.textEditFullMonthlyPayment.StyleController = this.layoutControl1;
+            // 
+            // textEditPayment4
+            // 
+            this.textEditPayment4.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.OPNBANKbindingSource, "Payment4", true));
+            this.textEditPayment4.EnterMoveNextControl = true;
+            resources.ApplyResources(this.textEditPayment4, "textEditPayment4");
+            this.textEditPayment4.MenuManager = this.toolbarFormManager1;
+            this.textEditPayment4.Name = "textEditPayment4";
+            this.textEditPayment4.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
+            this.textEditPayment4.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textEditPayment4.Properties.Appearance.Font")));
+            this.textEditPayment4.Properties.Appearance.Options.UseFont = true;
+            this.textEditPayment4.Properties.Appearance.Options.UseTextOptions = true;
+            this.textEditPayment4.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.textEditPayment4.Properties.AppearanceDisabled.Font = ((System.Drawing.Font)(resources.GetObject("textEditPayment4.Properties.AppearanceDisabled.Font")));
+            this.textEditPayment4.Properties.AppearanceDisabled.Options.UseFont = true;
+            this.textEditPayment4.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.textEditPayment4.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.textEditPayment4.Properties.AppearanceFocused.Font = ((System.Drawing.Font)(resources.GetObject("textEditPayment4.Properties.AppearanceFocused.Font")));
+            this.textEditPayment4.Properties.AppearanceFocused.Options.UseFont = true;
+            this.textEditPayment4.Properties.AppearanceFocused.Options.UseTextOptions = true;
+            this.textEditPayment4.Properties.AppearanceFocused.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.textEditPayment4.Properties.DisplayFormat.FormatString = "C2";
+            this.textEditPayment4.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.textEditPayment4.Properties.NullText = resources.GetString("textEditPayment4.Properties.NullText");
+            this.textEditPayment4.Properties.ValidateOnEnterKey = true;
+            this.textEditPayment4.StyleController = this.layoutControl1;
+            this.textEditPayment4.EditValueChanged += new System.EventHandler(this.textEditPayment4_EditValueChanged);
+            this.textEditPayment4.Validating += new System.ComponentModel.CancelEventHandler(this.textEditPayment4_Validating);
+            this.textEditPayment4.Validated += new System.EventHandler(this.textEditPayment4_Validated);
+            // 
+            // textEditPayment3
+            // 
+            this.textEditPayment3.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.OPNBANKbindingSource, "Payment3", true));
+            this.textEditPayment3.EnterMoveNextControl = true;
+            resources.ApplyResources(this.textEditPayment3, "textEditPayment3");
+            this.textEditPayment3.MenuManager = this.toolbarFormManager1;
+            this.textEditPayment3.Name = "textEditPayment3";
+            this.textEditPayment3.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
+            this.textEditPayment3.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textEditPayment3.Properties.Appearance.Font")));
+            this.textEditPayment3.Properties.Appearance.Options.UseFont = true;
+            this.textEditPayment3.Properties.Appearance.Options.UseTextOptions = true;
+            this.textEditPayment3.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.textEditPayment3.Properties.AppearanceDisabled.Font = ((System.Drawing.Font)(resources.GetObject("textEditPayment3.Properties.AppearanceDisabled.Font")));
+            this.textEditPayment3.Properties.AppearanceDisabled.Options.UseFont = true;
+            this.textEditPayment3.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.textEditPayment3.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.textEditPayment3.Properties.AppearanceFocused.Font = ((System.Drawing.Font)(resources.GetObject("textEditPayment3.Properties.AppearanceFocused.Font")));
+            this.textEditPayment3.Properties.AppearanceFocused.Options.UseFont = true;
+            this.textEditPayment3.Properties.AppearanceFocused.Options.UseTextOptions = true;
+            this.textEditPayment3.Properties.AppearanceFocused.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.textEditPayment3.Properties.DisplayFormat.FormatString = "C2";
+            this.textEditPayment3.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.textEditPayment3.Properties.NullText = resources.GetString("textEditPayment3.Properties.NullText");
+            this.textEditPayment3.Properties.ValidateOnEnterKey = true;
+            this.textEditPayment3.StyleController = this.layoutControl1;
+            this.textEditPayment3.EditValueChanged += new System.EventHandler(this.textEditPayment3_EditValueChanged);
+            this.textEditPayment3.Validating += new System.ComponentModel.CancelEventHandler(this.textEditPayment3_Validating);
+            this.textEditPayment3.Validated += new System.EventHandler(this.textEditPayment3_Validated);
+            // 
+            // textEditPayment2
+            // 
+            this.textEditPayment2.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.OPNBANKbindingSource, "Payment2", true));
+            this.textEditPayment2.EnterMoveNextControl = true;
+            resources.ApplyResources(this.textEditPayment2, "textEditPayment2");
+            this.textEditPayment2.MenuManager = this.toolbarFormManager1;
+            this.textEditPayment2.Name = "textEditPayment2";
+            this.textEditPayment2.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
+            this.textEditPayment2.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textEditPayment2.Properties.Appearance.Font")));
+            this.textEditPayment2.Properties.Appearance.Options.UseFont = true;
+            this.textEditPayment2.Properties.Appearance.Options.UseTextOptions = true;
+            this.textEditPayment2.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.textEditPayment2.Properties.AppearanceDisabled.Font = ((System.Drawing.Font)(resources.GetObject("textEditPayment2.Properties.AppearanceDisabled.Font")));
+            this.textEditPayment2.Properties.AppearanceDisabled.Options.UseFont = true;
+            this.textEditPayment2.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.textEditPayment2.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.textEditPayment2.Properties.AppearanceFocused.Font = ((System.Drawing.Font)(resources.GetObject("textEditPayment2.Properties.AppearanceFocused.Font")));
+            this.textEditPayment2.Properties.AppearanceFocused.Options.UseFont = true;
+            this.textEditPayment2.Properties.AppearanceFocused.Options.UseTextOptions = true;
+            this.textEditPayment2.Properties.AppearanceFocused.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.textEditPayment2.Properties.DisplayFormat.FormatString = "C2";
+            this.textEditPayment2.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.textEditPayment2.Properties.NullText = resources.GetString("textEditPayment2.Properties.NullText");
+            this.textEditPayment2.Properties.ValidateOnEnterKey = true;
+            this.textEditPayment2.StyleController = this.layoutControl1;
+            this.textEditPayment2.EditValueChanged += new System.EventHandler(this.textEditPayment2_EditValueChanged);
+            this.textEditPayment2.Validating += new System.ComponentModel.CancelEventHandler(this.textEditPayment2_Validating);
+            this.textEditPayment2.Validated += new System.EventHandler(this.textEditPayment2_Validated);
+            // 
+            // textEditPayment1
+            // 
+            this.textEditPayment1.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.OPNBANKbindingSource, "Payment1", true));
+            this.textEditPayment1.EnterMoveNextControl = true;
+            resources.ApplyResources(this.textEditPayment1, "textEditPayment1");
+            this.textEditPayment1.MenuManager = this.toolbarFormManager1;
+            this.textEditPayment1.Name = "textEditPayment1";
+            this.textEditPayment1.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
+            this.textEditPayment1.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textEditPayment1.Properties.Appearance.Font")));
+            this.textEditPayment1.Properties.Appearance.Options.UseFont = true;
+            this.textEditPayment1.Properties.Appearance.Options.UseTextOptions = true;
+            this.textEditPayment1.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.textEditPayment1.Properties.AppearanceDisabled.Font = ((System.Drawing.Font)(resources.GetObject("textEditPayment1.Properties.AppearanceDisabled.Font")));
+            this.textEditPayment1.Properties.AppearanceDisabled.Options.UseFont = true;
+            this.textEditPayment1.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.textEditPayment1.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.textEditPayment1.Properties.AppearanceFocused.Font = ((System.Drawing.Font)(resources.GetObject("textEditPayment1.Properties.AppearanceFocused.Font")));
+            this.textEditPayment1.Properties.AppearanceFocused.Options.UseFont = true;
+            this.textEditPayment1.Properties.AppearanceFocused.Options.UseTextOptions = true;
+            this.textEditPayment1.Properties.AppearanceFocused.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.textEditPayment1.Properties.DisplayFormat.FormatString = "C2";
+            this.textEditPayment1.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.textEditPayment1.Properties.NullText = resources.GetString("textEditPayment1.Properties.NullText");
+            this.textEditPayment1.Properties.ValidateOnEnterKey = true;
+            this.textEditPayment1.StyleController = this.layoutControl1;
+            this.textEditPayment1.EditValueChanged += new System.EventHandler(this.textEditPayment1_EditValueChanged);
+            this.textEditPayment1.Validating += new System.ComponentModel.CancelEventHandler(this.textEditPayment1_Validating);
+            this.textEditPayment1.Validated += new System.EventHandler(this.textEditPayment1_Validated);
+            // 
+            // comboBoxEditPaymentDay1
+            // 
+            this.comboBoxEditPaymentDay1.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.OPNBANKbindingSource, "PayDay1", true));
+            resources.ApplyResources(this.comboBoxEditPaymentDay1, "comboBoxEditPaymentDay1");
+            this.comboBoxEditPaymentDay1.EnterMoveNextControl = true;
+            this.comboBoxEditPaymentDay1.MenuManager = this.toolbarFormManager1;
+            this.comboBoxEditPaymentDay1.Name = "comboBoxEditPaymentDay1";
+            this.comboBoxEditPaymentDay1.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
+            this.comboBoxEditPaymentDay1.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("comboBoxEditPaymentDay1.Properties.Appearance.Font")));
+            this.comboBoxEditPaymentDay1.Properties.Appearance.Options.UseFont = true;
+            this.comboBoxEditPaymentDay1.Properties.AppearanceDisabled.Font = ((System.Drawing.Font)(resources.GetObject("comboBoxEditPaymentDay1.Properties.AppearanceDisabled.Font")));
+            this.comboBoxEditPaymentDay1.Properties.AppearanceDisabled.Options.UseFont = true;
+            this.comboBoxEditPaymentDay1.Properties.AppearanceDropDown.Font = ((System.Drawing.Font)(resources.GetObject("comboBoxEditPaymentDay1.Properties.AppearanceDropDown.Font")));
+            this.comboBoxEditPaymentDay1.Properties.AppearanceDropDown.Options.UseFont = true;
+            this.comboBoxEditPaymentDay1.Properties.AppearanceFocused.Font = ((System.Drawing.Font)(resources.GetObject("comboBoxEditPaymentDay1.Properties.AppearanceFocused.Font")));
+            this.comboBoxEditPaymentDay1.Properties.AppearanceFocused.Options.UseFont = true;
+            this.comboBoxEditPaymentDay1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("comboBoxEditPaymentDay1.Properties.Buttons"))))});
+            this.comboBoxEditPaymentDay1.Properties.DisplayFormat.FormatString = "N0";
+            this.comboBoxEditPaymentDay1.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.comboBoxEditPaymentDay1.Properties.DropDownRows = 4;
+            this.comboBoxEditPaymentDay1.Properties.Items.AddRange(new object[] {
+            resources.GetString("comboBoxEditPaymentDay1.Properties.Items"),
+            resources.GetString("comboBoxEditPaymentDay1.Properties.Items1"),
+            resources.GetString("comboBoxEditPaymentDay1.Properties.Items2"),
+            resources.GetString("comboBoxEditPaymentDay1.Properties.Items3"),
+            resources.GetString("comboBoxEditPaymentDay1.Properties.Items4")});
+            this.comboBoxEditPaymentDay1.Properties.NullText = resources.GetString("comboBoxEditPaymentDay1.Properties.NullText");
+            this.comboBoxEditPaymentDay1.Properties.ValidateOnEnterKey = true;
+            this.comboBoxEditPaymentDay1.StyleController = this.layoutControl1;
+            this.comboBoxEditPaymentDay1.EditValueChanged += new System.EventHandler(this.comboBoxEditPaymentDay1_EditValueChanged);
+            // 
+            // comboBoxEditPaymentDay2
+            // 
+            this.comboBoxEditPaymentDay2.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.OPNBANKbindingSource, "PayDay2", true));
+            this.comboBoxEditPaymentDay2.EnterMoveNextControl = true;
+            resources.ApplyResources(this.comboBoxEditPaymentDay2, "comboBoxEditPaymentDay2");
+            this.comboBoxEditPaymentDay2.MenuManager = this.toolbarFormManager1;
+            this.comboBoxEditPaymentDay2.Name = "comboBoxEditPaymentDay2";
+            this.comboBoxEditPaymentDay2.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
+            this.comboBoxEditPaymentDay2.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("comboBoxEditPaymentDay2.Properties.Appearance.Font")));
+            this.comboBoxEditPaymentDay2.Properties.Appearance.Options.UseFont = true;
+            this.comboBoxEditPaymentDay2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("comboBoxEditPaymentDay2.Properties.Buttons"))))});
+            this.comboBoxEditPaymentDay2.Properties.DisplayFormat.FormatString = "N0";
+            this.comboBoxEditPaymentDay2.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.comboBoxEditPaymentDay2.Properties.DropDownRows = 4;
+            this.comboBoxEditPaymentDay2.Properties.Items.AddRange(new object[] {
+            resources.GetString("comboBoxEditPaymentDay2.Properties.Items"),
+            resources.GetString("comboBoxEditPaymentDay2.Properties.Items1"),
+            resources.GetString("comboBoxEditPaymentDay2.Properties.Items2"),
+            resources.GetString("comboBoxEditPaymentDay2.Properties.Items3"),
+            resources.GetString("comboBoxEditPaymentDay2.Properties.Items4")});
+            this.comboBoxEditPaymentDay2.Properties.NullText = resources.GetString("comboBoxEditPaymentDay2.Properties.NullText");
+            this.comboBoxEditPaymentDay2.Properties.ValidateOnEnterKey = true;
+            this.comboBoxEditPaymentDay2.StyleController = this.layoutControl1;
+            this.comboBoxEditPaymentDay2.EditValueChanged += new System.EventHandler(this.comboBoxEditPaymentDay2_EditValueChanged);
+            // 
+            // comboBoxEditPaymentDay3
+            // 
+            this.comboBoxEditPaymentDay3.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.OPNBANKbindingSource, "PayDay3", true));
+            this.comboBoxEditPaymentDay3.EnterMoveNextControl = true;
+            resources.ApplyResources(this.comboBoxEditPaymentDay3, "comboBoxEditPaymentDay3");
+            this.comboBoxEditPaymentDay3.MenuManager = this.toolbarFormManager1;
+            this.comboBoxEditPaymentDay3.Name = "comboBoxEditPaymentDay3";
+            this.comboBoxEditPaymentDay3.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
+            this.comboBoxEditPaymentDay3.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("comboBoxEditPaymentDay3.Properties.Appearance.Font")));
+            this.comboBoxEditPaymentDay3.Properties.Appearance.Options.UseFont = true;
+            this.comboBoxEditPaymentDay3.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("comboBoxEditPaymentDay3.Properties.Buttons"))))});
+            this.comboBoxEditPaymentDay3.Properties.DisplayFormat.FormatString = "N0";
+            this.comboBoxEditPaymentDay3.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.comboBoxEditPaymentDay3.Properties.DropDownRows = 4;
+            this.comboBoxEditPaymentDay3.Properties.Items.AddRange(new object[] {
+            resources.GetString("comboBoxEditPaymentDay3.Properties.Items"),
+            resources.GetString("comboBoxEditPaymentDay3.Properties.Items1"),
+            resources.GetString("comboBoxEditPaymentDay3.Properties.Items2"),
+            resources.GetString("comboBoxEditPaymentDay3.Properties.Items3"),
+            resources.GetString("comboBoxEditPaymentDay3.Properties.Items4")});
+            this.comboBoxEditPaymentDay3.Properties.NullText = resources.GetString("comboBoxEditPaymentDay3.Properties.NullText");
+            this.comboBoxEditPaymentDay3.Properties.ValidateOnEnterKey = true;
+            this.comboBoxEditPaymentDay3.StyleController = this.layoutControl1;
+            this.comboBoxEditPaymentDay3.EditValueChanged += new System.EventHandler(this.comboBoxEditPaymentDay3_EditValueChanged);
+            // 
+            // comboBoxEditPaymentDay4
+            // 
+            resources.ApplyResources(this.comboBoxEditPaymentDay4, "comboBoxEditPaymentDay4");
+            this.comboBoxEditPaymentDay4.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.OPNBANKbindingSource, "PayDay4", true));
+            this.comboBoxEditPaymentDay4.EnterMoveNextControl = true;
+            this.comboBoxEditPaymentDay4.MenuManager = this.toolbarFormManager1;
+            this.comboBoxEditPaymentDay4.Name = "comboBoxEditPaymentDay4";
+            this.comboBoxEditPaymentDay4.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
+            this.comboBoxEditPaymentDay4.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("comboBoxEditPaymentDay4.Properties.Appearance.Font")));
+            this.comboBoxEditPaymentDay4.Properties.Appearance.Options.UseFont = true;
+            this.comboBoxEditPaymentDay4.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("comboBoxEditPaymentDay4.Properties.Buttons"))))});
+            this.comboBoxEditPaymentDay4.Properties.DisplayFormat.FormatString = "N0";
+            this.comboBoxEditPaymentDay4.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.comboBoxEditPaymentDay4.Properties.DropDownRows = 4;
+            this.comboBoxEditPaymentDay4.Properties.Items.AddRange(new object[] {
+            resources.GetString("comboBoxEditPaymentDay4.Properties.Items"),
+            resources.GetString("comboBoxEditPaymentDay4.Properties.Items1"),
+            resources.GetString("comboBoxEditPaymentDay4.Properties.Items2"),
+            resources.GetString("comboBoxEditPaymentDay4.Properties.Items3"),
+            resources.GetString("comboBoxEditPaymentDay4.Properties.Items4")});
+            this.comboBoxEditPaymentDay4.Properties.NullText = resources.GetString("comboBoxEditPaymentDay4.Properties.NullText");
+            this.comboBoxEditPaymentDay4.Properties.ValidateOnEnterKey = true;
+            this.comboBoxEditPaymentDay4.StyleController = this.layoutControl1;
+            this.comboBoxEditPaymentDay4.EditValueChanged += new System.EventHandler(this.comboBoxEditPaymentDay4_EditValueChanged);
+            // 
+            // Root
+            // 
+            this.Root.AppearanceGroup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.Root.AppearanceGroup.Options.UseBackColor = true;
+            this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.Root.GroupBordersVisible = false;
+            this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItemPaymentDay1,
+            this.layoutControlItemPaymentDay2,
+            this.layoutControlItemPaymentAmount1,
+            this.layoutControlItem7,
+            this.layoutControlItem6,
+            this.emptySpaceItem2,
+            this.layoutControlItemPaymentDay3,
+            this.emptySpaceItem6,
+            this.layoutControlItemPaymentDay4,
+            this.layoutControlItem8,
+            this.emptySpaceItem4,
+            this.emptySpaceItem3,
+            this.emptySpaceItem1,
+            this.simpleLabelItem1,
+            this.emptySpaceItem5,
+            this.emptySpaceItem7,
+            this.emptySpaceItem8,
+            this.layoutControlItemFullPaymentAmount,
+            this.emptySpaceItem9,
+            this.layoutControlItemTotalPayments,
+            this.emptySpaceItem10,
+            this.simpleSeparator1,
+            this.emptySpaceItem11,
+            this.layoutControlItemAmountUnused,
+            this.emptySpaceItem12,
+            this.simpleSeparator2});
+            this.Root.Name = "Root";
+            this.Root.Size = new System.Drawing.Size(462, 350);
+            this.Root.TextVisible = false;
+            // 
+            // layoutControlItemPaymentDay1
+            // 
+            this.layoutControlItemPaymentDay1.AppearanceItemCaption.Font = ((System.Drawing.Font)(resources.GetObject("layoutControlItemPaymentDay1.AppearanceItemCaption.Font")));
+            this.layoutControlItemPaymentDay1.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutControlItemPaymentDay1.AppearanceItemCaption.Options.UseTextOptions = true;
+            this.layoutControlItemPaymentDay1.AppearanceItemCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.layoutControlItemPaymentDay1.Control = this.comboBoxEditPaymentDay1;
+            this.layoutControlItemPaymentDay1.Location = new System.Drawing.Point(0, 58);
+            this.layoutControlItemPaymentDay1.Name = "layoutControlItemPaymentDay1";
+            this.layoutControlItemPaymentDay1.Size = new System.Drawing.Size(181, 32);
+            resources.ApplyResources(this.layoutControlItemPaymentDay1, "layoutControlItemPaymentDay1");
+            this.layoutControlItemPaymentDay1.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.CustomSize;
+            this.layoutControlItemPaymentDay1.TextLocation = DevExpress.Utils.Locations.Left;
+            this.layoutControlItemPaymentDay1.TextSize = new System.Drawing.Size(115, 21);
+            this.layoutControlItemPaymentDay1.TextToControlDistance = 5;
+            // 
+            // layoutControlItemPaymentDay2
+            // 
+            this.layoutControlItemPaymentDay2.AppearanceItemCaption.Font = ((System.Drawing.Font)(resources.GetObject("layoutControlItemPaymentDay2.AppearanceItemCaption.Font")));
+            this.layoutControlItemPaymentDay2.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutControlItemPaymentDay2.AppearanceItemCaption.Options.UseTextOptions = true;
+            this.layoutControlItemPaymentDay2.AppearanceItemCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.layoutControlItemPaymentDay2.Control = this.comboBoxEditPaymentDay2;
+            this.layoutControlItemPaymentDay2.Location = new System.Drawing.Point(0, 100);
+            this.layoutControlItemPaymentDay2.Name = "layoutControlItemPaymentDay2";
+            this.layoutControlItemPaymentDay2.Size = new System.Drawing.Size(181, 32);
+            resources.ApplyResources(this.layoutControlItemPaymentDay2, "layoutControlItemPaymentDay2");
+            this.layoutControlItemPaymentDay2.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.CustomSize;
+            this.layoutControlItemPaymentDay2.TextLocation = DevExpress.Utils.Locations.Left;
+            this.layoutControlItemPaymentDay2.TextSize = new System.Drawing.Size(115, 21);
+            this.layoutControlItemPaymentDay2.TextToControlDistance = 5;
+            // 
+            // layoutControlItemPaymentAmount1
+            // 
+            this.layoutControlItemPaymentAmount1.AppearanceItemCaption.Font = ((System.Drawing.Font)(resources.GetObject("layoutControlItemPaymentAmount1.AppearanceItemCaption.Font")));
+            this.layoutControlItemPaymentAmount1.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutControlItemPaymentAmount1.AppearanceItemCaption.Options.UseTextOptions = true;
+            this.layoutControlItemPaymentAmount1.AppearanceItemCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.layoutControlItemPaymentAmount1.Control = this.textEditPayment1;
+            this.layoutControlItemPaymentAmount1.Location = new System.Drawing.Point(223, 58);
+            this.layoutControlItemPaymentAmount1.Name = "layoutControlItemPaymentAmount1";
+            this.layoutControlItemPaymentAmount1.Size = new System.Drawing.Size(219, 32);
+            resources.ApplyResources(this.layoutControlItemPaymentAmount1, "layoutControlItemPaymentAmount1");
+            this.layoutControlItemPaymentAmount1.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.CustomSize;
+            this.layoutControlItemPaymentAmount1.TextLocation = DevExpress.Utils.Locations.Left;
+            this.layoutControlItemPaymentAmount1.TextSize = new System.Drawing.Size(115, 21);
+            this.layoutControlItemPaymentAmount1.TextToControlDistance = 5;
+            // 
+            // layoutControlItem7
+            // 
+            this.layoutControlItem7.AppearanceItemCaption.Font = ((System.Drawing.Font)(resources.GetObject("layoutControlItem7.AppearanceItemCaption.Font")));
+            this.layoutControlItem7.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutControlItem7.AppearanceItemCaption.Options.UseTextOptions = true;
+            this.layoutControlItem7.AppearanceItemCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.layoutControlItem7.Control = this.textEditPayment3;
+            this.layoutControlItem7.Location = new System.Drawing.Point(223, 142);
+            this.layoutControlItem7.Name = "layoutControlItem7";
+            this.layoutControlItem7.Size = new System.Drawing.Size(219, 32);
+            resources.ApplyResources(this.layoutControlItem7, "layoutControlItem7");
+            this.layoutControlItem7.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.CustomSize;
+            this.layoutControlItem7.TextLocation = DevExpress.Utils.Locations.Left;
+            this.layoutControlItem7.TextSize = new System.Drawing.Size(115, 21);
+            this.layoutControlItem7.TextToControlDistance = 5;
+            // 
+            // layoutControlItem6
+            // 
+            this.layoutControlItem6.AppearanceItemCaption.Font = ((System.Drawing.Font)(resources.GetObject("layoutControlItem6.AppearanceItemCaption.Font")));
+            this.layoutControlItem6.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutControlItem6.AppearanceItemCaption.Options.UseTextOptions = true;
+            this.layoutControlItem6.AppearanceItemCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.layoutControlItem6.Control = this.textEditPayment2;
+            this.layoutControlItem6.Location = new System.Drawing.Point(223, 100);
+            this.layoutControlItem6.Name = "layoutControlItem6";
+            this.layoutControlItem6.Size = new System.Drawing.Size(219, 32);
+            resources.ApplyResources(this.layoutControlItem6, "layoutControlItem6");
+            this.layoutControlItem6.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.CustomSize;
+            this.layoutControlItem6.TextLocation = DevExpress.Utils.Locations.Left;
+            this.layoutControlItem6.TextSize = new System.Drawing.Size(115, 21);
+            this.layoutControlItem6.TextToControlDistance = 5;
+            // 
+            // emptySpaceItem2
+            // 
+            this.emptySpaceItem2.AllowHotTrack = false;
+            this.emptySpaceItem2.Location = new System.Drawing.Point(181, 100);
+            this.emptySpaceItem2.Name = "emptySpaceItem2";
+            this.emptySpaceItem2.Size = new System.Drawing.Size(42, 32);
+            this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // layoutControlItemPaymentDay3
+            // 
+            this.layoutControlItemPaymentDay3.AppearanceItemCaption.Font = ((System.Drawing.Font)(resources.GetObject("layoutControlItemPaymentDay3.AppearanceItemCaption.Font")));
+            this.layoutControlItemPaymentDay3.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutControlItemPaymentDay3.AppearanceItemCaption.Options.UseTextOptions = true;
+            this.layoutControlItemPaymentDay3.AppearanceItemCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.layoutControlItemPaymentDay3.Control = this.comboBoxEditPaymentDay3;
+            this.layoutControlItemPaymentDay3.Location = new System.Drawing.Point(0, 142);
+            this.layoutControlItemPaymentDay3.Name = "layoutControlItemPaymentDay3";
+            this.layoutControlItemPaymentDay3.Size = new System.Drawing.Size(181, 32);
+            resources.ApplyResources(this.layoutControlItemPaymentDay3, "layoutControlItemPaymentDay3");
+            this.layoutControlItemPaymentDay3.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.CustomSize;
+            this.layoutControlItemPaymentDay3.TextLocation = DevExpress.Utils.Locations.Left;
+            this.layoutControlItemPaymentDay3.TextSize = new System.Drawing.Size(115, 21);
+            this.layoutControlItemPaymentDay3.TextToControlDistance = 5;
+            // 
+            // emptySpaceItem6
+            // 
+            this.emptySpaceItem6.AllowHotTrack = false;
+            this.emptySpaceItem6.Location = new System.Drawing.Point(181, 142);
+            this.emptySpaceItem6.Name = "emptySpaceItem6";
+            this.emptySpaceItem6.Size = new System.Drawing.Size(42, 32);
+            this.emptySpaceItem6.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // layoutControlItemPaymentDay4
+            // 
+            this.layoutControlItemPaymentDay4.AppearanceItemCaption.Font = ((System.Drawing.Font)(resources.GetObject("layoutControlItemPaymentDay4.AppearanceItemCaption.Font")));
+            this.layoutControlItemPaymentDay4.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutControlItemPaymentDay4.AppearanceItemCaption.Options.UseTextOptions = true;
+            this.layoutControlItemPaymentDay4.AppearanceItemCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.layoutControlItemPaymentDay4.Control = this.comboBoxEditPaymentDay4;
+            this.layoutControlItemPaymentDay4.Location = new System.Drawing.Point(0, 184);
+            this.layoutControlItemPaymentDay4.Name = "layoutControlItemPaymentDay4";
+            this.layoutControlItemPaymentDay4.Size = new System.Drawing.Size(181, 32);
+            resources.ApplyResources(this.layoutControlItemPaymentDay4, "layoutControlItemPaymentDay4");
+            this.layoutControlItemPaymentDay4.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.CustomSize;
+            this.layoutControlItemPaymentDay4.TextLocation = DevExpress.Utils.Locations.Left;
+            this.layoutControlItemPaymentDay4.TextSize = new System.Drawing.Size(115, 21);
+            this.layoutControlItemPaymentDay4.TextToControlDistance = 5;
+            // 
+            // layoutControlItem8
+            // 
+            this.layoutControlItem8.AppearanceItemCaption.Font = ((System.Drawing.Font)(resources.GetObject("layoutControlItem8.AppearanceItemCaption.Font")));
+            this.layoutControlItem8.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutControlItem8.AppearanceItemCaption.Options.UseTextOptions = true;
+            this.layoutControlItem8.AppearanceItemCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.layoutControlItem8.Control = this.textEditPayment4;
+            this.layoutControlItem8.Location = new System.Drawing.Point(223, 184);
+            this.layoutControlItem8.Name = "layoutControlItem8";
+            this.layoutControlItem8.Size = new System.Drawing.Size(219, 32);
+            resources.ApplyResources(this.layoutControlItem8, "layoutControlItem8");
+            this.layoutControlItem8.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.CustomSize;
+            this.layoutControlItem8.TextLocation = DevExpress.Utils.Locations.Left;
+            this.layoutControlItem8.TextSize = new System.Drawing.Size(115, 21);
+            this.layoutControlItem8.TextToControlDistance = 5;
+            // 
+            // emptySpaceItem4
+            // 
+            this.emptySpaceItem4.AllowHotTrack = false;
+            this.emptySpaceItem4.Location = new System.Drawing.Point(181, 184);
+            this.emptySpaceItem4.Name = "emptySpaceItem4";
+            this.emptySpaceItem4.Size = new System.Drawing.Size(42, 32);
+            this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // emptySpaceItem3
+            // 
+            this.emptySpaceItem3.AllowHotTrack = false;
+            this.emptySpaceItem3.Location = new System.Drawing.Point(0, 90);
+            this.emptySpaceItem3.Name = "emptySpaceItem3";
+            this.emptySpaceItem3.Size = new System.Drawing.Size(442, 10);
+            this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // emptySpaceItem1
+            // 
+            this.emptySpaceItem1.AllowHotTrack = false;
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 132);
+            this.emptySpaceItem1.Name = "emptySpaceItem1";
+            this.emptySpaceItem1.Size = new System.Drawing.Size(442, 10);
+            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // simpleLabelItem1
+            // 
+            this.simpleLabelItem1.AllowHotTrack = false;
+            this.simpleLabelItem1.AppearanceItemCaption.Font = ((System.Drawing.Font)(resources.GetObject("simpleLabelItem1.AppearanceItemCaption.Font")));
+            this.simpleLabelItem1.AppearanceItemCaption.Options.UseFont = true;
+            this.simpleLabelItem1.AppearanceItemCaption.Options.UseTextOptions = true;
+            this.simpleLabelItem1.AppearanceItemCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.simpleLabelItem1.Location = new System.Drawing.Point(0, 0);
+            this.simpleLabelItem1.Name = "simpleLabelItem1";
+            this.simpleLabelItem1.Size = new System.Drawing.Size(442, 25);
+            resources.ApplyResources(this.simpleLabelItem1, "simpleLabelItem1");
+            this.simpleLabelItem1.TextSize = new System.Drawing.Size(291, 21);
+            // 
+            // emptySpaceItem5
+            // 
+            this.emptySpaceItem5.AllowHotTrack = false;
+            this.emptySpaceItem5.Location = new System.Drawing.Point(181, 58);
+            this.emptySpaceItem5.Name = "emptySpaceItem5";
+            this.emptySpaceItem5.Size = new System.Drawing.Size(42, 32);
+            this.emptySpaceItem5.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // emptySpaceItem7
+            // 
+            this.emptySpaceItem7.AllowHotTrack = false;
+            this.emptySpaceItem7.Location = new System.Drawing.Point(0, 227);
+            this.emptySpaceItem7.Name = "emptySpaceItem7";
+            this.emptySpaceItem7.Size = new System.Drawing.Size(170, 32);
+            this.emptySpaceItem7.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // emptySpaceItem8
+            // 
+            this.emptySpaceItem8.AllowHotTrack = false;
+            this.emptySpaceItem8.Location = new System.Drawing.Point(0, 174);
+            this.emptySpaceItem8.Name = "emptySpaceItem8";
+            this.emptySpaceItem8.Size = new System.Drawing.Size(442, 10);
+            this.emptySpaceItem8.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // layoutControlItemFullPaymentAmount
+            // 
+            this.layoutControlItemFullPaymentAmount.AppearanceItemCaption.Font = ((System.Drawing.Font)(resources.GetObject("layoutControlItemFullPaymentAmount.AppearanceItemCaption.Font")));
+            this.layoutControlItemFullPaymentAmount.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutControlItemFullPaymentAmount.AppearanceItemCaption.Options.UseTextOptions = true;
+            this.layoutControlItemFullPaymentAmount.AppearanceItemCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.layoutControlItemFullPaymentAmount.AppearanceItemCaption.TextOptions.Trimming = DevExpress.Utils.Trimming.None;
+            this.layoutControlItemFullPaymentAmount.AppearanceItemCaptionDisabled.Font = ((System.Drawing.Font)(resources.GetObject("layoutControlItemFullPaymentAmount.AppearanceItemCaptionDisabled.Font")));
+            this.layoutControlItemFullPaymentAmount.AppearanceItemCaptionDisabled.ForeColor = DevExpress.LookAndFeel.DXSkinColors.ForeColors.Information;
+            this.layoutControlItemFullPaymentAmount.AppearanceItemCaptionDisabled.Options.UseFont = true;
+            this.layoutControlItemFullPaymentAmount.AppearanceItemCaptionDisabled.Options.UseForeColor = true;
+            this.layoutControlItemFullPaymentAmount.ContentHorzAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.layoutControlItemFullPaymentAmount.Control = this.textEditFullMonthlyPayment;
+            this.layoutControlItemFullPaymentAmount.Location = new System.Drawing.Point(158, 25);
+            this.layoutControlItemFullPaymentAmount.Name = "layoutControlItemFullPaymentAmount";
+            this.layoutControlItemFullPaymentAmount.Size = new System.Drawing.Size(284, 32);
+            resources.ApplyResources(this.layoutControlItemFullPaymentAmount, "layoutControlItemFullPaymentAmount");
+            this.layoutControlItemFullPaymentAmount.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
+            this.layoutControlItemFullPaymentAmount.TextLocation = DevExpress.Utils.Locations.Left;
+            this.layoutControlItemFullPaymentAmount.TextSize = new System.Drawing.Size(180, 21);
+            this.layoutControlItemFullPaymentAmount.TextToControlDistance = 5;
+            // 
+            // emptySpaceItem9
+            // 
+            this.emptySpaceItem9.AllowHotTrack = false;
+            this.emptySpaceItem9.Location = new System.Drawing.Point(0, 25);
+            this.emptySpaceItem9.Name = "emptySpaceItem9";
+            this.emptySpaceItem9.Size = new System.Drawing.Size(158, 32);
+            this.emptySpaceItem9.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // layoutControlItemTotalPayments
+            // 
+            this.layoutControlItemTotalPayments.AppearanceItemCaption.Font = ((System.Drawing.Font)(resources.GetObject("layoutControlItemTotalPayments.AppearanceItemCaption.Font")));
+            this.layoutControlItemTotalPayments.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutControlItemTotalPayments.AppearanceItemCaptionDisabled.Font = ((System.Drawing.Font)(resources.GetObject("layoutControlItemTotalPayments.AppearanceItemCaptionDisabled.Font")));
+            this.layoutControlItemTotalPayments.AppearanceItemCaptionDisabled.ForeColor = DevExpress.LookAndFeel.DXSkinColors.ForeColors.ControlText;
+            this.layoutControlItemTotalPayments.AppearanceItemCaptionDisabled.Options.UseFont = true;
+            this.layoutControlItemTotalPayments.AppearanceItemCaptionDisabled.Options.UseForeColor = true;
+            this.layoutControlItemTotalPayments.Control = this.textEditTotalPayments;
+            this.layoutControlItemTotalPayments.Location = new System.Drawing.Point(170, 227);
+            this.layoutControlItemTotalPayments.Name = "layoutControlItemTotalPayments";
+            this.layoutControlItemTotalPayments.Size = new System.Drawing.Size(272, 32);
+            resources.ApplyResources(this.layoutControlItemTotalPayments, "layoutControlItemTotalPayments");
+            this.layoutControlItemTotalPayments.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
+            this.layoutControlItemTotalPayments.TextLocation = DevExpress.Utils.Locations.Left;
+            this.layoutControlItemTotalPayments.TextSize = new System.Drawing.Size(168, 21);
+            this.layoutControlItemTotalPayments.TextToControlDistance = 5;
+            // 
+            // emptySpaceItem10
+            // 
+            this.emptySpaceItem10.AllowHotTrack = false;
+            this.emptySpaceItem10.Location = new System.Drawing.Point(0, 291);
+            this.emptySpaceItem10.Name = "emptySpaceItem10";
+            this.emptySpaceItem10.Size = new System.Drawing.Size(442, 39);
+            this.emptySpaceItem10.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // simpleSeparator1
+            // 
+            this.simpleSeparator1.AllowHotTrack = false;
+            this.simpleSeparator1.AppearanceItemCaption.ForeColor = System.Drawing.Color.Black;
+            this.simpleSeparator1.AppearanceItemCaption.Options.UseForeColor = true;
+            this.simpleSeparator1.Location = new System.Drawing.Point(0, 216);
+            this.simpleSeparator1.Name = "simpleSeparator1";
+            this.simpleSeparator1.Size = new System.Drawing.Size(442, 1);
+            // 
+            // emptySpaceItem11
+            // 
+            this.emptySpaceItem11.AllowHotTrack = false;
+            this.emptySpaceItem11.Location = new System.Drawing.Point(0, 217);
+            this.emptySpaceItem11.Name = "emptySpaceItem11";
+            this.emptySpaceItem11.Size = new System.Drawing.Size(442, 10);
+            this.emptySpaceItem11.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // layoutControlItemAmountUnused
+            // 
+            this.layoutControlItemAmountUnused.AppearanceItemCaption.Font = ((System.Drawing.Font)(resources.GetObject("layoutControlItemAmountUnused.AppearanceItemCaption.Font")));
+            this.layoutControlItemAmountUnused.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutControlItemAmountUnused.AppearanceItemCaptionDisabled.Font = ((System.Drawing.Font)(resources.GetObject("layoutControlItemAmountUnused.AppearanceItemCaptionDisabled.Font")));
+            this.layoutControlItemAmountUnused.AppearanceItemCaptionDisabled.ForeColor = DevExpress.LookAndFeel.DXSkinColors.ForeColors.Critical;
+            this.layoutControlItemAmountUnused.AppearanceItemCaptionDisabled.Options.UseFont = true;
+            this.layoutControlItemAmountUnused.AppearanceItemCaptionDisabled.Options.UseForeColor = true;
+            this.layoutControlItemAmountUnused.Control = this.textEditAmountUnused;
+            this.layoutControlItemAmountUnused.Location = new System.Drawing.Point(214, 259);
+            this.layoutControlItemAmountUnused.Name = "layoutControlItemAmountUnused";
+            this.layoutControlItemAmountUnused.Size = new System.Drawing.Size(228, 32);
+            resources.ApplyResources(this.layoutControlItemAmountUnused, "layoutControlItemAmountUnused");
+            this.layoutControlItemAmountUnused.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
+            this.layoutControlItemAmountUnused.TextLocation = DevExpress.Utils.Locations.Left;
+            this.layoutControlItemAmountUnused.TextSize = new System.Drawing.Size(124, 21);
+            this.layoutControlItemAmountUnused.TextToControlDistance = 5;
+            // 
+            // emptySpaceItem12
+            // 
+            this.emptySpaceItem12.AllowHotTrack = false;
+            this.emptySpaceItem12.Location = new System.Drawing.Point(0, 259);
+            this.emptySpaceItem12.Name = "emptySpaceItem12";
+            this.emptySpaceItem12.Size = new System.Drawing.Size(214, 32);
+            this.emptySpaceItem12.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // simpleSeparator2
+            // 
+            this.simpleSeparator2.AllowHotTrack = false;
+            this.simpleSeparator2.Location = new System.Drawing.Point(0, 57);
+            this.simpleSeparator2.Name = "simpleSeparator2";
+            this.simpleSeparator2.Size = new System.Drawing.Size(442, 1);
+            // 
+            // xtraTabPageCreditCard
+            // 
+            this.xtraTabPageCreditCard.Appearance.PageClient.BackColor = System.Drawing.Color.Salmon;
+            this.xtraTabPageCreditCard.Appearance.PageClient.Font = ((System.Drawing.Font)(resources.GetObject("xtraTabPageCreditCard.Appearance.PageClient.Font")));
+            this.xtraTabPageCreditCard.Appearance.PageClient.Options.UseBackColor = true;
+            this.xtraTabPageCreditCard.Appearance.PageClient.Options.UseFont = true;
+            this.xtraTabPageCreditCard.Controls.Add(this.groupBox24);
+            this.xtraTabPageCreditCard.Name = "xtraTabPageCreditCard";
+            resources.ApplyResources(this.xtraTabPageCreditCard, "xtraTabPageCreditCard");
             // 
             // groupBox24
             // 
@@ -7572,6 +8325,11 @@
             this.colImgSort.Name = "colImgSort";
             this.colImgSort.OptionsColumn.AllowEdit = false;
             resources.ApplyResources(this.colImgSort, "colImgSort");
+            // 
+            // colSMSTemplate1
+            // 
+            this.colSMSTemplate1.FieldName = "SMSTemplate";
+            this.colSMSTemplate1.Name = "colSMSTemplate1";
             // 
             // repositoryItemTextEdit1
             // 
@@ -8989,11 +9747,6 @@
             // 
             this.warrantyCompanyTableAdapter.ClearBeforeFill = true;
             // 
-            // colSMSTemplate1
-            // 
-            this.colSMSTemplate1.FieldName = "SMSTemplate";
-            this.colSMSTemplate1.Name = "colSMSTemplate1";
-            // 
             // frmNewCustMaint
             // 
             this.Appearance.BackColor = System.Drawing.Color.CornflowerBlue;
@@ -9189,9 +9942,10 @@
             this.groupBox17.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
             this.xtraTabControl1.ResumeLayout(false);
-            this.xtraTabPage1.ResumeLayout(false);
+            this.xtraTabPageEFT.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupBox23)).EndInit();
             this.groupBox23.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.checkEditSplitPay.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radioGroupAccountType.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditBankMonthlyPayment.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditBankAutoPay.Properties)).EndInit();
@@ -9201,7 +9955,48 @@
             ((System.ComponentModel.ISupportInitialize)(this.textEditBankState.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditBankCity.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditBankName.Properties)).EndInit();
-            this.xtraTabPage2.ResumeLayout(false);
+            this.xtraTabPageMultiPay.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
+            this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.textEditAmountUnused.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditTotalPayments.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditFullMonthlyPayment.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditPayment4.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditPayment3.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditPayment2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditPayment1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEditPaymentDay1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEditPaymentDay2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEditPaymentDay3.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEditPaymentDay4.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemPaymentDay1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemPaymentDay2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemPaymentAmount1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemPaymentDay3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemPaymentDay4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemFullPaymentAmount)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemTotalPayments)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.simpleSeparator1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemAmountUnused)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem12)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.simpleSeparator2)).EndInit();
+            this.xtraTabPageCreditCard.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupBox24)).EndInit();
             this.groupBox24.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEditExpYear.Properties)).EndInit();
@@ -9844,14 +10639,14 @@
         private DevExpress.XtraEditors.GroupControl groupBox21;
         private DevExpress.XtraEditors.GroupControl groupBox22;
         private DevExpress.XtraTab.XtraTabControl xtraTabControl1;
-        private DevExpress.XtraTab.XtraTabPage xtraTabPage1;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPageEFT;
         private DevExpress.XtraEditors.TextEdit textEditBankAccountNumber;
         private DevExpress.XtraEditors.TextEdit textEditBankCheckDigit;
         private DevExpress.XtraEditors.TextEdit textEditBankRoutingNumber;
         private DevExpress.XtraEditors.TextEdit textEditBankState;
         private DevExpress.XtraEditors.TextEdit textEditBankCity;
         private DevExpress.XtraEditors.TextEdit textEditBankName;
-        private DevExpress.XtraTab.XtraTabPage xtraTabPage2;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPageCreditCard;
         private DevExpress.XtraEditors.CheckEdit checkEditBankAutoPay;
         private DevExpress.XtraEditors.LookUpEdit lookUpEditExpMonth;
         private DevExpress.XtraEditors.TextEdit textEditCreditCardCVV;
@@ -9915,6 +10710,47 @@
         private DevExpress.XtraLayout.Converter.LayoutConverter layoutConverter1;
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraGrid.Columns.GridColumn colSMSTemplate1;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPageMultiPay;
+        private DevExpress.XtraEditors.CheckEdit checkEditSplitPay;
+        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEditPaymentDay1;
+        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEditPaymentDay4;
+        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEditPaymentDay3;
+        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEditPaymentDay2;
+        private DevExpress.XtraLayout.LayoutControl layoutControl1;
+        private DevExpress.XtraLayout.LayoutControlGroup Root;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItemPaymentDay1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItemPaymentDay2;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItemPaymentDay3;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItemPaymentDay4;
+        private DevExpress.XtraEditors.TextEdit textEditPayment4;
+        private DevExpress.XtraEditors.TextEdit textEditPayment3;
+        private DevExpress.XtraEditors.TextEdit textEditPayment2;
+        private DevExpress.XtraEditors.TextEdit textEditPayment1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItemPaymentAmount1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem3;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem4;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem6;
+        private DevExpress.XtraLayout.SimpleLabelItem simpleLabelItem1;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem5;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem7;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem8;
+        private DevExpress.XtraEditors.TextEdit textEditFullMonthlyPayment;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItemFullPaymentAmount;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem9;
+        private DevExpress.XtraEditors.TextEdit textEditTotalPayments;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItemTotalPayments;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem10;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem11;
+        private DevExpress.XtraLayout.SimpleSeparator simpleSeparator1;
+        private DevExpress.XtraEditors.TextEdit textEditAmountUnused;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItemAmountUnused;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem12;
+        private DevExpress.XtraLayout.SimpleSeparator simpleSeparator2;
     }
 }
 

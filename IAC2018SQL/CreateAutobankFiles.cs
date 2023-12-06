@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.IO;
+using DevExpress.XtraReports.UI;
+using DevExpress.DataAccess.Sql;
+
 
 
 namespace IAC2021SQL
@@ -30,11 +33,7 @@ namespace IAC2021SQL
         private void buttonPost_Click(object sender, EventArgs e)
         {
             Hide();
-            MDIIAC2013 MDImain = (MDIIAC2013)MdiParent;
-            MDImain.CreateFormInstance("ReportViewer", false);
-            ReportViewer rptViewr = (ReportViewer)MDImain.ActiveMdiChild;
-
-            PrintEFTList(rptViewr);
+            PrintEFTList();
             Close();
         }
 
@@ -43,7 +42,7 @@ namespace IAC2021SQL
             Close();
         }
 
-        private void PrintEFTList(ReportViewer rptViewer)
+        private void PrintEFTList()
         {
             IACDataSet ReportData = new IACDataSet();
 
@@ -68,15 +67,23 @@ namespace IAC2021SQL
                 MessageBox.Show("*** Sorry there are no EFT Customers for the criteria you entered!!! ***");
             else
             {
-                CustomerEFTListing myReportObject = new CustomerEFTListing();
-                myReportObject.SetDataSource(ReportData);
-                myReportObject.SetParameterValue("gsUserID", Program.gsUserID);
-                myReportObject.SetParameterValue("gsUserName", Program.gsUserName);
-                myReportObject.SetParameterValue("gdCutOff", (Nullable<DateTime>)nullableDateTimePickerCutOffDate.EditValue);
-                myReportObject.SetParameterValue("gnDayDue", lnDueDay);
-                rptViewer.crystalReportViewer.ReportSource = myReportObject;
-                rptViewer.crystalReportViewer.Refresh();
-                rptViewer.Show();
+                // Moses Newman 12/05/2023 Covert to XtraReport
+                var report = new XtraReportCustomerEFTListing();
+                SqlDataSource ds = report.DataSource as SqlDataSource;
+
+                report.DataSource = ds;
+                report.RequestParameters = false;
+                report.Parameters["gsUserID"].Value = Program.gsUserID;
+                report.Parameters["gsUserName"].Value = Program.gsUserName;
+                report.Parameters["gdCutOff"].Value = (Nullable<DateTime>)nullableDateTimePickerCutOffDate.EditValue;
+                report.Parameters["gnDayDue"].Value = lnDueDay;
+
+                MDIIAC2013 MDImain = (MDIIAC2013)MdiParent;
+                var tool = new ReportPrintTool(report);
+                tool.PreviewRibbonForm.MdiParent = MDImain;
+                tool.AutoShowParametersPanel = false;
+                tool.PreviewRibbonForm.WindowState = FormWindowState.Maximized;
+                tool.ShowRibbonPreview();
             }
             if (checkBoxAutobank.Checked)
                 CreateAUTOBANKFile(ReportData);
@@ -274,7 +281,7 @@ namespace IAC2021SQL
             BindingSource PAYMENTBindingSource = new BindingSource();
             BindingSource OPNPAYBindingSource  = new BindingSource();
 
-            AutoPayRejectsBindingSource.DataSource       = AUTOBANK.AutoPayRejects;
+            AutoPayRejectsBindingSource.DataSource = AUTOBANK.AutoPayRejects;
             AutoPayRejectsTableAdapter.DeleteAll();
             PAYMENTBindingSource.DataSource = AUTOBANK.PAYMENT;
             OPNPAYBindingSource.DataSource  = AUTOBANK.OPNPAY;
@@ -443,26 +450,27 @@ namespace IAC2021SQL
             finally
             {
                 MessageBox.Show("*** EFT Payment transfer completed successfully! ***");
-
-                MDIIAC2013 MDImain = (MDIIAC2013)MdiParent;
                 if (AUTOBANK.AutoPayRejects.Rows.Count != 0)
                 {
                     Hide();
-                    MDImain.CreateFormInstance("ReportViewer", false);
-                    ReportViewer rptViewer = (ReportViewer)MDImain.ActiveMdiChild;
 
-                    AutoPaymentRejects myReportObject = new AutoPaymentRejects();
-                    myReportObject.SetDataSource(AUTOBANK);
-                    myReportObject.SetParameterValue("gsUserID", Program.gsUserID);
-                    myReportObject.SetParameterValue("gsUserName", Program.gsUserName);
-                    myReportObject.SetParameterValue("gsTitle", "EFT PAYMENT REJECTS REPORT");
-                    rptViewer.crystalReportViewer.ReportSource = myReportObject;
-                    rptViewer.crystalReportViewer.Refresh();
-                    rptViewer.Show();
+                    // Moses Newman 12/05/2023 Covert to XtraReport
+                    var report = new XtraReportAutoPaymentRejects();
+                    SqlDataSource ds = report.DataSource as SqlDataSource;
+
+                    report.DataSource = ds;
+                    report.RequestParameters = false;
+                    report.Parameters["gsUserID"].Value = Program.gsUserID;
+                    report.Parameters["gsUserName"].Value = Program.gsUserName;
+                    report.Parameters["gsTitle"].Value = "EFT PAYMENT REJECTS REPORT";
+
+                    MDIIAC2013 MDImain = (MDIIAC2013)MdiParent;
+                    var tool = new ReportPrintTool(report);
+                    tool.PreviewRibbonForm.MdiParent = MDImain;
+                    tool.AutoShowParametersPanel = false;
+                    tool.PreviewRibbonForm.WindowState = FormWindowState.Maximized;
+                    tool.ShowRibbonPreview();
                 }
-                //MDImain.paymentReceiptsBalanceJurnalToolStripMenuItem_Click(sender, e);  //Closed IACRPT7
-                //MDImain.paymentReceiptsBalanceJournalToolStripMenuItem1_Click(sender, e); // Open IACRPT7
-
                 Close();
                 AutomaticPaymentsTableAdapter.DeleteAllEFT();
             }
