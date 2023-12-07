@@ -3151,7 +3151,7 @@ namespace IAC2021SQL
 			{
 				Int32 i = 0;
 				cUSTOMERTableAdapter.Fill(ClosedPaymentiacDataSet.CUSTOMER, CustomerNo);
-				if (ClosedPaymentiacDataSet.CUSTOMER.Rows.Count > 0)
+                if (ClosedPaymentiacDataSet.CUSTOMER.Rows.Count > 0)
 				{
 					paymentHistoryTableAdapter.Insert((Int32?)null,
 													  ClosedPaymentiacDataSet.PAYMENT.Rows[i].Field<Int32?>("ISFID") != null,
@@ -3190,7 +3190,15 @@ namespace IAC2021SQL
 													  ClosedPaymentiacDataSet.PAYMENT.Rows[i].Field<Int32?>("TicketDetailID"),
 													  false,
 													  0, ref id);
-					Program.ApplySinglePayment(ClosedPaymentiacDataSet.PAYMENT.Rows[i].Field<String>("PAYMENT_CUSTOMER"), (Int32)id);
+                    // Moses Newman 12/07/2023 Make Sure TVAmort Records Exist!
+                    Program.TVSimpleGetBuyout(ClosedPaymentiacDataSet,
+                                              DateTime.Now.Date,
+                                              (Double)ClosedPaymentiacDataSet.CUSTOMER.Rows[0].Field<Int32>("CUSTOMER_TERM"),
+                                              (Double)(ClosedPaymentiacDataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_ANNUAL_PERCENTAGE_RATE") / 100),
+                                              (Double)ClosedPaymentiacDataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_REGULAR_AMOUNT"),
+                                                               ClosedPaymentiacDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO"),
+                                                               true, true, true, true,i,true);
+                    Program.ApplySinglePayment(ClosedPaymentiacDataSet.PAYMENT.Rows[i].Field<String>("PAYMENT_CUSTOMER"), (Int32)id);
 				}
 			}
 			paymentDataSet.PaymentHistory.Clear();
@@ -3219,7 +3227,7 @@ namespace IAC2021SQL
             for (Int32 i = 0; i < ClosedPaymentiacDataSet.PAYMENT.Rows.Count; i++)
             {
                 cUSTOMERTableAdapter.Fill(ClosedPaymentiacDataSet.CUSTOMER, ClosedPaymentiacDataSet.PAYMENT.Rows[i].Field<String>("PAYMENT_CUSTOMER"));
-                CustomerID = Convert.ToInt32(ClosedPaymentiacDataSet.PAYMENT.Rows[i].Field<String>("PAYMENT_CUSTOMER"));
+				CustomerID = Convert.ToInt32(ClosedPaymentiacDataSet.PAYMENT.Rows[i].Field<String>("PAYMENT_CUSTOMER"));
                 paymentHistoryTableAdapter.Insert((Int32?)null,
                                                   ClosedPaymentiacDataSet.PAYMENT.Rows[i].Field<Int32?>("ISFID") != null,
                                                   CustomerID,
@@ -3257,6 +3265,14 @@ namespace IAC2021SQL
                                                   ClosedPaymentiacDataSet.PAYMENT.Rows[i].Field<Int32?>("TicketDetailID"),
                                                   false,
                                                   0, ref id);
+                // Moses Newman 12/07/2023 Make Sure TVAmort Records Exist!
+                Program.TVSimpleGetBuyout(ClosedPaymentiacDataSet,
+                                          DateTime.Now.Date,
+                                          (Double)ClosedPaymentiacDataSet.CUSTOMER.Rows[0].Field<Int32>("CUSTOMER_TERM"),
+                                          (Double)(ClosedPaymentiacDataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_ANNUAL_PERCENTAGE_RATE") / 100),
+                                          (Double)ClosedPaymentiacDataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_REGULAR_AMOUNT"),
+                                                           ClosedPaymentiacDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO"),
+                                                           true, true, true, true,i,true);
                 Program.ApplySinglePayment(ClosedPaymentiacDataSet.PAYMENT.Rows[i].Field<String>("PAYMENT_CUSTOMER"), (Int32)id);
             }
             paymentDataSet.PaymentHistory.Clear();
