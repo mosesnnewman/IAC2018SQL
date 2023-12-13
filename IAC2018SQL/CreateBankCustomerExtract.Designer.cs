@@ -40,7 +40,10 @@
             this.nullableDateTimePickerPIStartDate = new DevExpress.XtraEditors.DateEdit();
             this.groupBoxMainSelection = new System.Windows.Forms.GroupBox();
             this.lookUpEditState = new DevExpress.XtraEditors.LookUpEdit();
+            this.bindingSourceState = new System.Windows.Forms.BindingSource(this.components);
+            this.Bank = new IAC2021SQL.IACDataSet();
             this.lookUpEditDealer = new DevExpress.XtraEditors.LookUpEdit();
+            this.bindingSourceDLRLISTBYNUM = new System.Windows.Forms.BindingSource(this.components);
             this.radioGroupMatch = new DevExpress.XtraEditors.RadioGroup();
             this.simpleButtonClearRadioButtons = new DevExpress.XtraEditors.SimpleButton();
             this.txtControlDateEnd = new DevExpress.XtraEditors.TextEdit();
@@ -72,9 +75,6 @@
             this.listBoxFieldList = new DevExpress.XtraEditors.ListBoxControl();
             this.listBoxSelectedFields = new DevExpress.XtraEditors.ListBoxControl();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.bindingSourceDLRLISTBYNUM = new System.Windows.Forms.BindingSource(this.components);
-            this.bindingSourceState = new System.Windows.Forms.BindingSource(this.components);
-            this.Bank = new IAC2021SQL.IACDataSet();
             this.aCCOUNTTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.ACCOUNTTableAdapter();
             this.DLRLISTBYNUMTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.DLRLISTBYNUMTableAdapter();
             this.stateTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.stateTableAdapter();
@@ -84,24 +84,27 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             this.groupBoxPI.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerPIEndDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerPIEndDate.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerPIStartDate.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerPIEndDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerPIStartDate.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerPIStartDate.Properties.CalendarTimeProperties)).BeginInit();
             this.groupBoxMainSelection.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEditState.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceState)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Bank)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEditDealer.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceDLRLISTBYNUM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radioGroupMatch.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtControlDateEnd.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtControlDateStart.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkBoxFundingDate.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerBuyoutDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerBuyoutDate.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerBuyoutDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkBoxRepos.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerEndDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerEndDate.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerStartDate.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerEndDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerStartDate.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerStartDate.Properties.CalendarTimeProperties)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.tabFieldList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
@@ -109,9 +112,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.listBoxFieldList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listBoxSelectedFields)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceDLRLISTBYNUM)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceState)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Bank)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -255,8 +255,19 @@
             this.lookUpEditState.Properties.DisplayMember = "name";
             this.lookUpEditState.Properties.NullText = "";
             this.lookUpEditState.Properties.ValueMember = "abbreviation";
-            this.lookUpEditState.Size = new System.Drawing.Size(86, 26);
+            this.lookUpEditState.Size = new System.Drawing.Size(171, 26);
             this.lookUpEditState.TabIndex = 119;
+            // 
+            // bindingSourceState
+            // 
+            this.bindingSourceState.AllowNew = true;
+            this.bindingSourceState.DataMember = "state";
+            this.bindingSourceState.DataSource = this.Bank;
+            // 
+            // Bank
+            // 
+            this.Bank.DataSetName = "IACDataSet";
+            this.Bank.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // lookUpEditDealer
             // 
@@ -278,6 +289,11 @@
             this.lookUpEditDealer.Properties.ValueMember = "id";
             this.lookUpEditDealer.Size = new System.Drawing.Size(86, 26);
             this.lookUpEditDealer.TabIndex = 12;
+            // 
+            // bindingSourceDLRLISTBYNUM
+            // 
+            this.bindingSourceDLRLISTBYNUM.DataMember = "DLRLISTBYNUM";
+            this.bindingSourceDLRLISTBYNUM.DataSource = this.Bank;
             // 
             // radioGroupMatch
             // 
@@ -359,7 +375,7 @@
             // 
             this.labelBuyoutDate.Location = new System.Drawing.Point(231, 23);
             this.labelBuyoutDate.Name = "labelBuyoutDate";
-            this.labelBuyoutDate.Size = new System.Drawing.Size(67, 13);
+            this.labelBuyoutDate.Size = new System.Drawing.Size(66, 13);
             this.labelBuyoutDate.TabIndex = 33;
             this.labelBuyoutDate.Text = "Buyout Date:";
             // 
@@ -470,7 +486,7 @@
             this.radioButtonBoth.AutoSize = true;
             this.radioButtonBoth.Location = new System.Drawing.Point(21, 55);
             this.radioButtonBoth.Name = "radioButtonBoth";
-            this.radioButtonBoth.Size = new System.Drawing.Size(50, 17);
+            this.radioButtonBoth.Size = new System.Drawing.Size(49, 17);
             this.radioButtonBoth.TabIndex = 4;
             this.radioButtonBoth.TabStop = true;
             this.radioButtonBoth.Text = "&Both";
@@ -629,22 +645,6 @@
             this.groupControl2.TabIndex = 1;
             this.groupControl2.Text = "groupControl2";
             // 
-            // bindingSourceDLRLISTBYNUM
-            // 
-            this.bindingSourceDLRLISTBYNUM.DataMember = "DLRLISTBYNUM";
-            this.bindingSourceDLRLISTBYNUM.DataSource = this.Bank;
-            // 
-            // bindingSourceState
-            // 
-            this.bindingSourceState.AllowNew = true;
-            this.bindingSourceState.DataMember = "state";
-            this.bindingSourceState.DataSource = this.Bank;
-            // 
-            // Bank
-            // 
-            this.Bank.DataSetName = "IACDataSet";
-            this.Bank.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // aCCOUNTTableAdapter
             // 
             this.aCCOUNTTableAdapter.ClearBeforeFill = true;
@@ -684,7 +684,10 @@
             this.groupBoxMainSelection.ResumeLayout(false);
             this.groupBoxMainSelection.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEditState.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceState)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Bank)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEditDealer.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceDLRLISTBYNUM)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radioGroupMatch.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtControlDateEnd.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtControlDateStart.Properties)).EndInit();
@@ -704,9 +707,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.listBoxFieldList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listBoxSelectedFields)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceDLRLISTBYNUM)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceState)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Bank)).EndInit();
             this.ResumeLayout(false);
 
         }
