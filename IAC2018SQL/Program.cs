@@ -344,6 +344,9 @@ namespace IAC2021SQL
  									tvDocument.CashFlowMatrix.SetEvent(currentLine, TVConstants.TVEventType.Payment, arPaymentEvents[2]);
 							else
                                 tvDocument.CashFlowMatrix.SetEvent(currentLine, TVConstants.TVEventType.Payment, arPaymentEvents[0]);
+                            // Moses Newman 12/13/2023 handle null value
+                            if(DTPayStream.Rows[i].Field<Decimal?>("CUSTHIST_PAYMENT_RCV") == null)
+								DTPayStream.Rows[i].SetField<Decimal>("CUSTHIST_PAYMENT_RCV",0);
                             tvDocument.CashFlowMatrix.SetAmount(currentLine, (double)DTPayStream.Rows[i].Field<Decimal>("CUSTHIST_PAYMENT_RCV") * CENTS_PER_DOLLAR);
 							tvDocument.CashFlowMatrix.SetNumber(currentLine, 1);
 							// Moses Newman 07/16/2023 Handle new Principal only payment type with Principal First Series
