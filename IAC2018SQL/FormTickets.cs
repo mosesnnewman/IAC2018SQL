@@ -1,15 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraGrid.Views.Base;
-using System.Globalization;
 using DevExpress.XtraEditors;
+using DevExpress.XtraReports.UI;
+using DevExpress.DataAccess.Sql;
+
 
 namespace IAC2021SQL
 {
@@ -527,29 +524,22 @@ namespace IAC2021SQL
         {
             MDIIAC2013 MDImain = (MDIIAC2013)MdiParent;
 
-            MDImain.CreateFormInstance("ReportViewer", false);
-            ReportViewer rptViewer = (ReportViewer)MDImain.ActiveMdiChild;
+            // Moses Newman 12/14/2023 Covert to XtraReport
+            var report = new XtraReportTicket();
+            SqlDataSource ds = report.DataSource as SqlDataSource;
 
-            Ticket myReportObject = new Ticket();
-            ListDataTableAdapters.DLRLISTBYNUMTableAdapter dLRLISTBYNUMTableAdapter = new ListDataTableAdapters.DLRLISTBYNUMTableAdapter();
-            dLRLISTBYNUMTableAdapter.Fill(listDataSet.DLRLISTBYNUM);
+            report.DataSource = ds;
+            report.RequestParameters = false;
+            report.Parameters["gsUserID"].Value = Program.gsUserID;
+            report.Parameters["gsUserName"].Value = Program.gsUserName;
+            report.Parameters["gnTicketID"].Value = tnTicketID;
 
-            ticketHeaderTableAdapter.Fill(ticketsdataset.TicketHeader, tnTicketID);
-            ticketDetailTableAdapter.FillByTicketID(ticketsdataset.TicketDetail, tnTicketID);
-            ticketAccountsTableAdapter.FillByAll(ticketsdataset.TicketAccounts);
+            var tool = new ReportPrintTool(report);
 
-            myReportObject.Database.Tables[0].SetDataSource(productionMainTables);
-            myReportObject.Database.Tables[1].SetDataSource(productionMainTables);
-            myReportObject.Database.Tables[2].SetDataSource(ticketsdataset);
-            myReportObject.Database.Tables[3].SetDataSource(ticketsdataset);
-
-            myReportObject.SetParameterValue("gsUserID", Program.gsUserID);
-            myReportObject.SetParameterValue("gsUserName", Program.gsUserName);
-            rptViewer.crystalReportViewer.ReportSource = myReportObject;
-            rptViewer.crystalReportViewer.Refresh();
-            rptViewer.Show();
-
-            rptViewer.Activate();
+            tool.PreviewRibbonForm.MdiParent = MDImain;
+            tool.AutoShowParametersPanel = false;
+            tool.PreviewRibbonForm.WindowState = FormWindowState.Normal;
+            tool.ShowRibbonPreview();
         }
 
         private void buttonReprint_Click(object sender, EventArgs e)

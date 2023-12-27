@@ -3630,12 +3630,13 @@ namespace IAC2021SQL
             cnn.Open();
             //sql = "SELECT * FROM TVAmort WHERE CustomerNo = '" + cUSTOMER_NOTextBox.EditValue.ToString().Trim() + "'";
             // Moses Newman 07/25/2019 Order By CUSTHIST order.
-            sql = "SELECT [CustomerNo],ROW_NUMBER() OVER(ORDER BY CustomerNo, HistoryDate, HistorySeq)[RowNumber], " +
+            // Moses Newman 12/27/2023 Reorder by ID and window Row Number over ID
+            sql = "SELECT [CustomerNo],ROW_NUMBER() OVER(ORDER BY ID)[RowNumber], " +
                         " [Event],[HistoryDate] [Date],[New],[LateFee],[ISF],[NonCash],[Payment],[Interest],[Principal],[Balance],[RateChange],[ContractStatus]," +
                         " [PartialPayment], [LateFeeBalance],[PaidThrough],[ExtensionMonths],[LastPPBBalance],[LastLFBalance],[LastPPBUsed],[LastPPBUsedLC],[PrevPPBUsed],[PrevPPBUsedLC]," +
                         " [DeltaPTMonths],[ISFDate],[ISFSeqNo],[ISFPaymentType],[ISFPaymentCode],[HistorySeq],[PaymentSeq],[PaymentCode],[HistoryDate] " +
                         " FROM [TVAmort] " +
-                        " WHERE CustomerNo = '" + cUSTOMER_NOTextBox.EditValue.ToString().Trim() + "' ORDER BY CustomerNo,HistoryDate, HistorySeq";
+                        " WHERE CustomerNo = '" + cUSTOMER_NOTextBox.EditValue.ToString().Trim() + "' ORDER BY ID";
             SqlDataAdapter dscmd = new SqlDataAdapter(sql, cnn);
             DataSet ds = new DataSet();
             dscmd.Fill(ds);
@@ -6206,6 +6207,11 @@ namespace IAC2021SQL
                 xtraTabControl1.TabPages[1].PageEnabled = true;
             else
                 xtraTabControl1.TabPages[1].PageEnabled = false;
+        }
+
+        private void xtraTabControlCustomerMaint_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void cUSTOMER_NOTextBox_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
