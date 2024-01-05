@@ -1466,7 +1466,7 @@
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLPRODUCTION.dbo.CreateInvoicesAllNotExisting" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="CreateInvoicesAllNotExisting" Modifier="Public" Name="CreateInvoicesAllNotExisting" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy13" UserSourceName="CreateInvoicesAllNotExisting">
+              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLPRODUCTION.dbo.CreateInvoicesAllNotExisting" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="CreateInvoicesAllNotExisting" Modifier="Public" Name="CreateInvoicesAllNotExisting" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="CreateInvoicesAllNotExisting">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.CreateInvoicesAllNotExisting</CommandText>
@@ -1476,7 +1476,7 @@
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLTEST.dbo.InvoicesDeleteAddedRecordsWithZeroPaid" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="DeleteAddedRecordsWithZeroPaid" Modifier="Public" Name="DeleteAddedRecordsWithZeroPaid" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="DeleteAddedRecordsWithZeroPaid">
+              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLTEST.dbo.InvoicesDeleteAddedRecordsWithZeroPaid" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="DeleteAddedRecordsWithZeroPaid" Modifier="Public" Name="DeleteAddedRecordsWithZeroPaid" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="DeleteAddedRecordsWithZeroPaid">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.InvoicesDeleteAddedRecordsWithZeroPaid</CommandText>
@@ -1547,7 +1547,7 @@
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLTEST.dbo.InvoicesGetLateChargeBalanceByDate" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="GetLateChargeBalanceByDate" Modifier="Public" Name="GetLateChargeBalanceByDate" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="GetLateChargeBalanceByDate">
+              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLTEST.dbo.InvoicesGetLateChargeBalanceByDate" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="GetLateChargeBalanceByDate" Modifier="Public" Name="GetLateChargeBalanceByDate" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="GetLateChargeBalanceByDate">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.InvoicesGetLateChargeBalanceByDate</CommandText>
@@ -1559,7 +1559,7 @@
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLTEST.dbo.InvoicesGetPartialPaymentByDate" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="GetPartialPaymentByDate" Modifier="Public" Name="GetPartialPaymentByDate" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="GetPartialPaymentByDate">
+              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLTEST.dbo.InvoicesGetPartialPaymentByDate" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="GetPartialPaymentByDate" Modifier="Public" Name="GetPartialPaymentByDate" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="GetPartialPaymentByDate">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.InvoicesGetPartialPaymentByDate</CommandText>
@@ -1571,7 +1571,7 @@
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLPRODUCTION.dbo.InvoicesApplyExtension" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="InvoicesApplyExtension" Modifier="Public" Name="InvoicesApplyExtension" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="InvoicesApplyExtension">
+              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLPRODUCTION.dbo.InvoicesApplyExtension" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="InvoicesApplyExtension" Modifier="Public" Name="InvoicesApplyExtension" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="InvoicesApplyExtension">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.InvoicesApplyExtension</CommandText>
@@ -1584,7 +1584,7 @@
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLTEST.dbo.InvoicesGetLastDateDue" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="LastDateDue" Modifier="Public" Name="LastDateDue" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="LastDateDue">
+              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLTEST.dbo.InvoicesGetLastDateDue" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="LastDateDue" Modifier="Public" Name="LastDateDue" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy6" UserSourceName="LastDateDue">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.InvoicesGetLastDateDue</CommandText>
@@ -1595,7 +1595,7 @@
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLTEST.dbo.InvoicesGetLastExtensionCount" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="LastExtensionCount" Modifier="Public" Name="LastExtensionCount" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy6" UserSourceName="LastExtensionCount">
+              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLTEST.dbo.InvoicesGetLastExtensionCount" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="LastExtensionCount" Modifier="Public" Name="LastExtensionCount" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy7" UserSourceName="LastExtensionCount">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.InvoicesGetLastExtensionCount</CommandText>
@@ -1606,7 +1606,7 @@
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLTEST.dbo.InvoicesGetLastLateFee" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="LastLateFee" Modifier="Public" Name="LastLateFee" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy7" UserSourceName="LastLateFee">
+              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLTEST.dbo.InvoicesGetLastLateFee" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="LastLateFee" Modifier="Public" Name="LastLateFee" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy8" UserSourceName="LastLateFee">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.InvoicesGetLastLateFee</CommandText>
@@ -1617,7 +1617,7 @@
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLTEST.dbo.InvoiceGetLateChargeBalance" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="LateChargeBalance" Modifier="Public" Name="LateChargeBalance" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy8" UserSourceName="LateChargeBalance">
+              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLTEST.dbo.InvoiceGetLateChargeBalance" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="LateChargeBalance" Modifier="Public" Name="LateChargeBalance" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy9" UserSourceName="LateChargeBalance">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.InvoiceGetLateChargeBalance</CommandText>
@@ -1628,7 +1628,7 @@
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLTEST.dbo.InvoicesNumberOfPayments" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="NumberOfPayments" Modifier="Public" Name="NumberOfPayments" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy9" UserSourceName="NumberOfPayments">
+              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLTEST.dbo.InvoicesNumberOfPayments" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="NumberOfPayments" Modifier="Public" Name="NumberOfPayments" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy10" UserSourceName="NumberOfPayments">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.InvoicesNumberOfPayments</CommandText>
@@ -1639,7 +1639,7 @@
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLTEST.dbo.InvoiceGetPaidThroughDate" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="PaidThroughDate" Modifier="Public" Name="PaidThroughDate" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy10" UserSourceName="PaidThroughDate">
+              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLTEST.dbo.InvoiceGetPaidThroughDate" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="PaidThroughDate" Modifier="Public" Name="PaidThroughDate" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy11" UserSourceName="PaidThroughDate">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.InvoiceGetPaidThroughDate</CommandText>
@@ -1650,7 +1650,7 @@
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLTEST.dbo.InvoiceGetPaidThru" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="PaidThru" Modifier="Public" Name="PaidThru" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy11" UserSourceName="PaidThru">
+              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLTEST.dbo.InvoiceGetPaidThru" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="PaidThru" Modifier="Public" Name="PaidThru" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy12" UserSourceName="PaidThru">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.InvoiceGetPaidThru</CommandText>
@@ -1661,7 +1661,7 @@
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLTEST.dbo.InvoiceGetPartialPayment" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="PartialPayment" Modifier="Public" Name="PartialPayment" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy12" UserSourceName="PartialPayment">
+              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLTEST.dbo.InvoiceGetPartialPayment" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="PartialPayment" Modifier="Public" Name="PartialPayment" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy13" UserSourceName="PartialPayment">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.InvoiceGetPartialPayment</CommandText>
@@ -1853,6 +1853,30 @@
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@PaidThrough" Precision="23" ProviderType="DateTime" Scale="3" Size="8" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="money" DbType="Currency" Direction="Input" ParameterName="@PartialPayment" Precision="19" ProviderType="Money" Scale="4" Size="8" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="money" DbType="Currency" Direction="Input" ParameterName="@LateChargeBalance" Precision="19" ProviderType="Money" Scale="4" Size="8" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLPRODUCTION.dbo.PaymentHistoryCustomerDailyCount" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="CustomerDailyCount" Modifier="Public" Name="CustomerDailyCount" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy10" UserSourceName="CustomerDailyCount">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.PaymentHistoryCustomerDailyCount</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@CustomerNo" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@ThisDate" Precision="23" ProviderType="DateTime" Scale="3" Size="8" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="IAC2010SQLConnectionString (Settings)" DbObjectName="IACSQLPRODUCTION.dbo.PaymentHistoryCustomerDailyTotal" DbObjectType="StoredProcedure" GenerateShortCommands="true" GeneratorSourceName="CustomerDailyTotal" Modifier="Public" Name="CustomerDailyTotal" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy9" UserSourceName="CustomerDailyTotal">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.PaymentHistoryCustomerDailyTotal</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@CustomerNo" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@ThisDate" Precision="23" ProviderType="DateTime" Scale="3" Size="8" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </SelectCommand>

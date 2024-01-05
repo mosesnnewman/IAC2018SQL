@@ -3478,7 +3478,25 @@ namespace IAC2021SQL
 						}
 						if (lnUnusedFunds > 0 && lnUnusedFunds + lnPartialPayment < lnRegularPayment)
 							lbPayLates = false;
-						lnNumMonthlies = (Int32)Math.Floor((lnPartialPayment+lnUnusedFunds) / lnRegularPayment);
+						// Moses Newman 01/04/2024 No Late Fee distribution if more than one payment today for this account and the sum covers 1 or more payments when combined.
+						if (lbPayLates)
+						{
+							Object oTempDayCount = null, oTempDayTotal = null;
+							Int32 TempDayCount = 0,TempMonthlies = 0;
+							Decimal TempDayTotal = 0;
+
+                            oTempDayCount = PaymentHistoryTableAdapter.CustomerDailyCount(TempCust, PDS.PaymentHistory.Rows[0].Field<DateTime>("PaymentDate"));
+                            oTempDayTotal = PaymentHistoryTableAdapter.CustomerDailyTotal(TempCust, PDS.PaymentHistory.Rows[0].Field<DateTime>("PaymentDate"));
+                            TempDayCount = oTempDayCount != null ? (Int32)oTempDayCount : 0;
+                            TempDayTotal = oTempDayTotal != null ? (Decimal)oTempDayTotal : 0;
+							if(TempDayCount > 1)
+							{
+								TempMonthlies = (Int32)Math.Floor((lnPartialPayment + TempDayTotal) / lnRegularPayment);
+								if (TempMonthlies >= 1)
+									lbPayLates = false;
+                            }
+                        }
+                        lnNumMonthlies = (Int32)Math.Floor((lnPartialPayment+lnUnusedFunds) / lnRegularPayment);
                         if (PDS.Invoices.Count == 0 && lnUnusedFunds > 0)
                         {
 

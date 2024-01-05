@@ -178,7 +178,8 @@ namespace IAC2021SQL
                     tsbSet.ClosedCreditManager.Rows[0].SetField<DateTime>("CRDMGR_DATE_OF_BIRTH_MMDDYYYY", TSBDATA.CUSTOMER.Rows[i].Field<DateTime>("CUSTOMER_DOB"));
                 // Strip ,s from STREET_1 AND STREET_2 if they exist
                 tsbSet.ClosedCreditManager.Rows[0].SetField<String>("CRDMGR_CUST_STREET_1", TSBDATA.CUSTOMER.Rows[i].Field<String>("CUSTOMER_STREET_1").Replace(",", " ").Replace("#", " "));
-                tsbSet.ClosedCreditManager.Rows[0].SetField<String>("CRDMGR_CUST_STREET_2", TSBDATA.CUSTOMER.Rows[i].Field<String>("CUSTOMER_STREET_2").PadRight(20).Substring(0, 20).Replace(",", " "));
+                // Moses Newman 12/29/2023 Strip # from Address2 as well!
+                tsbSet.ClosedCreditManager.Rows[0].SetField<String>("CRDMGR_CUST_STREET_2", TSBDATA.CUSTOMER.Rows[i].Field<String>("CUSTOMER_STREET_2").PadRight(20).Substring(0, 20).Replace(",", " ").Replace("#", " "));
                 tsbSet.ClosedCreditManager.Rows[0].SetField<String>("CRDMGR_CUST_CITY", TSBDATA.CUSTOMER.Rows[i].Field<String>("CUSTOMER_CITY"));
                 tsbSet.ClosedCreditManager.Rows[0].SetField<String>("CRDMGR_CUST_STATE", TSBDATA.CUSTOMER.Rows[i].Field<String>("CUSTOMER_STATE"));
                 tsbSet.ClosedCreditManager.Rows[0].SetField<String>("CRDMGR_CUST_ZIP_1", TSBDATA.CUSTOMER.Rows[i].Field<String>("CUSTOMER_ZIP_1"));
@@ -244,7 +245,8 @@ namespace IAC2021SQL
                     TSBDATA.CUSTOMER.Rows[i].Field<String>("COSIGNER_SS2") + TSBDATA.CUSTOMER.Rows[i].Field<String>("COSIGNER_SS3"));
                 tsbSet.ClosedCreditManager.Rows[0].SetField<String>("CRDMGR_COSIGN_ADDRESS1", TSBDATA.CUSTOMER.Rows[i].Field<String>("COSIGNER_ADDRESS1").Replace(",", " ").Replace("#", " "));
                 tsbSet.ClosedCreditManager.Rows[0].SetField<String>("CRDMGR_COSIGN_CITY", TSBDATA.CUSTOMER.Rows[i].Field<String>("COSIGNER_CITY"));
-                tsbSet.ClosedCreditManager.Rows[0].SetField<String>("CRDMGR_COSIGN_STATE", TSBDATA.CUSTOMER.Rows[i].Field<String>("COSIGNER_STATE"));
+                // Moses Newman 12/29/2023 Make cosigner state ALways UPPER!
+                tsbSet.ClosedCreditManager.Rows[0].SetField<String>("CRDMGR_COSIGN_STATE", TSBDATA.CUSTOMER.Rows[i].Field<String>("COSIGNER_STATE").ToUpper());
                 // Replace - with space from zip+4 if it is there
                 tsbSet.ClosedCreditManager.Rows[0].SetField<String>("CRDMGR_COSIGN_ZIP_CODE", TSBDATA.CUSTOMER.Rows[i].Field<String>("COSIGNER_ZIP_CODE").Replace("-", " "));
                 // Zero pad Birth date to 8 0's if no birth date.
@@ -313,7 +315,8 @@ namespace IAC2021SQL
                     // Moses Newman 06/09/2015 Set Date of first Delinquent = null if status is 11 (paid 0-29 days past due);
                     // Moses Newman 12/13/2018 Only put a date in if the charge off is due to delinquency!
                     // Moses Newman 05/02/2021 Date of First delinquent <=
-                    if (TSBDATA.ClosedWSHIST.Rows[0].Field<DateTime?>("HIST_DATE_OF_FIRST_DELINQUENT") != null && lsAcctStatusCode != "11" && lsAcctStatusCode != "13")
+                    // Moses Newman 12/30/2023 if Status is 13 and Payment Rating is L then must have Date of First Delinquent
+                    if (TSBDATA.ClosedWSHIST.Rows[0].Field<DateTime?>("HIST_DATE_OF_FIRST_DELINQUENT") != null && lsAcctStatusCode != "11" && (lsAcctStatusCode != "13" || lsAcctPaymentRating == "L"))
                         tsbSet.ClosedCreditManager.Rows[0].SetField<DateTime?>("CRDMGR_DATE_FIRST_DELINQUENT",
                             TSBDATA.ClosedWSHIST.Rows[0].Field<DateTime?>("HIST_DATE_OF_FIRST_DELINQUENT") <= (DateTime?)nullableDateTimePickerTo.EditValue ? TSBDATA.ClosedWSHIST.Rows[0].Field<DateTime?>("HIST_DATE_OF_FIRST_DELINQUENT") : null);
                     else
@@ -344,7 +347,9 @@ namespace IAC2021SQL
                 }
                 // Moses Newman 06/04/2015 Set scheduled monthly payment to 0 for closed PAID accounts!
                 // Moses Newman 02/23/2016 test for paid in full is status == "I" and CUSTOMER_BALANCE == 0
-                if (TSBDATA.CUSTOMER.Rows[i].Field<String>("CUSTOMER_ACT_STAT") == "I" && (TSBDATA.CUSTOMER.Rows[i].Field<Decimal>("CUSTOMER_BALANCE") <= 0) || lsAcctStatusCode == "13")
+                // Moses Newman 12/29/2023 97 is a closed loan status so it needs a 0 monthly payment too!
+                if (TSBDATA.CUSTOMER.Rows[i].Field<String>("CUSTOMER_ACT_STAT") == "I" && (TSBDATA.CUSTOMER.Rows[i].Field<Decimal>("CUSTOMER_BALANCE") <= 0) || 
+                    (lsAcctStatusCode == "13" || lsAcctStatusCode == "97"))
                     tsbSet.ClosedCreditManager.Rows[0].SetField<Decimal>("CRDMGR_SCHED_MONTHLY_PAYMENT", 0);
                 else
                     tsbSet.ClosedCreditManager.Rows[0].SetField<Decimal>("CRDMGR_SCHED_MONTHLY_PAYMENT",
@@ -416,6 +421,22 @@ namespace IAC2021SQL
                     tsbSet.ClosedCreditManager.Rows[0].SetField<Decimal>("CRDMGR_ORIGINAL_CHARGE_OFF_AMT", 0);
                     tsbSet.ClosedCreditManager.Rows[0].SetField<String>("CRDMGR_ACCT_PAYMENT_RATING", lsAcctPaymentRating);
                 }
+                // Moses Newman 12/29/2023 Current Balance can not be less than 0!
+                if (tsbSet.ClosedCreditManager.Rows[0].Field<Decimal>("CRDMGR_ACCT_CURRENT_BAL") < 0)
+                {
+                    tsbSet.ClosedCreditManager.Rows[0].SetField<Decimal>("CRDMGR_ACCT_CURRENT_BAL", 0);
+                    if(lsAcctStatusCode == "11")
+                    {
+                        // Moses Newman 12/29/2023 set to status 13 because if it was 11 it was really paid so payment rating must also be 0
+                        lsAcctStatusCode = "13";
+                        lsAcctPaymentRating = "0";
+                        tsbSet.ClosedCreditManager.Rows[0].SetField<Decimal>("CRDMGR_SCHED_MONTHLY_PAYMENT", 0);
+                        tsbSet.ClosedCreditManager.Rows[0].SetField<String>("CRDMGR_ACCT_STATUS_CODE", lsAcctStatusCode);
+                        tsbSet.ClosedCreditManager.Rows[0].SetField<String>("CRDMGR_ACCT_PAYMENT_RATING", lsAcctPaymentRating);
+                        tsbSet.ClosedCreditManager.Rows[0].SetField<Nullable<DateTime>>("CRDMGR_ACCT_DATE_CLOSED",
+                            TSBDATA.CUSTOMER.Rows[i].Field<Nullable<DateTime>>("CUSTOMER_LAST_PAYMENT_DATE"));
+                    }
+                }
                 try
                 {
                     ClosedCreditManagerTableAdapter.Update(tsbSet.ClosedCreditManager.Rows[0]);
@@ -482,7 +503,8 @@ namespace IAC2021SQL
                     tsbSet.ClosedCreditManager.Rows[0].SetField<DateTime>("CRDMGR_DATE_OF_BIRTH_MMDDYYYY", TSBDATA.OPNCUST.Rows[i].Field<DateTime>("CUSTOMER_DOB_DATE"));
                 // Strip ,s from STREET_1 AND STREET_2 if they exist
                 tsbSet.ClosedCreditManager.Rows[0].SetField<String>("CRDMGR_CUST_STREET_1", TSBDATA.OPNCUST.Rows[i].Field<String>("CUSTOMER_STREET_1").Replace(",", " ").Replace("#", " "));
-                tsbSet.ClosedCreditManager.Rows[0].SetField<String>("CRDMGR_CUST_STREET_2", TSBDATA.OPNCUST.Rows[i].Field<String>("CUSTOMER_STREET_2").PadRight(20).Substring(0, 20).Replace(",", " "));
+                // Moses Newman 12/29/2023 Strip # from Address2 as well!
+                tsbSet.ClosedCreditManager.Rows[0].SetField<String>("CRDMGR_CUST_STREET_2", TSBDATA.OPNCUST.Rows[i].Field<String>("CUSTOMER_STREET_2").PadRight(20).Substring(0, 20).Replace(",", " ").Replace("#", " "));
                 tsbSet.ClosedCreditManager.Rows[0].SetField<String>("CRDMGR_CUST_CITY", TSBDATA.OPNCUST.Rows[i].Field<String>("CUSTOMER_CITY"));
                 tsbSet.ClosedCreditManager.Rows[0].SetField<String>("CRDMGR_CUST_STATE", TSBDATA.OPNCUST.Rows[i].Field<String>("CUSTOMER_STATE"));
                 tsbSet.ClosedCreditManager.Rows[0].SetField<String>("CRDMGR_CUST_ZIP_1", TSBDATA.OPNCUST.Rows[i].Field<String>("CUSTOMER_ZIP_1"));
