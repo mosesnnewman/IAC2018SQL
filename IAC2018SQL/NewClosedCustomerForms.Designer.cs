@@ -715,6 +715,32 @@
             this.colCUSTHIST_PAYMENT_TYPE = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCUSTHIST_PAYMENT_CODE = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCUSTHIST_THRU_UD = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.xtraTabPageInvoices = new DevExpress.XtraTab.XtraTabPage();
+            this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
+            this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
+            this.textEditDlrName = new DevExpress.XtraEditors.TextEdit();
+            this.textEditDealerID = new DevExpress.XtraEditors.TextEdit();
+            this.textEditLastName = new DevExpress.XtraEditors.TextEdit();
+            this.textEditFirstName = new DevExpress.XtraEditors.TextEdit();
+            this.textEditCustomerID = new DevExpress.XtraEditors.TextEdit();
+            this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.gridControlInvoices = new DevExpress.XtraGrid.GridControl();
+            this.invoicesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gridViewInvoices = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.DateDue = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Seq = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Desc = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Amount = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TotalPaid = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TotalDue = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.IsPaid = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemCheckEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
+            this.colCustomerID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.xtraTabPageComments = new DevExpress.XtraTab.XtraTabPage();
             this.groupBox19 = new DevExpress.XtraEditors.GroupControl();
             this.cOMMENTGridControl = new DevExpress.XtraGrid.GridControl();
@@ -898,6 +924,7 @@
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.warrantyCompanyTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.WarrantyCompanyTableAdapter();
             this.layoutConverter1 = new DevExpress.XtraLayout.Converter.LayoutConverter(this.components);
+            this.invoicesTableAdapter = new IAC2021SQL.PaymentDataSetTableAdapters.InvoicesTableAdapter();
             label45 = new System.Windows.Forms.Label();
             label48 = new System.Windows.Forms.Label();
             labelAuthNo = new System.Windows.Forms.Label();
@@ -1346,6 +1373,26 @@
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerHistContractDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlCustomerHist)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewCustomerHistory)).BeginInit();
+            this.xtraTabPageInvoices.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).BeginInit();
+            this.groupControl4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
+            this.layoutControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditDlrName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditDealerID.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditLastName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditFirstName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditCustomerID.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlInvoices)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.invoicesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewInvoices)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit2)).BeginInit();
             this.xtraTabPageComments.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupBox19)).BeginInit();
             this.groupBox19.SuspendLayout();
@@ -2941,6 +2988,7 @@
             this.xtraTabPageCosigner,
             this.xtraTabPageBank,
             this.xtraTabPageHistory,
+            this.xtraTabPageInvoices,
             this.xtraTabPageComments,
             this.xtraTabPageCustomerFees,
             this.xtraTabPageRepoHistory,
@@ -3751,7 +3799,6 @@
             this.cUSTOMER_NOTextBox.Properties.MaskSettings.Set("MaskManagerSignature", "ignoreMaskBlank=True");
             this.cUSTOMER_NOTextBox.Properties.MaxLength = 6;
             this.cUSTOMER_NOTextBox.EditValueChanged += new System.EventHandler(this.cUSTOMER_NOTextBox_EditValueChanged);
-            this.cUSTOMER_NOTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cUSTOMER_NOTextBox_KeyDown);
             this.cUSTOMER_NOTextBox.PreviewKeyDown += new System.Windows.Forms.PreviewKeyDownEventHandler(this.cUSTOMER_NOTextBox_PreviewKeyDown);
             // 
             // cUSTOMER_WORK_EXTtextBox
@@ -8057,6 +8104,281 @@
             this.colCUSTHIST_THRU_UD.FieldName = "CUSTHIST_THRU_UD";
             this.colCUSTHIST_THRU_UD.Name = "colCUSTHIST_THRU_UD";
             // 
+            // xtraTabPageInvoices
+            // 
+            this.xtraTabPageInvoices.Controls.Add(this.groupControl4);
+            this.xtraTabPageInvoices.Name = "xtraTabPageInvoices";
+            resources.ApplyResources(this.xtraTabPageInvoices, "xtraTabPageInvoices");
+            // 
+            // groupControl4
+            // 
+            this.groupControl4.Appearance.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.groupControl4.Appearance.Options.UseBackColor = true;
+            this.groupControl4.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.groupControl4.Controls.Add(this.layoutControl2);
+            this.groupControl4.Controls.Add(this.gridControlInvoices);
+            resources.ApplyResources(this.groupControl4, "groupControl4");
+            this.groupControl4.Name = "groupControl4";
+            // 
+            // layoutControl2
+            // 
+            resources.ApplyResources(this.layoutControl2, "layoutControl2");
+            this.layoutControl2.Controls.Add(this.textEditDlrName);
+            this.layoutControl2.Controls.Add(this.textEditDealerID);
+            this.layoutControl2.Controls.Add(this.textEditLastName);
+            this.layoutControl2.Controls.Add(this.textEditFirstName);
+            this.layoutControl2.Controls.Add(this.textEditCustomerID);
+            this.layoutControl2.Name = "layoutControl2";
+            this.layoutControl2.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(1161, 0, 650, 400);
+            this.layoutControl2.Root = this.layoutControlGroup2;
+            // 
+            // textEditDlrName
+            // 
+            this.textEditDlrName.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.dEALERBindingSource, "DEALER_NAME", true));
+            resources.ApplyResources(this.textEditDlrName, "textEditDlrName");
+            this.textEditDlrName.Name = "textEditDlrName";
+            this.textEditDlrName.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textEditDlrName.Properties.Appearance.Font")));
+            this.textEditDlrName.Properties.Appearance.Options.UseFont = true;
+            this.textEditDlrName.StyleController = this.layoutControl2;
+            // 
+            // textEditDealerID
+            // 
+            this.textEditDealerID.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.dEALERBindingSource, "id", true));
+            resources.ApplyResources(this.textEditDealerID, "textEditDealerID");
+            this.textEditDealerID.Name = "textEditDealerID";
+            this.textEditDealerID.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textEditDealerID.Properties.Appearance.Font")));
+            this.textEditDealerID.Properties.Appearance.Options.UseFont = true;
+            this.textEditDealerID.StyleController = this.layoutControl2;
+            // 
+            // textEditLastName
+            // 
+            this.textEditLastName.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_LAST_NAME", true));
+            resources.ApplyResources(this.textEditLastName, "textEditLastName");
+            this.textEditLastName.Name = "textEditLastName";
+            this.textEditLastName.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textEditLastName.Properties.Appearance.Font")));
+            this.textEditLastName.Properties.Appearance.Options.UseFont = true;
+            this.textEditLastName.StyleController = this.layoutControl2;
+            // 
+            // textEditFirstName
+            // 
+            this.textEditFirstName.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_FIRST_NAME", true));
+            resources.ApplyResources(this.textEditFirstName, "textEditFirstName");
+            this.textEditFirstName.Name = "textEditFirstName";
+            this.textEditFirstName.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textEditFirstName.Properties.Appearance.Font")));
+            this.textEditFirstName.Properties.Appearance.Options.UseFont = true;
+            this.textEditFirstName.StyleController = this.layoutControl2;
+            // 
+            // textEditCustomerID
+            // 
+            this.textEditCustomerID.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CustomerID", true));
+            resources.ApplyResources(this.textEditCustomerID, "textEditCustomerID");
+            this.textEditCustomerID.Name = "textEditCustomerID";
+            this.textEditCustomerID.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textEditCustomerID.Properties.Appearance.Font")));
+            this.textEditCustomerID.Properties.Appearance.Options.UseFont = true;
+            this.textEditCustomerID.StyleController = this.layoutControl2;
+            // 
+            // layoutControlGroup2
+            // 
+            this.layoutControlGroup2.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.layoutControlGroup2.GroupBordersVisible = false;
+            this.layoutControlGroup2.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem1,
+            this.layoutControlItem3,
+            this.layoutControlItem4,
+            this.layoutControlItem5,
+            this.layoutControlItem2});
+            this.layoutControlGroup2.Name = "Root";
+            this.layoutControlGroup2.Size = new System.Drawing.Size(1238, 84);
+            this.layoutControlGroup2.TextVisible = false;
+            // 
+            // layoutControlItem1
+            // 
+            this.layoutControlItem1.AppearanceItemCaption.Font = ((System.Drawing.Font)(resources.GetObject("layoutControlItem1.AppearanceItemCaption.Font")));
+            this.layoutControlItem1.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutControlItem1.Control = this.textEditCustomerID;
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem1.Name = "layoutControlCustomerID";
+            this.layoutControlItem1.Size = new System.Drawing.Size(217, 32);
+            resources.ApplyResources(this.layoutControlItem1, "layoutControlItem1");
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(100, 21);
+            // 
+            // layoutControlItem3
+            // 
+            this.layoutControlItem3.AppearanceItemCaption.Font = ((System.Drawing.Font)(resources.GetObject("layoutControlItem3.AppearanceItemCaption.Font")));
+            this.layoutControlItem3.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutControlItem3.Control = this.textEditFirstName;
+            this.layoutControlItem3.Location = new System.Drawing.Point(217, 0);
+            this.layoutControlItem3.Name = "layoutFirstName";
+            this.layoutControlItem3.Size = new System.Drawing.Size(474, 32);
+            resources.ApplyResources(this.layoutControlItem3, "layoutControlItem3");
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(100, 21);
+            // 
+            // layoutControlItem4
+            // 
+            this.layoutControlItem4.AppearanceItemCaption.Font = ((System.Drawing.Font)(resources.GetObject("layoutControlItem4.AppearanceItemCaption.Font")));
+            this.layoutControlItem4.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutControlItem4.Control = this.textEditLastName;
+            this.layoutControlItem4.Location = new System.Drawing.Point(691, 0);
+            this.layoutControlItem4.Name = "layoutLastName";
+            this.layoutControlItem4.Size = new System.Drawing.Size(527, 32);
+            resources.ApplyResources(this.layoutControlItem4, "layoutControlItem4");
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(100, 21);
+            // 
+            // layoutControlItem5
+            // 
+            this.layoutControlItem5.AppearanceItemCaption.Font = ((System.Drawing.Font)(resources.GetObject("layoutControlItem5.AppearanceItemCaption.Font")));
+            this.layoutControlItem5.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutControlItem5.Control = this.textEditDlrName;
+            this.layoutControlItem5.Location = new System.Drawing.Point(217, 32);
+            this.layoutControlItem5.Name = "layoutControlDealerName";
+            this.layoutControlItem5.Size = new System.Drawing.Size(1001, 32);
+            resources.ApplyResources(this.layoutControlItem5, "layoutControlItem5");
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(100, 21);
+            // 
+            // layoutControlItem2
+            // 
+            this.layoutControlItem2.AppearanceItemCaption.Font = ((System.Drawing.Font)(resources.GetObject("layoutControlItem2.AppearanceItemCaption.Font")));
+            this.layoutControlItem2.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutControlItem2.Control = this.textEditDealerID;
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 32);
+            this.layoutControlItem2.Name = "layoutControlDealerID";
+            this.layoutControlItem2.Size = new System.Drawing.Size(217, 32);
+            resources.ApplyResources(this.layoutControlItem2, "layoutControlItem2");
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(100, 21);
+            // 
+            // gridControlInvoices
+            // 
+            this.gridControlInvoices.DataSource = this.invoicesBindingSource;
+            resources.ApplyResources(this.gridControlInvoices, "gridControlInvoices");
+            this.gridControlInvoices.MainView = this.gridViewInvoices;
+            this.gridControlInvoices.Name = "gridControlInvoices";
+            this.gridControlInvoices.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemCheckEdit2});
+            this.gridControlInvoices.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridViewInvoices});
+            // 
+            // invoicesBindingSource
+            // 
+            this.invoicesBindingSource.DataMember = "Invoices";
+            this.invoicesBindingSource.DataSource = this.paymentDataSetBindingSource;
+            // 
+            // gridViewInvoices
+            // 
+            this.gridViewInvoices.Appearance.EvenRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.gridViewInvoices.Appearance.EvenRow.Font = ((System.Drawing.Font)(resources.GetObject("gridViewInvoices.Appearance.EvenRow.Font")));
+            this.gridViewInvoices.Appearance.EvenRow.Options.UseBackColor = true;
+            this.gridViewInvoices.Appearance.EvenRow.Options.UseFont = true;
+            this.gridViewInvoices.Appearance.FocusedCell.Font = ((System.Drawing.Font)(resources.GetObject("gridViewInvoices.Appearance.FocusedCell.Font")));
+            this.gridViewInvoices.Appearance.FocusedCell.Options.UseFont = true;
+            this.gridViewInvoices.Appearance.FocusedRow.Font = ((System.Drawing.Font)(resources.GetObject("gridViewInvoices.Appearance.FocusedRow.Font")));
+            this.gridViewInvoices.Appearance.FocusedRow.Options.UseFont = true;
+            this.gridViewInvoices.Appearance.FooterPanel.Font = ((System.Drawing.Font)(resources.GetObject("gridViewInvoices.Appearance.FooterPanel.Font")));
+            this.gridViewInvoices.Appearance.FooterPanel.Options.UseFont = true;
+            this.gridViewInvoices.Appearance.FooterPanel.Options.UseTextOptions = true;
+            this.gridViewInvoices.Appearance.FooterPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.gridViewInvoices.Appearance.HeaderPanel.Font = ((System.Drawing.Font)(resources.GetObject("gridViewInvoices.Appearance.HeaderPanel.Font")));
+            this.gridViewInvoices.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gridViewInvoices.Appearance.OddRow.Font = ((System.Drawing.Font)(resources.GetObject("gridViewInvoices.Appearance.OddRow.Font")));
+            this.gridViewInvoices.Appearance.OddRow.Options.UseFont = true;
+            this.gridViewInvoices.Appearance.Row.Font = ((System.Drawing.Font)(resources.GetObject("gridViewInvoices.Appearance.Row.Font")));
+            this.gridViewInvoices.Appearance.Row.Options.UseFont = true;
+            this.gridViewInvoices.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.DateDue,
+            this.Seq,
+            this.Desc,
+            this.Amount,
+            this.TotalPaid,
+            this.TotalDue,
+            this.IsPaid,
+            this.colCustomerID});
+            this.gridViewInvoices.GridControl = this.gridControlInvoices;
+            this.gridViewInvoices.Name = "gridViewInvoices";
+            this.gridViewInvoices.OptionsBehavior.Editable = false;
+            this.gridViewInvoices.OptionsBehavior.ReadOnly = true;
+            this.gridViewInvoices.OptionsView.EnableAppearanceEvenRow = true;
+            this.gridViewInvoices.OptionsView.EnableAppearanceOddRow = true;
+            this.gridViewInvoices.OptionsView.FilterCriteriaDisplayStyle = DevExpress.XtraEditors.FilterCriteriaDisplayStyle.Text;
+            this.gridViewInvoices.OptionsView.ShowFooter = true;
+            this.gridViewInvoices.CustomDrawFooterCell += new DevExpress.XtraGrid.Views.Grid.FooterCellCustomDrawEventHandler(this.gridViewInvoices_CustomDrawFooterCell);
+            this.gridViewInvoices.CustomSummaryCalculate += new DevExpress.Data.CustomSummaryEventHandler(this.gridViewInvoices_CustomSummaryCalculate);
+            // 
+            // DateDue
+            // 
+            resources.ApplyResources(this.DateDue, "DateDue");
+            this.DateDue.DisplayFormat.FormatString = "d";
+            this.DateDue.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.DateDue.FieldName = "DateDue";
+            this.DateDue.Name = "DateDue";
+            this.DateDue.OptionsColumn.ReadOnly = true;
+            this.DateDue.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(((DevExpress.Data.SummaryItemType)(resources.GetObject("DateDue.Summary"))), ((DevExpress.Data.SummaryMode)(resources.GetObject("DateDue.Summary1"))), resources.GetString("DateDue.Summary2"), resources.GetString("DateDue.Summary3"), resources.GetString("DateDue.Summary4"))});
+            // 
+            // Seq
+            // 
+            resources.ApplyResources(this.Seq, "Seq");
+            this.Seq.DisplayFormat.FormatString = "n0";
+            this.Seq.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.Seq.FieldName = "DateSeq";
+            this.Seq.Name = "Seq";
+            // 
+            // Desc
+            // 
+            resources.ApplyResources(this.Desc, "Desc");
+            this.Desc.FieldName = "Description";
+            this.Desc.Name = "Desc";
+            this.Desc.Tag = "";
+            // 
+            // Amount
+            // 
+            resources.ApplyResources(this.Amount, "Amount");
+            this.Amount.DisplayFormat.FormatString = "c2";
+            this.Amount.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.Amount.FieldName = "Amount";
+            this.Amount.Name = "Amount";
+            this.Amount.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(((DevExpress.Data.SummaryItemType)(resources.GetObject("Amount.Summary"))), ((DevExpress.Data.SummaryMode)(resources.GetObject("Amount.Summary1"))), resources.GetString("Amount.Summary2"), resources.GetString("Amount.Summary3"), resources.GetString("Amount.Summary4"))});
+            // 
+            // TotalPaid
+            // 
+            resources.ApplyResources(this.TotalPaid, "TotalPaid");
+            this.TotalPaid.DisplayFormat.FormatString = "c2";
+            this.TotalPaid.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.TotalPaid.FieldName = "TotalPaid";
+            this.TotalPaid.Name = "TotalPaid";
+            this.TotalPaid.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(((DevExpress.Data.SummaryItemType)(resources.GetObject("TotalPaid.Summary"))), ((DevExpress.Data.SummaryMode)(resources.GetObject("TotalPaid.Summary1"))), resources.GetString("TotalPaid.Summary2"), resources.GetString("TotalPaid.Summary3"), resources.GetString("TotalPaid.Summary4"))});
+            // 
+            // TotalDue
+            // 
+            resources.ApplyResources(this.TotalDue, "TotalDue");
+            this.TotalDue.DisplayFormat.FormatString = "c2";
+            this.TotalDue.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.TotalDue.FieldName = "TotalDue";
+            this.TotalDue.Name = "TotalDue";
+            this.TotalDue.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(((DevExpress.Data.SummaryItemType)(resources.GetObject("TotalDue.Summary"))), ((DevExpress.Data.SummaryMode)(resources.GetObject("TotalDue.Summary1"))), resources.GetString("TotalDue.Summary2"), resources.GetString("TotalDue.Summary3"), resources.GetString("TotalDue.Summary4"))});
+            // 
+            // IsPaid
+            // 
+            resources.ApplyResources(this.IsPaid, "IsPaid");
+            this.IsPaid.ColumnEdit = this.repositoryItemCheckEdit2;
+            this.IsPaid.FieldName = "IsPaid";
+            this.IsPaid.Name = "IsPaid";
+            this.IsPaid.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridColumnSummaryItem(((DevExpress.Data.SummaryItemType)(resources.GetObject("IsPaid.Summary"))), ((DevExpress.Data.SummaryMode)(resources.GetObject("IsPaid.Summary1"))), resources.GetString("IsPaid.Summary2"), resources.GetString("IsPaid.Summary3"), resources.GetString("IsPaid.Summary4"))});
+            // 
+            // repositoryItemCheckEdit2
+            // 
+            resources.ApplyResources(this.repositoryItemCheckEdit2, "repositoryItemCheckEdit2");
+            this.repositoryItemCheckEdit2.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
+            this.repositoryItemCheckEdit2.Name = "repositoryItemCheckEdit2";
+            this.repositoryItemCheckEdit2.NullStyle = DevExpress.XtraEditors.Controls.StyleIndeterminate.Unchecked;
+            // 
+            // colCustomerID
+            // 
+            this.colCustomerID.FieldName = "CustomerID";
+            this.colCustomerID.Name = "colCustomerID";
+            // 
             // xtraTabPageComments
             // 
             this.xtraTabPageComments.Controls.Add(this.groupBox19);
@@ -9748,6 +10070,10 @@
             // 
             this.warrantyCompanyTableAdapter.ClearBeforeFill = true;
             // 
+            // invoicesTableAdapter
+            // 
+            this.invoicesTableAdapter.ClearBeforeFill = true;
+            // 
             // frmNewCustMaint
             // 
             this.Appearance.BackColor = System.Drawing.Color.CornflowerBlue;
@@ -10024,6 +10350,26 @@
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerHistContractDate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlCustomerHist)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewCustomerHistory)).EndInit();
+            this.xtraTabPageInvoices.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).EndInit();
+            this.groupControl4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();
+            this.layoutControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.textEditDlrName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditDealerID.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditLastName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditFirstName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditCustomerID.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlInvoices)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.invoicesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewInvoices)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit2)).EndInit();
             this.xtraTabPageComments.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupBox19)).EndInit();
             this.groupBox19.ResumeLayout(false);
@@ -10752,6 +11098,33 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItemAmountUnused;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem12;
         private DevExpress.XtraLayout.SimpleSeparator simpleSeparator2;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPageInvoices;
+        private DevExpress.XtraEditors.GroupControl groupControl4;
+        private DevExpress.XtraLayout.LayoutControl layoutControl2;
+        private DevExpress.XtraEditors.TextEdit textEditDlrName;
+        private DevExpress.XtraEditors.TextEdit textEditDealerID;
+        private DevExpress.XtraEditors.TextEdit textEditLastName;
+        private DevExpress.XtraEditors.TextEdit textEditFirstName;
+        private DevExpress.XtraEditors.TextEdit textEditCustomerID;
+        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup2;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
+        private DevExpress.XtraGrid.GridControl gridControlInvoices;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridViewInvoices;
+        private DevExpress.XtraGrid.Columns.GridColumn DateDue;
+        private DevExpress.XtraGrid.Columns.GridColumn Seq;
+        private DevExpress.XtraGrid.Columns.GridColumn Desc;
+        private DevExpress.XtraGrid.Columns.GridColumn Amount;
+        private DevExpress.XtraGrid.Columns.GridColumn TotalPaid;
+        private DevExpress.XtraGrid.Columns.GridColumn TotalDue;
+        private DevExpress.XtraGrid.Columns.GridColumn IsPaid;
+        private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit2;
+        private DevExpress.XtraGrid.Columns.GridColumn colCustomerID;
+        private System.Windows.Forms.BindingSource invoicesBindingSource;
+        private PaymentDataSetTableAdapters.InvoicesTableAdapter invoicesTableAdapter;
     }
 }
 
