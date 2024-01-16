@@ -5719,6 +5719,9 @@ namespace IAC2021SQL
 
         private void gridViewInvoices_CustomSummaryCalculate(object sender, CustomSummaryEventArgs e)
         {
+            // Moses Newman 01/15/2024 do not try and get summary totals if no Invoice records yet!
+            if (paymentDataSet.Invoices.Rows.Count < 1)
+                return;
             GridView view = sender as GridView;
             Decimal TotalContractStatus = 0, TotalLateChargeBalance = 0, TotalPartialPayment = 0;
             String FinalPaidThru = "";

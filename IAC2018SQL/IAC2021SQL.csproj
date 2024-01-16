@@ -42,7 +42,7 @@
     <SuiteName>IAC2021SQL</SuiteName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>31</ApplicationRevision>
+    <ApplicationRevision>32</ApplicationRevision>
     <ApplicationVersion>200.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -771,6 +771,12 @@
     </Compile>
     <Compile Include="DirectXFormApplyPayments.Designer.cs">
       <DependentUpon>DirectXFormApplyPayments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DirectXFormPaymentDistribution.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DirectXFormPaymentDistribution.Designer.cs">
+      <DependentUpon>DirectXFormPaymentDistribution.cs</DependentUpon>
     </Compile>
     <Compile Include="IACDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -2020,6 +2026,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DirectXFormApplyPayments.resx">
       <DependentUpon>DirectXFormApplyPayments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DirectXFormPaymentDistribution.resx">
+      <DependentUpon>DirectXFormPaymentDistribution.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InternetPaymentRejects.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
