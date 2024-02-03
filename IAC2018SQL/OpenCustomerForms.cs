@@ -1221,8 +1221,12 @@ namespace IAC2021SQL
             }
             else
             {
-                oPNCUSTTableAdapter.LockRecord(Program.gsUserID, iACDataSet.OPNCUST.Rows[0].Field<String>("CUSTOMER_NO"));
-                lbILockedIt = true;   //  Make sure other instances of form don't unlocke this record!
+                // Moses Newman 02/03/2024 Handle index out of range possibility
+                if (iACDataSet.OPNCUST.Rows.Count > 0)
+                {
+                    oPNCUSTTableAdapter.LockRecord(Program.gsUserID, iACDataSet.OPNCUST.Rows[0].Field<String>("CUSTOMER_NO"));
+                    lbILockedIt = true;   //  Make sure other instances of form don't unlocke this record!
+                }
                 if (iACDataSet.ALTNAME.Rows.Count == 0)
                     Create_New_ALTNAMERecord(cUSTOMER_NOTextBox.Text.ToString().TrimEnd());
                 if (iACDataSet.OPNBANK.Rows.Count == 0)

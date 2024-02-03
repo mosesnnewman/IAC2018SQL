@@ -3451,8 +3451,8 @@ namespace IAC2021SQL
 
             List<String> NegAdjList = new List<String>
             {
-                "AW"
-				//"RI"
+                "AW",
+				"RI"
                 //"WH",
                 //"WC"
             };

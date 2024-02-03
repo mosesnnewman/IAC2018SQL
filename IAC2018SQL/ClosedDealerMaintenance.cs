@@ -558,8 +558,9 @@ namespace IAC2021SQL
             DataRow newListRow = iacDataSet.DLRLISTBYNUM.NewRow();
 
             LookUpEdit lookUp = sender as LookUpEdit; 
-            if (lbAddFlag || lbEdit)
+            if (lbAddFlag || lbEdit || lookUp == null)  // Moses Newman 02/03/2024 Handle Null;
                 return;
+
             if (!String.IsNullOrEmpty(lookUp.EditValue.ToString()) && MessageBox.Show(
                     this, "Dealer number: " + lookUp.EditValue.ToString() + " does not exist. Would you like to add it?",
                     "Confirm", MessageBoxButtons.YesNo) == DialogResult.Yes)

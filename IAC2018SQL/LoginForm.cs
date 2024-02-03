@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using Sentry;
 
@@ -53,7 +48,7 @@ namespace IAC2021SQL
                 // Moses Newman 05/21/2022 Add User to Sentry for error reporting by user/
                 SentrySdk.ConfigureScope(scope =>
                 {
-                    scope.User = new User
+                    scope.User = new SentryUser
                     {
                         Id = Program.gsUserID,
                         Username = Program.gsUserName,

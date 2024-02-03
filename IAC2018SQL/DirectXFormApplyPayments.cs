@@ -46,7 +46,8 @@ namespace IAC2021SQL
         {
             PaymentDataSetTableAdapters.PaymentHistoryTableAdapter paymentHistoryTableAdapter = new PaymentHistoryTableAdapter();
 
-            cUSTOMERTableAdapter.FillByBad05(ClosedPaymentiacDataSet.CUSTOMER);
+            cUSTOMERTableAdapter.Fill(ClosedPaymentiacDataSet.CUSTOMER,"221473");
+
             progressBarControl1.Visible = true;
             progressBarControl1.Enabled = true;
             progressBarControl1.Properties.ShowTitle = true;
@@ -56,7 +57,7 @@ namespace IAC2021SQL
             progressBarControl1.Properties.Maximum = ClosedPaymentiacDataSet.CUSTOMER.Rows.Count;
 
             labelControl1.Visible = true;
-            paymentHistoryTableAdapter.DeleteAllNULLCusthistID();
+            // Moses Newman 01/19/2023 Do not delete NULL Payments because no need, and if the arent unapplied before they are deleted phantom invoice payments will exist. (Deleted that line here)
             ClosedPaymentPosting cp = new ClosedPaymentPosting();
             for (int i = 0; i < ClosedPaymentiacDataSet.CUSTOMER.Rows.Count; i++)
             {

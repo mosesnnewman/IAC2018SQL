@@ -110,9 +110,13 @@ namespace IAC2021SQL
             paycodeTableAdapter.FillByType(iacDataSet.PAYCODE, lookUpEdit.EditValue.ToString());
             bindingSourcePAYCODE.DataSource = iacDataSet.PAYCODE;
             bindingSourcePAYCODE.MoveFirst();
-            lookUpEditPaymentCode.EditValue = iacDataSet.PAYCODE.Rows[0].Field<String>("Code");
-            if (lookUpEdit.EditValue.ToString() == "I" && lookUpEditPaymentCode.EditValue.ToString().Trim() == "")
-                lookUpEditPaymentCode.EditValue = "N";
+            // Moses Newman 02/03/2024 handle index out of range possibility.
+            if (iacDataSet.PAYCODE.Rows.Count > 0)
+            {
+                lookUpEditPaymentCode.EditValue = iacDataSet.PAYCODE.Rows[0].Field<String>("Code");
+                if (lookUpEdit.EditValue.ToString() == "I" && lookUpEditPaymentCode.EditValue.ToString().Trim() == "")
+                    lookUpEditPaymentCode.EditValue = "N";
+            }
             lookUpEditPaymentCode.Refresh();
             ActiveControl = lookUpEditPaymentCode;
             HandleISF();
@@ -156,6 +160,8 @@ namespace IAC2021SQL
         {
             IACDataSet tempDataSet = new IACDataSet();
             customerTableAdapter.FillByID(iacDataSet.CUSTOMER, CustomerID);
+            if (iacDataSet.CUSTOMER.Rows.Count < 1) // Moses Newman 02/03/2024 return if the customer is not found.
+                return;
             dealerTableAdapter.Fill(iacDataSet.DEALER, iacDataSet.CUSTOMER.Rows[0].Field<Int32>("CUSTOMER_DEALER"));
             if(!lbAddFlag)
                 paymentTableAdapter.FillByKey(iacDataSet.PAYMENT, iacDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO"), PaymentDate, SeqNo);
