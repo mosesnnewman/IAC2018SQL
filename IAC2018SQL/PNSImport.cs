@@ -1,18 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 using System.IO;
 using Renci.SshNet;
 using Renci.SshNet.Sftp;
-using Microsoft.SqlServer.Dts.Runtime;
-using Microsoft.SqlServer.Management.Smo;
-using Microsoft.SqlServer.Management.Common;
 using Excel = Microsoft.Office.Interop.Excel;
 using DevExpress.XtraEditors;
 using DevExpress.XtraReports.UI;
@@ -111,7 +105,7 @@ namespace IAC2021SQL
                     {
                         if(!file.IsDirectory)
                         {
-                            FilesOnly.Add(file);
+                            FilesOnly.Add((SftpFile)file);
                         }
                     }
 
@@ -442,11 +436,18 @@ namespace IAC2021SQL
                     {
                         if (range.Value != null)
                         {
-                            FirstName = range.Value.Remove(range.Value.LastIndexOf(' ')).TrimEnd();
+                            // Moses Newman 02/03/2024 Make sure Remove has space(s) to remove for first and last names, otherwise there could be Invalid index errors.
+                            if (range.Value.LastIndexOf(' ') > 0)
+                            {
+                                FirstName = range.Value.Remove(range.Value.LastIndexOf(' ')).TrimEnd();
+                                range.Value = FirstName;
+                            }
                             LastName = range.Value.Trim();
-                            LastName = LastName.Substring(LastName.LastIndexOf(' ') + 1);
-                            range.Value = FirstName;
-                            range.Offset[0, 1].Value = LastName;
+                            if (LastName.LastIndexOf(' ') > 0)
+                            {
+                                LastName = LastName.Substring(LastName.LastIndexOf(' ') + 1);
+                                range.Offset[0, 1].Value = LastName;
+                            }
                         }
                     }
 

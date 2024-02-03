@@ -1016,9 +1016,10 @@ namespace IAC2021SQL
                 gridControlRepoLog.DataSource = RepoData.RepoLog;
                 // Moses Newman 05/08/2023 
                 WarrantyCompanyTableAdapter.FillByAll(iACDataSet.WarrantyCompany);
-                bindingSourceWarrantyCompany.Position = bindingSourceWarrantyCompany.Find("id", iACDataSet.VEHICLE.Rows[VehiclebindingSource.Position].Field<Int32>("WarrantyID"));
-                if (bindingSourceWarrantyCompany.Position == -1)
-                    bindingSourceWarrantyCompany.Position = 0; // First record id = 1 is NONE
+                // Moses Newman 02/03/2024 never let BindingSource position = -1
+                Int32 WarrantyPos = bindingSourceWarrantyCompany.Find("id", iACDataSet.VEHICLE.Rows[VehiclebindingSource.Position].Field<Int32>("WarrantyID"));
+                WarrantyPos = WarrantyPos > -1 ? WarrantyPos : 0;
+                bindingSourceWarrantyCompany.Position = WarrantyPos;
                 // Moses Newman 04/07/2022 
                 cUSTOMER_DEALERcomboBox.EditValue = iACDataSet.CUSTOMER.Rows[0].Field<Int32>("CUSTOMER_DEALER");
                 // Moses Newman 08/02/2013 Save CUSTOMER_BALANCE so maintenance can NOT ALTER IT even though we display the current balance only posting routines may recalculate it and write the data.
