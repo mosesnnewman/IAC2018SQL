@@ -1770,7 +1770,12 @@ namespace IAC2021SQL
         private void cUSTOMER_ACT_STATTextBox_TextChanged(object sender, EventArgs e)
         {
             if (lbEdit)
+            {
+                // Moses Newman 02/06/2023 If they change an iactive to A then 
+                if(cUSTOMER_ACT_STATTextBox.Text == "A")
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_BUY_OUT", "N"); 
                 toolStripButtonSave.Enabled = true;
+            }
         }
 
         private void checkEditUsePrimaryAddress_Validated(object sender, EventArgs e)

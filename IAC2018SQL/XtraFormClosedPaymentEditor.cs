@@ -340,10 +340,16 @@ namespace IAC2021SQL
                         if (bindingSourcePAYMENT.Position == -1)
                         {
                             FillIt();
-                        }       
-                        iacDataSet.PAYMENT.Rows[bindingSourcePAYMENT.Position].SetField<String>("PAYMENT_CUSTOMER", textEditCustomerID.EditValue.ToString().PadLeft(6, '0'));
-                        iacDataSet.PAYMENT.Rows[bindingSourcePAYMENT.Position].SetField<DateTime>("PAYMENT_DATE", (DateTime)dateEditPaymentDate.EditValue);
-                        iacDataSet.PAYMENT.Rows[bindingSourcePAYMENT.Position].SetField<Int32>("PAYMENT_DEALER", (Int32)textEditDealerID.EditValue);
+                        }
+                        // Moses Newman 02/13/2024 Handle no payment record
+                        if (bindingSourcePAYMENT.Position == -1)
+                            return;
+                        else
+                        {
+                            iacDataSet.PAYMENT.Rows[bindingSourcePAYMENT.Position].SetField<String>("PAYMENT_CUSTOMER", textEditCustomerID.EditValue.ToString().PadLeft(6, '0'));
+                            iacDataSet.PAYMENT.Rows[bindingSourcePAYMENT.Position].SetField<DateTime>("PAYMENT_DATE", (DateTime)dateEditPaymentDate.EditValue);
+                            iacDataSet.PAYMENT.Rows[bindingSourcePAYMENT.Position].SetField<Int32>("PAYMENT_DEALER", (Int32)textEditDealerID.EditValue);
+                        }
                     }
                     bindingSourcePAYMENT.EndEdit();
                     Int32? SeqNo = 0;
