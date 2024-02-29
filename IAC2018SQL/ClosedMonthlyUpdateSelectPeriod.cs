@@ -49,23 +49,11 @@ namespace IAC2021SQL
             DateTime ldRunDate;
             String lsRunDate = "";
 
-            lsRunDate = comboBoxRunMonth.SelectedValue.ToString() + "/31/" + textBoxRunYear.Text;
+            // Moses Newman 02/29/2024 Run date should be next month 1st day -1!
+            lsRunDate = comboBoxRunMonth.SelectedValue.ToString() + "/01/" + textBoxRunYear.Text;
             DateTime.TryParse(lsRunDate,out ldRunDate);
-            if (ldRunDate == DateTime.MinValue)
-            {
-                lsRunDate = comboBoxRunMonth.SelectedValue.ToString() + "/30/" + textBoxRunYear.Text;
-                DateTime.TryParse(lsRunDate, out ldRunDate);
-                if (ldRunDate == DateTime.MinValue)
-                {
-                    lsRunDate = comboBoxRunMonth.SelectedValue.ToString() + "/28/" + textBoxRunYear.Text;
-                    DateTime.TryParse(lsRunDate, out ldRunDate);
-                    if (ldRunDate == DateTime.MinValue)
-                    {
-                        lsRunDate = comboBoxRunMonth.SelectedValue.ToString() + "/27/" + textBoxRunYear.Text;   // Must be a leap year with February run date
-                        DateTime.TryParse(lsRunDate, out ldRunDate);
-                    }
-                }
-            }
+            ldRunDate = ldRunDate.AddMonths(1).AddDays(-1);
+
 
             ReportData = new IACDataSet();
             // Moses Newman 11/29/2020 add new Daily Interest Variance Sub Report
