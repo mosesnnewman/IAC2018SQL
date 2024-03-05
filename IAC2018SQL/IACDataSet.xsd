@@ -16632,7 +16632,7 @@ SET                DEALER_STATUS = @DEALER_STATUS</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="WarrantyID" msprop:Generator_ColumnPropNameInTable="WarrantyIDColumn" msprop:Generator_ColumnPropNameInRow="WarrantyID" msprop:Generator_UserColumnName="WarrantyID" msprop:Generator_ColumnVarNameInTable="columnWarrantyID" type="xs:int" minOccurs="0" />
+              <xs:element name="WarrantyID" msprop:Generator_ColumnPropNameInTable="WarrantyIDColumn" msprop:Generator_ColumnPropNameInRow="WarrantyID" msprop:Generator_UserColumnName="WarrantyID" msprop:Generator_ColumnVarNameInTable="columnWarrantyID" type="xs:int" default="1" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
