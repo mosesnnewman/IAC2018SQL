@@ -1427,8 +1427,10 @@ namespace IAC2021SQL
                 case "O": // Moses Newman 10/25/2023 Handle OP and OV!
                     if(PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<String>("PAYMENT_TYPE") == "O")
                     {
-                        if (PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<String>("PAYMENT_CODE_2") != "P" &&
-                            PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<String>("PAYMENT_CODE_2") != "V")
+                        // Moses Newman 03/18/2024 Even pay type OR needs to stay here if the payment is negative
+                        if ((PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<String>("PAYMENT_CODE_2") != "P" &&
+                            PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<String>("PAYMENT_CODE_2") != "V") && 
+                            PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<Decimal>("PAYMENT_AMOUNT_RCV") >= 0)
                             goto default;
                     }
                     lntemppay = PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<Decimal>("PAYMENT_AMOUNT_RCV");
@@ -1476,8 +1478,10 @@ namespace IAC2021SQL
                 case "O": // Moses Newman 10/25/2023 Handle OP and OV!
                     if (PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<String>("PAYMENT_TYPE") == "O")
                     {
-                        if (PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<String>("PAYMENT_CODE_2") != "P" &&
-                            PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<String>("PAYMENT_CODE_2") != "V")
+                        // Moses Newman 03/18/2024 Even pay type OR needs to stay here if the payment is negative
+                        if ((PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<String>("PAYMENT_CODE_2") != "P" &&
+                            PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<String>("PAYMENT_CODE_2") != "V") && 
+                            PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<Decimal>("PAYMENT_AMOUNT_RCV") >= 0) 
                             goto default;
                     }
                     break;
