@@ -2,15 +2,10 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
-using System.IO;
-using RestSharp;
 using S9API.Models;
 using Acrobat;
-using RestSharp.Extensions;
 using RestSharp.Authenticators;
-using System.Threading;
 using System.Data.SqlClient;
-using DevExpress.XtraCharts.Native;
 
 namespace IAC2021SQL
 {

@@ -983,7 +983,7 @@ namespace IAC2021SQL
                 if (RepoIndex > -1)
                     comboBoxRepoCodes.SelectedIndex = RepoIndex;
                 else
-                    comboBoxRepoCodes.SelectedIndex = 10;
+                    comboBoxRepoCodes.SelectedIndex = 0;  // Moses Newman 03/18/2024 Change 10 to 0 only 6 actual entries, 0 is the default of none.
                 // Moses Newman 05/31/2018
                 if (RepoIndIndex > -1)
                     comboBoxRepoInd.SelectedIndex = RepoIndIndex;

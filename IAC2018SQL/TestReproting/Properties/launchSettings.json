@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "TestReproting": {
+      "commandName": "Project",
+      "launchBrowser": true
+    }
+  }
+}
