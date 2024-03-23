@@ -669,6 +669,7 @@
             this.PageFooterArea1.HeightF = 41F;
             this.PageFooterArea1.Name = "PageFooterArea1";
             this.PageFooterArea1.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
+            this.PageFooterArea1.PrintOn = DevExpress.XtraReports.UI.PrintOnPages.NotWithReportFooter;
             this.PageFooterArea1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
             // NewDealerNumber
@@ -774,7 +775,7 @@
             this.DataMember = "CUSTOMER";
             this.DataSource = this.sqlDataSource1;
             this.Landscape = true;
-            this.Margins = new DevExpress.Drawing.DXMargins(25, 25, 25, 25);
+            this.Margins = new DevExpress.Drawing.DXMargins(25F, 25F, 25F, 25F);
             this.PageHeight = 850;
             this.PageWidth = 1100;
             this.Parameters.AddRange(new DevExpress.XtraReports.Parameters.Parameter[] {
@@ -782,7 +783,7 @@
             this.gsUserID,
             this.gnAgedMonths,
             this.gdCurrentDate});
-            this.Version = "21.2";
+            this.Version = "23.2";
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
         }
