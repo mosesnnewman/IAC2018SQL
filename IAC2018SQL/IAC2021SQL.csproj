@@ -41,7 +41,7 @@
     <SuiteName>IAC2021SQL</SuiteName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>52</ApplicationRevision>
+    <ApplicationRevision>57</ApplicationRevision>
     <ApplicationVersion>200.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -311,7 +311,7 @@
       <HintPath>..\packages\Microsoft.Data.ConnectionUI.17.5.33428.366\lib\net472\Microsoft.Data.ConnectionUI.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Data.SqlClient, Version=5.0.0.0, Culture=neutral, PublicKeyToken=23ec7fc2d6eaa4a5, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Data.SqlClient.5.2.0\lib\net462\Microsoft.Data.SqlClient.dll</HintPath>
+      <HintPath>..\packages\Microsoft.Data.SqlClient.5.1.5\lib\net462\Microsoft.Data.SqlClient.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Data.Tools.Sql.BatchParser, Version=17.100.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.SqlServer.SqlManagementObjects.170.23.0\lib\net462\Microsoft.Data.Tools.Sql.BatchParser.dll</HintPath>
@@ -3750,16 +3750,6 @@
       <FileType>Assembly</FileType>
     </PublishFile>
     <PublishFile Include="Microsoft.Data.ConnectionUI">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
-      <FileType>Assembly</FileType>
-    </PublishFile>
-    <PublishFile Include="Microsoft.Data.SqlClient">
       <Visible>False</Visible>
       <Group>
       </Group>

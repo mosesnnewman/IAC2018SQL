@@ -109,7 +109,6 @@ namespace IAC2021SQL
             this.Text18 = new DevExpress.XtraReports.UI.XRLabel();
             this.GrandTotalDelinquentCount1 = new DevExpress.XtraReports.UI.XRLabel();
             this.ReportFooterSection2 = new DevExpress.XtraReports.UI.SubBand();
-            this.SubreportDelinquencyDealerSummary = new DevExpress.XtraReports.UI.XRSubreport();
             this.gsUserID = new DevExpress.XtraReports.Parameters.Parameter();
             this.gsUserName = new DevExpress.XtraReports.Parameters.Parameter();
             this.gnAgedMonths = new DevExpress.XtraReports.Parameters.Parameter();
@@ -142,6 +141,7 @@ namespace IAC2021SQL
             this.xrLabel4 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel5 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel6 = new DevExpress.XtraReports.UI.XRLabel();
+            this.SubreportDelinquencyDealerSummary = new DevExpress.XtraReports.UI.XRSubreport();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // Area3
@@ -470,7 +470,7 @@ namespace IAC2021SQL
             this.NewDealer_1});
             this.GroupHeaderArea1.GroupFields.AddRange(new DevExpress.XtraReports.UI.GroupField[] {
             new DevExpress.XtraReports.UI.GroupField("CUSTOMER_DEALER", DevExpress.XtraReports.UI.XRColumnSortOrder.Ascending)});
-            this.GroupHeaderArea1.HeightF = 15.34722F;
+            this.GroupHeaderArea1.HeightF = 18.33333F;
             this.GroupHeaderArea1.KeepTogether = true;
             this.GroupHeaderArea1.Name = "GroupHeaderArea1";
             this.GroupHeaderArea1.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
@@ -490,7 +490,7 @@ namespace IAC2021SQL
             this.NewDealer_1.LocationFloat = new DevExpress.Utils.PointFloat(1.041667F, 0F);
             this.NewDealer_1.Name = "NewDealer_1";
             this.NewDealer_1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.NewDealer_1.SizeF = new System.Drawing.SizeF(442.7083F, 15.34722F);
+            this.NewDealer_1.SizeF = new System.Drawing.SizeF(442.7083F, 18.33333F);
             this.NewDealer_1.StylePriority.UseFont = false;
             this.NewDealer_1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
@@ -522,7 +522,7 @@ namespace IAC2021SQL
             this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(41.66667F, 8.333333F);
             this.xrLabel2.Name = "xrLabel2";
             this.xrLabel2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel2.SizeF = new System.Drawing.SizeF(442.7083F, 15.27778F);
+            this.xrLabel2.SizeF = new System.Drawing.SizeF(442.7083F, 18.33333F);
             this.xrLabel2.StylePriority.UseFont = false;
             this.xrLabel2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
@@ -540,7 +540,7 @@ namespace IAC2021SQL
             this.TotalBalanceByDealer1.LocationFloat = new DevExpress.Utils.PointFloat(950.486F, 8.333333F);
             this.TotalBalanceByDealer1.Name = "TotalBalanceByDealer1";
             this.TotalBalanceByDealer1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.TotalBalanceByDealer1.SizeF = new System.Drawing.SizeF(98.33331F, 15.27778F);
+            this.TotalBalanceByDealer1.SizeF = new System.Drawing.SizeF(98.33331F, 18.33333F);
             this.TotalBalanceByDealer1.StylePriority.UseFont = false;
             xrSummary1.Running = DevExpress.XtraReports.UI.SummaryRunning.Group;
             this.TotalBalanceByDealer1.Summary = xrSummary1;
@@ -559,7 +559,7 @@ namespace IAC2021SQL
             this.Text2.LocationFloat = new DevExpress.Utils.PointFloat(858.8193F, 8.333333F);
             this.Text2.Name = "Text2";
             this.Text2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.Text2.SizeF = new System.Drawing.SizeF(91.66669F, 15.27778F);
+            this.Text2.SizeF = new System.Drawing.SizeF(91.66669F, 18.33333F);
             this.Text2.StylePriority.UseFont = false;
             this.Text2.StylePriority.UseTextAlignment = false;
             this.Text2.Text = "Dealer Total:";
@@ -580,7 +580,7 @@ namespace IAC2021SQL
             this.TotalDelinquentsByDealer1.LocationFloat = new DevExpress.Utils.PointFloat(791.6667F, 8.333333F);
             this.TotalDelinquentsByDealer1.Name = "TotalDelinquentsByDealer1";
             this.TotalDelinquentsByDealer1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.TotalDelinquentsByDealer1.SizeF = new System.Drawing.SizeF(67.15265F, 15.27778F);
+            this.TotalDelinquentsByDealer1.SizeF = new System.Drawing.SizeF(67.15265F, 18.33333F);
             this.TotalDelinquentsByDealer1.StylePriority.UseFont = false;
             xrSummary2.Running = DevExpress.XtraReports.UI.SummaryRunning.Group;
             this.TotalDelinquentsByDealer1.Summary = xrSummary2;
@@ -599,7 +599,7 @@ namespace IAC2021SQL
             this.Text4.LocationFloat = new DevExpress.Utils.PointFloat(610.4166F, 8.333333F);
             this.Text4.Name = "Text4";
             this.Text4.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.Text4.SizeF = new System.Drawing.SizeF(181.2501F, 15.27778F);
+            this.Text4.SizeF = new System.Drawing.SizeF(181.2501F, 18.33333F);
             this.Text4.StylePriority.UseFont = false;
             this.Text4.StylePriority.UseTextAlignment = false;
             this.Text4.Text = "Number of Delinquencies:\n";
@@ -643,7 +643,7 @@ namespace IAC2021SQL
             this.gdCurrentDate1,
             this.Picture1,
             this.Text16});
-            this.Section2.HeightF = 222.6389F;
+            this.Section2.HeightF = 258.0556F;
             this.Section2.KeepTogether = true;
             this.Section2.Name = "Section2";
             this.Section2.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
@@ -674,7 +674,7 @@ namespace IAC2021SQL
             this.Text15.CanGrow = false;
             this.Text15.Font = new DevExpress.Drawing.DXFont("Tahoma", 10F, DevExpress.Drawing.DXFontStyle.Bold);
             this.Text15.ForeColor = System.Drawing.Color.Black;
-            this.Text15.LocationFloat = new DevExpress.Utils.PointFloat(889.5834F, 178.3333F);
+            this.Text15.LocationFloat = new DevExpress.Utils.PointFloat(889.5834F, 219.6945F);
             this.Text15.Multiline = true;
             this.Text15.Name = "Text15";
             this.Text15.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -693,7 +693,7 @@ namespace IAC2021SQL
             this.Text14.CanGrow = false;
             this.Text14.Font = new DevExpress.Drawing.DXFont("Tahoma", 10F, DevExpress.Drawing.DXFontStyle.Bold);
             this.Text14.ForeColor = System.Drawing.Color.Black;
-            this.Text14.LocationFloat = new DevExpress.Utils.PointFloat(839.5834F, 178.4028F);
+            this.Text14.LocationFloat = new DevExpress.Utils.PointFloat(839.5834F, 219.6945F);
             this.Text14.Name = "Text14";
             this.Text14.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.Text14.SizeF = new System.Drawing.SizeF(50F, 34.86111F);
@@ -711,7 +711,7 @@ namespace IAC2021SQL
             this.Text13.BorderWidth = 1F;
             this.Text13.Font = new DevExpress.Drawing.DXFont("Tahoma", 10F, DevExpress.Drawing.DXFontStyle.Bold);
             this.Text13.ForeColor = System.Drawing.Color.Black;
-            this.Text13.LocationFloat = new DevExpress.Utils.PointFloat(741.6667F, 178.4028F);
+            this.Text13.LocationFloat = new DevExpress.Utils.PointFloat(741.6667F, 219.6945F);
             this.Text13.Multiline = true;
             this.Text13.Name = "Text13";
             this.Text13.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -729,7 +729,7 @@ namespace IAC2021SQL
             this.Text12.BorderWidth = 1F;
             this.Text12.Font = new DevExpress.Drawing.DXFont("Tahoma", 10F, DevExpress.Drawing.DXFontStyle.Bold);
             this.Text12.ForeColor = System.Drawing.Color.Black;
-            this.Text12.LocationFloat = new DevExpress.Utils.PointFloat(666.6667F, 178.4028F);
+            this.Text12.LocationFloat = new DevExpress.Utils.PointFloat(666.6667F, 219.6945F);
             this.Text12.Multiline = true;
             this.Text12.Name = "Text12";
             this.Text12.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -747,7 +747,7 @@ namespace IAC2021SQL
             this.Text9.BorderWidth = 1F;
             this.Text9.Font = new DevExpress.Drawing.DXFont("Tahoma", 10F, DevExpress.Drawing.DXFontStyle.Bold);
             this.Text9.ForeColor = System.Drawing.Color.Black;
-            this.Text9.LocationFloat = new DevExpress.Utils.PointFloat(616.6667F, 178.4028F);
+            this.Text9.LocationFloat = new DevExpress.Utils.PointFloat(616.6667F, 219.6945F);
             this.Text9.Multiline = true;
             this.Text9.Name = "Text9";
             this.Text9.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
@@ -765,11 +765,11 @@ namespace IAC2021SQL
             this.Text11.BorderWidth = 1F;
             this.Text11.Font = new DevExpress.Drawing.DXFont("Tahoma", 10F, DevExpress.Drawing.DXFontStyle.Bold);
             this.Text11.ForeColor = System.Drawing.Color.Black;
-            this.Text11.LocationFloat = new DevExpress.Utils.PointFloat(516.6667F, 171.5972F);
+            this.Text11.LocationFloat = new DevExpress.Utils.PointFloat(516.6667F, 179.5972F);
             this.Text11.Multiline = true;
             this.Text11.Name = "Text11";
             this.Text11.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.Text11.SizeF = new System.Drawing.SizeF(91.66666F, 41.66667F);
+            this.Text11.SizeF = new System.Drawing.SizeF(91.66663F, 74.95837F);
             this.Text11.StylePriority.UseFont = false;
             this.Text11.StylePriority.UseTextAlignment = false;
             this.Text11.Text = "WORK PHONE\nCELL PHONE\nCOSIGNER";
@@ -783,11 +783,11 @@ namespace IAC2021SQL
             this.Text8.BorderWidth = 1F;
             this.Text8.Font = new DevExpress.Drawing.DXFont("Tahoma", 10F, DevExpress.Drawing.DXFontStyle.Bold);
             this.Text8.ForeColor = System.Drawing.Color.Black;
-            this.Text8.LocationFloat = new DevExpress.Utils.PointFloat(408.3333F, 178.4028F);
+            this.Text8.LocationFloat = new DevExpress.Utils.PointFloat(408.3333F, 191.5695F);
             this.Text8.Multiline = true;
             this.Text8.Name = "Text8";
             this.Text8.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.Text8.SizeF = new System.Drawing.SizeF(91.66666F, 34.86111F);
+            this.Text8.SizeF = new System.Drawing.SizeF(103.125F, 62.98611F);
             this.Text8.StylePriority.UseFont = false;
             this.Text8.StylePriority.UseTextAlignment = false;
             this.Text8.Text = "HOME PHONE \nLAST PAYMENT";
@@ -802,7 +802,7 @@ namespace IAC2021SQL
             this.Text6.CanGrow = false;
             this.Text6.Font = new DevExpress.Drawing.DXFont("Tahoma", 10F, DevExpress.Drawing.DXFontStyle.Bold);
             this.Text6.ForeColor = System.Drawing.Color.Black;
-            this.Text6.LocationFloat = new DevExpress.Utils.PointFloat(150F, 195F);
+            this.Text6.LocationFloat = new DevExpress.Utils.PointFloat(150F, 236.2917F);
             this.Text6.Name = "Text6";
             this.Text6.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.Text6.SizeF = new System.Drawing.SizeF(145.8333F, 18.26389F);
@@ -819,7 +819,7 @@ namespace IAC2021SQL
             this.Text7.BorderWidth = 1F;
             this.Text7.Font = new DevExpress.Drawing.DXFont("Tahoma", 10F, DevExpress.Drawing.DXFontStyle.Bold);
             this.Text7.ForeColor = System.Drawing.Color.Black;
-            this.Text7.LocationFloat = new DevExpress.Utils.PointFloat(75F, 195F);
+            this.Text7.LocationFloat = new DevExpress.Utils.PointFloat(75F, 236.2917F);
             this.Text7.Name = "Text7";
             this.Text7.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.Text7.SizeF = new System.Drawing.SizeF(62.5F, 18.2639F);
@@ -837,7 +837,7 @@ namespace IAC2021SQL
             this.Text10.CanGrow = false;
             this.Text10.Font = new DevExpress.Drawing.DXFont("Tahoma", 10F, DevExpress.Drawing.DXFontStyle.Bold);
             this.Text10.ForeColor = System.Drawing.Color.Black;
-            this.Text10.LocationFloat = new DevExpress.Utils.PointFloat(8.333333F, 195F);
+            this.Text10.LocationFloat = new DevExpress.Utils.PointFloat(8.333333F, 236.2917F);
             this.Text10.Name = "Text10";
             this.Text10.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.Text10.SizeF = new System.Drawing.SizeF(60.41667F, 18.26389F);
@@ -855,7 +855,7 @@ namespace IAC2021SQL
             this.Line1.Font = new DevExpress.Drawing.DXFont("Times New Roman", 9.75F);
             this.Line1.ForeColor = System.Drawing.Color.Navy;
             this.Line1.LineWidth = 3F;
-            this.Line1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 219.5139F);
+            this.Line1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 254.5556F);
             this.Line1.Name = "Line1";
             this.Line1.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.Line1.SizeF = new System.Drawing.SizeF(1050F, 3.125F);
@@ -935,7 +935,7 @@ namespace IAC2021SQL
             this.Text16.CanGrow = false;
             this.Text16.Font = new DevExpress.Drawing.DXFont("Tahoma", 10F, DevExpress.Drawing.DXFontStyle.Bold);
             this.Text16.ForeColor = System.Drawing.Color.Black;
-            this.Text16.LocationFloat = new DevExpress.Utils.PointFloat(966.6667F, 178.3333F);
+            this.Text16.LocationFloat = new DevExpress.Utils.PointFloat(966.6667F, 219.6945F);
             this.Text16.Name = "Text16";
             this.Text16.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.Text16.SizeF = new System.Drawing.SizeF(82.15265F, 34.86111F);
@@ -981,7 +981,7 @@ namespace IAC2021SQL
             this.GrandTotalBalance1.LocationFloat = new DevExpress.Utils.PointFloat(950.486F, 8.333333F);
             this.GrandTotalBalance1.Name = "GrandTotalBalance1";
             this.GrandTotalBalance1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.GrandTotalBalance1.SizeF = new System.Drawing.SizeF(98.33331F, 15.27778F);
+            this.GrandTotalBalance1.SizeF = new System.Drawing.SizeF(98.33331F, 18.33333F);
             this.GrandTotalBalance1.StylePriority.UseFont = false;
             xrSummary3.Running = DevExpress.XtraReports.UI.SummaryRunning.Report;
             this.GrandTotalBalance1.Summary = xrSummary3;
@@ -1000,7 +1000,7 @@ namespace IAC2021SQL
             this.Text17.LocationFloat = new DevExpress.Utils.PointFloat(858.8193F, 8.333333F);
             this.Text17.Name = "Text17";
             this.Text17.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.Text17.SizeF = new System.Drawing.SizeF(91.66669F, 15.27778F);
+            this.Text17.SizeF = new System.Drawing.SizeF(91.66669F, 18.33333F);
             this.Text17.StylePriority.UseFont = false;
             this.Text17.StylePriority.UseTextAlignment = false;
             this.Text17.Text = "Grand Total:";
@@ -1019,7 +1019,7 @@ namespace IAC2021SQL
             this.Text18.LocationFloat = new DevExpress.Utils.PointFloat(579.1666F, 8.333333F);
             this.Text18.Name = "Text18";
             this.Text18.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.Text18.SizeF = new System.Drawing.SizeF(212.5001F, 15.27778F);
+            this.Text18.SizeF = new System.Drawing.SizeF(212.5001F, 18.33333F);
             this.Text18.StylePriority.UseFont = false;
             this.Text18.StylePriority.UseTextAlignment = false;
             this.Text18.Text = "Grand Total Delinquent Count:\n";
@@ -1039,7 +1039,7 @@ namespace IAC2021SQL
             this.GrandTotalDelinquentCount1.LocationFloat = new DevExpress.Utils.PointFloat(791.6667F, 8.333333F);
             this.GrandTotalDelinquentCount1.Name = "GrandTotalDelinquentCount1";
             this.GrandTotalDelinquentCount1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.GrandTotalDelinquentCount1.SizeF = new System.Drawing.SizeF(67.15265F, 15.27778F);
+            this.GrandTotalDelinquentCount1.SizeF = new System.Drawing.SizeF(67.15265F, 18.33333F);
             this.GrandTotalDelinquentCount1.StylePriority.UseFont = false;
             xrSummary4.Running = DevExpress.XtraReports.UI.SummaryRunning.Report;
             this.GrandTotalDelinquentCount1.Summary = xrSummary4;
@@ -1056,18 +1056,6 @@ namespace IAC2021SQL
             this.ReportFooterSection2.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.ReportFooterSection2.PageBreak = DevExpress.XtraReports.UI.PageBreak.BeforeBand;
             this.ReportFooterSection2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
-            // 
-            // SubreportDelinquencyDealerSummary
-            // 
-            this.SubreportDelinquencyDealerSummary.GenerateOwnPages = true;
-            this.SubreportDelinquencyDealerSummary.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
-            this.SubreportDelinquencyDealerSummary.Name = "SubreportDelinquencyDealerSummary";
-            this.SubreportDelinquencyDealerSummary.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gsUserID", this.gsUserID));
-            this.SubreportDelinquencyDealerSummary.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gsUserName", this.gsUserName));
-            this.SubreportDelinquencyDealerSummary.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gnAgedMonths", this.gnAgedMonths));
-            this.SubreportDelinquencyDealerSummary.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gdCurrentDate", this.gdCurrentDate));
-            this.SubreportDelinquencyDealerSummary.ReportSource = new IAC2021SQL.XtraReportClosedDelinquencySummarySubreport();
-            this.SubreportDelinquencyDealerSummary.SizeF = new System.Drawing.SizeF(1050F, 50F);
             // 
             // gsUserID
             // 
@@ -1365,7 +1353,7 @@ namespace IAC2021SQL
             this.xrLabel1});
             this.GroupHeader1.GroupFields.AddRange(new DevExpress.XtraReports.UI.GroupField[] {
             new DevExpress.XtraReports.UI.GroupField("CUSTOMERDEALER.DEALER_ST", DevExpress.XtraReports.UI.XRColumnSortOrder.Ascending)});
-            this.GroupHeader1.HeightF = 17.9306F;
+            this.GroupHeader1.HeightF = 18.33333F;
             this.GroupHeader1.KeepTogether = true;
             this.GroupHeader1.Level = 1;
             this.GroupHeader1.Name = "GroupHeader1";
@@ -1385,7 +1373,7 @@ namespace IAC2021SQL
             this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(3.041667F, 0F);
             this.xrLabel1.Name = "xrLabel1";
             this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel1.SizeF = new System.Drawing.SizeF(259.375F, 15.34722F);
+            this.xrLabel1.SizeF = new System.Drawing.SizeF(259.375F, 18.33333F);
             this.xrLabel1.StylePriority.UseFont = false;
             this.xrLabel1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
@@ -1397,7 +1385,7 @@ namespace IAC2021SQL
             this.xrLabel4,
             this.xrLabel5,
             this.xrLabel6});
-            this.GroupFooter1.HeightF = 24.97209F;
+            this.GroupFooter1.HeightF = 25.59709F;
             this.GroupFooter1.Level = 1;
             this.GroupFooter1.Name = "GroupFooter1";
             this.GroupFooter1.PageBreak = DevExpress.XtraReports.UI.PageBreak.AfterBandExceptLastEntry;
@@ -1416,7 +1404,7 @@ namespace IAC2021SQL
             this.xrLabel7.LocationFloat = new DevExpress.Utils.PointFloat(41.66667F, 7.263756F);
             this.xrLabel7.Name = "xrLabel7";
             this.xrLabel7.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel7.SizeF = new System.Drawing.SizeF(259.375F, 15.27778F);
+            this.xrLabel7.SizeF = new System.Drawing.SizeF(259.375F, 18.33333F);
             this.xrLabel7.StylePriority.UseFont = false;
             this.xrLabel7.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
@@ -1432,7 +1420,7 @@ namespace IAC2021SQL
             this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(610.4166F, 4.805422F);
             this.xrLabel3.Name = "xrLabel3";
             this.xrLabel3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel3.SizeF = new System.Drawing.SizeF(181.2501F, 15.27778F);
+            this.xrLabel3.SizeF = new System.Drawing.SizeF(181.2501F, 18.33333F);
             this.xrLabel3.StylePriority.UseFont = false;
             this.xrLabel3.StylePriority.UseTextAlignment = false;
             this.xrLabel3.Text = "Number of Delinquencies:\n";
@@ -1452,7 +1440,7 @@ namespace IAC2021SQL
             this.xrLabel4.LocationFloat = new DevExpress.Utils.PointFloat(791.6667F, 4.805422F);
             this.xrLabel4.Name = "xrLabel4";
             this.xrLabel4.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel4.SizeF = new System.Drawing.SizeF(67.15265F, 15.27778F);
+            this.xrLabel4.SizeF = new System.Drawing.SizeF(67.15265F, 18.33333F);
             this.xrLabel4.StylePriority.UseFont = false;
             xrSummary5.Running = DevExpress.XtraReports.UI.SummaryRunning.Group;
             this.xrLabel4.Summary = xrSummary5;
@@ -1471,7 +1459,7 @@ namespace IAC2021SQL
             this.xrLabel5.LocationFloat = new DevExpress.Utils.PointFloat(858.8193F, 4.805422F);
             this.xrLabel5.Name = "xrLabel5";
             this.xrLabel5.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel5.SizeF = new System.Drawing.SizeF(91.66669F, 15.27778F);
+            this.xrLabel5.SizeF = new System.Drawing.SizeF(91.66669F, 18.33333F);
             this.xrLabel5.StylePriority.UseFont = false;
             this.xrLabel5.StylePriority.UseTextAlignment = false;
             this.xrLabel5.Text = "Dealer Total:";
@@ -1492,12 +1480,24 @@ namespace IAC2021SQL
             this.xrLabel6.LocationFloat = new DevExpress.Utils.PointFloat(950.486F, 4.805422F);
             this.xrLabel6.Name = "xrLabel6";
             this.xrLabel6.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel6.SizeF = new System.Drawing.SizeF(98.33331F, 15.27778F);
+            this.xrLabel6.SizeF = new System.Drawing.SizeF(98.33331F, 18.33333F);
             this.xrLabel6.StylePriority.UseFont = false;
             xrSummary6.Running = DevExpress.XtraReports.UI.SummaryRunning.Group;
             this.xrLabel6.Summary = xrSummary6;
             this.xrLabel6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
             this.xrLabel6.TextFormatString = "{0:C2}";
+            // 
+            // SubreportDelinquencyDealerSummary
+            // 
+            this.SubreportDelinquencyDealerSummary.GenerateOwnPages = true;
+            this.SubreportDelinquencyDealerSummary.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
+            this.SubreportDelinquencyDealerSummary.Name = "SubreportDelinquencyDealerSummary";
+            this.SubreportDelinquencyDealerSummary.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gsUserID", this.gsUserID));
+            this.SubreportDelinquencyDealerSummary.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gsUserName", this.gsUserName));
+            this.SubreportDelinquencyDealerSummary.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gnAgedMonths", this.gnAgedMonths));
+            this.SubreportDelinquencyDealerSummary.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gdCurrentDate", this.gdCurrentDate));
+            this.SubreportDelinquencyDealerSummary.ReportSource = new IAC2021SQL.XtraReportClosedDelinquencySummarySubreport();
+            this.SubreportDelinquencyDealerSummary.SizeF = new System.Drawing.SizeF(1050F, 50F);
             // 
             // XtraReportDelinquency
             // 
@@ -1530,7 +1530,9 @@ namespace IAC2021SQL
             this.DataSource = this.sqlDataSource1;
             this.ExportOptions.Xls.FitToPrintedPageHeight = true;
             this.ExportOptions.Xls.FitToPrintedPageWidth = true;
-            this.ExportOptions.Xlsx.FitToPrintedPageHeight = true;
+            this.ExportOptions.Xlsx.DocumentOptions.Application = "IAC LMS";
+            this.ExportOptions.Xlsx.DocumentOptions.Author = "Moses Newman";
+            this.ExportOptions.Xlsx.DocumentOptions.Company = "IAC";
             this.ExportOptions.Xlsx.FitToPrintedPageWidth = true;
             this.Landscape = true;
             this.Margins = new DevExpress.Drawing.DXMargins(25F, 25F, 25F, 25F);

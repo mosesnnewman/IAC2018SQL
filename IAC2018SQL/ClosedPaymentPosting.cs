@@ -9,6 +9,7 @@ using System.IO;
 using IAC2021SQL.IACDataSetTableAdapters;
 using Newtonsoft.Json;
 using IAC2021SQL.PaymentDataSetTableAdapters;
+using CrystalDecisions.Shared.Json;
 
 namespace IAC2021SQL
 {
@@ -528,7 +529,8 @@ namespace IAC2021SQL
             }
             TVAmortTableAdapter.FillByCustomerNo(PAYMENTDataSet.TVAmort, PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_NO"));
             // Moses Newman 8/9/2013 need to add a new field on summary for ISF and NOT include in total cash.
-            if (PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<String>("PAYMENT_TYPE") == "I")
+            // Moses Newman 03/26/2024 Hanlde negative payments applied to a previous payment like INSUF
+            if (PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<String>("PAYMENT_TYPE") == "I" || (PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<Int32?>("ISFID") ?? 0) != 0)
             {
                 lnISFTotal += PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<Decimal>("PAYMENT_AMOUNT_RCV");
                 if (PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<Nullable<DateTime>>("PAYMENT_ISF_DATE") != null)
@@ -542,7 +544,8 @@ namespace IAC2021SQL
             }
             lnIntPay = lnPaidSimpleInt;
             lnMoneyRemaining -= (Decimal)lnPaidSimpleInt;
-            if (PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<String>("PAYMENT_TYPE") == "I" && PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<Nullable<DateTime>>("PAYMENT_ISF_DATE") != null)
+            // Moses Newman 03/26/2024 Hanlde negative payments applied to a previous payment like INSUF
+            if ((PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<String>("PAYMENT_TYPE") == "I" || (PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<Int32?>("ISFID") ?? 0) != 0) && PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<Nullable<DateTime>>("PAYMENT_ISF_DATE") != null)
                 lnPrinciplePaid = lnMoneyRemaining - (Decimal)lnPaidSimpleInt;
             else
                 if(lnPrinciplePaid == 0)
@@ -1402,7 +1405,6 @@ namespace IAC2021SQL
 
         void ClosedPaymentAccumIOL(int PaymentPos, ref IACDataSet PAYMENTDataSet, ref BackgroundWorker worker)
         {
-            decimal lntemppay = 0;
             lnMasterInterest += lnAccruedInt;
 
             lnMasterDiscount += (Decimal)lnPaidDiscount;
@@ -1424,20 +1426,17 @@ namespace IAC2021SQL
                 case "V":
                 case "P":
                 case "I":
-                case "O": // Moses Newman 10/25/2023 Handle OP and OV!
-                    if(PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<String>("PAYMENT_TYPE") == "O")
-                    {
-                        // Moses Newman 03/18/2024 Even pay type OR needs to stay here if the payment is negative
-                        if ((PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<String>("PAYMENT_CODE_2") != "P" &&
-                            PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<String>("PAYMENT_CODE_2") != "V") && 
-                            PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<Decimal>("PAYMENT_AMOUNT_RCV") >= 0)
-                            goto default;
-                    }
-                    lntemppay = PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<Decimal>("PAYMENT_AMOUNT_RCV");
                     lnMasterNPNP += PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<Decimal>("PAYMENT_AMOUNT_RCV");
                     lnNonCashFeesandCharges = lnMasterOloan;
                     break;
                 default:
+                    // Moses Newman 03/26/2024 Even pay type RP and RS needs to stay here if the payment is negative
+                    if (PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<Decimal>("PAYMENT_AMOUNT_RCV") < 0 && (PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<Int32?>("ISFID") ?? 0) != 0)
+                    {
+                        lnMasterNPNP += PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<Decimal>("PAYMENT_AMOUNT_RCV");
+                        lnNonCashFeesandCharges = lnMasterOloan;
+                        break;
+                    }
                     lnMasterNP += PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<Decimal>("PAYMENT_AMOUNT_RCV");
                     break;
             }
@@ -1475,17 +1474,12 @@ namespace IAC2021SQL
                 case "V":
                 case "P":
                 case "I":
-                case "O": // Moses Newman 10/25/2023 Handle OP and OV!
-                    if (PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<String>("PAYMENT_TYPE") == "O")
-                    {
-                        // Moses Newman 03/18/2024 Even pay type OR needs to stay here if the payment is negative
-                        if ((PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<String>("PAYMENT_CODE_2") != "P" &&
-                            PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<String>("PAYMENT_CODE_2") != "V") && 
-                            PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<Decimal>("PAYMENT_AMOUNT_RCV") >= 0) 
-                            goto default;
-                    }
                     break;
                 default:
+                    if (PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<Decimal>("PAYMENT_AMOUNT_RCV") < 0 && (PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<Int32?>("ISFID") ?? 0) != 0)
+                    {
+                        break;
+                    }
                     lnMasterAmortNP += PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<Decimal>("PAYMENT_AMOUNT_RCV");
                     break;
             }

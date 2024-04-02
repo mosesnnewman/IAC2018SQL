@@ -1001,12 +1001,15 @@ namespace IAC2021SQL
                 {
                     excelWorkSheet.Cells[i, 2].Value = Convert.ToDecimal(excelWorkSheet.Cells[i, 2].Value);
                     excelWorkSheet.Cells[i, 6].Value = Convert.ToInt32(excelWorkSheet.Cells[i, 6].Value);
+                    excelWorkSheet.Cells[i, 4].Value = Convert.ToDouble(excelWorkSheet.Cells[i, 4].Value); // Moses Newman 03/27/2024 add average of APR so must convert from text to numeric.
                 }
 
 
                 Excel.Range ClosedTypeCountTotalRange = excelWorkSheet.get_Range("A1:N" + (ClosedCusts + OpenCusts + 2).ToString());
                 ClosedTypeCountTotalRange.Subtotal(1, Excel.XlConsolidationFunction.xlCount, new int[] { 1 }, true, false, Excel.XlSummaryRow.xlSummaryBelow);
                 Excel.Range ClosedSubTotalRange = excelWorkSheet.get_Range("A1:N" + (ClosedCusts + OpenCusts + 2).ToString());
+                // Moses Newman 03/27/2024 Average APR Subtotal now!
+                ClosedSubTotalRange.Subtotal(7, Excel.XlConsolidationFunction.xlAverage, new int[] { 5 }, false, false, Excel.XlSummaryRow.xlSummaryBelow);
                 ClosedSubTotalRange.Subtotal(7, Excel.XlConsolidationFunction.xlSum, new int[] { 3 }, false, false, Excel.XlSummaryRow.xlSummaryBelow);
                 ClosedSubTotalRange.Subtotal(2, Excel.XlConsolidationFunction.xlCount, new int[] { 2 }, false, false, Excel.XlSummaryRow.xlSummaryBelow);
 
@@ -1016,6 +1019,17 @@ namespace IAC2021SQL
                 int GrandCount = 0;
                 for (int i = last.Row; i > 0; i--)
                 {
+                    // Moses Newman 03/27/2024 Average APR Subtotal now!
+                    if (excelWorkSheet.Cells[i, 6].Value != null)
+                    {
+                        if (excelWorkSheet.Cells[i, 6].Value.Contains("Average"))
+                        {
+                            excelWorkSheet.Cells[i, 6].Value = "";
+                            excelWorkSheet.Cells[i, 1].Value = excelWorkSheet.Cells[i, 6].Value + " APR";
+                            excelWorkSheet.Cells[i, 1].Font.FontStyle = "Bold";
+                            excelWorkSheet.Cells[i, 4].Font.FontStyle = "Bold";
+                        }
+                    }
                     if (excelWorkSheet.Cells[i, 1].Value == "O Count")
                     {
                         excelWorkSheet.Cells[i, 1].Value = "Total Units Open";

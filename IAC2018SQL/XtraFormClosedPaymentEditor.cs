@@ -209,7 +209,7 @@ namespace IAC2021SQL
                     newRow.PAYMENT_CUSTOMER = textEditCustomerID.EditValue.ToString().PadLeft(6, '0');
                     newRow.PAYMENT_DATE = (DateTime)dateEditPaymentDate.EditValue;
                     newRow.PAYMENT_DEALER = (Int32)textEditDealerID.EditValue;
-                    newRow.PAYMENT_TYPE = "R";
+                    newRow.PAYMENT_TYPE = " ";
                     newRow.PAYMENT_CODE_2 = "N";
                     newRow.PAYMENT_AUTO_PAY = "N";
                     iacDataSet.PAYMENT.AddPAYMENTRow(newRow);
@@ -425,7 +425,10 @@ namespace IAC2021SQL
                 return;
             _InFillIt = true;
             GridLookUpEdit gedit = sender as GridLookUpEdit;
-            CustomerID = gedit.EditValue.ToString() != String.Empty ? (Int32)gedit.EditValue:0;
+            if (gedit.EditValue == null) // Moses Newman 03/27/2024 if gedit.EditValue is null set CustomerID = 0 so it does not blow up.
+                CustomerID = 0;
+            else
+                CustomerID = gedit.EditValue.ToString() != String.Empty ? (Int32)gedit.EditValue:0;
             if(CustomerID !=0)
             {
                 FillIt();

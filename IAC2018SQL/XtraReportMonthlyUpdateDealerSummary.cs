@@ -19,6 +19,7 @@ namespace IAC2021SQL
                 DealerAnnualYield = 0,
                 StateTotalInterest = 0,
                 StatePreviousBalance = 0,
+                stateNewBalance = 0,
                 StateAnnualYield = 0,
                 TotalInterest = 0,
                 PreviousBalance = 0,
@@ -237,10 +238,16 @@ namespace IAC2021SQL
         private void xrLabel23_BeforePrint(object sender, CancelEventArgs e)
         {
             DateTime RunDate = (DateTime)this.Parameters["gdLastRun"].Value;
+            // Moses Newman 03/28/2024 If state had no previous balance because it is newly working with IAC.
+            stateNewBalance = (Decimal)this.StateNewBalance.Summary.GetResult();
             StatePreviousBalance = (Decimal)this.stateprevbal.Summary.GetResult();
             StateTotalInterest = (Decimal)this.StateInterest.Summary.GetResult();
             DaysInMonth = DateTime.DaysInMonth(RunDate.Year, RunDate.Month);
-            StateAnnualYield = (StateTotalInterest / StatePreviousBalance) / DaysInMonth * 365 * 100;
+            if(StatePreviousBalance != 0)
+                StateAnnualYield = (StateTotalInterest / StatePreviousBalance) / DaysInMonth * 365 * 100;
+            else
+                // Moses Newman 03/28/2024 If state had no previous balance because it is newly working with IAC.
+                StateAnnualYield = (StateTotalInterest / stateNewBalance) / DaysInMonth * 365 * 100;
             xrLabel23.Text = string.Format("{0:##0.000;#;#}", StateAnnualYield) + "%";
         }
 

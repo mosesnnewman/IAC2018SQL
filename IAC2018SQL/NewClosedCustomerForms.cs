@@ -5,13 +5,8 @@ using System.Data;
 using System.Data.SqlClient;
 using System.DirectoryServices.AccountManagement;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using System.Globalization;
-using Microsoft.Office;
-using Microsoft.Office.Core;
-using Microsoft.Office.Interop;
 using Outlook = Microsoft.Office.Interop.Outlook;
 using IAC2021SQL.GeneralWSProxy;
 using IAC2021SQL.LoginWSProxy;
@@ -19,20 +14,17 @@ using IAC2021SQL.MessageWSProxy;
 using IAC2021SQL.SubscriberWSProxy;
 using Word = Microsoft.Office.Interop.Word;
 using Excel = Microsoft.Office.Interop.Excel;
-using Microsoft.Office.Tools.Excel;
 using System.IO;
 using IAC2021SQL.TSBDataSetTableAdapters;
 //Moses Newman 11/23/2021 Use DevExpress GridView instead of DataGridView for comments tab now
 using DevExpress.XtraGrid.Views.Base;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraGrid.Columns;
-using DevExpress.XtraGrid.Repository;
 using DevExpress.XtraEditors;
 using DevExpress.Data;
 using DevExpress.XtraBars;
 using DevExpress.XtraReports.UI;
 using DevExpress.DataAccess.Sql;
-using DevExpress.DataAccess.Sql.DataApi;
 using Microsoft.IdentityModel.Tokens;
 using IAC2021SQL.PaymentDataSetTableAdapters;
 using DevExpress.LookAndFeel;
@@ -1017,7 +1009,10 @@ namespace IAC2021SQL
                 // Moses Newman 05/08/2023 
                 WarrantyCompanyTableAdapter.FillByAll(iACDataSet.WarrantyCompany);
                 // Moses Newman 02/03/2024 never let BindingSource position = -1
-                Int32 WarrantyPos = bindingSourceWarrantyCompany.Find("id", iACDataSet.VEHICLE.Rows[VehiclebindingSource.Position].Field<Int32>("WarrantyID"));
+                // Moses Newman 03/27/2023 Make sure we always go to record 0 in Vehicle.
+                Int32 WarrantyPos = 0;
+                if (iACDataSet.VEHICLE.Rows.Count > 0)
+                    WarrantyPos = bindingSourceWarrantyCompany.Find("id", iACDataSet.VEHICLE.Rows[0].Field<Int32>("WarrantyID"));
                 WarrantyPos = WarrantyPos > -1 ? WarrantyPos : 0;
                 bindingSourceWarrantyCompany.Position = WarrantyPos;
                 // Moses Newman 04/07/2022 
