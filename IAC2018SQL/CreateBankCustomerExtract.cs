@@ -1009,6 +1009,8 @@ namespace IAC2021SQL
                 ClosedTypeCountTotalRange.Subtotal(1, Excel.XlConsolidationFunction.xlCount, new int[] { 1 }, true, false, Excel.XlSummaryRow.xlSummaryBelow);
                 Excel.Range ClosedSubTotalRange = excelWorkSheet.get_Range("A1:N" + (ClosedCusts + OpenCusts + 2).ToString());
                 // Moses Newman 03/27/2024 Average APR Subtotal now!
+                // Moses Newman 04/03/2024 Average Loan Amount now!
+                ClosedSubTotalRange.Subtotal(7, Excel.XlConsolidationFunction.xlAverage, new int[] { 3 }, false, false, Excel.XlSummaryRow.xlSummaryBelow);
                 ClosedSubTotalRange.Subtotal(7, Excel.XlConsolidationFunction.xlAverage, new int[] { 5 }, false, false, Excel.XlSummaryRow.xlSummaryBelow);
                 ClosedSubTotalRange.Subtotal(7, Excel.XlConsolidationFunction.xlSum, new int[] { 3 }, false, false, Excel.XlSummaryRow.xlSummaryBelow);
                 ClosedSubTotalRange.Subtotal(2, Excel.XlConsolidationFunction.xlCount, new int[] { 2 }, false, false, Excel.XlSummaryRow.xlSummaryBelow);

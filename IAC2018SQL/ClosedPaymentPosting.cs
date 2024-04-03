@@ -1426,6 +1426,7 @@ namespace IAC2021SQL
                 case "V":
                 case "P":
                 case "I":
+                case "O": // Moses Newman 04/03/2024 put back so that O doesnt douple post and wind up in NP
                     lnMasterNPNP += PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<Decimal>("PAYMENT_AMOUNT_RCV");
                     lnNonCashFeesandCharges = lnMasterOloan;
                     break;
@@ -1474,6 +1475,7 @@ namespace IAC2021SQL
                 case "V":
                 case "P":
                 case "I":
+                case "O": // Moses Newman 04/03/2024 put back so that O doesnt douple post and wind up in NP
                     break;
                 default:
                     if (PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<Decimal>("PAYMENT_AMOUNT_RCV") < 0 && (PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<Int32?>("ISFID") ?? 0) != 0)
