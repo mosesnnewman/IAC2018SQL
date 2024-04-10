@@ -1021,17 +1021,6 @@ namespace IAC2021SQL
                 int GrandCount = 0;
                 for (int i = last.Row; i > 0; i--)
                 {
-                    // Moses Newman 03/27/2024 Average APR Subtotal now!
-                    if (excelWorkSheet.Cells[i, 6].Value != null)
-                    {
-                        if (excelWorkSheet.Cells[i, 6].Value.Contains("Average"))
-                        {
-                            excelWorkSheet.Cells[i, 6].Value = "";
-                            excelWorkSheet.Cells[i, 1].Value = excelWorkSheet.Cells[i, 6].Value + " APR";
-                            excelWorkSheet.Cells[i, 1].Font.FontStyle = "Bold";
-                            excelWorkSheet.Cells[i, 4].Font.FontStyle = "Bold";
-                        }
-                    }
                     if (excelWorkSheet.Cells[i, 1].Value == "O Count")
                     {
                         excelWorkSheet.Cells[i, 1].Value = "Total Units Open";
@@ -1078,39 +1067,76 @@ namespace IAC2021SQL
                         excelWorkSheet.Cells[i, 2].Font.FontStyle = "Bold";
                     }
                 }
-                ARange.ColumnWidth = 17;
+                ARange.ColumnWidth = 32;
                 last = excelWorkSheet.Cells.SpecialCells(Excel.XlCellType.xlCellTypeLastCell, System.Type.Missing);
                 ARange = excelWorkSheet.get_Range("A1:A" + last.Row.ToString());
 
                 Decimal TotalClosedLoans = 0, TotalOpenLoans = 0;
                 Int32 TotalUnitsClosed = 0, TotalUnitsOpen = 0;
+                Boolean tempDone = false;
                 for (int i = 1; i <= last.Row; i++)
                 {
-                    if (excelWorkSheet.Cells[i, 1].Value == "Units")
+                    if (!tempDone)
                     {
-                        excelWorkSheet.Cells[i, 1].Value = "Totals DLR# " + excelWorkSheet.Cells[i - 1, 7].Text;
-                        excelWorkSheet.Cells[i, 3].Value = Convert.ToDecimal(excelWorkSheet.Cells[i + 1, 3].Value);
-                        if (excelWorkSheet.Cells[i - 1, 2].Value == "C")
-                            // Moses Newman 08/22/2023
-                            TotalClosedLoans += excelWorkSheet.Cells[i + 1, 3].Value is null ? 0:excelWorkSheet.Cells[i + 1, 3].Value;
-                        else
-                            // Moses Newman 08/22/2023
-                            TotalOpenLoans += excelWorkSheet.Cells[i + 1, 3].Value is null ? 0 : excelWorkSheet.Cells[i + 1, 3].Value;   
-                        excelWorkSheet.Cells[i + 1, 3].Value = "";
-                        excelWorkSheet.Cells[i + 1, 7].Value = "";
-                        excelWorkSheet.Cells[i, 3].Font.FontStyle = "Bold";
+                        if (excelWorkSheet.Cells[i, 1].Value == "Units")
+                        {
+                            excelWorkSheet.Cells[i, 1].Value = "Totals DLR# " + excelWorkSheet.Cells[i - 1, 7].Text;
+                            excelWorkSheet.Cells[i, 3].Value = Convert.ToDecimal(excelWorkSheet.Cells[i + 1, 3].Value);
+                            if (excelWorkSheet.Cells[i - 1, 2].Value == "C")
+                                // Moses Newman 08/22/2023
+                                TotalClosedLoans += excelWorkSheet.Cells[i + 1, 3].Value is null ? 0 : excelWorkSheet.Cells[i + 1, 3].Value;
+                            else
+                                // Moses Newman 08/22/2023
+                                TotalOpenLoans += excelWorkSheet.Cells[i + 1, 3].Value is null ? 0 : excelWorkSheet.Cells[i + 1, 3].Value;
+                            excelWorkSheet.Cells[i + 1, 3].Value = "";
+                            excelWorkSheet.Cells[i + 1, 7].Value = "";
+                            excelWorkSheet.Cells[i, 3].Font.FontStyle = "Bold";
+                        }
+                        if (excelWorkSheet.Cells[i, 1].Value == "Total Units Closed")
+                        {
+                            TotalUnitsClosed = Convert.ToInt32(excelWorkSheet.Cells[i, 2].Value);
+                            excelWorkSheet.Cells[i, 3].Value = TotalClosedLoans;
+                            excelWorkSheet.Cells[i, 3].Font.FontStyle = "Bold";
+                            excelWorkSheet.Cells[i, 1].Value = "Totals Closed";
+                        }
+                        if (excelWorkSheet.Cells[i, 7].Text == "Grand Total")
+                        {
+                            excelWorkSheet.Rows[i].Delete();
+                            tempDone = true;
+                        }
                     }
-                    if (excelWorkSheet.Cells[i, 1].Value == "Total Units Closed")
+                    // Moses Newman 03/27/2024 Average APR Subtotal now!
+                    if (excelWorkSheet.Cells[i, 7].Value != null && excelWorkSheet.Cells[i, 3].Value == null && excelWorkSheet.Cells[i, 7].Value.GetType() == typeof(String))
                     {
-                        TotalUnitsClosed = Convert.ToInt32(excelWorkSheet.Cells[i, 2].Value);
-                        excelWorkSheet.Cells[i, 3].Value = TotalClosedLoans;
-                        excelWorkSheet.Cells[i, 3].Font.FontStyle = "Bold";
-                        excelWorkSheet.Cells[i, 1].Value = "Totals Closed";
+                        if (excelWorkSheet.Cells[i, 7].Value.Contains("Average"))
+                        {
+                            excelWorkSheet.Cells[i, 1].Value = (!excelWorkSheet.Cells[i, 7].Value.Contains("Grand") ? "DLR# " : "") + excelWorkSheet.Cells[i, 7].Value + " APR";
+                            excelWorkSheet.Cells[i, 7].Value = "";
+                            excelWorkSheet.Cells[i, 1].Font.FontStyle = "Bold";
+                            excelWorkSheet.Cells[i, 5].Font.FontStyle = "Bold";
+                            excelWorkSheet.Cells[i - 1, 1].Value = excelWorkSheet.Cells[i, 1].Value;
+                            excelWorkSheet.Cells[i - 1, 5].Value = excelWorkSheet.Cells[i, 5].Value;
+                            excelWorkSheet.Cells[i - 1, 1].Font.FontStyle = "Bold";
+                            excelWorkSheet.Cells[i - 1, 5].Font.FontStyle = "Bold";
+                        }
                     }
-                    if (excelWorkSheet.Cells[i, 7].Text == "Grand Total")
+                    // Moses Newman 03/27/2024 Average APR Subtotal now!
+                    if (excelWorkSheet.Cells[i, 7].Value != null && excelWorkSheet.Cells[i, 3].Value != null && excelWorkSheet.Cells[i, 7].Value.GetType() == typeof(String))
                     {
-                        excelWorkSheet.Rows[i].Delete();
-                        break;
+                        if (excelWorkSheet.Cells[i, 7].Value.Contains("Average"))
+                        {
+                            excelWorkSheet.Cells[i, 1].Value = (!excelWorkSheet.Cells[i, 7].Value.Contains("Grand") ? "DLR# " : "") + excelWorkSheet.Cells[i, 7].Value + " Loan Amount";
+                            excelWorkSheet.Cells[i, 7].Value = "";
+                            excelWorkSheet.Cells[i, 1].Font.FontStyle = "Bold";
+                            excelWorkSheet.Cells[i, 3].Font.FontStyle = "Bold";
+                            excelWorkSheet.Cells[i - 1, 1].Value = excelWorkSheet.Cells[i, 1].Value;
+                            excelWorkSheet.Cells[i - 1, 3].Value = excelWorkSheet.Cells[i, 3].Value;
+                            excelWorkSheet.Cells[i - 1, 5].Value = "";
+                            excelWorkSheet.Cells[i - 1, 1].Font.FontStyle = "Bold";
+                            excelWorkSheet.Cells[i - 1, 3].Font.FontStyle = "Bold";
+                            excelWorkSheet.Cells[i, 1].Value = "";
+                            excelWorkSheet.Cells[i, 3].Value = "";
+                        }
                     }
                 }
                 last = excelWorkSheet.Cells.SpecialCells(Excel.XlCellType.xlCellTypeLastCell, System.Type.Missing);
