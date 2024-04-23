@@ -36,7 +36,6 @@
             DevExpress.XtraReports.UI.XRSummary xrSummary4 = new DevExpress.XtraReports.UI.XRSummary();
             DevExpress.DataAccess.Sql.StoredProcQuery storedProcQuery1 = new DevExpress.DataAccess.Sql.StoredProcQuery();
             DevExpress.DataAccess.Sql.QueryParameter queryParameter1 = new DevExpress.DataAccess.Sql.QueryParameter();
-            DevExpress.DataAccess.Sql.QueryParameter queryParameter2 = new DevExpress.DataAccess.Sql.QueryParameter();
             this.Area3 = new DevExpress.XtraReports.UI.DetailBand();
             this.CUSTOMERNO1 = new DevExpress.XtraReports.UI.XRLabel();
             this.SSNumber_1 = new DevExpress.XtraReports.UI.XRLabel();
@@ -189,6 +188,7 @@
             this.CUSTOMERREGULARAMOUNT1.SizeF = new System.Drawing.SizeF(72.43056F, 12.84722F);
             this.CUSTOMERREGULARAMOUNT1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
             this.CUSTOMERREGULARAMOUNT1.TextFormatString = "{0:C2}";
+            this.CUSTOMERREGULARAMOUNT1.BeforePrint += new DevExpress.XtraReports.UI.BeforePrintEventHandler(this.CUSTOMERREGULARAMOUNT1_BeforePrint);
             // 
             // CUSTOMERINITDATE1
             // 
@@ -984,13 +984,9 @@
             queryParameter1.Name = "@CUSTOMER_DAY_DUE";
             queryParameter1.Type = typeof(DevExpress.DataAccess.Expression);
             queryParameter1.Value = new DevExpress.DataAccess.Expression("?gnDayDue", typeof(int));
-            queryParameter2.Name = "@CUSTOMER_INIT_DATE";
-            queryParameter2.Type = typeof(DevExpress.DataAccess.Expression);
-            queryParameter2.Value = new DevExpress.DataAccess.Expression("?gdCutOff", typeof(System.DateTime));
             storedProcQuery1.Parameters.AddRange(new DevExpress.DataAccess.Sql.QueryParameter[] {
-            queryParameter1,
-            queryParameter2});
-            storedProcQuery1.StoredProcName = "EFTListFillByDayDueWithCuttOff";
+            queryParameter1});
+            storedProcQuery1.StoredProcName = "EFTListFillByDayDue";
             this.sqlDataSource1.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
             storedProcQuery1});
             this.sqlDataSource1.ResultSchemaSerializable = resources.GetString("sqlDataSource1.ResultSchemaSerializable");
@@ -1042,7 +1038,7 @@
             this.gsUserName,
             this.gdCutOff,
             this.gnDayDue});
-            this.Version = "23.1";
+            this.Version = "23.2";
             this.DataSourceDemanded += new System.EventHandler<System.EventArgs>(this.XtraReportCustomerEFTListing_DataSourceDemanded);
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 

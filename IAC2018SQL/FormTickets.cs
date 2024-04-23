@@ -765,22 +765,25 @@ namespace IAC2021SQL
             
             Int32 AcctNumber,DealerID;
             ColumnView view = sender as ColumnView;
-            switch(e.Column.FieldName)
+            if (e.Value != null)  //Moses Newman 04/23/2024
             {
-                case "GLAccount":
-                    AcctNumber = e.Value != System.DBNull.Value ? (Int32)e.Value : 0;
-                    Int32 FoundIndex = ticketAccountsBindingSource.Find("AcctID", AcctNumber);
-                    e.Column.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-                    if (FoundIndex > -1)
-                        e.DisplayText = ticketsdataset.TicketAccounts.Rows[FoundIndex].Field<String>("Account");
-                    else
-                        e.DisplayText = "";
-                    break;
-                case "SubDealer":
-                    DealerID = e.Value != System.DBNull.Value ? (Int32)e.Value : 0;
-                    if(DealerID == 0)
-                        e.DisplayText = "";
-                    break;
+                switch (e.Column.FieldName)
+                {
+                    case "GLAccount":
+                        AcctNumber = e.Value != System.DBNull.Value ? (Int32)e.Value : 0;
+                        Int32 FoundIndex = ticketAccountsBindingSource.Find("AcctID", AcctNumber);
+                        e.Column.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+                        if (FoundIndex > -1)
+                            e.DisplayText = ticketsdataset.TicketAccounts.Rows[FoundIndex].Field<String>("Account");
+                        else
+                            e.DisplayText = "";
+                        break;
+                    case "SubDealer":
+                        DealerID = e.Value != System.DBNull.Value ? (Int32)e.Value : 0;
+                        if (DealerID == 0)
+                            e.DisplayText = "";
+                        break;
+                }
             }
         }
 

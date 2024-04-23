@@ -10963,7 +10963,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colNewTitleReceived;
         private DevExpress.XtraGrid.Columns.GridColumn colOrgDateTitleReceived;
         private DevExpress.XtraGrid.Columns.GridColumn colNewDateTitleReceived;
-        private DevExpress.XtraBars.BarDockControl barDockControl7;
         private DevExpress.XtraBars.BarManager barManager1;
         private DevExpress.XtraBars.Bar toolStrip1;
         private DevExpress.XtraBars.BarButtonItem toolStripButton1;

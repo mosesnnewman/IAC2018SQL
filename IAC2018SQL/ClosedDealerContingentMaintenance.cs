@@ -12,7 +12,7 @@ namespace IAC2021SQL
     public partial class FormClosedDealerContingentMaintenance : DevExpress.XtraEditors.XtraForm
     {
         private Boolean lbFormClosing = false, lbEdit = false, lbAdd = false, lbILockedIt = false,
-                        lbFromSetRelated = false, lbFromMovement = false, lbFromDealerNameChange = false;
+                        lbFromSetRelated = false, lbFromMovement = false;
 
         private System.Data.SqlClient.SqlTransaction tableAdapTran = null;
         private System.Data.SqlClient.SqlConnection tableAdapConn = null;
@@ -260,7 +260,6 @@ namespace IAC2021SQL
             }
             if (CONTINGiacDataSet.DEALER.Rows.Count > 0)
             {
-                lbFromDealerNameChange = true;
                 DEALERcomboBox.EditValue = CONTINGiacDataSet.DEALER.Rows[0].Field<Int32>("id");
             }
             lbFromSetRelated = false;
@@ -555,7 +554,6 @@ namespace IAC2021SQL
                 toolStripButtonSave.Enabled = false;
                 CONTINGiacDataSet.AcceptChanges();
                 CONTINGiacDataSet.CONTING.Clear();
-                lbFromDealerNameChange = true;
                 DEALERcomboBox.EditValue= lnDealer;
                 dateTimePickerPostDate.EditValue = ldSrchDate;
                 setRelatedData();

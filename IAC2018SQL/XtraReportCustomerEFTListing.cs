@@ -3,11 +3,13 @@ using DevExpress.DataAccess.Sql;
 using DevExpress.ReportServer.ServiceModel.DataContracts;
 using DevExpress.XtraReports.UI;
 using IAC2021SQL.IACDataSetTableAdapters;
+using Microsoft.Office.Interop.Excel;
 using System;
 using System.Collections;
 using System.ComponentModel;
 using System.Drawing;
 //using System.Web.UI.WebControls;
+using DevExpress.Drawing;
 
 namespace IAC2021SQL
 {
@@ -100,6 +102,25 @@ namespace IAC2021SQL
                     ds.Queries.Add(storedProcedureQuery);
                 }
             }
+        }
+
+        // Moses Newman 04/21/2024 Make payment amount RED and BOLD if it is a splitpay account.
+        private void CUSTOMERREGULARAMOUNT1_BeforePrint(object sender, CancelEventArgs e)
+        {
+            XRLabel label = (XRLabel)sender;
+            XtraReportBase report = label.Report;
+            Boolean lbSplitPay = Convert.ToBoolean(report.GetCurrentColumnValue("SplitPay"));
+            if (lbSplitPay)
+            {
+                label.ForeColor = System.Drawing.Color.Red;
+                label.Font = new System.Drawing.Font(label.Font, FontStyle.Bold);
+            }
+            else
+            {
+                label.ForeColor = System.Drawing.Color.Black;
+                label.Font = new System.Drawing.Font(label.Font, FontStyle.Regular);
+            }
+
         }
     }
 }

@@ -360,7 +360,6 @@
             // 
             this.PaymentbindingSource.DataMember = "PAYMENT";
             this.PaymentbindingSource.DataSource = this.sqlDataSourceClosedPayments;
-            this.PaymentbindingSource.AddingNew += new System.ComponentModel.AddingNewEventHandler(this.PaymentbindingSource_AddingNew);
             this.PaymentbindingSource.PositionChanged += new System.EventHandler(this.PaymentbindingSource_PositionChanged);
             // 
             // sqlDataSourceClosedPayments

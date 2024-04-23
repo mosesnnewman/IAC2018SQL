@@ -110,7 +110,7 @@ namespace IAC2021SQL
                 jobCommand.ExecuteNonQuery();
             }
             // Moses Newman 08/08/2023
-            catch (Microsoft.Data.SqlClient.SqlException ex) 
+            catch (Microsoft.Data.SqlClient.SqlException) 
             {
                 Thread.Sleep(5000);
                 jobCommand.ExecuteNonQuery();

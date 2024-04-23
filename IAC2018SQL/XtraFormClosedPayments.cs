@@ -19,24 +19,16 @@ namespace IAC2021SQL
 {
     public partial class XtraFormClosedPayments : DevExpress.XtraEditors.XtraForm
     {
-        System.Windows.Forms.Label labelOverPayment, lblIncome, lblPaidThrough, labelISFDate;
+        private Boolean lbAddFlag = false, lbEdit = false, lbILockedIt = false;
 
-        private System.Data.SqlClient.SqlTransaction tableAdapTran = null;
-        private System.Data.SqlClient.SqlConnection tableAdapConn = null;
-
-        private Boolean lbAddFlag = false, lbEdit = false, lbFormClosing = false, lbNewPayment = false, lbILockedIt = false,lbJustSaved = false;
-
-        private Decimal gnCustomerBalance = 0, gnCustomerBuyout = 0,TotalContractStatus = 0,TotalLateChargeBalance = 0,TotalPartialPayment = 0;
+        private Decimal TotalContractStatus = 0,TotalLateChargeBalance = 0,TotalPartialPayment = 0;
         private String FinalPaidThru = "";
         private DateTime FinalPaidThroughDate = DateTime.Now.Date;
-
-        private int lnSeq = 0;
-
 
         public XtraFormClosedPayments()
         {
             InitializeComponent();
-            sqlDataSourceClosedPayments.FillAsync();
+            _ = sqlDataSourceClosedPayments.FillAsync();
         }
 
         private void XtraFormClosedPayments_Load(object sender, EventArgs e)
@@ -133,11 +125,6 @@ namespace IAC2021SQL
                 if ((String)loLockedBy == Program.gsUserID && lbILockedIt)
                     paymentTableAdapter.UnlockRecord(ClosedPaymentiacDataSet.PAYMENT.Rows[0].Field<String>("PAYMENT_CUSTOMER"), ClosedPaymentiacDataSet.PAYMENT.Rows[PaymentbindingSource.Position].Field<DateTime>("PAYMENT_DATE"), ClosedPaymentiacDataSet.PAYMENT.Rows[PaymentbindingSource.Position].Field<Int32>("SeqNo"));
             }
-        }
-
-        private void PaymentbindingSource_AddingNew(object sender, AddingNewEventArgs e)
-        {
-            lbNewPayment = true;
         }
 
         private void gridViewInvoices_CustomSummaryCalculate(object sender, CustomSummaryEventArgs e)
