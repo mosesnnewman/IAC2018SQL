@@ -13,8 +13,8 @@
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <ManifestCertificateThumbprint>0EEC0A64C7451A2D0013E0487DD2C6AFF63DABDD</ManifestCertificateThumbprint>
-    <ManifestKeyFile>IAC2021SQL_4_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestCertificateThumbprint>14569ED0FF3806E6B6048F85878F772F46CB559E</ManifestCertificateThumbprint>
+    <ManifestKeyFile>IAC2021SQL_TemporaryKey.pfx</ManifestKeyFile>
     <GenerateManifests>true</GenerateManifests>
     <SignManifests>true</SignManifests>
     <FileUpgradeFlags>
@@ -41,7 +41,7 @@
     <SuiteName>IAC2021SQL</SuiteName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>61</ApplicationRevision>
+    <ApplicationRevision>63</ApplicationRevision>
     <ApplicationVersion>200.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -899,11 +899,19 @@
       <DependentUpon>ClosedPaymentEditList.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Credentials.cs">
+      <DependentUpon>Credentials.xsd</DependentUpon>
+    </Compile>
     <Compile Include="CustomerEFTListing.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CustomerEFTListing.rpt</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Credentials.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Credentials.xsd</DependentUpon>
     </Compile>
     <Compile Include="DirectXFormApplyPayments.cs">
       <SubType>Form</SubType>
@@ -2748,10 +2756,17 @@
     <None Include="DailyDataSet.xss">
       <DependentUpon>DailyDataSet.xsd</DependentUpon>
     </None>
-    <None Include="IAC2021SQL_1_TemporaryKey.pfx" />
-    <None Include="IAC2021SQL_2_TemporaryKey.pfx" />
-    <None Include="IAC2021SQL_3_TemporaryKey.pfx" />
-    <None Include="IAC2021SQL_4_TemporaryKey.pfx" />
+    <None Include="Credentials.xsc">
+      <DependentUpon>Credentials.xsd</DependentUpon>
+    </None>
+    <None Include="Credentials.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Credentials.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Credentials.xss">
+      <DependentUpon>Credentials.xsd</DependentUpon>
+    </None>
     <None Include="IAC2021SQL_TemporaryKey.pfx" />
     <None Include="IACDataSet.xsc">
       <DependentUpon>IACDataSet.xsd</DependentUpon>

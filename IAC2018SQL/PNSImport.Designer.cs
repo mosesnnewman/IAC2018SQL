@@ -152,6 +152,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmPNSImport";
             this.Text = "Import PNS";
+            this.Load += new System.EventHandler(this.frmPNSImport_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();

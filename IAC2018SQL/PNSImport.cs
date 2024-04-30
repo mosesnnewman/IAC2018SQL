@@ -11,18 +11,21 @@ using Excel = Microsoft.Office.Interop.Excel;
 using DevExpress.XtraEditors;
 using DevExpress.XtraReports.UI;
 using DevExpress.DataAccess.Sql;
+using IAC2021SQL.CredentialsTableAdapters;
 
 
 namespace IAC2021SQL
 {
     // Moses Newman 11/06/2019 Create PayNSeconds SFTP download and import int PAYMENTS routines.
     public partial class frmPNSImport : DevExpress.XtraEditors.XtraForm
-    {
+    {        
 
         //private string host = @"204.13.110.68"; // Moses Newman 08/05/2022 must be phased out by 08/12/2022!
+
         private string host = @"sftp.paynseconds.net"; // Moses Newman 08/05/2022
-        private string username = @"***REMOVED***";
-        private string password = @"***REMOVED***";
+        // Moses Newman 04/30/2024 No more hard coded passwords and usernames.
+        private string username = "";
+        private string password = "";
         private string remoteDirectory = @"/00000000-0000-2d07-e9ea-08d6fe68bbde/Download";
         private string remoteArchive = @"/00000000-0000-2d07-e9ea-08d6fe68bbde/Download/Archive";
 
@@ -487,6 +490,16 @@ namespace IAC2021SQL
                 tool.PreviewRibbonForm.WindowState = FormWindowState.Maximized;
                 tool.ShowRibbonPreview();
             }
+        }
+
+        private void frmPNSImport_Load(object sender, EventArgs e)
+        {
+            // Moses Newman 04/30/2024 No more hard coded passwords and usernames.
+            Credentials credentials = new Credentials();
+            CredentialsTableAdapters.SSHCredTableAdapter sSHCredTableAdapter = new CredentialsTableAdapters.SSHCredTableAdapter();
+            sSHCredTableAdapter.Fill(credentials.SSHCred,1);
+            username = credentials.SSHCred.Rows[0].Field<String>("Username");
+            password = credentials.SSHCred.Rows[0].Field<String>("Password");
         }
     }
 }
