@@ -18,7 +18,7 @@ namespace IAC2021SQL
 {
     // Moses Newman 11/06/2019 Create PayNSeconds SFTP download and import int PAYMENTS routines.
     public partial class frmPNSImport : DevExpress.XtraEditors.XtraForm
-    {        
+    {
 
         //private string host = @"204.13.110.68"; // Moses Newman 08/05/2022 must be phased out by 08/12/2022!
 
