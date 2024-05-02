@@ -3394,8 +3394,9 @@ namespace IAC2021SQL
                         if (paymentData.Invoices.Rows[0].Field<DateTime>("DateDue").Month != 2 &&
                             (paymentData.Invoices.Rows[0].Field<DateTime>("DateDue").Day == 28 || paymentData.Invoices.Rows[0].Field<DateTime>("DateDue").Day == 29))
 						{
+							// Moses Newman 05/02/2024 Change AddMonths to AddDays!
 							paymentData.Invoices.Rows[0].SetField<DateTime>("DateDue",
-							paymentData.Invoices.Rows[0].Field<DateTime>("DateDue").AddMonths(30 - paymentData.Invoices.Rows[0].Field<DateTime>("DateDue").Day));
+							paymentData.Invoices.Rows[0].Field<DateTime>("DateDue").AddDays(30 - paymentData.Invoices.Rows[0].Field<DateTime>("DateDue").Day));
                         }
                     }
 					InvoicesTableAdapter.Update(paymentData.Invoices.Rows[0]);
