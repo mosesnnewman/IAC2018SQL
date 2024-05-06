@@ -6,6 +6,7 @@ using S9API.Models;
 using Acrobat;
 using RestSharp.Authenticators;
 using System.Data.SqlClient;
+using System.ServiceModel.Security;
 
 namespace IAC2021SQL
 {
@@ -13,6 +14,7 @@ namespace IAC2021SQL
     {
         //Acrobat application as a private member variable of the class
         private CAcroApp mApp;
+        private String username,password;
 
         public frmImportDefiPDFs()
         {
@@ -164,7 +166,7 @@ namespace IAC2021SQL
                             System.IO.File.Move(FullPath + Filename, ProcessedPath + Filename);
                     }
                     //basic authentication
-                    Program.ApiClient.Authenticator = new HttpBasicAuthenticator(@"IAC\***REMOVED***", "***REMOVED***");
+                    Program.ApiClient.Authenticator = new HttpBasicAuthenticator(username, password);
 
                     var databaseID = 2;  //Database ID
                     var archiveID = 9;  //Archive ID
@@ -221,6 +223,16 @@ namespace IAC2021SQL
                 mApp.CloseAllDocs();
                 mApp.Exit();
             }
+        }
+
+        private void frmImportDefiPDFs_Load(object sender, EventArgs e)
+        {
+            // Moses Newman 05/06/2024 No more hard coded passwords and usernames.
+            Credentials credentials = new Credentials();
+            CredentialsTableAdapters.SSHCredTableAdapter sSHCredTableAdapter = new CredentialsTableAdapters.SSHCredTableAdapter();
+            sSHCredTableAdapter.Fill(credentials.SSHCred, 2);
+            username = credentials.SSHCred.Rows[0].Field<String>("Username");
+            password = credentials.SSHCred.Rows[0].Field<String>("Password");
         }
     }
 }

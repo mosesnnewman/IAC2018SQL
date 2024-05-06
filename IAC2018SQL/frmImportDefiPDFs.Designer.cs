@@ -291,6 +291,7 @@
             this.Name = "frmImportDefiPDFs";
             this.Text = "Import Defi PDF Images";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmImportDefiPDFs_FormClosed);
+            this.Load += new System.EventHandler(this.frmImportDefiPDFs_Load);
             this.groupBoxIndexFields.ResumeLayout(false);
             this.groupBoxIndexFields.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.progressBarStatus.Properties)).EndInit();
