@@ -2194,15 +2194,6 @@ namespace IAC2021SQL
                 toolStripButtonSave.Enabled = true;
         }
 
-        private void textBoxRepoFees_Validated(object sender, EventArgs e)
-        {
-            if (!Decimal.TryParse(textBoxRepoFees.Text, NumberStyles.Currency,
-                CultureInfo.CreateSpecificCulture("en-US"), out gnRepoFees))
-                return;
-            textBoxRepoFees.Text = gnRepoFees.ToString("C", CultureInfo.CreateSpecificCulture("en-US"));
-            CalcTotalFees();
-        }
-
         private void textBoxStorageFees_Validated(object sender, EventArgs e)
         {
             if (!Decimal.TryParse(textBoxStorageFees.Text, NumberStyles.Currency,
@@ -5762,7 +5753,89 @@ namespace IAC2021SQL
                 }
             }
         }
-        
+
+        // Moses newman 05/07/2024 Fix FEE Totals and convert all fee fields to DevExpress.XtraEditors.TextEdit
+        private void textBoxRepoFees_EditValueChanged(object sender, EventArgs e)
+        {
+            TextEdit textEditor = (TextEdit)sender;
+            if (textEditor.EditValue.ToString() == "")
+                return;
+            gnRepoFees = Convert.ToDecimal(textEditor.EditValue);            
+            CalcTotalFees();
+        }
+
+        private void textBoxStorageFees_EditValueChanged(object sender, EventArgs e)
+        {
+            TextEdit textEditor = (TextEdit)sender;
+            if (textEditor.EditValue.ToString() == "")
+                return;
+            gnStorageFees = Convert.ToDecimal(textEditor.EditValue);
+            CalcTotalFees();
+        }
+
+        private void textBoxImpoundFees_EditValueChanged(object sender, EventArgs e)
+        {
+            TextEdit textEditor = (TextEdit)sender;
+            if (textEditor.EditValue.ToString() == "")
+                return;
+            gnImpoundFees = Convert.ToDecimal(textEditor.EditValue);
+            CalcTotalFees();
+        }
+
+        private void textBoxResaleFees_EditValueChanged(object sender, EventArgs e)
+        {
+            TextEdit textEditor = (TextEdit)sender;
+            if (textEditor.EditValue.ToString() == "")
+                return;
+            gnResaleFees = Convert.ToDecimal(textEditor.EditValue);
+            CalcTotalFees();
+        }
+
+        private void textBoxRepairFee1_EditValueChanged(object sender, EventArgs e)
+        {
+            TextEdit textEditor = (TextEdit)sender;
+            if (textEditor.EditValue.ToString() == "")
+                return;
+            gnRepairFee1 = Convert.ToDecimal(textEditor.EditValue);
+            CalcTotalFees();
+        }
+
+        private void textBoxRepairFee2_EditValueChanged(object sender, EventArgs e)
+        {
+            TextEdit textEditor = (TextEdit)sender;
+            if (textEditor.EditValue.ToString() == "")
+                return;
+            gnRepairFee2 = Convert.ToDecimal(textEditor.EditValue);
+            CalcTotalFees();
+        }
+
+        private void textBoxRepairFee3_EditValueChanged(object sender, EventArgs e)
+        {
+            TextEdit textEditor = (TextEdit)sender;
+            if (textEditor.EditValue.ToString() == "")
+                return;
+            gnRepairFee3 = Convert.ToDecimal(textEditor.EditValue);
+            CalcTotalFees();
+        }
+
+        private void textBoxRepairFee4_EditValueChanged(object sender, EventArgs e)
+        {
+            TextEdit textEditor = (TextEdit)sender;
+            if (textEditor.EditValue.ToString() == "")
+                return;
+            gnRepairFee4 = Convert.ToDecimal(textEditor.EditValue);
+            CalcTotalFees();
+        }
+
+        private void textBoxRepairFee5_EditValueChanged(object sender, EventArgs e)
+        {
+            TextEdit textEditor = (TextEdit)sender;
+            if (textEditor.EditValue.ToString() == "")
+                return;
+            gnRepairFee5 = Convert.ToDecimal(textEditor.EditValue);
+            CalcTotalFees();
+        }
+
         private void cUSTOMER_NOTextBox_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
         {
             /*if (e.KeyData == Keys.Tab)
@@ -5839,7 +5912,7 @@ namespace IAC2021SQL
         {
             gnTotalFees = gnRepoFees + gnStorageFees + gnImpoundFees + gnResaleFees + gnRepairFee1 + gnRepairFee2 +
                           gnRepairFee3 + gnRepairFee4 + gnRepairFee5;
-            textBoxTotalFees.Text = gnTotalFees.ToString("C", CultureInfo.CreateSpecificCulture("en-US"));
+            textBoxTotalFees.EditValue = gnTotalFees;
             textBoxTotalFees.Refresh();
         }
 

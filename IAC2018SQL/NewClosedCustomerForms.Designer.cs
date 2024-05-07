@@ -167,12 +167,12 @@
             System.Windows.Forms.Label label9;
             System.Windows.Forms.Label label11;
             System.Windows.Forms.Label label10;
-            System.Windows.Forms.Label labelTotalFees;
-            System.Windows.Forms.Label label129;
-            System.Windows.Forms.Label labelResaleFees;
-            System.Windows.Forms.Label labelImpoundFees;
-            System.Windows.Forms.Label labelStorageFees;
-            System.Windows.Forms.Label labelRepoFees;
+            DevExpress.XtraEditors.LabelControl labelTotalFees;
+            DevExpress.XtraEditors.LabelControl labelRepair1;
+            DevExpress.XtraEditors.LabelControl labelResaleFees;
+            DevExpress.XtraEditors.LabelControl labelImpoundFees;
+            DevExpress.XtraEditors.LabelControl labelStorageFees;
+            DevExpress.XtraEditors.LabelControl labelRepoFees;
             System.Windows.Forms.Label label123;
             System.Windows.Forms.Label label124;
             System.Windows.Forms.Label label125;
@@ -775,16 +775,16 @@
             this.xtraTabPageCustomerFees = new DevExpress.XtraTab.XtraTabPage();
             this.groupBox20 = new DevExpress.XtraEditors.GroupControl();
             this.groupBoxFees = new System.Windows.Forms.GroupBox();
-            this.textBoxTotalFees = new System.Windows.Forms.TextBox();
-            this.textBoxRepairFee5 = new System.Windows.Forms.TextBox();
-            this.textBoxRepairFee4 = new System.Windows.Forms.TextBox();
-            this.textBoxRepairFee3 = new System.Windows.Forms.TextBox();
-            this.textBoxRepairFee2 = new System.Windows.Forms.TextBox();
-            this.textBoxRepairFee1 = new System.Windows.Forms.TextBox();
-            this.textBoxResaleFees = new System.Windows.Forms.TextBox();
-            this.textBoxImpoundFees = new System.Windows.Forms.TextBox();
-            this.textBoxStorageFees = new System.Windows.Forms.TextBox();
-            this.textBoxRepoFees = new System.Windows.Forms.TextBox();
+            this.textBoxTotalFees = new DevExpress.XtraEditors.TextEdit();
+            this.textBoxRepairFee5 = new DevExpress.XtraEditors.TextEdit();
+            this.textBoxRepairFee4 = new DevExpress.XtraEditors.TextEdit();
+            this.textBoxRepairFee3 = new DevExpress.XtraEditors.TextEdit();
+            this.textBoxRepairFee2 = new DevExpress.XtraEditors.TextEdit();
+            this.textBoxRepairFee1 = new DevExpress.XtraEditors.TextEdit();
+            this.textBoxResaleFees = new DevExpress.XtraEditors.TextEdit();
+            this.textBoxImpoundFees = new DevExpress.XtraEditors.TextEdit();
+            this.textBoxStorageFees = new DevExpress.XtraEditors.TextEdit();
+            this.textBoxRepoFees = new DevExpress.XtraEditors.TextEdit();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox12 = new System.Windows.Forms.TextBox();
@@ -1061,12 +1061,12 @@
             label9 = new System.Windows.Forms.Label();
             label11 = new System.Windows.Forms.Label();
             label10 = new System.Windows.Forms.Label();
-            labelTotalFees = new System.Windows.Forms.Label();
-            label129 = new System.Windows.Forms.Label();
-            labelResaleFees = new System.Windows.Forms.Label();
-            labelImpoundFees = new System.Windows.Forms.Label();
-            labelStorageFees = new System.Windows.Forms.Label();
-            labelRepoFees = new System.Windows.Forms.Label();
+            labelTotalFees = new DevExpress.XtraEditors.LabelControl();
+            labelRepair1 = new DevExpress.XtraEditors.LabelControl();
+            labelResaleFees = new DevExpress.XtraEditors.LabelControl();
+            labelImpoundFees = new DevExpress.XtraEditors.LabelControl();
+            labelStorageFees = new DevExpress.XtraEditors.LabelControl();
+            labelRepoFees = new DevExpress.XtraEditors.LabelControl();
             label123 = new System.Windows.Forms.Label();
             label124 = new System.Windows.Forms.Label();
             label125 = new System.Windows.Forms.Label();
@@ -1409,6 +1409,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupBox20)).BeginInit();
             this.groupBox20.SuspendLayout();
             this.groupBoxFees.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textBoxTotalFees.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBoxRepairFee5.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBoxRepairFee4.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBoxRepairFee3.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBoxRepairFee2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBoxRepairFee1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBoxResaleFees.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBoxImpoundFees.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBoxStorageFees.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBoxRepoFees.Properties)).BeginInit();
             this.groupBox12.SuspendLayout();
             this.xtraTabPageRepoHistory.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupBox21)).BeginInit();
@@ -2169,31 +2179,43 @@
             // 
             // labelTotalFees
             // 
+            labelTotalFees.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("labelTotalFees.Appearance.Font")));
+            labelTotalFees.Appearance.Options.UseFont = true;
             resources.ApplyResources(labelTotalFees, "labelTotalFees");
             labelTotalFees.Name = "labelTotalFees";
             // 
-            // label129
+            // labelRepair1
             // 
-            resources.ApplyResources(label129, "label129");
-            label129.Name = "label129";
+            labelRepair1.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("labelRepair1.Appearance.Font")));
+            labelRepair1.Appearance.Options.UseFont = true;
+            resources.ApplyResources(labelRepair1, "labelRepair1");
+            labelRepair1.Name = "labelRepair1";
             // 
             // labelResaleFees
             // 
+            labelResaleFees.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("labelResaleFees.Appearance.Font")));
+            labelResaleFees.Appearance.Options.UseFont = true;
             resources.ApplyResources(labelResaleFees, "labelResaleFees");
             labelResaleFees.Name = "labelResaleFees";
             // 
             // labelImpoundFees
             // 
+            labelImpoundFees.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("labelImpoundFees.Appearance.Font")));
+            labelImpoundFees.Appearance.Options.UseFont = true;
             resources.ApplyResources(labelImpoundFees, "labelImpoundFees");
             labelImpoundFees.Name = "labelImpoundFees";
             // 
             // labelStorageFees
             // 
+            labelStorageFees.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("labelStorageFees.Appearance.Font")));
+            labelStorageFees.Appearance.Options.UseFont = true;
             resources.ApplyResources(labelStorageFees, "labelStorageFees");
             labelStorageFees.Name = "labelStorageFees";
             // 
             // labelRepoFees
             // 
+            labelRepoFees.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("labelRepoFees.Appearance.Font")));
+            labelRepoFees.Appearance.Options.UseFont = true;
             resources.ApplyResources(labelRepoFees, "labelRepoFees");
             labelRepoFees.Name = "labelRepoFees";
             // 
@@ -8741,7 +8763,7 @@
             this.groupBoxFees.Controls.Add(this.textBoxRepairFee4);
             this.groupBoxFees.Controls.Add(this.textBoxRepairFee3);
             this.groupBoxFees.Controls.Add(this.textBoxRepairFee2);
-            this.groupBoxFees.Controls.Add(label129);
+            this.groupBoxFees.Controls.Add(labelRepair1);
             this.groupBoxFees.Controls.Add(this.textBoxRepairFee1);
             this.groupBoxFees.Controls.Add(labelResaleFees);
             this.groupBoxFees.Controls.Add(this.textBoxResaleFees);
@@ -8760,79 +8782,146 @@
             this.textBoxTotalFees.AllowDrop = true;
             resources.ApplyResources(this.textBoxTotalFees, "textBoxTotalFees");
             this.textBoxTotalFees.Name = "textBoxTotalFees";
+            this.textBoxTotalFees.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textBoxTotalFees.Properties.Appearance.Font")));
+            this.textBoxTotalFees.Properties.Appearance.Options.UseFont = true;
+            this.textBoxTotalFees.Properties.DisplayFormat.FormatString = "c2";
+            this.textBoxTotalFees.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.textBoxTotalFees.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
             // 
             // textBoxRepairFee5
             // 
             this.textBoxRepairFee5.AllowDrop = true;
-            this.textBoxRepairFee5.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.CustomerFeesBindingSource, "Repair5", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "0", "C2"));
+            this.textBoxRepairFee5.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CustomerFeesBindingSource, "Repair5", true));
+            this.textBoxRepairFee5.EnterMoveNextControl = true;
             resources.ApplyResources(this.textBoxRepairFee5, "textBoxRepairFee5");
             this.textBoxRepairFee5.Name = "textBoxRepairFee5";
-            this.textBoxRepairFee5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            this.textBoxRepairFee5.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textBoxRepairFee5.Properties.Appearance.Font")));
+            this.textBoxRepairFee5.Properties.Appearance.Options.UseFont = true;
+            this.textBoxRepairFee5.Properties.DisplayFormat.FormatString = "c2";
+            this.textBoxRepairFee5.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.textBoxRepairFee5.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Buffered;
+            this.textBoxRepairFee5.Properties.ValidateOnEnterKey = true;
+            this.textBoxRepairFee5.EditValueChanged += new System.EventHandler(this.textBoxRepairFee5_EditValueChanged);
             // 
             // textBoxRepairFee4
             // 
             this.textBoxRepairFee4.AllowDrop = true;
-            this.textBoxRepairFee4.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.CustomerFeesBindingSource, "Repair4", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "C2"));
+            this.textBoxRepairFee4.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CustomerFeesBindingSource, "Repair4", true));
+            this.textBoxRepairFee4.EnterMoveNextControl = true;
             resources.ApplyResources(this.textBoxRepairFee4, "textBoxRepairFee4");
             this.textBoxRepairFee4.Name = "textBoxRepairFee4";
-            this.textBoxRepairFee4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            this.textBoxRepairFee4.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textBoxRepairFee4.Properties.Appearance.Font")));
+            this.textBoxRepairFee4.Properties.Appearance.Options.UseFont = true;
+            this.textBoxRepairFee4.Properties.DisplayFormat.FormatString = "c2";
+            this.textBoxRepairFee4.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.textBoxRepairFee4.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Buffered;
+            this.textBoxRepairFee4.Properties.ValidateOnEnterKey = true;
+            this.textBoxRepairFee4.EditValueChanged += new System.EventHandler(this.textBoxRepairFee4_EditValueChanged);
             // 
             // textBoxRepairFee3
             // 
             this.textBoxRepairFee3.AllowDrop = true;
-            this.textBoxRepairFee3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.CustomerFeesBindingSource, "Repair3", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "0", "C2"));
+            this.textBoxRepairFee3.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CustomerFeesBindingSource, "Repair3", true));
+            this.textBoxRepairFee3.EnterMoveNextControl = true;
             resources.ApplyResources(this.textBoxRepairFee3, "textBoxRepairFee3");
             this.textBoxRepairFee3.Name = "textBoxRepairFee3";
-            this.textBoxRepairFee3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            this.textBoxRepairFee3.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textBoxRepairFee3.Properties.Appearance.Font")));
+            this.textBoxRepairFee3.Properties.Appearance.Options.UseFont = true;
+            this.textBoxRepairFee3.Properties.DisplayFormat.FormatString = "c2";
+            this.textBoxRepairFee3.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.textBoxRepairFee3.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Buffered;
+            this.textBoxRepairFee3.Properties.ValidateOnEnterKey = true;
+            this.textBoxRepairFee3.EditValueChanged += new System.EventHandler(this.textBoxRepairFee3_EditValueChanged);
             // 
             // textBoxRepairFee2
             // 
             this.textBoxRepairFee2.AllowDrop = true;
-            this.textBoxRepairFee2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.CustomerFeesBindingSource, "Repair2", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "0", "C2"));
+            this.textBoxRepairFee2.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CustomerFeesBindingSource, "Repair2", true));
+            this.textBoxRepairFee2.EnterMoveNextControl = true;
             resources.ApplyResources(this.textBoxRepairFee2, "textBoxRepairFee2");
             this.textBoxRepairFee2.Name = "textBoxRepairFee2";
-            this.textBoxRepairFee2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            this.textBoxRepairFee2.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textBoxRepairFee2.Properties.Appearance.Font")));
+            this.textBoxRepairFee2.Properties.Appearance.Options.UseFont = true;
+            this.textBoxRepairFee2.Properties.DisplayFormat.FormatString = "c2";
+            this.textBoxRepairFee2.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.textBoxRepairFee2.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Buffered;
+            this.textBoxRepairFee2.Properties.ValidateOnEnterKey = true;
+            this.textBoxRepairFee2.EditValueChanged += new System.EventHandler(this.textBoxRepairFee2_EditValueChanged);
             // 
             // textBoxRepairFee1
             // 
             this.textBoxRepairFee1.AllowDrop = true;
-            this.textBoxRepairFee1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.CustomerFeesBindingSource, "Repair1", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "0", "C2"));
+            this.textBoxRepairFee1.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CustomerFeesBindingSource, "Repair1", true));
+            this.textBoxRepairFee1.EnterMoveNextControl = true;
             resources.ApplyResources(this.textBoxRepairFee1, "textBoxRepairFee1");
             this.textBoxRepairFee1.Name = "textBoxRepairFee1";
-            this.textBoxRepairFee1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            this.textBoxRepairFee1.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textBoxRepairFee1.Properties.Appearance.Font")));
+            this.textBoxRepairFee1.Properties.Appearance.Options.UseFont = true;
+            this.textBoxRepairFee1.Properties.DisplayFormat.FormatString = "c2";
+            this.textBoxRepairFee1.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.textBoxRepairFee1.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Buffered;
+            this.textBoxRepairFee1.Properties.ValidateOnEnterKey = true;
+            this.textBoxRepairFee1.EditValueChanged += new System.EventHandler(this.textBoxRepairFee1_EditValueChanged);
             // 
             // textBoxResaleFees
             // 
             this.textBoxResaleFees.AllowDrop = true;
-            this.textBoxResaleFees.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.CustomerFeesBindingSource, "Resale", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "0", "C2"));
+            this.textBoxResaleFees.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CustomerFeesBindingSource, "Resale", true));
+            this.textBoxResaleFees.EnterMoveNextControl = true;
             resources.ApplyResources(this.textBoxResaleFees, "textBoxResaleFees");
             this.textBoxResaleFees.Name = "textBoxResaleFees";
-            this.textBoxResaleFees.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            this.textBoxResaleFees.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textBoxResaleFees.Properties.Appearance.Font")));
+            this.textBoxResaleFees.Properties.Appearance.Options.UseFont = true;
+            this.textBoxResaleFees.Properties.DisplayFormat.FormatString = "c2";
+            this.textBoxResaleFees.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.textBoxResaleFees.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Buffered;
+            this.textBoxResaleFees.Properties.ValidateOnEnterKey = true;
+            this.textBoxResaleFees.EditValueChanged += new System.EventHandler(this.textBoxResaleFees_EditValueChanged);
             // 
             // textBoxImpoundFees
             // 
             this.textBoxImpoundFees.AllowDrop = true;
-            this.textBoxImpoundFees.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.CustomerFeesBindingSource, "Impound", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "0", "C2"));
+            this.textBoxImpoundFees.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CustomerFeesBindingSource, "Impound", true));
+            this.textBoxImpoundFees.EnterMoveNextControl = true;
             resources.ApplyResources(this.textBoxImpoundFees, "textBoxImpoundFees");
             this.textBoxImpoundFees.Name = "textBoxImpoundFees";
-            this.textBoxImpoundFees.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            this.textBoxImpoundFees.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textBoxImpoundFees.Properties.Appearance.Font")));
+            this.textBoxImpoundFees.Properties.Appearance.Options.UseFont = true;
+            this.textBoxImpoundFees.Properties.DisplayFormat.FormatString = "c2";
+            this.textBoxImpoundFees.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.textBoxImpoundFees.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Buffered;
+            this.textBoxImpoundFees.Properties.ValidateOnEnterKey = true;
+            this.textBoxImpoundFees.EditValueChanged += new System.EventHandler(this.textBoxImpoundFees_EditValueChanged);
             // 
             // textBoxStorageFees
             // 
             this.textBoxStorageFees.AllowDrop = true;
-            this.textBoxStorageFees.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.CustomerFeesBindingSource, "Storage", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "0", "C2"));
+            this.textBoxStorageFees.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CustomerFeesBindingSource, "Storage", true));
+            this.textBoxStorageFees.EnterMoveNextControl = true;
             resources.ApplyResources(this.textBoxStorageFees, "textBoxStorageFees");
             this.textBoxStorageFees.Name = "textBoxStorageFees";
-            this.textBoxStorageFees.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            this.textBoxStorageFees.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textBoxStorageFees.Properties.Appearance.Font")));
+            this.textBoxStorageFees.Properties.Appearance.Options.UseFont = true;
+            this.textBoxStorageFees.Properties.DisplayFormat.FormatString = "c2";
+            this.textBoxStorageFees.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.textBoxStorageFees.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Buffered;
+            this.textBoxStorageFees.Properties.ValidateOnEnterKey = true;
+            this.textBoxStorageFees.EditValueChanged += new System.EventHandler(this.textBoxStorageFees_EditValueChanged);
             // 
             // textBoxRepoFees
             // 
             this.textBoxRepoFees.AllowDrop = true;
-            this.textBoxRepoFees.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.CustomerFeesBindingSource, "Repo", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "0", "C2"));
+            this.textBoxRepoFees.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CustomerFeesBindingSource, "Repo", true));
+            this.textBoxRepoFees.EnterMoveNextControl = true;
             resources.ApplyResources(this.textBoxRepoFees, "textBoxRepoFees");
             this.textBoxRepoFees.Name = "textBoxRepoFees";
-            this.textBoxRepoFees.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
+            this.textBoxRepoFees.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textBoxRepoFees.Properties.Appearance.Font")));
+            this.textBoxRepoFees.Properties.Appearance.Options.UseFont = true;
+            this.textBoxRepoFees.Properties.DisplayFormat.FormatString = "c2";
+            this.textBoxRepoFees.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.textBoxRepoFees.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Buffered;
+            this.textBoxRepoFees.Properties.ValidateOnEnterKey = true;
+            this.textBoxRepoFees.EditValueChanged += new System.EventHandler(this.textBoxRepoFees_EditValueChanged);
             // 
             // groupBox12
             // 
@@ -10388,6 +10477,16 @@
             this.groupBox20.ResumeLayout(false);
             this.groupBoxFees.ResumeLayout(false);
             this.groupBoxFees.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textBoxTotalFees.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBoxRepairFee5.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBoxRepairFee4.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBoxRepairFee3.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBoxRepairFee2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBoxRepairFee1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBoxResaleFees.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBoxImpoundFees.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBoxStorageFees.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBoxRepoFees.Properties)).EndInit();
             this.groupBox12.ResumeLayout(false);
             this.groupBox12.PerformLayout();
             this.xtraTabPageRepoHistory.ResumeLayout(false);
@@ -10741,16 +10840,16 @@
         private System.Windows.Forms.TextBox textBox11;
         private System.Windows.Forms.TextBox txtCommentNo;
         private System.Windows.Forms.GroupBox groupBoxFees;
-        private System.Windows.Forms.TextBox textBoxTotalFees;
-        private System.Windows.Forms.TextBox textBoxRepairFee5;
-        private System.Windows.Forms.TextBox textBoxRepairFee4;
-        private System.Windows.Forms.TextBox textBoxRepairFee3;
-        private System.Windows.Forms.TextBox textBoxRepairFee2;
-        private System.Windows.Forms.TextBox textBoxRepairFee1;
-        private System.Windows.Forms.TextBox textBoxResaleFees;
-        private System.Windows.Forms.TextBox textBoxImpoundFees;
-        private System.Windows.Forms.TextBox textBoxStorageFees;
-        private System.Windows.Forms.TextBox textBoxRepoFees;
+        private DevExpress.XtraEditors.TextEdit textBoxTotalFees;
+        private DevExpress.XtraEditors.TextEdit textBoxRepairFee5;
+        private DevExpress.XtraEditors.TextEdit textBoxRepairFee4;
+        private DevExpress.XtraEditors.TextEdit textBoxRepairFee3;
+        private DevExpress.XtraEditors.TextEdit textBoxRepairFee2;
+        private DevExpress.XtraEditors.TextEdit textBoxRepairFee1;
+        private DevExpress.XtraEditors.TextEdit textBoxResaleFees;
+        private DevExpress.XtraEditors.TextEdit textBoxImpoundFees;
+        private DevExpress.XtraEditors.TextEdit textBoxStorageFees;
+        private DevExpress.XtraEditors.TextEdit textBoxRepoFees;
         private System.Windows.Forms.GroupBox groupBox12;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox textBox12;
