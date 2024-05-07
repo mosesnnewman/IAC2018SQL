@@ -345,7 +345,7 @@
             this.adminToolsToolStripMenuItem});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(147, 20);
-            this.toolStripMenuItem1.Text = "&***REMOVED*** Functions";
+            this.toolStripMenuItem1.Text = "&Administrator Functions";
             // 
             // postingToolStripMenuItem2
             // 
