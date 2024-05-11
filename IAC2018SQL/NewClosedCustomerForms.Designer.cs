@@ -8792,9 +8792,10 @@
             // 
             this.textBoxRepairFee5.AllowDrop = true;
             this.textBoxRepairFee5.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CustomerFeesBindingSource, "Repair5", true));
-            this.textBoxRepairFee5.EnterMoveNextControl = true;
             resources.ApplyResources(this.textBoxRepairFee5, "textBoxRepairFee5");
+            this.textBoxRepairFee5.EnterMoveNextControl = true;
             this.textBoxRepairFee5.Name = "textBoxRepairFee5";
+            this.textBoxRepairFee5.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
             this.textBoxRepairFee5.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textBoxRepairFee5.Properties.Appearance.Font")));
             this.textBoxRepairFee5.Properties.Appearance.Options.UseFont = true;
             this.textBoxRepairFee5.Properties.DisplayFormat.FormatString = "c2";
@@ -8807,9 +8808,10 @@
             // 
             this.textBoxRepairFee4.AllowDrop = true;
             this.textBoxRepairFee4.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CustomerFeesBindingSource, "Repair4", true));
-            this.textBoxRepairFee4.EnterMoveNextControl = true;
             resources.ApplyResources(this.textBoxRepairFee4, "textBoxRepairFee4");
+            this.textBoxRepairFee4.EnterMoveNextControl = true;
             this.textBoxRepairFee4.Name = "textBoxRepairFee4";
+            this.textBoxRepairFee4.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
             this.textBoxRepairFee4.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textBoxRepairFee4.Properties.Appearance.Font")));
             this.textBoxRepairFee4.Properties.Appearance.Options.UseFont = true;
             this.textBoxRepairFee4.Properties.DisplayFormat.FormatString = "c2";
@@ -8822,9 +8824,10 @@
             // 
             this.textBoxRepairFee3.AllowDrop = true;
             this.textBoxRepairFee3.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CustomerFeesBindingSource, "Repair3", true));
-            this.textBoxRepairFee3.EnterMoveNextControl = true;
             resources.ApplyResources(this.textBoxRepairFee3, "textBoxRepairFee3");
+            this.textBoxRepairFee3.EnterMoveNextControl = true;
             this.textBoxRepairFee3.Name = "textBoxRepairFee3";
+            this.textBoxRepairFee3.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
             this.textBoxRepairFee3.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textBoxRepairFee3.Properties.Appearance.Font")));
             this.textBoxRepairFee3.Properties.Appearance.Options.UseFont = true;
             this.textBoxRepairFee3.Properties.DisplayFormat.FormatString = "c2";
@@ -8837,9 +8840,10 @@
             // 
             this.textBoxRepairFee2.AllowDrop = true;
             this.textBoxRepairFee2.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CustomerFeesBindingSource, "Repair2", true));
-            this.textBoxRepairFee2.EnterMoveNextControl = true;
             resources.ApplyResources(this.textBoxRepairFee2, "textBoxRepairFee2");
+            this.textBoxRepairFee2.EnterMoveNextControl = true;
             this.textBoxRepairFee2.Name = "textBoxRepairFee2";
+            this.textBoxRepairFee2.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
             this.textBoxRepairFee2.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textBoxRepairFee2.Properties.Appearance.Font")));
             this.textBoxRepairFee2.Properties.Appearance.Options.UseFont = true;
             this.textBoxRepairFee2.Properties.DisplayFormat.FormatString = "c2";
@@ -8852,9 +8856,10 @@
             // 
             this.textBoxRepairFee1.AllowDrop = true;
             this.textBoxRepairFee1.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CustomerFeesBindingSource, "Repair1", true));
-            this.textBoxRepairFee1.EnterMoveNextControl = true;
             resources.ApplyResources(this.textBoxRepairFee1, "textBoxRepairFee1");
+            this.textBoxRepairFee1.EnterMoveNextControl = true;
             this.textBoxRepairFee1.Name = "textBoxRepairFee1";
+            this.textBoxRepairFee1.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
             this.textBoxRepairFee1.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textBoxRepairFee1.Properties.Appearance.Font")));
             this.textBoxRepairFee1.Properties.Appearance.Options.UseFont = true;
             this.textBoxRepairFee1.Properties.DisplayFormat.FormatString = "c2";
@@ -8867,9 +8872,10 @@
             // 
             this.textBoxResaleFees.AllowDrop = true;
             this.textBoxResaleFees.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CustomerFeesBindingSource, "Resale", true));
-            this.textBoxResaleFees.EnterMoveNextControl = true;
             resources.ApplyResources(this.textBoxResaleFees, "textBoxResaleFees");
+            this.textBoxResaleFees.EnterMoveNextControl = true;
             this.textBoxResaleFees.Name = "textBoxResaleFees";
+            this.textBoxResaleFees.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
             this.textBoxResaleFees.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textBoxResaleFees.Properties.Appearance.Font")));
             this.textBoxResaleFees.Properties.Appearance.Options.UseFont = true;
             this.textBoxResaleFees.Properties.DisplayFormat.FormatString = "c2";
@@ -8882,9 +8888,10 @@
             // 
             this.textBoxImpoundFees.AllowDrop = true;
             this.textBoxImpoundFees.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CustomerFeesBindingSource, "Impound", true));
-            this.textBoxImpoundFees.EnterMoveNextControl = true;
             resources.ApplyResources(this.textBoxImpoundFees, "textBoxImpoundFees");
+            this.textBoxImpoundFees.EnterMoveNextControl = true;
             this.textBoxImpoundFees.Name = "textBoxImpoundFees";
+            this.textBoxImpoundFees.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
             this.textBoxImpoundFees.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textBoxImpoundFees.Properties.Appearance.Font")));
             this.textBoxImpoundFees.Properties.Appearance.Options.UseFont = true;
             this.textBoxImpoundFees.Properties.DisplayFormat.FormatString = "c2";
@@ -8897,9 +8904,10 @@
             // 
             this.textBoxStorageFees.AllowDrop = true;
             this.textBoxStorageFees.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CustomerFeesBindingSource, "Storage", true));
-            this.textBoxStorageFees.EnterMoveNextControl = true;
             resources.ApplyResources(this.textBoxStorageFees, "textBoxStorageFees");
+            this.textBoxStorageFees.EnterMoveNextControl = true;
             this.textBoxStorageFees.Name = "textBoxStorageFees";
+            this.textBoxStorageFees.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
             this.textBoxStorageFees.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textBoxStorageFees.Properties.Appearance.Font")));
             this.textBoxStorageFees.Properties.Appearance.Options.UseFont = true;
             this.textBoxStorageFees.Properties.DisplayFormat.FormatString = "c2";
@@ -8912,9 +8920,10 @@
             // 
             this.textBoxRepoFees.AllowDrop = true;
             this.textBoxRepoFees.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.CustomerFeesBindingSource, "Repo", true));
-            this.textBoxRepoFees.EnterMoveNextControl = true;
             resources.ApplyResources(this.textBoxRepoFees, "textBoxRepoFees");
+            this.textBoxRepoFees.EnterMoveNextControl = true;
             this.textBoxRepoFees.Name = "textBoxRepoFees";
+            this.textBoxRepoFees.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
             this.textBoxRepoFees.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textBoxRepoFees.Properties.Appearance.Font")));
             this.textBoxRepoFees.Properties.Appearance.Options.UseFont = true;
             this.textBoxRepoFees.Properties.DisplayFormat.FormatString = "c2";

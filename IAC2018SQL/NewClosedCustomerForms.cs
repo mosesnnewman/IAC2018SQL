@@ -5755,85 +5755,69 @@ namespace IAC2021SQL
         }
 
         // Moses newman 05/07/2024 Fix FEE Totals and convert all fee fields to DevExpress.XtraEditors.TextEdit
-        private void textBoxRepoFees_EditValueChanged(object sender, EventArgs e)
+        private void ValueChanged(ref Decimal InVal,object sender, EventArgs e)
         {
+            Decimal outValue;
             TextEdit textEditor = (TextEdit)sender;
             if (textEditor.EditValue.ToString() == "")
-                return;
-            gnRepoFees = Convert.ToDecimal(textEditor.EditValue);            
+                textEditor.Text = "0";
+            string inValText = textEditor.Text;
+            if (decimal.TryParse(inValText, NumberStyles.Any, new CultureInfo("en-US"), out outValue))
+            {
+                InVal = outValue;
+            }
+            else
+            {
+                InVal = (Decimal)0.00;
+            }
+            if (lbEdit || lbAddFlag)
+                if (!toolStripButtonSave.Enabled)
+                    toolStripButtonSave.Enabled = true;
             CalcTotalFees();
+        }
+        private void textBoxRepoFees_EditValueChanged(object sender, EventArgs e)
+        {
+            ValueChanged(ref gnRepoFees, sender, e);
         }
 
         private void textBoxStorageFees_EditValueChanged(object sender, EventArgs e)
         {
-            TextEdit textEditor = (TextEdit)sender;
-            if (textEditor.EditValue.ToString() == "")
-                return;
-            gnStorageFees = Convert.ToDecimal(textEditor.EditValue);
-            CalcTotalFees();
+            ValueChanged(ref gnStorageFees, sender, e);
         }
 
         private void textBoxImpoundFees_EditValueChanged(object sender, EventArgs e)
         {
-            TextEdit textEditor = (TextEdit)sender;
-            if (textEditor.EditValue.ToString() == "")
-                return;
-            gnImpoundFees = Convert.ToDecimal(textEditor.EditValue);
-            CalcTotalFees();
+            ValueChanged(ref gnImpoundFees, sender, e);
         }
 
         private void textBoxResaleFees_EditValueChanged(object sender, EventArgs e)
         {
-            TextEdit textEditor = (TextEdit)sender;
-            if (textEditor.EditValue.ToString() == "")
-                return;
-            gnResaleFees = Convert.ToDecimal(textEditor.EditValue);
-            CalcTotalFees();
+            ValueChanged(ref gnResaleFees, sender, e);
         }
 
         private void textBoxRepairFee1_EditValueChanged(object sender, EventArgs e)
         {
-            TextEdit textEditor = (TextEdit)sender;
-            if (textEditor.EditValue.ToString() == "")
-                return;
-            gnRepairFee1 = Convert.ToDecimal(textEditor.EditValue);
-            CalcTotalFees();
+            ValueChanged(ref gnRepairFee1, sender, e);
         }
 
         private void textBoxRepairFee2_EditValueChanged(object sender, EventArgs e)
         {
-            TextEdit textEditor = (TextEdit)sender;
-            if (textEditor.EditValue.ToString() == "")
-                return;
-            gnRepairFee2 = Convert.ToDecimal(textEditor.EditValue);
-            CalcTotalFees();
+            ValueChanged(ref gnRepairFee2, sender, e);
         }
 
         private void textBoxRepairFee3_EditValueChanged(object sender, EventArgs e)
         {
-            TextEdit textEditor = (TextEdit)sender;
-            if (textEditor.EditValue.ToString() == "")
-                return;
-            gnRepairFee3 = Convert.ToDecimal(textEditor.EditValue);
-            CalcTotalFees();
+            ValueChanged(ref gnRepairFee3, sender, e);
         }
 
         private void textBoxRepairFee4_EditValueChanged(object sender, EventArgs e)
         {
-            TextEdit textEditor = (TextEdit)sender;
-            if (textEditor.EditValue.ToString() == "")
-                return;
-            gnRepairFee4 = Convert.ToDecimal(textEditor.EditValue);
-            CalcTotalFees();
+            ValueChanged(ref gnRepairFee4, sender, e);
         }
 
         private void textBoxRepairFee5_EditValueChanged(object sender, EventArgs e)
         {
-            TextEdit textEditor = (TextEdit)sender;
-            if (textEditor.EditValue.ToString() == "")
-                return;
-            gnRepairFee5 = Convert.ToDecimal(textEditor.EditValue);
-            CalcTotalFees();
+            ValueChanged(ref gnRepairFee5, sender, e);
         }
 
         private void cUSTOMER_NOTextBox_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)

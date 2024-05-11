@@ -3059,7 +3059,7 @@ namespace IAC2021SQL
 				}
 			}
 
-			ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+			//ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
 			var token = Program.GetLicense();
 			// Moses Newman 12/16/2021 Replaced RestRequest("api/dbs/{db}/archives/{arch}?token={token}" 
 			// with RestRequest("api/dbs/{db}/archives/{arch}?token=" + (String)token because suddenly {token} was not being substituted.
