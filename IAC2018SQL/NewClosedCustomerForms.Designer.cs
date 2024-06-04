@@ -4568,7 +4568,7 @@
             // 
             // txtFirstPayDate
             // 
-            this.txtFirstPayDate.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "FundingDate", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "d"));
+            this.txtFirstPayDate.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_INIT_DATE", true));
             resources.ApplyResources(this.txtFirstPayDate, "txtFirstPayDate");
             this.txtFirstPayDate.Name = "txtFirstPayDate";
             this.txtFirstPayDate.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("txtFirstPayDate.Properties.Appearance.Font")));

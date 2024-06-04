@@ -3276,7 +3276,8 @@ namespace IAC2021SQL
                                           (Double)ClosedPaymentiacDataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_REGULAR_AMOUNT"),
                                                            ClosedPaymentiacDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO"),
                                                            true, true, true, true,i,true);
-                Program.ApplySinglePayment(ClosedPaymentiacDataSet.PAYMENT.Rows[i].Field<String>("PAYMENT_CUSTOMER"), (Int32)id);
+				// Moses Newman 06/03/2024 Make sure to use PAYMENT for daily totals and count by customer.
+                Program.ApplySinglePayment(ClosedPaymentiacDataSet.PAYMENT.Rows[i].Field<String>("PAYMENT_CUSTOMER"), (Int32)id, true);
             }
             paymentDataSet.PaymentHistory.Clear();
         }
@@ -3353,7 +3354,8 @@ namespace IAC2021SQL
 													  ClosedPaymentiacDataSet.CUSTHIST.Rows[i].Field<Int32?>("TicketDetailID"),
 													  false,
 													  (Decimal)0.00, ref id);
-					Program.ApplySinglePayment(ClosedPaymentiacDataSet.CUSTHIST.Rows[i].Field<String>("CUSTHIST_NO"), (Int32)id);
+					// Moses newman 06/03/2024 Use PAYMENT for Daly Count and Total by Customer
+					Program.ApplySinglePayment(ClosedPaymentiacDataSet.CUSTHIST.Rows[i].Field<String>("CUSTHIST_NO"), (Int32)id, true);
 				}
 			}
 			paymentDataSet.PaymentHistory.Clear();
@@ -3405,7 +3407,7 @@ namespace IAC2021SQL
             }
 		}
 
-        static public void ApplySinglePayment(String CustomerNo,Int32 PaymentId)
+        static public void ApplySinglePayment(String CustomerNo,Int32 PaymentId, Boolean tempPay = false)
         {
             Int32 TempCust = Convert.ToInt32(CustomerNo);
             IACDataSet IDS = new IACDataSet();
@@ -3486,8 +3488,18 @@ namespace IAC2021SQL
 							Int32 TempDayCount = 0,TempMonthlies = 0;
 							Decimal TempDayTotal = 0;
 
-                            oTempDayCount = PaymentHistoryTableAdapter.CustomerDailyCount(TempCust, PDS.PaymentHistory.Rows[0].Field<DateTime>("PaymentDate"));
-                            oTempDayTotal = PaymentHistoryTableAdapter.CustomerDailyTotal(TempCust, PDS.PaymentHistory.Rows[0].Field<DateTime>("PaymentDate"));
+							// Moses Newman 06/03/2024 USE PAYMENT Instead of PaymentHistory if not posted yet!
+							if (!tempPay)
+							{
+								oTempDayCount = PaymentHistoryTableAdapter.CustomerDailyCount(TempCust, PDS.PaymentHistory.Rows[0].Field<DateTime>("PaymentDate"));
+								oTempDayTotal = PaymentHistoryTableAdapter.CustomerDailyTotal(TempCust, PDS.PaymentHistory.Rows[0].Field<DateTime>("PaymentDate"));
+							}
+							else
+							{
+								IACDataSetTableAdapters.PAYMENTTableAdapter pAYMENTTableAdapter = new IACDataSetTableAdapters.PAYMENTTableAdapter();
+                                oTempDayCount = pAYMENTTableAdapter.CustomerDailyCount(TempCust, PDS.PaymentHistory.Rows[0].Field<DateTime>("PaymentDate"));
+                                oTempDayTotal = pAYMENTTableAdapter.CustomerDailyTotal(TempCust, PDS.PaymentHistory.Rows[0].Field<DateTime>("PaymentDate"));
+                            }
                             TempDayCount = oTempDayCount != null ? (Int32)oTempDayCount : 0;
                             TempDayTotal = oTempDayTotal != null ? (Decimal)oTempDayTotal : 0;
 							if(TempDayCount > 1)
