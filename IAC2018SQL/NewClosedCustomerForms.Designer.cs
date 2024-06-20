@@ -245,6 +245,7 @@
             System.Windows.Forms.Label label223;
             System.Windows.Forms.Label label224;
             System.Windows.Forms.Label label225;
+            DevExpress.XtraEditors.LabelControl labelTowing;
             this.cUSTOMERBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.iACDataSet = new IAC2021SQL.IACDataSet();
             this.cOMMENTBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -1139,6 +1140,7 @@
             label223 = new System.Windows.Forms.Label();
             label224 = new System.Windows.Forms.Label();
             label225 = new System.Windows.Forms.Label();
+            labelTowing = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.cUSTOMERBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iACDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cOMMENTBindingSource)).BeginInit();
@@ -2582,6 +2584,13 @@
             // 
             resources.ApplyResources(label225, "label225");
             label225.Name = "label225";
+            // 
+            // labelTowing
+            // 
+            labelTowing.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("labelTowing.Appearance.Font")));
+            labelTowing.Appearance.Options.UseFont = true;
+            resources.ApplyResources(labelTowing, "labelTowing");
+            labelTowing.Name = "labelTowing";
             // 
             // cUSTOMERBindingSource
             // 
@@ -8757,6 +8766,7 @@
             // 
             // groupBoxFees
             // 
+            this.groupBoxFees.Controls.Add(labelTowing);
             this.groupBoxFees.Controls.Add(labelTotalFees);
             this.groupBoxFees.Controls.Add(this.textBoxTotalFees);
             this.groupBoxFees.Controls.Add(this.textBoxRepairFee5);

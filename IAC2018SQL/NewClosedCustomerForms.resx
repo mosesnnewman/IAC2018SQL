@@ -4422,7 +4422,7 @@
     <value>groupBoxFees</value>
   </data>
   <data name="&gt;&gt;labelTotalFees.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <metadata name="labelRepair1.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -4452,7 +4452,7 @@
     <value>groupBoxFees</value>
   </data>
   <data name="&gt;&gt;labelRepair1.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <metadata name="labelResaleFees.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -4482,7 +4482,7 @@
     <value>groupBoxFees</value>
   </data>
   <data name="&gt;&gt;labelResaleFees.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <metadata name="labelImpoundFees.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -4512,7 +4512,7 @@
     <value>groupBoxFees</value>
   </data>
   <data name="&gt;&gt;labelImpoundFees.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <metadata name="labelStorageFees.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -4542,7 +4542,7 @@
     <value>groupBoxFees</value>
   </data>
   <data name="&gt;&gt;labelStorageFees.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>13</value>
   </data>
   <metadata name="labelRepoFees.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -4572,7 +4572,7 @@
     <value>groupBoxFees</value>
   </data>
   <data name="&gt;&gt;labelRepoFees.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>15</value>
   </data>
   <metadata name="label123.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
@@ -7096,6 +7096,36 @@
   </data>
   <data name="&gt;&gt;label225.ZOrder" xml:space="preserve">
     <value>47</value>
+  </data>
+  <metadata name="labelTowing.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <data name="labelTowing.Appearance.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="labelTowing.Location" type="System.Drawing.Point, System.Drawing">
+    <value>314, 188</value>
+  </data>
+  <data name="labelTowing.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 21</value>
+  </data>
+  <data name="labelTowing.TabIndex" type="System.Int32, mscorlib">
+    <value>721</value>
+  </data>
+  <data name="labelTowing.Text" xml:space="preserve">
+    <value>Towing:</value>
+  </data>
+  <data name="&gt;&gt;labelTowing.Name" xml:space="preserve">
+    <value>labelTowing</value>
+  </data>
+  <data name="&gt;&gt;labelTowing.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.LabelControl, DevExpress.XtraEditors.v23.2, Version=23.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;labelTowing.Parent" xml:space="preserve">
+    <value>groupBoxFees</value>
+  </data>
+  <data name="&gt;&gt;labelTowing.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <metadata name="cUSTOMERBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 95</value>
@@ -18730,7 +18760,7 @@
     <value>groupBoxFees</value>
   </data>
   <data name="&gt;&gt;textBoxTotalFees.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="textBoxRepairFee5.EditValue" type="System.Decimal, mscorlib">
     <value>0</value>
@@ -18757,7 +18787,7 @@
     <value>groupBoxFees</value>
   </data>
   <data name="&gt;&gt;textBoxRepairFee5.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="textBoxRepairFee4.EditValue" type="System.Decimal, mscorlib">
     <value>0</value>
@@ -18784,7 +18814,7 @@
     <value>groupBoxFees</value>
   </data>
   <data name="&gt;&gt;textBoxRepairFee4.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="textBoxRepairFee3.EditValue" type="System.Decimal, mscorlib">
     <value>0</value>
@@ -18811,7 +18841,7 @@
     <value>groupBoxFees</value>
   </data>
   <data name="&gt;&gt;textBoxRepairFee3.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="textBoxRepairFee2.EditValue" type="System.Decimal, mscorlib">
     <value>0</value>
@@ -18838,7 +18868,7 @@
     <value>groupBoxFees</value>
   </data>
   <data name="&gt;&gt;textBoxRepairFee2.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="textBoxRepairFee1.EditValue" type="System.Decimal, mscorlib">
     <value>0</value>
@@ -18865,7 +18895,7 @@
     <value>groupBoxFees</value>
   </data>
   <data name="&gt;&gt;textBoxRepairFee1.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="textBoxResaleFees.EditValue" type="System.Decimal, mscorlib">
     <value>0</value>
@@ -18892,7 +18922,7 @@
     <value>groupBoxFees</value>
   </data>
   <data name="&gt;&gt;textBoxResaleFees.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="textBoxImpoundFees.EditValue" type="System.Decimal, mscorlib">
     <value>0</value>
@@ -18919,7 +18949,7 @@
     <value>groupBoxFees</value>
   </data>
   <data name="&gt;&gt;textBoxImpoundFees.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="textBoxStorageFees.EditValue" type="System.Decimal, mscorlib">
     <value>0</value>
@@ -18946,7 +18976,7 @@
     <value>groupBoxFees</value>
   </data>
   <data name="&gt;&gt;textBoxStorageFees.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>14</value>
   </data>
   <data name="textBoxRepoFees.EditValue" type="System.Decimal, mscorlib">
     <value>0</value>
@@ -18973,7 +19003,7 @@
     <value>groupBoxFees</value>
   </data>
   <data name="&gt;&gt;textBoxRepoFees.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>16</value>
   </data>
   <data name="groupBoxFees.Location" type="System.Drawing.Point, System.Drawing">
     <value>360, 239</value>
