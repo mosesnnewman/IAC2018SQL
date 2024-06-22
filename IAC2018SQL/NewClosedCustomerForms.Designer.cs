@@ -4313,7 +4313,6 @@
             this.txtPaidThrough.Name = "txtPaidThrough";
             this.txtPaidThrough.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             this.txtPaidThrough.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
-            this.txtPaidThrough.Validated += new System.EventHandler(this.txtPaidThrough_Validated);
             // 
             // txtControlDate
             // 

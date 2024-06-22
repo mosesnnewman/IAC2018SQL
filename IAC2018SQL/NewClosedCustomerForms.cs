@@ -4511,11 +4511,7 @@ namespace IAC2021SQL
                 nullableDateTimePickerHistContractDate.EditValue = DateTimePickerContractDate.EditValue;
                 toolStripButtonSave.Enabled = true;
             }
-        }
-
-        private void txtPaidThrough_Validated(object sender, EventArgs e)
-        {
-
+            errorProviderCustomerForm.Clear();
         }
 
         private void txtTerm_Validated(object sender, EventArgs e)
