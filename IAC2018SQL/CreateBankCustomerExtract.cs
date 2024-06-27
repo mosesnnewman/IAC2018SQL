@@ -934,6 +934,7 @@ namespace IAC2021SQL
                     }
                 }
             }
+            excelWorkSheet.get_Range("A1:A1").Select();  // Moses Newman 06/25/2025
             if(radioGroupMatch.SelectedIndex == 2)
             {
                 // Moses Newman 10/27/2020 Handle Column data conversion even if not the same order because additonal fields where selected.
@@ -1019,6 +1020,7 @@ namespace IAC2021SQL
                 Excel.Range ARange = excelWorkSheet.get_Range("A1:A" + last.Row.ToString());
 
                 int GrandCount = 0;
+                String TestGrandText = "";
                 for (int i = last.Row; i > 0; i--)
                 {
                     if (excelWorkSheet.Cells[i, 1].Value == "O Count")
@@ -1120,12 +1122,15 @@ namespace IAC2021SQL
                             excelWorkSheet.Cells[i - 1, 5].Font.FontStyle = "Bold";
                         }
                     }
-                    // Moses Newman 03/27/2024 Average APR Subtotal now!
+                    // Moses Newman 03/27/2024 Average Loan Amount now!
                     if (excelWorkSheet.Cells[i, 7].Value != null && excelWorkSheet.Cells[i, 3].Value != null && excelWorkSheet.Cells[i, 7].Value.GetType() == typeof(String))
                     {
+                        
                         if (excelWorkSheet.Cells[i, 7].Value.Contains("Average"))
                         {
                             excelWorkSheet.Cells[i, 1].Value = (!excelWorkSheet.Cells[i, 7].Value.Contains("Grand") ? "DLR# " : "") + excelWorkSheet.Cells[i, 7].Value + " Loan Amount";
+                            // Moses Newman 06/25/2024
+                            TestGrandText = excelWorkSheet.Cells[i, 1].Value.ToString();
                             excelWorkSheet.Cells[i, 7].Value = "";
                             excelWorkSheet.Cells[i, 1].Font.FontStyle = "Bold";
                             excelWorkSheet.Cells[i, 3].Font.FontStyle = "Bold";
@@ -1136,6 +1141,17 @@ namespace IAC2021SQL
                             excelWorkSheet.Cells[i - 1, 3].Font.FontStyle = "Bold";
                             excelWorkSheet.Cells[i, 1].Value = "";
                             excelWorkSheet.Cells[i, 3].Value = "";
+                            if (TestGrandText == "Grand Average Loan Amount")
+                            {
+                                excelWorkSheet.Cells[i - 3, 1].Value = excelWorkSheet.Cells[i - 2, 1].Value;
+                                excelWorkSheet.Cells[i - 2, 1].Value = "Grand Average APR";
+                                excelWorkSheet.Cells[i - 3, 3].Value = excelWorkSheet.Cells[i - 2, 3].Value;
+                                excelWorkSheet.Cells[i - 3, 3].Font.FontStyle = "Bold";
+                                excelWorkSheet.Cells[i - 2, 3].Value = "";
+                                excelWorkSheet.Cells[i - 2, 5].Value = excelWorkSheet.Cells[i - 3, 5].Value;
+                                excelWorkSheet.Cells[i - 3, 5].Value = "";
+                                excelWorkSheet.Rows[i - 2].Insert();
+                            }
                         }
                     }
                 }
@@ -1183,32 +1199,27 @@ namespace IAC2021SQL
                 ARange = excelWorkSheet.get_Range("A1:A" + last.Row.ToString());
                 for (int i = last.Row; i > 0; i--)
                 {
+                    // Moses Newman 06/25/2024 Put units and totals on the same line.
                     if (excelWorkSheet.Cells[i, 1].Value == "Total Closed+Open")
                     {
-                        excelWorkSheet.Cells[i + 3, 1].Value = "Total Closed Units";
+                        excelWorkSheet.Cells[i + 3, 1].Value = "Total Closed Loans";
                         excelWorkSheet.Cells[i + 3, 1].Font.FontStyle = "Bold";
                         excelWorkSheet.Cells[i + 3, 2].Value = TotalUnitsClosed;
+                        excelWorkSheet.Cells[i + 3, 3].Value = TotalClosedLoans;
+                        excelWorkSheet.Cells[i + 3, 3].Font.FontStyle = "Bold";
                         excelWorkSheet.Cells[i + 3, 2].Font.FontStyle = "Bold";
-                        excelWorkSheet.Cells[i + 4, 1].Value = "Total Open Units";
+                        excelWorkSheet.Cells[i + 4, 1].Value = "Total Open Loans";
                         excelWorkSheet.Cells[i + 4, 1].Font.FontStyle = "Bold";
                         excelWorkSheet.Cells[i + 4, 2].Value = TotalUnitsOpen;
                         excelWorkSheet.Cells[i + 4, 2].Font.FontStyle = "Bold";
-                        excelWorkSheet.Cells[i + 5, 1].Value = "Grand Total Units";
+                        excelWorkSheet.Cells[i + 4, 3].Value = TotalOpenLoans;
+                        excelWorkSheet.Cells[i + 4, 3].Font.FontStyle = "Bold";
+                        excelWorkSheet.Cells[i + 5, 1].Value = "Grand Total Loans";
                         excelWorkSheet.Cells[i + 5, 1].Font.FontStyle = "Bold";
                         excelWorkSheet.Cells[i + 5, 2].Value = TotalUnitsClosed+TotalUnitsOpen;
                         excelWorkSheet.Cells[i + 5, 2].Font.FontStyle = "Bold";
-                        excelWorkSheet.Cells[i + 6, 1].Value = "Total Closed Loans";
-                        excelWorkSheet.Cells[i + 6, 1].Font.FontStyle = "Bold";
-                        excelWorkSheet.Cells[i + 6, 3].Value = TotalClosedLoans;
-                        excelWorkSheet.Cells[i + 6, 3].Font.FontStyle = "Bold";
-                        excelWorkSheet.Cells[i + 7, 1].Value = "Total Open Loans";
-                        excelWorkSheet.Cells[i + 7, 1].Font.FontStyle = "Bold";
-                        excelWorkSheet.Cells[i + 7, 3].Value = TotalOpenLoans;
-                        excelWorkSheet.Cells[i + 7, 3].Font.FontStyle = "Bold";
-                        excelWorkSheet.Cells[i + 8, 1].Value = "Grand Total Loans";
-                        excelWorkSheet.Cells[i + 8, 1].Font.FontStyle = "Bold";
-                        excelWorkSheet.Cells[i + 8, 3].Value = TotalClosedLoans +TotalOpenLoans;
-                        excelWorkSheet.Cells[i + 8, 3].Font.FontStyle = "Bold";
+                        excelWorkSheet.Cells[i + 5, 3].Value = TotalClosedLoans +TotalOpenLoans;
+                        excelWorkSheet.Cells[i + 5, 3].Font.FontStyle = "Bold";
 
                         break;
                     }

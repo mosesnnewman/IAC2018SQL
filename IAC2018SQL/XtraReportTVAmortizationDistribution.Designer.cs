@@ -2527,7 +2527,7 @@
             this.AmountBorowed1.BorderWidth = 1F;
             this.AmountBorowed1.CanGrow = false;
             this.AmountBorowed1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[TVAmortCUSTOMER].[CUSTOMERTVAPRInfo].[AmountFinanced]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[TVAmortCUSTOMER].[CUSTOMER_LOAN_CASH]")});
             this.AmountBorowed1.Font = new DevExpress.Drawing.DXFont("Arial", 10F);
             this.AmountBorowed1.ForeColor = System.Drawing.Color.Black;
             this.AmountBorowed1.LocationFloat = new DevExpress.Utils.PointFloat(216.6667F, 252.3333F);
