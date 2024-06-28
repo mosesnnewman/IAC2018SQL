@@ -3255,7 +3255,7 @@
             this.AmountBorrowed1.BorderWidth = 1F;
             this.AmountBorrowed1.CanGrow = false;
             this.AmountBorrowed1.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[TVAmortCUSTOMER].[CUSTOMERTVAPRInfo].[AmountFinanced]")});
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[TVAmortCUSTOMER].[CUSTOMER_LOAN_CASH]")});
             this.AmountBorrowed1.Font = new DevExpress.Drawing.DXFont("Arial", 10F, DevExpress.Drawing.DXFontStyle.Bold);
             this.AmountBorrowed1.ForeColor = System.Drawing.Color.Black;
             this.AmountBorrowed1.LocationFloat = new DevExpress.Utils.PointFloat(450F, 231.4833F);
