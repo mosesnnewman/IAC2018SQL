@@ -96,7 +96,9 @@ namespace IAC2021SQL
                 case "E":
                     layoutControlExtensionCount.ContentVisible = true;
                     layoutControlExtensionCount.ContentVisible = true;
-                    break;
+                    // Moses Newman 07/30/2024 If extension move straight to Extension Count.
+                    textEditExtensionCount.Focus();
+                    return;
             }
             lookUpEdit.Properties.Buttons[0].PerformClick();
             if (!lbEdit && !lbAddFlag)

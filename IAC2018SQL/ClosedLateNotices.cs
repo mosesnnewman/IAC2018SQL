@@ -1,4 +1,5 @@
-﻿using IAC2021SQL.PaymentDataSetTableAdapters;
+﻿using IAC2021SQL.IACDataSetTableAdapters;
+using IAC2021SQL.PaymentDataSetTableAdapters;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,6 +21,8 @@ namespace IAC2021SQL
                         gnTotalLateCharge = 0,gnTotalInt =0, lnTempMasthistOLOAN = 0,lnDealerYTDOloanTemp = 0;
         // End of 12/13/2011 Mod
 
+        // Moses Newman 07/23/2024 Add VEHICLE for NJ
+        IACDataSetTableAdapters.VEHICLETableAdapter VEHICLETableAdapter = new IACDataSetTableAdapters.VEHICLETableAdapter();
         IACDataSetTableAdapters.WS_NOTICE_DEALERTableAdapter WS_NOTICE_DEALERTableAdapter = new IACDataSetTableAdapters.WS_NOTICE_DEALERTableAdapter();
         BindingSource WS_NOTICE_DEALERBindingSource = new BindingSource();
 
@@ -157,6 +160,8 @@ namespace IAC2021SQL
         private void TopOfJob(Int32 CustomerPos)
         {
             IACDataSetTableAdapters.LateRatesSelectTableAdapter LateRatesSelectTableAdapter = new IACDataSetTableAdapters.LateRatesSelectTableAdapter();
+            DEALERTableAdapter dEALERTableAdapter = new DEALERTableAdapter();
+
             Decimal lnAmountDifference = 0;
             Int32 lnActDateDiff = 0, lnFormDay = 0, lnMassDateDiff = 0, lnMassFormNo = 99, // Moses Newman 11/14/2021 Add Mass Date Diff
                   lnMassDueDay = 99; // Moses Newman 06/21/2022 Default MassDueDay and MassFormNo to 99
@@ -167,7 +172,7 @@ namespace IAC2021SQL
             lnCustBalance = 0;
             lnCustContractStat = 0;
             String CustTemp = NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_NO");
-
+            dEALERTableAdapter.Fill(NoticeiacDataSet.DEALER, NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<Int32>("CUSTOMER_DEALER"));
             // Moses Newman 12/09/2018 Add test for OverrideLateCharge flag.
             if (NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_ACT_STAT") == "I" ||
                 NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_CREDIT_STATUS") == "Y" || NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<Boolean>("OverrideLateCharge") == true)
@@ -425,7 +430,8 @@ namespace IAC2021SQL
 
             // If this is the customer's first late payment this calculation will give the delinquent amount
             // Moses Newman 03/08/2015 Add LateRates table instead of hardcoded rates and cutoff to handle Exception States like MA!
-            LateRatesSelectTableAdapter.Fill(NoticeiacDataSet.LateRatesSelect, NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_STATE"));
+            // Moses Newman 07/30/2024 Change CustomerState to DEALER_ST!            
+            LateRatesSelectTableAdapter.Fill(NoticeiacDataSet.LateRatesSelect, NoticeiacDataSet.DEALER.Rows[0].Field<String>("DEALER_ST"));
             // Moses Newman 11/29/2014 Replace legacy fractional CUSTOMER_PARTIAL_PAYMENT with new field PartialPayment so no multiplication by CUSTOMER_REGULAR_AMOUNT
             if (NoticeiacDataSet.LateRatesSelect.Rows.Count > 0)
             {
@@ -440,15 +446,18 @@ namespace IAC2021SQL
                 // Moses Newman 11/8/2017 If CuttOff field set to zero just use rate only, for VA
                 if ( lnLateCharge > NoticeiacDataSet.LateRatesSelect.Rows[0].Field<Decimal>("CutOff") && NoticeiacDataSet.LateRatesSelect.Rows[0].Field<Decimal>("CutOff") != 0)
                     lnLateCharge = NoticeiacDataSet.LateRatesSelect.Rows[0].Field<Decimal>("CutOff");
-                switch(NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_STATE"))
+                // Moses Newman 07/30/2024 CUSTOMER_STATE now DEALER_ST for Late FEES!
+                switch(NoticeiacDataSet.DEALER.Rows[0].Field<String>("DEALER_ST"))
                 {
                     case "MD": // Minimum $5 late charge
                         if (lnLateCharge < 5) 
                             lnLateCharge = 5;
                         break;
                     case "NJ": // NJ alsays $10 if cash price under $10,000 otherwise 5% from table
-                        if(NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_LOAN_CASH") < 10000)
-                            lnLateCharge = 10;
+                        VEHICLETableAdapter.FillByCustomerNo(NoticeiacDataSet.VEHICLE, NoticeiacDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_NO"));
+                        if(NoticeiacDataSet.VEHICLE.Rows.Count > 0)
+                            if(NoticeiacDataSet.VEHICLE.Rows[0].Field<Decimal>("DealerCashPrice") < 10000)
+                                lnLateCharge = 10;
                         break;
                 }
             }

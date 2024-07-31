@@ -157,8 +157,8 @@ namespace IAC2021SQL
                 lnCustomerPayCount = 0;
                 CustomerPos = CUSTOMERBindingSource.Find("CUSTOMER_NO", PAYMENTPostDataSet.PAYMENT.Rows[PaymentPos].Field<String>("PAYMENT_CUSTOMER"));
                 AmortPos = AMORTIZEBindingSource.Find("AMORTIZE_CUST_NO", PAYMENTPostDataSet.PAYMENT.Rows[PaymentPos].Field<String>("PAYMENT_CUSTOMER"));
-                //try
-                //{
+                try
+                {
                 lnCustUEI = 0;
                 lnAccruedInt = 0;
                 lnPaidDis = 0;
@@ -188,13 +188,15 @@ namespace IAC2021SQL
                     }
                 }
                 PaymentPos += lnCustomerPayCount - 1;
-                //}
-                /*catch (Exception e)
+                }
+                catch (Exception e)
                 {
                     MessageBox.Show("Posting failed at CUSTOMER NO: " + PAYMENTPostDataSet.PAYMENT.Rows[PaymentPos].Field<String>("PAYMENT_CUSTOMER") + "Error Message: " + e.Message, "*** POSTING ERROR! ***", MessageBoxButtons.OK);
-                }*/
+                }
                 worker.ReportProgress((Int32)((Double)(((Double)PaymentPos + 1.0000) / (Double)PAYMENTPostDataSet.PAYMENT.Rows.Count) * 100.0000));
             }
+            // Moses Newwman 07/18/2024
+            Program.gsProgMessage = "";
             // Moses Newman 12/1/2022
             //lnMasterNPNP = (Decimal)PAYMENTTableAdapter.NPNP(); 
             //lnMasterNP = (Decimal)PAYMENTTableAdapter.NP();
@@ -278,6 +280,9 @@ namespace IAC2021SQL
 
         Decimal ClosedPaymentProcessPayment(Int32 PaymentPos, Int32 CustomerPos, Int32 AmortPos, ref BindingSource AmortizeBindingSource, ref IACDataSet PAYMENTDataSet, ref BackgroundWorker worker, Boolean post,Decimal CurBal)
         {
+            Program.gsProgMessage = "*** Working on CUSTOMER: " + PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_NO") + " " +
+                PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_FIRST_NAME") + " " +
+                PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_LAST_NAME");
             Decimal lnTodaysBalance = 0;
             IACDataSetTableAdapters.AMORTIZETableAdapter AMORTIZETableAdapter = new IACDataSetTableAdapters.AMORTIZETableAdapter();
             // Moses Newman 07/10/2019 Fix CUSTOMER_PAID_INTEREST TO be TVAmortTableAdapter.InterestSoFar(CUSTOMER_NO), INSTEAD OF ACCUMULATING
@@ -1526,39 +1531,52 @@ namespace IAC2021SQL
 
             CUSTHISTBindingSource.DataSource = CUSTOMERDataSet.CUSTHIST;
 
+            CUSTHISTBindingSource.MoveFirst();
+            for (int i = 0; i < CUSTOMERDataSet.CUSTHIST.Rows.Count; i++)
+            {
+                loCustHistSeq = CUSTHISTTableAdapter.SeqNoQuery(CUSTOMERDataSet.CUSTHIST.Rows[i].Field<String>("CUSTHIST_NO"), CUSTOMERDataSet.CUSTHIST.Rows[i].Field<DateTime>("CUSTHIST_PAY_DATE"));
+                // Moses Newman 03/13/2018 Handle sequence number now that there may be mutiple records for the same customer.
+                if (loCustHistSeq != null)
+                    lnSeq = (int)loCustHistSeq + CUSTOMERDataSet.CUSTHIST.Rows[i].Field<Int32>("CUSTHIST_DATE_SEQ");
+                else
+                    lnSeq = CUSTOMERDataSet.CUSTHIST.Rows[i].Field<Int32>("CUSTHIST_DATE_SEQ");
+                // Moses Newman 09/30/2019 Handle duplicate Sequence #
+                try
+                {
+                    CUSTOMERDataSet.CUSTHIST.Rows[i].SetField<Int32>("CUSTHIST_DATE_SEQ", lnSeq);
+                }
+                catch (System.Data.ConstraintException)
+                {
+                    lnSeq += 10;
+                    CUSTOMERDataSet.CUSTHIST.Rows[i].SetField<Int32>("CUSTHIST_DATE_SEQ", lnSeq);
+                }
+                catch (System.Data.SqlClient.SqlException ex)
+                {
+                    MessageBox.Show("This is a Microsoft SQL Server database error: " + ex.Message.ToString());
+                }
+                catch (System.InvalidOperationException ex)
+                {
+                    MessageBox.Show("Invalid Operation Error: " + ex.Message.ToString());
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("General Exception Error: " + ex.Message.ToString());
+                }
+                CUSTHISTBindingSource.EndEdit();
+
+                // Moses Newman 09/11/2013 Remove paid flag if returned check changed status
+                if (CUSTOMERDataSet.CUSTHIST.Rows[i].Field<String>("CUSTHIST_PAYMENT_TYPE") == "I" && CUSTOMERDataSet.CUSTHIST.Rows[i].Field<String>("CUSTHIST_ACT_STAT") == "I")
+                {
+                    CUSTHISTTableAdapter.UnflagLastPaidRecord(CUSTOMERDataSet.CUSTHIST.Rows[i].Field<String>("CUSTHIST_NO"));
+                }
+                // Moses Newman 10/10/2020 set bounced check IsINSUF flag
+                // Moses Newman 11/16/2020 Or reverese credit card! Or adjustment tied to check!
+                // Moses Newman 07/18/2024 If user makes a mistake and leaves ISFID == NULL dont do this.
+                if (CUSTOMERDataSet.CUSTHIST.Rows[i].Field<Int32?>("ISFID") != null)
+                    CUSTHISTTableAdapter.ClosedCustomerHistorySetISINSUF(CUSTOMERDataSet.CUSTHIST.Rows[i].Field<Int32>("ISFID"));
+            }
             try
             {
-                CUSTHISTBindingSource.MoveFirst();
-                for (int i = 0; i < CUSTOMERDataSet.CUSTHIST.Rows.Count; i++)
-                {
-                    loCustHistSeq = CUSTHISTTableAdapter.SeqNoQuery(CUSTOMERDataSet.CUSTHIST.Rows[i].Field<String>("CUSTHIST_NO"), CUSTOMERDataSet.CUSTHIST.Rows[i].Field<DateTime>("CUSTHIST_PAY_DATE"));
-                    // Moses Newman 03/13/2018 Handle sequence number now that there may be mutiple records for the same customer.
-                    if (loCustHistSeq != null)
-                        lnSeq = (int)loCustHistSeq + CUSTOMERDataSet.CUSTHIST.Rows[i].Field<Int32>("CUSTHIST_DATE_SEQ");
-                    else
-                        lnSeq = CUSTOMERDataSet.CUSTHIST.Rows[i].Field<Int32>("CUSTHIST_DATE_SEQ");
-                    // Moses Newman 09/30/2019 Handle duplicate Sequence #
-                    try
-                    {
-                        CUSTOMERDataSet.CUSTHIST.Rows[i].SetField<Int32>("CUSTHIST_DATE_SEQ", lnSeq);
-                    }
-                    catch(System.Data.ConstraintException)
-                    {
-                        lnSeq += 10;
-                        CUSTOMERDataSet.CUSTHIST.Rows[i].SetField<Int32>("CUSTHIST_DATE_SEQ", lnSeq);
-                    }
-                    CUSTHISTBindingSource.EndEdit();
-
-                    // Moses Newman 09/11/2013 Remove paid flag if returned check changed status
-                    if (CUSTOMERDataSet.CUSTHIST.Rows[i].Field<String>("CUSTHIST_PAYMENT_TYPE") == "I" && CUSTOMERDataSet.CUSTHIST.Rows[i].Field<String>("CUSTHIST_ACT_STAT") == "I")
-                    {
-                        CUSTHISTTableAdapter.UnflagLastPaidRecord(CUSTOMERDataSet.CUSTHIST.Rows[i].Field<String>("CUSTHIST_NO"));
-                    }
-                    // Moses Newman 10/10/2020 set bounced check IsINSUF flag
-                    // Moses Newman 11/16/2020 Or reverese credit card! Or adjustment tied to check!
-                    if (CUSTOMERDataSet.CUSTHIST.Rows[i].Field<String>("CUSTHIST_PAYMENT_TYPE") == "I" || ((CUSTOMERDataSet.CUSTHIST.Rows[i].Field<Int32?>("ISFID") != null) ? CUSTOMERDataSet.CUSTHIST.Rows[i].Field<Int32>("ISFID"):0) != 0)
-                        CUSTHISTTableAdapter.ClosedCustomerHistorySetISINSUF(CUSTOMERDataSet.CUSTHIST.Rows[i].Field<Int32>("ISFID"));
-                }
                 CUSTOMERDataSet.CUSTHIST.GetChanges();
                 CUSTHISTTableAdapter.Update(CUSTOMERDataSet.CUSTHIST);
                 Program.CreateFinalPayments(CUSTOMERDataSet);

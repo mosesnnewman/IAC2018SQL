@@ -105,6 +105,8 @@ namespace IAC2021SQL
                 ExField.FldNumber = i+1;
                 FullFieldList.Add(ExField);
             }
+            // Moses Newman 07/18/2024
+            FullFieldList.Sort((f1,f2) => f1.EXCELColumnName.CompareTo(f2.EXCELColumnName));
             listBoxFieldList.DataSource = FullFieldList;
             listBoxFieldList.DisplayMember = "EXCELColumnName";
             listBoxFieldList.ValueMember = "EXCELColumnName";
@@ -1315,7 +1317,10 @@ namespace IAC2021SQL
             var SortedList = FullFieldList.OrderBy(x => x.FldNumber);
             FullFieldList = SortedList.ToList();
             SortedList = SelectedFields.OrderBy(x => x.FldNumber);
-            SelectedFields = SortedList.ToList(); 
+            SelectedFields = SortedList.ToList();
+            // Moses Newman 07/18/2024
+            FullFieldList.Sort((f1, f2) => f1.EXCELColumnName.CompareTo(f2.EXCELColumnName));
+            SelectedFields.Sort((f1, f2) => f1.EXCELColumnName.CompareTo(f2.EXCELColumnName));
             listBoxFieldList.DataSource = FullFieldList;
             listBoxSelectedFields.DataSource = SelectedFields;
             listBoxFieldList.DisplayMember = "EXCELColumnName";
