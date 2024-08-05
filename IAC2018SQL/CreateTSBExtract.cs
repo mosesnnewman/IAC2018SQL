@@ -160,7 +160,7 @@ namespace IAC2021SQL
                 if (tsbSet.ClosedCreditManager.Rows.Count == 0)
                 {
                     DataRow newrow = tsbSet.ClosedCreditManager.NewRow();
-                    tsbSet.ClosedCreditManager.Rows.Add(newrow);
+                    tsbSet.ClosedCreditManager.Rows.Add(newrow); 
                 }
                 // Strip apostrophes from first and last name if they exist
                 tsbSet.ClosedCreditManager.Rows[0].SetField<String>("CRDMGR_CUST_FIRST_NAME", TSBDATA.CUSTOMER.Rows[i].Field<String>("CUSTOMER_FIRST_NAME").Replace(@"'", ""));

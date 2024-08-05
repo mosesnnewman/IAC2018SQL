@@ -118,14 +118,6 @@ namespace IAC2021SQL
         public String CreditStatus { get; set; }
         public String CreditBureau { get; set; }
 
-
-
-
-
-
-
-
-
         public frmOpenCustMaint()
         {
             InitializeComponent();
@@ -810,7 +802,8 @@ namespace IAC2021SQL
                         iACDataSet.OPNCUST.Rows[cUSTOMERBindingSource.Position].SetField<Decimal>("CUSTOMER_ANNUAL_PERCENTAGE_RATE", 0);
                         iACDataSet.OPNCUST.Rows[cUSTOMERBindingSource.Position].SetField<Decimal>("CUSTOMER_LOAN_CASH", 0);
                         iACDataSet.OPNCUST.Rows[cUSTOMERBindingSource.Position].SetField<Int32>("CUSTOMER_NO_OF_PAYMENTS_MADE", 0);
-                        iACDataSet.OPNCUST.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_CREDIT_BUREAU", "N");
+                        // Moses Newman 08/04/2024 Default New Customer to Report to TSB
+                        iACDataSet.OPNCUST.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_CREDIT_BUREAU", "Y");
                         iACDataSet.OPNCUST.Rows[cUSTOMERBindingSource.Position].SetField<Int32>("CUSTOMER_CREDIT_LIMIT", 0);
                         iACDataSet.OPNCUST.Rows[cUSTOMERBindingSource.Position].SetField<Decimal>("CUSTOMER_LAST_PAYMENT_MADE", 0);
                         iACDataSet.OPNCUST.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_REBATE_CODE", "78");

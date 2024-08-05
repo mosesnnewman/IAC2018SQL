@@ -1899,8 +1899,9 @@ namespace IAC2021SQL
                                 RowCount++;
                             }
                             Extensions.CustomerExtract.Rows[RowCount].SetField<String>("CUSTOMER_PAYMENT_TYPE", "E");
-                            Extensions.CustomerExtract.Rows[RowCount].SetField<Int32>("CUSTOMER_MONTHS_EXTENDED",
-                                Extensions.Extensions.Rows[hcount].Field<Int32?>("CUSTHIST_THRU_UD") != null ? Extensions.Extensions.Rows[hcount].Field<Int32>("CUSTHIST_THRU_UD") : 0);
+                            // Moses Newman 08/01/2024 Don't blow up prebiously grabbed extension count
+                            //Extensions.CustomerExtract.Rows[RowCount].SetField<Int32>("CUSTOMER_MONTHS_EXTENDED",
+                                //Extensions.Extensions.Rows[hcount].Field<Int32?>("CUSTHIST_THRU_UD") != null ? Extensions.Extensions.Rows[hcount].Field<Int32>("CUSTHIST_THRU_UD") : 0);
                             Extensions.CustomerExtract.Rows[RowCount].SetField<String>("CUSTOMER_PAYMENT_CODE",
                                 Extensions.Extensions.Rows[hcount].Field<String>("CUSTHIST_PAYMENT_CODE"));
                             Extensions.CustomerExtract.Rows[RowCount].SetField<String>("CUSTOMER_PAID_THRU",
