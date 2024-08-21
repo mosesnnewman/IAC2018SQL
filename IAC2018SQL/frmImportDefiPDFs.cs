@@ -4,9 +4,10 @@ using System.Data;
 using System.Windows.Forms;
 using S9API.Models;
 using Acrobat;
+
 using RestSharp.Authenticators;
 using System.Data.SqlClient;
-using System.ServiceModel.Security;
+
 
 namespace IAC2021SQL
 {
@@ -165,7 +166,8 @@ namespace IAC2021SQL
                         if (!System.IO.File.Exists(ProcessedPath + Filename))
                             System.IO.File.Move(FullPath + Filename, ProcessedPath + Filename);
                     }
-                    //basic authentication
+                    
+
                     Program.ApiClient.Authenticator = new HttpBasicAuthenticator(username, password);
 
                     var databaseID = 2;  //Database ID

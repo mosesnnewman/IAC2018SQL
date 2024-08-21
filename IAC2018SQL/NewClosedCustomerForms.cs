@@ -5469,7 +5469,7 @@ namespace IAC2021SQL
 
         private void hyperLinkEditWarrantyEmail_OpenLink(object sender, DevExpress.XtraEditors.Controls.OpenLinkEventArgs e)
         {
-            if (e.EditValue.ToString().IsNullOrEmpty())
+            if (String.IsNullOrEmpty(e.EditValue.ToString()))
                 return;
             const string mailPrefix = "mailto:";
             if (!e.EditValue.ToString().ToLower().StartsWith(mailPrefix))
@@ -5599,9 +5599,9 @@ namespace IAC2021SQL
                 return;
             System.Globalization.CultureInfo info = System.Globalization.CultureInfo.GetCultureInfo("en-US");
             TextEdit textEdit = sender as TextEdit;
-            Decimal OldValue = !textEdit.OldEditValue.ToString().IsNullOrEmpty() ? Convert.ToDecimal(textEdit.OldEditValue) : 0,
+            Decimal OldValue = !String.IsNullOrEmpty(textEdit.OldEditValue.ToString()) ? Convert.ToDecimal(textEdit.OldEditValue) : 0,
                     Unused = (Decimal?)textEditAmountUnused.EditValue != null ? Convert.ToDecimal(textEditAmountUnused.EditValue) : iACDataSet.OPNBANK.Rows[0].Field<Decimal>("OPNBANK_MONTHLY_PAYMENT"),
-                    thisValue = !textEdit.EditValue.ToString().IsNullOrEmpty() ? Convert.ToDecimal(textEdit.EditValue) : 0;
+                    thisValue = !String.IsNullOrEmpty(textEdit.EditValue.ToString()) ? Convert.ToDecimal(textEdit.EditValue) : 0;
             Unused += OldValue;
             if (thisValue > Unused)
             {
@@ -5616,9 +5616,9 @@ namespace IAC2021SQL
                 return;
             System.Globalization.CultureInfo info = System.Globalization.CultureInfo.GetCultureInfo("en-US");
             TextEdit textEdit = sender as TextEdit;
-            Decimal OldValue = !textEdit.OldEditValue.ToString().IsNullOrEmpty() ? Convert.ToDecimal(textEdit.OldEditValue) : 0,
+            Decimal OldValue = !String.IsNullOrEmpty(textEdit.OldEditValue.ToString()) ? Convert.ToDecimal(textEdit.OldEditValue) : 0,
                     Unused = (Decimal?)textEditAmountUnused.EditValue != null ? Convert.ToDecimal(textEditAmountUnused.EditValue) : iACDataSet.OPNBANK.Rows[0].Field<Decimal>("OPNBANK_MONTHLY_PAYMENT"),
-                    thisValue = !textEdit.EditValue.ToString().IsNullOrEmpty() ? Convert.ToDecimal(textEdit.EditValue) : 0;
+                    thisValue = !String.IsNullOrEmpty(textEdit.EditValue.ToString()) ? Convert.ToDecimal(textEdit.EditValue) : 0;
             Unused += OldValue;
             if (thisValue > Unused)
             {
@@ -5633,9 +5633,9 @@ namespace IAC2021SQL
                 return;
             System.Globalization.CultureInfo info = System.Globalization.CultureInfo.GetCultureInfo("en-US");
             TextEdit textEdit = sender as TextEdit;
-            Decimal OldValue = !textEdit.OldEditValue.ToString().IsNullOrEmpty() ? Convert.ToDecimal(textEdit.OldEditValue) : 0,
+            Decimal OldValue = !String.IsNullOrEmpty(textEdit.OldEditValue.ToString()) ? Convert.ToDecimal(textEdit.OldEditValue) : 0,
                     Unused = (Decimal?)textEditAmountUnused.EditValue != null ? Convert.ToDecimal(textEditAmountUnused.EditValue) : iACDataSet.OPNBANK.Rows[0].Field<Decimal>("OPNBANK_MONTHLY_PAYMENT"),
-                    thisValue = !textEdit.EditValue.ToString().IsNullOrEmpty() ? Convert.ToDecimal(textEdit.EditValue) : 0;
+                    thisValue = !String.IsNullOrEmpty(textEdit.EditValue.ToString()) ? Convert.ToDecimal(textEdit.EditValue) : 0;
             Unused += OldValue;
             if (thisValue > Unused)
             {
@@ -5650,9 +5650,9 @@ namespace IAC2021SQL
                 return;
             System.Globalization.CultureInfo info = System.Globalization.CultureInfo.GetCultureInfo("en-US");
             TextEdit textEdit = sender as TextEdit;
-            Decimal OldValue = !textEdit.OldEditValue.ToString().IsNullOrEmpty() ? Convert.ToDecimal(textEdit.OldEditValue) : 0,
+            Decimal OldValue = !String.IsNullOrEmpty(textEdit.OldEditValue.ToString()) ? Convert.ToDecimal(textEdit.OldEditValue) : 0,
                     Unused = (Decimal?)textEditAmountUnused.EditValue != null ? Convert.ToDecimal(textEditAmountUnused.EditValue) : iACDataSet.OPNBANK.Rows[0].Field<Decimal>("OPNBANK_MONTHLY_PAYMENT"),
-                    thisValue = !textEdit.EditValue.ToString().IsNullOrEmpty() ? Convert.ToDecimal(textEdit.EditValue) : 0;
+                    thisValue = !String.IsNullOrEmpty(textEdit.EditValue.ToString()) ? Convert.ToDecimal(textEdit.EditValue) : 0;
             Unused += OldValue;
             if (thisValue > Unused)
             {

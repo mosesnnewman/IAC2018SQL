@@ -36,7 +36,7 @@ namespace IAC2021SQL
         {
             // Moses Newman 11/21/2017 Remove hard coded UNC pathing.
             String path = Program.GsDataPath + @"MailMerge";
-            textBoxTestEmail.Text = "DCarocci@iaccredit.com";
+            textBoxTestEmail.Text = "info@iaccredit.com";
             var FileNames = Directory.EnumerateFiles(path, "*.docx").Select(Path.GetFileName);
 
             foreach (object i in FileNames)

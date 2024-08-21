@@ -28,16 +28,6 @@ namespace IAC2021SQL
             e.Cancel = Convert.ToDouble(TotalISFFees1.Summary.GetResult()) == 0;
         }
 
-        private void TotalNonCash1_BeforePrint(object sender, CancelEventArgs e)
-        {
-            e.Cancel = Convert.ToDouble(TotalNonCash1.Summary.GetResult()) == 0;
-        }
-
-        private void Payments1_BeforePrint(object sender, CancelEventArgs e)
-        {
-            e.Cancel = Convert.ToDouble(Payments1.Summary.GetResult()) == 0;
-        }
-
         private void TotalInterest2_BeforePrint(object sender, CancelEventArgs e)
         {
             e.Cancel = Convert.ToDouble(TotalInterest2.Summary.GetResult()) == 0;
@@ -61,11 +51,6 @@ namespace IAC2021SQL
         private void GrandTotalISFFees1_BeforePrint(object sender, CancelEventArgs e)
         {
             e.Cancel = Convert.ToDouble(GrandTotalISFFees1.Summary.GetResult()) == 0;
-        }
-
-        private void GrandTotalNonCash1_BeforePrint(object sender, CancelEventArgs e)
-        {
-            e.Cancel = Convert.ToDouble(GrandTotalNonCash1.Summary.GetResult()) == 0;
         }
 
         private void GrandTotalPayments1_BeforePrint(object sender, CancelEventArgs e)

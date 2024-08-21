@@ -3455,6 +3455,7 @@ namespace IAC2021SQL
             List<String> NegAdjList = new List<String>
             {
                 "AW",
+				"AG",  // Moses Newman 08/14/2024 Add Gap Adjustment
 				"RI"
                 //"WH",
                 //"WC"

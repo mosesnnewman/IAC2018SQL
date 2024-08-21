@@ -447,7 +447,7 @@ namespace IAC2021SQL
                                 lsCommentText = lbCosigner ? "(Cosigner) Created Collection Letter 02  - Mass (21) Days" : "Created Collection Letter 02  - Mass (21) Days";
                                 break;
                             case 3:
-                                lsCommentText = lbCosigner ? "(Cosigner) Created Collection Letter 03 – All States (5) Days" : "Created Collection Letter 03 – All States (5) Days";
+                                lsCommentText = lbCosigner ? "(Cosigner) Created Collection Letter 03 – All States (10) Days" : "Created Collection Letter 03 – All States (10) Days";
                                 break;
                             // Moses Newman 02/26/2019 add notice 4 (Mass 50 day) and notice 5 (All State 55 day)
                             case 4:
