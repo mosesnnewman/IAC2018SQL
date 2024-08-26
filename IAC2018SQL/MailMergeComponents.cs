@@ -705,7 +705,10 @@ namespace IAC2021SQL
                             // Moses Newman 11/09/2014 change Destination to Email instead of new word document,
                             // so now HTML formatted email can be sent instead of text based MailItem and seperate Outlook load.
                             wrdMailMerge.Destination = Word.WdMailMergeDestination.wdSendToEmail;
-                            wrdMailMerge.MailAddressFieldName = "TestEmail";
+                            if(!tbTestMode)
+                                wrdMailMerge.MailAddressFieldName = "EmailAddress";
+                            else
+                                wrdMailMerge.MailAddressFieldName = "TestEmail";
                             wrdMailMerge.MailAsAttachment = false;
                             wrdMailMerge.MailSubject = "*** " + PassedDataSet.CUSTOMER.Rows[CustomerIndex].Field<String>("CUSTOMER_NO") + " ATTENTION: MESSAGE FROM INDUSTRIAL ACCEPTANCE CORPORATION. ***";
                             wrdMailMerge.MailFormat = Word.WdMailMergeMailFormat.wdMailFormatHTML;
