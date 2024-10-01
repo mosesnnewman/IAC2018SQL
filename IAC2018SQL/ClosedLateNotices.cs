@@ -146,14 +146,14 @@ namespace IAC2021SQL
             MailMergeComponents CreateNoticeLetters = new MailMergeComponents();
 
             CreateNoticeLetters.CreateNotices(0, true, ref worker, ref lsProgMessage);
-            CreateNoticeLetters.CreateNotices(1,true, ref worker, ref lsProgMessage);
+            CreateNoticeLetters.CreateNotices(1, true, ref worker, ref lsProgMessage);
             // Moses Newman 08/21/2018 change second parameter of Notice 2 and 3 to true so that attachments are now made for 02 and 03.
             CreateNoticeLetters.CreateNotices(2, true, ref worker, ref lsProgMessage);
             CreateNoticeLetters.CreateNotices(3, true, ref worker, ref lsProgMessage);
             CreateNoticeLetters.CreateNotices(4, true, ref worker, ref lsProgMessage);
             CreateNoticeLetters.CreateNotices(5, true, ref worker, ref lsProgMessage);
-            CreateNoticeLetters.CreateNotices(6,true, ref worker, ref lsProgMessage);
-            CreateNoticeLetters.CreateNotices(9,true, ref worker, ref lsProgMessage);
+            CreateNoticeLetters.CreateNotices(6, true, ref worker, ref lsProgMessage);
+            CreateNoticeLetters.CreateNotices(9, true, ref worker, ref lsProgMessage);
             CreateNoticeLetters = null;
         }
 
