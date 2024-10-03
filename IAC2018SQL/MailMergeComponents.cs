@@ -415,8 +415,8 @@ namespace IAC2021SQL
                     String tempFile = @"noticewordtemp" + tnLetterNo.ToString() + ".docx";
                     server.MailMerge(mergeOptions, tempFile, DocumentFormat.OpenXml);
                     server.LoadDocument(tempFile, DocumentFormat.OpenXml);
-                    //server.MailMergeStarted += new MailMergeStartedEventHandler 
-                    PrintViaLink(server, "Notice Number: " + tnLetterNo.ToString());
+                    System.Diagnostics.Process.Start(tempFile);
+                    //PrintViaLink(server, "Notice Number: " + tnLetterNo.ToString());
                 }
                 // Moses Newman 06/25/2018 make comment records for notices 00,01,06,09, but only if run from LateCharge program!
                 // Moses Newman 08/21/2018 add 02,03 also.
