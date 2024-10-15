@@ -424,7 +424,6 @@
             this.layoutControlItemCash = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem93 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem94 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.emptySpaceItem95 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem96 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem98 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItemFirstNameTab2 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -500,6 +499,11 @@
             this.emptySpaceItemActStat = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItemPurchaseOrder = new DevExpress.XtraLayout.LayoutControlItem();
             this.textBox14 = new System.Windows.Forms.TextBox();
+            this.splitterItem1 = new DevExpress.XtraLayout.SplitterItem();
+            this.emptySpaceItem95 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.simpleSeparator1 = new DevExpress.XtraLayout.SimpleSeparator();
+            this.txtLastPaymentMade = new System.Windows.Forms.TextBox();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             labelTotalDue = new System.Windows.Forms.Label();
             labelDealerCashPrice = new System.Windows.Forms.Label();
             label30 = new System.Windows.Forms.Label();
@@ -822,7 +826,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemCash)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem93)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem94)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem95)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem96)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem98)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemFirstNameTab2)).BeginInit();
@@ -868,6 +871,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItemActStat)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemPurchaseOrder)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitterItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem95)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.simpleSeparator1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             this.SuspendLayout();
             // 
             // labelTotalDue
@@ -4241,6 +4248,7 @@
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.txtLastPaymentMade);
             this.layoutControl1.Controls.Add(this.txtLateChargeBal);
             this.layoutControl1.Controls.Add(this.txtLateCharge);
             this.layoutControl1.Controls.Add(this.txtPaymentCode);
@@ -4268,6 +4276,7 @@
             this.layoutControl1.Controls.Add(this.textBox1);
             resources.ApplyResources(this.layoutControl1, "layoutControl1");
             this.layoutControl1.Name = "layoutControl1";
+            this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(953, 447, 650, 400);
             this.layoutControl1.Root = this.CustInfo2Top;
             // 
             // txtLateChargeBal
@@ -4529,13 +4538,20 @@
             // 
             // CustInfo2Top
             // 
+            this.CustInfo2Top.AppearanceGroup.BorderColor = System.Drawing.Color.Transparent;
             this.CustInfo2Top.AppearanceGroup.Font = ((System.Drawing.Font)(resources.GetObject("CustInfo2Top.AppearanceGroup.Font")));
+            this.CustInfo2Top.AppearanceGroup.ForeColor = System.Drawing.Color.White;
+            this.CustInfo2Top.AppearanceGroup.Options.UseBorderColor = true;
             this.CustInfo2Top.AppearanceGroup.Options.UseFont = true;
+            this.CustInfo2Top.AppearanceGroup.Options.UseForeColor = true;
             this.CustInfo2Top.AppearanceItemCaption.Font = ((System.Drawing.Font)(resources.GetObject("CustInfo2Top.AppearanceItemCaption.Font")));
             this.CustInfo2Top.AppearanceItemCaption.Options.UseFont = true;
+            this.CustInfo2Top.AppearanceTabPage.PageClient.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.CustInfo2Top.AppearanceTabPage.PageClient.Options.UseBackColor = true;
             this.CustInfo2Top.DefaultLayoutType = DevExpress.XtraLayout.Utils.LayoutType.Horizontal;
             this.CustInfo2Top.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
             this.CustInfo2Top.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.CustInfo2Top.GroupBordersVisible = false;
             this.CustInfo2Top.GroupStyle = DevExpress.Utils.GroupStyle.Title;
             this.CustInfo2Top.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItemContractDate,
@@ -4587,8 +4603,10 @@
             this.emptySpaceItem97,
             this.emptySpaceItem110,
             this.layoutControlItemLateChargeBalance,
-            this.emptySpaceItem111});
-            this.CustInfo2Top.Name = "CustInfo2Top";
+            this.emptySpaceItem111,
+            this.simpleSeparator1,
+            this.layoutControlItem3});
+            this.CustInfo2Top.Name = "Root";
             this.CustInfo2Top.Size = new System.Drawing.Size(1551, 685);
             this.CustInfo2Top.TextVisible = false;
             // 
@@ -4603,7 +4621,7 @@
             this.layoutControlItemContractDate.MaxSize = new System.Drawing.Size(0, 41);
             this.layoutControlItemContractDate.MinSize = new System.Drawing.Size(1, 41);
             this.layoutControlItemContractDate.Name = "layoutControlItemContractDate";
-            this.layoutControlItemContractDate.Size = new System.Drawing.Size(259, 41);
+            this.layoutControlItemContractDate.Size = new System.Drawing.Size(232, 41);
             this.layoutControlItemContractDate.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItemContractDate.Spacing = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 10);
             resources.ApplyResources(this.layoutControlItemContractDate, "layoutControlItemContractDate");
@@ -4619,11 +4637,11 @@
             this.layoutControlItemPaymentDate.AppearanceItemCaptionDisabled.Font = ((System.Drawing.Font)(resources.GetObject("layoutControlItemPaymentDate.AppearanceItemCaptionDisabled.Font")));
             this.layoutControlItemPaymentDate.AppearanceItemCaptionDisabled.Options.UseFont = true;
             this.layoutControlItemPaymentDate.Control = this.txtPaymentDate;
-            this.layoutControlItemPaymentDate.Location = new System.Drawing.Point(55, 205);
+            this.layoutControlItemPaymentDate.Location = new System.Drawing.Point(49, 205);
             this.layoutControlItemPaymentDate.MaxSize = new System.Drawing.Size(0, 41);
             this.layoutControlItemPaymentDate.MinSize = new System.Drawing.Size(1, 41);
             this.layoutControlItemPaymentDate.Name = "layoutControlItemPaymentDate";
-            this.layoutControlItemPaymentDate.Size = new System.Drawing.Size(204, 49);
+            this.layoutControlItemPaymentDate.Size = new System.Drawing.Size(183, 49);
             this.layoutControlItemPaymentDate.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItemPaymentDate.Spacing = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 10);
             resources.ApplyResources(this.layoutControlItemPaymentDate, "layoutControlItemPaymentDate");
@@ -4639,12 +4657,12 @@
             this.layoutControlItemCustomerNoTab2.AppearanceItemCaptionDisabled.Font = ((System.Drawing.Font)(resources.GetObject("layoutControlItemCustomerNoTab2.AppearanceItemCaptionDisabled.Font")));
             this.layoutControlItemCustomerNoTab2.AppearanceItemCaptionDisabled.Options.UseFont = true;
             this.layoutControlItemCustomerNoTab2.Control = this.textBox1;
-            this.layoutControlItemCustomerNoTab2.Location = new System.Drawing.Point(16, 0);
+            this.layoutControlItemCustomerNoTab2.Location = new System.Drawing.Point(14, 0);
             this.layoutControlItemCustomerNoTab2.MaxSize = new System.Drawing.Size(0, 41);
             this.layoutControlItemCustomerNoTab2.MinSize = new System.Drawing.Size(163, 41);
             this.layoutControlItemCustomerNoTab2.Name = "layoutControlItemCustomerNoTab2";
             this.layoutControlItemCustomerNoTab2.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
-            this.layoutControlItemCustomerNoTab2.Size = new System.Drawing.Size(189, 41);
+            this.layoutControlItemCustomerNoTab2.Size = new System.Drawing.Size(169, 41);
             this.layoutControlItemCustomerNoTab2.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             resources.ApplyResources(this.layoutControlItemCustomerNoTab2, "layoutControlItemCustomerNoTab2");
             this.layoutControlItemCustomerNoTab2.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
@@ -4655,9 +4673,9 @@
             // emptySpaceItem17
             // 
             this.emptySpaceItem17.AllowHotTrack = false;
-            this.emptySpaceItem17.Location = new System.Drawing.Point(205, 0);
+            this.emptySpaceItem17.Location = new System.Drawing.Point(183, 0);
             this.emptySpaceItem17.Name = "emptySpaceItem17";
-            this.emptySpaceItem17.Size = new System.Drawing.Size(178, 41);
+            this.emptySpaceItem17.Size = new System.Drawing.Size(159, 41);
             this.emptySpaceItem17.Spacing = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 10);
             this.emptySpaceItem17.TextSize = new System.Drawing.Size(0, 0);
             // 
@@ -4671,7 +4689,7 @@
             this.layoutControlItemFirstPayDateTab2.Location = new System.Drawing.Point(4, 41);
             this.layoutControlItemFirstPayDateTab2.MinSize = new System.Drawing.Size(1, 41);
             this.layoutControlItemFirstPayDateTab2.Name = "layoutControlItemFirstPayDateTab2";
-            this.layoutControlItemFirstPayDateTab2.Size = new System.Drawing.Size(255, 41);
+            this.layoutControlItemFirstPayDateTab2.Size = new System.Drawing.Size(228, 41);
             this.layoutControlItemFirstPayDateTab2.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItemFirstPayDateTab2.Spacing = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 10);
             resources.ApplyResources(this.layoutControlItemFirstPayDateTab2, "layoutControlItemFirstPayDateTab2");
@@ -4683,9 +4701,9 @@
             // emptySpaceItem88
             // 
             this.emptySpaceItem88.AllowHotTrack = false;
-            this.emptySpaceItem88.Location = new System.Drawing.Point(1122, 41);
+            this.emptySpaceItem88.Location = new System.Drawing.Point(1013, 41);
             this.emptySpaceItem88.Name = "emptySpaceItem88";
-            this.emptySpaceItem88.Size = new System.Drawing.Size(409, 41);
+            this.emptySpaceItem88.Size = new System.Drawing.Size(518, 41);
             this.emptySpaceItem88.Spacing = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 10);
             this.emptySpaceItem88.TextSize = new System.Drawing.Size(0, 0);
             // 
@@ -4696,11 +4714,11 @@
             this.layoutControlItemRegularPay.AppearanceItemCaptionDisabled.Font = ((System.Drawing.Font)(resources.GetObject("layoutControlItemRegularPay.AppearanceItemCaptionDisabled.Font")));
             this.layoutControlItemRegularPay.AppearanceItemCaptionDisabled.Options.UseFont = true;
             this.layoutControlItemRegularPay.Control = this.txtRegularPay;
-            this.layoutControlItemRegularPay.Location = new System.Drawing.Point(54, 82);
+            this.layoutControlItemRegularPay.Location = new System.Drawing.Point(48, 82);
             this.layoutControlItemRegularPay.MaxSize = new System.Drawing.Size(0, 41);
             this.layoutControlItemRegularPay.MinSize = new System.Drawing.Size(1, 41);
             this.layoutControlItemRegularPay.Name = "layoutControlItemRegularPay";
-            this.layoutControlItemRegularPay.Size = new System.Drawing.Size(205, 41);
+            this.layoutControlItemRegularPay.Size = new System.Drawing.Size(184, 41);
             this.layoutControlItemRegularPay.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItemRegularPay.Spacing = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 10);
             resources.ApplyResources(this.layoutControlItemRegularPay, "layoutControlItemRegularPay");
@@ -4712,9 +4730,9 @@
             // emptySpaceItem89
             // 
             this.emptySpaceItem89.AllowHotTrack = false;
-            this.emptySpaceItem89.Location = new System.Drawing.Point(866, 82);
+            this.emptySpaceItem89.Location = new System.Drawing.Point(781, 82);
             this.emptySpaceItem89.Name = "emptySpaceItem89";
-            this.emptySpaceItem89.Size = new System.Drawing.Size(118, 41);
+            this.emptySpaceItem89.Size = new System.Drawing.Size(104, 41);
             this.emptySpaceItem89.Spacing = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 10);
             this.emptySpaceItem89.TextSize = new System.Drawing.Size(0, 0);
             // 
@@ -4723,7 +4741,7 @@
             this.emptySpaceItem90.AllowHotTrack = false;
             this.emptySpaceItem90.Location = new System.Drawing.Point(0, 0);
             this.emptySpaceItem90.Name = "emptySpaceItem90";
-            this.emptySpaceItem90.Size = new System.Drawing.Size(16, 41);
+            this.emptySpaceItem90.Size = new System.Drawing.Size(14, 41);
             this.emptySpaceItem90.Spacing = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 10);
             this.emptySpaceItem90.TextSize = new System.Drawing.Size(0, 0);
             // 
@@ -4732,7 +4750,7 @@
             this.emptySpaceItem91.AllowHotTrack = false;
             this.emptySpaceItem91.Location = new System.Drawing.Point(0, 82);
             this.emptySpaceItem91.Name = "emptySpaceItem91";
-            this.emptySpaceItem91.Size = new System.Drawing.Size(54, 41);
+            this.emptySpaceItem91.Size = new System.Drawing.Size(48, 41);
             this.emptySpaceItem91.Spacing = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 10);
             this.emptySpaceItem91.TextSize = new System.Drawing.Size(0, 0);
             // 
@@ -4743,11 +4761,11 @@
             this.layoutControlItemCash.AppearanceItemCaptionDisabled.Font = ((System.Drawing.Font)(resources.GetObject("layoutControlItemCash.AppearanceItemCaptionDisabled.Font")));
             this.layoutControlItemCash.AppearanceItemCaptionDisabled.Options.UseFont = true;
             this.layoutControlItemCash.Control = this.txtCASH;
-            this.layoutControlItemCash.Location = new System.Drawing.Point(88, 123);
+            this.layoutControlItemCash.Location = new System.Drawing.Point(79, 123);
             this.layoutControlItemCash.MaxSize = new System.Drawing.Size(0, 41);
             this.layoutControlItemCash.MinSize = new System.Drawing.Size(1, 41);
             this.layoutControlItemCash.Name = "layoutControlItemCash";
-            this.layoutControlItemCash.Size = new System.Drawing.Size(171, 41);
+            this.layoutControlItemCash.Size = new System.Drawing.Size(153, 41);
             this.layoutControlItemCash.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItemCash.Spacing = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 10);
             resources.ApplyResources(this.layoutControlItemCash, "layoutControlItemCash");
@@ -4761,35 +4779,25 @@
             this.emptySpaceItem93.AllowHotTrack = false;
             this.emptySpaceItem93.Location = new System.Drawing.Point(0, 123);
             this.emptySpaceItem93.Name = "emptySpaceItem93";
-            this.emptySpaceItem93.Size = new System.Drawing.Size(88, 41);
+            this.emptySpaceItem93.Size = new System.Drawing.Size(79, 41);
             this.emptySpaceItem93.Spacing = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 10);
             this.emptySpaceItem93.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem94
             // 
             this.emptySpaceItem94.AllowHotTrack = false;
-            this.emptySpaceItem94.Location = new System.Drawing.Point(866, 164);
+            this.emptySpaceItem94.Location = new System.Drawing.Point(775, 164);
             this.emptySpaceItem94.Name = "emptySpaceItem94";
-            this.emptySpaceItem94.Size = new System.Drawing.Size(665, 41);
+            this.emptySpaceItem94.Size = new System.Drawing.Size(756, 41);
             this.emptySpaceItem94.Spacing = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 10);
             this.emptySpaceItem94.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // emptySpaceItem95
-            // 
-            this.emptySpaceItem95.AllowHotTrack = false;
-            this.emptySpaceItem95.Location = new System.Drawing.Point(0, 254);
-            this.emptySpaceItem95.Name = "emptySpaceItem95";
-            this.emptySpaceItem95.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 2, 2, 2);
-            this.emptySpaceItem95.Size = new System.Drawing.Size(1531, 411);
-            this.emptySpaceItem95.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
-            this.emptySpaceItem95.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem96
             // 
             this.emptySpaceItem96.AllowHotTrack = false;
             this.emptySpaceItem96.Location = new System.Drawing.Point(0, 205);
             this.emptySpaceItem96.Name = "emptySpaceItem96";
-            this.emptySpaceItem96.Size = new System.Drawing.Size(55, 49);
+            this.emptySpaceItem96.Size = new System.Drawing.Size(49, 49);
             this.emptySpaceItem96.Spacing = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 10);
             this.emptySpaceItem96.TextSize = new System.Drawing.Size(0, 0);
             // 
@@ -4811,12 +4819,12 @@
             this.layoutControlItemFirstNameTab2.AppearanceItemCaptionDisabled.Font = ((System.Drawing.Font)(resources.GetObject("layoutControlItemFirstNameTab2.AppearanceItemCaptionDisabled.Font")));
             this.layoutControlItemFirstNameTab2.AppearanceItemCaptionDisabled.Options.UseFont = true;
             this.layoutControlItemFirstNameTab2.Control = this.textBox16;
-            this.layoutControlItemFirstNameTab2.Location = new System.Drawing.Point(383, 0);
+            this.layoutControlItemFirstNameTab2.Location = new System.Drawing.Point(342, 0);
             this.layoutControlItemFirstNameTab2.MaxSize = new System.Drawing.Size(0, 41);
             this.layoutControlItemFirstNameTab2.MinSize = new System.Drawing.Size(79, 38);
             this.layoutControlItemFirstNameTab2.Name = "layoutControlItemFirstNameTab2";
             this.layoutControlItemFirstNameTab2.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
-            this.layoutControlItemFirstNameTab2.Size = new System.Drawing.Size(191, 41);
+            this.layoutControlItemFirstNameTab2.Size = new System.Drawing.Size(171, 41);
             this.layoutControlItemFirstNameTab2.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             resources.ApplyResources(this.layoutControlItemFirstNameTab2, "layoutControlItemFirstNameTab2");
             this.layoutControlItemFirstNameTab2.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
@@ -4827,9 +4835,9 @@
             // emptySpaceItem99
             // 
             this.emptySpaceItem99.AllowHotTrack = false;
-            this.emptySpaceItem99.Location = new System.Drawing.Point(841, 0);
+            this.emptySpaceItem99.Location = new System.Drawing.Point(752, 0);
             this.emptySpaceItem99.Name = "emptySpaceItem99";
-            this.emptySpaceItem99.Size = new System.Drawing.Size(690, 41);
+            this.emptySpaceItem99.Size = new System.Drawing.Size(779, 41);
             this.emptySpaceItem99.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItemLastNameTab2
@@ -4839,12 +4847,12 @@
             this.layoutControlItemLastNameTab2.AppearanceItemCaptionDisabled.Font = ((System.Drawing.Font)(resources.GetObject("layoutControlItemLastNameTab2.AppearanceItemCaptionDisabled.Font")));
             this.layoutControlItemLastNameTab2.AppearanceItemCaptionDisabled.Options.UseFont = true;
             this.layoutControlItemLastNameTab2.Control = this.textBox15;
-            this.layoutControlItemLastNameTab2.Location = new System.Drawing.Point(574, 0);
+            this.layoutControlItemLastNameTab2.Location = new System.Drawing.Point(513, 0);
             this.layoutControlItemLastNameTab2.MaxSize = new System.Drawing.Size(0, 41);
             this.layoutControlItemLastNameTab2.MinSize = new System.Drawing.Size(163, 41);
             this.layoutControlItemLastNameTab2.Name = "layoutControlItemLastNameTab2";
             this.layoutControlItemLastNameTab2.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 2, 2, 10);
-            this.layoutControlItemLastNameTab2.Size = new System.Drawing.Size(218, 41);
+            this.layoutControlItemLastNameTab2.Size = new System.Drawing.Size(195, 41);
             this.layoutControlItemLastNameTab2.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             resources.ApplyResources(this.layoutControlItemLastNameTab2, "layoutControlItemLastNameTab2");
             this.layoutControlItemLastNameTab2.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
@@ -4859,12 +4867,12 @@
             this.layoutControlItemSuffix.AppearanceItemCaptionDisabled.Font = ((System.Drawing.Font)(resources.GetObject("layoutControlItemSuffix.AppearanceItemCaptionDisabled.Font")));
             this.layoutControlItemSuffix.AppearanceItemCaptionDisabled.Options.UseFont = true;
             this.layoutControlItemSuffix.Control = this.textBox18;
-            this.layoutControlItemSuffix.Location = new System.Drawing.Point(792, 0);
+            this.layoutControlItemSuffix.Location = new System.Drawing.Point(708, 0);
             this.layoutControlItemSuffix.MaxSize = new System.Drawing.Size(163, 41);
             this.layoutControlItemSuffix.MinSize = new System.Drawing.Size(1, 41);
             this.layoutControlItemSuffix.Name = "layoutControlItemSuffix";
             this.layoutControlItemSuffix.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 2, 2, 10);
-            this.layoutControlItemSuffix.Size = new System.Drawing.Size(49, 41);
+            this.layoutControlItemSuffix.Size = new System.Drawing.Size(44, 41);
             this.layoutControlItemSuffix.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             resources.ApplyResources(this.layoutControlItemSuffix, "layoutControlItemSuffix");
             this.layoutControlItemSuffix.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
@@ -4879,11 +4887,11 @@
             this.layoutControlItemDayDue.AppearanceItemCaptionDisabled.Font = ((System.Drawing.Font)(resources.GetObject("layoutControlItemDayDue.AppearanceItemCaptionDisabled.Font")));
             this.layoutControlItemDayDue.AppearanceItemCaptionDisabled.Options.UseFont = true;
             this.layoutControlItemDayDue.Control = this.comboBoxDayDue;
-            this.layoutControlItemDayDue.Location = new System.Drawing.Point(356, 41);
+            this.layoutControlItemDayDue.Location = new System.Drawing.Point(319, 41);
             this.layoutControlItemDayDue.MinSize = new System.Drawing.Size(102, 33);
             this.layoutControlItemDayDue.Name = "layoutControlItemDayDue";
             this.layoutControlItemDayDue.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
-            this.layoutControlItemDayDue.Size = new System.Drawing.Size(127, 41);
+            this.layoutControlItemDayDue.Size = new System.Drawing.Size(113, 41);
             this.layoutControlItemDayDue.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             resources.ApplyResources(this.layoutControlItemDayDue, "layoutControlItemDayDue");
             this.layoutControlItemDayDue.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
@@ -4894,9 +4902,9 @@
             // emptySpaceItem100
             // 
             this.emptySpaceItem100.AllowHotTrack = false;
-            this.emptySpaceItem100.Location = new System.Drawing.Point(259, 41);
+            this.emptySpaceItem100.Location = new System.Drawing.Point(232, 41);
             this.emptySpaceItem100.Name = "emptySpaceItem100";
-            this.emptySpaceItem100.Size = new System.Drawing.Size(97, 41);
+            this.emptySpaceItem100.Size = new System.Drawing.Size(87, 41);
             this.emptySpaceItem100.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItemTerm
@@ -4906,12 +4914,12 @@
             this.layoutControlItemTerm.AppearanceItemCaptionDisabled.Font = ((System.Drawing.Font)(resources.GetObject("layoutControlItemTerm.AppearanceItemCaptionDisabled.Font")));
             this.layoutControlItemTerm.AppearanceItemCaptionDisabled.Options.UseFont = true;
             this.layoutControlItemTerm.Control = this.txtTerm;
-            this.layoutControlItemTerm.Location = new System.Drawing.Point(498, 41);
+            this.layoutControlItemTerm.Location = new System.Drawing.Point(445, 41);
             this.layoutControlItemTerm.MaxSize = new System.Drawing.Size(0, 41);
             this.layoutControlItemTerm.MinSize = new System.Drawing.Size(10, 41);
             this.layoutControlItemTerm.Name = "layoutControlItemTerm";
             this.layoutControlItemTerm.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
-            this.layoutControlItemTerm.Size = new System.Drawing.Size(80, 41);
+            this.layoutControlItemTerm.Size = new System.Drawing.Size(72, 41);
             this.layoutControlItemTerm.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             resources.ApplyResources(this.layoutControlItemTerm, "layoutControlItemTerm");
             this.layoutControlItemTerm.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
@@ -4922,9 +4930,9 @@
             // emptySpaceItem101
             // 
             this.emptySpaceItem101.AllowHotTrack = false;
-            this.emptySpaceItem101.Location = new System.Drawing.Point(483, 41);
+            this.emptySpaceItem101.Location = new System.Drawing.Point(432, 41);
             this.emptySpaceItem101.Name = "emptySpaceItem101";
-            this.emptySpaceItem101.Size = new System.Drawing.Size(15, 41);
+            this.emptySpaceItem101.Size = new System.Drawing.Size(13, 41);
             this.emptySpaceItem101.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItemOverideInterest
@@ -4934,11 +4942,11 @@
             this.layoutControlItemOverideInterest.AppearanceItemCaptionDisabled.Font = ((System.Drawing.Font)(resources.GetObject("layoutControlItemOverideInterest.AppearanceItemCaptionDisabled.Font")));
             this.layoutControlItemOverideInterest.AppearanceItemCaptionDisabled.Options.UseFont = true;
             this.layoutControlItemOverideInterest.Control = this.checkEditOverideInterest;
-            this.layoutControlItemOverideInterest.Location = new System.Drawing.Point(578, 41);
+            this.layoutControlItemOverideInterest.Location = new System.Drawing.Point(517, 41);
             this.layoutControlItemOverideInterest.MaxSize = new System.Drawing.Size(0, 41);
             this.layoutControlItemOverideInterest.MinSize = new System.Drawing.Size(168, 41);
             this.layoutControlItemOverideInterest.Name = "layoutControlItemOverideInterest";
-            this.layoutControlItemOverideInterest.Size = new System.Drawing.Size(190, 41);
+            this.layoutControlItemOverideInterest.Size = new System.Drawing.Size(170, 41);
             this.layoutControlItemOverideInterest.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItemOverideInterest.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
             this.layoutControlItemOverideInterest.TextSize = new System.Drawing.Size(0, 0);
@@ -4952,11 +4960,11 @@
             this.layoutControlItemOverrideLateCharge.AppearanceItemCaptionDisabled.Font = ((System.Drawing.Font)(resources.GetObject("layoutControlItemOverrideLateCharge.AppearanceItemCaptionDisabled.Font")));
             this.layoutControlItemOverrideLateCharge.AppearanceItemCaptionDisabled.Options.UseFont = true;
             this.layoutControlItemOverrideLateCharge.Control = this.checkBoxOverrideLateCharge;
-            this.layoutControlItemOverrideLateCharge.Location = new System.Drawing.Point(827, 41);
+            this.layoutControlItemOverrideLateCharge.Location = new System.Drawing.Point(740, 41);
             this.layoutControlItemOverrideLateCharge.MaxSize = new System.Drawing.Size(0, 28);
             this.layoutControlItemOverrideLateCharge.MinSize = new System.Drawing.Size(182, 28);
             this.layoutControlItemOverrideLateCharge.Name = "layoutControlItemOverrideLateCharge";
-            this.layoutControlItemOverrideLateCharge.Size = new System.Drawing.Size(196, 41);
+            this.layoutControlItemOverrideLateCharge.Size = new System.Drawing.Size(182, 41);
             this.layoutControlItemOverrideLateCharge.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItemOverrideLateCharge.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
             this.layoutControlItemOverrideLateCharge.TextSize = new System.Drawing.Size(0, 0);
@@ -4966,9 +4974,9 @@
             // emptySpaceItem102
             // 
             this.emptySpaceItem102.AllowHotTrack = false;
-            this.emptySpaceItem102.Location = new System.Drawing.Point(768, 41);
+            this.emptySpaceItem102.Location = new System.Drawing.Point(687, 41);
             this.emptySpaceItem102.Name = "emptySpaceItem102";
-            this.emptySpaceItem102.Size = new System.Drawing.Size(59, 41);
+            this.emptySpaceItem102.Size = new System.Drawing.Size(53, 41);
             this.emptySpaceItem102.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItemUSRule
@@ -4978,11 +4986,11 @@
             this.layoutControlItemUSRule.AppearanceItemCaptionDisabled.Font = ((System.Drawing.Font)(resources.GetObject("layoutControlItemUSRule.AppearanceItemCaptionDisabled.Font")));
             this.layoutControlItemUSRule.AppearanceItemCaptionDisabled.Options.UseFont = true;
             this.layoutControlItemUSRule.Control = this.checkBoxSimple;
-            this.layoutControlItemUSRule.Location = new System.Drawing.Point(1023, 41);
+            this.layoutControlItemUSRule.Location = new System.Drawing.Point(922, 41);
             this.layoutControlItemUSRule.MaxSize = new System.Drawing.Size(0, 41);
             this.layoutControlItemUSRule.MinSize = new System.Drawing.Size(91, 41);
             this.layoutControlItemUSRule.Name = "layoutControlItemUSRule";
-            this.layoutControlItemUSRule.Size = new System.Drawing.Size(99, 41);
+            this.layoutControlItemUSRule.Size = new System.Drawing.Size(91, 41);
             this.layoutControlItemUSRule.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItemUSRule.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
             this.layoutControlItemUSRule.TextSize = new System.Drawing.Size(0, 0);
@@ -4996,11 +5004,11 @@
             this.layoutControlItemLoan.AppearanceItemCaptionDisabled.Font = ((System.Drawing.Font)(resources.GetObject("layoutControlItemLoan.AppearanceItemCaptionDisabled.Font")));
             this.layoutControlItemLoan.AppearanceItemCaptionDisabled.Options.UseFont = true;
             this.layoutControlItemLoan.Control = this.txtLoan;
-            this.layoutControlItemLoan.Location = new System.Drawing.Point(385, 82);
+            this.layoutControlItemLoan.Location = new System.Drawing.Point(345, 82);
             this.layoutControlItemLoan.MaxSize = new System.Drawing.Size(0, 41);
             this.layoutControlItemLoan.MinSize = new System.Drawing.Size(163, 41);
             this.layoutControlItemLoan.Name = "layoutControlItemLoan";
-            this.layoutControlItemLoan.Size = new System.Drawing.Size(173, 41);
+            this.layoutControlItemLoan.Size = new System.Drawing.Size(163, 41);
             this.layoutControlItemLoan.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             resources.ApplyResources(this.layoutControlItemLoan, "layoutControlItemLoan");
             this.layoutControlItemLoan.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
@@ -5010,9 +5018,9 @@
             // emptySpaceItem103
             // 
             this.emptySpaceItem103.AllowHotTrack = false;
-            this.emptySpaceItem103.Location = new System.Drawing.Point(259, 82);
+            this.emptySpaceItem103.Location = new System.Drawing.Point(232, 82);
             this.emptySpaceItem103.Name = "emptySpaceItem103";
-            this.emptySpaceItem103.Size = new System.Drawing.Size(126, 41);
+            this.emptySpaceItem103.Size = new System.Drawing.Size(113, 41);
             this.emptySpaceItem103.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItemLoanInterest
@@ -5022,12 +5030,12 @@
             this.layoutControlItemLoanInterest.AppearanceItemCaptionDisabled.Font = ((System.Drawing.Font)(resources.GetObject("layoutControlItemLoanInterest.AppearanceItemCaptionDisabled.Font")));
             this.layoutControlItemLoanInterest.AppearanceItemCaptionDisabled.Options.UseFont = true;
             this.layoutControlItemLoanInterest.Control = this.txtLoanInterest;
-            this.layoutControlItemLoanInterest.Location = new System.Drawing.Point(613, 82);
+            this.layoutControlItemLoanInterest.Location = new System.Drawing.Point(557, 82);
             this.layoutControlItemLoanInterest.MaxSize = new System.Drawing.Size(0, 41);
             this.layoutControlItemLoanInterest.MinSize = new System.Drawing.Size(162, 41);
             this.layoutControlItemLoanInterest.Name = "layoutControlItemLoanInterest";
             this.layoutControlItemLoanInterest.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
-            this.layoutControlItemLoanInterest.Size = new System.Drawing.Size(253, 41);
+            this.layoutControlItemLoanInterest.Size = new System.Drawing.Size(224, 41);
             this.layoutControlItemLoanInterest.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             resources.ApplyResources(this.layoutControlItemLoanInterest, "layoutControlItemLoanInterest");
             this.layoutControlItemLoanInterest.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
@@ -5042,12 +5050,12 @@
             this.layoutControlItemAPR.AppearanceItemCaptionDisabled.Font = ((System.Drawing.Font)(resources.GetObject("layoutControlItemAPR.AppearanceItemCaptionDisabled.Font")));
             this.layoutControlItemAPR.AppearanceItemCaptionDisabled.Options.UseFont = true;
             this.layoutControlItemAPR.Control = this.txtAPR;
-            this.layoutControlItemAPR.Location = new System.Drawing.Point(984, 82);
+            this.layoutControlItemAPR.Location = new System.Drawing.Point(885, 82);
             this.layoutControlItemAPR.MaxSize = new System.Drawing.Size(0, 41);
             this.layoutControlItemAPR.MinSize = new System.Drawing.Size(1, 41);
             this.layoutControlItemAPR.Name = "layoutControlItemAPR";
             this.layoutControlItemAPR.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
-            this.layoutControlItemAPR.Size = new System.Drawing.Size(138, 41);
+            this.layoutControlItemAPR.Size = new System.Drawing.Size(122, 41);
             this.layoutControlItemAPR.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             resources.ApplyResources(this.layoutControlItemAPR, "layoutControlItemAPR");
             this.layoutControlItemAPR.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
@@ -5062,12 +5070,12 @@
             this.layoutControlItemNoOfPaymentsMade.AppearanceItemCaptionDisabled.Font = ((System.Drawing.Font)(resources.GetObject("layoutControlItemNoOfPaymentsMade.AppearanceItemCaptionDisabled.Font")));
             this.layoutControlItemNoOfPaymentsMade.AppearanceItemCaptionDisabled.Options.UseFont = true;
             this.layoutControlItemNoOfPaymentsMade.Control = this.txtNoOfPaymentsMade;
-            this.layoutControlItemNoOfPaymentsMade.Location = new System.Drawing.Point(351, 123);
+            this.layoutControlItemNoOfPaymentsMade.Location = new System.Drawing.Point(314, 123);
             this.layoutControlItemNoOfPaymentsMade.MaxSize = new System.Drawing.Size(0, 41);
             this.layoutControlItemNoOfPaymentsMade.MinSize = new System.Drawing.Size(79, 41);
             this.layoutControlItemNoOfPaymentsMade.Name = "layoutControlItemNoOfPaymentsMade";
             this.layoutControlItemNoOfPaymentsMade.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
-            this.layoutControlItemNoOfPaymentsMade.Size = new System.Drawing.Size(227, 41);
+            this.layoutControlItemNoOfPaymentsMade.Size = new System.Drawing.Size(203, 41);
             this.layoutControlItemNoOfPaymentsMade.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             resources.ApplyResources(this.layoutControlItemNoOfPaymentsMade, "layoutControlItemNoOfPaymentsMade");
             this.layoutControlItemNoOfPaymentsMade.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
@@ -5077,9 +5085,9 @@
             // emptySpaceItem104
             // 
             this.emptySpaceItem104.AllowHotTrack = false;
-            this.emptySpaceItem104.Location = new System.Drawing.Point(259, 123);
+            this.emptySpaceItem104.Location = new System.Drawing.Point(232, 123);
             this.emptySpaceItem104.Name = "emptySpaceItem104";
-            this.emptySpaceItem104.Size = new System.Drawing.Size(92, 41);
+            this.emptySpaceItem104.Size = new System.Drawing.Size(82, 41);
             this.emptySpaceItem104.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItemCollectionAgent
@@ -5089,11 +5097,11 @@
             this.layoutControlItemCollectionAgent.AppearanceItemCaptionDisabled.Font = ((System.Drawing.Font)(resources.GetObject("layoutControlItemCollectionAgent.AppearanceItemCaptionDisabled.Font")));
             this.layoutControlItemCollectionAgent.AppearanceItemCaptionDisabled.Options.UseFont = true;
             this.layoutControlItemCollectionAgent.Control = this.checkEditCollectionAgent;
-            this.layoutControlItemCollectionAgent.Location = new System.Drawing.Point(578, 123);
+            this.layoutControlItemCollectionAgent.Location = new System.Drawing.Point(517, 123);
             this.layoutControlItemCollectionAgent.MaxSize = new System.Drawing.Size(0, 41);
             this.layoutControlItemCollectionAgent.MinSize = new System.Drawing.Size(179, 41);
             this.layoutControlItemCollectionAgent.Name = "layoutControlItemCollectionAgent";
-            this.layoutControlItemCollectionAgent.Size = new System.Drawing.Size(190, 41);
+            this.layoutControlItemCollectionAgent.Size = new System.Drawing.Size(179, 41);
             this.layoutControlItemCollectionAgent.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItemCollectionAgent.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
             this.layoutControlItemCollectionAgent.TextLocation = DevExpress.Utils.Locations.Left;
@@ -5104,9 +5112,9 @@
             // emptySpaceItem105
             // 
             this.emptySpaceItem105.AllowHotTrack = false;
-            this.emptySpaceItem105.Location = new System.Drawing.Point(768, 123);
+            this.emptySpaceItem105.Location = new System.Drawing.Point(696, 123);
             this.emptySpaceItem105.Name = "emptySpaceItem105";
-            this.emptySpaceItem105.Size = new System.Drawing.Size(763, 41);
+            this.emptySpaceItem105.Size = new System.Drawing.Size(835, 41);
             this.emptySpaceItem105.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItemFundingDate
@@ -5116,12 +5124,12 @@
             this.layoutControlItemFundingDate.AppearanceItemCaptionDisabled.Font = ((System.Drawing.Font)(resources.GetObject("layoutControlItemFundingDate.AppearanceItemCaptionDisabled.Font")));
             this.layoutControlItemFundingDate.AppearanceItemCaptionDisabled.Options.UseFont = true;
             this.layoutControlItemFundingDate.Control = this.nullableDateTimePickerFundingDate;
-            this.layoutControlItemFundingDate.Location = new System.Drawing.Point(307, 164);
+            this.layoutControlItemFundingDate.Location = new System.Drawing.Point(275, 164);
             this.layoutControlItemFundingDate.MaxSize = new System.Drawing.Size(0, 41);
             this.layoutControlItemFundingDate.MinSize = new System.Drawing.Size(199, 41);
             this.layoutControlItemFundingDate.Name = "layoutControlItemFundingDate";
             this.layoutControlItemFundingDate.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
-            this.layoutControlItemFundingDate.Size = new System.Drawing.Size(246, 41);
+            this.layoutControlItemFundingDate.Size = new System.Drawing.Size(220, 41);
             this.layoutControlItemFundingDate.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             resources.ApplyResources(this.layoutControlItemFundingDate, "layoutControlItemFundingDate");
             this.layoutControlItemFundingDate.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
@@ -5132,25 +5140,25 @@
             // emptySpaceItem92
             // 
             this.emptySpaceItem92.AllowHotTrack = false;
-            this.emptySpaceItem92.Location = new System.Drawing.Point(259, 164);
+            this.emptySpaceItem92.Location = new System.Drawing.Point(232, 164);
             this.emptySpaceItem92.Name = "emptySpaceItem92";
-            this.emptySpaceItem92.Size = new System.Drawing.Size(48, 41);
+            this.emptySpaceItem92.Size = new System.Drawing.Size(43, 41);
             this.emptySpaceItem92.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem106
             // 
             this.emptySpaceItem106.AllowHotTrack = false;
-            this.emptySpaceItem106.Location = new System.Drawing.Point(558, 82);
+            this.emptySpaceItem106.Location = new System.Drawing.Point(508, 82);
             this.emptySpaceItem106.Name = "emptySpaceItem106";
-            this.emptySpaceItem106.Size = new System.Drawing.Size(55, 41);
+            this.emptySpaceItem106.Size = new System.Drawing.Size(49, 41);
             this.emptySpaceItem106.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem107
             // 
             this.emptySpaceItem107.AllowHotTrack = false;
-            this.emptySpaceItem107.Location = new System.Drawing.Point(1122, 82);
+            this.emptySpaceItem107.Location = new System.Drawing.Point(1007, 82);
             this.emptySpaceItem107.Name = "emptySpaceItem107";
-            this.emptySpaceItem107.Size = new System.Drawing.Size(409, 41);
+            this.emptySpaceItem107.Size = new System.Drawing.Size(524, 41);
             this.emptySpaceItem107.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem2
@@ -5160,12 +5168,12 @@
             this.layoutControlItem2.AppearanceItemCaptionDisabled.Font = ((System.Drawing.Font)(resources.GetObject("layoutControlItem2.AppearanceItemCaptionDisabled.Font")));
             this.layoutControlItem2.AppearanceItemCaptionDisabled.Options.UseFont = true;
             this.layoutControlItem2.Control = this.txtPartialPayment;
-            this.layoutControlItem2.Location = new System.Drawing.Point(593, 164);
+            this.layoutControlItem2.Location = new System.Drawing.Point(531, 164);
             this.layoutControlItem2.MaxSize = new System.Drawing.Size(0, 41);
             this.layoutControlItem2.MinSize = new System.Drawing.Size(1, 41);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
-            this.layoutControlItem2.Size = new System.Drawing.Size(273, 41);
+            this.layoutControlItem2.Size = new System.Drawing.Size(244, 41);
             this.layoutControlItem2.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             resources.ApplyResources(this.layoutControlItem2, "layoutControlItem2");
             this.layoutControlItem2.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
@@ -5176,9 +5184,9 @@
             // emptySpaceItem108
             // 
             this.emptySpaceItem108.AllowHotTrack = false;
-            this.emptySpaceItem108.Location = new System.Drawing.Point(553, 164);
+            this.emptySpaceItem108.Location = new System.Drawing.Point(495, 164);
             this.emptySpaceItem108.Name = "emptySpaceItem108";
-            this.emptySpaceItem108.Size = new System.Drawing.Size(40, 41);
+            this.emptySpaceItem108.Size = new System.Drawing.Size(36, 41);
             this.emptySpaceItem108.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItemPayType
@@ -5188,12 +5196,12 @@
             this.layoutControlItemPayType.AppearanceItemCaptionDisabled.Font = ((System.Drawing.Font)(resources.GetObject("layoutControlItemPayType.AppearanceItemCaptionDisabled.Font")));
             this.layoutControlItemPayType.AppearanceItemCaptionDisabled.Options.UseFont = true;
             this.layoutControlItemPayType.Control = this.txtPaymentType;
-            this.layoutControlItemPayType.Location = new System.Drawing.Point(351, 205);
+            this.layoutControlItemPayType.Location = new System.Drawing.Point(314, 205);
             this.layoutControlItemPayType.MaxSize = new System.Drawing.Size(0, 41);
             this.layoutControlItemPayType.MinSize = new System.Drawing.Size(1, 41);
             this.layoutControlItemPayType.Name = "layoutControlItemPayType";
             this.layoutControlItemPayType.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
-            this.layoutControlItemPayType.Size = new System.Drawing.Size(112, 49);
+            this.layoutControlItemPayType.Size = new System.Drawing.Size(100, 49);
             this.layoutControlItemPayType.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             resources.ApplyResources(this.layoutControlItemPayType, "layoutControlItemPayType");
             this.layoutControlItemPayType.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
@@ -5204,9 +5212,9 @@
             // emptySpaceItem109
             // 
             this.emptySpaceItem109.AllowHotTrack = false;
-            this.emptySpaceItem109.Location = new System.Drawing.Point(259, 205);
+            this.emptySpaceItem109.Location = new System.Drawing.Point(232, 205);
             this.emptySpaceItem109.Name = "emptySpaceItem109";
-            this.emptySpaceItem109.Size = new System.Drawing.Size(92, 49);
+            this.emptySpaceItem109.Size = new System.Drawing.Size(82, 49);
             this.emptySpaceItem109.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItemPayCode
@@ -5216,12 +5224,12 @@
             this.layoutControlItemPayCode.AppearanceItemCaptionDisabled.Font = ((System.Drawing.Font)(resources.GetObject("layoutControlItemPayCode.AppearanceItemCaptionDisabled.Font")));
             this.layoutControlItemPayCode.AppearanceItemCaptionDisabled.Options.UseFont = true;
             this.layoutControlItemPayCode.Control = this.txtPaymentCode;
-            this.layoutControlItemPayCode.Location = new System.Drawing.Point(463, 205);
+            this.layoutControlItemPayCode.Location = new System.Drawing.Point(414, 205);
             this.layoutControlItemPayCode.MaxSize = new System.Drawing.Size(0, 41);
             this.layoutControlItemPayCode.MinSize = new System.Drawing.Size(1, 41);
             this.layoutControlItemPayCode.Name = "layoutControlItemPayCode";
             this.layoutControlItemPayCode.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
-            this.layoutControlItemPayCode.Size = new System.Drawing.Size(80, 49);
+            this.layoutControlItemPayCode.Size = new System.Drawing.Size(72, 49);
             this.layoutControlItemPayCode.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             resources.ApplyResources(this.layoutControlItemPayCode, "layoutControlItemPayCode");
             this.layoutControlItemPayCode.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
@@ -5236,12 +5244,12 @@
             this.layoutControlItemLateCharge.AppearanceItemCaptionDisabled.Font = ((System.Drawing.Font)(resources.GetObject("layoutControlItemLateCharge.AppearanceItemCaptionDisabled.Font")));
             this.layoutControlItemLateCharge.AppearanceItemCaptionDisabled.Options.UseFont = true;
             this.layoutControlItemLateCharge.Control = this.txtLateCharge;
-            this.layoutControlItemLateCharge.Location = new System.Drawing.Point(624, 205);
+            this.layoutControlItemLateCharge.Location = new System.Drawing.Point(558, 205);
             this.layoutControlItemLateCharge.MaxSize = new System.Drawing.Size(0, 41);
             this.layoutControlItemLateCharge.MinSize = new System.Drawing.Size(1, 41);
             this.layoutControlItemLateCharge.Name = "layoutControlItemLateCharge";
             this.layoutControlItemLateCharge.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
-            this.layoutControlItemLateCharge.Size = new System.Drawing.Size(242, 49);
+            this.layoutControlItemLateCharge.Size = new System.Drawing.Size(217, 49);
             this.layoutControlItemLateCharge.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             resources.ApplyResources(this.layoutControlItemLateCharge, "layoutControlItemLateCharge");
             this.layoutControlItemLateCharge.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
@@ -5252,17 +5260,17 @@
             // emptySpaceItem97
             // 
             this.emptySpaceItem97.AllowHotTrack = false;
-            this.emptySpaceItem97.Location = new System.Drawing.Point(543, 205);
+            this.emptySpaceItem97.Location = new System.Drawing.Point(486, 205);
             this.emptySpaceItem97.Name = "emptySpaceItem97";
-            this.emptySpaceItem97.Size = new System.Drawing.Size(81, 49);
+            this.emptySpaceItem97.Size = new System.Drawing.Size(72, 49);
             this.emptySpaceItem97.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem110
             // 
             this.emptySpaceItem110.AllowHotTrack = false;
-            this.emptySpaceItem110.Location = new System.Drawing.Point(1149, 205);
+            this.emptySpaceItem110.Location = new System.Drawing.Point(1028, 205);
             this.emptySpaceItem110.Name = "emptySpaceItem110";
-            this.emptySpaceItem110.Size = new System.Drawing.Size(382, 49);
+            this.emptySpaceItem110.Size = new System.Drawing.Size(503, 49);
             this.emptySpaceItem110.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItemLateChargeBalance
@@ -5272,12 +5280,12 @@
             this.layoutControlItemLateChargeBalance.AppearanceItemCaptionDisabled.Font = ((System.Drawing.Font)(resources.GetObject("layoutControlItemLateChargeBalance.AppearanceItemCaptionDisabled.Font")));
             this.layoutControlItemLateChargeBalance.AppearanceItemCaptionDisabled.Options.UseFont = true;
             this.layoutControlItemLateChargeBalance.Control = this.txtLateChargeBal;
-            this.layoutControlItemLateChargeBalance.Location = new System.Drawing.Point(914, 205);
+            this.layoutControlItemLateChargeBalance.Location = new System.Drawing.Point(818, 205);
             this.layoutControlItemLateChargeBalance.MaxSize = new System.Drawing.Size(0, 49);
             this.layoutControlItemLateChargeBalance.MinSize = new System.Drawing.Size(1, 49);
             this.layoutControlItemLateChargeBalance.Name = "layoutControlItemLateChargeBalance";
             this.layoutControlItemLateChargeBalance.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
-            this.layoutControlItemLateChargeBalance.Size = new System.Drawing.Size(235, 49);
+            this.layoutControlItemLateChargeBalance.Size = new System.Drawing.Size(210, 49);
             this.layoutControlItemLateChargeBalance.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             resources.ApplyResources(this.layoutControlItemLateChargeBalance, "layoutControlItemLateChargeBalance");
             this.layoutControlItemLateChargeBalance.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
@@ -5288,9 +5296,9 @@
             // emptySpaceItem111
             // 
             this.emptySpaceItem111.AllowHotTrack = false;
-            this.emptySpaceItem111.Location = new System.Drawing.Point(866, 205);
+            this.emptySpaceItem111.Location = new System.Drawing.Point(775, 205);
             this.emptySpaceItem111.Name = "emptySpaceItem111";
-            this.emptySpaceItem111.Size = new System.Drawing.Size(48, 49);
+            this.emptySpaceItem111.Size = new System.Drawing.Size(43, 49);
             this.emptySpaceItem111.TextSize = new System.Drawing.Size(0, 0);
             // 
             // xtraTabPageVehicle
@@ -5575,6 +5583,45 @@
             resources.ApplyResources(this.textBox14, "textBox14");
             this.textBox14.Name = "textBox14";
             this.textBox14.ReadOnly = true;
+            // 
+            // splitterItem1
+            // 
+            this.splitterItem1.AllowHotTrack = true;
+            this.splitterItem1.Location = new System.Drawing.Point(0, 254);
+            this.splitterItem1.Name = "splitterItem1";
+            this.splitterItem1.Size = new System.Drawing.Size(1531, 411);
+            // 
+            // emptySpaceItem95
+            // 
+            this.emptySpaceItem95.AllowHotTrack = false;
+            this.emptySpaceItem95.Location = new System.Drawing.Point(0, 279);
+            this.emptySpaceItem95.Name = "emptySpaceItem95";
+            this.emptySpaceItem95.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 2, 2, 2);
+            this.emptySpaceItem95.Size = new System.Drawing.Size(1531, 386);
+            this.emptySpaceItem95.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
+            this.emptySpaceItem95.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // simpleSeparator1
+            // 
+            this.simpleSeparator1.AllowHotTrack = false;
+            this.simpleSeparator1.Location = new System.Drawing.Point(0, 254);
+            this.simpleSeparator1.Name = "simpleSeparator1";
+            this.simpleSeparator1.Size = new System.Drawing.Size(1531, 1);
+            // 
+            // txtLastPaymentMade
+            // 
+            this.txtLastPaymentMade.AllowDrop = true;
+            this.txtLastPaymentMade.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_LAST_PAYMENT_MADE", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "C2"));
+            resources.ApplyResources(this.txtLastPaymentMade, "txtLastPaymentMade");
+            this.txtLastPaymentMade.Name = "txtLastPaymentMade";
+            // 
+            // layoutControlItem3
+            // 
+            this.layoutControlItem3.Control = this.txtLastPaymentMade;
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 255);
+            this.layoutControlItem3.Name = "layoutControlItem3";
+            this.layoutControlItem3.Size = new System.Drawing.Size(1531, 24);
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(134, 20);
             // 
             // frmNewCustMaintResp
             // 
@@ -5878,7 +5925,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemCash)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem93)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem94)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem95)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem96)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem98)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemFirstNameTab2)).EndInit();
@@ -5924,6 +5970,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItemActStat)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemPurchaseOrder)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitterItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem95)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.simpleSeparator1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -6294,7 +6344,6 @@
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem91;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem93;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem94;
-        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem95;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem96;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem98;
         private System.Windows.Forms.TextBox textBox16;
@@ -6350,6 +6399,11 @@
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem97;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem110;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem111;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem95;
+        private DevExpress.XtraLayout.SplitterItem splitterItem1;
+        private DevExpress.XtraLayout.SimpleSeparator simpleSeparator1;
+        private System.Windows.Forms.TextBox txtLastPaymentMade;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
     }
 }
 

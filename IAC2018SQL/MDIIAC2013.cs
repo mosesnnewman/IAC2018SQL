@@ -337,7 +337,7 @@ namespace IAC2021SQL
 
         private void paymentsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CreateFormInstance("formOpenPayment", false);
+            CreateFormInstance("XtraFormOpenPayments", false);
         }
 
         private void amortizartionScheduleToolStripMenuItem_Click(object sender, EventArgs e)

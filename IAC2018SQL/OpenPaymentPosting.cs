@@ -1059,13 +1059,11 @@ namespace IAC2021SQL
         void ISFBuckets(Int32 OPNPAYPos, Int32 OPNCUSTPos, ref IACDataSet OPNCUSTDataSet)
         {
             IACDataSetTableAdapters.OPNHCUSTTableAdapter OPNHCUSTTableAdapter = new IACDataSetTableAdapters.OPNHCUSTTableAdapter();
-            if (OPNCUSTDataSet.OPNPAY.Rows[OPNPAYPos].Field<Nullable<DateTime>>("PAYMENT_ISF_DATE") == null)
-                return;
-            OPNHCUSTTableAdapter.ClearBeforeFill = false;
-            OPNHCUSTTableAdapter.FillByCustPayDatePayment(OPNCUSTDataSet.OPNHCUST, OPNCUSTDataSet.OPNPAY.Rows[OPNPAYPos].Field<String>("PAYMENT_CUSTOMER"), OPNCUSTDataSet.OPNPAY.Rows[OPNPAYPos].Field<DateTime>("PAYMENT_ISF_DATE"));
+            /*OPNHCUSTTableAdapter.ClearBeforeFill = false;
+            OPNHCUSTTableAdapter.FillByCustPayDatePayment(OPNCUSTDataSet.OPNHCUST, OPNCUSTDataSet.OPNPAY.Rows[OPNPAYPos].Field<String>("PAYMENT_CUSTOMER"), OPNCUSTDataSet.OPNPAY.Rows[OPNPAYPos].Field<DateTime?>("PAYMENT_ISF_DATE"));
             OPNHCUSTTableAdapter.ClearBeforeFill = true;
             if (OPNCUSTDataSet.OPNHCUST.Rows.Count == 0)
-                return;
+                return;*/
             testISFBucket(OPNCUSTPos, OPNPAYPos, ref OPNCUSTDataSet);
         }
 

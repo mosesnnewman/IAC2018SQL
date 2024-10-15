@@ -1737,7 +1737,7 @@
   <data name="imageCollectionTabs.ImageStream" type="DevExpress.Utils.ImageCollectionStreamer, DevExpress.Utils.v24.1" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFpEZXZFeHByZXNzLlV0aWxzLnYyNC4xLCBWZXJzaW9uPTI0LjEu
-        NS4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI4OGQxNzU0ZDcwMGU0OWEMAwAAAFFT
+        Ni4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI4OGQxNzU0ZDcwMGU0OWEMAwAAAFFT
         eXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRv
         a2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAAChEZXZFeHByZXNzLlV0aWxzLkltYWdlQ29sbGVjdGlvblN0
         cmVhbWVyAgAAAAlJbWFnZVNpemUERGF0YQQHE1N5c3RlbS5EcmF3aW5nLlNpemUDAAAAAgIAAAAF/P//
@@ -4368,11 +4368,38 @@
   <data name="xtraTabPageCustInfo2.Appearance.PageClient.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
+  <data name="txtLastPaymentMade.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="txtLastPaymentMade.Location" type="System.Drawing.Point, System.Drawing">
+    <value>150, 267</value>
+  </data>
+  <data name="txtLastPaymentMade.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1389, 20</value>
+  </data>
+  <data name="txtLastPaymentMade.TabIndex" type="System.Int32, mscorlib">
+    <value>204</value>
+  </data>
+  <data name="txtLastPaymentMade.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="&gt;&gt;txtLastPaymentMade.Name" xml:space="preserve">
+    <value>txtLastPaymentMade</value>
+  </data>
+  <data name="&gt;&gt;txtLastPaymentMade.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtLastPaymentMade.Parent" xml:space="preserve">
+    <value>layoutControl1</value>
+  </data>
+  <data name="&gt;&gt;txtLastPaymentMade.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="txtLateChargeBal.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 12pt</value>
   </data>
   <data name="txtLateChargeBal.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1034, 217</value>
+    <value>938, 217</value>
   </data>
   <data name="txtLateChargeBal.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>117, 29</value>
@@ -4399,13 +4426,13 @@
     <value>layoutControl1</value>
   </data>
   <data name="&gt;&gt;txtLateChargeBal.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="txtLateCharge.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="txtLateCharge.Location" type="System.Drawing.Point, System.Drawing">
-    <value>757, 217</value>
+    <value>691, 217</value>
   </data>
   <data name="txtLateCharge.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>117, 29</value>
@@ -4432,13 +4459,13 @@
     <value>layoutControl1</value>
   </data>
   <data name="&gt;&gt;txtLateCharge.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="txtPaymentCode.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="txtPaymentCode.Location" type="System.Drawing.Point, System.Drawing">
-    <value>479, 217</value>
+    <value>430, 217</value>
   </data>
   <data name="txtPaymentCode.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>25, 29</value>
@@ -4465,13 +4492,13 @@
     <value>layoutControl1</value>
   </data>
   <data name="&gt;&gt;txtPaymentCode.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="txtPaymentType.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="txtPaymentType.Location" type="System.Drawing.Point, System.Drawing">
-    <value>445, 217</value>
+    <value>408, 217</value>
   </data>
   <data name="txtPaymentType.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>25, 29</value>
@@ -4498,7 +4525,7 @@
     <value>layoutControl1</value>
   </data>
   <data name="&gt;&gt;txtPaymentType.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="txtPartialPayment.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -4507,7 +4534,7 @@
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="txtPartialPayment.Location" type="System.Drawing.Point, System.Drawing">
-    <value>757, 176</value>
+    <value>695, 176</value>
   </data>
   <data name="txtPartialPayment.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>117, 29</value>
@@ -4534,13 +4561,13 @@
     <value>layoutControl1</value>
   </data>
   <data name="&gt;&gt;txtPartialPayment.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="nullableDateTimePickerFundingDate.EditValue" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
   </data>
   <data name="nullableDateTimePickerFundingDate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>445, 176</value>
+    <value>413, 176</value>
   </data>
   <data name="nullableDateTimePickerFundingDate.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>117, 29</value>
@@ -4573,10 +4600,10 @@
     <value>layoutControl1</value>
   </data>
   <data name="&gt;&gt;nullableDateTimePickerFundingDate.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="checkEditCollectionAgent.Location" type="System.Drawing.Point, System.Drawing">
-    <value>590, 135</value>
+    <value>529, 135</value>
   </data>
   <data name="checkEditCollectionAgent.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>0, 29</value>
@@ -4597,7 +4624,7 @@
     <value>Far</value>
   </data>
   <data name="checkEditCollectionAgent.Size" type="System.Drawing.Size, System.Drawing">
-    <value>186, 29</value>
+    <value>175, 29</value>
   </data>
   <data name="checkEditCollectionAgent.TabIndex" type="System.Int32, mscorlib">
     <value>126</value>
@@ -4612,13 +4639,13 @@
     <value>layoutControl1</value>
   </data>
   <data name="&gt;&gt;checkEditCollectionAgent.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="txtNoOfPaymentsMade.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 12pt</value>
   </data>
   <data name="txtNoOfPaymentsMade.Location" type="System.Drawing.Point, System.Drawing">
-    <value>559, 135</value>
+    <value>522, 135</value>
   </data>
   <data name="txtNoOfPaymentsMade.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>0, 29</value>
@@ -4627,7 +4654,7 @@
     <value>0, 29</value>
   </data>
   <data name="txtNoOfPaymentsMade.Size" type="System.Drawing.Size, System.Drawing">
-    <value>27, 29</value>
+    <value>3, 29</value>
   </data>
   <data name="txtNoOfPaymentsMade.TabIndex" type="System.Int32, mscorlib">
     <value>125</value>
@@ -4645,13 +4672,13 @@
     <value>layoutControl1</value>
   </data>
   <data name="&gt;&gt;txtNoOfPaymentsMade.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="txtAPR.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="txtAPR.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1034, 94</value>
+    <value>935, 94</value>
   </data>
   <data name="txtAPR.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>73, 29</value>
@@ -4681,13 +4708,13 @@
     <value>layoutControl1</value>
   </data>
   <data name="&gt;&gt;txtAPR.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>13</value>
   </data>
   <data name="txtLoanInterest.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="txtLoanInterest.Location" type="System.Drawing.Point, System.Drawing">
-    <value>756, 94</value>
+    <value>700, 94</value>
   </data>
   <data name="txtLoanInterest.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>117, 29</value>
@@ -4714,13 +4741,13 @@
     <value>layoutControl1</value>
   </data>
   <data name="&gt;&gt;txtLoanInterest.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>14</value>
   </data>
   <data name="txtLoan.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="txtLoan.Location" type="System.Drawing.Point, System.Drawing">
-    <value>445, 94</value>
+    <value>405, 94</value>
   </data>
   <data name="txtLoan.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>117, 29</value>
@@ -4747,13 +4774,13 @@
     <value>layoutControl1</value>
   </data>
   <data name="&gt;&gt;txtLoan.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>15</value>
   </data>
   <data name="checkBoxSimple.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="checkBoxSimple.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1035, 53</value>
+    <value>934, 53</value>
   </data>
   <data name="checkBoxSimple.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>0, 29</value>
@@ -4765,7 +4792,7 @@
     <value>US Rule</value>
   </data>
   <data name="checkBoxSimple.Size" type="System.Drawing.Size, System.Drawing">
-    <value>95, 29</value>
+    <value>87, 29</value>
   </data>
   <data name="checkBoxSimple.TabIndex" type="System.Int32, mscorlib">
     <value>121</value>
@@ -4780,13 +4807,13 @@
     <value>layoutControl1</value>
   </data>
   <data name="&gt;&gt;checkBoxSimple.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>16</value>
   </data>
   <data name="checkBoxOverrideLateCharge.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="checkBoxOverrideLateCharge.Location" type="System.Drawing.Point, System.Drawing">
-    <value>839, 53</value>
+    <value>752, 53</value>
   </data>
   <data name="checkBoxOverrideLateCharge.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>0, 29</value>
@@ -4798,7 +4825,7 @@
     <value>Override Late Charge</value>
   </data>
   <data name="checkBoxOverrideLateCharge.Size" type="System.Drawing.Size, System.Drawing">
-    <value>192, 29</value>
+    <value>178, 29</value>
   </data>
   <data name="checkBoxOverrideLateCharge.TabIndex" type="System.Int32, mscorlib">
     <value>120</value>
@@ -4813,10 +4840,10 @@
     <value>layoutControl1</value>
   </data>
   <data name="&gt;&gt;checkBoxOverrideLateCharge.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>17</value>
   </data>
   <data name="checkEditOverideInterest.Location" type="System.Drawing.Point, System.Drawing">
-    <value>590, 53</value>
+    <value>529, 53</value>
   </data>
   <data name="checkEditOverideInterest.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>0, 29</value>
@@ -4834,7 +4861,7 @@
     <value>Far</value>
   </data>
   <data name="checkEditOverideInterest.Size" type="System.Drawing.Size, System.Drawing">
-    <value>186, 29</value>
+    <value>166, 29</value>
   </data>
   <data name="checkEditOverideInterest.TabIndex" type="System.Int32, mscorlib">
     <value>103</value>
@@ -4849,13 +4876,13 @@
     <value>layoutControl1</value>
   </data>
   <data name="&gt;&gt;checkEditOverideInterest.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>18</value>
   </data>
   <data name="txtTerm.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="txtTerm.Location" type="System.Drawing.Point, System.Drawing">
-    <value>560, 53</value>
+    <value>507, 53</value>
   </data>
   <data name="txtTerm.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>0, 29</value>
@@ -4864,7 +4891,7 @@
     <value>0, 29</value>
   </data>
   <data name="txtTerm.Size" type="System.Drawing.Size, System.Drawing">
-    <value>26, 29</value>
+    <value>18, 29</value>
   </data>
   <data name="txtTerm.TabIndex" type="System.Int32, mscorlib">
     <value>102</value>
@@ -4882,10 +4909,10 @@
     <value>layoutControl1</value>
   </data>
   <data name="&gt;&gt;txtTerm.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>19</value>
   </data>
   <data name="comboBoxDayDue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>446, 53</value>
+    <value>409, 53</value>
   </data>
   <data name="comboBoxDayDue.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>0, 29</value>
@@ -4915,7 +4942,7 @@
     <value>30</value>
   </data>
   <data name="comboBoxDayDue.Size" type="System.Drawing.Size, System.Drawing">
-    <value>45, 29</value>
+    <value>31, 29</value>
   </data>
   <data name="comboBoxDayDue.TabIndex" type="System.Int32, mscorlib">
     <value>101</value>
@@ -4930,7 +4957,7 @@
     <value>layoutControl1</value>
   </data>
   <data name="&gt;&gt;comboBoxDayDue.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>20</value>
   </data>
   <data name="textBox18.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -4939,7 +4966,7 @@
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="textBox18.Location" type="System.Drawing.Point, System.Drawing">
-    <value>806, 12</value>
+    <value>722, 12</value>
   </data>
   <data name="textBox18.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>41, 0</value>
@@ -4948,7 +4975,7 @@
     <value>3</value>
   </data>
   <data name="textBox18.Size" type="System.Drawing.Size, System.Drawing">
-    <value>41, 29</value>
+    <value>38, 29</value>
   </data>
   <data name="textBox18.TabIndex" type="System.Int32, mscorlib">
     <value>100</value>
@@ -4963,7 +4990,7 @@
     <value>layoutControl1</value>
   </data>
   <data name="&gt;&gt;textBox18.ZOrder" xml:space="preserve">
-    <value>20</value>
+    <value>21</value>
   </data>
   <data name="textBox15.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -4972,13 +4999,13 @@
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="textBox15.Location" type="System.Drawing.Point, System.Drawing">
-    <value>588, 12</value>
+    <value>527, 12</value>
   </data>
   <data name="textBox15.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>0, 29</value>
   </data>
   <data name="textBox15.Size" type="System.Drawing.Size, System.Drawing">
-    <value>212, 29</value>
+    <value>189, 29</value>
   </data>
   <data name="textBox15.TabIndex" type="System.Int32, mscorlib">
     <value>99</value>
@@ -4993,7 +5020,7 @@
     <value>layoutControl1</value>
   </data>
   <data name="&gt;&gt;textBox15.ZOrder" xml:space="preserve">
-    <value>21</value>
+    <value>22</value>
   </data>
   <data name="textBox16.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -5002,13 +5029,13 @@
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="textBox16.Location" type="System.Drawing.Point, System.Drawing">
-    <value>446, 12</value>
+    <value>405, 12</value>
   </data>
   <data name="textBox16.MinimumSize" type="System.Drawing.Size, System.Drawing">
     <value>0, 29</value>
   </data>
   <data name="textBox16.Size" type="System.Drawing.Size, System.Drawing">
-    <value>136, 29</value>
+    <value>116, 29</value>
   </data>
   <data name="textBox16.TabIndex" type="System.Int32, mscorlib">
     <value>98</value>
@@ -5023,7 +5050,7 @@
     <value>layoutControl1</value>
   </data>
   <data name="&gt;&gt;textBox16.ZOrder" xml:space="preserve">
-    <value>22</value>
+    <value>23</value>
   </data>
   <data name="DateTimePickerContractDate.EditValue" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
@@ -5044,7 +5071,7 @@
     <value>Combo</value>
   </data>
   <data name="DateTimePickerContractDate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>117, 29</value>
+    <value>90, 29</value>
   </data>
   <data name="DateTimePickerContractDate.TabIndex" type="System.Int32, mscorlib">
     <value>94</value>
@@ -5059,7 +5086,7 @@
     <value>layoutControl1</value>
   </data>
   <data name="&gt;&gt;DateTimePickerContractDate.ZOrder" xml:space="preserve">
-    <value>23</value>
+    <value>24</value>
   </data>
   <data name="txtFirstPayDate.EditValue" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
@@ -5101,13 +5128,13 @@
     <value>layoutControl1</value>
   </data>
   <data name="&gt;&gt;txtFirstPayDate.ZOrder" xml:space="preserve">
-    <value>24</value>
+    <value>25</value>
   </data>
   <data name="txtPaymentDate.EditValue" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
   </data>
   <data name="txtPaymentDate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>151, 217</value>
+    <value>145, 217</value>
   </data>
   <data name="txtPaymentDate.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>117, 29</value>
@@ -5140,13 +5167,13 @@
     <value>layoutControl1</value>
   </data>
   <data name="&gt;&gt;txtPaymentDate.ZOrder" xml:space="preserve">
-    <value>25</value>
+    <value>26</value>
   </data>
   <data name="txtCASH.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="txtCASH.Location" type="System.Drawing.Point, System.Drawing">
-    <value>151, 135</value>
+    <value>142, 135</value>
   </data>
   <data name="txtCASH.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>117, 29</value>
@@ -5173,13 +5200,13 @@
     <value>layoutControl1</value>
   </data>
   <data name="&gt;&gt;txtCASH.ZOrder" xml:space="preserve">
-    <value>26</value>
+    <value>27</value>
   </data>
   <data name="txtRegularPay.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="txtRegularPay.Location" type="System.Drawing.Point, System.Drawing">
-    <value>151, 94</value>
+    <value>145, 94</value>
   </data>
   <data name="txtRegularPay.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>117, 29</value>
@@ -5206,7 +5233,7 @@
     <value>layoutControl1</value>
   </data>
   <data name="&gt;&gt;txtRegularPay.ZOrder" xml:space="preserve">
-    <value>27</value>
+    <value>28</value>
   </data>
   <data name="textBox1.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -5215,13 +5242,13 @@
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="textBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>151, 12</value>
+    <value>149, 12</value>
   </data>
   <data name="textBox1.MaxLength" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
   <data name="textBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>62, 29</value>
+    <value>42, 29</value>
   </data>
   <data name="textBox1.TabIndex" type="System.Int32, mscorlib">
     <value>92</value>
@@ -5239,7 +5266,7 @@
     <value>layoutControl1</value>
   </data>
   <data name="&gt;&gt;textBox1.ZOrder" xml:space="preserve">
-    <value>28</value>
+    <value>29</value>
   </data>
   <data name="layoutControl1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 2</value>
@@ -5836,7 +5863,7 @@
   </data>
   <data name="toolStripButtonSave.ImageOptions.SvgImage" type="DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v24.1" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAFlEZXZFeHByZXNzLkRhdGEudjI0LjEsIFZlcnNpb249MjQuMS41
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFlEZXZFeHByZXNzLkRhdGEudjI0LjEsIFZlcnNpb249MjQuMS42
         LjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjg4ZDE3NTRkNzAwZTQ5YQUBAAAAHURl
         dkV4cHJlc3MuVXRpbHMuU3ZnLlN2Z0ltYWdlAQAAAAREYXRhBwICAAAACQMAAAAPAwAAAMICAAAC77u/
         PD94bWwgdmVyc2lvbj0nMS4wJyBlbmNvZGluZz0nVVRGLTgnPz4NCjxzdmcgeD0iMHB4IiB5PSIwcHgi
@@ -8133,12 +8160,6 @@
   <data name="&gt;&gt;emptySpaceItem94.Type" xml:space="preserve">
     <value>DevExpress.XtraLayout.EmptySpaceItem, DevExpress.XtraLayout.v24.1, Version=24.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
-  <data name="&gt;&gt;emptySpaceItem95.Name" xml:space="preserve">
-    <value>emptySpaceItem95</value>
-  </data>
-  <data name="&gt;&gt;emptySpaceItem95.Type" xml:space="preserve">
-    <value>DevExpress.XtraLayout.EmptySpaceItem, DevExpress.XtraLayout.v24.1, Version=24.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
   <data name="&gt;&gt;emptySpaceItem96.Name" xml:space="preserve">
     <value>emptySpaceItem96</value>
   </data>
@@ -8479,6 +8500,30 @@
     <value>layoutControlItemPurchaseOrder</value>
   </data>
   <data name="&gt;&gt;layoutControlItemPurchaseOrder.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.1, Version=24.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;splitterItem1.Name" xml:space="preserve">
+    <value>splitterItem1</value>
+  </data>
+  <data name="&gt;&gt;splitterItem1.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.SplitterItem, DevExpress.XtraLayout.v24.1, Version=24.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;emptySpaceItem95.Name" xml:space="preserve">
+    <value>emptySpaceItem95</value>
+  </data>
+  <data name="&gt;&gt;emptySpaceItem95.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.EmptySpaceItem, DevExpress.XtraLayout.v24.1, Version=24.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;simpleSeparator1.Name" xml:space="preserve">
+    <value>simpleSeparator1</value>
+  </data>
+  <data name="&gt;&gt;simpleSeparator1.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.SimpleSeparator, DevExpress.XtraLayout.v24.1, Version=24.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItem3.Name" xml:space="preserve">
+    <value>layoutControlItem3</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItem3.Type" xml:space="preserve">
     <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.1, Version=24.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
