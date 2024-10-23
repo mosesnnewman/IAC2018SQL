@@ -109,6 +109,9 @@ namespace IAC2021SQL
             cTB.Size = this.cUSTHISTDataGridView.GetCellDisplayRectangle(4, row2.Index, true).Size;*/
             this.cUSTOMER_DEALERcomboBox.EditValueChanged += new System.EventHandler(this.cUSTOMER_DEALERcomboBox_EditValueChanged);
             warrantyCompanyTableAdapter.FillByAll(iACDataSet.WarrantyCompany);
+            // Moses Newman 10/16/2024 Add DueDays Table
+            DueDaysTableAdapter.FillByAll(paymentDataSet.DueDays);
+            
         }
 
         private void StartupConfiguration()
@@ -3170,7 +3173,7 @@ namespace IAC2021SQL
                     txtRegularPay.SelectAll();
                     return;
                 }
-                if (comboBoxDayDue.SelectedIndex < 0 && comboBoxDayDue.Text.Length == 0)
+                if (comboBoxDayDue.ItemIndex < 0 && comboBoxDayDue.Text.Length == 0)
                 {
                     xtraTabControlCustomerMaint.SelectedTabPageIndex = 1;
                     GeneralValidationError(@"*** You must enter the customer's DAY DUE ***", comboBoxDayDue);
@@ -4425,18 +4428,10 @@ namespace IAC2021SQL
             TVAmortTableAdapter = null;
         }
 
-        private void comboBoxDayDue_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (comboBoxDayDue.SelectedIndex >= 0)
-            {
-                errorProviderCustomerForm.Clear();
-                Reamortize(); // Moses Newman 01/29/2019 call new Reamortize instead of regular payment valid call!
-            }
-        }
-
         private void comboBoxDayDue_Validated(object sender, EventArgs e)
         {
-            if (comboBoxDayDue.Text.TrimStart().TrimEnd() == "5" && comboBoxDayDue.Text == "10" && comboBoxDayDue.Text == "15" && comboBoxDayDue.Text == "20" && comboBoxDayDue.Text == "25" && comboBoxDayDue.Text == "30")
+            // Moses Newman 10/16/2024 Changed AND (&&) to OR (||).
+            if (comboBoxDayDue.Text.TrimStart().TrimEnd() == "5" || comboBoxDayDue.Text == "10" || comboBoxDayDue.Text == "15" || comboBoxDayDue.Text == "20" || comboBoxDayDue.Text == "25" || comboBoxDayDue.Text == "30")
             {
                 errorProviderCustomerForm.Clear();
                 Reamortize();
@@ -5814,6 +5809,21 @@ namespace IAC2021SQL
         private void textBoxRepairFee5_EditValueChanged(object sender, EventArgs e)
         {
             ValueChanged(ref gnRepairFee5, sender, e);
+        }
+
+        // Moses Newman 10/16/2024
+        private void comboBoxDayDue_EditValueChanged(object sender, EventArgs e)
+        {
+            LookUpEdit ledit = (LookUpEdit)sender;                                      
+            if (String.IsNullOrEmpty(ledit.EditValue.ToString()))
+                return;
+            if(lbEdit)
+            {
+                invoicesTableAdapter.UpdateDueDate(Convert.ToInt32(cUSTOMER_NOTextBox.EditValue), (Int32)ledit.EditValue);
+                toolStripButtonSave.Enabled = true;
+                //errorProviderCustomerForm.Clear();
+                //Reamortize(); // Moses Newman 01/29/2019 call new Reamortize instead of regular payment valid call!
+            }
         }
 
         private void cUSTOMER_NOTextBox_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)

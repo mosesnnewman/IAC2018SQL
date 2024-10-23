@@ -243,7 +243,7 @@
             this.Picture1.Font = new DevExpress.Drawing.DXFont("Times New Roman", 9.75F);
             this.Picture1.ForeColor = System.Drawing.Color.Black;
             this.Picture1.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource("img", resources.GetString("Picture1.ImageSource"));
-            this.Picture1.LocationFloat = new DevExpress.Utils.PointFloat(817.6111F, 0F);
+            this.Picture1.LocationFloat = new DevExpress.Utils.PointFloat(809.6111F, 0F);
             this.Picture1.Name = "Picture1";
             this.Picture1.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.Picture1.SizeF = new System.Drawing.SizeF(246.3889F, 95F);
@@ -371,7 +371,8 @@
             this.Title.LocationFloat = new DevExpress.Utils.PointFloat(0F, 115.3333F);
             this.Title.Name = "Title";
             this.Title.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.Title.SizeF = new System.Drawing.SizeF(1068F, 25F);
+            this.Title.SizeF = new System.Drawing.SizeF(1056F, 25.00001F);
+            this.Title.StylePriority.UseTextAlignment = false;
             this.Title.Text = "Subtotals by Payment Type and Code";
             this.Title.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
             // 
@@ -545,8 +546,9 @@
             this.DataDate1.Name = "DataDate1";
             this.DataDate1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.DataDate1.PageInfo = DevExpress.XtraPrinting.PageInfo.DateTime;
-            this.DataDate1.SizeF = new System.Drawing.SizeF(68.75F, 18.33333F);
+            this.DataDate1.SizeF = new System.Drawing.SizeF(80.20834F, 18.33333F);
             this.DataDate1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            this.DataDate1.TextFormatString = "{0:MM/dd/yyyy}";
             // 
             // DataTime1
             // 
@@ -640,12 +642,12 @@
             // 
             // topMarginBand1
             // 
-            this.topMarginBand1.HeightF = 16F;
+            this.topMarginBand1.HeightF = 22F;
             this.topMarginBand1.Name = "topMarginBand1";
             // 
             // bottomMarginBand1
             // 
-            this.bottomMarginBand1.HeightF = 16F;
+            this.bottomMarginBand1.HeightF = 22F;
             this.bottomMarginBand1.Name = "bottomMarginBand1";
             // 
             // gsUserID
@@ -678,14 +680,14 @@
             this.DataMember = "PaymentTypeCodeSummarySelect";
             this.DataSource = this.sqlDataSource1;
             this.Landscape = true;
-            this.Margins = new DevExpress.Drawing.DXMargins(16F, 16F, 16F, 16F);
+            this.Margins = new DevExpress.Drawing.DXMargins(22F, 22F, 22F, 22F);
             this.PageHeight = 850;
             this.PageWidth = 1100;
             this.Parameters.AddRange(new DevExpress.XtraReports.Parameters.Parameter[] {
             this.gsUserID,
             this.gsUserName,
             this.gsFormTitle});
-            this.Version = "23.1";
+            this.Version = "24.1";
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
         }

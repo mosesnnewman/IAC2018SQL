@@ -453,7 +453,8 @@
             this.txtFirstPayDate = new DevExpress.XtraEditors.DateEdit();
             this.txtPaymentDate = new DevExpress.XtraEditors.DateEdit();
             this.textBox18 = new System.Windows.Forms.TextBox();
-            this.comboBoxDayDue = new System.Windows.Forms.ComboBox();
+            this.comboBoxDayDue = new DevExpress.XtraEditors.LookUpEdit();
+            this.DueDaysBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.txtAPR = new System.Windows.Forms.TextBox();
             this.txtLateChargeBal = new System.Windows.Forms.TextBox();
             this.txtPartialPayment = new System.Windows.Forms.TextBox();
@@ -926,6 +927,7 @@
             this.warrantyCompanyTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.WarrantyCompanyTableAdapter();
             this.layoutConverter1 = new DevExpress.XtraLayout.Converter.LayoutConverter(this.components);
             this.invoicesTableAdapter = new IAC2021SQL.PaymentDataSetTableAdapters.InvoicesTableAdapter();
+            this.DueDaysTableAdapter = new IAC2021SQL.PaymentDataSetTableAdapters.DueDaysTableAdapter();
             label45 = new System.Windows.Forms.Label();
             label48 = new System.Windows.Forms.Label();
             labelAuthNo = new System.Windows.Forms.Label();
@@ -1236,6 +1238,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtFirstPayDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPaymentDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPaymentDate.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxDayDue.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DueDaysBindingSource)).BeginInit();
             this.xtraTabPageVehicle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupBox15)).BeginInit();
             this.groupBox15.SuspendLayout();
@@ -4626,21 +4630,38 @@
             // comboBoxDayDue
             // 
             this.comboBoxDayDue.AllowDrop = true;
-            this.comboBoxDayDue.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_DAY_DUE", true));
+            this.comboBoxDayDue.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_DAY_DUE", true));
+            this.comboBoxDayDue.EnterMoveNextControl = true;
             resources.ApplyResources(this.comboBoxDayDue, "comboBoxDayDue");
-            this.comboBoxDayDue.FormattingEnabled = true;
-            this.comboBoxDayDue.Items.AddRange(new object[] {
-            resources.GetString("comboBoxDayDue.Items"),
-            resources.GetString("comboBoxDayDue.Items1"),
-            resources.GetString("comboBoxDayDue.Items2"),
-            resources.GetString("comboBoxDayDue.Items3"),
-            resources.GetString("comboBoxDayDue.Items4"),
-            resources.GetString("comboBoxDayDue.Items5")});
             this.comboBoxDayDue.Name = "comboBoxDayDue";
-            this.comboBoxDayDue.SelectedIndexChanged += new System.EventHandler(this.comboBoxDayDue_SelectedIndexChanged);
-            this.comboBoxDayDue.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.General_KeyPress);
-            this.comboBoxDayDue.Validating += new System.ComponentModel.CancelEventHandler(this.comboBoxDayDue_Validating);
-            this.comboBoxDayDue.Validated += new System.EventHandler(this.comboBoxDayDue_Validated);
+            this.comboBoxDayDue.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("comboBoxDayDue.Properties.Appearance.Font")));
+            this.comboBoxDayDue.Properties.Appearance.Options.UseFont = true;
+            this.comboBoxDayDue.Properties.AppearanceDisabled.Font = ((System.Drawing.Font)(resources.GetObject("comboBoxDayDue.Properties.AppearanceDisabled.Font")));
+            this.comboBoxDayDue.Properties.AppearanceDisabled.Options.UseFont = true;
+            this.comboBoxDayDue.Properties.AppearanceDropDown.Font = ((System.Drawing.Font)(resources.GetObject("comboBoxDayDue.Properties.AppearanceDropDown.Font")));
+            this.comboBoxDayDue.Properties.AppearanceDropDown.Options.UseFont = true;
+            this.comboBoxDayDue.Properties.AppearanceDropDownHeader.Font = ((System.Drawing.Font)(resources.GetObject("comboBoxDayDue.Properties.AppearanceDropDownHeader.Font")));
+            this.comboBoxDayDue.Properties.AppearanceDropDownHeader.Options.UseFont = true;
+            this.comboBoxDayDue.Properties.AppearanceFocused.Font = ((System.Drawing.Font)(resources.GetObject("comboBoxDayDue.Properties.AppearanceFocused.Font")));
+            this.comboBoxDayDue.Properties.AppearanceFocused.Options.UseFont = true;
+            this.comboBoxDayDue.Properties.AppearanceReadOnly.Font = ((System.Drawing.Font)(resources.GetObject("comboBoxDayDue.Properties.AppearanceReadOnly.Font")));
+            this.comboBoxDayDue.Properties.AppearanceReadOnly.Options.UseFont = true;
+            this.comboBoxDayDue.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
+            this.comboBoxDayDue.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("comboBoxDayDue.Properties.Buttons"))))});
+            this.comboBoxDayDue.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo(resources.GetString("comboBoxDayDue.Properties.Columns"), resources.GetString("comboBoxDayDue.Properties.Columns1"), ((int)(resources.GetObject("comboBoxDayDue.Properties.Columns2"))), ((DevExpress.Utils.FormatType)(resources.GetObject("comboBoxDayDue.Properties.Columns3"))), resources.GetString("comboBoxDayDue.Properties.Columns4"), ((bool)(resources.GetObject("comboBoxDayDue.Properties.Columns5"))), ((DevExpress.Utils.HorzAlignment)(resources.GetObject("comboBoxDayDue.Properties.Columns6"))), ((DevExpress.Data.ColumnSortOrder)(resources.GetObject("comboBoxDayDue.Properties.Columns7"))), ((DevExpress.Utils.DefaultBoolean)(resources.GetObject("comboBoxDayDue.Properties.Columns8"))))});
+            this.comboBoxDayDue.Properties.DataSource = this.DueDaysBindingSource;
+            this.comboBoxDayDue.Properties.DisplayMember = "Day";
+            this.comboBoxDayDue.Properties.NullText = resources.GetString("comboBoxDayDue.Properties.NullText");
+            this.comboBoxDayDue.Properties.ValidateOnEnterKey = true;
+            this.comboBoxDayDue.Properties.ValueMember = "Day";
+            this.comboBoxDayDue.EditValueChanged += new System.EventHandler(this.comboBoxDayDue_EditValueChanged);
+            // 
+            // DueDaysBindingSource
+            // 
+            this.DueDaysBindingSource.DataMember = "DueDays";
+            this.DueDaysBindingSource.DataSource = this.paymentDataSetBindingSource;
             // 
             // txtAPR
             // 
@@ -10181,6 +10202,10 @@
             // 
             this.invoicesTableAdapter.ClearBeforeFill = true;
             // 
+            // DueDaysTableAdapter
+            // 
+            this.DueDaysTableAdapter.ClearBeforeFill = true;
+            // 
             // frmNewCustMaint
             // 
             this.Appearance.BackColor = System.Drawing.Color.CornflowerBlue;
@@ -10307,6 +10332,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtFirstPayDate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPaymentDate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPaymentDate.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboBoxDayDue.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DueDaysBindingSource)).EndInit();
             this.xtraTabPageVehicle.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupBox15)).EndInit();
             this.groupBox15.ResumeLayout(false);
@@ -10967,7 +10994,7 @@
         private DevExpress.XtraEditors.DateEdit txtFirstPayDate;
         private DevExpress.XtraEditors.DateEdit txtPaymentDate;
         private System.Windows.Forms.TextBox textBox18;
-        private System.Windows.Forms.ComboBox comboBoxDayDue;
+        private DevExpress.XtraEditors.LookUpEdit comboBoxDayDue;
         private System.Windows.Forms.TextBox txtAPR;
         private System.Windows.Forms.TextBox txtLateChargeBal;
         private System.Windows.Forms.TextBox txtPartialPayment;
@@ -11241,6 +11268,8 @@
         private DevExpress.XtraGrid.Columns.GridColumn colCustomerID;
         private System.Windows.Forms.BindingSource invoicesBindingSource;
         private PaymentDataSetTableAdapters.InvoicesTableAdapter invoicesTableAdapter;
+        private System.Windows.Forms.BindingSource DueDaysBindingSource;
+        private PaymentDataSetTableAdapters.DueDaysTableAdapter DueDaysTableAdapter;
     }
 }
 

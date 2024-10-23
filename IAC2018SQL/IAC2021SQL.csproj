@@ -41,7 +41,7 @@
     <SuiteName>IAC2021SQL</SuiteName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>85</ApplicationRevision>
+    <ApplicationRevision>92</ApplicationRevision>
     <ApplicationVersion>200.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -971,14 +971,9 @@
       <DependentUpon>DirectXFormPaymentDistribution.cs</DependentUpon>
     </Compile>
     <Compile Include="IACDataSet.Designer.cs">
+      <DependentUpon>IACDataSet.xsd</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>IACDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="IACDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>IACDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="InternetPaymentRejects.cs">
       <AutoGen>True</AutoGen>
@@ -4456,16 +4451,6 @@
       <FileType>Assembly</FileType>
     </PublishFile>
     <PublishFile Include="System.Numerics.Vectors">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
-      <FileType>Assembly</FileType>
-    </PublishFile>
-    <PublishFile Include="System.Reflection.Metadata">
       <Visible>False</Visible>
       <Group>
       </Group>

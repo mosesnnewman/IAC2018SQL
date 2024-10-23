@@ -746,6 +746,7 @@ namespace IAC2021SQL
                     toolStripButton1.Enabled = false;
                     toolStripButtonSave.Enabled = true;
                     iACDataSet.OPNCUST.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_NO", lsCustomerNo);
+                    cUSTOMERBindingSource.EndEdit();  // Moses Newman 10/21/2024
                     iACDataSet.OPNCUST.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_PURCHASE_ORDER", "");
                     iACDataSet.OPNCUST.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_ADD_ON", "");
                     iACDataSet.OPNCUST.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_IAC_TYPE", "O");

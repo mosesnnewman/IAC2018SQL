@@ -7128,76 +7128,76 @@
     <value>0</value>
   </data>
   <metadata name="cUSTOMERBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 95</value>
+    <value>860, 54</value>
   </metadata>
   <metadata name="iACDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1145, 56</value>
+    <value>747, 54</value>
   </metadata>
   <metadata name="cOMMENTBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>599, 173</value>
+    <value>220, 128</value>
   </metadata>
   <metadata name="commentTypesBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>467, 251</value>
+    <value>461, 165</value>
   </metadata>
   <metadata name="DealerListCustbindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>909, 212</value>
+    <value>1649, 128</value>
   </metadata>
   <metadata name="dEALERBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>844, 134</value>
+    <value>1206, 91</value>
   </metadata>
   <metadata name="cUSTHISTBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>973, 173</value>
+    <value>590, 128</value>
   </metadata>
   <metadata name="EmailbindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>221, 290</value>
+    <value>1245, 165</value>
   </metadata>
   <metadata name="bindingSourceGenCodes.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 56</value>
+    <value>1468, 17</value>
   </metadata>
   <metadata name="bindingSourceGap.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>565, 95</value>
+    <value>1397, 54</value>
   </metadata>
   <metadata name="letterTypeBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>579, 290</value>
+    <value>1599, 165</value>
   </metadata>
   <metadata name="letterNumberBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 290</value>
+    <value>1043, 165</value>
   </metadata>
   <metadata name="DLRLISTBYNUMbindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>429, 134</value>
+    <value>797, 91</value>
   </metadata>
   <metadata name="VehiclebindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>395, 95</value>
+    <value>1229, 54</value>
   </metadata>
   <metadata name="bindingSourceMonthNames.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>224, 134</value>
+    <value>593, 91</value>
   </metadata>
   <metadata name="RepoIndicatorsBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 173</value>
+    <value>1377, 91</value>
   </metadata>
   <metadata name="repoCodesBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>944, 290</value>
+    <value>191, 202</value>
   </metadata>
   <metadata name="ALTNAMEbindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>410, 56</value>
+    <value>17, 54</value>
   </metadata>
   <metadata name="OPNBANKbindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>541, 212</value>
+    <value>1285, 128</value>
   </metadata>
   <metadata name="CustomerFeesBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 134</value>
+    <value>387, 91</value>
   </metadata>
   <metadata name="repoLogBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>136, 407</value>
+    <value>337, 239</value>
   </metadata>
   <metadata name="repoDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 407</value>
+    <value>219, 239</value>
   </metadata>
   <metadata name="closedCreditManagerBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>852, 407</value>
+    <value>1044, 239</value>
   </metadata>
   <metadata name="tsbDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1034, 56</value>
+    <value>637, 54</value>
   </metadata>
   <metadata name="TermsFrequencybindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>464, 17</value>
@@ -7215,64 +7215,64 @@
     <value>17, 17</value>
   </metadata>
   <metadata name="ConsumerIndicatorsbindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 251</value>
+    <value>17, 165</value>
   </metadata>
   <metadata name="AccountTypesbindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>203, 56</value>
+    <value>1653, 17</value>
   </metadata>
   <metadata name="specialCommentCodesBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 368</value>
+    <value>945, 202</value>
   </metadata>
   <metadata name="PaymentRatingsbindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>595, 56</value>
+    <value>201, 54</value>
   </metadata>
   <metadata name="AccountStatusesbindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>813, 56</value>
+    <value>418, 54</value>
   </metadata>
   <metadata name="cUSTOMERTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>209, 95</value>
+    <value>1049, 54</value>
   </metadata>
   <metadata name="dEALERTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>229, 173</value>
+    <value>1587, 91</value>
   </metadata>
   <metadata name="cOMMENTTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>789, 173</value>
+    <value>409, 128</value>
   </metadata>
   <metadata name="cUSTHISTTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 212</value>
+    <value>771, 128</value>
   </metadata>
   <metadata name="vEHICLETableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>194, 212</value>
+    <value>944, 128</value>
   </metadata>
   <metadata name="aLTNAMETableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>363, 212</value>
+    <value>1111, 128</value>
   </metadata>
   <metadata name="oPNBANKTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>729, 212</value>
+    <value>1472, 128</value>
   </metadata>
   <metadata name="dealerlistTableAdapterCust.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>646, 134</value>
+    <value>1012, 91</value>
   </metadata>
   <metadata name="dLRLISTBYNUMTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>257, 251</value>
+    <value>255, 165</value>
   </metadata>
   <metadata name="comment_TypesTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>681, 251</value>
+    <value>673, 165</value>
   </metadata>
   <metadata name="nOTICETableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>894, 251</value>
+    <value>882, 165</value>
   </metadata>
   <metadata name="letterNumberTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>381, 290</value>
+    <value>1405, 165</value>
   </metadata>
   <metadata name="letterTypeTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>764, 290</value>
+    <value>17, 202</value>
   </metadata>
   <metadata name="monthNamesTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>951, 95</value>
+    <value>17, 91</value>
   </metadata>
   <metadata name="errorProviderCustomerForm.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>395, 173</value>
+    <value>17, 128</value>
   </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -7322,7 +7322,7 @@
   <assembly alias="DevExpress.Utils.v24.1" name="DevExpress.Utils.v24.1, Version=24.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
   <data name="imageCollectionTabs.ImageStream" type="DevExpress.Utils.ImageCollectionStreamer, DevExpress.Utils.v24.1" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAFpEZXZFeHByZXNzLlV0aWxzLnYyMy4yLCBWZXJzaW9uPTIzLjIu
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFpEZXZFeHByZXNzLlV0aWxzLnYyNC4xLCBWZXJzaW9uPTI0LjEu
         Ni4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI4OGQxNzU0ZDcwMGU0OWEMAwAAAFFT
         eXN0ZW0uRHJhd2luZywgVmVyc2lvbj00LjAuMC4wLCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRv
         a2VuPWIwM2Y1ZjdmMTFkNTBhM2EFAQAAAChEZXZFeHByZXNzLlV0aWxzLkltYWdlQ29sbGVjdGlvblN0
@@ -7409,13 +7409,13 @@
     <value>0</value>
   </data>
   <metadata name="bindingSourceWarrantyCompany.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>718, 95</value>
+    <value>1549, 54</value>
   </metadata>
   <data name="hyperLinkEditWarrantyEmail.Location" type="System.Drawing.Point, System.Drawing">
     <value>522, 154</value>
   </data>
   <metadata name="toolbarFormManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>304, 524</value>
+    <value>170, 313</value>
   </metadata>
   <data name="standaloneBarDockControl1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -10848,35 +10848,71 @@
   <data name="&gt;&gt;textBox18.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
-  <data name="comboBoxDayDue.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt</value>
-  </data>
-  <data name="comboBoxDayDue.Items" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="comboBoxDayDue.Items1" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="comboBoxDayDue.Items2" xml:space="preserve">
-    <value>15</value>
-  </data>
-  <data name="comboBoxDayDue.Items3" xml:space="preserve">
-    <value>20</value>
-  </data>
-  <data name="comboBoxDayDue.Items4" xml:space="preserve">
-    <value>25</value>
-  </data>
-  <data name="comboBoxDayDue.Items5" xml:space="preserve">
-    <value>30</value>
-  </data>
   <data name="comboBoxDayDue.Location" type="System.Drawing.Point, System.Drawing">
     <value>365, 47</value>
   </data>
-  <data name="comboBoxDayDue.MaxLength" type="System.Int32, mscorlib">
-    <value>2</value>
+  <data name="comboBoxDayDue.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="comboBoxDayDue.Properties.AppearanceDisabled.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="comboBoxDayDue.Properties.AppearanceDropDown.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="comboBoxDayDue.Properties.AppearanceDropDownHeader.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="comboBoxDayDue.Properties.AppearanceFocused.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="comboBoxDayDue.Properties.AppearanceReadOnly.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="comboBoxDayDue.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v24.1">
+    <value>Combo</value>
+  </data>
+  <data name="comboBoxDayDue.Properties.Columns" xml:space="preserve">
+    <value>Day</value>
+  </data>
+  <data name="comboBoxDayDue.Properties.Columns1" xml:space="preserve">
+    <value>Due Day</value>
+  </data>
+  <data name="comboBoxDayDue.Properties.Columns2" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="comboBoxDayDue.Properties.Columns3" type="DevExpress.Utils.FormatType, DevExpress.Data.v24.1">
+    <value>Numeric</value>
+  </data>
+  <data name="comboBoxDayDue.Properties.Columns4" xml:space="preserve">
+    <value />
+  </data>
+  <data name="comboBoxDayDue.Properties.Columns5" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="comboBoxDayDue.Properties.Columns6" type="DevExpress.Utils.HorzAlignment, DevExpress.Data.v24.1">
+    <value>Near</value>
+  </data>
+  <data name="comboBoxDayDue.Properties.Columns7" type="DevExpress.Data.ColumnSortOrder, DevExpress.Data.v24.1">
+    <value>None</value>
+  </data>
+  <data name="comboBoxDayDue.Properties.Columns8" type="DevExpress.Utils.DefaultBoolean, DevExpress.Data.v24.1">
+    <value>Default</value>
+  </data>
+  <metadata name="DueDaysBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>1291, 17</value>
+  </metadata>
+  <metadata name="paymentDataSetBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>826, 239</value>
+  </metadata>
+  <metadata name="paymentDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>685, 239</value>
+  </metadata>
+  <data name="comboBoxDayDue.Properties.NullText" xml:space="preserve">
+    <value />
   </data>
   <data name="comboBoxDayDue.Size" type="System.Drawing.Size, System.Drawing">
-    <value>45, 29</value>
+    <value>51, 28</value>
   </data>
   <data name="comboBoxDayDue.TabIndex" type="System.Int32, mscorlib">
     <value>78</value>
@@ -10885,7 +10921,7 @@
     <value>comboBoxDayDue</value>
   </data>
   <data name="&gt;&gt;comboBoxDayDue.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>DevExpress.XtraEditors.LookUpEdit, DevExpress.XtraEditors.v24.1, Version=24.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
   <data name="&gt;&gt;comboBoxDayDue.Parent" xml:space="preserve">
     <value>groupBox9</value>
@@ -17972,13 +18008,7 @@
     <value>0</value>
   </data>
   <metadata name="invoicesBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1151, 91</value>
-  </metadata>
-  <metadata name="paymentDataSetBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>631, 407</value>
-  </metadata>
-  <metadata name="paymentDataSet.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>489, 407</value>
+    <value>213, 91</value>
   </metadata>
   <data name="gridControlInvoices.Location" type="System.Drawing.Point, System.Drawing">
     <value>117, 79</value>
@@ -21775,7 +21805,7 @@
     <value>0, 0</value>
   </data>
   <metadata name="barManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>479, 524</value>
+    <value>343, 313</value>
   </metadata>
   <data name="toolStripButton1.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -21928,7 +21958,7 @@
   </data>
   <data name="toolStripButtonSave.ImageOptions.SvgImage" type="DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v24.1" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAFlEZXZFeHByZXNzLkRhdGEudjIzLjIsIFZlcnNpb249MjMuMi42
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFlEZXZFeHByZXNzLkRhdGEudjI0LjEsIFZlcnNpb249MjQuMS42
         LjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjg4ZDE3NTRkNzAwZTQ5YQUBAAAAHURl
         dkV4cHJlc3MuVXRpbHMuU3ZnLlN2Z0ltYWdlAQAAAAREYXRhBwICAAAACQMAAAAPAwAAAMICAAAC77u/
         PD94bWwgdmVyc2lvbj0nMS4wJyBlbmNvZGluZz0nVVRGLTgnPz4NCjxzdmcgeD0iMHB4IiB5PSIwcHgi
@@ -23298,6 +23328,12 @@
   <data name="&gt;&gt;toolbarFormManager1.Type" xml:space="preserve">
     <value>DevExpress.XtraBars.ToolbarForm.ToolbarFormManager, DevExpress.XtraBars.v24.1, Version=24.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
+  <data name="&gt;&gt;DueDaysBindingSource.Name" xml:space="preserve">
+    <value>DueDaysBindingSource</value>
+  </data>
+  <data name="&gt;&gt;DueDaysBindingSource.Type" xml:space="preserve">
+    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;Root.Name" xml:space="preserve">
     <value>Root</value>
   </data>
@@ -24018,6 +24054,12 @@
   <data name="&gt;&gt;invoicesTableAdapter.Type" xml:space="preserve">
     <value>IAC2021SQL.PaymentDataSetTableAdapters.InvoicesTableAdapter, PaymentDataSet.Designer.cs.dll, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
+  <data name="&gt;&gt;DueDaysTableAdapter.Name" xml:space="preserve">
+    <value>DueDaysTableAdapter</value>
+  </data>
+  <data name="&gt;&gt;DueDaysTableAdapter.Type" xml:space="preserve">
+    <value>IAC2021SQL.PaymentDataSetTableAdapters.DueDaysTableAdapter, PaymentDataSet.Designer.cs.dll, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>frmNewCustMaint</value>
   </data>
@@ -24025,61 +24067,61 @@
     <value>DevExpress.XtraEditors.XtraForm, DevExpress.Utils.v24.1, Version=24.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
   <metadata name="repoCodesTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 329</value>
+    <value>379, 202</value>
   </metadata>
   <metadata name="wS_NOTICE_DEALERTableAdapter1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>586, 329</value>
+    <value>559, 202</value>
   </metadata>
   <metadata name="emailTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>828, 329</value>
+    <value>793, 202</value>
   </metadata>
   <metadata name="specialCommentCodesTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>272, 368</value>
+    <value>1199, 202</value>
   </metadata>
   <metadata name="gapSelectionsTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>521, 368</value>
+    <value>1445, 202</value>
   </metadata>
   <metadata name="genCodesTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>721, 368</value>
+    <value>1641, 202</value>
   </metadata>
   <metadata name="customerFeesTableAdapter1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>900, 368</value>
+    <value>17, 239</value>
   </metadata>
   <metadata name="repoLogTableAdapter1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>312, 407</value>
+    <value>512, 239</value>
   </metadata>
   <metadata name="closedCreditManagerTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 446</value>
+    <value>1288, 239</value>
   </metadata>
   <metadata name="consumerIndicatorsTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>258, 446</value>
+    <value>1524, 239</value>
   </metadata>
   <metadata name="accountStatusesTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>490, 446</value>
+    <value>17, 276</value>
   </metadata>
   <metadata name="paymentRatingsTableAdapter1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>703, 446</value>
+    <value>226, 276</value>
   </metadata>
   <metadata name="accountTypesTableAdapter1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>923, 446</value>
+    <value>441, 276</value>
   </metadata>
   <metadata name="complianceConditionCodesTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 485</value>
+    <value>642, 276</value>
   </metadata>
   <metadata name="eCOACodesTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>292, 485</value>
+    <value>913, 276</value>
   </metadata>
   <metadata name="interestTypesTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>482, 485</value>
+    <value>1100, 276</value>
   </metadata>
   <metadata name="portfolioTypesTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>679, 485</value>
+    <value>1291, 276</value>
   </metadata>
   <metadata name="termsFrequencyTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>882, 485</value>
+    <value>1489, 276</value>
   </metadata>
   <metadata name="mASTERTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>604, 524</value>
+    <value>467, 313</value>
   </metadata>
   <data name="labelCheckNumber.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -24154,10 +24196,10 @@
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <metadata name="formAssistant1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 524</value>
+    <value>1697, 276</value>
   </metadata>
   <metadata name="behaviorManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>150, 524</value>
+    <value>17, 313</value>
   </metadata>
   <data name="barButtonItem1.Caption" xml:space="preserve">
     <value>Print Customer &amp;Receipt</value>
@@ -24182,12 +24224,15 @@
 </value>
   </data>
   <metadata name="warrantyCompanyTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>774, 524</value>
+    <value>633, 313</value>
   </metadata>
   <metadata name="layoutConverter1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>998, 524</value>
+    <value>854, 313</value>
   </metadata>
   <metadata name="invoicesTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1497, 524</value>
+    <value>999, 313</value>
+  </metadata>
+  <metadata name="DueDaysTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>1165, 92</value>
   </metadata>
 </root>

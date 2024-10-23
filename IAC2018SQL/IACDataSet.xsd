@@ -18396,7 +18396,7 @@ SET                DEALER_STATUS = @DEALER_STATUS</CommandText>
         <xs:element name="OPNCUST" msprop:Generator_RowEvHandlerName="OPNCUSTRowChangeEventHandler" msprop:Generator_RowDeletedName="OPNCUSTRowDeleted" msprop:Generator_RowDeletingName="OPNCUSTRowDeleting" msprop:Generator_RowEvArgName="OPNCUSTRowChangeEvent" msprop:Generator_TablePropName="OPNCUST" msprop:Generator_RowChangedName="OPNCUSTRowChanged" msprop:Generator_UserTableName="OPNCUST" msprop:Generator_RowChangingName="OPNCUSTRowChanging" msprop:Generator_RowClassName="OPNCUSTRow" msprop:Generator_TableClassName="OPNCUSTDataTable" msprop:Generator_TableVarName="tableOPNCUST">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="CustomerID" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="CustomerIDColumn" msprop:Generator_ColumnPropNameInRow="CustomerID" msprop:Generator_UserColumnName="CustomerID" msprop:Generator_ColumnVarNameInTable="columnCustomerID" type="xs:int" />
+              <xs:element name="CustomerID" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="CustomerIDColumn" msprop:Generator_ColumnPropNameInRow="CustomerID" msprop:Generator_UserColumnName="CustomerID" msprop:Generator_ColumnVarNameInTable="columnCustomerID" type="xs:int" default="0" />
               <xs:element name="CUSTOMER_NO" msprop:Generator_ColumnPropNameInTable="CUSTOMER_NOColumn" msprop:Generator_ColumnPropNameInRow="CUSTOMER_NO" msprop:Generator_UserColumnName="CUSTOMER_NO" msprop:Generator_ColumnVarNameInTable="columnCUSTOMER_NO" default="######">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
