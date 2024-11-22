@@ -618,7 +618,8 @@ namespace IAC2021SQL
                 tsbSet.ClosedCreditManager.Rows[0].SetField<Decimal>("CRDMGR_ACCT_CREDIT_LIMIT",
                     (Decimal)TSBDATA.OPNCUST.Rows[i].Field<Int32>("CUSTOMER_CREDIT_LIMIT"));
 
-                lsTSBCommentCode = TSBDATA.OPNCUST.Rows[i].Field<String>("CUSTOMER_TSB_COMMENT_CODE").TrimEnd();
+                // Moses Newman 11/04/2024 Handle if NULL
+                lsTSBCommentCode = TSBDATA.OPNCUST.Rows[i].Field<String>("CUSTOMER_TSB_COMMENT_CODE") != null ? TSBDATA.OPNCUST.Rows[i].Field<String>("CUSTOMER_TSB_COMMENT_CODE").TrimEnd():"";
                 // Moses Newman 08/26/2020
                 if (tsbSet.ClosedCreditManager.Rows[0].Field<String>("CRDMGR_ACCT_ECOA_CODE").Trim() == "")
                     tsbSet.ClosedCreditManager.Rows[0].SetField<String>("CRDMGR_ACCT_ECOA_CODE", "1");

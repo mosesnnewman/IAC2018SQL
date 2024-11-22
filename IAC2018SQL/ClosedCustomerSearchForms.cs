@@ -169,7 +169,7 @@ namespace IAC2021SQL
                         if (lsCustomer_Type == "O")
                             MDImain.CreateFormInstance("frmOpenCustMaint", false);
                         else
-                            MDImain.CreateFormInstance("frmNewCustMaint", false);
+                            MDImain.CreateFormInstance("frmNewCustMaintResp", false);
                         iacDataSet1.Clear();
                         ClearAllFields();
                         Refresh();

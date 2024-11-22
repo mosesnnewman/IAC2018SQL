@@ -707,6 +707,12 @@ namespace IAC2021SQL {
             
             private global::System.Data.DataColumn columnCOSTConfirmed;
             
+            private global::System.Data.DataColumn columnActiveDuty;
+            
+            private global::System.Data.DataColumn columnActiveDutyStart;
+            
+            private global::System.Data.DataColumn columnActiveDutyEnd;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public tempCustomerDataTable() {
@@ -2174,6 +2180,30 @@ namespace IAC2021SQL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ActiveDutyColumn {
+                get {
+                    return this.columnActiveDuty;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ActiveDutyStartColumn {
+                get {
+                    return this.columnActiveDutyStart;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ActiveDutyEndColumn {
+                get {
+                    return this.columnActiveDutyEnd;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2388,7 +2418,10 @@ namespace IAC2021SQL {
                         bool COSTAcct, 
                         bool COSTBoth, 
                         string COSTPin, 
-                        bool COSTConfirmed) {
+                        bool COSTConfirmed, 
+                        bool ActiveDuty, 
+                        System.DateTime ActiveDutyStart, 
+                        System.DateTime ActiveDutyEnd) {
                 tempCustomerRow rowtempCustomerRow = ((tempCustomerRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         CustomerID,
@@ -2569,7 +2602,10 @@ namespace IAC2021SQL {
                         COSTAcct,
                         COSTBoth,
                         COSTPin,
-                        COSTConfirmed};
+                        COSTConfirmed,
+                        ActiveDuty,
+                        ActiveDutyStart,
+                        ActiveDutyEnd};
                 rowtempCustomerRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowtempCustomerRow);
                 return rowtempCustomerRow;
@@ -2778,6 +2814,9 @@ namespace IAC2021SQL {
                 this.columnCOSTBoth = base.Columns["COSTBoth"];
                 this.columnCOSTPin = base.Columns["COSTPin"];
                 this.columnCOSTConfirmed = base.Columns["COSTConfirmed"];
+                this.columnActiveDuty = base.Columns["ActiveDuty"];
+                this.columnActiveDutyStart = base.Columns["ActiveDutyStart"];
+                this.columnActiveDutyEnd = base.Columns["ActiveDutyEnd"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3141,6 +3180,12 @@ namespace IAC2021SQL {
                 base.Columns.Add(this.columnCOSTPin);
                 this.columnCOSTConfirmed = new global::System.Data.DataColumn("COSTConfirmed", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCOSTConfirmed);
+                this.columnActiveDuty = new global::System.Data.DataColumn("ActiveDuty", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnActiveDuty);
+                this.columnActiveDutyStart = new global::System.Data.DataColumn("ActiveDutyStart", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnActiveDutyStart);
+                this.columnActiveDutyEnd = new global::System.Data.DataColumn("ActiveDutyEnd", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnActiveDutyEnd);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnCustomerID}, true));
                 this.columnCustomerID.AllowDBNull = false;
@@ -7898,6 +7943,54 @@ namespace IAC2021SQL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool ActiveDuty {
+                get {
+                    try {
+                        return ((bool)(this[this.tabletempCustomer.ActiveDutyColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ActiveDuty\' in table \'tempCustomer\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletempCustomer.ActiveDutyColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public System.DateTime ActiveDutyStart {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tabletempCustomer.ActiveDutyStartColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ActiveDutyStart\' in table \'tempCustomer\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletempCustomer.ActiveDutyStartColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public System.DateTime ActiveDutyEnd {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tabletempCustomer.ActiveDutyEndColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ActiveDutyEnd\' in table \'tempCustomer\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabletempCustomer.ActiveDutyEndColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsCUSTOMER_FIRST_NAMENull() {
                 return this.IsNull(this.tabletempCustomer.CUSTOMER_FIRST_NAMEColumn);
             }
@@ -9982,6 +10075,42 @@ namespace IAC2021SQL {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetCOSTConfirmedNull() {
                 this[this.tabletempCustomer.COSTConfirmedColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsActiveDutyNull() {
+                return this.IsNull(this.tabletempCustomer.ActiveDutyColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetActiveDutyNull() {
+                this[this.tabletempCustomer.ActiveDutyColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsActiveDutyStartNull() {
+                return this.IsNull(this.tabletempCustomer.ActiveDutyStartColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetActiveDutyStartNull() {
+                this[this.tabletempCustomer.ActiveDutyStartColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsActiveDutyEndNull() {
+                return this.IsNull(this.tabletempCustomer.ActiveDutyEndColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetActiveDutyEndNull() {
+                this[this.tabletempCustomer.ActiveDutyEndColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -12437,6 +12566,9 @@ namespace IAC2021SQL.TempPostingTableAdapters {
             tableMapping.ColumnMappings.Add("COSTBoth", "COSTBoth");
             tableMapping.ColumnMappings.Add("COSTPin", "COSTPin");
             tableMapping.ColumnMappings.Add("COSTConfirmed", "COSTConfirmed");
+            tableMapping.ColumnMappings.Add("ActiveDuty", "ActiveDuty");
+            tableMapping.ColumnMappings.Add("ActiveDutyStart", "ActiveDutyStart");
+            tableMapping.ColumnMappings.Add("ActiveDutyEnd", "ActiveDutyEnd");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
@@ -12617,6 +12749,9 @@ namespace IAC2021SQL.TempPostingTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@COSTBoth", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 1, 0, "COSTBoth", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@COSTPin", global::System.Data.SqlDbType.VarChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "COSTPin", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@COSTConfirmed", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 1, 0, "COSTConfirmed", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ActiveDuty", global::System.Data.SqlDbType.Bit, 1, global::System.Data.ParameterDirection.Input, 1, 0, "ActiveDuty", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ActiveDutyStart", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, "ActiveDutyStart", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ActiveDutyEnd", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, "ActiveDutyEnd", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -12873,7 +13008,10 @@ namespace IAC2021SQL.TempPostingTableAdapters {
                     global::System.Nullable<bool> COSTAcct, 
                     global::System.Nullable<bool> COSTBoth, 
                     string COSTPin, 
-                    global::System.Nullable<bool> COSTConfirmed) {
+                    global::System.Nullable<bool> COSTConfirmed, 
+                    global::System.Nullable<bool> ActiveDuty, 
+                    global::System.Nullable<global::System.DateTime> ActiveDutyStart, 
+                    global::System.Nullable<global::System.DateTime> ActiveDutyEnd) {
             if ((CUSTOMER_NO == null)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
@@ -13917,6 +14055,24 @@ namespace IAC2021SQL.TempPostingTableAdapters {
             }
             else {
                 this.Adapter.InsertCommand.Parameters[174].Value = global::System.DBNull.Value;
+            }
+            if ((ActiveDuty.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[175].Value = ((bool)(ActiveDuty.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[175].Value = global::System.DBNull.Value;
+            }
+            if ((ActiveDutyStart.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[176].Value = ((System.DateTime)(ActiveDutyStart.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[176].Value = global::System.DBNull.Value;
+            }
+            if ((ActiveDutyEnd.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[177].Value = ((System.DateTime)(ActiveDutyEnd.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[177].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 

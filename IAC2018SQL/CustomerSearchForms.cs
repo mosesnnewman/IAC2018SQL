@@ -272,7 +272,7 @@ namespace IAC2021SQL
                 if (lsCustomer_Type == "O")
                     MDImain.CreateFormInstance("frmOpenCustMaint", false);
                 else
-                    MDImain.CreateFormInstance("frmNewCustMaint", false);
+                    MDImain.CreateFormInstance("frmNewCustMaintResp", false);
             }
             // Moses Newman 11/27/2012 Why not keep deep search open until user wants to exit it!
             //Close();

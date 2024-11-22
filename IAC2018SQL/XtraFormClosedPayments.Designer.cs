@@ -315,7 +315,7 @@
             // 
             this.tabPayment.Controls.Add(this.groupControl5);
             this.tabPayment.Name = "tabPayment";
-            this.tabPayment.Size = new System.Drawing.Size(1009, 572);
+            this.tabPayment.Size = new System.Drawing.Size(1009, 565);
             this.tabPayment.Text = "Payments";
             // 
             // groupControl5
@@ -366,6 +366,7 @@
             // 
             this.sqlDataSourceClosedPayments.ConnectionName = "IAC2021SQL.Properties.Settings.IAC2010SQLConnectionString";
             this.sqlDataSourceClosedPayments.Name = "sqlDataSourceClosedPayments";
+            storedProcQuery1.MetaSerializable = "<Meta X=\"1250\" Y=\"20\" Width=\"300\" Height=\"3688\" />";
             storedProcQuery1.Name = "CUSTOMER";
             queryParameter1.Name = "@CUSTOMER_NO";
             queryParameter1.Type = typeof(string);
@@ -373,6 +374,7 @@
             storedProcQuery1.Parameters.AddRange(new DevExpress.DataAccess.Sql.QueryParameter[] {
             queryParameter1});
             storedProcQuery1.StoredProcName = "ClosedCustomerSelect";
+            storedProcQuery2.MetaSerializable = "<Meta X=\"1570\" Y=\"20\" Width=\"260\" Height=\"868\" />";
             storedProcQuery2.Name = "DEALER";
             queryParameter2.Name = "@id";
             queryParameter2.Type = typeof(int);
@@ -380,15 +382,16 @@
             storedProcQuery2.Parameters.AddRange(new DevExpress.DataAccess.Sql.QueryParameter[] {
             queryParameter2});
             storedProcQuery2.StoredProcName = "ClosedDealerSelect";
-            storedProcQuery3.MetaSerializable = "<Meta X=\"459\" Y=\"20\" Width=\"100\" Height=\"81\" />";
+            storedProcQuery3.MetaSerializable = "<Meta X=\"459\" Y=\"20\" Width=\"100\" Height=\"88\" />";
             storedProcQuery3.Name = "PAYCODE";
             storedProcQuery3.StoredProcName = "PayCodeSelect";
+            storedProcQuery4.MetaSerializable = "<Meta X=\"1850\" Y=\"20\" Width=\"300\" Height=\"728\" />";
             storedProcQuery4.Name = "PAYMENT";
             storedProcQuery4.StoredProcName = "ClosedPaymentFillByall";
-            storedProcQuery5.MetaSerializable = "<Meta X=\"795\" Y=\"20\" Width=\"101\" Height=\"81\" />";
+            storedProcQuery5.MetaSerializable = "<Meta X=\"795\" Y=\"20\" Width=\"101\" Height=\"88\" />";
             storedProcQuery5.Name = "PAYMENTTYPE";
             storedProcQuery5.StoredProcName = "PaymentTypeSelect";
-            storedProcQuery6.MetaSerializable = "<Meta X=\"1124\" Y=\"20\" Width=\"106\" Height=\"661\" />";
+            storedProcQuery6.MetaSerializable = "<Meta X=\"1124\" Y=\"20\" Width=\"106\" Height=\"808\" />";
             storedProcQuery6.Name = "PaymentHistory";
             queryParameter3.Name = "@CustomerNo";
             queryParameter3.Type = typeof(int);
@@ -396,6 +399,7 @@
             storedProcQuery6.Parameters.AddRange(new DevExpress.DataAccess.Sql.QueryParameter[] {
             queryParameter3});
             storedProcQuery6.StoredProcName = "PaymentHistoryUnused";
+            storedProcQuery7.MetaSerializable = "<Meta X=\"2170\" Y=\"20\" Width=\"158\" Height=\"268\" />";
             storedProcQuery7.Name = "Invoices";
             queryParameter4.Name = "@CustomerID";
             queryParameter4.Type = typeof(int);
@@ -812,7 +816,7 @@
             // 
             this.tabInvoices.Controls.Add(this.groupControl4);
             this.tabInvoices.Name = "tabInvoices";
-            this.tabInvoices.Size = new System.Drawing.Size(1009, 572);
+            this.tabInvoices.Size = new System.Drawing.Size(1009, 565);
             this.tabInvoices.Text = "Invoices";
             // 
             // groupControl4
@@ -1133,7 +1137,7 @@
             this.tabHistory.Controls.Add(this.groupControl2);
             this.tabHistory.Name = "tabHistory";
             this.tabHistory.Padding = new System.Windows.Forms.Padding(3);
-            this.tabHistory.Size = new System.Drawing.Size(1009, 572);
+            this.tabHistory.Size = new System.Drawing.Size(1009, 565);
             this.tabHistory.Text = "History";
             // 
             // groupControl2

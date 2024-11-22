@@ -3148,7 +3148,6 @@
             // 
             // labelControl7
             // 
-            this.labelControl7.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("labelControl7.Appearance.Font")));
             this.labelControl7.Appearance.Options.UseFont = true;
             resources.ApplyResources(this.labelControl7, "labelControl7");
             this.labelControl7.Name = "labelControl7";
@@ -3215,7 +3214,6 @@
             resources.ApplyResources(this.textEditDealerName, "textEditDealerName");
             this.textEditDealerName.MenuManager = this.toolbarFormManager1;
             this.textEditDealerName.Name = "textEditDealerName";
-            this.textEditDealerName.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textEditDealerName.Properties.Appearance.Font")));
             this.textEditDealerName.Properties.Appearance.Options.UseFont = true;
             // 
             // cUSTOMER_DEALERcomboBox
@@ -3225,7 +3223,6 @@
             resources.ApplyResources(this.cUSTOMER_DEALERcomboBox, "cUSTOMER_DEALERcomboBox");
             this.cUSTOMER_DEALERcomboBox.MenuManager = this.toolbarFormManager1;
             this.cUSTOMER_DEALERcomboBox.Name = "cUSTOMER_DEALERcomboBox";
-            this.cUSTOMER_DEALERcomboBox.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("cUSTOMER_DEALERcomboBox.Properties.Appearance.Font")));
             this.cUSTOMER_DEALERcomboBox.Properties.Appearance.Options.UseFont = true;
             this.cUSTOMER_DEALERcomboBox.Properties.Appearance.Options.UseTextOptions = true;
             this.cUSTOMER_DEALERcomboBox.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
@@ -3253,7 +3250,6 @@
             resources.ApplyResources(this.checkEditAllotment, "checkEditAllotment");
             this.checkEditAllotment.MenuManager = this.toolbarFormManager1;
             this.checkEditAllotment.Name = "checkEditAllotment";
-            this.checkEditAllotment.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("checkEditAllotment.Properties.Appearance.Font")));
             this.checkEditAllotment.Properties.Appearance.Options.UseFont = true;
             this.checkEditAllotment.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.checkEditAllotment.Properties.AppearanceDisabled.Options.UseForeColor = true;
@@ -3277,7 +3273,6 @@
             resources.ApplyResources(this.checkEditMilitary, "checkEditMilitary");
             this.checkEditMilitary.MenuManager = this.toolbarFormManager1;
             this.checkEditMilitary.Name = "checkEditMilitary";
-            this.checkEditMilitary.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("checkEditMilitary.Properties.Appearance.Font")));
             this.checkEditMilitary.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
             this.checkEditMilitary.Properties.Appearance.Options.UseFont = true;
             this.checkEditMilitary.Properties.Appearance.Options.UseForeColor = true;
@@ -3301,7 +3296,6 @@
             resources.ApplyResources(this.checkEditNoContact, "checkEditNoContact");
             this.checkEditNoContact.MenuManager = this.toolbarFormManager1;
             this.checkEditNoContact.Name = "checkEditNoContact";
-            this.checkEditNoContact.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("checkEditNoContact.Properties.Appearance.Font")));
             this.checkEditNoContact.Properties.Appearance.Options.UseFont = true;
             this.checkEditNoContact.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.checkEditNoContact.Properties.AppearanceDisabled.Options.UseForeColor = true;
@@ -3325,7 +3319,6 @@
             resources.ApplyResources(this.checkEditWrongAddress, "checkEditWrongAddress");
             this.checkEditWrongAddress.MenuManager = this.toolbarFormManager1;
             this.checkEditWrongAddress.Name = "checkEditWrongAddress";
-            this.checkEditWrongAddress.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("checkEditWrongAddress.Properties.Appearance.Font")));
             this.checkEditWrongAddress.Properties.Appearance.Options.UseFont = true;
             this.checkEditWrongAddress.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.checkEditWrongAddress.Properties.AppearanceDisabled.Options.UseForeColor = true;
@@ -3349,7 +3342,6 @@
             resources.ApplyResources(this.checkEditAutoPay, "checkEditAutoPay");
             this.checkEditAutoPay.MenuManager = this.toolbarFormManager1;
             this.checkEditAutoPay.Name = "checkEditAutoPay";
-            this.checkEditAutoPay.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("checkEditAutoPay.Properties.Appearance.Font")));
             this.checkEditAutoPay.Properties.Appearance.Options.UseFont = true;
             this.checkEditAutoPay.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.checkEditAutoPay.Properties.AppearanceDisabled.Options.UseForeColor = true;
@@ -3372,7 +3364,6 @@
             resources.ApplyResources(this.checkEditCustomerInsurance, "checkEditCustomerInsurance");
             this.checkEditCustomerInsurance.MenuManager = this.toolbarFormManager1;
             this.checkEditCustomerInsurance.Name = "checkEditCustomerInsurance";
-            this.checkEditCustomerInsurance.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("checkEditCustomerInsurance.Properties.Appearance.Font")));
             this.checkEditCustomerInsurance.Properties.Appearance.Options.UseFont = true;
             this.checkEditCustomerInsurance.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.checkEditCustomerInsurance.Properties.AppearanceDisabled.Options.UseForeColor = true;
@@ -3413,7 +3404,6 @@
             resources.ApplyResources(this.colorCheckBoxReceivedContract, "colorCheckBoxReceivedContract");
             this.colorCheckBoxReceivedContract.MenuManager = this.toolbarFormManager1;
             this.colorCheckBoxReceivedContract.Name = "colorCheckBoxReceivedContract";
-            this.colorCheckBoxReceivedContract.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("colorCheckBoxReceivedContract.Properties.Appearance.Font")));
             this.colorCheckBoxReceivedContract.Properties.Appearance.Options.UseFont = true;
             this.colorCheckBoxReceivedContract.Properties.Caption = resources.GetString("colorCheckBoxReceivedContract.Properties.Caption");
             this.colorCheckBoxReceivedContract.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
@@ -3432,7 +3422,6 @@
             resources.ApplyResources(this.checkBoxFullRecourseTab1, "checkBoxFullRecourseTab1");
             this.checkBoxFullRecourseTab1.MenuManager = this.toolbarFormManager1;
             this.checkBoxFullRecourseTab1.Name = "checkBoxFullRecourseTab1";
-            this.checkBoxFullRecourseTab1.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("checkBoxFullRecourseTab1.Properties.Appearance.Font")));
             this.checkBoxFullRecourseTab1.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
             this.checkBoxFullRecourseTab1.Properties.Appearance.Options.UseFont = true;
             this.checkBoxFullRecourseTab1.Properties.Appearance.Options.UseForeColor = true;
@@ -3455,7 +3444,6 @@
             resources.ApplyResources(this.txtDOB, "txtDOB");
             this.txtDOB.MenuManager = this.toolbarFormManager1;
             this.txtDOB.Name = "txtDOB";
-            this.txtDOB.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("txtDOB.Properties.Appearance.Font")));
             this.txtDOB.Properties.Appearance.Options.UseFont = true;
             this.txtDOB.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("txtDOB.Properties.Buttons"))))});
@@ -3475,7 +3463,6 @@
             this.nullableDateTimePickerDateContractReceived.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "DateContractReceived", true));
             resources.ApplyResources(this.nullableDateTimePickerDateContractReceived, "nullableDateTimePickerDateContractReceived");
             this.nullableDateTimePickerDateContractReceived.Name = "nullableDateTimePickerDateContractReceived";
-            this.nullableDateTimePickerDateContractReceived.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("nullableDateTimePickerDateContractReceived.Properties.Appearance.Font")));
             this.nullableDateTimePickerDateContractReceived.Properties.Appearance.Options.UseFont = true;
             this.nullableDateTimePickerDateContractReceived.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("nullableDateTimePickerDateContractReceived.Properties.Buttons"))))});
@@ -3496,7 +3483,6 @@
             // 
             // buttonDealerEmail
             // 
-            this.buttonDealerEmail.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("buttonDealerEmail.Appearance.Font")));
             this.buttonDealerEmail.Appearance.Options.UseFont = true;
             this.buttonDealerEmail.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonDealerEmail.ImageOptions.Image")));
             this.buttonDealerEmail.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
@@ -3661,7 +3647,6 @@
             this.checkBoxExcludeVSI.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.cUSTOMERBindingSource, "ExcludeVSI", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "0"));
             resources.ApplyResources(this.checkBoxExcludeVSI, "checkBoxExcludeVSI");
             this.checkBoxExcludeVSI.Name = "checkBoxExcludeVSI";
-            this.checkBoxExcludeVSI.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("checkBoxExcludeVSI.Properties.Appearance.Font")));
             this.checkBoxExcludeVSI.Properties.Appearance.Options.UseFont = true;
             this.checkBoxExcludeVSI.Properties.Caption = resources.GetString("checkBoxExcludeVSI.Properties.Caption");
             this.checkBoxExcludeVSI.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
@@ -3671,7 +3656,6 @@
             this.checkBoxWarranty.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.cUSTOMERBindingSource, "Warranty", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, "0"));
             resources.ApplyResources(this.checkBoxWarranty, "checkBoxWarranty");
             this.checkBoxWarranty.Name = "checkBoxWarranty";
-            this.checkBoxWarranty.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("checkBoxWarranty.Properties.Appearance.Font")));
             this.checkBoxWarranty.Properties.Appearance.Options.UseFont = true;
             this.checkBoxWarranty.Properties.Caption = resources.GetString("checkBoxWarranty.Properties.Caption");
             this.checkBoxWarranty.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
@@ -3698,7 +3682,6 @@
             this.textEditWarrantyCompany.Properties.AdvancedModeOptions.Label = resources.GetString("textEditWarrantyCompany.Properties.AdvancedModeOptions.Label");
             this.textEditWarrantyCompany.Properties.AdvancedModeOptions.LabelAppearance.Font = ((System.Drawing.Font)(resources.GetObject("textEditWarrantyCompany.Properties.AdvancedModeOptions.LabelAppearance.Font")));
             this.textEditWarrantyCompany.Properties.AdvancedModeOptions.LabelAppearance.Options.UseFont = true;
-            this.textEditWarrantyCompany.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textEditWarrantyCompany.Properties.Appearance.Font")));
             this.textEditWarrantyCompany.Properties.Appearance.Options.UseFont = true;
             this.textEditWarrantyCompany.Properties.Appearance.Options.UseTextOptions = true;
             this.textEditWarrantyCompany.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
@@ -3760,7 +3743,6 @@
             // 
             // buttonSendMail
             // 
-            this.buttonSendMail.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("buttonSendMail.Appearance.Font")));
             this.buttonSendMail.Appearance.Options.UseFont = true;
             this.buttonSendMail.Appearance.Options.UseTextOptions = true;
             this.buttonSendMail.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
@@ -3782,7 +3764,6 @@
             // 
             // buttonLetter
             // 
-            this.buttonLetter.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("buttonLetter.Appearance.Font")));
             this.buttonLetter.Appearance.Options.UseFont = true;
             this.buttonLetter.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("buttonLetter.ImageOptions.Image")));
             this.buttonLetter.ImageOptions.Location = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
@@ -3820,7 +3801,6 @@
             this.cUSTOMER_NOTextBox.Name = "cUSTOMER_NOTextBox";
             this.cUSTOMER_NOTextBox.Properties.Appearance.BackColor = System.Drawing.Color.Gold;
             this.cUSTOMER_NOTextBox.Properties.Appearance.BorderColor = System.Drawing.Color.White;
-            this.cUSTOMER_NOTextBox.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("cUSTOMER_NOTextBox.Properties.Appearance.Font")));
             this.cUSTOMER_NOTextBox.Properties.Appearance.Options.UseBackColor = true;
             this.cUSTOMER_NOTextBox.Properties.Appearance.Options.UseBorderColor = true;
             this.cUSTOMER_NOTextBox.Properties.Appearance.Options.UseFont = true;
@@ -4020,12 +4000,10 @@
             this.cUSTOMER_PURCHASE_ORDERTextBox.Name = "cUSTOMER_PURCHASE_ORDERTextBox";
             this.cUSTOMER_PURCHASE_ORDERTextBox.Properties.Appearance.BackColor = System.Drawing.Color.Gold;
             this.cUSTOMER_PURCHASE_ORDERTextBox.Properties.Appearance.BorderColor = System.Drawing.Color.White;
-            this.cUSTOMER_PURCHASE_ORDERTextBox.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("cUSTOMER_PURCHASE_ORDERTextBox.Properties.Appearance.Font")));
             this.cUSTOMER_PURCHASE_ORDERTextBox.Properties.Appearance.Options.UseBackColor = true;
             this.cUSTOMER_PURCHASE_ORDERTextBox.Properties.Appearance.Options.UseBorderColor = true;
             this.cUSTOMER_PURCHASE_ORDERTextBox.Properties.Appearance.Options.UseFont = true;
             this.cUSTOMER_PURCHASE_ORDERTextBox.Properties.AppearanceFocused.BorderColor = System.Drawing.Color.Black;
-            this.cUSTOMER_PURCHASE_ORDERTextBox.Properties.AppearanceFocused.Font = ((System.Drawing.Font)(resources.GetObject("cUSTOMER_PURCHASE_ORDERTextBox.Properties.AppearanceFocused.Font")));
             this.cUSTOMER_PURCHASE_ORDERTextBox.Properties.AppearanceFocused.Options.UseBorderColor = true;
             this.cUSTOMER_PURCHASE_ORDERTextBox.Properties.AppearanceFocused.Options.UseFont = true;
             this.cUSTOMER_PURCHASE_ORDERTextBox.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Simple;
@@ -4090,7 +4068,6 @@
             resources.ApplyResources(this.checkBoxVehicleWarranty, "checkBoxVehicleWarranty");
             this.checkBoxVehicleWarranty.MenuManager = this.toolbarFormManager1;
             this.checkBoxVehicleWarranty.Name = "checkBoxVehicleWarranty";
-            this.checkBoxVehicleWarranty.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("checkBoxVehicleWarranty.Properties.Appearance.Font")));
             this.checkBoxVehicleWarranty.Properties.Appearance.Options.UseFont = true;
             this.checkBoxVehicleWarranty.Properties.Caption = resources.GetString("checkBoxVehicleWarranty.Properties.Caption");
             this.checkBoxVehicleWarranty.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
@@ -4109,7 +4086,6 @@
             resources.ApplyResources(this.checkBoxRefi, "checkBoxRefi");
             this.checkBoxRefi.MenuManager = this.toolbarFormManager1;
             this.checkBoxRefi.Name = "checkBoxRefi";
-            this.checkBoxRefi.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("checkBoxRefi.Properties.Appearance.Font")));
             this.checkBoxRefi.Properties.Appearance.Options.UseFont = true;
             this.checkBoxRefi.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.checkBoxRefi.Properties.AppearanceDisabled.Options.UseForeColor = true;

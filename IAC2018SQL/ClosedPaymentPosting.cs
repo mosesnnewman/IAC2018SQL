@@ -672,9 +672,10 @@ namespace IAC2021SQL
             if (PAYMENTDataSet.PAYMENT.Rows[PaymentPos].Field<String>("PAYMENT_TYPE") == "F")
             {
                 PAYMENTDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].SetField<String>("CUSTHIST_PAY_REM_1", "RTCHG");
+                // Moses Newman 11/14/2024 Handle Active Duty Rate Change to 6%
                 PAYMENTDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].SetField<Decimal>("TVRateChange", 
                     (PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<String>("CUSTOMER_INT_OVERRIDE") == "Y") ? 
-                        0:PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_ANNUAL_PERCENTAGE_RATE"));
+                        0: PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<Boolean>("ActiveDuty") == true ? 6: PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_ANNUAL_PERCENTAGE_RATE"));
             }
             MovePaymenttoCustomer(PaymentPos, CustomerPos, ref PAYMENTDataSet, ref worker); //Calls ClosePaymentNewcontractStatus so this must happen before next line!
             PAYMENTDataSet.CUSTHIST.Rows[CUSTHISTBindingSource.Position].SetField<Decimal>("CUSTHIST_CONTRACT_STATUS", PAYMENTDataSet.CUSTOMER.Rows[CustomerPos].Field<Decimal>("CUSTOMER_CONTRACT_STATUS"));
@@ -1753,82 +1754,6 @@ namespace IAC2021SQL
                 MASTHISTTableAdapter.Dispose();
                 worker.ReportProgress(92);
             }
-        }
-
-        // Moses Newman 12/1/2014 Complete Partial Payment Late Fee Balance Paid Throughs and Number of Payments Made
-        public void GetPartialPaymentandLateFeeBalance(ref BackgroundWorker worker, String tsCustomerNo, ref IACDataSet DT, Int32 CustPos = 0, Boolean tbPayment = false,
-            Int32 tnPaymentPos = -1, Boolean tbPost = false, Boolean UpdateLast = false)
-        {
-            IACDataSetTableAdapters.CUSTOMERTableAdapter CUSTOMERTableAdapter = new IACDataSetTableAdapters.CUSTOMERTableAdapter();
-            IACDataSetTableAdapters.CUSTHISTTableAdapter CUSTHISTTableAdapter = new IACDataSetTableAdapters.CUSTHISTTableAdapter();
-            IACDataSetTableAdapters.TVAmortTableAdapter TVAmortTableAdapter = new IACDataSetTableAdapters.TVAmortTableAdapter();
-            IACDataSetTableAdapters.PAYMENTTableAdapter PAYMENTTableAdapter = new IACDataSetTableAdapters.PAYMENTTableAdapter();
-
-            Decimal lnSimpBal = 0;
-
-            if (DT.CUSTOMER.Rows.Count == 0)
-            {
-                CUSTOMERTableAdapter.Fill(DT.CUSTOMER, tsCustomerNo);
-                CustPos = 0;
-            }
-            if (DT.CUSTOMER.Rows.Count == 0)
-                return;
-
-            if (tbPayment && tnPaymentPos != -1)
-            {
-                lnSimpBal = Program.TVSimpleGetBuyout(DT, DT.PAYMENT.Rows[tnPaymentPos].Field<DateTime>("PAYMENT_DATE").Date,
-                                 (Double)DT.CUSTOMER.Rows[CustPos].Field<Int32>("CUSTOMER_TERM"),
-                                 (Double)(DT.CUSTOMER.Rows[CustPos].Field<Decimal>("CUSTOMER_ANNUAL_PERCENTAGE_RATE") / 100),
-                                 (Double)DT.CUSTOMER.Rows[CustPos].Field<Decimal>("CUSTOMER_REGULAR_AMOUNT"),
-                                 DT.CUSTOMER.Rows[CustPos].Field<String>("CUSTOMER_NO"),
-                                 // 04/30/2017 Handle BOTH Simple Interest and Normal Daily Compounding
-                                 // Moses Newman 04/02/2018 fixed Payment and PaymentPos parameters so TVSimpleGetBuyout knows to add payments!
-                                 DT.CUSTOMER.Rows[CustPos].Field<String>("CUSTOMER_AMORTIZE_IND") == "S" ? true : false, true, false, tbPayment, tnPaymentPos, true);
-            }
-            lnSimpleBalance = lnSimpBal;
-            TVAmortTableAdapter.FillByCustomerNo(DT.TVAmort, tsCustomerNo);
-            Program.FixLateandPartialBuckets(tsCustomerNo,tbPayment); // Moses Newman 09/19/2018 Tell FixLateandPartialBuckets to use ALL of todays payments for this customer!
-            TVAmortTableAdapter.FillByCustomerNo(DT.TVAmort, tsCustomerNo);
-            Int32 LastRow = DT.TVAmort.Rows.Count - 1, lnNumPay = 0;
-            Decimal lnLateCharge = 0;
-            Object loNumPay = null,loLateCharge = null;
-            loNumPay = TVAmortTableAdapter.NumberofPayments(tsCustomerNo);
-            if (loNumPay != null)
-                lnNumPay = (Int32)loNumPay;
-
-            loLateCharge = CUSTOMERTableAdapter.LateCharge(tsCustomerNo);
-            if (loLateCharge != null)
-                lnLateCharge = (Decimal)loLateCharge;
-
-            DT.CUSTOMER.Rows[CustPos].SetField<Decimal>("PartialPayment", DT.TVAmort.Rows[LastRow].Field<Decimal>("PartialPayment"));
-            // Moses Newman 04/24/2018 if the second to last row is a late use its latecharge!
-            if (DT.TVAmort.Rows[LastRow - 1].Field<String>("Event").Trim() != "LATE")
-                DT.CUSTOMER.Rows[CustPos].SetField<Decimal>("CUSTOMER_LATE_CHARGE", lnLateCharge);
-            else
-                DT.CUSTOMER.Rows[CustPos].SetField<Decimal>("CUSTOMER_LATE_CHARGE", DT.TVAmort.Rows[LastRow - 1].Field<Decimal>("LateFee"));
-            DT.CUSTOMER.Rows[CustPos].SetField<Decimal>("CUSTOMER_LATE_CHARGE_BAL", DT.TVAmort.Rows[LastRow].Field<Decimal?>("LateFeeBalance") != null ? DT.TVAmort.Rows[LastRow].Field<Decimal>("LateFeeBalance"):0);
-
-            DT.CUSTOMER.Rows[CustPos].SetField<Int32>("CUSTOMER_NO_OF_PAYMENTS_MADE", lnNumPay);
-            DT.CUSTOMER.Rows[CustPos].SetField<Int32>("CUSTOMER_PAY_REM_2", DT.CUSTOMER.Rows[CustPos].Field<Int32>("CUSTOMER_TERM") - lnNumPay);
-            DT.CUSTOMER.Rows[CustPos].SetField<String>("CUSTOMER_PAID_THRU", 
-                            DT.TVAmort.Rows[LastRow].Field<DateTime>("PaidThrough").Date.Month.ToString().Trim().PadLeft(2, '0') + 
-                            DT.TVAmort.Rows[LastRow].Field<DateTime>("Paidthrough").Date.Year.ToString().Trim().Substring(2, 2));
-            if (DT.TVAmort.Rows[LastRow - 1].Field<Decimal?>("ContractStatus") != null)
-                DT.CUSTOMER.Rows[CustPos].SetField<Decimal>("CUSTOMER_CONTRACT_STATUS", DT.TVAmort.Rows[LastRow - 1].Field<Decimal>("ContractStatus"));
-            else
-                DT.CUSTOMER.Rows[CustPos].SetField<Decimal>("CUSTOMER_CONTRACT_STATUS", 0);
-            DT.CUSTOMER.Rows[CustPos].EndEdit();
-            // Moses Newman 12/22/2014 DO NOT Update Customer Record Unless Posting!
-            if (tbPost)
-            {
-                CUSTOMERTableAdapter.Update(DT.CUSTOMER.Rows[CustPos]);
-                if (UpdateLast)
-                    CUSTHISTTableAdapter.UpdateLastRecord(tsCustomerNo);
-            }
-            CUSTOMERTableAdapter.Dispose();
-            CUSTHISTTableAdapter.Dispose();
-            PAYMENTTableAdapter.Dispose();
-            TVAmortTableAdapter.Dispose();
         }
 
         // Moses Newman 05/19/2023 Use new Invoices table for all calculations instead of Program.FixLateandPartialBuckets!

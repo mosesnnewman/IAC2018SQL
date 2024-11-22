@@ -4683,7 +4683,7 @@
     <value>72, 55</value>
   </data>
   <data name="label127.Size" type="System.Drawing.Size, System.Drawing">
-    <value>51, 13</value>
+    <value>75, 20</value>
   </data>
   <data name="label127.TabIndex" type="System.Int32, mscorlib">
     <value>106</value>
@@ -7381,9 +7381,6 @@
   <data name="xtraTabPageCustInfo1.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>None</value>
   </data>
-  <data name="labelControl7.Appearance.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt</value>
-  </data>
   <data name="labelControl7.Location" type="System.Drawing.Point, System.Drawing">
     <value>522, 132</value>
   </data>
@@ -7427,10 +7424,10 @@
     <value>Bottom</value>
   </data>
   <data name="standaloneBarDockControl1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 657</value>
+    <value>0, 654</value>
   </data>
   <data name="standaloneBarDockControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1231, 27</value>
+    <value>1231, 30</value>
   </data>
   <data name="standaloneBarDockControl1.Text" xml:space="preserve">
     <value>standaloneBarDockControl1</value>
@@ -7451,7 +7448,7 @@
     <value>Bottom</value>
   </data>
   <data name="barDockControlBottom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 710</value>
+    <value>0, 707</value>
   </data>
   <data name="barDockControlBottom.Size" type="System.Drawing.Size, System.Drawing">
     <value>1238, 0</value>
@@ -7475,7 +7472,7 @@
     <value>0, 0</value>
   </data>
   <data name="barDockControlLeft.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 710</value>
+    <value>0, 707</value>
   </data>
   <data name="&gt;&gt;barDockControlLeft.Name" xml:space="preserve">
     <value>barDockControlLeft</value>
@@ -7496,7 +7493,7 @@
     <value>1238, 0</value>
   </data>
   <data name="barDockControlRight.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 710</value>
+    <value>0, 707</value>
   </data>
   <data name="&gt;&gt;barDockControlRight.Name" xml:space="preserve">
     <value>barDockControlRight</value>
@@ -7537,9 +7534,6 @@
   <data name="textEditDealerName.Location" type="System.Drawing.Point, System.Drawing">
     <value>288, 517</value>
   </data>
-  <data name="textEditDealerName.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt</value>
-  </data>
   <data name="textEditDealerName.Size" type="System.Drawing.Size, System.Drawing">
     <value>285, 26</value>
   </data>
@@ -7560,9 +7554,6 @@
   </data>
   <data name="cUSTOMER_DEALERcomboBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>171, 517</value>
-  </data>
-  <data name="cUSTOMER_DEALERcomboBox.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="cUSTOMER_DEALERcomboBox.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v24.1">
     <value>Combo</value>
@@ -7645,9 +7636,6 @@
   <data name="checkEditAllotment.Location" type="System.Drawing.Point, System.Drawing">
     <value>587, 293</value>
   </data>
-  <data name="checkEditAllotment.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt</value>
-  </data>
   <data name="checkEditAllotment.Properties.Caption" xml:space="preserve">
     <value>ALLOTMENT PROG?</value>
   </data>
@@ -7678,9 +7666,6 @@
   <data name="checkEditMilitary.Location" type="System.Drawing.Point, System.Drawing">
     <value>663, 464</value>
   </data>
-  <data name="checkEditMilitary.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt</value>
-  </data>
   <data name="checkEditMilitary.Properties.Caption" xml:space="preserve">
     <value>MILITARY?</value>
   </data>
@@ -7707,9 +7692,6 @@
   </data>
   <data name="checkEditNoContact.Location" type="System.Drawing.Point, System.Drawing">
     <value>634, 428</value>
-  </data>
-  <data name="checkEditNoContact.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="checkEditNoContact.Properties.Caption" xml:space="preserve">
     <value>NO CONTACT?</value>
@@ -7741,9 +7723,6 @@
   <data name="checkEditWrongAddress.Location" type="System.Drawing.Point, System.Drawing">
     <value>587, 396</value>
   </data>
-  <data name="checkEditWrongAddress.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt</value>
-  </data>
   <data name="checkEditWrongAddress.Properties.Caption" xml:space="preserve">
     <value>WRONG ADDRESS?</value>
   </data>
@@ -7774,9 +7753,6 @@
   <data name="checkEditAutoPay.Location" type="System.Drawing.Point, System.Drawing">
     <value>657, 225</value>
   </data>
-  <data name="checkEditAutoPay.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt</value>
-  </data>
   <data name="checkEditAutoPay.Properties.Caption" xml:space="preserve">
     <value>AUTOPAY?</value>
   </data>
@@ -7803,9 +7779,6 @@
   </data>
   <data name="checkEditCustomerInsurance.Location" type="System.Drawing.Point, System.Drawing">
     <value>637, 191</value>
-  </data>
-  <data name="checkEditCustomerInsurance.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="checkEditCustomerInsurance.Properties.Caption" xml:space="preserve">
     <value>INSURANCE?</value>
@@ -7864,9 +7837,6 @@
   <data name="colorCheckBoxReceivedContract.Location" type="System.Drawing.Point, System.Drawing">
     <value>897, 518</value>
   </data>
-  <data name="colorCheckBoxReceivedContract.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt</value>
-  </data>
   <data name="colorCheckBoxReceivedContract.Properties.Caption" xml:space="preserve">
     <value>Received Contract?</value>
   </data>
@@ -7890,9 +7860,6 @@
   </data>
   <data name="checkBoxFullRecourseTab1.Location" type="System.Drawing.Point, System.Drawing">
     <value>756, 518</value>
-  </data>
-  <data name="checkBoxFullRecourseTab1.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="checkBoxFullRecourseTab1.Properties.Caption" xml:space="preserve">
     <value>Full Recourse?</value>
@@ -7920,9 +7887,6 @@
   </data>
   <data name="txtDOB.Location" type="System.Drawing.Point, System.Drawing">
     <value>171, 393</value>
-  </data>
-  <data name="txtDOB.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="txtDOB.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v24.1">
     <value>Combo</value>
@@ -7957,9 +7921,6 @@
   <data name="nullableDateTimePickerDateContractReceived.Location" type="System.Drawing.Point, System.Drawing">
     <value>1068, 511</value>
   </data>
-  <data name="nullableDateTimePickerDateContractReceived.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt</value>
-  </data>
   <data name="nullableDateTimePickerDateContractReceived.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v24.1">
     <value>Combo</value>
   </data>
@@ -7989,9 +7950,6 @@
   </data>
   <data name="&gt;&gt;nullableDateTimePickerDateContractReceived.ZOrder" xml:space="preserve">
     <value>14</value>
-  </data>
-  <data name="buttonDealerEmail.Appearance.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="buttonDealerEmail.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -8405,9 +8363,6 @@
   <data name="checkBoxExcludeVSI.Location" type="System.Drawing.Point, System.Drawing">
     <value>64, 128</value>
   </data>
-  <data name="checkBoxExcludeVSI.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt</value>
-  </data>
   <data name="checkBoxExcludeVSI.Properties.Caption" xml:space="preserve">
     <value>Exclude VSI</value>
   </data>
@@ -8431,9 +8386,6 @@
   </data>
   <data name="checkBoxWarranty.Location" type="System.Drawing.Point, System.Drawing">
     <value>64, 106</value>
-  </data>
-  <data name="checkBoxWarranty.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="checkBoxWarranty.Properties.Caption" xml:space="preserve">
     <value>Warranty</value>
@@ -8488,9 +8440,6 @@
   </data>
   <data name="textEditWarrantyCompany.Properties.AdvancedModeOptions.LabelAppearance.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 8.25pt</value>
-  </data>
-  <data name="textEditWarrantyCompany.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="textEditWarrantyCompany.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v24.1">
     <value>Combo</value>
@@ -8741,9 +8690,6 @@
   <data name="&gt;&gt;richTextBoxEmailAddress.ZOrder" xml:space="preserve">
     <value>33</value>
   </data>
-  <data name="buttonSendMail.Appearance.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt</value>
-  </data>
   <data name="buttonSendMail.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAA50RVh0VGl0
@@ -8836,9 +8782,6 @@
   </data>
   <data name="&gt;&gt;labelCustinRepo.ZOrder" xml:space="preserve">
     <value>35</value>
-  </data>
-  <data name="buttonLetter.Appearance.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="buttonLetter.ImageOptions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -8996,9 +8939,6 @@
   </data>
   <data name="cUSTOMER_NOTextBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>171, 20</value>
-  </data>
-  <data name="cUSTOMER_NOTextBox.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="cUSTOMER_NOTextBox.Properties.BeepOnError" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -9597,12 +9537,6 @@
   <data name="cUSTOMER_PURCHASE_ORDERTextBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>479, 20</value>
   </data>
-  <data name="cUSTOMER_PURCHASE_ORDERTextBox.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt</value>
-  </data>
-  <data name="cUSTOMER_PURCHASE_ORDERTextBox.Properties.AppearanceFocused.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt</value>
-  </data>
   <data name="cUSTOMER_PURCHASE_ORDERTextBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>67, 26</value>
   </data>
@@ -9732,9 +9666,6 @@
   <data name="checkBoxVehicleWarranty.Location" type="System.Drawing.Point, System.Drawing">
     <value>24, 49</value>
   </data>
-  <data name="checkBoxVehicleWarranty.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt</value>
-  </data>
   <data name="checkBoxVehicleWarranty.Properties.Caption" xml:space="preserve">
     <value>WARRANTY?</value>
   </data>
@@ -9758,9 +9689,6 @@
   </data>
   <data name="checkBoxRefi.Location" type="System.Drawing.Point, System.Drawing">
     <value>24, 23</value>
-  </data>
-  <data name="checkBoxRefi.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="checkBoxRefi.Properties.Caption" xml:space="preserve">
     <value>REFINANCE?</value>
@@ -9880,7 +9808,7 @@
     <value>0, 0</value>
   </data>
   <data name="groupBox10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1230, 680</value>
+    <value>1230, 670</value>
   </data>
   <data name="groupBox10.TabIndex" type="System.Int32, mscorlib">
     <value>34</value>
@@ -9901,7 +9829,7 @@
     <value>0</value>
   </data>
   <data name="xtraTabPageCustInfo1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1230, 680</value>
+    <value>1230, 670</value>
   </data>
   <data name="xtraTabPageCustInfo1.Text" xml:space="preserve">
     <value>Customer Info</value>
@@ -9925,7 +9853,7 @@
     <value>True</value>
   </data>
   <data name="xtraTabControlCustomerMaint.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1238, 710</value>
+    <value>1238, 707</value>
   </data>
   <data name="xtraTabControlCustomerMaint.TabIndex" type="System.Int32, mscorlib">
     <value>220</value>
@@ -11416,7 +11344,7 @@
     <value>0</value>
   </data>
   <data name="xtraTabPageCustInfo2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1230, 680</value>
+    <value>1230, 670</value>
   </data>
   <data name="xtraTabPageCustInfo2.Text" xml:space="preserve">
     <value>Customer Info 2</value>
@@ -13387,7 +13315,7 @@
     <value>0</value>
   </data>
   <data name="xtraTabPageVehicle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1230, 680</value>
+    <value>1230, 670</value>
   </data>
   <data name="xtraTabPageVehicle.Text" xml:space="preserve">
     <value>Vehicle Info</value>
@@ -15221,7 +15149,7 @@
     <value>0</value>
   </data>
   <data name="xtraTabPageCosigner.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1230, 680</value>
+    <value>1230, 670</value>
   </data>
   <data name="xtraTabPageCosigner.Text" xml:space="preserve">
     <value>Cosigner Info</value>
@@ -15587,7 +15515,7 @@
     <value>0</value>
   </data>
   <data name="xtraTabPageEFT.Size" type="System.Drawing.Size, System.Drawing">
-    <value>455, 343</value>
+    <value>455, 336</value>
   </data>
   <data name="xtraTabPageEFT.Text" xml:space="preserve">
     <value>EFT / eCheck</value>
@@ -16133,7 +16061,7 @@
     <value>0</value>
   </data>
   <data name="xtraTabPageMultiPay.Size" type="System.Drawing.Size, System.Drawing">
-    <value>455, 343</value>
+    <value>455, 336</value>
   </data>
   <data name="xtraTabPageMultiPay.Text" xml:space="preserve">
     <value>Split Payment</value>
@@ -16337,7 +16265,7 @@
     <value>0</value>
   </data>
   <data name="xtraTabPageCreditCard.Size" type="System.Drawing.Size, System.Drawing">
-    <value>455, 343</value>
+    <value>455, 336</value>
   </data>
   <data name="xtraTabPageCreditCard.Text" xml:space="preserve">
     <value>Credit Card</value>
@@ -16613,7 +16541,7 @@
     <value>0</value>
   </data>
   <data name="xtraTabPageBank.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1230, 680</value>
+    <value>1230, 670</value>
   </data>
   <data name="xtraTabPageBank.Text" xml:space="preserve">
     <value>Bank Info</value>
@@ -17792,7 +17720,7 @@
     <value>0</value>
   </data>
   <data name="xtraTabPageHistory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1230, 680</value>
+    <value>1230, 670</value>
   </data>
   <data name="xtraTabPageHistory.Text" xml:space="preserve">
     <value>Customer History</value>
@@ -18239,7 +18167,7 @@
     <value>0</value>
   </data>
   <data name="xtraTabPageInvoices.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1230, 680</value>
+    <value>1230, 670</value>
   </data>
   <data name="xtraTabPageInvoices.Text" xml:space="preserve">
     <value>Invoices</value>
@@ -18748,7 +18676,7 @@
     <value>0</value>
   </data>
   <data name="xtraTabPageComments.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1230, 680</value>
+    <value>1230, 670</value>
   </data>
   <data name="xtraTabPageComments.Text" xml:space="preserve">
     <value>Customer Comments</value>
@@ -19303,7 +19231,7 @@
     <value>0</value>
   </data>
   <data name="xtraTabPageCustomerFees.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1230, 680</value>
+    <value>1230, 670</value>
   </data>
   <data name="xtraTabPageCustomerFees.Text" xml:space="preserve">
     <value>Fees</value>
@@ -19861,7 +19789,7 @@
     <value>0</value>
   </data>
   <data name="xtraTabPageRepoHistory.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1230, 680</value>
+    <value>1230, 670</value>
   </data>
   <data name="xtraTabPageRepoHistory.Text" xml:space="preserve">
     <value>Repo History</value>
@@ -20257,7 +20185,7 @@
     <value>Override?</value>
   </data>
   <data name="checkBoxECOACode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>84, 22</value>
+    <value>84, 24</value>
   </data>
   <data name="checkBoxECOACode.TabIndex" type="System.Int32, mscorlib">
     <value>40</value>
@@ -20281,7 +20209,7 @@
     <value>Override?</value>
   </data>
   <data name="checkBoxPaymentProfile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>84, 22</value>
+    <value>84, 24</value>
   </data>
   <data name="checkBoxPaymentProfile.TabIndex" type="System.Int32, mscorlib">
     <value>47</value>
@@ -20305,7 +20233,7 @@
     <value>Override?</value>
   </data>
   <data name="checkBoxComplianceCode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>84, 22</value>
+    <value>84, 24</value>
   </data>
   <data name="checkBoxComplianceCode.TabIndex" type="System.Int32, mscorlib">
     <value>38</value>
@@ -20329,7 +20257,7 @@
     <value>Override?</value>
   </data>
   <data name="checkBoxConsumerIndicator.Size" type="System.Drawing.Size, System.Drawing">
-    <value>84, 22</value>
+    <value>84, 24</value>
   </data>
   <data name="checkBoxConsumerIndicator.TabIndex" type="System.Int32, mscorlib">
     <value>36</value>
@@ -20353,7 +20281,7 @@
     <value>Override?</value>
   </data>
   <data name="checkBoxAccountType.Size" type="System.Drawing.Size, System.Drawing">
-    <value>84, 22</value>
+    <value>84, 24</value>
   </data>
   <data name="checkBoxAccountType.TabIndex" type="System.Int32, mscorlib">
     <value>34</value>
@@ -20377,7 +20305,7 @@
     <value>Override?</value>
   </data>
   <data name="checkBoxSpecialComment.Size" type="System.Drawing.Size, System.Drawing">
-    <value>84, 22</value>
+    <value>84, 24</value>
   </data>
   <data name="checkBoxSpecialComment.TabIndex" type="System.Int32, mscorlib">
     <value>32</value>
@@ -20401,7 +20329,7 @@
     <value>Override?</value>
   </data>
   <data name="checkBoxPaymentRating.Size" type="System.Drawing.Size, System.Drawing">
-    <value>84, 22</value>
+    <value>84, 24</value>
   </data>
   <data name="checkBoxPaymentRating.TabIndex" type="System.Int32, mscorlib">
     <value>30</value>
@@ -20425,7 +20353,7 @@
     <value>Override?</value>
   </data>
   <data name="checkBoxAccountStatus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>84, 22</value>
+    <value>84, 24</value>
   </data>
   <data name="checkBoxAccountStatus.TabIndex" type="System.Int32, mscorlib">
     <value>28</value>
@@ -21523,7 +21451,7 @@
     <value>Purge</value>
   </data>
   <data name="checkBoxPurge.Size" type="System.Drawing.Size, System.Drawing">
-    <value>61, 22</value>
+    <value>61, 24</value>
   </data>
   <data name="checkBoxPurge.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -21574,7 +21502,7 @@
     <value>Report</value>
   </data>
   <data name="checkBoxReportTSB.Size" type="System.Drawing.Size, System.Drawing">
-    <value>67, 22</value>
+    <value>67, 24</value>
   </data>
   <data name="checkBoxReportTSB.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -21769,7 +21697,7 @@
     <value>0</value>
   </data>
   <data name="xtraTabPageTSB.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1230, 680</value>
+    <value>1230, 670</value>
   </data>
   <data name="xtraTabPageTSB.Text" xml:space="preserve">
     <value>TSB</value>
@@ -22164,10 +22092,10 @@
     <value>Bottom</value>
   </data>
   <data name="barDockControl1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 710</value>
+    <value>0, 707</value>
   </data>
   <data name="barDockControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1238, 27</value>
+    <value>1238, 30</value>
   </data>
   <data name="&gt;&gt;barDockControl1.Name" xml:space="preserve">
     <value>barDockControl1</value>
@@ -22188,7 +22116,7 @@
     <value>1238, 0</value>
   </data>
   <data name="barDockControl3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 710</value>
+    <value>0, 707</value>
   </data>
   <data name="&gt;&gt;barDockControl3.Name" xml:space="preserve">
     <value>barDockControl3</value>
@@ -22203,7 +22131,7 @@
     <value>5</value>
   </data>
   <data name="barDockControl2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 710</value>
+    <value>0, 707</value>
   </data>
   <data name="&gt;&gt;barDockControl2.Name" xml:space="preserve">
     <value>barDockControl2</value>
