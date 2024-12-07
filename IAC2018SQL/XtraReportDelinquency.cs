@@ -33,8 +33,11 @@ namespace IAC2021SQL
                 NextDueDate = DateTime.Parse(MonthPart + "/" + DayPart + "/" + YearPart).AddMonths(1);
 
             DateDiff = (DateTime)gdCurrentDate.Value - NextDueDate;
-            DaysDelinquent = (Int32)DateDiff.TotalDays;
 
+            DaysDelinquent = (Int32)DateDiff.TotalDays;
+            /*Int32 MonthsDelinquent = DaysDelinquent / 30;
+
+            DaysDelinquent = MonthsDelinquent * (Int32)30;*/
             if (DaysDelinquent > 0)
                 e.Value = DaysDelinquent;
             else

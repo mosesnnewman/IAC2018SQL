@@ -109,6 +109,7 @@ namespace IAC2021SQL
             this.Text18 = new DevExpress.XtraReports.UI.XRLabel();
             this.GrandTotalDelinquentCount1 = new DevExpress.XtraReports.UI.XRLabel();
             this.ReportFooterSection2 = new DevExpress.XtraReports.UI.SubBand();
+            this.SubreportDelinquencyDealerSummary = new DevExpress.XtraReports.UI.XRSubreport();
             this.gsUserID = new DevExpress.XtraReports.Parameters.Parameter();
             this.gsUserName = new DevExpress.XtraReports.Parameters.Parameter();
             this.gnAgedMonths = new DevExpress.XtraReports.Parameters.Parameter();
@@ -141,7 +142,6 @@ namespace IAC2021SQL
             this.xrLabel4 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel5 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLabel6 = new DevExpress.XtraReports.UI.XRLabel();
-            this.SubreportDelinquencyDealerSummary = new DevExpress.XtraReports.UI.XRSubreport();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // Area3
@@ -912,7 +912,7 @@ namespace IAC2021SQL
             this.gdCurrentDate1.LocationFloat = new DevExpress.Utils.PointFloat(533.3333F, 153.3333F);
             this.gdCurrentDate1.Name = "gdCurrentDate1";
             this.gdCurrentDate1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.gdCurrentDate1.SizeF = new System.Drawing.SizeF(75F, 15.34722F);
+            this.gdCurrentDate1.SizeF = new System.Drawing.SizeF(103.125F, 15.34721F);
             this.gdCurrentDate1.StylePriority.UseFont = false;
             this.gdCurrentDate1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             this.gdCurrentDate1.TextFormatString = "{0:MM/dd/yyyy}";
@@ -1061,6 +1061,18 @@ namespace IAC2021SQL
             this.ReportFooterSection2.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.ReportFooterSection2.PageBreak = DevExpress.XtraReports.UI.PageBreak.BeforeBand;
             this.ReportFooterSection2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            // 
+            // SubreportDelinquencyDealerSummary
+            // 
+            this.SubreportDelinquencyDealerSummary.GenerateOwnPages = true;
+            this.SubreportDelinquencyDealerSummary.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
+            this.SubreportDelinquencyDealerSummary.Name = "SubreportDelinquencyDealerSummary";
+            this.SubreportDelinquencyDealerSummary.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gsUserID", this.gsUserID));
+            this.SubreportDelinquencyDealerSummary.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gsUserName", this.gsUserName));
+            this.SubreportDelinquencyDealerSummary.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gnAgedMonths", this.gnAgedMonths));
+            this.SubreportDelinquencyDealerSummary.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gdCurrentDate", this.gdCurrentDate));
+            this.SubreportDelinquencyDealerSummary.ReportSource = new IAC2021SQL.XtraReportClosedDelinquencySummarySubreport();
+            this.SubreportDelinquencyDealerSummary.SizeF = new System.Drawing.SizeF(1050F, 50F);
             // 
             // gsUserID
             // 
@@ -1492,18 +1504,6 @@ namespace IAC2021SQL
             this.xrLabel6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
             this.xrLabel6.TextFormatString = "{0:C2}";
             // 
-            // SubreportDelinquencyDealerSummary
-            // 
-            this.SubreportDelinquencyDealerSummary.GenerateOwnPages = true;
-            this.SubreportDelinquencyDealerSummary.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
-            this.SubreportDelinquencyDealerSummary.Name = "SubreportDelinquencyDealerSummary";
-            this.SubreportDelinquencyDealerSummary.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gsUserID", this.gsUserID));
-            this.SubreportDelinquencyDealerSummary.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gsUserName", this.gsUserName));
-            this.SubreportDelinquencyDealerSummary.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gnAgedMonths", this.gnAgedMonths));
-            this.SubreportDelinquencyDealerSummary.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gdCurrentDate", this.gdCurrentDate));
-            this.SubreportDelinquencyDealerSummary.ReportSource = new IAC2021SQL.XtraReportClosedDelinquencySummarySubreport();
-            this.SubreportDelinquencyDealerSummary.SizeF = new System.Drawing.SizeF(1050F, 50F);
-            // 
             // XtraReportDelinquency
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -1549,7 +1549,7 @@ namespace IAC2021SQL
             this.gnAgedMonths,
             this.gdCurrentDate});
             this.ScriptsSource = resources.GetString("$this.ScriptsSource");
-            this.Version = "23.2";
+            this.Version = "24.1";
             xrWatermark1.Id = "Watermark1";
             this.Watermarks.AddRange(new DevExpress.XtraPrinting.Drawing.Watermark[] {
             xrWatermark1});
