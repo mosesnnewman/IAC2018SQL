@@ -132,8 +132,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator)).BeginInit();
             this.bindingNavigator.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dateTimePickerPostDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateTimePickerPostDate.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateTimePickerPostDate.Properties.CalendarTimeProperties)).BeginInit();
             this.SuspendLayout();
             // 
             // cUSTOMER_DEALERLabel
@@ -385,7 +385,7 @@
             this.DealerInfogroupBox.Controls.Add(label2);
             this.DealerInfogroupBox.Controls.Add(this.dEALER_NAMETextBox);
             this.DealerInfogroupBox.Controls.Add(cUSTOMER_DEALERLabel);
-            this.DealerInfogroupBox.Location = new System.Drawing.Point(287, 21);
+            this.DealerInfogroupBox.Location = new System.Drawing.Point(221, 33);
             this.DealerInfogroupBox.Name = "DealerInfogroupBox";
             this.DealerInfogroupBox.Size = new System.Drawing.Size(459, 178);
             this.DealerInfogroupBox.TabIndex = 175;
@@ -412,7 +412,7 @@
             this.DEALERcomboBox.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.Standard;
             this.DEALERcomboBox.Properties.ValidateOnEnterKey = true;
             this.DEALERcomboBox.Properties.ValueMember = "id";
-            this.DEALERcomboBox.Size = new System.Drawing.Size(114, 20);
+            this.DEALERcomboBox.Size = new System.Drawing.Size(114, 26);
             this.DEALERcomboBox.TabIndex = 0;
             this.DEALERcomboBox.EditValueChanged += new System.EventHandler(this.DEALERcomboBox_EditValueChanged);
             this.DEALERcomboBox.Validated += new System.EventHandler(this.DEALERcomboBox_Validated);
@@ -597,6 +597,7 @@
             // 
             this.toolStripTextBox1.AccessibleName = "Position";
             this.toolStripTextBox1.AutoSize = false;
+            this.toolStripTextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.toolStripTextBox1.Name = "toolStripTextBox1";
             this.toolStripTextBox1.Size = new System.Drawing.Size(50, 21);
             this.toolStripTextBox1.Text = "0";
@@ -875,9 +876,9 @@
             this.groupBox2.Controls.Add(this.textBoxContingentReserve);
             this.groupBox2.Controls.Add(label21);
             this.groupBox2.Controls.Add(this.textBoxDealerLossReserve);
-            this.groupBox2.Location = new System.Drawing.Point(179, 203);
+            this.groupBox2.Location = new System.Drawing.Point(179, 215);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(542, 322);
+            this.groupBox2.Size = new System.Drawing.Size(542, 326);
             this.groupBox2.TabIndex = 177;
             this.groupBox2.TabStop = false;
             this.groupBox2.UseCompatibleTextRendering = true;
