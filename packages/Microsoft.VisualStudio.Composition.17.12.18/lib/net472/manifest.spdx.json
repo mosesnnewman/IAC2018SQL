@@ -1,0 +1,68 @@
+{
+  "files": [
+    {
+      "fileName": "./Microsoft.VisualStudio.Composition.dll.lce",
+      "SPDXID": "SPDXRef-File--Microsoft.VisualStudio.Composition.dll.lce-10998091BE0B6AB0E0C177B0762CCF39240EA3C1",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "9deab5f97c471edac90befda34babf56c95046255f2159d9f213785754753816"
+        },
+        {
+          "algorithm": "SHA1",
+          "checksumValue": "10998091be0b6ab0e0c177b0762ccf39240ea3c1"
+        }
+      ],
+      "licenseConcluded": "NOASSERTION",
+      "licenseInfoInFiles": [
+        "NOASSERTION"
+      ],
+      "copyrightText": "NOASSERTION"
+    }
+  ],
+  "packages": [
+    {
+      "name": "Microsoft.VisualStudio.Composition",
+      "SPDXID": "SPDXRef-RootPackage",
+      "downloadLocation": "NOASSERTION",
+      "packageVerificationCode": {
+        "packageVerificationCodeValue": "e89dfdf037a561f98d17310bbc76d5f518316c93"
+      },
+      "filesAnalyzed": true,
+      "licenseConcluded": "NOASSERTION",
+      "licenseInfoFromFiles": [
+        "NOASSERTION"
+      ],
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "versionInfo": "1.0.0",
+      "supplier": "Organization: Microsoft",
+      "hasFiles": [
+        "SPDXRef-File--Microsoft.VisualStudio.Composition.dll.lce-10998091BE0B6AB0E0C177B0762CCF39240EA3C1"
+      ]
+    }
+  ],
+  "externalDocumentRefs": [],
+  "relationships": [
+    {
+      "relationshipType": "DESCRIBES",
+      "relatedSpdxElement": "SPDXRef-RootPackage",
+      "spdxElementId": "SPDXRef-DOCUMENT"
+    }
+  ],
+  "spdxVersion": "SPDX-2.2",
+  "dataLicense": "CC0-1.0",
+  "SPDXID": "SPDXRef-DOCUMENT",
+  "name": "Microsoft.VisualStudio.Composition 1.0.0",
+  "documentNamespace": "https://sbom.microsoft/1:34sbAVZth0--DQCSE2iE2Q:kMXbC2KgP0yw9pOD9nhl7g/8124:10182292/Microsoft.VisualStudio.Composition:1.0.0:uSeNB6o7xECimuZvjF0FBA",
+  "creationInfo": {
+    "created": "2024-09-07T03:09:46Z",
+    "creators": [
+      "Organization: Microsoft",
+      "Tool: Microsoft.SBOMTool-0.2.7"
+    ]
+  },
+  "documentDescribes": [
+    "SPDXRef-RootPackage"
+  ]
+}

@@ -99,8 +99,8 @@ namespace IAC2021SQL
             StartupConfiguration();
             PerformAutoScale();
             // Moses Newman 07/14/2020 Set DataBindings NullValue to string.Empty to prevent getting stuck in blank field.
-            textBoxCosignerTierPoints.DataBindings["Text"].NullValue = string.Empty;
-            textBoxTier.DataBindings["Text"].NullValue = string.Empty;
+            textBoxCosignerTierPoints.DataBindings["EditValue"].NullValue = string.Empty;
+            textBoxTier.DataBindings["EditValue"].NullValue = string.Empty;
             // Moses Newman 02/28/2021
             nullableDateTimePickerDateContractReceived.Visible = false;
             /*DataGridViewRow row2 = cUSTHISTDataGridView.RowTemplate;
@@ -110,21 +110,29 @@ namespace IAC2021SQL
             cTB.Size = this.cUSTHISTDataGridView.GetCellDisplayRectangle(4, row2.Index, true).Size;*/
             this.cUSTOMER_DEALERcomboBox.EditValueChanged += new System.EventHandler(this.cUSTOMER_DEALERcomboBox_EditValueChanged);
             warrantyCompanyTableAdapter.FillByAll(iACDataSet.WarrantyCompany);
-            layoutControlGroup1.AppearanceGroup.BackColor = Color.LightSteelBlue;
+            layoutControlGroupLoanInfoTop.AppearanceGroup.BackColor = Color.LightSteelBlue;
 
-            //layoutControl1.LookAndFeel.SkinName = DevExpress.LookAndFeel.SkinStyle.WXI;
+            layoutControlCustomerInfo.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Style3D;
+            layoutControlCustomerInfo.LookAndFeel.UseDefaultLookAndFeel = false;
+            layoutControlCustomerInfo.OptionsView.ShareLookAndFeelWithChildren = false;
             layoutControlCustInfo2.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Style3D;
             layoutControlCustInfo2.LookAndFeel.UseDefaultLookAndFeel = false;
             layoutControlCustInfo2.OptionsView.ShareLookAndFeelWithChildren = false;
             layoutControlItemActiveDuty.TextVisible = false;
             layoutControlItemActiveDutyStart.TextVisible = false;
             layoutControlItemActiveDutyEnd.TextVisible = false;
-            layoutControlVehicleInfo.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
+            layoutControlVehicleInfo.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Style3D;
             layoutControlVehicleInfo.LookAndFeel.UseDefaultLookAndFeel = false;
             layoutControlVehicleInfo.OptionsView.ShareLookAndFeelWithChildren = false;
+            layoutControlCosignerInfo.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Style3D;
+            layoutControlCosignerInfo.LookAndFeel.UseDefaultLookAndFeel = false;
+            layoutControlCosignerInfo.OptionsView.ShareLookAndFeelWithChildren = false;
             layoutControlRepo.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Style3D;
             layoutControlRepo.LookAndFeel.UseDefaultLookAndFeel = false;
             layoutControlRepo.OptionsView.ShareLookAndFeelWithChildren = false;
+            layoutControlTSB.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Style3D;
+            layoutControlTSB.LookAndFeel.UseDefaultLookAndFeel = false;
+            layoutControlTSB.OptionsView.ShareLookAndFeelWithChildren = false;
             checkEditActiveDuty.Visible = false;
             dateEditActiveDutyStart.Visible = false;
             dateEditActiveDutyEnd.Visible = false;
@@ -243,6 +251,8 @@ namespace IAC2021SQL
             }
             else
                 checkBoxVehicleWarranty.ForeColor = SystemColors.ControlText;
+            hyperLinkEditWarrantyEmail.Enabled = false;
+            hyperLinkEditGAPEmail.Enabled = false;
             comboBoxLetterNo.Enabled = true;
             comboBoxLetterType.Enabled = true;
             buttonLetter.Enabled = true;
@@ -250,8 +260,8 @@ namespace IAC2021SQL
             textBoxMiddleName.Enabled = false;
             comboBoxGAP.Enabled = false;
             // Moses Newman 06/01/2022 Add Warranty Company
-            textEditWarrantyCompany.Enabled = false;
             checkBoxWarranty.Enabled = false;
+            textEditWarrantyCompany.Enabled = false;
             // Moses Newman 01/24/2018 added ExcludeVSI
             checkBoxExcludeVSI.Enabled = false;
             textBoxTIN.Enabled = false;
@@ -285,12 +295,12 @@ namespace IAC2021SQL
                     layoutControlItemActiveDutyEnd.TextVisible = true;
                     layoutControlItemActiveDutyEnd.ContentVisible = true;
                     layoutControlItemActiveDutyEnd.Control.Enabled = false;
-                    checkEditActiveDuty.Font = new System.Drawing.Font(checkEditMilitary.Font, FontStyle.Bold);
+                    checkEditActiveDuty.Font = new System.Drawing.Font(checkEditActiveDuty.Font, FontStyle.Bold);
                     checkEditActiveDuty.ForeColor = Color.Red;
                 }
                 else
                 {
-                    checkEditActiveDuty.Font = new System.Drawing.Font(checkEditMilitary.Font, FontStyle.Regular);
+                    checkEditActiveDuty.Font = new System.Drawing.Font(checkEditActiveDuty.Font, FontStyle.Regular);
                     checkEditActiveDuty.ForeColor = SystemColors.ControlText;
                     layoutControlItemActiveDutyStart.TextVisible = false;
                     layoutControlItemActiveDutyStart.ContentVisible = false;
@@ -302,9 +312,8 @@ namespace IAC2021SQL
             }
             else
             {
-                checkEditMilitary.Enabled = true;
                 checkEditMilitary.Font = new System.Drawing.Font(checkEditMilitary.Font, FontStyle.Regular);
-                checkEditMilitary.ForeColor = SystemColors.ControlText;
+                checkEditMilitary.ForeColor = Color.Black;
                 // Moses Newman 11/06/2024
                 layoutControlItemActiveDuty.TextVisible = false;
                 layoutControlItemActiveDuty.ContentVisible = false;
@@ -351,6 +360,7 @@ namespace IAC2021SQL
             txtPaidThrough.Enabled = false;
             txtCustomerBuyout.Enabled = false;
             txtCustomerPayRem2.Enabled = false;
+            textEditDownpayment.Enabled = false;
             //txtContractStatus.Enabled = false;
             txtDealerDiscBal.Enabled = false;
             txtCreditLimit.Enabled = false;
@@ -374,7 +384,12 @@ namespace IAC2021SQL
             nullableDateTimePickerFundingDate.Enabled = false;
             // Moses Newman 07/21/2020 Add checkbox for overpayment check issue and check number.
             checkBoxCheckIssued.Enabled = false;
+            layoutControlItemCheckNo.TextVisible = false;
             textBoxCheckNo.Enabled = false;
+            if (!checkBoxCheckIssued.Checked)
+            {
+                layoutControlItemCheckNo.ContentVisible = false;
+            }
             // Moses Newman 02/28/2021 Add CheckBox for Received Contrat? and Date Contract Received fields
             colorCheckBoxReceivedContract.Enabled = false;
             if (colorCheckBoxReceivedContract.Checked)
@@ -387,7 +402,8 @@ namespace IAC2021SQL
                 nullableDateTimePickerDateContractReceived.Visible = false;
                 nullableDateTimePickerDateContractReceived.Enabled = false;
             }
-
+            // Moses Newman 05/20/2019 Added DealerCashPrice
+            textBoxDealerCashPrice.Enabled = false;
             //Vehicle Info
             txtVehicleYear.Enabled = false;
             txtMake.Enabled = false;
@@ -416,7 +432,16 @@ namespace IAC2021SQL
             checkEditHasComprehensive.Enabled = false;
             textEditCollisionDeductible.Enabled = false;
             textEditComprehensiveDeductible.Enabled = false;
-
+            //Moses Newman 12/18/2024
+            checkEditTotalLoss.Enabled = false;
+            dateEditTotalLossDate.Enabled = false;
+            textEditLossStatus.Enabled = false;
+            textEditLossClaimNumber.Enabled = false;
+            textEditLossCompany.Enabled = false;
+            textEditSettlementAmount.Enabled = false;
+            checkEditPaymentArrangement.Enabled = false;
+            textEditPTI.Enabled = false;
+            textEditDTI.Enabled = false;
             // Moses Newman 12/18/2013 Add new fields to Vehicle tab and move Credit score, Repo, and Misc fields to Vehicle Tab.
             textBoxMileage.Enabled = false;
             nullableDateTimePickerRepoDate.Enabled = false;
@@ -449,9 +474,7 @@ namespace IAC2021SQL
             // Moses Newman 04/30/2019 Added TierPoints
             textBoxTierPoints.Enabled = false;
             // Moses Newman 05/13/2019 Add LTV
-            //textBoxLTV.Enabled = false;
-            // Moses Newman 05/20/2019 Added DealerCashPrice
-            textBoxDealerCashPrice.Enabled = false;
+            layoutControlItemtextBoxLTV.Control.Enabled = false;
 
 
             //Cosigner Info
@@ -647,6 +670,8 @@ namespace IAC2021SQL
                 textBoxOpenAccount.Enabled = true;
             else
                 textBoxOpenAccount.Enabled = false;
+            hyperLinkEditWarrantyEmail.Enabled = true;
+            hyperLinkEditGAPEmail.Enabled = true;
             comboBoxLetterNo.Enabled = false;
             comboBoxLetterType.Enabled = false;
             buttonLetter.Enabled = false;
@@ -690,12 +715,12 @@ namespace IAC2021SQL
                     layoutControlItemActiveDutyEnd.TextVisible = true;
                     layoutControlItemActiveDutyEnd.ContentVisible = true;
                     layoutControlItemActiveDutyEnd.Control.Enabled = true;
-                    checkEditActiveDuty.Font = new System.Drawing.Font(checkEditMilitary.Font, FontStyle.Bold);
+                    checkEditActiveDuty.Font = new System.Drawing.Font(checkEditActiveDuty.Font, FontStyle.Bold);
                     checkEditActiveDuty.ForeColor = Color.Red;
                 }
                 else
                 {
-                    checkEditActiveDuty.Font = new System.Drawing.Font(checkEditMilitary.Font, FontStyle.Regular);
+                    checkEditActiveDuty.Font = new System.Drawing.Font(checkEditActiveDuty.Font, FontStyle.Regular);
                     checkEditActiveDuty.ForeColor = SystemColors.ControlText;
                     layoutControlItemActiveDutyStart.TextVisible = false;
                     layoutControlItemActiveDutyStart.ContentVisible = false;
@@ -707,9 +732,8 @@ namespace IAC2021SQL
             }
             else
             {
-                checkEditMilitary.Enabled = true;
                 checkEditMilitary.Font = new System.Drawing.Font(checkEditMilitary.Font, FontStyle.Regular);
-                checkEditMilitary.ForeColor = SystemColors.ControlText;
+                checkEditMilitary.ForeColor = Color.Black;
                 // Moses Newman 11/06/2024
                 layoutControlItemActiveDuty.TextVisible = false;
                 layoutControlItemActiveDuty.ContentVisible = false;
@@ -771,6 +795,7 @@ namespace IAC2021SQL
             txtPaidThrough.Enabled = true;
             txtCustomerBuyout.Enabled = true;
             txtCustomerPayRem2.Enabled = true;
+            textEditDownpayment.Enabled = true;
             txtContractStatus.Enabled = true;
             txtDealerDiscBal.Enabled = true;
             txtCreditLimit.Enabled = true;
@@ -794,7 +819,12 @@ namespace IAC2021SQL
             nullableDateTimePickerFundingDate.Enabled = true;
             // Moses Newman 07/21/2020 Add checkbox for overpayment check issue and check number.
             checkBoxCheckIssued.Enabled = true;
-            textBoxCheckNo.Enabled = true;
+            if (checkBoxCheckIssued.Checked)
+            {
+                layoutControlItemCheckNo.TextVisible = true;
+                layoutControlItemCheckNo.ContentVisible = true;
+                layoutControlItemCheckNo.Control.Enabled = true;
+            }
             // Moses Newman 02/28/2021 Add CheckBox for Received Contrat? and Date Contract Received fields
             colorCheckBoxReceivedContract.Enabled = true;
             if (colorCheckBoxReceivedContract.Checked)
@@ -807,6 +837,8 @@ namespace IAC2021SQL
                 nullableDateTimePickerDateContractReceived.Enabled = false;
                 nullableDateTimePickerDateContractReceived.Visible = false;
             }
+            // Moses Newman 05/20/2019 Added DealerCashPrice
+            layoutControlItemDlrCashPrice.Control.Enabled = true;
 
 
 
@@ -838,7 +870,16 @@ namespace IAC2021SQL
             checkEditHasComprehensive.Enabled = true;
             textEditCollisionDeductible.Enabled = true;
             textEditComprehensiveDeductible.Enabled = true;
-
+            //Moses Newman 12/18/2024
+            checkEditTotalLoss.Enabled = true;
+            dateEditTotalLossDate.Enabled = true;
+            textEditLossStatus.Enabled = true;
+            textEditLossClaimNumber.Enabled = true;
+            textEditLossCompany.Enabled = true;
+            textEditSettlementAmount.Enabled = true;
+            checkEditPaymentArrangement.Enabled = true;
+            textEditPTI.Enabled = true;
+            textEditDTI.Enabled = true;
             // Moses Newman 01/29/2017
             textBoxBuyersAnnualIncome.Enabled = true;
 
@@ -880,8 +921,7 @@ namespace IAC2021SQL
             textBoxTierPoints.Enabled = true;
             // Moses Newman 05/13/2019 Add LTV
             //textBoxLTV.Enabled = true;
-            // Moses Newman 05/20/2019 Added DealerCashPrice
-            textBoxDealerCashPrice.Enabled = true;
+            layoutControlItemtextBoxLTV.Control.Enabled = true;
 
 
 
@@ -1437,7 +1477,7 @@ namespace IAC2021SQL
                 layoutControlItemActiveDuty.Control.Enabled = true;
                 if (checkEditActiveDuty.Checked)
                 {
-                    checkEditActiveDuty.Font = new System.Drawing.Font(checkEditMilitary.Font, FontStyle.Bold);
+                    checkEditActiveDuty.Font = new System.Drawing.Font(checkEditActiveDuty.Font, FontStyle.Bold);
                     checkEditActiveDuty.ForeColor = Color.Red;
                     layoutControlItemActiveDutyStart.TextVisible = true;
                     layoutControlItemActiveDutyEnd.TextVisible = true;
@@ -1448,7 +1488,7 @@ namespace IAC2021SQL
                 }
                 else
                 {
-                    checkEditActiveDuty.Font = new System.Drawing.Font(checkEditMilitary.Font, FontStyle.Regular);
+                    checkEditActiveDuty.Font = new System.Drawing.Font(checkEditActiveDuty.Font, FontStyle.Regular);
                     checkEditActiveDuty.ForeColor = SystemColors.ControlText;
                     layoutControlItemActiveDutyStart.TextVisible = false;
                     layoutControlItemActiveDutyStart.ContentVisible = false;
@@ -1462,7 +1502,7 @@ namespace IAC2021SQL
             {
                 checkEditMilitary.Enabled = false;
                 checkEditMilitary.Font = new System.Drawing.Font(checkEditMilitary.Font, FontStyle.Regular);
-                checkEditMilitary.ForeColor = SystemColors.ControlText;
+                checkEditMilitary.ForeColor = Color.Black;
                 // Moses Newman 11/06/2024
                 layoutControlItemActiveDutyStart.TextVisible = false;
                 layoutControlItemActiveDutyStart.ContentVisible = false;
@@ -1691,7 +1731,8 @@ namespace IAC2021SQL
         {
             errorProviderCustomerForm.Clear();
             // Moses Newman 01/29/2019 Now call one routine instead of al the back references here from other fields like term!
-            Reamortize();
+            if(lbEdit || lbAddFlag)
+                Reamortize();
         }
 
         private void cUSTOMER_STATETextBox_Validated(object sender, EventArgs e)
@@ -1963,20 +2004,6 @@ namespace IAC2021SQL
                 toolStripButtonSave.Enabled = true;
         }
 
-        private void txtDOB_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cUSTOMER_COS_PHONETextBox_Validated(object sender, EventArgs e)
-        {
-        }
-
-        private void comboBoxCreditCode_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void cUSTOMER_REPO_INDtextBox_TextChanged(object sender, EventArgs e)
         {
             if (lbEdit || lbAddFlag)
@@ -2067,7 +2094,16 @@ namespace IAC2021SQL
 
         private void checkBoxRefi_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (checkBoxRefi.Checked && (lbAddFlag || lbEdit))
+            {
+                textBoxAccount.Enabled = true;
+                ActiveControl = textBoxAccount;
+                textBoxAccount.SelectAll();
+            }
+            else
+                textBoxAccount.Enabled = false;
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
         }
 
         private void CreateOutlookEmail(String mailToText)
@@ -2315,31 +2351,6 @@ namespace IAC2021SQL
                 toolStripButtonSave.Enabled = true;
         }
 
-        private void comboBoxComplianceConditionCode_SelectedValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBoxECOACode_SelectedValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBoxInterestType_SelectedValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBoxPortfolioType_SelectedValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBoxTermsFrequency_SelectedValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
         // Moses Newman 08/15/2020 ONLY enable Payment Rating field if Account Status is 15,65,89,94, or 95!
         private void comboBoxPaymentRating_EnabledChanged(object sender, EventArgs e)
         {
@@ -2427,12 +2438,65 @@ namespace IAC2021SQL
 
         private void buttonEditPaymentHistory_Click(object sender, EventArgs e)
         {
+            String OldProfile = tsbDataSet.ClosedCreditManager.Rows[0].Field<String>("PaymentProfile");
 
+            FormDelinquencyPeriods newdelinquencyperiods = new FormDelinquencyPeriods();
+            newdelinquencyperiods.CustomerID = iACDataSet.CUSTOMER.Rows[0].Field<Int32>("CustomerID");
+            newdelinquencyperiods.PeriodEnd = tsbDataSet.ClosedCreditManager.Rows[0].Field<DateTime>("DateOfAccountInformation");
+            newdelinquencyperiods.Profile = OldProfile;
+            newdelinquencyperiods.ShowDialog();
+            tsbDataSet.ClosedCreditManager.Rows[closedCreditManagerBindingSource.Position].SetField<String>("PaymentProfile", newdelinquencyperiods.Profile);
+            closedCreditManagerBindingSource.EndEdit();
+            newdelinquencyperiods.Hide();
+            this.textBoxPaymentHistoryProfile.Refresh();
+            if (newdelinquencyperiods.Profile != OldProfile)
+                toolStripButtonSave.Enabled = true;
+            newdelinquencyperiods.Dispose();
         }
 
         private void buttonCOSValidate_Click(object sender, EventArgs e)
         {
+            if (!lbAddFlag && !lbEdit)
+                return;
 
+            GroupClient generalService = new GroupClient("ReportWSServiceHttpEndpoint2");
+            string securityToken = sbtLogin();
+            string orgCode = "wt63419";
+            string[] phone = txtCOSCell.Text.Trim().Split(',');
+
+            WSCarrierLookupResponse wSCarrierLookupResponse = generalService.GetCarrierLookup(securityToken, phone, orgCode);
+
+            if (!wSCarrierLookupResponse.Result)
+            {
+                MakeComment("*** Failed to VALIDATE cosigner cell phone number! ***", wSCarrierLookupResponse.Message, 0, false);
+                //handle error
+                buttonCOSValidate.ForeColor = Color.Crimson;
+                iACDataSet.CUSTOMER.Rows[0].SetField<Boolean>("COSCellValid", false);
+            }
+            else
+            {
+                if (wSCarrierLookupResponse.Result && !wSCarrierLookupResponse.Response[0].Landline)
+                {
+                    MakeComment("Cosigner Cell Phone Number VALIDATED.", wSCarrierLookupResponse.Message, 0, false);
+                    buttonCOSValidate.ForeColor = Color.Green;
+                    iACDataSet.CUSTOMER.Rows[0].SetField<Boolean>("COSCellValid", true);
+                    // Moses Newman reset COSTpin from AUTO to nothing 07/13/2022
+                    iACDataSet.CUSTOMER.Rows[0].SetField<String>("COSTPin", "");
+                    cUSTOMERBindingSource.EndEdit();
+                    radioButtonCOSAcct.Checked = false;
+                }
+                else
+                {
+                    MakeComment("*** Cosigner Cell Number not VALIDATED because it is a LANDLINE! ***", wSCarrierLookupResponse.Message, 0, false);
+                    buttonCOSValidate.ForeColor = Color.Crimson;
+                    iACDataSet.CUSTOMER.Rows[0].SetField<Boolean>("COSCellValid", false);
+                    // Moses Newman reset COSTpin from AUTO to nothing 07/13/2022
+                    iACDataSet.CUSTOMER.Rows[0].SetField<String>("COSTPin", "");
+                    cUSTOMERBindingSource.EndEdit();
+                    radioButtonCOSAcct.Checked = false;
+                }
+            }
+            toolStripButtonSave.Enabled = true;
         }
 
         private void checkBoxCOSDNTAcct_CheckedChanged(object sender, EventArgs e)
@@ -2478,12 +2542,59 @@ namespace IAC2021SQL
 
         private void radioButtonCOSAcct_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
         }
 
         private void radioButtonCOSAcct_Click(object sender, EventArgs e)
         {
+            if (textBoxCOSAuthNo.EditValue.ToString() != "" || txtCOSCell.EditValue.ToString() == "" || buttonCOSValidate.ForeColor != Color.Green)
+            {
+                if (radioButtonCOSAcct.Checked)
+                {
+                    radioButtonCOSAcct.Checked = false;
+                    checkBoxCOSDNTAcct.Checked = true;
+                }
+                return;
+            }
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+            if (radioButtonCOSAcct.Checked)
+            {
+                string VBTError = "";
+                MessageClient messageResult = new MessageClient("MessageWSServiceHttpEndpoint");
+                string securityToken = sbtLogin();
+                string orgCode = "wt63419";
+                string phoneNo = txtCOSCell.Text;
 
+                WSVerificationResponse wSVerificationResponse = messageResult.RequestVBT(securityToken, orgCode, phoneNo);
+                if (!wSVerificationResponse.Result)
+                {
+                    iACDataSet.CUSTOMER.Rows[0].SetField<String>("COSTPin", "");
+                    textBoxCOSAuthNo.Refresh();
+
+                    VBTError = wSVerificationResponse.Message;
+                    if (VBTError.TrimEnd() != "Subscriber information already exists")
+                    {
+                        iACDataSet.CUSTOMER.Rows[0].SetField<Boolean>("COSTAcct", false);
+                        MakeComment("*** COSIGNER VBT PIN NOT CREATED! ***", VBTError, 0, false);
+                        MessageBox.Show(VBTError);
+                    }
+                }
+                else
+                {
+                    iACDataSet.CUSTOMER.Rows[0].SetField<Boolean>("COSDNTAcct", false);
+                    iACDataSet.CUSTOMER.Rows[0].SetField<Boolean>("COSTAcct", true);
+                    iACDataSet.CUSTOMER.Rows[0].SetField<String>("COSTPin", "AUTO");
+                    textBoxCOSAuthNo.Refresh();
+                    radioButtonCOSAcct.Checked = true;
+                    radioButtonCOSMktg.Checked = false;
+                    UpdateSubscriberCOS(securityToken);  // Moses Newman 09/22/2021
+                    iACDataSet.CUSTOMER.Rows[0].SetField<Boolean>("COSTConfirmed", true);
+                    buttonCOSConfirm.ForeColor = Color.Green;
+                    MakeComment("COSIGNER AUTO CONFIRMED (NO PIN)!", "AUTO", 0, false);
+                }
+            }
         }
 
         private void checkBoxCOSDNTMktg_CheckedChanged(object sender, EventArgs e)
@@ -2494,17 +2605,13 @@ namespace IAC2021SQL
 
         private void radioButtonCOSMktg_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
         }
 
         private void buttonCOSConfirm_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void buttonCOSMessage_Click(object sender, EventArgs e)
-        {
-
+            return;
         }
 
         private void textBoxRepairFee4_Validated(object sender, EventArgs e)
@@ -2580,11 +2687,6 @@ namespace IAC2021SQL
         private void xtraTabControlCustomerMaint_CloseButtonClick(object sender, EventArgs e)
         {
             Close();
-        }
-
-        private void tabFormControl1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void toolStripButton1_Click(object sender, ItemClickEventArgs e)
@@ -3520,7 +3622,28 @@ namespace IAC2021SQL
 
         private void checkBoxVehicleWarranty_CheckedChanged(object sender, EventArgs e)
         {
-
+            CheckEdit edit = sender as CheckEdit;
+            if (edit.Checked)
+                edit.ForeColor = Color.Red;
+            else
+            {
+                edit.ForeColor = SystemColors.ControlText;
+            }
+            if (checkBoxVehicleWarranty.Checked && (lbAddFlag || lbEdit))
+            {
+                textBoxOpenAccount.Enabled = true;
+                ActiveControl = textBoxOpenAccount;
+                textBoxOpenAccount.SelectAll();
+            }
+            else
+            {
+                if (!checkBoxVehicleWarranty.Checked)
+                    textBoxOpenAccount.Enabled = false;
+                else
+                    textBoxOpenAccount.Enabled = true;
+            }
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
         }
         private void xtraTabControlCustomerMaint_SelectedPageChanged(object sender, DevExpress.XtraTab.TabPageChangedEventArgs e)
         {
@@ -3558,7 +3681,7 @@ namespace IAC2021SQL
                     cOMMENTgridView.ActiveFilterString = "(NOT StartsWith([COMMENT_WHOLE], 'TEXT SENT:') OR [SMSTemplate] <= 0) AND [COMMENT_USERID] <> 'SYS'";
                     cOMMENTgridView.ActiveFilterEnabled = false;
                     break;
-                case 10:
+                case 9:
                     // Moses Newman 12/20/2021 order by id descending
                     GridColumn colidRepo = gridViewRepoLog.Columns["id"];
                     gridViewRepoLog.BeginSort();
@@ -3615,7 +3738,17 @@ namespace IAC2021SQL
 
         private void lookUpEditExpMonth_EditValueChanged(object sender, EventArgs e)
         {
+            LookUpEdit expMonth = sender as LookUpEdit;
 
+            if (expMonth.EditValue.ToString().Trim() == "")
+                return;
+            if ((lbEdit || lbAddFlag) && OPNBANKbindingSource.Position > -1 && comboBoxEditExpYear.Text.Trim() != "" && expMonth.EditValue != null)
+            {
+                iACDataSet.OPNBANK.Rows[OPNBANKbindingSource.Position].SetField<String>("OPNBANK_EXP_MMYY",
+                    expMonth.EditValue.ToString().PadLeft(2, '0') + comboBoxEditExpYear.EditValue.ToString().Substring(2, 2));
+                OPNBANKbindingSource.EndEdit();
+                toolStripButtonSave.Enabled = true;
+            }
         }
 
         private void lookUpEditExpYear_EditValueChanged(object sender, EventArgs e)
@@ -3645,6 +3778,14 @@ namespace IAC2021SQL
 
         private void textEditBankRoutingNumber_TextChanged(object sender, EventArgs e)
         {
+            if (lbEdit && toolStripButtonSave.Enabled == false)
+                toolStripButtonSave.Enabled = true;
+            if (textEditBankRoutingNumber.Text.Length == 9)
+            {
+                textEditBankCheckDigit.Text = textEditBankRoutingNumber.Text.Substring(8, 1);
+                textEditBankRoutingNumber.Text = textEditBankRoutingNumber.Text.Substring(0, 8);
+                System.Windows.Forms.SendKeys.Send("{TAB}");
+            }
         }
 
         private void checkEditBankAutoPay_CheckedChanged(object sender, EventArgs e)
@@ -3747,7 +3888,8 @@ namespace IAC2021SQL
 
         private void txtEffectiveDate_EditValueChanged(object sender, EventArgs e)
         {
-
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
         }
 
         private void txtExpirationDate_EditValueChanged(object sender, EventArgs e)
@@ -3758,7 +3900,8 @@ namespace IAC2021SQL
 
         private void nullableDateTimePickerDateTitleReleased_EditValueChanged(object sender, EventArgs e)
         {
-
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
         }
 
         private void nullableDateTimePickerDateContractReceived_EditValueChanged(object sender, EventArgs e)
@@ -3769,6 +3912,8 @@ namespace IAC2021SQL
 
         private void nullableDateTimePickerDateContractReceived_EnabledChanged(object sender, EventArgs e)
         {
+            if(ActiveControl == null)
+                return;
             Control lastControl = ActiveControl;
 
             DateEdit edit = sender as DateEdit;
@@ -3788,31 +3933,10 @@ namespace IAC2021SQL
                 toolStripButtonSave.Enabled = true;
         }
 
-        private void checkEditOverideInterestHistory_QueryCheckStateByValue(object sender, DevExpress.XtraEditors.Controls.QueryCheckStateByValueEventArgs e)
-        {
-
-        }
-
-        private void checkEditOverideInterestHistory_QueryValueByCheckState(object sender, DevExpress.XtraEditors.Controls.QueryValueByCheckStateEventArgs e)
-        {
-
-        }
-
         private void checkEditCollectionAgentHistory_CheckedChanged(object sender, EventArgs e)
         {
             if (lbEdit || lbAddFlag)
                 toolStripButtonSave.Enabled = true;
-        }
-
-
-        private void checkEditCollectionAgentHistory_QueryCheckStateByValue(object sender, DevExpress.XtraEditors.Controls.QueryCheckStateByValueEventArgs e)
-        {
-
-        }
-
-        private void checkEditCollectionAgentHistory_QueryValueByCheckState(object sender, DevExpress.XtraEditors.Controls.QueryValueByCheckStateEventArgs e)
-        {
-
         }
 
         private void checkEditJointOwnership_CheckedChanged(object sender, EventArgs e)
@@ -3867,12 +3991,39 @@ namespace IAC2021SQL
 
         private void checkEditUsePrimaryAddress_QueryCheckStateByValue(object sender, DevExpress.XtraEditors.Controls.QueryCheckStateByValueEventArgs e)
         {
-
+            string val = e.Value.ToString();
+            switch (val)
+            {
+                case "Y":
+                    e.CheckState = CheckState.Checked;
+                    break;
+                case "N":
+                    e.CheckState = CheckState.Unchecked;
+                    break;
+                default:
+                    e.CheckState = CheckState.Unchecked;
+                    break;
+            }
+            e.Handled = true;
         }
 
         private void checkEditUsePrimaryAddress_QueryValueByCheckState(object sender, DevExpress.XtraEditors.Controls.QueryValueByCheckStateEventArgs e)
         {
-
+            CheckEdit edit = sender as CheckEdit;
+            object val = edit.EditValue;
+            switch (e.CheckState)
+            {
+                case CheckState.Checked:
+                    e.Value = "Y";
+                    break;
+                case CheckState.Unchecked:
+                    e.Value = "N";
+                    break;
+                default:
+                    e.Value = "N";
+                    break;
+            }
+            e.Handled = true;
         }
 
         private void checkEditHasCollision_CheckedChanged(object sender, EventArgs e)
@@ -3893,16 +4044,6 @@ namespace IAC2021SQL
                 toolStripButtonSave.Enabled = true;
         }
 
-        private void comboBoxAccountType_SelectedValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBoxSpecialComment_SelectedValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void cUSTOMER_DEALERcomboBox_EditValueChanged(object sender, EventArgs e)
         {
             if (lbEdit || lbAddFlag)
@@ -3913,12 +4054,6 @@ namespace IAC2021SQL
         {
             if (lbEdit || lbAddFlag)
                 toolStripButtonSave.Enabled = true;
-        }
-
-        // Moses Newman 02/22/2023
-        private void radioGroupAccountType_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void hyperLinkEditWarrantyEmail_OpenLink(object sender, DevExpress.XtraEditors.Controls.OpenLinkEventArgs e)
@@ -3955,42 +4090,60 @@ namespace IAC2021SQL
 
         private void comboBoxEditPaymentDay1_EditValueChanged(object sender, EventArgs e)
         {
-
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
         }
 
         private void comboBoxEditPaymentDay2_EditValueChanged(object sender, EventArgs e)
         {
-
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
         }
 
         private void comboBoxEditPaymentDay3_EditValueChanged(object sender, EventArgs e)
         {
-
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
         }
 
         private void comboBoxEditPaymentDay4_EditValueChanged(object sender, EventArgs e)
         {
-
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
         }
 
         private void textEditPayment1_EditValueChanged(object sender, EventArgs e)
         {
+            TextEdit textEdit = (TextEdit)sender;
+            if (lbAddFlag || lbEdit)
+            {
+                toolStripButtonSave.Enabled = true;
+            }
 
         }
 
         private void textEditPayment2_EditValueChanged(object sender, EventArgs e)
         {
-
+            if (lbAddFlag || lbEdit)
+            {
+                toolStripButtonSave.Enabled = true;
+            }
         }
 
         private void textEditPayment3_EditValueChanged(object sender, EventArgs e)
         {
-
+            if (lbAddFlag || lbEdit)
+            {
+                toolStripButtonSave.Enabled = true;
+            }
         }
 
         private void textEditPayment4_EditValueChanged(object sender, EventArgs e)
         {
-
+            if (lbAddFlag || lbEdit)
+            {
+                toolStripButtonSave.Enabled = true;
+            }
         }
 
         private void SumSplitPayments()
@@ -4133,6 +4286,27 @@ namespace IAC2021SQL
         {
             ValueChanged(ref gnRepairFee1, sender, e);
         }
+
+        private void textBoxRepairFee2_EditValueChanged(object sender, EventArgs e)
+        {
+            ValueChanged(ref gnRepairFee2, sender, e);
+        }
+
+        private void textBoxRepairFee3_EditValueChanged(object sender, EventArgs e)
+        {
+            ValueChanged(ref gnRepairFee3, sender, e);
+        }
+
+        private void textBoxRepairFee4_EditValueChanged(object sender, EventArgs e)
+        {
+            ValueChanged(ref gnRepairFee4, sender, e);
+        }
+
+        private void textBoxRepairFee5_EditValueChanged(object sender, EventArgs e)
+        {
+            ValueChanged(ref gnRepairFee5, sender, e);
+        }
+
 
         private void txtFirstPayDate_Validated(object sender, EventArgs e)
         {
@@ -4351,6 +4525,8 @@ namespace IAC2021SQL
                     //
                     // Moses Newman 01/13/2019 Added Warranty CheckBox and OpenAccount
                     checkBoxVehicleWarranty.Enabled = true;
+                    hyperLinkEditWarrantyEmail.Enabled = true;
+                    hyperLinkEditGAPEmail.Enabled = true;
                     //
                     // Moses Newman 01/29/2017 Added Middle Name, GAP Insurance type, Warranty, TIN
                     textBoxMiddleName.Enabled = true;
@@ -4389,7 +4565,7 @@ namespace IAC2021SQL
                         checkEditActiveDuty.Visible = true;
                         if (checkEditActiveDuty.Checked)
                         {
-                            checkEditActiveDuty.Font = new System.Drawing.Font(checkEditMilitary.Font, FontStyle.Bold);
+                            checkEditActiveDuty.Font = new System.Drawing.Font(checkEditActiveDuty.Font, FontStyle.Bold);
                             checkEditActiveDuty.ForeColor = Color.Red;
                             layoutControlItemActiveDutyStart.TextVisible = true;
                             layoutControlItemActiveDutyStart.ContentVisible = true;
@@ -4400,7 +4576,7 @@ namespace IAC2021SQL
                         }
                         else
                         {
-                            checkEditActiveDuty.Font = new System.Drawing.Font(checkEditMilitary.Font, FontStyle.Regular);
+                            checkEditActiveDuty.Font = new System.Drawing.Font(checkEditActiveDuty.Font, FontStyle.Regular);
                             checkEditActiveDuty.ForeColor = SystemColors.ControlText;
                             layoutControlItemActiveDutyStart.TextVisible = false;
                             layoutControlItemActiveDutyStart.ContentVisible = false;
@@ -4414,7 +4590,7 @@ namespace IAC2021SQL
                     {
                         checkEditMilitary.Enabled = false;
                         checkEditMilitary.Font = new System.Drawing.Font(checkEditMilitary.Font, FontStyle.Regular);
-                        checkEditMilitary.ForeColor = SystemColors.ControlText;
+                        checkEditMilitary.ForeColor = Color.Black;
                         // Moses Newman 11/06/2024
                         layoutControlItemActiveDuty.TextVisible = false;
                         layoutControlItemActiveDuty.ContentVisible = false;
@@ -4468,6 +4644,7 @@ namespace IAC2021SQL
                     txtPaidThrough.Enabled = true;
                     txtCustomerBuyout.Enabled = true;
                     txtCustomerPayRem2.Enabled = true;
+                    textEditDownpayment.Enabled = true;
                     txtContractStatus.Enabled = true;
                     txtDealerDiscBal.Enabled = true;
                     txtCreditLimit.Enabled = true;
@@ -4488,7 +4665,12 @@ namespace IAC2021SQL
                     nullableDateTimePickerFundingDate.Enabled = true;
                     // Moses Newman 07/21/2020 Add checkbox for overpayment check issue and check number.
                     checkBoxCheckIssued.Enabled = true;
-                    textBoxCheckNo.Enabled = true;
+                    if (checkBoxCheckIssued.Checked)
+                    {
+                        layoutControlItemCheckNo.TextVisible = true;
+                        layoutControlItemCheckNo.ContentVisible = true;
+                        layoutControlItemCheckNo.Control.Enabled = true;
+                    }
                     // Moses Newman 02/28/2021 Add CheckBox for Received Contrat? and Date Contract Received fields
                     colorCheckBoxReceivedContract.Enabled = true;
                     if (colorCheckBoxReceivedContract.Checked)
@@ -4571,6 +4753,8 @@ namespace IAC2021SQL
                     textEditPayment3.Enabled = true;
                     textEditPayment4.Enabled = true;
                     checkEditSplitPay.Enabled = true;
+                    // Moses Newman 05/20/2019 Added DealerCashPrice
+                    textBoxDealerCashPrice.Enabled = false;
 
                     // Vehice Tab
                     txtVehicleYear.Enabled = true;
@@ -4604,7 +4788,16 @@ namespace IAC2021SQL
                     checkEditHasComprehensive.Enabled = true;
                     textEditCollisionDeductible.Enabled = true;
                     textEditComprehensiveDeductible.Enabled = true;
-
+                    //Moses Newman 12/18/2024
+                    checkEditTotalLoss.Enabled = true;
+                    dateEditTotalLossDate.Enabled = true;
+                    textEditLossStatus.Enabled = true;
+                    textEditLossClaimNumber.Enabled = true;
+                    textEditLossCompany.Enabled = true;
+                    textEditSettlementAmount.Enabled = true;
+                    checkEditPaymentArrangement.Enabled = true;
+                    textEditPTI.Enabled = true;
+                    textEditDTI.Enabled = true;
 
                     // Moses Newman 12/18/2013 Add new fields to Vehicle tab and move Credit score, Repo, and Misc fields to Vehicle Tab.
                     textBoxMileage.Enabled = true;
@@ -4646,9 +4839,7 @@ namespace IAC2021SQL
                     textBoxTierPoints.Enabled = true;
                     // Moses Newman 05/13/2019 Add LTV
                     //textBoxLTV.Enabled = true;
-                    // Moses Newman 05/20/2019 Added DealerCashPrice
-                    textBoxDealerCashPrice.Enabled = true;
-
+                    layoutControlItemtextBoxLTV.Control.Enabled = true;
 
 
                     // Comment Tab
@@ -4748,10 +4939,10 @@ namespace IAC2021SQL
                 edit.ForeColor = Color.Green;
             else
                 if (value < 0)
-                edit.ForeColor = Color.Red;
+                    edit.ForeColor = Color.Red;
             else
-                    if (!Enabled)
-                edit.ForeColor = System.Drawing.SystemColors.GrayText;
+                if (!Enabled)
+                    edit.ForeColor = System.Drawing.SystemColors.GrayText;
             else
                 edit.ForeColor = System.Drawing.SystemColors.ControlText;
         }
@@ -4818,13 +5009,25 @@ namespace IAC2021SQL
 
         private void cUSTOMER_ACT_STATTextBox_EditValueChanged(object sender, EventArgs e)
         {
+            TextEdit edit = sender as TextEdit;
+
+            if (edit.EditValue == null)
+                return;
             if (lbEdit)
             {
                 // Moses Newman 02/06/2023 If they change an iactive to A then 
-                if ((String)cUSTOMER_ACT_STATTextBox.EditValue == "A")
-                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_BUY_OUT", "N");
-                toolStripButtonSave.Enabled = true;
+                switch ((String)edit.EditValue)
+                {
+                    case "A":
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_BUY_OUT", "N");
+                        break;
+                    case "I":
+                        iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_BUY_OUT", "Y");
+                        break;
+                }
             }
+            if(lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
         }
 
         private void cUSTOMER_FIRST_NAMETextBox_Validated(object sender, EventArgs e)
@@ -4850,12 +5053,6 @@ namespace IAC2021SQL
         }
 
         private void checkBoxWarranty_CheckedChanged(object sender, EventArgs e)
-        {
-            if (lbAddFlag || lbEdit)
-                toolStripButtonSave.Enabled = true;
-        }
-
-        private void checkBoxExcludeVSI_CheckedChanged_1(object sender, EventArgs e)
         {
             if (lbAddFlag || lbEdit)
                 toolStripButtonSave.Enabled = true;
@@ -4966,18 +5163,6 @@ namespace IAC2021SQL
             }
         }
 
-        private void comboBoxLetterNo_SelectionChanged(object sender, DevExpress.XtraEditors.Controls.PopupSelectionChangedEventArgs e)
-        {
-            if (lbEdit)
-                toolStripButtonSave.Enabled = true;
-        }
-
-        private void comboBoxLetterType_SelectionChanged(object sender, DevExpress.XtraEditors.Controls.PopupSelectionChangedEventArgs e)
-        {
-            if (lbEdit)
-                toolStripButtonSave.Enabled = true;
-        }
-
         private void comboBoxDayDue_EditValueChanged(object sender, EventArgs e)
         {
            ComboBoxEdit ledit = (ComboBoxEdit)sender;
@@ -4985,7 +5170,7 @@ namespace IAC2021SQL
                 return;
             if (lbEdit)
             {
-                invoicesTableAdapter.UpdateDueDate(Convert.ToInt32(cUSTOMER_NOTextBox.EditValue), (Int32)ledit.EditValue);
+                invoicesTableAdapter.UpdateDueDate(Convert.ToInt32(cUSTOMER_NOTextBox.EditValue), Convert.ToInt32(ledit.EditValue));
                 toolStripButtonSave.Enabled = true;
                 //errorProviderCustomerForm.Clear();
                 //Reamortize(); // Moses Newman 01/29/2019 call new Reamortize instead of regular payment valid call!
@@ -5207,6 +5392,920 @@ namespace IAC2021SQL
                 toolStripButtonSave.Enabled = true;
         }
 
+        private void txtMake_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void textEditCollisionDeductible_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void checkBoxTitleReceived_CheckedChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void checkBoxTitleReleased_CheckedChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void checkBoxElectronicLien_CheckedChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void nullableDateTimePickerTitleDateReceived_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void nullableDateTimePickerDateTitleReleased_EditValueChanged_1(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void textBoxLTV_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void comboBoxRepoInd_EditValueChanged(object sender, EventArgs e)
+        {
+            if ((lbAddFlag || lbEdit) && comboBoxRepoInd.ItemIndex > -1)
+            {
+                cUSTOMER_REPO_INDtextBox.EditValue = iACDataSet.RepoIndicators.Rows[comboBoxRepoInd.ItemIndex].Field<String>("Code");
+                iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_REPO_IND", iACDataSet.RepoIndicators.Rows[comboBoxRepoInd.ItemIndex].Field<String>("Code"));
+                cUSTOMER_REPO_INDtextBox.Refresh();
+                toolStripButtonSave.Enabled = true;
+                RepoIndicatorsBindingSource.EndEdit();
+                comboBoxRepoCodes.Enabled = true;
+            }
+
+        }
+
+        private void cUSTOMER_REPO_INDtextBox_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void cUSTOMER_REPO_CDEtextBox_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void comboBoxRepoCodes_EditValueChanged(object sender, EventArgs e)
+        {
+            if ((lbAddFlag || lbEdit) && comboBoxRepoCodes.ItemIndex > -1)
+            {
+                cUSTOMER_REPO_CDEtextBox.EditValue = iACDataSet.RepoCodes.Rows[comboBoxRepoCodes.ItemIndex].Field<String>("Code");
+                iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<String>("CUSTOMER_REPO_CDE", iACDataSet.RepoCodes.Rows[comboBoxRepoCodes.ItemIndex].Field<String>("Code"));
+                toolStripButtonSave.Enabled = true;
+                repoCodesBindingSource.EndEdit();
+            }
+        }
+
+        private void nullableDateTimePickerRepoDate_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void textBoxRepoAgent_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void textBoxCurrentLocation_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void nullableDateTimePickerLocDate_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void textBoxAuctionHouse_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void nullableDateTimePickerAucDate_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void buttomSendMailCosigner_Click(object sender, EventArgs e)
+        {
+            if (iACDataSet.CUSTOMER.Rows.Count == 0 || textBoxCosignerEmail.Text.TrimEnd() == "")
+                return;
+
+            CreateOutlookEmail(textBoxCosignerEmail.Text);
+        }
+
+        private void General_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((!lbAddFlag && !lbEdit) && ActiveControl == textBoxOpenAccount)
+                e.Handled = true;
+            if (e.KeyChar == '\r')
+            {
+                e.Handled = true;
+                System.Windows.Forms.SendKeys.Send("{TAB}");
+            }
+            else
+            {
+                if (ActiveControl == cUSTOMER_NOTextBox || (ActiveControl == cUSTOMER_PURCHASE_ORDERTextBox && (!lbAddFlag || lbEdit)))
+                    return;
+                toolStripButtonSave.Enabled = true;
+            }
+        }
+
+        private void adioGroupAccountType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void textBoxCOSAuthNo_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void txtCOSFirstName_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void txtCOSLastName_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void comboBoxCOSJunior_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void txtCOSPhone_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void txtCOSWorkPhone_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void txtCOSWorkExt_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void txtCOSAddress_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void txtCOSCell_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void txtCOSCity_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void txtCOSSS_1_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void txtCOSSS_2_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void txtCOSSS_3_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void txtCOSState_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void txtCOSZip_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void txtCOSDOB_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void textBoxCosignerCreditScore_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void textBoxTier_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void textBoxCosignerTierPoints_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void textBoxCosignerAnnualIncome_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void textBoxCosignerEmail_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void checkBoxCOSDNTAcct_CheckedChanged_1(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void checkBoxCOSDNTMktg_CheckedChanged_1(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void txtALTContact1_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void txtALTRelation1_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void txtALTPhone1_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void txtALTExt1_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void txtALTContact2_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void txtALTRelation2_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void txtALTPhone2_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void txtALTExt2_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void txtALTContact3_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void txtALTRelation3_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void txtALTPhone3_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void txtALTExt3_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void txtALTContact4_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void txtALTRelation4_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void txtALTPhone4_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void txtALTExt4_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void cUSTOMER_FIRST_NAMETextBox_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void textBoxMiddleName_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void cUSTOMER_LAST_NAMETextBox_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void Universal_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void checkEditAutoPay_CheckedChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void checkBoxFullRecourse_CheckedChanged(object sender, EventArgs e)
+        {
+            Object SendTest = sender;
+            CheckEdit edit = sender as CheckEdit;
+
+            if (lbInFullRecourseCheck || gbInSave)
+                return;
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+
+            if (edit.Checked)
+            {
+                checkBoxFullRecourseHist.ForeColor = Color.Red;
+                checkBoxFullRecourseHist.Refresh();
+                checkBoxFullRecourseTab1.ForeColor = Color.Red;
+                checkBoxFullRecourseTab1.Refresh();
+                lbInFullRecourseCheck = true;
+                //checkBoxFullRecourse.Checked = true;                
+                //checkBoxFullRecourseHist.Checked = true;
+                //checkBoxFullRecourseTab1.Checked = true;
+            }
+            else
+            {
+                checkBoxFullRecourseHist.ForeColor = SystemColors.ControlText;
+                checkBoxFullRecourseHist.Refresh();
+                checkBoxFullRecourseTab1.ForeColor = SystemColors.ControlText;
+                checkBoxFullRecourseTab1.Refresh();
+                lbInFullRecourseCheck = true;
+                checkBoxFullRecourseHist.Checked = false;
+                checkBoxFullRecourseTab1.Checked = false;
+            }
+            lbInFullRecourseCheck = false;
+            checkBoxFullRecourseHist.Refresh();
+            checkBoxFullRecourseTab1.Refresh();
+            cUSTOMERBindingSource.EndEdit();
+        }
+
+        private void textBoxAuthNo_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void comboBoxGAP_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void hyperLinkEditWarrantyEmail_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void textEditPTI_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void checkEditTotalLoss_CheckedChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void textEditLossStatus_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void textEditLossClaimNumber_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void dateEditTotalLossDate_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void textEditDTI_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void textEditLossCompany_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void textEditSettlementAmount_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void checkEditPaymentArrangement_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void txtFirstPayDate_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void txtTerm_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void checkBoxOverrideLateCharge_CheckedChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void txtRegularPay_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void txtTerm_Validated(object sender, EventArgs e)
+        {
+            if (txtTerm.Text.Length != 0)
+                if (Convert.ToInt32(txtTerm.Text) != 0)
+                {
+                    errorProviderCustomerForm.Clear();
+                    //Reamortize(); // Moses Newman 01/29/2019 call new Reamortize instead of regular payment valid call!
+                    iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<DateTime>("MaturityDate", iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<DateTime>("CUSTOMER_INIT_DATE").AddMonths(iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<Int32>("CUSTOMER_TERM") - 1));
+                    this.MaturityDate.EditValue = iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<DateTime>("CUSTOMER_INIT_DATE").AddMonths(iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<Int32>("CUSTOMER_TERM") - 1);
+                }
+        }
+
+        private void txtAPR_Validated(object sender, EventArgs e)
+        {
+            if (txtAPR.Text.Length != 0)
+            {
+                if (Convert.ToDecimal(txtAPR.Text) != 0)
+                {
+                    errorProviderCustomerForm.Clear();
+                    // Moses Newman 01/04/2014 enable Interest Override if Annual Percentage Rate is not equal to 0!
+                    if (lbEdit || lbAddFlag)
+                    {
+                        checkEditOverideInterest.Enabled = true;
+                        //if (txtRegularPay.Text.Length == 0 || Convert.ToDecimal(txtRegularPay.Text.Substring(1)) == 0)
+                        Reamortize(); // Moses Newman 01/29/2019 call new Reamortize instead of regular payment valid call!
+                    }
+                }
+                return;
+            }
+            else
+            {
+                if (txtRegularPay.Text.Length != 0)
+                {
+                    if (Convert.ToDecimal(txtRegularPay.Text.Substring(1)) != 0)
+                        errorProviderCustomerForm.Clear();
+                    // Moses Newman 01/04/2014 enable Interest Override if Annual Percentage Rate is not equal to 0!
+                    if (lbEdit || lbAddFlag)
+                        checkEditOverideInterest.Enabled = true;
+                }
+            }
+        }
+
+        private void txtAPR_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void txtCASH_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void txtCASH_Validated(object sender, EventArgs e)
+        {
+            if (txtCASH.Text.Length != 0)
+                if (Convert.ToDecimal(txtCASH.Text.Substring(1)) != 0)
+                    errorProviderCustomerForm.Clear();
+            if (txtRegularPay.Text.Length != 0 || Convert.ToDecimal(txtRegularPay.Text.Substring(1)) != 0)
+                if(lbEdit || lbAddFlag)
+                    Reamortize(); // Moses Newman 01/29/2019 call new Reamortize instead of regular payment valid call!
+        }
+
+        private void txtNoOfPaymentsMade_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void DateTimePickerContractDate_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void DateTimePickerContractDate_Validated(object sender, EventArgs e)
+        {
+            // Moses Newman 01/20/2015 Make sure that history screen field is visually updated on Contract Date edit!
+            if (lbAddFlag || lbEdit)
+            {
+                nullableDateTimePickerHistContractDate.EditValue = DateTimePickerContractDate.EditValue;
+                toolStripButtonSave.Enabled = true;
+            }
+            errorProviderCustomerForm.Clear();
+        }
+
+        private void nullableDateTimePickerFundingDate_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void txtPartialPayment_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void txtPaymentDate_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void txtPaymentType_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void txtPaymentCode_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void txtLateCharge_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void txtLateChargeBal_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void txtLastPaymentMade_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void txtCustomerBalance_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void txtPaidInterest_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void txtUEInterest_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void txtPaidThrough_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void txtCustomerBuyout_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void txtCustomerPayRem2_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void textEditDownpayment_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void textBoxDealerCashPrice_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void checkBoxCheckIssued_CheckedChanged(object sender, EventArgs e)
+        {
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
+            if (checkBoxCheckIssued.Checked)
+            {
+                layoutControlItemCheckNo.TextVisible = true;
+                if(lbAddFlag || lbEdit)
+                    layoutControlItemCheckNo.Control.Enabled = true;
+                else
+                    layoutControlItemCheckNo.Control.Enabled = false;
+                layoutControlItemCheckNo.ContentVisible = true;
+            }
+            else
+            {
+                layoutControlItemCheckNo.TextVisible = false;
+                layoutControlItemCheckNo.Control.Enabled = false;
+                layoutControlItemCheckNo.ContentVisible = false;
+            }
+        }
+
+        private void textBoxCheckNo_Validated(object sender, EventArgs e)
+        {
+            // Moses Newman 07/16/2021 Make sure the Overpayment comment does not already exist!
+            Int32 lnCount = 0;
+            if (cUSTOMER_ACT_STATTextBox.Text == "I" && textBoxCheckNo.Text != "")
+            {
+                var loCount = cOMMENTTableAdapter.OverpayCount(iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO"));
+
+                lnCount = loCount != null ? (Int32)loCount : 0;
+                if (lnCount == 0)
+                    MakeComment("*** Overpayment Check Issued Check Number: " + textBoxCheckNo.Text + " ***", "", 0, false);
+            }
+        }
+
+        private void textBoxCheckNo_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void txtControlDate_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void MaturityDate_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void textBox67_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void textEditBankName_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void textEditBankRoutingNumber_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void textEditBankCheckDigit_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void textEditBankAccountNumber_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void textEditBankMonthlyPayment_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void textEditCreditCardNumber_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void textEditCreditCardName_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void textEditCreditCardCVV_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void textBoxCurrentBalance_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void textBoxAmountPastDue_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void txtLoan_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void txtLoanInterest_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void buttonCosLetter_Click(object sender, EventArgs e)
+        {
+            Int32 lnSeq = 0;
+            object loQuery = null;
+            String lsCommentKey = "", lsFullComment = "";
+            IACDataSetTableAdapters.CUSTOMERTableAdapter CustomerTableAdapter = new IACDataSetTableAdapters.CUSTOMERTableAdapter();
+            IACDataSetTableAdapters.COMMENTTableAdapter COMMENTTableAdapter = new IACDataSetTableAdapters.COMMENTTableAdapter();
+
+            String lsLetterNo = comboBoxCosLetterNo.Text.TrimEnd(), lsLetterType = comboBoxCosLetterType.Text.TrimEnd().ToUpper();
+            if (iACDataSet.CUSTOMER.Rows.Count == 0)
+            {
+                return;
+            }
+
+            cOMMENTBindingSource.AddNew();
+            cOMMENTBindingSource.EndEdit();
+            if (lnSeq == 0)
+            {
+                loQuery = cOMMENTTableAdapter.SeqNoQuery(cUSTOMER_NOTextBox.EditValue.ToString().Trim(), DateTime.Now.Date);
+                if (loQuery != null)
+                    lnSeq = (int)loQuery + 1;
+                else
+                    lnSeq = 1;
+            }
+            else
+                lnSeq = lnSeq + 1;
+
+            // Moses Newman 10/18/2017 create string unique key that will become word filename!
+            lsCommentKey = cUSTOMER_NOTextBox.EditValue.ToString().Trim() + DateTime.Now.Date.ToString("yyyyMMdd") + lnSeq.ToString().Trim() + Program.gsUserID;
+            MailMergeComponents MailMerge = new MailMergeComponents();
+            lsDataPath = lsUNCROOT.Trim() + @"CommentAttachments\Letters\";
+            // Moses Newman 11/21/2017 Remove hard coded UNC Pathing
+            MailMerge.CreateMailMerge(iACDataSet, true, @"AUTOLETTERCOS#" + lsLetterNo, lsLetterType, false, "", lsDataPath + lsCommentKey + ".docx");
+            // Moses Newman 02/22/2019 Add Full Comment
+            lsFullComment = "Created and sent cosigner Letter#" + comboBoxCosLetterNo.Text.TrimEnd().TrimStart() + ".";
+            // Moses Newman 11/21/2017 Remove hard coded UNC Pathing
+            cOMMENTTableAdapter.Insert(cUSTOMER_NOTextBox.EditValue.ToString().Trim(), DateTime.Now.Date, lnSeq, Program.gsUserID,
+                                       lsFullComment,
+                                       //"Created and sent cosigner Letter#" + comboBoxCosLetterNo.Text.TrimEnd().TrimStart() + ".",
+                                       //" ", " ", 
+                                       "  ", (Int32)cUSTOMER_DEALERcomboBox.EditValue,
+                                       Program.gsUserID + "  ",
+                                       DateTime.Now.Hour.ToString().PadLeft(2, '0') + DateTime.Now.Minute.ToString().PadLeft(2, '0') + DateTime.Now.Second.ToString().PadLeft(2, '0'),
+                                       false, @"WordDoc.bmp", lsDataPath + lsCommentKey + ".docx",
+                                       Convert.ToInt32(comboBoxCosLetterNo.Text.TrimEnd().TrimStart()), "", "", 0);
+            cOMMENTTableAdapter.FillByCustNo(iACDataSet.COMMENT, cUSTOMER_NOTextBox.EditValue.ToString().Trim());
+
+            comboBoxCosLetterNo.Text = " ";
+            comboBoxCosLetterType.Text = " ";
+        }
+
         private void textEditBankState_EditValueChanged(object sender, EventArgs e)
         {
             if (lbEdit || lbAddFlag)
@@ -5361,21 +6460,6 @@ namespace IAC2021SQL
             layoutControlCustInfo2.Refresh();
         }
 
-        private void textBoxRepairFee2_EditValueChanged(object sender, EventArgs e)
-        {
-            ValueChanged(ref gnRepairFee2, sender, e);
-        }
-
-        private void textBoxRepairFee4_EditValueChanged(object sender, EventArgs e)
-        {
-            ValueChanged(ref gnRepairFee4, sender, e);
-        }
-
-        private void textBoxRepairFee5_EditValueChanged(object sender, EventArgs e)
-        {
-            ValueChanged(ref gnRepairFee5, sender, e);
-        }
-
         private void checkEditMilitary_CheckedChanged(object sender, EventArgs e)
         {
             Object SendTest = sender;
@@ -5482,7 +6566,7 @@ namespace IAC2021SQL
 
         private void radioButtonAcct_Click(object sender, EventArgs e)
         {
-            if (textBoxAuthNo.Text.TrimEnd() != "" || cUSTOMER_CELL_PHONETextBox.Text.TrimEnd() == "" || buttonValidate.ForeColor != Color.Green)
+            if (textBoxAuthNo.EditValue.ToString() != "" || cUSTOMER_CELL_PHONETextBox.EditValue.ToString() == "" || buttonValidate.ForeColor != Color.Green)
             {
                 if (radioButtonAcct.Checked)
                 {
@@ -5823,8 +6907,7 @@ namespace IAC2021SQL
 
         private void checkBoxDNTAcct_CheckedChanged(object sender, EventArgs e)
         {
-            if (lbAddFlag || lbEdit)
-                toolStripButtonSave.Enabled = true;
+
         }
 
         private void checkBoxDNTMktg_CheckedChanged(object sender, EventArgs e)
@@ -5835,8 +6918,7 @@ namespace IAC2021SQL
 
         private void radioButtonAcct_CheckedChanged(object sender, EventArgs e)
         {
-            if (lbAddFlag || lbEdit)
-                toolStripButtonSave.Enabled = true;
+
         }
 
         private void radioButtonMktg_CheckedChanged(object sender, EventArgs e)
@@ -5896,29 +6978,18 @@ namespace IAC2021SQL
         {
             if (lbEdit)
                 toolStripButtonSave.Enabled = true;
-            if (comboBoxCosLetterNo.SelectedIndex > 0 && lbEdit)
+            if (comboBoxCosLetterNo.ItemIndex > 0 && lbEdit)
             {
                 comboBoxCosLetterType.Enabled = false;
                 buttonCosLetter.Enabled = false;
             }
             else
             {
-                if (comboBoxCosLetterNo.SelectedIndex == 0)
+                if (comboBoxCosLetterNo.ItemIndex == 0)
                     comboBoxCosLetterType.Text = " ";
                 comboBoxCosLetterType.Enabled = true;
                 buttonCosLetter.Enabled = true;
             }
-        }
-
-        private void buttonCosLetter_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBoxCosLetterType_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (lbEdit)
-                toolStripButtonSave.Enabled = true;
         }
     }
 }

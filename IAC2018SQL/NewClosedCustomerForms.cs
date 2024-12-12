@@ -2706,8 +2706,7 @@ namespace IAC2021SQL
 
         private void checkBoxCOSDNTAcct_CheckedChanged(object sender, EventArgs e)
         {
-            if (lbAddFlag || lbEdit)
-                toolStripButtonSave.Enabled = true;
+
         }
 
         private void checkBoxCOSDNTAcct_Click(object sender, EventArgs e)

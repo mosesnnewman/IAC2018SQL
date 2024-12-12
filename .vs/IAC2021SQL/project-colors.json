@@ -1,0 +1,26 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "9374c0d9-ff96-44bd-842b-445eaacf4b2b": {
+      "ProjectGuid": "9374c0d9-ff96-44bd-842b-445eaacf4b2b",
+      "DisplayName": "IAC2021SQL",
+      "ColorIndex": 0
+    },
+    "18feda0c-d147-4286-b39a-01204808106a": {
+      "ProjectGuid": "18feda0c-d147-4286-b39a-01204808106a",
+      "DisplayName": "ObjectListView2012",
+      "ColorIndex": 1
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    },
+    "8c5555d5-d7e3-4de3-be9e-fad92630660a": {
+      "ProjectGuid": "8c5555d5-d7e3-4de3-be9e-fad92630660a",
+      "DisplayName": "TestProduction",
+      "ColorIndex": 2
+    }
+  },
+  "NextColorIndex": 3
+}

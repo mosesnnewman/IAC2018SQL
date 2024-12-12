@@ -1,0 +1,10 @@
+<FileList>
+  <File Reference="DevExpress.XtraDialogs.v24.2.dll">
+    <ToolboxItems UIFramework="WinForms" VSCategory="DX.24.2: Components">
+      <Item Type="DevExpress.XtraEditors.XtraOpenFileDialog" />
+      <Item Type="DevExpress.XtraEditors.XtraSaveFileDialog" />
+      <Item Type="DevExpress.XtraEditors.XtraFolderBrowserDialog" />
+      <Item Type="DevExpress.XtraDialogs.FileExplorerAssistant" />
+    </ToolboxItems>
+  </File>
+</FileList>
