@@ -133,6 +133,9 @@ namespace IAC2021SQL
             layoutControlTSB.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Style3D;
             layoutControlTSB.LookAndFeel.UseDefaultLookAndFeel = false;
             layoutControlTSB.OptionsView.ShareLookAndFeelWithChildren = false;
+            layoutControlRepoHistory.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Style3D;
+            layoutControlRepoHistory.LookAndFeel.UseDefaultLookAndFeel = false;
+            layoutControlRepoHistory.OptionsView.ShareLookAndFeelWithChildren= false;
             checkEditActiveDuty.Visible = false;
             dateEditActiveDutyStart.Visible = false;
             dateEditActiveDutyEnd.Visible = false;
@@ -2388,52 +2391,62 @@ namespace IAC2021SQL
 
         private void checkBoxFollowUpDate_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
         }
 
         private void checkBoxReportTSB_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
         }
 
         private void checkBoxPurge_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
         }
 
         private void checkBoxAccountStatus_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
         }
 
         private void checkBoxPaymentRating_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
         }
 
         private void checkBoxSpecialComment_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
         }
 
         private void checkBoxConsumerIndicator_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
         }
 
         private void checkBoxComplianceCode_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
         }
 
         private void checkBoxECOACode_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
         }
 
         private void checkBoxPaymentProfile_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (lbAddFlag || lbEdit)
+                toolStripButtonSave.Enabled = true;
         }
 
         private void buttonEditPaymentHistory_Click(object sender, EventArgs e)
@@ -6226,6 +6239,18 @@ namespace IAC2021SQL
         }
 
         private void textEditCreditCardCVV_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void comboBoxInterestType_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void textBoxTermsDuration_EditValueChanged(object sender, EventArgs e)
         {
             if (lbEdit || lbAddFlag)
                 toolStripButtonSave.Enabled = true;

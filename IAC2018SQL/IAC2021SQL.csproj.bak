@@ -13,7 +13,7 @@
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <ManifestCertificateThumbprint>ACEE3A19A537327F8F0F479686337CDE466088A4</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>F09B1932F621556A44595E1D28D6F88457567DC3</ManifestCertificateThumbprint>
     <ManifestKeyFile>IAC2021SQL_TemporaryKey.pfx</ManifestKeyFile>
     <GenerateManifests>true</GenerateManifests>
     <SignManifests>true</SignManifests>
@@ -41,8 +41,8 @@
     <SuiteName>IAC2021SQL</SuiteName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>98</ApplicationRevision>
-    <ApplicationVersion>200.0.0.%2a</ApplicationVersion>
+    <ApplicationRevision>5</ApplicationRevision>
+    <ApplicationVersion>200.0.1.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -190,9 +190,11 @@
     <Reference Include="DevExpress.CodeParser.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <HintPath>..\packages\DevExpress.CodeParser.24.2.3\lib\net462\DevExpress.CodeParser.v24.2.dll</HintPath>
     </Reference>
+    <Reference Include="DevExpress.Data.Desktop.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.Desktop.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <HintPath>..\packages\DevExpress.Data.Desktop.24.2.3\lib\net462\DevExpress.Data.Desktop.v24.2.dll</HintPath>
     </Reference>
+    <Reference Include="DevExpress.Data.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <HintPath>..\packages\DevExpress.Data.24.2.3\lib\net462\DevExpress.Data.v24.2.dll</HintPath>
     </Reference>
@@ -205,9 +207,11 @@
     <Reference Include="DevExpress.Dialogs.v24.2.Core, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <HintPath>..\packages\DevExpress.Win.Dialogs.Core.24.2.3\lib\net462\DevExpress.Dialogs.v24.2.Core.dll</HintPath>
     </Reference>
+    <Reference Include="DevExpress.Drawing.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Drawing.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <HintPath>..\packages\DevExpress.Drawing.24.2.3\lib\net462\DevExpress.Drawing.v24.2.dll</HintPath>
     </Reference>
+    <Reference Include="DevExpress.Images.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Office.v24.2.Core, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <HintPath>..\packages\DevExpress.Office.Core.24.2.3\lib\net462\DevExpress.Office.v24.2.Core.dll</HintPath>
     </Reference>
@@ -220,6 +224,7 @@
     <Reference Include="DevExpress.PivotGrid.v24.2.Core, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <HintPath>..\packages\DevExpress.PivotGrid.Core.24.2.3\lib\net462\DevExpress.PivotGrid.v24.2.Core.dll</HintPath>
     </Reference>
+    <Reference Include="DevExpress.Printing.v24.1.Core, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Printing.v24.2.Core, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <HintPath>..\packages\DevExpress.Printing.Core.24.2.3\lib\net462\DevExpress.Printing.v24.2.Core.dll</HintPath>
     </Reference>
@@ -232,6 +237,7 @@
     <Reference Include="DevExpress.Sparkline.v24.2.Core, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <HintPath>..\packages\DevExpress.Sparkline.Core.24.2.3\lib\net462\DevExpress.Sparkline.v24.2.Core.dll</HintPath>
     </Reference>
+    <Reference Include="DevExpress.Utils.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <HintPath>..\packages\DevExpress.Utils.24.2.3\lib\net462\DevExpress.Utils.v24.2.dll</HintPath>
     </Reference>
@@ -247,6 +253,7 @@
     <Reference Include="DevExpress.XtraDialogs.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <HintPath>..\packages\DevExpress.Win.Dialogs.24.2.3\lib\net462\DevExpress.XtraDialogs.v24.2.dll</HintPath>
     </Reference>
+    <Reference Include="DevExpress.XtraEditors.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <HintPath>..\packages\DevExpress.Win.Navigation.24.2.3\lib\net462\DevExpress.XtraEditors.v24.2.dll</HintPath>
     </Reference>
@@ -256,6 +263,7 @@
     <Reference Include="DevExpress.XtraGrid.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <HintPath>..\packages\DevExpress.Win.Grid.24.2.3\lib\net462\DevExpress.XtraGrid.v24.2.dll</HintPath>
     </Reference>
+    <Reference Include="DevExpress.XtraLayout.v24.1, Version=24.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <HintPath>..\packages\DevExpress.Win.Navigation.24.2.3\lib\net462\DevExpress.XtraLayout.v24.2.dll</HintPath>
     </Reference>
@@ -3197,7 +3205,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
-    <PublishFile Include="DevExpress.Charts.v24.1.Core">
+    <PublishFile Include="DevExpress.Charts.v24.2.Core">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -3207,7 +3215,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
-    <PublishFile Include="DevExpress.CodeParser.v24.1">
+    <PublishFile Include="DevExpress.CodeParser.v24.2">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -3217,7 +3225,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
-    <PublishFile Include="DevExpress.Data.Desktop.v24.1">
+    <PublishFile Include="DevExpress.Data.Desktop.v24.2">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -3227,7 +3235,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
-    <PublishFile Include="DevExpress.Data.v24.1">
+    <PublishFile Include="DevExpress.Data.v24.2">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -3237,7 +3245,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
-    <PublishFile Include="DevExpress.DataAccess.v24.1">
+    <PublishFile Include="DevExpress.DataAccess.v24.2">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -3247,7 +3255,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
-    <PublishFile Include="DevExpress.DataAccess.v24.1.UI">
+    <PublishFile Include="DevExpress.DataAccess.v24.2.UI">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -3257,7 +3265,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
-    <PublishFile Include="DevExpress.DataVisualization.v24.1.Core">
+    <PublishFile Include="DevExpress.DataVisualization.v24.2.Core">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -3267,7 +3275,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
-    <PublishFile Include="DevExpress.Design.v24.1">
+    <PublishFile Include="DevExpress.Design.v24.2">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -3277,7 +3285,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
-    <PublishFile Include="DevExpress.Diagram.v24.1.Core">
+    <PublishFile Include="DevExpress.Diagram.v24.2.Core">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -3287,7 +3295,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
-    <PublishFile Include="DevExpress.Images.v24.1">
+    <PublishFile Include="DevExpress.Images.v24.2">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -3297,7 +3305,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
-    <PublishFile Include="DevExpress.VisualStudioInterop.v24.1.Base">
+    <PublishFile Include="DevExpress.VisualStudioInterop.v24.2.Base">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -3307,7 +3315,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
-    <PublishFile Include="DevExpress.XtraCharts.v24.1.Extensions">
+    <PublishFile Include="DevExpress.XtraCharts.v24.2.Extensions">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -3317,7 +3325,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
-    <PublishFile Include="DevExpress.XtraCharts.v24.1.Wizard">
+    <PublishFile Include="DevExpress.XtraCharts.v24.2.Wizard">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -3327,7 +3335,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
-    <PublishFile Include="DevExpress.XtraDiagram.v24.1">
+    <PublishFile Include="DevExpress.XtraDiagram.v24.2">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -3337,7 +3345,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
-    <PublishFile Include="DevExpress.XtraNavBar.v24.1">
+    <PublishFile Include="DevExpress.XtraNavBar.v24.2">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -3347,7 +3355,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
-    <PublishFile Include="DevExpress.XtraPivotGrid.v24.1">
+    <PublishFile Include="DevExpress.XtraPivotGrid.v24.2">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -3357,7 +3365,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
-    <PublishFile Include="DevExpress.XtraRichEdit.v24.1">
+    <PublishFile Include="DevExpress.XtraRichEdit.v24.2">
       <Visible>False</Visible>
       <Group>
       </Group>
@@ -3367,7 +3375,7 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
-    <PublishFile Include="DevExpress.XtraVerticalGrid.v24.1">
+    <PublishFile Include="DevExpress.XtraVerticalGrid.v24.2">
       <Visible>False</Visible>
       <Group>
       </Group>

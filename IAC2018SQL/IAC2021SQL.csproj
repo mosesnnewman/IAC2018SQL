@@ -190,9 +190,11 @@
     <Reference Include="DevExpress.CodeParser.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <HintPath>..\packages\DevExpress.CodeParser.24.2.3\lib\net462\DevExpress.CodeParser.v24.2.dll</HintPath>
     </Reference>
+    <Reference Include="DevExpress.Data.Desktop.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.Desktop.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <HintPath>..\packages\DevExpress.Data.Desktop.24.2.3\lib\net462\DevExpress.Data.Desktop.v24.2.dll</HintPath>
     </Reference>
+    <Reference Include="DevExpress.Data.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <HintPath>..\packages\DevExpress.Data.24.2.3\lib\net462\DevExpress.Data.v24.2.dll</HintPath>
     </Reference>
@@ -205,6 +207,7 @@
     <Reference Include="DevExpress.Dialogs.v24.2.Core, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <HintPath>..\packages\DevExpress.Win.Dialogs.Core.24.2.3\lib\net462\DevExpress.Dialogs.v24.2.Core.dll</HintPath>
     </Reference>
+    <Reference Include="DevExpress.Drawing.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Drawing.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <HintPath>..\packages\DevExpress.Drawing.24.2.3\lib\net462\DevExpress.Drawing.v24.2.dll</HintPath>
     </Reference>
@@ -221,6 +224,7 @@
     <Reference Include="DevExpress.PivotGrid.v24.2.Core, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <HintPath>..\packages\DevExpress.PivotGrid.Core.24.2.3\lib\net462\DevExpress.PivotGrid.v24.2.Core.dll</HintPath>
     </Reference>
+    <Reference Include="DevExpress.Printing.v24.2.Core, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Printing.v24.2.Core, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <HintPath>..\packages\DevExpress.Printing.Core.24.2.3\lib\net462\DevExpress.Printing.v24.2.Core.dll</HintPath>
     </Reference>
@@ -233,6 +237,7 @@
     <Reference Include="DevExpress.Sparkline.v24.2.Core, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <HintPath>..\packages\DevExpress.Sparkline.Core.24.2.3\lib\net462\DevExpress.Sparkline.v24.2.Core.dll</HintPath>
     </Reference>
+    <Reference Include="DevExpress.Utils.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <HintPath>..\packages\DevExpress.Utils.24.2.3\lib\net462\DevExpress.Utils.v24.2.dll</HintPath>
     </Reference>
@@ -248,6 +253,7 @@
     <Reference Include="DevExpress.XtraDialogs.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <HintPath>..\packages\DevExpress.Win.Dialogs.24.2.3\lib\net462\DevExpress.XtraDialogs.v24.2.dll</HintPath>
     </Reference>
+    <Reference Include="DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <HintPath>..\packages\DevExpress.Win.Navigation.24.2.3\lib\net462\DevExpress.XtraEditors.v24.2.dll</HintPath>
     </Reference>
@@ -257,9 +263,7 @@
     <Reference Include="DevExpress.XtraGrid.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <HintPath>..\packages\DevExpress.Win.Grid.24.2.3\lib\net462\DevExpress.XtraGrid.v24.2.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
-      <HintPath>..\packages\DevExpress.Win.Navigation.24.2.3\lib\net462\DevExpress.XtraLayout.v24.2.dll</HintPath>
-    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraPrinting.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <HintPath>..\packages\DevExpress.Win.Printing.24.2.3\lib\net462\DevExpress.XtraPrinting.v24.2.dll</HintPath>
     </Reference>

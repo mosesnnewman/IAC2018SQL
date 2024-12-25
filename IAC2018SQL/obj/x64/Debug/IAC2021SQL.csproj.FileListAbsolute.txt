@@ -553,8 +553,6 @@ C:\Users\mnewman\Source\Repos\IAC2018SQL\IAC2018SQL\bin\x64\Debug\zh-Hans\Stream
 C:\Users\mnewman\Source\Repos\IAC2018SQL\IAC2018SQL\bin\x64\Debug\zh-Hant\StreamJsonRpc.resources.dll
 C:\Users\mnewman\Source\Repos\IAC2018SQL\IAC2018SQL\bin\x64\Debug\Interop.Acrobat.dll
 C:\Users\mnewman\Source\Repos\IAC2018SQL\IAC2018SQL\obj\x64\Debug\IAC2021SQL.csproj.AssemblyReference.cache
-C:\Users\mnewman\Source\Repos\IAC2018SQL\IAC2018SQL\obj\x64\Debug\IAC2021SQL.csproj.SuggestedBindingRedirects.cache
-C:\Users\mnewman\Source\Repos\IAC2018SQL\IAC2018SQL\obj\x64\Debug\IAC2021SQL.exe.config
 C:\Users\mnewman\Source\Repos\IAC2018SQL\IAC2018SQL\obj\x64\Debug\Interop.Acrobat.dll
 C:\Users\mnewman\Source\Repos\IAC2018SQL\IAC2018SQL\obj\x64\Debug\IAC2021SQL.csproj.ResolveComReference.cache
 C:\Users\mnewman\Source\Repos\IAC2018SQL\IAC2018SQL\obj\x64\Debug\IAC2021SQL.AboutIAC2021SQL.resources
@@ -733,3 +731,4 @@ C:\Users\mnewman\Source\Repos\IAC2018SQL\IAC2018SQL\obj\x64\Debug\IAC2021SQL.csp
 C:\Users\mnewman\Source\Repos\IAC2018SQL\IAC2018SQL\obj\x64\Debug\IAC2021SQL.exe
 C:\Users\mnewman\Source\Repos\IAC2018SQL\IAC2018SQL\obj\x64\Debug\IAC2021SQL.pdb
 C:\Users\mnewman\Source\Repos\IAC2018SQL\IAC2018SQL\bin\x64\Debug\DevExpress.Images.v24.2.dll
+C:\Users\mnewman\Source\Repos\IAC2018SQL\IAC2018SQL\bin\x64\Debug\de\DevExpress.Data.v24.2.resources.dll

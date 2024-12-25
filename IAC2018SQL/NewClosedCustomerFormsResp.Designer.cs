@@ -79,9 +79,6 @@ namespace IAC2021SQL
             System.Windows.Forms.Label label113;
             System.Windows.Forms.Label label114;
             System.Windows.Forms.Label label12;
-            System.Windows.Forms.Label label127;
-            System.Windows.Forms.Label label128;
-            System.Windows.Forms.Label label130;
             DevExpress.XtraEditors.LabelControl labelTowing;
             DevExpress.XtraEditors.LabelControl labelTotalFees;
             DevExpress.XtraEditors.LabelControl labelRepair1;
@@ -128,30 +125,30 @@ namespace IAC2021SQL
             System.Windows.Forms.Label label49;
             System.Windows.Forms.Label label117;
             System.Windows.Forms.Label label116;
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition13 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition14 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition15 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition16 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition17 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition18 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition13 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition14 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition15 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition16 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition17 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition18 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition19 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition20 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition21 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition22 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition23 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition24 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition19 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition20 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition21 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition22 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition23 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition24 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition25 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition26 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition27 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition28 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition29 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition30 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition25 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition26 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition27 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition28 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition29 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition30 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition31 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition32 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition33 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition34 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition35 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition36 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition31 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition32 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition33 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition34 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition35 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition36 = new DevExpress.XtraLayout.RowDefinition();
             this.cUSTOMERBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.iACDataSet = new IAC2021SQL.IACDataSet();
             this.cOMMENTBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -1028,24 +1025,7 @@ namespace IAC2021SQL
             this.textBox501 = new DevExpress.XtraEditors.TextEdit();
             this.textBox491 = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlGroupRepos = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.layoutControlItemcomboBoxRepoInd = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItemcUSTOMER_REPO_INDtextBox = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItemcUSTOMER_REPO_CDEtextBox = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItemcomboBoxRepoCodes = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItemRepoDate = new DevExpress.XtraLayout.LayoutControlItem();
-            this.emptySpaceItem140 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.layoutControlItemRepoAgent = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItemAuctionHouse = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItemCurrentLocation = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItemLocationDate = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItemAuctionDate = new DevExpress.XtraLayout.LayoutControlItem();
-            this.emptySpaceItem141 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.emptySpaceItem142 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.emptySpaceItem143 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.emptySpaceItem144 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.emptySpaceItem145 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.emptySpaceItem146 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.emptySpaceItem138 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.emptySpaceItem132 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlGroupRepoHeader = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -1055,12 +1035,30 @@ namespace IAC2021SQL
             this.layoutControlItem17 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem18 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem15 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.emptySpaceItem153 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem154 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.layoutControlGroupRepoInfoDetail = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.emptySpaceItem141 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.layoutControlItemcomboBoxRepoInd = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItemcUSTOMER_REPO_INDtextBox = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItemcUSTOMER_REPO_CDEtextBox = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItemcomboBoxRepoCodes = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItemRepoDate = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem140 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem142 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.layoutControlItemRepoAgent = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem146 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem138 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.layoutControlItemCurrentLocation = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItemLocationDate = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem144 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem143 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.layoutControlItemAuctionHouse = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItemAuctionDate = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem152 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem155 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem145 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.xtraTabPageRepoHistory = new DevExpress.XtraTab.XtraTabPage();
-            this.groupBox21 = new DevExpress.XtraEditors.GroupControl();
+            this.layoutControlRepoHistory = new DevExpress.XtraLayout.LayoutControl();
             this.gridControlRepoLog = new DevExpress.XtraGrid.GridControl();
             this.gridViewRepoLog = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colDateOfChange = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -1082,19 +1080,16 @@ namespace IAC2021SQL
             this.colOrgAutionHouseDate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNewAuctionHouseDate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colOrgTitleReceived = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.colNewTitleReceived = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colOrgDateTitleReceived = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNewDateTitleReceived = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colidRepo = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.groupBox13 = new System.Windows.Forms.GroupBox();
-            this.textBox41 = new DevExpress.XtraEditors.TextEdit();
-            this.textBox42 = new DevExpress.XtraEditors.TextEdit();
-            this.textBox43 = new DevExpress.XtraEditors.TextEdit();
-            this.textBox44 = new DevExpress.XtraEditors.TextEdit();
-            this.textBox45 = new DevExpress.XtraEditors.TextEdit();
-            this.textBox46 = new DevExpress.XtraEditors.TextEdit();
-            this.textBox52 = new DevExpress.XtraEditors.TextEdit();
+            this.layoutControlGroupRepoHistory = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlGroupRepoHistoryHeader = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.emptySpaceItem119 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem125 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.layoutControlGroupRepoHistoryGrid = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItemRepoHistoryGridControl = new DevExpress.XtraLayout.LayoutControlItem();
             this.xtraTabPageCustomerFees = new DevExpress.XtraTab.XtraTabPage();
             this.groupBox20 = new DevExpress.XtraEditors.GroupControl();
             this.groupBoxFees = new System.Windows.Forms.GroupBox();
@@ -1277,6 +1272,21 @@ namespace IAC2021SQL
             this.bar7 = new DevExpress.XtraBars.Bar();
             this.bar8 = new DevExpress.XtraBars.Bar();
             this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.textBox512 = new DevExpress.XtraEditors.TextEdit();
+            this.textBox472 = new DevExpress.XtraEditors.TextEdit();
+            this.textBox482 = new DevExpress.XtraEditors.TextEdit();
+            this.textBox492 = new DevExpress.XtraEditors.TextEdit();
+            this.textBox192 = new DevExpress.XtraEditors.TextEdit();
+            this.textBox502 = new DevExpress.XtraEditors.TextEdit();
+            this.textBox172 = new DevExpress.XtraEditors.TextEdit();
+            this.layoutControlGroup7 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem41 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem44 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem45 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem47 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem48 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem49 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem50 = new DevExpress.XtraLayout.LayoutControlItem();
             labelTotalDue = new System.Windows.Forms.Label();
             labelDealerCashPrice = new System.Windows.Forms.Label();
             label30 = new System.Windows.Forms.Label();
@@ -1323,9 +1333,6 @@ namespace IAC2021SQL
             label113 = new System.Windows.Forms.Label();
             label114 = new System.Windows.Forms.Label();
             label12 = new System.Windows.Forms.Label();
-            label127 = new System.Windows.Forms.Label();
-            label128 = new System.Windows.Forms.Label();
-            label130 = new System.Windows.Forms.Label();
             labelTowing = new DevExpress.XtraEditors.LabelControl();
             labelTotalFees = new DevExpress.XtraEditors.LabelControl();
             labelRepair1 = new DevExpress.XtraEditors.LabelControl();
@@ -2187,24 +2194,7 @@ namespace IAC2021SQL
             ((System.ComponentModel.ISupportInitialize)(this.textBox501.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textBox491.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroupRepos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemcomboBoxRepoInd)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemcUSTOMER_REPO_INDtextBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemcUSTOMER_REPO_CDEtextBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemcomboBoxRepoCodes)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemRepoDate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem140)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemRepoAgent)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemAuctionHouse)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemCurrentLocation)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemLocationDate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemAuctionDate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem141)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem142)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem143)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem144)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem145)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem146)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem138)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem132)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroupRepoHeader)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
@@ -2214,24 +2204,39 @@ namespace IAC2021SQL
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem153)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem154)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroupRepoInfoDetail)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem141)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemcomboBoxRepoInd)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemcUSTOMER_REPO_INDtextBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemcUSTOMER_REPO_CDEtextBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemcomboBoxRepoCodes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemRepoDate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem140)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem142)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemRepoAgent)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem146)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem138)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemCurrentLocation)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemLocationDate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem144)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem143)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemAuctionHouse)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemAuctionDate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem152)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem155)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem145)).BeginInit();
             this.xtraTabPageRepoHistory.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupBox21)).BeginInit();
-            this.groupBox21.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlRepoHistory)).BeginInit();
+            this.layoutControlRepoHistory.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlRepoLog)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewRepoLog)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
-            this.groupBox13.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textBox41.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBox42.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBox43.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBox44.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBox45.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBox46.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBox52.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroupRepoHistory)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroupRepoHistoryHeader)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem119)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem125)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroupRepoHistoryGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemRepoHistoryGridControl)).BeginInit();
             this.xtraTabPageCustomerFees.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupBox20)).BeginInit();
             this.groupBox20.SuspendLayout();
@@ -2393,6 +2398,21 @@ namespace IAC2021SQL
             ((System.ComponentModel.ISupportInitialize)(this.textBox14.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitterItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBox512.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBox472.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBox482.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBox492.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBox192.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBox502.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBox172.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem41)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem44)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem45)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem47)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem48)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem49)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem50)).BeginInit();
             this.SuspendLayout();
             // 
             // labelTotalDue
@@ -2625,22 +2645,6 @@ namespace IAC2021SQL
             // 
             resources.ApplyResources(label12, "label12");
             label12.Name = "label12";
-            // 
-            // label127
-            // 
-            resources.ApplyResources(label127, "label127");
-            label127.Name = "label127";
-            // 
-            // label128
-            // 
-            resources.ApplyResources(label128, "label128");
-            label128.BackColor = System.Drawing.Color.Transparent;
-            label128.Name = "label128";
-            // 
-            // label130
-            // 
-            resources.ApplyResources(label130, "label130");
-            label130.Name = "label130";
             // 
             // labelTowing
             // 
@@ -3433,8 +3437,12 @@ namespace IAC2021SQL
             resources.ApplyResources(this.textBoxOpenAccount, "textBoxOpenAccount");
             this.textBoxOpenAccount.EnterMoveNextControl = true;
             this.textBoxOpenAccount.Name = "textBoxOpenAccount";
+            this.textBoxOpenAccount.Properties.Appearance.Options.UseTextOptions = true;
+            this.textBoxOpenAccount.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.textBoxOpenAccount.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.textBoxOpenAccount.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.textBoxOpenAccount.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.textBoxOpenAccount.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.textBoxOpenAccount.StyleController = this.layoutControlCustomerInfo;
             this.textBoxOpenAccount.EditValueChanged += new System.EventHandler(this.Universal_EditValueChanged);
             // 
@@ -3520,8 +3528,12 @@ namespace IAC2021SQL
             resources.ApplyResources(this.textBoxAccount, "textBoxAccount");
             this.textBoxAccount.EnterMoveNextControl = true;
             this.textBoxAccount.Name = "textBoxAccount";
+            this.textBoxAccount.Properties.Appearance.Options.UseTextOptions = true;
+            this.textBoxAccount.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.textBoxAccount.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.textBoxAccount.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.textBoxAccount.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.textBoxAccount.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.textBoxAccount.StyleController = this.layoutControlCustomerInfo;
             this.textBoxAccount.EditValueChanged += new System.EventHandler(this.Universal_EditValueChanged);
             // 
@@ -3715,8 +3727,12 @@ namespace IAC2021SQL
             this.nullableDateTimePickerDateContractReceived.EnterMoveNextControl = true;
             this.nullableDateTimePickerDateContractReceived.Name = "nullableDateTimePickerDateContractReceived";
             this.nullableDateTimePickerDateContractReceived.Properties.Appearance.Options.UseFont = true;
+            this.nullableDateTimePickerDateContractReceived.Properties.Appearance.Options.UseTextOptions = true;
+            this.nullableDateTimePickerDateContractReceived.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.nullableDateTimePickerDateContractReceived.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.nullableDateTimePickerDateContractReceived.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.nullableDateTimePickerDateContractReceived.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.nullableDateTimePickerDateContractReceived.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.nullableDateTimePickerDateContractReceived.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("nullableDateTimePickerDateContractReceived.Properties.Buttons"))))});
             this.nullableDateTimePickerDateContractReceived.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -3781,6 +3797,8 @@ namespace IAC2021SQL
             this.cUSTOMER_DEALERcomboBox.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.cUSTOMER_DEALERcomboBox.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.cUSTOMER_DEALERcomboBox.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.cUSTOMER_DEALERcomboBox.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.cUSTOMER_DEALERcomboBox.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.cUSTOMER_DEALERcomboBox.Properties.BestFitMode = DevExpress.XtraEditors.Controls.BestFitMode.BestFitResizePopup;
             this.cUSTOMER_DEALERcomboBox.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("cUSTOMER_DEALERcomboBox.Properties.Buttons"))))});
@@ -3938,8 +3956,12 @@ namespace IAC2021SQL
             this.txtDOB.MenuManager = this.toolbarFormManager1;
             this.txtDOB.Name = "txtDOB";
             this.txtDOB.Properties.Appearance.Options.UseFont = true;
+            this.txtDOB.Properties.Appearance.Options.UseTextOptions = true;
+            this.txtDOB.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.txtDOB.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.txtDOB.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.txtDOB.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.txtDOB.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.txtDOB.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("txtDOB.Properties.Buttons"))))});
             this.txtDOB.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -4371,8 +4393,12 @@ namespace IAC2021SQL
             resources.ApplyResources(this.dateEditActiveDutyStart, "dateEditActiveDutyStart");
             this.dateEditActiveDutyStart.EnterMoveNextControl = true;
             this.dateEditActiveDutyStart.Name = "dateEditActiveDutyStart";
+            this.dateEditActiveDutyStart.Properties.Appearance.Options.UseTextOptions = true;
+            this.dateEditActiveDutyStart.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.dateEditActiveDutyStart.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.dateEditActiveDutyStart.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.dateEditActiveDutyStart.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.dateEditActiveDutyStart.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.dateEditActiveDutyStart.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("dateEditActiveDutyStart.Properties.Buttons"))))});
             this.dateEditActiveDutyStart.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -4387,8 +4413,12 @@ namespace IAC2021SQL
             this.dateEditActiveDutyEnd.EnterMoveNextControl = true;
             this.dateEditActiveDutyEnd.MenuManager = this.toolbarFormManager1;
             this.dateEditActiveDutyEnd.Name = "dateEditActiveDutyEnd";
+            this.dateEditActiveDutyEnd.Properties.Appearance.Options.UseTextOptions = true;
+            this.dateEditActiveDutyEnd.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.dateEditActiveDutyEnd.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.dateEditActiveDutyEnd.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.dateEditActiveDutyEnd.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.dateEditActiveDutyEnd.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.dateEditActiveDutyEnd.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("dateEditActiveDutyEnd.Properties.Buttons"))))});
             this.dateEditActiveDutyEnd.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -6319,8 +6349,12 @@ namespace IAC2021SQL
             this.MaturityDate.MenuManager = this.toolbarFormManager1;
             this.MaturityDate.Name = "MaturityDate";
             this.MaturityDate.Properties.Appearance.Options.UseFont = true;
+            this.MaturityDate.Properties.Appearance.Options.UseTextOptions = true;
+            this.MaturityDate.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.MaturityDate.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.MaturityDate.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.MaturityDate.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.MaturityDate.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.MaturityDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("MaturityDate.Properties.Buttons"))))});
             this.MaturityDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -6336,8 +6370,12 @@ namespace IAC2021SQL
             this.textBoxCheckNo.EnterMoveNextControl = true;
             resources.ApplyResources(this.textBoxCheckNo, "textBoxCheckNo");
             this.textBoxCheckNo.Name = "textBoxCheckNo";
+            this.textBoxCheckNo.Properties.Appearance.Options.UseTextOptions = true;
+            this.textBoxCheckNo.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.textBoxCheckNo.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.textBoxCheckNo.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.textBoxCheckNo.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.textBoxCheckNo.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.textBoxCheckNo.StyleController = this.layoutControlCustInfo2;
             this.textBoxCheckNo.EditValueChanged += new System.EventHandler(this.textBoxCheckNo_EditValueChanged);
             this.textBoxCheckNo.Validated += new System.EventHandler(this.textBoxCheckNo_Validated);
@@ -6683,8 +6721,12 @@ namespace IAC2021SQL
             this.nullableDateTimePickerFundingDate.EnterMoveNextControl = true;
             this.nullableDateTimePickerFundingDate.Name = "nullableDateTimePickerFundingDate";
             this.nullableDateTimePickerFundingDate.Properties.Appearance.Options.UseFont = true;
+            this.nullableDateTimePickerFundingDate.Properties.Appearance.Options.UseTextOptions = true;
+            this.nullableDateTimePickerFundingDate.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.nullableDateTimePickerFundingDate.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.nullableDateTimePickerFundingDate.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.nullableDateTimePickerFundingDate.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.nullableDateTimePickerFundingDate.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.nullableDateTimePickerFundingDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("nullableDateTimePickerFundingDate.Properties.Buttons"))))});
             this.nullableDateTimePickerFundingDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -6899,8 +6941,12 @@ namespace IAC2021SQL
             this.DateTimePickerContractDate.EnterMoveNextControl = true;
             this.DateTimePickerContractDate.Name = "DateTimePickerContractDate";
             this.DateTimePickerContractDate.Properties.Appearance.Options.UseFont = true;
+            this.DateTimePickerContractDate.Properties.Appearance.Options.UseTextOptions = true;
+            this.DateTimePickerContractDate.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.DateTimePickerContractDate.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.DateTimePickerContractDate.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.DateTimePickerContractDate.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.DateTimePickerContractDate.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.DateTimePickerContractDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("DateTimePickerContractDate.Properties.Buttons"))))});
             this.DateTimePickerContractDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -6918,8 +6964,12 @@ namespace IAC2021SQL
             this.txtFirstPayDate.EnterMoveNextControl = true;
             this.txtFirstPayDate.Name = "txtFirstPayDate";
             this.txtFirstPayDate.Properties.Appearance.Options.UseFont = true;
+            this.txtFirstPayDate.Properties.Appearance.Options.UseTextOptions = true;
+            this.txtFirstPayDate.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.txtFirstPayDate.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.txtFirstPayDate.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.txtFirstPayDate.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.txtFirstPayDate.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.txtFirstPayDate.Properties.AutoHeight = ((bool)(resources.GetObject("txtFirstPayDate.Properties.AutoHeight")));
             this.txtFirstPayDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("txtFirstPayDate.Properties.Buttons"))))});
@@ -6939,8 +6989,12 @@ namespace IAC2021SQL
             this.txtPaymentDate.EnterMoveNextControl = true;
             this.txtPaymentDate.Name = "txtPaymentDate";
             this.txtPaymentDate.Properties.Appearance.Options.UseFont = true;
+            this.txtPaymentDate.Properties.Appearance.Options.UseTextOptions = true;
+            this.txtPaymentDate.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.txtPaymentDate.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.txtPaymentDate.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.txtPaymentDate.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.txtPaymentDate.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.txtPaymentDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("txtPaymentDate.Properties.Buttons"))))});
             this.txtPaymentDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -7100,44 +7154,44 @@ namespace IAC2021SQL
             this.layoutControlGroupLoanInfoTop.OptionsPrint.AppearanceItem.BackColor = System.Drawing.Color.Transparent;
             this.layoutControlGroupLoanInfoTop.OptionsPrint.AppearanceItem.Options.UseBackColor = true;
             this.layoutControlGroupLoanInfoTop.OptionsTableLayoutGroup.AutoSizeDefaultDefinitionLength = 250;
-            columnDefinition13.SizeType = System.Windows.Forms.SizeType.Absolute;
-            columnDefinition13.Width = 258D;
-            columnDefinition14.SizeType = System.Windows.Forms.SizeType.Absolute;
-            columnDefinition14.Width = 250D;
-            columnDefinition15.SizeType = System.Windows.Forms.SizeType.Absolute;
-            columnDefinition15.Width = 254D;
-            columnDefinition16.SizeType = System.Windows.Forms.SizeType.Absolute;
-            columnDefinition16.Width = 306D;
-            columnDefinition17.SizeType = System.Windows.Forms.SizeType.Absolute;
-            columnDefinition17.Width = 250D;
-            columnDefinition18.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            columnDefinition18.Width = 411D;
+            columnDefinition25.SizeType = System.Windows.Forms.SizeType.Absolute;
+            columnDefinition25.Width = 258D;
+            columnDefinition26.SizeType = System.Windows.Forms.SizeType.Absolute;
+            columnDefinition26.Width = 250D;
+            columnDefinition27.SizeType = System.Windows.Forms.SizeType.Absolute;
+            columnDefinition27.Width = 254D;
+            columnDefinition28.SizeType = System.Windows.Forms.SizeType.Absolute;
+            columnDefinition28.Width = 306D;
+            columnDefinition29.SizeType = System.Windows.Forms.SizeType.Absolute;
+            columnDefinition29.Width = 250D;
+            columnDefinition30.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            columnDefinition30.Width = 411D;
             this.layoutControlGroupLoanInfoTop.OptionsTableLayoutGroup.ColumnDefinitions.AddRange(new DevExpress.XtraLayout.ColumnDefinition[] {
-            columnDefinition13,
-            columnDefinition14,
-            columnDefinition15,
-            columnDefinition16,
-            columnDefinition17,
-            columnDefinition18});
-            rowDefinition13.Height = 41D;
-            rowDefinition13.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            rowDefinition14.Height = 41D;
-            rowDefinition14.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            rowDefinition15.Height = 41D;
-            rowDefinition15.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            rowDefinition16.Height = 41D;
-            rowDefinition16.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            rowDefinition17.Height = 41D;
-            rowDefinition17.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            rowDefinition18.Height = 43D;
-            rowDefinition18.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            columnDefinition25,
+            columnDefinition26,
+            columnDefinition27,
+            columnDefinition28,
+            columnDefinition29,
+            columnDefinition30});
+            rowDefinition25.Height = 41D;
+            rowDefinition25.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            rowDefinition26.Height = 41D;
+            rowDefinition26.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            rowDefinition27.Height = 41D;
+            rowDefinition27.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            rowDefinition28.Height = 41D;
+            rowDefinition28.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            rowDefinition29.Height = 41D;
+            rowDefinition29.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            rowDefinition30.Height = 43D;
+            rowDefinition30.SizeType = System.Windows.Forms.SizeType.AutoSize;
             this.layoutControlGroupLoanInfoTop.OptionsTableLayoutGroup.RowDefinitions.AddRange(new DevExpress.XtraLayout.RowDefinition[] {
-            rowDefinition13,
-            rowDefinition14,
-            rowDefinition15,
-            rowDefinition16,
-            rowDefinition17,
-            rowDefinition18});
+            rowDefinition25,
+            rowDefinition26,
+            rowDefinition27,
+            rowDefinition28,
+            rowDefinition29,
+            rowDefinition30});
             this.layoutControlGroupLoanInfoTop.OptionsTableLayoutGroup.ShrinkEmptyAutoSizeDefinition = DevExpress.Utils.DefaultBoolean.True;
             this.layoutControlGroupLoanInfoTop.Size = new System.Drawing.Size(1789, 308);
             this.layoutControlGroupLoanInfoTop.Spacing = new DevExpress.XtraLayout.Utils.Padding(20, 20, 20, 20);
@@ -7685,44 +7739,44 @@ namespace IAC2021SQL
             this.layoutControlGroupLoanInfoBottom.Location = new System.Drawing.Point(0, 419);
             this.layoutControlGroupLoanInfoBottom.Name = "layoutControlGroupLoanInfoBottom";
             this.layoutControlGroupLoanInfoBottom.OptionsItemText.TextAlignMode = DevExpress.XtraLayout.TextAlignModeGroup.AutoSize;
-            columnDefinition19.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            columnDefinition19.Width = 203D;
-            columnDefinition20.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            columnDefinition20.Width = 216D;
-            columnDefinition21.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            columnDefinition21.Width = 267D;
-            columnDefinition22.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            columnDefinition22.Width = 262D;
-            columnDefinition23.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            columnDefinition23.Width = 20D;
-            columnDefinition24.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            columnDefinition24.Width = 761D;
+            columnDefinition31.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            columnDefinition31.Width = 203D;
+            columnDefinition32.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            columnDefinition32.Width = 216D;
+            columnDefinition33.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            columnDefinition33.Width = 267D;
+            columnDefinition34.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            columnDefinition34.Width = 262D;
+            columnDefinition35.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            columnDefinition35.Width = 20D;
+            columnDefinition36.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            columnDefinition36.Width = 761D;
             this.layoutControlGroupLoanInfoBottom.OptionsTableLayoutGroup.ColumnDefinitions.AddRange(new DevExpress.XtraLayout.ColumnDefinition[] {
-            columnDefinition19,
-            columnDefinition20,
-            columnDefinition21,
-            columnDefinition22,
-            columnDefinition23,
-            columnDefinition24});
-            rowDefinition19.Height = 41D;
-            rowDefinition19.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            rowDefinition20.Height = 41D;
-            rowDefinition20.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            rowDefinition21.Height = 41D;
-            rowDefinition21.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            rowDefinition22.Height = 41D;
-            rowDefinition22.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            rowDefinition23.Height = 41D;
-            rowDefinition23.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            rowDefinition24.Height = 41D;
-            rowDefinition24.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            columnDefinition31,
+            columnDefinition32,
+            columnDefinition33,
+            columnDefinition34,
+            columnDefinition35,
+            columnDefinition36});
+            rowDefinition31.Height = 41D;
+            rowDefinition31.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            rowDefinition32.Height = 41D;
+            rowDefinition32.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            rowDefinition33.Height = 41D;
+            rowDefinition33.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            rowDefinition34.Height = 41D;
+            rowDefinition34.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            rowDefinition35.Height = 41D;
+            rowDefinition35.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            rowDefinition36.Height = 41D;
+            rowDefinition36.SizeType = System.Windows.Forms.SizeType.AutoSize;
             this.layoutControlGroupLoanInfoBottom.OptionsTableLayoutGroup.RowDefinitions.AddRange(new DevExpress.XtraLayout.RowDefinition[] {
-            rowDefinition19,
-            rowDefinition20,
-            rowDefinition21,
-            rowDefinition22,
-            rowDefinition23,
-            rowDefinition24});
+            rowDefinition31,
+            rowDefinition32,
+            rowDefinition33,
+            rowDefinition34,
+            rowDefinition35,
+            rowDefinition36});
             this.layoutControlGroupLoanInfoBottom.Size = new System.Drawing.Size(1789, 306);
             this.layoutControlGroupLoanInfoBottom.Spacing = new DevExpress.XtraLayout.Utils.Padding(20, 20, 20, 20);
             this.layoutControlGroupLoanInfoBottom.TextVisible = false;
@@ -8182,8 +8236,12 @@ namespace IAC2021SQL
             resources.ApplyResources(this.textEditSettlementAmount, "textEditSettlementAmount");
             this.textEditSettlementAmount.MenuManager = this.toolbarFormManager1;
             this.textEditSettlementAmount.Name = "textEditSettlementAmount";
+            this.textEditSettlementAmount.Properties.Appearance.Options.UseTextOptions = true;
+            this.textEditSettlementAmount.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.textEditSettlementAmount.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.textEditSettlementAmount.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.textEditSettlementAmount.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.textEditSettlementAmount.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.textEditSettlementAmount.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
             this.textEditSettlementAmount.Properties.MaskSettings.Set("mask", "c");
             this.textEditSettlementAmount.Properties.MaskSettings.Set("culture", "en-US");
@@ -8212,8 +8270,12 @@ namespace IAC2021SQL
             resources.ApplyResources(this.textEditLossClaimNumber, "textEditLossClaimNumber");
             this.textEditLossClaimNumber.MenuManager = this.toolbarFormManager1;
             this.textEditLossClaimNumber.Name = "textEditLossClaimNumber";
+            this.textEditLossClaimNumber.Properties.Appearance.Options.UseTextOptions = true;
+            this.textEditLossClaimNumber.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.textEditLossClaimNumber.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.textEditLossClaimNumber.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.textEditLossClaimNumber.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.textEditLossClaimNumber.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.textEditLossClaimNumber.Properties.MaxLength = 25;
             this.textEditLossClaimNumber.StyleController = this.layoutControlVehicleInfo;
             this.textEditLossClaimNumber.EditValueChanged += new System.EventHandler(this.textEditLossClaimNumber_EditValueChanged);
@@ -8242,8 +8304,12 @@ namespace IAC2021SQL
             this.dateEditTotalLossDate.EnterMoveNextControl = true;
             this.dateEditTotalLossDate.MenuManager = this.toolbarFormManager1;
             this.dateEditTotalLossDate.Name = "dateEditTotalLossDate";
+            this.dateEditTotalLossDate.Properties.Appearance.Options.UseTextOptions = true;
+            this.dateEditTotalLossDate.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.dateEditTotalLossDate.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.dateEditTotalLossDate.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.dateEditTotalLossDate.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.dateEditTotalLossDate.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.dateEditTotalLossDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("dateEditTotalLossDate.Properties.Buttons"))))});
             this.dateEditTotalLossDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -8278,8 +8344,12 @@ namespace IAC2021SQL
             this.textEditDTI.MenuManager = this.toolbarFormManager1;
             this.textEditDTI.Name = "textEditDTI";
             this.textEditDTI.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
+            this.textEditDTI.Properties.Appearance.Options.UseTextOptions = true;
+            this.textEditDTI.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.textEditDTI.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.textEditDTI.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.textEditDTI.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.textEditDTI.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.textEditDTI.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
             this.textEditDTI.Properties.MaskSettings.Set("mask", "c");
             this.textEditDTI.Properties.MaskSettings.Set("culture", "en-US");
@@ -8295,8 +8365,12 @@ namespace IAC2021SQL
             this.textEditPTI.MenuManager = this.toolbarFormManager1;
             this.textEditPTI.Name = "textEditPTI";
             this.textEditPTI.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
+            this.textEditPTI.Properties.Appearance.Options.UseTextOptions = true;
+            this.textEditPTI.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.textEditPTI.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.textEditPTI.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.textEditPTI.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.textEditPTI.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.textEditPTI.Properties.BeepOnError = ((bool)(resources.GetObject("textEditPTI.Properties.BeepOnError")));
             this.textEditPTI.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
             this.textEditPTI.Properties.MaskSettings.Set("mask", "c");
@@ -8314,8 +8388,12 @@ namespace IAC2021SQL
             this.dateEditIssueDate2.EnterMoveNextControl = true;
             this.dateEditIssueDate2.Name = "dateEditIssueDate2";
             this.dateEditIssueDate2.Properties.Appearance.Options.UseFont = true;
+            this.dateEditIssueDate2.Properties.Appearance.Options.UseTextOptions = true;
+            this.dateEditIssueDate2.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.dateEditIssueDate2.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.dateEditIssueDate2.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.dateEditIssueDate2.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.dateEditIssueDate2.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.dateEditIssueDate2.Properties.AutoHeight = ((bool)(resources.GetObject("dateEditIssueDate2.Properties.AutoHeight")));
             this.dateEditIssueDate2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("dateEditIssueDate2.Properties.Buttons"))))});
@@ -8436,8 +8514,12 @@ namespace IAC2021SQL
             this.dateEditIssueDate1.EnterMoveNextControl = true;
             this.dateEditIssueDate1.Name = "dateEditIssueDate1";
             this.dateEditIssueDate1.Properties.Appearance.Options.UseFont = true;
+            this.dateEditIssueDate1.Properties.Appearance.Options.UseTextOptions = true;
+            this.dateEditIssueDate1.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.dateEditIssueDate1.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.dateEditIssueDate1.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.dateEditIssueDate1.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.dateEditIssueDate1.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.dateEditIssueDate1.Properties.AutoHeight = ((bool)(resources.GetObject("dateEditIssueDate1.Properties.AutoHeight")));
             this.dateEditIssueDate1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("dateEditIssueDate1.Properties.Buttons"))))});
@@ -8494,8 +8576,12 @@ namespace IAC2021SQL
             this.dateEditCancellationDate.EnterMoveNextControl = true;
             this.dateEditCancellationDate.Name = "dateEditCancellationDate";
             this.dateEditCancellationDate.Properties.Appearance.Options.UseFont = true;
+            this.dateEditCancellationDate.Properties.Appearance.Options.UseTextOptions = true;
+            this.dateEditCancellationDate.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.dateEditCancellationDate.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.dateEditCancellationDate.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.dateEditCancellationDate.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.dateEditCancellationDate.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.dateEditCancellationDate.Properties.AutoHeight = ((bool)(resources.GetObject("dateEditCancellationDate.Properties.AutoHeight")));
             this.dateEditCancellationDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("dateEditCancellationDate.Properties.Buttons"))))});
@@ -8513,8 +8599,12 @@ namespace IAC2021SQL
             resources.ApplyResources(this.textBoxMileage, "textBoxMileage");
             this.textBoxMileage.Name = "textBoxMileage";
             this.textBoxMileage.Properties.Appearance.Options.UseFont = true;
+            this.textBoxMileage.Properties.Appearance.Options.UseTextOptions = true;
+            this.textBoxMileage.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.textBoxMileage.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.textBoxMileage.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.textBoxMileage.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.textBoxMileage.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.textBoxMileage.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
             this.textBoxMileage.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
             this.textBoxMileage.Properties.MaskSettings.Set("mask", "d");
@@ -8529,8 +8619,12 @@ namespace IAC2021SQL
             this.txtExpirationDate.EnterMoveNextControl = true;
             this.txtExpirationDate.Name = "txtExpirationDate";
             this.txtExpirationDate.Properties.Appearance.Options.UseFont = true;
+            this.txtExpirationDate.Properties.Appearance.Options.UseTextOptions = true;
+            this.txtExpirationDate.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.txtExpirationDate.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.txtExpirationDate.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.txtExpirationDate.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.txtExpirationDate.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.txtExpirationDate.Properties.AutoHeight = ((bool)(resources.GetObject("txtExpirationDate.Properties.AutoHeight")));
             this.txtExpirationDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("txtExpirationDate.Properties.Buttons"))))});
@@ -8548,8 +8642,12 @@ namespace IAC2021SQL
             this.txtEffectiveDate.EnterMoveNextControl = true;
             this.txtEffectiveDate.Name = "txtEffectiveDate";
             this.txtEffectiveDate.Properties.Appearance.Options.UseFont = true;
+            this.txtEffectiveDate.Properties.Appearance.Options.UseTextOptions = true;
+            this.txtEffectiveDate.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.txtEffectiveDate.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.txtEffectiveDate.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.txtEffectiveDate.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.txtEffectiveDate.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.txtEffectiveDate.Properties.AutoHeight = ((bool)(resources.GetObject("txtEffectiveDate.Properties.AutoHeight")));
             this.txtEffectiveDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("txtEffectiveDate.Properties.Buttons"))))});
@@ -8677,8 +8775,12 @@ namespace IAC2021SQL
             resources.ApplyResources(this.txtVehicleYear, "txtVehicleYear");
             this.txtVehicleYear.Name = "txtVehicleYear";
             this.txtVehicleYear.Properties.Appearance.Options.UseFont = true;
+            this.txtVehicleYear.Properties.Appearance.Options.UseTextOptions = true;
+            this.txtVehicleYear.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.txtVehicleYear.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.txtVehicleYear.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.txtVehicleYear.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.txtVehicleYear.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.txtVehicleYear.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
             this.txtVehicleYear.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
             this.txtVehicleYear.Properties.MaskSettings.Set("mask", "d");
@@ -8698,6 +8800,8 @@ namespace IAC2021SQL
             this.textEditComprehensiveDeductible.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.textEditComprehensiveDeductible.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.textEditComprehensiveDeductible.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.textEditComprehensiveDeductible.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.textEditComprehensiveDeductible.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.textEditComprehensiveDeductible.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
             this.textEditComprehensiveDeductible.Properties.MaskSettings.Set("mask", "c");
             this.textEditComprehensiveDeductible.Properties.UseMaskAsDisplayFormat = ((bool)(resources.GetObject("textEditComprehensiveDeductible.Properties.UseMaskAsDisplayFormat")));
@@ -8736,6 +8840,8 @@ namespace IAC2021SQL
             this.textEditCollisionDeductible.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.textEditCollisionDeductible.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.textEditCollisionDeductible.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.textEditCollisionDeductible.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.textEditCollisionDeductible.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.textEditCollisionDeductible.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
             this.textEditCollisionDeductible.Properties.MaskSettings.Set("mask", "c");
             this.textEditCollisionDeductible.Properties.UseMaskAsDisplayFormat = ((bool)(resources.GetObject("textEditCollisionDeductible.Properties.UseMaskAsDisplayFormat")));
@@ -8791,8 +8897,12 @@ namespace IAC2021SQL
             this.dateEditIssueDate3.EnterMoveNextControl = true;
             this.dateEditIssueDate3.Name = "dateEditIssueDate3";
             this.dateEditIssueDate3.Properties.Appearance.Options.UseFont = true;
+            this.dateEditIssueDate3.Properties.Appearance.Options.UseTextOptions = true;
+            this.dateEditIssueDate3.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.dateEditIssueDate3.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.dateEditIssueDate3.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.dateEditIssueDate3.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.dateEditIssueDate3.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.dateEditIssueDate3.Properties.AutoHeight = ((bool)(resources.GetObject("dateEditIssueDate3.Properties.AutoHeight")));
             this.dateEditIssueDate3.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("dateEditIssueDate3.Properties.Buttons"))))});
@@ -8811,8 +8921,12 @@ namespace IAC2021SQL
             resources.ApplyResources(this.textBoxBuyersAnnualIncome, "textBoxBuyersAnnualIncome");
             this.textBoxBuyersAnnualIncome.Name = "textBoxBuyersAnnualIncome";
             this.textBoxBuyersAnnualIncome.Properties.Appearance.Options.UseFont = true;
+            this.textBoxBuyersAnnualIncome.Properties.Appearance.Options.UseTextOptions = true;
+            this.textBoxBuyersAnnualIncome.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.textBoxBuyersAnnualIncome.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.textBoxBuyersAnnualIncome.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.textBoxBuyersAnnualIncome.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.textBoxBuyersAnnualIncome.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.textBoxBuyersAnnualIncome.Properties.DisplayFormat.FormatString = "c2";
             this.textBoxBuyersAnnualIncome.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.textBoxBuyersAnnualIncome.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
@@ -8845,8 +8959,12 @@ namespace IAC2021SQL
             resources.ApplyResources(this.cUSTOMER_CREDIT_SCORE_NTextBox, "cUSTOMER_CREDIT_SCORE_NTextBox");
             this.cUSTOMER_CREDIT_SCORE_NTextBox.Name = "cUSTOMER_CREDIT_SCORE_NTextBox";
             this.cUSTOMER_CREDIT_SCORE_NTextBox.Properties.Appearance.Options.UseFont = true;
+            this.cUSTOMER_CREDIT_SCORE_NTextBox.Properties.Appearance.Options.UseTextOptions = true;
+            this.cUSTOMER_CREDIT_SCORE_NTextBox.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.cUSTOMER_CREDIT_SCORE_NTextBox.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.cUSTOMER_CREDIT_SCORE_NTextBox.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.cUSTOMER_CREDIT_SCORE_NTextBox.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.cUSTOMER_CREDIT_SCORE_NTextBox.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.cUSTOMER_CREDIT_SCORE_NTextBox.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
             this.cUSTOMER_CREDIT_SCORE_NTextBox.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
             this.cUSTOMER_CREDIT_SCORE_NTextBox.Properties.MaskSettings.Set("mask", "d");
@@ -8861,8 +8979,12 @@ namespace IAC2021SQL
             resources.ApplyResources(this.textBoxTierPoints, "textBoxTierPoints");
             this.textBoxTierPoints.Name = "textBoxTierPoints";
             this.textBoxTierPoints.Properties.Appearance.Options.UseFont = true;
+            this.textBoxTierPoints.Properties.Appearance.Options.UseTextOptions = true;
+            this.textBoxTierPoints.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.textBoxTierPoints.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.textBoxTierPoints.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.textBoxTierPoints.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.textBoxTierPoints.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.textBoxTierPoints.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
             this.textBoxTierPoints.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
             this.textBoxTierPoints.Properties.MaskSettings.Set("mask", "d");
@@ -8878,8 +9000,12 @@ namespace IAC2021SQL
             this.textBoxLTV.Name = "textBoxLTV";
             this.textBoxLTV.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
             this.textBoxLTV.Properties.Appearance.Options.UseForeColor = true;
+            this.textBoxLTV.Properties.Appearance.Options.UseTextOptions = true;
+            this.textBoxLTV.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.textBoxLTV.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.textBoxLTV.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.textBoxLTV.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.textBoxLTV.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.textBoxLTV.StyleController = this.layoutControlVehicleInfo;
             this.textBoxLTV.EditValueChanged += new System.EventHandler(this.textBoxLTV_EditValueChanged);
             // 
@@ -8912,6 +9038,10 @@ namespace IAC2021SQL
             this.nullableDateTimePickerTitleDateReceived.EnterMoveNextControl = true;
             this.nullableDateTimePickerTitleDateReceived.Name = "nullableDateTimePickerTitleDateReceived";
             this.nullableDateTimePickerTitleDateReceived.Properties.Appearance.Options.UseFont = true;
+            this.nullableDateTimePickerTitleDateReceived.Properties.Appearance.Options.UseTextOptions = true;
+            this.nullableDateTimePickerTitleDateReceived.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.nullableDateTimePickerTitleDateReceived.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.nullableDateTimePickerTitleDateReceived.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.nullableDateTimePickerTitleDateReceived.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("nullableDateTimePickerTitleDateReceived.Properties.Buttons"))))});
             this.nullableDateTimePickerTitleDateReceived.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -8951,6 +9081,10 @@ namespace IAC2021SQL
             this.nullableDateTimePickerDateTitleReleased.EnterMoveNextControl = true;
             this.nullableDateTimePickerDateTitleReleased.Name = "nullableDateTimePickerDateTitleReleased";
             this.nullableDateTimePickerDateTitleReleased.Properties.Appearance.Options.UseFont = true;
+            this.nullableDateTimePickerDateTitleReleased.Properties.Appearance.Options.UseTextOptions = true;
+            this.nullableDateTimePickerDateTitleReleased.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.nullableDateTimePickerDateTitleReleased.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.nullableDateTimePickerDateTitleReleased.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.nullableDateTimePickerDateTitleReleased.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("nullableDateTimePickerDateTitleReleased.Properties.Buttons"))))});
             this.nullableDateTimePickerDateTitleReleased.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -10613,12 +10747,12 @@ namespace IAC2021SQL
             this.cUSTOMER_CREDIT_SCORE_NTextBoxitem.AppearanceItemCaptionDisabled.Options.UseForeColor = true;
             this.cUSTOMER_CREDIT_SCORE_NTextBoxitem.Control = this.cUSTOMER_CREDIT_SCORE_NTextBox;
             resources.ApplyResources(this.cUSTOMER_CREDIT_SCORE_NTextBoxitem, "cUSTOMER_CREDIT_SCORE_NTextBoxitem");
-            this.cUSTOMER_CREDIT_SCORE_NTextBoxitem.Location = new System.Drawing.Point(78, 41);
-            this.cUSTOMER_CREDIT_SCORE_NTextBoxitem.MaxSize = new System.Drawing.Size(0, 41);
-            this.cUSTOMER_CREDIT_SCORE_NTextBoxitem.MinSize = new System.Drawing.Size(1, 41);
+            this.cUSTOMER_CREDIT_SCORE_NTextBoxitem.Location = new System.Drawing.Point(75, 41);
+            this.cUSTOMER_CREDIT_SCORE_NTextBoxitem.MaxSize = new System.Drawing.Size(142, 41);
+            this.cUSTOMER_CREDIT_SCORE_NTextBoxitem.MinSize = new System.Drawing.Size(142, 41);
             this.cUSTOMER_CREDIT_SCORE_NTextBoxitem.Name = "cUSTOMER_CREDIT_SCORE_NTextBoxitem";
             this.cUSTOMER_CREDIT_SCORE_NTextBoxitem.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
-            this.cUSTOMER_CREDIT_SCORE_NTextBoxitem.Size = new System.Drawing.Size(144, 41);
+            this.cUSTOMER_CREDIT_SCORE_NTextBoxitem.Size = new System.Drawing.Size(142, 41);
             this.cUSTOMER_CREDIT_SCORE_NTextBoxitem.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.cUSTOMER_CREDIT_SCORE_NTextBoxitem.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
             this.cUSTOMER_CREDIT_SCORE_NTextBoxitem.TextLocation = DevExpress.Utils.Locations.Left;
@@ -10646,11 +10780,11 @@ namespace IAC2021SQL
             // emptySpaceItem149
             // 
             this.emptySpaceItem149.Location = new System.Drawing.Point(0, 41);
-            this.emptySpaceItem149.MaxSize = new System.Drawing.Size(0, 41);
+            this.emptySpaceItem149.MaxSize = new System.Drawing.Size(75, 41);
             this.emptySpaceItem149.MinSize = new System.Drawing.Size(75, 41);
             this.emptySpaceItem149.Name = "emptySpaceItem149";
             this.emptySpaceItem149.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
-            this.emptySpaceItem149.Size = new System.Drawing.Size(78, 41);
+            this.emptySpaceItem149.Size = new System.Drawing.Size(75, 41);
             this.emptySpaceItem149.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             // 
             // emptySpaceItem150
@@ -10679,12 +10813,12 @@ namespace IAC2021SQL
             this.cUSTOMER_CREDIT_SCORE_ATextBoxitem.AppearanceItemCaptionDisabled.Options.UseForeColor = true;
             this.cUSTOMER_CREDIT_SCORE_ATextBoxitem.Control = this.cUSTOMER_CREDIT_SCORE_ATextBox;
             resources.ApplyResources(this.cUSTOMER_CREDIT_SCORE_ATextBoxitem, "cUSTOMER_CREDIT_SCORE_ATextBoxitem");
-            this.cUSTOMER_CREDIT_SCORE_ATextBoxitem.Location = new System.Drawing.Point(222, 41);
-            this.cUSTOMER_CREDIT_SCORE_ATextBoxitem.MaxSize = new System.Drawing.Size(0, 41);
-            this.cUSTOMER_CREDIT_SCORE_ATextBoxitem.MinSize = new System.Drawing.Size(1, 41);
+            this.cUSTOMER_CREDIT_SCORE_ATextBoxitem.Location = new System.Drawing.Point(217, 41);
+            this.cUSTOMER_CREDIT_SCORE_ATextBoxitem.MaxSize = new System.Drawing.Size(472, 41);
+            this.cUSTOMER_CREDIT_SCORE_ATextBoxitem.MinSize = new System.Drawing.Size(472, 41);
             this.cUSTOMER_CREDIT_SCORE_ATextBoxitem.Name = "cUSTOMER_CREDIT_SCORE_ATextBoxitem";
             this.cUSTOMER_CREDIT_SCORE_ATextBoxitem.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
-            this.cUSTOMER_CREDIT_SCORE_ATextBoxitem.Size = new System.Drawing.Size(467, 41);
+            this.cUSTOMER_CREDIT_SCORE_ATextBoxitem.Size = new System.Drawing.Size(472, 41);
             this.cUSTOMER_CREDIT_SCORE_ATextBoxitem.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.cUSTOMER_CREDIT_SCORE_ATextBoxitem.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
             this.cUSTOMER_CREDIT_SCORE_ATextBoxitem.TextSize = new System.Drawing.Size(0, 0);
@@ -11112,8 +11246,12 @@ namespace IAC2021SQL
             this.comboBoxCosLetterType.EnterMoveNextControl = true;
             this.comboBoxCosLetterType.Name = "comboBoxCosLetterType";
             this.comboBoxCosLetterType.Properties.Appearance.Options.UseFont = true;
+            this.comboBoxCosLetterType.Properties.Appearance.Options.UseTextOptions = true;
+            this.comboBoxCosLetterType.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.comboBoxCosLetterType.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.comboBoxCosLetterType.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.comboBoxCosLetterType.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.comboBoxCosLetterType.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.comboBoxCosLetterType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("comboBoxCosLetterType.Properties.Buttons"))))});
             this.comboBoxCosLetterType.Properties.DataSource = this.letterTypeBindingSource;
@@ -11128,8 +11266,12 @@ namespace IAC2021SQL
             this.txtCOSDOB.EnterMoveNextControl = true;
             this.txtCOSDOB.Name = "txtCOSDOB";
             this.txtCOSDOB.Properties.Appearance.Options.UseFont = true;
+            this.txtCOSDOB.Properties.Appearance.Options.UseTextOptions = true;
+            this.txtCOSDOB.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.txtCOSDOB.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.txtCOSDOB.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.txtCOSDOB.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.txtCOSDOB.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.txtCOSDOB.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("txtCOSDOB.Properties.Buttons"))))});
             this.txtCOSDOB.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -11205,8 +11347,12 @@ namespace IAC2021SQL
             this.comboBoxCosLetterNo.EnterMoveNextControl = true;
             this.comboBoxCosLetterNo.Name = "comboBoxCosLetterNo";
             this.comboBoxCosLetterNo.Properties.Appearance.Options.UseFont = true;
+            this.comboBoxCosLetterNo.Properties.Appearance.Options.UseTextOptions = true;
+            this.comboBoxCosLetterNo.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.comboBoxCosLetterNo.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.comboBoxCosLetterNo.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.comboBoxCosLetterNo.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.comboBoxCosLetterNo.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.comboBoxCosLetterNo.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("comboBoxCosLetterNo.Properties.Buttons"))))});
             this.comboBoxCosLetterNo.Properties.DataSource = this.letterNumberBindingSource;
@@ -11283,8 +11429,12 @@ namespace IAC2021SQL
             this.textBoxCosignerTierPoints.EnterMoveNextControl = true;
             resources.ApplyResources(this.textBoxCosignerTierPoints, "textBoxCosignerTierPoints");
             this.textBoxCosignerTierPoints.Name = "textBoxCosignerTierPoints";
+            this.textBoxCosignerTierPoints.Properties.Appearance.Options.UseTextOptions = true;
+            this.textBoxCosignerTierPoints.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.textBoxCosignerTierPoints.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.textBoxCosignerTierPoints.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.textBoxCosignerTierPoints.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.textBoxCosignerTierPoints.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.textBoxCosignerTierPoints.StyleController = this.layoutControlCosignerInfo;
             this.textBoxCosignerTierPoints.EditValueChanged += new System.EventHandler(this.textBoxCosignerTierPoints_EditValueChanged);
             // 
@@ -11354,8 +11504,12 @@ namespace IAC2021SQL
             resources.ApplyResources(this.txtCOSZip, "txtCOSZip");
             this.txtCOSZip.Name = "txtCOSZip";
             this.txtCOSZip.Properties.Appearance.Options.UseFont = true;
+            this.txtCOSZip.Properties.Appearance.Options.UseTextOptions = true;
+            this.txtCOSZip.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.txtCOSZip.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.txtCOSZip.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.txtCOSZip.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.txtCOSZip.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.txtCOSZip.StyleController = this.layoutControlCosignerInfo;
             this.txtCOSZip.EditValueChanged += new System.EventHandler(this.txtCOSZip_EditValueChanged);
             // 
@@ -11365,13 +11519,19 @@ namespace IAC2021SQL
             this.textBoxCosignerAnnualIncome.EnterMoveNextControl = true;
             resources.ApplyResources(this.textBoxCosignerAnnualIncome, "textBoxCosignerAnnualIncome");
             this.textBoxCosignerAnnualIncome.Name = "textBoxCosignerAnnualIncome";
+            this.textBoxCosignerAnnualIncome.Properties.Appearance.Options.UseTextOptions = true;
+            this.textBoxCosignerAnnualIncome.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.textBoxCosignerAnnualIncome.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.textBoxCosignerAnnualIncome.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.textBoxCosignerAnnualIncome.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.textBoxCosignerAnnualIncome.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.textBoxCosignerAnnualIncome.Properties.BeepOnError = ((bool)(resources.GetObject("textBoxCosignerAnnualIncome.Properties.BeepOnError")));
             this.textBoxCosignerAnnualIncome.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
             this.textBoxCosignerAnnualIncome.Properties.MaskSettings.Set("mask", "c");
-            this.textBoxCosignerAnnualIncome.Properties.MaskSettings.Set("autoHideDecimalSeparator", true);
+            this.textBoxCosignerAnnualIncome.Properties.MaskSettings.Set("autoHideDecimalSeparator", false);
             this.textBoxCosignerAnnualIncome.Properties.MaskSettings.Set("culture", "en-US");
+            this.textBoxCosignerAnnualIncome.Properties.MaskSettings.Set("hideInsignificantZeros", true);
+            this.textBoxCosignerAnnualIncome.Properties.MaskSettings.Set("valueType", typeof(decimal));
             this.textBoxCosignerAnnualIncome.Properties.UseMaskAsDisplayFormat = ((bool)(resources.GetObject("textBoxCosignerAnnualIncome.Properties.UseMaskAsDisplayFormat")));
             this.textBoxCosignerAnnualIncome.StyleController = this.layoutControlCosignerInfo;
             this.textBoxCosignerAnnualIncome.EditValueChanged += new System.EventHandler(this.textBoxCosignerAnnualIncome_EditValueChanged);
@@ -11382,8 +11542,12 @@ namespace IAC2021SQL
             this.textBoxTier.EnterMoveNextControl = true;
             resources.ApplyResources(this.textBoxTier, "textBoxTier");
             this.textBoxTier.Name = "textBoxTier";
+            this.textBoxTier.Properties.Appearance.Options.UseTextOptions = true;
+            this.textBoxTier.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.textBoxTier.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.textBoxTier.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.textBoxTier.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.textBoxTier.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.textBoxTier.StyleController = this.layoutControlCosignerInfo;
             this.textBoxTier.EditValueChanged += new System.EventHandler(this.textBoxTier_EditValueChanged);
             // 
@@ -11508,8 +11672,12 @@ namespace IAC2021SQL
             resources.ApplyResources(this.textBoxCosignerCreditScore, "textBoxCosignerCreditScore");
             this.textBoxCosignerCreditScore.Name = "textBoxCosignerCreditScore";
             this.textBoxCosignerCreditScore.Properties.Appearance.Options.UseFont = true;
+            this.textBoxCosignerCreditScore.Properties.Appearance.Options.UseTextOptions = true;
+            this.textBoxCosignerCreditScore.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.textBoxCosignerCreditScore.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.textBoxCosignerCreditScore.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.textBoxCosignerCreditScore.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.textBoxCosignerCreditScore.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.textBoxCosignerCreditScore.StyleController = this.layoutControlCosignerInfo;
             this.textBoxCosignerCreditScore.EditValueChanged += new System.EventHandler(this.textBoxCosignerCreditScore_EditValueChanged);
             // 
@@ -12413,8 +12581,11 @@ namespace IAC2021SQL
             // emptySpaceItem178
             // 
             this.emptySpaceItem178.Location = new System.Drawing.Point(0, 0);
+            this.emptySpaceItem178.MaxSize = new System.Drawing.Size(551, 106);
+            this.emptySpaceItem178.MinSize = new System.Drawing.Size(551, 106);
             this.emptySpaceItem178.Name = "emptySpaceItem178";
-            this.emptySpaceItem178.Size = new System.Drawing.Size(542, 106);
+            this.emptySpaceItem178.Size = new System.Drawing.Size(551, 106);
+            this.emptySpaceItem178.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             // 
             // emptySpaceItem181
             // 
@@ -12438,7 +12609,7 @@ namespace IAC2021SQL
             this.layoutControlItem32,
             this.layoutControlItem33,
             this.layoutControlItem34});
-            this.layoutControlGroup6.Location = new System.Drawing.Point(542, 0);
+            this.layoutControlGroup6.Location = new System.Drawing.Point(551, 0);
             this.layoutControlGroup6.Name = "layoutControlGroup6";
             this.layoutControlGroup6.OptionsItemText.TextToControlDistance = 3;
             this.layoutControlGroup6.Size = new System.Drawing.Size(687, 106);
@@ -12557,9 +12728,12 @@ namespace IAC2021SQL
             // 
             // emptySpaceItem182
             // 
-            this.emptySpaceItem182.Location = new System.Drawing.Point(1229, 0);
+            this.emptySpaceItem182.Location = new System.Drawing.Point(1238, 0);
+            this.emptySpaceItem182.MaxSize = new System.Drawing.Size(551, 106);
+            this.emptySpaceItem182.MinSize = new System.Drawing.Size(551, 106);
             this.emptySpaceItem182.Name = "emptySpaceItem182";
-            this.emptySpaceItem182.Size = new System.Drawing.Size(560, 106);
+            this.emptySpaceItem182.Size = new System.Drawing.Size(551, 106);
+            this.emptySpaceItem182.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             // 
             // emptySpaceItem171
             // 
@@ -13203,14 +13377,24 @@ namespace IAC2021SQL
             resources.ApplyResources(this.textEditAmountUnused, "textEditAmountUnused");
             this.textEditAmountUnused.MenuManager = this.toolbarFormManager1;
             this.textEditAmountUnused.Name = "textEditAmountUnused";
+            this.textEditAmountUnused.Properties.Appearance.Options.UseTextOptions = true;
+            this.textEditAmountUnused.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.textEditAmountUnused.Properties.AppearanceDisabled.Font = ((System.Drawing.Font)(resources.GetObject("textEditAmountUnused.Properties.AppearanceDisabled.Font")));
             this.textEditAmountUnused.Properties.AppearanceDisabled.ForeColor = DevExpress.LookAndFeel.DXSkinColors.ForeColors.Critical;
             this.textEditAmountUnused.Properties.AppearanceDisabled.Options.UseFont = true;
             this.textEditAmountUnused.Properties.AppearanceDisabled.Options.UseForeColor = true;
             this.textEditAmountUnused.Properties.AppearanceDisabled.Options.UseTextOptions = true;
             this.textEditAmountUnused.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.textEditAmountUnused.Properties.BeepOnError = ((bool)(resources.GetObject("textEditAmountUnused.Properties.BeepOnError")));
             this.textEditAmountUnused.Properties.DisplayFormat.FormatString = "c2";
             this.textEditAmountUnused.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.textEditAmountUnused.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.textEditAmountUnused.Properties.MaskSettings.Set("mask", "c");
+            this.textEditAmountUnused.Properties.MaskSettings.Set("culture", "en-US");
+            this.textEditAmountUnused.Properties.MaskSettings.Set("valueType", typeof(decimal));
+            this.textEditAmountUnused.Properties.MaskSettings.Set("autoHideDecimalSeparator", false);
+            this.textEditAmountUnused.Properties.MaskSettings.Set("hideInsignificantZeros", true);
+            this.textEditAmountUnused.Properties.UseMaskAsDisplayFormat = ((bool)(resources.GetObject("textEditAmountUnused.Properties.UseMaskAsDisplayFormat")));
             this.textEditAmountUnused.StyleController = this.layoutControl3;
             // 
             // textEditTotalPayments
@@ -13228,8 +13412,16 @@ namespace IAC2021SQL
             this.textEditTotalPayments.Properties.AppearanceDisabled.Options.UseForeColor = true;
             this.textEditTotalPayments.Properties.AppearanceDisabled.Options.UseTextOptions = true;
             this.textEditTotalPayments.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.textEditTotalPayments.Properties.BeepOnError = ((bool)(resources.GetObject("textEditTotalPayments.Properties.BeepOnError")));
             this.textEditTotalPayments.Properties.DisplayFormat.FormatString = "c2";
             this.textEditTotalPayments.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.textEditTotalPayments.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.textEditTotalPayments.Properties.MaskSettings.Set("mask", "c");
+            this.textEditTotalPayments.Properties.MaskSettings.Set("culture", "en-US");
+            this.textEditTotalPayments.Properties.MaskSettings.Set("valueType", typeof(decimal));
+            this.textEditTotalPayments.Properties.MaskSettings.Set("autoHideDecimalSeparator", false);
+            this.textEditTotalPayments.Properties.MaskSettings.Set("hideInsignificantZeros", true);
+            this.textEditTotalPayments.Properties.UseMaskAsDisplayFormat = ((bool)(resources.GetObject("textEditTotalPayments.Properties.UseMaskAsDisplayFormat")));
             this.textEditTotalPayments.StyleController = this.layoutControl3;
             // 
             // textEditFullMonthlyPayment
@@ -13240,21 +13432,31 @@ namespace IAC2021SQL
             this.textEditFullMonthlyPayment.Name = "textEditFullMonthlyPayment";
             this.textEditFullMonthlyPayment.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textEditFullMonthlyPayment.Properties.Appearance.Font")));
             this.textEditFullMonthlyPayment.Properties.Appearance.Options.UseFont = true;
+            this.textEditFullMonthlyPayment.Properties.Appearance.Options.UseTextOptions = true;
+            this.textEditFullMonthlyPayment.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.textEditFullMonthlyPayment.Properties.AppearanceDisabled.Font = ((System.Drawing.Font)(resources.GetObject("textEditFullMonthlyPayment.Properties.AppearanceDisabled.Font")));
             this.textEditFullMonthlyPayment.Properties.AppearanceDisabled.ForeColor = DevExpress.LookAndFeel.DXSkinColors.ForeColors.Information;
             this.textEditFullMonthlyPayment.Properties.AppearanceDisabled.Options.UseFont = true;
             this.textEditFullMonthlyPayment.Properties.AppearanceDisabled.Options.UseForeColor = true;
             this.textEditFullMonthlyPayment.Properties.AppearanceDisabled.Options.UseTextOptions = true;
             this.textEditFullMonthlyPayment.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.textEditFullMonthlyPayment.Properties.BeepOnError = ((bool)(resources.GetObject("textEditFullMonthlyPayment.Properties.BeepOnError")));
             this.textEditFullMonthlyPayment.Properties.DisplayFormat.FormatString = "c2";
             this.textEditFullMonthlyPayment.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.textEditFullMonthlyPayment.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.textEditFullMonthlyPayment.Properties.MaskSettings.Set("mask", "c");
+            this.textEditFullMonthlyPayment.Properties.MaskSettings.Set("culture", "en-US");
+            this.textEditFullMonthlyPayment.Properties.MaskSettings.Set("valueType", typeof(decimal));
+            this.textEditFullMonthlyPayment.Properties.MaskSettings.Set("autoHideDecimalSeparator", false);
+            this.textEditFullMonthlyPayment.Properties.MaskSettings.Set("hideInsignificantZeros", true);
+            this.textEditFullMonthlyPayment.Properties.UseMaskAsDisplayFormat = ((bool)(resources.GetObject("textEditFullMonthlyPayment.Properties.UseMaskAsDisplayFormat")));
             this.textEditFullMonthlyPayment.StyleController = this.layoutControl3;
             // 
             // textEditPayment4
             // 
             this.textEditPayment4.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.OPNBANKbindingSource, "Payment4", true));
-            this.textEditPayment4.EnterMoveNextControl = true;
             resources.ApplyResources(this.textEditPayment4, "textEditPayment4");
+            this.textEditPayment4.EnterMoveNextControl = true;
             this.textEditPayment4.MenuManager = this.toolbarFormManager1;
             this.textEditPayment4.Name = "textEditPayment4";
             this.textEditPayment4.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
@@ -13268,9 +13470,17 @@ namespace IAC2021SQL
             this.textEditPayment4.Properties.AppearanceFocused.Options.UseFont = true;
             this.textEditPayment4.Properties.AppearanceFocused.Options.UseTextOptions = true;
             this.textEditPayment4.Properties.AppearanceFocused.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.textEditPayment4.Properties.BeepOnError = ((bool)(resources.GetObject("textEditPayment4.Properties.BeepOnError")));
             this.textEditPayment4.Properties.DisplayFormat.FormatString = "C2";
             this.textEditPayment4.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.textEditPayment4.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.textEditPayment4.Properties.MaskSettings.Set("mask", "c");
+            this.textEditPayment4.Properties.MaskSettings.Set("culture", "en-US");
+            this.textEditPayment4.Properties.MaskSettings.Set("valueType", typeof(decimal));
+            this.textEditPayment4.Properties.MaskSettings.Set("autoHideDecimalSeparator", false);
+            this.textEditPayment4.Properties.MaskSettings.Set("hideInsignificantZeros", true);
             this.textEditPayment4.Properties.NullText = resources.GetString("textEditPayment4.Properties.NullText");
+            this.textEditPayment4.Properties.UseMaskAsDisplayFormat = ((bool)(resources.GetObject("textEditPayment4.Properties.UseMaskAsDisplayFormat")));
             this.textEditPayment4.Properties.ValidateOnEnterKey = true;
             this.textEditPayment4.StyleController = this.layoutControl3;
             this.textEditPayment4.EditValueChanged += new System.EventHandler(this.textEditPayment4_EditValueChanged);
@@ -13279,8 +13489,8 @@ namespace IAC2021SQL
             // textEditPayment3
             // 
             this.textEditPayment3.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.OPNBANKbindingSource, "Payment3", true));
-            this.textEditPayment3.EnterMoveNextControl = true;
             resources.ApplyResources(this.textEditPayment3, "textEditPayment3");
+            this.textEditPayment3.EnterMoveNextControl = true;
             this.textEditPayment3.MenuManager = this.toolbarFormManager1;
             this.textEditPayment3.Name = "textEditPayment3";
             this.textEditPayment3.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
@@ -13294,9 +13504,17 @@ namespace IAC2021SQL
             this.textEditPayment3.Properties.AppearanceFocused.Options.UseFont = true;
             this.textEditPayment3.Properties.AppearanceFocused.Options.UseTextOptions = true;
             this.textEditPayment3.Properties.AppearanceFocused.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.textEditPayment3.Properties.BeepOnError = ((bool)(resources.GetObject("textEditPayment3.Properties.BeepOnError")));
             this.textEditPayment3.Properties.DisplayFormat.FormatString = "C2";
             this.textEditPayment3.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.textEditPayment3.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.textEditPayment3.Properties.MaskSettings.Set("mask", "c");
+            this.textEditPayment3.Properties.MaskSettings.Set("culture", "en-US");
+            this.textEditPayment3.Properties.MaskSettings.Set("valueType", typeof(decimal));
+            this.textEditPayment3.Properties.MaskSettings.Set("autoHideDecimalSeparator", false);
+            this.textEditPayment3.Properties.MaskSettings.Set("hideInsignificantZeros", true);
             this.textEditPayment3.Properties.NullText = resources.GetString("textEditPayment3.Properties.NullText");
+            this.textEditPayment3.Properties.UseMaskAsDisplayFormat = ((bool)(resources.GetObject("textEditPayment3.Properties.UseMaskAsDisplayFormat")));
             this.textEditPayment3.Properties.ValidateOnEnterKey = true;
             this.textEditPayment3.StyleController = this.layoutControl3;
             this.textEditPayment3.EditValueChanged += new System.EventHandler(this.textEditPayment3_EditValueChanged);
@@ -13305,8 +13523,8 @@ namespace IAC2021SQL
             // textEditPayment2
             // 
             this.textEditPayment2.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.OPNBANKbindingSource, "Payment2", true));
-            this.textEditPayment2.EnterMoveNextControl = true;
             resources.ApplyResources(this.textEditPayment2, "textEditPayment2");
+            this.textEditPayment2.EnterMoveNextControl = true;
             this.textEditPayment2.MenuManager = this.toolbarFormManager1;
             this.textEditPayment2.Name = "textEditPayment2";
             this.textEditPayment2.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
@@ -13320,9 +13538,17 @@ namespace IAC2021SQL
             this.textEditPayment2.Properties.AppearanceFocused.Options.UseFont = true;
             this.textEditPayment2.Properties.AppearanceFocused.Options.UseTextOptions = true;
             this.textEditPayment2.Properties.AppearanceFocused.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.textEditPayment2.Properties.BeepOnError = ((bool)(resources.GetObject("textEditPayment2.Properties.BeepOnError")));
             this.textEditPayment2.Properties.DisplayFormat.FormatString = "C2";
             this.textEditPayment2.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.textEditPayment2.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.textEditPayment2.Properties.MaskSettings.Set("mask", "c");
+            this.textEditPayment2.Properties.MaskSettings.Set("culture", "en-US");
+            this.textEditPayment2.Properties.MaskSettings.Set("valueType", typeof(decimal));
+            this.textEditPayment2.Properties.MaskSettings.Set("autoHideDecimalSeparator", false);
+            this.textEditPayment2.Properties.MaskSettings.Set("hideInsignificantZeros", true);
             this.textEditPayment2.Properties.NullText = resources.GetString("textEditPayment2.Properties.NullText");
+            this.textEditPayment2.Properties.UseMaskAsDisplayFormat = ((bool)(resources.GetObject("textEditPayment2.Properties.UseMaskAsDisplayFormat")));
             this.textEditPayment2.Properties.ValidateOnEnterKey = true;
             this.textEditPayment2.StyleController = this.layoutControl3;
             this.textEditPayment2.EditValueChanged += new System.EventHandler(this.textEditPayment2_EditValueChanged);
@@ -13331,8 +13557,8 @@ namespace IAC2021SQL
             // textEditPayment1
             // 
             this.textEditPayment1.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.OPNBANKbindingSource, "Payment1", true));
-            this.textEditPayment1.EnterMoveNextControl = true;
             resources.ApplyResources(this.textEditPayment1, "textEditPayment1");
+            this.textEditPayment1.EnterMoveNextControl = true;
             this.textEditPayment1.MenuManager = this.toolbarFormManager1;
             this.textEditPayment1.Name = "textEditPayment1";
             this.textEditPayment1.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
@@ -13346,9 +13572,17 @@ namespace IAC2021SQL
             this.textEditPayment1.Properties.AppearanceFocused.Options.UseFont = true;
             this.textEditPayment1.Properties.AppearanceFocused.Options.UseTextOptions = true;
             this.textEditPayment1.Properties.AppearanceFocused.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.textEditPayment1.Properties.BeepOnError = ((bool)(resources.GetObject("textEditPayment1.Properties.BeepOnError")));
             this.textEditPayment1.Properties.DisplayFormat.FormatString = "C2";
             this.textEditPayment1.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.textEditPayment1.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.textEditPayment1.Properties.MaskSettings.Set("mask", "c");
+            this.textEditPayment1.Properties.MaskSettings.Set("culture", "en-US");
+            this.textEditPayment1.Properties.MaskSettings.Set("valueType", typeof(decimal));
+            this.textEditPayment1.Properties.MaskSettings.Set("autoHideDecimalSeparator", false);
+            this.textEditPayment1.Properties.MaskSettings.Set("hideInsignificantZeros", true);
             this.textEditPayment1.Properties.NullText = resources.GetString("textEditPayment1.Properties.NullText");
+            this.textEditPayment1.Properties.UseMaskAsDisplayFormat = ((bool)(resources.GetObject("textEditPayment1.Properties.UseMaskAsDisplayFormat")));
             this.textEditPayment1.Properties.ValidateOnEnterKey = true;
             this.textEditPayment1.StyleController = this.layoutControl3;
             this.textEditPayment1.EditValueChanged += new System.EventHandler(this.textEditPayment1_EditValueChanged);
@@ -13362,8 +13596,12 @@ namespace IAC2021SQL
             this.comboBoxEditPaymentDay1.MenuManager = this.toolbarFormManager1;
             this.comboBoxEditPaymentDay1.Name = "comboBoxEditPaymentDay1";
             this.comboBoxEditPaymentDay1.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
+            this.comboBoxEditPaymentDay1.Properties.Appearance.Options.UseTextOptions = true;
+            this.comboBoxEditPaymentDay1.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.comboBoxEditPaymentDay1.Properties.AppearanceDisabled.Font = ((System.Drawing.Font)(resources.GetObject("comboBoxEditPaymentDay1.Properties.AppearanceDisabled.Font")));
             this.comboBoxEditPaymentDay1.Properties.AppearanceDisabled.Options.UseFont = true;
+            this.comboBoxEditPaymentDay1.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.comboBoxEditPaymentDay1.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.comboBoxEditPaymentDay1.Properties.AppearanceDropDown.Font = ((System.Drawing.Font)(resources.GetObject("comboBoxEditPaymentDay1.Properties.AppearanceDropDown.Font")));
             this.comboBoxEditPaymentDay1.Properties.AppearanceDropDown.Options.UseFont = true;
             this.comboBoxEditPaymentDay1.Properties.AppearanceFocused.Font = ((System.Drawing.Font)(resources.GetObject("comboBoxEditPaymentDay1.Properties.AppearanceFocused.Font")));
@@ -13392,6 +13630,10 @@ namespace IAC2021SQL
             this.comboBoxEditPaymentDay2.MenuManager = this.toolbarFormManager1;
             this.comboBoxEditPaymentDay2.Name = "comboBoxEditPaymentDay2";
             this.comboBoxEditPaymentDay2.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
+            this.comboBoxEditPaymentDay2.Properties.Appearance.Options.UseTextOptions = true;
+            this.comboBoxEditPaymentDay2.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.comboBoxEditPaymentDay2.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.comboBoxEditPaymentDay2.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.comboBoxEditPaymentDay2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("comboBoxEditPaymentDay2.Properties.Buttons"))))});
             this.comboBoxEditPaymentDay2.Properties.DisplayFormat.FormatString = "N0";
@@ -13416,6 +13658,10 @@ namespace IAC2021SQL
             this.comboBoxEditPaymentDay3.MenuManager = this.toolbarFormManager1;
             this.comboBoxEditPaymentDay3.Name = "comboBoxEditPaymentDay3";
             this.comboBoxEditPaymentDay3.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
+            this.comboBoxEditPaymentDay3.Properties.Appearance.Options.UseTextOptions = true;
+            this.comboBoxEditPaymentDay3.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.comboBoxEditPaymentDay3.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.comboBoxEditPaymentDay3.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.comboBoxEditPaymentDay3.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("comboBoxEditPaymentDay3.Properties.Buttons"))))});
             this.comboBoxEditPaymentDay3.Properties.DisplayFormat.FormatString = "N0";
@@ -13440,6 +13686,10 @@ namespace IAC2021SQL
             this.comboBoxEditPaymentDay4.MenuManager = this.toolbarFormManager1;
             this.comboBoxEditPaymentDay4.Name = "comboBoxEditPaymentDay4";
             this.comboBoxEditPaymentDay4.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
+            this.comboBoxEditPaymentDay4.Properties.Appearance.Options.UseTextOptions = true;
+            this.comboBoxEditPaymentDay4.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.comboBoxEditPaymentDay4.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.comboBoxEditPaymentDay4.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.comboBoxEditPaymentDay4.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("comboBoxEditPaymentDay4.Properties.Buttons"))))});
             this.comboBoxEditPaymentDay4.Properties.DisplayFormat.FormatString = "N0";
@@ -14148,8 +14398,12 @@ namespace IAC2021SQL
             resources.ApplyResources(this.nullableDateTimePickerFirstPayDate, "nullableDateTimePickerFirstPayDate");
             this.nullableDateTimePickerFirstPayDate.MenuManager = this.toolbarFormManager1;
             this.nullableDateTimePickerFirstPayDate.Name = "nullableDateTimePickerFirstPayDate";
+            this.nullableDateTimePickerFirstPayDate.Properties.Appearance.Options.UseTextOptions = true;
+            this.nullableDateTimePickerFirstPayDate.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.nullableDateTimePickerFirstPayDate.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.nullableDateTimePickerFirstPayDate.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.nullableDateTimePickerFirstPayDate.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.nullableDateTimePickerFirstPayDate.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.nullableDateTimePickerFirstPayDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("nullableDateTimePickerFirstPayDate.Properties.Buttons"))))});
             this.nullableDateTimePickerFirstPayDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -14165,8 +14419,12 @@ namespace IAC2021SQL
             resources.ApplyResources(this.nullableDateTimePickerPayDate, "nullableDateTimePickerPayDate");
             this.nullableDateTimePickerPayDate.MenuManager = this.toolbarFormManager1;
             this.nullableDateTimePickerPayDate.Name = "nullableDateTimePickerPayDate";
+            this.nullableDateTimePickerPayDate.Properties.Appearance.Options.UseTextOptions = true;
+            this.nullableDateTimePickerPayDate.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.nullableDateTimePickerPayDate.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.nullableDateTimePickerPayDate.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.nullableDateTimePickerPayDate.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.nullableDateTimePickerPayDate.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.nullableDateTimePickerPayDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("nullableDateTimePickerPayDate.Properties.Buttons"))))});
             this.nullableDateTimePickerPayDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -14182,8 +14440,12 @@ namespace IAC2021SQL
             resources.ApplyResources(this.nullableDateTimePickerHistContractDate, "nullableDateTimePickerHistContractDate");
             this.nullableDateTimePickerHistContractDate.MenuManager = this.toolbarFormManager1;
             this.nullableDateTimePickerHistContractDate.Name = "nullableDateTimePickerHistContractDate";
+            this.nullableDateTimePickerHistContractDate.Properties.Appearance.Options.UseTextOptions = true;
+            this.nullableDateTimePickerHistContractDate.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.nullableDateTimePickerHistContractDate.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.nullableDateTimePickerHistContractDate.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.nullableDateTimePickerHistContractDate.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.nullableDateTimePickerHistContractDate.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.nullableDateTimePickerHistContractDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("nullableDateTimePickerHistContractDate.Properties.Buttons"))))});
             this.nullableDateTimePickerHistContractDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -14261,8 +14523,12 @@ namespace IAC2021SQL
             this.comboBoxHistoryDayDue.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_DAY_DUE", true));
             resources.ApplyResources(this.comboBoxHistoryDayDue, "comboBoxHistoryDayDue");
             this.comboBoxHistoryDayDue.Name = "comboBoxHistoryDayDue";
+            this.comboBoxHistoryDayDue.Properties.Appearance.Options.UseTextOptions = true;
+            this.comboBoxHistoryDayDue.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.comboBoxHistoryDayDue.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.comboBoxHistoryDayDue.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.comboBoxHistoryDayDue.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.comboBoxHistoryDayDue.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.comboBoxHistoryDayDue.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("comboBoxHistoryDayDue.Properties.Buttons"))))});
             this.comboBoxHistoryDayDue.Properties.DropDownRows = 6;
@@ -15440,8 +15706,12 @@ namespace IAC2021SQL
             this.nullableDateTimePickerAucDate.Name = "nullableDateTimePickerAucDate";
             this.nullableDateTimePickerAucDate.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("nullableDateTimePickerAucDate.Properties.Appearance.Font")));
             this.nullableDateTimePickerAucDate.Properties.Appearance.Options.UseFont = true;
+            this.nullableDateTimePickerAucDate.Properties.Appearance.Options.UseTextOptions = true;
+            this.nullableDateTimePickerAucDate.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.nullableDateTimePickerAucDate.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.nullableDateTimePickerAucDate.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.nullableDateTimePickerAucDate.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.nullableDateTimePickerAucDate.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.nullableDateTimePickerAucDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("nullableDateTimePickerAucDate.Properties.Buttons"))))});
             this.nullableDateTimePickerAucDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -15457,8 +15727,12 @@ namespace IAC2021SQL
             this.nullableDateTimePickerLocDate.Name = "nullableDateTimePickerLocDate";
             this.nullableDateTimePickerLocDate.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("nullableDateTimePickerLocDate.Properties.Appearance.Font")));
             this.nullableDateTimePickerLocDate.Properties.Appearance.Options.UseFont = true;
+            this.nullableDateTimePickerLocDate.Properties.Appearance.Options.UseTextOptions = true;
+            this.nullableDateTimePickerLocDate.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.nullableDateTimePickerLocDate.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.nullableDateTimePickerLocDate.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.nullableDateTimePickerLocDate.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.nullableDateTimePickerLocDate.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.nullableDateTimePickerLocDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("nullableDateTimePickerLocDate.Properties.Buttons"))))});
             this.nullableDateTimePickerLocDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -15510,8 +15784,12 @@ namespace IAC2021SQL
             this.nullableDateTimePickerRepoDate.Name = "nullableDateTimePickerRepoDate";
             this.nullableDateTimePickerRepoDate.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("nullableDateTimePickerRepoDate.Properties.Appearance.Font")));
             this.nullableDateTimePickerRepoDate.Properties.Appearance.Options.UseFont = true;
+            this.nullableDateTimePickerRepoDate.Properties.Appearance.Options.UseTextOptions = true;
+            this.nullableDateTimePickerRepoDate.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.nullableDateTimePickerRepoDate.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.nullableDateTimePickerRepoDate.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.nullableDateTimePickerRepoDate.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.nullableDateTimePickerRepoDate.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.nullableDateTimePickerRepoDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("nullableDateTimePickerRepoDate.Properties.Buttons"))))});
             this.nullableDateTimePickerRepoDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -15546,8 +15824,12 @@ namespace IAC2021SQL
             resources.ApplyResources(this.cUSTOMER_REPO_CDEtextBox, "cUSTOMER_REPO_CDEtextBox");
             this.cUSTOMER_REPO_CDEtextBox.MenuManager = this.toolbarFormManager1;
             this.cUSTOMER_REPO_CDEtextBox.Name = "cUSTOMER_REPO_CDEtextBox";
+            this.cUSTOMER_REPO_CDEtextBox.Properties.Appearance.Options.UseTextOptions = true;
+            this.cUSTOMER_REPO_CDEtextBox.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.cUSTOMER_REPO_CDEtextBox.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.cUSTOMER_REPO_CDEtextBox.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.cUSTOMER_REPO_CDEtextBox.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.cUSTOMER_REPO_CDEtextBox.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.cUSTOMER_REPO_CDEtextBox.StyleController = this.layoutControlRepo;
             this.cUSTOMER_REPO_CDEtextBox.EditValueChanged += new System.EventHandler(this.cUSTOMER_REPO_CDEtextBox_EditValueChanged);
             // 
@@ -15665,244 +15947,32 @@ namespace IAC2021SQL
             this.layoutControlGroupRepos.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
             this.layoutControlGroupRepos.GroupStyle = DevExpress.Utils.GroupStyle.Light;
             this.layoutControlGroupRepos.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItemcomboBoxRepoInd,
-            this.layoutControlItemcUSTOMER_REPO_INDtextBox,
-            this.layoutControlItemcUSTOMER_REPO_CDEtextBox,
-            this.layoutControlItemcomboBoxRepoCodes,
-            this.layoutControlItemRepoDate,
-            this.emptySpaceItem140,
-            this.layoutControlItemRepoAgent,
-            this.layoutControlItemAuctionHouse,
-            this.layoutControlItemCurrentLocation,
-            this.layoutControlItemLocationDate,
-            this.layoutControlItemAuctionDate,
-            this.emptySpaceItem141,
-            this.emptySpaceItem142,
-            this.emptySpaceItem143,
-            this.emptySpaceItem144,
-            this.emptySpaceItem145,
-            this.emptySpaceItem146,
-            this.emptySpaceItem138,
-            this.emptySpaceItem132,
-            this.layoutControlGroupRepoHeader,
-            this.emptySpaceItem153,
-            this.emptySpaceItem154,
-            this.emptySpaceItem152,
-            this.emptySpaceItem155});
+            this.layoutControlGroup1,
+            this.layoutControlGroupRepoInfoDetail});
             this.layoutControlGroupRepos.Name = "Root";
             this.layoutControlGroupRepos.Size = new System.Drawing.Size(1809, 745);
             resources.ApplyResources(this.layoutControlGroupRepos, "layoutControlGroupRepos");
             // 
-            // layoutControlItemcomboBoxRepoInd
+            // layoutControlGroup1
             // 
-            this.layoutControlItemcomboBoxRepoInd.Control = this.comboBoxRepoInd;
-            this.layoutControlItemcomboBoxRepoInd.Location = new System.Drawing.Point(79, 106);
-            this.layoutControlItemcomboBoxRepoInd.MaxSize = new System.Drawing.Size(0, 41);
-            this.layoutControlItemcomboBoxRepoInd.MinSize = new System.Drawing.Size(105, 41);
-            this.layoutControlItemcomboBoxRepoInd.Name = "layoutControlItemcomboBoxRepoInd";
-            this.layoutControlItemcomboBoxRepoInd.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
-            this.layoutControlItemcomboBoxRepoInd.Size = new System.Drawing.Size(173, 41);
-            this.layoutControlItemcomboBoxRepoInd.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            resources.ApplyResources(this.layoutControlItemcomboBoxRepoInd, "layoutControlItemcomboBoxRepoInd");
-            this.layoutControlItemcomboBoxRepoInd.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
-            this.layoutControlItemcomboBoxRepoInd.TextLocation = DevExpress.Utils.Locations.Left;
-            this.layoutControlItemcomboBoxRepoInd.TextToControlDistance = 5;
-            // 
-            // layoutControlItemcUSTOMER_REPO_INDtextBox
-            // 
-            this.layoutControlItemcUSTOMER_REPO_INDtextBox.Control = this.cUSTOMER_REPO_INDtextBox;
-            this.layoutControlItemcUSTOMER_REPO_INDtextBox.Location = new System.Drawing.Point(252, 106);
-            this.layoutControlItemcUSTOMER_REPO_INDtextBox.MinSize = new System.Drawing.Size(1, 1);
-            this.layoutControlItemcUSTOMER_REPO_INDtextBox.Name = "layoutControlItemcUSTOMER_REPO_INDtextBox";
-            this.layoutControlItemcUSTOMER_REPO_INDtextBox.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
-            this.layoutControlItemcUSTOMER_REPO_INDtextBox.Size = new System.Drawing.Size(37, 41);
-            this.layoutControlItemcUSTOMER_REPO_INDtextBox.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            resources.ApplyResources(this.layoutControlItemcUSTOMER_REPO_INDtextBox, "layoutControlItemcUSTOMER_REPO_INDtextBox");
-            this.layoutControlItemcUSTOMER_REPO_INDtextBox.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
-            this.layoutControlItemcUSTOMER_REPO_INDtextBox.TextLocation = DevExpress.Utils.Locations.Left;
-            this.layoutControlItemcUSTOMER_REPO_INDtextBox.TextToControlDistance = 5;
-            // 
-            // layoutControlItemcUSTOMER_REPO_CDEtextBox
-            // 
-            this.layoutControlItemcUSTOMER_REPO_CDEtextBox.Control = this.cUSTOMER_REPO_CDEtextBox;
-            this.layoutControlItemcUSTOMER_REPO_CDEtextBox.Location = new System.Drawing.Point(289, 106);
-            this.layoutControlItemcUSTOMER_REPO_CDEtextBox.MaxSize = new System.Drawing.Size(0, 30);
-            this.layoutControlItemcUSTOMER_REPO_CDEtextBox.MinSize = new System.Drawing.Size(97, 30);
-            this.layoutControlItemcUSTOMER_REPO_CDEtextBox.Name = "layoutControlItemcUSTOMER_REPO_CDEtextBox";
-            this.layoutControlItemcUSTOMER_REPO_CDEtextBox.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
-            this.layoutControlItemcUSTOMER_REPO_CDEtextBox.Size = new System.Drawing.Size(103, 41);
-            this.layoutControlItemcUSTOMER_REPO_CDEtextBox.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            resources.ApplyResources(this.layoutControlItemcUSTOMER_REPO_CDEtextBox, "layoutControlItemcUSTOMER_REPO_CDEtextBox");
-            this.layoutControlItemcUSTOMER_REPO_CDEtextBox.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
-            this.layoutControlItemcUSTOMER_REPO_CDEtextBox.TextLocation = DevExpress.Utils.Locations.Left;
-            this.layoutControlItemcUSTOMER_REPO_CDEtextBox.TextToControlDistance = 5;
-            // 
-            // layoutControlItemcomboBoxRepoCodes
-            // 
-            this.layoutControlItemcomboBoxRepoCodes.Control = this.comboBoxRepoCodes;
-            this.layoutControlItemcomboBoxRepoCodes.Location = new System.Drawing.Point(392, 106);
-            this.layoutControlItemcomboBoxRepoCodes.MaxSize = new System.Drawing.Size(0, 41);
-            this.layoutControlItemcomboBoxRepoCodes.MinSize = new System.Drawing.Size(1, 41);
-            this.layoutControlItemcomboBoxRepoCodes.Name = "layoutControlItemcomboBoxRepoCodes";
-            this.layoutControlItemcomboBoxRepoCodes.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
-            this.layoutControlItemcomboBoxRepoCodes.Size = new System.Drawing.Size(190, 41);
-            this.layoutControlItemcomboBoxRepoCodes.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            resources.ApplyResources(this.layoutControlItemcomboBoxRepoCodes, "layoutControlItemcomboBoxRepoCodes");
-            this.layoutControlItemcomboBoxRepoCodes.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
-            this.layoutControlItemcomboBoxRepoCodes.TextLocation = DevExpress.Utils.Locations.Left;
-            this.layoutControlItemcomboBoxRepoCodes.TextToControlDistance = 5;
-            // 
-            // layoutControlItemRepoDate
-            // 
-            this.layoutControlItemRepoDate.Control = this.nullableDateTimePickerRepoDate;
-            this.layoutControlItemRepoDate.Location = new System.Drawing.Point(582, 106);
-            this.layoutControlItemRepoDate.MaxSize = new System.Drawing.Size(270, 33);
-            this.layoutControlItemRepoDate.MinSize = new System.Drawing.Size(1, 33);
-            this.layoutControlItemRepoDate.Name = "layoutControlItemRepoDate";
-            this.layoutControlItemRepoDate.Size = new System.Drawing.Size(211, 41);
-            this.layoutControlItemRepoDate.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            resources.ApplyResources(this.layoutControlItemRepoDate, "layoutControlItemRepoDate");
-            this.layoutControlItemRepoDate.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
-            this.layoutControlItemRepoDate.TextLocation = DevExpress.Utils.Locations.Left;
-            this.layoutControlItemRepoDate.TextToControlDistance = 5;
-            // 
-            // emptySpaceItem140
-            // 
-            this.emptySpaceItem140.Location = new System.Drawing.Point(793, 106);
-            this.emptySpaceItem140.Name = "emptySpaceItem140";
-            this.emptySpaceItem140.Size = new System.Drawing.Size(986, 41);
-            // 
-            // layoutControlItemRepoAgent
-            // 
-            this.layoutControlItemRepoAgent.Control = this.textBoxRepoAgent;
-            this.layoutControlItemRepoAgent.Location = new System.Drawing.Point(32, 147);
-            this.layoutControlItemRepoAgent.MaxSize = new System.Drawing.Size(0, 41);
-            this.layoutControlItemRepoAgent.MinSize = new System.Drawing.Size(1, 41);
-            this.layoutControlItemRepoAgent.Name = "layoutControlItemRepoAgent";
-            this.layoutControlItemRepoAgent.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
-            this.layoutControlItemRepoAgent.Size = new System.Drawing.Size(584, 41);
-            this.layoutControlItemRepoAgent.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            resources.ApplyResources(this.layoutControlItemRepoAgent, "layoutControlItemRepoAgent");
-            this.layoutControlItemRepoAgent.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
-            this.layoutControlItemRepoAgent.TextLocation = DevExpress.Utils.Locations.Left;
-            this.layoutControlItemRepoAgent.TextToControlDistance = 5;
-            // 
-            // layoutControlItemAuctionHouse
-            // 
-            this.layoutControlItemAuctionHouse.Control = this.textBoxAuctionHouse;
-            this.layoutControlItemAuctionHouse.Location = new System.Drawing.Point(14, 229);
-            this.layoutControlItemAuctionHouse.MaxSize = new System.Drawing.Size(470, 41);
-            this.layoutControlItemAuctionHouse.MinSize = new System.Drawing.Size(470, 41);
-            this.layoutControlItemAuctionHouse.Name = "layoutControlItemAuctionHouse";
-            this.layoutControlItemAuctionHouse.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
-            this.layoutControlItemAuctionHouse.Size = new System.Drawing.Size(470, 41);
-            this.layoutControlItemAuctionHouse.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            resources.ApplyResources(this.layoutControlItemAuctionHouse, "layoutControlItemAuctionHouse");
-            // 
-            // layoutControlItemCurrentLocation
-            // 
-            this.layoutControlItemCurrentLocation.Control = this.textBoxCurrentLocation;
-            this.layoutControlItemCurrentLocation.Location = new System.Drawing.Point(0, 188);
-            this.layoutControlItemCurrentLocation.MaxSize = new System.Drawing.Size(484, 41);
-            this.layoutControlItemCurrentLocation.MinSize = new System.Drawing.Size(484, 41);
-            this.layoutControlItemCurrentLocation.Name = "layoutControlItemCurrentLocation";
-            this.layoutControlItemCurrentLocation.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
-            this.layoutControlItemCurrentLocation.Size = new System.Drawing.Size(484, 41);
-            this.layoutControlItemCurrentLocation.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            resources.ApplyResources(this.layoutControlItemCurrentLocation, "layoutControlItemCurrentLocation");
-            this.layoutControlItemCurrentLocation.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
-            this.layoutControlItemCurrentLocation.TextLocation = DevExpress.Utils.Locations.Left;
-            this.layoutControlItemCurrentLocation.TextToControlDistance = 5;
-            // 
-            // layoutControlItemLocationDate
-            // 
-            this.layoutControlItemLocationDate.Control = this.nullableDateTimePickerLocDate;
-            this.layoutControlItemLocationDate.Location = new System.Drawing.Point(484, 188);
-            this.layoutControlItemLocationDate.MaxSize = new System.Drawing.Size(132, 41);
-            this.layoutControlItemLocationDate.MinSize = new System.Drawing.Size(132, 41);
-            this.layoutControlItemLocationDate.Name = "layoutControlItemLocationDate";
-            this.layoutControlItemLocationDate.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
-            this.layoutControlItemLocationDate.Size = new System.Drawing.Size(132, 41);
-            this.layoutControlItemLocationDate.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            resources.ApplyResources(this.layoutControlItemLocationDate, "layoutControlItemLocationDate");
-            this.layoutControlItemLocationDate.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
-            this.layoutControlItemLocationDate.TextLocation = DevExpress.Utils.Locations.Left;
-            this.layoutControlItemLocationDate.TextToControlDistance = 0;
-            // 
-            // layoutControlItemAuctionDate
-            // 
-            this.layoutControlItemAuctionDate.Control = this.nullableDateTimePickerAucDate;
-            this.layoutControlItemAuctionDate.Location = new System.Drawing.Point(484, 229);
-            this.layoutControlItemAuctionDate.MaxSize = new System.Drawing.Size(0, 41);
-            this.layoutControlItemAuctionDate.MinSize = new System.Drawing.Size(1, 41);
-            this.layoutControlItemAuctionDate.Name = "layoutControlItemAuctionDate";
-            this.layoutControlItemAuctionDate.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
-            this.layoutControlItemAuctionDate.Size = new System.Drawing.Size(132, 41);
-            this.layoutControlItemAuctionDate.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            resources.ApplyResources(this.layoutControlItemAuctionDate, "layoutControlItemAuctionDate");
-            this.layoutControlItemAuctionDate.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
-            this.layoutControlItemAuctionDate.TextLocation = DevExpress.Utils.Locations.Left;
-            this.layoutControlItemAuctionDate.TextToControlDistance = 0;
-            // 
-            // emptySpaceItem141
-            // 
-            this.emptySpaceItem141.Location = new System.Drawing.Point(0, 106);
-            this.emptySpaceItem141.MaxSize = new System.Drawing.Size(79, 41);
-            this.emptySpaceItem141.MinSize = new System.Drawing.Size(79, 41);
-            this.emptySpaceItem141.Name = "emptySpaceItem141";
-            this.emptySpaceItem141.Size = new System.Drawing.Size(79, 41);
-            this.emptySpaceItem141.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            // 
-            // emptySpaceItem142
-            // 
-            this.emptySpaceItem142.Location = new System.Drawing.Point(0, 147);
-            this.emptySpaceItem142.MaxSize = new System.Drawing.Size(32, 41);
-            this.emptySpaceItem142.MinSize = new System.Drawing.Size(32, 41);
-            this.emptySpaceItem142.Name = "emptySpaceItem142";
-            this.emptySpaceItem142.Size = new System.Drawing.Size(32, 41);
-            this.emptySpaceItem142.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            // 
-            // emptySpaceItem143
-            // 
-            this.emptySpaceItem143.Location = new System.Drawing.Point(0, 229);
-            this.emptySpaceItem143.MaxSize = new System.Drawing.Size(14, 0);
-            this.emptySpaceItem143.MinSize = new System.Drawing.Size(14, 10);
-            this.emptySpaceItem143.Name = "emptySpaceItem143";
-            this.emptySpaceItem143.Size = new System.Drawing.Size(14, 471);
-            this.emptySpaceItem143.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            // 
-            // emptySpaceItem144
-            // 
-            this.emptySpaceItem144.Location = new System.Drawing.Point(616, 188);
-            this.emptySpaceItem144.Name = "emptySpaceItem144";
-            this.emptySpaceItem144.Size = new System.Drawing.Size(1173, 41);
-            // 
-            // emptySpaceItem145
-            // 
-            this.emptySpaceItem145.Location = new System.Drawing.Point(616, 229);
-            this.emptySpaceItem145.Name = "emptySpaceItem145";
-            this.emptySpaceItem145.Size = new System.Drawing.Size(1173, 471);
-            // 
-            // emptySpaceItem146
-            // 
-            this.emptySpaceItem146.Location = new System.Drawing.Point(616, 147);
-            this.emptySpaceItem146.MinSize = new System.Drawing.Size(10, 10);
-            this.emptySpaceItem146.Name = "emptySpaceItem146";
-            this.emptySpaceItem146.Size = new System.Drawing.Size(560, 41);
-            this.emptySpaceItem146.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            // 
-            // emptySpaceItem138
-            // 
-            this.emptySpaceItem138.Location = new System.Drawing.Point(1176, 147);
-            this.emptySpaceItem138.Name = "emptySpaceItem138";
-            this.emptySpaceItem138.Size = new System.Drawing.Size(613, 41);
+            resources.ApplyResources(this.layoutControlGroup1, "layoutControlGroup1");
+            this.layoutControlGroup1.GroupStyle = DevExpress.Utils.GroupStyle.Light;
+            this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.emptySpaceItem132,
+            this.layoutControlGroupRepoHeader,
+            this.emptySpaceItem154});
+            this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlGroup1.Name = "layoutControlGroup1";
+            this.layoutControlGroup1.Size = new System.Drawing.Size(1789, 130);
+            this.layoutControlGroup1.TextVisible = false;
             // 
             // emptySpaceItem132
             // 
             this.emptySpaceItem132.Location = new System.Drawing.Point(0, 0);
-            this.emptySpaceItem132.MinSize = new System.Drawing.Size(10, 10);
+            this.emptySpaceItem132.MaxSize = new System.Drawing.Size(539, 106);
+            this.emptySpaceItem132.MinSize = new System.Drawing.Size(539, 106);
             this.emptySpaceItem132.Name = "emptySpaceItem132";
-            this.emptySpaceItem132.Size = new System.Drawing.Size(506, 106);
+            this.emptySpaceItem132.Size = new System.Drawing.Size(539, 106);
             this.emptySpaceItem132.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             // 
             // layoutControlGroupRepoHeader
@@ -15916,7 +15986,7 @@ namespace IAC2021SQL
             this.layoutControlItem17,
             this.layoutControlItem18,
             this.layoutControlItem15});
-            this.layoutControlGroupRepoHeader.Location = new System.Drawing.Point(506, 0);
+            this.layoutControlGroupRepoHeader.Location = new System.Drawing.Point(539, 0);
             this.layoutControlGroupRepoHeader.Name = "layoutControlGroupRepoHeader";
             this.layoutControlGroupRepoHeader.Size = new System.Drawing.Size(687, 106);
             resources.ApplyResources(this.layoutControlGroupRepoHeader, "layoutControlGroupRepoHeader");
@@ -16033,45 +16103,281 @@ namespace IAC2021SQL
             this.layoutControlItem15.TextToControlDistance = 0;
             this.layoutControlItem15.TextVisible = false;
             // 
-            // emptySpaceItem153
-            // 
-            this.emptySpaceItem153.Location = new System.Drawing.Point(1779, 0);
-            this.emptySpaceItem153.Name = "emptySpaceItem153";
-            this.emptySpaceItem153.Size = new System.Drawing.Size(10, 147);
-            // 
             // emptySpaceItem154
             // 
-            this.emptySpaceItem154.Location = new System.Drawing.Point(1193, 0);
+            this.emptySpaceItem154.Location = new System.Drawing.Point(1226, 0);
+            this.emptySpaceItem154.MaxSize = new System.Drawing.Size(539, 106);
+            this.emptySpaceItem154.MinSize = new System.Drawing.Size(539, 106);
             this.emptySpaceItem154.Name = "emptySpaceItem154";
-            this.emptySpaceItem154.Size = new System.Drawing.Size(586, 106);
+            this.emptySpaceItem154.Size = new System.Drawing.Size(539, 106);
+            this.emptySpaceItem154.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            // 
+            // layoutControlGroupRepoInfoDetail
+            // 
+            this.layoutControlGroupRepoInfoDetail.GroupStyle = DevExpress.Utils.GroupStyle.Title;
+            this.layoutControlGroupRepoInfoDetail.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.emptySpaceItem141,
+            this.layoutControlItemcomboBoxRepoInd,
+            this.layoutControlItemcUSTOMER_REPO_INDtextBox,
+            this.layoutControlItemcUSTOMER_REPO_CDEtextBox,
+            this.layoutControlItemcomboBoxRepoCodes,
+            this.layoutControlItemRepoDate,
+            this.emptySpaceItem140,
+            this.emptySpaceItem142,
+            this.layoutControlItemRepoAgent,
+            this.emptySpaceItem146,
+            this.emptySpaceItem138,
+            this.layoutControlItemCurrentLocation,
+            this.layoutControlItemLocationDate,
+            this.emptySpaceItem144,
+            this.emptySpaceItem143,
+            this.layoutControlItemAuctionHouse,
+            this.layoutControlItemAuctionDate,
+            this.emptySpaceItem152,
+            this.emptySpaceItem155,
+            this.emptySpaceItem145});
+            this.layoutControlGroupRepoInfoDetail.Location = new System.Drawing.Point(0, 130);
+            this.layoutControlGroupRepoInfoDetail.Name = "layoutControlGroupRepoInfoDetail";
+            this.layoutControlGroupRepoInfoDetail.Size = new System.Drawing.Size(1789, 570);
+            resources.ApplyResources(this.layoutControlGroupRepoInfoDetail, "layoutControlGroupRepoInfoDetail");
+            this.layoutControlGroupRepoInfoDetail.TextVisible = false;
+            // 
+            // emptySpaceItem141
+            // 
+            this.emptySpaceItem141.Location = new System.Drawing.Point(0, 0);
+            this.emptySpaceItem141.MaxSize = new System.Drawing.Size(79, 41);
+            this.emptySpaceItem141.MinSize = new System.Drawing.Size(79, 41);
+            this.emptySpaceItem141.Name = "emptySpaceItem141";
+            this.emptySpaceItem141.Size = new System.Drawing.Size(79, 41);
+            this.emptySpaceItem141.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            // 
+            // layoutControlItemcomboBoxRepoInd
+            // 
+            this.layoutControlItemcomboBoxRepoInd.Control = this.comboBoxRepoInd;
+            this.layoutControlItemcomboBoxRepoInd.Location = new System.Drawing.Point(79, 0);
+            this.layoutControlItemcomboBoxRepoInd.MaxSize = new System.Drawing.Size(0, 41);
+            this.layoutControlItemcomboBoxRepoInd.MinSize = new System.Drawing.Size(105, 41);
+            this.layoutControlItemcomboBoxRepoInd.Name = "layoutControlItemcomboBoxRepoInd";
+            this.layoutControlItemcomboBoxRepoInd.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.layoutControlItemcomboBoxRepoInd.Size = new System.Drawing.Size(170, 41);
+            this.layoutControlItemcomboBoxRepoInd.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            resources.ApplyResources(this.layoutControlItemcomboBoxRepoInd, "layoutControlItemcomboBoxRepoInd");
+            this.layoutControlItemcomboBoxRepoInd.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
+            this.layoutControlItemcomboBoxRepoInd.TextLocation = DevExpress.Utils.Locations.Left;
+            this.layoutControlItemcomboBoxRepoInd.TextToControlDistance = 5;
+            // 
+            // layoutControlItemcUSTOMER_REPO_INDtextBox
+            // 
+            this.layoutControlItemcUSTOMER_REPO_INDtextBox.Control = this.cUSTOMER_REPO_INDtextBox;
+            this.layoutControlItemcUSTOMER_REPO_INDtextBox.Location = new System.Drawing.Point(249, 0);
+            this.layoutControlItemcUSTOMER_REPO_INDtextBox.MinSize = new System.Drawing.Size(1, 1);
+            this.layoutControlItemcUSTOMER_REPO_INDtextBox.Name = "layoutControlItemcUSTOMER_REPO_INDtextBox";
+            this.layoutControlItemcUSTOMER_REPO_INDtextBox.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.layoutControlItemcUSTOMER_REPO_INDtextBox.Size = new System.Drawing.Size(37, 41);
+            this.layoutControlItemcUSTOMER_REPO_INDtextBox.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            resources.ApplyResources(this.layoutControlItemcUSTOMER_REPO_INDtextBox, "layoutControlItemcUSTOMER_REPO_INDtextBox");
+            this.layoutControlItemcUSTOMER_REPO_INDtextBox.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
+            this.layoutControlItemcUSTOMER_REPO_INDtextBox.TextLocation = DevExpress.Utils.Locations.Left;
+            this.layoutControlItemcUSTOMER_REPO_INDtextBox.TextToControlDistance = 5;
+            // 
+            // layoutControlItemcUSTOMER_REPO_CDEtextBox
+            // 
+            this.layoutControlItemcUSTOMER_REPO_CDEtextBox.Control = this.cUSTOMER_REPO_CDEtextBox;
+            this.layoutControlItemcUSTOMER_REPO_CDEtextBox.Location = new System.Drawing.Point(286, 0);
+            this.layoutControlItemcUSTOMER_REPO_CDEtextBox.MaxSize = new System.Drawing.Size(0, 30);
+            this.layoutControlItemcUSTOMER_REPO_CDEtextBox.MinSize = new System.Drawing.Size(97, 30);
+            this.layoutControlItemcUSTOMER_REPO_CDEtextBox.Name = "layoutControlItemcUSTOMER_REPO_CDEtextBox";
+            this.layoutControlItemcUSTOMER_REPO_CDEtextBox.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.layoutControlItemcUSTOMER_REPO_CDEtextBox.Size = new System.Drawing.Size(101, 41);
+            this.layoutControlItemcUSTOMER_REPO_CDEtextBox.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            resources.ApplyResources(this.layoutControlItemcUSTOMER_REPO_CDEtextBox, "layoutControlItemcUSTOMER_REPO_CDEtextBox");
+            this.layoutControlItemcUSTOMER_REPO_CDEtextBox.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
+            this.layoutControlItemcUSTOMER_REPO_CDEtextBox.TextLocation = DevExpress.Utils.Locations.Left;
+            this.layoutControlItemcUSTOMER_REPO_CDEtextBox.TextToControlDistance = 5;
+            // 
+            // layoutControlItemcomboBoxRepoCodes
+            // 
+            this.layoutControlItemcomboBoxRepoCodes.Control = this.comboBoxRepoCodes;
+            this.layoutControlItemcomboBoxRepoCodes.Location = new System.Drawing.Point(387, 0);
+            this.layoutControlItemcomboBoxRepoCodes.MaxSize = new System.Drawing.Size(0, 41);
+            this.layoutControlItemcomboBoxRepoCodes.MinSize = new System.Drawing.Size(1, 41);
+            this.layoutControlItemcomboBoxRepoCodes.Name = "layoutControlItemcomboBoxRepoCodes";
+            this.layoutControlItemcomboBoxRepoCodes.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.layoutControlItemcomboBoxRepoCodes.Size = new System.Drawing.Size(187, 41);
+            this.layoutControlItemcomboBoxRepoCodes.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            resources.ApplyResources(this.layoutControlItemcomboBoxRepoCodes, "layoutControlItemcomboBoxRepoCodes");
+            this.layoutControlItemcomboBoxRepoCodes.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
+            this.layoutControlItemcomboBoxRepoCodes.TextLocation = DevExpress.Utils.Locations.Left;
+            this.layoutControlItemcomboBoxRepoCodes.TextToControlDistance = 5;
+            // 
+            // layoutControlItemRepoDate
+            // 
+            this.layoutControlItemRepoDate.Control = this.nullableDateTimePickerRepoDate;
+            this.layoutControlItemRepoDate.Location = new System.Drawing.Point(574, 0);
+            this.layoutControlItemRepoDate.MaxSize = new System.Drawing.Size(270, 33);
+            this.layoutControlItemRepoDate.MinSize = new System.Drawing.Size(1, 33);
+            this.layoutControlItemRepoDate.Name = "layoutControlItemRepoDate";
+            this.layoutControlItemRepoDate.Size = new System.Drawing.Size(208, 41);
+            this.layoutControlItemRepoDate.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            resources.ApplyResources(this.layoutControlItemRepoDate, "layoutControlItemRepoDate");
+            this.layoutControlItemRepoDate.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
+            this.layoutControlItemRepoDate.TextLocation = DevExpress.Utils.Locations.Left;
+            this.layoutControlItemRepoDate.TextToControlDistance = 5;
+            // 
+            // emptySpaceItem140
+            // 
+            this.emptySpaceItem140.Location = new System.Drawing.Point(782, 0);
+            this.emptySpaceItem140.Name = "emptySpaceItem140";
+            this.emptySpaceItem140.Size = new System.Drawing.Size(981, 41);
+            // 
+            // emptySpaceItem142
+            // 
+            this.emptySpaceItem142.Location = new System.Drawing.Point(0, 41);
+            this.emptySpaceItem142.MaxSize = new System.Drawing.Size(32, 41);
+            this.emptySpaceItem142.MinSize = new System.Drawing.Size(32, 41);
+            this.emptySpaceItem142.Name = "emptySpaceItem142";
+            this.emptySpaceItem142.Size = new System.Drawing.Size(32, 41);
+            this.emptySpaceItem142.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            // 
+            // layoutControlItemRepoAgent
+            // 
+            this.layoutControlItemRepoAgent.Control = this.textBoxRepoAgent;
+            this.layoutControlItemRepoAgent.Location = new System.Drawing.Point(32, 41);
+            this.layoutControlItemRepoAgent.MaxSize = new System.Drawing.Size(0, 41);
+            this.layoutControlItemRepoAgent.MinSize = new System.Drawing.Size(1, 41);
+            this.layoutControlItemRepoAgent.Name = "layoutControlItemRepoAgent";
+            this.layoutControlItemRepoAgent.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.layoutControlItemRepoAgent.Size = new System.Drawing.Size(584, 41);
+            this.layoutControlItemRepoAgent.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            resources.ApplyResources(this.layoutControlItemRepoAgent, "layoutControlItemRepoAgent");
+            this.layoutControlItemRepoAgent.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
+            this.layoutControlItemRepoAgent.TextLocation = DevExpress.Utils.Locations.Left;
+            this.layoutControlItemRepoAgent.TextToControlDistance = 5;
+            // 
+            // emptySpaceItem146
+            // 
+            this.emptySpaceItem146.Location = new System.Drawing.Point(616, 41);
+            this.emptySpaceItem146.MinSize = new System.Drawing.Size(10, 10);
+            this.emptySpaceItem146.Name = "emptySpaceItem146";
+            this.emptySpaceItem146.Size = new System.Drawing.Size(547, 41);
+            this.emptySpaceItem146.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            // 
+            // emptySpaceItem138
+            // 
+            this.emptySpaceItem138.Location = new System.Drawing.Point(1163, 41);
+            this.emptySpaceItem138.Name = "emptySpaceItem138";
+            this.emptySpaceItem138.Size = new System.Drawing.Size(600, 41);
+            // 
+            // layoutControlItemCurrentLocation
+            // 
+            this.layoutControlItemCurrentLocation.Control = this.textBoxCurrentLocation;
+            this.layoutControlItemCurrentLocation.Location = new System.Drawing.Point(0, 82);
+            this.layoutControlItemCurrentLocation.MaxSize = new System.Drawing.Size(484, 41);
+            this.layoutControlItemCurrentLocation.MinSize = new System.Drawing.Size(484, 41);
+            this.layoutControlItemCurrentLocation.Name = "layoutControlItemCurrentLocation";
+            this.layoutControlItemCurrentLocation.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.layoutControlItemCurrentLocation.Size = new System.Drawing.Size(484, 41);
+            this.layoutControlItemCurrentLocation.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            resources.ApplyResources(this.layoutControlItemCurrentLocation, "layoutControlItemCurrentLocation");
+            this.layoutControlItemCurrentLocation.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
+            this.layoutControlItemCurrentLocation.TextLocation = DevExpress.Utils.Locations.Left;
+            this.layoutControlItemCurrentLocation.TextToControlDistance = 5;
+            // 
+            // layoutControlItemLocationDate
+            // 
+            this.layoutControlItemLocationDate.Control = this.nullableDateTimePickerLocDate;
+            this.layoutControlItemLocationDate.Location = new System.Drawing.Point(484, 82);
+            this.layoutControlItemLocationDate.MaxSize = new System.Drawing.Size(132, 41);
+            this.layoutControlItemLocationDate.MinSize = new System.Drawing.Size(132, 41);
+            this.layoutControlItemLocationDate.Name = "layoutControlItemLocationDate";
+            this.layoutControlItemLocationDate.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.layoutControlItemLocationDate.Size = new System.Drawing.Size(132, 41);
+            this.layoutControlItemLocationDate.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            resources.ApplyResources(this.layoutControlItemLocationDate, "layoutControlItemLocationDate");
+            this.layoutControlItemLocationDate.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
+            this.layoutControlItemLocationDate.TextLocation = DevExpress.Utils.Locations.Left;
+            this.layoutControlItemLocationDate.TextToControlDistance = 0;
+            // 
+            // emptySpaceItem144
+            // 
+            this.emptySpaceItem144.Location = new System.Drawing.Point(616, 82);
+            this.emptySpaceItem144.Name = "emptySpaceItem144";
+            this.emptySpaceItem144.Size = new System.Drawing.Size(1147, 41);
+            // 
+            // emptySpaceItem143
+            // 
+            this.emptySpaceItem143.Location = new System.Drawing.Point(0, 123);
+            this.emptySpaceItem143.MaxSize = new System.Drawing.Size(14, 0);
+            this.emptySpaceItem143.MinSize = new System.Drawing.Size(14, 10);
+            this.emptySpaceItem143.Name = "emptySpaceItem143";
+            this.emptySpaceItem143.Size = new System.Drawing.Size(14, 421);
+            this.emptySpaceItem143.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            // 
+            // layoutControlItemAuctionHouse
+            // 
+            this.layoutControlItemAuctionHouse.Control = this.textBoxAuctionHouse;
+            this.layoutControlItemAuctionHouse.Location = new System.Drawing.Point(14, 123);
+            this.layoutControlItemAuctionHouse.MaxSize = new System.Drawing.Size(470, 41);
+            this.layoutControlItemAuctionHouse.MinSize = new System.Drawing.Size(470, 41);
+            this.layoutControlItemAuctionHouse.Name = "layoutControlItemAuctionHouse";
+            this.layoutControlItemAuctionHouse.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.layoutControlItemAuctionHouse.Size = new System.Drawing.Size(470, 41);
+            this.layoutControlItemAuctionHouse.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            resources.ApplyResources(this.layoutControlItemAuctionHouse, "layoutControlItemAuctionHouse");
+            // 
+            // layoutControlItemAuctionDate
+            // 
+            this.layoutControlItemAuctionDate.Control = this.nullableDateTimePickerAucDate;
+            this.layoutControlItemAuctionDate.Location = new System.Drawing.Point(484, 123);
+            this.layoutControlItemAuctionDate.MaxSize = new System.Drawing.Size(0, 41);
+            this.layoutControlItemAuctionDate.MinSize = new System.Drawing.Size(1, 41);
+            this.layoutControlItemAuctionDate.Name = "layoutControlItemAuctionDate";
+            this.layoutControlItemAuctionDate.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.layoutControlItemAuctionDate.Size = new System.Drawing.Size(132, 41);
+            this.layoutControlItemAuctionDate.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            resources.ApplyResources(this.layoutControlItemAuctionDate, "layoutControlItemAuctionDate");
+            this.layoutControlItemAuctionDate.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
+            this.layoutControlItemAuctionDate.TextLocation = DevExpress.Utils.Locations.Left;
+            this.layoutControlItemAuctionDate.TextToControlDistance = 0;
             // 
             // emptySpaceItem152
             // 
-            this.emptySpaceItem152.Location = new System.Drawing.Point(14, 270);
+            this.emptySpaceItem152.Location = new System.Drawing.Point(14, 164);
             this.emptySpaceItem152.Name = "emptySpaceItem152";
-            this.emptySpaceItem152.Size = new System.Drawing.Size(470, 430);
+            this.emptySpaceItem152.Size = new System.Drawing.Size(470, 380);
             // 
             // emptySpaceItem155
             // 
-            this.emptySpaceItem155.Location = new System.Drawing.Point(484, 270);
+            this.emptySpaceItem155.Location = new System.Drawing.Point(484, 164);
             this.emptySpaceItem155.Name = "emptySpaceItem155";
-            this.emptySpaceItem155.Size = new System.Drawing.Size(132, 430);
+            this.emptySpaceItem155.Size = new System.Drawing.Size(132, 380);
+            // 
+            // emptySpaceItem145
+            // 
+            this.emptySpaceItem145.Location = new System.Drawing.Point(616, 123);
+            this.emptySpaceItem145.Name = "emptySpaceItem145";
+            this.emptySpaceItem145.Size = new System.Drawing.Size(1147, 421);
             // 
             // xtraTabPageRepoHistory
             // 
-            this.xtraTabPageRepoHistory.Controls.Add(this.groupBox21);
+            this.xtraTabPageRepoHistory.Controls.Add(this.layoutControlRepoHistory);
             this.xtraTabPageRepoHistory.Name = "xtraTabPageRepoHistory";
             resources.ApplyResources(this.xtraTabPageRepoHistory, "xtraTabPageRepoHistory");
             // 
-            // groupBox21
+            // layoutControlRepoHistory
             // 
-            this.groupBox21.Appearance.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.groupBox21.Appearance.Options.UseBackColor = true;
-            this.groupBox21.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.groupBox21.Controls.Add(this.gridControlRepoLog);
-            this.groupBox21.Controls.Add(this.groupBox13);
-            resources.ApplyResources(this.groupBox21, "groupBox21");
-            this.groupBox21.Name = "groupBox21";
+            this.layoutControlRepoHistory.Controls.Add(this.gridControlRepoLog);
+            this.layoutControlRepoHistory.Controls.Add(this.textBox482);
+            this.layoutControlRepoHistory.Controls.Add(this.textBox472);
+            this.layoutControlRepoHistory.Controls.Add(this.textBox172);
+            this.layoutControlRepoHistory.Controls.Add(this.textBox192);
+            this.layoutControlRepoHistory.Controls.Add(this.textBox512);
+            this.layoutControlRepoHistory.Controls.Add(this.textBox502);
+            this.layoutControlRepoHistory.Controls.Add(this.textBox492);
+            resources.ApplyResources(this.layoutControlRepoHistory, "layoutControlRepoHistory");
+            this.layoutControlRepoHistory.Name = "layoutControlRepoHistory";
+            this.layoutControlRepoHistory.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(837, 489, 650, 400);
+            this.layoutControlRepoHistory.Root = this.layoutControlGroupRepoHistory;
             // 
             // gridControlRepoLog
             // 
@@ -16080,8 +16386,6 @@ namespace IAC2021SQL
             this.gridControlRepoLog.MainView = this.gridViewRepoLog;
             this.gridControlRepoLog.MenuManager = this.toolbarFormManager1;
             this.gridControlRepoLog.Name = "gridControlRepoLog";
-            this.gridControlRepoLog.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemCheckEdit1});
             this.gridControlRepoLog.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewRepoLog});
             // 
@@ -16245,23 +16549,12 @@ namespace IAC2021SQL
             // colOrgTitleReceived
             // 
             resources.ApplyResources(this.colOrgTitleReceived, "colOrgTitleReceived");
-            this.colOrgTitleReceived.ColumnEdit = this.repositoryItemCheckEdit1;
             this.colOrgTitleReceived.FieldName = "OrgTitleReceived";
             this.colOrgTitleReceived.Name = "colOrgTitleReceived";
-            // 
-            // repositoryItemCheckEdit1
-            // 
-            resources.ApplyResources(this.repositoryItemCheckEdit1, "repositoryItemCheckEdit1");
-            this.repositoryItemCheckEdit1.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
-            this.repositoryItemCheckEdit1.LookAndFeel.SkinName = "McSkin";
-            this.repositoryItemCheckEdit1.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.repositoryItemCheckEdit1.Name = "repositoryItemCheckEdit1";
-            this.repositoryItemCheckEdit1.NullStyle = DevExpress.XtraEditors.Controls.StyleIndeterminate.Unchecked;
             // 
             // colNewTitleReceived
             // 
             resources.ApplyResources(this.colNewTitleReceived, "colNewTitleReceived");
-            this.colNewTitleReceived.ColumnEdit = this.repositoryItemCheckEdit1;
             this.colNewTitleReceived.FieldName = "NewTitleReceived";
             this.colNewTitleReceived.Name = "colNewTitleReceived";
             // 
@@ -16282,85 +16575,70 @@ namespace IAC2021SQL
             this.colidRepo.FieldName = "id";
             this.colidRepo.Name = "colidRepo";
             // 
-            // groupBox13
+            // layoutControlGroupRepoHistory
             // 
-            this.groupBox13.Controls.Add(this.textBox41);
-            this.groupBox13.Controls.Add(this.textBox42);
-            this.groupBox13.Controls.Add(this.textBox43);
-            this.groupBox13.Controls.Add(this.textBox44);
-            this.groupBox13.Controls.Add(label127);
-            this.groupBox13.Controls.Add(this.textBox45);
-            this.groupBox13.Controls.Add(this.textBox46);
-            this.groupBox13.Controls.Add(label128);
-            this.groupBox13.Controls.Add(this.textBox52);
-            this.groupBox13.Controls.Add(label130);
-            resources.ApplyResources(this.groupBox13, "groupBox13");
-            this.groupBox13.Name = "groupBox13";
-            this.groupBox13.TabStop = false;
+            this.layoutControlGroupRepoHistory.AppearanceGroup.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.layoutControlGroupRepoHistory.AppearanceGroup.Options.UseBackColor = true;
+            this.layoutControlGroupRepoHistory.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.layoutControlGroupRepoHistory.GroupStyle = DevExpress.Utils.GroupStyle.Light;
+            this.layoutControlGroupRepoHistory.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlGroupRepoHistoryHeader,
+            this.layoutControlGroupRepoHistoryGrid});
+            this.layoutControlGroupRepoHistory.Name = "Root";
+            this.layoutControlGroupRepoHistory.Size = new System.Drawing.Size(1809, 745);
+            this.layoutControlGroupRepoHistory.TextVisible = false;
             // 
-            // textBox41
+            // layoutControlGroupRepoHistoryHeader
             // 
-            this.textBox41.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_SUFFIX", true));
-            resources.ApplyResources(this.textBox41, "textBox41");
-            this.textBox41.Name = "textBox41";
-            this.textBox41.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textBox41.Properties.Appearance.Font")));
-            this.textBox41.Properties.Appearance.Options.UseFont = true;
-            this.textBox41.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox41.Properties.ReadOnly = true;
+            this.layoutControlGroupRepoHistoryHeader.GroupStyle = DevExpress.Utils.GroupStyle.Light;
+            this.layoutControlGroupRepoHistoryHeader.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.emptySpaceItem119,
+            this.emptySpaceItem125,
+            this.layoutControlGroup7});
+            this.layoutControlGroupRepoHistoryHeader.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlGroupRepoHistoryHeader.Name = "layoutControlGroupRepoHistoryHeader";
+            this.layoutControlGroupRepoHistoryHeader.Size = new System.Drawing.Size(1789, 130);
+            resources.ApplyResources(this.layoutControlGroupRepoHistoryHeader, "layoutControlGroupRepoHistoryHeader");
+            this.layoutControlGroupRepoHistoryHeader.TextVisible = false;
             // 
-            // textBox42
+            // emptySpaceItem119
             // 
-            this.textBox42.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_SS_3", true));
-            resources.ApplyResources(this.textBox42, "textBox42");
-            this.textBox42.Name = "textBox42";
-            this.textBox42.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textBox42.Properties.Appearance.Font")));
-            this.textBox42.Properties.Appearance.Options.UseFont = true;
-            this.textBox42.Properties.ReadOnly = true;
+            this.emptySpaceItem119.Location = new System.Drawing.Point(0, 0);
+            this.emptySpaceItem119.MaxSize = new System.Drawing.Size(539, 106);
+            this.emptySpaceItem119.MinSize = new System.Drawing.Size(539, 106);
+            this.emptySpaceItem119.Name = "emptySpaceItem119";
+            this.emptySpaceItem119.Size = new System.Drawing.Size(539, 106);
+            this.emptySpaceItem119.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             // 
-            // textBox43
+            // emptySpaceItem125
             // 
-            this.textBox43.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_SS_2", true));
-            resources.ApplyResources(this.textBox43, "textBox43");
-            this.textBox43.Name = "textBox43";
-            this.textBox43.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textBox43.Properties.Appearance.Font")));
-            this.textBox43.Properties.Appearance.Options.UseFont = true;
-            this.textBox43.Properties.ReadOnly = true;
+            this.emptySpaceItem125.Location = new System.Drawing.Point(1226, 0);
+            this.emptySpaceItem125.MaxSize = new System.Drawing.Size(539, 106);
+            this.emptySpaceItem125.MinSize = new System.Drawing.Size(539, 106);
+            this.emptySpaceItem125.Name = "emptySpaceItem125";
+            this.emptySpaceItem125.Size = new System.Drawing.Size(539, 106);
+            this.emptySpaceItem125.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             // 
-            // textBox44
+            // layoutControlGroupRepoHistoryGrid
             // 
-            this.textBox44.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_SS_1", true));
-            resources.ApplyResources(this.textBox44, "textBox44");
-            this.textBox44.Name = "textBox44";
-            this.textBox44.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textBox44.Properties.Appearance.Font")));
-            this.textBox44.Properties.Appearance.Options.UseFont = true;
-            this.textBox44.Properties.ReadOnly = true;
+            this.layoutControlGroupRepoHistoryGrid.GroupStyle = DevExpress.Utils.GroupStyle.Title;
+            this.layoutControlGroupRepoHistoryGrid.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItemRepoHistoryGridControl});
+            this.layoutControlGroupRepoHistoryGrid.Location = new System.Drawing.Point(0, 130);
+            this.layoutControlGroupRepoHistoryGrid.Name = "layoutControlGroupRepoHistoryGrid";
+            this.layoutControlGroupRepoHistoryGrid.Size = new System.Drawing.Size(1789, 595);
+            resources.ApplyResources(this.layoutControlGroupRepoHistoryGrid, "layoutControlGroupRepoHistoryGrid");
+            this.layoutControlGroupRepoHistoryGrid.TextVisible = false;
             // 
-            // textBox45
+            // layoutControlItemRepoHistoryGridControl
             // 
-            this.textBox45.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_LAST_NAME", true));
-            resources.ApplyResources(this.textBox45, "textBox45");
-            this.textBox45.Name = "textBox45";
-            this.textBox45.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textBox45.Properties.Appearance.Font")));
-            this.textBox45.Properties.Appearance.Options.UseFont = true;
-            this.textBox45.Properties.ReadOnly = true;
-            // 
-            // textBox46
-            // 
-            this.textBox46.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_FIRST_NAME", true));
-            resources.ApplyResources(this.textBox46, "textBox46");
-            this.textBox46.Name = "textBox46";
-            this.textBox46.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textBox46.Properties.Appearance.Font")));
-            this.textBox46.Properties.Appearance.Options.UseFont = true;
-            this.textBox46.Properties.ReadOnly = true;
-            // 
-            // textBox52
-            // 
-            this.textBox52.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_NO", true));
-            resources.ApplyResources(this.textBox52, "textBox52");
-            this.textBox52.Name = "textBox52";
-            this.textBox52.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textBox52.Properties.Appearance.Font")));
-            this.textBox52.Properties.Appearance.Options.UseFont = true;
-            this.textBox52.Properties.ReadOnly = true;
+            this.layoutControlItemRepoHistoryGridControl.Control = this.gridControlRepoLog;
+            this.layoutControlItemRepoHistoryGridControl.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItemRepoHistoryGridControl.MinSize = new System.Drawing.Size(104, 24);
+            this.layoutControlItemRepoHistoryGridControl.Name = "layoutControlItemRepoHistoryGridControl";
+            this.layoutControlItemRepoHistoryGridControl.Size = new System.Drawing.Size(1763, 569);
+            this.layoutControlItemRepoHistoryGridControl.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.layoutControlItemRepoHistoryGridControl.TextVisible = false;
             // 
             // xtraTabPageCustomerFees
             // 
@@ -16768,6 +17046,7 @@ namespace IAC2021SQL
             this.textBoxTermsDuration.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.textBoxTermsDuration.Properties.AppearanceDisabled.Options.UseForeColor = true;
             this.textBoxTermsDuration.StyleController = this.layoutControlTSB;
+            this.textBoxTermsDuration.EditValueChanged += new System.EventHandler(this.textBoxTermsDuration_EditValueChanged);
             // 
             // checkBoxPaymentProfile
             // 
@@ -16780,12 +17059,14 @@ namespace IAC2021SQL
             this.checkBoxPaymentProfile.Properties.Caption = resources.GetString("checkBoxPaymentProfile.Properties.Caption");
             this.checkBoxPaymentProfile.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
             this.checkBoxPaymentProfile.StyleController = this.layoutControlTSB;
+            this.checkBoxPaymentProfile.EditValueChanged += new System.EventHandler(this.Universal_EditValueChanged);
             // 
             // buttonEditPaymentHistory
             // 
             resources.ApplyResources(this.buttonEditPaymentHistory, "buttonEditPaymentHistory");
             this.buttonEditPaymentHistory.Name = "buttonEditPaymentHistory";
             this.buttonEditPaymentHistory.StyleController = this.layoutControlTSB;
+            this.buttonEditPaymentHistory.Click += new System.EventHandler(this.buttonEditPaymentHistory_Click);
             // 
             // comboBoxInterestType
             // 
@@ -16801,6 +17082,7 @@ namespace IAC2021SQL
             this.comboBoxInterestType.Properties.NullText = resources.GetString("comboBoxInterestType.Properties.NullText");
             this.comboBoxInterestType.Properties.ValueMember = "Code";
             this.comboBoxInterestType.StyleController = this.layoutControlTSB;
+            this.comboBoxInterestType.EditValueChanged += new System.EventHandler(this.comboBoxInterestType_EditValueChanged);
             // 
             // checkBoxECOACode
             // 
@@ -16885,8 +17167,12 @@ namespace IAC2021SQL
             this.nullableDateTimePickerFollowUpDate.EnterMoveNextControl = true;
             this.nullableDateTimePickerFollowUpDate.Name = "nullableDateTimePickerFollowUpDate";
             this.nullableDateTimePickerFollowUpDate.Properties.Appearance.Options.UseFont = true;
+            this.nullableDateTimePickerFollowUpDate.Properties.Appearance.Options.UseTextOptions = true;
+            this.nullableDateTimePickerFollowUpDate.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.nullableDateTimePickerFollowUpDate.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.nullableDateTimePickerFollowUpDate.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.nullableDateTimePickerFollowUpDate.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.nullableDateTimePickerFollowUpDate.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.nullableDateTimePickerFollowUpDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("nullableDateTimePickerFollowUpDate.Properties.Buttons"))))});
             this.nullableDateTimePickerFollowUpDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -16976,6 +17262,12 @@ namespace IAC2021SQL
             this.nullableDateTimePickerDateClosed.EnterMoveNextControl = true;
             this.nullableDateTimePickerDateClosed.Name = "nullableDateTimePickerDateClosed";
             this.nullableDateTimePickerDateClosed.Properties.Appearance.Options.UseFont = true;
+            this.nullableDateTimePickerDateClosed.Properties.Appearance.Options.UseTextOptions = true;
+            this.nullableDateTimePickerDateClosed.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.nullableDateTimePickerDateClosed.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.nullableDateTimePickerDateClosed.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.nullableDateTimePickerDateClosed.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.nullableDateTimePickerDateClosed.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.nullableDateTimePickerDateClosed.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("nullableDateTimePickerDateClosed.Properties.Buttons"))))});
             this.nullableDateTimePickerDateClosed.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -17003,6 +17295,12 @@ namespace IAC2021SQL
             this.nullableDateTimePickerDateOpened.EnterMoveNextControl = true;
             this.nullableDateTimePickerDateOpened.Name = "nullableDateTimePickerDateOpened";
             this.nullableDateTimePickerDateOpened.Properties.Appearance.Options.UseFont = true;
+            this.nullableDateTimePickerDateOpened.Properties.Appearance.Options.UseTextOptions = true;
+            this.nullableDateTimePickerDateOpened.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.nullableDateTimePickerDateOpened.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.nullableDateTimePickerDateOpened.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.nullableDateTimePickerDateOpened.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.nullableDateTimePickerDateOpened.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.nullableDateTimePickerDateOpened.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("nullableDateTimePickerDateOpened.Properties.Buttons"))))});
             this.nullableDateTimePickerDateOpened.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -17047,8 +17345,12 @@ namespace IAC2021SQL
             this.nullableDateTimePickerDateofAccountInformation.EnterMoveNextControl = true;
             this.nullableDateTimePickerDateofAccountInformation.Name = "nullableDateTimePickerDateofAccountInformation";
             this.nullableDateTimePickerDateofAccountInformation.Properties.Appearance.Options.UseFont = true;
+            this.nullableDateTimePickerDateofAccountInformation.Properties.Appearance.Options.UseTextOptions = true;
+            this.nullableDateTimePickerDateofAccountInformation.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.nullableDateTimePickerDateofAccountInformation.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.nullableDateTimePickerDateofAccountInformation.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.nullableDateTimePickerDateofAccountInformation.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.nullableDateTimePickerDateofAccountInformation.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.nullableDateTimePickerDateofAccountInformation.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("nullableDateTimePickerDateofAccountInformation.Properties.Buttons"))))});
             this.nullableDateTimePickerDateofAccountInformation.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -17064,8 +17366,12 @@ namespace IAC2021SQL
             this.nullableDateTimePickerDateofFirstDelinquency.EnterMoveNextControl = true;
             this.nullableDateTimePickerDateofFirstDelinquency.Name = "nullableDateTimePickerDateofFirstDelinquency";
             this.nullableDateTimePickerDateofFirstDelinquency.Properties.Appearance.Options.UseFont = true;
+            this.nullableDateTimePickerDateofFirstDelinquency.Properties.Appearance.Options.UseTextOptions = true;
+            this.nullableDateTimePickerDateofFirstDelinquency.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.nullableDateTimePickerDateofFirstDelinquency.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.nullableDateTimePickerDateofFirstDelinquency.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.nullableDateTimePickerDateofFirstDelinquency.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.nullableDateTimePickerDateofFirstDelinquency.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.nullableDateTimePickerDateofFirstDelinquency.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("nullableDateTimePickerDateofFirstDelinquency.Properties.Buttons"))))});
             this.nullableDateTimePickerDateofFirstDelinquency.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -17092,8 +17398,12 @@ namespace IAC2021SQL
             this.nullableDateTimePickerDateofLastPayment.EnterMoveNextControl = true;
             this.nullableDateTimePickerDateofLastPayment.Name = "nullableDateTimePickerDateofLastPayment";
             this.nullableDateTimePickerDateofLastPayment.Properties.Appearance.Options.UseFont = true;
+            this.nullableDateTimePickerDateofLastPayment.Properties.Appearance.Options.UseTextOptions = true;
+            this.nullableDateTimePickerDateofLastPayment.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.nullableDateTimePickerDateofLastPayment.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.nullableDateTimePickerDateofLastPayment.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.nullableDateTimePickerDateofLastPayment.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.nullableDateTimePickerDateofLastPayment.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.nullableDateTimePickerDateofLastPayment.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("nullableDateTimePickerDateofLastPayment.Properties.Buttons"))))});
             this.nullableDateTimePickerDateofLastPayment.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -17111,6 +17421,8 @@ namespace IAC2021SQL
             this.textBoxCreditLimit.EnterMoveNextControl = true;
             resources.ApplyResources(this.textBoxCreditLimit, "textBoxCreditLimit");
             this.textBoxCreditLimit.Name = "textBoxCreditLimit";
+            this.textBoxCreditLimit.Properties.Appearance.Options.UseTextOptions = true;
+            this.textBoxCreditLimit.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.textBoxCreditLimit.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.textBoxCreditLimit.Properties.AppearanceDisabled.Options.UseForeColor = true;
             this.textBoxCreditLimit.Properties.AppearanceDisabled.Options.UseTextOptions = true;
@@ -17282,6 +17594,8 @@ namespace IAC2021SQL
             this.textBoxActualPaymentAmount.Properties.MaskSettings.Set("culture", "en-US");
             this.textBoxActualPaymentAmount.Properties.MaskSettings.Set("autoHideDecimalSeparator", false);
             this.textBoxActualPaymentAmount.Properties.MaskSettings.Set("hideInsignificantZeros", true);
+            this.textBoxActualPaymentAmount.Properties.MaskSettings.Set("mask", "c");
+            this.textBoxActualPaymentAmount.Properties.MaskSettings.Set("valueType", typeof(decimal));
             this.textBoxActualPaymentAmount.Properties.UseMaskAsDisplayFormat = ((bool)(resources.GetObject("textBoxActualPaymentAmount.Properties.UseMaskAsDisplayFormat")));
             this.textBoxActualPaymentAmount.StyleController = this.layoutControlTSB;
             this.textBoxActualPaymentAmount.EditValueChanged += new System.EventHandler(this.Universal_EditValueChanged);
@@ -17666,7 +17980,7 @@ namespace IAC2021SQL
             this.layoutControlItem2});
             this.layoutControlGroupReportStatus.Location = new System.Drawing.Point(505, 0);
             this.layoutControlGroupReportStatus.Name = "layoutControlGroupReportStatus";
-            this.layoutControlGroupReportStatus.Size = new System.Drawing.Size(124, 90);
+            this.layoutControlGroupReportStatus.Size = new System.Drawing.Size(129, 90);
             resources.ApplyResources(this.layoutControlGroupReportStatus, "layoutControlGroupReportStatus");
             // 
             // layoutControlItem2
@@ -17674,7 +17988,7 @@ namespace IAC2021SQL
             this.layoutControlItem2.Control = this.checkBoxReportTSB;
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(100, 41);
+            this.layoutControlItem2.Size = new System.Drawing.Size(105, 41);
             this.layoutControlItem2.TextVisible = false;
             // 
             // layoutControlGroupPurge
@@ -17682,9 +17996,9 @@ namespace IAC2021SQL
             this.layoutControlGroupPurge.GroupStyle = DevExpress.Utils.GroupStyle.Light;
             this.layoutControlGroupPurge.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem39});
-            this.layoutControlGroupPurge.Location = new System.Drawing.Point(629, 0);
+            this.layoutControlGroupPurge.Location = new System.Drawing.Point(634, 0);
             this.layoutControlGroupPurge.Name = "layoutControlGroupPurge";
-            this.layoutControlGroupPurge.Size = new System.Drawing.Size(100, 90);
+            this.layoutControlGroupPurge.Size = new System.Drawing.Size(97, 90);
             resources.ApplyResources(this.layoutControlGroupPurge, "layoutControlGroupPurge");
             // 
             // layoutControlItem39
@@ -17692,7 +18006,7 @@ namespace IAC2021SQL
             this.layoutControlItem39.Control = this.checkBoxPurge;
             this.layoutControlItem39.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem39.Name = "layoutControlItem39";
-            this.layoutControlItem39.Size = new System.Drawing.Size(76, 41);
+            this.layoutControlItem39.Size = new System.Drawing.Size(73, 41);
             this.layoutControlItem39.TextVisible = false;
             // 
             // layoutControlGroupDates
@@ -17719,6 +18033,8 @@ namespace IAC2021SQL
             // 
             // layoutControlItemDateofLastPayment
             // 
+            this.layoutControlItemDateofLastPayment.AppearanceItemCaptionDisabled.ForeColor = System.Drawing.Color.Black;
+            this.layoutControlItemDateofLastPayment.AppearanceItemCaptionDisabled.Options.UseForeColor = true;
             this.layoutControlItemDateofLastPayment.Control = this.nullableDateTimePickerDateofLastPayment;
             this.layoutControlItemDateofLastPayment.Location = new System.Drawing.Point(47, 0);
             this.layoutControlItemDateofLastPayment.MaxSize = new System.Drawing.Size(0, 31);
@@ -17733,6 +18049,8 @@ namespace IAC2021SQL
             // 
             // layoutControlItemDateofFirstDeliquency
             // 
+            this.layoutControlItemDateofFirstDeliquency.AppearanceItemCaptionDisabled.ForeColor = System.Drawing.Color.Black;
+            this.layoutControlItemDateofFirstDeliquency.AppearanceItemCaptionDisabled.Options.UseForeColor = true;
             this.layoutControlItemDateofFirstDeliquency.Control = this.nullableDateTimePickerDateofFirstDelinquency;
             this.layoutControlItemDateofFirstDeliquency.Location = new System.Drawing.Point(30, 31);
             this.layoutControlItemDateofFirstDeliquency.MaxSize = new System.Drawing.Size(0, 31);
@@ -17747,6 +18065,8 @@ namespace IAC2021SQL
             // 
             // layoutControlItemDateofAccountInformation
             // 
+            this.layoutControlItemDateofAccountInformation.AppearanceItemCaptionDisabled.ForeColor = System.Drawing.Color.Black;
+            this.layoutControlItemDateofAccountInformation.AppearanceItemCaptionDisabled.Options.UseForeColor = true;
             this.layoutControlItemDateofAccountInformation.Control = this.nullableDateTimePickerDateofAccountInformation;
             this.layoutControlItemDateofAccountInformation.Location = new System.Drawing.Point(0, 62);
             this.layoutControlItemDateofAccountInformation.MaxSize = new System.Drawing.Size(0, 31);
@@ -17761,6 +18081,8 @@ namespace IAC2021SQL
             // 
             // layoutControlItemDateOpened
             // 
+            this.layoutControlItemDateOpened.AppearanceItemCaptionDisabled.ForeColor = System.Drawing.Color.Black;
+            this.layoutControlItemDateOpened.AppearanceItemCaptionDisabled.Options.UseForeColor = true;
             this.layoutControlItemDateOpened.Control = this.nullableDateTimePickerDateOpened;
             this.layoutControlItemDateOpened.Location = new System.Drawing.Point(105, 93);
             this.layoutControlItemDateOpened.MaxSize = new System.Drawing.Size(0, 31);
@@ -17775,6 +18097,8 @@ namespace IAC2021SQL
             // 
             // layoutControlItemDateClosed
             // 
+            this.layoutControlItemDateClosed.AppearanceItemCaptionDisabled.ForeColor = System.Drawing.Color.Black;
+            this.layoutControlItemDateClosed.AppearanceItemCaptionDisabled.Options.UseForeColor = true;
             this.layoutControlItemDateClosed.Control = this.nullableDateTimePickerDateClosed;
             this.layoutControlItemDateClosed.Location = new System.Drawing.Point(113, 124);
             this.layoutControlItemDateClosed.MaxSize = new System.Drawing.Size(0, 31);
@@ -17789,6 +18113,8 @@ namespace IAC2021SQL
             // 
             // layoutControlItem46
             // 
+            this.layoutControlItem46.AppearanceItemCaptionDisabled.ForeColor = System.Drawing.Color.Black;
+            this.layoutControlItem46.AppearanceItemCaptionDisabled.Options.UseForeColor = true;
             this.layoutControlItem46.Control = this.checkBoxFollowUpDate;
             this.layoutControlItem46.Location = new System.Drawing.Point(329, 155);
             this.layoutControlItem46.MaxSize = new System.Drawing.Size(0, 31);
@@ -17800,6 +18126,8 @@ namespace IAC2021SQL
             // 
             // layoutControlItemFollowUpDate
             // 
+            this.layoutControlItemFollowUpDate.AppearanceItemCaptionDisabled.ForeColor = System.Drawing.Color.Black;
+            this.layoutControlItemFollowUpDate.AppearanceItemCaptionDisabled.Options.UseForeColor = true;
             this.layoutControlItemFollowUpDate.Control = this.nullableDateTimePickerFollowUpDate;
             this.layoutControlItemFollowUpDate.Location = new System.Drawing.Point(94, 155);
             this.layoutControlItemFollowUpDate.MaxSize = new System.Drawing.Size(0, 31);
@@ -18138,7 +18466,7 @@ namespace IAC2021SQL
             this.layoutControlItemPaymentHistoryProfile.MaxSize = new System.Drawing.Size(0, 31);
             this.layoutControlItemPaymentHistoryProfile.MinSize = new System.Drawing.Size(1, 31);
             this.layoutControlItemPaymentHistoryProfile.Name = "layoutControlItemPaymentHistoryProfile";
-            this.layoutControlItemPaymentHistoryProfile.Size = new System.Drawing.Size(475, 31);
+            this.layoutControlItemPaymentHistoryProfile.Size = new System.Drawing.Size(526, 31);
             this.layoutControlItemPaymentHistoryProfile.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             resources.ApplyResources(this.layoutControlItemPaymentHistoryProfile, "layoutControlItemPaymentHistoryProfile");
             this.layoutControlItemPaymentHistoryProfile.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
@@ -18148,7 +18476,7 @@ namespace IAC2021SQL
             // layoutControlItem40
             // 
             this.layoutControlItem40.Control = this.buttonEditPaymentHistory;
-            this.layoutControlItem40.Location = new System.Drawing.Point(508, 248);
+            this.layoutControlItem40.Location = new System.Drawing.Point(559, 248);
             this.layoutControlItem40.MaxSize = new System.Drawing.Size(227, 31);
             this.layoutControlItem40.MinSize = new System.Drawing.Size(227, 31);
             this.layoutControlItem40.Name = "layoutControlItem40";
@@ -18181,7 +18509,7 @@ namespace IAC2021SQL
             this.layoutControlItemTermsDuration.MaxSize = new System.Drawing.Size(0, 31);
             this.layoutControlItemTermsDuration.MinSize = new System.Drawing.Size(1, 31);
             this.layoutControlItemTermsDuration.Name = "layoutControlItemTermsDuration";
-            this.layoutControlItemTermsDuration.Size = new System.Drawing.Size(173, 31);
+            this.layoutControlItemTermsDuration.Size = new System.Drawing.Size(229, 31);
             this.layoutControlItemTermsDuration.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             resources.ApplyResources(this.layoutControlItemTermsDuration, "layoutControlItemTermsDuration");
             this.layoutControlItemTermsDuration.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
@@ -18191,11 +18519,11 @@ namespace IAC2021SQL
             // layoutControlItem42
             // 
             this.layoutControlItem42.Control = this.checkBoxPaymentProfile;
-            this.layoutControlItem42.Location = new System.Drawing.Point(735, 248);
+            this.layoutControlItem42.Location = new System.Drawing.Point(786, 248);
             this.layoutControlItem42.MaxSize = new System.Drawing.Size(0, 31);
             this.layoutControlItem42.MinSize = new System.Drawing.Size(1, 31);
             this.layoutControlItem42.Name = "layoutControlItem42";
-            this.layoutControlItem42.Size = new System.Drawing.Size(100, 31);
+            this.layoutControlItem42.Size = new System.Drawing.Size(105, 31);
             this.layoutControlItem42.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem42.TextVisible = false;
             // 
@@ -18273,18 +18601,18 @@ namespace IAC2021SQL
             // 
             // emptySpaceItem83
             // 
-            this.emptySpaceItem83.Location = new System.Drawing.Point(835, 248);
+            this.emptySpaceItem83.Location = new System.Drawing.Point(891, 248);
             this.emptySpaceItem83.MinSize = new System.Drawing.Size(10, 10);
             this.emptySpaceItem83.Name = "emptySpaceItem83";
-            this.emptySpaceItem83.Size = new System.Drawing.Size(248, 31);
+            this.emptySpaceItem83.Size = new System.Drawing.Size(192, 31);
             this.emptySpaceItem83.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             // 
             // emptySpaceItem84
             // 
-            this.emptySpaceItem84.Location = new System.Drawing.Point(835, 217);
+            this.emptySpaceItem84.Location = new System.Drawing.Point(891, 217);
             this.emptySpaceItem84.MinSize = new System.Drawing.Size(10, 10);
             this.emptySpaceItem84.Name = "emptySpaceItem84";
-            this.emptySpaceItem84.Size = new System.Drawing.Size(248, 31);
+            this.emptySpaceItem84.Size = new System.Drawing.Size(192, 31);
             this.emptySpaceItem84.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             // 
             // emptySpaceItem85
@@ -18306,32 +18634,32 @@ namespace IAC2021SQL
             // 
             this.emptySpaceItem87.Location = new System.Drawing.Point(33, 279);
             this.emptySpaceItem87.Name = "emptySpaceItem87";
-            this.emptySpaceItem87.Size = new System.Drawing.Size(475, 31);
+            this.emptySpaceItem87.Size = new System.Drawing.Size(526, 31);
             // 
             // emptySpaceItem89
             // 
-            this.emptySpaceItem89.Location = new System.Drawing.Point(508, 279);
+            this.emptySpaceItem89.Location = new System.Drawing.Point(559, 279);
             this.emptySpaceItem89.Name = "emptySpaceItem89";
             this.emptySpaceItem89.Size = new System.Drawing.Size(227, 31);
             // 
             // emptySpaceItem94
             // 
-            this.emptySpaceItem94.Location = new System.Drawing.Point(735, 279);
+            this.emptySpaceItem94.Location = new System.Drawing.Point(786, 279);
             this.emptySpaceItem94.Name = "emptySpaceItem94";
-            this.emptySpaceItem94.Size = new System.Drawing.Size(100, 31);
+            this.emptySpaceItem94.Size = new System.Drawing.Size(105, 31);
             // 
             // emptySpaceItem103
             // 
-            this.emptySpaceItem103.Location = new System.Drawing.Point(835, 279);
+            this.emptySpaceItem103.Location = new System.Drawing.Point(891, 279);
             this.emptySpaceItem103.Name = "emptySpaceItem103";
-            this.emptySpaceItem103.Size = new System.Drawing.Size(248, 31);
+            this.emptySpaceItem103.Size = new System.Drawing.Size(192, 31);
             // 
             // emptySpaceItem107
             // 
-            this.emptySpaceItem107.Location = new System.Drawing.Point(729, 0);
+            this.emptySpaceItem107.Location = new System.Drawing.Point(731, 0);
             this.emptySpaceItem107.MinSize = new System.Drawing.Size(100, 10);
             this.emptySpaceItem107.Name = "emptySpaceItem107";
-            this.emptySpaceItem107.Size = new System.Drawing.Size(1060, 90);
+            this.emptySpaceItem107.Size = new System.Drawing.Size(1058, 90);
             this.emptySpaceItem107.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             // 
             // emptySpaceItem108
@@ -18716,6 +19044,208 @@ namespace IAC2021SQL
             this.layoutControlGroup3.Location = new System.Drawing.Point(552, 0);
             this.layoutControlGroup3.Name = "layoutControlGroup3";
             this.layoutControlGroup3.Size = new System.Drawing.Size(402, 79);
+            // 
+            // textBox512
+            // 
+            this.textBox512.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_SS_1", true));
+            resources.ApplyResources(this.textBox512, "textBox512");
+            this.textBox512.Name = "textBox512";
+            this.textBox512.Properties.Appearance.Options.UseFont = true;
+            this.textBox512.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.textBox512.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.textBox512.Properties.ReadOnly = true;
+            this.textBox512.StyleController = this.layoutControlRepoHistory;
+            // 
+            // textBox472
+            // 
+            this.textBox472.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_FIRST_NAME", true));
+            resources.ApplyResources(this.textBox472, "textBox472");
+            this.textBox472.Name = "textBox472";
+            this.textBox472.Properties.Appearance.Options.UseFont = true;
+            this.textBox472.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.textBox472.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.textBox472.Properties.ReadOnly = true;
+            this.textBox472.StyleController = this.layoutControlRepoHistory;
+            // 
+            // textBox482
+            // 
+            this.textBox482.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_NO", true));
+            resources.ApplyResources(this.textBox482, "textBox482");
+            this.textBox482.Name = "textBox482";
+            this.textBox482.Properties.Appearance.Options.UseFont = true;
+            this.textBox482.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.textBox482.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.textBox482.Properties.ReadOnly = true;
+            this.textBox482.StyleController = this.layoutControlRepoHistory;
+            // 
+            // textBox492
+            // 
+            this.textBox492.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_SS_3", true));
+            resources.ApplyResources(this.textBox492, "textBox492");
+            this.textBox492.Name = "textBox492";
+            this.textBox492.Properties.Appearance.Options.UseFont = true;
+            this.textBox492.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.textBox492.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.textBox492.Properties.ReadOnly = true;
+            this.textBox492.StyleController = this.layoutControlRepoHistory;
+            // 
+            // textBox192
+            // 
+            this.textBox192.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_SUFFIX", true));
+            resources.ApplyResources(this.textBox192, "textBox192");
+            this.textBox192.Name = "textBox192";
+            this.textBox192.Properties.Appearance.Options.UseFont = true;
+            this.textBox192.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.textBox192.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.textBox192.Properties.ReadOnly = true;
+            this.textBox192.StyleController = this.layoutControlRepoHistory;
+            // 
+            // textBox502
+            // 
+            this.textBox502.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_SS_2", true));
+            resources.ApplyResources(this.textBox502, "textBox502");
+            this.textBox502.Name = "textBox502";
+            this.textBox502.Properties.Appearance.Options.UseFont = true;
+            this.textBox502.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.textBox502.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.textBox502.Properties.ReadOnly = true;
+            this.textBox502.StyleController = this.layoutControlRepoHistory;
+            // 
+            // textBox172
+            // 
+            this.textBox172.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_LAST_NAME", true));
+            resources.ApplyResources(this.textBox172, "textBox172");
+            this.textBox172.Name = "textBox172";
+            this.textBox172.Properties.Appearance.Options.UseFont = true;
+            this.textBox172.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.textBox172.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.textBox172.Properties.ReadOnly = true;
+            this.textBox172.StyleController = this.layoutControlRepoHistory;
+            // 
+            // layoutControlGroup7
+            // 
+            resources.ApplyResources(this.layoutControlGroup7, "layoutControlGroup7");
+            this.layoutControlGroup7.GroupStyle = DevExpress.Utils.GroupStyle.Light;
+            this.layoutControlGroup7.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem41,
+            this.layoutControlItem44,
+            this.layoutControlItem45,
+            this.layoutControlItem47,
+            this.layoutControlItem48,
+            this.layoutControlItem49,
+            this.layoutControlItem50});
+            this.layoutControlGroup7.Location = new System.Drawing.Point(539, 0);
+            this.layoutControlGroup7.Name = "layoutControlGroup7";
+            this.layoutControlGroup7.OptionsItemText.TextToControlDistance = 3;
+            this.layoutControlGroup7.Size = new System.Drawing.Size(687, 106);
+            this.layoutControlGroup7.TextVisible = false;
+            // 
+            // layoutControlItem41
+            // 
+            this.layoutControlItem41.Control = this.textBox482;
+            resources.ApplyResources(this.layoutControlItem41, "layoutControlItem41");
+            this.layoutControlItem41.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem41.MaxSize = new System.Drawing.Size(200, 41);
+            this.layoutControlItem41.MinSize = new System.Drawing.Size(200, 41);
+            this.layoutControlItem41.Name = "layoutControlItem41";
+            this.layoutControlItem41.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.layoutControlItem41.Size = new System.Drawing.Size(200, 41);
+            this.layoutControlItem41.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.layoutControlItem41.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
+            this.layoutControlItem41.TextLocation = DevExpress.Utils.Locations.Left;
+            this.layoutControlItem41.TextToControlDistance = 5;
+            // 
+            // layoutControlItem44
+            // 
+            this.layoutControlItem44.Control = this.textBox472;
+            resources.ApplyResources(this.layoutControlItem44, "layoutControlItem44");
+            this.layoutControlItem44.Location = new System.Drawing.Point(200, 0);
+            this.layoutControlItem44.MaxSize = new System.Drawing.Size(196, 41);
+            this.layoutControlItem44.MinSize = new System.Drawing.Size(196, 41);
+            this.layoutControlItem44.Name = "layoutControlItem44";
+            this.layoutControlItem44.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.layoutControlItem44.Size = new System.Drawing.Size(196, 41);
+            this.layoutControlItem44.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.layoutControlItem44.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
+            this.layoutControlItem44.TextLocation = DevExpress.Utils.Locations.Left;
+            this.layoutControlItem44.TextToControlDistance = 5;
+            // 
+            // layoutControlItem45
+            // 
+            this.layoutControlItem45.Control = this.textBox172;
+            resources.ApplyResources(this.layoutControlItem45, "layoutControlItem45");
+            this.layoutControlItem45.Location = new System.Drawing.Point(396, 0);
+            this.layoutControlItem45.MaxSize = new System.Drawing.Size(217, 41);
+            this.layoutControlItem45.MinSize = new System.Drawing.Size(217, 41);
+            this.layoutControlItem45.Name = "layoutControlItem45";
+            this.layoutControlItem45.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.layoutControlItem45.Size = new System.Drawing.Size(217, 41);
+            this.layoutControlItem45.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.layoutControlItem45.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
+            this.layoutControlItem45.TextToControlDistance = 0;
+            this.layoutControlItem45.TextVisible = false;
+            // 
+            // layoutControlItem47
+            // 
+            this.layoutControlItem47.Control = this.textBox192;
+            resources.ApplyResources(this.layoutControlItem47, "layoutControlItem47");
+            this.layoutControlItem47.Location = new System.Drawing.Point(613, 0);
+            this.layoutControlItem47.MaxSize = new System.Drawing.Size(50, 41);
+            this.layoutControlItem47.MinSize = new System.Drawing.Size(50, 41);
+            this.layoutControlItem47.Name = "layoutControlItem47";
+            this.layoutControlItem47.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.layoutControlItem47.Size = new System.Drawing.Size(50, 41);
+            this.layoutControlItem47.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.layoutControlItem47.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
+            this.layoutControlItem47.TextLocation = DevExpress.Utils.Locations.Top;
+            this.layoutControlItem47.TextToControlDistance = 0;
+            this.layoutControlItem47.TextVisible = false;
+            // 
+            // layoutControlItem48
+            // 
+            this.layoutControlItem48.Control = this.textBox512;
+            resources.ApplyResources(this.layoutControlItem48, "layoutControlItem48");
+            this.layoutControlItem48.Location = new System.Drawing.Point(0, 41);
+            this.layoutControlItem48.MaxSize = new System.Drawing.Size(117, 41);
+            this.layoutControlItem48.MinSize = new System.Drawing.Size(117, 41);
+            this.layoutControlItem48.Name = "layoutControlItem48";
+            this.layoutControlItem48.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.layoutControlItem48.Size = new System.Drawing.Size(117, 41);
+            this.layoutControlItem48.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.layoutControlItem48.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
+            this.layoutControlItem48.TextLocation = DevExpress.Utils.Locations.Left;
+            this.layoutControlItem48.TextToControlDistance = 5;
+            // 
+            // layoutControlItem49
+            // 
+            this.layoutControlItem49.ContentHorzAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.layoutControlItem49.Control = this.textBox502;
+            resources.ApplyResources(this.layoutControlItem49, "layoutControlItem49");
+            this.layoutControlItem49.Location = new System.Drawing.Point(117, 41);
+            this.layoutControlItem49.MaxSize = new System.Drawing.Size(30, 41);
+            this.layoutControlItem49.MinSize = new System.Drawing.Size(30, 41);
+            this.layoutControlItem49.Name = "layoutControlItem49";
+            this.layoutControlItem49.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 2, 10);
+            this.layoutControlItem49.Size = new System.Drawing.Size(30, 41);
+            this.layoutControlItem49.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.layoutControlItem49.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
+            this.layoutControlItem49.TextToControlDistance = 0;
+            this.layoutControlItem49.TextVisible = false;
+            // 
+            // layoutControlItem50
+            // 
+            this.layoutControlItem50.Control = this.textBox492;
+            resources.ApplyResources(this.layoutControlItem50, "layoutControlItem50");
+            this.layoutControlItem50.Location = new System.Drawing.Point(147, 41);
+            this.layoutControlItem50.MaxSize = new System.Drawing.Size(516, 41);
+            this.layoutControlItem50.MinSize = new System.Drawing.Size(516, 41);
+            this.layoutControlItem50.Name = "layoutControlItem50";
+            this.layoutControlItem50.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 2, 2, 10);
+            this.layoutControlItem50.Size = new System.Drawing.Size(516, 41);
+            this.layoutControlItem50.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.layoutControlItem50.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
+            this.layoutControlItem50.TextToControlDistance = 0;
+            this.layoutControlItem50.TextVisible = false;
             // 
             // frmNewCustMaintResp
             // 
@@ -19563,24 +20093,7 @@ namespace IAC2021SQL
             ((System.ComponentModel.ISupportInitialize)(this.textBox501.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textBox491.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroupRepos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemcomboBoxRepoInd)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemcUSTOMER_REPO_INDtextBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemcUSTOMER_REPO_CDEtextBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemcomboBoxRepoCodes)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemRepoDate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem140)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemRepoAgent)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemAuctionHouse)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemCurrentLocation)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemLocationDate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemAuctionDate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem141)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem142)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem143)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem144)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem145)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem146)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem138)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem132)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroupRepoHeader)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
@@ -19590,25 +20103,39 @@ namespace IAC2021SQL
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem17)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem153)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem154)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroupRepoInfoDetail)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem141)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemcomboBoxRepoInd)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemcUSTOMER_REPO_INDtextBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemcUSTOMER_REPO_CDEtextBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemcomboBoxRepoCodes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemRepoDate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem140)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem142)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemRepoAgent)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem146)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem138)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemCurrentLocation)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemLocationDate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem144)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem143)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemAuctionHouse)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemAuctionDate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem152)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem155)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem145)).EndInit();
             this.xtraTabPageRepoHistory.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.groupBox21)).EndInit();
-            this.groupBox21.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlRepoHistory)).EndInit();
+            this.layoutControlRepoHistory.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlRepoLog)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewRepoLog)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
-            this.groupBox13.ResumeLayout(false);
-            this.groupBox13.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textBox41.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBox42.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBox43.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBox44.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBox45.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBox46.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBox52.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroupRepoHistory)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroupRepoHistoryHeader)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem119)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem125)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroupRepoHistoryGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemRepoHistoryGridControl)).EndInit();
             this.xtraTabPageCustomerFees.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupBox20)).EndInit();
             this.groupBox20.ResumeLayout(false);
@@ -19772,6 +20299,21 @@ namespace IAC2021SQL
             ((System.ComponentModel.ISupportInitialize)(this.textBox14.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitterItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBox512.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBox472.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBox482.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBox492.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBox192.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBox502.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBox172.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem41)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem44)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem45)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem47)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem48)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem49)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem50)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -20134,41 +20676,6 @@ namespace IAC2021SQL
         private DevExpress.XtraEditors.TextEdit textBoxTSBLastName;
         private DevExpress.XtraEditors.TextEdit textBoxTSBFirstName;
         private DevExpress.XtraEditors.TextEdit textBoxTSBCustomerNo;
-        private DevExpress.XtraEditors.GroupControl groupBox21;
-        private DevExpress.XtraGrid.GridControl gridControlRepoLog;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridViewRepoLog;
-        private DevExpress.XtraGrid.Columns.GridColumn colDateOfChange;
-        private DevExpress.XtraGrid.Columns.GridColumn colUserID;
-        private DevExpress.XtraGrid.Columns.GridColumn colOrgRepoDate;
-        private DevExpress.XtraGrid.Columns.GridColumn colNewRepoDate;
-        private DevExpress.XtraGrid.Columns.GridColumn colOrgRepoAgent;
-        private DevExpress.XtraGrid.Columns.GridColumn colNewRepoAgent;
-        private DevExpress.XtraGrid.Columns.GridColumn colOrgRepoInd;
-        private DevExpress.XtraGrid.Columns.GridColumn colNewRepoInd;
-        private DevExpress.XtraGrid.Columns.GridColumn colOrgRepoCode;
-        private DevExpress.XtraGrid.Columns.GridColumn colNewRepoCode;
-        private DevExpress.XtraGrid.Columns.GridColumn colOrgCurrentLocation;
-        private DevExpress.XtraGrid.Columns.GridColumn colNewCurrentLocation;
-        private DevExpress.XtraGrid.Columns.GridColumn colOldLocationDate;
-        private DevExpress.XtraGrid.Columns.GridColumn colNewLocationDate;
-        private DevExpress.XtraGrid.Columns.GridColumn colOrgAuctionHouse;
-        private DevExpress.XtraGrid.Columns.GridColumn colNewAuctionHouse;
-        private DevExpress.XtraGrid.Columns.GridColumn colOrgAutionHouseDate;
-        private DevExpress.XtraGrid.Columns.GridColumn colNewAuctionHouseDate;
-        private DevExpress.XtraGrid.Columns.GridColumn colOrgTitleReceived;
-        private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
-        private DevExpress.XtraGrid.Columns.GridColumn colNewTitleReceived;
-        private DevExpress.XtraGrid.Columns.GridColumn colOrgDateTitleReceived;
-        private DevExpress.XtraGrid.Columns.GridColumn colNewDateTitleReceived;
-        private DevExpress.XtraGrid.Columns.GridColumn colidRepo;
-        private System.Windows.Forms.GroupBox groupBox13;
-        private DevExpress.XtraEditors.TextEdit textBox41;
-        private DevExpress.XtraEditors.TextEdit textBox42;
-        private DevExpress.XtraEditors.TextEdit textBox43;
-        private DevExpress.XtraEditors.TextEdit textBox44;
-        private DevExpress.XtraEditors.TextEdit textBox45;
-        private DevExpress.XtraEditors.TextEdit textBox46;
-        private DevExpress.XtraEditors.TextEdit textBox52;
         private DevExpress.XtraEditors.GroupControl groupBox20;
         private System.Windows.Forms.GroupBox groupBoxFees;
         private DevExpress.XtraEditors.TextEdit textBoxTotalFees;
@@ -20589,7 +21096,6 @@ namespace IAC2021SQL
         private LayoutControlItem layoutControlItem18;
         private EmptySpaceItem emptySpaceItem138;
         private EmptySpaceItem emptySpaceItem132;
-        private EmptySpaceItem emptySpaceItem153;
         private EmptySpaceItem emptySpaceItem154;
         private EmptySpaceItem emptySpaceItem152;
         private EmptySpaceItem emptySpaceItem155;
@@ -20904,6 +21410,55 @@ namespace IAC2021SQL
         private EmptySpaceItem emptySpaceItem122;
         private EmptySpaceItem emptySpaceItem123;
         private EmptySpaceItem emptySpaceItem124;
+        private LayoutControl layoutControlRepoHistory;
+        private LayoutControlGroup layoutControlGroupRepoHistory;
+        private DevExpress.XtraGrid.GridControl gridControlRepoLog;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridViewRepoLog;
+        private DevExpress.XtraGrid.Columns.GridColumn colDateOfChange;
+        private DevExpress.XtraGrid.Columns.GridColumn colUserID;
+        private DevExpress.XtraGrid.Columns.GridColumn colOrgRepoDate;
+        private DevExpress.XtraGrid.Columns.GridColumn colNewRepoDate;
+        private DevExpress.XtraGrid.Columns.GridColumn colOrgRepoAgent;
+        private DevExpress.XtraGrid.Columns.GridColumn colNewRepoAgent;
+        private DevExpress.XtraGrid.Columns.GridColumn colOrgRepoInd;
+        private DevExpress.XtraGrid.Columns.GridColumn colNewRepoInd;
+        private DevExpress.XtraGrid.Columns.GridColumn colOrgRepoCode;
+        private DevExpress.XtraGrid.Columns.GridColumn colNewRepoCode;
+        private DevExpress.XtraGrid.Columns.GridColumn colOrgCurrentLocation;
+        private DevExpress.XtraGrid.Columns.GridColumn colNewCurrentLocation;
+        private DevExpress.XtraGrid.Columns.GridColumn colOldLocationDate;
+        private DevExpress.XtraGrid.Columns.GridColumn colNewLocationDate;
+        private DevExpress.XtraGrid.Columns.GridColumn colOrgAuctionHouse;
+        private DevExpress.XtraGrid.Columns.GridColumn colNewAuctionHouse;
+        private DevExpress.XtraGrid.Columns.GridColumn colOrgAutionHouseDate;
+        private DevExpress.XtraGrid.Columns.GridColumn colNewAuctionHouseDate;
+        private DevExpress.XtraGrid.Columns.GridColumn colOrgTitleReceived;
+        private DevExpress.XtraGrid.Columns.GridColumn colNewTitleReceived;
+        private DevExpress.XtraGrid.Columns.GridColumn colOrgDateTitleReceived;
+        private DevExpress.XtraGrid.Columns.GridColumn colNewDateTitleReceived;
+        private DevExpress.XtraGrid.Columns.GridColumn colidRepo;
+        private LayoutControlItem layoutControlItemRepoHistoryGridControl;
+        private EmptySpaceItem emptySpaceItem119;
+        private EmptySpaceItem emptySpaceItem125;
+        private LayoutControlGroup layoutControlGroupRepoHistoryHeader;
+        private LayoutControlGroup layoutControlGroupRepoHistoryGrid;
+        private LayoutControlGroup layoutControlGroup1;
+        private LayoutControlGroup layoutControlGroupRepoInfoDetail;
+        private DevExpress.XtraEditors.TextEdit textBox482;
+        private DevExpress.XtraEditors.TextEdit textBox472;
+        private DevExpress.XtraEditors.TextEdit textBox172;
+        private DevExpress.XtraEditors.TextEdit textBox192;
+        private DevExpress.XtraEditors.TextEdit textBox512;
+        private DevExpress.XtraEditors.TextEdit textBox502;
+        private DevExpress.XtraEditors.TextEdit textBox492;
+        private LayoutControlGroup layoutControlGroup7;
+        private LayoutControlItem layoutControlItem41;
+        private LayoutControlItem layoutControlItem44;
+        private LayoutControlItem layoutControlItem45;
+        private LayoutControlItem layoutControlItem47;
+        private LayoutControlItem layoutControlItem48;
+        private LayoutControlItem layoutControlItem49;
+        private LayoutControlItem layoutControlItem50;
     }
 }
 

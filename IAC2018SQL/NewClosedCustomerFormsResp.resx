@@ -1386,111 +1386,6 @@
   <data name="&gt;&gt;label12.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <metadata name="label127.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <data name="label127.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label127.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label127.Location" type="System.Drawing.Point, System.Drawing">
-    <value>72, 55</value>
-  </data>
-  <data name="label127.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 20</value>
-  </data>
-  <data name="label127.TabIndex" type="System.Int32, mscorlib">
-    <value>106</value>
-  </data>
-  <data name="label127.Text" xml:space="preserve">
-    <value>SS NUM:</value>
-  </data>
-  <data name="&gt;&gt;label127.Name" xml:space="preserve">
-    <value>label127</value>
-  </data>
-  <data name="&gt;&gt;label127.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label127.Parent" xml:space="preserve">
-    <value>groupBox13</value>
-  </data>
-  <data name="&gt;&gt;label127.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <metadata name="label128.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <data name="label128.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label128.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt</value>
-  </data>
-  <data name="label128.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label128.Location" type="System.Drawing.Point, System.Drawing">
-    <value>246, 25</value>
-  </data>
-  <data name="label128.Size" type="System.Drawing.Size, System.Drawing">
-    <value>57, 21</value>
-  </data>
-  <data name="label128.TabIndex" type="System.Int32, mscorlib">
-    <value>102</value>
-  </data>
-  <data name="label128.Text" xml:space="preserve">
-    <value>NAME:</value>
-  </data>
-  <data name="&gt;&gt;label128.Name" xml:space="preserve">
-    <value>label128</value>
-  </data>
-  <data name="&gt;&gt;label128.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label128.Parent" xml:space="preserve">
-    <value>groupBox13</value>
-  </data>
-  <data name="&gt;&gt;label128.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <metadata name="label130.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
-  <data name="label130.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label130.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt</value>
-  </data>
-  <data name="label130.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label130.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 25</value>
-  </data>
-  <data name="label130.Size" type="System.Drawing.Size, System.Drawing">
-    <value>122, 21</value>
-  </data>
-  <data name="label130.TabIndex" type="System.Int32, mscorlib">
-    <value>98</value>
-  </data>
-  <data name="label130.Text" xml:space="preserve">
-    <value>CUSTOMER NO:</value>
-  </data>
-  <data name="&gt;&gt;label130.Name" xml:space="preserve">
-    <value>label130</value>
-  </data>
-  <data name="&gt;&gt;label130.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label130.Parent" xml:space="preserve">
-    <value>groupBox13</value>
-  </data>
-  <data name="&gt;&gt;label130.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
   <metadata name="labelTowing.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
   </metadata>
@@ -3646,16 +3541,721 @@
   <data name="&gt;&gt;xtraTabPageRepossession.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
-  <data name="&gt;&gt;groupBox21.Name" xml:space="preserve">
-    <value>groupBox21</value>
+  <data name="gridControlRepoLog.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
   </data>
-  <data name="&gt;&gt;groupBox21.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.GroupControl, DevExpress.Utils.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  <data name="gridControlRepoLog.Location" type="System.Drawing.Point, System.Drawing">
+    <value>25, 155</value>
   </data>
-  <data name="&gt;&gt;groupBox21.Parent" xml:space="preserve">
+  <data name="gridViewRepoLog.Appearance.HeaderPanel.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 8.25pt, style=Bold</value>
+  </data>
+  <data name="colDateOfChange.Caption" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="colDateOfChange.Visible" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="colDateOfChange.VisibleIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="colDateOfChange.Width" type="System.Int32, mscorlib">
+    <value>100</value>
+  </data>
+  <data name="colUserID.Caption" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="colUserID.Visible" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="colUserID.VisibleIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="colUserID.Width" type="System.Int32, mscorlib">
+    <value>70</value>
+  </data>
+  <data name="colOrgRepoDate.Caption" xml:space="preserve">
+    <value>Old Repo Date</value>
+  </data>
+  <data name="colOrgRepoDate.Visible" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="colOrgRepoDate.VisibleIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="colOrgRepoDate.Width" type="System.Int32, mscorlib">
+    <value>100</value>
+  </data>
+  <data name="colNewRepoDate.Caption" xml:space="preserve">
+    <value>New Repo Date</value>
+  </data>
+  <data name="colNewRepoDate.Visible" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="colNewRepoDate.VisibleIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="colNewRepoDate.Width" type="System.Int32, mscorlib">
+    <value>100</value>
+  </data>
+  <data name="colOrgRepoAgent.Caption" xml:space="preserve">
+    <value>Old Repo Agent</value>
+  </data>
+  <data name="colOrgRepoAgent.Visible" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="colOrgRepoAgent.VisibleIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="colOrgRepoAgent.Width" type="System.Int32, mscorlib">
+    <value>100</value>
+  </data>
+  <data name="colNewRepoAgent.Caption" xml:space="preserve">
+    <value>New Repo Agent</value>
+  </data>
+  <data name="colNewRepoAgent.Visible" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="colNewRepoAgent.VisibleIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="colNewRepoAgent.Width" type="System.Int32, mscorlib">
+    <value>100</value>
+  </data>
+  <data name="colOrgRepoInd.Caption" xml:space="preserve">
+    <value>Old Repo Ind</value>
+  </data>
+  <data name="colOrgRepoInd.Visible" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="colOrgRepoInd.VisibleIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="colOrgRepoInd.Width" type="System.Int32, mscorlib">
+    <value>60</value>
+  </data>
+  <data name="colNewRepoInd.Caption" xml:space="preserve">
+    <value>New Repo Ind</value>
+  </data>
+  <data name="colNewRepoInd.Visible" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="colNewRepoInd.VisibleIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="colNewRepoInd.Width" type="System.Int32, mscorlib">
+    <value>60</value>
+  </data>
+  <data name="colOrgRepoCode.CustomizationCaption" xml:space="preserve">
+    <value>Old Repo Code</value>
+  </data>
+  <data name="colOrgRepoCode.Visible" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="colOrgRepoCode.VisibleIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="colOrgRepoCode.Width" type="System.Int32, mscorlib">
+    <value>100</value>
+  </data>
+  <data name="colNewRepoCode.Caption" xml:space="preserve">
+    <value>New Repo code</value>
+  </data>
+  <data name="colNewRepoCode.Visible" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="colNewRepoCode.VisibleIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="colNewRepoCode.Width" type="System.Int32, mscorlib">
+    <value>100</value>
+  </data>
+  <data name="colOrgCurrentLocation.CustomizationCaption" xml:space="preserve">
+    <value>Old Location</value>
+  </data>
+  <data name="colOrgCurrentLocation.Visible" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="colOrgCurrentLocation.VisibleIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="colOrgCurrentLocation.Width" type="System.Int32, mscorlib">
+    <value>100</value>
+  </data>
+  <data name="colNewCurrentLocation.CustomizationCaption" xml:space="preserve">
+    <value>New Location</value>
+  </data>
+  <data name="colNewCurrentLocation.Visible" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="colNewCurrentLocation.VisibleIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="colNewCurrentLocation.Width" type="System.Int32, mscorlib">
+    <value>100</value>
+  </data>
+  <data name="colOldLocationDate.Caption" xml:space="preserve">
+    <value>Old Location Date</value>
+  </data>
+  <data name="colOldLocationDate.Visible" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="colOldLocationDate.VisibleIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="colOldLocationDate.Width" type="System.Int32, mscorlib">
+    <value>100</value>
+  </data>
+  <data name="colNewLocationDate.Caption" xml:space="preserve">
+    <value>New Location Date</value>
+  </data>
+  <data name="colNewLocationDate.Visible" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="colNewLocationDate.VisibleIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="colNewLocationDate.Width" type="System.Int32, mscorlib">
+    <value>100</value>
+  </data>
+  <data name="colOrgAuctionHouse.Caption" xml:space="preserve">
+    <value>Old Auction House</value>
+  </data>
+  <data name="colOrgAuctionHouse.Visible" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="colOrgAuctionHouse.VisibleIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="colOrgAuctionHouse.Width" type="System.Int32, mscorlib">
+    <value>100</value>
+  </data>
+  <data name="colNewAuctionHouse.Caption" xml:space="preserve">
+    <value>New Auction House</value>
+  </data>
+  <data name="colNewAuctionHouse.Visible" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="colNewAuctionHouse.VisibleIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="colNewAuctionHouse.Width" type="System.Int32, mscorlib">
+    <value>100</value>
+  </data>
+  <data name="colOrgAutionHouseDate.Caption" xml:space="preserve">
+    <value>Old Auction House Date</value>
+  </data>
+  <data name="colOrgAutionHouseDate.Visible" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="colOrgAutionHouseDate.VisibleIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="colOrgAutionHouseDate.Width" type="System.Int32, mscorlib">
+    <value>100</value>
+  </data>
+  <data name="colNewAuctionHouseDate.Caption" xml:space="preserve">
+    <value>New Auction House Date</value>
+  </data>
+  <data name="colNewAuctionHouseDate.Visible" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="colNewAuctionHouseDate.VisibleIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="colNewAuctionHouseDate.Width" type="System.Int32, mscorlib">
+    <value>100</value>
+  </data>
+  <data name="colOrgTitleReceived.Caption" xml:space="preserve">
+    <value>Old Title Received </value>
+  </data>
+  <data name="colOrgTitleReceived.Visible" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="colOrgTitleReceived.VisibleIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="colOrgTitleReceived.Width" type="System.Int32, mscorlib">
+    <value>100</value>
+  </data>
+  <data name="colNewTitleReceived.Caption" xml:space="preserve">
+    <value>New Title Received</value>
+  </data>
+  <data name="colNewTitleReceived.Visible" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="colNewTitleReceived.VisibleIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="colNewTitleReceived.Width" type="System.Int32, mscorlib">
+    <value>100</value>
+  </data>
+  <data name="colOrgDateTitleReceived.Caption" xml:space="preserve">
+    <value>Old Date Title Received</value>
+  </data>
+  <data name="colOrgDateTitleReceived.Visible" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="colOrgDateTitleReceived.VisibleIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="colOrgDateTitleReceived.Width" type="System.Int32, mscorlib">
+    <value>100</value>
+  </data>
+  <data name="colNewDateTitleReceived.Caption" xml:space="preserve">
+    <value>New Date Title Received</value>
+  </data>
+  <data name="colNewDateTitleReceived.Visible" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="colNewDateTitleReceived.VisibleIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="colNewDateTitleReceived.Width" type="System.Int32, mscorlib">
+    <value>100</value>
+  </data>
+  <metadata name="toolbarFormManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>304, 524</value>
+  </metadata>
+  <data name="barDockControlBottom.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="barDockControlBottom.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="barDockControlBottom.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1817, 0</value>
+  </data>
+  <data name="&gt;&gt;barDockControlBottom.Name" xml:space="preserve">
+    <value>barDockControlBottom</value>
+  </data>
+  <data name="&gt;&gt;barDockControlBottom.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.BarDockControl, DevExpress.XtraBars.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;barDockControlBottom.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;barDockControlBottom.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="barDockControlLeft.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="barDockControlLeft.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 782</value>
+  </data>
+  <data name="barDockControlLeft.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1817, 0</value>
+  </data>
+  <data name="&gt;&gt;barDockControlLeft.Name" xml:space="preserve">
+    <value>barDockControlLeft</value>
+  </data>
+  <data name="&gt;&gt;barDockControlLeft.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.BarDockControl, DevExpress.XtraBars.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;barDockControlLeft.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;barDockControlLeft.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="barDockControlRight.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="barDockControlRight.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="barDockControlRight.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 782</value>
+  </data>
+  <data name="&gt;&gt;barDockControlRight.Name" xml:space="preserve">
+    <value>barDockControlRight</value>
+  </data>
+  <data name="&gt;&gt;barDockControlRight.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.BarDockControl, DevExpress.XtraBars.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;barDockControlRight.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;barDockControlRight.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="barDockControl4.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="barDockControl4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1817, 0</value>
+  </data>
+  <data name="barDockControl4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 782</value>
+  </data>
+  <data name="&gt;&gt;barDockControl4.Name" xml:space="preserve">
+    <value>barDockControl4</value>
+  </data>
+  <data name="&gt;&gt;barDockControl4.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.BarDockControl, DevExpress.XtraBars.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;barDockControl4.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;barDockControl4.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="standaloneBarDockControl1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="standaloneBarDockControl1.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="standaloneBarDockControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Bottom</value>
+  </data>
+  <data name="standaloneBarDockControl1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 716</value>
+  </data>
+  <data name="standaloneBarDockControl1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1231, 30</value>
+  </data>
+  <data name="standaloneBarDockControl1.Text" xml:space="preserve">
+    <value>standaloneBarDockControl1</value>
+  </data>
+  <data name="&gt;&gt;standaloneBarDockControl1.Name" xml:space="preserve">
+    <value>standaloneBarDockControl1</value>
+  </data>
+  <data name="&gt;&gt;standaloneBarDockControl1.Type" xml:space="preserve">
+    <value>DevExpress.XtraBars.StandaloneBarDockControl, DevExpress.XtraBars.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;standaloneBarDockControl1.Parent" xml:space="preserve">
+    <value>groupBox18</value>
+  </data>
+  <data name="&gt;&gt;standaloneBarDockControl1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="gridControlRepoLog.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1759, 565</value>
+  </data>
+  <data name="gridControlRepoLog.TabIndex" type="System.Int32, mscorlib">
+    <value>205</value>
+  </data>
+  <data name="&gt;&gt;gridControlRepoLog.Name" xml:space="preserve">
+    <value>gridControlRepoLog</value>
+  </data>
+  <data name="&gt;&gt;gridControlRepoLog.Type" xml:space="preserve">
+    <value>DevExpress.XtraGrid.GridControl, DevExpress.XtraGrid.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;gridControlRepoLog.Parent" xml:space="preserve">
+    <value>layoutControlRepoHistory</value>
+  </data>
+  <data name="&gt;&gt;gridControlRepoLog.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="textBox482.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="textBox482.Location" type="System.Drawing.Point, System.Drawing">
+    <value>702, 36</value>
+  </data>
+  <data name="textBox482.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>67, 29</value>
+  </data>
+  <data name="textBox482.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>67, 29</value>
+  </data>
+  <data name="textBox482.Size" type="System.Drawing.Size, System.Drawing">
+    <value>67, 29</value>
+  </data>
+  <data name="textBox482.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;textBox482.Name" xml:space="preserve">
+    <value>textBox482</value>
+  </data>
+  <data name="&gt;&gt;textBox482.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;textBox482.Parent" xml:space="preserve">
+    <value>layoutControlRepoHistory</value>
+  </data>
+  <data name="&gt;&gt;textBox482.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="textBox472.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="textBox472.Location" type="System.Drawing.Point, System.Drawing">
+    <value>830, 36</value>
+  </data>
+  <data name="textBox472.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>136, 29</value>
+  </data>
+  <data name="textBox472.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>136, 29</value>
+  </data>
+  <data name="textBox472.Size" type="System.Drawing.Size, System.Drawing">
+    <value>136, 29</value>
+  </data>
+  <data name="textBox472.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;textBox472.Name" xml:space="preserve">
+    <value>textBox472</value>
+  </data>
+  <data name="&gt;&gt;textBox472.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;textBox472.Parent" xml:space="preserve">
+    <value>layoutControlRepoHistory</value>
+  </data>
+  <data name="&gt;&gt;textBox472.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="textBox172.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="textBox172.Location" type="System.Drawing.Point, System.Drawing">
+    <value>971, 36</value>
+  </data>
+  <data name="textBox172.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>212, 29</value>
+  </data>
+  <data name="textBox172.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>212, 29</value>
+  </data>
+  <data name="textBox172.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 29</value>
+  </data>
+  <data name="textBox172.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;textBox172.Name" xml:space="preserve">
+    <value>textBox172</value>
+  </data>
+  <data name="&gt;&gt;textBox172.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;textBox172.Parent" xml:space="preserve">
+    <value>layoutControlRepoHistory</value>
+  </data>
+  <data name="&gt;&gt;textBox172.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="textBox192.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="textBox192.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1188, 36</value>
+  </data>
+  <data name="textBox192.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>41, 29</value>
+  </data>
+  <data name="textBox192.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>41, 29</value>
+  </data>
+  <data name="textBox192.Size" type="System.Drawing.Size, System.Drawing">
+    <value>41, 29</value>
+  </data>
+  <data name="textBox192.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;textBox192.Name" xml:space="preserve">
+    <value>textBox192</value>
+  </data>
+  <data name="&gt;&gt;textBox192.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;textBox192.Parent" xml:space="preserve">
+    <value>layoutControlRepoHistory</value>
+  </data>
+  <data name="&gt;&gt;textBox192.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="textBox512.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="textBox512.Location" type="System.Drawing.Point, System.Drawing">
+    <value>646, 77</value>
+  </data>
+  <data name="textBox512.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>43, 29</value>
+  </data>
+  <data name="textBox512.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>43, 29</value>
+  </data>
+  <data name="textBox512.Size" type="System.Drawing.Size, System.Drawing">
+    <value>43, 29</value>
+  </data>
+  <data name="textBox512.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;textBox512.Name" xml:space="preserve">
+    <value>textBox512</value>
+  </data>
+  <data name="&gt;&gt;textBox512.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;textBox512.Parent" xml:space="preserve">
+    <value>layoutControlRepoHistory</value>
+  </data>
+  <data name="&gt;&gt;textBox512.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="textBox502.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="textBox502.Location" type="System.Drawing.Point, System.Drawing">
+    <value>690, 77</value>
+  </data>
+  <data name="textBox502.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>29, 29</value>
+  </data>
+  <data name="textBox502.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>29, 29</value>
+  </data>
+  <data name="textBox502.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 29</value>
+  </data>
+  <data name="textBox502.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;textBox502.Name" xml:space="preserve">
+    <value>textBox502</value>
+  </data>
+  <data name="&gt;&gt;textBox502.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;textBox502.Parent" xml:space="preserve">
+    <value>layoutControlRepoHistory</value>
+  </data>
+  <data name="&gt;&gt;textBox502.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="textBox492.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="textBox492.Location" type="System.Drawing.Point, System.Drawing">
+    <value>720, 77</value>
+  </data>
+  <data name="textBox492.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>51, 29</value>
+  </data>
+  <data name="textBox492.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>51, 29</value>
+  </data>
+  <data name="textBox492.Size" type="System.Drawing.Size, System.Drawing">
+    <value>51, 29</value>
+  </data>
+  <data name="textBox492.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;textBox492.Name" xml:space="preserve">
+    <value>textBox492</value>
+  </data>
+  <data name="&gt;&gt;textBox492.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;textBox492.Parent" xml:space="preserve">
+    <value>layoutControlRepoHistory</value>
+  </data>
+  <data name="&gt;&gt;textBox492.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="layoutControlRepoHistory.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="layoutControlRepoHistory.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="layoutControlGroup7.CustomizationFormText" xml:space="preserve">
+    <value>layoutControlGroupVehicleCustHeader</value>
+  </data>
+  <data name="layoutControlItem41.ControlAlignment" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopLeft</value>
+  </data>
+  <data name="layoutControlItem41.CustomizationFormText" xml:space="preserve">
+    <value>CUSTOMER NO:</value>
+  </data>
+  <data name="layoutControlItem41.Text" xml:space="preserve">
+    <value>CUSTOMER NO:</value>
+  </data>
+  <data name="layoutControlItem44.ControlAlignment" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopLeft</value>
+  </data>
+  <data name="layoutControlItem44.CustomizationFormText" xml:space="preserve">
+    <value>NAME:</value>
+  </data>
+  <data name="layoutControlItem44.Text" xml:space="preserve">
+    <value>NAME:</value>
+  </data>
+  <data name="layoutControlItem45.ControlAlignment" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopLeft</value>
+  </data>
+  <data name="layoutControlItem45.CustomizationFormText" xml:space="preserve">
+    <value>textBox17item</value>
+  </data>
+  <data name="layoutControlItem45.Text" xml:space="preserve">
+    <value>textBox17item</value>
+  </data>
+  <data name="layoutControlItem47.ControlAlignment" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopLeft</value>
+  </data>
+  <data name="layoutControlItem47.CustomizationFormText" xml:space="preserve">
+    <value>layoutContorlItemTitle</value>
+  </data>
+  <data name="layoutControlItem47.Text" xml:space="preserve">
+    <value>layoutContorlItemTitle</value>
+  </data>
+  <data name="layoutControlItem48.ControlAlignment" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopLeft</value>
+  </data>
+  <data name="layoutControlItem48.CustomizationFormText" xml:space="preserve">
+    <value>SS NUM:</value>
+  </data>
+  <data name="layoutControlItem48.Text" xml:space="preserve">
+    <value>SS NUM:</value>
+  </data>
+  <data name="layoutControlItem49.ControlAlignment" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopLeft</value>
+  </data>
+  <data name="layoutControlItem49.CustomizationFormText" xml:space="preserve">
+    <value>textBox50item</value>
+  </data>
+  <data name="layoutControlItem49.Text" xml:space="preserve">
+    <value>textBox50item</value>
+  </data>
+  <data name="layoutControlItem50.ControlAlignment" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopLeft</value>
+  </data>
+  <data name="layoutControlItem50.CustomizationFormText" xml:space="preserve">
+    <value>textBox49item</value>
+  </data>
+  <data name="layoutControlItem50.Text" xml:space="preserve">
+    <value>textBox49item</value>
+  </data>
+  <data name="layoutControlGroup7.Text" xml:space="preserve">
+    <value>layoutControlGroupVehicleCustHeader</value>
+  </data>
+  <data name="layoutControlGroupRepoHistoryHeader.Text" xml:space="preserve">
+    <value>RepoHistoryHeader</value>
+  </data>
+  <data name="layoutControlGroupRepoHistoryGrid.Text" xml:space="preserve">
+    <value>Repo History Grid</value>
+  </data>
+  <data name="layoutControlRepoHistory.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1809, 745</value>
+  </data>
+  <data name="layoutControlRepoHistory.TabIndex" type="System.Int32, mscorlib">
+    <value>207</value>
+  </data>
+  <data name="&gt;&gt;layoutControlRepoHistory.Name" xml:space="preserve">
+    <value>layoutControlRepoHistory</value>
+  </data>
+  <data name="&gt;&gt;layoutControlRepoHistory.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.LayoutControl, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;layoutControlRepoHistory.Parent" xml:space="preserve">
     <value>xtraTabPageRepoHistory</value>
   </data>
-  <data name="&gt;&gt;groupBox21.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;layoutControlRepoHistory.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="xtraTabPageRepoHistory.Size" type="System.Drawing.Size, System.Drawing">
@@ -3675,471 +4275,6 @@
   </data>
   <data name="&gt;&gt;xtraTabPageRepoHistory.ZOrder" xml:space="preserve">
     <value>9</value>
-  </data>
-  <data name="textBoxTotalFees.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="textBoxTotalFees.Location" type="System.Drawing.Point, System.Drawing">
-    <value>385, 234</value>
-  </data>
-  <data name="textBoxTotalFees.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt</value>
-  </data>
-  <data name="textBoxTotalFees.Properties.BeepOnError" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="textBoxTotalFees.Properties.UseMaskAsDisplayFormat" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="textBoxTotalFees.Size" type="System.Drawing.Size, System.Drawing">
-    <value>119, 28</value>
-  </data>
-  <data name="textBoxTotalFees.TabIndex" type="System.Int32, mscorlib">
-    <value>720</value>
-  </data>
-  <data name="&gt;&gt;textBoxTotalFees.Name" xml:space="preserve">
-    <value>textBoxTotalFees</value>
-  </data>
-  <data name="&gt;&gt;textBoxTotalFees.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;textBoxTotalFees.Parent" xml:space="preserve">
-    <value>groupBoxFees</value>
-  </data>
-  <data name="&gt;&gt;textBoxTotalFees.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="textBoxRepairFee5.EditValue" xml:space="preserve">
-    <value />
-  </data>
-  <data name="textBoxRepairFee5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>385, 181</value>
-  </data>
-  <data name="textBoxRepairFee5.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt</value>
-  </data>
-  <data name="textBoxRepairFee5.Properties.BeepOnError" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="textBoxRepairFee5.Properties.UseMaskAsDisplayFormat" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="textBoxRepairFee5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>119, 28</value>
-  </data>
-  <data name="textBoxRepairFee5.TabIndex" type="System.Int32, mscorlib">
-    <value>719</value>
-  </data>
-  <data name="&gt;&gt;textBoxRepairFee5.Name" xml:space="preserve">
-    <value>textBoxRepairFee5</value>
-  </data>
-  <data name="&gt;&gt;textBoxRepairFee5.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;textBoxRepairFee5.Parent" xml:space="preserve">
-    <value>groupBoxFees</value>
-  </data>
-  <data name="&gt;&gt;textBoxRepairFee5.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="textBoxRepairFee4.EditValue" xml:space="preserve">
-    <value />
-  </data>
-  <data name="textBoxRepairFee4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>385, 146</value>
-  </data>
-  <data name="textBoxRepairFee4.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt</value>
-  </data>
-  <data name="textBoxRepairFee4.Properties.BeepOnError" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="textBoxRepairFee4.Properties.UseMaskAsDisplayFormat" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="textBoxRepairFee4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>119, 28</value>
-  </data>
-  <data name="textBoxRepairFee4.TabIndex" type="System.Int32, mscorlib">
-    <value>718</value>
-  </data>
-  <data name="&gt;&gt;textBoxRepairFee4.Name" xml:space="preserve">
-    <value>textBoxRepairFee4</value>
-  </data>
-  <data name="&gt;&gt;textBoxRepairFee4.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;textBoxRepairFee4.Parent" xml:space="preserve">
-    <value>groupBoxFees</value>
-  </data>
-  <data name="&gt;&gt;textBoxRepairFee4.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="textBoxRepairFee3.EditValue" xml:space="preserve">
-    <value />
-  </data>
-  <data name="textBoxRepairFee3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>385, 111</value>
-  </data>
-  <data name="textBoxRepairFee3.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt</value>
-  </data>
-  <data name="textBoxRepairFee3.Properties.BeepOnError" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="textBoxRepairFee3.Properties.UseMaskAsDisplayFormat" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="textBoxRepairFee3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>119, 28</value>
-  </data>
-  <data name="textBoxRepairFee3.TabIndex" type="System.Int32, mscorlib">
-    <value>717</value>
-  </data>
-  <data name="&gt;&gt;textBoxRepairFee3.Name" xml:space="preserve">
-    <value>textBoxRepairFee3</value>
-  </data>
-  <data name="&gt;&gt;textBoxRepairFee3.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;textBoxRepairFee3.Parent" xml:space="preserve">
-    <value>groupBoxFees</value>
-  </data>
-  <data name="&gt;&gt;textBoxRepairFee3.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="textBoxRepairFee2.EditValue" xml:space="preserve">
-    <value />
-  </data>
-  <data name="textBoxRepairFee2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>385, 76</value>
-  </data>
-  <data name="textBoxRepairFee2.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt</value>
-  </data>
-  <data name="textBoxRepairFee2.Properties.BeepOnError" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="textBoxRepairFee2.Properties.UseMaskAsDisplayFormat" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="textBoxRepairFee2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>119, 28</value>
-  </data>
-  <data name="textBoxRepairFee2.TabIndex" type="System.Int32, mscorlib">
-    <value>716</value>
-  </data>
-  <data name="&gt;&gt;textBoxRepairFee2.Name" xml:space="preserve">
-    <value>textBoxRepairFee2</value>
-  </data>
-  <data name="&gt;&gt;textBoxRepairFee2.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;textBoxRepairFee2.Parent" xml:space="preserve">
-    <value>groupBoxFees</value>
-  </data>
-  <data name="&gt;&gt;textBoxRepairFee2.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="textBoxRepairFee1.EditValue" xml:space="preserve">
-    <value />
-  </data>
-  <data name="textBoxRepairFee1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>385, 41</value>
-  </data>
-  <data name="textBoxRepairFee1.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt</value>
-  </data>
-  <data name="textBoxRepairFee1.Properties.BeepOnError" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="textBoxRepairFee1.Properties.UseMaskAsDisplayFormat" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="textBoxRepairFee1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>119, 28</value>
-  </data>
-  <data name="textBoxRepairFee1.TabIndex" type="System.Int32, mscorlib">
-    <value>715</value>
-  </data>
-  <data name="&gt;&gt;textBoxRepairFee1.Name" xml:space="preserve">
-    <value>textBoxRepairFee1</value>
-  </data>
-  <data name="&gt;&gt;textBoxRepairFee1.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;textBoxRepairFee1.Parent" xml:space="preserve">
-    <value>groupBoxFees</value>
-  </data>
-  <data name="&gt;&gt;textBoxRepairFee1.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="textBoxResaleFees.EditValue" xml:space="preserve">
-    <value />
-  </data>
-  <data name="textBoxResaleFees.Location" type="System.Drawing.Point, System.Drawing">
-    <value>152, 146</value>
-  </data>
-  <data name="textBoxResaleFees.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt</value>
-  </data>
-  <data name="textBoxResaleFees.Properties.BeepOnError" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="textBoxResaleFees.Properties.UseMaskAsDisplayFormat" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="textBoxResaleFees.Size" type="System.Drawing.Size, System.Drawing">
-    <value>119, 28</value>
-  </data>
-  <data name="textBoxResaleFees.TabIndex" type="System.Int32, mscorlib">
-    <value>714</value>
-  </data>
-  <data name="&gt;&gt;textBoxResaleFees.Name" xml:space="preserve">
-    <value>textBoxResaleFees</value>
-  </data>
-  <data name="&gt;&gt;textBoxResaleFees.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;textBoxResaleFees.Parent" xml:space="preserve">
-    <value>groupBoxFees</value>
-  </data>
-  <data name="&gt;&gt;textBoxResaleFees.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="textBoxImpoundFees.EditValue" xml:space="preserve">
-    <value />
-  </data>
-  <data name="textBoxImpoundFees.Location" type="System.Drawing.Point, System.Drawing">
-    <value>152, 111</value>
-  </data>
-  <data name="textBoxImpoundFees.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt</value>
-  </data>
-  <data name="textBoxImpoundFees.Properties.BeepOnError" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="textBoxImpoundFees.Properties.UseMaskAsDisplayFormat" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="textBoxImpoundFees.Size" type="System.Drawing.Size, System.Drawing">
-    <value>119, 28</value>
-  </data>
-  <data name="textBoxImpoundFees.TabIndex" type="System.Int32, mscorlib">
-    <value>713</value>
-  </data>
-  <data name="&gt;&gt;textBoxImpoundFees.Name" xml:space="preserve">
-    <value>textBoxImpoundFees</value>
-  </data>
-  <data name="&gt;&gt;textBoxImpoundFees.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;textBoxImpoundFees.Parent" xml:space="preserve">
-    <value>groupBoxFees</value>
-  </data>
-  <data name="&gt;&gt;textBoxImpoundFees.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="textBoxStorageFees.EditValue" xml:space="preserve">
-    <value />
-  </data>
-  <data name="textBoxStorageFees.Location" type="System.Drawing.Point, System.Drawing">
-    <value>152, 76</value>
-  </data>
-  <data name="textBoxStorageFees.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt</value>
-  </data>
-  <data name="textBoxStorageFees.Properties.BeepOnError" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="textBoxStorageFees.Properties.UseMaskAsDisplayFormat" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="textBoxStorageFees.Size" type="System.Drawing.Size, System.Drawing">
-    <value>119, 28</value>
-  </data>
-  <data name="textBoxStorageFees.TabIndex" type="System.Int32, mscorlib">
-    <value>712</value>
-  </data>
-  <data name="&gt;&gt;textBoxStorageFees.Name" xml:space="preserve">
-    <value>textBoxStorageFees</value>
-  </data>
-  <data name="&gt;&gt;textBoxStorageFees.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;textBoxStorageFees.Parent" xml:space="preserve">
-    <value>groupBoxFees</value>
-  </data>
-  <data name="&gt;&gt;textBoxStorageFees.ZOrder" xml:space="preserve">
-    <value>14</value>
-  </data>
-  <data name="textBoxRepoFees.EditValue" xml:space="preserve">
-    <value />
-  </data>
-  <data name="textBoxRepoFees.Location" type="System.Drawing.Point, System.Drawing">
-    <value>152, 41</value>
-  </data>
-  <data name="textBoxRepoFees.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt</value>
-  </data>
-  <data name="textBoxRepoFees.Properties.BeepOnError" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="textBoxRepoFees.Properties.UseMaskAsDisplayFormat" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="textBoxRepoFees.Size" type="System.Drawing.Size, System.Drawing">
-    <value>119, 28</value>
-  </data>
-  <data name="textBoxRepoFees.TabIndex" type="System.Int32, mscorlib">
-    <value>711</value>
-  </data>
-  <data name="&gt;&gt;textBoxRepoFees.Name" xml:space="preserve">
-    <value>textBoxRepoFees</value>
-  </data>
-  <data name="&gt;&gt;textBoxRepoFees.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;textBoxRepoFees.Parent" xml:space="preserve">
-    <value>groupBoxFees</value>
-  </data>
-  <data name="&gt;&gt;textBoxRepoFees.ZOrder" xml:space="preserve">
-    <value>16</value>
-  </data>
-  <data name="groupBoxFees.Location" type="System.Drawing.Point, System.Drawing">
-    <value>360, 239</value>
-  </data>
-  <data name="groupBoxFees.Size" type="System.Drawing.Size, System.Drawing">
-    <value>573, 304</value>
-  </data>
-  <data name="groupBoxFees.TabIndex" type="System.Int32, mscorlib">
-    <value>712</value>
-  </data>
-  <data name="&gt;&gt;groupBoxFees.Name" xml:space="preserve">
-    <value>groupBoxFees</value>
-  </data>
-  <data name="&gt;&gt;groupBoxFees.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBoxFees.Parent" xml:space="preserve">
-    <value>groupBox20</value>
-  </data>
-  <data name="&gt;&gt;groupBoxFees.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;textBox6.Name" xml:space="preserve">
-    <value>textBox6</value>
-  </data>
-  <data name="&gt;&gt;textBox6.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;textBox6.Parent" xml:space="preserve">
-    <value>groupBox12</value>
-  </data>
-  <data name="&gt;&gt;textBox6.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;textBox12.Name" xml:space="preserve">
-    <value>textBox12</value>
-  </data>
-  <data name="&gt;&gt;textBox12.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;textBox12.Parent" xml:space="preserve">
-    <value>groupBox12</value>
-  </data>
-  <data name="&gt;&gt;textBox12.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;textBox13.Name" xml:space="preserve">
-    <value>textBox13</value>
-  </data>
-  <data name="&gt;&gt;textBox13.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;textBox13.Parent" xml:space="preserve">
-    <value>groupBox12</value>
-  </data>
-  <data name="&gt;&gt;textBox13.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;textBox26.Name" xml:space="preserve">
-    <value>textBox26</value>
-  </data>
-  <data name="&gt;&gt;textBox26.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;textBox26.Parent" xml:space="preserve">
-    <value>groupBox12</value>
-  </data>
-  <data name="&gt;&gt;textBox26.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;textBox38.Name" xml:space="preserve">
-    <value>textBox38</value>
-  </data>
-  <data name="&gt;&gt;textBox38.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;textBox38.Parent" xml:space="preserve">
-    <value>groupBox12</value>
-  </data>
-  <data name="&gt;&gt;textBox38.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;textBox39.Name" xml:space="preserve">
-    <value>textBox39</value>
-  </data>
-  <data name="&gt;&gt;textBox39.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;textBox39.Parent" xml:space="preserve">
-    <value>groupBox12</value>
-  </data>
-  <data name="&gt;&gt;textBox39.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;textBox40.Name" xml:space="preserve">
-    <value>textBox40</value>
-  </data>
-  <data name="&gt;&gt;textBox40.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;textBox40.Parent" xml:space="preserve">
-    <value>groupBox12</value>
-  </data>
-  <data name="&gt;&gt;textBox40.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="groupBox12.Location" type="System.Drawing.Point, System.Drawing">
-    <value>265, 107</value>
-  </data>
-  <data name="groupBox12.Size" type="System.Drawing.Size, System.Drawing">
-    <value>763, 82</value>
-  </data>
-  <data name="groupBox12.TabIndex" type="System.Int32, mscorlib">
-    <value>711</value>
-  </data>
-  <data name="&gt;&gt;groupBox12.Name" xml:space="preserve">
-    <value>groupBox12</value>
-  </data>
-  <data name="&gt;&gt;groupBox12.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox12.Parent" xml:space="preserve">
-    <value>groupBox20</value>
-  </data>
-  <data name="&gt;&gt;groupBox12.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="groupBox20.Location" type="System.Drawing.Point, System.Drawing">
-    <value>258, 44</value>
-  </data>
-  <data name="groupBox20.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1292, 657</value>
-  </data>
-  <data name="groupBox20.TabIndex" type="System.Int32, mscorlib">
-    <value>714</value>
   </data>
   <data name="&gt;&gt;groupBox20.Name" xml:space="preserve">
     <value>groupBox20</value>
@@ -4212,123 +4347,6 @@
   </data>
   <data name="&gt;&gt;xtraTabControlCustomerMaint.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="barDockControlRight.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Left</value>
-  </data>
-  <data name="barDockControlRight.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <metadata name="toolbarFormManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>304, 524</value>
-  </metadata>
-  <data name="barDockControlBottom.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
-  <data name="barDockControlBottom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="barDockControlBottom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1817, 0</value>
-  </data>
-  <data name="&gt;&gt;barDockControlBottom.Name" xml:space="preserve">
-    <value>barDockControlBottom</value>
-  </data>
-  <data name="&gt;&gt;barDockControlBottom.Type" xml:space="preserve">
-    <value>DevExpress.XtraBars.BarDockControl, DevExpress.XtraBars.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;barDockControlBottom.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;barDockControlBottom.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="barDockControlLeft.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="barDockControlLeft.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 782</value>
-  </data>
-  <data name="barDockControlLeft.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1817, 0</value>
-  </data>
-  <data name="&gt;&gt;barDockControlLeft.Name" xml:space="preserve">
-    <value>barDockControlLeft</value>
-  </data>
-  <data name="&gt;&gt;barDockControlLeft.Type" xml:space="preserve">
-    <value>DevExpress.XtraBars.BarDockControl, DevExpress.XtraBars.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;barDockControlLeft.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;barDockControlLeft.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="barDockControl4.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Right</value>
-  </data>
-  <data name="barDockControl4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1817, 0</value>
-  </data>
-  <data name="barDockControl4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 782</value>
-  </data>
-  <data name="&gt;&gt;barDockControl4.Name" xml:space="preserve">
-    <value>barDockControl4</value>
-  </data>
-  <data name="&gt;&gt;barDockControl4.Type" xml:space="preserve">
-    <value>DevExpress.XtraBars.BarDockControl, DevExpress.XtraBars.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;barDockControl4.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;barDockControl4.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="standaloneBarDockControl1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="standaloneBarDockControl1.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="standaloneBarDockControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Bottom</value>
-  </data>
-  <data name="standaloneBarDockControl1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 716</value>
-  </data>
-  <data name="standaloneBarDockControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1231, 30</value>
-  </data>
-  <data name="standaloneBarDockControl1.Text" xml:space="preserve">
-    <value>standaloneBarDockControl1</value>
-  </data>
-  <data name="&gt;&gt;standaloneBarDockControl1.Name" xml:space="preserve">
-    <value>standaloneBarDockControl1</value>
-  </data>
-  <data name="&gt;&gt;standaloneBarDockControl1.Type" xml:space="preserve">
-    <value>DevExpress.XtraBars.StandaloneBarDockControl, DevExpress.XtraBars.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;standaloneBarDockControl1.Parent" xml:space="preserve">
-    <value>groupBox18</value>
-  </data>
-  <data name="&gt;&gt;standaloneBarDockControl1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="barDockControlRight.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 782</value>
-  </data>
-  <data name="&gt;&gt;barDockControlRight.Name" xml:space="preserve">
-    <value>barDockControlRight</value>
-  </data>
-  <data name="&gt;&gt;barDockControlRight.Type" xml:space="preserve">
-    <value>DevExpress.XtraBars.BarDockControl, DevExpress.XtraBars.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;barDockControlRight.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;barDockControlRight.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="barDockControl2.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Left</value>
@@ -8518,113 +8536,11 @@
   <data name="&gt;&gt;layoutControlGroupRepos.Type" xml:space="preserve">
     <value>DevExpress.XtraLayout.LayoutControlGroup, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
-  <data name="&gt;&gt;layoutControlItemcomboBoxRepoInd.Name" xml:space="preserve">
-    <value>layoutControlItemcomboBoxRepoInd</value>
+  <data name="&gt;&gt;layoutControlGroup1.Name" xml:space="preserve">
+    <value>layoutControlGroup1</value>
   </data>
-  <data name="&gt;&gt;layoutControlItemcomboBoxRepoInd.Type" xml:space="preserve">
-    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;layoutControlItemcUSTOMER_REPO_INDtextBox.Name" xml:space="preserve">
-    <value>layoutControlItemcUSTOMER_REPO_INDtextBox</value>
-  </data>
-  <data name="&gt;&gt;layoutControlItemcUSTOMER_REPO_INDtextBox.Type" xml:space="preserve">
-    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;layoutControlItemcUSTOMER_REPO_CDEtextBox.Name" xml:space="preserve">
-    <value>layoutControlItemcUSTOMER_REPO_CDEtextBox</value>
-  </data>
-  <data name="&gt;&gt;layoutControlItemcUSTOMER_REPO_CDEtextBox.Type" xml:space="preserve">
-    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;layoutControlItemcomboBoxRepoCodes.Name" xml:space="preserve">
-    <value>layoutControlItemcomboBoxRepoCodes</value>
-  </data>
-  <data name="&gt;&gt;layoutControlItemcomboBoxRepoCodes.Type" xml:space="preserve">
-    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;layoutControlItemRepoDate.Name" xml:space="preserve">
-    <value>layoutControlItemRepoDate</value>
-  </data>
-  <data name="&gt;&gt;layoutControlItemRepoDate.Type" xml:space="preserve">
-    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;emptySpaceItem140.Name" xml:space="preserve">
-    <value>emptySpaceItem140</value>
-  </data>
-  <data name="&gt;&gt;emptySpaceItem140.Type" xml:space="preserve">
-    <value>DevExpress.XtraLayout.EmptySpaceItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;layoutControlItemRepoAgent.Name" xml:space="preserve">
-    <value>layoutControlItemRepoAgent</value>
-  </data>
-  <data name="&gt;&gt;layoutControlItemRepoAgent.Type" xml:space="preserve">
-    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;layoutControlItemAuctionHouse.Name" xml:space="preserve">
-    <value>layoutControlItemAuctionHouse</value>
-  </data>
-  <data name="&gt;&gt;layoutControlItemAuctionHouse.Type" xml:space="preserve">
-    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;layoutControlItemCurrentLocation.Name" xml:space="preserve">
-    <value>layoutControlItemCurrentLocation</value>
-  </data>
-  <data name="&gt;&gt;layoutControlItemCurrentLocation.Type" xml:space="preserve">
-    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;layoutControlItemLocationDate.Name" xml:space="preserve">
-    <value>layoutControlItemLocationDate</value>
-  </data>
-  <data name="&gt;&gt;layoutControlItemLocationDate.Type" xml:space="preserve">
-    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;layoutControlItemAuctionDate.Name" xml:space="preserve">
-    <value>layoutControlItemAuctionDate</value>
-  </data>
-  <data name="&gt;&gt;layoutControlItemAuctionDate.Type" xml:space="preserve">
-    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;emptySpaceItem141.Name" xml:space="preserve">
-    <value>emptySpaceItem141</value>
-  </data>
-  <data name="&gt;&gt;emptySpaceItem141.Type" xml:space="preserve">
-    <value>DevExpress.XtraLayout.EmptySpaceItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;emptySpaceItem142.Name" xml:space="preserve">
-    <value>emptySpaceItem142</value>
-  </data>
-  <data name="&gt;&gt;emptySpaceItem142.Type" xml:space="preserve">
-    <value>DevExpress.XtraLayout.EmptySpaceItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;emptySpaceItem143.Name" xml:space="preserve">
-    <value>emptySpaceItem143</value>
-  </data>
-  <data name="&gt;&gt;emptySpaceItem143.Type" xml:space="preserve">
-    <value>DevExpress.XtraLayout.EmptySpaceItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;emptySpaceItem144.Name" xml:space="preserve">
-    <value>emptySpaceItem144</value>
-  </data>
-  <data name="&gt;&gt;emptySpaceItem144.Type" xml:space="preserve">
-    <value>DevExpress.XtraLayout.EmptySpaceItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;emptySpaceItem145.Name" xml:space="preserve">
-    <value>emptySpaceItem145</value>
-  </data>
-  <data name="&gt;&gt;emptySpaceItem145.Type" xml:space="preserve">
-    <value>DevExpress.XtraLayout.EmptySpaceItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;emptySpaceItem146.Name" xml:space="preserve">
-    <value>emptySpaceItem146</value>
-  </data>
-  <data name="&gt;&gt;emptySpaceItem146.Type" xml:space="preserve">
-    <value>DevExpress.XtraLayout.EmptySpaceItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;emptySpaceItem138.Name" xml:space="preserve">
-    <value>emptySpaceItem138</value>
-  </data>
-  <data name="&gt;&gt;emptySpaceItem138.Type" xml:space="preserve">
-    <value>DevExpress.XtraLayout.EmptySpaceItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  <data name="&gt;&gt;layoutControlGroup1.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.LayoutControlGroup, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
   <data name="&gt;&gt;emptySpaceItem132.Name" xml:space="preserve">
     <value>emptySpaceItem132</value>
@@ -8680,17 +8596,119 @@
   <data name="&gt;&gt;layoutControlItem15.Type" xml:space="preserve">
     <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
-  <data name="&gt;&gt;emptySpaceItem153.Name" xml:space="preserve">
-    <value>emptySpaceItem153</value>
-  </data>
-  <data name="&gt;&gt;emptySpaceItem153.Type" xml:space="preserve">
-    <value>DevExpress.XtraLayout.EmptySpaceItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
   <data name="&gt;&gt;emptySpaceItem154.Name" xml:space="preserve">
     <value>emptySpaceItem154</value>
   </data>
   <data name="&gt;&gt;emptySpaceItem154.Type" xml:space="preserve">
     <value>DevExpress.XtraLayout.EmptySpaceItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;layoutControlGroupRepoInfoDetail.Name" xml:space="preserve">
+    <value>layoutControlGroupRepoInfoDetail</value>
+  </data>
+  <data name="&gt;&gt;layoutControlGroupRepoInfoDetail.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.LayoutControlGroup, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;emptySpaceItem141.Name" xml:space="preserve">
+    <value>emptySpaceItem141</value>
+  </data>
+  <data name="&gt;&gt;emptySpaceItem141.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.EmptySpaceItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItemcomboBoxRepoInd.Name" xml:space="preserve">
+    <value>layoutControlItemcomboBoxRepoInd</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItemcomboBoxRepoInd.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItemcUSTOMER_REPO_INDtextBox.Name" xml:space="preserve">
+    <value>layoutControlItemcUSTOMER_REPO_INDtextBox</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItemcUSTOMER_REPO_INDtextBox.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItemcUSTOMER_REPO_CDEtextBox.Name" xml:space="preserve">
+    <value>layoutControlItemcUSTOMER_REPO_CDEtextBox</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItemcUSTOMER_REPO_CDEtextBox.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItemcomboBoxRepoCodes.Name" xml:space="preserve">
+    <value>layoutControlItemcomboBoxRepoCodes</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItemcomboBoxRepoCodes.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItemRepoDate.Name" xml:space="preserve">
+    <value>layoutControlItemRepoDate</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItemRepoDate.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;emptySpaceItem140.Name" xml:space="preserve">
+    <value>emptySpaceItem140</value>
+  </data>
+  <data name="&gt;&gt;emptySpaceItem140.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.EmptySpaceItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;emptySpaceItem142.Name" xml:space="preserve">
+    <value>emptySpaceItem142</value>
+  </data>
+  <data name="&gt;&gt;emptySpaceItem142.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.EmptySpaceItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItemRepoAgent.Name" xml:space="preserve">
+    <value>layoutControlItemRepoAgent</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItemRepoAgent.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;emptySpaceItem146.Name" xml:space="preserve">
+    <value>emptySpaceItem146</value>
+  </data>
+  <data name="&gt;&gt;emptySpaceItem146.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.EmptySpaceItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;emptySpaceItem138.Name" xml:space="preserve">
+    <value>emptySpaceItem138</value>
+  </data>
+  <data name="&gt;&gt;emptySpaceItem138.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.EmptySpaceItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItemCurrentLocation.Name" xml:space="preserve">
+    <value>layoutControlItemCurrentLocation</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItemCurrentLocation.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItemLocationDate.Name" xml:space="preserve">
+    <value>layoutControlItemLocationDate</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItemLocationDate.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;emptySpaceItem144.Name" xml:space="preserve">
+    <value>emptySpaceItem144</value>
+  </data>
+  <data name="&gt;&gt;emptySpaceItem144.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.EmptySpaceItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;emptySpaceItem143.Name" xml:space="preserve">
+    <value>emptySpaceItem143</value>
+  </data>
+  <data name="&gt;&gt;emptySpaceItem143.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.EmptySpaceItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItemAuctionHouse.Name" xml:space="preserve">
+    <value>layoutControlItemAuctionHouse</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItemAuctionHouse.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItemAuctionDate.Name" xml:space="preserve">
+    <value>layoutControlItemAuctionDate</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItemAuctionDate.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
   <data name="&gt;&gt;emptySpaceItem152.Name" xml:space="preserve">
     <value>emptySpaceItem152</value>
@@ -8702,6 +8720,12 @@
     <value>emptySpaceItem155</value>
   </data>
   <data name="&gt;&gt;emptySpaceItem155.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.EmptySpaceItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;emptySpaceItem145.Name" xml:space="preserve">
+    <value>emptySpaceItem145</value>
+  </data>
+  <data name="&gt;&gt;emptySpaceItem145.Type" xml:space="preserve">
     <value>DevExpress.XtraLayout.EmptySpaceItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
   <data name="&gt;&gt;gridViewRepoLog.Name" xml:space="preserve">
@@ -8824,12 +8848,6 @@
   <data name="&gt;&gt;colOrgTitleReceived.Type" xml:space="preserve">
     <value>DevExpress.XtraGrid.Columns.GridColumn, DevExpress.XtraGrid.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
-  <data name="&gt;&gt;repositoryItemCheckEdit1.Name" xml:space="preserve">
-    <value>repositoryItemCheckEdit1</value>
-  </data>
-  <data name="&gt;&gt;repositoryItemCheckEdit1.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
   <data name="&gt;&gt;colNewTitleReceived.Name" xml:space="preserve">
     <value>colNewTitleReceived</value>
   </data>
@@ -8853,6 +8871,42 @@
   </data>
   <data name="&gt;&gt;colidRepo.Type" xml:space="preserve">
     <value>DevExpress.XtraGrid.Columns.GridColumn, DevExpress.XtraGrid.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;layoutControlGroupRepoHistory.Name" xml:space="preserve">
+    <value>layoutControlGroupRepoHistory</value>
+  </data>
+  <data name="&gt;&gt;layoutControlGroupRepoHistory.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.LayoutControlGroup, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;layoutControlGroupRepoHistoryHeader.Name" xml:space="preserve">
+    <value>layoutControlGroupRepoHistoryHeader</value>
+  </data>
+  <data name="&gt;&gt;layoutControlGroupRepoHistoryHeader.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.LayoutControlGroup, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;emptySpaceItem119.Name" xml:space="preserve">
+    <value>emptySpaceItem119</value>
+  </data>
+  <data name="&gt;&gt;emptySpaceItem119.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.EmptySpaceItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;emptySpaceItem125.Name" xml:space="preserve">
+    <value>emptySpaceItem125</value>
+  </data>
+  <data name="&gt;&gt;emptySpaceItem125.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.EmptySpaceItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;layoutControlGroupRepoHistoryGrid.Name" xml:space="preserve">
+    <value>layoutControlGroupRepoHistoryGrid</value>
+  </data>
+  <data name="&gt;&gt;layoutControlGroupRepoHistoryGrid.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.LayoutControlGroup, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItemRepoHistoryGridControl.Name" xml:space="preserve">
+    <value>layoutControlItemRepoHistoryGridControl</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItemRepoHistoryGridControl.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
   <data name="&gt;&gt;layoutControlGroupTSB.Name" xml:space="preserve">
     <value>layoutControlGroupTSB</value>
@@ -9507,6 +9561,54 @@
   </data>
   <data name="&gt;&gt;layoutControlGroup3.Type" xml:space="preserve">
     <value>DevExpress.XtraLayout.LayoutControlGroup, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;layoutControlGroup7.Name" xml:space="preserve">
+    <value>layoutControlGroup7</value>
+  </data>
+  <data name="&gt;&gt;layoutControlGroup7.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.LayoutControlGroup, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItem41.Name" xml:space="preserve">
+    <value>layoutControlItem41</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItem41.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItem44.Name" xml:space="preserve">
+    <value>layoutControlItem44</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItem44.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItem45.Name" xml:space="preserve">
+    <value>layoutControlItem45</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItem45.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItem47.Name" xml:space="preserve">
+    <value>layoutControlItem47</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItem47.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItem48.Name" xml:space="preserve">
+    <value>layoutControlItem48</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItem48.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItem49.Name" xml:space="preserve">
+    <value>layoutControlItem49</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItem49.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItem50.Name" xml:space="preserve">
+    <value>layoutControlItem50</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItem50.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>frmNewCustMaintResp</value>
@@ -14584,7 +14686,7 @@
     <value>46</value>
   </data>
   <data name="cUSTOMER_CREDIT_SCORE_ATextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1332, 303</value>
+    <value>1327, 303</value>
   </data>
   <data name="cUSTOMER_CREDIT_SCORE_ATextBox.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>20, 31</value>
@@ -14611,7 +14713,7 @@
     <value>47</value>
   </data>
   <data name="cUSTOMER_CREDIT_SCORE_NTextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1285, 303</value>
+    <value>1282, 303</value>
   </data>
   <data name="cUSTOMER_CREDIT_SCORE_NTextBox.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>41, 31</value>
@@ -17132,7 +17234,7 @@
     <value>False</value>
   </data>
   <data name="textBox4811.Location" type="System.Drawing.Point, System.Drawing">
-    <value>693, 24</value>
+    <value>702, 24</value>
   </data>
   <data name="textBox4811.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>67, 29</value>
@@ -17162,7 +17264,7 @@
     <value>False</value>
   </data>
   <data name="textBox4711.Location" type="System.Drawing.Point, System.Drawing">
-    <value>821, 24</value>
+    <value>830, 24</value>
   </data>
   <data name="textBox4711.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>136, 29</value>
@@ -17192,7 +17294,7 @@
     <value>False</value>
   </data>
   <data name="textBox1711.Location" type="System.Drawing.Point, System.Drawing">
-    <value>962, 24</value>
+    <value>971, 24</value>
   </data>
   <data name="textBox1711.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>212, 29</value>
@@ -17222,7 +17324,7 @@
     <value>False</value>
   </data>
   <data name="textBox5111.Location" type="System.Drawing.Point, System.Drawing">
-    <value>637, 65</value>
+    <value>646, 65</value>
   </data>
   <data name="textBox5111.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>43, 29</value>
@@ -17252,7 +17354,7 @@
     <value>False</value>
   </data>
   <data name="textBox5011.Location" type="System.Drawing.Point, System.Drawing">
-    <value>681, 65</value>
+    <value>690, 65</value>
   </data>
   <data name="textBox5011.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>29, 29</value>
@@ -17282,7 +17384,7 @@
     <value>False</value>
   </data>
   <data name="textBox4911.Location" type="System.Drawing.Point, System.Drawing">
-    <value>711, 65</value>
+    <value>720, 65</value>
   </data>
   <data name="textBox4911.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>51, 29</value>
@@ -17312,7 +17414,7 @@
     <value>False</value>
   </data>
   <data name="textBox1911.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1179, 24</value>
+    <value>1188, 24</value>
   </data>
   <data name="textBox1911.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>41, 29</value>
@@ -18097,6 +18199,12 @@
   <data name="textEditAmountUnused.Properties.AppearanceDisabled.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 12pt, style=Bold</value>
   </data>
+  <data name="textEditAmountUnused.Properties.BeepOnError" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="textEditAmountUnused.Properties.UseMaskAsDisplayFormat" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="textEditAmountUnused.Size" type="System.Drawing.Size, System.Drawing">
     <value>90, 26</value>
   </data>
@@ -18126,6 +18234,12 @@
   </data>
   <data name="textEditTotalPayments.Properties.AppearanceDisabled.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 12pt, style=Bold</value>
+  </data>
+  <data name="textEditTotalPayments.Properties.BeepOnError" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="textEditTotalPayments.Properties.UseMaskAsDisplayFormat" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="textEditTotalPayments.Size" type="System.Drawing.Size, System.Drawing">
     <value>85, 26</value>
@@ -18157,6 +18271,12 @@
   <data name="textEditFullMonthlyPayment.Properties.AppearanceDisabled.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 12pt, style=Bold</value>
   </data>
+  <data name="textEditFullMonthlyPayment.Properties.BeepOnError" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="textEditFullMonthlyPayment.Properties.UseMaskAsDisplayFormat" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="textEditFullMonthlyPayment.Size" type="System.Drawing.Size, System.Drawing">
     <value>94, 26</value>
   </data>
@@ -18175,6 +18295,9 @@
   <data name="&gt;&gt;textEditFullMonthlyPayment.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
+  <data name="textEditPayment4.EditValue" xml:space="preserve">
+    <value>0.00</value>
+  </data>
   <data name="textEditPayment4.Location" type="System.Drawing.Point, System.Drawing">
     <value>321, 190</value>
   </data>
@@ -18184,8 +18307,14 @@
   <data name="textEditPayment4.Properties.AppearanceFocused.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 12pt</value>
   </data>
+  <data name="textEditPayment4.Properties.BeepOnError" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="textEditPayment4.Properties.NullText" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="textEditPayment4.Properties.UseMaskAsDisplayFormat" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="textEditPayment4.Size" type="System.Drawing.Size, System.Drawing">
     <value>129, 26</value>
@@ -18205,6 +18334,9 @@
   <data name="&gt;&gt;textEditPayment4.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
+  <data name="textEditPayment3.EditValue" xml:space="preserve">
+    <value>0.00</value>
+  </data>
   <data name="textEditPayment3.Location" type="System.Drawing.Point, System.Drawing">
     <value>321, 149</value>
   </data>
@@ -18214,8 +18346,14 @@
   <data name="textEditPayment3.Properties.AppearanceFocused.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 12pt</value>
   </data>
+  <data name="textEditPayment3.Properties.BeepOnError" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="textEditPayment3.Properties.NullText" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="textEditPayment3.Properties.UseMaskAsDisplayFormat" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="textEditPayment3.Size" type="System.Drawing.Size, System.Drawing">
     <value>129, 26</value>
@@ -18235,6 +18373,9 @@
   <data name="&gt;&gt;textEditPayment3.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
+  <data name="textEditPayment2.EditValue" xml:space="preserve">
+    <value>0.00</value>
+  </data>
   <data name="textEditPayment2.Location" type="System.Drawing.Point, System.Drawing">
     <value>321, 109</value>
   </data>
@@ -18244,8 +18385,14 @@
   <data name="textEditPayment2.Properties.AppearanceFocused.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 12pt</value>
   </data>
+  <data name="textEditPayment2.Properties.BeepOnError" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="textEditPayment2.Properties.NullText" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="textEditPayment2.Properties.UseMaskAsDisplayFormat" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="textEditPayment2.Size" type="System.Drawing.Size, System.Drawing">
     <value>129, 26</value>
@@ -18265,6 +18412,9 @@
   <data name="&gt;&gt;textEditPayment2.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
+  <data name="textEditPayment1.EditValue" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="textEditPayment1.Location" type="System.Drawing.Point, System.Drawing">
     <value>321, 67</value>
   </data>
@@ -18274,8 +18424,14 @@
   <data name="textEditPayment1.Properties.AppearanceFocused.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 12pt</value>
   </data>
+  <data name="textEditPayment1.Properties.BeepOnError" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="textEditPayment1.Properties.NullText" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="textEditPayment1.Properties.UseMaskAsDisplayFormat" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="textEditPayment1.Size" type="System.Drawing.Size, System.Drawing">
     <value>129, 26</value>
@@ -21355,7 +21511,7 @@
     <value>False</value>
   </data>
   <data name="nullableDateTimePickerAucDate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>500, 266</value>
+    <value>513, 303</value>
   </data>
   <data name="nullableDateTimePickerAucDate.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>119, 29</value>
@@ -21397,7 +21553,7 @@
     <value>False</value>
   </data>
   <data name="nullableDateTimePickerLocDate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>500, 225</value>
+    <value>513, 262</value>
   </data>
   <data name="nullableDateTimePickerLocDate.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>119, 29</value>
@@ -21433,7 +21589,7 @@
     <value>5</value>
   </data>
   <data name="textBoxAuctionHouse.Location" type="System.Drawing.Point, System.Drawing">
-    <value>135, 266</value>
+    <value>148, 303</value>
   </data>
   <data name="textBoxAuctionHouse.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>355, 29</value>
@@ -21460,7 +21616,7 @@
     <value>6</value>
   </data>
   <data name="textBoxCurrentLocation.Location" type="System.Drawing.Point, System.Drawing">
-    <value>135, 225</value>
+    <value>148, 262</value>
   </data>
   <data name="textBoxCurrentLocation.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>355, 29</value>
@@ -21487,7 +21643,7 @@
     <value>7</value>
   </data>
   <data name="textBoxRepoAgent.Location" type="System.Drawing.Point, System.Drawing">
-    <value>135, 184</value>
+    <value>148, 221</value>
   </data>
   <data name="textBoxRepoAgent.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>486, 29</value>
@@ -21520,7 +21676,7 @@
     <value>False</value>
   </data>
   <data name="nullableDateTimePickerRepoDate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>677, 143</value>
+    <value>682, 180</value>
   </data>
   <data name="nullableDateTimePickerRepoDate.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>119, 29</value>
@@ -21556,7 +21712,7 @@
     <value>9</value>
   </data>
   <data name="comboBoxRepoCodes.Location" type="System.Drawing.Point, System.Drawing">
-    <value>413, 143</value>
+    <value>421, 180</value>
   </data>
   <data name="comboBoxRepoCodes.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>170, 29</value>
@@ -21589,7 +21745,7 @@
     <value>10</value>
   </data>
   <data name="cUSTOMER_REPO_CDEtextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>344, 143</value>
+    <value>354, 180</value>
   </data>
   <data name="cUSTOMER_REPO_CDEtextBox.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>55, 29</value>
@@ -21616,7 +21772,7 @@
     <value>11</value>
   </data>
   <data name="cUSTOMER_REPO_INDtextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>273, 143</value>
+    <value>283, 180</value>
   </data>
   <data name="cUSTOMER_REPO_INDtextBox.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>20, 29</value>
@@ -21643,7 +21799,7 @@
     <value>12</value>
   </data>
   <data name="comboBoxRepoInd.Location" type="System.Drawing.Point, System.Drawing">
-    <value>135, 143</value>
+    <value>148, 180</value>
   </data>
   <data name="comboBoxRepoInd.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>124, 29</value>
@@ -21679,7 +21835,7 @@
     <value>False</value>
   </data>
   <data name="textBox481.Location" type="System.Drawing.Point, System.Drawing">
-    <value>657, 49</value>
+    <value>702, 61</value>
   </data>
   <data name="textBox481.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>67, 29</value>
@@ -21709,7 +21865,7 @@
     <value>False</value>
   </data>
   <data name="textBox471.Location" type="System.Drawing.Point, System.Drawing">
-    <value>785, 49</value>
+    <value>830, 61</value>
   </data>
   <data name="textBox471.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>136, 29</value>
@@ -21739,7 +21895,7 @@
     <value>False</value>
   </data>
   <data name="textBox171.Location" type="System.Drawing.Point, System.Drawing">
-    <value>926, 49</value>
+    <value>971, 61</value>
   </data>
   <data name="textBox171.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>212, 29</value>
@@ -21769,7 +21925,7 @@
     <value>False</value>
   </data>
   <data name="textBox191.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1143, 49</value>
+    <value>1188, 61</value>
   </data>
   <data name="textBox191.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>41, 29</value>
@@ -21799,7 +21955,7 @@
     <value>False</value>
   </data>
   <data name="textBox511.Location" type="System.Drawing.Point, System.Drawing">
-    <value>601, 90</value>
+    <value>646, 102</value>
   </data>
   <data name="textBox511.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>43, 29</value>
@@ -21829,7 +21985,7 @@
     <value>False</value>
   </data>
   <data name="textBox501.Location" type="System.Drawing.Point, System.Drawing">
-    <value>645, 90</value>
+    <value>690, 102</value>
   </data>
   <data name="textBox501.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>29, 29</value>
@@ -21859,7 +22015,7 @@
     <value>False</value>
   </data>
   <data name="textBox491.Location" type="System.Drawing.Point, System.Drawing">
-    <value>675, 90</value>
+    <value>720, 102</value>
   </data>
   <data name="textBox491.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>51, 29</value>
@@ -21915,35 +22071,11 @@
   <data name="&gt;&gt;layoutControlRepo.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="layoutControlItemcomboBoxRepoInd.Text" xml:space="preserve">
-    <value>Repo</value>
+  <data name="layoutControlGroup1.CustomizationFormText" xml:space="preserve">
+    <value>layoutControlGroupRepoInfoHeader</value>
   </data>
-  <data name="layoutControlItemcUSTOMER_REPO_INDtextBox.Text" xml:space="preserve">
-    <value> </value>
-  </data>
-  <data name="layoutControlItemcUSTOMER_REPO_CDEtextBox.Text" xml:space="preserve">
-    <value>Code</value>
-  </data>
-  <data name="layoutControlItemcomboBoxRepoCodes.Text" xml:space="preserve">
-    <value> </value>
-  </data>
-  <data name="layoutControlItemRepoDate.Text" xml:space="preserve">
-    <value>Repo Date</value>
-  </data>
-  <data name="layoutControlItemRepoAgent.Text" xml:space="preserve">
-    <value>Repo Agent</value>
-  </data>
-  <data name="layoutControlItemAuctionHouse.Text" xml:space="preserve">
-    <value>Auction House</value>
-  </data>
-  <data name="layoutControlItemCurrentLocation.Text" xml:space="preserve">
-    <value>Current Location</value>
-  </data>
-  <data name="layoutControlItemLocationDate.Text" xml:space="preserve">
-    <value> </value>
-  </data>
-  <data name="layoutControlItemAuctionDate.Text" xml:space="preserve">
-    <value> </value>
+  <data name="layoutControlGroup1.Text" xml:space="preserve">
+    <value>Repo Info Header</value>
   </data>
   <data name="layoutControlGroupRepoHeader.Text" xml:space="preserve">
     <value>Repo Header</value>
@@ -22011,614 +22143,635 @@
   <data name="layoutControlItem15.Text" xml:space="preserve">
     <value>layoutContorlItemTitle</value>
   </data>
-  <data name="gridControlRepoLog.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt</value>
+  <data name="layoutControlGroupRepoInfoDetail.Text" xml:space="preserve">
+    <value>Repo Info Detail</value>
   </data>
-  <data name="gridControlRepoLog.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 103</value>
+  <data name="layoutControlItemcomboBoxRepoInd.Text" xml:space="preserve">
+    <value>Repo</value>
   </data>
-  <data name="gridViewRepoLog.Appearance.HeaderPanel.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 8.25pt, style=Bold</value>
+  <data name="layoutControlItemcUSTOMER_REPO_INDtextBox.Text" xml:space="preserve">
+    <value> </value>
   </data>
-  <data name="colDateOfChange.Caption" xml:space="preserve">
-    <value>Date</value>
+  <data name="layoutControlItemcUSTOMER_REPO_CDEtextBox.Text" xml:space="preserve">
+    <value>Code</value>
   </data>
-  <data name="colDateOfChange.Visible" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="layoutControlItemcomboBoxRepoCodes.Text" xml:space="preserve">
+    <value> </value>
   </data>
-  <data name="colDateOfChange.VisibleIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="layoutControlItemRepoDate.Text" xml:space="preserve">
+    <value>Repo Date</value>
   </data>
-  <data name="colDateOfChange.Width" type="System.Int32, mscorlib">
-    <value>100</value>
+  <data name="layoutControlItemRepoAgent.Text" xml:space="preserve">
+    <value>Repo Agent</value>
   </data>
-  <data name="colUserID.Caption" xml:space="preserve">
-    <value>ID</value>
+  <data name="layoutControlItemCurrentLocation.Text" xml:space="preserve">
+    <value>Current Location</value>
   </data>
-  <data name="colUserID.Visible" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="layoutControlItemLocationDate.Text" xml:space="preserve">
+    <value> </value>
   </data>
-  <data name="colUserID.VisibleIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="layoutControlItemAuctionHouse.Text" xml:space="preserve">
+    <value>Auction House</value>
   </data>
-  <data name="colUserID.Width" type="System.Int32, mscorlib">
-    <value>70</value>
+  <data name="layoutControlItemAuctionDate.Text" xml:space="preserve">
+    <value> </value>
   </data>
-  <data name="colOrgRepoDate.Caption" xml:space="preserve">
-    <value>Old Repo Date</value>
+  <data name="&gt;&gt;textBoxTotalFees.Name" xml:space="preserve">
+    <value>textBoxTotalFees</value>
   </data>
-  <data name="colOrgRepoDate.Visible" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;textBoxTotalFees.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
-  <data name="colOrgRepoDate.VisibleIndex" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;textBoxTotalFees.Parent" xml:space="preserve">
+    <value>groupBoxFees</value>
+  </data>
+  <data name="&gt;&gt;textBoxTotalFees.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="colOrgRepoDate.Width" type="System.Int32, mscorlib">
-    <value>100</value>
+  <data name="&gt;&gt;textBoxRepairFee5.Name" xml:space="preserve">
+    <value>textBoxRepairFee5</value>
   </data>
-  <data name="colNewRepoDate.Caption" xml:space="preserve">
-    <value>New Repo Date</value>
+  <data name="&gt;&gt;textBoxRepairFee5.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
-  <data name="colNewRepoDate.Visible" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;textBoxRepairFee5.Parent" xml:space="preserve">
+    <value>groupBoxFees</value>
   </data>
-  <data name="colNewRepoDate.VisibleIndex" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;textBoxRepairFee5.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="colNewRepoDate.Width" type="System.Int32, mscorlib">
-    <value>100</value>
+  <data name="&gt;&gt;textBoxRepairFee4.Name" xml:space="preserve">
+    <value>textBoxRepairFee4</value>
   </data>
-  <data name="colOrgRepoAgent.Caption" xml:space="preserve">
-    <value>Old Repo Agent</value>
+  <data name="&gt;&gt;textBoxRepairFee4.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
-  <data name="colOrgRepoAgent.Visible" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;textBoxRepairFee4.Parent" xml:space="preserve">
+    <value>groupBoxFees</value>
   </data>
-  <data name="colOrgRepoAgent.VisibleIndex" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;textBoxRepairFee4.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="colOrgRepoAgent.Width" type="System.Int32, mscorlib">
-    <value>100</value>
+  <data name="&gt;&gt;textBoxRepairFee3.Name" xml:space="preserve">
+    <value>textBoxRepairFee3</value>
   </data>
-  <data name="colNewRepoAgent.Caption" xml:space="preserve">
-    <value>New Repo Agent</value>
+  <data name="&gt;&gt;textBoxRepairFee3.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
-  <data name="colNewRepoAgent.Visible" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;textBoxRepairFee3.Parent" xml:space="preserve">
+    <value>groupBoxFees</value>
   </data>
-  <data name="colNewRepoAgent.VisibleIndex" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;textBoxRepairFee3.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="colNewRepoAgent.Width" type="System.Int32, mscorlib">
-    <value>100</value>
+  <data name="&gt;&gt;textBoxRepairFee2.Name" xml:space="preserve">
+    <value>textBoxRepairFee2</value>
   </data>
-  <data name="colOrgRepoInd.Caption" xml:space="preserve">
-    <value>Old Repo Ind</value>
+  <data name="&gt;&gt;textBoxRepairFee2.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
-  <data name="colOrgRepoInd.Visible" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;textBoxRepairFee2.Parent" xml:space="preserve">
+    <value>groupBoxFees</value>
   </data>
-  <data name="colOrgRepoInd.VisibleIndex" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;textBoxRepairFee2.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="colOrgRepoInd.Width" type="System.Int32, mscorlib">
-    <value>60</value>
+  <data name="&gt;&gt;textBoxRepairFee1.Name" xml:space="preserve">
+    <value>textBoxRepairFee1</value>
   </data>
-  <data name="colNewRepoInd.Caption" xml:space="preserve">
-    <value>New Repo Ind</value>
+  <data name="&gt;&gt;textBoxRepairFee1.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
-  <data name="colNewRepoInd.Visible" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;textBoxRepairFee1.Parent" xml:space="preserve">
+    <value>groupBoxFees</value>
   </data>
-  <data name="colNewRepoInd.VisibleIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="colNewRepoInd.Width" type="System.Int32, mscorlib">
-    <value>60</value>
-  </data>
-  <data name="colOrgRepoCode.CustomizationCaption" xml:space="preserve">
-    <value>Old Repo Code</value>
-  </data>
-  <data name="colOrgRepoCode.Visible" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="colOrgRepoCode.VisibleIndex" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;textBoxRepairFee1.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
-  <data name="colOrgRepoCode.Width" type="System.Int32, mscorlib">
-    <value>100</value>
+  <data name="&gt;&gt;textBoxResaleFees.Name" xml:space="preserve">
+    <value>textBoxResaleFees</value>
   </data>
-  <data name="colNewRepoCode.Caption" xml:space="preserve">
-    <value>New Repo code</value>
+  <data name="&gt;&gt;textBoxResaleFees.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
-  <data name="colNewRepoCode.Visible" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;textBoxResaleFees.Parent" xml:space="preserve">
+    <value>groupBoxFees</value>
   </data>
-  <data name="colNewRepoCode.VisibleIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="colNewRepoCode.Width" type="System.Int32, mscorlib">
-    <value>100</value>
-  </data>
-  <data name="colOrgCurrentLocation.CustomizationCaption" xml:space="preserve">
-    <value>Old Location</value>
-  </data>
-  <data name="colOrgCurrentLocation.Visible" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="colOrgCurrentLocation.VisibleIndex" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;textBoxResaleFees.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
-  <data name="colOrgCurrentLocation.Width" type="System.Int32, mscorlib">
-    <value>100</value>
+  <data name="&gt;&gt;textBoxImpoundFees.Name" xml:space="preserve">
+    <value>textBoxImpoundFees</value>
   </data>
-  <data name="colNewCurrentLocation.CustomizationCaption" xml:space="preserve">
-    <value>New Location</value>
+  <data name="&gt;&gt;textBoxImpoundFees.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
-  <data name="colNewCurrentLocation.Visible" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;textBoxImpoundFees.Parent" xml:space="preserve">
+    <value>groupBoxFees</value>
   </data>
-  <data name="colNewCurrentLocation.VisibleIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="colNewCurrentLocation.Width" type="System.Int32, mscorlib">
-    <value>100</value>
-  </data>
-  <data name="colOldLocationDate.Caption" xml:space="preserve">
-    <value>Old Location Date</value>
-  </data>
-  <data name="colOldLocationDate.Visible" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="colOldLocationDate.VisibleIndex" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;textBoxImpoundFees.ZOrder" xml:space="preserve">
     <value>12</value>
   </data>
-  <data name="colOldLocationDate.Width" type="System.Int32, mscorlib">
-    <value>100</value>
+  <data name="&gt;&gt;textBoxStorageFees.Name" xml:space="preserve">
+    <value>textBoxStorageFees</value>
   </data>
-  <data name="colNewLocationDate.Caption" xml:space="preserve">
-    <value>New Location Date</value>
+  <data name="&gt;&gt;textBoxStorageFees.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
-  <data name="colNewLocationDate.Visible" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;textBoxStorageFees.Parent" xml:space="preserve">
+    <value>groupBoxFees</value>
   </data>
-  <data name="colNewLocationDate.VisibleIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="colNewLocationDate.Width" type="System.Int32, mscorlib">
-    <value>100</value>
-  </data>
-  <data name="colOrgAuctionHouse.Caption" xml:space="preserve">
-    <value>Old Auction House</value>
-  </data>
-  <data name="colOrgAuctionHouse.Visible" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="colOrgAuctionHouse.VisibleIndex" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;textBoxStorageFees.ZOrder" xml:space="preserve">
     <value>14</value>
   </data>
-  <data name="colOrgAuctionHouse.Width" type="System.Int32, mscorlib">
-    <value>100</value>
+  <data name="&gt;&gt;textBoxRepoFees.Name" xml:space="preserve">
+    <value>textBoxRepoFees</value>
   </data>
-  <data name="colNewAuctionHouse.Caption" xml:space="preserve">
-    <value>New Auction House</value>
+  <data name="&gt;&gt;textBoxRepoFees.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
-  <data name="colNewAuctionHouse.Visible" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;textBoxRepoFees.Parent" xml:space="preserve">
+    <value>groupBoxFees</value>
   </data>
-  <data name="colNewAuctionHouse.VisibleIndex" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="colNewAuctionHouse.Width" type="System.Int32, mscorlib">
-    <value>100</value>
-  </data>
-  <data name="colOrgAutionHouseDate.Caption" xml:space="preserve">
-    <value>Old Auction House Date</value>
-  </data>
-  <data name="colOrgAutionHouseDate.Visible" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="colOrgAutionHouseDate.VisibleIndex" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;textBoxRepoFees.ZOrder" xml:space="preserve">
     <value>16</value>
   </data>
-  <data name="colOrgAutionHouseDate.Width" type="System.Int32, mscorlib">
-    <value>100</value>
+  <data name="groupBoxFees.Location" type="System.Drawing.Point, System.Drawing">
+    <value>360, 239</value>
   </data>
-  <data name="colNewAuctionHouseDate.Caption" xml:space="preserve">
-    <value>New Auction House Date</value>
+  <data name="groupBoxFees.Size" type="System.Drawing.Size, System.Drawing">
+    <value>573, 304</value>
   </data>
-  <data name="colNewAuctionHouseDate.Visible" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="groupBoxFees.TabIndex" type="System.Int32, mscorlib">
+    <value>712</value>
   </data>
-  <data name="colNewAuctionHouseDate.VisibleIndex" type="System.Int32, mscorlib">
-    <value>17</value>
+  <data name="&gt;&gt;groupBoxFees.Name" xml:space="preserve">
+    <value>groupBoxFees</value>
   </data>
-  <data name="colNewAuctionHouseDate.Width" type="System.Int32, mscorlib">
-    <value>100</value>
-  </data>
-  <data name="colOrgTitleReceived.Caption" xml:space="preserve">
-    <value>Old Title Received </value>
-  </data>
-  <data name="repositoryItemCheckEdit1.AutoHeight" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="colOrgTitleReceived.Visible" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="colOrgTitleReceived.VisibleIndex" type="System.Int32, mscorlib">
-    <value>18</value>
-  </data>
-  <data name="colOrgTitleReceived.Width" type="System.Int32, mscorlib">
-    <value>100</value>
-  </data>
-  <data name="colNewTitleReceived.Caption" xml:space="preserve">
-    <value>New Title Received</value>
-  </data>
-  <data name="colNewTitleReceived.Visible" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="colNewTitleReceived.VisibleIndex" type="System.Int32, mscorlib">
-    <value>19</value>
-  </data>
-  <data name="colNewTitleReceived.Width" type="System.Int32, mscorlib">
-    <value>100</value>
-  </data>
-  <data name="colOrgDateTitleReceived.Caption" xml:space="preserve">
-    <value>Old Date Title Received</value>
-  </data>
-  <data name="colOrgDateTitleReceived.Visible" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="colOrgDateTitleReceived.VisibleIndex" type="System.Int32, mscorlib">
-    <value>20</value>
-  </data>
-  <data name="colOrgDateTitleReceived.Width" type="System.Int32, mscorlib">
-    <value>100</value>
-  </data>
-  <data name="colNewDateTitleReceived.Caption" xml:space="preserve">
-    <value>New Date Title Received</value>
-  </data>
-  <data name="colNewDateTitleReceived.Visible" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="colNewDateTitleReceived.VisibleIndex" type="System.Int32, mscorlib">
-    <value>21</value>
-  </data>
-  <data name="colNewDateTitleReceived.Width" type="System.Int32, mscorlib">
-    <value>100</value>
-  </data>
-  <data name="gridControlRepoLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1222, 538</value>
-  </data>
-  <data name="gridControlRepoLog.TabIndex" type="System.Int32, mscorlib">
-    <value>204</value>
-  </data>
-  <data name="&gt;&gt;gridControlRepoLog.Name" xml:space="preserve">
-    <value>gridControlRepoLog</value>
-  </data>
-  <data name="&gt;&gt;gridControlRepoLog.Type" xml:space="preserve">
-    <value>DevExpress.XtraGrid.GridControl, DevExpress.XtraGrid.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;gridControlRepoLog.Parent" xml:space="preserve">
-    <value>groupBox21</value>
-  </data>
-  <data name="&gt;&gt;gridControlRepoLog.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;textBox41.Name" xml:space="preserve">
-    <value>textBox41</value>
-  </data>
-  <data name="&gt;&gt;textBox41.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;textBox41.Parent" xml:space="preserve">
-    <value>groupBox13</value>
-  </data>
-  <data name="&gt;&gt;textBox41.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;textBox42.Name" xml:space="preserve">
-    <value>textBox42</value>
-  </data>
-  <data name="&gt;&gt;textBox42.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;textBox42.Parent" xml:space="preserve">
-    <value>groupBox13</value>
-  </data>
-  <data name="&gt;&gt;textBox42.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;textBox43.Name" xml:space="preserve">
-    <value>textBox43</value>
-  </data>
-  <data name="&gt;&gt;textBox43.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;textBox43.Parent" xml:space="preserve">
-    <value>groupBox13</value>
-  </data>
-  <data name="&gt;&gt;textBox43.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;textBox44.Name" xml:space="preserve">
-    <value>textBox44</value>
-  </data>
-  <data name="&gt;&gt;textBox44.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;textBox44.Parent" xml:space="preserve">
-    <value>groupBox13</value>
-  </data>
-  <data name="&gt;&gt;textBox44.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;textBox45.Name" xml:space="preserve">
-    <value>textBox45</value>
-  </data>
-  <data name="&gt;&gt;textBox45.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;textBox45.Parent" xml:space="preserve">
-    <value>groupBox13</value>
-  </data>
-  <data name="&gt;&gt;textBox45.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;textBox46.Name" xml:space="preserve">
-    <value>textBox46</value>
-  </data>
-  <data name="&gt;&gt;textBox46.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;textBox46.Parent" xml:space="preserve">
-    <value>groupBox13</value>
-  </data>
-  <data name="&gt;&gt;textBox46.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;textBox52.Name" xml:space="preserve">
-    <value>textBox52</value>
-  </data>
-  <data name="&gt;&gt;textBox52.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;textBox52.Parent" xml:space="preserve">
-    <value>groupBox13</value>
-  </data>
-  <data name="&gt;&gt;textBox52.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="groupBox13.Location" type="System.Drawing.Point, System.Drawing">
-    <value>264, 16</value>
-  </data>
-  <data name="groupBox13.Size" type="System.Drawing.Size, System.Drawing">
-    <value>703, 82</value>
-  </data>
-  <data name="groupBox13.TabIndex" type="System.Int32, mscorlib">
-    <value>203</value>
-  </data>
-  <data name="&gt;&gt;groupBox13.Name" xml:space="preserve">
-    <value>groupBox13</value>
-  </data>
-  <data name="&gt;&gt;groupBox13.Type" xml:space="preserve">
+  <data name="&gt;&gt;groupBoxFees.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;groupBox13.Parent" xml:space="preserve">
-    <value>groupBox21</value>
+  <data name="&gt;&gt;groupBoxFees.Parent" xml:space="preserve">
+    <value>groupBox20</value>
   </data>
-  <data name="&gt;&gt;groupBox13.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="groupBox21.Location" type="System.Drawing.Point, System.Drawing">
-    <value>289, 44</value>
-  </data>
-  <data name="groupBox21.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1231, 657</value>
-  </data>
-  <data name="groupBox21.TabIndex" type="System.Int32, mscorlib">
-    <value>206</value>
-  </data>
-  <data name="&gt;&gt;groupBox21.Name" xml:space="preserve">
-    <value>groupBox21</value>
-  </data>
-  <data name="&gt;&gt;groupBox21.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.GroupControl, DevExpress.Utils.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;groupBox21.Parent" xml:space="preserve">
-    <value>xtraTabPageRepoHistory</value>
-  </data>
-  <data name="&gt;&gt;groupBox21.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;groupBoxFees.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="textBox41.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="&gt;&gt;textBox6.Name" xml:space="preserve">
+    <value>textBox6</value>
   </data>
-  <data name="textBox41.Location" type="System.Drawing.Point, System.Drawing">
-    <value>657, 17</value>
-  </data>
-  <data name="textBox41.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt</value>
-  </data>
-  <data name="textBox41.Size" type="System.Drawing.Size, System.Drawing">
-    <value>41, 28</value>
-  </data>
-  <data name="textBox41.TabIndex" type="System.Int32, mscorlib">
-    <value>204</value>
-  </data>
-  <data name="&gt;&gt;textBox41.Name" xml:space="preserve">
-    <value>textBox41</value>
-  </data>
-  <data name="&gt;&gt;textBox41.Type" xml:space="preserve">
+  <data name="&gt;&gt;textBox6.Type" xml:space="preserve">
     <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
-  <data name="&gt;&gt;textBox41.Parent" xml:space="preserve">
-    <value>groupBox13</value>
+  <data name="&gt;&gt;textBox6.Parent" xml:space="preserve">
+    <value>groupBox12</value>
   </data>
-  <data name="&gt;&gt;textBox41.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;textBox6.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="textBox42.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="&gt;&gt;textBox12.Name" xml:space="preserve">
+    <value>textBox12</value>
   </data>
-  <data name="textBox42.Location" type="System.Drawing.Point, System.Drawing">
-    <value>229, 48</value>
-  </data>
-  <data name="textBox42.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt</value>
-  </data>
-  <data name="textBox42.Size" type="System.Drawing.Size, System.Drawing">
-    <value>51, 28</value>
-  </data>
-  <data name="textBox42.TabIndex" type="System.Int32, mscorlib">
-    <value>207</value>
-  </data>
-  <data name="&gt;&gt;textBox42.Name" xml:space="preserve">
-    <value>textBox42</value>
-  </data>
-  <data name="&gt;&gt;textBox42.Type" xml:space="preserve">
+  <data name="&gt;&gt;textBox12.Type" xml:space="preserve">
     <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
-  <data name="&gt;&gt;textBox42.Parent" xml:space="preserve">
-    <value>groupBox13</value>
+  <data name="&gt;&gt;textBox12.Parent" xml:space="preserve">
+    <value>groupBox12</value>
   </data>
-  <data name="&gt;&gt;textBox42.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;textBox12.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="textBox43.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="&gt;&gt;textBox13.Name" xml:space="preserve">
+    <value>textBox13</value>
   </data>
-  <data name="textBox43.Location" type="System.Drawing.Point, System.Drawing">
-    <value>199, 48</value>
-  </data>
-  <data name="textBox43.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt</value>
-  </data>
-  <data name="textBox43.Size" type="System.Drawing.Size, System.Drawing">
-    <value>29, 28</value>
-  </data>
-  <data name="textBox43.TabIndex" type="System.Int32, mscorlib">
-    <value>206</value>
-  </data>
-  <data name="&gt;&gt;textBox43.Name" xml:space="preserve">
-    <value>textBox43</value>
-  </data>
-  <data name="&gt;&gt;textBox43.Type" xml:space="preserve">
+  <data name="&gt;&gt;textBox13.Type" xml:space="preserve">
     <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
-  <data name="&gt;&gt;textBox43.Parent" xml:space="preserve">
-    <value>groupBox13</value>
+  <data name="&gt;&gt;textBox13.Parent" xml:space="preserve">
+    <value>groupBox12</value>
   </data>
-  <data name="&gt;&gt;textBox43.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;textBox13.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="textBox44.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="&gt;&gt;textBox26.Name" xml:space="preserve">
+    <value>textBox26</value>
   </data>
-  <data name="textBox44.Location" type="System.Drawing.Point, System.Drawing">
-    <value>155, 48</value>
-  </data>
-  <data name="textBox44.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt</value>
-  </data>
-  <data name="textBox44.Size" type="System.Drawing.Size, System.Drawing">
-    <value>43, 28</value>
-  </data>
-  <data name="textBox44.TabIndex" type="System.Int32, mscorlib">
-    <value>205</value>
-  </data>
-  <data name="&gt;&gt;textBox44.Name" xml:space="preserve">
-    <value>textBox44</value>
-  </data>
-  <data name="&gt;&gt;textBox44.Type" xml:space="preserve">
+  <data name="&gt;&gt;textBox26.Type" xml:space="preserve">
     <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
-  <data name="&gt;&gt;textBox44.Parent" xml:space="preserve">
-    <value>groupBox13</value>
+  <data name="&gt;&gt;textBox26.Parent" xml:space="preserve">
+    <value>groupBox12</value>
   </data>
-  <data name="&gt;&gt;textBox44.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;textBox26.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="textBox45.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="&gt;&gt;textBox38.Name" xml:space="preserve">
+    <value>textBox38</value>
   </data>
-  <data name="textBox45.Location" type="System.Drawing.Point, System.Drawing">
-    <value>444, 17</value>
-  </data>
-  <data name="textBox45.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt</value>
-  </data>
-  <data name="textBox45.Size" type="System.Drawing.Size, System.Drawing">
-    <value>212, 28</value>
-  </data>
-  <data name="textBox45.TabIndex" type="System.Int32, mscorlib">
-    <value>203</value>
-  </data>
-  <data name="&gt;&gt;textBox45.Name" xml:space="preserve">
-    <value>textBox45</value>
-  </data>
-  <data name="&gt;&gt;textBox45.Type" xml:space="preserve">
+  <data name="&gt;&gt;textBox38.Type" xml:space="preserve">
     <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
-  <data name="&gt;&gt;textBox45.Parent" xml:space="preserve">
-    <value>groupBox13</value>
+  <data name="&gt;&gt;textBox38.Parent" xml:space="preserve">
+    <value>groupBox12</value>
   </data>
-  <data name="&gt;&gt;textBox45.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;textBox38.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="textBox46.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="&gt;&gt;textBox39.Name" xml:space="preserve">
+    <value>textBox39</value>
   </data>
-  <data name="textBox46.Location" type="System.Drawing.Point, System.Drawing">
-    <value>307, 17</value>
-  </data>
-  <data name="textBox46.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt</value>
-  </data>
-  <data name="textBox46.Size" type="System.Drawing.Size, System.Drawing">
-    <value>136, 28</value>
-  </data>
-  <data name="textBox46.TabIndex" type="System.Int32, mscorlib">
-    <value>202</value>
-  </data>
-  <data name="&gt;&gt;textBox46.Name" xml:space="preserve">
-    <value>textBox46</value>
-  </data>
-  <data name="&gt;&gt;textBox46.Type" xml:space="preserve">
+  <data name="&gt;&gt;textBox39.Type" xml:space="preserve">
     <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
-  <data name="&gt;&gt;textBox46.Parent" xml:space="preserve">
-    <value>groupBox13</value>
+  <data name="&gt;&gt;textBox39.Parent" xml:space="preserve">
+    <value>groupBox12</value>
   </data>
-  <data name="&gt;&gt;textBox46.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;textBox39.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="textBox52.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="&gt;&gt;textBox40.Name" xml:space="preserve">
+    <value>textBox40</value>
   </data>
-  <data name="textBox52.Location" type="System.Drawing.Point, System.Drawing">
-    <value>155, 17</value>
-  </data>
-  <data name="textBox52.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt</value>
-  </data>
-  <data name="textBox52.Size" type="System.Drawing.Size, System.Drawing">
-    <value>67, 28</value>
-  </data>
-  <data name="textBox52.TabIndex" type="System.Int32, mscorlib">
-    <value>201</value>
-  </data>
-  <data name="&gt;&gt;textBox52.Name" xml:space="preserve">
-    <value>textBox52</value>
-  </data>
-  <data name="&gt;&gt;textBox52.Type" xml:space="preserve">
+  <data name="&gt;&gt;textBox40.Type" xml:space="preserve">
     <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
-  <data name="&gt;&gt;textBox52.Parent" xml:space="preserve">
-    <value>groupBox13</value>
+  <data name="&gt;&gt;textBox40.Parent" xml:space="preserve">
+    <value>groupBox12</value>
   </data>
-  <data name="&gt;&gt;textBox52.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;textBox40.ZOrder" xml:space="preserve">
     <value>8</value>
+  </data>
+  <data name="groupBox12.Location" type="System.Drawing.Point, System.Drawing">
+    <value>265, 107</value>
+  </data>
+  <data name="groupBox12.Size" type="System.Drawing.Size, System.Drawing">
+    <value>763, 82</value>
+  </data>
+  <data name="groupBox12.TabIndex" type="System.Int32, mscorlib">
+    <value>711</value>
+  </data>
+  <data name="&gt;&gt;groupBox12.Name" xml:space="preserve">
+    <value>groupBox12</value>
+  </data>
+  <data name="&gt;&gt;groupBox12.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox12.Parent" xml:space="preserve">
+    <value>groupBox20</value>
+  </data>
+  <data name="&gt;&gt;groupBox12.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="groupBox20.Location" type="System.Drawing.Point, System.Drawing">
+    <value>258, 44</value>
+  </data>
+  <data name="groupBox20.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1292, 657</value>
+  </data>
+  <data name="groupBox20.TabIndex" type="System.Int32, mscorlib">
+    <value>714</value>
+  </data>
+  <data name="&gt;&gt;groupBox20.Name" xml:space="preserve">
+    <value>groupBox20</value>
+  </data>
+  <data name="&gt;&gt;groupBox20.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.GroupControl, DevExpress.Utils.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;groupBox20.Parent" xml:space="preserve">
+    <value>xtraTabPageCustomerFees</value>
+  </data>
+  <data name="&gt;&gt;groupBox20.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="textBoxTotalFees.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="textBoxTotalFees.Location" type="System.Drawing.Point, System.Drawing">
+    <value>385, 234</value>
+  </data>
+  <data name="textBoxTotalFees.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="textBoxTotalFees.Properties.BeepOnError" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="textBoxTotalFees.Properties.UseMaskAsDisplayFormat" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="textBoxTotalFees.Size" type="System.Drawing.Size, System.Drawing">
+    <value>119, 28</value>
+  </data>
+  <data name="textBoxTotalFees.TabIndex" type="System.Int32, mscorlib">
+    <value>720</value>
+  </data>
+  <data name="&gt;&gt;textBoxTotalFees.Name" xml:space="preserve">
+    <value>textBoxTotalFees</value>
+  </data>
+  <data name="&gt;&gt;textBoxTotalFees.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;textBoxTotalFees.Parent" xml:space="preserve">
+    <value>groupBoxFees</value>
+  </data>
+  <data name="&gt;&gt;textBoxTotalFees.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="textBoxRepairFee5.EditValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textBoxRepairFee5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>385, 181</value>
+  </data>
+  <data name="textBoxRepairFee5.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="textBoxRepairFee5.Properties.BeepOnError" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="textBoxRepairFee5.Properties.UseMaskAsDisplayFormat" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="textBoxRepairFee5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>119, 28</value>
+  </data>
+  <data name="textBoxRepairFee5.TabIndex" type="System.Int32, mscorlib">
+    <value>719</value>
+  </data>
+  <data name="&gt;&gt;textBoxRepairFee5.Name" xml:space="preserve">
+    <value>textBoxRepairFee5</value>
+  </data>
+  <data name="&gt;&gt;textBoxRepairFee5.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;textBoxRepairFee5.Parent" xml:space="preserve">
+    <value>groupBoxFees</value>
+  </data>
+  <data name="&gt;&gt;textBoxRepairFee5.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="textBoxRepairFee4.EditValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textBoxRepairFee4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>385, 146</value>
+  </data>
+  <data name="textBoxRepairFee4.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="textBoxRepairFee4.Properties.BeepOnError" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="textBoxRepairFee4.Properties.UseMaskAsDisplayFormat" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="textBoxRepairFee4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>119, 28</value>
+  </data>
+  <data name="textBoxRepairFee4.TabIndex" type="System.Int32, mscorlib">
+    <value>718</value>
+  </data>
+  <data name="&gt;&gt;textBoxRepairFee4.Name" xml:space="preserve">
+    <value>textBoxRepairFee4</value>
+  </data>
+  <data name="&gt;&gt;textBoxRepairFee4.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;textBoxRepairFee4.Parent" xml:space="preserve">
+    <value>groupBoxFees</value>
+  </data>
+  <data name="&gt;&gt;textBoxRepairFee4.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="textBoxRepairFee3.EditValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textBoxRepairFee3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>385, 111</value>
+  </data>
+  <data name="textBoxRepairFee3.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="textBoxRepairFee3.Properties.BeepOnError" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="textBoxRepairFee3.Properties.UseMaskAsDisplayFormat" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="textBoxRepairFee3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>119, 28</value>
+  </data>
+  <data name="textBoxRepairFee3.TabIndex" type="System.Int32, mscorlib">
+    <value>717</value>
+  </data>
+  <data name="&gt;&gt;textBoxRepairFee3.Name" xml:space="preserve">
+    <value>textBoxRepairFee3</value>
+  </data>
+  <data name="&gt;&gt;textBoxRepairFee3.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;textBoxRepairFee3.Parent" xml:space="preserve">
+    <value>groupBoxFees</value>
+  </data>
+  <data name="&gt;&gt;textBoxRepairFee3.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="textBoxRepairFee2.EditValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textBoxRepairFee2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>385, 76</value>
+  </data>
+  <data name="textBoxRepairFee2.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="textBoxRepairFee2.Properties.BeepOnError" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="textBoxRepairFee2.Properties.UseMaskAsDisplayFormat" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="textBoxRepairFee2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>119, 28</value>
+  </data>
+  <data name="textBoxRepairFee2.TabIndex" type="System.Int32, mscorlib">
+    <value>716</value>
+  </data>
+  <data name="&gt;&gt;textBoxRepairFee2.Name" xml:space="preserve">
+    <value>textBoxRepairFee2</value>
+  </data>
+  <data name="&gt;&gt;textBoxRepairFee2.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;textBoxRepairFee2.Parent" xml:space="preserve">
+    <value>groupBoxFees</value>
+  </data>
+  <data name="&gt;&gt;textBoxRepairFee2.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="textBoxRepairFee1.EditValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textBoxRepairFee1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>385, 41</value>
+  </data>
+  <data name="textBoxRepairFee1.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="textBoxRepairFee1.Properties.BeepOnError" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="textBoxRepairFee1.Properties.UseMaskAsDisplayFormat" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="textBoxRepairFee1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>119, 28</value>
+  </data>
+  <data name="textBoxRepairFee1.TabIndex" type="System.Int32, mscorlib">
+    <value>715</value>
+  </data>
+  <data name="&gt;&gt;textBoxRepairFee1.Name" xml:space="preserve">
+    <value>textBoxRepairFee1</value>
+  </data>
+  <data name="&gt;&gt;textBoxRepairFee1.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;textBoxRepairFee1.Parent" xml:space="preserve">
+    <value>groupBoxFees</value>
+  </data>
+  <data name="&gt;&gt;textBoxRepairFee1.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="textBoxResaleFees.EditValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textBoxResaleFees.Location" type="System.Drawing.Point, System.Drawing">
+    <value>152, 146</value>
+  </data>
+  <data name="textBoxResaleFees.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="textBoxResaleFees.Properties.BeepOnError" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="textBoxResaleFees.Properties.UseMaskAsDisplayFormat" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="textBoxResaleFees.Size" type="System.Drawing.Size, System.Drawing">
+    <value>119, 28</value>
+  </data>
+  <data name="textBoxResaleFees.TabIndex" type="System.Int32, mscorlib">
+    <value>714</value>
+  </data>
+  <data name="&gt;&gt;textBoxResaleFees.Name" xml:space="preserve">
+    <value>textBoxResaleFees</value>
+  </data>
+  <data name="&gt;&gt;textBoxResaleFees.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;textBoxResaleFees.Parent" xml:space="preserve">
+    <value>groupBoxFees</value>
+  </data>
+  <data name="&gt;&gt;textBoxResaleFees.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="textBoxImpoundFees.EditValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textBoxImpoundFees.Location" type="System.Drawing.Point, System.Drawing">
+    <value>152, 111</value>
+  </data>
+  <data name="textBoxImpoundFees.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="textBoxImpoundFees.Properties.BeepOnError" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="textBoxImpoundFees.Properties.UseMaskAsDisplayFormat" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="textBoxImpoundFees.Size" type="System.Drawing.Size, System.Drawing">
+    <value>119, 28</value>
+  </data>
+  <data name="textBoxImpoundFees.TabIndex" type="System.Int32, mscorlib">
+    <value>713</value>
+  </data>
+  <data name="&gt;&gt;textBoxImpoundFees.Name" xml:space="preserve">
+    <value>textBoxImpoundFees</value>
+  </data>
+  <data name="&gt;&gt;textBoxImpoundFees.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;textBoxImpoundFees.Parent" xml:space="preserve">
+    <value>groupBoxFees</value>
+  </data>
+  <data name="&gt;&gt;textBoxImpoundFees.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="textBoxStorageFees.EditValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textBoxStorageFees.Location" type="System.Drawing.Point, System.Drawing">
+    <value>152, 76</value>
+  </data>
+  <data name="textBoxStorageFees.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="textBoxStorageFees.Properties.BeepOnError" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="textBoxStorageFees.Properties.UseMaskAsDisplayFormat" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="textBoxStorageFees.Size" type="System.Drawing.Size, System.Drawing">
+    <value>119, 28</value>
+  </data>
+  <data name="textBoxStorageFees.TabIndex" type="System.Int32, mscorlib">
+    <value>712</value>
+  </data>
+  <data name="&gt;&gt;textBoxStorageFees.Name" xml:space="preserve">
+    <value>textBoxStorageFees</value>
+  </data>
+  <data name="&gt;&gt;textBoxStorageFees.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;textBoxStorageFees.Parent" xml:space="preserve">
+    <value>groupBoxFees</value>
+  </data>
+  <data name="&gt;&gt;textBoxStorageFees.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="textBoxRepoFees.EditValue" xml:space="preserve">
+    <value />
+  </data>
+  <data name="textBoxRepoFees.Location" type="System.Drawing.Point, System.Drawing">
+    <value>152, 41</value>
+  </data>
+  <data name="textBoxRepoFees.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="textBoxRepoFees.Properties.BeepOnError" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="textBoxRepoFees.Properties.UseMaskAsDisplayFormat" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="textBoxRepoFees.Size" type="System.Drawing.Size, System.Drawing">
+    <value>119, 28</value>
+  </data>
+  <data name="textBoxRepoFees.TabIndex" type="System.Int32, mscorlib">
+    <value>711</value>
+  </data>
+  <data name="&gt;&gt;textBoxRepoFees.Name" xml:space="preserve">
+    <value>textBoxRepoFees</value>
+  </data>
+  <data name="&gt;&gt;textBoxRepoFees.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;textBoxRepoFees.Parent" xml:space="preserve">
+    <value>groupBoxFees</value>
+  </data>
+  <data name="&gt;&gt;textBoxRepoFees.ZOrder" xml:space="preserve">
+    <value>16</value>
   </data>
   <data name="textBox6.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -22840,13 +22993,13 @@
     <value>4</value>
   </data>
   <data name="checkBoxPaymentProfile.Location" type="System.Drawing.Point, System.Drawing">
-    <value>759, 663</value>
+    <value>810, 663</value>
   </data>
   <data name="checkBoxPaymentProfile.Properties.Caption" xml:space="preserve">
     <value>Override?</value>
   </data>
   <data name="checkBoxPaymentProfile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 24</value>
+    <value>101, 24</value>
   </data>
   <data name="checkBoxPaymentProfile.TabIndex" type="System.Int32, mscorlib">
     <value>124</value>
@@ -22864,7 +23017,7 @@
     <value>5</value>
   </data>
   <data name="buttonEditPaymentHistory.Location" type="System.Drawing.Point, System.Drawing">
-    <value>532, 663</value>
+    <value>583, 663</value>
   </data>
   <data name="buttonEditPaymentHistory.MaximumSize" type="System.Drawing.Size, System.Drawing">
     <value>220, 29</value>
@@ -22984,13 +23137,13 @@
     <value>225, 663</value>
   </data>
   <data name="textBoxPaymentHistoryProfile.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>300, 29</value>
+    <value>350, 29</value>
   </data>
   <data name="textBoxPaymentHistoryProfile.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>300, 29</value>
+    <value>350, 29</value>
   </data>
   <data name="textBoxPaymentHistoryProfile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>300, 29</value>
+    <value>350, 29</value>
   </data>
   <data name="textBoxPaymentHistoryProfile.TabIndex" type="System.Int32, mscorlib">
     <value>45</value>
@@ -23032,13 +23185,13 @@
     <value>11</value>
   </data>
   <data name="checkBoxPurge.Location" type="System.Drawing.Point, System.Drawing">
-    <value>653, 49</value>
+    <value>658, 49</value>
   </data>
   <data name="checkBoxPurge.Properties.Caption" xml:space="preserve">
     <value>Purge</value>
   </data>
   <data name="checkBoxPurge.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 24</value>
+    <value>69, 24</value>
   </data>
   <data name="checkBoxPurge.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -23146,7 +23299,7 @@
     <value>Report</value>
   </data>
   <data name="checkBoxReportTSB.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 24</value>
+    <value>101, 24</value>
   </data>
   <data name="checkBoxReportTSB.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
