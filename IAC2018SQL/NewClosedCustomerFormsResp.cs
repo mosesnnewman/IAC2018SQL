@@ -136,6 +136,13 @@ namespace IAC2021SQL
             layoutControlRepoHistory.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Style3D;
             layoutControlRepoHistory.LookAndFeel.UseDefaultLookAndFeel = false;
             layoutControlRepoHistory.OptionsView.ShareLookAndFeelWithChildren= false;
+            layoutControlInvoices.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Style3D;
+            layoutControlInvoices.LookAndFeel.UseDefaultLookAndFeel = false;
+            layoutControlInvoices.OptionsView.ShareLookAndFeelWithChildren = false;
+            layoutControlComments.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Style3D;
+            layoutControlComments.LookAndFeel.UseDefaultLookAndFeel = false;
+            layoutControlComments.OptionsView.ShareLookAndFeelWithChildren = false;
+
             checkEditActiveDuty.Visible = false;
             dateEditActiveDutyStart.Visible = false;
             dateEditActiveDutyEnd.Visible = false;
@@ -164,7 +171,7 @@ namespace IAC2021SQL
             dealerlistTableAdapterCust.FillAll(iACDataSet.DEALERLIST);
             // Moses Newman 10/24/2013 Add Binding sources to DEALER NAME fields on History and Comment Tabs so it does not disply dealer 112 if no customer
             textBox2.DataBindings.Clear();
-            textBox8.DataBindings.Clear();
+            textEditDlrName1.DataBindings.Clear();
             monthNamesTableAdapter.Fill(iACDataSet.MonthNames);
             cUSTOMER_NOTextBox.EditValue = (Program.gsKey != null) ? Program.gsKey : "";
             if (Program.gsKey != null)
@@ -1135,9 +1142,9 @@ namespace IAC2021SQL
                     comboBoxRepoInd.ItemIndex = 1;*/
                 // Moses Newman 10/24/2013 Add Binding sources to DEALER NAME fields on History and Comment Tabs so it does not disply dealer 112 if no customer
                 textBox2.DataBindings.Clear();
-                textBox8.DataBindings.Clear();
+                textEditDlrName1.DataBindings.Clear();
                 textBox2.DataBindings.Add(new System.Windows.Forms.Binding("Text", DealerListCustbindingSource, "DEALER_NAME", true));
-                textBox8.DataBindings.Add(new System.Windows.Forms.Binding("Text", DealerListCustbindingSource, "DEALER_NAME", true));
+                textEditDlrName1.DataBindings.Add(new System.Windows.Forms.Binding("Text", DealerListCustbindingSource, "DEALER_NAME", true));
                 // Moses Newman 04/10/2014 add dealer state to first tab customer screen
                 dEALERTableAdapter.Fill(iACDataSet.DEALER, iACDataSet.CUSTOMER.Rows[0].Field<Int32>("CUSTOMER_DEALER"));
                 cUSTOMER_PURCHASE_ORDERTextBox.EditValue = iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_PURCHASE_ORDER").ToString();
@@ -5351,12 +5358,12 @@ namespace IAC2021SQL
             object loQuery = null;
             view.SetRowCellValue(e.RowHandle, "COMMENT_USERID", Program.gsUserID.TrimEnd());
             view.SetRowCellValue(e.RowHandle, "COMMENT_DATE", DateTime.Now.Date);
-            view.SetRowCellValue(e.RowHandle, "COMMENT_NO", txtCommentNo.Text.ToString().TrimEnd());
+            view.SetRowCellValue(e.RowHandle, "COMMENT_NO", textEditCustomerID1.EditValue.ToString().TrimEnd());
             view.SetRowCellValue(e.RowHandle, "COMMENT_HHMMSS",
                 DateTime.Now.Hour.ToString().PadLeft(2, '0') + DateTime.Now.Minute.ToString().PadLeft(2, '0') + DateTime.Now.Second.ToString().PadLeft(2, '0'));
             if (lnSeq == 0)
             {
-                loQuery = cOMMENTTableAdapter.SeqNoQuery(txtCommentNo.Text.ToString().TrimEnd(), DateTime.Now.Date);
+                loQuery = cOMMENTTableAdapter.SeqNoQuery(textEditCustomerID1.EditValue.ToString().TrimEnd(), DateTime.Now.Date);
                 if (loQuery != null)
                     lnSeq = (int)loQuery + 1;
                 else
@@ -6254,6 +6261,11 @@ namespace IAC2021SQL
         {
             if (lbEdit || lbAddFlag)
                 toolStripButtonSave.Enabled = true;
+        }
+
+        private void groupCotrol4_Paint(object sender, PaintEventArgs e)
+        {
+
         }
 
         private void textBoxCurrentBalance_EditValueChanged(object sender, EventArgs e)

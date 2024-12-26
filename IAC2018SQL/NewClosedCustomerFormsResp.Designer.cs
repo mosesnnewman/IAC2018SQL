@@ -89,9 +89,6 @@ namespace IAC2021SQL
             System.Windows.Forms.Label label123;
             System.Windows.Forms.Label label124;
             System.Windows.Forms.Label label125;
-            System.Windows.Forms.Label label9;
-            System.Windows.Forms.Label label11;
-            System.Windows.Forms.Label label10;
             System.Windows.Forms.Label label202;
             System.Windows.Forms.Label label203;
             System.Windows.Forms.Label label204;
@@ -125,30 +122,30 @@ namespace IAC2021SQL
             System.Windows.Forms.Label label49;
             System.Windows.Forms.Label label117;
             System.Windows.Forms.Label label116;
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition25 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition26 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition27 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition28 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition29 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition30 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition25 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition26 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition27 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition28 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition29 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition30 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition31 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition32 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition33 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition34 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition35 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition36 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition31 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition32 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition33 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition34 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition35 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition36 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition1 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition2 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition3 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition4 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition5 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition6 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition1 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition2 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition3 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition4 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition5 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition6 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition7 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition8 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition9 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition10 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition11 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition12 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition7 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition8 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition9 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition10 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition11 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition12 = new DevExpress.XtraLayout.RowDefinition();
             this.cUSTOMERBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.iACDataSet = new IAC2021SQL.IACDataSet();
             this.cOMMENTBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -949,19 +946,7 @@ namespace IAC2021SQL
             this.colCUSTHIST_PAYMENT_CODE = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCUSTHIST_THRU_UD = new DevExpress.XtraGrid.Columns.GridColumn();
             this.xtraTabPageInvoices = new DevExpress.XtraTab.XtraTabPage();
-            this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
-            this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
-            this.textEditDlrName = new DevExpress.XtraEditors.TextEdit();
-            this.textEditDealerID = new DevExpress.XtraEditors.TextEdit();
-            this.textEditLastName = new DevExpress.XtraEditors.TextEdit();
-            this.textEditFirstName = new DevExpress.XtraEditors.TextEdit();
-            this.textEditCustomerID = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlGroup4 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlInvoices = new DevExpress.XtraLayout.LayoutControl();
             this.gridControlInvoices = new DevExpress.XtraGrid.GridControl();
             this.invoicesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridViewInvoices = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -974,8 +959,22 @@ namespace IAC2021SQL
             this.IsPaid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemCheckEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.colCustomerID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.textEditDlrName = new DevExpress.XtraEditors.TextEdit();
+            this.textEditDealerID = new DevExpress.XtraEditors.TextEdit();
+            this.textEditLastName = new DevExpress.XtraEditors.TextEdit();
+            this.textEditFirstName = new DevExpress.XtraEditors.TextEdit();
+            this.textEditCustomerID = new DevExpress.XtraEditors.TextEdit();
+            this.layoutControlGroupInvoices = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlGroupInvoicesHeader = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlGroupInvoicesGrid = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItemInvoicesGrid = new DevExpress.XtraLayout.LayoutControlItem();
             this.xtraTabPageComments = new DevExpress.XtraTab.XtraTabPage();
-            this.groupBox19 = new DevExpress.XtraEditors.GroupControl();
+            this.layoutControlComments = new DevExpress.XtraLayout.LayoutControl();
             this.cOMMENTGridControl = new DevExpress.XtraGrid.GridControl();
             this.cOMMENTgridView = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colDATE = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -998,13 +997,19 @@ namespace IAC2021SQL
             this.colImgSort = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSMSTemplate1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.textBox23 = new DevExpress.XtraEditors.TextEdit();
-            this.textBox8 = new DevExpress.XtraEditors.TextEdit();
-            this.textBox9 = new DevExpress.XtraEditors.TextEdit();
-            this.textBox10 = new DevExpress.XtraEditors.TextEdit();
-            this.textBox11 = new DevExpress.XtraEditors.TextEdit();
-            this.txtCommentNo = new DevExpress.XtraEditors.TextEdit();
+            this.textEditCustomerID1 = new DevExpress.XtraEditors.TextEdit();
+            this.textEditDealerID1 = new DevExpress.XtraEditors.TextEdit();
+            this.textEditFirstName1 = new DevExpress.XtraEditors.TextEdit();
+            this.textEditDlrName1 = new DevExpress.XtraEditors.TextEdit();
+            this.textEditLastName1 = new DevExpress.XtraEditors.TextEdit();
+            this.layoutControlGroupComments = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItemCommentGrid = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlGroupCommentsHeader = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlCustomerID = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlDealerID = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutFirstName = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlDealerName = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutLastName = new DevExpress.XtraLayout.LayoutControlItem();
             this.xtraTabPageRepossession = new DevExpress.XtraTab.XtraTabPage();
             this.layoutControlRepo = new DevExpress.XtraLayout.LayoutControl();
             this.nullableDateTimePickerAucDate = new DevExpress.XtraEditors.DateEdit();
@@ -1084,10 +1089,25 @@ namespace IAC2021SQL
             this.colOrgDateTitleReceived = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNewDateTitleReceived = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colidRepo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.textBox482 = new DevExpress.XtraEditors.TextEdit();
+            this.textBox472 = new DevExpress.XtraEditors.TextEdit();
+            this.textBox172 = new DevExpress.XtraEditors.TextEdit();
+            this.textBox192 = new DevExpress.XtraEditors.TextEdit();
+            this.textBox512 = new DevExpress.XtraEditors.TextEdit();
+            this.textBox502 = new DevExpress.XtraEditors.TextEdit();
+            this.textBox492 = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlGroupRepoHistory = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroupRepoHistoryHeader = new DevExpress.XtraLayout.LayoutControlGroup();
             this.emptySpaceItem119 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem125 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.layoutControlGroup7 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem41 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem44 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem45 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem47 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem48 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem49 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem50 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroupRepoHistoryGrid = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItemRepoHistoryGridControl = new DevExpress.XtraLayout.LayoutControlItem();
             this.xtraTabPageCustomerFees = new DevExpress.XtraTab.XtraTabPage();
@@ -1272,21 +1292,7 @@ namespace IAC2021SQL
             this.bar7 = new DevExpress.XtraBars.Bar();
             this.bar8 = new DevExpress.XtraBars.Bar();
             this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.textBox512 = new DevExpress.XtraEditors.TextEdit();
-            this.textBox472 = new DevExpress.XtraEditors.TextEdit();
-            this.textBox482 = new DevExpress.XtraEditors.TextEdit();
-            this.textBox492 = new DevExpress.XtraEditors.TextEdit();
-            this.textBox192 = new DevExpress.XtraEditors.TextEdit();
-            this.textBox502 = new DevExpress.XtraEditors.TextEdit();
-            this.textBox172 = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlGroup7 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.layoutControlItem41 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem44 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem45 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem47 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem48 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem49 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem50 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlGroupCommentGrid = new DevExpress.XtraLayout.LayoutControlGroup();
             labelTotalDue = new System.Windows.Forms.Label();
             labelDealerCashPrice = new System.Windows.Forms.Label();
             label30 = new System.Windows.Forms.Label();
@@ -1343,9 +1349,6 @@ namespace IAC2021SQL
             label123 = new System.Windows.Forms.Label();
             label124 = new System.Windows.Forms.Label();
             label125 = new System.Windows.Forms.Label();
-            label9 = new System.Windows.Forms.Label();
-            label11 = new System.Windows.Forms.Label();
-            label10 = new System.Windows.Forms.Label();
             label202 = new System.Windows.Forms.Label();
             label203 = new System.Windows.Forms.Label();
             label204 = new System.Windows.Forms.Label();
@@ -2133,28 +2136,29 @@ namespace IAC2021SQL
             ((System.ComponentModel.ISupportInitialize)(this.gridControlCustomerHist)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewCustomerHistory)).BeginInit();
             this.xtraTabPageInvoices.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).BeginInit();
-            this.groupControl4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
-            this.layoutControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlInvoices)).BeginInit();
+            this.layoutControlInvoices.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlInvoices)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.invoicesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewInvoices)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditDlrName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditDealerID.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditLastName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditFirstName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditCustomerID.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroupInvoices)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroupInvoicesHeader)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControlInvoices)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.invoicesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridViewInvoices)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroupInvoicesGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemInvoicesGrid)).BeginInit();
             this.xtraTabPageComments.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupBox19)).BeginInit();
-            this.groupBox19.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlComments)).BeginInit();
+            this.layoutControlComments.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cOMMENTGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cOMMENTgridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1)).BeginInit();
@@ -2163,13 +2167,19 @@ namespace IAC2021SQL
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
-            this.groupBox7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textBox23.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBox8.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBox9.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBox10.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBox11.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCommentNo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditCustomerID1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditDealerID1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditFirstName1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditDlrName1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditLastName1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroupComments)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemCommentGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroupCommentsHeader)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlCustomerID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlDealerID)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutFirstName)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlDealerName)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutLastName)).BeginInit();
             this.xtraTabPageRepossession.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlRepo)).BeginInit();
             this.layoutControlRepo.SuspendLayout();
@@ -2231,10 +2241,25 @@ namespace IAC2021SQL
             this.layoutControlRepoHistory.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlRepoLog)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewRepoLog)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBox482.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBox472.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBox172.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBox192.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBox512.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBox502.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBox492.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroupRepoHistory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroupRepoHistoryHeader)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem119)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem125)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem41)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem44)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem45)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem47)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem48)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem49)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem50)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroupRepoHistoryGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemRepoHistoryGridControl)).BeginInit();
             this.xtraTabPageCustomerFees.SuspendLayout();
@@ -2398,21 +2423,7 @@ namespace IAC2021SQL
             ((System.ComponentModel.ISupportInitialize)(this.textBox14.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitterItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBox512.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBox472.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBox482.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBox492.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBox192.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBox502.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBox172.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem41)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem44)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem45)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem47)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem48)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem49)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem50)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroupCommentGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // labelTotalDue
@@ -2710,22 +2721,6 @@ namespace IAC2021SQL
             // 
             resources.ApplyResources(label125, "label125");
             label125.Name = "label125";
-            // 
-            // label9
-            // 
-            resources.ApplyResources(label9, "label9");
-            label9.Name = "label9";
-            // 
-            // label11
-            // 
-            resources.ApplyResources(label11, "label11");
-            label11.Name = "label11";
-            // 
-            // label10
-            // 
-            resources.ApplyResources(label10, "label10");
-            label10.BackColor = System.Drawing.Color.Transparent;
-            label10.Name = "label10";
             // 
             // label202
             // 
@@ -7154,44 +7149,44 @@ namespace IAC2021SQL
             this.layoutControlGroupLoanInfoTop.OptionsPrint.AppearanceItem.BackColor = System.Drawing.Color.Transparent;
             this.layoutControlGroupLoanInfoTop.OptionsPrint.AppearanceItem.Options.UseBackColor = true;
             this.layoutControlGroupLoanInfoTop.OptionsTableLayoutGroup.AutoSizeDefaultDefinitionLength = 250;
-            columnDefinition25.SizeType = System.Windows.Forms.SizeType.Absolute;
-            columnDefinition25.Width = 258D;
-            columnDefinition26.SizeType = System.Windows.Forms.SizeType.Absolute;
-            columnDefinition26.Width = 250D;
-            columnDefinition27.SizeType = System.Windows.Forms.SizeType.Absolute;
-            columnDefinition27.Width = 254D;
-            columnDefinition28.SizeType = System.Windows.Forms.SizeType.Absolute;
-            columnDefinition28.Width = 306D;
-            columnDefinition29.SizeType = System.Windows.Forms.SizeType.Absolute;
-            columnDefinition29.Width = 250D;
-            columnDefinition30.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            columnDefinition30.Width = 411D;
+            columnDefinition1.SizeType = System.Windows.Forms.SizeType.Absolute;
+            columnDefinition1.Width = 258D;
+            columnDefinition2.SizeType = System.Windows.Forms.SizeType.Absolute;
+            columnDefinition2.Width = 250D;
+            columnDefinition3.SizeType = System.Windows.Forms.SizeType.Absolute;
+            columnDefinition3.Width = 254D;
+            columnDefinition4.SizeType = System.Windows.Forms.SizeType.Absolute;
+            columnDefinition4.Width = 306D;
+            columnDefinition5.SizeType = System.Windows.Forms.SizeType.Absolute;
+            columnDefinition5.Width = 250D;
+            columnDefinition6.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            columnDefinition6.Width = 411D;
             this.layoutControlGroupLoanInfoTop.OptionsTableLayoutGroup.ColumnDefinitions.AddRange(new DevExpress.XtraLayout.ColumnDefinition[] {
-            columnDefinition25,
-            columnDefinition26,
-            columnDefinition27,
-            columnDefinition28,
-            columnDefinition29,
-            columnDefinition30});
-            rowDefinition25.Height = 41D;
-            rowDefinition25.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            rowDefinition26.Height = 41D;
-            rowDefinition26.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            rowDefinition27.Height = 41D;
-            rowDefinition27.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            rowDefinition28.Height = 41D;
-            rowDefinition28.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            rowDefinition29.Height = 41D;
-            rowDefinition29.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            rowDefinition30.Height = 43D;
-            rowDefinition30.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            columnDefinition1,
+            columnDefinition2,
+            columnDefinition3,
+            columnDefinition4,
+            columnDefinition5,
+            columnDefinition6});
+            rowDefinition1.Height = 41D;
+            rowDefinition1.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            rowDefinition2.Height = 41D;
+            rowDefinition2.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            rowDefinition3.Height = 41D;
+            rowDefinition3.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            rowDefinition4.Height = 41D;
+            rowDefinition4.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            rowDefinition5.Height = 41D;
+            rowDefinition5.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            rowDefinition6.Height = 43D;
+            rowDefinition6.SizeType = System.Windows.Forms.SizeType.AutoSize;
             this.layoutControlGroupLoanInfoTop.OptionsTableLayoutGroup.RowDefinitions.AddRange(new DevExpress.XtraLayout.RowDefinition[] {
-            rowDefinition25,
-            rowDefinition26,
-            rowDefinition27,
-            rowDefinition28,
-            rowDefinition29,
-            rowDefinition30});
+            rowDefinition1,
+            rowDefinition2,
+            rowDefinition3,
+            rowDefinition4,
+            rowDefinition5,
+            rowDefinition6});
             this.layoutControlGroupLoanInfoTop.OptionsTableLayoutGroup.ShrinkEmptyAutoSizeDefinition = DevExpress.Utils.DefaultBoolean.True;
             this.layoutControlGroupLoanInfoTop.Size = new System.Drawing.Size(1789, 308);
             this.layoutControlGroupLoanInfoTop.Spacing = new DevExpress.XtraLayout.Utils.Padding(20, 20, 20, 20);
@@ -7739,44 +7734,44 @@ namespace IAC2021SQL
             this.layoutControlGroupLoanInfoBottom.Location = new System.Drawing.Point(0, 419);
             this.layoutControlGroupLoanInfoBottom.Name = "layoutControlGroupLoanInfoBottom";
             this.layoutControlGroupLoanInfoBottom.OptionsItemText.TextAlignMode = DevExpress.XtraLayout.TextAlignModeGroup.AutoSize;
-            columnDefinition31.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            columnDefinition31.Width = 203D;
-            columnDefinition32.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            columnDefinition32.Width = 216D;
-            columnDefinition33.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            columnDefinition33.Width = 267D;
-            columnDefinition34.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            columnDefinition34.Width = 262D;
-            columnDefinition35.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            columnDefinition35.Width = 20D;
-            columnDefinition36.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            columnDefinition36.Width = 761D;
+            columnDefinition7.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            columnDefinition7.Width = 203D;
+            columnDefinition8.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            columnDefinition8.Width = 216D;
+            columnDefinition9.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            columnDefinition9.Width = 267D;
+            columnDefinition10.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            columnDefinition10.Width = 262D;
+            columnDefinition11.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            columnDefinition11.Width = 20D;
+            columnDefinition12.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            columnDefinition12.Width = 761D;
             this.layoutControlGroupLoanInfoBottom.OptionsTableLayoutGroup.ColumnDefinitions.AddRange(new DevExpress.XtraLayout.ColumnDefinition[] {
-            columnDefinition31,
-            columnDefinition32,
-            columnDefinition33,
-            columnDefinition34,
-            columnDefinition35,
-            columnDefinition36});
-            rowDefinition31.Height = 41D;
-            rowDefinition31.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            rowDefinition32.Height = 41D;
-            rowDefinition32.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            rowDefinition33.Height = 41D;
-            rowDefinition33.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            rowDefinition34.Height = 41D;
-            rowDefinition34.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            rowDefinition35.Height = 41D;
-            rowDefinition35.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            rowDefinition36.Height = 41D;
-            rowDefinition36.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            columnDefinition7,
+            columnDefinition8,
+            columnDefinition9,
+            columnDefinition10,
+            columnDefinition11,
+            columnDefinition12});
+            rowDefinition7.Height = 41D;
+            rowDefinition7.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            rowDefinition8.Height = 41D;
+            rowDefinition8.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            rowDefinition9.Height = 41D;
+            rowDefinition9.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            rowDefinition10.Height = 41D;
+            rowDefinition10.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            rowDefinition11.Height = 41D;
+            rowDefinition11.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            rowDefinition12.Height = 41D;
+            rowDefinition12.SizeType = System.Windows.Forms.SizeType.AutoSize;
             this.layoutControlGroupLoanInfoBottom.OptionsTableLayoutGroup.RowDefinitions.AddRange(new DevExpress.XtraLayout.RowDefinition[] {
-            rowDefinition31,
-            rowDefinition32,
-            rowDefinition33,
-            rowDefinition34,
-            rowDefinition35,
-            rowDefinition36});
+            rowDefinition7,
+            rowDefinition8,
+            rowDefinition9,
+            rowDefinition10,
+            rowDefinition11,
+            rowDefinition12});
             this.layoutControlGroupLoanInfoBottom.Size = new System.Drawing.Size(1789, 306);
             this.layoutControlGroupLoanInfoBottom.Spacing = new DevExpress.XtraLayout.Utils.Padding(20, 20, 20, 20);
             this.layoutControlGroupLoanInfoBottom.TextVisible = false;
@@ -15051,140 +15046,22 @@ namespace IAC2021SQL
             // 
             // xtraTabPageInvoices
             // 
-            this.xtraTabPageInvoices.Controls.Add(this.groupControl4);
+            this.xtraTabPageInvoices.Controls.Add(this.layoutControlInvoices);
             this.xtraTabPageInvoices.Name = "xtraTabPageInvoices";
             resources.ApplyResources(this.xtraTabPageInvoices, "xtraTabPageInvoices");
             // 
-            // groupControl4
+            // layoutControlInvoices
             // 
-            this.groupControl4.Appearance.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.groupControl4.Appearance.Options.UseBackColor = true;
-            this.groupControl4.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.groupControl4.Controls.Add(this.layoutControl2);
-            this.groupControl4.Controls.Add(this.gridControlInvoices);
-            resources.ApplyResources(this.groupControl4, "groupControl4");
-            this.groupControl4.Name = "groupControl4";
-            // 
-            // layoutControl2
-            // 
-            resources.ApplyResources(this.layoutControl2, "layoutControl2");
-            this.layoutControl2.Controls.Add(this.textEditDlrName);
-            this.layoutControl2.Controls.Add(this.textEditDealerID);
-            this.layoutControl2.Controls.Add(this.textEditLastName);
-            this.layoutControl2.Controls.Add(this.textEditFirstName);
-            this.layoutControl2.Controls.Add(this.textEditCustomerID);
-            this.layoutControl2.Name = "layoutControl2";
-            this.layoutControl2.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(1161, 0, 650, 400);
-            this.layoutControl2.Root = this.layoutControlGroup4;
-            // 
-            // textEditDlrName
-            // 
-            this.textEditDlrName.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.dEALERBindingSource, "DEALER_NAME", true));
-            resources.ApplyResources(this.textEditDlrName, "textEditDlrName");
-            this.textEditDlrName.Name = "textEditDlrName";
-            this.textEditDlrName.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textEditDlrName.Properties.Appearance.Font")));
-            this.textEditDlrName.Properties.Appearance.Options.UseFont = true;
-            this.textEditDlrName.StyleController = this.layoutControl2;
-            // 
-            // textEditDealerID
-            // 
-            this.textEditDealerID.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.dEALERBindingSource, "id", true));
-            resources.ApplyResources(this.textEditDealerID, "textEditDealerID");
-            this.textEditDealerID.Name = "textEditDealerID";
-            this.textEditDealerID.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textEditDealerID.Properties.Appearance.Font")));
-            this.textEditDealerID.Properties.Appearance.Options.UseFont = true;
-            this.textEditDealerID.StyleController = this.layoutControl2;
-            // 
-            // textEditLastName
-            // 
-            this.textEditLastName.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_LAST_NAME", true));
-            resources.ApplyResources(this.textEditLastName, "textEditLastName");
-            this.textEditLastName.Name = "textEditLastName";
-            this.textEditLastName.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textEditLastName.Properties.Appearance.Font")));
-            this.textEditLastName.Properties.Appearance.Options.UseFont = true;
-            this.textEditLastName.StyleController = this.layoutControl2;
-            // 
-            // textEditFirstName
-            // 
-            this.textEditFirstName.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_FIRST_NAME", true));
-            resources.ApplyResources(this.textEditFirstName, "textEditFirstName");
-            this.textEditFirstName.Name = "textEditFirstName";
-            this.textEditFirstName.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textEditFirstName.Properties.Appearance.Font")));
-            this.textEditFirstName.Properties.Appearance.Options.UseFont = true;
-            this.textEditFirstName.StyleController = this.layoutControl2;
-            // 
-            // textEditCustomerID
-            // 
-            this.textEditCustomerID.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CustomerID", true));
-            resources.ApplyResources(this.textEditCustomerID, "textEditCustomerID");
-            this.textEditCustomerID.Name = "textEditCustomerID";
-            this.textEditCustomerID.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textEditCustomerID.Properties.Appearance.Font")));
-            this.textEditCustomerID.Properties.Appearance.Options.UseFont = true;
-            this.textEditCustomerID.StyleController = this.layoutControl2;
-            // 
-            // layoutControlGroup4
-            // 
-            this.layoutControlGroup4.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
-            this.layoutControlGroup4.GroupBordersVisible = false;
-            this.layoutControlGroup4.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem3,
-            this.layoutControlItem4,
-            this.layoutControlItem5,
-            this.layoutControlItem6,
-            this.layoutControlItem7});
-            this.layoutControlGroup4.Name = "Root";
-            this.layoutControlGroup4.Size = new System.Drawing.Size(1238, 84);
-            this.layoutControlGroup4.TextVisible = false;
-            // 
-            // layoutControlItem3
-            // 
-            this.layoutControlItem3.AppearanceItemCaption.Font = ((System.Drawing.Font)(resources.GetObject("layoutControlItem3.AppearanceItemCaption.Font")));
-            this.layoutControlItem3.AppearanceItemCaption.Options.UseFont = true;
-            this.layoutControlItem3.Control = this.textEditCustomerID;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem3.Name = "layoutControlCustomerID";
-            this.layoutControlItem3.Size = new System.Drawing.Size(217, 32);
-            resources.ApplyResources(this.layoutControlItem3, "layoutControlItem3");
-            // 
-            // layoutControlItem4
-            // 
-            this.layoutControlItem4.AppearanceItemCaption.Font = ((System.Drawing.Font)(resources.GetObject("layoutControlItem4.AppearanceItemCaption.Font")));
-            this.layoutControlItem4.AppearanceItemCaption.Options.UseFont = true;
-            this.layoutControlItem4.Control = this.textEditFirstName;
-            this.layoutControlItem4.Location = new System.Drawing.Point(217, 0);
-            this.layoutControlItem4.Name = "layoutFirstName";
-            this.layoutControlItem4.Size = new System.Drawing.Size(474, 32);
-            resources.ApplyResources(this.layoutControlItem4, "layoutControlItem4");
-            // 
-            // layoutControlItem5
-            // 
-            this.layoutControlItem5.AppearanceItemCaption.Font = ((System.Drawing.Font)(resources.GetObject("layoutControlItem5.AppearanceItemCaption.Font")));
-            this.layoutControlItem5.AppearanceItemCaption.Options.UseFont = true;
-            this.layoutControlItem5.Control = this.textEditLastName;
-            this.layoutControlItem5.Location = new System.Drawing.Point(691, 0);
-            this.layoutControlItem5.Name = "layoutLastName";
-            this.layoutControlItem5.Size = new System.Drawing.Size(527, 32);
-            resources.ApplyResources(this.layoutControlItem5, "layoutControlItem5");
-            // 
-            // layoutControlItem6
-            // 
-            this.layoutControlItem6.AppearanceItemCaption.Font = ((System.Drawing.Font)(resources.GetObject("layoutControlItem6.AppearanceItemCaption.Font")));
-            this.layoutControlItem6.AppearanceItemCaption.Options.UseFont = true;
-            this.layoutControlItem6.Control = this.textEditDlrName;
-            this.layoutControlItem6.Location = new System.Drawing.Point(217, 32);
-            this.layoutControlItem6.Name = "layoutControlDealerName";
-            this.layoutControlItem6.Size = new System.Drawing.Size(1001, 32);
-            resources.ApplyResources(this.layoutControlItem6, "layoutControlItem6");
-            // 
-            // layoutControlItem7
-            // 
-            this.layoutControlItem7.AppearanceItemCaption.Font = ((System.Drawing.Font)(resources.GetObject("layoutControlItem7.AppearanceItemCaption.Font")));
-            this.layoutControlItem7.AppearanceItemCaption.Options.UseFont = true;
-            this.layoutControlItem7.Control = this.textEditDealerID;
-            this.layoutControlItem7.Location = new System.Drawing.Point(0, 32);
-            this.layoutControlItem7.Name = "layoutControlDealerID";
-            this.layoutControlItem7.Size = new System.Drawing.Size(217, 32);
-            resources.ApplyResources(this.layoutControlItem7, "layoutControlItem7");
+            resources.ApplyResources(this.layoutControlInvoices, "layoutControlInvoices");
+            this.layoutControlInvoices.Controls.Add(this.gridControlInvoices);
+            this.layoutControlInvoices.Controls.Add(this.textEditDlrName);
+            this.layoutControlInvoices.Controls.Add(this.textEditDealerID);
+            this.layoutControlInvoices.Controls.Add(this.textEditLastName);
+            this.layoutControlInvoices.Controls.Add(this.textEditFirstName);
+            this.layoutControlInvoices.Controls.Add(this.textEditCustomerID);
+            this.layoutControlInvoices.Name = "layoutControlInvoices";
+            this.layoutControlInvoices.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(1125, 559, 650, 400);
+            this.layoutControlInvoices.Root = this.layoutControlGroupInvoices;
             // 
             // gridControlInvoices
             // 
@@ -15319,21 +15196,180 @@ namespace IAC2021SQL
             this.colCustomerID.FieldName = "CustomerID";
             this.colCustomerID.Name = "colCustomerID";
             // 
+            // textEditDlrName
+            // 
+            this.textEditDlrName.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.dEALERBindingSource, "DEALER_NAME", true));
+            resources.ApplyResources(this.textEditDlrName, "textEditDlrName");
+            this.textEditDlrName.Name = "textEditDlrName";
+            this.textEditDlrName.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textEditDlrName.Properties.Appearance.Font")));
+            this.textEditDlrName.Properties.Appearance.Options.UseFont = true;
+            this.textEditDlrName.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.textEditDlrName.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.textEditDlrName.StyleController = this.layoutControlInvoices;
+            // 
+            // textEditDealerID
+            // 
+            this.textEditDealerID.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.dEALERBindingSource, "id", true));
+            resources.ApplyResources(this.textEditDealerID, "textEditDealerID");
+            this.textEditDealerID.Name = "textEditDealerID";
+            this.textEditDealerID.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textEditDealerID.Properties.Appearance.Font")));
+            this.textEditDealerID.Properties.Appearance.Options.UseFont = true;
+            this.textEditDealerID.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.textEditDealerID.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.textEditDealerID.StyleController = this.layoutControlInvoices;
+            // 
+            // textEditLastName
+            // 
+            this.textEditLastName.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_LAST_NAME", true));
+            resources.ApplyResources(this.textEditLastName, "textEditLastName");
+            this.textEditLastName.Name = "textEditLastName";
+            this.textEditLastName.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textEditLastName.Properties.Appearance.Font")));
+            this.textEditLastName.Properties.Appearance.Options.UseFont = true;
+            this.textEditLastName.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.textEditLastName.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.textEditLastName.StyleController = this.layoutControlInvoices;
+            // 
+            // textEditFirstName
+            // 
+            this.textEditFirstName.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_FIRST_NAME", true));
+            resources.ApplyResources(this.textEditFirstName, "textEditFirstName");
+            this.textEditFirstName.Name = "textEditFirstName";
+            this.textEditFirstName.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textEditFirstName.Properties.Appearance.Font")));
+            this.textEditFirstName.Properties.Appearance.Options.UseFont = true;
+            this.textEditFirstName.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.textEditFirstName.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.textEditFirstName.StyleController = this.layoutControlInvoices;
+            // 
+            // textEditCustomerID
+            // 
+            this.textEditCustomerID.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CustomerID", true));
+            resources.ApplyResources(this.textEditCustomerID, "textEditCustomerID");
+            this.textEditCustomerID.Name = "textEditCustomerID";
+            this.textEditCustomerID.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textEditCustomerID.Properties.Appearance.Font")));
+            this.textEditCustomerID.Properties.Appearance.Options.UseFont = true;
+            this.textEditCustomerID.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.textEditCustomerID.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.textEditCustomerID.StyleController = this.layoutControlInvoices;
+            // 
+            // layoutControlGroupInvoices
+            // 
+            this.layoutControlGroupInvoices.AppearanceGroup.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.layoutControlGroupInvoices.AppearanceGroup.BorderColor = System.Drawing.Color.LightSteelBlue;
+            this.layoutControlGroupInvoices.AppearanceGroup.Options.UseBackColor = true;
+            this.layoutControlGroupInvoices.AppearanceGroup.Options.UseBorderColor = true;
+            this.layoutControlGroupInvoices.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.layoutControlGroupInvoices.GroupStyle = DevExpress.Utils.GroupStyle.Light;
+            this.layoutControlGroupInvoices.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlGroupInvoicesHeader,
+            this.layoutControlGroupInvoicesGrid});
+            this.layoutControlGroupInvoices.Name = "Root";
+            this.layoutControlGroupInvoices.Size = new System.Drawing.Size(1809, 745);
+            this.layoutControlGroupInvoices.TextVisible = false;
+            // 
+            // layoutControlGroupInvoicesHeader
+            // 
+            this.layoutControlGroupInvoicesHeader.GroupStyle = DevExpress.Utils.GroupStyle.Light;
+            this.layoutControlGroupInvoicesHeader.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem3,
+            this.layoutControlItem7,
+            this.layoutControlItem4,
+            this.layoutControlItem6,
+            this.layoutControlItem5});
+            this.layoutControlGroupInvoicesHeader.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlGroupInvoicesHeader.Name = "layoutControlGroupInvoicesHeader";
+            this.layoutControlGroupInvoicesHeader.Size = new System.Drawing.Size(1789, 88);
+            resources.ApplyResources(this.layoutControlGroupInvoicesHeader, "layoutControlGroupInvoicesHeader");
+            this.layoutControlGroupInvoicesHeader.TextVisible = false;
+            // 
+            // layoutControlItem3
+            // 
+            this.layoutControlItem3.AppearanceItemCaption.Font = ((System.Drawing.Font)(resources.GetObject("layoutControlItem3.AppearanceItemCaption.Font")));
+            this.layoutControlItem3.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutControlItem3.Control = this.textEditCustomerID;
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem3.Name = "layoutControlCustomerID";
+            this.layoutControlItem3.Size = new System.Drawing.Size(315, 32);
+            resources.ApplyResources(this.layoutControlItem3, "layoutControlItem3");
+            // 
+            // layoutControlItem7
+            // 
+            this.layoutControlItem7.AppearanceItemCaption.Font = ((System.Drawing.Font)(resources.GetObject("layoutControlItem7.AppearanceItemCaption.Font")));
+            this.layoutControlItem7.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutControlItem7.Control = this.textEditDealerID;
+            this.layoutControlItem7.Location = new System.Drawing.Point(0, 32);
+            this.layoutControlItem7.Name = "layoutControlDealerID";
+            this.layoutControlItem7.Size = new System.Drawing.Size(315, 32);
+            resources.ApplyResources(this.layoutControlItem7, "layoutControlItem7");
+            // 
+            // layoutControlItem4
+            // 
+            this.layoutControlItem4.AppearanceItemCaption.Font = ((System.Drawing.Font)(resources.GetObject("layoutControlItem4.AppearanceItemCaption.Font")));
+            this.layoutControlItem4.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutControlItem4.Control = this.textEditFirstName;
+            this.layoutControlItem4.Location = new System.Drawing.Point(315, 0);
+            this.layoutControlItem4.Name = "layoutFirstName";
+            this.layoutControlItem4.Size = new System.Drawing.Size(687, 32);
+            resources.ApplyResources(this.layoutControlItem4, "layoutControlItem4");
+            // 
+            // layoutControlItem6
+            // 
+            this.layoutControlItem6.AppearanceItemCaption.Font = ((System.Drawing.Font)(resources.GetObject("layoutControlItem6.AppearanceItemCaption.Font")));
+            this.layoutControlItem6.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutControlItem6.Control = this.textEditDlrName;
+            this.layoutControlItem6.Location = new System.Drawing.Point(315, 32);
+            this.layoutControlItem6.Name = "layoutControlDealerName";
+            this.layoutControlItem6.Size = new System.Drawing.Size(1450, 32);
+            resources.ApplyResources(this.layoutControlItem6, "layoutControlItem6");
+            // 
+            // layoutControlItem5
+            // 
+            this.layoutControlItem5.AppearanceItemCaption.Font = ((System.Drawing.Font)(resources.GetObject("layoutControlItem5.AppearanceItemCaption.Font")));
+            this.layoutControlItem5.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutControlItem5.Control = this.textEditLastName;
+            this.layoutControlItem5.Location = new System.Drawing.Point(1002, 0);
+            this.layoutControlItem5.Name = "layoutLastName";
+            this.layoutControlItem5.Size = new System.Drawing.Size(763, 32);
+            resources.ApplyResources(this.layoutControlItem5, "layoutControlItem5");
+            // 
+            // layoutControlGroupInvoicesGrid
+            // 
+            this.layoutControlGroupInvoicesGrid.GroupStyle = DevExpress.Utils.GroupStyle.Light;
+            this.layoutControlGroupInvoicesGrid.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItemInvoicesGrid});
+            this.layoutControlGroupInvoicesGrid.Location = new System.Drawing.Point(0, 88);
+            this.layoutControlGroupInvoicesGrid.Name = "layoutControlGroupInvoicesGrid";
+            this.layoutControlGroupInvoicesGrid.Size = new System.Drawing.Size(1789, 637);
+            resources.ApplyResources(this.layoutControlGroupInvoicesGrid, "layoutControlGroupInvoicesGrid");
+            this.layoutControlGroupInvoicesGrid.TextVisible = false;
+            // 
+            // layoutControlItemInvoicesGrid
+            // 
+            this.layoutControlItemInvoicesGrid.Control = this.gridControlInvoices;
+            this.layoutControlItemInvoicesGrid.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItemInvoicesGrid.Name = "layoutControlItemInvoicesGrid";
+            this.layoutControlItemInvoicesGrid.Size = new System.Drawing.Size(1765, 613);
+            resources.ApplyResources(this.layoutControlItemInvoicesGrid, "layoutControlItemInvoicesGrid");
+            this.layoutControlItemInvoicesGrid.TextVisible = false;
+            // 
             // xtraTabPageComments
             // 
-            this.xtraTabPageComments.Controls.Add(this.groupBox19);
+            this.xtraTabPageComments.Controls.Add(this.layoutControlComments);
             this.xtraTabPageComments.Name = "xtraTabPageComments";
             resources.ApplyResources(this.xtraTabPageComments, "xtraTabPageComments");
             // 
-            // groupBox19
+            // layoutControlComments
             // 
-            this.groupBox19.Appearance.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.groupBox19.Appearance.Options.UseBackColor = true;
-            this.groupBox19.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.groupBox19.Controls.Add(this.cOMMENTGridControl);
-            this.groupBox19.Controls.Add(this.groupBox7);
-            resources.ApplyResources(this.groupBox19, "groupBox19");
-            this.groupBox19.Name = "groupBox19";
+            this.layoutControlComments.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.layoutControlComments.Controls.Add(this.cOMMENTGridControl);
+            this.layoutControlComments.Controls.Add(this.textEditCustomerID1);
+            this.layoutControlComments.Controls.Add(this.textEditDealerID1);
+            this.layoutControlComments.Controls.Add(this.textEditFirstName1);
+            this.layoutControlComments.Controls.Add(this.textEditDlrName1);
+            this.layoutControlComments.Controls.Add(this.textEditLastName1);
+            resources.ApplyResources(this.layoutControlComments, "layoutControlComments");
+            this.layoutControlComments.Name = "layoutControlComments";
+            this.layoutControlComments.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(814, 392, 650, 400);
+            this.layoutControlComments.Root = this.layoutControlGroupComments;
             // 
             // cOMMENTGridControl
             // 
@@ -15415,7 +15451,8 @@ namespace IAC2021SQL
             resources.ApplyResources(this.colDATE, "colDATE");
             this.colDATE.ColumnEdit = this.repositoryItemDateEdit1;
             this.colDATE.FieldName = "COMMENT_DATE";
-            this.colDATE.MinWidth = 10;
+            this.colDATE.MaxWidth = 119;
+            this.colDATE.MinWidth = 119;
             this.colDATE.Name = "colDATE";
             this.colDATE.OptionsColumn.AllowEdit = false;
             // 
@@ -15440,7 +15477,8 @@ namespace IAC2021SQL
             this.colThumb.ImageOptions.Alignment = ((System.Drawing.StringAlignment)(resources.GetObject("colThumb.ImageOptions.Alignment")));
             this.colThumb.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("colThumb.ImageOptions.Image")));
             this.colThumb.ImageOptions.ImageIndex = ((int)(resources.GetObject("colThumb.ImageOptions.ImageIndex")));
-            this.colThumb.MinWidth = 10;
+            this.colThumb.MaxWidth = 50;
+            this.colThumb.MinWidth = 50;
             this.colThumb.Name = "colThumb";
             this.colThumb.OptionsColumn.AllowEdit = false;
             this.colThumb.OptionsColumn.ReadOnly = true;
@@ -15481,7 +15519,8 @@ namespace IAC2021SQL
             resources.ApplyResources(this.colTYPE, "colTYPE");
             this.colTYPE.ColumnEdit = this.repositoryItemLookUpEditType;
             this.colTYPE.FieldName = "COMMENT_TYPE";
-            this.colTYPE.MinWidth = 10;
+            this.colTYPE.MaxWidth = 50;
+            this.colTYPE.MinWidth = 50;
             this.colTYPE.Name = "colTYPE";
             // 
             // repositoryItemLookUpEditType
@@ -15505,7 +15544,8 @@ namespace IAC2021SQL
             this.colCOMMENT_USERID.AppearanceHeader.Options.UseFont = true;
             resources.ApplyResources(this.colCOMMENT_USERID, "colCOMMENT_USERID");
             this.colCOMMENT_USERID.FieldName = "COMMENT_USERID";
-            this.colCOMMENT_USERID.MinWidth = 10;
+            this.colCOMMENT_USERID.MaxWidth = 100;
+            this.colCOMMENT_USERID.MinWidth = 100;
             this.colCOMMENT_USERID.Name = "colCOMMENT_USERID";
             this.colCOMMENT_USERID.OptionsColumn.AllowEdit = false;
             // 
@@ -15598,75 +15638,148 @@ namespace IAC2021SQL
             resources.ApplyResources(this.repositoryItemTextEdit1, "repositoryItemTextEdit1");
             this.repositoryItemTextEdit1.Name = "repositoryItemTextEdit1";
             // 
-            // groupBox7
+            // textEditCustomerID1
             // 
-            this.groupBox7.Controls.Add(this.textBox23);
-            this.groupBox7.Controls.Add(label9);
-            this.groupBox7.Controls.Add(this.textBox8);
-            this.groupBox7.Controls.Add(label11);
-            this.groupBox7.Controls.Add(this.textBox9);
-            this.groupBox7.Controls.Add(this.textBox10);
-            this.groupBox7.Controls.Add(this.textBox11);
-            this.groupBox7.Controls.Add(this.txtCommentNo);
-            this.groupBox7.Controls.Add(label10);
-            resources.ApplyResources(this.groupBox7, "groupBox7");
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.TabStop = false;
+            this.textEditCustomerID1.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CustomerID", true));
+            resources.ApplyResources(this.textEditCustomerID1, "textEditCustomerID1");
+            this.textEditCustomerID1.Name = "textEditCustomerID1";
+            this.textEditCustomerID1.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.textEditCustomerID1.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.textEditCustomerID1.StyleController = this.layoutControlComments;
             // 
-            // textBox23
+            // textEditDealerID1
             // 
-            this.textBox23.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_SUFFIX", true));
-            resources.ApplyResources(this.textBox23, "textBox23");
-            this.textBox23.Name = "textBox23";
-            this.textBox23.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textBox23.Properties.Appearance.Font")));
-            this.textBox23.Properties.Appearance.Options.UseFont = true;
-            this.textBox23.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox23.Properties.ReadOnly = true;
+            this.textEditDealerID1.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.dEALERBindingSource, "id", true));
+            resources.ApplyResources(this.textEditDealerID1, "textEditDealerID1");
+            this.textEditDealerID1.Name = "textEditDealerID1";
+            this.textEditDealerID1.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.textEditDealerID1.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.textEditDealerID1.StyleController = this.layoutControlComments;
             // 
-            // textBox8
+            // textEditFirstName1
             // 
-            this.textBox8.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.DealerListCustbindingSource, "dealer_name", true));
-            resources.ApplyResources(this.textBox8, "textBox8");
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textBox8.Properties.Appearance.Font")));
-            this.textBox8.Properties.Appearance.Options.UseFont = true;
-            this.textBox8.Properties.ReadOnly = true;
+            this.textEditFirstName1.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_FIRST_NAME", true));
+            resources.ApplyResources(this.textEditFirstName1, "textEditFirstName1");
+            this.textEditFirstName1.Name = "textEditFirstName1";
+            this.textEditFirstName1.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.textEditFirstName1.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.textEditFirstName1.StyleController = this.layoutControlComments;
             // 
-            // textBox9
+            // textEditDlrName1
             // 
-            this.textBox9.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_DEALER", true));
-            resources.ApplyResources(this.textBox9, "textBox9");
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textBox9.Properties.Appearance.Font")));
-            this.textBox9.Properties.Appearance.Options.UseFont = true;
-            this.textBox9.Properties.ReadOnly = true;
+            this.textEditDlrName1.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.dEALERBindingSource, "DEALER_NAME", true));
+            resources.ApplyResources(this.textEditDlrName1, "textEditDlrName1");
+            this.textEditDlrName1.Name = "textEditDlrName1";
+            this.textEditDlrName1.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.textEditDlrName1.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.textEditDlrName1.StyleController = this.layoutControlComments;
             // 
-            // textBox10
+            // textEditLastName1
             // 
-            this.textBox10.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_LAST_NAME", true));
-            resources.ApplyResources(this.textBox10, "textBox10");
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textBox10.Properties.Appearance.Font")));
-            this.textBox10.Properties.Appearance.Options.UseFont = true;
-            this.textBox10.Properties.ReadOnly = true;
+            this.textEditLastName1.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_LAST_NAME", true));
+            resources.ApplyResources(this.textEditLastName1, "textEditLastName1");
+            this.textEditLastName1.Name = "textEditLastName1";
+            this.textEditLastName1.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.textEditLastName1.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.textEditLastName1.StyleController = this.layoutControlComments;
             // 
-            // textBox11
+            // layoutControlGroupComments
             // 
-            this.textBox11.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_FIRST_NAME", true));
-            resources.ApplyResources(this.textBox11, "textBox11");
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textBox11.Properties.Appearance.Font")));
-            this.textBox11.Properties.Appearance.Options.UseFont = true;
-            this.textBox11.Properties.ReadOnly = true;
+            this.layoutControlGroupComments.AppearanceGroup.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.layoutControlGroupComments.AppearanceGroup.Options.UseBackColor = true;
+            this.layoutControlGroupComments.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.layoutControlGroupComments.GroupStyle = DevExpress.Utils.GroupStyle.Light;
+            this.layoutControlGroupComments.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlGroupCommentsHeader,
+            this.layoutControlGroupCommentGrid});
+            this.layoutControlGroupComments.Name = "Root";
+            this.layoutControlGroupComments.Size = new System.Drawing.Size(1809, 745);
+            resources.ApplyResources(this.layoutControlGroupComments, "layoutControlGroupComments");
+            this.layoutControlGroupComments.TextVisible = false;
             // 
-            // txtCommentNo
+            // layoutControlItemCommentGrid
             // 
-            this.txtCommentNo.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cUSTOMERBindingSource, "CUSTOMER_NO", true));
-            resources.ApplyResources(this.txtCommentNo, "txtCommentNo");
-            this.txtCommentNo.Name = "txtCommentNo";
-            this.txtCommentNo.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("txtCommentNo.Properties.Appearance.Font")));
-            this.txtCommentNo.Properties.Appearance.Options.UseFont = true;
-            this.txtCommentNo.Properties.ReadOnly = true;
+            this.layoutControlItemCommentGrid.Control = this.cOMMENTGridControl;
+            this.layoutControlItemCommentGrid.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItemCommentGrid.Name = "layoutControlItemCommentGrid";
+            this.layoutControlItemCommentGrid.Size = new System.Drawing.Size(1765, 617);
+            this.layoutControlItemCommentGrid.TextVisible = false;
+            // 
+            // layoutControlGroupCommentsHeader
+            // 
+            resources.ApplyResources(this.layoutControlGroupCommentsHeader, "layoutControlGroupCommentsHeader");
+            this.layoutControlGroupCommentsHeader.GroupStyle = DevExpress.Utils.GroupStyle.Light;
+            this.layoutControlGroupCommentsHeader.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlCustomerID,
+            this.layoutControlDealerID,
+            this.layoutFirstName,
+            this.layoutControlDealerName,
+            this.layoutLastName});
+            this.layoutControlGroupCommentsHeader.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlGroupCommentsHeader.Name = "layoutControlGroupCommentsHeader";
+            this.layoutControlGroupCommentsHeader.OptionsItemText.TextToControlDistance = 3;
+            this.layoutControlGroupCommentsHeader.Size = new System.Drawing.Size(1789, 84);
+            this.layoutControlGroupCommentsHeader.TextVisible = false;
+            // 
+            // layoutControlCustomerID
+            // 
+            this.layoutControlCustomerID.AppearanceItemCaption.Font = ((System.Drawing.Font)(resources.GetObject("layoutControlCustomerID.AppearanceItemCaption.Font")));
+            this.layoutControlCustomerID.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutControlCustomerID.AppearanceItemCaptionDisabled.Font = ((System.Drawing.Font)(resources.GetObject("layoutControlCustomerID.AppearanceItemCaptionDisabled.Font")));
+            this.layoutControlCustomerID.AppearanceItemCaptionDisabled.Options.UseFont = true;
+            this.layoutControlCustomerID.Control = this.textEditCustomerID1;
+            resources.ApplyResources(this.layoutControlCustomerID, "layoutControlCustomerID");
+            this.layoutControlCustomerID.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlCustomerID.Name = "layoutControlCustomerID";
+            this.layoutControlCustomerID.Size = new System.Drawing.Size(315, 30);
+            // 
+            // layoutControlDealerID
+            // 
+            this.layoutControlDealerID.AppearanceItemCaption.Font = ((System.Drawing.Font)(resources.GetObject("layoutControlDealerID.AppearanceItemCaption.Font")));
+            this.layoutControlDealerID.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutControlDealerID.AppearanceItemCaptionDisabled.Font = ((System.Drawing.Font)(resources.GetObject("layoutControlDealerID.AppearanceItemCaptionDisabled.Font")));
+            this.layoutControlDealerID.AppearanceItemCaptionDisabled.Options.UseFont = true;
+            this.layoutControlDealerID.Control = this.textEditDealerID1;
+            resources.ApplyResources(this.layoutControlDealerID, "layoutControlDealerID");
+            this.layoutControlDealerID.Location = new System.Drawing.Point(0, 30);
+            this.layoutControlDealerID.Name = "layoutControlDealerID";
+            this.layoutControlDealerID.Size = new System.Drawing.Size(315, 30);
+            // 
+            // layoutFirstName
+            // 
+            this.layoutFirstName.AppearanceItemCaption.Font = ((System.Drawing.Font)(resources.GetObject("layoutFirstName.AppearanceItemCaption.Font")));
+            this.layoutFirstName.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutFirstName.AppearanceItemCaptionDisabled.Font = ((System.Drawing.Font)(resources.GetObject("layoutFirstName.AppearanceItemCaptionDisabled.Font")));
+            this.layoutFirstName.AppearanceItemCaptionDisabled.Options.UseFont = true;
+            this.layoutFirstName.Control = this.textEditFirstName1;
+            resources.ApplyResources(this.layoutFirstName, "layoutFirstName");
+            this.layoutFirstName.Location = new System.Drawing.Point(315, 0);
+            this.layoutFirstName.Name = "layoutFirstName";
+            this.layoutFirstName.Size = new System.Drawing.Size(687, 30);
+            // 
+            // layoutControlDealerName
+            // 
+            this.layoutControlDealerName.AppearanceItemCaption.Font = ((System.Drawing.Font)(resources.GetObject("layoutControlDealerName.AppearanceItemCaption.Font")));
+            this.layoutControlDealerName.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutControlDealerName.AppearanceItemCaptionDisabled.Font = ((System.Drawing.Font)(resources.GetObject("layoutControlDealerName.AppearanceItemCaptionDisabled.Font")));
+            this.layoutControlDealerName.AppearanceItemCaptionDisabled.Options.UseFont = true;
+            this.layoutControlDealerName.Control = this.textEditDlrName1;
+            resources.ApplyResources(this.layoutControlDealerName, "layoutControlDealerName");
+            this.layoutControlDealerName.Location = new System.Drawing.Point(315, 30);
+            this.layoutControlDealerName.Name = "layoutControlDealerName";
+            this.layoutControlDealerName.Size = new System.Drawing.Size(1450, 30);
+            // 
+            // layoutLastName
+            // 
+            this.layoutLastName.AppearanceItemCaption.Font = ((System.Drawing.Font)(resources.GetObject("layoutLastName.AppearanceItemCaption.Font")));
+            this.layoutLastName.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutLastName.AppearanceItemCaptionDisabled.Font = ((System.Drawing.Font)(resources.GetObject("layoutLastName.AppearanceItemCaptionDisabled.Font")));
+            this.layoutLastName.AppearanceItemCaptionDisabled.Options.UseFont = true;
+            this.layoutLastName.Control = this.textEditLastName1;
+            resources.ApplyResources(this.layoutLastName, "layoutLastName");
+            this.layoutLastName.Location = new System.Drawing.Point(1002, 0);
+            this.layoutLastName.Name = "layoutLastName";
+            this.layoutLastName.Size = new System.Drawing.Size(763, 30);
             // 
             // xtraTabPageRepossession
             // 
@@ -16575,6 +16688,83 @@ namespace IAC2021SQL
             this.colidRepo.FieldName = "id";
             this.colidRepo.Name = "colidRepo";
             // 
+            // textBox482
+            // 
+            this.textBox482.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_NO", true));
+            resources.ApplyResources(this.textBox482, "textBox482");
+            this.textBox482.Name = "textBox482";
+            this.textBox482.Properties.Appearance.Options.UseFont = true;
+            this.textBox482.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.textBox482.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.textBox482.Properties.ReadOnly = true;
+            this.textBox482.StyleController = this.layoutControlRepoHistory;
+            // 
+            // textBox472
+            // 
+            this.textBox472.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_FIRST_NAME", true));
+            resources.ApplyResources(this.textBox472, "textBox472");
+            this.textBox472.Name = "textBox472";
+            this.textBox472.Properties.Appearance.Options.UseFont = true;
+            this.textBox472.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.textBox472.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.textBox472.Properties.ReadOnly = true;
+            this.textBox472.StyleController = this.layoutControlRepoHistory;
+            // 
+            // textBox172
+            // 
+            this.textBox172.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_LAST_NAME", true));
+            resources.ApplyResources(this.textBox172, "textBox172");
+            this.textBox172.Name = "textBox172";
+            this.textBox172.Properties.Appearance.Options.UseFont = true;
+            this.textBox172.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.textBox172.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.textBox172.Properties.ReadOnly = true;
+            this.textBox172.StyleController = this.layoutControlRepoHistory;
+            // 
+            // textBox192
+            // 
+            this.textBox192.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_SUFFIX", true));
+            resources.ApplyResources(this.textBox192, "textBox192");
+            this.textBox192.Name = "textBox192";
+            this.textBox192.Properties.Appearance.Options.UseFont = true;
+            this.textBox192.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.textBox192.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.textBox192.Properties.ReadOnly = true;
+            this.textBox192.StyleController = this.layoutControlRepoHistory;
+            // 
+            // textBox512
+            // 
+            this.textBox512.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_SS_1", true));
+            resources.ApplyResources(this.textBox512, "textBox512");
+            this.textBox512.Name = "textBox512";
+            this.textBox512.Properties.Appearance.Options.UseFont = true;
+            this.textBox512.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.textBox512.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.textBox512.Properties.ReadOnly = true;
+            this.textBox512.StyleController = this.layoutControlRepoHistory;
+            // 
+            // textBox502
+            // 
+            this.textBox502.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_SS_2", true));
+            resources.ApplyResources(this.textBox502, "textBox502");
+            this.textBox502.Name = "textBox502";
+            this.textBox502.Properties.Appearance.Options.UseFont = true;
+            this.textBox502.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.textBox502.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.textBox502.Properties.ReadOnly = true;
+            this.textBox502.StyleController = this.layoutControlRepoHistory;
+            // 
+            // textBox492
+            // 
+            this.textBox492.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_SS_3", true));
+            resources.ApplyResources(this.textBox492, "textBox492");
+            this.textBox492.Name = "textBox492";
+            this.textBox492.Properties.Appearance.Options.UseFont = true;
+            this.textBox492.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.textBox492.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.textBox492.Properties.ReadOnly = true;
+            this.textBox492.StyleController = this.layoutControlRepoHistory;
+            // 
             // layoutControlGroupRepoHistory
             // 
             this.layoutControlGroupRepoHistory.AppearanceGroup.BackColor = System.Drawing.Color.LightSteelBlue;
@@ -16618,6 +16808,131 @@ namespace IAC2021SQL
             this.emptySpaceItem125.Name = "emptySpaceItem125";
             this.emptySpaceItem125.Size = new System.Drawing.Size(539, 106);
             this.emptySpaceItem125.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            // 
+            // layoutControlGroup7
+            // 
+            resources.ApplyResources(this.layoutControlGroup7, "layoutControlGroup7");
+            this.layoutControlGroup7.GroupStyle = DevExpress.Utils.GroupStyle.Light;
+            this.layoutControlGroup7.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem41,
+            this.layoutControlItem44,
+            this.layoutControlItem45,
+            this.layoutControlItem47,
+            this.layoutControlItem48,
+            this.layoutControlItem49,
+            this.layoutControlItem50});
+            this.layoutControlGroup7.Location = new System.Drawing.Point(539, 0);
+            this.layoutControlGroup7.Name = "layoutControlGroup7";
+            this.layoutControlGroup7.OptionsItemText.TextToControlDistance = 3;
+            this.layoutControlGroup7.Size = new System.Drawing.Size(687, 106);
+            this.layoutControlGroup7.TextVisible = false;
+            // 
+            // layoutControlItem41
+            // 
+            this.layoutControlItem41.Control = this.textBox482;
+            resources.ApplyResources(this.layoutControlItem41, "layoutControlItem41");
+            this.layoutControlItem41.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem41.MaxSize = new System.Drawing.Size(200, 41);
+            this.layoutControlItem41.MinSize = new System.Drawing.Size(200, 41);
+            this.layoutControlItem41.Name = "layoutControlItem41";
+            this.layoutControlItem41.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.layoutControlItem41.Size = new System.Drawing.Size(200, 41);
+            this.layoutControlItem41.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.layoutControlItem41.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
+            this.layoutControlItem41.TextLocation = DevExpress.Utils.Locations.Left;
+            this.layoutControlItem41.TextToControlDistance = 5;
+            // 
+            // layoutControlItem44
+            // 
+            this.layoutControlItem44.Control = this.textBox472;
+            resources.ApplyResources(this.layoutControlItem44, "layoutControlItem44");
+            this.layoutControlItem44.Location = new System.Drawing.Point(200, 0);
+            this.layoutControlItem44.MaxSize = new System.Drawing.Size(196, 41);
+            this.layoutControlItem44.MinSize = new System.Drawing.Size(196, 41);
+            this.layoutControlItem44.Name = "layoutControlItem44";
+            this.layoutControlItem44.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.layoutControlItem44.Size = new System.Drawing.Size(196, 41);
+            this.layoutControlItem44.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.layoutControlItem44.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
+            this.layoutControlItem44.TextLocation = DevExpress.Utils.Locations.Left;
+            this.layoutControlItem44.TextToControlDistance = 5;
+            // 
+            // layoutControlItem45
+            // 
+            this.layoutControlItem45.Control = this.textBox172;
+            resources.ApplyResources(this.layoutControlItem45, "layoutControlItem45");
+            this.layoutControlItem45.Location = new System.Drawing.Point(396, 0);
+            this.layoutControlItem45.MaxSize = new System.Drawing.Size(217, 41);
+            this.layoutControlItem45.MinSize = new System.Drawing.Size(217, 41);
+            this.layoutControlItem45.Name = "layoutControlItem45";
+            this.layoutControlItem45.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.layoutControlItem45.Size = new System.Drawing.Size(217, 41);
+            this.layoutControlItem45.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.layoutControlItem45.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
+            this.layoutControlItem45.TextToControlDistance = 0;
+            this.layoutControlItem45.TextVisible = false;
+            // 
+            // layoutControlItem47
+            // 
+            this.layoutControlItem47.Control = this.textBox192;
+            resources.ApplyResources(this.layoutControlItem47, "layoutControlItem47");
+            this.layoutControlItem47.Location = new System.Drawing.Point(613, 0);
+            this.layoutControlItem47.MaxSize = new System.Drawing.Size(50, 41);
+            this.layoutControlItem47.MinSize = new System.Drawing.Size(50, 41);
+            this.layoutControlItem47.Name = "layoutControlItem47";
+            this.layoutControlItem47.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.layoutControlItem47.Size = new System.Drawing.Size(50, 41);
+            this.layoutControlItem47.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.layoutControlItem47.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
+            this.layoutControlItem47.TextLocation = DevExpress.Utils.Locations.Top;
+            this.layoutControlItem47.TextToControlDistance = 0;
+            this.layoutControlItem47.TextVisible = false;
+            // 
+            // layoutControlItem48
+            // 
+            this.layoutControlItem48.Control = this.textBox512;
+            resources.ApplyResources(this.layoutControlItem48, "layoutControlItem48");
+            this.layoutControlItem48.Location = new System.Drawing.Point(0, 41);
+            this.layoutControlItem48.MaxSize = new System.Drawing.Size(117, 41);
+            this.layoutControlItem48.MinSize = new System.Drawing.Size(117, 41);
+            this.layoutControlItem48.Name = "layoutControlItem48";
+            this.layoutControlItem48.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.layoutControlItem48.Size = new System.Drawing.Size(117, 41);
+            this.layoutControlItem48.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.layoutControlItem48.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
+            this.layoutControlItem48.TextLocation = DevExpress.Utils.Locations.Left;
+            this.layoutControlItem48.TextToControlDistance = 5;
+            // 
+            // layoutControlItem49
+            // 
+            this.layoutControlItem49.ContentHorzAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.layoutControlItem49.Control = this.textBox502;
+            resources.ApplyResources(this.layoutControlItem49, "layoutControlItem49");
+            this.layoutControlItem49.Location = new System.Drawing.Point(117, 41);
+            this.layoutControlItem49.MaxSize = new System.Drawing.Size(30, 41);
+            this.layoutControlItem49.MinSize = new System.Drawing.Size(30, 41);
+            this.layoutControlItem49.Name = "layoutControlItem49";
+            this.layoutControlItem49.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 2, 10);
+            this.layoutControlItem49.Size = new System.Drawing.Size(30, 41);
+            this.layoutControlItem49.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.layoutControlItem49.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
+            this.layoutControlItem49.TextToControlDistance = 0;
+            this.layoutControlItem49.TextVisible = false;
+            // 
+            // layoutControlItem50
+            // 
+            this.layoutControlItem50.Control = this.textBox492;
+            resources.ApplyResources(this.layoutControlItem50, "layoutControlItem50");
+            this.layoutControlItem50.Location = new System.Drawing.Point(147, 41);
+            this.layoutControlItem50.MaxSize = new System.Drawing.Size(516, 41);
+            this.layoutControlItem50.MinSize = new System.Drawing.Size(516, 41);
+            this.layoutControlItem50.Name = "layoutControlItem50";
+            this.layoutControlItem50.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 2, 2, 10);
+            this.layoutControlItem50.Size = new System.Drawing.Size(516, 41);
+            this.layoutControlItem50.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.layoutControlItem50.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
+            this.layoutControlItem50.TextToControlDistance = 0;
+            this.layoutControlItem50.TextVisible = false;
             // 
             // layoutControlGroupRepoHistoryGrid
             // 
@@ -19045,207 +19360,16 @@ namespace IAC2021SQL
             this.layoutControlGroup3.Name = "layoutControlGroup3";
             this.layoutControlGroup3.Size = new System.Drawing.Size(402, 79);
             // 
-            // textBox512
+            // layoutControlGroupCommentGrid
             // 
-            this.textBox512.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_SS_1", true));
-            resources.ApplyResources(this.textBox512, "textBox512");
-            this.textBox512.Name = "textBox512";
-            this.textBox512.Properties.Appearance.Options.UseFont = true;
-            this.textBox512.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
-            this.textBox512.Properties.AppearanceDisabled.Options.UseForeColor = true;
-            this.textBox512.Properties.ReadOnly = true;
-            this.textBox512.StyleController = this.layoutControlRepoHistory;
-            // 
-            // textBox472
-            // 
-            this.textBox472.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_FIRST_NAME", true));
-            resources.ApplyResources(this.textBox472, "textBox472");
-            this.textBox472.Name = "textBox472";
-            this.textBox472.Properties.Appearance.Options.UseFont = true;
-            this.textBox472.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
-            this.textBox472.Properties.AppearanceDisabled.Options.UseForeColor = true;
-            this.textBox472.Properties.ReadOnly = true;
-            this.textBox472.StyleController = this.layoutControlRepoHistory;
-            // 
-            // textBox482
-            // 
-            this.textBox482.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_NO", true));
-            resources.ApplyResources(this.textBox482, "textBox482");
-            this.textBox482.Name = "textBox482";
-            this.textBox482.Properties.Appearance.Options.UseFont = true;
-            this.textBox482.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
-            this.textBox482.Properties.AppearanceDisabled.Options.UseForeColor = true;
-            this.textBox482.Properties.ReadOnly = true;
-            this.textBox482.StyleController = this.layoutControlRepoHistory;
-            // 
-            // textBox492
-            // 
-            this.textBox492.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_SS_3", true));
-            resources.ApplyResources(this.textBox492, "textBox492");
-            this.textBox492.Name = "textBox492";
-            this.textBox492.Properties.Appearance.Options.UseFont = true;
-            this.textBox492.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
-            this.textBox492.Properties.AppearanceDisabled.Options.UseForeColor = true;
-            this.textBox492.Properties.ReadOnly = true;
-            this.textBox492.StyleController = this.layoutControlRepoHistory;
-            // 
-            // textBox192
-            // 
-            this.textBox192.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_SUFFIX", true));
-            resources.ApplyResources(this.textBox192, "textBox192");
-            this.textBox192.Name = "textBox192";
-            this.textBox192.Properties.Appearance.Options.UseFont = true;
-            this.textBox192.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
-            this.textBox192.Properties.AppearanceDisabled.Options.UseForeColor = true;
-            this.textBox192.Properties.ReadOnly = true;
-            this.textBox192.StyleController = this.layoutControlRepoHistory;
-            // 
-            // textBox502
-            // 
-            this.textBox502.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_SS_2", true));
-            resources.ApplyResources(this.textBox502, "textBox502");
-            this.textBox502.Name = "textBox502";
-            this.textBox502.Properties.Appearance.Options.UseFont = true;
-            this.textBox502.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
-            this.textBox502.Properties.AppearanceDisabled.Options.UseForeColor = true;
-            this.textBox502.Properties.ReadOnly = true;
-            this.textBox502.StyleController = this.layoutControlRepoHistory;
-            // 
-            // textBox172
-            // 
-            this.textBox172.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_LAST_NAME", true));
-            resources.ApplyResources(this.textBox172, "textBox172");
-            this.textBox172.Name = "textBox172";
-            this.textBox172.Properties.Appearance.Options.UseFont = true;
-            this.textBox172.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
-            this.textBox172.Properties.AppearanceDisabled.Options.UseForeColor = true;
-            this.textBox172.Properties.ReadOnly = true;
-            this.textBox172.StyleController = this.layoutControlRepoHistory;
-            // 
-            // layoutControlGroup7
-            // 
-            resources.ApplyResources(this.layoutControlGroup7, "layoutControlGroup7");
-            this.layoutControlGroup7.GroupStyle = DevExpress.Utils.GroupStyle.Light;
-            this.layoutControlGroup7.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem41,
-            this.layoutControlItem44,
-            this.layoutControlItem45,
-            this.layoutControlItem47,
-            this.layoutControlItem48,
-            this.layoutControlItem49,
-            this.layoutControlItem50});
-            this.layoutControlGroup7.Location = new System.Drawing.Point(539, 0);
-            this.layoutControlGroup7.Name = "layoutControlGroup7";
-            this.layoutControlGroup7.OptionsItemText.TextToControlDistance = 3;
-            this.layoutControlGroup7.Size = new System.Drawing.Size(687, 106);
-            this.layoutControlGroup7.TextVisible = false;
-            // 
-            // layoutControlItem41
-            // 
-            this.layoutControlItem41.Control = this.textBox482;
-            resources.ApplyResources(this.layoutControlItem41, "layoutControlItem41");
-            this.layoutControlItem41.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem41.MaxSize = new System.Drawing.Size(200, 41);
-            this.layoutControlItem41.MinSize = new System.Drawing.Size(200, 41);
-            this.layoutControlItem41.Name = "layoutControlItem41";
-            this.layoutControlItem41.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
-            this.layoutControlItem41.Size = new System.Drawing.Size(200, 41);
-            this.layoutControlItem41.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            this.layoutControlItem41.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
-            this.layoutControlItem41.TextLocation = DevExpress.Utils.Locations.Left;
-            this.layoutControlItem41.TextToControlDistance = 5;
-            // 
-            // layoutControlItem44
-            // 
-            this.layoutControlItem44.Control = this.textBox472;
-            resources.ApplyResources(this.layoutControlItem44, "layoutControlItem44");
-            this.layoutControlItem44.Location = new System.Drawing.Point(200, 0);
-            this.layoutControlItem44.MaxSize = new System.Drawing.Size(196, 41);
-            this.layoutControlItem44.MinSize = new System.Drawing.Size(196, 41);
-            this.layoutControlItem44.Name = "layoutControlItem44";
-            this.layoutControlItem44.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
-            this.layoutControlItem44.Size = new System.Drawing.Size(196, 41);
-            this.layoutControlItem44.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            this.layoutControlItem44.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
-            this.layoutControlItem44.TextLocation = DevExpress.Utils.Locations.Left;
-            this.layoutControlItem44.TextToControlDistance = 5;
-            // 
-            // layoutControlItem45
-            // 
-            this.layoutControlItem45.Control = this.textBox172;
-            resources.ApplyResources(this.layoutControlItem45, "layoutControlItem45");
-            this.layoutControlItem45.Location = new System.Drawing.Point(396, 0);
-            this.layoutControlItem45.MaxSize = new System.Drawing.Size(217, 41);
-            this.layoutControlItem45.MinSize = new System.Drawing.Size(217, 41);
-            this.layoutControlItem45.Name = "layoutControlItem45";
-            this.layoutControlItem45.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
-            this.layoutControlItem45.Size = new System.Drawing.Size(217, 41);
-            this.layoutControlItem45.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            this.layoutControlItem45.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
-            this.layoutControlItem45.TextToControlDistance = 0;
-            this.layoutControlItem45.TextVisible = false;
-            // 
-            // layoutControlItem47
-            // 
-            this.layoutControlItem47.Control = this.textBox192;
-            resources.ApplyResources(this.layoutControlItem47, "layoutControlItem47");
-            this.layoutControlItem47.Location = new System.Drawing.Point(613, 0);
-            this.layoutControlItem47.MaxSize = new System.Drawing.Size(50, 41);
-            this.layoutControlItem47.MinSize = new System.Drawing.Size(50, 41);
-            this.layoutControlItem47.Name = "layoutControlItem47";
-            this.layoutControlItem47.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
-            this.layoutControlItem47.Size = new System.Drawing.Size(50, 41);
-            this.layoutControlItem47.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            this.layoutControlItem47.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
-            this.layoutControlItem47.TextLocation = DevExpress.Utils.Locations.Top;
-            this.layoutControlItem47.TextToControlDistance = 0;
-            this.layoutControlItem47.TextVisible = false;
-            // 
-            // layoutControlItem48
-            // 
-            this.layoutControlItem48.Control = this.textBox512;
-            resources.ApplyResources(this.layoutControlItem48, "layoutControlItem48");
-            this.layoutControlItem48.Location = new System.Drawing.Point(0, 41);
-            this.layoutControlItem48.MaxSize = new System.Drawing.Size(117, 41);
-            this.layoutControlItem48.MinSize = new System.Drawing.Size(117, 41);
-            this.layoutControlItem48.Name = "layoutControlItem48";
-            this.layoutControlItem48.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
-            this.layoutControlItem48.Size = new System.Drawing.Size(117, 41);
-            this.layoutControlItem48.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            this.layoutControlItem48.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
-            this.layoutControlItem48.TextLocation = DevExpress.Utils.Locations.Left;
-            this.layoutControlItem48.TextToControlDistance = 5;
-            // 
-            // layoutControlItem49
-            // 
-            this.layoutControlItem49.ContentHorzAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.layoutControlItem49.Control = this.textBox502;
-            resources.ApplyResources(this.layoutControlItem49, "layoutControlItem49");
-            this.layoutControlItem49.Location = new System.Drawing.Point(117, 41);
-            this.layoutControlItem49.MaxSize = new System.Drawing.Size(30, 41);
-            this.layoutControlItem49.MinSize = new System.Drawing.Size(30, 41);
-            this.layoutControlItem49.Name = "layoutControlItem49";
-            this.layoutControlItem49.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 2, 10);
-            this.layoutControlItem49.Size = new System.Drawing.Size(30, 41);
-            this.layoutControlItem49.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            this.layoutControlItem49.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
-            this.layoutControlItem49.TextToControlDistance = 0;
-            this.layoutControlItem49.TextVisible = false;
-            // 
-            // layoutControlItem50
-            // 
-            this.layoutControlItem50.Control = this.textBox492;
-            resources.ApplyResources(this.layoutControlItem50, "layoutControlItem50");
-            this.layoutControlItem50.Location = new System.Drawing.Point(147, 41);
-            this.layoutControlItem50.MaxSize = new System.Drawing.Size(516, 41);
-            this.layoutControlItem50.MinSize = new System.Drawing.Size(516, 41);
-            this.layoutControlItem50.Name = "layoutControlItem50";
-            this.layoutControlItem50.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 2, 2, 10);
-            this.layoutControlItem50.Size = new System.Drawing.Size(516, 41);
-            this.layoutControlItem50.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            this.layoutControlItem50.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
-            this.layoutControlItem50.TextToControlDistance = 0;
-            this.layoutControlItem50.TextVisible = false;
+            this.layoutControlGroupCommentGrid.GroupStyle = DevExpress.Utils.GroupStyle.Light;
+            this.layoutControlGroupCommentGrid.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItemCommentGrid});
+            this.layoutControlGroupCommentGrid.Location = new System.Drawing.Point(0, 84);
+            this.layoutControlGroupCommentGrid.Name = "layoutControlGroupCommentGrid";
+            this.layoutControlGroupCommentGrid.Size = new System.Drawing.Size(1789, 641);
+            resources.ApplyResources(this.layoutControlGroupCommentGrid, "layoutControlGroupCommentGrid");
+            this.layoutControlGroupCommentGrid.TextVisible = false;
             // 
             // frmNewCustMaintResp
             // 
@@ -20031,28 +20155,29 @@ namespace IAC2021SQL
             ((System.ComponentModel.ISupportInitialize)(this.gridControlCustomerHist)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewCustomerHistory)).EndInit();
             this.xtraTabPageInvoices.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).EndInit();
-            this.groupControl4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();
-            this.layoutControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlInvoices)).EndInit();
+            this.layoutControlInvoices.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlInvoices)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.invoicesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewInvoices)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditDlrName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditDealerID.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditLastName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditFirstName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditCustomerID.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroupInvoices)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroupInvoicesHeader)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControlInvoices)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.invoicesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridViewInvoices)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroupInvoicesGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemInvoicesGrid)).EndInit();
             this.xtraTabPageComments.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.groupBox19)).EndInit();
-            this.groupBox19.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlComments)).EndInit();
+            this.layoutControlComments.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cOMMENTGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cOMMENTgridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemDateEdit1.CalendarTimeProperties)).EndInit();
@@ -20061,14 +20186,19 @@ namespace IAC2021SQL
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemLookUpEditType)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemMemoEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
-            this.groupBox7.ResumeLayout(false);
-            this.groupBox7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textBox23.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBox8.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBox9.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBox10.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBox11.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCommentNo.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditCustomerID1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditDealerID1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditFirstName1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditDlrName1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditLastName1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroupComments)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemCommentGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroupCommentsHeader)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlCustomerID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlDealerID)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutFirstName)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlDealerName)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutLastName)).EndInit();
             this.xtraTabPageRepossession.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlRepo)).EndInit();
             this.layoutControlRepo.ResumeLayout(false);
@@ -20130,10 +20260,25 @@ namespace IAC2021SQL
             this.layoutControlRepoHistory.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlRepoLog)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewRepoLog)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBox482.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBox472.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBox172.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBox192.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBox512.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBox502.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBox492.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroupRepoHistory)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroupRepoHistoryHeader)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem119)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem125)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem41)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem44)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem45)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem47)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem48)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem49)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem50)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroupRepoHistoryGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemRepoHistoryGridControl)).EndInit();
             this.xtraTabPageCustomerFees.ResumeLayout(false);
@@ -20299,21 +20444,7 @@ namespace IAC2021SQL
             ((System.ComponentModel.ISupportInitialize)(this.textBox14.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitterItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBox512.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBox472.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBox482.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBox492.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBox192.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBox502.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBox172.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem41)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem44)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem45)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem47)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem48)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem49)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem50)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroupCommentGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -20696,7 +20827,6 @@ namespace IAC2021SQL
         private DevExpress.XtraEditors.TextEdit textBox38;
         private DevExpress.XtraEditors.TextEdit textBox39;
         private DevExpress.XtraEditors.TextEdit textBox40;
-        private DevExpress.XtraEditors.GroupControl groupBox19;
         private DevExpress.XtraGrid.GridControl cOMMENTGridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView cOMMENTgridView;
         private DevExpress.XtraGrid.Columns.GridColumn colDATE;
@@ -20719,21 +20849,13 @@ namespace IAC2021SQL
         private DevExpress.XtraGrid.Columns.GridColumn colImgSort;
         private DevExpress.XtraGrid.Columns.GridColumn colSMSTemplate1;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit1;
-        private System.Windows.Forms.GroupBox groupBox7;
-        private DevExpress.XtraEditors.TextEdit textBox23;
-        private DevExpress.XtraEditors.TextEdit textBox8;
-        private DevExpress.XtraEditors.TextEdit textBox9;
-        private DevExpress.XtraEditors.TextEdit textBox10;
-        private DevExpress.XtraEditors.TextEdit textBox11;
-        private DevExpress.XtraEditors.TextEdit txtCommentNo;
-        private DevExpress.XtraEditors.GroupControl groupControl4;
-        private DevExpress.XtraLayout.LayoutControl layoutControl2;
+        private DevExpress.XtraLayout.LayoutControl layoutControlInvoices;
         private DevExpress.XtraEditors.TextEdit textEditDlrName;
         private DevExpress.XtraEditors.TextEdit textEditDealerID;
         private DevExpress.XtraEditors.TextEdit textEditLastName;
         private DevExpress.XtraEditors.TextEdit textEditFirstName;
         private DevExpress.XtraEditors.TextEdit textEditCustomerID;
-        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup4;
+        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroupInvoices;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
@@ -21459,6 +21581,24 @@ namespace IAC2021SQL
         private LayoutControlItem layoutControlItem48;
         private LayoutControlItem layoutControlItem49;
         private LayoutControlItem layoutControlItem50;
+        private LayoutControlItem layoutControlItemInvoicesGrid;
+        private LayoutControlGroup layoutControlGroupInvoicesHeader;
+        private LayoutControlGroup layoutControlGroupInvoicesGrid;
+        private LayoutControl layoutControlComments;
+        private LayoutControlGroup layoutControlGroupComments;
+        private LayoutControlItem layoutControlItemCommentGrid;
+        private DevExpress.XtraEditors.TextEdit textEditCustomerID1;
+        private DevExpress.XtraEditors.TextEdit textEditDealerID1;
+        private DevExpress.XtraEditors.TextEdit textEditFirstName1;
+        private DevExpress.XtraEditors.TextEdit textEditDlrName1;
+        private DevExpress.XtraEditors.TextEdit textEditLastName1;
+        private LayoutControlGroup layoutControlGroupCommentsHeader;
+        private LayoutControlItem layoutControlCustomerID;
+        private LayoutControlItem layoutControlDealerID;
+        private LayoutControlItem layoutFirstName;
+        private LayoutControlItem layoutControlDealerName;
+        private LayoutControlItem layoutLastName;
+        private LayoutControlGroup layoutControlGroupCommentGrid;
     }
 }
 
