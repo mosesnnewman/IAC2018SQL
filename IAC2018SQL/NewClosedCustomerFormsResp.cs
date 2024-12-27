@@ -142,6 +142,9 @@ namespace IAC2021SQL
             layoutControlComments.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Style3D;
             layoutControlComments.LookAndFeel.UseDefaultLookAndFeel = false;
             layoutControlComments.OptionsView.ShareLookAndFeelWithChildren = false;
+            layoutControlBankInfo.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Style3D;
+            layoutControlBankInfo.LookAndFeel.UseDefaultLookAndFeel = false;
+            layoutControlBankInfo.OptionsView.ShareLookAndFeelWithChildren = false;
 
             checkEditActiveDuty.Visible = false;
             dateEditActiveDutyStart.Visible = false;
@@ -3674,9 +3677,9 @@ namespace IAC2021SQL
                     break;
                 case 4:
                     if (checkEditSplitPay.Checked)
-                        xtraTabControl1.TabPages[1].PageEnabled = true;
+                        tabbedControlGroupBankInfo.TabPages[1].PageEnabled = true;
                     else
-                        xtraTabControl1.TabPages[1].PageEnabled = false;
+                        tabbedControlGroupBankInfo.TabPages[1].PageEnabled = false;
                     break;
                 case 7:
                     setRelatedData();
@@ -5395,9 +5398,9 @@ namespace IAC2021SQL
             if (lbAddFlag || lbEdit)
                 toolStripButtonSave.Enabled = true;
             if (checkEdit.Checked)
-                xtraTabControl1.TabPages[1].PageEnabled = true;
+                tabbedControlGroupBankInfo.TabPages[1].PageEnabled = true;
             else
-                xtraTabControl1.TabPages[1].PageEnabled = false;
+                tabbedControlGroupBankInfo.TabPages[1].PageEnabled = false;
         }
 
         private void checkEditBankAutoPay_Properties_CheckedChanged(object sender, EventArgs e)
