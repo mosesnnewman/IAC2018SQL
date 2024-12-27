@@ -876,23 +876,6 @@ namespace IAC2021SQL
             this.emptySpaceItem88 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlGroupBankTabs = new DevExpress.XtraLayout.LayoutControlGroup();
             this.tabbedControlGroupBankInfo = new DevExpress.XtraLayout.TabbedControlGroup();
-            this.layoutControlGroupCreditCard = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.layoutControlGroupCCard = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.emptySpaceItem96 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.emptySpaceItem186 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.layoutControlItemCreditCardNumber = new DevExpress.XtraLayout.LayoutControlItem();
-            this.emptySpaceItem189 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.emptySpaceItem191 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.layoutControlItemCreditCardName = new DevExpress.XtraLayout.LayoutControlItem();
-            this.emptySpaceItem190 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.emptySpaceItem192 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.layoutControlItemCreditCardCVV = new DevExpress.XtraLayout.LayoutControlItem();
-            this.emptySpaceItem194 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.emptySpaceItem193 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.layoutControlItemExpMonth = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItemExpYear = new DevExpress.XtraLayout.LayoutControlItem();
-            this.emptySpaceItem196 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.emptySpaceItem98 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlGroupEFTeCheck = new DevExpress.XtraLayout.LayoutControlGroup();
             this.emptySpaceItem101 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItemBankName = new DevExpress.XtraLayout.LayoutControlItem();
@@ -931,6 +914,23 @@ namespace IAC2021SQL
             this.emptySpaceItem195 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem198 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem200 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.layoutControlGroupCreditCard = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlGroupCCard = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.emptySpaceItem96 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem186 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.layoutControlItemCreditCardNumber = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem189 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem191 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.layoutControlItemCreditCardName = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem190 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem192 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.layoutControlItemCreditCardCVV = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem194 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem193 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.layoutControlItemExpMonth = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItemExpYear = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem196 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem98 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem134 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem99 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem199 = new DevExpress.XtraLayout.EmptySpaceItem();
@@ -2107,23 +2107,6 @@ namespace IAC2021SQL
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem88)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroupBankTabs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedControlGroupBankInfo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroupCreditCard)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroupCCard)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem96)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem186)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemCreditCardNumber)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem189)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem191)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemCreditCardName)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem190)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem192)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemCreditCardCVV)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem194)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem193)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemExpMonth)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemExpYear)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem196)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem98)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroupEFTeCheck)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem101)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemBankName)).BeginInit();
@@ -2162,6 +2145,23 @@ namespace IAC2021SQL
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem195)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem198)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem200)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroupCreditCard)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroupCCard)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem96)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem186)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemCreditCardNumber)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem189)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem191)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemCreditCardName)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem190)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem192)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemCreditCardCVV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem194)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem193)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemExpMonth)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemExpYear)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem196)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem98)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem134)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem99)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem199)).BeginInit();
@@ -13184,6 +13184,8 @@ namespace IAC2021SQL
             this.comboBoxEditExpYear.Properties.AdvancedModeOptions.LabelAppearance.Options.UseTextOptions = true;
             this.comboBoxEditExpYear.Properties.AdvancedModeOptions.LabelAppearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.comboBoxEditExpYear.Properties.AdvancedModeOptions.LabelAppearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Bottom;
+            this.comboBoxEditExpYear.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.comboBoxEditExpYear.Properties.AppearanceDisabled.Options.UseForeColor = true;
             this.comboBoxEditExpYear.Properties.AutoHeight = ((bool)(resources.GetObject("comboBoxEditExpYear.Properties.AutoHeight")));
             this.comboBoxEditExpYear.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("comboBoxEditExpYear.Properties.Buttons"))))});
@@ -13203,6 +13205,8 @@ namespace IAC2021SQL
             this.lookUpEditExpMonth.Properties.AdvancedModeOptions.LabelAppearance.Options.UseTextOptions = true;
             this.lookUpEditExpMonth.Properties.AdvancedModeOptions.LabelAppearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.lookUpEditExpMonth.Properties.AdvancedModeOptions.LabelAppearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Bottom;
+            this.lookUpEditExpMonth.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.lookUpEditExpMonth.Properties.AppearanceDisabled.Options.UseForeColor = true;
             this.lookUpEditExpMonth.Properties.AutoHeight = ((bool)(resources.GetObject("lookUpEditExpMonth.Properties.AutoHeight")));
             this.lookUpEditExpMonth.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("lookUpEditExpMonth.Properties.Buttons"))))});
@@ -13223,6 +13227,8 @@ namespace IAC2021SQL
             this.checkEditSplitPay.MenuManager = this.toolbarFormManager1;
             this.checkEditSplitPay.Name = "checkEditSplitPay";
             this.checkEditSplitPay.Properties.Appearance.Options.UseFont = true;
+            this.checkEditSplitPay.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.checkEditSplitPay.Properties.AppearanceDisabled.Options.UseForeColor = true;
             this.checkEditSplitPay.Properties.Caption = resources.GetString("checkEditSplitPay.Properties.Caption");
             this.checkEditSplitPay.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
             this.checkEditSplitPay.Properties.CheckBoxOptions.SvgColorChecked = System.Drawing.Color.Black;
@@ -13268,6 +13274,8 @@ namespace IAC2021SQL
             this.textEditCreditCardCVV.Properties.AdvancedModeOptions.LabelAppearance.Options.UseTextOptions = true;
             this.textEditCreditCardCVV.Properties.AdvancedModeOptions.LabelAppearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.textEditCreditCardCVV.Properties.AdvancedModeOptions.LabelAppearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Bottom;
+            this.textEditCreditCardCVV.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.textEditCreditCardCVV.Properties.AppearanceDisabled.Options.UseForeColor = true;
             this.textEditCreditCardCVV.Properties.AutoHeight = ((bool)(resources.GetObject("textEditCreditCardCVV.Properties.AutoHeight")));
             this.textEditCreditCardCVV.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.SimpleMaskManager));
             this.textEditCreditCardCVV.Properties.MaskSettings.Set("MaskManagerSignature", "ignoreMaskBlank=True");
@@ -13314,6 +13322,8 @@ namespace IAC2021SQL
             this.checkEditBankAutoPay.MenuManager = this.toolbarFormManager1;
             this.checkEditBankAutoPay.Name = "checkEditBankAutoPay";
             this.checkEditBankAutoPay.Properties.Appearance.Options.UseFont = true;
+            this.checkEditBankAutoPay.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.checkEditBankAutoPay.Properties.AppearanceDisabled.Options.UseForeColor = true;
             this.checkEditBankAutoPay.Properties.Caption = resources.GetString("checkEditBankAutoPay.Properties.Caption");
             this.checkEditBankAutoPay.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
             this.checkEditBankAutoPay.Properties.CheckBoxOptions.SvgColorChecked = System.Drawing.Color.Black;
@@ -13332,8 +13342,8 @@ namespace IAC2021SQL
             this.textEditPayment4.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
             this.textEditPayment4.Properties.Appearance.Options.UseTextOptions = true;
             this.textEditPayment4.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.textEditPayment4.Properties.AppearanceDisabled.Font = ((System.Drawing.Font)(resources.GetObject("textEditPayment4.Properties.AppearanceDisabled.Font")));
-            this.textEditPayment4.Properties.AppearanceDisabled.Options.UseFont = true;
+            this.textEditPayment4.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.textEditPayment4.Properties.AppearanceDisabled.Options.UseForeColor = true;
             this.textEditPayment4.Properties.AppearanceDisabled.Options.UseTextOptions = true;
             this.textEditPayment4.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.textEditPayment4.Properties.AppearanceFocused.Font = ((System.Drawing.Font)(resources.GetObject("textEditPayment4.Properties.AppearanceFocused.Font")));
@@ -13394,6 +13404,8 @@ namespace IAC2021SQL
             this.comboBoxEditPaymentDay4.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
             this.comboBoxEditPaymentDay4.Properties.Appearance.Options.UseTextOptions = true;
             this.comboBoxEditPaymentDay4.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.comboBoxEditPaymentDay4.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.comboBoxEditPaymentDay4.Properties.AppearanceDisabled.Options.UseForeColor = true;
             this.comboBoxEditPaymentDay4.Properties.AppearanceDisabled.Options.UseTextOptions = true;
             this.comboBoxEditPaymentDay4.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.comboBoxEditPaymentDay4.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -13422,8 +13434,8 @@ namespace IAC2021SQL
             this.textEditPayment3.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
             this.textEditPayment3.Properties.Appearance.Options.UseTextOptions = true;
             this.textEditPayment3.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.textEditPayment3.Properties.AppearanceDisabled.Font = ((System.Drawing.Font)(resources.GetObject("textEditPayment3.Properties.AppearanceDisabled.Font")));
-            this.textEditPayment3.Properties.AppearanceDisabled.Options.UseFont = true;
+            this.textEditPayment3.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.textEditPayment3.Properties.AppearanceDisabled.Options.UseForeColor = true;
             this.textEditPayment3.Properties.AppearanceDisabled.Options.UseTextOptions = true;
             this.textEditPayment3.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.textEditPayment3.Properties.AppearanceFocused.Font = ((System.Drawing.Font)(resources.GetObject("textEditPayment3.Properties.AppearanceFocused.Font")));
@@ -13459,6 +13471,8 @@ namespace IAC2021SQL
             this.textEditCreditCardName.Properties.AdvancedModeOptions.LabelAppearance.Options.UseTextOptions = true;
             this.textEditCreditCardName.Properties.AdvancedModeOptions.LabelAppearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.textEditCreditCardName.Properties.AdvancedModeOptions.LabelAppearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Bottom;
+            this.textEditCreditCardName.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.textEditCreditCardName.Properties.AppearanceDisabled.Options.UseForeColor = true;
             this.textEditCreditCardName.Properties.AutoHeight = ((bool)(resources.GetObject("textEditCreditCardName.Properties.AutoHeight")));
             this.textEditCreditCardName.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.RegularMaskManager));
             this.textEditCreditCardName.Properties.MaskSettings.Set("MaskManagerSignature", "ignoreMaskBlank=True");
@@ -13478,6 +13492,8 @@ namespace IAC2021SQL
             this.comboBoxEditPaymentDay3.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
             this.comboBoxEditPaymentDay3.Properties.Appearance.Options.UseTextOptions = true;
             this.comboBoxEditPaymentDay3.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.comboBoxEditPaymentDay3.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.comboBoxEditPaymentDay3.Properties.AppearanceDisabled.Options.UseForeColor = true;
             this.comboBoxEditPaymentDay3.Properties.AppearanceDisabled.Options.UseTextOptions = true;
             this.comboBoxEditPaymentDay3.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.comboBoxEditPaymentDay3.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -13506,8 +13522,8 @@ namespace IAC2021SQL
             this.textEditPayment2.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
             this.textEditPayment2.Properties.Appearance.Options.UseTextOptions = true;
             this.textEditPayment2.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.textEditPayment2.Properties.AppearanceDisabled.Font = ((System.Drawing.Font)(resources.GetObject("textEditPayment2.Properties.AppearanceDisabled.Font")));
-            this.textEditPayment2.Properties.AppearanceDisabled.Options.UseFont = true;
+            this.textEditPayment2.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.textEditPayment2.Properties.AppearanceDisabled.Options.UseForeColor = true;
             this.textEditPayment2.Properties.AppearanceDisabled.Options.UseTextOptions = true;
             this.textEditPayment2.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.textEditPayment2.Properties.AppearanceFocused.Font = ((System.Drawing.Font)(resources.GetObject("textEditPayment2.Properties.AppearanceFocused.Font")));
@@ -13543,6 +13559,8 @@ namespace IAC2021SQL
             this.textEditCreditCardNumber.Properties.AdvancedModeOptions.LabelAppearance.Options.UseTextOptions = true;
             this.textEditCreditCardNumber.Properties.AdvancedModeOptions.LabelAppearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.textEditCreditCardNumber.Properties.AdvancedModeOptions.LabelAppearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Bottom;
+            this.textEditCreditCardNumber.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.textEditCreditCardNumber.Properties.AppearanceDisabled.Options.UseForeColor = true;
             this.textEditCreditCardNumber.Properties.AutoHeight = ((bool)(resources.GetObject("textEditCreditCardNumber.Properties.AutoHeight")));
             this.textEditCreditCardNumber.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.SimpleMaskManager));
             this.textEditCreditCardNumber.Properties.MaskSettings.Set("MaskManagerSignature", "ignoreMaskBlank=True");
@@ -13564,6 +13582,8 @@ namespace IAC2021SQL
             this.comboBoxEditPaymentDay2.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
             this.comboBoxEditPaymentDay2.Properties.Appearance.Options.UseTextOptions = true;
             this.comboBoxEditPaymentDay2.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.comboBoxEditPaymentDay2.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.comboBoxEditPaymentDay2.Properties.AppearanceDisabled.Options.UseForeColor = true;
             this.comboBoxEditPaymentDay2.Properties.AppearanceDisabled.Options.UseTextOptions = true;
             this.comboBoxEditPaymentDay2.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.comboBoxEditPaymentDay2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -13592,8 +13612,8 @@ namespace IAC2021SQL
             this.textEditPayment1.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
             this.textEditPayment1.Properties.Appearance.Options.UseTextOptions = true;
             this.textEditPayment1.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.textEditPayment1.Properties.AppearanceDisabled.Font = ((System.Drawing.Font)(resources.GetObject("textEditPayment1.Properties.AppearanceDisabled.Font")));
-            this.textEditPayment1.Properties.AppearanceDisabled.Options.UseFont = true;
+            this.textEditPayment1.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.textEditPayment1.Properties.AppearanceDisabled.Options.UseForeColor = true;
             this.textEditPayment1.Properties.AppearanceDisabled.Options.UseTextOptions = true;
             this.textEditPayment1.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.textEditPayment1.Properties.AppearanceFocused.Font = ((System.Drawing.Font)(resources.GetObject("textEditPayment1.Properties.AppearanceFocused.Font")));
@@ -13628,6 +13648,8 @@ namespace IAC2021SQL
             this.textEditBankMonthlyPayment.Properties.AdvancedModeOptions.Label = resources.GetString("textEditBankMonthlyPayment.Properties.AdvancedModeOptions.Label");
             this.textEditBankMonthlyPayment.Properties.Appearance.Options.UseTextOptions = true;
             this.textEditBankMonthlyPayment.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.textEditBankMonthlyPayment.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.textEditBankMonthlyPayment.Properties.AppearanceDisabled.Options.UseForeColor = true;
             this.textEditBankMonthlyPayment.Properties.AutoHeight = ((bool)(resources.GetObject("textEditBankMonthlyPayment.Properties.AutoHeight")));
             this.textEditBankMonthlyPayment.Properties.DisplayFormat.FormatString = "c2";
             this.textEditBankMonthlyPayment.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
@@ -13645,8 +13667,8 @@ namespace IAC2021SQL
             this.comboBoxEditPaymentDay1.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
             this.comboBoxEditPaymentDay1.Properties.Appearance.Options.UseTextOptions = true;
             this.comboBoxEditPaymentDay1.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.comboBoxEditPaymentDay1.Properties.AppearanceDisabled.Font = ((System.Drawing.Font)(resources.GetObject("comboBoxEditPaymentDay1.Properties.AppearanceDisabled.Font")));
-            this.comboBoxEditPaymentDay1.Properties.AppearanceDisabled.Options.UseFont = true;
+            this.comboBoxEditPaymentDay1.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.comboBoxEditPaymentDay1.Properties.AppearanceDisabled.Options.UseForeColor = true;
             this.comboBoxEditPaymentDay1.Properties.AppearanceDisabled.Options.UseTextOptions = true;
             this.comboBoxEditPaymentDay1.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.comboBoxEditPaymentDay1.Properties.AppearanceDropDown.Font = ((System.Drawing.Font)(resources.GetObject("comboBoxEditPaymentDay1.Properties.AppearanceDropDown.Font")));
@@ -13679,6 +13701,8 @@ namespace IAC2021SQL
             this.radioGroupAccountType.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.radioGroupAccountType.Properties.Appearance.Options.UseBackColor = true;
             this.radioGroupAccountType.Properties.Appearance.Options.UseFont = true;
+            this.radioGroupAccountType.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.radioGroupAccountType.Properties.AppearanceDisabled.Options.UseForeColor = true;
             this.radioGroupAccountType.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.radioGroupAccountType.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
             new DevExpress.XtraEditors.Controls.RadioGroupItem(((object)(resources.GetObject("radioGroupAccountType.Properties.Items"))), resources.GetString("radioGroupAccountType.Properties.Items1"), ((bool)(resources.GetObject("radioGroupAccountType.Properties.Items2"))), ((object)(resources.GetObject("radioGroupAccountType.Properties.Items3"))), resources.GetString("radioGroupAccountType.Properties.Items4")),
@@ -13699,6 +13723,8 @@ namespace IAC2021SQL
             this.textEditBankAccountNumber.Properties.AdvancedModeOptions.LabelAppearance.Options.UseTextOptions = true;
             this.textEditBankAccountNumber.Properties.AdvancedModeOptions.LabelAppearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.textEditBankAccountNumber.Properties.AdvancedModeOptions.LabelAppearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Bottom;
+            this.textEditBankAccountNumber.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.textEditBankAccountNumber.Properties.AppearanceDisabled.Options.UseForeColor = true;
             this.textEditBankAccountNumber.Properties.AutoHeight = ((bool)(resources.GetObject("textEditBankAccountNumber.Properties.AutoHeight")));
             this.textEditBankAccountNumber.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.RegularMaskManager));
             this.textEditBankAccountNumber.Properties.MaskSettings.Set("MaskManagerSignature", "ignoreMaskBlank=True");
@@ -13721,6 +13747,8 @@ namespace IAC2021SQL
             this.textEditBankName.Properties.AdvancedModeOptions.LabelAppearance.Options.UseTextOptions = true;
             this.textEditBankName.Properties.AdvancedModeOptions.LabelAppearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.textEditBankName.Properties.AdvancedModeOptions.LabelAppearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Bottom;
+            this.textEditBankName.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.textEditBankName.Properties.AppearanceDisabled.Options.UseForeColor = true;
             this.textEditBankName.Properties.AutoHeight = ((bool)(resources.GetObject("textEditBankName.Properties.AutoHeight")));
             this.textEditBankName.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.RegularMaskManager));
             this.textEditBankName.Properties.MaskSettings.Set("MaskManagerSignature", "ignoreMaskBlank=True");
@@ -13743,6 +13771,8 @@ namespace IAC2021SQL
             this.textEditBankCheckDigit.Properties.AdvancedModeOptions.LabelAppearance.Options.UseTextOptions = true;
             this.textEditBankCheckDigit.Properties.AdvancedModeOptions.LabelAppearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.textEditBankCheckDigit.Properties.AdvancedModeOptions.LabelAppearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Bottom;
+            this.textEditBankCheckDigit.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.textEditBankCheckDigit.Properties.AppearanceDisabled.Options.UseForeColor = true;
             this.textEditBankCheckDigit.Properties.AutoHeight = ((bool)(resources.GetObject("textEditBankCheckDigit.Properties.AutoHeight")));
             this.textEditBankCheckDigit.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.RegularMaskManager));
             this.textEditBankCheckDigit.Properties.MaskSettings.Set("MaskManagerSignature", "ignoreMaskBlank=True");
@@ -13766,6 +13796,8 @@ namespace IAC2021SQL
             this.textEditBankCity.Properties.AdvancedModeOptions.LabelAppearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.textEditBankCity.Properties.AdvancedModeOptions.LabelAppearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Bottom;
             this.textEditBankCity.Properties.Appearance.Options.UseFont = true;
+            this.textEditBankCity.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.textEditBankCity.Properties.AppearanceDisabled.Options.UseForeColor = true;
             this.textEditBankCity.Properties.AutoHeight = ((bool)(resources.GetObject("textEditBankCity.Properties.AutoHeight")));
             this.textEditBankCity.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.RegularMaskManager));
             this.textEditBankCity.Properties.MaskSettings.Set("MaskManagerSignature", "ignoreMaskBlank=True");
@@ -13788,6 +13820,8 @@ namespace IAC2021SQL
             this.textEditBankRoutingNumber.Properties.AdvancedModeOptions.LabelAppearance.Options.UseTextOptions = true;
             this.textEditBankRoutingNumber.Properties.AdvancedModeOptions.LabelAppearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.textEditBankRoutingNumber.Properties.AdvancedModeOptions.LabelAppearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Bottom;
+            this.textEditBankRoutingNumber.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.textEditBankRoutingNumber.Properties.AppearanceDisabled.Options.UseForeColor = true;
             this.textEditBankRoutingNumber.Properties.AutoHeight = ((bool)(resources.GetObject("textEditBankRoutingNumber.Properties.AutoHeight")));
             this.textEditBankRoutingNumber.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.RegularMaskManager));
             this.textEditBankRoutingNumber.Properties.MaskSettings.Set("MaskManagerSignature", "ignoreMaskBlank=True");
@@ -13811,6 +13845,8 @@ namespace IAC2021SQL
             this.textEditBankState.Properties.AdvancedModeOptions.LabelAppearance.Options.UseTextOptions = true;
             this.textEditBankState.Properties.AdvancedModeOptions.LabelAppearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
             this.textEditBankState.Properties.AdvancedModeOptions.LabelAppearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Bottom;
+            this.textEditBankState.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.textEditBankState.Properties.AppearanceDisabled.Options.UseForeColor = true;
             this.textEditBankState.Properties.AutoHeight = ((bool)(resources.GetObject("textEditBankState.Properties.AutoHeight")));
             this.textEditBankState.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.RegularMaskManager));
             this.textEditBankState.Properties.MaskSettings.Set("MaskManagerSignature", "ignoreMaskBlank=True");
@@ -13823,6 +13859,7 @@ namespace IAC2021SQL
             // 
             // textBox4821
             // 
+            this.textBox4821.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_NO", true));
             resources.ApplyResources(this.textBox4821, "textBox4821");
             this.textBox4821.Name = "textBox4821";
             this.textBox4821.Properties.Appearance.Options.UseFont = true;
@@ -13833,6 +13870,7 @@ namespace IAC2021SQL
             // 
             // textBox4721
             // 
+            this.textBox4721.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_FIRST_NAME", true));
             resources.ApplyResources(this.textBox4721, "textBox4721");
             this.textBox4721.Name = "textBox4721";
             this.textBox4721.Properties.Appearance.Options.UseFont = true;
@@ -13843,6 +13881,7 @@ namespace IAC2021SQL
             // 
             // textBox1721
             // 
+            this.textBox1721.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_LAST_NAME", true));
             resources.ApplyResources(this.textBox1721, "textBox1721");
             this.textBox1721.Name = "textBox1721";
             this.textBox1721.Properties.Appearance.Options.UseFont = true;
@@ -13853,6 +13892,7 @@ namespace IAC2021SQL
             // 
             // textBox1921
             // 
+            this.textBox1921.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_SUFFIX", true));
             resources.ApplyResources(this.textBox1921, "textBox1921");
             this.textBox1921.Name = "textBox1921";
             this.textBox1921.Properties.Appearance.Options.UseFont = true;
@@ -13863,6 +13903,7 @@ namespace IAC2021SQL
             // 
             // textBox5121
             // 
+            this.textBox5121.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_SS_1", true));
             resources.ApplyResources(this.textBox5121, "textBox5121");
             this.textBox5121.Name = "textBox5121";
             this.textBox5121.Properties.Appearance.Options.UseFont = true;
@@ -13873,6 +13914,7 @@ namespace IAC2021SQL
             // 
             // textBox5021
             // 
+            this.textBox5021.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_SS_2", true));
             resources.ApplyResources(this.textBox5021, "textBox5021");
             this.textBox5021.Name = "textBox5021";
             this.textBox5021.Properties.Appearance.Options.UseFont = true;
@@ -13883,6 +13925,7 @@ namespace IAC2021SQL
             // 
             // textBox4921
             // 
+            this.textBox4921.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_SS_3", true));
             resources.ApplyResources(this.textBox4921, "textBox4921");
             this.textBox4921.Name = "textBox4921";
             this.textBox4921.Properties.Appearance.Options.UseFont = true;
@@ -14086,174 +14129,6 @@ namespace IAC2021SQL
             this.layoutControlGroupSplitPayment,
             this.layoutControlGroupCreditCard});
             // 
-            // layoutControlGroupCreditCard
-            // 
-            this.layoutControlGroupCreditCard.GroupBordersVisible = false;
-            this.layoutControlGroupCreditCard.GroupStyle = DevExpress.Utils.GroupStyle.Light;
-            this.layoutControlGroupCreditCard.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlGroupCCard});
-            this.layoutControlGroupCreditCard.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlGroupCreditCard.Name = "layoutControlGroupCreditCard";
-            this.layoutControlGroupCreditCard.Size = new System.Drawing.Size(439, 336);
-            resources.ApplyResources(this.layoutControlGroupCreditCard, "layoutControlGroupCreditCard");
-            // 
-            // layoutControlGroupCCard
-            // 
-            this.layoutControlGroupCCard.AppearanceGroup.BackColor = System.Drawing.Color.Salmon;
-            this.layoutControlGroupCCard.AppearanceGroup.Options.UseBackColor = true;
-            this.layoutControlGroupCCard.GroupStyle = DevExpress.Utils.GroupStyle.Title;
-            this.layoutControlGroupCCard.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.emptySpaceItem96,
-            this.emptySpaceItem186,
-            this.layoutControlItemCreditCardNumber,
-            this.emptySpaceItem189,
-            this.emptySpaceItem191,
-            this.layoutControlItemCreditCardName,
-            this.emptySpaceItem190,
-            this.emptySpaceItem192,
-            this.layoutControlItemCreditCardCVV,
-            this.emptySpaceItem194,
-            this.emptySpaceItem193,
-            this.layoutControlItemExpMonth,
-            this.layoutControlItemExpYear,
-            this.emptySpaceItem196,
-            this.emptySpaceItem98});
-            this.layoutControlGroupCCard.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlGroupCCard.Name = "layoutControlGroupCCard";
-            this.layoutControlGroupCCard.Size = new System.Drawing.Size(439, 336);
-            resources.ApplyResources(this.layoutControlGroupCCard, "layoutControlGroupCCard");
-            this.layoutControlGroupCCard.TextVisible = false;
-            // 
-            // emptySpaceItem96
-            // 
-            this.emptySpaceItem96.Location = new System.Drawing.Point(0, 0);
-            this.emptySpaceItem96.MinSize = new System.Drawing.Size(10, 10);
-            this.emptySpaceItem96.Name = "emptySpaceItem96";
-            this.emptySpaceItem96.Size = new System.Drawing.Size(413, 34);
-            this.emptySpaceItem96.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            // 
-            // emptySpaceItem186
-            // 
-            this.emptySpaceItem186.Location = new System.Drawing.Point(0, 34);
-            this.emptySpaceItem186.MaxSize = new System.Drawing.Size(83, 60);
-            this.emptySpaceItem186.MinSize = new System.Drawing.Size(83, 60);
-            this.emptySpaceItem186.Name = "emptySpaceItem186";
-            this.emptySpaceItem186.Size = new System.Drawing.Size(83, 60);
-            this.emptySpaceItem186.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            // 
-            // layoutControlItemCreditCardNumber
-            // 
-            this.layoutControlItemCreditCardNumber.Control = this.textEditCreditCardNumber;
-            this.layoutControlItemCreditCardNumber.Location = new System.Drawing.Point(83, 34);
-            this.layoutControlItemCreditCardNumber.MaxSize = new System.Drawing.Size(273, 60);
-            this.layoutControlItemCreditCardNumber.MinSize = new System.Drawing.Size(273, 60);
-            this.layoutControlItemCreditCardNumber.Name = "layoutControlItemCreditCardNumber";
-            this.layoutControlItemCreditCardNumber.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
-            this.layoutControlItemCreditCardNumber.Size = new System.Drawing.Size(273, 60);
-            this.layoutControlItemCreditCardNumber.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            resources.ApplyResources(this.layoutControlItemCreditCardNumber, "layoutControlItemCreditCardNumber");
-            this.layoutControlItemCreditCardNumber.TextVisible = false;
-            // 
-            // emptySpaceItem189
-            // 
-            this.emptySpaceItem189.Location = new System.Drawing.Point(356, 34);
-            this.emptySpaceItem189.Name = "emptySpaceItem189";
-            this.emptySpaceItem189.Size = new System.Drawing.Size(57, 60);
-            // 
-            // emptySpaceItem191
-            // 
-            this.emptySpaceItem191.Location = new System.Drawing.Point(0, 94);
-            this.emptySpaceItem191.MaxSize = new System.Drawing.Size(83, 60);
-            this.emptySpaceItem191.MinSize = new System.Drawing.Size(83, 60);
-            this.emptySpaceItem191.Name = "emptySpaceItem191";
-            this.emptySpaceItem191.Size = new System.Drawing.Size(83, 60);
-            this.emptySpaceItem191.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            // 
-            // layoutControlItemCreditCardName
-            // 
-            this.layoutControlItemCreditCardName.Control = this.textEditCreditCardName;
-            this.layoutControlItemCreditCardName.Location = new System.Drawing.Point(83, 94);
-            this.layoutControlItemCreditCardName.MaxSize = new System.Drawing.Size(273, 60);
-            this.layoutControlItemCreditCardName.MinSize = new System.Drawing.Size(273, 60);
-            this.layoutControlItemCreditCardName.Name = "layoutControlItemCreditCardName";
-            this.layoutControlItemCreditCardName.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
-            this.layoutControlItemCreditCardName.Size = new System.Drawing.Size(273, 60);
-            this.layoutControlItemCreditCardName.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            resources.ApplyResources(this.layoutControlItemCreditCardName, "layoutControlItemCreditCardName");
-            this.layoutControlItemCreditCardName.TextVisible = false;
-            // 
-            // emptySpaceItem190
-            // 
-            this.emptySpaceItem190.Location = new System.Drawing.Point(356, 94);
-            this.emptySpaceItem190.Name = "emptySpaceItem190";
-            this.emptySpaceItem190.Size = new System.Drawing.Size(57, 60);
-            // 
-            // emptySpaceItem192
-            // 
-            this.emptySpaceItem192.Location = new System.Drawing.Point(0, 154);
-            this.emptySpaceItem192.MaxSize = new System.Drawing.Size(83, 60);
-            this.emptySpaceItem192.MinSize = new System.Drawing.Size(83, 60);
-            this.emptySpaceItem192.Name = "emptySpaceItem192";
-            this.emptySpaceItem192.Size = new System.Drawing.Size(83, 60);
-            this.emptySpaceItem192.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            // 
-            // layoutControlItemCreditCardCVV
-            // 
-            this.layoutControlItemCreditCardCVV.Control = this.textEditCreditCardCVV;
-            this.layoutControlItemCreditCardCVV.Location = new System.Drawing.Point(83, 154);
-            this.layoutControlItemCreditCardCVV.MaxSize = new System.Drawing.Size(98, 60);
-            this.layoutControlItemCreditCardCVV.MinSize = new System.Drawing.Size(98, 60);
-            this.layoutControlItemCreditCardCVV.Name = "layoutControlItemCreditCardCVV";
-            this.layoutControlItemCreditCardCVV.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
-            this.layoutControlItemCreditCardCVV.Size = new System.Drawing.Size(98, 60);
-            this.layoutControlItemCreditCardCVV.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            resources.ApplyResources(this.layoutControlItemCreditCardCVV, "layoutControlItemCreditCardCVV");
-            this.layoutControlItemCreditCardCVV.TextVisible = false;
-            // 
-            // emptySpaceItem194
-            // 
-            this.emptySpaceItem194.Location = new System.Drawing.Point(181, 154);
-            this.emptySpaceItem194.Name = "emptySpaceItem194";
-            this.emptySpaceItem194.Size = new System.Drawing.Size(232, 60);
-            // 
-            // emptySpaceItem193
-            // 
-            this.emptySpaceItem193.Location = new System.Drawing.Point(0, 214);
-            this.emptySpaceItem193.Name = "emptySpaceItem193";
-            this.emptySpaceItem193.Size = new System.Drawing.Size(83, 62);
-            // 
-            // layoutControlItemExpMonth
-            // 
-            this.layoutControlItemExpMonth.Control = this.lookUpEditExpMonth;
-            this.layoutControlItemExpMonth.Location = new System.Drawing.Point(83, 214);
-            this.layoutControlItemExpMonth.Name = "layoutControlItemExpMonth";
-            this.layoutControlItemExpMonth.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
-            this.layoutControlItemExpMonth.Size = new System.Drawing.Size(120, 62);
-            resources.ApplyResources(this.layoutControlItemExpMonth, "layoutControlItemExpMonth");
-            this.layoutControlItemExpMonth.TextVisible = false;
-            // 
-            // layoutControlItemExpYear
-            // 
-            this.layoutControlItemExpYear.Control = this.comboBoxEditExpYear;
-            this.layoutControlItemExpYear.Location = new System.Drawing.Point(203, 214);
-            this.layoutControlItemExpYear.Name = "layoutControlItemExpYear";
-            this.layoutControlItemExpYear.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
-            this.layoutControlItemExpYear.Size = new System.Drawing.Size(99, 62);
-            resources.ApplyResources(this.layoutControlItemExpYear, "layoutControlItemExpYear");
-            this.layoutControlItemExpYear.TextVisible = false;
-            // 
-            // emptySpaceItem196
-            // 
-            this.emptySpaceItem196.Location = new System.Drawing.Point(302, 214);
-            this.emptySpaceItem196.Name = "emptySpaceItem196";
-            this.emptySpaceItem196.Size = new System.Drawing.Size(111, 62);
-            // 
-            // emptySpaceItem98
-            // 
-            this.emptySpaceItem98.Location = new System.Drawing.Point(0, 276);
-            this.emptySpaceItem98.Name = "emptySpaceItem98";
-            this.emptySpaceItem98.Size = new System.Drawing.Size(413, 34);
-            // 
             // layoutControlGroupEFTeCheck
             // 
             this.layoutControlGroupEFTeCheck.GroupBordersVisible = false;
@@ -14388,11 +14263,11 @@ namespace IAC2021SQL
             // 
             this.layoutControlItemBankAccountNumber.Control = this.textEditBankAccountNumber;
             this.layoutControlItemBankAccountNumber.Location = new System.Drawing.Point(83, 180);
-            this.layoutControlItemBankAccountNumber.MaxSize = new System.Drawing.Size(0, 60);
-            this.layoutControlItemBankAccountNumber.MinSize = new System.Drawing.Size(54, 60);
+            this.layoutControlItemBankAccountNumber.MaxSize = new System.Drawing.Size(189, 60);
+            this.layoutControlItemBankAccountNumber.MinSize = new System.Drawing.Size(189, 60);
             this.layoutControlItemBankAccountNumber.Name = "layoutControlItemBankAccountNumber";
             this.layoutControlItemBankAccountNumber.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
-            this.layoutControlItemBankAccountNumber.Size = new System.Drawing.Size(137, 60);
+            this.layoutControlItemBankAccountNumber.Size = new System.Drawing.Size(189, 60);
             this.layoutControlItemBankAccountNumber.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             resources.ApplyResources(this.layoutControlItemBankAccountNumber, "layoutControlItemBankAccountNumber");
             this.layoutControlItemBankAccountNumber.TextVisible = false;
@@ -14400,9 +14275,13 @@ namespace IAC2021SQL
             // layoutControlItemBankAccountType
             // 
             this.layoutControlItemBankAccountType.Control = this.radioGroupAccountType;
-            this.layoutControlItemBankAccountType.Location = new System.Drawing.Point(220, 180);
+            this.layoutControlItemBankAccountType.Location = new System.Drawing.Point(272, 180);
+            this.layoutControlItemBankAccountType.MaxSize = new System.Drawing.Size(167, 60);
+            this.layoutControlItemBankAccountType.MinSize = new System.Drawing.Size(167, 60);
             this.layoutControlItemBankAccountType.Name = "layoutControlItemBankAccountType";
-            this.layoutControlItemBankAccountType.Size = new System.Drawing.Size(219, 60);
+            this.layoutControlItemBankAccountType.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.layoutControlItemBankAccountType.Size = new System.Drawing.Size(167, 60);
+            this.layoutControlItemBankAccountType.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             resources.ApplyResources(this.layoutControlItemBankAccountType, "layoutControlItemBankAccountType");
             this.layoutControlItemBankAccountType.TextVisible = false;
             // 
@@ -14419,7 +14298,7 @@ namespace IAC2021SQL
             this.layoutControlItemBankMonthlyPayment.Location = new System.Drawing.Point(83, 240);
             this.layoutControlItemBankMonthlyPayment.Name = "layoutControlItemBankMonthlyPayment";
             this.layoutControlItemBankMonthlyPayment.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
-            this.layoutControlItemBankMonthlyPayment.Size = new System.Drawing.Size(137, 96);
+            this.layoutControlItemBankMonthlyPayment.Size = new System.Drawing.Size(189, 96);
             resources.ApplyResources(this.layoutControlItemBankMonthlyPayment, "layoutControlItemBankMonthlyPayment");
             this.layoutControlItemBankMonthlyPayment.TextVisible = false;
             // 
@@ -14427,17 +14306,17 @@ namespace IAC2021SQL
             // 
             this.layoutControlItem65.ContentVertAlignment = DevExpress.Utils.VertAlignment.Bottom;
             this.layoutControlItem65.Control = this.checkEditBankAutoPay;
-            this.layoutControlItem65.Location = new System.Drawing.Point(220, 240);
+            this.layoutControlItem65.Location = new System.Drawing.Point(272, 240);
             this.layoutControlItem65.Name = "layoutControlItem65";
-            this.layoutControlItem65.Size = new System.Drawing.Size(219, 28);
+            this.layoutControlItem65.Size = new System.Drawing.Size(167, 28);
             this.layoutControlItem65.TextVisible = false;
             // 
             // layoutControlItem66
             // 
             this.layoutControlItem66.Control = this.checkEditSplitPay;
-            this.layoutControlItem66.Location = new System.Drawing.Point(220, 268);
+            this.layoutControlItem66.Location = new System.Drawing.Point(272, 268);
             this.layoutControlItem66.Name = "layoutControlItem66";
-            this.layoutControlItem66.Size = new System.Drawing.Size(219, 68);
+            this.layoutControlItem66.Size = new System.Drawing.Size(167, 68);
             this.layoutControlItem66.TextVisible = false;
             // 
             // emptySpaceItem92
@@ -14761,6 +14640,174 @@ namespace IAC2021SQL
             this.emptySpaceItem200.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
             this.emptySpaceItem200.Size = new System.Drawing.Size(157, 41);
             this.emptySpaceItem200.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            // 
+            // layoutControlGroupCreditCard
+            // 
+            this.layoutControlGroupCreditCard.GroupBordersVisible = false;
+            this.layoutControlGroupCreditCard.GroupStyle = DevExpress.Utils.GroupStyle.Light;
+            this.layoutControlGroupCreditCard.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlGroupCCard});
+            this.layoutControlGroupCreditCard.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlGroupCreditCard.Name = "layoutControlGroupCreditCard";
+            this.layoutControlGroupCreditCard.Size = new System.Drawing.Size(439, 336);
+            resources.ApplyResources(this.layoutControlGroupCreditCard, "layoutControlGroupCreditCard");
+            // 
+            // layoutControlGroupCCard
+            // 
+            this.layoutControlGroupCCard.AppearanceGroup.BackColor = System.Drawing.Color.Salmon;
+            this.layoutControlGroupCCard.AppearanceGroup.Options.UseBackColor = true;
+            this.layoutControlGroupCCard.GroupStyle = DevExpress.Utils.GroupStyle.Title;
+            this.layoutControlGroupCCard.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.emptySpaceItem96,
+            this.emptySpaceItem186,
+            this.layoutControlItemCreditCardNumber,
+            this.emptySpaceItem189,
+            this.emptySpaceItem191,
+            this.layoutControlItemCreditCardName,
+            this.emptySpaceItem190,
+            this.emptySpaceItem192,
+            this.layoutControlItemCreditCardCVV,
+            this.emptySpaceItem194,
+            this.emptySpaceItem193,
+            this.layoutControlItemExpMonth,
+            this.layoutControlItemExpYear,
+            this.emptySpaceItem196,
+            this.emptySpaceItem98});
+            this.layoutControlGroupCCard.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlGroupCCard.Name = "layoutControlGroupCCard";
+            this.layoutControlGroupCCard.Size = new System.Drawing.Size(439, 336);
+            resources.ApplyResources(this.layoutControlGroupCCard, "layoutControlGroupCCard");
+            this.layoutControlGroupCCard.TextVisible = false;
+            // 
+            // emptySpaceItem96
+            // 
+            this.emptySpaceItem96.Location = new System.Drawing.Point(0, 0);
+            this.emptySpaceItem96.MinSize = new System.Drawing.Size(10, 10);
+            this.emptySpaceItem96.Name = "emptySpaceItem96";
+            this.emptySpaceItem96.Size = new System.Drawing.Size(413, 34);
+            this.emptySpaceItem96.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            // 
+            // emptySpaceItem186
+            // 
+            this.emptySpaceItem186.Location = new System.Drawing.Point(0, 34);
+            this.emptySpaceItem186.MaxSize = new System.Drawing.Size(83, 60);
+            this.emptySpaceItem186.MinSize = new System.Drawing.Size(83, 60);
+            this.emptySpaceItem186.Name = "emptySpaceItem186";
+            this.emptySpaceItem186.Size = new System.Drawing.Size(83, 60);
+            this.emptySpaceItem186.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            // 
+            // layoutControlItemCreditCardNumber
+            // 
+            this.layoutControlItemCreditCardNumber.Control = this.textEditCreditCardNumber;
+            this.layoutControlItemCreditCardNumber.Location = new System.Drawing.Point(83, 34);
+            this.layoutControlItemCreditCardNumber.MaxSize = new System.Drawing.Size(273, 60);
+            this.layoutControlItemCreditCardNumber.MinSize = new System.Drawing.Size(273, 60);
+            this.layoutControlItemCreditCardNumber.Name = "layoutControlItemCreditCardNumber";
+            this.layoutControlItemCreditCardNumber.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.layoutControlItemCreditCardNumber.Size = new System.Drawing.Size(273, 60);
+            this.layoutControlItemCreditCardNumber.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            resources.ApplyResources(this.layoutControlItemCreditCardNumber, "layoutControlItemCreditCardNumber");
+            this.layoutControlItemCreditCardNumber.TextVisible = false;
+            // 
+            // emptySpaceItem189
+            // 
+            this.emptySpaceItem189.Location = new System.Drawing.Point(356, 34);
+            this.emptySpaceItem189.Name = "emptySpaceItem189";
+            this.emptySpaceItem189.Size = new System.Drawing.Size(57, 60);
+            // 
+            // emptySpaceItem191
+            // 
+            this.emptySpaceItem191.Location = new System.Drawing.Point(0, 94);
+            this.emptySpaceItem191.MaxSize = new System.Drawing.Size(83, 60);
+            this.emptySpaceItem191.MinSize = new System.Drawing.Size(83, 60);
+            this.emptySpaceItem191.Name = "emptySpaceItem191";
+            this.emptySpaceItem191.Size = new System.Drawing.Size(83, 60);
+            this.emptySpaceItem191.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            // 
+            // layoutControlItemCreditCardName
+            // 
+            this.layoutControlItemCreditCardName.Control = this.textEditCreditCardName;
+            this.layoutControlItemCreditCardName.Location = new System.Drawing.Point(83, 94);
+            this.layoutControlItemCreditCardName.MaxSize = new System.Drawing.Size(273, 60);
+            this.layoutControlItemCreditCardName.MinSize = new System.Drawing.Size(273, 60);
+            this.layoutControlItemCreditCardName.Name = "layoutControlItemCreditCardName";
+            this.layoutControlItemCreditCardName.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.layoutControlItemCreditCardName.Size = new System.Drawing.Size(273, 60);
+            this.layoutControlItemCreditCardName.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            resources.ApplyResources(this.layoutControlItemCreditCardName, "layoutControlItemCreditCardName");
+            this.layoutControlItemCreditCardName.TextVisible = false;
+            // 
+            // emptySpaceItem190
+            // 
+            this.emptySpaceItem190.Location = new System.Drawing.Point(356, 94);
+            this.emptySpaceItem190.Name = "emptySpaceItem190";
+            this.emptySpaceItem190.Size = new System.Drawing.Size(57, 60);
+            // 
+            // emptySpaceItem192
+            // 
+            this.emptySpaceItem192.Location = new System.Drawing.Point(0, 154);
+            this.emptySpaceItem192.MaxSize = new System.Drawing.Size(83, 60);
+            this.emptySpaceItem192.MinSize = new System.Drawing.Size(83, 60);
+            this.emptySpaceItem192.Name = "emptySpaceItem192";
+            this.emptySpaceItem192.Size = new System.Drawing.Size(83, 60);
+            this.emptySpaceItem192.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            // 
+            // layoutControlItemCreditCardCVV
+            // 
+            this.layoutControlItemCreditCardCVV.Control = this.textEditCreditCardCVV;
+            this.layoutControlItemCreditCardCVV.Location = new System.Drawing.Point(83, 154);
+            this.layoutControlItemCreditCardCVV.MaxSize = new System.Drawing.Size(98, 60);
+            this.layoutControlItemCreditCardCVV.MinSize = new System.Drawing.Size(98, 60);
+            this.layoutControlItemCreditCardCVV.Name = "layoutControlItemCreditCardCVV";
+            this.layoutControlItemCreditCardCVV.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.layoutControlItemCreditCardCVV.Size = new System.Drawing.Size(98, 60);
+            this.layoutControlItemCreditCardCVV.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            resources.ApplyResources(this.layoutControlItemCreditCardCVV, "layoutControlItemCreditCardCVV");
+            this.layoutControlItemCreditCardCVV.TextVisible = false;
+            // 
+            // emptySpaceItem194
+            // 
+            this.emptySpaceItem194.Location = new System.Drawing.Point(181, 154);
+            this.emptySpaceItem194.Name = "emptySpaceItem194";
+            this.emptySpaceItem194.Size = new System.Drawing.Size(232, 60);
+            // 
+            // emptySpaceItem193
+            // 
+            this.emptySpaceItem193.Location = new System.Drawing.Point(0, 214);
+            this.emptySpaceItem193.Name = "emptySpaceItem193";
+            this.emptySpaceItem193.Size = new System.Drawing.Size(83, 62);
+            // 
+            // layoutControlItemExpMonth
+            // 
+            this.layoutControlItemExpMonth.Control = this.lookUpEditExpMonth;
+            this.layoutControlItemExpMonth.Location = new System.Drawing.Point(83, 214);
+            this.layoutControlItemExpMonth.Name = "layoutControlItemExpMonth";
+            this.layoutControlItemExpMonth.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.layoutControlItemExpMonth.Size = new System.Drawing.Size(120, 62);
+            resources.ApplyResources(this.layoutControlItemExpMonth, "layoutControlItemExpMonth");
+            this.layoutControlItemExpMonth.TextVisible = false;
+            // 
+            // layoutControlItemExpYear
+            // 
+            this.layoutControlItemExpYear.Control = this.comboBoxEditExpYear;
+            this.layoutControlItemExpYear.Location = new System.Drawing.Point(203, 214);
+            this.layoutControlItemExpYear.Name = "layoutControlItemExpYear";
+            this.layoutControlItemExpYear.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.layoutControlItemExpYear.Size = new System.Drawing.Size(99, 62);
+            resources.ApplyResources(this.layoutControlItemExpYear, "layoutControlItemExpYear");
+            this.layoutControlItemExpYear.TextVisible = false;
+            // 
+            // emptySpaceItem196
+            // 
+            this.emptySpaceItem196.Location = new System.Drawing.Point(302, 214);
+            this.emptySpaceItem196.Name = "emptySpaceItem196";
+            this.emptySpaceItem196.Size = new System.Drawing.Size(111, 62);
+            // 
+            // emptySpaceItem98
+            // 
+            this.emptySpaceItem98.Location = new System.Drawing.Point(0, 276);
+            this.emptySpaceItem98.Name = "emptySpaceItem98";
+            this.emptySpaceItem98.Size = new System.Drawing.Size(413, 34);
             // 
             // emptySpaceItem134
             // 
@@ -17550,6 +17597,8 @@ namespace IAC2021SQL
             this.textBoxTotalFees.Name = "textBoxTotalFees";
             this.textBoxTotalFees.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textBoxTotalFees.Properties.Appearance.Font")));
             this.textBoxTotalFees.Properties.Appearance.Options.UseFont = true;
+            this.textBoxTotalFees.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.textBoxTotalFees.Properties.AppearanceDisabled.Options.UseForeColor = true;
             this.textBoxTotalFees.Properties.BeepOnError = ((bool)(resources.GetObject("textBoxTotalFees.Properties.BeepOnError")));
             this.textBoxTotalFees.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
             this.textBoxTotalFees.Properties.MaskSettings.Set("mask", "c");
@@ -17569,6 +17618,8 @@ namespace IAC2021SQL
             this.textBoxRepairFee5.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
             this.textBoxRepairFee5.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textBoxRepairFee5.Properties.Appearance.Font")));
             this.textBoxRepairFee5.Properties.Appearance.Options.UseFont = true;
+            this.textBoxRepairFee5.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.textBoxRepairFee5.Properties.AppearanceDisabled.Options.UseForeColor = true;
             this.textBoxRepairFee5.Properties.BeepOnError = ((bool)(resources.GetObject("textBoxRepairFee5.Properties.BeepOnError")));
             this.textBoxRepairFee5.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.textBoxRepairFee5.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Buffered;
@@ -17592,6 +17643,8 @@ namespace IAC2021SQL
             this.textBoxRepairFee4.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
             this.textBoxRepairFee4.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textBoxRepairFee4.Properties.Appearance.Font")));
             this.textBoxRepairFee4.Properties.Appearance.Options.UseFont = true;
+            this.textBoxRepairFee4.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.textBoxRepairFee4.Properties.AppearanceDisabled.Options.UseForeColor = true;
             this.textBoxRepairFee4.Properties.BeepOnError = ((bool)(resources.GetObject("textBoxRepairFee4.Properties.BeepOnError")));
             this.textBoxRepairFee4.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.textBoxRepairFee4.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Buffered;
@@ -17615,6 +17668,8 @@ namespace IAC2021SQL
             this.textBoxRepairFee3.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
             this.textBoxRepairFee3.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textBoxRepairFee3.Properties.Appearance.Font")));
             this.textBoxRepairFee3.Properties.Appearance.Options.UseFont = true;
+            this.textBoxRepairFee3.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.textBoxRepairFee3.Properties.AppearanceDisabled.Options.UseForeColor = true;
             this.textBoxRepairFee3.Properties.BeepOnError = ((bool)(resources.GetObject("textBoxRepairFee3.Properties.BeepOnError")));
             this.textBoxRepairFee3.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.textBoxRepairFee3.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Buffered;
@@ -17638,6 +17693,8 @@ namespace IAC2021SQL
             this.textBoxRepairFee2.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
             this.textBoxRepairFee2.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textBoxRepairFee2.Properties.Appearance.Font")));
             this.textBoxRepairFee2.Properties.Appearance.Options.UseFont = true;
+            this.textBoxRepairFee2.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.textBoxRepairFee2.Properties.AppearanceDisabled.Options.UseForeColor = true;
             this.textBoxRepairFee2.Properties.BeepOnError = ((bool)(resources.GetObject("textBoxRepairFee2.Properties.BeepOnError")));
             this.textBoxRepairFee2.Properties.EditFormat.FormatString = "c2";
             this.textBoxRepairFee2.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
@@ -17662,6 +17719,8 @@ namespace IAC2021SQL
             this.textBoxRepairFee1.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
             this.textBoxRepairFee1.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textBoxRepairFee1.Properties.Appearance.Font")));
             this.textBoxRepairFee1.Properties.Appearance.Options.UseFont = true;
+            this.textBoxRepairFee1.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.textBoxRepairFee1.Properties.AppearanceDisabled.Options.UseForeColor = true;
             this.textBoxRepairFee1.Properties.BeepOnError = ((bool)(resources.GetObject("textBoxRepairFee1.Properties.BeepOnError")));
             this.textBoxRepairFee1.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.textBoxRepairFee1.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Buffered;
@@ -17685,6 +17744,8 @@ namespace IAC2021SQL
             this.textBoxResaleFees.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
             this.textBoxResaleFees.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textBoxResaleFees.Properties.Appearance.Font")));
             this.textBoxResaleFees.Properties.Appearance.Options.UseFont = true;
+            this.textBoxResaleFees.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.textBoxResaleFees.Properties.AppearanceDisabled.Options.UseForeColor = true;
             this.textBoxResaleFees.Properties.BeepOnError = ((bool)(resources.GetObject("textBoxResaleFees.Properties.BeepOnError")));
             this.textBoxResaleFees.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.textBoxResaleFees.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Buffered;
@@ -17708,6 +17769,8 @@ namespace IAC2021SQL
             this.textBoxImpoundFees.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
             this.textBoxImpoundFees.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textBoxImpoundFees.Properties.Appearance.Font")));
             this.textBoxImpoundFees.Properties.Appearance.Options.UseFont = true;
+            this.textBoxImpoundFees.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.textBoxImpoundFees.Properties.AppearanceDisabled.Options.UseForeColor = true;
             this.textBoxImpoundFees.Properties.BeepOnError = ((bool)(resources.GetObject("textBoxImpoundFees.Properties.BeepOnError")));
             this.textBoxImpoundFees.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.textBoxImpoundFees.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Buffered;
@@ -17731,6 +17794,8 @@ namespace IAC2021SQL
             this.textBoxStorageFees.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
             this.textBoxStorageFees.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textBoxStorageFees.Properties.Appearance.Font")));
             this.textBoxStorageFees.Properties.Appearance.Options.UseFont = true;
+            this.textBoxStorageFees.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.textBoxStorageFees.Properties.AppearanceDisabled.Options.UseForeColor = true;
             this.textBoxStorageFees.Properties.BeepOnError = ((bool)(resources.GetObject("textBoxStorageFees.Properties.BeepOnError")));
             this.textBoxStorageFees.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.textBoxStorageFees.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Buffered;
@@ -17754,6 +17819,8 @@ namespace IAC2021SQL
             this.textBoxRepoFees.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.True;
             this.textBoxRepoFees.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textBoxRepoFees.Properties.Appearance.Font")));
             this.textBoxRepoFees.Properties.Appearance.Options.UseFont = true;
+            this.textBoxRepoFees.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.textBoxRepoFees.Properties.AppearanceDisabled.Options.UseForeColor = true;
             this.textBoxRepoFees.Properties.BeepOnError = ((bool)(resources.GetObject("textBoxRepoFees.Properties.BeepOnError")));
             this.textBoxRepoFees.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.textBoxRepoFees.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Buffered;
@@ -17790,6 +17857,8 @@ namespace IAC2021SQL
             this.textBox6.Name = "textBox6";
             this.textBox6.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textBox6.Properties.Appearance.Font")));
             this.textBox6.Properties.Appearance.Options.UseFont = true;
+            this.textBox6.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.textBox6.Properties.AppearanceDisabled.Options.UseForeColor = true;
             this.textBox6.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBox6.Properties.ReadOnly = true;
             // 
@@ -17800,6 +17869,8 @@ namespace IAC2021SQL
             this.textBox12.Name = "textBox12";
             this.textBox12.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textBox12.Properties.Appearance.Font")));
             this.textBox12.Properties.Appearance.Options.UseFont = true;
+            this.textBox12.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.textBox12.Properties.AppearanceDisabled.Options.UseForeColor = true;
             this.textBox12.Properties.ReadOnly = true;
             // 
             // textBox13
@@ -17809,6 +17880,8 @@ namespace IAC2021SQL
             this.textBox13.Name = "textBox13";
             this.textBox13.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textBox13.Properties.Appearance.Font")));
             this.textBox13.Properties.Appearance.Options.UseFont = true;
+            this.textBox13.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.textBox13.Properties.AppearanceDisabled.Options.UseForeColor = true;
             this.textBox13.Properties.ReadOnly = true;
             // 
             // textBox26
@@ -17818,6 +17891,8 @@ namespace IAC2021SQL
             this.textBox26.Name = "textBox26";
             this.textBox26.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textBox26.Properties.Appearance.Font")));
             this.textBox26.Properties.Appearance.Options.UseFont = true;
+            this.textBox26.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.textBox26.Properties.AppearanceDisabled.Options.UseForeColor = true;
             this.textBox26.Properties.ReadOnly = true;
             // 
             // textBox38
@@ -17827,6 +17902,8 @@ namespace IAC2021SQL
             this.textBox38.Name = "textBox38";
             this.textBox38.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textBox38.Properties.Appearance.Font")));
             this.textBox38.Properties.Appearance.Options.UseFont = true;
+            this.textBox38.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.textBox38.Properties.AppearanceDisabled.Options.UseForeColor = true;
             this.textBox38.Properties.ReadOnly = true;
             // 
             // textBox39
@@ -17836,6 +17913,8 @@ namespace IAC2021SQL
             this.textBox39.Name = "textBox39";
             this.textBox39.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textBox39.Properties.Appearance.Font")));
             this.textBox39.Properties.Appearance.Options.UseFont = true;
+            this.textBox39.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.textBox39.Properties.AppearanceDisabled.Options.UseForeColor = true;
             this.textBox39.Properties.ReadOnly = true;
             // 
             // textBox40
@@ -17845,6 +17924,8 @@ namespace IAC2021SQL
             this.textBox40.Name = "textBox40";
             this.textBox40.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("textBox40.Properties.Appearance.Font")));
             this.textBox40.Properties.Appearance.Options.UseFont = true;
+            this.textBox40.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.textBox40.Properties.AppearanceDisabled.Options.UseForeColor = true;
             this.textBox40.Properties.ReadOnly = true;
             // 
             // xtraTabPageTSB
@@ -20639,23 +20720,6 @@ namespace IAC2021SQL
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem88)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroupBankTabs)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedControlGroupBankInfo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroupCreditCard)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroupCCard)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem96)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem186)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemCreditCardNumber)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem189)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem191)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemCreditCardName)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem190)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem192)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemCreditCardCVV)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem194)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem193)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemExpMonth)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemExpYear)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem196)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem98)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroupEFTeCheck)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem101)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemBankName)).EndInit();
@@ -20694,6 +20758,23 @@ namespace IAC2021SQL
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem195)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem198)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem200)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroupCreditCard)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroupCCard)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem96)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem186)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemCreditCardNumber)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem189)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem191)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemCreditCardName)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem190)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem192)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemCreditCardCVV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem194)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem193)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemExpMonth)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemExpYear)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem196)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem98)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem134)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem99)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem199)).EndInit();
