@@ -1328,7 +1328,6 @@ namespace IAC2021SQL
             this.bar7 = new DevExpress.XtraBars.Bar();
             this.bar8 = new DevExpress.XtraBars.Bar();
             this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.emptySpaceItem95 = new DevExpress.XtraLayout.EmptySpaceItem();
             labelTotalDue = new System.Windows.Forms.Label();
             labelDealerCashPrice = new System.Windows.Forms.Label();
@@ -19990,11 +19989,6 @@ namespace IAC2021SQL
             this.layoutControlGroup3.Name = "layoutControlGroup3";
             this.layoutControlGroup3.Size = new System.Drawing.Size(402, 79);
             // 
-            // simpleButton1
-            // 
-            resources.ApplyResources(this.simpleButton1, "simpleButton1");
-            this.simpleButton1.Name = "simpleButton1";
-            // 
             // emptySpaceItem95
             // 
             this.emptySpaceItem95.Location = new System.Drawing.Point(0, 0);
@@ -20008,7 +20002,6 @@ namespace IAC2021SQL
             this.Appearance.Options.UseFont = true;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.xtraTabControlCustomerMaint);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControl4);
@@ -22237,7 +22230,6 @@ namespace IAC2021SQL
         private LayoutControlItem layoutControlItemPaymentDay4;
         private LayoutControlItem layoutControlItemAmount4;
         private LayoutControlItem layoutControlItemTotalPayments;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private LayoutControlGroup layoutControlGroup5;
         private LayoutControlItem layoutControlItemAmountUnused;
         private DevExpress.XtraEditors.TextEdit textBox4821;
