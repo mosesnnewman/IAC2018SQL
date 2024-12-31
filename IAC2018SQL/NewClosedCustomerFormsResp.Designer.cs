@@ -119,30 +119,30 @@ namespace IAC2021SQL
             System.Windows.Forms.Label label49;
             System.Windows.Forms.Label label117;
             System.Windows.Forms.Label label116;
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition13 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition14 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition15 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition16 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition17 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition18 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition13 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition14 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition15 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition16 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition17 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition18 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition19 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition20 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition21 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition22 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition23 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition24 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition19 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition20 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition21 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition22 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition23 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition24 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition1 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition2 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition3 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition4 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition5 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition6 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition1 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition2 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition3 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition4 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition5 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition6 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition7 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition8 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition9 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition10 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition11 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition12 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition7 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition8 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition9 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition10 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition11 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition12 = new DevExpress.XtraLayout.RowDefinition();
             this.cUSTOMERBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.iACDataSet = new IAC2021SQL.IACDataSet();
             this.cOMMENTBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -235,14 +235,15 @@ namespace IAC2021SQL
             this.imageCollectionTabs = new DevExpress.Utils.ImageCollection(this.components);
             this.xtraTabPageCustInfo1 = new DevExpress.XtraTab.XtraTabPage();
             this.layoutControlCustomerInfo = new DevExpress.XtraLayout.LayoutControl();
-            this.textBoxOpenAccount = new DevExpress.XtraEditors.TextEdit();
-            this.checkBoxVehicleWarranty = new DevExpress.XtraEditors.CheckEdit();
+            this.richTextBoxEmailAddress = new DevExpress.UITemplates.Collection.Editors.EmailBox();
             this.toolbarFormManager1 = new DevExpress.XtraBars.ToolbarForm.ToolbarFormManager(this.components);
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.barDockControl4 = new DevExpress.XtraBars.BarDockControl();
             this.standaloneBarDockControl1 = new DevExpress.XtraBars.StandaloneBarDockControl();
+            this.textBoxOpenAccount = new DevExpress.XtraEditors.TextEdit();
+            this.checkBoxVehicleWarranty = new DevExpress.XtraEditors.CheckEdit();
             this.checkBoxRefi = new DevExpress.XtraEditors.CheckEdit();
             this.textBoxAccount = new DevExpress.XtraEditors.TextEdit();
             this.buttonSendMail = new DevExpress.XtraEditors.SimpleButton();
@@ -279,7 +280,6 @@ namespace IAC2021SQL
             this.cUSTOMER_WORK_PHONETextBox = new DevExpress.XtraEditors.TextEdit();
             this.cUSTOMER_PHONE_EXTtextBox = new DevExpress.XtraEditors.TextEdit();
             this.cUSTOMER_PHONE_NOTextBox = new DevExpress.XtraEditors.TextEdit();
-            this.richTextBoxEmailAddress = new DevExpress.XtraEditors.TextEdit();
             this.checkEditAutoPay = new DevExpress.XtraEditors.CheckEdit();
             this.checkEditCustomerInsurance = new DevExpress.XtraEditors.CheckEdit();
             this.cUSTOMER_ZIP_2TextBox = new DevExpress.XtraEditors.TextEdit();
@@ -318,7 +318,6 @@ namespace IAC2021SQL
             this.layoutControlItemCareOf = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItemAddress1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItemAddress2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItemEmailAddress = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem6 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItemComment1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItemComment2 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -385,6 +384,7 @@ namespace IAC2021SQL
             this.emptySpaceItem16 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem51 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem15 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.layoutControlItemEmailAddress = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroupDealerInfo = new DevExpress.XtraLayout.LayoutControlGroup();
             this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItemDealerNo = new DevExpress.XtraLayout.LayoutControlItem();
@@ -721,7 +721,7 @@ namespace IAC2021SQL
             this.textBoxCosignerAnnualIncome = new DevExpress.XtraEditors.TextEdit();
             this.textBoxTier = new DevExpress.XtraEditors.TextEdit();
             this.txtCOSPhone = new DevExpress.XtraEditors.TextEdit();
-            this.textBoxCosignerEmail = new DevExpress.XtraEditors.TextEdit();
+            this.textBoxCosignerEmail = new DevExpress.UITemplates.Collection.Editors.EmailBox();
             this.txtCOSAddress = new DevExpress.XtraEditors.TextEdit();
             this.txtCOSCity = new DevExpress.XtraEditors.TextEdit();
             this.txtCOSWorkPhone = new DevExpress.XtraEditors.TextEdit();
@@ -1329,6 +1329,8 @@ namespace IAC2021SQL
             this.bar8 = new DevExpress.XtraBars.Bar();
             this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.emptySpaceItem95 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emailTableAdapter1 = new IAC2021SQL.IACDataSetTableAdapters.EmailTableAdapter();
+            this.emailTableAdapter2 = new IAC2021SQL.ProductionMainTablesTableAdapters.EmailTableAdapter();
             labelTotalDue = new System.Windows.Forms.Label();
             labelDealerCashPrice = new System.Windows.Forms.Label();
             label30 = new System.Windows.Forms.Label();
@@ -1458,9 +1460,10 @@ namespace IAC2021SQL
             this.xtraTabPageCustInfo1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlCustomerInfo)).BeginInit();
             this.layoutControlCustomerInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.richTextBoxEmailAddress)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toolbarFormManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textBoxOpenAccount.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkBoxVehicleWarranty.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.toolbarFormManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkBoxRefi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textBoxAccount.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textBoxAuthNo.Properties)).BeginInit();
@@ -1493,7 +1496,6 @@ namespace IAC2021SQL
             ((System.ComponentModel.ISupportInitialize)(this.cUSTOMER_WORK_PHONETextBox.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cUSTOMER_PHONE_EXTtextBox.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cUSTOMER_PHONE_NOTextBox.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.richTextBoxEmailAddress.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditAutoPay.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditCustomerInsurance.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cUSTOMER_ZIP_2TextBox.Properties)).BeginInit();
@@ -1534,7 +1536,6 @@ namespace IAC2021SQL
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemCareOf)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemAddress1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemAddress2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemEmailAddress)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemComment1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemComment2)).BeginInit();
@@ -1601,6 +1602,7 @@ namespace IAC2021SQL
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem51)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem15)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemEmailAddress)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroupDealerInfo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemDealerNo)).BeginInit();
@@ -1950,7 +1952,7 @@ namespace IAC2021SQL
             ((System.ComponentModel.ISupportInitialize)(this.textBoxCosignerAnnualIncome.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textBoxTier.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCOSPhone.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBoxCosignerEmail.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBoxCosignerEmail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCOSAddress.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCOSCity.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCOSWorkPhone.Properties)).BeginInit();
@@ -3411,6 +3413,7 @@ namespace IAC2021SQL
             this.layoutControlCustomerInfo.Appearance.ControlReadOnly.Options.UseFont = true;
             this.layoutControlCustomerInfo.Appearance.DisabledLayoutGroupCaption.Options.UseFont = true;
             this.layoutControlCustomerInfo.Appearance.DisabledLayoutItem.Options.UseFont = true;
+            this.layoutControlCustomerInfo.Controls.Add(this.richTextBoxEmailAddress);
             this.layoutControlCustomerInfo.Controls.Add(this.textBoxOpenAccount);
             this.layoutControlCustomerInfo.Controls.Add(this.checkBoxVehicleWarranty);
             this.layoutControlCustomerInfo.Controls.Add(this.checkBoxRefi);
@@ -3449,7 +3452,6 @@ namespace IAC2021SQL
             this.layoutControlCustomerInfo.Controls.Add(this.cUSTOMER_WORK_PHONETextBox);
             this.layoutControlCustomerInfo.Controls.Add(this.cUSTOMER_PHONE_EXTtextBox);
             this.layoutControlCustomerInfo.Controls.Add(this.cUSTOMER_PHONE_NOTextBox);
-            this.layoutControlCustomerInfo.Controls.Add(this.richTextBoxEmailAddress);
             this.layoutControlCustomerInfo.Controls.Add(this.checkEditAutoPay);
             this.layoutControlCustomerInfo.Controls.Add(this.checkEditCustomerInsurance);
             this.layoutControlCustomerInfo.Controls.Add(this.cUSTOMER_ZIP_2TextBox);
@@ -3478,37 +3480,15 @@ namespace IAC2021SQL
             this.layoutControlCustomerInfo.OptionsPrint.AppearanceItemText.Options.UseFont = true;
             this.layoutControlCustomerInfo.Root = this.layoutControlGroupCustomerInfo;
             // 
-            // textBoxOpenAccount
+            // richTextBoxEmailAddress
             // 
-            this.textBoxOpenAccount.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.VehiclebindingSource, "OpenAcct", true));
-            resources.ApplyResources(this.textBoxOpenAccount, "textBoxOpenAccount");
-            this.textBoxOpenAccount.EnterMoveNextControl = true;
-            this.textBoxOpenAccount.Name = "textBoxOpenAccount";
-            this.textBoxOpenAccount.Properties.Appearance.Options.UseTextOptions = true;
-            this.textBoxOpenAccount.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.textBoxOpenAccount.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
-            this.textBoxOpenAccount.Properties.AppearanceDisabled.Options.UseForeColor = true;
-            this.textBoxOpenAccount.Properties.AppearanceDisabled.Options.UseTextOptions = true;
-            this.textBoxOpenAccount.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.textBoxOpenAccount.StyleController = this.layoutControlCustomerInfo;
-            this.textBoxOpenAccount.EditValueChanged += new System.EventHandler(this.Universal_EditValueChanged);
-            // 
-            // checkBoxVehicleWarranty
-            // 
-            this.checkBoxVehicleWarranty.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.VehiclebindingSource, "Warranty", true));
-            this.checkBoxVehicleWarranty.EnterMoveNextControl = true;
-            resources.ApplyResources(this.checkBoxVehicleWarranty, "checkBoxVehicleWarranty");
-            this.checkBoxVehicleWarranty.MenuManager = this.toolbarFormManager1;
-            this.checkBoxVehicleWarranty.Name = "checkBoxVehicleWarranty";
-            this.checkBoxVehicleWarranty.Properties.Appearance.Options.UseFont = true;
-            this.checkBoxVehicleWarranty.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
-            this.checkBoxVehicleWarranty.Properties.AppearanceDisabled.Options.UseForeColor = true;
-            this.checkBoxVehicleWarranty.Properties.Caption = resources.GetString("checkBoxVehicleWarranty.Properties.Caption");
-            this.checkBoxVehicleWarranty.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
-            this.checkBoxVehicleWarranty.Properties.CheckBoxOptions.SvgColorChecked = System.Drawing.Color.Red;
-            this.checkBoxVehicleWarranty.Properties.NullStyle = DevExpress.XtraEditors.Controls.StyleIndeterminate.Unchecked;
-            this.checkBoxVehicleWarranty.StyleController = this.layoutControlCustomerInfo;
-            this.checkBoxVehicleWarranty.CheckedChanged += new System.EventHandler(this.checkBoxVehicleWarranty_CheckedChanged);
+            this.richTextBoxEmailAddress.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.EmailbindingSource, "EmailAddress", true));
+            this.richTextBoxEmailAddress.HtmlTemplate.Styles = resources.GetString("richTextBoxEmailAddress.HtmlTemplate.Styles");
+            resources.ApplyResources(this.richTextBoxEmailAddress, "richTextBoxEmailAddress");
+            this.richTextBoxEmailAddress.MenuManager = this.toolbarFormManager1;
+            this.richTextBoxEmailAddress.Name = "richTextBoxEmailAddress";
+            this.richTextBoxEmailAddress.StyleController = this.layoutControlCustomerInfo;
+            this.richTextBoxEmailAddress.EditValueChanged += new System.EventHandler(this.richTextBoxEmailAddress_EditValueChanged);
             // 
             // toolbarFormManager1
             // 
@@ -3551,6 +3531,38 @@ namespace IAC2021SQL
             this.standaloneBarDockControl1.CausesValidation = false;
             this.standaloneBarDockControl1.Manager = this.toolbarFormManager1;
             this.standaloneBarDockControl1.Name = "standaloneBarDockControl1";
+            // 
+            // textBoxOpenAccount
+            // 
+            this.textBoxOpenAccount.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.VehiclebindingSource, "OpenAcct", true));
+            resources.ApplyResources(this.textBoxOpenAccount, "textBoxOpenAccount");
+            this.textBoxOpenAccount.EnterMoveNextControl = true;
+            this.textBoxOpenAccount.Name = "textBoxOpenAccount";
+            this.textBoxOpenAccount.Properties.Appearance.Options.UseTextOptions = true;
+            this.textBoxOpenAccount.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.textBoxOpenAccount.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.textBoxOpenAccount.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.textBoxOpenAccount.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.textBoxOpenAccount.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.textBoxOpenAccount.StyleController = this.layoutControlCustomerInfo;
+            this.textBoxOpenAccount.EditValueChanged += new System.EventHandler(this.Universal_EditValueChanged);
+            // 
+            // checkBoxVehicleWarranty
+            // 
+            this.checkBoxVehicleWarranty.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.VehiclebindingSource, "Warranty", true));
+            this.checkBoxVehicleWarranty.EnterMoveNextControl = true;
+            resources.ApplyResources(this.checkBoxVehicleWarranty, "checkBoxVehicleWarranty");
+            this.checkBoxVehicleWarranty.MenuManager = this.toolbarFormManager1;
+            this.checkBoxVehicleWarranty.Name = "checkBoxVehicleWarranty";
+            this.checkBoxVehicleWarranty.Properties.Appearance.Options.UseFont = true;
+            this.checkBoxVehicleWarranty.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.checkBoxVehicleWarranty.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.checkBoxVehicleWarranty.Properties.Caption = resources.GetString("checkBoxVehicleWarranty.Properties.Caption");
+            this.checkBoxVehicleWarranty.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
+            this.checkBoxVehicleWarranty.Properties.CheckBoxOptions.SvgColorChecked = System.Drawing.Color.Red;
+            this.checkBoxVehicleWarranty.Properties.NullStyle = DevExpress.XtraEditors.Controls.StyleIndeterminate.Unchecked;
+            this.checkBoxVehicleWarranty.StyleController = this.layoutControlCustomerInfo;
+            this.checkBoxVehicleWarranty.CheckedChanged += new System.EventHandler(this.checkBoxVehicleWarranty_CheckedChanged);
             // 
             // checkBoxRefi
             // 
@@ -4111,23 +4123,6 @@ namespace IAC2021SQL
             this.cUSTOMER_PHONE_NOTextBox.StyleController = this.layoutControlCustomerInfo;
             this.cUSTOMER_PHONE_NOTextBox.EditValueChanged += new System.EventHandler(this.Universal_EditValueChanged);
             // 
-            // richTextBoxEmailAddress
-            // 
-            this.richTextBoxEmailAddress.AllowDrop = true;
-            this.richTextBoxEmailAddress.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.EmailbindingSource, "EmailAddress", true));
-            this.richTextBoxEmailAddress.EnterMoveNextControl = true;
-            resources.ApplyResources(this.richTextBoxEmailAddress, "richTextBoxEmailAddress");
-            this.richTextBoxEmailAddress.Name = "richTextBoxEmailAddress";
-            this.richTextBoxEmailAddress.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
-            this.richTextBoxEmailAddress.Properties.Appearance.Options.UseFont = true;
-            this.richTextBoxEmailAddress.Properties.Appearance.Options.UseForeColor = true;
-            this.richTextBoxEmailAddress.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
-            this.richTextBoxEmailAddress.Properties.AppearanceDisabled.Options.UseForeColor = true;
-            this.richTextBoxEmailAddress.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.RegExpMaskManager));
-            this.richTextBoxEmailAddress.Properties.MaskSettings.Set("mask", "(\\w|[.\\-])+@(\\w|[\\-]+.)*(\\w|[\\-]){2,63}.[a-zA-Z]{2,4}");
-            this.richTextBoxEmailAddress.StyleController = this.layoutControlCustomerInfo;
-            this.richTextBoxEmailAddress.EditValueChanged += new System.EventHandler(this.Universal_EditValueChanged);
-            // 
             // checkEditAutoPay
             // 
             this.checkEditAutoPay.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_AUTOPAY", true));
@@ -4509,7 +4504,6 @@ namespace IAC2021SQL
             this.layoutControlItemCareOf,
             this.layoutControlItemAddress1,
             this.layoutControlItemAddress2,
-            this.layoutControlItemEmailAddress,
             this.emptySpaceItem6,
             this.layoutControlItemComment1,
             this.layoutControlItemComment2,
@@ -4566,7 +4560,8 @@ namespace IAC2021SQL
             this.emptySpaceItem14,
             this.emptySpaceItem16,
             this.emptySpaceItem51,
-            this.emptySpaceItem15});
+            this.emptySpaceItem15,
+            this.layoutControlItemEmailAddress});
             this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup2.Name = "layoutControlGroup2";
             this.layoutControlGroup2.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
@@ -4838,27 +4833,6 @@ namespace IAC2021SQL
             this.layoutControlItemAddress2.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
             this.layoutControlItemAddress2.TextLocation = DevExpress.Utils.Locations.Left;
             this.layoutControlItemAddress2.TextToControlDistance = 5;
-            // 
-            // layoutControlItemEmailAddress
-            // 
-            this.layoutControlItemEmailAddress.AppearanceItemCaption.ForeColor = System.Drawing.Color.Black;
-            this.layoutControlItemEmailAddress.AppearanceItemCaption.Options.UseFont = true;
-            this.layoutControlItemEmailAddress.AppearanceItemCaption.Options.UseForeColor = true;
-            this.layoutControlItemEmailAddress.AppearanceItemCaptionDisabled.ForeColor = System.Drawing.Color.Black;
-            this.layoutControlItemEmailAddress.AppearanceItemCaptionDisabled.Options.UseForeColor = true;
-            this.layoutControlItemEmailAddress.Control = this.richTextBoxEmailAddress;
-            this.layoutControlItemEmailAddress.Location = new System.Drawing.Point(12, 451);
-            this.layoutControlItemEmailAddress.MaxSize = new System.Drawing.Size(655, 41);
-            this.layoutControlItemEmailAddress.MinSize = new System.Drawing.Size(655, 41);
-            this.layoutControlItemEmailAddress.Name = "layoutControlItemEmailAddress";
-            this.layoutControlItemEmailAddress.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
-            this.layoutControlItemEmailAddress.Size = new System.Drawing.Size(655, 41);
-            this.layoutControlItemEmailAddress.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            this.layoutControlItemEmailAddress.Spacing = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 10);
-            resources.ApplyResources(this.layoutControlItemEmailAddress, "layoutControlItemEmailAddress");
-            this.layoutControlItemEmailAddress.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
-            this.layoutControlItemEmailAddress.TextLocation = DevExpress.Utils.Locations.Left;
-            this.layoutControlItemEmailAddress.TextToControlDistance = 5;
             // 
             // emptySpaceItem6
             // 
@@ -5720,12 +5694,12 @@ namespace IAC2021SQL
             // 
             // emptySpaceItem38
             // 
-            this.emptySpaceItem38.Location = new System.Drawing.Point(739, 451);
-            this.emptySpaceItem38.MaxSize = new System.Drawing.Size(1044, 41);
-            this.emptySpaceItem38.MinSize = new System.Drawing.Size(1044, 41);
+            this.emptySpaceItem38.Location = new System.Drawing.Point(740, 451);
+            this.emptySpaceItem38.MaxSize = new System.Drawing.Size(1043, 41);
+            this.emptySpaceItem38.MinSize = new System.Drawing.Size(1043, 41);
             this.emptySpaceItem38.Name = "emptySpaceItem38";
             this.emptySpaceItem38.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
-            this.emptySpaceItem38.Size = new System.Drawing.Size(1044, 41);
+            this.emptySpaceItem38.Size = new System.Drawing.Size(1043, 41);
             this.emptySpaceItem38.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             // 
             // emptySpaceItem42
@@ -5741,7 +5715,7 @@ namespace IAC2021SQL
             // layoutControlItem24
             // 
             this.layoutControlItem24.Control = this.buttonSendMail;
-            this.layoutControlItem24.Location = new System.Drawing.Point(667, 451);
+            this.layoutControlItem24.Location = new System.Drawing.Point(668, 451);
             this.layoutControlItem24.MaxSize = new System.Drawing.Size(72, 41);
             this.layoutControlItem24.MinSize = new System.Drawing.Size(72, 41);
             this.layoutControlItem24.Name = "layoutControlItem24";
@@ -5754,11 +5728,11 @@ namespace IAC2021SQL
             // emptySpaceItem2
             // 
             this.emptySpaceItem2.Location = new System.Drawing.Point(0, 451);
-            this.emptySpaceItem2.MaxSize = new System.Drawing.Size(12, 41);
-            this.emptySpaceItem2.MinSize = new System.Drawing.Size(12, 41);
+            this.emptySpaceItem2.MaxSize = new System.Drawing.Size(13, 41);
+            this.emptySpaceItem2.MinSize = new System.Drawing.Size(13, 41);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
             this.emptySpaceItem2.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
-            this.emptySpaceItem2.Size = new System.Drawing.Size(12, 41);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(13, 41);
             this.emptySpaceItem2.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             // 
             // emptySpaceItem14
@@ -5800,6 +5774,22 @@ namespace IAC2021SQL
             this.emptySpaceItem15.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
             this.emptySpaceItem15.Size = new System.Drawing.Size(165, 213);
             this.emptySpaceItem15.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            // 
+            // layoutControlItemEmailAddress
+            // 
+            this.layoutControlItemEmailAddress.AppearanceItemCaptionDisabled.ForeColor = System.Drawing.Color.Black;
+            this.layoutControlItemEmailAddress.AppearanceItemCaptionDisabled.Options.UseForeColor = true;
+            this.layoutControlItemEmailAddress.Control = this.richTextBoxEmailAddress;
+            this.layoutControlItemEmailAddress.Location = new System.Drawing.Point(13, 451);
+            this.layoutControlItemEmailAddress.MaxSize = new System.Drawing.Size(655, 31);
+            this.layoutControlItemEmailAddress.MinSize = new System.Drawing.Size(655, 31);
+            this.layoutControlItemEmailAddress.Name = "layoutControlItemEmailAddress";
+            this.layoutControlItemEmailAddress.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.layoutControlItemEmailAddress.Size = new System.Drawing.Size(655, 41);
+            this.layoutControlItemEmailAddress.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            resources.ApplyResources(this.layoutControlItemEmailAddress, "layoutControlItemEmailAddress");
+            this.layoutControlItemEmailAddress.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
+            this.layoutControlItemEmailAddress.TextToControlDistance = 5;
             // 
             // layoutControlGroupDealerInfo
             // 
@@ -7203,44 +7193,44 @@ namespace IAC2021SQL
             this.layoutControlGroupLoanInfoTop.OptionsPrint.AppearanceItem.BackColor = System.Drawing.Color.Transparent;
             this.layoutControlGroupLoanInfoTop.OptionsPrint.AppearanceItem.Options.UseBackColor = true;
             this.layoutControlGroupLoanInfoTop.OptionsTableLayoutGroup.AutoSizeDefaultDefinitionLength = 250;
-            columnDefinition13.SizeType = System.Windows.Forms.SizeType.Absolute;
-            columnDefinition13.Width = 258D;
-            columnDefinition14.SizeType = System.Windows.Forms.SizeType.Absolute;
-            columnDefinition14.Width = 250D;
-            columnDefinition15.SizeType = System.Windows.Forms.SizeType.Absolute;
-            columnDefinition15.Width = 254D;
-            columnDefinition16.SizeType = System.Windows.Forms.SizeType.Absolute;
-            columnDefinition16.Width = 306D;
-            columnDefinition17.SizeType = System.Windows.Forms.SizeType.Absolute;
-            columnDefinition17.Width = 250D;
-            columnDefinition18.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            columnDefinition18.Width = 411D;
+            columnDefinition1.SizeType = System.Windows.Forms.SizeType.Absolute;
+            columnDefinition1.Width = 258D;
+            columnDefinition2.SizeType = System.Windows.Forms.SizeType.Absolute;
+            columnDefinition2.Width = 250D;
+            columnDefinition3.SizeType = System.Windows.Forms.SizeType.Absolute;
+            columnDefinition3.Width = 254D;
+            columnDefinition4.SizeType = System.Windows.Forms.SizeType.Absolute;
+            columnDefinition4.Width = 306D;
+            columnDefinition5.SizeType = System.Windows.Forms.SizeType.Absolute;
+            columnDefinition5.Width = 250D;
+            columnDefinition6.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            columnDefinition6.Width = 411D;
             this.layoutControlGroupLoanInfoTop.OptionsTableLayoutGroup.ColumnDefinitions.AddRange(new DevExpress.XtraLayout.ColumnDefinition[] {
-            columnDefinition13,
-            columnDefinition14,
-            columnDefinition15,
-            columnDefinition16,
-            columnDefinition17,
-            columnDefinition18});
-            rowDefinition13.Height = 41D;
-            rowDefinition13.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            rowDefinition14.Height = 41D;
-            rowDefinition14.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            rowDefinition15.Height = 41D;
-            rowDefinition15.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            rowDefinition16.Height = 41D;
-            rowDefinition16.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            rowDefinition17.Height = 41D;
-            rowDefinition17.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            rowDefinition18.Height = 43D;
-            rowDefinition18.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            columnDefinition1,
+            columnDefinition2,
+            columnDefinition3,
+            columnDefinition4,
+            columnDefinition5,
+            columnDefinition6});
+            rowDefinition1.Height = 41D;
+            rowDefinition1.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            rowDefinition2.Height = 41D;
+            rowDefinition2.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            rowDefinition3.Height = 41D;
+            rowDefinition3.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            rowDefinition4.Height = 41D;
+            rowDefinition4.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            rowDefinition5.Height = 41D;
+            rowDefinition5.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            rowDefinition6.Height = 43D;
+            rowDefinition6.SizeType = System.Windows.Forms.SizeType.AutoSize;
             this.layoutControlGroupLoanInfoTop.OptionsTableLayoutGroup.RowDefinitions.AddRange(new DevExpress.XtraLayout.RowDefinition[] {
-            rowDefinition13,
-            rowDefinition14,
-            rowDefinition15,
-            rowDefinition16,
-            rowDefinition17,
-            rowDefinition18});
+            rowDefinition1,
+            rowDefinition2,
+            rowDefinition3,
+            rowDefinition4,
+            rowDefinition5,
+            rowDefinition6});
             this.layoutControlGroupLoanInfoTop.OptionsTableLayoutGroup.ShrinkEmptyAutoSizeDefinition = DevExpress.Utils.DefaultBoolean.True;
             this.layoutControlGroupLoanInfoTop.Size = new System.Drawing.Size(1789, 308);
             this.layoutControlGroupLoanInfoTop.Spacing = new DevExpress.XtraLayout.Utils.Padding(20, 20, 20, 20);
@@ -7788,44 +7778,44 @@ namespace IAC2021SQL
             this.layoutControlGroupLoanInfoBottom.Location = new System.Drawing.Point(0, 419);
             this.layoutControlGroupLoanInfoBottom.Name = "layoutControlGroupLoanInfoBottom";
             this.layoutControlGroupLoanInfoBottom.OptionsItemText.TextAlignMode = DevExpress.XtraLayout.TextAlignModeGroup.AutoSize;
-            columnDefinition19.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            columnDefinition19.Width = 203D;
-            columnDefinition20.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            columnDefinition20.Width = 216D;
-            columnDefinition21.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            columnDefinition21.Width = 267D;
-            columnDefinition22.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            columnDefinition22.Width = 262D;
-            columnDefinition23.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            columnDefinition23.Width = 20D;
-            columnDefinition24.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            columnDefinition24.Width = 761D;
+            columnDefinition7.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            columnDefinition7.Width = 203D;
+            columnDefinition8.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            columnDefinition8.Width = 216D;
+            columnDefinition9.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            columnDefinition9.Width = 267D;
+            columnDefinition10.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            columnDefinition10.Width = 262D;
+            columnDefinition11.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            columnDefinition11.Width = 20D;
+            columnDefinition12.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            columnDefinition12.Width = 761D;
             this.layoutControlGroupLoanInfoBottom.OptionsTableLayoutGroup.ColumnDefinitions.AddRange(new DevExpress.XtraLayout.ColumnDefinition[] {
-            columnDefinition19,
-            columnDefinition20,
-            columnDefinition21,
-            columnDefinition22,
-            columnDefinition23,
-            columnDefinition24});
-            rowDefinition19.Height = 41D;
-            rowDefinition19.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            rowDefinition20.Height = 41D;
-            rowDefinition20.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            rowDefinition21.Height = 41D;
-            rowDefinition21.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            rowDefinition22.Height = 41D;
-            rowDefinition22.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            rowDefinition23.Height = 41D;
-            rowDefinition23.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            rowDefinition24.Height = 41D;
-            rowDefinition24.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            columnDefinition7,
+            columnDefinition8,
+            columnDefinition9,
+            columnDefinition10,
+            columnDefinition11,
+            columnDefinition12});
+            rowDefinition7.Height = 41D;
+            rowDefinition7.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            rowDefinition8.Height = 41D;
+            rowDefinition8.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            rowDefinition9.Height = 41D;
+            rowDefinition9.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            rowDefinition10.Height = 41D;
+            rowDefinition10.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            rowDefinition11.Height = 41D;
+            rowDefinition11.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            rowDefinition12.Height = 41D;
+            rowDefinition12.SizeType = System.Windows.Forms.SizeType.AutoSize;
             this.layoutControlGroupLoanInfoBottom.OptionsTableLayoutGroup.RowDefinitions.AddRange(new DevExpress.XtraLayout.RowDefinition[] {
-            rowDefinition19,
-            rowDefinition20,
-            rowDefinition21,
-            rowDefinition22,
-            rowDefinition23,
-            rowDefinition24});
+            rowDefinition7,
+            rowDefinition8,
+            rowDefinition9,
+            rowDefinition10,
+            rowDefinition11,
+            rowDefinition12});
             this.layoutControlGroupLoanInfoBottom.Size = new System.Drawing.Size(1789, 306);
             this.layoutControlGroupLoanInfoBottom.Spacing = new DevExpress.XtraLayout.Utils.Padding(20, 20, 20, 20);
             this.layoutControlGroupLoanInfoBottom.TextVisible = false;
@@ -11634,12 +11624,9 @@ namespace IAC2021SQL
             this.textBoxCosignerEmail.AllowDrop = true;
             this.textBoxCosignerEmail.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CosignerEmail", true));
             this.textBoxCosignerEmail.EnterMoveNextControl = true;
+            this.textBoxCosignerEmail.HtmlTemplate.Styles = resources.GetString("textBoxCosignerEmail.HtmlTemplate.Styles");
             resources.ApplyResources(this.textBoxCosignerEmail, "textBoxCosignerEmail");
             this.textBoxCosignerEmail.Name = "textBoxCosignerEmail";
-            this.textBoxCosignerEmail.Properties.Appearance.Options.UseFont = true;
-            this.textBoxCosignerEmail.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
-            this.textBoxCosignerEmail.Properties.AppearanceDisabled.Options.UseForeColor = true;
-            this.textBoxCosignerEmail.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             this.textBoxCosignerEmail.StyleController = this.layoutControlCosignerInfo;
             this.textBoxCosignerEmail.EditValueChanged += new System.EventHandler(this.textBoxCosignerEmail_EditValueChanged);
             // 
@@ -19995,6 +19982,14 @@ namespace IAC2021SQL
             this.emptySpaceItem95.Name = "emptySpaceItem95";
             this.emptySpaceItem95.Size = new System.Drawing.Size(651, 99);
             // 
+            // emailTableAdapter1
+            // 
+            this.emailTableAdapter1.ClearBeforeFill = true;
+            // 
+            // emailTableAdapter2
+            // 
+            this.emailTableAdapter2.ClearBeforeFill = true;
+            // 
             // frmNewCustMaintResp
             // 
             this.Appearance.BackColor = System.Drawing.Color.CornflowerBlue;
@@ -20065,9 +20060,10 @@ namespace IAC2021SQL
             this.xtraTabPageCustInfo1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlCustomerInfo)).EndInit();
             this.layoutControlCustomerInfo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.richTextBoxEmailAddress)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toolbarFormManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textBoxOpenAccount.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkBoxVehicleWarranty.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.toolbarFormManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkBoxRefi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textBoxAccount.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textBoxAuthNo.Properties)).EndInit();
@@ -20100,7 +20096,6 @@ namespace IAC2021SQL
             ((System.ComponentModel.ISupportInitialize)(this.cUSTOMER_WORK_PHONETextBox.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cUSTOMER_PHONE_EXTtextBox.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cUSTOMER_PHONE_NOTextBox.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.richTextBoxEmailAddress.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditAutoPay.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditCustomerInsurance.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cUSTOMER_ZIP_2TextBox.Properties)).EndInit();
@@ -20141,7 +20136,6 @@ namespace IAC2021SQL
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemCareOf)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemAddress1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemAddress2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemEmailAddress)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemComment1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemComment2)).EndInit();
@@ -20208,6 +20202,7 @@ namespace IAC2021SQL
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem16)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem51)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem15)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemEmailAddress)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroupDealerInfo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemDealerNo)).EndInit();
@@ -20557,7 +20552,7 @@ namespace IAC2021SQL
             ((System.ComponentModel.ISupportInitialize)(this.textBoxCosignerAnnualIncome.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textBoxTier.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCOSPhone.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBoxCosignerEmail.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBoxCosignerEmail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCOSAddress.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCOSCity.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCOSWorkPhone.Properties)).EndInit();
@@ -21286,8 +21281,6 @@ namespace IAC2021SQL
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItemInsurance;
         private DevExpress.XtraEditors.CheckEdit checkEditAutoPay;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItemAutoPay;
-        private DevExpress.XtraEditors.TextEdit richTextBoxEmailAddress;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItemEmailAddress;
         private DevExpress.XtraEditors.TextEdit cUSTOMER_PHONE_NOTextBox;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItemHomePhone;
         private DevExpress.XtraEditors.TextEdit cUSTOMER_PHONE_EXTtextBox;
@@ -21633,7 +21626,7 @@ namespace IAC2021SQL
         private DevExpress.XtraEditors.SimpleButton buttonSendMailCosigner;
         private DevExpress.XtraEditors.LookUpEdit comboBoxCOSJunior;
         private DevExpress.XtraEditors.TextEdit textBoxTier;
-        private DevExpress.XtraEditors.TextEdit textBoxCosignerEmail;
+        private DevExpress.UITemplates.Collection.Editors.EmailBox textBoxCosignerEmail;
         private DevExpress.XtraEditors.TextEdit textBoxCosignerAnnualIncome;
         private DevExpress.XtraEditors.TextEdit textBoxCosignerCreditScore;
         private DevExpress.XtraEditors.DateEdit txtCOSDOB;
@@ -22296,6 +22289,10 @@ namespace IAC2021SQL
         private EmptySpaceItem emptySpaceItem92;
         private LayoutControlGroup layoutControlGroupCCard;
         private EmptySpaceItem emptySpaceItem98;
+        private IACDataSetTableAdapters.EmailTableAdapter emailTableAdapter1;
+        private DevExpress.UITemplates.Collection.Editors.EmailBox richTextBoxEmailAddress;
+        private LayoutControlItem layoutControlItemEmailAddress;
+        private ProductionMainTablesTableAdapters.EmailTableAdapter emailTableAdapter2;
     }
 }
 

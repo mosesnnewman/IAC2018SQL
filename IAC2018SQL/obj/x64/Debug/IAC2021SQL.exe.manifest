@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="IAC2021SQL.exe" version="200.0.1.9" publicKeyToken="0000000000000000" language="en-US" processorArchitecture="amd64" type="win32" />
+  <asmv1:assemblyIdentity name="IAC2021SQL.exe" version="200.0.1.10" publicKeyToken="0000000000000000" language="en-US" processorArchitecture="amd64" type="win32" />
   <description asmv2:iconFile="CarLoan.ico" asmv2:publisher="Moses Newman" co.v1:suiteName="IAC2021SQL" asmv2:product="IAC 2021SQL" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="IAC2021SQL" version="200.0.1.9" language="neutral" processorArchitecture="amd64" />
+    <assemblyIdentity name="IAC2021SQL" version="200.0.1.10" language="neutral" processorArchitecture="amd64" />
     <commandLine file="IAC2021SQL.exe" parameters="" />
   </entryPoint>
   <co.v1:useManifestForTrust xmlns="urn:schemas-microsoft-com:asm.v1" />
@@ -296,6 +296,18 @@
     </dependentAssembly>
   </dependency>
   <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DevExpress.Mvvm.v24.2.dll" size="1603688">
+      <assemblyIdentity name="DevExpress.Mvvm.v24.2" version="24.2.3.0" publicKeyToken="B88D1754D700E49A" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>4Dvt/kxp5ZtvdbNSjY4Iptkn1r5H5SpctFsDRopZ89g=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DevExpress.Office.v24.2.Core.dll" size="3708520">
       <assemblyIdentity name="DevExpress.Office.v24.2.Core" version="24.2.3.0" publicKeyToken="B88D1754D700E49A" language="neutral" processorArchitecture="msil" />
       <hash>
@@ -548,14 +560,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="IAC2021SQL.exe" size="50821032">
-      <assemblyIdentity name="IAC2021SQL" version="200.0.1.9" language="neutral" processorArchitecture="amd64" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="IAC2021SQL.exe" size="50850216">
+      <assemblyIdentity name="IAC2021SQL" version="200.0.1.10" language="neutral" processorArchitecture="amd64" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>G2SKTATr9ihW7zm0EOLkU9EYNZc5x9xbCtHFGku/SUU=</dsig:DigestValue>
+        <dsig:DigestValue>avfP58MskLOiWXSs70ffiWWxuQAiPhSD0f9xlPEXbJE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -2311,13 +2323,13 @@
       <dsig:DigestValue>5+pUWdGMWFqMktwRF3jnz5T/JZU9MnayTK6Uu8k9h4I=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="IAC2021SQL.pdb" size="21509632">
+  <file name="IAC2021SQL.pdb" size="21538304">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>8TWAIoHpr+ML4pwpgAuXUEythGAZsZIt5wCAdMjLlqo=</dsig:DigestValue>
+      <dsig:DigestValue>Pq1loaPf2xxBs1Ezi/TMeZ0c+G/imH4cXlkazAUnMmU=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Icon1.ico" size="1078">

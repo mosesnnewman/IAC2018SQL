@@ -41,7 +41,7 @@
     <SuiteName>IAC2021SQL</SuiteName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>10</ApplicationRevision>
+    <ApplicationRevision>11</ApplicationRevision>
     <ApplicationVersion>200.0.1.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -901,6 +901,14 @@
     </Reference>
     <Reference Include="UIAutomationClient" />
     <Reference Include="WindowsBase" />
+    <Reference Include="mscorlib" />
+    <Reference Include="DevExpress.XtraGrid.v24.2" />
+    <Reference Include="System.Core" />
+    <Reference Include="DevExpress.XtraLayout.v24.2" />
+    <Reference Include="DevExpress.XtraBars.v24.2" />
+    <Reference Include="DevExpress.XtraTreeList.v24.2" />
+    <Reference Include="EntityFramework" />
+    <Reference Include="DevExpress.Mvvm.v24.2" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AboutIAC2013SQL.cs">
@@ -3034,6 +3042,27 @@
     <None Include="WSSummaryVirtualTables.xss">
       <DependentUpon>WSSummaryVirtualTables.xsd</DependentUpon>
     </None>
+    <Compile Include="Editors\EmailBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Assets\Toolbox\Root.cs" />
+    <EmbeddedResource Include="Assets\Toolbox\EmailBox.bmp" />
+    <EmbeddedResource Include="Assets\HTML\EmailBox.html" />
+    <EmbeddedResource Include="Assets\CSS\EmailBox.css" />
+    <Compile Include="Utilities\Email.cs" />
+    <Compile Include="Utilities\HtmlCssAsset.cs" />
+    <Compile Include="Images\DataEntry.cs" />
+    <EmbeddedResource Include="Assets\SVG\DataEntry\Card.svg" />
+    <EmbeddedResource Include="Assets\SVG\DataEntry\Customers.svg" />
+    <EmbeddedResource Include="Assets\SVG\DataEntry\Email.svg" />
+    <EmbeddedResource Include="Assets\SVG\DataEntry\Employees.svg" />
+    <EmbeddedResource Include="Assets\SVG\DataEntry\Key.svg" />
+    <EmbeddedResource Include="Assets\SVG\DataEntry\Opportunities.svg" />
+    <EmbeddedResource Include="Assets\SVG\DataEntry\Phone.svg" />
+    <EmbeddedResource Include="Assets\SVG\DataEntry\Products.svg" />
+    <EmbeddedResource Include="Assets\SVG\DataEntry\Sales.svg" />
+    <EmbeddedResource Include="Assets\SVG\DataEntry\Tasks.svg" />
+    <EmbeddedResource Include="Assets\SVG\DataEntry\World.svg" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.8">

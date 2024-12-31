@@ -461,7 +461,7 @@ namespace IAC2021SQL
             textBoxRepoAgent.Enabled = false;
             textBoxCurrentLocation.Enabled = false;
             textBoxAuctionHouse.Enabled = false;
-            //checkBoxTitleReceived.Enabled = false;
+            checkBoxTitleReceived.Enabled = false;
             nullableDateTimePickerTitleDateReceived.Enabled = false;
             // Moses Newman 09/08/2019 TitleReleased, DateTitleReleased, ElectronicLien
             checkBoxTitleReleased.Enabled = false;
@@ -902,7 +902,7 @@ namespace IAC2021SQL
             textBoxRepoAgent.Enabled = true;
             textBoxCurrentLocation.Enabled = true;
             textBoxAuctionHouse.Enabled = true;
-            //checkBoxTitleReceived.Enabled = true;
+            checkBoxTitleReceived.Enabled = true;
             nullableDateTimePickerTitleDateReceived.Enabled = true;
             // Moses Newman 09/08/2019 TitleReleased, DateTitleReleased, ElectronicLien
             checkBoxTitleReleased.Enabled = true;
@@ -1447,7 +1447,7 @@ namespace IAC2021SQL
                 buttonConfirm.ForeColor = iACDataSet.CUSTOMER.Rows[0].Field<Boolean>("TConfirmed") ? Color.Green : Color.Crimson;
                 buttonMessage.Enabled = iACDataSet.CUSTOMER.Rows[0].Field<Boolean>("TConfirmed");
                 // Moses Newman 09/13/2017 Store the orginal value of the phone number to test for changes!
-                cUSTOMER_CELL_PHONETextBox.Tag = cUSTOMER_CELL_PHONETextBox.Text;
+                cUSTOMER_CELL_PHONETextBox.Tag = cUSTOMER_CELL_PHONETextBox.EditValue;
 
                 try
                 {
@@ -1477,7 +1477,7 @@ namespace IAC2021SQL
                 buttonCOSConfirm.ForeColor = iACDataSet.CUSTOMER.Rows[0].Field<Boolean>("COSTConfirmed") ? Color.Green : Color.Crimson;
                 buttonCOSMessage.Enabled = iACDataSet.CUSTOMER.Rows[0].Field<Boolean>("COSTConfirmed");
                 // Moses Newman 09/18/2021 Store the orginal value of the phone number to test for changes!
-                txtCOSCell.Tag = txtCOSCell.Text;
+                txtCOSCell.Tag = txtCOSCell.EditValue.ToString();
             }
             if (checkEditMilitary.Checked)
             {
@@ -2485,7 +2485,7 @@ namespace IAC2021SQL
             GroupClient generalService = new GroupClient("ReportWSServiceHttpEndpoint2");
             string securityToken = sbtLogin();
             string orgCode = "wt63419";
-            string[] phone = txtCOSCell.Text.Trim().Split(',');
+            string[] phone = txtCOSCell.EditValue.ToString().Trim().Split(',');
 
             WSCarrierLookupResponse wSCarrierLookupResponse = generalService.GetCarrierLookup(securityToken, phone, orgCode);
 
@@ -2540,7 +2540,7 @@ namespace IAC2021SQL
             string securityToken = sbtLogin();
 
             SubscriberDetails subscriber = new SubscriberDetails();
-            subscriber.MobilePhone = txtCOSCell.Text;
+            subscriber.MobilePhone = txtCOSCell.EditValue.ToString();
             subscriber.OrgCode = "wt63419";
             WSUnsubscriberResponse wsUnSubscribeResponse = subscriberResult.UnSubscribe(securityToken, subscriber);
 
@@ -2588,7 +2588,7 @@ namespace IAC2021SQL
                 MessageClient messageResult = new MessageClient("MessageWSServiceHttpEndpoint");
                 string securityToken = sbtLogin();
                 string orgCode = "wt63419";
-                string phoneNo = txtCOSCell.Text;
+                string phoneNo = txtCOSCell.EditValue.ToString();
 
                 WSVerificationResponse wSVerificationResponse = messageResult.RequestVBT(securityToken, orgCode, phoneNo);
                 if (!wSVerificationResponse.Result)
@@ -4828,7 +4828,7 @@ namespace IAC2021SQL
                     textBoxRepoAgent.Enabled = true;
                     textBoxCurrentLocation.Enabled = true;
                     textBoxAuctionHouse.Enabled = true;
-                    //checkBoxTitleReceived.Enabled = true;
+                    checkBoxTitleReceived.Enabled = true;
                     nullableDateTimePickerTitleDateReceived.Enabled = true;
                     // Moses Newman 09/08/2019 TitleReleased, DateTitleReleased, ElectronicLien
                     checkBoxTitleReleased.Enabled = true;
@@ -6266,9 +6266,10 @@ namespace IAC2021SQL
                 toolStripButtonSave.Enabled = true;
         }
 
-        private void groupCotrol4_Paint(object sender, PaintEventArgs e)
+        private void richTextBoxEmailAddress_EditValueChanged(object sender, EventArgs e)
         {
-
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
         }
 
         private void textBoxCurrentBalance_EditValueChanged(object sender, EventArgs e)
@@ -6360,7 +6361,7 @@ namespace IAC2021SQL
             GroupClient generalService = new GroupClient("ReportWSServiceHttpEndpoint2");
             string securityToken = sbtLogin();
             string orgCode = "wt63419";
-            string[] phone = cUSTOMER_CELL_PHONETextBox.Text.Trim().Split(',');
+            string[] phone = cUSTOMER_CELL_PHONETextBox.EditValue.ToString().Trim().Split(',');
 
             WSCarrierLookupResponse wSCarrierLookupResponse = generalService.GetCarrierLookup(securityToken, phone, orgCode);
 
@@ -6623,7 +6624,7 @@ namespace IAC2021SQL
                 MessageClient messageResult = new MessageClient("MessageWSServiceHttpEndpoint");
                 string securityToken = sbtLogin();
                 string orgCode = "wt63419";
-                string phoneNo = cUSTOMER_CELL_PHONETextBox.Text;
+                string phoneNo = cUSTOMER_CELL_PHONETextBox.EditValue.ToString();
 
                 WSVerificationResponse wSVerificationResponse = messageResult.RequestVBT(securityToken, orgCode, phoneNo);
                 if (!wSVerificationResponse.Result)
@@ -6667,7 +6668,7 @@ namespace IAC2021SQL
             string securityToken = sbtLogin();
 
             SubscriberDetails subscriber = new SubscriberDetails();
-            subscriber.MobilePhone = cUSTOMER_CELL_PHONETextBox.Text;
+            subscriber.MobilePhone = cUSTOMER_CELL_PHONETextBox.EditValue.ToString();
             subscriber.OrgCode = "wt63419";
             WSUnsubscriberResponse wsUnSubscribeResponse = subscriberResult.UnSubscribe(securityToken, subscriber);
 
@@ -6697,7 +6698,7 @@ namespace IAC2021SQL
 
             SubscriberInfo subscriber = new SubscriberInfo();
 
-            subscriber.MobilePhone = cUSTOMER_CELL_PHONETextBox.Text;
+            subscriber.MobilePhone = cUSTOMER_CELL_PHONETextBox.EditValue.ToString();
 
             subscriber.FName = cUSTOMER_FIRST_NAMETextBox.Text;
             subscriber.LName = cUSTOMER_LAST_NAMETextBox.Text;
@@ -6732,7 +6733,7 @@ namespace IAC2021SQL
 
             SubscriberInfo subscriber = new SubscriberInfo();
 
-            subscriber.MobilePhone = txtCOSCell.Text;
+            subscriber.MobilePhone = txtCOSCell.EditValue.ToString();
 
             subscriber.FName = txtCOSFirstName.Text;
             subscriber.LName = txtCOSLastName.Text;
@@ -6766,7 +6767,7 @@ namespace IAC2021SQL
             Int32 lnTemplateID = 0;
 
             FormSMSMessage newmessage = new FormSMSMessage();
-            newmessage.CellPhone = cUSTOMER_CELL_PHONETextBox.Text.TrimEnd();
+            newmessage.CellPhone = cUSTOMER_CELL_PHONETextBox.EditValue.ToString().TrimEnd();
             //newmessage.securityToken = sbtLogin(); login now from Message Form! 08/12/2020 Moses Newman
             newmessage.CustomerNo = iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO");
             newmessage.ShowDialog();

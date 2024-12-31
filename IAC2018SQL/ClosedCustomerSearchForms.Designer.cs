@@ -126,6 +126,15 @@
             this.cUSTOMER__PHONE_NOSrchTextBox = new System.Windows.Forms.MaskedTextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dataGridViewVehicleLookup = new System.Windows.Forms.DataGridView();
+            this.vEHICLECUSTNODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CUSTOMER_FIRST_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CUSTOMER_LAST_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vEHICLEYEARDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vEHICLEMAKEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vEHICLEMODELDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vEHICLEVINDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vEHICLEINSCOMPANYDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vEHICLEPOLICYNODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Vehicle_CustomerbindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.VehicleGroupBox = new System.Windows.Forms.GroupBox();
             this.txtVIN = new System.Windows.Forms.TextBox();
@@ -146,15 +155,6 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.customerMailTableAdapter = new IAC2021SQL.IACDataSetTableAdapters.CustomerMailTableAdapter();
-            this.vEHICLECUSTNODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CUSTOMER_FIRST_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CUSTOMER_LAST_NAME = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vEHICLEYEARDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vEHICLEMAKEDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vEHICLEMODELDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vEHICLEVINDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vEHICLEINSCOMPANYDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vEHICLEPOLICYNODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             cUSTOMER_CONTACTLabel = new System.Windows.Forms.Label();
             cUSTOMER_SS_1Label = new System.Windows.Forms.Label();
             cUSTOMER_DOBLabel = new System.Windows.Forms.Label();
@@ -219,7 +219,7 @@
             cUSTOMER_SS_1Label.AutoSize = true;
             cUSTOMER_SS_1Label.Location = new System.Drawing.Point(31, 20);
             cUSTOMER_SS_1Label.Name = "cUSTOMER_SS_1Label";
-            cUSTOMER_SS_1Label.Size = new System.Drawing.Size(71, 13);
+            cUSTOMER_SS_1Label.Size = new System.Drawing.Size(70, 13);
             cUSTOMER_SS_1Label.TabIndex = 90;
             cUSTOMER_SS_1Label.Text = "SS NUMBER:";
             cUSTOMER_SS_1Label.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -229,7 +229,7 @@
             cUSTOMER_DOBLabel.AutoSize = true;
             cUSTOMER_DOBLabel.Location = new System.Drawing.Point(183, 174);
             cUSTOMER_DOBLabel.Name = "cUSTOMER_DOBLabel";
-            cUSTOMER_DOBLabel.Size = new System.Drawing.Size(89, 13);
+            cUSTOMER_DOBLabel.Size = new System.Drawing.Size(90, 13);
             cUSTOMER_DOBLabel.TabIndex = 89;
             cUSTOMER_DOBLabel.Text = "DATE  OF BIRTH:";
             cUSTOMER_DOBLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -239,7 +239,7 @@
             cUSTOMER_CITYLabel.AutoSize = true;
             cUSTOMER_CITYLabel.Location = new System.Drawing.Point(72, 152);
             cUSTOMER_CITYLabel.Name = "cUSTOMER_CITYLabel";
-            cUSTOMER_CITYLabel.Size = new System.Drawing.Size(30, 13);
+            cUSTOMER_CITYLabel.Size = new System.Drawing.Size(31, 13);
             cUSTOMER_CITYLabel.TabIndex = 83;
             cUSTOMER_CITYLabel.Text = "CITY:";
             cUSTOMER_CITYLabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -272,7 +272,7 @@
             label2.BackColor = System.Drawing.Color.Transparent;
             label2.Location = new System.Drawing.Point(31, 64);
             label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(71, 13);
+            label2.Size = new System.Drawing.Size(72, 13);
             label2.TabIndex = 77;
             label2.Text = "FIRST NAME:";
             label2.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -350,7 +350,7 @@
             cUSTOMER_STATELabel.AutoSize = true;
             cUSTOMER_STATELabel.Location = new System.Drawing.Point(63, 174);
             cUSTOMER_STATELabel.Name = "cUSTOMER_STATELabel";
-            cUSTOMER_STATELabel.Size = new System.Drawing.Size(37, 13);
+            cUSTOMER_STATELabel.Size = new System.Drawing.Size(39, 13);
             cUSTOMER_STATELabel.TabIndex = 85;
             cUSTOMER_STATELabel.Text = "STATE:";
             cUSTOMER_STATELabel.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -381,7 +381,7 @@
             label1.BackColor = System.Drawing.Color.Transparent;
             label1.Location = new System.Drawing.Point(35, 42);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(67, 13);
+            label1.Size = new System.Drawing.Size(68, 13);
             label1.TabIndex = 92;
             label1.Text = "LAST NAME:";
             label1.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -392,7 +392,7 @@
             label3.BackColor = System.Drawing.Color.Transparent;
             label3.Location = new System.Drawing.Point(23, 53);
             label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(67, 13);
+            label3.Size = new System.Drawing.Size(68, 13);
             label3.TabIndex = 96;
             label3.Text = "LAST NAME:";
             label3.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -403,7 +403,7 @@
             label4.BackColor = System.Drawing.Color.Transparent;
             label4.Location = new System.Drawing.Point(19, 75);
             label4.Name = "label4";
-            label4.Size = new System.Drawing.Size(71, 13);
+            label4.Size = new System.Drawing.Size(72, 13);
             label4.TabIndex = 95;
             label4.Text = "FIRST NAME:";
             label4.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -443,7 +443,7 @@
             label8.AutoSize = true;
             label8.Location = new System.Drawing.Point(19, 31);
             label8.Name = "label8";
-            label8.Size = new System.Drawing.Size(71, 13);
+            label8.Size = new System.Drawing.Size(70, 13);
             label8.TabIndex = 106;
             label8.Text = "SS NUMBER:";
             label8.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -464,7 +464,7 @@
             label10.AutoSize = true;
             label10.Location = new System.Drawing.Point(60, 119);
             label10.Name = "label10";
-            label10.Size = new System.Drawing.Size(30, 13);
+            label10.Size = new System.Drawing.Size(31, 13);
             label10.TabIndex = 110;
             label10.Text = "CITY:";
             label10.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -484,7 +484,7 @@
             label12.AutoSize = true;
             label12.Location = new System.Drawing.Point(51, 141);
             label12.Name = "label12";
-            label12.Size = new System.Drawing.Size(37, 13);
+            label12.Size = new System.Drawing.Size(39, 13);
             label12.TabIndex = 115;
             label12.Text = "STATE:";
             label12.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -494,7 +494,7 @@
             label13.AutoSize = true;
             label13.Location = new System.Drawing.Point(171, 141);
             label13.Name = "label13";
-            label13.Size = new System.Drawing.Size(89, 13);
+            label13.Size = new System.Drawing.Size(90, 13);
             label13.TabIndex = 117;
             label13.Text = "DATE  OF BIRTH:";
             label13.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -504,7 +504,7 @@
             labelEXT.AutoSize = true;
             labelEXT.Location = new System.Drawing.Point(195, 207);
             labelEXT.Name = "labelEXT";
-            labelEXT.Size = new System.Drawing.Size(27, 13);
+            labelEXT.Size = new System.Drawing.Size(28, 13);
             labelEXT.TabIndex = 119;
             labelEXT.Text = "EXT:";
             labelEXT.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -559,10 +559,10 @@
             this.tabPage1.BackColor = System.Drawing.Color.LightSteelBlue;
             this.tabPage1.Controls.Add(this.dataGridViewCustLookup);
             this.tabPage1.Controls.Add(this.CustomerGroupBox);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1018, 552);
+            this.tabPage1.Size = new System.Drawing.Size(1018, 545);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Customer Information";
             // 
@@ -786,7 +786,7 @@
             this.NullableDateTimePickerSrchDOB.Name = "NullableDateTimePickerSrchDOB";
             this.NullableDateTimePickerSrchDOB.Size = new System.Drawing.Size(86, 22);
             this.NullableDateTimePickerSrchDOB.TabIndex = 121;
-            this.NullableDateTimePickerSrchDOB.Value = new System.DateTime(2022, 5, 19, 0, 0, 0, 0);
+            this.NullableDateTimePickerSrchDOB.Value = new System.DateTime(2024, 12, 30, 0, 0, 0, 0);
             // 
             // richTextBoxEmailAddress
             // 
@@ -854,7 +854,7 @@
             this.nullableDateTimePickerCOSDOB.Name = "nullableDateTimePickerCOSDOB";
             this.nullableDateTimePickerCOSDOB.Size = new System.Drawing.Size(86, 22);
             this.nullableDateTimePickerCOSDOB.TabIndex = 122;
-            this.nullableDateTimePickerCOSDOB.Value = new System.DateTime(2022, 5, 19, 0, 0, 0, 0);
+            this.nullableDateTimePickerCOSDOB.Value = new System.DateTime(2024, 12, 30, 0, 0, 0, 0);
             // 
             // textBoxCOSWORKEXT
             // 
@@ -1115,10 +1115,10 @@
             this.tabPage2.BackColor = System.Drawing.Color.LightSteelBlue;
             this.tabPage2.Controls.Add(this.dataGridViewVehicleLookup);
             this.tabPage2.Controls.Add(this.VehicleGroupBox);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1018, 552);
+            this.tabPage2.Size = new System.Drawing.Size(1018, 545);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Vehicle Information";
             // 
@@ -1148,6 +1148,76 @@
             this.dataGridViewVehicleLookup.TabIndex = 25;
             this.dataGridViewVehicleLookup.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewVehicleLookup_CellDoubleClick);
             this.dataGridViewVehicleLookup.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridViewVehicleLookup_DataBindingComplete);
+            // 
+            // vEHICLECUSTNODataGridViewTextBoxColumn
+            // 
+            this.vEHICLECUSTNODataGridViewTextBoxColumn.DataPropertyName = "VEHICLE_CUST_NO";
+            this.vEHICLECUSTNODataGridViewTextBoxColumn.HeaderText = "CUST NO.";
+            this.vEHICLECUSTNODataGridViewTextBoxColumn.Name = "vEHICLECUSTNODataGridViewTextBoxColumn";
+            this.vEHICLECUSTNODataGridViewTextBoxColumn.ReadOnly = true;
+            this.vEHICLECUSTNODataGridViewTextBoxColumn.Width = 50;
+            // 
+            // CUSTOMER_FIRST_NAME
+            // 
+            this.CUSTOMER_FIRST_NAME.DataPropertyName = "CUSTOMER_FIRST_NAME";
+            this.CUSTOMER_FIRST_NAME.HeaderText = "FIRST NAME";
+            this.CUSTOMER_FIRST_NAME.Name = "CUSTOMER_FIRST_NAME";
+            this.CUSTOMER_FIRST_NAME.ReadOnly = true;
+            this.CUSTOMER_FIRST_NAME.Width = 80;
+            // 
+            // CUSTOMER_LAST_NAME
+            // 
+            this.CUSTOMER_LAST_NAME.DataPropertyName = "CUSTOMER_LAST_NAME";
+            this.CUSTOMER_LAST_NAME.HeaderText = "LAST NAME";
+            this.CUSTOMER_LAST_NAME.Name = "CUSTOMER_LAST_NAME";
+            this.CUSTOMER_LAST_NAME.ReadOnly = true;
+            // 
+            // vEHICLEYEARDataGridViewTextBoxColumn
+            // 
+            this.vEHICLEYEARDataGridViewTextBoxColumn.DataPropertyName = "VEHICLE_YEAR";
+            this.vEHICLEYEARDataGridViewTextBoxColumn.HeaderText = "YEAR";
+            this.vEHICLEYEARDataGridViewTextBoxColumn.Name = "vEHICLEYEARDataGridViewTextBoxColumn";
+            this.vEHICLEYEARDataGridViewTextBoxColumn.ReadOnly = true;
+            this.vEHICLEYEARDataGridViewTextBoxColumn.Width = 45;
+            // 
+            // vEHICLEMAKEDataGridViewTextBoxColumn
+            // 
+            this.vEHICLEMAKEDataGridViewTextBoxColumn.DataPropertyName = "VEHICLE_MAKE";
+            this.vEHICLEMAKEDataGridViewTextBoxColumn.HeaderText = "MAKE";
+            this.vEHICLEMAKEDataGridViewTextBoxColumn.Name = "vEHICLEMAKEDataGridViewTextBoxColumn";
+            this.vEHICLEMAKEDataGridViewTextBoxColumn.ReadOnly = true;
+            this.vEHICLEMAKEDataGridViewTextBoxColumn.Width = 80;
+            // 
+            // vEHICLEMODELDataGridViewTextBoxColumn
+            // 
+            this.vEHICLEMODELDataGridViewTextBoxColumn.DataPropertyName = "VEHICLE_MODEL";
+            this.vEHICLEMODELDataGridViewTextBoxColumn.HeaderText = "MODEL";
+            this.vEHICLEMODELDataGridViewTextBoxColumn.Name = "vEHICLEMODELDataGridViewTextBoxColumn";
+            this.vEHICLEMODELDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // vEHICLEVINDataGridViewTextBoxColumn
+            // 
+            this.vEHICLEVINDataGridViewTextBoxColumn.DataPropertyName = "VEHICLE_VIN";
+            this.vEHICLEVINDataGridViewTextBoxColumn.HeaderText = "VIN NUMBER";
+            this.vEHICLEVINDataGridViewTextBoxColumn.Name = "vEHICLEVINDataGridViewTextBoxColumn";
+            this.vEHICLEVINDataGridViewTextBoxColumn.ReadOnly = true;
+            this.vEHICLEVINDataGridViewTextBoxColumn.Width = 180;
+            // 
+            // vEHICLEINSCOMPANYDataGridViewTextBoxColumn
+            // 
+            this.vEHICLEINSCOMPANYDataGridViewTextBoxColumn.DataPropertyName = "VEHICLE_INS_COMPANY";
+            this.vEHICLEINSCOMPANYDataGridViewTextBoxColumn.HeaderText = "INSURANCE COMPANY";
+            this.vEHICLEINSCOMPANYDataGridViewTextBoxColumn.Name = "vEHICLEINSCOMPANYDataGridViewTextBoxColumn";
+            this.vEHICLEINSCOMPANYDataGridViewTextBoxColumn.ReadOnly = true;
+            this.vEHICLEINSCOMPANYDataGridViewTextBoxColumn.Width = 180;
+            // 
+            // vEHICLEPOLICYNODataGridViewTextBoxColumn
+            // 
+            this.vEHICLEPOLICYNODataGridViewTextBoxColumn.DataPropertyName = "VEHICLE_POLICY_NO";
+            this.vEHICLEPOLICYNODataGridViewTextBoxColumn.HeaderText = "POLICY NUMBER";
+            this.vEHICLEPOLICYNODataGridViewTextBoxColumn.Name = "vEHICLEPOLICYNODataGridViewTextBoxColumn";
+            this.vEHICLEPOLICYNODataGridViewTextBoxColumn.ReadOnly = true;
+            this.vEHICLEPOLICYNODataGridViewTextBoxColumn.Width = 180;
             // 
             // Vehicle_CustomerbindingSource
             // 
@@ -1292,6 +1362,7 @@
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -1328,76 +1399,6 @@
             // customerMailTableAdapter
             // 
             this.customerMailTableAdapter.ClearBeforeFill = true;
-            // 
-            // vEHICLECUSTNODataGridViewTextBoxColumn
-            // 
-            this.vEHICLECUSTNODataGridViewTextBoxColumn.DataPropertyName = "VEHICLE_CUST_NO";
-            this.vEHICLECUSTNODataGridViewTextBoxColumn.HeaderText = "CUST NO.";
-            this.vEHICLECUSTNODataGridViewTextBoxColumn.Name = "vEHICLECUSTNODataGridViewTextBoxColumn";
-            this.vEHICLECUSTNODataGridViewTextBoxColumn.ReadOnly = true;
-            this.vEHICLECUSTNODataGridViewTextBoxColumn.Width = 50;
-            // 
-            // CUSTOMER_FIRST_NAME
-            // 
-            this.CUSTOMER_FIRST_NAME.DataPropertyName = "CUSTOMER_FIRST_NAME";
-            this.CUSTOMER_FIRST_NAME.HeaderText = "FIRST NAME";
-            this.CUSTOMER_FIRST_NAME.Name = "CUSTOMER_FIRST_NAME";
-            this.CUSTOMER_FIRST_NAME.ReadOnly = true;
-            this.CUSTOMER_FIRST_NAME.Width = 80;
-            // 
-            // CUSTOMER_LAST_NAME
-            // 
-            this.CUSTOMER_LAST_NAME.DataPropertyName = "CUSTOMER_LAST_NAME";
-            this.CUSTOMER_LAST_NAME.HeaderText = "LAST NAME";
-            this.CUSTOMER_LAST_NAME.Name = "CUSTOMER_LAST_NAME";
-            this.CUSTOMER_LAST_NAME.ReadOnly = true;
-            // 
-            // vEHICLEYEARDataGridViewTextBoxColumn
-            // 
-            this.vEHICLEYEARDataGridViewTextBoxColumn.DataPropertyName = "VEHICLE_YEAR";
-            this.vEHICLEYEARDataGridViewTextBoxColumn.HeaderText = "YEAR";
-            this.vEHICLEYEARDataGridViewTextBoxColumn.Name = "vEHICLEYEARDataGridViewTextBoxColumn";
-            this.vEHICLEYEARDataGridViewTextBoxColumn.ReadOnly = true;
-            this.vEHICLEYEARDataGridViewTextBoxColumn.Width = 45;
-            // 
-            // vEHICLEMAKEDataGridViewTextBoxColumn
-            // 
-            this.vEHICLEMAKEDataGridViewTextBoxColumn.DataPropertyName = "VEHICLE_MAKE";
-            this.vEHICLEMAKEDataGridViewTextBoxColumn.HeaderText = "MAKE";
-            this.vEHICLEMAKEDataGridViewTextBoxColumn.Name = "vEHICLEMAKEDataGridViewTextBoxColumn";
-            this.vEHICLEMAKEDataGridViewTextBoxColumn.ReadOnly = true;
-            this.vEHICLEMAKEDataGridViewTextBoxColumn.Width = 80;
-            // 
-            // vEHICLEMODELDataGridViewTextBoxColumn
-            // 
-            this.vEHICLEMODELDataGridViewTextBoxColumn.DataPropertyName = "VEHICLE_MODEL";
-            this.vEHICLEMODELDataGridViewTextBoxColumn.HeaderText = "MODEL";
-            this.vEHICLEMODELDataGridViewTextBoxColumn.Name = "vEHICLEMODELDataGridViewTextBoxColumn";
-            this.vEHICLEMODELDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // vEHICLEVINDataGridViewTextBoxColumn
-            // 
-            this.vEHICLEVINDataGridViewTextBoxColumn.DataPropertyName = "VEHICLE_VIN";
-            this.vEHICLEVINDataGridViewTextBoxColumn.HeaderText = "VIN NUMBER";
-            this.vEHICLEVINDataGridViewTextBoxColumn.Name = "vEHICLEVINDataGridViewTextBoxColumn";
-            this.vEHICLEVINDataGridViewTextBoxColumn.ReadOnly = true;
-            this.vEHICLEVINDataGridViewTextBoxColumn.Width = 180;
-            // 
-            // vEHICLEINSCOMPANYDataGridViewTextBoxColumn
-            // 
-            this.vEHICLEINSCOMPANYDataGridViewTextBoxColumn.DataPropertyName = "VEHICLE_INS_COMPANY";
-            this.vEHICLEINSCOMPANYDataGridViewTextBoxColumn.HeaderText = "INSURANCE COMPANY";
-            this.vEHICLEINSCOMPANYDataGridViewTextBoxColumn.Name = "vEHICLEINSCOMPANYDataGridViewTextBoxColumn";
-            this.vEHICLEINSCOMPANYDataGridViewTextBoxColumn.ReadOnly = true;
-            this.vEHICLEINSCOMPANYDataGridViewTextBoxColumn.Width = 180;
-            // 
-            // vEHICLEPOLICYNODataGridViewTextBoxColumn
-            // 
-            this.vEHICLEPOLICYNODataGridViewTextBoxColumn.DataPropertyName = "VEHICLE_POLICY_NO";
-            this.vEHICLEPOLICYNODataGridViewTextBoxColumn.HeaderText = "POLICY NUMBER";
-            this.vEHICLEPOLICYNODataGridViewTextBoxColumn.Name = "vEHICLEPOLICYNODataGridViewTextBoxColumn";
-            this.vEHICLEPOLICYNODataGridViewTextBoxColumn.ReadOnly = true;
-            this.vEHICLEPOLICYNODataGridViewTextBoxColumn.Width = 180;
             // 
             // frmCustomerLookup
             // 
