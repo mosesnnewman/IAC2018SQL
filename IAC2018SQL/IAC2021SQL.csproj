@@ -13,8 +13,8 @@
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <ManifestCertificateThumbprint>2A33499F314E784CBF52681CFD9C2C99BB3FF738</ManifestCertificateThumbprint>
-    <ManifestKeyFile>IAC2021SQL_1_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestCertificateThumbprint>1A9E554A6521C75BC8FF3427EC34EC0A7C98B21F</ManifestCertificateThumbprint>
+    <ManifestKeyFile>IAC2021SQL_TemporaryKey.pfx</ManifestKeyFile>
     <GenerateManifests>true</GenerateManifests>
     <SignManifests>true</SignManifests>
     <FileUpgradeFlags>
@@ -41,7 +41,7 @@
     <SuiteName>IAC2021SQL</SuiteName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>12</ApplicationRevision>
+    <ApplicationRevision>13</ApplicationRevision>
     <ApplicationVersion>200.0.1.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -2844,7 +2844,6 @@
     <None Include="Credentials.xss">
       <DependentUpon>Credentials.xsd</DependentUpon>
     </None>
-    <None Include="IAC2021SQL_1_TemporaryKey.pfx" />
     <None Include="IAC2021SQL_TemporaryKey.pfx" />
     <None Include="IACDataSet.xsc">
       <DependentUpon>IACDataSet.xsd</DependentUpon>
