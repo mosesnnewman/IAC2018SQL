@@ -89,27 +89,6 @@ namespace IAC2021SQL
             System.Windows.Forms.Label label123;
             System.Windows.Forms.Label label124;
             System.Windows.Forms.Label label125;
-            System.Windows.Forms.Label label202;
-            System.Windows.Forms.Label label203;
-            System.Windows.Forms.Label label204;
-            System.Windows.Forms.Label label205;
-            System.Windows.Forms.Label label206;
-            System.Windows.Forms.Label label207;
-            System.Windows.Forms.Label label208;
-            System.Windows.Forms.Label label209;
-            System.Windows.Forms.Label label210;
-            System.Windows.Forms.Label label211;
-            System.Windows.Forms.Label label212;
-            System.Windows.Forms.Label label213;
-            System.Windows.Forms.Label label214;
-            System.Windows.Forms.Label label216;
-            System.Windows.Forms.Label label217;
-            System.Windows.Forms.Label label218;
-            System.Windows.Forms.Label label219;
-            System.Windows.Forms.Label label220;
-            System.Windows.Forms.Label label223;
-            System.Windows.Forms.Label label224;
-            System.Windows.Forms.Label label225;
             System.Windows.Forms.Label label131;
             System.Windows.Forms.Label labelLTV;
             System.Windows.Forms.Label label120;
@@ -936,36 +915,16 @@ namespace IAC2021SQL
             this.emptySpaceItem199 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem90 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.xtraTabPageHistory = new DevExpress.XtraTab.XtraTabPage();
-            this.groupBox18 = new DevExpress.XtraEditors.GroupControl();
-            this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.layoutControlCustomerHistory = new DevExpress.XtraLayout.LayoutControl();
+            this.textBoxBuyOutHist = new DevExpress.XtraEditors.TextEdit();
+            this.checkBoxFullRecourseHist = new DevExpress.XtraEditors.CheckEdit();
             this.checkEditCollectionAgentHistory = new DevExpress.XtraEditors.CheckEdit();
             this.checkEditOverideInterestHistory = new DevExpress.XtraEditors.CheckEdit();
-            this.checkBoxFullRecourseHist = new DevExpress.XtraEditors.CheckEdit();
-            this.nullableDateTimePickerFirstPayDate = new DevExpress.XtraEditors.DateEdit();
-            this.nullableDateTimePickerPayDate = new DevExpress.XtraEditors.DateEdit();
-            this.nullableDateTimePickerHistContractDate = new DevExpress.XtraEditors.DateEdit();
-            this.textBoxTotalExtensions = new DevExpress.XtraEditors.TextEdit();
-            this.textBoxBuyOutHist = new DevExpress.XtraEditors.TextEdit();
-            this.textBox22 = new DevExpress.XtraEditors.TextEdit();
-            this.textBox2 = new DevExpress.XtraEditors.TextEdit();
-            this.comboBoxHistoryDayDue = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.textBox3 = new DevExpress.XtraEditors.TextEdit();
-            this.textBox24 = new DevExpress.XtraEditors.TextEdit();
-            this.textBox4 = new DevExpress.XtraEditors.TextEdit();
-            this.textBox75 = new DevExpress.XtraEditors.TextEdit();
             this.textBox25 = new DevExpress.XtraEditors.TextEdit();
-            this.textBox5 = new DevExpress.XtraEditors.TextEdit();
-            this.textBoxPartialPayHist = new DevExpress.XtraEditors.TextEdit();
-            this.textBox7 = new DevExpress.XtraEditors.TextEdit();
-            this.textBox27 = new DevExpress.XtraEditors.TextEdit();
+            this.textBoxTotalExtensions = new DevExpress.XtraEditors.TextEdit();
             this.textBox28 = new DevExpress.XtraEditors.TextEdit();
+            this.textBoxPartialPayHist = new DevExpress.XtraEditors.TextEdit();
             this.textBox29 = new DevExpress.XtraEditors.TextEdit();
-            this.textBox32 = new DevExpress.XtraEditors.TextEdit();
-            this.textBox33 = new DevExpress.XtraEditors.TextEdit();
-            this.textBox34 = new DevExpress.XtraEditors.TextEdit();
-            this.textBox35 = new DevExpress.XtraEditors.TextEdit();
-            this.textBox37 = new DevExpress.XtraEditors.TextEdit();
-            this.textBox31 = new DevExpress.XtraEditors.TextEdit();
             this.gridControlCustomerHist = new DevExpress.XtraGrid.GridControl();
             this.gridViewCustomerHistory = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colCUSTHIST_PAY_DATE = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -980,6 +939,77 @@ namespace IAC2021SQL
             this.colCUSTHIST_PAYMENT_TYPE = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCUSTHIST_PAYMENT_CODE = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCUSTHIST_THRU_UD = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.textBox27 = new DevExpress.XtraEditors.TextEdit();
+            this.nullableDateTimePickerFirstPayDate = new DevExpress.XtraEditors.DateEdit();
+            this.nullableDateTimePickerPayDate = new DevExpress.XtraEditors.DateEdit();
+            this.textBox24 = new DevExpress.XtraEditors.TextEdit();
+            this.nullableDateTimePickerHistContractDate = new DevExpress.XtraEditors.DateEdit();
+            this.comboBoxHistoryDayDue = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.textBox7 = new DevExpress.XtraEditors.TextEdit();
+            this.textBox2 = new DevExpress.XtraEditors.TextEdit();
+            this.textBox31 = new DevExpress.XtraEditors.TextEdit();
+            this.textBox32 = new DevExpress.XtraEditors.TextEdit();
+            this.textBox75 = new DevExpress.XtraEditors.TextEdit();
+            this.textBox4 = new DevExpress.XtraEditors.TextEdit();
+            this.textBox22 = new DevExpress.XtraEditors.TextEdit();
+            this.textBox3 = new DevExpress.XtraEditors.TextEdit();
+            this.textBox5 = new DevExpress.XtraEditors.TextEdit();
+            this.textBox37 = new DevExpress.XtraEditors.TextEdit();
+            this.textBox35 = new DevExpress.XtraEditors.TextEdit();
+            this.textBox34 = new DevExpress.XtraEditors.TextEdit();
+            this.textBox33 = new DevExpress.XtraEditors.TextEdit();
+            this.layoutControlGroupCustomerHistory = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlGroupHistoryHeader = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItemHistoryContractDate = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItemHistoryCustomerFirstName = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItemHistoryLastName = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItemHistorySuffix = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItemHistoryCustomerNo = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItemHistoryPurchaseOrder = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItemHistoryDealer = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItemHistoryDealerName = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItemHistoryFirstPayDate = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItemHistoryDayDue = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItemHistoryTerm = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem70 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItemHistoryTotalExtensions = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItemHistoryRegularPayment = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItemHistoryLoan = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItemHistoryAPR = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItemHistoryCash = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItemHistoryPaymentsMade = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem52 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItemHistoryPartialPayment = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItemHistoryLateCharge = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItemHistoryLateChargeBalance = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItemHistoryPayType = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItemHistoryPayCode = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem69 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItemHistoryBuyout = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem135 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem188 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem201 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem202 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem203 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.layoutControlItemHistoryPayDate = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem204 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem205 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem206 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem207 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem208 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem209 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem210 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem211 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.layoutControlItemHistoryLoanInterest = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem212 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem213 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem216 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem215 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem214 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem217 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.layoutControlGroupHistoryButtons = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.xtraTabPageInvoices = new DevExpress.XtraTab.XtraTabPage();
             this.layoutControlInvoices = new DevExpress.XtraLayout.LayoutControl();
             this.gridControlInvoices = new DevExpress.XtraGrid.GridControl();
@@ -1387,27 +1417,6 @@ namespace IAC2021SQL
             label123 = new System.Windows.Forms.Label();
             label124 = new System.Windows.Forms.Label();
             label125 = new System.Windows.Forms.Label();
-            label202 = new System.Windows.Forms.Label();
-            label203 = new System.Windows.Forms.Label();
-            label204 = new System.Windows.Forms.Label();
-            label205 = new System.Windows.Forms.Label();
-            label206 = new System.Windows.Forms.Label();
-            label207 = new System.Windows.Forms.Label();
-            label208 = new System.Windows.Forms.Label();
-            label209 = new System.Windows.Forms.Label();
-            label210 = new System.Windows.Forms.Label();
-            label211 = new System.Windows.Forms.Label();
-            label212 = new System.Windows.Forms.Label();
-            label213 = new System.Windows.Forms.Label();
-            label214 = new System.Windows.Forms.Label();
-            label216 = new System.Windows.Forms.Label();
-            label217 = new System.Windows.Forms.Label();
-            label218 = new System.Windows.Forms.Label();
-            label219 = new System.Windows.Forms.Label();
-            label220 = new System.Windows.Forms.Label();
-            label223 = new System.Windows.Forms.Label();
-            label224 = new System.Windows.Forms.Label();
-            label225 = new System.Windows.Forms.Label();
             label131 = new System.Windows.Forms.Label();
             labelLTV = new System.Windows.Forms.Label();
             label120 = new System.Windows.Forms.Label();
@@ -2168,42 +2177,93 @@ namespace IAC2021SQL
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem199)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem90)).BeginInit();
             this.xtraTabPageHistory.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupBox18)).BeginInit();
-            this.groupBox18.SuspendLayout();
-            this.groupBox11.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlCustomerHistory)).BeginInit();
+            this.layoutControlCustomerHistory.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.textBoxBuyOutHist.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkBoxFullRecourseHist.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditCollectionAgentHistory.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditOverideInterestHistory.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkBoxFullRecourseHist.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBox25.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBoxTotalExtensions.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBox28.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBoxPartialPayHist.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBox29.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlCustomerHist)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewCustomerHistory)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBox27.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerFirstPayDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerFirstPayDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerPayDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerPayDate.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBox24.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerHistContractDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerHistContractDate.Properties.CalendarTimeProperties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBoxTotalExtensions.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBoxBuyOutHist.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBox22.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBox2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxHistoryDayDue.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBox3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBox24.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBox4.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBox75.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBox25.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBox5.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBoxPartialPayHist.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textBox7.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBox27.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBox28.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBox29.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBox32.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBox33.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBox34.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBox35.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBox37.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBox2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textBox31.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControlCustomerHist)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridViewCustomerHistory)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBox32.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBox75.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBox4.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBox22.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBox3.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBox5.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBox37.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBox35.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBox34.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBox33.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroupCustomerHistory)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroupHistoryHeader)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemHistoryContractDate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemHistoryCustomerFirstName)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemHistoryLastName)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemHistorySuffix)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemHistoryCustomerNo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemHistoryPurchaseOrder)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemHistoryDealer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemHistoryDealerName)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemHistoryFirstPayDate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemHistoryDayDue)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemHistoryTerm)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem70)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemHistoryTotalExtensions)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemHistoryRegularPayment)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemHistoryLoan)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemHistoryAPR)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemHistoryCash)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemHistoryPaymentsMade)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem52)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemHistoryPartialPayment)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemHistoryLateCharge)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemHistoryLateChargeBalance)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemHistoryPayType)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemHistoryPayCode)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem69)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemHistoryBuyout)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem135)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem188)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem201)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem202)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem203)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemHistoryPayDate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem204)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem205)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem206)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem207)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem208)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem209)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem210)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem211)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemHistoryLoanInterest)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem212)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem213)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem216)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem215)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem214)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem217)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroupHistoryButtons)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             this.xtraTabPageInvoices.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlInvoices)).BeginInit();
             this.layoutControlInvoices.SuspendLayout();
@@ -2791,112 +2851,6 @@ namespace IAC2021SQL
             // 
             resources.ApplyResources(label125, "label125");
             label125.Name = "label125";
-            // 
-            // label202
-            // 
-            resources.ApplyResources(label202, "label202");
-            label202.Name = "label202";
-            // 
-            // label203
-            // 
-            resources.ApplyResources(label203, "label203");
-            label203.Name = "label203";
-            // 
-            // label204
-            // 
-            resources.ApplyResources(label204, "label204");
-            label204.Name = "label204";
-            // 
-            // label205
-            // 
-            resources.ApplyResources(label205, "label205");
-            label205.Name = "label205";
-            // 
-            // label206
-            // 
-            resources.ApplyResources(label206, "label206");
-            label206.Name = "label206";
-            // 
-            // label207
-            // 
-            resources.ApplyResources(label207, "label207");
-            label207.Name = "label207";
-            // 
-            // label208
-            // 
-            resources.ApplyResources(label208, "label208");
-            label208.Name = "label208";
-            // 
-            // label209
-            // 
-            resources.ApplyResources(label209, "label209");
-            label209.Name = "label209";
-            // 
-            // label210
-            // 
-            resources.ApplyResources(label210, "label210");
-            label210.Name = "label210";
-            // 
-            // label211
-            // 
-            resources.ApplyResources(label211, "label211");
-            label211.Name = "label211";
-            // 
-            // label212
-            // 
-            resources.ApplyResources(label212, "label212");
-            label212.Name = "label212";
-            // 
-            // label213
-            // 
-            resources.ApplyResources(label213, "label213");
-            label213.BackColor = System.Drawing.Color.Transparent;
-            label213.Name = "label213";
-            // 
-            // label214
-            // 
-            resources.ApplyResources(label214, "label214");
-            label214.Name = "label214";
-            // 
-            // label216
-            // 
-            resources.ApplyResources(label216, "label216");
-            label216.Name = "label216";
-            // 
-            // label217
-            // 
-            resources.ApplyResources(label217, "label217");
-            label217.Name = "label217";
-            // 
-            // label218
-            // 
-            resources.ApplyResources(label218, "label218");
-            label218.Name = "label218";
-            // 
-            // label219
-            // 
-            resources.ApplyResources(label219, "label219");
-            label219.Name = "label219";
-            // 
-            // label220
-            // 
-            resources.ApplyResources(label220, "label220");
-            label220.Name = "label220";
-            // 
-            // label223
-            // 
-            resources.ApplyResources(label223, "label223");
-            label223.Name = "label223";
-            // 
-            // label224
-            // 
-            resources.ApplyResources(label224, "label224");
-            label224.Name = "label224";
-            // 
-            // label225
-            // 
-            resources.ApplyResources(label225, "label225");
-            label225.Name = "label225";
             // 
             // label131
             // 
@@ -3528,6 +3482,9 @@ namespace IAC2021SQL
             this.standaloneBarDockControl1.Appearance.BackColor = System.Drawing.Color.LightSteelBlue;
             this.standaloneBarDockControl1.Appearance.Options.UseBackColor = true;
             resources.ApplyResources(this.standaloneBarDockControl1, "standaloneBarDockControl1");
+            this.standaloneBarDockControl1.Border = ((DevExpress.XtraBars.BarDockControlBorder)((((DevExpress.XtraBars.BarDockControlBorder.Left | DevExpress.XtraBars.BarDockControlBorder.Right) 
+            | DevExpress.XtraBars.BarDockControlBorder.Top) 
+            | DevExpress.XtraBars.BarDockControlBorder.Bottom)));
             this.standaloneBarDockControl1.CausesValidation = false;
             this.standaloneBarDockControl1.Manager = this.toolbarFormManager1;
             this.standaloneBarDockControl1.Name = "standaloneBarDockControl1";
@@ -3644,7 +3601,7 @@ namespace IAC2021SQL
             // 
             // radioButtonMktg
             // 
-            this.radioButtonMktg.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.cUSTOMERBindingSource, "TBoth", true));
+            this.radioButtonMktg.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "TBoth", true));
             resources.ApplyResources(this.radioButtonMktg, "radioButtonMktg");
             this.radioButtonMktg.EnterMoveNextControl = true;
             this.radioButtonMktg.Name = "radioButtonMktg";
@@ -3659,7 +3616,7 @@ namespace IAC2021SQL
             // 
             // radioButtonAcct
             // 
-            this.radioButtonAcct.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.cUSTOMERBindingSource, "TAcct", true));
+            this.radioButtonAcct.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "TAcct", true));
             resources.ApplyResources(this.radioButtonAcct, "radioButtonAcct");
             this.radioButtonAcct.EnterMoveNextControl = true;
             this.radioButtonAcct.Name = "radioButtonAcct";
@@ -3670,11 +3627,12 @@ namespace IAC2021SQL
             this.radioButtonAcct.Properties.Caption = resources.GetString("radioButtonAcct.Properties.Caption");
             this.radioButtonAcct.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgRadio1;
             this.radioButtonAcct.StyleController = this.layoutControlCustomerInfo;
-            this.radioButtonAcct.Click += new System.EventHandler(this.radioButtonAcct_Click);
+            this.radioButtonAcct.CheckedChanged += new System.EventHandler(this.radioButtonAcct_CheckedChanged);
+            this.radioButtonAcct.EditValueChanging += new DevExpress.XtraEditors.Controls.ChangingEventHandler(this.radioButtonAcct_EditValueChanging);
             // 
             // checkBoxDNTMktg
             // 
-            this.checkBoxDNTMktg.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.cUSTOMERBindingSource, "DNTMktg", true));
+            this.checkBoxDNTMktg.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "DNTMktg", true));
             resources.ApplyResources(this.checkBoxDNTMktg, "checkBoxDNTMktg");
             this.checkBoxDNTMktg.EnterMoveNextControl = true;
             this.checkBoxDNTMktg.Name = "checkBoxDNTMktg";
@@ -3687,7 +3645,7 @@ namespace IAC2021SQL
             // 
             // checkBoxDNTAcct
             // 
-            this.checkBoxDNTAcct.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.cUSTOMERBindingSource, "DNTAcct", true));
+            this.checkBoxDNTAcct.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "DNTAcct", true));
             resources.ApplyResources(this.checkBoxDNTAcct, "checkBoxDNTAcct");
             this.checkBoxDNTAcct.EnterMoveNextControl = true;
             this.checkBoxDNTAcct.Name = "checkBoxDNTAcct";
@@ -11075,7 +11033,7 @@ namespace IAC2021SQL
             // 
             // radioButtonCOSMktg
             // 
-            this.radioButtonCOSMktg.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.cUSTOMERBindingSource, "COSTBoth", true));
+            this.radioButtonCOSMktg.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "COSTBoth", true));
             resources.ApplyResources(this.radioButtonCOSMktg, "radioButtonCOSMktg");
             this.radioButtonCOSMktg.Name = "radioButtonCOSMktg";
             this.radioButtonCOSMktg.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("radioButtonCOSMktg.Properties.Appearance.Font")));
@@ -11137,7 +11095,7 @@ namespace IAC2021SQL
             // 
             // radioButtonCOSAcct
             // 
-            this.radioButtonCOSAcct.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.cUSTOMERBindingSource, "COSTAcct", true));
+            this.radioButtonCOSAcct.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "COSTAcct", true));
             resources.ApplyResources(this.radioButtonCOSAcct, "radioButtonCOSAcct");
             this.radioButtonCOSAcct.Name = "radioButtonCOSAcct";
             this.radioButtonCOSAcct.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("radioButtonCOSAcct.Properties.Appearance.Font")));
@@ -11148,7 +11106,7 @@ namespace IAC2021SQL
             this.radioButtonCOSAcct.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgRadio1;
             this.radioButtonCOSAcct.StyleController = this.layoutControlCosignerInfo;
             this.radioButtonCOSAcct.CheckedChanged += new System.EventHandler(this.radioButtonCOSAcct_CheckedChanged);
-            this.radioButtonCOSAcct.Click += new System.EventHandler(this.radioButtonCOSAcct_Click);
+            this.radioButtonCOSAcct.EditValueChanging += new DevExpress.XtraEditors.Controls.ChangingEventHandler(this.radioButtonCOSAcct_EditValueChanging);
             // 
             // txtALTPhone2
             // 
@@ -11207,7 +11165,7 @@ namespace IAC2021SQL
             // 
             // checkBoxCOSDNTMktg
             // 
-            this.checkBoxCOSDNTMktg.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.cUSTOMERBindingSource, "DNTMktg", true));
+            this.checkBoxCOSDNTMktg.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "DNTMktg", true));
             resources.ApplyResources(this.checkBoxCOSDNTMktg, "checkBoxCOSDNTMktg");
             this.checkBoxCOSDNTMktg.Name = "checkBoxCOSDNTMktg";
             this.checkBoxCOSDNTMktg.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("checkBoxCOSDNTMktg.Properties.Appearance.Font")));
@@ -11257,7 +11215,7 @@ namespace IAC2021SQL
             // 
             // checkBoxCOSDNTAcct
             // 
-            this.checkBoxCOSDNTAcct.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.cUSTOMERBindingSource, "COSDNTAcct", true));
+            this.checkBoxCOSDNTAcct.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "COSDNTAcct", true));
             resources.ApplyResources(this.checkBoxCOSDNTAcct, "checkBoxCOSDNTAcct");
             this.checkBoxCOSDNTAcct.Name = "checkBoxCOSDNTAcct";
             this.checkBoxCOSDNTAcct.Properties.Appearance.Font = ((System.Drawing.Font)(resources.GetObject("checkBoxCOSDNTAcct.Properties.Appearance.Font")));
@@ -14833,214 +14791,45 @@ namespace IAC2021SQL
             // 
             // xtraTabPageHistory
             // 
-            this.xtraTabPageHistory.Controls.Add(this.groupBox18);
+            this.xtraTabPageHistory.Controls.Add(this.layoutControlCustomerHistory);
             this.xtraTabPageHistory.Name = "xtraTabPageHistory";
             resources.ApplyResources(this.xtraTabPageHistory, "xtraTabPageHistory");
             // 
-            // groupBox18
+            // layoutControlCustomerHistory
             // 
-            this.groupBox18.Appearance.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.groupBox18.Appearance.Options.UseBackColor = true;
-            this.groupBox18.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.groupBox18.Controls.Add(this.groupBox11);
-            this.groupBox18.Controls.Add(this.standaloneBarDockControl1);
-            this.groupBox18.Controls.Add(this.gridControlCustomerHist);
-            resources.ApplyResources(this.groupBox18, "groupBox18");
-            this.groupBox18.Name = "groupBox18";
-            // 
-            // groupBox11
-            // 
-            this.groupBox11.Controls.Add(this.checkEditCollectionAgentHistory);
-            this.groupBox11.Controls.Add(this.checkEditOverideInterestHistory);
-            this.groupBox11.Controls.Add(this.checkBoxFullRecourseHist);
-            this.groupBox11.Controls.Add(this.nullableDateTimePickerFirstPayDate);
-            this.groupBox11.Controls.Add(this.nullableDateTimePickerPayDate);
-            this.groupBox11.Controls.Add(this.nullableDateTimePickerHistContractDate);
-            this.groupBox11.Controls.Add(label202);
-            this.groupBox11.Controls.Add(this.textBoxTotalExtensions);
-            this.groupBox11.Controls.Add(label203);
-            this.groupBox11.Controls.Add(this.textBoxBuyOutHist);
-            this.groupBox11.Controls.Add(label204);
-            this.groupBox11.Controls.Add(this.textBox22);
-            this.groupBox11.Controls.Add(this.textBox2);
-            this.groupBox11.Controls.Add(label205);
-            this.groupBox11.Controls.Add(this.comboBoxHistoryDayDue);
-            this.groupBox11.Controls.Add(this.textBox3);
-            this.groupBox11.Controls.Add(label206);
-            this.groupBox11.Controls.Add(label207);
-            this.groupBox11.Controls.Add(this.textBox24);
-            this.groupBox11.Controls.Add(this.textBox4);
-            this.groupBox11.Controls.Add(label208);
-            this.groupBox11.Controls.Add(this.textBox75);
-            this.groupBox11.Controls.Add(this.textBox25);
-            this.groupBox11.Controls.Add(this.textBox5);
-            this.groupBox11.Controls.Add(this.textBoxPartialPayHist);
-            this.groupBox11.Controls.Add(label209);
-            this.groupBox11.Controls.Add(this.textBox7);
-            this.groupBox11.Controls.Add(label210);
-            this.groupBox11.Controls.Add(label211);
-            this.groupBox11.Controls.Add(this.textBox27);
-            this.groupBox11.Controls.Add(label212);
-            this.groupBox11.Controls.Add(this.textBox28);
-            this.groupBox11.Controls.Add(this.textBox29);
-            this.groupBox11.Controls.Add(label213);
-            this.groupBox11.Controls.Add(label214);
-            this.groupBox11.Controls.Add(label216);
-            this.groupBox11.Controls.Add(label217);
-            this.groupBox11.Controls.Add(this.textBox32);
-            this.groupBox11.Controls.Add(label218);
-            this.groupBox11.Controls.Add(this.textBox33);
-            this.groupBox11.Controls.Add(label219);
-            this.groupBox11.Controls.Add(this.textBox34);
-            this.groupBox11.Controls.Add(label220);
-            this.groupBox11.Controls.Add(this.textBox35);
-            this.groupBox11.Controls.Add(this.textBox37);
-            this.groupBox11.Controls.Add(label223);
-            this.groupBox11.Controls.Add(label224);
-            this.groupBox11.Controls.Add(label225);
-            this.groupBox11.Controls.Add(this.textBox31);
-            resources.ApplyResources(this.groupBox11, "groupBox11");
-            this.groupBox11.Name = "groupBox11";
-            this.groupBox11.TabStop = false;
-            // 
-            // checkEditCollectionAgentHistory
-            // 
-            this.checkEditCollectionAgentHistory.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_CREDIT_STATUS", true));
-            resources.ApplyResources(this.checkEditCollectionAgentHistory, "checkEditCollectionAgentHistory");
-            this.checkEditCollectionAgentHistory.MenuManager = this.toolbarFormManager1;
-            this.checkEditCollectionAgentHistory.Name = "checkEditCollectionAgentHistory";
-            this.checkEditCollectionAgentHistory.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
-            this.checkEditCollectionAgentHistory.Properties.AppearanceDisabled.Options.UseForeColor = true;
-            this.checkEditCollectionAgentHistory.Properties.Caption = resources.GetString("checkEditCollectionAgentHistory.Properties.Caption");
-            this.checkEditCollectionAgentHistory.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
-            this.checkEditCollectionAgentHistory.Properties.CheckBoxOptions.SvgColorChecked = System.Drawing.Color.Black;
-            this.checkEditCollectionAgentHistory.Properties.ContentAlignment = ((DevExpress.Utils.HorzAlignment)(resources.GetObject("checkEditCollectionAgentHistory.Properties.ContentAlignment")));
-            this.checkEditCollectionAgentHistory.Properties.GlyphAlignment = ((DevExpress.Utils.HorzAlignment)(resources.GetObject("checkEditCollectionAgentHistory.Properties.GlyphAlignment")));
-            this.checkEditCollectionAgentHistory.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
-            this.checkEditCollectionAgentHistory.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.LightSteelBlue;
-            this.checkEditCollectionAgentHistory.Properties.LookAndFeel.SkinName = "McSkin";
-            this.checkEditCollectionAgentHistory.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.checkEditCollectionAgentHistory.Properties.NullStyle = DevExpress.XtraEditors.Controls.StyleIndeterminate.Unchecked;
-            // 
-            // checkEditOverideInterestHistory
-            // 
-            this.checkEditOverideInterestHistory.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_INT_OVERRIDE", true));
-            resources.ApplyResources(this.checkEditOverideInterestHistory, "checkEditOverideInterestHistory");
-            this.checkEditOverideInterestHistory.MenuManager = this.toolbarFormManager1;
-            this.checkEditOverideInterestHistory.Name = "checkEditOverideInterestHistory";
-            this.checkEditOverideInterestHistory.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
-            this.checkEditOverideInterestHistory.Properties.AppearanceDisabled.Options.UseForeColor = true;
-            this.checkEditOverideInterestHistory.Properties.Caption = resources.GetString("checkEditOverideInterestHistory.Properties.Caption");
-            this.checkEditOverideInterestHistory.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
-            this.checkEditOverideInterestHistory.Properties.CheckBoxOptions.SvgColorChecked = System.Drawing.Color.Black;
-            this.checkEditOverideInterestHistory.Properties.ContentAlignment = ((DevExpress.Utils.HorzAlignment)(resources.GetObject("checkEditOverideInterestHistory.Properties.ContentAlignment")));
-            this.checkEditOverideInterestHistory.Properties.GlyphAlignment = ((DevExpress.Utils.HorzAlignment)(resources.GetObject("checkEditOverideInterestHistory.Properties.GlyphAlignment")));
-            this.checkEditOverideInterestHistory.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
-            this.checkEditOverideInterestHistory.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.LightSteelBlue;
-            this.checkEditOverideInterestHistory.Properties.LookAndFeel.SkinName = "McSkin";
-            this.checkEditOverideInterestHistory.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.checkEditOverideInterestHistory.Properties.NullStyle = DevExpress.XtraEditors.Controls.StyleIndeterminate.Unchecked;
-            // 
-            // checkBoxFullRecourseHist
-            // 
-            this.checkBoxFullRecourseHist.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "IsFullRecourse", true));
-            resources.ApplyResources(this.checkBoxFullRecourseHist, "checkBoxFullRecourseHist");
-            this.checkBoxFullRecourseHist.MenuManager = this.toolbarFormManager1;
-            this.checkBoxFullRecourseHist.Name = "checkBoxFullRecourseHist";
-            this.checkBoxFullRecourseHist.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
-            this.checkBoxFullRecourseHist.Properties.Appearance.Options.UseForeColor = true;
-            this.checkBoxFullRecourseHist.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
-            this.checkBoxFullRecourseHist.Properties.AppearanceDisabled.Options.UseForeColor = true;
-            this.checkBoxFullRecourseHist.Properties.Caption = resources.GetString("checkBoxFullRecourseHist.Properties.Caption");
-            this.checkBoxFullRecourseHist.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
-            this.checkBoxFullRecourseHist.Properties.CheckBoxOptions.SvgColorChecked = System.Drawing.Color.Red;
-            this.checkBoxFullRecourseHist.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
-            this.checkBoxFullRecourseHist.Properties.LookAndFeel.SkinName = "McSkin";
-            this.checkBoxFullRecourseHist.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
-            // 
-            // nullableDateTimePickerFirstPayDate
-            // 
-            this.nullableDateTimePickerFirstPayDate.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_INIT_DATE", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "d"));
-            resources.ApplyResources(this.nullableDateTimePickerFirstPayDate, "nullableDateTimePickerFirstPayDate");
-            this.nullableDateTimePickerFirstPayDate.MenuManager = this.toolbarFormManager1;
-            this.nullableDateTimePickerFirstPayDate.Name = "nullableDateTimePickerFirstPayDate";
-            this.nullableDateTimePickerFirstPayDate.Properties.Appearance.Options.UseTextOptions = true;
-            this.nullableDateTimePickerFirstPayDate.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.nullableDateTimePickerFirstPayDate.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
-            this.nullableDateTimePickerFirstPayDate.Properties.AppearanceDisabled.Options.UseForeColor = true;
-            this.nullableDateTimePickerFirstPayDate.Properties.AppearanceDisabled.Options.UseTextOptions = true;
-            this.nullableDateTimePickerFirstPayDate.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.nullableDateTimePickerFirstPayDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("nullableDateTimePickerFirstPayDate.Properties.Buttons"))))});
-            this.nullableDateTimePickerFirstPayDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("nullableDateTimePickerFirstPayDate.Properties.CalendarTimeProperties.Buttons"))))});
-            this.nullableDateTimePickerFirstPayDate.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
-            this.nullableDateTimePickerFirstPayDate.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
-            this.nullableDateTimePickerFirstPayDate.Properties.LookAndFeel.SkinName = "McSkin";
-            this.nullableDateTimePickerFirstPayDate.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
-            // 
-            // nullableDateTimePickerPayDate
-            // 
-            this.nullableDateTimePickerPayDate.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_LAST_PAYMENT_DATE", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "d"));
-            resources.ApplyResources(this.nullableDateTimePickerPayDate, "nullableDateTimePickerPayDate");
-            this.nullableDateTimePickerPayDate.MenuManager = this.toolbarFormManager1;
-            this.nullableDateTimePickerPayDate.Name = "nullableDateTimePickerPayDate";
-            this.nullableDateTimePickerPayDate.Properties.Appearance.Options.UseTextOptions = true;
-            this.nullableDateTimePickerPayDate.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.nullableDateTimePickerPayDate.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
-            this.nullableDateTimePickerPayDate.Properties.AppearanceDisabled.Options.UseForeColor = true;
-            this.nullableDateTimePickerPayDate.Properties.AppearanceDisabled.Options.UseTextOptions = true;
-            this.nullableDateTimePickerPayDate.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.nullableDateTimePickerPayDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("nullableDateTimePickerPayDate.Properties.Buttons"))))});
-            this.nullableDateTimePickerPayDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("nullableDateTimePickerPayDate.Properties.CalendarTimeProperties.Buttons"))))});
-            this.nullableDateTimePickerPayDate.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
-            this.nullableDateTimePickerPayDate.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
-            this.nullableDateTimePickerPayDate.Properties.LookAndFeel.SkinName = "McSkin";
-            this.nullableDateTimePickerPayDate.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
-            // 
-            // nullableDateTimePickerHistContractDate
-            // 
-            this.nullableDateTimePickerHistContractDate.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "ContractDate", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "d"));
-            resources.ApplyResources(this.nullableDateTimePickerHistContractDate, "nullableDateTimePickerHistContractDate");
-            this.nullableDateTimePickerHistContractDate.MenuManager = this.toolbarFormManager1;
-            this.nullableDateTimePickerHistContractDate.Name = "nullableDateTimePickerHistContractDate";
-            this.nullableDateTimePickerHistContractDate.Properties.Appearance.Options.UseTextOptions = true;
-            this.nullableDateTimePickerHistContractDate.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.nullableDateTimePickerHistContractDate.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
-            this.nullableDateTimePickerHistContractDate.Properties.AppearanceDisabled.Options.UseForeColor = true;
-            this.nullableDateTimePickerHistContractDate.Properties.AppearanceDisabled.Options.UseTextOptions = true;
-            this.nullableDateTimePickerHistContractDate.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.nullableDateTimePickerHistContractDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("nullableDateTimePickerHistContractDate.Properties.Buttons"))))});
-            this.nullableDateTimePickerHistContractDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("nullableDateTimePickerHistContractDate.Properties.CalendarTimeProperties.Buttons"))))});
-            this.nullableDateTimePickerHistContractDate.Properties.LookAndFeel.SkinMaskColor = System.Drawing.Color.LightSteelBlue;
-            this.nullableDateTimePickerHistContractDate.Properties.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Transparent;
-            this.nullableDateTimePickerHistContractDate.Properties.LookAndFeel.SkinName = "McSkin";
-            this.nullableDateTimePickerHistContractDate.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
-            // 
-            // textBoxTotalExtensions
-            // 
-            this.textBoxTotalExtensions.AllowDrop = true;
-            this.textBoxTotalExtensions.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_TOTAL_EXT", true));
-            resources.ApplyResources(this.textBoxTotalExtensions, "textBoxTotalExtensions");
-            this.textBoxTotalExtensions.Name = "textBoxTotalExtensions";
-            this.textBoxTotalExtensions.Properties.Appearance.Options.UseFont = true;
-            this.textBoxTotalExtensions.Properties.Appearance.Options.UseTextOptions = true;
-            this.textBoxTotalExtensions.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.textBoxTotalExtensions.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
-            this.textBoxTotalExtensions.Properties.AppearanceDisabled.Options.UseForeColor = true;
-            this.textBoxTotalExtensions.Properties.AppearanceDisabled.Options.UseTextOptions = true;
-            this.textBoxTotalExtensions.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.textBoxTotalExtensions.Properties.BeepOnError = ((bool)(resources.GetObject("textBoxTotalExtensions.Properties.BeepOnError")));
-            this.textBoxTotalExtensions.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
-            this.textBoxTotalExtensions.Properties.MaskSettings.Set("mask", "d");
-            this.textBoxTotalExtensions.Properties.MaskSettings.Set("autoHideDecimalSeparator", true);
-            this.textBoxTotalExtensions.Properties.MaskSettings.Set("hideInsignificantZeros", true);
-            this.textBoxTotalExtensions.Properties.ReadOnly = true;
-            this.textBoxTotalExtensions.Properties.UseMaskAsDisplayFormat = ((bool)(resources.GetObject("textBoxTotalExtensions.Properties.UseMaskAsDisplayFormat")));
+            this.layoutControlCustomerHistory.Controls.Add(this.textBoxBuyOutHist);
+            this.layoutControlCustomerHistory.Controls.Add(this.checkBoxFullRecourseHist);
+            this.layoutControlCustomerHistory.Controls.Add(this.checkEditCollectionAgentHistory);
+            this.layoutControlCustomerHistory.Controls.Add(this.checkEditOverideInterestHistory);
+            this.layoutControlCustomerHistory.Controls.Add(this.textBox25);
+            this.layoutControlCustomerHistory.Controls.Add(this.textBoxTotalExtensions);
+            this.layoutControlCustomerHistory.Controls.Add(this.textBox28);
+            this.layoutControlCustomerHistory.Controls.Add(this.textBoxPartialPayHist);
+            this.layoutControlCustomerHistory.Controls.Add(this.textBox29);
+            this.layoutControlCustomerHistory.Controls.Add(this.gridControlCustomerHist);
+            this.layoutControlCustomerHistory.Controls.Add(this.textBox27);
+            this.layoutControlCustomerHistory.Controls.Add(this.nullableDateTimePickerFirstPayDate);
+            this.layoutControlCustomerHistory.Controls.Add(this.nullableDateTimePickerPayDate);
+            this.layoutControlCustomerHistory.Controls.Add(this.textBox24);
+            this.layoutControlCustomerHistory.Controls.Add(this.nullableDateTimePickerHistContractDate);
+            this.layoutControlCustomerHistory.Controls.Add(this.standaloneBarDockControl1);
+            this.layoutControlCustomerHistory.Controls.Add(this.comboBoxHistoryDayDue);
+            this.layoutControlCustomerHistory.Controls.Add(this.textBox7);
+            this.layoutControlCustomerHistory.Controls.Add(this.textBox2);
+            this.layoutControlCustomerHistory.Controls.Add(this.textBox31);
+            this.layoutControlCustomerHistory.Controls.Add(this.textBox32);
+            this.layoutControlCustomerHistory.Controls.Add(this.textBox75);
+            this.layoutControlCustomerHistory.Controls.Add(this.textBox4);
+            this.layoutControlCustomerHistory.Controls.Add(this.textBox22);
+            this.layoutControlCustomerHistory.Controls.Add(this.textBox3);
+            this.layoutControlCustomerHistory.Controls.Add(this.textBox5);
+            this.layoutControlCustomerHistory.Controls.Add(this.textBox37);
+            this.layoutControlCustomerHistory.Controls.Add(this.textBox35);
+            this.layoutControlCustomerHistory.Controls.Add(this.textBox34);
+            this.layoutControlCustomerHistory.Controls.Add(this.textBox33);
+            resources.ApplyResources(this.layoutControlCustomerHistory, "layoutControlCustomerHistory");
+            this.layoutControlCustomerHistory.Name = "layoutControlCustomerHistory";
+            this.layoutControlCustomerHistory.Root = this.layoutControlGroupCustomerHistory;
             // 
             // textBoxBuyOutHist
             // 
@@ -15063,96 +14852,54 @@ namespace IAC2021SQL
             this.textBoxBuyOutHist.Properties.MaskSettings.Set("hideInsignificantZeros", true);
             this.textBoxBuyOutHist.Properties.ReadOnly = true;
             this.textBoxBuyOutHist.Properties.UseMaskAsDisplayFormat = ((bool)(resources.GetObject("textBoxBuyOutHist.Properties.UseMaskAsDisplayFormat")));
+            this.textBoxBuyOutHist.StyleController = this.layoutControlCustomerHistory;
             // 
-            // textBox22
+            // checkBoxFullRecourseHist
             // 
-            this.textBox22.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_SUFFIX", true));
-            resources.ApplyResources(this.textBox22, "textBox22");
-            this.textBox22.Name = "textBox22";
-            this.textBox22.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
-            this.textBox22.Properties.AppearanceDisabled.Options.UseForeColor = true;
-            this.textBox22.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.textBox22.Properties.ReadOnly = true;
+            this.checkBoxFullRecourseHist.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "IsFullRecourse", true));
+            resources.ApplyResources(this.checkBoxFullRecourseHist, "checkBoxFullRecourseHist");
+            this.checkBoxFullRecourseHist.MenuManager = this.toolbarFormManager1;
+            this.checkBoxFullRecourseHist.Name = "checkBoxFullRecourseHist";
+            this.checkBoxFullRecourseHist.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.checkBoxFullRecourseHist.Properties.Appearance.Options.UseForeColor = true;
+            this.checkBoxFullRecourseHist.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.checkBoxFullRecourseHist.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.checkBoxFullRecourseHist.Properties.Caption = resources.GetString("checkBoxFullRecourseHist.Properties.Caption");
+            this.checkBoxFullRecourseHist.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
+            this.checkBoxFullRecourseHist.Properties.CheckBoxOptions.SvgColorChecked = System.Drawing.Color.Red;
+            this.checkBoxFullRecourseHist.StyleController = this.layoutControlCustomerHistory;
             // 
-            // textBox2
+            // checkEditCollectionAgentHistory
             // 
-            this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.DealerListCustbindingSource, "dealer_name", true));
-            resources.ApplyResources(this.textBox2, "textBox2");
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
-            this.textBox2.Properties.AppearanceDisabled.Options.UseForeColor = true;
-            this.textBox2.Properties.ReadOnly = true;
+            this.checkEditCollectionAgentHistory.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_CREDIT_STATUS", true));
+            resources.ApplyResources(this.checkEditCollectionAgentHistory, "checkEditCollectionAgentHistory");
+            this.checkEditCollectionAgentHistory.MenuManager = this.toolbarFormManager1;
+            this.checkEditCollectionAgentHistory.Name = "checkEditCollectionAgentHistory";
+            this.checkEditCollectionAgentHistory.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.checkEditCollectionAgentHistory.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.checkEditCollectionAgentHistory.Properties.Caption = resources.GetString("checkEditCollectionAgentHistory.Properties.Caption");
+            this.checkEditCollectionAgentHistory.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
+            this.checkEditCollectionAgentHistory.Properties.CheckBoxOptions.SvgColorChecked = System.Drawing.Color.Black;
+            this.checkEditCollectionAgentHistory.Properties.ContentAlignment = ((DevExpress.Utils.HorzAlignment)(resources.GetObject("checkEditCollectionAgentHistory.Properties.ContentAlignment")));
+            this.checkEditCollectionAgentHistory.Properties.GlyphAlignment = ((DevExpress.Utils.HorzAlignment)(resources.GetObject("checkEditCollectionAgentHistory.Properties.GlyphAlignment")));
+            this.checkEditCollectionAgentHistory.Properties.NullStyle = DevExpress.XtraEditors.Controls.StyleIndeterminate.Unchecked;
+            this.checkEditCollectionAgentHistory.StyleController = this.layoutControlCustomerHistory;
             // 
-            // comboBoxHistoryDayDue
+            // checkEditOverideInterestHistory
             // 
-            this.comboBoxHistoryDayDue.AllowDrop = true;
-            this.comboBoxHistoryDayDue.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_DAY_DUE", true));
-            resources.ApplyResources(this.comboBoxHistoryDayDue, "comboBoxHistoryDayDue");
-            this.comboBoxHistoryDayDue.Name = "comboBoxHistoryDayDue";
-            this.comboBoxHistoryDayDue.Properties.Appearance.Options.UseTextOptions = true;
-            this.comboBoxHistoryDayDue.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.comboBoxHistoryDayDue.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
-            this.comboBoxHistoryDayDue.Properties.AppearanceDisabled.Options.UseForeColor = true;
-            this.comboBoxHistoryDayDue.Properties.AppearanceDisabled.Options.UseTextOptions = true;
-            this.comboBoxHistoryDayDue.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.comboBoxHistoryDayDue.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("comboBoxHistoryDayDue.Properties.Buttons"))))});
-            this.comboBoxHistoryDayDue.Properties.DropDownRows = 6;
-            this.comboBoxHistoryDayDue.Properties.Items.AddRange(new object[] {
-            resources.GetString("comboBoxHistoryDayDue.Properties.Items"),
-            resources.GetString("comboBoxHistoryDayDue.Properties.Items1"),
-            resources.GetString("comboBoxHistoryDayDue.Properties.Items2"),
-            resources.GetString("comboBoxHistoryDayDue.Properties.Items3"),
-            resources.GetString("comboBoxHistoryDayDue.Properties.Items4"),
-            resources.GetString("comboBoxHistoryDayDue.Properties.Items5")});
-            // 
-            // textBox3
-            // 
-            this.textBox3.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_DEALER", true));
-            resources.ApplyResources(this.textBox3, "textBox3");
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
-            this.textBox3.Properties.AppearanceDisabled.Options.UseForeColor = true;
-            this.textBox3.Properties.ReadOnly = true;
-            // 
-            // textBox24
-            // 
-            this.textBox24.AllowDrop = true;
-            this.textBox24.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_ANNUAL_PERCENTAGE_RATE", true));
-            resources.ApplyResources(this.textBox24, "textBox24");
-            this.textBox24.Name = "textBox24";
-            this.textBox24.Properties.Appearance.Options.UseFont = true;
-            this.textBox24.Properties.Appearance.Options.UseTextOptions = true;
-            this.textBox24.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.textBox24.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
-            this.textBox24.Properties.AppearanceDisabled.Options.UseForeColor = true;
-            this.textBox24.Properties.AppearanceDisabled.Options.UseTextOptions = true;
-            this.textBox24.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.textBox24.Properties.BeepOnError = ((bool)(resources.GetObject("textBox24.Properties.BeepOnError")));
-            this.textBox24.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
-            this.textBox24.Properties.MaskSettings.Set("mask", "f3");
-            this.textBox24.Properties.MaskSettings.Set("autoHideDecimalSeparator", false);
-            this.textBox24.Properties.MaskSettings.Set("hideInsignificantZeros", true);
-            this.textBox24.Properties.ReadOnly = true;
-            this.textBox24.Properties.UseMaskAsDisplayFormat = ((bool)(resources.GetObject("textBox24.Properties.UseMaskAsDisplayFormat")));
-            // 
-            // textBox4
-            // 
-            this.textBox4.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_LAST_NAME", true));
-            resources.ApplyResources(this.textBox4, "textBox4");
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
-            this.textBox4.Properties.AppearanceDisabled.Options.UseForeColor = true;
-            this.textBox4.Properties.ReadOnly = true;
-            // 
-            // textBox75
-            // 
-            this.textBox75.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_FIRST_NAME", true));
-            resources.ApplyResources(this.textBox75, "textBox75");
-            this.textBox75.Name = "textBox75";
-            this.textBox75.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
-            this.textBox75.Properties.AppearanceDisabled.Options.UseForeColor = true;
-            this.textBox75.Properties.ReadOnly = true;
+            this.checkEditOverideInterestHistory.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_INT_OVERRIDE", true));
+            resources.ApplyResources(this.checkEditOverideInterestHistory, "checkEditOverideInterestHistory");
+            this.checkEditOverideInterestHistory.MenuManager = this.toolbarFormManager1;
+            this.checkEditOverideInterestHistory.Name = "checkEditOverideInterestHistory";
+            this.checkEditOverideInterestHistory.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.checkEditOverideInterestHistory.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.checkEditOverideInterestHistory.Properties.Caption = resources.GetString("checkEditOverideInterestHistory.Properties.Caption");
+            this.checkEditOverideInterestHistory.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
+            this.checkEditOverideInterestHistory.Properties.CheckBoxOptions.SvgColorChecked = System.Drawing.Color.Black;
+            this.checkEditOverideInterestHistory.Properties.ContentAlignment = ((DevExpress.Utils.HorzAlignment)(resources.GetObject("checkEditOverideInterestHistory.Properties.ContentAlignment")));
+            this.checkEditOverideInterestHistory.Properties.GlyphAlignment = ((DevExpress.Utils.HorzAlignment)(resources.GetObject("checkEditOverideInterestHistory.Properties.GlyphAlignment")));
+            this.checkEditOverideInterestHistory.Properties.NullStyle = DevExpress.XtraEditors.Controls.StyleIndeterminate.Unchecked;
+            this.checkEditOverideInterestHistory.StyleController = this.layoutControlCustomerHistory;
             // 
             // textBox25
             // 
@@ -15176,15 +14923,40 @@ namespace IAC2021SQL
             this.textBox25.Properties.MaskSettings.Set("hideInsignificantZeros", true);
             this.textBox25.Properties.ReadOnly = true;
             this.textBox25.Properties.UseMaskAsDisplayFormat = ((bool)(resources.GetObject("textBox25.Properties.UseMaskAsDisplayFormat")));
+            this.textBox25.StyleController = this.layoutControlCustomerHistory;
             // 
-            // textBox5
+            // textBoxTotalExtensions
             // 
-            this.textBox5.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_PURCHASE_ORDER", true));
-            resources.ApplyResources(this.textBox5, "textBox5");
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
-            this.textBox5.Properties.AppearanceDisabled.Options.UseForeColor = true;
-            this.textBox5.Properties.ReadOnly = true;
+            this.textBoxTotalExtensions.AllowDrop = true;
+            this.textBoxTotalExtensions.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_TOTAL_EXT", true));
+            resources.ApplyResources(this.textBoxTotalExtensions, "textBoxTotalExtensions");
+            this.textBoxTotalExtensions.Name = "textBoxTotalExtensions";
+            this.textBoxTotalExtensions.Properties.Appearance.Options.UseFont = true;
+            this.textBoxTotalExtensions.Properties.Appearance.Options.UseTextOptions = true;
+            this.textBoxTotalExtensions.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.textBoxTotalExtensions.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.textBoxTotalExtensions.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.textBoxTotalExtensions.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.textBoxTotalExtensions.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.textBoxTotalExtensions.Properties.BeepOnError = ((bool)(resources.GetObject("textBoxTotalExtensions.Properties.BeepOnError")));
+            this.textBoxTotalExtensions.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.textBoxTotalExtensions.Properties.MaskSettings.Set("mask", "d");
+            this.textBoxTotalExtensions.Properties.MaskSettings.Set("autoHideDecimalSeparator", true);
+            this.textBoxTotalExtensions.Properties.MaskSettings.Set("hideInsignificantZeros", true);
+            this.textBoxTotalExtensions.Properties.ReadOnly = true;
+            this.textBoxTotalExtensions.Properties.UseMaskAsDisplayFormat = ((bool)(resources.GetObject("textBoxTotalExtensions.Properties.UseMaskAsDisplayFormat")));
+            this.textBoxTotalExtensions.StyleController = this.layoutControlCustomerHistory;
+            // 
+            // textBox28
+            // 
+            this.textBox28.AllowDrop = true;
+            this.textBox28.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_PAYMENT_CODE", true));
+            resources.ApplyResources(this.textBox28, "textBox28");
+            this.textBox28.Name = "textBox28";
+            this.textBox28.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.textBox28.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.textBox28.Properties.ReadOnly = true;
+            this.textBox28.StyleController = this.layoutControlCustomerHistory;
             // 
             // textBoxPartialPayHist
             // 
@@ -15207,47 +14979,7 @@ namespace IAC2021SQL
             this.textBoxPartialPayHist.Properties.MaskSettings.Set("hideInsignificantZeros", true);
             this.textBoxPartialPayHist.Properties.ReadOnly = true;
             this.textBoxPartialPayHist.Properties.UseMaskAsDisplayFormat = ((bool)(resources.GetObject("textBoxPartialPayHist.Properties.UseMaskAsDisplayFormat")));
-            // 
-            // textBox7
-            // 
-            this.textBox7.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_NO", true));
-            resources.ApplyResources(this.textBox7, "textBox7");
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
-            this.textBox7.Properties.AppearanceDisabled.Options.UseForeColor = true;
-            this.textBox7.Properties.ReadOnly = true;
-            // 
-            // textBox27
-            // 
-            this.textBox27.AllowDrop = true;
-            this.textBox27.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_LATE_CHARGE", true));
-            resources.ApplyResources(this.textBox27, "textBox27");
-            this.textBox27.Name = "textBox27";
-            this.textBox27.Properties.Appearance.Options.UseTextOptions = true;
-            this.textBox27.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.textBox27.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
-            this.textBox27.Properties.AppearanceDisabled.Options.UseForeColor = true;
-            this.textBox27.Properties.AppearanceDisabled.Options.UseTextOptions = true;
-            this.textBox27.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.textBox27.Properties.BeepOnError = ((bool)(resources.GetObject("textBox27.Properties.BeepOnError")));
-            this.textBox27.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
-            this.textBox27.Properties.MaskSettings.Set("mask", "c");
-            this.textBox27.Properties.MaskSettings.Set("culture", "en-US");
-            this.textBox27.Properties.MaskSettings.Set("valueType", typeof(decimal));
-            this.textBox27.Properties.MaskSettings.Set("autoHideDecimalSeparator", false);
-            this.textBox27.Properties.MaskSettings.Set("hideInsignificantZeros", true);
-            this.textBox27.Properties.ReadOnly = true;
-            this.textBox27.Properties.UseMaskAsDisplayFormat = ((bool)(resources.GetObject("textBox27.Properties.UseMaskAsDisplayFormat")));
-            // 
-            // textBox28
-            // 
-            this.textBox28.AllowDrop = true;
-            this.textBox28.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_PAYMENT_CODE", true));
-            resources.ApplyResources(this.textBox28, "textBox28");
-            this.textBox28.Name = "textBox28";
-            this.textBox28.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
-            this.textBox28.Properties.AppearanceDisabled.Options.UseForeColor = true;
-            this.textBox28.Properties.ReadOnly = true;
+            this.textBoxPartialPayHist.StyleController = this.layoutControlCustomerHistory;
             // 
             // textBox29
             // 
@@ -15258,136 +14990,7 @@ namespace IAC2021SQL
             this.textBox29.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.textBox29.Properties.AppearanceDisabled.Options.UseForeColor = true;
             this.textBox29.Properties.ReadOnly = true;
-            // 
-            // textBox32
-            // 
-            this.textBox32.AllowDrop = true;
-            this.textBox32.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_LOAN_CASH", true));
-            resources.ApplyResources(this.textBox32, "textBox32");
-            this.textBox32.Name = "textBox32";
-            this.textBox32.Properties.Appearance.Options.UseTextOptions = true;
-            this.textBox32.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.textBox32.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
-            this.textBox32.Properties.AppearanceDisabled.Options.UseForeColor = true;
-            this.textBox32.Properties.AppearanceDisabled.Options.UseTextOptions = true;
-            this.textBox32.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.textBox32.Properties.BeepOnError = ((bool)(resources.GetObject("textBox32.Properties.BeepOnError")));
-            this.textBox32.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
-            this.textBox32.Properties.MaskSettings.Set("mask", "c");
-            this.textBox32.Properties.MaskSettings.Set("culture", "en-US");
-            this.textBox32.Properties.MaskSettings.Set("valueType", typeof(decimal));
-            this.textBox32.Properties.MaskSettings.Set("autoHideDecimalSeparator", false);
-            this.textBox32.Properties.MaskSettings.Set("hideInsignificantZeros", true);
-            this.textBox32.Properties.ReadOnly = true;
-            this.textBox32.Properties.UseMaskAsDisplayFormat = ((bool)(resources.GetObject("textBox32.Properties.UseMaskAsDisplayFormat")));
-            // 
-            // textBox33
-            // 
-            this.textBox33.AllowDrop = true;
-            this.textBox33.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_LOAN_INTEREST", true));
-            resources.ApplyResources(this.textBox33, "textBox33");
-            this.textBox33.Name = "textBox33";
-            this.textBox33.Properties.Appearance.Options.UseTextOptions = true;
-            this.textBox33.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.textBox33.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
-            this.textBox33.Properties.AppearanceDisabled.Options.UseForeColor = true;
-            this.textBox33.Properties.AppearanceDisabled.Options.UseTextOptions = true;
-            this.textBox33.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.textBox33.Properties.BeepOnError = ((bool)(resources.GetObject("textBox33.Properties.BeepOnError")));
-            this.textBox33.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
-            this.textBox33.Properties.MaskSettings.Set("mask", "c");
-            this.textBox33.Properties.MaskSettings.Set("culture", "en-US");
-            this.textBox33.Properties.MaskSettings.Set("valueType", typeof(decimal));
-            this.textBox33.Properties.MaskSettings.Set("autoHideDecimalSeparator", false);
-            this.textBox33.Properties.MaskSettings.Set("hideInsignificantZeros", true);
-            this.textBox33.Properties.ReadOnly = true;
-            this.textBox33.Properties.UseMaskAsDisplayFormat = ((bool)(resources.GetObject("textBox33.Properties.UseMaskAsDisplayFormat")));
-            // 
-            // textBox34
-            // 
-            this.textBox34.AllowDrop = true;
-            this.textBox34.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_LOAN_AMOUNT", true));
-            resources.ApplyResources(this.textBox34, "textBox34");
-            this.textBox34.Name = "textBox34";
-            this.textBox34.Properties.Appearance.Options.UseTextOptions = true;
-            this.textBox34.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.textBox34.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
-            this.textBox34.Properties.AppearanceDisabled.Options.UseForeColor = true;
-            this.textBox34.Properties.AppearanceDisabled.Options.UseTextOptions = true;
-            this.textBox34.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.textBox34.Properties.BeepOnError = ((bool)(resources.GetObject("textBox34.Properties.BeepOnError")));
-            this.textBox34.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
-            this.textBox34.Properties.MaskSettings.Set("mask", "c");
-            this.textBox34.Properties.MaskSettings.Set("culture", "en-US");
-            this.textBox34.Properties.MaskSettings.Set("autoHideDecimalSeparator", false);
-            this.textBox34.Properties.MaskSettings.Set("hideInsignificantZeros", true);
-            this.textBox34.Properties.ReadOnly = true;
-            this.textBox34.Properties.UseMaskAsDisplayFormat = ((bool)(resources.GetObject("textBox34.Properties.UseMaskAsDisplayFormat")));
-            // 
-            // textBox35
-            // 
-            this.textBox35.AllowDrop = true;
-            this.textBox35.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_REGULAR_AMOUNT", true));
-            resources.ApplyResources(this.textBox35, "textBox35");
-            this.textBox35.Name = "textBox35";
-            this.textBox35.Properties.Appearance.Options.UseTextOptions = true;
-            this.textBox35.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.textBox35.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
-            this.textBox35.Properties.AppearanceDisabled.Options.UseForeColor = true;
-            this.textBox35.Properties.AppearanceDisabled.Options.UseTextOptions = true;
-            this.textBox35.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.textBox35.Properties.BeepOnError = ((bool)(resources.GetObject("textBox35.Properties.BeepOnError")));
-            this.textBox35.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
-            this.textBox35.Properties.MaskSettings.Set("culture", "en-US");
-            this.textBox35.Properties.MaskSettings.Set("valueType", typeof(decimal));
-            this.textBox35.Properties.MaskSettings.Set("autoHideDecimalSeparator", false);
-            this.textBox35.Properties.MaskSettings.Set("hideInsignificantZeros", true);
-            this.textBox35.Properties.MaskSettings.Set("mask", "c");
-            this.textBox35.Properties.ReadOnly = true;
-            this.textBox35.Properties.UseMaskAsDisplayFormat = ((bool)(resources.GetObject("textBox35.Properties.UseMaskAsDisplayFormat")));
-            // 
-            // textBox37
-            // 
-            this.textBox37.AllowDrop = true;
-            this.textBox37.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_TERM", true));
-            resources.ApplyResources(this.textBox37, "textBox37");
-            this.textBox37.Name = "textBox37";
-            this.textBox37.Properties.Appearance.Options.UseTextOptions = true;
-            this.textBox37.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.textBox37.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
-            this.textBox37.Properties.AppearanceDisabled.Options.UseForeColor = true;
-            this.textBox37.Properties.AppearanceDisabled.Options.UseTextOptions = true;
-            this.textBox37.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.textBox37.Properties.BeepOnError = ((bool)(resources.GetObject("textBox37.Properties.BeepOnError")));
-            this.textBox37.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
-            this.textBox37.Properties.MaskSettings.Set("mask", "d");
-            this.textBox37.Properties.MaskSettings.Set("culture", "en-US");
-            this.textBox37.Properties.MaskSettings.Set("autoHideDecimalSeparator", true);
-            this.textBox37.Properties.MaskSettings.Set("hideInsignificantZeros", true);
-            this.textBox37.Properties.ReadOnly = true;
-            this.textBox37.Properties.UseMaskAsDisplayFormat = ((bool)(resources.GetObject("textBox37.Properties.UseMaskAsDisplayFormat")));
-            // 
-            // textBox31
-            // 
-            this.textBox31.AllowDrop = true;
-            this.textBox31.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_NO_OF_PAYMENTS_MADE", true));
-            resources.ApplyResources(this.textBox31, "textBox31");
-            this.textBox31.Name = "textBox31";
-            this.textBox31.Properties.Appearance.Options.UseFont = true;
-            this.textBox31.Properties.Appearance.Options.UseTextOptions = true;
-            this.textBox31.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.textBox31.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
-            this.textBox31.Properties.AppearanceDisabled.Options.UseForeColor = true;
-            this.textBox31.Properties.AppearanceDisabled.Options.UseTextOptions = true;
-            this.textBox31.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.textBox31.Properties.BeepOnError = ((bool)(resources.GetObject("textBox31.Properties.BeepOnError")));
-            this.textBox31.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
-            this.textBox31.Properties.MaskSettings.Set("mask", "d");
-            this.textBox31.Properties.MaskSettings.Set("culture", "en-US");
-            this.textBox31.Properties.MaskSettings.Set("autoHideDecimalSeparator", true);
-            this.textBox31.Properties.MaskSettings.Set("hideInsignificantZeros", true);
-            this.textBox31.Properties.ReadOnly = true;
-            this.textBox31.Properties.UseMaskAsDisplayFormat = ((bool)(resources.GetObject("textBox31.Properties.UseMaskAsDisplayFormat")));
+            this.textBox29.StyleController = this.layoutControlCustomerHistory;
             // 
             // gridControlCustomerHist
             // 
@@ -15614,6 +15217,1069 @@ namespace IAC2021SQL
             this.colCUSTHIST_THRU_UD.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colCUSTHIST_THRU_UD.FieldName = "CUSTHIST_THRU_UD";
             this.colCUSTHIST_THRU_UD.Name = "colCUSTHIST_THRU_UD";
+            // 
+            // textBox27
+            // 
+            this.textBox27.AllowDrop = true;
+            this.textBox27.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_LATE_CHARGE", true));
+            resources.ApplyResources(this.textBox27, "textBox27");
+            this.textBox27.Name = "textBox27";
+            this.textBox27.Properties.Appearance.Options.UseTextOptions = true;
+            this.textBox27.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.textBox27.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.textBox27.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.textBox27.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.textBox27.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.textBox27.Properties.BeepOnError = ((bool)(resources.GetObject("textBox27.Properties.BeepOnError")));
+            this.textBox27.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.textBox27.Properties.MaskSettings.Set("mask", "c");
+            this.textBox27.Properties.MaskSettings.Set("culture", "en-US");
+            this.textBox27.Properties.MaskSettings.Set("valueType", typeof(decimal));
+            this.textBox27.Properties.MaskSettings.Set("autoHideDecimalSeparator", false);
+            this.textBox27.Properties.MaskSettings.Set("hideInsignificantZeros", true);
+            this.textBox27.Properties.ReadOnly = true;
+            this.textBox27.Properties.UseMaskAsDisplayFormat = ((bool)(resources.GetObject("textBox27.Properties.UseMaskAsDisplayFormat")));
+            this.textBox27.StyleController = this.layoutControlCustomerHistory;
+            // 
+            // nullableDateTimePickerFirstPayDate
+            // 
+            this.nullableDateTimePickerFirstPayDate.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_INIT_DATE", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "d"));
+            resources.ApplyResources(this.nullableDateTimePickerFirstPayDate, "nullableDateTimePickerFirstPayDate");
+            this.nullableDateTimePickerFirstPayDate.MenuManager = this.toolbarFormManager1;
+            this.nullableDateTimePickerFirstPayDate.Name = "nullableDateTimePickerFirstPayDate";
+            this.nullableDateTimePickerFirstPayDate.Properties.Appearance.Options.UseTextOptions = true;
+            this.nullableDateTimePickerFirstPayDate.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.nullableDateTimePickerFirstPayDate.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.nullableDateTimePickerFirstPayDate.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.nullableDateTimePickerFirstPayDate.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.nullableDateTimePickerFirstPayDate.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.nullableDateTimePickerFirstPayDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("nullableDateTimePickerFirstPayDate.Properties.Buttons"))))});
+            this.nullableDateTimePickerFirstPayDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("nullableDateTimePickerFirstPayDate.Properties.CalendarTimeProperties.Buttons"))))});
+            this.nullableDateTimePickerFirstPayDate.StyleController = this.layoutControlCustomerHistory;
+            // 
+            // nullableDateTimePickerPayDate
+            // 
+            this.nullableDateTimePickerPayDate.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_LAST_PAYMENT_DATE", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "d"));
+            resources.ApplyResources(this.nullableDateTimePickerPayDate, "nullableDateTimePickerPayDate");
+            this.nullableDateTimePickerPayDate.MenuManager = this.toolbarFormManager1;
+            this.nullableDateTimePickerPayDate.Name = "nullableDateTimePickerPayDate";
+            this.nullableDateTimePickerPayDate.Properties.Appearance.Options.UseTextOptions = true;
+            this.nullableDateTimePickerPayDate.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.nullableDateTimePickerPayDate.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.nullableDateTimePickerPayDate.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.nullableDateTimePickerPayDate.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.nullableDateTimePickerPayDate.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.nullableDateTimePickerPayDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("nullableDateTimePickerPayDate.Properties.Buttons"))))});
+            this.nullableDateTimePickerPayDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("nullableDateTimePickerPayDate.Properties.CalendarTimeProperties.Buttons"))))});
+            this.nullableDateTimePickerPayDate.StyleController = this.layoutControlCustomerHistory;
+            // 
+            // textBox24
+            // 
+            this.textBox24.AllowDrop = true;
+            this.textBox24.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_ANNUAL_PERCENTAGE_RATE", true));
+            resources.ApplyResources(this.textBox24, "textBox24");
+            this.textBox24.Name = "textBox24";
+            this.textBox24.Properties.Appearance.Options.UseFont = true;
+            this.textBox24.Properties.Appearance.Options.UseTextOptions = true;
+            this.textBox24.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.textBox24.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.textBox24.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.textBox24.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.textBox24.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.textBox24.Properties.BeepOnError = ((bool)(resources.GetObject("textBox24.Properties.BeepOnError")));
+            this.textBox24.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.textBox24.Properties.MaskSettings.Set("mask", "f3");
+            this.textBox24.Properties.MaskSettings.Set("autoHideDecimalSeparator", false);
+            this.textBox24.Properties.MaskSettings.Set("hideInsignificantZeros", true);
+            this.textBox24.Properties.MaskSettings.Set("valueType", typeof(decimal));
+            this.textBox24.Properties.ReadOnly = true;
+            this.textBox24.Properties.UseMaskAsDisplayFormat = ((bool)(resources.GetObject("textBox24.Properties.UseMaskAsDisplayFormat")));
+            this.textBox24.StyleController = this.layoutControlCustomerHistory;
+            // 
+            // nullableDateTimePickerHistContractDate
+            // 
+            this.nullableDateTimePickerHistContractDate.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "ContractDate", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "d"));
+            resources.ApplyResources(this.nullableDateTimePickerHistContractDate, "nullableDateTimePickerHistContractDate");
+            this.nullableDateTimePickerHistContractDate.MenuManager = this.toolbarFormManager1;
+            this.nullableDateTimePickerHistContractDate.Name = "nullableDateTimePickerHistContractDate";
+            this.nullableDateTimePickerHistContractDate.Properties.Appearance.Options.UseTextOptions = true;
+            this.nullableDateTimePickerHistContractDate.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.nullableDateTimePickerHistContractDate.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.nullableDateTimePickerHistContractDate.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.nullableDateTimePickerHistContractDate.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.nullableDateTimePickerHistContractDate.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.nullableDateTimePickerHistContractDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("nullableDateTimePickerHistContractDate.Properties.Buttons"))))});
+            this.nullableDateTimePickerHistContractDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("nullableDateTimePickerHistContractDate.Properties.CalendarTimeProperties.Buttons"))))});
+            this.nullableDateTimePickerHistContractDate.StyleController = this.layoutControlCustomerHistory;
+            // 
+            // comboBoxHistoryDayDue
+            // 
+            this.comboBoxHistoryDayDue.AllowDrop = true;
+            this.comboBoxHistoryDayDue.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_DAY_DUE", true));
+            resources.ApplyResources(this.comboBoxHistoryDayDue, "comboBoxHistoryDayDue");
+            this.comboBoxHistoryDayDue.Name = "comboBoxHistoryDayDue";
+            this.comboBoxHistoryDayDue.Properties.Appearance.Options.UseTextOptions = true;
+            this.comboBoxHistoryDayDue.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.comboBoxHistoryDayDue.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.comboBoxHistoryDayDue.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.comboBoxHistoryDayDue.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.comboBoxHistoryDayDue.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.comboBoxHistoryDayDue.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("comboBoxHistoryDayDue.Properties.Buttons"))))});
+            this.comboBoxHistoryDayDue.Properties.DropDownRows = 6;
+            this.comboBoxHistoryDayDue.Properties.Items.AddRange(new object[] {
+            resources.GetString("comboBoxHistoryDayDue.Properties.Items"),
+            resources.GetString("comboBoxHistoryDayDue.Properties.Items1"),
+            resources.GetString("comboBoxHistoryDayDue.Properties.Items2"),
+            resources.GetString("comboBoxHistoryDayDue.Properties.Items3"),
+            resources.GetString("comboBoxHistoryDayDue.Properties.Items4"),
+            resources.GetString("comboBoxHistoryDayDue.Properties.Items5")});
+            this.comboBoxHistoryDayDue.StyleController = this.layoutControlCustomerHistory;
+            // 
+            // textBox7
+            // 
+            this.textBox7.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_NO", true));
+            resources.ApplyResources(this.textBox7, "textBox7");
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.textBox7.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.textBox7.Properties.ReadOnly = true;
+            this.textBox7.StyleController = this.layoutControlCustomerHistory;
+            // 
+            // textBox2
+            // 
+            this.textBox2.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.DealerListCustbindingSource, "dealer_name", true));
+            resources.ApplyResources(this.textBox2, "textBox2");
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.textBox2.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.textBox2.Properties.ReadOnly = true;
+            this.textBox2.StyleController = this.layoutControlCustomerHistory;
+            // 
+            // textBox31
+            // 
+            this.textBox31.AllowDrop = true;
+            this.textBox31.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_NO_OF_PAYMENTS_MADE", true));
+            resources.ApplyResources(this.textBox31, "textBox31");
+            this.textBox31.Name = "textBox31";
+            this.textBox31.Properties.Appearance.Options.UseFont = true;
+            this.textBox31.Properties.Appearance.Options.UseTextOptions = true;
+            this.textBox31.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.textBox31.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.textBox31.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.textBox31.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.textBox31.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.textBox31.Properties.BeepOnError = ((bool)(resources.GetObject("textBox31.Properties.BeepOnError")));
+            this.textBox31.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.textBox31.Properties.MaskSettings.Set("mask", "d");
+            this.textBox31.Properties.MaskSettings.Set("culture", "en-US");
+            this.textBox31.Properties.MaskSettings.Set("autoHideDecimalSeparator", true);
+            this.textBox31.Properties.MaskSettings.Set("hideInsignificantZeros", true);
+            this.textBox31.Properties.ReadOnly = true;
+            this.textBox31.Properties.UseMaskAsDisplayFormat = ((bool)(resources.GetObject("textBox31.Properties.UseMaskAsDisplayFormat")));
+            this.textBox31.StyleController = this.layoutControlCustomerHistory;
+            // 
+            // textBox32
+            // 
+            this.textBox32.AllowDrop = true;
+            this.textBox32.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_LOAN_CASH", true));
+            resources.ApplyResources(this.textBox32, "textBox32");
+            this.textBox32.Name = "textBox32";
+            this.textBox32.Properties.Appearance.Options.UseTextOptions = true;
+            this.textBox32.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.textBox32.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.textBox32.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.textBox32.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.textBox32.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.textBox32.Properties.BeepOnError = ((bool)(resources.GetObject("textBox32.Properties.BeepOnError")));
+            this.textBox32.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.textBox32.Properties.MaskSettings.Set("mask", "c");
+            this.textBox32.Properties.MaskSettings.Set("culture", "en-US");
+            this.textBox32.Properties.MaskSettings.Set("valueType", typeof(decimal));
+            this.textBox32.Properties.MaskSettings.Set("autoHideDecimalSeparator", false);
+            this.textBox32.Properties.MaskSettings.Set("hideInsignificantZeros", true);
+            this.textBox32.Properties.ReadOnly = true;
+            this.textBox32.Properties.UseMaskAsDisplayFormat = ((bool)(resources.GetObject("textBox32.Properties.UseMaskAsDisplayFormat")));
+            this.textBox32.StyleController = this.layoutControlCustomerHistory;
+            // 
+            // textBox75
+            // 
+            this.textBox75.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_FIRST_NAME", true));
+            resources.ApplyResources(this.textBox75, "textBox75");
+            this.textBox75.Name = "textBox75";
+            this.textBox75.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.textBox75.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.textBox75.Properties.ReadOnly = true;
+            this.textBox75.StyleController = this.layoutControlCustomerHistory;
+            // 
+            // textBox4
+            // 
+            this.textBox4.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_LAST_NAME", true));
+            resources.ApplyResources(this.textBox4, "textBox4");
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.textBox4.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.textBox4.Properties.ReadOnly = true;
+            this.textBox4.StyleController = this.layoutControlCustomerHistory;
+            // 
+            // textBox22
+            // 
+            this.textBox22.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_SUFFIX", true));
+            resources.ApplyResources(this.textBox22, "textBox22");
+            this.textBox22.Name = "textBox22";
+            this.textBox22.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.textBox22.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.textBox22.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.textBox22.Properties.ReadOnly = true;
+            this.textBox22.StyleController = this.layoutControlCustomerHistory;
+            // 
+            // textBox3
+            // 
+            this.textBox3.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_DEALER", true));
+            resources.ApplyResources(this.textBox3, "textBox3");
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.textBox3.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.textBox3.Properties.ReadOnly = true;
+            this.textBox3.StyleController = this.layoutControlCustomerHistory;
+            // 
+            // textBox5
+            // 
+            this.textBox5.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_PURCHASE_ORDER", true));
+            resources.ApplyResources(this.textBox5, "textBox5");
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.textBox5.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.textBox5.Properties.ReadOnly = true;
+            this.textBox5.StyleController = this.layoutControlCustomerHistory;
+            // 
+            // textBox37
+            // 
+            this.textBox37.AllowDrop = true;
+            this.textBox37.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_TERM", true));
+            resources.ApplyResources(this.textBox37, "textBox37");
+            this.textBox37.Name = "textBox37";
+            this.textBox37.Properties.Appearance.Options.UseTextOptions = true;
+            this.textBox37.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.textBox37.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.textBox37.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.textBox37.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.textBox37.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.textBox37.Properties.BeepOnError = ((bool)(resources.GetObject("textBox37.Properties.BeepOnError")));
+            this.textBox37.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.textBox37.Properties.MaskSettings.Set("mask", "d");
+            this.textBox37.Properties.MaskSettings.Set("culture", "en-US");
+            this.textBox37.Properties.MaskSettings.Set("autoHideDecimalSeparator", true);
+            this.textBox37.Properties.MaskSettings.Set("hideInsignificantZeros", true);
+            this.textBox37.Properties.ReadOnly = true;
+            this.textBox37.Properties.UseMaskAsDisplayFormat = ((bool)(resources.GetObject("textBox37.Properties.UseMaskAsDisplayFormat")));
+            this.textBox37.StyleController = this.layoutControlCustomerHistory;
+            // 
+            // textBox35
+            // 
+            this.textBox35.AllowDrop = true;
+            this.textBox35.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_REGULAR_AMOUNT", true));
+            resources.ApplyResources(this.textBox35, "textBox35");
+            this.textBox35.Name = "textBox35";
+            this.textBox35.Properties.Appearance.Options.UseTextOptions = true;
+            this.textBox35.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.textBox35.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.textBox35.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.textBox35.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.textBox35.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.textBox35.Properties.BeepOnError = ((bool)(resources.GetObject("textBox35.Properties.BeepOnError")));
+            this.textBox35.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.textBox35.Properties.MaskSettings.Set("culture", "en-US");
+            this.textBox35.Properties.MaskSettings.Set("valueType", typeof(decimal));
+            this.textBox35.Properties.MaskSettings.Set("autoHideDecimalSeparator", false);
+            this.textBox35.Properties.MaskSettings.Set("hideInsignificantZeros", true);
+            this.textBox35.Properties.MaskSettings.Set("mask", "c");
+            this.textBox35.Properties.ReadOnly = true;
+            this.textBox35.Properties.UseMaskAsDisplayFormat = ((bool)(resources.GetObject("textBox35.Properties.UseMaskAsDisplayFormat")));
+            this.textBox35.StyleController = this.layoutControlCustomerHistory;
+            // 
+            // textBox34
+            // 
+            this.textBox34.AllowDrop = true;
+            this.textBox34.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_LOAN_AMOUNT", true));
+            resources.ApplyResources(this.textBox34, "textBox34");
+            this.textBox34.Name = "textBox34";
+            this.textBox34.Properties.Appearance.Options.UseTextOptions = true;
+            this.textBox34.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.textBox34.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.textBox34.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.textBox34.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.textBox34.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.textBox34.Properties.BeepOnError = ((bool)(resources.GetObject("textBox34.Properties.BeepOnError")));
+            this.textBox34.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.textBox34.Properties.MaskSettings.Set("mask", "c");
+            this.textBox34.Properties.MaskSettings.Set("culture", "en-US");
+            this.textBox34.Properties.MaskSettings.Set("autoHideDecimalSeparator", false);
+            this.textBox34.Properties.MaskSettings.Set("hideInsignificantZeros", true);
+            this.textBox34.Properties.ReadOnly = true;
+            this.textBox34.Properties.UseMaskAsDisplayFormat = ((bool)(resources.GetObject("textBox34.Properties.UseMaskAsDisplayFormat")));
+            this.textBox34.StyleController = this.layoutControlCustomerHistory;
+            // 
+            // textBox33
+            // 
+            this.textBox33.AllowDrop = true;
+            this.textBox33.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.cUSTOMERBindingSource, "CUSTOMER_LOAN_INTEREST", true));
+            resources.ApplyResources(this.textBox33, "textBox33");
+            this.textBox33.Name = "textBox33";
+            this.textBox33.Properties.Appearance.Options.UseTextOptions = true;
+            this.textBox33.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.textBox33.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.textBox33.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.textBox33.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.textBox33.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.textBox33.Properties.BeepOnError = ((bool)(resources.GetObject("textBox33.Properties.BeepOnError")));
+            this.textBox33.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.textBox33.Properties.MaskSettings.Set("mask", "c");
+            this.textBox33.Properties.MaskSettings.Set("culture", "en-US");
+            this.textBox33.Properties.MaskSettings.Set("valueType", typeof(decimal));
+            this.textBox33.Properties.MaskSettings.Set("autoHideDecimalSeparator", false);
+            this.textBox33.Properties.MaskSettings.Set("hideInsignificantZeros", true);
+            this.textBox33.Properties.ReadOnly = true;
+            this.textBox33.Properties.UseMaskAsDisplayFormat = ((bool)(resources.GetObject("textBox33.Properties.UseMaskAsDisplayFormat")));
+            this.textBox33.StyleController = this.layoutControlCustomerHistory;
+            // 
+            // layoutControlGroupCustomerHistory
+            // 
+            this.layoutControlGroupCustomerHistory.AppearanceGroup.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.layoutControlGroupCustomerHistory.AppearanceGroup.Options.UseBackColor = true;
+            this.layoutControlGroupCustomerHistory.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.layoutControlGroupCustomerHistory.GroupStyle = DevExpress.Utils.GroupStyle.Light;
+            this.layoutControlGroupCustomerHistory.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem8,
+            this.layoutControlGroupHistoryHeader,
+            this.layoutControlGroupHistoryButtons});
+            this.layoutControlGroupCustomerHistory.Name = "layoutControlGroupCustomerHistory";
+            this.layoutControlGroupCustomerHistory.Size = new System.Drawing.Size(1809, 745);
+            this.layoutControlGroupCustomerHistory.TextVisible = false;
+            // 
+            // layoutControlItem8
+            // 
+            this.layoutControlItem8.Control = this.gridControlCustomerHist;
+            this.layoutControlItem8.Location = new System.Drawing.Point(0, 295);
+            this.layoutControlItem8.Name = "layoutControlItem8";
+            this.layoutControlItem8.Size = new System.Drawing.Size(1789, 372);
+            this.layoutControlItem8.TextVisible = false;
+            // 
+            // layoutControlGroupHistoryHeader
+            // 
+            this.layoutControlGroupHistoryHeader.GroupStyle = DevExpress.Utils.GroupStyle.Light;
+            this.layoutControlGroupHistoryHeader.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItemHistoryContractDate,
+            this.layoutControlItemHistoryCustomerFirstName,
+            this.layoutControlItemHistoryLastName,
+            this.layoutControlItemHistorySuffix,
+            this.layoutControlItemHistoryCustomerNo,
+            this.layoutControlItemHistoryPurchaseOrder,
+            this.layoutControlItemHistoryDealer,
+            this.layoutControlItemHistoryDealerName,
+            this.layoutControlItemHistoryFirstPayDate,
+            this.layoutControlItemHistoryDayDue,
+            this.layoutControlItemHistoryTerm,
+            this.layoutControlItem70,
+            this.layoutControlItemHistoryTotalExtensions,
+            this.layoutControlItemHistoryRegularPayment,
+            this.layoutControlItemHistoryLoan,
+            this.layoutControlItemHistoryAPR,
+            this.layoutControlItemHistoryCash,
+            this.layoutControlItemHistoryPaymentsMade,
+            this.layoutControlItem52,
+            this.layoutControlItemHistoryPartialPayment,
+            this.layoutControlItemHistoryLateCharge,
+            this.layoutControlItemHistoryLateChargeBalance,
+            this.layoutControlItemHistoryPayType,
+            this.layoutControlItemHistoryPayCode,
+            this.layoutControlItem69,
+            this.layoutControlItemHistoryBuyout,
+            this.emptySpaceItem135,
+            this.emptySpaceItem188,
+            this.emptySpaceItem201,
+            this.emptySpaceItem202,
+            this.emptySpaceItem203,
+            this.layoutControlItemHistoryPayDate,
+            this.emptySpaceItem204,
+            this.emptySpaceItem205,
+            this.emptySpaceItem206,
+            this.emptySpaceItem207,
+            this.emptySpaceItem208,
+            this.emptySpaceItem209,
+            this.emptySpaceItem210,
+            this.emptySpaceItem211,
+            this.layoutControlItemHistoryLoanInterest,
+            this.emptySpaceItem212,
+            this.emptySpaceItem213,
+            this.emptySpaceItem216,
+            this.emptySpaceItem215,
+            this.emptySpaceItem214,
+            this.emptySpaceItem217});
+            this.layoutControlGroupHistoryHeader.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlGroupHistoryHeader.Name = "layoutControlGroupHistoryHeader";
+            this.layoutControlGroupHistoryHeader.Size = new System.Drawing.Size(1789, 295);
+            resources.ApplyResources(this.layoutControlGroupHistoryHeader, "layoutControlGroupHistoryHeader");
+            // 
+            // layoutControlItemHistoryContractDate
+            // 
+            this.layoutControlItemHistoryContractDate.AppearanceItemCaptionDisabled.ForeColor = System.Drawing.Color.Black;
+            this.layoutControlItemHistoryContractDate.AppearanceItemCaptionDisabled.Options.UseForeColor = true;
+            this.layoutControlItemHistoryContractDate.Control = this.nullableDateTimePickerHistContractDate;
+            this.layoutControlItemHistoryContractDate.Location = new System.Drawing.Point(287, 0);
+            this.layoutControlItemHistoryContractDate.MaxSize = new System.Drawing.Size(295, 41);
+            this.layoutControlItemHistoryContractDate.MinSize = new System.Drawing.Size(295, 41);
+            this.layoutControlItemHistoryContractDate.Name = "layoutControlItemHistoryContractDate";
+            this.layoutControlItemHistoryContractDate.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.layoutControlItemHistoryContractDate.Size = new System.Drawing.Size(295, 41);
+            this.layoutControlItemHistoryContractDate.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            resources.ApplyResources(this.layoutControlItemHistoryContractDate, "layoutControlItemHistoryContractDate");
+            this.layoutControlItemHistoryContractDate.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
+            this.layoutControlItemHistoryContractDate.TextToControlDistance = 5;
+            // 
+            // layoutControlItemHistoryCustomerFirstName
+            // 
+            this.layoutControlItemHistoryCustomerFirstName.AppearanceItemCaptionDisabled.ForeColor = System.Drawing.Color.Black;
+            this.layoutControlItemHistoryCustomerFirstName.AppearanceItemCaptionDisabled.Options.UseForeColor = true;
+            this.layoutControlItemHistoryCustomerFirstName.Control = this.textBox75;
+            this.layoutControlItemHistoryCustomerFirstName.Location = new System.Drawing.Point(833, 0);
+            this.layoutControlItemHistoryCustomerFirstName.MaxSize = new System.Drawing.Size(193, 41);
+            this.layoutControlItemHistoryCustomerFirstName.MinSize = new System.Drawing.Size(193, 41);
+            this.layoutControlItemHistoryCustomerFirstName.Name = "layoutControlItemHistoryCustomerFirstName";
+            this.layoutControlItemHistoryCustomerFirstName.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.layoutControlItemHistoryCustomerFirstName.Size = new System.Drawing.Size(193, 41);
+            this.layoutControlItemHistoryCustomerFirstName.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            resources.ApplyResources(this.layoutControlItemHistoryCustomerFirstName, "layoutControlItemHistoryCustomerFirstName");
+            this.layoutControlItemHistoryCustomerFirstName.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
+            this.layoutControlItemHistoryCustomerFirstName.TextLocation = DevExpress.Utils.Locations.Left;
+            this.layoutControlItemHistoryCustomerFirstName.TextToControlDistance = 5;
+            // 
+            // layoutControlItemHistoryLastName
+            // 
+            this.layoutControlItemHistoryLastName.Control = this.textBox4;
+            this.layoutControlItemHistoryLastName.Location = new System.Drawing.Point(1026, 0);
+            this.layoutControlItemHistoryLastName.MaxSize = new System.Drawing.Size(255, 41);
+            this.layoutControlItemHistoryLastName.MinSize = new System.Drawing.Size(255, 41);
+            this.layoutControlItemHistoryLastName.Name = "layoutControlItemHistoryLastName";
+            this.layoutControlItemHistoryLastName.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.layoutControlItemHistoryLastName.Size = new System.Drawing.Size(255, 41);
+            this.layoutControlItemHistoryLastName.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            resources.ApplyResources(this.layoutControlItemHistoryLastName, "layoutControlItemHistoryLastName");
+            this.layoutControlItemHistoryLastName.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
+            this.layoutControlItemHistoryLastName.TextLocation = DevExpress.Utils.Locations.Left;
+            this.layoutControlItemHistoryLastName.TextToControlDistance = 0;
+            this.layoutControlItemHistoryLastName.TextVisible = false;
+            // 
+            // layoutControlItemHistorySuffix
+            // 
+            this.layoutControlItemHistorySuffix.Control = this.textBox22;
+            this.layoutControlItemHistorySuffix.Location = new System.Drawing.Point(1281, 0);
+            this.layoutControlItemHistorySuffix.MaxSize = new System.Drawing.Size(484, 41);
+            this.layoutControlItemHistorySuffix.MinSize = new System.Drawing.Size(484, 41);
+            this.layoutControlItemHistorySuffix.Name = "layoutControlItemHistorySuffix";
+            this.layoutControlItemHistorySuffix.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.layoutControlItemHistorySuffix.Size = new System.Drawing.Size(484, 41);
+            this.layoutControlItemHistorySuffix.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            resources.ApplyResources(this.layoutControlItemHistorySuffix, "layoutControlItemHistorySuffix");
+            this.layoutControlItemHistorySuffix.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
+            this.layoutControlItemHistorySuffix.TextLocation = DevExpress.Utils.Locations.Left;
+            this.layoutControlItemHistorySuffix.TextToControlDistance = 0;
+            this.layoutControlItemHistorySuffix.TextVisible = false;
+            // 
+            // layoutControlItemHistoryCustomerNo
+            // 
+            this.layoutControlItemHistoryCustomerNo.AppearanceItemCaptionDisabled.ForeColor = System.Drawing.Color.Black;
+            this.layoutControlItemHistoryCustomerNo.AppearanceItemCaptionDisabled.Options.UseForeColor = true;
+            this.layoutControlItemHistoryCustomerNo.Control = this.textBox7;
+            this.layoutControlItemHistoryCustomerNo.Location = new System.Drawing.Point(35, 0);
+            this.layoutControlItemHistoryCustomerNo.MaxSize = new System.Drawing.Size(252, 41);
+            this.layoutControlItemHistoryCustomerNo.MinSize = new System.Drawing.Size(252, 41);
+            this.layoutControlItemHistoryCustomerNo.Name = "layoutControlItemHistoryCustomerNo";
+            this.layoutControlItemHistoryCustomerNo.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.layoutControlItemHistoryCustomerNo.Size = new System.Drawing.Size(252, 41);
+            this.layoutControlItemHistoryCustomerNo.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            resources.ApplyResources(this.layoutControlItemHistoryCustomerNo, "layoutControlItemHistoryCustomerNo");
+            this.layoutControlItemHistoryCustomerNo.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
+            this.layoutControlItemHistoryCustomerNo.TextToControlDistance = 5;
+            // 
+            // layoutControlItemHistoryPurchaseOrder
+            // 
+            this.layoutControlItemHistoryPurchaseOrder.AppearanceItemCaptionDisabled.ForeColor = System.Drawing.Color.Black;
+            this.layoutControlItemHistoryPurchaseOrder.AppearanceItemCaptionDisabled.Options.UseForeColor = true;
+            this.layoutControlItemHistoryPurchaseOrder.Control = this.textBox5;
+            this.layoutControlItemHistoryPurchaseOrder.Location = new System.Drawing.Point(0, 41);
+            this.layoutControlItemHistoryPurchaseOrder.MaxSize = new System.Drawing.Size(287, 41);
+            this.layoutControlItemHistoryPurchaseOrder.MinSize = new System.Drawing.Size(287, 41);
+            this.layoutControlItemHistoryPurchaseOrder.Name = "layoutControlItemHistoryPurchaseOrder";
+            this.layoutControlItemHistoryPurchaseOrder.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.layoutControlItemHistoryPurchaseOrder.Size = new System.Drawing.Size(287, 41);
+            this.layoutControlItemHistoryPurchaseOrder.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            resources.ApplyResources(this.layoutControlItemHistoryPurchaseOrder, "layoutControlItemHistoryPurchaseOrder");
+            this.layoutControlItemHistoryPurchaseOrder.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
+            this.layoutControlItemHistoryPurchaseOrder.TextToControlDistance = 5;
+            // 
+            // layoutControlItemHistoryDealer
+            // 
+            this.layoutControlItemHistoryDealer.AppearanceItemCaptionDisabled.ForeColor = System.Drawing.Color.Black;
+            this.layoutControlItemHistoryDealer.AppearanceItemCaptionDisabled.Options.UseForeColor = true;
+            this.layoutControlItemHistoryDealer.Control = this.textBox3;
+            this.layoutControlItemHistoryDealer.Location = new System.Drawing.Point(813, 41);
+            this.layoutControlItemHistoryDealer.MaxSize = new System.Drawing.Size(195, 41);
+            this.layoutControlItemHistoryDealer.MinSize = new System.Drawing.Size(195, 41);
+            this.layoutControlItemHistoryDealer.Name = "layoutControlItemHistoryDealer";
+            this.layoutControlItemHistoryDealer.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.layoutControlItemHistoryDealer.Size = new System.Drawing.Size(195, 41);
+            this.layoutControlItemHistoryDealer.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            resources.ApplyResources(this.layoutControlItemHistoryDealer, "layoutControlItemHistoryDealer");
+            this.layoutControlItemHistoryDealer.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
+            this.layoutControlItemHistoryDealer.TextToControlDistance = 5;
+            // 
+            // layoutControlItemHistoryDealerName
+            // 
+            this.layoutControlItemHistoryDealerName.Control = this.textBox2;
+            this.layoutControlItemHistoryDealerName.Location = new System.Drawing.Point(1008, 41);
+            this.layoutControlItemHistoryDealerName.MaxSize = new System.Drawing.Size(757, 41);
+            this.layoutControlItemHistoryDealerName.MinSize = new System.Drawing.Size(757, 41);
+            this.layoutControlItemHistoryDealerName.Name = "layoutControlItemHistoryDealerName";
+            this.layoutControlItemHistoryDealerName.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.layoutControlItemHistoryDealerName.Size = new System.Drawing.Size(757, 41);
+            this.layoutControlItemHistoryDealerName.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            resources.ApplyResources(this.layoutControlItemHistoryDealerName, "layoutControlItemHistoryDealerName");
+            this.layoutControlItemHistoryDealerName.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
+            this.layoutControlItemHistoryDealerName.TextLocation = DevExpress.Utils.Locations.Left;
+            this.layoutControlItemHistoryDealerName.TextToControlDistance = 0;
+            this.layoutControlItemHistoryDealerName.TextVisible = false;
+            // 
+            // layoutControlItemHistoryFirstPayDate
+            // 
+            this.layoutControlItemHistoryFirstPayDate.AppearanceItemCaptionDisabled.ForeColor = System.Drawing.Color.Black;
+            this.layoutControlItemHistoryFirstPayDate.AppearanceItemCaptionDisabled.Options.UseForeColor = true;
+            this.layoutControlItemHistoryFirstPayDate.Control = this.nullableDateTimePickerFirstPayDate;
+            this.layoutControlItemHistoryFirstPayDate.Location = new System.Drawing.Point(23, 82);
+            this.layoutControlItemHistoryFirstPayDate.MaxSize = new System.Drawing.Size(264, 41);
+            this.layoutControlItemHistoryFirstPayDate.MinSize = new System.Drawing.Size(264, 41);
+            this.layoutControlItemHistoryFirstPayDate.Name = "layoutControlItemHistoryFirstPayDate";
+            this.layoutControlItemHistoryFirstPayDate.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.layoutControlItemHistoryFirstPayDate.Size = new System.Drawing.Size(264, 41);
+            this.layoutControlItemHistoryFirstPayDate.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            resources.ApplyResources(this.layoutControlItemHistoryFirstPayDate, "layoutControlItemHistoryFirstPayDate");
+            this.layoutControlItemHistoryFirstPayDate.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
+            this.layoutControlItemHistoryFirstPayDate.TextToControlDistance = 5;
+            // 
+            // layoutControlItemHistoryDayDue
+            // 
+            this.layoutControlItemHistoryDayDue.AppearanceItemCaptionDisabled.ForeColor = System.Drawing.Color.Black;
+            this.layoutControlItemHistoryDayDue.AppearanceItemCaptionDisabled.Options.UseForeColor = true;
+            this.layoutControlItemHistoryDayDue.Control = this.comboBoxHistoryDayDue;
+            this.layoutControlItemHistoryDayDue.Location = new System.Drawing.Point(347, 82);
+            this.layoutControlItemHistoryDayDue.MaxSize = new System.Drawing.Size(146, 41);
+            this.layoutControlItemHistoryDayDue.MinSize = new System.Drawing.Size(146, 41);
+            this.layoutControlItemHistoryDayDue.Name = "layoutControlItemHistoryDayDue";
+            this.layoutControlItemHistoryDayDue.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.layoutControlItemHistoryDayDue.Size = new System.Drawing.Size(146, 41);
+            this.layoutControlItemHistoryDayDue.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            resources.ApplyResources(this.layoutControlItemHistoryDayDue, "layoutControlItemHistoryDayDue");
+            this.layoutControlItemHistoryDayDue.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
+            this.layoutControlItemHistoryDayDue.TextToControlDistance = 5;
+            // 
+            // layoutControlItemHistoryTerm
+            // 
+            this.layoutControlItemHistoryTerm.AppearanceItemCaptionDisabled.ForeColor = System.Drawing.Color.Black;
+            this.layoutControlItemHistoryTerm.AppearanceItemCaptionDisabled.Options.UseForeColor = true;
+            this.layoutControlItemHistoryTerm.Control = this.textBox37;
+            this.layoutControlItemHistoryTerm.Location = new System.Drawing.Point(493, 82);
+            this.layoutControlItemHistoryTerm.MaxSize = new System.Drawing.Size(89, 41);
+            this.layoutControlItemHistoryTerm.MinSize = new System.Drawing.Size(89, 41);
+            this.layoutControlItemHistoryTerm.Name = "layoutControlItemHistoryTerm";
+            this.layoutControlItemHistoryTerm.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.layoutControlItemHistoryTerm.Size = new System.Drawing.Size(89, 41);
+            this.layoutControlItemHistoryTerm.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            resources.ApplyResources(this.layoutControlItemHistoryTerm, "layoutControlItemHistoryTerm");
+            this.layoutControlItemHistoryTerm.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
+            this.layoutControlItemHistoryTerm.TextLocation = DevExpress.Utils.Locations.Left;
+            this.layoutControlItemHistoryTerm.TextToControlDistance = 5;
+            // 
+            // layoutControlItem70
+            // 
+            this.layoutControlItem70.Control = this.checkEditOverideInterestHistory;
+            this.layoutControlItem70.Location = new System.Drawing.Point(713, 82);
+            this.layoutControlItem70.MaxSize = new System.Drawing.Size(195, 41);
+            this.layoutControlItem70.MinSize = new System.Drawing.Size(195, 41);
+            this.layoutControlItem70.Name = "layoutControlItem70";
+            this.layoutControlItem70.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.layoutControlItem70.Size = new System.Drawing.Size(195, 41);
+            this.layoutControlItem70.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.layoutControlItem70.TextVisible = false;
+            // 
+            // layoutControlItemHistoryTotalExtensions
+            // 
+            this.layoutControlItemHistoryTotalExtensions.AppearanceItemCaptionDisabled.ForeColor = System.Drawing.Color.Black;
+            this.layoutControlItemHistoryTotalExtensions.AppearanceItemCaptionDisabled.Options.UseForeColor = true;
+            this.layoutControlItemHistoryTotalExtensions.Control = this.textBoxTotalExtensions;
+            this.layoutControlItemHistoryTotalExtensions.Location = new System.Drawing.Point(1041, 82);
+            this.layoutControlItemHistoryTotalExtensions.MaxSize = new System.Drawing.Size(724, 41);
+            this.layoutControlItemHistoryTotalExtensions.MinSize = new System.Drawing.Size(724, 41);
+            this.layoutControlItemHistoryTotalExtensions.Name = "layoutControlItemHistoryTotalExtensions";
+            this.layoutControlItemHistoryTotalExtensions.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.layoutControlItemHistoryTotalExtensions.Size = new System.Drawing.Size(724, 41);
+            this.layoutControlItemHistoryTotalExtensions.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            resources.ApplyResources(this.layoutControlItemHistoryTotalExtensions, "layoutControlItemHistoryTotalExtensions");
+            this.layoutControlItemHistoryTotalExtensions.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
+            this.layoutControlItemHistoryTotalExtensions.TextToControlDistance = 5;
+            // 
+            // layoutControlItemHistoryRegularPayment
+            // 
+            this.layoutControlItemHistoryRegularPayment.AppearanceItemCaptionDisabled.ForeColor = System.Drawing.Color.Black;
+            this.layoutControlItemHistoryRegularPayment.AppearanceItemCaptionDisabled.Options.UseForeColor = true;
+            this.layoutControlItemHistoryRegularPayment.Control = this.textBox35;
+            this.layoutControlItemHistoryRegularPayment.Location = new System.Drawing.Point(73, 123);
+            this.layoutControlItemHistoryRegularPayment.MaxSize = new System.Drawing.Size(214, 41);
+            this.layoutControlItemHistoryRegularPayment.MinSize = new System.Drawing.Size(214, 41);
+            this.layoutControlItemHistoryRegularPayment.Name = "layoutControlItemHistoryRegularPayment";
+            this.layoutControlItemHistoryRegularPayment.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.layoutControlItemHistoryRegularPayment.Size = new System.Drawing.Size(214, 41);
+            this.layoutControlItemHistoryRegularPayment.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            resources.ApplyResources(this.layoutControlItemHistoryRegularPayment, "layoutControlItemHistoryRegularPayment");
+            this.layoutControlItemHistoryRegularPayment.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
+            this.layoutControlItemHistoryRegularPayment.TextToControlDistance = 5;
+            // 
+            // layoutControlItemHistoryLoan
+            // 
+            this.layoutControlItemHistoryLoan.AppearanceItemCaptionDisabled.ForeColor = System.Drawing.Color.Black;
+            this.layoutControlItemHistoryLoan.AppearanceItemCaptionDisabled.Options.UseForeColor = true;
+            this.layoutControlItemHistoryLoan.Control = this.textBox34;
+            this.layoutControlItemHistoryLoan.Location = new System.Drawing.Point(377, 123);
+            this.layoutControlItemHistoryLoan.MaxSize = new System.Drawing.Size(205, 41);
+            this.layoutControlItemHistoryLoan.MinSize = new System.Drawing.Size(205, 41);
+            this.layoutControlItemHistoryLoan.Name = "layoutControlItemHistoryLoan";
+            this.layoutControlItemHistoryLoan.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.layoutControlItemHistoryLoan.Size = new System.Drawing.Size(205, 41);
+            this.layoutControlItemHistoryLoan.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            resources.ApplyResources(this.layoutControlItemHistoryLoan, "layoutControlItemHistoryLoan");
+            this.layoutControlItemHistoryLoan.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
+            this.layoutControlItemHistoryLoan.TextToControlDistance = 5;
+            // 
+            // layoutControlItemHistoryAPR
+            // 
+            this.layoutControlItemHistoryAPR.AppearanceItemCaptionDisabled.ForeColor = System.Drawing.Color.Black;
+            this.layoutControlItemHistoryAPR.AppearanceItemCaptionDisabled.Options.UseForeColor = true;
+            this.layoutControlItemHistoryAPR.Control = this.textBox24;
+            this.layoutControlItemHistoryAPR.Location = new System.Drawing.Point(1165, 123);
+            this.layoutControlItemHistoryAPR.MaxSize = new System.Drawing.Size(600, 41);
+            this.layoutControlItemHistoryAPR.MinSize = new System.Drawing.Size(600, 41);
+            this.layoutControlItemHistoryAPR.Name = "layoutControlItemHistoryAPR";
+            this.layoutControlItemHistoryAPR.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.layoutControlItemHistoryAPR.Size = new System.Drawing.Size(600, 41);
+            this.layoutControlItemHistoryAPR.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            resources.ApplyResources(this.layoutControlItemHistoryAPR, "layoutControlItemHistoryAPR");
+            this.layoutControlItemHistoryAPR.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
+            this.layoutControlItemHistoryAPR.TextLocation = DevExpress.Utils.Locations.Left;
+            this.layoutControlItemHistoryAPR.TextToControlDistance = 5;
+            // 
+            // layoutControlItemHistoryCash
+            // 
+            this.layoutControlItemHistoryCash.AppearanceItemCaptionDisabled.ForeColor = System.Drawing.Color.Black;
+            this.layoutControlItemHistoryCash.AppearanceItemCaptionDisabled.Options.UseForeColor = true;
+            this.layoutControlItemHistoryCash.Control = this.textBox32;
+            this.layoutControlItemHistoryCash.Location = new System.Drawing.Point(108, 164);
+            this.layoutControlItemHistoryCash.MaxSize = new System.Drawing.Size(179, 41);
+            this.layoutControlItemHistoryCash.MinSize = new System.Drawing.Size(179, 41);
+            this.layoutControlItemHistoryCash.Name = "layoutControlItemHistoryCash";
+            this.layoutControlItemHistoryCash.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.layoutControlItemHistoryCash.Size = new System.Drawing.Size(179, 41);
+            this.layoutControlItemHistoryCash.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            resources.ApplyResources(this.layoutControlItemHistoryCash, "layoutControlItemHistoryCash");
+            this.layoutControlItemHistoryCash.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
+            this.layoutControlItemHistoryCash.TextLocation = DevExpress.Utils.Locations.Left;
+            this.layoutControlItemHistoryCash.TextToControlDistance = 5;
+            // 
+            // layoutControlItemHistoryPaymentsMade
+            // 
+            this.layoutControlItemHistoryPaymentsMade.AppearanceItemCaptionDisabled.ForeColor = System.Drawing.Color.Black;
+            this.layoutControlItemHistoryPaymentsMade.AppearanceItemCaptionDisabled.Options.UseForeColor = true;
+            this.layoutControlItemHistoryPaymentsMade.Control = this.textBox31;
+            this.layoutControlItemHistoryPaymentsMade.Location = new System.Drawing.Point(322, 164);
+            this.layoutControlItemHistoryPaymentsMade.MaxSize = new System.Drawing.Size(260, 41);
+            this.layoutControlItemHistoryPaymentsMade.MinSize = new System.Drawing.Size(260, 41);
+            this.layoutControlItemHistoryPaymentsMade.Name = "layoutControlItemHistoryPaymentsMade";
+            this.layoutControlItemHistoryPaymentsMade.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.layoutControlItemHistoryPaymentsMade.Size = new System.Drawing.Size(260, 41);
+            this.layoutControlItemHistoryPaymentsMade.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            resources.ApplyResources(this.layoutControlItemHistoryPaymentsMade, "layoutControlItemHistoryPaymentsMade");
+            this.layoutControlItemHistoryPaymentsMade.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
+            this.layoutControlItemHistoryPaymentsMade.TextLocation = DevExpress.Utils.Locations.Left;
+            this.layoutControlItemHistoryPaymentsMade.TextToControlDistance = 5;
+            // 
+            // layoutControlItem52
+            // 
+            this.layoutControlItem52.Control = this.checkEditCollectionAgentHistory;
+            this.layoutControlItem52.Location = new System.Drawing.Point(713, 164);
+            this.layoutControlItem52.MaxSize = new System.Drawing.Size(194, 41);
+            this.layoutControlItem52.MinSize = new System.Drawing.Size(194, 41);
+            this.layoutControlItem52.Name = "layoutControlItem52";
+            this.layoutControlItem52.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.layoutControlItem52.Size = new System.Drawing.Size(194, 41);
+            this.layoutControlItem52.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.layoutControlItem52.TextVisible = false;
+            // 
+            // layoutControlItemHistoryPartialPayment
+            // 
+            this.layoutControlItemHistoryPartialPayment.AppearanceItemCaptionDisabled.ForeColor = System.Drawing.Color.Black;
+            this.layoutControlItemHistoryPartialPayment.AppearanceItemCaptionDisabled.Options.UseForeColor = true;
+            this.layoutControlItemHistoryPartialPayment.Control = this.textBoxPartialPayHist;
+            this.layoutControlItemHistoryPartialPayment.Location = new System.Drawing.Point(1051, 164);
+            this.layoutControlItemHistoryPartialPayment.MaxSize = new System.Drawing.Size(714, 41);
+            this.layoutControlItemHistoryPartialPayment.MinSize = new System.Drawing.Size(714, 41);
+            this.layoutControlItemHistoryPartialPayment.Name = "layoutControlItemHistoryPartialPayment";
+            this.layoutControlItemHistoryPartialPayment.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.layoutControlItemHistoryPartialPayment.Size = new System.Drawing.Size(714, 41);
+            this.layoutControlItemHistoryPartialPayment.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            resources.ApplyResources(this.layoutControlItemHistoryPartialPayment, "layoutControlItemHistoryPartialPayment");
+            this.layoutControlItemHistoryPartialPayment.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
+            this.layoutControlItemHistoryPartialPayment.TextToControlDistance = 5;
+            // 
+            // layoutControlItemHistoryLateCharge
+            // 
+            this.layoutControlItemHistoryLateCharge.AppearanceItemCaptionDisabled.ForeColor = System.Drawing.Color.Black;
+            this.layoutControlItemHistoryLateCharge.AppearanceItemCaptionDisabled.Options.UseForeColor = true;
+            this.layoutControlItemHistoryLateCharge.Control = this.textBox27;
+            this.layoutControlItemHistoryLateCharge.Location = new System.Drawing.Point(39, 205);
+            this.layoutControlItemHistoryLateCharge.MaxSize = new System.Drawing.Size(248, 41);
+            this.layoutControlItemHistoryLateCharge.MinSize = new System.Drawing.Size(248, 41);
+            this.layoutControlItemHistoryLateCharge.Name = "layoutControlItemHistoryLateCharge";
+            this.layoutControlItemHistoryLateCharge.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.layoutControlItemHistoryLateCharge.Size = new System.Drawing.Size(248, 41);
+            this.layoutControlItemHistoryLateCharge.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            resources.ApplyResources(this.layoutControlItemHistoryLateCharge, "layoutControlItemHistoryLateCharge");
+            this.layoutControlItemHistoryLateCharge.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
+            this.layoutControlItemHistoryLateCharge.TextLocation = DevExpress.Utils.Locations.Left;
+            this.layoutControlItemHistoryLateCharge.TextToControlDistance = 5;
+            // 
+            // layoutControlItemHistoryLateChargeBalance
+            // 
+            this.layoutControlItemHistoryLateChargeBalance.AppearanceItemCaptionDisabled.ForeColor = System.Drawing.Color.Black;
+            this.layoutControlItemHistoryLateChargeBalance.AppearanceItemCaptionDisabled.Options.UseForeColor = true;
+            this.layoutControlItemHistoryLateChargeBalance.Control = this.textBox25;
+            this.layoutControlItemHistoryLateChargeBalance.Location = new System.Drawing.Point(317, 205);
+            this.layoutControlItemHistoryLateChargeBalance.MaxSize = new System.Drawing.Size(265, 41);
+            this.layoutControlItemHistoryLateChargeBalance.MinSize = new System.Drawing.Size(265, 41);
+            this.layoutControlItemHistoryLateChargeBalance.Name = "layoutControlItemHistoryLateChargeBalance";
+            this.layoutControlItemHistoryLateChargeBalance.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.layoutControlItemHistoryLateChargeBalance.Size = new System.Drawing.Size(265, 41);
+            this.layoutControlItemHistoryLateChargeBalance.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            resources.ApplyResources(this.layoutControlItemHistoryLateChargeBalance, "layoutControlItemHistoryLateChargeBalance");
+            this.layoutControlItemHistoryLateChargeBalance.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
+            this.layoutControlItemHistoryLateChargeBalance.TextLocation = DevExpress.Utils.Locations.Left;
+            this.layoutControlItemHistoryLateChargeBalance.TextToControlDistance = 5;
+            // 
+            // layoutControlItemHistoryPayType
+            // 
+            this.layoutControlItemHistoryPayType.AppearanceItemCaptionDisabled.ForeColor = System.Drawing.Color.Black;
+            this.layoutControlItemHistoryPayType.AppearanceItemCaptionDisabled.Options.UseForeColor = true;
+            this.layoutControlItemHistoryPayType.Control = this.textBox29;
+            this.layoutControlItemHistoryPayType.Location = new System.Drawing.Point(582, 205);
+            this.layoutControlItemHistoryPayType.MaxSize = new System.Drawing.Size(112, 41);
+            this.layoutControlItemHistoryPayType.MinSize = new System.Drawing.Size(112, 41);
+            this.layoutControlItemHistoryPayType.Name = "layoutControlItemHistoryPayType";
+            this.layoutControlItemHistoryPayType.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.layoutControlItemHistoryPayType.Size = new System.Drawing.Size(112, 41);
+            this.layoutControlItemHistoryPayType.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            resources.ApplyResources(this.layoutControlItemHistoryPayType, "layoutControlItemHistoryPayType");
+            this.layoutControlItemHistoryPayType.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
+            this.layoutControlItemHistoryPayType.TextLocation = DevExpress.Utils.Locations.Left;
+            this.layoutControlItemHistoryPayType.TextToControlDistance = 5;
+            // 
+            // layoutControlItemHistoryPayCode
+            // 
+            this.layoutControlItemHistoryPayCode.Control = this.textBox28;
+            this.layoutControlItemHistoryPayCode.Location = new System.Drawing.Point(694, 205);
+            this.layoutControlItemHistoryPayCode.MaxSize = new System.Drawing.Size(30, 41);
+            this.layoutControlItemHistoryPayCode.MinSize = new System.Drawing.Size(30, 41);
+            this.layoutControlItemHistoryPayCode.Name = "layoutControlItemHistoryPayCode";
+            this.layoutControlItemHistoryPayCode.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.layoutControlItemHistoryPayCode.Size = new System.Drawing.Size(30, 41);
+            this.layoutControlItemHistoryPayCode.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            resources.ApplyResources(this.layoutControlItemHistoryPayCode, "layoutControlItemHistoryPayCode");
+            this.layoutControlItemHistoryPayCode.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
+            this.layoutControlItemHistoryPayCode.TextLocation = DevExpress.Utils.Locations.Left;
+            this.layoutControlItemHistoryPayCode.TextToControlDistance = 0;
+            this.layoutControlItemHistoryPayCode.TextVisible = false;
+            // 
+            // layoutControlItem69
+            // 
+            this.layoutControlItem69.Control = this.checkBoxFullRecourseHist;
+            this.layoutControlItem69.Location = new System.Drawing.Point(883, 205);
+            this.layoutControlItem69.MaxSize = new System.Drawing.Size(248, 41);
+            this.layoutControlItem69.MinSize = new System.Drawing.Size(248, 41);
+            this.layoutControlItem69.Name = "layoutControlItem69";
+            this.layoutControlItem69.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.layoutControlItem69.Size = new System.Drawing.Size(248, 41);
+            this.layoutControlItem69.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.layoutControlItem69.TextVisible = false;
+            // 
+            // layoutControlItemHistoryBuyout
+            // 
+            this.layoutControlItemHistoryBuyout.AppearanceItemCaptionDisabled.ForeColor = System.Drawing.Color.Black;
+            this.layoutControlItemHistoryBuyout.AppearanceItemCaptionDisabled.Options.UseForeColor = true;
+            this.layoutControlItemHistoryBuyout.Control = this.textBoxBuyOutHist;
+            this.layoutControlItemHistoryBuyout.Location = new System.Drawing.Point(1131, 205);
+            this.layoutControlItemHistoryBuyout.MaxSize = new System.Drawing.Size(634, 41);
+            this.layoutControlItemHistoryBuyout.MinSize = new System.Drawing.Size(634, 41);
+            this.layoutControlItemHistoryBuyout.Name = "layoutControlItemHistoryBuyout";
+            this.layoutControlItemHistoryBuyout.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.layoutControlItemHistoryBuyout.Size = new System.Drawing.Size(634, 41);
+            this.layoutControlItemHistoryBuyout.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            resources.ApplyResources(this.layoutControlItemHistoryBuyout, "layoutControlItemHistoryBuyout");
+            this.layoutControlItemHistoryBuyout.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
+            this.layoutControlItemHistoryBuyout.TextToControlDistance = 5;
+            // 
+            // emptySpaceItem135
+            // 
+            this.emptySpaceItem135.Location = new System.Drawing.Point(0, 0);
+            this.emptySpaceItem135.MaxSize = new System.Drawing.Size(35, 41);
+            this.emptySpaceItem135.MinSize = new System.Drawing.Size(35, 41);
+            this.emptySpaceItem135.Name = "emptySpaceItem135";
+            this.emptySpaceItem135.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.emptySpaceItem135.Size = new System.Drawing.Size(35, 41);
+            this.emptySpaceItem135.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            // 
+            // emptySpaceItem188
+            // 
+            this.emptySpaceItem188.Location = new System.Drawing.Point(0, 82);
+            this.emptySpaceItem188.MaxSize = new System.Drawing.Size(23, 41);
+            this.emptySpaceItem188.MinSize = new System.Drawing.Size(23, 41);
+            this.emptySpaceItem188.Name = "emptySpaceItem188";
+            this.emptySpaceItem188.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.emptySpaceItem188.Size = new System.Drawing.Size(23, 41);
+            this.emptySpaceItem188.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            // 
+            // emptySpaceItem201
+            // 
+            this.emptySpaceItem201.Location = new System.Drawing.Point(0, 123);
+            this.emptySpaceItem201.MaxSize = new System.Drawing.Size(73, 41);
+            this.emptySpaceItem201.MinSize = new System.Drawing.Size(73, 41);
+            this.emptySpaceItem201.Name = "emptySpaceItem201";
+            this.emptySpaceItem201.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.emptySpaceItem201.Size = new System.Drawing.Size(73, 41);
+            this.emptySpaceItem201.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            // 
+            // emptySpaceItem202
+            // 
+            this.emptySpaceItem202.Location = new System.Drawing.Point(0, 164);
+            this.emptySpaceItem202.MaxSize = new System.Drawing.Size(108, 41);
+            this.emptySpaceItem202.MinSize = new System.Drawing.Size(108, 41);
+            this.emptySpaceItem202.Name = "emptySpaceItem202";
+            this.emptySpaceItem202.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.emptySpaceItem202.Size = new System.Drawing.Size(108, 41);
+            this.emptySpaceItem202.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            // 
+            // emptySpaceItem203
+            // 
+            this.emptySpaceItem203.Location = new System.Drawing.Point(0, 205);
+            this.emptySpaceItem203.MaxSize = new System.Drawing.Size(39, 41);
+            this.emptySpaceItem203.MinSize = new System.Drawing.Size(39, 41);
+            this.emptySpaceItem203.Name = "emptySpaceItem203";
+            this.emptySpaceItem203.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.emptySpaceItem203.Size = new System.Drawing.Size(39, 41);
+            this.emptySpaceItem203.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            // 
+            // layoutControlItemHistoryPayDate
+            // 
+            this.layoutControlItemHistoryPayDate.AppearanceItemCaptionDisabled.ForeColor = System.Drawing.Color.Black;
+            this.layoutControlItemHistoryPayDate.AppearanceItemCaptionDisabled.Options.UseForeColor = true;
+            this.layoutControlItemHistoryPayDate.Control = this.nullableDateTimePickerPayDate;
+            this.layoutControlItemHistoryPayDate.Location = new System.Drawing.Point(341, 41);
+            this.layoutControlItemHistoryPayDate.MaxSize = new System.Drawing.Size(241, 41);
+            this.layoutControlItemHistoryPayDate.MinSize = new System.Drawing.Size(241, 41);
+            this.layoutControlItemHistoryPayDate.Name = "layoutControlItemHistoryPayDate";
+            this.layoutControlItemHistoryPayDate.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.layoutControlItemHistoryPayDate.Size = new System.Drawing.Size(241, 41);
+            this.layoutControlItemHistoryPayDate.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            resources.ApplyResources(this.layoutControlItemHistoryPayDate, "layoutControlItemHistoryPayDate");
+            this.layoutControlItemHistoryPayDate.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
+            this.layoutControlItemHistoryPayDate.TextToControlDistance = 5;
+            // 
+            // emptySpaceItem204
+            // 
+            this.emptySpaceItem204.Location = new System.Drawing.Point(287, 41);
+            this.emptySpaceItem204.MaxSize = new System.Drawing.Size(54, 41);
+            this.emptySpaceItem204.MinSize = new System.Drawing.Size(54, 41);
+            this.emptySpaceItem204.Name = "emptySpaceItem204";
+            this.emptySpaceItem204.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.emptySpaceItem204.Size = new System.Drawing.Size(54, 41);
+            this.emptySpaceItem204.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            // 
+            // emptySpaceItem205
+            // 
+            this.emptySpaceItem205.Location = new System.Drawing.Point(287, 82);
+            this.emptySpaceItem205.MaxSize = new System.Drawing.Size(60, 41);
+            this.emptySpaceItem205.MinSize = new System.Drawing.Size(60, 41);
+            this.emptySpaceItem205.Name = "emptySpaceItem205";
+            this.emptySpaceItem205.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.emptySpaceItem205.Size = new System.Drawing.Size(60, 41);
+            this.emptySpaceItem205.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            // 
+            // emptySpaceItem206
+            // 
+            this.emptySpaceItem206.Location = new System.Drawing.Point(287, 123);
+            this.emptySpaceItem206.MaxSize = new System.Drawing.Size(90, 41);
+            this.emptySpaceItem206.MinSize = new System.Drawing.Size(90, 41);
+            this.emptySpaceItem206.Name = "emptySpaceItem206";
+            this.emptySpaceItem206.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.emptySpaceItem206.Size = new System.Drawing.Size(90, 41);
+            this.emptySpaceItem206.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            // 
+            // emptySpaceItem207
+            // 
+            this.emptySpaceItem207.Location = new System.Drawing.Point(287, 164);
+            this.emptySpaceItem207.MaxSize = new System.Drawing.Size(35, 41);
+            this.emptySpaceItem207.MinSize = new System.Drawing.Size(35, 41);
+            this.emptySpaceItem207.Name = "emptySpaceItem207";
+            this.emptySpaceItem207.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.emptySpaceItem207.Size = new System.Drawing.Size(35, 41);
+            this.emptySpaceItem207.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            // 
+            // emptySpaceItem208
+            // 
+            this.emptySpaceItem208.Location = new System.Drawing.Point(287, 205);
+            this.emptySpaceItem208.MaxSize = new System.Drawing.Size(30, 41);
+            this.emptySpaceItem208.MinSize = new System.Drawing.Size(30, 41);
+            this.emptySpaceItem208.Name = "emptySpaceItem208";
+            this.emptySpaceItem208.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.emptySpaceItem208.Size = new System.Drawing.Size(30, 41);
+            this.emptySpaceItem208.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            // 
+            // emptySpaceItem209
+            // 
+            this.emptySpaceItem209.Location = new System.Drawing.Point(582, 0);
+            this.emptySpaceItem209.MaxSize = new System.Drawing.Size(251, 41);
+            this.emptySpaceItem209.MinSize = new System.Drawing.Size(251, 41);
+            this.emptySpaceItem209.Name = "emptySpaceItem209";
+            this.emptySpaceItem209.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.emptySpaceItem209.Size = new System.Drawing.Size(251, 41);
+            this.emptySpaceItem209.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            // 
+            // emptySpaceItem210
+            // 
+            this.emptySpaceItem210.Location = new System.Drawing.Point(582, 41);
+            this.emptySpaceItem210.MaxSize = new System.Drawing.Size(231, 41);
+            this.emptySpaceItem210.MinSize = new System.Drawing.Size(231, 41);
+            this.emptySpaceItem210.Name = "emptySpaceItem210";
+            this.emptySpaceItem210.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.emptySpaceItem210.Size = new System.Drawing.Size(231, 41);
+            this.emptySpaceItem210.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            // 
+            // emptySpaceItem211
+            // 
+            this.emptySpaceItem211.Location = new System.Drawing.Point(582, 82);
+            this.emptySpaceItem211.MaxSize = new System.Drawing.Size(131, 41);
+            this.emptySpaceItem211.MinSize = new System.Drawing.Size(131, 41);
+            this.emptySpaceItem211.Name = "emptySpaceItem211";
+            this.emptySpaceItem211.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.emptySpaceItem211.Size = new System.Drawing.Size(131, 41);
+            this.emptySpaceItem211.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            // 
+            // layoutControlItemHistoryLoanInterest
+            // 
+            this.layoutControlItemHistoryLoanInterest.AppearanceItemCaptionDisabled.ForeColor = System.Drawing.Color.Black;
+            this.layoutControlItemHistoryLoanInterest.AppearanceItemCaptionDisabled.Options.UseForeColor = true;
+            this.layoutControlItemHistoryLoanInterest.Control = this.textBox33;
+            this.layoutControlItemHistoryLoanInterest.Location = new System.Drawing.Point(753, 123);
+            this.layoutControlItemHistoryLoanInterest.MaxSize = new System.Drawing.Size(255, 41);
+            this.layoutControlItemHistoryLoanInterest.MinSize = new System.Drawing.Size(255, 41);
+            this.layoutControlItemHistoryLoanInterest.Name = "layoutControlItemHistoryLoanInterest";
+            this.layoutControlItemHistoryLoanInterest.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.layoutControlItemHistoryLoanInterest.Size = new System.Drawing.Size(255, 41);
+            this.layoutControlItemHistoryLoanInterest.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            resources.ApplyResources(this.layoutControlItemHistoryLoanInterest, "layoutControlItemHistoryLoanInterest");
+            this.layoutControlItemHistoryLoanInterest.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
+            this.layoutControlItemHistoryLoanInterest.TextLocation = DevExpress.Utils.Locations.Left;
+            this.layoutControlItemHistoryLoanInterest.TextToControlDistance = 5;
+            // 
+            // emptySpaceItem212
+            // 
+            this.emptySpaceItem212.Location = new System.Drawing.Point(582, 123);
+            this.emptySpaceItem212.MaxSize = new System.Drawing.Size(171, 41);
+            this.emptySpaceItem212.MinSize = new System.Drawing.Size(171, 41);
+            this.emptySpaceItem212.Name = "emptySpaceItem212";
+            this.emptySpaceItem212.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.emptySpaceItem212.Size = new System.Drawing.Size(171, 41);
+            this.emptySpaceItem212.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            // 
+            // emptySpaceItem213
+            // 
+            this.emptySpaceItem213.Location = new System.Drawing.Point(582, 164);
+            this.emptySpaceItem213.MaxSize = new System.Drawing.Size(131, 41);
+            this.emptySpaceItem213.MinSize = new System.Drawing.Size(131, 41);
+            this.emptySpaceItem213.Name = "emptySpaceItem213";
+            this.emptySpaceItem213.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.emptySpaceItem213.Size = new System.Drawing.Size(131, 41);
+            this.emptySpaceItem213.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            // 
+            // emptySpaceItem216
+            // 
+            this.emptySpaceItem216.Location = new System.Drawing.Point(907, 164);
+            this.emptySpaceItem216.MaxSize = new System.Drawing.Size(144, 41);
+            this.emptySpaceItem216.MinSize = new System.Drawing.Size(144, 41);
+            this.emptySpaceItem216.Name = "emptySpaceItem216";
+            this.emptySpaceItem216.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.emptySpaceItem216.Size = new System.Drawing.Size(144, 41);
+            this.emptySpaceItem216.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            // 
+            // emptySpaceItem215
+            // 
+            this.emptySpaceItem215.Location = new System.Drawing.Point(724, 205);
+            this.emptySpaceItem215.MaxSize = new System.Drawing.Size(159, 41);
+            this.emptySpaceItem215.MinSize = new System.Drawing.Size(159, 41);
+            this.emptySpaceItem215.Name = "emptySpaceItem215";
+            this.emptySpaceItem215.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.emptySpaceItem215.Size = new System.Drawing.Size(159, 41);
+            this.emptySpaceItem215.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            // 
+            // emptySpaceItem214
+            // 
+            this.emptySpaceItem214.Location = new System.Drawing.Point(908, 82);
+            this.emptySpaceItem214.MaxSize = new System.Drawing.Size(133, 41);
+            this.emptySpaceItem214.MinSize = new System.Drawing.Size(133, 41);
+            this.emptySpaceItem214.Name = "emptySpaceItem214";
+            this.emptySpaceItem214.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.emptySpaceItem214.Size = new System.Drawing.Size(133, 41);
+            this.emptySpaceItem214.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            // 
+            // emptySpaceItem217
+            // 
+            this.emptySpaceItem217.Location = new System.Drawing.Point(1008, 123);
+            this.emptySpaceItem217.MaxSize = new System.Drawing.Size(157, 41);
+            this.emptySpaceItem217.MinSize = new System.Drawing.Size(157, 41);
+            this.emptySpaceItem217.Name = "emptySpaceItem217";
+            this.emptySpaceItem217.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.emptySpaceItem217.Size = new System.Drawing.Size(157, 41);
+            this.emptySpaceItem217.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            // 
+            // layoutControlGroupHistoryButtons
+            // 
+            this.layoutControlGroupHistoryButtons.GroupStyle = DevExpress.Utils.GroupStyle.Light;
+            this.layoutControlGroupHistoryButtons.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem9});
+            this.layoutControlGroupHistoryButtons.Location = new System.Drawing.Point(0, 667);
+            this.layoutControlGroupHistoryButtons.Name = "layoutControlGroupHistoryButtons";
+            this.layoutControlGroupHistoryButtons.Size = new System.Drawing.Size(1789, 58);
+            resources.ApplyResources(this.layoutControlGroupHistoryButtons, "layoutControlGroupHistoryButtons");
+            this.layoutControlGroupHistoryButtons.TextVisible = false;
+            // 
+            // layoutControlItem9
+            // 
+            this.layoutControlItem9.Control = this.standaloneBarDockControl1;
+            this.layoutControlItem9.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem9.Name = "layoutControlItem9";
+            this.layoutControlItem9.Size = new System.Drawing.Size(1765, 34);
+            this.layoutControlItem9.TextVisible = false;
             // 
             // xtraTabPageInvoices
             // 
@@ -19708,7 +20374,7 @@ namespace IAC2021SQL
             this.HistoryBar.DockCol = 0;
             this.HistoryBar.DockRow = 0;
             this.HistoryBar.DockStyle = DevExpress.XtraBars.BarDockStyle.Standalone;
-            this.HistoryBar.FloatLocation = new System.Drawing.Point(47, 835);
+            this.HistoryBar.FloatLocation = new System.Drawing.Point(418, 804);
             this.HistoryBar.FloatSize = new System.Drawing.Size(46, 24);
             this.HistoryBar.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItemPrintCustomerReceipt, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
@@ -20768,44 +21434,93 @@ namespace IAC2021SQL
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem199)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem90)).EndInit();
             this.xtraTabPageHistory.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.groupBox18)).EndInit();
-            this.groupBox18.ResumeLayout(false);
-            this.groupBox18.PerformLayout();
-            this.groupBox11.ResumeLayout(false);
-            this.groupBox11.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlCustomerHistory)).EndInit();
+            this.layoutControlCustomerHistory.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.textBoxBuyOutHist.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkBoxFullRecourseHist.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditCollectionAgentHistory.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditOverideInterestHistory.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkBoxFullRecourseHist.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBox25.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBoxTotalExtensions.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBox28.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBoxPartialPayHist.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBox29.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlCustomerHist)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewCustomerHistory)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBox27.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerFirstPayDate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerFirstPayDate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerPayDate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerPayDate.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBox24.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerHistContractDate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerHistContractDate.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBoxTotalExtensions.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBoxBuyOutHist.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBox22.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBox2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxHistoryDayDue.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBox3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBox24.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBox4.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBox75.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBox25.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBox5.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBoxPartialPayHist.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textBox7.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBox27.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBox28.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBox29.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBox32.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBox33.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBox34.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBox35.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBox37.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBox2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textBox31.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControlCustomerHist)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridViewCustomerHistory)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBox32.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBox75.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBox4.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBox22.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBox3.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBox5.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBox37.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBox35.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBox34.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textBox33.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroupCustomerHistory)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroupHistoryHeader)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemHistoryContractDate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemHistoryCustomerFirstName)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemHistoryLastName)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemHistorySuffix)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemHistoryCustomerNo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemHistoryPurchaseOrder)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemHistoryDealer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemHistoryDealerName)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemHistoryFirstPayDate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemHistoryDayDue)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemHistoryTerm)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem70)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemHistoryTotalExtensions)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemHistoryRegularPayment)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemHistoryLoan)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemHistoryAPR)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemHistoryCash)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemHistoryPaymentsMade)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem52)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemHistoryPartialPayment)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemHistoryLateCharge)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemHistoryLateChargeBalance)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemHistoryPayType)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemHistoryPayCode)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem69)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemHistoryBuyout)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem135)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem188)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem201)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem202)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem203)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemHistoryPayDate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem204)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem205)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem206)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem207)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem208)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem209)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem210)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem211)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemHistoryLoanInterest)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem212)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem213)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem216)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem215)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem214)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem217)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroupHistoryButtons)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             this.xtraTabPageInvoices.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlInvoices)).EndInit();
             this.layoutControlInvoices.ResumeLayout(false);
@@ -21524,8 +22239,6 @@ namespace IAC2021SQL
         private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit2;
         private DevExpress.XtraGrid.Columns.GridColumn colCustomerID;
         private DevExpress.XtraBars.StandaloneBarDockControl standaloneBarDockControl1;
-        private DevExpress.XtraEditors.GroupControl groupBox18;
-        private System.Windows.Forms.GroupBox groupBox11;
         private DevExpress.XtraEditors.CheckEdit checkEditCollectionAgentHistory;
         private DevExpress.XtraEditors.CheckEdit checkEditOverideInterestHistory;
         private DevExpress.XtraEditors.CheckEdit checkBoxFullRecourseHist;
@@ -22293,6 +23006,59 @@ namespace IAC2021SQL
         private DevExpress.UITemplates.Collection.Editors.EmailBox richTextBoxEmailAddress;
         private LayoutControlItem layoutControlItemEmailAddress;
         private ProductionMainTablesTableAdapters.EmailTableAdapter emailTableAdapter2;
+        private LayoutControl layoutControlCustomerHistory;
+        private LayoutControlGroup layoutControlGroupCustomerHistory;
+        private LayoutControlItem layoutControlItem8;
+        private LayoutControlItem layoutControlItem9;
+        private LayoutControlGroup layoutControlGroupHistoryHeader;
+        private LayoutControlItem layoutControlItemHistoryContractDate;
+        private LayoutControlItem layoutControlItemHistoryCustomerFirstName;
+        private LayoutControlItem layoutControlItemHistoryLastName;
+        private LayoutControlItem layoutControlItemHistorySuffix;
+        private LayoutControlItem layoutControlItemHistoryCustomerNo;
+        private LayoutControlItem layoutControlItemHistoryPurchaseOrder;
+        private LayoutControlItem layoutControlItemHistoryPayDate;
+        private LayoutControlItem layoutControlItemHistoryDealer;
+        private LayoutControlItem layoutControlItemHistoryDealerName;
+        private LayoutControlItem layoutControlItemHistoryFirstPayDate;
+        private LayoutControlItem layoutControlItemHistoryDayDue;
+        private LayoutControlItem layoutControlItemHistoryTerm;
+        private LayoutControlItem layoutControlItem70;
+        private LayoutControlItem layoutControlItemHistoryTotalExtensions;
+        private LayoutControlItem layoutControlItemHistoryRegularPayment;
+        private LayoutControlItem layoutControlItemHistoryLoan;
+        private LayoutControlItem layoutControlItemHistoryLoanInterest;
+        private LayoutControlItem layoutControlItemHistoryAPR;
+        private LayoutControlItem layoutControlItemHistoryCash;
+        private LayoutControlItem layoutControlItemHistoryPaymentsMade;
+        private LayoutControlItem layoutControlItem52;
+        private LayoutControlItem layoutControlItemHistoryPartialPayment;
+        private LayoutControlItem layoutControlItemHistoryLateCharge;
+        private LayoutControlItem layoutControlItemHistoryLateChargeBalance;
+        private LayoutControlItem layoutControlItemHistoryPayType;
+        private LayoutControlItem layoutControlItemHistoryPayCode;
+        private LayoutControlItem layoutControlItem69;
+        private LayoutControlItem layoutControlItemHistoryBuyout;
+        private LayoutControlGroup layoutControlGroupHistoryButtons;
+        private EmptySpaceItem emptySpaceItem135;
+        private EmptySpaceItem emptySpaceItem188;
+        private EmptySpaceItem emptySpaceItem201;
+        private EmptySpaceItem emptySpaceItem202;
+        private EmptySpaceItem emptySpaceItem203;
+        private EmptySpaceItem emptySpaceItem204;
+        private EmptySpaceItem emptySpaceItem205;
+        private EmptySpaceItem emptySpaceItem206;
+        private EmptySpaceItem emptySpaceItem207;
+        private EmptySpaceItem emptySpaceItem208;
+        private EmptySpaceItem emptySpaceItem209;
+        private EmptySpaceItem emptySpaceItem210;
+        private EmptySpaceItem emptySpaceItem211;
+        private EmptySpaceItem emptySpaceItem212;
+        private EmptySpaceItem emptySpaceItem213;
+        private EmptySpaceItem emptySpaceItem216;
+        private EmptySpaceItem emptySpaceItem215;
+        private EmptySpaceItem emptySpaceItem214;
+        private EmptySpaceItem emptySpaceItem217;
     }
 }
 

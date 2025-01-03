@@ -24893,7 +24893,7 @@ SET                DEALER_STATUS = @DEALER_STATUS</CommandText>
               </xs:element>
               <xs:element name="COMMENT_DATE" msprop:Generator_ColumnPropNameInTable="COMMENT_DATEColumn" msprop:Generator_ColumnPropNameInRow="COMMENT_DATE" msprop:Generator_UserColumnName="COMMENT_DATE" msprop:Generator_ColumnVarNameInTable="columnCOMMENT_DATE" type="xs:dateTime" default="1980-01-01T00:00:00-05:00" />
               <xs:element name="COMMENT_SEQ_NO" msprop:Generator_ColumnPropNameInTable="COMMENT_SEQ_NOColumn" msprop:Generator_ColumnPropNameInRow="COMMENT_SEQ_NO" msprop:Generator_UserColumnName="COMMENT_SEQ_NO" msprop:Generator_ColumnVarNameInTable="columnCOMMENT_SEQ_NO" type="xs:int" default="9" />
-              <xs:element name="COMMENT_USERID" msprop:Generator_ColumnPropNameInTable="COMMENT_USERIDColumn" msprop:Generator_ColumnPropNameInRow="COMMENT_USERID" msprop:Generator_UserColumnName="COMMENT_USERID" msprop:Generator_ColumnVarNameInTable="columnCOMMENT_USERID" minOccurs="0">
+              <xs:element name="COMMENT_USERID" msprop:Generator_ColumnPropNameInTable="COMMENT_USERIDColumn" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="COMMENT_USERID" msprop:Generator_UserColumnName="COMMENT_USERID" msprop:Generator_ColumnVarNameInTable="columnCOMMENT_USERID" default="" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="3" />
@@ -24907,7 +24907,7 @@ SET                DEALER_STATUS = @DEALER_STATUS</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="COMMENT_TYPE" msprop:Generator_ColumnPropNameInTable="COMMENT_TYPEColumn" msprop:Generator_ColumnPropNameInRow="COMMENT_TYPE" msprop:Generator_UserColumnName="COMMENT_TYPE" msprop:Generator_ColumnVarNameInTable="columnCOMMENT_TYPE" minOccurs="0">
+              <xs:element name="COMMENT_TYPE" msprop:Generator_ColumnPropNameInTable="COMMENT_TYPEColumn" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="COMMENT_TYPE" msprop:Generator_UserColumnName="COMMENT_TYPE" msprop:Generator_ColumnVarNameInTable="columnCOMMENT_TYPE" default="" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="2" />

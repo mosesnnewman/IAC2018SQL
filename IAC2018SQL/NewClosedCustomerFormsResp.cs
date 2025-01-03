@@ -145,6 +145,9 @@ namespace IAC2021SQL
             layoutControlBankInfo.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Style3D;
             layoutControlBankInfo.LookAndFeel.UseDefaultLookAndFeel = false;
             layoutControlBankInfo.OptionsView.ShareLookAndFeelWithChildren = false;
+            layoutControlCustomerHistory.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Style3D;
+            layoutControlCustomerHistory.LookAndFeel.UseDefaultLookAndFeel = false;
+            layoutControlCustomerHistory.OptionsView.ShareLookAndFeelWithChildren = false;
 
             checkEditActiveDuty.Visible = false;
             dateEditActiveDutyStart.Visible = false;
@@ -2565,23 +2568,9 @@ namespace IAC2021SQL
 
         private void radioButtonCOSAcct_CheckedChanged(object sender, EventArgs e)
         {
-            if (lbAddFlag || lbEdit)
-                toolStripButtonSave.Enabled = true;
-        }
-
-        private void radioButtonCOSAcct_Click(object sender, EventArgs e)
-        {
-            if (textBoxCOSAuthNo.EditValue.ToString() != "" || txtCOSCell.EditValue.ToString() == "" || buttonCOSValidate.ForeColor != Color.Green)
-            {
-                if (radioButtonCOSAcct.Checked)
-                {
-                    radioButtonCOSAcct.Checked = false;
-                    checkBoxCOSDNTAcct.Checked = true;
-                }
+            if (!lbEdit && !lbAddFlag)
                 return;
-            }
-            if (lbAddFlag || lbEdit)
-                toolStripButtonSave.Enabled = true;
+            toolStripButtonSave.Enabled = true;
             if (radioButtonCOSAcct.Checked)
             {
                 string VBTError = "";
@@ -2603,6 +2592,16 @@ namespace IAC2021SQL
                         MakeComment("*** COSIGNER VBT PIN NOT CREATED! ***", VBTError, 0, false);
                         MessageBox.Show(VBTError);
                     }
+                    else
+                    {
+                        iACDataSet.CUSTOMER.Rows[0].SetField<String>("COSTPin", "AUTO");
+                        textBoxCOSAuthNo.Refresh();
+                        iACDataSet.CUSTOMER.Rows[0].SetField<Boolean>("COSDNTAcct", false);
+                        iACDataSet.CUSTOMER.Rows[0].SetField<Boolean>("COSTAcct", true);
+                        iACDataSet.CUSTOMER.Rows[0].SetField<Boolean>("COSTConfirmed", true);
+                        buttonCOSConfirm.ForeColor = Color.Green;
+                        MakeComment("PREVIOUSLY COSIGNER AUTO CONFIRMED (NO PIN)!", "AUTO", 0, false);
+                    }
                 }
                 else
                 {
@@ -2610,9 +2609,8 @@ namespace IAC2021SQL
                     iACDataSet.CUSTOMER.Rows[0].SetField<Boolean>("COSTAcct", true);
                     iACDataSet.CUSTOMER.Rows[0].SetField<String>("COSTPin", "AUTO");
                     textBoxCOSAuthNo.Refresh();
-                    radioButtonCOSAcct.Checked = true;
                     radioButtonCOSMktg.Checked = false;
-                    UpdateSubscriberCOS(securityToken);  // Moses Newman 09/22/2021
+                    UpdateSubscriber(securityToken);
                     iACDataSet.CUSTOMER.Rows[0].SetField<Boolean>("COSTConfirmed", true);
                     buttonCOSConfirm.ForeColor = Color.Green;
                     MakeComment("COSIGNER AUTO CONFIRMED (NO PIN)!", "AUTO", 0, false);
@@ -6266,6 +6264,82 @@ namespace IAC2021SQL
                 toolStripButtonSave.Enabled = true;
         }
 
+        private void radioButtonAcct_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
+        {
+            if (cUSTOMER_CELL_PHONETextBox.EditValue.ToString() == "" || buttonValidate.ForeColor != Color.Green)
+            {
+                e.Cancel = true;
+            }
+            else
+                e.Cancel = false;
+        }
+
+        private void radioButtonCOSAcct_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
+        {
+            if (txtCOSCell.EditValue.ToString() == "" || buttonCOSValidate.ForeColor != Color.Green)
+            {
+                e.Cancel = true;
+            }
+            else
+                e.Cancel = false;
+        }
+
+        private void radioButtonAcct_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!lbEdit && !lbAddFlag)
+                return;
+            toolStripButtonSave.Enabled = true;
+            if (radioButtonAcct.Checked)
+            {
+                string VBTError = "";
+                MessageClient messageResult = new MessageClient("MessageWSServiceHttpEndpoint");
+                string securityToken = sbtLogin();
+                string orgCode = "wt63419";
+                string phoneNo = cUSTOMER_CELL_PHONETextBox.EditValue.ToString();
+
+                WSVerificationResponse wSVerificationResponse = messageResult.RequestVBT(securityToken, orgCode, phoneNo);
+                if (!wSVerificationResponse.Result)
+                {
+                    iACDataSet.CUSTOMER.Rows[0].SetField<String>("TPin", "");
+                    textBoxAuthNo.Refresh();
+
+                    VBTError = wSVerificationResponse.Message;
+                    if (VBTError.TrimEnd() != "Subscriber information already exists")
+                    {
+                        iACDataSet.CUSTOMER.Rows[0].SetField<Boolean>("TAcct", false);
+                        MakeComment("*** VBT PIN NOT CREATED! ***", VBTError, 0, false);
+                        MessageBox.Show(VBTError);
+                    }
+                    else
+                    {
+                        iACDataSet.CUSTOMER.Rows[0].SetField<String>("TPin", "AUTO");
+                        textBoxAuthNo.Refresh();
+                        iACDataSet.CUSTOMER.Rows[0].SetField<Boolean>("DNTAcct", false);
+                        iACDataSet.CUSTOMER.Rows[0].SetField<Boolean>("TAcct", true);
+                        iACDataSet.CUSTOMER.Rows[0].SetField<Boolean>("TConfirmed", true);
+                        buttonConfirm.ForeColor = Color.Green;
+                        MakeComment("PREVIOUSLY AUTO CONFIRMED (NO PIN)!", "AUTO", 0, false);
+                    }
+                }
+                else
+                {
+                    iACDataSet.CUSTOMER.Rows[0].SetField<Boolean>("DNTAcct", false);
+                    iACDataSet.CUSTOMER.Rows[0].SetField<Boolean>("TAcct", true);
+                    iACDataSet.CUSTOMER.Rows[0].SetField<String>("TPin", "AUTO");
+                    textBoxAuthNo.Refresh();
+                    radioButtonMktg.Checked = false;
+                    UpdateSubscriber(securityToken);
+                    iACDataSet.CUSTOMER.Rows[0].SetField<Boolean>("TConfirmed", true);
+                    buttonConfirm.ForeColor = Color.Green;
+                    MakeComment("AUTO CONFIRMED (NO PIN)!", "AUTO", 0, false);
+                }
+            }
+        }
+
+        private void radioButtonAcct_EditValueChanged(object sender, EventArgs e)
+        {
+        }
+
         private void richTextBoxEmailAddress_EditValueChanged(object sender, EventArgs e)
         {
             if (lbEdit || lbAddFlag)
@@ -6361,7 +6435,7 @@ namespace IAC2021SQL
             GroupClient generalService = new GroupClient("ReportWSServiceHttpEndpoint2");
             string securityToken = sbtLogin();
             string orgCode = "wt63419";
-            string[] phone = cUSTOMER_CELL_PHONETextBox.EditValue.ToString().Trim().Split(',');
+            string[] phone = cUSTOMER_NOTextBox.EditValue.ToString().Trim().Split(',');
 
             WSCarrierLookupResponse wSCarrierLookupResponse = generalService.GetCarrierLookup(securityToken, phone, orgCode);
 
@@ -6603,57 +6677,6 @@ namespace IAC2021SQL
         private void buttonConfirm_Click(object sender, EventArgs e)
         {
             return;
-        }
-
-        private void radioButtonAcct_Click(object sender, EventArgs e)
-        {
-            if (textBoxAuthNo.EditValue.ToString() != "" || cUSTOMER_CELL_PHONETextBox.EditValue.ToString() == "" || buttonValidate.ForeColor != Color.Green)
-            {
-                if (radioButtonAcct.Checked)
-                {
-                    radioButtonAcct.Checked = false;
-                    checkBoxDNTAcct.Checked = true;
-                }
-                return;
-            }
-            if (lbAddFlag || lbEdit)
-                toolStripButtonSave.Enabled = true;
-            if (radioButtonAcct.Checked)
-            {
-                string VBTError = "";
-                MessageClient messageResult = new MessageClient("MessageWSServiceHttpEndpoint");
-                string securityToken = sbtLogin();
-                string orgCode = "wt63419";
-                string phoneNo = cUSTOMER_CELL_PHONETextBox.EditValue.ToString();
-
-                WSVerificationResponse wSVerificationResponse = messageResult.RequestVBT(securityToken, orgCode, phoneNo);
-                if (!wSVerificationResponse.Result)
-                {
-                    iACDataSet.CUSTOMER.Rows[0].SetField<String>("TPin", "");
-                    textBoxAuthNo.Refresh();
-
-                    VBTError = wSVerificationResponse.Message;
-                    if (VBTError.TrimEnd() != "Subscriber information already exists")
-                    {
-                        iACDataSet.CUSTOMER.Rows[0].SetField<Boolean>("TAcct", false);
-                        MakeComment("*** VBT PIN NOT CREATED! ***", VBTError, 0, false);
-                        MessageBox.Show(VBTError);
-                    }
-                }
-                else
-                {
-                    iACDataSet.CUSTOMER.Rows[0].SetField<Boolean>("DNTAcct", false);
-                    iACDataSet.CUSTOMER.Rows[0].SetField<Boolean>("TAcct", true);
-                    iACDataSet.CUSTOMER.Rows[0].SetField<String>("TPin", "AUTO");
-                    textBoxAuthNo.Refresh();
-                    radioButtonAcct.Checked = true;
-                    radioButtonMktg.Checked = false;
-                    UpdateSubscriber(securityToken);
-                    iACDataSet.CUSTOMER.Rows[0].SetField<Boolean>("TConfirmed", true);
-                    buttonConfirm.ForeColor = Color.Green;
-                    MakeComment("AUTO CONFIRMED (NO PIN)!", "AUTO", 0, false);
-                }
-            }
         }
 
         private void checkBoxDNTAcct_Click(object sender, EventArgs e)
@@ -6955,11 +6978,6 @@ namespace IAC2021SQL
         {
             if (lbAddFlag || lbEdit)
                 toolStripButtonSave.Enabled = true;
-        }
-
-        private void radioButtonAcct_CheckedChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void radioButtonMktg_CheckedChanged(object sender, EventArgs e)
