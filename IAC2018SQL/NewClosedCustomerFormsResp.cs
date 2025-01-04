@@ -2939,6 +2939,12 @@ namespace IAC2021SQL
             }
             lsCustomerNo = cUSTOMER_NOTextBox.EditValue.ToString().Trim();
             cUSTOMER_PURCHASE_ORDERTextBox.EditValue = cUSTOMER_PURCHASE_ORDERTextBox.EditValue.ToString().Trim();
+            // Moses Newman 01/03/2025 Fix Confirmation flag issue
+            if (iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<String>("TPin") == "AUTO" && !iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<Boolean>("TConfirmed"))
+                iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Boolean>("TConfirmed", true);
+            if (iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<String>("COSTPin") == "AUTO" && !iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<Boolean>("COSTConfirmed"))
+                iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].SetField<Boolean>("COSTConfirmed", true);
+            // Moses Newman 01/03/2025 END Fix Confirmation flag issue
             cUSTOMERBindingSource.EndEdit();
             cUSTHISTBindingSource.EndEdit();
             cOMMENTBindingSource.EndEdit();
