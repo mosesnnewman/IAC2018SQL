@@ -38,25 +38,28 @@
             this.buttonExcel = new DevExpress.XtraEditors.SimpleButton();
             this.buttonCancel = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.checkEditActive = new DevExpress.XtraEditors.CheckEdit();
             this.groupBoxDateSelection.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerFrom.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerFrom.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerTo.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerFrom.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerTo.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerTo.Properties.CalendarTimeProperties)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEditActive.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBoxDateSelection
             // 
+            this.groupBoxDateSelection.Controls.Add(this.checkEditActive);
             this.groupBoxDateSelection.Controls.Add(this.label2);
             this.groupBoxDateSelection.Controls.Add(this.label1);
             this.groupBoxDateSelection.Controls.Add(this.nullableDateTimePickerFrom);
             this.groupBoxDateSelection.Controls.Add(this.nullableDateTimePickerTo);
             this.groupBoxDateSelection.Location = new System.Drawing.Point(156, 21);
             this.groupBoxDateSelection.Name = "groupBoxDateSelection";
-            this.groupBoxDateSelection.Size = new System.Drawing.Size(212, 108);
+            this.groupBoxDateSelection.Size = new System.Drawing.Size(212, 126);
             this.groupBoxDateSelection.TabIndex = 2;
             this.groupBoxDateSelection.TabStop = false;
             // 
@@ -170,6 +173,17 @@
             this.groupControl1.TabIndex = 19;
             this.groupControl1.Text = "groupControl1";
             // 
+            // checkEditActive
+            // 
+            this.checkEditActive.Location = new System.Drawing.Point(26, 98);
+            this.checkEditActive.Name = "checkEditActive";
+            this.checkEditActive.Properties.Caption = "Active?";
+            this.checkEditActive.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
+            this.checkEditActive.Properties.CheckBoxOptions.SvgColorChecked = System.Drawing.Color.Black;
+            this.checkEditActive.Properties.NullStyle = DevExpress.XtraEditors.Controls.StyleIndeterminate.Unchecked;
+            this.checkEditActive.Size = new System.Drawing.Size(121, 24);
+            this.checkEditActive.TabIndex = 21;
+            // 
             // ClosedOverPaymentReport
             // 
             this.Appearance.Options.UseFont = true;
@@ -191,6 +205,7 @@
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.checkEditActive.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -206,5 +221,6 @@
         private DevExpress.XtraEditors.SimpleButton buttonCancel;
         public DevExpress.XtraEditors.SimpleButton buttonExcel;
         private DevExpress.XtraEditors.GroupControl groupControl1;
+        private DevExpress.XtraEditors.CheckEdit checkEditActive;
     }
 }

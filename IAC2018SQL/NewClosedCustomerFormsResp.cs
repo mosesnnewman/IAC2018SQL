@@ -465,7 +465,14 @@ namespace IAC2021SQL
             textBoxCurrentLocation.Enabled = false;
             textBoxAuctionHouse.Enabled = false;
             checkBoxTitleReceived.Enabled = false;
-            nullableDateTimePickerTitleDateReceived.Enabled = false;
+            // Moses Newman 01/09/2025 
+            textEditRepoStatus.Enabled = false;
+            checkEditRepoPaymentArrangement.Enabled = false;
+            textEditDemandAmount.Enabled = false;
+            checkEditAttorney.Enabled = false;
+            textEditAttorneyName.Enabled = false;
+            dateEditAttorneyDate.Enabled = false;
+            checkEditCollection.Enabled = false;
             // Moses Newman 09/08/2019 TitleReleased, DateTitleReleased, ElectronicLien
             checkBoxTitleReleased.Enabled = false;
             nullableDateTimePickerDateTitleReleased.Enabled = false;
@@ -907,6 +914,14 @@ namespace IAC2021SQL
             textBoxAuctionHouse.Enabled = true;
             checkBoxTitleReceived.Enabled = true;
             nullableDateTimePickerTitleDateReceived.Enabled = true;
+            // Moses Newman 01/09/2025 
+            textEditRepoStatus.Enabled = true;
+            checkEditRepoPaymentArrangement.Enabled = true;
+            textEditDemandAmount.Enabled = true;
+            checkEditAttorney.Enabled = true;
+            textEditAttorneyName.Enabled = true;
+            dateEditAttorneyDate.Enabled = true;
+            checkEditCollection.Enabled = true;
             // Moses Newman 09/08/2019 TitleReleased, DateTitleReleased, ElectronicLien
             checkBoxTitleReleased.Enabled = true;
             nullableDateTimePickerDateTitleReleased.Enabled = true;
@@ -4834,6 +4849,14 @@ namespace IAC2021SQL
                     textBoxAuctionHouse.Enabled = true;
                     checkBoxTitleReceived.Enabled = true;
                     nullableDateTimePickerTitleDateReceived.Enabled = true;
+                    // Moses Newman 01/09/2025 
+                    textEditRepoStatus.Enabled = true;
+                    checkEditRepoPaymentArrangement.Enabled = true;
+                    textEditDemandAmount.Enabled = true;
+                    checkEditAttorney.Enabled = true;
+                    textEditAttorneyName.Enabled = true;
+                    dateEditAttorneyDate.Enabled = true;
+                    checkEditCollection.Enabled = true;
                     // Moses Newman 09/08/2019 TitleReleased, DateTitleReleased, ElectronicLien
                     checkBoxTitleReleased.Enabled = true;
                     nullableDateTimePickerDateTitleReleased.Enabled = true;
@@ -6335,6 +6358,48 @@ namespace IAC2021SQL
 
         }
 
+        private void textEditRepoStatus_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void checkEditRepoPaymentArrangement_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void textEditDemandAmount_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void checkEditAttorney_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void textEditAttorneyName_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void dateEditAttorneyDate_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
+        private void checkEditCollection_EditValueChanged(object sender, EventArgs e)
+        {
+            if (lbEdit || lbAddFlag)
+                toolStripButtonSave.Enabled = true;
+        }
+
         private void radioButtonCOSAcct_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
         {
             if (txtCOSCell.EditValue.ToString() == "" || buttonCOSValidate.ForeColor != Color.Green)
@@ -6493,7 +6558,7 @@ namespace IAC2021SQL
             GroupClient generalService = new GroupClient("ReportWSServiceHttpEndpoint2");
             string securityToken = sbtLogin();
             string orgCode = "wt63419";
-            string[] phone = cUSTOMER_NOTextBox.EditValue.ToString().Trim().Split(',');
+            string[] phone = cUSTOMER_CELL_PHONETextBox.EditValue.ToString().Trim().Split(',');
 
             WSCarrierLookupResponse wSCarrierLookupResponse = generalService.GetCarrierLookup(securityToken, phone, orgCode);
 

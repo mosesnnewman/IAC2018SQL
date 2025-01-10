@@ -756,3 +756,4 @@ C:\Users\mnewman\Source\Repos\IAC2018SQL\IAC2018SQL\obj\x64\Debug\IAC2021SQL.app
 C:\Users\mnewman\Source\Repos\IAC2018SQL\IAC2018SQL\obj\x64\Debug\IAC2021SQL.csproj.Up2Date
 C:\Users\mnewman\Source\Repos\IAC2018SQL\IAC2018SQL\obj\x64\Debug\IAC2021SQL.exe
 C:\Users\mnewman\Source\Repos\IAC2018SQL\IAC2018SQL\obj\x64\Debug\IAC2021SQL.pdb
+C:\Users\mnewman\Source\Repos\IAC2018SQL\IAC2018SQL\obj\x64\Debug\IAC2021SQL.CustomerOverPaymentReport.resources

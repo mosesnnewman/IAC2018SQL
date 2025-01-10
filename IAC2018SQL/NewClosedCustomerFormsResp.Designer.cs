@@ -1080,6 +1080,11 @@ namespace IAC2021SQL
             this.layoutControlItemCommentGrid = new DevExpress.XtraLayout.LayoutControlItem();
             this.xtraTabPageRepossession = new DevExpress.XtraTab.XtraTabPage();
             this.layoutControlRepo = new DevExpress.XtraLayout.LayoutControl();
+            this.dateEditAttorneyDate = new DevExpress.XtraEditors.DateEdit();
+            this.checkEditCollection = new DevExpress.XtraEditors.CheckEdit();
+            this.textEditAttorneyName = new DevExpress.XtraEditors.TextEdit();
+            this.checkEditAttorney = new DevExpress.XtraEditors.CheckEdit();
+            this.textEditDemandAmount = new DevExpress.XtraEditors.TextEdit();
             this.nullableDateTimePickerAucDate = new DevExpress.XtraEditors.DateEdit();
             this.nullableDateTimePickerLocDate = new DevExpress.XtraEditors.DateEdit();
             this.textBoxAuctionHouse = new DevExpress.XtraEditors.TextEdit();
@@ -1097,6 +1102,8 @@ namespace IAC2021SQL
             this.textBox511 = new DevExpress.XtraEditors.TextEdit();
             this.textBox501 = new DevExpress.XtraEditors.TextEdit();
             this.textBox491 = new DevExpress.XtraEditors.TextEdit();
+            this.textEditRepoStatus = new DevExpress.XtraEditors.MemoEdit();
+            this.checkEditRepoPaymentArrangement = new DevExpress.XtraEditors.CheckEdit();
             this.layoutControlGroupRepos = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.emptySpaceItem132 = new DevExpress.XtraLayout.EmptySpaceItem();
@@ -1120,7 +1127,6 @@ namespace IAC2021SQL
             this.emptySpaceItem142 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItemRepoAgent = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem146 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.emptySpaceItem138 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItemCurrentLocation = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItemLocationDate = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem144 = new DevExpress.XtraLayout.EmptySpaceItem();
@@ -1128,8 +1134,23 @@ namespace IAC2021SQL
             this.layoutControlItemAuctionHouse = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItemAuctionDate = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem152 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.emptySpaceItem155 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem145 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.layoutControlItemRepoStatus = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem155 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.layoutControlItemRepoPaymentArrangement = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem170 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem176 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.layoutControlGroupRecovery = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItemDemandAmount = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItemAttorney = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem60 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItemAttorneyDate = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem218 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.layoutControlItemAttorneyName = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem219 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem220 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem221 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem222 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.xtraTabPageRepoHistory = new DevExpress.XtraTab.XtraTabPage();
             this.layoutControlRepoHistory = new DevExpress.XtraLayout.LayoutControl();
             this.gridControlRepoLog = new DevExpress.XtraGrid.GridControl();
@@ -2317,6 +2338,12 @@ namespace IAC2021SQL
             this.xtraTabPageRepossession.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlRepo)).BeginInit();
             this.layoutControlRepo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEditAttorneyDate.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEditAttorneyDate.Properties.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEditCollection.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditAttorneyName.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEditAttorney.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditDemandAmount.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerAucDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerAucDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerLocDate.Properties)).BeginInit();
@@ -2337,6 +2364,8 @@ namespace IAC2021SQL
             ((System.ComponentModel.ISupportInitialize)(this.textBox511.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textBox501.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textBox491.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditRepoStatus.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEditRepoPaymentArrangement.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroupRepos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem132)).BeginInit();
@@ -2360,7 +2389,6 @@ namespace IAC2021SQL
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem142)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemRepoAgent)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem146)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem138)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemCurrentLocation)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemLocationDate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem144)).BeginInit();
@@ -2368,8 +2396,23 @@ namespace IAC2021SQL
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemAuctionHouse)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemAuctionDate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem152)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem155)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem145)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemRepoStatus)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem155)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemRepoPaymentArrangement)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem170)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem176)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroupRecovery)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemDemandAmount)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemAttorney)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem60)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemAttorneyDate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem218)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemAttorneyName)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem219)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem220)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem221)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem222)).BeginInit();
             this.xtraTabPageRepoHistory.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlRepoHistory)).BeginInit();
             this.layoutControlRepoHistory.SuspendLayout();
@@ -17071,6 +17114,11 @@ namespace IAC2021SQL
             // 
             // layoutControlRepo
             // 
+            this.layoutControlRepo.Controls.Add(this.dateEditAttorneyDate);
+            this.layoutControlRepo.Controls.Add(this.checkEditCollection);
+            this.layoutControlRepo.Controls.Add(this.textEditAttorneyName);
+            this.layoutControlRepo.Controls.Add(this.checkEditAttorney);
+            this.layoutControlRepo.Controls.Add(this.textEditDemandAmount);
             this.layoutControlRepo.Controls.Add(this.nullableDateTimePickerAucDate);
             this.layoutControlRepo.Controls.Add(this.nullableDateTimePickerLocDate);
             this.layoutControlRepo.Controls.Add(this.textBoxAuctionHouse);
@@ -17088,10 +17136,91 @@ namespace IAC2021SQL
             this.layoutControlRepo.Controls.Add(this.textBox511);
             this.layoutControlRepo.Controls.Add(this.textBox501);
             this.layoutControlRepo.Controls.Add(this.textBox491);
+            this.layoutControlRepo.Controls.Add(this.textEditRepoStatus);
+            this.layoutControlRepo.Controls.Add(this.checkEditRepoPaymentArrangement);
             resources.ApplyResources(this.layoutControlRepo, "layoutControlRepo");
             this.layoutControlRepo.Name = "layoutControlRepo";
             this.layoutControlRepo.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(931, 340, 650, 400);
             this.layoutControlRepo.Root = this.layoutControlGroupRepos;
+            // 
+            // dateEditAttorneyDate
+            // 
+            this.dateEditAttorneyDate.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.VehiclebindingSource, "AttorneyDate", true));
+            resources.ApplyResources(this.dateEditAttorneyDate, "dateEditAttorneyDate");
+            this.dateEditAttorneyDate.MenuManager = this.toolbarFormManager1;
+            this.dateEditAttorneyDate.Name = "dateEditAttorneyDate";
+            this.dateEditAttorneyDate.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.dateEditAttorneyDate.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.dateEditAttorneyDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("dateEditAttorneyDate.Properties.Buttons"))))});
+            this.dateEditAttorneyDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(((DevExpress.XtraEditors.Controls.ButtonPredefines)(resources.GetObject("dateEditAttorneyDate.Properties.CalendarTimeProperties.Buttons"))))});
+            this.dateEditAttorneyDate.StyleController = this.layoutControlRepo;
+            this.dateEditAttorneyDate.EditValueChanged += new System.EventHandler(this.dateEditAttorneyDate_EditValueChanged);
+            // 
+            // checkEditCollection
+            // 
+            this.checkEditCollection.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.VehiclebindingSource, "Collection", true));
+            this.checkEditCollection.EnterMoveNextControl = true;
+            resources.ApplyResources(this.checkEditCollection, "checkEditCollection");
+            this.checkEditCollection.MenuManager = this.toolbarFormManager1;
+            this.checkEditCollection.Name = "checkEditCollection";
+            this.checkEditCollection.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.checkEditCollection.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.checkEditCollection.Properties.Caption = resources.GetString("checkEditCollection.Properties.Caption");
+            this.checkEditCollection.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
+            this.checkEditCollection.Properties.GlyphAlignment = ((DevExpress.Utils.HorzAlignment)(resources.GetObject("checkEditCollection.Properties.GlyphAlignment")));
+            this.checkEditCollection.Properties.NullStyle = DevExpress.XtraEditors.Controls.StyleIndeterminate.Unchecked;
+            this.checkEditCollection.StyleController = this.layoutControlRepo;
+            this.checkEditCollection.EditValueChanged += new System.EventHandler(this.checkEditCollection_EditValueChanged);
+            // 
+            // textEditAttorneyName
+            // 
+            this.textEditAttorneyName.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.VehiclebindingSource, "AttorneyName", true));
+            resources.ApplyResources(this.textEditAttorneyName, "textEditAttorneyName");
+            this.textEditAttorneyName.MenuManager = this.toolbarFormManager1;
+            this.textEditAttorneyName.Name = "textEditAttorneyName";
+            this.textEditAttorneyName.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.textEditAttorneyName.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.textEditAttorneyName.StyleController = this.layoutControlRepo;
+            this.textEditAttorneyName.EditValueChanged += new System.EventHandler(this.textEditAttorneyName_EditValueChanged);
+            // 
+            // checkEditAttorney
+            // 
+            this.checkEditAttorney.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.VehiclebindingSource, "Attorney", true));
+            resources.ApplyResources(this.checkEditAttorney, "checkEditAttorney");
+            this.checkEditAttorney.MenuManager = this.toolbarFormManager1;
+            this.checkEditAttorney.Name = "checkEditAttorney";
+            this.checkEditAttorney.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.checkEditAttorney.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.checkEditAttorney.Properties.Caption = resources.GetString("checkEditAttorney.Properties.Caption");
+            this.checkEditAttorney.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
+            this.checkEditAttorney.Properties.GlyphAlignment = ((DevExpress.Utils.HorzAlignment)(resources.GetObject("checkEditAttorney.Properties.GlyphAlignment")));
+            this.checkEditAttorney.Properties.NullStyle = DevExpress.XtraEditors.Controls.StyleIndeterminate.Unchecked;
+            this.checkEditAttorney.StyleController = this.layoutControlRepo;
+            this.checkEditAttorney.EditValueChanged += new System.EventHandler(this.checkEditAttorney_EditValueChanged);
+            // 
+            // textEditDemandAmount
+            // 
+            this.textEditDemandAmount.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.VehiclebindingSource, "DemandAmount", true));
+            resources.ApplyResources(this.textEditDemandAmount, "textEditDemandAmount");
+            this.textEditDemandAmount.MenuManager = this.toolbarFormManager1;
+            this.textEditDemandAmount.Name = "textEditDemandAmount";
+            this.textEditDemandAmount.Properties.Appearance.Options.UseTextOptions = true;
+            this.textEditDemandAmount.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.textEditDemandAmount.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.textEditDemandAmount.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.textEditDemandAmount.Properties.AppearanceDisabled.Options.UseTextOptions = true;
+            this.textEditDemandAmount.Properties.AppearanceDisabled.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.textEditDemandAmount.Properties.BeepOnError = ((bool)(resources.GetObject("textEditDemandAmount.Properties.BeepOnError")));
+            this.textEditDemandAmount.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.textEditDemandAmount.Properties.MaskSettings.Set("mask", "c");
+            this.textEditDemandAmount.Properties.MaskSettings.Set("culture", "en-US");
+            this.textEditDemandAmount.Properties.MaskSettings.Set("autoHideDecimalSeparator", false);
+            this.textEditDemandAmount.Properties.MaskSettings.Set("valueType", typeof(decimal));
+            this.textEditDemandAmount.Properties.UseMaskAsDisplayFormat = ((bool)(resources.GetObject("textEditDemandAmount.Properties.UseMaskAsDisplayFormat")));
+            this.textEditDemandAmount.StyleController = this.layoutControlRepo;
+            this.textEditDemandAmount.EditValueChanged += new System.EventHandler(this.textEditDemandAmount_EditValueChanged);
             // 
             // nullableDateTimePickerAucDate
             // 
@@ -17335,6 +17464,37 @@ namespace IAC2021SQL
             this.textBox491.Properties.ReadOnly = true;
             this.textBox491.StyleController = this.layoutControlRepo;
             // 
+            // textEditRepoStatus
+            // 
+            this.textEditRepoStatus.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.VehiclebindingSource, "RepoStatus", true));
+            this.textEditRepoStatus.EnterMoveNextControl = true;
+            resources.ApplyResources(this.textEditRepoStatus, "textEditRepoStatus");
+            this.textEditRepoStatus.Name = "textEditRepoStatus";
+            this.textEditRepoStatus.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.textEditRepoStatus.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.textEditRepoStatus.Properties.AppearanceFocused.ForeColor = System.Drawing.Color.Black;
+            this.textEditRepoStatus.Properties.AppearanceFocused.Options.UseForeColor = true;
+            this.textEditRepoStatus.Properties.AppearanceReadOnly.ForeColor = System.Drawing.Color.Black;
+            this.textEditRepoStatus.Properties.AppearanceReadOnly.Options.UseForeColor = true;
+            this.textEditRepoStatus.Properties.UseAdvancedMode = DevExpress.Utils.DefaultBoolean.True;
+            this.textEditRepoStatus.StyleController = this.layoutControlRepo;
+            this.textEditRepoStatus.EditValueChanged += new System.EventHandler(this.textEditRepoStatus_EditValueChanged);
+            // 
+            // checkEditRepoPaymentArrangement
+            // 
+            this.checkEditRepoPaymentArrangement.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.VehiclebindingSource, "LossClaimPaymentArrangement", true));
+            this.checkEditRepoPaymentArrangement.EnterMoveNextControl = true;
+            resources.ApplyResources(this.checkEditRepoPaymentArrangement, "checkEditRepoPaymentArrangement");
+            this.checkEditRepoPaymentArrangement.Name = "checkEditRepoPaymentArrangement";
+            this.checkEditRepoPaymentArrangement.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
+            this.checkEditRepoPaymentArrangement.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.checkEditRepoPaymentArrangement.Properties.AutoWidth = true;
+            this.checkEditRepoPaymentArrangement.Properties.Caption = resources.GetString("checkEditRepoPaymentArrangement.Properties.Caption");
+            this.checkEditRepoPaymentArrangement.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgCheckBox1;
+            this.checkEditRepoPaymentArrangement.Properties.NullStyle = DevExpress.XtraEditors.Controls.StyleIndeterminate.Unchecked;
+            this.checkEditRepoPaymentArrangement.StyleController = this.layoutControlRepo;
+            this.checkEditRepoPaymentArrangement.EditValueChanged += new System.EventHandler(this.checkEditRepoPaymentArrangement_EditValueChanged);
+            // 
             // layoutControlGroupRepos
             // 
             this.layoutControlGroupRepos.AppearanceGroup.BackColor = System.Drawing.Color.LightSteelBlue;
@@ -17521,7 +17681,6 @@ namespace IAC2021SQL
             this.emptySpaceItem142,
             this.layoutControlItemRepoAgent,
             this.emptySpaceItem146,
-            this.emptySpaceItem138,
             this.layoutControlItemCurrentLocation,
             this.layoutControlItemLocationDate,
             this.emptySpaceItem144,
@@ -17529,8 +17688,13 @@ namespace IAC2021SQL
             this.layoutControlItemAuctionHouse,
             this.layoutControlItemAuctionDate,
             this.emptySpaceItem152,
+            this.emptySpaceItem145,
+            this.layoutControlItemRepoStatus,
             this.emptySpaceItem155,
-            this.emptySpaceItem145});
+            this.layoutControlItemRepoPaymentArrangement,
+            this.emptySpaceItem170,
+            this.emptySpaceItem176,
+            this.layoutControlGroupRecovery});
             this.layoutControlGroupRepoInfoDetail.Location = new System.Drawing.Point(0, 130);
             this.layoutControlGroupRepoInfoDetail.Name = "layoutControlGroupRepoInfoDetail";
             this.layoutControlGroupRepoInfoDetail.Size = new System.Drawing.Size(1789, 570);
@@ -17543,6 +17707,7 @@ namespace IAC2021SQL
             this.emptySpaceItem141.MaxSize = new System.Drawing.Size(79, 41);
             this.emptySpaceItem141.MinSize = new System.Drawing.Size(79, 41);
             this.emptySpaceItem141.Name = "emptySpaceItem141";
+            this.emptySpaceItem141.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
             this.emptySpaceItem141.Size = new System.Drawing.Size(79, 41);
             this.emptySpaceItem141.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             // 
@@ -17550,11 +17715,11 @@ namespace IAC2021SQL
             // 
             this.layoutControlItemcomboBoxRepoInd.Control = this.comboBoxRepoInd;
             this.layoutControlItemcomboBoxRepoInd.Location = new System.Drawing.Point(79, 0);
-            this.layoutControlItemcomboBoxRepoInd.MaxSize = new System.Drawing.Size(0, 41);
-            this.layoutControlItemcomboBoxRepoInd.MinSize = new System.Drawing.Size(105, 41);
+            this.layoutControlItemcomboBoxRepoInd.MaxSize = new System.Drawing.Size(173, 41);
+            this.layoutControlItemcomboBoxRepoInd.MinSize = new System.Drawing.Size(173, 41);
             this.layoutControlItemcomboBoxRepoInd.Name = "layoutControlItemcomboBoxRepoInd";
             this.layoutControlItemcomboBoxRepoInd.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
-            this.layoutControlItemcomboBoxRepoInd.Size = new System.Drawing.Size(170, 41);
+            this.layoutControlItemcomboBoxRepoInd.Size = new System.Drawing.Size(173, 41);
             this.layoutControlItemcomboBoxRepoInd.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             resources.ApplyResources(this.layoutControlItemcomboBoxRepoInd, "layoutControlItemcomboBoxRepoInd");
             this.layoutControlItemcomboBoxRepoInd.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
@@ -17564,8 +17729,9 @@ namespace IAC2021SQL
             // layoutControlItemcUSTOMER_REPO_INDtextBox
             // 
             this.layoutControlItemcUSTOMER_REPO_INDtextBox.Control = this.cUSTOMER_REPO_INDtextBox;
-            this.layoutControlItemcUSTOMER_REPO_INDtextBox.Location = new System.Drawing.Point(249, 0);
-            this.layoutControlItemcUSTOMER_REPO_INDtextBox.MinSize = new System.Drawing.Size(1, 1);
+            this.layoutControlItemcUSTOMER_REPO_INDtextBox.Location = new System.Drawing.Point(252, 0);
+            this.layoutControlItemcUSTOMER_REPO_INDtextBox.MaxSize = new System.Drawing.Size(37, 41);
+            this.layoutControlItemcUSTOMER_REPO_INDtextBox.MinSize = new System.Drawing.Size(37, 41);
             this.layoutControlItemcUSTOMER_REPO_INDtextBox.Name = "layoutControlItemcUSTOMER_REPO_INDtextBox";
             this.layoutControlItemcUSTOMER_REPO_INDtextBox.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
             this.layoutControlItemcUSTOMER_REPO_INDtextBox.Size = new System.Drawing.Size(37, 41);
@@ -17578,12 +17744,12 @@ namespace IAC2021SQL
             // layoutControlItemcUSTOMER_REPO_CDEtextBox
             // 
             this.layoutControlItemcUSTOMER_REPO_CDEtextBox.Control = this.cUSTOMER_REPO_CDEtextBox;
-            this.layoutControlItemcUSTOMER_REPO_CDEtextBox.Location = new System.Drawing.Point(286, 0);
-            this.layoutControlItemcUSTOMER_REPO_CDEtextBox.MaxSize = new System.Drawing.Size(0, 30);
-            this.layoutControlItemcUSTOMER_REPO_CDEtextBox.MinSize = new System.Drawing.Size(97, 30);
+            this.layoutControlItemcUSTOMER_REPO_CDEtextBox.Location = new System.Drawing.Point(289, 0);
+            this.layoutControlItemcUSTOMER_REPO_CDEtextBox.MaxSize = new System.Drawing.Size(103, 41);
+            this.layoutControlItemcUSTOMER_REPO_CDEtextBox.MinSize = new System.Drawing.Size(103, 41);
             this.layoutControlItemcUSTOMER_REPO_CDEtextBox.Name = "layoutControlItemcUSTOMER_REPO_CDEtextBox";
             this.layoutControlItemcUSTOMER_REPO_CDEtextBox.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
-            this.layoutControlItemcUSTOMER_REPO_CDEtextBox.Size = new System.Drawing.Size(101, 41);
+            this.layoutControlItemcUSTOMER_REPO_CDEtextBox.Size = new System.Drawing.Size(103, 41);
             this.layoutControlItemcUSTOMER_REPO_CDEtextBox.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             resources.ApplyResources(this.layoutControlItemcUSTOMER_REPO_CDEtextBox, "layoutControlItemcUSTOMER_REPO_CDEtextBox");
             this.layoutControlItemcUSTOMER_REPO_CDEtextBox.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
@@ -17593,12 +17759,12 @@ namespace IAC2021SQL
             // layoutControlItemcomboBoxRepoCodes
             // 
             this.layoutControlItemcomboBoxRepoCodes.Control = this.comboBoxRepoCodes;
-            this.layoutControlItemcomboBoxRepoCodes.Location = new System.Drawing.Point(387, 0);
-            this.layoutControlItemcomboBoxRepoCodes.MaxSize = new System.Drawing.Size(0, 41);
-            this.layoutControlItemcomboBoxRepoCodes.MinSize = new System.Drawing.Size(1, 41);
+            this.layoutControlItemcomboBoxRepoCodes.Location = new System.Drawing.Point(392, 0);
+            this.layoutControlItemcomboBoxRepoCodes.MaxSize = new System.Drawing.Size(186, 41);
+            this.layoutControlItemcomboBoxRepoCodes.MinSize = new System.Drawing.Size(186, 41);
             this.layoutControlItemcomboBoxRepoCodes.Name = "layoutControlItemcomboBoxRepoCodes";
             this.layoutControlItemcomboBoxRepoCodes.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
-            this.layoutControlItemcomboBoxRepoCodes.Size = new System.Drawing.Size(187, 41);
+            this.layoutControlItemcomboBoxRepoCodes.Size = new System.Drawing.Size(186, 41);
             this.layoutControlItemcomboBoxRepoCodes.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             resources.ApplyResources(this.layoutControlItemcomboBoxRepoCodes, "layoutControlItemcomboBoxRepoCodes");
             this.layoutControlItemcomboBoxRepoCodes.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
@@ -17608,11 +17774,12 @@ namespace IAC2021SQL
             // layoutControlItemRepoDate
             // 
             this.layoutControlItemRepoDate.Control = this.nullableDateTimePickerRepoDate;
-            this.layoutControlItemRepoDate.Location = new System.Drawing.Point(574, 0);
-            this.layoutControlItemRepoDate.MaxSize = new System.Drawing.Size(270, 33);
-            this.layoutControlItemRepoDate.MinSize = new System.Drawing.Size(1, 33);
+            this.layoutControlItemRepoDate.Location = new System.Drawing.Point(578, 0);
+            this.layoutControlItemRepoDate.MaxSize = new System.Drawing.Size(211, 41);
+            this.layoutControlItemRepoDate.MinSize = new System.Drawing.Size(211, 41);
             this.layoutControlItemRepoDate.Name = "layoutControlItemRepoDate";
-            this.layoutControlItemRepoDate.Size = new System.Drawing.Size(208, 41);
+            this.layoutControlItemRepoDate.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.layoutControlItemRepoDate.Size = new System.Drawing.Size(211, 41);
             this.layoutControlItemRepoDate.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             resources.ApplyResources(this.layoutControlItemRepoDate, "layoutControlItemRepoDate");
             this.layoutControlItemRepoDate.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
@@ -17621,9 +17788,13 @@ namespace IAC2021SQL
             // 
             // emptySpaceItem140
             // 
-            this.emptySpaceItem140.Location = new System.Drawing.Point(782, 0);
+            this.emptySpaceItem140.Location = new System.Drawing.Point(789, 0);
+            this.emptySpaceItem140.MaxSize = new System.Drawing.Size(974, 41);
+            this.emptySpaceItem140.MinSize = new System.Drawing.Size(974, 41);
             this.emptySpaceItem140.Name = "emptySpaceItem140";
-            this.emptySpaceItem140.Size = new System.Drawing.Size(981, 41);
+            this.emptySpaceItem140.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.emptySpaceItem140.Size = new System.Drawing.Size(974, 41);
+            this.emptySpaceItem140.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             // 
             // emptySpaceItem142
             // 
@@ -17631,6 +17802,7 @@ namespace IAC2021SQL
             this.emptySpaceItem142.MaxSize = new System.Drawing.Size(32, 41);
             this.emptySpaceItem142.MinSize = new System.Drawing.Size(32, 41);
             this.emptySpaceItem142.Name = "emptySpaceItem142";
+            this.emptySpaceItem142.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
             this.emptySpaceItem142.Size = new System.Drawing.Size(32, 41);
             this.emptySpaceItem142.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             // 
@@ -17638,8 +17810,8 @@ namespace IAC2021SQL
             // 
             this.layoutControlItemRepoAgent.Control = this.textBoxRepoAgent;
             this.layoutControlItemRepoAgent.Location = new System.Drawing.Point(32, 41);
-            this.layoutControlItemRepoAgent.MaxSize = new System.Drawing.Size(0, 41);
-            this.layoutControlItemRepoAgent.MinSize = new System.Drawing.Size(1, 41);
+            this.layoutControlItemRepoAgent.MaxSize = new System.Drawing.Size(584, 41);
+            this.layoutControlItemRepoAgent.MinSize = new System.Drawing.Size(584, 41);
             this.layoutControlItemRepoAgent.Name = "layoutControlItemRepoAgent";
             this.layoutControlItemRepoAgent.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
             this.layoutControlItemRepoAgent.Size = new System.Drawing.Size(584, 41);
@@ -17652,16 +17824,12 @@ namespace IAC2021SQL
             // emptySpaceItem146
             // 
             this.emptySpaceItem146.Location = new System.Drawing.Point(616, 41);
-            this.emptySpaceItem146.MinSize = new System.Drawing.Size(10, 10);
+            this.emptySpaceItem146.MaxSize = new System.Drawing.Size(584, 41);
+            this.emptySpaceItem146.MinSize = new System.Drawing.Size(584, 41);
             this.emptySpaceItem146.Name = "emptySpaceItem146";
-            this.emptySpaceItem146.Size = new System.Drawing.Size(547, 41);
+            this.emptySpaceItem146.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.emptySpaceItem146.Size = new System.Drawing.Size(1147, 41);
             this.emptySpaceItem146.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            // 
-            // emptySpaceItem138
-            // 
-            this.emptySpaceItem138.Location = new System.Drawing.Point(1163, 41);
-            this.emptySpaceItem138.Name = "emptySpaceItem138";
-            this.emptySpaceItem138.Size = new System.Drawing.Size(600, 41);
             // 
             // layoutControlItemCurrentLocation
             // 
@@ -17696,16 +17864,21 @@ namespace IAC2021SQL
             // emptySpaceItem144
             // 
             this.emptySpaceItem144.Location = new System.Drawing.Point(616, 82);
+            this.emptySpaceItem144.MaxSize = new System.Drawing.Size(1147, 41);
+            this.emptySpaceItem144.MinSize = new System.Drawing.Size(1147, 41);
             this.emptySpaceItem144.Name = "emptySpaceItem144";
+            this.emptySpaceItem144.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
             this.emptySpaceItem144.Size = new System.Drawing.Size(1147, 41);
+            this.emptySpaceItem144.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             // 
             // emptySpaceItem143
             // 
             this.emptySpaceItem143.Location = new System.Drawing.Point(0, 123);
-            this.emptySpaceItem143.MaxSize = new System.Drawing.Size(14, 0);
-            this.emptySpaceItem143.MinSize = new System.Drawing.Size(14, 10);
+            this.emptySpaceItem143.MaxSize = new System.Drawing.Size(14, 41);
+            this.emptySpaceItem143.MinSize = new System.Drawing.Size(14, 41);
             this.emptySpaceItem143.Name = "emptySpaceItem143";
-            this.emptySpaceItem143.Size = new System.Drawing.Size(14, 421);
+            this.emptySpaceItem143.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.emptySpaceItem143.Size = new System.Drawing.Size(14, 41);
             this.emptySpaceItem143.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             // 
             // layoutControlItemAuctionHouse
@@ -17719,13 +17892,15 @@ namespace IAC2021SQL
             this.layoutControlItemAuctionHouse.Size = new System.Drawing.Size(470, 41);
             this.layoutControlItemAuctionHouse.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             resources.ApplyResources(this.layoutControlItemAuctionHouse, "layoutControlItemAuctionHouse");
+            this.layoutControlItemAuctionHouse.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
+            this.layoutControlItemAuctionHouse.TextToControlDistance = 5;
             // 
             // layoutControlItemAuctionDate
             // 
             this.layoutControlItemAuctionDate.Control = this.nullableDateTimePickerAucDate;
             this.layoutControlItemAuctionDate.Location = new System.Drawing.Point(484, 123);
-            this.layoutControlItemAuctionDate.MaxSize = new System.Drawing.Size(0, 41);
-            this.layoutControlItemAuctionDate.MinSize = new System.Drawing.Size(1, 41);
+            this.layoutControlItemAuctionDate.MaxSize = new System.Drawing.Size(132, 41);
+            this.layoutControlItemAuctionDate.MinSize = new System.Drawing.Size(132, 41);
             this.layoutControlItemAuctionDate.Name = "layoutControlItemAuctionDate";
             this.layoutControlItemAuctionDate.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
             this.layoutControlItemAuctionDate.Size = new System.Drawing.Size(132, 41);
@@ -17737,21 +17912,222 @@ namespace IAC2021SQL
             // 
             // emptySpaceItem152
             // 
-            this.emptySpaceItem152.Location = new System.Drawing.Point(14, 164);
+            this.emptySpaceItem152.Location = new System.Drawing.Point(0, 470);
+            this.emptySpaceItem152.MaxSize = new System.Drawing.Size(616, 74);
+            this.emptySpaceItem152.MinSize = new System.Drawing.Size(616, 74);
             this.emptySpaceItem152.Name = "emptySpaceItem152";
-            this.emptySpaceItem152.Size = new System.Drawing.Size(470, 380);
-            // 
-            // emptySpaceItem155
-            // 
-            this.emptySpaceItem155.Location = new System.Drawing.Point(484, 164);
-            this.emptySpaceItem155.Name = "emptySpaceItem155";
-            this.emptySpaceItem155.Size = new System.Drawing.Size(132, 380);
+            this.emptySpaceItem152.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.emptySpaceItem152.Size = new System.Drawing.Size(616, 74);
+            this.emptySpaceItem152.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             // 
             // emptySpaceItem145
             // 
             this.emptySpaceItem145.Location = new System.Drawing.Point(616, 123);
+            this.emptySpaceItem145.MaxSize = new System.Drawing.Size(1147, 421);
+            this.emptySpaceItem145.MinSize = new System.Drawing.Size(1147, 421);
             this.emptySpaceItem145.Name = "emptySpaceItem145";
+            this.emptySpaceItem145.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
             this.emptySpaceItem145.Size = new System.Drawing.Size(1147, 421);
+            this.emptySpaceItem145.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            // 
+            // layoutControlItemRepoStatus
+            // 
+            this.layoutControlItemRepoStatus.AppearanceItemCaptionDisabled.ForeColor = System.Drawing.Color.Black;
+            this.layoutControlItemRepoStatus.AppearanceItemCaptionDisabled.Options.UseForeColor = true;
+            this.layoutControlItemRepoStatus.Control = this.textEditRepoStatus;
+            resources.ApplyResources(this.layoutControlItemRepoStatus, "layoutControlItemRepoStatus");
+            this.layoutControlItemRepoStatus.Location = new System.Drawing.Point(71, 164);
+            this.layoutControlItemRepoStatus.MaxSize = new System.Drawing.Size(545, 93);
+            this.layoutControlItemRepoStatus.MinSize = new System.Drawing.Size(545, 93);
+            this.layoutControlItemRepoStatus.Name = "layoutControlItemRepoStatus";
+            this.layoutControlItemRepoStatus.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.layoutControlItemRepoStatus.Size = new System.Drawing.Size(545, 93);
+            this.layoutControlItemRepoStatus.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.layoutControlItemRepoStatus.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
+            this.layoutControlItemRepoStatus.TextLocation = DevExpress.Utils.Locations.Left;
+            this.layoutControlItemRepoStatus.TextToControlDistance = 5;
+            // 
+            // emptySpaceItem155
+            // 
+            this.emptySpaceItem155.Location = new System.Drawing.Point(0, 164);
+            this.emptySpaceItem155.MaxSize = new System.Drawing.Size(71, 93);
+            this.emptySpaceItem155.MinSize = new System.Drawing.Size(71, 93);
+            this.emptySpaceItem155.Name = "emptySpaceItem155";
+            this.emptySpaceItem155.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.emptySpaceItem155.Size = new System.Drawing.Size(71, 93);
+            this.emptySpaceItem155.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            // 
+            // layoutControlItemRepoPaymentArrangement
+            // 
+            this.layoutControlItemRepoPaymentArrangement.Control = this.checkEditRepoPaymentArrangement;
+            resources.ApplyResources(this.layoutControlItemRepoPaymentArrangement, "layoutControlItemRepoPaymentArrangement");
+            this.layoutControlItemRepoPaymentArrangement.Location = new System.Drawing.Point(124, 257);
+            this.layoutControlItemRepoPaymentArrangement.MaxSize = new System.Drawing.Size(198, 41);
+            this.layoutControlItemRepoPaymentArrangement.MinSize = new System.Drawing.Size(198, 41);
+            this.layoutControlItemRepoPaymentArrangement.Name = "layoutControlItemRepoPaymentArrangement";
+            this.layoutControlItemRepoPaymentArrangement.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.layoutControlItemRepoPaymentArrangement.Size = new System.Drawing.Size(198, 41);
+            this.layoutControlItemRepoPaymentArrangement.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.layoutControlItemRepoPaymentArrangement.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
+            this.layoutControlItemRepoPaymentArrangement.TextLocation = DevExpress.Utils.Locations.Left;
+            this.layoutControlItemRepoPaymentArrangement.TextToControlDistance = 0;
+            this.layoutControlItemRepoPaymentArrangement.TextVisible = false;
+            // 
+            // emptySpaceItem170
+            // 
+            this.emptySpaceItem170.Location = new System.Drawing.Point(0, 257);
+            this.emptySpaceItem170.MaxSize = new System.Drawing.Size(124, 41);
+            this.emptySpaceItem170.MinSize = new System.Drawing.Size(124, 41);
+            this.emptySpaceItem170.Name = "emptySpaceItem170";
+            this.emptySpaceItem170.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.emptySpaceItem170.Size = new System.Drawing.Size(124, 41);
+            this.emptySpaceItem170.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            // 
+            // emptySpaceItem176
+            // 
+            this.emptySpaceItem176.Location = new System.Drawing.Point(322, 257);
+            this.emptySpaceItem176.MaxSize = new System.Drawing.Size(294, 41);
+            this.emptySpaceItem176.MinSize = new System.Drawing.Size(294, 41);
+            this.emptySpaceItem176.Name = "emptySpaceItem176";
+            this.emptySpaceItem176.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.emptySpaceItem176.Size = new System.Drawing.Size(294, 41);
+            this.emptySpaceItem176.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            // 
+            // layoutControlGroupRecovery
+            // 
+            this.layoutControlGroupRecovery.GroupStyle = DevExpress.Utils.GroupStyle.Light;
+            this.layoutControlGroupRecovery.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItemDemandAmount,
+            this.layoutControlItemAttorney,
+            this.layoutControlItem60,
+            this.layoutControlItemAttorneyDate,
+            this.emptySpaceItem218,
+            this.layoutControlItemAttorneyName,
+            this.emptySpaceItem219,
+            this.emptySpaceItem220,
+            this.emptySpaceItem221,
+            this.emptySpaceItem222});
+            this.layoutControlGroupRecovery.Location = new System.Drawing.Point(0, 298);
+            this.layoutControlGroupRecovery.Name = "layoutControlGroupRecovery";
+            this.layoutControlGroupRecovery.Size = new System.Drawing.Size(616, 172);
+            resources.ApplyResources(this.layoutControlGroupRecovery, "layoutControlGroupRecovery");
+            // 
+            // layoutControlItemDemandAmount
+            // 
+            this.layoutControlItemDemandAmount.Control = this.textEditDemandAmount;
+            this.layoutControlItemDemandAmount.Location = new System.Drawing.Point(205, 0);
+            this.layoutControlItemDemandAmount.MaxSize = new System.Drawing.Size(224, 41);
+            this.layoutControlItemDemandAmount.MinSize = new System.Drawing.Size(224, 41);
+            this.layoutControlItemDemandAmount.Name = "layoutControlItemDemandAmount";
+            this.layoutControlItemDemandAmount.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.layoutControlItemDemandAmount.Size = new System.Drawing.Size(224, 41);
+            this.layoutControlItemDemandAmount.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            resources.ApplyResources(this.layoutControlItemDemandAmount, "layoutControlItemDemandAmount");
+            this.layoutControlItemDemandAmount.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
+            this.layoutControlItemDemandAmount.TextToControlDistance = 5;
+            // 
+            // layoutControlItemAttorney
+            // 
+            this.layoutControlItemAttorney.Control = this.checkEditAttorney;
+            this.layoutControlItemAttorney.Location = new System.Drawing.Point(10, 41);
+            this.layoutControlItemAttorney.MaxSize = new System.Drawing.Size(59, 41);
+            this.layoutControlItemAttorney.MinSize = new System.Drawing.Size(59, 41);
+            this.layoutControlItemAttorney.Name = "layoutControlItemAttorney";
+            this.layoutControlItemAttorney.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.layoutControlItemAttorney.Size = new System.Drawing.Size(59, 41);
+            this.layoutControlItemAttorney.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.layoutControlItemAttorney.TextVisible = false;
+            // 
+            // layoutControlItem60
+            // 
+            this.layoutControlItem60.Control = this.checkEditCollection;
+            this.layoutControlItem60.Location = new System.Drawing.Point(323, 82);
+            this.layoutControlItem60.MaxSize = new System.Drawing.Size(106, 41);
+            this.layoutControlItem60.MinSize = new System.Drawing.Size(106, 41);
+            this.layoutControlItem60.Name = "layoutControlItem60";
+            this.layoutControlItem60.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.layoutControlItem60.Size = new System.Drawing.Size(106, 41);
+            this.layoutControlItem60.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.layoutControlItem60.TextVisible = false;
+            // 
+            // layoutControlItemAttorneyDate
+            // 
+            this.layoutControlItemAttorneyDate.Control = this.dateEditAttorneyDate;
+            this.layoutControlItemAttorneyDate.Location = new System.Drawing.Point(429, 41);
+            this.layoutControlItemAttorneyDate.MaxSize = new System.Drawing.Size(163, 41);
+            this.layoutControlItemAttorneyDate.MinSize = new System.Drawing.Size(163, 41);
+            this.layoutControlItemAttorneyDate.Name = "layoutControlItemAttorneyDate";
+            this.layoutControlItemAttorneyDate.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.layoutControlItemAttorneyDate.Size = new System.Drawing.Size(163, 41);
+            this.layoutControlItemAttorneyDate.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            resources.ApplyResources(this.layoutControlItemAttorneyDate, "layoutControlItemAttorneyDate");
+            this.layoutControlItemAttorneyDate.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
+            this.layoutControlItemAttorneyDate.TextToControlDistance = 5;
+            // 
+            // emptySpaceItem218
+            // 
+            this.emptySpaceItem218.Location = new System.Drawing.Point(0, 41);
+            this.emptySpaceItem218.MaxSize = new System.Drawing.Size(10, 41);
+            this.emptySpaceItem218.MinSize = new System.Drawing.Size(10, 41);
+            this.emptySpaceItem218.Name = "emptySpaceItem218";
+            this.emptySpaceItem218.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.emptySpaceItem218.Size = new System.Drawing.Size(10, 41);
+            this.emptySpaceItem218.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            // 
+            // layoutControlItemAttorneyName
+            // 
+            this.layoutControlItemAttorneyName.Control = this.textEditAttorneyName;
+            this.layoutControlItemAttorneyName.Location = new System.Drawing.Point(69, 41);
+            this.layoutControlItemAttorneyName.MaxSize = new System.Drawing.Size(360, 41);
+            this.layoutControlItemAttorneyName.MinSize = new System.Drawing.Size(360, 41);
+            this.layoutControlItemAttorneyName.Name = "layoutControlItemAttorneyName";
+            this.layoutControlItemAttorneyName.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.layoutControlItemAttorneyName.Size = new System.Drawing.Size(360, 41);
+            this.layoutControlItemAttorneyName.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            resources.ApplyResources(this.layoutControlItemAttorneyName, "layoutControlItemAttorneyName");
+            this.layoutControlItemAttorneyName.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
+            this.layoutControlItemAttorneyName.TextToControlDistance = 0;
+            this.layoutControlItemAttorneyName.TextVisible = false;
+            // 
+            // emptySpaceItem219
+            // 
+            this.emptySpaceItem219.Location = new System.Drawing.Point(0, 0);
+            this.emptySpaceItem219.MaxSize = new System.Drawing.Size(205, 41);
+            this.emptySpaceItem219.MinSize = new System.Drawing.Size(205, 41);
+            this.emptySpaceItem219.Name = "emptySpaceItem219";
+            this.emptySpaceItem219.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.emptySpaceItem219.Size = new System.Drawing.Size(205, 41);
+            this.emptySpaceItem219.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            // 
+            // emptySpaceItem220
+            // 
+            this.emptySpaceItem220.Location = new System.Drawing.Point(429, 0);
+            this.emptySpaceItem220.MaxSize = new System.Drawing.Size(163, 41);
+            this.emptySpaceItem220.MinSize = new System.Drawing.Size(163, 41);
+            this.emptySpaceItem220.Name = "emptySpaceItem220";
+            this.emptySpaceItem220.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.emptySpaceItem220.Size = new System.Drawing.Size(163, 41);
+            this.emptySpaceItem220.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            // 
+            // emptySpaceItem221
+            // 
+            this.emptySpaceItem221.Location = new System.Drawing.Point(429, 82);
+            this.emptySpaceItem221.MaxSize = new System.Drawing.Size(163, 41);
+            this.emptySpaceItem221.MinSize = new System.Drawing.Size(163, 41);
+            this.emptySpaceItem221.Name = "emptySpaceItem221";
+            this.emptySpaceItem221.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.emptySpaceItem221.Size = new System.Drawing.Size(163, 41);
+            this.emptySpaceItem221.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            // 
+            // emptySpaceItem222
+            // 
+            this.emptySpaceItem222.Location = new System.Drawing.Point(0, 82);
+            this.emptySpaceItem222.MaxSize = new System.Drawing.Size(323, 41);
+            this.emptySpaceItem222.MinSize = new System.Drawing.Size(323, 41);
+            this.emptySpaceItem222.Name = "emptySpaceItem222";
+            this.emptySpaceItem222.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
+            this.emptySpaceItem222.Size = new System.Drawing.Size(323, 41);
+            this.emptySpaceItem222.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             // 
             // xtraTabPageRepoHistory
             // 
@@ -21606,6 +21982,12 @@ namespace IAC2021SQL
             this.xtraTabPageRepossession.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlRepo)).EndInit();
             this.layoutControlRepo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dateEditAttorneyDate.Properties.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEditAttorneyDate.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEditCollection.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditAttorneyName.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEditAttorney.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditDemandAmount.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerAucDate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerAucDate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nullableDateTimePickerLocDate.Properties.CalendarTimeProperties)).EndInit();
@@ -21626,6 +22008,8 @@ namespace IAC2021SQL
             ((System.ComponentModel.ISupportInitialize)(this.textBox511.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textBox501.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textBox491.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textEditRepoStatus.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checkEditRepoPaymentArrangement.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroupRepos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem132)).EndInit();
@@ -21649,7 +22033,6 @@ namespace IAC2021SQL
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem142)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemRepoAgent)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem146)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem138)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemCurrentLocation)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemLocationDate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem144)).EndInit();
@@ -21657,8 +22040,23 @@ namespace IAC2021SQL
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemAuctionHouse)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemAuctionDate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem152)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem155)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem145)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemRepoStatus)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem155)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemRepoPaymentArrangement)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem170)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem176)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroupRecovery)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemDemandAmount)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemAttorney)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem60)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemAttorneyDate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem218)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemAttorneyName)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem219)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem220)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem221)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem222)).EndInit();
             this.xtraTabPageRepoHistory.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlRepoHistory)).EndInit();
             this.layoutControlRepoHistory.ResumeLayout(false);
@@ -22573,11 +22971,9 @@ namespace IAC2021SQL
         private DevExpress.XtraEditors.TextEdit textBox491;
         private LayoutControlGroup layoutControlGroupRepoHeader;
         private LayoutControlItem layoutControlItem18;
-        private EmptySpaceItem emptySpaceItem138;
         private EmptySpaceItem emptySpaceItem132;
         private EmptySpaceItem emptySpaceItem154;
         private EmptySpaceItem emptySpaceItem152;
-        private EmptySpaceItem emptySpaceItem155;
         private LayoutControl layoutControlCosignerInfo;
         private LayoutControlGroup layoutControlGroupCosigner;
         private LayoutControlGroup layoutControlGroupCosignerInfo;
@@ -23097,6 +23493,29 @@ namespace IAC2021SQL
         private LayoutControlItem layoutControlItemTConfirmed;
         private DevExpress.XtraEditors.CheckEdit checkEditCOSTConfirmed;
         private LayoutControlItem layoutControlItemCOSTConfirmed;
+        private DevExpress.XtraEditors.MemoEdit textEditRepoStatus;
+        private LayoutControlItem layoutControlItemRepoStatus;
+        private EmptySpaceItem emptySpaceItem155;
+        private DevExpress.XtraEditors.CheckEdit checkEditRepoPaymentArrangement;
+        private LayoutControlItem layoutControlItemRepoPaymentArrangement;
+        private EmptySpaceItem emptySpaceItem170;
+        private EmptySpaceItem emptySpaceItem176;
+        private DevExpress.XtraEditors.TextEdit textEditDemandAmount;
+        private LayoutControlItem layoutControlItemDemandAmount;
+        private DevExpress.XtraEditors.CheckEdit checkEditCollection;
+        private DevExpress.XtraEditors.TextEdit textEditAttorneyName;
+        private DevExpress.XtraEditors.CheckEdit checkEditAttorney;
+        private LayoutControlGroup layoutControlGroupRecovery;
+        private LayoutControlItem layoutControlItemAttorney;
+        private LayoutControlItem layoutControlItemAttorneyName;
+        private LayoutControlItem layoutControlItem60;
+        private DevExpress.XtraEditors.DateEdit dateEditAttorneyDate;
+        private LayoutControlItem layoutControlItemAttorneyDate;
+        private EmptySpaceItem emptySpaceItem218;
+        private EmptySpaceItem emptySpaceItem219;
+        private EmptySpaceItem emptySpaceItem220;
+        private EmptySpaceItem emptySpaceItem221;
+        private EmptySpaceItem emptySpaceItem222;
     }
 }
 

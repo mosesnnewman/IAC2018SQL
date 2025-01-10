@@ -20,7 +20,7 @@ namespace IAC2021SQL
         private void buttonExcel_Click(object sender, EventArgs e)
         {
             PaymentDataSetTableAdapters.ClosedOverPaymentsTableAdapter ClosedOverPaymentsTableAdapter = new PaymentDataSetTableAdapters.ClosedOverPaymentsTableAdapter();
-            ClosedOverPaymentsTableAdapter.CreateOverPayments(((DateTime)(nullableDateTimePickerFrom.EditValue)).Date, ((DateTime)(nullableDateTimePickerTo.EditValue)).Date);
+            ClosedOverPaymentsTableAdapter.CreateOverPayments(((DateTime)(nullableDateTimePickerFrom.EditValue)).Date, ((DateTime)(nullableDateTimePickerTo.EditValue)).Date, checkEditActive.Checked);
             ClosedOverpayment OP = new ClosedOverpayment();
             OP.CreateIt();
         }

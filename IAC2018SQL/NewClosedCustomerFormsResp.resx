@@ -2483,7 +2483,7 @@
     <value>richTextBoxEmailAddress</value>
   </data>
   <data name="&gt;&gt;richTextBoxEmailAddress.Type" xml:space="preserve">
-    <value>DevExpress.UITemplates.Collection.Editors.EmailBox, IAC2021SQL, Version=200.0.1.13, Culture=neutral, PublicKeyToken=null</value>
+    <value>DevExpress.UITemplates.Collection.Editors.EmailBox, IAC2021SQL, Version=200.0.1.15, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;richTextBoxEmailAddress.Parent" xml:space="preserve">
     <value>layoutControlCustomerInfo</value>
@@ -10043,7 +10043,7 @@
     <value>textBoxCosignerEmail</value>
   </data>
   <data name="&gt;&gt;textBoxCosignerEmail.Type" xml:space="preserve">
-    <value>DevExpress.UITemplates.Collection.Editors.EmailBox, IAC2021SQL, Version=200.0.1.13, Culture=neutral, PublicKeyToken=null</value>
+    <value>DevExpress.UITemplates.Collection.Editors.EmailBox, IAC2021SQL, Version=200.0.1.15, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;textBoxCosignerEmail.Parent" xml:space="preserve">
     <value>layoutControlCosignerInfo</value>
@@ -14379,6 +14379,168 @@
   <data name="&gt;&gt;xtraTabPageComments.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
+  <data name="dateEditAttorneyDate.EditValue" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="dateEditAttorneyDate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>506, 556</value>
+  </data>
+  <data name="dateEditAttorneyDate.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>119, 31</value>
+  </data>
+  <data name="dateEditAttorneyDate.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>119, 31</value>
+  </data>
+  <data name="dateEditAttorneyDate.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v24.2">
+    <value>Combo</value>
+  </data>
+  <data name="dateEditAttorneyDate.Properties.CalendarTimeProperties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v24.2">
+    <value>Combo</value>
+  </data>
+  <data name="dateEditAttorneyDate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>119, 31</value>
+  </data>
+  <data name="dateEditAttorneyDate.TabIndex" type="System.Int32, mscorlib">
+    <value>321</value>
+  </data>
+  <data name="&gt;&gt;dateEditAttorneyDate.Name" xml:space="preserve">
+    <value>dateEditAttorneyDate</value>
+  </data>
+  <data name="&gt;&gt;dateEditAttorneyDate.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.DateEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;dateEditAttorneyDate.Parent" xml:space="preserve">
+    <value>layoutControlRepo</value>
+  </data>
+  <data name="&gt;&gt;dateEditAttorneyDate.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="checkEditCollection.Location" type="System.Drawing.Point, System.Drawing">
+    <value>360, 597</value>
+  </data>
+  <data name="checkEditCollection.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>102, 31</value>
+  </data>
+  <data name="checkEditCollection.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>102, 31</value>
+  </data>
+  <data name="checkEditCollection.Properties.Caption" xml:space="preserve">
+    <value>Collection</value>
+  </data>
+  <data name="checkEditCollection.Properties.GlyphAlignment" type="DevExpress.Utils.HorzAlignment, DevExpress.Data.v24.2">
+    <value>Far</value>
+  </data>
+  <data name="checkEditCollection.Size" type="System.Drawing.Size, System.Drawing">
+    <value>102, 31</value>
+  </data>
+  <data name="checkEditCollection.TabIndex" type="System.Int32, mscorlib">
+    <value>320</value>
+  </data>
+  <data name="&gt;&gt;checkEditCollection.Name" xml:space="preserve">
+    <value>checkEditCollection</value>
+  </data>
+  <data name="&gt;&gt;checkEditCollection.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.CheckEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;checkEditCollection.Parent" xml:space="preserve">
+    <value>layoutControlRepo</value>
+  </data>
+  <data name="&gt;&gt;checkEditCollection.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="textEditAttorneyName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>106, 556</value>
+  </data>
+  <data name="textEditAttorneyName.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>355, 31</value>
+  </data>
+  <data name="textEditAttorneyName.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>355, 31</value>
+  </data>
+  <data name="textEditAttorneyName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>355, 31</value>
+  </data>
+  <data name="textEditAttorneyName.TabIndex" type="System.Int32, mscorlib">
+    <value>319</value>
+  </data>
+  <data name="&gt;&gt;textEditAttorneyName.Name" xml:space="preserve">
+    <value>textEditAttorneyName</value>
+  </data>
+  <data name="&gt;&gt;textEditAttorneyName.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;textEditAttorneyName.Parent" xml:space="preserve">
+    <value>layoutControlRepo</value>
+  </data>
+  <data name="&gt;&gt;textEditAttorneyName.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="checkEditAttorney.Location" type="System.Drawing.Point, System.Drawing">
+    <value>47, 556</value>
+  </data>
+  <data name="checkEditAttorney.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>0, 31</value>
+  </data>
+  <data name="checkEditAttorney.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>0, 31</value>
+  </data>
+  <data name="checkEditAttorney.Properties.Caption" xml:space="preserve">
+    <value>Atty</value>
+  </data>
+  <data name="checkEditAttorney.Properties.GlyphAlignment" type="DevExpress.Utils.HorzAlignment, DevExpress.Data.v24.2">
+    <value>Far</value>
+  </data>
+  <data name="checkEditAttorney.Size" type="System.Drawing.Size, System.Drawing">
+    <value>55, 31</value>
+  </data>
+  <data name="checkEditAttorney.TabIndex" type="System.Int32, mscorlib">
+    <value>318</value>
+  </data>
+  <data name="&gt;&gt;checkEditAttorney.Name" xml:space="preserve">
+    <value>checkEditAttorney</value>
+  </data>
+  <data name="&gt;&gt;checkEditAttorney.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.CheckEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;checkEditAttorney.Parent" xml:space="preserve">
+    <value>layoutControlRepo</value>
+  </data>
+  <data name="&gt;&gt;checkEditAttorney.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="textEditDemandAmount.Location" type="System.Drawing.Point, System.Drawing">
+    <value>341, 515</value>
+  </data>
+  <data name="textEditDemandAmount.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>119, 31</value>
+  </data>
+  <data name="textEditDemandAmount.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>119, 31</value>
+  </data>
+  <data name="textEditDemandAmount.Properties.BeepOnError" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="textEditDemandAmount.Properties.UseMaskAsDisplayFormat" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="textEditDemandAmount.Size" type="System.Drawing.Size, System.Drawing">
+    <value>119, 31</value>
+  </data>
+  <data name="textEditDemandAmount.TabIndex" type="System.Int32, mscorlib">
+    <value>317</value>
+  </data>
+  <data name="&gt;&gt;textEditDemandAmount.Name" xml:space="preserve">
+    <value>textEditDemandAmount</value>
+  </data>
+  <data name="&gt;&gt;textEditDemandAmount.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;textEditDemandAmount.Parent" xml:space="preserve">
+    <value>layoutControlRepo</value>
+  </data>
+  <data name="&gt;&gt;textEditDemandAmount.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
   <data name="nullableDateTimePickerAucDate.EditValue" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
   </data>
@@ -14389,10 +14551,10 @@
     <value>513, 303</value>
   </data>
   <data name="nullableDateTimePickerAucDate.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>119, 29</value>
+    <value>119, 31</value>
   </data>
   <data name="nullableDateTimePickerAucDate.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>119, 29</value>
+    <value>119, 31</value>
   </data>
   <data name="nullableDateTimePickerAucDate.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 12pt</value>
@@ -14404,7 +14566,7 @@
     <value>Combo</value>
   </data>
   <data name="nullableDateTimePickerAucDate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>119, 29</value>
+    <value>119, 31</value>
   </data>
   <data name="nullableDateTimePickerAucDate.TabIndex" type="System.Int32, mscorlib">
     <value>242</value>
@@ -14419,7 +14581,7 @@
     <value>layoutControlRepo</value>
   </data>
   <data name="&gt;&gt;nullableDateTimePickerAucDate.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>9</value>
   </data>
   <data name="nullableDateTimePickerLocDate.EditValue" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
@@ -14431,10 +14593,10 @@
     <value>513, 262</value>
   </data>
   <data name="nullableDateTimePickerLocDate.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>119, 29</value>
+    <value>119, 31</value>
   </data>
   <data name="nullableDateTimePickerLocDate.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>119, 29</value>
+    <value>119, 31</value>
   </data>
   <data name="nullableDateTimePickerLocDate.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 12pt</value>
@@ -14446,7 +14608,7 @@
     <value>Combo</value>
   </data>
   <data name="nullableDateTimePickerLocDate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>119, 29</value>
+    <value>119, 31</value>
   </data>
   <data name="nullableDateTimePickerLocDate.TabIndex" type="System.Int32, mscorlib">
     <value>241</value>
@@ -14461,19 +14623,19 @@
     <value>layoutControlRepo</value>
   </data>
   <data name="&gt;&gt;nullableDateTimePickerLocDate.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>10</value>
   </data>
   <data name="textBoxAuctionHouse.Location" type="System.Drawing.Point, System.Drawing">
-    <value>148, 303</value>
+    <value>149, 303</value>
   </data>
   <data name="textBoxAuctionHouse.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>355, 29</value>
+    <value>355, 31</value>
   </data>
   <data name="textBoxAuctionHouse.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>355, 29</value>
+    <value>355, 31</value>
   </data>
   <data name="textBoxAuctionHouse.Size" type="System.Drawing.Size, System.Drawing">
-    <value>355, 29</value>
+    <value>355, 31</value>
   </data>
   <data name="textBoxAuctionHouse.TabIndex" type="System.Int32, mscorlib">
     <value>240</value>
@@ -14488,19 +14650,19 @@
     <value>layoutControlRepo</value>
   </data>
   <data name="&gt;&gt;textBoxAuctionHouse.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>11</value>
   </data>
   <data name="textBoxCurrentLocation.Location" type="System.Drawing.Point, System.Drawing">
     <value>148, 262</value>
   </data>
   <data name="textBoxCurrentLocation.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>355, 29</value>
+    <value>355, 31</value>
   </data>
   <data name="textBoxCurrentLocation.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>355, 29</value>
+    <value>355, 31</value>
   </data>
   <data name="textBoxCurrentLocation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>355, 29</value>
+    <value>355, 31</value>
   </data>
   <data name="textBoxCurrentLocation.TabIndex" type="System.Int32, mscorlib">
     <value>239</value>
@@ -14515,19 +14677,19 @@
     <value>layoutControlRepo</value>
   </data>
   <data name="&gt;&gt;textBoxCurrentLocation.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>12</value>
   </data>
   <data name="textBoxRepoAgent.Location" type="System.Drawing.Point, System.Drawing">
     <value>148, 221</value>
   </data>
   <data name="textBoxRepoAgent.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>486, 29</value>
+    <value>486, 31</value>
   </data>
   <data name="textBoxRepoAgent.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>486, 29</value>
+    <value>486, 31</value>
   </data>
   <data name="textBoxRepoAgent.Size" type="System.Drawing.Size, System.Drawing">
-    <value>486, 29</value>
+    <value>486, 31</value>
   </data>
   <data name="textBoxRepoAgent.TabIndex" type="System.Int32, mscorlib">
     <value>238</value>
@@ -14542,7 +14704,7 @@
     <value>layoutControlRepo</value>
   </data>
   <data name="&gt;&gt;textBoxRepoAgent.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>13</value>
   </data>
   <data name="nullableDateTimePickerRepoDate.EditValue" type="System.Resources.ResXNullRef, System.Windows.Forms">
     <value />
@@ -14551,13 +14713,13 @@
     <value>False</value>
   </data>
   <data name="nullableDateTimePickerRepoDate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>682, 180</value>
+    <value>686, 180</value>
   </data>
   <data name="nullableDateTimePickerRepoDate.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>119, 29</value>
+    <value>119, 31</value>
   </data>
   <data name="nullableDateTimePickerRepoDate.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>119, 29</value>
+    <value>119, 31</value>
   </data>
   <data name="nullableDateTimePickerRepoDate.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 12pt</value>
@@ -14569,7 +14731,7 @@
     <value>Combo</value>
   </data>
   <data name="nullableDateTimePickerRepoDate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>119, 29</value>
+    <value>119, 31</value>
   </data>
   <data name="nullableDateTimePickerRepoDate.TabIndex" type="System.Int32, mscorlib">
     <value>237</value>
@@ -14584,16 +14746,16 @@
     <value>layoutControlRepo</value>
   </data>
   <data name="&gt;&gt;nullableDateTimePickerRepoDate.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>14</value>
   </data>
   <data name="comboBoxRepoCodes.Location" type="System.Drawing.Point, System.Drawing">
-    <value>421, 180</value>
+    <value>426, 180</value>
   </data>
   <data name="comboBoxRepoCodes.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>170, 29</value>
+    <value>170, 31</value>
   </data>
   <data name="comboBoxRepoCodes.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>170, 29</value>
+    <value>170, 31</value>
   </data>
   <data name="comboBoxRepoCodes.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v24.2">
     <value>Combo</value>
@@ -14602,7 +14764,7 @@
     <value />
   </data>
   <data name="comboBoxRepoCodes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>170, 29</value>
+    <value>170, 31</value>
   </data>
   <data name="comboBoxRepoCodes.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -14617,19 +14779,19 @@
     <value>layoutControlRepo</value>
   </data>
   <data name="&gt;&gt;comboBoxRepoCodes.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>15</value>
   </data>
   <data name="cUSTOMER_REPO_CDEtextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>354, 180</value>
+    <value>357, 180</value>
   </data>
   <data name="cUSTOMER_REPO_CDEtextBox.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>55, 29</value>
+    <value>55, 31</value>
   </data>
   <data name="cUSTOMER_REPO_CDEtextBox.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>55, 29</value>
+    <value>55, 31</value>
   </data>
   <data name="cUSTOMER_REPO_CDEtextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 29</value>
+    <value>55, 31</value>
   </data>
   <data name="cUSTOMER_REPO_CDEtextBox.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -14644,19 +14806,19 @@
     <value>layoutControlRepo</value>
   </data>
   <data name="&gt;&gt;cUSTOMER_REPO_CDEtextBox.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>16</value>
   </data>
   <data name="cUSTOMER_REPO_INDtextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>283, 180</value>
+    <value>286, 180</value>
   </data>
   <data name="cUSTOMER_REPO_INDtextBox.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>20, 29</value>
+    <value>20, 31</value>
   </data>
   <data name="cUSTOMER_REPO_INDtextBox.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>20, 29</value>
+    <value>20, 31</value>
   </data>
   <data name="cUSTOMER_REPO_INDtextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>20, 29</value>
+    <value>20, 31</value>
   </data>
   <data name="cUSTOMER_REPO_INDtextBox.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -14671,16 +14833,16 @@
     <value>layoutControlRepo</value>
   </data>
   <data name="&gt;&gt;cUSTOMER_REPO_INDtextBox.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>17</value>
   </data>
   <data name="comboBoxRepoInd.Location" type="System.Drawing.Point, System.Drawing">
     <value>148, 180</value>
   </data>
   <data name="comboBoxRepoInd.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>124, 29</value>
+    <value>124, 31</value>
   </data>
   <data name="comboBoxRepoInd.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>124, 29</value>
+    <value>124, 31</value>
   </data>
   <data name="comboBoxRepoInd.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v24.2">
     <value>Combo</value>
@@ -14689,7 +14851,7 @@
     <value />
   </data>
   <data name="comboBoxRepoInd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>124, 29</value>
+    <value>124, 31</value>
   </data>
   <data name="comboBoxRepoInd.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -14704,7 +14866,7 @@
     <value>layoutControlRepo</value>
   </data>
   <data name="&gt;&gt;comboBoxRepoInd.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>18</value>
   </data>
   <data name="textBox481.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -14734,7 +14896,7 @@
     <value>layoutControlRepo</value>
   </data>
   <data name="&gt;&gt;textBox481.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>19</value>
   </data>
   <data name="textBox471.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -14764,7 +14926,7 @@
     <value>layoutControlRepo</value>
   </data>
   <data name="&gt;&gt;textBox471.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>20</value>
   </data>
   <data name="textBox171.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -14794,7 +14956,7 @@
     <value>layoutControlRepo</value>
   </data>
   <data name="&gt;&gt;textBox171.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>21</value>
   </data>
   <data name="textBox191.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -14824,7 +14986,7 @@
     <value>layoutControlRepo</value>
   </data>
   <data name="&gt;&gt;textBox191.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>22</value>
   </data>
   <data name="textBox511.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -14854,7 +15016,7 @@
     <value>layoutControlRepo</value>
   </data>
   <data name="&gt;&gt;textBox511.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>23</value>
   </data>
   <data name="textBox501.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -14884,7 +15046,7 @@
     <value>layoutControlRepo</value>
   </data>
   <data name="&gt;&gt;textBox501.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>24</value>
   </data>
   <data name="textBox491.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -14914,7 +15076,64 @@
     <value>layoutControlRepo</value>
   </data>
   <data name="&gt;&gt;textBox491.ZOrder" xml:space="preserve">
-    <value>20</value>
+    <value>25</value>
+  </data>
+  <data name="textEditRepoStatus.Location" type="System.Drawing.Point, System.Drawing">
+    <value>148, 344</value>
+  </data>
+  <data name="textEditRepoStatus.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>489, 87</value>
+  </data>
+  <data name="textEditRepoStatus.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>489, 87</value>
+  </data>
+  <data name="textEditRepoStatus.Size" type="System.Drawing.Size, System.Drawing">
+    <value>489, 87</value>
+  </data>
+  <data name="textEditRepoStatus.TabIndex" type="System.Int32, mscorlib">
+    <value>312</value>
+  </data>
+  <data name="&gt;&gt;textEditRepoStatus.Name" xml:space="preserve">
+    <value>textEditRepoStatus</value>
+  </data>
+  <data name="&gt;&gt;textEditRepoStatus.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.MemoEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;textEditRepoStatus.Parent" xml:space="preserve">
+    <value>layoutControlRepo</value>
+  </data>
+  <data name="&gt;&gt;textEditRepoStatus.ZOrder" xml:space="preserve">
+    <value>26</value>
+  </data>
+  <data name="checkEditRepoPaymentArrangement.Location" type="System.Drawing.Point, System.Drawing">
+    <value>149, 437</value>
+  </data>
+  <data name="checkEditRepoPaymentArrangement.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>195, 31</value>
+  </data>
+  <data name="checkEditRepoPaymentArrangement.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>195, 31</value>
+  </data>
+  <data name="checkEditRepoPaymentArrangement.Properties.Caption" xml:space="preserve">
+    <value>Payment Arrangement?</value>
+  </data>
+  <data name="checkEditRepoPaymentArrangement.Size" type="System.Drawing.Size, System.Drawing">
+    <value>195, 31</value>
+  </data>
+  <data name="checkEditRepoPaymentArrangement.TabIndex" type="System.Int32, mscorlib">
+    <value>316</value>
+  </data>
+  <data name="&gt;&gt;checkEditRepoPaymentArrangement.Name" xml:space="preserve">
+    <value>checkEditRepoPaymentArrangement</value>
+  </data>
+  <data name="&gt;&gt;checkEditRepoPaymentArrangement.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.CheckEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;checkEditRepoPaymentArrangement.Parent" xml:space="preserve">
+    <value>layoutControlRepo</value>
+  </data>
+  <data name="&gt;&gt;checkEditRepoPaymentArrangement.ZOrder" xml:space="preserve">
+    <value>27</value>
   </data>
   <data name="layoutControlRepo.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -15023,6 +15242,36 @@
   </data>
   <data name="layoutControlItemAuctionDate.Text" xml:space="preserve">
     <value> </value>
+  </data>
+  <data name="layoutControlItemRepoStatus.ControlAlignment" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopLeft</value>
+  </data>
+  <data name="layoutControlItemRepoStatus.CustomizationFormText" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="layoutControlItemRepoStatus.Text" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="layoutControlItemRepoPaymentArrangement.ControlAlignment" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopLeft</value>
+  </data>
+  <data name="layoutControlItemRepoPaymentArrangement.CustomizationFormText" xml:space="preserve">
+    <value>Payment Arrangement?</value>
+  </data>
+  <data name="layoutControlItemRepoPaymentArrangement.Text" xml:space="preserve">
+    <value>Payment Arrangement?</value>
+  </data>
+  <data name="layoutControlItemDemandAmount.Text" xml:space="preserve">
+    <value>Demand Amt</value>
+  </data>
+  <data name="layoutControlItemAttorneyDate.Text" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="layoutControlItemAttorneyName.Text" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="layoutControlGroupRecovery.Text" xml:space="preserve">
+    <value>Recovery</value>
   </data>
   <data name="layoutControlGroupRepoInfoDetail.Text" xml:space="preserve">
     <value>Repo Info Detail</value>
@@ -22713,12 +22962,6 @@
   <data name="&gt;&gt;emptySpaceItem146.Type" xml:space="preserve">
     <value>DevExpress.XtraLayout.EmptySpaceItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
-  <data name="&gt;&gt;emptySpaceItem138.Name" xml:space="preserve">
-    <value>emptySpaceItem138</value>
-  </data>
-  <data name="&gt;&gt;emptySpaceItem138.Type" xml:space="preserve">
-    <value>DevExpress.XtraLayout.EmptySpaceItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
   <data name="&gt;&gt;layoutControlItemCurrentLocation.Name" xml:space="preserve">
     <value>layoutControlItemCurrentLocation</value>
   </data>
@@ -22761,16 +23004,106 @@
   <data name="&gt;&gt;emptySpaceItem152.Type" xml:space="preserve">
     <value>DevExpress.XtraLayout.EmptySpaceItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
+  <data name="&gt;&gt;emptySpaceItem145.Name" xml:space="preserve">
+    <value>emptySpaceItem145</value>
+  </data>
+  <data name="&gt;&gt;emptySpaceItem145.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.EmptySpaceItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItemRepoStatus.Name" xml:space="preserve">
+    <value>layoutControlItemRepoStatus</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItemRepoStatus.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
   <data name="&gt;&gt;emptySpaceItem155.Name" xml:space="preserve">
     <value>emptySpaceItem155</value>
   </data>
   <data name="&gt;&gt;emptySpaceItem155.Type" xml:space="preserve">
     <value>DevExpress.XtraLayout.EmptySpaceItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
-  <data name="&gt;&gt;emptySpaceItem145.Name" xml:space="preserve">
-    <value>emptySpaceItem145</value>
+  <data name="&gt;&gt;layoutControlItemRepoPaymentArrangement.Name" xml:space="preserve">
+    <value>layoutControlItemRepoPaymentArrangement</value>
   </data>
-  <data name="&gt;&gt;emptySpaceItem145.Type" xml:space="preserve">
+  <data name="&gt;&gt;layoutControlItemRepoPaymentArrangement.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;emptySpaceItem170.Name" xml:space="preserve">
+    <value>emptySpaceItem170</value>
+  </data>
+  <data name="&gt;&gt;emptySpaceItem170.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.EmptySpaceItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;emptySpaceItem176.Name" xml:space="preserve">
+    <value>emptySpaceItem176</value>
+  </data>
+  <data name="&gt;&gt;emptySpaceItem176.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.EmptySpaceItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;layoutControlGroupRecovery.Name" xml:space="preserve">
+    <value>layoutControlGroupRecovery</value>
+  </data>
+  <data name="&gt;&gt;layoutControlGroupRecovery.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.LayoutControlGroup, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItemDemandAmount.Name" xml:space="preserve">
+    <value>layoutControlItemDemandAmount</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItemDemandAmount.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItemAttorney.Name" xml:space="preserve">
+    <value>layoutControlItemAttorney</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItemAttorney.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItem60.Name" xml:space="preserve">
+    <value>layoutControlItem60</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItem60.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItemAttorneyDate.Name" xml:space="preserve">
+    <value>layoutControlItemAttorneyDate</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItemAttorneyDate.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;emptySpaceItem218.Name" xml:space="preserve">
+    <value>emptySpaceItem218</value>
+  </data>
+  <data name="&gt;&gt;emptySpaceItem218.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.EmptySpaceItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItemAttorneyName.Name" xml:space="preserve">
+    <value>layoutControlItemAttorneyName</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItemAttorneyName.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;emptySpaceItem219.Name" xml:space="preserve">
+    <value>emptySpaceItem219</value>
+  </data>
+  <data name="&gt;&gt;emptySpaceItem219.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.EmptySpaceItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;emptySpaceItem220.Name" xml:space="preserve">
+    <value>emptySpaceItem220</value>
+  </data>
+  <data name="&gt;&gt;emptySpaceItem220.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.EmptySpaceItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;emptySpaceItem221.Name" xml:space="preserve">
+    <value>emptySpaceItem221</value>
+  </data>
+  <data name="&gt;&gt;emptySpaceItem221.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.EmptySpaceItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;emptySpaceItem222.Name" xml:space="preserve">
+    <value>emptySpaceItem222</value>
+  </data>
+  <data name="&gt;&gt;emptySpaceItem222.Type" xml:space="preserve">
     <value>DevExpress.XtraLayout.EmptySpaceItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
   <data name="&gt;&gt;gridViewRepoLog.Name" xml:space="preserve">
