@@ -25,11 +25,11 @@ using DevExpress.Data;
 using DevExpress.XtraBars;
 using DevExpress.XtraReports.UI;
 using DevExpress.DataAccess.Sql;
-using Microsoft.IdentityModel.Tokens;
 using IAC2021SQL.PaymentDataSetTableAdapters;
 using DevExpress.LookAndFeel;
 using DevExpress.XtraGrid;
-using DevExpress.CodeParser;
+using DevExpress.XtraRichEdit;
+using DevExpress.XtraRichEdit.API.Native;
 
 
 namespace IAC2021SQL
@@ -2055,27 +2055,6 @@ namespace IAC2021SQL
             }
         }
 
-        private void richTextBoxEmailAddress_Validating(object sender, CancelEventArgs e)
-        {
-            // Moses Newman 12/19/2019 switch to new generic Email validator.
-            //string errorMsg;
-            Program.EmailValidator(ref sender, ref e, ref this.errorProviderCustomerForm);
-            if (e.Cancel)
-            {
-                ((TextBox)sender).Select(0, ((TextBox)sender).Text.Length);
-            }
-            /*
-            if (!ValidEmailAddress(richTextBoxEmailAddress.Text, out errorMsg))
-            {
-                // Cancel the event and select the text to be corrected by the user.
-                e.Cancel = true;
-                textBox1.Select(0, richTextBoxEmailAddress.Text.Length);
-
-                // Set the ErrorProvider error with the text to display.  
-                this.errorProviderCustomerForm.SetError(richTextBoxEmailAddress, errorMsg);
-            }*/
-        }
-
         public bool ValidEmailAddress(string emailAddress, out string errorMessage)
         {
             // Do not require an email address
@@ -2104,11 +2083,6 @@ namespace IAC2021SQL
         {
             // If all conditions have been met, clear the ErrorProvider of errors.
             errorProviderCustomerForm.SetError(richTextBoxEmailAddress, "");
-        }
-
-        private void tabCustomerMaint_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void nullableDateTimePickerTitleDateReceived_ValueChanged(object sender, EventArgs e)
@@ -2294,22 +2268,6 @@ namespace IAC2021SQL
         {
             if (lbAddFlag || lbEdit)
                 toolStripButtonSave.Enabled = true;
-        }
-
-        // Moses Newman 12/18/2019 Validate cosigner email
-        private void textBoxCosignerEmail_Validating(object sender, CancelEventArgs e)
-        {
-            Program.EmailValidator(ref sender, ref e, ref this.errorProviderCustomerForm);
-            if (e.Cancel)
-            {
-                ((TextBox)sender).Select(0, ((TextBox)sender).Text.Length);
-            }
-
-        }
-
-        private void checkBoxSendToDealer_CheckedChanged(object sender, EventArgs e)
-        {
-
         }
 
         //Moses Newman 12/20/2019 Add Direct Email To Dealer Button
@@ -6975,20 +6933,15 @@ namespace IAC2021SQL
                    oFalse = true,
                    loQuery = null,
                    start = 0,
-                   end = 0, FileName = "";
+                   end = 0; 
 
             Int32 lnSeq = 0;
-            String lsCommentKey = "",lsFullComment = "";
+            String lsCommentKey = "",lsFullComment = "", FileName = "";
 
-            Microsoft.Office.Interop.Word._Application oWord = new Microsoft.Office.Interop.Word.Application();
-            oWord.Visible = true;
-            Microsoft.Office.Interop.Word._Document oWordDoc = new Microsoft.Office.Interop.Word.Document();
-
-            oWordDoc = oWord.Documents.Add();
-            Microsoft.Office.Interop.Word.Range rng = oWordDoc.Range(ref start, ref end);
-
-            Object oTemplatePath = "";
-
+            // Moses Newman 01/10/2025 Switch from WORD Office Interop to DevExpress Rich Edit Document Server.
+            var server = new RichEditDocumentServer();
+            Document doc = server.Document;
+            splashScreenManager1.ShowWaitForm();
             if (lnSeq == 0)
             {
                 loQuery = cOMMENTTableAdapter.SeqNoQuery(iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO"), DateTime.Now.Date);
@@ -7003,30 +6956,10 @@ namespace IAC2021SQL
             lsCommentKey = cUSTOMER_NOTextBox.EditValue.ToString().Trim() + DateTime.Now.Date.ToString("yyyyMMdd") + lnSeq.ToString().Trim() + Program.gsUserID;
             // Moses Newman 11/21/2017 Remove hard coded UNC Pathing.
             FileName = lsUNCROOT + @"CommentAttachments\SMS\" + lsCommentKey + ".docx";
-            rng.Text = CommentMessage;
-            rng.Select();
-            oWordDoc.Application.ActiveDocument.SaveAs2(FileName,
-                                                         Microsoft.Office.Interop.Word.WdSaveFormat.wdFormatDocumentDefault,
-                                                         ref oMissing,
-                                                         ref oMissing,
-                                                         ref oMissing,
-                                                         ref oMissing,
-                                                         ref oMissing,
-                                                         oTrue,
-                                                         ref oMissing,
-                                                         oTrue,
-                                                         ref oMissing,
-                                                         ref oMissing,
-                                                         ref oMissing,
-                                                         ref oMissing,
-                                                         ref oMissing,
-                                                         ref oMissing,
-                                                         ref oMissing);
-            oWordDoc.Saved = true;
-            oWordDoc.Close(ref oFalse, ref oMissing, ref oMissing);
-            oWordDoc = null;
-            oWord.Quit();
-            oWord = null;
+            doc.AppendText(CommentMessage);
+            server.SaveDocument(FileName, DocumentFormat.OpenXml);
+            server.Dispose();
+            server = null;
             WholeComment loTempComment;
 
             CommentMessage = (tbAddTextSent) ? (!tbCosginerTextSent ? "TEXT SENT: " : "COSIGNER TEXT SENT: ") + CommentMessage : CommentMessage;
@@ -7037,17 +6970,15 @@ namespace IAC2021SQL
                                         DateTime.Now.Date, lnSeq,
                                         Program.gsUserID,
                                         lsFullComment,
-                                        //loTempComment.Field1,
-                                        //loTempComment.Field2,
-                                        //loTempComment.Field3,
                                         "",
                                         iACDataSet.CUSTOMER.Rows[0].Field<Int32>("CUSTOMER_DEALER"),
                                         Program.gsUserID + "  ",
                                         DateTime.Now.Hour.ToString().PadLeft(2, '0') + DateTime.Now.Minute.ToString().PadLeft(2, '0') + DateTime.Now.Second.ToString().PadLeft(2, '0'),
                                         false, "", "",
-                                        0, @"WordDoc.bmp", FileName.ToString(), tnTemplateNo);
+                                        0, @"WordDoc.bmp", FileName, tnTemplateNo);
 
             cOMMENTTableAdapter.FillByCustNo(iACDataSet.COMMENT, cUSTOMER_NOTextBox.EditValue.ToString().Trim());
+            splashScreenManager1.CloseWaitForm();
             if (lbAddFlag || lbEdit)
                 toolStripButtonSave.Enabled = true;
         }

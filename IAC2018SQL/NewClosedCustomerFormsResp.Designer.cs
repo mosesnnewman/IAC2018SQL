@@ -122,6 +122,7 @@ namespace IAC2021SQL
             DevExpress.XtraLayout.RowDefinition rowDefinition10 = new DevExpress.XtraLayout.RowDefinition();
             DevExpress.XtraLayout.RowDefinition rowDefinition11 = new DevExpress.XtraLayout.RowDefinition();
             DevExpress.XtraLayout.RowDefinition rowDefinition12 = new DevExpress.XtraLayout.RowDefinition();
+            this.splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::IAC2021SQL.WaitFormMakeComment), true, true, true);
             this.cUSTOMERBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.iACDataSet = new IAC2021SQL.IACDataSet();
             this.cOMMENTBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -2949,6 +2950,10 @@ namespace IAC2021SQL
             resources.ApplyResources(label116, "label116");
             label116.BackColor = System.Drawing.Color.Transparent;
             label116.Name = "label116";
+            // 
+            // splashScreenManager1
+            // 
+            this.splashScreenManager1.ClosingDelay = 500;
             // 
             // cUSTOMERBindingSource
             // 
@@ -23516,6 +23521,7 @@ namespace IAC2021SQL
         private EmptySpaceItem emptySpaceItem220;
         private EmptySpaceItem emptySpaceItem221;
         private EmptySpaceItem emptySpaceItem222;
+        private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1;
     }
 }
 

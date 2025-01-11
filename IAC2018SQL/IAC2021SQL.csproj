@@ -41,7 +41,7 @@
     <SuiteName>IAC2021SQL</SuiteName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>16</ApplicationRevision>
+    <ApplicationRevision>17</ApplicationRevision>
     <ApplicationVersion>200.0.1.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -190,11 +190,9 @@
     <Reference Include="DevExpress.CodeParser.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <HintPath>..\packages\DevExpress.CodeParser.24.2.3\lib\net462\DevExpress.CodeParser.v24.2.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.Data.Desktop.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.Desktop.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <HintPath>..\packages\DevExpress.Data.Desktop.24.2.3\lib\net462\DevExpress.Data.Desktop.v24.2.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.Data.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <HintPath>..\packages\DevExpress.Data.24.2.3\lib\net462\DevExpress.Data.v24.2.dll</HintPath>
     </Reference>
@@ -207,7 +205,6 @@
     <Reference Include="DevExpress.Dialogs.v24.2.Core, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <HintPath>..\packages\DevExpress.Win.Dialogs.Core.24.2.3\lib\net462\DevExpress.Dialogs.v24.2.Core.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.Drawing.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Drawing.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <HintPath>..\packages\DevExpress.Drawing.24.2.3\lib\net462\DevExpress.Drawing.v24.2.dll</HintPath>
     </Reference>
@@ -224,7 +221,6 @@
     <Reference Include="DevExpress.PivotGrid.v24.2.Core, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <HintPath>..\packages\DevExpress.PivotGrid.Core.24.2.3\lib\net462\DevExpress.PivotGrid.v24.2.Core.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.Printing.v24.2.Core, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Printing.v24.2.Core, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <HintPath>..\packages\DevExpress.Printing.Core.24.2.3\lib\net462\DevExpress.Printing.v24.2.Core.dll</HintPath>
     </Reference>
@@ -237,7 +233,6 @@
     <Reference Include="DevExpress.Sparkline.v24.2.Core, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <HintPath>..\packages\DevExpress.Sparkline.Core.24.2.3\lib\net462\DevExpress.Sparkline.v24.2.Core.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.Utils.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <HintPath>..\packages\DevExpress.Utils.24.2.3\lib\net462\DevExpress.Utils.v24.2.dll</HintPath>
     </Reference>
@@ -254,7 +249,6 @@
     <Reference Include="DevExpress.XtraDialogs.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <HintPath>..\packages\DevExpress.Win.Dialogs.24.2.3\lib\net462\DevExpress.XtraDialogs.v24.2.dll</HintPath>
     </Reference>
-    <Reference Include="DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <HintPath>..\packages\DevExpress.Win.Navigation.24.2.3\lib\net462\DevExpress.XtraEditors.v24.2.dll</HintPath>
     </Reference>
@@ -415,10 +409,6 @@
     </Reference>
     <Reference Include="Microsoft.SqlServer.Management.Sdk.Sfc, Version=17.100.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.SqlServer.SqlManagementObjects.172.52.0\lib\net472\Microsoft.SqlServer.Management.Sdk.Sfc.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.SqlServer.Management.SmoMetadataProvider, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Windows\assembly\GAC_MSIL\Microsoft.SqlServer.Management.SmoMetadataProvider\14.0.0.0__89845dcd8080cc91\Microsoft.SqlServer.Management.SmoMetadataProvider.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.SqlServer.Management.SqlScriptPublish, Version=17.100.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.SqlServer.SqlManagementObjects.172.52.0\lib\net472\Microsoft.SqlServer.Management.SqlScriptPublish.dll</HintPath>
@@ -909,7 +899,6 @@
     <Reference Include="DevExpress.XtraLayout.v24.2" />
     <Reference Include="DevExpress.XtraBars.v24.2" />
     <Reference Include="DevExpress.XtraTreeList.v24.2" />
-    <Reference Include="EntityFramework" />
     <Reference Include="DevExpress.Mvvm.v24.2" />
   </ItemGroup>
   <ItemGroup>
@@ -1014,6 +1003,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Ticket.rpt</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WaitFormMakeComment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WaitFormMakeComment.Designer.cs">
+      <DependentUpon>WaitFormMakeComment.cs</DependentUpon>
     </Compile>
     <Compile Include="XtraFormOpenPayments.cs">
       <SubType>Form</SubType>
@@ -2268,6 +2263,9 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Ticket.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="WaitFormMakeComment.resx">
+      <DependentUpon>WaitFormMakeComment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="XtraFormOpenPayments.resx">
       <DependentUpon>XtraFormOpenPayments.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -3271,26 +3269,6 @@
       <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
-    <PublishFile Include="DevExpress.Data.Desktop.v24.2">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
-      <FileType>Assembly</FileType>
-    </PublishFile>
-    <PublishFile Include="DevExpress.Data.v24.2">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
-      <FileType>Assembly</FileType>
-    </PublishFile>
     <PublishFile Include="DevExpress.DataAccess.v24.2">
       <Visible>False</Visible>
       <Group>
@@ -3712,16 +3690,6 @@
       <FileType>Assembly</FileType>
     </PublishFile>
     <PublishFile Include="Microsoft.SqlServer.ManagedDTS">
-      <Visible>False</Visible>
-      <Group>
-      </Group>
-      <TargetPath>
-      </TargetPath>
-      <PublishState>Include</PublishState>
-      <IncludeHash>True</IncludeHash>
-      <FileType>Assembly</FileType>
-    </PublishFile>
-    <PublishFile Include="Microsoft.SqlServer.Management.SmoMetadataProvider">
       <Visible>False</Visible>
       <Group>
       </Group>
