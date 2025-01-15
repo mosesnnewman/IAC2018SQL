@@ -148,6 +148,7 @@ namespace IAC2021SQL
             else
                 ldEndDate = (DateTime)nullableDateTimePickerEndDate.EditValue;
             RepoDataSet repoDataSet = new RepoDataSet();
+            sqlDataSourceEXCEL.ConnectionName = "IAC2021SQL.Properties.Settings.IAC2010SQLConnectionString";
             sqlDataSourceEXCEL.Queries[0].Parameters[0].Value = lsAgeCode;
             sqlDataSourceEXCEL.Queries[0].Parameters[1].Value = ldStartDate;
             sqlDataSourceEXCEL.Queries[0].Parameters[2].Value = ldEndDate;

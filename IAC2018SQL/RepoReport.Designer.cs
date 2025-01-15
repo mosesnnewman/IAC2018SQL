@@ -124,7 +124,7 @@
             this.radioButtonR.Location = new System.Drawing.Point(21, 79);
             this.radioButtonR.Margin = new System.Windows.Forms.Padding(6);
             this.radioButtonR.Name = "radioButtonR";
-            this.radioButtonR.Size = new System.Drawing.Size(59, 17);
+            this.radioButtonR.Size = new System.Drawing.Size(74, 24);
             this.radioButtonR.TabIndex = 1;
             this.radioButtonR.TabStop = true;
             this.radioButtonR.Text = "&R Only";
@@ -136,7 +136,7 @@
             this.radioButtonIndBoth.Location = new System.Drawing.Point(21, 181);
             this.radioButtonIndBoth.Margin = new System.Windows.Forms.Padding(6);
             this.radioButtonIndBoth.Name = "radioButtonIndBoth";
-            this.radioButtonIndBoth.Size = new System.Drawing.Size(38, 17);
+            this.radioButtonIndBoth.Size = new System.Drawing.Size(44, 24);
             this.radioButtonIndBoth.TabIndex = 2;
             this.radioButtonIndBoth.TabStop = true;
             this.radioButtonIndBoth.Text = "&All";
@@ -164,7 +164,7 @@
             this.radioButtonZ.Location = new System.Drawing.Point(21, 147);
             this.radioButtonZ.Margin = new System.Windows.Forms.Padding(6);
             this.radioButtonZ.Name = "radioButtonZ";
-            this.radioButtonZ.Size = new System.Drawing.Size(58, 17);
+            this.radioButtonZ.Size = new System.Drawing.Size(72, 24);
             this.radioButtonZ.TabIndex = 5;
             this.radioButtonZ.TabStop = true;
             this.radioButtonZ.Text = "&Z Only";
@@ -176,7 +176,7 @@
             this.radioButtonI.Location = new System.Drawing.Point(21, 113);
             this.radioButtonI.Margin = new System.Windows.Forms.Padding(6);
             this.radioButtonI.Name = "radioButtonI";
-            this.radioButtonI.Size = new System.Drawing.Size(55, 17);
+            this.radioButtonI.Size = new System.Drawing.Size(67, 24);
             this.radioButtonI.TabIndex = 4;
             this.radioButtonI.TabStop = true;
             this.radioButtonI.Text = "&I Only";
@@ -188,7 +188,7 @@
             this.radioButtonP.Location = new System.Drawing.Point(21, 45);
             this.radioButtonP.Margin = new System.Windows.Forms.Padding(6);
             this.radioButtonP.Name = "radioButtonP";
-            this.radioButtonP.Size = new System.Drawing.Size(58, 17);
+            this.radioButtonP.Size = new System.Drawing.Size(72, 24);
             this.radioButtonP.TabIndex = 3;
             this.radioButtonP.TabStop = true;
             this.radioButtonP.Text = "&P Only";
@@ -272,7 +272,7 @@
             this.radioButtonStatusBoth.AutoSize = true;
             this.radioButtonStatusBoth.Location = new System.Drawing.Point(18, 94);
             this.radioButtonStatusBoth.Name = "radioButtonStatusBoth";
-            this.radioButtonStatusBoth.Size = new System.Drawing.Size(49, 17);
+            this.radioButtonStatusBoth.Size = new System.Drawing.Size(61, 24);
             this.radioButtonStatusBoth.TabIndex = 2;
             this.radioButtonStatusBoth.TabStop = true;
             this.radioButtonStatusBoth.Text = "&Both";
@@ -283,7 +283,7 @@
             this.radioButtonInactive.AutoSize = true;
             this.radioButtonInactive.Location = new System.Drawing.Point(18, 57);
             this.radioButtonInactive.Name = "radioButtonInactive";
-            this.radioButtonInactive.Size = new System.Drawing.Size(64, 17);
+            this.radioButtonInactive.Size = new System.Drawing.Size(82, 24);
             this.radioButtonInactive.TabIndex = 1;
             this.radioButtonInactive.TabStop = true;
             this.radioButtonInactive.Text = "&Inactive";
@@ -294,7 +294,7 @@
             this.radioButtonActive.AutoSize = true;
             this.radioButtonActive.Location = new System.Drawing.Point(18, 20);
             this.radioButtonActive.Name = "radioButtonActive";
-            this.radioButtonActive.Size = new System.Drawing.Size(55, 17);
+            this.radioButtonActive.Size = new System.Drawing.Size(70, 24);
             this.radioButtonActive.TabIndex = 0;
             this.radioButtonActive.TabStop = true;
             this.radioButtonActive.Text = "&Active";
@@ -311,7 +311,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.nullableDateTimePickerStartDate.Properties.LookAndFeel.SkinName = "McSkin";
             this.nullableDateTimePickerStartDate.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.nullableDateTimePickerStartDate.Size = new System.Drawing.Size(118, 20);
+            this.nullableDateTimePickerStartDate.Size = new System.Drawing.Size(118, 26);
             this.nullableDateTimePickerStartDate.TabIndex = 123;
             // 
             // nullableDateTimePickerEndDate
@@ -325,7 +325,7 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.nullableDateTimePickerEndDate.Properties.LookAndFeel.SkinName = "McSkin";
             this.nullableDateTimePickerEndDate.Properties.LookAndFeel.UseDefaultLookAndFeel = false;
-            this.nullableDateTimePickerEndDate.Size = new System.Drawing.Size(118, 20);
+            this.nullableDateTimePickerEndDate.Size = new System.Drawing.Size(118, 26);
             this.nullableDateTimePickerEndDate.TabIndex = 124;
             // 
             // labelStart
@@ -333,7 +333,7 @@
             this.labelStart.AutoSize = true;
             this.labelStart.Location = new System.Drawing.Point(36, 31);
             this.labelStart.Name = "labelStart";
-            this.labelStart.Size = new System.Drawing.Size(34, 13);
+            this.labelStart.Size = new System.Drawing.Size(48, 20);
             this.labelStart.TabIndex = 125;
             this.labelStart.Text = "Start:";
             // 
@@ -342,7 +342,7 @@
             this.labelEnd.AutoSize = true;
             this.labelEnd.Location = new System.Drawing.Point(37, 59);
             this.labelEnd.Name = "labelEnd";
-            this.labelEnd.Size = new System.Drawing.Size(30, 13);
+            this.labelEnd.Size = new System.Drawing.Size(42, 20);
             this.labelEnd.TabIndex = 126;
             this.labelEnd.Text = "End:";
             // 
@@ -417,7 +417,6 @@
             // 
             // sqlDataSourceEXCEL
             // 
-            this.sqlDataSourceEXCEL.ConnectionName = "IAC2021SQL.Properties.Settings.IAC2010SQLConnectionString";
             this.sqlDataSourceEXCEL.Name = "sqlDataSourceEXCEL";
             storedProcQuery1.MetaSerializable = "<Meta X=\"-70\" Y=\"-60\" Width=\"248\" Height=\"4481\" />";
             storedProcQuery1.Name = "CUSTOMER";

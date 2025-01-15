@@ -3146,6 +3146,9 @@ namespace IAC2021SQL
             }
             SetViewMode();
             gbInSave = false;
+            // Moses Newman after save go back to first tab.
+            xtraTabControlCustomerMaint.SelectedTabPageIndex = 0;
+            cUSTOMER_NOTextBox.Focus();
         }
 
         private void barButtonItem1_ItemClick(object sender, ItemClickEventArgs e)
@@ -3652,13 +3655,13 @@ namespace IAC2021SQL
                 case 1:
                     setRelatedData();
                     break;
-                case 4:
+                case 5:
                     if (checkEditSplitPay.Checked)
                         tabbedControlGroupBankInfo.TabPages[1].PageEnabled = true;
                     else
                         tabbedControlGroupBankInfo.TabPages[1].PageEnabled = false;
                     break;
-                case 7:
+                case 8:
                     setRelatedData();
                     // Moses Newman 12/1/2021 order by id descending
                     GridColumn colID = cOMMENTgridView.Columns["id"];

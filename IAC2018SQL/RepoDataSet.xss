@@ -8,7 +8,7 @@
   <Shapes>
     <Shape ID="DesignTable:RepoLog" ZOrder="3" X="28" Y="21" Height="292" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="22" OldDataTableHeight="0" SplitterPosition="228" />
     <Shape ID="DesignTable:CUSTOMER" ZOrder="2" X="348" Y="33" Height="275" Width="269" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="228" />
-    <Shape ID="DesignTable:CUSTOMERVEHICLE" ZOrder="1" X="648" Y="33" Height="305" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
+    <Shape ID="DesignTable:CUSTOMERVEHICLE" ZOrder="1" X="647" Y="32" Height="305" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
   </Shapes>
   <Connectors />
 </DiagramLayout>

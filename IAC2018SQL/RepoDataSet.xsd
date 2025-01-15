@@ -854,6 +854,9 @@
               <Mapping SourceColumn="COSTBoth" DataSetColumn="COSTBoth" />
               <Mapping SourceColumn="COSTPin" DataSetColumn="COSTPin" />
               <Mapping SourceColumn="COSTConfirmed" DataSetColumn="COSTConfirmed" />
+              <Mapping SourceColumn="ActiveDuty" DataSetColumn="ActiveDuty" />
+              <Mapping SourceColumn="ActiveDutyStart" DataSetColumn="ActiveDutyStart" />
+              <Mapping SourceColumn="ActiveDutyEnd" DataSetColumn="ActiveDutyEnd" />
               <Mapping SourceColumn="VEHICLE_CUST_NO" DataSetColumn="VEHICLE_CUST_NO" />
               <Mapping SourceColumn="VEHICLE_YEAR" DataSetColumn="VEHICLE_YEAR" />
               <Mapping SourceColumn="VEHICLE_MAKE" DataSetColumn="VEHICLE_MAKE" />
@@ -898,6 +901,23 @@
               <Mapping SourceColumn="ComprehensiveDeductible" DataSetColumn="ComprehensiveDeductible" />
               <Mapping SourceColumn="WarrantyCompany" DataSetColumn="WarrantyCompany" />
               <Mapping SourceColumn="WarrantyID" DataSetColumn="WarrantyID" />
+              <Mapping SourceColumn="Downpayment" DataSetColumn="Downpayment" />
+              <Mapping SourceColumn="PTI" DataSetColumn="PTI" />
+              <Mapping SourceColumn="DTI" DataSetColumn="DTI" />
+              <Mapping SourceColumn="TotalLoss" DataSetColumn="TotalLoss" />
+              <Mapping SourceColumn="TotalLossDate" DataSetColumn="TotalLossDate" />
+              <Mapping SourceColumn="LossStatus" DataSetColumn="LossStatus" />
+              <Mapping SourceColumn="LossClaimNumber" DataSetColumn="LossClaimNumber" />
+              <Mapping SourceColumn="LossClaimCompany" DataSetColumn="LossClaimCompany" />
+              <Mapping SourceColumn="LossClaimSettlementAmount" DataSetColumn="LossClaimSettlementAmount" />
+              <Mapping SourceColumn="LossClaimPaymentArrangement" DataSetColumn="LossClaimPaymentArrangement" />
+              <Mapping SourceColumn="GAPEmail" DataSetColumn="GAPEmail" />
+              <Mapping SourceColumn="RepoStatus" DataSetColumn="RepoStatus" />
+              <Mapping SourceColumn="DemandAmount" DataSetColumn="DemandAmount" />
+              <Mapping SourceColumn="Attorney" DataSetColumn="Attorney" />
+              <Mapping SourceColumn="AttorneyName" DataSetColumn="AttorneyName" />
+              <Mapping SourceColumn="AttorneyDate" DataSetColumn="AttorneyDate" />
+              <Mapping SourceColumn="Collection" DataSetColumn="Collection" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -2370,6 +2390,9 @@
                 </xs:simpleType>
               </xs:element>
               <xs:element name="COSTConfirmed" msprop:Generator_ColumnPropNameInRow="COSTConfirmed" msprop:Generator_ColumnPropNameInTable="COSTConfirmedColumn" msprop:Generator_ColumnVarNameInTable="columnCOSTConfirmed" msprop:Generator_UserColumnName="COSTConfirmed" type="xs:boolean" minOccurs="0" />
+              <xs:element name="ActiveDuty" msprop:Generator_ColumnPropNameInRow="ActiveDuty" msprop:Generator_ColumnPropNameInTable="ActiveDutyColumn" msprop:Generator_ColumnVarNameInTable="columnActiveDuty" msprop:Generator_UserColumnName="ActiveDuty" type="xs:boolean" minOccurs="0" />
+              <xs:element name="ActiveDutyStart" msprop:Generator_ColumnPropNameInRow="ActiveDutyStart" msprop:Generator_ColumnPropNameInTable="ActiveDutyStartColumn" msprop:Generator_ColumnVarNameInTable="columnActiveDutyStart" msprop:Generator_UserColumnName="ActiveDutyStart" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ActiveDutyEnd" msprop:Generator_ColumnPropNameInRow="ActiveDutyEnd" msprop:Generator_ColumnPropNameInTable="ActiveDutyEndColumn" msprop:Generator_ColumnVarNameInTable="columnActiveDutyEnd" msprop:Generator_UserColumnName="ActiveDutyEnd" type="xs:dateTime" minOccurs="0" />
               <xs:element name="VEHICLE_CUST_NO" msprop:Generator_ColumnPropNameInRow="VEHICLE_CUST_NO" msprop:Generator_ColumnPropNameInTable="VEHICLE_CUST_NOColumn" msprop:Generator_ColumnVarNameInTable="columnVEHICLE_CUST_NO" msprop:Generator_UserColumnName="VEHICLE_CUST_NO">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -2534,6 +2557,59 @@
                 </xs:simpleType>
               </xs:element>
               <xs:element name="WarrantyID" msprop:Generator_ColumnPropNameInRow="WarrantyID" msprop:Generator_ColumnPropNameInTable="WarrantyIDColumn" msprop:Generator_ColumnVarNameInTable="columnWarrantyID" msprop:Generator_UserColumnName="WarrantyID" type="xs:int" minOccurs="0" />
+              <xs:element name="Downpayment" msprop:Generator_ColumnPropNameInRow="Downpayment" msprop:Generator_ColumnPropNameInTable="DownpaymentColumn" msprop:Generator_ColumnVarNameInTable="columnDownpayment" msprop:Generator_UserColumnName="Downpayment" type="xs:decimal" minOccurs="0" />
+              <xs:element name="PTI" msprop:Generator_ColumnPropNameInRow="PTI" msprop:Generator_ColumnPropNameInTable="PTIColumn" msprop:Generator_ColumnVarNameInTable="columnPTI" msprop:Generator_UserColumnName="PTI" type="xs:decimal" minOccurs="0" />
+              <xs:element name="DTI" msprop:Generator_ColumnPropNameInRow="DTI" msprop:Generator_ColumnPropNameInTable="DTIColumn" msprop:Generator_ColumnVarNameInTable="columnDTI" msprop:Generator_UserColumnName="DTI" type="xs:decimal" minOccurs="0" />
+              <xs:element name="TotalLoss" msprop:Generator_ColumnPropNameInRow="TotalLoss" msprop:Generator_ColumnPropNameInTable="TotalLossColumn" msprop:Generator_ColumnVarNameInTable="columnTotalLoss" msprop:Generator_UserColumnName="TotalLoss" type="xs:boolean" minOccurs="0" />
+              <xs:element name="TotalLossDate" msprop:Generator_ColumnPropNameInRow="TotalLossDate" msprop:Generator_ColumnPropNameInTable="TotalLossDateColumn" msprop:Generator_ColumnVarNameInTable="columnTotalLossDate" msprop:Generator_UserColumnName="TotalLossDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="LossStatus" msprop:Generator_ColumnPropNameInRow="LossStatus" msprop:Generator_ColumnPropNameInTable="LossStatusColumn" msprop:Generator_ColumnVarNameInTable="columnLossStatus" msprop:Generator_UserColumnName="LossStatus" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LossClaimNumber" msprop:Generator_ColumnPropNameInRow="LossClaimNumber" msprop:Generator_ColumnPropNameInTable="LossClaimNumberColumn" msprop:Generator_ColumnVarNameInTable="columnLossClaimNumber" msprop:Generator_UserColumnName="LossClaimNumber" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LossClaimCompany" msprop:Generator_ColumnPropNameInRow="LossClaimCompany" msprop:Generator_ColumnPropNameInTable="LossClaimCompanyColumn" msprop:Generator_ColumnVarNameInTable="columnLossClaimCompany" msprop:Generator_UserColumnName="LossClaimCompany" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LossClaimSettlementAmount" msprop:Generator_ColumnPropNameInRow="LossClaimSettlementAmount" msprop:Generator_ColumnPropNameInTable="LossClaimSettlementAmountColumn" msprop:Generator_ColumnVarNameInTable="columnLossClaimSettlementAmount" msprop:Generator_UserColumnName="LossClaimSettlementAmount" type="xs:decimal" minOccurs="0" />
+              <xs:element name="LossClaimPaymentArrangement" msprop:Generator_ColumnPropNameInRow="LossClaimPaymentArrangement" msprop:Generator_ColumnPropNameInTable="LossClaimPaymentArrangementColumn" msprop:Generator_ColumnVarNameInTable="columnLossClaimPaymentArrangement" msprop:Generator_UserColumnName="LossClaimPaymentArrangement" type="xs:boolean" minOccurs="0" />
+              <xs:element name="GAPEmail" msprop:Generator_ColumnPropNameInRow="GAPEmail" msprop:Generator_ColumnPropNameInTable="GAPEmailColumn" msprop:Generator_ColumnVarNameInTable="columnGAPEmail" msprop:Generator_UserColumnName="GAPEmail" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RepoStatus" msprop:Generator_ColumnPropNameInRow="RepoStatus" msprop:Generator_ColumnPropNameInTable="RepoStatusColumn" msprop:Generator_ColumnVarNameInTable="columnRepoStatus" msprop:Generator_UserColumnName="RepoStatus" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DemandAmount" msprop:Generator_ColumnPropNameInRow="DemandAmount" msprop:Generator_ColumnPropNameInTable="DemandAmountColumn" msprop:Generator_ColumnVarNameInTable="columnDemandAmount" msprop:Generator_UserColumnName="DemandAmount" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Attorney" msprop:Generator_ColumnPropNameInRow="Attorney" msprop:Generator_ColumnPropNameInTable="AttorneyColumn" msprop:Generator_ColumnVarNameInTable="columnAttorney" msprop:Generator_UserColumnName="Attorney" type="xs:boolean" minOccurs="0" />
+              <xs:element name="AttorneyName" msprop:Generator_ColumnPropNameInRow="AttorneyName" msprop:Generator_ColumnPropNameInTable="AttorneyNameColumn" msprop:Generator_ColumnVarNameInTable="columnAttorneyName" msprop:Generator_UserColumnName="AttorneyName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AttorneyDate" msprop:Generator_ColumnPropNameInRow="AttorneyDate" msprop:Generator_ColumnPropNameInTable="AttorneyDateColumn" msprop:Generator_ColumnVarNameInTable="columnAttorneyDate" msprop:Generator_UserColumnName="AttorneyDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Collection" msprop:Generator_ColumnPropNameInRow="Collection" msprop:Generator_ColumnPropNameInTable="CollectionColumn" msprop:Generator_ColumnVarNameInTable="columnCollection" msprop:Generator_UserColumnName="Collection" type="xs:boolean" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

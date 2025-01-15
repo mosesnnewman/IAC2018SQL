@@ -4126,6 +4126,12 @@ namespace IAC2021SQL {
             
             private global::System.Data.DataColumn columnCOSTConfirmed;
             
+            private global::System.Data.DataColumn columnActiveDuty;
+            
+            private global::System.Data.DataColumn columnActiveDutyStart;
+            
+            private global::System.Data.DataColumn columnActiveDutyEnd;
+            
             private global::System.Data.DataColumn columnVEHICLE_CUST_NO;
             
             private global::System.Data.DataColumn columnVEHICLE_YEAR;
@@ -4213,6 +4219,40 @@ namespace IAC2021SQL {
             private global::System.Data.DataColumn columnWarrantyCompany;
             
             private global::System.Data.DataColumn columnWarrantyID;
+            
+            private global::System.Data.DataColumn columnDownpayment;
+            
+            private global::System.Data.DataColumn columnPTI;
+            
+            private global::System.Data.DataColumn columnDTI;
+            
+            private global::System.Data.DataColumn columnTotalLoss;
+            
+            private global::System.Data.DataColumn columnTotalLossDate;
+            
+            private global::System.Data.DataColumn columnLossStatus;
+            
+            private global::System.Data.DataColumn columnLossClaimNumber;
+            
+            private global::System.Data.DataColumn columnLossClaimCompany;
+            
+            private global::System.Data.DataColumn columnLossClaimSettlementAmount;
+            
+            private global::System.Data.DataColumn columnLossClaimPaymentArrangement;
+            
+            private global::System.Data.DataColumn columnGAPEmail;
+            
+            private global::System.Data.DataColumn columnRepoStatus;
+            
+            private global::System.Data.DataColumn columnDemandAmount;
+            
+            private global::System.Data.DataColumn columnAttorney;
+            
+            private global::System.Data.DataColumn columnAttorneyName;
+            
+            private global::System.Data.DataColumn columnAttorneyDate;
+            
+            private global::System.Data.DataColumn columnCollection;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
@@ -5681,6 +5721,30 @@ namespace IAC2021SQL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ActiveDutyColumn {
+                get {
+                    return this.columnActiveDuty;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ActiveDutyStartColumn {
+                get {
+                    return this.columnActiveDutyStart;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ActiveDutyEndColumn {
+                get {
+                    return this.columnActiveDutyEnd;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public global::System.Data.DataColumn VEHICLE_CUST_NOColumn {
                 get {
                     return this.columnVEHICLE_CUST_NO;
@@ -6033,6 +6097,142 @@ namespace IAC2021SQL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn DownpaymentColumn {
+                get {
+                    return this.columnDownpayment;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn PTIColumn {
+                get {
+                    return this.columnPTI;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn DTIColumn {
+                get {
+                    return this.columnDTI;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn TotalLossColumn {
+                get {
+                    return this.columnTotalLoss;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn TotalLossDateColumn {
+                get {
+                    return this.columnTotalLossDate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn LossStatusColumn {
+                get {
+                    return this.columnLossStatus;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn LossClaimNumberColumn {
+                get {
+                    return this.columnLossClaimNumber;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn LossClaimCompanyColumn {
+                get {
+                    return this.columnLossClaimCompany;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn LossClaimSettlementAmountColumn {
+                get {
+                    return this.columnLossClaimSettlementAmount;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn LossClaimPaymentArrangementColumn {
+                get {
+                    return this.columnLossClaimPaymentArrangement;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn GAPEmailColumn {
+                get {
+                    return this.columnGAPEmail;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn RepoStatusColumn {
+                get {
+                    return this.columnRepoStatus;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn DemandAmountColumn {
+                get {
+                    return this.columnDemandAmount;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn AttorneyColumn {
+                get {
+                    return this.columnAttorney;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn AttorneyNameColumn {
+                get {
+                    return this.columnAttorneyName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn AttorneyDateColumn {
+                get {
+                    return this.columnAttorneyDate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn CollectionColumn {
+                get {
+                    return this.columnCollection;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -6248,6 +6448,9 @@ namespace IAC2021SQL {
                         bool COSTBoth, 
                         string COSTPin, 
                         bool COSTConfirmed, 
+                        bool ActiveDuty, 
+                        System.DateTime ActiveDutyStart, 
+                        System.DateTime ActiveDutyEnd, 
                         string VEHICLE_CUST_NO, 
                         int VEHICLE_YEAR, 
                         string VEHICLE_MAKE, 
@@ -6291,7 +6494,24 @@ namespace IAC2021SQL {
                         bool HasComprehensive, 
                         decimal ComprehensiveDeductible, 
                         string WarrantyCompany, 
-                        int WarrantyID) {
+                        int WarrantyID, 
+                        decimal Downpayment, 
+                        decimal PTI, 
+                        decimal DTI, 
+                        bool TotalLoss, 
+                        System.DateTime TotalLossDate, 
+                        string LossStatus, 
+                        string LossClaimNumber, 
+                        string LossClaimCompany, 
+                        decimal LossClaimSettlementAmount, 
+                        bool LossClaimPaymentArrangement, 
+                        string GAPEmail, 
+                        string RepoStatus, 
+                        decimal DemandAmount, 
+                        bool Attorney, 
+                        string AttorneyName, 
+                        System.DateTime AttorneyDate, 
+                        bool Collection) {
                 CUSTOMERVEHICLERow rowCUSTOMERVEHICLERow = ((CUSTOMERVEHICLERow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         CustomerID,
@@ -6473,6 +6693,9 @@ namespace IAC2021SQL {
                         COSTBoth,
                         COSTPin,
                         COSTConfirmed,
+                        ActiveDuty,
+                        ActiveDutyStart,
+                        ActiveDutyEnd,
                         VEHICLE_CUST_NO,
                         VEHICLE_YEAR,
                         VEHICLE_MAKE,
@@ -6516,7 +6739,24 @@ namespace IAC2021SQL {
                         HasComprehensive,
                         ComprehensiveDeductible,
                         WarrantyCompany,
-                        WarrantyID};
+                        WarrantyID,
+                        Downpayment,
+                        PTI,
+                        DTI,
+                        TotalLoss,
+                        TotalLossDate,
+                        LossStatus,
+                        LossClaimNumber,
+                        LossClaimCompany,
+                        LossClaimSettlementAmount,
+                        LossClaimPaymentArrangement,
+                        GAPEmail,
+                        RepoStatus,
+                        DemandAmount,
+                        Attorney,
+                        AttorneyName,
+                        AttorneyDate,
+                        Collection};
                 rowCUSTOMERVEHICLERow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowCUSTOMERVEHICLERow);
                 return rowCUSTOMERVEHICLERow;
@@ -6726,6 +6966,9 @@ namespace IAC2021SQL {
                 this.columnCOSTBoth = base.Columns["COSTBoth"];
                 this.columnCOSTPin = base.Columns["COSTPin"];
                 this.columnCOSTConfirmed = base.Columns["COSTConfirmed"];
+                this.columnActiveDuty = base.Columns["ActiveDuty"];
+                this.columnActiveDutyStart = base.Columns["ActiveDutyStart"];
+                this.columnActiveDutyEnd = base.Columns["ActiveDutyEnd"];
                 this.columnVEHICLE_CUST_NO = base.Columns["VEHICLE_CUST_NO"];
                 this.columnVEHICLE_YEAR = base.Columns["VEHICLE_YEAR"];
                 this.columnVEHICLE_MAKE = base.Columns["VEHICLE_MAKE"];
@@ -6770,6 +7013,23 @@ namespace IAC2021SQL {
                 this.columnComprehensiveDeductible = base.Columns["ComprehensiveDeductible"];
                 this.columnWarrantyCompany = base.Columns["WarrantyCompany"];
                 this.columnWarrantyID = base.Columns["WarrantyID"];
+                this.columnDownpayment = base.Columns["Downpayment"];
+                this.columnPTI = base.Columns["PTI"];
+                this.columnDTI = base.Columns["DTI"];
+                this.columnTotalLoss = base.Columns["TotalLoss"];
+                this.columnTotalLossDate = base.Columns["TotalLossDate"];
+                this.columnLossStatus = base.Columns["LossStatus"];
+                this.columnLossClaimNumber = base.Columns["LossClaimNumber"];
+                this.columnLossClaimCompany = base.Columns["LossClaimCompany"];
+                this.columnLossClaimSettlementAmount = base.Columns["LossClaimSettlementAmount"];
+                this.columnLossClaimPaymentArrangement = base.Columns["LossClaimPaymentArrangement"];
+                this.columnGAPEmail = base.Columns["GAPEmail"];
+                this.columnRepoStatus = base.Columns["RepoStatus"];
+                this.columnDemandAmount = base.Columns["DemandAmount"];
+                this.columnAttorney = base.Columns["Attorney"];
+                this.columnAttorneyName = base.Columns["AttorneyName"];
+                this.columnAttorneyDate = base.Columns["AttorneyDate"];
+                this.columnCollection = base.Columns["Collection"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7133,6 +7393,12 @@ namespace IAC2021SQL {
                 base.Columns.Add(this.columnCOSTPin);
                 this.columnCOSTConfirmed = new global::System.Data.DataColumn("COSTConfirmed", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCOSTConfirmed);
+                this.columnActiveDuty = new global::System.Data.DataColumn("ActiveDuty", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnActiveDuty);
+                this.columnActiveDutyStart = new global::System.Data.DataColumn("ActiveDutyStart", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnActiveDutyStart);
+                this.columnActiveDutyEnd = new global::System.Data.DataColumn("ActiveDutyEnd", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnActiveDutyEnd);
                 this.columnVEHICLE_CUST_NO = new global::System.Data.DataColumn("VEHICLE_CUST_NO", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnVEHICLE_CUST_NO);
                 this.columnVEHICLE_YEAR = new global::System.Data.DataColumn("VEHICLE_YEAR", typeof(int), null, global::System.Data.MappingType.Element);
@@ -7221,6 +7487,40 @@ namespace IAC2021SQL {
                 base.Columns.Add(this.columnWarrantyCompany);
                 this.columnWarrantyID = new global::System.Data.DataColumn("WarrantyID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnWarrantyID);
+                this.columnDownpayment = new global::System.Data.DataColumn("Downpayment", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDownpayment);
+                this.columnPTI = new global::System.Data.DataColumn("PTI", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPTI);
+                this.columnDTI = new global::System.Data.DataColumn("DTI", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDTI);
+                this.columnTotalLoss = new global::System.Data.DataColumn("TotalLoss", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTotalLoss);
+                this.columnTotalLossDate = new global::System.Data.DataColumn("TotalLossDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTotalLossDate);
+                this.columnLossStatus = new global::System.Data.DataColumn("LossStatus", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLossStatus);
+                this.columnLossClaimNumber = new global::System.Data.DataColumn("LossClaimNumber", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLossClaimNumber);
+                this.columnLossClaimCompany = new global::System.Data.DataColumn("LossClaimCompany", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLossClaimCompany);
+                this.columnLossClaimSettlementAmount = new global::System.Data.DataColumn("LossClaimSettlementAmount", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLossClaimSettlementAmount);
+                this.columnLossClaimPaymentArrangement = new global::System.Data.DataColumn("LossClaimPaymentArrangement", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLossClaimPaymentArrangement);
+                this.columnGAPEmail = new global::System.Data.DataColumn("GAPEmail", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnGAPEmail);
+                this.columnRepoStatus = new global::System.Data.DataColumn("RepoStatus", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRepoStatus);
+                this.columnDemandAmount = new global::System.Data.DataColumn("DemandAmount", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDemandAmount);
+                this.columnAttorney = new global::System.Data.DataColumn("Attorney", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAttorney);
+                this.columnAttorneyName = new global::System.Data.DataColumn("AttorneyName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAttorneyName);
+                this.columnAttorneyDate = new global::System.Data.DataColumn("AttorneyDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAttorneyDate);
+                this.columnCollection = new global::System.Data.DataColumn("Collection", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCollection);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnCustomerID,
                                 this.columnVEHICLE_CUST_NO}, true));
@@ -7342,6 +7642,12 @@ namespace IAC2021SQL {
                 this.columnIssueName2.MaxLength = 50;
                 this.columnIssueName3.MaxLength = 50;
                 this.columnWarrantyCompany.MaxLength = 50;
+                this.columnLossStatus.MaxLength = 2147483647;
+                this.columnLossClaimNumber.MaxLength = 25;
+                this.columnLossClaimCompany.MaxLength = 50;
+                this.columnGAPEmail.MaxLength = 100;
+                this.columnRepoStatus.MaxLength = 2147483647;
+                this.columnAttorneyName.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -15504,6 +15810,54 @@ namespace IAC2021SQL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool ActiveDuty {
+                get {
+                    try {
+                        return ((bool)(this[this.tableCUSTOMERVEHICLE.ActiveDutyColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ActiveDuty\' in table \'CUSTOMERVEHICLE\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCUSTOMERVEHICLE.ActiveDutyColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public System.DateTime ActiveDutyStart {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableCUSTOMERVEHICLE.ActiveDutyStartColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ActiveDutyStart\' in table \'CUSTOMERVEHICLE\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCUSTOMERVEHICLE.ActiveDutyStartColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public System.DateTime ActiveDutyEnd {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableCUSTOMERVEHICLE.ActiveDutyEndColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'ActiveDutyEnd\' in table \'CUSTOMERVEHICLE\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCUSTOMERVEHICLE.ActiveDutyEndColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string VEHICLE_CUST_NO {
                 get {
                     return ((string)(this[this.tableCUSTOMERVEHICLE.VEHICLE_CUST_NOColumn]));
@@ -16194,6 +16548,280 @@ namespace IAC2021SQL {
                 }
                 set {
                     this[this.tableCUSTOMERVEHICLE.WarrantyIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal Downpayment {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableCUSTOMERVEHICLE.DownpaymentColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Downpayment\' in table \'CUSTOMERVEHICLE\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCUSTOMERVEHICLE.DownpaymentColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal PTI {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableCUSTOMERVEHICLE.PTIColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'PTI\' in table \'CUSTOMERVEHICLE\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCUSTOMERVEHICLE.PTIColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal DTI {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableCUSTOMERVEHICLE.DTIColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DTI\' in table \'CUSTOMERVEHICLE\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCUSTOMERVEHICLE.DTIColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool TotalLoss {
+                get {
+                    try {
+                        return ((bool)(this[this.tableCUSTOMERVEHICLE.TotalLossColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TotalLoss\' in table \'CUSTOMERVEHICLE\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCUSTOMERVEHICLE.TotalLossColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public System.DateTime TotalLossDate {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableCUSTOMERVEHICLE.TotalLossDateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TotalLossDate\' in table \'CUSTOMERVEHICLE\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCUSTOMERVEHICLE.TotalLossDateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string LossStatus {
+                get {
+                    try {
+                        return ((string)(this[this.tableCUSTOMERVEHICLE.LossStatusColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'LossStatus\' in table \'CUSTOMERVEHICLE\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCUSTOMERVEHICLE.LossStatusColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string LossClaimNumber {
+                get {
+                    try {
+                        return ((string)(this[this.tableCUSTOMERVEHICLE.LossClaimNumberColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'LossClaimNumber\' in table \'CUSTOMERVEHICLE\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCUSTOMERVEHICLE.LossClaimNumberColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string LossClaimCompany {
+                get {
+                    try {
+                        return ((string)(this[this.tableCUSTOMERVEHICLE.LossClaimCompanyColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'LossClaimCompany\' in table \'CUSTOMERVEHICLE\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCUSTOMERVEHICLE.LossClaimCompanyColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal LossClaimSettlementAmount {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableCUSTOMERVEHICLE.LossClaimSettlementAmountColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'LossClaimSettlementAmount\' in table \'CUSTOMERVEHICLE\' is DB" +
+                                "Null.", e);
+                    }
+                }
+                set {
+                    this[this.tableCUSTOMERVEHICLE.LossClaimSettlementAmountColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool LossClaimPaymentArrangement {
+                get {
+                    try {
+                        return ((bool)(this[this.tableCUSTOMERVEHICLE.LossClaimPaymentArrangementColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'LossClaimPaymentArrangement\' in table \'CUSTOMERVEHICLE\' is " +
+                                "DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCUSTOMERVEHICLE.LossClaimPaymentArrangementColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string GAPEmail {
+                get {
+                    try {
+                        return ((string)(this[this.tableCUSTOMERVEHICLE.GAPEmailColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'GAPEmail\' in table \'CUSTOMERVEHICLE\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCUSTOMERVEHICLE.GAPEmailColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string RepoStatus {
+                get {
+                    try {
+                        return ((string)(this[this.tableCUSTOMERVEHICLE.RepoStatusColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'RepoStatus\' in table \'CUSTOMERVEHICLE\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCUSTOMERVEHICLE.RepoStatusColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public decimal DemandAmount {
+                get {
+                    try {
+                        return ((decimal)(this[this.tableCUSTOMERVEHICLE.DemandAmountColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DemandAmount\' in table \'CUSTOMERVEHICLE\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCUSTOMERVEHICLE.DemandAmountColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Attorney {
+                get {
+                    try {
+                        return ((bool)(this[this.tableCUSTOMERVEHICLE.AttorneyColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Attorney\' in table \'CUSTOMERVEHICLE\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCUSTOMERVEHICLE.AttorneyColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string AttorneyName {
+                get {
+                    try {
+                        return ((string)(this[this.tableCUSTOMERVEHICLE.AttorneyNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'AttorneyName\' in table \'CUSTOMERVEHICLE\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCUSTOMERVEHICLE.AttorneyNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public System.DateTime AttorneyDate {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableCUSTOMERVEHICLE.AttorneyDateColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'AttorneyDate\' in table \'CUSTOMERVEHICLE\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCUSTOMERVEHICLE.AttorneyDateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool Collection {
+                get {
+                    try {
+                        return ((bool)(this[this.tableCUSTOMERVEHICLE.CollectionColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Collection\' in table \'CUSTOMERVEHICLE\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCUSTOMERVEHICLE.CollectionColumn] = value;
                 }
             }
             
@@ -18287,6 +18915,42 @@ namespace IAC2021SQL {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsActiveDutyNull() {
+                return this.IsNull(this.tableCUSTOMERVEHICLE.ActiveDutyColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetActiveDutyNull() {
+                this[this.tableCUSTOMERVEHICLE.ActiveDutyColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsActiveDutyStartNull() {
+                return this.IsNull(this.tableCUSTOMERVEHICLE.ActiveDutyStartColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetActiveDutyStartNull() {
+                this[this.tableCUSTOMERVEHICLE.ActiveDutyStartColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsActiveDutyEndNull() {
+                return this.IsNull(this.tableCUSTOMERVEHICLE.ActiveDutyEndColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetActiveDutyEndNull() {
+                this[this.tableCUSTOMERVEHICLE.ActiveDutyEndColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IsVEHICLE_YEARNull() {
                 return this.IsNull(this.tableCUSTOMERVEHICLE.VEHICLE_YEARColumn);
             }
@@ -18787,6 +19451,210 @@ namespace IAC2021SQL {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetWarrantyIDNull() {
                 this[this.tableCUSTOMERVEHICLE.WarrantyIDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsDownpaymentNull() {
+                return this.IsNull(this.tableCUSTOMERVEHICLE.DownpaymentColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetDownpaymentNull() {
+                this[this.tableCUSTOMERVEHICLE.DownpaymentColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsPTINull() {
+                return this.IsNull(this.tableCUSTOMERVEHICLE.PTIColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetPTINull() {
+                this[this.tableCUSTOMERVEHICLE.PTIColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsDTINull() {
+                return this.IsNull(this.tableCUSTOMERVEHICLE.DTIColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetDTINull() {
+                this[this.tableCUSTOMERVEHICLE.DTIColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsTotalLossNull() {
+                return this.IsNull(this.tableCUSTOMERVEHICLE.TotalLossColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetTotalLossNull() {
+                this[this.tableCUSTOMERVEHICLE.TotalLossColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsTotalLossDateNull() {
+                return this.IsNull(this.tableCUSTOMERVEHICLE.TotalLossDateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetTotalLossDateNull() {
+                this[this.tableCUSTOMERVEHICLE.TotalLossDateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsLossStatusNull() {
+                return this.IsNull(this.tableCUSTOMERVEHICLE.LossStatusColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetLossStatusNull() {
+                this[this.tableCUSTOMERVEHICLE.LossStatusColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsLossClaimNumberNull() {
+                return this.IsNull(this.tableCUSTOMERVEHICLE.LossClaimNumberColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetLossClaimNumberNull() {
+                this[this.tableCUSTOMERVEHICLE.LossClaimNumberColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsLossClaimCompanyNull() {
+                return this.IsNull(this.tableCUSTOMERVEHICLE.LossClaimCompanyColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetLossClaimCompanyNull() {
+                this[this.tableCUSTOMERVEHICLE.LossClaimCompanyColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsLossClaimSettlementAmountNull() {
+                return this.IsNull(this.tableCUSTOMERVEHICLE.LossClaimSettlementAmountColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetLossClaimSettlementAmountNull() {
+                this[this.tableCUSTOMERVEHICLE.LossClaimSettlementAmountColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsLossClaimPaymentArrangementNull() {
+                return this.IsNull(this.tableCUSTOMERVEHICLE.LossClaimPaymentArrangementColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetLossClaimPaymentArrangementNull() {
+                this[this.tableCUSTOMERVEHICLE.LossClaimPaymentArrangementColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsGAPEmailNull() {
+                return this.IsNull(this.tableCUSTOMERVEHICLE.GAPEmailColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetGAPEmailNull() {
+                this[this.tableCUSTOMERVEHICLE.GAPEmailColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsRepoStatusNull() {
+                return this.IsNull(this.tableCUSTOMERVEHICLE.RepoStatusColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetRepoStatusNull() {
+                this[this.tableCUSTOMERVEHICLE.RepoStatusColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsDemandAmountNull() {
+                return this.IsNull(this.tableCUSTOMERVEHICLE.DemandAmountColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetDemandAmountNull() {
+                this[this.tableCUSTOMERVEHICLE.DemandAmountColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsAttorneyNull() {
+                return this.IsNull(this.tableCUSTOMERVEHICLE.AttorneyColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetAttorneyNull() {
+                this[this.tableCUSTOMERVEHICLE.AttorneyColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsAttorneyNameNull() {
+                return this.IsNull(this.tableCUSTOMERVEHICLE.AttorneyNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetAttorneyNameNull() {
+                this[this.tableCUSTOMERVEHICLE.AttorneyNameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsAttorneyDateNull() {
+                return this.IsNull(this.tableCUSTOMERVEHICLE.AttorneyDateColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetAttorneyDateNull() {
+                this[this.tableCUSTOMERVEHICLE.AttorneyDateColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsCollectionNull() {
+                return this.IsNull(this.tableCUSTOMERVEHICLE.CollectionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetCollectionNull() {
+                this[this.tableCUSTOMERVEHICLE.CollectionColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -22933,6 +23801,9 @@ namespace IAC2021SQL.RepoDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("COSTBoth", "COSTBoth");
             tableMapping.ColumnMappings.Add("COSTPin", "COSTPin");
             tableMapping.ColumnMappings.Add("COSTConfirmed", "COSTConfirmed");
+            tableMapping.ColumnMappings.Add("ActiveDuty", "ActiveDuty");
+            tableMapping.ColumnMappings.Add("ActiveDutyStart", "ActiveDutyStart");
+            tableMapping.ColumnMappings.Add("ActiveDutyEnd", "ActiveDutyEnd");
             tableMapping.ColumnMappings.Add("VEHICLE_CUST_NO", "VEHICLE_CUST_NO");
             tableMapping.ColumnMappings.Add("VEHICLE_YEAR", "VEHICLE_YEAR");
             tableMapping.ColumnMappings.Add("VEHICLE_MAKE", "VEHICLE_MAKE");
@@ -22977,6 +23848,23 @@ namespace IAC2021SQL.RepoDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("ComprehensiveDeductible", "ComprehensiveDeductible");
             tableMapping.ColumnMappings.Add("WarrantyCompany", "WarrantyCompany");
             tableMapping.ColumnMappings.Add("WarrantyID", "WarrantyID");
+            tableMapping.ColumnMappings.Add("Downpayment", "Downpayment");
+            tableMapping.ColumnMappings.Add("PTI", "PTI");
+            tableMapping.ColumnMappings.Add("DTI", "DTI");
+            tableMapping.ColumnMappings.Add("TotalLoss", "TotalLoss");
+            tableMapping.ColumnMappings.Add("TotalLossDate", "TotalLossDate");
+            tableMapping.ColumnMappings.Add("LossStatus", "LossStatus");
+            tableMapping.ColumnMappings.Add("LossClaimNumber", "LossClaimNumber");
+            tableMapping.ColumnMappings.Add("LossClaimCompany", "LossClaimCompany");
+            tableMapping.ColumnMappings.Add("LossClaimSettlementAmount", "LossClaimSettlementAmount");
+            tableMapping.ColumnMappings.Add("LossClaimPaymentArrangement", "LossClaimPaymentArrangement");
+            tableMapping.ColumnMappings.Add("GAPEmail", "GAPEmail");
+            tableMapping.ColumnMappings.Add("RepoStatus", "RepoStatus");
+            tableMapping.ColumnMappings.Add("DemandAmount", "DemandAmount");
+            tableMapping.ColumnMappings.Add("Attorney", "Attorney");
+            tableMapping.ColumnMappings.Add("AttorneyName", "AttorneyName");
+            tableMapping.ColumnMappings.Add("AttorneyDate", "AttorneyDate");
+            tableMapping.ColumnMappings.Add("Collection", "Collection");
             this._adapter.TableMappings.Add(tableMapping);
         }
         

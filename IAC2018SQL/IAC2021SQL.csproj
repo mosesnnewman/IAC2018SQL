@@ -41,7 +41,7 @@
     <SuiteName>IAC2021SQL</SuiteName>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>17</ApplicationRevision>
+    <ApplicationRevision>18</ApplicationRevision>
     <ApplicationVersion>200.0.1.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -998,6 +998,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PaymentDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="RepoDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RepoDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Ticket.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1614,11 +1619,6 @@
       <DependentUpon>PNSImport.cs</DependentUpon>
     </Compile>
     <Compile Include="RepoDataSet.cs">
-      <DependentUpon>RepoDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="RepoDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>RepoDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="OpenFirstPaymentDefaultReport.cs">
@@ -2891,7 +2891,6 @@
     <None Include="RepoDataSet.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>RepoDataSet.Designer.cs</LastGenOutput>
     </None>
     <None Include="RepoDataSet.xss">
       <DependentUpon>RepoDataSet.xsd</DependentUpon>

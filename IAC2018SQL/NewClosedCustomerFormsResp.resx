@@ -2483,7 +2483,7 @@
     <value>richTextBoxEmailAddress</value>
   </data>
   <data name="&gt;&gt;richTextBoxEmailAddress.Type" xml:space="preserve">
-    <value>DevExpress.UITemplates.Collection.Editors.EmailBox, IAC2021SQL, Version=200.0.1.16, Culture=neutral, PublicKeyToken=null</value>
+    <value>DevExpress.UITemplates.Collection.Editors.EmailBox, IAC2021SQL, Version=200.0.1.17, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;richTextBoxEmailAddress.Parent" xml:space="preserve">
     <value>layoutControlCustomerInfo</value>
@@ -8517,6 +8517,945 @@
   <data name="&gt;&gt;xtraTabPageVehicle.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="dateEditAttorneyDate.EditValue" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="dateEditAttorneyDate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>506, 556</value>
+  </data>
+  <data name="dateEditAttorneyDate.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>119, 31</value>
+  </data>
+  <data name="dateEditAttorneyDate.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>119, 31</value>
+  </data>
+  <data name="dateEditAttorneyDate.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v24.2">
+    <value>Combo</value>
+  </data>
+  <data name="dateEditAttorneyDate.Properties.CalendarTimeProperties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v24.2">
+    <value>Combo</value>
+  </data>
+  <data name="dateEditAttorneyDate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>119, 31</value>
+  </data>
+  <data name="dateEditAttorneyDate.TabIndex" type="System.Int32, mscorlib">
+    <value>321</value>
+  </data>
+  <data name="&gt;&gt;dateEditAttorneyDate.Name" xml:space="preserve">
+    <value>dateEditAttorneyDate</value>
+  </data>
+  <data name="&gt;&gt;dateEditAttorneyDate.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.DateEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;dateEditAttorneyDate.Parent" xml:space="preserve">
+    <value>layoutControlRepo</value>
+  </data>
+  <data name="&gt;&gt;dateEditAttorneyDate.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="checkEditCollection.Location" type="System.Drawing.Point, System.Drawing">
+    <value>360, 597</value>
+  </data>
+  <data name="checkEditCollection.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>102, 31</value>
+  </data>
+  <data name="checkEditCollection.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>102, 31</value>
+  </data>
+  <data name="checkEditCollection.Properties.Caption" xml:space="preserve">
+    <value>Collection</value>
+  </data>
+  <data name="checkEditCollection.Properties.GlyphAlignment" type="DevExpress.Utils.HorzAlignment, DevExpress.Data.v24.2">
+    <value>Far</value>
+  </data>
+  <data name="checkEditCollection.Size" type="System.Drawing.Size, System.Drawing">
+    <value>102, 31</value>
+  </data>
+  <data name="checkEditCollection.TabIndex" type="System.Int32, mscorlib">
+    <value>320</value>
+  </data>
+  <data name="&gt;&gt;checkEditCollection.Name" xml:space="preserve">
+    <value>checkEditCollection</value>
+  </data>
+  <data name="&gt;&gt;checkEditCollection.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.CheckEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;checkEditCollection.Parent" xml:space="preserve">
+    <value>layoutControlRepo</value>
+  </data>
+  <data name="&gt;&gt;checkEditCollection.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="textEditAttorneyName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>106, 556</value>
+  </data>
+  <data name="textEditAttorneyName.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>355, 31</value>
+  </data>
+  <data name="textEditAttorneyName.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>355, 31</value>
+  </data>
+  <data name="textEditAttorneyName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>355, 31</value>
+  </data>
+  <data name="textEditAttorneyName.TabIndex" type="System.Int32, mscorlib">
+    <value>319</value>
+  </data>
+  <data name="&gt;&gt;textEditAttorneyName.Name" xml:space="preserve">
+    <value>textEditAttorneyName</value>
+  </data>
+  <data name="&gt;&gt;textEditAttorneyName.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;textEditAttorneyName.Parent" xml:space="preserve">
+    <value>layoutControlRepo</value>
+  </data>
+  <data name="&gt;&gt;textEditAttorneyName.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="checkEditAttorney.Location" type="System.Drawing.Point, System.Drawing">
+    <value>47, 556</value>
+  </data>
+  <data name="checkEditAttorney.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>0, 31</value>
+  </data>
+  <data name="checkEditAttorney.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>0, 31</value>
+  </data>
+  <data name="checkEditAttorney.Properties.Caption" xml:space="preserve">
+    <value>Atty</value>
+  </data>
+  <data name="checkEditAttorney.Properties.GlyphAlignment" type="DevExpress.Utils.HorzAlignment, DevExpress.Data.v24.2">
+    <value>Far</value>
+  </data>
+  <data name="checkEditAttorney.Size" type="System.Drawing.Size, System.Drawing">
+    <value>55, 31</value>
+  </data>
+  <data name="checkEditAttorney.TabIndex" type="System.Int32, mscorlib">
+    <value>318</value>
+  </data>
+  <data name="&gt;&gt;checkEditAttorney.Name" xml:space="preserve">
+    <value>checkEditAttorney</value>
+  </data>
+  <data name="&gt;&gt;checkEditAttorney.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.CheckEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;checkEditAttorney.Parent" xml:space="preserve">
+    <value>layoutControlRepo</value>
+  </data>
+  <data name="&gt;&gt;checkEditAttorney.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="textEditDemandAmount.Location" type="System.Drawing.Point, System.Drawing">
+    <value>341, 515</value>
+  </data>
+  <data name="textEditDemandAmount.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>119, 31</value>
+  </data>
+  <data name="textEditDemandAmount.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>119, 31</value>
+  </data>
+  <data name="textEditDemandAmount.Properties.BeepOnError" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="textEditDemandAmount.Properties.UseMaskAsDisplayFormat" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="textEditDemandAmount.Size" type="System.Drawing.Size, System.Drawing">
+    <value>119, 31</value>
+  </data>
+  <data name="textEditDemandAmount.TabIndex" type="System.Int32, mscorlib">
+    <value>317</value>
+  </data>
+  <data name="&gt;&gt;textEditDemandAmount.Name" xml:space="preserve">
+    <value>textEditDemandAmount</value>
+  </data>
+  <data name="&gt;&gt;textEditDemandAmount.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;textEditDemandAmount.Parent" xml:space="preserve">
+    <value>layoutControlRepo</value>
+  </data>
+  <data name="&gt;&gt;textEditDemandAmount.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="nullableDateTimePickerAucDate.EditValue" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="nullableDateTimePickerAucDate.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="nullableDateTimePickerAucDate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>513, 303</value>
+  </data>
+  <data name="nullableDateTimePickerAucDate.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>119, 31</value>
+  </data>
+  <data name="nullableDateTimePickerAucDate.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>119, 31</value>
+  </data>
+  <data name="nullableDateTimePickerAucDate.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="nullableDateTimePickerAucDate.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v24.2">
+    <value>Combo</value>
+  </data>
+  <data name="nullableDateTimePickerAucDate.Properties.CalendarTimeProperties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v24.2">
+    <value>Combo</value>
+  </data>
+  <data name="nullableDateTimePickerAucDate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>119, 31</value>
+  </data>
+  <data name="nullableDateTimePickerAucDate.TabIndex" type="System.Int32, mscorlib">
+    <value>242</value>
+  </data>
+  <data name="&gt;&gt;nullableDateTimePickerAucDate.Name" xml:space="preserve">
+    <value>nullableDateTimePickerAucDate</value>
+  </data>
+  <data name="&gt;&gt;nullableDateTimePickerAucDate.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.DateEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;nullableDateTimePickerAucDate.Parent" xml:space="preserve">
+    <value>layoutControlRepo</value>
+  </data>
+  <data name="&gt;&gt;nullableDateTimePickerAucDate.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="nullableDateTimePickerLocDate.EditValue" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="nullableDateTimePickerLocDate.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="nullableDateTimePickerLocDate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>513, 262</value>
+  </data>
+  <data name="nullableDateTimePickerLocDate.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>119, 31</value>
+  </data>
+  <data name="nullableDateTimePickerLocDate.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>119, 31</value>
+  </data>
+  <data name="nullableDateTimePickerLocDate.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="nullableDateTimePickerLocDate.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v24.2">
+    <value>Combo</value>
+  </data>
+  <data name="nullableDateTimePickerLocDate.Properties.CalendarTimeProperties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v24.2">
+    <value>Combo</value>
+  </data>
+  <data name="nullableDateTimePickerLocDate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>119, 31</value>
+  </data>
+  <data name="nullableDateTimePickerLocDate.TabIndex" type="System.Int32, mscorlib">
+    <value>241</value>
+  </data>
+  <data name="&gt;&gt;nullableDateTimePickerLocDate.Name" xml:space="preserve">
+    <value>nullableDateTimePickerLocDate</value>
+  </data>
+  <data name="&gt;&gt;nullableDateTimePickerLocDate.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.DateEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;nullableDateTimePickerLocDate.Parent" xml:space="preserve">
+    <value>layoutControlRepo</value>
+  </data>
+  <data name="&gt;&gt;nullableDateTimePickerLocDate.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="textBoxAuctionHouse.Location" type="System.Drawing.Point, System.Drawing">
+    <value>149, 303</value>
+  </data>
+  <data name="textBoxAuctionHouse.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>355, 31</value>
+  </data>
+  <data name="textBoxAuctionHouse.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>355, 31</value>
+  </data>
+  <data name="textBoxAuctionHouse.Size" type="System.Drawing.Size, System.Drawing">
+    <value>355, 31</value>
+  </data>
+  <data name="textBoxAuctionHouse.TabIndex" type="System.Int32, mscorlib">
+    <value>240</value>
+  </data>
+  <data name="&gt;&gt;textBoxAuctionHouse.Name" xml:space="preserve">
+    <value>textBoxAuctionHouse</value>
+  </data>
+  <data name="&gt;&gt;textBoxAuctionHouse.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;textBoxAuctionHouse.Parent" xml:space="preserve">
+    <value>layoutControlRepo</value>
+  </data>
+  <data name="&gt;&gt;textBoxAuctionHouse.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="textBoxCurrentLocation.Location" type="System.Drawing.Point, System.Drawing">
+    <value>148, 262</value>
+  </data>
+  <data name="textBoxCurrentLocation.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>355, 31</value>
+  </data>
+  <data name="textBoxCurrentLocation.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>355, 31</value>
+  </data>
+  <data name="textBoxCurrentLocation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>355, 31</value>
+  </data>
+  <data name="textBoxCurrentLocation.TabIndex" type="System.Int32, mscorlib">
+    <value>239</value>
+  </data>
+  <data name="&gt;&gt;textBoxCurrentLocation.Name" xml:space="preserve">
+    <value>textBoxCurrentLocation</value>
+  </data>
+  <data name="&gt;&gt;textBoxCurrentLocation.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;textBoxCurrentLocation.Parent" xml:space="preserve">
+    <value>layoutControlRepo</value>
+  </data>
+  <data name="&gt;&gt;textBoxCurrentLocation.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="textBoxRepoAgent.Location" type="System.Drawing.Point, System.Drawing">
+    <value>148, 221</value>
+  </data>
+  <data name="textBoxRepoAgent.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>486, 31</value>
+  </data>
+  <data name="textBoxRepoAgent.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>486, 31</value>
+  </data>
+  <data name="textBoxRepoAgent.Size" type="System.Drawing.Size, System.Drawing">
+    <value>486, 31</value>
+  </data>
+  <data name="textBoxRepoAgent.TabIndex" type="System.Int32, mscorlib">
+    <value>238</value>
+  </data>
+  <data name="&gt;&gt;textBoxRepoAgent.Name" xml:space="preserve">
+    <value>textBoxRepoAgent</value>
+  </data>
+  <data name="&gt;&gt;textBoxRepoAgent.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;textBoxRepoAgent.Parent" xml:space="preserve">
+    <value>layoutControlRepo</value>
+  </data>
+  <data name="&gt;&gt;textBoxRepoAgent.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="nullableDateTimePickerRepoDate.EditValue" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
+  <data name="nullableDateTimePickerRepoDate.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="nullableDateTimePickerRepoDate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>686, 180</value>
+  </data>
+  <data name="nullableDateTimePickerRepoDate.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>119, 31</value>
+  </data>
+  <data name="nullableDateTimePickerRepoDate.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>119, 31</value>
+  </data>
+  <data name="nullableDateTimePickerRepoDate.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="nullableDateTimePickerRepoDate.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v24.2">
+    <value>Combo</value>
+  </data>
+  <data name="nullableDateTimePickerRepoDate.Properties.CalendarTimeProperties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v24.2">
+    <value>Combo</value>
+  </data>
+  <data name="nullableDateTimePickerRepoDate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>119, 31</value>
+  </data>
+  <data name="nullableDateTimePickerRepoDate.TabIndex" type="System.Int32, mscorlib">
+    <value>237</value>
+  </data>
+  <data name="&gt;&gt;nullableDateTimePickerRepoDate.Name" xml:space="preserve">
+    <value>nullableDateTimePickerRepoDate</value>
+  </data>
+  <data name="&gt;&gt;nullableDateTimePickerRepoDate.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.DateEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;nullableDateTimePickerRepoDate.Parent" xml:space="preserve">
+    <value>layoutControlRepo</value>
+  </data>
+  <data name="&gt;&gt;nullableDateTimePickerRepoDate.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="comboBoxRepoCodes.Location" type="System.Drawing.Point, System.Drawing">
+    <value>426, 180</value>
+  </data>
+  <data name="comboBoxRepoCodes.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>170, 31</value>
+  </data>
+  <data name="comboBoxRepoCodes.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>170, 31</value>
+  </data>
+  <data name="comboBoxRepoCodes.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v24.2">
+    <value>Combo</value>
+  </data>
+  <data name="comboBoxRepoCodes.Properties.NullText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="comboBoxRepoCodes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>170, 31</value>
+  </data>
+  <data name="comboBoxRepoCodes.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;comboBoxRepoCodes.Name" xml:space="preserve">
+    <value>comboBoxRepoCodes</value>
+  </data>
+  <data name="&gt;&gt;comboBoxRepoCodes.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.LookUpEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;comboBoxRepoCodes.Parent" xml:space="preserve">
+    <value>layoutControlRepo</value>
+  </data>
+  <data name="&gt;&gt;comboBoxRepoCodes.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="cUSTOMER_REPO_CDEtextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>357, 180</value>
+  </data>
+  <data name="cUSTOMER_REPO_CDEtextBox.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>55, 31</value>
+  </data>
+  <data name="cUSTOMER_REPO_CDEtextBox.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>55, 31</value>
+  </data>
+  <data name="cUSTOMER_REPO_CDEtextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>55, 31</value>
+  </data>
+  <data name="cUSTOMER_REPO_CDEtextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;cUSTOMER_REPO_CDEtextBox.Name" xml:space="preserve">
+    <value>cUSTOMER_REPO_CDEtextBox</value>
+  </data>
+  <data name="&gt;&gt;cUSTOMER_REPO_CDEtextBox.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;cUSTOMER_REPO_CDEtextBox.Parent" xml:space="preserve">
+    <value>layoutControlRepo</value>
+  </data>
+  <data name="&gt;&gt;cUSTOMER_REPO_CDEtextBox.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="cUSTOMER_REPO_INDtextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>286, 180</value>
+  </data>
+  <data name="cUSTOMER_REPO_INDtextBox.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>20, 31</value>
+  </data>
+  <data name="cUSTOMER_REPO_INDtextBox.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>20, 31</value>
+  </data>
+  <data name="cUSTOMER_REPO_INDtextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>20, 31</value>
+  </data>
+  <data name="cUSTOMER_REPO_INDtextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;cUSTOMER_REPO_INDtextBox.Name" xml:space="preserve">
+    <value>cUSTOMER_REPO_INDtextBox</value>
+  </data>
+  <data name="&gt;&gt;cUSTOMER_REPO_INDtextBox.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;cUSTOMER_REPO_INDtextBox.Parent" xml:space="preserve">
+    <value>layoutControlRepo</value>
+  </data>
+  <data name="&gt;&gt;cUSTOMER_REPO_INDtextBox.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="comboBoxRepoInd.Location" type="System.Drawing.Point, System.Drawing">
+    <value>148, 180</value>
+  </data>
+  <data name="comboBoxRepoInd.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>124, 31</value>
+  </data>
+  <data name="comboBoxRepoInd.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>124, 31</value>
+  </data>
+  <data name="comboBoxRepoInd.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v24.2">
+    <value>Combo</value>
+  </data>
+  <data name="comboBoxRepoInd.Properties.NullText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="comboBoxRepoInd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>124, 31</value>
+  </data>
+  <data name="comboBoxRepoInd.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;comboBoxRepoInd.Name" xml:space="preserve">
+    <value>comboBoxRepoInd</value>
+  </data>
+  <data name="&gt;&gt;comboBoxRepoInd.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.LookUpEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;comboBoxRepoInd.Parent" xml:space="preserve">
+    <value>layoutControlRepo</value>
+  </data>
+  <data name="&gt;&gt;comboBoxRepoInd.ZOrder" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="textBox481.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="textBox481.Location" type="System.Drawing.Point, System.Drawing">
+    <value>702, 61</value>
+  </data>
+  <data name="textBox481.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>67, 29</value>
+  </data>
+  <data name="textBox481.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>67, 29</value>
+  </data>
+  <data name="textBox481.Size" type="System.Drawing.Size, System.Drawing">
+    <value>67, 29</value>
+  </data>
+  <data name="textBox481.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;textBox481.Name" xml:space="preserve">
+    <value>textBox481</value>
+  </data>
+  <data name="&gt;&gt;textBox481.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;textBox481.Parent" xml:space="preserve">
+    <value>layoutControlRepo</value>
+  </data>
+  <data name="&gt;&gt;textBox481.ZOrder" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="textBox471.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="textBox471.Location" type="System.Drawing.Point, System.Drawing">
+    <value>830, 61</value>
+  </data>
+  <data name="textBox471.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>136, 29</value>
+  </data>
+  <data name="textBox471.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>136, 29</value>
+  </data>
+  <data name="textBox471.Size" type="System.Drawing.Size, System.Drawing">
+    <value>136, 29</value>
+  </data>
+  <data name="textBox471.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;textBox471.Name" xml:space="preserve">
+    <value>textBox471</value>
+  </data>
+  <data name="&gt;&gt;textBox471.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;textBox471.Parent" xml:space="preserve">
+    <value>layoutControlRepo</value>
+  </data>
+  <data name="&gt;&gt;textBox471.ZOrder" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="textBox171.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="textBox171.Location" type="System.Drawing.Point, System.Drawing">
+    <value>971, 61</value>
+  </data>
+  <data name="textBox171.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>212, 29</value>
+  </data>
+  <data name="textBox171.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>212, 29</value>
+  </data>
+  <data name="textBox171.Size" type="System.Drawing.Size, System.Drawing">
+    <value>212, 29</value>
+  </data>
+  <data name="textBox171.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;textBox171.Name" xml:space="preserve">
+    <value>textBox171</value>
+  </data>
+  <data name="&gt;&gt;textBox171.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;textBox171.Parent" xml:space="preserve">
+    <value>layoutControlRepo</value>
+  </data>
+  <data name="&gt;&gt;textBox171.ZOrder" xml:space="preserve">
+    <value>21</value>
+  </data>
+  <data name="textBox191.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="textBox191.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1188, 61</value>
+  </data>
+  <data name="textBox191.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>41, 29</value>
+  </data>
+  <data name="textBox191.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>41, 29</value>
+  </data>
+  <data name="textBox191.Size" type="System.Drawing.Size, System.Drawing">
+    <value>41, 29</value>
+  </data>
+  <data name="textBox191.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;textBox191.Name" xml:space="preserve">
+    <value>textBox191</value>
+  </data>
+  <data name="&gt;&gt;textBox191.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;textBox191.Parent" xml:space="preserve">
+    <value>layoutControlRepo</value>
+  </data>
+  <data name="&gt;&gt;textBox191.ZOrder" xml:space="preserve">
+    <value>22</value>
+  </data>
+  <data name="textBox511.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="textBox511.Location" type="System.Drawing.Point, System.Drawing">
+    <value>646, 102</value>
+  </data>
+  <data name="textBox511.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>43, 29</value>
+  </data>
+  <data name="textBox511.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>43, 29</value>
+  </data>
+  <data name="textBox511.Size" type="System.Drawing.Size, System.Drawing">
+    <value>43, 29</value>
+  </data>
+  <data name="textBox511.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;textBox511.Name" xml:space="preserve">
+    <value>textBox511</value>
+  </data>
+  <data name="&gt;&gt;textBox511.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;textBox511.Parent" xml:space="preserve">
+    <value>layoutControlRepo</value>
+  </data>
+  <data name="&gt;&gt;textBox511.ZOrder" xml:space="preserve">
+    <value>23</value>
+  </data>
+  <data name="textBox501.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="textBox501.Location" type="System.Drawing.Point, System.Drawing">
+    <value>690, 102</value>
+  </data>
+  <data name="textBox501.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>29, 29</value>
+  </data>
+  <data name="textBox501.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>29, 29</value>
+  </data>
+  <data name="textBox501.Size" type="System.Drawing.Size, System.Drawing">
+    <value>29, 29</value>
+  </data>
+  <data name="textBox501.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;textBox501.Name" xml:space="preserve">
+    <value>textBox501</value>
+  </data>
+  <data name="&gt;&gt;textBox501.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;textBox501.Parent" xml:space="preserve">
+    <value>layoutControlRepo</value>
+  </data>
+  <data name="&gt;&gt;textBox501.ZOrder" xml:space="preserve">
+    <value>24</value>
+  </data>
+  <data name="textBox491.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="textBox491.Location" type="System.Drawing.Point, System.Drawing">
+    <value>720, 102</value>
+  </data>
+  <data name="textBox491.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>51, 29</value>
+  </data>
+  <data name="textBox491.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>51, 29</value>
+  </data>
+  <data name="textBox491.Size" type="System.Drawing.Size, System.Drawing">
+    <value>51, 29</value>
+  </data>
+  <data name="textBox491.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;textBox491.Name" xml:space="preserve">
+    <value>textBox491</value>
+  </data>
+  <data name="&gt;&gt;textBox491.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;textBox491.Parent" xml:space="preserve">
+    <value>layoutControlRepo</value>
+  </data>
+  <data name="&gt;&gt;textBox491.ZOrder" xml:space="preserve">
+    <value>25</value>
+  </data>
+  <data name="textEditRepoStatus.Location" type="System.Drawing.Point, System.Drawing">
+    <value>148, 344</value>
+  </data>
+  <data name="textEditRepoStatus.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>489, 87</value>
+  </data>
+  <data name="textEditRepoStatus.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>489, 87</value>
+  </data>
+  <data name="textEditRepoStatus.Size" type="System.Drawing.Size, System.Drawing">
+    <value>489, 87</value>
+  </data>
+  <data name="textEditRepoStatus.TabIndex" type="System.Int32, mscorlib">
+    <value>312</value>
+  </data>
+  <data name="&gt;&gt;textEditRepoStatus.Name" xml:space="preserve">
+    <value>textEditRepoStatus</value>
+  </data>
+  <data name="&gt;&gt;textEditRepoStatus.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.MemoEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;textEditRepoStatus.Parent" xml:space="preserve">
+    <value>layoutControlRepo</value>
+  </data>
+  <data name="&gt;&gt;textEditRepoStatus.ZOrder" xml:space="preserve">
+    <value>26</value>
+  </data>
+  <data name="checkEditRepoPaymentArrangement.Location" type="System.Drawing.Point, System.Drawing">
+    <value>149, 437</value>
+  </data>
+  <data name="checkEditRepoPaymentArrangement.MaximumSize" type="System.Drawing.Size, System.Drawing">
+    <value>195, 31</value>
+  </data>
+  <data name="checkEditRepoPaymentArrangement.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>195, 31</value>
+  </data>
+  <data name="checkEditRepoPaymentArrangement.Properties.Caption" xml:space="preserve">
+    <value>Payment Arrangement?</value>
+  </data>
+  <data name="checkEditRepoPaymentArrangement.Size" type="System.Drawing.Size, System.Drawing">
+    <value>195, 31</value>
+  </data>
+  <data name="checkEditRepoPaymentArrangement.TabIndex" type="System.Int32, mscorlib">
+    <value>316</value>
+  </data>
+  <data name="&gt;&gt;checkEditRepoPaymentArrangement.Name" xml:space="preserve">
+    <value>checkEditRepoPaymentArrangement</value>
+  </data>
+  <data name="&gt;&gt;checkEditRepoPaymentArrangement.Type" xml:space="preserve">
+    <value>DevExpress.XtraEditors.CheckEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;checkEditRepoPaymentArrangement.Parent" xml:space="preserve">
+    <value>layoutControlRepo</value>
+  </data>
+  <data name="&gt;&gt;checkEditRepoPaymentArrangement.ZOrder" xml:space="preserve">
+    <value>27</value>
+  </data>
+  <data name="layoutControlRepo.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="layoutControlRepo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="layoutControlGroup1.CustomizationFormText" xml:space="preserve">
+    <value>layoutControlGroupRepoInfoHeader</value>
+  </data>
+  <data name="layoutControlItem12.ControlAlignment" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopLeft</value>
+  </data>
+  <data name="layoutControlItem12.CustomizationFormText" xml:space="preserve">
+    <value>CUSTOMER NO:</value>
+  </data>
+  <data name="layoutControlItem12.Text" xml:space="preserve">
+    <value>CUSTOMER NO:</value>
+  </data>
+  <data name="layoutControlItem13.ControlAlignment" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopLeft</value>
+  </data>
+  <data name="layoutControlItem13.CustomizationFormText" xml:space="preserve">
+    <value>NAME:</value>
+  </data>
+  <data name="layoutControlItem13.Text" xml:space="preserve">
+    <value>NAME:</value>
+  </data>
+  <data name="layoutControlItem14.ControlAlignment" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopLeft</value>
+  </data>
+  <data name="layoutControlItem14.CustomizationFormText" xml:space="preserve">
+    <value>textBox17item</value>
+  </data>
+  <data name="layoutControlItem14.Text" xml:space="preserve">
+    <value>textBox17item</value>
+  </data>
+  <data name="layoutControlItem16.ControlAlignment" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopLeft</value>
+  </data>
+  <data name="layoutControlItem16.CustomizationFormText" xml:space="preserve">
+    <value>SS NUM:</value>
+  </data>
+  <data name="layoutControlItem16.Text" xml:space="preserve">
+    <value>SS NUM:</value>
+  </data>
+  <data name="layoutControlItem17.ControlAlignment" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopLeft</value>
+  </data>
+  <data name="layoutControlItem17.CustomizationFormText" xml:space="preserve">
+    <value>textBox50item</value>
+  </data>
+  <data name="layoutControlItem17.Text" xml:space="preserve">
+    <value>textBox50item</value>
+  </data>
+  <data name="layoutControlItem18.ControlAlignment" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopLeft</value>
+  </data>
+  <data name="layoutControlItem18.CustomizationFormText" xml:space="preserve">
+    <value>textBox49item</value>
+  </data>
+  <data name="layoutControlItem18.Text" xml:space="preserve">
+    <value>textBox49item</value>
+  </data>
+  <data name="layoutControlItem15.ControlAlignment" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopLeft</value>
+  </data>
+  <data name="layoutControlItem15.CustomizationFormText" xml:space="preserve">
+    <value>layoutContorlItemTitle</value>
+  </data>
+  <data name="layoutControlItem15.Text" xml:space="preserve">
+    <value>layoutContorlItemTitle</value>
+  </data>
+  <data name="layoutControlGroupRepoHeader.Text" xml:space="preserve">
+    <value>Repo Header</value>
+  </data>
+  <data name="layoutControlGroup1.Text" xml:space="preserve">
+    <value>Repo Info Header</value>
+  </data>
+  <data name="layoutControlItemcomboBoxRepoInd.Text" xml:space="preserve">
+    <value>Repo</value>
+  </data>
+  <data name="layoutControlItemcUSTOMER_REPO_INDtextBox.Text" xml:space="preserve">
+    <value> </value>
+  </data>
+  <data name="layoutControlItemcUSTOMER_REPO_CDEtextBox.Text" xml:space="preserve">
+    <value>Code</value>
+  </data>
+  <data name="layoutControlItemcomboBoxRepoCodes.Text" xml:space="preserve">
+    <value> </value>
+  </data>
+  <data name="layoutControlItemRepoDate.Text" xml:space="preserve">
+    <value>Repo Date</value>
+  </data>
+  <data name="layoutControlItemRepoAgent.Text" xml:space="preserve">
+    <value>Repo Agent</value>
+  </data>
+  <data name="layoutControlItemCurrentLocation.Text" xml:space="preserve">
+    <value>Current Location</value>
+  </data>
+  <data name="layoutControlItemLocationDate.Text" xml:space="preserve">
+    <value> </value>
+  </data>
+  <data name="layoutControlItemAuctionHouse.Text" xml:space="preserve">
+    <value>Auction House</value>
+  </data>
+  <data name="layoutControlItemAuctionDate.Text" xml:space="preserve">
+    <value> </value>
+  </data>
+  <data name="layoutControlItemRepoStatus.ControlAlignment" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopLeft</value>
+  </data>
+  <data name="layoutControlItemRepoStatus.CustomizationFormText" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="layoutControlItemRepoStatus.Text" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="layoutControlItemRepoPaymentArrangement.ControlAlignment" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopLeft</value>
+  </data>
+  <data name="layoutControlItemRepoPaymentArrangement.CustomizationFormText" xml:space="preserve">
+    <value>Payment Arrangement?</value>
+  </data>
+  <data name="layoutControlItemRepoPaymentArrangement.Text" xml:space="preserve">
+    <value>Payment Arrangement?</value>
+  </data>
+  <data name="layoutControlItemDemandAmount.Text" xml:space="preserve">
+    <value>Demand Amt</value>
+  </data>
+  <data name="layoutControlItemAttorneyDate.Text" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="layoutControlItemAttorneyName.Text" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="layoutControlGroupRecovery.Text" xml:space="preserve">
+    <value>Recovery</value>
+  </data>
+  <data name="layoutControlGroupRepoInfoDetail.Text" xml:space="preserve">
+    <value>Repo Info Detail</value>
+  </data>
+  <data name="layoutControlGroupRepos.Text" xml:space="preserve">
+    <value>Repo Info</value>
+  </data>
+  <data name="layoutControlRepo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1809, 745</value>
+  </data>
+  <data name="layoutControlRepo.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="layoutControlRepo.Text" xml:space="preserve">
+    <value>layoutControl4</value>
+  </data>
+  <data name="&gt;&gt;layoutControlRepo.Name" xml:space="preserve">
+    <value>layoutControlRepo</value>
+  </data>
+  <data name="&gt;&gt;layoutControlRepo.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.LayoutControl, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;layoutControlRepo.Parent" xml:space="preserve">
+    <value>xtraTabPageRepossession</value>
+  </data>
+  <data name="&gt;&gt;layoutControlRepo.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="xtraTabPageRepossession.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1809, 745</value>
+  </data>
+  <data name="xtraTabPageRepossession.Text" xml:space="preserve">
+    <value>Repos</value>
+  </data>
+  <data name="&gt;&gt;xtraTabPageRepossession.Name" xml:space="preserve">
+    <value>xtraTabPageRepossession</value>
+  </data>
+  <data name="&gt;&gt;xtraTabPageRepossession.Type" xml:space="preserve">
+    <value>DevExpress.XtraTab.XtraTabPage, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;xtraTabPageRepossession.Parent" xml:space="preserve">
+    <value>xtraTabControlCustomerMaint</value>
+  </data>
+  <data name="&gt;&gt;xtraTabPageRepossession.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
   <data name="checkEditCOSTConfirmed.AllowHtmlTextInToolTip" type="DevExpress.Utils.DefaultBoolean, DevExpress.Data.v24.2">
     <value>False</value>
   </data>
@@ -10043,7 +10982,7 @@
     <value>textBoxCosignerEmail</value>
   </data>
   <data name="&gt;&gt;textBoxCosignerEmail.Type" xml:space="preserve">
-    <value>DevExpress.UITemplates.Collection.Editors.EmailBox, IAC2021SQL, Version=200.0.1.16, Culture=neutral, PublicKeyToken=null</value>
+    <value>DevExpress.UITemplates.Collection.Editors.EmailBox, IAC2021SQL, Version=200.0.1.17, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;textBoxCosignerEmail.Parent" xml:space="preserve">
     <value>layoutControlCosignerInfo</value>
@@ -10649,7 +11588,7 @@
     <value>xtraTabControlCustomerMaint</value>
   </data>
   <data name="&gt;&gt;xtraTabPageCosigner.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="comboBoxEditExpYear.Location" type="System.Drawing.Point, System.Drawing">
     <value>903, 513</value>
@@ -12116,7 +13055,7 @@
     <value>xtraTabControlCustomerMaint</value>
   </data>
   <data name="&gt;&gt;xtraTabPageBank.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="textBoxBuyOutHist.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -13409,7 +14348,7 @@
     <value>xtraTabControlCustomerMaint</value>
   </data>
   <data name="&gt;&gt;xtraTabPageHistory.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
   </data>
   <data name="layoutControlInvoices.AutoScroll" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -13847,7 +14786,7 @@
     <value>xtraTabControlCustomerMaint</value>
   </data>
   <data name="&gt;&gt;xtraTabPageInvoices.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="cOMMENTGridControl.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 12pt</value>
@@ -14377,945 +15316,6 @@
     <value>xtraTabControlCustomerMaint</value>
   </data>
   <data name="&gt;&gt;xtraTabPageComments.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="dateEditAttorneyDate.EditValue" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
-  </data>
-  <data name="dateEditAttorneyDate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>506, 556</value>
-  </data>
-  <data name="dateEditAttorneyDate.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>119, 31</value>
-  </data>
-  <data name="dateEditAttorneyDate.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>119, 31</value>
-  </data>
-  <data name="dateEditAttorneyDate.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v24.2">
-    <value>Combo</value>
-  </data>
-  <data name="dateEditAttorneyDate.Properties.CalendarTimeProperties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v24.2">
-    <value>Combo</value>
-  </data>
-  <data name="dateEditAttorneyDate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>119, 31</value>
-  </data>
-  <data name="dateEditAttorneyDate.TabIndex" type="System.Int32, mscorlib">
-    <value>321</value>
-  </data>
-  <data name="&gt;&gt;dateEditAttorneyDate.Name" xml:space="preserve">
-    <value>dateEditAttorneyDate</value>
-  </data>
-  <data name="&gt;&gt;dateEditAttorneyDate.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.DateEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;dateEditAttorneyDate.Parent" xml:space="preserve">
-    <value>layoutControlRepo</value>
-  </data>
-  <data name="&gt;&gt;dateEditAttorneyDate.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="checkEditCollection.Location" type="System.Drawing.Point, System.Drawing">
-    <value>360, 597</value>
-  </data>
-  <data name="checkEditCollection.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>102, 31</value>
-  </data>
-  <data name="checkEditCollection.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>102, 31</value>
-  </data>
-  <data name="checkEditCollection.Properties.Caption" xml:space="preserve">
-    <value>Collection</value>
-  </data>
-  <data name="checkEditCollection.Properties.GlyphAlignment" type="DevExpress.Utils.HorzAlignment, DevExpress.Data.v24.2">
-    <value>Far</value>
-  </data>
-  <data name="checkEditCollection.Size" type="System.Drawing.Size, System.Drawing">
-    <value>102, 31</value>
-  </data>
-  <data name="checkEditCollection.TabIndex" type="System.Int32, mscorlib">
-    <value>320</value>
-  </data>
-  <data name="&gt;&gt;checkEditCollection.Name" xml:space="preserve">
-    <value>checkEditCollection</value>
-  </data>
-  <data name="&gt;&gt;checkEditCollection.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.CheckEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;checkEditCollection.Parent" xml:space="preserve">
-    <value>layoutControlRepo</value>
-  </data>
-  <data name="&gt;&gt;checkEditCollection.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="textEditAttorneyName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>106, 556</value>
-  </data>
-  <data name="textEditAttorneyName.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>355, 31</value>
-  </data>
-  <data name="textEditAttorneyName.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>355, 31</value>
-  </data>
-  <data name="textEditAttorneyName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>355, 31</value>
-  </data>
-  <data name="textEditAttorneyName.TabIndex" type="System.Int32, mscorlib">
-    <value>319</value>
-  </data>
-  <data name="&gt;&gt;textEditAttorneyName.Name" xml:space="preserve">
-    <value>textEditAttorneyName</value>
-  </data>
-  <data name="&gt;&gt;textEditAttorneyName.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;textEditAttorneyName.Parent" xml:space="preserve">
-    <value>layoutControlRepo</value>
-  </data>
-  <data name="&gt;&gt;textEditAttorneyName.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="checkEditAttorney.Location" type="System.Drawing.Point, System.Drawing">
-    <value>47, 556</value>
-  </data>
-  <data name="checkEditAttorney.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>0, 31</value>
-  </data>
-  <data name="checkEditAttorney.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>0, 31</value>
-  </data>
-  <data name="checkEditAttorney.Properties.Caption" xml:space="preserve">
-    <value>Atty</value>
-  </data>
-  <data name="checkEditAttorney.Properties.GlyphAlignment" type="DevExpress.Utils.HorzAlignment, DevExpress.Data.v24.2">
-    <value>Far</value>
-  </data>
-  <data name="checkEditAttorney.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 31</value>
-  </data>
-  <data name="checkEditAttorney.TabIndex" type="System.Int32, mscorlib">
-    <value>318</value>
-  </data>
-  <data name="&gt;&gt;checkEditAttorney.Name" xml:space="preserve">
-    <value>checkEditAttorney</value>
-  </data>
-  <data name="&gt;&gt;checkEditAttorney.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.CheckEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;checkEditAttorney.Parent" xml:space="preserve">
-    <value>layoutControlRepo</value>
-  </data>
-  <data name="&gt;&gt;checkEditAttorney.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="textEditDemandAmount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>341, 515</value>
-  </data>
-  <data name="textEditDemandAmount.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>119, 31</value>
-  </data>
-  <data name="textEditDemandAmount.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>119, 31</value>
-  </data>
-  <data name="textEditDemandAmount.Properties.BeepOnError" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="textEditDemandAmount.Properties.UseMaskAsDisplayFormat" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="textEditDemandAmount.Size" type="System.Drawing.Size, System.Drawing">
-    <value>119, 31</value>
-  </data>
-  <data name="textEditDemandAmount.TabIndex" type="System.Int32, mscorlib">
-    <value>317</value>
-  </data>
-  <data name="&gt;&gt;textEditDemandAmount.Name" xml:space="preserve">
-    <value>textEditDemandAmount</value>
-  </data>
-  <data name="&gt;&gt;textEditDemandAmount.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;textEditDemandAmount.Parent" xml:space="preserve">
-    <value>layoutControlRepo</value>
-  </data>
-  <data name="&gt;&gt;textEditDemandAmount.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="nullableDateTimePickerAucDate.EditValue" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
-  </data>
-  <data name="nullableDateTimePickerAucDate.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="nullableDateTimePickerAucDate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>513, 303</value>
-  </data>
-  <data name="nullableDateTimePickerAucDate.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>119, 31</value>
-  </data>
-  <data name="nullableDateTimePickerAucDate.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>119, 31</value>
-  </data>
-  <data name="nullableDateTimePickerAucDate.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt</value>
-  </data>
-  <data name="nullableDateTimePickerAucDate.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v24.2">
-    <value>Combo</value>
-  </data>
-  <data name="nullableDateTimePickerAucDate.Properties.CalendarTimeProperties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v24.2">
-    <value>Combo</value>
-  </data>
-  <data name="nullableDateTimePickerAucDate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>119, 31</value>
-  </data>
-  <data name="nullableDateTimePickerAucDate.TabIndex" type="System.Int32, mscorlib">
-    <value>242</value>
-  </data>
-  <data name="&gt;&gt;nullableDateTimePickerAucDate.Name" xml:space="preserve">
-    <value>nullableDateTimePickerAucDate</value>
-  </data>
-  <data name="&gt;&gt;nullableDateTimePickerAucDate.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.DateEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;nullableDateTimePickerAucDate.Parent" xml:space="preserve">
-    <value>layoutControlRepo</value>
-  </data>
-  <data name="&gt;&gt;nullableDateTimePickerAucDate.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="nullableDateTimePickerLocDate.EditValue" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
-  </data>
-  <data name="nullableDateTimePickerLocDate.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="nullableDateTimePickerLocDate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>513, 262</value>
-  </data>
-  <data name="nullableDateTimePickerLocDate.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>119, 31</value>
-  </data>
-  <data name="nullableDateTimePickerLocDate.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>119, 31</value>
-  </data>
-  <data name="nullableDateTimePickerLocDate.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt</value>
-  </data>
-  <data name="nullableDateTimePickerLocDate.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v24.2">
-    <value>Combo</value>
-  </data>
-  <data name="nullableDateTimePickerLocDate.Properties.CalendarTimeProperties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v24.2">
-    <value>Combo</value>
-  </data>
-  <data name="nullableDateTimePickerLocDate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>119, 31</value>
-  </data>
-  <data name="nullableDateTimePickerLocDate.TabIndex" type="System.Int32, mscorlib">
-    <value>241</value>
-  </data>
-  <data name="&gt;&gt;nullableDateTimePickerLocDate.Name" xml:space="preserve">
-    <value>nullableDateTimePickerLocDate</value>
-  </data>
-  <data name="&gt;&gt;nullableDateTimePickerLocDate.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.DateEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;nullableDateTimePickerLocDate.Parent" xml:space="preserve">
-    <value>layoutControlRepo</value>
-  </data>
-  <data name="&gt;&gt;nullableDateTimePickerLocDate.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="textBoxAuctionHouse.Location" type="System.Drawing.Point, System.Drawing">
-    <value>149, 303</value>
-  </data>
-  <data name="textBoxAuctionHouse.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>355, 31</value>
-  </data>
-  <data name="textBoxAuctionHouse.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>355, 31</value>
-  </data>
-  <data name="textBoxAuctionHouse.Size" type="System.Drawing.Size, System.Drawing">
-    <value>355, 31</value>
-  </data>
-  <data name="textBoxAuctionHouse.TabIndex" type="System.Int32, mscorlib">
-    <value>240</value>
-  </data>
-  <data name="&gt;&gt;textBoxAuctionHouse.Name" xml:space="preserve">
-    <value>textBoxAuctionHouse</value>
-  </data>
-  <data name="&gt;&gt;textBoxAuctionHouse.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;textBoxAuctionHouse.Parent" xml:space="preserve">
-    <value>layoutControlRepo</value>
-  </data>
-  <data name="&gt;&gt;textBoxAuctionHouse.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="textBoxCurrentLocation.Location" type="System.Drawing.Point, System.Drawing">
-    <value>148, 262</value>
-  </data>
-  <data name="textBoxCurrentLocation.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>355, 31</value>
-  </data>
-  <data name="textBoxCurrentLocation.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>355, 31</value>
-  </data>
-  <data name="textBoxCurrentLocation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>355, 31</value>
-  </data>
-  <data name="textBoxCurrentLocation.TabIndex" type="System.Int32, mscorlib">
-    <value>239</value>
-  </data>
-  <data name="&gt;&gt;textBoxCurrentLocation.Name" xml:space="preserve">
-    <value>textBoxCurrentLocation</value>
-  </data>
-  <data name="&gt;&gt;textBoxCurrentLocation.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;textBoxCurrentLocation.Parent" xml:space="preserve">
-    <value>layoutControlRepo</value>
-  </data>
-  <data name="&gt;&gt;textBoxCurrentLocation.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="textBoxRepoAgent.Location" type="System.Drawing.Point, System.Drawing">
-    <value>148, 221</value>
-  </data>
-  <data name="textBoxRepoAgent.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>486, 31</value>
-  </data>
-  <data name="textBoxRepoAgent.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>486, 31</value>
-  </data>
-  <data name="textBoxRepoAgent.Size" type="System.Drawing.Size, System.Drawing">
-    <value>486, 31</value>
-  </data>
-  <data name="textBoxRepoAgent.TabIndex" type="System.Int32, mscorlib">
-    <value>238</value>
-  </data>
-  <data name="&gt;&gt;textBoxRepoAgent.Name" xml:space="preserve">
-    <value>textBoxRepoAgent</value>
-  </data>
-  <data name="&gt;&gt;textBoxRepoAgent.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;textBoxRepoAgent.Parent" xml:space="preserve">
-    <value>layoutControlRepo</value>
-  </data>
-  <data name="&gt;&gt;textBoxRepoAgent.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
-  <data name="nullableDateTimePickerRepoDate.EditValue" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
-  </data>
-  <data name="nullableDateTimePickerRepoDate.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="nullableDateTimePickerRepoDate.Location" type="System.Drawing.Point, System.Drawing">
-    <value>686, 180</value>
-  </data>
-  <data name="nullableDateTimePickerRepoDate.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>119, 31</value>
-  </data>
-  <data name="nullableDateTimePickerRepoDate.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>119, 31</value>
-  </data>
-  <data name="nullableDateTimePickerRepoDate.Properties.Appearance.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt</value>
-  </data>
-  <data name="nullableDateTimePickerRepoDate.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v24.2">
-    <value>Combo</value>
-  </data>
-  <data name="nullableDateTimePickerRepoDate.Properties.CalendarTimeProperties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v24.2">
-    <value>Combo</value>
-  </data>
-  <data name="nullableDateTimePickerRepoDate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>119, 31</value>
-  </data>
-  <data name="nullableDateTimePickerRepoDate.TabIndex" type="System.Int32, mscorlib">
-    <value>237</value>
-  </data>
-  <data name="&gt;&gt;nullableDateTimePickerRepoDate.Name" xml:space="preserve">
-    <value>nullableDateTimePickerRepoDate</value>
-  </data>
-  <data name="&gt;&gt;nullableDateTimePickerRepoDate.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.DateEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;nullableDateTimePickerRepoDate.Parent" xml:space="preserve">
-    <value>layoutControlRepo</value>
-  </data>
-  <data name="&gt;&gt;nullableDateTimePickerRepoDate.ZOrder" xml:space="preserve">
-    <value>14</value>
-  </data>
-  <data name="comboBoxRepoCodes.Location" type="System.Drawing.Point, System.Drawing">
-    <value>426, 180</value>
-  </data>
-  <data name="comboBoxRepoCodes.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>170, 31</value>
-  </data>
-  <data name="comboBoxRepoCodes.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>170, 31</value>
-  </data>
-  <data name="comboBoxRepoCodes.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v24.2">
-    <value>Combo</value>
-  </data>
-  <data name="comboBoxRepoCodes.Properties.NullText" xml:space="preserve">
-    <value />
-  </data>
-  <data name="comboBoxRepoCodes.Size" type="System.Drawing.Size, System.Drawing">
-    <value>170, 31</value>
-  </data>
-  <data name="comboBoxRepoCodes.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;comboBoxRepoCodes.Name" xml:space="preserve">
-    <value>comboBoxRepoCodes</value>
-  </data>
-  <data name="&gt;&gt;comboBoxRepoCodes.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.LookUpEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;comboBoxRepoCodes.Parent" xml:space="preserve">
-    <value>layoutControlRepo</value>
-  </data>
-  <data name="&gt;&gt;comboBoxRepoCodes.ZOrder" xml:space="preserve">
-    <value>15</value>
-  </data>
-  <data name="cUSTOMER_REPO_CDEtextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>357, 180</value>
-  </data>
-  <data name="cUSTOMER_REPO_CDEtextBox.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>55, 31</value>
-  </data>
-  <data name="cUSTOMER_REPO_CDEtextBox.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>55, 31</value>
-  </data>
-  <data name="cUSTOMER_REPO_CDEtextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 31</value>
-  </data>
-  <data name="cUSTOMER_REPO_CDEtextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;cUSTOMER_REPO_CDEtextBox.Name" xml:space="preserve">
-    <value>cUSTOMER_REPO_CDEtextBox</value>
-  </data>
-  <data name="&gt;&gt;cUSTOMER_REPO_CDEtextBox.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;cUSTOMER_REPO_CDEtextBox.Parent" xml:space="preserve">
-    <value>layoutControlRepo</value>
-  </data>
-  <data name="&gt;&gt;cUSTOMER_REPO_CDEtextBox.ZOrder" xml:space="preserve">
-    <value>16</value>
-  </data>
-  <data name="cUSTOMER_REPO_INDtextBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>286, 180</value>
-  </data>
-  <data name="cUSTOMER_REPO_INDtextBox.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>20, 31</value>
-  </data>
-  <data name="cUSTOMER_REPO_INDtextBox.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>20, 31</value>
-  </data>
-  <data name="cUSTOMER_REPO_INDtextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>20, 31</value>
-  </data>
-  <data name="cUSTOMER_REPO_INDtextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;cUSTOMER_REPO_INDtextBox.Name" xml:space="preserve">
-    <value>cUSTOMER_REPO_INDtextBox</value>
-  </data>
-  <data name="&gt;&gt;cUSTOMER_REPO_INDtextBox.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;cUSTOMER_REPO_INDtextBox.Parent" xml:space="preserve">
-    <value>layoutControlRepo</value>
-  </data>
-  <data name="&gt;&gt;cUSTOMER_REPO_INDtextBox.ZOrder" xml:space="preserve">
-    <value>17</value>
-  </data>
-  <data name="comboBoxRepoInd.Location" type="System.Drawing.Point, System.Drawing">
-    <value>148, 180</value>
-  </data>
-  <data name="comboBoxRepoInd.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>124, 31</value>
-  </data>
-  <data name="comboBoxRepoInd.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>124, 31</value>
-  </data>
-  <data name="comboBoxRepoInd.Properties.Buttons" type="DevExpress.XtraEditors.Controls.ButtonPredefines, DevExpress.Utils.v24.2">
-    <value>Combo</value>
-  </data>
-  <data name="comboBoxRepoInd.Properties.NullText" xml:space="preserve">
-    <value />
-  </data>
-  <data name="comboBoxRepoInd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>124, 31</value>
-  </data>
-  <data name="comboBoxRepoInd.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;comboBoxRepoInd.Name" xml:space="preserve">
-    <value>comboBoxRepoInd</value>
-  </data>
-  <data name="&gt;&gt;comboBoxRepoInd.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.LookUpEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;comboBoxRepoInd.Parent" xml:space="preserve">
-    <value>layoutControlRepo</value>
-  </data>
-  <data name="&gt;&gt;comboBoxRepoInd.ZOrder" xml:space="preserve">
-    <value>18</value>
-  </data>
-  <data name="textBox481.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="textBox481.Location" type="System.Drawing.Point, System.Drawing">
-    <value>702, 61</value>
-  </data>
-  <data name="textBox481.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>67, 29</value>
-  </data>
-  <data name="textBox481.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>67, 29</value>
-  </data>
-  <data name="textBox481.Size" type="System.Drawing.Size, System.Drawing">
-    <value>67, 29</value>
-  </data>
-  <data name="textBox481.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;textBox481.Name" xml:space="preserve">
-    <value>textBox481</value>
-  </data>
-  <data name="&gt;&gt;textBox481.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;textBox481.Parent" xml:space="preserve">
-    <value>layoutControlRepo</value>
-  </data>
-  <data name="&gt;&gt;textBox481.ZOrder" xml:space="preserve">
-    <value>19</value>
-  </data>
-  <data name="textBox471.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="textBox471.Location" type="System.Drawing.Point, System.Drawing">
-    <value>830, 61</value>
-  </data>
-  <data name="textBox471.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>136, 29</value>
-  </data>
-  <data name="textBox471.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>136, 29</value>
-  </data>
-  <data name="textBox471.Size" type="System.Drawing.Size, System.Drawing">
-    <value>136, 29</value>
-  </data>
-  <data name="textBox471.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;textBox471.Name" xml:space="preserve">
-    <value>textBox471</value>
-  </data>
-  <data name="&gt;&gt;textBox471.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;textBox471.Parent" xml:space="preserve">
-    <value>layoutControlRepo</value>
-  </data>
-  <data name="&gt;&gt;textBox471.ZOrder" xml:space="preserve">
-    <value>20</value>
-  </data>
-  <data name="textBox171.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="textBox171.Location" type="System.Drawing.Point, System.Drawing">
-    <value>971, 61</value>
-  </data>
-  <data name="textBox171.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>212, 29</value>
-  </data>
-  <data name="textBox171.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>212, 29</value>
-  </data>
-  <data name="textBox171.Size" type="System.Drawing.Size, System.Drawing">
-    <value>212, 29</value>
-  </data>
-  <data name="textBox171.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;textBox171.Name" xml:space="preserve">
-    <value>textBox171</value>
-  </data>
-  <data name="&gt;&gt;textBox171.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;textBox171.Parent" xml:space="preserve">
-    <value>layoutControlRepo</value>
-  </data>
-  <data name="&gt;&gt;textBox171.ZOrder" xml:space="preserve">
-    <value>21</value>
-  </data>
-  <data name="textBox191.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="textBox191.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1188, 61</value>
-  </data>
-  <data name="textBox191.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>41, 29</value>
-  </data>
-  <data name="textBox191.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>41, 29</value>
-  </data>
-  <data name="textBox191.Size" type="System.Drawing.Size, System.Drawing">
-    <value>41, 29</value>
-  </data>
-  <data name="textBox191.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;textBox191.Name" xml:space="preserve">
-    <value>textBox191</value>
-  </data>
-  <data name="&gt;&gt;textBox191.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;textBox191.Parent" xml:space="preserve">
-    <value>layoutControlRepo</value>
-  </data>
-  <data name="&gt;&gt;textBox191.ZOrder" xml:space="preserve">
-    <value>22</value>
-  </data>
-  <data name="textBox511.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="textBox511.Location" type="System.Drawing.Point, System.Drawing">
-    <value>646, 102</value>
-  </data>
-  <data name="textBox511.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>43, 29</value>
-  </data>
-  <data name="textBox511.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>43, 29</value>
-  </data>
-  <data name="textBox511.Size" type="System.Drawing.Size, System.Drawing">
-    <value>43, 29</value>
-  </data>
-  <data name="textBox511.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;textBox511.Name" xml:space="preserve">
-    <value>textBox511</value>
-  </data>
-  <data name="&gt;&gt;textBox511.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;textBox511.Parent" xml:space="preserve">
-    <value>layoutControlRepo</value>
-  </data>
-  <data name="&gt;&gt;textBox511.ZOrder" xml:space="preserve">
-    <value>23</value>
-  </data>
-  <data name="textBox501.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="textBox501.Location" type="System.Drawing.Point, System.Drawing">
-    <value>690, 102</value>
-  </data>
-  <data name="textBox501.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>29, 29</value>
-  </data>
-  <data name="textBox501.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>29, 29</value>
-  </data>
-  <data name="textBox501.Size" type="System.Drawing.Size, System.Drawing">
-    <value>29, 29</value>
-  </data>
-  <data name="textBox501.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;textBox501.Name" xml:space="preserve">
-    <value>textBox501</value>
-  </data>
-  <data name="&gt;&gt;textBox501.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;textBox501.Parent" xml:space="preserve">
-    <value>layoutControlRepo</value>
-  </data>
-  <data name="&gt;&gt;textBox501.ZOrder" xml:space="preserve">
-    <value>24</value>
-  </data>
-  <data name="textBox491.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="textBox491.Location" type="System.Drawing.Point, System.Drawing">
-    <value>720, 102</value>
-  </data>
-  <data name="textBox491.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>51, 29</value>
-  </data>
-  <data name="textBox491.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>51, 29</value>
-  </data>
-  <data name="textBox491.Size" type="System.Drawing.Size, System.Drawing">
-    <value>51, 29</value>
-  </data>
-  <data name="textBox491.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;textBox491.Name" xml:space="preserve">
-    <value>textBox491</value>
-  </data>
-  <data name="&gt;&gt;textBox491.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;textBox491.Parent" xml:space="preserve">
-    <value>layoutControlRepo</value>
-  </data>
-  <data name="&gt;&gt;textBox491.ZOrder" xml:space="preserve">
-    <value>25</value>
-  </data>
-  <data name="textEditRepoStatus.Location" type="System.Drawing.Point, System.Drawing">
-    <value>148, 344</value>
-  </data>
-  <data name="textEditRepoStatus.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>489, 87</value>
-  </data>
-  <data name="textEditRepoStatus.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>489, 87</value>
-  </data>
-  <data name="textEditRepoStatus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>489, 87</value>
-  </data>
-  <data name="textEditRepoStatus.TabIndex" type="System.Int32, mscorlib">
-    <value>312</value>
-  </data>
-  <data name="&gt;&gt;textEditRepoStatus.Name" xml:space="preserve">
-    <value>textEditRepoStatus</value>
-  </data>
-  <data name="&gt;&gt;textEditRepoStatus.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.MemoEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;textEditRepoStatus.Parent" xml:space="preserve">
-    <value>layoutControlRepo</value>
-  </data>
-  <data name="&gt;&gt;textEditRepoStatus.ZOrder" xml:space="preserve">
-    <value>26</value>
-  </data>
-  <data name="checkEditRepoPaymentArrangement.Location" type="System.Drawing.Point, System.Drawing">
-    <value>149, 437</value>
-  </data>
-  <data name="checkEditRepoPaymentArrangement.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>195, 31</value>
-  </data>
-  <data name="checkEditRepoPaymentArrangement.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>195, 31</value>
-  </data>
-  <data name="checkEditRepoPaymentArrangement.Properties.Caption" xml:space="preserve">
-    <value>Payment Arrangement?</value>
-  </data>
-  <data name="checkEditRepoPaymentArrangement.Size" type="System.Drawing.Size, System.Drawing">
-    <value>195, 31</value>
-  </data>
-  <data name="checkEditRepoPaymentArrangement.TabIndex" type="System.Int32, mscorlib">
-    <value>316</value>
-  </data>
-  <data name="&gt;&gt;checkEditRepoPaymentArrangement.Name" xml:space="preserve">
-    <value>checkEditRepoPaymentArrangement</value>
-  </data>
-  <data name="&gt;&gt;checkEditRepoPaymentArrangement.Type" xml:space="preserve">
-    <value>DevExpress.XtraEditors.CheckEdit, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;checkEditRepoPaymentArrangement.Parent" xml:space="preserve">
-    <value>layoutControlRepo</value>
-  </data>
-  <data name="&gt;&gt;checkEditRepoPaymentArrangement.ZOrder" xml:space="preserve">
-    <value>27</value>
-  </data>
-  <data name="layoutControlRepo.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="layoutControlRepo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="layoutControlGroup1.CustomizationFormText" xml:space="preserve">
-    <value>layoutControlGroupRepoInfoHeader</value>
-  </data>
-  <data name="layoutControlItem12.ControlAlignment" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopLeft</value>
-  </data>
-  <data name="layoutControlItem12.CustomizationFormText" xml:space="preserve">
-    <value>CUSTOMER NO:</value>
-  </data>
-  <data name="layoutControlItem12.Text" xml:space="preserve">
-    <value>CUSTOMER NO:</value>
-  </data>
-  <data name="layoutControlItem13.ControlAlignment" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopLeft</value>
-  </data>
-  <data name="layoutControlItem13.CustomizationFormText" xml:space="preserve">
-    <value>NAME:</value>
-  </data>
-  <data name="layoutControlItem13.Text" xml:space="preserve">
-    <value>NAME:</value>
-  </data>
-  <data name="layoutControlItem14.ControlAlignment" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopLeft</value>
-  </data>
-  <data name="layoutControlItem14.CustomizationFormText" xml:space="preserve">
-    <value>textBox17item</value>
-  </data>
-  <data name="layoutControlItem14.Text" xml:space="preserve">
-    <value>textBox17item</value>
-  </data>
-  <data name="layoutControlItem16.ControlAlignment" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopLeft</value>
-  </data>
-  <data name="layoutControlItem16.CustomizationFormText" xml:space="preserve">
-    <value>SS NUM:</value>
-  </data>
-  <data name="layoutControlItem16.Text" xml:space="preserve">
-    <value>SS NUM:</value>
-  </data>
-  <data name="layoutControlItem17.ControlAlignment" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopLeft</value>
-  </data>
-  <data name="layoutControlItem17.CustomizationFormText" xml:space="preserve">
-    <value>textBox50item</value>
-  </data>
-  <data name="layoutControlItem17.Text" xml:space="preserve">
-    <value>textBox50item</value>
-  </data>
-  <data name="layoutControlItem18.ControlAlignment" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopLeft</value>
-  </data>
-  <data name="layoutControlItem18.CustomizationFormText" xml:space="preserve">
-    <value>textBox49item</value>
-  </data>
-  <data name="layoutControlItem18.Text" xml:space="preserve">
-    <value>textBox49item</value>
-  </data>
-  <data name="layoutControlItem15.ControlAlignment" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopLeft</value>
-  </data>
-  <data name="layoutControlItem15.CustomizationFormText" xml:space="preserve">
-    <value>layoutContorlItemTitle</value>
-  </data>
-  <data name="layoutControlItem15.Text" xml:space="preserve">
-    <value>layoutContorlItemTitle</value>
-  </data>
-  <data name="layoutControlGroupRepoHeader.Text" xml:space="preserve">
-    <value>Repo Header</value>
-  </data>
-  <data name="layoutControlGroup1.Text" xml:space="preserve">
-    <value>Repo Info Header</value>
-  </data>
-  <data name="layoutControlItemcomboBoxRepoInd.Text" xml:space="preserve">
-    <value>Repo</value>
-  </data>
-  <data name="layoutControlItemcUSTOMER_REPO_INDtextBox.Text" xml:space="preserve">
-    <value> </value>
-  </data>
-  <data name="layoutControlItemcUSTOMER_REPO_CDEtextBox.Text" xml:space="preserve">
-    <value>Code</value>
-  </data>
-  <data name="layoutControlItemcomboBoxRepoCodes.Text" xml:space="preserve">
-    <value> </value>
-  </data>
-  <data name="layoutControlItemRepoDate.Text" xml:space="preserve">
-    <value>Repo Date</value>
-  </data>
-  <data name="layoutControlItemRepoAgent.Text" xml:space="preserve">
-    <value>Repo Agent</value>
-  </data>
-  <data name="layoutControlItemCurrentLocation.Text" xml:space="preserve">
-    <value>Current Location</value>
-  </data>
-  <data name="layoutControlItemLocationDate.Text" xml:space="preserve">
-    <value> </value>
-  </data>
-  <data name="layoutControlItemAuctionHouse.Text" xml:space="preserve">
-    <value>Auction House</value>
-  </data>
-  <data name="layoutControlItemAuctionDate.Text" xml:space="preserve">
-    <value> </value>
-  </data>
-  <data name="layoutControlItemRepoStatus.ControlAlignment" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopLeft</value>
-  </data>
-  <data name="layoutControlItemRepoStatus.CustomizationFormText" xml:space="preserve">
-    <value>Status</value>
-  </data>
-  <data name="layoutControlItemRepoStatus.Text" xml:space="preserve">
-    <value>Status</value>
-  </data>
-  <data name="layoutControlItemRepoPaymentArrangement.ControlAlignment" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopLeft</value>
-  </data>
-  <data name="layoutControlItemRepoPaymentArrangement.CustomizationFormText" xml:space="preserve">
-    <value>Payment Arrangement?</value>
-  </data>
-  <data name="layoutControlItemRepoPaymentArrangement.Text" xml:space="preserve">
-    <value>Payment Arrangement?</value>
-  </data>
-  <data name="layoutControlItemDemandAmount.Text" xml:space="preserve">
-    <value>Demand Amt</value>
-  </data>
-  <data name="layoutControlItemAttorneyDate.Text" xml:space="preserve">
-    <value>Date</value>
-  </data>
-  <data name="layoutControlItemAttorneyName.Text" xml:space="preserve">
-    <value>Name</value>
-  </data>
-  <data name="layoutControlGroupRecovery.Text" xml:space="preserve">
-    <value>Recovery</value>
-  </data>
-  <data name="layoutControlGroupRepoInfoDetail.Text" xml:space="preserve">
-    <value>Repo Info Detail</value>
-  </data>
-  <data name="layoutControlGroupRepos.Text" xml:space="preserve">
-    <value>Repo Info</value>
-  </data>
-  <data name="layoutControlRepo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1809, 745</value>
-  </data>
-  <data name="layoutControlRepo.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="layoutControlRepo.Text" xml:space="preserve">
-    <value>layoutControl4</value>
-  </data>
-  <data name="&gt;&gt;layoutControlRepo.Name" xml:space="preserve">
-    <value>layoutControlRepo</value>
-  </data>
-  <data name="&gt;&gt;layoutControlRepo.Type" xml:space="preserve">
-    <value>DevExpress.XtraLayout.LayoutControl, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;layoutControlRepo.Parent" xml:space="preserve">
-    <value>xtraTabPageRepossession</value>
-  </data>
-  <data name="&gt;&gt;layoutControlRepo.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="xtraTabPageRepossession.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1809, 745</value>
-  </data>
-  <data name="xtraTabPageRepossession.Text" xml:space="preserve">
-    <value>Repos</value>
-  </data>
-  <data name="&gt;&gt;xtraTabPageRepossession.Name" xml:space="preserve">
-    <value>xtraTabPageRepossession</value>
-  </data>
-  <data name="&gt;&gt;xtraTabPageRepossession.Type" xml:space="preserve">
-    <value>DevExpress.XtraTab.XtraTabPage, DevExpress.XtraEditors.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;xtraTabPageRepossession.Parent" xml:space="preserve">
-    <value>xtraTabControlCustomerMaint</value>
-  </data>
-  <data name="&gt;&gt;xtraTabPageRepossession.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
   <data name="gridControlRepoLog.Font" type="System.Drawing.Font, System.Drawing">
@@ -21150,6 +21150,288 @@
   <data name="&gt;&gt;emptySpaceItem25.Type" xml:space="preserve">
     <value>DevExpress.XtraLayout.EmptySpaceItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
+  <data name="&gt;&gt;layoutControlGroupRepos.Name" xml:space="preserve">
+    <value>layoutControlGroupRepos</value>
+  </data>
+  <data name="&gt;&gt;layoutControlGroupRepos.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.LayoutControlGroup, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;layoutControlGroup1.Name" xml:space="preserve">
+    <value>layoutControlGroup1</value>
+  </data>
+  <data name="&gt;&gt;layoutControlGroup1.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.LayoutControlGroup, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;emptySpaceItem132.Name" xml:space="preserve">
+    <value>emptySpaceItem132</value>
+  </data>
+  <data name="&gt;&gt;emptySpaceItem132.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.EmptySpaceItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;layoutControlGroupRepoHeader.Name" xml:space="preserve">
+    <value>layoutControlGroupRepoHeader</value>
+  </data>
+  <data name="&gt;&gt;layoutControlGroupRepoHeader.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.LayoutControlGroup, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItem12.Name" xml:space="preserve">
+    <value>layoutControlItem12</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItem12.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItem13.Name" xml:space="preserve">
+    <value>layoutControlItem13</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItem13.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItem14.Name" xml:space="preserve">
+    <value>layoutControlItem14</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItem14.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItem16.Name" xml:space="preserve">
+    <value>layoutControlItem16</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItem16.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItem17.Name" xml:space="preserve">
+    <value>layoutControlItem17</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItem17.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItem18.Name" xml:space="preserve">
+    <value>layoutControlItem18</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItem18.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItem15.Name" xml:space="preserve">
+    <value>layoutControlItem15</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItem15.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;emptySpaceItem154.Name" xml:space="preserve">
+    <value>emptySpaceItem154</value>
+  </data>
+  <data name="&gt;&gt;emptySpaceItem154.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.EmptySpaceItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;layoutControlGroupRepoInfoDetail.Name" xml:space="preserve">
+    <value>layoutControlGroupRepoInfoDetail</value>
+  </data>
+  <data name="&gt;&gt;layoutControlGroupRepoInfoDetail.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.LayoutControlGroup, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;emptySpaceItem141.Name" xml:space="preserve">
+    <value>emptySpaceItem141</value>
+  </data>
+  <data name="&gt;&gt;emptySpaceItem141.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.EmptySpaceItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItemcomboBoxRepoInd.Name" xml:space="preserve">
+    <value>layoutControlItemcomboBoxRepoInd</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItemcomboBoxRepoInd.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItemcUSTOMER_REPO_INDtextBox.Name" xml:space="preserve">
+    <value>layoutControlItemcUSTOMER_REPO_INDtextBox</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItemcUSTOMER_REPO_INDtextBox.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItemcUSTOMER_REPO_CDEtextBox.Name" xml:space="preserve">
+    <value>layoutControlItemcUSTOMER_REPO_CDEtextBox</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItemcUSTOMER_REPO_CDEtextBox.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItemcomboBoxRepoCodes.Name" xml:space="preserve">
+    <value>layoutControlItemcomboBoxRepoCodes</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItemcomboBoxRepoCodes.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItemRepoDate.Name" xml:space="preserve">
+    <value>layoutControlItemRepoDate</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItemRepoDate.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;emptySpaceItem140.Name" xml:space="preserve">
+    <value>emptySpaceItem140</value>
+  </data>
+  <data name="&gt;&gt;emptySpaceItem140.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.EmptySpaceItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;emptySpaceItem142.Name" xml:space="preserve">
+    <value>emptySpaceItem142</value>
+  </data>
+  <data name="&gt;&gt;emptySpaceItem142.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.EmptySpaceItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItemRepoAgent.Name" xml:space="preserve">
+    <value>layoutControlItemRepoAgent</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItemRepoAgent.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;emptySpaceItem146.Name" xml:space="preserve">
+    <value>emptySpaceItem146</value>
+  </data>
+  <data name="&gt;&gt;emptySpaceItem146.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.EmptySpaceItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItemCurrentLocation.Name" xml:space="preserve">
+    <value>layoutControlItemCurrentLocation</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItemCurrentLocation.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItemLocationDate.Name" xml:space="preserve">
+    <value>layoutControlItemLocationDate</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItemLocationDate.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;emptySpaceItem144.Name" xml:space="preserve">
+    <value>emptySpaceItem144</value>
+  </data>
+  <data name="&gt;&gt;emptySpaceItem144.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.EmptySpaceItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;emptySpaceItem143.Name" xml:space="preserve">
+    <value>emptySpaceItem143</value>
+  </data>
+  <data name="&gt;&gt;emptySpaceItem143.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.EmptySpaceItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItemAuctionHouse.Name" xml:space="preserve">
+    <value>layoutControlItemAuctionHouse</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItemAuctionHouse.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItemAuctionDate.Name" xml:space="preserve">
+    <value>layoutControlItemAuctionDate</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItemAuctionDate.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;emptySpaceItem152.Name" xml:space="preserve">
+    <value>emptySpaceItem152</value>
+  </data>
+  <data name="&gt;&gt;emptySpaceItem152.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.EmptySpaceItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;emptySpaceItem145.Name" xml:space="preserve">
+    <value>emptySpaceItem145</value>
+  </data>
+  <data name="&gt;&gt;emptySpaceItem145.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.EmptySpaceItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItemRepoStatus.Name" xml:space="preserve">
+    <value>layoutControlItemRepoStatus</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItemRepoStatus.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;emptySpaceItem155.Name" xml:space="preserve">
+    <value>emptySpaceItem155</value>
+  </data>
+  <data name="&gt;&gt;emptySpaceItem155.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.EmptySpaceItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItemRepoPaymentArrangement.Name" xml:space="preserve">
+    <value>layoutControlItemRepoPaymentArrangement</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItemRepoPaymentArrangement.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;emptySpaceItem170.Name" xml:space="preserve">
+    <value>emptySpaceItem170</value>
+  </data>
+  <data name="&gt;&gt;emptySpaceItem170.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.EmptySpaceItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;emptySpaceItem176.Name" xml:space="preserve">
+    <value>emptySpaceItem176</value>
+  </data>
+  <data name="&gt;&gt;emptySpaceItem176.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.EmptySpaceItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;layoutControlGroupRecovery.Name" xml:space="preserve">
+    <value>layoutControlGroupRecovery</value>
+  </data>
+  <data name="&gt;&gt;layoutControlGroupRecovery.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.LayoutControlGroup, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItemDemandAmount.Name" xml:space="preserve">
+    <value>layoutControlItemDemandAmount</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItemDemandAmount.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItemAttorney.Name" xml:space="preserve">
+    <value>layoutControlItemAttorney</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItemAttorney.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItem60.Name" xml:space="preserve">
+    <value>layoutControlItem60</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItem60.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItemAttorneyDate.Name" xml:space="preserve">
+    <value>layoutControlItemAttorneyDate</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItemAttorneyDate.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;emptySpaceItem218.Name" xml:space="preserve">
+    <value>emptySpaceItem218</value>
+  </data>
+  <data name="&gt;&gt;emptySpaceItem218.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.EmptySpaceItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItemAttorneyName.Name" xml:space="preserve">
+    <value>layoutControlItemAttorneyName</value>
+  </data>
+  <data name="&gt;&gt;layoutControlItemAttorneyName.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;emptySpaceItem219.Name" xml:space="preserve">
+    <value>emptySpaceItem219</value>
+  </data>
+  <data name="&gt;&gt;emptySpaceItem219.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.EmptySpaceItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;emptySpaceItem220.Name" xml:space="preserve">
+    <value>emptySpaceItem220</value>
+  </data>
+  <data name="&gt;&gt;emptySpaceItem220.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.EmptySpaceItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;emptySpaceItem221.Name" xml:space="preserve">
+    <value>emptySpaceItem221</value>
+  </data>
+  <data name="&gt;&gt;emptySpaceItem221.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.EmptySpaceItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
+  <data name="&gt;&gt;emptySpaceItem222.Name" xml:space="preserve">
+    <value>emptySpaceItem222</value>
+  </data>
+  <data name="&gt;&gt;emptySpaceItem222.Type" xml:space="preserve">
+    <value>DevExpress.XtraLayout.EmptySpaceItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
+  </data>
   <data name="&gt;&gt;layoutControlGroupCosigner.Name" xml:space="preserve">
     <value>layoutControlGroupCosigner</value>
   </data>
@@ -22829,288 +23111,6 @@
   </data>
   <data name="&gt;&gt;layoutControlItemCommentGrid.Type" xml:space="preserve">
     <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;layoutControlGroupRepos.Name" xml:space="preserve">
-    <value>layoutControlGroupRepos</value>
-  </data>
-  <data name="&gt;&gt;layoutControlGroupRepos.Type" xml:space="preserve">
-    <value>DevExpress.XtraLayout.LayoutControlGroup, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;layoutControlGroup1.Name" xml:space="preserve">
-    <value>layoutControlGroup1</value>
-  </data>
-  <data name="&gt;&gt;layoutControlGroup1.Type" xml:space="preserve">
-    <value>DevExpress.XtraLayout.LayoutControlGroup, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;emptySpaceItem132.Name" xml:space="preserve">
-    <value>emptySpaceItem132</value>
-  </data>
-  <data name="&gt;&gt;emptySpaceItem132.Type" xml:space="preserve">
-    <value>DevExpress.XtraLayout.EmptySpaceItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;layoutControlGroupRepoHeader.Name" xml:space="preserve">
-    <value>layoutControlGroupRepoHeader</value>
-  </data>
-  <data name="&gt;&gt;layoutControlGroupRepoHeader.Type" xml:space="preserve">
-    <value>DevExpress.XtraLayout.LayoutControlGroup, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;layoutControlItem12.Name" xml:space="preserve">
-    <value>layoutControlItem12</value>
-  </data>
-  <data name="&gt;&gt;layoutControlItem12.Type" xml:space="preserve">
-    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;layoutControlItem13.Name" xml:space="preserve">
-    <value>layoutControlItem13</value>
-  </data>
-  <data name="&gt;&gt;layoutControlItem13.Type" xml:space="preserve">
-    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;layoutControlItem14.Name" xml:space="preserve">
-    <value>layoutControlItem14</value>
-  </data>
-  <data name="&gt;&gt;layoutControlItem14.Type" xml:space="preserve">
-    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;layoutControlItem16.Name" xml:space="preserve">
-    <value>layoutControlItem16</value>
-  </data>
-  <data name="&gt;&gt;layoutControlItem16.Type" xml:space="preserve">
-    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;layoutControlItem17.Name" xml:space="preserve">
-    <value>layoutControlItem17</value>
-  </data>
-  <data name="&gt;&gt;layoutControlItem17.Type" xml:space="preserve">
-    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;layoutControlItem18.Name" xml:space="preserve">
-    <value>layoutControlItem18</value>
-  </data>
-  <data name="&gt;&gt;layoutControlItem18.Type" xml:space="preserve">
-    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;layoutControlItem15.Name" xml:space="preserve">
-    <value>layoutControlItem15</value>
-  </data>
-  <data name="&gt;&gt;layoutControlItem15.Type" xml:space="preserve">
-    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;emptySpaceItem154.Name" xml:space="preserve">
-    <value>emptySpaceItem154</value>
-  </data>
-  <data name="&gt;&gt;emptySpaceItem154.Type" xml:space="preserve">
-    <value>DevExpress.XtraLayout.EmptySpaceItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;layoutControlGroupRepoInfoDetail.Name" xml:space="preserve">
-    <value>layoutControlGroupRepoInfoDetail</value>
-  </data>
-  <data name="&gt;&gt;layoutControlGroupRepoInfoDetail.Type" xml:space="preserve">
-    <value>DevExpress.XtraLayout.LayoutControlGroup, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;emptySpaceItem141.Name" xml:space="preserve">
-    <value>emptySpaceItem141</value>
-  </data>
-  <data name="&gt;&gt;emptySpaceItem141.Type" xml:space="preserve">
-    <value>DevExpress.XtraLayout.EmptySpaceItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;layoutControlItemcomboBoxRepoInd.Name" xml:space="preserve">
-    <value>layoutControlItemcomboBoxRepoInd</value>
-  </data>
-  <data name="&gt;&gt;layoutControlItemcomboBoxRepoInd.Type" xml:space="preserve">
-    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;layoutControlItemcUSTOMER_REPO_INDtextBox.Name" xml:space="preserve">
-    <value>layoutControlItemcUSTOMER_REPO_INDtextBox</value>
-  </data>
-  <data name="&gt;&gt;layoutControlItemcUSTOMER_REPO_INDtextBox.Type" xml:space="preserve">
-    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;layoutControlItemcUSTOMER_REPO_CDEtextBox.Name" xml:space="preserve">
-    <value>layoutControlItemcUSTOMER_REPO_CDEtextBox</value>
-  </data>
-  <data name="&gt;&gt;layoutControlItemcUSTOMER_REPO_CDEtextBox.Type" xml:space="preserve">
-    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;layoutControlItemcomboBoxRepoCodes.Name" xml:space="preserve">
-    <value>layoutControlItemcomboBoxRepoCodes</value>
-  </data>
-  <data name="&gt;&gt;layoutControlItemcomboBoxRepoCodes.Type" xml:space="preserve">
-    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;layoutControlItemRepoDate.Name" xml:space="preserve">
-    <value>layoutControlItemRepoDate</value>
-  </data>
-  <data name="&gt;&gt;layoutControlItemRepoDate.Type" xml:space="preserve">
-    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;emptySpaceItem140.Name" xml:space="preserve">
-    <value>emptySpaceItem140</value>
-  </data>
-  <data name="&gt;&gt;emptySpaceItem140.Type" xml:space="preserve">
-    <value>DevExpress.XtraLayout.EmptySpaceItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;emptySpaceItem142.Name" xml:space="preserve">
-    <value>emptySpaceItem142</value>
-  </data>
-  <data name="&gt;&gt;emptySpaceItem142.Type" xml:space="preserve">
-    <value>DevExpress.XtraLayout.EmptySpaceItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;layoutControlItemRepoAgent.Name" xml:space="preserve">
-    <value>layoutControlItemRepoAgent</value>
-  </data>
-  <data name="&gt;&gt;layoutControlItemRepoAgent.Type" xml:space="preserve">
-    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;emptySpaceItem146.Name" xml:space="preserve">
-    <value>emptySpaceItem146</value>
-  </data>
-  <data name="&gt;&gt;emptySpaceItem146.Type" xml:space="preserve">
-    <value>DevExpress.XtraLayout.EmptySpaceItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;layoutControlItemCurrentLocation.Name" xml:space="preserve">
-    <value>layoutControlItemCurrentLocation</value>
-  </data>
-  <data name="&gt;&gt;layoutControlItemCurrentLocation.Type" xml:space="preserve">
-    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;layoutControlItemLocationDate.Name" xml:space="preserve">
-    <value>layoutControlItemLocationDate</value>
-  </data>
-  <data name="&gt;&gt;layoutControlItemLocationDate.Type" xml:space="preserve">
-    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;emptySpaceItem144.Name" xml:space="preserve">
-    <value>emptySpaceItem144</value>
-  </data>
-  <data name="&gt;&gt;emptySpaceItem144.Type" xml:space="preserve">
-    <value>DevExpress.XtraLayout.EmptySpaceItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;emptySpaceItem143.Name" xml:space="preserve">
-    <value>emptySpaceItem143</value>
-  </data>
-  <data name="&gt;&gt;emptySpaceItem143.Type" xml:space="preserve">
-    <value>DevExpress.XtraLayout.EmptySpaceItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;layoutControlItemAuctionHouse.Name" xml:space="preserve">
-    <value>layoutControlItemAuctionHouse</value>
-  </data>
-  <data name="&gt;&gt;layoutControlItemAuctionHouse.Type" xml:space="preserve">
-    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;layoutControlItemAuctionDate.Name" xml:space="preserve">
-    <value>layoutControlItemAuctionDate</value>
-  </data>
-  <data name="&gt;&gt;layoutControlItemAuctionDate.Type" xml:space="preserve">
-    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;emptySpaceItem152.Name" xml:space="preserve">
-    <value>emptySpaceItem152</value>
-  </data>
-  <data name="&gt;&gt;emptySpaceItem152.Type" xml:space="preserve">
-    <value>DevExpress.XtraLayout.EmptySpaceItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;emptySpaceItem145.Name" xml:space="preserve">
-    <value>emptySpaceItem145</value>
-  </data>
-  <data name="&gt;&gt;emptySpaceItem145.Type" xml:space="preserve">
-    <value>DevExpress.XtraLayout.EmptySpaceItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;layoutControlItemRepoStatus.Name" xml:space="preserve">
-    <value>layoutControlItemRepoStatus</value>
-  </data>
-  <data name="&gt;&gt;layoutControlItemRepoStatus.Type" xml:space="preserve">
-    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;emptySpaceItem155.Name" xml:space="preserve">
-    <value>emptySpaceItem155</value>
-  </data>
-  <data name="&gt;&gt;emptySpaceItem155.Type" xml:space="preserve">
-    <value>DevExpress.XtraLayout.EmptySpaceItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;layoutControlItemRepoPaymentArrangement.Name" xml:space="preserve">
-    <value>layoutControlItemRepoPaymentArrangement</value>
-  </data>
-  <data name="&gt;&gt;layoutControlItemRepoPaymentArrangement.Type" xml:space="preserve">
-    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;emptySpaceItem170.Name" xml:space="preserve">
-    <value>emptySpaceItem170</value>
-  </data>
-  <data name="&gt;&gt;emptySpaceItem170.Type" xml:space="preserve">
-    <value>DevExpress.XtraLayout.EmptySpaceItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;emptySpaceItem176.Name" xml:space="preserve">
-    <value>emptySpaceItem176</value>
-  </data>
-  <data name="&gt;&gt;emptySpaceItem176.Type" xml:space="preserve">
-    <value>DevExpress.XtraLayout.EmptySpaceItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;layoutControlGroupRecovery.Name" xml:space="preserve">
-    <value>layoutControlGroupRecovery</value>
-  </data>
-  <data name="&gt;&gt;layoutControlGroupRecovery.Type" xml:space="preserve">
-    <value>DevExpress.XtraLayout.LayoutControlGroup, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;layoutControlItemDemandAmount.Name" xml:space="preserve">
-    <value>layoutControlItemDemandAmount</value>
-  </data>
-  <data name="&gt;&gt;layoutControlItemDemandAmount.Type" xml:space="preserve">
-    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;layoutControlItemAttorney.Name" xml:space="preserve">
-    <value>layoutControlItemAttorney</value>
-  </data>
-  <data name="&gt;&gt;layoutControlItemAttorney.Type" xml:space="preserve">
-    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;layoutControlItem60.Name" xml:space="preserve">
-    <value>layoutControlItem60</value>
-  </data>
-  <data name="&gt;&gt;layoutControlItem60.Type" xml:space="preserve">
-    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;layoutControlItemAttorneyDate.Name" xml:space="preserve">
-    <value>layoutControlItemAttorneyDate</value>
-  </data>
-  <data name="&gt;&gt;layoutControlItemAttorneyDate.Type" xml:space="preserve">
-    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;emptySpaceItem218.Name" xml:space="preserve">
-    <value>emptySpaceItem218</value>
-  </data>
-  <data name="&gt;&gt;emptySpaceItem218.Type" xml:space="preserve">
-    <value>DevExpress.XtraLayout.EmptySpaceItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;layoutControlItemAttorneyName.Name" xml:space="preserve">
-    <value>layoutControlItemAttorneyName</value>
-  </data>
-  <data name="&gt;&gt;layoutControlItemAttorneyName.Type" xml:space="preserve">
-    <value>DevExpress.XtraLayout.LayoutControlItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;emptySpaceItem219.Name" xml:space="preserve">
-    <value>emptySpaceItem219</value>
-  </data>
-  <data name="&gt;&gt;emptySpaceItem219.Type" xml:space="preserve">
-    <value>DevExpress.XtraLayout.EmptySpaceItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;emptySpaceItem220.Name" xml:space="preserve">
-    <value>emptySpaceItem220</value>
-  </data>
-  <data name="&gt;&gt;emptySpaceItem220.Type" xml:space="preserve">
-    <value>DevExpress.XtraLayout.EmptySpaceItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;emptySpaceItem221.Name" xml:space="preserve">
-    <value>emptySpaceItem221</value>
-  </data>
-  <data name="&gt;&gt;emptySpaceItem221.Type" xml:space="preserve">
-    <value>DevExpress.XtraLayout.EmptySpaceItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
-  </data>
-  <data name="&gt;&gt;emptySpaceItem222.Name" xml:space="preserve">
-    <value>emptySpaceItem222</value>
-  </data>
-  <data name="&gt;&gt;emptySpaceItem222.Type" xml:space="preserve">
-    <value>DevExpress.XtraLayout.EmptySpaceItem, DevExpress.XtraLayout.v24.2, Version=24.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a</value>
   </data>
   <data name="&gt;&gt;gridViewRepoLog.Name" xml:space="preserve">
     <value>gridViewRepoLog</value>
