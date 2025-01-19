@@ -111,6 +111,12 @@ namespace IAC2021SQL
             listBoxFieldList.DisplayMember = "EXCELColumnName";
             listBoxFieldList.ValueMember = "EXCELColumnName";
             listBoxFieldList.Refresh();
+            layoutControlSelectionCriteria.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Style3D;
+            layoutControlSelectionCriteria.LookAndFeel.UseDefaultLookAndFeel = false;
+            layoutControlSelectionCriteria.OptionsView.ShareLookAndFeelWithChildren = false;
+            layoutControlFieldSelection.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Style3D;
+            layoutControlFieldSelection.LookAndFeel.UseDefaultLookAndFeel = false;
+            layoutControlFieldSelection.OptionsView.ShareLookAndFeelWithChildren = false;
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
@@ -1494,6 +1500,11 @@ namespace IAC2021SQL
             RefreshFieldListBoxes();
         }
 
+        private void groupControl3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         private void simpleButtonClearRadioButtons_Click(object sender, EventArgs e)
         {
             radioGroupMatch.SelectedIndex = -1;
@@ -1652,14 +1663,6 @@ namespace IAC2021SQL
                                             lnControlMonthStart, lnControlYearStart, lnControlMonthEnd, lnControlYearEnd);
             else
                 CUSTOMERTableAdapter.FillByExtensions(Bank.CUSTOMER, lsStat, ldStart, ldEnd, lsDealer, lsDealerState, lsRepo,
-                                                      radioGroupMatch.SelectedIndex == 1, checkBoxFundingDate.Checked,
-                                                      lnControlMonthStart, lnControlYearStart, lnControlMonthEnd, lnControlYearEnd);
-            // Moses Newman 06/26/2020 add New Extension functionality.
-            if (radioGroupMatch.SelectedIndex != 2)
-                OPNCUSTTableAdapter.FillBySelection(Bank.OPNCUST, lsStat, ldStart, ldEnd, lsDealer, lsDealerState, radioGroupMatch.SelectedIndex == 1 ? true:false,
-                                                lnControlMonthStart, lnControlYearStart, lnControlMonthEnd, lnControlYearEnd);
-            else
-                OPNCUSTTableAdapter.FillByExtensions(Bank.OPNCUST, lsStat, ldStart, ldEnd, lsDealer, lsDealerState,
                                                       radioGroupMatch.SelectedIndex == 1, checkBoxFundingDate.Checked,
                                                       lnControlMonthStart, lnControlYearStart, lnControlMonthEnd, lnControlYearEnd);
 
