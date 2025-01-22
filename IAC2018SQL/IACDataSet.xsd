@@ -16855,24 +16855,24 @@ SET                DEALER_STATUS = @DEALER_STATUS</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="RepoStatus" msprop:Generator_UserColumnName="RepoStatus" msprop:Generator_ColumnPropNameInTable="RepoStatusColumn" msprop:Generator_ColumnPropNameInRow="RepoStatus" msprop:Generator_ColumnVarNameInTable="columnRepoStatus" minOccurs="0">
+              <xs:element name="RepoStatus" msprop:Generator_ColumnPropNameInTable="RepoStatusColumn" msprop:Generator_ColumnPropNameInRow="RepoStatus" msprop:Generator_UserColumnName="RepoStatus" msprop:Generator_ColumnVarNameInTable="columnRepoStatus" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="2147483647" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="DemandAmount" msprop:Generator_UserColumnName="DemandAmount" msprop:Generator_ColumnPropNameInTable="DemandAmountColumn" msprop:Generator_ColumnPropNameInRow="DemandAmount" msprop:Generator_ColumnVarNameInTable="columnDemandAmount" type="xs:decimal" minOccurs="0" />
-              <xs:element name="Attorney" msprop:Generator_UserColumnName="Attorney" msprop:Generator_ColumnPropNameInTable="AttorneyColumn" msprop:Generator_ColumnPropNameInRow="Attorney" msprop:Generator_ColumnVarNameInTable="columnAttorney" type="xs:boolean" minOccurs="0" />
-              <xs:element name="AttorneyName" msprop:Generator_UserColumnName="AttorneyName" msprop:Generator_ColumnPropNameInTable="AttorneyNameColumn" msprop:Generator_ColumnPropNameInRow="AttorneyName" msprop:Generator_ColumnVarNameInTable="columnAttorneyName" minOccurs="0">
+              <xs:element name="DemandAmount" msprop:Generator_ColumnPropNameInTable="DemandAmountColumn" msprop:Generator_ColumnPropNameInRow="DemandAmount" msprop:Generator_UserColumnName="DemandAmount" msprop:Generator_ColumnVarNameInTable="columnDemandAmount" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Attorney" msprop:Generator_ColumnPropNameInTable="AttorneyColumn" msprop:Generator_ColumnPropNameInRow="Attorney" msprop:Generator_UserColumnName="Attorney" msprop:Generator_ColumnVarNameInTable="columnAttorney" type="xs:boolean" minOccurs="0" />
+              <xs:element name="AttorneyName" msprop:Generator_ColumnPropNameInTable="AttorneyNameColumn" msprop:Generator_ColumnPropNameInRow="AttorneyName" msprop:Generator_UserColumnName="AttorneyName" msprop:Generator_ColumnVarNameInTable="columnAttorneyName" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="AttorneyDate" msprop:Generator_UserColumnName="AttorneyDate" msprop:Generator_ColumnPropNameInTable="AttorneyDateColumn" msprop:Generator_ColumnPropNameInRow="AttorneyDate" msprop:Generator_ColumnVarNameInTable="columnAttorneyDate" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="Collection" msprop:Generator_UserColumnName="Collection" msprop:Generator_ColumnPropNameInTable="CollectionColumn" msprop:Generator_ColumnPropNameInRow="Collection" msprop:Generator_ColumnVarNameInTable="columnCollection" type="xs:boolean" minOccurs="0" />
+              <xs:element name="AttorneyDate" msprop:Generator_ColumnPropNameInTable="AttorneyDateColumn" msprop:Generator_ColumnPropNameInRow="AttorneyDate" msprop:Generator_UserColumnName="AttorneyDate" msprop:Generator_ColumnVarNameInTable="columnAttorneyDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Collection" msprop:Generator_ColumnPropNameInTable="CollectionColumn" msprop:Generator_ColumnPropNameInRow="Collection" msprop:Generator_UserColumnName="Collection" msprop:Generator_ColumnVarNameInTable="columnCollection" type="xs:boolean" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -21537,7 +21537,7 @@ SET                DEALER_STATUS = @DEALER_STATUS</CommandText>
               <xs:element name="CUSTOMER_DEALER" msprop:Generator_ColumnPropNameInTable="CUSTOMER_DEALERColumn" msprop:Generator_ColumnPropNameInRow="CUSTOMER_DEALER" msprop:Generator_UserColumnName="CUSTOMER_DEALER" msprop:Generator_ColumnVarNameInTable="columnCUSTOMER_DEALER" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="3" />
+                    <xs:maxLength value="10" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
