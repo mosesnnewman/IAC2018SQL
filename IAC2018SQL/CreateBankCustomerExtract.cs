@@ -1656,6 +1656,7 @@ namespace IAC2021SQL
             // Moses Newman 01/17/2020 Add checkBoxTrialBalance to match Trial Balance.
             // Moses Newman 03/25/2020 Add ControlDate
             // Moses Newman 06/26/2020 add New Extension functionality.
+            
             if (radioGroupMatch.SelectedIndex != 2)
                 CUSTOMERTableAdapter.FillBySelection(Bank.CUSTOMER,
                                             lsStat, ldStart, ldEnd, lsDealer, lsDealerState, lsRepo,
@@ -1665,6 +1666,15 @@ namespace IAC2021SQL
                 CUSTOMERTableAdapter.FillByExtensions(Bank.CUSTOMER, lsStat, ldStart, ldEnd, lsDealer, lsDealerState, lsRepo,
                                                       radioGroupMatch.SelectedIndex == 1, checkBoxFundingDate.Checked,
                                                       lnControlMonthStart, lnControlYearStart, lnControlMonthEnd, lnControlYearEnd);
+
+            // Moses Newman 06/26/2020 add New Extension functionality.
+            if (radioGroupMatch.SelectedIndex != 2)
+                OPNCUSTTableAdapter.FillBySelection(Bank.OPNCUST, lsStat, ldStart, ldEnd, lsDealer, lsDealerState, radioGroupMatch.SelectedIndex == 1,
+                                                    lnControlMonthStart, lnControlYearStart, lnControlMonthEnd, lnControlYearEnd);
+            else
+                OPNCUSTTableAdapter.FillByExtensions(Bank.OPNCUST, lsStat, ldStart, ldEnd, lsDealer, lsDealerState,
+                                                     radioGroupMatch.SelectedIndex == 1, checkBoxFundingDate.Checked,
+                                                     lnControlMonthStart, lnControlYearStart, lnControlMonthEnd, lnControlYearEnd);
 
             if (Bank.CUSTOMER.Rows.Count < 1 && Bank.OPNCUST.Rows.Count < 1)
             {

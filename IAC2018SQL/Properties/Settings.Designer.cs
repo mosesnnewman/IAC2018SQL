@@ -12,7 +12,7 @@ namespace IAC2021SQL.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.10.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.12.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -36,8 +36,8 @@ namespace IAC2021SQL.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=SQL-IAC;Initial Catalog=IACSQLPRODUCTION;Integrated Security=True;Mul" +
-            "tipleActiveResultSets=True;Connect Timeout=60;Encrypt=False;TrustServerCertifica" +
-            "te=True")]
+            "tipleActiveResultSets=True;Connect Timeout=300;Encrypt=False;TrustServerCertific" +
+            "ate=True")]
         public string IAC2010SQLConnectionString {
             get {
                 return ((string)(this["IAC2010SQLConnectionString"]));

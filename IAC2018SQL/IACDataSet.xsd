@@ -18582,7 +18582,7 @@ SET                DEALER_STATUS = @DEALER_STATUS</CommandText>
               <xs:element name="CUSTOMER_DEALER" msprop:Generator_ColumnPropNameInTable="CUSTOMER_DEALERColumn" msprop:Generator_ColumnPropNameInRow="CUSTOMER_DEALER" msprop:Generator_UserColumnName="CUSTOMER_DEALER" msprop:Generator_ColumnVarNameInTable="columnCUSTOMER_DEALER" default="###" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="3" />
+                    <xs:maxLength value="10" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -18945,7 +18945,7 @@ SET                DEALER_STATUS = @DEALER_STATUS</CommandText>
               <xs:element name="CUSTOMER_SUFFIX" msprop:Generator_ColumnPropNameInTable="CUSTOMER_SUFFIXColumn" msprop:Generator_ColumnPropNameInRow="CUSTOMER_SUFFIX" msprop:Generator_UserColumnName="CUSTOMER_SUFFIX" msprop:Generator_ColumnVarNameInTable="columnCUSTOMER_SUFFIX" default="" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="3" />
+                    <xs:maxLength value="4" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
