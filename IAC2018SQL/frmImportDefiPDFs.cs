@@ -6,7 +6,7 @@ using S9API.Models;
 using Acrobat;
 
 using RestSharp.Authenticators;
-using System.Data.SqlClient;
+using Microsoft.Data.SqlClient;
 
 
 namespace IAC2021SQL

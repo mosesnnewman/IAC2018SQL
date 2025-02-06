@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="IAC2021SQL.exe" version="200.0.1.20" publicKeyToken="0000000000000000" language="en-US" processorArchitecture="amd64" type="win32" />
+  <asmv1:assemblyIdentity name="IAC2021SQL.exe" version="200.0.1.21" publicKeyToken="0000000000000000" language="en-US" processorArchitecture="amd64" type="win32" />
   <description asmv2:iconFile="CarLoan.ico" asmv2:publisher="Moses Newman" co.v1:suiteName="IAC2021SQL" asmv2:product="IAC 2021SQL" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="IAC2021SQL" version="200.0.1.20" language="neutral" processorArchitecture="amd64" />
+    <assemblyIdentity name="IAC2021SQL" version="200.0.1.21" language="neutral" processorArchitecture="amd64" />
     <commandLine file="IAC2021SQL.exe" parameters="" />
   </entryPoint>
   <co.v1:useManifestForTrust xmlns="urn:schemas-microsoft-com:asm.v1" />
@@ -296,6 +296,18 @@
     </dependentAssembly>
   </dependency>
   <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DevExpress.Docs.v24.2.dll" size="4261992">
+      <assemblyIdentity name="DevExpress.Docs.v24.2" version="24.2.3.0" publicKeyToken="B88D1754D700E49A" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>Oh85x3L8iU26kf9zUUo63Y+PWrrTeirBCuDPaoJwH2w=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DevExpress.Drawing.v24.2.dll" size="1036904">
       <assemblyIdentity name="DevExpress.Drawing.v24.2" version="24.2.3.0" publicKeyToken="B88D1754D700E49A" language="neutral" processorArchitecture="msil" />
       <hash>
@@ -416,6 +428,18 @@
     </dependentAssembly>
   </dependency>
   <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DevExpress.Snap.v24.2.Core.dll" size="957544">
+      <assemblyIdentity name="DevExpress.Snap.v24.2.Core" version="24.2.3.0" publicKeyToken="B88D1754D700E49A" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>PBT1OSHLLTXhGwWQU3n+xjIEZsepzpOPgDJBOQ+jozw=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DevExpress.Sparkline.v24.2.Core.dll" size="96360">
       <assemblyIdentity name="DevExpress.Sparkline.v24.2.Core" version="24.2.3.0" publicKeyToken="B88D1754D700E49A" language="neutral" processorArchitecture="msil" />
       <hash>
@@ -424,6 +448,30 @@
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
         <dsig:DigestValue>IVxm2/N6xZYH685UuD6BRjeghXzNa9jSRRd7VoeAzSQ=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DevExpress.Spreadsheet.v24.2.Core.dll" size="16180328">
+      <assemblyIdentity name="DevExpress.Spreadsheet.v24.2.Core" version="24.2.3.0" publicKeyToken="B88D1754D700E49A" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>SkEaCj5zXbJWqhBGWTYFUEb7LJpLZq7TT6jGqKe43BQ=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DevExpress.TreeMap.v24.2.Core.dll" size="41576">
+      <assemblyIdentity name="DevExpress.TreeMap.v24.2.Core" version="24.2.3.0" publicKeyToken="B88D1754D700E49A" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>ZEctTkUswhDM08Bx6QxC9m6bemMAgoJCP5mr9Ghpd5A=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -656,6 +704,18 @@
     </dependentAssembly>
   </dependency>
   <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DevExpress.XtraSpreadsheet.v24.2.dll" size="5184616">
+      <assemblyIdentity name="DevExpress.XtraSpreadsheet.v24.2" version="24.2.3.0" publicKeyToken="B88D1754D700E49A" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>5KAnnjxuWkFPSTQ4NTSKuBg3OKZpC6pic1syVgO2Lyc=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DevExpress.XtraTreeList.v24.2.dll" size="1711208">
       <assemblyIdentity name="DevExpress.XtraTreeList.v24.2" version="24.2.3.0" publicKeyToken="B88D1754D700E49A" language="neutral" processorArchitecture="msil" />
       <hash>
@@ -664,6 +724,18 @@
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
         <dsig:DigestValue>226uJJ0VJ5qoc87MEDih854LNw8NsKfm4IIAb7sWmwk=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DevExpress.XtraTreeMap.v24.2.dll" size="283240">
+      <assemblyIdentity name="DevExpress.XtraTreeMap.v24.2" version="24.2.3.0" publicKeyToken="B88D1754D700E49A" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>glWb14or9j8eewIKF0o1XZHx6BdIyUH/B1XWLsIVx7A=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -692,14 +764,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="IAC2021SQL.exe" size="51432360">
-      <assemblyIdentity name="IAC2021SQL" version="200.0.1.20" language="neutral" processorArchitecture="amd64" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="IAC2021SQL.exe" size="51420072">
+      <assemblyIdentity name="IAC2021SQL" version="200.0.1.21" language="neutral" processorArchitecture="amd64" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>gYAPo/Ppt4b4SjijJW53JW0SXLZ28fySX7U2quJ1rJk=</dsig:DigestValue>
+        <dsig:DigestValue>gXEZQMuUMTc/ICQOvT4BxfNnYdDmWmfB62DtWkAi8EE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -711,7 +783,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>3I2fsGunBZp6a2DGQbGiv9FXQa4jLWRjktnYq8BTH/U=</dsig:DigestValue>
+        <dsig:DigestValue>SrKvouzXtRgNkJCX5kggSht/ULxZkqVeNikuH3+2m84=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -2446,22 +2518,22 @@
       <dsig:DigestValue>ct0dfKpJYT9fp2euyUZsNA3GbN02FjVER1bnZKFZBB0=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="IAC2021SQL.exe.config" size="29384">
+  <file name="IAC2021SQL.exe.config" size="29387">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>jhhATeQyGv1tQV28rDGmKnkY+/k98KhPrzP3FtJHTB0=</dsig:DigestValue>
+      <dsig:DigestValue>/X9RgiVGHYlrkguEjeMrcRmDIbFgMwq5gvnhyqbgO3k=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="IAC2021SQL.pdb" size="21673472">
+  <file name="IAC2021SQL.pdb" size="21702144">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>Vqqmk433hY6HmOQei6R/SO0x62nHfl+WueIa86IjWuQ=</dsig:DigestValue>
+      <dsig:DigestValue>FUmxDQ8xuP97odX/snCZXfibY/EhLxVjtt61MGonzs0=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Icon1.ico" size="1078">

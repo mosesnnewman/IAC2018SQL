@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using System.Data.SqlClient;
+using Microsoft.Data.SqlClient;
 using System.Reflection;
 using System.Transactions;
 using DevExpress.XtraEditors;
@@ -17,8 +17,8 @@ namespace IAC2021SQL
     public partial class ClosedDealerMaintenance : DevExpress.XtraEditors.XtraForm
     {
         //private String Program.gsKey="";
-        private System.Data.SqlClient.SqlTransaction tableAdapTran = null;
-        private System.Data.SqlClient.SqlConnection  tableAdapConn = null;
+        private Microsoft.Data.SqlClient.SqlTransaction tableAdapTran = null;
+        private Microsoft.Data.SqlClient.SqlConnection  tableAdapConn = null;
 
         private bool lbAddFlag = false,lbEdit = false,lbILockedIt = false;
         private frmDealerLookup form2inst;
@@ -166,7 +166,7 @@ namespace IAC2021SQL
             if(!lbAddFlag)
                 lnDealerNo = (Int32)DEALERcomboBox.EditValue;
 
-            tableAdapConn = new System.Data.SqlClient.SqlConnection();
+            tableAdapConn = new Microsoft.Data.SqlClient.SqlConnection();
             tableAdapConn.ConnectionString = IAC2021SQL.Properties.Settings.Default.IAC2010SQLConnectionString;
 
             tableAdapConn.Open();                                                                                        
@@ -221,7 +221,7 @@ namespace IAC2021SQL
                                               iacDataSet.DEALER.Rows[DealerbindingSource.Position].Field<String>("Email"));
                 tableAdapTran.Commit();
             }
-            catch (System.Data.SqlClient.SqlException ex)
+            catch (Microsoft.Data.SqlClient.SqlException ex)
             {
                 tableAdapTran.Rollback();
                 MessageBox.Show("This is a Microsoft SQL Server database error: " + ex.Message.ToString());
@@ -437,7 +437,7 @@ namespace IAC2021SQL
             Validate();  //Validate form so all data sets are updated with field values
             lnDealerNo = (Int32)DEALERcomboBox.EditValue;
 
-            tableAdapConn = new System.Data.SqlClient.SqlConnection();
+            tableAdapConn = new Microsoft.Data.SqlClient.SqlConnection();
             tableAdapConn.ConnectionString = IAC2021SQL.Properties.Settings.Default.IAC2010SQLConnectionString;
             tableAdapConn.Open();
             dEALERTableAdapter.Connection = tableAdapConn;
@@ -449,7 +449,7 @@ namespace IAC2021SQL
                 dEALERTableAdapter.Delete(lnDealerNo);
                 tableAdapTran.Commit();
             }
-            catch (System.Data.SqlClient.SqlException ex)
+            catch (Microsoft.Data.SqlClient.SqlException ex)
             {
                 tableAdapTran.Rollback();
                 MessageBox.Show("The has been a Microsoft SQL Server Database Error: " + ex.Message.ToString());

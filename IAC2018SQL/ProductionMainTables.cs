@@ -3,7 +3,7 @@ using System.Data;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Runtime.Serialization;
-using System.Data.SqlClient;
+using Microsoft.Data.SqlClient;
 using System.Security.Permissions;
 namespace IAC2021SQL
 {

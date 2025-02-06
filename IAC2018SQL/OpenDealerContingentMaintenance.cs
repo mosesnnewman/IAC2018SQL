@@ -13,8 +13,8 @@ namespace IAC2021SQL
     {
         private Boolean lbFormClosing = false, lbEdit = false, lbAdd = false, lbJustSaved = false, lbILockedIt = false,
                         lbFromSetRelated = false, lbFromMovement = false, lbFromDealerNameChange = false;
-        private System.Data.SqlClient.SqlTransaction tableAdapTran = null;
-        private System.Data.SqlClient.SqlConnection tableAdapConn = null;
+        private Microsoft.Data.SqlClient.SqlTransaction tableAdapTran = null;
+        private Microsoft.Data.SqlClient.SqlConnection tableAdapConn = null;
 
         public FormOpenDealerContingentMaintenance()
         {
@@ -369,7 +369,7 @@ namespace IAC2021SQL
 
             if (CONTINGiacDataSet.OPNDEALR.Rows.Count == 0)
                 return;
-            tableAdapConn = new System.Data.SqlClient.SqlConnection();
+            tableAdapConn = new Microsoft.Data.SqlClient.SqlConnection();
             tableAdapConn.ConnectionString = IAC2021SQL.Properties.Settings.Default.IAC2010SQLConnectionString;
             tableAdapConn.Open();
             oPNCONTTableAdapter.Connection = tableAdapConn;
@@ -380,7 +380,7 @@ namespace IAC2021SQL
                 oPNCONTTableAdapter.Update(CONTINGiacDataSet.OPNCONT.Rows[CONTINGbindingSource.Position]);
                 tableAdapTran.Commit();
             }
-            catch (System.Data.SqlClient.SqlException ex)
+            catch (Microsoft.Data.SqlClient.SqlException ex)
             {
                 tableAdapTran.Rollback();
                 MessageBox.Show("This is a Microsoft SQL Server database error: " + ex.Message.ToString());
@@ -504,7 +504,7 @@ namespace IAC2021SQL
 
             if (CONTINGiacDataSet.OPNDEALR.Rows.Count == 0)
                 return;
-            tableAdapConn = new System.Data.SqlClient.SqlConnection();
+            tableAdapConn = new Microsoft.Data.SqlClient.SqlConnection();
             tableAdapConn.ConnectionString = IAC2021SQL.Properties.Settings.Default.IAC2010SQLConnectionString;
             tableAdapConn.Open();
             oPNCONTTableAdapter.Connection = tableAdapConn;
@@ -518,7 +518,7 @@ namespace IAC2021SQL
                                                 CONTINGiacDataSet.OPNCONT.Rows[CONTINGbindingSource.Position].Field<Int32>("CONTING_ENTRY_SEQ"));
                 tableAdapTran.Commit();
             }
-            catch (System.Data.SqlClient.SqlException ex)
+            catch (Microsoft.Data.SqlClient.SqlException ex)
             {
                 tableAdapTran.Rollback();
                 MessageBox.Show("This is a Microsoft SQL Server database error: " + ex.Message.ToString());

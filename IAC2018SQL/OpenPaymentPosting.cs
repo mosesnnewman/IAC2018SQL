@@ -1157,7 +1157,7 @@ namespace IAC2021SQL
                 }
                 CUSTHISTTableAdapter.Update(OPNHCUSTDataSet.OPNHCUST);
             }
-            catch (System.Data.SqlClient.SqlException ex)
+            catch (Microsoft.Data.SqlClient.SqlException ex)
             {
                 MessageBox.Show("This is a Microsoft SQL Server database error: " + ex.Message.ToString());
             }
@@ -1210,7 +1210,7 @@ namespace IAC2021SQL
                 }
                 DEALHISTTableAdapter.Update(OPNDEALRDataSet.OPNHDEAL);
             }
-            catch (System.Data.SqlClient.SqlException ex)
+            catch (Microsoft.Data.SqlClient.SqlException ex)
             {
                 MessageBox.Show("This is a Microsoft SQL Server database error: " + ex.Message.ToString());
             }

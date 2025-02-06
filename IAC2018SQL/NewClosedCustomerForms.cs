@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
+using Microsoft.Data.SqlClient;
 using System.DirectoryServices.AccountManagement;
 using System.Drawing;
 using System.Windows.Forms;
@@ -48,8 +48,8 @@ namespace IAC2021SQL
                         lcExpYear1, lcExpYear2, lcExpYear3, lcExpYear4, lcExpYear5, lcExpYear6, lcExpYear7, lcExpYear8,
                         lcExpYear9, lcExpYear10, lsUNCROOT = "", lsDataPath = "";
         private double lPaidInterest;
-        private System.Data.SqlClient.SqlTransaction tableAdapTran = null;
-        private System.Data.SqlClient.SqlConnection tableAdapConn = null;
+        private Microsoft.Data.SqlClient.SqlTransaction tableAdapTran = null;
+        private Microsoft.Data.SqlClient.SqlConnection tableAdapConn = null;
         private bool lbAddFlag = false, lbEdit = false, lbILockedIt = false, lbAlreadyIntOverride = false, lbInFullRecourseCheck = false, gbInSave = false;
         private int lnSeq = 0;
 
@@ -2995,7 +2995,7 @@ namespace IAC2021SQL
             Validate();  //Validate form so all data sets are updated with field values
             lsCustomerNo = cUSTOMER_NOTextBox.EditValue.ToString().Trim();
 
-            tableAdapConn = new System.Data.SqlClient.SqlConnection();
+            tableAdapConn = new Microsoft.Data.SqlClient.SqlConnection();
             tableAdapConn.ConnectionString = IAC2021SQL.Properties.Settings.Default.IAC2010SQLConnectionString;
             tableAdapConn.Open();
             cUSTOMERTableAdapter.Connection = tableAdapConn;
@@ -3023,7 +3023,7 @@ namespace IAC2021SQL
                 emailTableAdapter.Delete(lsCustomerNo);
                 tableAdapTran.Commit();
             }
-            catch (System.Data.SqlClient.SqlException ex)
+            catch (Microsoft.Data.SqlClient.SqlException ex)
             {
                 tableAdapTran.Rollback();
                 MessageBox.Show("This is a Microsoft SQL Server database error: " + ex.Message.ToString());
@@ -3207,7 +3207,7 @@ namespace IAC2021SQL
 
             try
             {
-                tableAdapConn = new System.Data.SqlClient.SqlConnection();
+                tableAdapConn = new Microsoft.Data.SqlClient.SqlConnection();
                 tableAdapConn.ConnectionString = IAC2021SQL.Properties.Settings.Default.IAC2010SQLConnectionString;
                 tableAdapConn.Open();
                 cUSTOMERTableAdapter.Connection = tableAdapConn;
@@ -3297,7 +3297,7 @@ namespace IAC2021SQL
           <DesignConnectionRef Name="IAC2010SQLConnectionString (Settings)" />
         </ConnectionRefs>
         <Connections>
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="IAC2010SQLConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="IAC2010SQLConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.IAC2021SQL.Properties.Settings.GlobalReference.Default.IAC2010SQLConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="IAC2010SQLConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="IAC2010SQLConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.IAC2021SQL.Properties.Settings.GlobalReference.Default.IAC2010SQLConnectionString" Provider="Microsoft.Data.SqlClient" />
         </Connections>
         <TableRefs>
           <DesignTableRef Name="CUSTHIST">
@@ -4200,7 +4200,7 @@ namespace IAC2021SQL
 
                 tableAdapTran.Commit();
             }
-            catch (System.Data.SqlClient.SqlException ex)
+            catch (Microsoft.Data.SqlClient.SqlException ex)
             {
                 tableAdapTran.Rollback();
                 cUSTOMERTableAdapter.UnlockRecord(iACDataSet.CUSTOMER.Rows[cUSTOMERBindingSource.Position].Field<String>("CUSTOMER_NO"));

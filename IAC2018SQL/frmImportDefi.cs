@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.Data;
-using System.Data.SqlClient;
+using Microsoft.Data.SqlClient;
 using DevExpress.XtraReports.UI;
 using DevExpress.DataAccess.Sql;
 

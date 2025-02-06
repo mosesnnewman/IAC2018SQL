@@ -19,7 +19,7 @@ using DevExpress.XtraEditors;
 using DevExpress.Utils;
 using System.Net.Http;
 using Sentry;
-using System.Data.SqlClient;
+using Microsoft.Data.SqlClient;
 using DevExpress.CodeParser;
 using IAC2021SQL.PaymentDataSetTableAdapters;
 using static DevExpress.XtraPrinting.Native.ExportOptionsPropertiesNames;
@@ -72,8 +72,8 @@ namespace IAC2021SQL
 				   lnMonthlyInterest = 0, lnxyzNumber = 0, lnNumerator = 0,
 				   lnDenominator = 0, lnAPR = 0;
 
-		static private System.Data.SqlClient.SqlTransaction tableAdapTran = null;
-		static private System.Data.SqlClient.SqlConnection tableAdapConn = null;
+		static private Microsoft.Data.SqlClient.SqlTransaction tableAdapTran = null;
+		static private Microsoft.Data.SqlClient.SqlConnection tableAdapConn = null;
 		static public readonly HttpClient client = new HttpClient();
 
 		static private void ClearAllVariables()
@@ -1159,7 +1159,7 @@ namespace IAC2021SQL
 
 			AmortRec[] AmortTable;
 
-			tableAdapConn = new System.Data.SqlClient.SqlConnection();
+			tableAdapConn = new Microsoft.Data.SqlClient.SqlConnection();
 			tableAdapConn.ConnectionString = IAC2021SQL.Properties.Settings.Default.IAC2010SQLConnectionString;
 			tableAdapConn.Open();
 

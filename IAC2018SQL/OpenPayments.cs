@@ -13,8 +13,8 @@ namespace IAC2021SQL
     {
         System.Windows.Forms.Label labelOverPayment, lblIncome, lblPaidThrough, labelISFDate;
 
-        private System.Data.SqlClient.SqlTransaction tableAdapTran = null;
-        private System.Data.SqlClient.SqlConnection tableAdapConn = null;
+        private Microsoft.Data.SqlClient.SqlTransaction tableAdapTran = null;
+        private Microsoft.Data.SqlClient.SqlConnection tableAdapConn = null;
 
         private Boolean lbAddFlag = false, lbEdit = false, lbFormClosing = false, lbNewPayment = false, lbILockedIt = false, lbJustSaved = false;
 
@@ -659,7 +659,7 @@ namespace IAC2021SQL
             lsCustomerNo = cUSTOMER_NOTextBox.Text.ToString().Trim();
             if (OpenPaymentiacDataSet.OPNCUST.Rows.Count == 0)
                 return;
-            tableAdapConn = new System.Data.SqlClient.SqlConnection();
+            tableAdapConn = new Microsoft.Data.SqlClient.SqlConnection();
             tableAdapConn.ConnectionString = IAC2021SQL.Properties.Settings.Default.IAC2010SQLConnectionString;
             tableAdapConn.Open();
             opnpayTableAdapter.Connection = tableAdapConn;
@@ -673,7 +673,7 @@ namespace IAC2021SQL
                 Program.UpdateComments(ref OpenPaymentiacDataSet, ref CommentbindingSource, true);
                 tableAdapTran.Commit();
             }
-            catch (System.Data.SqlClient.SqlException ex)
+            catch (Microsoft.Data.SqlClient.SqlException ex)
             {
                 tableAdapTran.Rollback();
                 MessageBox.Show("There is a Microsoft SQL Server database error: " + ex.Message.ToString());
@@ -956,7 +956,7 @@ namespace IAC2021SQL
 
         private void toolStripButtonDelete_Click(object sender, EventArgs e)
         {
-            tableAdapConn = new System.Data.SqlClient.SqlConnection();
+            tableAdapConn = new Microsoft.Data.SqlClient.SqlConnection();
             tableAdapConn.ConnectionString = IAC2021SQL.Properties.Settings.Default.IAC2010SQLConnectionString;
             tableAdapConn.Open();
             opnpayTableAdapter.Connection = tableAdapConn;
@@ -967,7 +967,7 @@ namespace IAC2021SQL
                 opnpayTableAdapter.Delete(OpenPaymentiacDataSet.OPNPAY.Rows[PaymentbindingSource.Position].Field<String>("PAYMENT_CUSTOMER"), OpenPaymentiacDataSet.OPNPAY.Rows[PaymentbindingSource.Position].Field<DateTime>("PAYMENT_DATE").Date);
                 tableAdapTran.Commit();
             }
-            catch (System.Data.SqlClient.SqlException ex)
+            catch (Microsoft.Data.SqlClient.SqlException ex)
             {
                 tableAdapTran.Rollback();
                 MessageBox.Show("This record is in use by someone else, you must wait until they release it to make your changes " + ex.Message.ToString());

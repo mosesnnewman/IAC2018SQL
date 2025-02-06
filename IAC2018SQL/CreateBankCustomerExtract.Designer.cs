@@ -366,7 +366,7 @@
             this.radioButtonBoth.Name = "radioButtonBoth";
             this.radioButtonBoth.Properties.Caption = "&Both";
             this.radioButtonBoth.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgRadio1;
-            this.radioButtonBoth.Size = new System.Drawing.Size(105, 24);
+            this.radioButtonBoth.Size = new System.Drawing.Size(242, 24);
             this.radioButtonBoth.StyleController = this.layoutControlSelectionCriteria;
             this.radioButtonBoth.TabIndex = 4;
             // 
@@ -456,7 +456,7 @@
             this.radioButtonInactive.Name = "radioButtonInactive";
             this.radioButtonInactive.Properties.Caption = "&Inactive";
             this.radioButtonInactive.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgRadio1;
-            this.radioButtonInactive.Size = new System.Drawing.Size(105, 24);
+            this.radioButtonInactive.Size = new System.Drawing.Size(242, 24);
             this.radioButtonInactive.StyleController = this.layoutControlSelectionCriteria;
             this.radioButtonInactive.TabIndex = 3;
             // 
@@ -481,7 +481,7 @@
             this.radioButtonActive.Name = "radioButtonActive";
             this.radioButtonActive.Properties.Caption = "&Active";
             this.radioButtonActive.Properties.CheckBoxOptions.Style = DevExpress.XtraEditors.Controls.CheckBoxStyle.SvgRadio1;
-            this.radioButtonActive.Size = new System.Drawing.Size(105, 24);
+            this.radioButtonActive.Size = new System.Drawing.Size(242, 24);
             this.radioButtonActive.StyleController = this.layoutControlSelectionCriteria;
             this.radioButtonActive.TabIndex = 2;
             // 
@@ -584,7 +584,7 @@
             this.layoutControlItemBoth});
             this.layoutControlGroupStatus.Location = new System.Drawing.Point(495, 0);
             this.layoutControlGroupStatus.Name = "layoutControlGroupStatus";
-            this.layoutControlGroupStatus.Size = new System.Drawing.Size(133, 133);
+            this.layoutControlGroupStatus.Size = new System.Drawing.Size(270, 133);
             this.layoutControlGroupStatus.Text = "Status";
             // 
             // layoutControlItemActive
@@ -592,7 +592,7 @@
             this.layoutControlItemActive.Control = this.radioButtonActive;
             this.layoutControlItemActive.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItemActive.Name = "layoutControlItemActive";
-            this.layoutControlItemActive.Size = new System.Drawing.Size(109, 28);
+            this.layoutControlItemActive.Size = new System.Drawing.Size(246, 28);
             this.layoutControlItemActive.TextVisible = false;
             // 
             // layoutControlItemInactive
@@ -600,7 +600,7 @@
             this.layoutControlItemInactive.Control = this.radioButtonInactive;
             this.layoutControlItemInactive.Location = new System.Drawing.Point(0, 28);
             this.layoutControlItemInactive.Name = "layoutControlItemInactive";
-            this.layoutControlItemInactive.Size = new System.Drawing.Size(109, 28);
+            this.layoutControlItemInactive.Size = new System.Drawing.Size(246, 28);
             this.layoutControlItemInactive.TextVisible = false;
             // 
             // layoutControlItemBoth
@@ -608,7 +608,7 @@
             this.layoutControlItemBoth.Control = this.radioButtonBoth;
             this.layoutControlItemBoth.Location = new System.Drawing.Point(0, 56);
             this.layoutControlItemBoth.Name = "layoutControlItemBoth";
-            this.layoutControlItemBoth.Size = new System.Drawing.Size(109, 28);
+            this.layoutControlItemBoth.Size = new System.Drawing.Size(246, 28);
             this.layoutControlItemBoth.TextVisible = false;
             // 
             // emptySpaceItem3
@@ -1011,11 +1011,11 @@
             // 
             // emptySpaceItem17
             // 
-            this.emptySpaceItem17.Location = new System.Drawing.Point(628, 0);
-            this.emptySpaceItem17.MaxSize = new System.Drawing.Size(496, 133);
-            this.emptySpaceItem17.MinSize = new System.Drawing.Size(496, 133);
+            this.emptySpaceItem17.Location = new System.Drawing.Point(765, 0);
+            this.emptySpaceItem17.MaxSize = new System.Drawing.Size(359, 133);
+            this.emptySpaceItem17.MinSize = new System.Drawing.Size(359, 133);
             this.emptySpaceItem17.Name = "emptySpaceItem17";
-            this.emptySpaceItem17.Size = new System.Drawing.Size(496, 133);
+            this.emptySpaceItem17.Size = new System.Drawing.Size(359, 133);
             this.emptySpaceItem17.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             // 
             // emptySpaceItem18

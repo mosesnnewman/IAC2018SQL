@@ -12,8 +12,8 @@ namespace IAC2021SQL
     public partial class OpenMasterContingentMaintenance : Form
     {
         private Boolean lbEdit = false, lbAdd = false, lbILockedIt = false,lbFormClosing = false;
-        private System.Data.SqlClient.SqlTransaction tableAdapTran = null;
-        private System.Data.SqlClient.SqlConnection tableAdapConn = null;
+        private Microsoft.Data.SqlClient.SqlTransaction tableAdapTran = null;
+        private Microsoft.Data.SqlClient.SqlConnection tableAdapConn = null;
 
         public OpenMasterContingentMaintenance()
         {
@@ -467,7 +467,7 @@ namespace IAC2021SQL
                 MasteriacDataSet.OPNMCONT.Rows[MACONTbindingSource.Position].SetField<Nullable<DateTime>>("MACONT_POST_DATE", (Nullable<DateTime>)TextBoxPostDate.Value);
                 MACONTbindingSource.EndEdit();
             }
-            tableAdapConn = new System.Data.SqlClient.SqlConnection();
+            tableAdapConn = new Microsoft.Data.SqlClient.SqlConnection();
             tableAdapConn.ConnectionString = IAC2021SQL.Properties.Settings.Default.IAC2010SQLConnectionString;
             tableAdapConn.Open();
             opnmcontTableAdapter.Connection = tableAdapConn;
@@ -478,7 +478,7 @@ namespace IAC2021SQL
                 opnmcontTableAdapter.Update(MasteriacDataSet.OPNMCONT.Rows[0]);
                 tableAdapTran.Commit();
             }
-            catch (System.Data.SqlClient.SqlException ex)
+            catch (Microsoft.Data.SqlClient.SqlException ex)
             {
                 tableAdapTran.Rollback();
                 MessageBox.Show("There is a Microsoft SQL Server database error: " + ex.Message.ToString());
@@ -516,7 +516,7 @@ namespace IAC2021SQL
             if (MasteriacDataSet.OPNMCONT.Rows.Count < 1)
                 return;
             MACONTbindingSource.EndEdit();
-            tableAdapConn = new System.Data.SqlClient.SqlConnection();
+            tableAdapConn = new Microsoft.Data.SqlClient.SqlConnection();
             tableAdapConn.ConnectionString = IAC2021SQL.Properties.Settings.Default.IAC2010SQLConnectionString;
             tableAdapConn.Open();
             opnmcontTableAdapter.Connection = tableAdapConn;
@@ -527,7 +527,7 @@ namespace IAC2021SQL
                 opnmcontTableAdapter.Delete(MasteriacDataSet.OPNMCONT.Rows[MACONTbindingSource.Position].Field<String>("MACONT_ACC_NO"));
                 tableAdapTran.Commit();
             }
-            catch (System.Data.SqlClient.SqlException ex)
+            catch (Microsoft.Data.SqlClient.SqlException ex)
             {
                 tableAdapTran.Rollback();
                 MessageBox.Show("There is a Microsoft SQL Server database error: " + ex.Message.ToString());

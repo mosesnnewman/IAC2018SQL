@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using System.Data.SqlClient;
+using Microsoft.Data.SqlClient;
 using System.Reflection;
 
 
@@ -15,8 +15,8 @@ namespace IAC2021SQL
     public partial class frmOpenDealerMaintenance : Form
     {
         private String lsKey = "";
-        private System.Data.SqlClient.SqlTransaction tableAdapTran = null;
-        private System.Data.SqlClient.SqlConnection tableAdapConn = null;
+        private Microsoft.Data.SqlClient.SqlTransaction tableAdapTran = null;
+        private Microsoft.Data.SqlClient.SqlConnection tableAdapConn = null;
 
         private bool lbAddFlag = false, lbFromDealer = false, lbEdit = false, lbILockedIt = false;
 
@@ -158,7 +158,7 @@ namespace IAC2021SQL
 
             lsDealerNo = DEALERcomboBox.Text.ToString().Trim();
 
-            tableAdapConn = new System.Data.SqlClient.SqlConnection();
+            tableAdapConn = new Microsoft.Data.SqlClient.SqlConnection();
             tableAdapConn.ConnectionString = IAC2021SQL.Properties.Settings.Default.IAC2010SQLConnectionString;
 
             tableAdapConn.Open();
@@ -170,7 +170,7 @@ namespace IAC2021SQL
                 oPNDEALRTableAdapter.Update(iacDataSet.OPNDEALR.Rows[DealerbindingSource.Position]);
                 tableAdapTran.Commit();
             }
-            catch (System.Data.SqlClient.SqlException ex)
+            catch (Microsoft.Data.SqlClient.SqlException ex)
             {
                 tableAdapTran.Rollback();
                 MessageBox.Show("This is a Microsoft SQL Server database error: " + ex.Message.ToString());
@@ -396,7 +396,7 @@ namespace IAC2021SQL
             Validate();  //Validate form so all data sets are updated with field values
             lsDealerNo = DEALERcomboBox.Text.ToString().Trim();
 
-            tableAdapConn = new System.Data.SqlClient.SqlConnection();
+            tableAdapConn = new Microsoft.Data.SqlClient.SqlConnection();
             tableAdapConn.ConnectionString = IAC2021SQL.Properties.Settings.Default.IAC2010SQLConnectionString;
             tableAdapConn.Open();
             oPNDEALRTableAdapter.Connection = tableAdapConn;
@@ -408,7 +408,7 @@ namespace IAC2021SQL
                 oPNDEALRTableAdapter.DeleteQuery(lsDealerNo);
                 tableAdapTran.Commit();
             }
-            catch (System.Data.SqlClient.SqlException ex)
+            catch (Microsoft.Data.SqlClient.SqlException ex)
             {
                 tableAdapTran.Rollback();
                 MessageBox.Show("The has been a Microsoft SQL Server Database Error: " + ex.Message.ToString());

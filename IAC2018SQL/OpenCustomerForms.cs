@@ -15,8 +15,8 @@ namespace IAC2021SQL
         private string lPaidThroughMM, lPaidThroughYY, lPaidThrough, lControl_Month, lControl_Year, lControlDate,
                 lcExpYear1, lcExpYear2, lcExpYear3, lcExpYear4, lcExpYear5, lcExpYear6, lcExpYear7, lcExpYear8,
                 lcExpYear9, lcExpYear10, _CustomerNo;
-        private System.Data.SqlClient.SqlTransaction tableAdapTran = null;
-        private System.Data.SqlClient.SqlConnection tableAdapConn = null;
+        private Microsoft.Data.SqlClient.SqlTransaction tableAdapTran = null;
+        private Microsoft.Data.SqlClient.SqlConnection tableAdapConn = null;
         private bool lbAddFlag = false,lbEdit = false,lbILockedIt = false;
         private DataGridViewComboBoxEditingControl editingControl;
         private int lnSeq = 0;
@@ -1312,7 +1312,7 @@ namespace IAC2021SQL
             OPNBANKbindingSource.EndEdit();
             // Moses Newman 09/26/2020 Add save of TSB data
             closedCreditManagerBindingSource.EndEdit();
-            tableAdapConn = new System.Data.SqlClient.SqlConnection();
+            tableAdapConn = new Microsoft.Data.SqlClient.SqlConnection();
             tableAdapConn.ConnectionString = IAC2021SQL.Properties.Settings.Default.IAC2010SQLConnectionString;
 
             tableAdapConn.Open();
@@ -1350,7 +1350,7 @@ namespace IAC2021SQL
                 }
                 tableAdapTran.Commit();
             }
-            catch (System.Data.SqlClient.SqlException ex)
+            catch (Microsoft.Data.SqlClient.SqlException ex)
             {
                 tableAdapTran.Rollback();
                 oPNCUSTTableAdapter.UnlockRecord(iACDataSet.OPNCUST.Rows[cUSTOMERBindingSource.Position].Field<String>("CUSTOMER_NO"));
@@ -1403,7 +1403,7 @@ namespace IAC2021SQL
             Validate();  //Validate form so all data sets are updated with field values
             lsCustomerNo = cUSTOMER_NOTextBox.Text.ToString().TrimEnd();
 
-            tableAdapConn = new System.Data.SqlClient.SqlConnection();
+            tableAdapConn = new Microsoft.Data.SqlClient.SqlConnection();
             tableAdapConn.ConnectionString = IAC2021SQL.Properties.Settings.Default.IAC2010SQLConnectionString;
             tableAdapConn.Open();
             oPNCUSTTableAdapter.Connection = tableAdapConn;
@@ -1422,7 +1422,7 @@ namespace IAC2021SQL
                 oPNCOMMTableAdapter.DeleteQuery(lsCustomerNo);
                 tableAdapTran.Commit();
             }
-            catch (System.Data.SqlClient.SqlException ex)
+            catch (Microsoft.Data.SqlClient.SqlException ex)
             {
                 tableAdapTran.Rollback();
                 MessageBox.Show("This is a Microsoft SQL Server database error: " + ex.Message.ToString());

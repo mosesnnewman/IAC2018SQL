@@ -1504,7 +1504,7 @@ namespace IAC2021SQL
                 CUSTOMERTableAdapter.Update(CUSTOMERDataSet.CUSTOMER);
                 CUSTOMERDataSet.CUSTOMER.AcceptChanges();
             }
-            catch (System.Data.SqlClient.SqlException ex)
+            catch (Microsoft.Data.SqlClient.SqlException ex)
             {
                 MessageBox.Show("This is a Microsoft SQL Server database error: " + ex.Message.ToString());
             }
@@ -1551,7 +1551,7 @@ namespace IAC2021SQL
                     lnSeq += 10;
                     CUSTOMERDataSet.CUSTHIST.Rows[i].SetField<Int32>("CUSTHIST_DATE_SEQ", lnSeq);
                 }
-                catch (System.Data.SqlClient.SqlException ex)
+                catch (Microsoft.Data.SqlClient.SqlException ex)
                 {
                     MessageBox.Show("This is a Microsoft SQL Server database error: " + ex.Message.ToString());
                 }
@@ -1582,7 +1582,7 @@ namespace IAC2021SQL
                 CUSTHISTTableAdapter.Update(CUSTOMERDataSet.CUSTHIST);
                 Program.CreateFinalPayments(CUSTOMERDataSet);
             }
-            catch (System.Data.SqlClient.SqlException ex)
+            catch (Microsoft.Data.SqlClient.SqlException ex)
             {
                 MessageBox.Show("This is a Microsoft SQL Server database error: " + ex.Message.ToString());
             }
@@ -1616,7 +1616,7 @@ namespace IAC2021SQL
                 DEALERTableAdapter.Update(DEALERDataSet.DEALER);
                 DEALERDataSet.DEALER.AcceptChanges();
             }
-            catch (System.Data.SqlClient.SqlException ex)
+            catch (Microsoft.Data.SqlClient.SqlException ex)
             {
                 MessageBox.Show("This is a Microsoft SQL Server database error: " + ex.Message.ToString());
             }
@@ -1659,7 +1659,7 @@ namespace IAC2021SQL
                 }
                 DEALHISTTableAdapter.Update(DEALERDataSet.DEALHIST);
             }
-            catch (System.Data.SqlClient.SqlException ex)
+            catch (Microsoft.Data.SqlClient.SqlException ex)
             {
                 MessageBox.Show("This is a Microsoft SQL Server database error: " + ex.Message.ToString());
             }
@@ -1691,7 +1691,7 @@ namespace IAC2021SQL
                 MASTERTableAdapter.Update(MASTERDataSet.MASTER);
                 MASTERDataSet.MASTER.AcceptChanges();
             }
-            catch (System.Data.SqlClient.SqlException ex)
+            catch (Microsoft.Data.SqlClient.SqlException ex)
             {
                 MessageBox.Show("This is a Microsoft SQL Server database error: " + ex.Message.ToString());
             }
@@ -1735,7 +1735,7 @@ namespace IAC2021SQL
                 }
                 MASTHISTTableAdapter.Update(MASTERDataSet.MASTHIST);
             }
-            catch (System.Data.SqlClient.SqlException ex)
+            catch (Microsoft.Data.SqlClient.SqlException ex)
             {
                 MessageBox.Show("This is a Microsoft SQL Server database error: " + ex.Message.ToString());
             }

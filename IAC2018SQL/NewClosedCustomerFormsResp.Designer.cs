@@ -98,30 +98,30 @@ namespace IAC2021SQL
             System.Windows.Forms.Label label49;
             System.Windows.Forms.Label label117;
             System.Windows.Forms.Label label116;
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition1 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition2 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition3 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition4 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition5 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition6 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition1 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition2 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition3 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition4 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition5 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition6 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition7 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition8 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition9 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition10 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition11 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition12 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition7 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition8 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition9 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition10 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition11 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition12 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition25 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition26 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition27 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition28 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition29 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition30 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition25 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition26 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition27 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition28 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition29 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition30 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition31 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition32 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition33 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition34 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition35 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition36 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition31 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition32 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition33 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition34 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition35 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition36 = new DevExpress.XtraLayout.RowDefinition();
             this.splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::IAC2021SQL.WaitFormMakeComment), true, true, true);
             this.cUSTOMERBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.iACDataSet = new IAC2021SQL.IACDataSet();
@@ -7220,44 +7220,44 @@ namespace IAC2021SQL
             this.layoutControlGroupLoanInfoTop.OptionsPrint.AppearanceItem.BackColor = System.Drawing.Color.Transparent;
             this.layoutControlGroupLoanInfoTop.OptionsPrint.AppearanceItem.Options.UseBackColor = true;
             this.layoutControlGroupLoanInfoTop.OptionsTableLayoutGroup.AutoSizeDefaultDefinitionLength = 250;
-            columnDefinition1.SizeType = System.Windows.Forms.SizeType.Absolute;
-            columnDefinition1.Width = 258D;
-            columnDefinition2.SizeType = System.Windows.Forms.SizeType.Absolute;
-            columnDefinition2.Width = 250D;
-            columnDefinition3.SizeType = System.Windows.Forms.SizeType.Absolute;
-            columnDefinition3.Width = 254D;
-            columnDefinition4.SizeType = System.Windows.Forms.SizeType.Absolute;
-            columnDefinition4.Width = 306D;
-            columnDefinition5.SizeType = System.Windows.Forms.SizeType.Absolute;
-            columnDefinition5.Width = 250D;
-            columnDefinition6.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            columnDefinition6.Width = 411D;
+            columnDefinition25.SizeType = System.Windows.Forms.SizeType.Absolute;
+            columnDefinition25.Width = 258D;
+            columnDefinition26.SizeType = System.Windows.Forms.SizeType.Absolute;
+            columnDefinition26.Width = 250D;
+            columnDefinition27.SizeType = System.Windows.Forms.SizeType.Absolute;
+            columnDefinition27.Width = 254D;
+            columnDefinition28.SizeType = System.Windows.Forms.SizeType.Absolute;
+            columnDefinition28.Width = 306D;
+            columnDefinition29.SizeType = System.Windows.Forms.SizeType.Absolute;
+            columnDefinition29.Width = 250D;
+            columnDefinition30.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            columnDefinition30.Width = 411D;
             this.layoutControlGroupLoanInfoTop.OptionsTableLayoutGroup.ColumnDefinitions.AddRange(new DevExpress.XtraLayout.ColumnDefinition[] {
-            columnDefinition1,
-            columnDefinition2,
-            columnDefinition3,
-            columnDefinition4,
-            columnDefinition5,
-            columnDefinition6});
-            rowDefinition1.Height = 41D;
-            rowDefinition1.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            rowDefinition2.Height = 41D;
-            rowDefinition2.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            rowDefinition3.Height = 41D;
-            rowDefinition3.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            rowDefinition4.Height = 41D;
-            rowDefinition4.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            rowDefinition5.Height = 41D;
-            rowDefinition5.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            rowDefinition6.Height = 43D;
-            rowDefinition6.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            columnDefinition25,
+            columnDefinition26,
+            columnDefinition27,
+            columnDefinition28,
+            columnDefinition29,
+            columnDefinition30});
+            rowDefinition25.Height = 41D;
+            rowDefinition25.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            rowDefinition26.Height = 41D;
+            rowDefinition26.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            rowDefinition27.Height = 41D;
+            rowDefinition27.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            rowDefinition28.Height = 41D;
+            rowDefinition28.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            rowDefinition29.Height = 41D;
+            rowDefinition29.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            rowDefinition30.Height = 43D;
+            rowDefinition30.SizeType = System.Windows.Forms.SizeType.AutoSize;
             this.layoutControlGroupLoanInfoTop.OptionsTableLayoutGroup.RowDefinitions.AddRange(new DevExpress.XtraLayout.RowDefinition[] {
-            rowDefinition1,
-            rowDefinition2,
-            rowDefinition3,
-            rowDefinition4,
-            rowDefinition5,
-            rowDefinition6});
+            rowDefinition25,
+            rowDefinition26,
+            rowDefinition27,
+            rowDefinition28,
+            rowDefinition29,
+            rowDefinition30});
             this.layoutControlGroupLoanInfoTop.OptionsTableLayoutGroup.ShrinkEmptyAutoSizeDefinition = DevExpress.Utils.DefaultBoolean.True;
             this.layoutControlGroupLoanInfoTop.Size = new System.Drawing.Size(1789, 308);
             this.layoutControlGroupLoanInfoTop.Spacing = new DevExpress.XtraLayout.Utils.Padding(20, 20, 20, 20);
@@ -7805,44 +7805,44 @@ namespace IAC2021SQL
             this.layoutControlGroupLoanInfoBottom.Location = new System.Drawing.Point(0, 419);
             this.layoutControlGroupLoanInfoBottom.Name = "layoutControlGroupLoanInfoBottom";
             this.layoutControlGroupLoanInfoBottom.OptionsItemText.TextAlignMode = DevExpress.XtraLayout.TextAlignModeGroup.AutoSize;
-            columnDefinition7.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            columnDefinition7.Width = 203D;
-            columnDefinition8.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            columnDefinition8.Width = 216D;
-            columnDefinition9.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            columnDefinition9.Width = 267D;
-            columnDefinition10.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            columnDefinition10.Width = 262D;
-            columnDefinition11.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            columnDefinition11.Width = 20D;
-            columnDefinition12.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            columnDefinition12.Width = 761D;
+            columnDefinition31.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            columnDefinition31.Width = 203D;
+            columnDefinition32.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            columnDefinition32.Width = 216D;
+            columnDefinition33.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            columnDefinition33.Width = 267D;
+            columnDefinition34.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            columnDefinition34.Width = 262D;
+            columnDefinition35.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            columnDefinition35.Width = 20D;
+            columnDefinition36.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            columnDefinition36.Width = 761D;
             this.layoutControlGroupLoanInfoBottom.OptionsTableLayoutGroup.ColumnDefinitions.AddRange(new DevExpress.XtraLayout.ColumnDefinition[] {
-            columnDefinition7,
-            columnDefinition8,
-            columnDefinition9,
-            columnDefinition10,
-            columnDefinition11,
-            columnDefinition12});
-            rowDefinition7.Height = 41D;
-            rowDefinition7.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            rowDefinition8.Height = 41D;
-            rowDefinition8.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            rowDefinition9.Height = 41D;
-            rowDefinition9.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            rowDefinition10.Height = 41D;
-            rowDefinition10.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            rowDefinition11.Height = 41D;
-            rowDefinition11.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            rowDefinition12.Height = 41D;
-            rowDefinition12.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            columnDefinition31,
+            columnDefinition32,
+            columnDefinition33,
+            columnDefinition34,
+            columnDefinition35,
+            columnDefinition36});
+            rowDefinition31.Height = 41D;
+            rowDefinition31.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            rowDefinition32.Height = 41D;
+            rowDefinition32.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            rowDefinition33.Height = 41D;
+            rowDefinition33.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            rowDefinition34.Height = 41D;
+            rowDefinition34.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            rowDefinition35.Height = 41D;
+            rowDefinition35.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            rowDefinition36.Height = 41D;
+            rowDefinition36.SizeType = System.Windows.Forms.SizeType.AutoSize;
             this.layoutControlGroupLoanInfoBottom.OptionsTableLayoutGroup.RowDefinitions.AddRange(new DevExpress.XtraLayout.RowDefinition[] {
-            rowDefinition7,
-            rowDefinition8,
-            rowDefinition9,
-            rowDefinition10,
-            rowDefinition11,
-            rowDefinition12});
+            rowDefinition31,
+            rowDefinition32,
+            rowDefinition33,
+            rowDefinition34,
+            rowDefinition35,
+            rowDefinition36});
             this.layoutControlGroupLoanInfoBottom.Size = new System.Drawing.Size(1789, 306);
             this.layoutControlGroupLoanInfoBottom.Spacing = new DevExpress.XtraLayout.Utils.Padding(20, 20, 20, 20);
             this.layoutControlGroupLoanInfoBottom.TextVisible = false;
@@ -12072,6 +12072,7 @@ namespace IAC2021SQL
             this.txtALTExt4.Properties.Appearance.Options.UseFont = true;
             this.txtALTExt4.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.txtALTExt4.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.txtALTExt4.Properties.MaxLength = 4;
             this.txtALTExt4.StyleController = this.layoutControlCosignerInfo;
             this.txtALTExt4.EditValueChanged += new System.EventHandler(this.txtALTExt4_EditValueChanged);
             // 
@@ -12085,6 +12086,7 @@ namespace IAC2021SQL
             this.txtALTExt3.Properties.Appearance.Options.UseFont = true;
             this.txtALTExt3.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.txtALTExt3.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.txtALTExt3.Properties.MaxLength = 4;
             this.txtALTExt3.StyleController = this.layoutControlCosignerInfo;
             this.txtALTExt3.EditValueChanged += new System.EventHandler(this.txtALTExt3_EditValueChanged);
             // 
@@ -12107,6 +12109,7 @@ namespace IAC2021SQL
             this.txtALTExt2.Properties.Appearance.Options.UseFont = true;
             this.txtALTExt2.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.txtALTExt2.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.txtALTExt2.Properties.MaxLength = 4;
             this.txtALTExt2.StyleController = this.layoutControlCosignerInfo;
             this.txtALTExt2.EditValueChanged += new System.EventHandler(this.txtALTExt2_EditValueChanged);
             // 
@@ -12162,6 +12165,7 @@ namespace IAC2021SQL
             this.txtALTPhone4.Properties.MaskSettings.Set("mask", "(000) 000-0000");
             this.txtALTPhone4.Properties.MaskSettings.Set("saveLiterals", false);
             this.txtALTPhone4.Properties.MaskSettings.Set("culture", "en-US");
+            this.txtALTPhone4.Properties.MaxLength = 12;
             this.txtALTPhone4.Properties.UseMaskAsDisplayFormat = ((bool)(resources.GetObject("txtALTPhone4.Properties.UseMaskAsDisplayFormat")));
             this.txtALTPhone4.StyleController = this.layoutControlCosignerInfo;
             this.txtALTPhone4.EditValueChanged += new System.EventHandler(this.txtALTPhone4_EditValueChanged);
@@ -12191,6 +12195,7 @@ namespace IAC2021SQL
             this.txtALTPhone3.Properties.MaskSettings.Set("mask", "(000) 000-0000");
             this.txtALTPhone3.Properties.MaskSettings.Set("culture", "en-US");
             this.txtALTPhone3.Properties.MaskSettings.Set("saveLiterals", false);
+            this.txtALTPhone3.Properties.MaxLength = 12;
             this.txtALTPhone3.Properties.UseMaskAsDisplayFormat = ((bool)(resources.GetObject("txtALTPhone3.Properties.UseMaskAsDisplayFormat")));
             this.txtALTPhone3.StyleController = this.layoutControlCosignerInfo;
             this.txtALTPhone3.EditValueChanged += new System.EventHandler(this.txtALTPhone3_EditValueChanged);
@@ -12224,6 +12229,7 @@ namespace IAC2021SQL
             this.txtALTPhone2.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.SimpleMaskManager));
             this.txtALTPhone2.Properties.MaskSettings.Set("mask", "(000) 000-0000");
             this.txtALTPhone2.Properties.MaskSettings.Set("saveLiterals", false);
+            this.txtALTPhone2.Properties.MaxLength = 12;
             this.txtALTPhone2.Properties.UseMaskAsDisplayFormat = ((bool)(resources.GetObject("txtALTPhone2.Properties.UseMaskAsDisplayFormat")));
             this.txtALTPhone2.StyleController = this.layoutControlCosignerInfo;
             this.txtALTPhone2.EditValueChanged += new System.EventHandler(this.txtALTPhone2_EditValueChanged);
@@ -12238,6 +12244,7 @@ namespace IAC2021SQL
             this.txtALTExt1.Properties.Appearance.Options.UseFont = true;
             this.txtALTExt1.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.txtALTExt1.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.txtALTExt1.Properties.MaxLength = 4;
             this.txtALTExt1.StyleController = this.layoutControlCosignerInfo;
             this.txtALTExt1.EditValueChanged += new System.EventHandler(this.txtALTExt1_EditValueChanged);
             // 
@@ -12262,6 +12269,7 @@ namespace IAC2021SQL
             this.txtALTRelation4.Properties.Appearance.Options.UseFont = true;
             this.txtALTRelation4.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.txtALTRelation4.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.txtALTRelation4.Properties.MaxLength = 10;
             this.txtALTRelation4.StyleController = this.layoutControlCosignerInfo;
             this.txtALTRelation4.EditValueChanged += new System.EventHandler(this.txtALTRelation4_EditValueChanged);
             // 
@@ -12289,6 +12297,7 @@ namespace IAC2021SQL
             this.txtALTRelation3.Properties.Appearance.Options.UseFont = true;
             this.txtALTRelation3.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.txtALTRelation3.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.txtALTRelation3.Properties.MaxLength = 10;
             this.txtALTRelation3.StyleController = this.layoutControlCosignerInfo;
             this.txtALTRelation3.EditValueChanged += new System.EventHandler(this.txtALTRelation3_EditValueChanged);
             // 
@@ -12312,6 +12321,7 @@ namespace IAC2021SQL
             this.txtALTRelation2.Properties.Appearance.Options.UseFont = true;
             this.txtALTRelation2.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.txtALTRelation2.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.txtALTRelation2.Properties.MaxLength = 10;
             this.txtALTRelation2.StyleController = this.layoutControlCosignerInfo;
             this.txtALTRelation2.EditValueChanged += new System.EventHandler(this.txtALTRelation2_EditValueChanged);
             // 
@@ -12344,6 +12354,7 @@ namespace IAC2021SQL
             this.txtALTPhone1.Properties.MaskSettings.Set("mask", "(000) 000-0000");
             this.txtALTPhone1.Properties.MaskSettings.Set("culture", "en-US");
             this.txtALTPhone1.Properties.MaskSettings.Set("saveLiterals", false);
+            this.txtALTPhone1.Properties.MaxLength = 12;
             this.txtALTPhone1.Properties.UseMaskAsDisplayFormat = ((bool)(resources.GetObject("txtALTPhone1.Properties.UseMaskAsDisplayFormat")));
             this.txtALTPhone1.StyleController = this.layoutControlCosignerInfo;
             this.txtALTPhone1.EditValueChanged += new System.EventHandler(this.txtALTPhone1_EditValueChanged);
@@ -12420,6 +12431,7 @@ namespace IAC2021SQL
             this.txtALTRelation1.Properties.Appearance.Options.UseFont = true;
             this.txtALTRelation1.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.txtALTRelation1.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.txtALTRelation1.Properties.MaxLength = 10;
             this.txtALTRelation1.StyleController = this.layoutControlCosignerInfo;
             this.txtALTRelation1.EditValueChanged += new System.EventHandler(this.txtALTRelation1_EditValueChanged);
             // 
@@ -12446,6 +12458,7 @@ namespace IAC2021SQL
             this.txtALTContact4.Properties.Appearance.Options.UseFont = true;
             this.txtALTContact4.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.txtALTContact4.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.txtALTContact4.Properties.MaxLength = 25;
             this.txtALTContact4.StyleController = this.layoutControlCosignerInfo;
             this.txtALTContact4.EditValueChanged += new System.EventHandler(this.txtALTContact4_EditValueChanged);
             // 
@@ -12477,6 +12490,7 @@ namespace IAC2021SQL
             this.txtALTContact3.Name = "txtALTContact3";
             this.txtALTContact3.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.txtALTContact3.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.txtALTContact3.Properties.MaxLength = 25;
             this.txtALTContact3.StyleController = this.layoutControlCosignerInfo;
             this.txtALTContact3.EditValueChanged += new System.EventHandler(this.txtALTContact3_EditValueChanged);
             // 
@@ -12502,6 +12516,7 @@ namespace IAC2021SQL
             this.txtALTContact2.Name = "txtALTContact2";
             this.txtALTContact2.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.txtALTContact2.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.txtALTContact2.Properties.MaxLength = 25;
             this.txtALTContact2.StyleController = this.layoutControlCosignerInfo;
             this.txtALTContact2.EditValueChanged += new System.EventHandler(this.txtALTContact2_EditValueChanged);
             // 
@@ -12528,6 +12543,7 @@ namespace IAC2021SQL
             this.txtALTContact1.Properties.Appearance.Options.UseFont = true;
             this.txtALTContact1.Properties.AppearanceDisabled.ForeColor = System.Drawing.Color.Black;
             this.txtALTContact1.Properties.AppearanceDisabled.Options.UseForeColor = true;
+            this.txtALTContact1.Properties.MaxLength = 25;
             this.txtALTContact1.StyleController = this.layoutControlCosignerInfo;
             this.txtALTContact1.EditValueChanged += new System.EventHandler(this.txtALTContact1_EditValueChanged);
             // 

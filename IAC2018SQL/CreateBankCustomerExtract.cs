@@ -2,15 +2,14 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using System.IO;
-using Excel = Microsoft.Office.Interop.Excel;
-using Microsoft.Office.Tools.Excel;
-//using RestSharp.Extensions;
-using System.Threading;
+using DevExpress.Export.Xl;
+using System.Net;
+using System.Text;
+using DevExpress.Spreadsheet;
+
 
 namespace IAC2021SQL
 {
@@ -119,12 +118,38 @@ namespace IAC2021SQL
             layoutControlFieldSelection.OptionsView.ShareLookAndFeelWithChildren = false;
         }
 
+        private Decimal GetBalance(String tsCustomerNo, DateTime tdDateIn)
+        {
+            String lsDateIn = tdDateIn.Month.ToString() + "-" + tdDateIn.Day.ToString() + "-" + tdDateIn.Year.ToString();
+            String requestURL = "https://payments.iaccredit.com/WCFHost/Services/PhonePayServiceRest.svc/rest/GetBalanceWithDate/" + tsCustomerNo + "/" +lsDateIn;
+
+            HttpWebRequest msgrequest = HttpWebRequest.Create(requestURL) as HttpWebRequest;
+            msgrequest.Method = "GET";
+            msgrequest.ContentType = "application/xml";
+            var username = "PayNSeconds";
+            var password = "IAC!AUTH@514678";
+            string encoded = System.Convert.ToBase64String(Encoding.GetEncoding("ISO-8859-1")
+                                           .GetBytes(username + ":" + password));
+
+            msgrequest.Headers.Add("Authorization", "Basic " + encoded); 
+            HttpWebResponse msgresponse = (HttpWebResponse)msgrequest.GetResponse();
+            WebHeaderCollection msgheader = msgresponse.Headers;
+
+            var encoding = ASCIIEncoding.ASCII;
+            String responseText;
+            using (var reader = new System.IO.StreamReader(msgresponse.GetResponseStream(), encoding))
+            {
+                responseText = reader.ReadLine();
+            }
+            return Convert.ToDecimal(responseText);
+        }
+
         private void buttonCancel_Click(object sender, EventArgs e)
         {
             Close();
         }
 
-        private void CreateTextFile(IACDataSet Bank,PaymentDataSet Extensions)
+        private void CreateTextFile(IACDataSet Bank, PaymentDataSet Extensions)
         {
             IACDataSetTableAdapters.DataPathTableAdapter DataPathTableAdapter = new IACDataSetTableAdapters.DataPathTableAdapter();
             PaymentDataSetTableAdapters.CustomerExtractTableAdapter CustomerExtractTableAdapter = new PaymentDataSetTableAdapters.CustomerExtractTableAdapter();
@@ -134,11 +159,6 @@ namespace IAC2021SQL
                    lsExcelFileOut = sourcePath + @"comp1000\Bank.xlsx",
                    lsTemplate = sourcePath + @"comp1000\TemplateCustomerExtract.xlsx";
 
-              //lsTime = DateTime.Now.Hour.ToString().PadLeft(2, '0') +
-                //                    DateTime.Now.Minute.ToString().PadLeft(2, '0');
-              
-              //lsTabChar         =   "\t";
-
             try
             {
                 if (File.Exists(lsExcelFileOut))
@@ -146,1098 +166,1957 @@ namespace IAC2021SQL
             }
             catch
             {
-                MessageBox.Show("Could Not Open Bank.xlsx because someone has it open!", "EXCEL File In Use",MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Could Not Open Bank.xlsx because someone has it open!", "EXCEL File In Use", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
-            if (File.Exists(lsTemplate))
+            sourcePath = lsExcelFileOut;
+            Int32 RowCount = Extensions.CustomerExtract.Rows.Count;
+
+            // Create an exporter instance. 
+            IXlExporter exporter = XlExport.CreateExporter(XlDocumentFormat.Xlsx);
+            // Create the FileStream object with the specified file path.
+            using (FileStream stream = new FileStream(sourcePath, FileMode.Create, FileAccess.ReadWrite))
             {
-                File.Copy(lsTemplate, lsExcelFileOut);
-                File.SetAttributes(lsExcelFileOut, FileAttributes.Normal);
-            }
-            sourcePath += @"comp1000\Bank.xlsx";
-            SQLBackupandRestore SQLBR = new SQLBackupandRestore();
-            SQLBR.RunJob("CustomerBankExtract", "Create Customer Bank Excel Ouput", false);
-            Thread.Sleep(5000);
-            SQLBR.Dispose();
-
-            // Moses Newman 11/14/2019 Add Excel Automation column and page formatting
-            //Create an Excel application instance
-            Excel.Application excelApp = new Excel.Application();
-
-            excelApp.Visible = true;
-            excelApp.WindowState = Excel.XlWindowState.xlMinimized;
-            excelApp.WindowState = Excel.XlWindowState.xlMaximized;
-
-            //excelApp.Workbooks.Open(sourcePath);
-            //open excel workbook
-            Excel.Workbook excelWorkBook;
-            //Excel.Workbook excelWorkBook = excelApp.Workbooks[1];
-
-            //excelWorkBook.SaveAs(lsExcelFileOut,Excel.XlFileFormat.xlWorkbookDefault);
-            //excelApp.Workbooks.Close();
-            //if (File.Exists(sourcePath))
-                //File.Delete(sourcePath);
-            excelApp.Workbooks.Open(lsExcelFileOut);
-
-            Excel.Worksheet excelWorkSheet;
-            excelWorkBook = excelApp.Workbooks[1];
-            excelWorkSheet = excelApp.Workbooks[1].Worksheets[1];
-
-            excelWorkSheet.PageSetup.CenterHeader = "&\"Arial\"&B&12&KFF0000" + "Customer Bank Extract";
-            excelWorkSheet.Visible = Excel.XlSheetVisibility.xlSheetVisible;
-
-            Excel.Range Fname = excelWorkSheet.get_Range("A:A");
-            Fname.Columns.EntireColumn.AutoFit();
-            Fname.Columns.ColumnWidth = 13;
-            excelWorkSheet.get_Range("A1:A1").Font.FontStyle = "Bold";
-            excelWorkSheet.get_Range("A1:A1").Value = "First Name";
-
-            Excel.Range Lname = excelWorkSheet.get_Range("B:B");
-            Lname.Columns.EntireColumn.AutoFit();
-            Lname.Columns.ColumnWidth = 19;
-            excelWorkSheet.get_Range("B1:B1").Font.FontStyle = "Bold";
-            excelWorkSheet.get_Range("B1:B1").Value = "Last Name";
-
-            Excel.Range Address1 = excelWorkSheet.get_Range("C:C");
-            Address1.Columns.EntireColumn.AutoFit();
-            Address1.Columns.ColumnWidth = 30;
-            excelWorkSheet.get_Range("C1:C1").Font.FontStyle = "Bold";
-            excelWorkSheet.get_Range("C1:C1").Value = "Address 1";
-
-            Excel.Range Address2 = excelWorkSheet.get_Range("D:D");
-            Address2.Columns.EntireColumn.AutoFit();
-            Address2.Columns.ColumnWidth = 13;
-            excelWorkSheet.get_Range("D1:D1").Font.FontStyle = "Bold";
-            excelWorkSheet.get_Range("D1:D1").Value = "Address 2";
-
-            Excel.Range City = excelWorkSheet.get_Range("E:E");
-            City.Columns.EntireColumn.AutoFit();
-            City.Columns.ColumnWidth = 15;
-            excelWorkSheet.get_Range("E1:E1").Font.FontStyle = "Bold";
-            excelWorkSheet.get_Range("E1:E1").Value = "City";
-
-            Excel.Range State = excelWorkSheet.get_Range("F:F");
-            State.Columns.EntireColumn.AutoFit();
-            State.Columns.ColumnWidth = 6;
-            excelWorkSheet.get_Range("F1:F1").Font.FontStyle = "Bold";
-            excelWorkSheet.get_Range("F1:F1").Value = "State";
-
-            Excel.Range ZipCode = excelWorkSheet.get_Range("G:G");
-            ZipCode.Columns.EntireColumn.AutoFit();
-            ZipCode.Columns.ColumnWidth = 11;
-            ZipCode.Columns.NumberFormat = "00000-0000";
-            excelWorkSheet.get_Range("G1:G1").Font.FontStyle = "Bold";
-            excelWorkSheet.get_Range("G1:G1").Value = "Zip Code";
-
-            Excel.Range SSN = excelWorkSheet.get_Range("H:H");
-            SSN.Columns.EntireColumn.AutoFit();
-            SSN.Columns.ColumnWidth = 12;
-            SSN.Columns.NumberFormat = "000-00-0000";
-            excelWorkSheet.get_Range("H1:H1").Font.FontStyle = "Bold";
-            excelWorkSheet.get_Range("H1:H1").Value = "SSN";
-
-            Excel.Range DOB = excelWorkSheet.get_Range("I:I");
-            DOB.Columns.EntireColumn.AutoFit();
-            DOB.Columns.ColumnWidth = 11;
-            DOB.Columns.NumberFormat = "mm/dd/yyyy";
-            excelWorkSheet.get_Range("I1:I1").Font.FontStyle = "Bold";
-            excelWorkSheet.get_Range("I1:I1").Value = "DOB";
-
-            Excel.Range Type = excelWorkSheet.get_Range("J:J");
-            Type.Columns.EntireColumn.AutoFit();
-            Type.Columns.ColumnWidth = 5;
-            excelWorkSheet.get_Range("J1:J1").Font.FontStyle = "Bold";
-            excelWorkSheet.get_Range("J1:J1").Value = "Type";
-
-            Excel.Range CustomerNo = excelWorkSheet.get_Range("K:K");
-            CustomerNo.Columns.EntireColumn.AutoFit();
-            CustomerNo.Columns.ColumnWidth = 12;
-            CustomerNo.Columns.NumberFormat = "000000";
-            excelWorkSheet.get_Range("K1:K1").Font.FontStyle = "Bold";
-            excelWorkSheet.get_Range("K1:K1").Value = "Account No.";
-
-            Excel.Range LegalState = excelWorkSheet.get_Range("L:L");
-            LegalState.Columns.EntireColumn.AutoFit();
-            LegalState.Columns.ColumnWidth = 10;
-            excelWorkSheet.get_Range("L1:L1").Font.FontStyle = "Bold";
-            excelWorkSheet.get_Range("L1:L1").Value = "Legal St.";
-
-            Excel.Range OriginalMonthly = excelWorkSheet.get_Range("M:M");
-            OriginalMonthly.Columns.EntireColumn.AutoFit();
-            OriginalMonthly.Columns.ColumnWidth = 12;
-            OriginalMonthly.Columns.NumberFormat = "$#,##0.00_);[Red]($#,##0.00)";
-            excelWorkSheet.get_Range("M1:M1").Font.FontStyle = "Bold";
-            excelWorkSheet.get_Range("M1:M1").Value = "Org. Monthly";
-
-            Excel.Range Monthly = excelWorkSheet.get_Range("N:N");
-            Monthly.Columns.EntireColumn.AutoFit();
-            Monthly.Columns.ColumnWidth = 10;
-            Monthly.Columns.NumberFormat = "$#,##0.00_);[Red]($#,##0.00)";
-            excelWorkSheet.get_Range("N1:N1").Font.FontStyle = "Bold";
-            excelWorkSheet.get_Range("N1:N1").Value = "Monthly";
-
-            Excel.Range LoanAmount = excelWorkSheet.get_Range("O:O");
-            LoanAmount.Columns.EntireColumn.AutoFit();
-            LoanAmount.Columns.ColumnWidth = 16;
-            LoanAmount.Columns.NumberFormat = "$#,##0.00_);[Red]($#,##0.00)";
-            excelWorkSheet.get_Range("O1:O1").Font.FontStyle = "Bold";
-            excelWorkSheet.get_Range("O1:O1").Value = "Loan Amount";
-
-            Excel.Range Cash = excelWorkSheet.get_Range("P:P");
-            Cash.Columns.EntireColumn.AutoFit();
-            Cash.Columns.ColumnWidth = 12;
-            Cash.Columns.NumberFormat = "$#,##0.00_);[Red]($#,##0.00)";
-            excelWorkSheet.get_Range("P1:P1").Font.FontStyle = "Bold";
-            excelWorkSheet.get_Range("P1:P1").Value = "Cash";
-
-            Excel.Range Term = excelWorkSheet.get_Range("Q:Q");
-            Term.Columns.EntireColumn.AutoFit();
-            Term.Columns.ColumnWidth = 5;
-            Term.Columns.NumberFormat = "00";
-            excelWorkSheet.get_Range("Q1:Q1").Font.FontStyle = "Bold";
-            excelWorkSheet.get_Range("Q1:Q1").Value = "Term";
-
-            Excel.Range FC = excelWorkSheet.get_Range("R:R");
-            FC.Columns.EntireColumn.AutoFit();
-            FC.Columns.ColumnWidth = 6;
-            FC.Columns.NumberFormat = "$#,##0.00_);[Red]($#,##0.00)";
-            excelWorkSheet.get_Range("R1:R1").Font.FontStyle = "Bold";
-            excelWorkSheet.get_Range("R1:R1").Value = "FC";
-
-            Excel.Range LoanInterest = excelWorkSheet.get_Range("S:S");
-            LoanInterest.Columns.EntireColumn.AutoFit();
-            LoanInterest.Columns.ColumnWidth = 10;
-            LoanInterest.Columns.NumberFormat = "$#,##0.00_);[Red]($#,##0.00)";
-            excelWorkSheet.get_Range("S1:S1").Font.FontStyle = "Bold";
-            excelWorkSheet.get_Range("S1:S1").Value = "Loan Int.";
-
-            Excel.Range PaidInterest = excelWorkSheet.get_Range("T:T");
-            PaidInterest.Columns.EntireColumn.AutoFit();
-            PaidInterest.Columns.ColumnWidth = 10;
-            PaidInterest.Columns.NumberFormat = "$#,##0.00_);[Red]($#,##0.00)";
-            excelWorkSheet.get_Range("T1:T1").Font.FontStyle = "Bold";
-            excelWorkSheet.get_Range("T1:T1").Value = "Paid Int.";
-
-            Excel.Range UEI = excelWorkSheet.get_Range("U:U");
-            UEI.Columns.EntireColumn.AutoFit();
-            UEI.Columns.ColumnWidth = 6;
-            UEI.Columns.NumberFormat = "$#,##0.00_);[Red]($#,##0.00)";
-            excelWorkSheet.get_Range("U1:U1").Font.FontStyle = "Bold";
-            excelWorkSheet.get_Range("U1:U1").Value = "UEI";
-
-            Excel.Range Balance = excelWorkSheet.get_Range("V:V");
-            Balance.Columns.EntireColumn.AutoFit();
-            Balance.Columns.ColumnWidth = 10;
-            Balance.Columns.NumberFormat = "$#,##0.00_);[Red]($#,##0.00)";
-            excelWorkSheet.get_Range("V1:V1").Font.FontStyle = "Bold";
-            excelWorkSheet.get_Range("V1:V1").Value = "Balance";
-
-            Excel.Range Buyout = excelWorkSheet.get_Range("W:W");
-            Buyout.Columns.EntireColumn.AutoFit();
-            Buyout.Columns.ColumnWidth = 10;
-            Buyout.Columns.NumberFormat = "$#,##0.00_);[Red]($#,##0.00)";
-            excelWorkSheet.get_Range("W1:W1").Font.FontStyle = "Bold";
-            excelWorkSheet.get_Range("W1:W1").Value = "Buyout";
-
-            Excel.Range LCBal = excelWorkSheet.get_Range("X:X");
-            LCBal.Columns.EntireColumn.AutoFit();
-            LCBal.Columns.ColumnWidth = 12;
-            LCBal.Columns.NumberFormat = "$#,##0.00_);[Red]($#,##0.00)";
-            excelWorkSheet.get_Range("X1:X1").Font.FontStyle = "Bold";
-            excelWorkSheet.get_Range("X1:X1").Value = "L/C Balance";
-
-            Excel.Range APR = excelWorkSheet.get_Range("Y:Y");
-            APR.Columns.EntireColumn.AutoFit();
-            APR.Columns.ColumnWidth = 10;
-            APR.Columns.NumberFormat = "##0.000";
-            excelWorkSheet.get_Range("Y1:Y1").Font.FontStyle = "Bold";
-            excelWorkSheet.get_Range("Y1:Y1").Value = "APR";
-
-            Excel.Range ContractDate = excelWorkSheet.get_Range("Z:Z");
-            ContractDate.Columns.EntireColumn.AutoFit();
-            ContractDate.Columns.ColumnWidth = 14;
-            ContractDate.Columns.NumberFormat = "mm/dd/yyyy";
-            excelWorkSheet.get_Range("Z1:Z1").Font.FontStyle = "Bold";
-            excelWorkSheet.get_Range("Z1:Z1").Value = "Contract Date";
-
-            Excel.Range FirstPayDate = excelWorkSheet.get_Range("AA:AA");
-            FirstPayDate.Columns.EntireColumn.AutoFit();
-            FirstPayDate.Columns.ColumnWidth = 14;
-            FirstPayDate.Columns.NumberFormat = "mm/dd/yyyy";
-            excelWorkSheet.get_Range("AA1:AA1").Font.FontStyle = "Bold";
-            excelWorkSheet.get_Range("AA1:AA1").Value = "1st Pay Date";
-
-
-            Excel.Range MaturityDate = excelWorkSheet.get_Range("AB:AB");
-            MaturityDate.Columns.EntireColumn.AutoFit();
-            MaturityDate.Columns.ColumnWidth = 14;
-            MaturityDate.Columns.NumberFormat = "mm/dd/yyyy";
-            excelWorkSheet.get_Range("AB1:AB1").Font.FontStyle = "Bold";
-            excelWorkSheet.get_Range("AB1:AB1").Value = "Maturity Date";
-
-            Excel.Range NextDueDate = excelWorkSheet.get_Range("AC:AC");
-            NextDueDate.Columns.EntireColumn.AutoFit();
-            NextDueDate.Columns.ColumnWidth = 14;
-            NextDueDate.Columns.NumberFormat = "mm/dd/yyyy";
-            excelWorkSheet.get_Range("AC1:AC1").Font.FontStyle = "Bold";
-            excelWorkSheet.get_Range("AC1:AC1").Value = "Nxt Due Date";
-
-            Excel.Range LastPayDate = excelWorkSheet.get_Range("AD:AD");
-            LastPayDate.Columns.EntireColumn.AutoFit();
-            LastPayDate.Columns.ColumnWidth = 14;
-            LastPayDate.Columns.NumberFormat = "mm/dd/yyyy";
-            excelWorkSheet.get_Range("AD1:AD1").Font.FontStyle = "Bold";
-            excelWorkSheet.get_Range("AD1:AD1").Value = "Last Pay Date";
-
-            Excel.Range Ext = excelWorkSheet.get_Range("AE:AE");
-            Ext.Columns.EntireColumn.AutoFit();
-            Ext.Columns.ColumnWidth = 4;
-            Ext.Columns.NumberFormat = "###";
-            excelWorkSheet.get_Range("AE1:AE1").Font.FontStyle = "Bold";
-            excelWorkSheet.get_Range("AE1:AE1").Value = "Ext";
-
-            Excel.Range PaidThrough = excelWorkSheet.get_Range("AF:AF");
-            PaidThrough.Columns.EntireColumn.AutoFit();
-            PaidThrough.Columns.ColumnWidth = 14;
-            PaidThrough.Columns.NumberFormat = "00/00";
-            excelWorkSheet.get_Range("AF1:AF1").Font.FontStyle = "Bold";
-            excelWorkSheet.get_Range("AF1:AF1").Value = "Paid Through";
-
-            Excel.Range NumPay = excelWorkSheet.get_Range("AG:AG");
-            NumPay.Columns.EntireColumn.AutoFit();
-            NumPay.Columns.ColumnWidth = 7;
-            NumPay.Columns.NumberFormat = "###";
-            excelWorkSheet.get_Range("AG1:AG1").Font.FontStyle = "Bold";
-            excelWorkSheet.get_Range("AG1:AG1").Value = "Num Pay";
-
-            Excel.Range CreditScore = excelWorkSheet.get_Range("AH:AH");
-            CreditScore.Columns.EntireColumn.AutoFit();
-            CreditScore.Columns.ColumnWidth = 11;
-            CreditScore.Columns.NumberFormat = "###";
-            excelWorkSheet.get_Range("AH1:AH1").Font.FontStyle = "Bold";
-            excelWorkSheet.get_Range("AH1:AH1").Value = "Credit Score";
-
-            Excel.Range AnnualIncome = excelWorkSheet.get_Range("AI:AI");
-            AnnualIncome.Columns.EntireColumn.AutoFit();
-            AnnualIncome.Columns.ColumnWidth = 13;
-            AnnualIncome.Columns.NumberFormat = "$#,##0.00_);[Red]($#,##0.00)";
-            excelWorkSheet.get_Range("AI1:AI1").Font.FontStyle = "Bold";
-            excelWorkSheet.get_Range("AI1:AI1").Value = "Annual Income";
-
-            Excel.Range Tier = excelWorkSheet.get_Range("AJ:AJ");
-            Tier.Columns.EntireColumn.AutoFit();
-            Tier.Columns.ColumnWidth = 5;
-            Tier.Columns.NumberFormat = "#";
-            excelWorkSheet.get_Range("AJ1:AJ1").Font.FontStyle = "Bold";
-            excelWorkSheet.get_Range("AJ1:AJ1").Value = "Tier";
-
-            Excel.Range CosAnnualIncome = excelWorkSheet.get_Range("AK:AK");
-            CosAnnualIncome.Columns.EntireColumn.AutoFit();
-            CosAnnualIncome.Columns.ColumnWidth = 17;
-            CosAnnualIncome.Columns.NumberFormat = "$#,##0.00_);[Red]($#,##0.00)";
-            excelWorkSheet.get_Range("AK1:AK1").Font.FontStyle = "Bold";
-            excelWorkSheet.get_Range("AK1:AK1").Value = "COS Annual Income";
-
-            Excel.Range COSCreditScore = excelWorkSheet.get_Range("AL:AL");
-            COSCreditScore.Columns.EntireColumn.AutoFit();
-            COSCreditScore.Columns.ColumnWidth = 16;
-            COSCreditScore.Columns.NumberFormat = "###";
-            excelWorkSheet.get_Range("AL1:AL1").Font.FontStyle = "Bold";
-            excelWorkSheet.get_Range("AL1:AL1").Value = "COS Credit Score";
-
-            Excel.Range VIN = excelWorkSheet.get_Range("AM:AM");
-            VIN.Columns.EntireColumn.AutoFit();
-            VIN.Columns.ColumnWidth = 26;
-            excelWorkSheet.get_Range("AM1:AM1").Font.FontStyle = "Bold";
-            excelWorkSheet.get_Range("AM1:AM1").Value = "VIN";
-
-            Excel.Range Year = excelWorkSheet.get_Range("AN:AN");
-            Year.Columns.EntireColumn.AutoFit();
-            Year.Columns.ColumnWidth = 5;
-            Year.Columns.NumberFormat = "####";
-            excelWorkSheet.get_Range("AN1:AN1").Font.FontStyle = "Bold";
-            excelWorkSheet.get_Range("AN1:AN1").Value = "Year";
-
-            Excel.Range Make = excelWorkSheet.get_Range("AO:AO");
-            Make.Columns.EntireColumn.AutoFit();
-            Make.Columns.ColumnWidth = 18;
-            excelWorkSheet.get_Range("AO1:AO1").Font.FontStyle = "Bold";
-            excelWorkSheet.get_Range("AO1:AO1").Value = "Make";
-
-            Excel.Range Model = excelWorkSheet.get_Range("AP:AP");
-            Model.Columns.EntireColumn.AutoFit();
-            Model.Columns.ColumnWidth = 16;
-            excelWorkSheet.get_Range("AP1:AP1").Font.FontStyle = "Bold";
-            excelWorkSheet.get_Range("AP1:AP1").Value = "Model";
-
-            Excel.Range Mileage = excelWorkSheet.get_Range("AQ:AQ");
-            Mileage.Columns.EntireColumn.AutoFit();
-            Mileage.Columns.ColumnWidth = 8;
-            Mileage.Columns.NumberFormat = "#,##0";
-            excelWorkSheet.get_Range("AQ1:AQ1").Font.FontStyle = "Bold";
-            excelWorkSheet.get_Range("AQ1:AQ1").Value = "Mileage";
-
-            Excel.Range DealerNum = excelWorkSheet.get_Range("AR:AR");
-            DealerNum.Columns.EntireColumn.AutoFit();
-            DealerNum.Columns.ColumnWidth = 7;
-            DealerNum.Columns.NumberFormat = "###";
-            excelWorkSheet.get_Range("AR1:AR1").Font.FontStyle = "Bold";
-            excelWorkSheet.get_Range("AR1:AR1").Value = "Dealer";
-
-            Excel.Range DealerName = excelWorkSheet.get_Range("AS:AS");
-            DealerName.Columns.EntireColumn.AutoFit();
-            DealerName.Columns.ColumnWidth = 26;
-            excelWorkSheet.get_Range("AS1:AS1").Font.FontStyle = "Bold";
-            excelWorkSheet.get_Range("AS1:AS1").Value = "Dealer Name";
-
-            Excel.Range DealerState = excelWorkSheet.get_Range("AT:AT");
-            DealerState.Columns.EntireColumn.AutoFit();
-            DealerState.Columns.ColumnWidth = 11;
-            excelWorkSheet.get_Range("AT1:AT1").Font.FontStyle = "Bold";
-            excelWorkSheet.get_Range("AT1:AT1").Value = "Dealer St.";
-
-            Excel.Range InsCo = excelWorkSheet.get_Range("AU:AU");
-            InsCo.Columns.EntireColumn.AutoFit();
-            InsCo.Columns.ColumnWidth = 26;
-            excelWorkSheet.get_Range("AU1:AU1").Font.FontStyle = "Bold";
-            excelWorkSheet.get_Range("AU1:AU1").Value = "Insurance Company";
-
-            Excel.Range PolicyNo = excelWorkSheet.get_Range("AV:AV");
-            PolicyNo.Columns.EntireColumn.AutoFit();
-            PolicyNo.Columns.ColumnWidth = 16;
-            excelWorkSheet.get_Range("AV1:AV1").Font.FontStyle = "Bold";
-            excelWorkSheet.get_Range("AV1:AV1").Value = "Policy Number";
-
-            Excel.Range EFFDate = excelWorkSheet.get_Range("AW:AW");
-            EFFDate.Columns.EntireColumn.AutoFit();
-            EFFDate.Columns.ColumnWidth = 10.57;
-            EFFDate.Columns.NumberFormat = "mm/dd/yyyy";
-            excelWorkSheet.get_Range("AW1:AW1").Font.FontStyle = "Bold";
-            excelWorkSheet.get_Range("AW1:AW1").Value = "EFF Date";
-
-            Excel.Range ExpDate = excelWorkSheet.get_Range("AX:AX");
-            ExpDate.Columns.EntireColumn.AutoFit();
-            ExpDate.Columns.ColumnWidth = 10.57;
-            ExpDate.Columns.NumberFormat = "mm/dd/yyyy";
-            excelWorkSheet.get_Range("AX1:AX1").Font.FontStyle = "Bold";
-            excelWorkSheet.get_Range("AX1:AX1").Value = "EXP Date";
-
-            Excel.Range RepoInd = excelWorkSheet.get_Range("AY:AY");
-            RepoInd.Columns.EntireColumn.AutoFit();
-            RepoInd.Columns.ColumnWidth = 9;
-            excelWorkSheet.get_Range("AY1:AY1").Font.FontStyle = "Bold";
-            excelWorkSheet.get_Range("AY1:AY1").Value = "Repo IND";
-
-            Excel.Range ActStat = excelWorkSheet.get_Range("AZ:AZ");
-            ActStat.Columns.EntireColumn.AutoFit();
-            ActStat.Columns.ColumnWidth = 9;
-            excelWorkSheet.get_Range("AZ1:AZ1").Font.FontStyle = "Bold";
-            excelWorkSheet.get_Range("AZ1:AZ1").Value = "Act Stat";
-
-            Excel.Range TierPoints = excelWorkSheet.get_Range("BA:BA");
-            TierPoints.Columns.EntireColumn.AutoFit();
-            TierPoints.Columns.ColumnWidth = 11;
-            TierPoints.Columns.NumberFormat = "###";
-            excelWorkSheet.get_Range("BA1:BA1").Font.FontStyle = "Bold";
-            excelWorkSheet.get_Range("BA1:BA1").Value = "Tier Points";
-
-            Excel.Range COSTierPoints = excelWorkSheet.get_Range("BB:BB");
-            COSTierPoints.Columns.EntireColumn.AutoFit();
-            COSTierPoints.Columns.ColumnWidth = 11;
-            COSTierPoints.Columns.NumberFormat = "###";
-            excelWorkSheet.get_Range("BB1:BB1").Font.FontStyle = "Bold";
-            excelWorkSheet.get_Range("BB1:BB1").Value = "COS Tier Points";
-
-            Excel.Range FundingDate = excelWorkSheet.get_Range("BC:BC");
-            FundingDate.Columns.EntireColumn.AutoFit();
-            FundingDate.Columns.ColumnWidth = 12;
-            FundingDate.Columns.NumberFormat = "mm/dd/yyyy";
-            excelWorkSheet.get_Range("BC1:BC1").Font.FontStyle = "Bold";
-            excelWorkSheet.get_Range("BC1:BC1").Value = "Funding Date";
-
-            Excel.Range DealerCashPrice = excelWorkSheet.get_Range("BD:BD");
-            DealerCashPrice.Columns.EntireColumn.AutoFit();
-            DealerCashPrice.Columns.ColumnWidth = 12;
-            DealerCashPrice.Columns.NumberFormat = "$#,##0.00_);[Red]($#,##0.00)";
-            excelWorkSheet.get_Range("BD1:BD1").Font.FontStyle = "Bold";
-            excelWorkSheet.get_Range("BD1:BD1").Value = "DLR Cash Price";
-
-            Excel.Range PartialPayment = excelWorkSheet.get_Range("BE:BE");
-            PartialPayment.Columns.EntireColumn.AutoFit();
-            PartialPayment.Columns.ColumnWidth = 12;
-            PartialPayment.Columns.NumberFormat = "$#,##0.00_);[Red]($#,##0.00)";
-            excelWorkSheet.get_Range("BE1:BE1").Font.FontStyle = "Bold";
-            excelWorkSheet.get_Range("BE1:BE1").Value = "Partial Payment";
-
-            Excel.Range Ltv = excelWorkSheet.get_Range("BF:BF");
-            Ltv.Columns.EntireColumn.AutoFit();
-            Ltv.Columns.ColumnWidth = 10;
-            Ltv.Columns.NumberFormat = "$#,##0.00_);[Red]($#,##0.00)";
-            excelWorkSheet.get_Range("BF1:BF1").Font.FontStyle = "Bold";
-            excelWorkSheet.get_Range("BF1:BF1").Value = "LTV";
-
-            Excel.Range ControlDate = excelWorkSheet.get_Range("BG:BG");
-            ControlDate.Columns.EntireColumn.AutoFit();
-            ControlDate.Columns.ColumnWidth = 10.57;
-            ControlDate.Columns.NumberFormat = "mm/dd/yyyy";
-            excelWorkSheet.get_Range("BG1:BG1").Font.FontStyle = "Bold";
-            excelWorkSheet.get_Range("BG1:BG1").Value = "Control Date";
-
-            Excel.Range FullRecourse = excelWorkSheet.get_Range("BH:BH");
-            FullRecourse.Columns.EntireColumn.AutoFit();
-            FullRecourse.Columns.ColumnWidth = 9;
-            excelWorkSheet.get_Range("BH1:BH1").Font.FontStyle = "Bold";
-            excelWorkSheet.get_Range("BH1:BH1").Value = "Full Recourse";
-
-            Excel.Range GapIns = excelWorkSheet.get_Range("BI:BI");
-            GapIns.Columns.EntireColumn.AutoFit();
-            GapIns.Columns.ColumnWidth = 11;
-            excelWorkSheet.get_Range("BI1:BI1").Font.FontStyle = "Bold";
-            excelWorkSheet.get_Range("BI1:BI1").Value = "Gap Ins";
-
-            Excel.Range Warranty = excelWorkSheet.get_Range("BJ:BJ");
-            Warranty.Columns.EntireColumn.AutoFit();
-            Warranty.Columns.ColumnWidth = 9;
-            excelWorkSheet.get_Range("BJ1:BJ1").Font.FontStyle = "Bold";
-            excelWorkSheet.get_Range("BJ1:BJ1").Value = "Warranty";
-
-            Excel.Range LastPostCode = excelWorkSheet.get_Range("BK:BK");
-            LastPostCode.Columns.EntireColumn.AutoFit();
-            LastPostCode.Columns.ColumnWidth = 9;
-            excelWorkSheet.get_Range("BK1:BK1").Font.FontStyle = "Bold";
-            excelWorkSheet.get_Range("BK1:BK1").Value = "Last Post CD";
-
-            // Moses Newman 06/25/2020 Add Payment Type
-            Excel.Range PaymentType = excelWorkSheet.get_Range("BL:BL");
-            PaymentType.Columns.EntireColumn.AutoFit();
-            PaymentType.Columns.ColumnWidth = 9;
-            excelWorkSheet.get_Range("BL1:BL1").Font.FontStyle = "Bold";
-            excelWorkSheet.get_Range("BL1:BL1").Value = "Pay Type";
-
-            // Moses Newman 06/25/2020 Add Payment Code
-            Excel.Range PaymentCode = excelWorkSheet.get_Range("BM:BM");
-            PaymentCode.Columns.EntireColumn.AutoFit();
-            PaymentCode.Columns.ColumnWidth = 9;
-            excelWorkSheet.get_Range("BM1:BM1").Font.FontStyle = "Bold";
-            excelWorkSheet.get_Range("BM1:BM1").Value = "Pay Code";
-
-            // Moses Newman 06/25/2020 Add Payment Date
-            Excel.Range PaymentDate = excelWorkSheet.get_Range("BN:BN");
-            PaymentDate.Columns.EntireColumn.AutoFit();
-            PaymentDate.Columns.NumberFormat = "mm/dd/yyyy";
-            PaymentDate.Columns.ColumnWidth = 10.57;
-            excelWorkSheet.get_Range("BN1:BN1").Font.FontStyle = "Bold";
-            excelWorkSheet.get_Range("BN1:BN1").Value = "Payment Date";
-
-            // Moses Newman 06/25/2020 Add Previous Paid Thru
-            Excel.Range PrevPaidThru = excelWorkSheet.get_Range("BO:BO");
-            PrevPaidThru.Columns.EntireColumn.AutoFit();
-            PrevPaidThru.Columns.ColumnWidth = 14;
-            PrevPaidThru.NumberFormat = "@";
-            PrevPaidThru.Columns.NumberFormat = "00/00";
-            excelWorkSheet.get_Range("BO1:BO1").Font.FontStyle = "Bold";
-            excelWorkSheet.get_Range("BO1:BO1").Value = "Prev Paid Through";
-
-            Excel.Range TotalPayments = excelWorkSheet.get_Range("BP:BP");
-            TotalPayments.Columns.EntireColumn.AutoFit();
-            TotalPayments.Columns.ColumnWidth = 14;
-            TotalPayments.Columns.NumberFormat = "$#,##0.00_);[Red]($#,##0.00)";
-            excelWorkSheet.get_Range("BP1:BP1").Font.FontStyle = "Bold";
-            excelWorkSheet.get_Range("BP1:BP1").Value = "Ext. Tot Payments";
-
-            Excel.Range Status = excelWorkSheet.get_Range("BQ:BQ");
-            Status.Columns.EntireColumn.AutoFit();
-            Status.Columns.ColumnWidth = 14;
-            Status.Columns.NumberFormat = "$#,##0.00_);[Red]($#,##0.00)";
-            excelWorkSheet.get_Range("BQ1:BQ1").Font.FontStyle = "Bold";
-            excelWorkSheet.get_Range("BQ1:BQ1").Value = "Ext. Contract Status";
-
-            // Moses Newman 10/26/2020 Add Title Received
-            Excel.Range TitleReceived = excelWorkSheet.get_Range("BR:BR");
-            TitleReceived.Columns.EntireColumn.AutoFit();
-            TitleReceived.Columns.ColumnWidth = 14;
-            excelWorkSheet.get_Range("BR1:BR1").Font.FontStyle = "Bold";
-            excelWorkSheet.get_Range("BR1:BR1").Value = "Title Received";
-
-            // Moses Newman 10/26/2020 Add Date Title Received
-            Excel.Range DateTitleReceived = excelWorkSheet.get_Range("BS:BS");
-            DateTitleReceived.Columns.EntireColumn.AutoFit();
-            DateTitleReceived.Columns.NumberFormat = "mm/dd/yyyy";
-            DateTitleReceived.Columns.ColumnWidth = 19;
-            excelWorkSheet.get_Range("BS1:BS1").Font.FontStyle = "Bold";
-            excelWorkSheet.get_Range("BS1:BS1").Value = "Date Title Received";
-
-            // Moses Newman 10/27/2020 Add Electronic Lien
-            Excel.Range ElectronicLien = excelWorkSheet.get_Range("BT:BT");
-            ElectronicLien.Columns.EntireColumn.AutoFit();
-            ElectronicLien.Columns.ColumnWidth = 15;
-            excelWorkSheet.get_Range("BT1:BT1").Font.FontStyle = "Bold";
-            excelWorkSheet.get_Range("BT1:BT1").Value = "Electronic Lien";
-
-            // Moses Newman 02/28/2021 Add Received Contract
-            Excel.Range ReceivedContract = excelWorkSheet.get_Range("BU:BU");
-            ReceivedContract.Columns.EntireColumn.AutoFit();
-            ReceivedContract.Columns.ColumnWidth = 15;
-            excelWorkSheet.get_Range("BU1:BU1").Font.FontStyle = "Bold";
-            excelWorkSheet.get_Range("BU1:BU1").Value = "Received Contract";
-
-            // Moses Newman 10/27/2020 Add Date Contract Received
-            Excel.Range DateContractReceived = excelWorkSheet.get_Range("BV:BV");
-            PaymentDate.Columns.EntireColumn.AutoFit();
-            PaymentDate.Columns.NumberFormat = "mm/dd/yyyy";
-            PaymentDate.Columns.ColumnWidth = 10.57;
-            excelWorkSheet.get_Range("BV1:BV1").Font.FontStyle = "Bold";
-            excelWorkSheet.get_Range("BV1:BV1").Value = "Date Contract Received";
-
-            excelWorkSheet.get_Range("A:BV").Font.Size = 11;
-            // Moses Newman 08/01/2018 Freeze header row.
-            Excel.Range firstRow = (Excel.Range)excelWorkSheet.Rows[1];
-            excelWorkSheet.Activate();
-            excelWorkSheet.Application.ActiveWindow.SplitRow = 1;
-            firstRow.Application.ActiveWindow.FreezePanes = true;
-
-            Excel.Range U1 = excelWorkSheet.get_Range("A1:BV1");
-            Excel.Range r = excelWorkSheet.get_Range("A2:BV" + (excelWorkSheet.Rows.Count).ToString());
-
-            U1.Font.Bold = true;
-            U1.Font.Color = Excel.XlRgbColor.rgbWhite;
-            U1.Interior.Color = Excel.XlRgbColor.rgbGreen;
-
-            Excel.FormatCondition format = r.Rows.FormatConditions.Add(Excel.XlFormatConditionType.xlExpression, Excel.XlFormatConditionOperator.xlEqual, "=MOD(ROW(),2) = 0");
-            format.Interior.Color = System.Drawing.Color.FromArgb(198, 239, 206);
-            /*Excel.FormatCondition formatodd = r.Rows.FormatConditions.Add(Excel.XlFormatConditionType.xlExpression, Excel.XlFormatConditionOperator.xlEqual, "=MOD(ROW(),2) <> 0");
-            formatodd.Interior.Color = System.Drawing.Color.FromArgb(198, 239, 206); */
-            r.Borders.LineStyle = Excel.XlLineStyle.xlContinuous;
-            U1.Borders.LineStyle = Excel.XlLineStyle.xlContinuous;
-
-            if(SelectedFields.Count > 0)
-            {
-                foreach (Fld SField in FullFieldList.Reverse<Fld>())
+                // Create a new document and begin to write it to the specified stream.
+                using (IXlDocument document = exporter.CreateDocument(stream))
                 {
-                    switch (SField.FldNumber)
+                    // Add a new worksheet to the document. 
+                    using (IXlSheet sheet = document.CreateSheet())
                     {
-                        case 1:
-                            Fname.Delete();
-                            break;
-                        case 2:
-                            Lname.Delete();
-                            break;
-                        case 3:
-                            Address1.Delete();
-                            break;
-                        case 4:
-                            Address2.Delete();
-                            break;
-                        case 5:
-                            City.Delete();
-                            break;
-                        case 6:
-                            State.Delete();
-                            break;
-                        case 7:
-                            ZipCode.Delete();
-                            break;
-                        case 8:
-                            SSN.Delete();
-                            break;
-                        case 9:
-                            DOB.Delete();
-                            break;
-                        case 10:
-                            Type.Delete();
-                            break;
-                        case 11:
-                            CustomerNo.Delete();
-                            break;
-                        case 12:
-                            LegalState.Delete();
-                            break;
-                        case 13:
-                            OriginalMonthly.Delete();
-                            break;
-                        case 14:
-                            Monthly.Delete();
-                            break;
-                        case 15:
-                            LoanAmount.Delete();
-                            break;
-                        case 16:
-                            Cash.Delete();
-                            break;
-                        case 17:
-                            Term.Delete();
-                            break;
-                        case 18:
-                            FC.Delete();
-                            break;
-                        case 19:
-                            LoanInterest.Delete();
-                            break;
-                        case 20:
-                            PaidInterest.Delete();
-                            break;
-                        case 21:
-                            UEI.Delete();
-                            break;
-                        case 22:
-                            Balance.Delete();
-                            break;
-                        case 23:
-                            Buyout.Delete();
-                            break;
-                        case 24:
-                            LCBal.Delete();
-                            break;
-                        case 25:
-                            APR.Delete();
-                            break;
-                        case 26:
-                            ContractDate.Delete();
-                            break;
-                        case 27:
-                            FirstPayDate.Delete();
-                            break;
-                        case 28:
-                            MaturityDate.Delete();
-                            break;
-                        case 29:
-                            NextDueDate.Delete();
-                            break;
-                        case 30:
-                            LastPayDate.Delete();
-                            break;
-                        case 31:
-                            Ext.Delete();
-                            break;
-                        case 32:
-                            PaidThrough.Delete();
-                            break;
-                        case 33:
-                            NumPay.Delete();
-                            break;
-                        case 34:
-                            CreditScore.Delete();
-                            break;
-                        case 35:
-                            AnnualIncome.Delete();
-                            break;
-                        case 36:
-                            Tier.Delete();
-                            break;
-                        case 37:
-                            CosAnnualIncome.Delete();
-                            break;
-                        case 38:
-                            COSCreditScore.Delete();
-                            break;
-                        case 39:
-                            VIN.Delete();
-                            break;
-                        case 40:
-                            Year.Delete();
-                            break;
-                        case 41:
-                            Make.Delete();
-                            break;
-                        case 42:
-                            Model.Delete();
-                            break;
-                        case 43:
-                            Mileage.Delete();
-                            break;
-                        case 44:
-                            DealerNum.Delete();
-                            break;
-                        case 45:
-                            DealerName.Delete();
-                            break;
-                        case 46:
-                            DealerState.Delete();
-                            break;
-                        case 47:
-                            InsCo.Delete();
-                            break;
-                        case 48:
-                            PolicyNo.Delete();
-                            break;
-                        case 49:
-                            EFFDate.Delete();
-                            break;
-                        case 50:
-                            ExpDate.Delete();
-                            break;
-                        case 51:
-                            RepoInd.Delete();
-                            break;
-                        case 52:
-                            ActStat.Delete();
-                            break;
-                        case 53:
-                            TierPoints.Delete();
-                            break;
-                        case 54:
-                            COSTierPoints.Delete();
-                            break;
-                        case 55:
-                            FundingDate.Delete();
-                            break;
-                        case 56:
-                            DealerCashPrice.Delete();
-                            break;
-                        case 57:
-                            PartialPayment.Delete();
-                            break;
-                        case 58:
-                            Ltv.Delete();
-                            break;
-                        case 59:
-                            ControlDate.Delete();
-                            break;
-                        case 60:
-                            FullRecourse.Delete();
-                            break;
-                        case 61:
-                            GapIns.Delete();
-                            break;
-                        case 62:
-                            Warranty.Delete();
-                            break;
-                        case 63:
-                            LastPostCode.Delete();
-                            break;
-                        case 64:
-                            PaymentType.Delete();
-                            break;
-                        case 65:
-                            PaymentCode.Delete();
-                            break;
-                        case 66:
-                            PaymentDate.Delete();
-                            break;
-                        case 67:
-                            PrevPaidThru.Delete();
-                            break;
-                        case 68:
-                            TotalPayments.Delete();
-                            break;
-                        case 69:
-                            Status.Delete();
-                            break;
-                        // Moses Newman 10/26/2020 Add TitleReceived and DateTitleReceived
-                        case 70:
-                            TitleReceived.Delete();
-                            DateTitleReceived.Delete();
-                            break;
-                        case 71:
-                            // Moses Newman 10/27/2020 Add Electronic Lien
-                            ElectronicLien.Delete();
-                            break;
-                        case 72:
-                            // Moses Newman 02/28/2021 Add Received Contract
-                            ReceivedContract.Delete();
-                            break;
-                        case 73:
-                            // Moses Newman 02/28/2021 Add Date Contract Received
-                            DateContractReceived.Delete();
-                            break;
-                    }
-                }
-            }
-            excelWorkSheet.get_Range("A1:A1").Select();  // Moses Newman 06/25/2025
-            if(radioGroupMatch.SelectedIndex == 2)
-            {
-                // Moses Newman 10/27/2020 Handle Column data conversion even if not the same order because additonal fields where selected.
-                Int32 ExtColumn = 0, TotPaymentsColumn = 0, ContractStatusColumn = 0;
-                Excel.Range last = excelWorkSheet.Cells.SpecialCells(Excel.XlCellType.xlCellTypeLastCell, System.Type.Missing);
-                
-                for (int col = 1; col < last.Column + 1; col++)
-                {
-                    switch (excelWorkSheet.Cells[1, col].Value)
-                    {
-                        case "Ext":
-                            ExtColumn = col;
-                            break;
-                        case "Ext. Tot Payments":
-                            TotPaymentsColumn = col;
-                            break;
-                        case "Ext. Contract Status":
-                            ContractStatusColumn = col;
-                            break;
-                    }
-                }
-                for (int i = 2; i < last.Row + 1; i++)
-                {
-                    excelWorkSheet.Cells[i, ExtColumn].Value = Convert.ToInt32(excelWorkSheet.Cells[i, ExtColumn].Value);
-                    excelWorkSheet.Cells[i, TotPaymentsColumn].Value = Convert.ToDecimal(excelWorkSheet.Cells[i, TotPaymentsColumn].Value);
-                    excelWorkSheet.Cells[i, ContractStatusColumn].Value = Convert.ToDecimal(excelWorkSheet.Cells[i, ContractStatusColumn].Value);
-                }
-                // Moses Newman 10/27/2020 end mod
-            }
-            if (radioGroupMatch.SelectedIndex == 1)  // Moses Newman 01/28/2020 handle numeric format Balance and Buyout
-            {
-                // Moses Newman 10/27/2020 Handle Column data conversion even if not the same order because additonal fields where selected.
-                Int32 BalanceColumn = 0, BuyoutColumn = 0;
-                Excel.Range last = excelWorkSheet.Cells.SpecialCells(Excel.XlCellType.xlCellTypeLastCell, System.Type.Missing);
+                        // Specify the worksheet name.
+                        sheet.Name = "Customer Bank Extract";
+                        sheet.OutlineProperties.SummaryBelow = true;
+                        // Create an instance of the XlConditionalFormatting class.
+                        XlConditionalFormatting formatting = new XlConditionalFormatting();
+                        //formatting.Ranges.Add(XlCellRange.RowInterval(0, Extensions.CustomerExtract.Rows.Count));
+                        //XlCondFmtRuleExpression rule = new XlCondFmtRuleExpression("=MOD(ROW(),2) = 0");
+                        //rule.Formatting = XlFill.SolidFill(System.Drawing.Color.FromArgb(198, 239, 206));
+                        //formatting.Rules.Add(rule);
+                        //sheet.ConditionalFormattings.Add(formatting);
+                        // Freeze the first row in the worksheet.
+                        sheet.SplitPosition = new XlCellPosition(0, 1);
+                        // Open the XLSX document using the default application.
+                        sheet.HeaderFooter.DifferentOddEven = false;
+                        sheet.HeaderFooter.EvenHeader = XlHeaderFooter.FromLCR(null, XlHeaderFooter.Bold + XlHeaderFooter.BookName, null);
+                        // Specify cell font attributes.
+                        XlCellFormatting cellFormatting = new XlCellFormatting();
+                        cellFormatting.Font = new XlFont();
+                        cellFormatting.Font.Name = "Calibri";
+                        cellFormatting.Font.SchemeStyle = XlFontSchemeStyles.None;
+                        cellFormatting.Font.Size = 11;
+                        cellFormatting.Border = XlBorder.OutlineBorders(XlColor.FromArgb(0x47, 0x7B, 0xD1), XlBorderLineStyle.Thick);
 
-                for (int col = 1; col < last.Column + 1; col++)
-                {
-                    switch (excelWorkSheet.Cells[1, col].Value)
-                    {
-                        case "Balance":
-                            BalanceColumn = col;
-                            break;
-                        case "Buyout":
-                            BuyoutColumn = col;
-                            break;
-                    }
-                }
-                for (int i = 2; i < last.Row + 1; i++)
-                {
-                    excelWorkSheet.Cells[i, BalanceColumn].Value    = Convert.ToDecimal(excelWorkSheet.Cells[i, BalanceColumn].Value);
-                    excelWorkSheet.Cells[i, BuyoutColumn].Value     = Convert.ToDecimal(excelWorkSheet.Cells[i, BuyoutColumn].Value);
-                }
-                // Moses Newman 10/27/2020 end mod
-            }
-            if (radioGroupMatch.SelectedIndex == 0)
-            {
-                Excel.Range CopyRange = excelWorkSheet.get_Range("F:F");
-                Excel.Range InsertRange = excelWorkSheet.get_Range("J:J");
-                InsertRange.Insert(Excel.XlInsertShiftDirection.xlShiftToRight, CopyRange.Cut());
+                        // Specify formatting settings for the header row.
+                        XlCellFormatting headerRowFormatting = new XlCellFormatting();
+                        headerRowFormatting.CopyFrom(cellFormatting);
+                        headerRowFormatting.Font.Bold = true;
+                        headerRowFormatting.Font.Size = 11;
+                        headerRowFormatting.Font.Name = "Calibri";
+                        headerRowFormatting.Font.Color = XlColor.FromTheme(XlThemeColor.Light1, 0.0);
+                        headerRowFormatting.Fill = XlFill.SolidFill(System.Drawing.Color.Blue);
 
-                int ClosedCusts = Extensions.CustomerExtract.Select("CUSTOMER_IAC_TYPE = 'C'").Length;
-                int OpenCusts = Extensions.CustomerExtract.Select("CUSTOMER_IAC_TYPE = 'O'").Length;
-                Excel.Range last = excelWorkSheet.Cells.SpecialCells(Excel.XlCellType.xlCellTypeLastCell, System.Type.Missing);
-                for (int i = 2; i <= last.Row; i++)
-                {
-                    excelWorkSheet.Cells[i, 2].Value = Convert.ToDecimal(excelWorkSheet.Cells[i, 2].Value);
-                    excelWorkSheet.Cells[i, 6].Value = Convert.ToInt32(excelWorkSheet.Cells[i, 6].Value);
-                    excelWorkSheet.Cells[i, 4].Value = Convert.ToDouble(excelWorkSheet.Cells[i, 4].Value); // Moses Newman 03/27/2024 add average of APR so must convert from text to numeric.
-                }
-
-
-                Excel.Range ClosedTypeCountTotalRange = excelWorkSheet.get_Range("A1:N" + (ClosedCusts + OpenCusts + 2).ToString());
-                ClosedTypeCountTotalRange.Subtotal(1, Excel.XlConsolidationFunction.xlCount, new int[] { 1 }, true, false, Excel.XlSummaryRow.xlSummaryBelow);
-                Excel.Range ClosedSubTotalRange = excelWorkSheet.get_Range("A1:N" + (ClosedCusts + OpenCusts + 2).ToString());
-                // Moses Newman 03/27/2024 Average APR Subtotal now!
-                // Moses Newman 04/03/2024 Average Loan Amount now!
-                ClosedSubTotalRange.Subtotal(7, Excel.XlConsolidationFunction.xlAverage, new int[] { 3 }, false, false, Excel.XlSummaryRow.xlSummaryBelow);
-                ClosedSubTotalRange.Subtotal(7, Excel.XlConsolidationFunction.xlAverage, new int[] { 5 }, false, false, Excel.XlSummaryRow.xlSummaryBelow);
-                ClosedSubTotalRange.Subtotal(7, Excel.XlConsolidationFunction.xlSum, new int[] { 3 }, false, false, Excel.XlSummaryRow.xlSummaryBelow);
-                ClosedSubTotalRange.Subtotal(2, Excel.XlConsolidationFunction.xlCount, new int[] { 2 }, false, false, Excel.XlSummaryRow.xlSummaryBelow);
-
-                last = excelWorkSheet.Cells.SpecialCells(Excel.XlCellType.xlCellTypeLastCell, System.Type.Missing);
-                Excel.Range ARange = excelWorkSheet.get_Range("A1:A" + last.Row.ToString());
-
-                int GrandCount = 0;
-                String TestGrandText = "";
-                for (int i = last.Row; i > 0; i--)
-                {
-                    if (excelWorkSheet.Cells[i, 1].Value == "O Count")
-                    {
-                        excelWorkSheet.Cells[i, 1].Value = "Total Units Open";
-                        excelWorkSheet.Cells[i, 1].Font.FontStyle = "Bold";
-                        excelWorkSheet.Cells[i, 2].Font.FontStyle = "Bold";
-                    }
-                    if (excelWorkSheet.Cells[i, 1].Value == "Grand Count")
-                    {
-                        GrandCount++;
-                        if (GrandCount == 1)
+                        // Create the First Name column and set its width. 
+                        if (SelectedFields.Count == 0)
                         {
-                            excelWorkSheet.Cells[i, 1].Value = "Grand Total Units";
-                            excelWorkSheet.Cells[i, 1].Font.FontStyle = "Bold";
-                            excelWorkSheet.Cells[i, 2].Font.FontStyle = "Bold";
+                            SelectedFields.AddRange(FullFieldList);
                         }
-                        if (GrandCount == 2)
+                        var SortedList = SelectedFields.OrderBy(x => x.FldNumber);
+                        foreach (Fld SField in SortedList)
                         {
-                            excelWorkSheet.Rows[i].Delete();
-                            break;
-                        }
-                    }
-                }
-
-                last = excelWorkSheet.Cells.SpecialCells(Excel.XlCellType.xlCellTypeLastCell, System.Type.Missing);
-                ARange = excelWorkSheet.get_Range("A1:A" + last.Row.ToString());
-
-                for (int i = last.Row; i > 0; i--)
-                {
-                    if (excelWorkSheet.Cells[i, 1].Value == "C Count")
-                    {
-                        excelWorkSheet.Cells[i, 1].Value = "Total Units Closed";
-                        excelWorkSheet.Cells[i, 1].Font.FontStyle = "Bold";
-                        excelWorkSheet.Cells[i, 2].Font.FontStyle = "Bold";
-                        break;
-                    }
-                }
-
-                for (int i = last.Row; i > 0; i--)
-                {
-                    if (excelWorkSheet.Cells[i, 1].Value == "C Count" || excelWorkSheet.Cells[i, 1].Value == "O Count")
-                    {
-                        excelWorkSheet.Cells[i, 1].Value = "Units";
-                        excelWorkSheet.Cells[i, 1].Font.FontStyle = "Bold";
-                        excelWorkSheet.Cells[i, 2].Font.FontStyle = "Bold";
-                    }
-                }
-                ARange.ColumnWidth = 32;
-                last = excelWorkSheet.Cells.SpecialCells(Excel.XlCellType.xlCellTypeLastCell, System.Type.Missing);
-                ARange = excelWorkSheet.get_Range("A1:A" + last.Row.ToString());
-
-                Decimal TotalClosedLoans = 0, TotalOpenLoans = 0;
-                Int32 TotalUnitsClosed = 0, TotalUnitsOpen = 0;
-                Boolean tempDone = false;
-                for (int i = 1; i <= last.Row; i++)
-                {
-                    if (!tempDone)
-                    {
-                        if (excelWorkSheet.Cells[i, 1].Value == "Units")
-                        {
-                            excelWorkSheet.Cells[i, 1].Value = "Totals DLR# " + excelWorkSheet.Cells[i - 1, 7].Text;
-                            excelWorkSheet.Cells[i, 3].Value = Convert.ToDecimal(excelWorkSheet.Cells[i + 1, 3].Value);
-                            if (excelWorkSheet.Cells[i - 1, 2].Value == "C")
-                                // Moses Newman 08/22/2023
-                                TotalClosedLoans += excelWorkSheet.Cells[i + 1, 3].Value is null ? 0 : excelWorkSheet.Cells[i + 1, 3].Value;
-                            else
-                                // Moses Newman 08/22/2023
-                                TotalOpenLoans += excelWorkSheet.Cells[i + 1, 3].Value is null ? 0 : excelWorkSheet.Cells[i + 1, 3].Value;
-                            excelWorkSheet.Cells[i + 1, 3].Value = "";
-                            excelWorkSheet.Cells[i + 1, 7].Value = "";
-                            excelWorkSheet.Cells[i, 3].Font.FontStyle = "Bold";
-                        }
-                        if (excelWorkSheet.Cells[i, 1].Value == "Total Units Closed")
-                        {
-                            TotalUnitsClosed = Convert.ToInt32(excelWorkSheet.Cells[i, 2].Value);
-                            excelWorkSheet.Cells[i, 3].Value = TotalClosedLoans;
-                            excelWorkSheet.Cells[i, 3].Font.FontStyle = "Bold";
-                            excelWorkSheet.Cells[i, 1].Value = "Totals Closed";
-                        }
-                        if (excelWorkSheet.Cells[i, 7].Text == "Grand Total")
-                        {
-                            excelWorkSheet.Rows[i].Delete();
-                            tempDone = true;
-                        }
-                    }
-                    // Moses Newman 03/27/2024 Average APR Subtotal now!
-                    if (excelWorkSheet.Cells[i, 7].Value != null && excelWorkSheet.Cells[i, 3].Value == null && excelWorkSheet.Cells[i, 7].Value.GetType() == typeof(String))
-                    {
-                        if (excelWorkSheet.Cells[i, 7].Value.Contains("Average"))
-                        {
-                            excelWorkSheet.Cells[i, 1].Value = (!excelWorkSheet.Cells[i, 7].Value.Contains("Grand") ? "DLR# " : "") + excelWorkSheet.Cells[i, 7].Value + " APR";
-                            excelWorkSheet.Cells[i, 7].Value = "";
-                            excelWorkSheet.Cells[i, 1].Font.FontStyle = "Bold";
-                            excelWorkSheet.Cells[i, 5].Font.FontStyle = "Bold";
-                            excelWorkSheet.Cells[i - 1, 1].Value = excelWorkSheet.Cells[i, 1].Value;
-                            excelWorkSheet.Cells[i - 1, 5].Value = excelWorkSheet.Cells[i, 5].Value;
-                            excelWorkSheet.Cells[i - 1, 1].Font.FontStyle = "Bold";
-                            excelWorkSheet.Cells[i - 1, 5].Font.FontStyle = "Bold";
-                        }
-                    }
-                    // Moses Newman 03/27/2024 Average Loan Amount now!
-                    if (excelWorkSheet.Cells[i, 7].Value != null && excelWorkSheet.Cells[i, 3].Value != null && excelWorkSheet.Cells[i, 7].Value.GetType() == typeof(String))
-                    {
-                        
-                        if (excelWorkSheet.Cells[i, 7].Value.Contains("Average"))
-                        {
-                            excelWorkSheet.Cells[i, 1].Value = (!excelWorkSheet.Cells[i, 7].Value.Contains("Grand") ? "DLR# " : "") + excelWorkSheet.Cells[i, 7].Value + " Loan Amount";
-                            // Moses Newman 06/25/2024
-                            TestGrandText = excelWorkSheet.Cells[i, 1].Value.ToString();
-                            excelWorkSheet.Cells[i, 7].Value = "";
-                            excelWorkSheet.Cells[i, 1].Font.FontStyle = "Bold";
-                            excelWorkSheet.Cells[i, 3].Font.FontStyle = "Bold";
-                            excelWorkSheet.Cells[i - 1, 1].Value = excelWorkSheet.Cells[i, 1].Value;
-                            excelWorkSheet.Cells[i - 1, 3].Value = excelWorkSheet.Cells[i, 3].Value;
-                            excelWorkSheet.Cells[i - 1, 5].Value = "";
-                            excelWorkSheet.Cells[i - 1, 1].Font.FontStyle = "Bold";
-                            excelWorkSheet.Cells[i - 1, 3].Font.FontStyle = "Bold";
-                            excelWorkSheet.Cells[i, 1].Value = "";
-                            excelWorkSheet.Cells[i, 3].Value = "";
-                            if (TestGrandText == "Grand Average Loan Amount")
+                            switch (SField.FldNumber)
                             {
-                                excelWorkSheet.Cells[i - 3, 1].Value = excelWorkSheet.Cells[i - 2, 1].Value;
-                                excelWorkSheet.Cells[i - 2, 1].Value = "Grand Average APR";
-                                excelWorkSheet.Cells[i - 3, 3].Value = excelWorkSheet.Cells[i - 2, 3].Value;
-                                excelWorkSheet.Cells[i - 3, 3].Font.FontStyle = "Bold";
-                                excelWorkSheet.Cells[i - 2, 3].Value = "";
-                                excelWorkSheet.Cells[i - 2, 5].Value = excelWorkSheet.Cells[i - 3, 5].Value;
-                                excelWorkSheet.Cells[i - 3, 5].Value = "";
-                                excelWorkSheet.Rows[i - 2].Insert();
+                                case 1:
+
+                                    using (IXlColumn column = sheet.CreateColumn())
+                                    {
+                                        column.WidthInCharacters = 13;
+                                    }
+                                    break;
+                                case 2:
+                                    // Create the Last Name column and set its width. 
+                                    using (IXlColumn column = sheet.CreateColumn())
+                                    {
+                                        column.WidthInCharacters = 19;
+                                    }
+                                    break;
+                                case 3:
+                                    // Create the Address 1 column and set its width. 
+                                    using (IXlColumn column = sheet.CreateColumn())
+                                    {
+                                        column.WidthInCharacters = 30;
+                                    }
+                                    break;
+                                case 4:
+                                    // Create the Address 2 column and set its width. 
+                                    using (IXlColumn column = sheet.CreateColumn())
+                                    {
+                                        column.WidthInCharacters = 13;
+                                    }
+                                    break;
+                                case 5:
+                                    // Create the City column and set its width. 
+                                    using (IXlColumn column = sheet.CreateColumn())
+                                    {
+                                        column.WidthInCharacters = 15;
+                                    }
+                                    break;
+                                case 6:
+                                    // Create the State column and set its width. 
+                                    using (IXlColumn column = sheet.CreateColumn())
+                                    {
+                                        column.WidthInCharacters = 6;
+                                    }
+                                    break;
+                                case 7:
+                                    // Create the Zip Code column and set its width. 
+                                    using (IXlColumn column = sheet.CreateColumn())
+                                    {
+                                        column.WidthInCharacters = 11;
+                                        column.Formatting = new XlCellFormatting();
+                                        column.Formatting.NumberFormat = "00000-0000";
+                                    }
+                                    break;
+                                case 8:
+                                    // Create the SSN column and set its width. 
+                                    using (IXlColumn column = sheet.CreateColumn())
+                                    {
+                                        column.WidthInCharacters = 12;
+                                        column.Formatting = new XlCellFormatting();
+                                        column.Formatting.NumberFormat = "000-00-0000";
+                                    }
+                                    break;
+                                case 9:
+                                    // Create the DOB column and set its width. 
+                                    using (IXlColumn column = sheet.CreateColumn())
+                                    {
+                                        column.WidthInCharacters = 11;
+                                        column.Formatting = new XlCellFormatting();
+                                        column.Formatting.IsDateTimeFormatString = true;
+                                        column.Formatting.NetFormatString = "d";
+                                    }
+                                    break;
+                                case 10:
+                                    // Create the Type column and set its width. 
+                                    using (IXlColumn column = sheet.CreateColumn())
+                                    {
+                                        column.WidthInCharacters = 5;
+                                    }
+                                    break;
+                                case 11:
+                                    // Create the Account No. column and set its width. 
+                                    using (IXlColumn column = sheet.CreateColumn())
+                                    {
+                                        column.WidthInCharacters = 12;
+                                        column.Formatting = new XlCellFormatting();
+                                        column.Formatting.NumberFormat = "000000";
+                                    }
+                                    break;
+                                case 12:
+                                    // Create the Legal St. column and set its width. 
+                                    using (IXlColumn column = sheet.CreateColumn())
+                                    {
+                                        column.WidthInCharacters = 10;
+                                    }
+                                    // Create the Org. Monthly column and set its width. 
+                                    break;
+                                case 13:
+                                    using (IXlColumn column = sheet.CreateColumn())
+                                    {
+                                        column.WidthInCharacters = 12;
+                                        column.Formatting = new XlCellFormatting();
+                                        column.Formatting.NumberFormat = "$#,##0.00_);[Red]($#,##0.00)";
+                                    }
+                                    break;
+                                case 14:
+                                    // Create the Monthly column and set its width. 
+                                    using (IXlColumn column = sheet.CreateColumn())
+                                    {
+                                        column.WidthInCharacters = 10;
+                                        column.Formatting = new XlCellFormatting();
+                                        column.Formatting.NumberFormat = "$#,##0.00_);[Red]($#,##0.00)";
+                                    }
+                                    break;
+                                case 15:
+                                    // Create the Loan Amount column and set its width. 
+                                    using (IXlColumn column = sheet.CreateColumn())
+                                    {
+                                        column.WidthInCharacters = 16;
+                                        column.Formatting = new XlCellFormatting();
+                                        column.Formatting.NumberFormat = "$#,##0.00_);[Red]($#,##0.00)";
+                                    }
+                                    break;
+                                case 16:
+                                    // Create the Cash column and set its width. 
+                                    using (IXlColumn column = sheet.CreateColumn())
+                                    {
+                                        column.WidthInCharacters = 12;
+                                        column.Formatting = new XlCellFormatting();
+                                        column.Formatting.NumberFormat = "$#,##0.00_);[Red]($#,##0.00)";
+                                    }
+                                    break;
+                                case 17:
+                                    // Create the Term column and set its width. 
+                                    using (IXlColumn column = sheet.CreateColumn())
+                                    {
+                                        column.WidthInCharacters = 5;
+                                        column.Formatting = new XlCellFormatting();
+                                        column.Formatting.NumberFormat = "00";
+                                    }
+                                    break;
+                                case 18:
+                                    // Create the FC column and set its width. 
+                                    using (IXlColumn column = sheet.CreateColumn())
+                                    {
+                                        column.WidthInCharacters = 6;
+                                        column.Formatting = new XlCellFormatting();
+                                        column.Formatting.NumberFormat = "$#,##0.00_);[Red]($#,##0.00)";
+                                    }
+                                    break;
+                                case 19:
+                                    // Create the Loan Int. column and set its width. 
+                                    using (IXlColumn column = sheet.CreateColumn())
+                                    {
+                                        column.WidthInCharacters = 10;
+                                        column.Formatting = new XlCellFormatting();
+                                        column.Formatting.NumberFormat = "$#,##0.00_);[Red]($#,##0.00)";
+                                    }
+                                    break;
+                                case 20:
+                                    // Create the Paid Int. column and set its width. 
+                                    using (IXlColumn column = sheet.CreateColumn())
+                                    {
+                                        column.WidthInCharacters = 10;
+                                        column.Formatting = new XlCellFormatting();
+                                        column.Formatting.NumberFormat = "$#,##0.00_);[Red]($#,##0.00)";
+                                    }
+                                    break;
+                                case 21:
+                                    // Create the UEI column and set its width. 
+                                    using (IXlColumn column = sheet.CreateColumn())
+                                    {
+                                        column.WidthInCharacters = 6;
+                                        column.Formatting = new XlCellFormatting();
+                                        column.Formatting.NumberFormat = "$#,##0.00_);[Red]($#,##0.00)";
+                                    }
+                                    break;
+                                case 22:
+                                    // Create the Balance column and set its width. 
+                                    using (IXlColumn column = sheet.CreateColumn())
+                                    {
+                                        column.WidthInCharacters = 10;
+                                        column.Formatting = new XlCellFormatting();
+                                        column.Formatting.NumberFormat = "$#,##0.00_);[Red]($#,##0.00)";
+                                    }
+                                    break;
+                                case 23:
+                                    // Create the Buyout column and set its width. 
+                                    using (IXlColumn column = sheet.CreateColumn())
+                                    {
+                                        column.WidthInCharacters = 10;
+                                        column.Formatting = new XlCellFormatting();
+                                        column.Formatting.NumberFormat = "$#,##0.00_);[Red]($#,##0.00)";
+                                    }
+                                    break;
+                                case 24:
+                                    // Create the L/C Balance column and set its width. 
+                                    using (IXlColumn column = sheet.CreateColumn())
+                                    {
+                                        column.WidthInCharacters = 12;
+                                        column.Formatting = new XlCellFormatting();
+                                        column.Formatting.NumberFormat = "$#,##0.00_);[Red]($#,##0.00)";
+                                    }
+                                    break;
+                                case 25:
+                                    // Create the APR column and set its width. 
+                                    using (IXlColumn column = sheet.CreateColumn())
+                                    {
+                                        column.WidthInCharacters = 10;
+                                        column.Formatting = new XlCellFormatting();
+                                        column.Formatting.NumberFormat = "##0.000#%;[Red]-##0.000#%";
+                                    }
+                                    break;
+                                case 26:
+                                    // Create the Contract Date column and set its width. 
+                                    using (IXlColumn column = sheet.CreateColumn())
+                                    {
+                                        column.WidthInCharacters = 14;
+                                        column.Formatting = new XlCellFormatting();
+                                        column.Formatting.IsDateTimeFormatString = true;
+                                        column.Formatting.NetFormatString = "d";
+                                    }
+                                    break;
+                                case 27:
+                                    // Create the 1st Pay Date column and set its width. 
+                                    using (IXlColumn column = sheet.CreateColumn())
+                                    {
+                                        column.WidthInCharacters = 14;
+                                        column.Formatting = new XlCellFormatting();
+                                        column.Formatting.IsDateTimeFormatString = true;
+                                        column.Formatting.NetFormatString = "d";
+                                    }
+                                    break;
+                                case 28:
+                                    // Create the Maturity Date column and set its width. 
+                                    using (IXlColumn column = sheet.CreateColumn())
+                                    {
+                                        column.WidthInCharacters = 14;
+                                        column.Formatting = new XlCellFormatting();
+                                        column.Formatting.IsDateTimeFormatString = true;
+                                        column.Formatting.NetFormatString = "d";
+                                    }
+                                    break;
+                                case 29:
+                                    // Create the Nxt Due Date column and set its width. 
+                                    using (IXlColumn column = sheet.CreateColumn())
+                                    {
+                                        column.WidthInCharacters = 14;
+                                        column.Formatting = new XlCellFormatting();
+                                        column.Formatting.IsDateTimeFormatString = true;
+                                        column.Formatting.NetFormatString = "d";
+                                    }
+                                    break;
+                                case 30:
+                                    // Create the Last Pay Date column and set its width. 
+                                    using (IXlColumn column = sheet.CreateColumn())
+                                    {
+                                        column.WidthInCharacters = 14;
+                                        column.Formatting = new XlCellFormatting();
+                                        column.Formatting.IsDateTimeFormatString = true;
+                                        column.Formatting.NetFormatString = "d";
+                                    }
+                                    break;
+                                case 31:
+                                    // Create the Ext column and set its width. 
+                                    using (IXlColumn column = sheet.CreateColumn())
+                                    {
+                                        column.WidthInCharacters = 4;
+                                        column.Formatting = new XlCellFormatting();
+                                        column.Formatting.NumberFormat = "####";
+                                    }
+                                    break;
+                                case 32:
+                                    // Create the Paid Through column and set its width. 
+                                    using (IXlColumn column = sheet.CreateColumn())
+                                    {
+                                        column.WidthInCharacters = 14;
+                                        column.Formatting = new XlCellFormatting();
+                                        column.Formatting.NumberFormat = "00/00";
+                                    }
+                                    break;
+                                case 33:
+                                    // Create the Num Pay column and set its width. 
+                                    using (IXlColumn column = sheet.CreateColumn())
+                                    {
+                                        column.WidthInCharacters = 7;
+                                        column.Formatting = new XlCellFormatting();
+                                        column.Formatting.NumberFormat = "###";
+                                    }
+                                    break;
+                                case 34:
+                                    // Create the Credit Score column and set its width. 
+                                    using (IXlColumn column = sheet.CreateColumn())
+                                    {
+                                        column.WidthInCharacters = 11;
+                                        column.Formatting = new XlCellFormatting();
+                                        column.Formatting.NumberFormat = "###";
+                                    }
+                                    break;
+                                case 35:
+                                    // Create the Annual Income column and set its width. 
+                                    using (IXlColumn column = sheet.CreateColumn())
+                                    {
+                                        column.WidthInCharacters = 13;
+                                        column.Formatting = new XlCellFormatting();
+                                        column.Formatting.NumberFormat = "$#,##0.00_);[Red]($#,##0.00)";
+                                    }
+                                    break;
+                                case 36:
+                                    // Create the Tier column and set its width. 
+                                    using (IXlColumn column = sheet.CreateColumn())
+                                    {
+                                        column.WidthInCharacters = 5;
+                                        column.Formatting = new XlCellFormatting();
+                                        column.Formatting.NumberFormat = "#";
+                                    }
+                                    break;
+                                case 37:
+                                    // Create the COS Annual Income column and set its width. 
+                                    using (IXlColumn column = sheet.CreateColumn())
+                                    {
+                                        column.WidthInCharacters = 17;
+                                        column.Formatting = new XlCellFormatting();
+                                        column.Formatting.NumberFormat = "$#,##0.00_);[Red]($#,##0.00)";
+                                    }
+                                    break;
+                                case 38:
+                                    // Create the COS Credit Score column and set its width. 
+                                    using (IXlColumn column = sheet.CreateColumn())
+                                    {
+                                        column.WidthInCharacters = 16;
+                                        column.Formatting = new XlCellFormatting();
+                                        column.Formatting.NumberFormat = "###";
+                                    }
+                                    break;
+                                case 39:
+                                    // Create the VIN column and set its width. 
+                                    using (IXlColumn column = sheet.CreateColumn())
+                                    {
+                                        column.WidthInCharacters = 26;
+                                        column.Formatting = new XlCellFormatting();
+                                    }
+                                    break;
+                                case 40:
+                                    // Create the Year column and set its width. 
+                                    using (IXlColumn column = sheet.CreateColumn())
+                                    {
+                                        column.WidthInCharacters = 5;
+                                        column.Formatting = new XlCellFormatting();
+                                        column.Formatting.NumberFormat = "####";
+                                    }
+                                    break;
+                                case 41:
+                                    // Create the Make column and set its width. 
+                                    using (IXlColumn column = sheet.CreateColumn())
+                                    {
+                                        column.WidthInCharacters = 18;
+                                        column.Formatting = new XlCellFormatting();
+                                    }
+                                    break;
+                                case 42:
+                                    // Create the Model column and set its width. 
+                                    using (IXlColumn column = sheet.CreateColumn())
+                                    {
+                                        column.WidthInCharacters = 16;
+                                        column.Formatting = new XlCellFormatting();
+                                    }
+                                    break;
+                                case 43:
+                                    // Create the Mileage column and set its width. 
+                                    using (IXlColumn column = sheet.CreateColumn())
+                                    {
+                                        column.WidthInCharacters = 8;
+                                        column.Formatting = new XlCellFormatting();
+                                        column.Formatting.NumberFormat = "#,##0";
+                                    }
+                                    break;
+                                case 44:
+                                    // Create the Dealer column and set its width. 
+                                    using (IXlColumn column = sheet.CreateColumn())
+                                    {
+                                        column.WidthInCharacters = 7;
+                                        column.Formatting = new XlCellFormatting();
+                                        column.Formatting.NumberFormat = "####";
+                                    }
+                                    break;
+                                case 45:
+                                    // Create the Dealer Name column and set its width. 
+                                    using (IXlColumn column = sheet.CreateColumn())
+                                    {
+                                        column.WidthInCharacters = 26;
+                                        column.Formatting = new XlCellFormatting();
+                                    }
+                                    break;
+                                case 46:
+                                    // Create the Dealer St. column and set its width. 
+                                    using (IXlColumn column = sheet.CreateColumn())
+                                    {
+                                        column.WidthInCharacters = 11;
+                                        column.Formatting = new XlCellFormatting();
+                                    }
+                                    break;
+                                case 47:
+                                    // Create the Insurance Company column and set its width. 
+                                    using (IXlColumn column = sheet.CreateColumn())
+                                    {
+                                        column.WidthInCharacters = 26;
+                                        column.Formatting = new XlCellFormatting();
+                                    }
+                                    break;
+                                case 48:
+                                    // Create the Policy Number column and set its width. 
+                                    using (IXlColumn column = sheet.CreateColumn())
+                                    {
+                                        column.WidthInCharacters = 16;
+                                        column.Formatting = new XlCellFormatting();
+                                    }
+                                    break;
+                                case 49:
+                                    // Create the EFF Date column and set its width. 
+                                    using (IXlColumn column = sheet.CreateColumn())
+                                    {
+                                        column.WidthInCharacters = (float)10.57;
+                                        column.Formatting = new XlCellFormatting();
+                                        column.Formatting.IsDateTimeFormatString = true;
+                                        column.Formatting.NetFormatString = "d";
+                                    }
+                                    break;
+                                case 50:
+                                    // Create the EXP Date column and set its width. 
+                                    using (IXlColumn column = sheet.CreateColumn())
+                                    {
+                                        column.WidthInCharacters = (float)10.57;
+                                        column.Formatting = new XlCellFormatting();
+                                        column.Formatting.IsDateTimeFormatString = true;
+                                        column.Formatting.NetFormatString = "d";
+                                    }
+                                    break;
+                                case 51:
+                                    // Create the Repo IND column and set its width. 
+                                    using (IXlColumn column = sheet.CreateColumn())
+                                    {
+                                        column.WidthInCharacters = 9;
+                                        column.Formatting = new XlCellFormatting();
+                                    }
+                                    break;
+                                case 52:
+                                    // Create the Act Stat column and set its width. 
+                                    using (IXlColumn column = sheet.CreateColumn())
+                                    {
+                                        column.WidthInCharacters = 9;
+                                        column.Formatting = new XlCellFormatting();
+                                    }
+                                    break;
+                                case 53:
+                                    // Create the Tier Points and set its width. 
+                                    using (IXlColumn column = sheet.CreateColumn())
+                                    {
+                                        column.WidthInCharacters = 11;
+                                        column.Formatting = new XlCellFormatting();
+                                        column.Formatting.NumberFormat = "###";
+                                    }
+                                    break;
+                                case 54:
+                                    // Create the COS Tier Points and set its width. 
+                                    using (IXlColumn column = sheet.CreateColumn())
+                                    {
+                                        column.WidthInCharacters = 11;
+                                        column.Formatting = new XlCellFormatting();
+                                        column.Formatting.NumberFormat = "###";
+                                    }
+                                    break;
+                                case 55:
+                                    // Create the Funding Date column and set its width. 
+                                    using (IXlColumn column = sheet.CreateColumn())
+                                    {
+                                        column.WidthInCharacters = 12;
+                                        column.Formatting = new XlCellFormatting();
+                                        column.Formatting.IsDateTimeFormatString = true;
+                                        column.Formatting.NetFormatString = "d";
+                                    }
+                                    break;
+                                case 56:
+                                    // Create the DLR Cash Payment column and set its width. 
+                                    using (IXlColumn column = sheet.CreateColumn())
+                                    {
+                                        column.WidthInCharacters = 12;
+                                        column.Formatting = new XlCellFormatting();
+                                        column.Formatting.NumberFormat = "$#,##0.00_);[Red]($#,##0.00)";
+                                    }
+                                    break;
+                                case 57:
+                                    // Create the Partial Payment column and set its width. 
+                                    using (IXlColumn column = sheet.CreateColumn())
+                                    {
+                                        column.WidthInCharacters = 12;
+                                        column.Formatting = new XlCellFormatting();
+                                        column.Formatting.NumberFormat = "$#,##0.00_);[Red]($#,##0.00)";
+                                    }
+                                    break;
+                                case 58:
+                                    // Create the LTV column and set its width. 
+                                    using (IXlColumn column = sheet.CreateColumn())
+                                    {
+                                        column.WidthInCharacters = 10;
+                                        column.Formatting = new XlCellFormatting();
+                                        column.Formatting.NumberFormat = "##0.00##%;[Red]-##0.00##%";
+                                    }
+                                    break;
+                                case 59:
+                                    // Create the Control Date column and set its width. 
+                                    using (IXlColumn column = sheet.CreateColumn())
+                                    {
+                                        column.WidthInCharacters = (float)10.57;
+                                        column.Formatting = new XlCellFormatting();
+                                        column.Formatting.IsDateTimeFormatString = true;
+                                        column.Formatting.NetFormatString = "d";
+                                    }
+                                    break;
+                                case 60:
+                                    // Create the Full Recourse column and set its width. 
+                                    using (IXlColumn column = sheet.CreateColumn())
+                                    {
+                                        column.WidthInCharacters = 9;
+                                        column.Formatting = new XlCellFormatting();
+                                    }
+                                    break;
+                                case 61:
+                                    // Create the Gap Ins column and set its width. 
+                                    using (IXlColumn column = sheet.CreateColumn())
+                                    {
+                                        column.WidthInCharacters = 11;
+                                        column.Formatting = new XlCellFormatting();
+                                    }
+                                    break;
+                                case 62:
+                                    // Create the Warranty column and set its width. 
+                                    using (IXlColumn column = sheet.CreateColumn())
+                                    {
+                                        column.WidthInCharacters = 9;
+                                        column.Formatting = new XlCellFormatting();
+                                    }
+                                    break;
+                                case 63:
+                                    // Create the Last Post CD column and set its width. 
+                                    using (IXlColumn column = sheet.CreateColumn())
+                                    {
+                                        column.WidthInCharacters = 9;
+                                        column.Formatting = new XlCellFormatting();
+                                    }
+                                    break;
+                                case 64:
+                                    // Create the Pay Type column and set its width. 
+                                    using (IXlColumn column = sheet.CreateColumn())
+                                    {
+                                        column.WidthInCharacters = 9;
+                                        column.Formatting = new XlCellFormatting();
+                                    }
+                                    break;
+                                case 65:
+                                    // Create the Pay Code column and set its width. 
+                                    using (IXlColumn column = sheet.CreateColumn())
+                                    {
+                                        column.WidthInCharacters = 9;
+                                        column.Formatting = new XlCellFormatting();
+                                    }
+                                    break;
+                                case 66:
+                                    // Create the Payment Date column and set its width. 
+                                    using (IXlColumn column = sheet.CreateColumn())
+                                    {
+                                        column.WidthInCharacters = (float)10.57;
+                                        column.Formatting = new XlCellFormatting();
+                                        column.Formatting.IsDateTimeFormatString = true;
+                                        column.Formatting.NetFormatString = "d";
+                                    }
+                                    break;
+                                case 67:
+                                    // Create the Prev Paid Through column and set its width. 
+                                    using (IXlColumn column = sheet.CreateColumn())
+                                    {
+                                        column.WidthInCharacters = 14;
+                                        column.Formatting = new XlCellFormatting();
+                                        column.Formatting.NumberFormat = "00/00";
+                                    }
+                                    break;
+                                case 68:
+                                    // Create the Ext. Total Payments column and set its width. 
+                                    using (IXlColumn column = sheet.CreateColumn())
+                                    {
+                                        column.WidthInCharacters = 14;
+                                        column.Formatting = new XlCellFormatting();
+                                        column.Formatting.NumberFormat = "$#,##0.00_);[Red]($#,##0.00)";
+                                    }
+                                    break;
+                                case 69:
+                                    // Create the Ext. Contract Status column and set its width. 
+                                    using (IXlColumn column = sheet.CreateColumn())
+                                    {
+                                        column.WidthInCharacters = 14;
+                                        column.Formatting = new XlCellFormatting();
+                                        column.Formatting.NumberFormat = "$#,##0.00_);[Red]($#,##0.00)";
+                                    }
+                                    break;
+                                case 70:
+                                    // Create the Title Received column and set its width. 
+                                    using (IXlColumn column = sheet.CreateColumn())
+                                    {
+                                        column.WidthInCharacters = 14;
+                                        column.Formatting = new XlCellFormatting();
+                                    }
+                                    break;
+                                case 71:
+                                    // Create the Date Title Received column and set its width. 
+                                    using (IXlColumn column = sheet.CreateColumn())
+                                    {
+                                        column.WidthInCharacters = 19;
+                                        column.Formatting = new XlCellFormatting();
+                                        column.Formatting.IsDateTimeFormatString = true;
+                                        column.Formatting.NetFormatString = "d";
+                                    }
+                                    break;
+                                case 72:
+                                    // Create the Electronic Lien column and set its width. 
+                                    using (IXlColumn column = sheet.CreateColumn())
+                                    {
+                                        column.WidthInCharacters = 15;
+                                        column.Formatting = new XlCellFormatting();
+                                    }
+                                    break;
+                                case 73:
+                                    // Create the Received Contract column and set its width. 
+                                    using (IXlColumn column = sheet.CreateColumn())
+                                    {
+                                        column.WidthInCharacters = 15;
+                                        column.Formatting = new XlCellFormatting();
+                                    }
+                                    break;
+                                case 74:
+                                    // Create the Date Contract Received column and set its width. 
+                                    using (IXlColumn column = sheet.CreateColumn())
+                                    {
+                                        column.WidthInCharacters = (float)10.57;
+                                        column.Formatting = new XlCellFormatting();
+                                        column.Formatting.IsDateTimeFormatString = true;
+                                        column.Formatting.NetFormatString = "d";
+                                    }
+                                    break;
+                            }
+                        }
+                        using (IXlRow row = sheet.CreateRow())
+                        {
+                            foreach (Fld SField in SortedList)
+                            {
+                                // Create the header row.
+                                switch (SField.FldNumber)
+                                {
+                                    case 1:
+                                        using (IXlCell cell = row.CreateCell())
+                                        {
+                                            cell.Value = "First Name";
+                                            cell.ApplyFormatting(headerRowFormatting);
+                                        }
+                                        break;
+                                    case 2:
+                                        using (IXlCell cell = row.CreateCell())
+                                        {
+                                            cell.Value = "Last Name";
+                                            cell.ApplyFormatting(headerRowFormatting);
+                                        }
+                                        break;
+                                    case 3:
+                                        using (IXlCell cell = row.CreateCell())
+                                        {
+                                            cell.Value = "Address 1";
+                                            cell.ApplyFormatting(headerRowFormatting);
+                                        }
+                                        break;
+                                    case 4:
+                                        using (IXlCell cell = row.CreateCell())
+                                        {
+                                            cell.Value = "Address 2";
+                                            cell.ApplyFormatting(headerRowFormatting);
+                                        }
+                                        break;
+                                    case 5:
+                                        using (IXlCell cell = row.CreateCell())
+                                        {
+                                            cell.Value = "City";
+                                            cell.ApplyFormatting(headerRowFormatting);
+                                        }
+                                        break;
+                                    case 6:
+                                        using (IXlCell cell = row.CreateCell())
+                                        {
+                                            cell.Value = "State";
+                                            cell.ApplyFormatting(headerRowFormatting);
+                                        }
+                                        break;
+                                    case 7:
+                                        using (IXlCell cell = row.CreateCell())
+                                        {
+                                            cell.Value = "Zip+4";
+                                            cell.ApplyFormatting(headerRowFormatting);
+                                        }
+                                        break;
+                                    case 8:
+                                        using (IXlCell cell = row.CreateCell())
+                                        {
+                                            cell.Value = "SSN";
+                                            cell.ApplyFormatting(headerRowFormatting);
+                                        }
+                                        break;
+                                    case 9:
+                                        using (IXlCell cell = row.CreateCell())
+                                        {
+                                            cell.Value = "DOB";
+                                            cell.ApplyFormatting(headerRowFormatting);
+                                        }
+                                        break;
+                                    case 10:
+                                        using (IXlCell cell = row.CreateCell())
+                                        {
+                                            cell.Value = "Type";
+                                            cell.ApplyFormatting(headerRowFormatting);
+                                        }
+                                        break;
+                                    case 11:
+                                        using (IXlCell cell = row.CreateCell())
+                                        {
+                                            cell.Value = "Account No.";
+                                            cell.ApplyFormatting(headerRowFormatting);
+                                        }
+                                        break;
+                                    case 12:
+                                        using (IXlCell cell = row.CreateCell())
+                                        {
+                                            cell.Value = "Legal St.";
+                                            cell.ApplyFormatting(headerRowFormatting);
+                                        }
+                                        break;
+                                    case 13:
+                                        using (IXlCell cell = row.CreateCell())
+                                        {
+                                            cell.Value = "Org. Monthly";
+                                            cell.ApplyFormatting(headerRowFormatting);
+                                        }
+                                        break;
+                                    case 14:
+                                        using (IXlCell cell = row.CreateCell())
+                                        {
+                                            cell.Value = "Monthly";
+                                            cell.ApplyFormatting(headerRowFormatting);
+                                        }
+                                        break;
+                                    case 15:
+                                        using (IXlCell cell = row.CreateCell())
+                                        {
+                                            cell.Value = "Loan Amount";
+                                            cell.ApplyFormatting(headerRowFormatting);
+                                        }
+                                        break;
+                                    case 16:
+                                        using (IXlCell cell = row.CreateCell())
+                                        {
+                                            cell.Value = "Cash";
+                                            cell.ApplyFormatting(headerRowFormatting);
+                                        }
+                                        break;
+                                    case 17:
+                                        using (IXlCell cell = row.CreateCell())
+                                        {
+                                            cell.Value = "Term";
+                                            cell.ApplyFormatting(headerRowFormatting);
+                                        }
+                                        break;
+                                    case 18:
+                                        using (IXlCell cell = row.CreateCell())
+                                        {
+                                            cell.Value = "FC";
+                                            cell.ApplyFormatting(headerRowFormatting);
+                                        }
+                                        break;
+                                    case 19:
+                                        using (IXlCell cell = row.CreateCell())
+                                        {
+                                            cell.Value = "Loan Int.";
+                                            cell.ApplyFormatting(headerRowFormatting);
+                                        }
+                                        break;
+                                    case 20:
+                                        using (IXlCell cell = row.CreateCell())
+                                        {
+                                            cell.Value = "Paid Int.";
+                                            cell.ApplyFormatting(headerRowFormatting);
+                                        }
+                                        break;
+                                    case 21:
+                                        using (IXlCell cell = row.CreateCell())
+                                        {
+                                            cell.Value = "UEI";
+                                            cell.ApplyFormatting(headerRowFormatting);
+                                        }
+                                        break;
+                                    case 22:
+                                        using (IXlCell cell = row.CreateCell())
+                                        {
+                                            cell.Value = "Balance";
+                                            cell.ApplyFormatting(headerRowFormatting);
+                                        }
+                                        break;
+                                    case 23:
+                                        using (IXlCell cell = row.CreateCell())
+                                        {
+                                            cell.Value = "Buyout";
+                                            cell.ApplyFormatting(headerRowFormatting);
+                                        }
+                                        break;
+                                    case 24:
+                                        using (IXlCell cell = row.CreateCell())
+                                        {
+                                            cell.Value = "L/C Balance";
+                                            cell.ApplyFormatting(headerRowFormatting);
+                                        }
+                                        break;
+                                    case 25:
+                                        using (IXlCell cell = row.CreateCell())
+                                        {
+                                            cell.Value = "APR";
+                                            cell.ApplyFormatting(headerRowFormatting);
+                                        }
+                                        break;
+                                    case 26:
+                                        using (IXlCell cell = row.CreateCell())
+                                        {
+                                            cell.Value = "Contract Date";
+                                            cell.ApplyFormatting(headerRowFormatting);
+                                        }
+                                        break;
+                                    case 27:
+                                        using (IXlCell cell = row.CreateCell())
+                                        {
+                                            cell.Value = "1st Pay Date";
+                                            cell.ApplyFormatting(headerRowFormatting);
+                                        }
+                                        break;
+                                    case 28:
+                                        using (IXlCell cell = row.CreateCell())
+                                        {
+                                            cell.Value = "Maturity Date";
+                                            cell.ApplyFormatting(headerRowFormatting);
+                                        }
+                                        break;
+                                    case 29:
+                                        using (IXlCell cell = row.CreateCell())
+                                        {
+                                            cell.Value = "Nxt Due Date";
+                                            cell.ApplyFormatting(headerRowFormatting);
+                                        }
+                                        break;
+                                    case 30:
+                                        using (IXlCell cell = row.CreateCell())
+                                        {
+                                            cell.Value = "Last Pay Date";
+                                            cell.ApplyFormatting(headerRowFormatting);
+                                        }
+                                        break;
+                                    case 31:
+                                        using (IXlCell cell = row.CreateCell())
+                                        {
+                                            cell.Value = "Ext";
+                                            cell.ApplyFormatting(headerRowFormatting);
+                                        }
+                                        break;
+                                    case 32:
+                                        using (IXlCell cell = row.CreateCell())
+                                        {
+                                            cell.Value = "Paid Through";
+                                            cell.ApplyFormatting(headerRowFormatting);
+                                        }
+                                        break;
+                                    case 33:
+                                        using (IXlCell cell = row.CreateCell())
+                                        {
+                                            cell.Value = "Num Pay";
+                                            cell.ApplyFormatting(headerRowFormatting);
+                                        }
+                                        break;
+                                    case 34:
+                                        using (IXlCell cell = row.CreateCell())
+                                        {
+                                            cell.Value = "Credit Score";
+                                            cell.ApplyFormatting(headerRowFormatting);
+                                        }
+                                        break;
+                                    case 35:
+                                        using (IXlCell cell = row.CreateCell())
+                                        {
+                                            cell.Value = "Annual Income";
+                                            cell.ApplyFormatting(headerRowFormatting);
+                                        }
+                                        break;
+                                    case 36:
+                                        using (IXlCell cell = row.CreateCell())
+                                        {
+                                            cell.Value = "Tier";
+                                            cell.ApplyFormatting(headerRowFormatting);
+                                        }
+                                        break;
+                                    case 37:
+                                        using (IXlCell cell = row.CreateCell())
+                                        {
+                                            cell.Value = "COS Annual Income";
+                                            cell.ApplyFormatting(headerRowFormatting);
+                                        }
+                                        break;
+                                    case 38:
+                                        using (IXlCell cell = row.CreateCell())
+                                        {
+                                            cell.Value = "COS Credit Score";
+                                            cell.ApplyFormatting(headerRowFormatting);
+                                        }
+                                        break;
+                                    case 39:
+                                        using (IXlCell cell = row.CreateCell())
+                                        {
+                                            cell.Value = "VIN";
+                                            cell.ApplyFormatting(headerRowFormatting);
+                                        }
+                                        break;
+                                    case 40:
+                                        using (IXlCell cell = row.CreateCell())
+                                        {
+                                            cell.Value = "Year";
+                                            cell.ApplyFormatting(headerRowFormatting);
+                                        }
+                                        break;
+                                    case 41:
+                                        using (IXlCell cell = row.CreateCell())
+                                        {
+                                            cell.Value = "Make";
+                                            cell.ApplyFormatting(headerRowFormatting);
+                                        }
+                                        break;
+                                    case 42:
+                                        using (IXlCell cell = row.CreateCell())
+                                        {
+                                            cell.Value = "Model";
+                                            cell.ApplyFormatting(headerRowFormatting);
+                                        }
+                                        break;
+                                    case 43:
+                                        using (IXlCell cell = row.CreateCell())
+                                        {
+                                            cell.Value = "Mileage";
+                                            cell.ApplyFormatting(headerRowFormatting);
+                                        }
+                                        break;
+                                    case 44:
+                                        using (IXlCell cell = row.CreateCell())
+                                        {
+                                            cell.Value = "Dealer";
+                                            cell.ApplyFormatting(headerRowFormatting);
+                                        }
+                                        break;
+                                    case 45:
+                                        using (IXlCell cell = row.CreateCell())
+                                        {
+                                            cell.Value = "Dealer Name";
+                                            cell.ApplyFormatting(headerRowFormatting);
+                                        }
+                                        break;
+                                    case 46:
+                                        using (IXlCell cell = row.CreateCell())
+                                        {
+                                            cell.Value = "Dealer St.";
+                                            cell.ApplyFormatting(headerRowFormatting);
+                                        }
+                                        break;
+                                    case 47:
+                                        using (IXlCell cell = row.CreateCell())
+                                        {
+                                            cell.Value = "Insurance Company";
+                                            cell.ApplyFormatting(headerRowFormatting);
+                                        }
+                                        break;
+                                    case 48:
+                                        using (IXlCell cell = row.CreateCell())
+                                        {
+                                            cell.Value = "Policy Number";
+                                            cell.ApplyFormatting(headerRowFormatting);
+                                        }
+                                        break;
+                                    case 49:
+                                        using (IXlCell cell = row.CreateCell())
+                                        {
+                                            cell.Value = "EFF Date";
+                                            cell.ApplyFormatting(headerRowFormatting);
+                                        }
+                                        break;
+                                    case 50:
+                                        using (IXlCell cell = row.CreateCell())
+                                        {
+                                            cell.Value = "EXP Date";
+                                            cell.ApplyFormatting(headerRowFormatting);
+                                        }
+                                        break;
+                                    case 51:
+                                        using (IXlCell cell = row.CreateCell())
+                                        {
+                                            cell.Value = "Repo IND";
+                                            cell.ApplyFormatting(headerRowFormatting);
+                                        }
+                                        break;
+                                    case 52:
+                                        using (IXlCell cell = row.CreateCell())
+                                        {
+                                            cell.Value = "Act Stat";
+                                            cell.ApplyFormatting(headerRowFormatting);
+                                        }
+                                        break;
+                                    case 53:
+                                        using (IXlCell cell = row.CreateCell())
+                                        {
+                                            cell.Value = "Tier Points";
+                                            cell.ApplyFormatting(headerRowFormatting);
+                                        }
+                                        break;
+                                    case 54:
+                                        using (IXlCell cell = row.CreateCell())
+                                        {
+                                            cell.Value = "COS Tier Points";
+                                            cell.ApplyFormatting(headerRowFormatting);
+                                        }
+                                        break;
+                                    case 55:
+                                        using (IXlCell cell = row.CreateCell())
+                                        {
+                                            cell.Value = "Funding Date";
+                                            cell.ApplyFormatting(headerRowFormatting);
+                                        }
+                                        break;
+                                    case 56:
+                                        using (IXlCell cell = row.CreateCell())
+                                        {
+                                            cell.Value = "DLR Cash Price";
+                                            cell.ApplyFormatting(headerRowFormatting);
+                                        }
+                                        break;
+                                    case 57:
+                                        using (IXlCell cell = row.CreateCell())
+                                        {
+                                            cell.Value = "Partial Payment";
+                                            cell.ApplyFormatting(headerRowFormatting);
+                                        }
+                                        break;
+                                    case 58:
+                                        using (IXlCell cell = row.CreateCell())
+                                        {
+                                            cell.Value = "LTV";
+                                            cell.ApplyFormatting(headerRowFormatting);
+                                        }
+                                        break;
+                                    case 59:
+                                        using (IXlCell cell = row.CreateCell())
+                                        {
+                                            cell.Value = "Control Date";
+                                            cell.ApplyFormatting(headerRowFormatting);
+                                        }
+                                        break;
+                                    case 60:
+                                        using (IXlCell cell = row.CreateCell())
+                                        {
+                                            cell.Value = "Full Recourse";
+                                            cell.ApplyFormatting(headerRowFormatting);
+                                        }
+                                        break;
+                                    case 61:
+                                        using (IXlCell cell = row.CreateCell())
+                                        {
+                                            cell.Value = "Gap Ins";
+                                            cell.ApplyFormatting(headerRowFormatting);
+                                        }
+                                        break;
+                                    case 62:
+                                        using (IXlCell cell = row.CreateCell())
+                                        {
+                                            cell.Value = "Warranty";
+                                            cell.ApplyFormatting(headerRowFormatting);
+                                        }
+                                        break;
+                                    case 63:
+                                        using (IXlCell cell = row.CreateCell())
+                                        {
+                                            cell.Value = "Last Post CD";
+                                            cell.ApplyFormatting(headerRowFormatting);
+                                        }
+                                        break;
+                                    case 64:
+                                        using (IXlCell cell = row.CreateCell())
+                                        {
+                                            cell.Value = "Pay Type";
+                                            cell.ApplyFormatting(headerRowFormatting);
+                                        }
+                                        break;
+                                    case 65:
+                                        using (IXlCell cell = row.CreateCell())
+                                        {
+                                            cell.Value = "Pay Code";
+                                            cell.ApplyFormatting(headerRowFormatting);
+                                        }
+                                        break;
+                                    case 66:
+                                        using (IXlCell cell = row.CreateCell())
+                                        {
+                                            cell.Value = "Payment Date";
+                                            cell.ApplyFormatting(headerRowFormatting);
+                                        }
+                                        break;
+                                    case 67:
+                                        using (IXlCell cell = row.CreateCell())
+                                        {
+                                            cell.Value = "Prev Paid Through";
+                                            cell.ApplyFormatting(headerRowFormatting);
+                                        }
+                                        break;
+                                    case 68:
+                                        using (IXlCell cell = row.CreateCell())
+                                        {
+                                            cell.Value = "Ext. Tot Payments";
+                                            cell.ApplyFormatting(headerRowFormatting);
+                                        }
+                                        break;
+                                    case 69:
+                                        using (IXlCell cell = row.CreateCell())
+                                        {
+                                            cell.Value = "Ext. Contract Status";
+                                            cell.ApplyFormatting(headerRowFormatting);
+                                        }
+                                        break;
+                                    case 70:
+                                        using (IXlCell cell = row.CreateCell())
+                                        {
+                                            cell.Value = "Title Received";
+                                            cell.ApplyFormatting(headerRowFormatting);
+                                        }
+                                        break;
+                                    case 71:
+                                        using (IXlCell cell = row.CreateCell())
+                                        {
+                                            cell.Value = "Date Title Received";
+                                            cell.ApplyFormatting(headerRowFormatting);
+                                        }
+                                        break;
+                                    case 72:
+                                        using (IXlCell cell = row.CreateCell())
+                                        {
+                                            cell.Value = "Electronic Lien";
+                                            cell.ApplyFormatting(headerRowFormatting);
+                                        }
+                                        break;
+                                    case 73:
+                                        using (IXlCell cell = row.CreateCell())
+                                        {
+                                            cell.Value = "Received Contract";
+                                            cell.ApplyFormatting(headerRowFormatting);
+                                        }
+                                        break;
+                                    case 74:
+                                        using (IXlCell cell = row.CreateCell())
+                                        {
+                                            cell.Value = "Date Contract Received";
+                                            cell.ApplyFormatting(headerRowFormatting);
+                                        }
+                                        break;
+                                }
+                            }
+                        }
+                        // Create Data Rows
+
+                        for (int i = 0; i < RowCount; i++)
+                        {
+                            using (IXlRow row = sheet.CreateRow())
+                            {
+                                foreach (Fld sfield in SortedList)
+                                {
+                                    switch (sfield.FldNumber)
+                                    {
+                                        case 1:
+                                            using (IXlCell cell = row.CreateCell())
+                                            {
+                                                cell.Value = Extensions.CustomerExtract.Rows[i].Field<String>("CUSTOMER_FIRST_NAME");
+                                                cell.ApplyFormatting(cellFormatting);
+                                            }
+                                            break;
+                                        case 2:
+                                            using (IXlCell cell = row.CreateCell())
+                                            {
+                                                cell.Value = Extensions.CustomerExtract.Rows[i].Field<String>("CUSTOMER_LAST_NAME");
+                                                cell.ApplyFormatting(cellFormatting);
+                                            }
+                                            break;
+                                        case 3:
+                                            using (IXlCell cell = row.CreateCell())
+                                            {
+                                                cell.Value = Extensions.CustomerExtract.Rows[i].Field<String>("CUSTOMER_STREET_1");
+                                                cell.ApplyFormatting(cellFormatting);
+                                            }
+                                            break;
+                                        case 4:
+                                            using (IXlCell cell = row.CreateCell())
+                                            {
+                                                cell.Value = Extensions.CustomerExtract.Rows[i].Field<String>("CUSTOMER_STREET_2");
+                                                cell.ApplyFormatting(cellFormatting);
+                                            }
+                                            break;
+                                        case 5:
+                                            using (IXlCell cell = row.CreateCell())
+                                            {
+                                                cell.Value = Extensions.CustomerExtract.Rows[i].Field<String>("CUSTOMER_CITY");
+                                                cell.ApplyFormatting(cellFormatting);
+                                            }
+                                            break;
+                                        case 6:
+                                            using (IXlCell cell = row.CreateCell())
+                                            {
+                                                cell.Value = Extensions.CustomerExtract.Rows[i].Field<String>("CUSTOMER_STATE");
+                                                cell.ApplyFormatting(cellFormatting);
+                                            }
+                                            break;
+                                        case 7:
+                                            using (IXlCell cell = row.CreateCell())
+                                            {
+                                                cell.Value = Extensions.CustomerExtract.Rows[i].Field<String>("ZipCode");
+                                                cell.ApplyFormatting(cellFormatting);
+                                            }
+                                            break;
+                                        case 8:
+                                            using (IXlCell cell = row.CreateCell())
+                                            {
+                                                cell.Value = Extensions.CustomerExtract.Rows[i].Field<String>("SSN");
+                                                cell.ApplyFormatting(cellFormatting);
+                                            }
+                                            break;
+                                        case 9:
+                                            using (IXlCell cell = row.CreateCell())
+                                            {
+                                                cell.Value = Extensions.CustomerExtract.Rows[i].Field<DateTime?>("CUSTOMER_DOB") != null ?
+                                                               (XlVariantValue)Extensions.CustomerExtract.Rows[i].Field<DateTime>("CUSTOMER_DOB") : (XlVariantValue)"";
+                                                cell.ApplyFormatting(cellFormatting);
+                                            }
+                                            break;
+                                        case 10:
+                                            using (IXlCell cell = row.CreateCell())
+                                            {
+                                                cell.Value = Extensions.CustomerExtract.Rows[i].Field<String>("CUSTOMER_IAC_TYPE");
+                                                cell.ApplyFormatting(cellFormatting);
+                                            }
+                                            break;
+                                        case 11:
+                                            using (IXlCell cell = row.CreateCell())
+                                            {
+                                                cell.Value = Extensions.CustomerExtract.Rows[i].Field<String>("CUSTOMER_NO"); ;
+                                                cell.ApplyFormatting(cellFormatting);
+                                            }
+                                            break;
+                                        case 12:
+                                            using (IXlCell cell = row.CreateCell())
+                                            {
+                                                cell.Value = Extensions.CustomerExtract.Rows[i].Field<String>("CUSTOMER_STATE");
+                                                cell.ApplyFormatting(cellFormatting);
+                                            }
+                                            break;
+                                        case 13:
+                                            using (IXlCell cell = row.CreateCell())
+                                            {
+                                                cell.Value = (XlVariantValue)(Extensions.CustomerExtract.Rows[i].Field<Decimal?>("CUSTOMER_REGULAR_AMOUNT") ?? (Decimal)0.00);
+                                                cell.ApplyFormatting(cellFormatting);
+                                            }
+                                            break;
+                                        case 14:
+                                            using (IXlCell cell = row.CreateCell())
+                                            {
+                                                cell.Value = (XlVariantValue)(Double)(Extensions.CustomerExtract.Rows[i].Field<Decimal?>("CUSTOMER_REGULAR_AMOUNT") ?? (Decimal)0.00);
+                                                cell.ApplyFormatting(cellFormatting);
+                                            }
+                                            break;
+                                        case 15:
+                                            using (IXlCell cell = row.CreateCell())
+                                            {
+                                                cell.Value = (XlVariantValue)(Double)(Extensions.CustomerExtract.Rows[i].Field<Decimal?>("CUSTOMER_LOAN_AMOUNT") ?? (Decimal)0.00);
+                                                cell.ApplyFormatting(cellFormatting);
+                                            }
+                                            break;
+                                        case 16:
+                                            using (IXlCell cell = row.CreateCell())
+                                            {
+                                                cell.Value = (XlVariantValue)(Double)(Extensions.CustomerExtract.Rows[i].Field<Decimal?>("CUSTOMER_LOAN_CASH") ?? (Decimal)0.00);
+                                                cell.ApplyFormatting(cellFormatting);
+                                            }
+                                            break;
+                                        case 17:
+                                            using (IXlCell cell = row.CreateCell())
+                                            {
+                                                cell.Value = (XlVariantValue)(Double)(Extensions.CustomerExtract.Rows[i].Field<Int32?>("CUSTOMER_TERM") ?? (Decimal)0.00);
+                                                cell.ApplyFormatting(cellFormatting);
+                                            }
+                                            break;
+                                        case 18:
+                                            using (IXlCell cell = row.CreateCell())
+                                            {
+                                                cell.Value = (XlVariantValue)(Double)(Extensions.CustomerExtract.Rows[i].Field<Decimal?>("CUSTOMER_FINANCE_CHARGE") ?? (Decimal)0.00);
+                                                cell.ApplyFormatting(cellFormatting);
+                                            }
+                                            break;
+                                        case 19:
+                                            using (IXlCell cell = row.CreateCell())
+                                            {
+                                                cell.Value = (XlVariantValue)(Double)(Extensions.CustomerExtract.Rows[i].Field<Decimal?>("CUSTOMER_LOAN_INTEREST") ?? (Decimal)0.00);
+                                                cell.ApplyFormatting(cellFormatting);
+                                            }
+                                            break;
+                                        case 20:
+                                            using (IXlCell cell = row.CreateCell())
+                                            {
+                                                cell.Value = (XlVariantValue)(Double)(Extensions.CustomerExtract.Rows[i].Field<Decimal?>("PaidInterest") ?? (Decimal)0.00);
+                                                cell.ApplyFormatting(cellFormatting);
+                                            }
+                                            break;
+                                        case 21:
+                                            using (IXlCell cell = row.CreateCell())
+                                            {
+                                                cell.Value = (XlVariantValue)(Double)(Extensions.CustomerExtract.Rows[i].Field<Decimal?>("CUSTOMER_UE_INTEREST") ?? (Decimal)0.00);
+                                                cell.ApplyFormatting(cellFormatting);
+                                            }
+                                            break;
+                                        case 22:
+                                            using (IXlCell cell = row.CreateCell())
+                                            {
+                                                cell.Value = (XlVariantValue)(Double)(Extensions.CustomerExtract.Rows[i].Field<Decimal?>("CUSTOMER_BALANCE") ?? (Decimal)0);
+                                                cell.ApplyFormatting(cellFormatting);
+                                            }
+                                            break;
+                                        case 23:
+                                            using (IXlCell cell = row.CreateCell())
+                                            {
+                                                cell.Value = (XlVariantValue)(Extensions.CustomerExtract.Rows[i].Field<Decimal?>("CUSTOMER_BUYOUT") ?? (Decimal)0.00);
+                                                cell.ApplyFormatting(cellFormatting);
+                                            }
+                                            break;
+                                        case 24:
+                                            using (IXlCell cell = row.CreateCell())
+                                            {
+                                                cell.Value = (XlVariantValue)(Extensions.CustomerExtract.Rows[i].Field<Decimal?>("CUSTOMER_LATE_CHARGE_BAL") ?? (Decimal)0.00);
+                                                cell.ApplyFormatting(cellFormatting);
+                                            }
+                                            break;
+                                        case 25:
+                                            using (IXlCell cell = row.CreateCell())
+                                            {
+                                                Double tempAPR = (Double)(Extensions.CustomerExtract.Rows[i].Field<Decimal?>("CUSTOMER_ANNUAL_PERCENTAGE_RATE") ?? (Decimal)000.0000);
+                                                tempAPR = tempAPR / (Double)100.0000;
+                                                cell.Value = (XlVariantValue)tempAPR;
+                                                cell.ApplyFormatting(cellFormatting);
+                                            }
+                                            break;
+                                        case 26:
+                                            using (IXlCell cell = row.CreateCell())
+                                            {
+                                                cell.Value = Extensions.CustomerExtract.Rows[i].Field<DateTime?>("CUSTOMER_CONTRACT_DATE") != null ?
+                                                               (XlVariantValue)Extensions.CustomerExtract.Rows[i].Field<DateTime>("CUSTOMER_CONTRACT_DATE") : (XlVariantValue)"";
+                                                cell.ApplyFormatting(cellFormatting);
+                                            }
+                                            break;
+                                        case 27:
+                                            using (IXlCell cell = row.CreateCell())
+                                            {
+                                                cell.Value = Extensions.CustomerExtract.Rows[i].Field<DateTime?>("CUSTOMER_INIT_DATE") != null ?
+                                                               (XlVariantValue)Extensions.CustomerExtract.Rows[i].Field<DateTime>("CUSTOMER_INIT_DATE") : (XlVariantValue)"";
+                                                cell.ApplyFormatting(cellFormatting);
+                                            }
+                                            break;
+                                        case 28:
+                                            using (IXlCell cell = row.CreateCell())
+                                            {
+                                                cell.Value = Extensions.CustomerExtract.Rows[i].Field<DateTime?>("CUSTOMER_MATURITY_DATE") != null ?
+                                                               (XlVariantValue)Extensions.CustomerExtract.Rows[i].Field<DateTime>("CUSTOMER_MATURITY_DATE") : (XlVariantValue)"";
+                                                cell.ApplyFormatting(cellFormatting);
+                                            }
+                                            break;
+                                        case 29:
+                                            using (IXlCell cell = row.CreateCell())
+                                            {
+                                                cell.Value = Extensions.CustomerExtract.Rows[i].Field<DateTime?>("CUSTOMER_NEXT_DUE_DATE") != null ?
+                                                               (XlVariantValue)Extensions.CustomerExtract.Rows[i].Field<DateTime>("CUSTOMER_NEXT_DUE_DATE") : (XlVariantValue)"";
+                                                cell.ApplyFormatting(cellFormatting);
+                                            }
+                                            break;
+                                        case 30:
+                                            using (IXlCell cell = row.CreateCell())
+                                            {
+                                                cell.Value = Extensions.CustomerExtract.Rows[i].Field<DateTime?>("CUSTOMER_LAST_PAYMENT_DATE") != null ?
+                                                               (XlVariantValue)Extensions.CustomerExtract.Rows[i].Field<DateTime>("CUSTOMER_LAST_PAYMENT_DATE") : (XlVariantValue)"";
+                                                cell.ApplyFormatting(cellFormatting);
+                                            }
+                                            break;
+                                        case 31:
+                                            using (IXlCell cell = row.CreateCell())
+                                            {
+                                                cell.Value = (XlVariantValue)(Extensions.CustomerExtract.Rows[i].Field<Int32?>("CUSTOMER_MONTHS_EXTENDED") ?? 0);
+                                                cell.ApplyFormatting(cellFormatting);
+                                            }
+                                            break;
+                                        case 32:
+                                            using (IXlCell cell = row.CreateCell())
+                                            {
+                                                cell.Value = Extensions.CustomerExtract.Rows[i].Field<String>("CUSTOMER_PAID_THRU");
+                                                cell.ApplyFormatting(cellFormatting);
+                                            }
+                                            break;
+                                        case 33:
+                                            using (IXlCell cell = row.CreateCell())
+                                            {
+                                                cell.Value = (XlVariantValue)(Extensions.CustomerExtract.Rows[i].Field<Int32?>("CUSTOMER_NO_OF_PAYMENTS_MADE") ?? 0);
+                                                cell.ApplyFormatting(cellFormatting);
+                                            }
+                                            break;
+                                        case 34:
+                                            using (IXlCell cell = row.CreateCell())
+                                            {
+                                                cell.Value = (XlVariantValue)(Extensions.CustomerExtract.Rows[i].Field<Int32?>("CUSTOMER_CREDIT_SCORE_N") ?? 0);
+                                                cell.ApplyFormatting(cellFormatting);
+                                            }
+                                            break;
+                                        case 35:
+                                            using (IXlCell cell = row.CreateCell())
+                                            {
+                                                cell.Value = (XlVariantValue)(Double)(Extensions.CustomerExtract.Rows[i].Field<Decimal?>("AnnualIncome") ?? (Decimal)0.00);
+                                                cell.ApplyFormatting(cellFormatting);
+                                            }
+                                            break;
+                                        case 36:
+                                            using (IXlCell cell = row.CreateCell())
+                                            {
+                                                cell.Value = (XlVariantValue)(Extensions.CustomerExtract.Rows[i].Field<Decimal?>("Tier") ?? 0);
+                                                cell.ApplyFormatting(cellFormatting);
+                                            }
+                                            break;
+                                        case 37:
+                                            using (IXlCell cell = row.CreateCell())
+                                            {
+                                                cell.Value = (XlVariantValue)(Double)(Extensions.CustomerExtract.Rows[i].Field<Decimal?>("CosignerAnnualIncome") ?? (Decimal)0.00);
+                                                cell.ApplyFormatting(cellFormatting);
+                                            }
+                                            break;
+                                        case 38:
+                                            using (IXlCell cell = row.CreateCell())
+                                            {
+                                                cell.Value = (XlVariantValue)(Extensions.CustomerExtract.Rows[i].Field<Int32?>("CosignerCreditScore") ?? 0);
+                                                cell.ApplyFormatting(cellFormatting);
+                                            }
+                                            break;
+                                        case 39:
+                                            using (IXlCell cell = row.CreateCell())
+                                            {
+                                                cell.Value = Extensions.CustomerExtract.Rows[i].Field<String>("VEHICLE_VIN");
+                                                cell.ApplyFormatting(cellFormatting);
+                                            }
+                                            break;
+                                        case 40:
+                                            using (IXlCell cell = row.CreateCell())
+                                            {
+                                                cell.Value = (XlVariantValue)(Extensions.CustomerExtract.Rows[i].Field<Int32?>("VEHICLE_YEAR") ?? 0);
+                                                cell.ApplyFormatting(cellFormatting);
+                                            }
+                                            break;
+                                        case 41:
+                                            using (IXlCell cell = row.CreateCell())
+                                            {
+                                                cell.Value = Extensions.CustomerExtract.Rows[i].Field<String>("VEHICLE_MAKE");
+                                                cell.ApplyFormatting(cellFormatting);
+                                            }
+                                            break;
+                                        case 42:
+                                            using (IXlCell cell = row.CreateCell())
+                                            {
+                                                cell.Value = Extensions.CustomerExtract.Rows[i].Field<String>("VEHICLE_MODEL");
+                                                cell.ApplyFormatting(cellFormatting);
+                                            }
+                                            break;
+                                        case 43:
+                                            using (IXlCell cell = row.CreateCell())
+                                            {
+                                                cell.Value = (XlVariantValue)(Extensions.CustomerExtract.Rows[i].Field<Int32?>("Mileage") ?? 0);
+                                                cell.ApplyFormatting(cellFormatting);
+                                            }
+                                            break;
+                                        case 44:
+                                            using (IXlCell cell = row.CreateCell())
+                                            {
+                                                cell.Value = (XlVariantValue)(Extensions.CustomerExtract.Rows[i].Field<Int32?>("CUSTOMER_DEALER") ?? 0);
+                                                cell.ApplyFormatting(cellFormatting);
+                                            }
+                                            break;
+                                        case 45:
+                                            using (IXlCell cell = row.CreateCell())
+                                            {
+                                                cell.Value = Extensions.CustomerExtract.Rows[i].Field<String>("DEALER_NAME");
+                                                cell.ApplyFormatting(cellFormatting);
+                                            }
+                                            break;
+                                        case 46:
+                                            using (IXlCell cell = row.CreateCell())
+                                            {
+                                                cell.Value = Extensions.CustomerExtract.Rows[i].Field<String>("DEALER_STATE");
+                                                cell.ApplyFormatting(cellFormatting);
+                                            }
+                                            break;
+                                        case 47:
+                                            using (IXlCell cell = row.CreateCell())
+                                            {
+                                                cell.Value = Extensions.CustomerExtract.Rows[i].Field<String>("VEHICLE_INS_COMPANY");
+                                                cell.ApplyFormatting(cellFormatting);
+                                            }
+                                            break;
+                                        case 48:
+                                            using (IXlCell cell = row.CreateCell())
+                                            {
+                                                cell.Value = Extensions.CustomerExtract.Rows[i].Field<String>("VEHICLE_POLICY_NO");
+                                                cell.ApplyFormatting(cellFormatting);
+                                            }
+                                            break;
+                                        case 49:
+                                            using (IXlCell cell = row.CreateCell())
+                                            {
+                                                cell.Value = Extensions.CustomerExtract.Rows[i].Field<DateTime?>("VEHICLE_EFF_DATE") != null ?
+                                                               (XlVariantValue)Extensions.CustomerExtract.Rows[i].Field<DateTime>("VEHICLE_EFF_DATE") : (XlVariantValue)"";
+                                                cell.ApplyFormatting(cellFormatting);
+                                            }
+                                            break;
+                                        case 50:
+                                            using (IXlCell cell = row.CreateCell())
+                                            {
+                                                cell.Value = Extensions.CustomerExtract.Rows[i].Field<DateTime?>("VEHICLE_EXP_DATE") != null ?
+                                                               (XlVariantValue)Extensions.CustomerExtract.Rows[i].Field<DateTime>("VEHICLE_EXP_DATE") : (XlVariantValue)"";
+                                                cell.ApplyFormatting(cellFormatting);
+                                            }
+                                            break;
+                                        case 51:
+                                            using (IXlCell cell = row.CreateCell())
+                                            {
+                                                cell.Value = Extensions.CustomerExtract.Rows[i].Field<String>("CUSTOMER_REPO_IND");
+                                                cell.ApplyFormatting(cellFormatting);
+                                            }
+                                            break;
+                                        case 52:
+                                            using (IXlCell cell = row.CreateCell())
+                                            {
+                                                cell.Value = Extensions.CustomerExtract.Rows[i].Field<String>("CUSTOMER_ACT_STAT");
+                                                cell.ApplyFormatting(cellFormatting);
+                                            }
+                                            break;
+                                        case 53:
+                                            using (IXlCell cell = row.CreateCell())
+                                            {
+                                                cell.Value = (XlVariantValue)(Extensions.CustomerExtract.Rows[i].Field<Int32?>("TierPoints") ?? 0);
+                                                cell.ApplyFormatting(cellFormatting);
+                                            }
+                                            break;
+                                        case 54:
+                                            using (IXlCell cell = row.CreateCell())
+                                            {
+                                                cell.Value = (XlVariantValue)(Extensions.CustomerExtract.Rows[i].Field<Int32?>("CosignerTierPoints") ?? 0);
+                                                cell.ApplyFormatting(cellFormatting);
+                                            }
+                                            break;
+                                        case 55:
+                                            using (IXlCell cell = row.CreateCell())
+                                            {
+                                                cell.Value = Extensions.CustomerExtract.Rows[i].Field<DateTime?>("FundingDate") != null ?
+                                                               (XlVariantValue)Extensions.CustomerExtract.Rows[i].Field<DateTime>("FundingDate") : (XlVariantValue)"";
+                                                cell.ApplyFormatting(cellFormatting);
+                                            }
+                                            break;
+                                        case 56:
+                                            using (IXlCell cell = row.CreateCell())
+                                            {
+                                                cell.Value = (XlVariantValue)(Double)(Extensions.CustomerExtract.Rows[i].Field<Decimal?>("DealerCashPrice") ?? (Decimal)0.00);
+                                                cell.ApplyFormatting(cellFormatting);
+                                            }
+                                            break;
+                                        case 57:
+                                            using (IXlCell cell = row.CreateCell())
+                                            {
+                                                cell.Value = (XlVariantValue)(Double)(Extensions.CustomerExtract.Rows[i].Field<Decimal?>("PartialPayment") ?? (Decimal)0.00);
+                                                cell.ApplyFormatting(cellFormatting);
+                                            }
+                                            break;
+                                        case 58:
+                                            using (IXlCell cell = row.CreateCell())
+                                            {
+                                                Double tempLTV = (Double)(Extensions.CustomerExtract.Rows[i].Field<Decimal?>("Ltv") ?? (Decimal)000.0000);
+                                                tempLTV = tempLTV / (Double)100.000;
+                                                cell.Value = (XlVariantValue)tempLTV;
+                                                cell.ApplyFormatting(cellFormatting);
+                                            }
+                                            break;
+                                        case 59:
+                                            using (IXlCell cell = row.CreateCell())
+                                            {
+                                                cell.Value = Extensions.CustomerExtract.Rows[i].Field<DateTime?>("ControlDate") != null ?
+                                                               (XlVariantValue)Extensions.CustomerExtract.Rows[i].Field<DateTime>("ControlDate") : (XlVariantValue)"";
+                                                cell.ApplyFormatting(cellFormatting);
+                                            }
+                                            break;
+                                        case 60:
+                                            using (IXlCell cell = row.CreateCell())
+                                            {
+                                                cell.Value = (XlVariantValue)(Extensions.CustomerExtract.Rows[i].Field<Boolean?>("IsFullRecourse") ?? false);
+                                                cell.ApplyFormatting(cellFormatting);
+                                            }
+                                            break;
+                                        case 61:
+                                            using (IXlCell cell = row.CreateCell())
+                                            {
+                                                cell.Value = Extensions.CustomerExtract.Rows[i].Field<String>("GapIns");
+                                                cell.ApplyFormatting(cellFormatting);
+                                            }
+                                            break;
+                                        case 62:
+                                            using (IXlCell cell = row.CreateCell())
+                                            {
+                                                cell.Value = (XlVariantValue)(Extensions.CustomerExtract.Rows[i].Field<Boolean?>("Warranty") ?? false);
+                                                cell.ApplyFormatting(cellFormatting);
+                                            }
+                                            break;
+                                        case 63:
+                                            using (IXlCell cell = row.CreateCell())
+                                            {
+                                                cell.Value = Extensions.CustomerExtract.Rows[i].Field<String>("LastPostingCode");
+                                                cell.ApplyFormatting(cellFormatting);
+                                            }
+                                            break;
+                                        case 64:
+                                            using (IXlCell cell = row.CreateCell())
+                                            {
+                                                cell.Value = Extensions.CustomerExtract.Rows[i].Field<String>("CUSTOMER_PAYMENT_TYPE");
+                                                cell.ApplyFormatting(cellFormatting);
+                                            }
+                                            break;
+                                        case 65:
+                                            using (IXlCell cell = row.CreateCell())
+                                            {
+                                                cell.Value = Extensions.CustomerExtract.Rows[i].Field<String>("CUSTOMER_PAYMENT_CODE");
+                                                cell.ApplyFormatting(cellFormatting);
+                                            }
+                                            break;
+                                        case 66:
+                                            using (IXlCell cell = row.CreateCell())
+                                            {
+                                                cell.Value = Extensions.CustomerExtract.Rows[i].Field<DateTime?>("PaymentDate") != null ?
+                                                    (XlVariantValue)Extensions.CustomerExtract.Rows[i].Field<DateTime>("PaymentDate") : (XlVariantValue)"";
+                                                cell.ApplyFormatting(cellFormatting);
+                                            }
+                                            break;
+                                        case 67:
+                                            using (IXlCell cell = row.CreateCell())
+                                            {
+                                                cell.Value = Extensions.CustomerExtract.Rows[i].Field<String>("PREVIOUS_PAID_THRU");
+                                                cell.ApplyFormatting(cellFormatting);
+                                            }
+                                            break;
+                                        case 68:
+                                            using (IXlCell cell = row.CreateCell())
+                                            {
+                                                cell.Value = (XlVariantValue)(Double)(Extensions.CustomerExtract.Rows[i].Field<Decimal?>("TotalPayments") ?? (Decimal)0.00);
+                                                cell.ApplyFormatting(cellFormatting);
+                                            }
+                                            break;
+                                        case 69:
+                                            using (IXlCell cell = row.CreateCell())
+                                            {
+                                                cell.Value = (XlVariantValue)(Double)(Extensions.CustomerExtract.Rows[i].Field<Decimal?>("Status") ?? (Decimal)0.00);
+                                                cell.ApplyFormatting(cellFormatting);
+                                            }
+                                            break;
+                                        case 70:
+                                            using (IXlCell cell = row.CreateCell())
+                                            {
+                                                cell.Value = (XlVariantValue)(Extensions.CustomerExtract.Rows[i].Field<Boolean?>("TitleReceived") ?? false);
+                                                cell.ApplyFormatting(cellFormatting);
+                                            }
+                                            break;
+                                        case 71:
+                                            using (IXlCell cell = row.CreateCell())
+                                            {
+                                                cell.Value = Extensions.CustomerExtract.Rows[i].Field<DateTime?>("TitleDateReceived") != null ?
+                                                               (XlVariantValue)Extensions.CustomerExtract.Rows[i].Field<DateTime>("TitleDateReceived") : (XlVariantValue)"";
+                                                cell.ApplyFormatting(cellFormatting);
+                                            }
+                                            break;
+                                        case 72:
+                                            using (IXlCell cell = row.CreateCell())
+                                            {
+                                                cell.Value = (XlVariantValue)(Extensions.CustomerExtract.Rows[i].Field<Boolean?>("ElectronicLien") ?? false);
+                                                cell.ApplyFormatting(cellFormatting);
+                                            }
+                                            break;
+                                        case 73:
+                                            using (IXlCell cell = row.CreateCell())
+                                            {
+                                                cell.Value = (XlVariantValue)(Extensions.CustomerExtract.Rows[i].Field<Boolean?>("ReceivedContract") ?? false);
+                                                cell.ApplyFormatting(cellFormatting);
+                                            }
+                                            break;
+                                        case 74:
+                                            using (IXlCell cell = row.CreateCell())
+                                            {
+                                                cell.Value = Extensions.CustomerExtract.Rows[i].Field<DateTime?>("DateContractReceived") != null ?
+                                                               (XlVariantValue)Extensions.CustomerExtract.Rows[i].Field<DateTime>("DateContractReceived") : (XlVariantValue)"";
+                                                cell.ApplyFormatting(cellFormatting);
+                                            }
+                                            break;
+                                    }
+                                }
                             }
                         }
                     }
                 }
-                last = excelWorkSheet.Cells.SpecialCells(Excel.XlCellType.xlCellTypeLastCell, System.Type.Missing);
-                ARange = excelWorkSheet.get_Range("A1:A" + last.Row.ToString());
-
-                for (int i = last.Row; i > 0; i--)
-                {
-                    if (excelWorkSheet.Cells[i, 1].Value == "Total Units Open")
-                    {
-                        TotalUnitsOpen = Convert.ToInt32(excelWorkSheet.Cells[i, 2].Value);
-                        excelWorkSheet.Cells[i, 3].Value = TotalOpenLoans;
-                        excelWorkSheet.Cells[i, 3].Font.FontStyle = "Bold";
-                        excelWorkSheet.Cells[i, 1].Value = "Totals Open";
-                    }
-                }
-                last = excelWorkSheet.Cells.SpecialCells(Excel.XlCellType.xlCellTypeLastCell, System.Type.Missing);
-                ARange = excelWorkSheet.get_Range("A1:A" + last.Row.ToString());
-
-                for (int i = last.Row; i > 0; i--)
-                {
-                    if (excelWorkSheet.Cells[i, 1].Value == "Totals Closed")
-                        excelWorkSheet.Rows[i + 1].Insert();
-                }
-                last = excelWorkSheet.Cells.SpecialCells(Excel.XlCellType.xlCellTypeLastCell, System.Type.Missing);
-                ARange = excelWorkSheet.get_Range("A1:A" + last.Row.ToString());
-                for (int i = last.Row; i > 0; i--)
-                {
-                    if (excelWorkSheet.Cells[i, 1].Value == "Grand Total Units")
-                    {
-                        excelWorkSheet.Cells[i, 1].Value = "Total Closed+Open";
-                        excelWorkSheet.Cells[i, 3].Value = TotalClosedLoans + TotalOpenLoans;
-                        excelWorkSheet.Cells[i, 3].Font.FontStyle = "Bold";
-                        excelWorkSheet.Rows[i + 1].Insert();
-                        excelWorkSheet.Rows[i + 1].Insert();
-                        excelWorkSheet.Rows[i + 1].Insert();
-                        excelWorkSheet.Rows[i + 1].Insert();
-                        excelWorkSheet.Rows[i + 1].Insert();
-                        excelWorkSheet.Rows[i + 1].Insert();
-                        excelWorkSheet.Rows[i + 1].Insert();
-                        break;
-                    }
-                }
-                last = excelWorkSheet.Cells.SpecialCells(Excel.XlCellType.xlCellTypeLastCell, System.Type.Missing);
-                ARange = excelWorkSheet.get_Range("A1:A" + last.Row.ToString());
-                for (int i = last.Row; i > 0; i--)
-                {
-                    // Moses Newman 06/25/2024 Put units and totals on the same line.
-                    if (excelWorkSheet.Cells[i, 1].Value == "Total Closed+Open")
-                    {
-                        excelWorkSheet.Cells[i + 3, 1].Value = "Total Closed Loans";
-                        excelWorkSheet.Cells[i + 3, 1].Font.FontStyle = "Bold";
-                        excelWorkSheet.Cells[i + 3, 2].Value = TotalUnitsClosed;
-                        excelWorkSheet.Cells[i + 3, 3].Value = TotalClosedLoans;
-                        excelWorkSheet.Cells[i + 3, 3].Font.FontStyle = "Bold";
-                        excelWorkSheet.Cells[i + 3, 2].Font.FontStyle = "Bold";
-                        excelWorkSheet.Cells[i + 4, 1].Value = "Total Open Loans";
-                        excelWorkSheet.Cells[i + 4, 1].Font.FontStyle = "Bold";
-                        excelWorkSheet.Cells[i + 4, 2].Value = TotalUnitsOpen;
-                        excelWorkSheet.Cells[i + 4, 2].Font.FontStyle = "Bold";
-                        excelWorkSheet.Cells[i + 4, 3].Value = TotalOpenLoans;
-                        excelWorkSheet.Cells[i + 4, 3].Font.FontStyle = "Bold";
-                        excelWorkSheet.Cells[i + 5, 1].Value = "Grand Total Loans";
-                        excelWorkSheet.Cells[i + 5, 1].Font.FontStyle = "Bold";
-                        excelWorkSheet.Cells[i + 5, 2].Value = TotalUnitsClosed+TotalUnitsOpen;
-                        excelWorkSheet.Cells[i + 5, 2].Font.FontStyle = "Bold";
-                        excelWorkSheet.Cells[i + 5, 3].Value = TotalClosedLoans +TotalOpenLoans;
-                        excelWorkSheet.Cells[i + 5, 3].Font.FontStyle = "Bold";
-
-                        break;
-                    }
-                }
             }
-            excelWorkSheet.get_Range("A2:A2").Select();  // Moses Newman 10/26/2020 Move to first Data Cell so we are not all the way to the right of the page when done!
-            excelWorkBook.Save();
-            excelWorkBook.Close();
-            excelApp.Quit();
-            MessageBox.Show("*** CUSTOMER BANK extract file created successfully! ***");
+            //Process.Start(new ProcessStartInfo(sourcePath) { UseShellExecute = true });
+
+            if (radioGroupMatch.SelectedIndex == 0)
+            {
+                Workbook workbook = new Workbook();
+                workbook.LoadDocument(sourcePath);
+
+                WorksheetCollection worksheets = workbook.Worksheets;
+
+                Worksheet excelWorkSheet = workbook.Worksheets["Customer Bank Extract"];
+
+                excelWorkSheet.Columns["J"].Insert();
+                excelWorkSheet.Columns["F"].MoveTo(excelWorkSheet.Columns["J"]);
+                excelWorkSheet.Columns.Remove("F");
+                excelWorkSheet.Columns["B"].Insert();
+                excelWorkSheet.Columns["G"].MoveTo(excelWorkSheet.Columns["B"]);
+                excelWorkSheet.Columns.Remove("G");
+                int ClosedCusts = Extensions.CustomerExtract.Select("CUSTOMER_IAC_TYPE = 'C'").Length,
+                    OpenCusts = Extensions.CustomerExtract.Select("CUSTOMER_IAC_TYPE = 'O'").Length,
+                    SubCount =0;
+                
+                CellRange ClosedSubTotalRange = excelWorkSheet["A2:N" + (ClosedCusts + OpenCusts + 1).ToString()];
+                // Specify that subtotals should be calculated for the column "D". 
+                List<int> subtotalColumnsList = new List<int>();
+
+                // Moses Newman 02/03/2024 Count total Closed vs. Open!
+                subtotalColumnsList.Add(0);
+                excelWorkSheet.Subtotal(ClosedSubTotalRange, 0, subtotalColumnsList, 3, "Count");
+
+                SubCount = excelWorkSheet.GetUsedRange().RowCount;
+                SubCount -= OpenCusts - 2;
+                ClosedSubTotalRange = excelWorkSheet["A2:N" + SubCount.ToString()];
+                subtotalColumnsList.Clear();
+                subtotalColumnsList.Add(3);
+                subtotalColumnsList.Add(5);
+                excelWorkSheet.Subtotal(ClosedSubTotalRange, 2, subtotalColumnsList, 1, "Average");
+                
+                //ClosedSubTotalRange.Subtotal(7, Excel.XlConsolidationFunction.xlAverage, new int[] { 3 }, false, false, Excel.XlSummaryRow.xlSummaryBelow);
+                // Dealer Total
+                SubCount = excelWorkSheet.GetUsedRange().RowCount;
+                SubCount -= OpenCusts - 3;
+                ClosedSubTotalRange = excelWorkSheet["A2:N" + SubCount.ToString()];
+                subtotalColumnsList.Clear();
+                subtotalColumnsList.Add(3);
+                excelWorkSheet.Subtotal(ClosedSubTotalRange, 2, subtotalColumnsList, 9, "Total Loan Amount");
+                //ClosedSubTotalRange.Subtotal(7, Excel.XlConsolidationFunction.xlSum, new int[] { 3 }, false, false, Excel.XlSummaryRow.xlSummaryBelow);
+                
+                SubCount++;
+                subtotalColumnsList.Clear();
+                subtotalColumnsList.Add(1);
+                SubCount = excelWorkSheet.GetUsedRange().RowCount;
+                SubCount -= OpenCusts -4;
+                ClosedSubTotalRange = excelWorkSheet["A2:N" + SubCount.ToString()];
+
+                excelWorkSheet.Subtotal(ClosedSubTotalRange, 2, subtotalColumnsList, 3, "Count");
+                //ClosedTypeCountTotalRange.Subtotal(1, Excel.XlConsolidationFunction.xlCount, new int[] { 1 }, true, false, Excel.XlSummaryRow.xlSummaryBelow);
+                
+
+                SearchOptions options = new SearchOptions();
+                options.SearchBy = SearchBy.Columns;
+                options.SearchIn = SearchIn.Values;
+                options.MatchEntireCellContents = true;
+
+                //IEnumerable<Cell> searchResult = excelWorkSheet.Search("O Count", options);
+                IEnumerable<Cell>  searchResult = excelWorkSheet["A2:A" + excelWorkSheet.GetUsedRange().RowCount.ToString()];
+                String ClosedFormula = "", OpenFormula = "";
+                Int32 GC = 0;
+                foreach (Cell cell in searchResult)
+                {
+                    switch (cell.Value.ToString().Trim())
+                    {
+                        case "C Count":
+                            cell.Value = "Total Closed Loans";
+                            cell.Font.FontStyle = SpreadsheetFontStyle.Bold;
+                            excelWorkSheet[cell.RowIndex, cell.ColumnIndex + 1].Font.FontStyle = SpreadsheetFontStyle.Bold;
+                            excelWorkSheet[cell.RowIndex, cell.ColumnIndex + 3].Font.FontStyle = SpreadsheetFontStyle.Bold;
+                            excelWorkSheet[cell.RowIndex, cell.ColumnIndex + 3].NumberFormat = "$#,##0.00_);[Red]($#,##0.00)";
+                            excelWorkSheet[cell.RowIndex, cell.ColumnIndex + 3].Formula = "=SUMIF(B2..B" + (cell.RowIndex - 1).ToString() + ",\"C\",D2..D" +
+                                (cell.RowIndex - 1).ToString() + ")";
+                            ClosedFormula = excelWorkSheet[cell.RowIndex, cell.ColumnIndex + 3].Formula;
+                            break;
+                        case "O Count":
+                            cell.Value = "Total Open Loans";
+                            cell.Font.FontStyle = SpreadsheetFontStyle.Bold;
+                            excelWorkSheet[cell.RowIndex, cell.ColumnIndex + 1].Font.FontStyle = SpreadsheetFontStyle.Bold;
+                            excelWorkSheet[cell.RowIndex, cell.ColumnIndex + 3].Font.FontStyle = SpreadsheetFontStyle.Bold;
+                            excelWorkSheet[cell.RowIndex, cell.ColumnIndex + 3].NumberFormat = "$#,##0.00_);[Red]($#,##0.00)";
+                            excelWorkSheet[cell.RowIndex, cell.ColumnIndex + 3].Formula = "=SUMIF(B2..B" + (cell.RowIndex - 1).ToString() + ",\"O\",D2..D" +
+                                (cell.RowIndex - 1).ToString() + ")";
+                            OpenFormula = "SUMIF(B2..B" + (cell.RowIndex - 1).ToString() + ",\"O\",D2..D" +
+                                (cell.RowIndex - 1).ToString() + ")";
+                            break;
+                        case "Grand Count":
+                            cell.Value = "Total Closed+Open";
+                            cell.Font.FontStyle = SpreadsheetFontStyle.Bold;
+                            excelWorkSheet[cell.RowIndex, cell.ColumnIndex + 1].Font.FontStyle = SpreadsheetFontStyle.Bold;
+                            excelWorkSheet[cell.RowIndex, cell.ColumnIndex + 3].Formula = ClosedFormula + " + " + OpenFormula;
+                            excelWorkSheet[cell.RowIndex, cell.ColumnIndex + 3].Font.FontStyle = SpreadsheetFontStyle.Bold;
+                            excelWorkSheet[cell.RowIndex, cell.ColumnIndex + 2].NumberFormat = "$#,##0.00_);[Red]($#,##0.00)";
+                            excelWorkSheet[cell.RowIndex + 2, cell.ColumnIndex + 3].Value = null;
+                            excelWorkSheet.Columns[0].ColumnWidth *= 4;
+                            break;
+                    }
+                }
+                searchResult = excelWorkSheet["C2:C" + excelWorkSheet.GetUsedRange().RowCount.ToString()];
+                foreach (Cell cell in searchResult)
+                {
+                    switch (cell.Value.ToString().Trim())
+                    {
+                        case "Grand Average":
+                            cell.Value = null;
+                            cell.Font.FontStyle = SpreadsheetFontStyle.Regular;
+                            excelWorkSheet[cell.RowIndex, cell.ColumnIndex - 2].Value = "Grand Average Loan Amount / APR";
+                            excelWorkSheet[cell.RowIndex, cell.ColumnIndex - 2].Font.FontStyle = SpreadsheetFontStyle.Bold;
+                            excelWorkSheet[cell.RowIndex, cell.ColumnIndex + 1].Font.FontStyle = SpreadsheetFontStyle.Bold;
+                            excelWorkSheet[cell.RowIndex, cell.ColumnIndex + 3].Font.FontStyle = SpreadsheetFontStyle.Bold;
+                            break;
+                        case "Grand Count":
+                            cell.Value = null;
+                            cell.Font.FontStyle = SpreadsheetFontStyle.Regular;
+                            excelWorkSheet[cell.RowIndex, cell.ColumnIndex - 1].Value = null;
+                            break;
+                        case "Grand Total Loan Amount":
+                            cell.Value = null;
+                            cell.Font.FontStyle = SpreadsheetFontStyle.Regular;
+                            break;
+                    }
+                    if (string.Join(" ", cell.Value.ToString().Split(' ').Skip(1)) == "Count" && cell.Value.ToString().Split(' ')[0] != "Grand")
+                    {
+                        excelWorkSheet[cell.RowIndex, cell.ColumnIndex - 2].Value = "Totals DLR# " + cell.Value.ToString().Split(' ')[0];
+                        excelWorkSheet[cell.RowIndex, cell.ColumnIndex - 2].Font.FontStyle = SpreadsheetFontStyle.Bold;
+                        excelWorkSheet[cell.RowIndex, cell.ColumnIndex - 1].Font.FontStyle = SpreadsheetFontStyle.Bold;
+                        excelWorkSheet[cell.RowIndex, cell.ColumnIndex + 1].Formula = excelWorkSheet[cell.RowIndex + 1, cell.ColumnIndex + 1].Formula;
+                        excelWorkSheet[cell.RowIndex, cell.ColumnIndex + 1].Font.FontStyle = SpreadsheetFontStyle.Bold;
+                        excelWorkSheet[cell.RowIndex + 1, cell.ColumnIndex + 1].Value = null;
+                        excelWorkSheet[cell.RowIndex + 1, cell.ColumnIndex].Value = null;
+                        excelWorkSheet[cell.RowIndex + 1, cell.ColumnIndex].Font.FontStyle = SpreadsheetFontStyle.Regular;
+                        excelWorkSheet[cell.RowIndex + 1, cell.ColumnIndex - 2].Value = "Average Loan Amount / APR DLR# " + cell.Value.ToString().Split(' ')[0];
+                        excelWorkSheet[cell.RowIndex + 1, cell.ColumnIndex - 2].Font.FontStyle = SpreadsheetFontStyle.Bold;
+                        excelWorkSheet[cell.RowIndex + 1, cell.ColumnIndex].Value = null;
+                        excelWorkSheet[cell.RowIndex + 1, cell.ColumnIndex].Font.FontStyle = SpreadsheetFontStyle.Regular;
+                        excelWorkSheet[cell.RowIndex + 2, cell.ColumnIndex].Value = null;
+                        excelWorkSheet[cell.RowIndex + 2, cell.ColumnIndex].Font.FontStyle = SpreadsheetFontStyle.Regular;
+                        excelWorkSheet[cell.RowIndex + 1, cell.ColumnIndex + 1].Formula = excelWorkSheet[cell.RowIndex + 2, cell.ColumnIndex + 1].Formula;
+                        excelWorkSheet[cell.RowIndex + 1, cell.ColumnIndex + 1].Font.FontStyle = SpreadsheetFontStyle.Bold;
+                        excelWorkSheet[cell.RowIndex + 2, cell.ColumnIndex + 1].Value = null;
+                        excelWorkSheet[cell.RowIndex + 1, cell.ColumnIndex + 3].Formula = excelWorkSheet[cell.RowIndex + 2, cell.ColumnIndex + 3].Formula;
+                        excelWorkSheet[cell.RowIndex + 1, cell.ColumnIndex + 3].Font.FontStyle = SpreadsheetFontStyle.Bold;
+                        excelWorkSheet[cell.RowIndex + 2, cell.ColumnIndex + 3].Value = null;
+                        cell.Value = null;
+                        cell.Font.FontStyle = SpreadsheetFontStyle.Regular;
+                    }
+                }
+                // Create the rule to shade alternate rows without applying a new style.
+                FormulaExpressionConditionalFormatting cfRule = excelWorkSheet.ConditionalFormattings.AddFormulaExpressionConditionalFormatting(excelWorkSheet.Range["$A$2:$N$"+ (excelWorkSheet.GetUsedRange().RowCount-5).ToString()], "=MOD(ROW(),2)=1");
+                CellRange cellRange = excelWorkSheet.Range["$A$2:$N$" + (excelWorkSheet.GetUsedRange().RowCount - 5).ToString()];
+                cellRange.Borders.SetAllBorders(System.Drawing.Color.Blue, BorderLineStyle.Thin);
+
+                // Specify formatting options to be applied to cells if the condition is true.
+                // Set the background color to light blue.
+                cfRule.Formatting.Fill.BackgroundColor = System.Drawing.Color.FromArgb(255, 0xBC, 0xDA, 0xF7);
+                excelWorkSheet["A1:N1"].FillColor = System.Drawing.Color.Blue;
+                workbook.SaveDocument(sourcePath, DocumentFormat.Xlsx);
+
+                MessageBox.Show("*** CUSTOMER BANK extract file created successfully! ***");
+            }
         }
 
         private void buttonTransfer_Click(object sender, EventArgs e)
@@ -1311,7 +2190,7 @@ namespace IAC2021SQL
             lfrm.lblProgress.Text = "Creating Bank Customer Extract File";
             lfrm.ShowDialog();
             lfrm.Close();
-            Close();
+            //Close();
         }
 
         private void RefreshFieldListBoxes()
@@ -1351,71 +2230,6 @@ namespace IAC2021SQL
                 RefreshFieldListBoxes();
             }
         }
-
-        /*private void checkBoxMatchNBFields_CheckStateChanged(object sender, EventArgs e)
-        {
-            if (checkBoxMatchNBFields.Checked)
-            {
-                if (checkBoxExtensions.Checked)
-                    checkBoxExtensions.Checked = false;
-                if (checkBoxTrialBalance.Checked)
-                    checkBoxTrialBalance.Checked = false;
-
-                FullFieldList.Clear();
-                if (FullFieldList.Count != FieldListData.ExtractFieldList.Rows.Count)
-                {
-                    for (int i = 0; i < FieldListData.ExtractFieldList.Rows.Count; i++)
-                    {
-                        ExField.FldName = FieldListData.ExtractFieldList.Rows[i].Field<String>("FieldName");
-                        ExField.EXCELColumnName = FieldListData.ExtractFieldList.Rows[i].Field<String>("EXCELColumnName");
-                        ExField.NBField = FieldListData.ExtractFieldList.Rows[i].Field<Boolean>("NewBusinessField");
-                        ExField.NBOrder = FieldListData.ExtractFieldList.Rows[i].Field<Int32>("NBOrder");
-                        ExField.ExtField = FieldListData.ExtractFieldList.Rows[i].Field<Boolean>("ExtensionField");
-                        ExField.ExtOrder = FieldListData.ExtractFieldList.Rows[i].Field<Int32>("ExtOrder");
-                        ExField.FldNumber = i + 1;
-                        FullFieldList.Add(ExField);
-                    }
-                }
-                SelectedFields.Clear();
-                foreach (Fld Selection in listBoxFieldList.Items)
-                    if (Selection.NBField)
-                    {
-                        SelectedFields.Add(Selection);
-                        FullFieldList.Remove(Selection);
-                    }
-                RefreshFieldListBoxes();
-            }
-            else
-            {
-                if (FullFieldList.Count != FieldListData.ExtractFieldList.Rows.Count)
-                {
-                    FullFieldList.Clear();
-                    for (int i = 0; i < FieldListData.ExtractFieldList.Rows.Count; i++)
-                    {
-                        ExField.FldName = FieldListData.ExtractFieldList.Rows[i].Field<String>("FieldName");
-                        ExField.EXCELColumnName = FieldListData.ExtractFieldList.Rows[i].Field<String>("EXCELColumnName");
-                        ExField.NBField = FieldListData.ExtractFieldList.Rows[i].Field<Boolean>("NewBusinessField");
-                        ExField.NBOrder = FieldListData.ExtractFieldList.Rows[i].Field<Int32>("NBOrder");
-                        ExField.ExtField = FieldListData.ExtractFieldList.Rows[i].Field<Boolean>("ExtensionField");
-                        ExField.ExtOrder = FieldListData.ExtractFieldList.Rows[i].Field<Int32>("ExtOrder");
-                        ExField.FldNumber = i + 1;
-                        FullFieldList.Add(ExField);
-                    }
-                }
-                SelectedFields.Clear();
-                listBoxFieldList.DataSource = FullFieldList;
-                listBoxSelectedFields.DataSource = SelectedFields;
-                RefreshFieldListBoxes();
-            }
-        }*/
-
-        /*private void checkBoxTrialBalance_CheckStateChanged(object sender, EventArgs e)
-        {
-            if (checkBoxExtensions.Checked)
-                checkBoxExtensions.Checked = false;
-            if(checkBoxMatchNBFields.Checked)
-                checkBoxMatchNBFields.Checked = false;
-        }*/
 
         private void radioGroupMatch_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -1730,17 +2544,23 @@ namespace IAC2021SQL
                 Extensions.CustomerExtract.Rows[RowCount].SetField<Decimal>("CUSTOMER_LOAN_INTEREST", Bank.CUSTOMER.Rows[i].Field<Decimal>("CUSTOMER_LOAN_INTEREST"));
                 // 03/25/2016 Moses Newman Get buyout as of buyout date entered
                 // 01/28/2021 Moses Newman if match trial balance selected DO NOT AMORT!
-                Extensions.CustomerExtract.Rows[RowCount].SetField<Decimal>("CUSTOMER_BALANCE", radioGroupMatch.SelectedIndex != 1 ? Program.TVSimpleGetBuyout(Bank,
-                    nullableDateTimePickerBuyoutDate.DateTime,
-                    (Double)Bank.CUSTOMER.Rows[i].Field<Int32>("CUSTOMER_TERM"),
-                    (Double)(Bank.CUSTOMER.Rows[i].Field<Decimal>("CUSTOMER_ANNUAL_PERCENTAGE_RATE") / 100),
-                    (Double)Bank.CUSTOMER.Rows[i].Field<Decimal>("CUSTOMER_REGULAR_AMOUNT"),
-                    Bank.CUSTOMER.Rows[i].Field<String>("CUSTOMER_NO"),
-                // Moses Newman 04/30/2017 Handle S for simple interest, or N for Normal Daily Compounding
-                Bank.CUSTOMER.Rows[i].Field<String>("CUSTOMER_AMORTIZE_IND") == "S" ? true : false, false, false, false, -1, true):
-                Bank.CUSTOMER.Rows[i].Field<Decimal>("CUSTOMER_BALANCE"));
-                // 03/25/2016 Moses Newman add Paid Interest field summed for date range passed.
-                loPaidInterest = CUSTOMERTableAdapter.GetPaidInterest(Bank.CUSTOMER.Rows[i].Field<String>("CUSTOMER_NO"), ldPIStart, ldPIEnd);
+                if (Bank.CUSTOMER.Rows[i].Field<String>("CUSTOMER_ACT_STAT") == "A")
+                {
+                    Extensions.CustomerExtract.Rows[RowCount].SetField<Decimal>("CUSTOMER_BALANCE", radioGroupMatch.SelectedIndex != 1 ? Program.TVSimpleGetBuyout(Bank,
+                        nullableDateTimePickerBuyoutDate.DateTime,
+                        (Double)Bank.CUSTOMER.Rows[i].Field<Int32>("CUSTOMER_TERM"),
+                        (Double)(Bank.CUSTOMER.Rows[i].Field<Decimal>("CUSTOMER_ANNUAL_PERCENTAGE_RATE") / 100),
+                        (Double)Bank.CUSTOMER.Rows[i].Field<Decimal>("CUSTOMER_REGULAR_AMOUNT"),
+                        Bank.CUSTOMER.Rows[i].Field<String>("CUSTOMER_NO"),
+                    // Moses Newman 04/30/2017 Handle S for simple interest, or N for Normal Daily Compounding
+                    Bank.CUSTOMER.Rows[i].Field<String>("CUSTOMER_AMORTIZE_IND") == "S" ? true : false, false, false, false, -1, true) :
+                    Bank.CUSTOMER.Rows[i].Field<Decimal>("CUSTOMER_BALANCE"));
+                }
+                else
+                    Extensions.CustomerExtract.Rows[RowCount].SetField<Decimal>("CUSTOMER_BALANCE", Bank.CUSTOMER.Rows[i].Field<Decimal>("CUSTOMER_BALANCE"));
+               //Extensions.CustomerExtract.Rows[RowCount].SetField<Decimal>("CUSTOMER_BALANCE", GetBalance(Bank.CUSTOMER.Rows[i].Field<String>("CUSTOMER_NO"), nullableDateTimePickerBuyoutDate.DateTime));
+               // 03/25/2016 Moses Newman add Paid Interest field summed for date range passed.
+               loPaidInterest = CUSTOMERTableAdapter.GetPaidInterest(Bank.CUSTOMER.Rows[i].Field<String>("CUSTOMER_NO"), ldPIStart, ldPIEnd);
                 if (loPaidInterest != null)
                     lnPaidInterest = (Decimal)loPaidInterest;
                 else
@@ -2097,6 +2917,7 @@ namespace IAC2021SQL
                 RowCount++;
             }
             Open = false;
+            CustomerExtractTableAdapter.FillByAll(Extensions.CustomerExtract);
             CreateTextFile(Bank,Extensions);
             Bank.Dispose();
         }
@@ -2170,7 +2991,7 @@ namespace IAC2021SQL
 
             loContractDate = CUSTHISTTableAdapter.ContractDate(CustomerNo);
             CUSTHISTTableAdapter.Dispose();
-                   
+
             if (loContractDate != null)
                 return (DateTime)loContractDate;
             else
