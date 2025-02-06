@@ -2,6 +2,12 @@
 using System.Windows.Forms;
 using DevExpress.XtraReports.UI;
 using DevExpress.DataAccess.Sql;
+using IAC2021SQL.IACDataSetTableAdapters;
+using DevExpress.Export.Xl;
+using System.Data;
+using System.IO;
+using System.Drawing;
+
 
 
 namespace IAC2021SQL
@@ -23,7 +29,7 @@ namespace IAC2021SQL
 
         private void PrintDelinquencyReport()
         {
-            DateTime ldCurrDate = ((DateTime)(nullableDateTimePickerDueDate.EditValue)).Date; 
+            DateTime ldCurrDate = ((DateTime)(nullableDateTimePickerDueDate.EditValue)).Date;
 
             IACDataSet DelinquencyData = new IACDataSet();
             IACDataSetTableAdapters.ClosedDealerAgedSummarySelectTableAdapter ClosedDealerAgedSummarySelectTableAdapter = new IACDataSetTableAdapters.ClosedDealerAgedSummarySelectTableAdapter();
@@ -33,7 +39,7 @@ namespace IAC2021SQL
             IACDataSetTableAdapters.EmailTableAdapter EmailTableAdapter = new IACDataSetTableAdapters.EmailTableAdapter();
             // Moses Newman 11/9/2021 Add handling of Extension and Rate Changes for Last Payment Amount Field
             IACDataSetTableAdapters.ClosedExtensionCountsTableAdapter ClosedExtensionCountsTableAdapter = new IACDataSetTableAdapters.ClosedExtensionCountsTableAdapter();
-            Int32   lnAgedTest = comboBoxAgedPeriod.SelectedIndex + 1;
+            Int32 lnAgedTest = comboBoxAgedPeriod.SelectedIndex + 1;
 
             // Moses Newman 11/20/2018 add sort order.
             String lsSortType = null;
@@ -53,7 +59,7 @@ namespace IAC2021SQL
 
                     if (!checkBoxCollections.Checked)
                     {
-                        CUSTOMERTableAdapter.FillByDelinquencies(DelinquencyData.CUSTOMER, lnAgedTest, ldCurrDate.Date,lsSortType);
+                        CUSTOMERTableAdapter.FillByDelinquencies(DelinquencyData.CUSTOMER, lnAgedTest, ldCurrDate.Date, lsSortType);
                         // Moses Newman 11/19/2013 Moses Newman added ldCurrDate as new parameter to DealerFillByDelinQuencies Query
                         DEALERTableAdapter.FillByDelinquencies(DelinquencyData.DEALER, lnAgedTest, ldCurrDate);
                         // Moses Newman 09/27/2021 
@@ -68,7 +74,7 @@ namespace IAC2021SQL
                             var report = new XtraReportDelinquency();
                             SqlDataSource ds = report.DataSource as SqlDataSource;
 
-                            
+
                             ds.Queries[0].Parameters[0].Value = lnAgedTest;
                             ds.Queries[0].Parameters[1].Value = ldCurrDate;
                             ds.Queries[0].Parameters[2].Value = lsSortType;
@@ -97,7 +103,7 @@ namespace IAC2021SQL
                             report.Parameters["gnAgedMonths"].Value = comboBoxAgedPeriod.SelectedIndex + 1;
                             report.Parameters["gdCurrentDate"].Value = ldCurrDate;
 
-                          
+
                             // Moses Newman 04/17/2022 Now do DealerSummary Sub Report datasource!
                             XRSubreport subReport = report.FindControl("SubreportDelinquencyDealerSummary", true) as XRSubreport;
                             XtraReport reportSource = subReport.ReportSource as XtraReport;
@@ -258,5 +264,431 @@ namespace IAC2021SQL
             Close();
         }
 
+        private void groupControl1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void buttonPrint_Click(object sender, EventArgs e)
+        {
+            /* CUSTOMER_DEALER, DEALER.DEALER_NAME, DEALER.DEALER_ST,
+               TOTALNOTES, 
+		       CUR, 
+			   AGED30, 
+			   AGED60, 
+			   AGED90, 
+			   AGED120, 
+			   AGED150, 
+			   AGED180PLUS,
+               TOTALCOUNT,
+               CURCOUNT, 
+			   AGED30COUNT, 
+			   AGED60COUNT, 
+			   AGED90COUNT, 
+			   AGED120COUNT, 
+			   AGED150COUNT, 
+			   AGED180PLUSCOUNT */
+            IACDataSet DelinquencyData = new IACDataSet();
+            IACDataSetTableAdapters.ClosedDealerAgedSummarySelectTableAdapter ClosedDealerAgedSummarySelectTableAdapter = new IACDataSetTableAdapters.ClosedDealerAgedSummarySelectTableAdapter();
+            DateTime ldCurrDate = ((DateTime)(nullableDateTimePickerDueDate.EditValue)).Date;
+            ClosedDealerAgedSummarySelectTableAdapter.SetCommandTimeout(360);
+            ClosedDealerAgedSummarySelectTableAdapter.Fill(DelinquencyData.ClosedDealerAgedSummarySelect, ldCurrDate);
+
+
+            if (DelinquencyData.ClosedDealerAgedSummarySelect.Rows.Count == 0)
+                MessageBox.Show("*** Sorry there are no records selected from the dealer aged summary. ***");
+            else
+            {
+                String lsUNCROOT = Program.GsDataPath,
+                        lsNewFileOut = lsUNCROOT + @"AccStuff\mfdata\EXCLDATA\AgedDealerSummary" + DateTime.Now.Date.Year.ToString() + DateTime.Now.Date.Month.ToString().PadLeft(2, '0') + DateTime.Now.Date.Day.ToString().PadLeft(2, '0') + @".xlsx";
+                // Create an exporter instance. 
+                IXlExporter exporter = XlExport.CreateExporter(XlDocumentFormat.Xlsx);
+
+                // Create the FileStream object with the specified file path. 
+                using (FileStream stream = new FileStream(lsNewFileOut, FileMode.Create, FileAccess.ReadWrite))
+                {
+                    // Create a new document and begin to write it to the specified stream. 
+                    using (IXlDocument document = exporter.CreateDocument(stream))
+                    {
+                        // Add a new worksheet to the document. 
+                        using (IXlSheet sheet = document.CreateSheet())
+                        {
+                            // Specify the worksheet name.
+                            sheet.Name = "Aged Dealer Summary";
+
+                            // Create the DEALER column and set its width. 
+                            using (IXlColumn column = sheet.CreateColumn())
+                            {
+                                column.WidthInPixels = 100;
+                            }
+
+                            // Create the DEALER NAME column and set its width.
+                            using (IXlColumn column = sheet.CreateColumn())
+                            {
+                                column.WidthInPixels = 250;
+                            }
+
+                            // Create the DEALER STATE column and set its width.
+                            using (IXlColumn column = sheet.CreateColumn())
+                            {
+                                column.WidthInPixels = 100;
+                            }
+
+                            // Create the TOTAL NOTES column and set its width.
+                            using (IXlColumn column = sheet.CreateColumn())
+                            {
+                                column.WidthInPixels = 100;
+                                column.Formatting = new XlCellFormatting();
+                                column.Formatting.NumberFormat = "$#,##0.00_);[Red]($#,##0.00)";
+                            }
+
+                            // Create the CURRENT column and set the specific number format for its cells.
+                            using (IXlColumn column = sheet.CreateColumn())
+                            {
+                                column.WidthInPixels = 100;
+                                column.Formatting = new XlCellFormatting();
+                                column.Formatting.NumberFormat = "$#,##0.00_);[Red]($#,##0.00)";
+                            }
+
+                            // Create the AGED30 column and set the specific number format for its cells.
+                            using (IXlColumn column = sheet.CreateColumn())
+                            {
+                                column.WidthInPixels = 100;
+                                column.Formatting = new XlCellFormatting();
+                                column.Formatting.NumberFormat = "$#,##0.00_);[Red]($#,##0.00)";
+                            }
+
+                            // Create the AGED60 column and set the specific number format for its cells.
+                            using (IXlColumn column = sheet.CreateColumn())
+                            {
+                                column.WidthInPixels = 100;
+                                column.Formatting = new XlCellFormatting();
+                                column.Formatting.NumberFormat = "$#,##0.00_);[Red]($#,##0.00)";
+                            }
+
+                            // Create the AGED90 column and set its width. 
+                            using (IXlColumn column = sheet.CreateColumn())
+                            {
+                                column.WidthInPixels = 100;
+                                column.Formatting = new XlCellFormatting();
+                                column.Formatting.NumberFormat = "$#,##0.00_);[Red]($#,##0.00)";
+                            }
+
+                            // Create the AGED120 column and set its width. 
+                            using (IXlColumn column = sheet.CreateColumn())
+                            {
+                                column.WidthInPixels = 100;
+                                column.Formatting = new XlCellFormatting();
+                                column.Formatting.NumberFormat = "$#,##0.00_);[Red]($#,##0.00)";
+                            }
+                            // Create the AGED150 column and set its width. 
+                            using (IXlColumn column = sheet.CreateColumn())
+                            {
+                                column.WidthInPixels = 100;
+                                column.Formatting = new XlCellFormatting();
+                                column.Formatting.NumberFormat = "$#,##0.00_);[Red]($#,##0.00)";
+                            }
+                            // Create the AGED180+ column and set its width. 
+                            using (IXlColumn column = sheet.CreateColumn())
+                            {
+                                column.WidthInPixels = 100;
+                                column.Formatting = new XlCellFormatting();
+                                column.Formatting.NumberFormat = "$#,##0.00_);[Red]($#,##0.00)";
+                            }
+                            // Create the CURRENT COUNT column and set the specific number format for its cells.
+                            using (IXlColumn column = sheet.CreateColumn())
+                            {
+                                column.WidthInPixels = 100;
+                                column.Formatting = new XlCellFormatting();
+                                column.Formatting.NumberFormat = "####";
+                            }
+
+                            // Create the AGED30 COUNT column and set the specific number format for its cells.
+                            using (IXlColumn column = sheet.CreateColumn())
+                            {
+                                column.WidthInPixels = 100;
+                                column.Formatting = new XlCellFormatting();
+                                column.Formatting.NumberFormat = "####";
+                            }
+
+                            // Create the AGED60 COUNT column and set the specific number format for its cells.
+                            using (IXlColumn column = sheet.CreateColumn())
+                            {
+                                column.WidthInPixels = 100;
+                                column.Formatting = new XlCellFormatting();
+                                column.Formatting.NumberFormat = "####";
+                            }
+
+                            // Create the AGED90 COUNT column and set its width. 
+                            using (IXlColumn column = sheet.CreateColumn())
+                            {
+                                column.WidthInPixels = 100;
+                                column.Formatting = new XlCellFormatting();
+                                column.Formatting.NumberFormat = "####";
+                            }
+
+                            // Create the AGED120 COUNT column and set its width. 
+                            using (IXlColumn column = sheet.CreateColumn())
+                            {
+                                column.WidthInPixels = 100;
+                                column.Formatting = new XlCellFormatting();
+                                column.Formatting.NumberFormat = "####";
+                            }
+                            // Create the AGED150 COUNT column and set its width. 
+                            using (IXlColumn column = sheet.CreateColumn())
+                            {
+                                column.WidthInPixels = 100;
+                                column.Formatting = new XlCellFormatting();
+                                column.Formatting.NumberFormat = "####";
+                            }
+                            // Create the AGED180+ COUNT column and set its width. 
+                            using (IXlColumn column = sheet.CreateColumn())
+                            {
+                                column.WidthInPixels = 100;
+                                column.Formatting = new XlCellFormatting();
+                                column.Formatting.NumberFormat = "####";
+                            }
+
+                            // Specify cell font attributes.
+                            XlCellFormatting cellFormatting = new XlCellFormatting();
+                            cellFormatting.Font = new XlFont();
+                            cellFormatting.Font.Name = "Century Gothic";
+                            cellFormatting.Font.SchemeStyle = XlFontSchemeStyles.None;
+
+                            // Specify formatting settings for the header row.
+                            XlCellFormatting headerRowFormatting = new XlCellFormatting();
+                            headerRowFormatting.CopyFrom(cellFormatting);
+                            headerRowFormatting.Font.Bold = true;
+                            headerRowFormatting.Font.Color = XlColor.FromTheme(XlThemeColor.Light1, 0.0);
+                            headerRowFormatting.Fill = XlFill.SolidFill(XlColor.FromTheme(XlThemeColor.Accent2, 0.0));
+
+                            // Create the header row.
+                            using (IXlRow row = sheet.CreateRow())
+                            {
+                                using (IXlCell cell = row.CreateCell())
+                                {
+                                    cell.Value = "Dealer Number";
+                                    cell.ApplyFormatting(headerRowFormatting);
+                                }
+                                using (IXlCell cell = row.CreateCell())
+                                {
+                                    cell.Value = "Dealer Name";
+                                    cell.ApplyFormatting(headerRowFormatting);
+                                }
+                                using (IXlCell cell = row.CreateCell())
+                                {
+                                    cell.Value = "Dealer State";
+                                    cell.ApplyFormatting(headerRowFormatting);
+                                }
+                                using (IXlCell cell = row.CreateCell())
+                                {
+                                    cell.Value = "Total Notes";
+                                    cell.ApplyFormatting(headerRowFormatting);
+                                }
+                                using (IXlCell cell = row.CreateCell())
+                                {
+                                    cell.Value = "Current";
+                                    cell.ApplyFormatting(headerRowFormatting);
+                                }
+                                using (IXlCell cell = row.CreateCell())
+                                {
+                                    cell.Value = "Aged 30";
+                                    cell.ApplyFormatting(headerRowFormatting);
+                                }
+                                using (IXlCell cell = row.CreateCell())
+                                {
+                                    cell.Value = "Aged 60";
+                                    cell.ApplyFormatting(headerRowFormatting);
+                                }
+                                using (IXlCell cell = row.CreateCell())
+                                {
+                                    cell.Value = "Aged 90";
+                                    cell.ApplyFormatting(headerRowFormatting);
+                                }
+                                using (IXlCell cell = row.CreateCell())
+                                {
+                                    cell.Value = "Aged 120";
+                                    cell.ApplyFormatting(headerRowFormatting);
+                                }
+                                using (IXlCell cell = row.CreateCell())
+                                {
+                                    cell.Value = "Aged 150";
+                                    cell.ApplyFormatting(headerRowFormatting);
+                                }
+                                using (IXlCell cell = row.CreateCell())
+                                {
+                                    cell.Value = "Aged 180+";
+                                    cell.ApplyFormatting(headerRowFormatting);
+                                }
+                                using (IXlCell cell = row.CreateCell())
+                                {
+                                    cell.Value = "Current Count";
+                                    cell.ApplyFormatting(headerRowFormatting);
+                                }
+                                using (IXlCell cell = row.CreateCell())
+                                {
+                                    cell.Value = "Aged 30 Count";
+                                    cell.ApplyFormatting(headerRowFormatting);
+                                }
+                                using (IXlCell cell = row.CreateCell())
+                                {
+                                    cell.Value = "Aged 60 Count";
+                                    cell.ApplyFormatting(headerRowFormatting);
+                                }
+                                using (IXlCell cell = row.CreateCell())
+                                {
+                                    cell.Value = "Aged 90 Count";
+                                    cell.ApplyFormatting(headerRowFormatting);
+                                }
+                                using (IXlCell cell = row.CreateCell())
+                                {
+                                    cell.Value = "Aged 120 Count";
+                                    cell.ApplyFormatting(headerRowFormatting);
+                                }
+                                using (IXlCell cell = row.CreateCell())
+                                {
+                                    cell.Value = "Aged 150 Count";
+                                    cell.ApplyFormatting(headerRowFormatting);
+                                }
+                                using (IXlCell cell = row.CreateCell())
+                                {
+                                    cell.Value = "Aged 180+ Count";
+                                    cell.ApplyFormatting(headerRowFormatting);
+                                }
+                            }
+                            /* CUSTOMER_DEALER, DEALER.DEALER_NAME, DEALER.DEALER_ST,
+                               TOTALNOTES, 
+                               CUR, 
+                               AGED30, 
+                               AGED60, 
+                               AGED90, 
+                               AGED120, 
+                               AGED150, 
+                               AGED180PLUS,
+                               TOTALCOUNT,
+                               CURCOUNT, 
+                               AGED30COUNT, 
+                               AGED60COUNT, 
+                               AGED90COUNT, 
+                               AGED120COUNT, 
+                               AGED150COUNT, 
+                               AGED180PLUSCOUNT */
+
+                            // Generate data for the sales report.
+                            for (int i = 0; i < DelinquencyData.ClosedDealerAgedSummarySelect.Rows.Count; i++)
+                            {
+                                using (IXlRow row = sheet.CreateRow())
+                                {
+                                    using (IXlCell cell = row.CreateCell())
+                                    {
+                                        cell.Value = DelinquencyData.ClosedDealerAgedSummarySelect.Rows[i].Field<Int32>("CUSTOMER_DEALER");
+                                        cell.ApplyFormatting(cellFormatting);
+                                    }
+                                    using (IXlCell cell = row.CreateCell())
+                                    {
+                                        cell.Value = DelinquencyData.ClosedDealerAgedSummarySelect.Rows[i].Field<String>("DEALER_NAME");
+                                        cell.ApplyFormatting(cellFormatting);
+                                    }
+                                    using (IXlCell cell = row.CreateCell())
+                                    {
+                                        cell.Value = DelinquencyData.ClosedDealerAgedSummarySelect.Rows[i].Field<String>("DEALER_ST");
+                                        cell.ApplyFormatting(cellFormatting);
+                                    }
+                                    using (IXlCell cell = row.CreateCell())
+                                    {
+                                        cell.Value = (Double)DelinquencyData.ClosedDealerAgedSummarySelect.Rows[i].Field<Decimal>("TOTALNOTES");
+                                        cell.ApplyFormatting(cellFormatting);
+                                    }
+                                    using (IXlCell cell = row.CreateCell())
+                                    {
+                                        cell.Value = (Double)DelinquencyData.ClosedDealerAgedSummarySelect.Rows[i].Field<Decimal>("CUR");
+                                        cell.ApplyFormatting(cellFormatting);
+                                    }
+                                    using (IXlCell cell = row.CreateCell())
+                                    {
+                                        cell.Value = (Double)DelinquencyData.ClosedDealerAgedSummarySelect.Rows[i].Field<Decimal>("AGED30");
+                                        cell.ApplyFormatting(cellFormatting);
+                                    }
+                                    using (IXlCell cell = row.CreateCell())
+                                    {
+                                        cell.Value = (Double)DelinquencyData.ClosedDealerAgedSummarySelect.Rows[i].Field<Decimal>("AGED60");
+                                        cell.ApplyFormatting(cellFormatting);
+                                    }
+                                    using (IXlCell cell = row.CreateCell())
+                                    {
+                                        cell.Value = (Double)DelinquencyData.ClosedDealerAgedSummarySelect.Rows[i].Field<Decimal>("AGED90");
+                                        cell.ApplyFormatting(cellFormatting);
+                                    }
+                                    using (IXlCell cell = row.CreateCell())
+                                    {
+                                        cell.Value = (Double)DelinquencyData.ClosedDealerAgedSummarySelect.Rows[i].Field<Decimal>("AGED120");
+                                        cell.ApplyFormatting(cellFormatting);
+                                    }
+                                    using (IXlCell cell = row.CreateCell())
+                                    {
+                                        cell.Value = (Double)DelinquencyData.ClosedDealerAgedSummarySelect.Rows[i].Field<Decimal>("AGED150");
+                                        cell.ApplyFormatting(cellFormatting);
+                                    }
+                                    using (IXlCell cell = row.CreateCell())
+                                    {
+                                        cell.Value = (Double)DelinquencyData.ClosedDealerAgedSummarySelect.Rows[i].Field<Decimal>("AGED180PLUS");
+                                        cell.ApplyFormatting(cellFormatting);
+                                    }
+                                    using (IXlCell cell = row.CreateCell())
+                                    {
+                                        cell.Value = DelinquencyData.ClosedDealerAgedSummarySelect.Rows[i].Field<Int32>("CURCOUNT");
+                                        cell.ApplyFormatting(cellFormatting);
+                                    }
+                                    using (IXlCell cell = row.CreateCell())
+                                    {
+                                        cell.Value = DelinquencyData.ClosedDealerAgedSummarySelect.Rows[i].Field<Int32>("AGED30COUNT");
+                                        cell.ApplyFormatting(cellFormatting);
+                                    }
+                                    using (IXlCell cell = row.CreateCell())
+                                    {
+                                        cell.Value = DelinquencyData.ClosedDealerAgedSummarySelect.Rows[i].Field<Int32>("AGED60COUNT");
+                                        cell.ApplyFormatting(cellFormatting);
+                                    }
+                                    using (IXlCell cell = row.CreateCell())
+                                    {
+                                        cell.Value = DelinquencyData.ClosedDealerAgedSummarySelect.Rows[i].Field<Int32>("AGED90COUNT");
+                                        cell.ApplyFormatting(cellFormatting);
+                                    }
+                                    using (IXlCell cell = row.CreateCell())
+                                    {
+                                        cell.Value = DelinquencyData.ClosedDealerAgedSummarySelect.Rows[i].Field<Int32>("AGED120COUNT");
+                                        cell.ApplyFormatting(cellFormatting);
+                                    }
+                                    using (IXlCell cell = row.CreateCell())
+                                    {
+                                        cell.Value = DelinquencyData.ClosedDealerAgedSummarySelect.Rows[i].Field<Int32>("AGED150COUNT");
+                                        cell.ApplyFormatting(cellFormatting);
+                                    }
+                                    using (IXlCell cell = row.CreateCell())
+                                    {
+                                        cell.Value = DelinquencyData.ClosedDealerAgedSummarySelect.Rows[i].Field<Int32>("AGED180PLUSCOUNT");
+                                        cell.ApplyFormatting(cellFormatting);
+                                    }
+                                }
+                            }
+                            // Create an instance of the XlConditionalFormatting class.
+                            XlConditionalFormatting formatting = new XlConditionalFormatting();
+
+                            formatting.Ranges.Add(XlCellRange.FromLTRB(0, 0, 17, DelinquencyData.ClosedDealerAgedSummarySelect.Rows.Count));
+
+                            //XlCondFmtRuleCellIs rule = new XlCondFmtRuleCellIs();
+                            XlCondFmtRuleExpression rule = new XlCondFmtRuleExpression("=MOD(ROW(),2) = 0");
+                            rule.Formatting = XlFill.SolidFill(Color.Bisque);
+                            formatting.Rules.Add(rule);
+                            sheet.ConditionalFormattings.Add(formatting);
+                            // Enable AutoFilter for the created cell range.
+                            sheet.AutoFilterRange = sheet.DataRange;
+                        }
+                    }
+                }
+                // Open the XLSX document using the default application.
+                System.Diagnostics.Process.Start(lsNewFileOut);
+            }
+        }
     }
 }

@@ -1,20 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\mnewman\\Source\\Repos\\IAC2018SQL\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{9374C0D9-FF96-44BD-842B-445EAACF4B2B}|IAC2018SQL\\IAC2021SQL.csproj|c:\\users\\mnewman\\source\\repos\\iac2018sql\\iac2018sql\\xtrareportdelinquency.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{9374C0D9-FF96-44BD-842B-445EAACF4B2B}|IAC2018SQL\\IAC2021SQL.csproj|solutionrelative:iac2018sql\\xtrareportdelinquency.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9374C0D9-FF96-44BD-842B-445EAACF4B2B}|IAC2018SQL\\IAC2021SQL.csproj|c:\\users\\mnewman\\source\\repos\\iac2018sql\\iac2018sql\\mailmergecomponents.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9374C0D9-FF96-44BD-842B-445EAACF4B2B}|IAC2018SQL\\IAC2021SQL.csproj|solutionrelative:iac2018sql\\mailmergecomponents.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9374C0D9-FF96-44BD-842B-445EAACF4B2B}|IAC2018SQL\\IAC2021SQL.csproj|c:\\users\\mnewman\\source\\repos\\iac2018sql\\iac2018sql\\formbulksmsmessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9374C0D9-FF96-44BD-842B-445EAACF4B2B}|IAC2018SQL\\IAC2021SQL.csproj|solutionrelative:iac2018sql\\formbulksmsmessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -22,7 +9,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 14,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -79,44 +66,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:323948898:0:{81164725-9a96-4ece-a4cb-440d8fd285e5}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "XtraReportDelinquency.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\mnewman\\Source\\Repos\\IAC2018SQL\\IAC2018SQL\\XtraReportDelinquency.cs",
-              "RelativeDocumentMoniker": "IAC2018SQL\\XtraReportDelinquency.cs",
-              "ToolTip": "C:\\Users\\mnewman\\Source\\Repos\\IAC2018SQL\\IAC2018SQL\\XtraReportDelinquency.cs [Design]",
-              "RelativeToolTip": "IAC2018SQL\\XtraReportDelinquency.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-05T20:53:31.103Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MailMergeComponents.cs",
-              "DocumentMoniker": "C:\\Users\\mnewman\\Source\\Repos\\IAC2018SQL\\IAC2018SQL\\MailMergeComponents.cs",
-              "RelativeDocumentMoniker": "IAC2018SQL\\MailMergeComponents.cs",
-              "ToolTip": "C:\\Users\\mnewman\\Source\\Repos\\IAC2018SQL\\IAC2018SQL\\MailMergeComponents.cs",
-              "RelativeToolTip": "IAC2018SQL\\MailMergeComponents.cs",
-              "ViewState": "AgIAACsCAAAAAAAAAAAAAJgBAABHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-05T18:52:00.907Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "FormBulkSMSMessage.cs",
-              "DocumentMoniker": "C:\\Users\\mnewman\\Source\\Repos\\IAC2018SQL\\IAC2018SQL\\FormBulkSMSMessage.cs",
-              "RelativeDocumentMoniker": "IAC2018SQL\\FormBulkSMSMessage.cs",
-              "ToolTip": "C:\\Users\\mnewman\\Source\\Repos\\IAC2018SQL\\IAC2018SQL\\FormBulkSMSMessage.cs*",
-              "RelativeToolTip": "IAC2018SQL\\FormBulkSMSMessage.cs*",
-              "ViewState": "AgIAAOAAAAAAAAAAAAD4v+8AAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-05T18:50:14.143Z",
-              "EditorCaption": ""
             }
           ]
         }
