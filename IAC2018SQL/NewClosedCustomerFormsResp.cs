@@ -30,6 +30,7 @@ using DevExpress.LookAndFeel;
 using DevExpress.XtraGrid;
 using DevExpress.XtraRichEdit;
 using DevExpress.XtraRichEdit.API.Native;
+using DevExpress.XtraBars.Alerter;
 
 
 namespace IAC2021SQL
@@ -1150,7 +1151,7 @@ namespace IAC2021SQL
                 if (iACDataSet.CUSTOMER.Rows[0].Field<Boolean>("ActiveDuty") == true)
                     lbAlreadyIntOverrideSix = true;
                 else
-                    lbAlreadyIntOverrideSix = false;
+                    lbAlreadyIntOverrideSix = false; 
                 /*
                 if (RepoIndex > -1)
                     comboBoxRepoCodes.ItemIndex = RepoIndex;
@@ -4840,7 +4841,7 @@ namespace IAC2021SQL
                     // Moses Newman 01/09/2014 Add Current Location Date and Auction House Date
                     nullableDateTimePickerLocDate.Enabled = true;
                     nullableDateTimePickerAucDate.Enabled = true;
-                       
+
                     // Moses Newman 06/13/2018 Add Full Recourse CheckBox to first tab also;
                     checkBoxFullRecourseTab1.Enabled = true;
                     // Moses Newman 01/29/2017
@@ -4934,6 +4935,23 @@ namespace IAC2021SQL
                 ActiveControl = cUSTOMER_FIRST_NAMETextBox;
                 cUSTOMER_FIRST_NAMETextBox.Select();
                 SetViewMode();
+                iACDataSet.VEHICLE.Rows[0].SetField<String>("PolicyStatus", iACDataSet.VEHICLE.Rows[0].Field<String>("PolicyStatus") ?? "");
+                if (iACDataSet.VEHICLE.Rows[0].Field<String>("PolicyStatus").ToUpper() == "IN FORCE")
+                {
+                    checkEditCustomerInsurance.Checked = true;
+                }
+                else
+                {
+                    checkEditCustomerInsurance.Checked = false;
+                    alertControl1.ShowPinButton = true;
+                    alertControl1.ShowCloseButton = false;
+                    AlertInfo info = new AlertInfo("UN-INSURED ACCOUNT", "Please Note!\nThis account does NOT have an IN FORCE insurance policy at the moment!");
+                    alertControl1.AllowHtmlText = true;
+                    alertControl1.Show(this, info);
+                    alertControl1.AlertFormList[0].Buttons.PinButton.SetDown(true);
+                    alertControl1.AlertFormList[0].BackColor = Color.White;
+                    alertControl1.AlertFormList[0].ForeColor = Color.MediumVioletRed;
+                }
             }
         }
 
@@ -6359,6 +6377,12 @@ namespace IAC2021SQL
         {
             if (lbEdit || lbAddFlag)
                 toolStripButtonSave.Enabled = true;
+        }
+
+        private void alertControl1_BeforeFormShow(object sender, AlertFormEventArgs e)
+        {
+            AlertControl alertControl = sender as AlertControl;
+            e.Location = new Point { X = 898, Y = 223 };
         }
 
         private void radioButtonCOSAcct_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)

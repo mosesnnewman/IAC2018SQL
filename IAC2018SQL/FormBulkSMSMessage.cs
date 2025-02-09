@@ -5,6 +5,8 @@ using System.Globalization;
 using System.Windows.Forms;
 using IAC2021SQL.LoginWSProxy;
 using IAC2021SQL.MessageWSProxy;
+using DevExpress.XtraRichEdit;
+using DevExpress.XtraRichEdit.API.Native;
 
 namespace IAC2021SQL
 {
@@ -207,7 +209,66 @@ namespace IAC2021SQL
             this.Show();
         }
 
-        private void MakeComment(IACDataSet iACDataSet,Int32 custrow,String CommentMessage, String APIMessage, Int32 tnTemplateNo = 0, Boolean tbAddTextSent = true, Boolean tbCosginerTextSent = false)
+        private void MakeComment(IACDataSet iACDataSet, Int32 custrow, String CommentMessage, String APIMessage, Int32 tnTemplateNo = 0, Boolean tbAddTextSent = true, Boolean tbCosginerTextSent = false)
+        {
+            IACDataSetTableAdapters.COMMENTTableAdapter cOMMENTTableAdapter = new IACDataSetTableAdapters.COMMENTTableAdapter();
+
+            // Moses Newman 07/22/2022
+            if (iACDataSet.CUSTOMER.Rows.Count < 1)
+                return;
+            CommentMessage = CommentMessage.Replace("{MISC$}", iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_REGULAR_AMOUNT").ToString("C", new CultureInfo("en-US")));
+            CommentMessage = CommentMessage.Replace("{MISC1}", Program.NextDueDate(0, iACDataSet).ToString("d", new CultureInfo("en-US")));
+            Object oMissing = System.Reflection.Missing.Value,
+                   oTrue = false,
+                   oFalse = true,
+                   loQuery = null,
+                   start = 0,
+                   end = 0;
+
+            Int32 lnSeq = 0;
+            String lsCommentKey = "", lsFullComment = "", FileName = "";
+
+            // Moses Newman 01/10/2025 Switch from WORD Office Interop to DevExpress Rich Edit Document Server.
+            var server = new RichEditDocumentServer();
+            Document doc = server.Document;
+            if (lnSeq == 0)
+            {
+                loQuery = cOMMENTTableAdapter.SeqNoQuery(iACDataSet.CUSTOMER.Rows[custrow].Field<String>("CUSTOMER_NO"), DateTime.Now.Date);
+                if (loQuery != null)
+                    lnSeq = (int)loQuery + 1;
+                else
+                    lnSeq = 1;
+            }
+            else
+                lnSeq = lnSeq + 1;
+            // Moses Newman 10/18/2017 create string unique key that will become word filename!
+            lsCommentKey = iACDataSet.CUSTOMER.Rows[custrow].Field<String>("CUSTOMER_NO") + DateTime.Now.Date.ToString("yyyyMMdd") + lnSeq.ToString().Trim() + Program.gsUserID;
+            // Moses Newman 11/21/2017 Remove hard coded UNC Pathing.
+            FileName = Program.GsDataPath + @"CommentAttachments\SMS\" + lsCommentKey + ".docx";
+            doc.AppendText(CommentMessage);
+            server.SaveDocument(FileName, DocumentFormat.OpenXml);
+            server.Dispose();
+            server = null;
+            WholeComment loTempComment;
+
+            CommentMessage = (tbAddTextSent) ? (!tbCosginerTextSent ? "TEXT SENT: " : "COSIGNER TEXT SENT: ") + CommentMessage : CommentMessage;
+            loTempComment = SplitComments(CommentMessage + " API MSG: " + APIMessage);
+            // Moses Newman 02/22/2019 Add Full Comment
+            lsFullComment = loTempComment.Field1 + loTempComment.Field2 + loTempComment.Field3;
+            cOMMENTTableAdapter.Insert(iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO"),
+                                        DateTime.Now.Date, lnSeq,
+            Program.gsUserID,
+            lsFullComment,
+                                        "",
+                                        iACDataSet.CUSTOMER.Rows[0].Field<Int32>("CUSTOMER_DEALER"),
+                                        Program.gsUserID + "  ",
+                                        DateTime.Now.Hour.ToString().PadLeft(2, '0') + DateTime.Now.Minute.ToString().PadLeft(2, '0') + DateTime.Now.Second.ToString().PadLeft(2, '0'),
+                                        false, "", "",0, @"WordDoc.bmp", FileName, tnTemplateNo);
+
+            cOMMENTTableAdapter.FillByCustNo(iACDataSet.COMMENT, iACDataSet.CUSTOMER.Rows[custrow].Field<String>("CUSTOMER_NO"));
+        }
+
+        private void OldMakeComment(IACDataSet iACDataSet,Int32 custrow,String CommentMessage, String APIMessage, Int32 tnTemplateNo = 0, Boolean tbAddTextSent = true, Boolean tbCosginerTextSent = false)
         {
             IACDataSetTableAdapters.COMMENTTableAdapter cOMMENTTableAdapter = new IACDataSetTableAdapters.COMMENTTableAdapter();
 

@@ -98,30 +98,30 @@ namespace IAC2021SQL
             System.Windows.Forms.Label label49;
             System.Windows.Forms.Label label117;
             System.Windows.Forms.Label label116;
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition25 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition26 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition27 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition28 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition29 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition30 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition25 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition26 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition27 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition28 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition29 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition30 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition31 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition32 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition33 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition34 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition35 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition36 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition31 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition32 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition33 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition34 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition35 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition36 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition1 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition2 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition3 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition4 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition5 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition6 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition1 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition2 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition3 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition4 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition5 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition6 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition7 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition8 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition9 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition10 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition11 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition12 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition7 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition8 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition9 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition10 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition11 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition12 = new DevExpress.XtraLayout.RowDefinition();
             this.splashScreenManager1 = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::IAC2021SQL.WaitFormMakeComment), true, true, true);
             this.cUSTOMERBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.iACDataSet = new IAC2021SQL.IACDataSet();
@@ -1385,6 +1385,7 @@ namespace IAC2021SQL
             this.emptySpaceItem95 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emailTableAdapter1 = new IAC2021SQL.IACDataSetTableAdapters.EmailTableAdapter();
             this.emailTableAdapter2 = new IAC2021SQL.ProductionMainTablesTableAdapters.EmailTableAdapter();
+            this.alertControl1 = new DevExpress.XtraBars.Alerter.AlertControl(this.components);
             labelTotalDue = new System.Windows.Forms.Label();
             labelDealerCashPrice = new System.Windows.Forms.Label();
             label30 = new System.Windows.Forms.Label();
@@ -7220,44 +7221,44 @@ namespace IAC2021SQL
             this.layoutControlGroupLoanInfoTop.OptionsPrint.AppearanceItem.BackColor = System.Drawing.Color.Transparent;
             this.layoutControlGroupLoanInfoTop.OptionsPrint.AppearanceItem.Options.UseBackColor = true;
             this.layoutControlGroupLoanInfoTop.OptionsTableLayoutGroup.AutoSizeDefaultDefinitionLength = 250;
-            columnDefinition25.SizeType = System.Windows.Forms.SizeType.Absolute;
-            columnDefinition25.Width = 258D;
-            columnDefinition26.SizeType = System.Windows.Forms.SizeType.Absolute;
-            columnDefinition26.Width = 250D;
-            columnDefinition27.SizeType = System.Windows.Forms.SizeType.Absolute;
-            columnDefinition27.Width = 254D;
-            columnDefinition28.SizeType = System.Windows.Forms.SizeType.Absolute;
-            columnDefinition28.Width = 306D;
-            columnDefinition29.SizeType = System.Windows.Forms.SizeType.Absolute;
-            columnDefinition29.Width = 250D;
-            columnDefinition30.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            columnDefinition30.Width = 411D;
+            columnDefinition1.SizeType = System.Windows.Forms.SizeType.Absolute;
+            columnDefinition1.Width = 258D;
+            columnDefinition2.SizeType = System.Windows.Forms.SizeType.Absolute;
+            columnDefinition2.Width = 250D;
+            columnDefinition3.SizeType = System.Windows.Forms.SizeType.Absolute;
+            columnDefinition3.Width = 254D;
+            columnDefinition4.SizeType = System.Windows.Forms.SizeType.Absolute;
+            columnDefinition4.Width = 306D;
+            columnDefinition5.SizeType = System.Windows.Forms.SizeType.Absolute;
+            columnDefinition5.Width = 250D;
+            columnDefinition6.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            columnDefinition6.Width = 411D;
             this.layoutControlGroupLoanInfoTop.OptionsTableLayoutGroup.ColumnDefinitions.AddRange(new DevExpress.XtraLayout.ColumnDefinition[] {
-            columnDefinition25,
-            columnDefinition26,
-            columnDefinition27,
-            columnDefinition28,
-            columnDefinition29,
-            columnDefinition30});
-            rowDefinition25.Height = 41D;
-            rowDefinition25.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            rowDefinition26.Height = 41D;
-            rowDefinition26.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            rowDefinition27.Height = 41D;
-            rowDefinition27.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            rowDefinition28.Height = 41D;
-            rowDefinition28.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            rowDefinition29.Height = 41D;
-            rowDefinition29.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            rowDefinition30.Height = 43D;
-            rowDefinition30.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            columnDefinition1,
+            columnDefinition2,
+            columnDefinition3,
+            columnDefinition4,
+            columnDefinition5,
+            columnDefinition6});
+            rowDefinition1.Height = 41D;
+            rowDefinition1.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            rowDefinition2.Height = 41D;
+            rowDefinition2.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            rowDefinition3.Height = 41D;
+            rowDefinition3.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            rowDefinition4.Height = 41D;
+            rowDefinition4.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            rowDefinition5.Height = 41D;
+            rowDefinition5.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            rowDefinition6.Height = 43D;
+            rowDefinition6.SizeType = System.Windows.Forms.SizeType.AutoSize;
             this.layoutControlGroupLoanInfoTop.OptionsTableLayoutGroup.RowDefinitions.AddRange(new DevExpress.XtraLayout.RowDefinition[] {
-            rowDefinition25,
-            rowDefinition26,
-            rowDefinition27,
-            rowDefinition28,
-            rowDefinition29,
-            rowDefinition30});
+            rowDefinition1,
+            rowDefinition2,
+            rowDefinition3,
+            rowDefinition4,
+            rowDefinition5,
+            rowDefinition6});
             this.layoutControlGroupLoanInfoTop.OptionsTableLayoutGroup.ShrinkEmptyAutoSizeDefinition = DevExpress.Utils.DefaultBoolean.True;
             this.layoutControlGroupLoanInfoTop.Size = new System.Drawing.Size(1789, 308);
             this.layoutControlGroupLoanInfoTop.Spacing = new DevExpress.XtraLayout.Utils.Padding(20, 20, 20, 20);
@@ -7805,44 +7806,44 @@ namespace IAC2021SQL
             this.layoutControlGroupLoanInfoBottom.Location = new System.Drawing.Point(0, 419);
             this.layoutControlGroupLoanInfoBottom.Name = "layoutControlGroupLoanInfoBottom";
             this.layoutControlGroupLoanInfoBottom.OptionsItemText.TextAlignMode = DevExpress.XtraLayout.TextAlignModeGroup.AutoSize;
-            columnDefinition31.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            columnDefinition31.Width = 203D;
-            columnDefinition32.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            columnDefinition32.Width = 216D;
-            columnDefinition33.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            columnDefinition33.Width = 267D;
-            columnDefinition34.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            columnDefinition34.Width = 262D;
-            columnDefinition35.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            columnDefinition35.Width = 20D;
-            columnDefinition36.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            columnDefinition36.Width = 761D;
+            columnDefinition7.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            columnDefinition7.Width = 203D;
+            columnDefinition8.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            columnDefinition8.Width = 216D;
+            columnDefinition9.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            columnDefinition9.Width = 267D;
+            columnDefinition10.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            columnDefinition10.Width = 262D;
+            columnDefinition11.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            columnDefinition11.Width = 20D;
+            columnDefinition12.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            columnDefinition12.Width = 761D;
             this.layoutControlGroupLoanInfoBottom.OptionsTableLayoutGroup.ColumnDefinitions.AddRange(new DevExpress.XtraLayout.ColumnDefinition[] {
-            columnDefinition31,
-            columnDefinition32,
-            columnDefinition33,
-            columnDefinition34,
-            columnDefinition35,
-            columnDefinition36});
-            rowDefinition31.Height = 41D;
-            rowDefinition31.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            rowDefinition32.Height = 41D;
-            rowDefinition32.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            rowDefinition33.Height = 41D;
-            rowDefinition33.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            rowDefinition34.Height = 41D;
-            rowDefinition34.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            rowDefinition35.Height = 41D;
-            rowDefinition35.SizeType = System.Windows.Forms.SizeType.AutoSize;
-            rowDefinition36.Height = 41D;
-            rowDefinition36.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            columnDefinition7,
+            columnDefinition8,
+            columnDefinition9,
+            columnDefinition10,
+            columnDefinition11,
+            columnDefinition12});
+            rowDefinition7.Height = 41D;
+            rowDefinition7.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            rowDefinition8.Height = 41D;
+            rowDefinition8.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            rowDefinition9.Height = 41D;
+            rowDefinition9.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            rowDefinition10.Height = 41D;
+            rowDefinition10.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            rowDefinition11.Height = 41D;
+            rowDefinition11.SizeType = System.Windows.Forms.SizeType.AutoSize;
+            rowDefinition12.Height = 41D;
+            rowDefinition12.SizeType = System.Windows.Forms.SizeType.AutoSize;
             this.layoutControlGroupLoanInfoBottom.OptionsTableLayoutGroup.RowDefinitions.AddRange(new DevExpress.XtraLayout.RowDefinition[] {
-            rowDefinition31,
-            rowDefinition32,
-            rowDefinition33,
-            rowDefinition34,
-            rowDefinition35,
-            rowDefinition36});
+            rowDefinition7,
+            rowDefinition8,
+            rowDefinition9,
+            rowDefinition10,
+            rowDefinition11,
+            rowDefinition12});
             this.layoutControlGroupLoanInfoBottom.Size = new System.Drawing.Size(1789, 306);
             this.layoutControlGroupLoanInfoBottom.Spacing = new DevExpress.XtraLayout.Utils.Padding(20, 20, 20, 20);
             this.layoutControlGroupLoanInfoBottom.TextVisible = false;
@@ -21087,6 +21088,17 @@ namespace IAC2021SQL
             // 
             this.emailTableAdapter2.ClearBeforeFill = true;
             // 
+            // alertControl1
+            // 
+            this.alertControl1.AppearanceText.Options.UseTextOptions = true;
+            this.alertControl1.AppearanceText.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.alertControl1.AutoHeight = true;
+            this.alertControl1.LookAndFeel.SkinName = "The Bezier";
+            this.alertControl1.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.alertControl1.ShowAnimationType = DevExpress.XtraBars.Alerter.AlertFormShowingEffect.FadeIn;
+            this.alertControl1.ShowCloseButton = false;
+            this.alertControl1.BeforeFormShow += new DevExpress.XtraBars.Alerter.AlertFormEventHandler(this.alertControl1_BeforeFormShow);
+            // 
             // frmNewCustMaintResp
             // 
             this.Appearance.BackColor = System.Drawing.Color.CornflowerBlue;
@@ -23538,6 +23550,7 @@ namespace IAC2021SQL
         private EmptySpaceItem emptySpaceItem221;
         private EmptySpaceItem emptySpaceItem222;
         private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1;
+        private DevExpress.XtraBars.Alerter.AlertControl alertControl1;
     }
 }
 
