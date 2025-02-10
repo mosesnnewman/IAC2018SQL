@@ -21093,11 +21093,14 @@ namespace IAC2021SQL
             this.alertControl1.AppearanceText.Options.UseTextOptions = true;
             this.alertControl1.AppearanceText.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
             this.alertControl1.AutoHeight = true;
+            this.alertControl1.HtmlTemplate.Styles = resources.GetString("alertControl1.HtmlTemplate.Styles");
+            this.alertControl1.HtmlTemplate.Template = resources.GetString("alertControl1.HtmlTemplate.Template");
             this.alertControl1.LookAndFeel.SkinName = "The Bezier";
             this.alertControl1.LookAndFeel.UseDefaultLookAndFeel = false;
             this.alertControl1.ShowAnimationType = DevExpress.XtraBars.Alerter.AlertFormShowingEffect.FadeIn;
             this.alertControl1.ShowCloseButton = false;
             this.alertControl1.BeforeFormShow += new DevExpress.XtraBars.Alerter.AlertFormEventHandler(this.alertControl1_BeforeFormShow);
+            this.alertControl1.HtmlElementMouseClick += new DevExpress.XtraBars.Alerter.AlertHtmlElementMouseClickEventHandler(this.alertControl1_HtmlElementMouseClick);
             // 
             // frmNewCustMaintResp
             // 

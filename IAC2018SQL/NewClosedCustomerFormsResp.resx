@@ -24247,4 +24247,91 @@
   <metadata name="alertControl1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>192, 17</value>
   </metadata>
+  <data name="alertControl1.HtmlTemplate.Styles" xml:space="preserve">
+    <value>body{
+	padding: 15px;
+	font-size: 14px;
+	font-family: 'Segoe UI';
+}
+.frame {
+	min-width: 450px;
+	max-width: 450px;
+	height: auto;
+	background-color: @Window;
+	border-radius: 10px;
+	box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, 0.2);
+}
+.header {
+	background-color: @Critical;
+	padding: 5px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border-radius: 10px 10px 0px 0px;
+}
+.header-element {
+	margin: 5px 5px 5px 25px;
+}
+.caption {
+	color: @White;
+	font-weight: bold;
+}
+.pin-button-img {
+	fill: @White;
+	width: 18px;
+	height: 18px;
+	opacity: 0.8;
+}
+.pin-button {
+	padding: 5px;
+	border-radius: 4px;
+}
+.pin-button:hover {
+	background-color: @WindowText/0.1;
+}
+.pin-button:active {
+	background-color: @ControlText/0.05;
+}
+.text {
+	margin: 15px 30px;
+	font-size: 12px;
+	white-space: pre;
+	color: @WindowText/0.8;
+}
+.buttons {
+	margin: 10px;
+	display: flex;
+	justify-content: flex-end;
+}
+.button {
+	color: @Critical;
+	border-radius: 5px;
+	padding: 8px 24px;
+	margin: 0px 5px;
+	border: solid 1px @Transparent;
+}
+.button:hover {
+	color: @White;
+	background-color: @Critical;
+	box-shadow: 0px 0px 10px @Critical/0.5;
+}
+.button:focus {
+	border-color: @Critical;
+}</value>
+  </data>
+  <data name="alertControl1.HtmlTemplate.Template" xml:space="preserve">
+    <value>&lt;div class="frame" id="frame"&gt;
+	&lt;div class="header"&gt;
+		&lt;div class="header-element caption"&gt;${Caption}&lt;/div&gt;
+		&lt;div class="header-element pin-button" id="pinbutton"&gt;
+			&lt;img src="close" class="pin-button-img"&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class="text" id="content"&gt;&lt;p&gt;${Text}&lt;/p&gt;&lt;/div&gt;
+	&lt;div class="buttons"&gt;
+		&lt;!--&lt;div class="button" tabindex="1" id="dialogresult-ok"&gt;DELETE&lt;/div&gt;
+		&lt;div class="button" tabindex="2" id="dialogresult-cancel"&gt;CANCEL&lt;/div&gt;--&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</value>
+  </data>
 </root>

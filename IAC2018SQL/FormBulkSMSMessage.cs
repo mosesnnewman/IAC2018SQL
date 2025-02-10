@@ -90,9 +90,11 @@ namespace IAC2021SQL
 
         private void buttonSend_Click(object sender, EventArgs e)
         {
+            buttonSend.Enabled = false;
             if(tempID < 0)
             {
                 MessageBox.Show("*** You MUST select a template in order to send bulk messages! ***");
+                buttonSend.Enabled = true;
                 return;
             }
             Int32 lnDayDue = 0;
@@ -195,6 +197,7 @@ namespace IAC2021SQL
             }
             else
                 MessageBox.Show("No CUSTOMER found that match your selection criteria.  NO MESSAGES WILL BE SENT!");
+            buttonSend.Enabled = true;
             this.Close();
         }
 

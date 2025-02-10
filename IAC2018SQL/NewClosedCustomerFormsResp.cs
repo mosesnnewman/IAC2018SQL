@@ -31,6 +31,7 @@ using DevExpress.XtraGrid;
 using DevExpress.XtraRichEdit;
 using DevExpress.XtraRichEdit.API.Native;
 using DevExpress.XtraBars.Alerter;
+using System.Runtime.InteropServices;
 
 
 namespace IAC2021SQL
@@ -4923,6 +4924,7 @@ namespace IAC2021SQL
             }
             else
             {
+                alertControl1.AllowHtmlText = true;
                 if (!lbAddFlag && !lbEdit)
                     toolStripButtonEdit.Enabled = true;
                 // Moses Newman 06/12/2020 Add test for not posted, can only delete non posted new business!
@@ -4939,18 +4941,23 @@ namespace IAC2021SQL
                 if (iACDataSet.VEHICLE.Rows[0].Field<String>("PolicyStatus").ToUpper() == "IN FORCE")
                 {
                     checkEditCustomerInsurance.Checked = true;
+                    if (alertControl1.HtmlPopupList.Count > 0)
+                    {
+                        alertControl1.HtmlPopupList[0].Pinned = false;
+                        alertControl1.HtmlPopupList[0].Close();
+                    }
                 }
                 else
                 {
+                    AlertInfo info = new AlertInfo("UNINSURED ACCOUNT# " + iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO"), "Please Note!\nThis account does NOT have an IN FORCE insurance policy at the moment!");
                     checkEditCustomerInsurance.Checked = false;
-                    alertControl1.ShowPinButton = true;
-                    alertControl1.ShowCloseButton = false;
-                    AlertInfo info = new AlertInfo("UN-INSURED ACCOUNT", "Please Note!\nThis account does NOT have an IN FORCE insurance policy at the moment!");
-                    alertControl1.AllowHtmlText = true;
-                    alertControl1.Show(this, info);
-                    alertControl1.AlertFormList[0].Buttons.PinButton.SetDown(true);
-                    alertControl1.AlertFormList[0].BackColor = Color.White;
-                    alertControl1.AlertFormList[0].ForeColor = Color.MediumVioletRed;
+                    //alertControl1.ShowPinButton = true;
+                    //alertControl1.ShowCloseButton = false;
+                    alertControl1.AutoFormDelay = 30000;
+                    alertControl1.Show(info, this);
+                    //alertControl1.HtmlPopupList[0].Pinned = true;
+                    //alertControl1.RaiseHtmlElementClick("pinbutton", alertControl1.HtmlPopupList[0]);
+                    //alertControl1.AlertFormList[0].Buttons.PinButton.SetDown(true);
                 }
             }
         }
@@ -6382,7 +6389,15 @@ namespace IAC2021SQL
         private void alertControl1_BeforeFormShow(object sender, AlertFormEventArgs e)
         {
             AlertControl alertControl = sender as AlertControl;
-            e.Location = new Point { X = 898, Y = 223 };
+            e.Location = new Point { X = 880, Y = 223 };
+        }
+
+        private void alertControl1_HtmlElementMouseClick(object sender, AlertHtmlElementMouseEventArgs e)
+        {
+            if (e.ElementId == "pinbutton")
+            {
+                e.HtmlPopup.Pinned = !e.HtmlPopup.Pinned;
+            }
         }
 
         private void radioButtonCOSAcct_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
