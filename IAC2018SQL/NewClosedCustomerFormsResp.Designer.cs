@@ -215,6 +215,7 @@ namespace IAC2021SQL
             this.imageCollectionTabs = new DevExpress.Utils.ImageCollection(this.components);
             this.xtraTabPageCustInfo1 = new DevExpress.XtraTab.XtraTabPage();
             this.layoutControlCustomerInfo = new DevExpress.XtraLayout.LayoutControl();
+            this.htmlContentControl1 = new DevExpress.XtraEditors.HtmlContentControl();
             this.checkEditTConfirmed = new DevExpress.XtraEditors.CheckEdit();
             this.toolbarFormManager1 = new DevExpress.XtraBars.ToolbarForm.ToolbarFormManager(this.components);
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
@@ -299,7 +300,6 @@ namespace IAC2021SQL
             this.layoutControlItemCareOf = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItemAddress1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItemAddress2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.emptySpaceItem6 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItemComment1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItemComment2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItemHomePhone = new DevExpress.XtraLayout.LayoutControlItem();
@@ -332,7 +332,6 @@ namespace IAC2021SQL
             this.layoutControlItemZipCode = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItemZip4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem34 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.emptySpaceItem35 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem36 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem39 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem40 = new DevExpress.XtraLayout.EmptySpaceItem();
@@ -366,6 +365,7 @@ namespace IAC2021SQL
             this.emptySpaceItem51 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem15 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItemEmailAddress = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItemHTML = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroupDealerInfo = new DevExpress.XtraLayout.LayoutControlGroup();
             this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItemDealerNo = new DevExpress.XtraLayout.LayoutControlItem();
@@ -1386,6 +1386,7 @@ namespace IAC2021SQL
             this.emailTableAdapter1 = new IAC2021SQL.IACDataSetTableAdapters.EmailTableAdapter();
             this.emailTableAdapter2 = new IAC2021SQL.ProductionMainTablesTableAdapters.EmailTableAdapter();
             this.alertControl1 = new DevExpress.XtraBars.Alerter.AlertControl(this.components);
+            this.htmlContentPopup1 = new DevExpress.XtraEditors.HtmlContentPopup(this.components);
             labelTotalDue = new System.Windows.Forms.Label();
             labelDealerCashPrice = new System.Windows.Forms.Label();
             label30 = new System.Windows.Forms.Label();
@@ -1494,6 +1495,7 @@ namespace IAC2021SQL
             this.xtraTabPageCustInfo1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlCustomerInfo)).BeginInit();
             this.layoutControlCustomerInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.htmlContentControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditTConfirmed.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolbarFormManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.richTextBoxEmailAddress)).BeginInit();
@@ -1571,7 +1573,6 @@ namespace IAC2021SQL
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemCareOf)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemAddress1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemAddress2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemComment1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemComment2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemHomePhone)).BeginInit();
@@ -1604,7 +1605,6 @@ namespace IAC2021SQL
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemZipCode)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemZip4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem34)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem35)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem36)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem39)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem40)).BeginInit();
@@ -1638,6 +1638,7 @@ namespace IAC2021SQL
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem51)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemEmailAddress)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemHTML)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroupDealerInfo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemDealerNo)).BeginInit();
@@ -2603,6 +2604,7 @@ namespace IAC2021SQL
             ((System.ComponentModel.ISupportInitialize)(this.splitterItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem95)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.htmlContentPopup1)).BeginInit();
             this.SuspendLayout();
             // 
             // labelTotalDue
@@ -3420,6 +3422,7 @@ namespace IAC2021SQL
             this.layoutControlCustomerInfo.Appearance.ControlReadOnly.Options.UseFont = true;
             this.layoutControlCustomerInfo.Appearance.DisabledLayoutGroupCaption.Options.UseFont = true;
             this.layoutControlCustomerInfo.Appearance.DisabledLayoutItem.Options.UseFont = true;
+            this.layoutControlCustomerInfo.Controls.Add(this.htmlContentControl1);
             this.layoutControlCustomerInfo.Controls.Add(this.checkEditTConfirmed);
             this.layoutControlCustomerInfo.Controls.Add(this.richTextBoxEmailAddress);
             this.layoutControlCustomerInfo.Controls.Add(this.textBoxOpenAccount);
@@ -3487,6 +3490,20 @@ namespace IAC2021SQL
             this.layoutControlCustomerInfo.OptionsPrint.AppearanceItemControl.Options.UseFont = true;
             this.layoutControlCustomerInfo.OptionsPrint.AppearanceItemText.Options.UseFont = true;
             this.layoutControlCustomerInfo.Root = this.layoutControlGroupCustomerInfo;
+            // 
+            // htmlContentControl1
+            // 
+            this.htmlContentControl1.Appearance.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.htmlContentControl1.Appearance.Options.UseBackColor = true;
+            this.htmlContentControl1.AutoScroll = false;
+            this.htmlContentControl1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.htmlContentControl1.HtmlTemplate.Styles = resources.GetString("htmlContentControl1.HtmlTemplate.Styles");
+            this.htmlContentControl1.HtmlTemplate.Template = resources.GetString("htmlContentControl1.HtmlTemplate.Template");
+            resources.ApplyResources(this.htmlContentControl1, "htmlContentControl1");
+            this.htmlContentControl1.LookAndFeel.SkinName = "DevExpress Style";
+            this.htmlContentControl1.LookAndFeel.UseDefaultLookAndFeel = false;
+            this.htmlContentControl1.Name = "htmlContentControl1";
+            this.htmlContentControl1.UseDirectXPaint = DevExpress.Utils.DefaultBoolean.True;
             // 
             // checkEditTConfirmed
             // 
@@ -4526,7 +4543,6 @@ namespace IAC2021SQL
             this.layoutControlItemCareOf,
             this.layoutControlItemAddress1,
             this.layoutControlItemAddress2,
-            this.emptySpaceItem6,
             this.layoutControlItemComment1,
             this.layoutControlItemComment2,
             this.layoutControlItemHomePhone,
@@ -4550,7 +4566,6 @@ namespace IAC2021SQL
             this.layoutControlItemZipCode,
             this.layoutControlItemZip4,
             this.emptySpaceItem34,
-            this.emptySpaceItem35,
             this.emptySpaceItem36,
             this.emptySpaceItem39,
             this.emptySpaceItem40,
@@ -4583,7 +4598,8 @@ namespace IAC2021SQL
             this.emptySpaceItem16,
             this.emptySpaceItem51,
             this.emptySpaceItem15,
-            this.layoutControlItemEmailAddress});
+            this.layoutControlItemEmailAddress,
+            this.layoutControlItemHTML});
             this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup2.Name = "layoutControlGroup2";
             this.layoutControlGroup2.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
@@ -4856,14 +4872,6 @@ namespace IAC2021SQL
             this.layoutControlItemAddress2.TextLocation = DevExpress.Utils.Locations.Left;
             this.layoutControlItemAddress2.TextToControlDistance = 5;
             // 
-            // emptySpaceItem6
-            // 
-            this.emptySpaceItem6.Location = new System.Drawing.Point(1782, 0);
-            this.emptySpaceItem6.MinSize = new System.Drawing.Size(1, 10);
-            this.emptySpaceItem6.Name = "emptySpaceItem6";
-            this.emptySpaceItem6.Size = new System.Drawing.Size(1, 246);
-            this.emptySpaceItem6.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            // 
             // layoutControlItemComment1
             // 
             this.layoutControlItemComment1.AppearanceItemCaption.ForeColor = System.Drawing.Color.Black;
@@ -5037,7 +5045,7 @@ namespace IAC2021SQL
             this.layoutControlItemradioButtonAcct,
             this.emptySpaceItem187,
             this.layoutControlItemTConfirmed});
-            this.layoutControlGroupSBT.Location = new System.Drawing.Point(1332, 33);
+            this.layoutControlGroupSBT.Location = new System.Drawing.Point(1341, 33);
             this.layoutControlGroupSBT.Name = "layoutControlGroupSBT";
             this.layoutControlGroupSBT.Size = new System.Drawing.Size(296, 213);
             resources.ApplyResources(this.layoutControlGroupSBT, "layoutControlGroupSBT");
@@ -5388,22 +5396,12 @@ namespace IAC2021SQL
             // emptySpaceItem34
             // 
             this.emptySpaceItem34.Location = new System.Drawing.Point(836, 205);
-            this.emptySpaceItem34.MaxSize = new System.Drawing.Size(496, 41);
-            this.emptySpaceItem34.MinSize = new System.Drawing.Size(496, 41);
+            this.emptySpaceItem34.MaxSize = new System.Drawing.Size(505, 41);
+            this.emptySpaceItem34.MinSize = new System.Drawing.Size(505, 41);
             this.emptySpaceItem34.Name = "emptySpaceItem34";
             this.emptySpaceItem34.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
-            this.emptySpaceItem34.Size = new System.Drawing.Size(496, 41);
+            this.emptySpaceItem34.Size = new System.Drawing.Size(505, 41);
             this.emptySpaceItem34.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
-            // 
-            // emptySpaceItem35
-            // 
-            this.emptySpaceItem35.Location = new System.Drawing.Point(1120, 0);
-            this.emptySpaceItem35.MaxSize = new System.Drawing.Size(212, 14);
-            this.emptySpaceItem35.MinSize = new System.Drawing.Size(212, 14);
-            this.emptySpaceItem35.Name = "emptySpaceItem35";
-            this.emptySpaceItem35.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
-            this.emptySpaceItem35.Size = new System.Drawing.Size(212, 205);
-            this.emptySpaceItem35.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             // 
             // emptySpaceItem36
             // 
@@ -5477,12 +5475,12 @@ namespace IAC2021SQL
             // 
             // emptySpaceItem27
             // 
-            this.emptySpaceItem27.Location = new System.Drawing.Point(1332, 0);
-            this.emptySpaceItem27.MaxSize = new System.Drawing.Size(450, 33);
-            this.emptySpaceItem27.MinSize = new System.Drawing.Size(450, 33);
+            this.emptySpaceItem27.Location = new System.Drawing.Point(1341, 0);
+            this.emptySpaceItem27.MaxSize = new System.Drawing.Size(442, 33);
+            this.emptySpaceItem27.MinSize = new System.Drawing.Size(442, 33);
             this.emptySpaceItem27.Name = "emptySpaceItem27";
             this.emptySpaceItem27.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
-            this.emptySpaceItem27.Size = new System.Drawing.Size(450, 33);
+            this.emptySpaceItem27.Size = new System.Drawing.Size(442, 33);
             this.emptySpaceItem27.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             // 
             // emptySpaceItem3
@@ -5795,12 +5793,12 @@ namespace IAC2021SQL
             // 
             // emptySpaceItem15
             // 
-            this.emptySpaceItem15.Location = new System.Drawing.Point(1628, 33);
-            this.emptySpaceItem15.MaxSize = new System.Drawing.Size(154, 213);
-            this.emptySpaceItem15.MinSize = new System.Drawing.Size(154, 213);
+            this.emptySpaceItem15.Location = new System.Drawing.Point(1637, 33);
+            this.emptySpaceItem15.MaxSize = new System.Drawing.Size(146, 213);
+            this.emptySpaceItem15.MinSize = new System.Drawing.Size(146, 213);
             this.emptySpaceItem15.Name = "emptySpaceItem15";
             this.emptySpaceItem15.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 2, 10);
-            this.emptySpaceItem15.Size = new System.Drawing.Size(154, 213);
+            this.emptySpaceItem15.Size = new System.Drawing.Size(146, 213);
             this.emptySpaceItem15.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             // 
             // layoutControlItemEmailAddress
@@ -5818,6 +5816,23 @@ namespace IAC2021SQL
             resources.ApplyResources(this.layoutControlItemEmailAddress, "layoutControlItemEmailAddress");
             this.layoutControlItemEmailAddress.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
             this.layoutControlItemEmailAddress.TextToControlDistance = 5;
+            // 
+            // layoutControlItemHTML
+            // 
+            this.layoutControlItemHTML.ContentHorzAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.layoutControlItemHTML.ContentVertAlignment = DevExpress.Utils.VertAlignment.Top;
+            this.layoutControlItemHTML.Control = this.htmlContentControl1;
+            this.layoutControlItemHTML.Location = new System.Drawing.Point(1120, 0);
+            this.layoutControlItemHTML.MaxSize = new System.Drawing.Size(221, 205);
+            this.layoutControlItemHTML.MinSize = new System.Drawing.Size(221, 205);
+            this.layoutControlItemHTML.Name = "layoutControlItemHTML";
+            this.layoutControlItemHTML.Padding = new DevExpress.XtraLayout.Utils.Padding(2, 2, 0, 2);
+            this.layoutControlItemHTML.Size = new System.Drawing.Size(221, 205);
+            this.layoutControlItemHTML.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            resources.ApplyResources(this.layoutControlItemHTML, "layoutControlItemHTML");
+            this.layoutControlItemHTML.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
+            this.layoutControlItemHTML.TextToControlDistance = 0;
+            this.layoutControlItemHTML.TextVisible = false;
             // 
             // layoutControlGroupDealerInfo
             // 
@@ -21102,6 +21117,11 @@ namespace IAC2021SQL
             this.alertControl1.BeforeFormShow += new DevExpress.XtraBars.Alerter.AlertFormEventHandler(this.alertControl1_BeforeFormShow);
             this.alertControl1.HtmlElementMouseClick += new DevExpress.XtraBars.Alerter.AlertHtmlElementMouseClickEventHandler(this.alertControl1_HtmlElementMouseClick);
             // 
+            // htmlContentPopup1
+            // 
+            this.htmlContentPopup1.HtmlTemplate.Styles = resources.GetString("htmlContentPopup1.HtmlTemplate.Styles");
+            this.htmlContentPopup1.HtmlTemplate.Template = resources.GetString("htmlContentPopup1.HtmlTemplate.Template");
+            // 
             // frmNewCustMaintResp
             // 
             this.Appearance.BackColor = System.Drawing.Color.CornflowerBlue;
@@ -21172,6 +21192,7 @@ namespace IAC2021SQL
             this.xtraTabPageCustInfo1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlCustomerInfo)).EndInit();
             this.layoutControlCustomerInfo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.htmlContentControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.checkEditTConfirmed.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.toolbarFormManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.richTextBoxEmailAddress)).EndInit();
@@ -21249,7 +21270,6 @@ namespace IAC2021SQL
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemCareOf)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemAddress1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemAddress2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemComment1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemComment2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemHomePhone)).EndInit();
@@ -21282,7 +21302,6 @@ namespace IAC2021SQL
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemZipCode)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemZip4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem34)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem35)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem36)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem39)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem40)).EndInit();
@@ -21316,6 +21335,7 @@ namespace IAC2021SQL
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem51)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemEmailAddress)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemHTML)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroupDealerInfo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItemDealerNo)).EndInit();
@@ -22283,6 +22303,7 @@ namespace IAC2021SQL
             ((System.ComponentModel.ISupportInitialize)(this.splitterItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem95)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.htmlContentPopup1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -23128,7 +23149,6 @@ namespace IAC2021SQL
         private LayoutControlItem layoutControlItem24;
         private EmptySpaceItem emptySpaceItem187;
         private EmptySpaceItem emptySpaceItem7;
-        private EmptySpaceItem emptySpaceItem6;
         private EmptySpaceItem emptySpaceItem9;
         private LayoutControlItem layoutControlItem35;
         private LayoutControlItem layoutControlItem37;
@@ -23140,7 +23160,6 @@ namespace IAC2021SQL
         private EmptySpaceItem emptySpaceItem8;
         private EmptySpaceItem emptySpaceItem27;
         private EmptySpaceItem emptySpaceItem34;
-        private EmptySpaceItem emptySpaceItem35;
         private EmptySpaceItem emptySpaceItem36;
         private EmptySpaceItem emptySpaceItem39;
         private EmptySpaceItem emptySpaceItem40;
@@ -23554,6 +23573,9 @@ namespace IAC2021SQL
         private EmptySpaceItem emptySpaceItem222;
         private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager1;
         private DevExpress.XtraBars.Alerter.AlertControl alertControl1;
+        private DevExpress.XtraEditors.HtmlContentPopup htmlContentPopup1;
+        private DevExpress.XtraEditors.HtmlContentControl htmlContentControl1;
+        private LayoutControlItem layoutControlItemHTML;
     }
 }
 

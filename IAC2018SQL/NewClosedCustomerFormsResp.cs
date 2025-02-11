@@ -156,6 +156,7 @@ namespace IAC2021SQL
             dateEditActiveDutyEnd.Visible = false;
             layoutControlCustInfo2.Refresh();
             layoutControlVehicleInfo.Refresh(); 
+            layoutControlItemHTML.ContentVisible = false;
         }
 
         private void StartupConfiguration()
@@ -4941,23 +4942,23 @@ namespace IAC2021SQL
                 if (iACDataSet.VEHICLE.Rows[0].Field<String>("PolicyStatus").ToUpper() == "IN FORCE")
                 {
                     checkEditCustomerInsurance.Checked = true;
-                    if (alertControl1.HtmlPopupList.Count > 0)
-                    {
-                        alertControl1.HtmlPopupList[0].Pinned = false;
-                        alertControl1.HtmlPopupList[0].Close();
-                    }
+                    layoutControlItemHTML.ContentVisible = false;
                 }
                 else
                 {
-                    AlertInfo info = new AlertInfo("UNINSURED ACCOUNT# " + iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO"), "Please Note!\nThis account does NOT have an IN FORCE insurance policy at the moment!");
+                    layoutControlItemHTML.ContentVisible = true;
+                    AlertInfo info = new AlertInfo("UNINSURED ACCOUNT", "Please Note!\nThis account does NOT have\nan IN FORCE insurance policy\nat the moment!");
                     checkEditCustomerInsurance.Checked = false;
                     //alertControl1.ShowPinButton = true;
                     //alertControl1.ShowCloseButton = false;
-                    alertControl1.AutoFormDelay = 30000;
-                    alertControl1.Show(info, this);
+                    //alertControl1.AutoFormDelay = 30000;
+                    //alertControl1.Show(info, this);
                     //alertControl1.HtmlPopupList[0].Pinned = true;
                     //alertControl1.RaiseHtmlElementClick("pinbutton", alertControl1.HtmlPopupList[0]);
                     //alertControl1.AlertFormList[0].Buttons.PinButton.SetDown(true);
+                    htmlContentControl1.DataContext = info;
+                    htmlContentControl1.BackColor = Color.LightSteelBlue;
+                    htmlContentControl1.Show();
                 }
             }
         }

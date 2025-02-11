@@ -219,8 +219,8 @@ namespace IAC2021SQL
             // Moses Newman 07/22/2022
             if (iACDataSet.CUSTOMER.Rows.Count < 1)
                 return;
-            CommentMessage = CommentMessage.Replace("{MISC$}", iACDataSet.CUSTOMER.Rows[0].Field<Decimal>("CUSTOMER_REGULAR_AMOUNT").ToString("C", new CultureInfo("en-US")));
-            CommentMessage = CommentMessage.Replace("{MISC1}", Program.NextDueDate(0, iACDataSet).ToString("d", new CultureInfo("en-US")));
+            CommentMessage = CommentMessage.Replace("{MISC$}", iACDataSet.CUSTOMER.Rows[custrow].Field<Decimal>("CUSTOMER_REGULAR_AMOUNT").ToString("C", new CultureInfo("en-US")));
+            CommentMessage = CommentMessage.Replace("{MISC1}", Program.NextDueDate(custrow, iACDataSet).ToString("d", new CultureInfo("en-US")));
             Object oMissing = System.Reflection.Missing.Value,
                    oTrue = false,
                    oFalse = true,
@@ -258,15 +258,19 @@ namespace IAC2021SQL
             loTempComment = SplitComments(CommentMessage + " API MSG: " + APIMessage);
             // Moses Newman 02/22/2019 Add Full Comment
             lsFullComment = loTempComment.Field1 + loTempComment.Field2 + loTempComment.Field3;
-            cOMMENTTableAdapter.Insert(iACDataSet.CUSTOMER.Rows[0].Field<String>("CUSTOMER_NO"),
+            cOMMENTTableAdapter.Insert(iACDataSet.CUSTOMER.Rows[custrow].Field<String>("CUSTOMER_NO"),
                                         DateTime.Now.Date, lnSeq,
-            Program.gsUserID,
-            lsFullComment,
+                                        Program.gsUserID,
+                                        lsFullComment,
+                                        //loTempComment.Field1,
+                                        //loTempComment.Field2,
+                                        //loTempComment.Field3,
                                         "",
-                                        iACDataSet.CUSTOMER.Rows[0].Field<Int32>("CUSTOMER_DEALER"),
+                                        iACDataSet.CUSTOMER.Rows[custrow].Field<Int32>("CUSTOMER_DEALER"),
                                         Program.gsUserID + "  ",
                                         DateTime.Now.Hour.ToString().PadLeft(2, '0') + DateTime.Now.Minute.ToString().PadLeft(2, '0') + DateTime.Now.Second.ToString().PadLeft(2, '0'),
-                                        false, "", "",0, @"WordDoc.bmp", FileName, tnTemplateNo);
+                                        false, "", "",
+                                        0, @"WordDoc.bmp", FileName.ToString(), tnTemplateNo);
 
             cOMMENTTableAdapter.FillByCustNo(iACDataSet.COMMENT, iACDataSet.CUSTOMER.Rows[custrow].Field<String>("CUSTOMER_NO"));
         }
