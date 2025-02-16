@@ -16782,7 +16782,7 @@ SET                DEALER_STATUS = @DEALER_STATUS</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="PolicyStatus" msprop:Generator_ColumnPropNameInTable="PolicyStatusColumn" msprop:Generator_ColumnPropNameInRow="PolicyStatus" msprop:Generator_UserColumnName="PolicyStatus" msprop:Generator_ColumnVarNameInTable="columnPolicyStatus" minOccurs="0">
+              <xs:element name="PolicyStatus" msprop:Generator_ColumnPropNameInTable="PolicyStatusColumn" msprop:Generator_ColumnPropNameInRow="PolicyStatus" msprop:Generator_UserColumnName="PolicyStatus" msprop:Generator_ColumnVarNameInTable="columnPolicyStatus" default="In Force" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />

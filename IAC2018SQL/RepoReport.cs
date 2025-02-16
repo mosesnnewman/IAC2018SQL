@@ -9,6 +9,7 @@ using System.IO;
 using System.Diagnostics;
 using System.Data;
 using System.Windows.Media;
+using DevExpress.DataAccess.ConnectionParameters;
 
 namespace IAC2021SQL
 {
@@ -63,8 +64,10 @@ namespace IAC2021SQL
                 Hide();
                 // Moses Newman 08/24/2022 Covert to XtraReport
                 var report = new XtraReportClosedCustomerDelinquencyRepoReport();
+                CustomStringConnectionParameters connectionParameters = new CustomStringConnectionParameters(IAC2021SQL.Properties.Settings.Default.IAC2010SQLConnectionString);
                 SqlDataSource ds = report.DataSource as SqlDataSource;
-
+                ds.ConnectionParameters = connectionParameters;
+                ds.ConnectionName = "IAC2021SQL.Properties.Settings.IAC2010SQLConnectionString";
                 report.DataSource = ds;
                 report.RequestParameters = false;
                 report.Parameters["gsUserID"].Value = Program.gsUserID;
@@ -282,12 +285,15 @@ namespace IAC2021SQL
                                 column.Formatting = new XlCellFormatting();
                                 column.Formatting.NumberFormat = @"_([$$-409]* #,##0.00_);_([$$-409]* \(#,##0.00\);_([$$-409]* ""-""??_);_(@_)";
                             }
-                            // Create the Totals column and set the specific number format for its cells.
+                            // Create the Interest Stopped column and set its width.
                             using (IXlColumn column = sheet.CreateColumn())
                             {
-                                column.WidthInPixels = 100;
-                                column.Formatting = new XlCellFormatting();
-                                column.Formatting.NumberFormat = @"_([$$-409]* #,##0.00_);_([$$-409]* \(#,##0.00\);_([$$-409]* ""-""??_);_(@_)";
+                                column.WidthInCharacters = 20;
+                            }
+                            // Create the Payment Arrangement column and set its width.
+                            using (IXlColumn column = sheet.CreateColumn())
+                            {
+                                column.WidthInCharacters = 25;
                             }
 
                             // Specify cell font attributes.
@@ -383,7 +389,12 @@ namespace IAC2021SQL
                                 }
                                 using (IXlCell cell = row.CreateCell())
                                 {
-                                    cell.Value = "Totals";
+                                    cell.Value = "Interest Stopped";
+                                    cell.ApplyFormatting(headerRowFormatting);
+                                }
+                                using (IXlCell cell = row.CreateCell())
+                                {
+                                    cell.Value = "Payment Arrangement";
                                     cell.ApplyFormatting(headerRowFormatting);
                                 }
                             }
@@ -478,6 +489,16 @@ namespace IAC2021SQL
                                     using (IXlCell cell = row.CreateCell())
                                     {
                                         cell.Value = (XlVariantValue)repoDataSet.CUSTOMERVEHICLE.Rows[i].Field<Decimal>("CUSTOMER_BUYOUT");
+                                        cell.ApplyFormatting(cellFormatting);
+                                    }
+                                    using (IXlCell cell = row.CreateCell())
+                                    {
+                                        cell.Value = repoDataSet.CUSTOMERVEHICLE.Rows[i].Field<String>("CUSTOMER_INT_OVERRIDE") == "Y" ? "Yes":"No";
+                                        cell.ApplyFormatting(cellFormatting);
+                                    }
+                                    using (IXlCell cell = row.CreateCell())
+                                    {
+                                        cell.Value = (repoDataSet.CUSTOMERVEHICLE.Rows[i].Field<Boolean?>("LossClaimPaymentArrangement") ?? false) ? "Yes" : "No";
                                         cell.ApplyFormatting(cellFormatting);
                                     }
                                 }

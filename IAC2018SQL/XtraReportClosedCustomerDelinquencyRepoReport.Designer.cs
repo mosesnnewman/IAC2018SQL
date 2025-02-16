@@ -52,6 +52,10 @@
             DevExpress.DataAccess.Sql.MasterDetailInfo masterDetailInfo2 = new DevExpress.DataAccess.Sql.MasterDetailInfo();
             DevExpress.DataAccess.Sql.RelationColumnInfo relationColumnInfo2 = new DevExpress.DataAccess.Sql.RelationColumnInfo();
             this.Area3 = new DevExpress.XtraReports.UI.DetailBand();
+            this.xrLabel4 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel3 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel2 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrCheckBox1 = new DevExpress.XtraReports.UI.XRCheckBox();
             this.CUSTOMERNO1 = new DevExpress.XtraReports.UI.XRLabel();
             this.CUSTOMERDEALER1 = new DevExpress.XtraReports.UI.XRLabel();
@@ -154,6 +158,7 @@
             this.Text18 = new DevExpress.XtraReports.UI.XRLabel();
             this.GrandTotalDelinquentCount1 = new DevExpress.XtraReports.UI.XRLabel();
             this.ReportFooterSection2 = new DevExpress.XtraReports.UI.SubBand();
+            this.Subreport1 = new DevExpress.XtraReports.UI.XRSubreport();
             this.gdCurrentDate = new DevExpress.XtraReports.Parameters.Parameter();
             this.gdEndDate = new DevExpress.XtraReports.Parameters.Parameter();
             this.gdStartDate = new DevExpress.XtraReports.Parameters.Parameter();
@@ -182,12 +187,15 @@
             this.bottomMarginBand1 = new DevExpress.XtraReports.UI.BottomMarginBand();
             this.DealerNewId = new DevExpress.XtraReports.UI.CalculatedField();
             this.ldPaidThrough = new DevExpress.XtraReports.UI.CalculatedField();
-            this.Subreport1 = new DevExpress.XtraReports.UI.XRSubreport();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // Area3
             // 
             this.Area3.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrLabel4,
+            this.xrLabel3,
+            this.xrLabel2,
+            this.xrLabel1,
             this.xrCheckBox1,
             this.CUSTOMERNO1,
             this.CUSTOMERDEALER1,
@@ -236,6 +244,72 @@
             this.Area3.Name = "Area3";
             this.Area3.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.Area3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            // 
+            // xrLabel4
+            // 
+            this.xrLabel4.BackColor = System.Drawing.Color.Transparent;
+            this.xrLabel4.BorderColor = System.Drawing.Color.Black;
+            this.xrLabel4.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.xrLabel4.BorderWidth = 1F;
+            this.xrLabel4.CanGrow = false;
+            this.xrLabel4.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "Iif(IsNull([LossClaimPaymentArrangement], false), \'Yes\',\'No\')")});
+            this.xrLabel4.Font = new DevExpress.Drawing.DXFont("Arial", 8F);
+            this.xrLabel4.ForeColor = System.Drawing.Color.Black;
+            this.xrLabel4.LocationFloat = new DevExpress.Utils.PointFloat(965.1528F, 54.30556F);
+            this.xrLabel4.Name = "xrLabel4";
+            this.xrLabel4.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel4.SizeF = new System.Drawing.SizeF(42.70837F, 12.5F);
+            this.xrLabel4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            // 
+            // xrLabel3
+            // 
+            this.xrLabel3.BackColor = System.Drawing.Color.Transparent;
+            this.xrLabel3.BorderColor = System.Drawing.Color.Black;
+            this.xrLabel3.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.xrLabel3.BorderWidth = 1F;
+            this.xrLabel3.CanGrow = false;
+            this.xrLabel3.Font = new DevExpress.Drawing.DXFont("Arial", 8F, DevExpress.Drawing.DXFontStyle.Bold);
+            this.xrLabel3.ForeColor = System.Drawing.Color.Black;
+            this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(817.7499F, 53.125F);
+            this.xrLabel3.Name = "xrLabel3";
+            this.xrLabel3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel3.SizeF = new System.Drawing.SizeF(143.4029F, 13.68056F);
+            this.xrLabel3.Text = "Payment Arrangement?";
+            this.xrLabel3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
+            // 
+            // xrLabel2
+            // 
+            this.xrLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.xrLabel2.BorderColor = System.Drawing.Color.Black;
+            this.xrLabel2.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.xrLabel2.BorderWidth = 1F;
+            this.xrLabel2.CanGrow = false;
+            this.xrLabel2.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
+            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "Iif([CUSTOMER_INT_OVERRIDE] = \'Y\', \'Yes\',\'No\')")});
+            this.xrLabel2.Font = new DevExpress.Drawing.DXFont("Arial", 8F);
+            this.xrLabel2.ForeColor = System.Drawing.Color.Black;
+            this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(965.1528F, 36.49998F);
+            this.xrLabel2.Name = "xrLabel2";
+            this.xrLabel2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel2.SizeF = new System.Drawing.SizeF(42.70837F, 15.34722F);
+            this.xrLabel2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
+            // 
+            // xrLabel1
+            // 
+            this.xrLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.xrLabel1.BorderColor = System.Drawing.Color.Black;
+            this.xrLabel1.Borders = DevExpress.XtraPrinting.BorderSide.None;
+            this.xrLabel1.BorderWidth = 1F;
+            this.xrLabel1.CanGrow = false;
+            this.xrLabel1.Font = new DevExpress.Drawing.DXFont("Arial", 8F, DevExpress.Drawing.DXFontStyle.Bold);
+            this.xrLabel1.ForeColor = System.Drawing.Color.Black;
+            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(857.3333F, 36.49998F);
+            this.xrLabel1.Name = "xrLabel1";
+            this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel1.SizeF = new System.Drawing.SizeF(103.8195F, 15.34722F);
+            this.xrLabel1.Text = "Interest Stopped?";
+            this.xrLabel1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopRight;
             // 
             // xrCheckBox1
             // 
@@ -1168,8 +1242,6 @@
             this.xrPictureBox1.BorderColor = System.Drawing.Color.Black;
             this.xrPictureBox1.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.xrPictureBox1.BorderWidth = 1F;
-            this.xrPictureBox1.Font = new DevExpress.Drawing.DXFont("Times New Roman", 9.75F);
-            this.xrPictureBox1.ForeColor = System.Drawing.Color.Black;
             this.xrPictureBox1.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource("img", resources.GetString("xrPictureBox1.ImageSource"));
             this.xrPictureBox1.LocationFloat = new DevExpress.Utils.PointFloat(803.6111F, 0F);
             this.xrPictureBox1.Name = "xrPictureBox1";
@@ -1376,7 +1448,6 @@
             this.Line1.BorderColor = System.Drawing.Color.Navy;
             this.Line1.Borders = DevExpress.XtraPrinting.BorderSide.Top;
             this.Line1.BorderWidth = 1F;
-            this.Line1.Font = new DevExpress.Drawing.DXFont("Times New Roman", 9.75F);
             this.Line1.ForeColor = System.Drawing.Color.Navy;
             this.Line1.LineWidth = 3F;
             this.Line1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 199.5139F);
@@ -1583,8 +1654,6 @@
             this.xrPictureBox2.BorderColor = System.Drawing.Color.Black;
             this.xrPictureBox2.Borders = DevExpress.XtraPrinting.BorderSide.None;
             this.xrPictureBox2.BorderWidth = 1F;
-            this.xrPictureBox2.Font = new DevExpress.Drawing.DXFont("Times New Roman", 9.75F);
-            this.xrPictureBox2.ForeColor = System.Drawing.Color.Black;
             this.xrPictureBox2.ImageSource = new DevExpress.XtraPrinting.Drawing.ImageSource("img", resources.GetString("xrPictureBox2.ImageSource"));
             this.xrPictureBox2.LocationFloat = new DevExpress.Utils.PointFloat(803.6111F, 0F);
             this.xrPictureBox2.Name = "xrPictureBox2";
@@ -1613,7 +1682,6 @@
             this.Line3.BorderColor = System.Drawing.Color.Navy;
             this.Line3.Borders = DevExpress.XtraPrinting.BorderSide.Top;
             this.Line3.BorderWidth = 1F;
-            this.Line3.Font = new DevExpress.Drawing.DXFont("Times New Roman", 9.75F);
             this.Line3.ForeColor = System.Drawing.Color.Navy;
             this.Line3.LineWidth = 3F;
             this.Line3.LocationFloat = new DevExpress.Utils.PointFloat(0F, 182.8472F);
@@ -1943,6 +2011,22 @@
             this.ReportFooterSection2.PageBreak = DevExpress.XtraReports.UI.PageBreak.BeforeBand;
             this.ReportFooterSection2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
+            // Subreport1
+            // 
+            this.Subreport1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
+            this.Subreport1.Name = "Subreport1";
+            this.Subreport1.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gdCurrentDate", this.gdCurrentDate));
+            this.Subreport1.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gdEndDate", this.gdEndDate));
+            this.Subreport1.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gdStartDate", this.gdStartDate));
+            this.Subreport1.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gnAgedMonths", this.gnAgedMonths));
+            this.Subreport1.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gsCustStatus", this.gsCustStatus));
+            this.Subreport1.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gsRepoCode", this.gsRepoCode));
+            this.Subreport1.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gsRepoInd", this.gsRepoInd));
+            this.Subreport1.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gsUserID", this.gsUserID));
+            this.Subreport1.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gsUserName", this.gsUserName));
+            this.Subreport1.ReportSource = new IAC2021SQL.XtraReportClosedCustomerDelinquencyRepoDealerSummary();
+            this.Subreport1.SizeF = new System.Drawing.SizeF(1050F, 50F);
+            // 
             // gdCurrentDate
             // 
             this.gdCurrentDate.Description = "Enter gdCurrentDate:";
@@ -2160,7 +2244,6 @@
             // 
             // sqlDataSource1
             // 
-            this.sqlDataSource1.ConnectionName = "IAC2021SQL.Properties.Settings.IAC2010SQLConnectionString";
             this.sqlDataSource1.Name = "sqlDataSource1";
             storedProcQuery1.MetaSerializable = "<Meta X=\"-70\" Y=\"-60\" Width=\"248\" Height=\"4481\" />";
             storedProcQuery1.Name = "CUSTOMER";
@@ -2255,22 +2338,6 @@
             this.ldPaidThrough.FieldType = DevExpress.XtraReports.UI.FieldType.DateTime;
             this.ldPaidThrough.Name = "ldPaidThrough";
             // 
-            // Subreport1
-            // 
-            this.Subreport1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
-            this.Subreport1.Name = "Subreport1";
-            this.Subreport1.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gdCurrentDate", this.gdCurrentDate));
-            this.Subreport1.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gdEndDate", this.gdEndDate));
-            this.Subreport1.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gdStartDate", this.gdStartDate));
-            this.Subreport1.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gnAgedMonths", this.gnAgedMonths));
-            this.Subreport1.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gsCustStatus", this.gsCustStatus));
-            this.Subreport1.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gsRepoCode", this.gsRepoCode));
-            this.Subreport1.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gsRepoInd", this.gsRepoInd));
-            this.Subreport1.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gsUserID", this.gsUserID));
-            this.Subreport1.ParameterBindings.Add(new DevExpress.XtraReports.UI.ParameterBinding("gsUserName", this.gsUserName));
-            this.Subreport1.ReportSource = new IAC2021SQL.XtraReportClosedCustomerDelinquencyRepoDealerSummary();
-            this.Subreport1.SizeF = new System.Drawing.SizeF(1050F, 50F);
-            // 
             // XtraReportClosedCustomerDelinquencyRepoReport
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -2321,7 +2388,7 @@
             this.gdEndDate,
             this.gsCustStatus,
             this.gsRepoInd});
-            this.Version = "23.1";
+            this.Version = "24.2";
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
         }
@@ -2460,5 +2527,9 @@
         private DevExpress.XtraReports.UI.BottomMarginBand bottomMarginBand1;
         private DevExpress.XtraReports.UI.CalculatedField DealerNewId;
         private DevExpress.XtraReports.UI.CalculatedField ldPaidThrough;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel2;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel1;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel3;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel4;
     }
 }
