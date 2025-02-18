@@ -226,6 +226,11 @@ namespace IAC2021SQL
                             {
                                 column.WidthInCharacters = 35;
                             }
+                            // Create the Indicator column and set its width.
+                            using (IXlColumn column = sheet.CreateColumn())
+                            {
+                                column.WidthInCharacters = 11;
+                            }
                             // Create the Code column and set its width.
                             using (IXlColumn column = sheet.CreateColumn())
                             {
@@ -339,6 +344,11 @@ namespace IAC2021SQL
                                 }
                                 using (IXlCell cell = row.CreateCell())
                                 {
+                                    cell.Value = "Indicator";
+                                    cell.ApplyFormatting(headerRowFormatting);
+                                }
+                                using (IXlCell cell = row.CreateCell())
+                                {
                                     cell.Value = "Code";
                                     cell.ApplyFormatting(headerRowFormatting);
                                 }
@@ -431,6 +441,11 @@ namespace IAC2021SQL
                                     {
                                         cell.Value = repoDataSet.CUSTOMERVEHICLE.Rows[i].Field<String>("CUSTOMER_FIRST_NAME").Trim() + ' '+
                                                      repoDataSet.CUSTOMERVEHICLE.Rows[i].Field<String>("CUSTOMER_LAST_NAME").Trim();
+                                        cell.ApplyFormatting(cellFormatting);
+                                    }
+                                    using (IXlCell cell = row.CreateCell())
+                                    {
+                                        cell.Value = repoDataSet.CUSTOMERVEHICLE.Rows[i].Field<String>("CUSTOMER_REPO_IND");
                                         cell.ApplyFormatting(cellFormatting);
                                     }
                                     using (IXlCell cell = row.CreateCell())
