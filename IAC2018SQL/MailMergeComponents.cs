@@ -562,6 +562,35 @@ namespace IAC2021SQL
             return loReturn;
         }
 
+        public void ScrnPrntNew(String tsFileName)
+        {
+            var server = new RichEditDocumentServer();
+            server.Options.Export.Html.EmbedImages = true;
+            
+            DevExpress.XtraRichEdit.API.Native.Document doc = server.Document;
+            DocumentPosition pos = doc.Paragraphs[0].Range.Start;
+
+            doc.Unit = DevExpress.Office.DocumentUnit.Inch;
+            doc.Sections[0].Page.Landscape = true;
+            doc.Sections[0].Margins.Left = (float)1.0;
+            doc.Sections[0].Margins.Right = (float)0.5;
+            doc.Sections[0].Margins.Top = (float)1.0;
+            doc.Sections[0].Margins.Bottom = (float)0.5;
+
+            DevExpress.XtraRichEdit.API.Native.Shape imageFromFile = doc.Shapes.InsertPicture(pos, DocumentImageSource.FromFile(tsFileName));
+
+            imageFromFile.Width = (float)5.63;
+            imageFromFile.Height = (float)10.00;
+            imageFromFile.ScaleX = (float).50;
+            imageFromFile.ScaleY = (float).50;
+
+            server.Print();
+            Thread.Sleep(5000);
+            doc = null;
+            server.Dispose();
+            imageFromFile = null;
+        }
+
         public void ScrnPrnt(String tsFileName)
         {
             Object fileName = "", readOnly = false, isVisible = true;
@@ -596,8 +625,11 @@ namespace IAC2021SQL
             img.Save(mss, jpegCodec, encoderParams);
             byte[] matriz = mss.ToArray();
             fs.Write(matriz, 0, matriz.Length);
-            mss.Close();
             fs.Close();
+            fs.Dispose();
+            mss.Close();
+            mss.Dispose();
+            img.Dispose();
         }
 
         private ImageCodecInfo GetEncoderInfo(String mimeType)
@@ -616,11 +648,18 @@ namespace IAC2021SQL
         public void CreateECHNotice(IACDataSet PassedDataSet, Int32 tnDayDue, DateTime tdDateDue, String tsMailToText, ref BackgroundWorker worker, ref String tsProgMessage, Boolean tbSendAsEmail = true, Boolean tbAutoPay = true, Boolean tbTestMode = false, String tsMergeFileName = "")
         {
             String[] EmailAddresses = { };
+            String TelSID = "", TelAuthToken = "";
             int lnProgress = 0, lnTotalSteps = 0, NoServerCount = 0;
             Object oFalse = false;
             IACDataSetTableAdapters.CUSTOMERTableAdapter CUSTOMERTableAdapter = new IACDataSetTableAdapters.CUSTOMERTableAdapter();
             IACDataSetTableAdapters.CustBankTableAdapter CustBankTableAdapter = new IACDataSetTableAdapters.CustBankTableAdapter();
             IACDataSetTableAdapters.EmailTableAdapter EmailTableAdapter = new IACDataSetTableAdapters.EmailTableAdapter();
+            // Moses Newman 05/06/2024 No more hard coded passwords and usernames.
+            Credentials credentials = new Credentials();
+            CredentialsTableAdapters.SSHCredTableAdapter sSHCredTableAdapter = new CredentialsTableAdapters.SSHCredTableAdapter();
+            sSHCredTableAdapter.Fill(credentials.SSHCred, 7);
+            TelSID = credentials.SSHCred.Rows[0].Field<String>("Username");
+            TelAuthToken = credentials.SSHCred.Rows[0].Field<String>("Password");
 
             CUSTOMERTableAdapter.FillByActiveDayDue(PassedDataSet.CUSTOMER, tnDayDue, tbAutoPay, !tbSendAsEmail);
 
@@ -638,8 +677,6 @@ namespace IAC2021SQL
             server.Options.Export.Html.EmbedImages = true;
             server.LoadDocumentTemplate((String)oTemplatePath);
 
-            Credentials credentials = new Credentials();
-            CredentialsTableAdapters.SSHCredTableAdapter sSHCredTableAdapter = new CredentialsTableAdapters.SSHCredTableAdapter();
             sSHCredTableAdapter.Fill(credentials.SSHCred, 5);  // Record 5 is SMTP2GO user's credntials
             String username, password;
 
@@ -764,8 +801,8 @@ namespace IAC2021SQL
                         lsCellPhone += PassedDataSet.CustBank.Rows[0].Field<String>("CUSTOMER_CELL_PHONE").Substring(3, 3) + "-";
                         lsCellPhone += PassedDataSet.CustBank.Rows[0].Field<String>("CUSTOMER_CELL_PHONE").Substring(6, 4);
                     }
-                    var client = new TelAPIRestClient("AC4c889084ae5c6f5a2c6a45f9ba09fa24",
-                                                        "9ef0b0b07799480db0364c463d06765b");
+                    var client = new TelAPIRestClient(TelSID,
+                                                        TelAuthToken);
                     if (lsSMSMessage.Length > 160)
                         lsSMSMessage = lsSMSMessage.Substring(0, 159);
                     try
@@ -816,6 +853,12 @@ namespace IAC2021SQL
             IACDataSetTableAdapters.CustBankTableAdapter CustBankTableAdapter = new IACDataSetTableAdapters.CustBankTableAdapter();
             IACDataSetTableAdapters.EmailTableAdapter EmailTableAdapter = new IACDataSetTableAdapters.EmailTableAdapter();
             CUSTOMERTableAdapter.FillByActiveDayDue(PassedDataSet.CUSTOMER, tnDayDue, tbAutoPay, !tbSendAsEmail);
+            // Moses Newman 05/06/2024 No more hard coded passwords and usernames.
+            Credentials credentials = new Credentials();
+            CredentialsTableAdapters.SSHCredTableAdapter sSHCredTableAdapter = new CredentialsTableAdapters.SSHCredTableAdapter();
+            sSHCredTableAdapter.Fill(credentials.SSHCred, 7);
+            String TelSID = credentials.SSHCred.Rows[0].Field<String>("Username"),
+            TelAuthToken = credentials.SSHCred.Rows[0].Field<String>("Password");
 
             Object oTemplatePath = "";
 
@@ -958,8 +1001,8 @@ namespace IAC2021SQL
                         lsCellPhone += PassedDataSet.CustBank.Rows[0].Field<String>("CUSTOMER_CELL_PHONE").Substring(3, 3) + "-";
                         lsCellPhone += PassedDataSet.CustBank.Rows[0].Field<String>("CUSTOMER_CELL_PHONE").Substring(6, 4);
                     }
-                    var client = new TelAPIRestClient("AC4c889084ae5c6f5a2c6a45f9ba09fa24",
-                                                        "9ef0b0b07799480db0364c463d06765b");
+                    var client = new TelAPIRestClient(TelSID,
+                                                        TelAuthToken);
                     if (lsSMSMessage.Length > 160)
                         lsSMSMessage = lsSMSMessage.Substring(0, 159);
                     try

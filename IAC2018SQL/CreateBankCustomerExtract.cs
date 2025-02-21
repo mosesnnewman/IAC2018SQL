@@ -126,8 +126,14 @@ namespace IAC2021SQL
             HttpWebRequest msgrequest = HttpWebRequest.Create(requestURL) as HttpWebRequest;
             msgrequest.Method = "GET";
             msgrequest.ContentType = "application/xml";
-            var username = "PayNSeconds";
-            var password = "IAC!AUTH@514678";
+            // Moses Newman 05/06/2024 No more hard coded passwords and usernames.
+            Credentials credentials = new Credentials();
+            CredentialsTableAdapters.SSHCredTableAdapter sSHCredTableAdapter = new CredentialsTableAdapters.SSHCredTableAdapter();
+            sSHCredTableAdapter.Fill(credentials.SSHCred, 6);
+            String username = credentials.SSHCred.Rows[0].Field<String>("Username"),
+            password = credentials.SSHCred.Rows[0].Field<String>("Password");
+
+            
             string encoded = System.Convert.ToBase64String(Encoding.GetEncoding("ISO-8859-1")
                                            .GetBytes(username + ":" + password));
 
